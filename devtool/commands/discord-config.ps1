@@ -1,5 +1,4 @@
 param(
-    [Parameter(Mandatory=$true)]
     [ValidateSet("set", "get", "test")]
     [string]$Action,
     

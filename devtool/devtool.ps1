@@ -1,11 +1,7 @@
 #!/usr/bin/env pwsh
 
 param(
-    [Parameter(Mandatory=$true, Position=0)]
-    [string]$Command,
-    
-    [Parameter(ValueFromRemainingArguments=$true)]
-    [string[]]$Arguments
+    [string]$Command
 )
 
 $Script:DevToolRoot = Split-Path -Parent $MyInvocation.MyCommand.Definition
@@ -34,8 +30,7 @@ function Show-Help {
 
 function Invoke-Command {
     param(
-        [string]$CommandName,
-        [string[]]$Args
+        [string]$CommandName
     )
     
     $commandFile = Join-Path $CommandsPath "$CommandName.ps1"
@@ -47,7 +42,8 @@ function Invoke-Command {
     }
     
     try {
-        & $commandFile @Args
+        $moreArgs = $args
+        Invoke-Expression "$commandFile @moreArgs"
     }
     catch {
         Write-Host "Error executing command '$CommandName': $_" -ForegroundColor Red
@@ -65,5 +61,5 @@ if ($Command -eq "help" -or $Command -eq "-h" -or $Command -eq "--help") {
     Show-Help
 }
 else {
-    Invoke-Command -CommandName $Command -Args $Arguments
+    Invoke-Command -CommandName $Command $args
 }
