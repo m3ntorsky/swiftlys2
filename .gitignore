@@ -1,0 +1,32 @@
+# Temporary files
+devtool/temp/
+
+# Build outputs
+build/
+out/
+bin/
+
+# Dependencies
+external/*
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# XMake
+.xmake/
+build/
+
+# Logs
+*.log

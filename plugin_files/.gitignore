@@ -1,0 +1,4 @@
+# This file ensures this directory is tracked by git
+# Add your plugin files here
+*
+!.gitignore
