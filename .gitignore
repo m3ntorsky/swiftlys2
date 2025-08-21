@@ -10,7 +10,6 @@ bin/
 external/*
 
 # IDE files
-.vscode/
 .idea/
 *.swp
 *.swo
@@ -30,3 +29,5 @@ build/
 
 # Logs
 *.log
+
+vsxmake2022/
