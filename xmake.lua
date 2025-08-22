@@ -24,9 +24,7 @@ target("swiftlys2")
     set_kind("shared")
 
     add_files({
-        "src/core/bridge/metamod/s2.cpp",
-
-        "src/engine/entities/entitysystem.cpp",
+        "src/**/*.cpp",
 
         sdk_path.."/tier1/keyvalues3.cpp",
         sdk_path.."/entity2/entitysystem.cpp",
@@ -116,7 +114,7 @@ target("swiftlys2")
     add_cxxflags("cl::/W3")
     add_cxxflags("cl::/Z7")
     add_cxxflags("cl::/EHsc")
-    add_cxxflags("cl::/IGNORE:4101,4267,4244,4005,4003,4530,9025")
+    add_cxxflags("cl::/IGNORE:4101,4267,4244,4005,4003,4530,D9025")
 
     --[[ -------------------------------- HL2SDK Mandatory Libs Section -------------------------------- ]]
 
@@ -315,9 +313,9 @@ target("swiftlys2")
         os.mkdir('build/package/addons/swiftly/bin/'..GetDistDirName())
         os.cp(target:targetfile(), 'build/package/addons/swiftly/bin/'..GetDistDirName().."/swiftly."..(is_plat("windows") and "dll" or "so"))
         io.writefile("build/package/addons/metamod/swiftly.vdf", [["Metamod Plugin"
-        {
-            "alias"	"swiftly"
-            "file"	"addons/swiftly/bin/]]..GetDistDirName()..[[/swiftly"
-            }
+{
+    "alias"	"swiftly"
+    "file"	"addons/swiftly/bin/]]..GetDistDirName()..[[/swiftly"
+}
 ]])
     end)

@@ -16,38 +16,39 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef _core_bridge_metamod_s2_h
-#define _core_bridge_metamod_s2_h
+#include "manager.h"
 
-#include <ISmmPlugin.h>
-#include <igameevents.h>
-#include <sh_vector.h>
-
-class SwiftlyMMBridge : public ISmmPlugin, public IMetamodListener
+void ExtensionManager::Load()
 {
-public:
-    bool Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, bool late);
-    bool Unload(char* error, size_t maxlen);
-    void AllPluginsLoaded();
 
-    void OnLevelInit(char const* pMapName, char const* pMapEntities, char const* pOldLevel, char const* pLandmarkName, bool loadGame, bool background);
-    void OnLevelShutdown();
+}
 
-    void* GetInterface(const std::string& interface_name);
+void ExtensionManager::Unload()
+{
 
-public:
-    const char* GetAuthor();
-    const char* GetName();
-    const char* GetDescription();
-    const char* GetURL();
-    const char* GetLicense();
-    const char* GetVersion();
-    const char* GetDate();
-    const char* GetLogTag();
-};
+}
 
-extern SwiftlyMMBridge g_MMPluginBridge;
+bool ExtensionManager::Exists(std::string& extension_name)
+{
+    return true;
+}
 
-PLUGIN_GLOBALVARS();
+void ExtensionManager::LoadExtension(std::string& extension_name)
+{
 
-#endif
+}
+
+void ExtensionManager::UnloadExtension(std::string& extension_name)
+{
+
+}
+
+IExtension* ExtensionManager::GetExtension(std::string& extension_name)
+{
+    return nullptr;
+}
+
+std::vector<IExtension*> ExtensionManager::GetExtensionsList()
+{
+    return {};
+}

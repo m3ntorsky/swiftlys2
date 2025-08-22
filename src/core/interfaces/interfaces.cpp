@@ -16,38 +16,20 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef _core_bridge_metamod_s2_h
-#define _core_bridge_metamod_s2_h
+#include <api/interfaces/interfaces.h>
+#include <core/entrypoint.h>
 
-#include <ISmmPlugin.h>
-#include <igameevents.h>
-#include <sh_vector.h>
+#include <core/extensions/manager.h>
+#include <map>
 
-class SwiftlyMMBridge : public ISmmPlugin, public IMetamodListener
-{
-public:
-    bool Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, bool late);
-    bool Unload(char* error, size_t maxlen);
-    void AllPluginsLoaded();
+ExtensionManager g_ExtensionsManager;
 
-    void OnLevelInit(char const* pMapName, char const* pMapEntities, char const* pOldLevel, char const* pLandmarkName, bool loadGame, bool background);
-    void OnLevelShutdown();
-
-    void* GetInterface(const std::string& interface_name);
-
-public:
-    const char* GetAuthor();
-    const char* GetName();
-    const char* GetDescription();
-    const char* GetURL();
-    const char* GetLicense();
-    const char* GetVersion();
-    const char* GetDate();
-    const char* GetLogTag();
+static std::map<std::string, void*> g_Interfaces = {
+    {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
 };
 
-extern SwiftlyMMBridge g_MMPluginBridge;
-
-PLUGIN_GLOBALVARS();
-
-#endif
+SW_API void* GetPureInterface(const std::string& iface_name)
+{
+    if (g_Interfaces.find(iface_name) == g_Interfaces.end()) return g_SwiftlyCore.GetInterface(iface_name);
+    return g_Interfaces.at(iface_name);
+}

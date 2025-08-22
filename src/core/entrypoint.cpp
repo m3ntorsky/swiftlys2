@@ -16,38 +16,40 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef _core_bridge_metamod_s2_h
-#define _core_bridge_metamod_s2_h
+#include "entrypoint.h"
+#include "bridge/metamod.h"
+#include <api/interfaces/manager.h>
 
-#include <ISmmPlugin.h>
-#include <igameevents.h>
-#include <sh_vector.h>
+SwiftlyCore g_SwiftlyCore;
+InterfacesManager g_ifaceService;
 
-class SwiftlyMMBridge : public ISmmPlugin, public IMetamodListener
+bool SwiftlyCore::Load(BridgeKind_t kind)
 {
-public:
-    bool Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, bool late);
-    bool Unload(char* error, size_t maxlen);
-    void AllPluginsLoaded();
+    m_iKind = kind;
 
-    void OnLevelInit(char const* pMapName, char const* pMapEntities, char const* pOldLevel, char const* pLandmarkName, bool loadGame, bool background);
-    void OnLevelShutdown();
+    IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
+    if (extManager) extManager->Load();
 
-    void* GetInterface(const std::string& interface_name);
+    return true;
+}
 
-public:
-    const char* GetAuthor();
-    const char* GetName();
-    const char* GetDescription();
-    const char* GetURL();
-    const char* GetLicense();
-    const char* GetVersion();
-    const char* GetDate();
-    const char* GetLogTag();
-};
+bool SwiftlyCore::Unload()
+{
+    return true;
+}
 
-extern SwiftlyMMBridge g_MMPluginBridge;
+void SwiftlyCore::OnMapLoad(std::string map_name)
+{
 
-PLUGIN_GLOBALVARS();
+}
 
-#endif
+void SwiftlyCore::OnMapUnload()
+{
+
+}
+
+void* SwiftlyCore::GetInterface(const std::string& iface_name)
+{
+    if (m_iKind == BridgeKind_t::Metamod) return g_MMPluginBridge.GetInterface(iface_name);
+    else return nullptr;
+}

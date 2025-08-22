@@ -16,38 +16,15 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef _core_bridge_metamod_s2_h
-#define _core_bridge_metamod_s2_h
+#ifndef src_api_dll_extern_h
+#define src_api_dll_extern_h
 
-#include <ISmmPlugin.h>
-#include <igameevents.h>
-#include <sh_vector.h>
-
-class SwiftlyMMBridge : public ISmmPlugin, public IMetamodListener
-{
-public:
-    bool Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, bool late);
-    bool Unload(char* error, size_t maxlen);
-    void AllPluginsLoaded();
-
-    void OnLevelInit(char const* pMapName, char const* pMapEntities, char const* pOldLevel, char const* pLandmarkName, bool loadGame, bool background);
-    void OnLevelShutdown();
-
-    void* GetInterface(const std::string& interface_name);
-
-public:
-    const char* GetAuthor();
-    const char* GetName();
-    const char* GetDescription();
-    const char* GetURL();
-    const char* GetLicense();
-    const char* GetVersion();
-    const char* GetDate();
-    const char* GetLogTag();
-};
-
-extern SwiftlyMMBridge g_MMPluginBridge;
-
-PLUGIN_GLOBALVARS();
+#if !defined SW_API
+#ifdef _WIN32
+#define SW_API __declspec(dllexport)
+#else
+#define SW_API __attribute__ ((visibility("default")))	
+#endif
+#endif
 
 #endif

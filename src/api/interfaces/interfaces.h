@@ -16,38 +16,18 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef _core_bridge_metamod_s2_h
-#define _core_bridge_metamod_s2_h
+#ifndef _api_interfaces_interfaces_h
+#define _api_interfaces_interfaces_h
 
-#include <ISmmPlugin.h>
-#include <igameevents.h>
-#include <sh_vector.h>
+#include <string>
+#include <api/dll/extern.h>
 
-class SwiftlyMMBridge : public ISmmPlugin, public IMetamodListener
-{
-public:
-    bool Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, bool late);
-    bool Unload(char* error, size_t maxlen);
-    void AllPluginsLoaded();
+#include <api/extensions/extension.h>
+#include <api/extensions/manager.h>
+#include <api/extensions/plugin.h>
 
-    void OnLevelInit(char const* pMapName, char const* pMapEntities, char const* pOldLevel, char const* pLandmarkName, bool loadGame, bool background);
-    void OnLevelShutdown();
+SW_API void* GetPureInterface(const std::string& iface_name);
 
-    void* GetInterface(const std::string& interface_name);
-
-public:
-    const char* GetAuthor();
-    const char* GetName();
-    const char* GetDescription();
-    const char* GetURL();
-    const char* GetLicense();
-    const char* GetVersion();
-    const char* GetDate();
-    const char* GetLogTag();
-};
-
-extern SwiftlyMMBridge g_MMPluginBridge;
-
-PLUGIN_GLOBALVARS();
+#define EXTENSIONMANAGER_INTERFACE_VERSION                  "ExtensionManagerAPI"
 
 #endif

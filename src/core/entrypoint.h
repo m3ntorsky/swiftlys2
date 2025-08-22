@@ -16,38 +16,31 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef _core_bridge_metamod_s2_h
-#define _core_bridge_metamod_s2_h
+#ifndef _core_entrypoint_h
+#define _core_entrypoint_h
 
-#include <ISmmPlugin.h>
-#include <igameevents.h>
-#include <sh_vector.h>
+#include <string>
 
-class SwiftlyMMBridge : public ISmmPlugin, public IMetamodListener
+enum class BridgeKind_t
 {
-public:
-    bool Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, bool late);
-    bool Unload(char* error, size_t maxlen);
-    void AllPluginsLoaded();
-
-    void OnLevelInit(char const* pMapName, char const* pMapEntities, char const* pOldLevel, char const* pLandmarkName, bool loadGame, bool background);
-    void OnLevelShutdown();
-
-    void* GetInterface(const std::string& interface_name);
-
-public:
-    const char* GetAuthor();
-    const char* GetName();
-    const char* GetDescription();
-    const char* GetURL();
-    const char* GetLicense();
-    const char* GetVersion();
-    const char* GetDate();
-    const char* GetLogTag();
+    Metamod = 0,
 };
 
-extern SwiftlyMMBridge g_MMPluginBridge;
+class SwiftlyCore
+{
+private:
+    BridgeKind_t m_iKind;
 
-PLUGIN_GLOBALVARS();
+public:
+    bool Load(BridgeKind_t kind);
+    bool Unload();
+
+    void OnMapLoad(std::string map_name);
+    void OnMapUnload();
+
+    void* GetInterface(const std::string& iface_name);
+};
+
+extern SwiftlyCore g_SwiftlyCore;
 
 #endif

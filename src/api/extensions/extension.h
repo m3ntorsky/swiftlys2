@@ -16,38 +16,28 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef _core_bridge_metamod_s2_h
-#define _core_bridge_metamod_s2_h
+#ifndef src_api_extensions_extension_h
+#define src_api_extensions_extension_h
 
-#include <ISmmPlugin.h>
-#include <igameevents.h>
-#include <sh_vector.h>
+#include <string>
 
-class SwiftlyMMBridge : public ISmmPlugin, public IMetamodListener
+#include "plugin.h"
+
+class IExtension
 {
 public:
-    bool Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, bool late);
-    bool Unload(char* error, size_t maxlen);
-    void AllPluginsLoaded();
+    virtual std::string& GetName() = 0;
+    virtual bool IsLoaded() = 0;
 
-    void OnLevelInit(char const* pMapName, char const* pMapEntities, char const* pOldLevel, char const* pLandmarkName, bool loadGame, bool background);
-    void OnLevelShutdown();
+    virtual void* GetExportedFunction(std::string& name) = 0;
 
-    void* GetInterface(const std::string& interface_name);
+    virtual std::string& GetError() = 0;
+    virtual bool& HasError() = 0;
 
-public:
-    const char* GetAuthor();
-    const char* GetName();
-    const char* GetDescription();
-    const char* GetURL();
-    const char* GetLicense();
-    const char* GetVersion();
-    const char* GetDate();
-    const char* GetLogTag();
+    virtual bool Load(bool late) = 0;
+    virtual bool Unload() = 0;
+
+    virtual IExtensionPlugin* GetAPI() = 0;
 };
-
-extern SwiftlyMMBridge g_MMPluginBridge;
-
-PLUGIN_GLOBALVARS();
 
 #endif
