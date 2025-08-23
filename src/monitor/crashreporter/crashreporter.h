@@ -16,28 +16,18 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef _api_interfaces_interfaces_h
-#define _api_interfaces_interfaces_h
+#ifndef src_monitor_crashreporter_crashreporter_h
+#define src_monitor_crashreporter_crashreporter_h
 
-#include <string>
-#include <api/dll/extern.h>
-
-#include <api/extensions/extension.h>
-#include <api/extensions/manager.h>
-#include <api/extensions/plugin.h>
-
-#include <api/monitor/logger/logger.h>
-#include <api/monitor/resmon/monitor.h>
-#include <api/monitor/callstack/callstack.h>
 #include <api/monitor/crashreporter/crashreporter.h>
 
-SW_API void* GetPureInterface(const char* iface_name);
+class CrashReporter : public ICrashReporter
+{
+public:
+    virtual void Init() override;
+    virtual void Shutdown() override;
 
-#define EXTENSIONMANAGER_INTERFACE_VERSION                  "ExtensionManagerAPI"
-#define LOGGER_INTERFACE_VERSION                            "LoggerAPI"
-#define RESOURCE_MONITOR_INTERFACE_VERSION                  "ResourceMonitorAPI"
-#define MEMORYALLOCATOR_INTERFACE_VERSION                   "MemoryAllocatorAPI"
-#define CALLSTACK_INTERFACE_VERSION                         "CallStackAPI"
-#define CRASHREPORTER_INTERFACE_VERSION                     "CrashReporterAPI"
+    virtual void ReportPreventionIncident(std::string category, std::string reason) override;
+};
 
 #endif

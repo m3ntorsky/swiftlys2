@@ -16,28 +16,28 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef _api_interfaces_interfaces_h
-#define _api_interfaces_interfaces_h
+#ifndef src_api_monitor_callstack_callstack_h
+#define src_api_monitor_callstack_callstack_h
 
 #include <string>
-#include <api/dll/extern.h>
+#include <unordered_map>
 
-#include <api/extensions/extension.h>
-#include <api/extensions/manager.h>
-#include <api/extensions/plugin.h>
+class ICallStack
+{
+public:
+    virtual uint64_t RegisterPluginCallstack(std::string plugin_name, std::string stackMsg) = 0;
+    virtual void UnregisterPluginCallstack(std::string plugin_name, uint64_t callstack_id) = 0;
 
-#include <api/monitor/logger/logger.h>
-#include <api/monitor/resmon/monitor.h>
-#include <api/monitor/callstack/callstack.h>
-#include <api/monitor/crashreporter/crashreporter.h>
+    virtual uint64_t RegisterExtensionCallstack(std::string extension_name, std::string stackMsg) = 0;
+    virtual void UnregisterExtensionCallstack(std::string extension_name, uint64_t callstack_id) = 0;
 
-SW_API void* GetPureInterface(const char* iface_name);
+    virtual std::string GetPluginsCallStack(std::string plugin_name) = 0;
+    virtual std::string GetAllPluginsCallStacks() = 0;
 
-#define EXTENSIONMANAGER_INTERFACE_VERSION                  "ExtensionManagerAPI"
-#define LOGGER_INTERFACE_VERSION                            "LoggerAPI"
-#define RESOURCE_MONITOR_INTERFACE_VERSION                  "ResourceMonitorAPI"
-#define MEMORYALLOCATOR_INTERFACE_VERSION                   "MemoryAllocatorAPI"
-#define CALLSTACK_INTERFACE_VERSION                         "CallStackAPI"
-#define CRASHREPORTER_INTERFACE_VERSION                     "CrashReporterAPI"
+    virtual std::string GetExtensionsCallStack(std::string extension_name) = 0;
+    virtual std::string GetAllExtensionsCallStacks() = 0;
+
+    virtual std::string GetFullCallStack() = 0;
+};
 
 #endif

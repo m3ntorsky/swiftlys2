@@ -20,21 +20,30 @@
 #include <core/entrypoint.h>
 
 #include <core/extensions/manager.h>
+
+#include <memory/allocator/allocator.h>
+
 #include <monitor/logger/logger.h>
 #include <monitor/resmon/monitor.h>
-#include <memory/allocator/allocator.h>
+#include <monitor/callstack/callstack.h>
+#include <monitor/crashreporter/crashreporter.h>
+
 #include <map>
 
 ExtensionManager g_ExtensionsManager;
 Logger g_Logger;
 ResourceMonitor g_ResourceMonitor;
 MemoryAllocator g_MemoryAllocator;
+CallStack g_CallStack;
+CrashReporter g_CrashReporter;
 
 static std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
     {LOGGER_INTERFACE_VERSION, &g_Logger},
     {RESOURCE_MONITOR_INTERFACE_VERSION, &g_ResourceMonitor},
     {MEMORYALLOCATOR_INTERFACE_VERSION, &g_MemoryAllocator},
+    {CALLSTACK_INTERFACE_VERSION, &g_CallStack},
+    {CRASHREPORTER_INTERFACE_VERSION, &g_CrashReporter},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)

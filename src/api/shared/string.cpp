@@ -19,6 +19,8 @@
 #include "string.h"
 #include "plat.h"
 
+#include <api/interfaces/manager.h>
+
 #include <map>
 #include <random>
 #include <chrono>
@@ -267,4 +269,30 @@ std::vector<std::string> TokenizeCommand(std::string cmd)
         tokens.push_back(tmp_token);
 
     return tokens;
+}
+
+void PrintTextTable(LogType type, std::string category, TextTable table)
+{
+    auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
+
+    std::vector<std::string> rows = explode(TableToString(table), "\n");
+    for (int i = 0; i < rows.size() - 1; i++)
+        logger->Log(type, category, rows[i] + "\n");
+}
+
+std::string& rtrim(std::string& s, const char* t)
+{
+    s.erase(s.find_last_not_of(t) + 1);
+    return s;
+}
+
+std::string& ltrim(std::string& s, const char* t)
+{
+    s.erase(0, s.find_first_not_of(t));
+    return s;
+}
+
+std::string& trim(std::string& s, const char* t)
+{
+    return ltrim(rtrim(s, t), t);
 }

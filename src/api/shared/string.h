@@ -23,6 +23,10 @@
 #include <vector>
 #include <set>
 
+#include "texttable.h"
+
+#include <api/interfaces/manager.h>
+
 constexpr uint32_t val_32_const = 0x811c9dc5;
 constexpr uint32_t prime_32_const = 0x1000193;
 constexpr uint64_t val_64_const = 0xcbf29ce484222325;
@@ -54,5 +58,8 @@ std::string ClearTerminalColors(std::string str);
 std::string GetTerminalStringColor(std::string plugin_name);
 std::vector<std::string> TokenizeCommand(std::string cmd);
 
+std::string& trim(std::string& s, const char* t = " \t\n\r\f\v");
+
+void PrintTextTable(LogType type, std::string category, TextTable table);
 
 #endif
