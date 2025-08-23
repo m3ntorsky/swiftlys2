@@ -16,24 +16,36 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef _api_interfaces_interfaces_h
-#define _api_interfaces_interfaces_h
+#ifndef src_api_memory_allocator_h
+#define src_api_memory_allocator_h
 
 #include <string>
-#include <api/dll/extern.h>
+#include <map>
+#include <cstdint>
+#include <vector>
 
-#include <api/extensions/extension.h>
-#include <api/extensions/manager.h>
-#include <api/extensions/plugin.h>
+class IMemoryAllocator
+{
+public:
+    virtual void* Alloc(uint64_t size) = 0;
+    virtual void* TrackedAlloc(uint64_t size, std::string identifier, std::string details) = 0;
 
-#include <api/monitor/logger/logger.h>
-#include <api/monitor/resmon/monitor.h>
+    virtual void Free(void* ptr) = 0;
 
-SW_API void* GetPureInterface(const char* iface_name);
+    virtual void* Resize(void* ptr, uint64_t newSize) = 0;
 
-#define EXTENSIONMANAGER_INTERFACE_VERSION                  "ExtensionManagerAPI"
-#define LOGGER_INTERFACE_VERSION                            "LoggerAPI"
-#define RESOURCE_MONITOR_INTERFACE_VERSION                  "ResourceMonitorAPI"
-#define MEMORYALLOCATOR_INTERFACE_VERSION                   "MemoryAllocatorAPI"
+    virtual uint64_t GetSize(void* ptr) = 0;
+
+    virtual uint64_t GetTotalAllocated() = 0;
+    virtual uint64_t GetAllocatedByTrackedIdentifier(std::string identifier) = 0;
+
+    virtual std::vector<std::pair<std::string, void*>> GetTrackedAllocations(std::string identifier) = 0;
+
+    virtual bool IsPointerValid(void* ptr) = 0;
+
+    virtual void CopyMemory(void* dest, const void* src, uint64_t size) = 0;
+
+    virtual std::map<void*, uint64_t> GetAllocations() = 0;
+};
 
 #endif
