@@ -31,6 +31,7 @@ target("swiftlys2")
         sdk_path.."/entity2/entityidentity.cpp",
         sdk_path.."/tier1/convar.cpp",
         sdk_path.."/entity2/entitykeyvalues.cpp",
+        sdk_path.."/public/tier0/memoverride.cpp",
     }, { cxxflags = "-rdynamic -g1" })
 
     --[[ -------------------------------- Include Section -------------------------------- ]]
@@ -110,11 +111,12 @@ target("swiftlys2")
     add_cxxflags("cl::/Oy-")
     add_cxxflags("cl::/Z7")
     add_cxxflags("cl::/TP")
-    add_cxxflags("cl::/MT")
     add_cxxflags("cl::/W3")
     add_cxxflags("cl::/Z7")
     add_cxxflags("cl::/EHsc")
     add_cxxflags("cl::/IGNORE:4101,4267,4244,4005,4003,4530,D9025")
+
+    set_runtimes("MT")
 
     --[[ -------------------------------- HL2SDK Mandatory Libs Section -------------------------------- ]]
 
@@ -226,7 +228,6 @@ target("swiftlys2")
             "uuid",
             "odbc32",
             "odbccp32",
-            "msvcrt",
             "dbghelp",
             sdk_path.."/lib/public/win64/steam_api64.lib",
         })
