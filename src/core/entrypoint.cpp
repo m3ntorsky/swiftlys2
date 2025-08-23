@@ -33,6 +33,11 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
     if (extManager) extManager->Load();
 
+    ILogger* logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
+    if (logger) {
+        logger->Debug("Core", std::format("SwiftlyS2 Core loaded using bridge kind: {}.\n", static_cast<int>(kind)));
+    }
+
     return true;
 }
 

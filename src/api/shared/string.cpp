@@ -104,11 +104,21 @@ std::string TerminalProcessColor(std::string str)
     return str;
 }
 
+std::string ClearTerminalColors(std::string str)
+{
+    for (auto it = terminalColors.begin(); it != terminalColors.end(); ++it)
+    {
+        str = replace(str, it->first, "");
+        str = replace(str, str_tolower(it->first), "");
+    }
+    return str;
+}
+
 std::string GetTerminalStringColor(std::string plugin_name)
 {
     auto hash = hash_64_fnv1a_const(plugin_name.c_str());
     uint64_t steps = (hash % terminalPrefixColors.size());
-    return terminalColors[terminalPrefixColors[steps]];
+    return terminalPrefixColors[steps];
 }
 
 std::string replace(std::string str, const std::string from, const std::string to)
@@ -223,7 +233,7 @@ std::string get_uuid()
         (genrand() & 0xFFFF), (genrand() & 0xFFFF), (genrand() & 0xFFFF));
 }
 
-std::vector<std::string> TokenizeCommand(std::string& cmd)
+std::vector<std::string> TokenizeCommand(std::string cmd)
 {
     std::vector<std::string> tokens;
     std::string tmp_token;

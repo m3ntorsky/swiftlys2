@@ -20,12 +20,15 @@
 #include <core/entrypoint.h>
 
 #include <core/extensions/manager.h>
+#include <monitor/logger/logger.h>
 #include <map>
 
 ExtensionManager g_ExtensionsManager;
+Logger g_Logger;
 
 static std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
+    {LOGGER_INTERFACE_VERSION, &g_Logger}
 };
 
 SW_API void* GetPureInterface(const char* iface_name)
