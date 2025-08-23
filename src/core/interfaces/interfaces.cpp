@@ -21,14 +21,17 @@
 
 #include <core/extensions/manager.h>
 #include <monitor/logger/logger.h>
+#include <monitor/resmon/monitor.h>
 #include <map>
 
 ExtensionManager g_ExtensionsManager;
 Logger g_Logger;
+ResourceMonitor g_ResourceMonitor;
 
 static std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
-    {LOGGER_INTERFACE_VERSION, &g_Logger}
+    {LOGGER_INTERFACE_VERSION, &g_Logger},
+    {RESOURCE_MONITOR_INTERFACE_VERSION, &g_ResourceMonitor},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)

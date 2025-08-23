@@ -16,43 +16,27 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#include "entrypoint.h"
-#include "bridge/metamod.h"
-#include <api/interfaces/manager.h>
-#include "console/colors.h"
+#ifndef src_api_monitor_resmon_monitor_h
+#define src_api_monitor_resmon_monitor_h
 
-SwiftlyCore g_SwiftlyCore;
-InterfacesManager g_ifaceService;
+#include <string>
+#include <map>
+#include <vector>
 
-bool SwiftlyCore::Load(BridgeKind_t kind)
+class IResourceMonitor
 {
-    m_iKind = kind;
+public:
+    virtual bool Enable() = 0;
+    virtual bool Disable() = 0;
+    virtual bool IsEnabled() = 0;
 
-    SetupConsoleColors();
+    virtual void RecordTime(std::string plugin_name, std::string key, double time) = 0;
 
-    IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
-    if (extManager) extManager->Load();
+    virtual void StartRecording(std::string plugin_name, std::string key) = 0;
+    virtual void StopRecording(std::string plugin_name, std::string key) = 0;
 
-    return true;
-}
+    virtual std::map<std::string, std::map<std::string, std::vector<double>>> GetPerformanceData() = 0;
+    virtual std::string GetPerformanceAsJSON(std::string plugin_name = "") = 0;
+};
 
-bool SwiftlyCore::Unload()
-{
-    return true;
-}
-
-void SwiftlyCore::OnMapLoad(std::string map_name)
-{
-
-}
-
-void SwiftlyCore::OnMapUnload()
-{
-
-}
-
-void* SwiftlyCore::GetInterface(const std::string& iface_name)
-{
-    if (m_iKind == BridgeKind_t::Metamod) return g_MMPluginBridge.GetInterface(iface_name);
-    else return nullptr;
-}
+#endif

@@ -27,24 +27,24 @@
 class Logger : public ILogger
 {
 public:
-    void Log(LogType type, const std::string& message) override;
-    void Log(LogType type, const std::string& category, const std::string& message) override;
+    virtual void Log(LogType type, const std::string& message) override;
+    virtual void Log(LogType type, const std::string& category, const std::string& message) override;
 
-    void Info(const std::string& message) override;
-    void Warning(const std::string& message) override;
-    void Error(const std::string& message) override;
-    void Debug(const std::string& message) override;
+    virtual void Info(const std::string& message) override;
+    virtual void Warning(const std::string& message) override;
+    virtual void Error(const std::string& message) override;
+    virtual void Debug(const std::string& message) override;
 
-    void Info(const std::string& category, const std::string& message) override;
-    void Warning(const std::string& category, const std::string& message) override;
-    void Error(const std::string& category, const std::string& message) override;
-    void Debug(const std::string& category, const std::string& message) override;
+    virtual void Info(const std::string& category, const std::string& message) override;
+    virtual void Warning(const std::string& category, const std::string& message) override;
+    virtual void Error(const std::string& category, const std::string& message) override;
+    virtual void Debug(const std::string& category, const std::string& message) override;
 
-    void SetLogFile(LogType type, const std::string& path) override;
-    void ShouldOutputToFile(LogType type, bool enabled) override;
+    virtual void SetLogFile(LogType type, const std::string& path) override;
+    virtual void ShouldOutputToFile(LogType type, bool enabled) override;
 
-    void ShouldColorCategoryInConsole(const std::string& category, bool enabled) override;
-    void ShouldOutputToConsole(LogType type, bool enabled) override;
+    virtual void ShouldColorCategoryInConsole(const std::string& category, bool enabled) override;
+    virtual void ShouldOutputToConsole(LogType type, bool enabled) override;
 private:
     bool m_bShouldOutputToConsole[4] = { true, true, true, true };
     bool m_bShouldOutputToFile[4] = { false, false, false, false };

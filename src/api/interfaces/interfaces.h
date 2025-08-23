@@ -27,10 +27,12 @@
 #include <api/extensions/plugin.h>
 
 #include <api/monitor/logger/logger.h>
+#include <api/monitor/resmon/monitor.h>
 
 SW_API void* GetPureInterface(const char* iface_name);
 
 #define EXTENSIONMANAGER_INTERFACE_VERSION                  "ExtensionManagerAPI"
 #define LOGGER_INTERFACE_VERSION                            "LoggerAPI"
+#define RESOURCE_MONITOR_INTERFACE_VERSION                  "ResourceMonitorAPI"
 
 #endif

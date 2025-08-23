@@ -24,6 +24,8 @@
 #include <format>
 #include <api/shared/files.h>
 
+#include <api/interfaces/manager.h>
+
 #define PREFIX "[Swiftly]"
 
 std::string GetLogTypeString(LogType type)
@@ -45,6 +47,10 @@ std::string GetLogTypeString(LogType type)
 
 void Logger::Log(LogType type, const std::string& message)
 {
+    // Add resmon to this function
+    IResourceMonitor* resmon = g_ifaceService.FetchInterface<IResourceMonitor>(RESOURCE_MONITOR_INTERFACE_VERSION);
+    if (resmon && resmon->IsEnabled()) resmon->StartRecording("core", "Logger::Log");
+
     std::string final_output = std::format("{} [{}{}{}] {}", PREFIX, GetTerminalStringColor(GetLogTypeString(type)), GetLogTypeString(type), "{DEFAULT}", message);
     std::string color_processed = TerminalProcessColor(final_output);
     std::string without_colors = ClearTerminalColors(final_output);
@@ -55,6 +61,8 @@ void Logger::Log(LogType type, const std::string& message)
     {
         Files::Append(m_sLogFilePaths[(int)type], without_colors);
     }
+
+    if (resmon && resmon->IsEnabled()) resmon->StopRecording("core", "Logger::Log");
 }
 
 void Logger::Log(LogType type, const std::string& category, const std::string& message)
