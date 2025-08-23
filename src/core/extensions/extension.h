@@ -16,30 +16,39 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_api_extensions_plugin_h
-#define src_api_extensions_plugin_h
+#ifndef src_core_extensions_extension_h
+#define src_core_extensions_extension_h
 
-#include <string>
-#include <api/dll/extern.h>
+#include <api/extensions/extension.h>
 
-class IExtensionPlugin
+class Extension : public IExtension
 {
 public:
-    virtual bool Load(std::string& error) = 0;
-    virtual bool Unload(std::string& error) = 0;
-    virtual void AllExtensionsLoaded() = 0;
-    virtual void AllPluginsLoaded() = 0;
+    Extension(std::string name) : m_sName(name) {};
+    ~Extension() = default;
 
-    virtual bool OnPluginLoad(std::string pluginName, std::string& error) = 0;
-    virtual bool OnPluginUnload(std::string pluginName, std::string& error) = 0;
+    virtual std::string& GetName() override;
+    virtual bool IsLoaded() override;
 
-    virtual const char* GetAuthor() = 0;
-    virtual const char* GetName() = 0;
-    virtual const char* GetVersion() = 0;
-    virtual const char* GetWebsite() = 0;
+    virtual void* GetExportedFunction(std::string& name) override;
+
+    virtual std::string& GetError() override;
+    virtual bool& HasError() override;
+
+    virtual bool Load() override;
+    virtual bool Unload() override;
+
+    virtual IExtensionPlugin* GetAPI() override;
+private:
+    std::string m_sPath;
+
+    std::string m_sName;
+    bool m_bLoaded = false;
+
+    IExtensionPlugin* m_pAPI = nullptr;
+
+    std::string m_sError;
+    bool m_bHasError = false;
 };
-
-#define EXT_EXPOSE(var) \
-    SW_API IExtensionPlugin *GetExtensionClass() { return &var; }
 
 #endif

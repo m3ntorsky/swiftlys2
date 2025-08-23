@@ -35,7 +35,7 @@ std::string GeneratePath(std::string path)
 std::string GetRelativePath(std::string path)
 {
     std::string str = std::format("{}{}csgo{}", Plat_GetGameDirectory(), WIN_LINUX("\\", "/"), WIN_LINUX("\\", "/"));
-    return path.replace(path.find(str), str.size(), "");
+    return replace(path, str, "");
 }
 
 std::string Files::Read(std::string path)

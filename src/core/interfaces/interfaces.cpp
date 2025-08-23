@@ -28,8 +28,8 @@ static std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
 };
 
-SW_API void* GetPureInterface(const std::string& iface_name)
+SW_API void* GetPureInterface(const char* iface_name)
 {
-    if (g_Interfaces.find(iface_name) == g_Interfaces.end()) return g_SwiftlyCore.GetInterface(iface_name);
+    if (!g_Interfaces.contains(iface_name)) return g_SwiftlyCore.GetInterface(iface_name);
     return g_Interfaces.at(iface_name);
 }

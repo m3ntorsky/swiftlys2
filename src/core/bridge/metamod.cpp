@@ -25,6 +25,7 @@ PLUGIN_EXPOSE(SwiftlyMMBridge, g_MMPluginBridge);
 bool SwiftlyMMBridge::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, bool late)
 {
     PLUGIN_SAVEVARS();
+    g_SMAPI->AddListener(this, this);
 
     return g_SwiftlyCore.Load(BridgeKind_t::Metamod);
 }

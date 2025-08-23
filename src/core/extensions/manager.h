@@ -20,9 +20,11 @@
 #define src_core_extensions_manager_h
 
 #include <api/extensions/manager.h>
+#include <map>
 
 class ExtensionManager : public IExtensionManager
 {
+public:
     virtual void Load() override;
     virtual void Unload() override;
 
@@ -33,7 +35,10 @@ class ExtensionManager : public IExtensionManager
 
     virtual IExtension* GetExtension(std::string& extension_name) override;
 
-    virtual std::vector<IExtension*> GetExtensionsList() override;
+    virtual std::vector<IExtension*>& GetExtensionsList() override;
+private:
+    std::vector<IExtension*> m_vExtensions;
+    std::map<std::string, IExtension*> m_mExtensionsMap;
 };
 
 #endif

@@ -34,7 +34,7 @@ public:
     virtual std::string& GetError() = 0;
     virtual bool& HasError() = 0;
 
-    virtual bool Load(bool late) = 0;
+    virtual bool Load() = 0;
     virtual bool Unload() = 0;
 
     virtual IExtensionPlugin* GetAPI() = 0;

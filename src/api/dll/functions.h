@@ -16,30 +16,19 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_api_extensions_plugin_h
-#define src_api_extensions_plugin_h
+#ifndef src_api_dll_functions_h
+#define src_api_dll_functions_h
 
 #include <string>
-#include <api/dll/extern.h>
 
-class IExtensionPlugin
+void* GetBinaryFunction(std::string binary_relative_path, const std::string& function_name, std::string& error);
+void* GetBinaryFunction(std::string binary_relative_path, const std::string& function_name);
+void ClearBinaryCache(std::string binary_relative_path);
+
+template<typename T>
+T GetBinaryFunctionAs(std::string binary_relative_path, const std::string& function_name)
 {
-public:
-    virtual bool Load(std::string& error) = 0;
-    virtual bool Unload(std::string& error) = 0;
-    virtual void AllExtensionsLoaded() = 0;
-    virtual void AllPluginsLoaded() = 0;
-
-    virtual bool OnPluginLoad(std::string pluginName, std::string& error) = 0;
-    virtual bool OnPluginUnload(std::string pluginName, std::string& error) = 0;
-
-    virtual const char* GetAuthor() = 0;
-    virtual const char* GetName() = 0;
-    virtual const char* GetVersion() = 0;
-    virtual const char* GetWebsite() = 0;
-};
-
-#define EXT_EXPOSE(var) \
-    SW_API IExtensionPlugin *GetExtensionClass() { return &var; }
+    return reinterpret_cast<T>(GetBinaryFunction(binary_relative_path, function_name));
+}
 
 #endif

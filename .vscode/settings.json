@@ -72,6 +72,16 @@
         "filesystem": "cpp",
         "forward_list": "cpp",
         "iomanip": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "array": "cpp",
+        "condition_variable": "cpp",
+        "csetjmp": "cpp",
+        "deque": "cpp",
+        "fstream": "cpp",
+        "numeric": "cpp",
+        "queue": "cpp",
+        "random": "cpp",
+        "regex": "cpp",
+        "stack": "cpp"
     }
 }

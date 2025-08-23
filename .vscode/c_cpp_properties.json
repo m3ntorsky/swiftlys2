@@ -14,7 +14,8 @@
                 "_DEBUG",
                 "UNICODE",
                 "_UNICODE",
-                "META_IS_SOURCE2"
+                "META_IS_SOURCE2",
+                "BUILDING_CORE"
             ],
             "cStandard": "c23",
             "cppStandard": "c++23",

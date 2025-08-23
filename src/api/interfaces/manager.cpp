@@ -17,9 +17,20 @@
  ************************************************************************************************/
 
 #include "manager.h"
+#include <api/shared/plat.h>
+#include <api/dll/functions.h>
 
+typedef void* (*GetInterfaceFn)(const char*);
 
 void* InterfacesManager::GetPureInterface(const std::string& interface_name)
 {
-    return ::GetPureInterface(interface_name);
+#ifdef BUILDING_CORE
+    return ::GetPureInterface(interface_name.c_str());
+#else
+    void* getiface_func = GetBinaryFunction(WIN_LINUX("addons\\swiftly\\bin\\win64\\swiftly.dll", "addons/swiftly/bin/linuxsteamrt64/swiftly.so"), "GetPureInterface");
+    if (!getiface_func) return nullptr;
+
+    GetInterfaceFn GetInterface = reinterpret_cast<GetInterfaceFn>(getiface_func);
+    return GetInterface(interface_name.c_str());
+#endif
 }

@@ -16,30 +16,37 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_api_extensions_plugin_h
-#define src_api_extensions_plugin_h
+#include "colors.h"
 
-#include <string>
-#include <api/dll/extern.h>
+#if _WIN32
+#include <Windows.h>
+#include <stdio.h>
 
-class IExtensionPlugin
+FILE _ioccc[] = { *stdin, *stdout, *stderr };
+extern "C" FILE* __cdecl __iob_func(void)
 {
-public:
-    virtual bool Load(std::string& error) = 0;
-    virtual bool Unload(std::string& error) = 0;
-    virtual void AllExtensionsLoaded() = 0;
-    virtual void AllPluginsLoaded() = 0;
+    return _ioccc;
+}
 
-    virtual bool OnPluginLoad(std::string pluginName, std::string& error) = 0;
-    virtual bool OnPluginUnload(std::string pluginName, std::string& error) = 0;
+void SetupConsoleColors() {
+    auto hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    virtual const char* GetAuthor() = 0;
-    virtual const char* GetName() = 0;
-    virtual const char* GetVersion() = 0;
-    virtual const char* GetWebsite() = 0;
-};
+    if (hOut != INVALID_HANDLE_VALUE) {
+        DWORD dwMode = 0;
+        if (GetConsoleMode(hOut, &dwMode)) {
+            dwMode |= ENABLE_PROCESSED_OUTPUT | ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+            SetConsoleMode(hOut, dwMode);
+        }
 
-#define EXT_EXPOSE(var) \
-    SW_API IExtensionPlugin *GetExtensionClass() { return &var; }
+        FILE* fp;
+
+        if (freopen_s(&fp, "CONOUT$", "w", stdout) == 0)
+            setvbuf(stdout, NULL, _IONBF, 0);
+    }
+}
+
+#else
+
+void SetupConsoleColors() {}
 
 #endif

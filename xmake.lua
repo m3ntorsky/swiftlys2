@@ -198,7 +198,7 @@ target("swiftlys2")
         "SWIFTLY_VERSION=\""..SWIFTLY_VERSION.."\"",
         "ASMJIT_STATIC",
         "HAVE_STRUCT_TIMESPEC",
-        "LUA_USE_READLINE",
+        "BUILDING_CORE",
     })
 
     --[[ -------------------------------- Libraries Section -------------------------------- ]]

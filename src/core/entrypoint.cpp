@@ -19,6 +19,7 @@
 #include "entrypoint.h"
 #include "bridge/metamod.h"
 #include <api/interfaces/manager.h>
+#include "console/colors.h"
 
 SwiftlyCore g_SwiftlyCore;
 InterfacesManager g_ifaceService;
@@ -26,6 +27,8 @@ InterfacesManager g_ifaceService;
 bool SwiftlyCore::Load(BridgeKind_t kind)
 {
     m_iKind = kind;
+
+    SetupConsoleColors();
 
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
     if (extManager) extManager->Load();

@@ -37,7 +37,7 @@ public:
 
     virtual IExtension* GetExtension(std::string& extension_name) = 0;
 
-    virtual std::vector<IExtension*> GetExtensionsList() = 0;
+    virtual std::vector<IExtension*>& GetExtensionsList() = 0;
 };
 
 #endif

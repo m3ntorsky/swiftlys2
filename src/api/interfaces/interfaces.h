@@ -26,7 +26,7 @@
 #include <api/extensions/manager.h>
 #include <api/extensions/plugin.h>
 
-SW_API void* GetPureInterface(const std::string& iface_name);
+SW_API void* GetPureInterface(const char* iface_name);
 
 #define EXTENSIONMANAGER_INTERFACE_VERSION                  "ExtensionManagerAPI"
 

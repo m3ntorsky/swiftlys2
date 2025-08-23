@@ -19,11 +19,11 @@
 #ifndef src_api_dll_extern_h
 #define src_api_dll_extern_h
 
-#if !defined SW_API
+#ifndef SW_API
 #ifdef _WIN32
-#define SW_API __declspec(dllexport)
+#define SW_API extern "C" __declspec(dllexport)
 #else
-#define SW_API __attribute__ ((visibility("default")))	
+#define SW_API extern "C" __attribute__ ((visibility("default")))	
 #endif
 #endif
 
