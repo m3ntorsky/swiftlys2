@@ -16,36 +16,19 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_api_memory_allocator_h
-#define src_api_memory_allocator_h
+#ifndef src_api_memory_gamedata_patches_h
+#define src_api_memory_gamedata_patches_h
 
 #include <string>
-#include <map>
-#include <cstdint>
-#include <vector>
 
-class IMemoryAllocator
+class IGameDataPatches
 {
 public:
-    virtual void* Alloc(uint64_t size) = 0;
-    virtual void* TrackedAlloc(uint64_t size, std::string identifier, std::string details) = 0;
+    virtual void Load(const std::string& game) = 0;
+    virtual bool Exists(const std::string& name) = 0;
 
-    virtual void Free(void* ptr) = 0;
-
-    virtual void* Resize(void* ptr, uint64_t newSize) = 0;
-
-    virtual uint64_t GetSize(void* ptr) = 0;
-
-    virtual uint64_t GetTotalAllocated() = 0;
-    virtual uint64_t GetAllocatedByTrackedIdentifier(std::string identifier) = 0;
-
-    virtual std::vector<std::pair<std::string, void*>> GetTrackedAllocations(std::string identifier) = 0;
-
-    virtual bool IsPointerValid(void* ptr) = 0;
-
-    virtual void Copy(void* dest, void* src, uint64_t size) = 0;
-
-    virtual std::map<void*, uint64_t> GetAllocations() = 0;
+    virtual void Apply(const std::string& name) = 0;
+    virtual void Revert(const std::string& name) = 0;
 };
 
 #endif

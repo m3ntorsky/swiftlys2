@@ -259,6 +259,7 @@ target("swiftlys2")
 
     add_files("vendor/asmjit/src/asmjit/**.cpp")
     add_files("vendor/asmtk/src/asmtk/**.cpp")
+    add_files("vendor/dynlibutils/module.cpp")
 
     if is_plat("windows") then
         add_links({

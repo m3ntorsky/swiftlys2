@@ -29,13 +29,27 @@ InterfacesManager g_ifaceService;
 bool SwiftlyCore::Load(BridgeKind_t kind)
 {
     m_iKind = kind;
-
     SetupConsoleColors();
+
+    auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
+
+    if (GetCurrentGame() == "unknown") {
+        auto engine = g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER);
+
+        if (engine) logger->Error("Entrypoint", std::format("Unknown game detected. App ID: {}", engine->GetAppID()));
+        else logger->Error("Entrypoint", "Unknown game detected. No engine interface available.");
+
+        return false;
+    }
 
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
     if (extManager) extManager->Load();
 
-    auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+
+    gamedata->GetOffsets()->Load(GetCurrentGame());
+    gamedata->GetSignatures()->Load(GetCurrentGame());
+    gamedata->GetPatches()->Load(GetCurrentGame());
 
     return true;
 }
@@ -64,4 +78,15 @@ void* SwiftlyCore::GetInterface(const std::string& iface_name)
 void SwiftlyCore::SendConsoleMessage(const std::string& message)
 {
     if (m_iKind == BridgeKind_t::Metamod) g_MMPluginBridge.SendConsoleMessage(message);
+}
+
+std::string SwiftlyCore::GetCurrentGame()
+{
+    auto engine = g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER);
+    if (!engine) return "unknown";
+
+    switch (engine->GetAppID()) {
+    case 730: return "cs2";
+    default: return "unknown";
+    }
 }

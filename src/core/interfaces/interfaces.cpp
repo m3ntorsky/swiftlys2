@@ -23,6 +23,7 @@
 
 #include <memory/allocator/allocator.h>
 #include <memory/hooks/manager.h>
+#include <memory/gamedata/manager.h>
 
 #include <monitor/logger/logger.h>
 #include <monitor/resmon/monitor.h>
@@ -38,6 +39,7 @@ MemoryAllocator g_MemoryAllocator;
 CallStack g_CallStack;
 CrashReporter g_CrashReporter;
 HooksManager g_HooksManager;
+GameDataManager g_GameDataManager;
 
 static std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
@@ -47,6 +49,7 @@ static std::map<std::string, void*> g_Interfaces = {
     {CALLSTACK_INTERFACE_VERSION, &g_CallStack},
     {CRASHREPORTER_INTERFACE_VERSION, &g_CrashReporter},
     {HOOKSMANAGER_INTERFACE_VERSION, &g_HooksManager},
+    {GAMEDATA_INTERFACE_VERSION, &g_GameDataManager},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)

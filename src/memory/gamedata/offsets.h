@@ -16,36 +16,22 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_api_memory_allocator_h
-#define src_api_memory_allocator_h
+#ifndef src_memory_gamedata_offsets_h
+#define src_memory_gamedata_offsets_h
+
+#include <api/memory/gamedata/offsets.h>
 
 #include <string>
 #include <map>
-#include <cstdint>
-#include <vector>
 
-class IMemoryAllocator
+class GameDataOffsets : public IGameDataOffsets
 {
 public:
-    virtual void* Alloc(uint64_t size) = 0;
-    virtual void* TrackedAlloc(uint64_t size, std::string identifier, std::string details) = 0;
-
-    virtual void Free(void* ptr) = 0;
-
-    virtual void* Resize(void* ptr, uint64_t newSize) = 0;
-
-    virtual uint64_t GetSize(void* ptr) = 0;
-
-    virtual uint64_t GetTotalAllocated() = 0;
-    virtual uint64_t GetAllocatedByTrackedIdentifier(std::string identifier) = 0;
-
-    virtual std::vector<std::pair<std::string, void*>> GetTrackedAllocations(std::string identifier) = 0;
-
-    virtual bool IsPointerValid(void* ptr) = 0;
-
-    virtual void Copy(void* dest, void* src, uint64_t size) = 0;
-
-    virtual std::map<void*, uint64_t> GetAllocations() = 0;
+    virtual void Load(const std::string& game) override;
+    virtual bool Exists(const std::string& name) override;
+    virtual int Fetch(const std::string& name) override;
+private:
+    std::map<std::string, int> m_mOffsets;
 };
 
 #endif

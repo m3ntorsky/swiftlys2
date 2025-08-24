@@ -133,7 +133,7 @@ bool MemoryAllocator::IsPointerValid(void* ptr)
     return allocations.contains(ptr);
 }
 
-void MemoryAllocator::CopyMemory(void* dest, const void* src, uint64_t size)
+void MemoryAllocator::Copy(void* dest, void* src, uint64_t size)
 {
     memcpy(dest, src, size);
 }

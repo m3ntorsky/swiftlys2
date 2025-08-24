@@ -31,6 +31,10 @@
 #include <api/monitor/callstack/callstack.h>
 #include <api/monitor/crashreporter/crashreporter.h>
 
+#include <api/memory/allocator/allocator.h>
+#include <api/memory/gamedata/manager.h>
+#include <api/memory/hooks/manager.h>
+
 SW_API void* GetPureInterface(const char* iface_name);
 
 #define EXTENSIONMANAGER_INTERFACE_VERSION                  "ExtensionManagerAPI"
@@ -40,5 +44,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define CALLSTACK_INTERFACE_VERSION                         "CallStackAPI"
 #define CRASHREPORTER_INTERFACE_VERSION                     "CrashReporterAPI"
 #define HOOKSMANAGER_INTERFACE_VERSION                      "HooksManagerAPI"
+#define GAMEDATA_INTERFACE_VERSION                          "GameDataAPI"
 
 #endif

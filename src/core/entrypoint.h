@@ -40,6 +40,8 @@ public:
 
     void* GetInterface(const std::string& iface_name);
     void SendConsoleMessage(const std::string& message);
+
+    std::string GetCurrentGame();
 };
 
 extern SwiftlyCore g_SwiftlyCore;

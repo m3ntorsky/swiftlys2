@@ -11,3 +11,6 @@
 [submodule "vendor/asmtk"]
 	path = vendor/asmtk
 	url = https://github.com/asmjit/asmtk
+[submodule "vendor/dynlibutils"]
+	path = vendor/dynlibutils
+	url = https://github.com/komashchenko/DynLibUtils

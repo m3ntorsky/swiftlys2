@@ -39,7 +39,7 @@ public:
 
     virtual bool IsPointerValid(void* ptr) override;
 
-    virtual void CopyMemory(void* dest, const void* src, uint64_t size) override;
+    virtual void Copy(void* dest, void* src, uint64_t size) override;
 
     virtual std::map<void*, uint64_t> GetAllocations() override;
 

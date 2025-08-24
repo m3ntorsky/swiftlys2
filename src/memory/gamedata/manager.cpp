@@ -16,17 +16,38 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_utils_macros_plat_h
-#define src_utils_macros_plat_h
+#include "manager.h"
 
-#include <cstdint>
+#include "offsets.h"
+#include "patches.h"
+#include "signatures.h"
 
-#ifdef _WIN32
-#define WIN_LINUX(win,linux) win
-#else
-#define WIN_LINUX(win,linux) linux
-#endif
+#include <public/eiface.h>
+#include <api/interfaces/manager.h>
 
-void Plat_WriteMemory(void* pPatchAddress, uint8_t* pPatch, int iPatchSize);
+IGameDataOffsets* GameDataManager::GetOffsets()
+{
+    if (m_pOffsets == nullptr) m_pOffsets = new GameDataOffsets();
+    return m_pOffsets;
+}
 
-#endif
+IGameDataSignatures* GameDataManager::GetSignatures()
+{
+    if (m_pSignatures == nullptr) m_pSignatures = new GameDataSignatures();
+    return m_pSignatures;
+}
+
+IGameDataPatches* GameDataManager::GetPatches()
+{
+    if (m_pPatches == nullptr) m_pPatches = new GameDataPatches();
+    return m_pPatches;
+}
+
+DynLibUtils::CModule DetermineModuleByLibrary(std::string library) {
+    if (library == "server")
+        return DynLibUtils::CModule(g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL));
+    else if (library == "engine2")
+        return DynLibUtils::CModule(g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER));
+    else
+        return DynLibUtils::CModule(library);
+}
