@@ -67,7 +67,7 @@ void Logger::Log(LogType type, const std::string& message)
 
 void Logger::Log(LogType type, const std::string& category, const std::string& message)
 {
-    if (m_bShouldOutputToConsole[(int)type] && m_sColoredCategories.contains(category))
+    if (m_bShouldOutputToConsole[(int)type] && !m_sNonColoredCategories.contains(category))
         Log(type, std::format("[{}{}{}] {}", GetTerminalStringColor(category), category, "{DEFAULT}", message));
     else
         Log(type, std::format("[{}] {}", category, message));
@@ -125,10 +125,10 @@ void Logger::ShouldOutputToFile(LogType type, bool enabled)
 
 void Logger::ShouldColorCategoryInConsole(const std::string& category, bool enabled)
 {
-    if (enabled)
-        m_sColoredCategories.insert(category);
+    if (!enabled)
+        m_sNonColoredCategories.insert(category);
     else
-        m_sColoredCategories.erase(category);
+        m_sNonColoredCategories.erase(category);
 }
 
 void Logger::ShouldOutputToConsole(LogType type, bool enabled)

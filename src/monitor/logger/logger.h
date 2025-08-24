@@ -49,7 +49,7 @@ private:
     bool m_bShouldOutputToConsole[4] = { true, true, true, true };
     bool m_bShouldOutputToFile[4] = { false, false, false, false };
     std::string m_sLogFilePaths[4] = { "", "", "", "" };
-    std::set<std::string> m_sColoredCategories;
+    std::set<std::string> m_sNonColoredCategories;
 };
 
 #endif
