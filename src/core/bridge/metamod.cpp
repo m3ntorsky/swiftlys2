@@ -58,6 +58,11 @@ void* SwiftlyMMBridge::GetInterface(const std::string& interface_name)
         return g_SMAPI->VInterfaceMatch(g_SMAPI->GetEngineFactory(), interface_name.c_str(), 0);
 }
 
+void SwiftlyMMBridge::SendConsoleMessage(const std::string& message)
+{
+    g_SMAPI->ConPrint(message.c_str());
+}
+
 const char* SwiftlyMMBridge::GetAuthor()
 {
     return "Swiftly Development Team";

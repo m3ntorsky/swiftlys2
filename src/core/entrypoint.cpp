@@ -21,6 +21,8 @@
 #include <api/interfaces/manager.h>
 #include "console/colors.h"
 
+#include <api/memory/hooks/manager.h>
+
 SwiftlyCore g_SwiftlyCore;
 InterfacesManager g_ifaceService;
 
@@ -32,6 +34,8 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
 
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
     if (extManager) extManager->Load();
+
+    auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
 
     return true;
 }
@@ -55,4 +59,9 @@ void* SwiftlyCore::GetInterface(const std::string& iface_name)
 {
     if (m_iKind == BridgeKind_t::Metamod) return g_MMPluginBridge.GetInterface(iface_name);
     else return nullptr;
+}
+
+void SwiftlyCore::SendConsoleMessage(const std::string& message)
+{
+    if (m_iKind == BridgeKind_t::Metamod) g_MMPluginBridge.SendConsoleMessage(message);
 }

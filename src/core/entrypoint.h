@@ -39,6 +39,7 @@ public:
     void OnMapUnload();
 
     void* GetInterface(const std::string& iface_name);
+    void SendConsoleMessage(const std::string& message);
 };
 
 extern SwiftlyCore g_SwiftlyCore;

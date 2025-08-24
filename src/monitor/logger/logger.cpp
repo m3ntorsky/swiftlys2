@@ -19,7 +19,7 @@
 #include "logger.h"
 
 #include <api/shared/string.h>
-#include <tier0/dbg.h>
+#include <core/entrypoint.h>
 
 #include <format>
 #include <api/shared/files.h>
@@ -55,7 +55,7 @@ void Logger::Log(LogType type, const std::string& message)
     std::string color_processed = TerminalProcessColor(final_output);
     std::string without_colors = ClearTerminalColors(final_output);
 
-    if (m_bShouldOutputToConsole[(int)type]) Msg(color_processed.c_str());
+    if (m_bShouldOutputToConsole[(int)type]) g_SwiftlyCore.SendConsoleMessage(color_processed);
 
     if (m_bShouldOutputToFile[(int)type] && !m_sLogFilePaths[(int)type].empty())
     {

@@ -35,6 +35,8 @@ public:
 
     void* GetInterface(const std::string& interface_name);
 
+    void SendConsoleMessage(const std::string& message);
+
 public:
     const char* GetAuthor();
     const char* GetName();
