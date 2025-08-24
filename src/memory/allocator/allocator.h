@@ -19,7 +19,7 @@
 #ifndef src_memory_allocator_allocator_h
 #define src_memory_allocator_allocator_h
 
-#include <api/memory/allocator.h>
+#include <api/memory/allocator/allocator.h>
 
 class MemoryAllocator : public IMemoryAllocator
 {

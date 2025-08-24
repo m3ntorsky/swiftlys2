@@ -6,9 +6,11 @@
                 "${workspaceFolder}/build/proto/**",
                 "${workspaceFolder}/src/**",
                 "${workspaceFolder}/vendor/**",
+                "${workspaceFolder}/vendor/dynohook/win64/include/**",
                 "${workspaceFolder}/vendor/hl2sdk-cs2/**",
                 "${workspaceFolder}/vendor/metamod/**",
-                "${workspaceFolder}/src"
+                "${workspaceFolder}/src",
+                "${workspaceFolder}/src/api/memory/hooks/dynohook"
             ],
             "defines": [
                 "_DEBUG",

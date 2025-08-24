@@ -39,5 +39,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define MEMORYALLOCATOR_INTERFACE_VERSION                   "MemoryAllocatorAPI"
 #define CALLSTACK_INTERFACE_VERSION                         "CallStackAPI"
 #define CRASHREPORTER_INTERFACE_VERSION                     "CrashReporterAPI"
+#define HOOKSMANAGER_INTERFACE_VERSION                      "HooksManagerAPI"
 
 #endif
