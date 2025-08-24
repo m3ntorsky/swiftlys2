@@ -31,18 +31,13 @@ extern "C" FILE* __cdecl __iob_func(void)
 void SetupConsoleColors() {
     auto hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 
-    if (hOut != INVALID_HANDLE_VALUE) {
-        DWORD dwMode = 0;
-        if (GetConsoleMode(hOut, &dwMode)) {
-            dwMode |= ENABLE_PROCESSED_OUTPUT | ENABLE_VIRTUAL_TERMINAL_PROCESSING;
-            SetConsoleMode(hOut, dwMode);
-        }
+    if (hOut == INVALID_HANDLE_VALUE) return;
 
-        FILE* fp;
+    DWORD dwMode = 0;
+    if (!GetConsoleMode(hOut, &dwMode)) return;
 
-        if (freopen_s(&fp, "CONOUT$", "w", stdout) == 0)
-            setvbuf(stdout, NULL, _IONBF, 0);
-    }
+    dwMode |= ENABLE_VIRTUAL_TERMINAL_PROCESSING;
+    SetConsoleMode(hOut, dwMode);
 }
 
 #else
