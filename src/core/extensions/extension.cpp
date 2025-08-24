@@ -104,6 +104,8 @@ bool Extension::Unload()
         if (m_sError != "") m_bHasError = true;
     }
 
+    ClearBinaryCache(m_sPath);
+
     m_bLoaded = false;
     return true;
 }
