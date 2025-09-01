@@ -1,4 +1,5 @@
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace SwiftlyS2.Shared.Natives.Structs;
@@ -26,10 +27,22 @@ public struct Vector {
     Z = other.Z;
   }
 
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public float Length() => (float)Math.Sqrt(X * X + Y * Y + Z * Z);
+
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public float LengthSquared() => X * X + Y * Y + Z * Z;
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public float Distance(Vector other) => (this - other).Length();
+
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public float DistanceSquared(Vector other) => (this - other).LengthSquared();
+
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public Vector Cross(Vector other) => new(Y * other.Z - Z * other.Y, Z * other.X - X * other.Z, X * other.Y - Y * other.X);
 
 
@@ -41,15 +54,33 @@ public struct Vector {
 
   public static Vector One => new(1, 1, 1);
 
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
   public static Vector operator +(Vector a, Vector b) => new(a.X + b.X, a.Y + b.Y, a.Z + b.Z);
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public static Vector operator -(Vector a, Vector b) => new(a.X - b.X, a.Y - b.Y, a.Z - b.Z);
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public static Vector operator *(Vector a, Vector b) => new(a.X * b.X, a.Y * b.Y, a.Z * b.Z);
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public static Vector operator /(Vector a, Vector b) => new(a.X / b.X, a.Y / b.Y, a.Z / b.Z);
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public static Vector operator *(Vector a, float b) => new(a.X * b, a.Y * b, a.Z * b);
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public static Vector operator /(Vector a, float b) => new(a.X / b, a.Y / b, a.Z / b);
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public static Vector operator -(Vector a) => new(-a.X, -a.Y, -a.Z);
 
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public static bool operator ==(Vector a, Vector b) => a.X == b.X && a.Y == b.Y && a.Z == b.Z;
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public static bool operator !=(Vector a, Vector b) => a.X != b.X || a.Y != b.Y || a.Z != b.Z;
 
 }
