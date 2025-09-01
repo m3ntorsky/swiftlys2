@@ -5,6 +5,7 @@ devtool/temp/
 build/
 out/
 bin/
+obj/
 
 # Dependencies
 external/*
