@@ -9,6 +9,7 @@ internal class NativeBinding
   {
     unsafe
     {
+
       try {
         var pNativeTables = (NativeFunction*)nativeTable;
 
@@ -20,6 +21,7 @@ internal class NativeBinding
           var className = names[0];
           var funcName = names[1];
 
+          // TODO: might need nested namespace support.
           var nativeNameSpace = "SwiftlyS2.Natives.Tables." + className;
 
           var nativeClass = Type.GetType(nativeNameSpace)!;
