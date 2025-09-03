@@ -14,7 +14,7 @@ public interface IPlugin {
 
   public void InjectSharedServices(IServiceProvider sharedProvider);
 
-  public void Load(IServiceProvider coreProvider);
+  public void Load(ISwiftlyCore core);
 
   public void Unload();
 

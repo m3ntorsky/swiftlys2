@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Plugins;
 
 namespace TestPlugin;
@@ -19,8 +20,12 @@ public class TestPlugin : BasePlugin {
     // Inject plugin-specific services here if needed
   }
 
-  public override void Load(IServiceProvider coreProvider) {
-    Console.WriteLine("TestPlugin loaded");
+  public override void Load(ISwiftlyCore core) {
+
+    core.CustomEvents.OnTick += () => {
+      Console.WriteLine("TestPlugin on tick");
+    };
+
   }
 
   public override void Unload() {

@@ -16,7 +16,7 @@ public abstract class BasePlugin : IPlugin {
 
   public virtual void InjectSharedServices(IServiceProvider sharedProvider) {}
 
-  public abstract void Load(IServiceProvider coreProvider);
+  public abstract void Load(ISwiftlyCore core);
 
   public abstract void Unload();
 }

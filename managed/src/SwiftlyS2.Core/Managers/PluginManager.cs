@@ -1,6 +1,9 @@
 using McMaster.NETCore.Plugins;
 using Microsoft.Extensions.DependencyInjection;
+using SwiftlyS2.Core.Events;
 using SwiftlyS2.Core.Plugin;
+using SwiftlyS2.Core.Plugins;
+using SwiftlyS2.Shared.CustomEvents;
 using SwiftlyS2.Shared.Plugins;
 
 
@@ -9,19 +12,12 @@ namespace SwiftlyS2.Core.Managers;
 internal class PluginManager {
   private IServiceProvider _Provider { get; init; }
 
-  private IServiceProvider _PluginScopedProvider { get; init; }
-
   private List<PluginContext> _Plugins { get; } = new();
 
   public PluginManager(
     IServiceProvider provider
   ) {
     _Provider = provider;
-    ServiceCollection pluginScopedServices = new();
-
-    // TODO: Add scoped service here
-
-    _PluginScopedProvider = pluginScopedServices.BuildServiceProvider();
   }
 
   public void LoadPlugins()
@@ -33,7 +29,7 @@ internal class PluginManager {
     ServiceCollection sharedServices = new();
 
     foreach (var pluginPath in pluginPaths) {
-      var context = LoadPlugin(_Provider, _PluginScopedProvider.CreateScope(), pluginPath);
+      var context = LoadPlugin(pluginPath);
       context.Plugin.ConfigureSharedServices(sharedServices);
       _Plugins.Add(context);
     }
@@ -44,8 +40,6 @@ internal class PluginManager {
   }
 
   public PluginContext LoadPlugin(
-    IServiceProvider coreProvider,
-    IServiceScope pluginScope,
     string dllPath) {
 
     var loader = PluginLoader.CreateFromAssemblyFile(
@@ -63,11 +57,13 @@ internal class PluginManager {
 
     var plugin = (BasePlugin)Activator.CreateInstance(pluginType)!;
 
-    plugin.Load(coreProvider);
+    var core = new SwiftlyCore(plugin.PluginId, _Provider);
+    
+    plugin.Load(core);
 
     PluginContext context = new()
     {
-      PluginScope = pluginScope,
+      Core = core,
       PluginPath = dllPath,
       Plugin = plugin,
       Loader = loader
@@ -86,7 +82,7 @@ internal class PluginManager {
 
     ServiceCollection sharedServices = new();
 
-    var newContext = LoadPlugin(_Provider, _PluginScopedProvider.CreateScope(), path);
+    var newContext = LoadPlugin(path);
 
     _Plugins.Add(newContext);
     _Plugins.ForEach(context => context.Plugin.ConfigureSharedServices(sharedServices));

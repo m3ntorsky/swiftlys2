@@ -1,12 +1,13 @@
 using McMaster.NETCore.Plugins;
 using Microsoft.Extensions.DependencyInjection;
+using SwiftlyS2.Core.Plugins;
 using SwiftlyS2.Shared.Plugins;
 
 namespace SwiftlyS2.Core.Plugin;
 
 internal class PluginContext : IDisposable {
 
-  public required IServiceScope PluginScope { get; init; }
+  public required SwiftlyCore Core { get; init; }
 
   public required string PluginPath { get; init; }
   public required BasePlugin Plugin { get; init; }
@@ -30,7 +31,7 @@ internal class PluginContext : IDisposable {
   public void Dispose() {
     Plugin.Unload();
     Loader.Dispose();
-    PluginScope.Dispose();
+    Core.Dispose();
     _Watcher?.Dispose();
   }
 
