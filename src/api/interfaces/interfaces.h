@@ -35,6 +35,8 @@
 #include <api/memory/gamedata/manager.h>
 #include <api/memory/hooks/manager.h>
 
+#include <api/server/configuration/configuration.h>
+
 SW_API void* GetPureInterface(const char* iface_name);
 
 #define EXTENSIONMANAGER_INTERFACE_VERSION                  "ExtensionManagerAPI"
@@ -45,5 +47,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define CRASHREPORTER_INTERFACE_VERSION                     "CrashReporterAPI"
 #define HOOKSMANAGER_INTERFACE_VERSION                      "HooksManagerAPI"
 #define GAMEDATA_INTERFACE_VERSION                          "GameDataAPI"
+#define CONFIGURATION_INTERFACE_VERSION                     "ConfigurationAPI"
 
 #endif

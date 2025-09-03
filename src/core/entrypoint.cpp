@@ -42,14 +42,39 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
         return false;
     }
 
-    IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
-    if (extManager) extManager->Load();
+    auto configuration = g_ifaceService.FetchInterface<IConfiguration>(CONFIGURATION_INTERFACE_VERSION);
+    if (configuration) {
+        configuration->InitializeExamples();
+
+        if (!configuration->Load()) {
+            logger->Error("Entrypoint", "Couldn't load the core configuration.");
+            return false;
+        }
+    }
+
+
+    if (auto pb = std::get_if<bool>(&configuration->GetValue("Logger.SaveCoreMessagesToFile"))) {
+        logger->ShouldOutputToFile(LogType::INFO, *pb);
+        logger->ShouldOutputToFile(LogType::WARNING, *pb);
+        logger->ShouldOutputToFile(LogType::ERR, *pb);
+        logger->ShouldOutputToFile(LogType::DEBUG, *pb);
+
+        if (*pb) {
+            logger->SetLogFile(LogType::INFO, "addons/swiftly/logs/core/info.log");
+            logger->SetLogFile(LogType::WARNING, "addons/swiftly/logs/core/warning.log");
+            logger->SetLogFile(LogType::ERR, "addons/swiftly/logs/core/error.log");
+            logger->SetLogFile(LogType::DEBUG, "addons/swiftly/logs/core/debug.log");
+        }
+    }
 
     auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
     gamedata->GetOffsets()->Load(GetCurrentGame());
     gamedata->GetSignatures()->Load(GetCurrentGame());
     gamedata->GetPatches()->Load(GetCurrentGame());
+
+    IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
+    if (extManager) extManager->Load();
 
     return true;
 }

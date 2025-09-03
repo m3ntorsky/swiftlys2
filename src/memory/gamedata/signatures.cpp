@@ -24,6 +24,7 @@
 #include <api/shared/files.h>
 #include <api/shared/plat.h>
 #include <api/shared/string.h>
+#include <api/shared/jsonc.h>
 
 #include <nlohmann/json.hpp>
 
@@ -37,11 +38,11 @@ void GameDataSignatures::Load(const std::string& game)
 
     auto files = Files::FetchFileNames("addons/swiftly/gamedata/" + game);
     for (auto file : files) {
-        if (!ends_with(file, "signatures.json")) continue;
+        if (!ends_with(file, "signatures.jsonc")) continue;
 
         try {
             json signaturesJson = json::object();
-            signaturesJson = json::parse(Files::Read(file));
+            signaturesJson = parseJsonc(Files::Read(file));
 
             for (auto& [key, value] : signaturesJson.items()) {
                 if (!value.contains("lib")) {

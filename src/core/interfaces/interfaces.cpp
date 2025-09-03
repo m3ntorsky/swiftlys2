@@ -30,6 +30,8 @@
 #include <monitor/callstack/callstack.h>
 #include <monitor/crashreporter/crashreporter.h>
 
+#include <server/configuration/configuration.h>
+
 #include <map>
 
 ExtensionManager g_ExtensionsManager;
@@ -40,6 +42,7 @@ CallStack g_CallStack;
 CrashReporter g_CrashReporter;
 HooksManager g_HooksManager;
 GameDataManager g_GameDataManager;
+Configuration g_Configuration;
 
 static std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
@@ -50,6 +53,7 @@ static std::map<std::string, void*> g_Interfaces = {
     {CRASHREPORTER_INTERFACE_VERSION, &g_CrashReporter},
     {HOOKSMANAGER_INTERFACE_VERSION, &g_HooksManager},
     {GAMEDATA_INTERFACE_VERSION, &g_GameDataManager},
+    {CONFIGURATION_INTERFACE_VERSION, &g_Configuration},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)

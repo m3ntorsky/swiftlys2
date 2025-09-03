@@ -1,0 +1,92 @@
+{
+    "CS2ServerGuidelines": "https://blog.counter-strike.net/index.php/server_guidelines/",
+    "CommandPrefixes": [
+        "!"
+    ],
+    "CommandSilentPrefixes": [
+        "/"
+    ],
+    "ConsoleFiltering": true,
+    "FollowCS2ServerGuidelines": true,
+    "Language": "en",
+    "Logging": {
+        "Enabled": true,
+        "Mode": "daily",
+        "SaveCoreMessages": false
+    },
+    "Menu": {
+        "AvailableInputModes": [
+            "chat",
+            "button"
+        ],
+        "AvailableKinds": [
+            "screen",
+            "center"
+        ],
+        "Buttons": {
+            "Exit": {
+                "Button": "tab",
+                "Option": false
+            },
+            "Scroll": "shift",
+            "Use": "e"
+        },
+        "InputMode": "button",
+        "Kind": "screen",
+        "KindSettings": {
+            "Center": {
+                "ItemsPerPage": 7
+            },
+            "Screen": {
+                "DrawBackground": true,
+                "ItemsPerPage": 9,
+                "Mode": "compatibility",
+                "Modes": {
+                    "Compatibility": {
+                        "Font": "Sans Serif",
+                        "FontSize": 35,
+                        "X": 0.14,
+                        "Y": 0.68
+                    },
+                    "Normal": {
+                        "Font": "Sans Serif",
+                        "FontSize": 35,
+                        "X": 0.0,
+                        "Y": 0.68
+                    }
+                }
+            }
+        },
+        "NavigationPrefix": "➤",
+        "Sound": {
+            "Exit": {
+                "Name": "Vote.Failed",
+                "Volume": 0.75
+            },
+            "Scroll": {
+                "Name": "UI.ContractType",
+                "Volume": 0.75
+            },
+            "Use": {
+                "Name": "Vote.Cast.Yes",
+                "Volume": 0.75
+            }
+        }
+    },
+    "PatchesToPerform": [],
+    "SteamAuth": {
+        "AvailableModes": [
+            "flexible",
+            "strict"
+        ],
+        "Mode": "flexible"
+    },
+    "UsePlayerLanguage": true,
+    "VGUI": {
+        "TextBackground": {
+            "PaddingX": 0.1,
+            "PaddingY": 0.1,
+            "TextSize": 35
+        }
+    }
+}

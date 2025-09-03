@@ -23,6 +23,7 @@
 #include <api/shared/files.h>
 #include <api/shared/string.h>
 #include <api/shared/plat.h>
+#include <api/shared/jsonc.h>
 
 #include <nlohmann/json.hpp>
 
@@ -37,11 +38,11 @@ void GameDataPatches::Load(const std::string& game)
 
     auto files = Files::FetchFileNames("addons/swiftly/gamedata/" + game);
     for (auto file : files) {
-        if (!ends_with(file, "patches.json")) continue;
+        if (!ends_with(file, "patches.jsonc")) continue;
 
         try {
             json patchesJson = json::object();
-            patchesJson = json::parse(Files::Read(file));
+            patchesJson = parseJsonc(Files::Read(file));
 
             for (auto& [key, value] : patchesJson.items()) {
                 if (!value.contains("signature")) {
