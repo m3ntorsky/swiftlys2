@@ -42,9 +42,6 @@ target("swiftlys2")
 
         "build/proto",
 
-        "src/api/memory/hooks/dynohook",
-        "src/api/memory/hooks",
-
         sdk_path,
         sdk_path.."/thirdparty/protobuf-3.21.8/src",
         sdk_path.."/public",
@@ -257,21 +254,7 @@ target("swiftlys2")
 
     --[[ -------------------------------- Vendor Section -------------------------------- ]]
 
-    add_files("vendor/asmjit/src/asmjit/**.cpp")
-    add_files("vendor/asmtk/src/asmtk/**.cpp")
     add_files("vendor/dynlibutils/module.cpp")
-
-    if is_plat("windows") then
-        add_links({
-            "vendor/dynohook/win64/dynohook.lib",
-            "vendor/dynohook/win64/Zydis.lib",
-        })
-    else
-        add_links({
-            "vendor/dynohook/linuxsteamrt64/libdynohook.a",
-            "vendor/dynohook/linuxsteamrt64/libZydis.a",
-        })
-    end
     
     add_includedirs({
         "vendor/asmjit/src",
