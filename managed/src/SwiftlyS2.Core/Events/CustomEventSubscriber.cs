@@ -16,9 +16,10 @@ internal class CustomEventSubscriber : ICustomEventSubscriber, IDisposable {
   public CustomEventSubscriber(string id, IServiceProvider provider) {
     Id = id;
     _ProfileService = provider.GetRequiredService<ProfileService>();
+    CustomEventPublisher.Subscribe(this);
   }
 
-  public event CustomEventListeners.OnTick OnTick;
+  public event CustomEventListeners.OnTick? OnTick;
 
 
   public void Dispose() {

@@ -8,6 +8,6 @@ public interface ICustomEventSubscriber {
   /// <summary>
   /// Called when game has processed a tick. Won't be called if the server is in hibernation.
   /// </summary>
-  public event CustomEventListeners.OnTick OnTick;
+  public event CustomEventListeners.OnTick? OnTick;
 
 }
