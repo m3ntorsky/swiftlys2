@@ -30,6 +30,7 @@ internal class PluginManager {
 
     foreach (var pluginPath in pluginPaths) {
       var context = LoadPlugin(pluginPath);
+      if (context == null) continue;
       context.Plugin.ConfigureSharedServices(sharedServices);
       _Plugins.Add(context);
     }
@@ -39,7 +40,7 @@ internal class PluginManager {
     _Plugins.ForEach(context => context.Plugin.InjectSharedServices(sharedProvider));
   }
 
-  public PluginContext LoadPlugin(
+  public PluginContext? LoadPlugin(
     string dllPath) {
 
     var loader = PluginLoader.CreateFromAssemblyFile(
@@ -59,7 +60,13 @@ internal class PluginManager {
 
     var core = new SwiftlyCore(plugin.PluginId, _Provider);
     
-    plugin.Load(core);
+    try {
+      plugin.Load(core);
+    } catch (Exception e) {
+      // TODO: properly log this
+      // Console.WriteLine($"Error loading plugin {dllPath}: {e.Message}");
+      return null;
+    };
 
     PluginContext context = new()
     {
@@ -84,7 +91,10 @@ internal class PluginManager {
 
     var newContext = LoadPlugin(path);
 
-    _Plugins.Add(newContext);
+    if (newContext != null) {
+      _Plugins.Add(newContext);
+    };
+
     _Plugins.ForEach(context => context.Plugin.ConfigureSharedServices(sharedServices));
     var sharedProvider = sharedServices.BuildServiceProvider();
     _Plugins.ForEach(context => context.Plugin.InjectSharedServices(sharedProvider));
