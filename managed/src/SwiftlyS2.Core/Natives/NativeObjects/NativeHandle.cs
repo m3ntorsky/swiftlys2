@@ -5,7 +5,7 @@ using SwiftlyS2.Shared.Natives.Structs;
 
 namespace SwiftlyS2.Core.Natives.NativeObjects;
 
-internal abstract class NativeHandle : INativeHandle {
+internal class NativeHandle : INativeHandle {
   protected nint _Handle { get; set; }
 
   public bool IsValid { get => _Handle != nint.Zero; }
