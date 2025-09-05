@@ -16,33 +16,35 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_engine_entities_entitysystem_h
-#define src_engine_entities_entitysystem_h
+#ifndef src_api_engine_entities_entitysystem_h
+#define src_api_engine_entities_entitysystem_h
 
-#include <api/engine/entities/entitysystem.h>
+#include <variant>
 
-class CEntSystem : public IEntitySystem
+#include <public/entity2/entitysystem.h>
+
+using InputType = std::variant<int32_t, uint32_t, int64_t, uint64_t, float, double, bool, const char*>;
+
+class IEntitySystem
 {
 public:
-    virtual void Initialize() override;
-    virtual void Shutdown() override;
+    virtual void Initialize() = 0;
+    virtual void Shutdown() = 0;
 
-    virtual void Spawn(void* pEntity, void* pKeyValues) override;
-    virtual void Despawn(void* pEntity) override;
+    virtual void Spawn(void* pEntity, void* pKeyValues) = 0;
+    virtual void Despawn(void* pEntity) = 0;
 
-    virtual void* CreateEntityByName(const char* name) override;
+    virtual void* CreateEntityByName(const char* name) = 0;
 
-    virtual void AcceptInput(void* pEntity, const char* input, void* activator, void* caller, InputType value, int outputID) override;
-    virtual void AddEntityIOEvent(void* pEntity, const char* input, void* activator, void* caller, InputType value, float delay) override;
+    virtual void AcceptInput(void* pEntity, const char* input, void* activator, void* caller, InputType value, int outputID) = 0;
+    virtual void AddEntityIOEvent(void* pEntity, const char* input, void* activator, void* caller, InputType value, float delay) = 0;
 
-    virtual bool IsValidEntity(void* pEntity) override;
+    virtual bool IsValidEntity(void* pEntity) = 0;
 
-    virtual void AddEntityListener(IEntityListener* listener) override;
-    virtual void RemoveEntityListener(IEntityListener* listener) override;
+    virtual void AddEntityListener(IEntityListener* listener) = 0;
+    virtual void RemoveEntityListener(IEntityListener* listener) = 0;
 
-    virtual void* GetGameRules() override;
+    virtual void* GetGameRules() = 0;
 };
-
-extern void* g_pGameRules;
 
 #endif

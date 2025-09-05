@@ -16,33 +16,42 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_engine_entities_entitysystem_h
-#define src_engine_entities_entitysystem_h
+#include "listener.h"
+#include "entitysystem.h"
 
-#include <api/engine/entities/entitysystem.h>
+#include <api/interfaces/manager.h>
+#include <api/shared/plat.h>
 
-class CEntSystem : public IEntitySystem
+CEntityListener g_entityListener;
+
+void CEntityListener::OnEntitySpawned(CEntityInstance* pEntity)
 {
-public:
-    virtual void Initialize() override;
-    virtual void Shutdown() override;
+}
 
-    virtual void Spawn(void* pEntity, void* pKeyValues) override;
-    virtual void Despawn(void* pEntity) override;
+void CEntityListener::OnEntityParentChanged(CEntityInstance* pEntity, CEntityInstance* pNewParent)
+{
+}
 
-    virtual void* CreateEntityByName(const char* name) override;
+void EntityAllowHammerID(CEntityInstance* pEntity)
+{
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    Plat_WriteMemory((*(void***)pEntity)[gamedata->GetOffsets()->Fetch("GetHammerUniqueID")], (uint8_t*)"\xB0\x01", 2);
+}
 
-    virtual void AcceptInput(void* pEntity, const char* input, void* activator, void* caller, InputType value, int outputID) override;
-    virtual void AddEntityIOEvent(void* pEntity, const char* input, void* activator, void* caller, InputType value, float delay) override;
+bool bDone = false;
 
-    virtual bool IsValidEntity(void* pEntity) override;
+void CEntityListener::OnEntityCreated(CEntityInstance* pEntity)
+{
+    if (!bDone) {
+        bDone = true;
+        EntityAllowHammerID(pEntity);
+    }
 
-    virtual void AddEntityListener(IEntityListener* listener) override;
-    virtual void RemoveEntityListener(IEntityListener* listener) override;
+    // @todo: Schema
+    // if (std::string(pEntity->GetClassname()) == "cs_gamerules")
+        // g_pGameRules = schema::GetProp<void*>(pEntity, "CCSGameRulesProxy", "m_pGameRules");
+}
 
-    virtual void* GetGameRules() override;
-};
-
-extern void* g_pGameRules;
-
-#endif
+void CEntityListener::OnEntityDeleted(CEntityInstance* pEntity)
+{
+}

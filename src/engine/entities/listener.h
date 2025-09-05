@@ -16,33 +16,19 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_engine_entities_entitysystem_h
-#define src_engine_entities_entitysystem_h
+#ifndef src_engine_entities_listener_h
+#define src_engine_entities_listener_h
 
-#include <api/engine/entities/entitysystem.h>
+#include <public/entity2/entitysystem.h>
 
-class CEntSystem : public IEntitySystem
+class CEntityListener : public IEntityListener
 {
-public:
-    virtual void Initialize() override;
-    virtual void Shutdown() override;
-
-    virtual void Spawn(void* pEntity, void* pKeyValues) override;
-    virtual void Despawn(void* pEntity) override;
-
-    virtual void* CreateEntityByName(const char* name) override;
-
-    virtual void AcceptInput(void* pEntity, const char* input, void* activator, void* caller, InputType value, int outputID) override;
-    virtual void AddEntityIOEvent(void* pEntity, const char* input, void* activator, void* caller, InputType value, float delay) override;
-
-    virtual bool IsValidEntity(void* pEntity) override;
-
-    virtual void AddEntityListener(IEntityListener* listener) override;
-    virtual void RemoveEntityListener(IEntityListener* listener) override;
-
-    virtual void* GetGameRules() override;
+    void OnEntityCreated(CEntityInstance* pEntity) override;
+    void OnEntitySpawned(CEntityInstance* pEntity) override;
+    void OnEntityDeleted(CEntityInstance* pEntity) override;
+    void OnEntityParentChanged(CEntityInstance* pEntity, CEntityInstance* pNewParent) override;
 };
 
-extern void* g_pGameRules;
+extern CEntityListener g_entityListener;
 
 #endif

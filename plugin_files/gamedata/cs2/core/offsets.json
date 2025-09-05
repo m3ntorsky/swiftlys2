@@ -3,19 +3,19 @@
         "windows": 88,
         "linux": 80
     },
-    "CBasePlayerPawn_CommitSuicide": {
+    "CBasePlayerPawn::CommitSuicide": {
         "windows": 404,
         "linux": 404
     },
-    "CCSPlayerController_ChangeTeam": {
+    "CCSPlayerController::ChangeTeam": {
         "windows": 106,
         "linux": 105
     },
-    "CBaseEntity_Teleport": {
+    "CBaseEntity::Teleport": {
         "windows": 165,
         "linux": 164
     },
-    "CCSPlayerController_Respawn": {
+    "CCSPlayerController::Respawn": {
         "windows": 275,
         "linux": 277
     },
@@ -23,11 +23,11 @@
         "windows": 189,
         "linux": 188
     },
-    "CCSPlayer_WeaponServices_DropWeapon": {
+    "CCSPlayer_WeaponServices::DropWeapon": {
         "windows": 23,
         "linux": 24
     },
-    "CGameSceneNode_GetSkeletonInstance": {
+    "CGameSceneNode::GetSkeletonInstance": {
         "windows": 8,
         "linux": 8
     },
@@ -35,11 +35,11 @@
         "windows": 115,
         "linux": 114
     },
-    "CEntityResourceManifest_AddResource": {
+    "CEntityResourceManifest::AddResource": {
         "windows": 2,
         "linux": 0
     },
-    "CSoundSystem_TakeGuid": {
+    "CSoundSystem::TakeGuid": {
         "windows": 72,
         "linux": 71
     }
