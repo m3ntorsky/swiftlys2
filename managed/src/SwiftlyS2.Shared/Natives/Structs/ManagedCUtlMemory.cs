@@ -1,4 +1,4 @@
-namespace SwiftlyS2.Shared.Natives.Structs;
+namespace SwiftlyS2.Shared.Natives;
 
 public class ManagedCUtlMemory<T> where T : unmanaged {
   private CUtlMemory<T> _memory;

@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace SwiftlyS2.Shared.Natives.Structs;
+namespace SwiftlyS2.Shared.Natives;
 
 [StructLayout(LayoutKind.Sequential, Size = 16)]
 public struct CUtlMemory<T> {

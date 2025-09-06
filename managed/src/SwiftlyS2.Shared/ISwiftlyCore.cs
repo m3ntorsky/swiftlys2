@@ -1,4 +1,4 @@
-using SwiftlyS2.Shared.CustomEvents;
+using SwiftlyS2.Shared.Events;
 
 namespace SwiftlyS2.Shared;
 
@@ -11,7 +11,7 @@ public interface ISwiftlyCore {
   /// <summary>
   /// Custom event subscriber.
   /// </summary>
-  public ICustomEventSubscriber CustomEvents { get; }
+  public IEventSubscriber CustomEvents { get; }
 
 
 }

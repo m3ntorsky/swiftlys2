@@ -2,7 +2,7 @@ using McMaster.NETCore.Plugins;
 using Microsoft.Extensions.DependencyInjection;
 using SwiftlyS2.Core.Events;
 using SwiftlyS2.Core.Plugins;
-using SwiftlyS2.Shared.CustomEvents;
+using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.Plugins;
 
 

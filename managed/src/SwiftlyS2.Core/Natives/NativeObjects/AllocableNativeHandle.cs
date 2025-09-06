@@ -1,4 +1,4 @@
-namespace SwiftlyS2.Core.Natives.NativeObjects;
+namespace SwiftlyS2.Core.Natives;
 
 using System.Runtime.InteropServices;
 using Microsoft.Win32.SafeHandles;

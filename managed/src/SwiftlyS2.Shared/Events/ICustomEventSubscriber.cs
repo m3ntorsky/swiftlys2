@@ -1,13 +1,13 @@
-namespace SwiftlyS2.Shared.CustomEvents;
+namespace SwiftlyS2.Shared.Events;
 
 /// <summary>
 /// Custom event subscriber interface.
 /// </summary>
-public interface ICustomEventSubscriber {
+public interface IEventSubscriber {
 
   /// <summary>
   /// Called when game has processed a tick. Won't be called if the server is in hibernation.
   /// </summary>
-  public event CustomEventListeners.OnTick? OnTick;
+  public event EventListeners.OnTick? OnTick;
 
 }

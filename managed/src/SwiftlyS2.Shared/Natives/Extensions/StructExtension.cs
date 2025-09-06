@@ -1,9 +1,9 @@
-using SwiftlyS2.Shared.Natives.Structs;
+using SwiftlyS2.Shared.Natives;
 
-namespace SwiftlyS2.Shared.Natives.Extensions;
+namespace SwiftlyS2.Shared.Natives;
 
 public static class StructExtension {
-  public static Vector ToSdkVector(this System.Numerics.Vector3 from) {
+  public static Vector ToGameVector(this System.Numerics.Vector3 from) {
     return new Vector(from.X, from.Y, from.Z);
   }
 }

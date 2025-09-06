@@ -1,5 +1,4 @@
 using Microsoft.Extensions.DependencyInjection;
-using SwiftlyS2.Shared.Plugins;
 
 namespace SwiftlyS2.Shared.Plugins;
 
