@@ -10,8 +10,6 @@ public interface ISchemaField : INativeHandle {
 
   public int FieldOffset { get; set; }
 
-  public int FieldSize { get; set; }
-
   public void FieldNetworkStateChanged();
 
 }

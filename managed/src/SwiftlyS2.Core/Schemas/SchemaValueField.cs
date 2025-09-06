@@ -14,7 +14,7 @@ internal class SchemaValueField<T> : SchemaField, ISchemaValueField<T> where T :
     }
   }
 
-  public SchemaValueField(nint handle, bool isField, bool isNetworked, int offset, int size, ulong hash) : base(handle, isField, isNetworked, offset, size, hash) {
+  public SchemaValueField(nint handle, bool isField, bool isNetworked, ulong hash) : base(handle, isField, isNetworked, hash) {
   }
 
   public ref T Raw { get => ref _Handle.AsRef<T>(FieldOffset); }

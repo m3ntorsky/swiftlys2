@@ -11,10 +11,10 @@ internal class SchemaClass : SchemaField {
     }
   }
 
-  public SchemaClass(nint handle) : base(handle, false, false, 0, 0, 0) {
+  public SchemaClass(nint handle) : base(handle, false, false, 0) {
   }
 
-  public SchemaClass(nint handle, bool isField, bool isNetworked, int offset, int size, ulong hash) : base(handle, isField, isNetworked, offset, size, hash) {
+  public SchemaClass(nint handle, bool isField, bool isNetworked, ulong hash) : base(handle, isField, isNetworked, hash) {
   }
 
 }
