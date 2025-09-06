@@ -8,8 +8,6 @@ public interface ISchemaField : INativeHandle {
 
   public bool FieldIsNetworked { get; set; }
 
-  public int FieldOffset { get; set; }
-
   public void FieldNetworkStateChanged();
 
 }

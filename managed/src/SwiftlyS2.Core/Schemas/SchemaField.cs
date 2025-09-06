@@ -9,15 +9,17 @@ internal abstract class SchemaField : NativeHandle, ISchemaField {
 
   public bool FieldIsNetworked { get; set; }
 
-  public int FieldSize { get; set; }
-
   public int FieldOffset { get; set; }
 
   private ulong _hash { get; set; } = 0;
 
-  public abstract void FieldNetworkStateChanged();
+  public void FieldNetworkStateChanged() {
+    if (FieldIsNetworked) {
+      // TODO: implement
+    }
+  }
 
-  public SchemaField(nint handle, bool isField, bool isNetworked, ulong hash) : base(handle) {
+  public SchemaField(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle) {
     IsField = isField;
     FieldIsNetworked = isNetworked;
     FieldOffset = GetOffset(hash);

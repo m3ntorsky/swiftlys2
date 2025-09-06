@@ -3,18 +3,12 @@ using SwiftlyS2.Shared.Schemas;
 
 namespace SwiftlyS2.Core.Schemas;
 
-internal class SchemaClass : SchemaField {
+internal abstract class SchemaClass : SchemaField, ISchemaClass {
 
-  public override void FieldNetworkStateChanged() {
-    if (FieldIsNetworked) {
-      // TODO: implement
-    }
+  public SchemaClass(nint handle) : base(handle, 0, false, false) {
   }
 
-  public SchemaClass(nint handle) : base(handle, false, false, 0) {
-  }
-
-  public SchemaClass(nint handle, bool isField, bool isNetworked, ulong hash) : base(handle, isField, isNetworked, hash) {
+  public SchemaClass(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
   }
 
 }

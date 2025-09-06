@@ -7,14 +7,7 @@ namespace SwiftlyS2.Core.Schemas;
 
 internal class SchemaValueField<T> : SchemaField, ISchemaValueField<T> where T : unmanaged {
 
-  public override void FieldNetworkStateChanged() {
-    if (FieldIsNetworked)
-    {
-      // TODO: implement
-    }
-  }
-
-  public SchemaValueField(nint handle, bool isField, bool isNetworked, ulong hash) : base(handle, isField, isNetworked, hash) {
+  public SchemaValueField(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
   }
 
   public ref T Raw { get => ref _Handle.AsRef<T>(FieldOffset); }
