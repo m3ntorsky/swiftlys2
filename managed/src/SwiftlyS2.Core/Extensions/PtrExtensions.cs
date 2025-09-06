@@ -2,7 +2,7 @@ using System.Runtime.CompilerServices;
 
 namespace SwiftlyS2.Core.Extensions;
 
-public static class PtrExtensions {
+internal static class PtrExtensions {
 
   public static T Read<T>(this nint ptr) where T : unmanaged {
     unsafe { return Unsafe.Read<T>((void*)ptr); }
