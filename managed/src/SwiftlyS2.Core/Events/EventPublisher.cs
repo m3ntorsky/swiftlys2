@@ -1,17 +1,17 @@
 using System.Runtime.InteropServices;
-using SwiftlyS2.Shared.CustomEvents;
+using SwiftlyS2.Shared.Events;
 
 namespace SwiftlyS2.Core.Events;
 
-internal static class CustomEventPublisher {
+internal static class EventPublisher {
 
-  private static List<CustomEventSubscriber> _subscribers = new();
+  private static List<EventSubscriber> _subscribers = new();
 
-  public static void Subscribe(CustomEventSubscriber subscriber) {
+  public static void Subscribe(EventSubscriber subscriber) {
     _subscribers.Add(subscriber);
   }
 
-  public static void Unsubscribe(CustomEventSubscriber subscriber) {
+  public static void Unsubscribe(EventSubscriber subscriber) {
     _subscribers.Remove(subscriber);
   }
 

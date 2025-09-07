@@ -2,7 +2,7 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SwiftlyS2.Shared.Natives.Structs;
+namespace SwiftlyS2.Shared.Natives;
 
 /// <summary>
 /// 3-Dimensional vector for source 2.

@@ -1,7 +1,6 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using SwiftlyS2.Shared.Natives;
-using SwiftlyS2.Shared.Natives.Structs;
 
 namespace SwiftlyS2.Core.Natives.NativeObjects;
 
