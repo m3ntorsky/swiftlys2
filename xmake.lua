@@ -320,6 +320,7 @@ target("swiftlys2")
 
     set_languages("cxx23")
     set_optimize("fastest")
+    set_symbols("debug")
     set_strip("none")
 
     after_build(function(target)

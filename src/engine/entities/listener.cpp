@@ -22,6 +22,8 @@
 #include <api/interfaces/manager.h>
 #include <api/shared/plat.h>
 
+#define CCSGameRulesProxy_m_pGameRules 0x242D3ADB925C1F40
+
 CEntityListener g_entityListener;
 
 void CEntityListener::OnEntitySpawned(CEntityInstance* pEntity)
@@ -47,9 +49,10 @@ void CEntityListener::OnEntityCreated(CEntityInstance* pEntity)
         EntityAllowHammerID(pEntity);
     }
 
-    // @todo: Schema
-    // if (std::string(pEntity->GetClassname()) == "cs_gamerules")
-        // g_pGameRules = schema::GetProp<void*>(pEntity, "CCSGameRulesProxy", "m_pGameRules");
+    auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+
+    if (std::string(pEntity->GetClassname()) == "cs_gamerules")
+        g_pGameRules = *(void**)(schema->GetPropPtr(pEntity, CCSGameRulesProxy_m_pGameRules));
 }
 
 void CEntityListener::OnEntityDeleted(CEntityInstance* pEntity)

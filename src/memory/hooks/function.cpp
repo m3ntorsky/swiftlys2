@@ -18,6 +18,8 @@
 
 #include "function.h"
 
+#include <api/interfaces/manager.h>
+
 void FunctionHook::SetCallback(dyno::CallbackType callbackType, dyno::CallbackHandler callback)
 {
     if (callbackType < dyno::CallbackType::Pre || callbackType > dyno::CallbackType::Post)
@@ -78,7 +80,13 @@ bool FunctionHook::IsEnabled()
 
 void FunctionHook::SetHookFunction(const std::string& functionSignature, const std::string& args, const char return_value)
 {
-    // @todo: when GameData is implemented
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    void* functionAddress = gamedata->GetSignatures()->Fetch(functionSignature);
+
+    if (!functionAddress) return;
+
+    dyno::IHookManager& manager = dyno::IHookManager::Get();
+    m_pHook = manager.hookDetour(functionAddress, [args, return_value] { return new DEFAULT_CALLCONV(GetDataObjectList(args), GetDataObject(return_value)); }).get();
 }
 
 void FunctionHook::SetHookFunction(void* functionAddress, const std::string& args, const char return_value)

@@ -21,6 +21,8 @@
 
 #include <core/extensions/manager.h>
 
+#include <engine/entities/entitysystem.h>
+
 #include <memory/allocator/allocator.h>
 #include <memory/hooks/manager.h>
 #include <memory/gamedata/manager.h>
@@ -29,6 +31,8 @@
 #include <monitor/resmon/monitor.h>
 #include <monitor/callstack/callstack.h>
 #include <monitor/crashreporter/crashreporter.h>
+
+#include <sdk/schema.h>
 
 #include <server/configuration/configuration.h>
 
@@ -43,6 +47,8 @@ CrashReporter g_CrashReporter;
 HooksManager g_HooksManager;
 GameDataManager g_GameDataManager;
 Configuration g_Configuration;
+CEntSystem g_EntSystem;
+CSDKSchema g_SDKSchema;
 
 static std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
@@ -54,6 +60,8 @@ static std::map<std::string, void*> g_Interfaces = {
     {HOOKSMANAGER_INTERFACE_VERSION, &g_HooksManager},
     {GAMEDATA_INTERFACE_VERSION, &g_GameDataManager},
     {CONFIGURATION_INTERFACE_VERSION, &g_Configuration},
+    {ENTITYSYSTEM_INTERFACE_VERSION, &g_EntSystem},
+    {SDKSCHEMA_INTERFACE_VERSION, &g_SDKSchema},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)

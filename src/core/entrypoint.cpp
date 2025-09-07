@@ -52,6 +52,8 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
         }
     }
 
+    auto sdkclass = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    if (sdkclass) sdkclass->Load();
 
     if (auto pb = std::get_if<bool>(&configuration->GetValue("Logger.SaveCoreMessagesToFile"))) {
         logger->ShouldOutputToFile(LogType::INFO, *pb);

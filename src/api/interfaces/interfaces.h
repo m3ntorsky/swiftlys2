@@ -22,18 +22,22 @@
 #include <string>
 #include <api/dll/extern.h>
 
+#include <api/engine/entities/entitysystem.h>
+
 #include <api/extensions/extension.h>
 #include <api/extensions/manager.h>
 #include <api/extensions/plugin.h>
+
+#include <api/memory/allocator/allocator.h>
+#include <api/memory/gamedata/manager.h>
+#include <api/memory/hooks/manager.h>
 
 #include <api/monitor/logger/logger.h>
 #include <api/monitor/resmon/monitor.h>
 #include <api/monitor/callstack/callstack.h>
 #include <api/monitor/crashreporter/crashreporter.h>
 
-#include <api/memory/allocator/allocator.h>
-#include <api/memory/gamedata/manager.h>
-#include <api/memory/hooks/manager.h>
+#include <api/sdk/schema.h>
 
 #include <api/server/configuration/configuration.h>
 
@@ -48,5 +52,7 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define HOOKSMANAGER_INTERFACE_VERSION                      "HooksManagerAPI"
 #define GAMEDATA_INTERFACE_VERSION                          "GameDataAPI"
 #define CONFIGURATION_INTERFACE_VERSION                     "ConfigurationAPI"
+#define ENTITYSYSTEM_INTERFACE_VERSION                      "EntitySystemAPI"
+#define SDKSCHEMA_INTERFACE_VERSION                         "SDKSchemaAPI"
 
 #endif
