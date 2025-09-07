@@ -1,0 +1,23 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CNmSkeleton__SecondarySkeleton_t : SchemaClass, INmSkeleton__SecondarySkeleton_t {
+
+  public CNmSkeleton__SecondarySkeleton_t(nint handle) : base(handle) {
+  }
+
+  public CNmSkeleton__SecondarySkeleton_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CGlobalSymbol AttachToBoneID {
+    get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x50F456DAB2F06B3A));
+  }
+  public ref CStrongHandle< InfoForResourceTypeCNmSkeleton > Skeleton {
+    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCNmSkeleton >>(Schema.GetOffset(0x50F456DAE77F030E));
+  }
+
+
+}

@@ -1,0 +1,35 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class FeVertexMapBuild_t : SchemaClass, IFeVertexMapBuild_t {
+
+  public FeVertexMapBuild_t(nint handle) : base(handle) {
+  }
+
+  public FeVertexMapBuild_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CUtlString VertexMapName {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x35530D470AA2D2C4));
+  }
+  public ref uint NameHash {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x35530D47DE15EEFE));
+  }
+  public ref Color Color {
+    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x35530D47D7D017D8));
+  }
+  public ref float VolumetricSolveStrength {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x35530D47F490B9B7));
+  }
+  public ref int ScaleSourceNode {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x35530D477C35F5E4));
+  }
+  public ref CUtlVector< float32 > Weights {
+    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x35530D475DDC697E));
+  }
+
+
+}

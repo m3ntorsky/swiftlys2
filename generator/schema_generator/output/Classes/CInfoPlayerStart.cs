@@ -1,0 +1,26 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CInfoPlayerStart : CPointEntity, IInfoPlayerStart {
+
+  public CInfoPlayerStart(nint handle) : base(handle) {
+  }
+
+  public CInfoPlayerStart(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref bool Disabled {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE0799D713A7C5965));
+  }
+  public ref bool IsMaster {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE0799D71DE5719A3));
+  }
+  public ref CGlobalSymbol PawnSubclass {
+    get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xE0799D7190AFB5EF));
+  }
+
+
+}

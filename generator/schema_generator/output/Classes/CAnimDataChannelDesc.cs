@@ -1,0 +1,44 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CAnimDataChannelDesc : SchemaClass, IAnimDataChannelDesc {
+
+  public CAnimDataChannelDesc(nint handle) : base(handle) {
+  }
+
+  public CAnimDataChannelDesc(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CBufferString ChannelClass {
+    get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x2D253CFB8F5E9AD5));
+  }
+  public ref CBufferString VariableName {
+    get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x2D253CFB369599AB));
+  }
+  public ref int Flags {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x2D253CFBCE6E9C28));
+  }
+  public ref int Type {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x2D253CFB18853D59));
+  }
+  public ref CBufferString Grouping {
+    get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x2D253CFB4308F10D));
+  }
+  public ref CBufferString Description {
+    get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x2D253CFB5BF47182));
+  }
+  public ref CUtlVector< CBufferString > ElementNameArray {
+    get => ref _Handle.AsRef<CUtlVector< CBufferString >>(Schema.GetOffset(0x2D253CFBE31652C8));
+  }
+  public ref CUtlVector< int32 > ElementIndexArray {
+    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0x2D253CFB3FABC2B2));
+  }
+  public ref CUtlVector< uint32 > ElementMaskArray {
+    get => ref _Handle.AsRef<CUtlVector< uint32 >>(Schema.GetOffset(0x2D253CFB5927F764));
+  }
+
+
+}

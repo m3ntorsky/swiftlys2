@@ -1,0 +1,50 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CParticleAnimTag : CAnimTagBase, IParticleAnimTag {
+
+  public CParticleAnimTag(nint handle) : base(handle) {
+  }
+
+  public CParticleAnimTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > ParticleSystem {
+    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIParticleSystemDefinition >>(Schema.GetOffset(0x80C76F77C9C33AF8));
+  }
+  public ref CUtlString ParticleSystemName {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x80C76F775B35985D));
+  }
+  public ref CUtlString ConfigName {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x80C76F7791DC0E44));
+  }
+  public ref bool DetachFromOwner {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x80C76F77357F7C69));
+  }
+  public ref bool Aggregate {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x80C76F77721C6688));
+  }
+  public ref bool StopWhenTagEnds {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x80C76F77878BB46D));
+  }
+  public ref bool TagEndStopIsInstant {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x80C76F7749C6A809));
+  }
+  public ref CUtlString AttachmentName {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x80C76F77295DA9CB));
+  }
+  public ref ParticleAttachment_t AttachmentType {
+    get => ref _Handle.AsRef<ParticleAttachment_t>(Schema.GetOffset(0x80C76F77778D9A00));
+  }
+  public ref CUtlString AttachmentCP1Name {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x80C76F77420E59C5));
+  }
+  public ref ParticleAttachment_t AttachmentCP1Type {
+    get => ref _Handle.AsRef<ParticleAttachment_t>(Schema.GetOffset(0x80C76F77CD1D74D6));
+  }
+
+
+}

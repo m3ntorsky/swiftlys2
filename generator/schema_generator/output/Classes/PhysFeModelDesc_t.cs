@@ -1,0 +1,341 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class PhysFeModelDesc_t : SchemaClass, IPhysFeModelDesc_t {
+
+  public PhysFeModelDesc_t(nint handle) : base(handle) {
+  }
+
+  public PhysFeModelDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CUtlVector< uint32 > CtrlHash {
+    get => ref _Handle.AsRef<CUtlVector< uint32 >>(Schema.GetOffset(0x1BA439272E1897A4));
+  }
+  public ref CUtlVector< CUtlString > CtrlName {
+    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0x1BA4392720EBC8FF));
+  }
+  public ref uint StaticNodeFlags {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x1BA43927491F024E));
+  }
+  public ref uint DynamicNodeFlags {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x1BA439274F6F7661));
+  }
+  public ref float LocalForce {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA439275E779595));
+  }
+  public ref float LocalRotation {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA4392731E3CCB4));
+  }
+  public ref ushort NodeCount {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA4392709F73A00));
+  }
+  public ref ushort StaticNodes {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA43927A58AC0EC));
+  }
+  public ref ushort RotLockStaticNodes {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA43927B63C3930));
+  }
+  public ref ushort FirstPositionDrivenNode {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA439272E0F5D4C));
+  }
+  public ref ushort SimdTriCount1 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA439274F73E5EF));
+  }
+  public ref ushort SimdTriCount2 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA439275073E782));
+  }
+  public ref ushort SimdQuadCount1 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA439275BC6C099));
+  }
+  public ref ushort SimdQuadCount2 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA4392758C6BBE0));
+  }
+  public ref ushort QuadCount1 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA439273BC36C10));
+  }
+  public ref ushort QuadCount2 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA439273EC370C9));
+  }
+  public ref ushort TreeDepth {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA439271295DF6E));
+  }
+  public ref ushort NodeBaseJiggleboneDependsCount {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA439277F14AD2C));
+  }
+  public ref ushort RopeCount {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA43927DC972C90));
+  }
+  public ref CUtlVector< uint16 > Ropes {
+    get => ref _Handle.AsRef<CUtlVector< uint16 >>(Schema.GetOffset(0x1BA43927245D4F7A));
+  }
+  public ref CUtlVector< FeNodeBase_t > NodeBases {
+    get => ref _Handle.AsRef<CUtlVector< FeNodeBase_t >>(Schema.GetOffset(0x1BA43927D78A7829));
+  }
+  public ref CUtlVector< FeSimdNodeBase_t > SimdNodeBases {
+    get => ref _Handle.AsRef<CUtlVector< FeSimdNodeBase_t >>(Schema.GetOffset(0x1BA439276CEB34CE));
+  }
+  public ref CUtlVector< FeQuad_t > Quads {
+    get => ref _Handle.AsRef<CUtlVector< FeQuad_t >>(Schema.GetOffset(0x1BA43927F0B96887));
+  }
+  public ref CUtlVector< FeSimdQuad_t > SimdQuads {
+    get => ref _Handle.AsRef<CUtlVector< FeSimdQuad_t >>(Schema.GetOffset(0x1BA439272A528AEC));
+  }
+  public ref CUtlVector< FeSimdTri_t > SimdTris {
+    get => ref _Handle.AsRef<CUtlVector< FeSimdTri_t >>(Schema.GetOffset(0x1BA4392708B7DB8E));
+  }
+  public ref CUtlVector< FeSimdRodConstraint_t > SimdRods {
+    get => ref _Handle.AsRef<CUtlVector< FeSimdRodConstraint_t >>(Schema.GetOffset(0x1BA4392772C6F02A));
+  }
+  public ref CUtlVector< FeSimdRodConstraintAnim_t > SimdRodsAnim {
+    get => ref _Handle.AsRef<CUtlVector< FeSimdRodConstraintAnim_t >>(Schema.GetOffset(0x1BA439272F796453));
+  }
+  public ref CUtlVector< CTransform > InitPose {
+    get => ref _Handle.AsRef<CUtlVector< CTransform >>(Schema.GetOffset(0x1BA439275E468732));
+  }
+  public ref CUtlVector< FeRodConstraint_t > Rods {
+    get => ref _Handle.AsRef<CUtlVector< FeRodConstraint_t >>(Schema.GetOffset(0x1BA439276FC1D3D7));
+  }
+  public ref CUtlVector< FeTwistConstraint_t > Twists {
+    get => ref _Handle.AsRef<CUtlVector< FeTwistConstraint_t >>(Schema.GetOffset(0x1BA439272079B489));
+  }
+  public ref CUtlVector< FeHingeLimit_t > HingeLimits {
+    get => ref _Handle.AsRef<CUtlVector< FeHingeLimit_t >>(Schema.GetOffset(0x1BA43927EDFF16F4));
+  }
+  public ref CUtlVector< uint32 > AntiTunnelBytecode {
+    get => ref _Handle.AsRef<CUtlVector< uint32 >>(Schema.GetOffset(0x1BA43927FD33DEEC));
+  }
+  public ref CUtlVector< FeDynKinLink_t > DynKinLinks {
+    get => ref _Handle.AsRef<CUtlVector< FeDynKinLink_t >>(Schema.GetOffset(0x1BA439271F3CC98B));
+  }
+  public ref CUtlVector< FeAntiTunnelProbe_t > AntiTunnelProbes {
+    get => ref _Handle.AsRef<CUtlVector< FeAntiTunnelProbe_t >>(Schema.GetOffset(0x1BA43927E34A5328));
+  }
+  public ref CUtlVector< uint16 > AntiTunnelTargetNodes {
+    get => ref _Handle.AsRef<CUtlVector< uint16 >>(Schema.GetOffset(0x1BA439275AB2DCE7));
+  }
+  public ref CUtlVector< FeAxialEdgeBend_t > AxialEdges {
+    get => ref _Handle.AsRef<CUtlVector< FeAxialEdgeBend_t >>(Schema.GetOffset(0x1BA43927DE90F268));
+  }
+  public ref CUtlVector< float32 > NodeInvMasses {
+    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x1BA439274BC4CE04));
+  }
+  public ref CUtlVector< FeCtrlOffset_t > CtrlOffsets {
+    get => ref _Handle.AsRef<CUtlVector< FeCtrlOffset_t >>(Schema.GetOffset(0x1BA43927C1ACD824));
+  }
+  public ref CUtlVector< FeCtrlOsOffset_t > CtrlOsOffsets {
+    get => ref _Handle.AsRef<CUtlVector< FeCtrlOsOffset_t >>(Schema.GetOffset(0x1BA43927C7290656));
+  }
+  public ref CUtlVector< FeFollowNode_t > FollowNodes {
+    get => ref _Handle.AsRef<CUtlVector< FeFollowNode_t >>(Schema.GetOffset(0x1BA43927ECF0783D));
+  }
+  public ref CUtlVector< FeCollisionPlane_t > CollisionPlanes {
+    get => ref _Handle.AsRef<CUtlVector< FeCollisionPlane_t >>(Schema.GetOffset(0x1BA43927B367BFCC));
+  }
+  public ref CUtlVector< FeNodeIntegrator_t > NodeIntegrator {
+    get => ref _Handle.AsRef<CUtlVector< FeNodeIntegrator_t >>(Schema.GetOffset(0x1BA43927940C5E1C));
+  }
+  public ref CUtlVector< FeSpringIntegrator_t > SpringIntegrator {
+    get => ref _Handle.AsRef<CUtlVector< FeSpringIntegrator_t >>(Schema.GetOffset(0x1BA4392725EF8295));
+  }
+  public ref CUtlVector< FeSimdSpringIntegrator_t > SimdSpringIntegrator {
+    get => ref _Handle.AsRef<CUtlVector< FeSimdSpringIntegrator_t >>(Schema.GetOffset(0x1BA439273755280C));
+  }
+  public ref CUtlVector< FeWorldCollisionParams_t > WorldCollisionParams {
+    get => ref _Handle.AsRef<CUtlVector< FeWorldCollisionParams_t >>(Schema.GetOffset(0x1BA43927BF45BE03));
+  }
+  public ref CUtlVector< float32 > LegacyStretchForce {
+    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x1BA43927C7AB43F6));
+  }
+  public ref CUtlVector< float32 > NodeCollisionRadii {
+    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x1BA43927CD59A3E0));
+  }
+  public ref CUtlVector< float32 > DynNodeFriction {
+    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x1BA43927B935608E));
+  }
+  public ref CUtlVector< float32 > LocalRotation {
+    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x1BA439275A8DBCEE));
+  }
+  public ref CUtlVector< float32 > LocalForce {
+    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x1BA439275274CF1B));
+  }
+  public ref CUtlVector< FeTaperedCapsuleStretch_t > TaperedCapsuleStretches {
+    get => ref _Handle.AsRef<CUtlVector< FeTaperedCapsuleStretch_t >>(Schema.GetOffset(0x1BA439271F019DBC));
+  }
+  public ref CUtlVector< FeTaperedCapsuleRigid_t > TaperedCapsuleRigids {
+    get => ref _Handle.AsRef<CUtlVector< FeTaperedCapsuleRigid_t >>(Schema.GetOffset(0x1BA43927F74D1937));
+  }
+  public ref CUtlVector< FeSphereRigid_t > SphereRigids {
+    get => ref _Handle.AsRef<CUtlVector< FeSphereRigid_t >>(Schema.GetOffset(0x1BA43927BAF34488));
+  }
+  public ref CUtlVector< uint16 > WorldCollisionNodes {
+    get => ref _Handle.AsRef<CUtlVector< uint16 >>(Schema.GetOffset(0x1BA43927FF7871EA));
+  }
+  public ref CUtlVector< uint16 > TreeParents {
+    get => ref _Handle.AsRef<CUtlVector< uint16 >>(Schema.GetOffset(0x1BA43927BCB1115A));
+  }
+  public ref CUtlVector< uint16 > TreeCollisionMasks {
+    get => ref _Handle.AsRef<CUtlVector< uint16 >>(Schema.GetOffset(0x1BA43927E89C96B8));
+  }
+  public ref CUtlVector< FeTreeChildren_t > TreeChildren {
+    get => ref _Handle.AsRef<CUtlVector< FeTreeChildren_t >>(Schema.GetOffset(0x1BA43927FE09F5A2));
+  }
+  public ref CUtlVector< uint16 > FreeNodes {
+    get => ref _Handle.AsRef<CUtlVector< uint16 >>(Schema.GetOffset(0x1BA43927DBDC2128));
+  }
+  public ref CUtlVector< FeFitMatrix_t > FitMatrices {
+    get => ref _Handle.AsRef<CUtlVector< FeFitMatrix_t >>(Schema.GetOffset(0x1BA439273EA416A0));
+  }
+  public ref CUtlVector< FeFitWeight_t > FitWeights {
+    get => ref _Handle.AsRef<CUtlVector< FeFitWeight_t >>(Schema.GetOffset(0x1BA43927C7FF749D));
+  }
+  public ref CUtlVector< FeNodeReverseOffset_t > ReverseOffsets {
+    get => ref _Handle.AsRef<CUtlVector< FeNodeReverseOffset_t >>(Schema.GetOffset(0x1BA439274F76269B));
+  }
+  public ref CUtlVector< FeAnimStrayRadius_t > AnimStrayRadii {
+    get => ref _Handle.AsRef<CUtlVector< FeAnimStrayRadius_t >>(Schema.GetOffset(0x1BA4392702505672));
+  }
+  public ref CUtlVector< FeSimdAnimStrayRadius_t > SimdAnimStrayRadii {
+    get => ref _Handle.AsRef<CUtlVector< FeSimdAnimStrayRadius_t >>(Schema.GetOffset(0x1BA43927BD404343));
+  }
+  public ref CUtlVector< FeKelagerBend2_t > KelagerBends {
+    get => ref _Handle.AsRef<CUtlVector< FeKelagerBend2_t >>(Schema.GetOffset(0x1BA439279DE7A8A0));
+  }
+  public ref CUtlVector< FeCtrlSoftOffset_t > CtrlSoftOffsets {
+    get => ref _Handle.AsRef<CUtlVector< FeCtrlSoftOffset_t >>(Schema.GetOffset(0x1BA439278C66B564));
+  }
+  public ref CUtlVector< CFeIndexedJiggleBone > JiggleBones {
+    get => ref _Handle.AsRef<CUtlVector< CFeIndexedJiggleBone >>(Schema.GetOffset(0x1BA439274F458BCC));
+  }
+  public ref CUtlVector< uint16 > SourceElems {
+    get => ref _Handle.AsRef<CUtlVector< uint16 >>(Schema.GetOffset(0x1BA43927CF1C9DB0));
+  }
+  public ref CUtlVector< uint32 > GoalDampedSpringIntegrators {
+    get => ref _Handle.AsRef<CUtlVector< uint32 >>(Schema.GetOffset(0x1BA4392770492CEE));
+  }
+  public ref CUtlVector< FeTri_t > Tris {
+    get => ref _Handle.AsRef<CUtlVector< FeTri_t >>(Schema.GetOffset(0x1BA43927AD4316D7));
+  }
+  public ref ushort TriCount1 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA43927DA287160));
+  }
+  public ref ushort TriCount2 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA43927DD287619));
+  }
+  public ref byte ReservedUint8 {
+    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x1BA439279DB35207));
+  }
+  public ref byte ExtraPressureIterations {
+    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x1BA439270749204E));
+  }
+  public ref byte ExtraGoalIterations {
+    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x1BA43927628FA5BA));
+  }
+  public ref byte ExtraIterations {
+    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x1BA4392737B28905));
+  }
+  public ref CUtlVector< FeSDFRigid_t > SDFRigids {
+    get => ref _Handle.AsRef<CUtlVector< FeSDFRigid_t >>(Schema.GetOffset(0x1BA43927E4F15C2C));
+  }
+  public ref CUtlVector< FeBoxRigid_t > BoxRigids {
+    get => ref _Handle.AsRef<CUtlVector< FeBoxRigid_t >>(Schema.GetOffset(0x1BA439273FF6F3EE));
+  }
+  public ref CUtlVector< uint8 > DynNodeVertexSet {
+    get => ref _Handle.AsRef<CUtlVector< uint8 >>(Schema.GetOffset(0x1BA4392710AF881A));
+  }
+  public ref CUtlVector< uint32 > VertexSetNames {
+    get => ref _Handle.AsRef<CUtlVector< uint32 >>(Schema.GetOffset(0x1BA439270B557437));
+  }
+  public ref CUtlVector< FeRigidColliderIndices_t > RigidColliderPriorities {
+    get => ref _Handle.AsRef<CUtlVector< FeRigidColliderIndices_t >>(Schema.GetOffset(0x1BA43927A6818704));
+  }
+  public ref CUtlVector< FeMorphLayerDepr_t > MorphLayers {
+    get => ref _Handle.AsRef<CUtlVector< FeMorphLayerDepr_t >>(Schema.GetOffset(0x1BA439279DF389BF));
+  }
+  public ref CUtlVector< uint8 > MorphSetData {
+    get => ref _Handle.AsRef<CUtlVector< uint8 >>(Schema.GetOffset(0x1BA43927DA9B396B));
+  }
+  public ref CUtlVector< FeVertexMapDesc_t > VertexMaps {
+    get => ref _Handle.AsRef<CUtlVector< FeVertexMapDesc_t >>(Schema.GetOffset(0x1BA4392727EEF7FC));
+  }
+  public ref CUtlVector< uint8 > VertexMapValues {
+    get => ref _Handle.AsRef<CUtlVector< uint8 >>(Schema.GetOffset(0x1BA43927EAF6DABD));
+  }
+  public ref CUtlVector< FeEffectDesc_t > Effects {
+    get => ref _Handle.AsRef<CUtlVector< FeEffectDesc_t >>(Schema.GetOffset(0x1BA43927A60AA5E5));
+  }
+  public ref CUtlVector< FeCtrlOffset_t > LockToParent {
+    get => ref _Handle.AsRef<CUtlVector< FeCtrlOffset_t >>(Schema.GetOffset(0x1BA43927CFC56E77));
+  }
+  public ref CUtlVector< uint16 > LockToGoal {
+    get => ref _Handle.AsRef<CUtlVector< uint16 >>(Schema.GetOffset(0x1BA43927EF4703D8));
+  }
+  public ref CUtlVector< int16 > SkelParents {
+    get => ref _Handle.AsRef<CUtlVector< int16 >>(Schema.GetOffset(0x1BA43927D2AAA7FB));
+  }
+  public ref CUtlVector< FeNodeWindBase_t > DynNodeWindBases {
+    get => ref _Handle.AsRef<CUtlVector< FeNodeWindBase_t >>(Schema.GetOffset(0x1BA439271ABAB644));
+  }
+  public ref float InternalPressure {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA43927B3CC4239));
+  }
+  public ref float DefaultTimeDilation {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA439271F1E706B));
+  }
+  public ref float Windage {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA43927606E3F48));
+  }
+  public ref float WindDrag {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA4392753E238D7));
+  }
+  public ref float DefaultSurfaceStretch {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA43927B772D9D0));
+  }
+  public ref float DefaultThreadStretch {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA439271386FDD5));
+  }
+  public ref float DefaultGravityScale {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA4392789AD0384));
+  }
+  public ref float DefaultVelAirDrag {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA439271833A0FB));
+  }
+  public ref float DefaultExpAirDrag {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA43927681CCE27));
+  }
+  public ref float DefaultVelQuadAirDrag {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA43927BF28F362));
+  }
+  public ref float DefaultExpQuadAirDrag {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA43927F16B8A2E));
+  }
+  public ref float RodVelocitySmoothRate {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA439274EDA647F));
+  }
+  public ref float QuadVelocitySmoothRate {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA43927A5E06553));
+  }
+  public ref float AddWorldCollisionRadius {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA43927EBFB7154));
+  }
+  public ref float DefaultVolumetricSolveAmount {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA43927D69EF547));
+  }
+  public ref float MotionSmoothCDT {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA439279C2571CC));
+  }
+  public ref float LocalDrag1 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA43927BE849FFB));
+  }
+  public ref ushort RodVelocitySmoothIterations {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA439277B5933A3));
+  }
+  public ref ushort QuadVelocitySmoothIterations {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA4392761612B9B));
+  }
+
+
+}

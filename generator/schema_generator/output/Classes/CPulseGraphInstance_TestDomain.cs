@@ -1,0 +1,44 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CPulseGraphInstance_TestDomain : CBasePulseGraphInstance, IPulseGraphInstance_TestDomain {
+
+  public CPulseGraphInstance_TestDomain(nint handle) : base(handle) {
+  }
+
+  public CPulseGraphInstance_TestDomain(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref bool IsRunningUnitTests {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1731648B356A8543));
+  }
+  public ref bool ExplicitTimeStepping {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1731648BBDBCBA9A));
+  }
+  public ref bool ExpectingToDestroyWithYieldedCursors {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1731648B8134CF7A));
+  }
+  public ref bool QuietTracepoints {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1731648B8C15006B));
+  }
+  public ref bool ExpectingCursorTerminatedDueToMaxInstructions {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1731648BF984A235));
+  }
+  public ref int CursorsTerminatedDueToMaxInstructions {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1731648B8061C3CB));
+  }
+  public ref int NextValidateIndex {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1731648B5AE2F20E));
+  }
+  public ref CUtlVector< CUtlString > Tracepoints {
+    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0x1731648B04FCE4C9));
+  }
+  public ref bool TestYesOrNoPath {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1731648B1322BA21));
+  }
+
+
+}

@@ -1,0 +1,47 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CPhysSlideConstraint : CPhysConstraint, IPhysSlideConstraint {
+
+  public CPhysSlideConstraint(nint handle) : base(handle) {
+  }
+
+  public CPhysSlideConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref Vector AxisEnd {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xA91FF5D04F9CAA89));
+  }
+  public ref float SlideFriction {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA91FF5D0A21A9E94));
+  }
+  public ref float SystemLoadScale {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA91FF5D09C24DB62));
+  }
+  public ref float InitialOffset {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA91FF5D0A52C9850));
+  }
+  public ref bool EnableLinearConstraint {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA91FF5D068F4518C));
+  }
+  public ref bool EnableAngularConstraint {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA91FF5D0F98A5C8B));
+  }
+  public ref float MotorFrequency {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA91FF5D056F7120A));
+  }
+  public ref float MotorDampingRatio {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA91FF5D0D8669699));
+  }
+  public ref bool UseEntityPivot {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA91FF5D0240C4065));
+  }
+  public IConstraintSoundInfo SoundInfo {
+    get => new ConstraintSoundInfo(_Handle + Schema.GetOffset(0xA91FF5D085F704E8));
+  }
+
+
+}

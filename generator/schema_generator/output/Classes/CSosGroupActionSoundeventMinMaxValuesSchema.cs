@@ -1,0 +1,47 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CSosGroupActionSoundeventMinMaxValuesSchema : CSosGroupActionSchema, ISosGroupActionSoundeventMinMaxValuesSchema {
+
+  public CSosGroupActionSoundeventMinMaxValuesSchema(nint handle) : base(handle) {
+  }
+
+  public CSosGroupActionSoundeventMinMaxValuesSchema(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CUtlString StrQueryPublicFieldName {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC3C5E1C40839714));
+  }
+  public ref CUtlString StrDelayPublicFieldName {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC3C5E1CC2E1170D));
+  }
+  public ref bool ExcludeStoppedSounds {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDC3C5E1C1BDF6FB6));
+  }
+  public ref bool ExcludeDelayedSounds {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDC3C5E1CA849B37D));
+  }
+  public ref bool ExcludeSoundsBelowThreshold {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDC3C5E1CBEF10829));
+  }
+  public ref float ExcludeSoundsMinThresholdValue {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDC3C5E1CBAF64DF9));
+  }
+  public ref bool ExcludSoundsAboveThreshold {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDC3C5E1CBD2BDEAE));
+  }
+  public ref float ExcludeSoundsMaxThresholdValue {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDC3C5E1C67D717C7));
+  }
+  public ref CUtlString StrMinValueName {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC3C5E1CCF654B06));
+  }
+  public ref CUtlString StrMaxValueName {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC3C5E1CEF3A2D5C));
+  }
+
+
+}

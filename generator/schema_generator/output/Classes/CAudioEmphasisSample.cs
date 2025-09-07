@@ -1,0 +1,23 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CAudioEmphasisSample : SchemaClass, IAudioEmphasisSample {
+
+  public CAudioEmphasisSample(nint handle) : base(handle) {
+  }
+
+  public CAudioEmphasisSample(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref float Time {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x37D4D710C957229E));
+  }
+  public ref float Value {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x37D4D7108DFCB984));
+  }
+
+
+}

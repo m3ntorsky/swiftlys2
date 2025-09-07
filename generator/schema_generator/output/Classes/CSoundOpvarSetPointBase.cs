@@ -1,0 +1,58 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CSoundOpvarSetPointBase : CBaseEntity, ISoundOpvarSetPointBase {
+
+  public CSoundOpvarSetPointBase(nint handle) : base(handle) {
+  }
+
+  public CSoundOpvarSetPointBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref bool Disabled {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6C95A3E03A7C5965));
+  }
+  public ref CEntityHandle Source {
+    get => ref _Handle.AsRef<CEntityHandle>(Schema.GetOffset(0x6C95A3E033D3CD82));
+  }
+  public ref CUtlSymbolLarge SourceEntityName {
+    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6C95A3E06C1387C0));
+  }
+  public ref Vector LastPosition {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6C95A3E0A5B68002));
+  }
+  public ref CUtlSymbolLarge StackName {
+    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6C95A3E03B3E9CD4));
+  }
+  public ref CUtlSymbolLarge OperatorName {
+    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6C95A3E0F6140996));
+  }
+  public ref CUtlSymbolLarge OpvarName {
+    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6C95A3E02CAEFF3C));
+  }
+  public ref int OpvarIndex {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6C95A3E0BC170C34));
+  }
+  public ref bool UseAutoCompare {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6C95A3E0E8C88ED2));
+  }
+
+  public void StackNameUpdated() {
+    Schema.Update(_Handle, 0x6C95A3E03B3E9CD4);
+  }
+  public void OperatorNameUpdated() {
+    Schema.Update(_Handle, 0x6C95A3E0F6140996);
+  }
+  public void OpvarNameUpdated() {
+    Schema.Update(_Handle, 0x6C95A3E02CAEFF3C);
+  }
+  public void OpvarIndexUpdated() {
+    Schema.Update(_Handle, 0x6C95A3E0BC170C34);
+  }
+  public void UseAutoCompareUpdated() {
+    Schema.Update(_Handle, 0x6C95A3E0E8C88ED2);
+  }
+}

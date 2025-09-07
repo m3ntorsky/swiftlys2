@@ -1,0 +1,26 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class FeBuildSDFRigid_t : FeSDFRigid_t, IFeBuildSDFRigid_t {
+
+  public FeBuildSDFRigid_t(nint handle) : base(handle) {
+  }
+
+  public FeBuildSDFRigid_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref int Priority {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8C389301E7EFB335));
+  }
+  public ref uint VertexMapHash {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x8C38930106BCA0A3));
+  }
+  public ref uint AntitunnelGroupBits {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x8C389301A5C6E91A));
+  }
+
+
+}

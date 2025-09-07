@@ -1,0 +1,61 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class fogplayerparams_t : SchemaClass, Ifogplayerparams_t {
+
+  public fogplayerparams_t(nint handle) : base(handle) {
+  }
+
+  public fogplayerparams_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CHandle< CFogController > Ctrl {
+    get => ref _Handle.AsRef<CHandle< CFogController >>(Schema.GetOffset(0x1BA99C4F34496C96));
+  }
+  public ref float TransitionTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA99C4F8D4BFC39));
+  }
+  public ref Color OldColor {
+    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x1BA99C4F1F716E59));
+  }
+  public ref float OldStart {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA99C4F0740B77C));
+  }
+  public ref float OldEnd {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA99C4FEE04BB65));
+  }
+  public ref float OldMaxDensity {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA99C4FA685F86A));
+  }
+  public ref float OldHDRColorScale {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA99C4F8E3D5ED1));
+  }
+  public ref float OldFarZ {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA99C4FB28AACA1));
+  }
+  public ref Color NewColor {
+    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x1BA99C4F855F3ED4));
+  }
+  public ref float NewStart {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA99C4FFC7C3DE5));
+  }
+  public ref float NewEnd {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA99C4F25D277DC));
+  }
+  public ref float NewMaxDensity {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA99C4F0EE45F19));
+  }
+  public ref float NewHDRColorScale {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA99C4F70AAB448));
+  }
+  public ref float NewFarZ {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA99C4FDDA6CA3A));
+  }
+
+  public void CtrlUpdated() {
+    Schema.Update(_Handle, 0x1BA99C4F34496C96);
+  }
+}

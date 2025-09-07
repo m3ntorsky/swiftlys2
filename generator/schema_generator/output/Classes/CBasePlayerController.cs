@@ -1,0 +1,112 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CBasePlayerController : CBaseEntity, IBasePlayerController {
+
+  public CBasePlayerController(nint handle) : base(handle) {
+  }
+
+  public CBasePlayerController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref ulong InButtonsWhichAreToggles {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x3979FF6E84B9651F));
+  }
+  public ref uint TickBase {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x3979FF6E09A8C76D));
+  }
+  public ref CHandle< CBasePlayerPawn > Pawn {
+    get => ref _Handle.AsRef<CHandle< CBasePlayerPawn >>(Schema.GetOffset(0x3979FF6E7C628C1D));
+  }
+  public ref bool KnownTeamMismatch {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3979FF6EDDCE3C49));
+  }
+  public ref CSplitScreenSlot SplitScreenSlot {
+    get => ref _Handle.AsRef<CSplitScreenSlot>(Schema.GetOffset(0x3979FF6EDB96ED47));
+  }
+  public ref CHandle< CBasePlayerController > SplitOwner {
+    get => ref _Handle.AsRef<CHandle< CBasePlayerController >>(Schema.GetOffset(0x3979FF6E7F6EFD54));
+  }
+  public ref CUtlVector< CHandle< CBasePlayerController > > SplitScreenPlayers {
+    get => ref _Handle.AsRef<CUtlVector< CHandle< CBasePlayerController > >>(Schema.GetOffset(0x3979FF6E533D1C5D));
+  }
+  public ref bool IsHLTV {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3979FF6E5DC66E6B));
+  }
+  public ref PlayerConnectedState Connected {
+    get => ref _Handle.AsRef<PlayerConnectedState>(Schema.GetOffset(0x3979FF6E97963D8B));
+  }
+  public ISchemaFixedString PlayerName {
+    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x3979FF6EDE61DD3B));
+  }
+  public ref CUtlString NetworkIDString {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3979FF6E0EA4B3D6));
+  }
+  public ref float LerpTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x3979FF6E9FF4229D));
+  }
+  public ref bool LagCompensation {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3979FF6E648FCFD5));
+  }
+  public ref bool Predict {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3979FF6E21F4FE0A));
+  }
+  public ref bool IsLowViolence {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3979FF6E302B094C));
+  }
+  public ref bool GamePaused {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3979FF6E582909A9));
+  }
+  public ref ChatIgnoreType_t IgnoreGlobalChat {
+    get => ref _Handle.AsRef<ChatIgnoreType_t>(Schema.GetOffset(0x3979FF6E926A5FDF));
+  }
+  public ref float LastPlayerTalkTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x3979FF6EE68B6D11));
+  }
+  public ref float LastEntitySteadyState {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x3979FF6E884773FB));
+  }
+  public ref int AvailableEntitySteadyState {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x3979FF6E77E35552));
+  }
+  public ref bool HasAnySteadyStateEnts {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3979FF6E039D58D0));
+  }
+  public ref ulong SteamID {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x3979FF6EB22F805E));
+  }
+  public ref bool NoClipEnabled {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3979FF6E520E7FBD));
+  }
+  public ref uint DesiredFOV {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x3979FF6E38022E09));
+  }
+
+  public void TickBaseUpdated() {
+    Schema.Update(_Handle, 0x3979FF6E09A8C76D);
+  }
+  public void PawnUpdated() {
+    Schema.Update(_Handle, 0x3979FF6E7C628C1D);
+  }
+  public void KnownTeamMismatchUpdated() {
+    Schema.Update(_Handle, 0x3979FF6EDDCE3C49);
+  }
+  public void ConnectedUpdated() {
+    Schema.Update(_Handle, 0x3979FF6E97963D8B);
+  }
+  public void PlayerNameUpdated() {
+    Schema.Update(_Handle, 0x3979FF6EDE61DD3B);
+  }
+  public void SteamIDUpdated() {
+    Schema.Update(_Handle, 0x3979FF6EB22F805E);
+  }
+  public void NoClipEnabledUpdated() {
+    Schema.Update(_Handle, 0x3979FF6E520E7FBD);
+  }
+  public void DesiredFOVUpdated() {
+    Schema.Update(_Handle, 0x3979FF6E38022E09);
+  }
+}

@@ -1,0 +1,64 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CDynamicLight : CBaseModelEntity, IDynamicLight {
+
+  public CDynamicLight(nint handle) : base(handle) {
+  }
+
+  public CDynamicLight(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref byte ActualFlags {
+    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x5256F8E9E685EDEE));
+  }
+  public ref byte Flags {
+    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x5256F8E936B92FAC));
+  }
+  public ref byte LightStyle {
+    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x5256F8E965232F30));
+  }
+  public ref bool On {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5256F8E9DF026050));
+  }
+  public ref float Radius {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5256F8E97C5B0533));
+  }
+  public ref int Exponent {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5256F8E99BCA80C6));
+  }
+  public ref float InnerAngle {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5256F8E91D12DC0E));
+  }
+  public ref float OuterAngle {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5256F8E9328680EF));
+  }
+  public ref float SpotRadius {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5256F8E993FBE5BB));
+  }
+
+  public void FlagsUpdated() {
+    Schema.Update(_Handle, 0x5256F8E936B92FAC);
+  }
+  public void LightStyleUpdated() {
+    Schema.Update(_Handle, 0x5256F8E965232F30);
+  }
+  public void RadiusUpdated() {
+    Schema.Update(_Handle, 0x5256F8E97C5B0533);
+  }
+  public void ExponentUpdated() {
+    Schema.Update(_Handle, 0x5256F8E99BCA80C6);
+  }
+  public void InnerAngleUpdated() {
+    Schema.Update(_Handle, 0x5256F8E91D12DC0E);
+  }
+  public void OuterAngleUpdated() {
+    Schema.Update(_Handle, 0x5256F8E9328680EF);
+  }
+  public void SpotRadiusUpdated() {
+    Schema.Update(_Handle, 0x5256F8E993FBE5BB);
+  }
+}

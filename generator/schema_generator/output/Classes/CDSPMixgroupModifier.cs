@@ -1,0 +1,35 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CDSPMixgroupModifier : SchemaClass, IDSPMixgroupModifier {
+
+  public CDSPMixgroupModifier(nint handle) : base(handle) {
+  }
+
+  public CDSPMixgroupModifier(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CUtlString Mixgroup {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDF83C91D89577218));
+  }
+  public ref float Modifier {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDF83C91D55620FB6));
+  }
+  public ref float ModifierMin {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDF83C91D62C9A002));
+  }
+  public ref float SourceModifier {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDF83C91D64BF2A67));
+  }
+  public ref float SourceModifierMin {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDF83C91D59151DE1));
+  }
+  public ref float ListenerReverbModifierWhenSourceReverbIsActive {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDF83C91DC98A5029));
+  }
+
+
+}

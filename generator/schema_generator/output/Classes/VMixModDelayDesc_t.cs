@@ -1,0 +1,44 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class VMixModDelayDesc_t : SchemaClass, IVMixModDelayDesc_t {
+
+  public VMixModDelayDesc_t(nint handle) : base(handle) {
+  }
+
+  public VMixModDelayDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public IVMixFilterDesc_t FeedbackFilter {
+    get => new VMixFilterDesc_t(_Handle + Schema.GetOffset(0x7E7D84907C227CDC));
+  }
+  public ref bool PhaseInvert {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x7E7D849098B8BD4C));
+  }
+  public ref float GlideTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x7E7D8490F7DC34FD));
+  }
+  public ref float Delay {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x7E7D84907D68FD6E));
+  }
+  public ref float OutputGain {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x7E7D849073DB9445));
+  }
+  public ref float FeedbackGain {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x7E7D84907CACF477));
+  }
+  public ref float ModRate {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x7E7D84900EA039FF));
+  }
+  public ref float ModDepth {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x7E7D8490F59E0B82));
+  }
+  public ref bool ApplyAntialiasing {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x7E7D84906B0E9697));
+  }
+
+
+}

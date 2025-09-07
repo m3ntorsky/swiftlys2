@@ -1,0 +1,26 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CStaticPoseCache : SchemaClass, IStaticPoseCache {
+
+  public CStaticPoseCache(nint handle) : base(handle) {
+  }
+
+  public CStaticPoseCache(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CUtlVector< CCachedPose > Poses {
+    get => ref _Handle.AsRef<CUtlVector< CCachedPose >>(Schema.GetOffset(0x2223EF1DB851C9F5));
+  }
+  public ref int BoneCount {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x2223EF1D71FE39A2));
+  }
+  public ref int MorphCount {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x2223EF1D32C62DD0));
+  }
+
+
+}

@@ -1,0 +1,38 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_OP_SetControlPointToWaterSurface : CParticleFunctionPreEmission, IC_OP_SetControlPointToWaterSurface {
+
+  public C_OP_SetControlPointToWaterSurface(nint handle) : base(handle) {
+  }
+
+  public C_OP_SetControlPointToWaterSurface(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref int SourceCP {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5BA6BFAD4C01E3B7));
+  }
+  public ref int DestCP {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5BA6BFADE27355DA));
+  }
+  public ref int FlowCP {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5BA6BFADF3D93292));
+  }
+  public ref int ActiveCP {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5BA6BFADA12F97B0));
+  }
+  public ref int ActiveCPField {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5BA6BFAD61A1D27C));
+  }
+  public IParticleCollectionFloatInput RetestRate {
+    get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0x5BA6BFAD38DA66AC));
+  }
+  public ref bool AdaptiveThreshold {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5BA6BFADE64212D6));
+  }
+
+
+}

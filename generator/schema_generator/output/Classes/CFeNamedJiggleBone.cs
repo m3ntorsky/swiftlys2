@@ -1,0 +1,29 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CFeNamedJiggleBone : SchemaClass, IFeNamedJiggleBone {
+
+  public CFeNamedJiggleBone(nint handle) : base(handle) {
+  }
+
+  public CFeNamedJiggleBone(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CUtlString StrParentBone {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x51055B3A22DD827E));
+  }
+  public ref CTransform Transform {
+    get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0x51055B3A3A9A393B));
+  }
+  public ref uint JiggleParent {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x51055B3A8AABF3B9));
+  }
+  public IFeJiggleBone JiggleBone {
+    get => new CFeJiggleBone(_Handle + Schema.GetOffset(0x51055B3A6038C557));
+  }
+
+
+}

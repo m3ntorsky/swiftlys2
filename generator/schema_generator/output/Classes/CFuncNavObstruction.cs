@@ -1,0 +1,23 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CFuncNavObstruction : CBaseModelEntity, IFuncNavObstruction {
+
+  public CFuncNavObstruction(nint handle) : base(handle) {
+  }
+
+  public CFuncNavObstruction(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref bool Disabled {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xCF9A1E413A7C5965));
+  }
+  public ref bool UseAsyncObstacleUpdate {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xCF9A1E41094FA698));
+  }
+
+
+}

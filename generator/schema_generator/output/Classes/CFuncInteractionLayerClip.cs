@@ -1,0 +1,26 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CFuncInteractionLayerClip : CBaseModelEntity, IFuncInteractionLayerClip {
+
+  public CFuncInteractionLayerClip(nint handle) : base(handle) {
+  }
+
+  public CFuncInteractionLayerClip(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref bool Disabled {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5A9288DF3A7C5965));
+  }
+  public ref CUtlSymbolLarge InteractsAs {
+    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5A9288DF488FC5DC));
+  }
+  public ref CUtlSymbolLarge InteractsWith {
+    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5A9288DF84AB4214));
+  }
+
+
+}

@@ -1,0 +1,73 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CPlayer_MovementServices : CPlayerPawnComponent, IPlayer_MovementServices {
+
+  public CPlayer_MovementServices(nint handle) : base(handle) {
+  }
+
+  public CPlayer_MovementServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref int Impulse {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD5BDF2892107CA68));
+  }
+  public IInButtonState Buttons {
+    get => new CInButtonState(_Handle + Schema.GetOffset(0xD5BDF28998CCEF82));
+  }
+  public ref ulong QueuedButtonDownMask {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xD5BDF28939CFB260));
+  }
+  public ref ulong QueuedButtonChangeMask {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xD5BDF289FC832F1C));
+  }
+  public ref ulong ButtonDoublePressed {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xD5BDF289E6C8CA6E));
+  }
+  public ISchemaFixedArray<uint32> ButtonPressedCmdNumber {
+    get => new SchemaFixedArray<uint32>(_Handle + Schema.GetOffset(0xD5BDF289A7854580));
+  }
+  public ref uint LastCommandNumberProcessed {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xD5BDF2899927F73D));
+  }
+  public ref ulong ToggleButtonDownMask {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xD5BDF28907E86F99));
+  }
+  public ref float Maxspeed {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD5BDF289468F90F2));
+  }
+  public ISchemaFixedArray<float32> ForceSubtickMoveWhen {
+    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0xD5BDF28999115A07));
+  }
+  public ref float ForwardMove {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD5BDF289806C78A9));
+  }
+  public ref float LeftMove {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD5BDF289C4CF0D13));
+  }
+  public ref float UpMove {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD5BDF289B1E2D2B7));
+  }
+  public ref Vector LastMovementImpulses {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD5BDF2890B87214C));
+  }
+  public ref QAngle LastFinishTickViewAngles {
+    get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xD5BDF289DC15491A));
+  }
+  public ref QAngle OldViewAngles {
+    get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xD5BDF28935A27A27));
+  }
+
+  public void ToggleButtonDownMaskUpdated() {
+    Schema.Update(_Handle, 0xD5BDF28907E86F99);
+  }
+  public void MaxspeedUpdated() {
+    Schema.Update(_Handle, 0xD5BDF289468F90F2);
+  }
+  public void ForceSubtickMoveWhenUpdated() {
+    Schema.Update(_Handle, 0xD5BDF28999115A07);
+  }
+}

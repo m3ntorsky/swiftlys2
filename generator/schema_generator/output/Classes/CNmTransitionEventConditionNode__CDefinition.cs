@@ -1,0 +1,29 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CNmTransitionEventConditionNode__CDefinition : CNmBoolValueNode::CDefinition, INmTransitionEventConditionNode__CDefinition {
+
+  public CNmTransitionEventConditionNode__CDefinition(nint handle) : base(handle) {
+  }
+
+  public CNmTransitionEventConditionNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CGlobalSymbol RequireRuleID {
+    get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x874AC07F75BFD237));
+  }
+  public INmBitFlags EventConditionRules {
+    get => new CNmBitFlags(_Handle + Schema.GetOffset(0x874AC07FA904315F));
+  }
+  public ref short SourceStateNodeIdx {
+    get => ref _Handle.AsRef<short>(Schema.GetOffset(0x874AC07F63F0228C));
+  }
+  public ref NmTransitionRuleCondition_t RuleCondition {
+    get => ref _Handle.AsRef<NmTransitionRuleCondition_t>(Schema.GetOffset(0x874AC07FE5B98074));
+  }
+
+
+}

@@ -1,0 +1,116 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_OP_ControlpointLight : CParticleFunctionOperator, IC_OP_ControlpointLight {
+
+  public C_OP_ControlpointLight(nint handle) : base(handle) {
+  }
+
+  public C_OP_ControlpointLight(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref float Scale {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x53983694B731A42F));
+  }
+  public ref int ControlPoint1 {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5398369449D73687));
+  }
+  public ref int ControlPoint2 {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x539836944AD7381A));
+  }
+  public ref int ControlPoint3 {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x539836944BD739AD));
+  }
+  public ref int ControlPoint4 {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5398369444D72EA8));
+  }
+  public ref Vector CPOffset1 {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x53983694EC8B6090));
+  }
+  public ref Vector CPOffset2 {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x53983694EF8B6549));
+  }
+  public ref Vector CPOffset3 {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x53983694EE8B63B6));
+  }
+  public ref Vector CPOffset4 {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x53983694F18B686F));
+  }
+  public ref float LightFiftyDist1 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x539836942E21760A));
+  }
+  public ref float LightZeroDist1 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x53983694F929281C));
+  }
+  public ref float LightFiftyDist2 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x539836942D217477));
+  }
+  public ref float LightZeroDist2 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x53983694FC292CD5));
+  }
+  public ref float LightFiftyDist3 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x539836942C2172E4));
+  }
+  public ref float LightZeroDist3 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x53983694FB292B42));
+  }
+  public ref float LightFiftyDist4 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x539836942B217151));
+  }
+  public ref float LightZeroDist4 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x53983694F6292363));
+  }
+  public ref Color LightColor1 {
+    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x5398369417353AFD));
+  }
+  public ref Color LightColor2 {
+    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x5398369414353644));
+  }
+  public ref Color LightColor3 {
+    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x53983694153537D7));
+  }
+  public ref Color LightColor4 {
+    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x539836941235331E));
+  }
+  public ref bool LightType1 {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53983694DE9E9CD2));
+  }
+  public ref bool LightType2 {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53983694DD9E9B3F));
+  }
+  public ref bool LightType3 {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53983694DC9E99AC));
+  }
+  public ref bool LightType4 {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53983694DB9E9819));
+  }
+  public ref bool LightDynamic1 {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53983694B9DD5AAF));
+  }
+  public ref bool LightDynamic2 {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53983694BADD5C42));
+  }
+  public ref bool LightDynamic3 {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53983694BBDD5DD5));
+  }
+  public ref bool LightDynamic4 {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53983694B4DD52D0));
+  }
+  public ref bool UseNormal {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x539836949FA2D197));
+  }
+  public ref bool UseHLambert {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53983694916889E9));
+  }
+  public ref bool ClampLowerRange {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x539836940F690326));
+  }
+  public ref bool ClampUpperRange {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53983694815873B5));
+  }
+
+
+}

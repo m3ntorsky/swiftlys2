@@ -1,0 +1,29 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_OP_LagCompensation : CParticleFunctionOperator, IC_OP_LagCompensation {
+
+  public C_OP_LagCompensation(nint handle) : base(handle) {
+  }
+
+  public C_OP_LagCompensation(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref int DesiredVelocityCP {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x21277E4532AACEC5));
+  }
+  public ref int LatencyCP {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x21277E45B100FE8E));
+  }
+  public ref int LatencyCPField {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x21277E458E1CEB3A));
+  }
+  public ref int DesiredVelocityCPField {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x21277E45B59E9007));
+  }
+
+
+}

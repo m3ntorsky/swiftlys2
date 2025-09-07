@@ -1,0 +1,32 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_INIT_CreateFromParentParticles : CParticleFunctionInitializer, IC_INIT_CreateFromParentParticles {
+
+  public C_INIT_CreateFromParentParticles(nint handle) : base(handle) {
+  }
+
+  public C_INIT_CreateFromParentParticles(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref float VelocityScale {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4AEA47CDE161DDAA));
+  }
+  public ref float Increment {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4AEA47CDB3721674));
+  }
+  public ref bool RandomDistribution {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4AEA47CD830F6B38));
+  }
+  public ref int RandomSeed {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4AEA47CD6388F067));
+  }
+  public ref bool SubFrame {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4AEA47CD1BAEEAF6));
+  }
+
+
+}

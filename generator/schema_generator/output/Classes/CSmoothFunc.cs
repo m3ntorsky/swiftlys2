@@ -1,0 +1,32 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CSmoothFunc : SchemaClass, ISmoothFunc {
+
+  public CSmoothFunc(nint handle) : base(handle) {
+  }
+
+  public CSmoothFunc(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref float SmoothAmplitude {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4C3907DAAB831D3A));
+  }
+  public ref float SmoothBias {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4C3907DA8DF7120C));
+  }
+  public ref float SmoothDuration {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4C3907DA62F4C0D5));
+  }
+  public ref float SmoothRemainingTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4C3907DAB4D54372));
+  }
+  public ref int SmoothDir {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4C3907DAB90556AA));
+  }
+
+
+}

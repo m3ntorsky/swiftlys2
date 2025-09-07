@@ -1,0 +1,56 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_OP_ClientPhysics : CParticleFunctionRenderer, IC_OP_ClientPhysics {
+
+  public C_OP_ClientPhysics(nint handle) : base(handle) {
+  }
+
+  public C_OP_ClientPhysics(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CUtlString StrPhysicsType {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD58F5C47820348D9));
+  }
+  public ref bool StartAsleep {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD58F5C4789BA22DD));
+  }
+  public IParticleCollectionFloatInput PlayerWakeRadius {
+    get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0xD58F5C47E624F15C));
+  }
+  public IParticleCollectionFloatInput VehicleWakeRadius {
+    get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0xD58F5C4733A7C27B));
+  }
+  public ref bool UseHighQualitySimulation {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD58F5C47B0E917EA));
+  }
+  public ref int MaxParticleCount {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD58F5C47FD3F82B6));
+  }
+  public ref bool RespectExclusionVolumes {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD58F5C47BF981E2A));
+  }
+  public ref bool KillParticles {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD58F5C47D2FD5948));
+  }
+  public ref bool DeleteSim {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD58F5C478F438761));
+  }
+  public ref int ControlPoint {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD58F5C470D0DDF8C));
+  }
+  public ref int ForcedSimId {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD58F5C47998B388E));
+  }
+  public ref ParticleColorBlendType_t ColorBlendType {
+    get => ref _Handle.AsRef<ParticleColorBlendType_t>(Schema.GetOffset(0xD58F5C47DBC6EFCF));
+  }
+  public ref ParticleAttrBoxFlags_t ForcedStatusEffects {
+    get => ref _Handle.AsRef<ParticleAttrBoxFlags_t>(Schema.GetOffset(0xD58F5C4712A659B8));
+  }
+
+
+}

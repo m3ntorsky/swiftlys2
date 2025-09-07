@@ -1,0 +1,23 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CBodyGroupSetting : SchemaClass, IBodyGroupSetting {
+
+  public CBodyGroupSetting(nint handle) : base(handle) {
+  }
+
+  public CBodyGroupSetting(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CUtlString BodyGroupName {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xC078388F0E290077));
+  }
+  public ref int BodyGroupOption {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC078388F09FA2D31));
+  }
+
+
+}

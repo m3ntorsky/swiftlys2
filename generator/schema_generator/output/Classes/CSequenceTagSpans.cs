@@ -1,0 +1,23 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CSequenceTagSpans : SchemaClass, ISequenceTagSpans {
+
+  public CSequenceTagSpans(nint handle) : base(handle) {
+  }
+
+  public CSequenceTagSpans(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CGlobalSymbol SequenceName {
+    get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x132BFE6A7462AF30));
+  }
+  public ref CUtlVector< TagSpan_t > Tags {
+    get => ref _Handle.AsRef<CUtlVector< TagSpan_t >>(Schema.GetOffset(0x132BFE6AB46C8540));
+  }
+
+
+}

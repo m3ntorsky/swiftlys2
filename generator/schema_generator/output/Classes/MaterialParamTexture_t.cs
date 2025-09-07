@@ -1,0 +1,20 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class MaterialParamTexture_t : MaterialParam_t, IMaterialParamTexture_t {
+
+  public MaterialParamTexture_t(nint handle) : base(handle) {
+  }
+
+  public MaterialParamTexture_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Value {
+    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x17803E3B7F437844));
+  }
+
+
+}

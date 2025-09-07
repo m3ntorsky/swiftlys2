@@ -1,0 +1,56 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_INIT_InitialRepulsionVelocity : CParticleFunctionInitializer, IC_INIT_InitialRepulsionVelocity {
+
+  public C_INIT_InitialRepulsionVelocity(nint handle) : base(handle) {
+  }
+
+  public C_INIT_InitialRepulsionVelocity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ISchemaFixedString CollisionGroupName {
+    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x562DB6BED58A3195));
+  }
+  public ref ParticleTraceSet_t TraceSet {
+    get => ref _Handle.AsRef<ParticleTraceSet_t>(Schema.GetOffset(0x562DB6BEBD26C5B2));
+  }
+  public ref Vector OutputMin {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x562DB6BE2EFED678));
+  }
+  public ref Vector OutputMax {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x562DB6BE451280D2));
+  }
+  public ref int ControlPointNumber {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x562DB6BE3F31A6BD));
+  }
+  public ref bool PerParticle {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x562DB6BE262A02D6));
+  }
+  public ref bool Translate {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x562DB6BE3EBF32B5));
+  }
+  public ref bool Proportional {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x562DB6BE891F328A));
+  }
+  public ref float TraceLength {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x562DB6BEF5A5DE40));
+  }
+  public ref bool PerParticleTR {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x562DB6BE4B71761C));
+  }
+  public ref bool Inherit {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x562DB6BE286627C0));
+  }
+  public ref int ChildCP {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x562DB6BE982ACC02));
+  }
+  public ref int ChildGroupID {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x562DB6BEE3F3C965));
+  }
+
+
+}

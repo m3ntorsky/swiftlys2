@@ -1,0 +1,32 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_INIT_RandomSequence : CParticleFunctionInitializer, IC_INIT_RandomSequence {
+
+  public C_INIT_RandomSequence(nint handle) : base(handle) {
+  }
+
+  public C_INIT_RandomSequence(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref int SequenceMin {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x78382338D30682F0));
+  }
+  public ref int SequenceMax {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x78382338C8F2EB7A));
+  }
+  public ref bool Shuffle {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x7838233828BD2B2E));
+  }
+  public ref bool Linear {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x78382338B9313720));
+  }
+  public ref CUtlVector< SequenceWeightedList_t > WeightedList {
+    get => ref _Handle.AsRef<CUtlVector< SequenceWeightedList_t >>(Schema.GetOffset(0x783823385554D8B8));
+  }
+
+
+}

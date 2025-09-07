@@ -1,0 +1,38 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_OP_FadeAndKill : CParticleFunctionOperator, IC_OP_FadeAndKill {
+
+  public C_OP_FadeAndKill(nint handle) : base(handle) {
+  }
+
+  public C_OP_FadeAndKill(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref float StartFadeInTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x66AFC90439639779));
+  }
+  public ref float EndFadeInTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x66AFC90436A35C84));
+  }
+  public ref float StartFadeOutTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x66AFC9046ABCF324));
+  }
+  public ref float EndFadeOutTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x66AFC904FE87D7E7));
+  }
+  public ref float StartAlpha {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x66AFC9046A7A5D0B));
+  }
+  public ref float EndAlpha {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x66AFC9047A639CC0));
+  }
+  public ref bool ForcePreserveParticleOrder {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x66AFC904FEB98B86));
+  }
+
+
+}

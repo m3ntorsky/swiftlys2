@@ -1,0 +1,29 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CConstantForceController : SchemaClass, IConstantForceController {
+
+  public CConstantForceController(nint handle) : base(handle) {
+  }
+
+  public CConstantForceController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref Vector Linear {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x37030A8D6B6D1260));
+  }
+  public ISchemaUntypedField Angular {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x37030A8D74E0EB09));
+  }
+  public ref Vector LinearSave {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x37030A8D96B9953D));
+  }
+  public ISchemaUntypedField AngularSave {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x37030A8D8294323C));
+  }
+
+
+}

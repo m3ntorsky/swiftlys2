@@ -1,0 +1,64 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class VPhysicsCollisionAttribute_t : SchemaClass, IVPhysicsCollisionAttribute_t {
+
+  public VPhysicsCollisionAttribute_t(nint handle) : base(handle) {
+  }
+
+  public VPhysicsCollisionAttribute_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref ulong InteractsAs {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x7E9FC931062B2708));
+  }
+  public ref ulong InteractsWith {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x7E9FC93139179720));
+  }
+  public ref ulong InteractsExclude {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x7E9FC9314D765732));
+  }
+  public ref uint EntityId {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x7E9FC9312E71588B));
+  }
+  public ref uint OwnerId {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x7E9FC931DD9F9E45));
+  }
+  public ref ushort HierarchyId {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x7E9FC931E2479899));
+  }
+  public ref byte CollisionGroup {
+    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x7E9FC9310AC0C752));
+  }
+  public ref byte CollisionFunctionMask {
+    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x7E9FC931FC7E6DAF));
+  }
+
+  public void InteractsAsUpdated() {
+    Schema.Update(_Handle, 0x7E9FC931062B2708);
+  }
+  public void InteractsWithUpdated() {
+    Schema.Update(_Handle, 0x7E9FC93139179720);
+  }
+  public void InteractsExcludeUpdated() {
+    Schema.Update(_Handle, 0x7E9FC9314D765732);
+  }
+  public void EntityIdUpdated() {
+    Schema.Update(_Handle, 0x7E9FC9312E71588B);
+  }
+  public void OwnerIdUpdated() {
+    Schema.Update(_Handle, 0x7E9FC931DD9F9E45);
+  }
+  public void HierarchyIdUpdated() {
+    Schema.Update(_Handle, 0x7E9FC931E2479899);
+  }
+  public void CollisionGroupUpdated() {
+    Schema.Update(_Handle, 0x7E9FC9310AC0C752);
+  }
+  public void CollisionFunctionMaskUpdated() {
+    Schema.Update(_Handle, 0x7E9FC931FC7E6DAF);
+  }
+}

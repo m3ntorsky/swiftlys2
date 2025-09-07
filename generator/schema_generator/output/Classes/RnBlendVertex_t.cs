@@ -1,0 +1,41 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class RnBlendVertex_t : SchemaClass, IRnBlendVertex_t {
+
+  public RnBlendVertex_t(nint handle) : base(handle) {
+  }
+
+  public RnBlendVertex_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref ushort Weight0 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xE168A4F195C99E6F));
+  }
+  public ref ushort Index0 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xE168A4F1CD32A2F5));
+  }
+  public ref ushort Weight1 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xE168A4F194C99CDC));
+  }
+  public ref ushort Index1 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xE168A4F1CC32A162));
+  }
+  public ref ushort Weight2 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xE168A4F197C9A195));
+  }
+  public ref ushort Index2 {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xE168A4F1CB329FCF));
+  }
+  public ref ushort Flags {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xE168A4F1CE6E9C28));
+  }
+  public ref ushort TargetIndex {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xE168A4F1F1A91080));
+  }
+
+
+}

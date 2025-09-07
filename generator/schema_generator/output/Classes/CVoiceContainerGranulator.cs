@@ -1,0 +1,35 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CVoiceContainerGranulator : CVoiceContainerBase, IVoiceContainerGranulator {
+
+  public CVoiceContainerGranulator(nint handle) : base(handle) {
+  }
+
+  public CVoiceContainerGranulator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref float GrainLength {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x30F273589D2BE672));
+  }
+  public ref float GrainCrossfadeAmount {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x30F27358AE31A7DC));
+  }
+  public ref float StartJitter {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x30F27358FBAD6833));
+  }
+  public ref float PlaybackJitter {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x30F273583904EEB8));
+  }
+  public ref bool ShouldWraparound {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x30F273585F9E45A3));
+  }
+  public ref CStrongHandle< InfoForResourceTypeCVoiceContainerBase > SourceAudio {
+    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCVoiceContainerBase >>(Schema.GetOffset(0x30F27358E5E00DE2));
+  }
+
+
+}

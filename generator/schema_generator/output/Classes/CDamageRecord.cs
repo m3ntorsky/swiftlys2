@@ -1,0 +1,103 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CDamageRecord : SchemaClass, IDamageRecord {
+
+  public CDamageRecord(nint handle) : base(handle) {
+  }
+
+  public CDamageRecord(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CHandle< CCSPlayerPawn > PlayerDamager {
+    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0x149283162F5812D9));
+  }
+  public ref CHandle< CCSPlayerPawn > PlayerRecipient {
+    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0x14928316EB48351F));
+  }
+  public ref CHandle< CCSPlayerController > PlayerControllerDamager {
+    get => ref _Handle.AsRef<CHandle< CCSPlayerController >>(Schema.GetOffset(0x14928316285F9023));
+  }
+  public ref CHandle< CCSPlayerController > PlayerControllerRecipient {
+    get => ref _Handle.AsRef<CHandle< CCSPlayerController >>(Schema.GetOffset(0x14928316033B0B25));
+  }
+  public ref CUtlString PlayerDamagerName {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x149283165AB278AD));
+  }
+  public ref CUtlString PlayerRecipientName {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x14928316E6015313));
+  }
+  public ref ulong DamagerXuid {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x14928316DAD4D818));
+  }
+  public ref ulong RecipientXuid {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x1492831684A232C2));
+  }
+  public ref int BulletsDamage {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x14928316EEAE71A8));
+  }
+  public ref int Damage {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x149283160DEE4DB5));
+  }
+  public ref int ActualHealthRemoved {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x14928316E7BBB38C));
+  }
+  public ref int NumHits {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x149283162EC9980E));
+  }
+  public ref int LastBulletUpdate {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x14928316D5ABC11D));
+  }
+  public ref bool IsOtherEnemy {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x149283164F1F40EB));
+  }
+  public ref EKillTypes_t KillType {
+    get => ref _Handle.AsRef<EKillTypes_t>(Schema.GetOffset(0x14928316C2ADBB11));
+  }
+
+  public void PlayerDamagerUpdated() {
+    Schema.Update(_Handle, 0x149283162F5812D9);
+  }
+  public void PlayerRecipientUpdated() {
+    Schema.Update(_Handle, 0x14928316EB48351F);
+  }
+  public void PlayerControllerDamagerUpdated() {
+    Schema.Update(_Handle, 0x14928316285F9023);
+  }
+  public void PlayerControllerRecipientUpdated() {
+    Schema.Update(_Handle, 0x14928316033B0B25);
+  }
+  public void PlayerDamagerNameUpdated() {
+    Schema.Update(_Handle, 0x149283165AB278AD);
+  }
+  public void PlayerRecipientNameUpdated() {
+    Schema.Update(_Handle, 0x14928316E6015313);
+  }
+  public void DamagerXuidUpdated() {
+    Schema.Update(_Handle, 0x14928316DAD4D818);
+  }
+  public void RecipientXuidUpdated() {
+    Schema.Update(_Handle, 0x1492831684A232C2);
+  }
+  public void DamageUpdated() {
+    Schema.Update(_Handle, 0x149283160DEE4DB5);
+  }
+  public void ActualHealthRemovedUpdated() {
+    Schema.Update(_Handle, 0x14928316E7BBB38C);
+  }
+  public void NumHitsUpdated() {
+    Schema.Update(_Handle, 0x149283162EC9980E);
+  }
+  public void LastBulletUpdateUpdated() {
+    Schema.Update(_Handle, 0x14928316D5ABC11D);
+  }
+  public void IsOtherEnemyUpdated() {
+    Schema.Update(_Handle, 0x149283164F1F40EB);
+  }
+  public void KillTypeUpdated() {
+    Schema.Update(_Handle, 0x14928316C2ADBB11);
+  }
+}

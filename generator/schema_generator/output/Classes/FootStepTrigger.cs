@@ -1,0 +1,26 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class FootStepTrigger : SchemaClass, IFootStepTrigger {
+
+  public FootStepTrigger(nint handle) : base(handle) {
+  }
+
+  public FootStepTrigger(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CUtlVector< int32 > Tags {
+    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0xD1D326CDB46C8540));
+  }
+  public ref int FootIndex {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD1D326CD67D56BAB));
+  }
+  public ref StepPhase TriggerPhase {
+    get => ref _Handle.AsRef<StepPhase>(Schema.GetOffset(0xD1D326CD486B84EE));
+  }
+
+
+}

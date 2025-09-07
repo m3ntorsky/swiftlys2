@@ -1,0 +1,68 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_OP_MovementPlaceOnGround : CParticleFunctionOperator, IC_OP_MovementPlaceOnGround {
+
+  public C_OP_MovementPlaceOnGround(nint handle) : base(handle) {
+  }
+
+  public C_OP_MovementPlaceOnGround(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public IPerParticleFloatInput Offset {
+    get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0x53323DE97F14BA34));
+  }
+  public ref float MaxTraceLength {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x53323DE9543C3798));
+  }
+  public ref float Tolerance {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x53323DE98C29728E));
+  }
+  public ref float TraceOffset {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x53323DE97EF6C397));
+  }
+  public ref float LerpRate {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x53323DE938B06C64));
+  }
+  public ISchemaFixedString CollisionGroupName {
+    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x53323DE9D58A3195));
+  }
+  public ref ParticleTraceSet_t TraceSet {
+    get => ref _Handle.AsRef<ParticleTraceSet_t>(Schema.GetOffset(0x53323DE9BD26C5B2));
+  }
+  public ref int RefCP1 {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x53323DE97D2F03D4));
+  }
+  public ref int RefCP2 {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x53323DE9802F088D));
+  }
+  public ref int LerpCP {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x53323DE9D251F4EF));
+  }
+  public ref ParticleTraceMissBehavior_t TraceMissBehavior {
+    get => ref _Handle.AsRef<ParticleTraceMissBehavior_t>(Schema.GetOffset(0x53323DE91F2C7BCC));
+  }
+  public ref bool IncludeShotHull {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53323DE9C9640390));
+  }
+  public ref bool IncludeWater {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53323DE9EB8D4646));
+  }
+  public ref bool SetNormal {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53323DE9542722AC));
+  }
+  public ref bool ScaleOffset {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x53323DE9AB39558E));
+  }
+  public ref int PreserveOffsetCP {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x53323DE958AC51C1));
+  }
+  public ref int IgnoreCP {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x53323DE9F0DDC7AC));
+  }
+
+
+}

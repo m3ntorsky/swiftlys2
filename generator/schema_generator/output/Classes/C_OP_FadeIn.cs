@@ -1,0 +1,29 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_OP_FadeIn : CParticleFunctionOperator, IC_OP_FadeIn {
+
+  public C_OP_FadeIn(nint handle) : base(handle) {
+  }
+
+  public C_OP_FadeIn(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref float FadeInTimeMin {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8B59B1091A2EFE5));
+  }
+  public ref float FadeInTimeMax {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8B59B109BB6875B));
+  }
+  public ref float FadeInTimeExp {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8B59B1046BA449A));
+  }
+  public ref bool Proportional {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA8B59B10891F328A));
+  }
+
+
+}

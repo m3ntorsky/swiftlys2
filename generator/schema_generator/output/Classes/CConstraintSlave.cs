@@ -1,0 +1,32 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CConstraintSlave : SchemaClass, IConstraintSlave {
+
+  public CConstraintSlave(nint handle) : base(handle) {
+  }
+
+  public CConstraintSlave(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref Quaternion BaseOrientation {
+    get => ref _Handle.AsRef<Quaternion>(Schema.GetOffset(0xE0E093BC46E6EA75));
+  }
+  public ref Vector BasePosition {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xE0E093BCC510D587));
+  }
+  public ref uint BoneHash {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xE0E093BCD4010F03));
+  }
+  public ref float Weight {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE0E093BC7B81E7AB));
+  }
+  public ref CUtlString Name {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xE0E093BC63D22D49));
+  }
+
+
+}

@@ -1,0 +1,41 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CJumpHelperUpdateNode : CSequenceUpdateNode, IJumpHelperUpdateNode {
+
+  public CJumpHelperUpdateNode(nint handle) : base(handle) {
+  }
+
+  public CJumpHelperUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public IAnimParamHandle TargetParam {
+    get => new CAnimParamHandle(_Handle + Schema.GetOffset(0xB5EA3127D85B45EB));
+  }
+  public ref Vector OriginalJumpMovement {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xB5EA31277E064DE5));
+  }
+  public ref float OriginalJumpDuration {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB5EA3127DC8F3370));
+  }
+  public ref float JumpStartCycle {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB5EA31275B46CD7D));
+  }
+  public ref float JumpEndCycle {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB5EA3127FDF5C656));
+  }
+  public ref JumpCorrectionMethod CorrectionMethod {
+    get => ref _Handle.AsRef<JumpCorrectionMethod>(Schema.GetOffset(0xB5EA31271E19BA51));
+  }
+  public ISchemaFixedArray<bool> TranslationAxis {
+    get => new SchemaFixedArray<bool>(_Handle + Schema.GetOffset(0xB5EA3127F062387D));
+  }
+  public ref bool ScaleSpeed {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB5EA31272776330C));
+  }
+
+
+}

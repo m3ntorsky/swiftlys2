@@ -1,0 +1,29 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CIronSightController : SchemaClass, IIronSightController {
+
+  public CIronSightController(nint handle) : base(handle) {
+  }
+
+  public CIronSightController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref bool IronSightAvailable {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9E147D3131BCE9D3));
+  }
+  public ref float IronSightAmount {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9E147D31D64422F6));
+  }
+  public ref float IronSightAmountGained {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9E147D316631E9A0));
+  }
+  public ref float IronSightAmountBiased {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9E147D31526716FA));
+  }
+
+
+}

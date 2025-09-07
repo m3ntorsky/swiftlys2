@@ -1,0 +1,32 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_OP_SetGravityToCP : CParticleFunctionPreEmission, IC_OP_SetGravityToCP {
+
+  public C_OP_SetGravityToCP(nint handle) : base(handle) {
+  }
+
+  public C_OP_SetGravityToCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref int CPInput {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xBA369CBDFB805736));
+  }
+  public ref int CPOutput {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xBA369CBD2077C953));
+  }
+  public IParticleCollectionFloatInput Scale {
+    get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0xBA369CBDB731A42F));
+  }
+  public ref bool SetOrientation {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBA369CBDE1390E37));
+  }
+  public ref bool SetZDown {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBA369CBDE2673E97));
+  }
+
+
+}

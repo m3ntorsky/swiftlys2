@@ -1,0 +1,35 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_OP_InterpolateRadius : CParticleFunctionOperator, IC_OP_InterpolateRadius {
+
+  public C_OP_InterpolateRadius(nint handle) : base(handle) {
+  }
+
+  public C_OP_InterpolateRadius(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref float StartTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1912EFA667FE9DC4));
+  }
+  public ref float EndTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1912EFA62041DF9D));
+  }
+  public ref float StartScale {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1912EFA6634567D1));
+  }
+  public ref float EndScale {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1912EFA67F017DB6));
+  }
+  public ref bool EaseInAndOut {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1912EFA6D14612BF));
+  }
+  public ref float Bias {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1912EFA6E7EF43B6));
+  }
+
+
+}

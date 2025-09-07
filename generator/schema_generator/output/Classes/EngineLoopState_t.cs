@@ -1,0 +1,29 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class EngineLoopState_t : SchemaClass, IEngineLoopState_t {
+
+  public EngineLoopState_t(nint handle) : base(handle) {
+  }
+
+  public EngineLoopState_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref int PlatWindowWidth {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8A7EC4513AF18278));
+  }
+  public ref int PlatWindowHeight {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8A7EC45157A7B88F));
+  }
+  public ref int RenderWidth {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8A7EC45179B0DC63));
+  }
+  public ref int RenderHeight {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8A7EC451A184E51E));
+  }
+
+
+}

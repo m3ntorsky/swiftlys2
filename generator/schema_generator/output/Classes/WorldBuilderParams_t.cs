@@ -1,0 +1,35 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class WorldBuilderParams_t : SchemaClass, IWorldBuilderParams_t {
+
+  public WorldBuilderParams_t(nint handle) : base(handle) {
+  }
+
+  public WorldBuilderParams_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref float MinDrawVolumeSize {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x37270ACBA9648390));
+  }
+  public ref bool BuildBakedLighting {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x37270ACBCF369FF6));
+  }
+  public ref bool AggregateInstanceStreams {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x37270ACB36B2AE78));
+  }
+  public IBakedLightingInfo_t BakedLightingInfo {
+    get => new BakedLightingInfo_t(_Handle + Schema.GetOffset(0x37270ACBC2128E04));
+  }
+  public ref ulong CompileTimestamp {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x37270ACB1CAADE3A));
+  }
+  public ref ulong CompileFingerprint {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x37270ACB98F6F58A));
+  }
+
+
+}

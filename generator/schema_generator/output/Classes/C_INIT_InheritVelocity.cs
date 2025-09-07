@@ -1,0 +1,23 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_INIT_InheritVelocity : CParticleFunctionInitializer, IC_INIT_InheritVelocity {
+
+  public C_INIT_InheritVelocity(nint handle) : base(handle) {
+  }
+
+  public C_INIT_InheritVelocity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref int ControlPointNumber {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x227ECF463F31A6BD));
+  }
+  public ref float VelocityScale {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x227ECF46E161DDAA));
+  }
+
+
+}

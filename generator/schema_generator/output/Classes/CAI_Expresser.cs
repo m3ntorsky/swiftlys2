@@ -1,0 +1,50 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CAI_Expresser : SchemaClass, IAI_Expresser {
+
+  public CAI_Expresser(nint handle) : base(handle) {
+  }
+
+  public CAI_Expresser(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public IGameTime_t StopTalkTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xFB9DA1AC36131EC4));
+  }
+  public IGameTime_t StopTalkTimeWithoutDelay {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xFB9DA1ACB3CAE32F));
+  }
+  public IGameTime_t QueuedSpeechTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xFB9DA1AC93DE376D));
+  }
+  public IGameTime_t BlockedTalkTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xFB9DA1AC2A2AC272));
+  }
+  public ref int VoicePitch {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFB9DA1ACAB038A45));
+  }
+  public IGameTime_t LastTimeAcceptedSpeak {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xFB9DA1AC8D9FF64F));
+  }
+  public ref bool AllowSpeakingInterrupts {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xFB9DA1ACC77E4694));
+  }
+  public ref bool ConsiderSceneInvolvementAsSpeech {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xFB9DA1ACB1C249B1));
+  }
+  public ref bool SceneEntityDisabled {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xFB9DA1AC6AC7EEF4));
+  }
+  public ref int LastSpokenPriority {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFB9DA1AC9722D67B));
+  }
+  public IBaseFlex Outer {
+    get => new CBaseFlex(_Handle + Schema.GetOffset(0xFB9DA1AC7359CF3A));
+  }
+
+
+}

@@ -1,0 +1,38 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_OP_ModelDampenMovement : CParticleFunctionOperator, IC_OP_ModelDampenMovement {
+
+  public C_OP_ModelDampenMovement(nint handle) : base(handle) {
+  }
+
+  public C_OP_ModelDampenMovement(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref int ControlPointNumber {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x74BD8BB63F31A6BD));
+  }
+  public ref bool BoundBox {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x74BD8BB6AB65CDDC));
+  }
+  public ref bool Outside {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x74BD8BB6733FEEA4));
+  }
+  public ref bool UseBones {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x74BD8BB610D1938B));
+  }
+  public ISchemaFixedString HitboxSetName {
+    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x74BD8BB66A21BB0E));
+  }
+  public IPerParticleVecInput PosOffset {
+    get => new CPerParticleVecInput(_Handle + Schema.GetOffset(0x74BD8BB655D114B6));
+  }
+  public ref float Drag {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x74BD8BB650DA6497));
+  }
+
+
+}

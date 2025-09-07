@@ -1,0 +1,76 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CEntityDissolve : CBaseModelEntity, IEntityDissolve {
+
+  public CEntityDissolve(nint handle) : base(handle) {
+  }
+
+  public CEntityDissolve(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref float FadeInStart {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x443F205EF5AD2D6A));
+  }
+  public ref float FadeInLength {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x443F205E74538EE6));
+  }
+  public ref float FadeOutModelStart {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x443F205E9C8AC6F4));
+  }
+  public ref float FadeOutModelLength {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x443F205E6FC0EC34));
+  }
+  public ref float FadeOutStart {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x443F205E3F5B2209));
+  }
+  public ref float FadeOutLength {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x443F205E9D0749A3));
+  }
+  public IGameTime_t StartTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0x443F205E67FE9DC4));
+  }
+  public ref EntityDisolveType_t DissolveType {
+    get => ref _Handle.AsRef<EntityDisolveType_t>(Schema.GetOffset(0x443F205E79AB525E));
+  }
+  public ref Vector DissolverOrigin {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x443F205E34A16EE6));
+  }
+  public ref uint Magnitude {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x443F205E0C71BDF1));
+  }
+
+  public void FadeInStartUpdated() {
+    Schema.Update(_Handle, 0x443F205EF5AD2D6A);
+  }
+  public void FadeInLengthUpdated() {
+    Schema.Update(_Handle, 0x443F205E74538EE6);
+  }
+  public void FadeOutModelStartUpdated() {
+    Schema.Update(_Handle, 0x443F205E9C8AC6F4);
+  }
+  public void FadeOutModelLengthUpdated() {
+    Schema.Update(_Handle, 0x443F205E6FC0EC34);
+  }
+  public void FadeOutStartUpdated() {
+    Schema.Update(_Handle, 0x443F205E3F5B2209);
+  }
+  public void FadeOutLengthUpdated() {
+    Schema.Update(_Handle, 0x443F205E9D0749A3);
+  }
+  public void StartTimeUpdated() {
+    Schema.Update(_Handle, 0x443F205E67FE9DC4);
+  }
+  public void DissolveTypeUpdated() {
+    Schema.Update(_Handle, 0x443F205E79AB525E);
+  }
+  public void DissolverOriginUpdated() {
+    Schema.Update(_Handle, 0x443F205E34A16EE6);
+  }
+  public void MagnitudeUpdated() {
+    Schema.Update(_Handle, 0x443F205E0C71BDF1);
+  }
+}

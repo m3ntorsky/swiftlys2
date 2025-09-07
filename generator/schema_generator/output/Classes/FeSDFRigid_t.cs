@@ -1,0 +1,50 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class FeSDFRigid_t : SchemaClass, IFeSDFRigid_t {
+
+  public FeSDFRigid_t(nint handle) : base(handle) {
+  }
+
+  public FeSDFRigid_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref Vector LocalMin {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xAA90A717B4EB2F0));
+  }
+  public ref Vector LocalMax {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xAA90A71713B1B7A));
+  }
+  public ref float Bounciness {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xAA90A7157FAD924));
+  }
+  public ref ushort Node {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xAA90A71CD6694B9));
+  }
+  public ref ushort CollisionMask {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xAA90A710ED3454F));
+  }
+  public ref ushort VertexMapIndex {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xAA90A717B332E39));
+  }
+  public ref ushort Flags {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xAA90A71B8D52E48));
+  }
+  public ref CUtlVector< float32 > Distances {
+    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0xAA90A7122002443));
+  }
+  public ref int Width {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xAA90A71119108BB));
+  }
+  public ref int Height {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xAA90A71CAB61C56));
+  }
+  public ref int Depth {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xAA90A71B725DB96));
+  }
+
+
+}

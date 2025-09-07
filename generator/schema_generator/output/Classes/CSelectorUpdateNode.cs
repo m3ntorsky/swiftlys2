@@ -1,0 +1,47 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CSelectorUpdateNode : CAnimUpdateNodeBase, ISelectorUpdateNode {
+
+  public CSelectorUpdateNode(nint handle) : base(handle) {
+  }
+
+  public CSelectorUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CUtlVector< CAnimUpdateNodeRef > Children {
+    get => ref _Handle.AsRef<CUtlVector< CAnimUpdateNodeRef >>(Schema.GetOffset(0x23CD95F27415FA72));
+  }
+  public ref CUtlVector< int8 > Tags {
+    get => ref _Handle.AsRef<CUtlVector< int8 >>(Schema.GetOffset(0x23CD95F2B46C8540));
+  }
+  public IBlendCurve BlendCurve {
+    get => new CBlendCurve(_Handle + Schema.GetOffset(0x23CD95F291978183));
+  }
+  public ISchemaUntypedField BlendTime {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x23CD95F2A6206E9F));
+  }
+  public IAnimParamHandle Parameter {
+    get => new CAnimParamHandle(_Handle + Schema.GetOffset(0x23CD95F20C7008F6));
+  }
+  public ref int TagIndex {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x23CD95F2C2026AAD));
+  }
+  public ref SelectorTagBehavior_t TagBehavior {
+    get => ref _Handle.AsRef<SelectorTagBehavior_t>(Schema.GetOffset(0x23CD95F2698EF70A));
+  }
+  public ref bool ResetOnChange {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x23CD95F2E8AD58E9));
+  }
+  public ref bool LockWhenWaning {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x23CD95F2EED48004));
+  }
+  public ref bool SyncCyclesOnChange {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x23CD95F25DD67E78));
+  }
+
+
+}

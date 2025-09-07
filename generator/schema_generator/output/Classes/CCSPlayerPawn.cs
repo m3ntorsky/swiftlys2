@@ -1,0 +1,601 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CCSPlayerPawn : CCSPlayerPawnBase, ICSPlayerPawn {
+
+  public CCSPlayerPawn(nint handle) : base(handle) {
+  }
+
+  public CCSPlayerPawn(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ICSPlayer_BulletServices BulletServices {
+    get => new CCSPlayer_BulletServices(_Handle + Schema.GetOffset(0xC7614AAB8E2741BB));
+  }
+  public ICSPlayer_HostageServices HostageServices {
+    get => new CCSPlayer_HostageServices(_Handle + Schema.GetOffset(0xC7614AAB63EBD1D8));
+  }
+  public ICSPlayer_BuyServices BuyServices {
+    get => new CCSPlayer_BuyServices(_Handle + Schema.GetOffset(0xC7614AAB807A410D));
+  }
+  public ICSPlayer_ActionTrackingServices ActionTrackingServices {
+    get => new CCSPlayer_ActionTrackingServices(_Handle + Schema.GetOffset(0xC7614AABB8174144));
+  }
+  public ICSPlayer_RadioServices RadioServices {
+    get => new CCSPlayer_RadioServices(_Handle + Schema.GetOffset(0xC7614AAB6C70C036));
+  }
+  public ICSPlayer_DamageReactServices DamageReactServices {
+    get => new CCSPlayer_DamageReactServices(_Handle + Schema.GetOffset(0xC7614AABF4CD61D9));
+  }
+  public ref ushort CharacterDefIndex {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xC7614AABA96BAF31));
+  }
+  public ref bool HasFemaleVoice {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB7E7752FF));
+  }
+  public ref CUtlString StrVOPrefix {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xC7614AAB86FA355B));
+  }
+  public ISchemaFixedString LastPlaceName {
+    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xC7614AAB4C28E3A0));
+  }
+  public ref bool InHostageResetZone {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB5C3C71CC));
+  }
+  public ref bool InBuyZone {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB3AC1BD10));
+  }
+  public ref CUtlVector< CHandle< CBaseEntity > > TouchingBuyZones {
+    get => ref _Handle.AsRef<CUtlVector< CHandle< CBaseEntity > >>(Schema.GetOffset(0xC7614AABD244D3EF));
+  }
+  public ref bool WasInBuyZone {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABDE7A51C9));
+  }
+  public ref bool InHostageRescueZone {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABBFE04B90));
+  }
+  public ref bool InBombZone {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABCB89478C));
+  }
+  public ref bool WasInHostageRescueZone {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB008C8EF9));
+  }
+  public ref int RetakesOffering {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AABD729481D));
+  }
+  public ref int RetakesOfferingCard {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB3C338797));
+  }
+  public ref bool RetakesHasDefuseKit {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABEFC4B30A));
+  }
+  public ref bool RetakesMVPLastRound {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABC87BFEF3));
+  }
+  public ref int RetakesMVPBoostItem {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AABEC8D220C));
+  }
+  public ref loadout_slot_t RetakesMVPBoostExtraUtility {
+    get => ref _Handle.AsRef<loadout_slot_t>(Schema.GetOffset(0xC7614AABADA37062));
+  }
+  public IGameTime_t HealthShotBoostExpirationTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xC7614AABEC487ACC));
+  }
+  public ref float LandingTimeSeconds {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AAB7D39AEE4));
+  }
+  public ref QAngle AimPunchAngle {
+    get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xC7614AAB1E948CB9));
+  }
+  public ref QAngle AimPunchAngleVel {
+    get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xC7614AABB30DE0EC));
+  }
+  public ref int AimPunchTickBase {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AABB9C874A2));
+  }
+  public ref float AimPunchTickFraction {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AAB90BE3E69));
+  }
+  public ref CUtlVector< QAngle > AimPunchCache {
+    get => ref _Handle.AsRef<CUtlVector< QAngle >>(Schema.GetOffset(0xC7614AAB824312D8));
+  }
+  public ref bool IsBuyMenuOpen {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABFBCDD8EC));
+  }
+  public ref CTransform XLastHeadBoneTransform {
+    get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xC7614AAB83865E39));
+  }
+  public ref bool LastHeadBoneTransformIsValid {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB41218523));
+  }
+  public IGameTime_t LastLandTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xC7614AAB21F4A3D1));
+  }
+  public ref bool OnGroundLastTick {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABF09CFC72));
+  }
+  public ref int PlayerLocked {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AABAE9A0717));
+  }
+  public IGameTime_t TimeOfLastInjury {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xC7614AABD7B4663C));
+  }
+  public IGameTime_t NextSprayDecalTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xC7614AAB53790011));
+  }
+  public ref bool NextSprayDecalTimeExpedited {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB8C1B26CB));
+  }
+  public ref int RagdollDamageBone {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB31F4732F));
+  }
+  public ref Vector RagdollDamageForce {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC7614AAB7FBF68CC));
+  }
+  public ref Vector RagdollDamagePosition {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC7614AAB29671362));
+  }
+  public ISchemaFixedString RagdollDamageWeaponName {
+    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xC7614AABDAAFA519));
+  }
+  public ref bool RagdollDamageHeadshot {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB324979E7));
+  }
+  public ref Vector RagdollServerOrigin {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC7614AAB24991D61));
+  }
+  public IEconItemView EconGloves {
+    get => new CEconItemView(_Handle + Schema.GetOffset(0xC7614AAB58DEE8E2));
+  }
+  public ref byte EconGlovesChanged {
+    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xC7614AAB617F6ACA));
+  }
+  public ref QAngle DeathEyeAngles {
+    get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xC7614AAB6F21BE57));
+  }
+  public ref bool SkipOneHeadConstraintUpdate {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB98DC3AB2));
+  }
+  public ref bool LeftHanded {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB63906F18));
+  }
+  public IGameTime_t SwitchedHandednessTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xC7614AAB40B8D9FE));
+  }
+  public ref float ViewmodelOffsetX {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AAB6890E2BC));
+  }
+  public ref float ViewmodelOffsetY {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AAB6990E44F));
+  }
+  public ref float ViewmodelOffsetZ {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AAB6A90E5E2));
+  }
+  public ref float ViewmodelFOV {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AAB08EEBF76));
+  }
+  public ref bool IsWalking {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB9441C788));
+  }
+  public ref float LastGivenDefuserTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AABDF220E63));
+  }
+  public ref float LastGivenBombTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AAB99769553));
+  }
+  public ref float DealtDamageToEnemyMostRecentTimestamp {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AABAF8A5253));
+  }
+  public ref uint DisplayHistoryBits {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xC7614AAB76E75E62));
+  }
+  public ref float LastAttackedTeammate {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AABC0E777B2));
+  }
+  public IGameTime_t AllowAutoFollowTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xC7614AABA781FC01));
+  }
+  public ref bool ResetArmorNextSpawn {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB6B761085));
+  }
+  public ref CEntityIndex LastKillerIndex {
+    get => ref _Handle.AsRef<CEntityIndex>(Schema.GetOffset(0xC7614AABA4700326));
+  }
+  public IEntitySpottedState_t EntitySpottedState {
+    get => new EntitySpottedState_t(_Handle + Schema.GetOffset(0xC7614AAB032B547C));
+  }
+  public ref int SpotRules {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB776CCE44));
+  }
+  public ref bool IsScoped {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABF3E9A9ED));
+  }
+  public ref bool ResumeZoom {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABB4707FB1));
+  }
+  public ref bool IsDefusing {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB5BDAECC0));
+  }
+  public ref bool IsGrabbingHostage {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB43AC7BEA));
+  }
+  public ref CSPlayerBlockingUseAction_t BlockingUseActionInProgress {
+    get => ref _Handle.AsRef<CSPlayerBlockingUseAction_t>(Schema.GetOffset(0xC7614AAB6B0B2AC0));
+  }
+  public IGameTime_t EmitSoundTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xC7614AABC6FA84FA));
+  }
+  public ref bool InNoDefuseArea {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB10C6FF02));
+  }
+  public ref CEntityIndex BombSiteIndex {
+    get => ref _Handle.AsRef<CEntityIndex>(Schema.GetOffset(0xC7614AAB14DD85B5));
+  }
+  public ref int WhichBombZone {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB0D69FABC));
+  }
+  public ref bool InBombZoneTrigger {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB73871310));
+  }
+  public ref bool WasInBombZoneTrigger {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB2660272D));
+  }
+  public ref int ShotsFired {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AABFE518C17));
+  }
+  public ref float FlinchStack {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AAB36439B97));
+  }
+  public ref float VelocityModifier {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AAB7AC97631));
+  }
+  public ref float HitHeading {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AAB09713C4E));
+  }
+  public ref int HitBodyPart {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB0CA9863B));
+  }
+  public ref Vector TotalBulletForce {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC7614AAB1BA998B0));
+  }
+  public ref bool WaitForNoAttack {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABC3DEC2A0));
+  }
+  public ref float IgnoreLadderJumpTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AABC0824DB6));
+  }
+  public ref bool KilledByHeadshot {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABEF3D732B));
+  }
+  public ref int LastHitBox {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB9B4C64DB));
+  }
+  public ref int LastHealth {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB3697C5BB));
+  }
+  public ICSBot Bot {
+    get => new CCSBot(_Handle + Schema.GetOffset(0xC7614AAB172AF0B4));
+  }
+  public ref bool BotAllowActive {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB673BB7CD));
+  }
+  public ref QAngle ThirdPersonHeading {
+    get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xC7614AABCE47A2A7));
+  }
+  public ref float SlopeDropOffset {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AABFC6CDBF0));
+  }
+  public ref float SlopeDropHeight {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AABD77D930C));
+  }
+  public ref Vector HeadConstraintOffset {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC7614AABADDDE147));
+  }
+  public ref int LastPickupPriority {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB9D89E5E9));
+  }
+  public ref float LastPickupPriorityTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AABF154FBF6));
+  }
+  public ref int ArmorValue {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB8937152D));
+  }
+  public ref ushort CurrentEquipmentValue {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xC7614AABECE8502A));
+  }
+  public ref ushort RoundStartEquipmentValue {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xC7614AAB498A2F2B));
+  }
+  public ref ushort FreezetimeEndEquipmentValue {
+    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xC7614AAB84CBC7A4));
+  }
+  public ref int LastWeaponFireUsercmd {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AABBCBC952D));
+  }
+  public ref bool IsSpawning {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB8686DDE0));
+  }
+  public ref int DeathFlags {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB5C202E41));
+  }
+  public ref bool HasDeathInfo {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB71E17F33));
+  }
+  public ref float DeathInfoTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AAB794C7D56));
+  }
+  public ref Vector DeathInfoOrigin {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC7614AAB05B549A7));
+  }
+  public ISchemaFixedArray<uint32> PlayerPatchEconIndices {
+    get => new SchemaFixedArray<uint32>(_Handle + Schema.GetOffset(0xC7614AABECA447BC));
+  }
+  public ref Color GunGameImmunityColor {
+    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0xC7614AAB5C81D4A0));
+  }
+  public IGameTime_t GrenadeParameterStashTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xC7614AAB86725FE0));
+  }
+  public ref bool GrenadeParametersStashed {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB0DC90C1F));
+  }
+  public ref QAngle StashedShootAngles {
+    get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xC7614AABBD5D41B8));
+  }
+  public ref Vector StashedGrenadeThrowPosition {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC7614AABCC07E25A));
+  }
+  public ref Vector StashedVelocity {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC7614AAB577972A4));
+  }
+  public ISchemaFixedArray<QAngle> ShootAngleHistory {
+    get => new SchemaFixedArray<QAngle>(_Handle + Schema.GetOffset(0xC7614AABE9EFCFCF));
+  }
+  public ISchemaFixedArray<Vector> ThrowPositionHistory {
+    get => new SchemaFixedArray<Vector>(_Handle + Schema.GetOffset(0xC7614AAB35A0837C));
+  }
+  public ISchemaFixedArray<Vector> VelocityHistory {
+    get => new SchemaFixedArray<Vector>(_Handle + Schema.GetOffset(0xC7614AAB24AFD9B2));
+  }
+  public ref CUtlVectorEmbeddedNetworkVar< PredictedDamageTag_t > PredictedDamageTags {
+    get => ref _Handle.AsRef<CUtlVectorEmbeddedNetworkVar< PredictedDamageTag_t >>(Schema.GetOffset(0xC7614AAB2CCF5943));
+  }
+  public ref int HighestAppliedDamageTagTick {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB1703141A));
+  }
+  public ref bool CommittingSuicideOnTeamChange {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB353E5ADC));
+  }
+  public ref bool WasNotKilledNaturally {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB538DBAE4));
+  }
+  public IGameTime_t ImmuneToGunGameDamageTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xC7614AAB8305FCCB));
+  }
+  public ref bool GunGameImmunity {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB9C15080D));
+  }
+  public ref float MolotovDamageTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AABD2CDBE21));
+  }
+  public ref QAngle EyeAngles {
+    get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xC7614AAB4EE662AC));
+  }
+
+  public void BulletServicesUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB8E2741BB);
+  }
+  public void HostageServicesUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB63EBD1D8);
+  }
+  public void BuyServicesUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB807A410D);
+  }
+  public void ActionTrackingServicesUpdated() {
+    Schema.Update(_Handle, 0xC7614AABB8174144);
+  }
+  public void HasFemaleVoiceUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB7E7752FF);
+  }
+  public void LastPlaceNameUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB4C28E3A0);
+  }
+  public void InBuyZoneUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB3AC1BD10);
+  }
+  public void InHostageRescueZoneUpdated() {
+    Schema.Update(_Handle, 0xC7614AABBFE04B90);
+  }
+  public void InBombZoneUpdated() {
+    Schema.Update(_Handle, 0xC7614AABCB89478C);
+  }
+  public void RetakesOfferingUpdated() {
+    Schema.Update(_Handle, 0xC7614AABD729481D);
+  }
+  public void RetakesOfferingCardUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB3C338797);
+  }
+  public void RetakesHasDefuseKitUpdated() {
+    Schema.Update(_Handle, 0xC7614AABEFC4B30A);
+  }
+  public void RetakesMVPLastRoundUpdated() {
+    Schema.Update(_Handle, 0xC7614AABC87BFEF3);
+  }
+  public void RetakesMVPBoostItemUpdated() {
+    Schema.Update(_Handle, 0xC7614AABEC8D220C);
+  }
+  public void RetakesMVPBoostExtraUtilityUpdated() {
+    Schema.Update(_Handle, 0xC7614AABADA37062);
+  }
+  public void HealthShotBoostExpirationTimeUpdated() {
+    Schema.Update(_Handle, 0xC7614AABEC487ACC);
+  }
+  public void AimPunchAngleUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB1E948CB9);
+  }
+  public void AimPunchAngleVelUpdated() {
+    Schema.Update(_Handle, 0xC7614AABB30DE0EC);
+  }
+  public void AimPunchTickBaseUpdated() {
+    Schema.Update(_Handle, 0xC7614AABB9C874A2);
+  }
+  public void AimPunchTickFractionUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB90BE3E69);
+  }
+  public void IsBuyMenuOpenUpdated() {
+    Schema.Update(_Handle, 0xC7614AABFBCDD8EC);
+  }
+  public void TimeOfLastInjuryUpdated() {
+    Schema.Update(_Handle, 0xC7614AABD7B4663C);
+  }
+  public void NextSprayDecalTimeUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB53790011);
+  }
+  public void RagdollDamageBoneUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB31F4732F);
+  }
+  public void RagdollDamageForceUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB7FBF68CC);
+  }
+  public void RagdollDamagePositionUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB29671362);
+  }
+  public void RagdollDamageWeaponNameUpdated() {
+    Schema.Update(_Handle, 0xC7614AABDAAFA519);
+  }
+  public void RagdollDamageHeadshotUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB324979E7);
+  }
+  public void RagdollServerOriginUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB24991D61);
+  }
+  public void EconGlovesUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB58DEE8E2);
+  }
+  public void EconGlovesChangedUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB617F6ACA);
+  }
+  public void DeathEyeAnglesUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB6F21BE57);
+  }
+  public void LeftHandedUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB63906F18);
+  }
+  public void SwitchedHandednessTimeUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB40B8D9FE);
+  }
+  public void ViewmodelOffsetXUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB6890E2BC);
+  }
+  public void ViewmodelOffsetYUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB6990E44F);
+  }
+  public void ViewmodelOffsetZUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB6A90E5E2);
+  }
+  public void ViewmodelFOVUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB08EEBF76);
+  }
+  public void IsWalkingUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB9441C788);
+  }
+  public void LastKillerIndexUpdated() {
+    Schema.Update(_Handle, 0xC7614AABA4700326);
+  }
+  public void EntitySpottedStateUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB032B547C);
+  }
+  public void IsScopedUpdated() {
+    Schema.Update(_Handle, 0xC7614AABF3E9A9ED);
+  }
+  public void ResumeZoomUpdated() {
+    Schema.Update(_Handle, 0xC7614AABB4707FB1);
+  }
+  public void IsDefusingUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB5BDAECC0);
+  }
+  public void IsGrabbingHostageUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB43AC7BEA);
+  }
+  public void BlockingUseActionInProgressUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB6B0B2AC0);
+  }
+  public void EmitSoundTimeUpdated() {
+    Schema.Update(_Handle, 0xC7614AABC6FA84FA);
+  }
+  public void InNoDefuseAreaUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB10C6FF02);
+  }
+  public void WhichBombZoneUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB0D69FABC);
+  }
+  public void ShotsFiredUpdated() {
+    Schema.Update(_Handle, 0xC7614AABFE518C17);
+  }
+  public void FlinchStackUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB36439B97);
+  }
+  public void VelocityModifierUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB7AC97631);
+  }
+  public void HitHeadingUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB09713C4E);
+  }
+  public void HitBodyPartUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB0CA9863B);
+  }
+  public void WaitForNoAttackUpdated() {
+    Schema.Update(_Handle, 0xC7614AABC3DEC2A0);
+  }
+  public void KilledByHeadshotUpdated() {
+    Schema.Update(_Handle, 0xC7614AABEF3D732B);
+  }
+  public void ThirdPersonHeadingUpdated() {
+    Schema.Update(_Handle, 0xC7614AABCE47A2A7);
+  }
+  public void SlopeDropOffsetUpdated() {
+    Schema.Update(_Handle, 0xC7614AABFC6CDBF0);
+  }
+  public void SlopeDropHeightUpdated() {
+    Schema.Update(_Handle, 0xC7614AABD77D930C);
+  }
+  public void HeadConstraintOffsetUpdated() {
+    Schema.Update(_Handle, 0xC7614AABADDDE147);
+  }
+  public void ArmorValueUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB8937152D);
+  }
+  public void CurrentEquipmentValueUpdated() {
+    Schema.Update(_Handle, 0xC7614AABECE8502A);
+  }
+  public void RoundStartEquipmentValueUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB498A2F2B);
+  }
+  public void FreezetimeEndEquipmentValueUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB84CBC7A4);
+  }
+  public void PlayerPatchEconIndicesUpdated() {
+    Schema.Update(_Handle, 0xC7614AABECA447BC);
+  }
+  public void GunGameImmunityColorUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB5C81D4A0);
+  }
+  public void PredictedDamageTagsUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB2CCF5943);
+  }
+  public void ImmuneToGunGameDamageTimeUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB8305FCCB);
+  }
+  public void GunGameImmunityUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB9C15080D);
+  }
+  public void MolotovDamageTimeUpdated() {
+    Schema.Update(_Handle, 0xC7614AABD2CDBE21);
+  }
+  public void EyeAnglesUpdated() {
+    Schema.Update(_Handle, 0xC7614AAB4EE662AC);
+  }
+}

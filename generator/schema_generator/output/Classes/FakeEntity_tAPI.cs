@@ -1,0 +1,18 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class FakeEntity_tAPI : SchemaClass, IFakeEntity_tAPI {
+
+  public FakeEntity_tAPI(nint handle) : base(handle) {
+  }
+
+  public FakeEntity_tAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+
+
+
+}

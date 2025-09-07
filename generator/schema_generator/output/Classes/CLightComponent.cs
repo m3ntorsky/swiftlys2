@@ -1,0 +1,430 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CLightComponent : CEntityComponent, ILightComponent {
+
+  public CLightComponent(nint handle) : base(handle) {
+  }
+
+  public CLightComponent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public INetworkVarChainer __m_pChainEntity {
+    get => new CNetworkVarChainer(_Handle + Schema.GetOffset(0x15B1C6A5F63F0E7D));
+  }
+  public ref Color Color {
+    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x15B1C6A5D7D017D8));
+  }
+  public ref Color SecondaryColor {
+    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x15B1C6A549D78994));
+  }
+  public ref float Brightness {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A59132D314));
+  }
+  public ref float BrightnessScale {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A55EFC3AAE));
+  }
+  public ref float BrightnessMult {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5EAC09432));
+  }
+  public ref float Range {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A53FC92844));
+  }
+  public ref float Falloff {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5FA143DCB));
+  }
+  public ref float Attenuation0 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5F1CACD03));
+  }
+  public ref float Attenuation1 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5F0CACB70));
+  }
+  public ref float Attenuation2 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5F3CAD029));
+  }
+  public ref float Theta {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5F8B2ACC1));
+  }
+  public ref float Phi {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5957450E2));
+  }
+  public ref CStrongHandle< InfoForResourceTypeCTextureBase > LightCookie {
+    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x15B1C6A50609D103));
+  }
+  public ref int Cascades {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A567FE3EFE));
+  }
+  public ref int CastShadows {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A551564EBB));
+  }
+  public ref int ShadowWidth {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A5C671948F));
+  }
+  public ref int ShadowHeight {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A5EC2D0CB2));
+  }
+  public ref bool RenderDiffuse {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x15B1C6A5DEDF2F65));
+  }
+  public ref int RenderSpecular {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A53728DE0C));
+  }
+  public ref bool RenderTransmissive {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x15B1C6A5186B09E9));
+  }
+  public ref float OrthoLightWidth {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A53E465C73));
+  }
+  public ref float OrthoLightHeight {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A525F3CD2E));
+  }
+  public ref int Style {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A5F6004492));
+  }
+  public ref CUtlString Pattern {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x15B1C6A52E3F72A9));
+  }
+  public ref int CascadeRenderStaticObjects {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A51197D9D5));
+  }
+  public ref float ShadowCascadeCrossFade {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5AB97244B));
+  }
+  public ref float ShadowCascadeDistanceFade {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5FD0BFBEE));
+  }
+  public ref float ShadowCascadeDistance0 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A59431AE78));
+  }
+  public ref float ShadowCascadeDistance1 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A59531B00B));
+  }
+  public ref float ShadowCascadeDistance2 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A59631B19E));
+  }
+  public ref float ShadowCascadeDistance3 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A59731B331));
+  }
+  public ref int ShadowCascadeResolution0 {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A58B5CD1AD));
+  }
+  public ref int ShadowCascadeResolution1 {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A58A5CD01A));
+  }
+  public ref int ShadowCascadeResolution2 {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A5895CCE87));
+  }
+  public ref int ShadowCascadeResolution3 {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A5885CCCF4));
+  }
+  public ref bool UsesBakedShadowing {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x15B1C6A523C6D880));
+  }
+  public ref int ShadowPriority {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A515B296B9));
+  }
+  public ref int BakedShadowIndex {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A5D4F129E0));
+  }
+  public ref int LightPathUniqueId {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A58626C8FE));
+  }
+  public ref int LightMapUniqueId {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A58E111BB5));
+  }
+  public ref bool RenderToCubemaps {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x15B1C6A58A23364A));
+  }
+  public ref bool AllowSSTGeneration {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x15B1C6A54E93C4FA));
+  }
+  public ref int DirectLight {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A5DEC0AAB4));
+  }
+  public ref int IndirectLight {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A5E5EAAFBD));
+  }
+  public ref float FadeMinDist {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A545D2BAAB));
+  }
+  public ref float FadeMaxDist {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5ACCE9CB9));
+  }
+  public ref float ShadowFadeMinDist {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A589AB0803));
+  }
+  public ref float ShadowFadeMaxDist {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A534C66901));
+  }
+  public ref bool Enabled {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x15B1C6A56154EB7E));
+  }
+  public ref bool Flicker {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x15B1C6A5D679F96F));
+  }
+  public ref bool PrecomputedFieldsValid {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x15B1C6A591C883D6));
+  }
+  public ref Vector PrecomputedBoundsMins {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x15B1C6A56F3FE3C1));
+  }
+  public ref Vector PrecomputedBoundsMaxs {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x15B1C6A5C5E5BC03));
+  }
+  public ref Vector PrecomputedOBBOrigin {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x15B1C6A5D6D011C8));
+  }
+  public ref QAngle PrecomputedOBBAngles {
+    get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0x15B1C6A589054822));
+  }
+  public ref Vector PrecomputedOBBExtent {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x15B1C6A585AE2732));
+  }
+  public ref float PrecomputedMaxRange {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5ACFF5B3C));
+  }
+  public ref int FogLightingMode {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A568C76B34));
+  }
+  public ref float FogContributionStength {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A535236D54));
+  }
+  public ref float NearClipPlane {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A562E34A17));
+  }
+  public ref Color SkyColor {
+    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x15B1C6A51DCFBBF9));
+  }
+  public ref float SkyIntensity {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5C3AB3B4D));
+  }
+  public ref Color SkyAmbientBounce {
+    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x15B1C6A57995A96A));
+  }
+  public ref bool UseSecondaryColor {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x15B1C6A5447EF561));
+  }
+  public ref bool MixedShadows {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x15B1C6A5C557957D));
+  }
+  public IGameTime_t LightStyleStartTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0x15B1C6A5A3B159A3));
+  }
+  public ref float CapsuleLength {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5F692B376));
+  }
+  public ref float MinRoughness {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x15B1C6A5B3A6FDC9));
+  }
+  public ref bool PvsModifyEntity {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x15B1C6A533895595));
+  }
+
+  public void ColorUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5D7D017D8);
+  }
+  public void SecondaryColorUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A549D78994);
+  }
+  public void BrightnessUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A59132D314);
+  }
+  public void BrightnessScaleUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A55EFC3AAE);
+  }
+  public void BrightnessMultUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5EAC09432);
+  }
+  public void RangeUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A53FC92844);
+  }
+  public void FalloffUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5FA143DCB);
+  }
+  public void Attenuation0Updated() {
+    Schema.Update(_Handle, 0x15B1C6A5F1CACD03);
+  }
+  public void Attenuation1Updated() {
+    Schema.Update(_Handle, 0x15B1C6A5F0CACB70);
+  }
+  public void Attenuation2Updated() {
+    Schema.Update(_Handle, 0x15B1C6A5F3CAD029);
+  }
+  public void ThetaUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5F8B2ACC1);
+  }
+  public void PhiUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5957450E2);
+  }
+  public void LightCookieUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A50609D103);
+  }
+  public void CascadesUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A567FE3EFE);
+  }
+  public void CastShadowsUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A551564EBB);
+  }
+  public void ShadowWidthUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5C671948F);
+  }
+  public void ShadowHeightUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5EC2D0CB2);
+  }
+  public void RenderDiffuseUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5DEDF2F65);
+  }
+  public void RenderSpecularUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A53728DE0C);
+  }
+  public void RenderTransmissiveUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5186B09E9);
+  }
+  public void OrthoLightWidthUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A53E465C73);
+  }
+  public void OrthoLightHeightUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A525F3CD2E);
+  }
+  public void StyleUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5F6004492);
+  }
+  public void PatternUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A52E3F72A9);
+  }
+  public void CascadeRenderStaticObjectsUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A51197D9D5);
+  }
+  public void ShadowCascadeCrossFadeUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5AB97244B);
+  }
+  public void ShadowCascadeDistanceFadeUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5FD0BFBEE);
+  }
+  public void ShadowCascadeDistance0Updated() {
+    Schema.Update(_Handle, 0x15B1C6A59431AE78);
+  }
+  public void ShadowCascadeDistance1Updated() {
+    Schema.Update(_Handle, 0x15B1C6A59531B00B);
+  }
+  public void ShadowCascadeDistance2Updated() {
+    Schema.Update(_Handle, 0x15B1C6A59631B19E);
+  }
+  public void ShadowCascadeDistance3Updated() {
+    Schema.Update(_Handle, 0x15B1C6A59731B331);
+  }
+  public void ShadowCascadeResolution0Updated() {
+    Schema.Update(_Handle, 0x15B1C6A58B5CD1AD);
+  }
+  public void ShadowCascadeResolution1Updated() {
+    Schema.Update(_Handle, 0x15B1C6A58A5CD01A);
+  }
+  public void ShadowCascadeResolution2Updated() {
+    Schema.Update(_Handle, 0x15B1C6A5895CCE87);
+  }
+  public void ShadowCascadeResolution3Updated() {
+    Schema.Update(_Handle, 0x15B1C6A5885CCCF4);
+  }
+  public void UsesBakedShadowingUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A523C6D880);
+  }
+  public void ShadowPriorityUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A515B296B9);
+  }
+  public void BakedShadowIndexUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5D4F129E0);
+  }
+  public void LightPathUniqueIdUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A58626C8FE);
+  }
+  public void LightMapUniqueIdUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A58E111BB5);
+  }
+  public void RenderToCubemapsUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A58A23364A);
+  }
+  public void AllowSSTGenerationUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A54E93C4FA);
+  }
+  public void DirectLightUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5DEC0AAB4);
+  }
+  public void IndirectLightUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5E5EAAFBD);
+  }
+  public void FadeMinDistUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A545D2BAAB);
+  }
+  public void FadeMaxDistUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5ACCE9CB9);
+  }
+  public void ShadowFadeMinDistUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A589AB0803);
+  }
+  public void ShadowFadeMaxDistUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A534C66901);
+  }
+  public void EnabledUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A56154EB7E);
+  }
+  public void FlickerUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5D679F96F);
+  }
+  public void PrecomputedFieldsValidUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A591C883D6);
+  }
+  public void PrecomputedBoundsMinsUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A56F3FE3C1);
+  }
+  public void PrecomputedBoundsMaxsUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5C5E5BC03);
+  }
+  public void PrecomputedOBBOriginUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5D6D011C8);
+  }
+  public void PrecomputedOBBAnglesUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A589054822);
+  }
+  public void PrecomputedOBBExtentUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A585AE2732);
+  }
+  public void PrecomputedMaxRangeUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5ACFF5B3C);
+  }
+  public void FogLightingModeUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A568C76B34);
+  }
+  public void FogContributionStengthUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A535236D54);
+  }
+  public void NearClipPlaneUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A562E34A17);
+  }
+  public void SkyColorUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A51DCFBBF9);
+  }
+  public void SkyIntensityUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5C3AB3B4D);
+  }
+  public void SkyAmbientBounceUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A57995A96A);
+  }
+  public void UseSecondaryColorUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5447EF561);
+  }
+  public void MixedShadowsUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5C557957D);
+  }
+  public void LightStyleStartTimeUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5A3B159A3);
+  }
+  public void CapsuleLengthUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5F692B376);
+  }
+  public void MinRoughnessUpdated() {
+    Schema.Update(_Handle, 0x15B1C6A5B3A6FDC9);
+  }
+}

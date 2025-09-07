@@ -1,0 +1,32 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class FunctionInfo_t : SchemaClass, IFunctionInfo_t {
+
+  public FunctionInfo_t(nint handle) : base(handle) {
+  }
+
+  public FunctionInfo_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CUtlString Name {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xFCE0933A4D8F5786));
+  }
+  public ref CUtlStringToken NameToken {
+    get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0xFCE0933A9293FEF3));
+  }
+  public ref int ParamCount {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFCE0933ADD5DEEAD));
+  }
+  public IFuseFunctionIndex_t Index {
+    get => new FuseFunctionIndex_t(_Handle + Schema.GetOffset(0xFCE0933AB73DBE67));
+  }
+  public ref bool IsPure {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xFCE0933AA5A65B13));
+  }
+
+
+}

@@ -1,0 +1,44 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CNmSoundEvent : CNmEvent, INmSoundEvent {
+
+  public CNmSoundEvent(nint handle) : base(handle) {
+  }
+
+  public CNmSoundEvent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref CNmEventRelevance_t Relevance {
+    get => ref _Handle.AsRef<CNmEventRelevance_t>(Schema.GetOffset(0xDC15E5261E3F4008));
+  }
+  public ref CNmSoundEvent::Type_t Type {
+    get => ref _Handle.AsRef<CNmSoundEvent::Type_t>(Schema.GetOffset(0xDC15E5260F04B4ED));
+  }
+  public ref CUtlString Name {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC15E5264D8F5786));
+  }
+  public ref CNmSoundEvent::Position_t Position {
+    get => ref _Handle.AsRef<CNmSoundEvent::Position_t>(Schema.GetOffset(0xDC15E5264B57E0AA));
+  }
+  public ref CUtlString AttachmentName {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC15E526295DA9CB));
+  }
+  public ref CUtlString Tags {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC15E526B46C8540));
+  }
+  public ref bool IsServerOnly {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDC15E526301E1C64));
+  }
+  public ref bool ContinuePlayingSoundAtDurationEnd {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDC15E5262CB53E61));
+  }
+  public ref float DurationInterruptionThreshold {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDC15E5269F1AA35B));
+  }
+
+
+}

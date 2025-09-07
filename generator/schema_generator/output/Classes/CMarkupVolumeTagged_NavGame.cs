@@ -1,0 +1,26 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CMarkupVolumeTagged_NavGame : CMarkupVolumeWithRef, IMarkupVolumeTagged_NavGame {
+
+  public CMarkupVolumeTagged_NavGame(nint handle) : base(handle) {
+  }
+
+  public CMarkupVolumeTagged_NavGame(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref NavScopeFlags_t Scopes {
+    get => ref _Handle.AsRef<NavScopeFlags_t>(Schema.GetOffset(0xFB4AC8A49E6C8A44));
+  }
+  public ref bool FloodFillAttribute {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xFB4AC8A4ECF24446));
+  }
+  public ref bool SplitNavSpace {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xFB4AC8A438B16FC2));
+  }
+
+
+}

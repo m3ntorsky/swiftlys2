@@ -1,0 +1,41 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class VMixAutoFilterDesc_t : SchemaClass, IVMixAutoFilterDesc_t {
+
+  public VMixAutoFilterDesc_t(nint handle) : base(handle) {
+  }
+
+  public VMixAutoFilterDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref float EnvelopeAmount {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCE0A02A0EB3F257));
+  }
+  public ref float AttackTimeMS {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCE0A02AD4A28216));
+  }
+  public ref float ReleaseTimeMS {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCE0A02AEBB62791));
+  }
+  public IVMixFilterDesc_t Filter {
+    get => new VMixFilterDesc_t(_Handle + Schema.GetOffset(0xCE0A02A634A7917));
+  }
+  public ref float LFOAmount {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCE0A02ACA44783A));
+  }
+  public ref float LFORate {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCE0A02A6E717CE4));
+  }
+  public ref float Phase {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCE0A02A3C22A9CA));
+  }
+  public ref VMixLFOShape_t LFOShape {
+    get => ref _Handle.AsRef<VMixLFOShape_t>(Schema.GetOffset(0xCE0A02AD7FB3149));
+  }
+
+
+}

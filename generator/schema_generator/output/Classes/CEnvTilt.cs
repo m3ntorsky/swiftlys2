@@ -1,0 +1,29 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CEnvTilt : CPointEntity, IEnvTilt {
+
+  public CEnvTilt(nint handle) : base(handle) {
+  }
+
+  public CEnvTilt(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref float Duration {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF90425169879A98D));
+  }
+  public ref float Radius {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF90425167C5B0533));
+  }
+  public ref float TiltTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF9042516B3956BFF));
+  }
+  public IGameTime_t StopTime {
+    get => new GameTime_t(_Handle + Schema.GetOffset(0xF90425166BFFEDC4));
+  }
+
+
+}

@@ -1,0 +1,32 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class FeTri_t : SchemaClass, IFeTri_t {
+
+  public FeTri_t(nint handle) : base(handle) {
+  }
+
+  public FeTri_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ISchemaFixedArray<uint16> Node {
+    get => new SchemaFixedArray<uint16>(_Handle + Schema.GetOffset(0x75C07D86CD6694B9));
+  }
+  public ref float W1 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x75C07D8610473805));
+  }
+  public ref float W2 {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x75C07D860D47334C));
+  }
+  public ref float V1x {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x75C07D8680EC4B30));
+  }
+  public ref Vector2D V2 {
+    get => ref _Handle.AsRef<Vector2D>(Schema.GetOffset(0x75C07D86974A4B21));
+  }
+
+
+}

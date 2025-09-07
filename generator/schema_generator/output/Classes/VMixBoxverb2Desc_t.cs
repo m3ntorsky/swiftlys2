@@ -1,0 +1,68 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class VMixBoxverb2Desc_t : SchemaClass, IVMixBoxverb2Desc_t {
+
+  public VMixBoxverb2Desc_t(nint handle) : base(handle) {
+  }
+
+  public VMixBoxverb2Desc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref float SizeMax {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FDB9D7F5B8));
+  }
+  public ref float SizeMin {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FDAFEB6DB2));
+  }
+  public ref float Complexity {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FDF222266B));
+  }
+  public ref float Diffusion {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FDCDBE8936));
+  }
+  public ref float ModDepth {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FDF59E0B82));
+  }
+  public ref float ModRate {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FD0EA039FF));
+  }
+  public ref bool Parallel {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x319C01FD8971ED92));
+  }
+  public IVMixFilterDesc_t FilterType {
+    get => new VMixFilterDesc_t(_Handle + Schema.GetOffset(0x319C01FD7E582F6F));
+  }
+  public ref float Width {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FDB91935E1));
+  }
+  public ref float Height {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FDEADD7FB0));
+  }
+  public ref float Depth {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FDD3AD54E8));
+  }
+  public ref float FeedbackScale {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FD2CE35D6E));
+  }
+  public ref float FeedbackWidth {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FD50275950));
+  }
+  public ref float FeedbackHeight {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FDFB780A47));
+  }
+  public ref float FeedbackDepth {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FDB71B2D09));
+  }
+  public ref float OutputGain {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FD73DB9445));
+  }
+  public ref float Taps {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FD5C502CB9));
+  }
+
+
+}

@@ -1,0 +1,50 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class C_OP_RemapModelVolumetoCP : CParticleFunctionPreEmission, IC_OP_RemapModelVolumetoCP {
+
+  public C_OP_RemapModelVolumetoCP(nint handle) : base(handle) {
+  }
+
+  public C_OP_RemapModelVolumetoCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref BBoxVolumeType_t BBoxType {
+    get => ref _Handle.AsRef<BBoxVolumeType_t>(Schema.GetOffset(0x5F3AA677780A22F6));
+  }
+  public ref int InControlPointNumber {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5F3AA677E7CB99DE));
+  }
+  public ref int OutControlPointNumber {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5F3AA677D021D73F));
+  }
+  public ref int OutControlPointMaxNumber {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5F3AA677420C1A45));
+  }
+  public ref int Field {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5F3AA677C257B93B));
+  }
+  public ref float InputMin {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5F3AA677E88A0D0F));
+  }
+  public ref float InputMax {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5F3AA677D6766901));
+  }
+  public ref float OutputMin {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5F3AA6775F8D7716));
+  }
+  public ref float OutputMax {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5F3AA67751A0E8C4));
+  }
+  public ref bool BBoxOnly {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5F3AA67725A324B4));
+  }
+  public ref bool CubeRoot {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5F3AA67717695018));
+  }
+
+
+}

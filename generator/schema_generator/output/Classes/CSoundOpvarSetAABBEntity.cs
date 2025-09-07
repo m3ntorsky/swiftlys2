@@ -1,0 +1,44 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CSoundOpvarSetAABBEntity : CSoundOpvarSetPointEntity, ISoundOpvarSetAABBEntity {
+
+  public CSoundOpvarSetAABBEntity(nint handle) : base(handle) {
+  }
+
+  public CSoundOpvarSetAABBEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref Vector DistanceInnerMins {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x9C9CB73CC7540883));
+  }
+  public ref Vector DistanceInnerMaxs {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x9C9CB73C705E7E61));
+  }
+  public ref Vector DistanceOuterMins {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x9C9CB73C185EC6F4));
+  }
+  public ref Vector DistanceOuterMaxs {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x9C9CB73C99738B36));
+  }
+  public ref int AABBDirection {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9C9CB73CE8CF552C));
+  }
+  public ref Vector InnerMins {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x9C9CB73C4C5EAC7A));
+  }
+  public ref Vector InnerMaxs {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x9C9CB73CCD68E360));
+  }
+  public ref Vector OuterMins {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x9C9CB73C30928F3D));
+  }
+  public ref Vector OuterMaxs {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x9C9CB73CC9A77947));
+  }
+
+
+}

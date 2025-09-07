@@ -1,0 +1,1 @@
+  public $INTERFACE_TYPE$ $NAME$ { get; }

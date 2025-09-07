@@ -1,0 +1,23 @@
+using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.Schemas;
+using SwiftlyS2.Core.Extensions;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class SequenceWeightedList_t : SchemaClass, ISequenceWeightedList_t {
+
+  public SequenceWeightedList_t(nint handle) : base(handle) {
+  }
+
+  public SequenceWeightedList_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  }
+
+  public ref int Sequence {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9BB15AFE3775D33C));
+  }
+  public ref float RelativeWeight {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9BB15AFE1BC599BB));
+  }
+
+
+}
