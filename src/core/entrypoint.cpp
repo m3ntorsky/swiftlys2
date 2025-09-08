@@ -75,6 +75,9 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     gamedata->GetSignatures()->Load(GetCurrentGame());
     gamedata->GetPatches()->Load(GetCurrentGame());
 
+    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    if (entsystem) entsystem->Initialize();
+
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
     if (extManager) extManager->Load();
 
@@ -83,6 +86,9 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
 
 bool SwiftlyCore::Unload()
 {
+    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    if (entsystem) entsystem->Shutdown();
+
     return true;
 }
 

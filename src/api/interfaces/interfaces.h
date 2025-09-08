@@ -22,6 +22,7 @@
 #include <string>
 #include <api/dll/extern.h>
 
+#include <api/engine/convars/convars.h>
 #include <api/engine/entities/entitysystem.h>
 
 #include <api/extensions/extension.h>
@@ -54,5 +55,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define CONFIGURATION_INTERFACE_VERSION                     "ConfigurationAPI"
 #define ENTITYSYSTEM_INTERFACE_VERSION                      "EntitySystemAPI"
 #define SDKSCHEMA_INTERFACE_VERSION                         "SDKSchemaAPI"
+#define CONVARMANAGER_INTERFACE_VERSION                     "ConVarManagerAPI"
 
 #endif

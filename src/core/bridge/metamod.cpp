@@ -19,13 +19,21 @@
 #include "metamod.h"
 #include "../entrypoint.h"
 
+#include <api/interfaces/manager.h>
+
 SwiftlyMMBridge g_MMPluginBridge;
+
+ICvar* g_pcVar = nullptr;
 
 PLUGIN_EXPOSE(SwiftlyMMBridge, g_MMPluginBridge);
 bool SwiftlyMMBridge::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxlen, bool late)
 {
     PLUGIN_SAVEVARS();
     g_SMAPI->AddListener(this, this);
+
+    GET_V_IFACE_CURRENT(GetEngineFactory, g_pCVar, ICvar, CVAR_INTERFACE_VERSION);
+
+    META_CONVAR_REGISTER(FCVAR_RELEASE | FCVAR_SERVER_CAN_EXECUTE | FCVAR_CLIENT_CAN_EXECUTE | FCVAR_GAMEDLL);
 
     return g_SwiftlyCore.Load(BridgeKind_t::Metamod);
 }
@@ -75,7 +83,7 @@ const char* SwiftlyMMBridge::GetName()
 
 const char* SwiftlyMMBridge::GetDescription()
 {
-    return "Lua/C# Framework for Source2-based games";
+    return "C# Framework for Source2-based games";
 }
 
 const char* SwiftlyMMBridge::GetURL()
