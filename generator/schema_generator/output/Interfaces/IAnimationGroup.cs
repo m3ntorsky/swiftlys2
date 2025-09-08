@@ -4,5 +4,20 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimationGroup : ISchemaClass {
 
-
+  public ref uint Flags { get; }
+  
+  public ref CBufferString Name { get; }
+  
+  public ref CUtlVector LocalHAnimArray_Handle { get; }
+  
+  public ref CUtlVector IncludedGroupArray_Handle { get; }
+  
+  public CStrongHandle<IInfoForResourceTypeCSequenceGroupData> DirectHSeqGroup_Handle { get; }
+  
+  public IAnimKeyData DecodeKey { get; }
+  
+  public ref CUtlVector<CBufferString> Scripts { get; }
+  
+  public ref CUtlVector AdditionalExtRefs { get; }
+  
 }

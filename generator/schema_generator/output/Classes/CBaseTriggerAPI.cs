@@ -9,9 +9,6 @@ internal partial class CBaseTriggerAPI : SchemaClass, IBaseTriggerAPI {
   public CBaseTriggerAPI(nint handle) : base(handle) {
   }
 
-  public CBaseTriggerAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

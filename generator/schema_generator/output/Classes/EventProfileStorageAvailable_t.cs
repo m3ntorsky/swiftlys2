@@ -9,9 +9,6 @@ internal partial class EventProfileStorageAvailable_t : SchemaClass, IEventProfi
   public EventProfileStorageAvailable_t(nint handle) : base(handle) {
   }
 
-  public EventProfileStorageAvailable_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CSplitScreenSlot SplitScreenSlot {
     get => ref _Handle.AsRef<CSplitScreenSlot>(Schema.GetOffset(0x871602F7DB96ED47));
   }

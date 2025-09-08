@@ -9,9 +9,6 @@ internal partial class CEnvSoundscapeProxyAlias_snd_soundscape_proxy : CEnvSound
   public CEnvSoundscapeProxyAlias_snd_soundscape_proxy(nint handle) : base(handle) {
   }
 
-  public CEnvSoundscapeProxyAlias_snd_soundscape_proxy(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

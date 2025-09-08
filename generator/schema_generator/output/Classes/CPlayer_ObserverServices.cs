@@ -9,15 +9,6 @@ internal partial class CPlayer_ObserverServices : CPlayerPawnComponent, IPlayer_
   public CPlayer_ObserverServices(nint handle) : base(handle) {
   }
 
-  public CPlayer_ObserverServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref byte ObserverMode {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x1611315ADAB57B35));
-  }
-  public ref CHandle< CBaseEntity > ObserverTarget {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1611315A24779C4C));
-  }
   public ref ObserverMode_t ObserverLastMode {
     get => ref _Handle.AsRef<ObserverMode_t>(Schema.GetOffset(0x1611315A555EDA49));
   }

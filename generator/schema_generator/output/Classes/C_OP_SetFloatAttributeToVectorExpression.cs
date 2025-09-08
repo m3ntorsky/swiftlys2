@@ -9,9 +9,6 @@ internal partial class C_OP_SetFloatAttributeToVectorExpression : CParticleFunct
   public C_OP_SetFloatAttributeToVectorExpression(nint handle) : base(handle) {
   }
 
-  public C_OP_SetFloatAttributeToVectorExpression(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref VectorFloatExpressionType_t Expression {
     get => ref _Handle.AsRef<VectorFloatExpressionType_t>(Schema.GetOffset(0x26D81D160B2427));
   }

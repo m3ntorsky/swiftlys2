@@ -9,9 +9,6 @@ internal partial class CFogVolume : CServerOnlyModelEntity, IFogVolume {
   public CFogVolume(nint handle) : base(handle) {
   }
 
-  public CFogVolume(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge FogName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x670FE9BC72E45F7C));
   }

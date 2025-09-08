@@ -9,9 +9,6 @@ internal partial class SkeletonAnimCapture_t__FrameStamp_t : SchemaClass, ISkele
   public SkeletonAnimCapture_t__FrameStamp_t(nint handle) : base(handle) {
   }
 
-  public SkeletonAnimCapture_t__FrameStamp_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Time {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4ECAEB4FC957229E));
   }

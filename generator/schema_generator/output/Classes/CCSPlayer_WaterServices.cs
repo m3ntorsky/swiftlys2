@@ -9,9 +9,6 @@ internal partial class CCSPlayer_WaterServices : CPlayer_WaterServices, ICSPlaye
   public CCSPlayer_WaterServices(nint handle) : base(handle) {
   }
 
-  public CCSPlayer_WaterServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IGameTime_t NextDrownDamageTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x81EE3221161B7836));
   }

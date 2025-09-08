@@ -9,9 +9,6 @@ internal partial class C_INIT_InitVec : CParticleFunctionInitializer, IC_INIT_In
   public C_INIT_InitVec(nint handle) : base(handle) {
   }
 
-  public C_INIT_InitVec(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleVecInput InputValue {
     get => new CPerParticleVecInput(_Handle + Schema.GetOffset(0x60C95B0234445438));
   }

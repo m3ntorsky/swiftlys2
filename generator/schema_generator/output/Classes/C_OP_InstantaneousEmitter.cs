@@ -9,9 +9,6 @@ internal partial class C_OP_InstantaneousEmitter : CParticleFunctionEmitter, IC_
   public C_OP_InstantaneousEmitter(nint handle) : base(handle) {
   }
 
-  public C_OP_InstantaneousEmitter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput ParticlesToEmit {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0x39132039B1A158C6));
   }

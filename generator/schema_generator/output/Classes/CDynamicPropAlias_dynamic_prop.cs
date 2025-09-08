@@ -9,9 +9,6 @@ internal partial class CDynamicPropAlias_dynamic_prop : CDynamicProp, IDynamicPr
   public CDynamicPropAlias_dynamic_prop(nint handle) : base(handle) {
   }
 
-  public CDynamicPropAlias_dynamic_prop(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

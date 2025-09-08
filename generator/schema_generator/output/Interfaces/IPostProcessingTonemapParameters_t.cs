@@ -4,5 +4,34 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPostProcessingTonemapParameters_t : ISchemaClass {
 
-
+  public ref float ExposureBias { get; }
+  
+  public ref float ShoulderStrength { get; }
+  
+  public ref float LinearStrength { get; }
+  
+  public ref float LinearAngle { get; }
+  
+  public ref float ToeStrength { get; }
+  
+  public ref float ToeNum { get; }
+  
+  public ref float ToeDenom { get; }
+  
+  public ref float WhitePoint { get; }
+  
+  public ref float LuminanceSource { get; }
+  
+  public ref float ExposureBiasShadows { get; }
+  
+  public ref float ExposureBiasHighlights { get; }
+  
+  public ref float MinShadowLum { get; }
+  
+  public ref float MaxShadowLum { get; }
+  
+  public ref float MinHighlightLum { get; }
+  
+  public ref float MaxHighlightLum { get; }
+  
 }

@@ -9,9 +9,6 @@ internal partial class CPulseCell_Outflow_PlaySequence : CPulseCell_Outflow_Play
   public CPulseCell_Outflow_PlaySequence(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Outflow_PlaySequence(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString ParamSequenceName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x9E1D42661D9365E0));
   }

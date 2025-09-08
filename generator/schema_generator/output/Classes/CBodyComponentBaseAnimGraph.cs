@@ -9,12 +9,7 @@ internal partial class CBodyComponentBaseAnimGraph : CBodyComponentSkeletonInsta
   public CBodyComponentBaseAnimGraph(nint handle) : base(handle) {
   }
 
-  public CBodyComponentBaseAnimGraph(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public IBaseAnimGraphController AnimationController {
-    get => new CBaseAnimGraphController(_Handle + Schema.GetOffset(0xD004A34F552AD749));
-  }
 
   public void AnimationControllerUpdated() {
     Schema.Update(_Handle, 0xD004A34F552AD749);

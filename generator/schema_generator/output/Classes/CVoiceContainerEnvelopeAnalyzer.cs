@@ -9,9 +9,6 @@ internal partial class CVoiceContainerEnvelopeAnalyzer : CVoiceContainerAnalysis
   public CVoiceContainerEnvelopeAnalyzer(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerEnvelopeAnalyzer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref EMode_t Mode {
     get => ref _Handle.AsRef<EMode_t>(Schema.GetOffset(0xC5D0FF1990FD5BB2));
   }

@@ -9,9 +9,6 @@ internal partial class CLODComponentUpdater : CAnimComponentUpdater, ILODCompone
   public CLODComponentUpdater(nint handle) : base(handle) {
   }
 
-  public CLODComponentUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ServerLOD {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDE1020D244E2C75));
   }

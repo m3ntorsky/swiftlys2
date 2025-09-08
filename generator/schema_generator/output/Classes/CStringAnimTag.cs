@@ -9,9 +9,6 @@ internal partial class CStringAnimTag : CAnimTagBase, IStringAnimTag {
   public CStringAnimTag(nint handle) : base(handle) {
   }
 
-  public CStringAnimTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

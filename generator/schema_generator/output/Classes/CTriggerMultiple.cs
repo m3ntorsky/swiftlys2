@@ -9,9 +9,6 @@ internal partial class CTriggerMultiple : CBaseTrigger, ITriggerMultiple {
   public CTriggerMultiple(nint handle) : base(handle) {
   }
 
-  public CTriggerMultiple(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnTrigger {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x327F607E81E0BFEC));
   }

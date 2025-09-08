@@ -9,9 +9,6 @@ internal partial class VPhysXConstraint2_t : SchemaClass, IVPhysXConstraint2_t {
   public VPhysXConstraint2_t(nint handle) : base(handle) {
   }
 
-  public VPhysXConstraint2_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint Flags {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x6FB758FDCE6E9C28));
   }

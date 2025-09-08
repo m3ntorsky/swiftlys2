@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCCompositeMaterialKit : SchemaClass, I
   public InfoForResourceTypeCCompositeMaterialKit(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCCompositeMaterialKit(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

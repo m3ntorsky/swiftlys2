@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmVirtualParameterVectorNode__CDefinition : INmVectorValueNode::CDefinition {
 
-
+  public ref short ChildNodeIdx { get; }
+  
 }

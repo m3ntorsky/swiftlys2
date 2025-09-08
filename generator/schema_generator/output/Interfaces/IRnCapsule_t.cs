@@ -4,5 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRnCapsule_t : ISchemaClass {
 
-
+  public ISchemaFixedArray<Vector> Center { get; }
+  
+  public ref float Radius { get; }
+  
 }

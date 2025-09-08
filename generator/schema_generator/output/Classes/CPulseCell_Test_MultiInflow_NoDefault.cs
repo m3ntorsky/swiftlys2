@@ -9,9 +9,6 @@ internal partial class CPulseCell_Test_MultiInflow_NoDefault : CPulseCell_BaseFl
   public CPulseCell_Test_MultiInflow_NoDefault(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Test_MultiInflow_NoDefault(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

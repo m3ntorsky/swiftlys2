@@ -9,9 +9,6 @@ internal partial class CParticleFunctionRenderer : CParticleFunction, IParticleF
   public CParticleFunctionRenderer(nint handle) : base(handle) {
   }
 
-  public CParticleFunctionRenderer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleVisibilityInputs VisibilityInputs {
     get => new CParticleVisibilityInputs(_Handle + Schema.GetOffset(0xAE332DA3CF8264F8));
   }

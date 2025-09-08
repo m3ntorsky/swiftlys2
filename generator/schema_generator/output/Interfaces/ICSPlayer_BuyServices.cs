@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPlayer_BuyServices : IPlayerPawnComponent {
 
-
+  public ref CUtlVectorEmbeddedNetworkVar SellbackPurchaseEntries { get; }
+  
 }

@@ -9,9 +9,6 @@ internal partial class CFootCycle : CCycleBase, IFootCycle {
   public CFootCycle(nint handle) : base(handle) {
   }
 
-  public CFootCycle(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

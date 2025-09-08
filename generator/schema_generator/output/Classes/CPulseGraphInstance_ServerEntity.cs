@@ -9,11 +9,8 @@ internal partial class CPulseGraphInstance_ServerEntity : CBasePulseGraphInstanc
   public CPulseGraphInstance_ServerEntity(nint handle) : base(handle) {
   }
 
-  public CPulseGraphInstance_ServerEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CHandle< CBaseEntity > Owner {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x6DFF458BF6D89572));
+  public CHandle<IBaseEntity> Owner {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x6DFF458BF6D89572));
   }
   public ref bool Activated {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6DFF458BF8E37A5C));

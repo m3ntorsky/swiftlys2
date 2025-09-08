@@ -9,9 +9,6 @@ internal partial class CModelConfigElement_SetBodygroupOnAttachedModels : CModel
   public CModelConfigElement_SetBodygroupOnAttachedModels(nint handle) : base(handle) {
   }
 
-  public CModelConfigElement_SetBodygroupOnAttachedModels(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString GroupName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xCC9BDB84E0A55E67));
   }

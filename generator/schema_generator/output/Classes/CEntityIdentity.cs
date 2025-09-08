@@ -9,12 +9,6 @@ internal partial class CEntityIdentity : SchemaClass, IEntityIdentity {
   public CEntityIdentity(nint handle) : base(handle) {
   }
 
-  public CEntityIdentity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref int NameStringableIndex {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xAE42345F9A4938C9));
-  }
   public ref CUtlSymbolLarge Name {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xAE42345F4D8F5786));
   }

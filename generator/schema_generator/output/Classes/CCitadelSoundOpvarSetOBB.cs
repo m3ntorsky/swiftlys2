@@ -9,33 +9,7 @@ internal partial class CCitadelSoundOpvarSetOBB : CBaseEntity, ICitadelSoundOpva
   public CCitadelSoundOpvarSetOBB(nint handle) : base(handle) {
   }
 
-  public CCitadelSoundOpvarSetOBB(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref CUtlSymbolLarge StackName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD3F8645E3B3E9CD4));
-  }
-  public ref CUtlSymbolLarge OperatorName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD3F8645EF6140996));
-  }
-  public ref CUtlSymbolLarge OpvarName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD3F8645E2CAEFF3C));
-  }
-  public ref Vector DistanceInnerMins {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD3F8645EC7540883));
-  }
-  public ref Vector DistanceInnerMaxs {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD3F8645E705E7E61));
-  }
-  public ref Vector DistanceOuterMins {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD3F8645E185EC6F4));
-  }
-  public ref Vector DistanceOuterMaxs {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD3F8645E99738B36));
-  }
-  public ref int AABBDirection {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD3F8645EE8CF552C));
-  }
 
   public void StackNameUpdated() {
     Schema.Update(_Handle, 0xD3F8645E3B3E9CD4);

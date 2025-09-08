@@ -9,9 +9,6 @@ internal partial class CGamePlayerEquip : CRulePointEntity, IGamePlayerEquip {
   public CGamePlayerEquip(nint handle) : base(handle) {
   }
 
-  public CGamePlayerEquip(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

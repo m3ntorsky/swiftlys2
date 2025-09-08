@@ -9,9 +9,6 @@ internal partial class CCSPointScriptExtensions_weapon_cs_base : SchemaClass, IC
   public CCSPointScriptExtensions_weapon_cs_base(nint handle) : base(handle) {
   }
 
-  public CCSPointScriptExtensions_weapon_cs_base(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

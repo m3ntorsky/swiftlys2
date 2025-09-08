@@ -9,9 +9,6 @@ internal partial class CEnvSpark : CPointEntity, IEnvSpark {
   public CEnvSpark(nint handle) : base(handle) {
   }
 
-  public CEnvSpark(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Delay {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x3BACCABA7D68FD6E));
   }

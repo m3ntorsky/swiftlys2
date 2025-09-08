@@ -9,9 +9,6 @@ internal partial class CParentConstraint : CBaseConstraint, IParentConstraint {
   public CParentConstraint(nint handle) : base(handle) {
   }
 
-  public CParentConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CSSDSEndFrameViewInfo : SchemaClass, ISSDSEndFrameViewInf
   public CSSDSEndFrameViewInfo(nint handle) : base(handle) {
   }
 
-  public CSSDSEndFrameViewInfo(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ulong ViewId {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xE2792496AE3CB1A1));
   }

@@ -9,9 +9,6 @@ internal partial class CFuncTimescale : CBaseEntity, IFuncTimescale {
   public CFuncTimescale(nint handle) : base(handle) {
   }
 
-  public CFuncTimescale(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float DesiredTimescale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x93388D41E4EE9A68));
   }

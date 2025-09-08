@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeIVectorGraphic : SchemaClass, IInfoFor
   public InfoForResourceTypeIVectorGraphic(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeIVectorGraphic(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CPulseCell_LerpCameraSettings : CPulseCell_BaseLerp, IPul
   public CPulseCell_LerpCameraSettings(nint handle) : base(handle) {
   }
 
-  public CPulseCell_LerpCameraSettings(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Seconds {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA4A5850773C6938C));
   }

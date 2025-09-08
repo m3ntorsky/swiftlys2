@@ -9,9 +9,6 @@ internal partial class IKTargetSettings_t : SchemaClass, IIKTargetSettings_t {
   public IKTargetSettings_t(nint handle) : base(handle) {
   }
 
-  public IKTargetSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref IKTargetSource TargetSource {
     get => ref _Handle.AsRef<IKTargetSource>(Schema.GetOffset(0xE4055546D23809BD));
   }

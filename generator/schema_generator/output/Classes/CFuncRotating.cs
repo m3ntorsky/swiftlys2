@@ -9,9 +9,6 @@ internal partial class CFuncRotating : CBaseModelEntity, IFuncRotating {
   public CFuncRotating(nint handle) : base(handle) {
   }
 
-  public CFuncRotating(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnStopped {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x1A29EA94161C44C9));
   }

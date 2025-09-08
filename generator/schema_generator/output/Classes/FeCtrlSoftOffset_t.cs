@@ -9,9 +9,6 @@ internal partial class FeCtrlSoftOffset_t : SchemaClass, IFeCtrlSoftOffset_t {
   public FeCtrlSoftOffset_t(nint handle) : base(handle) {
   }
 
-  public FeCtrlSoftOffset_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort CtrlParent {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xCA94FF2955049230));
   }

@@ -9,9 +9,6 @@ internal partial class CEnvViewPunch : CPointEntity, IEnvViewPunch {
   public CEnvViewPunch(nint handle) : base(handle) {
   }
 
-  public CEnvViewPunch(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Radius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB707E1B05ACFC08D));
   }

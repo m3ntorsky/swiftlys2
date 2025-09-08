@@ -9,9 +9,6 @@ internal partial class CPointPulse : CBaseEntity, IPointPulse {
   public CPointPulse(nint handle) : base(handle) {
   }
 
-  public CPointPulse(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

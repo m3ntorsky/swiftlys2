@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Value_Curve : IPulseCell_BaseValue {
 
-
+  public ISchemaUntypedField Curve { get; }
+  
 }

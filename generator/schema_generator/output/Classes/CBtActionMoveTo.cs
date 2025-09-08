@@ -9,9 +9,6 @@ internal partial class CBtActionMoveTo : CBtNode, IBtActionMoveTo {
   public CBtActionMoveTo(nint handle) : base(handle) {
   }
 
-  public CBtActionMoveTo(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString DestinationInputKey {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD3E75386EA98FEAB));
   }

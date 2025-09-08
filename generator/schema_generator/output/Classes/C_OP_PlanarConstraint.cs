@@ -9,9 +9,6 @@ internal partial class C_OP_PlanarConstraint : CParticleFunctionConstraint, IC_O
   public C_OP_PlanarConstraint(nint handle) : base(handle) {
   }
 
-  public C_OP_PlanarConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector PointOnPlane {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x1440B2AE4A5806BE));
   }

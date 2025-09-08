@@ -9,12 +9,6 @@ internal partial class CWeaponTaser : CCSWeaponBaseGun, IWeaponTaser {
   public CWeaponTaser(nint handle) : base(handle) {
   }
 
-  public CWeaponTaser(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public IGameTime_t FireTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0xA91A6CB965DBC00C));
-  }
   public ref int LastAttackTick {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA91A6CB90BCAAD3C));
   }

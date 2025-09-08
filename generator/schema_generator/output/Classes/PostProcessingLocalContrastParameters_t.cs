@@ -9,9 +9,6 @@ internal partial class PostProcessingLocalContrastParameters_t : SchemaClass, IP
   public PostProcessingLocalContrastParameters_t(nint handle) : base(handle) {
   }
 
-  public PostProcessingLocalContrastParameters_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float LocalContrastStrength {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x43910BD66A89DF05));
   }

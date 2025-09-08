@@ -9,9 +9,6 @@ internal partial class VoxelVisBlockOffset_t : SchemaClass, IVoxelVisBlockOffset
   public VoxelVisBlockOffset_t(nint handle) : base(handle) {
   }
 
-  public VoxelVisBlockOffset_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint Offset {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x17D2B49827734C8E));
   }

@@ -9,9 +9,6 @@ internal partial class C_INIT_CreateOnGrid : CParticleFunctionInitializer, IC_IN
   public C_INIT_CreateOnGrid(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreateOnGrid(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput XCount {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0x2C82A08B6E80D4FA));
   }

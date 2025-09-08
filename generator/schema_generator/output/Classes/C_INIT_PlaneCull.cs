@@ -9,9 +9,6 @@ internal partial class C_INIT_PlaneCull : CParticleFunctionInitializer, IC_INIT_
   public C_INIT_PlaneCull(nint handle) : base(handle) {
   }
 
-  public C_INIT_PlaneCull(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xCFA7A1100D0DDF8C));
   }

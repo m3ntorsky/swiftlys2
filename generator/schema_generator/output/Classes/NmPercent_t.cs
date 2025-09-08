@@ -9,9 +9,6 @@ internal partial class NmPercent_t : SchemaClass, INmPercent_t {
   public NmPercent_t(nint handle) : base(handle) {
   }
 
-  public NmPercent_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Value {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF12966B68DFCB984));
   }

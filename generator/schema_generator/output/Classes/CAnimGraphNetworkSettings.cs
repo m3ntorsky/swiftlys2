@@ -9,9 +9,6 @@ internal partial class CAnimGraphNetworkSettings : CAnimGraphSettingsGroup, IAni
   public CAnimGraphNetworkSettings(nint handle) : base(handle) {
   }
 
-  public CAnimGraphNetworkSettings(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool NetworkingEnabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xAF5ADE2491EF35E0));
   }

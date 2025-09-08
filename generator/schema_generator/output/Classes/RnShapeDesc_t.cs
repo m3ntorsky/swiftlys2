@@ -9,9 +9,6 @@ internal partial class RnShapeDesc_t : SchemaClass, IRnShapeDesc_t {
   public RnShapeDesc_t(nint handle) : base(handle) {
   }
 
-  public RnShapeDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint CollisionAttributeIndex {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xA24D7D10C7B64DF7));
   }

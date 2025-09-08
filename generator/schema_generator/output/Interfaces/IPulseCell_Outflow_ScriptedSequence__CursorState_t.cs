@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Outflow_ScriptedSequence__CursorState_t : ISchemaClass {
 
-
+  public CHandle<IBaseEntity> ScriptedSequence { get; }
+  
 }

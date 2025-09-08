@@ -9,9 +9,6 @@ internal partial class CLogicDistanceAutosave : CLogicalEntity, ILogicDistanceAu
   public CLogicDistanceAutosave(nint handle) : base(handle) {
   }
 
-  public CLogicDistanceAutosave(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge TargetEntity {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8E908EDD8951B0FB));
   }

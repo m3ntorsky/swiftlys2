@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCPanoramaDynamicImages : SchemaClass, 
   public InfoForResourceTypeCPanoramaDynamicImages(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCPanoramaDynamicImages(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

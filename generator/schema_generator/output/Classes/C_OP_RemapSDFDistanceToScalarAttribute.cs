@@ -9,9 +9,6 @@ internal partial class C_OP_RemapSDFDistanceToScalarAttribute : CParticleFunctio
   public C_OP_RemapSDFDistanceToScalarAttribute(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapSDFDistanceToScalarAttribute(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x94CC5381E5729606));
   }

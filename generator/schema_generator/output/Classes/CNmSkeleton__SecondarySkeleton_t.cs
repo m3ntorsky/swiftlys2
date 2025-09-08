@@ -9,14 +9,11 @@ internal partial class CNmSkeleton__SecondarySkeleton_t : SchemaClass, INmSkelet
   public CNmSkeleton__SecondarySkeleton_t(nint handle) : base(handle) {
   }
 
-  public CNmSkeleton__SecondarySkeleton_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol AttachToBoneID {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x50F456DAB2F06B3A));
   }
-  public ref CStrongHandle< InfoForResourceTypeCNmSkeleton > Skeleton {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCNmSkeleton >>(Schema.GetOffset(0x50F456DAE77F030E));
+  public CStrongHandle<IInfoForResourceTypeCNmSkeleton> Skeleton {
+    get => new CStrongHandle<InfoForResourceTypeCNmSkeleton>(_Handle + Schema.GetOffset(0x50F456DAE77F030E));
   }
 
 

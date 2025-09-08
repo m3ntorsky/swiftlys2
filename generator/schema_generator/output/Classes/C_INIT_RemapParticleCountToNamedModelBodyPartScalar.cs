@@ -9,9 +9,6 @@ internal partial class C_INIT_RemapParticleCountToNamedModelBodyPartScalar : C_I
   public C_INIT_RemapParticleCountToNamedModelBodyPartScalar(nint handle) : base(handle) {
   }
 
-  public C_INIT_RemapParticleCountToNamedModelBodyPartScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

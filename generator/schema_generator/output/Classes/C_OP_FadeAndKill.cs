@@ -9,9 +9,6 @@ internal partial class C_OP_FadeAndKill : CParticleFunctionOperator, IC_OP_FadeA
   public C_OP_FadeAndKill(nint handle) : base(handle) {
   }
 
-  public C_OP_FadeAndKill(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float StartFadeInTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x66AFC90439639779));
   }

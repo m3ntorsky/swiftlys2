@@ -4,5 +4,14 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapBoundingVolumetoCP : IParticleFunctionPreEmission {
 
-
+  public ref int OutControlPointNumber { get; }
+  
+  public ref float InputMin { get; }
+  
+  public ref float InputMax { get; }
+  
+  public ref float OutputMin { get; }
+  
+  public ref float OutputMax { get; }
+  
 }

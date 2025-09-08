@@ -9,9 +9,6 @@ internal partial class CPulseCell_Inflow_BaseEntrypoint : CPulseCell_BaseFlow, I
   public CPulseCell_Inflow_BaseEntrypoint(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Inflow_BaseEntrypoint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulseRuntimeChunkIndex_t EntryChunk {
     get => new PulseRuntimeChunkIndex_t(_Handle + Schema.GetOffset(0x1747DEDF279F0A60));
   }

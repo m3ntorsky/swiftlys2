@@ -9,9 +9,6 @@ internal partial class CBreakableStageHelper : SchemaClass, IBreakableStageHelpe
   public CBreakableStageHelper(nint handle) : base(handle) {
   }
 
-  public CBreakableStageHelper(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CurrentStage {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xF3B3D901E6644458));
   }

@@ -9,9 +9,6 @@ internal partial class CSoundEventPathCornerEntity : CSoundEventEntity, ISoundEv
   public CSoundEventPathCornerEntity(nint handle) : base(handle) {
   }
 
-  public CSoundEventPathCornerEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge PathCorner {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9EED262E0243CF47));
   }
@@ -29,9 +26,6 @@ internal partial class CSoundEventPathCornerEntity : CSoundEventEntity, ISoundEv
   }
   public ref bool Playing {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9EED262E4B594215));
-  }
-  public ref CUtlVector< SoundeventPathCornerPairNetworked_t > CornerPairsNetworked {
-    get => ref _Handle.AsRef<CUtlVector< SoundeventPathCornerPairNetworked_t >>(Schema.GetOffset(0x9EED262E4C7A9B2C));
   }
 
   public void CornerPairsNetworkedUpdated() {

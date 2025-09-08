@@ -9,9 +9,6 @@ internal partial class DynamicMeshDeformParams_t : SchemaClass, IDynamicMeshDefo
   public DynamicMeshDeformParams_t(nint handle) : base(handle) {
   }
 
-  public DynamicMeshDeformParams_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float TensionCompressScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBC2B1F5B5DC0072F));
   }

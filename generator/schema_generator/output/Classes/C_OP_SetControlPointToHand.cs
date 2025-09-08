@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointToHand : CParticleFunctionPreEmission
   public C_OP_SetControlPointToHand(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointToHand(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CP1 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5D527B26D4B1E579));
   }

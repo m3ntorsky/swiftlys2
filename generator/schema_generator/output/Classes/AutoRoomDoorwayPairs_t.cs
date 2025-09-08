@@ -9,9 +9,6 @@ internal partial class AutoRoomDoorwayPairs_t : SchemaClass, IAutoRoomDoorwayPai
   public AutoRoomDoorwayPairs_t(nint handle) : base(handle) {
   }
 
-  public AutoRoomDoorwayPairs_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector P1 {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x735A94BECD01805E));
   }

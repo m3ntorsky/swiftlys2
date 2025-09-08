@@ -9,9 +9,6 @@ internal partial class C_OP_VelocityMatchingForce : CParticleFunctionOperator, I
   public C_OP_VelocityMatchingForce(nint handle) : base(handle) {
   }
 
-  public C_OP_VelocityMatchingForce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float DirScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8B7E85343A95212C));
   }

@@ -9,221 +9,8 @@ internal partial class CCSGameRules : CTeamplayRules, ICSGameRules {
   public CCSGameRules(nint handle) : base(handle) {
   }
 
-  public CCSGameRules(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref bool FreezePeriod {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF650DE408E3));
-  }
-  public ref bool WarmupPeriod {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF6569684C44));
-  }
-  public IGameTime_t WarmupPeriodEnd {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x6295CF65BD3AFF1D));
-  }
-  public IGameTime_t WarmupPeriodStart {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x6295CF6541805884));
-  }
-  public ref bool TerroristTimeOutActive {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF654A7D1ECE));
-  }
-  public ref bool CTTimeOutActive {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65E0DDAFEF));
-  }
-  public ref float TerroristTimeOutRemaining {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6295CF652F2C703E));
-  }
-  public ref float CTTimeOutRemaining {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6295CF655CCA1E5D));
-  }
-  public ref int TerroristTimeOuts {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65D622E821));
-  }
-  public ref int CTTimeOuts {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF659A215FA6));
-  }
-  public ref bool TechnicalTimeOut {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF656F9E16DB));
-  }
-  public ref bool MatchWaitingForResume {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF6597B2188B));
-  }
-  public ref int RoundTime {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF659A5A5155));
-  }
-  public ref float MatchStartTime {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6295CF65386C0C9B));
-  }
-  public IGameTime_t RoundStartTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x6295CF65C262EE3C));
-  }
-  public IGameTime_t RestartRoundTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x6295CF65F8CD3077));
-  }
-  public ref bool GameRestart {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF6532CBD44E));
-  }
-  public ref float GameStartTime {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6295CF6504E0446E));
-  }
-  public ref float TimeUntilNextPhaseStarts {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6295CF65B603E0DD));
-  }
-  public ref int GamePhase {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65CEC62EE2));
-  }
-  public ref int TotalRoundsPlayed {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF6556632103));
-  }
-  public ref int RoundsPlayedThisPhase {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65B48D294A));
-  }
-  public ref int OvertimePlaying {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF6528CE7C44));
-  }
-  public ref int HostagesRemaining {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF653EA141EE));
-  }
-  public ref bool AnyHostageReached {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF652B1C585C));
-  }
-  public ref bool MapHasBombTarget {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF654D11B002));
-  }
-  public ref bool MapHasRescueZone {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF659173C714));
-  }
-  public ref bool MapHasBuyZone {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF654E29CC07));
-  }
-  public ref bool IsQueuedMatchmaking {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF659312AC70));
-  }
-  public ref int QueuedMatchmakingMode {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65B864CCF7));
-  }
-  public ref bool IsValveDS {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65B14BF634));
-  }
-  public ref bool LogoMap {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65B7FCD584));
-  }
-  public ref bool PlayAllStepSoundsOnServer {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF652A99CD66));
-  }
-  public ref int SpectatorSlotCount {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65EAB6814C));
-  }
-  public ref int MatchDevice {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65A68647C8));
-  }
-  public ref bool HasMatchStarted {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65366EB219));
-  }
-  public ref int NextMapInMapgroup {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65C6613F50));
-  }
-  public ISchemaFixedString TournamentEventName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x6295CF65D2FCF8C2));
-  }
-  public ISchemaFixedString TournamentEventStage {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x6295CF658177EF71));
-  }
-  public ISchemaFixedString MatchStatTxt {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x6295CF65D6472911));
-  }
-  public ISchemaFixedString TournamentPredictionsTxt {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x6295CF65A974A2B9));
-  }
-  public ref int TournamentPredictionsPct {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF658E233B97));
-  }
-  public IGameTime_t CMMItemDropRevealStartTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x6295CF659669E4BE));
-  }
-  public IGameTime_t CMMItemDropRevealEndTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x6295CF65DDD1C05B));
-  }
-  public ref bool IsDroppingItems {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65A3EB7908));
-  }
-  public ref bool IsQuestEligible {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65814483B8));
-  }
-  public ref bool IsHltvActive {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF657F4E0DA5));
-  }
-  public ISchemaFixedArray<uint16> ProhibitedItemIndices {
-    get => new SchemaFixedArray<uint16>(_Handle + Schema.GetOffset(0x6295CF65BFE8D026));
-  }
-  public ISchemaFixedArray<uint32> TournamentActiveCasterAccounts {
-    get => new SchemaFixedArray<uint32>(_Handle + Schema.GetOffset(0x6295CF6525481301));
-  }
-  public ref int NumBestOfMaps {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF6581B0F2D7));
-  }
-  public ref int HalloweenMaskListSeed {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65EDB3E1E1));
-  }
-  public ref bool BombDropped {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65D690B299));
-  }
-  public ref bool BombPlanted {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF653C00B55F));
-  }
-  public ref int RoundWinStatus {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF6538E1FC04));
-  }
-  public ref int RoundWinReason {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65879CEBD2));
-  }
-  public ref bool TCantBuy {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65E60964EF));
-  }
-  public ref bool CTCantBuy {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF655A190494));
-  }
-  public ISchemaFixedArray<int32> MatchStats_RoundResults {
-    get => new SchemaFixedArray<int32>(_Handle + Schema.GetOffset(0x6295CF652BF6608F));
-  }
-  public ISchemaFixedArray<int32> MatchStats_PlayersAlive_CT {
-    get => new SchemaFixedArray<int32>(_Handle + Schema.GetOffset(0x6295CF650A468F9C));
-  }
-  public ISchemaFixedArray<int32> MatchStats_PlayersAlive_T {
-    get => new SchemaFixedArray<int32>(_Handle + Schema.GetOffset(0x6295CF65DCEE8755));
-  }
-  public ISchemaFixedArray<float32> TeamRespawnWaveTimes {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0x6295CF65A15A30B1));
-  }
-  public IGameTime_t NextRespawnWave {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x6295CF65F28FB62F));
-  }
-  public ref Vector MinimapMins {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6295CF6589AD2CA5));
-  }
-  public ref Vector MinimapMaxs {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6295CF65F2B86C5F));
-  }
-  public ISchemaFixedArray<float32> MinimapVerticalSectionHeights {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0x6295CF6537ADB2EF));
-  }
   public ref ulong UllLocalMatchID {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x6295CF657D14A239));
-  }
-  public ISchemaFixedArray<int32> EndMatchMapGroupVoteTypes {
-    get => new SchemaFixedArray<int32>(_Handle + Schema.GetOffset(0x6295CF65B4DAF10B));
-  }
-  public ISchemaFixedArray<int32> EndMatchMapGroupVoteOptions {
-    get => new SchemaFixedArray<int32>(_Handle + Schema.GetOffset(0x6295CF65BCAA50F4));
-  }
-  public ref int EndMatchMapVoteWinner {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65F340D3E0));
-  }
-  public ref int NumConsecutiveCTLoses {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF6548E3E309));
-  }
-  public ref int NumConsecutiveTerroristLoses {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF652335F53E));
   }
   public ref bool HasHostageBeenTouched {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF6577F64274));
@@ -264,8 +51,8 @@ internal partial class CCSGameRules : CTeamplayRules, ICSGameRules {
   public ref int NumSpawnableCT {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65A0723378));
   }
-  public ref CUtlVector< int32 > SelectedHostageSpawnIndices {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0x6295CF65A24826BE));
+  public ref CUtlVector<int> SelectedHostageSpawnIndices {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0x6295CF65A24826BE));
   }
   public ref int SpawnPointsRandomSeed {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65EBBE08D1));
@@ -285,8 +72,8 @@ internal partial class CCSGameRules : CTeamplayRules, ICSGameRules {
   public ref bool SwapTeamsOnRestart {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65AC86A5EC));
   }
-  public ref CUtlVector< int32 > EndMatchTiedVotes {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0x6295CF65FF26054E));
+  public ref CUtlVector<int> EndMatchTiedVotes {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0x6295CF65FF26054E));
   }
   public ref bool NeedToAskPlayersForContinueVote {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65515BA5BD));
@@ -429,11 +216,11 @@ internal partial class CCSGameRules : CTeamplayRules, ICSGameRules {
   public ref Vector MainCTSpawnPos {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6295CF65F44AF710));
   }
-  public ref CUtlVector< SpawnPoint* > CTSpawnPointsMasterList {
-    get => ref _Handle.AsRef<CUtlVector< SpawnPoint* >>(Schema.GetOffset(0x6295CF6582901578));
+  public ref CUtlVector<PointerTo<SpawnPoint>> CTSpawnPointsMasterList {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<SpawnPoint>>>(Schema.GetOffset(0x6295CF6582901578));
   }
-  public ref CUtlVector< SpawnPoint* > TerroristSpawnPointsMasterList {
-    get => ref _Handle.AsRef<CUtlVector< SpawnPoint* >>(Schema.GetOffset(0x6295CF65EC3D3B5D));
+  public ref CUtlVector<PointerTo<SpawnPoint>> TerroristSpawnPointsMasterList {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<SpawnPoint>>>(Schema.GetOffset(0x6295CF65EC3D3B5D));
   }
   public ref bool RespawningAllRespawnablePlayers {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65F400C2A6));
@@ -450,11 +237,11 @@ internal partial class CCSGameRules : CTeamplayRules, ICSGameRules {
   public ref float TerroristSpawnPointUsedTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6295CF653A8AC4CC));
   }
-  public ref CUtlVector< SpawnPoint* > CTSpawnPoints {
-    get => ref _Handle.AsRef<CUtlVector< SpawnPoint* >>(Schema.GetOffset(0x6295CF6537BA1FB2));
+  public ref CUtlVector<PointerTo<SpawnPoint>> CTSpawnPoints {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<SpawnPoint>>>(Schema.GetOffset(0x6295CF6537BA1FB2));
   }
-  public ref CUtlVector< SpawnPoint* > TerroristSpawnPoints {
-    get => ref _Handle.AsRef<CUtlVector< SpawnPoint* >>(Schema.GetOffset(0x6295CF6506BE8E93));
+  public ref CUtlVector<PointerTo<SpawnPoint>> TerroristSpawnPoints {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<SpawnPoint>>>(Schema.GetOffset(0x6295CF6506BE8E93));
   }
   public ref bool IsUnreservedGameServer {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65C691B4FF));
@@ -483,98 +270,29 @@ internal partial class CCSGameRules : CTeamplayRules, ICSGameRules {
   public ref int ShorthandedBonusLastEvalRound {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65AFC72D22));
   }
-  public ref int MatchAbortedEarlyReason {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF658B4CFCE8));
-  }
   public ref bool HasTriggeredRoundStartMusic {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65E34D873B));
   }
   public ref bool SwitchingTeamsAtRoundReset {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65AE3AF0A5));
   }
-  public ICSGameModeRules GameModeRules {
-    get => new CCSGameModeRules(_Handle + Schema.GetOffset(0x6295CF650B12F105));
-  }
   public ISchemaUntypedField BtGlobalBlackboard {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6295CF654E62FE91));
   }
-  public ref CHandle< CBaseEntity > PlayerResource {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x6295CF6553F9E5AE));
+  public CHandle<IBaseEntity> PlayerResource {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x6295CF6553F9E5AE));
   }
-  public IRetakeGameRules RetakeRules {
-    get => new CRetakeGameRules(_Handle + Schema.GetOffset(0x6295CF65DB6D258A));
-  }
-  public ISchemaFixedArray<CUtlVector< int32 >> TeamUniqueKillWeaponsMatch {
-    get => new SchemaFixedArray<CUtlVector< int32 >>(_Handle + Schema.GetOffset(0x6295CF65EB474B78));
+  public CUtlVector<int> TeamUniqueKillWeaponsMatch {
+    get => new CUtlVector<int>(_Handle, 0x6295CF65EB474B78, 4, 24, 8);
   }
   public ISchemaFixedArray<bool> TeamLastKillUsedUniqueWeaponMatch {
-    get => new SchemaFixedArray<bool>(_Handle + Schema.GetOffset(0x6295CF65BCB471EB));
-  }
-  public ref byte MatchEndCount {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x6295CF65FCD08D2E));
-  }
-  public ref int TTeamIntroVariant {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF652843B819));
-  }
-  public ref int CTTeamIntroVariant {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65A4E902BC));
-  }
-  public ref bool TeamIntroPeriod {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF6550FCE177));
+    get => new SchemaFixedArray<bool>(_Handle, 0x6295CF65BCB471EB, 4, 1, 1);
   }
   public IGameTime_t TeamIntroPeriodEnd {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x6295CF65E9D7AE78));
   }
   public ref bool PlayedTeamIntroVO {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF6520AF50EC));
-  }
-  public ref int RoundEndWinnerTeam {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF6556870D0B));
-  }
-  public ref int RoundEndReason {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF6507672B11));
-  }
-  public ref bool RoundEndShowTimerDefend {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF6594C342DA));
-  }
-  public ref int RoundEndTimerTime {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65ED1EF5CF));
-  }
-  public ref CUtlString RoundEndFunFactToken {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6295CF653C86499F));
-  }
-  public ref CPlayerSlot RoundEndFunFactPlayerSlot {
-    get => ref _Handle.AsRef<CPlayerSlot>(Schema.GetOffset(0x6295CF65FA215C79));
-  }
-  public ref int RoundEndFunFactData1 {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF657F5515C3));
-  }
-  public ref int RoundEndFunFactData2 {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF6580551756));
-  }
-  public ref int RoundEndFunFactData3 {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65815518E9));
-  }
-  public ref CUtlString RoundEndMessage {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6295CF65CE64850E));
-  }
-  public ref int RoundEndPlayerCount {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65C873652B));
-  }
-  public ref bool RoundEndNoMusic {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65E76CDBDA));
-  }
-  public ref int RoundEndLegacy {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF658DA31C1A));
-  }
-  public ref byte RoundEndCount {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x6295CF650FBD0053));
-  }
-  public ref int RoundStartRoundNumber {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65F4340311));
-  }
-  public ref byte RoundStartCount {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x6295CF65B018A784));
   }
   public ref double LastPerfSampleTime {
     get => ref _Handle.AsRef<double>(Schema.GetOffset(0x6295CF650AB327AB));

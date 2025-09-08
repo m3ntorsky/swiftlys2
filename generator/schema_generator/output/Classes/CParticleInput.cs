@@ -9,9 +9,6 @@ internal partial class CParticleInput : SchemaClass, IParticleInput {
   public CParticleInput(nint handle) : base(handle) {
   }
 
-  public CParticleInput(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

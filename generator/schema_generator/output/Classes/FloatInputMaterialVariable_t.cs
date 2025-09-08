@@ -9,9 +9,6 @@ internal partial class FloatInputMaterialVariable_t : SchemaClass, IFloatInputMa
   public FloatInputMaterialVariable_t(nint handle) : base(handle) {
   }
 
-  public FloatInputMaterialVariable_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString StrVariable {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xEFEA50FDA52C3390));
   }

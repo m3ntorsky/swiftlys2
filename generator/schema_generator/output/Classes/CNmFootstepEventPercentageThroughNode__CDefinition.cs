@@ -9,9 +9,6 @@ internal partial class CNmFootstepEventPercentageThroughNode__CDefinition : CNmF
   public CNmFootstepEventPercentageThroughNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFootstepEventPercentageThroughNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short SourceStateNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x998F83E463F0228C));
   }

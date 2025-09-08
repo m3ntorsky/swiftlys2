@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCResourceManifestInternal : SchemaClas
   public InfoForResourceTypeCResourceManifestInternal(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCResourceManifestInternal(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

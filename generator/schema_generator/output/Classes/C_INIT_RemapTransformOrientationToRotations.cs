@@ -9,9 +9,6 @@ internal partial class C_INIT_RemapTransformOrientationToRotations : CParticleFu
   public C_INIT_RemapTransformOrientationToRotations(nint handle) : base(handle) {
   }
 
-  public C_INIT_RemapTransformOrientationToRotations(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleTransformInput TransformInput {
     get => new CParticleTransformInput(_Handle + Schema.GetOffset(0x51F07293B3FDC289));
   }

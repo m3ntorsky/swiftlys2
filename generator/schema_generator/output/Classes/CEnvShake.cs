@@ -9,9 +9,6 @@ internal partial class CEnvShake : CPointEntity, IEnvShake {
   public CEnvShake(nint handle) : base(handle) {
   }
 
-  public CEnvShake(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge LimitToEntity {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x10FEA945E1C029E2));
   }

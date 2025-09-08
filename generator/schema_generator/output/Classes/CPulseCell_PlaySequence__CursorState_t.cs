@@ -9,11 +9,8 @@ internal partial class CPulseCell_PlaySequence__CursorState_t : SchemaClass, IPu
   public CPulseCell_PlaySequence__CursorState_t(nint handle) : base(handle) {
   }
 
-  public CPulseCell_PlaySequence__CursorState_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CHandle< CBaseAnimGraph > Target {
-    get => ref _Handle.AsRef<CHandle< CBaseAnimGraph >>(Schema.GetOffset(0x2C22B771CE35901A));
+  public CHandle<IBaseAnimGraph> Target {
+    get => new CHandle<CBaseAnimGraph>(_Handle + Schema.GetOffset(0x2C22B771CE35901A));
   }
 
 

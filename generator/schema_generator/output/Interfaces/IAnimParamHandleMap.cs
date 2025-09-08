@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimParamHandleMap : ISchemaClass {
 
-
+  public ISchemaUntypedField List { get; }
+  
 }

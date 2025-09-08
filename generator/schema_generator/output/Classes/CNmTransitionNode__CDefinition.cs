@@ -9,9 +9,6 @@ internal partial class CNmTransitionNode__CDefinition : CNmPoseNode::CDefinition
   public CNmTransitionNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmTransitionNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short TargetStateNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x23B71EF8DE6A1B64));
   }

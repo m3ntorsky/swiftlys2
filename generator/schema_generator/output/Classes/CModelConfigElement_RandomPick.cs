@@ -9,14 +9,11 @@ internal partial class CModelConfigElement_RandomPick : CModelConfigElement, IMo
   public CModelConfigElement_RandomPick(nint handle) : base(handle) {
   }
 
-  public CModelConfigElement_RandomPick(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVector<CUtlString> Choices {
+    get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x31F9AEEA9E9959BF));
   }
-
-  public ref CUtlVector< CUtlString > Choices {
-    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0x31F9AEEA9E9959BF));
-  }
-  public ref CUtlVector< float32 > ChoiceWeights {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x31F9AEEA379579F7));
+  public ref CUtlVector<float> ChoiceWeights {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x31F9AEEA379579F7));
   }
 
 

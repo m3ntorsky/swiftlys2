@@ -9,9 +9,6 @@ internal partial class C_INIT_PositionOffset : CParticleFunctionInitializer, IC_
   public C_INIT_PositionOffset(nint handle) : base(handle) {
   }
 
-  public C_INIT_PositionOffset(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleVecInput OffsetMin {
     get => new CPerParticleVecInput(_Handle + Schema.GetOffset(0x263FD76A7E1ECBDE));
   }

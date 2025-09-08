@@ -9,9 +9,6 @@ internal partial class CPulseGraphInstance_GameBlackboard : CPulseGraphInstance_
   public CPulseGraphInstance_GameBlackboard(nint handle) : base(handle) {
   }
 
-  public CPulseGraphInstance_GameBlackboard(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

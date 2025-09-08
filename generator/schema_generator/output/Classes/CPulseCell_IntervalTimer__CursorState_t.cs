@@ -9,9 +9,6 @@ internal partial class CPulseCell_IntervalTimer__CursorState_t : SchemaClass, IP
   public CPulseCell_IntervalTimer__CursorState_t(nint handle) : base(handle) {
   }
 
-  public CPulseCell_IntervalTimer__CursorState_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IGameTime_t StartTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x63BF122697B5FA8E));
   }

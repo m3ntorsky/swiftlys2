@@ -9,9 +9,6 @@ internal partial class C_OP_RemapGravityToVector : CParticleFunctionOperator, IC
   public C_OP_RemapGravityToVector(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapGravityToVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleVecInput Input1 {
     get => new CPerParticleVecInput(_Handle + Schema.GetOffset(0x3777A3A2E17F27DA));
   }

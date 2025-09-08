@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IConstraintAnchor : IBaseAnimGraph {
 
-
+  public ref float MassScale { get; }
+  
 }

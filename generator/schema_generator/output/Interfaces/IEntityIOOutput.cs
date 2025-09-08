@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEntityIOOutput : ISchemaClass {
 
-
+  public ISchemaUntypedField Value { get; }
+  
 }

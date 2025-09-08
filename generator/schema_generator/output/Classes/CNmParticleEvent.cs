@@ -9,17 +9,14 @@ internal partial class CNmParticleEvent : CNmEvent, INmParticleEvent {
   public CNmParticleEvent(nint handle) : base(handle) {
   }
 
-  public CNmParticleEvent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CNmEventRelevance_t Relevance {
     get => ref _Handle.AsRef<CNmEventRelevance_t>(Schema.GetOffset(0x441D270F1E3F4008));
   }
   public ref CNmParticleEvent::Type_t Type {
     get => ref _Handle.AsRef<CNmParticleEvent::Type_t>(Schema.GetOffset(0x441D270F0F04B4ED));
   }
-  public ref CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > ParticleSystem {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIParticleSystemDefinition >>(Schema.GetOffset(0x441D270FC9C33AF8));
+  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> ParticleSystem {
+    get => new CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>(_Handle + Schema.GetOffset(0x441D270FC9C33AF8));
   }
   public ref CUtlString Tags {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x441D270FB46C8540));

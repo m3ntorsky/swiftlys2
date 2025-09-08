@@ -9,9 +9,6 @@ internal partial class CItemKevlar : CItem, IItemKevlar {
   public CItemKevlar(nint handle) : base(handle) {
   }
 
-  public CItemKevlar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,14 +9,11 @@ internal partial class C_OP_RenderSimpleModelCollection : CParticleFunctionRende
   public C_OP_RenderSimpleModelCollection(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderSimpleModelCollection(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool CenterOffset {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xFCE69AE8E2C912BF));
   }
-  public ref CStrongHandle< InfoForResourceTypeCModel > Model {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCModel >>(Schema.GetOffset(0xFCE69AE8E100C814));
+  public CStrongHandle<IInfoForResourceTypeCModel> Model {
+    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0xFCE69AE8E100C814));
   }
   public IParticleModelInput ModelInput {
     get => new CParticleModelInput(_Handle + Schema.GetOffset(0xFCE69AE8EB74120E));

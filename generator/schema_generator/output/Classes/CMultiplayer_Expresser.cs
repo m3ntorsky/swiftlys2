@@ -9,9 +9,6 @@ internal partial class CMultiplayer_Expresser : CAI_ExpresserWithFollowup, IMult
   public CMultiplayer_Expresser(nint handle) : base(handle) {
   }
 
-  public CMultiplayer_Expresser(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool AllowMultipleScenes {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x19772F22AE5FCD97));
   }

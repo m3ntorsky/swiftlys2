@@ -9,9 +9,6 @@ internal partial class CSeqCmdLayer : SchemaClass, ISeqCmdLayer {
   public CSeqCmdLayer(nint handle) : base(handle) {
   }
 
-  public CSeqCmdLayer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short Cmd {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xFD1F978E4B3490B));
   }

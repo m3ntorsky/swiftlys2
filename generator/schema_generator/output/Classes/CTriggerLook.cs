@@ -9,11 +9,8 @@ internal partial class CTriggerLook : CTriggerOnce, ITriggerLook {
   public CTriggerLook(nint handle) : base(handle) {
   }
 
-  public CTriggerLook(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CHandle< CBaseEntity > LookTarget {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x400CA6913361F745));
+  public CHandle<IBaseEntity> LookTarget {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x400CA6913361F745));
   }
   public ref float FieldOfView {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x400CA69157C8F26D));
@@ -41,12 +38,6 @@ internal partial class CTriggerLook : CTriggerOnce, ITriggerLook {
   }
   public ref bool UseVelocity {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x400CA6915E806BAF));
-  }
-  public ref bool TestOcclusion {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x400CA6912AB3E7C2));
-  }
-  public ref bool TestAllVisibleOcclusion {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x400CA691FBAABAEB));
   }
   public IEntityIOOutput OnTimeout {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x400CA691C5301603));

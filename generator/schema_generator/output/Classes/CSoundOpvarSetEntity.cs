@@ -9,9 +9,6 @@ internal partial class CSoundOpvarSetEntity : CBaseEntity, ISoundOpvarSetEntity 
   public CSoundOpvarSetEntity(nint handle) : base(handle) {
   }
 
-  public CSoundOpvarSetEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge StackName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xAF468F963B3E9CD4));
   }

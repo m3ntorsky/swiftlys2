@@ -9,9 +9,6 @@ internal partial class CNmBlend1DNode__CDefinition : CNmParameterizedBlendNode::
   public CNmBlend1DNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmBlend1DNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public INmParameterizedBlendNode::Parameterization_t Parameterization {
     get => new CNmParameterizedBlendNode::Parameterization_t(_Handle + Schema.GetOffset(0xA5E668CDE173A928));
   }

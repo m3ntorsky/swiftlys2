@@ -9,9 +9,6 @@ internal partial class CTakeDamageInfo : SchemaClass, ITakeDamageInfo {
   public CTakeDamageInfo(nint handle) : base(handle) {
   }
 
-  public CTakeDamageInfo(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector DamageForce {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xE30E6228A2BCC293));
   }
@@ -24,14 +21,14 @@ internal partial class CTakeDamageInfo : SchemaClass, ITakeDamageInfo {
   public ref Vector DamageDirection {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xE30E622819986F61));
   }
-  public ref CHandle< CBaseEntity > Inflictor {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xE30E62284D7B4137));
+  public CHandle<IBaseEntity> Inflictor {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xE30E62284D7B4137));
   }
-  public ref CHandle< CBaseEntity > Attacker {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xE30E622868573D54));
+  public CHandle<IBaseEntity> Attacker {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xE30E622868573D54));
   }
-  public ref CHandle< CBaseEntity > Ability {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xE30E622825B1260B));
+  public CHandle<IBaseEntity> Ability {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xE30E622825B1260B));
   }
   public ref float Damage {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE30E6228DC60E53E));

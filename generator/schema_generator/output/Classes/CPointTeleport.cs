@@ -9,9 +9,6 @@ internal partial class CPointTeleport : CServerOnlyPointEntity, IPointTeleport {
   public CPointTeleport(nint handle) : base(handle) {
   }
 
-  public CPointTeleport(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector SaveOrigin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x9AE1393FD9277FA6));
   }

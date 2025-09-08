@@ -9,9 +9,6 @@ internal partial class CPhysMagnet : CBaseAnimGraph, IPhysMagnet {
   public CPhysMagnet(nint handle) : base(handle) {
   }
 
-  public CPhysMagnet(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnMagnetAttach {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x5772891055B6907B));
   }
@@ -27,8 +24,8 @@ internal partial class CPhysMagnet : CBaseAnimGraph, IPhysMagnet {
   public ref float TorqueLimit {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x577289106D51FE3E));
   }
-  public ref CUtlVector< magnetted_objects_t > MagnettedEntities {
-    get => ref _Handle.AsRef<CUtlVector< magnetted_objects_t >>(Schema.GetOffset(0x57728910E39284F3));
+  public ref CUtlVector MagnettedEntities {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x57728910E39284F3));
   }
   public ref bool Active {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x577289108334208F));

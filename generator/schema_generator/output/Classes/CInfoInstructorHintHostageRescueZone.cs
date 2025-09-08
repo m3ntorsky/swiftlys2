@@ -9,9 +9,6 @@ internal partial class CInfoInstructorHintHostageRescueZone : CPointEntity, IInf
   public CInfoInstructorHintHostageRescueZone(nint handle) : base(handle) {
   }
 
-  public CInfoInstructorHintHostageRescueZone(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

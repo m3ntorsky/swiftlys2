@@ -9,9 +9,6 @@ internal partial class CInfoTarget : CPointEntity, IInfoTarget {
   public CInfoTarget(nint handle) : base(handle) {
   }
 
-  public CInfoTarget(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

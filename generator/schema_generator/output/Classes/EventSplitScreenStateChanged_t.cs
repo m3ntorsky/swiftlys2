@@ -9,9 +9,6 @@ internal partial class EventSplitScreenStateChanged_t : SchemaClass, IEventSplit
   public EventSplitScreenStateChanged_t(nint handle) : base(handle) {
   }
 
-  public EventSplitScreenStateChanged_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class C_OP_FadeOut : CParticleFunctionOperator, IC_OP_FadeOut {
   public C_OP_FadeOut(nint handle) : base(handle) {
   }
 
-  public C_OP_FadeOut(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float FadeOutTimeMin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDB3026B50D900CF6));
   }

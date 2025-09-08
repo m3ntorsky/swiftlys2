@@ -9,9 +9,6 @@ internal partial class CHostageRescueZoneShim : CBaseTrigger, IHostageRescueZone
   public CHostageRescueZoneShim(nint handle) : base(handle) {
   }
 
-  public CHostageRescueZoneShim(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

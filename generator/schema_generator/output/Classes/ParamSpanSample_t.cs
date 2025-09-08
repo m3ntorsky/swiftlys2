@@ -9,9 +9,6 @@ internal partial class ParamSpanSample_t : SchemaClass, IParamSpanSample_t {
   public ParamSpanSample_t(nint handle) : base(handle) {
   }
 
-  public ParamSpanSample_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField Value {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x37E203136B99AEEA));
   }

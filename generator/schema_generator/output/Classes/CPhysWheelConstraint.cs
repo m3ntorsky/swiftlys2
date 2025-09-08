@@ -9,9 +9,6 @@ internal partial class CPhysWheelConstraint : CPhysConstraint, IPhysWheelConstra
   public CPhysWheelConstraint(nint handle) : base(handle) {
   }
 
-  public CPhysWheelConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float SuspensionFrequency {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x597D72C29D467E68));
   }
@@ -45,8 +42,8 @@ internal partial class CPhysWheelConstraint : CPhysConstraint, IPhysWheelConstra
   public ref float SpinAxisFriction {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x597D72C266B468FC));
   }
-  public ref CHandle< CBaseEntity > SteeringMimicsEntity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x597D72C2CD5E886D));
+  public CHandle<IBaseEntity> SteeringMimicsEntity {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x597D72C2CD5E886D));
   }
 
 

@@ -9,9 +9,6 @@ internal partial class CTimeRemainingMetricEvaluator : CMotionMetricEvaluator, I
   public CTimeRemainingMetricEvaluator(nint handle) : base(handle) {
   }
 
-  public CTimeRemainingMetricEvaluator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool MatchByTimeRemaining {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xAB802C86BB70462E));
   }

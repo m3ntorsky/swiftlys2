@@ -9,9 +9,6 @@ internal partial class CAnimInputDamping : SchemaClass, IAnimInputDamping {
   public CAnimInputDamping(nint handle) : base(handle) {
   }
 
-  public CAnimInputDamping(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref DampingSpeedFunction SpeedFunction {
     get => ref _Handle.AsRef<DampingSpeedFunction>(Schema.GetOffset(0xFAECFC318682F508));
   }

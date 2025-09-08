@@ -9,9 +9,6 @@ internal partial class CTriggerHostageReset : CBaseTrigger, ITriggerHostageReset
   public CTriggerHostageReset(nint handle) : base(handle) {
   }
 
-  public CTriggerHostageReset(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

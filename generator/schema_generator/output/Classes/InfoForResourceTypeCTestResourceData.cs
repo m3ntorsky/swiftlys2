@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCTestResourceData : SchemaClass, IInfo
   public InfoForResourceTypeCTestResourceData(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCTestResourceData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

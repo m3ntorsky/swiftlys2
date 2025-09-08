@@ -9,9 +9,6 @@ internal partial class VMixDiffusorDesc_t : SchemaClass, IVMixDiffusorDesc_t {
   public VMixDiffusorDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixDiffusorDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Size {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC24C1D694CF0EBC6));
   }

@@ -9,9 +9,6 @@ internal partial class CCSPointScriptEntity : CBaseEntity, ICSPointScriptEntity 
   public CCSPointScriptEntity(nint handle) : base(handle) {
   }
 
-  public CCSPointScriptEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

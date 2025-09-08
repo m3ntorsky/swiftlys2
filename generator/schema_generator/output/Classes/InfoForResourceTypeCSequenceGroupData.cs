@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCSequenceGroupData : SchemaClass, IInf
   public InfoForResourceTypeCSequenceGroupData(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCSequenceGroupData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,11 +9,8 @@ internal partial class CAnimReplayFrame : SchemaClass, IAnimReplayFrame {
   public CAnimReplayFrame(nint handle) : base(handle) {
   }
 
-  public CAnimReplayFrame(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CUtlBinaryBlock > InputDataBlocks {
-    get => ref _Handle.AsRef<CUtlVector< CUtlBinaryBlock >>(Schema.GetOffset(0xBED2F401F7E8195D));
+  public ref CUtlVector<CUtlBinaryBlock> InputDataBlocks {
+    get => ref _Handle.AsRef<CUtlVector<CUtlBinaryBlock>>(Schema.GetOffset(0xBED2F401F7E8195D));
   }
   public ref CUtlBinaryBlock InstanceData {
     get => ref _Handle.AsRef<CUtlBinaryBlock>(Schema.GetOffset(0xBED2F401AE26D9C2));

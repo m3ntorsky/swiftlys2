@@ -9,9 +9,6 @@ internal partial class CVoiceContainerRealtimeFMSineWave : CVoiceContainerBase, 
   public CVoiceContainerRealtimeFMSineWave(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerRealtimeFMSineWave(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float CarrierFrequency {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x3AB0D193041DC311));
   }

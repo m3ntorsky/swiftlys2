@@ -9,14 +9,8 @@ internal partial class CCSPlayer_PingServices : CPlayerPawnComponent, ICSPlayer_
   public CCSPlayer_PingServices(nint handle) : base(handle) {
   }
 
-  public CCSPlayer_PingServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IGameTime_t PlayerPingTokens {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0xC78D79CA55696280));
-  }
-  public ref CHandle< CBaseEntity > PlayerPing {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xC78D79CA464EEA6E));
+    get => new GameTime_t(_Handle, 0xC78D79CA55696280, 5, 4, 4);
   }
 
   public void PlayerPingUpdated() {

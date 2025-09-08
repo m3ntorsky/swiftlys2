@@ -9,11 +9,8 @@ internal partial class CPathMetricEvaluator : CMotionMetricEvaluator, IPathMetri
   public CPathMetricEvaluator(nint handle) : base(handle) {
   }
 
-  public CPathMetricEvaluator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< float32 > PathTimeSamples {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x6BF20F3A94DC552A));
+  public ref CUtlVector<float> PathTimeSamples {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x6BF20F3A94DC552A));
   }
   public ref float Distance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6BF20F3A00DC4A68));

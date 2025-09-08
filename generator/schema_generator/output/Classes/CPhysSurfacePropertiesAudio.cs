@@ -9,9 +9,6 @@ internal partial class CPhysSurfacePropertiesAudio : SchemaClass, IPhysSurfacePr
   public CPhysSurfacePropertiesAudio(nint handle) : base(handle) {
   }
 
-  public CPhysSurfacePropertiesAudio(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Reflectivity {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x7FD94D2E904671F3));
   }

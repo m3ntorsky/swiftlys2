@@ -9,9 +9,6 @@ internal partial class IPhysicsPlayerController : SchemaClass, IIPhysicsPlayerCo
   public IPhysicsPlayerController(nint handle) : base(handle) {
   }
 
-  public IPhysicsPlayerController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

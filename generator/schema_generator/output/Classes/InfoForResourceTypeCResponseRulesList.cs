@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCResponseRulesList : SchemaClass, IInf
   public InfoForResourceTypeCResponseRulesList(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCResponseRulesList(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

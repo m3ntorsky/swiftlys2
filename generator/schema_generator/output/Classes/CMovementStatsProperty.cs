@@ -9,9 +9,6 @@ internal partial class CMovementStatsProperty : SchemaClass, IMovementStatsPrope
   public CMovementStatsProperty(nint handle) : base(handle) {
   }
 
-  public CMovementStatsProperty(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int UseCounter {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDE38DFFB6294198C));
   }

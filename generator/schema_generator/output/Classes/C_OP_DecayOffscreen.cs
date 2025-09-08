@@ -9,9 +9,6 @@ internal partial class C_OP_DecayOffscreen : CParticleFunctionOperator, IC_OP_De
   public C_OP_DecayOffscreen(nint handle) : base(handle) {
   }
 
-  public C_OP_DecayOffscreen(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput OffscreenTime {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0xA253F9AEB096E1F1));
   }

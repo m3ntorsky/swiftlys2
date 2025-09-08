@@ -9,9 +9,6 @@ internal partial class C_OP_RenderOmni2Light : CParticleFunctionRenderer, IC_OP_
   public C_OP_RenderOmni2Light(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderOmni2Light(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ParticleOmni2LightTypeChoiceList_t LightType {
     get => ref _Handle.AsRef<ParticleOmni2LightTypeChoiceList_t>(Schema.GetOffset(0xDE9AF4EE18C7B4A3));
   }
@@ -54,8 +51,8 @@ internal partial class C_OP_RenderOmni2Light : CParticleFunctionRenderer, IC_OP_
   public IPerParticleFloatInput OuterConeAngle {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0xDE9AF4EE90EF9464));
   }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > LightCookie {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0xDE9AF4EE0609D103));
+  public CStrongHandle<IInfoForResourceTypeCTextureBase> LightCookie {
+    get => new CStrongHandle<InfoForResourceTypeCTextureBase>(_Handle + Schema.GetOffset(0xDE9AF4EE0609D103));
   }
   public ref bool SphericalCookie {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDE9AF4EE6C822B6E));

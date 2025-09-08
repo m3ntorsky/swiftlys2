@@ -9,9 +9,6 @@ internal partial class CHostageExpresserShim : CBaseCombatCharacter, IHostageExp
   public CHostageExpresserShim(nint handle) : base(handle) {
   }
 
-  public CHostageExpresserShim(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAI_Expresser Expresser {
     get => new CAI_Expresser(_Handle + Schema.GetOffset(0xD6B3DCE7697CAC2A));
   }

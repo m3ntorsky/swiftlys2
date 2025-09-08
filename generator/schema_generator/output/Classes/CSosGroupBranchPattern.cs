@@ -9,9 +9,6 @@ internal partial class CSosGroupBranchPattern : SchemaClass, ISosGroupBranchPatt
   public CSosGroupBranchPattern(nint handle) : base(handle) {
   }
 
-  public CSosGroupBranchPattern(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool MatchEventName {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xED3ACA86D4451FA9));
   }

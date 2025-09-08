@@ -9,9 +9,6 @@ internal partial class CAddUpdateNode : CBinaryUpdateNode, IAddUpdateNode {
   public CAddUpdateNode(nint handle) : base(handle) {
   }
 
-  public CAddUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref BinaryNodeChildOption FootMotionTiming {
     get => ref _Handle.AsRef<BinaryNodeChildOption>(Schema.GetOffset(0x607346F4BB17F13D));
   }

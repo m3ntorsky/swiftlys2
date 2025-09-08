@@ -9,9 +9,6 @@ internal partial class CHEGrenade : CBaseCSGrenade, IHEGrenade {
   public CHEGrenade(nint handle) : base(handle) {
   }
 
-  public CHEGrenade(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

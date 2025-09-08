@@ -9,9 +9,6 @@ internal partial class CPulseCell_WaitForCursorsWithTagBase__CursorState_t : Sch
   public CPulseCell_WaitForCursorsWithTagBase__CursorState_t(nint handle) : base(handle) {
   }
 
-  public CPulseCell_WaitForCursorsWithTagBase__CursorState_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField TagName {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x71EA6190647DC278));
   }

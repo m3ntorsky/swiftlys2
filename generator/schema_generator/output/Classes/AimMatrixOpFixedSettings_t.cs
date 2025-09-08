@@ -9,9 +9,6 @@ internal partial class AimMatrixOpFixedSettings_t : SchemaClass, IAimMatrixOpFix
   public AimMatrixOpFixedSettings_t(nint handle) : base(handle) {
   }
 
-  public AimMatrixOpFixedSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimAttachment Attachment {
     get => new CAnimAttachment(_Handle + Schema.GetOffset(0xE059B1E02C5CA308));
   }
@@ -19,7 +16,7 @@ internal partial class AimMatrixOpFixedSettings_t : SchemaClass, IAimMatrixOpFix
     get => new CAnimInputDamping(_Handle + Schema.GetOffset(0xE059B1E015440FB5));
   }
   public IPoseHandle PoseCacheHandles {
-    get => new CPoseHandle(_Handle + Schema.GetOffset(0xE059B1E0E7BA8E61));
+    get => new CPoseHandle(_Handle, 0xE059B1E0E7BA8E61, 10, 4, 2);
   }
   public ref AimMatrixBlendMode BlendMode {
     get => ref _Handle.AsRef<AimMatrixBlendMode>(Schema.GetOffset(0xE059B1E0DBED6224));

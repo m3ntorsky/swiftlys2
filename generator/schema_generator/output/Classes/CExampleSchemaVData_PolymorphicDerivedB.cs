@@ -9,9 +9,6 @@ internal partial class CExampleSchemaVData_PolymorphicDerivedB : CExampleSchemaV
   public CExampleSchemaVData_PolymorphicDerivedB(nint handle) : base(handle) {
   }
 
-  public CExampleSchemaVData_PolymorphicDerivedB(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int DerivedB {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x2A5BE585B46A6150));
   }

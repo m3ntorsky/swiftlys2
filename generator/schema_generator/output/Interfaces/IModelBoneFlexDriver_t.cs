@@ -4,5 +4,10 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IModelBoneFlexDriver_t : ISchemaClass {
 
-
+  public ref CUtlString BoneName { get; }
+  
+  public ref uint BoneNameToken { get; }
+  
+  public ref CUtlVector Controls { get; }
+  
 }

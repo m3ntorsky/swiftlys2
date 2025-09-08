@@ -9,9 +9,6 @@ internal partial class C_OP_LerpEndCapScalar : CParticleFunctionOperator, IC_OP_
   public C_OP_LerpEndCapScalar(nint handle) : base(handle) {
   }
 
-  public C_OP_LerpEndCapScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x308CB6FE5729606));
   }

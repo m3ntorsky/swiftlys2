@@ -9,9 +9,6 @@ internal partial class CBaseAnimGraphAnimGraphController : CAnimGraphControllerB
   public CBaseAnimGraphAnimGraphController(nint handle) : base(handle) {
   }
 
-  public CBaseAnimGraphAnimGraphController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField DestructiblePartDestroyedHitGroup {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x14CE6891659B7288));
   }

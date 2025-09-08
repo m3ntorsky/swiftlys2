@@ -9,9 +9,6 @@ internal partial class CMotorController : SchemaClass, IMotorController {
   public CMotorController(nint handle) : base(handle) {
   }
 
-  public CMotorController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Speed {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1A8B9067A4BD35A0));
   }

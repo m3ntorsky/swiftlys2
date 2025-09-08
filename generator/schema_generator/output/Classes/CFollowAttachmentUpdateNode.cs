@@ -9,9 +9,6 @@ internal partial class CFollowAttachmentUpdateNode : CUnaryUpdateNode, IFollowAt
   public CFollowAttachmentUpdateNode(nint handle) : base(handle) {
   }
 
-  public CFollowAttachmentUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IFollowAttachmentSettings_t OpFixedData {
     get => new FollowAttachmentSettings_t(_Handle + Schema.GetOffset(0x8E705AE36960AF8C));
   }

@@ -9,9 +9,6 @@ internal partial class CAnimGraphSettingsGroup : SchemaClass, IAnimGraphSettings
   public CAnimGraphSettingsGroup(nint handle) : base(handle) {
   }
 
-  public CAnimGraphSettingsGroup(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

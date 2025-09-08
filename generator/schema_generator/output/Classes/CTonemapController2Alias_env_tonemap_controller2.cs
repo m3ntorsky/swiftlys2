@@ -9,9 +9,6 @@ internal partial class CTonemapController2Alias_env_tonemap_controller2 : CTonem
   public CTonemapController2Alias_env_tonemap_controller2(nint handle) : base(handle) {
   }
 
-  public CTonemapController2Alias_env_tonemap_controller2(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

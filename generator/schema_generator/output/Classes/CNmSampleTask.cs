@@ -9,9 +9,6 @@ internal partial class CNmSampleTask : CNmPoseTask, INmSampleTask {
   public CNmSampleTask(nint handle) : base(handle) {
   }
 
-  public CNmSampleTask(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

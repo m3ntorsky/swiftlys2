@@ -9,38 +9,11 @@ internal partial class CInfoOffscreenPanoramaTexture : CPointEntity, IInfoOffscr
   public CInfoOffscreenPanoramaTexture(nint handle) : base(handle) {
   }
 
-  public CInfoOffscreenPanoramaTexture(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref bool Disabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x584660AF3A7C5965));
-  }
-  public ref int ResolutionX {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x584660AF6C22DC51));
-  }
-  public ref int ResolutionY {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x584660AF6B22DABE));
-  }
-  public ref CUtlSymbolLarge LayoutFileName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x584660AF5D1172FB));
-  }
-  public ref CUtlSymbolLarge RenderAttrName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x584660AFE624CDC1));
-  }
-  public ref CUtlVector< CHandle< CBaseModelEntity > > TargetEntities {
-    get => ref _Handle.AsRef<CUtlVector< CHandle< CBaseModelEntity > >>(Schema.GetOffset(0x584660AFA0100A93));
-  }
-  public ref int TargetChangeCount {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x584660AF309CAEAB));
-  }
-  public ref CUtlVector< CUtlSymbolLarge > CSSClasses {
-    get => ref _Handle.AsRef<CUtlVector< CUtlSymbolLarge >>(Schema.GetOffset(0x584660AFCB74D1DC));
-  }
   public ref CUtlSymbolLarge TargetsName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x584660AF82C9ED45));
   }
-  public ref CUtlVector< CHandle< CBaseModelEntity > > AdditionalTargetEntities {
-    get => ref _Handle.AsRef<CUtlVector< CHandle< CBaseModelEntity > >>(Schema.GetOffset(0x584660AFD38E792A));
+  public ref CUtlVector AdditionalTargetEntities {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x584660AFD38E792A));
   }
 
   public void DisabledUpdated() {

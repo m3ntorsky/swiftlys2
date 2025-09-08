@@ -9,9 +9,6 @@ internal partial class CNmClipReferenceNode__CDefinition : CNmPoseNode::CDefinit
   public CNmClipReferenceNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmClipReferenceNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

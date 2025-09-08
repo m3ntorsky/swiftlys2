@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmEntityAttributeFloatEvent : INmEntityAttributeEventBase {
 
-
+  public ISchemaUntypedField FloatValue { get; }
+  
 }

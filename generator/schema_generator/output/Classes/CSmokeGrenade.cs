@@ -9,9 +9,6 @@ internal partial class CSmokeGrenade : CBaseCSGrenade, ISmokeGrenade {
   public CSmokeGrenade(nint handle) : base(handle) {
   }
 
-  public CSmokeGrenade(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

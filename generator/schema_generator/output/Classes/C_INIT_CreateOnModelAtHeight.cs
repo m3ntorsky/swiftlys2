@@ -9,9 +9,6 @@ internal partial class C_INIT_CreateOnModelAtHeight : CParticleFunctionInitializ
   public C_INIT_CreateOnModelAtHeight(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreateOnModelAtHeight(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool UseBones {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBB8B79F610D1938B));
   }
@@ -46,7 +43,7 @@ internal partial class C_INIT_CreateOnModelAtHeight : CParticleFunctionInitializ
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBB8B79F68F1573EE));
   }
   public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xBB8B79F66A21BB0E));
+    get => new SchemaFixedString(_Handle, 0xBB8B79F66A21BB0E, 128, 1, 1);
   }
   public IParticleCollectionFloatInput HitboxVelocityScale {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0xBB8B79F65BE2EDCC));

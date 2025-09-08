@@ -9,9 +9,6 @@ internal partial class CPulseCell_TestWaitWithCursorState : CPulseCell_BaseYield
   public CPulseCell_TestWaitWithCursorState(nint handle) : base(handle) {
   }
 
-  public CPulseCell_TestWaitWithCursorState(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulse_ResumePoint WakeResume {
     get => new CPulse_ResumePoint(_Handle + Schema.GetOffset(0xB1305BB431F86DC2));
   }

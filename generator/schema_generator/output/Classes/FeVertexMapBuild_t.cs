@@ -9,9 +9,6 @@ internal partial class FeVertexMapBuild_t : SchemaClass, IFeVertexMapBuild_t {
   public FeVertexMapBuild_t(nint handle) : base(handle) {
   }
 
-  public FeVertexMapBuild_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString VertexMapName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x35530D470AA2D2C4));
   }
@@ -27,8 +24,8 @@ internal partial class FeVertexMapBuild_t : SchemaClass, IFeVertexMapBuild_t {
   public ref int ScaleSourceNode {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x35530D477C35F5E4));
   }
-  public ref CUtlVector< float32 > Weights {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x35530D475DDC697E));
+  public ref CUtlVector<float> Weights {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x35530D475DDC697E));
   }
 
 

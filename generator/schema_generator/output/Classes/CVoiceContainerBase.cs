@@ -9,9 +9,6 @@ internal partial class CVoiceContainerBase : SchemaClass, IVoiceContainerBase {
   public CVoiceContainerBase(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IVSound Sound {
     get => new CVSound(_Handle + Schema.GetOffset(0x9D65DC3663C1A950));
   }

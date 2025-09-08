@@ -9,9 +9,6 @@ internal partial class FeWorldCollisionParams_t : SchemaClass, IFeWorldCollision
   public FeWorldCollisionParams_t(nint handle) : base(handle) {
   }
 
-  public FeWorldCollisionParams_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float WorldFriction {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x85D16E65E1266C23));
   }

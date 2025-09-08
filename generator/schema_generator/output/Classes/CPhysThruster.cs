@@ -9,9 +9,6 @@ internal partial class CPhysThruster : CPhysForce, IPhysThruster {
   public CPhysThruster(nint handle) : base(handle) {
   }
 
-  public CPhysThruster(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector LocalOrigin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC6E190F75672584A));
   }

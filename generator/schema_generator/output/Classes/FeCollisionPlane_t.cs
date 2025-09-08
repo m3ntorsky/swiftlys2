@@ -9,9 +9,6 @@ internal partial class FeCollisionPlane_t : SchemaClass, IFeCollisionPlane_t {
   public FeCollisionPlane_t(nint handle) : base(handle) {
   }
 
-  public FeCollisionPlane_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort CtrlParent {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xF8EBA99555049230));
   }

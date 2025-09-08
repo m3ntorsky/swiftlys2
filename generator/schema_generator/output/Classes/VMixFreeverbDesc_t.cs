@@ -9,9 +9,6 @@ internal partial class VMixFreeverbDesc_t : SchemaClass, IVMixFreeverbDesc_t {
   public VMixFreeverbDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixFreeverbDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RoomSize {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF9EB6BF8DEA95199));
   }

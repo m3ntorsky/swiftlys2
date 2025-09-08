@@ -9,9 +9,6 @@ internal partial class CBtActionCombatPositioning : CBtNode, IBtActionCombatPosi
   public CBtActionCombatPositioning(nint handle) : base(handle) {
   }
 
-  public CBtActionCombatPositioning(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString SensorInputKey {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3FB29123D2B0D4C1));
   }

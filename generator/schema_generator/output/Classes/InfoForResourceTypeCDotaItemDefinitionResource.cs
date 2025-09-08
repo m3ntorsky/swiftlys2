@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCDotaItemDefinitionResource : SchemaCl
   public InfoForResourceTypeCDotaItemDefinitionResource(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCDotaItemDefinitionResource(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

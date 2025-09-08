@@ -9,9 +9,6 @@ internal partial class CCSSprite : CSprite, ICSSprite {
   public CCSSprite(nint handle) : base(handle) {
   }
 
-  public CCSSprite(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

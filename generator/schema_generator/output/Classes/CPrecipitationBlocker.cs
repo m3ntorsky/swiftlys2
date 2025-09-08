@@ -9,9 +9,6 @@ internal partial class CPrecipitationBlocker : CBaseModelEntity, IPrecipitationB
   public CPrecipitationBlocker(nint handle) : base(handle) {
   }
 
-  public CPrecipitationBlocker(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

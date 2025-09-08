@@ -9,9 +9,6 @@ internal partial class AnimComponentID : SchemaClass, IAnimComponentID {
   public AnimComponentID(nint handle) : base(handle) {
   }
 
-  public AnimComponentID(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint Id {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xFE162672B4B6E980));
   }

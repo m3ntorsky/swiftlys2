@@ -9,9 +9,6 @@ internal partial class CSSDSMsg_PostLayer : CSSDSMsg_LayerBase, ISSDSMsg_PostLay
   public CSSDSMsg_PostLayer(nint handle) : base(handle) {
   }
 
-  public CSSDSMsg_PostLayer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

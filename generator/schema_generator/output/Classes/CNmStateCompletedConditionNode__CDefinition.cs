@@ -9,9 +9,6 @@ internal partial class CNmStateCompletedConditionNode__CDefinition : CNmBoolValu
   public CNmStateCompletedConditionNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmStateCompletedConditionNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short SourceStateNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x4C5A15CA63F0228C));
   }

@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointFromObjectScale : CParticleFunctionPr
   public C_OP_SetControlPointFromObjectScale(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointFromObjectScale(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CPInput {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xB0DB8599FB805736));
   }

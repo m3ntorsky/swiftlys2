@@ -9,9 +9,6 @@ internal partial class CAnimParameterBase : SchemaClass, IAnimParameterBase {
   public CAnimParameterBase(nint handle) : base(handle) {
   }
 
-  public CAnimParameterBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol Name {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x9E097C8F4D8F5786));
   }

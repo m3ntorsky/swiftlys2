@@ -9,9 +9,6 @@ internal partial class C_OP_InterpolateRadius : CParticleFunctionOperator, IC_OP
   public C_OP_InterpolateRadius(nint handle) : base(handle) {
   }
 
-  public C_OP_InterpolateRadius(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float StartTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1912EFA667FE9DC4));
   }

@@ -9,14 +9,11 @@ internal partial class CBasePropDoor : CDynamicProp, IBasePropDoor {
   public CBasePropDoor(nint handle) : base(handle) {
   }
 
-  public CBasePropDoor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float AutoReturnDelay {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x140EA8BE772B0615));
   }
-  public ref CUtlVector< CHandle< CBasePropDoor > > DoorList {
-    get => ref _Handle.AsRef<CUtlVector< CHandle< CBasePropDoor > >>(Schema.GetOffset(0x140EA8BE1E34E0D7));
+  public ref CUtlVector DoorList {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x140EA8BE1E34E0D7));
   }
   public ref int HardwareType {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x140EA8BEAA155C65));
@@ -24,23 +21,8 @@ internal partial class CBasePropDoor : CDynamicProp, IBasePropDoor {
   public ref bool NeedsHardware {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x140EA8BE4748BCCE));
   }
-  public ref DoorState_t DoorState {
-    get => ref _Handle.AsRef<DoorState_t>(Schema.GetOffset(0x140EA8BE55D06645));
-  }
-  public ref bool Locked {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x140EA8BED08E97F3));
-  }
-  public ref bool NoNPCs {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x140EA8BE237405C2));
-  }
-  public ref Vector ClosedPosition {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x140EA8BEC93C638A));
-  }
-  public ref QAngle ClosedAngles {
-    get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0x140EA8BE53D26DF1));
-  }
-  public ref CHandle< CBaseEntity > Blocker {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x140EA8BE21787A5F));
+  public CHandle<IBaseEntity> Blocker {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x140EA8BE21787A5F));
   }
   public ref bool FirstBlocked {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x140EA8BEF120E737));
@@ -54,8 +36,8 @@ internal partial class CBasePropDoor : CDynamicProp, IBasePropDoor {
   public ref Vector LatchWorldPosition {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x140EA8BEEBC4A818));
   }
-  public ref CHandle< CBaseEntity > Activator {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x140EA8BEAB093BB2));
+  public CHandle<IBaseEntity> Activator {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x140EA8BEAB093BB2));
   }
   public ref CUtlSymbolLarge SoundMoving {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE096B0232));
@@ -92,9 +74,6 @@ internal partial class CBasePropDoor : CDynamicProp, IBasePropDoor {
   }
   public ref CUtlSymbolLarge SlaveName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BEAA484A63));
-  }
-  public ref CHandle< CBasePropDoor > Master {
-    get => ref _Handle.AsRef<CHandle< CBasePropDoor >>(Schema.GetOffset(0x140EA8BEB8DA1B0D));
   }
   public IEntityIOOutput OnBlockedClosing {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x140EA8BEEC8BC45F));

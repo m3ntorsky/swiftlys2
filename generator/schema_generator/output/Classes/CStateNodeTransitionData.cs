@@ -9,9 +9,6 @@ internal partial class CStateNodeTransitionData : SchemaClass, IStateNodeTransit
   public CStateNodeTransitionData(nint handle) : base(handle) {
   }
 
-  public CStateNodeTransitionData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IBlendCurve Curve {
     get => new CBlendCurve(_Handle + Schema.GetOffset(0xFC9FD460BFFA0B34));
   }

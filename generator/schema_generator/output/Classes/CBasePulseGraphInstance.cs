@@ -9,9 +9,6 @@ internal partial class CBasePulseGraphInstance : SchemaClass, IBasePulseGraphIns
   public CBasePulseGraphInstance(nint handle) : base(handle) {
   }
 
-  public CBasePulseGraphInstance(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

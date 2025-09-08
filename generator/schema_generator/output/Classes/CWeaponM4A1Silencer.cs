@@ -9,9 +9,6 @@ internal partial class CWeaponM4A1Silencer : CCSWeaponBaseGun, IWeaponM4A1Silenc
   public CWeaponM4A1Silencer(nint handle) : base(handle) {
   }
 
-  public CWeaponM4A1Silencer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

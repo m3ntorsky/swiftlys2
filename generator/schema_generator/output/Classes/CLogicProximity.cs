@@ -9,9 +9,6 @@ internal partial class CLogicProximity : CPointEntity, ILogicProximity {
   public CLogicProximity(nint handle) : base(handle) {
   }
 
-  public CLogicProximity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

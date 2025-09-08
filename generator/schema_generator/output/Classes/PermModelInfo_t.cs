@@ -9,9 +9,6 @@ internal partial class PermModelInfo_t : SchemaClass, IPermModelInfo_t {
   public PermModelInfo_t(nint handle) : base(handle) {
   }
 
-  public PermModelInfo_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint Flags {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x1B48585FCE6E9C28));
   }

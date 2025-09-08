@@ -9,11 +9,8 @@ internal partial class CCycleControlClipUpdateNode : CLeafUpdateNode, ICycleCont
   public CCycleControlClipUpdateNode(nint handle) : base(handle) {
   }
 
-  public CCycleControlClipUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< TagSpan_t > Tags {
-    get => ref _Handle.AsRef<CUtlVector< TagSpan_t >>(Schema.GetOffset(0x57FEB5AAB46C8540));
+  public ref CUtlVector Tags {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x57FEB5AAB46C8540));
   }
   public IHSequence Sequence {
     get => new HSequence(_Handle + Schema.GetOffset(0x57FEB5AAE0A0598E));

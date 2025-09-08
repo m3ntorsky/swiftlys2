@@ -9,9 +9,6 @@ internal partial class CLogicDistanceCheck : CLogicalEntity, ILogicDistanceCheck
   public CLogicDistanceCheck(nint handle) : base(handle) {
   }
 
-  public CLogicDistanceCheck(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge EntityA {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x523E7E6D07823CB9));
   }

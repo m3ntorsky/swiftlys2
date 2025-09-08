@@ -18,7 +18,7 @@ def parse_field(field_def, all_class_names, all_enum_names):
   if kind == "ptr" and type == "char":
     kind = "ref"
 
-  return {
+  data = {
     "HASH": '0x{:02X}'.format(hash),
     "NAME": convert_field_name(field_def["name"]),
     "IS_NETWORKED": "true" if networked else "false",
@@ -27,3 +27,10 @@ def parse_field(field_def, all_class_names, all_enum_names):
     "IS_VALUE_TYPE": is_value_type,
     "KIND": kind
   }
+
+  if kind == "fixed_array":
+    data["ELEMENT_COUNT"] = field_def["element_count"]
+    data["ELEMENT_SIZE"] = field_def["element_size"]
+    data["ELEMENT_ALIGNMENT"] = field_def["element_alignment"]
+
+  return data

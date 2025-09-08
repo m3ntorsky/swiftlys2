@@ -9,11 +9,8 @@ internal partial class CSolveIKChainUpdateNode : CUnaryUpdateNode, ISolveIKChain
   public CSolveIKChainUpdateNode(nint handle) : base(handle) {
   }
 
-  public CSolveIKChainUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CSolveIKTargetHandle_t > TargetHandles {
-    get => ref _Handle.AsRef<CUtlVector< CSolveIKTargetHandle_t >>(Schema.GetOffset(0xE78F1D1F98E248F7));
+  public ref CUtlVector TargetHandles {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xE78F1D1F98E248F7));
   }
   public ISolveIKChainPoseOpFixedSettings_t OpFixedData {
     get => new SolveIKChainPoseOpFixedSettings_t(_Handle + Schema.GetOffset(0xE78F1D1F6960AF8C));

@@ -9,9 +9,6 @@ internal partial class CSoundOpvarSetOBBWindEntity : CSoundOpvarSetPointBase, IS
   public CSoundOpvarSetOBBWindEntity(nint handle) : base(handle) {
   }
 
-  public CSoundOpvarSetOBBWindEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Mins {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xEC8310EF421BB730));
   }

@@ -9,9 +9,6 @@ internal partial class CNmOrientationWarpNode__CDefinition : CNmPoseNode::CDefin
   public CNmOrientationWarpNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmOrientationWarpNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short ClipReferenceNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x1265525761EC8947));
   }

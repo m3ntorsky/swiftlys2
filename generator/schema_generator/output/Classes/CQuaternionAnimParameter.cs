@@ -9,9 +9,6 @@ internal partial class CQuaternionAnimParameter : CConcreteAnimParameter, IQuate
   public CQuaternionAnimParameter(nint handle) : base(handle) {
   }
 
-  public CQuaternionAnimParameter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Quaternion DefaultValue {
     get => ref _Handle.AsRef<Quaternion>(Schema.GetOffset(0xFAFCCCCABBE0341F));
   }

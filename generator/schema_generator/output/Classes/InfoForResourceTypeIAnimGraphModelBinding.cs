@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeIAnimGraphModelBinding : SchemaClass, 
   public InfoForResourceTypeIAnimGraphModelBinding(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeIAnimGraphModelBinding(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

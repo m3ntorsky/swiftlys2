@@ -9,20 +9,17 @@ internal partial class C_OP_RenderMaterialProxy : CParticleFunctionRenderer, IC_
   public C_OP_RenderMaterialProxy(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderMaterialProxy(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int MaterialControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA7258058EACD475D));
   }
   public ref MaterialProxyType_t ProxyType {
     get => ref _Handle.AsRef<MaterialProxyType_t>(Schema.GetOffset(0xA7258058066A337F));
   }
-  public ref CUtlVector< MaterialVariable_t > MaterialVars {
-    get => ref _Handle.AsRef<CUtlVector< MaterialVariable_t >>(Schema.GetOffset(0xA7258058FA861D66));
+  public ref CUtlVector MaterialVars {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA7258058FA861D66));
   }
-  public ref CStrongHandle< InfoForResourceTypeIMaterial2 > OverrideMaterial {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0xA72580582C055CBE));
+  public CStrongHandle<IInfoForResourceTypeIMaterial2> OverrideMaterial {
+    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0xA72580582C055CBE));
   }
   public IParticleCollectionFloatInput MaterialOverrideEnabled {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0xA725805832275723));

@@ -9,9 +9,6 @@ internal partial class CParticleFunction : SchemaClass, IParticleFunction {
   public CParticleFunction(nint handle) : base(handle) {
   }
 
-  public CParticleFunction(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput OpStrength {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0x4E0CACB41DD56291));
   }

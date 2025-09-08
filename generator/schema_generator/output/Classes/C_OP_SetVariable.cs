@@ -9,9 +9,6 @@ internal partial class C_OP_SetVariable : CParticleFunctionPreEmission, IC_OP_Se
   public C_OP_SetVariable(nint handle) : base(handle) {
   }
 
-  public C_OP_SetVariable(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleVariableRef VariableReference {
     get => new CParticleVariableRef(_Handle + Schema.GetOffset(0x9BAC801F3731E65A));
   }

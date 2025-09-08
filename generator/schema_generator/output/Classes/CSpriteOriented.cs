@@ -9,9 +9,6 @@ internal partial class CSpriteOriented : CSprite, ISpriteOriented {
   public CSpriteOriented(nint handle) : base(handle) {
   }
 
-  public CSpriteOriented(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

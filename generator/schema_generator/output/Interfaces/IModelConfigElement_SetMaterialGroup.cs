@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IModelConfigElement_SetMaterialGroup : IModelConfigElement {
 
-
+  public ref CUtlString MaterialGroupName { get; }
+  
 }

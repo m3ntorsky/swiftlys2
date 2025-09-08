@@ -9,9 +9,6 @@ internal partial class VMixUtilityDesc_t : SchemaClass, IVMixUtilityDesc_t {
   public VMixUtilityDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixUtilityDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref VMixChannelOperation_t Op {
     get => ref _Handle.AsRef<VMixChannelOperation_t>(Schema.GetOffset(0x9B3640C11384687E));
   }

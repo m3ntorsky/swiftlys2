@@ -9,9 +9,6 @@ internal partial class CSosGroupActionTimeLimitSchema : CSosGroupActionSchema, I
   public CSosGroupActionTimeLimitSchema(nint handle) : base(handle) {
   }
 
-  public CSosGroupActionTimeLimitSchema(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MaxDuration {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB90F1DFD39BAF9F3));
   }

@@ -9,24 +9,6 @@ internal partial class CPlantedC4 : CBaseAnimGraph, IPlantedC4 {
   public CPlantedC4(nint handle) : base(handle) {
   }
 
-  public CPlantedC4(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref bool BombTicking {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE1614C81CA7488E0));
-  }
-  public IGameTime_t C4Blow {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0xE1614C812C4CFDAC));
-  }
-  public ref int BombSite {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE1614C81E027AC16));
-  }
-  public ref int SourceSoundscapeHash {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE1614C8185EE0527));
-  }
-  public IAttributeContainer AttributeManager {
-    get => new CAttributeContainer(_Handle + Schema.GetOffset(0xE1614C81537B0586));
-  }
   public IEntityIOOutput OnBombDefused {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xE1614C81BCDAD16E));
   }
@@ -36,41 +18,14 @@ internal partial class CPlantedC4 : CBaseAnimGraph, IPlantedC4 {
   public IEntityIOOutput OnBombDefuseAborted {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xE1614C81DCF21D69));
   }
-  public ref bool CannotBeDefused {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE1614C81AF7C9CFF));
-  }
-  public IEntitySpottedState_t EntitySpottedState {
-    get => new EntitySpottedState_t(_Handle + Schema.GetOffset(0xE1614C81032B547C));
-  }
   public ref int SpotRules {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE1614C81776CCE44));
   }
   public ref bool TrainingPlacedByPlayer {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE1614C818D8A976E));
   }
-  public ref bool HasExploded {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE1614C814F35E7B0));
-  }
-  public ref float TimerLength {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE1614C815758DBE8));
-  }
-  public ref bool BeingDefused {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE1614C81E52E1146));
-  }
   public IGameTime_t LastDefuseTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xE1614C81F3BD810E));
-  }
-  public ref float DefuseLength {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE1614C8164CC4751));
-  }
-  public IGameTime_t DefuseCountDown {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0xE1614C81BCF3DB7C));
-  }
-  public ref bool BombDefused {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE1614C81CA9F868D));
-  }
-  public ref CHandle< CCSPlayerPawn > BombDefuser {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0xE1614C8174E01381));
   }
   public ref int ProgressBarTime {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE1614C81FFF19E89));
@@ -79,7 +34,7 @@ internal partial class CPlantedC4 : CBaseAnimGraph, IPlantedC4 {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE1614C8139790C5F));
   }
   public ISchemaFixedArray<bool> VoiceAlertPlayed {
-    get => new SchemaFixedArray<bool>(_Handle + Schema.GetOffset(0xE1614C812559EA7A));
+    get => new SchemaFixedArray<bool>(_Handle, 0xE1614C812559EA7A, 4, 1, 1);
   }
   public IGameTime_t NextBotBeepTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xE1614C81DCAF5642));

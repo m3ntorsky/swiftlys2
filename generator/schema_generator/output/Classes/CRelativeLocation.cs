@@ -9,9 +9,6 @@ internal partial class CRelativeLocation : SchemaClass, IRelativeLocation {
   public CRelativeLocation(nint handle) : base(handle) {
   }
 
-  public CRelativeLocation(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref RelativeLocationType_t Type {
     get => ref _Handle.AsRef<RelativeLocationType_t>(Schema.GetOffset(0xA25CE2418ED6D5CD));
   }
@@ -21,8 +18,8 @@ internal partial class CRelativeLocation : SchemaClass, IRelativeLocation {
   public ref Vector WorldSpacePos {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xA25CE2410A43E96B));
   }
-  public ref CHandle< CBaseEntity > Entity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xA25CE2416EBADCB0));
+  public CHandle<IBaseEntity> Entity {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xA25CE2416EBADCB0));
   }
 
 

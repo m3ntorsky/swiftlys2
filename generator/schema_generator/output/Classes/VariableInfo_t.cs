@@ -9,9 +9,6 @@ internal partial class VariableInfo_t : SchemaClass, IVariableInfo_t {
   public VariableInfo_t(nint handle) : base(handle) {
   }
 
-  public VariableInfo_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xED8F756E4D8F5786));
   }

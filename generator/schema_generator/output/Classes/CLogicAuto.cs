@@ -9,9 +9,6 @@ internal partial class CLogicAuto : CBaseEntity, ILogicAuto {
   public CLogicAuto(nint handle) : base(handle) {
   }
 
-  public CLogicAuto(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnMapSpawn {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x1FA33DC758EC03E5));
   }

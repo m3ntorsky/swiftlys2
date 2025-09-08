@@ -9,14 +9,11 @@ internal partial class CRopeOverlapHit : SchemaClass, IRopeOverlapHit {
   public CRopeOverlapHit(nint handle) : base(handle) {
   }
 
-  public CRopeOverlapHit(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public CHandle<IBaseEntity> Entity {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x9262EE3E6EBADCB0));
   }
-
-  public ref CHandle< CBaseEntity > Entity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x9262EE3E6EBADCB0));
-  }
-  public ref CUtlVector< int32 > OverlappingLinks {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0x9262EE3E44D0B359));
+  public ref CUtlVector<int> OverlappingLinks {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0x9262EE3E44D0B359));
   }
 
 

@@ -9,9 +9,6 @@ internal partial class CTonemapTrigger : CBaseTrigger, ITonemapTrigger {
   public CTonemapTrigger(nint handle) : base(handle) {
   }
 
-  public CTonemapTrigger(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge TonemapControllerName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x82562698C641A282));
   }

@@ -9,9 +9,6 @@ internal partial class CNavLinkAreaEntity : CPointEntity, INavLinkAreaEntity {
   public CNavLinkAreaEntity(nint handle) : base(handle) {
   }
 
-  public CNavLinkAreaEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Width {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1A0F1851B91935E1));
   }
@@ -36,8 +33,8 @@ internal partial class CNavLinkAreaEntity : CPointEntity, INavLinkAreaEntity {
   public ref CUtlSymbolLarge StrFilterName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1A0F1851E3C44CC9));
   }
-  public ref CHandle< CBaseFilter > Filter {
-    get => ref _Handle.AsRef<CHandle< CBaseFilter >>(Schema.GetOffset(0x1A0F185145D9E0B1));
+  public CHandle<IBaseFilter> Filter {
+    get => new CHandle<CBaseFilter>(_Handle + Schema.GetOffset(0x1A0F185145D9E0B1));
   }
   public IEntityIOOutput OnNavLinkStart {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x1A0F185115E018DB));

@@ -9,9 +9,6 @@ internal partial class CNmPoseTask : SchemaClass, INmPoseTask {
   public CNmPoseTask(nint handle) : base(handle) {
   }
 
-  public CNmPoseTask(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CNmOrientationWarpEvent : CNmEvent, INmOrientationWarpEve
   public CNmOrientationWarpEvent(nint handle) : base(handle) {
   }
 
-  public CNmOrientationWarpEvent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

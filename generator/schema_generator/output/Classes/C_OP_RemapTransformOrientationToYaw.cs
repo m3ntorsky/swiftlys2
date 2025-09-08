@@ -9,9 +9,6 @@ internal partial class C_OP_RemapTransformOrientationToYaw : CParticleFunctionOp
   public C_OP_RemapTransformOrientationToYaw(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapTransformOrientationToYaw(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleTransformInput TransformInput {
     get => new CParticleTransformInput(_Handle + Schema.GetOffset(0xA0DF014CB3FDC289));
   }

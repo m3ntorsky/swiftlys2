@@ -9,14 +9,11 @@ internal partial class C_INIT_PointList : CParticleFunctionInitializer, IC_INIT_
   public C_INIT_PointList(nint handle) : base(handle) {
   }
 
-  public C_INIT_PointList(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x5E193E54E5729606));
   }
-  public ref CUtlVector< PointDefinition_t > PointList {
-    get => ref _Handle.AsRef<CUtlVector< PointDefinition_t >>(Schema.GetOffset(0x5E193E54976AB4FD));
+  public ref CUtlVector PointList {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5E193E54976AB4FD));
   }
   public ref bool PlaceAlongPath {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5E193E5481CF2E1A));

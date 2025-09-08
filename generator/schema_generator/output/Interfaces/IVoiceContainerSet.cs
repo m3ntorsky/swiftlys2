@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVoiceContainerSet : IVoiceContainerBase {
 
-
+  public ref CUtlVector SoundsToPlay { get; }
+  
 }

@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointOrientation : CParticleFunctionPreEmi
   public C_OP_SetControlPointOrientation(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointOrientation(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool UseWorldLocation {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x2461079CF371AED7));
   }

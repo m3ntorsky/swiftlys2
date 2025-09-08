@@ -9,9 +9,6 @@ internal partial class CSosGroupActionMemberCountEnvelopeSchema : CSosGroupActio
   public CSosGroupActionMemberCountEnvelopeSchema(nint handle) : base(handle) {
   }
 
-  public CSosGroupActionMemberCountEnvelopeSchema(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int BaseCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5C85206CE09342E3));
   }

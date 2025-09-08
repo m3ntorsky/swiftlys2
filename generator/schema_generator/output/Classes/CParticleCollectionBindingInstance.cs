@@ -9,9 +9,6 @@ internal partial class CParticleCollectionBindingInstance : CBasePulseGraphInsta
   public CParticleCollectionBindingInstance(nint handle) : base(handle) {
   }
 
-  public CParticleCollectionBindingInstance(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

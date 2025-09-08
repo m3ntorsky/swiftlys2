@@ -9,9 +9,6 @@ internal partial class CAudioPhonemeTag : SchemaClass, IAudioPhonemeTag {
   public CAudioPhonemeTag(nint handle) : base(handle) {
   }
 
-  public CAudioPhonemeTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float StartTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBE68CF3E67FE9DC4));
   }

@@ -9,9 +9,6 @@ internal partial class PulseRuntimeConstantIndex_t : SchemaClass, IPulseRuntimeC
   public PulseRuntimeConstantIndex_t(nint handle) : base(handle) {
   }
 
-  public PulseRuntimeConstantIndex_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short Value {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xCEAFE609DCB0894A));
   }

@@ -9,9 +9,6 @@ internal partial class CPropDataComponent : CEntityComponent, IPropDataComponent
   public CPropDataComponent(nint handle) : base(handle) {
   }
 
-  public CPropDataComponent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float DmgModBullet {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1CFE413EBB77495F));
   }

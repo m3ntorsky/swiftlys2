@@ -9,9 +9,6 @@ internal partial class EventServerSimulate_t : EventSimulate_t, IEventServerSimu
   public EventServerSimulate_t(nint handle) : base(handle) {
   }
 
-  public EventServerSimulate_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

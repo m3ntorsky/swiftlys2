@@ -9,9 +9,6 @@ internal partial class CIncendiaryGrenade : CMolotovGrenade, IIncendiaryGrenade 
   public CIncendiaryGrenade(nint handle) : base(handle) {
   }
 
-  public CIncendiaryGrenade(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

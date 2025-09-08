@@ -9,9 +9,6 @@ internal partial class CLogicScript : CPointEntity, ILogicScript {
   public CLogicScript(nint handle) : base(handle) {
   }
 
-  public CLogicScript(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

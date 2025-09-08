@@ -9,9 +9,6 @@ internal partial class CPhysSurfacePropertiesSoundNames : SchemaClass, IPhysSurf
   public CPhysSurfacePropertiesSoundNames(nint handle) : base(handle) {
   }
 
-  public CPhysSurfacePropertiesSoundNames(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString ImpactSoft {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF2658A3949E7237B));
   }

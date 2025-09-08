@@ -9,9 +9,6 @@ internal partial class FilterHealth : CBaseFilter, IFilterHealth {
   public FilterHealth(nint handle) : base(handle) {
   }
 
-  public FilterHealth(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool AdrenalineActive {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4DD06C81671CFB30));
   }

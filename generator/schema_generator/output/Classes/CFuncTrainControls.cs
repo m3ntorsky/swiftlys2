@@ -9,9 +9,6 @@ internal partial class CFuncTrainControls : CBaseModelEntity, IFuncTrainControls
   public CFuncTrainControls(nint handle) : base(handle) {
   }
 
-  public CFuncTrainControls(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

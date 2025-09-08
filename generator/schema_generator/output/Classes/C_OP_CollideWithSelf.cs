@@ -9,9 +9,6 @@ internal partial class C_OP_CollideWithSelf : CParticleFunctionConstraint, IC_OP
   public C_OP_CollideWithSelf(nint handle) : base(handle) {
   }
 
-  public C_OP_CollideWithSelf(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput RadiusScale {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0xEF46C0CBA7A20159));
   }

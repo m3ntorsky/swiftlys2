@@ -9,9 +9,6 @@ internal partial class hudtextparms_t : SchemaClass, Ihudtextparms_t {
   public hudtextparms_t(nint handle) : base(handle) {
   }
 
-  public hudtextparms_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Color Color1 {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x827B8DBF36F4EB4B));
   }

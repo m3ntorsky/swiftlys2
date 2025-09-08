@@ -9,9 +9,6 @@ internal partial class CInputStreamUpdateNode : CLeafUpdateNode, IInputStreamUpd
   public CInputStreamUpdateNode(nint handle) : base(handle) {
   }
 
-  public CInputStreamUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CNmReferencedGraphNode__CDefinition : CNmPoseNode::CDefin
   public CNmReferencedGraphNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmReferencedGraphNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short ReferencedGraphIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x44045ED427B00199));
   }

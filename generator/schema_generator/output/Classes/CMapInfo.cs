@@ -9,9 +9,6 @@ internal partial class CMapInfo : CPointEntity, IMapInfo {
   public CMapInfo(nint handle) : base(handle) {
   }
 
-  public CMapInfo(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int BuyingStatus {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x64779D004D95482E));
   }

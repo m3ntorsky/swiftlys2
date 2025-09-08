@@ -9,9 +9,6 @@ internal partial class CPulseCell_Val_TestDomainGetEntityName : CPulseCell_BaseV
   public CPulseCell_Val_TestDomainGetEntityName(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Val_TestDomainGetEntityName(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

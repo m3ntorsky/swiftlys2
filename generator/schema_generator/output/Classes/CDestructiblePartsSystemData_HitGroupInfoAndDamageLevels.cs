@@ -9,9 +9,6 @@ internal partial class CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels 
   public CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels(nint handle) : base(handle) {
   }
 
-  public CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol DebugName {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x5EA392F7CAC1909B));
   }
@@ -21,8 +18,8 @@ internal partial class CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels 
   public ref bool DisableHitGroupWhenDestroyed {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5EA392F7AA847E82));
   }
-  public ref CUtlVector< HitGroup_t > OtherHitgroupsToDestroyWhenFullyDestructed {
-    get => ref _Handle.AsRef<CUtlVector< HitGroup_t >>(Schema.GetOffset(0x5EA392F72ECFEA5A));
+  public ref CUtlVector<HitGroup_t> OtherHitgroupsToDestroyWhenFullyDestructed {
+    get => ref _Handle.AsRef<CUtlVector<HitGroup_t>>(Schema.GetOffset(0x5EA392F72ECFEA5A));
   }
   public ref bool OnlyDestroyWhenGibbing {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5EA392F70F77EEC1));
@@ -30,8 +27,8 @@ internal partial class CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels 
   public ref CGlobalSymbol BodyGroupName {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x5EA392F7FFA38852));
   }
-  public ref CUtlVector< CDestructiblePartsSystemData_DamageLevel > DamageLevels {
-    get => ref _Handle.AsRef<CUtlVector< CDestructiblePartsSystemData_DamageLevel >>(Schema.GetOffset(0x5EA392F73B88DC4F));
+  public ref CUtlVector DamageLevels {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5EA392F73B88DC4F));
   }
 
 

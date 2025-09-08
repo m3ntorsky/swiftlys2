@@ -9,9 +9,6 @@ internal partial class CNmIDEventNode__CDefinition : CNmIDValueNode::CDefinition
   public CNmIDEventNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmIDEventNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short SourceStateNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x6308800E63F0228C));
   }

@@ -9,9 +9,6 @@ internal partial class AmmoTypeInfo_t : SchemaClass, IAmmoTypeInfo_t {
   public AmmoTypeInfo_t(nint handle) : base(handle) {
   }
 
-  public AmmoTypeInfo_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int MaxCarry {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFC774B09B708280));
   }

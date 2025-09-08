@@ -9,9 +9,6 @@ internal partial class CNmBoneMaskBlendNode__CDefinition : CNmBoneMaskValueNode:
   public CNmBoneMaskBlendNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmBoneMaskBlendNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short SourceMaskNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x551EA0BCFF243A47));
   }

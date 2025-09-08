@@ -9,9 +9,6 @@ internal partial class CMessage : CPointEntity, IMessage {
   public CMessage(nint handle) : base(handle) {
   }
 
-  public CMessage(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge Message {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xCCCF499CC5243DC));
   }

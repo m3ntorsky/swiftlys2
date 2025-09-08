@@ -9,9 +9,6 @@ internal partial class CPulseCell_Outflow_TestRandomYesNo : CPulseCell_BaseFlow,
   public CPulseCell_Outflow_TestRandomYesNo(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Outflow_TestRandomYesNo(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulse_OutflowConnection Yes {
     get => new CPulse_OutflowConnection(_Handle + Schema.GetOffset(0x9EA5F31EDA358F10));
   }

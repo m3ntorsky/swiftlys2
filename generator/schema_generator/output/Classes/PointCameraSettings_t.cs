@@ -9,9 +9,6 @@ internal partial class PointCameraSettings_t : SchemaClass, IPointCameraSettings
   public PointCameraSettings_t(nint handle) : base(handle) {
   }
 
-  public PointCameraSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float NearBlurryDistance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4BE8175CEB0CA47E));
   }

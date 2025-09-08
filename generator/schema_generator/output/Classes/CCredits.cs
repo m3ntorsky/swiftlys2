@@ -9,9 +9,6 @@ internal partial class CCredits : CPointEntity, ICredits {
   public CCredits(nint handle) : base(handle) {
   }
 
-  public CCredits(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnCreditsDone {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xF1224C0488A2DA7A));
   }

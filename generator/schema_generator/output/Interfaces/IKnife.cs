@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IKnife : ICSWeaponBase {
 
-
+  public ref bool FirstAttack { get; }
+  
 }

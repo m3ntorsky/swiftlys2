@@ -9,9 +9,6 @@ internal partial class C_INIT_SequenceLifeTime : CParticleFunctionInitializer, I
   public C_INIT_SequenceLifeTime(nint handle) : base(handle) {
   }
 
-  public C_INIT_SequenceLifeTime(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Framerate {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC4BD3FF8F4EAA666));
   }

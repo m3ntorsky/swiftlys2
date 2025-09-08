@@ -9,11 +9,8 @@ internal partial class CFiringModeFloat : SchemaClass, IFiringModeFloat {
   public CFiringModeFloat(nint handle) : base(handle) {
   }
 
-  public CFiringModeFloat(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<float32> Values {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0xB6918247BD8BFD5));
+  public ISchemaFixedArray<float> Values {
+    get => new SchemaFixedArray<float>(_Handle, 0xB6918247BD8BFD5, 2, 4, 4);
   }
 
 

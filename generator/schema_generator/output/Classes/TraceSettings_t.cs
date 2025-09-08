@@ -9,9 +9,6 @@ internal partial class TraceSettings_t : SchemaClass, ITraceSettings_t {
   public TraceSettings_t(nint handle) : base(handle) {
   }
 
-  public TraceSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float TraceHeight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6983A048EFB858CF));
   }

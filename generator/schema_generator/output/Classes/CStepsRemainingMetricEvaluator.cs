@@ -9,11 +9,8 @@ internal partial class CStepsRemainingMetricEvaluator : CMotionMetricEvaluator, 
   public CStepsRemainingMetricEvaluator(nint handle) : base(handle) {
   }
 
-  public CStepsRemainingMetricEvaluator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< int32 > FootIndices {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0xDDD8E3884C840316));
+  public ref CUtlVector<int> FootIndices {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xDDD8E3884C840316));
   }
   public ref float MinStepsRemaining {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDDD8E388382CE1FC));

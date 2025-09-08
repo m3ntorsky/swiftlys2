@@ -9,9 +9,6 @@ internal partial class C_INIT_MoveBetweenPoints : CParticleFunctionInitializer, 
   public C_INIT_MoveBetweenPoints(nint handle) : base(handle) {
   }
 
-  public C_INIT_MoveBetweenPoints(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput SpeedMin {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0xE2F19642B52776BE));
   }

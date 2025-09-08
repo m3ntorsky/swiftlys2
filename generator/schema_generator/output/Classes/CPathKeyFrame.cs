@@ -9,9 +9,6 @@ internal partial class CPathKeyFrame : CLogicalEntity, IPathKeyFrame {
   public CPathKeyFrame(nint handle) : base(handle) {
   }
 
-  public CPathKeyFrame(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Origin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x34025185482052CF));
   }

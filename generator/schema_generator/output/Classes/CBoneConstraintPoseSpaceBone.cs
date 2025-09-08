@@ -9,11 +9,8 @@ internal partial class CBoneConstraintPoseSpaceBone : CBaseConstraint, IBoneCons
   public CBoneConstraintPoseSpaceBone(nint handle) : base(handle) {
   }
 
-  public CBoneConstraintPoseSpaceBone(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CBoneConstraintPoseSpaceBone::Input_t > InputList {
-    get => ref _Handle.AsRef<CUtlVector< CBoneConstraintPoseSpaceBone::Input_t >>(Schema.GetOffset(0x496EBC215EB8D83));
+  public ref CUtlVector InputList {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x496EBC215EB8D83));
   }
 
 

@@ -9,18 +9,6 @@ internal partial class CSkeletonInstance : CGameSceneNode, ISkeletonInstance {
   public CSkeletonInstance(nint handle) : base(handle) {
   }
 
-  public CSkeletonInstance(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public IModelState ModelState {
-    get => new CModelState(_Handle + Schema.GetOffset(0xD6C6252E52AC8C4F));
-  }
-  public ref bool IsAnimationEnabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6C6252E44F0C816));
-  }
-  public ref bool UseParentRenderBounds {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6C6252E15B8267D));
-  }
   public ref bool DisableSolidCollisionsForHierarchy {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6C6252E50FCF465));
   }
@@ -29,12 +17,6 @@ internal partial class CSkeletonInstance : CGameSceneNode, ISkeletonInstance {
   }
   public ISchemaUntypedField IsGeneratingLatchedParentSpaceState {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD6C6252ED0EFEAB7));
-  }
-  public ref CUtlStringToken MaterialGroup {
-    get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0xD6C6252E2B778F03));
-  }
-  public ref byte HitboxSet {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xD6C6252E80C42271));
   }
 
   public void ModelStateUpdated() {

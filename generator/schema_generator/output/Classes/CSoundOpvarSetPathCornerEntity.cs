@@ -9,9 +9,6 @@ internal partial class CSoundOpvarSetPathCornerEntity : CSoundOpvarSetPointEntit
   public CSoundOpvarSetPathCornerEntity(nint handle) : base(handle) {
   }
 
-  public CSoundOpvarSetPathCornerEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float DistMinSqr {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x368409543D1989CD));
   }

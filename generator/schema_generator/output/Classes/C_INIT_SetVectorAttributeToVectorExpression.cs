@@ -9,9 +9,6 @@ internal partial class C_INIT_SetVectorAttributeToVectorExpression : CParticleFu
   public C_INIT_SetVectorAttributeToVectorExpression(nint handle) : base(handle) {
   }
 
-  public C_INIT_SetVectorAttributeToVectorExpression(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref VectorExpressionType_t Expression {
     get => ref _Handle.AsRef<VectorExpressionType_t>(Schema.GetOffset(0x71A0FB13160B2427));
   }

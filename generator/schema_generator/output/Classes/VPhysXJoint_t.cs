@@ -9,9 +9,6 @@ internal partial class VPhysXJoint_t : SchemaClass, IVPhysXJoint_t {
   public VPhysXJoint_t(nint handle) : base(handle) {
   }
 
-  public VPhysXJoint_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort Type {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x336EF6EE18853D59));
   }

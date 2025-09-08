@@ -9,9 +9,6 @@ internal partial class VelocitySampler : SchemaClass, IVelocitySampler {
   public VelocitySampler(nint handle) : base(handle) {
   }
 
-  public VelocitySampler(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector PrevSample {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x5547216E1BCE7EF2));
   }

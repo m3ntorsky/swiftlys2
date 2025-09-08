@@ -9,9 +9,6 @@ internal partial class CNmStateNode__TimedEvent_t : SchemaClass, INmStateNode__T
   public CNmStateNode__TimedEvent_t(nint handle) : base(handle) {
   }
 
-  public CNmStateNode__TimedEvent_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol ID {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x256373A95066900));
   }

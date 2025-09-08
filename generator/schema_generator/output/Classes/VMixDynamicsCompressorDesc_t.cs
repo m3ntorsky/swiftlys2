@@ -9,9 +9,6 @@ internal partial class VMixDynamicsCompressorDesc_t : SchemaClass, IVMixDynamics
   public VMixDynamicsCompressorDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixDynamicsCompressorDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float FldbOutputGain {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4AC2D50067F97C23));
   }

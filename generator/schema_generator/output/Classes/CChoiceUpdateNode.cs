@@ -9,17 +9,14 @@ internal partial class CChoiceUpdateNode : CAnimUpdateNodeBase, IChoiceUpdateNod
   public CChoiceUpdateNode(nint handle) : base(handle) {
   }
 
-  public CChoiceUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVector Children {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1CF0A6AC7415FA72));
   }
-
-  public ref CUtlVector< CAnimUpdateNodeRef > Children {
-    get => ref _Handle.AsRef<CUtlVector< CAnimUpdateNodeRef >>(Schema.GetOffset(0x1CF0A6AC7415FA72));
+  public ref CUtlVector<float> Weights {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x1CF0A6AC77B2F91E));
   }
-  public ref CUtlVector< float32 > Weights {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x1CF0A6AC77B2F91E));
-  }
-  public ref CUtlVector< float32 > BlendTimes {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x1CF0A6AC12AD0366));
+  public ref CUtlVector<float> BlendTimes {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x1CF0A6AC12AD0366));
   }
   public ref ChoiceMethod ChoiceMethod {
     get => ref _Handle.AsRef<ChoiceMethod>(Schema.GetOffset(0x1CF0A6AC4E106F5B));

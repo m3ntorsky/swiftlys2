@@ -9,9 +9,6 @@ internal partial class CFuncTankTrain : CFuncTrackTrain, IFuncTankTrain {
   public CFuncTankTrain(nint handle) : base(handle) {
   }
 
-  public CFuncTankTrain(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnDeath {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xF7897E7E6F756BD2));
   }

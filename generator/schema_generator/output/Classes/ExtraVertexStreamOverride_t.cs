@@ -9,9 +9,6 @@ internal partial class ExtraVertexStreamOverride_t : BaseSceneObjectOverride_t, 
   public ExtraVertexStreamOverride_t(nint handle) : base(handle) {
   }
 
-  public ExtraVertexStreamOverride_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint SubSceneObject {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x38857FE855C3CCBC));
   }

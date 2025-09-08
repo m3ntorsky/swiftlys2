@@ -9,9 +9,6 @@ internal partial class EventModInitialized_t : SchemaClass, IEventModInitialized
   public EventModInitialized_t(nint handle) : base(handle) {
   }
 
-  public EventModInitialized_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

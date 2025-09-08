@@ -9,9 +9,6 @@ internal partial class C_OP_RemapNamedModelBodyPartEndCap : C_OP_RemapNamedModel
   public C_OP_RemapNamedModelBodyPartEndCap(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapNamedModelBodyPartEndCap(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

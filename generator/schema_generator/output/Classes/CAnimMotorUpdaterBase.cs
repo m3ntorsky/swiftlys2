@@ -9,9 +9,6 @@ internal partial class CAnimMotorUpdaterBase : SchemaClass, IAnimMotorUpdaterBas
   public CAnimMotorUpdaterBase(nint handle) : base(handle) {
   }
 
-  public CAnimMotorUpdaterBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3FB6E1144D8F5786));
   }

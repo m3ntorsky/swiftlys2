@@ -9,9 +9,6 @@ internal partial class CNmEventConsumerSound : CNmEventConsumer, INmEventConsume
   public CNmEventConsumerSound(nint handle) : base(handle) {
   }
 
-  public CNmEventConsumerSound(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

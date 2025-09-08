@@ -9,9 +9,6 @@ internal partial class CNmFloatEaseNode__CDefinition : CNmFloatValueNode::CDefin
   public CNmFloatEaseNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFloatEaseNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float EaseTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9D7103D0A54FCC));
   }

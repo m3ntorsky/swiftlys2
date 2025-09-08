@@ -9,9 +9,6 @@ internal partial class CNavVolume : SchemaClass, INavVolume {
   public CNavVolume(nint handle) : base(handle) {
   }
 
-  public CNavVolume(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

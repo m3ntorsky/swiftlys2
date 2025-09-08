@@ -9,9 +9,6 @@ internal partial class CPairedSequenceComponentUpdater : CAnimComponentUpdater, 
   public CPairedSequenceComponentUpdater(nint handle) : base(handle) {
   }
 
-  public CPairedSequenceComponentUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

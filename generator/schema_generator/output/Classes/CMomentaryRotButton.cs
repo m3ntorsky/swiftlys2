@@ -9,9 +9,6 @@ internal partial class CMomentaryRotButton : CRotButton, IMomentaryRotButton {
   public CMomentaryRotButton(nint handle) : base(handle) {
   }
 
-  public CMomentaryRotButton(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField Position {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x85A553CDFC27FA8A));
   }

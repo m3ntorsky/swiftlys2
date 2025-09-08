@@ -9,9 +9,6 @@ internal partial class C_INIT_SetRigidAttachment : CParticleFunctionInitializer,
   public C_INIT_SetRigidAttachment(nint handle) : base(handle) {
   }
 
-  public C_INIT_SetRigidAttachment(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xF6F728143F31A6BD));
   }

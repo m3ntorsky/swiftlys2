@@ -9,9 +9,6 @@ internal partial class CGameScriptedMoveData : SchemaClass, IGameScriptedMoveDat
   public CGameScriptedMoveData(nint handle) : base(handle) {
   }
 
-  public CGameScriptedMoveData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector AccumulatedRootMotion {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6F78B5E783C65B7B));
   }
@@ -63,8 +60,8 @@ internal partial class CGameScriptedMoveData : SchemaClass, IGameScriptedMoveDat
   public ref QAngle Dst {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0x6F78B5E7535FD052));
   }
-  public ref CHandle< CBaseEntity > DestEntity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x6F78B5E7A1CF74EC));
+  public CHandle<IBaseEntity> DestEntity {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x6F78B5E7A1CF74EC));
   }
 
 

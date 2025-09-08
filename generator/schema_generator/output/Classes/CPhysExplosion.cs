@@ -9,9 +9,6 @@ internal partial class CPhysExplosion : CPointEntity, IPhysExplosion {
   public CPhysExplosion(nint handle) : base(handle) {
   }
 
-  public CPhysExplosion(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool ExplodeOnSpawn {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xACEBD741D4BEFD5A));
   }

@@ -9,9 +9,6 @@ internal partial class C_OP_SelectivelyEnableChildren : CParticleFunctionPreEmis
   public C_OP_SelectivelyEnableChildren(nint handle) : base(handle) {
   }
 
-  public C_OP_SelectivelyEnableChildren(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput ChildGroupID {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0x73804886E3F3C965));
   }

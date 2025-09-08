@@ -9,20 +9,11 @@ internal partial class CDynamicProp : CBreakableProp, IDynamicProp {
   public CDynamicProp(nint handle) : base(handle) {
   }
 
-  public CDynamicProp(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool CreateNavObstacle {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6A5171A21849970B));
   }
   public ref bool NavObstacleUpdatesOverridden {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6A5171A2B1954B9B));
-  }
-  public ref bool UseHitboxesForRenderBox {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6A5171A2F0B849FA));
-  }
-  public ref bool UseAnimGraph {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6A5171A208993DDB));
   }
   public IEntityIOOutput OutputAnimBegun {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x6A5171A28FAC5E08));

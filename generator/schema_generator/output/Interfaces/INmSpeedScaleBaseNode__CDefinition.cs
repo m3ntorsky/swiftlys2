@@ -4,5 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmSpeedScaleBaseNode__CDefinition : INmPassthroughNode::CDefinition {
 
-
+  public ref short InputValueNodeIdx { get; }
+  
+  public ref float DefaultInputValue { get; }
+  
 }

@@ -9,9 +9,6 @@ internal partial class C_OP_MovementRigidAttachToCP : CParticleFunctionOperator,
   public C_OP_MovementRigidAttachToCP(nint handle) : base(handle) {
   }
 
-  public C_OP_MovementRigidAttachToCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x3D3A79B83F31A6BD));
   }

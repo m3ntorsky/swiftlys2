@@ -9,9 +9,6 @@ internal partial class CMovementHandshakeAnimTag : CHandshakeAnimTagBase, IMovem
   public CMovementHandshakeAnimTag(nint handle) : base(handle) {
   }
 
-  public CMovementHandshakeAnimTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

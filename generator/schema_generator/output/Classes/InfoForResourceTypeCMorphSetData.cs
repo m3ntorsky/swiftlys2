@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCMorphSetData : SchemaClass, IInfoForR
   public InfoForResourceTypeCMorphSetData(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCMorphSetData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

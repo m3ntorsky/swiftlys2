@@ -9,11 +9,8 @@ internal partial class RnCapsule_t : SchemaClass, IRnCapsule_t {
   public RnCapsule_t(nint handle) : base(handle) {
   }
 
-  public RnCapsule_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaFixedArray<Vector> Center {
-    get => new SchemaFixedArray<Vector>(_Handle + Schema.GetOffset(0xA2412C03C82A5908));
+    get => new SchemaFixedArray<Vector>(_Handle, 0xA2412C03C82A5908, 2, 12, 4);
   }
   public ref float Radius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA2412C035ACFC08D));

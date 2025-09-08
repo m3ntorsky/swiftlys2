@@ -9,9 +9,6 @@ internal partial class C_OP_TeleportBeam : CParticleFunctionOperator, IC_OP_Tele
   public C_OP_TeleportBeam(nint handle) : base(handle) {
   }
 
-  public C_OP_TeleportBeam(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CPPosition {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD80BE8C1AECEEF2D));
   }

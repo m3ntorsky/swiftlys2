@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomColor : CParticleFunctionInitializer, IC_INI
   public C_INIT_RandomColor(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomColor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Color ColorMin {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x90523A48552A5834));
   }

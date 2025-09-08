@@ -9,9 +9,6 @@ internal partial class FeFitMatrix_t : SchemaClass, IFeFitMatrix_t {
   public FeFitMatrix_t(nint handle) : base(handle) {
   }
 
-  public FeFitMatrix_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CTransform Bone {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xB8804215DB90E18F));
   }

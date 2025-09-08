@@ -9,9 +9,6 @@ internal partial class CInfoParticleTarget : CPointEntity, IInfoParticleTarget {
   public CInfoParticleTarget(nint handle) : base(handle) {
   }
 
-  public CInfoParticleTarget(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class C_OP_EndCapDecay : CParticleFunctionOperator, IC_OP_EndCa
   public C_OP_EndCapDecay(nint handle) : base(handle) {
   }
 
-  public C_OP_EndCapDecay(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

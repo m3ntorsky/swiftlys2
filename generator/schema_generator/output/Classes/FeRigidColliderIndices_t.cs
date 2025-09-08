@@ -9,9 +9,6 @@ internal partial class FeRigidColliderIndices_t : SchemaClass, IFeRigidColliderI
   public FeRigidColliderIndices_t(nint handle) : base(handle) {
   }
 
-  public FeRigidColliderIndices_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort TaperedCapsuleRigidIndex {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x3411B17B4168EBCE));
   }

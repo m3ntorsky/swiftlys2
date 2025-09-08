@@ -9,9 +9,6 @@ internal partial class CNmScaleNode__CDefinition : CNmPassthroughNode::CDefiniti
   public CNmScaleNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmScaleNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short MaskNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x5902F6B1216FA578));
   }

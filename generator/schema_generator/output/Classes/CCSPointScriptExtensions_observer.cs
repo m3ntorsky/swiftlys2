@@ -9,9 +9,6 @@ internal partial class CCSPointScriptExtensions_observer : SchemaClass, ICSPoint
   public CCSPointScriptExtensions_observer(nint handle) : base(handle) {
   }
 
-  public CCSPointScriptExtensions_observer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

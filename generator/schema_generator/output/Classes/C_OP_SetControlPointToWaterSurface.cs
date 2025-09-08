@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointToWaterSurface : CParticleFunctionPre
   public C_OP_SetControlPointToWaterSurface(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointToWaterSurface(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int SourceCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5BA6BFAD4C01E3B7));
   }

@@ -9,9 +9,6 @@ internal partial class C_OP_DistanceBetweenVecs : CParticleFunctionOperator, IC_
   public C_OP_DistanceBetweenVecs(nint handle) : base(handle) {
   }
 
-  public C_OP_DistanceBetweenVecs(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0xA94A9A29E5729606));
   }

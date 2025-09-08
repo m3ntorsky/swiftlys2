@@ -9,9 +9,6 @@ internal partial class CGameRulesProxy : CBaseEntity, IGameRulesProxy {
   public CGameRulesProxy(nint handle) : base(handle) {
   }
 
-  public CGameRulesProxy(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

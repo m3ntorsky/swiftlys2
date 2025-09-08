@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_PlaySequence__CursorState_t : ISchemaClass {
 
-
+  public CHandle<IBaseAnimGraph> Target { get; }
+  
 }

@@ -9,9 +9,6 @@ internal partial class CVariantDefaultAllocator : SchemaClass, IVariantDefaultAl
   public CVariantDefaultAllocator(nint handle) : base(handle) {
   }
 
-  public CVariantDefaultAllocator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class C_OP_SetUserEvent : CParticleFunctionOperator, IC_OP_SetU
   public C_OP_SetUserEvent(nint handle) : base(handle) {
   }
 
-  public C_OP_SetUserEvent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput Input {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0x9A6F6FB81D4B7FFD));
   }

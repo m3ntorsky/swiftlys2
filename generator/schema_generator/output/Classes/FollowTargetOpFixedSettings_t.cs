@@ -9,9 +9,6 @@ internal partial class FollowTargetOpFixedSettings_t : SchemaClass, IFollowTarge
   public FollowTargetOpFixedSettings_t(nint handle) : base(handle) {
   }
 
-  public FollowTargetOpFixedSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int BoneIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xF6423DF66AFA4155));
   }

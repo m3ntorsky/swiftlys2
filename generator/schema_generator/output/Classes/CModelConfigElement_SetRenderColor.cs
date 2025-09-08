@@ -9,9 +9,6 @@ internal partial class CModelConfigElement_SetRenderColor : CModelConfigElement,
   public CModelConfigElement_SetRenderColor(nint handle) : base(handle) {
   }
 
-  public CModelConfigElement_SetRenderColor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Color Color {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x4B560F27D7D017D8));
   }

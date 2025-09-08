@@ -9,9 +9,6 @@ internal partial class CResponseCriteriaSet : SchemaClass, IResponseCriteriaSet 
   public CResponseCriteriaSet(nint handle) : base(handle) {
   }
 
-  public CResponseCriteriaSet(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int NumPrefixedContexts {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x96E39114B653ABCA));
   }

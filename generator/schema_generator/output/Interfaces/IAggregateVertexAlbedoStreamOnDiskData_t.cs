@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAggregateVertexAlbedoStreamOnDiskData_t : ISchemaClass {
 
-
+  public ref CUtlBinaryBlock BufferData { get; }
+  
 }

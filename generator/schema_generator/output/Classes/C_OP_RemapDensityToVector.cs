@@ -9,9 +9,6 @@ internal partial class C_OP_RemapDensityToVector : CParticleFunctionOperator, IC
   public C_OP_RemapDensityToVector(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapDensityToVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RadiusScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x81794CB4A7A20159));
   }

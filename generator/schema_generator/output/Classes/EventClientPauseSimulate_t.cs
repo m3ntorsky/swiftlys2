@@ -9,9 +9,6 @@ internal partial class EventClientPauseSimulate_t : EventSimulate_t, IEventClien
   public EventClientPauseSimulate_t(nint handle) : base(handle) {
   }
 
-  public EventClientPauseSimulate_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

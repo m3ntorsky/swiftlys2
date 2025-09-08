@@ -4,5 +4,10 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMotionNodeSequence : IMotionNode {
 
-
+  public ref CUtlVector Tags { get; }
+  
+  public IHSequence Sequence { get; }
+  
+  public ref float PlaybackSpeed { get; }
+  
 }

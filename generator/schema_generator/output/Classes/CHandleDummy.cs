@@ -9,9 +9,6 @@ internal partial class CHandleDummy : CBaseEntity, IHandleDummy {
   public CHandleDummy(nint handle) : base(handle) {
   }
 
-  public CHandleDummy(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

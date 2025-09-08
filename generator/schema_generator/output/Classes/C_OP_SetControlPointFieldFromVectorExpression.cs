@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointFieldFromVectorExpression : CParticle
   public C_OP_SetControlPointFieldFromVectorExpression(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointFieldFromVectorExpression(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref VectorFloatExpressionType_t Expression {
     get => ref _Handle.AsRef<VectorFloatExpressionType_t>(Schema.GetOffset(0x1A9FFD07160B2427));
   }

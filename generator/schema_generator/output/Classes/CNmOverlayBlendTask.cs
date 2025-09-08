@@ -9,9 +9,6 @@ internal partial class CNmOverlayBlendTask : CNmBlendTaskBase, INmOverlayBlendTa
   public CNmOverlayBlendTask(nint handle) : base(handle) {
   }
 
-  public CNmOverlayBlendTask(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

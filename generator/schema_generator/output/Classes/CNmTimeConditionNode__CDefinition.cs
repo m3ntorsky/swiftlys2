@@ -9,9 +9,6 @@ internal partial class CNmTimeConditionNode__CDefinition : CNmBoolValueNode::CDe
   public CNmTimeConditionNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmTimeConditionNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short SourceStateNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x421E2145D1DB8128));
   }

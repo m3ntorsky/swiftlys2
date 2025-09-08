@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCNmGraphDefinition : SchemaClass, IInf
   public InfoForResourceTypeCNmGraphDefinition(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCNmGraphDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

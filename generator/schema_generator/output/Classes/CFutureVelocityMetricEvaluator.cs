@@ -9,9 +9,6 @@ internal partial class CFutureVelocityMetricEvaluator : CMotionMetricEvaluator, 
   public CFutureVelocityMetricEvaluator(nint handle) : base(handle) {
   }
 
-  public CFutureVelocityMetricEvaluator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Distance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF0A3A8300DC4A68));
   }

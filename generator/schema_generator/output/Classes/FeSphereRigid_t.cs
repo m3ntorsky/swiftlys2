@@ -9,9 +9,6 @@ internal partial class FeSphereRigid_t : SchemaClass, IFeSphereRigid_t {
   public FeSphereRigid_t(nint handle) : base(handle) {
   }
 
-  public FeSphereRigid_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref fltx4 Sphere {
     get => ref _Handle.AsRef<fltx4>(Schema.GetOffset(0xA76DA0A39E2AC48C));
   }

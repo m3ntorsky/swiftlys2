@@ -9,9 +9,6 @@ internal partial class EventClientAdvanceTick_t : EventAdvanceTick_t, IEventClie
   public EventClientAdvanceTick_t(nint handle) : base(handle) {
   }
 
-  public EventClientAdvanceTick_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

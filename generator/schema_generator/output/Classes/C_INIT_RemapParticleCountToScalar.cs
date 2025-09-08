@@ -9,9 +9,6 @@ internal partial class C_INIT_RemapParticleCountToScalar : CParticleFunctionInit
   public C_INIT_RemapParticleCountToScalar(nint handle) : base(handle) {
   }
 
-  public C_INIT_RemapParticleCountToScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0xC0411DA9E5729606));
   }

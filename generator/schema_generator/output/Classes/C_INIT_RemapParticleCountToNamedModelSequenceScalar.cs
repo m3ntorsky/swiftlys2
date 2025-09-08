@@ -9,9 +9,6 @@ internal partial class C_INIT_RemapParticleCountToNamedModelSequenceScalar : C_I
   public C_INIT_RemapParticleCountToNamedModelSequenceScalar(nint handle) : base(handle) {
   }
 
-  public C_INIT_RemapParticleCountToNamedModelSequenceScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

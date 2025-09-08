@@ -9,9 +9,6 @@ internal partial class C_OP_PinParticleToCP : CParticleFunctionOperator, IC_OP_P
   public C_OP_PinParticleToCP(nint handle) : base(handle) {
   }
 
-  public C_OP_PinParticleToCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE4FC73983F31A6BD));
   }

@@ -9,9 +9,6 @@ internal partial class CPulseCell_Inflow_GraphHook : CPulseCell_Inflow_BaseEntry
   public CPulseCell_Inflow_GraphHook(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Inflow_GraphHook(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField HookName {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xEA4B2E6FA19F4D11));
   }

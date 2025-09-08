@@ -9,9 +9,6 @@ internal partial class CStateNodeStateData : SchemaClass, IStateNodeStateData {
   public CStateNodeStateData(nint handle) : base(handle) {
   }
 
-  public CStateNodeStateData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimUpdateNodeRef Child {
     get => new CAnimUpdateNodeRef(_Handle + Schema.GetOffset(0x6AB991A04A0B773F));
   }

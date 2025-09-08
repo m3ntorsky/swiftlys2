@@ -9,14 +9,11 @@ internal partial class CPulseCell_Outflow_PlaySceneBase__CursorState_t : SchemaC
   public CPulseCell_Outflow_PlaySceneBase__CursorState_t(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Outflow_PlaySceneBase__CursorState_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public CHandle<IBaseEntity> SceneInstance {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x16AE3F0C967C210));
   }
-
-  public ref CHandle< CBaseEntity > SceneInstance {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x16AE3F0C967C210));
-  }
-  public ref CHandle< CBaseEntity > MainActor {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x16AE3F0CCB20D99));
+  public CHandle<IBaseEntity> MainActor {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x16AE3F0CCB20D99));
   }
 
 

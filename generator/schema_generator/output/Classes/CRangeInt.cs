@@ -9,11 +9,8 @@ internal partial class CRangeInt : SchemaClass, IRangeInt {
   public CRangeInt(nint handle) : base(handle) {
   }
 
-  public CRangeInt(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<int32> Value {
-    get => new SchemaFixedArray<int32>(_Handle + Schema.GetOffset(0xF42199F07F437844));
+  public ISchemaFixedArray<int> Value {
+    get => new SchemaFixedArray<int>(_Handle, 0xF42199F07F437844, 2, 4, 4);
   }
 
 

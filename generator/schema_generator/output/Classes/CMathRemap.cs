@@ -9,9 +9,6 @@ internal partial class CMathRemap : CLogicalEntity, IMathRemap {
   public CMathRemap(nint handle) : base(handle) {
   }
 
-  public CMathRemap(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float InMin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDE4BD86D7506C6C8));
   }

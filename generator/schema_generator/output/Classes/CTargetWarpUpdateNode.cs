@@ -9,9 +9,6 @@ internal partial class CTargetWarpUpdateNode : CUnaryUpdateNode, ITargetWarpUpda
   public CTargetWarpUpdateNode(nint handle) : base(handle) {
   }
 
-  public CTargetWarpUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref TargetWarpAngleMode_t AngleMode {
     get => ref _Handle.AsRef<TargetWarpAngleMode_t>(Schema.GetOffset(0xF411CC8D21DC8BC));
   }

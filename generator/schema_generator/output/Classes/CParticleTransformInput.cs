@@ -9,9 +9,6 @@ internal partial class CParticleTransformInput : CParticleInput, IParticleTransf
   public CParticleTransformInput(nint handle) : base(handle) {
   }
 
-  public CParticleTransformInput(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ParticleTransformType_t Type {
     get => ref _Handle.AsRef<ParticleTransformType_t>(Schema.GetOffset(0x9DF3328C18853D59));
   }

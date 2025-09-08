@@ -9,9 +9,6 @@ internal partial class ParticlePreviewState_t : SchemaClass, IParticlePreviewSta
   public ParticlePreviewState_t(nint handle) : base(handle) {
   }
 
-  public ParticlePreviewState_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString PreviewModel {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x31FB1901BC4FDC14));
   }
@@ -33,8 +30,8 @@ internal partial class ParticlePreviewState_t : SchemaClass, IParticlePreviewSta
   public ref CUtlString MaterialGroupName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x31FB1901A6930C68));
   }
-  public ref CUtlVector< ParticlePreviewBodyGroup_t > BodyGroups {
-    get => ref _Handle.AsRef<CUtlVector< ParticlePreviewBodyGroup_t >>(Schema.GetOffset(0x31FB1901893FA01D));
+  public ref CUtlVector BodyGroups {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x31FB1901893FA01D));
   }
   public ref float PlaybackSpeed {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x31FB1901FA2B402D));

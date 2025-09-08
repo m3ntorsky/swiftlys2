@@ -9,9 +9,6 @@ internal partial class C_INIT_CreateSpiralSphere : CParticleFunctionInitializer,
   public C_INIT_CreateSpiralSphere(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreateSpiralSphere(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x97C2018A3F31A6BD));
   }

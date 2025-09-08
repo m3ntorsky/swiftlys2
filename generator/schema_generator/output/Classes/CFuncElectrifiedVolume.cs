@@ -9,12 +9,6 @@ internal partial class CFuncElectrifiedVolume : CFuncBrush, IFuncElectrifiedVolu
   public CFuncElectrifiedVolume(nint handle) : base(handle) {
   }
 
-  public CFuncElectrifiedVolume(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlSymbolLarge EffectName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A0E59866CD81EF));
-  }
   public ref CUtlSymbolLarge EffectInterpenetrateName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A0E5987691FB19));
   }

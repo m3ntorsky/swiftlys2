@@ -9,9 +9,6 @@ internal partial class C_OP_RotateVector : CParticleFunctionOperator, IC_OP_Rota
   public C_OP_RotateVector(nint handle) : base(handle) {
   }
 
-  public C_OP_RotateVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x43DEF471E5729606));
   }

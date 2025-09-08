@@ -9,9 +9,6 @@ internal partial class CItemDefuserAlias_item_defuser : CItemDefuser, IItemDefus
   public CItemDefuserAlias_item_defuser(nint handle) : base(handle) {
   }
 
-  public CItemDefuserAlias_item_defuser(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

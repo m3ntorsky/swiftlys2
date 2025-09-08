@@ -9,9 +9,6 @@ internal partial class GameAmmoTypeInfo_t : AmmoTypeInfo_t, IGameAmmoTypeInfo_t 
   public GameAmmoTypeInfo_t(nint handle) : base(handle) {
   }
 
-  public GameAmmoTypeInfo_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int BuySize {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x64034C7E8E17434E));
   }

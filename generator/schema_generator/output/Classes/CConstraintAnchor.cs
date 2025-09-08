@@ -9,9 +9,6 @@ internal partial class CConstraintAnchor : CBaseAnimGraph, IConstraintAnchor {
   public CConstraintAnchor(nint handle) : base(handle) {
   }
 
-  public CConstraintAnchor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MassScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD8ABF41001B9E905));
   }

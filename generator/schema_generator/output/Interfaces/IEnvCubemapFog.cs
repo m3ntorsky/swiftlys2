@@ -4,5 +4,40 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvCubemapFog : IBaseEntity {
 
-
+  public ref float EndDistance { get; }
+  
+  public ref float StartDistance { get; }
+  
+  public ref float FogFalloffExponent { get; }
+  
+  public ref bool HeightFogEnabled { get; }
+  
+  public ref float FogHeightWidth { get; }
+  
+  public ref float FogHeightEnd { get; }
+  
+  public ref float FogHeightStart { get; }
+  
+  public ref float FogHeightExponent { get; }
+  
+  public ref float LODBias { get; }
+  
+  public ref bool Active { get; }
+  
+  public ref bool StartDisabled { get; }
+  
+  public ref float FogMaxOpacity { get; }
+  
+  public ref int CubemapSourceType { get; }
+  
+  public CStrongHandle<IInfoForResourceTypeIMaterial2> SkyMaterial { get; }
+  
+  public ref CUtlSymbolLarge SkyEntity { get; }
+  
+  public CStrongHandle<IInfoForResourceTypeCTextureBase> FogCubemapTexture { get; }
+  
+  public ref bool HasHeightFogEnd { get; }
+  
+  public ref bool FirstTime { get; }
+  
 }

@@ -9,9 +9,6 @@ internal partial class CPlayer_ItemServices : CPlayerPawnComponent, IPlayer_Item
   public CPlayer_ItemServices(nint handle) : base(handle) {
   }
 
-  public CPlayer_ItemServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

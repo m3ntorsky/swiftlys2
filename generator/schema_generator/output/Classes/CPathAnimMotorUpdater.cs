@@ -9,9 +9,6 @@ internal partial class CPathAnimMotorUpdater : CPathAnimMotorUpdaterBase, IPathA
   public CPathAnimMotorUpdater(nint handle) : base(handle) {
   }
 
-  public CPathAnimMotorUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

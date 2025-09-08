@@ -9,26 +9,23 @@ internal partial class CShatterGlassShard : SchemaClass, IShatterGlassShard {
   public CShatterGlassShard(nint handle) : base(handle) {
   }
 
-  public CShatterGlassShard(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint ShardHandle {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x1350BEC3018E384F));
   }
-  public ref CUtlVector< Vector2D > PanelVertices {
-    get => ref _Handle.AsRef<CUtlVector< Vector2D >>(Schema.GetOffset(0x1350BEC349BB3ECE));
+  public ref CUtlVector<Vector2D> PanelVertices {
+    get => ref _Handle.AsRef<CUtlVector<Vector2D>>(Schema.GetOffset(0x1350BEC349BB3ECE));
   }
   public ref Vector2D LocalPanelSpaceOrigin {
     get => ref _Handle.AsRef<Vector2D>(Schema.GetOffset(0x1350BEC3D2F782FE));
   }
-  public ref CStrongHandle< InfoForResourceTypeCModel > Model {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCModel >>(Schema.GetOffset(0x1350BEC3E100C814));
+  public CStrongHandle<IInfoForResourceTypeCModel> Model {
+    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0x1350BEC3E100C814));
   }
-  public ref CHandle< CShatterGlassShardPhysics > PhysicsEntity {
-    get => ref _Handle.AsRef<CHandle< CShatterGlassShardPhysics >>(Schema.GetOffset(0x1350BEC396EA280F));
+  public CHandle<IShatterGlassShardPhysics> PhysicsEntity {
+    get => new CHandle<CShatterGlassShardPhysics>(_Handle + Schema.GetOffset(0x1350BEC396EA280F));
   }
-  public ref CHandle< CFuncShatterglass > ParentPanel {
-    get => ref _Handle.AsRef<CHandle< CFuncShatterglass >>(Schema.GetOffset(0x1350BEC3385216AF));
+  public CHandle<IFuncShatterglass> ParentPanel {
+    get => new CHandle<CFuncShatterglass>(_Handle + Schema.GetOffset(0x1350BEC3385216AF));
   }
   public ref uint ParentShard {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x1350BEC3E3717B41));
@@ -90,11 +87,11 @@ internal partial class CShatterGlassShard : SchemaClass, IShatterGlassShard {
   public IGameTime_t PhysicsEntitySpawnedAtTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x1350BEC3AA81B16F));
   }
-  public ref CHandle< CBaseEntity > EntityHittingMe {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1350BEC3820AF257));
+  public CHandle<IBaseEntity> EntityHittingMe {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1350BEC3820AF257));
   }
-  public ref CUtlVector< uint32 > Neighbors {
-    get => ref _Handle.AsRef<CUtlVector< uint32 >>(Schema.GetOffset(0x1350BEC3622F1068));
+  public ref CUtlVector<uint> Neighbors {
+    get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0x1350BEC3622F1068));
   }
 
 

@@ -9,9 +9,6 @@ internal partial class CNPCPhysicsHull : SchemaClass, INPCPhysicsHull {
   public CNPCPhysicsHull(nint handle) : base(handle) {
   }
 
-  public CNPCPhysicsHull(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol Name {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x6C27881963D22D49));
   }

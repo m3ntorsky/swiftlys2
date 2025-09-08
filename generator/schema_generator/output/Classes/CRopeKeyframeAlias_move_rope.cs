@@ -9,9 +9,6 @@ internal partial class CRopeKeyframeAlias_move_rope : CRopeKeyframe, IRopeKeyfra
   public CRopeKeyframeAlias_move_rope(nint handle) : base(handle) {
   }
 
-  public CRopeKeyframeAlias_move_rope(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

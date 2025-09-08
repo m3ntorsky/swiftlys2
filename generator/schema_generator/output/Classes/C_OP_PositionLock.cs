@@ -9,9 +9,6 @@ internal partial class C_OP_PositionLock : CParticleFunctionOperator, IC_OP_Posi
   public C_OP_PositionLock(nint handle) : base(handle) {
   }
 
-  public C_OP_PositionLock(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleTransformInput TransformInput {
     get => new CParticleTransformInput(_Handle + Schema.GetOffset(0xCE90EAD5B3FDC289));
   }

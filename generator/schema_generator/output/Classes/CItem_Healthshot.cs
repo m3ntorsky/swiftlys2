@@ -9,9 +9,6 @@ internal partial class CItem_Healthshot : CWeaponBaseItem, IItem_Healthshot {
   public CItem_Healthshot(nint handle) : base(handle) {
   }
 
-  public CItem_Healthshot(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

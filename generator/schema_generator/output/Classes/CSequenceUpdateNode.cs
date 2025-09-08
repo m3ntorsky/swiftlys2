@@ -9,9 +9,6 @@ internal partial class CSequenceUpdateNode : CSequenceUpdateNodeBase, ISequenceU
   public CSequenceUpdateNode(nint handle) : base(handle) {
   }
 
-  public CSequenceUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IHSequence Sequence {
     get => new HSequence(_Handle + Schema.GetOffset(0xB5F91396E0A0598E));
   }
@@ -21,8 +18,8 @@ internal partial class CSequenceUpdateNode : CSequenceUpdateNodeBase, ISequenceU
   public IParamSpanUpdater ParamSpans {
     get => new CParamSpanUpdater(_Handle + Schema.GetOffset(0xB5F91396DAC91553));
   }
-  public ref CUtlVector< TagSpan_t > Tags {
-    get => ref _Handle.AsRef<CUtlVector< TagSpan_t >>(Schema.GetOffset(0xB5F91396B46C8540));
+  public ref CUtlVector Tags {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB5F91396B46C8540));
   }
 
 

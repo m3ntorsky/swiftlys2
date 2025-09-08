@@ -9,9 +9,6 @@ internal partial class CNmNotNode__CDefinition : CNmBoolValueNode::CDefinition, 
   public CNmNotNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmNotNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short InputValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x844BE2B095E89F27));
   }

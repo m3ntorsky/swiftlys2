@@ -9,9 +9,6 @@ internal partial class C_OP_DriveCPFromGlobalSoundFloat : CParticleFunctionPreEm
   public C_OP_DriveCPFromGlobalSoundFloat(nint handle) : base(handle) {
   }
 
-  public C_OP_DriveCPFromGlobalSoundFloat(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int OutputControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1E3FE630266B0FD9));
   }

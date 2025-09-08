@@ -9,9 +9,6 @@ internal partial class CNmFloatClampNode__CDefinition : CNmFloatValueNode::CDefi
   public CNmFloatClampNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFloatClampNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short InputValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x77C3AAE295E89F27));
   }

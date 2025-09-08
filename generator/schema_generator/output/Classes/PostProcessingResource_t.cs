@@ -9,9 +9,6 @@ internal partial class PostProcessingResource_t : SchemaClass, IPostProcessingRe
   public PostProcessingResource_t(nint handle) : base(handle) {
   }
 
-  public PostProcessingResource_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool HasTonemapParams {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x81127543E6A6D70D));
   }

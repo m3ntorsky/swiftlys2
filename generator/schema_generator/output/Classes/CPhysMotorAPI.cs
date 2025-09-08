@@ -9,9 +9,6 @@ internal partial class CPhysMotorAPI : SchemaClass, IPhysMotorAPI {
   public CPhysMotorAPI(nint handle) : base(handle) {
   }
 
-  public CPhysMotorAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

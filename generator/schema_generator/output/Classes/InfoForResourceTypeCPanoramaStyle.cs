@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCPanoramaStyle : SchemaClass, IInfoFor
   public InfoForResourceTypeCPanoramaStyle(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCPanoramaStyle(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

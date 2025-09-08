@@ -9,9 +9,6 @@ internal partial class RagdollCreationParams_t : SchemaClass, IRagdollCreationPa
   public RagdollCreationParams_t(nint handle) : base(handle) {
   }
 
-  public RagdollCreationParams_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Force {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xAF0FCC44E530B0A8));
   }

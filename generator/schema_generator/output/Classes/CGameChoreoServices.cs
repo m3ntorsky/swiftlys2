@@ -9,14 +9,11 @@ internal partial class CGameChoreoServices : IChoreoServices, IGameChoreoService
   public CGameChoreoServices(nint handle) : base(handle) {
   }
 
-  public CGameChoreoServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public CHandle<IBaseAnimGraph> Owner {
+    get => new CHandle<CBaseAnimGraph>(_Handle + Schema.GetOffset(0xF5FFE2B2F6D89572));
   }
-
-  public ref CHandle< CBaseAnimGraph > Owner {
-    get => ref _Handle.AsRef<CHandle< CBaseAnimGraph >>(Schema.GetOffset(0xF5FFE2B2F6D89572));
-  }
-  public ref CHandle< CScriptedSequence > ScriptedSequence {
-    get => ref _Handle.AsRef<CHandle< CScriptedSequence >>(Schema.GetOffset(0xF5FFE2B2E43BF85C));
+  public CHandle<IScriptedSequence> ScriptedSequence {
+    get => new CHandle<CScriptedSequence>(_Handle + Schema.GetOffset(0xF5FFE2B2E43BF85C));
   }
   public ref IChoreoServices::ScriptState_t ScriptState {
     get => ref _Handle.AsRef<IChoreoServices::ScriptState_t>(Schema.GetOffset(0xF5FFE2B2E4CD331F));

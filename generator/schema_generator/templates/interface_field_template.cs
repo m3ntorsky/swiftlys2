@@ -1,1 +1,2 @@
-  public $INTERFACE_TYPE$ $NAME$ { get; }
+  public $REF$$INTERFACE_TYPE$ $NAME$ { get; }
+  

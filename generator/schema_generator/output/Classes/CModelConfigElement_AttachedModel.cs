@@ -9,17 +9,14 @@ internal partial class CModelConfigElement_AttachedModel : CModelConfigElement, 
   public CModelConfigElement_AttachedModel(nint handle) : base(handle) {
   }
 
-  public CModelConfigElement_AttachedModel(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString InstanceName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x82D04A99643AE8F9));
   }
   public ref CUtlString EntityClass {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x82D04A995BEE014A));
   }
-  public ref CStrongHandle< InfoForResourceTypeCModel > Model {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCModel >>(Schema.GetOffset(0x82D04A99E100C814));
+  public CStrongHandle<IInfoForResourceTypeCModel> Model {
+    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0x82D04A99E100C814));
   }
   public ref Vector Offset {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x82D04A99FE159136));

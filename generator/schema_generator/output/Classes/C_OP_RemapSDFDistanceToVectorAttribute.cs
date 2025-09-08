@@ -9,9 +9,6 @@ internal partial class C_OP_RemapSDFDistanceToVectorAttribute : CParticleFunctio
   public C_OP_RemapSDFDistanceToVectorAttribute(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapSDFDistanceToVectorAttribute(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t VectorFieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x11284F6408261D8B));
   }

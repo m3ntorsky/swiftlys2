@@ -9,9 +9,6 @@ internal partial class CMolotovGrenade : CBaseCSGrenade, IMolotovGrenade {
   public CMolotovGrenade(nint handle) : base(handle) {
   }
 
-  public CMolotovGrenade(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

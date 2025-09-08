@@ -9,9 +9,6 @@ internal partial class CNmGraphDefinition__ExternalGraphSlot_t : SchemaClass, IN
   public CNmGraphDefinition__ExternalGraphSlot_t(nint handle) : base(handle) {
   }
 
-  public CNmGraphDefinition__ExternalGraphSlot_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short NodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xFF128092124AB5CC));
   }

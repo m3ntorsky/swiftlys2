@@ -9,9 +9,6 @@ internal partial class IRagdoll : SchemaClass, IIRagdoll {
   public IRagdoll(nint handle) : base(handle) {
   }
 
-  public IRagdoll(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,14 +9,11 @@ internal partial class CRenderMesh : SchemaClass, IRenderMesh {
   public CRenderMesh(nint handle) : base(handle) {
   }
 
-  public CRenderMesh(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlLeanVectorFixedGrowable<CSceneObjectData,1> SceneObjects {
+    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<CSceneObjectData,1>>(Schema.GetOffset(0x8593C3BF332235A1));
   }
-
-  public ref CUtlLeanVectorFixedGrowable< CSceneObjectData, 1 > SceneObjects {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable< CSceneObjectData, 1 >>(Schema.GetOffset(0x8593C3BF332235A1));
-  }
-  public ref CUtlLeanVector< CBaseConstraint* > Constraints {
-    get => ref _Handle.AsRef<CUtlLeanVector< CBaseConstraint* >>(Schema.GetOffset(0x8593C3BF251CBAAB));
+  public ref CUtlLeanVector<CBaseConstraint*> Constraints {
+    get => ref _Handle.AsRef<CUtlLeanVector<CBaseConstraint*>>(Schema.GetOffset(0x8593C3BF251CBAAB));
   }
   public IRenderSkeleton Skeleton {
     get => new CRenderSkeleton(_Handle + Schema.GetOffset(0x8593C3BFE77F030E));

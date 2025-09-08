@@ -9,9 +9,6 @@ internal partial class CNavVolumeCalculatedVector : CNavVolume, INavVolumeCalcul
   public CNavVolumeCalculatedVector(nint handle) : base(handle) {
   }
 
-  public CNavVolumeCalculatedVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

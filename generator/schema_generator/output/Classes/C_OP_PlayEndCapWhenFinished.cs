@@ -9,9 +9,6 @@ internal partial class C_OP_PlayEndCapWhenFinished : CParticleFunctionPreEmissio
   public C_OP_PlayEndCapWhenFinished(nint handle) : base(handle) {
   }
 
-  public C_OP_PlayEndCapWhenFinished(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool FireOnEmissionEnd {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xFC89982E01C357B0));
   }

@@ -9,9 +9,6 @@ internal partial class CItemSoda : CBaseAnimGraph, IItemSoda {
   public CItemSoda(nint handle) : base(handle) {
   }
 
-  public CItemSoda(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

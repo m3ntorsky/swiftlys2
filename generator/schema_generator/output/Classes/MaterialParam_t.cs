@@ -9,9 +9,6 @@ internal partial class MaterialParam_t : SchemaClass, IMaterialParam_t {
   public MaterialParam_t(nint handle) : base(handle) {
   }
 
-  public MaterialParam_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x81EE845A4D8F5786));
   }

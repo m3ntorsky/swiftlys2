@@ -9,9 +9,6 @@ internal partial class CNmClip__ModelSpaceSamplingChainLink_t : SchemaClass, INm
   public CNmClip__ModelSpaceSamplingChainLink_t(nint handle) : base(handle) {
   }
 
-  public CNmClip__ModelSpaceSamplingChainLink_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int BoneIdx {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xAFAB55410E26A9C2));
   }

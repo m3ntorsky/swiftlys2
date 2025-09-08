@@ -9,9 +9,6 @@ internal partial class EventClientProcessGameInput_t : SchemaClass, IEventClient
   public EventClientProcessGameInput_t(nint handle) : base(handle) {
   }
 
-  public EventClientProcessGameInput_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEngineLoopState_t LoopState {
     get => new EngineLoopState_t(_Handle + Schema.GetOffset(0x705D7E06F928A2EC));
   }

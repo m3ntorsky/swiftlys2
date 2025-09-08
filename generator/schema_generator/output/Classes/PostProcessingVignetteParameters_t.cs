@@ -9,9 +9,6 @@ internal partial class PostProcessingVignetteParameters_t : SchemaClass, IPostPr
   public PostProcessingVignetteParameters_t(nint handle) : base(handle) {
   }
 
-  public PostProcessingVignetteParameters_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float VignetteStrength {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC31FEB45110C062C));
   }

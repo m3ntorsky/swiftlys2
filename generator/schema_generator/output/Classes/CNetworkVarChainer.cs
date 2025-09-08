@@ -9,9 +9,6 @@ internal partial class CNetworkVarChainer : SchemaClass, INetworkVarChainer {
   public CNetworkVarChainer(nint handle) : base(handle) {
   }
 
-  public CNetworkVarChainer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IChangeAccessorFieldPathIndex_t PathIndex {
     get => new ChangeAccessorFieldPathIndex_t(_Handle + Schema.GetOffset(0x6609CE852DA3F47A));
   }

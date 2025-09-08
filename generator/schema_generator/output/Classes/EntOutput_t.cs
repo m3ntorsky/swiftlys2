@@ -9,9 +9,6 @@ internal partial class EntOutput_t : SchemaClass, IEntOutput_t {
   public EntOutput_t(nint handle) : base(handle) {
   }
 
-  public EntOutput_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

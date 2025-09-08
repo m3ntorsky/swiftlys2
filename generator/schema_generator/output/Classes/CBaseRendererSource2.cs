@@ -9,9 +9,6 @@ internal partial class CBaseRendererSource2 : CParticleFunctionRenderer, IBaseRe
   public CBaseRendererSource2(nint handle) : base(handle) {
   }
 
-  public CBaseRendererSource2(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionRendererFloatInput RadiusScale {
     get => new CParticleCollectionRendererFloatInput(_Handle + Schema.GetOffset(0xA732A575A7A20159));
   }
@@ -48,8 +45,8 @@ internal partial class CBaseRendererSource2 : CParticleFunctionRenderer, IBaseRe
   public ref ParticleSequenceCropOverride_t CropTextureOverride {
     get => ref _Handle.AsRef<ParticleSequenceCropOverride_t>(Schema.GetOffset(0xA732A575F1DF7F72));
   }
-  public ref CUtlLeanVector< TextureGroup_t > TexturesInput {
-    get => ref _Handle.AsRef<CUtlLeanVector< TextureGroup_t >>(Schema.GetOffset(0xA732A5759C246F7B));
+  public ref CUtlLeanVector<TextureGroup_t> TexturesInput {
+    get => ref _Handle.AsRef<CUtlLeanVector<TextureGroup_t>>(Schema.GetOffset(0xA732A5759C246F7B));
   }
   public ref float AnimationRate {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA732A575607083AD));
@@ -160,13 +157,13 @@ internal partial class CBaseRendererSource2 : CParticleFunctionRenderer, IBaseRe
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA732A5750293C80E));
   }
   public ISchemaFixedString StencilTestID {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xA732A575115C996A));
+    get => new SchemaFixedString(_Handle, 0xA732A575115C996A, 128, 1, 1);
   }
   public ref bool StencilTestExclude {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA732A57584BFB66B));
   }
   public ISchemaFixedString StencilWriteID {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xA732A5758FB6505B));
+    get => new SchemaFixedString(_Handle, 0xA732A5758FB6505B, 128, 1, 1);
   }
   public ref bool WriteStencilOnDepthPass {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA732A575016CB7AF));

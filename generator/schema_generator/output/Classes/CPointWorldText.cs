@@ -9,57 +9,7 @@ internal partial class CPointWorldText : CModelPointEntity, IPointWorldText {
   public CPointWorldText(nint handle) : base(handle) {
   }
 
-  public CPointWorldText(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ISchemaFixedString MessageText {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x5BF88697BA6E5D73));
-  }
-  public ISchemaFixedString FontName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x5BF88697C241C2B3));
-  }
-  public ISchemaFixedString BackgroundMaterialName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x5BF88697ECF8A7AB));
-  }
-  public ref bool Enabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5BF886976154EB7E));
-  }
-  public ref bool Fullbright {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5BF8869765A288E8));
-  }
-  public ref float WorldUnitsPerPx {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5BF886971DA8EAAB));
-  }
-  public ref float FontSize {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5BF88697D5E19F97));
-  }
-  public ref float DepthOffset {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5BF8869767D1DB9B));
-  }
-  public ref bool DrawBackground {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5BF886978259FA8F));
-  }
-  public ref float BackgroundBorderWidth {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5BF886972A7C9A4F));
-  }
-  public ref float BackgroundBorderHeight {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5BF8869794198B72));
-  }
-  public ref float BackgroundWorldToUV {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5BF88697ECA00D93));
-  }
-  public ref Color Color {
-    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x5BF88697D7D017D8));
-  }
-  public ref PointWorldTextJustifyHorizontal_t JustifyHorizontal {
-    get => ref _Handle.AsRef<PointWorldTextJustifyHorizontal_t>(Schema.GetOffset(0x5BF8869730435253));
-  }
-  public ref PointWorldTextJustifyVertical_t JustifyVertical {
-    get => ref _Handle.AsRef<PointWorldTextJustifyVertical_t>(Schema.GetOffset(0x5BF88697CA04D41D));
-  }
-  public ref PointWorldTextReorientMode_t ReorientMode {
-    get => ref _Handle.AsRef<PointWorldTextReorientMode_t>(Schema.GetOffset(0x5BF88697222D2502));
-  }
 
   public void MessageTextUpdated() {
     Schema.Update(_Handle, 0x5BF88697BA6E5D73);

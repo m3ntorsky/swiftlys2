@@ -9,11 +9,8 @@ internal partial class ParamSpan_t : SchemaClass, IParamSpan_t {
   public ParamSpan_t(nint handle) : base(handle) {
   }
 
-  public ParamSpan_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< ParamSpanSample_t > Samples {
-    get => ref _Handle.AsRef<CUtlVector< ParamSpanSample_t >>(Schema.GetOffset(0x5EE209D9364CA9DC));
+  public ref CUtlVector Samples {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5EE209D9364CA9DC));
   }
   public IAnimParamHandle Param {
     get => new CAnimParamHandle(_Handle + Schema.GetOffset(0x5EE209D9679286A4));

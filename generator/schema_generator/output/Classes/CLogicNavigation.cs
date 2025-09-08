@@ -9,9 +9,6 @@ internal partial class CLogicNavigation : CLogicalEntity, ILogicNavigation {
   public CLogicNavigation(nint handle) : base(handle) {
   }
 
-  public CLogicNavigation(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool IsOn {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8E444D6254B260A0));
   }

@@ -9,9 +9,6 @@ internal partial class CGeneralSpin : CParticleFunctionOperator, IGeneralSpin {
   public CGeneralSpin(nint handle) : base(handle) {
   }
 
-  public CGeneralSpin(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int SpinRateDegrees {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFC0422E2BF9AC820));
   }

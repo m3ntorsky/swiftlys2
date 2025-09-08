@@ -9,9 +9,6 @@ internal partial class EventServerEndAsyncPostTickWork_t : SchemaClass, IEventSe
   public EventServerEndAsyncPostTickWork_t(nint handle) : base(handle) {
   }
 
-  public EventServerEndAsyncPostTickWork_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

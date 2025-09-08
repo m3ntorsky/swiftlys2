@@ -9,9 +9,6 @@ internal partial class sndopvarlatchdata_t : SchemaClass, Isndopvarlatchdata_t {
   public sndopvarlatchdata_t(nint handle) : base(handle) {
   }
 
-  public sndopvarlatchdata_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge Stack {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8347C0D511ACB037));
   }

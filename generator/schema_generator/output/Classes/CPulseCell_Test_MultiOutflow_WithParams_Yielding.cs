@@ -9,9 +9,6 @@ internal partial class CPulseCell_Test_MultiOutflow_WithParams_Yielding : CPulse
   public CPulseCell_Test_MultiOutflow_WithParams_Yielding(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Test_MultiOutflow_WithParams_Yielding(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISignatureOutflow_Continue Out1 {
     get => new SignatureOutflow_Continue(_Handle + Schema.GetOffset(0xB412A25905F293AA));
   }

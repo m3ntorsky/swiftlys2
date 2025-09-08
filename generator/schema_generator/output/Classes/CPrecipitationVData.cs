@@ -9,9 +9,6 @@ internal partial class CPrecipitationVData : CEntitySubclassVDataBase, IPrecipit
   public CPrecipitationVData(nint handle) : base(handle) {
   }
 
-  public CPrecipitationVData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField ParticlePrecipitationEffect {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x4F75C25D9E8770E0));
   }

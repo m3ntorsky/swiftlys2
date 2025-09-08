@@ -9,11 +9,8 @@ internal partial class CNmAndNode__CDefinition : CNmBoolValueNode::CDefinition, 
   public CNmAndNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmAndNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlLeanVectorFixedGrowable< int16, 4 > ConditionNodeIndices {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable< int16, 4 >>(Schema.GetOffset(0xC46B12E04A144D0F));
+  public ref CUtlLeanVectorFixedGrowable<int16,4> ConditionNodeIndices {
+    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<int16,4>>(Schema.GetOffset(0xC46B12E04A144D0F));
   }
 
 

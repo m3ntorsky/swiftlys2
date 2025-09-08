@@ -4,5 +4,10 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISkeletonDemoDb_t : ISchemaClass {
 
-
+  public ref CUtlVector<PointerTo<SkeletonAnimCapture_t>> AnimCaptures { get; }
+  
+  public ref CUtlVector CameraTrack { get; }
+  
+  public ref float RecordingTime { get; }
+  
 }

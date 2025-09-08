@@ -9,9 +9,6 @@ internal partial class SkeletonAnimCapture_t__Camera_t : SchemaClass, ISkeletonA
   public SkeletonAnimCapture_t__Camera_t(nint handle) : base(handle) {
   }
 
-  public SkeletonAnimCapture_t__Camera_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CTransform TmCamera {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xEBD053249D7ED559));
   }

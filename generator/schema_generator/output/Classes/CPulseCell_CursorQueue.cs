@@ -9,9 +9,6 @@ internal partial class CPulseCell_CursorQueue : CPulseCell_WaitForCursorsWithTag
   public CPulseCell_CursorQueue(nint handle) : base(handle) {
   }
 
-  public CPulseCell_CursorQueue(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CursorsAllowedToRunParallel {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDAB7EC55AC04AAF9));
   }

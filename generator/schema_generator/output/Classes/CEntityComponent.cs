@@ -9,9 +9,6 @@ internal partial class CEntityComponent : SchemaClass, IEntityComponent {
   public CEntityComponent(nint handle) : base(handle) {
   }
 
-  public CEntityComponent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

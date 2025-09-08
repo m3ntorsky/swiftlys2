@@ -9,9 +9,6 @@ internal partial class C_OP_RemapBoundingVolumetoCP : CParticleFunctionPreEmissi
   public C_OP_RemapBoundingVolumetoCP(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapBoundingVolumetoCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int OutControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xBFFF451ED021D73F));
   }

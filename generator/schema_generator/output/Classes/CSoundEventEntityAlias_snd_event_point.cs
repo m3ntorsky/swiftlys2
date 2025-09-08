@@ -9,9 +9,6 @@ internal partial class CSoundEventEntityAlias_snd_event_point : CSoundEventEntit
   public CSoundEventEntityAlias_snd_event_point(nint handle) : base(handle) {
   }
 
-  public CSoundEventEntityAlias_snd_event_point(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

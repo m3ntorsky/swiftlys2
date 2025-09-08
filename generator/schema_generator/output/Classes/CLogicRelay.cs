@@ -9,9 +9,6 @@ internal partial class CLogicRelay : CLogicalEntity, ILogicRelay {
   public CLogicRelay(nint handle) : base(handle) {
   }
 
-  public CLogicRelay(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x15CFD4B93A7C5965));
   }

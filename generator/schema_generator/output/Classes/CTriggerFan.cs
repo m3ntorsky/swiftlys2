@@ -9,45 +9,6 @@ internal partial class CTriggerFan : CBaseTrigger, ITriggerFan {
   public CTriggerFan(nint handle) : base(handle) {
   }
 
-  public CTriggerFan(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref Vector FanOrigin {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2B53C49C18));
-  }
-  public ref Vector FanOriginOffset {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2BAFB9770B));
-  }
-  public ref Vector FanEnd {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2BA34E3AAB));
-  }
-  public ref Vector NoiseDirectionTarget {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2B59781ABB));
-  }
-  public ref Vector Direction {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2BDAE41DEE));
-  }
-  public ref bool PushTowardsInfoTarget {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6A8B5C2BB6D3B4CE));
-  }
-  public ref bool PushAwayFromInfoTarget {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6A8B5C2BF3F3D5EE));
-  }
-  public ref Quaternion NoiseDelta {
-    get => ref _Handle.AsRef<Quaternion>(Schema.GetOffset(0x6A8B5C2BDC0D2AE8));
-  }
-  public ref CHandle< CInfoFan > InfoFan {
-    get => ref _Handle.AsRef<CHandle< CInfoFan >>(Schema.GetOffset(0x6A8B5C2B423064AC));
-  }
-  public ref float Force {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6A8B5C2BCA90E47A));
-  }
-  public ref bool Falloff {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6A8B5C2B76E955A5));
-  }
-  public ICountdownTimer RampTimer {
-    get => new CountdownTimer(_Handle + Schema.GetOffset(0x6A8B5C2B21725ED6));
-  }
   public ref CUtlSymbolLarge InfoFan {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6A8B5C2B8E6431BA));
   }

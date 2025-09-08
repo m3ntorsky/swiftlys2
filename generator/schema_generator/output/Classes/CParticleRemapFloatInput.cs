@@ -9,9 +9,6 @@ internal partial class CParticleRemapFloatInput : CParticleFloatInput, IParticle
   public CParticleRemapFloatInput(nint handle) : base(handle) {
   }
 
-  public CParticleRemapFloatInput(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

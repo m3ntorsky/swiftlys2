@@ -9,9 +9,6 @@ internal partial class C_OP_SpinUpdate : CSpinUpdateBase, IC_OP_SpinUpdate {
   public C_OP_SpinUpdate(nint handle) : base(handle) {
   }
 
-  public C_OP_SpinUpdate(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

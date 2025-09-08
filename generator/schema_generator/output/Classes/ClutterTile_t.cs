@@ -9,9 +9,6 @@ internal partial class ClutterTile_t : SchemaClass, IClutterTile_t {
   public ClutterTile_t(nint handle) : base(handle) {
   }
 
-  public ClutterTile_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint FirstInstance {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xAC4066F19AF07072));
   }

@@ -4,5 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Step_FollowEntity : IPulseCell_BaseFlow {
 
-
+  public ref CUtlString ParamBoneOrAttachName { get; }
+  
+  public ref CUtlString ParamBoneOrAttachNameChild { get; }
+  
 }

@@ -9,9 +9,6 @@ internal partial class CTriggerTeleport : CBaseTrigger, ITriggerTeleport {
   public CTriggerTeleport(nint handle) : base(handle) {
   }
 
-  public CTriggerTeleport(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge Landmark {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA6381755DF022EC4));
   }

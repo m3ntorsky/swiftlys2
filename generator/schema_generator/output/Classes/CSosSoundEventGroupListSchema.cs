@@ -9,11 +9,8 @@ internal partial class CSosSoundEventGroupListSchema : SchemaClass, ISosSoundEve
   public CSosSoundEventGroupListSchema(nint handle) : base(handle) {
   }
 
-  public CSosSoundEventGroupListSchema(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CSosSoundEventGroupSchema > GroupList {
-    get => ref _Handle.AsRef<CUtlVector< CSosSoundEventGroupSchema >>(Schema.GetOffset(0x86B277E81E01B7F4));
+  public ref CUtlVector GroupList {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x86B277E81E01B7F4));
   }
 
 

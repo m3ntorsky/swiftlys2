@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomYaw : CGeneralRandomRotation, IC_INIT_Random
   public C_INIT_RandomYaw(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomYaw(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

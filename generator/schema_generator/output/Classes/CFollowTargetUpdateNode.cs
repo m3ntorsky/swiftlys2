@@ -9,9 +9,6 @@ internal partial class CFollowTargetUpdateNode : CUnaryUpdateNode, IFollowTarget
   public CFollowTargetUpdateNode(nint handle) : base(handle) {
   }
 
-  public CFollowTargetUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IFollowTargetOpFixedSettings_t OpFixedData {
     get => new FollowTargetOpFixedSettings_t(_Handle + Schema.GetOffset(0x2A45E9CB6960AF8C));
   }

@@ -9,9 +9,6 @@ internal partial class C_OP_ClampScalar : CParticleFunctionOperator, IC_OP_Clamp
   public C_OP_ClampScalar(nint handle) : base(handle) {
   }
 
-  public C_OP_ClampScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x2D8090A0E5729606));
   }

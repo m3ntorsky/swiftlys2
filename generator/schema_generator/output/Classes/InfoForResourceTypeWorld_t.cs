@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeWorld_t : SchemaClass, IInfoForResourc
   public InfoForResourceTypeWorld_t(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeWorld_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

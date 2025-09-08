@@ -9,9 +9,6 @@ internal partial class CEnvEntityIgniter : CBaseEntity, IEnvEntityIgniter {
   public CEnvEntityIgniter(nint handle) : base(handle) {
   }
 
-  public CEnvEntityIgniter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Lifetime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF8FFE95A39B35564));
   }

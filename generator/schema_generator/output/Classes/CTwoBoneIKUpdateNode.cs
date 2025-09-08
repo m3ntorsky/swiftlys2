@@ -9,9 +9,6 @@ internal partial class CTwoBoneIKUpdateNode : CUnaryUpdateNode, ITwoBoneIKUpdate
   public CTwoBoneIKUpdateNode(nint handle) : base(handle) {
   }
 
-  public CTwoBoneIKUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ITwoBoneIKSettings_t OpFixedData {
     get => new TwoBoneIKSettings_t(_Handle + Schema.GetOffset(0x419F07E36960AF8C));
   }

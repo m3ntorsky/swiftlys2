@@ -9,14 +9,11 @@ internal partial class CMarkupVolumeTagged : CMarkupVolume, IMarkupVolumeTagged 
   public CMarkupVolumeTagged(nint handle) : base(handle) {
   }
 
-  public CMarkupVolumeTagged(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVector<CGlobalSymbol> GroupNames {
+    get => ref _Handle.AsRef<CUtlVector<CGlobalSymbol>>(Schema.GetOffset(0x4113340CB853197C));
   }
-
-  public ref CUtlVector< CGlobalSymbol > GroupNames {
-    get => ref _Handle.AsRef<CUtlVector< CGlobalSymbol >>(Schema.GetOffset(0x4113340CB853197C));
-  }
-  public ref CUtlVector< CGlobalSymbol > Tags {
-    get => ref _Handle.AsRef<CUtlVector< CGlobalSymbol >>(Schema.GetOffset(0x4113340C31C5D020));
+  public ref CUtlVector<CGlobalSymbol> Tags {
+    get => ref _Handle.AsRef<CUtlVector<CGlobalSymbol>>(Schema.GetOffset(0x4113340C31C5D020));
   }
   public ref bool IsGroup {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4113340CB68D3FDC));

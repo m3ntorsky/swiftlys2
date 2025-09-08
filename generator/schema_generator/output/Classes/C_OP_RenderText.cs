@@ -9,9 +9,6 @@ internal partial class C_OP_RenderText : CParticleFunctionRenderer, IC_OP_Render
   public C_OP_RenderText(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderText(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Color OutlineColor {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x376BB2E675B94BB0));
   }

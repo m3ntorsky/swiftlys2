@@ -9,11 +9,8 @@ internal partial class CResponseQueue : SchemaClass, IResponseQueue {
   public CResponseQueue(nint handle) : base(handle) {
   }
 
-  public CResponseQueue(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CAI_Expresser* > ExpresserTargets {
-    get => ref _Handle.AsRef<CUtlVector< CAI_Expresser* >>(Schema.GetOffset(0xBA9C485870CCA05A));
+  public ref CUtlVector<PointerTo<CAI_Expresser>> ExpresserTargets {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CAI_Expresser>>>(Schema.GetOffset(0xBA9C485870CCA05A));
   }
 
 

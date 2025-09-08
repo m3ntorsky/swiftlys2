@@ -9,9 +9,6 @@ internal partial class EventClientPostSimulate_t : EventSimulate_t, IEventClient
   public EventClientPostSimulate_t(nint handle) : base(handle) {
   }
 
-  public EventClientPostSimulate_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

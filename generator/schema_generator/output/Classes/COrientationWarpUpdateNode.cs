@@ -9,9 +9,6 @@ internal partial class COrientationWarpUpdateNode : CUnaryUpdateNode, IOrientati
   public COrientationWarpUpdateNode(nint handle) : base(handle) {
   }
 
-  public COrientationWarpUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref OrientationWarpMode_t Mode {
     get => ref _Handle.AsRef<OrientationWarpMode_t>(Schema.GetOffset(0xD75D3B631050A633));
   }

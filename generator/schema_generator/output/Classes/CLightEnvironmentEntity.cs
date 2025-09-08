@@ -9,9 +9,6 @@ internal partial class CLightEnvironmentEntity : CLightDirectionalEntity, ILight
   public CLightEnvironmentEntity(nint handle) : base(handle) {
   }
 
-  public CLightEnvironmentEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

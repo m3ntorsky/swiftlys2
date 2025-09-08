@@ -9,14 +9,11 @@ internal partial class CNmParameterizedClipSelectorNode__CDefinition : CNmClipRe
   public CNmParameterizedClipSelectorNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmParameterizedClipSelectorNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlLeanVectorFixedGrowable<int16,5> OptionNodeIndices {
+    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<int16,5>>(Schema.GetOffset(0xF7011439DA97B15D));
   }
-
-  public ref CUtlLeanVectorFixedGrowable< int16, 5 > OptionNodeIndices {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable< int16, 5 >>(Schema.GetOffset(0xF7011439DA97B15D));
-  }
-  public ref CUtlLeanVectorFixedGrowable< uint8, 5 > OptionWeights {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable< uint8, 5 >>(Schema.GetOffset(0xF701143931D94DB5));
+  public ref CUtlLeanVectorFixedGrowable<uint8,5> OptionWeights {
+    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<uint8,5>>(Schema.GetOffset(0xF701143931D94DB5));
   }
   public ref short ParameterNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xF701143966C6F2AB));

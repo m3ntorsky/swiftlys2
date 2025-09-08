@@ -9,9 +9,6 @@ internal partial class CPhysSurfacePropertiesPhysics : SchemaClass, IPhysSurface
   public CPhysSurfacePropertiesPhysics(nint handle) : base(handle) {
   }
 
-  public CPhysSurfacePropertiesPhysics(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Friction {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF44ED88D5DBDE05B));
   }

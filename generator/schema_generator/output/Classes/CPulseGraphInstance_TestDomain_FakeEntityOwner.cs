@@ -9,9 +9,6 @@ internal partial class CPulseGraphInstance_TestDomain_FakeEntityOwner : CBasePul
   public CPulseGraphInstance_TestDomain_FakeEntityOwner(nint handle) : base(handle) {
   }
 
-  public CPulseGraphInstance_TestDomain_FakeEntityOwner(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

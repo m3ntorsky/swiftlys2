@@ -9,9 +9,6 @@ internal partial class CSeqMultiFetchFlag : SchemaClass, ISeqMultiFetchFlag {
   public CSeqMultiFetchFlag(nint handle) : base(handle) {
   }
 
-  public CSeqMultiFetchFlag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Realtime {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE7EB44FCB658139C));
   }

@@ -9,11 +9,8 @@ internal partial class CPulseCell_Outflow_CycleOrdered : CPulseCell_BaseFlow, IP
   public CPulseCell_Outflow_CycleOrdered(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Outflow_CycleOrdered(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CPulse_OutflowConnection > Outputs {
-    get => ref _Handle.AsRef<CUtlVector< CPulse_OutflowConnection >>(Schema.GetOffset(0xAED1209EA38A89D5));
+  public ref CUtlVector Outputs {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xAED1209EA38A89D5));
   }
 
 

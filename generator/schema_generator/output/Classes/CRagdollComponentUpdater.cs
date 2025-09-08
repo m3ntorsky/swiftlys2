@@ -9,26 +9,23 @@ internal partial class CRagdollComponentUpdater : CAnimComponentUpdater, IRagdol
   public CRagdollComponentUpdater(nint handle) : base(handle) {
   }
 
-  public CRagdollComponentUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVector RagdollNodePaths {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xDD5F05A990E04B90));
   }
-
-  public ref CUtlVector< CAnimNodePath > RagdollNodePaths {
-    get => ref _Handle.AsRef<CUtlVector< CAnimNodePath >>(Schema.GetOffset(0xDD5F05A990E04B90));
+  public ref CUtlVector FollowAttachmentNodePaths {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xDD5F05A95F8325EF));
   }
-  public ref CUtlVector< CAnimNodePath > FollowAttachmentNodePaths {
-    get => ref _Handle.AsRef<CUtlVector< CAnimNodePath >>(Schema.GetOffset(0xDD5F05A95F8325EF));
+  public ref CUtlVector<int> BoneIndices {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xDD5F05A9E93AB60C));
   }
-  public ref CUtlVector< int32 > BoneIndices {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0xDD5F05A9E93AB60C));
+  public ref CUtlVector<CUtlString> BoneNames {
+    get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xDD5F05A93CC0D1ED));
   }
-  public ref CUtlVector< CUtlString > BoneNames {
-    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0xDD5F05A93CC0D1ED));
+  public ref CUtlVector WeightLists {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xDD5F05A9F50C4582));
   }
-  public ref CUtlVector< WeightList > WeightLists {
-    get => ref _Handle.AsRef<CUtlVector< WeightList >>(Schema.GetOffset(0xDD5F05A9F50C4582));
-  }
-  public ref CUtlVector< int32 > BoneToWeightIndices {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0xDD5F05A9CA322B97));
+  public ref CUtlVector<int> BoneToWeightIndices {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xDD5F05A9CA322B97));
   }
   public ref float SpringFrequencyMin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDD5F05A937C769A4));

@@ -9,9 +9,6 @@ internal partial class RotatorHistoryEntry_t : SchemaClass, IRotatorHistoryEntry
   public RotatorHistoryEntry_t(nint handle) : base(handle) {
   }
 
-  public RotatorHistoryEntry_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Quaternion InvChange {
     get => ref _Handle.AsRef<Quaternion>(Schema.GetOffset(0xB27D5BA9A4E4D41B));
   }

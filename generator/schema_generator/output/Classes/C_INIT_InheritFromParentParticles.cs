@@ -9,9 +9,6 @@ internal partial class C_INIT_InheritFromParentParticles : CParticleFunctionInit
   public C_INIT_InheritFromParentParticles(nint handle) : base(handle) {
   }
 
-  public C_INIT_InheritFromParentParticles(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Scale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF97C3548B731A42F));
   }

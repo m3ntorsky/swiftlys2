@@ -9,9 +9,6 @@ internal partial class locksound_t : SchemaClass, Ilocksound_t {
   public locksound_t(nint handle) : base(handle) {
   }
 
-  public locksound_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge LockedSound {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDAD0AE229881D7AB));
   }

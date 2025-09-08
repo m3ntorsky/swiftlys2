@@ -9,9 +9,6 @@ internal partial class CWarpSectionAnimTagBase : CAnimTagBase, IWarpSectionAnimT
   public CWarpSectionAnimTagBase(nint handle) : base(handle) {
   }
 
-  public CWarpSectionAnimTagBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

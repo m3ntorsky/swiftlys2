@@ -9,9 +9,6 @@ internal partial class C_INIT_CreateParticleImpulse : CParticleFunctionInitializ
   public C_INIT_CreateParticleImpulse(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreateParticleImpulse(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput InputRadius {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0x1617EF931F5CA2F9));
   }

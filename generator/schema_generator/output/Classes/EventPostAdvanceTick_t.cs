@@ -9,9 +9,6 @@ internal partial class EventPostAdvanceTick_t : EventSimulate_t, IEventPostAdvan
   public EventPostAdvanceTick_t(nint handle) : base(handle) {
   }
 
-  public EventPostAdvanceTick_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CurrentTick {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE5D2DBB33C23687B));
   }

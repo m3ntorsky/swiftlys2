@@ -9,12 +9,6 @@ internal partial class fogplayerparams_t : SchemaClass, Ifogplayerparams_t {
   public fogplayerparams_t(nint handle) : base(handle) {
   }
 
-  public fogplayerparams_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CHandle< CFogController > Ctrl {
-    get => ref _Handle.AsRef<CHandle< CFogController >>(Schema.GetOffset(0x1BA99C4F34496C96));
-  }
   public ref float TransitionTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA99C4F8D4BFC39));
   }

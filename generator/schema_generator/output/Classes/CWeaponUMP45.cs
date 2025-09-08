@@ -9,9 +9,6 @@ internal partial class CWeaponUMP45 : CCSWeaponBaseGun, IWeaponUMP45 {
   public CWeaponUMP45(nint handle) : base(handle) {
   }
 
-  public CWeaponUMP45(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

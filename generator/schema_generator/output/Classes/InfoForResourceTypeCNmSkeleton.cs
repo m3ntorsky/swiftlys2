@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCNmSkeleton : SchemaClass, IInfoForRes
   public InfoForResourceTypeCNmSkeleton(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCNmSkeleton(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

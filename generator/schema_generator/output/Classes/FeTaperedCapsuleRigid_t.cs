@@ -9,11 +9,8 @@ internal partial class FeTaperedCapsuleRigid_t : SchemaClass, IFeTaperedCapsuleR
   public FeTaperedCapsuleRigid_t(nint handle) : base(handle) {
   }
 
-  public FeTaperedCapsuleRigid_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaFixedArray<fltx4> Sphere {
-    get => new SchemaFixedArray<fltx4>(_Handle + Schema.GetOffset(0x4B2017EE9E2AC48C));
+    get => new SchemaFixedArray<fltx4>(_Handle, 0x4B2017EE9E2AC48C, 2, 16, 16);
   }
   public ref ushort Node {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x4B2017EECD6694B9));

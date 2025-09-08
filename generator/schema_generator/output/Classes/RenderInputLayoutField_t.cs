@@ -9,11 +9,8 @@ internal partial class RenderInputLayoutField_t : SchemaClass, IRenderInputLayou
   public RenderInputLayoutField_t(nint handle) : base(handle) {
   }
 
-  public RenderInputLayoutField_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaFixedString SemanticName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x752C88F08F25E44C));
+    get => new SchemaFixedString(_Handle, 0x752C88F08F25E44C, 32, 1, 1);
   }
   public ref byte SemanticIndex {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x752C88F0AAC99783));
@@ -28,7 +25,7 @@ internal partial class RenderInputLayoutField_t : SchemaClass, IRenderInputLayou
     get => ref _Handle.AsRef<RenderSlotType_t>(Schema.GetOffset(0x752C88F05072B95D));
   }
   public ISchemaFixedString ShaderSemantic {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x752C88F0897CAA95));
+    get => new SchemaFixedString(_Handle, 0x752C88F0897CAA95, 32, 1, 1);
   }
 
 

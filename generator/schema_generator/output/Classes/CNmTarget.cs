@@ -9,9 +9,6 @@ internal partial class CNmTarget : SchemaClass, INmTarget {
   public CNmTarget(nint handle) : base(handle) {
   }
 
-  public CNmTarget(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CTransform Transform {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xA3F5A45E3A9A393B));
   }

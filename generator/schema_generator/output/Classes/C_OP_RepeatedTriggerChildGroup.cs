@@ -9,9 +9,6 @@ internal partial class C_OP_RepeatedTriggerChildGroup : CParticleFunctionPreEmis
   public C_OP_RepeatedTriggerChildGroup(nint handle) : base(handle) {
   }
 
-  public C_OP_RepeatedTriggerChildGroup(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ChildGroupID {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x3D9A0D4E3F3C965));
   }

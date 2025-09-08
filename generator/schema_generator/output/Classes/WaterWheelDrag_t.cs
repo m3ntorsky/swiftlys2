@@ -9,9 +9,6 @@ internal partial class WaterWheelDrag_t : SchemaClass, IWaterWheelDrag_t {
   public WaterWheelDrag_t(nint handle) : base(handle) {
   }
 
-  public WaterWheelDrag_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float FractionOfWheelSubmerged {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x51DDFA66F2D4C09B));
   }

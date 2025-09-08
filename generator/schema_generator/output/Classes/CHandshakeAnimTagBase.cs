@@ -9,9 +9,6 @@ internal partial class CHandshakeAnimTagBase : CAnimTagBase, IHandshakeAnimTagBa
   public CHandshakeAnimTagBase(nint handle) : base(handle) {
   }
 
-  public CHandshakeAnimTagBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool IsDisableTag {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x73566C0F04E21131));
   }

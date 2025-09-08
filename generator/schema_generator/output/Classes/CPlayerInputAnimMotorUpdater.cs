@@ -9,11 +9,8 @@ internal partial class CPlayerInputAnimMotorUpdater : CAnimMotorUpdaterBase, IPl
   public CPlayerInputAnimMotorUpdater(nint handle) : base(handle) {
   }
 
-  public CPlayerInputAnimMotorUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< float32 > SampleTimes {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0xA117CC02471975DF));
+  public ref CUtlVector<float> SampleTimes {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0xA117CC02471975DF));
   }
   public ref float SpringConstant {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA117CC02CE2260BE));

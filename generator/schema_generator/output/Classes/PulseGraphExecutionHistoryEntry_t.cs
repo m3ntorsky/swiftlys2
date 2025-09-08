@@ -9,9 +9,6 @@ internal partial class PulseGraphExecutionHistoryEntry_t : SchemaClass, IPulseGr
   public PulseGraphExecutionHistoryEntry_t(nint handle) : base(handle) {
   }
 
-  public PulseGraphExecutionHistoryEntry_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulseCursorID_t CursorID {
     get => new PulseCursorID_t(_Handle + Schema.GetOffset(0x9346B0AB0B44CBF6));
   }

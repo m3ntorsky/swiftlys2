@@ -9,9 +9,6 @@ internal partial class CPulseCell_Outflow_ScriptedSequence : CPulseCell_BaseYiel
   public CPulseCell_Outflow_ScriptedSequence(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Outflow_ScriptedSequence(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString SyncGroup {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x462EA7DEF9E8183A));
   }
@@ -30,8 +27,8 @@ internal partial class CPulseCell_Outflow_ScriptedSequence : CPulseCell_BaseYiel
   public IPulseScriptedSequenceData_t ScriptedSequenceDataMain {
     get => new PulseScriptedSequenceData_t(_Handle + Schema.GetOffset(0x462EA7DE03F2FF03));
   }
-  public ref CUtlVector< PulseScriptedSequenceData_t > AdditionalActors {
-    get => ref _Handle.AsRef<CUtlVector< PulseScriptedSequenceData_t >>(Schema.GetOffset(0x462EA7DE8E5DB532));
+  public ref CUtlVector AdditionalActors {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x462EA7DE8E5DB532));
   }
   public IPulse_ResumePoint OnFinished {
     get => new CPulse_ResumePoint(_Handle + Schema.GetOffset(0x462EA7DE8D903E5E));
@@ -39,8 +36,8 @@ internal partial class CPulseCell_Outflow_ScriptedSequence : CPulseCell_BaseYiel
   public IPulse_ResumePoint OnCanceled {
     get => new CPulse_ResumePoint(_Handle + Schema.GetOffset(0x462EA7DEF02162DB));
   }
-  public ref CUtlVector< CPulse_OutflowConnection > Triggers {
-    get => ref _Handle.AsRef<CUtlVector< CPulse_OutflowConnection >>(Schema.GetOffset(0x462EA7DE6E7B12D0));
+  public ref CUtlVector Triggers {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x462EA7DE6E7B12D0));
   }
 
 

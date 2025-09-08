@@ -9,9 +9,6 @@ internal partial class C_INIT_GlobalScale : CParticleFunctionInitializer, IC_INI
   public C_INIT_GlobalScale(nint handle) : base(handle) {
   }
 
-  public C_INIT_GlobalScale(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Scale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE0588671B731A42F));
   }

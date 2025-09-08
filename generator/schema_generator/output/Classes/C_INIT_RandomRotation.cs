@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomRotation : CGeneralRandomRotation, IC_INIT_R
   public C_INIT_RandomRotation(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomRotation(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

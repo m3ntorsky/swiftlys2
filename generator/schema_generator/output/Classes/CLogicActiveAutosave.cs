@@ -9,9 +9,6 @@ internal partial class CLogicActiveAutosave : CLogicAutosave, ILogicActiveAutosa
   public CLogicActiveAutosave(nint handle) : base(handle) {
   }
 
-  public CLogicActiveAutosave(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int TriggerHitPoints {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9BBDEF887D8FAE5B));
   }

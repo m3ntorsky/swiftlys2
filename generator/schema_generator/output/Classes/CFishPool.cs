@@ -9,9 +9,6 @@ internal partial class CFishPool : CBaseEntity, IFishPool {
   public CFishPool(nint handle) : base(handle) {
   }
 
-  public CFishPool(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int FishCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1B71368A31165D02));
   }
@@ -27,8 +24,8 @@ internal partial class CFishPool : CBaseEntity, IFishPool {
   public ref bool IsDormant {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1B71368A1D7D906E));
   }
-  public ref CUtlVector< CHandle< CFish > > Fishes {
-    get => ref _Handle.AsRef<CUtlVector< CHandle< CFish > >>(Schema.GetOffset(0x1B71368AFDB58C33));
+  public ref CUtlVector Fishes {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1B71368AFDB58C33));
   }
   public ICountdownTimer VisTimer {
     get => new CountdownTimer(_Handle + Schema.GetOffset(0x1B71368AC8E45FB6));

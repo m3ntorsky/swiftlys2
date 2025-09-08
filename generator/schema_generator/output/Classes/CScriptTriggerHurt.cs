@@ -9,9 +9,6 @@ internal partial class CScriptTriggerHurt : CTriggerHurt, IScriptTriggerHurt {
   public CScriptTriggerHurt(nint handle) : base(handle) {
   }
 
-  public CScriptTriggerHurt(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Extent {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xA813A9867AB1ED15));
   }

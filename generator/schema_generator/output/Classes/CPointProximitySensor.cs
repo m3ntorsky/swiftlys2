@@ -9,14 +9,11 @@ internal partial class CPointProximitySensor : CPointEntity, IPointProximitySens
   public CPointProximitySensor(nint handle) : base(handle) {
   }
 
-  public CPointProximitySensor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x769A8B133A7C5965));
   }
-  public ref CHandle< CBaseEntity > TargetEntity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x769A8B1325D042A9));
+  public CHandle<IBaseEntity> TargetEntity {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x769A8B1325D042A9));
   }
   public ISchemaUntypedField Distance {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x769A8B13978BC0E2));

@@ -9,9 +9,6 @@ internal partial class ControlPointReference_t : SchemaClass, IControlPointRefer
   public ControlPointReference_t(nint handle) : base(handle) {
   }
 
-  public ControlPointReference_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNameString {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x83CD020625F4E2B6));
   }

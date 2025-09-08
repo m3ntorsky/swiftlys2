@@ -9,9 +9,6 @@ internal partial class CSoundEventEntity : CBaseEntity, ISoundEventEntity {
   public CSoundEventEntity(nint handle) : base(handle) {
   }
 
-  public CSoundEventEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool StartOnSpawn {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x85BC270CDB2E6401));
   }

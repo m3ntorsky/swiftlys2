@@ -9,9 +9,6 @@ internal partial class CNmFloatValueNode__CDefinition : CNmValueNode::CDefinitio
   public CNmFloatValueNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFloatValueNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

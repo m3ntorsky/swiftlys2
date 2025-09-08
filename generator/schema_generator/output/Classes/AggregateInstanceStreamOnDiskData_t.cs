@@ -9,9 +9,6 @@ internal partial class AggregateInstanceStreamOnDiskData_t : SchemaClass, IAggre
   public AggregateInstanceStreamOnDiskData_t(nint handle) : base(handle) {
   }
 
-  public AggregateInstanceStreamOnDiskData_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint DecodedSize {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x8EDB1298803205A0));
   }

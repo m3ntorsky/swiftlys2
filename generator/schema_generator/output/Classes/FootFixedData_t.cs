@@ -9,9 +9,6 @@ internal partial class FootFixedData_t : SchemaClass, IFootFixedData_t {
   public FootFixedData_t(nint handle) : base(handle) {
   }
 
-  public FootFixedData_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref VectorAligned ToeOffset {
     get => ref _Handle.AsRef<VectorAligned>(Schema.GetOffset(0x20A34186E7F8869C));
   }

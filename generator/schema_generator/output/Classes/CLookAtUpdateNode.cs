@@ -9,9 +9,6 @@ internal partial class CLookAtUpdateNode : CUnaryUpdateNode, ILookAtUpdateNode {
   public CLookAtUpdateNode(nint handle) : base(handle) {
   }
 
-  public CLookAtUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ILookAtOpFixedSettings_t OpFixedSettings {
     get => new LookAtOpFixedSettings_t(_Handle + Schema.GetOffset(0xC17476D5E533AB09));
   }

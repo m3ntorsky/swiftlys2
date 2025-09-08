@@ -9,9 +9,6 @@ internal partial class CPulseServerFuncs_Sounds : SchemaClass, IPulseServerFuncs
   public CPulseServerFuncs_Sounds(nint handle) : base(handle) {
   }
 
-  public CPulseServerFuncs_Sounds(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

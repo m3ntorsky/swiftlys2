@@ -9,9 +9,6 @@ internal partial class CItem : CBaseAnimGraph, IItem {
   public CItem(nint handle) : base(handle) {
   }
 
-  public CItem(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnPlayerTouch {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x20C89FC926AD34F8));
   }

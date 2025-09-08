@@ -9,11 +9,8 @@ internal partial class CTakeDamageSummaryScopeGuard : SchemaClass, ITakeDamageSu
   public CTakeDamageSummaryScopeGuard(nint handle) : base(handle) {
   }
 
-  public CTakeDamageSummaryScopeGuard(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< SummaryTakeDamageInfo_t* > Summaries {
-    get => ref _Handle.AsRef<CUtlVector< SummaryTakeDamageInfo_t* >>(Schema.GetOffset(0x1CAF012DD0AD2A53));
+  public ref CUtlVector<PointerTo<SummaryTakeDamageInfo_t>> Summaries {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<SummaryTakeDamageInfo_t>>>(Schema.GetOffset(0x1CAF012DD0AD2A53));
   }
 
 

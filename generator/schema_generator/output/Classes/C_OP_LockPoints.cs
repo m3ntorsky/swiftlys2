@@ -9,9 +9,6 @@ internal partial class C_OP_LockPoints : CParticleFunctionOperator, IC_OP_LockPo
   public C_OP_LockPoints(nint handle) : base(handle) {
   }
 
-  public C_OP_LockPoints(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int MinCol {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x68C45815E41E1FFB));
   }

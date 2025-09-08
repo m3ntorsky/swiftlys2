@@ -9,9 +9,6 @@ internal partial class CPropDoorRotating : CBasePropDoor, IPropDoorRotating {
   public CPropDoorRotating(nint handle) : base(handle) {
   }
 
-  public CPropDoorRotating(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Axis {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x289EB6130AF9CE54));
   }
@@ -60,8 +57,8 @@ internal partial class CPropDoorRotating : CBasePropDoor, IPropDoorRotating {
   public ref bool AjarDoorShouldntAlwaysOpen {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x289EB6138B1717E1));
   }
-  public ref CHandle< CEntityBlocker > EntityBlocker {
-    get => ref _Handle.AsRef<CHandle< CEntityBlocker >>(Schema.GetOffset(0x289EB6139318939A));
+  public CHandle<IEntityBlocker> EntityBlocker {
+    get => new CHandle<CEntityBlocker>(_Handle + Schema.GetOffset(0x289EB6139318939A));
   }
 
 

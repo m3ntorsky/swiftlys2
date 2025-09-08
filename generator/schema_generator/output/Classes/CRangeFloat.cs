@@ -9,11 +9,8 @@ internal partial class CRangeFloat : SchemaClass, IRangeFloat {
   public CRangeFloat(nint handle) : base(handle) {
   }
 
-  public CRangeFloat(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<float32> Value {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0xD3CD83EB7F437844));
+  public ISchemaFixedArray<float> Value {
+    get => new SchemaFixedArray<float>(_Handle, 0xD3CD83EB7F437844, 2, 4, 4);
   }
 
 

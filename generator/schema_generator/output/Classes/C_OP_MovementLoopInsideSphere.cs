@@ -9,9 +9,6 @@ internal partial class C_OP_MovementLoopInsideSphere : CParticleFunctionOperator
   public C_OP_MovementLoopInsideSphere(nint handle) : base(handle) {
   }
 
-  public C_OP_MovementLoopInsideSphere(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x7C19959FEB661472));
   }

@@ -4,5 +4,68 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IItemGeneric : IItem {
 
-
+  public ref bool HasTriggerRadius { get; }
+  
+  public ref bool HasPickupRadius { get; }
+  
+  public ref float PickupRadiusSqr { get; }
+  
+  public ref float TriggerRadiusSqr { get; }
+  
+  public IGameTime_t LastPickupCheck { get; }
+  
+  public ref bool PlayerCounterListenerAdded { get; }
+  
+  public ref bool PlayerInTriggerRadius { get; }
+  
+  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> SpawnParticleEffect { get; }
+  
+  public ref CUtlSymbolLarge AmbientSoundEffect { get; }
+  
+  public ref bool AutoStartAmbientSound { get; }
+  
+  public ref CUtlSymbolLarge SpawnScriptFunction { get; }
+  
+  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> PickupParticleEffect { get; }
+  
+  public ref CUtlSymbolLarge PickupSoundEffect { get; }
+  
+  public ref CUtlSymbolLarge PickupScriptFunction { get; }
+  
+  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> TimeoutParticleEffect { get; }
+  
+  public ref CUtlSymbolLarge TimeoutSoundEffect { get; }
+  
+  public ref CUtlSymbolLarge TimeoutScriptFunction { get; }
+  
+  public ref CUtlSymbolLarge PickupFilterName { get; }
+  
+  public CHandle<IBaseFilter> PickupFilter { get; }
+  
+  public IEntityIOOutput OnPickup { get; }
+  
+  public IEntityIOOutput OnTimeout { get; }
+  
+  public IEntityIOOutput OnTriggerStartTouch { get; }
+  
+  public IEntityIOOutput OnTriggerTouch { get; }
+  
+  public IEntityIOOutput OnTriggerEndTouch { get; }
+  
+  public ref CUtlSymbolLarge AllowPickupScriptFunction { get; }
+  
+  public ref float PickupRadius { get; }
+  
+  public ref float TriggerRadius { get; }
+  
+  public ref CUtlSymbolLarge TriggerSoundEffect { get; }
+  
+  public ref bool GlowWhenInTrigger { get; }
+  
+  public ref Color GlowColor { get; }
+  
+  public ref bool Useable { get; }
+  
+  public CHandle<IItemGenericTriggerHelper> TriggerHelper { get; }
+  
 }

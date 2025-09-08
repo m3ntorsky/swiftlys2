@@ -9,9 +9,6 @@ internal partial class CPhysHinge : CPhysConstraint, IPhysHinge {
   public CPhysHinge(nint handle) : base(handle) {
   }
 
-  public CPhysHinge(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IConstraintSoundInfo SoundInfo {
     get => new ConstraintSoundInfo(_Handle + Schema.GetOffset(0xFCB149B185F704E8));
   }

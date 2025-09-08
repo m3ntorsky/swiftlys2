@@ -9,9 +9,6 @@ internal partial class CSeqCmdSeqDesc : SchemaClass, ISeqCmdSeqDesc {
   public CSeqCmdSeqDesc(nint handle) : base(handle) {
   }
 
-  public CSeqCmdSeqDesc(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CBufferString Name {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x8619E10F63D22D49));
   }
@@ -36,17 +33,17 @@ internal partial class CSeqCmdSeqDesc : SchemaClass, ISeqCmdSeqDesc {
   public ref short NumLocalResults {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x8619E10FC4396DD8));
   }
-  public ref CUtlVector< CSeqCmdLayer > CmdLayerArray {
-    get => ref _Handle.AsRef<CUtlVector< CSeqCmdLayer >>(Schema.GetOffset(0x8619E10FA7272079));
+  public ref CUtlVector CmdLayerArray {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x8619E10FA7272079));
   }
-  public ref CUtlVector< CAnimEventDefinition > EventArray {
-    get => ref _Handle.AsRef<CUtlVector< CAnimEventDefinition >>(Schema.GetOffset(0x8619E10FB9FB599C));
+  public ref CUtlVector EventArray {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x8619E10FB9FB599C));
   }
-  public ref CUtlVector< CAnimActivity > ActivityArray {
-    get => ref _Handle.AsRef<CUtlVector< CAnimActivity >>(Schema.GetOffset(0x8619E10F38F0ACE1));
+  public ref CUtlVector ActivityArray {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x8619E10F38F0ACE1));
   }
-  public ref CUtlVector< CSeqPoseSetting > PoseSettingArray {
-    get => ref _Handle.AsRef<CUtlVector< CSeqPoseSetting >>(Schema.GetOffset(0x8619E10FD257125D));
+  public ref CUtlVector PoseSettingArray {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x8619E10FD257125D));
   }
 
 

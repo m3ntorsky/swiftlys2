@@ -9,9 +9,6 @@ internal partial class CPulse_InvokeBinding : SchemaClass, IPulse_InvokeBinding 
   public CPulse_InvokeBinding(nint handle) : base(handle) {
   }
 
-  public CPulse_InvokeBinding(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulseRegisterMap_t RegisterMap {
     get => new PulseRegisterMap_t(_Handle + Schema.GetOffset(0x3632DF0D7BD4CE96));
   }

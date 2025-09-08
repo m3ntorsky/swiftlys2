@@ -9,9 +9,6 @@ internal partial class CNmFollowBoneNode__CDefinition : CNmPassthroughNode::CDef
   public CNmFollowBoneNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFollowBoneNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol Bone {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x51BD725C8020F02F));
   }

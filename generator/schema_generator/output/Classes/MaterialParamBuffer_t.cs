@@ -9,9 +9,6 @@ internal partial class MaterialParamBuffer_t : MaterialParam_t, IMaterialParamBu
   public MaterialParamBuffer_t(nint handle) : base(handle) {
   }
 
-  public MaterialParamBuffer_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlBinaryBlock Value {
     get => ref _Handle.AsRef<CUtlBinaryBlock>(Schema.GetOffset(0x90FFBDB46B99AEEA));
   }

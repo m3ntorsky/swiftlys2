@@ -9,11 +9,8 @@ internal partial class FeTreeChildren_t : SchemaClass, IFeTreeChildren_t {
   public FeTreeChildren_t(nint handle) : base(handle) {
   }
 
-  public FeTreeChildren_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<uint16> Child {
-    get => new SchemaFixedArray<uint16>(_Handle + Schema.GetOffset(0xD4BAF4A0E8CD59A1));
+  public ISchemaFixedArray<ushort> Child {
+    get => new SchemaFixedArray<ushort>(_Handle, 0xD4BAF4A0E8CD59A1, 2, 2, 2);
   }
 
 

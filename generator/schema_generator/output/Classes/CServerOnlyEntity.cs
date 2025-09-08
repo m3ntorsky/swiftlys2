@@ -9,9 +9,6 @@ internal partial class CServerOnlyEntity : CBaseEntity, IServerOnlyEntity {
   public CServerOnlyEntity(nint handle) : base(handle) {
   }
 
-  public CServerOnlyEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

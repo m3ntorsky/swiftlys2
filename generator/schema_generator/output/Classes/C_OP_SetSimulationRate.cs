@@ -9,9 +9,6 @@ internal partial class C_OP_SetSimulationRate : CParticleFunctionPreEmission, IC
   public C_OP_SetSimulationRate(nint handle) : base(handle) {
   }
 
-  public C_OP_SetSimulationRate(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput SimulationScale {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0x6C806DC2994DAEC6));
   }

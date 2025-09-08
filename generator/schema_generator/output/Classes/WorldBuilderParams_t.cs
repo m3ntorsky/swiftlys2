@@ -9,9 +9,6 @@ internal partial class WorldBuilderParams_t : SchemaClass, IWorldBuilderParams_t
   public WorldBuilderParams_t(nint handle) : base(handle) {
   }
 
-  public WorldBuilderParams_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MinDrawVolumeSize {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x37270ACBA9648390));
   }

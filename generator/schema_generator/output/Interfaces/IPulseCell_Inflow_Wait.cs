@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Inflow_Wait : IPulseCell_BaseYieldingInflow {
 
-
+  public IPulse_ResumePoint WakeResume { get; }
+  
 }

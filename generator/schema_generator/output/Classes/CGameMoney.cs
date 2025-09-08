@@ -9,9 +9,6 @@ internal partial class CGameMoney : CRulePointEntity, IGameMoney {
   public CGameMoney(nint handle) : base(handle) {
   }
 
-  public CGameMoney(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnMoneySpent {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xED17C684B6CD990C));
   }

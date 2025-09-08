@@ -9,9 +9,6 @@ internal partial class CSpeedScaleUpdateNode : CUnaryUpdateNode, ISpeedScaleUpda
   public CSpeedScaleUpdateNode(nint handle) : base(handle) {
   }
 
-  public CSpeedScaleUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimParamHandle ParamIndex {
     get => new CAnimParamHandle(_Handle + Schema.GetOffset(0xD43012BC61990A86));
   }

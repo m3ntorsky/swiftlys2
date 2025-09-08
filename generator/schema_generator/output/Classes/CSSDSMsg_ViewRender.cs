@@ -9,9 +9,6 @@ internal partial class CSSDSMsg_ViewRender : SchemaClass, ISSDSMsg_ViewRender {
   public CSSDSMsg_ViewRender(nint handle) : base(handle) {
   }
 
-  public CSSDSMsg_ViewRender(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISceneViewId_t ViewId {
     get => new SceneViewId_t(_Handle + Schema.GetOffset(0x2CD48EEEE976CB25));
   }

@@ -9,63 +9,7 @@ internal partial class CEnvVolumetricFogVolume : CBaseEntity, IEnvVolumetricFogV
   public CEnvVolumetricFogVolume(nint handle) : base(handle) {
   }
 
-  public CEnvVolumetricFogVolume(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref bool Active {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5EDE5CBD8334208F));
-  }
-  public ref Vector BoxMins {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x5EDE5CBDD8201373));
-  }
-  public ref Vector BoxMaxs {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x5EDE5CBD817A3B31));
-  }
-  public ref bool StartDisabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5EDE5CBD61ED0C4F));
-  }
-  public ref bool IndirectUseLPVs {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5EDE5CBDF6508E3D));
-  }
-  public ref float Strength {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5EDE5CBD8F67AF1A));
-  }
-  public ref int FalloffShape {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5EDE5CBD413F21CA));
-  }
-  public ref float FalloffExponent {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5EDE5CBDE4B7D948));
-  }
-  public ref float HeightFogDepth {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5EDE5CBDE7A4BA15));
-  }
-  public ref float HeightFogEdgeWidth {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5EDE5CBD4605AE81));
-  }
-  public ref float IndirectLightStrength {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5EDE5CBD1CE20160));
-  }
-  public ref float SunLightStrength {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5EDE5CBDDE47D3A2));
-  }
-  public ref float NoiseStrength {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5EDE5CBD556ED5D0));
-  }
-  public ref Color TintColor {
-    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x5EDE5CBDAF2613F3));
-  }
-  public ref bool OverrideTintColor {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5EDE5CBDF384934B));
-  }
-  public ref bool OverrideIndirectLightStrength {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5EDE5CBD9AA2A58C));
-  }
-  public ref bool OverrideSunLightStrength {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5EDE5CBD892B7A46));
-  }
-  public ref bool OverrideNoiseStrength {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5EDE5CBD47655E8C));
-  }
 
   public void ActiveUpdated() {
     Schema.Update(_Handle, 0x5EDE5CBD8334208F);

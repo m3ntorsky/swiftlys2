@@ -9,9 +9,6 @@ internal partial class VMixDynamicsDesc_t : SchemaClass, IVMixDynamicsDesc_t {
   public VMixDynamicsDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixDynamicsDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float FldbGain {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC4119B7931BF2DF2));
   }

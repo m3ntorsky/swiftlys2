@@ -9,15 +9,6 @@ internal partial class CColorCorrection : CBaseEntity, IColorCorrection {
   public CColorCorrection(nint handle) : base(handle) {
   }
 
-  public CColorCorrection(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref float FadeInDuration {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x86645E1101B5EB8E));
-  }
-  public ref float FadeOutDuration {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x86645E11543512CF));
-  }
   public ref float StartFadeInWeight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x86645E11E12AF000));
   }
@@ -30,35 +21,8 @@ internal partial class CColorCorrection : CBaseEntity, IColorCorrection {
   public IGameTime_t TimeStartFadeOut {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x86645E118028C93C));
   }
-  public ref float MaxWeight {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x86645E1155F00F23));
-  }
   public ref bool StartDisabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x86645E1161ED0C4F));
-  }
-  public ref bool Enabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x86645E116154EB7E));
-  }
-  public ref bool Master {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x86645E115AFF9193));
-  }
-  public ref bool ClientSide {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x86645E116B28362D));
-  }
-  public ref bool Exclusive {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x86645E11D84BE6BB));
-  }
-  public ref float MinFalloff {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x86645E116628F1F3));
-  }
-  public ref float MaxFalloff {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x86645E118837D7E1));
-  }
-  public ref float CurWeight {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x86645E112EA7ED7F));
-  }
-  public ISchemaFixedString NetlookupFilename {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x86645E11543AB1EB));
   }
   public ref CUtlSymbolLarge LookupFilename {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x86645E112611A2C6));

@@ -9,9 +9,6 @@ internal partial class CVoiceContainerSetElement : SchemaClass, IVoiceContainerS
   public CVoiceContainerSetElement(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerSetElement(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISoundContainerReference Sound {
     get => new CSoundContainerReference(_Handle + Schema.GetOffset(0x1280027B4E1C4FB4));
   }

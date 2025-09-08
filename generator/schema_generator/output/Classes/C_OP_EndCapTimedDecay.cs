@@ -9,9 +9,6 @@ internal partial class C_OP_EndCapTimedDecay : CParticleFunctionOperator, IC_OP_
   public C_OP_EndCapTimedDecay(nint handle) : base(handle) {
   }
 
-  public C_OP_EndCapTimedDecay(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float DecayTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x2866C865E94A0656));
   }

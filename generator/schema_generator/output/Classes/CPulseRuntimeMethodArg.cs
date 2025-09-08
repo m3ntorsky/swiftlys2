@@ -9,9 +9,6 @@ internal partial class CPulseRuntimeMethodArg : SchemaClass, IPulseRuntimeMethod
   public CPulseRuntimeMethodArg(nint handle) : base(handle) {
   }
 
-  public CPulseRuntimeMethodArg(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField Name {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8B175BCCAE8A266));
   }

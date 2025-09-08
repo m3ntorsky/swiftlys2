@@ -9,9 +9,6 @@ internal partial class CPulseCell_Step_DebugLog : CPulseCell_BaseFlow, IPulseCel
   public CPulseCell_Step_DebugLog(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Step_DebugLog(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

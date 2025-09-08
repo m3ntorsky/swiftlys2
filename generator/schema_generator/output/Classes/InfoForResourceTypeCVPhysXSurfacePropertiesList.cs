@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCVPhysXSurfacePropertiesList : SchemaC
   public InfoForResourceTypeCVPhysXSurfacePropertiesList(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCVPhysXSurfacePropertiesList(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

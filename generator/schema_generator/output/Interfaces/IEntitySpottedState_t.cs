@@ -4,5 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEntitySpottedState_t : ISchemaClass {
 
-
+  public ref bool Spotted { get; }
+  
+  public ISchemaFixedArray<uint> SpottedByMask { get; }
+  
 }

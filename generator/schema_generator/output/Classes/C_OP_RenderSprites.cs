@@ -9,9 +9,6 @@ internal partial class C_OP_RenderSprites : CBaseRendererSource2, IC_OP_RenderSp
   public C_OP_RenderSprites(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderSprites(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionRendererFloatInput SequenceOverride {
     get => new CParticleCollectionRendererFloatInput(_Handle + Schema.GetOffset(0x35C7913533862044));
   }

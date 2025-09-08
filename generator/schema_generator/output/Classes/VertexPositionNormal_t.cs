@@ -9,9 +9,6 @@ internal partial class VertexPositionNormal_t : SchemaClass, IVertexPositionNorm
   public VertexPositionNormal_t(nint handle) : base(handle) {
   }
 
-  public VertexPositionNormal_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Position {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x47BDE764BD6A6C9E));
   }

@@ -9,9 +9,6 @@ internal partial class CNmControlParameterFloatNode__CDefinition : CNmFloatValue
   public CNmControlParameterFloatNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmControlParameterFloatNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

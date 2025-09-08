@@ -9,14 +9,11 @@ internal partial class CFootLockUpdateNode : CUnaryUpdateNode, IFootLockUpdateNo
   public CFootLockUpdateNode(nint handle) : base(handle) {
   }
 
-  public CFootLockUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IFootLockPoseOpFixedSettings OpFixedSettings {
     get => new FootLockPoseOpFixedSettings(_Handle + Schema.GetOffset(0xA8F37E8E533AB09));
   }
-  public ref CUtlVector< FootFixedSettings > FootSettings {
-    get => ref _Handle.AsRef<CUtlVector< FootFixedSettings >>(Schema.GetOffset(0xA8F37E8A7F2ADE4));
+  public ref CUtlVector FootSettings {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA8F37E8A7F2ADE4));
   }
   public IAnimInputDamping HipShiftDamping {
     get => new CAnimInputDamping(_Handle + Schema.GetOffset(0xA8F37E80EA57628));

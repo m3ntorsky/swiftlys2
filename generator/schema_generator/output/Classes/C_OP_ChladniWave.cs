@@ -9,9 +9,6 @@ internal partial class C_OP_ChladniWave : CParticleFunctionOperator, IC_OP_Chlad
   public C_OP_ChladniWave(nint handle) : base(handle) {
   }
 
-  public C_OP_ChladniWave(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x5C575E1BE5729606));
   }

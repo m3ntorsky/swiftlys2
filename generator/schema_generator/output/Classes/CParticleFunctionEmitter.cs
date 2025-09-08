@@ -9,9 +9,6 @@ internal partial class CParticleFunctionEmitter : CParticleFunction, IParticleFu
   public CParticleFunctionEmitter(nint handle) : base(handle) {
   }
 
-  public CParticleFunctionEmitter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int EmitterIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x72B3FA32117F91FF));
   }

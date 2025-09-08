@@ -9,9 +9,6 @@ internal partial class CNmVelocityBasedSpeedScaleNode__CDefinition : CNmSpeedSca
   public CNmVelocityBasedSpeedScaleNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmVelocityBasedSpeedScaleNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CAnimScriptBase : SchemaClass, IAnimScriptBase {
   public CAnimScriptBase(nint handle) : base(handle) {
   }
 
-  public CAnimScriptBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool IsValid {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x621CEA890E4A2BC1));
   }

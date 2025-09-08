@@ -9,9 +9,6 @@ internal partial class C_OP_RemapScalarOnceTimed : CParticleFunctionOperator, IC
   public C_OP_RemapScalarOnceTimed(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapScalarOnceTimed(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Proportional {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xF5150932891F328A));
   }

@@ -9,9 +9,6 @@ internal partial class thinkfunc_t : SchemaClass, Ithinkfunc_t {
   public thinkfunc_t(nint handle) : base(handle) {
   }
 
-  public thinkfunc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField Fn {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x8ED693FAD922E237));
   }

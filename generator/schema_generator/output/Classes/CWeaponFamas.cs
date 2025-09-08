@@ -9,9 +9,6 @@ internal partial class CWeaponFamas : CCSWeaponBaseGun, IWeaponFamas {
   public CWeaponFamas(nint handle) : base(handle) {
   }
 
-  public CWeaponFamas(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

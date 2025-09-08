@@ -9,9 +9,6 @@ internal partial class CBaseDoor : CBaseToggle, IBaseDoor {
   public CBaseDoor(nint handle) : base(handle) {
   }
 
-  public CBaseDoor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref QAngle MoveEntitySpace {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0x798B70E7325319F9));
   }
@@ -92,9 +89,6 @@ internal partial class CBaseDoor : CBaseToggle, IBaseDoor {
   }
   public ref bool IsChaining {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x798B70E7A186D5CA));
-  }
-  public ref bool IsUsable {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x798B70E799E20219));
   }
 
   public void IsUsableUpdated() {

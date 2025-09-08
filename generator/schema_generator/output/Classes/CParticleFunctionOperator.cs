@@ -9,9 +9,6 @@ internal partial class CParticleFunctionOperator : CParticleFunction, IParticleF
   public CParticleFunctionOperator(nint handle) : base(handle) {
   }
 
-  public CParticleFunctionOperator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

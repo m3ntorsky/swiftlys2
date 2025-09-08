@@ -9,9 +9,6 @@ internal partial class IHasAttributes : SchemaClass, IIHasAttributes {
   public IHasAttributes(nint handle) : base(handle) {
   }
 
-  public IHasAttributes(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,12 +9,6 @@ internal partial class CRagdollManager : CBaseEntity, IRagdollManager {
   public CRagdollManager(nint handle) : base(handle) {
   }
 
-  public CRagdollManager(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref byte CurrentMaxRagdollCount {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x3C67654C8544F4A7));
-  }
   public ref int MaxRagdollCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x3C67654CC3A8C254));
   }

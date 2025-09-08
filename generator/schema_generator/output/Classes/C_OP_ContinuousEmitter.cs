@@ -9,9 +9,6 @@ internal partial class C_OP_ContinuousEmitter : CParticleFunctionEmitter, IC_OP_
   public C_OP_ContinuousEmitter(nint handle) : base(handle) {
   }
 
-  public C_OP_ContinuousEmitter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput EmissionDuration {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0x6B2A982090181C90));
   }

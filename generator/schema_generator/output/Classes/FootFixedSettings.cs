@@ -9,9 +9,6 @@ internal partial class FootFixedSettings : SchemaClass, IFootFixedSettings {
   public FootFixedSettings(nint handle) : base(handle) {
   }
 
-  public FootFixedSettings(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ITraceSettings_t TraceSettings {
     get => new TraceSettings_t(_Handle + Schema.GetOffset(0x3401F9D0115F2D3B));
   }

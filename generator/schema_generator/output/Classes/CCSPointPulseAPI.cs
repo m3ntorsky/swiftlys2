@@ -9,9 +9,6 @@ internal partial class CCSPointPulseAPI : SchemaClass, ICSPointPulseAPI {
   public CCSPointPulseAPI(nint handle) : base(handle) {
   }
 
-  public CCSPointPulseAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

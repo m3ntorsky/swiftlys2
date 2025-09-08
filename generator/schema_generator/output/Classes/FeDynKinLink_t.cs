@@ -9,9 +9,6 @@ internal partial class FeDynKinLink_t : SchemaClass, IFeDynKinLink_t {
   public FeDynKinLink_t(nint handle) : base(handle) {
   }
 
-  public FeDynKinLink_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort Parent {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xA0FBF6C40AABB9D1));
   }

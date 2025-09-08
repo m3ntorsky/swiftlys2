@@ -9,9 +9,6 @@ internal partial class PulseGraphExecutionHistoryNodeDesc_t : SchemaClass, IPuls
   public PulseGraphExecutionHistoryNodeDesc_t(nint handle) : base(handle) {
   }
 
-  public PulseGraphExecutionHistoryNodeDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CBufferString StrCellDesc {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x7F4ECA02AD3F01DD));
   }

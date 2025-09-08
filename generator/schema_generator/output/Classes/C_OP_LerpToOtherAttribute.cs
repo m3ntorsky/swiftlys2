@@ -9,9 +9,6 @@ internal partial class C_OP_LerpToOtherAttribute : CParticleFunctionOperator, IC
   public C_OP_LerpToOtherAttribute(nint handle) : base(handle) {
   }
 
-  public C_OP_LerpToOtherAttribute(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput Interpolation {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0x1F92A80BCF55B987));
   }

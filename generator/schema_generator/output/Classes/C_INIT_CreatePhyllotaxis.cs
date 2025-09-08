@@ -9,9 +9,6 @@ internal partial class C_INIT_CreatePhyllotaxis : CParticleFunctionInitializer, 
   public C_INIT_CreatePhyllotaxis(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreatePhyllotaxis(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x81F1ABBB3F31A6BD));
   }

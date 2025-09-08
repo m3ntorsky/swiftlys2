@@ -9,26 +9,11 @@ internal partial class CRagdollProp : CBaseAnimGraph, IRagdollProp {
   public CRagdollProp(nint handle) : base(handle) {
   }
 
-  public CRagdollProp(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public Iragdoll_t Ragdoll {
     get => new ragdoll_t(_Handle + Schema.GetOffset(0x9505BA78F62C6568));
   }
   public ref bool StartDisabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9505BA7861ED0C4F));
-  }
-  public ref CUtlVector< bool > RagEnabled {
-    get => ref _Handle.AsRef<CUtlVector< bool >>(Schema.GetOffset(0x9505BA78CD1FB84A));
-  }
-  public ref CUtlVector< Vector > RagPos {
-    get => ref _Handle.AsRef<CUtlVector< Vector >>(Schema.GetOffset(0x9505BA7897C85315));
-  }
-  public ref CUtlVector< QAngle > RagAngles {
-    get => ref _Handle.AsRef<CUtlVector< QAngle >>(Schema.GetOffset(0x9505BA78FD4E530D));
-  }
-  public ref CHandle< CBaseEntity > RagdollSource {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x9505BA7835E0724F));
   }
   public ref uint LastUpdateTickCount {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x9505BA785A98C204));
@@ -39,14 +24,14 @@ internal partial class CRagdollProp : CBaseAnimGraph, IRagdollProp {
   public ref bool FirstCollisionAfterLaunch {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9505BA78C9D93EAC));
   }
-  public ref CHandle< CBaseEntity > DamageEntity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x9505BA784C4C28C5));
+  public CHandle<IBaseEntity> DamageEntity {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x9505BA784C4C28C5));
   }
-  public ref CHandle< CBaseEntity > Killer {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x9505BA780F088B1C));
+  public CHandle<IBaseEntity> Killer {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x9505BA780F088B1C));
   }
-  public ref CHandle< CBasePlayerPawn > PhysicsAttacker {
-    get => ref _Handle.AsRef<CHandle< CBasePlayerPawn >>(Schema.GetOffset(0x9505BA787A5EB877));
+  public CHandle<IBasePlayerPawn> PhysicsAttacker {
+    get => new CHandle<CBasePlayerPawn>(_Handle + Schema.GetOffset(0x9505BA787A5EB877));
   }
   public IGameTime_t LastPhysicsInfluenceTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x9505BA785B5C0E32));
@@ -81,17 +66,14 @@ internal partial class CRagdollProp : CBaseAnimGraph, IRagdollProp {
   public ref bool AllowStretch {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9505BA78F6CDF40F));
   }
-  public ref float BlendWeight {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9505BA78E5D6B9CE));
-  }
   public ref float DefaultFadeScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9505BA784DA9700C));
   }
-  public ref CUtlVector< Vector > RagdollMins {
-    get => ref _Handle.AsRef<CUtlVector< Vector >>(Schema.GetOffset(0x9505BA78CD1755B5));
+  public ref CUtlVector<Vector> RagdollMins {
+    get => ref _Handle.AsRef<CUtlVector<Vector>>(Schema.GetOffset(0x9505BA78CD1755B5));
   }
-  public ref CUtlVector< Vector > RagdollMaxs {
-    get => ref _Handle.AsRef<CUtlVector< Vector >>(Schema.GetOffset(0x9505BA7833F9714F));
+  public ref CUtlVector<Vector> RagdollMaxs {
+    get => ref _Handle.AsRef<CUtlVector<Vector>>(Schema.GetOffset(0x9505BA7833F9714F));
   }
   public ref bool ShouldDeleteActivationRecord {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9505BA7838134064));

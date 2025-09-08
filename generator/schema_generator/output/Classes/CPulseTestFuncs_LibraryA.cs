@@ -9,9 +9,6 @@ internal partial class CPulseTestFuncs_LibraryA : SchemaClass, IPulseTestFuncs_L
   public CPulseTestFuncs_LibraryA(nint handle) : base(handle) {
   }
 
-  public CPulseTestFuncs_LibraryA(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

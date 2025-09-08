@@ -9,9 +9,6 @@ internal partial class C_INIT_SetHitboxToClosest : CParticleFunctionInitializer,
   public C_INIT_SetHitboxToClosest(nint handle) : base(handle) {
   }
 
-  public C_INIT_SetHitboxToClosest(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x10F3322C3F31A6BD));
   }
@@ -22,7 +19,7 @@ internal partial class C_INIT_SetHitboxToClosest : CParticleFunctionInitializer,
     get => new CParticleCollectionVecInput(_Handle + Schema.GetOffset(0x10F3322C58EE3FB7));
   }
   public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x10F3322C6A21BB0E));
+    get => new SchemaFixedString(_Handle, 0x10F3322C6A21BB0E, 128, 1, 1);
   }
   public ref bool UseBones {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x10F3322C10D1938B));

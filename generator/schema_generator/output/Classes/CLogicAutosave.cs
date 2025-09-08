@@ -9,9 +9,6 @@ internal partial class CLogicAutosave : CLogicalEntity, ILogicAutosave {
   public CLogicAutosave(nint handle) : base(handle) {
   }
 
-  public CLogicAutosave(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool ForceNewLevelUnit {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE30CCBF21473BFDE));
   }

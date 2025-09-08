@@ -9,9 +9,6 @@ internal partial class CAnimEventQueueListener : CAnimEventListenerBase, IAnimEv
   public CAnimEventQueueListener(nint handle) : base(handle) {
   }
 
-  public CAnimEventQueueListener(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

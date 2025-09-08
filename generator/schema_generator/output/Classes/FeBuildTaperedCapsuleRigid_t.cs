@@ -9,9 +9,6 @@ internal partial class FeBuildTaperedCapsuleRigid_t : FeTaperedCapsuleRigid_t, I
   public FeBuildTaperedCapsuleRigid_t(nint handle) : base(handle) {
   }
 
-  public FeBuildTaperedCapsuleRigid_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Priority {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x444BEEFEE7EFB335));
   }

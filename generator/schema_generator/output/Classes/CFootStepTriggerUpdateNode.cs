@@ -9,11 +9,8 @@ internal partial class CFootStepTriggerUpdateNode : CUnaryUpdateNode, IFootStepT
   public CFootStepTriggerUpdateNode(nint handle) : base(handle) {
   }
 
-  public CFootStepTriggerUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< FootStepTrigger > Triggers {
-    get => ref _Handle.AsRef<CUtlVector< FootStepTrigger >>(Schema.GetOffset(0x799A3B55684C6AF0));
+  public ref CUtlVector Triggers {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x799A3B55684C6AF0));
   }
   public ref float Tolerance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x799A3B558C29728E));

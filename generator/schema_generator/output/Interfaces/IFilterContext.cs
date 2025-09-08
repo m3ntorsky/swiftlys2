@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFilterContext : IBaseFilter {
 
-
+  public ref CUtlSymbolLarge FilterContext { get; }
+  
 }

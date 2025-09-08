@@ -9,9 +9,6 @@ internal partial class CPathCorner : CPointEntity, IPathCorner {
   public CPathCorner(nint handle) : base(handle) {
   }
 
-  public CPathCorner(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Wait {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF74EA45499A062B6));
   }

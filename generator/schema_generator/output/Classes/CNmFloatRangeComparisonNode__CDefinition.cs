@@ -9,9 +9,6 @@ internal partial class CNmFloatRangeComparisonNode__CDefinition : CNmBoolValueNo
   public CNmFloatRangeComparisonNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFloatRangeComparisonNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField Range {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6F364CB3D639CF2));
   }

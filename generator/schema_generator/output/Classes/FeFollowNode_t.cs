@@ -9,9 +9,6 @@ internal partial class FeFollowNode_t : SchemaClass, IFeFollowNode_t {
   public FeFollowNode_t(nint handle) : base(handle) {
   }
 
-  public FeFollowNode_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort ParentNode {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x8BE908126CBBA7F9));
   }

@@ -9,9 +9,6 @@ internal partial class CRagdollConstraint : CPhysConstraint, IRagdollConstraint 
   public CRagdollConstraint(nint handle) : base(handle) {
   }
 
-  public CRagdollConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Xmin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF36946DA76E67DC1));
   }

@@ -9,9 +9,6 @@ internal partial class CFootStride : SchemaClass, IFootStride {
   public CFootStride(nint handle) : base(handle) {
   }
 
-  public CFootStride(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IFootCycleDefinition Definition {
     get => new CFootCycleDefinition(_Handle + Schema.GetOffset(0x6093B6FA95E6F40));
   }

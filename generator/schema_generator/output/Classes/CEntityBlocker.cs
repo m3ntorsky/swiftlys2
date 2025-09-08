@@ -9,9 +9,6 @@ internal partial class CEntityBlocker : CBaseModelEntity, IEntityBlocker {
   public CEntityBlocker(nint handle) : base(handle) {
   }
 
-  public CEntityBlocker(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

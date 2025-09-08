@@ -9,9 +9,6 @@ internal partial class VMixDynamics3BandDesc_t : SchemaClass, IVMixDynamics3Band
   public VMixDynamics3BandDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixDynamics3BandDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float FldbGainOutput {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA4A1000DFC3C16D3));
   }
@@ -40,7 +37,7 @@ internal partial class VMixDynamics3BandDesc_t : SchemaClass, IVMixDynamics3Band
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA4A1000D87DF35F9));
   }
   public IVMixDynamicsBand_t BandDesc {
-    get => new VMixDynamicsBand_t(_Handle + Schema.GetOffset(0xA4A1000D04203F47));
+    get => new VMixDynamicsBand_t(_Handle, 0xA4A1000D04203F47, 3, 36, 4);
   }
 
 

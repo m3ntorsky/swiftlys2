@@ -9,9 +9,6 @@ internal partial class CEnvSoundscapeAlias_snd_soundscape : CEnvSoundscape, IEnv
   public CEnvSoundscapeAlias_snd_soundscape(nint handle) : base(handle) {
   }
 
-  public CEnvSoundscapeAlias_snd_soundscape(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

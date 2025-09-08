@@ -9,9 +9,6 @@ internal partial class CDampedPathAnimMotorUpdater : CPathAnimMotorUpdaterBase, 
   public CDampedPathAnimMotorUpdater(nint handle) : base(handle) {
   }
 
-  public CDampedPathAnimMotorUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float AnticipationTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1519DE4D43C5CA9B));
   }

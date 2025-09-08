@@ -9,9 +9,6 @@ internal partial class CAnimGraphModelBinding : SchemaClass, IAnimGraphModelBind
   public CAnimGraphModelBinding(nint handle) : base(handle) {
   }
 
-  public CAnimGraphModelBinding(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString ModelName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xC0F296335D35B6E1));
   }

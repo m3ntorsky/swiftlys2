@@ -9,9 +9,6 @@ internal partial class AnimationSnapshotBase_t : SchemaClass, IAnimationSnapshot
   public AnimationSnapshotBase_t(nint handle) : base(handle) {
   }
 
-  public AnimationSnapshotBase_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RealTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x608F9331168EC02));
   }
@@ -21,14 +18,14 @@ internal partial class AnimationSnapshotBase_t : SchemaClass, IAnimationSnapshot
   public ref bool BonesInWorldSpace {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x608F933BDD22AA1));
   }
-  public ref CUtlVector< uint32 > BoneSetupMask {
-    get => ref _Handle.AsRef<CUtlVector< uint32 >>(Schema.GetOffset(0x608F9334B3C48C8));
+  public ref CUtlVector<uint> BoneSetupMask {
+    get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0x608F9334B3C48C8));
   }
-  public ref CUtlVector< matrix3x4a_t > BoneTransforms {
-    get => ref _Handle.AsRef<CUtlVector< matrix3x4a_t >>(Schema.GetOffset(0x608F933ED000DE6));
+  public ref CUtlVector<matrix3x4a_t> BoneTransforms {
+    get => ref _Handle.AsRef<CUtlVector<matrix3x4a_t>>(Schema.GetOffset(0x608F933ED000DE6));
   }
-  public ref CUtlVector< float32 > FlexControllers {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x608F9337742939B));
+  public ref CUtlVector<float> FlexControllers {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x608F9337742939B));
   }
   public ref AnimationSnapshotType_t SnapshotType {
     get => ref _Handle.AsRef<AnimationSnapshotType_t>(Schema.GetOffset(0x608F933533E5725));

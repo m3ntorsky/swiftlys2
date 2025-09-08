@@ -9,9 +9,6 @@ internal partial class CInfoGameEventProxy : CPointEntity, IInfoGameEventProxy {
   public CInfoGameEventProxy(nint handle) : base(handle) {
   }
 
-  public CInfoGameEventProxy(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge EventName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x483B3FC078114A54));
   }

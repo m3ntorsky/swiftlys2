@@ -9,9 +9,6 @@ internal partial class CPhysSurfacePropertiesVehicle : SchemaClass, IPhysSurface
   public CPhysSurfacePropertiesVehicle(nint handle) : base(handle) {
   }
 
-  public CPhysSurfacePropertiesVehicle(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float WheelDrag {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5B1104DCC04986AE));
   }

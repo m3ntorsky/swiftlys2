@@ -9,11 +9,8 @@ internal partial class CSoundEventMetaData : SchemaClass, ISoundEventMetaData {
   public CSoundEventMetaData(nint handle) : base(handle) {
   }
 
-  public CSoundEventMetaData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CStrongHandle< InfoForResourceTypeCVMixListResource > SoundEventVMix {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCVMixListResource >>(Schema.GetOffset(0xE03E2D8ED7B83398));
+  public CStrongHandle<IInfoForResourceTypeCVMixListResource> SoundEventVMix {
+    get => new CStrongHandle<InfoForResourceTypeCVMixListResource>(_Handle + Schema.GetOffset(0xE03E2D8ED7B83398));
   }
 
 

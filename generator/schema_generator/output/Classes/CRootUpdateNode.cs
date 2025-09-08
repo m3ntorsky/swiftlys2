@@ -9,9 +9,6 @@ internal partial class CRootUpdateNode : CUnaryUpdateNode, IRootUpdateNode {
   public CRootUpdateNode(nint handle) : base(handle) {
   }
 
-  public CRootUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

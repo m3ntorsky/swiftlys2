@@ -9,14 +9,11 @@ internal partial class SkeletonDemoDb_t : SchemaClass, ISkeletonDemoDb_t {
   public SkeletonDemoDb_t(nint handle) : base(handle) {
   }
 
-  public SkeletonDemoDb_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVector<PointerTo<SkeletonAnimCapture_t>> AnimCaptures {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<SkeletonAnimCapture_t>>>(Schema.GetOffset(0xF4F5DA643E069D13));
   }
-
-  public ref CUtlVector< SkeletonAnimCapture_t* > AnimCaptures {
-    get => ref _Handle.AsRef<CUtlVector< SkeletonAnimCapture_t* >>(Schema.GetOffset(0xF4F5DA643E069D13));
-  }
-  public ref CUtlVector< SkeletonAnimCapture_t::Camera_t > CameraTrack {
-    get => ref _Handle.AsRef<CUtlVector< SkeletonAnimCapture_t::Camera_t >>(Schema.GetOffset(0xF4F5DA64EFF0F8DD));
+  public ref CUtlVector CameraTrack {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xF4F5DA64EFF0F8DD));
   }
   public ref float RecordingTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF4F5DA64D29049CB));

@@ -9,9 +9,6 @@ internal partial class SoundOpvarTraceResult_t : SchemaClass, ISoundOpvarTraceRe
   public SoundOpvarTraceResult_t(nint handle) : base(handle) {
   }
 
-  public SoundOpvarTraceResult_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Pos {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xF93EB0CBE5D6FAFD));
   }

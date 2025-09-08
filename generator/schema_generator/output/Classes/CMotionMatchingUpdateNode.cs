@@ -9,17 +9,14 @@ internal partial class CMotionMatchingUpdateNode : CLeafUpdateNode, IMotionMatch
   public CMotionMatchingUpdateNode(nint handle) : base(handle) {
   }
 
-  public CMotionMatchingUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IMotionDataSet DataSet {
     get => new CMotionDataSet(_Handle + Schema.GetOffset(0x69501C92DA4F8423));
   }
-  public ref CUtlVector< CSmartPtr< CMotionMetricEvaluator > > Metrics {
-    get => ref _Handle.AsRef<CUtlVector< CSmartPtr< CMotionMetricEvaluator > >>(Schema.GetOffset(0x69501C922104DB96));
+  public ref CUtlVector Metrics {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x69501C922104DB96));
   }
-  public ref CUtlVector< float32 > Weights {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x69501C9277B2F91E));
+  public ref CUtlVector<float> Weights {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x69501C9277B2F91E));
   }
   public ref bool SearchEveryTick {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x69501C92F2CEEE05));

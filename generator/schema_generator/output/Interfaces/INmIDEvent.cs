@@ -4,5 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmIDEvent : INmEvent {
 
-
+  public ref CGlobalSymbol ID { get; }
+  
+  public ref CGlobalSymbol SecondaryID { get; }
+  
 }

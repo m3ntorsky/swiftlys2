@@ -9,9 +9,6 @@ internal partial class CMotionNode : SchemaClass, IMotionNode {
   public CMotionNode(nint handle) : base(handle) {
   }
 
-  public CMotionNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB29D04644D8F5786));
   }

@@ -9,9 +9,6 @@ internal partial class CNmSyncTrack__EventMarker_t : SchemaClass, INmSyncTrack__
   public CNmSyncTrack__EventMarker_t(nint handle) : base(handle) {
   }
 
-  public CNmSyncTrack__EventMarker_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public INmPercent_t StartTime {
     get => new NmPercent_t(_Handle + Schema.GetOffset(0x1BCC69006330E7EE));
   }

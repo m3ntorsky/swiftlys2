@@ -9,9 +9,6 @@ internal partial class C_INIT_RtEnvCull : CParticleFunctionInitializer, IC_INIT_
   public C_INIT_RtEnvCull(nint handle) : base(handle) {
   }
 
-  public C_INIT_RtEnvCull(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector TestDir {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xEA96DD4FC17166B4));
   }
@@ -28,7 +25,7 @@ internal partial class C_INIT_RtEnvCull : CParticleFunctionInitializer, IC_INIT_
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xEA96DD4FA38568F0));
   }
   public ISchemaFixedString RtEnvName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xEA96DD4FC32A9775));
+    get => new SchemaFixedString(_Handle, 0xEA96DD4FC32A9775, 128, 1, 1);
   }
   public ref int RTEnvCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xEA96DD4F01881731));

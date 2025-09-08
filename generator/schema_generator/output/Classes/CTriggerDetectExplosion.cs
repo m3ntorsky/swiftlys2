@@ -9,9 +9,6 @@ internal partial class CTriggerDetectExplosion : CBaseTrigger, ITriggerDetectExp
   public CTriggerDetectExplosion(nint handle) : base(handle) {
   }
 
-  public CTriggerDetectExplosion(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnDetectedExplosion {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xEDC17DD03CDD7F71));
   }

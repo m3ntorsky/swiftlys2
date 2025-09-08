@@ -9,35 +9,26 @@ internal partial class CPointCommentaryNode : CBaseAnimGraph, IPointCommentaryNo
   public CPointCommentaryNode(nint handle) : base(handle) {
   }
 
-  public CPointCommentaryNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge PreCommands {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1EE820D5A9BA18C4));
   }
   public ref CUtlSymbolLarge PostCommands {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1EE820D52B9BBDED));
   }
-  public ref CUtlSymbolLarge CommentaryFile {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1EE820D5996CE112));
-  }
   public ref CUtlSymbolLarge ViewTarget {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1EE820D57F25C3A9));
   }
-  public ref CHandle< CBaseEntity > ViewTarget {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1EE820D5367DC4F3));
+  public CHandle<IBaseEntity> ViewTarget {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1EE820D5367DC4F3));
   }
-  public ref CHandle< CBaseEntity > ViewTargetAngles {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1EE820D57036CBB3));
+  public CHandle<IBaseEntity> ViewTargetAngles {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1EE820D57036CBB3));
   }
   public ref CUtlSymbolLarge ViewPosition {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1EE820D5F077F9E3));
   }
-  public ref CHandle< CBaseEntity > ViewPosition {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1EE820D50C900ACD));
-  }
-  public ref CHandle< CBaseEntity > ViewPositionMover {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1EE820D596E47DAA));
+  public CHandle<IBaseEntity> ViewPositionMover {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1EE820D596E47DAA));
   }
   public ref bool PreventMovement {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1EE820D50513BCD8));
@@ -77,30 +68,6 @@ internal partial class CPointCommentaryNode : CBaseAnimGraph, IPointCommentaryNo
   }
   public IEntityIOOutput OnCommentaryStopped {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x1EE820D5C05AD020));
-  }
-  public ref bool Active {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1EE820D58334208F));
-  }
-  public IGameTime_t StartTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x1EE820D567FE9DC4));
-  }
-  public ref float StartTimeInCommentary {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1EE820D50E5851F2));
-  }
-  public ref CUtlSymbolLarge Title {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1EE820D53337D6B1));
-  }
-  public ref CUtlSymbolLarge Speakers {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1EE820D5874211AB));
-  }
-  public ref int NodeNumber {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1EE820D57BCFC491));
-  }
-  public ref int NodeNumberMax {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1EE820D5BFDF2335));
-  }
-  public ref bool ListenedTo {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1EE820D545A4FC32));
   }
 
   public void CommentaryFileUpdated() {

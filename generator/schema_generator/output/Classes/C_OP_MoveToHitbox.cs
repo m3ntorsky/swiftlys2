@@ -9,9 +9,6 @@ internal partial class C_OP_MoveToHitbox : CParticleFunctionOperator, IC_OP_Move
   public C_OP_MoveToHitbox(nint handle) : base(handle) {
   }
 
-  public C_OP_MoveToHitbox(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleModelInput ModelInput {
     get => new CParticleModelInput(_Handle + Schema.GetOffset(0x4ACEA8FFEB74120E));
   }
@@ -28,7 +25,7 @@ internal partial class C_OP_MoveToHitbox : CParticleFunctionOperator, IC_OP_Move
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4ACEA8FF46CED122));
   }
   public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x4ACEA8FF6A21BB0E));
+    get => new SchemaFixedString(_Handle, 0x4ACEA8FF6A21BB0E, 128, 1, 1);
   }
   public ref bool UseBones {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4ACEA8FF10D1938B));

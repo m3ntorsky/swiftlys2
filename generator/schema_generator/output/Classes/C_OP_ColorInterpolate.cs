@@ -9,9 +9,6 @@ internal partial class C_OP_ColorInterpolate : CParticleFunctionOperator, IC_OP_
   public C_OP_ColorInterpolate(nint handle) : base(handle) {
   }
 
-  public C_OP_ColorInterpolate(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Color ColorFade {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x2F5E97470841572E));
   }

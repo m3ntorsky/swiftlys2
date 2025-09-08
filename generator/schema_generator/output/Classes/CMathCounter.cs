@@ -9,9 +9,6 @@ internal partial class CMathCounter : CLogicalEntity, IMathCounter {
   public CMathCounter(nint handle) : base(handle) {
   }
 
-  public CMathCounter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Min {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x516742BC3B1A5649));
   }

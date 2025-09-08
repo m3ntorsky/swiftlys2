@@ -9,9 +9,6 @@ internal partial class CInfoLadderDismount : CBaseEntity, IInfoLadderDismount {
   public CInfoLadderDismount(nint handle) : base(handle) {
   }
 
-  public CInfoLadderDismount(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

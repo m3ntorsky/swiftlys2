@@ -9,9 +9,6 @@ internal partial class FeNodeWindBase_t : SchemaClass, IFeNodeWindBase_t {
   public FeNodeWindBase_t(nint handle) : base(handle) {
   }
 
-  public FeNodeWindBase_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort NodeX0 {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x3892EC5081C7FEB9));
   }

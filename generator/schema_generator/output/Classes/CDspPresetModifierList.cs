@@ -9,14 +9,11 @@ internal partial class CDspPresetModifierList : SchemaClass, IDspPresetModifierL
   public CDspPresetModifierList(nint handle) : base(handle) {
   }
 
-  public CDspPresetModifierList(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString DspName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x68EE16FD7E9A0D3));
   }
-  public ref CUtlVector< CDSPMixgroupModifier > Modifiers {
-    get => ref _Handle.AsRef<CUtlVector< CDSPMixgroupModifier >>(Schema.GetOffset(0x68EE16F541F1439));
+  public ref CUtlVector Modifiers {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x68EE16F541F1439));
   }
 
 

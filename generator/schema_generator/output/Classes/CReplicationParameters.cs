@@ -9,9 +9,6 @@ internal partial class CReplicationParameters : SchemaClass, IReplicationParamet
   public CReplicationParameters(nint handle) : base(handle) {
   }
 
-  public CReplicationParameters(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ParticleReplicationMode_t ReplicationMode {
     get => ref _Handle.AsRef<ParticleReplicationMode_t>(Schema.GetOffset(0xFA909F20C8967832));
   }

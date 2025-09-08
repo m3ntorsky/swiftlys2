@@ -9,9 +9,6 @@ internal partial class CParticleVecInput : CParticleInput, IParticleVecInput {
   public CParticleVecInput(nint handle) : base(handle) {
   }
 
-  public CParticleVecInput(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ParticleVecType_t Type {
     get => ref _Handle.AsRef<ParticleVecType_t>(Schema.GetOffset(0xD598DA0A18853D59));
   }

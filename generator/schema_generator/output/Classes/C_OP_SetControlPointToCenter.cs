@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointToCenter : CParticleFunctionPreEmissi
   public C_OP_SetControlPointToCenter(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointToCenter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CP1 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xB2CEB7C2D4B1E579));
   }

@@ -9,9 +9,6 @@ internal partial class CPointGamestatsCounter : CPointEntity, IPointGamestatsCou
   public CPointGamestatsCounter(nint handle) : base(handle) {
   }
 
-  public CPointGamestatsCounter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge StrStatisticName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDB27C27354212AB1));
   }

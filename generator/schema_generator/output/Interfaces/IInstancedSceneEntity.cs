@@ -4,5 +4,18 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IInstancedSceneEntity : ISceneEntity {
 
-
+  public CHandle<IBaseEntity> Owner { get; }
+  
+  public ref bool HadOwner { get; }
+  
+  public ref float PostSpeakDelay { get; }
+  
+  public ref float PreDelay { get; }
+  
+  public ref bool IsBackground { get; }
+  
+  public ref bool RemoveOnCompletion { get; }
+  
+  public CHandle<IBaseEntity> Target { get; }
+  
 }

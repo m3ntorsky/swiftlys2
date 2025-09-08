@@ -9,9 +9,6 @@ internal partial class CAnimCycle : CCycleBase, IAnimCycle {
   public CAnimCycle(nint handle) : base(handle) {
   }
 
-  public CAnimCycle(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

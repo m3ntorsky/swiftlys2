@@ -9,9 +9,6 @@ internal partial class CPulseCell_WaitForCursorsWithTagBase : CPulseCell_BaseYie
   public CPulseCell_WaitForCursorsWithTagBase(nint handle) : base(handle) {
   }
 
-  public CPulseCell_WaitForCursorsWithTagBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CursorsAllowedToWait {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA8108DB0236617EC));
   }

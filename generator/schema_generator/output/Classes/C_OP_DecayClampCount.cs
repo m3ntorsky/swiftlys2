@@ -9,9 +9,6 @@ internal partial class C_OP_DecayClampCount : CParticleFunctionOperator, IC_OP_D
   public C_OP_DecayClampCount(nint handle) : base(handle) {
   }
 
-  public C_OP_DecayClampCount(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput Count {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0xBBD38E0B7D31AC08));
   }

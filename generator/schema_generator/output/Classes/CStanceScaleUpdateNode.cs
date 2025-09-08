@@ -9,9 +9,6 @@ internal partial class CStanceScaleUpdateNode : CUnaryUpdateNode, IStanceScaleUp
   public CStanceScaleUpdateNode(nint handle) : base(handle) {
   }
 
-  public CStanceScaleUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimParamHandle Param {
     get => new CAnimParamHandle(_Handle + Schema.GetOffset(0xA2CC6975679286A4));
   }

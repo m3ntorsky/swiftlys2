@@ -9,9 +9,6 @@ internal partial class CAnimUpdateNodeBase : SchemaClass, IAnimUpdateNodeBase {
   public CAnimUpdateNodeBase(nint handle) : base(handle) {
   }
 
-  public CAnimUpdateNodeBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimNodePath NodePath {
     get => new CAnimNodePath(_Handle + Schema.GetOffset(0xA16B836B69EE5E4E));
   }

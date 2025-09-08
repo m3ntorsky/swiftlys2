@@ -9,9 +9,6 @@ internal partial class CPulseCell_Base : SchemaClass, IPulseCell_Base {
   public CPulseCell_Base(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Base(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulseDocNodeID_t EditorNodeID {
     get => new PulseDocNodeID_t(_Handle + Schema.GetOffset(0xA1B689158D964CBD));
   }

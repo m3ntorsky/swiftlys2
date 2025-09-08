@@ -9,9 +9,6 @@ internal partial class PulseRuntimeCellIndex_t : SchemaClass, IPulseRuntimeCellI
   public PulseRuntimeCellIndex_t(nint handle) : base(handle) {
   }
 
-  public PulseRuntimeCellIndex_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Value {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x21F81EE9DCB0894A));
   }

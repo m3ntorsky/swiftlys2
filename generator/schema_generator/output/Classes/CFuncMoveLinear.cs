@@ -9,9 +9,6 @@ internal partial class CFuncMoveLinear : CBaseToggle, IFuncMoveLinear {
   public CFuncMoveLinear(nint handle) : base(handle) {
   }
 
-  public CFuncMoveLinear(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref MoveLinearAuthoredPos_t AuthoredPosition {
     get => ref _Handle.AsRef<MoveLinearAuthoredPos_t>(Schema.GetOffset(0xDC0EE8941BF65B84));
   }

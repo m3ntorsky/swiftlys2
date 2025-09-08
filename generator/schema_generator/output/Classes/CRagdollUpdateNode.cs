@@ -9,9 +9,6 @@ internal partial class CRagdollUpdateNode : CUnaryUpdateNode, IRagdollUpdateNode
   public CRagdollUpdateNode(nint handle) : base(handle) {
   }
 
-  public CRagdollUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int WeightListIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xB7502AF030288377));
   }

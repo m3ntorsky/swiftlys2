@@ -9,9 +9,6 @@ internal partial class C_OP_SpinYaw : CGeneralSpin, IC_OP_SpinYaw {
   public C_OP_SpinYaw(nint handle) : base(handle) {
   }
 
-  public C_OP_SpinYaw(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

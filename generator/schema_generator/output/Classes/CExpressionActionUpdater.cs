@@ -9,9 +9,6 @@ internal partial class CExpressionActionUpdater : CAnimActionUpdater, IExpressio
   public CExpressionActionUpdater(nint handle) : base(handle) {
   }
 
-  public CExpressionActionUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimParamHandle Param {
     get => new CAnimParamHandle(_Handle + Schema.GetOffset(0x3B8502F3679286A4));
   }

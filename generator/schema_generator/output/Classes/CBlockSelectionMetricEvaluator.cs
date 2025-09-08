@@ -9,9 +9,6 @@ internal partial class CBlockSelectionMetricEvaluator : CMotionMetricEvaluator, 
   public CBlockSelectionMetricEvaluator(nint handle) : base(handle) {
   }
 
-  public CBlockSelectionMetricEvaluator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

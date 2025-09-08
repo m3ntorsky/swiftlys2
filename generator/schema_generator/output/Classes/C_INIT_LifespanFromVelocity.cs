@@ -9,9 +9,6 @@ internal partial class C_INIT_LifespanFromVelocity : CParticleFunctionInitialize
   public C_INIT_LifespanFromVelocity(nint handle) : base(handle) {
   }
 
-  public C_INIT_LifespanFromVelocity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector ComponentScale {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x50DB3853B17954E2));
   }
@@ -28,7 +25,7 @@ internal partial class C_INIT_LifespanFromVelocity : CParticleFunctionInitialize
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x50DB3853ADB06362));
   }
   public ISchemaFixedString CollisionGroupName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x50DB3853D58A3195));
+    get => new SchemaFixedString(_Handle, 0x50DB3853D58A3195, 128, 1, 1);
   }
   public ref ParticleTraceSet_t TraceSet {
     get => ref _Handle.AsRef<ParticleTraceSet_t>(Schema.GetOffset(0x50DB3853BD26C5B2));

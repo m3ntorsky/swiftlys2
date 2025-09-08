@@ -9,9 +9,6 @@ internal partial class C_OP_RtEnvCull : CParticleFunctionOperator, IC_OP_RtEnvCu
   public C_OP_RtEnvCull(nint handle) : base(handle) {
   }
 
-  public C_OP_RtEnvCull(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector TestDir {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x72531BAEC17166B4));
   }
@@ -25,7 +22,7 @@ internal partial class C_OP_RtEnvCull : CParticleFunctionOperator, IC_OP_RtEnvCu
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x72531BAE343222A2));
   }
   public ISchemaFixedString RtEnvName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x72531BAEC32A9775));
+    get => new SchemaFixedString(_Handle, 0x72531BAEC32A9775, 128, 1, 1);
   }
   public ref int RTEnvCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x72531BAE01881731));

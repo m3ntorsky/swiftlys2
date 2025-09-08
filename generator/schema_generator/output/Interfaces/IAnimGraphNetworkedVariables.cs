@@ -4,5 +4,52 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimGraphNetworkedVariables : ISchemaClass {
 
-
+  public ref CUtlVector<uint> PredNetBoolVariables { get; }
+  
+  public ref CUtlVector<byte> PredNetByteVariables { get; }
+  
+  public ref CUtlVector<ushort> PredNetUInt16Variables { get; }
+  
+  public ref CUtlVector<int> PredNetIntVariables { get; }
+  
+  public ref CUtlVector<uint> PredNetUInt32Variables { get; }
+  
+  public ref CUtlVector<ulong> PredNetUInt64Variables { get; }
+  
+  public ref CUtlVector<float> PredNetFloatVariables { get; }
+  
+  public ref CUtlVector<Vector> PredNetVectorVariables { get; }
+  
+  public ref CUtlVector<Quaternion> PredNetQuaternionVariables { get; }
+  
+  public ref CUtlVector<CGlobalSymbol> PredNetGlobalSymbolVariables { get; }
+  
+  public ref CUtlVector<uint> OwnerOnlyPredNetBoolVariables { get; }
+  
+  public ref CUtlVector<byte> OwnerOnlyPredNetByteVariables { get; }
+  
+  public ref CUtlVector<ushort> OwnerOnlyPredNetUInt16Variables { get; }
+  
+  public ref CUtlVector<int> OwnerOnlyPredNetIntVariables { get; }
+  
+  public ref CUtlVector<uint> OwnerOnlyPredNetUInt32Variables { get; }
+  
+  public ref CUtlVector<ulong> OwnerOnlyPredNetUInt64Variables { get; }
+  
+  public ref CUtlVector<float> OwnerOnlyPredNetFloatVariables { get; }
+  
+  public ref CUtlVector<Vector> OwnerOnlyPredNetVectorVariables { get; }
+  
+  public ref CUtlVector<Quaternion> OwnerOnlyPredNetQuaternionVariables { get; }
+  
+  public ref CUtlVector<CGlobalSymbol> OwnerOnlyPredNetGlobalSymbolVariables { get; }
+  
+  public ref int BoolVariablesCount { get; }
+  
+  public ref int OwnerOnlyBoolVariablesCount { get; }
+  
+  public ref int RandomSeedOffset { get; }
+  
+  public ref float LastTeleportTime { get; }
+  
 }

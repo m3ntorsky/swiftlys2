@@ -9,9 +9,6 @@ internal partial class C_OP_TwistAroundAxis : CParticleFunctionForce, IC_OP_Twis
   public C_OP_TwistAroundAxis(nint handle) : base(handle) {
   }
 
-  public C_OP_TwistAroundAxis(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float ForceAmount {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE1FA036870831A84));
   }

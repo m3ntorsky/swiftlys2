@@ -9,9 +9,6 @@ internal partial class CTurnHelperUpdateNode : CUnaryUpdateNode, ITurnHelperUpda
   public CTurnHelperUpdateNode(nint handle) : base(handle) {
   }
 
-  public CTurnHelperUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref AnimValueSource FacingTarget {
     get => ref _Handle.AsRef<AnimValueSource>(Schema.GetOffset(0xDEC0FADCED73C452));
   }

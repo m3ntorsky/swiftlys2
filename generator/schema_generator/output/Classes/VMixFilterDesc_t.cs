@@ -9,9 +9,6 @@ internal partial class VMixFilterDesc_t : SchemaClass, IVMixFilterDesc_t {
   public VMixFilterDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixFilterDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref VMixFilterType_t FilterType {
     get => ref _Handle.AsRef<VMixFilterType_t>(Schema.GetOffset(0x39A87B6971861EDB));
   }

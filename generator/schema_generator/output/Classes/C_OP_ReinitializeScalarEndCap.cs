@@ -9,9 +9,6 @@ internal partial class C_OP_ReinitializeScalarEndCap : CParticleFunctionOperator
   public C_OP_ReinitializeScalarEndCap(nint handle) : base(handle) {
   }
 
-  public C_OP_ReinitializeScalarEndCap(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0xC52E8D41E5729606));
   }

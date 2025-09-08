@@ -9,9 +9,6 @@ internal partial class C_INIT_SequenceFromCP : CParticleFunctionInitializer, IC_
   public C_INIT_SequenceFromCP(nint handle) : base(handle) {
   }
 
-  public C_INIT_SequenceFromCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool KillUnused {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC62FB07C81506527));
   }

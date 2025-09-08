@@ -9,9 +9,6 @@ internal partial class C_OP_SetFloat : CParticleFunctionOperator, IC_OP_SetFloat
   public C_OP_SetFloat(nint handle) : base(handle) {
   }
 
-  public C_OP_SetFloat(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput InputValue {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0xF719E43734445438));
   }

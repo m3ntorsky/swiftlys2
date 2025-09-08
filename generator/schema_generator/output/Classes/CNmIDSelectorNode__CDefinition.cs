@@ -9,14 +9,11 @@ internal partial class CNmIDSelectorNode__CDefinition : CNmIDValueNode::CDefinit
   public CNmIDSelectorNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmIDSelectorNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVectorFixedGrowable<short> ConditionNodeIndices {
+    get => ref _Handle.AsRef<CUtlVectorFixedGrowable<short>>(Schema.GetOffset(0x23876114A144D0F));
   }
-
-  public ref CUtlVectorFixedGrowable< int16, 5 > ConditionNodeIndices {
-    get => ref _Handle.AsRef<CUtlVectorFixedGrowable< int16, 5 >>(Schema.GetOffset(0x23876114A144D0F));
-  }
-  public ref CUtlVectorFixedGrowable< CGlobalSymbol, 5 > Values {
-    get => ref _Handle.AsRef<CUtlVectorFixedGrowable< CGlobalSymbol, 5 >>(Schema.GetOffset(0x2387611FBEDDADB));
+  public ref CUtlVectorFixedGrowable<CGlobalSymbol> Values {
+    get => ref _Handle.AsRef<CUtlVectorFixedGrowable<CGlobalSymbol>>(Schema.GetOffset(0x2387611FBEDDADB));
   }
   public ref CGlobalSymbol DefaultValue {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x2387611BBE0341F));

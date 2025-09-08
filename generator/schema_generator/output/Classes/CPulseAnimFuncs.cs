@@ -9,9 +9,6 @@ internal partial class CPulseAnimFuncs : SchemaClass, IPulseAnimFuncs {
   public CPulseAnimFuncs(nint handle) : base(handle) {
   }
 
-  public CPulseAnimFuncs(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

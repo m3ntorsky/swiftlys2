@@ -9,9 +9,6 @@ internal partial class CCycleControlUpdateNode : CUnaryUpdateNode, ICycleControl
   public CCycleControlUpdateNode(nint handle) : base(handle) {
   }
 
-  public CCycleControlUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref AnimValueSource ValueSource {
     get => ref _Handle.AsRef<AnimValueSource>(Schema.GetOffset(0xB811C15CD4D5B6B7));
   }

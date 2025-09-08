@@ -9,9 +9,6 @@ internal partial class C_OP_BasicMovement : CParticleFunctionOperator, IC_OP_Bas
   public C_OP_BasicMovement(nint handle) : base(handle) {
   }
 
-  public C_OP_BasicMovement(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionVecInput Gravity {
     get => new CParticleCollectionVecInput(_Handle + Schema.GetOffset(0xC8273B20790C70C5));
   }

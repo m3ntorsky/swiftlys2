@@ -9,9 +9,6 @@ internal partial class CSeqPoseSetting : SchemaClass, ISeqPoseSetting {
   public CSeqPoseSetting(nint handle) : base(handle) {
   }
 
-  public CSeqPoseSetting(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CBufferString PoseParameter {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x5EC3BE449DD21486));
   }

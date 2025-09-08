@@ -9,11 +9,8 @@ internal partial class CNmStateMachineNode__CDefinition : CNmPoseNode::CDefiniti
   public CNmStateMachineNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmStateMachineNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlLeanVectorFixedGrowable< CNmStateMachineNode::StateDefinition_t, 5 > StateDefinitions {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable< CNmStateMachineNode::StateDefinition_t, 5 >>(Schema.GetOffset(0xA73F392775230B54));
+  public ref CUtlLeanVectorFixedGrowable<CNmStateMachineNode::StateDefinition_t,5> StateDefinitions {
+    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<CNmStateMachineNode::StateDefinition_t,5>>(Schema.GetOffset(0xA73F392775230B54));
   }
   public ref short DefaultStateIndex {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xA73F39276C1EC5ED));

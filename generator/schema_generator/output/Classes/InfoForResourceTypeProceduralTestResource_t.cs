@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeProceduralTestResource_t : SchemaClass
   public InfoForResourceTypeProceduralTestResource_t(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeProceduralTestResource_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

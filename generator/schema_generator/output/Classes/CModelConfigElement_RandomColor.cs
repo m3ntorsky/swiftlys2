@@ -9,9 +9,6 @@ internal partial class CModelConfigElement_RandomColor : CModelConfigElement, IM
   public CModelConfigElement_RandomColor(nint handle) : base(handle) {
   }
 
-  public CModelConfigElement_RandomColor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField Gradient {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x375CC66605C95F25));
   }

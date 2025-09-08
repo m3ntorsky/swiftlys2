@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomNamedModelMeshGroup : C_INIT_RandomNamedMode
   public C_INIT_RandomNamedModelMeshGroup(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomNamedModelMeshGroup(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

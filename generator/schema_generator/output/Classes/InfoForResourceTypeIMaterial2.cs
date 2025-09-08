@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeIMaterial2 : SchemaClass, IInfoForReso
   public InfoForResourceTypeIMaterial2(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeIMaterial2(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

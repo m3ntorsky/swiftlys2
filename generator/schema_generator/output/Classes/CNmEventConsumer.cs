@@ -9,9 +9,6 @@ internal partial class CNmEventConsumer : SchemaClass, INmEventConsumer {
   public CNmEventConsumer(nint handle) : base(handle) {
   }
 
-  public CNmEventConsumer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

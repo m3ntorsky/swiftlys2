@@ -9,9 +9,6 @@ internal partial class CSubtractUpdateNode : CBinaryUpdateNode, ISubtractUpdateN
   public CSubtractUpdateNode(nint handle) : base(handle) {
   }
 
-  public CSubtractUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref BinaryNodeChildOption FootMotionTiming {
     get => ref _Handle.AsRef<BinaryNodeChildOption>(Schema.GetOffset(0x108B5B3FBB17F13D));
   }

@@ -9,9 +9,6 @@ internal partial class CPhysicsSpring : CBaseEntity, IPhysicsSpring {
   public CPhysicsSpring(nint handle) : base(handle) {
   }
 
-  public CPhysicsSpring(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Frequency {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5222EAAD2C16DD7));
   }

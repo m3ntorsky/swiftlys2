@@ -9,9 +9,6 @@ internal partial class CAnimFoot : SchemaClass, IAnimFoot {
   public CAnimFoot(nint handle) : base(handle) {
   }
 
-  public CAnimFoot(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x583A05E34D8F5786));
   }

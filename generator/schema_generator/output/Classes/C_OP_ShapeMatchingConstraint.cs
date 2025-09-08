@@ -9,9 +9,6 @@ internal partial class C_OP_ShapeMatchingConstraint : CParticleFunctionConstrain
   public C_OP_ShapeMatchingConstraint(nint handle) : base(handle) {
   }
 
-  public C_OP_ShapeMatchingConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float ShapeRestorationTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4FF42FB6A86E05A9));
   }

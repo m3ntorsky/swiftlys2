@@ -9,9 +9,6 @@ internal partial class CConcreteAnimParameter : CAnimParameterBase, IConcreteAni
   public CConcreteAnimParameter(nint handle) : base(handle) {
   }
 
-  public CConcreteAnimParameter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref AnimParamButton_t PreviewButton {
     get => ref _Handle.AsRef<AnimParamButton_t>(Schema.GetOffset(0xFB67B7E37D0352C7));
   }

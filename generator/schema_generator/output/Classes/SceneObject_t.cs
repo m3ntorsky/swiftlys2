@@ -9,14 +9,11 @@ internal partial class SceneObject_t : SchemaClass, ISceneObject_t {
   public SceneObject_t(nint handle) : base(handle) {
   }
 
-  public SceneObject_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint ObjectID {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xD71D99937D1B0793));
   }
   public ISchemaFixedArray<Vector4D> Transform {
-    get => new SchemaFixedArray<Vector4D>(_Handle + Schema.GetOffset(0xD71D9993EAAE256F));
+    get => new SchemaFixedArray<Vector4D>(_Handle, 0xD71D9993EAAE256F, 3, 16, 4);
   }
   public ref float FadeStartDistance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD71D99931AE7B71C));
@@ -48,11 +45,11 @@ internal partial class SceneObject_t : SchemaClass, ISceneObject_t {
   public ref int LightProbeVolumePrecomputedHandshake {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD71D9993C6233022));
   }
-  public ref CStrongHandle< InfoForResourceTypeCModel > RenderableModel {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCModel >>(Schema.GetOffset(0xD71D99932AEEFA82));
+  public CStrongHandle<IInfoForResourceTypeCModel> RenderableModel {
+    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0xD71D99932AEEFA82));
   }
-  public ref CStrongHandle< InfoForResourceTypeCRenderMesh > Renderable {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCRenderMesh >>(Schema.GetOffset(0xD71D9993972EF84D));
+  public CStrongHandle<IInfoForResourceTypeCRenderMesh> Renderable {
+    get => new CStrongHandle<InfoForResourceTypeCRenderMesh>(_Handle + Schema.GetOffset(0xD71D9993972EF84D));
   }
 
 

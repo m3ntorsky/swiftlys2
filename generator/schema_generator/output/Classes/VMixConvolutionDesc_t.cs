@@ -9,9 +9,6 @@ internal partial class VMixConvolutionDesc_t : SchemaClass, IVMixConvolutionDesc
   public VMixConvolutionDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixConvolutionDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float FldbGain {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x451C060B31BF2DF2));
   }

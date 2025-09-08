@@ -9,9 +9,6 @@ internal partial class CStopAtGoalUpdateNode : CUnaryUpdateNode, IStopAtGoalUpda
   public CStopAtGoalUpdateNode(nint handle) : base(handle) {
   }
 
-  public CStopAtGoalUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float OuterRadius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4889F8297B66A818));
   }

@@ -9,9 +9,6 @@ internal partial class CPhysicsPropOverride : CPhysicsProp, IPhysicsPropOverride
   public CPhysicsPropOverride(nint handle) : base(handle) {
   }
 
-  public CPhysicsPropOverride(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

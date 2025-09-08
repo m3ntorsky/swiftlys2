@@ -9,9 +9,6 @@ internal partial class CMoverUpdateNode : CUnaryUpdateNode, IMoverUpdateNode {
   public CMoverUpdateNode(nint handle) : base(handle) {
   }
 
-  public CMoverUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimInputDamping Damping {
     get => new CAnimInputDamping(_Handle + Schema.GetOffset(0x42BA18A215440FB5));
   }

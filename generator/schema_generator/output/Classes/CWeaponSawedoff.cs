@@ -9,9 +9,6 @@ internal partial class CWeaponSawedoff : CCSWeaponBase, IWeaponSawedoff {
   public CWeaponSawedoff(nint handle) : base(handle) {
   }
 
-  public CWeaponSawedoff(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

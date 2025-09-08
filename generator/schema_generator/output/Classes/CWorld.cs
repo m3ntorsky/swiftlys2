@@ -9,9 +9,6 @@ internal partial class CWorld : CBaseModelEntity, IWorld {
   public CWorld(nint handle) : base(handle) {
   }
 
-  public CWorld(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

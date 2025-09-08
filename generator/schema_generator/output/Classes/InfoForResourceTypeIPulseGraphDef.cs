@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeIPulseGraphDef : SchemaClass, IInfoFor
   public InfoForResourceTypeIPulseGraphDef(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeIPulseGraphDef(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

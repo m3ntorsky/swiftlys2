@@ -9,11 +9,8 @@ internal partial class CAnimScriptManager : SchemaClass, IAnimScriptManager {
   public CAnimScriptManager(nint handle) : base(handle) {
   }
 
-  public CAnimScriptManager(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< ScriptInfo_t > ScriptInfo {
-    get => ref _Handle.AsRef<CUtlVector< ScriptInfo_t >>(Schema.GetOffset(0x13962EC3119509F2));
+  public ref CUtlVector ScriptInfo {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x13962EC3119509F2));
   }
 
 

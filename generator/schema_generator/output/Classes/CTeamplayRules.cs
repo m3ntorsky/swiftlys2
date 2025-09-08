@@ -9,9 +9,6 @@ internal partial class CTeamplayRules : CMultiplayRules, ITeamplayRules {
   public CTeamplayRules(nint handle) : base(handle) {
   }
 
-  public CTeamplayRules(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

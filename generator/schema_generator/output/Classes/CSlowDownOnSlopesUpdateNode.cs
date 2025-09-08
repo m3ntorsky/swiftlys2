@@ -9,9 +9,6 @@ internal partial class CSlowDownOnSlopesUpdateNode : CUnaryUpdateNode, ISlowDown
   public CSlowDownOnSlopesUpdateNode(nint handle) : base(handle) {
   }
 
-  public CSlowDownOnSlopesUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float SlowDownStrength {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x196FB4938D85E247));
   }

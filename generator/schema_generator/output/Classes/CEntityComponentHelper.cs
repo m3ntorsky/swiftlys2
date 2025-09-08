@@ -9,9 +9,6 @@ internal partial class CEntityComponentHelper : SchemaClass, IEntityComponentHel
   public CEntityComponentHelper(nint handle) : base(handle) {
   }
 
-  public CEntityComponentHelper(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint Flags {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x714DB384DC74A14C));
   }

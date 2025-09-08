@@ -9,9 +9,6 @@ internal partial class vphysics_save_cphysicsbody_t : RnBodyDesc_t, Ivphysics_sa
   public vphysics_save_cphysicsbody_t(nint handle) : base(handle) {
   }
 
-  public vphysics_save_cphysicsbody_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ulong OldPointer {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xC6818B0AA60623F3));
   }

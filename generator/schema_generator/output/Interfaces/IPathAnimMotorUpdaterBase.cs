@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPathAnimMotorUpdaterBase : IAnimMotorUpdaterBase {
 
-
+  public ref bool LockToPath { get; }
+  
 }

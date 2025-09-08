@@ -9,9 +9,6 @@ internal partial class CFuncMoverAPI : SchemaClass, IFuncMoverAPI {
   public CFuncMoverAPI(nint handle) : base(handle) {
   }
 
-  public CFuncMoverAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

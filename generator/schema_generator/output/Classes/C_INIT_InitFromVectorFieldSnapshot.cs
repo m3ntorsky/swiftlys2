@@ -9,9 +9,6 @@ internal partial class C_INIT_InitFromVectorFieldSnapshot : CParticleFunctionIni
   public C_INIT_InitFromVectorFieldSnapshot(nint handle) : base(handle) {
   }
 
-  public C_INIT_InitFromVectorFieldSnapshot(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1F4AA8713F31A6BD));
   }

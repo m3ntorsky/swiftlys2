@@ -9,9 +9,6 @@ internal partial class C_OP_RenderDeferredLight : CParticleFunctionRenderer, IC_
   public C_OP_RenderDeferredLight(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderDeferredLight(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool UseAlphaTestWindow {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x44291266951B0D10));
   }
@@ -54,8 +51,8 @@ internal partial class C_OP_RenderDeferredLight : CParticleFunctionRenderer, IC_
   public IParticleAttributeIndex_t AlphaTestSharpnessField {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x44291266BCB74B82));
   }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Texture {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x442912668C0A2FB6));
+  public CStrongHandle<IInfoForResourceTypeCTextureBase> Texture {
+    get => new CStrongHandle<InfoForResourceTypeCTextureBase>(_Handle + Schema.GetOffset(0x442912668C0A2FB6));
   }
   public ref int HSVShiftControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x442912668848C01F));

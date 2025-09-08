@@ -9,9 +9,6 @@ internal partial class CTankTargetChange : CPointEntity, ITankTargetChange {
   public CTankTargetChange(nint handle) : base(handle) {
   }
 
-  public CTankTargetChange(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField NewTarget {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC9633A4FC35D87C4));
   }

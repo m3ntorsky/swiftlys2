@@ -9,9 +9,6 @@ internal partial class PGDInstruction_t : SchemaClass, IPGDInstruction_t {
   public PGDInstruction_t(nint handle) : base(handle) {
   }
 
-  public PGDInstruction_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref PulseInstructionCode_t Code {
     get => ref _Handle.AsRef<PulseInstructionCode_t>(Schema.GetOffset(0xE64AC70782D034B8));
   }

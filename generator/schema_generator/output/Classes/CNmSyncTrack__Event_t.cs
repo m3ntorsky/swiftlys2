@@ -9,9 +9,6 @@ internal partial class CNmSyncTrack__Event_t : SchemaClass, INmSyncTrack__Event_
   public CNmSyncTrack__Event_t(nint handle) : base(handle) {
   }
 
-  public CNmSyncTrack__Event_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol ID {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x8B8C5B0A95066900));
   }

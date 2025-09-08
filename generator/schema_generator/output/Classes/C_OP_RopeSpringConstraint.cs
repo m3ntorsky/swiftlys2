@@ -9,9 +9,6 @@ internal partial class C_OP_RopeSpringConstraint : CParticleFunctionConstraint, 
   public C_OP_RopeSpringConstraint(nint handle) : base(handle) {
   }
 
-  public C_OP_RopeSpringConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput RestLength {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0x2CF6156393AC4079));
   }

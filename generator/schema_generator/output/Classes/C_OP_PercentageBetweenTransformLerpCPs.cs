@@ -9,9 +9,6 @@ internal partial class C_OP_PercentageBetweenTransformLerpCPs : CParticleFunctio
   public C_OP_PercentageBetweenTransformLerpCPs(nint handle) : base(handle) {
   }
 
-  public C_OP_PercentageBetweenTransformLerpCPs(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x96404634E5729606));
   }

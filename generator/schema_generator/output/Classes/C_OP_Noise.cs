@@ -9,9 +9,6 @@ internal partial class C_OP_Noise : CParticleFunctionOperator, IC_OP_Noise {
   public C_OP_Noise(nint handle) : base(handle) {
   }
 
-  public C_OP_Noise(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x1F035961E5729606));
   }

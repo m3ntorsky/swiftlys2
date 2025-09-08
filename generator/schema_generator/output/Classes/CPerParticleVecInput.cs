@@ -9,9 +9,6 @@ internal partial class CPerParticleVecInput : CParticleVecInput, IPerParticleVec
   public CPerParticleVecInput(nint handle) : base(handle) {
   }
 
-  public CPerParticleVecInput(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

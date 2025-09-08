@@ -9,9 +9,6 @@ internal partial class C_OP_RemapDensityGradientToVectorAttribute : CParticleFun
   public C_OP_RemapDensityGradientToVectorAttribute(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapDensityGradientToVectorAttribute(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RadiusScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB9D06F88A7A20159));
   }

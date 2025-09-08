@@ -9,9 +9,6 @@ internal partial class C_OP_RemapSpeedtoCP : CParticleFunctionPreEmission, IC_OP
   public C_OP_RemapSpeedtoCP(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapSpeedtoCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int InControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15A0E8C3E7CB99DE));
   }

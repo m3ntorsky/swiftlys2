@@ -9,9 +9,6 @@ internal partial class VPhysXConstraintParams_t : SchemaClass, IVPhysXConstraint
   public VPhysXConstraintParams_t(nint handle) : base(handle) {
   }
 
-  public VPhysXConstraintParams_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref byte Type {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xF2BDF6AD18853D59));
   }
@@ -25,10 +22,10 @@ internal partial class VPhysXConstraintParams_t : SchemaClass, IVPhysXConstraint
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xF2BDF6ADCE6E9C28));
   }
   public ISchemaFixedArray<Vector> Anchor {
-    get => new SchemaFixedArray<Vector>(_Handle + Schema.GetOffset(0xF2BDF6AD23E10E54));
+    get => new SchemaFixedArray<Vector>(_Handle, 0xF2BDF6AD23E10E54, 2, 12, 4);
   }
   public ISchemaFixedArray<QuaternionStorage> Axes {
-    get => new SchemaFixedArray<QuaternionStorage>(_Handle + Schema.GetOffset(0xF2BDF6AD23115F58));
+    get => new SchemaFixedArray<QuaternionStorage>(_Handle, 0xF2BDF6AD23115F58, 2, 16, 4);
   }
   public ref float MaxForce {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF2BDF6ADFA9D37B8));

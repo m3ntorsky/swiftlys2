@@ -9,29 +9,14 @@ internal partial class CCSPlayerPawnBase : CBasePlayerPawn, ICSPlayerPawnBase {
   public CCSPlayerPawnBase(nint handle) : base(handle) {
   }
 
-  public CCSPlayerPawnBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ITouchExpansionComponent CTouchExpansionComponent {
-    get => new CTouchExpansionComponent(_Handle + Schema.GetOffset(0xD8F889768A159531));
-  }
-  public ICSPlayer_PingServices PingServices {
-    get => new CCSPlayer_PingServices(_Handle + Schema.GetOffset(0xD8F889767A1487DF));
-  }
   public IGameTime_t BlindUntilTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xD8F889765869ECC5));
   }
   public IGameTime_t BlindStartTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xD8F88976540D0351));
   }
-  public ref CSPlayerState PlayerState {
-    get => ref _Handle.AsRef<CSPlayerState>(Schema.GetOffset(0xD8F889769F641BBA));
-  }
   public ref bool Respawning {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD8F889769E9D7B99));
-  }
-  public ref bool HasMovedSinceSpawn {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD8F889763D3B1C13));
   }
   public ref int NumSpawns {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD8F8897605DCE1E8));
@@ -41,21 +26,6 @@ internal partial class CCSPlayerPawnBase : CBasePlayerPawn, ICSPlayerPawnBase {
   }
   public ref float NextRadarUpdateTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD8F889760D6C11B8));
-  }
-  public ref float FlashDuration {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD8F88976E5A995FB));
-  }
-  public ref float FlashMaxAlpha {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD8F889763DCF0D29));
-  }
-  public ref float ProgressBarStartTime {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD8F889768148DE8E));
-  }
-  public ref int ProgressBarDuration {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD8F88976BCF340B0));
-  }
-  public ref CHandle< CCSPlayerController > OriginalController {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerController >>(Schema.GetOffset(0xD8F88976511FAE4C));
   }
 
   public void CTouchExpansionComponentUpdated() {

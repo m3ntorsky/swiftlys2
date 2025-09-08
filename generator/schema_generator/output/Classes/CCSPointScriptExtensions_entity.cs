@@ -9,9 +9,6 @@ internal partial class CCSPointScriptExtensions_entity : SchemaClass, ICSPointSc
   public CCSPointScriptExtensions_entity(nint handle) : base(handle) {
   }
 
-  public CCSPointScriptExtensions_entity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

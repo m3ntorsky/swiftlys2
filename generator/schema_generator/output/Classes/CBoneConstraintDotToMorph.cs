@@ -9,9 +9,6 @@ internal partial class CBoneConstraintDotToMorph : CBoneConstraintBase, IBoneCon
   public CBoneConstraintDotToMorph(nint handle) : base(handle) {
   }
 
-  public CBoneConstraintDotToMorph(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString BoneName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x75939F077559AC1F));
   }
@@ -21,8 +18,8 @@ internal partial class CBoneConstraintDotToMorph : CBoneConstraintBase, IBoneCon
   public ref CUtlString MorphChannelName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x75939F0777272AE4));
   }
-  public ISchemaFixedArray<float32> Remap {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0x75939F07BE3DB1A0));
+  public ISchemaFixedArray<float> Remap {
+    get => new SchemaFixedArray<float>(_Handle, 0x75939F07BE3DB1A0, 4, 4, 4);
   }
 
 

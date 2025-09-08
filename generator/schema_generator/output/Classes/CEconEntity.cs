@@ -9,32 +9,8 @@ internal partial class CEconEntity : CBaseFlex, IEconEntity {
   public CEconEntity(nint handle) : base(handle) {
   }
 
-  public CEconEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public IAttributeContainer AttributeManager {
-    get => new CAttributeContainer(_Handle + Schema.GetOffset(0xCD91F684537B0586));
-  }
-  public ref uint OriginalOwnerXuidLow {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xCD91F6843C990CE3));
-  }
-  public ref uint OriginalOwnerXuidHigh {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xCD91F6842628947F));
-  }
-  public ref int FallbackPaintKit {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xCD91F6840A12D48F));
-  }
-  public ref int FallbackSeed {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xCD91F684A1B165B2));
-  }
-  public ref float FallbackWear {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCD91F68486253266));
-  }
-  public ref int FallbackStatTrak {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xCD91F68467ECC1E7));
-  }
-  public ref CHandle< CBaseEntity > OldProvidee {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xCD91F684289C89E0));
+  public CHandle<IBaseEntity> OldProvidee {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xCD91F684289C89E0));
   }
   public ref int OldOwnerClass {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xCD91F684D62FABE8));

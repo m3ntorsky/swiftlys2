@@ -9,9 +9,6 @@ internal partial class CBaseFlexAlias_funCBaseFlex : CBaseFlex, IBaseFlexAlias_f
   public CBaseFlexAlias_funCBaseFlex(nint handle) : base(handle) {
   }
 
-  public CBaseFlexAlias_funCBaseFlex(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

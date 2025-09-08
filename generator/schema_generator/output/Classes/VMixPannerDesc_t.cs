@@ -9,9 +9,6 @@ internal partial class VMixPannerDesc_t : SchemaClass, IVMixPannerDesc_t {
   public VMixPannerDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixPannerDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref VMixPannerType_t Type {
     get => ref _Handle.AsRef<VMixPannerType_t>(Schema.GetOffset(0x13827FF70F04B4ED));
   }

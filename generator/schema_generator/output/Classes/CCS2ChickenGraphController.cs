@@ -9,9 +9,6 @@ internal partial class CCS2ChickenGraphController : CAnimGraphControllerBase, IC
   public CCS2ChickenGraphController(nint handle) : base(handle) {
   }
 
-  public CCS2ChickenGraphController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField Action {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC887F1577918619F));
   }

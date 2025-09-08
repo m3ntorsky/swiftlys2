@@ -9,9 +9,6 @@ internal partial class CDestructiblePartsSystemData : SchemaClass, IDestructible
   public CDestructiblePartsSystemData(nint handle) : base(handle) {
   }
 
-  public CDestructiblePartsSystemData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField PartsDataByHitGroup {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xABDCB98361E96220));
   }

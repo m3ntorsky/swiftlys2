@@ -9,9 +9,6 @@ internal partial class C_OP_RenderTrails : CBaseTrailRenderer, IC_OP_RenderTrail
   public C_OP_RenderTrails(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderTrails(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool EnableFadingAndClamping {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6B804481BC56ADD));
   }

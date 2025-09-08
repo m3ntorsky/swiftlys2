@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISkillInt : ISchemaClass {
 
-
+  public ISchemaFixedArray<int> Value { get; }
+  
 }

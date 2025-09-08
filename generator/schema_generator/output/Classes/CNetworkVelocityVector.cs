@@ -9,18 +9,7 @@ internal partial class CNetworkVelocityVector : SchemaClass, INetworkVelocityVec
   public CNetworkVelocityVector(nint handle) : base(handle) {
   }
 
-  public CNetworkVelocityVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref CNetworkedQuantizedFloat X {
-    get => ref _Handle.AsRef<CNetworkedQuantizedFloat>(Schema.GetOffset(0x63CDAFC08FEB7867));
-  }
-  public ref CNetworkedQuantizedFloat Y {
-    get => ref _Handle.AsRef<CNetworkedQuantizedFloat>(Schema.GetOffset(0x63CDAFC08EEB76D4));
-  }
-  public ref CNetworkedQuantizedFloat Z {
-    get => ref _Handle.AsRef<CNetworkedQuantizedFloat>(Schema.GetOffset(0x63CDAFC091EB7B8D));
-  }
 
   public void XUpdated() {
     Schema.Update(_Handle, 0x63CDAFC08FEB7867);

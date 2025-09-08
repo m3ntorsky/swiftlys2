@@ -9,9 +9,6 @@ internal partial class CHostage : CHostageExpresserShim, IHostage {
   public CHostage(nint handle) : base(handle) {
   }
 
-  public CHostage(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnHostageBeginGrab {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x1A122BDF0DA44EAC));
   }
@@ -23,9 +20,6 @@ internal partial class CHostage : CHostageExpresserShim, IHostage {
   }
   public IEntityIOOutput OnRescued {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x1A122BDF421F0657));
-  }
-  public IEntitySpottedState_t EntitySpottedState {
-    get => new EntitySpottedState_t(_Handle + Schema.GetOffset(0x1A122BDF032B547C));
   }
   public ref int SpotRules {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1A122BDF776CCE44));
@@ -39,26 +33,8 @@ internal partial class CHostage : CHostageExpresserShim, IHostage {
   public ref bool Remove {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1A122BDFDE0A6D5D));
   }
-  public ref Vector Vel {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x1A122BDF62514398));
-  }
-  public ref bool IsRescued {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1A122BDF18E05CC8));
-  }
-  public ref bool JumpedThisFrame {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1A122BDF6BF897BD));
-  }
-  public ref int HostageState {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1A122BDF5B4A8B2F));
-  }
-  public ref CHandle< CBaseEntity > Leader {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1A122BDF658B4E84));
-  }
-  public ref CHandle< CCSPlayerPawnBase > LastLeader {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerPawnBase >>(Schema.GetOffset(0x1A122BDF1598AC08));
-  }
-  public ICountdownTimer ReuseTimer {
-    get => new CountdownTimer(_Handle + Schema.GetOffset(0x1A122BDF6D7BFBA8));
+  public CHandle<ICSPlayerPawnBase> LastLeader {
+    get => new CHandle<CCSPlayerPawnBase>(_Handle + Schema.GetOffset(0x1A122BDF1598AC08));
   }
   public ref bool HasBeenUsed {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1A122BDF4B85A934));
@@ -93,12 +69,6 @@ internal partial class CHostage : CHostageExpresserShim, IHostage {
   public ref bool IsAdjusted {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1A122BDFA875F12F));
   }
-  public ref bool HandsHaveBeenCut {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1A122BDF36E822D3));
-  }
-  public ref CHandle< CCSPlayerPawn > HostageGrabber {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0x1A122BDF052DBC9F));
-  }
   public IGameTime_t LastGrabTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x1A122BDFCF347506));
   }
@@ -107,15 +77,6 @@ internal partial class CHostage : CHostageExpresserShim, IHostage {
   }
   public ref Vector GrabbedPos {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x1A122BDFBB7B9A0C));
-  }
-  public IGameTime_t RescueStartTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x1A122BDF6085D94B));
-  }
-  public IGameTime_t GrabSuccessTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x1A122BDF2EA3F531));
-  }
-  public IGameTime_t DropStartTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x1A122BDF61FA47CF));
   }
   public ref int ApproachRewardPayouts {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1A122BDF985F9A31));

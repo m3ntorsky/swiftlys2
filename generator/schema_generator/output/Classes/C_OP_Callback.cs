@@ -9,9 +9,6 @@ internal partial class C_OP_Callback : CParticleFunctionRenderer, IC_OP_Callback
   public C_OP_Callback(nint handle) : base(handle) {
   }
 
-  public C_OP_Callback(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

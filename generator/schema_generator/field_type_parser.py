@@ -81,11 +81,70 @@ blacklisted_types = [
   "CVariantBase",
   "SphereBase_t",
   "CAttachmentNameSymbolWithStorage",
+  "std::pair",
+  "CCompressor",
+  "CUtlVectorSIMDPaddedVector"
 ]
 
+def convert_handle_type(type, interface=False):
+  if type.startswith("CWeakHandle"):
+    name = "CWeakHandle"
+  elif type.startswith("CStrongHandle"):
+    name = "CStrongHandle"
+  else:
+    name = "CHandle"
+
+  generic_t1 = type[len(name)+1:]
+  generic_t1 = generic_t1[:-1]
+
+  generic_t1 = generic_t1 if not interface else get_interface_name(generic_t1)
+
+  # print(f"{name}<{generic_t1}>")
+  return (f"{name}<{generic_t1}>", False)
+
+def convert_utlvector_type(type, all_class_names, all_enum_names, interface = False):
+  if type.startswith("CUtlVectorFixedGrowable"):
+    name = "CUtlVectorFixedGrowable"
+    length = len("CUtlVectorFixedGrowable")
+  elif type.startswith("CUtlVectorEmbeddedNetworkVar"):
+    name = "CUtlVectorEmbeddedNetworkVar"
+    length = len("CUtlVectorEmbeddedNetworkVar")
+  elif type.startswith("CNetworkUtlVectorBase"):
+    name = "CUtlVector"
+    length = len("CNetworkUtlVectorBase")
+  else:
+    name = "CUtlVector"
+    length = len("CUtlVector")
+
+  generic_t1 = type[length+1:]
+  generic_t1 = generic_t1[:-1]
+
+  if "," in generic_t1:
+    generic_t1 = generic_t1.split(",")[0]
+
+  is_ptr = generic_t1.endswith("*")
+
+  if is_ptr:
+    generic_t1 = generic_t1[:-1]
+  
+  generic_t1_type, is_value_type = convert_field_type(generic_t1, "ref", all_class_names, all_enum_names, interface)
+
+  if is_ptr and generic_t1_type == "char":
+    return (f"{name}<PointerTo<CString>>", True)
+  if is_ptr:
+    # print(f"{name}<PointerTo<{generic_t1_type}>>")
+    return (f"{name}<PointerTo<{generic_t1_type}>>", True)
+  
+  if is_value_type:
+    # print(f"{name}<{generic_t1_type}>")
+    return (f"{name}<{generic_t1_type}>", is_value_type)
+  else:
+    # print(f"{name}")
+    return (name, True)
 
 def convert_field_type(type, kind, all_class_names, all_enum_names, interface = False):
 
+  type = type.replace(' ', '');
   prefix = "I" if interface else ""
 
   for blacklisted_type in blacklisted_types:
@@ -94,16 +153,26 @@ def convert_field_type(type, kind, all_class_names, all_enum_names, interface = 
 
   if kind == "ptr" and type == "char": # char*
     return (f"CString", True)
+  
 
 
   for key, value in unmanaged_type_maps.items():
     if type.startswith(key):
+
+      if type.startswith("CWeakHandle") or type.startswith("CStrongHandle") or type.startswith("CHandle"):
+        return convert_handle_type(type, interface)
       
+      if type.startswith("CUtlVector") or type.startswith("CNetworkUtlVector"):
+        return convert_utlvector_type(type, all_class_names, all_enum_names, interface)
+    
       if kind == "fixed_array":
         if type == "char":
           return (f"{prefix}SchemaFixedString", False)
-        return (f"{prefix}SchemaFixedArray<{type}>", False)
+        return (f"{prefix}SchemaFixedArray<{type.replace(key, value)}>", False)
       return (f"{type.replace(key, value)}", True)
+  
+
+      # print(generic_t1_type)
 
   if type in all_enum_names:
     return (type, True)
@@ -113,4 +182,4 @@ def convert_field_type(type, kind, all_class_names, all_enum_names, interface = 
     return (complex_type, False)
   
   print(f"Unknown type: {type}")
-  return (type, False)
+  return ("UNKNOWN", False)

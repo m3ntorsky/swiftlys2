@@ -9,9 +9,6 @@ internal partial class C_INIT_PositionWarpScalar : CParticleFunctionInitializer,
   public C_INIT_PositionWarpScalar(nint handle) : base(handle) {
   }
 
-  public C_INIT_PositionWarpScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector WarpMin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x36E409431B8A7F09));
   }

@@ -9,9 +9,6 @@ internal partial class CRotButton : CBaseButton, IRotButton {
   public CRotButton(nint handle) : base(handle) {
   }
 
-  public CRotButton(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

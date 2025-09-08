@@ -9,9 +9,6 @@ internal partial class CNmPassthroughNode__CDefinition : CNmPoseNode::CDefinitio
   public CNmPassthroughNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmPassthroughNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short ChildNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x989A91ED5C29A73C));
   }

@@ -9,9 +9,6 @@ internal partial class IChoreoServices : SchemaClass, IIChoreoServices {
   public IChoreoServices(nint handle) : base(handle) {
   }
 
-  public IChoreoServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

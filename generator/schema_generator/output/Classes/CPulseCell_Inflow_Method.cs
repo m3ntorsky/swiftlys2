@@ -9,9 +9,6 @@ internal partial class CPulseCell_Inflow_Method : CPulseCell_Inflow_BaseEntrypoi
   public CPulseCell_Inflow_Method(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Inflow_Method(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField MethodName {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xFB5926557D863B13));
   }
@@ -24,8 +21,8 @@ internal partial class CPulseCell_Inflow_Method : CPulseCell_Inflow_BaseEntrypoi
   public ISchemaUntypedField ReturnType {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xFB59265566333D67));
   }
-  public ref CUtlLeanVector< CPulseRuntimeMethodArg > Args {
-    get => ref _Handle.AsRef<CUtlLeanVector< CPulseRuntimeMethodArg >>(Schema.GetOffset(0xFB592655DAB98BBC));
+  public ref CUtlLeanVector<CPulseRuntimeMethodArg> Args {
+    get => ref _Handle.AsRef<CUtlLeanVector<CPulseRuntimeMethodArg>>(Schema.GetOffset(0xFB592655DAB98BBC));
   }
 
 

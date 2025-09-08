@@ -9,9 +9,6 @@ internal partial class CSeqAutoLayer : SchemaClass, ISeqAutoLayer {
   public CSeqAutoLayer(nint handle) : base(handle) {
   }
 
-  public CSeqAutoLayer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short LocalReference {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x1506328FC8D571D9));
   }

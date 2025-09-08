@@ -9,9 +9,6 @@ internal partial class CAnimationGraphVisualizerSphere : CAnimationGraphVisualiz
   public CAnimationGraphVisualizerSphere(nint handle) : base(handle) {
   }
 
-  public CAnimationGraphVisualizerSphere(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref VectorAligned WsPosition {
     get => ref _Handle.AsRef<VectorAligned>(Schema.GetOffset(0x85D725BDCA77AB88));
   }

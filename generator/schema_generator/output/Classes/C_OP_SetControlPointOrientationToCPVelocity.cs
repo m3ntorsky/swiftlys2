@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointOrientationToCPVelocity : CParticleFu
   public C_OP_SetControlPointOrientationToCPVelocity(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointOrientationToCPVelocity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CPInput {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8FFC9885FB805736));
   }

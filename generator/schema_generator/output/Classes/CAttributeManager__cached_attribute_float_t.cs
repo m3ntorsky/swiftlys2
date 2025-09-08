@@ -9,9 +9,6 @@ internal partial class CAttributeManager__cached_attribute_float_t : SchemaClass
   public CAttributeManager__cached_attribute_float_t(nint handle) : base(handle) {
   }
 
-  public CAttributeManager__cached_attribute_float_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float In {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE3C5A1BAD526F734));
   }

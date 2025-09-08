@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderPoints : IParticleFunctionRenderer {
 
-
+  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material { get; }
+  
 }

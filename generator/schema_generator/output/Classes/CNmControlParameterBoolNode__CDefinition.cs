@@ -9,9 +9,6 @@ internal partial class CNmControlParameterBoolNode__CDefinition : CNmBoolValueNo
   public CNmControlParameterBoolNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmControlParameterBoolNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

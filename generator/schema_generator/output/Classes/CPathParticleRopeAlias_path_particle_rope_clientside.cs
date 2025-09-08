@@ -9,9 +9,6 @@ internal partial class CPathParticleRopeAlias_path_particle_rope_clientside : CP
   public CPathParticleRopeAlias_path_particle_rope_clientside(nint handle) : base(handle) {
   }
 
-  public CPathParticleRopeAlias_path_particle_rope_clientside(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

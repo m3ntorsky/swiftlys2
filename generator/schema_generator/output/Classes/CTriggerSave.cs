@@ -9,9 +9,6 @@ internal partial class CTriggerSave : CBaseTrigger, ITriggerSave {
   public CTriggerSave(nint handle) : base(handle) {
   }
 
-  public CTriggerSave(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool ForceNewLevelUnit {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xFA0C03F1473BFDE));
   }

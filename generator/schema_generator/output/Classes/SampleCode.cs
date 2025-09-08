@@ -9,11 +9,8 @@ internal partial class SampleCode : SchemaClass, ISampleCode {
   public SampleCode(nint handle) : base(handle) {
   }
 
-  public SampleCode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<uint8> SubCode {
-    get => new SchemaFixedArray<uint8>(_Handle + Schema.GetOffset(0x6387E3865AD6C244));
+  public ISchemaFixedArray<byte> SubCode {
+    get => new SchemaFixedArray<byte>(_Handle, 0x6387E3865AD6C244, 8, 1, 1);
   }
 
 

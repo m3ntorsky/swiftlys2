@@ -9,9 +9,6 @@ internal partial class CHitReactUpdateNode : CUnaryUpdateNode, IHitReactUpdateNo
   public CHitReactUpdateNode(nint handle) : base(handle) {
   }
 
-  public CHitReactUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IHitReactFixedSettings_t OpFixedSettings {
     get => new HitReactFixedSettings_t(_Handle + Schema.GetOffset(0x64E4D4A7E533AB09));
   }

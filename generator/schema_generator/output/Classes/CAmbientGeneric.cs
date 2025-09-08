@@ -9,9 +9,6 @@ internal partial class CAmbientGeneric : CPointEntity, IAmbientGeneric {
   public CAmbientGeneric(nint handle) : base(handle) {
   }
 
-  public CAmbientGeneric(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Radius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD45BE96FA921CA53));
   }
@@ -36,8 +33,8 @@ internal partial class CAmbientGeneric : CPointEntity, IAmbientGeneric {
   public ref CUtlSymbolLarge SourceEntName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD45BE96F2FABBF97));
   }
-  public ref CHandle< CBaseEntity > SoundSource {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xD45BE96FA2036C43));
+  public CHandle<IBaseEntity> SoundSource {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xD45BE96FA2036C43));
   }
   public ref CEntityIndex SoundSourceEntIndex {
     get => ref _Handle.AsRef<CEntityIndex>(Schema.GetOffset(0xD45BE96F5C1CB026));

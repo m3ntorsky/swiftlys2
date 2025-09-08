@@ -9,9 +9,6 @@ internal partial class CFilterLOS : CBaseFilter, IFilterLOS {
   public CFilterLOS(nint handle) : base(handle) {
   }
 
-  public CFilterLOS(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

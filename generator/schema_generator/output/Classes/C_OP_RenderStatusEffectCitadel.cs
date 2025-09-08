@@ -9,26 +9,23 @@ internal partial class C_OP_RenderStatusEffectCitadel : CParticleFunctionRendere
   public C_OP_RenderStatusEffectCitadel(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderStatusEffectCitadel(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureColorWarp {
+    get => new CStrongHandle<InfoForResourceTypeCTextureBase>(_Handle + Schema.GetOffset(0x3A3089C2C99DEE43));
   }
-
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > TextureColorWarp {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x3A3089C2C99DEE43));
+  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureNormal {
+    get => new CStrongHandle<InfoForResourceTypeCTextureBase>(_Handle + Schema.GetOffset(0x3A3089C298E8363D));
   }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > TextureNormal {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x3A3089C298E8363D));
+  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureMetalness {
+    get => new CStrongHandle<InfoForResourceTypeCTextureBase>(_Handle + Schema.GetOffset(0x3A3089C25ABD9B42));
   }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > TextureMetalness {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x3A3089C25ABD9B42));
+  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureRoughness {
+    get => new CStrongHandle<InfoForResourceTypeCTextureBase>(_Handle + Schema.GetOffset(0x3A3089C2BD0AD95C));
   }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > TextureRoughness {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x3A3089C2BD0AD95C));
+  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureSelfIllum {
+    get => new CStrongHandle<InfoForResourceTypeCTextureBase>(_Handle + Schema.GetOffset(0x3A3089C2D815240D));
   }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > TextureSelfIllum {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x3A3089C2D815240D));
-  }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > TextureDetail {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x3A3089C28D414A8F));
+  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureDetail {
+    get => new CStrongHandle<InfoForResourceTypeCTextureBase>(_Handle + Schema.GetOffset(0x3A3089C28D414A8F));
   }
 
 

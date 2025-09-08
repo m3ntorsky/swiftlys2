@@ -9,9 +9,6 @@ internal partial class CPointConstraint : CBaseConstraint, IPointConstraint {
   public CPointConstraint(nint handle) : base(handle) {
   }
 
-  public CPointConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

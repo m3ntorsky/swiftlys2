@@ -9,18 +9,7 @@ internal partial class ViewAngleServerChange_t : SchemaClass, IViewAngleServerCh
   public ViewAngleServerChange_t(nint handle) : base(handle) {
   }
 
-  public ViewAngleServerChange_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref FixAngleSet_t Type {
-    get => ref _Handle.AsRef<FixAngleSet_t>(Schema.GetOffset(0x84AFC64BEEF036F9));
-  }
-  public ref QAngle Angle {
-    get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0x84AFC64B64F7DFC7));
-  }
-  public ref uint Index {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x84AFC64BA1A45087));
-  }
 
   public void TypeUpdated() {
     Schema.Update(_Handle, 0x84AFC64BEEF036F9);

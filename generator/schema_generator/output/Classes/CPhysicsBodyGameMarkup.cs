@@ -9,9 +9,6 @@ internal partial class CPhysicsBodyGameMarkup : SchemaClass, IPhysicsBodyGameMar
   public CPhysicsBodyGameMarkup(nint handle) : base(handle) {
   }
 
-  public CPhysicsBodyGameMarkup(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString TargetBody {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xA5257571F2C6B554));
   }

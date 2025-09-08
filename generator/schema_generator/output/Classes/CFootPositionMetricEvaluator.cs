@@ -9,11 +9,8 @@ internal partial class CFootPositionMetricEvaluator : CMotionMetricEvaluator, IF
   public CFootPositionMetricEvaluator(nint handle) : base(handle) {
   }
 
-  public CFootPositionMetricEvaluator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< int32 > FootIndices {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0x67E807C64C840316));
+  public ref CUtlVector<int> FootIndices {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0x67E807C64C840316));
   }
   public ref bool IgnoreSlope {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x67E807C6541E43F2));

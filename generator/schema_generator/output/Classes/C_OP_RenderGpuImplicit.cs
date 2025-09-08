@@ -9,9 +9,6 @@ internal partial class C_OP_RenderGpuImplicit : CParticleFunctionRenderer, IC_OP
   public C_OP_RenderGpuImplicit(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderGpuImplicit(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool UsePerParticleRadius {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xF780A8E2CB5B403));
   }
@@ -33,8 +30,8 @@ internal partial class C_OP_RenderGpuImplicit : CParticleFunctionRenderer, IC_OP
   public ref int ScaleCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xF780A8EDE3CC5E6));
   }
-  public ref CStrongHandle< InfoForResourceTypeIMaterial2 > Material {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0xF780A8E888CE42E));
+  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material {
+    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0xF780A8E888CE42E));
   }
 
 

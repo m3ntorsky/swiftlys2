@@ -9,20 +9,17 @@ internal partial class CAudioMorphData : SchemaClass, IAudioMorphData {
   public CAudioMorphData(nint handle) : base(handle) {
   }
 
-  public CAudioMorphData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVector<float> Times {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0xA13726EA86A55CD5));
   }
-
-  public ref CUtlVector< float32 > Times {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0xA13726EA86A55CD5));
+  public ref CUtlVector<uint> NameHashCodes {
+    get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0xA13726EAC13918BC));
   }
-  public ref CUtlVector< uint32 > NameHashCodes {
-    get => ref _Handle.AsRef<CUtlVector< uint32 >>(Schema.GetOffset(0xA13726EAC13918BC));
+  public ref CUtlVector<CUtlString> NameStrings {
+    get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xA13726EA23776A0C));
   }
-  public ref CUtlVector< CUtlString > NameStrings {
-    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0xA13726EA23776A0C));
-  }
-  public ref CUtlVector< CUtlVector< float32 > > Samples {
-    get => ref _Handle.AsRef<CUtlVector< CUtlVector< float32 > >>(Schema.GetOffset(0xA13726EA364CA9DC));
+  public ref CUtlVector<CUtlVector<float>> Samples {
+    get => ref _Handle.AsRef<CUtlVector<CUtlVector<float>>>(Schema.GetOffset(0xA13726EA364CA9DC));
   }
   public ref float EaseIn {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA13726EA4514C026));

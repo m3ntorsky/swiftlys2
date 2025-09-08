@@ -9,9 +9,6 @@ internal partial class CVoiceContainerLoopTrigger : CVoiceContainerBase, IVoiceC
   public CVoiceContainerLoopTrigger(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerLoopTrigger(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISoundContainerReference Sound {
     get => new CSoundContainerReference(_Handle + Schema.GetOffset(0x1A1BEAF4E1C4FB4));
   }

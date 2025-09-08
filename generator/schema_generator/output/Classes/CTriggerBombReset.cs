@@ -9,9 +9,6 @@ internal partial class CTriggerBombReset : CBaseTrigger, ITriggerBombReset {
   public CTriggerBombReset(nint handle) : base(handle) {
   }
 
-  public CTriggerBombReset(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

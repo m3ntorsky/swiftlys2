@@ -9,11 +9,8 @@ internal partial class CAnimGraphControllerBase : SchemaClass, IAnimGraphControl
   public CAnimGraphControllerBase(nint handle) : base(handle) {
   }
 
-  public CAnimGraphControllerBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVectorFixedGrowable< CGlobalSymbol, 8 > ParamsToResetInPostGraphUpdate {
-    get => ref _Handle.AsRef<CUtlVectorFixedGrowable< CGlobalSymbol, 8 >>(Schema.GetOffset(0x1AA25B60A3E3A289));
+  public ref CUtlVectorFixedGrowable<CGlobalSymbol> ParamsToResetInPostGraphUpdate {
+    get => ref _Handle.AsRef<CUtlVectorFixedGrowable<CGlobalSymbol>>(Schema.GetOffset(0x1AA25B60A3E3A289));
   }
 
 

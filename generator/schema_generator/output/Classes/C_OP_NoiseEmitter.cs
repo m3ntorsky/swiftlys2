@@ -9,9 +9,6 @@ internal partial class C_OP_NoiseEmitter : CParticleFunctionEmitter, IC_OP_Noise
   public C_OP_NoiseEmitter(nint handle) : base(handle) {
   }
 
-  public C_OP_NoiseEmitter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float EmissionDuration {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x42B1C7990181C90));
   }

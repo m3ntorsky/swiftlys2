@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEventClientSceneSystemThreadStateChange_t : ISchemaClass {
 
-
+  public ref bool ThreadsActive { get; }
+  
 }

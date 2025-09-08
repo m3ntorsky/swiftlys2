@@ -9,9 +9,6 @@ internal partial class CConstraintSlave : SchemaClass, IConstraintSlave {
   public CConstraintSlave(nint handle) : base(handle) {
   }
 
-  public CConstraintSlave(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Quaternion BaseOrientation {
     get => ref _Handle.AsRef<Quaternion>(Schema.GetOffset(0xE0E093BC46E6EA75));
   }

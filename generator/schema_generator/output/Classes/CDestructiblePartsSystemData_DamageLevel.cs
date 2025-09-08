@@ -9,9 +9,6 @@ internal partial class CDestructiblePartsSystemData_DamageLevel : SchemaClass, I
   public CDestructiblePartsSystemData_DamageLevel(nint handle) : base(handle) {
   }
 
-  public CDestructiblePartsSystemData_DamageLevel(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x4191C15D63D22D49));
   }

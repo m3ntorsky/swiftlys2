@@ -9,9 +9,6 @@ internal partial class CPulse_RegisterInfo : SchemaClass, IPulse_RegisterInfo {
   public CPulse_RegisterInfo(nint handle) : base(handle) {
   }
 
-  public CPulse_RegisterInfo(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulseRuntimeRegisterIndex_t Reg {
     get => new PulseRuntimeRegisterIndex_t(_Handle + Schema.GetOffset(0x8D60BE3D464A7749));
   }

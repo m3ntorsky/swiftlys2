@@ -9,9 +9,6 @@ internal partial class CPulseCell_Timeline__TimelineEvent_t : SchemaClass, IPuls
   public CPulseCell_Timeline__TimelineEvent_t(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Timeline__TimelineEvent_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float TimeFromPrevious {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1CEAA89BD23FC4AF));
   }

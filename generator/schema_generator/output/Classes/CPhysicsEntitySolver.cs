@@ -9,14 +9,11 @@ internal partial class CPhysicsEntitySolver : CLogicalEntity, IPhysicsEntitySolv
   public CPhysicsEntitySolver(nint handle) : base(handle) {
   }
 
-  public CPhysicsEntitySolver(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public CHandle<IBaseEntity> MovingEntity {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x2948C36FC1DA080E));
   }
-
-  public ref CHandle< CBaseEntity > MovingEntity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x2948C36FC1DA080E));
-  }
-  public ref CHandle< CBaseEntity > PhysicsBlocker {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x2948C36F3DD8AB5E));
+  public CHandle<IBaseEntity> PhysicsBlocker {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x2948C36F3DD8AB5E));
   }
   public ref float SeparationDuration {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x2948C36F202FE0BD));

@@ -9,9 +9,6 @@ internal partial class C_INIT_CreateFromParentParticles : CParticleFunctionIniti
   public C_INIT_CreateFromParentParticles(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreateFromParentParticles(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float VelocityScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4AEA47CDE161DDAA));
   }

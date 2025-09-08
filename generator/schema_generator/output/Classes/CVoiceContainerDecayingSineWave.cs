@@ -9,9 +9,6 @@ internal partial class CVoiceContainerDecayingSineWave : CVoiceContainerBase, IV
   public CVoiceContainerDecayingSineWave(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerDecayingSineWave(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Frequency {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x3383CD01D2C16DD7));
   }

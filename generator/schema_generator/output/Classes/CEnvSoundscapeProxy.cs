@@ -9,9 +9,6 @@ internal partial class CEnvSoundscapeProxy : CEnvSoundscape, IEnvSoundscapeProxy
   public CEnvSoundscapeProxy(nint handle) : base(handle) {
   }
 
-  public CEnvSoundscapeProxy(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge MainSoundscapeName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x58127BA672404420));
   }

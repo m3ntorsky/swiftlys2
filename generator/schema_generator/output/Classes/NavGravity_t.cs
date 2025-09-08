@@ -9,9 +9,6 @@ internal partial class NavGravity_t : SchemaClass, INavGravity_t {
   public NavGravity_t(nint handle) : base(handle) {
   }
 
-  public NavGravity_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Gravity {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xAF45EC63A5AE4779));
   }

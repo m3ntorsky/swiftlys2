@@ -9,9 +9,6 @@ internal partial class CNmFloatCurveEventNode__CDefinition : CNmFloatValueNode::
   public CNmFloatCurveEventNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFloatCurveEventNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol EventID {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x4512F5A69D798A72));
   }

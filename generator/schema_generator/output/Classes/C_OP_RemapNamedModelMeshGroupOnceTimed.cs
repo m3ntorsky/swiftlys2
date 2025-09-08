@@ -9,9 +9,6 @@ internal partial class C_OP_RemapNamedModelMeshGroupOnceTimed : C_OP_RemapNamedM
   public C_OP_RemapNamedModelMeshGroupOnceTimed(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapNamedModelMeshGroupOnceTimed(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

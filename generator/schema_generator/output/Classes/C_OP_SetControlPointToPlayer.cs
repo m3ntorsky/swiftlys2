@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointToPlayer : CParticleFunctionPreEmissi
   public C_OP_SetControlPointToPlayer(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointToPlayer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CP1 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD877DC8ED4B1E579));
   }

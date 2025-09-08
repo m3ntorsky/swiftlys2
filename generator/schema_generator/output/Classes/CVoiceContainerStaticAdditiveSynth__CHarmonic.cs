@@ -9,9 +9,6 @@ internal partial class CVoiceContainerStaticAdditiveSynth__CHarmonic : SchemaCla
   public CVoiceContainerStaticAdditiveSynth__CHarmonic(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerStaticAdditiveSynth__CHarmonic(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref EWaveform Waveform {
     get => ref _Handle.AsRef<EWaveform>(Schema.GetOffset(0xC47956E906E0A8DE));
   }

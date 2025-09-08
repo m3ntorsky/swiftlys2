@@ -9,9 +9,6 @@ internal partial class PulseScriptedSequenceData_t : SchemaClass, IPulseScripted
   public PulseScriptedSequenceData_t(nint handle) : base(handle) {
   }
 
-  public PulseScriptedSequenceData_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ActorID {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x7C7814728383E163));
   }

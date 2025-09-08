@@ -9,9 +9,6 @@ internal partial class CTriggerBrush : CBaseModelEntity, ITriggerBrush {
   public CTriggerBrush(nint handle) : base(handle) {
   }
 
-  public CTriggerBrush(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnStartTouch {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xD9D3DFB2B4E38193));
   }

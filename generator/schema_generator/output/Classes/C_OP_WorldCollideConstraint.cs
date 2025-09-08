@@ -9,9 +9,6 @@ internal partial class C_OP_WorldCollideConstraint : CParticleFunctionConstraint
   public C_OP_WorldCollideConstraint(nint handle) : base(handle) {
   }
 
-  public C_OP_WorldCollideConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class EventSimulate_t : SchemaClass, IEventSimulate_t {
   public EventSimulate_t(nint handle) : base(handle) {
   }
 
-  public EventSimulate_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEngineLoopState_t LoopState {
     get => new EngineLoopState_t(_Handle + Schema.GetOffset(0x39B7BD6EF928A2EC));
   }

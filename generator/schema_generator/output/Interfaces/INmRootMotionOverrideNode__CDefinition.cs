@@ -4,5 +4,18 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmRootMotionOverrideNode__CDefinition : INmPassthroughNode::CDefinition {
 
-
+  public ref short DesiredMovingVelocityNodeIdx { get; }
+  
+  public ref short DesiredFacingDirectionNodeIdx { get; }
+  
+  public ref short LinearVelocityLimitNodeIdx { get; }
+  
+  public ref short AngularVelocityLimitNodeIdx { get; }
+  
+  public ref float MaxLinearVelocity { get; }
+  
+  public ref float MaxAngularVelocityRadians { get; }
+  
+  public INmBitFlags OverrideFlags { get; }
+  
 }

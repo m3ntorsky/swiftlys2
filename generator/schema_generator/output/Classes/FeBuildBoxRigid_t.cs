@@ -9,9 +9,6 @@ internal partial class FeBuildBoxRigid_t : FeBoxRigid_t, IFeBuildBoxRigid_t {
   public FeBuildBoxRigid_t(nint handle) : base(handle) {
   }
 
-  public FeBuildBoxRigid_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Priority {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9E8528AFE7EFB335));
   }

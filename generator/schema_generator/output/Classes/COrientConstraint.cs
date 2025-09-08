@@ -9,9 +9,6 @@ internal partial class COrientConstraint : CBaseConstraint, IOrientConstraint {
   public COrientConstraint(nint handle) : base(handle) {
   }
 
-  public COrientConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

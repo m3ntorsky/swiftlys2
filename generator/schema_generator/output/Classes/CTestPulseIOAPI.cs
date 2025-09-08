@@ -9,9 +9,6 @@ internal partial class CTestPulseIOAPI : SchemaClass, ITestPulseIOAPI {
   public CTestPulseIOAPI(nint handle) : base(handle) {
   }
 
-  public CTestPulseIOAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

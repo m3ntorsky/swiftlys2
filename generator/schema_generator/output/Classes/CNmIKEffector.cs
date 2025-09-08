@@ -9,9 +9,6 @@ internal partial class CNmIKEffector : SchemaClass, INmIKEffector {
   public CNmIKEffector(nint handle) : base(handle) {
   }
 
-  public CNmIKEffector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int BodyIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA45D61F2B50B497));
   }

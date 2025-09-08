@@ -9,9 +9,6 @@ internal partial class FunctionInfo_t : SchemaClass, IFunctionInfo_t {
   public FunctionInfo_t(nint handle) : base(handle) {
   }
 
-  public FunctionInfo_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xFCE0933A4D8F5786));
   }

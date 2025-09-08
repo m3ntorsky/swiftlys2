@@ -9,9 +9,6 @@ internal partial class CMaterialDrawDescriptor__RigidMeshPart_t : SchemaClass, I
   public CMaterialDrawDescriptor__RigidMeshPart_t(nint handle) : base(handle) {
   }
 
-  public CMaterialDrawDescriptor__RigidMeshPart_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort RigidBLASIndex {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xD375EED8EE87873E));
   }

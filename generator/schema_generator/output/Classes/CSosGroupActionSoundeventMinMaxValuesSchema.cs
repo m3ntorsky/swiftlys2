@@ -9,9 +9,6 @@ internal partial class CSosGroupActionSoundeventMinMaxValuesSchema : CSosGroupAc
   public CSosGroupActionSoundeventMinMaxValuesSchema(nint handle) : base(handle) {
   }
 
-  public CSosGroupActionSoundeventMinMaxValuesSchema(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString StrQueryPublicFieldName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC3C5E1C40839714));
   }

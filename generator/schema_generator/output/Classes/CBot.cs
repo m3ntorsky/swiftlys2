@@ -9,9 +9,6 @@ internal partial class CBot : SchemaClass, IBot {
   public CBot(nint handle) : base(handle) {
   }
 
-  public CBot(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ICSPlayerController Controller {
     get => new CCSPlayerController(_Handle + Schema.GetOffset(0x804AC5DB8F2DD553));
   }

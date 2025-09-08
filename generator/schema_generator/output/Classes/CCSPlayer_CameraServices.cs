@@ -9,9 +9,6 @@ internal partial class CCSPlayer_CameraServices : CCSPlayerBase_CameraServices, 
   public CCSPlayer_CameraServices(nint handle) : base(handle) {
   }
 
-  public CCSPlayer_CameraServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CPulseCell_InlineNodeSkipSelector : CPulseCell_BaseFlow, 
   public CPulseCell_InlineNodeSkipSelector(nint handle) : base(handle) {
   }
 
-  public CPulseCell_InlineNodeSkipSelector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulseDocNodeID_t FlowNodeID {
     get => new PulseDocNodeID_t(_Handle + Schema.GetOffset(0x43AF14578ED47FBC));
   }

@@ -9,15 +9,6 @@ internal partial class CBaseModelEntity : CBaseEntity, IBaseModelEntity {
   public CBaseModelEntity(nint handle) : base(handle) {
   }
 
-  public CBaseModelEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public IRenderComponent CRenderComponent {
-    get => new CRenderComponent(_Handle + Schema.GetOffset(0x517849F7E8F59505));
-  }
-  public IHitboxComponent CHitboxComponent {
-    get => new CHitboxComponent(_Handle + Schema.GetOffset(0x517849F70E786123));
-  }
   public ref HitGroup_t DestructiblePartInitialStateDestructed0 {
     get => ref _Handle.AsRef<HitGroup_t>(Schema.GetOffset(0x517849F747691C40));
   }
@@ -48,9 +39,6 @@ internal partial class CBaseModelEntity : CBaseEntity, IBaseModelEntity {
   public ref int DestructiblePartInitialStateDestructed4_PartIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x517849F76D7C6A3C));
   }
-  public IDestructiblePartsSystemComponent DestructiblePartsSystemComponent {
-    get => new CDestructiblePartsSystemComponent(_Handle + Schema.GetOffset(0x517849F77992C14B));
-  }
   public ref HitGroup_t LastHitGroup {
     get => ref _Handle.AsRef<HitGroup_t>(Schema.GetOffset(0x517849F7EE206371));
   }
@@ -66,77 +54,8 @@ internal partial class CBaseModelEntity : CBaseEntity, IBaseModelEntity {
   public IEntityIOOutput OnIgnite {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x517849F757BDA972));
   }
-  public ref RenderMode_t RenderMode {
-    get => ref _Handle.AsRef<RenderMode_t>(Schema.GetOffset(0x517849F7679967A6));
-  }
-  public ref RenderFx_t RenderFX {
-    get => ref _Handle.AsRef<RenderFx_t>(Schema.GetOffset(0x517849F7E510717F));
-  }
   public ref bool AllowFadeInView {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x517849F7CDE3B31E));
-  }
-  public ref Color Render {
-    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x517849F7470D2A38));
-  }
-  public ref CUtlVectorEmbeddedNetworkVar< EntityRenderAttribute_t > RenderAttributes {
-    get => ref _Handle.AsRef<CUtlVectorEmbeddedNetworkVar< EntityRenderAttribute_t >>(Schema.GetOffset(0x517849F7BF74B4AC));
-  }
-  public ref bool RenderToCubemaps {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x517849F78A23364A));
-  }
-  public ref bool NoInterpolate {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x517849F76E001CB9));
-  }
-  public ICollisionProperty Collision {
-    get => new CCollisionProperty(_Handle + Schema.GetOffset(0x517849F7AE8E690F));
-  }
-  public IGlowProperty Glow {
-    get => new CGlowProperty(_Handle + Schema.GetOffset(0x517849F7A7E70C3C));
-  }
-  public ref float GlowBackfaceMult {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x517849F74F285CEE));
-  }
-  public ref float FadeMinDist {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x517849F77FBCF6A9));
-  }
-  public ref float FadeMaxDist {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x517849F70B8328FB));
-  }
-  public ref float FadeScale {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x517849F786B56425));
-  }
-  public ref float ShadowStrength {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x517849F73F1ED282));
-  }
-  public ref byte ObjectCulling {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x517849F71A0D757A));
-  }
-  public ref int AddDecal {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x517849F75E07F29D));
-  }
-  public ref Vector DecalPosition {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x517849F7939EEE2D));
-  }
-  public ref Vector DecalForwardAxis {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x517849F78CF4767A));
-  }
-  public ref float DecalHealBloodRate {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x517849F7E19E95D8));
-  }
-  public ref float DecalHealHeightRate {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x517849F7BDF5A793));
-  }
-  public ref DecalMode_t DecalMode {
-    get => ref _Handle.AsRef<DecalMode_t>(Schema.GetOffset(0x517849F7C6AE5101));
-  }
-  public ref DecalMode_t RequiredDecalMode {
-    get => ref _Handle.AsRef<DecalMode_t>(Schema.GetOffset(0x517849F7CBD7293E));
-  }
-  public ref CUtlVector< CHandle< CBaseModelEntity > > ConfigEntitiesToPropagateMaterialDecalsTo {
-    get => ref _Handle.AsRef<CUtlVector< CHandle< CBaseModelEntity > >>(Schema.GetOffset(0x517849F75FD9715A));
-  }
-  public INetworkViewOffsetVector ViewOffset {
-    get => new CNetworkViewOffsetVector(_Handle + Schema.GetOffset(0x517849F739DB834B));
   }
 
   public void CRenderComponentUpdated() {

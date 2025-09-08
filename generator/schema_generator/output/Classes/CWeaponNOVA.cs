@@ -9,9 +9,6 @@ internal partial class CWeaponNOVA : CCSWeaponBase, IWeaponNOVA {
   public CWeaponNOVA(nint handle) : base(handle) {
   }
 
-  public CWeaponNOVA(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

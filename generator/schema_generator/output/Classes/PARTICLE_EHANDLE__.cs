@@ -9,9 +9,6 @@ internal partial class PARTICLE_EHANDLE__ : SchemaClass, IPARTICLE_EHANDLE__ {
   public PARTICLE_EHANDLE__(nint handle) : base(handle) {
   }
 
-  public PARTICLE_EHANDLE__(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Unused {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x7E4CC5CF85CF281B));
   }

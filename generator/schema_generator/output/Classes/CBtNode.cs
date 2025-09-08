@@ -9,9 +9,6 @@ internal partial class CBtNode : SchemaClass, IBtNode {
   public CBtNode(nint handle) : base(handle) {
   }
 
-  public CBtNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

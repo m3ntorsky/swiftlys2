@@ -9,9 +9,6 @@ internal partial class CParticleProperty : SchemaClass, IParticleProperty {
   public CParticleProperty(nint handle) : base(handle) {
   }
 
-  public CParticleProperty(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

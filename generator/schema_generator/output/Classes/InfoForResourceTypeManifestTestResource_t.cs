@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeManifestTestResource_t : SchemaClass, 
   public InfoForResourceTypeManifestTestResource_t(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeManifestTestResource_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

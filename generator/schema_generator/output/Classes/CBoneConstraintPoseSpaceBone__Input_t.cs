@@ -9,14 +9,11 @@ internal partial class CBoneConstraintPoseSpaceBone__Input_t : SchemaClass, IBon
   public CBoneConstraintPoseSpaceBone__Input_t(nint handle) : base(handle) {
   }
 
-  public CBoneConstraintPoseSpaceBone__Input_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector InputValue {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x4F2ED4014039DA98));
   }
-  public ref CUtlVector< CTransform > OutputTransformList {
-    get => ref _Handle.AsRef<CUtlVector< CTransform >>(Schema.GetOffset(0x4F2ED401DAEA7058));
+  public ref CUtlVector<CTransform> OutputTransformList {
+    get => ref _Handle.AsRef<CUtlVector<CTransform>>(Schema.GetOffset(0x4F2ED401DAEA7058));
   }
 
 

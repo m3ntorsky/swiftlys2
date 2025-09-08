@@ -9,9 +9,6 @@ internal partial class CNmDurationScaleNode__CDefinition : CNmSpeedScaleBaseNode
   public CNmDurationScaleNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmDurationScaleNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

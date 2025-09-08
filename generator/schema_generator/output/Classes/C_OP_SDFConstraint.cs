@@ -9,9 +9,6 @@ internal partial class C_OP_SDFConstraint : CParticleFunctionConstraint, IC_OP_S
   public C_OP_SDFConstraint(nint handle) : base(handle) {
   }
 
-  public C_OP_SDFConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput MinDist {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0x3662556B5219494D));
   }

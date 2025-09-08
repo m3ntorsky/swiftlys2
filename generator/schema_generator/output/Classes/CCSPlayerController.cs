@@ -9,45 +9,6 @@ internal partial class CCSPlayerController : CBasePlayerController, ICSPlayerCon
   public CCSPlayerController(nint handle) : base(handle) {
   }
 
-  public CCSPlayerController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ICSPlayerController_InGameMoneyServices InGameMoneyServices {
-    get => new CCSPlayerController_InGameMoneyServices(_Handle + Schema.GetOffset(0x28ECD7A184B7AA82));
-  }
-  public ICSPlayerController_InventoryServices InventoryServices {
-    get => new CCSPlayerController_InventoryServices(_Handle + Schema.GetOffset(0x28ECD7A1E5A0A8C9));
-  }
-  public ICSPlayerController_ActionTrackingServices ActionTrackingServices {
-    get => new CCSPlayerController_ActionTrackingServices(_Handle + Schema.GetOffset(0x28ECD7A1B8174144));
-  }
-  public ICSPlayerController_DamageServices DamageServices {
-    get => new CCSPlayerController_DamageServices(_Handle + Schema.GetOffset(0x28ECD7A1A2CE0372));
-  }
-  public ref uint Ping {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x28ECD7A15FA2671C));
-  }
-  public ref bool HasCommunicationAbuseMute {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28ECD7A189BEC204));
-  }
-  public ref uint UiCommunicationMuteFlags {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x28ECD7A1DD210AC7));
-  }
-  public ref CUtlSymbolLarge CrosshairCodes {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x28ECD7A10FF7211E));
-  }
-  public ref byte PendingTeamNum {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x28ECD7A1F6CB4D26));
-  }
-  public IGameTime_t ForceTeamTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x28ECD7A143249332));
-  }
-  public ref int CompTeammateColor {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1F22ED09E));
-  }
-  public ref bool EverPlayedOnTeam {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28ECD7A16A63A242));
-  }
   public ref bool AttemptedToGetColor {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28ECD7A1590EFE29));
   }
@@ -75,53 +36,8 @@ internal partial class CCSPlayerController : CBasePlayerController, ICSPlayerCon
   public IGameTime_t LastJoinTeamTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x28ECD7A1B2DAFB07));
   }
-  public ref CUtlSymbolLarge Clan {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x28ECD7A10A2F1774));
-  }
   public ISchemaFixedString ClanName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x28ECD7A1B9D2364F));
-  }
-  public ref int CoachingTeam {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1B80B18EB));
-  }
-  public ref ulong PlayerDominated {
-    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x28ECD7A1B882C893));
-  }
-  public ref ulong PlayerDominatingMe {
-    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x28ECD7A17C8F55E4));
-  }
-  public ref int CompetitiveRanking {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1D82CC087));
-  }
-  public ref int CompetitiveWins {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A192776C10));
-  }
-  public ref byte CompetitiveRankType {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x28ECD7A15803DF71));
-  }
-  public ref int CompetitiveRankingPredicted_Win {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1C32AD2BC));
-  }
-  public ref int CompetitiveRankingPredicted_Loss {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1BDCCE5ED));
-  }
-  public ref int CompetitiveRankingPredicted_Tie {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A138CA4C74));
-  }
-  public ref int EndMatchNextMapVote {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A17AB3943C));
-  }
-  public ref ushort ActiveQuestId {
-    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x28ECD7A1003CF113));
-  }
-  public ref uint RtActiveMissionPeriod {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x28ECD7A1E463EDC8));
-  }
-  public ref QuestProgress::Reason QuestProgressReason {
-    get => ref _Handle.AsRef<QuestProgress::Reason>(Schema.GetOffset(0x28ECD7A1BFFEC946));
-  }
-  public ref uint PlayerTvControlFlags {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x28ECD7A138E01A7D));
+    get => new SchemaFixedString(_Handle, 0x28ECD7A1B9D2364F, 32, 1, 1);
   }
   public ref int DraftIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1EA3A0EAD));
@@ -153,29 +69,11 @@ internal partial class CCSPlayerController : CBasePlayerController, ICSPlayerCon
   public ref bool ScoreReported {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28ECD7A128229D7A));
   }
-  public ref int DisconnectionTick {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1B813FC7A));
-  }
-  public ref bool ControllingBot {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28ECD7A118EA3C63));
-  }
-  public ref bool HasControlledBotThisRound {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28ECD7A18003721A));
-  }
   public ref bool HasBeenControlledByPlayerThisRound {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28ECD7A1FCA2F525));
   }
   public ref int BotsControlledThisRound {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1059DDC83));
-  }
-  public ref bool CanControlObservedBot {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28ECD7A1F6712E5B));
-  }
-  public ref CHandle< CCSPlayerPawn > PlayerPawn {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0x28ECD7A1D6C93E7C));
-  }
-  public ref CHandle< CCSObserverPawn > ObserverPawn {
-    get => ref _Handle.AsRef<CHandle< CCSObserverPawn >>(Schema.GetOffset(0x28ECD7A154DF971F));
   }
   public ref int DesiredObserverMode {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A17704B120));
@@ -183,68 +81,11 @@ internal partial class CCSPlayerController : CBasePlayerController, ICSPlayerCon
   public ref CEntityHandle DesiredObserverTarget {
     get => ref _Handle.AsRef<CEntityHandle>(Schema.GetOffset(0x28ECD7A161F130C8));
   }
-  public ref bool PawnIsAlive {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28ECD7A13DB3C8D0));
-  }
-  public ref uint PawnHealth {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x28ECD7A196CA4790));
-  }
-  public ref int PawnArmor {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1C59D2751));
-  }
-  public ref bool PawnHasDefuser {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28ECD7A1D8AE243B));
-  }
-  public ref bool PawnHasHelmet {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28ECD7A130AB7684));
-  }
-  public ref ushort PawnCharacterDefIndex {
-    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x28ECD7A10A67310B));
-  }
-  public ref int PawnLifetimeStart {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1574766CB));
-  }
-  public ref int PawnLifetimeEnd {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1A8D1608E));
-  }
-  public ref int PawnBotDifficulty {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A10C90C802));
-  }
-  public ref CHandle< CCSPlayerController > OriginalControllerOfCurrentPawn {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerController >>(Schema.GetOffset(0x28ECD7A168975EB8));
-  }
-  public ref int Score {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A139E7DEAE));
-  }
   public ref int RoundScore {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1AA870DFE));
   }
   public ref int RoundsWon {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1866D1FEF));
-  }
-  public ISchemaFixedArray<uint8> RecentKillQueue {
-    get => new SchemaFixedArray<uint8>(_Handle + Schema.GetOffset(0x28ECD7A12540EEA5));
-  }
-  public ref byte FirstKill {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x28ECD7A1FEF75779));
-  }
-  public ref byte KillCount {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x28ECD7A15CC907F4));
-  }
-  public ref bool MvpNoMusic {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28ECD7A131EB0C5C));
-  }
-  public ref int MvpReason {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1F13150E5));
-  }
-  public ref int MusicKitID {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A185940554));
-  }
-  public ref int MusicKitMVPs {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A188B9FF33));
-  }
-  public ref int MVPs {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1CD5FFC12));
   }
   public ref int UpdateCounter {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A15D476034));
@@ -287,9 +128,6 @@ internal partial class CCSPlayerController : CBasePlayerController, ICSPlayerCon
   }
   public ref uint NonSuspiciousHitStreak {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x28ECD7A1D29AD1EE));
-  }
-  public ref bool FireBulletsSeedSynchronized {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28ECD7A1FB25C915));
   }
 
   public void InGameMoneyServicesUpdated() {

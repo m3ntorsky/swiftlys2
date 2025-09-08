@@ -9,9 +9,6 @@ internal partial class MaterialParamFloat_t : MaterialParam_t, IMaterialParamFlo
   public MaterialParamFloat_t(nint handle) : base(handle) {
   }
 
-  public MaterialParamFloat_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Value {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB6A452E28DFCB984));
   }

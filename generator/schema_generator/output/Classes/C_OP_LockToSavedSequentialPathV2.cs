@@ -9,9 +9,6 @@ internal partial class C_OP_LockToSavedSequentialPathV2 : CParticleFunctionOpera
   public C_OP_LockToSavedSequentialPathV2(nint handle) : base(handle) {
   }
 
-  public C_OP_LockToSavedSequentialPathV2(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float FadeStart {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x817A0CEE1A81343));
   }

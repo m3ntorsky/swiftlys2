@@ -9,9 +9,6 @@ internal partial class C_OP_PerParticleForce : CParticleFunctionForce, IC_OP_Per
   public C_OP_PerParticleForce(nint handle) : base(handle) {
   }
 
-  public C_OP_PerParticleForce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput ForceScale {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0x70EFAEAD4817F390));
   }

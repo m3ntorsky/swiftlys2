@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeIParticleSystemDefinition : SchemaClas
   public InfoForResourceTypeIParticleSystemDefinition(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeIParticleSystemDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

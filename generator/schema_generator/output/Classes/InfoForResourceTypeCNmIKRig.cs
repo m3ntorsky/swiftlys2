@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCNmIKRig : SchemaClass, IInfoForResour
   public InfoForResourceTypeCNmIKRig(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCNmIKRig(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

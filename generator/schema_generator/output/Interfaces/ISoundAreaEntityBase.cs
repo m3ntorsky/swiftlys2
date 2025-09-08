@@ -4,5 +4,10 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISoundAreaEntityBase : IBaseEntity {
 
-
+  public ref bool Disabled { get; }
+  
+  public ref CUtlSymbolLarge SoundAreaType { get; }
+  
+  public ref Vector Pos { get; }
+  
 }

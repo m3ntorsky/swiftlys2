@@ -9,9 +9,6 @@ internal partial class C_OP_LazyCullCompareFloat : CParticleFunctionOperator, IC
   public C_OP_LazyCullCompareFloat(nint handle) : base(handle) {
   }
 
-  public C_OP_LazyCullCompareFloat(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput Comparsion1 {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0x9D0DCAD079865299));
   }

@@ -9,9 +9,6 @@ internal partial class CGameEnd : CRulePointEntity, IGameEnd {
   public CGameEnd(nint handle) : base(handle) {
   }
 
-  public CGameEnd(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

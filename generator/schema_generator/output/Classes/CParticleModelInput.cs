@@ -9,9 +9,6 @@ internal partial class CParticleModelInput : CParticleInput, IParticleModelInput
   public CParticleModelInput(nint handle) : base(handle) {
   }
 
-  public CParticleModelInput(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ParticleModelType_t Type {
     get => ref _Handle.AsRef<ParticleModelType_t>(Schema.GetOffset(0xC8FF4F3F18853D59));
   }

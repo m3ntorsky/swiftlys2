@@ -9,9 +9,6 @@ internal partial class CNullEntity : CBaseEntity, INullEntity {
   public CNullEntity(nint handle) : base(handle) {
   }
 
-  public CNullEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

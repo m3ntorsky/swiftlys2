@@ -9,9 +9,6 @@ internal partial class CBasePlayerControllerAPI : SchemaClass, IBasePlayerContro
   public CBasePlayerControllerAPI(nint handle) : base(handle) {
   }
 
-  public CBasePlayerControllerAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

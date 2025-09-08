@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseRuntimeCallInfoIndex_t : ISchemaClass {
 
-
+  public ref int Value { get; }
+  
 }

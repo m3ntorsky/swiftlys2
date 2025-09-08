@@ -9,9 +9,6 @@ internal partial class C_INIT_ColorLitPerParticle : CParticleFunctionInitializer
   public C_INIT_ColorLitPerParticle(nint handle) : base(handle) {
   }
 
-  public C_INIT_ColorLitPerParticle(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Color ColorMin {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0xA196BF87552A5834));
   }

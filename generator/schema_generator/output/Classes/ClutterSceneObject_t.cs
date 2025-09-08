@@ -9,9 +9,6 @@ internal partial class ClutterSceneObject_t : SchemaClass, IClutterSceneObject_t
   public ClutterSceneObject_t(nint handle) : base(handle) {
   }
 
-  public ClutterSceneObject_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAABB_t Bounds {
     get => new AABB_t(_Handle + Schema.GetOffset(0xAE8D1536ABF76288));
   }
@@ -21,20 +18,20 @@ internal partial class ClutterSceneObject_t : SchemaClass, IClutterSceneObject_t
   public ref short Layer {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xAE8D1536477C7B2A));
   }
-  public ref CUtlVector< Vector > InstancePositions {
-    get => ref _Handle.AsRef<CUtlVector< Vector >>(Schema.GetOffset(0xAE8D15369B4D36BA));
+  public ref CUtlVector<Vector> InstancePositions {
+    get => ref _Handle.AsRef<CUtlVector<Vector>>(Schema.GetOffset(0xAE8D15369B4D36BA));
   }
-  public ref CUtlVector< float32 > InstanceScales {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0xAE8D1536F0D43B61));
+  public ref CUtlVector<float> InstanceScales {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0xAE8D1536F0D43B61));
   }
-  public ref CUtlVector< Color > InstanceTintSrgb {
-    get => ref _Handle.AsRef<CUtlVector< Color >>(Schema.GetOffset(0xAE8D15369EE1C08B));
+  public ref CUtlVector<Color> InstanceTintSrgb {
+    get => ref _Handle.AsRef<CUtlVector<Color>>(Schema.GetOffset(0xAE8D15369EE1C08B));
   }
-  public ref CUtlVector< ClutterTile_t > Tiles {
-    get => ref _Handle.AsRef<CUtlVector< ClutterTile_t >>(Schema.GetOffset(0xAE8D15361FD2CAEE));
+  public ref CUtlVector Tiles {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xAE8D15361FD2CAEE));
   }
-  public ref CStrongHandle< InfoForResourceTypeCModel > RenderableModel {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCModel >>(Schema.GetOffset(0xAE8D15362AEEFA82));
+  public CStrongHandle<IInfoForResourceTypeCModel> RenderableModel {
+    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0xAE8D15362AEEFA82));
   }
   public ref CUtlStringToken MaterialGroup {
     get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0xAE8D15362B778F03));

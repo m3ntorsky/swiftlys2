@@ -9,9 +9,6 @@ internal partial class CNmTransitionEventConditionNode__CDefinition : CNmBoolVal
   public CNmTransitionEventConditionNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmTransitionEventConditionNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol RequireRuleID {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x874AC07F75BFD237));
   }

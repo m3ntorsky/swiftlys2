@@ -9,9 +9,6 @@ internal partial class C_OP_RemapExternalWindToCP : CParticleFunctionPreEmission
   public C_OP_RemapExternalWindToCP(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapExternalWindToCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x19366DF9EB661472));
   }

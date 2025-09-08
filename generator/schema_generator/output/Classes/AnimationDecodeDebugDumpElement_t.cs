@@ -9,26 +9,23 @@ internal partial class AnimationDecodeDebugDumpElement_t : SchemaClass, IAnimati
   public AnimationDecodeDebugDumpElement_t(nint handle) : base(handle) {
   }
 
-  public AnimationDecodeDebugDumpElement_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int EntityIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4CAFE8F7BDB9BC5A));
   }
   public ref CUtlString ModelName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x4CAFE8F75D35B6E1));
   }
-  public ref CUtlVector< CUtlString > PoseParams {
-    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0x4CAFE8F7B4A27762));
+  public ref CUtlVector<CUtlString> PoseParams {
+    get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x4CAFE8F7B4A27762));
   }
-  public ref CUtlVector< CUtlString > DecodeOps {
-    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0x4CAFE8F7D39502F9));
+  public ref CUtlVector<CUtlString> DecodeOps {
+    get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x4CAFE8F7D39502F9));
   }
-  public ref CUtlVector< CUtlString > InternalOps {
-    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0x4CAFE8F775823E0C));
+  public ref CUtlVector<CUtlString> InternalOps {
+    get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x4CAFE8F775823E0C));
   }
-  public ref CUtlVector< CUtlString > DecodedAnims {
-    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0x4CAFE8F7B20FFAAD));
+  public ref CUtlVector<CUtlString> DecodedAnims {
+    get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x4CAFE8F7B20FFAAD));
   }
 
 

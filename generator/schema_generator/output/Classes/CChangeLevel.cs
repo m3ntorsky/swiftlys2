@@ -9,9 +9,6 @@ internal partial class CChangeLevel : CBaseTrigger, IChangeLevel {
   public CChangeLevel(nint handle) : base(handle) {
   }
 
-  public CChangeLevel(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString MapName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x52008134CE11EF47));
   }

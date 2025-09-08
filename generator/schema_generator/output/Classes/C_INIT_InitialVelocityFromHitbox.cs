@@ -9,9 +9,6 @@ internal partial class C_INIT_InitialVelocityFromHitbox : CParticleFunctionIniti
   public C_INIT_InitialVelocityFromHitbox(nint handle) : base(handle) {
   }
 
-  public C_INIT_InitialVelocityFromHitbox(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float VelocityMin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x48F25F17FDB3D7E4));
   }
@@ -22,7 +19,7 @@ internal partial class C_INIT_InitialVelocityFromHitbox : CParticleFunctionIniti
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x48F25F173F31A6BD));
   }
   public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x48F25F176A21BB0E));
+    get => new SchemaFixedString(_Handle, 0x48F25F176A21BB0E, 128, 1, 1);
   }
   public ref bool UseBones {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x48F25F1710D1938B));

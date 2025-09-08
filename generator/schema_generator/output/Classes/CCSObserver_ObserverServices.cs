@@ -9,9 +9,6 @@ internal partial class CCSObserver_ObserverServices : CPlayer_ObserverServices, 
   public CCSObserver_ObserverServices(nint handle) : base(handle) {
   }
 
-  public CCSObserver_ObserverServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

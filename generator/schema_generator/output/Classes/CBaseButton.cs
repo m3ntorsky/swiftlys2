@@ -9,9 +9,6 @@ internal partial class CBaseButton : CBaseToggle, IBaseButton {
   public CBaseButton(nint handle) : base(handle) {
   }
 
-  public CBaseButton(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref QAngle MoveEntitySpace {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0x1911FA7F325319F9));
   }
@@ -77,15 +74,6 @@ internal partial class CBaseButton : CBaseToggle, IBaseButton {
   }
   public ref CUtlSymbolLarge GlowEntity {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1911FA7F8B25D228));
-  }
-  public ref CHandle< CBaseModelEntity > GlowEntity {
-    get => ref _Handle.AsRef<CHandle< CBaseModelEntity >>(Schema.GetOffset(0x1911FA7F35C883E7));
-  }
-  public ref bool Usable {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1911FA7F44B8E369));
-  }
-  public ref CUtlSymbolLarge DisplayText {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1911FA7FDE5320C5));
   }
 
   public void GlowEntityUpdated() {

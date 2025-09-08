@@ -9,9 +9,6 @@ internal partial class C_OP_SetRandomControlPointPosition : CParticleFunctionPre
   public C_OP_SetRandomControlPointPosition(nint handle) : base(handle) {
   }
 
-  public C_OP_SetRandomControlPointPosition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool UseWorldLocation {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4E797BEAF371AED7));
   }

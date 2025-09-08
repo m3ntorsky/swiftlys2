@@ -9,9 +9,6 @@ internal partial class CSoundEnvelope : SchemaClass, ISoundEnvelope {
   public CSoundEnvelope(nint handle) : base(handle) {
   }
 
-  public CSoundEnvelope(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Current {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDF974C315AD334FA));
   }

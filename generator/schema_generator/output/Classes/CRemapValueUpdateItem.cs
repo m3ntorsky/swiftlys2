@@ -9,9 +9,6 @@ internal partial class CRemapValueUpdateItem : SchemaClass, IRemapValueUpdateIte
   public CRemapValueUpdateItem(nint handle) : base(handle) {
   }
 
-  public CRemapValueUpdateItem(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimParamHandle ParamIn {
     get => new CAnimParamHandle(_Handle + Schema.GetOffset(0x93C5E8D6ED40E37B));
   }

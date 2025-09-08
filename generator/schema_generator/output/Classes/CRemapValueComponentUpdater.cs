@@ -9,11 +9,8 @@ internal partial class CRemapValueComponentUpdater : CAnimComponentUpdater, IRem
   public CRemapValueComponentUpdater(nint handle) : base(handle) {
   }
 
-  public CRemapValueComponentUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CRemapValueUpdateItem > Items {
-    get => ref _Handle.AsRef<CUtlVector< CRemapValueUpdateItem >>(Schema.GetOffset(0xA80D46C07A87EDAF));
+  public ref CUtlVector Items {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA80D46C07A87EDAF));
   }
 
 

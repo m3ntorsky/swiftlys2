@@ -9,11 +9,8 @@ internal partial class CStanceOverrideUpdateNode : CUnaryUpdateNode, IStanceOver
   public CStanceOverrideUpdateNode(nint handle) : base(handle) {
   }
 
-  public CStanceOverrideUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< StanceInfo_t > FootStanceInfo {
-    get => ref _Handle.AsRef<CUtlVector< StanceInfo_t >>(Schema.GetOffset(0x322EE1B7D5687289));
+  public ref CUtlVector FootStanceInfo {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x322EE1B7D5687289));
   }
   public IAnimUpdateNodeRef StanceSourceNode {
     get => new CAnimUpdateNodeRef(_Handle + Schema.GetOffset(0x322EE1B7D25DA07A));

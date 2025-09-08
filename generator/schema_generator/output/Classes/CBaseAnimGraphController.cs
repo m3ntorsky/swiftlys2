@@ -9,12 +9,6 @@ internal partial class CBaseAnimGraphController : CSkeletonAnimationController, 
   public CBaseAnimGraphController(nint handle) : base(handle) {
   }
 
-  public CBaseAnimGraphController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public IAnimGraphNetworkedVariables AnimGraphNetworkedVars {
-    get => new CAnimGraphNetworkedVariables(_Handle + Schema.GetOffset(0xFA1FB81EA83A7C39));
-  }
   public ref bool SequenceFinished {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xFA1FB81E5DB8EB16));
   }
@@ -23,21 +17,6 @@ internal partial class CBaseAnimGraphController : CSkeletonAnimationController, 
   }
   public ref uint ActiveIKChainMask {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xFA1FB81E070EB774));
-  }
-  public IHSequence Sequence {
-    get => new HSequence(_Handle + Schema.GetOffset(0xFA1FB81EE0A0598E));
-  }
-  public IGameTime_t SeqStartTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0xFA1FB81E9120356F));
-  }
-  public ref float SeqFixedCycle {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xFA1FB81E77103EAE));
-  }
-  public ref AnimLoopMode_t AnimLoopMode {
-    get => ref _Handle.AsRef<AnimLoopMode_t>(Schema.GetOffset(0xFA1FB81E9C9688D9));
-  }
-  public ref CNetworkedQuantizedFloat PlaybackRate {
-    get => ref _Handle.AsRef<CNetworkedQuantizedFloat>(Schema.GetOffset(0xFA1FB81EC396F9D8));
   }
   public ref SequenceFinishNotifyState_t NotifyState {
     get => ref _Handle.AsRef<SequenceFinishNotifyState_t>(Schema.GetOffset(0xFA1FB81EEEDBFC3D));
@@ -53,24 +32,6 @@ internal partial class CBaseAnimGraphController : CSkeletonAnimationController, 
   }
   public IGameTime_t PrevAnimUpdateTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xFA1FB81E724643D3));
-  }
-  public ref CStrongHandle< InfoForResourceTypeCNmGraphDefinition > GraphDefinitionAG2 {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCNmGraphDefinition >>(Schema.GetOffset(0xFA1FB81EBE14922A));
-  }
-  public ref bool IsUsingAG2 {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xFA1FB81EB54DDF17));
-  }
-  public ref CUtlVector< uint8 > SerializedPoseRecipeAG2 {
-    get => ref _Handle.AsRef<CUtlVector< uint8 >>(Schema.GetOffset(0xFA1FB81E61B92D46));
-  }
-  public ref int SerializePoseRecipeSizeAG2 {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFA1FB81E0121F373));
-  }
-  public ref byte GraphCreationFlagsAG2 {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xFA1FB81EA3781101));
-  }
-  public ref int ServerGraphDefReloadCountAG2 {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFA1FB81E6A8D1A13));
   }
 
   public void AnimGraphNetworkedVarsUpdated() {

@@ -9,9 +9,6 @@ internal partial class CFilterTeam : CBaseFilter, IFilterTeam {
   public CFilterTeam(nint handle) : base(handle) {
   }
 
-  public CFilterTeam(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int FilterTeam {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x46DA651D4D36160F));
   }

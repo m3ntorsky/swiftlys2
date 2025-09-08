@@ -9,9 +9,6 @@ internal partial class C_OP_RemapCrossProductOfTwoVectorsToVector : CParticleFun
   public C_OP_RemapCrossProductOfTwoVectorsToVector(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapCrossProductOfTwoVectorsToVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleVecInput InputVec1 {
     get => new CPerParticleVecInput(_Handle + Schema.GetOffset(0x4B4531D84584355A));
   }

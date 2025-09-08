@@ -9,48 +9,7 @@ internal partial class CTriggerPhysics : CBaseTrigger, ITriggerPhysics {
   public CTriggerPhysics(nint handle) : base(handle) {
   }
 
-  public CTriggerPhysics(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref float GravityScale {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD6C7C8D3F22682F1));
-  }
-  public ref float LinearLimit {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD6C7C8D38455E743));
-  }
-  public ref float LinearDamping {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD6C7C8D395E4E646));
-  }
-  public ref float AngularLimit {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD6C7C8D3497B8D18));
-  }
-  public ref float AngularDamping {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD6C7C8D36F1B9C61));
-  }
-  public ref float LinearForce {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD6C7C8D32DAF4653));
-  }
-  public ref float Frequency {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD6C7C8D3D2C16DD7));
-  }
-  public ref float DampingRatio {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD6C7C8D3B40C859E));
-  }
-  public ref Vector LinearForcePointAt {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD6C7C8D3C27DF46E));
-  }
-  public ref bool CollapseToForcePoint {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6C7C8D3EB895D00));
-  }
-  public ref Vector LinearForcePointAtWorld {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD6C7C8D3C80D3782));
-  }
-  public ref Vector LinearForceDirection {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD6C7C8D36076B2FC));
-  }
-  public ref bool ConvertToDebrisWhenPossible {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6C7C8D36AD4D155));
-  }
 
   public void GravityScaleUpdated() {
     Schema.Update(_Handle, 0xD6C7C8D3F22682F1);

@@ -9,15 +9,7 @@ internal partial class CCSPlayer_ItemServices : CPlayer_ItemServices, ICSPlayer_
   public CCSPlayer_ItemServices(nint handle) : base(handle) {
   }
 
-  public CCSPlayer_ItemServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref bool HasDefuser {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6BB85EAD5AF87AF5));
-  }
-  public ref bool HasHelmet {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6BB85EAD4240B6F6));
-  }
 
   public void HasDefuserUpdated() {
     Schema.Update(_Handle, 0x6BB85EAD5AF87AF5);

@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCTypeScriptResource : SchemaClass, IIn
   public InfoForResourceTypeCTypeScriptResource(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCTypeScriptResource(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

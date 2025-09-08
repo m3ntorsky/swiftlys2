@@ -9,9 +9,6 @@ internal partial class CNmPoseNode__CDefinition : CNmGraphNode::CDefinition, INm
   public CNmPoseNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmPoseNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

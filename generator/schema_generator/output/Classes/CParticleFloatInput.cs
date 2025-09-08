@@ -9,9 +9,6 @@ internal partial class CParticleFloatInput : CParticleInput, IParticleFloatInput
   public CParticleFloatInput(nint handle) : base(handle) {
   }
 
-  public CParticleFloatInput(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ParticleFloatType_t Type {
     get => ref _Handle.AsRef<ParticleFloatType_t>(Schema.GetOffset(0x4330CD3218853D59));
   }

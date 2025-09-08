@@ -9,9 +9,6 @@ internal partial class EventClientAdvanceNonRenderedFrame_t : SchemaClass, IEven
   public EventClientAdvanceNonRenderedFrame_t(nint handle) : base(handle) {
   }
 
-  public EventClientAdvanceNonRenderedFrame_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CSkillDamage : SchemaClass, ISkillDamage {
   public CSkillDamage(nint handle) : base(handle) {
   }
 
-  public CSkillDamage(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISkillFloat Damage {
     get => new CSkillFloat(_Handle + Schema.GetOffset(0x6A323D82DC60E53E));
   }

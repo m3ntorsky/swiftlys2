@@ -9,9 +9,6 @@ internal partial class CDynamicPropAlias_prop_dynamic_override : CDynamicProp, I
   public CDynamicPropAlias_prop_dynamic_override(nint handle) : base(handle) {
   }
 
-  public CDynamicPropAlias_prop_dynamic_override(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,18 +9,7 @@ internal partial class COmniLight : CBarnLight, IOmniLight {
   public COmniLight(nint handle) : base(handle) {
   }
 
-  public COmniLight(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref float InnerAngle {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x46F0D2E5142C32F4));
-  }
-  public ref float OuterAngle {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x46F0D2E5ECB8B519));
-  }
-  public ref bool ShowLight {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x46F0D2E5D67BC720));
-  }
 
   public void InnerAngleUpdated() {
     Schema.Update(_Handle, 0x46F0D2E5142C32F4);

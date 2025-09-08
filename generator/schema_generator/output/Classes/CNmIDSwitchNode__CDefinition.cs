@@ -9,9 +9,6 @@ internal partial class CNmIDSwitchNode__CDefinition : CNmIDValueNode::CDefinitio
   public CNmIDSwitchNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmIDSwitchNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short SwitchValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x24752DA7FBD7561));
   }

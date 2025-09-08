@@ -9,9 +9,6 @@ internal partial class CNmModelSpaceBlendTask : CNmBlendTaskBase, INmModelSpaceB
   public CNmModelSpaceBlendTask(nint handle) : base(handle) {
   }
 
-  public CNmModelSpaceBlendTask(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

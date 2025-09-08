@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomVectorComponent : CParticleFunctionInitializ
   public C_INIT_RandomVectorComponent(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomVectorComponent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Min {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD6D670313B1A5649));
   }

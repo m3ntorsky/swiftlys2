@@ -9,9 +9,6 @@ internal partial class C_INIT_InitSkinnedPositionFromCPSnapshot : CParticleFunct
   public C_INIT_InitSkinnedPositionFromCPSnapshot(nint handle) : base(handle) {
   }
 
-  public C_INIT_InitSkinnedPositionFromCPSnapshot(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int SnapshotControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD1B6E41429D3EEDD));
   }

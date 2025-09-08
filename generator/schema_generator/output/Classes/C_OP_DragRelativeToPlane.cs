@@ -9,9 +9,6 @@ internal partial class C_OP_DragRelativeToPlane : CParticleFunctionOperator, IC_
   public C_OP_DragRelativeToPlane(nint handle) : base(handle) {
   }
 
-  public C_OP_DragRelativeToPlane(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput DragAtPlane {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0x9D049848176259A2));
   }

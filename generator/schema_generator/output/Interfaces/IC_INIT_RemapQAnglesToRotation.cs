@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_RemapQAnglesToRotation : IParticleFunctionInitializer {
 
-
+  public IParticleTransformInput TransformInput { get; }
+  
 }

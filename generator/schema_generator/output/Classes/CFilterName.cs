@@ -9,9 +9,6 @@ internal partial class CFilterName : CBaseFilter, IFilterName {
   public CFilterName(nint handle) : base(handle) {
   }
 
-  public CFilterName(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge FilterName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xF129410709C86445));
   }

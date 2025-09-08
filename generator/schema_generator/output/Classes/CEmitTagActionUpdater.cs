@@ -9,9 +9,6 @@ internal partial class CEmitTagActionUpdater : CAnimActionUpdater, IEmitTagActio
   public CEmitTagActionUpdater(nint handle) : base(handle) {
   }
 
-  public CEmitTagActionUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int TagIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x13C6F616C2026AAD));
   }

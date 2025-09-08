@@ -9,9 +9,6 @@ internal partial class ConstantInfo_t : SchemaClass, IConstantInfo_t {
   public ConstantInfo_t(nint handle) : base(handle) {
   }
 
-  public ConstantInfo_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF4BEF78E4D8F5786));
   }

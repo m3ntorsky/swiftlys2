@@ -9,9 +9,6 @@ internal partial class VMixEffectChainDesc_t : SchemaClass, IVMixEffectChainDesc
   public VMixEffectChainDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixEffectChainDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float CrossfadeTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x993FEE3C5C1DD52));
   }

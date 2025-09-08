@@ -9,9 +9,6 @@ internal partial class CNmIDEventPercentageThroughNode__CDefinition : CNmBoolVal
   public CNmIDEventPercentageThroughNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmIDEventPercentageThroughNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short SourceStateNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x3912E5963F0228C));
   }

@@ -9,9 +9,6 @@ internal partial class CBodyComponent : CEntityComponent, IBodyComponent {
   public CBodyComponent(nint handle) : base(handle) {
   }
 
-  public CBodyComponent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IGameSceneNode SceneNode {
     get => new CGameSceneNode(_Handle + Schema.GetOffset(0x4EF2C865D7D13495));
   }

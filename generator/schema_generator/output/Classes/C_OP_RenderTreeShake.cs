@@ -9,9 +9,6 @@ internal partial class C_OP_RenderTreeShake : CParticleFunctionRenderer, IC_OP_R
   public C_OP_RenderTreeShake(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderTreeShake(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float PeakStrength {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8EB4A28DA6BB3CD1));
   }

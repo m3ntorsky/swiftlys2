@@ -9,9 +9,6 @@ internal partial class CPhysBallSocket : CPhysConstraint, IPhysBallSocket {
   public CPhysBallSocket(nint handle) : base(handle) {
   }
 
-  public CPhysBallSocket(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float JointFriction {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDE2408965CA9FD47));
   }

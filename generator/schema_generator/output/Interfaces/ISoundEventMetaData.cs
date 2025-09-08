@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISoundEventMetaData : ISchemaClass {
 
-
+  public CStrongHandle<IInfoForResourceTypeCVMixListResource> SoundEventVMix { get; }
+  
 }

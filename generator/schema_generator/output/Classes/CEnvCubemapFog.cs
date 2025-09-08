@@ -9,60 +9,6 @@ internal partial class CEnvCubemapFog : CBaseEntity, IEnvCubemapFog {
   public CEnvCubemapFog(nint handle) : base(handle) {
   }
 
-  public CEnvCubemapFog(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref float EndDistance {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x38A7692EB825C247));
-  }
-  public ref float StartDistance {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x38A7692E796C8142));
-  }
-  public ref float FogFalloffExponent {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x38A7692E2068A39A));
-  }
-  public ref bool HeightFogEnabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x38A7692EFB7ED9F7));
-  }
-  public ref float FogHeightWidth {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x38A7692E07936DE2));
-  }
-  public ref float FogHeightEnd {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x38A7692E16176853));
-  }
-  public ref float FogHeightStart {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x38A7692ED4580CB6));
-  }
-  public ref float FogHeightExponent {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x38A7692E0864DD39));
-  }
-  public ref float LODBias {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x38A7692E6917C8A7));
-  }
-  public ref bool Active {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x38A7692E8334208F));
-  }
-  public ref bool StartDisabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x38A7692E61ED0C4F));
-  }
-  public ref float FogMaxOpacity {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x38A7692E7BF7FD56));
-  }
-  public ref int CubemapSourceType {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x38A7692E30B17317));
-  }
-  public ref CStrongHandle< InfoForResourceTypeIMaterial2 > SkyMaterial {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0x38A7692EC887319D));
-  }
-  public ref CUtlSymbolLarge SkyEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x38A7692E2BD44B1D));
-  }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > FogCubemapTexture {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x38A7692E3470DA4D));
-  }
-  public ref bool HasHeightFogEnd {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x38A7692E3484C961));
-  }
   public ref bool FirstTime {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x38A7692ED23C3138));
   }

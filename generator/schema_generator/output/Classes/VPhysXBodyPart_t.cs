@@ -9,9 +9,6 @@ internal partial class VPhysXBodyPart_t : SchemaClass, IVPhysXBodyPart_t {
   public VPhysXBodyPart_t(nint handle) : base(handle) {
   }
 
-  public VPhysXBodyPart_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint Flags {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x53DE59CDCE6E9C28));
   }

@@ -9,9 +9,6 @@ internal partial class CPhysFixed : CPhysConstraint, IPhysFixed {
   public CPhysFixed(nint handle) : base(handle) {
   }
 
-  public CPhysFixed(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float LinearFrequency {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8E8A38382FE6B034));
   }

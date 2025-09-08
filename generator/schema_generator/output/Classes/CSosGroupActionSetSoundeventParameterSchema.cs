@@ -9,9 +9,6 @@ internal partial class CSosGroupActionSetSoundeventParameterSchema : CSosGroupAc
   public CSosGroupActionSetSoundeventParameterSchema(nint handle) : base(handle) {
   }
 
-  public CSosGroupActionSetSoundeventParameterSchema(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int MaxCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x40D29D8964BED864));
   }

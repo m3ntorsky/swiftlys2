@@ -9,9 +9,6 @@ internal partial class BakedLightingInfo_t : SchemaClass, IBakedLightingInfo_t {
   public BakedLightingInfo_t(nint handle) : base(handle) {
   }
 
-  public BakedLightingInfo_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint LightmapVersionNumber {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x6909F4EF909450E0));
   }
@@ -39,11 +36,11 @@ internal partial class BakedLightingInfo_t : SchemaClass, IBakedLightingInfo_t {
   public ref byte VradQuality {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x6909F4EFDFCA05D9));
   }
-  public ref CUtlVector< CStrongHandle< InfoForResourceTypeCTextureBase > > LightMaps {
-    get => ref _Handle.AsRef<CUtlVector< CStrongHandle< InfoForResourceTypeCTextureBase > >>(Schema.GetOffset(0x6909F4EF6F2EFF94));
+  public ref CUtlVector LightMaps {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x6909F4EF6F2EFF94));
   }
-  public ref CUtlVector< BakedLightingInfo_t::BakedShadowAssignment_t > BakedShadows {
-    get => ref _Handle.AsRef<CUtlVector< BakedLightingInfo_t::BakedShadowAssignment_t >>(Schema.GetOffset(0x6909F4EFE8C9B481));
+  public ref CUtlVector BakedShadows {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x6909F4EFE8C9B481));
   }
 
 

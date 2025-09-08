@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IJiggleBoneSettingsList_t : ISchemaClass {
 
-
+  public ref CUtlVector BoneSettings { get; }
+  
 }

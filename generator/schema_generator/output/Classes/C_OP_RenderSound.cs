@@ -9,9 +9,6 @@ internal partial class C_OP_RenderSound : CParticleFunctionRenderer, IC_OP_Rende
   public C_OP_RenderSound(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderSound(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float DurationScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBDBBFDFC776D4203));
   }
@@ -43,7 +40,7 @@ internal partial class C_OP_RenderSound : CParticleFunctionRenderer, IC_OP_Rende
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xBDBBFDFC1349FFE7));
   }
   public ISchemaFixedString SoundName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xBDBBFDFC26D82A1A));
+    get => new SchemaFixedString(_Handle, 0xBDBBFDFC26D82A1A, 256, 1, 1);
   }
   public ref bool SuppressStopSoundEvent {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBDBBFDFC76AD7797));

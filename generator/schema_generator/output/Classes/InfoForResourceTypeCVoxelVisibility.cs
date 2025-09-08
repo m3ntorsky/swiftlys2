@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCVoxelVisibility : SchemaClass, IInfoF
   public InfoForResourceTypeCVoxelVisibility(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCVoxelVisibility(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

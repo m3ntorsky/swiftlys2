@@ -9,9 +9,6 @@ internal partial class CRenderComponent : CEntityComponent, IRenderComponent {
   public CRenderComponent(nint handle) : base(handle) {
   }
 
-  public CRenderComponent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public INetworkVarChainer __m_pChainEntity {
     get => new CNetworkVarChainer(_Handle + Schema.GetOffset(0x8830FA5F63F0E7D));
   }

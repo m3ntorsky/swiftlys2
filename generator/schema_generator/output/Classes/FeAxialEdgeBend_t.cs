@@ -9,9 +9,6 @@ internal partial class FeAxialEdgeBend_t : SchemaClass, IFeAxialEdgeBend_t {
   public FeAxialEdgeBend_t(nint handle) : base(handle) {
   }
 
-  public FeAxialEdgeBend_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Te {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6CF84D703C453EB2));
   }
@@ -21,11 +18,11 @@ internal partial class FeAxialEdgeBend_t : SchemaClass, IFeAxialEdgeBend_t {
   public ref float Dist {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6CF84D701234268F));
   }
-  public ISchemaFixedArray<float32> Weight {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0x6CF84D70CFFC66CB));
+  public ISchemaFixedArray<float> Weight {
+    get => new SchemaFixedArray<float>(_Handle, 0x6CF84D70CFFC66CB, 4, 4, 4);
   }
-  public ISchemaFixedArray<uint16> Node {
-    get => new SchemaFixedArray<uint16>(_Handle + Schema.GetOffset(0x6CF84D70CD6694B9));
+  public ISchemaFixedArray<ushort> Node {
+    get => new SchemaFixedArray<ushort>(_Handle, 0x6CF84D70CD6694B9, 6, 2, 2);
   }
 
 

@@ -9,36 +9,6 @@ internal partial class CInferno : CBaseModelEntity, IInferno {
   public CInferno(nint handle) : base(handle) {
   }
 
-  public CInferno(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<Vector> FirePositions {
-    get => new SchemaFixedArray<Vector>(_Handle + Schema.GetOffset(0xABE104C91E992007));
-  }
-  public ISchemaFixedArray<Vector> FireParentPositions {
-    get => new SchemaFixedArray<Vector>(_Handle + Schema.GetOffset(0xABE104C9A58B35D7));
-  }
-  public ISchemaFixedArray<bool> FireIsBurning {
-    get => new SchemaFixedArray<bool>(_Handle + Schema.GetOffset(0xABE104C9E5CD906C));
-  }
-  public ISchemaFixedArray<Vector> BurnNormal {
-    get => new SchemaFixedArray<Vector>(_Handle + Schema.GetOffset(0xABE104C9382663DB));
-  }
-  public ref int FireCount {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xABE104C9820942A0));
-  }
-  public ref int InfernoType {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xABE104C903C628B8));
-  }
-  public ref int FireEffectTickBegin {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xABE104C989EB57F2));
-  }
-  public ref float FireLifetime {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xABE104C9B2E34E7E));
-  }
-  public ref bool InPostEffectTime {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xABE104C963E4F6B8));
-  }
   public ref bool WasCreatedInSmoke {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xABE104C95CC1EF2A));
   }

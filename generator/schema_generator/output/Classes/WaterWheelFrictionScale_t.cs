@@ -9,9 +9,6 @@ internal partial class WaterWheelFrictionScale_t : SchemaClass, IWaterWheelFrict
   public WaterWheelFrictionScale_t(nint handle) : base(handle) {
   }
 
-  public WaterWheelFrictionScale_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float FractionOfWheelSubmerged {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x79315E8EF2D4C09B));
   }

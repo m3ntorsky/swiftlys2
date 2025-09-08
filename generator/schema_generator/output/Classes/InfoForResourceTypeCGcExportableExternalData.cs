@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCGcExportableExternalData : SchemaClas
   public InfoForResourceTypeCGcExportableExternalData(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCGcExportableExternalData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class VMixDynamicsBand_t : SchemaClass, IVMixDynamicsBand_t {
   public VMixDynamicsBand_t(nint handle) : base(handle) {
   }
 
-  public VMixDynamicsBand_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float FldbGainInput {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC3A63113E9F143B6));
   }

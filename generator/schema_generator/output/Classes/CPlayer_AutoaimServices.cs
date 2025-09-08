@@ -9,9 +9,6 @@ internal partial class CPlayer_AutoaimServices : CPlayerPawnComponent, IPlayer_A
   public CPlayer_AutoaimServices(nint handle) : base(handle) {
   }
 
-  public CPlayer_AutoaimServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

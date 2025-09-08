@@ -9,9 +9,6 @@ internal partial class CPulseCell_Step_EntFire : CPulseCell_BaseFlow, IPulseCell
   public CPulseCell_Step_EntFire(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Step_EntFire(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Input {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF0F9E958942A24FB));
   }

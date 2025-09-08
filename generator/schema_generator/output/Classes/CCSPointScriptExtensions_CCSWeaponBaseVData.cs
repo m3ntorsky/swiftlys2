@@ -9,9 +9,6 @@ internal partial class CCSPointScriptExtensions_CCSWeaponBaseVData : SchemaClass
   public CCSPointScriptExtensions_CCSWeaponBaseVData(nint handle) : base(handle) {
   }
 
-  public CCSPointScriptExtensions_CCSWeaponBaseVData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

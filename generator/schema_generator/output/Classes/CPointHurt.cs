@@ -9,9 +9,6 @@ internal partial class CPointHurt : CPointEntity, IPointHurt {
   public CPointHurt(nint handle) : base(handle) {
   }
 
-  public CPointHurt(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Damage {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4FEAE151C56D69C));
   }
@@ -27,8 +24,8 @@ internal partial class CPointHurt : CPointEntity, IPointHurt {
   public ref CUtlSymbolLarge StrTarget {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x4FEAE15B8F64879));
   }
-  public ref CHandle< CBaseEntity > Activator {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x4FEAE159C480B5A));
+  public CHandle<IBaseEntity> Activator {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x4FEAE159C480B5A));
   }
 
 

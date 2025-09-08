@@ -4,5 +4,46 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITakeDamageInfo : ISchemaClass {
 
-
+  public ref Vector DamageForce { get; }
+  
+  public ref Vector DamagePosition { get; }
+  
+  public ref Vector ReportedPosition { get; }
+  
+  public ref Vector DamageDirection { get; }
+  
+  public CHandle<IBaseEntity> Inflictor { get; }
+  
+  public CHandle<IBaseEntity> Attacker { get; }
+  
+  public CHandle<IBaseEntity> Ability { get; }
+  
+  public ref float Damage { get; }
+  
+  public ref float TotalledDamage { get; }
+  
+  public ref DamageTypes_t BitsDamageType { get; }
+  
+  public ref int DamageCustom { get; }
+  
+  public IAmmoIndex_t AmmoType { get; }
+  
+  public ref float OriginalDamage { get; }
+  
+  public ref bool ShouldBleed { get; }
+  
+  public ref bool ShouldSpark { get; }
+  
+  public ref TakeDamageFlags_t DamageFlags { get; }
+  
+  public ref CGlobalSymbol DamageSourceName { get; }
+  
+  public ref HitGroup_t HitGroupId { get; }
+  
+  public ref int NumObjectsPenetrated { get; }
+  
+  public ref float FriendlyFireDamageReductionRatio { get; }
+  
+  public ref bool InTakeDamageFlow { get; }
+  
 }

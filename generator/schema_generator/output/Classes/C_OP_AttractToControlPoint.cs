@@ -9,9 +9,6 @@ internal partial class C_OP_AttractToControlPoint : CParticleFunctionForce, IC_O
   public C_OP_AttractToControlPoint(nint handle) : base(handle) {
   }
 
-  public C_OP_AttractToControlPoint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector ComponentScale {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xBD30C24AB17954E2));
   }

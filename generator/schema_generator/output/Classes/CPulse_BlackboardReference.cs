@@ -9,11 +9,8 @@ internal partial class CPulse_BlackboardReference : SchemaClass, IPulse_Blackboa
   public CPulse_BlackboardReference(nint handle) : base(handle) {
   }
 
-  public CPulse_BlackboardReference(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CStrongHandle< InfoForResourceTypeIPulseGraphDef > BlackboardResource {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIPulseGraphDef >>(Schema.GetOffset(0xEF83970A45E704DE));
+  public CStrongHandle<IInfoForResourceTypeIPulseGraphDef> BlackboardResource {
+    get => new CStrongHandle<InfoForResourceTypeIPulseGraphDef>(_Handle + Schema.GetOffset(0xEF83970A45E704DE));
   }
   public ISchemaUntypedField BlackboardResource {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xEF83970A83127470));

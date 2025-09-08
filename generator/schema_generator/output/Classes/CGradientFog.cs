@@ -9,54 +9,6 @@ internal partial class CGradientFog : CBaseEntity, IGradientFog {
   public CGradientFog(nint handle) : base(handle) {
   }
 
-  public CGradientFog(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > GradientFogTexture {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x978D360E547F825C));
-  }
-  public ref float FogStartDistance {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x978D360E4B5A1DBC));
-  }
-  public ref float FogEndDistance {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x978D360E27F71D5D));
-  }
-  public ref bool HeightFogEnabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x978D360EFB7ED9F7));
-  }
-  public ref float FogStartHeight {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x978D360E34EA384C));
-  }
-  public ref float FogEndHeight {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x978D360E6644141D));
-  }
-  public ref float FarZ {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x978D360E38F5E41A));
-  }
-  public ref float FogMaxOpacity {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x978D360E7BF7FD56));
-  }
-  public ref float FogFalloffExponent {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x978D360E2068A39A));
-  }
-  public ref float FogVerticalExponent {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x978D360EBBE3E0C4));
-  }
-  public ref Color FogColor {
-    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x978D360E200EEE0E));
-  }
-  public ref float FogStrength {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x978D360E2DCA8F14));
-  }
-  public ref float FadeTime {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x978D360E00BEDB08));
-  }
-  public ref bool StartDisabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x978D360E61ED0C4F));
-  }
-  public ref bool IsEnabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x978D360E5360D70E));
-  }
   public ref bool GradientFogNeedsTextures {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x978D360E55F47008));
   }

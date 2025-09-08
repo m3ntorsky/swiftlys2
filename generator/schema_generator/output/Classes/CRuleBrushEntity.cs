@@ -9,9 +9,6 @@ internal partial class CRuleBrushEntity : CRuleEntity, IRuleBrushEntity {
   public CRuleBrushEntity(nint handle) : base(handle) {
   }
 
-  public CRuleBrushEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

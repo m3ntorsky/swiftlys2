@@ -9,17 +9,14 @@ internal partial class CBlendUpdateNode : CAnimUpdateNodeBase, IBlendUpdateNode 
   public CBlendUpdateNode(nint handle) : base(handle) {
   }
 
-  public CBlendUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVector Children {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD72498B47415FA72));
   }
-
-  public ref CUtlVector< CAnimUpdateNodeRef > Children {
-    get => ref _Handle.AsRef<CUtlVector< CAnimUpdateNodeRef >>(Schema.GetOffset(0xD72498B47415FA72));
+  public ref CUtlVector<byte> SortedOrder {
+    get => ref _Handle.AsRef<CUtlVector<byte>>(Schema.GetOffset(0xD72498B47CE82340));
   }
-  public ref CUtlVector< uint8 > SortedOrder {
-    get => ref _Handle.AsRef<CUtlVector< uint8 >>(Schema.GetOffset(0xD72498B47CE82340));
-  }
-  public ref CUtlVector< float32 > TargetValues {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0xD72498B4913AEBFE));
+  public ref CUtlVector<float> TargetValues {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0xD72498B4913AEBFE));
   }
   public ref AnimValueSource BlendValueSource {
     get => ref _Handle.AsRef<AnimValueSource>(Schema.GetOffset(0xD72498B47AB7C374));

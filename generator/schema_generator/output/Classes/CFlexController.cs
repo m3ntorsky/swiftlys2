@@ -9,9 +9,6 @@ internal partial class CFlexController : SchemaClass, IFlexController {
   public CFlexController(nint handle) : base(handle) {
   }
 
-  public CFlexController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x5265FDF16750BACB));
   }

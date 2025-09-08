@@ -9,11 +9,8 @@ internal partial class CActionComponentUpdater : CAnimComponentUpdater, IActionC
   public CActionComponentUpdater(nint handle) : base(handle) {
   }
 
-  public CActionComponentUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CSmartPtr< CAnimActionUpdater > > Actions {
-    get => ref _Handle.AsRef<CUtlVector< CSmartPtr< CAnimActionUpdater > >>(Schema.GetOffset(0xA700EA248D622684));
+  public ref CUtlVector Actions {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA700EA248D622684));
   }
 
 

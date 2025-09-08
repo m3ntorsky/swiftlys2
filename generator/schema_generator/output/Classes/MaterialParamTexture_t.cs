@@ -9,11 +9,8 @@ internal partial class MaterialParamTexture_t : MaterialParam_t, IMaterialParamT
   public MaterialParamTexture_t(nint handle) : base(handle) {
   }
 
-  public MaterialParamTexture_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Value {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x17803E3B7F437844));
+  public CStrongHandle<IInfoForResourceTypeCTextureBase> Value {
+    get => new CStrongHandle<InfoForResourceTypeCTextureBase>(_Handle + Schema.GetOffset(0x17803E3B7F437844));
   }
 
 

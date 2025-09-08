@@ -9,9 +9,6 @@ internal partial class CFuncWater : CBaseModelEntity, IFuncWater {
   public CFuncWater(nint handle) : base(handle) {
   }
 
-  public CFuncWater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IBuoyancyHelper BuoyancyHelper {
     get => new CBuoyancyHelper(_Handle + Schema.GetOffset(0x7DCF4A236BAFFEA7));
   }

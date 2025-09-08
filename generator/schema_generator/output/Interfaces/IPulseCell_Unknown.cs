@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Unknown : IPulseCell_Base {
 
-
+  public ISchemaUntypedField UnknownKeys { get; }
+  
 }

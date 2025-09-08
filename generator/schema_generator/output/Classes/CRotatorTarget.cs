@@ -9,9 +9,6 @@ internal partial class CRotatorTarget : CPointEntity, IRotatorTarget {
   public CRotatorTarget(nint handle) : base(handle) {
   }
 
-  public CRotatorTarget(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnArrivedAt {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x448D6B2611C20554));
   }

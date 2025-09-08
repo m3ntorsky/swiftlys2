@@ -9,9 +9,6 @@ internal partial class C_INIT_RemapInitialDirectionToTransformToVector : CPartic
   public C_INIT_RemapInitialDirectionToTransformToVector(nint handle) : base(handle) {
   }
 
-  public C_INIT_RemapInitialDirectionToTransformToVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleTransformInput TransformInput {
     get => new CParticleTransformInput(_Handle + Schema.GetOffset(0xB8FCDAFFB3FDC289));
   }

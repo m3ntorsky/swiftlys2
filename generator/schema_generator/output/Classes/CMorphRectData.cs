@@ -9,9 +9,6 @@ internal partial class CMorphRectData : SchemaClass, IMorphRectData {
   public CMorphRectData(nint handle) : base(handle) {
   }
 
-  public CMorphRectData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short XLeftDst {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xB12257C224FC92D5));
   }
@@ -24,8 +21,8 @@ internal partial class CMorphRectData : SchemaClass, IMorphRectData {
   public ref float VHeightSrc {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB12257C230C84BA2));
   }
-  public ref CUtlVector< CMorphBundleData > BundleDatas {
-    get => ref _Handle.AsRef<CUtlVector< CMorphBundleData >>(Schema.GetOffset(0xB12257C255A3B6A2));
+  public ref CUtlVector BundleDatas {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB12257C255A3B6A2));
   }
 
 

@@ -9,9 +9,6 @@ internal partial class CFilterMultipleAPI : SchemaClass, IFilterMultipleAPI {
   public CFilterMultipleAPI(nint handle) : base(handle) {
   }
 
-  public CFilterMultipleAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

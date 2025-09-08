@@ -9,9 +9,6 @@ internal partial class EventSimpleLoopFrameUpdate_t : SchemaClass, IEventSimpleL
   public EventSimpleLoopFrameUpdate_t(nint handle) : base(handle) {
   }
 
-  public EventSimpleLoopFrameUpdate_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEngineLoopState_t LoopState {
     get => new EngineLoopState_t(_Handle + Schema.GetOffset(0x2C7358DAF928A2EC));
   }

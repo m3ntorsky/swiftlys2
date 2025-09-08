@@ -9,9 +9,6 @@ internal partial class CCSPointScriptExtensions_player_controller : SchemaClass,
   public CCSPointScriptExtensions_player_controller(nint handle) : base(handle) {
   }
 
-  public CCSPointScriptExtensions_player_controller(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

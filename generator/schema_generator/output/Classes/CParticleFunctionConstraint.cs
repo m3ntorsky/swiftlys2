@@ -9,9 +9,6 @@ internal partial class CParticleFunctionConstraint : CParticleFunction, IParticl
   public CParticleFunctionConstraint(nint handle) : base(handle) {
   }
 
-  public CParticleFunctionConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

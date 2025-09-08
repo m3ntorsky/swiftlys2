@@ -9,9 +9,6 @@ internal partial class CCommentaryViewPosition : CSprite, ICommentaryViewPositio
   public CCommentaryViewPosition(nint handle) : base(handle) {
   }
 
-  public CCommentaryViewPosition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

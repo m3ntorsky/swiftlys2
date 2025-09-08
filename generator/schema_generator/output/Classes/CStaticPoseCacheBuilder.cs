@@ -9,9 +9,6 @@ internal partial class CStaticPoseCacheBuilder : CStaticPoseCache, IStaticPoseCa
   public CStaticPoseCacheBuilder(nint handle) : base(handle) {
   }
 
-  public CStaticPoseCacheBuilder(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

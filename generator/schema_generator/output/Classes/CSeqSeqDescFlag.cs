@@ -9,9 +9,6 @@ internal partial class CSeqSeqDescFlag : SchemaClass, ISeqSeqDescFlag {
   public CSeqSeqDescFlag(nint handle) : base(handle) {
   }
 
-  public CSeqSeqDescFlag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Looping {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xAEF7A80B25449B0D));
   }

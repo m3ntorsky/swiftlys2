@@ -9,17 +9,14 @@ internal partial class CFuseProgram : SchemaClass, IFuseProgram {
   public CFuseProgram(nint handle) : base(handle) {
   }
 
-  public CFuseProgram(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVector<byte> ProgramBuffer {
+    get => ref _Handle.AsRef<CUtlVector<byte>>(Schema.GetOffset(0x81E69119349962E1));
   }
-
-  public ref CUtlVector< uint8 > ProgramBuffer {
-    get => ref _Handle.AsRef<CUtlVector< uint8 >>(Schema.GetOffset(0x81E69119349962E1));
+  public ref CUtlVector VariablesRead {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x81E691194C160BEA));
   }
-  public ref CUtlVector< FuseVariableIndex_t > VariablesRead {
-    get => ref _Handle.AsRef<CUtlVector< FuseVariableIndex_t >>(Schema.GetOffset(0x81E691194C160BEA));
-  }
-  public ref CUtlVector< FuseVariableIndex_t > VariablesWritten {
-    get => ref _Handle.AsRef<CUtlVector< FuseVariableIndex_t >>(Schema.GetOffset(0x81E69119E9491C49));
+  public ref CUtlVector VariablesWritten {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x81E69119E9491C49));
   }
   public ref int MaxTempVarsUsed {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x81E69119981A1518));

@@ -9,20 +9,17 @@ internal partial class CAnimAttachment : SchemaClass, IAnimAttachment {
   public CAnimAttachment(nint handle) : base(handle) {
   }
 
-  public CAnimAttachment(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaFixedArray<Quaternion> InfluenceRotations {
-    get => new SchemaFixedArray<Quaternion>(_Handle + Schema.GetOffset(0xCF918186B393B857));
+    get => new SchemaFixedArray<Quaternion>(_Handle, 0xCF918186B393B857, 3, 16, 16);
   }
   public ISchemaFixedArray<VectorAligned> InfluenceOffsets {
-    get => new SchemaFixedArray<VectorAligned>(_Handle + Schema.GetOffset(0xCF918186E75BDA68));
+    get => new SchemaFixedArray<VectorAligned>(_Handle, 0xCF918186E75BDA68, 3, 16, 16);
   }
-  public ISchemaFixedArray<int32> InfluenceIndices {
-    get => new SchemaFixedArray<int32>(_Handle + Schema.GetOffset(0xCF9181862FA09BA5));
+  public ISchemaFixedArray<int> InfluenceIndices {
+    get => new SchemaFixedArray<int>(_Handle, 0xCF9181862FA09BA5, 3, 4, 4);
   }
-  public ISchemaFixedArray<float32> InfluenceWeights {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0xCF91818649916951));
+  public ISchemaFixedArray<float> InfluenceWeights {
+    get => new SchemaFixedArray<float>(_Handle, 0xCF91818649916951, 3, 4, 4);
   }
   public ref byte NumInfluences {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xCF9181861B36F553));

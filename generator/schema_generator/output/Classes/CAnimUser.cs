@@ -9,9 +9,6 @@ internal partial class CAnimUser : SchemaClass, IAnimUser {
   public CAnimUser(nint handle) : base(handle) {
   }
 
-  public CAnimUser(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CBufferString Name {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0xA77D4C084D8F5786));
   }

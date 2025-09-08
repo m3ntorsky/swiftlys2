@@ -9,9 +9,6 @@ internal partial class C_OP_DistanceBetweenTransforms : CParticleFunctionOperato
   public C_OP_DistanceBetweenTransforms(nint handle) : base(handle) {
   }
 
-  public C_OP_DistanceBetweenTransforms(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x60A44933E5729606));
   }
@@ -40,7 +37,7 @@ internal partial class C_OP_DistanceBetweenTransforms : CParticleFunctionOperato
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x60A44933259F6F3B));
   }
   public ISchemaFixedString CollisionGroupName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x60A44933D58A3195));
+    get => new SchemaFixedString(_Handle, 0x60A44933D58A3195, 128, 1, 1);
   }
   public ref ParticleTraceSet_t TraceSet {
     get => ref _Handle.AsRef<ParticleTraceSet_t>(Schema.GetOffset(0x60A44933BD26C5B2));

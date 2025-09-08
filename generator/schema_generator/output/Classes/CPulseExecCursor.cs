@@ -9,9 +9,6 @@ internal partial class CPulseExecCursor : SchemaClass, IPulseExecCursor {
   public CPulseExecCursor(nint handle) : base(handle) {
   }
 
-  public CPulseExecCursor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

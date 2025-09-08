@@ -9,9 +9,6 @@ internal partial class CNmBoneMaskNode__CDefinition : CNmBoneMaskValueNode::CDef
   public CNmBoneMaskNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmBoneMaskNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol BoneMaskID {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xC50CAD4B5F09FD66));
   }

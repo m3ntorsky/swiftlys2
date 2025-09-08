@@ -9,11 +9,8 @@ internal partial class SelectedEditItemInfo_t : SchemaClass, ISelectedEditItemIn
   public SelectedEditItemInfo_t(nint handle) : base(handle) {
   }
 
-  public SelectedEditItemInfo_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< SosEditItemInfo_t > EditItems {
-    get => ref _Handle.AsRef<CUtlVector< SosEditItemInfo_t >>(Schema.GetOffset(0xDF4D8E78F11EB01B));
+  public ref CUtlVector EditItems {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xDF4D8E78F11EB01B));
   }
 
 

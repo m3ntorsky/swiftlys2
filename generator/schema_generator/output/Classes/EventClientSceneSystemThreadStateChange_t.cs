@@ -9,9 +9,6 @@ internal partial class EventClientSceneSystemThreadStateChange_t : SchemaClass, 
   public EventClientSceneSystemThreadStateChange_t(nint handle) : base(handle) {
   }
 
-  public EventClientSceneSystemThreadStateChange_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool ThreadsActive {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x28053E1174AC2EF0));
   }

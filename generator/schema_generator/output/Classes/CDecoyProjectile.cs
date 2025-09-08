@@ -9,12 +9,6 @@ internal partial class CDecoyProjectile : CBaseCSGrenadeProjectile, IDecoyProjec
   public CDecoyProjectile(nint handle) : base(handle) {
   }
 
-  public CDecoyProjectile(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref int DecoyShotTick {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x69629121C4EFED0A));
-  }
   public ref int ShotsRemaining {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6962912188CAE2A2));
   }

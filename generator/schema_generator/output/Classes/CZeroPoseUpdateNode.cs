@@ -9,9 +9,6 @@ internal partial class CZeroPoseUpdateNode : CLeafUpdateNode, IZeroPoseUpdateNod
   public CZeroPoseUpdateNode(nint handle) : base(handle) {
   }
 
-  public CZeroPoseUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

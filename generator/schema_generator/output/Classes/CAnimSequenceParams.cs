@@ -9,9 +9,6 @@ internal partial class CAnimSequenceParams : SchemaClass, IAnimSequenceParams {
   public CAnimSequenceParams(nint handle) : base(handle) {
   }
 
-  public CAnimSequenceParams(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float FadeInTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x651691F81F0255B3));
   }

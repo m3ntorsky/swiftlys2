@@ -9,11 +9,8 @@ internal partial class SolveIKChainPoseOpFixedSettings_t : SchemaClass, ISolveIK
   public SolveIKChainPoseOpFixedSettings_t(nint handle) : base(handle) {
   }
 
-  public SolveIKChainPoseOpFixedSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< ChainToSolveData_t > ChainsToSolveData {
-    get => ref _Handle.AsRef<CUtlVector< ChainToSolveData_t >>(Schema.GetOffset(0x983BF8BD94B979E5));
+  public ref CUtlVector ChainsToSolveData {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x983BF8BD94B979E5));
   }
 
 

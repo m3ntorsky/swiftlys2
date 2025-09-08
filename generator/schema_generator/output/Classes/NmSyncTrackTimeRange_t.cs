@@ -9,9 +9,6 @@ internal partial class NmSyncTrackTimeRange_t : SchemaClass, INmSyncTrackTimeRan
   public NmSyncTrackTimeRange_t(nint handle) : base(handle) {
   }
 
-  public NmSyncTrackTimeRange_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public INmSyncTrackTime_t StartTime {
     get => new NmSyncTrackTime_t(_Handle + Schema.GetOffset(0xAECBDADF6330E7EE));
   }

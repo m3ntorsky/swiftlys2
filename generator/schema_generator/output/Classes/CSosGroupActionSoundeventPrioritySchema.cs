@@ -9,9 +9,6 @@ internal partial class CSosGroupActionSoundeventPrioritySchema : CSosGroupAction
   public CSosGroupActionSoundeventPrioritySchema(nint handle) : base(handle) {
   }
 
-  public CSosGroupActionSoundeventPrioritySchema(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString PriorityValue {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x1E84D860257F7BF6));
   }

@@ -9,9 +9,6 @@ internal partial class CPathTrack : CPointEntity, IPathTrack {
   public CPathTrack(nint handle) : base(handle) {
   }
 
-  public CPathTrack(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPathTrack Pnext {
     get => new CPathTrack(_Handle + Schema.GetOffset(0xF86750E8B008D5EE));
   }

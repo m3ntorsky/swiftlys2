@@ -9,9 +9,6 @@ internal partial class C_OP_RadiusDecay : CParticleFunctionOperator, IC_OP_Radiu
   public C_OP_RadiusDecay(nint handle) : base(handle) {
   }
 
-  public C_OP_RadiusDecay(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MinRadius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x119375431D07C7B7));
   }

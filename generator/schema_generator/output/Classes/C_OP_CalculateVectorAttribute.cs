@@ -9,9 +9,6 @@ internal partial class C_OP_CalculateVectorAttribute : CParticleFunctionOperator
   public C_OP_CalculateVectorAttribute(nint handle) : base(handle) {
   }
 
-  public C_OP_CalculateVectorAttribute(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector StartValue {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x447A59BC56F9B8E8));
   }

@@ -9,9 +9,6 @@ internal partial class CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance
   public CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MinVolume {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9089F81B2CA4E2A3));
   }

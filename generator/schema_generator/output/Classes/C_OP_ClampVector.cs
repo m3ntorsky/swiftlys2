@@ -9,9 +9,6 @@ internal partial class C_OP_ClampVector : CParticleFunctionOperator, IC_OP_Clamp
   public C_OP_ClampVector(nint handle) : base(handle) {
   }
 
-  public C_OP_ClampVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x5977BF1BE5729606));
   }

@@ -9,9 +9,6 @@ internal partial class FuseFunctionIndex_t : SchemaClass, IFuseFunctionIndex_t {
   public FuseFunctionIndex_t(nint handle) : base(handle) {
   }
 
-  public FuseFunctionIndex_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort Value {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x48B825DFDCB0894A));
   }

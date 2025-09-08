@@ -9,9 +9,6 @@ internal partial class C_OP_SetAttributeToScalarExpression : CParticleFunctionOp
   public C_OP_SetAttributeToScalarExpression(nint handle) : base(handle) {
   }
 
-  public C_OP_SetAttributeToScalarExpression(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ScalarExpressionType_t Expression {
     get => ref _Handle.AsRef<ScalarExpressionType_t>(Schema.GetOffset(0x3D6339D6160B2427));
   }

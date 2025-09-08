@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_t : ISchemaClass {
 
-
+  public ref int TestStep { get; }
+  
 }

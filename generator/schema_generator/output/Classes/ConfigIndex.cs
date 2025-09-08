@@ -9,9 +9,6 @@ internal partial class ConfigIndex : SchemaClass, IConfigIndex {
   public ConfigIndex(nint handle) : base(handle) {
   }
 
-  public ConfigIndex(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort Group {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x193FE40D0CD16308));
   }

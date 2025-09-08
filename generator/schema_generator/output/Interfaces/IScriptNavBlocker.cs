@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IScriptNavBlocker : IFuncNavBlocker {
 
-
+  public ref Vector Extent { get; }
+  
 }

@@ -9,20 +9,17 @@ internal partial class CDecalInstance : SchemaClass, IDecalInstance {
   public CDecalInstance(nint handle) : base(handle) {
   }
 
-  public CDecalInstance(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol DecalGroup {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x88CA447CCEBD4836));
   }
-  public ref CStrongHandle< InfoForResourceTypeIMaterial2 > Material {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0x88CA447C888CE42E));
+  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material {
+    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0x88CA447C888CE42E));
   }
   public ref CUtlStringToken SequenceName {
     get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0x88CA447C7462AF30));
   }
-  public ref CHandle< CBaseEntity > Entity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x88CA447C6EBADCB0));
+  public CHandle<IBaseEntity> Entity {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x88CA447C6EBADCB0));
   }
   public ref int BoneIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x88CA447C9F407B79));

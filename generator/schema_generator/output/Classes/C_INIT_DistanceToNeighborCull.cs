@@ -9,9 +9,6 @@ internal partial class C_INIT_DistanceToNeighborCull : CParticleFunctionInitiali
   public C_INIT_DistanceToNeighborCull(nint handle) : base(handle) {
   }
 
-  public C_INIT_DistanceToNeighborCull(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput Distance {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0x9ADFD8BA00DC4A68));
   }

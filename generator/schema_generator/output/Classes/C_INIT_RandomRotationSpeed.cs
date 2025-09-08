@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomRotationSpeed : CGeneralRandomRotation, IC_I
   public C_INIT_RandomRotationSpeed(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomRotationSpeed(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

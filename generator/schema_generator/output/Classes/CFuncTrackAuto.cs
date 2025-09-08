@@ -9,9 +9,6 @@ internal partial class CFuncTrackAuto : CFuncTrackChange, IFuncTrackAuto {
   public CFuncTrackAuto(nint handle) : base(handle) {
   }
 
-  public CFuncTrackAuto(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

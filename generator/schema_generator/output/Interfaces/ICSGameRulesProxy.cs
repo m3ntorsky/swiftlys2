@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSGameRulesProxy : IGameRulesProxy {
 
-
+  public ICSGameRules GameRules { get; }
+  
 }

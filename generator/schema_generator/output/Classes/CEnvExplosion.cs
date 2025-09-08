@@ -9,9 +9,6 @@ internal partial class CEnvExplosion : CModelPointEntity, IEnvExplosion {
   public CEnvExplosion(nint handle) : base(handle) {
   }
 
-  public CEnvExplosion(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Magnitude {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x27411F012CBE4C2));
   }
@@ -27,8 +24,8 @@ internal partial class CEnvExplosion : CModelPointEntity, IEnvExplosion {
   public ref float DamageForce {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x27411F0AB66D0A5));
   }
-  public ref CHandle< CBaseEntity > Inflictor {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x27411F04D7B4137));
+  public CHandle<IBaseEntity> Inflictor {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x27411F04D7B4137));
   }
   public ref DamageTypes_t CustomDamageType {
     get => ref _Handle.AsRef<DamageTypes_t>(Schema.GetOffset(0x27411F0E0A58F6E));
@@ -54,8 +51,8 @@ internal partial class CEnvExplosion : CModelPointEntity, IEnvExplosion {
   public ref CUtlSymbolLarge EntityIgnoreName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x27411F0A786C06F));
   }
-  public ref CHandle< CBaseEntity > EntityIgnore {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x27411F08F1E5202));
+  public CHandle<IBaseEntity> EntityIgnore {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x27411F08F1E5202));
   }
 
 

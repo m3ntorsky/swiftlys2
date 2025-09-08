@@ -9,9 +9,6 @@ internal partial class PostProcessingFogScatteringParameters_t : SchemaClass, IP
   public PostProcessingFogScatteringParameters_t(nint handle) : base(handle) {
   }
 
-  public PostProcessingFogScatteringParameters_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Radius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xAE3B2EF52E1F6E07));
   }

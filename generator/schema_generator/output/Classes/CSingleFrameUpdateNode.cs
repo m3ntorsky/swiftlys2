@@ -9,11 +9,8 @@ internal partial class CSingleFrameUpdateNode : CLeafUpdateNode, ISingleFrameUpd
   public CSingleFrameUpdateNode(nint handle) : base(handle) {
   }
 
-  public CSingleFrameUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CSmartPtr< CAnimActionUpdater > > Actions {
-    get => ref _Handle.AsRef<CUtlVector< CSmartPtr< CAnimActionUpdater > >>(Schema.GetOffset(0x5A65D6168D622684));
+  public ref CUtlVector Actions {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5A65D6168D622684));
   }
   public IPoseHandle PoseCacheHandle {
     get => new CPoseHandle(_Handle + Schema.GetOffset(0x5A65D6164719447A));

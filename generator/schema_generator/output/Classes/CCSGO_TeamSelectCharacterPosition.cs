@@ -9,9 +9,6 @@ internal partial class CCSGO_TeamSelectCharacterPosition : CCSGO_TeamPreviewChar
   public CCSGO_TeamSelectCharacterPosition(nint handle) : base(handle) {
   }
 
-  public CCSGO_TeamSelectCharacterPosition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

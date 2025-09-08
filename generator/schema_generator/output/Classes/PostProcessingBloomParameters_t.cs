@@ -9,9 +9,6 @@ internal partial class PostProcessingBloomParameters_t : SchemaClass, IPostProce
   public PostProcessingBloomParameters_t(nint handle) : base(handle) {
   }
 
-  public PostProcessingBloomParameters_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref BloomBlendMode_t BlendMode {
     get => ref _Handle.AsRef<BloomBlendMode_t>(Schema.GetOffset(0x30F41F3C8D5006AB));
   }
@@ -54,11 +51,11 @@ internal partial class PostProcessingBloomParameters_t : SchemaClass, IPostProce
   public ref float ComputeBloomLensDirtBlackLevel {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x30F41F3CB4FB5025));
   }
-  public ISchemaFixedArray<float32> BlurWeight {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0x30F41F3CAF5FB432));
+  public ISchemaFixedArray<float> BlurWeight {
+    get => new SchemaFixedArray<float>(_Handle, 0x30F41F3CAF5FB432, 5, 4, 4);
   }
   public ISchemaFixedArray<Vector> BlurTint {
-    get => new SchemaFixedArray<Vector>(_Handle + Schema.GetOffset(0x30F41F3CC8FE1D49));
+    get => new SchemaFixedArray<Vector>(_Handle, 0x30F41F3CC8FE1D49, 5, 12, 4);
   }
 
 

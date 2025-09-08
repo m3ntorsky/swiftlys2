@@ -9,9 +9,6 @@ internal partial class C_OP_RemapModelVolumetoCP : CParticleFunctionPreEmission,
   public C_OP_RemapModelVolumetoCP(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapModelVolumetoCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref BBoxVolumeType_t BBoxType {
     get => ref _Handle.AsRef<BBoxVolumeType_t>(Schema.GetOffset(0x5F3AA677780A22F6));
   }

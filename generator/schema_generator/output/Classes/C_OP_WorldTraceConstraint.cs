@@ -9,9 +9,6 @@ internal partial class C_OP_WorldTraceConstraint : CParticleFunctionConstraint, 
   public C_OP_WorldTraceConstraint(nint handle) : base(handle) {
   }
 
-  public C_OP_WorldTraceConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD88A859FEB661472));
   }
@@ -28,7 +25,7 @@ internal partial class C_OP_WorldTraceConstraint : CParticleFunctionConstraint, 
     get => ref _Handle.AsRef<ParticleTraceSet_t>(Schema.GetOffset(0xD88A859FBD26C5B2));
   }
   public ISchemaFixedString CollisionGroupName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xD88A859FD58A3195));
+    get => new SchemaFixedString(_Handle, 0xD88A859FD58A3195, 128, 1, 1);
   }
   public ref bool WorldOnly {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD88A859FC03ED30D));

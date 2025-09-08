@@ -9,9 +9,6 @@ internal partial class C_OP_RenderModels : CParticleFunctionRenderer, IC_OP_Rend
   public C_OP_RenderModels(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderModels(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool OnlyRenderInEffectsBloomPass {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC58C7B13D6FA0FBC));
   }
@@ -24,8 +21,8 @@ internal partial class C_OP_RenderModels : CParticleFunctionRenderer, IC_OP_Rend
   public ref bool OnlyRenderInEffecsGameOverlay {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC58C7B130293C80E));
   }
-  public ref CUtlVector< ModelReference_t > ModelList {
-    get => ref _Handle.AsRef<CUtlVector< ModelReference_t >>(Schema.GetOffset(0xC58C7B1305FC11B6));
+  public ref CUtlVector ModelList {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC58C7B1305FC11B6));
   }
   public IParticleAttributeIndex_t BodyGroupField {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0xC58C7B13556DEFD4));
@@ -91,19 +88,19 @@ internal partial class C_OP_RenderModels : CParticleFunctionRenderer, IC_OP_Rend
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0xC58C7B1352FAE698));
   }
   public ISchemaFixedString ActivityName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xC58C7B13BF0C5087));
+    get => new SchemaFixedString(_Handle, 0xC58C7B13BF0C5087, 256, 1, 1);
   }
   public ISchemaFixedString SequenceName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xC58C7B13A270F66B));
+    get => new SchemaFixedString(_Handle, 0xC58C7B13A270F66B, 256, 1, 1);
   }
   public ref bool EnableClothSimulation {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC58C7B13F2B3D0A9));
   }
   public ISchemaFixedString ClothEffectName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xC58C7B139D0B2FCD));
+    get => new SchemaFixedString(_Handle, 0xC58C7B139D0B2FCD, 64, 1, 1);
   }
-  public ref CStrongHandle< InfoForResourceTypeIMaterial2 > OverrideMaterial {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0xC58C7B132C055CBE));
+  public CStrongHandle<IInfoForResourceTypeIMaterial2> OverrideMaterial {
+    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0xC58C7B132C055CBE));
   }
   public ref bool OverrideTranslucentMaterials {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC58C7B13A9CF9EDA));
@@ -111,8 +108,8 @@ internal partial class C_OP_RenderModels : CParticleFunctionRenderer, IC_OP_Rend
   public IPerParticleFloatInput Skin {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0xC58C7B13E65A22FC));
   }
-  public ref CUtlVector< MaterialVariable_t > MaterialVars {
-    get => ref _Handle.AsRef<CUtlVector< MaterialVariable_t >>(Schema.GetOffset(0xC58C7B13FA861D66));
+  public ref CUtlVector MaterialVars {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC58C7B13FA861D66));
   }
   public IPerParticleFloatInput RenderFilter {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0xC58C7B13EDE7010D));
@@ -127,7 +124,7 @@ internal partial class C_OP_RenderModels : CParticleFunctionRenderer, IC_OP_Rend
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC58C7B138303A434));
   }
   public ISchemaFixedString EconSlotName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xC58C7B13F7A43C9B));
+    get => new SchemaFixedString(_Handle, 0xC58C7B13F7A43C9B, 256, 1, 1);
   }
   public ref bool OriginalModel {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC58C7B13F52DF2AF));
@@ -157,7 +154,7 @@ internal partial class C_OP_RenderModels : CParticleFunctionRenderer, IC_OP_Rend
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC58C7B136C6ACC65));
   }
   public ISchemaFixedString RenderAttribute {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xC58C7B13A343F648));
+    get => new SchemaFixedString(_Handle, 0xC58C7B13A343F648, 260, 1, 1);
   }
   public IParticleCollectionFloatInput RadiusScale {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0xC58C7B13A7A20159));

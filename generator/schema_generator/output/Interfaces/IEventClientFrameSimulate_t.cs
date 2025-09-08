@@ -4,5 +4,12 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEventClientFrameSimulate_t : ISchemaClass {
 
-
+  public IEngineLoopState_t LoopState { get; }
+  
+  public ref float RealTime { get; }
+  
+  public ref float FrameTime { get; }
+  
+  public ref bool ScheduleSendTickPacket { get; }
+  
 }

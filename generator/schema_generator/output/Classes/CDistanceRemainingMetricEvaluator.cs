@@ -9,9 +9,6 @@ internal partial class CDistanceRemainingMetricEvaluator : CMotionMetricEvaluato
   public CDistanceRemainingMetricEvaluator(nint handle) : base(handle) {
   }
 
-  public CDistanceRemainingMetricEvaluator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MaxDistance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xEF12BCC898893360));
   }

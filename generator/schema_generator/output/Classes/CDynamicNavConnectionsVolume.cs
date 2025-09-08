@@ -9,14 +9,11 @@ internal partial class CDynamicNavConnectionsVolume : CTriggerMultiple, IDynamic
   public CDynamicNavConnectionsVolume(nint handle) : base(handle) {
   }
 
-  public CDynamicNavConnectionsVolume(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge ConnectionTarget {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA03D49DB1120FFE4));
   }
-  public ref CUtlVector< DynamicVolumeDef_t > Connections {
-    get => ref _Handle.AsRef<CUtlVector< DynamicVolumeDef_t >>(Schema.GetOffset(0xA03D49DB11986B7E));
+  public ref CUtlVector Connections {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA03D49DB11986B7E));
   }
   public ref CGlobalSymbol TransitionType {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xA03D49DB68D65FB9));

@@ -9,9 +9,6 @@ internal partial class C_INIT_StatusEffect : CParticleFunctionInitializer, IC_IN
   public C_INIT_StatusEffect(nint handle) : base(handle) {
   }
 
-  public C_INIT_StatusEffect(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Detail2Combo_t Detail2Combo {
     get => ref _Handle.AsRef<Detail2Combo_t>(Schema.GetOffset(0x4B342FEDDABDBAA0));
   }

@@ -9,9 +9,6 @@ internal partial class CHitBox : SchemaClass, IHitBox {
   public CHitBox(nint handle) : base(handle) {
   }
 
-  public CHitBox(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x97E3DD244D8F5786));
   }

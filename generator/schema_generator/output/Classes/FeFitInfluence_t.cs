@@ -9,9 +9,6 @@ internal partial class FeFitInfluence_t : SchemaClass, IFeFitInfluence_t {
   public FeFitInfluence_t(nint handle) : base(handle) {
   }
 
-  public FeFitInfluence_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint VertexNode {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xF8271D2105342743));
   }

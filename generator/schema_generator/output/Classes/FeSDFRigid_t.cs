@@ -9,9 +9,6 @@ internal partial class FeSDFRigid_t : SchemaClass, IFeSDFRigid_t {
   public FeSDFRigid_t(nint handle) : base(handle) {
   }
 
-  public FeSDFRigid_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector LocalMin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xAA90A717B4EB2F0));
   }
@@ -33,8 +30,8 @@ internal partial class FeSDFRigid_t : SchemaClass, IFeSDFRigid_t {
   public ref ushort Flags {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xAA90A71B8D52E48));
   }
-  public ref CUtlVector< float32 > Distances {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0xAA90A7122002443));
+  public ref CUtlVector<float> Distances {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0xAA90A7122002443));
   }
   public ref int Width {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xAA90A71119108BB));

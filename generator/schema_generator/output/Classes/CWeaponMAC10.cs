@@ -9,9 +9,6 @@ internal partial class CWeaponMAC10 : CCSWeaponBaseGun, IWeaponMAC10 {
   public CWeaponMAC10(nint handle) : base(handle) {
   }
 
-  public CWeaponMAC10(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

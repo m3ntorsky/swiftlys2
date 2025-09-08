@@ -9,9 +9,6 @@ internal partial class CNmAdditiveBlendTask : CNmBlendTaskBase, INmAdditiveBlend
   public CNmAdditiveBlendTask(nint handle) : base(handle) {
   }
 
-  public CNmAdditiveBlendTask(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

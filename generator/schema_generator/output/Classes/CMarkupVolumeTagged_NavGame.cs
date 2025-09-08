@@ -9,9 +9,6 @@ internal partial class CMarkupVolumeTagged_NavGame : CMarkupVolumeWithRef, IMark
   public CMarkupVolumeTagged_NavGame(nint handle) : base(handle) {
   }
 
-  public CMarkupVolumeTagged_NavGame(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref NavScopeFlags_t Scopes {
     get => ref _Handle.AsRef<NavScopeFlags_t>(Schema.GetOffset(0xFB4AC8A49E6C8A44));
   }

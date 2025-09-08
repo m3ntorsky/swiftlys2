@@ -9,9 +9,6 @@ internal partial class CNmFloatComparisonNode__CDefinition : CNmBoolValueNode::C
   public CNmFloatComparisonNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFloatComparisonNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short InputValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x48A96E9A95E89F27));
   }

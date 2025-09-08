@@ -9,9 +9,6 @@ internal partial class CSoundOpvarSetOBBEntity : CSoundOpvarSetAABBEntity, ISoun
   public CSoundOpvarSetOBBEntity(nint handle) : base(handle) {
   }
 
-  public CSoundOpvarSetOBBEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class C_OP_MaxVelocity : CParticleFunctionOperator, IC_OP_MaxVe
   public C_OP_MaxVelocity(nint handle) : base(handle) {
   }
 
-  public C_OP_MaxVelocity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MaxVelocity {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE7D67D7E281BD640));
   }

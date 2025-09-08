@@ -9,9 +9,6 @@ internal partial class FeAntiTunnelProbe_t : SchemaClass, IFeAntiTunnelProbe_t {
   public FeAntiTunnelProbe_t(nint handle) : base(handle) {
   }
 
-  public FeAntiTunnelProbe_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Weight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBC54CE0BCFFC66CB));
   }

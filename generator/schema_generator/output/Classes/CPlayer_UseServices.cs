@@ -9,9 +9,6 @@ internal partial class CPlayer_UseServices : CPlayerPawnComponent, IPlayer_UseSe
   public CPlayer_UseServices(nint handle) : base(handle) {
   }
 
-  public CPlayer_UseServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

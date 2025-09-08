@@ -9,9 +9,6 @@ internal partial class CSosGroupActionSoundeventClusterSchema : CSosGroupActionS
   public CSosGroupActionSoundeventClusterSchema(nint handle) : base(handle) {
   }
 
-  public CSosGroupActionSoundeventClusterSchema(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int MinNearby {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x7B0FC368DD207D3C));
   }

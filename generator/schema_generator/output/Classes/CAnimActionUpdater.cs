@@ -9,9 +9,6 @@ internal partial class CAnimActionUpdater : SchemaClass, IAnimActionUpdater {
   public CAnimActionUpdater(nint handle) : base(handle) {
   }
 
-  public CAnimActionUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

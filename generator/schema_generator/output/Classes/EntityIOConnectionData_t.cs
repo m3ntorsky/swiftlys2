@@ -9,9 +9,6 @@ internal partial class EntityIOConnectionData_t : SchemaClass, IEntityIOConnecti
   public EntityIOConnectionData_t(nint handle) : base(handle) {
   }
 
-  public EntityIOConnectionData_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString OutputName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDEBEBB4D5BFC85BF));
   }

@@ -9,9 +9,6 @@ internal partial class CSymbolAnimParameter : CConcreteAnimParameter, ISymbolAni
   public CSymbolAnimParameter(nint handle) : base(handle) {
   }
 
-  public CSymbolAnimParameter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol DefaultValue {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xA3486AA2BBE0341F));
   }

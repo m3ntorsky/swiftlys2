@@ -9,9 +9,6 @@ internal partial class CNmTwoBoneIKNode__CDefinition : CNmPassthroughNode::CDefi
   public CNmTwoBoneIKNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmTwoBoneIKNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol EffectorBoneID {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x4D36C61F7F221CB6));
   }

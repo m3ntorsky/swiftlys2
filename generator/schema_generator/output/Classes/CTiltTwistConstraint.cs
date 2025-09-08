@@ -9,9 +9,6 @@ internal partial class CTiltTwistConstraint : CBaseConstraint, ITiltTwistConstra
   public CTiltTwistConstraint(nint handle) : base(handle) {
   }
 
-  public CTiltTwistConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int TargetAxis {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4A56E4D341CC84D5));
   }

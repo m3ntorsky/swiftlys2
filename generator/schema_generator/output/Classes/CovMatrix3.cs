@@ -9,9 +9,6 @@ internal partial class CovMatrix3 : SchemaClass, ICovMatrix3 {
   public CovMatrix3(nint handle) : base(handle) {
   }
 
-  public CovMatrix3(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Diag {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xA222FA6F7CC0D332));
   }

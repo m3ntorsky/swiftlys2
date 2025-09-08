@@ -9,9 +9,6 @@ internal partial class CVSound : SchemaClass, IVSound {
   public CVSound(nint handle) : base(handle) {
   }
 
-  public CVSound(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Rate {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x478C987331106783));
   }
@@ -30,14 +27,14 @@ internal partial class CVSound : SchemaClass, IVSound {
   public ref float Duration {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x478C9873BC5E3BAB));
   }
-  public ref CUtlVector< CAudioSentence > Sentences {
-    get => ref _Handle.AsRef<CUtlVector< CAudioSentence >>(Schema.GetOffset(0x478C98730FF1D785));
+  public ref CUtlVector Sentences {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x478C98730FF1D785));
   }
   public ref uint StreamingSize {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x478C9873CB44A8AE));
   }
-  public ref CUtlVector< int32 > SeekTable {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0x478C987388E17207));
+  public ref CUtlVector<int> SeekTable {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0x478C987388E17207));
   }
   public ref int LoopEnd {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x478C9873900B36CC));

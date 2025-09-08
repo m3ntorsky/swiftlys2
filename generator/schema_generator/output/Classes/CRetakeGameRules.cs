@@ -9,24 +9,7 @@ internal partial class CRetakeGameRules : SchemaClass, IRetakeGameRules {
   public CRetakeGameRules(nint handle) : base(handle) {
   }
 
-  public CRetakeGameRules(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref int MatchSeed {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x34813D492DE0044B));
-  }
-  public ref bool BlockersPresent {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x34813D49BE2F2F2D));
-  }
-  public ref bool RoundInProgress {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x34813D49AE69021B));
-  }
-  public ref int FirstSecondHalfRound {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x34813D49E229A099));
-  }
-  public ref int BombSite {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x34813D49E7E88ECF));
-  }
 
   public void MatchSeedUpdated() {
     Schema.Update(_Handle, 0x34813D492DE0044B);

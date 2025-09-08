@@ -9,9 +9,6 @@ internal partial class VMixSubgraphSwitchDesc_t : SchemaClass, IVMixSubgraphSwit
   public VMixSubgraphSwitchDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixSubgraphSwitchDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref VMixSubgraphSwitchInterpolationType_t InterpolationMode {
     get => ref _Handle.AsRef<VMixSubgraphSwitchInterpolationType_t>(Schema.GetOffset(0x9671DF890C06348A));
   }

@@ -9,14 +9,11 @@ internal partial class C_OP_SetControlPointsToModelParticles : CParticleFunction
   public C_OP_SetControlPointsToModelParticles(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointsToModelParticles(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x8850EF6A6A21BB0E));
+    get => new SchemaFixedString(_Handle, 0x8850EF6A6A21BB0E, 128, 1, 1);
   }
   public ISchemaFixedString AttachmentName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x8850EF6A9CFCA76B));
+    get => new SchemaFixedString(_Handle, 0x8850EF6A9CFCA76B, 128, 1, 1);
   }
   public ref int FirstControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8850EF6A72117650));

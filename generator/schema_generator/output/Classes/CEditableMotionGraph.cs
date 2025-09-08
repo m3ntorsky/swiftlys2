@@ -9,9 +9,6 @@ internal partial class CEditableMotionGraph : CMotionGraph, IEditableMotionGraph
   public CEditableMotionGraph(nint handle) : base(handle) {
   }
 
-  public CEditableMotionGraph(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CNmFloatRemapNode__CDefinition : CNmFloatValueNode::CDefi
   public CNmFloatRemapNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFloatRemapNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short InputValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x5169293495E89F27));
   }

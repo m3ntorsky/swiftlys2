@@ -9,9 +9,6 @@ internal partial class CTaskHandshakeAnimTag : CHandshakeAnimTagBase, ITaskHands
   public CTaskHandshakeAnimTag(nint handle) : base(handle) {
   }
 
-  public CTaskHandshakeAnimTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCDOTANovelsList : SchemaClass, IInfoFo
   public InfoForResourceTypeCDOTANovelsList(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCDOTANovelsList(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

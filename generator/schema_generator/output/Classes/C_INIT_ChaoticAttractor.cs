@@ -9,9 +9,6 @@ internal partial class C_INIT_ChaoticAttractor : CParticleFunctionInitializer, I
   public C_INIT_ChaoticAttractor(nint handle) : base(handle) {
   }
 
-  public C_INIT_ChaoticAttractor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float AParm {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x31993BA100370330));
   }

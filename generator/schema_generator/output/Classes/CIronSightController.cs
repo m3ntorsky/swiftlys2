@@ -9,9 +9,6 @@ internal partial class CIronSightController : SchemaClass, IIronSightController 
   public CIronSightController(nint handle) : base(handle) {
   }
 
-  public CIronSightController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool IronSightAvailable {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9E147D3131BCE9D3));
   }

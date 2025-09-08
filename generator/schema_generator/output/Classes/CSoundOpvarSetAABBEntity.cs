@@ -9,9 +9,6 @@ internal partial class CSoundOpvarSetAABBEntity : CSoundOpvarSetPointEntity, ISo
   public CSoundOpvarSetAABBEntity(nint handle) : base(handle) {
   }
 
-  public CSoundOpvarSetAABBEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector DistanceInnerMins {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x9C9CB73CC7540883));
   }

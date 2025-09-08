@@ -9,9 +9,6 @@ internal partial class C_OP_RenderClothForce : CParticleFunctionRenderer, IC_OP_
   public C_OP_RenderClothForce(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderClothForce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

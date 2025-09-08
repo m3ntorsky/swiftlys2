@@ -9,9 +9,6 @@ internal partial class CParticleFunctionPreEmission : CParticleFunctionOperator,
   public CParticleFunctionPreEmission(nint handle) : base(handle) {
   }
 
-  public CParticleFunctionPreEmission(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool RunOnce {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x60FF68618CD905F));
   }

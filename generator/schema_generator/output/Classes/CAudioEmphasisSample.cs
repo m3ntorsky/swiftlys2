@@ -9,9 +9,6 @@ internal partial class CAudioEmphasisSample : SchemaClass, IAudioEmphasisSample 
   public CAudioEmphasisSample(nint handle) : base(handle) {
   }
 
-  public CAudioEmphasisSample(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Time {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x37D4D710C957229E));
   }

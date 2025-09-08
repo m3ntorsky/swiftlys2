@@ -9,9 +9,6 @@ internal partial class C_INIT_RemapCPtoScalar : CParticleFunctionInitializer, IC
   public C_INIT_RemapCPtoScalar(nint handle) : base(handle) {
   }
 
-  public C_INIT_RemapCPtoScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CPInput {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x2D235A05FB805736));
   }

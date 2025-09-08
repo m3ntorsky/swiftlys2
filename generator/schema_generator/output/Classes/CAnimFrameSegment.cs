@@ -9,9 +9,6 @@ internal partial class CAnimFrameSegment : SchemaClass, IAnimFrameSegment {
   public CAnimFrameSegment(nint handle) : base(handle) {
   }
 
-  public CAnimFrameSegment(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int UniqueFrameIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1D6E27D17D02E339));
   }

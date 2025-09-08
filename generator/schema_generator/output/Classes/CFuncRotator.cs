@@ -9,11 +9,8 @@ internal partial class CFuncRotator : CBaseModelEntity, IFuncRotator {
   public CFuncRotator(nint handle) : base(handle) {
   }
 
-  public CFuncRotator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CHandle< CBaseEntity > RotatorTarget {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x73DA1BB9F324C519));
+  public CHandle<IBaseEntity> RotatorTarget {
+    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x73DA1BB9F324C519));
   }
   public ref bool IsRotating {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x73DA1BB94C9E159D));
@@ -105,17 +102,17 @@ internal partial class CFuncRotator : CBaseModelEntity, IFuncRotator {
   public ref bool RecordHistory {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x73DA1BB9A1A2B6DC));
   }
-  public ref CUtlVector< RotatorHistoryEntry_t > RotatorHistory {
-    get => ref _Handle.AsRef<CUtlVector< RotatorHistoryEntry_t >>(Schema.GetOffset(0x73DA1BB91907536A));
+  public ref CUtlVector RotatorHistory {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x73DA1BB91907536A));
   }
   public ref bool ReturningToPreviousOrientation {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x73DA1BB9540035F9));
   }
-  public ref CUtlVector< RotatorQueueEntry_t > RotatorQueue {
-    get => ref _Handle.AsRef<CUtlVector< RotatorQueueEntry_t >>(Schema.GetOffset(0x73DA1BB941C250ED));
+  public ref CUtlVector RotatorQueue {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x73DA1BB941C250ED));
   }
-  public ref CUtlVector< RotatorHistoryEntry_t > RotatorQueueHistory {
-    get => ref _Handle.AsRef<CUtlVector< RotatorHistoryEntry_t >>(Schema.GetOffset(0x73DA1BB9671778B7));
+  public ref CUtlVector RotatorQueueHistory {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x73DA1BB9671778B7));
   }
 
 

@@ -9,9 +9,6 @@ internal partial class C_INIT_CreateWithinBox : CParticleFunctionInitializer, IC
   public C_INIT_CreateWithinBox(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreateWithinBox(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleVecInput Min {
     get => new CPerParticleVecInput(_Handle + Schema.GetOffset(0x331A2B22B0765F37));
   }

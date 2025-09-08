@@ -9,9 +9,6 @@ internal partial class CInfoTargetServerOnly : CServerOnlyPointEntity, IInfoTarg
   public CInfoTargetServerOnly(nint handle) : base(handle) {
   }
 
-  public CInfoTargetServerOnly(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

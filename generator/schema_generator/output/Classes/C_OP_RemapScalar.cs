@@ -9,9 +9,6 @@ internal partial class C_OP_RemapScalar : CParticleFunctionOperator, IC_OP_Remap
   public C_OP_RemapScalar(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldInput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x580A448EAE775669));
   }

@@ -9,9 +9,6 @@ internal partial class IKSolverSettings_t : SchemaClass, IIKSolverSettings_t {
   public IKSolverSettings_t(nint handle) : base(handle) {
   }
 
-  public IKSolverSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref IKSolverType SolverType {
     get => ref _Handle.AsRef<IKSolverType>(Schema.GetOffset(0x368DC59819CA61B6));
   }
