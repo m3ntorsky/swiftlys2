@@ -9,9 +9,6 @@ internal partial class CSingleplayRules : CGameRules, ISingleplayRules {
   public CSingleplayRules(nint handle) : base(handle) {
   }
 
-  public CSingleplayRules(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool SinglePlayerGameEnding {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x633D071BAD9EAF1D));
   }

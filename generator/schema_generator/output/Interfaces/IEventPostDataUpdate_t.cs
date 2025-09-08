@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEventPostDataUpdate_t : ISchemaClass {
 
-
+  public ref int Count { get; }
+  
 }

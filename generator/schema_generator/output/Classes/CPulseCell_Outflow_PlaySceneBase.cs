@@ -9,17 +9,14 @@ internal partial class CPulseCell_Outflow_PlaySceneBase : CPulseCell_BaseYieldin
   public CPulseCell_Outflow_PlaySceneBase(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Outflow_PlaySceneBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulse_ResumePoint OnFinished {
     get => new CPulse_ResumePoint(_Handle + Schema.GetOffset(0x647C41D08D903E5E));
   }
   public IPulse_ResumePoint OnCanceled {
     get => new CPulse_ResumePoint(_Handle + Schema.GetOffset(0x647C41D0F02162DB));
   }
-  public ref CUtlVector< CPulse_OutflowConnection > Triggers {
-    get => ref _Handle.AsRef<CUtlVector< CPulse_OutflowConnection >>(Schema.GetOffset(0x647C41D06E7B12D0));
+  public ref CUtlVector Triggers {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x647C41D06E7B12D0));
   }
 
 

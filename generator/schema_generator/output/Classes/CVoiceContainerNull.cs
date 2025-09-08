@@ -9,9 +9,6 @@ internal partial class CVoiceContainerNull : CVoiceContainerBase, IVoiceContaine
   public CVoiceContainerNull(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerNull(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

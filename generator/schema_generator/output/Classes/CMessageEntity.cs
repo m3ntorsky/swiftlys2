@@ -9,9 +9,6 @@ internal partial class CMessageEntity : CPointEntity, IMessageEntity {
   public CMessageEntity(nint handle) : base(handle) {
   }
 
-  public CMessageEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Radius {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x893EADCEA921CA53));
   }

@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IGameTime_t : ISchemaClass {
 
-
+  public ref float Value { get; }
+  
 }

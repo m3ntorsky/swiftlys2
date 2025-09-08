@@ -9,9 +9,6 @@ internal partial class CBuoyancyHelper : SchemaClass, IBuoyancyHelper {
   public CBuoyancyHelper(nint handle) : base(handle) {
   }
 
-  public CBuoyancyHelper(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlStringToken FluidType {
     get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0x7A9E77003D45CF5F));
   }
@@ -30,17 +27,17 @@ internal partial class CBuoyancyHelper : SchemaClass, IBuoyancyHelper {
   public ref bool NeutrallyBuoyant {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x7A9E7700D0DF6ADF));
   }
-  public ref CUtlVector< float32 > FractionOfWheelSubmergedForWheelFriction {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x7A9E77009D5C3295));
+  public ref CUtlVector<float> FractionOfWheelSubmergedForWheelFriction {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x7A9E77009D5C3295));
   }
-  public ref CUtlVector< float32 > WheelFrictionScales {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x7A9E77005D5150ED));
+  public ref CUtlVector<float> WheelFrictionScales {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x7A9E77005D5150ED));
   }
-  public ref CUtlVector< float32 > FractionOfWheelSubmergedForWheelDrag {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x7A9E7700E1C2C831));
+  public ref CUtlVector<float> FractionOfWheelSubmergedForWheelDrag {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x7A9E7700E1C2C831));
   }
-  public ref CUtlVector< float32 > WheelDrag {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x7A9E7700E95C5D6E));
+  public ref CUtlVector<float> WheelDrag {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x7A9E7700E95C5D6E));
   }
 
 

@@ -9,9 +9,6 @@ internal partial class CSimpleMarkupVolumeTagged : CMarkupVolumeTagged, ISimpleM
   public CSimpleMarkupVolumeTagged(nint handle) : base(handle) {
   }
 
-  public CSimpleMarkupVolumeTagged(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

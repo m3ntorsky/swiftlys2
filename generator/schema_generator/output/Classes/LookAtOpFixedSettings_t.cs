@@ -9,17 +9,14 @@ internal partial class LookAtOpFixedSettings_t : SchemaClass, ILookAtOpFixedSett
   public LookAtOpFixedSettings_t(nint handle) : base(handle) {
   }
 
-  public LookAtOpFixedSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimAttachment Attachment {
     get => new CAnimAttachment(_Handle + Schema.GetOffset(0xF114BD602C5CA308));
   }
   public IAnimInputDamping Damping {
     get => new CAnimInputDamping(_Handle + Schema.GetOffset(0xF114BD6015440FB5));
   }
-  public ref CUtlVector< LookAtBone_t > Bones {
-    get => ref _Handle.AsRef<CUtlVector< LookAtBone_t >>(Schema.GetOffset(0xF114BD600FDA60D4));
+  public ref CUtlVector Bones {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xF114BD600FDA60D4));
   }
   public ref float YawLimit {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF114BD60C8DE6E19));

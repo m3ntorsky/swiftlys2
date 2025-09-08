@@ -9,9 +9,6 @@ internal partial class C_OP_SnapshotRigidSkinToBones : CParticleFunctionOperator
   public C_OP_SnapshotRigidSkinToBones(nint handle) : base(handle) {
   }
 
-  public C_OP_SnapshotRigidSkinToBones(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool TransformNormals {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x208C05EB3C6BFD75));
   }

@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCCSGOEconItem : SchemaClass, IInfoForR
   public InfoForResourceTypeCCSGOEconItem(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCCSGOEconItem(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

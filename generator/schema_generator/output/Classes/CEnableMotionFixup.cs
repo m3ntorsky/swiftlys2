@@ -9,9 +9,6 @@ internal partial class CEnableMotionFixup : CBaseEntity, IEnableMotionFixup {
   public CEnableMotionFixup(nint handle) : base(handle) {
   }
 
-  public CEnableMotionFixup(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

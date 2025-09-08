@@ -9,9 +9,6 @@ internal partial class CNmCachedBoolNode__CDefinition : CNmBoolValueNode::CDefin
   public CNmCachedBoolNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmCachedBoolNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short InputValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x4BFAE2E795E89F27));
   }

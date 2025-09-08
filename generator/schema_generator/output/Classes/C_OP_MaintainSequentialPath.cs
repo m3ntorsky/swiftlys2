@@ -9,9 +9,6 @@ internal partial class C_OP_MaintainSequentialPath : CParticleFunctionOperator, 
   public C_OP_MaintainSequentialPath(nint handle) : base(handle) {
   }
 
-  public C_OP_MaintainSequentialPath(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MaxDistance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x3F7004B8844E396A));
   }

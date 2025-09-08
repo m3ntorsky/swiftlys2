@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCRenderMesh : SchemaClass, IInfoForRes
   public InfoForResourceTypeCRenderMesh(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCRenderMesh(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

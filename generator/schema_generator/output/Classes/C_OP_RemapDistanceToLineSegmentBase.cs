@@ -9,9 +9,6 @@ internal partial class C_OP_RemapDistanceToLineSegmentBase : CParticleFunctionOp
   public C_OP_RemapDistanceToLineSegmentBase(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapDistanceToLineSegmentBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CP0 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD8219F7AD3B1E3E6));
   }

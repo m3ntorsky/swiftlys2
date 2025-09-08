@@ -9,9 +9,6 @@ internal partial class CWeaponUSPSilencer : CCSWeaponBaseGun, IWeaponUSPSilencer
   public CWeaponUSPSilencer(nint handle) : base(handle) {
   }
 
-  public CWeaponUSPSilencer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

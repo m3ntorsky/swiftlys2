@@ -9,9 +9,6 @@ internal partial class CPulseCell_PickBestOutflowSelector : CPulseCell_BaseFlow,
   public CPulseCell_PickBestOutflowSelector(nint handle) : base(handle) {
   }
 
-  public CPulseCell_PickBestOutflowSelector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref PulseBestOutflowRules_t CheckType {
     get => ref _Handle.AsRef<PulseBestOutflowRules_t>(Schema.GetOffset(0x7239DF04A94C6E6B));
   }

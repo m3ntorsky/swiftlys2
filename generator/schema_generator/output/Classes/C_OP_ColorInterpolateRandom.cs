@@ -9,9 +9,6 @@ internal partial class C_OP_ColorInterpolateRandom : CParticleFunctionOperator, 
   public C_OP_ColorInterpolateRandom(nint handle) : base(handle) {
   }
 
-  public C_OP_ColorInterpolateRandom(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Color ColorFadeMin {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x6185EEC8EFCBE55A));
   }

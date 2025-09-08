@@ -9,9 +9,6 @@ internal partial class CSosGroupActionSchema : SchemaClass, ISosGroupActionSchem
   public CSosGroupActionSchema(nint handle) : base(handle) {
   }
 
-  public CSosGroupActionSchema(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x771FE4F94D8F5786));
   }

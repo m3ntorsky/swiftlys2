@@ -9,14 +9,11 @@ internal partial class CMorphData : SchemaClass, IMorphData {
   public CMorphData(nint handle) : base(handle) {
   }
 
-  public CMorphData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x603F8C4D8F5786));
   }
-  public ref CUtlVector< CMorphRectData > MorphRectDatas {
-    get => ref _Handle.AsRef<CUtlVector< CMorphRectData >>(Schema.GetOffset(0x603F8CB92C9674));
+  public ref CUtlVector MorphRectDatas {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x603F8CB92C9674));
   }
 
 

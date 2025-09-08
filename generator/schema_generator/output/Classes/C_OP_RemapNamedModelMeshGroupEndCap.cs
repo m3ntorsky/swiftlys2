@@ -9,9 +9,6 @@ internal partial class C_OP_RemapNamedModelMeshGroupEndCap : C_OP_RemapNamedMode
   public C_OP_RemapNamedModelMeshGroupEndCap(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapNamedModelMeshGroupEndCap(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

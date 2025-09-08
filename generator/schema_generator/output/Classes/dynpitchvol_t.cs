@@ -9,9 +9,6 @@ internal partial class dynpitchvol_t : dynpitchvol_base_t, Idynpitchvol_t {
   public dynpitchvol_t(nint handle) : base(handle) {
   }
 
-  public dynpitchvol_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

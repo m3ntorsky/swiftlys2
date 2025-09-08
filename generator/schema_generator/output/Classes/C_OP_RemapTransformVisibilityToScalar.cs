@@ -9,9 +9,6 @@ internal partial class C_OP_RemapTransformVisibilityToScalar : CParticleFunction
   public C_OP_RemapTransformVisibilityToScalar(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapTransformVisibilityToScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ParticleSetMethod_t SetMethod {
     get => ref _Handle.AsRef<ParticleSetMethod_t>(Schema.GetOffset(0x3CE3C8AFFB53C31E));
   }

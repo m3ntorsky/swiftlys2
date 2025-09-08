@@ -9,26 +9,23 @@ internal partial class CAttachment : SchemaClass, IAttachment {
   public CAttachment(nint handle) : base(handle) {
   }
 
-  public CAttachment(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x5F09808F4D8F5786));
   }
   public ISchemaFixedArray<CUtlString> InfluenceNames {
-    get => new SchemaFixedArray<CUtlString>(_Handle + Schema.GetOffset(0x5F09808FFD9B3CB8));
+    get => new SchemaFixedArray<CUtlString>(_Handle, 0x5F09808FFD9B3CB8, 3, 8, 8);
   }
   public ISchemaFixedArray<Quaternion> InfluenceRotations {
-    get => new SchemaFixedArray<Quaternion>(_Handle + Schema.GetOffset(0x5F09808FD277168B));
+    get => new SchemaFixedArray<Quaternion>(_Handle, 0x5F09808FD277168B, 3, 16, 16);
   }
   public ISchemaFixedArray<Vector> InfluenceOffsets {
-    get => new SchemaFixedArray<Vector>(_Handle + Schema.GetOffset(0x5F09808F767C44DC));
+    get => new SchemaFixedArray<Vector>(_Handle, 0x5F09808F767C44DC, 3, 12, 4);
   }
-  public ISchemaFixedArray<float32> InfluenceWeights {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0x5F09808F49916951));
+  public ISchemaFixedArray<float> InfluenceWeights {
+    get => new SchemaFixedArray<float>(_Handle, 0x5F09808F49916951, 3, 4, 4);
   }
   public ISchemaFixedArray<bool> InfluenceRootTransform {
-    get => new SchemaFixedArray<bool>(_Handle + Schema.GetOffset(0x5F09808F5763011C));
+    get => new SchemaFixedArray<bool>(_Handle, 0x5F09808F5763011C, 3, 1, 1);
   }
   public ref byte Influences {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x5F09808F8E94AB85));

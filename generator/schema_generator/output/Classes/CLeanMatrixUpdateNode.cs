@@ -9,14 +9,11 @@ internal partial class CLeanMatrixUpdateNode : CLeafUpdateNode, ILeanMatrixUpdat
   public CLeanMatrixUpdateNode(nint handle) : base(handle) {
   }
 
-  public CLeanMatrixUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<int32[3]> FrameCorners {
-    get => new SchemaFixedArray<int32[3]>(_Handle + Schema.GetOffset(0xDB33C9A617463774));
+  public ISchemaFixedArray<int[3]> FrameCorners {
+    get => new SchemaFixedArray<int[3]>(_Handle, 0xDB33C9A617463774, 3, 12, 4);
   }
   public IPoseHandle Poses {
-    get => new CPoseHandle(_Handle + Schema.GetOffset(0xDB33C9A6B851C9F5));
+    get => new CPoseHandle(_Handle, 0xDB33C9A6B851C9F5, 9, 4, 2);
   }
   public IAnimInputDamping Damping {
     get => new CAnimInputDamping(_Handle + Schema.GetOffset(0xDB33C9A615440FB5));

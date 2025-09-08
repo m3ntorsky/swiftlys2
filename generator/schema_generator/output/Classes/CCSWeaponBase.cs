@@ -9,41 +9,23 @@ internal partial class CCSWeaponBase : CBasePlayerWeapon, ICSWeaponBase {
   public CCSWeaponBase(nint handle) : base(handle) {
   }
 
-  public CCSWeaponBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Removeable {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA512A9A0EFD));
   }
-  public ref CUtlVector< HSequence > ThirdPersonFireSequences {
-    get => ref _Handle.AsRef<CUtlVector< HSequence >>(Schema.GetOffset(0x8102BA5146E89B3F));
+  public ref CUtlVector ThirdPersonFireSequences {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x8102BA5146E89B3F));
   }
   public IHSequence CurrentThirdPersonSequence {
     get => new HSequence(_Handle + Schema.GetOffset(0x8102BA517E5CCF19));
   }
   public IHSequence ThirdPersonSequences {
-    get => new HSequence(_Handle + Schema.GetOffset(0x8102BA51B96AAFB3));
+    get => new HSequence(_Handle, 0x8102BA51B96AAFB3, 7, 4, 4);
   }
   public ref bool PlayerAmmoStockOnPickup {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA51D64BCF69));
   }
   public ref bool RequireUseToTouch {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA51E52ED88D));
-  }
-  public ref WeaponGameplayAnimState WeaponGameplayAnimState {
-    get => ref _Handle.AsRef<WeaponGameplayAnimState>(Schema.GetOffset(0x8102BA514CFB8FEA));
-  }
-  public IGameTime_t WeaponGameplayAnimStateTimestamp {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x8102BA51180F65AD));
-  }
-  public IGameTime_t InspectCancelCompleteTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x8102BA51A9C029E5));
-  }
-  public ref bool InspectPending {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA51793FE8B6));
-  }
-  public ref bool InspectShouldLoop {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA51CB0DE08A));
   }
   public ref int LastEmptySoundCmdNum {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8102BA513E7E6941));
@@ -54,9 +36,6 @@ internal partial class CCSWeaponBase : CBasePlayerWeapon, ICSWeaponBase {
   public IEntityIOOutput OnPlayerPickup {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x8102BA51DE81BF25));
   }
-  public ref CSWeaponMode WeaponMode {
-    get => ref _Handle.AsRef<CSWeaponMode>(Schema.GetOffset(0x8102BA51AA0E449E));
-  }
   public ref float TurningInaccuracyDelta {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8102BA51C32CA614));
   }
@@ -66,53 +45,11 @@ internal partial class CCSWeaponBase : CBasePlayerWeapon, ICSWeaponBase {
   public ref float TurningInaccuracy {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8102BA51533B6902));
   }
-  public ref float AccuracyPenalty {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8102BA517FB6DE25));
-  }
   public IGameTime_t LastAccuracyUpdateTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x8102BA514B746ABE));
   }
   public ref float AccuracySmoothedForZoom {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8102BA519B72CD81));
-  }
-  public ref int RecoilIndex {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8102BA5191B65146));
-  }
-  public ref float RecoilIndex {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8102BA51D779E87B));
-  }
-  public ref bool BurstMode {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA513016BB7E));
-  }
-  public IGameTick_t PostponeFireReadyTicks {
-    get => new GameTick_t(_Handle + Schema.GetOffset(0x8102BA51EF9494E8));
-  }
-  public ref float PostponeFireReadyFrac {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8102BA51DC2054DC));
-  }
-  public ref bool InReload {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA51184F0553));
-  }
-  public IGameTime_t DroppedAtTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x8102BA51C3A8936F));
-  }
-  public ref bool IsHauledBack {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA51D8C240B9));
-  }
-  public ref bool SilencerOn {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA5168D3A353));
-  }
-  public IGameTime_t TimeSilencerSwitchComplete {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x8102BA51DCB190FA));
-  }
-  public ref int OriginalTeamNumber {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8102BA515DB51597));
-  }
-  public ref int MostRecentTeamNumber {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8102BA51D818821C));
-  }
-  public ref bool DroppedNearBuyZone {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA511DC5989F));
   }
   public ref float NextAttackRenderTimeOffset {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8102BA518D5552CC));
@@ -129,23 +66,8 @@ internal partial class CCSWeaponBase : CBasePlayerWeapon, ICSWeaponBase {
   public IGameTime_t NextPrevOwnerTouchTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x8102BA515C688482));
   }
-  public IGameTime_t NextPrevOwnerUseTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x8102BA51C84F06AE));
-  }
-  public ref CHandle< CCSPlayerPawn > PrevOwner {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0x8102BA5133F3C84D));
-  }
-  public IGameTick_t DropTick {
-    get => new GameTick_t(_Handle + Schema.GetOffset(0x8102BA51B2FC22F5));
-  }
-  public ref bool WasActiveWeaponWhenDropped {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA51E6BC2F96));
-  }
   public ref bool Donated {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA516864DC4A));
-  }
-  public IGameTime_t LastShotTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x8102BA517A37978C));
   }
   public ref bool WasOwnedByCT {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA5102E58E01));
@@ -159,14 +81,8 @@ internal partial class CCSWeaponBase : CBasePlayerWeapon, ICSWeaponBase {
   public IIronSightController IronSightController {
     get => new CIronSightController(_Handle + Schema.GetOffset(0x8102BA5189739F40));
   }
-  public ref int IronSightMode {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8102BA51AAF66648));
-  }
   public IGameTime_t LastLOSTraceFailureTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x8102BA51EFA6E48B));
-  }
-  public ref float WatTickOffset {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8102BA519F5B6237));
   }
 
   public void WeaponGameplayAnimStateUpdated() {

@@ -9,9 +9,6 @@ internal partial class CNmScaleTask : CNmPoseTask, INmScaleTask {
   public CNmScaleTask(nint handle) : base(handle) {
   }
 
-  public CNmScaleTask(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

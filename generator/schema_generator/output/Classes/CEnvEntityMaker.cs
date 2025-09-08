@@ -9,20 +9,17 @@ internal partial class CEnvEntityMaker : CPointEntity, IEnvEntityMaker {
   public CEnvEntityMaker(nint handle) : base(handle) {
   }
 
-  public CEnvEntityMaker(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector EntityMins {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x5EC16696C39F1E27));
   }
   public ref Vector EntityMaxs {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x5EC166965CBE958D));
   }
-  public ref CHandle< CBaseEntity > CurrentInstance {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x5EC166969C4BA153));
+  public ref CHandle<CBaseEntity> CurrentInstance {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x5EC166969C4BA153));
   }
-  public ref CHandle< CBaseEntity > CurrentBlocker {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x5EC1669684284A72));
+  public ref CHandle<CBaseEntity> CurrentBlocker {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x5EC1669684284A72));
   }
   public ref Vector BlockerOrigin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x5EC16696987D753F));

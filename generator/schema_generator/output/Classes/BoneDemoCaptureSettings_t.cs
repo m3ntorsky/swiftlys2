@@ -9,9 +9,6 @@ internal partial class BoneDemoCaptureSettings_t : SchemaClass, IBoneDemoCapture
   public BoneDemoCaptureSettings_t(nint handle) : base(handle) {
   }
 
-  public BoneDemoCaptureSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString BoneName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x17A5730FDEE0E0C));
   }

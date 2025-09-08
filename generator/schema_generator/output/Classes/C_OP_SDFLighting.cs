@@ -9,9 +9,6 @@ internal partial class C_OP_SDFLighting : CParticleFunctionOperator, IC_OP_SDFLi
   public C_OP_SDFLighting(nint handle) : base(handle) {
   }
 
-  public C_OP_SDFLighting(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector LightingDir {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xDB0DD4D85DEEFA14));
   }

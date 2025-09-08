@@ -9,9 +9,6 @@ internal partial class SceneEventId_t : SchemaClass, ISceneEventId_t {
   public SceneEventId_t(nint handle) : base(handle) {
   }
 
-  public SceneEventId_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint Value {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x73B0927FDCB0894A));
   }

@@ -9,9 +9,6 @@ internal partial class CPulse_Constant : SchemaClass, IPulse_Constant {
   public CPulse_Constant(nint handle) : base(handle) {
   }
 
-  public CPulse_Constant(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField Type {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x28B1B9F08ED6D5CD));
   }

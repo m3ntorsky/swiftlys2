@@ -9,9 +9,6 @@ internal partial class RnBodyDesc_t : SchemaClass, IRnBodyDesc_t {
   public RnBodyDesc_t(nint handle) : base(handle) {
   }
 
-  public RnBodyDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString DebugName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB8BC96379D265F86));
   }
@@ -31,7 +28,7 @@ internal partial class RnBodyDesc_t : SchemaClass, IRnBodyDesc_t {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xB8BC9637AFDB4EDD));
   }
   public ISchemaFixedArray<Vector> LocalInertiaInv {
-    get => new SchemaFixedArray<Vector>(_Handle + Schema.GetOffset(0xB8BC9637AF2EEFAD));
+    get => new SchemaFixedArray<Vector>(_Handle, 0xB8BC9637AF2EEFAD, 3, 12, 4);
   }
   public ref float MassInv {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB8BC96376218E3D2));

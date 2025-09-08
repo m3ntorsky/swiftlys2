@@ -9,9 +9,6 @@ internal partial class CAnimationGraphVisualizerAxis : CAnimationGraphVisualizer
   public CAnimationGraphVisualizerAxis(nint handle) : base(handle) {
   }
 
-  public CAnimationGraphVisualizerAxis(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CTransform XWsTransform {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xB0A274E9AE1478FF));
   }

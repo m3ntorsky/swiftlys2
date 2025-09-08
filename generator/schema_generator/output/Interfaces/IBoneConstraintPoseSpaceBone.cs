@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBoneConstraintPoseSpaceBone : IBaseConstraint {
 
-
+  public ref CUtlVector InputList { get; }
+  
 }

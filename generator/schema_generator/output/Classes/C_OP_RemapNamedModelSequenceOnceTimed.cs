@@ -9,9 +9,6 @@ internal partial class C_OP_RemapNamedModelSequenceOnceTimed : C_OP_RemapNamedMo
   public C_OP_RemapNamedModelSequenceOnceTimed(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapNamedModelSequenceOnceTimed(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

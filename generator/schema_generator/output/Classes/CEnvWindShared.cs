@@ -9,59 +9,14 @@ internal partial class CEnvWindShared : SchemaClass, IEnvWindShared {
   public CEnvWindShared(nint handle) : base(handle) {
   }
 
-  public CEnvWindShared(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public IGameTime_t StartTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x4E8F86FE67FE9DC4));
-  }
-  public ref uint WindSeed {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x4E8F86FE2F7E304B));
-  }
-  public ref ushort MinWind {
-    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x4E8F86FE19B7F0B6));
-  }
-  public ref ushort MaxWind {
-    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x4E8F86FE427465A0));
-  }
-  public ref int WindRadius {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4E8F86FED57577F5));
-  }
-  public ref ushort MinGust {
-    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x4E8F86FEA1FFC04F));
-  }
-  public ref ushort MaxGust {
-    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x4E8F86FEF0A3B1C9));
-  }
-  public ref float MinGustDelay {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4E8F86FE2A8BCB2D));
-  }
-  public ref float MaxGustDelay {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4E8F86FE53D781CF));
-  }
-  public ref float GustDuration {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4E8F86FE1FD88D18));
-  }
-  public ref ushort GustDirChange {
-    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x4E8F86FE945BF5C6));
-  }
-  public ref ushort InitialWindDir {
-    get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x4E8F86FE84BFDBBD));
-  }
-  public ref float InitialWindSpeed {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4E8F86FE1670F5CA));
-  }
-  public ref Vector Location {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x4E8F86FEC4993A46));
-  }
   public IEntityIOOutput OnGustStart {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x4E8F86FE2832424D));
   }
   public IEntityIOOutput OnGustEnd {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x4E8F86FE82E285B4));
   }
-  public ref CHandle< CBaseEntity > EntOwner {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x4E8F86FED837CB33));
+  public ref CHandle<CBaseEntity> EntOwner {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x4E8F86FED837CB33));
   }
 
   public void StartTimeUpdated() {

@@ -9,11 +9,8 @@ internal partial class CParticleAnimTag : CAnimTagBase, IParticleAnimTag {
   public CParticleAnimTag(nint handle) : base(handle) {
   }
 
-  public CParticleAnimTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > ParticleSystem {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIParticleSystemDefinition >>(Schema.GetOffset(0x80C76F77C9C33AF8));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ParticleSystem {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0x80C76F77C9C33AF8));
   }
   public ref CUtlString ParticleSystemName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x80C76F775B35985D));

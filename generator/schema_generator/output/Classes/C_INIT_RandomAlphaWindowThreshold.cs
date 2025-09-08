@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomAlphaWindowThreshold : CParticleFunctionInit
   public C_INIT_RandomAlphaWindowThreshold(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomAlphaWindowThreshold(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Min {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x68DB6A2E3B1A5649));
   }

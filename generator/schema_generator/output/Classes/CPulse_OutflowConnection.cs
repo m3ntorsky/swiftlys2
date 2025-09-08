@@ -9,9 +9,6 @@ internal partial class CPulse_OutflowConnection : SchemaClass, IPulse_OutflowCon
   public CPulse_OutflowConnection(nint handle) : base(handle) {
   }
 
-  public CPulse_OutflowConnection(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField SourceOutflowName {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x58023C685EA2FFCF));
   }

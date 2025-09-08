@@ -9,9 +9,6 @@ internal partial class PulseNodeDynamicOutflows_t__DynamicOutflow_t : SchemaClas
   public PulseNodeDynamicOutflows_t__DynamicOutflow_t(nint handle) : base(handle) {
   }
 
-  public PulseNodeDynamicOutflows_t__DynamicOutflow_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol OutflowID {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x4ACC8D59E16DD56));
   }

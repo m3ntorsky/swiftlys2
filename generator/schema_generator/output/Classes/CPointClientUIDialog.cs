@@ -9,12 +9,6 @@ internal partial class CPointClientUIDialog : CBaseClientUIEntity, IPointClientU
   public CPointClientUIDialog(nint handle) : base(handle) {
   }
 
-  public CPointClientUIDialog(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CHandle< CBaseEntity > Activator {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1136C185AB093BB2));
-  }
   public ref bool StartEnabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1136C185500D5C24));
   }

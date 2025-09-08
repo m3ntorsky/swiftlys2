@@ -9,9 +9,6 @@ internal partial class CLookComponentUpdater : CAnimComponentUpdater, ILookCompo
   public CLookComponentUpdater(nint handle) : base(handle) {
   }
 
-  public CLookComponentUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimParamHandle LookHeading {
     get => new CAnimParamHandle(_Handle + Schema.GetOffset(0xA3C6996DE7EA9C52));
   }

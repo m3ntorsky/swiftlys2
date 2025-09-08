@@ -9,9 +9,6 @@ internal partial class CTriggerGravity : CBaseTrigger, ITriggerGravity {
   public CTriggerGravity(nint handle) : base(handle) {
   }
 
-  public CTriggerGravity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

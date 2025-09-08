@@ -9,9 +9,6 @@ internal partial class C_OP_MovementRotateParticleAroundAxis : CParticleFunction
   public C_OP_MovementRotateParticleAroundAxis(nint handle) : base(handle) {
   }
 
-  public C_OP_MovementRotateParticleAroundAxis(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionVecInput RotAxis {
     get => new CParticleCollectionVecInput(_Handle + Schema.GetOffset(0x44C1E1F191872163));
   }

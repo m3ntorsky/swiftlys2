@@ -9,9 +9,6 @@ internal partial class CPulseCell_Inflow_EntOutputHandler : CPulseCell_Inflow_Ba
   public CPulseCell_Inflow_EntOutputHandler(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Inflow_EntOutputHandler(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField SourceEntity {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x8C9310C4AD2DB063));
   }

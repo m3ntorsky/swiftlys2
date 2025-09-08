@@ -9,9 +9,6 @@ internal partial class CRandStopwatch : CStopwatchBase, IRandStopwatch {
   public CRandStopwatch(nint handle) : base(handle) {
   }
 
-  public CRandStopwatch(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MinInterval {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x538C26044BB35EE4));
   }

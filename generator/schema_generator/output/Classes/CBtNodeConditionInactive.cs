@@ -9,9 +9,6 @@ internal partial class CBtNodeConditionInactive : CBtNodeCondition, IBtNodeCondi
   public CBtNodeConditionInactive(nint handle) : base(handle) {
   }
 
-  public CBtNodeConditionInactive(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RoundStartThresholdSeconds {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1AB44FB08A52CC47));
   }

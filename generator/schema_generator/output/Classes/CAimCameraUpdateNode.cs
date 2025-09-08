@@ -9,9 +9,6 @@ internal partial class CAimCameraUpdateNode : CUnaryUpdateNode, IAimCameraUpdate
   public CAimCameraUpdateNode(nint handle) : base(handle) {
   }
 
-  public CAimCameraUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimParamHandle ParameterPosition {
     get => new CAnimParamHandle(_Handle + Schema.GetOffset(0xE8DD6D01DA71CD41));
   }

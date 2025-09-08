@@ -9,9 +9,6 @@ internal partial class CBlood : CPointEntity, IBlood {
   public CBlood(nint handle) : base(handle) {
   }
 
-  public CBlood(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref QAngle SprayAngles {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0x68CF460A2BDF444E));
   }

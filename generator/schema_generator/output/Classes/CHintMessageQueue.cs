@@ -9,14 +9,11 @@ internal partial class CHintMessageQueue : SchemaClass, IHintMessageQueue {
   public CHintMessageQueue(nint handle) : base(handle) {
   }
 
-  public CHintMessageQueue(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float TmMessageEnd {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBE13489745AC0F6));
   }
-  public ref CUtlVector< CHintMessage* > Messages {
-    get => ref _Handle.AsRef<CUtlVector< CHintMessage* >>(Schema.GetOffset(0xBE134896139CC55));
+  public ref CUtlVector<PointerTo<CHintMessage>> Messages {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CHintMessage>>>(Schema.GetOffset(0xBE134896139CC55));
   }
   public IBasePlayerController PlayerController {
     get => new CBasePlayerController(_Handle + Schema.GetOffset(0xBE13489DCE6762E));

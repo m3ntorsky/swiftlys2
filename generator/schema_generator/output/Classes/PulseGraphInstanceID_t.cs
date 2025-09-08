@@ -9,9 +9,6 @@ internal partial class PulseGraphInstanceID_t : SchemaClass, IPulseGraphInstance
   public PulseGraphInstanceID_t(nint handle) : base(handle) {
   }
 
-  public PulseGraphInstanceID_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint Value {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x4291F7FFDCB0894A));
   }

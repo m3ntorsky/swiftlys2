@@ -9,32 +9,8 @@ internal partial class CPlayer_MovementServices_Humanoid : CPlayer_MovementServi
   public CPlayer_MovementServices_Humanoid(nint handle) : base(handle) {
   }
 
-  public CPlayer_MovementServices_Humanoid(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float StepSoundTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB65FEA796DEC5F7D));
-  }
-  public ref float FallVelocity {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB65FEA796D8D7D9D));
-  }
-  public ref bool InCrouch {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB65FEA79CF28FE64));
-  }
-  public ref uint CrouchState {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xB65FEA7988282338));
-  }
-  public IGameTime_t CrouchTransitionStartTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0xB65FEA79E89CEC2B));
-  }
-  public ref bool Ducked {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB65FEA7914A05A59));
-  }
-  public ref bool Ducking {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB65FEA798B221170));
-  }
-  public ref bool InDuckJump {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB65FEA7917ADB523));
   }
   public ref Vector GroundNormal {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xB65FEA79ED2C77CD));

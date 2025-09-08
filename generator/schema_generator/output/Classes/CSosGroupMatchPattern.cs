@@ -9,9 +9,6 @@ internal partial class CSosGroupMatchPattern : CSosGroupBranchPattern, ISosGroup
   public CSosGroupMatchPattern(nint handle) : base(handle) {
   }
 
-  public CSosGroupMatchPattern(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString MatchSoundEventName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xC21A80F95E75165C));
   }

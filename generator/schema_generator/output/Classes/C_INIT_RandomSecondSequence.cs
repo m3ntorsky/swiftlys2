@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomSecondSequence : CParticleFunctionInitialize
   public C_INIT_RandomSecondSequence(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomSecondSequence(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int SequenceMin {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC1CE11E0D30682F0));
   }

@@ -9,9 +9,6 @@ internal partial class CParticleVisibilityInputs : SchemaClass, IParticleVisibil
   public CParticleVisibilityInputs(nint handle) : base(handle) {
   }
 
-  public CParticleVisibilityInputs(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float CameraBias {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF3FC60F57CAF2EE5));
   }

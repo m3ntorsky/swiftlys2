@@ -9,9 +9,6 @@ internal partial class ISkeletonAnimationController : SchemaClass, IISkeletonAni
   public ISkeletonAnimationController(nint handle) : base(handle) {
   }
 
-  public ISkeletonAnimationController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

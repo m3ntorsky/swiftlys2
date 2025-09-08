@@ -9,9 +9,6 @@ internal partial class CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorS
   public CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_t(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int TestStep {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE579E02F4D61CC93));
   }

@@ -4,5 +4,158 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IScriptedSequence : IBaseEntity {
 
-
+  public ref CUtlSymbolLarge Entry { get; }
+  
+  public ref CUtlSymbolLarge PreIdle { get; }
+  
+  public ref CUtlSymbolLarge Play { get; }
+  
+  public ref CUtlSymbolLarge PostIdle { get; }
+  
+  public ref CUtlSymbolLarge ModifierToAddOnPlay { get; }
+  
+  public ref CUtlSymbolLarge NextScript { get; }
+  
+  public ref CUtlSymbolLarge Entity { get; }
+  
+  public ref CUtlSymbolLarge SyncGroup { get; }
+  
+  public ref ScriptedMoveTo_t MoveTo { get; }
+  
+  public ref SharedMovementGait_t MoveToGait { get; }
+  
+  public ref ScriptedHeldWeaponBehavior_t HeldWeaponBehavior { get; }
+  
+  public ref ForcedCrouchState_t ForcedCrouchState { get; }
+  
+  public ref bool IsPlayingPreIdle { get; }
+  
+  public ref bool IsPlayingEntry { get; }
+  
+  public ref bool IsPlayingAction { get; }
+  
+  public ref bool IsPlayingPostIdle { get; }
+  
+  public ref bool DontRotateOther { get; }
+  
+  public ref bool IsRepeatable { get; }
+  
+  public ref bool ShouldLeaveCorpse { get; }
+  
+  public ref bool StartOnSpawn { get; }
+  
+  public ref bool DisallowInterrupts { get; }
+  
+  public ref bool CanOverrideNPCState { get; }
+  
+  public ref bool DontTeleportAtEnd { get; }
+  
+  public ref bool HighPriority { get; }
+  
+  public ref bool HideDebugComplaints { get; }
+  
+  public ref bool ContinueOnDeath { get; }
+  
+  public ref bool LoopPreIdleSequence { get; }
+  
+  public ref bool LoopActionSequence { get; }
+  
+  public ref bool LoopPostIdleSequence { get; }
+  
+  public ref bool SynchPostIdles { get; }
+  
+  public ref bool IgnoreLookAt { get; }
+  
+  public ref bool IgnoreGravity { get; }
+  
+  public ref bool DisableNPCCollisions { get; }
+  
+  public ref bool KeepAnimgraphLockedPost { get; }
+  
+  public ref bool DontAddModifiers { get; }
+  
+  public ref bool DisableAimingWhileMoving { get; }
+  
+  public ref bool IgnoreRotation { get; }
+  
+  public ref float Radius { get; }
+  
+  public ref float Repeat { get; }
+  
+  public ref float PlayAnimFadeInTime { get; }
+  
+  public ref float MoveInterpTime { get; }
+  
+  public ref float AngRate { get; }
+  
+  public ref float MoveSpeed { get; }
+  
+  public ref bool WaitUntilMoveCompletesToStartAnimation { get; }
+  
+  public ref int NotReadySequenceCount { get; }
+  
+  public IGameTime_t StartTime { get; }
+  
+  public ref bool WaitForBeginSequence { get; }
+  
+  public ref int Saved_effects { get; }
+  
+  public ref int SavedFlags { get; }
+  
+  public ref int SavedCollisionGroup { get; }
+  
+  public ref bool Interruptable { get; }
+  
+  public ref bool SequenceStarted { get; }
+  
+  public ref bool PositionRelativeToOtherEntity { get; }
+  
+  public ref CHandle<CBaseEntity> TargetEnt { get; }
+  
+  public ref CHandle<CScriptedSequence> NextCine { get; }
+  
+  public ref bool Thinking { get; }
+  
+  public ref bool InitiatedSelfDelete { get; }
+  
+  public ref bool IsTeleportingDueToMoveTo { get; }
+  
+  public ref bool AllowCustomInterruptConditions { get; }
+  
+  public ref CHandle<CBaseAnimGraph> ForcedTarget { get; }
+  
+  public ref bool DontCancelOtherSequences { get; }
+  
+  public ref bool ForceSynch { get; }
+  
+  public ref bool PreventUpdateYawOnFinish { get; }
+  
+  public ref bool EnsureOnNavmeshOnFinish { get; }
+  
+  public ref ScriptedOnDeath_t OnDeathBehavior { get; }
+  
+  public ref ScriptedConflictResponse_t ConflictResponse { get; }
+  
+  public IEntityIOOutput OnBeginSequence { get; }
+  
+  public IEntityIOOutput OnActionStartOrLoop { get; }
+  
+  public IEntityIOOutput OnEndSequence { get; }
+  
+  public IEntityIOOutput OnPostIdleEndSequence { get; }
+  
+  public IEntityIOOutput OnCancelSequence { get; }
+  
+  public IEntityIOOutput OnCancelFailedSequence { get; }
+  
+  public IEntityIOOutput OnScriptEvent { get; }
+  
+  public ref CTransform MatOtherToMain { get; }
+  
+  public ref CHandle<CBaseEntity> InteractionMainEntity { get; }
+  
+  public ref int PlayerDeathBehavior { get; }
+  
+  public ref bool SkipFadeIn { get; }
+  
 }

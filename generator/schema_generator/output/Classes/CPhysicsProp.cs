@@ -9,9 +9,6 @@ internal partial class CPhysicsProp : CBreakableProp, IPhysicsProp {
   public CPhysicsProp(nint handle) : base(handle) {
   }
 
-  public CPhysicsProp(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput MotionEnabled {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xC3FD37FE8956B83C));
   }
@@ -112,16 +109,13 @@ internal partial class CPhysicsProp : CBreakableProp, IPhysicsProp {
     get => ref _Handle.AsRef<CPhysicsProp::CrateType_t>(Schema.GetOffset(0xC3FD37FE5B05CA48));
   }
   public ISchemaFixedArray<CUtlSymbolLarge> StrItemClass {
-    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle + Schema.GetOffset(0xC3FD37FE35D963A1));
+    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0xC3FD37FE35D963A1, 4, 8, 8);
   }
-  public ISchemaFixedArray<int32> ItemCount {
-    get => new SchemaFixedArray<int32>(_Handle + Schema.GetOffset(0xC3FD37FEA5886501));
+  public ISchemaFixedArray<int> ItemCount {
+    get => new SchemaFixedArray<int>(_Handle, 0xC3FD37FEA5886501, 4, 4, 4);
   }
   public ref bool RemovableForAmmoBalancing {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC3FD37FEF629CF16));
-  }
-  public ref bool Awake {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC3FD37FE9A5C15BC));
   }
   public ref bool AttachedToReferenceFrame {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC3FD37FED2A5449A));

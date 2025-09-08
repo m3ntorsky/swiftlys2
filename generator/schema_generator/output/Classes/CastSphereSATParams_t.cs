@@ -9,9 +9,6 @@ internal partial class CastSphereSATParams_t : SchemaClass, ICastSphereSATParams
   public CastSphereSATParams_t(nint handle) : base(handle) {
   }
 
-  public CastSphereSATParams_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector RayStart {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6282EF48CB929F19));
   }

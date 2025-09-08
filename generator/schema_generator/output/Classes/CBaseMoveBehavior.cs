@@ -9,9 +9,6 @@ internal partial class CBaseMoveBehavior : CPathKeyFrame, IBaseMoveBehavior {
   public CBaseMoveBehavior(nint handle) : base(handle) {
   }
 
-  public CBaseMoveBehavior(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int PositionInterpolator {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4C94E06076D631CA));
   }

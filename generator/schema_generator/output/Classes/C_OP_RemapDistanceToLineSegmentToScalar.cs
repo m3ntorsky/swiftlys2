@@ -9,9 +9,6 @@ internal partial class C_OP_RemapDistanceToLineSegmentToScalar : C_OP_RemapDista
   public C_OP_RemapDistanceToLineSegmentToScalar(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapDistanceToLineSegmentToScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0xF4B67462E5729606));
   }

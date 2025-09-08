@@ -9,9 +9,6 @@ internal partial class C_OP_ConstrainDistanceToPath : CParticleFunctionConstrain
   public C_OP_ConstrainDistanceToPath(nint handle) : base(handle) {
   }
 
-  public C_OP_ConstrainDistanceToPath(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MinDistance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8146F787F016B7AC));
   }

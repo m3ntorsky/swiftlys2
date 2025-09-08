@@ -9,9 +9,6 @@ internal partial class CAnimMorphDifference : SchemaClass, IAnimMorphDifference 
   public CAnimMorphDifference(nint handle) : base(handle) {
   }
 
-  public CAnimMorphDifference(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CBufferString Name {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x57D69D104D8F5786));
   }

@@ -9,14 +9,11 @@ internal partial class CNmFloatSelectorNode__CDefinition : CNmFloatValueNode::CD
   public CNmFloatSelectorNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFloatSelectorNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVectorFixedGrowable<short> ConditionNodeIndices {
+    get => ref _Handle.AsRef<CUtlVectorFixedGrowable<short>>(Schema.GetOffset(0xA387F8324A144D0F));
   }
-
-  public ref CUtlVectorFixedGrowable< int16, 5 > ConditionNodeIndices {
-    get => ref _Handle.AsRef<CUtlVectorFixedGrowable< int16, 5 >>(Schema.GetOffset(0xA387F8324A144D0F));
-  }
-  public ref CUtlVectorFixedGrowable< float32, 5 > Values {
-    get => ref _Handle.AsRef<CUtlVectorFixedGrowable< float32, 5 >>(Schema.GetOffset(0xA387F832FBEDDADB));
+  public ref CUtlVectorFixedGrowable<float> Values {
+    get => ref _Handle.AsRef<CUtlVectorFixedGrowable<float>>(Schema.GetOffset(0xA387F832FBEDDADB));
   }
   public ref float DefaultValue {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA387F832700AB429));

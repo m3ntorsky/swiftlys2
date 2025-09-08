@@ -9,63 +9,7 @@ internal partial class CEnvCubemap : CBaseEntity, IEnvCubemap {
   public CEnvCubemap(nint handle) : base(handle) {
   }
 
-  public CEnvCubemap(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Entity_hCubemapTexture {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0xD6FB78464906C709));
-  }
-  public ref bool Entity_bCustomCubemapTexture {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6FB78461E6DC6A4));
-  }
-  public ref float Entity_flInfluenceRadius {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD6FB7846C7454EDE));
-  }
-  public ref Vector Entity_vBoxProjectMins {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD6FB7846DFB51948));
-  }
-  public ref Vector Entity_vBoxProjectMaxs {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD6FB7846712D3052));
-  }
-  public ref bool Entity_bMoveable {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6FB784654059592));
-  }
-  public ref int Entity_nHandshake {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD6FB7846069A2774));
-  }
-  public ref int Entity_nEnvCubeMapArrayIndex {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD6FB784621687DA4));
-  }
-  public ref int Entity_nPriority {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD6FB7846BAACBFAB));
-  }
-  public ref float Entity_flEdgeFadeDist {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD6FB7846B6CBA4FE));
-  }
-  public ref Vector Entity_vEdgeFadeDists {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD6FB7846B07D9139));
-  }
-  public ref float Entity_flDiffuseScale {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD6FB7846A14F91F9));
-  }
-  public ref bool Entity_bStartDisabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6FB7846D04F520D));
-  }
-  public ref bool Entity_bDefaultEnvMap {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6FB784626B7497F));
-  }
-  public ref bool Entity_bDefaultSpecEnvMap {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6FB7846D2CEAC08));
-  }
-  public ref bool Entity_bIndoorCubeMap {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6FB7846F5F722D5));
-  }
-  public ref bool Entity_bCopyDiffuseFromDefaultCubemap {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6FB7846DF047EA2));
-  }
-  public ref bool Entity_bEnabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD6FB7846453FD9DC));
-  }
 
   public void Entity_hCubemapTextureUpdated() {
     Schema.Update(_Handle, 0xD6FB78464906C709);

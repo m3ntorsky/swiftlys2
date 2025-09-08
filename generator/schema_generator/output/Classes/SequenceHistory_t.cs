@@ -9,9 +9,6 @@ internal partial class SequenceHistory_t : SchemaClass, ISequenceHistory_t {
   public SequenceHistory_t(nint handle) : base(handle) {
   }
 
-  public SequenceHistory_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IHSequence Sequence {
     get => new HSequence(_Handle + Schema.GetOffset(0x8B1B0C2BE0A0598E));
   }

@@ -9,9 +9,6 @@ internal partial class C_OP_OscillateScalarSimple : CParticleFunctionOperator, I
   public C_OP_OscillateScalarSimple(nint handle) : base(handle) {
   }
 
-  public C_OP_OscillateScalarSimple(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Rate {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDD611E3FEC3280E7));
   }

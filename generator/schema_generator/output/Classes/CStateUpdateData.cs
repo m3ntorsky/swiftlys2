@@ -9,20 +9,17 @@ internal partial class CStateUpdateData : SchemaClass, IStateUpdateData {
   public CStateUpdateData(nint handle) : base(handle) {
   }
 
-  public CStateUpdateData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD984C8C64D8F5786));
   }
   public IAnimScriptHandle Script {
     get => new AnimScriptHandle(_Handle + Schema.GetOffset(0xD984C8C629D70FB0));
   }
-  public ref CUtlVector< int32 > TransitionIndices {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0xD984C8C689E40507));
+  public ref CUtlVector<int> TransitionIndices {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xD984C8C689E40507));
   }
-  public ref CUtlVector< CStateActionUpdater > Actions {
-    get => ref _Handle.AsRef<CUtlVector< CStateActionUpdater >>(Schema.GetOffset(0xD984C8C68D622684));
+  public ref CUtlVector Actions {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD984C8C68D622684));
   }
   public IAnimStateID StateID {
     get => new AnimStateID(_Handle + Schema.GetOffset(0xD984C8C65362B56B));

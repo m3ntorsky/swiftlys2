@@ -9,11 +9,8 @@ internal partial class CDSPPresetMixgroupModifierTable : SchemaClass, IDSPPreset
   public CDSPPresetMixgroupModifierTable(nint handle) : base(handle) {
   }
 
-  public CDSPPresetMixgroupModifierTable(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CDspPresetModifierList > Table {
-    get => ref _Handle.AsRef<CUtlVector< CDspPresetModifierList >>(Schema.GetOffset(0xB4266D22715EA0FF));
+  public ref CUtlVector Table {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB4266D22715EA0FF));
   }
 
 

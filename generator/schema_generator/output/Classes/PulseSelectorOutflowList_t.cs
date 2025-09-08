@@ -9,11 +9,8 @@ internal partial class PulseSelectorOutflowList_t : SchemaClass, IPulseSelectorO
   public PulseSelectorOutflowList_t(nint handle) : base(handle) {
   }
 
-  public PulseSelectorOutflowList_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< OutflowWithRequirements_t > Outflows {
-    get => ref _Handle.AsRef<CUtlVector< OutflowWithRequirements_t >>(Schema.GetOffset(0x2A880DD28F0AFDF8));
+  public ref CUtlVector Outflows {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x2A880DD28F0AFDF8));
   }
 
 

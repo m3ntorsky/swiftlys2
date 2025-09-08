@@ -9,9 +9,6 @@ internal partial class CCSPetPlacement : CBaseEntity, ICSPetPlacement {
   public CCSPetPlacement(nint handle) : base(handle) {
   }
 
-  public CCSPetPlacement(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

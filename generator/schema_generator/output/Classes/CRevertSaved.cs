@@ -9,9 +9,6 @@ internal partial class CRevertSaved : CModelPointEntity, IRevertSaved {
   public CRevertSaved(nint handle) : base(handle) {
   }
 
-  public CRevertSaved(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float LoadTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8E0EAC0F9925A540));
   }

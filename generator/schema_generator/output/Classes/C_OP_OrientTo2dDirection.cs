@@ -9,9 +9,6 @@ internal partial class C_OP_OrientTo2dDirection : CParticleFunctionOperator, IC_
   public C_OP_OrientTo2dDirection(nint handle) : base(handle) {
   }
 
-  public C_OP_OrientTo2dDirection(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RotOffset {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x2AC61F04D1EA9CDF));
   }

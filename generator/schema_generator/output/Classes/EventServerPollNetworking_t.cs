@@ -9,9 +9,6 @@ internal partial class EventServerPollNetworking_t : EventSimulate_t, IEventServ
   public EventServerPollNetworking_t(nint handle) : base(handle) {
   }
 
-  public EventServerPollNetworking_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CAnimDataChannelDesc : SchemaClass, IAnimDataChannelDesc 
   public CAnimDataChannelDesc(nint handle) : base(handle) {
   }
 
-  public CAnimDataChannelDesc(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CBufferString ChannelClass {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x2D253CFB8F5E9AD5));
   }
@@ -30,14 +27,14 @@ internal partial class CAnimDataChannelDesc : SchemaClass, IAnimDataChannelDesc 
   public ref CBufferString Description {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x2D253CFB5BF47182));
   }
-  public ref CUtlVector< CBufferString > ElementNameArray {
-    get => ref _Handle.AsRef<CUtlVector< CBufferString >>(Schema.GetOffset(0x2D253CFBE31652C8));
+  public ref CUtlVector<CBufferString> ElementNameArray {
+    get => ref _Handle.AsRef<CUtlVector<CBufferString>>(Schema.GetOffset(0x2D253CFBE31652C8));
   }
-  public ref CUtlVector< int32 > ElementIndexArray {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0x2D253CFB3FABC2B2));
+  public ref CUtlVector<int> ElementIndexArray {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0x2D253CFB3FABC2B2));
   }
-  public ref CUtlVector< uint32 > ElementMaskArray {
-    get => ref _Handle.AsRef<CUtlVector< uint32 >>(Schema.GetOffset(0x2D253CFB5927F764));
+  public ref CUtlVector<uint> ElementMaskArray {
+    get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0x2D253CFB5927F764));
   }
 
 

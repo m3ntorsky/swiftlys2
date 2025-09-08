@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Outflow_PlayVCD : IPulseCell_Outflow_PlaySceneBase {
 
-
+  public ref CUtlString VcdFilename { get; }
+  
 }

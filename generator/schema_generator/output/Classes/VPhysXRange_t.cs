@@ -9,9 +9,6 @@ internal partial class VPhysXRange_t : SchemaClass, IVPhysXRange_t {
   public VPhysXRange_t(nint handle) : base(handle) {
   }
 
-  public VPhysXRange_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Min {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x7A251AB33B1A5649));
   }

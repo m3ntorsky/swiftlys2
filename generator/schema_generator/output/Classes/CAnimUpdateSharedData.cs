@@ -9,17 +9,14 @@ internal partial class CAnimUpdateSharedData : SchemaClass, IAnimUpdateSharedDat
   public CAnimUpdateSharedData(nint handle) : base(handle) {
   }
 
-  public CAnimUpdateSharedData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CSmartPtr< CAnimUpdateNodeBase > > Nodes {
-    get => ref _Handle.AsRef<CUtlVector< CSmartPtr< CAnimUpdateNodeBase > >>(Schema.GetOffset(0xA294DB47780F027A));
+  public ref CUtlVector Nodes {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA294DB47780F027A));
   }
   public ISchemaUntypedField NodeIndexMap {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA294DB47D3B3E7A3));
   }
-  public ref CUtlVector< CSmartPtr< CAnimComponentUpdater > > Components {
-    get => ref _Handle.AsRef<CUtlVector< CSmartPtr< CAnimComponentUpdater > >>(Schema.GetOffset(0xA294DB47F87FC409));
+  public ref CUtlVector Components {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA294DB47F87FC409));
   }
   public ISchemaUntypedField ParamListUpdater {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA294DB4784AA7F15));

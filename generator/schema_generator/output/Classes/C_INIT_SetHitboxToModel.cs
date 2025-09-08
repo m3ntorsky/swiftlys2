@@ -9,9 +9,6 @@ internal partial class C_INIT_SetHitboxToModel : CParticleFunctionInitializer, I
   public C_INIT_SetHitboxToModel(nint handle) : base(handle) {
   }
 
-  public C_INIT_SetHitboxToModel(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x7129E7BA3F31A6BD));
   }
@@ -37,7 +34,7 @@ internal partial class C_INIT_SetHitboxToModel : CParticleFunctionInitializer, I
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x7129E7BA10D1938B));
   }
   public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x7129E7BA6A21BB0E));
+    get => new SchemaFixedString(_Handle, 0x7129E7BA6A21BB0E, 128, 1, 1);
   }
   public IParticleCollectionFloatInput ShellSize {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0x7129E7BA04D01B22));

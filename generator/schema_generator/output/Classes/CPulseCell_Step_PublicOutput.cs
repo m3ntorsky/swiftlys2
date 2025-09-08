@@ -9,9 +9,6 @@ internal partial class CPulseCell_Step_PublicOutput : CPulseCell_BaseFlow, IPuls
   public CPulseCell_Step_PublicOutput(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Step_PublicOutput(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulseRuntimeOutputIndex_t OutputIndex {
     get => new PulseRuntimeOutputIndex_t(_Handle + Schema.GetOffset(0x40053C931E4D5BA0));
   }

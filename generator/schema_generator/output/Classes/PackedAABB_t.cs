@@ -9,9 +9,6 @@ internal partial class PackedAABB_t : SchemaClass, IPackedAABB_t {
   public PackedAABB_t(nint handle) : base(handle) {
   }
 
-  public PackedAABB_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint PackedMin {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x868E43307AC1AEAF));
   }

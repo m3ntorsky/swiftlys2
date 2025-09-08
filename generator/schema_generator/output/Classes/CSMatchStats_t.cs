@@ -9,24 +9,6 @@ internal partial class CSMatchStats_t : CSPerRoundStats_t, ISMatchStats_t {
   public CSMatchStats_t(nint handle) : base(handle) {
   }
 
-  public CSMatchStats_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref int Enemy5Ks {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x68F1494C51108145));
-  }
-  public ref int Enemy4Ks {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x68F1494CF438A94A));
-  }
-  public ref int Enemy3Ks {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x68F1494C874D3067));
-  }
-  public ref int EnemyKnifeKills {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x68F1494CFB4AAF5A));
-  }
-  public ref int EnemyTaserKills {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x68F1494CCB2A57E0));
-  }
   public ref int Enemy2Ks {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x68F1494C18FBE094));
   }

@@ -9,9 +9,6 @@ internal partial class CPulseTestScriptLib : SchemaClass, IPulseTestScriptLib {
   public CPulseTestScriptLib(nint handle) : base(handle) {
   }
 
-  public CPulseTestScriptLib(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

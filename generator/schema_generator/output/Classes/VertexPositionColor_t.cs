@@ -9,9 +9,6 @@ internal partial class VertexPositionColor_t : SchemaClass, IVertexPositionColor
   public VertexPositionColor_t(nint handle) : base(handle) {
   }
 
-  public VertexPositionColor_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Position {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x9E531188BD6A6C9E));
   }

@@ -9,9 +9,6 @@ internal partial class EntComponentInfo_t : SchemaClass, IEntComponentInfo_t {
   public EntComponentInfo_t(nint handle) : base(handle) {
   }
 
-  public EntComponentInfo_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CString Name {
     get => ref _Handle.AsRef<CString>(Schema.GetOffset(0xDEAD526A5B47C92C));
   }

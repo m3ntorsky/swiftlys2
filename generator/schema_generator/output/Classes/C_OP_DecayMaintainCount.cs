@@ -9,9 +9,6 @@ internal partial class C_OP_DecayMaintainCount : CParticleFunctionOperator, IC_O
   public C_OP_DecayMaintainCount(nint handle) : base(handle) {
   }
 
-  public C_OP_DecayMaintainCount(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ParticlesToMaintain {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x168E27F3537AE378));
   }

@@ -9,9 +9,6 @@ internal partial class CNmFrameSnapEvent : CNmEvent, INmFrameSnapEvent {
   public CNmFrameSnapEvent(nint handle) : base(handle) {
   }
 
-  public CNmFrameSnapEvent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref NmFrameSnapEventMode_t FrameSnapMode {
     get => ref _Handle.AsRef<NmFrameSnapEventMode_t>(Schema.GetOffset(0x948CA66C6C68AC59));
   }

@@ -9,9 +9,6 @@ internal partial class CPhysicalButton : CBaseButton, IPhysicalButton {
   public CPhysicalButton(nint handle) : base(handle) {
   }
 
-  public CPhysicalButton(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

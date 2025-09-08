@@ -9,9 +9,6 @@ internal partial class C_OP_SetFromCPSnapshot : CParticleFunctionOperator, IC_OP
   public C_OP_SetFromCPSnapshot(nint handle) : base(handle) {
   }
 
-  public C_OP_SetFromCPSnapshot(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5B4435183F31A6BD));
   }

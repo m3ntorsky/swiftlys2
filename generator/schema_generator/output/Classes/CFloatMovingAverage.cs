@@ -9,9 +9,6 @@ internal partial class CFloatMovingAverage : SchemaClass, IFloatMovingAverage {
   public CFloatMovingAverage(nint handle) : base(handle) {
   }
 
-  public CFloatMovingAverage(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

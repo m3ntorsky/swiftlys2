@@ -9,9 +9,6 @@ internal partial class CPulseCell_Outflow_ListenForAnimgraphTag : CPulseCell_Bas
   public CPulseCell_Outflow_ListenForAnimgraphTag(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Outflow_ListenForAnimgraphTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulse_ResumePoint OnStart {
     get => new CPulse_ResumePoint(_Handle + Schema.GetOffset(0xAD79BF78C3FE848C));
   }

@@ -9,9 +9,6 @@ internal partial class CSeqIKLock : SchemaClass, ISeqIKLock {
   public CSeqIKLock(nint handle) : base(handle) {
   }
 
-  public CSeqIKLock(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float PosWeight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9813F59E9CC6C04B));
   }

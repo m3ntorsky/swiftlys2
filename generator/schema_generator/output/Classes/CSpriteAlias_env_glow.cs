@@ -9,9 +9,6 @@ internal partial class CSpriteAlias_env_glow : CSprite, ISpriteAlias_env_glow {
   public CSpriteAlias_env_glow(nint handle) : base(handle) {
   }
 
-  public CSpriteAlias_env_glow(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

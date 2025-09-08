@@ -9,9 +9,6 @@ internal partial class C_INIT_CreateOnModel : CParticleFunctionInitializer, IC_I
   public C_INIT_CreateOnModel(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreateOnModel(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleModelInput ModelInput {
     get => new CParticleModelInput(_Handle + Schema.GetOffset(0xD7E11944EB74120E));
   }
@@ -46,7 +43,7 @@ internal partial class C_INIT_CreateOnModel : CParticleFunctionInitializer, IC_I
     get => new CParticleCollectionVecInput(_Handle + Schema.GetOffset(0xD7E119445A1697CF));
   }
   public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xD7E119446A21BB0E));
+    get => new SchemaFixedString(_Handle, 0xD7E119446A21BB0E, 128, 1, 1);
   }
   public ref bool LocalCoords {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD7E1194430E716DE));

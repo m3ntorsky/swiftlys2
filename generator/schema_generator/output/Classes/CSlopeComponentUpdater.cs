@@ -9,9 +9,6 @@ internal partial class CSlopeComponentUpdater : CAnimComponentUpdater, ISlopeCom
   public CSlopeComponentUpdater(nint handle) : base(handle) {
   }
 
-  public CSlopeComponentUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float TraceDistance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC0FC4829B2F3B0F7));
   }

@@ -9,9 +9,6 @@ internal partial class CPathParameters : SchemaClass, IPathParameters {
   public CPathParameters(nint handle) : base(handle) {
   }
 
-  public CPathParameters(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int StartControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE2D8E825CA0E0087));
   }

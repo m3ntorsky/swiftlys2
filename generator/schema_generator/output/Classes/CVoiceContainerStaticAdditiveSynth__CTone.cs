@@ -9,11 +9,8 @@ internal partial class CVoiceContainerStaticAdditiveSynth__CTone : SchemaClass, 
   public CVoiceContainerStaticAdditiveSynth__CTone(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerStaticAdditiveSynth__CTone(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CVoiceContainerStaticAdditiveSynth::CHarmonic > Harmonics {
-    get => ref _Handle.AsRef<CUtlVector< CVoiceContainerStaticAdditiveSynth::CHarmonic >>(Schema.GetOffset(0x1501082A3A08CDBF));
+  public ref CUtlVector Harmonics {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1501082A3A08CDBF));
   }
   public ISchemaUntypedField Curve {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1501082ABFFA0B34));

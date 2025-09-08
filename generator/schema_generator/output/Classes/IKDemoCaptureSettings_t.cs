@@ -9,9 +9,6 @@ internal partial class IKDemoCaptureSettings_t : SchemaClass, IIKDemoCaptureSett
   public IKDemoCaptureSettings_t(nint handle) : base(handle) {
   }
 
-  public IKDemoCaptureSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString ParentBoneName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6D63001A95A4F804));
   }

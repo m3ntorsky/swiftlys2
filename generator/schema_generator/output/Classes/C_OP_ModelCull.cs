@@ -9,9 +9,6 @@ internal partial class C_OP_ModelCull : CParticleFunctionOperator, IC_OP_ModelCu
   public C_OP_ModelCull(nint handle) : base(handle) {
   }
 
-  public C_OP_ModelCull(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xED02878A3F31A6BD));
   }
@@ -25,7 +22,7 @@ internal partial class C_OP_ModelCull : CParticleFunctionOperator, IC_OP_ModelCu
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xED02878A10D1938B));
   }
   public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xED02878A6A21BB0E));
+    get => new SchemaFixedString(_Handle, 0xED02878A6A21BB0E, 128, 1, 1);
   }
 
 

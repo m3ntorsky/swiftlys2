@@ -9,9 +9,6 @@ internal partial class CBindPoseUpdateNode : CLeafUpdateNode, IBindPoseUpdateNod
   public CBindPoseUpdateNode(nint handle) : base(handle) {
   }
 
-  public CBindPoseUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CPlayer_WaterServices : CPlayerPawnComponent, IPlayer_Wat
   public CPlayer_WaterServices(nint handle) : base(handle) {
   }
 
-  public CPlayer_WaterServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

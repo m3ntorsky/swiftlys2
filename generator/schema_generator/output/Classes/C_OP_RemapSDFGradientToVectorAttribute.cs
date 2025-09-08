@@ -9,9 +9,6 @@ internal partial class C_OP_RemapSDFGradientToVectorAttribute : CParticleFunctio
   public C_OP_RemapSDFGradientToVectorAttribute(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapSDFGradientToVectorAttribute(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x199621A9E5729606));
   }

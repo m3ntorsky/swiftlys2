@@ -9,9 +9,6 @@ internal partial class CFuncWallToggle : CFuncWall, IFuncWallToggle {
   public CFuncWallToggle(nint handle) : base(handle) {
   }
 
-  public CFuncWallToggle(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

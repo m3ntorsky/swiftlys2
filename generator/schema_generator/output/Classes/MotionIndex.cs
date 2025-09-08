@@ -9,9 +9,6 @@ internal partial class MotionIndex : SchemaClass, IMotionIndex {
   public MotionIndex(nint handle) : base(handle) {
   }
 
-  public MotionIndex(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort Group {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x5914302D0CD16308));
   }

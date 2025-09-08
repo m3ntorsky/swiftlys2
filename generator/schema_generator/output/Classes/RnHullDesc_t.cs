@@ -9,9 +9,6 @@ internal partial class RnHullDesc_t : RnShapeDesc_t, IRnHullDesc_t {
   public RnHullDesc_t(nint handle) : base(handle) {
   }
 
-  public RnHullDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IRnHull_t Hull {
     get => new RnHull_t(_Handle + Schema.GetOffset(0xBB74EDD8AC535D36));
   }

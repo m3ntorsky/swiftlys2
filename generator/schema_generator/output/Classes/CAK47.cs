@@ -9,9 +9,6 @@ internal partial class CAK47 : CCSWeaponBaseGun, IAK47 {
   public CAK47(nint handle) : base(handle) {
   }
 
-  public CAK47(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

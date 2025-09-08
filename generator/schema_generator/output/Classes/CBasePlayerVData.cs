@@ -9,9 +9,6 @@ internal partial class CBasePlayerVData : CEntitySubclassVDataBase, IBasePlayerV
   public CBasePlayerVData(nint handle) : base(handle) {
   }
 
-  public CBasePlayerVData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField ModelName {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x89A654F0002A227C));
   }

@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomScalar : CParticleFunctionInitializer, IC_IN
   public C_INIT_RandomScalar(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Min {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x76660B0D3B1A5649));
   }

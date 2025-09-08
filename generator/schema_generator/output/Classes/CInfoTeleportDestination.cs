@@ -9,9 +9,6 @@ internal partial class CInfoTeleportDestination : CPointEntity, IInfoTeleportDes
   public CInfoTeleportDestination(nint handle) : base(handle) {
   }
 
-  public CInfoTeleportDestination(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

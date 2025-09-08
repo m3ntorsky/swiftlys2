@@ -9,9 +9,6 @@ internal partial class C_OP_LerpVector : CParticleFunctionOperator, IC_OP_LerpVe
   public C_OP_LerpVector(nint handle) : base(handle) {
   }
 
-  public C_OP_LerpVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x870E8457E5729606));
   }

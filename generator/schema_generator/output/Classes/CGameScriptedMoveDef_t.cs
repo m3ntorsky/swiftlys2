@@ -9,14 +9,11 @@ internal partial class CGameScriptedMoveDef_t : SchemaClass, IGameScriptedMoveDe
   public CGameScriptedMoveDef_t(nint handle) : base(handle) {
   }
 
-  public CGameScriptedMoveDef_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector DestOffset {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x278F5D457DA34A6E));
   }
-  public ref CHandle< CBaseEntity > DestEntity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x278F5D45A1CF74EC));
+  public ref CHandle<CBaseEntity> DestEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x278F5D45A1CF74EC));
   }
   public ref QAngle Dest {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0x278F5D45B61266D7));

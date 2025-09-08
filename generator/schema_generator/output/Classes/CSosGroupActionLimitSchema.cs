@@ -9,9 +9,6 @@ internal partial class CSosGroupActionLimitSchema : CSosGroupActionSchema, ISosG
   public CSosGroupActionLimitSchema(nint handle) : base(handle) {
   }
 
-  public CSosGroupActionLimitSchema(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int MaxCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE06D795E64BED864));
   }

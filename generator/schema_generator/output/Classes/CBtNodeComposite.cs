@@ -9,9 +9,6 @@ internal partial class CBtNodeComposite : CBtNode, IBtNodeComposite {
   public CBtNodeComposite(nint handle) : base(handle) {
   }
 
-  public CBtNodeComposite(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

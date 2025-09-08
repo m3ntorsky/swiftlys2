@@ -9,9 +9,6 @@ internal partial class CNmFloatAngleMathNode__CDefinition : CNmFloatValueNode::C
   public CNmFloatAngleMathNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFloatAngleMathNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short InputValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x464A924095E89F27));
   }

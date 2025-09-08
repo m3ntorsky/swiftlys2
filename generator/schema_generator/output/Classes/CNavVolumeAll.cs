@@ -9,9 +9,6 @@ internal partial class CNavVolumeAll : CNavVolumeVector, INavVolumeAll {
   public CNavVolumeAll(nint handle) : base(handle) {
   }
 
-  public CNavVolumeAll(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

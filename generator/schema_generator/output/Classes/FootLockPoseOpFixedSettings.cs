@@ -9,11 +9,8 @@ internal partial class FootLockPoseOpFixedSettings : SchemaClass, IFootLockPoseO
   public FootLockPoseOpFixedSettings(nint handle) : base(handle) {
   }
 
-  public FootLockPoseOpFixedSettings(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< FootFixedData_t > FootInfo {
-    get => ref _Handle.AsRef<CUtlVector< FootFixedData_t >>(Schema.GetOffset(0x1246AD6B942F50C1));
+  public ref CUtlVector FootInfo {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1246AD6B942F50C1));
   }
   public IAnimInputDamping HipDampingSettings {
     get => new CAnimInputDamping(_Handle + Schema.GetOffset(0x1246AD6B3453D635));

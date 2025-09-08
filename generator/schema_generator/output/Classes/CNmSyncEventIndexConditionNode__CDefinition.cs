@@ -9,9 +9,6 @@ internal partial class CNmSyncEventIndexConditionNode__CDefinition : CNmBoolValu
   public CNmSyncEventIndexConditionNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmSyncEventIndexConditionNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short SourceStateNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x343CD5DB63F0228C));
   }

@@ -9,9 +9,6 @@ internal partial class CPlayer_MovementServices : CPlayerPawnComponent, IPlayer_
   public CPlayer_MovementServices(nint handle) : base(handle) {
   }
 
-  public CPlayer_MovementServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Impulse {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD5BDF2892107CA68));
   }
@@ -27,20 +24,11 @@ internal partial class CPlayer_MovementServices : CPlayerPawnComponent, IPlayer_
   public ref ulong ButtonDoublePressed {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xD5BDF289E6C8CA6E));
   }
-  public ISchemaFixedArray<uint32> ButtonPressedCmdNumber {
-    get => new SchemaFixedArray<uint32>(_Handle + Schema.GetOffset(0xD5BDF289A7854580));
+  public ISchemaFixedArray<uint> ButtonPressedCmdNumber {
+    get => new SchemaFixedArray<uint>(_Handle, 0xD5BDF289A7854580, 64, 4, 4);
   }
   public ref uint LastCommandNumberProcessed {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xD5BDF2899927F73D));
-  }
-  public ref ulong ToggleButtonDownMask {
-    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xD5BDF28907E86F99));
-  }
-  public ref float Maxspeed {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD5BDF289468F90F2));
-  }
-  public ISchemaFixedArray<float32> ForceSubtickMoveWhen {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0xD5BDF28999115A07));
   }
   public ref float ForwardMove {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD5BDF289806C78A9));

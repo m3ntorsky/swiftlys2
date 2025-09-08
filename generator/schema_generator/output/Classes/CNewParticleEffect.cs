@@ -9,9 +9,6 @@ internal partial class CNewParticleEffect : IParticleEffect, INewParticleEffect 
   public CNewParticleEffect(nint handle) : base(handle) {
   }
 
-  public CNewParticleEffect(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public INewParticleEffect Next {
     get => new CNewParticleEffect(_Handle + Schema.GetOffset(0x80246F2332B11E0E));
   }

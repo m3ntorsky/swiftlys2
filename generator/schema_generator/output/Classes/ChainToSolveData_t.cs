@@ -9,9 +9,6 @@ internal partial class ChainToSolveData_t : SchemaClass, IChainToSolveData_t {
   public ChainToSolveData_t(nint handle) : base(handle) {
   }
 
-  public ChainToSolveData_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ChainIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x87A241BDA34589B6));
   }

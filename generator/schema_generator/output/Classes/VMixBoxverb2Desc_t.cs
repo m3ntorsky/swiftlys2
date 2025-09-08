@@ -9,9 +9,6 @@ internal partial class VMixBoxverb2Desc_t : SchemaClass, IVMixBoxverb2Desc_t {
   public VMixBoxverb2Desc_t(nint handle) : base(handle) {
   }
 
-  public VMixBoxverb2Desc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float SizeMax {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x319C01FDB9D7F5B8));
   }

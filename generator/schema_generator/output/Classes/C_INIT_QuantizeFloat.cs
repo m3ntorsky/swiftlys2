@@ -9,9 +9,6 @@ internal partial class C_INIT_QuantizeFloat : CParticleFunctionInitializer, IC_I
   public C_INIT_QuantizeFloat(nint handle) : base(handle) {
   }
 
-  public C_INIT_QuantizeFloat(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput InputValue {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0x1A8E56B534445438));
   }

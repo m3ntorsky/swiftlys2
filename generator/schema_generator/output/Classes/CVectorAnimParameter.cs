@@ -9,9 +9,6 @@ internal partial class CVectorAnimParameter : CConcreteAnimParameter, IVectorAni
   public CVectorAnimParameter(nint handle) : base(handle) {
   }
 
-  public CVectorAnimParameter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector DefaultValue {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x74346C8BBBE0341F));
   }

@@ -9,9 +9,6 @@ internal partial class CTestDomainDerived_Cursor : CPulseExecCursor, ITestDomain
   public CTestDomainDerived_Cursor(nint handle) : base(handle) {
   }
 
-  public CTestDomainDerived_Cursor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CursorValueA {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x7D1D938EF43E6EDB));
   }

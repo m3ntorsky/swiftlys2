@@ -9,9 +9,6 @@ internal partial class CTimerEntity : CLogicalEntity, ITimerEntity {
   public CTimerEntity(nint handle) : base(handle) {
   }
 
-  public CTimerEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnTimer {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xE96486ECF7551DA1));
   }

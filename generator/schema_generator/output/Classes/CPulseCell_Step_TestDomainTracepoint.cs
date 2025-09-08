@@ -9,9 +9,6 @@ internal partial class CPulseCell_Step_TestDomainTracepoint : CPulseCell_BaseFlo
   public CPulseCell_Step_TestDomainTracepoint(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Step_TestDomainTracepoint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

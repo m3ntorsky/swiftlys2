@@ -9,9 +9,6 @@ internal partial class FeNodeIntegrator_t : SchemaClass, IFeNodeIntegrator_t {
   public FeNodeIntegrator_t(nint handle) : base(handle) {
   }
 
-  public FeNodeIntegrator_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float PointDamping {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x64217E4215738003));
   }

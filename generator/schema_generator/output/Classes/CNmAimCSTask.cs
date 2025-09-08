@@ -9,9 +9,6 @@ internal partial class CNmAimCSTask : CNmPoseTask, INmAimCSTask {
   public CNmAimCSTask(nint handle) : base(handle) {
   }
 
-  public CNmAimCSTask(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

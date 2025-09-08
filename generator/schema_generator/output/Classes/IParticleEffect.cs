@@ -9,9 +9,6 @@ internal partial class IParticleEffect : SchemaClass, IIParticleEffect {
   public IParticleEffect(nint handle) : base(handle) {
   }
 
-  public IParticleEffect(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

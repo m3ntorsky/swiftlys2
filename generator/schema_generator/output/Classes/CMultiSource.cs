@@ -9,14 +9,11 @@ internal partial class CMultiSource : CLogicalEntity, IMultiSource {
   public CMultiSource(nint handle) : base(handle) {
   }
 
-  public CMultiSource(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public CHandle<CBaseEntity> RgEntities {
+    get => new CHandle<CBaseEntity>(_Handle, 0x87DC5C660CB2E479, 32, 4, 4);
   }
-
-  public ISchemaFixedArray<CHandle< CBaseEntity >> RgEntities {
-    get => new SchemaFixedArray<CHandle< CBaseEntity >>(_Handle + Schema.GetOffset(0x87DC5C660CB2E479));
-  }
-  public ISchemaFixedArray<int32> RgTriggered {
-    get => new SchemaFixedArray<int32>(_Handle + Schema.GetOffset(0x87DC5C664616C37F));
+  public ISchemaFixedArray<int> RgTriggered {
+    get => new SchemaFixedArray<int>(_Handle, 0x87DC5C664616C37F, 32, 4, 4);
   }
   public IEntityIOOutput OnTrigger {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x87DC5C6681E0BFEC));

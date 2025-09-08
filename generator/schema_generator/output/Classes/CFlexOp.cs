@@ -9,9 +9,6 @@ internal partial class CFlexOp : SchemaClass, IFlexOp {
   public CFlexOp(nint handle) : base(handle) {
   }
 
-  public CFlexOp(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref FlexOpCode_t OpCode {
     get => ref _Handle.AsRef<FlexOpCode_t>(Schema.GetOffset(0xC684CC9A9850F387));
   }

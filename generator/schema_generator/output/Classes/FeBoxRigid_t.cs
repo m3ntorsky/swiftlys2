@@ -9,9 +9,6 @@ internal partial class FeBoxRigid_t : SchemaClass, IFeBoxRigid_t {
   public FeBoxRigid_t(nint handle) : base(handle) {
   }
 
-  public FeBoxRigid_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CTransform TmFrame2 {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0x63C7789F568CD94B));
   }

@@ -9,9 +9,6 @@ internal partial class CNavSpaceInfo : CPointEntity, INavSpaceInfo {
   public CNavSpaceInfo(nint handle) : base(handle) {
   }
 
-  public CNavSpaceInfo(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

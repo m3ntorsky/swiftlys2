@@ -9,9 +9,6 @@ internal partial class CPulseCell_Test_NoInflow : CPulseCell_BaseFlow, IPulseCel
   public CPulseCell_Test_NoInflow(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Test_NoInflow(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

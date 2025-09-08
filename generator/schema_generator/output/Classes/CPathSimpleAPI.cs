@@ -9,9 +9,6 @@ internal partial class CPathSimpleAPI : SchemaClass, IPathSimpleAPI {
   public CPathSimpleAPI(nint handle) : base(handle) {
   }
 
-  public CPathSimpleAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

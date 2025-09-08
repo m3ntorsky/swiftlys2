@@ -9,9 +9,6 @@ internal partial class VMixDelayDesc_t : SchemaClass, IVMixDelayDesc_t {
   public VMixDelayDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixDelayDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IVMixFilterDesc_t FeedbackFilter {
     get => new VMixFilterDesc_t(_Handle + Schema.GetOffset(0x4C891F427C227CDC));
   }

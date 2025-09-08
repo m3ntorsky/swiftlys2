@@ -9,9 +9,6 @@ internal partial class C_OP_LagCompensation : CParticleFunctionOperator, IC_OP_L
   public C_OP_LagCompensation(nint handle) : base(handle) {
   }
 
-  public C_OP_LagCompensation(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int DesiredVelocityCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x21277E4532AACEC5));
   }

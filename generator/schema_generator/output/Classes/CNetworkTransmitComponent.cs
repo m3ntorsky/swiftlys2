@@ -9,9 +9,6 @@ internal partial class CNetworkTransmitComponent : SchemaClass, INetworkTransmit
   public CNetworkTransmitComponent(nint handle) : base(handle) {
   }
 
-  public CNetworkTransmitComponent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref byte TransmitStateOwnedCounter {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x2D6BD23F6BC30751));
   }

@@ -9,20 +9,17 @@ internal partial class CPhysConstraint : CLogicalEntity, IPhysConstraint {
   public CPhysConstraint(nint handle) : base(handle) {
   }
 
-  public CPhysConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge NameAttach1 {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB17225456776530A));
   }
   public ref CUtlSymbolLarge NameAttach2 {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB172254566765177));
   }
-  public ref CHandle< CBaseEntity > Attach1 {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xB1722545384EDC59));
+  public ref CHandle<CBaseEntity> Attach1 {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xB1722545384EDC59));
   }
-  public ref CHandle< CBaseEntity > Attach2 {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xB1722545354ED7A0));
+  public ref CHandle<CBaseEntity> Attach2 {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xB1722545354ED7A0));
   }
   public ref CUtlSymbolLarge NameAttachment1 {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB172254517A81C36));

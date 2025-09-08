@@ -9,9 +9,6 @@ internal partial class CParticleVariableRef : SchemaClass, IParticleVariableRef 
   public CParticleVariableRef(nint handle) : base(handle) {
   }
 
-  public CParticleVariableRef(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField VariableName {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x4FB747D9D3D609A6));
   }

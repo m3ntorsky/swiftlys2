@@ -9,9 +9,6 @@ internal partial class C_OP_DensityForce : CParticleFunctionForce, IC_OP_Density
   public C_OP_DensityForce(nint handle) : base(handle) {
   }
 
-  public C_OP_DensityForce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RadiusScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x7846D656A7A20159));
   }

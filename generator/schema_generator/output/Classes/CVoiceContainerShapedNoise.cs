@@ -9,9 +9,6 @@ internal partial class CVoiceContainerShapedNoise : CVoiceContainerBase, IVoiceC
   public CVoiceContainerShapedNoise(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerShapedNoise(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool UseCurveForFrequency {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC58213629099DACC));
   }

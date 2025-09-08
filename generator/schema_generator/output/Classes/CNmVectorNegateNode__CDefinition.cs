@@ -9,9 +9,6 @@ internal partial class CNmVectorNegateNode__CDefinition : CNmVectorValueNode::CD
   public CNmVectorNegateNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmVectorNegateNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short InputValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xAC99508E95E89F27));
   }

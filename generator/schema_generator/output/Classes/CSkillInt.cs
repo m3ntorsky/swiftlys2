@@ -9,11 +9,8 @@ internal partial class CSkillInt : SchemaClass, ISkillInt {
   public CSkillInt(nint handle) : base(handle) {
   }
 
-  public CSkillInt(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<int32> Value {
-    get => new SchemaFixedArray<int32>(_Handle + Schema.GetOffset(0xE86F537C7F437844));
+  public ISchemaFixedArray<int> Value {
+    get => new SchemaFixedArray<int>(_Handle, 0xE86F537C7F437844, 4, 4, 4);
   }
 
 

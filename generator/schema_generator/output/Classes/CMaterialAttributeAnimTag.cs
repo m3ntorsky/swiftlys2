@@ -9,9 +9,6 @@ internal partial class CMaterialAttributeAnimTag : CAnimTagBase, IMaterialAttrib
   public CMaterialAttributeAnimTag(nint handle) : base(handle) {
   }
 
-  public CMaterialAttributeAnimTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString AttributeName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x509D90A81408864C));
   }

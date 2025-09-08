@@ -9,9 +9,6 @@ internal partial class CPulseCell_BooleanSwitchState : CPulseCell_BaseState, IPu
   public CPulseCell_BooleanSwitchState(nint handle) : base(handle) {
   }
 
-  public CPulseCell_BooleanSwitchState(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulseObservableBoolExpression_t Condition {
     get => new PulseObservableBoolExpression_t(_Handle + Schema.GetOffset(0xB0380EFD5F2A883E));
   }

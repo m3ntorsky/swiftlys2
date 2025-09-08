@@ -9,9 +9,6 @@ internal partial class CTouchExpansionComponent : CEntityComponent, ITouchExpans
   public CTouchExpansionComponent(nint handle) : base(handle) {
   }
 
-  public CTouchExpansionComponent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

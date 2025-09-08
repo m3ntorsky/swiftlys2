@@ -9,9 +9,6 @@ internal partial class CPointTemplateAPI : SchemaClass, IPointTemplateAPI {
   public CPointTemplateAPI(nint handle) : base(handle) {
   }
 
-  public CPointTemplateAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

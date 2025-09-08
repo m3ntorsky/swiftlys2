@@ -9,9 +9,6 @@ internal partial class CCSGameModeRules : SchemaClass, ICSGameModeRules {
   public CCSGameModeRules(nint handle) : base(handle) {
   }
 
-  public CCSGameModeRules(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public INetworkVarChainer __m_pChainEntity {
     get => new CNetworkVarChainer(_Handle + Schema.GetOffset(0x5093D6A4F63F0E7D));
   }

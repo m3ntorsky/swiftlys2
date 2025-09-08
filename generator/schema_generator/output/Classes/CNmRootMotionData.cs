@@ -9,11 +9,8 @@ internal partial class CNmRootMotionData : SchemaClass, INmRootMotionData {
   public CNmRootMotionData(nint handle) : base(handle) {
   }
 
-  public CNmRootMotionData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CTransform > Transforms {
-    get => ref _Handle.AsRef<CUtlVector< CTransform >>(Schema.GetOffset(0x2E2BC46D88C82C58));
+  public ref CUtlVector<CTransform> Transforms {
+    get => ref _Handle.AsRef<CUtlVector<CTransform>>(Schema.GetOffset(0x2E2BC46D88C82C58));
   }
   public ref int NumFrames {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x2E2BC46DF764C355));

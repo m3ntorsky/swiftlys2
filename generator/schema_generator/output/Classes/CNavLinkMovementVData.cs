@@ -9,9 +9,6 @@ internal partial class CNavLinkMovementVData : SchemaClass, INavLinkMovementVDat
   public CNavLinkMovementVData(nint handle) : base(handle) {
   }
 
-  public CNavLinkMovementVData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField ToolsOnlyOwnerModelName {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xACA2D2486DD9DD04));
   }
@@ -21,8 +18,8 @@ internal partial class CNavLinkMovementVData : SchemaClass, INavLinkMovementVDat
   public ref uint RecommendedDistance {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xACA2D248BA1A388E));
   }
-  public ref CUtlVector< CNavLinkAnimgraphVar > AnimgraphVars {
-    get => ref _Handle.AsRef<CUtlVector< CNavLinkAnimgraphVar >>(Schema.GetOffset(0xACA2D2480FD1BA32));
+  public ref CUtlVector AnimgraphVars {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xACA2D2480FD1BA32));
   }
 
 

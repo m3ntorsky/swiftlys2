@@ -9,9 +9,6 @@ internal partial class CRandSimTimer : CSimpleSimTimer, IRandSimTimer {
   public CRandSimTimer(nint handle) : base(handle) {
   }
 
-  public CRandSimTimer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MinInterval {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6268F694BB35EE4));
   }

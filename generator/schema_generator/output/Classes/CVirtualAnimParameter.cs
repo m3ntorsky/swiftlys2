@@ -9,9 +9,6 @@ internal partial class CVirtualAnimParameter : CAnimParameterBase, IVirtualAnimP
   public CVirtualAnimParameter(nint handle) : base(handle) {
   }
 
-  public CVirtualAnimParameter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString ExpressionString {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3D45915B3039426E));
   }

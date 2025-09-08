@@ -9,9 +9,6 @@ internal partial class CBaseEntityAPI : SchemaClass, IBaseEntityAPI {
   public CBaseEntityAPI(nint handle) : base(handle) {
   }
 
-  public CBaseEntityAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

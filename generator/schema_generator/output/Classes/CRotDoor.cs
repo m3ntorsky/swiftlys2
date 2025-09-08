@@ -9,9 +9,6 @@ internal partial class CRotDoor : CBaseDoor, IRotDoor {
   public CRotDoor(nint handle) : base(handle) {
   }
 
-  public CRotDoor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool SolidBsp {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x175D110BA50CEC89));
   }

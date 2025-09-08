@@ -9,9 +9,6 @@ internal partial class CServerRagdollTrigger : CBaseTrigger, IServerRagdollTrigg
   public CServerRagdollTrigger(nint handle) : base(handle) {
   }
 
-  public CServerRagdollTrigger(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

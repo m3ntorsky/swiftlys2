@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomTrailLength : CParticleFunctionInitializer, 
   public C_INIT_RandomTrailLength(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomTrailLength(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MinLength {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6418031B95FB8E51));
   }

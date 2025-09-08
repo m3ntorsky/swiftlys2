@@ -9,9 +9,6 @@ internal partial class CEconWearable : CEconEntity, IEconWearable {
   public CEconWearable(nint handle) : base(handle) {
   }
 
-  public CEconWearable(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ForceSkin {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x491C03F4E5817B39));
   }

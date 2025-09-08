@@ -9,9 +9,6 @@ internal partial class CItemDefuser : CItem, IItemDefuser {
   public CItemDefuser(nint handle) : base(handle) {
   }
 
-  public CItemDefuser(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntitySpottedState_t EntitySpottedState {
     get => new EntitySpottedState_t(_Handle + Schema.GetOffset(0xC9362933032B547C));
   }

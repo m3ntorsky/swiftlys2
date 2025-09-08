@@ -9,9 +9,6 @@ internal partial class CRagdollPropAlias_physics_prop_ragdoll : CRagdollProp, IR
   public CRagdollPropAlias_physics_prop_ragdoll(nint handle) : base(handle) {
   }
 
-  public CRagdollPropAlias_physics_prop_ragdoll(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

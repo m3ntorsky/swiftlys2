@@ -9,9 +9,6 @@ internal partial class CModelConfigElement_Command : CModelConfigElement, IModel
   public CModelConfigElement_Command(nint handle) : base(handle) {
   }
 
-  public CModelConfigElement_Command(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Command {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x89334ED93A5BBC32));
   }

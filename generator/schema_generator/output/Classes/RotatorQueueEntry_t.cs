@@ -9,9 +9,6 @@ internal partial class RotatorQueueEntry_t : SchemaClass, IRotatorQueueEntry_t {
   public RotatorQueueEntry_t(nint handle) : base(handle) {
   }
 
-  public RotatorQueueEntry_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Quaternion Target {
     get => ref _Handle.AsRef<Quaternion>(Schema.GetOffset(0x2A6B84384FFCC265));
   }

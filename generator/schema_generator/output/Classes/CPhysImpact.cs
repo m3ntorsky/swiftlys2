@@ -9,9 +9,6 @@ internal partial class CPhysImpact : CPointEntity, IPhysImpact {
   public CPhysImpact(nint handle) : base(handle) {
   }
 
-  public CPhysImpact(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Damage {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x2C5E7E549C988CE0));
   }

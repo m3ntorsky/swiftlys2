@@ -9,9 +9,6 @@ internal partial class C_OP_IntraParticleForce : CParticleFunctionForce, IC_OP_I
   public C_OP_IntraParticleForce(nint handle) : base(handle) {
   }
 
-  public C_OP_IntraParticleForce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float AttractionMinDistance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x784412D0CEAEE62D));
   }

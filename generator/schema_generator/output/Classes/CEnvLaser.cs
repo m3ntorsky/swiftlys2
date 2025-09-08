@@ -9,9 +9,6 @@ internal partial class CEnvLaser : CBeam, IEnvLaser {
   public CEnvLaser(nint handle) : base(handle) {
   }
 
-  public CEnvLaser(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge LaserTarget {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x83A2D3C8C257F4D));
   }

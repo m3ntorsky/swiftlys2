@@ -9,9 +9,6 @@ internal partial class CTriggerToggleSave : CBaseTrigger, ITriggerToggleSave {
   public CTriggerToggleSave(nint handle) : base(handle) {
   }
 
-  public CTriggerToggleSave(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

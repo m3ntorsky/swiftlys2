@@ -9,9 +9,6 @@ internal partial class C_INIT_OffsetVectorToVector : CParticleFunctionInitialize
   public C_INIT_OffsetVectorToVector(nint handle) : base(handle) {
   }
 
-  public C_INIT_OffsetVectorToVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldInput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x36502BDCAE775669));
   }

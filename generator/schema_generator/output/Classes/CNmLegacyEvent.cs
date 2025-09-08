@@ -9,9 +9,6 @@ internal partial class CNmLegacyEvent : CNmEvent, INmLegacyEvent {
   public CNmLegacyEvent(nint handle) : base(handle) {
   }
 
-  public CNmLegacyEvent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString AnimEventClassName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x78C36574C276DA33));
   }

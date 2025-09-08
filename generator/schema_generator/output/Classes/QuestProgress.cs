@@ -9,9 +9,6 @@ internal partial class QuestProgress : SchemaClass, IQuestProgress {
   public QuestProgress(nint handle) : base(handle) {
   }
 
-  public QuestProgress(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

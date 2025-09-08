@@ -9,9 +9,6 @@ internal partial class CPulseCell_SoundEventStart : CPulseCell_BaseFlow, IPulseC
   public CPulseCell_SoundEventStart(nint handle) : base(handle) {
   }
 
-  public CPulseCell_SoundEventStart(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref SoundEventStartType_t Type {
     get => ref _Handle.AsRef<SoundEventStartType_t>(Schema.GetOffset(0x9CC546478ED6D5CD));
   }

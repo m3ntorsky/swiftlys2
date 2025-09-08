@@ -9,33 +9,6 @@ internal partial class CFuncMonitor : CFuncBrush, IFuncMonitor {
   public CFuncMonitor(nint handle) : base(handle) {
   }
 
-  public CFuncMonitor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlString TargetCamera {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x17F9564ADE5A6027));
-  }
-  public ref int ResolutionEnum {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x17F9564A7A397BAA));
-  }
-  public ref bool RenderShadows {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x17F9564AB664410E));
-  }
-  public ref bool UseUniqueColorTarget {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x17F9564A53B28E5B));
-  }
-  public ref CUtlString BrushModelName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x17F9564A85323213));
-  }
-  public ref CHandle< CBaseEntity > TargetCamera {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x17F9564ACC7D5969));
-  }
-  public ref bool Enabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x17F9564A6154EB7E));
-  }
-  public ref bool Draw3DSkybox {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x17F9564AA37E21FE));
-  }
   public ref bool StartEnabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x17F9564A500D5C24));
   }

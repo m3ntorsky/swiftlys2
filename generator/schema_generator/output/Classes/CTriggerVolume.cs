@@ -9,14 +9,11 @@ internal partial class CTriggerVolume : CBaseModelEntity, ITriggerVolume {
   public CTriggerVolume(nint handle) : base(handle) {
   }
 
-  public CTriggerVolume(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge FilterName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8A35845409C86445));
   }
-  public ref CHandle< CBaseFilter > Filter {
-    get => ref _Handle.AsRef<CHandle< CBaseFilter >>(Schema.GetOffset(0x8A35845445D9E0B1));
+  public ref CHandle<CBaseFilter> Filter {
+    get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0x8A35845445D9E0B1));
   }
 
 

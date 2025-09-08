@@ -9,11 +9,8 @@ internal partial class CParamSpanUpdater : SchemaClass, IParamSpanUpdater {
   public CParamSpanUpdater(nint handle) : base(handle) {
   }
 
-  public CParamSpanUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< ParamSpan_t > Spans {
-    get => ref _Handle.AsRef<CUtlVector< ParamSpan_t >>(Schema.GetOffset(0xA35886AC66213056));
+  public ref CUtlVector Spans {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA35886AC66213056));
   }
 
 

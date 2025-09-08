@@ -9,9 +9,6 @@ internal partial class CMorphConstraint : CBaseConstraint, IMorphConstraint {
   public CMorphConstraint(nint handle) : base(handle) {
   }
 
-  public CMorphConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString TargetMorph {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xC24859C39FF7D337));
   }

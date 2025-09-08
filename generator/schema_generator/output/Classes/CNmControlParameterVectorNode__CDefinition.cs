@@ -9,9 +9,6 @@ internal partial class CNmControlParameterVectorNode__CDefinition : CNmVectorVal
   public CNmControlParameterVectorNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmControlParameterVectorNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

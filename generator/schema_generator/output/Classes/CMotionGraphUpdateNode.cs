@@ -9,9 +9,6 @@ internal partial class CMotionGraphUpdateNode : CLeafUpdateNode, IMotionGraphUpd
   public CMotionGraphUpdateNode(nint handle) : base(handle) {
   }
 
-  public CMotionGraphUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField MotionGraph {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x69396A054F70C737));
   }

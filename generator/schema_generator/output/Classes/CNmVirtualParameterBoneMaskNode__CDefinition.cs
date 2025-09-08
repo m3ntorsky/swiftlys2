@@ -9,9 +9,6 @@ internal partial class CNmVirtualParameterBoneMaskNode__CDefinition : CNmBoneMas
   public CNmVirtualParameterBoneMaskNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmVirtualParameterBoneMaskNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short ChildNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x4C267E9D5C29A73C));
   }

@@ -9,9 +9,6 @@ internal partial class CSequenceFinishedAnimTag : CAnimTagBase, ISequenceFinishe
   public CSequenceFinishedAnimTag(nint handle) : base(handle) {
   }
 
-  public CSequenceFinishedAnimTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString SequenceName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x1B46C5202B4A24CB));
   }

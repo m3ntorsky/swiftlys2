@@ -9,35 +9,32 @@ internal partial class CParticleSystemDefinition : IParticleSystemDefinition, IP
   public CParticleSystemDefinition(nint handle) : base(handle) {
   }
 
-  public CParticleSystemDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int BehaviorVersion {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDA4320E001EEB9D5));
   }
-  public ref CUtlVector< CParticleFunctionPreEmission* > PreEmissionOperators {
-    get => ref _Handle.AsRef<CUtlVector< CParticleFunctionPreEmission* >>(Schema.GetOffset(0xDA4320E0805AFF22));
+  public ref CUtlVector<PointerTo<CParticleFunctionPreEmission>> PreEmissionOperators {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CParticleFunctionPreEmission>>>(Schema.GetOffset(0xDA4320E0805AFF22));
   }
-  public ref CUtlVector< CParticleFunctionEmitter* > Emitters {
-    get => ref _Handle.AsRef<CUtlVector< CParticleFunctionEmitter* >>(Schema.GetOffset(0xDA4320E0C459029A));
+  public ref CUtlVector<PointerTo<CParticleFunctionEmitter>> Emitters {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CParticleFunctionEmitter>>>(Schema.GetOffset(0xDA4320E0C459029A));
   }
-  public ref CUtlVector< CParticleFunctionInitializer* > Initializers {
-    get => ref _Handle.AsRef<CUtlVector< CParticleFunctionInitializer* >>(Schema.GetOffset(0xDA4320E033FFD058));
+  public ref CUtlVector<PointerTo<CParticleFunctionInitializer>> Initializers {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CParticleFunctionInitializer>>>(Schema.GetOffset(0xDA4320E033FFD058));
   }
-  public ref CUtlVector< CParticleFunctionOperator* > Operators {
-    get => ref _Handle.AsRef<CUtlVector< CParticleFunctionOperator* >>(Schema.GetOffset(0xDA4320E08B4B170A));
+  public ref CUtlVector<PointerTo<CParticleFunctionOperator>> Operators {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CParticleFunctionOperator>>>(Schema.GetOffset(0xDA4320E08B4B170A));
   }
-  public ref CUtlVector< CParticleFunctionForce* > ForceGenerators {
-    get => ref _Handle.AsRef<CUtlVector< CParticleFunctionForce* >>(Schema.GetOffset(0xDA4320E00EBFE04E));
+  public ref CUtlVector<PointerTo<CParticleFunctionForce>> ForceGenerators {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CParticleFunctionForce>>>(Schema.GetOffset(0xDA4320E00EBFE04E));
   }
-  public ref CUtlVector< CParticleFunctionConstraint* > Constraints {
-    get => ref _Handle.AsRef<CUtlVector< CParticleFunctionConstraint* >>(Schema.GetOffset(0xDA4320E03B02100B));
+  public ref CUtlVector<PointerTo<CParticleFunctionConstraint>> Constraints {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CParticleFunctionConstraint>>>(Schema.GetOffset(0xDA4320E03B02100B));
   }
-  public ref CUtlVector< CParticleFunctionRenderer* > Renderers {
-    get => ref _Handle.AsRef<CUtlVector< CParticleFunctionRenderer* >>(Schema.GetOffset(0xDA4320E065610B77));
+  public ref CUtlVector<PointerTo<CParticleFunctionRenderer>> Renderers {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CParticleFunctionRenderer>>>(Schema.GetOffset(0xDA4320E065610B77));
   }
-  public ref CUtlVector< ParticleChildrenInfo_t > Children {
-    get => ref _Handle.AsRef<CUtlVector< ParticleChildrenInfo_t >>(Schema.GetOffset(0xDA4320E0D0827652));
+  public ref CUtlVector Children {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xDA4320E0D0827652));
   }
   public ref int FirstMultipleOverride_BackwardCompat {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDA4320E070B95011));
@@ -72,8 +69,8 @@ internal partial class CParticleSystemDefinition : IParticleSystemDefinition, IP
   public ref CUtlString NamedValueDomain {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDA4320E0D00B8FCB));
   }
-  public ref CUtlVector< ParticleNamedValueSource_t* > NamedValueLocals {
-    get => ref _Handle.AsRef<CUtlVector< ParticleNamedValueSource_t* >>(Schema.GetOffset(0xDA4320E02F97EB6F));
+  public ref CUtlVector<PointerTo<ParticleNamedValueSource_t>> NamedValueLocals {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<ParticleNamedValueSource_t>>>(Schema.GetOffset(0xDA4320E02F97EB6F));
   }
   public ref Color ConstantColor {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0xDA4320E09FC64C18));
@@ -102,11 +99,11 @@ internal partial class CParticleSystemDefinition : IParticleSystemDefinition, IP
   public ref int SnapshotControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDA4320E0192638EC));
   }
-  public ref CStrongHandle< InfoForResourceTypeIParticleSnapshot > Snapshot {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIParticleSnapshot >>(Schema.GetOffset(0xDA4320E0FB69CF2F));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSnapshot> Snapshot {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSnapshot>>(Schema.GetOffset(0xDA4320E0FB69CF2F));
   }
-  public ref CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > CullReplacementName {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIParticleSystemDefinition >>(Schema.GetOffset(0xDA4320E0F766ED25));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> CullReplacementName {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xDA4320E0F766ED25));
   }
   public ref float CullRadius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDA4320E0E52D3471));
@@ -117,17 +114,17 @@ internal partial class CParticleSystemDefinition : IParticleSystemDefinition, IP
   public ref int CullControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDA4320E0E0BBD6A4));
   }
-  public ref CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > Fallback {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIParticleSystemDefinition >>(Schema.GetOffset(0xDA4320E0E0481D45));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> Fallback {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xDA4320E0E0481D45));
   }
   public ref int FallbackMaxCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDA4320E097AF336E));
   }
-  public ref CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > LowViolenceDef {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIParticleSystemDefinition >>(Schema.GetOffset(0xDA4320E012A2B819));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> LowViolenceDef {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xDA4320E012A2B819));
   }
-  public ref CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > ReferenceReplacement {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIParticleSystemDefinition >>(Schema.GetOffset(0xDA4320E0676869A0));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ReferenceReplacement {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xDA4320E0676869A0));
   }
   public ref float PreSimulationTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDA4320E0353642D6));
@@ -204,8 +201,8 @@ internal partial class CParticleSystemDefinition : IParticleSystemDefinition, IP
   public ref bool ShouldSort {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDA4320E0DCA74CFA));
   }
-  public ref CUtlVector< ParticleControlPointConfiguration_t > ControlPointConfigurations {
-    get => ref _Handle.AsRef<CUtlVector< ParticleControlPointConfiguration_t >>(Schema.GetOffset(0xDA4320E09B7B10E3));
+  public ref CUtlVector ControlPointConfigurations {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xDA4320E09B7B10E3));
   }
 
 

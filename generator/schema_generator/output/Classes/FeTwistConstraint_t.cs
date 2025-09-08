@@ -9,9 +9,6 @@ internal partial class FeTwistConstraint_t : SchemaClass, IFeTwistConstraint_t {
   public FeTwistConstraint_t(nint handle) : base(handle) {
   }
 
-  public FeTwistConstraint_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort NodeOrient {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x4BD7707B59026ED8));
   }

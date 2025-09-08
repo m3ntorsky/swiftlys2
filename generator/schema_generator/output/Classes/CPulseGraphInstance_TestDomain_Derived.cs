@@ -9,9 +9,6 @@ internal partial class CPulseGraphInstance_TestDomain_Derived : CPulseGraphInsta
   public CPulseGraphInstance_TestDomain_Derived(nint handle) : base(handle) {
   }
 
-  public CPulseGraphInstance_TestDomain_Derived(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int InstanceValueX {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x439D00CDD2DC0135));
   }

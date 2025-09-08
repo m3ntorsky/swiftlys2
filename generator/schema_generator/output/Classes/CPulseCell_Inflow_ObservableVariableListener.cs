@@ -9,9 +9,6 @@ internal partial class CPulseCell_Inflow_ObservableVariableListener : CPulseCell
   public CPulseCell_Inflow_ObservableVariableListener(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Inflow_ObservableVariableListener(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulseRuntimeBlackboardReferenceIndex_t BlackboardReference {
     get => new PulseRuntimeBlackboardReferenceIndex_t(_Handle + Schema.GetOffset(0x6186DA17C5B268D));
   }

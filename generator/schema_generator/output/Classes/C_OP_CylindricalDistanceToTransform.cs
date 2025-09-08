@@ -9,9 +9,6 @@ internal partial class C_OP_CylindricalDistanceToTransform : CParticleFunctionOp
   public C_OP_CylindricalDistanceToTransform(nint handle) : base(handle) {
   }
 
-  public C_OP_CylindricalDistanceToTransform(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x3B99017E5729606));
   }

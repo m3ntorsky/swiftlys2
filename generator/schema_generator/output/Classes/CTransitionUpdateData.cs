@@ -9,9 +9,6 @@ internal partial class CTransitionUpdateData : SchemaClass, ITransitionUpdateDat
   public CTransitionUpdateData(nint handle) : base(handle) {
   }
 
-  public CTransitionUpdateData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref byte SrcStateIndex {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xF3F18D08D2AF559E));
   }

@@ -9,9 +9,6 @@ internal partial class FourVectors2D : SchemaClass, IFourVectors2D {
   public FourVectors2D(nint handle) : base(handle) {
   }
 
-  public FourVectors2D(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref fltx4 X {
     get => ref _Handle.AsRef<fltx4>(Schema.GetOffset(0x7A817FA5FD0C5087));
   }

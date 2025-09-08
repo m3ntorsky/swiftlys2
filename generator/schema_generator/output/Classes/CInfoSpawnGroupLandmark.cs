@@ -9,9 +9,6 @@ internal partial class CInfoSpawnGroupLandmark : CPointEntity, IInfoSpawnGroupLa
   public CInfoSpawnGroupLandmark(nint handle) : base(handle) {
   }
 
-  public CInfoSpawnGroupLandmark(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class SkeletonAnimCapture_t__Bone_t : SchemaClass, ISkeletonAni
   public SkeletonAnimCapture_t__Bone_t(nint handle) : base(handle) {
   }
 
-  public SkeletonAnimCapture_t__Bone_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x30D396FDCAE8A266));
   }

@@ -9,9 +9,6 @@ internal partial class HullFlags_t : SchemaClass, IHullFlags_t {
   public HullFlags_t(nint handle) : base(handle) {
   }
 
-  public HullFlags_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Hull_Human {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6601A7BA756C6ED0));
   }

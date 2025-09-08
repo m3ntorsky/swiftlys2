@@ -9,9 +9,6 @@ internal partial class C_OP_LockToBone : CParticleFunctionOperator, IC_OP_LockTo
   public C_OP_LockToBone(nint handle) : base(handle) {
   }
 
-  public C_OP_LockToBone(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleModelInput ModelInput {
     get => new CParticleModelInput(_Handle + Schema.GetOffset(0xF6C2B94DEB74120E));
   }
@@ -31,7 +28,7 @@ internal partial class C_OP_LockToBone : CParticleFunctionOperator, IC_OP_LockTo
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF6C2B94D46CED122));
   }
   public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xF6C2B94D6A21BB0E));
+    get => new SchemaFixedString(_Handle, 0xF6C2B94D6A21BB0E, 128, 1, 1);
   }
   public ref bool Rigid {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xF6C2B94DF9ED9C8C));

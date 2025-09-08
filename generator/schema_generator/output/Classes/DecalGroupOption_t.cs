@@ -9,11 +9,8 @@ internal partial class DecalGroupOption_t : SchemaClass, IDecalGroupOption_t {
   public DecalGroupOption_t(nint handle) : base(handle) {
   }
 
-  public DecalGroupOption_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CStrongHandleCopyable< InfoForResourceTypeIMaterial2 > Material {
-    get => ref _Handle.AsRef<CStrongHandleCopyable< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0x9F3DB78B888CE42E));
+  public ref CStrongHandle<opyable<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<opyable<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0x9F3DB78B888CE42E));
   }
   public ref CGlobalSymbol SequenceName {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x9F3DB78B7462AF30));

@@ -9,11 +9,8 @@ internal partial class CVoiceContainerStaticAdditiveSynth : CVoiceContainerBase,
   public CVoiceContainerStaticAdditiveSynth(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerStaticAdditiveSynth(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CVoiceContainerStaticAdditiveSynth::CTone > Tones {
-    get => ref _Handle.AsRef<CUtlVector< CVoiceContainerStaticAdditiveSynth::CTone >>(Schema.GetOffset(0xE9663E55BAE6D716));
+  public ref CUtlVector Tones {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xE9663E55BAE6D716));
   }
 
 

@@ -9,11 +9,8 @@ internal partial class C_OP_RenderAsModels : CParticleFunctionRenderer, IC_OP_Re
   public C_OP_RenderAsModels(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderAsModels(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< ModelReference_t > ModelList {
-    get => ref _Handle.AsRef<CUtlVector< ModelReference_t >>(Schema.GetOffset(0x634E6CCB05FC11B6));
+  public ref CUtlVector ModelList {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x634E6CCB05FC11B6));
   }
   public ref float ModelScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x634E6CCBD28B2146));

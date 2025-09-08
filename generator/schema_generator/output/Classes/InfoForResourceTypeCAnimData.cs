@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCAnimData : SchemaClass, IInfoForResou
   public InfoForResourceTypeCAnimData(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCAnimData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

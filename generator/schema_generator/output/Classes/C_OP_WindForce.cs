@@ -9,9 +9,6 @@ internal partial class C_OP_WindForce : CParticleFunctionForce, IC_OP_WindForce 
   public C_OP_WindForce(nint handle) : base(handle) {
   }
 
-  public C_OP_WindForce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Force {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xBBD251C2E530B0A8));
   }

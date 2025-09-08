@@ -9,9 +9,6 @@ internal partial class CGameGibManager : CBaseEntity, IGameGibManager {
   public CGameGibManager(nint handle) : base(handle) {
   }
 
-  public CGameGibManager(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool AllowNewGibs {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1068CB09FD80F507));
   }

@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointRotation : CParticleFunctionPreEmissi
   public C_OP_SetControlPointRotation(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointRotation(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionVecInput RotAxis {
     get => new CParticleCollectionVecInput(_Handle + Schema.GetOffset(0x8F20B2F891872163));
   }

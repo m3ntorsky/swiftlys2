@@ -9,11 +9,8 @@ internal partial class CInstancedSceneEntity : CSceneEntity, IInstancedSceneEnti
   public CInstancedSceneEntity(nint handle) : base(handle) {
   }
 
-  public CInstancedSceneEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CHandle< CBaseEntity > Owner {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x2D9E341EF6D89572));
+  public ref CHandle<CBaseEntity> Owner {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x2D9E341EF6D89572));
   }
   public ref bool HadOwner {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x2D9E341EB77772CD));
@@ -30,8 +27,8 @@ internal partial class CInstancedSceneEntity : CSceneEntity, IInstancedSceneEnti
   public ref bool RemoveOnCompletion {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x2D9E341E06E2CBD6));
   }
-  public ref CHandle< CBaseEntity > Target {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x2D9E341ECE35901A));
+  public ref CHandle<CBaseEntity> Target {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x2D9E341ECE35901A));
   }
 
 

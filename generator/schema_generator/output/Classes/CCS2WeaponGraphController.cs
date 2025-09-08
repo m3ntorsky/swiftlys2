@@ -9,9 +9,6 @@ internal partial class CCS2WeaponGraphController : CAnimGraphControllerBase, ICS
   public CCS2WeaponGraphController(nint handle) : base(handle) {
   }
 
-  public CCS2WeaponGraphController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField Action {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x8553337E7918619F));
   }

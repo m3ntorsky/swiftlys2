@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCEntityLump : SchemaClass, IInfoForRes
   public InfoForResourceTypeCEntityLump(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCEntityLump(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

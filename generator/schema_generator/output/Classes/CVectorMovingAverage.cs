@@ -9,9 +9,6 @@ internal partial class CVectorMovingAverage : SchemaClass, IVectorMovingAverage 
   public CVectorMovingAverage(nint handle) : base(handle) {
   }
 
-  public CVectorMovingAverage(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

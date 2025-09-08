@@ -9,9 +9,6 @@ internal partial class ModelMeshBufferData_t : SchemaClass, IModelMeshBufferData
   public ModelMeshBufferData_t(nint handle) : base(handle) {
   }
 
-  public ModelMeshBufferData_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int BlockIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA75611C261BAFD8A));
   }
@@ -42,8 +39,8 @@ internal partial class ModelMeshBufferData_t : SchemaClass, IModelMeshBufferData
   public ref bool CreatePooledBuffer {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA75611C2EFB854B4));
   }
-  public ref CUtlVector< RenderInputLayoutField_t > InputLayoutFields {
-    get => ref _Handle.AsRef<CUtlVector< RenderInputLayoutField_t >>(Schema.GetOffset(0xA75611C2FDECA2D8));
+  public ref CUtlVector InputLayoutFields {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA75611C2FDECA2D8));
   }
 
 

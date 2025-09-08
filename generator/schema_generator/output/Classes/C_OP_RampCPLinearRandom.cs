@@ -9,9 +9,6 @@ internal partial class C_OP_RampCPLinearRandom : CParticleFunctionPreEmission, I
   public C_OP_RampCPLinearRandom(nint handle) : base(handle) {
   }
 
-  public C_OP_RampCPLinearRandom(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int OutControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xF3F4631CD021D73F));
   }

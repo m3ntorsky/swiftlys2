@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Outflow_ListenForEntityOutput__CursorState_t : ISchemaClass {
 
-
+  public ref CHandle<CBaseEntity> Entity { get; }
+  
 }

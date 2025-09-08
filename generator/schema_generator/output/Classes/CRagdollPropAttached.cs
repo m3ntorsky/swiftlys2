@@ -9,21 +9,6 @@ internal partial class CRagdollPropAttached : CRagdollProp, IRagdollPropAttached
   public CRagdollPropAttached(nint handle) : base(handle) {
   }
 
-  public CRagdollPropAttached(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref uint BoneIndexAttached {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x4601EA84AECB2AA5));
-  }
-  public ref uint RagdollAttachedObjectIndex {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x4601EA84D09DB439));
-  }
-  public ref Vector AttachmentPointBoneSpace {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x4601EA849ABB7B0E));
-  }
-  public ref Vector AttachmentPointRagdollSpace {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x4601EA84AD8AE911));
-  }
   public ref bool ShouldDetach {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4601EA84ABADEB5D));
   }

@@ -9,11 +9,8 @@ internal partial class CFootAdjustmentUpdateNode : CUnaryUpdateNode, IFootAdjust
   public CFootAdjustmentUpdateNode(nint handle) : base(handle) {
   }
 
-  public CFootAdjustmentUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< HSequence > Clips {
-    get => ref _Handle.AsRef<CUtlVector< HSequence >>(Schema.GetOffset(0x667ADE248CB21A38));
+  public ref CUtlVector Clips {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x667ADE248CB21A38));
   }
   public IPoseHandle BasePoseCacheHandle {
     get => new CPoseHandle(_Handle + Schema.GetOffset(0x667ADE240690C505));

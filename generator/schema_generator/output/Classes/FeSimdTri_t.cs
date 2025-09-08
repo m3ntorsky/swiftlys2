@@ -9,11 +9,8 @@ internal partial class FeSimdTri_t : SchemaClass, IFeSimdTri_t {
   public FeSimdTri_t(nint handle) : base(handle) {
   }
 
-  public FeSimdTri_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<uint32[4]> Node {
-    get => new SchemaFixedArray<uint32[4]>(_Handle + Schema.GetOffset(0x1D57E70DCD6694B9));
+  public ISchemaFixedArray<uint[4]> Node {
+    get => new SchemaFixedArray<uint[4]>(_Handle, 0x1D57E70DCD6694B9, 3, 16, 4);
   }
   public ref fltx4 W1 {
     get => ref _Handle.AsRef<fltx4>(Schema.GetOffset(0x1D57E70D10473805));

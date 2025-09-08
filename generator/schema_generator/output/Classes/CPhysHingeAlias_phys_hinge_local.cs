@@ -9,9 +9,6 @@ internal partial class CPhysHingeAlias_phys_hinge_local : CPhysHinge, IPhysHinge
   public CPhysHingeAlias_phys_hinge_local(nint handle) : base(handle) {
   }
 
-  public CPhysHingeAlias_phys_hinge_local(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CPushable : CBreakable, IPushable {
   public CPushable(nint handle) : base(handle) {
   }
 
-  public CPushable(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

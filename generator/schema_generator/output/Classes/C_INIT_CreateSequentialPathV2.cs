@@ -9,9 +9,6 @@ internal partial class C_INIT_CreateSequentialPathV2 : CParticleFunctionInitiali
   public C_INIT_CreateSequentialPathV2(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreateSequentialPathV2(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput MaxDistance {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0xEC06632A844E396A));
   }

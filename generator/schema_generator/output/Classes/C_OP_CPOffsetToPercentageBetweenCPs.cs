@@ -9,9 +9,6 @@ internal partial class C_OP_CPOffsetToPercentageBetweenCPs : CParticleFunctionOp
   public C_OP_CPOffsetToPercentageBetweenCPs(nint handle) : base(handle) {
   }
 
-  public C_OP_CPOffsetToPercentageBetweenCPs(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float InputMin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x93039DC8E88A0D0F));
   }

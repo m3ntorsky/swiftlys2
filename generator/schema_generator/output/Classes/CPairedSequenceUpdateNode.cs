@@ -9,9 +9,6 @@ internal partial class CPairedSequenceUpdateNode : CSequenceUpdateNodeBase, IPai
   public CPairedSequenceUpdateNode(nint handle) : base(handle) {
   }
 
-  public CPairedSequenceUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol PairedSequenceRole {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xB2B6F0EB4A4CFB12));
   }

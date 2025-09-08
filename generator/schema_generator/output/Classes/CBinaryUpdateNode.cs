@@ -9,9 +9,6 @@ internal partial class CBinaryUpdateNode : CAnimUpdateNodeBase, IBinaryUpdateNod
   public CBinaryUpdateNode(nint handle) : base(handle) {
   }
 
-  public CBinaryUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimUpdateNodeRef Child1 {
     get => new CAnimUpdateNodeRef(_Handle + Schema.GetOffset(0xA1CFA91E9E0C6B0A));
   }

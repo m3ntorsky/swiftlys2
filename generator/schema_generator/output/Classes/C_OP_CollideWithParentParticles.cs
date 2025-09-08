@@ -9,9 +9,6 @@ internal partial class C_OP_CollideWithParentParticles : CParticleFunctionConstr
   public C_OP_CollideWithParentParticles(nint handle) : base(handle) {
   }
 
-  public C_OP_CollideWithParentParticles(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput ParentRadiusScale {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0x73030DD0CD77EF69));
   }

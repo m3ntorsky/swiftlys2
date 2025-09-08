@@ -9,9 +9,6 @@ internal partial class CStateActionUpdater : SchemaClass, IStateActionUpdater {
   public CStateActionUpdater(nint handle) : base(handle) {
   }
 
-  public CStateActionUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField Action {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xCA33DCAAE9CB47D5));
   }

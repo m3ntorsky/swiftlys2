@@ -9,9 +9,6 @@ internal partial class CLogicNPCCounterOBB : CLogicNPCCounterAABB, ILogicNPCCoun
   public CLogicNPCCounterOBB(nint handle) : base(handle) {
   }
 
-  public CLogicNPCCounterOBB(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

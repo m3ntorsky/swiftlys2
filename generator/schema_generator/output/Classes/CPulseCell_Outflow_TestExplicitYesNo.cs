@@ -9,9 +9,6 @@ internal partial class CPulseCell_Outflow_TestExplicitYesNo : CPulseCell_BaseFlo
   public CPulseCell_Outflow_TestExplicitYesNo(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Outflow_TestExplicitYesNo(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulse_OutflowConnection Yes {
     get => new CPulse_OutflowConnection(_Handle + Schema.GetOffset(0xA1B4A577DA358F10));
   }

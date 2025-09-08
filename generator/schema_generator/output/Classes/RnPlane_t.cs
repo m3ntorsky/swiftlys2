@@ -9,9 +9,6 @@ internal partial class RnPlane_t : SchemaClass, IRnPlane_t {
   public RnPlane_t(nint handle) : base(handle) {
   }
 
-  public RnPlane_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Normal {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xEAF5B7BAAFB36E96));
   }

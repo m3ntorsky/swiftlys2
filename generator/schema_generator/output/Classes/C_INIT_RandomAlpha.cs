@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomAlpha : CParticleFunctionInitializer, IC_INI
   public C_INIT_RandomAlpha(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomAlpha(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x3D7FD5BE5729606));
   }

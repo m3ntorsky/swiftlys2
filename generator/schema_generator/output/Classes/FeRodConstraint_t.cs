@@ -9,11 +9,8 @@ internal partial class FeRodConstraint_t : SchemaClass, IFeRodConstraint_t {
   public FeRodConstraint_t(nint handle) : base(handle) {
   }
 
-  public FeRodConstraint_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<uint16> Node {
-    get => new SchemaFixedArray<uint16>(_Handle + Schema.GetOffset(0xC672146DCD6694B9));
+  public ISchemaFixedArray<ushort> Node {
+    get => new SchemaFixedArray<ushort>(_Handle, 0xC672146DCD6694B9, 2, 2, 2);
   }
   public ref float MaxDist {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC672146DC9FFDD57));

@@ -9,9 +9,6 @@ internal partial class CCSWeaponBaseVData : CBasePlayerWeaponVData, ICSWeaponBas
   public CCSWeaponBaseVData(nint handle) : base(handle) {
   }
 
-  public CCSWeaponBaseVData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CSWeaponType WeaponType {
     get => ref _Handle.AsRef<CSWeaponType>(Schema.GetOffset(0x62FB7705B2A4B729));
   }

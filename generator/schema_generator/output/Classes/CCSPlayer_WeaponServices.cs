@@ -9,20 +9,8 @@ internal partial class CCSPlayer_WeaponServices : CPlayer_WeaponServices, ICSPla
   public CCSPlayer_WeaponServices(nint handle) : base(handle) {
   }
 
-  public CCSPlayer_WeaponServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public IGameTime_t NextAttack {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x13067CB23DFDCDEA));
-  }
-  public ref bool IsLookingAtWeapon {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x13067CB223393CBF));
-  }
-  public ref bool IsHoldingLookAtWeapon {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x13067CB2AF0F7486));
-  }
-  public ref CHandle< CBasePlayerWeapon > SavedWeapon {
-    get => ref _Handle.AsRef<CHandle< CBasePlayerWeapon >>(Schema.GetOffset(0x13067CB248BC7512));
+  public ref CHandle<CBasePlayerWeapon> SavedWeapon {
+    get => ref _Handle.AsRef<CHandle<CBasePlayerWeapon>>(Schema.GetOffset(0x13067CB248BC7512));
   }
   public ref int TimeToMelee {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x13067CB2B21B94A7));
@@ -50,12 +38,6 @@ internal partial class CCSPlayer_WeaponServices : CPlayer_WeaponServices, ICSPla
   }
   public ref bool IsPickingUpGroundWeapon {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x13067CB2CA423D76));
-  }
-  public ref CUtlVector< uint8 > NetworkAnimTiming {
-    get => ref _Handle.AsRef<CUtlVector< uint8 >>(Schema.GetOffset(0x13067CB253AFB9FA));
-  }
-  public ref bool BlockInspectUntilNextGraphUpdate {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x13067CB2029ABB28));
   }
 
   public void NextAttackUpdated() {

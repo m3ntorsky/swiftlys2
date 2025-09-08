@@ -9,9 +9,6 @@ internal partial class C_OP_RenderLightBeam : CParticleFunctionRenderer, IC_OP_R
   public C_OP_RenderLightBeam(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderLightBeam(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionVecInput ColorBlend {
     get => new CParticleCollectionVecInput(_Handle + Schema.GetOffset(0xD8A78450740E9A5F));
   }

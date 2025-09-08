@@ -9,9 +9,6 @@ internal partial class CTriggerDetectBulletFire : CBaseTrigger, ITriggerDetectBu
   public CTriggerDetectBulletFire(nint handle) : base(handle) {
   }
 
-  public CTriggerDetectBulletFire(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool PlayerFireOnly {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x93930A3D56D51CFE));
   }

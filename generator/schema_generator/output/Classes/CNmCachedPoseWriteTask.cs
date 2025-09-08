@@ -9,9 +9,6 @@ internal partial class CNmCachedPoseWriteTask : CNmPoseTask, INmCachedPoseWriteT
   public CNmCachedPoseWriteTask(nint handle) : base(handle) {
   }
 
-  public CNmCachedPoseWriteTask(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

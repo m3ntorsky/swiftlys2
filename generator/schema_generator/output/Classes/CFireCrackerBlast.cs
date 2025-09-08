@@ -9,9 +9,6 @@ internal partial class CFireCrackerBlast : CInferno, IFireCrackerBlast {
   public CFireCrackerBlast(nint handle) : base(handle) {
   }
 
-  public CFireCrackerBlast(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,14 +9,11 @@ internal partial class ManifestTestResource_t : SchemaClass, IManifestTestResour
   public ManifestTestResource_t(nint handle) : base(handle) {
   }
 
-  public ManifestTestResource_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xFF18C79F4D8F5786));
   }
-  public ref CStrongHandle< InfoForResourceTypeManifestTestResource_t > Child {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeManifestTestResource_t >>(Schema.GetOffset(0xFF18C79F2827B07D));
+  public ref CStrongHandle<InfoForResourceTypeManifestTestResource_t> Child {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeManifestTestResource_t>>(Schema.GetOffset(0xFF18C79F2827B07D));
   }
 
 

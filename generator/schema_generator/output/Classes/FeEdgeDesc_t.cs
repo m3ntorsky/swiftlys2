@@ -9,17 +9,14 @@ internal partial class FeEdgeDesc_t : SchemaClass, IFeEdgeDesc_t {
   public FeEdgeDesc_t(nint handle) : base(handle) {
   }
 
-  public FeEdgeDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ISchemaFixedArray<ushort> Edge {
+    get => new SchemaFixedArray<ushort>(_Handle, 0xD483120F9FB47768, 2, 2, 2);
   }
-
-  public ISchemaFixedArray<uint16> Edge {
-    get => new SchemaFixedArray<uint16>(_Handle + Schema.GetOffset(0xD483120F9FB47768));
+  public ISchemaFixedArray<ushort[2]> Side {
+    get => new SchemaFixedArray<ushort[2]>(_Handle, 0xD483120FA0D97E1A, 2, 4, 2);
   }
-  public ISchemaFixedArray<uint16[2]> Side {
-    get => new SchemaFixedArray<uint16[2]>(_Handle + Schema.GetOffset(0xD483120FA0D97E1A));
-  }
-  public ISchemaFixedArray<uint16> VirtElem {
-    get => new SchemaFixedArray<uint16>(_Handle + Schema.GetOffset(0xD483120F64A695A5));
+  public ISchemaFixedArray<ushort> VirtElem {
+    get => new SchemaFixedArray<ushort>(_Handle, 0xD483120F64A695A5, 2, 2, 2);
   }
 
 

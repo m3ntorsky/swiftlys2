@@ -9,9 +9,6 @@ internal partial class CChicken_GraphController : CBaseAnimGraphAnimGraphControl
   public CChicken_GraphController(nint handle) : base(handle) {
   }
 
-  public CChicken_GraphController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField ParamActivity {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB28E357EAA7D242F));
   }

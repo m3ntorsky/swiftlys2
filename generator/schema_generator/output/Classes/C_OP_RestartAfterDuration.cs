@@ -9,9 +9,6 @@ internal partial class C_OP_RestartAfterDuration : CParticleFunctionOperator, IC
   public C_OP_RestartAfterDuration(nint handle) : base(handle) {
   }
 
-  public C_OP_RestartAfterDuration(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float DurationMin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x3F8C903A5D25DBDD));
   }

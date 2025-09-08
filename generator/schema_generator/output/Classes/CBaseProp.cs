@@ -9,9 +9,6 @@ internal partial class CBaseProp : CBaseAnimGraph, IBaseProp {
   public CBaseProp(nint handle) : base(handle) {
   }
 
-  public CBaseProp(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool ModelOverrodeBlockLOS {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x14D39FA24CF7EDF1));
   }

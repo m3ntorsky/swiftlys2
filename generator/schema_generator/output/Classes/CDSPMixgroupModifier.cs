@@ -9,9 +9,6 @@ internal partial class CDSPMixgroupModifier : SchemaClass, IDSPMixgroupModifier 
   public CDSPMixgroupModifier(nint handle) : base(handle) {
   }
 
-  public CDSPMixgroupModifier(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Mixgroup {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDF83C91D89577218));
   }

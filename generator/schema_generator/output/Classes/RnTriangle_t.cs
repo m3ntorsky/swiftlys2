@@ -9,11 +9,8 @@ internal partial class RnTriangle_t : SchemaClass, IRnTriangle_t {
   public RnTriangle_t(nint handle) : base(handle) {
   }
 
-  public RnTriangle_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<int32> Index {
-    get => new SchemaFixedArray<int32>(_Handle + Schema.GetOffset(0x2136F8E2B73DBE67));
+  public ISchemaFixedArray<int> Index {
+    get => new SchemaFixedArray<int>(_Handle, 0x2136F8E2B73DBE67, 3, 4, 4);
   }
 
 

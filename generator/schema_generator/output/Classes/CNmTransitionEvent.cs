@@ -9,9 +9,6 @@ internal partial class CNmTransitionEvent : CNmEvent, INmTransitionEvent {
   public CNmTransitionEvent(nint handle) : base(handle) {
   }
 
-  public CNmTransitionEvent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref NmTransitionRule_t Rule {
     get => ref _Handle.AsRef<NmTransitionRule_t>(Schema.GetOffset(0x11493D8CBA097173));
   }

@@ -9,9 +9,6 @@ internal partial class CNavVolumeVector : CNavVolume, INavVolumeVector {
   public CNavVolumeVector(nint handle) : base(handle) {
   }
 
-  public CNavVolumeVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool HasBeenPreFiltered {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x29D8C0A2454B59CD));
   }

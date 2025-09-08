@@ -9,9 +9,6 @@ internal partial class VMixEnvelopeDesc_t : SchemaClass, IVMixEnvelopeDesc_t {
   public VMixEnvelopeDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixEnvelopeDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float AttackTimeMS {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xEF93602BD4A28216));
   }

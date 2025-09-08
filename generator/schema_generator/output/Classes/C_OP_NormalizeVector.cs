@@ -9,9 +9,6 @@ internal partial class C_OP_NormalizeVector : CParticleFunctionOperator, IC_OP_N
   public C_OP_NormalizeVector(nint handle) : base(handle) {
   }
 
-  public C_OP_NormalizeVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x53107B8BE5729606));
   }

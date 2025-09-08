@@ -9,12 +9,6 @@ internal partial class CBreakableProp : CBaseProp, IBreakableProp {
   public CBreakableProp(nint handle) : base(handle) {
   }
 
-  public CBreakableProp(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public IPropDataComponent CPropDataComponent {
-    get => new CPropDataComponent(_Handle + Schema.GetOffset(0xD9F5AF34ACBC1DDE));
-  }
   public IEntityIOOutput OnStartDeath {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xD9F5AF34F3ED4C8E));
   }
@@ -45,8 +39,8 @@ internal partial class CBreakableProp : CBaseProp, IBreakableProp {
   public ref Vector DefBurstOffset {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD9F5AF341E951FF1));
   }
-  public ref CHandle< CBaseEntity > Breaker {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xD9F5AF34161604FD));
+  public ref CHandle<CBaseEntity> Breaker {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xD9F5AF34161604FD));
   }
   public ref PerformanceMode_t PerformanceMode {
     get => ref _Handle.AsRef<PerformanceMode_t>(Schema.GetOffset(0xD9F5AF34C12B4C52));
@@ -87,8 +81,8 @@ internal partial class CBreakableProp : CBaseProp, IBreakableProp {
   public ref CUtlSymbolLarge ExplosionModifier {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34531D2849));
   }
-  public ref CHandle< CBasePlayerPawn > PhysicsAttacker {
-    get => ref _Handle.AsRef<CHandle< CBasePlayerPawn >>(Schema.GetOffset(0xD9F5AF347A5EB877));
+  public ref CHandle<CBasePlayerPawn> PhysicsAttacker {
+    get => ref _Handle.AsRef<CHandle<CBasePlayerPawn>>(Schema.GetOffset(0xD9F5AF347A5EB877));
   }
   public IGameTime_t LastPhysicsInfluenceTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xD9F5AF345B5C0E32));
@@ -96,8 +90,8 @@ internal partial class CBreakableProp : CBaseProp, IBreakableProp {
   public ref float DefaultFadeScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD9F5AF344DA9700C));
   }
-  public ref CHandle< CBaseEntity > LastAttacker {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xD9F5AF3465CAEF84));
+  public ref CHandle<CBaseEntity> LastAttacker {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xD9F5AF3465CAEF84));
   }
   public ref CUtlSymbolLarge PuntSound {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34FB0FC5DB));

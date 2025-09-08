@@ -9,9 +9,6 @@ internal partial class C_INIT_CreateAlongPath : CParticleFunctionInitializer, IC
   public C_INIT_CreateAlongPath(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreateAlongPath(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MaxDistance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x655F7B0C844E396A));
   }

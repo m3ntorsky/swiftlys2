@@ -9,9 +9,6 @@ internal partial class CBaseFilter : CLogicalEntity, IBaseFilter {
   public CBaseFilter(nint handle) : base(handle) {
   }
 
-  public CBaseFilter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Negated {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x2D59B2893803BF0D));
   }

@@ -9,9 +9,6 @@ internal partial class CBombTarget : CBaseTrigger, IBombTarget {
   public CBombTarget(nint handle) : base(handle) {
   }
 
-  public CBombTarget(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnBombExplode {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x1FEE3C3748E87715));
   }
@@ -27,14 +24,11 @@ internal partial class CBombTarget : CBaseTrigger, IBombTarget {
   public ref bool IsHeistBombTarget {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1FEE3C374F83FD3F));
   }
-  public ref bool BombPlantedHere {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1FEE3C37E2D52CF9));
-  }
   public ref CUtlSymbolLarge MountTarget {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1FEE3C375F784258));
   }
-  public ref CHandle< CBaseEntity > InstructorHint {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1FEE3C37D6C2F245));
+  public ref CHandle<CBaseEntity> InstructorHint {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1FEE3C37D6C2F245));
   }
   public ref int BombSiteDesignation {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1FEE3C376B71EF25));

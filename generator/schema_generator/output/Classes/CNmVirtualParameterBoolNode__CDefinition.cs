@@ -9,9 +9,6 @@ internal partial class CNmVirtualParameterBoolNode__CDefinition : CNmBoolValueNo
   public CNmVirtualParameterBoolNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmVirtualParameterBoolNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short ChildNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xA28816AF5C29A73C));
   }

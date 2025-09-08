@@ -9,9 +9,6 @@ internal partial class CTakeDamageResult : SchemaClass, ITakeDamageResult {
   public CTakeDamageResult(nint handle) : base(handle) {
   }
 
-  public CTakeDamageResult(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ITakeDamageInfo OriginatingInfo {
     get => new CTakeDamageInfo(_Handle + Schema.GetOffset(0xD4A7564D5B166E20));
   }

@@ -9,9 +9,6 @@ internal partial class CWeaponGalilAR : CCSWeaponBaseGun, IWeaponGalilAR {
   public CWeaponGalilAR(nint handle) : base(handle) {
   }
 
-  public CWeaponGalilAR(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

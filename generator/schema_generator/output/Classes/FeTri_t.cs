@@ -9,11 +9,8 @@ internal partial class FeTri_t : SchemaClass, IFeTri_t {
   public FeTri_t(nint handle) : base(handle) {
   }
 
-  public FeTri_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<uint16> Node {
-    get => new SchemaFixedArray<uint16>(_Handle + Schema.GetOffset(0x75C07D86CD6694B9));
+  public ISchemaFixedArray<ushort> Node {
+    get => new SchemaFixedArray<ushort>(_Handle, 0x75C07D86CD6694B9, 3, 2, 2);
   }
   public ref float W1 {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x75C07D8610473805));

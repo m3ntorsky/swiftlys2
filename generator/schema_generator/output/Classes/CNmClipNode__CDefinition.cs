@@ -9,9 +9,6 @@ internal partial class CNmClipNode__CDefinition : CNmClipReferenceNode::CDefinit
   public CNmClipNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmClipNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short PlayInReverseValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x9BA44A131BE16D82));
   }

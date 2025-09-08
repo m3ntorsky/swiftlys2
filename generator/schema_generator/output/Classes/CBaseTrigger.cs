@@ -9,9 +9,6 @@ internal partial class CBaseTrigger : CBaseToggle, IBaseTrigger {
   public CBaseTrigger(nint handle) : base(handle) {
   }
 
-  public CBaseTrigger(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnStartTouch {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x96DE10B1B4E38193));
   }
@@ -33,17 +30,14 @@ internal partial class CBaseTrigger : CBaseToggle, IBaseTrigger {
   public IEntityIOOutput OnNotTouching {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x96DE10B19603AF34));
   }
-  public ref CUtlVector< CHandle< CBaseEntity > > TouchingEntities {
-    get => ref _Handle.AsRef<CUtlVector< CHandle< CBaseEntity > >>(Schema.GetOffset(0x96DE10B1070A5E2D));
+  public ref CUtlVector<CHandle<CBaseEntity>> TouchingEntities {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(Schema.GetOffset(0x96DE10B1070A5E2D));
   }
   public ref CUtlSymbolLarge FilterName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x96DE10B109C86445));
   }
-  public ref CHandle< CBaseFilter > Filter {
-    get => ref _Handle.AsRef<CHandle< CBaseFilter >>(Schema.GetOffset(0x96DE10B145D9E0B1));
-  }
-  public ref bool Disabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x96DE10B13A7C5965));
+  public ref CHandle<CBaseFilter> Filter {
+    get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0x96DE10B145D9E0B1));
   }
   public ref bool UseAsyncQueries {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x96DE10B1DDD8EB18));

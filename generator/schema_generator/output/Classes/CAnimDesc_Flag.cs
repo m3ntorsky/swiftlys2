@@ -9,9 +9,6 @@ internal partial class CAnimDesc_Flag : SchemaClass, IAnimDesc_Flag {
   public CAnimDesc_Flag(nint handle) : base(handle) {
   }
 
-  public CAnimDesc_Flag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Looping {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xF86D993525449B0D));
   }

@@ -9,14 +9,11 @@ internal partial class CPulseCell_Outflow_IntSwitch : CPulseCell_BaseFlow, IPuls
   public CPulseCell_Outflow_IntSwitch(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Outflow_IntSwitch(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulse_OutflowConnection DefaultCaseOutflow {
     get => new CPulse_OutflowConnection(_Handle + Schema.GetOffset(0x50C7C8629EEF1E82));
   }
-  public ref CUtlVector< CPulse_OutflowConnection > CaseOutflows {
-    get => ref _Handle.AsRef<CUtlVector< CPulse_OutflowConnection >>(Schema.GetOffset(0x50C7C862374F213C));
+  public ref CUtlVector CaseOutflows {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x50C7C862374F213C));
   }
 
 

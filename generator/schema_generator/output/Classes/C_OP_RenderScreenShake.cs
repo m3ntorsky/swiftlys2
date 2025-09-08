@@ -9,9 +9,6 @@ internal partial class C_OP_RenderScreenShake : CParticleFunctionRenderer, IC_OP
   public C_OP_RenderScreenShake(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderScreenShake(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float DurationScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x37508849776D4203));
   }

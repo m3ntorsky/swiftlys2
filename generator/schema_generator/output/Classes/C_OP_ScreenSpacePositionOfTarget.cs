@@ -9,9 +9,6 @@ internal partial class C_OP_ScreenSpacePositionOfTarget : CParticleFunctionOpera
   public C_OP_ScreenSpacePositionOfTarget(nint handle) : base(handle) {
   }
 
-  public C_OP_ScreenSpacePositionOfTarget(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleVecInput TargetPosition {
     get => new CPerParticleVecInput(_Handle + Schema.GetOffset(0x5FF537BA554C563B));
   }

@@ -9,9 +9,6 @@ internal partial class CC4 : CCSWeaponBase, IC4 {
   public CC4(nint handle) : base(handle) {
   }
 
-  public CC4(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector LastValidPlayerHeldPosition {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x1D49B0B580F67DBC));
   }
@@ -21,26 +18,11 @@ internal partial class CC4 : CCSWeaponBase, IC4 {
   public ref bool DoValidDroppedPositionCheck {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1D49B0B586C3166D));
   }
-  public ref bool StartedArming {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1D49B0B5BE331CA8));
-  }
-  public IGameTime_t ArmedTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x1D49B0B54C4C86C9));
-  }
-  public ref bool BombPlacedAnimation {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1D49B0B52F5F9F2A));
-  }
-  public ref bool IsPlantingViaUse {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1D49B0B566506CF1));
-  }
-  public IEntitySpottedState_t EntitySpottedState {
-    get => new EntitySpottedState_t(_Handle + Schema.GetOffset(0x1D49B0B5032B547C));
-  }
   public ref int SpotRules {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1D49B0B5776CCE44));
   }
   public ISchemaFixedArray<bool> PlayedArmingBeeps {
-    get => new SchemaFixedArray<bool>(_Handle + Schema.GetOffset(0x1D49B0B525D5D369));
+    get => new SchemaFixedArray<bool>(_Handle, 0x1D49B0B525D5D369, 7, 1, 1);
   }
   public ref bool BombPlanted {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1D49B0B53C00B55F));

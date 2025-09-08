@@ -9,9 +9,6 @@ internal partial class CLogicalEntity : CServerOnlyEntity, ILogicalEntity {
   public CLogicalEntity(nint handle) : base(handle) {
   }
 
-  public CLogicalEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

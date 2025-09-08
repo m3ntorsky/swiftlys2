@@ -9,9 +9,6 @@ internal partial class CNmEntityAttributeEventBase : CNmEvent, INmEntityAttribut
   public CNmEntityAttributeEventBase(nint handle) : base(handle) {
   }
 
-  public CNmEntityAttributeEventBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString AttributeName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x92D29AE99168F02C));
   }

@@ -9,9 +9,6 @@ internal partial class CClothSettingsAnimTag : CAnimTagBase, IClothSettingsAnimT
   public CClothSettingsAnimTag(nint handle) : base(handle) {
   }
 
-  public CClothSettingsAnimTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Stiffness {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF6B586864344C684));
   }

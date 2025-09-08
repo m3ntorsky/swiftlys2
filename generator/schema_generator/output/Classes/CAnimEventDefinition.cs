@@ -9,9 +9,6 @@ internal partial class CAnimEventDefinition : SchemaClass, IAnimEventDefinition 
   public CAnimEventDefinition(nint handle) : base(handle) {
   }
 
-  public CAnimEventDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Frame {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x27C8C8BC494AFF02));
   }

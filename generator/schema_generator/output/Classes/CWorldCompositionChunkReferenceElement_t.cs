@@ -9,9 +9,6 @@ internal partial class CWorldCompositionChunkReferenceElement_t : SchemaClass, I
   public CWorldCompositionChunkReferenceElement_t(nint handle) : base(handle) {
   }
 
-  public CWorldCompositionChunkReferenceElement_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString StrMapToLoad {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x9B80004DE87F0C1B));
   }

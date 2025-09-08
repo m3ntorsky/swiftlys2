@@ -9,9 +9,6 @@ internal partial class CAnimEventListenerBase : SchemaClass, IAnimEventListenerB
   public CAnimEventListenerBase(nint handle) : base(handle) {
   }
 
-  public CAnimEventListenerBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

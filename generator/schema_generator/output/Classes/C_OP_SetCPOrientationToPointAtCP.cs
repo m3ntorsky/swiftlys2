@@ -9,9 +9,6 @@ internal partial class C_OP_SetCPOrientationToPointAtCP : CParticleFunctionPreEm
   public C_OP_SetCPOrientationToPointAtCP(nint handle) : base(handle) {
   }
 
-  public C_OP_SetCPOrientationToPointAtCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int InputCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xEB886769F39A3C14));
   }

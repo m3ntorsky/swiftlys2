@@ -9,9 +9,6 @@ internal partial class C_INIT_RemapNamedModelBodyPartToScalar : C_INIT_RemapName
   public C_INIT_RemapNamedModelBodyPartToScalar(nint handle) : base(handle) {
   }
 
-  public C_INIT_RemapNamedModelBodyPartToScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

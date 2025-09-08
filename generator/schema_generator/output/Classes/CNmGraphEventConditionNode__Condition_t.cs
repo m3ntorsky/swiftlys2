@@ -9,9 +9,6 @@ internal partial class CNmGraphEventConditionNode__Condition_t : SchemaClass, IN
   public CNmGraphEventConditionNode__Condition_t(nint handle) : base(handle) {
   }
 
-  public CNmGraphEventConditionNode__Condition_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol EventID {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xA3252A829D798A72));
   }

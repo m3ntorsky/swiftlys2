@@ -9,9 +9,6 @@ internal partial class CNmIDValueNode__CDefinition : CNmValueNode::CDefinition, 
   public CNmIDValueNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmIDValueNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

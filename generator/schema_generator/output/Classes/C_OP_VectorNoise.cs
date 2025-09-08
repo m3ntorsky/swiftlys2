@@ -9,9 +9,6 @@ internal partial class C_OP_VectorNoise : CParticleFunctionOperator, IC_OP_Vecto
   public C_OP_VectorNoise(nint handle) : base(handle) {
   }
 
-  public C_OP_VectorNoise(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0xEAAF071CE5729606));
   }

@@ -9,9 +9,6 @@ internal partial class FeBuildSDFRigid_t : FeSDFRigid_t, IFeBuildSDFRigid_t {
   public FeBuildSDFRigid_t(nint handle) : base(handle) {
   }
 
-  public FeBuildSDFRigid_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Priority {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8C389301E7EFB335));
   }

@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IHandshakeAnimTagBase : IAnimTagBase {
 
-
+  public ref bool IsDisableTag { get; }
+  
 }

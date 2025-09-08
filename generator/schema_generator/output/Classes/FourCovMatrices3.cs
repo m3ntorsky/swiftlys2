@@ -9,9 +9,6 @@ internal partial class FourCovMatrices3 : SchemaClass, IFourCovMatrices3 {
   public FourCovMatrices3(nint handle) : base(handle) {
   }
 
-  public FourCovMatrices3(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref FourVectors Diag {
     get => ref _Handle.AsRef<FourVectors>(Schema.GetOffset(0xCEA91E487CC0D332));
   }

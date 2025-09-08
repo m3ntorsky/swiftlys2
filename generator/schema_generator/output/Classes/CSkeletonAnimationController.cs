@@ -9,9 +9,6 @@ internal partial class CSkeletonAnimationController : ISkeletonAnimationControll
   public CSkeletonAnimationController(nint handle) : base(handle) {
   }
 
-  public CSkeletonAnimationController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISkeletonInstance SkeletonInstance {
     get => new CSkeletonInstance(_Handle + Schema.GetOffset(0x47164D01F28853));
   }

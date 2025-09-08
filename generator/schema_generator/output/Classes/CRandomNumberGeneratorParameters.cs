@@ -9,9 +9,6 @@ internal partial class CRandomNumberGeneratorParameters : SchemaClass, IRandomNu
   public CRandomNumberGeneratorParameters(nint handle) : base(handle) {
   }
 
-  public CRandomNumberGeneratorParameters(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool DistributeEvenly {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x60FDB8F9BED90721));
   }

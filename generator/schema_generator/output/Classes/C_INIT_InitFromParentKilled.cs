@@ -9,9 +9,6 @@ internal partial class C_INIT_InitFromParentKilled : CParticleFunctionInitialize
   public C_INIT_InitFromParentKilled(nint handle) : base(handle) {
   }
 
-  public C_INIT_InitFromParentKilled(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t AttributeToCopy {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x4CE3F9811953739B));
   }

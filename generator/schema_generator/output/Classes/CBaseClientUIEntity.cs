@@ -9,21 +9,6 @@ internal partial class CBaseClientUIEntity : CBaseModelEntity, IBaseClientUIEnti
   public CBaseClientUIEntity(nint handle) : base(handle) {
   }
 
-  public CBaseClientUIEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref bool Enabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x51A22D116154EB7E));
-  }
-  public ref CUtlSymbolLarge DialogXMLName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A22D11D13858C9));
-  }
-  public ref CUtlSymbolLarge PanelClassName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A22D115C958CBC));
-  }
-  public ref CUtlSymbolLarge PanelID {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A22D1107A4EF60));
-  }
   public IEntityIOOutput CustomOutput0 {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x51A22D119AA5C775));
   }

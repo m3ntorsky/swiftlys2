@@ -9,9 +9,6 @@ internal partial class CSosGroupActionSoundeventCountSchema : CSosGroupActionSch
   public CSosGroupActionSoundeventCountSchema(nint handle) : base(handle) {
   }
 
-  public CSosGroupActionSoundeventCountSchema(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool ExcludeStoppedSounds {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6A0D82691BDF6FB6));
   }

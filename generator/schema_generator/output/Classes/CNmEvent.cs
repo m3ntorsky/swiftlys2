@@ -9,9 +9,6 @@ internal partial class CNmEvent : SchemaClass, INmEvent {
   public CNmEvent(nint handle) : base(handle) {
   }
 
-  public CNmEvent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float StartTimeSeconds {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF9871009C1FCF499));
   }

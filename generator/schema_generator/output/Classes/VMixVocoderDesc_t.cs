@@ -9,9 +9,6 @@ internal partial class VMixVocoderDesc_t : SchemaClass, IVMixVocoderDesc_t {
   public VMixVocoderDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixVocoderDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int BandCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFBAB3A2972E16EF9));
   }

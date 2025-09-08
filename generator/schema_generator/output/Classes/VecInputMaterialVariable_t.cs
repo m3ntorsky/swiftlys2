@@ -9,9 +9,6 @@ internal partial class VecInputMaterialVariable_t : SchemaClass, IVecInputMateri
   public VecInputMaterialVariable_t(nint handle) : base(handle) {
   }
 
-  public VecInputMaterialVariable_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString StrVariable {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3A84C75DA52C3390));
   }

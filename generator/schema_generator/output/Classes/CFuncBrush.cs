@@ -9,9 +9,6 @@ internal partial class CFuncBrush : CBaseModelEntity, IFuncBrush {
   public CFuncBrush(nint handle) : base(handle) {
   }
 
-  public CFuncBrush(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref BrushSolidities_e Solidity {
     get => ref _Handle.AsRef<BrushSolidities_e>(Schema.GetOffset(0x26435484B869EE4D));
   }

@@ -9,9 +9,6 @@ internal partial class CWeaponXM1014 : CCSWeaponBase, IWeaponXM1014 {
   public CWeaponXM1014(nint handle) : base(handle) {
   }
 
-  public CWeaponXM1014(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Base : ISchemaClass {
 
-
+  public IPulseDocNodeID_t EditorNodeID { get; }
+  
 }

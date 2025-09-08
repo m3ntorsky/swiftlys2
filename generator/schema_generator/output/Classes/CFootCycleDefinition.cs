@@ -9,9 +9,6 @@ internal partial class CFootCycleDefinition : SchemaClass, IFootCycleDefinition 
   public CFootCycleDefinition(nint handle) : base(handle) {
   }
 
-  public CFootCycleDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector StancePositionMS {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6D604C9567085F86));
   }

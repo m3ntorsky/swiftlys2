@@ -9,11 +9,8 @@ internal partial class CModelConfigElement_UserPick : CModelConfigElement, IMode
   public CModelConfigElement_UserPick(nint handle) : base(handle) {
   }
 
-  public CModelConfigElement_UserPick(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CUtlString > Choices {
-    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0x9AB617A69E9959BF));
+  public ref CUtlVector<CUtlString> Choices {
+    get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x9AB617A69E9959BF));
   }
 
 

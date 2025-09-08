@@ -9,17 +9,14 @@ internal partial class VsInputSignatureElement_t : SchemaClass, IVsInputSignatur
   public VsInputSignatureElement_t(nint handle) : base(handle) {
   }
 
-  public VsInputSignatureElement_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaFixedString Name {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xFD3BBE5B5B47C92C));
+    get => new SchemaFixedString(_Handle, 0xFD3BBE5B5B47C92C, 64, 1, 1);
   }
   public ISchemaFixedString Semantic {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xFD3BBE5B14684E6F));
+    get => new SchemaFixedString(_Handle, 0xFD3BBE5B14684E6F, 64, 1, 1);
   }
   public ISchemaFixedString D3DSemanticName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xFD3BBE5B66524995));
+    get => new SchemaFixedString(_Handle, 0xFD3BBE5B66524995, 64, 1, 1);
   }
   public ref int D3DSemanticIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFD3BBE5B67F2BA80));

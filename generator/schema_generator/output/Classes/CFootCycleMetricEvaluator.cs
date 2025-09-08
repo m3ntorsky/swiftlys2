@@ -9,11 +9,8 @@ internal partial class CFootCycleMetricEvaluator : CMotionMetricEvaluator, IFoot
   public CFootCycleMetricEvaluator(nint handle) : base(handle) {
   }
 
-  public CFootCycleMetricEvaluator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< int32 > FootIndices {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0x1773C1814C840316));
+  public ref CUtlVector<int> FootIndices {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0x1773C1814C840316));
   }
 
 

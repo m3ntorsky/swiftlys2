@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseGraphInstanceID_t : ISchemaClass {
 
-
+  public ref uint Value { get; }
+  
 }

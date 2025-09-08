@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCVDataResource : SchemaClass, IInfoFor
   public InfoForResourceTypeCVDataResource(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCVDataResource(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

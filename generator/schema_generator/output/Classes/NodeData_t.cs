@@ -9,9 +9,6 @@ internal partial class NodeData_t : SchemaClass, INodeData_t {
   public NodeData_t(nint handle) : base(handle) {
   }
 
-  public NodeData_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Parent {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xB09FAAA60AABB9D1));
   }
@@ -27,8 +24,8 @@ internal partial class NodeData_t : SchemaClass, INodeData_t {
   public ref float MinimumDistance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB09FAAA6D8B1200E));
   }
-  public ref CUtlVector< int32 > ChildNodeIndices {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0xB09FAAA63648C692));
+  public ref CUtlVector<int> ChildNodeIndices {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xB09FAAA63648C692));
   }
   public ref CUtlString WorldNodePrefix {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB09FAAA662126457));

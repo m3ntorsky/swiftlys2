@@ -9,9 +9,6 @@ internal partial class CPhysicsPropRespawnable : CPhysicsProp, IPhysicsPropRespa
   public CPhysicsPropRespawnable(nint handle) : base(handle) {
   }
 
-  public CPhysicsPropRespawnable(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector OriginalSpawnOrigin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6C5980BAB6F410AF));
   }

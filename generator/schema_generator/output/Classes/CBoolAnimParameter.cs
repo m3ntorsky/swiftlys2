@@ -9,9 +9,6 @@ internal partial class CBoolAnimParameter : CConcreteAnimParameter, IBoolAnimPar
   public CBoolAnimParameter(nint handle) : base(handle) {
   }
 
-  public CBoolAnimParameter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool DefaultValue {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3BF60C6A26126DF));
   }

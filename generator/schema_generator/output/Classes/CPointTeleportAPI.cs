@@ -9,9 +9,6 @@ internal partial class CPointTeleportAPI : SchemaClass, IPointTeleportAPI {
   public CPointTeleportAPI(nint handle) : base(handle) {
   }
 
-  public CPointTeleportAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

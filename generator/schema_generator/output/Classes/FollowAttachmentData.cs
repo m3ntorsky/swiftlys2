@@ -9,9 +9,6 @@ internal partial class FollowAttachmentData : SchemaClass, IFollowAttachmentData
   public FollowAttachmentData(nint handle) : base(handle) {
   }
 
-  public FollowAttachmentData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int BoneIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x7E37AD4D6AFA4155));
   }

@@ -9,9 +9,6 @@ internal partial class NmCompressionSettings_t__QuantizationRange_t : SchemaClas
   public NmCompressionSettings_t__QuantizationRange_t(nint handle) : base(handle) {
   }
 
-  public NmCompressionSettings_t__QuantizationRange_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RangeStart {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA662A641F7D21E68));
   }

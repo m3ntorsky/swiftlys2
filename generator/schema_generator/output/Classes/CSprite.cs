@@ -9,47 +9,8 @@ internal partial class CSprite : CBaseModelEntity, ISprite {
   public CSprite(nint handle) : base(handle) {
   }
 
-  public CSprite(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CStrongHandle< InfoForResourceTypeIMaterial2 > SpriteMaterial {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0xAAF88CE378793443));
-  }
-  public ref CHandle< CBaseEntity > AttachedToEntity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xAAF88CE3FDEAA64D));
-  }
-  public IAttachmentHandle_t Attachment {
-    get => new AttachmentHandle_t(_Handle + Schema.GetOffset(0xAAF88CE3E3BF4024));
-  }
-  public ref float SpriteFramerate {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xAAF88CE3E156249D));
-  }
-  public ref float Frame {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xAAF88CE3F836C9F4));
-  }
   public IGameTime_t DieTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xAAF88CE361B33206));
-  }
-  public ref uint Brightness {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xAAF88CE3A4C26AE6));
-  }
-  public ref float BrightnessDuration {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xAAF88CE36700BD7C));
-  }
-  public ref float SpriteScale {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xAAF88CE3E39D2B84));
-  }
-  public ref float ScaleDuration {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xAAF88CE35F21994B));
-  }
-  public ref bool WorldSpaceScale {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xAAF88CE37E045A3F));
-  }
-  public ref float GlowProxySize {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xAAF88CE3C4210897));
-  }
-  public ref float HDRColorScale {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xAAF88CE3C930B3E8));
   }
   public IGameTime_t LastTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xAAF88CE32E79549E));

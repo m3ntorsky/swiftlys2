@@ -9,9 +9,6 @@ internal partial class CInfoPlayerStart : CPointEntity, IInfoPlayerStart {
   public CInfoPlayerStart(nint handle) : base(handle) {
   }
 
-  public CInfoPlayerStart(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE0799D713A7C5965));
   }

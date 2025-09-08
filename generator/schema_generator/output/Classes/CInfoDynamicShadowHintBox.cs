@@ -9,9 +9,6 @@ internal partial class CInfoDynamicShadowHintBox : CInfoDynamicShadowHint, IInfo
   public CInfoDynamicShadowHintBox(nint handle) : base(handle) {
   }
 
-  public CInfoDynamicShadowHintBox(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector BoxMins {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xFD9FEBD8201373));
   }

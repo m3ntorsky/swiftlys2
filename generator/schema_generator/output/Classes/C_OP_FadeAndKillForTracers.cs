@@ -9,9 +9,6 @@ internal partial class C_OP_FadeAndKillForTracers : CParticleFunctionOperator, I
   public C_OP_FadeAndKillForTracers(nint handle) : base(handle) {
   }
 
-  public C_OP_FadeAndKillForTracers(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float StartFadeInTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x776267EF39639779));
   }

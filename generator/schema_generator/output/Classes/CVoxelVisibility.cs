@@ -9,9 +9,6 @@ internal partial class CVoxelVisibility : SchemaClass, IVoxelVisibility {
   public CVoxelVisibility(nint handle) : base(handle) {
   }
 
-  public CVoxelVisibility(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint BaseClusterCount {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xDA27CA12A16788C5));
   }

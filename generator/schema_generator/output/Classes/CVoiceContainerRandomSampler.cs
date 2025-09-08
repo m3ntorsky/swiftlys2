@@ -9,9 +9,6 @@ internal partial class CVoiceContainerRandomSampler : CVoiceContainerBase, IVoic
   public CVoiceContainerRandomSampler(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerRandomSampler(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Amplitude {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDCA93E5CB44B0E18));
   }
@@ -27,8 +24,8 @@ internal partial class CVoiceContainerRandomSampler : CVoiceContainerBase, IVoic
   public ref int NumDelayVariations {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDCA93E5C9356280C));
   }
-  public ref CUtlVector< CStrongHandle< InfoForResourceTypeCVoiceContainerBase > > GrainResources {
-    get => ref _Handle.AsRef<CUtlVector< CStrongHandle< InfoForResourceTypeCVoiceContainerBase > >>(Schema.GetOffset(0xDCA93E5C95692BB9));
+  public ref CUtlVector<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>> GrainResources {
+    get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>>>(Schema.GetOffset(0xDCA93E5C95692BB9));
   }
 
 

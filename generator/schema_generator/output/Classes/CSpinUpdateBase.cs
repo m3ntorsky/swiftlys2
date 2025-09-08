@@ -9,9 +9,6 @@ internal partial class CSpinUpdateBase : CParticleFunctionOperator, ISpinUpdateB
   public CSpinUpdateBase(nint handle) : base(handle) {
   }
 
-  public CSpinUpdateBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

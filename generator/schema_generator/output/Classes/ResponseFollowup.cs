@@ -9,9 +9,6 @@ internal partial class ResponseFollowup : SchemaClass, IResponseFollowup {
   public ResponseFollowup(nint handle) : base(handle) {
   }
 
-  public ResponseFollowup(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CString Followup_concept {
     get => ref _Handle.AsRef<CString>(Schema.GetOffset(0x6C93EDBE24539C9E));
   }

@@ -9,11 +9,8 @@ internal partial class CInButtonState : SchemaClass, IInButtonState {
   public CInButtonState(nint handle) : base(handle) {
   }
 
-  public CInButtonState(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<uint64> ButtonStates {
-    get => new SchemaFixedArray<uint64>(_Handle + Schema.GetOffset(0x6C8AF06A00121DF9));
+  public ISchemaFixedArray<ulong> ButtonStates {
+    get => new SchemaFixedArray<ulong>(_Handle, 0x6C8AF06A00121DF9, 3, 8, 8);
   }
 
 

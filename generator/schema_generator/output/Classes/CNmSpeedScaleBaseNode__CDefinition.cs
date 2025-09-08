@@ -9,9 +9,6 @@ internal partial class CNmSpeedScaleBaseNode__CDefinition : CNmPassthroughNode::
   public CNmSpeedScaleBaseNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmSpeedScaleBaseNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short InputValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x69CF028795E89F27));
   }

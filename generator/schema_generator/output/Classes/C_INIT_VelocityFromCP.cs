@@ -9,9 +9,6 @@ internal partial class C_INIT_VelocityFromCP : CParticleFunctionInitializer, IC_
   public C_INIT_VelocityFromCP(nint handle) : base(handle) {
   }
 
-  public C_INIT_VelocityFromCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionVecInput VelocityInput {
     get => new CParticleCollectionVecInput(_Handle + Schema.GetOffset(0x1788D69A30C18956));
   }

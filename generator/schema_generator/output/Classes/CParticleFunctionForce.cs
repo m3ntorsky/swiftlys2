@@ -9,9 +9,6 @@ internal partial class CParticleFunctionForce : CParticleFunction, IParticleFunc
   public CParticleFunctionForce(nint handle) : base(handle) {
   }
 
-  public CParticleFunctionForce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

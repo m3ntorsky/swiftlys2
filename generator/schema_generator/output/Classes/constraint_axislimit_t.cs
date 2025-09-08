@@ -9,9 +9,6 @@ internal partial class constraint_axislimit_t : SchemaClass, Iconstraint_axislim
   public constraint_axislimit_t(nint handle) : base(handle) {
   }
 
-  public constraint_axislimit_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MinRotation {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x610A06522A8C970B));
   }

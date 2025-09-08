@@ -9,9 +9,6 @@ internal partial class C_INIT_StatusEffectCitadel : CParticleFunctionInitializer
   public C_INIT_StatusEffectCitadel(nint handle) : base(handle) {
   }
 
-  public C_INIT_StatusEffectCitadel(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float SFXColorWarpAmount {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6420071B7AE5DF43));
   }

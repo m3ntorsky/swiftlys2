@@ -9,9 +9,6 @@ internal partial class FeAntiTunnelGroupBuild_t : SchemaClass, IFeAntiTunnelGrou
   public FeAntiTunnelGroupBuild_t(nint handle) : base(handle) {
   }
 
-  public FeAntiTunnelGroupBuild_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint VertexMapHash {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x8189225C06BCA0A3));
   }

@@ -9,9 +9,6 @@ internal partial class C_OP_RenderScreenVelocityRotate : CParticleFunctionRender
   public C_OP_RenderScreenVelocityRotate(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderScreenVelocityRotate(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RotateRateDegrees {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6288600D11A21BC7));
   }

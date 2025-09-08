@@ -9,9 +9,6 @@ internal partial class AggregateMeshInfo_t : SchemaClass, IAggregateMeshInfo_t {
   public AggregateMeshInfo_t(nint handle) : base(handle) {
   }
 
-  public AggregateMeshInfo_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint VisClusterMemberOffset {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x609E946C6C3F158));
   }

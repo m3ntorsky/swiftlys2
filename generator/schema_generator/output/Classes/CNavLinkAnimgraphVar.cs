@@ -9,9 +9,6 @@ internal partial class CNavLinkAnimgraphVar : SchemaClass, INavLinkAnimgraphVar 
   public CNavLinkAnimgraphVar(nint handle) : base(handle) {
   }
 
-  public CNavLinkAnimgraphVar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol AnimGraphNavlinkType {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xD079ABDB24A7FCF6));
   }

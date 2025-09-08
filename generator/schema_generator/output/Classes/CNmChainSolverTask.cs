@@ -9,9 +9,6 @@ internal partial class CNmChainSolverTask : CNmPoseTask, INmChainSolverTask {
   public CNmChainSolverTask(nint handle) : base(handle) {
   }
 
-  public CNmChainSolverTask(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int EffectorBoneIdx {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5D675A12A9C233BE));
   }

@@ -9,9 +9,6 @@ internal partial class C_OP_CycleScalar : CParticleFunctionOperator, IC_OP_Cycle
   public C_OP_CycleScalar(nint handle) : base(handle) {
   }
 
-  public C_OP_CycleScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t DestField {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x8E3188612E3589F3));
   }

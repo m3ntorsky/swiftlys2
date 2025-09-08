@@ -9,12 +9,6 @@ internal partial class CChicken : CDynamicProp, IChicken {
   public CChicken(nint handle) : base(handle) {
   }
 
-  public CChicken(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public IAttributeContainer AttributeManager {
-    get => new CAttributeContainer(_Handle + Schema.GetOffset(0x66D7920D537B0586));
-  }
   public ICountdownTimer UpdateTimer {
     get => new CountdownTimer(_Handle + Schema.GetOffset(0x66D7920DE92599E5));
   }
@@ -45,8 +39,8 @@ internal partial class CChicken : CDynamicProp, IChicken {
   public ref float TurnRate {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x66D7920D76FF88A8));
   }
-  public ref CHandle< CBaseEntity > FleeFrom {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x66D7920D24941539));
+  public ref CHandle<CBaseEntity> FleeFrom {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x66D7920D24941539));
   }
   public ICountdownTimer MoveRateThrottleTimer {
     get => new CountdownTimer(_Handle + Schema.GetOffset(0x66D7920D7F3A963B));
@@ -59,12 +53,6 @@ internal partial class CChicken : CDynamicProp, IChicken {
   }
   public IGameTime_t WhenZombified {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x66D7920DEC63D622));
-  }
-  public ref bool JumpedThisFrame {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x66D7920D6BF897BD));
-  }
-  public ref CHandle< CCSPlayerPawn > Leader {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0x66D7920D658B4E84));
   }
   public ICountdownTimer ReuseTimer {
     get => new CountdownTimer(_Handle + Schema.GetOffset(0x66D7920D6D7BFBA8));

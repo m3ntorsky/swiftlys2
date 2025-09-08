@@ -9,9 +9,6 @@ internal partial class CMeshletDescriptor : SchemaClass, IMeshletDescriptor {
   public CMeshletDescriptor(nint handle) : base(handle) {
   }
 
-  public CMeshletDescriptor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPackedAABB_t PackedAABB {
     get => new PackedAABB_t(_Handle + Schema.GetOffset(0xAF93495D8D638233));
   }

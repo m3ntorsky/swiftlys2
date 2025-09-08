@@ -9,9 +9,6 @@ internal partial class C_OP_InheritFromParentParticlesV2 : CParticleFunctionOper
   public C_OP_InheritFromParentParticlesV2(nint handle) : base(handle) {
   }
 
-  public C_OP_InheritFromParentParticlesV2(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput Scale {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0xF948CFAFB731A42F));
   }

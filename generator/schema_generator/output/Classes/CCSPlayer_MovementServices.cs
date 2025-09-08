@@ -9,42 +9,6 @@ internal partial class CCSPlayer_MovementServices : CPlayer_MovementServices_Hum
   public CCSPlayer_MovementServices(nint handle) : base(handle) {
   }
 
-  public CCSPlayer_MovementServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref Vector LadderNormal {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD20D9A0308F3CAF6));
-  }
-  public ref int LadderSurfacePropIndex {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD20D9A03149CA20B));
-  }
-  public ref float DuckAmount {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD20D9A03E4F7740E));
-  }
-  public ref float DuckSpeed {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD20D9A03A8A12375));
-  }
-  public ref bool DuckOverride {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD20D9A03BD1EB2E8));
-  }
-  public ref bool DesiresDuck {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD20D9A03A4034739));
-  }
-  public ref float DuckOffset {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD20D9A031A34E0A5));
-  }
-  public ref uint DuckTimeMsecs {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xD20D9A0311815EAA));
-  }
-  public ref uint DuckJumpTimeMsecs {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xD20D9A038342B0C6));
-  }
-  public ref uint JumpTimeMsecs {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xD20D9A03D5CB15F1));
-  }
-  public ref float LastDuckTime {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD20D9A038F382A43));
-  }
   public ref Vector2D LastPositionAtFullCrouchSpeed {
     get => ref _Handle.AsRef<Vector2D>(Schema.GetOffset(0xD20D9A039A4D02D7));
   }
@@ -84,35 +48,14 @@ internal partial class CCSPlayer_MovementServices : CPlayer_MovementServices_Hum
   public ref Vector Up {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD20D9A03988DA280));
   }
-  public ref int GameCodeHasMovedPlayerAfterCommand {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD20D9A032045380F));
-  }
   public ref bool MadeFootstepNoise {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD20D9A03AB117268));
   }
   public ref int Footsteps {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD20D9A031262251B));
   }
-  public ref bool OldJumpPressed {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD20D9A03030FC474));
-  }
   public ref float JumpPressedTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD20D9A0321A2A38A));
-  }
-  public IGameTime_t StashGrenadeParameterWhen {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0xD20D9A03FCB5208F));
-  }
-  public ref ulong ButtonDownMaskPrev {
-    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xD20D9A03FA4E9DC4));
-  }
-  public ref float OffsetTickCompleteTime {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD20D9A034CAE24AF));
-  }
-  public ref float OffsetTickStashedSpeed {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD20D9A03FA676BF2));
-  }
-  public ref float Stamina {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD20D9A03EE725C8C));
   }
   public ref float HeightAtJumpStart {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD20D9A03DDECB4A7));
@@ -131,9 +74,6 @@ internal partial class CCSPlayer_MovementServices : CPlayer_MovementServices_Hum
   }
   public ref float TicksSinceLastSurfingDetected {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD20D9A0332924D1F));
-  }
-  public ref bool WasSurfing {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD20D9A03C30201EE));
   }
 
   public void LadderNormalUpdated() {

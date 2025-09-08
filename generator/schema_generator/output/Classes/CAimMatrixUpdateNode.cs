@@ -9,9 +9,6 @@ internal partial class CAimMatrixUpdateNode : CUnaryUpdateNode, IAimMatrixUpdate
   public CAimMatrixUpdateNode(nint handle) : base(handle) {
   }
 
-  public CAimMatrixUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAimMatrixOpFixedSettings_t OpFixedSettings {
     get => new AimMatrixOpFixedSettings_t(_Handle + Schema.GetOffset(0xB3687A53E533AB09));
   }

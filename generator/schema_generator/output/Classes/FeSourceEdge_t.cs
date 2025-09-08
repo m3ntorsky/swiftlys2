@@ -9,11 +9,8 @@ internal partial class FeSourceEdge_t : SchemaClass, IFeSourceEdge_t {
   public FeSourceEdge_t(nint handle) : base(handle) {
   }
 
-  public FeSourceEdge_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<uint16> Node {
-    get => new SchemaFixedArray<uint16>(_Handle + Schema.GetOffset(0x88268BD3CD6694B9));
+  public ISchemaFixedArray<ushort> Node {
+    get => new SchemaFixedArray<ushort>(_Handle, 0x88268BD3CD6694B9, 2, 2, 2);
   }
 
 

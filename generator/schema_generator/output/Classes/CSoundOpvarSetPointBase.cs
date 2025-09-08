@@ -9,9 +9,6 @@ internal partial class CSoundOpvarSetPointBase : CBaseEntity, ISoundOpvarSetPoin
   public CSoundOpvarSetPointBase(nint handle) : base(handle) {
   }
 
-  public CSoundOpvarSetPointBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6C95A3E03A7C5965));
   }
@@ -23,21 +20,6 @@ internal partial class CSoundOpvarSetPointBase : CBaseEntity, ISoundOpvarSetPoin
   }
   public ref Vector LastPosition {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6C95A3E0A5B68002));
-  }
-  public ref CUtlSymbolLarge StackName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6C95A3E03B3E9CD4));
-  }
-  public ref CUtlSymbolLarge OperatorName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6C95A3E0F6140996));
-  }
-  public ref CUtlSymbolLarge OpvarName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6C95A3E02CAEFF3C));
-  }
-  public ref int OpvarIndex {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6C95A3E0BC170C34));
-  }
-  public ref bool UseAutoCompare {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6C95A3E0E8C88ED2));
   }
 
   public void StackNameUpdated() {

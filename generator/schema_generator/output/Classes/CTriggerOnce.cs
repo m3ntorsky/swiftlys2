@@ -9,9 +9,6 @@ internal partial class CTriggerOnce : CTriggerMultiple, ITriggerOnce {
   public CTriggerOnce(nint handle) : base(handle) {
   }
 
-  public CTriggerOnce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

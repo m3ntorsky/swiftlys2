@@ -9,9 +9,6 @@ internal partial class C_OP_SpringToVectorConstraint : CParticleFunctionConstrai
   public C_OP_SpringToVectorConstraint(nint handle) : base(handle) {
   }
 
-  public C_OP_SpringToVectorConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput RestLength {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0xF442244193AC4079));
   }

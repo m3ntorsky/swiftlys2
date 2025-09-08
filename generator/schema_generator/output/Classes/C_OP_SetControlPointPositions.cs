@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointPositions : CParticleFunctionPreEmiss
   public C_OP_SetControlPointPositions(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointPositions(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool UseWorldLocation {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x12B1A872F371AED7));
   }

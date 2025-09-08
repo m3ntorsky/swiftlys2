@@ -9,9 +9,6 @@ internal partial class C_INIT_DistanceCull : CParticleFunctionInitializer, IC_IN
   public C_INIT_DistanceCull(nint handle) : base(handle) {
   }
 
-  public C_INIT_DistanceCull(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x78EE30C90D0DDF8C));
   }

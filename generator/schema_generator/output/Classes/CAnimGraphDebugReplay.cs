@@ -9,14 +9,11 @@ internal partial class CAnimGraphDebugReplay : SchemaClass, IAnimGraphDebugRepla
   public CAnimGraphDebugReplay(nint handle) : base(handle) {
   }
 
-  public CAnimGraphDebugReplay(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString AnimGraphFileName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x31D5349314D2CC69));
   }
-  public ref CUtlVector< CSmartPtr< CAnimReplayFrame > > FrameList {
-    get => ref _Handle.AsRef<CUtlVector< CSmartPtr< CAnimReplayFrame > >>(Schema.GetOffset(0x31D5349393EB99F2));
+  public ref CUtlVector FrameList {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x31D5349393EB99F2));
   }
   public ref int StartIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x31D534939F316D25));

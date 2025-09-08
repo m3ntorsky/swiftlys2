@@ -9,9 +9,6 @@ internal partial class CWeaponSCAR20 : CCSWeaponBaseGun, IWeaponSCAR20 {
   public CWeaponSCAR20(nint handle) : base(handle) {
   }
 
-  public CWeaponSCAR20(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

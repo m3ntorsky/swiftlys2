@@ -9,9 +9,6 @@ internal partial class C_INIT_NormalAlignToCP : CParticleFunctionInitializer, IC
   public C_INIT_NormalAlignToCP(nint handle) : base(handle) {
   }
 
-  public C_INIT_NormalAlignToCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleTransformInput TransformInput {
     get => new CParticleTransformInput(_Handle + Schema.GetOffset(0xFA0441643A9ED669));
   }

@@ -9,9 +9,6 @@ internal partial class C_OP_RemapSpeed : CParticleFunctionOperator, IC_OP_RemapS
   public C_OP_RemapSpeed(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapSpeed(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x2DB522A9E5729606));
   }

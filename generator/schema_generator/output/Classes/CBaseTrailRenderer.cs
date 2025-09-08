@@ -9,9 +9,6 @@ internal partial class CBaseTrailRenderer : CBaseRendererSource2, IBaseTrailRend
   public CBaseTrailRenderer(nint handle) : base(handle) {
   }
 
-  public CBaseTrailRenderer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ParticleOrientationChoiceList_t OrientationType {
     get => ref _Handle.AsRef<ParticleOrientationChoiceList_t>(Schema.GetOffset(0x2FCF7FA6931FA045));
   }

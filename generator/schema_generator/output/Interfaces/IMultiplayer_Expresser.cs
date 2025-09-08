@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMultiplayer_Expresser : IAI_ExpresserWithFollowup {
 
-
+  public ref bool AllowMultipleScenes { get; }
+  
 }

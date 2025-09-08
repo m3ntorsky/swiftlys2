@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomRadius : CParticleFunctionInitializer, IC_IN
   public C_INIT_RandomRadius(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomRadius(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RadiusMin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE9419C037AEB467F));
   }

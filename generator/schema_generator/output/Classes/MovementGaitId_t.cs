@@ -9,9 +9,6 @@ internal partial class MovementGaitId_t : SchemaClass, IMovementGaitId_t {
   public MovementGaitId_t(nint handle) : base(handle) {
   }
 
-  public MovementGaitId_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol Id {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xD64B37F7C4A0BD8F));
   }

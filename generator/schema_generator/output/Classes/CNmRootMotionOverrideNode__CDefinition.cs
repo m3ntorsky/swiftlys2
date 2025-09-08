@@ -9,9 +9,6 @@ internal partial class CNmRootMotionOverrideNode__CDefinition : CNmPassthroughNo
   public CNmRootMotionOverrideNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmRootMotionOverrideNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short DesiredMovingVelocityNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x63AAD28BA5EFD80B));
   }

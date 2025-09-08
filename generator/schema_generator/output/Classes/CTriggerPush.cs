@@ -9,9 +9,6 @@ internal partial class CTriggerPush : CBaseTrigger, ITriggerPush {
   public CTriggerPush(nint handle) : base(handle) {
   }
 
-  public CTriggerPush(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref QAngle PushEntitySpace {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0x92E0F2F21952BFD6));
   }

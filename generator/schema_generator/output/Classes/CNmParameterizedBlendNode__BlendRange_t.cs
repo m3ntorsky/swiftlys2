@@ -9,9 +9,6 @@ internal partial class CNmParameterizedBlendNode__BlendRange_t : SchemaClass, IN
   public CNmParameterizedBlendNode__BlendRange_t(nint handle) : base(handle) {
   }
 
-  public CNmParameterizedBlendNode__BlendRange_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short InputIdx0 {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x17812ECC5A8983D2));
   }

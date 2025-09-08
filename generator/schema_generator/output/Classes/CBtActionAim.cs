@@ -9,9 +9,6 @@ internal partial class CBtActionAim : CBtNode, IBtActionAim {
   public CBtActionAim(nint handle) : base(handle) {
   }
 
-  public CBtActionAim(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString SensorInputKey {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x43587513D2B0D4C1));
   }

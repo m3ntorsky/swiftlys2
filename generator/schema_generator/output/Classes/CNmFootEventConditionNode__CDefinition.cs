@@ -9,9 +9,6 @@ internal partial class CNmFootEventConditionNode__CDefinition : CNmBoolValueNode
   public CNmFootEventConditionNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFootEventConditionNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short SourceStateNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xA837BCFE63F0228C));
   }

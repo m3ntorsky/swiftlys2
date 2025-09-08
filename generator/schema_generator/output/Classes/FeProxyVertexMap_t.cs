@@ -9,9 +9,6 @@ internal partial class FeProxyVertexMap_t : SchemaClass, IFeProxyVertexMap_t {
   public FeProxyVertexMap_t(nint handle) : base(handle) {
   }
 
-  public FeProxyVertexMap_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xBBEA9D17CAE8A266));
   }

@@ -9,9 +9,6 @@ internal partial class CSoundInfoHeader : SchemaClass, ISoundInfoHeader {
   public CSoundInfoHeader(nint handle) : base(handle) {
   }
 
-  public CSoundInfoHeader(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

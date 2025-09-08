@@ -9,9 +9,6 @@ internal partial class CNmConstFloatNode__CDefinition : CNmFloatValueNode::CDefi
   public CNmConstFloatNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmConstFloatNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Value {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCB1D2D708DFCB984));
   }

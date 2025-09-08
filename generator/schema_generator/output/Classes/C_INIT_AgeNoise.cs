@@ -9,9 +9,6 @@ internal partial class C_INIT_AgeNoise : CParticleFunctionInitializer, IC_INIT_A
   public C_INIT_AgeNoise(nint handle) : base(handle) {
   }
 
-  public C_INIT_AgeNoise(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool AbsVal {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x7155D6E1AD2CCF0A));
   }

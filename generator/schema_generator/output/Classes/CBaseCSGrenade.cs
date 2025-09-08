@@ -9,48 +9,7 @@ internal partial class CBaseCSGrenade : CCSWeaponBase, IBaseCSGrenade {
   public CBaseCSGrenade(nint handle) : base(handle) {
   }
 
-  public CBaseCSGrenade(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref bool Redraw {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8680ADED612F4EB2));
-  }
-  public ref bool IsHeldByPlayer {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8680ADED5FB07B26));
-  }
-  public ref bool PinPulled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8680ADEDB3D8AABA));
-  }
-  public ref bool JumpThrow {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8680ADED3202A7A7));
-  }
-  public ref bool ThrowAnimating {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8680ADEDB2614685));
-  }
-  public IGameTime_t ThrowTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x8680ADED57C1B8DA));
-  }
-  public ref float ThrowStrength {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8680ADEDF4D38CF4));
-  }
-  public IGameTime_t DropTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x8680ADED2DE88B09));
-  }
-  public IGameTime_t PinPullTime {
-    get => new GameTime_t(_Handle + Schema.GetOffset(0x8680ADEDFCD7B2E6));
-  }
-  public ref bool JustPulledPin {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8680ADEDDA12F260));
-  }
-  public IGameTick_t NextHoldTick {
-    get => new GameTick_t(_Handle + Schema.GetOffset(0x8680ADEDDB254738));
-  }
-  public ref float NextHoldFrac {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8680ADED09F02BB7));
-  }
-  public ref CHandle< CCSWeaponBase > SwitchToWeaponAfterThrow {
-    get => ref _Handle.AsRef<CHandle< CCSWeaponBase >>(Schema.GetOffset(0x8680ADED72CB2A60));
-  }
 
   public void RedrawUpdated() {
     Schema.Update(_Handle, 0x8680ADED612F4EB2);

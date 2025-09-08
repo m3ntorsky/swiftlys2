@@ -9,9 +9,6 @@ internal partial class FeBuildSphereRigid_t : FeSphereRigid_t, IFeBuildSphereRig
   public FeBuildSphereRigid_t(nint handle) : base(handle) {
   }
 
-  public FeBuildSphereRigid_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Priority {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xB0A01B13E7EFB335));
   }

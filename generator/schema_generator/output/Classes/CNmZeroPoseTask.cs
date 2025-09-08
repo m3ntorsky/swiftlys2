@@ -9,9 +9,6 @@ internal partial class CNmZeroPoseTask : CNmPoseTask, INmZeroPoseTask {
   public CNmZeroPoseTask(nint handle) : base(handle) {
   }
 
-  public CNmZeroPoseTask(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

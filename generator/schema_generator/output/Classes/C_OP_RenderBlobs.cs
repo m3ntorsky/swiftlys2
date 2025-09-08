@@ -9,9 +9,6 @@ internal partial class C_OP_RenderBlobs : CParticleFunctionRenderer, IC_OP_Rende
   public C_OP_RenderBlobs(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderBlobs(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionRendererFloatInput CubeWidth {
     get => new CParticleCollectionRendererFloatInput(_Handle + Schema.GetOffset(0xB25239A3E172FDCC));
   }
@@ -30,11 +27,11 @@ internal partial class C_OP_RenderBlobs : CParticleFunctionRenderer, IC_OP_Rende
   public ref int ScaleCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xB25239A3DE3CC5E6));
   }
-  public ref CUtlVector< MaterialVariable_t > MaterialVars {
-    get => ref _Handle.AsRef<CUtlVector< MaterialVariable_t >>(Schema.GetOffset(0xB25239A3FA861D66));
+  public ref CUtlVector MaterialVars {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB25239A3FA861D66));
   }
-  public ref CStrongHandle< InfoForResourceTypeIMaterial2 > Material {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0xB25239A3888CE42E));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0xB25239A3888CE42E));
   }
 
 

@@ -9,9 +9,6 @@ internal partial class CEntitySubclassVDataBase : SchemaClass, IEntitySubclassVD
   public CEntitySubclassVDataBase(nint handle) : base(handle) {
   }
 
-  public CEntitySubclassVDataBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

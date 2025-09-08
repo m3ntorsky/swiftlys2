@@ -9,9 +9,6 @@ internal partial class SignatureOutflow_Continue : CPulse_OutflowConnection, ISi
   public SignatureOutflow_Continue(nint handle) : base(handle) {
   }
 
-  public SignatureOutflow_Continue(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

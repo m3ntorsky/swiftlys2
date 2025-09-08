@@ -9,9 +9,6 @@ internal partial class C_INIT_RingWave : CParticleFunctionInitializer, IC_INIT_R
   public C_INIT_RingWave(nint handle) : base(handle) {
   }
 
-  public C_INIT_RingWave(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleTransformInput TransformInput {
     get => new CParticleTransformInput(_Handle + Schema.GetOffset(0xA5DA0691B3FDC289));
   }

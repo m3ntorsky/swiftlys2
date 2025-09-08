@@ -9,21 +9,6 @@ internal partial class CNetworkedSequenceOperation : SchemaClass, INetworkedSequ
   public CNetworkedSequenceOperation(nint handle) : base(handle) {
   }
 
-  public CNetworkedSequenceOperation(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public IHSequence Sequence {
-    get => new HSequence(_Handle + Schema.GetOffset(0x3EA8ECC5E0A0598E));
-  }
-  public ref float PrevCycle {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x3EA8ECC5AA0F5CF4));
-  }
-  public ref float Cycle {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x3EA8ECC50C77829F));
-  }
-  public ref CNetworkedQuantizedFloat Weight {
-    get => ref _Handle.AsRef<CNetworkedQuantizedFloat>(Schema.GetOffset(0x3EA8ECC57B81E7AB));
-  }
   public ref bool SequenceChangeNetworked {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3EA8ECC510DEC927));
   }

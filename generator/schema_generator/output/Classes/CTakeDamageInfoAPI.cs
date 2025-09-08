@@ -9,9 +9,6 @@ internal partial class CTakeDamageInfoAPI : SchemaClass, ITakeDamageInfoAPI {
   public CTakeDamageInfoAPI(nint handle) : base(handle) {
   }
 
-  public CTakeDamageInfoAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

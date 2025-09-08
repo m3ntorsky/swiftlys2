@@ -9,9 +9,6 @@ internal partial class CFuncPropRespawnZone : CBaseEntity, IFuncPropRespawnZone 
   public CFuncPropRespawnZone(nint handle) : base(handle) {
   }
 
-  public CFuncPropRespawnZone(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable
   public CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable(nint handle) : base(handle) {
   }
 
-  public CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

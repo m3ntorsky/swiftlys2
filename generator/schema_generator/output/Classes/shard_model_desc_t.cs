@@ -9,48 +9,7 @@ internal partial class shard_model_desc_t : SchemaClass, Ishard_model_desc_t {
   public shard_model_desc_t(nint handle) : base(handle) {
   }
 
-  public shard_model_desc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref int ModelID {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x89B25B20B2007E9B));
-  }
-  public ref CStrongHandle< InfoForResourceTypeIMaterial2 > MaterialBase {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0x89B25B201F6E1593));
-  }
-  public ref CStrongHandle< InfoForResourceTypeIMaterial2 > MaterialDamageOverlay {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0x89B25B200B167839));
-  }
-  public ref ShardSolid_t Solid {
-    get => ref _Handle.AsRef<ShardSolid_t>(Schema.GetOffset(0x89B25B20F14DA214));
-  }
-  public ref Vector2D PanelSize {
-    get => ref _Handle.AsRef<Vector2D>(Schema.GetOffset(0x89B25B20E61D2D9C));
-  }
-  public ref Vector2D StressPositionA {
-    get => ref _Handle.AsRef<Vector2D>(Schema.GetOffset(0x89B25B20107A2271));
-  }
-  public ref Vector2D StressPositionB {
-    get => ref _Handle.AsRef<Vector2D>(Schema.GetOffset(0x89B25B200D7A1DB8));
-  }
-  public ref CUtlVector< Vector2D > PanelVertices {
-    get => ref _Handle.AsRef<CUtlVector< Vector2D >>(Schema.GetOffset(0x89B25B2049BB3ECE));
-  }
-  public ref CUtlVector< Vector4D > InitialPanelVertices {
-    get => ref _Handle.AsRef<CUtlVector< Vector4D >>(Schema.GetOffset(0x89B25B2039117F58));
-  }
-  public ref float GlassHalfThickness {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x89B25B20359D8B9E));
-  }
-  public ref bool HasParent {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x89B25B20A613E04B));
-  }
-  public ref bool ParentFrozen {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x89B25B206FE526AB));
-  }
-  public ref CUtlStringToken SurfacePropStringToken {
-    get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0x89B25B2055336E6D));
-  }
 
   public void ModelIDUpdated() {
     Schema.Update(_Handle, 0x89B25B20B2007E9B);

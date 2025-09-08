@@ -9,11 +9,8 @@ internal partial class CAnimNodePath : SchemaClass, IAnimNodePath {
   public CAnimNodePath(nint handle) : base(handle) {
   }
 
-  public CAnimNodePath(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimNodeID Path {
-    get => new AnimNodeID(_Handle + Schema.GetOffset(0xE070E30C2915C8D6));
+    get => new AnimNodeID(_Handle, 0xE070E30C2915C8D6, 11, 4, 4);
   }
   public ref int Count {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE070E30C7D31AC08));

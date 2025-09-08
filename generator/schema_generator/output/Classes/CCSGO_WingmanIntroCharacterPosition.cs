@@ -9,9 +9,6 @@ internal partial class CCSGO_WingmanIntroCharacterPosition : CCSGO_TeamIntroChar
   public CCSGO_WingmanIntroCharacterPosition(nint handle) : base(handle) {
   }
 
-  public CCSGO_WingmanIntroCharacterPosition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

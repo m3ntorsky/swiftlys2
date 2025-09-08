@@ -9,9 +9,6 @@ internal partial class CNavHullVData : SchemaClass, INavHullVData {
   public CNavHullVData(nint handle) : base(handle) {
   }
 
-  public CNavHullVData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool AgentEnabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x74449E2E9D43CFF3));
   }

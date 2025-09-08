@@ -9,12 +9,7 @@ internal partial class CBodyComponentSkeletonInstance : CBodyComponent, IBodyCom
   public CBodyComponentSkeletonInstance(nint handle) : base(handle) {
   }
 
-  public CBodyComponentSkeletonInstance(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ISkeletonInstance SkeletonInstance {
-    get => new CSkeletonInstance(_Handle + Schema.GetOffset(0x4581C459228537B9));
-  }
 
   public void SkeletonInstanceUpdated() {
     Schema.Update(_Handle, 0x4581C459228537B9);

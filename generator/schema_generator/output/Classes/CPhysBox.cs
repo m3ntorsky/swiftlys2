@@ -9,9 +9,6 @@ internal partial class CPhysBox : CBreakable, IPhysBox {
   public CPhysBox(nint handle) : base(handle) {
   }
 
-  public CPhysBox(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int DamageType {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x914B502B17488B28));
   }
@@ -54,8 +51,8 @@ internal partial class CPhysBox : CBreakable, IPhysBox {
   public IEntityIOOutput OnStartTouch {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x914B502BB4E38193));
   }
-  public ref CHandle< CBasePlayerPawn > CarryingPlayer {
-    get => ref _Handle.AsRef<CHandle< CBasePlayerPawn >>(Schema.GetOffset(0x914B502B0491B86F));
+  public ref CHandle<CBasePlayerPawn> CarryingPlayer {
+    get => ref _Handle.AsRef<CHandle<CBasePlayerPawn>>(Schema.GetOffset(0x914B502B0491B86F));
   }
 
 

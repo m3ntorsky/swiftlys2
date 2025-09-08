@@ -4,5 +4,24 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_CreationNoise : IParticleFunctionInitializer {
 
-
+  public IParticleAttributeIndex_t FieldOutput { get; }
+  
+  public ref bool AbsVal { get; }
+  
+  public ref bool AbsValInv { get; }
+  
+  public ref float Offset { get; }
+  
+  public ref float OutputMin { get; }
+  
+  public ref float OutputMax { get; }
+  
+  public ref float NoiseScale { get; }
+  
+  public ref float NoiseScaleLoc { get; }
+  
+  public ref Vector OffsetLoc { get; }
+  
+  public ref float WorldTimeScale { get; }
+  
 }

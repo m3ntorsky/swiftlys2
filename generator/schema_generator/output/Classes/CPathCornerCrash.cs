@@ -9,9 +9,6 @@ internal partial class CPathCornerCrash : CPathCorner, IPathCornerCrash {
   public CPathCornerCrash(nint handle) : base(handle) {
   }
 
-  public CPathCornerCrash(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

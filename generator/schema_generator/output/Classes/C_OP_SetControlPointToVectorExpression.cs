@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointToVectorExpression : CParticleFunctio
   public C_OP_SetControlPointToVectorExpression(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointToVectorExpression(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref VectorExpressionType_t Expression {
     get => ref _Handle.AsRef<VectorExpressionType_t>(Schema.GetOffset(0x67E9EFDE160B2427));
   }

@@ -9,9 +9,6 @@ internal partial class C_OP_ConstrainDistanceToUserSpecifiedPath : CParticleFunc
   public C_OP_ConstrainDistanceToUserSpecifiedPath(nint handle) : base(handle) {
   }
 
-  public C_OP_ConstrainDistanceToUserSpecifiedPath(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MinDistance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x42F2CE28F016B7AC));
   }
@@ -24,8 +21,8 @@ internal partial class C_OP_ConstrainDistanceToUserSpecifiedPath : CParticleFunc
   public ref bool LoopedPath {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x42F2CE284D64C459));
   }
-  public ref CUtlVector< PointDefinitionWithTimeValues_t > PointList {
-    get => ref _Handle.AsRef<CUtlVector< PointDefinitionWithTimeValues_t >>(Schema.GetOffset(0x42F2CE28976AB4FD));
+  public ref CUtlVector PointList {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x42F2CE28976AB4FD));
   }
 
 

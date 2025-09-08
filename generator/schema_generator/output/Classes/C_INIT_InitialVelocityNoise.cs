@@ -9,9 +9,6 @@ internal partial class C_INIT_InitialVelocityNoise : CParticleFunctionInitialize
   public C_INIT_InitialVelocityNoise(nint handle) : base(handle) {
   }
 
-  public C_INIT_InitialVelocityNoise(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector AbsVal {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x4F8B7A615311700A));
   }

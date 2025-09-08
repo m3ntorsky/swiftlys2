@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomNamedModelSequence : C_INIT_RandomNamedModel
   public C_INIT_RandomNamedModelSequence(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomNamedModelSequence(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

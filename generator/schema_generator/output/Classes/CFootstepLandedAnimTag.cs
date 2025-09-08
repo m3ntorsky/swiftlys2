@@ -9,9 +9,6 @@ internal partial class CFootstepLandedAnimTag : CAnimTagBase, IFootstepLandedAni
   public CFootstepLandedAnimTag(nint handle) : base(handle) {
   }
 
-  public CFootstepLandedAnimTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref FootstepLandedFootSoundType_t FootstepType {
     get => ref _Handle.AsRef<FootstepLandedFootSoundType_t>(Schema.GetOffset(0xD5058C6793F974DB));
   }

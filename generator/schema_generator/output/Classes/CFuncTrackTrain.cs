@@ -9,11 +9,8 @@ internal partial class CFuncTrackTrain : CBaseModelEntity, IFuncTrackTrain {
   public CFuncTrackTrain(nint handle) : base(handle) {
   }
 
-  public CFuncTrackTrain(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CHandle< CPathTrack > Ppath {
-    get => ref _Handle.AsRef<CHandle< CPathTrack >>(Schema.GetOffset(0x416637FB5A26CD88));
+  public ref CHandle<CPathTrack> Ppath {
+    get => ref _Handle.AsRef<CHandle<CPathTrack>>(Schema.GetOffset(0x416637FB5A26CD88));
   }
   public ref float Length {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x416637FB3AFED1B5));

@@ -9,9 +9,6 @@ internal partial class CPulseCell_Value_RandomInt : CPulseCell_BaseValue, IPulse
   public CPulseCell_Value_RandomInt(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Value_RandomInt(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

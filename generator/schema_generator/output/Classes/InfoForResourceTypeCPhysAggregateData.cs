@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCPhysAggregateData : SchemaClass, IInf
   public InfoForResourceTypeCPhysAggregateData(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCPhysAggregateData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

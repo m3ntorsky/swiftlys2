@@ -9,9 +9,6 @@ internal partial class C_OP_GameDecalRenderer : CParticleFunctionRenderer, IC_OP
   public C_OP_GameDecalRenderer(nint handle) : base(handle) {
   }
 
-  public C_OP_GameDecalRenderer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol DecalGroupName {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x42DAAA6713ADF275));
   }

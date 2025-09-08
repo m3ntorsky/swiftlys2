@@ -9,9 +9,6 @@ internal partial class C_OP_RemapCPtoCP : CParticleFunctionPreEmission, IC_OP_Re
   public C_OP_RemapCPtoCP(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapCPtoCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int InputControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xF7F0A2676A869E3E));
   }

@@ -9,9 +9,6 @@ internal partial class CPulseTurtleGraphicsCursor : CPulseExecCursor, IPulseTurt
   public CPulseTurtleGraphicsCursor(nint handle) : base(handle) {
   }
 
-  public CPulseTurtleGraphicsCursor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Color Color {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x6153058ED7D017D8));
   }

@@ -9,9 +9,6 @@ internal partial class CHostageAlias_info_hostage_spawn : CHostage, IHostageAlia
   public CHostageAlias_info_hostage_spawn(nint handle) : base(handle) {
   }
 
-  public CHostageAlias_info_hostage_spawn(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

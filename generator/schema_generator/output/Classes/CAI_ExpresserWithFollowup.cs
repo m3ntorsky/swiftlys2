@@ -9,9 +9,6 @@ internal partial class CAI_ExpresserWithFollowup : CAI_Expresser, IAI_ExpresserW
   public CAI_ExpresserWithFollowup(nint handle) : base(handle) {
   }
 
-  public CAI_ExpresserWithFollowup(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

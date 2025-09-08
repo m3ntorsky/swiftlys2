@@ -9,9 +9,6 @@ internal partial class CBasePlatTrain : CBaseToggle, IBasePlatTrain {
   public CBasePlatTrain(nint handle) : base(handle) {
   }
 
-  public CBasePlatTrain(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge NoiseMoving {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x78773ABC415AB84B));
   }

@@ -9,9 +9,6 @@ internal partial class CFlashbang : CBaseCSGrenade, IFlashbang {
   public CFlashbang(nint handle) : base(handle) {
   }
 
-  public CFlashbang(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

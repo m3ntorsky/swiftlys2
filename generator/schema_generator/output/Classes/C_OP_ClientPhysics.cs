@@ -9,9 +9,6 @@ internal partial class C_OP_ClientPhysics : CParticleFunctionRenderer, IC_OP_Cli
   public C_OP_ClientPhysics(nint handle) : base(handle) {
   }
 
-  public C_OP_ClientPhysics(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString StrPhysicsType {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD58F5C47820348D9));
   }

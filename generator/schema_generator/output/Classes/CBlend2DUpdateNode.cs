@@ -9,20 +9,17 @@ internal partial class CBlend2DUpdateNode : CAnimUpdateNodeBase, IBlend2DUpdateN
   public CBlend2DUpdateNode(nint handle) : base(handle) {
   }
 
-  public CBlend2DUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVector Items {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xEA40B5A7A87EDAF));
   }
-
-  public ref CUtlVector< BlendItem_t > Items {
-    get => ref _Handle.AsRef<CUtlVector< BlendItem_t >>(Schema.GetOffset(0xEA40B5A7A87EDAF));
-  }
-  public ref CUtlVector< TagSpan_t > Tags {
-    get => ref _Handle.AsRef<CUtlVector< TagSpan_t >>(Schema.GetOffset(0xEA40B5AB46C8540));
+  public ref CUtlVector Tags {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xEA40B5AB46C8540));
   }
   public IParamSpanUpdater ParamSpans {
     get => new CParamSpanUpdater(_Handle + Schema.GetOffset(0xEA40B5ADAC91553));
   }
-  public ref CUtlVector< int32 > NodeItemIndices {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0xEA40B5AE050EB13));
+  public ref CUtlVector<int> NodeItemIndices {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xEA40B5AE050EB13));
   }
   public IAnimInputDamping Damping {
     get => new CAnimInputDamping(_Handle + Schema.GetOffset(0xEA40B5A15440FB5));

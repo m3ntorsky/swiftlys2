@@ -9,9 +9,6 @@ internal partial class CSimTimer : CSimpleSimTimer, ISimTimer {
   public CSimTimer(nint handle) : base(handle) {
   }
 
-  public CSimTimer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Interval {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB9B19F86320F7B8E));
   }

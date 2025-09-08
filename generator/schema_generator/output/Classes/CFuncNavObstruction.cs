@@ -9,9 +9,6 @@ internal partial class CFuncNavObstruction : CBaseModelEntity, IFuncNavObstructi
   public CFuncNavObstruction(nint handle) : base(handle) {
   }
 
-  public CFuncNavObstruction(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xCF9A1E413A7C5965));
   }

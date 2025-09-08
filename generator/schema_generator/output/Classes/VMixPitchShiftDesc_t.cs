@@ -9,9 +9,6 @@ internal partial class VMixPitchShiftDesc_t : SchemaClass, IVMixPitchShiftDesc_t
   public VMixPitchShiftDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixPitchShiftDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int GrainSampleCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE7EEA08D6AA1D059));
   }

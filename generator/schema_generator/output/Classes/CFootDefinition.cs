@@ -9,9 +9,6 @@ internal partial class CFootDefinition : SchemaClass, IFootDefinition {
   public CFootDefinition(nint handle) : base(handle) {
   }
 
-  public CFootDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xAA3BA2A34D8F5786));
   }

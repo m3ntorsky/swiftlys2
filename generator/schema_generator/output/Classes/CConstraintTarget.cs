@@ -9,9 +9,6 @@ internal partial class CConstraintTarget : SchemaClass, IConstraintTarget {
   public CConstraintTarget(nint handle) : base(handle) {
   }
 
-  public CConstraintTarget(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Quaternion Offset {
     get => ref _Handle.AsRef<Quaternion>(Schema.GetOffset(0x8A562794DB445327));
   }

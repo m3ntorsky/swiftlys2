@@ -9,9 +9,6 @@ internal partial class SheetSequenceIntegerId_t : SchemaClass, ISheetSequenceInt
   public SheetSequenceIntegerId_t(nint handle) : base(handle) {
   }
 
-  public SheetSequenceIntegerId_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint Value {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x7578626BDCB0894A));
   }

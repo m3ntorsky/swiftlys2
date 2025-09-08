@@ -9,9 +9,6 @@ internal partial class CSimpleSimTimer : SchemaClass, ISimpleSimTimer {
   public CSimpleSimTimer(nint handle) : base(handle) {
   }
 
-  public CSimpleSimTimer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IGameTime_t Next {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x4169D31C3BE2574E));
   }

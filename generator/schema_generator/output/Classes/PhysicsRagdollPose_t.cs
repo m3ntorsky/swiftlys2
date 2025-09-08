@@ -9,15 +9,6 @@ internal partial class PhysicsRagdollPose_t : SchemaClass, IPhysicsRagdollPose_t
   public PhysicsRagdollPose_t(nint handle) : base(handle) {
   }
 
-  public PhysicsRagdollPose_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CTransform > Transforms {
-    get => ref _Handle.AsRef<CUtlVector< CTransform >>(Schema.GetOffset(0x54A98BF4852CD38));
-  }
-  public ref CHandle< CBaseEntity > Owner {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x54A98BFF6D89572));
-  }
   public ref bool SetFromDebugHistory {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x54A98BF136013F6));
   }

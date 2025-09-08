@@ -9,9 +9,6 @@ internal partial class CLogicAchievement : CLogicalEntity, ILogicAchievement {
   public CLogicAchievement(nint handle) : base(handle) {
   }
 
-  public CLogicAchievement(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE8C4579F3A7C5965));
   }

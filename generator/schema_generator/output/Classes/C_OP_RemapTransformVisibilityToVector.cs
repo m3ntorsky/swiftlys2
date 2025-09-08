@@ -9,9 +9,6 @@ internal partial class C_OP_RemapTransformVisibilityToVector : CParticleFunction
   public C_OP_RemapTransformVisibilityToVector(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapTransformVisibilityToVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ParticleSetMethod_t SetMethod {
     get => ref _Handle.AsRef<ParticleSetMethod_t>(Schema.GetOffset(0x3F1181A0FB53C31E));
   }

@@ -9,9 +9,6 @@ internal partial class CPulseGraphInstance_TurtleGraphics : CBasePulseGraphInsta
   public CPulseGraphInstance_TurtleGraphics(nint handle) : base(handle) {
   }
 
-  public CPulseGraphInstance_TurtleGraphics(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

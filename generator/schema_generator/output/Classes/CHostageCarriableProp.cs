@@ -9,9 +9,6 @@ internal partial class CHostageCarriableProp : CBaseAnimGraph, IHostageCarriable
   public CHostageCarriableProp(nint handle) : base(handle) {
   }
 
-  public CHostageCarriableProp(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

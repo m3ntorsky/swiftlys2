@@ -9,9 +9,6 @@ internal partial class CFollowPathUpdateNode : CUnaryUpdateNode, IFollowPathUpda
   public CFollowPathUpdateNode(nint handle) : base(handle) {
   }
 
-  public CFollowPathUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float BlendOutTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x20514621EAA5AD2B));
   }

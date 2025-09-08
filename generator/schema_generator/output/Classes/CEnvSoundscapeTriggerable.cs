@@ -9,9 +9,6 @@ internal partial class CEnvSoundscapeTriggerable : CEnvSoundscape, IEnvSoundscap
   public CEnvSoundscapeTriggerable(nint handle) : base(handle) {
   }
 
-  public CEnvSoundscapeTriggerable(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

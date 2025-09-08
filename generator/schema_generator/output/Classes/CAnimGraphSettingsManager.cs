@@ -9,11 +9,8 @@ internal partial class CAnimGraphSettingsManager : SchemaClass, IAnimGraphSettin
   public CAnimGraphSettingsManager(nint handle) : base(handle) {
   }
 
-  public CAnimGraphSettingsManager(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CSmartPtr< CAnimGraphSettingsGroup > > SettingsGroups {
-    get => ref _Handle.AsRef<CUtlVector< CSmartPtr< CAnimGraphSettingsGroup > >>(Schema.GetOffset(0x53B994DB178D6408));
+  public ref CUtlVector SettingsGroups {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x53B994DB178D6408));
   }
 
 

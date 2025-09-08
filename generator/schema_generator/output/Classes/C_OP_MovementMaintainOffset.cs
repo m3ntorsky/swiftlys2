@@ -9,9 +9,6 @@ internal partial class C_OP_MovementMaintainOffset : CParticleFunctionOperator, 
   public C_OP_MovementMaintainOffset(nint handle) : base(handle) {
   }
 
-  public C_OP_MovementMaintainOffset(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Offset {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD9B3E796BD25CC2A));
   }

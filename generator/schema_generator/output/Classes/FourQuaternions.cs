@@ -9,9 +9,6 @@ internal partial class FourQuaternions : SchemaClass, IFourQuaternions {
   public FourQuaternions(nint handle) : base(handle) {
   }
 
-  public FourQuaternions(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref fltx4 X {
     get => ref _Handle.AsRef<fltx4>(Schema.GetOffset(0x438DAD7AFD0C5087));
   }

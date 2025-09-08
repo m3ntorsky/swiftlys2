@@ -9,9 +9,6 @@ internal partial class CAnimMovement : SchemaClass, IAnimMovement {
   public CAnimMovement(nint handle) : base(handle) {
   }
 
-  public CAnimMovement(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Endframe {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xF78C2AA2BD8E2D9B));
   }

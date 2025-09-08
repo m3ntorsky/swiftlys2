@@ -9,9 +9,6 @@ internal partial class TextureControls_t : SchemaClass, ITextureControls_t {
   public TextureControls_t(nint handle) : base(handle) {
   }
 
-  public TextureControls_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionRendererFloatInput FinalTextureScaleU {
     get => new CParticleCollectionRendererFloatInput(_Handle + Schema.GetOffset(0x6019C255986FEDD1));
   }

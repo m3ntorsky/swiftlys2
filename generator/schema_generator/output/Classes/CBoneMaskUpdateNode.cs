@@ -9,9 +9,6 @@ internal partial class CBoneMaskUpdateNode : CBinaryUpdateNode, IBoneMaskUpdateN
   public CBoneMaskUpdateNode(nint handle) : base(handle) {
   }
 
-  public CBoneMaskUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int WeightListIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x213CBA4D30288377));
   }

@@ -9,9 +9,6 @@ internal partial class C_OP_ConnectParentParticleToNearest : CParticleFunctionOp
   public C_OP_ConnectParentParticleToNearest(nint handle) : base(handle) {
   }
 
-  public C_OP_ConnectParentParticleToNearest(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int FirstControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9C608BD072117650));
   }

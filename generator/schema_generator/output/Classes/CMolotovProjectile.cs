@@ -9,12 +9,6 @@ internal partial class CMolotovProjectile : CBaseCSGrenadeProjectile, IMolotovPr
   public CMolotovProjectile(nint handle) : base(handle) {
   }
 
-  public CMolotovProjectile(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref bool IsIncGrenade {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA239EA8F9D1C12B7));
-  }
   public ref bool Detonated {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA239EA8F97D602AF));
   }

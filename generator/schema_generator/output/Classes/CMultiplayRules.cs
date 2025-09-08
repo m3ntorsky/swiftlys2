@@ -9,9 +9,6 @@ internal partial class CMultiplayRules : CGameRules, IMultiplayRules {
   public CMultiplayRules(nint handle) : base(handle) {
   }
 
-  public CMultiplayRules(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

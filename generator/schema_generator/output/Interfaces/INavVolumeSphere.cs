@@ -4,5 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INavVolumeSphere : INavVolume {
 
-
+  public ref Vector Center { get; }
+  
+  public ref float Radius { get; }
+  
 }

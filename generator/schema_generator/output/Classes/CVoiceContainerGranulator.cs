@@ -9,9 +9,6 @@ internal partial class CVoiceContainerGranulator : CVoiceContainerBase, IVoiceCo
   public CVoiceContainerGranulator(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerGranulator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float GrainLength {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x30F273589D2BE672));
   }
@@ -27,8 +24,8 @@ internal partial class CVoiceContainerGranulator : CVoiceContainerBase, IVoiceCo
   public ref bool ShouldWraparound {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x30F273585F9E45A3));
   }
-  public ref CStrongHandle< InfoForResourceTypeCVoiceContainerBase > SourceAudio {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCVoiceContainerBase >>(Schema.GetOffset(0x30F27358E5E00DE2));
+  public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> SourceAudio {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>>(Schema.GetOffset(0x30F27358E5E00DE2));
   }
 
 

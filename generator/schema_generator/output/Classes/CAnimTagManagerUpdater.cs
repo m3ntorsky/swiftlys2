@@ -9,11 +9,8 @@ internal partial class CAnimTagManagerUpdater : SchemaClass, IAnimTagManagerUpda
   public CAnimTagManagerUpdater(nint handle) : base(handle) {
   }
 
-  public CAnimTagManagerUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CSmartPtr< CAnimTagBase > > Tags {
-    get => ref _Handle.AsRef<CUtlVector< CSmartPtr< CAnimTagBase > >>(Schema.GetOffset(0xF09D3FB1B46C8540));
+  public ref CUtlVector Tags {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xF09D3FB1B46C8540));
   }
 
 

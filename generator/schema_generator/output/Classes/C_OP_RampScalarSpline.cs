@@ -9,9 +9,6 @@ internal partial class C_OP_RampScalarSpline : CParticleFunctionOperator, IC_OP_
   public C_OP_RampScalarSpline(nint handle) : base(handle) {
   }
 
-  public C_OP_RampScalarSpline(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RateMin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4ADFC178645AF561));
   }

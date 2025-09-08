@@ -9,9 +9,6 @@ internal partial class CPathQueryComponent : CEntityComponent, IPathQueryCompone
   public CPathQueryComponent(nint handle) : base(handle) {
   }
 
-  public CPathQueryComponent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

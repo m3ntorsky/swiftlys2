@@ -9,9 +9,6 @@ internal partial class CDebugHistory : CBaseEntity, IDebugHistory {
   public CDebugHistory(nint handle) : base(handle) {
   }
 
-  public CDebugHistory(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int NpcEvents {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD14757AF8F70D3F5));
   }

@@ -9,9 +9,6 @@ internal partial class C_OP_Orient2DRelToCP : CParticleFunctionOperator, IC_OP_O
   public C_OP_Orient2DRelToCP(nint handle) : base(handle) {
   }
 
-  public C_OP_Orient2DRelToCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RotOffset {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD330A83D1EA9CDF));
   }

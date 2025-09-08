@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCPostProcessingResource : SchemaClass,
   public InfoForResourceTypeCPostProcessingResource(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCPostProcessingResource(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

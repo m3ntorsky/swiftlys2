@@ -9,9 +9,6 @@ internal partial class PointDefinitionWithTimeValues_t : PointDefinition_t, IPoi
   public PointDefinitionWithTimeValues_t(nint handle) : base(handle) {
   }
 
-  public PointDefinitionWithTimeValues_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float TimeDuration {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF2BE4F108B84C052));
   }

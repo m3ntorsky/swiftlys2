@@ -9,9 +9,6 @@ internal partial class ParticleAttributeIndex_t : SchemaClass, IParticleAttribut
   public ParticleAttributeIndex_t(nint handle) : base(handle) {
   }
 
-  public ParticleAttributeIndex_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Value {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xB44A6FC8DCB0894A));
   }

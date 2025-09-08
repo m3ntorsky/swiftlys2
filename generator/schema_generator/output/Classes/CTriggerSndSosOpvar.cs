@@ -9,11 +9,8 @@ internal partial class CTriggerSndSosOpvar : CBaseTrigger, ITriggerSndSosOpvar {
   public CTriggerSndSosOpvar(nint handle) : base(handle) {
   }
 
-  public CTriggerSndSosOpvar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CHandle< CBaseEntity > > TouchingPlayers {
-    get => ref _Handle.AsRef<CUtlVector< CHandle< CBaseEntity > >>(Schema.GetOffset(0xD4B7BEBCD365BA28));
+  public ref CUtlVector<CHandle<CBaseEntity>> TouchingPlayers {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(Schema.GetOffset(0xD4B7BEBCD365BA28));
   }
   public ref Vector Position {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD4B7BEBC4142D14C));
@@ -40,13 +37,13 @@ internal partial class CTriggerSndSosOpvar : CBaseTrigger, ITriggerSndSosOpvar {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD4B7BEBC384D3350));
   }
   public ISchemaFixedString OpvarNameChar {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xD4B7BEBC55F3CFF0));
+    get => new SchemaFixedString(_Handle, 0xD4B7BEBC55F3CFF0, 256, 1, 1);
   }
   public ISchemaFixedString StackNameChar {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xD4B7BEBC87998C38));
+    get => new SchemaFixedString(_Handle, 0xD4B7BEBC87998C38, 256, 1, 1);
   }
   public ISchemaFixedString OperatorNameChar {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xD4B7BEBC9824CD12));
+    get => new SchemaFixedString(_Handle, 0xD4B7BEBC9824CD12, 256, 1, 1);
   }
   public ref Vector VecNormPos {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD4B7BEBC66F7FECF));

@@ -9,9 +9,6 @@ internal partial class CBoneConstraintBase : SchemaClass, IBoneConstraintBase {
   public CBoneConstraintBase(nint handle) : base(handle) {
   }
 
-  public CBoneConstraintBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

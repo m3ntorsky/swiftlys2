@@ -9,9 +9,6 @@ internal partial class CTestPulseIO : CLogicalEntity, ITestPulseIO {
   public CTestPulseIO(nint handle) : base(handle) {
   }
 
-  public CTestPulseIO(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnVariantVoid {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x3CAD66134B0C5D73));
   }

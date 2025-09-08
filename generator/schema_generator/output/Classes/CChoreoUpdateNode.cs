@@ -9,9 +9,6 @@ internal partial class CChoreoUpdateNode : CUnaryUpdateNode, IChoreoUpdateNode {
   public CChoreoUpdateNode(nint handle) : base(handle) {
   }
 
-  public CChoreoUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

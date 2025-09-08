@@ -9,9 +9,6 @@ internal partial class VMixPlateverbDesc_t : SchemaClass, IVMixPlateverbDesc_t {
   public VMixPlateverbDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixPlateverbDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Prefilter {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xFF651FB0FAF1E06A));
   }

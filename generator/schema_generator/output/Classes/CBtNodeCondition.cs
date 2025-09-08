@@ -9,9 +9,6 @@ internal partial class CBtNodeCondition : CBtNodeDecorator, IBtNodeCondition {
   public CBtNodeCondition(nint handle) : base(handle) {
   }
 
-  public CBtNodeCondition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Negated {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD9C2E7ED3803BF0D));
   }

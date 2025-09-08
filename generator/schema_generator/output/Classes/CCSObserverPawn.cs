@@ -9,9 +9,6 @@ internal partial class CCSObserverPawn : CCSPlayerPawnBase, ICSObserverPawn {
   public CCSObserverPawn(nint handle) : base(handle) {
   }
 
-  public CCSObserverPawn(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,17 +9,14 @@ internal partial class MaterialOverride_t : BaseSceneObjectOverride_t, IMaterial
   public MaterialOverride_t(nint handle) : base(handle) {
   }
 
-  public MaterialOverride_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint SubSceneObject {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xFB7BFECB55C3CCBC));
   }
   public ref uint DrawCallIndex {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xFB7BFECBFA5614D5));
   }
-  public ref CStrongHandle< InfoForResourceTypeIMaterial2 > Material {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0xFB7BFECB972B1076));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0xFB7BFECB972B1076));
   }
   public ref Vector LinearTintColor {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xFB7BFECB6901D28C));

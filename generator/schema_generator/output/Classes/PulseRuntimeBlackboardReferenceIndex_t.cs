@@ -9,9 +9,6 @@ internal partial class PulseRuntimeBlackboardReferenceIndex_t : SchemaClass, IPu
   public PulseRuntimeBlackboardReferenceIndex_t(nint handle) : base(handle) {
   }
 
-  public PulseRuntimeBlackboardReferenceIndex_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short Value {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xE01C0CE3DCB0894A));
   }

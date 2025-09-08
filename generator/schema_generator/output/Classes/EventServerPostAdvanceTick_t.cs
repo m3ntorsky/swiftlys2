@@ -9,9 +9,6 @@ internal partial class EventServerPostAdvanceTick_t : EventPostAdvanceTick_t, IE
   public EventServerPostAdvanceTick_t(nint handle) : base(handle) {
   }
 
-  public EventServerPostAdvanceTick_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

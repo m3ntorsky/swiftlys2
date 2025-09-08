@@ -9,15 +9,7 @@ internal partial class CCSPlayer_HostageServices : CPlayerPawnComponent, ICSPlay
   public CCSPlayer_HostageServices(nint handle) : base(handle) {
   }
 
-  public CCSPlayer_HostageServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref CHandle< CBaseEntity > CarriedHostage {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1742920F695FDF3C));
-  }
-  public ref CHandle< CBaseEntity > CarriedHostageProp {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1742920F7270EB65));
-  }
 
   public void CarriedHostageUpdated() {
     Schema.Update(_Handle, 0x1742920F695FDF3C);

@@ -9,9 +9,6 @@ internal partial class CSosSoundEventGroupSchema : SchemaClass, ISosSoundEventGr
   public CSosSoundEventGroupSchema(nint handle) : base(handle) {
   }
 
-  public CSosSoundEventGroupSchema(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x25BA87004D8F5786));
   }
@@ -37,7 +34,7 @@ internal partial class CSosSoundEventGroupSchema : SchemaClass, ISosSoundEventGr
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x25BA870068189B78));
   }
   public ISosGroupActionSchema Actions {
-    get => new CSosGroupActionSchema(_Handle + Schema.GetOffset(0x25BA8700D36B7908));
+    get => new CSosGroupActionSchema(_Handle, 0x25BA8700D36B7908, 4, 8, 8);
   }
 
 

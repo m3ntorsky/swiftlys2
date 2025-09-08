@@ -9,44 +9,11 @@ internal partial class CPointValueRemapper : CBaseEntity, IPointValueRemapper {
   public CPointValueRemapper(nint handle) : base(handle) {
   }
 
-  public CPointValueRemapper(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref bool Disabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA8CB433D3A7C5965));
-  }
-  public ref bool UpdateOnClient {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA8CB433DAF3BE806));
-  }
-  public ref ValueRemapperInputType_t InputType {
-    get => ref _Handle.AsRef<ValueRemapperInputType_t>(Schema.GetOffset(0xA8CB433DBFD8A33F));
-  }
   public ref CUtlSymbolLarge RemapLineStartName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433DD35A8A1B));
   }
   public ref CUtlSymbolLarge RemapLineEndName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D104A9202));
-  }
-  public ref CHandle< CBaseEntity > RemapLineStart {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xA8CB433D5B4CD88A));
-  }
-  public ref CHandle< CBaseEntity > RemapLineEnd {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xA8CB433D696F1CDF));
-  }
-  public ref float MaximumChangePerSecond {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8CB433D31BE784E));
-  }
-  public ref float DisengageDistance {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8CB433D4FB62599));
-  }
-  public ref float EngageDistance {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8CB433D79DA89F7));
-  }
-  public ref bool RequiresUseKey {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA8CB433D9780DD63));
-  }
-  public ref ValueRemapperOutputType_t OutputType {
-    get => ref _Handle.AsRef<ValueRemapperOutputType_t>(Schema.GetOffset(0xA8CB433DA9E2FFB0));
   }
   public ref CUtlSymbolLarge OutputEntityName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D0F9F4D94));
@@ -60,32 +27,11 @@ internal partial class CPointValueRemapper : CBaseEntity, IPointValueRemapper {
   public ref CUtlSymbolLarge OutputEntity4Name {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433DCCF46672));
   }
-  public ref CUtlVector< CHandle< CBaseEntity > > OutputEntities {
-    get => ref _Handle.AsRef<CUtlVector< CHandle< CBaseEntity > >>(Schema.GetOffset(0xA8CB433D7E483685));
-  }
-  public ref ValueRemapperHapticsType_t HapticsType {
-    get => ref _Handle.AsRef<ValueRemapperHapticsType_t>(Schema.GetOffset(0xA8CB433D50735A5F));
-  }
-  public ref ValueRemapperMomentumType_t MomentumType {
-    get => ref _Handle.AsRef<ValueRemapperMomentumType_t>(Schema.GetOffset(0xA8CB433D6875FE23));
-  }
-  public ref float MomentumModifier {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8CB433DA9B3FFFC));
-  }
-  public ref float SnapValue {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8CB433D6A65638C));
-  }
   public ref float CurrentMomentum {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8CB433DBCCCE092));
   }
-  public ref ValueRemapperRatchetType_t RatchetType {
-    get => ref _Handle.AsRef<ValueRemapperRatchetType_t>(Schema.GetOffset(0xA8CB433DCAD3FF06));
-  }
   public ref float RatchetOffset {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8CB433DDA07538B));
-  }
-  public ref float InputOffset {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8CB433D857DD592));
   }
   public ref bool Engaged {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA8CB433D25A9B25E));
@@ -102,8 +48,8 @@ internal partial class CPointValueRemapper : CBaseEntity, IPointValueRemapper {
   public ref Vector PreviousTestPoint {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xA8CB433DBD7D11C2));
   }
-  public ref CHandle< CBasePlayerPawn > UsingPlayer {
-    get => ref _Handle.AsRef<CHandle< CBasePlayerPawn >>(Schema.GetOffset(0xA8CB433D048D4614));
+  public ref CHandle<CBasePlayerPawn> UsingPlayer {
+    get => ref _Handle.AsRef<CHandle<CBasePlayerPawn>>(Schema.GetOffset(0xA8CB433D048D4614));
   }
   public ref float CustomOutputValue {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8CB433D952E20FE));

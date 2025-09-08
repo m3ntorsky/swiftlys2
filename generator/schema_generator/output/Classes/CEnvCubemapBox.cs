@@ -9,9 +9,6 @@ internal partial class CEnvCubemapBox : CEnvCubemap, IEnvCubemapBox {
   public CEnvCubemapBox(nint handle) : base(handle) {
   }
 
-  public CEnvCubemapBox(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

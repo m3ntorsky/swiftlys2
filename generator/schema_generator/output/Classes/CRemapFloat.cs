@@ -9,11 +9,8 @@ internal partial class CRemapFloat : SchemaClass, IRemapFloat {
   public CRemapFloat(nint handle) : base(handle) {
   }
 
-  public CRemapFloat(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<float32> Value {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0x49763A6B7F437844));
+  public ISchemaFixedArray<float> Value {
+    get => new SchemaFixedArray<float>(_Handle, 0x49763A6B7F437844, 4, 4, 4);
   }
 
 

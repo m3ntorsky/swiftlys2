@@ -9,9 +9,6 @@ internal partial class CPrecipitation : CBaseTrigger, IPrecipitation {
   public CPrecipitation(nint handle) : base(handle) {
   }
 
-  public CPrecipitation(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

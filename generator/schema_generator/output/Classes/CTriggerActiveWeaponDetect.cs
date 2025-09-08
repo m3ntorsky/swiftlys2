@@ -9,9 +9,6 @@ internal partial class CTriggerActiveWeaponDetect : CBaseTrigger, ITriggerActive
   public CTriggerActiveWeaponDetect(nint handle) : base(handle) {
   }
 
-  public CTriggerActiveWeaponDetect(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnTouchedActiveWeapon {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x68F50CC727D5D394));
   }

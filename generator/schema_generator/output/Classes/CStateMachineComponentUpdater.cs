@@ -9,9 +9,6 @@ internal partial class CStateMachineComponentUpdater : CAnimComponentUpdater, IS
   public CStateMachineComponentUpdater(nint handle) : base(handle) {
   }
 
-  public CStateMachineComponentUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimStateMachineUpdater StateMachine {
     get => new CAnimStateMachineUpdater(_Handle + Schema.GetOffset(0x25255200BB7EEF2F));
   }

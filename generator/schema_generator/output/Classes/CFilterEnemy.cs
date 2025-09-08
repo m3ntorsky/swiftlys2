@@ -9,9 +9,6 @@ internal partial class CFilterEnemy : CBaseFilter, IFilterEnemy {
   public CFilterEnemy(nint handle) : base(handle) {
   }
 
-  public CFilterEnemy(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge EnemyName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x23F92540C9E922A8));
   }

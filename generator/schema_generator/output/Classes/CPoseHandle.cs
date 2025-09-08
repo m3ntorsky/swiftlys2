@@ -9,9 +9,6 @@ internal partial class CPoseHandle : SchemaClass, IPoseHandle {
   public CPoseHandle(nint handle) : base(handle) {
   }
 
-  public CPoseHandle(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort Index {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x2F05C439B73DBE67));
   }

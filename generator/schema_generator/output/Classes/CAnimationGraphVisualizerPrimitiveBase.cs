@@ -9,14 +9,11 @@ internal partial class CAnimationGraphVisualizerPrimitiveBase : SchemaClass, IAn
   public CAnimationGraphVisualizerPrimitiveBase(nint handle) : base(handle) {
   }
 
-  public CAnimationGraphVisualizerPrimitiveBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CAnimationGraphVisualizerPrimitiveType Type {
     get => ref _Handle.AsRef<CAnimationGraphVisualizerPrimitiveType>(Schema.GetOffset(0x5204B0848ED6D5CD));
   }
   public IAnimNodeID OwningAnimNodePaths {
-    get => new AnimNodeID(_Handle + Schema.GetOffset(0x5204B08461A2E55C));
+    get => new AnimNodeID(_Handle, 0x5204B08461A2E55C, 11, 4, 4);
   }
   public ref int OwningAnimNodePathCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5204B0844241A972));

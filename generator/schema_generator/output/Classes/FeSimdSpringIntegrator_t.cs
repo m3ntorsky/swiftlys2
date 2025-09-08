@@ -9,11 +9,8 @@ internal partial class FeSimdSpringIntegrator_t : SchemaClass, IFeSimdSpringInte
   public FeSimdSpringIntegrator_t(nint handle) : base(handle) {
   }
 
-  public FeSimdSpringIntegrator_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<uint16[4]> Node {
-    get => new SchemaFixedArray<uint16[4]>(_Handle + Schema.GetOffset(0xF9413B96CD6694B9));
+  public ISchemaFixedArray<ushort[4]> Node {
+    get => new SchemaFixedArray<ushort[4]>(_Handle, 0xF9413B96CD6694B9, 2, 8, 2);
   }
   public ref fltx4 SpringRestLength {
     get => ref _Handle.AsRef<fltx4>(Schema.GetOffset(0xF9413B9628C609E8));

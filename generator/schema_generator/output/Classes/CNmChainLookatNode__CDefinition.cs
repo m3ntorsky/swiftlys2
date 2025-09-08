@@ -9,9 +9,6 @@ internal partial class CNmChainLookatNode__CDefinition : CNmPassthroughNode::CDe
   public CNmChainLookatNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmChainLookatNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol ChainEndBoneID {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x3D36690222B26274));
   }

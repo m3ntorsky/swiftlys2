@@ -9,9 +9,6 @@ internal partial class ResponseParams : SchemaClass, IResponseParams {
   public ResponseParams(nint handle) : base(handle) {
   }
 
-  public ResponseParams(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short Odds {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x5C5BE8C4E9B76DD7));
   }

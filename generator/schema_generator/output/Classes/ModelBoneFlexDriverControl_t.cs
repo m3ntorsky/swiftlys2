@@ -9,9 +9,6 @@ internal partial class ModelBoneFlexDriverControl_t : SchemaClass, IModelBoneFle
   public ModelBoneFlexDriverControl_t(nint handle) : base(handle) {
   }
 
-  public ModelBoneFlexDriverControl_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ModelBoneFlexComponent_t BoneComponent {
     get => ref _Handle.AsRef<ModelBoneFlexComponent_t>(Schema.GetOffset(0x7DDCB3413C2E9E9E));
   }

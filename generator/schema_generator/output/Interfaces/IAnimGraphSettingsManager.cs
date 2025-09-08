@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimGraphSettingsManager : ISchemaClass {
 
-
+  public ref CUtlVector SettingsGroups { get; }
+  
 }

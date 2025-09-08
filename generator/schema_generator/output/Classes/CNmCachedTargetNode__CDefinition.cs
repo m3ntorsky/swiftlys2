@@ -9,9 +9,6 @@ internal partial class CNmCachedTargetNode__CDefinition : CNmTargetValueNode::CD
   public CNmCachedTargetNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmCachedTargetNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short InputValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x61F789E895E89F27));
   }

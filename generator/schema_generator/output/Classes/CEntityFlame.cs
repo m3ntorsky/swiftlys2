@@ -9,15 +9,6 @@ internal partial class CEntityFlame : CBaseEntity, IEntityFlame {
   public CEntityFlame(nint handle) : base(handle) {
   }
 
-  public CEntityFlame(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CHandle< CBaseEntity > EntAttached {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x386F199409F89DF0));
-  }
-  public ref bool CheapEffect {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x386F1994DF421B51));
-  }
   public ref float Size {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x386F19944CF0EBC6));
   }
@@ -33,8 +24,8 @@ internal partial class CEntityFlame : CBaseEntity, IEntityFlame {
   public IGameTime_t Lifetime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x386F199439B35564));
   }
-  public ref CHandle< CBaseEntity > Attacker {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x386F199468573D54));
+  public ref CHandle<CBaseEntity> Attacker {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x386F199468573D54));
   }
   public ref float DirectDamagePerSecond {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x386F199482A435AE));

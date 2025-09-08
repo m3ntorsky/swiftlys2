@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvWind : IBaseEntity {
 
-
+  public IEnvWindShared EnvWindShared { get; }
+  
 }

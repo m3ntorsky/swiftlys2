@@ -9,9 +9,6 @@ internal partial class C_OP_ConstrainDistance : CParticleFunctionConstraint, IC_
   public C_OP_ConstrainDistance(nint handle) : base(handle) {
   }
 
-  public C_OP_ConstrainDistance(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput MinDistance {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0xDF3E3FA1F016B7AC));
   }

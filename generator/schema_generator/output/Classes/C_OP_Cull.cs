@@ -9,9 +9,6 @@ internal partial class C_OP_Cull : CParticleFunctionOperator, IC_OP_Cull {
   public C_OP_Cull(nint handle) : base(handle) {
   }
 
-  public C_OP_Cull(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float CullPerc {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD1E3C83568069ED3));
   }

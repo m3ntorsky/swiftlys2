@@ -9,9 +9,6 @@ internal partial class CCSObserver_MovementServices : CPlayer_MovementServices, 
   public CCSObserver_MovementServices(nint handle) : base(handle) {
   }
 
-  public CCSObserver_MovementServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

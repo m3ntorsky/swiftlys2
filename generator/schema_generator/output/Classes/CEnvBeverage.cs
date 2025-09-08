@@ -9,9 +9,6 @@ internal partial class CEnvBeverage : CBaseEntity, IEnvBeverage {
   public CEnvBeverage(nint handle) : base(handle) {
   }
 
-  public CEnvBeverage(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool CanInDispenser {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x205E38FCDFB6F3B5));
   }

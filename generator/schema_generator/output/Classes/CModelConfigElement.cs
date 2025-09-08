@@ -9,14 +9,11 @@ internal partial class CModelConfigElement : SchemaClass, IModelConfigElement {
   public CModelConfigElement(nint handle) : base(handle) {
   }
 
-  public CModelConfigElement(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString ElementName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x240CE3EFEBDAB614));
   }
-  public ref CUtlVector< CModelConfigElement* > NestedElements {
-    get => ref _Handle.AsRef<CUtlVector< CModelConfigElement* >>(Schema.GetOffset(0x240CE3EFA31BDBC3));
+  public ref CUtlVector<PointerTo<CModelConfigElement>> NestedElements {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CModelConfigElement>>>(Schema.GetOffset(0x240CE3EFA31BDBC3));
   }
 
 

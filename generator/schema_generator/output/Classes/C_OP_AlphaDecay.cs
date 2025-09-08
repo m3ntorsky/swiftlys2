@@ -9,9 +9,6 @@ internal partial class C_OP_AlphaDecay : CParticleFunctionOperator, IC_OP_AlphaD
   public C_OP_AlphaDecay(nint handle) : base(handle) {
   }
 
-  public C_OP_AlphaDecay(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MinAlpha {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x26EE2FFBEC24C4FF));
   }

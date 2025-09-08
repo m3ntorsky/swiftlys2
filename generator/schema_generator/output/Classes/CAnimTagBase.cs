@@ -9,9 +9,6 @@ internal partial class CAnimTagBase : SchemaClass, IAnimTagBase {
   public CAnimTagBase(nint handle) : base(handle) {
   }
 
-  public CAnimTagBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol Name {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x8F7709C44D8F5786));
   }

@@ -9,9 +9,6 @@ internal partial class C_INIT_InitialSequenceFromModel : CParticleFunctionInitia
   public C_INIT_InitialSequenceFromModel(nint handle) : base(handle) {
   }
 
-  public C_INIT_InitialSequenceFromModel(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xBA160A183F31A6BD));
   }

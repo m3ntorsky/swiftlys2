@@ -9,9 +9,6 @@ internal partial class CNmCurrentSyncEventIDNode__CDefinition : CNmIDValueNode::
   public CNmCurrentSyncEventIDNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmCurrentSyncEventIDNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short SourceStateNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x792E5F1463F0228C));
   }

@@ -9,9 +9,6 @@ internal partial class CCommentarySystem : SchemaClass, ICommentarySystem {
   public CCommentarySystem(nint handle) : base(handle) {
   }
 
-  public CCommentarySystem(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool CommentaryConvarsChanging {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x87CBBE6A7FB57A2D));
   }
@@ -30,17 +27,17 @@ internal partial class CCommentarySystem : SchemaClass, ICommentarySystem {
   public ref bool IsFirstSpawnGroupToLoad {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x87CBBE6A1BDE1032));
   }
-  public ref CHandle< CPointCommentaryNode > CurrentNode {
-    get => ref _Handle.AsRef<CHandle< CPointCommentaryNode >>(Schema.GetOffset(0x87CBBE6A5C1029D4));
+  public ref CHandle<CPointCommentaryNode> CurrentNode {
+    get => ref _Handle.AsRef<CHandle<CPointCommentaryNode>>(Schema.GetOffset(0x87CBBE6A5C1029D4));
   }
-  public ref CHandle< CPointCommentaryNode > ActiveCommentaryNode {
-    get => ref _Handle.AsRef<CHandle< CPointCommentaryNode >>(Schema.GetOffset(0x87CBBE6AEA08BE3C));
+  public ref CHandle<CPointCommentaryNode> ActiveCommentaryNode {
+    get => ref _Handle.AsRef<CHandle<CPointCommentaryNode>>(Schema.GetOffset(0x87CBBE6AEA08BE3C));
   }
-  public ref CHandle< CPointCommentaryNode > LastCommentaryNode {
-    get => ref _Handle.AsRef<CHandle< CPointCommentaryNode >>(Schema.GetOffset(0x87CBBE6A33A2318A));
+  public ref CHandle<CPointCommentaryNode> LastCommentaryNode {
+    get => ref _Handle.AsRef<CHandle<CPointCommentaryNode>>(Schema.GetOffset(0x87CBBE6A33A2318A));
   }
-  public ref CUtlVector< CHandle< CPointCommentaryNode > > Nodes {
-    get => ref _Handle.AsRef<CUtlVector< CHandle< CPointCommentaryNode > >>(Schema.GetOffset(0x87CBBE6A5CCA593A));
+  public ref CUtlVector<CHandle<CPointCommentaryNode>> Nodes {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CPointCommentaryNode>>>(Schema.GetOffset(0x87CBBE6A5CCA593A));
   }
 
 

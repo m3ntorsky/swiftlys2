@@ -9,9 +9,6 @@ internal partial class CNmFloatSwitchNode__CDefinition : CNmFloatValueNode::CDef
   public CNmFloatSwitchNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFloatSwitchNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short SwitchValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x6D97CCCD7FBD7561));
   }

@@ -9,9 +9,6 @@ internal partial class C_OP_RenderStandardLight : CParticleFunctionRenderer, IC_
   public C_OP_RenderStandardLight(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderStandardLight(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ParticleLightTypeChoiceList_t LightType {
     get => ref _Handle.AsRef<ParticleLightTypeChoiceList_t>(Schema.GetOffset(0x40395A8418C7B4A3));
   }

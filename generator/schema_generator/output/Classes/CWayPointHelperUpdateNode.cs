@@ -9,9 +9,6 @@ internal partial class CWayPointHelperUpdateNode : CUnaryUpdateNode, IWayPointHe
   public CWayPointHelperUpdateNode(nint handle) : base(handle) {
   }
 
-  public CWayPointHelperUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float StartCycle {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x109BD628ABB46051));
   }

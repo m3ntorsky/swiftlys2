@@ -9,9 +9,6 @@ internal partial class CInfoSpawnGroupLoadUnload : CLogicalEntity, IInfoSpawnGro
   public CInfoSpawnGroupLoadUnload(nint handle) : base(handle) {
   }
 
-  public CInfoSpawnGroupLoadUnload(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnSpawnGroupLoadStarted {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x2537640F52B8B787));
   }

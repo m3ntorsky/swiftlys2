@@ -9,9 +9,6 @@ internal partial class C_INIT_CreateWithinSphereTransform : CParticleFunctionIni
   public C_INIT_CreateWithinSphereTransform(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreateWithinSphereTransform(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput RadiusMin {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0x97F9AC345AD00941));
   }

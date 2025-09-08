@@ -9,9 +9,6 @@ internal partial class CSoundOpvarSetPointEntity : CSoundOpvarSetPointBase, ISou
   public CSoundOpvarSetPointEntity(nint handle) : base(handle) {
   }
 
-  public CSoundOpvarSetPointEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnEnter {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x20C7B9D2BEFE0C56));
   }

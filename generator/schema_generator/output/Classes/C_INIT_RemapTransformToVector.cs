@@ -9,9 +9,6 @@ internal partial class C_INIT_RemapTransformToVector : CParticleFunctionInitiali
   public C_INIT_RemapTransformToVector(nint handle) : base(handle) {
   }
 
-  public C_INIT_RemapTransformToVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0xED3971B7E5729606));
   }

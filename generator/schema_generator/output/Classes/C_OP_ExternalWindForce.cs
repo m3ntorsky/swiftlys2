@@ -9,9 +9,6 @@ internal partial class C_OP_ExternalWindForce : CParticleFunctionForce, IC_OP_Ex
   public C_OP_ExternalWindForce(nint handle) : base(handle) {
   }
 
-  public C_OP_ExternalWindForce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleVecInput SamplePosition {
     get => new CPerParticleVecInput(_Handle + Schema.GetOffset(0xFE6646FBC3F6C534));
   }

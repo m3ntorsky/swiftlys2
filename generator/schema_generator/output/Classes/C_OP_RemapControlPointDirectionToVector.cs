@@ -9,9 +9,6 @@ internal partial class C_OP_RemapControlPointDirectionToVector : CParticleFuncti
   public C_OP_RemapControlPointDirectionToVector(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapControlPointDirectionToVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0xB5467A62E5729606));
   }

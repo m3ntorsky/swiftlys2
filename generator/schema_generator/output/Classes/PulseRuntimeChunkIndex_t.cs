@@ -9,9 +9,6 @@ internal partial class PulseRuntimeChunkIndex_t : SchemaClass, IPulseRuntimeChun
   public PulseRuntimeChunkIndex_t(nint handle) : base(handle) {
   }
 
-  public PulseRuntimeChunkIndex_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Value {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xBC20E682DCB0894A));
   }

@@ -9,14 +9,11 @@ internal partial class C_OP_SetControlPointPositionToTimeOfDayValue : CParticleF
   public C_OP_SetControlPointPositionToTimeOfDayValue(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointPositionToTimeOfDayValue(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x976831CB3F31A6BD));
   }
   public ISchemaFixedString TimeOfDayParameter {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x976831CB5B5E9DD3));
+    get => new SchemaFixedString(_Handle, 0x976831CB5B5E9DD3, 128, 1, 1);
   }
   public ref Vector DefaultValue {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x976831CB0A18BFDF));

@@ -9,9 +9,6 @@ internal partial class CSmoothFunc : SchemaClass, ISmoothFunc {
   public CSmoothFunc(nint handle) : base(handle) {
   }
 
-  public CSmoothFunc(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float SmoothAmplitude {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4C3907DAAB831D3A));
   }

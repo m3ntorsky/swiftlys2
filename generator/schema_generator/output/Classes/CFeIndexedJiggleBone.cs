@@ -9,9 +9,6 @@ internal partial class CFeIndexedJiggleBone : SchemaClass, IFeIndexedJiggleBone 
   public CFeIndexedJiggleBone(nint handle) : base(handle) {
   }
 
-  public CFeIndexedJiggleBone(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint Node {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x1DD153AEF6FB9B19));
   }

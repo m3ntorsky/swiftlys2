@@ -9,9 +9,6 @@ internal partial class SosEditItemInfo_t : SchemaClass, ISosEditItemInfo_t {
   public SosEditItemInfo_t(nint handle) : base(handle) {
   }
 
-  public SosEditItemInfo_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref SosEditItemType_t ItemType {
     get => ref _Handle.AsRef<SosEditItemType_t>(Schema.GetOffset(0x8E29E1C0C91C9136));
   }

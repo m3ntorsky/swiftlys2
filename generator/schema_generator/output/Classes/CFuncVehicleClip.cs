@@ -9,9 +9,6 @@ internal partial class CFuncVehicleClip : CBaseModelEntity, IFuncVehicleClip {
   public CFuncVehicleClip(nint handle) : base(handle) {
   }
 
-  public CFuncVehicleClip(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

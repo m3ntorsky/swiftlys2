@@ -9,9 +9,6 @@ internal partial class CSSDSMsg_PreLayer : CSSDSMsg_LayerBase, ISSDSMsg_PreLayer
   public CSSDSMsg_PreLayer(nint handle) : base(handle) {
   }
 
-  public CSSDSMsg_PreLayer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

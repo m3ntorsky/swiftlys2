@@ -9,9 +9,6 @@ internal partial class CFloatAnimParameter : CConcreteAnimParameter, IFloatAnimP
   public CFloatAnimParameter(nint handle) : base(handle) {
   }
 
-  public CFloatAnimParameter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float DefaultValue {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6CE7934089D370B3));
   }

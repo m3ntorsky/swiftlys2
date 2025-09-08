@@ -9,9 +9,6 @@ internal partial class CCSGameModeRules_Noop : CCSGameModeRules, ICSGameModeRule
   public CCSGameModeRules_Noop(nint handle) : base(handle) {
   }
 
-  public CCSGameModeRules_Noop(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

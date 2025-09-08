@@ -9,9 +9,6 @@ internal partial class CNmFixedWeightBoneMaskNode__CDefinition : CNmBoneMaskValu
   public CNmFixedWeightBoneMaskNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFixedWeightBoneMaskNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float BoneWeight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x26E0BD7363DE76E9));
   }

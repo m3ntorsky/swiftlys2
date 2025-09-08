@@ -9,9 +9,6 @@ internal partial class CWeaponMP5SD : CCSWeaponBaseGun, IWeaponMP5SD {
   public CWeaponMP5SD(nint handle) : base(handle) {
   }
 
-  public CWeaponMP5SD(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

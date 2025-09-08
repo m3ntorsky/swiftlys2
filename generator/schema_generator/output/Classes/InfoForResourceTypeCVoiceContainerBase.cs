@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCVoiceContainerBase : SchemaClass, IIn
   public InfoForResourceTypeCVoiceContainerBase(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCVoiceContainerBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

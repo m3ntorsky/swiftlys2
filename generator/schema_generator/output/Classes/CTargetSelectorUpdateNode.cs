@@ -9,14 +9,11 @@ internal partial class CTargetSelectorUpdateNode : CAnimUpdateNodeBase, ITargetS
   public CTargetSelectorUpdateNode(nint handle) : base(handle) {
   }
 
-  public CTargetSelectorUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref TargetSelectorAngleMode_t AngleMode {
     get => ref _Handle.AsRef<TargetSelectorAngleMode_t>(Schema.GetOffset(0x37AB6CCBD21DC8BC));
   }
-  public ref CUtlVector< CAnimUpdateNodeRef > Children {
-    get => ref _Handle.AsRef<CUtlVector< CAnimUpdateNodeRef >>(Schema.GetOffset(0x37AB6CCB7415FA72));
+  public ref CUtlVector Children {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x37AB6CCB7415FA72));
   }
   public IAnimParamHandle TargetPosition {
     get => new CAnimParamHandle(_Handle + Schema.GetOffset(0x37AB6CCBD1F40125));

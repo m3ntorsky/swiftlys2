@@ -9,9 +9,6 @@ internal partial class CEnvInstructorHint : CPointEntity, IEnvInstructorHint {
   public CEnvInstructorHint(nint handle) : base(handle) {
   }
 
-  public CEnvInstructorHint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge Name {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB2774FF65FE));
   }

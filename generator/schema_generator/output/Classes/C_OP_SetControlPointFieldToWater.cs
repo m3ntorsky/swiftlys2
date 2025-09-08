@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointFieldToWater : CParticleFunctionPreEm
   public C_OP_SetControlPointFieldToWater(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointFieldToWater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int SourceCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x77BA8CA24C01E3B7));
   }

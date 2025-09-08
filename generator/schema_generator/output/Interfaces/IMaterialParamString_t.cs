@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMaterialParamString_t : IMaterialParam_t {
 
-
+  public ref CUtlString Value { get; }
+  
 }

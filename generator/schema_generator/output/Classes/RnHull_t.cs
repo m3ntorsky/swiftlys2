@@ -9,9 +9,6 @@ internal partial class RnHull_t : SchemaClass, IRnHull_t {
   public RnHull_t(nint handle) : base(handle) {
   }
 
-  public RnHull_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Centroid {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x856EB4A1107DFFF1));
   }
@@ -33,20 +30,20 @@ internal partial class RnHull_t : SchemaClass, IRnHull_t {
   public ref float SurfaceArea {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x856EB4A1E4AE7C2F));
   }
-  public ref CUtlVector< RnVertex_t > Vertices {
-    get => ref _Handle.AsRef<CUtlVector< RnVertex_t >>(Schema.GetOffset(0x856EB4A1E4F9760E));
+  public ref CUtlVector Vertices {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x856EB4A1E4F9760E));
   }
-  public ref CUtlVector< Vector > VertexPositions {
-    get => ref _Handle.AsRef<CUtlVector< Vector >>(Schema.GetOffset(0x856EB4A1E553E225));
+  public ref CUtlVector<Vector> VertexPositions {
+    get => ref _Handle.AsRef<CUtlVector<Vector>>(Schema.GetOffset(0x856EB4A1E553E225));
   }
-  public ref CUtlVector< RnHalfEdge_t > Edges {
-    get => ref _Handle.AsRef<CUtlVector< RnHalfEdge_t >>(Schema.GetOffset(0x856EB4A1CFE839DD));
+  public ref CUtlVector Edges {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x856EB4A1CFE839DD));
   }
-  public ref CUtlVector< RnFace_t > Faces {
-    get => ref _Handle.AsRef<CUtlVector< RnFace_t >>(Schema.GetOffset(0x856EB4A1B57F1DFD));
+  public ref CUtlVector Faces {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x856EB4A1B57F1DFD));
   }
-  public ref CUtlVector< RnPlane_t > FacePlanes {
-    get => ref _Handle.AsRef<CUtlVector< RnPlane_t >>(Schema.GetOffset(0x856EB4A1FE0AFD57));
+  public ref CUtlVector FacePlanes {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x856EB4A1FE0AFD57));
   }
   public ref uint Flags {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x856EB4A1CE6E9C28));

@@ -9,9 +9,6 @@ internal partial class CScriptedSequence : CBaseEntity, IScriptedSequence {
   public CScriptedSequence(nint handle) : base(handle) {
   }
 
-  public CScriptedSequence(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge Entry {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45EDE900465B));
   }
@@ -171,11 +168,11 @@ internal partial class CScriptedSequence : CBaseEntity, IScriptedSequence {
   public ref bool PositionRelativeToOtherEntity {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBB0C45ED8CBF8E64));
   }
-  public ref CHandle< CBaseEntity > TargetEnt {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xBB0C45ED2DD292D7));
+  public ref CHandle<CBaseEntity> TargetEnt {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xBB0C45ED2DD292D7));
   }
-  public ref CHandle< CScriptedSequence > NextCine {
-    get => ref _Handle.AsRef<CHandle< CScriptedSequence >>(Schema.GetOffset(0xBB0C45ED75574CC3));
+  public ref CHandle<CScriptedSequence> NextCine {
+    get => ref _Handle.AsRef<CHandle<CScriptedSequence>>(Schema.GetOffset(0xBB0C45ED75574CC3));
   }
   public ref bool Thinking {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBB0C45ED2C33DE1D));
@@ -189,8 +186,8 @@ internal partial class CScriptedSequence : CBaseEntity, IScriptedSequence {
   public ref bool AllowCustomInterruptConditions {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBB0C45EDA2069736));
   }
-  public ref CHandle< CBaseAnimGraph > ForcedTarget {
-    get => ref _Handle.AsRef<CHandle< CBaseAnimGraph >>(Schema.GetOffset(0xBB0C45ED820DE873));
+  public ref CHandle<CBaseAnimGraph> ForcedTarget {
+    get => ref _Handle.AsRef<CHandle<CBaseAnimGraph>>(Schema.GetOffset(0xBB0C45ED820DE873));
   }
   public ref bool DontCancelOtherSequences {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBB0C45EDF5CD3DDC));
@@ -229,13 +226,13 @@ internal partial class CScriptedSequence : CBaseEntity, IScriptedSequence {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xBB0C45ED1885A91A));
   }
   public IEntityIOOutput OnScriptEvent {
-    get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xBB0C45ED8A68F621));
+    get => new CEntityIOOutput(_Handle, 0xBB0C45ED8A68F621, 8, 40, 8);
   }
   public ref CTransform MatOtherToMain {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xBB0C45ED0E394D39));
   }
-  public ref CHandle< CBaseEntity > InteractionMainEntity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xBB0C45ED16430DA3));
+  public ref CHandle<CBaseEntity> InteractionMainEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xBB0C45ED16430DA3));
   }
   public ref int PlayerDeathBehavior {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xBB0C45EDC6ECC93B));

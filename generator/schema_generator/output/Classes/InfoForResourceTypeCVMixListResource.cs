@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCVMixListResource : SchemaClass, IInfo
   public InfoForResourceTypeCVMixListResource(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCVMixListResource(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

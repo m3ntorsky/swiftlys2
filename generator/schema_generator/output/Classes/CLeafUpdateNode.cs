@@ -9,9 +9,6 @@ internal partial class CLeafUpdateNode : CAnimUpdateNodeBase, ILeafUpdateNode {
   public CLeafUpdateNode(nint handle) : base(handle) {
   }
 
-  public CLeafUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CSchemaSystemInternalRegistration : SchemaClass, ISchemaS
   public CSchemaSystemInternalRegistration(nint handle) : base(handle) {
   }
 
-  public CSchemaSystemInternalRegistration(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector2D Vector2D {
     get => ref _Handle.AsRef<Vector2D>(Schema.GetOffset(0xDDD6CA303570333C));
   }

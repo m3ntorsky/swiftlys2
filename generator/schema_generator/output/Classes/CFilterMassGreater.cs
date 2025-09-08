@@ -9,9 +9,6 @@ internal partial class CFilterMassGreater : CBaseFilter, IFilterMassGreater {
   public CFilterMassGreater(nint handle) : base(handle) {
   }
 
-  public CFilterMassGreater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float FilterMass {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBF74FA22FF3F08E7));
   }

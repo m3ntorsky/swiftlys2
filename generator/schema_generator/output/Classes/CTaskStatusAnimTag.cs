@@ -9,9 +9,6 @@ internal partial class CTaskStatusAnimTag : CAnimTagBase, ITaskStatusAnimTag {
   public CTaskStatusAnimTag(nint handle) : base(handle) {
   }
 
-  public CTaskStatusAnimTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

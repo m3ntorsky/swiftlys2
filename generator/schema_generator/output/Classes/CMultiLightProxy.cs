@@ -9,9 +9,6 @@ internal partial class CMultiLightProxy : CLogicalEntity, IMultiLightProxy {
   public CMultiLightProxy(nint handle) : base(handle) {
   }
 
-  public CMultiLightProxy(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge LightNameFilter {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xF2B647B3071F3A26));
   }
@@ -33,8 +30,8 @@ internal partial class CMultiLightProxy : CLogicalEntity, IMultiLightProxy {
   public ref float CurrentBrightnessMultiplier {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF2B647B3C03C5EEC));
   }
-  public ref CUtlVector< CHandle< CLightEntity > > Lights {
-    get => ref _Handle.AsRef<CUtlVector< CHandle< CLightEntity > >>(Schema.GetOffset(0xF2B647B3A5ECA534));
+  public ref CUtlVector<CHandle<CLightEntity>> Lights {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CLightEntity>>>(Schema.GetOffset(0xF2B647B3A5ECA534));
   }
 
 

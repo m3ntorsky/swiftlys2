@@ -9,9 +9,6 @@ internal partial class C_OP_ScreenSpaceRotateTowardTarget : CParticleFunctionOpe
   public C_OP_ScreenSpaceRotateTowardTarget(nint handle) : base(handle) {
   }
 
-  public C_OP_ScreenSpaceRotateTowardTarget(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleVecInput TargetPosition {
     get => new CPerParticleVecInput(_Handle + Schema.GetOffset(0xD66164FC554C563B));
   }

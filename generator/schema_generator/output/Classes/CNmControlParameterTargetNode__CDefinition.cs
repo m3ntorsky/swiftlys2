@@ -9,9 +9,6 @@ internal partial class CNmControlParameterTargetNode__CDefinition : CNmTargetVal
   public CNmControlParameterTargetNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmControlParameterTargetNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

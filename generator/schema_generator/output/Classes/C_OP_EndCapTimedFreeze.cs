@@ -9,9 +9,6 @@ internal partial class C_OP_EndCapTimedFreeze : CParticleFunctionOperator, IC_OP
   public C_OP_EndCapTimedFreeze(nint handle) : base(handle) {
   }
 
-  public C_OP_EndCapTimedFreeze(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput FreezeTime {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0xE8E243ACEAB1B29));
   }

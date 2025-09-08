@@ -9,11 +9,8 @@ internal partial class CFiringModeInt : SchemaClass, IFiringModeInt {
   public CFiringModeInt(nint handle) : base(handle) {
   }
 
-  public CFiringModeInt(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<int32> Values {
-    get => new SchemaFixedArray<int32>(_Handle + Schema.GetOffset(0x528A6FDFD7175D77));
+  public ISchemaFixedArray<int> Values {
+    get => new SchemaFixedArray<int>(_Handle, 0x528A6FDFD7175D77, 2, 4, 4);
   }
 
 

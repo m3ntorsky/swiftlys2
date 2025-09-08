@@ -9,9 +9,6 @@ internal partial class C_INIT_CreateFromCPs : CParticleFunctionInitializer, IC_I
   public C_INIT_CreateFromCPs(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreateFromCPs(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Increment {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x2593FF962359F182));
   }

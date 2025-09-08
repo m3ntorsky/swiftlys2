@@ -9,9 +9,6 @@ internal partial class CLightSpotEntity : CLightEntity, ILightSpotEntity {
   public CLightSpotEntity(nint handle) : base(handle) {
   }
 
-  public CLightSpotEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

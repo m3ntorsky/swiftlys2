@@ -9,9 +9,6 @@ internal partial class CFuncInteractionLayerClip : CBaseModelEntity, IFuncIntera
   public CFuncInteractionLayerClip(nint handle) : base(handle) {
   }
 
-  public CFuncInteractionLayerClip(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5A9288DF3A7C5965));
   }

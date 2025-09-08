@@ -9,9 +9,6 @@ internal partial class CInfoPlayerTerrorist : SpawnPoint, IInfoPlayerTerrorist {
   public CInfoPlayerTerrorist(nint handle) : base(handle) {
   }
 
-  public CInfoPlayerTerrorist(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

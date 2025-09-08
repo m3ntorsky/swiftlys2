@@ -9,9 +9,6 @@ internal partial class C_INIT_VelocityFromNormal : CParticleFunctionInitializer,
   public C_INIT_VelocityFromNormal(nint handle) : base(handle) {
   }
 
-  public C_INIT_VelocityFromNormal(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float SpeedMin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x33D27066B989E1F8));
   }

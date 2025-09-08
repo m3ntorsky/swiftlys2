@@ -9,14 +9,11 @@ internal partial class CBaseIssue : SchemaClass, IBaseIssue {
   public CBaseIssue(nint handle) : base(handle) {
   }
 
-  public CBaseIssue(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaFixedString TypeString {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xE0727D1E2E3EE7A9));
+    get => new SchemaFixedString(_Handle, 0xE0727D1E2E3EE7A9, 64, 1, 1);
   }
   public ISchemaFixedString DetailsString {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xE0727D1ECCE4C9BF));
+    get => new SchemaFixedString(_Handle, 0xE0727D1ECCE4C9BF, 260, 1, 1);
   }
   public ref int NumYesVotes {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE0727D1E7ED4202C));

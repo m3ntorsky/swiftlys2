@@ -9,9 +9,6 @@ internal partial class CAnimEnum : SchemaClass, IAnimEnum {
   public CAnimEnum(nint handle) : base(handle) {
   }
 
-  public CAnimEnum(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref byte Value {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xFB67C2A26B99AEEA));
   }

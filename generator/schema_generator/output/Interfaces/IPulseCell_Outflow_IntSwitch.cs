@@ -4,5 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Outflow_IntSwitch : IPulseCell_BaseFlow {
 
-
+  public IPulse_OutflowConnection DefaultCaseOutflow { get; }
+  
+  public ref CUtlVector CaseOutflows { get; }
+  
 }

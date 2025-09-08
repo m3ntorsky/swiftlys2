@@ -9,9 +9,6 @@ internal partial class ParticleNamedValueSource_t : SchemaClass, IParticleNamedV
   public ParticleNamedValueSource_t(nint handle) : base(handle) {
   }
 
-  public ParticleNamedValueSource_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x740B6BEFCAE8A266));
   }
@@ -24,8 +21,8 @@ internal partial class ParticleNamedValueSource_t : SchemaClass, IParticleNamedV
   public IParticleNamedValueConfiguration_t DefaultConfig {
     get => new ParticleNamedValueConfiguration_t(_Handle + Schema.GetOffset(0x740B6BEF05A58128));
   }
-  public ref CUtlVector< ParticleNamedValueConfiguration_t > NamedConfigs {
-    get => ref _Handle.AsRef<CUtlVector< ParticleNamedValueConfiguration_t >>(Schema.GetOffset(0x740B6BEF07A72469));
+  public ref CUtlVector NamedConfigs {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x740B6BEF07A72469));
   }
 
 

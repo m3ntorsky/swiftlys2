@@ -9,75 +9,7 @@ internal partial class CEnvLightProbeVolume : CBaseEntity, IEnvLightProbeVolume 
   public CEnvLightProbeVolume(nint handle) : base(handle) {
   }
 
-  public CEnvLightProbeVolume(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Entity_hLightProbeTexture_AmbientCube {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0xA8F87EA5148FA944));
-  }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Entity_hLightProbeTexture_SDF {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0xA8F87EA5B0D8BE62));
-  }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Entity_hLightProbeTexture_SH2_DC {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0xA8F87EA5C9357F5E));
-  }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Entity_hLightProbeTexture_SH2_R {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0xA8F87EA50E80FF9F));
-  }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Entity_hLightProbeTexture_SH2_G {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0xA8F87EA5198110F0));
-  }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Entity_hLightProbeTexture_SH2_B {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0xA8F87EA51E8118CF));
-  }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Entity_hLightProbeDirectLightIndicesTexture {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0xA8F87EA52251ACF2));
-  }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Entity_hLightProbeDirectLightScalarsTexture {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0xA8F87EA5A463880E));
-  }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Entity_hLightProbeDirectLightShadowsTexture {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0xA8F87EA594B00D56));
-  }
-  public ref Vector Entity_vBoxMins {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xA8F87EA5D35AD599));
-  }
-  public ref Vector Entity_vBoxMaxs {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xA8F87EA57C83608B));
-  }
-  public ref bool Entity_bMoveable {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA8F87EA554059592));
-  }
-  public ref int Entity_nHandshake {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA8F87EA5069A2774));
-  }
-  public ref int Entity_nPriority {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA8F87EA5BAACBFAB));
-  }
-  public ref bool Entity_bStartDisabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA8F87EA5D04F520D));
-  }
-  public ref int Entity_nLightProbeSizeX {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA8F87EA59A840E10));
-  }
-  public ref int Entity_nLightProbeSizeY {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA8F87EA59B840FA3));
-  }
-  public ref int Entity_nLightProbeSizeZ {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA8F87EA59C841136));
-  }
-  public ref int Entity_nLightProbeAtlasX {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA8F87EA553C9E610));
-  }
-  public ref int Entity_nLightProbeAtlasY {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA8F87EA554C9E7A3));
-  }
-  public ref int Entity_nLightProbeAtlasZ {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA8F87EA555C9E936));
-  }
-  public ref bool Entity_bEnabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA8F87EA5453FD9DC));
-  }
 
   public void Entity_hLightProbeTexture_AmbientCubeUpdated() {
     Schema.Update(_Handle, 0xA8F87EA5148FA944);

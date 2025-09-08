@@ -9,12 +9,6 @@ internal partial class CEnvFade : CLogicalEntity, IEnvFade {
   public CEnvFade(nint handle) : base(handle) {
   }
 
-  public CEnvFade(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref Color FadeColor {
-    get => ref _Handle.AsRef<Color>(Schema.GetOffset(0xEFBFC063C1517BF2));
-  }
   public ref float Duration {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xEFBFC0639879A98D));
   }

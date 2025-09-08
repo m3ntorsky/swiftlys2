@@ -9,9 +9,6 @@ internal partial class CPulseCell_Value_Gradient : CPulseCell_BaseValue, IPulseC
   public CPulseCell_Value_Gradient(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Value_Gradient(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField Gradient {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x67D602E05C95F25));
   }

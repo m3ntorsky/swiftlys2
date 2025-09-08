@@ -9,9 +9,6 @@ internal partial class CAnimDecoder : SchemaClass, IAnimDecoder {
   public CAnimDecoder(nint handle) : base(handle) {
   }
 
-  public CAnimDecoder(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CBufferString Name {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0xA6D7DF2D6750BACB));
   }

@@ -9,9 +9,6 @@ internal partial class CPulseCursorFuncs : SchemaClass, IPulseCursorFuncs {
   public CPulseCursorFuncs(nint handle) : base(handle) {
   }
 
-  public CPulseCursorFuncs(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

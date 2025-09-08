@@ -9,9 +9,6 @@ internal partial class C_OP_OscillateVector : CParticleFunctionOperator, IC_OP_O
   public C_OP_OscillateVector(nint handle) : base(handle) {
   }
 
-  public C_OP_OscillateVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector RateMin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xEECAE90A645AF561));
   }

@@ -9,9 +9,6 @@ internal partial class CTwistConstraint : CBaseConstraint, ITwistConstraint {
   public CTwistConstraint(nint handle) : base(handle) {
   }
 
-  public CTwistConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Inverse {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA3EC320A0DE8C163));
   }

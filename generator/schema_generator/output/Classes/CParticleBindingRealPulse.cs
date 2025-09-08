@@ -9,9 +9,6 @@ internal partial class CParticleBindingRealPulse : CParticleCollectionBindingIns
   public CParticleBindingRealPulse(nint handle) : base(handle) {
   }
 
-  public CParticleBindingRealPulse(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

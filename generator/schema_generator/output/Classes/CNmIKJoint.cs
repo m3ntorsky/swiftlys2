@@ -9,9 +9,6 @@ internal partial class CNmIKJoint : SchemaClass, INmIKJoint {
   public CNmIKJoint(nint handle) : base(handle) {
   }
 
-  public CNmIKJoint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ParentIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x31287449134E2DE7));
   }

@@ -9,17 +9,14 @@ internal partial class CSoundContainerReferenceArray : SchemaClass, ISoundContai
   public CSoundContainerReferenceArray(nint handle) : base(handle) {
   }
 
-  public CSoundContainerReferenceArray(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool UseReference {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x80FA0E8A45BCD5C9));
   }
-  public ref CUtlVector< CStrongHandle< InfoForResourceTypeCVoiceContainerBase > > Sounds {
-    get => ref _Handle.AsRef<CUtlVector< CStrongHandle< InfoForResourceTypeCVoiceContainerBase > >>(Schema.GetOffset(0x80FA0E8ABD919645));
+  public ref CUtlVector<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>> Sounds {
+    get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>>>(Schema.GetOffset(0x80FA0E8ABD919645));
   }
-  public ref CUtlVector< CVoiceContainerBase* > Sounds {
-    get => ref _Handle.AsRef<CUtlVector< CVoiceContainerBase* >>(Schema.GetOffset(0x80FA0E8AAA82BE1F));
+  public ref CUtlVector<PointerTo<CVoiceContainerBase>> Sounds {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CVoiceContainerBase>>>(Schema.GetOffset(0x80FA0E8AAA82BE1F));
   }
 
 

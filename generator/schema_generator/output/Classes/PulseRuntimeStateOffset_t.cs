@@ -9,9 +9,6 @@ internal partial class PulseRuntimeStateOffset_t : SchemaClass, IPulseRuntimeSta
   public PulseRuntimeStateOffset_t(nint handle) : base(handle) {
   }
 
-  public PulseRuntimeStateOffset_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort Value {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x6DB06DE3DCB0894A));
   }

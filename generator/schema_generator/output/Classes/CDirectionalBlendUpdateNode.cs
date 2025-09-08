@@ -9,11 +9,8 @@ internal partial class CDirectionalBlendUpdateNode : CLeafUpdateNode, IDirection
   public CDirectionalBlendUpdateNode(nint handle) : base(handle) {
   }
 
-  public CDirectionalBlendUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IHSequence Sequences {
-    get => new HSequence(_Handle + Schema.GetOffset(0xD7E03CEC996DA947));
+    get => new HSequence(_Handle, 0xD7E03CEC996DA947, 8, 4, 4);
   }
   public IAnimInputDamping Damping {
     get => new CAnimInputDamping(_Handle + Schema.GetOffset(0xD7E03CEC15440FB5));

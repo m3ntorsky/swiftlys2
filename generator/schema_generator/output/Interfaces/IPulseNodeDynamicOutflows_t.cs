@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseNodeDynamicOutflows_t : ISchemaClass {
 
-
+  public ref CUtlVector Outflows { get; }
+  
 }

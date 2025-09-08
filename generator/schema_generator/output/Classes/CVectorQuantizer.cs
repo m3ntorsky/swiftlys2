@@ -9,11 +9,8 @@ internal partial class CVectorQuantizer : SchemaClass, IVectorQuantizer {
   public CVectorQuantizer(nint handle) : base(handle) {
   }
 
-  public CVectorQuantizer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< float32 > CentroidVectors {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x9E79F13089538103));
+  public ref CUtlVector<float> CentroidVectors {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x9E79F13089538103));
   }
   public ref int Centroids {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9E79F13064667B2E));

@@ -9,9 +9,6 @@ internal partial class CPulseCell_LimitCount : CPulseCell_BaseRequirement, IPuls
   public CPulseCell_LimitCount(nint handle) : base(handle) {
   }
 
-  public CPulseCell_LimitCount(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int LimitCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x879D9892603807FF));
   }

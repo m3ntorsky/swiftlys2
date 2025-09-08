@@ -9,9 +9,6 @@ internal partial class CWarpSectionAnimTag : CWarpSectionAnimTagBase, IWarpSecti
   public CWarpSectionAnimTag(nint handle) : base(handle) {
   }
 
-  public CWarpSectionAnimTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool WarpPosition {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4C7992E6A30D730C));
   }

@@ -9,9 +9,6 @@ internal partial class constraint_hingeparams_t : SchemaClass, Iconstraint_hinge
   public constraint_hingeparams_t(nint handle) : base(handle) {
   }
 
-  public constraint_hingeparams_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector WorldPosition {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x790804C3F16C2360));
   }

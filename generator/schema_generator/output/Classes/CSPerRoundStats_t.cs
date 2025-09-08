@@ -9,48 +9,7 @@ internal partial class CSPerRoundStats_t : SchemaClass, ISPerRoundStats_t {
   public CSPerRoundStats_t(nint handle) : base(handle) {
   }
 
-  public CSPerRoundStats_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref int Kills {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA16B85EA0E456FE5));
-  }
-  public ref int Deaths {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA16B85EAAF18870F));
-  }
-  public ref int Assists {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA16B85EAB792DB50));
-  }
-  public ref int Damage {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA16B85EA0DEE4DB5));
-  }
-  public ref int EquipmentValue {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA16B85EA1B2CADDD));
-  }
-  public ref int MoneySaved {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA16B85EAC85DB77B));
-  }
-  public ref int KillReward {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA16B85EA9C813A23));
-  }
-  public ref int LiveTime {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA16B85EAD956D2F7));
-  }
-  public ref int HeadShotKills {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA16B85EA2C61AFF3));
-  }
-  public ref int Objective {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA16B85EA14FC52D7));
-  }
-  public ref int CashEarned {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA16B85EA8BEB3100));
-  }
-  public ref int UtilityDamage {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA16B85EAC91A82E5));
-  }
-  public ref int EnemiesFlashed {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA16B85EA460AB70F));
-  }
 
   public void KillsUpdated() {
     Schema.Update(_Handle, 0xA16B85EA0E456FE5);

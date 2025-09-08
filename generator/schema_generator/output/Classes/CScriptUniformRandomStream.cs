@@ -9,9 +9,6 @@ internal partial class CScriptUniformRandomStream : SchemaClass, IScriptUniformR
   public CScriptUniformRandomStream(nint handle) : base(handle) {
   }
 
-  public CScriptUniformRandomStream(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField ScriptScope {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xF6699588B14F90D4));
   }

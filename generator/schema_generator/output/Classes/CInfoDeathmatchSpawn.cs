@@ -9,9 +9,6 @@ internal partial class CInfoDeathmatchSpawn : SpawnPoint, IInfoDeathmatchSpawn {
   public CInfoDeathmatchSpawn(nint handle) : base(handle) {
   }
 
-  public CInfoDeathmatchSpawn(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

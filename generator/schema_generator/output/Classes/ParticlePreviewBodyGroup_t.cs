@@ -9,9 +9,6 @@ internal partial class ParticlePreviewBodyGroup_t : SchemaClass, IParticlePrevie
   public ParticlePreviewBodyGroup_t(nint handle) : base(handle) {
   }
 
-  public ParticlePreviewBodyGroup_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString BodyGroupName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB53436EB1E953217));
   }

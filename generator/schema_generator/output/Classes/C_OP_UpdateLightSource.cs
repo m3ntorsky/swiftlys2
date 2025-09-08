@@ -9,9 +9,6 @@ internal partial class C_OP_UpdateLightSource : CParticleFunctionOperator, IC_OP
   public C_OP_UpdateLightSource(nint handle) : base(handle) {
   }
 
-  public C_OP_UpdateLightSource(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Color ColorTint {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x6611EEDD569A6EA9));
   }

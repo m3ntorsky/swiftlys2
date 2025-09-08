@@ -9,11 +9,8 @@ internal partial class FootStepTrigger : SchemaClass, IFootStepTrigger {
   public FootStepTrigger(nint handle) : base(handle) {
   }
 
-  public FootStepTrigger(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< int32 > Tags {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0xD1D326CDB46C8540));
+  public ref CUtlVector<int> Tags {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xD1D326CDB46C8540));
   }
   public ref int FootIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD1D326CD67D56BAB));

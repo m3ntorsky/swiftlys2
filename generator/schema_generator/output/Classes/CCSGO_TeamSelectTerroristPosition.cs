@@ -9,9 +9,6 @@ internal partial class CCSGO_TeamSelectTerroristPosition : CCSGO_TeamSelectChara
   public CCSGO_TeamSelectTerroristPosition(nint handle) : base(handle) {
   }
 
-  public CCSGO_TeamSelectTerroristPosition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

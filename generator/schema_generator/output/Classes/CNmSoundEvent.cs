@@ -9,9 +9,6 @@ internal partial class CNmSoundEvent : CNmEvent, INmSoundEvent {
   public CNmSoundEvent(nint handle) : base(handle) {
   }
 
-  public CNmSoundEvent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CNmEventRelevance_t Relevance {
     get => ref _Handle.AsRef<CNmEventRelevance_t>(Schema.GetOffset(0xDC15E5261E3F4008));
   }

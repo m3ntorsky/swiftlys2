@@ -9,9 +9,6 @@ internal partial class C_OP_RandomForce : CParticleFunctionForce, IC_OP_RandomFo
   public C_OP_RandomForce(nint handle) : base(handle) {
   }
 
-  public C_OP_RandomForce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector MinForce {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x4BB81519FA8D2AE2));
   }

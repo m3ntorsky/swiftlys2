@@ -9,9 +9,6 @@ internal partial class CPointBroadcastClientCommand : CPointEntity, IPointBroadc
   public CPointBroadcastClientCommand(nint handle) : base(handle) {
   }
 
-  public CPointBroadcastClientCommand(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

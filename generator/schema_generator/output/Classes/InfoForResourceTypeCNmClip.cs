@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCNmClip : SchemaClass, IInfoForResourc
   public InfoForResourceTypeCNmClip(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCNmClip(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CFuncIllusionary : CBaseModelEntity, IFuncIllusionary {
   public CFuncIllusionary(nint handle) : base(handle) {
   }
 
-  public CFuncIllusionary(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

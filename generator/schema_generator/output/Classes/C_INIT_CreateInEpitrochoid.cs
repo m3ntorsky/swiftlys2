@@ -9,9 +9,6 @@ internal partial class C_INIT_CreateInEpitrochoid : CParticleFunctionInitializer
   public C_INIT_CreateInEpitrochoid(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreateInEpitrochoid(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Component1 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x3B16C41F125ABCA7));
   }

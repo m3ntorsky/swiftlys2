@@ -9,9 +9,6 @@ internal partial class CScriptTriggerMultiple : CTriggerMultiple, IScriptTrigger
   public CScriptTriggerMultiple(nint handle) : base(handle) {
   }
 
-  public CScriptTriggerMultiple(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Extent {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xE1F82C9B7AB1ED15));
   }

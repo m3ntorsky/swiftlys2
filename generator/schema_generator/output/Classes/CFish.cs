@@ -9,26 +9,11 @@ internal partial class CFish : CBaseAnimGraph, IFish {
   public CFish(nint handle) : base(handle) {
   }
 
-  public CFish(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CHandle< CFishPool > Pool {
-    get => ref _Handle.AsRef<CHandle< CFishPool >>(Schema.GetOffset(0xC43C8434366BF523));
+  public ref CHandle<CFishPool> Pool {
+    get => ref _Handle.AsRef<CHandle<CFishPool>>(Schema.GetOffset(0xC43C8434366BF523));
   }
   public ref uint Id {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xC43C8434B4B6E980));
-  }
-  public ref float X {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC43C8434DBC57BA7));
-  }
-  public ref float Y {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC43C8434DAC57A14));
-  }
-  public ref float Z {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC43C8434DDC57ECD));
-  }
-  public ref float Angle {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC43C8434D4164938));
   }
   public ref float AngleChange {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC43C84343E25ADF0));
@@ -38,12 +23,6 @@ internal partial class CFish : CBaseAnimGraph, IFish {
   }
   public ref Vector Perp {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC43C8434607EC05C));
-  }
-  public ref Vector PoolOrigin {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC43C843442AD682D));
-  }
-  public ref float WaterLevel {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC43C8434E63A21D6));
   }
   public ref float Speed {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC43C8434A4BD35A0));
@@ -81,8 +60,8 @@ internal partial class CFish : CBaseAnimGraph, IFish {
   public ICountdownTimer ProximityTimer {
     get => new CountdownTimer(_Handle + Schema.GetOffset(0xC43C8434ABE32A63));
   }
-  public ref CUtlVector< CFish* > Visible {
-    get => ref _Handle.AsRef<CUtlVector< CFish* >>(Schema.GetOffset(0xC43C8434002CBAC1));
+  public ref CUtlVector<PointerTo<CFish>> Visible {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CFish>>>(Schema.GetOffset(0xC43C8434002CBAC1));
   }
 
   public void XUpdated() {

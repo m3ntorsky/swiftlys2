@@ -9,9 +9,6 @@ internal partial class CPulseGraphInstance_TestDomain : CBasePulseGraphInstance,
   public CPulseGraphInstance_TestDomain(nint handle) : base(handle) {
   }
 
-  public CPulseGraphInstance_TestDomain(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool IsRunningUnitTests {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1731648B356A8543));
   }
@@ -33,8 +30,8 @@ internal partial class CPulseGraphInstance_TestDomain : CBasePulseGraphInstance,
   public ref int NextValidateIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1731648B5AE2F20E));
   }
-  public ref CUtlVector< CUtlString > Tracepoints {
-    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0x1731648B04FCE4C9));
+  public ref CUtlVector<CUtlString> Tracepoints {
+    get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x1731648B04FCE4C9));
   }
   public ref bool TestYesOrNoPath {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1731648B1322BA21));

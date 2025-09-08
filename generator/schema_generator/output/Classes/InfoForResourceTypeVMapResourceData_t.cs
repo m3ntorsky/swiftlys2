@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeVMapResourceData_t : SchemaClass, IInf
   public InfoForResourceTypeVMapResourceData_t(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeVMapResourceData_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

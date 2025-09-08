@@ -9,9 +9,6 @@ internal partial class C_INIT_PositionWarp : CParticleFunctionInitializer, IC_IN
   public C_INIT_PositionWarp(nint handle) : base(handle) {
   }
 
-  public C_INIT_PositionWarp(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionVecInput WarpMin {
     get => new CParticleCollectionVecInput(_Handle + Schema.GetOffset(0x15BDD34F1B8A7F09));
   }

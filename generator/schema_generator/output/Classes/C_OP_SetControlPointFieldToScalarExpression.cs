@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointFieldToScalarExpression : CParticleFu
   public C_OP_SetControlPointFieldToScalarExpression(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointFieldToScalarExpression(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ScalarExpressionType_t Expression {
     get => ref _Handle.AsRef<ScalarExpressionType_t>(Schema.GetOffset(0x6A8A3411160B2427));
   }

@@ -9,9 +9,6 @@ internal partial class CLogicCompare : CLogicalEntity, ILogicCompare {
   public CLogicCompare(nint handle) : base(handle) {
   }
 
-  public CLogicCompare(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float InValue {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCEFDBF2F414AD5ED));
   }

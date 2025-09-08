@@ -9,9 +9,6 @@ internal partial class CNavWalkable : CPointEntity, INavWalkable {
   public CNavWalkable(nint handle) : base(handle) {
   }
 
-  public CNavWalkable(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

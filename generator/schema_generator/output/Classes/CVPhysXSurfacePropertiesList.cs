@@ -9,11 +9,8 @@ internal partial class CVPhysXSurfacePropertiesList : SchemaClass, IVPhysXSurfac
   public CVPhysXSurfacePropertiesList(nint handle) : base(handle) {
   }
 
-  public CVPhysXSurfacePropertiesList(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CPhysSurfaceProperties* > SurfacePropertiesList {
-    get => ref _Handle.AsRef<CUtlVector< CPhysSurfaceProperties* >>(Schema.GetOffset(0x46700CAAC149A2D));
+  public ref CUtlVector<PointerTo<CPhysSurfaceProperties>> SurfacePropertiesList {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CPhysSurfaceProperties>>>(Schema.GetOffset(0x46700CAAC149A2D));
   }
 
 

@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRnWing_t : ISchemaClass {
 
-
+  public ISchemaFixedArray<int> Index { get; }
+  
 }

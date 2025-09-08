@@ -9,9 +9,6 @@ internal partial class BakedLightingInfo_t__BakedShadowAssignment_t : SchemaClas
   public BakedLightingInfo_t__BakedShadowAssignment_t(nint handle) : base(handle) {
   }
 
-  public BakedLightingInfo_t__BakedShadowAssignment_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint LightHash {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x1A17A94C74E0509B));
   }

@@ -9,11 +9,8 @@ internal partial class CMovementComponentUpdater : CAnimComponentUpdater, IMovem
   public CMovementComponentUpdater(nint handle) : base(handle) {
   }
 
-  public CMovementComponentUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CSmartPtr< CAnimMotorUpdaterBase > > Motors {
-    get => ref _Handle.AsRef<CUtlVector< CSmartPtr< CAnimMotorUpdaterBase > >>(Schema.GetOffset(0xCAAB73FD817BF33));
+  public ref CUtlVector Motors {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xCAAB73FD817BF33));
   }
   public IAnimInputDamping FacingDamping {
     get => new CAnimInputDamping(_Handle + Schema.GetOffset(0xCAAB73F9A430F4B));
@@ -34,7 +31,7 @@ internal partial class CMovementComponentUpdater : CAnimComponentUpdater, IMovem
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xCAAB73FE3436E8F));
   }
   public IAnimParamHandle ParamHandles {
-    get => new CAnimParamHandle(_Handle + Schema.GetOffset(0xCAAB73FF6A771ED));
+    get => new CAnimParamHandle(_Handle, 0xCAAB73FF6A771ED, 34, 2, 1);
   }
 
 

@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomYawFlip : CParticleFunctionInitializer, IC_I
   public C_INIT_RandomYawFlip(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomYawFlip(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Percent {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x86C3C253183D7FC4));
   }

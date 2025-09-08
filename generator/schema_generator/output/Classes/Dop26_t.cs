@@ -9,11 +9,8 @@ internal partial class Dop26_t : SchemaClass, IDop26_t {
   public Dop26_t(nint handle) : base(handle) {
   }
 
-  public Dop26_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<float32> Support {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0xBBAD032FAD766CEA));
+  public ISchemaFixedArray<float> Support {
+    get => new SchemaFixedArray<float>(_Handle, 0xBBAD032FAD766CEA, 26, 4, 4);
   }
 
 

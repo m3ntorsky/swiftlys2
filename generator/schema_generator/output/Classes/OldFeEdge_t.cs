@@ -9,11 +9,8 @@ internal partial class OldFeEdge_t : SchemaClass, IOldFeEdge_t {
   public OldFeEdge_t(nint handle) : base(handle) {
   }
 
-  public OldFeEdge_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<float32> K {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0xBAF074C17C12054C));
+  public ISchemaFixedArray<float> K {
+    get => new SchemaFixedArray<float>(_Handle, 0xBAF074C17C12054C, 3, 4, 4);
   }
   public ref float InvA {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBAF074C1518D5F7B));
@@ -42,11 +39,11 @@ internal partial class OldFeEdge_t : SchemaClass, IOldFeEdge_t {
   public ref float AxialModelDist {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBAF074C1E53980E9));
   }
-  public ISchemaFixedArray<float32> AxialModelWeights {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0xBAF074C1D9CDB73E));
+  public ISchemaFixedArray<float> AxialModelWeights {
+    get => new SchemaFixedArray<float>(_Handle, 0xBAF074C1D9CDB73E, 4, 4, 4);
   }
-  public ISchemaFixedArray<uint16> Node {
-    get => new SchemaFixedArray<uint16>(_Handle + Schema.GetOffset(0xBAF074C1F6FB9B19));
+  public ISchemaFixedArray<ushort> Node {
+    get => new SchemaFixedArray<ushort>(_Handle, 0xBAF074C1F6FB9B19, 4, 2, 2);
   }
 
 

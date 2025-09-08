@@ -9,9 +9,6 @@ internal partial class CFootstepTableHandle : SchemaClass, IFootstepTableHandle 
   public CFootstepTableHandle(nint handle) : base(handle) {
   }
 
-  public CFootstepTableHandle(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CAnimEncodedFrames : SchemaClass, IAnimEncodedFrames {
   public CAnimEncodedFrames(nint handle) : base(handle) {
   }
 
-  public CAnimEncodedFrames(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CBufferString FileName {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x63992F5DC8D68508));
   }
@@ -21,8 +18,8 @@ internal partial class CAnimEncodedFrames : SchemaClass, IAnimEncodedFrames {
   public ref int FramesPerBlock {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x63992F5DFFC5A547));
   }
-  public ref CUtlVector< CAnimFrameBlockAnim > FrameblockArray {
-    get => ref _Handle.AsRef<CUtlVector< CAnimFrameBlockAnim >>(Schema.GetOffset(0x63992F5D2805E598));
+  public ref CUtlVector FrameblockArray {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x63992F5D2805E598));
   }
   public IAnimEncodeDifference UsageDifferences {
     get => new CAnimEncodeDifference(_Handle + Schema.GetOffset(0x63992F5D27B13638));

@@ -9,9 +9,6 @@ internal partial class CLogicNPCCounterAABB : CLogicNPCCounter, ILogicNPCCounter
   public CLogicNPCCounterAABB(nint handle) : base(handle) {
   }
 
-  public CLogicNPCCounterAABB(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector DistanceOuterMins {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x264C2C4B185EC6F4));
   }

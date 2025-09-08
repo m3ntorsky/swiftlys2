@@ -9,9 +9,6 @@ internal partial class CPulseCell_WaitForCursorsWithTag : CPulseCell_WaitForCurs
   public CPulseCell_WaitForCursorsWithTag(nint handle) : base(handle) {
   }
 
-  public CPulseCell_WaitForCursorsWithTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool TagSelfWhenComplete {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x550BA6FDA17E8F0E));
   }

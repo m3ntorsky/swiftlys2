@@ -9,9 +9,6 @@ internal partial class C_OP_SequenceFromModel : CParticleFunctionOperator, IC_OP
   public C_OP_SequenceFromModel(nint handle) : base(handle) {
   }
 
-  public C_OP_SequenceFromModel(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x16E29E953F31A6BD));
   }

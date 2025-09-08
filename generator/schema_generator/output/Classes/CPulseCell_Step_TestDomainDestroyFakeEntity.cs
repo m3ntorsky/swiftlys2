@@ -9,9 +9,6 @@ internal partial class CPulseCell_Step_TestDomainDestroyFakeEntity : CPulseCell_
   public CPulseCell_Step_TestDomainDestroyFakeEntity(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Step_TestDomainDestroyFakeEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

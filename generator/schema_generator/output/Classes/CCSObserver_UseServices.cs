@@ -9,9 +9,6 @@ internal partial class CCSObserver_UseServices : CPlayer_UseServices, ICSObserve
   public CCSObserver_UseServices(nint handle) : base(handle) {
   }
 
-  public CCSObserver_UseServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,26 +9,8 @@ internal partial class CModelState : SchemaClass, IModelState {
   public CModelState(nint handle) : base(handle) {
   }
 
-  public CModelState(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CStrongHandle< InfoForResourceTypeCModel > Model {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCModel >>(Schema.GetOffset(0xC0A51C0E100C814));
-  }
   public ref CUtlSymbolLarge ModelName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC0A51C0D7A1D881));
-  }
-  public ref bool ClientClothCreationSuppressed {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC0A51C0953717E1));
-  }
-  public ref ulong MeshGroupMask {
-    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xC0A51C009C93F2B));
-  }
-  public ref CUtlVector< int32 > BodyGroupChoices {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0xC0A51C02395D0B0));
-  }
-  public ref byte IdealMotionType {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xC0A51C00A904E94));
   }
   public ref byte ForceLOD {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xC0A51C091D53D5F));

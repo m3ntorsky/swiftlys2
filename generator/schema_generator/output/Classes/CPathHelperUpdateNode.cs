@@ -9,9 +9,6 @@ internal partial class CPathHelperUpdateNode : CUnaryUpdateNode, IPathHelperUpda
   public CPathHelperUpdateNode(nint handle) : base(handle) {
   }
 
-  public CPathHelperUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float StoppingRadius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB24262C3172E3D9));
   }

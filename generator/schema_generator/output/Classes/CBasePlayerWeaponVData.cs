@@ -9,9 +9,6 @@ internal partial class CBasePlayerWeaponVData : CEntitySubclassVDataBase, IBaseP
   public CBasePlayerWeaponVData(nint handle) : base(handle) {
   }
 
-  public CBasePlayerWeaponVData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField WorldModel {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x64E418A0B9041909));
   }

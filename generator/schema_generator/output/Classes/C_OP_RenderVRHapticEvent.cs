@@ -9,9 +9,6 @@ internal partial class C_OP_RenderVRHapticEvent : CParticleFunctionRenderer, IC_
   public C_OP_RenderVRHapticEvent(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderVRHapticEvent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ParticleVRHandChoiceList_t Hand {
     get => ref _Handle.AsRef<ParticleVRHandChoiceList_t>(Schema.GetOffset(0xB83C5242D49ECB4C));
   }

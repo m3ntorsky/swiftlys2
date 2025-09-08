@@ -9,9 +9,6 @@ internal partial class CGameText : CRulePointEntity, IGameText {
   public CGameText(nint handle) : base(handle) {
   }
 
-  public CGameText(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge Message {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8AF55797CC5243DC));
   }

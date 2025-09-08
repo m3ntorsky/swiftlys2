@@ -9,9 +9,6 @@ internal partial class RnBlendVertex_t : SchemaClass, IRnBlendVertex_t {
   public RnBlendVertex_t(nint handle) : base(handle) {
   }
 
-  public RnBlendVertex_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort Weight0 {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xE168A4F195C99E6F));
   }

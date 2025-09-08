@@ -9,9 +9,6 @@ internal partial class C_OP_CurlNoiseForce : CParticleFunctionForce, IC_OP_CurlN
   public C_OP_CurlNoiseForce(nint handle) : base(handle) {
   }
 
-  public C_OP_CurlNoiseForce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ParticleDirectionNoiseType_t NoiseType {
     get => ref _Handle.AsRef<ParticleDirectionNoiseType_t>(Schema.GetOffset(0xC8D644B26758ED35));
   }

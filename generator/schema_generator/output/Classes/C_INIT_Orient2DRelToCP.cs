@@ -9,9 +9,6 @@ internal partial class C_INIT_Orient2DRelToCP : CParticleFunctionInitializer, IC
   public C_INIT_Orient2DRelToCP(nint handle) : base(handle) {
   }
 
-  public C_INIT_Orient2DRelToCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4B55AD02EB661472));
   }

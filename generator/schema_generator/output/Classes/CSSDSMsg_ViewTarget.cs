@@ -9,9 +9,6 @@ internal partial class CSSDSMsg_ViewTarget : SchemaClass, ISSDSMsg_ViewTarget {
   public CSSDSMsg_ViewTarget(nint handle) : base(handle) {
   }
 
-  public CSSDSMsg_ViewTarget(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x4F31099BCAE8A266));
   }

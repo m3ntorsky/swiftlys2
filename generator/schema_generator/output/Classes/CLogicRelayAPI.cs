@@ -9,9 +9,6 @@ internal partial class CLogicRelayAPI : SchemaClass, ILogicRelayAPI {
   public CLogicRelayAPI(nint handle) : base(handle) {
   }
 
-  public CLogicRelayAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

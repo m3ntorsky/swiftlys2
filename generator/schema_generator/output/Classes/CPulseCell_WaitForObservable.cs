@@ -9,9 +9,6 @@ internal partial class CPulseCell_WaitForObservable : CPulseCell_BaseYieldingInf
   public CPulseCell_WaitForObservable(nint handle) : base(handle) {
   }
 
-  public CPulseCell_WaitForObservable(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulseObservableBoolExpression_t Condition {
     get => new PulseObservableBoolExpression_t(_Handle + Schema.GetOffset(0xE6EB02CD5F2A883E));
   }

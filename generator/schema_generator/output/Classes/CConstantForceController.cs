@@ -9,9 +9,6 @@ internal partial class CConstantForceController : SchemaClass, IConstantForceCon
   public CConstantForceController(nint handle) : base(handle) {
   }
 
-  public CConstantForceController(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Linear {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x37030A8D6B6D1260));
   }

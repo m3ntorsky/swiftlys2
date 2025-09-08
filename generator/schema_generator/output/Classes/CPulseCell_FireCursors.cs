@@ -9,11 +9,8 @@ internal partial class CPulseCell_FireCursors : CPulseCell_BaseYieldingInflow, I
   public CPulseCell_FireCursors(nint handle) : base(handle) {
   }
 
-  public CPulseCell_FireCursors(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CPulse_OutflowConnection > Outflows {
-    get => ref _Handle.AsRef<CUtlVector< CPulse_OutflowConnection >>(Schema.GetOffset(0x9BFA034F8F0AFDF8));
+  public ref CUtlVector Outflows {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x9BFA034F8F0AFDF8));
   }
   public ref bool WaitForChildOutflows {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9BFA034F3F8E29C6));

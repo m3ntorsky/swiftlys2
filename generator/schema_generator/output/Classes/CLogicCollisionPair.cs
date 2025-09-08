@@ -9,9 +9,6 @@ internal partial class CLogicCollisionPair : CLogicalEntity, ILogicCollisionPair
   public CLogicCollisionPair(nint handle) : base(handle) {
   }
 
-  public CLogicCollisionPair(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge NameAttach1 {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9E0FC6AC6776530A));
   }

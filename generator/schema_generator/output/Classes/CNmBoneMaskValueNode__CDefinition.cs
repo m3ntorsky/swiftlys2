@@ -9,9 +9,6 @@ internal partial class CNmBoneMaskValueNode__CDefinition : CNmValueNode::CDefini
   public CNmBoneMaskValueNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmBoneMaskValueNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class C_OP_ColorAdjustHSL : CParticleFunctionOperator, IC_OP_Co
   public C_OP_ColorAdjustHSL(nint handle) : base(handle) {
   }
 
-  public C_OP_ColorAdjustHSL(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput HueAdjust {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0x34348E726B20DB80));
   }

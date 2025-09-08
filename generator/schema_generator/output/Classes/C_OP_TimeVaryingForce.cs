@@ -9,9 +9,6 @@ internal partial class C_OP_TimeVaryingForce : CParticleFunctionForce, IC_OP_Tim
   public C_OP_TimeVaryingForce(nint handle) : base(handle) {
   }
 
-  public C_OP_TimeVaryingForce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float StartLerpTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xAC89FC47C1D0DC21));
   }

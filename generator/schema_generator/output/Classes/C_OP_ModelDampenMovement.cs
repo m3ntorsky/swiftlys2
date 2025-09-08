@@ -9,9 +9,6 @@ internal partial class C_OP_ModelDampenMovement : CParticleFunctionOperator, IC_
   public C_OP_ModelDampenMovement(nint handle) : base(handle) {
   }
 
-  public C_OP_ModelDampenMovement(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x74BD8BB63F31A6BD));
   }
@@ -25,7 +22,7 @@ internal partial class C_OP_ModelDampenMovement : CParticleFunctionOperator, IC_
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x74BD8BB610D1938B));
   }
   public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x74BD8BB66A21BB0E));
+    get => new SchemaFixedString(_Handle, 0x74BD8BB66A21BB0E, 128, 1, 1);
   }
   public IPerParticleVecInput PosOffset {
     get => new CPerParticleVecInput(_Handle + Schema.GetOffset(0x74BD8BB655D114B6));

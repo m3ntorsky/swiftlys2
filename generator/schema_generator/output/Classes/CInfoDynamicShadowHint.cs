@@ -9,9 +9,6 @@ internal partial class CInfoDynamicShadowHint : CPointEntity, IInfoDynamicShadow
   public CInfoDynamicShadowHint(nint handle) : base(handle) {
   }
 
-  public CInfoDynamicShadowHint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x46DDE8EE3A7C5965));
   }
@@ -24,8 +21,8 @@ internal partial class CInfoDynamicShadowHint : CPointEntity, IInfoDynamicShadow
   public ref int LightChoice {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x46DDE8EED82DFBD8));
   }
-  public ref CHandle< CBaseEntity > Light {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x46DDE8EEF68359B1));
+  public ref CHandle<CBaseEntity> Light {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x46DDE8EEF68359B1));
   }
 
 

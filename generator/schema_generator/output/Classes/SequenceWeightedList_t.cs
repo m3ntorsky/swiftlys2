@@ -9,9 +9,6 @@ internal partial class SequenceWeightedList_t : SchemaClass, ISequenceWeightedLi
   public SequenceWeightedList_t(nint handle) : base(handle) {
   }
 
-  public SequenceWeightedList_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Sequence {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9BB15AFE3775D33C));
   }

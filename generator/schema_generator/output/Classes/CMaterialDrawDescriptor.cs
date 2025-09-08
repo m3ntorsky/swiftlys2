@@ -9,9 +9,6 @@ internal partial class CMaterialDrawDescriptor : SchemaClass, IMaterialDrawDescr
   public CMaterialDrawDescriptor(nint handle) : base(handle) {
   }
 
-  public CMaterialDrawDescriptor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float UvDensity {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE7C21000A7661B68));
   }
@@ -36,8 +33,8 @@ internal partial class CMaterialDrawDescriptor : SchemaClass, IMaterialDrawDescr
   public ref byte MeshletPackedIVBIndex {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xE7C21000A98C8BAC));
   }
-  public ref CUtlLeanVector< CMaterialDrawDescriptor::RigidMeshPart_t > RigidMeshParts {
-    get => ref _Handle.AsRef<CUtlLeanVector< CMaterialDrawDescriptor::RigidMeshPart_t >>(Schema.GetOffset(0xE7C2100062848C01));
+  public ref CUtlLeanVector<CMaterialDrawDescriptor::RigidMeshPart_t> RigidMeshParts {
+    get => ref _Handle.AsRef<CUtlLeanVector<CMaterialDrawDescriptor::RigidMeshPart_t>>(Schema.GetOffset(0xE7C2100062848C01));
   }
   public ref RenderPrimitiveType_t PrimitiveType {
     get => ref _Handle.AsRef<RenderPrimitiveType_t>(Schema.GetOffset(0xE7C2100041517C4A));
@@ -60,8 +57,8 @@ internal partial class CMaterialDrawDescriptor : SchemaClass, IMaterialDrawDescr
   public IRenderBufferBinding MeshletPackedIVB {
     get => new CRenderBufferBinding(_Handle + Schema.GetOffset(0xE7C21000015D34E4));
   }
-  public ref CStrongHandle< InfoForResourceTypeIMaterial2 > Material {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0xE7C2100034ADFC00));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0xE7C2100034ADFC00));
   }
 
 

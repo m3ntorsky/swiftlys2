@@ -9,21 +9,6 @@ internal partial class CColorCorrectionVolume : CBaseTrigger, IColorCorrectionVo
   public CColorCorrectionVolume(nint handle) : base(handle) {
   }
 
-  public CColorCorrectionVolume(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref float MaxWeight {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x78A9E01BEE8A2F2D));
-  }
-  public ref float FadeDuration {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x78A9E01B46550027));
-  }
-  public ref float Weight {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x78A9E01BBF415739));
-  }
-  public ISchemaFixedString LookupFilename {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x78A9E01B2611A2C6));
-  }
   public ref float LastEnterWeight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x78A9E01B2F53D64D));
   }

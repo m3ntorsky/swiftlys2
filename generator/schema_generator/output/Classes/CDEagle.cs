@@ -9,9 +9,6 @@ internal partial class CDEagle : CCSWeaponBaseGun, IDEagle {
   public CDEagle(nint handle) : base(handle) {
   }
 
-  public CDEagle(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

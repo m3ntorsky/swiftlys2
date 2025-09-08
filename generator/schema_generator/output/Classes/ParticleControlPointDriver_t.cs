@@ -9,9 +9,6 @@ internal partial class ParticleControlPointDriver_t : SchemaClass, IParticleCont
   public ParticleControlPointDriver_t(nint handle) : base(handle) {
   }
 
-  public ParticleControlPointDriver_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xB7C66843E9EC8FF5));
   }

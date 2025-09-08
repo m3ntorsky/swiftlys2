@@ -9,9 +9,6 @@ internal partial class CCurrentRotationVelocityMetricEvaluator : CMotionMetricEv
   public CCurrentRotationVelocityMetricEvaluator(nint handle) : base(handle) {
   }
 
-  public CCurrentRotationVelocityMetricEvaluator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CPointEntity : CBaseEntity, IPointEntity {
   public CPointEntity(nint handle) : base(handle) {
   }
 
-  public CPointEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

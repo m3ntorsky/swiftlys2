@@ -9,9 +9,6 @@ internal partial class CEnvTilt : CPointEntity, IEnvTilt {
   public CEnvTilt(nint handle) : base(handle) {
   }
 
-  public CEnvTilt(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Duration {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF90425169879A98D));
   }

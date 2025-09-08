@@ -9,17 +9,14 @@ internal partial class CRR_Response : SchemaClass, IRR_Response {
   public CRR_Response(nint handle) : base(handle) {
   }
 
-  public CRR_Response(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref byte Type {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x7B8008788ED6D5CD));
   }
   public ISchemaFixedString ResponseName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x7B800878C2716964));
+    get => new SchemaFixedString(_Handle, 0x7B800878C2716964, 192, 1, 1);
   }
   public ISchemaFixedString MatchingRule {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x7B80087820850239));
+    get => new SchemaFixedString(_Handle, 0x7B80087820850239, 128, 1, 1);
   }
   public IResponseParams Params {
     get => new ResponseParams(_Handle + Schema.GetOffset(0x7B800878900020D3));

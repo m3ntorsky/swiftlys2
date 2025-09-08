@@ -9,9 +9,6 @@ internal partial class TwoBoneIKSettings_t : SchemaClass, ITwoBoneIKSettings_t {
   public TwoBoneIKSettings_t(nint handle) : base(handle) {
   }
 
-  public TwoBoneIKSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref IkEndEffectorType EndEffectorType {
     get => ref _Handle.AsRef<IkEndEffectorType>(Schema.GetOffset(0xBE091551687CB4CE));
   }

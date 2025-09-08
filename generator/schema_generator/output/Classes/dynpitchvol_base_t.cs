@@ -9,9 +9,6 @@ internal partial class dynpitchvol_base_t : SchemaClass, Idynpitchvol_base_t {
   public dynpitchvol_base_t(nint handle) : base(handle) {
   }
 
-  public dynpitchvol_base_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Preset {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x43D191DAF510291E));
   }

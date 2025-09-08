@@ -9,9 +9,6 @@ internal partial class C_OP_RemapAverageHitboxSpeedtoCP : CParticleFunctionPreEm
   public C_OP_RemapAverageHitboxSpeedtoCP(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapAverageHitboxSpeedtoCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int InControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE6055FBCE7CB99DE));
   }
@@ -43,7 +40,7 @@ internal partial class C_OP_RemapAverageHitboxSpeedtoCP : CParticleFunctionPreEm
     get => new CParticleCollectionVecInput(_Handle + Schema.GetOffset(0xE6055FBC23BF409F));
   }
   public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0xE6055FBC6A21BB0E));
+    get => new SchemaFixedString(_Handle, 0xE6055FBC6A21BB0E, 128, 1, 1);
   }
 
 

@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISampleCode : ISchemaClass {
 
-
+  public ISchemaFixedArray<byte> SubCode { get; }
+  
 }

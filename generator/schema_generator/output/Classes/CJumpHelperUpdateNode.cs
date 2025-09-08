@@ -9,9 +9,6 @@ internal partial class CJumpHelperUpdateNode : CSequenceUpdateNode, IJumpHelperU
   public CJumpHelperUpdateNode(nint handle) : base(handle) {
   }
 
-  public CJumpHelperUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimParamHandle TargetParam {
     get => new CAnimParamHandle(_Handle + Schema.GetOffset(0xB5EA3127D85B45EB));
   }
@@ -31,7 +28,7 @@ internal partial class CJumpHelperUpdateNode : CSequenceUpdateNode, IJumpHelperU
     get => ref _Handle.AsRef<JumpCorrectionMethod>(Schema.GetOffset(0xB5EA31271E19BA51));
   }
   public ISchemaFixedArray<bool> TranslationAxis {
-    get => new SchemaFixedArray<bool>(_Handle + Schema.GetOffset(0xB5EA3127F062387D));
+    get => new SchemaFixedArray<bool>(_Handle, 0xB5EA3127F062387D, 3, 1, 1);
   }
   public ref bool ScaleSpeed {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB5EA31272776330C));

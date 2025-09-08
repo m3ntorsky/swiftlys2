@@ -9,9 +9,6 @@ internal partial class CNmVectorValueNode__CDefinition : CNmValueNode::CDefiniti
   public CNmVectorValueNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmVectorValueNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

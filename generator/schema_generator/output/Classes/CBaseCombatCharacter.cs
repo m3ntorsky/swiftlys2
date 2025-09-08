@@ -9,14 +9,8 @@ internal partial class CBaseCombatCharacter : CBaseFlex, IBaseCombatCharacter {
   public CBaseCombatCharacter(nint handle) : base(handle) {
   }
 
-  public CBaseCombatCharacter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool ForceServerRagdoll {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB47DE3DEC0D0B742));
-  }
-  public ref CUtlVector< CHandle< CEconWearable > > MyWearables {
-    get => ref _Handle.AsRef<CUtlVector< CHandle< CEconWearable > >>(Schema.GetOffset(0xB47DE3DE000B8B43));
   }
   public ref float ImpactEnergyScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB47DE3DEC66BAC1B));
@@ -30,8 +24,8 @@ internal partial class CBaseCombatCharacter : CBaseFlex, IBaseCombatCharacter {
   public ref bool DeathEventsDispatched {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB47DE3DE8F5C8C9F));
   }
-  public ref CUtlVector< RelationshipOverride_t > VecRelationships {
-    get => ref _Handle.Deref<CUtlVector< RelationshipOverride_t >>(Schema.GetOffset(0xB47DE3DE2B978F5E));
+  public ref CUtlVector VecRelationships {
+    get => ref _Handle.Deref<CUtlVector>(Schema.GetOffset(0xB47DE3DE2B978F5E));
   }
   public ref CUtlSymbolLarge StrRelationships {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB47DE3DEF96E2AD7));

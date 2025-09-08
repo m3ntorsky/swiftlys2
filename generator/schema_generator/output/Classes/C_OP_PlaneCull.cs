@@ -9,9 +9,6 @@ internal partial class C_OP_PlaneCull : CParticleFunctionOperator, IC_OP_PlaneCu
   public C_OP_PlaneCull(nint handle) : base(handle) {
   }
 
-  public C_OP_PlaneCull(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int PlaneControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x352AAF45E621E9BC));
   }

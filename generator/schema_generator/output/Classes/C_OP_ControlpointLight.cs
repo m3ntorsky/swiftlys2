@@ -9,9 +9,6 @@ internal partial class C_OP_ControlpointLight : CParticleFunctionOperator, IC_OP
   public C_OP_ControlpointLight(nint handle) : base(handle) {
   }
 
-  public C_OP_ControlpointLight(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Scale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x53983694B731A42F));
   }

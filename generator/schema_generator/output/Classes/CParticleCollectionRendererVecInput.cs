@@ -9,9 +9,6 @@ internal partial class CParticleCollectionRendererVecInput : CParticleCollection
   public CParticleCollectionRendererVecInput(nint handle) : base(handle) {
   }
 
-  public CParticleCollectionRendererVecInput(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

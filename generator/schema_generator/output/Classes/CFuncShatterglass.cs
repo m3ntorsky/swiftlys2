@@ -9,17 +9,14 @@ internal partial class CFuncShatterglass : CBaseModelEntity, IFuncShatterglass {
   public CFuncShatterglass(nint handle) : base(handle) {
   }
 
-  public CFuncShatterglass(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref matrix3x4_t MatPanelTransform {
     get => ref _Handle.AsRef<matrix3x4_t>(Schema.GetOffset(0xB755F0FB82550F23));
   }
   public ref matrix3x4_t MatPanelTransformWsTemp {
     get => ref _Handle.AsRef<matrix3x4_t>(Schema.GetOffset(0xB755F0FB74E9192F));
   }
-  public ref CUtlVector< uint32 > ShatterGlassShards {
-    get => ref _Handle.AsRef<CUtlVector< uint32 >>(Schema.GetOffset(0xB755F0FBCC0BC437));
+  public ref CUtlVector<uint> ShatterGlassShards {
+    get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0xB755F0FBCC0BC437));
   }
   public ref Vector2D PanelSize {
     get => ref _Handle.AsRef<Vector2D>(Schema.GetOffset(0xB755F0FBC54D327C));
@@ -72,14 +69,14 @@ internal partial class CFuncShatterglass : CBaseModelEntity, IFuncShatterglass {
   public ref CUtlSymbolLarge DamagePositioningEntityName04 {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB755F0FBA8F26F2E));
   }
-  public ref CUtlVector< Vector > InitialDamagePositions {
-    get => ref _Handle.AsRef<CUtlVector< Vector >>(Schema.GetOffset(0xB755F0FB6D8C7F56));
+  public ref CUtlVector<Vector> InitialDamagePositions {
+    get => ref _Handle.AsRef<CUtlVector<Vector>>(Schema.GetOffset(0xB755F0FB6D8C7F56));
   }
-  public ref CUtlVector< Vector > ExtraDamagePositions {
-    get => ref _Handle.AsRef<CUtlVector< Vector >>(Schema.GetOffset(0xB755F0FB94D38DA0));
+  public ref CUtlVector<Vector> ExtraDamagePositions {
+    get => ref _Handle.AsRef<CUtlVector<Vector>>(Schema.GetOffset(0xB755F0FB94D38DA0));
   }
-  public ref CUtlVector< Vector4D > InitialPanelVertices {
-    get => ref _Handle.AsRef<CUtlVector< Vector4D >>(Schema.GetOffset(0xB755F0FB39117F58));
+  public ref CUtlVector<Vector4D> InitialPanelVertices {
+    get => ref _Handle.AsRef<CUtlVector<Vector4D>>(Schema.GetOffset(0xB755F0FB39117F58));
   }
   public IEntityIOOutput OnBroken {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xB755F0FB961F60E5));
@@ -87,8 +84,8 @@ internal partial class CFuncShatterglass : CBaseModelEntity, IFuncShatterglass {
   public ref byte SurfaceType {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xB755F0FB3A6DDFE7));
   }
-  public ref CStrongHandle< InfoForResourceTypeIMaterial2 > MaterialDamageBase {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0xB755F0FB3000A1C6));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> MaterialDamageBase {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0xB755F0FB3000A1C6));
   }
 
 

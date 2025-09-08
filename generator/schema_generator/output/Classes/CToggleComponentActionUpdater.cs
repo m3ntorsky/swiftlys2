@@ -9,9 +9,6 @@ internal partial class CToggleComponentActionUpdater : CAnimActionUpdater, ITogg
   public CToggleComponentActionUpdater(nint handle) : base(handle) {
   }
 
-  public CToggleComponentActionUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimComponentID ComponentID {
     get => new AnimComponentID(_Handle + Schema.GetOffset(0x4641AA28C1B9267D));
   }

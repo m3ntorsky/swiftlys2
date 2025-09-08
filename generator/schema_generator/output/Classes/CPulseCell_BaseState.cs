@@ -9,9 +9,6 @@ internal partial class CPulseCell_BaseState : CPulseCell_BaseYieldingInflow, IPu
   public CPulseCell_BaseState(nint handle) : base(handle) {
   }
 
-  public CPulseCell_BaseState(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

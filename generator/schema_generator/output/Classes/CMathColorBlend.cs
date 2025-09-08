@@ -9,9 +9,6 @@ internal partial class CMathColorBlend : CLogicalEntity, IMathColorBlend {
   public CMathColorBlend(nint handle) : base(handle) {
   }
 
-  public CMathColorBlend(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float InMin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCC5E3EF67506C6C8));
   }

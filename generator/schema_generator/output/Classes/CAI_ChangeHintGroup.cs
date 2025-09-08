@@ -9,9 +9,6 @@ internal partial class CAI_ChangeHintGroup : CBaseEntity, IAI_ChangeHintGroup {
   public CAI_ChangeHintGroup(nint handle) : base(handle) {
   }
 
-  public CAI_ChangeHintGroup(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int SearchType {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE2F9617B09088830));
   }

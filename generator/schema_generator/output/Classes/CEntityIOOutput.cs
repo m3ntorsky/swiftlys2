@@ -9,9 +9,6 @@ internal partial class CEntityIOOutput : SchemaClass, IEntityIOOutput {
   public CEntityIOOutput(nint handle) : base(handle) {
   }
 
-  public CEntityIOOutput(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField Value {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xCD5B084DCB0894A));
   }

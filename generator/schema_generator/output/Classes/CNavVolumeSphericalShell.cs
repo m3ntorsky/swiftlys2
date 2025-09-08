@@ -9,9 +9,6 @@ internal partial class CNavVolumeSphericalShell : CNavVolumeSphere, INavVolumeSp
   public CNavVolumeSphericalShell(nint handle) : base(handle) {
   }
 
-  public CNavVolumeSphericalShell(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RadiusInner {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8AC7FC7A5D85234F));
   }

@@ -9,9 +9,6 @@ internal partial class CNavVolumeBreadthFirstSearch : CNavVolumeCalculatedVector
   public CNavVolumeBreadthFirstSearch(nint handle) : base(handle) {
   }
 
-  public CNavVolumeBreadthFirstSearch(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector StartPos {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x7C16FC090FE14C1B));
   }

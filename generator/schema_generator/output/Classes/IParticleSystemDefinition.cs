@@ -9,9 +9,6 @@ internal partial class IParticleSystemDefinition : SchemaClass, IIParticleSystem
   public IParticleSystemDefinition(nint handle) : base(handle) {
   }
 
-  public IParticleSystemDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

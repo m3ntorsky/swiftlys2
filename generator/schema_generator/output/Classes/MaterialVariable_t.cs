@@ -9,9 +9,6 @@ internal partial class MaterialVariable_t : SchemaClass, IMaterialVariable_t {
   public MaterialVariable_t(nint handle) : base(handle) {
   }
 
-  public MaterialVariable_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString StrVariable {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xCACB71DBA52C3390));
   }

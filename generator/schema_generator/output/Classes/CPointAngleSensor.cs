@@ -9,20 +9,17 @@ internal partial class CPointAngleSensor : CPointEntity, IPointAngleSensor {
   public CPointAngleSensor(nint handle) : base(handle) {
   }
 
-  public CPointAngleSensor(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1E4356013A7C5965));
   }
   public ref CUtlSymbolLarge LookAtName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1E435601A28C338C));
   }
-  public ref CHandle< CBaseEntity > TargetEntity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1E43560125D042A9));
+  public ref CHandle<CBaseEntity> TargetEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1E43560125D042A9));
   }
-  public ref CHandle< CBaseEntity > LookAtEntity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1E435601073CB5DE));
+  public ref CHandle<CBaseEntity> LookAtEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1E435601073CB5DE));
   }
   public ref float Duration {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1E435601BC5E3BAB));

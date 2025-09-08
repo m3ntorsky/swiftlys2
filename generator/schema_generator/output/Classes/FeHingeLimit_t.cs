@@ -9,11 +9,8 @@ internal partial class FeHingeLimit_t : SchemaClass, IFeHingeLimit_t {
   public FeHingeLimit_t(nint handle) : base(handle) {
   }
 
-  public FeHingeLimit_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<uint16> Node {
-    get => new SchemaFixedArray<uint16>(_Handle + Schema.GetOffset(0x3E7F1FF5CD6694B9));
+  public ISchemaFixedArray<ushort> Node {
+    get => new SchemaFixedArray<ushort>(_Handle, 0x3E7F1FF5CD6694B9, 6, 2, 2);
   }
   public ref uint Flags {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x3E7F1FF5B8D52E48));

@@ -9,9 +9,6 @@ internal partial class C_OP_ForceBasedOnDistanceToPlane : CParticleFunctionForce
   public C_OP_ForceBasedOnDistanceToPlane(nint handle) : base(handle) {
   }
 
-  public C_OP_ForceBasedOnDistanceToPlane(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float MinDist {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x41A5EAC25219494D));
   }

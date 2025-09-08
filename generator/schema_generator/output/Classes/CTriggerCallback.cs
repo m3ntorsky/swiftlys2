@@ -9,9 +9,6 @@ internal partial class CTriggerCallback : CBaseTrigger, ITriggerCallback {
   public CTriggerCallback(nint handle) : base(handle) {
   }
 
-  public CTriggerCallback(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

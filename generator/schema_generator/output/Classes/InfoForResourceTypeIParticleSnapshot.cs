@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeIParticleSnapshot : SchemaClass, IInfo
   public InfoForResourceTypeIParticleSnapshot(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeIParticleSnapshot(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

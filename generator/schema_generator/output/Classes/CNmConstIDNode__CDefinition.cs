@@ -9,9 +9,6 @@ internal partial class CNmConstIDNode__CDefinition : CNmIDValueNode::CDefinition
   public CNmConstIDNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmConstIDNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CGlobalSymbol Value {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xF68AB5F96B99AEEA));
   }

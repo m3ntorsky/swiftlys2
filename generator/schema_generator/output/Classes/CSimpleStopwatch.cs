@@ -9,9 +9,6 @@ internal partial class CSimpleStopwatch : CStopwatchBase, ISimpleStopwatch {
   public CSimpleStopwatch(nint handle) : base(handle) {
   }
 
-  public CSimpleStopwatch(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

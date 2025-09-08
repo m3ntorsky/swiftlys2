@@ -9,9 +9,6 @@ internal partial class CParticleMassCalculationParameters : SchemaClass, IPartic
   public CParticleMassCalculationParameters(nint handle) : base(handle) {
   }
 
-  public CParticleMassCalculationParameters(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ParticleMassMode_t MassMode {
     get => ref _Handle.AsRef<ParticleMassMode_t>(Schema.GetOffset(0xAA3341F9D5B6E412));
   }

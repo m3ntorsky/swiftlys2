@@ -9,9 +9,6 @@ internal partial class CVectorExponentialMovingAverage : SchemaClass, IVectorExp
   public CVectorExponentialMovingAverage(nint handle) : base(handle) {
   }
 
-  public CVectorExponentialMovingAverage(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CNmStateMachineNode__TransitionDefinition_t : SchemaClass
   public CNmStateMachineNode__TransitionDefinition_t(nint handle) : base(handle) {
   }
 
-  public CNmStateMachineNode__TransitionDefinition_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short TargetStateIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x9404D2C4E5C0218C));
   }

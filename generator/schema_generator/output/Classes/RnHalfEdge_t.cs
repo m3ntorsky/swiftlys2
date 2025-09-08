@@ -9,9 +9,6 @@ internal partial class RnHalfEdge_t : SchemaClass, IRnHalfEdge_t {
   public RnHalfEdge_t(nint handle) : base(handle) {
   }
 
-  public RnHalfEdge_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref byte Next {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xB67DE42E8D575D9C));
   }

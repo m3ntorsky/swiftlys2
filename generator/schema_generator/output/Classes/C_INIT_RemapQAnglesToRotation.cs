@@ -9,9 +9,6 @@ internal partial class C_INIT_RemapQAnglesToRotation : CParticleFunctionInitiali
   public C_INIT_RemapQAnglesToRotation(nint handle) : base(handle) {
   }
 
-  public C_INIT_RemapQAnglesToRotation(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleTransformInput TransformInput {
     get => new CParticleTransformInput(_Handle + Schema.GetOffset(0xD24C8C15B3FDC289));
   }

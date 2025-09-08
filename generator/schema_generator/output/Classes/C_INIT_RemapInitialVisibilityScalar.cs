@@ -9,9 +9,6 @@ internal partial class C_INIT_RemapInitialVisibilityScalar : CParticleFunctionIn
   public C_INIT_RemapInitialVisibilityScalar(nint handle) : base(handle) {
   }
 
-  public C_INIT_RemapInitialVisibilityScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x6EA0C1DE5729606));
   }

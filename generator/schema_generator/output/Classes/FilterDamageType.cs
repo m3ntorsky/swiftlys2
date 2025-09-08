@@ -9,9 +9,6 @@ internal partial class FilterDamageType : CBaseFilter, IFilterDamageType {
   public FilterDamageType(nint handle) : base(handle) {
   }
 
-  public FilterDamageType(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int DamageType {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xEBD649E6AF4EB7BD));
   }

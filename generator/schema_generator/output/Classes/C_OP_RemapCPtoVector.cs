@@ -9,9 +9,6 @@ internal partial class C_OP_RemapCPtoVector : CParticleFunctionOperator, IC_OP_R
   public C_OP_RemapCPtoVector(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapCPtoVector(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CPInput {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA5B6B7CBFB805736));
   }

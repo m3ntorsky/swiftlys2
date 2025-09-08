@@ -9,9 +9,6 @@ internal partial class CSoundEventParameter : CBaseEntity, ISoundEventParameter 
   public CSoundEventParameter(nint handle) : base(handle) {
   }
 
-  public CSoundEventParameter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge ParamName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xEFEED49AFF6F4311));
   }

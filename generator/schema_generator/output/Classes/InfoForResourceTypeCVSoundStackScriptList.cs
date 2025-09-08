@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCVSoundStackScriptList : SchemaClass, 
   public InfoForResourceTypeCVSoundStackScriptList(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCVSoundStackScriptList(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

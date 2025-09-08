@@ -26,6 +26,7 @@ class Writer():
 
     self.class_ref_field_template = open("templates/class_ref_field_template.cs", "r").read()
     self.class_value_field_template = open("templates/class_value_field_template.cs", "r").read()
+    self.class_fixed_array_field_template = open("templates/class_fixed_array_field_template.cs", "r").read()
 
     self.interface_field_template = open("templates/interface_field_template.cs", "r").read()
     self.class_template = open("templates/class_template.cs", "r").read()
@@ -57,7 +58,9 @@ class Writer():
         if field_info["IS_NETWORKED"] == "true":
           updators.append(render_template(self.class_updator_template, field_info))
 
-        if field_info["IS_VALUE_TYPE"]:
+        elif field_info["KIND"] == "fixed_array":
+          fields.append(render_template(self.class_fixed_array_field_template, field_info))
+        elif field_info["IS_VALUE_TYPE"]:
           fields.append(render_template(self.class_value_field_template, field_info))
         else:
           fields.append(render_template(self.class_ref_field_template, field_info))
@@ -74,10 +77,21 @@ class Writer():
     self.class_file_handle.write(render_template(self.class_template, params))
 
   def write_interface(self):
+
+    fields = []
+
+    if "fields" in self.class_def:
+      for field in self.class_def["fields"]:
+        field_info = parse_field(field, self.all_class_names, self.all_enum_names)
+      
+        field_info["REF"] = "ref " if field_info["IS_VALUE_TYPE"] else ""
+
+        fields.append(render_template(self.interface_field_template, field_info))
+
     params = {
       "INTERFACE_NAME": self.interface_name,
       "BASE_INTERFACE": get_interface_name(self.base_class),
-      "FIELDS": ""
+      "FIELDS": "\n".join(fields)
     }
     self.interface_file_handle.write(render_template(self.interface_template, params))
 

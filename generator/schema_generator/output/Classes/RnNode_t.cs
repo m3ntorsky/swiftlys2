@@ -9,9 +9,6 @@ internal partial class RnNode_t : SchemaClass, IRnNode_t {
   public RnNode_t(nint handle) : base(handle) {
   }
 
-  public RnNode_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector Min {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x7C7D54E2F4B0AA63));
   }

@@ -9,9 +9,6 @@ internal partial class CNmEventConsumerParticle : CNmEventConsumer, INmEventCons
   public CNmEventConsumerParticle(nint handle) : base(handle) {
   }
 
-  public CNmEventConsumerParticle(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

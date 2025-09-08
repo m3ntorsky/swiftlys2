@@ -9,9 +9,6 @@ internal partial class CFuncLadderAlias_func_useableladder : CFuncLadder, IFuncL
   public CFuncLadderAlias_func_useableladder(nint handle) : base(handle) {
   }
 
-  public CFuncLadderAlias_func_useableladder(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

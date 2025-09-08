@@ -9,9 +9,6 @@ internal partial class C_OP_RemapAverageScalarValuetoCP : CParticleFunctionPreEm
   public C_OP_RemapAverageScalarValuetoCP(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapAverageScalarValuetoCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref SetStatisticExpressionType_t Expression {
     get => ref _Handle.AsRef<SetStatisticExpressionType_t>(Schema.GetOffset(0x98EDCBBC160B2427));
   }

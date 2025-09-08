@@ -9,9 +9,6 @@ internal partial class CNmLayerBlendNode__LayerDefinition_t : SchemaClass, INmLa
   public CNmLayerBlendNode__LayerDefinition_t(nint handle) : base(handle) {
   }
 
-  public CNmLayerBlendNode__LayerDefinition_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short InputNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xB5F2C492B0A177F6));
   }

@@ -9,9 +9,6 @@ internal partial class CPulseCell_Inflow_Wait : CPulseCell_BaseYieldingInflow, I
   public CPulseCell_Inflow_Wait(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Inflow_Wait(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPulse_ResumePoint WakeResume {
     get => new CPulse_ResumePoint(_Handle + Schema.GetOffset(0x8A00D13D31F86DC2));
   }

@@ -9,33 +9,6 @@ internal partial class CSmokeGrenadeProjectile : CBaseCSGrenadeProjectile, ISmok
   public CSmokeGrenadeProjectile(nint handle) : base(handle) {
   }
 
-  public CSmokeGrenadeProjectile(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref int SmokeEffectTickBegin {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE31DC1B8F5A25253));
-  }
-  public ref bool DidSmokeEffect {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE31DC1B881A8B092));
-  }
-  public ref int RandomSeed {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE31DC1B86388F067));
-  }
-  public ref Vector SmokeColor {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xE31DC1B87808EA9D));
-  }
-  public ref Vector SmokeDetonationPos {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xE31DC1B8743595D7));
-  }
-  public ref CUtlVector< uint8 > VoxelFrameData {
-    get => ref _Handle.AsRef<CUtlVector< uint8 >>(Schema.GetOffset(0xE31DC1B8E854C6C4));
-  }
-  public ref int VoxelFrameDataSize {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE31DC1B8369FBFD9));
-  }
-  public ref int VoxelUpdate {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE31DC1B8EE30DA3A));
-  }
   public IGameTime_t LastBounce {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xE31DC1B8A4A556A7));
   }

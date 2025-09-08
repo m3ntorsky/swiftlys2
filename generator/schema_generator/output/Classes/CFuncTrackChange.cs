@@ -9,9 +9,6 @@ internal partial class CFuncTrackChange : CFuncPlatRot, IFuncTrackChange {
   public CFuncTrackChange(nint handle) : base(handle) {
   }
 
-  public CFuncTrackChange(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPathTrack TrackTop {
     get => new CPathTrack(_Handle + Schema.GetOffset(0x25A8A26FF7C2CCBF));
   }

@@ -9,9 +9,6 @@ internal partial class CSoundPatch : SchemaClass, ISoundPatch {
   public CSoundPatch(nint handle) : base(handle) {
   }
 
-  public CSoundPatch(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISoundEnvelope Pitch {
     get => new CSoundEnvelope(_Handle + Schema.GetOffset(0xBE66ED3D12AC36D1));
   }
@@ -27,8 +24,8 @@ internal partial class CSoundPatch : SchemaClass, ISoundPatch {
   public ref CUtlSymbolLarge SoundScriptName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBE66ED3D6486B844));
   }
-  public ref CHandle< CBaseEntity > Ent {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0xBE66ED3D8BBDB334));
+  public ref CHandle<CBaseEntity> Ent {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xBE66ED3D8BBDB334));
   }
   public ref CEntityIndex SoundEntityIndex {
     get => ref _Handle.AsRef<CEntityIndex>(Schema.GetOffset(0xBE66ED3DEC098195));

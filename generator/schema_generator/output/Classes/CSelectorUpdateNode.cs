@@ -9,14 +9,11 @@ internal partial class CSelectorUpdateNode : CAnimUpdateNodeBase, ISelectorUpdat
   public CSelectorUpdateNode(nint handle) : base(handle) {
   }
 
-  public CSelectorUpdateNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVector Children {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x23CD95F27415FA72));
   }
-
-  public ref CUtlVector< CAnimUpdateNodeRef > Children {
-    get => ref _Handle.AsRef<CUtlVector< CAnimUpdateNodeRef >>(Schema.GetOffset(0x23CD95F27415FA72));
-  }
-  public ref CUtlVector< int8 > Tags {
-    get => ref _Handle.AsRef<CUtlVector< int8 >>(Schema.GetOffset(0x23CD95F2B46C8540));
+  public ref CUtlVector<byte> Tags {
+    get => ref _Handle.AsRef<CUtlVector<byte>>(Schema.GetOffset(0x23CD95F2B46C8540));
   }
   public IBlendCurve BlendCurve {
     get => new CBlendCurve(_Handle + Schema.GetOffset(0x23CD95F291978183));

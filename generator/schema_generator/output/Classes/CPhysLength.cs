@@ -9,11 +9,8 @@ internal partial class CPhysLength : CPhysConstraint, IPhysLength {
   public CPhysLength(nint handle) : base(handle) {
   }
 
-  public CPhysLength(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaFixedArray<Vector> Offset {
-    get => new SchemaFixedArray<Vector>(_Handle + Schema.GetOffset(0x9203A50AF836806A));
+    get => new SchemaFixedArray<Vector>(_Handle, 0x9203A50AF836806A, 2, 12, 4);
   }
   public ref Vector Attach {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x9203A50A4CAEA9A4));

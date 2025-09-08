@@ -9,14 +9,11 @@ internal partial class FeNodeBase_t : SchemaClass, IFeNodeBase_t {
   public FeNodeBase_t(nint handle) : base(handle) {
   }
 
-  public FeNodeBase_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ushort Node {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x74CA29BECD6694B9));
   }
-  public ISchemaFixedArray<uint16> Dummy {
-    get => new SchemaFixedArray<uint16>(_Handle + Schema.GetOffset(0x74CA29BECD8BAE5F));
+  public ISchemaFixedArray<ushort> Dummy {
+    get => new SchemaFixedArray<ushort>(_Handle, 0x74CA29BECD8BAE5F, 3, 2, 2);
   }
   public ref ushort NodeX0 {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x74CA29BE81C7FEB9));

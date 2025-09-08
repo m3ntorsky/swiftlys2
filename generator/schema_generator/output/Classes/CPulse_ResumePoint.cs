@@ -9,9 +9,6 @@ internal partial class CPulse_ResumePoint : CPulse_OutflowConnection, IPulse_Res
   public CPulse_ResumePoint(nint handle) : base(handle) {
   }
 
-  public CPulse_ResumePoint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

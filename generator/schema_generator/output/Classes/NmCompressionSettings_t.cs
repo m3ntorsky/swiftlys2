@@ -9,9 +9,6 @@ internal partial class NmCompressionSettings_t : SchemaClass, INmCompressionSett
   public NmCompressionSettings_t(nint handle) : base(handle) {
   }
 
-  public NmCompressionSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public INmCompressionSettings_t::QuantizationRange_t TranslationRangeX {
     get => new NmCompressionSettings_t::QuantizationRange_t(_Handle + Schema.GetOffset(0xA8EC8858BF2C2B));
   }

@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetSimulationRate : IParticleFunctionPreEmission {
 
-
+  public IParticleCollectionFloatInput SimulationScale { get; }
+  
 }

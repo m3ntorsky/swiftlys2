@@ -9,9 +9,6 @@ internal partial class C_INIT_RandomLifeTime : CParticleFunctionInitializer, IC_
   public C_INIT_RandomLifeTime(nint handle) : base(handle) {
   }
 
-  public C_INIT_RandomLifeTime(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float LifetimeMin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC413CA5E5D0684A6));
   }

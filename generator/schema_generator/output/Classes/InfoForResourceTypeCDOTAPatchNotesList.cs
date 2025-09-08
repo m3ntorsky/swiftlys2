@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCDOTAPatchNotesList : SchemaClass, IIn
   public InfoForResourceTypeCDOTAPatchNotesList(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCDOTAPatchNotesList(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

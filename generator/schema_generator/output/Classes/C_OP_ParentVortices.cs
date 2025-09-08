@@ -9,9 +9,6 @@ internal partial class C_OP_ParentVortices : CParticleFunctionForce, IC_OP_Paren
   public C_OP_ParentVortices(nint handle) : base(handle) {
   }
 
-  public C_OP_ParentVortices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float ForceScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBB2B6F884817F390));
   }

@@ -9,12 +9,7 @@ internal partial class CAttributeContainer : CAttributeManager, IAttributeContai
   public CAttributeContainer(nint handle) : base(handle) {
   }
 
-  public CAttributeContainer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public IEconItemView Item {
-    get => new CEconItemView(_Handle + Schema.GetOffset(0x554833CDDCE71866));
-  }
 
   public void ItemUpdated() {
     Schema.Update(_Handle, 0x554833CDDCE71866);

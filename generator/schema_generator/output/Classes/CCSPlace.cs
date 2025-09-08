@@ -9,9 +9,6 @@ internal partial class CCSPlace : CServerOnlyModelEntity, ICSPlace {
   public CCSPlace(nint handle) : base(handle) {
   }
 
-  public CCSPlace(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge Name {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x7AF35BE34D8F5786));
   }

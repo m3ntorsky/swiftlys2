@@ -9,9 +9,6 @@ internal partial class C_OP_RenderClientPhysicsImpulse : CParticleFunctionRender
   public C_OP_RenderClientPhysicsImpulse(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderClientPhysicsImpulse(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput Radius {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0x618F365ACFC08D));
   }

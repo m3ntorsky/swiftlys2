@@ -9,11 +9,8 @@ internal partial class CNavHullPresetVData : SchemaClass, INavHullPresetVData {
   public CNavHullPresetVData(nint handle) : base(handle) {
   }
 
-  public CNavHullPresetVData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CUtlString > NavHulls {
-    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0x9963D667366CCF96));
+  public ref CUtlVector<CUtlString> NavHulls {
+    get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x9963D667366CCF96));
   }
 
 

@@ -9,9 +9,6 @@ internal partial class C_OP_TurbulenceForce : CParticleFunctionForce, IC_OP_Turb
   public C_OP_TurbulenceForce(nint handle) : base(handle) {
   }
 
-  public C_OP_TurbulenceForce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float NoiseCoordScale0 {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCAE57FA75C19EC96));
   }

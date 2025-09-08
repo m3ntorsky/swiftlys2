@@ -9,9 +9,6 @@ internal partial class CNmCachedIDNode__CDefinition : CNmIDValueNode::CDefinitio
   public CNmCachedIDNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmCachedIDNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short InputValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x9527FDE895E89F27));
   }

@@ -9,9 +9,6 @@ internal partial class ConstraintSoundInfo : SchemaClass, IConstraintSoundInfo {
   public ConstraintSoundInfo(nint handle) : base(handle) {
   }
 
-  public ConstraintSoundInfo(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IVelocitySampler Sampler {
     get => new VelocitySampler(_Handle + Schema.GetOffset(0x79068C49FCCD6193));
   }
@@ -28,7 +25,7 @@ internal partial class ConstraintSoundInfo : SchemaClass, IConstraintSoundInfo {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x79068C49506B73E3));
   }
   public ISchemaFixedArray<CUtlSymbolLarge> ReversalSounds {
-    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle + Schema.GetOffset(0x79068C49F5164187));
+    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0x79068C49F5164187, 3, 8, 8);
   }
   public ref bool PlayTravelSound {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x79068C49FF3432DE));

@@ -9,9 +9,6 @@ internal partial class CNmMaterialAttributeEvent : CNmEvent, INmMaterialAttribut
   public CNmMaterialAttributeEvent(nint handle) : base(handle) {
   }
 
-  public CNmMaterialAttributeEvent(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString AttributeName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xFC131DA9168F02C));
   }

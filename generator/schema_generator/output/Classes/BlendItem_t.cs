@@ -9,11 +9,8 @@ internal partial class BlendItem_t : SchemaClass, IBlendItem_t {
   public BlendItem_t(nint handle) : base(handle) {
   }
 
-  public BlendItem_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< TagSpan_t > Tags {
-    get => ref _Handle.AsRef<CUtlVector< TagSpan_t >>(Schema.GetOffset(0x8FC3054B46C8540));
+  public ref CUtlVector Tags {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x8FC3054B46C8540));
   }
   public IAnimUpdateNodeRef Child {
     get => new CAnimUpdateNodeRef(_Handle + Schema.GetOffset(0x8FC30544A0B773F));

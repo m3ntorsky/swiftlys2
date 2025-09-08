@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointPositionToRandomActiveCP : CParticleF
   public C_OP_SetControlPointPositionToRandomActiveCP(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointPositionToRandomActiveCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CP1 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x7B108D36D4B1E579));
   }

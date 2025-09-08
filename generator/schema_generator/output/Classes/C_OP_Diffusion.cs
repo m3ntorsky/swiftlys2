@@ -9,9 +9,6 @@ internal partial class C_OP_Diffusion : CParticleFunctionOperator, IC_OP_Diffusi
   public C_OP_Diffusion(nint handle) : base(handle) {
   }
 
-  public C_OP_Diffusion(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RadiusScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x2D5ABEF4A7A20159));
   }

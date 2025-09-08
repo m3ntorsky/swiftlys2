@@ -9,9 +9,6 @@ internal partial class CNmConstTargetNode__CDefinition : CNmTargetValueNode::CDe
   public CNmConstTargetNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmConstTargetNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public INmTarget Value {
     get => new CNmTarget(_Handle + Schema.GetOffset(0xC54E1DF56B99AEEA));
   }

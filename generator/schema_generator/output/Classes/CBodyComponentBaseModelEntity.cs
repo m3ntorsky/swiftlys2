@@ -9,9 +9,6 @@ internal partial class CBodyComponentBaseModelEntity : CBodyComponentSkeletonIns
   public CBodyComponentBaseModelEntity(nint handle) : base(handle) {
   }
 
-  public CBodyComponentBaseModelEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

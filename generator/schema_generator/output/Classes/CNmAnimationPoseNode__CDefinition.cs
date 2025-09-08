@@ -9,9 +9,6 @@ internal partial class CNmAnimationPoseNode__CDefinition : CNmPoseNode::CDefinit
   public CNmAnimationPoseNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmAnimationPoseNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short PoseTimeValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xAEB5DD4EE17A4AC5));
   }

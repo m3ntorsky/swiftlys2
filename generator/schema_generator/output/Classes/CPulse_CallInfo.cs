@@ -9,9 +9,6 @@ internal partial class CPulse_CallInfo : SchemaClass, IPulse_CallInfo {
   public CPulse_CallInfo(nint handle) : base(handle) {
   }
 
-  public CPulse_CallInfo(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField PortName {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6ADF88D807237B65));
   }

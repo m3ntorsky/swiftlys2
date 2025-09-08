@@ -9,11 +9,8 @@ internal partial class CFeVertexMapBuildArray : SchemaClass, IFeVertexMapBuildAr
   public CFeVertexMapBuildArray(nint handle) : base(handle) {
   }
 
-  public CFeVertexMapBuildArray(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< FeVertexMapBuild_t* > Array {
-    get => ref _Handle.AsRef<CUtlVector< FeVertexMapBuild_t* >>(Schema.GetOffset(0x7F8ABE7424AA62A6));
+  public ref CUtlVector<PointerTo<FeVertexMapBuild_t>> Array {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<FeVertexMapBuild_t>>>(Schema.GetOffset(0x7F8ABE7424AA62A6));
   }
 
 

@@ -9,9 +9,6 @@ internal partial class C_OP_RenderCables : CParticleFunctionRenderer, IC_OP_Rend
   public C_OP_RenderCables(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderCables(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput RadiusScale {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0x16498877A7A20159));
   }
@@ -24,8 +21,8 @@ internal partial class C_OP_RenderCables : CParticleFunctionRenderer, IC_OP_Rend
   public ref ParticleColorBlendType_t ColorBlendType {
     get => ref _Handle.AsRef<ParticleColorBlendType_t>(Schema.GetOffset(0x16498877DBC6EFCF));
   }
-  public ref CStrongHandle< InfoForResourceTypeIMaterial2 > Material {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIMaterial2 >>(Schema.GetOffset(0x16498877888CE42E));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0x16498877888CE42E));
   }
   public ref TextureRepetitionMode_t TextureRepetitionMode {
     get => ref _Handle.AsRef<TextureRepetitionMode_t>(Schema.GetOffset(0x164988777CB37DBC));
@@ -72,11 +69,11 @@ internal partial class C_OP_RenderCables : CParticleFunctionRenderer, IC_OP_Rend
   public IParticleTransformInput LightingTransform {
     get => new CParticleTransformInput(_Handle + Schema.GetOffset(0x164988776557F58F));
   }
-  public ref CUtlLeanVector< FloatInputMaterialVariable_t > MaterialFloatVars {
-    get => ref _Handle.AsRef<CUtlLeanVector< FloatInputMaterialVariable_t >>(Schema.GetOffset(0x164988777A7B4D6C));
+  public ref CUtlLeanVector<FloatInputMaterialVariable_t> MaterialFloatVars {
+    get => ref _Handle.AsRef<CUtlLeanVector<FloatInputMaterialVariable_t>>(Schema.GetOffset(0x164988777A7B4D6C));
   }
-  public ref CUtlLeanVector< VecInputMaterialVariable_t > MaterialVecVars {
-    get => ref _Handle.AsRef<CUtlLeanVector< VecInputMaterialVariable_t >>(Schema.GetOffset(0x16498877E670B944));
+  public ref CUtlLeanVector<VecInputMaterialVariable_t> MaterialVecVars {
+    get => ref _Handle.AsRef<CUtlLeanVector<VecInputMaterialVariable_t>>(Schema.GetOffset(0x16498877E670B944));
   }
 
 

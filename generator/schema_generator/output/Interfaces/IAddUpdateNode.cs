@@ -4,5 +4,14 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAddUpdateNode : IBinaryUpdateNode {
 
-
+  public ref BinaryNodeChildOption FootMotionTiming { get; }
+  
+  public ref bool ApplyToFootMotion { get; }
+  
+  public ref bool ApplyChannelsSeparately { get; }
+  
+  public ref bool UseModelSpace { get; }
+  
+  public ref bool ApplyScale { get; }
+  
 }

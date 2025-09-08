@@ -9,9 +9,6 @@ internal partial class PhysicsParticleId_t : SchemaClass, IPhysicsParticleId_t {
   public PhysicsParticleId_t(nint handle) : base(handle) {
   }
 
-  public PhysicsParticleId_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref uint Value {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xADF050DADCB0894A));
   }

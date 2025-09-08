@@ -9,9 +9,6 @@ internal partial class CWaterBullet : CBaseAnimGraph, IWaterBullet {
   public CWaterBullet(nint handle) : base(handle) {
   }
 
-  public CWaterBullet(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

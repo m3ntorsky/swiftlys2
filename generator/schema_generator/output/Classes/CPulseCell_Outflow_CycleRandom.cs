@@ -9,11 +9,8 @@ internal partial class CPulseCell_Outflow_CycleRandom : CPulseCell_BaseFlow, IPu
   public CPulseCell_Outflow_CycleRandom(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Outflow_CycleRandom(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CPulse_OutflowConnection > Outputs {
-    get => ref _Handle.AsRef<CUtlVector< CPulse_OutflowConnection >>(Schema.GetOffset(0xF24A555AA38A89D5));
+  public ref CUtlVector Outputs {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xF24A555AA38A89D5));
   }
 
 

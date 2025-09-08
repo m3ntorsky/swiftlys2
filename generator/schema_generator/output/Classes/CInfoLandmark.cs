@@ -9,9 +9,6 @@ internal partial class CInfoLandmark : CPointEntity, IInfoLandmark {
   public CInfoLandmark(nint handle) : base(handle) {
   }
 
-  public CInfoLandmark(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

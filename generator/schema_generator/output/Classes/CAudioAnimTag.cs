@@ -9,9 +9,6 @@ internal partial class CAudioAnimTag : CAnimTagBase, IAudioAnimTag {
   public CAudioAnimTag(nint handle) : base(handle) {
   }
 
-  public CAudioAnimTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString ClipName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x785914777D84420));
   }

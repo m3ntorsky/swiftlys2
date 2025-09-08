@@ -9,9 +9,6 @@ internal partial class CNmIKBody : SchemaClass, INmIKBody {
   public CNmIKBody(nint handle) : base(handle) {
   }
 
-  public CNmIKBody(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Mass {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x2162051FCD83D263));
   }

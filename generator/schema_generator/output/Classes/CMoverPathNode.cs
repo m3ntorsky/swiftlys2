@@ -9,9 +9,6 @@ internal partial class CMoverPathNode : CPointEntity, IMoverPathNode {
   public CMoverPathNode(nint handle) : base(handle) {
   }
 
-  public CMoverPathNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector InTangentLocal {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x5847AABC46C1388A));
   }
@@ -39,8 +36,8 @@ internal partial class CMoverPathNode : CPointEntity, IMoverPathNode {
   public IEntityIOOutput OnPassThroughReverse {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x5847AABC37667FA8));
   }
-  public ref CHandle< CPathMover > Mover {
-    get => ref _Handle.AsRef<CHandle< CPathMover >>(Schema.GetOffset(0x5847AABC3629FA74));
+  public ref CHandle<CPathMover> Mover {
+    get => ref _Handle.AsRef<CHandle<CPathMover>>(Schema.GetOffset(0x5847AABC3629FA74));
   }
   public ref CTransform XWSPrevParent {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0x5847AABC2AEC980C));

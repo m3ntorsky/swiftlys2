@@ -9,9 +9,6 @@ internal partial class HSequence : SchemaClass, IHSequence {
   public HSequence(nint handle) : base(handle) {
   }
 
-  public HSequence(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Value {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5388CC0EDCB0894A));
   }

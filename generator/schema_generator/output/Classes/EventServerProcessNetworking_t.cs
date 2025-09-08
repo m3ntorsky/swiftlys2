@@ -9,9 +9,6 @@ internal partial class EventServerProcessNetworking_t : EventSimulate_t, IEventS
   public EventServerProcessNetworking_t(nint handle) : base(handle) {
   }
 
-  public EventServerProcessNetworking_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

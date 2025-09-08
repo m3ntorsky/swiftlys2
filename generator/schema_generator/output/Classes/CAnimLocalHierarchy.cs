@@ -9,9 +9,6 @@ internal partial class CAnimLocalHierarchy : SchemaClass, IAnimLocalHierarchy {
   public CAnimLocalHierarchy(nint handle) : base(handle) {
   }
 
-  public CAnimLocalHierarchy(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CBufferString Bone {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x3D14C1ED515646C4));
   }

@@ -9,9 +9,6 @@ internal partial class CDynamicPropAlias_cable_dynamic : CDynamicProp, IDynamicP
   public CDynamicPropAlias_cable_dynamic(nint handle) : base(handle) {
   }
 
-  public CDynamicPropAlias_cable_dynamic(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

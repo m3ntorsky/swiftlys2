@@ -9,9 +9,6 @@ internal partial class CParticleCollectionRendererFloatInput : CParticleCollecti
   public CParticleCollectionRendererFloatInput(nint handle) : base(handle) {
   }
 
-  public CParticleCollectionRendererFloatInput(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

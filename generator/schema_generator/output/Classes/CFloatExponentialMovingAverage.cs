@@ -9,9 +9,6 @@ internal partial class CFloatExponentialMovingAverage : SchemaClass, IFloatExpon
   public CFloatExponentialMovingAverage(nint handle) : base(handle) {
   }
 
-  public CFloatExponentialMovingAverage(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

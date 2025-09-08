@@ -9,26 +9,11 @@ internal partial class CCSWeaponBaseGun : CCSWeaponBase, ICSWeaponBaseGun {
   public CCSWeaponBaseGun(nint handle) : base(handle) {
   }
 
-  public CCSWeaponBaseGun(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref int ZoomLevel {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xBC30B081444E63A0));
-  }
-  public ref int BurstShotsRemaining {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xBC30B081F53841A5));
-  }
   public ref int SilencedModelIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xBC30B08178E5CAAB));
   }
   public ref bool InPrecache {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBC30B081495003CB));
-  }
-  public ref bool NeedsBoltAction {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBC30B0813632E797));
-  }
-  public ref int RevolverCylinderIdx {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xBC30B08119D0E90B));
   }
   public ref bool SkillReloadAvailable {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBC30B081C7961BE2));

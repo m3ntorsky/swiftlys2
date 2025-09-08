@@ -9,9 +9,6 @@ internal partial class ParticleNamedValueConfiguration_t : SchemaClass, IParticl
   public ParticleNamedValueConfiguration_t(nint handle) : base(handle) {
   }
 
-  public ParticleNamedValueConfiguration_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString ConfigName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x4C42AD0EA7B74064));
   }

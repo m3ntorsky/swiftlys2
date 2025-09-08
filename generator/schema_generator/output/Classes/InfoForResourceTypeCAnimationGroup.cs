@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCAnimationGroup : SchemaClass, IInfoFo
   public InfoForResourceTypeCAnimationGroup(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCAnimationGroup(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

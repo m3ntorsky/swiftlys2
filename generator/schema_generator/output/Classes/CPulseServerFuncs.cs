@@ -9,9 +9,6 @@ internal partial class CPulseServerFuncs : SchemaClass, IPulseServerFuncs {
   public CPulseServerFuncs(nint handle) : base(handle) {
   }
 
-  public CPulseServerFuncs(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

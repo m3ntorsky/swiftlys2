@@ -9,9 +9,6 @@ internal partial class AimCameraOpFixedSettings_t : SchemaClass, IAimCameraOpFix
   public AimCameraOpFixedSettings_t(nint handle) : base(handle) {
   }
 
-  public AimCameraOpFixedSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ChainIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA3971F52A34589B6));
   }
@@ -30,8 +27,8 @@ internal partial class AimCameraOpFixedSettings_t : SchemaClass, IAimCameraOpFix
   public ref int DepenetrationJointIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA3971F526307286F));
   }
-  public ref CUtlVector< int32 > PropJoints {
-    get => ref _Handle.AsRef<CUtlVector< int32 >>(Schema.GetOffset(0xA3971F5224880565));
+  public ref CUtlVector<int> PropJoints {
+    get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xA3971F5224880565));
   }
 
 

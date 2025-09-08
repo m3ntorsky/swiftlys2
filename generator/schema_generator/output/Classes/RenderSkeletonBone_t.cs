@@ -9,9 +9,6 @@ internal partial class RenderSkeletonBone_t : SchemaClass, IRenderSkeletonBone_t
   public RenderSkeletonBone_t(nint handle) : base(handle) {
   }
 
-  public RenderSkeletonBone_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString BoneName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6A3BCC9BFDEE0E0C));
   }

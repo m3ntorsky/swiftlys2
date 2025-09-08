@@ -9,9 +9,6 @@ internal partial class CLogicNPCCounter : CBaseEntity, ILogicNPCCounter {
   public CLogicNPCCounter(nint handle) : base(handle) {
   }
 
-  public CLogicNPCCounter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEntityIOOutput OnMinCountAll {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x485D88795307A826));
   }

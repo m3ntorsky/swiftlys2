@@ -9,9 +9,6 @@ internal partial class CDecoyGrenade : CBaseCSGrenade, IDecoyGrenade {
   public CDecoyGrenade(nint handle) : base(handle) {
   }
 
-  public CDecoyGrenade(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

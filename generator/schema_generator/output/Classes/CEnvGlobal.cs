@@ -9,9 +9,6 @@ internal partial class CEnvGlobal : CLogicalEntity, IEnvGlobal {
   public CEnvGlobal(nint handle) : base(handle) {
   }
 
-  public CEnvGlobal(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField OutCounter {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC5E41E3E69415251));
   }

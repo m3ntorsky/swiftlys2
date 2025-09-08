@@ -9,9 +9,6 @@ internal partial class CFlashbangProjectile : CBaseCSGrenadeProjectile, IFlashba
   public CFlashbangProjectile(nint handle) : base(handle) {
   }
 
-  public CFlashbangProjectile(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float TimeToDetonate {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9F4F2EA190E2E597));
   }

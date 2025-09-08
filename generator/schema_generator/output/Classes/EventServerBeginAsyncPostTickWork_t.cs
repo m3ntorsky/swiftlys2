@@ -9,9 +9,6 @@ internal partial class EventServerBeginAsyncPostTickWork_t : EventPostAdvanceTic
   public EventServerBeginAsyncPostTickWork_t(nint handle) : base(handle) {
   }
 
-  public EventServerBeginAsyncPostTickWork_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

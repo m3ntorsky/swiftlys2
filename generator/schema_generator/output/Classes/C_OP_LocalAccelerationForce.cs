@@ -9,9 +9,6 @@ internal partial class C_OP_LocalAccelerationForce : CParticleFunctionForce, IC_
   public C_OP_LocalAccelerationForce(nint handle) : base(handle) {
   }
 
-  public C_OP_LocalAccelerationForce(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int CP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x3A562A9FEB661472));
   }

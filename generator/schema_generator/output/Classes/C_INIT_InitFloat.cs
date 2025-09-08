@@ -9,9 +9,6 @@ internal partial class C_INIT_InitFloat : CParticleFunctionInitializer, IC_INIT_
   public C_INIT_InitFloat(nint handle) : base(handle) {
   }
 
-  public C_INIT_InitFloat(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleFloatInput InputValue {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0x6A1DAB2A34445438));
   }

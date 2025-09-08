@@ -9,9 +9,6 @@ internal partial class CSequenceUpdateNodeBase : CLeafUpdateNode, ISequenceUpdat
   public CSequenceUpdateNodeBase(nint handle) : base(handle) {
   }
 
-  public CSequenceUpdateNodeBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float PlaybackSpeed {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6FCA4DDB1AFA7387));
   }

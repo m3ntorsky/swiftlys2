@@ -9,9 +9,6 @@ internal partial class C_INIT_PositionOffsetToCP : CParticleFunctionInitializer,
   public C_INIT_PositionOffsetToCP(nint handle) : base(handle) {
   }
 
-  public C_INIT_PositionOffsetToCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumberStart {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5976F1BC33DBA947));
   }

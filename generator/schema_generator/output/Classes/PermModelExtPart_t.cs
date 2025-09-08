@@ -9,9 +9,6 @@ internal partial class PermModelExtPart_t : SchemaClass, IPermModelExtPart_t {
   public PermModelExtPart_t(nint handle) : base(handle) {
   }
 
-  public PermModelExtPart_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CTransform Transform {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xCA30851D6EC5209B));
   }
@@ -21,8 +18,8 @@ internal partial class PermModelExtPart_t : SchemaClass, IPermModelExtPart_t {
   public ref int Parent {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xCA30851D0AABB9D1));
   }
-  public ref CStrongHandle< InfoForResourceTypeCModel > RefModel {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCModel >>(Schema.GetOffset(0xCA30851D63E6E3DF));
+  public ref CStrongHandle<InfoForResourceTypeCModel> RefModel {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0xCA30851D63E6E3DF));
   }
 
 

@@ -9,9 +9,6 @@ internal partial class C_OP_RemapTransformToVelocity : CParticleFunctionOperator
   public C_OP_RemapTransformToVelocity(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapTransformToVelocity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleTransformInput TransformInput {
     get => new CParticleTransformInput(_Handle + Schema.GetOffset(0xC1A2CC64B3FDC289));
   }

@@ -9,11 +9,8 @@ internal partial class CFootTrajectories : SchemaClass, IFootTrajectories {
   public CFootTrajectories(nint handle) : base(handle) {
   }
 
-  public CFootTrajectories(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CFootTrajectory > Trajectories {
-    get => ref _Handle.AsRef<CUtlVector< CFootTrajectory >>(Schema.GetOffset(0x5D019D277964C78C));
+  public ref CUtlVector Trajectories {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5D019D277964C78C));
   }
 
 

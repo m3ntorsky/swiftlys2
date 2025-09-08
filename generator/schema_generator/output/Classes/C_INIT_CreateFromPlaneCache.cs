@@ -9,9 +9,6 @@ internal partial class C_INIT_CreateFromPlaneCache : CParticleFunctionInitialize
   public C_INIT_CreateFromPlaneCache(nint handle) : base(handle) {
   }
 
-  public C_INIT_CreateFromPlaneCache(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector OffsetMin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x349002765EE9C8FE));
   }

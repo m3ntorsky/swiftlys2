@@ -9,9 +9,6 @@ internal partial class CNavVolumeMarkupVolume : CNavVolume, INavVolumeMarkupVolu
   public CNavVolumeMarkupVolume(nint handle) : base(handle) {
   }
 
-  public CNavVolumeMarkupVolume(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

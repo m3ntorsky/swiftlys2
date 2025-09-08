@@ -9,9 +9,6 @@ internal partial class CGeneralRandomRotation : CParticleFunctionInitializer, IG
   public CGeneralRandomRotation(nint handle) : base(handle) {
   }
 
-  public CGeneralRandomRotation(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0xB15F344FE5729606));
   }

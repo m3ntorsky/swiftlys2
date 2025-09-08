@@ -9,9 +9,6 @@ internal partial class CSSDSMsg_LayerBase : SchemaClass, ISSDSMsg_LayerBase {
   public CSSDSMsg_LayerBase(nint handle) : base(handle) {
   }
 
-  public CSSDSMsg_LayerBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISceneViewId_t ViewId {
     get => new SceneViewId_t(_Handle + Schema.GetOffset(0x9F18C5E5E976CB25));
   }

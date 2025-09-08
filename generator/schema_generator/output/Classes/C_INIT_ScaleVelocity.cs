@@ -9,9 +9,6 @@ internal partial class C_INIT_ScaleVelocity : CParticleFunctionInitializer, IC_I
   public C_INIT_ScaleVelocity(nint handle) : base(handle) {
   }
 
-  public C_INIT_ScaleVelocity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionVecInput Scale {
     get => new CParticleCollectionVecInput(_Handle + Schema.GetOffset(0xF226CCC35F596B51));
   }

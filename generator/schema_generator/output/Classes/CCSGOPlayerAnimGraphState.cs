@@ -9,9 +9,6 @@ internal partial class CCSGOPlayerAnimGraphState : SchemaClass, ICSGOPlayerAnimG
   public CCSGOPlayerAnimGraphState(nint handle) : base(handle) {
   }
 
-  public CCSGOPlayerAnimGraphState(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

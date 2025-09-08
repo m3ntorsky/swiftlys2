@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMarkupVolumeTagged_Nav : IMarkupVolumeTagged {
 
-
+  public ref NavScopeFlags_t Scopes { get; }
+  
 }

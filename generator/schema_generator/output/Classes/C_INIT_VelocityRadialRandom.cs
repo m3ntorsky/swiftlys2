@@ -9,9 +9,6 @@ internal partial class C_INIT_VelocityRadialRandom : CParticleFunctionInitialize
   public C_INIT_VelocityRadialRandom(nint handle) : base(handle) {
   }
 
-  public C_INIT_VelocityRadialRandom(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x61A3C8D53F31A6BD));
   }

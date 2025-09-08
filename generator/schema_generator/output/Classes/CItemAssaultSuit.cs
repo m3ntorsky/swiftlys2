@@ -9,9 +9,6 @@ internal partial class CItemAssaultSuit : CItem, IItemAssaultSuit {
   public CItemAssaultSuit(nint handle) : base(handle) {
   }
 
-  public CItemAssaultSuit(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

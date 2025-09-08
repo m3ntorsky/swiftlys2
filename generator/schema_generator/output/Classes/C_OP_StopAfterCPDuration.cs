@@ -9,9 +9,6 @@ internal partial class C_OP_StopAfterCPDuration : CParticleFunctionPreEmission, 
   public C_OP_StopAfterCPDuration(nint handle) : base(handle) {
   }
 
-  public C_OP_StopAfterCPDuration(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput Duration {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0xFC2AFAC6BC5E3BAB));
   }

@@ -9,11 +9,8 @@ internal partial class CVoiceContainerSwitch : CVoiceContainerBase, IVoiceContai
   public CVoiceContainerSwitch(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerSwitch(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< CSoundContainerReference > SoundsToPlay {
-    get => ref _Handle.AsRef<CUtlVector< CSoundContainerReference >>(Schema.GetOffset(0x79EA569BDCB5F70E));
+  public ref CUtlVector SoundsToPlay {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x79EA569BDCB5F70E));
   }
 
 

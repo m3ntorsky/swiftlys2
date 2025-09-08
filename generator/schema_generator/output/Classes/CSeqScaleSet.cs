@@ -9,9 +9,6 @@ internal partial class CSeqScaleSet : SchemaClass, ISeqScaleSet {
   public CSeqScaleSet(nint handle) : base(handle) {
   }
 
-  public CSeqScaleSet(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CBufferString Name {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x34C951AB63D22D49));
   }
@@ -21,11 +18,11 @@ internal partial class CSeqScaleSet : SchemaClass, ISeqScaleSet {
   public ref Vector RootOffset {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x34C951ABA62E010E));
   }
-  public ref CUtlVector< int16 > LocalBoneArray {
-    get => ref _Handle.AsRef<CUtlVector< int16 >>(Schema.GetOffset(0x34C951AB0B8EFD6B));
+  public ref CUtlVector<short> LocalBoneArray {
+    get => ref _Handle.AsRef<CUtlVector<short>>(Schema.GetOffset(0x34C951AB0B8EFD6B));
   }
-  public ref CUtlVector< float32 > BoneScaleArray {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x34C951ABC4BD868A));
+  public ref CUtlVector<float> BoneScaleArray {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x34C951ABC4BD868A));
   }
 
 

@@ -9,9 +9,6 @@ internal partial class CCSMinimapBoundary : CBaseEntity, ICSMinimapBoundary {
   public CCSMinimapBoundary(nint handle) : base(handle) {
   }
 
-  public CCSMinimapBoundary(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CPulseCell_Outflow_ListenForEntityOutput : CPulseCell_Bas
   public CPulseCell_Outflow_ListenForEntityOutput(nint handle) : base(handle) {
   }
 
-  public CPulseCell_Outflow_ListenForEntityOutput(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISignatureOutflow_Resume OnFired {
     get => new SignatureOutflow_Resume(_Handle + Schema.GetOffset(0xCB35163784825730));
   }

@@ -9,9 +9,6 @@ internal partial class COrnamentProp : CDynamicProp, IOrnamentProp {
   public COrnamentProp(nint handle) : base(handle) {
   }
 
-  public COrnamentProp(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge InitialOwner {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1B8675B7BAA055D6));
   }

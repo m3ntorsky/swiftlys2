@@ -9,9 +9,6 @@ internal partial class C_OP_GlobalLight : CParticleFunctionOperator, IC_OP_Globa
   public C_OP_GlobalLight(nint handle) : base(handle) {
   }
 
-  public C_OP_GlobalLight(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Scale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC02700C2B731A42F));
   }

@@ -9,20 +9,17 @@ internal partial class C_OP_RemapNamedModelElementOnceTimed : CParticleFunctionO
   public C_OP_RemapNamedModelElementOnceTimed(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapNamedModelElementOnceTimed(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CStrongHandle<InfoForResourceTypeCModel> Model {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0xBD6F6D8CE100C814));
   }
-
-  public ref CStrongHandle< InfoForResourceTypeCModel > Model {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCModel >>(Schema.GetOffset(0xBD6F6D8CE100C814));
+  public ref CUtlVector<CUtlString> InNames {
+    get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xBD6F6D8CC6BEF30A));
   }
-  public ref CUtlVector< CUtlString > InNames {
-    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0xBD6F6D8CC6BEF30A));
+  public ref CUtlVector<CUtlString> OutNames {
+    get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xBD6F6D8C4AEE2CFD));
   }
-  public ref CUtlVector< CUtlString > OutNames {
-    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0xBD6F6D8C4AEE2CFD));
-  }
-  public ref CUtlVector< CUtlString > FallbackNames {
-    get => ref _Handle.AsRef<CUtlVector< CUtlString >>(Schema.GetOffset(0xBD6F6D8C5C686169));
+  public ref CUtlVector<CUtlString> FallbackNames {
+    get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xBD6F6D8C5C686169));
   }
   public ref bool ModelFromRenderer {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBD6F6D8CAEBA1F25));

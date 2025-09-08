@@ -9,9 +9,6 @@ internal partial class C_OP_DirectionBetweenVecsToVec : CParticleFunctionOperato
   public C_OP_DirectionBetweenVecsToVec(nint handle) : base(handle) {
   }
 
-  public C_OP_DirectionBetweenVecsToVec(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0x6022BA82E5729606));
   }

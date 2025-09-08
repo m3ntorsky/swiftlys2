@@ -9,9 +9,6 @@ internal partial class PulseRegisterMap_t : SchemaClass, IPulseRegisterMap_t {
   public PulseRegisterMap_t(nint handle) : base(handle) {
   }
 
-  public PulseRegisterMap_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISchemaUntypedField Inparams {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x833FEA64B9B18E04));
   }

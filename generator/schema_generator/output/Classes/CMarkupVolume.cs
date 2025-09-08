@@ -9,9 +9,6 @@ internal partial class CMarkupVolume : CBaseModelEntity, IMarkupVolume {
   public CMarkupVolume(nint handle) : base(handle) {
   }
 
-  public CMarkupVolume(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x41A873203A7C5965));
   }

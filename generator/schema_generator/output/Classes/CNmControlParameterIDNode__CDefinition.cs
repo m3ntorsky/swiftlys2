@@ -9,9 +9,6 @@ internal partial class CNmControlParameterIDNode__CDefinition : CNmIDValueNode::
   public CNmControlParameterIDNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmControlParameterIDNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

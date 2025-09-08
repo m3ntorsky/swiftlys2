@@ -9,9 +9,6 @@ internal partial class C_OP_RemapVectortoCP : CParticleFunctionOperator, IC_OP_R
   public C_OP_RemapVectortoCP(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapVectortoCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int OutControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xADC661D7D021D73F));
   }

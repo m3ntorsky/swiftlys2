@@ -9,11 +9,8 @@ internal partial class PulseGraphExecutionHistoryCursorDesc_t : SchemaClass, IPu
   public PulseGraphExecutionHistoryCursorDesc_t(nint handle) : base(handle) {
   }
 
-  public PulseGraphExecutionHistoryCursorDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< PulseCursorID_t > AncestorCursorIDs {
-    get => ref _Handle.AsRef<CUtlVector< PulseCursorID_t >>(Schema.GetOffset(0xC94C4C1C39FD1094));
+  public ref CUtlVector AncestorCursorIDs {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC94C4C1C39FD1094));
   }
   public IPulseDocNodeID_t SpawnNodeID {
     get => new PulseDocNodeID_t(_Handle + Schema.GetOffset(0xC94C4C1C95FE4E15));

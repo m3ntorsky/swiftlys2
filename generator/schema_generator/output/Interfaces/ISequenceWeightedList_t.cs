@@ -4,5 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISequenceWeightedList_t : ISchemaClass {
 
-
+  public ref int Sequence { get; }
+  
+  public ref float RelativeWeight { get; }
+  
 }

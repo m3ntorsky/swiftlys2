@@ -9,9 +9,6 @@ internal partial class CPointCameraVFOV : CPointCamera, IPointCameraVFOV {
   public CPointCameraVFOV(nint handle) : base(handle) {
   }
 
-  public CPointCameraVFOV(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float VerticalFOV {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBDB1254E910A1908));
   }

@@ -9,9 +9,6 @@ internal partial class CPointPush : CPointEntity, IPointPush {
   public CPointPush(nint handle) : base(handle) {
   }
 
-  public CPointPush(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Enabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x282695C06154EB7E));
   }
@@ -30,8 +27,8 @@ internal partial class CPointPush : CPointEntity, IPointPush {
   public ref CUtlSymbolLarge FilterName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x282695C042E1968C));
   }
-  public ref CHandle< CBaseFilter > Filter {
-    get => ref _Handle.AsRef<CHandle< CBaseFilter >>(Schema.GetOffset(0x282695C045D9E0B1));
+  public ref CHandle<CBaseFilter> Filter {
+    get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0x282695C045D9E0B1));
   }
 
 

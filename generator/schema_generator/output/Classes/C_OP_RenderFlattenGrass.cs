@@ -9,9 +9,6 @@ internal partial class C_OP_RenderFlattenGrass : CParticleFunctionRenderer, IC_O
   public C_OP_RenderFlattenGrass(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderFlattenGrass(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float FlattenStrength {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x81877FD959D69362));
   }

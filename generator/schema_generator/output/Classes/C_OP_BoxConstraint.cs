@@ -9,9 +9,6 @@ internal partial class C_OP_BoxConstraint : CParticleFunctionConstraint, IC_OP_B
   public C_OP_BoxConstraint(nint handle) : base(handle) {
   }
 
-  public C_OP_BoxConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionVecInput Min {
     get => new CParticleCollectionVecInput(_Handle + Schema.GetOffset(0x111EED71B0765F37));
   }

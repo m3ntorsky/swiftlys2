@@ -9,9 +9,6 @@ internal partial class EventSetTime_t : SchemaClass, IEventSetTime_t {
   public EventSetTime_t(nint handle) : base(handle) {
   }
 
-  public EventSetTime_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEngineLoopState_t LoopState {
     get => new EngineLoopState_t(_Handle + Schema.GetOffset(0x260F6EEFF928A2EC));
   }

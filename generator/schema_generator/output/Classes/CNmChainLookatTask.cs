@@ -9,9 +9,6 @@ internal partial class CNmChainLookatTask : CNmPoseTask, INmChainLookatTask {
   public CNmChainLookatTask(nint handle) : base(handle) {
   }
 
-  public CNmChainLookatTask(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ChainEndBoneIdx {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4021FFEBC513D7B8));
   }

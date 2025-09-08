@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCChoreoSceneFileData : SchemaClass, II
   public InfoForResourceTypeCChoreoSceneFileData(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCChoreoSceneFileData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

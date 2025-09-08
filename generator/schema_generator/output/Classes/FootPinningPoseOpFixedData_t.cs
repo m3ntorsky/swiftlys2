@@ -9,11 +9,8 @@ internal partial class FootPinningPoseOpFixedData_t : SchemaClass, IFootPinningP
   public FootPinningPoseOpFixedData_t(nint handle) : base(handle) {
   }
 
-  public FootPinningPoseOpFixedData_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< FootFixedData_t > FootInfo {
-    get => ref _Handle.AsRef<CUtlVector< FootFixedData_t >>(Schema.GetOffset(0x87C487AD942F50C1));
+  public ref CUtlVector FootInfo {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x87C487AD942F50C1));
   }
   public ref float BlendTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x87C487ADA6206E9F));

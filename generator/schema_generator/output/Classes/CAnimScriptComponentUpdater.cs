@@ -9,9 +9,6 @@ internal partial class CAnimScriptComponentUpdater : CAnimComponentUpdater, IAni
   public CAnimScriptComponentUpdater(nint handle) : base(handle) {
   }
 
-  public CAnimScriptComponentUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimScriptHandle Script {
     get => new AnimScriptHandle(_Handle + Schema.GetOffset(0x2BD2101829D70FB0));
   }

@@ -9,9 +9,6 @@ internal partial class CDampedValueUpdateItem : SchemaClass, IDampedValueUpdateI
   public CDampedValueUpdateItem(nint handle) : base(handle) {
   }
 
-  public CDampedValueUpdateItem(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimInputDamping Damping {
     get => new CAnimInputDamping(_Handle + Schema.GetOffset(0x4B11725415440FB5));
   }

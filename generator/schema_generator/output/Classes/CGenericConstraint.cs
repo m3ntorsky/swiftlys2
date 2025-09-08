@@ -9,9 +9,6 @@ internal partial class CGenericConstraint : CPhysConstraint, IGenericConstraint 
   public CGenericConstraint(nint handle) : base(handle) {
   }
 
-  public CGenericConstraint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref JointMotion_t LinearMotionX {
     get => ref _Handle.AsRef<JointMotion_t>(Schema.GetOffset(0x1698284879962AA2));
   }

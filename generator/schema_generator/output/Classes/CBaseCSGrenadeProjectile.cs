@@ -9,27 +9,6 @@ internal partial class CBaseCSGrenadeProjectile : CBaseGrenade, IBaseCSGrenadePr
   public CBaseCSGrenadeProjectile(nint handle) : base(handle) {
   }
 
-  public CBaseCSGrenadeProjectile(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref Vector InitialPosition {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC09C67027E9CA9C4));
-  }
-  public ref Vector InitialVelocity {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC09C67027C20BD90));
-  }
-  public ref int Bounces {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC09C67026B81EBCE));
-  }
-  public ref CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > ExplodeEffectIndex {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeIParticleSystemDefinition >>(Schema.GetOffset(0xC09C6702178B5975));
-  }
-  public ref int ExplodeEffectTickBegin {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC09C67022F04F603));
-  }
-  public ref Vector ExplodeEffectOrigin {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC09C6702AA7B4525));
-  }
   public IGameTime_t SpawnTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xC09C67029596A16B));
   }

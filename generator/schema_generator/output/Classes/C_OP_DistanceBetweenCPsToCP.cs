@@ -9,9 +9,6 @@ internal partial class C_OP_DistanceBetweenCPsToCP : CParticleFunctionPreEmissio
   public C_OP_DistanceBetweenCPsToCP(nint handle) : base(handle) {
   }
 
-  public C_OP_DistanceBetweenCPsToCP(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int StartCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x379849D82C2FF970));
   }
@@ -49,7 +46,7 @@ internal partial class C_OP_DistanceBetweenCPsToCP : CParticleFunctionPreEmissio
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x379849D89C25C2ED));
   }
   public ISchemaFixedString CollisionGroupName {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x379849D8D58A3195));
+    get => new SchemaFixedString(_Handle, 0x379849D8D58A3195, 128, 1, 1);
   }
   public ref ParticleTraceSet_t TraceSet {
     get => ref _Handle.AsRef<ParticleTraceSet_t>(Schema.GetOffset(0x379849D8BD26C5B2));

@@ -9,9 +9,6 @@ internal partial class C_OP_MaintainEmitter : CParticleFunctionEmitter, IC_OP_Ma
   public C_OP_MaintainEmitter(nint handle) : base(handle) {
   }
 
-  public C_OP_MaintainEmitter(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput ParticlesToMaintain {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0xAD7D6862537AE378));
   }

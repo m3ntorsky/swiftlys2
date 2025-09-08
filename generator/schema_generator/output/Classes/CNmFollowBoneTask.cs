@@ -9,9 +9,6 @@ internal partial class CNmFollowBoneTask : CNmPoseTask, INmFollowBoneTask {
   public CNmFollowBoneTask(nint handle) : base(handle) {
   }
 
-  public CNmFollowBoneTask(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

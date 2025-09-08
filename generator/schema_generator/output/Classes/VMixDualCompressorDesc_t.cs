@@ -9,9 +9,6 @@ internal partial class VMixDualCompressorDesc_t : SchemaClass, IVMixDualCompress
   public VMixDualCompressorDesc_t(nint handle) : base(handle) {
   }
 
-  public VMixDualCompressorDesc_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float RMSTimeMS {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6B9BDFD8FB749526));
   }

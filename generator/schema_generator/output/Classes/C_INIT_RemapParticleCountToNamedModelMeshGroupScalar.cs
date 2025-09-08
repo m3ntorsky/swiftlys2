@@ -9,9 +9,6 @@ internal partial class C_INIT_RemapParticleCountToNamedModelMeshGroupScalar : C_
   public C_INIT_RemapParticleCountToNamedModelMeshGroupScalar(nint handle) : base(handle) {
   }
 
-  public C_INIT_RemapParticleCountToNamedModelMeshGroupScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

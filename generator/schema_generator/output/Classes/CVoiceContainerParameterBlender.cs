@@ -9,9 +9,6 @@ internal partial class CVoiceContainerParameterBlender : CVoiceContainerBase, IV
   public CVoiceContainerParameterBlender(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerParameterBlender(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ISoundContainerReference FirstSound {
     get => new CSoundContainerReference(_Handle + Schema.GetOffset(0xEC5F1A42666B0138));
   }

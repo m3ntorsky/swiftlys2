@@ -9,14 +9,11 @@ internal partial class CTestBlendContainer : CVoiceContainerBase, ITestBlendCont
   public CTestBlendContainer(nint handle) : base(handle) {
   }
 
-  public CTestBlendContainer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> FirstSound {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>>(Schema.GetOffset(0x3E7BF53C666B0138));
   }
-
-  public ref CStrongHandle< InfoForResourceTypeCVoiceContainerBase > FirstSound {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCVoiceContainerBase >>(Schema.GetOffset(0x3E7BF53C666B0138));
-  }
-  public ref CStrongHandle< InfoForResourceTypeCVoiceContainerBase > SecondSound {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCVoiceContainerBase >>(Schema.GetOffset(0x3E7BF53CA2BC3E5C));
+  public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> SecondSound {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>>(Schema.GetOffset(0x3E7BF53CA2BC3E5C));
   }
 
 

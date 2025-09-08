@@ -9,9 +9,6 @@ internal partial class C_OP_EnableChildrenFromParentParticleCount : CParticleFun
   public C_OP_EnableChildrenFromParentParticleCount(nint handle) : base(handle) {
   }
 
-  public C_OP_EnableChildrenFromParentParticleCount(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ChildGroupID {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDF13D5F2E3F3C965));
   }

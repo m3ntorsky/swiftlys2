@@ -9,9 +9,6 @@ internal partial class CEmptyEntityInstance : SchemaClass, IEmptyEntityInstance 
   public CEmptyEntityInstance(nint handle) : base(handle) {
   }
 
-  public CEmptyEntityInstance(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

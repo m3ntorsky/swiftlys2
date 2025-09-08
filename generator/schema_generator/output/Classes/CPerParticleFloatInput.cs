@@ -9,9 +9,6 @@ internal partial class CPerParticleFloatInput : CParticleFloatInput, IPerParticl
   public CPerParticleFloatInput(nint handle) : base(handle) {
   }
 
-  public CPerParticleFloatInput(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

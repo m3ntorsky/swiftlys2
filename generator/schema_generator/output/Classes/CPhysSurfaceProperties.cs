@@ -9,9 +9,6 @@ internal partial class CPhysSurfaceProperties : SchemaClass, IPhysSurfacePropert
   public CPhysSurfaceProperties(nint handle) : base(handle) {
   }
 
-  public CPhysSurfaceProperties(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x682A31344D8F5786));
   }

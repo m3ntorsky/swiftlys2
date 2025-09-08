@@ -9,27 +9,7 @@ internal partial class CPlayerVisibility : CBaseEntity, IPlayerVisibility {
   public CPlayerVisibility(nint handle) : base(handle) {
   }
 
-  public CPlayerVisibility(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref float VisibilityStrength {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x695BAF9B9E8E4E));
-  }
-  public ref float FogDistanceMultiplier {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x695BAFDB1CD031));
-  }
-  public ref float FogMaxDensityMultiplier {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x695BAF7F993C70));
-  }
-  public ref float FadeTime {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x695BAF00BEDB08));
-  }
-  public ref bool StartDisabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x695BAF61ED0C4F));
-  }
-  public ref bool IsEnabled {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x695BAF5360D70E));
-  }
 
   public void VisibilityStrengthUpdated() {
     Schema.Update(_Handle, 0x695BAF9B9E8E4E);

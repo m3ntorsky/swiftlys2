@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmVirtualParameterFloatNode__CDefinition : INmFloatValueNode::CDefinition {
 
-
+  public ref short ChildNodeIdx { get; }
+  
 }

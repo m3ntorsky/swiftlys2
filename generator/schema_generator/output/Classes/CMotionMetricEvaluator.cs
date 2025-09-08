@@ -9,14 +9,11 @@ internal partial class CMotionMetricEvaluator : SchemaClass, IMotionMetricEvalua
   public CMotionMetricEvaluator(nint handle) : base(handle) {
   }
 
-  public CMotionMetricEvaluator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVector<float> Means {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x1C07D08DAB070085));
   }
-
-  public ref CUtlVector< float32 > Means {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x1C07D08DAB070085));
-  }
-  public ref CUtlVector< float32 > StandardDeviations {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0x1C07D08D9114EB60));
+  public ref CUtlVector<float> StandardDeviations {
+    get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x1C07D08D9114EB60));
   }
   public ref float Weight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1C07D08D7B81E7AB));

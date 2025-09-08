@@ -9,9 +9,6 @@ internal partial class CPhysicsPropMultiplayer : CPhysicsProp, IPhysicsPropMulti
   public CPhysicsPropMultiplayer(nint handle) : base(handle) {
   }
 
-  public CPhysicsPropMultiplayer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

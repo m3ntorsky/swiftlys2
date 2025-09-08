@@ -9,9 +9,6 @@ internal partial class VMapResourceData_t : SchemaClass, IVMapResourceData_t {
   public VMapResourceData_t(nint handle) : base(handle) {
   }
 
-  public VMapResourceData_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

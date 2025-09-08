@@ -9,9 +9,6 @@ internal partial class CNmReferencePoseTask : CNmPoseTask, INmReferencePoseTask 
   public CNmReferencePoseTask(nint handle) : base(handle) {
   }
 
-  public CNmReferencePoseTask(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

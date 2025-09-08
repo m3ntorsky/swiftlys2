@@ -9,9 +9,6 @@ internal partial class SpawnPoint : CServerOnlyPointEntity, ISpawnPoint {
   public SpawnPoint(nint handle) : base(handle) {
   }
 
-  public SpawnPoint(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Priority {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x72527C0E6224A30C));
   }

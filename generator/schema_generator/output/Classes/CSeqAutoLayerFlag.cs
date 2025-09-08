@@ -9,9 +9,6 @@ internal partial class CSeqAutoLayerFlag : SchemaClass, ISeqAutoLayerFlag {
   public CSeqAutoLayerFlag(nint handle) : base(handle) {
   }
 
-  public CSeqAutoLayerFlag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Post {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9E41A1515698A5A7));
   }

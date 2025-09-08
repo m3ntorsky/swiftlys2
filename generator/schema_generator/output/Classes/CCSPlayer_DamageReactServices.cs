@@ -9,9 +9,6 @@ internal partial class CCSPlayer_DamageReactServices : CPlayerPawnComponent, ICS
   public CCSPlayer_DamageReactServices(nint handle) : base(handle) {
   }
 
-  public CCSPlayer_DamageReactServices(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

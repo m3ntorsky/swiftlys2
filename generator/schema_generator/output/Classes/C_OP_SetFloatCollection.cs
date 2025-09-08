@@ -9,9 +9,6 @@ internal partial class C_OP_SetFloatCollection : CParticleFunctionOperator, IC_O
   public C_OP_SetFloatCollection(nint handle) : base(handle) {
   }
 
-  public C_OP_SetFloatCollection(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleCollectionFloatInput InputValue {
     get => new CParticleCollectionFloatInput(_Handle + Schema.GetOffset(0x72EFBE1734445438));
   }

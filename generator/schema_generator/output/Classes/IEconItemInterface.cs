@@ -9,9 +9,6 @@ internal partial class IEconItemInterface : SchemaClass, IIEconItemInterface {
   public IEconItemInterface(nint handle) : base(handle) {
   }
 
-  public IEconItemInterface(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

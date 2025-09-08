@@ -9,9 +9,6 @@ internal partial class CGameSceneNode : SchemaClass, IGameSceneNode {
   public CGameSceneNode(nint handle) : base(handle) {
   }
 
-  public CGameSceneNode(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CTransform NodeToWorld {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xD9451D94E9EB4068));
   }
@@ -26,18 +23,6 @@ internal partial class CGameSceneNode : SchemaClass, IGameSceneNode {
   }
   public IGameSceneNode NextSibling {
     get => new CGameSceneNode(_Handle + Schema.GetOffset(0xD9451D9440E828FC));
-  }
-  public IGameSceneNodeHandle Parent {
-    get => new CGameSceneNodeHandle(_Handle + Schema.GetOffset(0xD9451D949FD3A1B7));
-  }
-  public INetworkOriginCellCoordQuantizedVector Origin {
-    get => new CNetworkOriginCellCoordQuantizedVector(_Handle + Schema.GetOffset(0xD9451D94559D81AF));
-  }
-  public ref QAngle Rotation {
-    get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xD9451D945E8229ED));
-  }
-  public ref float Scale {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD9451D94B731A42F));
   }
   public ref Vector AbsOrigin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD9451D94E8B4EAE5));
@@ -95,12 +80,6 @@ internal partial class CGameSceneNode : SchemaClass, IGameSceneNode {
   }
   public ref byte DoNotSetAnimTimeInInvalidatePhysicsCount {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xD9451D94B7293951));
-  }
-  public ref CUtlStringToken Name {
-    get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0xD9451D944D8F5786));
-  }
-  public ref CUtlStringToken HierarchyAttachName {
-    get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0xD9451D9463D5B4EE));
   }
   public ref float ZOffset {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD9451D94BD4A8DF4));

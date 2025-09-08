@@ -9,9 +9,6 @@ internal partial class CSetParameterActionUpdater : CAnimActionUpdater, ISetPara
   public CSetParameterActionUpdater(nint handle) : base(handle) {
   }
 
-  public CSetParameterActionUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimParamHandle Param {
     get => new CAnimParamHandle(_Handle + Schema.GetOffset(0x2CC56544679286A4));
   }

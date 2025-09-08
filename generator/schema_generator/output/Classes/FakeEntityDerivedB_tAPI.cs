@@ -9,9 +9,6 @@ internal partial class FakeEntityDerivedB_tAPI : SchemaClass, IFakeEntityDerived
   public FakeEntityDerivedB_tAPI(nint handle) : base(handle) {
   }
 
-  public FakeEntityDerivedB_tAPI(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

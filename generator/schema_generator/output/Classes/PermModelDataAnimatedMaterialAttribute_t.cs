@@ -9,9 +9,6 @@ internal partial class PermModelDataAnimatedMaterialAttribute_t : SchemaClass, I
   public PermModelDataAnimatedMaterialAttribute_t(nint handle) : base(handle) {
   }
 
-  public PermModelDataAnimatedMaterialAttribute_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString AttributeName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6489C15F1408864C));
   }

@@ -9,9 +9,6 @@ internal partial class CLightOrthoEntity : CLightEntity, ILightOrthoEntity {
   public CLightOrthoEntity(nint handle) : base(handle) {
   }
 
-  public CLightOrthoEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class CShower : CModelPointEntity, IShower {
   public CShower(nint handle) : base(handle) {
   }
 
-  public CShower(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

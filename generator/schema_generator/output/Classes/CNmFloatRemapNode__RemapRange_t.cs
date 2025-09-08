@@ -9,9 +9,6 @@ internal partial class CNmFloatRemapNode__RemapRange_t : SchemaClass, INmFloatRe
   public CNmFloatRemapNode__RemapRange_t(nint handle) : base(handle) {
   }
 
-  public CNmFloatRemapNode__RemapRange_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Begin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x35C6A3517504C130));
   }

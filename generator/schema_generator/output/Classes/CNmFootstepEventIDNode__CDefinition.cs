@@ -9,9 +9,6 @@ internal partial class CNmFootstepEventIDNode__CDefinition : CNmIDValueNode::CDe
   public CNmFootstepEventIDNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmFootstepEventIDNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short SourceStateNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x2CDDA43263F0228C));
   }

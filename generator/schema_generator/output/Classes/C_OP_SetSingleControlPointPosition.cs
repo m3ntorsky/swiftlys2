@@ -9,9 +9,6 @@ internal partial class C_OP_SetSingleControlPointPosition : CParticleFunctionPre
   public C_OP_SetSingleControlPointPosition(nint handle) : base(handle) {
   }
 
-  public C_OP_SetSingleControlPointPosition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool SetOnce {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xFE0B7A4D6B261086));
   }

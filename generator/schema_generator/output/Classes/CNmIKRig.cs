@@ -9,17 +9,14 @@ internal partial class CNmIKRig : SchemaClass, INmIKRig {
   public CNmIKRig(nint handle) : base(handle) {
   }
 
-  public CNmIKRig(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCNmSkeleton>>(Schema.GetOffset(0x9C509BCFE77F030E));
   }
-
-  public ref CStrongHandle< InfoForResourceTypeCNmSkeleton > Skeleton {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCNmSkeleton >>(Schema.GetOffset(0x9C509BCFE77F030E));
+  public ref CUtlVector Bodies {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x9C509BCF24483A49));
   }
-  public ref CUtlVector< CNmIKBody > Bodies {
-    get => ref _Handle.AsRef<CUtlVector< CNmIKBody >>(Schema.GetOffset(0x9C509BCF24483A49));
-  }
-  public ref CUtlVector< CNmIKJoint > Joints {
-    get => ref _Handle.AsRef<CUtlVector< CNmIKJoint >>(Schema.GetOffset(0x9C509BCF364EA4AC));
+  public ref CUtlVector Joints {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x9C509BCF364EA4AC));
   }
 
 

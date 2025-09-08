@@ -9,9 +9,6 @@ internal partial class FollowAttachmentSettings_t : SchemaClass, IFollowAttachme
   public FollowAttachmentSettings_t(nint handle) : base(handle) {
   }
 
-  public FollowAttachmentSettings_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IAnimAttachment Attachment {
     get => new CAnimAttachment(_Handle + Schema.GetOffset(0x94FFC64B2C5CA308));
   }

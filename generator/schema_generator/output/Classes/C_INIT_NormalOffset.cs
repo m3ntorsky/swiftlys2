@@ -9,9 +9,6 @@ internal partial class C_INIT_NormalOffset : CParticleFunctionInitializer, IC_IN
   public C_INIT_NormalOffset(nint handle) : base(handle) {
   }
 
-  public C_INIT_NormalOffset(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector OffsetMin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x79E80AD67E1ECBDE));
   }

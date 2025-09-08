@@ -9,9 +9,6 @@ internal partial class CEnvMuzzleFlash : CPointEntity, IEnvMuzzleFlash {
   public CEnvMuzzleFlash(nint handle) : base(handle) {
   }
 
-  public CEnvMuzzleFlash(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Scale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x2EBDF9DEB731A42F));
   }

@@ -9,9 +9,6 @@ internal partial class PulseDocNodeID_t : SchemaClass, IPulseDocNodeID_t {
   public PulseDocNodeID_t(nint handle) : base(handle) {
   }
 
-  public PulseDocNodeID_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int Value {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xAD1381DADCB0894A));
   }

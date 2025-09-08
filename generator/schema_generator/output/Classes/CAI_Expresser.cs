@@ -9,9 +9,6 @@ internal partial class CAI_Expresser : SchemaClass, IAI_Expresser {
   public CAI_Expresser(nint handle) : base(handle) {
   }
 
-  public CAI_Expresser(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IGameTime_t StopTalkTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xFB9DA1AC36131EC4));
   }

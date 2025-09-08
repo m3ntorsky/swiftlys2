@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointClientUIWorldTextPanel : IPointClientUIWorldPanel {
 
-
+  public ISchemaFixedString MessageText { get; }
+  
 }

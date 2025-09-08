@@ -9,14 +9,11 @@ internal partial class MaterialGroup_t : SchemaClass, IMaterialGroup_t {
   public MaterialGroup_t(nint handle) : base(handle) {
   }
 
-  public MaterialGroup_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x702431604D8F5786));
   }
-  public ref CUtlVector< CStrongHandle< InfoForResourceTypeIMaterial2 > > Materials {
-    get => ref _Handle.AsRef<CUtlVector< CStrongHandle< InfoForResourceTypeIMaterial2 > >>(Schema.GetOffset(0x7024316060E46909));
+  public ref CUtlVector<CStrongHandle<InfoForResourceTypeIMaterial2>> Materials {
+    get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeIMaterial2>>>(Schema.GetOffset(0x7024316060E46909));
   }
 
 

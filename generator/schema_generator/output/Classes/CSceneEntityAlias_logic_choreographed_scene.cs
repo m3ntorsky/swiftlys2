@@ -9,9 +9,6 @@ internal partial class CSceneEntityAlias_logic_choreographed_scene : CSceneEntit
   public CSceneEntityAlias_logic_choreographed_scene(nint handle) : base(handle) {
   }
 
-  public CSceneEntityAlias_logic_choreographed_scene(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

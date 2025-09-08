@@ -9,9 +9,6 @@ internal partial class CFuncMoveLinearAlias_momentary_door : CFuncMoveLinear, IF
   public CFuncMoveLinearAlias_momentary_door(nint handle) : base(handle) {
   }
 
-  public CFuncMoveLinearAlias_momentary_door(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

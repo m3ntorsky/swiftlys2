@@ -9,9 +9,6 @@ internal partial class CAnimComponentUpdater : SchemaClass, IAnimComponentUpdate
   public CAnimComponentUpdater(nint handle) : base(handle) {
   }
 
-  public CAnimComponentUpdater(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3E0F51C74D8F5786));
   }

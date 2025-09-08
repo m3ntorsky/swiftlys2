@@ -9,9 +9,6 @@ internal partial class EventClientOutput_t : SchemaClass, IEventClientOutput_t {
   public EventClientOutput_t(nint handle) : base(handle) {
   }
 
-  public EventClientOutput_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IEngineLoopState_t LoopState {
     get => new EngineLoopState_t(_Handle + Schema.GetOffset(0xDC610E16F928A2EC));
   }

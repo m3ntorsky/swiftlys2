@@ -9,9 +9,6 @@ internal partial class CRuleEntity : CBaseModelEntity, IRuleEntity {
   public CRuleEntity(nint handle) : base(handle) {
   }
 
-  public CRuleEntity(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref CUtlSymbolLarge Master {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5C9BFE2FAC57FE5B));
   }

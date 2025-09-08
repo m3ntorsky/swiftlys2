@@ -9,9 +9,6 @@ internal partial class CPulseArraylib : SchemaClass, IPulseArraylib {
   public CPulseArraylib(nint handle) : base(handle) {
   }
 
-  public CPulseArraylib(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

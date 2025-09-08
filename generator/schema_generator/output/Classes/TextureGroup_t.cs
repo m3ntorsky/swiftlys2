@@ -9,17 +9,14 @@ internal partial class TextureGroup_t : SchemaClass, ITextureGroup_t {
   public TextureGroup_t(nint handle) : base(handle) {
   }
 
-  public TextureGroup_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Enabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3186D8346154EB7E));
   }
   public ref bool ReplaceTextureWithGradient {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3186D8344E3CBC5A));
   }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > Texture {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x3186D8348C0A2FB6));
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Texture {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(Schema.GetOffset(0x3186D8348C0A2FB6));
   }
   public ISchemaUntypedField Gradient {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x3186D83405C95F25));

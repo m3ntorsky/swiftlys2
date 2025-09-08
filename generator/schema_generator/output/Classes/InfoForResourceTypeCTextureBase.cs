@@ -9,9 +9,6 @@ internal partial class InfoForResourceTypeCTextureBase : SchemaClass, IInfoForRe
   public InfoForResourceTypeCTextureBase(nint handle) : base(handle) {
   }
 
-  public InfoForResourceTypeCTextureBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -4,5 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPlayer_BulletServices : IPlayerPawnComponent {
 
-
+  public ref int TotalHitsOnServer { get; }
+  
 }

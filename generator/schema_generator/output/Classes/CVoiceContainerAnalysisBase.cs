@@ -9,9 +9,6 @@ internal partial class CVoiceContainerAnalysisBase : SchemaClass, IVoiceContaine
   public CVoiceContainerAnalysisBase(nint handle) : base(handle) {
   }
 
-  public CVoiceContainerAnalysisBase(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool RegenerateCurveOnCompile {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC0BE2FE061AFA19C));
   }

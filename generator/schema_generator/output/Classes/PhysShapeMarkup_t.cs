@@ -9,9 +9,6 @@ internal partial class PhysShapeMarkup_t : SchemaClass, IPhysShapeMarkup_t {
   public PhysShapeMarkup_t(nint handle) : base(handle) {
   }
 
-  public PhysShapeMarkup_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int BodyInAggregate {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x87CE340954AFE651));
   }

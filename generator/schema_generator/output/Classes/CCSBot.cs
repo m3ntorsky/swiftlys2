@@ -9,14 +9,11 @@ internal partial class CCSBot : CBot, ICSBot {
   public CCSBot(nint handle) : base(handle) {
   }
 
-  public CCSBot(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref Vector EyePosition {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x1CFE165D847A3605));
   }
   public ISchemaFixedString Name {
-    get => new SchemaFixedString(_Handle + Schema.GetOffset(0x1CFE165D4D8F5786));
+    get => new SchemaFixedString(_Handle, 0x1CFE165D4D8F5786, 64, 1, 1);
   }
   public ref float CombatRange {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1CFE165D7FF44CAE));
@@ -48,8 +45,8 @@ internal partial class CCSBot : CBot, ICSBot {
   public ref bool IsFollowing {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1CFE165D985B15A8));
   }
-  public ref CHandle< CCSPlayerPawn > Leader {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0x1CFE165D658B4E84));
+  public ref CHandle<CCSPlayerPawn> Leader {
+    get => ref _Handle.AsRef<CHandle<CCSPlayerPawn>>(Schema.GetOffset(0x1CFE165D658B4E84));
   }
   public ref float FollowTimestamp {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1CFE165DDF9139C0));
@@ -78,17 +75,17 @@ internal partial class CCSBot : CBot, ICSBot {
   public ref bool IsOpeningDoor {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1CFE165D75EC227F));
   }
-  public ref CHandle< CBaseEntity > TaskEntity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1CFE165DF6C25037));
+  public ref CHandle<CBaseEntity> TaskEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1CFE165DF6C25037));
   }
   public ref Vector GoalPosition {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x1CFE165D02ACD9A1));
   }
-  public ref CHandle< CBaseEntity > GoalEntity {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1CFE165D7C389945));
+  public ref CHandle<CBaseEntity> GoalEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1CFE165D7C389945));
   }
-  public ref CHandle< CBaseEntity > Avoid {
-    get => ref _Handle.AsRef<CHandle< CBaseEntity >>(Schema.GetOffset(0x1CFE165D6F622DBE));
+  public ref CHandle<CBaseEntity> Avoid {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1CFE165D6F622DBE));
   }
   public ref float AvoidTimestamp {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1CFE165D6D375DA6));
@@ -138,8 +135,8 @@ internal partial class CCSBot : CBot, ICSBot {
   public ICountdownTimer UpdateTravelDistanceTimer {
     get => new CountdownTimer(_Handle + Schema.GetOffset(0x1CFE165D67E5EA78));
   }
-  public ISchemaFixedArray<float32> PlayerTravelDistance {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0x1CFE165DA4B8EEEF));
+  public ISchemaFixedArray<float> PlayerTravelDistance {
+    get => new SchemaFixedArray<float>(_Handle, 0x1CFE165DA4B8EEEF, 64, 4, 4);
   }
   public ref byte TravelDistancePhase {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x1CFE165D1572AE9D));
@@ -285,8 +282,8 @@ internal partial class CCSBot : CBot, ICSBot {
   public ICountdownTimer IgnoreEnemiesTimer {
     get => new CountdownTimer(_Handle + Schema.GetOffset(0x1CFE165DCFC4C322));
   }
-  public ref CHandle< CCSPlayerPawn > Enemy {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0x1CFE165DD63838CB));
+  public ref CHandle<CCSPlayerPawn> Enemy {
+    get => ref _Handle.AsRef<CHandle<CCSPlayerPawn>>(Schema.GetOffset(0x1CFE165DD63838CB));
   }
   public ref bool IsEnemyVisible {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1CFE165D0457F7FF));
@@ -318,23 +315,23 @@ internal partial class CCSBot : CBot, ICSBot {
   public ref int NearbyEnemyCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1CFE165DE4C9C125));
   }
-  public ref CHandle< CCSPlayerPawn > Bomber {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0x1CFE165D1F24BFCA));
+  public ref CHandle<CCSPlayerPawn> Bomber {
+    get => ref _Handle.AsRef<CHandle<CCSPlayerPawn>>(Schema.GetOffset(0x1CFE165D1F24BFCA));
   }
   public ref int NearbyFriendCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1CFE165D268D2385));
   }
-  public ref CHandle< CCSPlayerPawn > ClosestVisibleFriend {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0x1CFE165DF41BB33A));
+  public ref CHandle<CCSPlayerPawn> ClosestVisibleFriend {
+    get => ref _Handle.AsRef<CHandle<CCSPlayerPawn>>(Schema.GetOffset(0x1CFE165DF41BB33A));
   }
-  public ref CHandle< CCSPlayerPawn > ClosestVisibleHumanFriend {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0x1CFE165D37571CF3));
+  public ref CHandle<CCSPlayerPawn> ClosestVisibleHumanFriend {
+    get => ref _Handle.AsRef<CHandle<CCSPlayerPawn>>(Schema.GetOffset(0x1CFE165D37571CF3));
   }
   public IIntervalTimer AttentionInterval {
     get => new IntervalTimer(_Handle + Schema.GetOffset(0x1CFE165D90537394));
   }
-  public ref CHandle< CCSPlayerPawn > Attacker {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0x1CFE165D3CB57DEE));
+  public ref CHandle<CCSPlayerPawn> Attacker {
+    get => ref _Handle.AsRef<CHandle<CCSPlayerPawn>>(Schema.GetOffset(0x1CFE165D3CB57DEE));
   }
   public ref float AttackedTimestamp {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1CFE165DC2564304));
@@ -399,8 +396,8 @@ internal partial class CCSBot : CBot, ICSBot {
   public IGameTime_t NextCleanupCheckTimestamp {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x1CFE165DB61EB6BC));
   }
-  public ISchemaFixedArray<float32> AvgVel {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0x1CFE165D99077BFE));
+  public ISchemaFixedArray<float> AvgVel {
+    get => new SchemaFixedArray<float>(_Handle, 0x1CFE165D99077BFE, 10, 4, 4);
   }
   public ref int AvgVelIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1CFE165D17587BC2));
@@ -417,8 +414,8 @@ internal partial class CCSBot : CBot, ICSBot {
   public ref float LastRadioSentTimestamp {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1CFE165D7F5D6086));
   }
-  public ref CHandle< CCSPlayerPawn > RadioSubject {
-    get => ref _Handle.AsRef<CHandle< CCSPlayerPawn >>(Schema.GetOffset(0x1CFE165DF4F682DC));
+  public ref CHandle<CCSPlayerPawn> RadioSubject {
+    get => ref _Handle.AsRef<CHandle<CCSPlayerPawn>>(Schema.GetOffset(0x1CFE165DF4F682DC));
   }
   public ref Vector RadioPosition {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x1CFE165D08071A87));

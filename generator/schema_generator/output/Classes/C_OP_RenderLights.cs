@@ -9,9 +9,6 @@ internal partial class C_OP_RenderLights : C_OP_RenderPoints, IC_OP_RenderLights
   public C_OP_RenderLights(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderLights(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float AnimationRate {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x534FF0BC607083AD));
   }

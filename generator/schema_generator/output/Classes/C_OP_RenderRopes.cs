@@ -9,9 +9,6 @@ internal partial class C_OP_RenderRopes : CBaseRendererSource2, IC_OP_RenderRope
   public C_OP_RenderRopes(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderRopes(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool EnableFadingAndClamping {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9BCDD8B21BC56ADD));
   }

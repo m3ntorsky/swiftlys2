@@ -9,11 +9,8 @@ internal partial class CDrawCullingData : SchemaClass, IDrawCullingData {
   public CDrawCullingData(nint handle) : base(handle) {
   }
 
-  public CDrawCullingData(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ISchemaFixedArray<int8> ConeAxis {
-    get => new SchemaFixedArray<int8>(_Handle + Schema.GetOffset(0x80665970C59E234F));
+  public ISchemaFixedArray<byte> ConeAxis {
+    get => new SchemaFixedArray<byte>(_Handle, 0x80665970C59E234F, 3, 1, 1);
   }
   public ref byte ConeCutoff {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x80665970CAE61D67));

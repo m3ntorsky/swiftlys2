@@ -9,9 +9,6 @@ internal partial class C_OP_WaterImpulseRenderer : CParticleFunctionRenderer, IC
   public C_OP_WaterImpulseRenderer(nint handle) : base(handle) {
   }
 
-  public C_OP_WaterImpulseRenderer(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IPerParticleVecInput Pos {
     get => new CPerParticleVecInput(_Handle + Schema.GetOffset(0x7CC87C0C3B18EB69));
   }

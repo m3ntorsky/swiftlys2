@@ -9,9 +9,6 @@ internal partial class C_OP_ReadFromNeighboringParticle : CParticleFunctionOpera
   public C_OP_ReadFromNeighboringParticle(nint handle) : base(handle) {
   }
 
-  public C_OP_ReadFromNeighboringParticle(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public IParticleAttributeIndex_t FieldInput {
     get => new ParticleAttributeIndex_t(_Handle + Schema.GetOffset(0xDC4AE427AE775669));
   }

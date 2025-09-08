@@ -9,29 +9,26 @@ internal partial class C_OP_RenderStatusEffect : CParticleFunctionRenderer, IC_O
   public C_OP_RenderStatusEffect(nint handle) : base(handle) {
   }
 
-  public C_OP_RenderStatusEffect(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureColorWarp {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(Schema.GetOffset(0x2D120E02C99DEE43));
   }
-
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > TextureColorWarp {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x2D120E02C99DEE43));
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureDetail2 {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(Schema.GetOffset(0x2D120E021AC8A787));
   }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > TextureDetail2 {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x2D120E021AC8A787));
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureDiffuseWarp {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(Schema.GetOffset(0x2D120E02F91AF7A2));
   }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > TextureDiffuseWarp {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x2D120E02F91AF7A2));
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureFresnelColorWarp {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(Schema.GetOffset(0x2D120E02C8B05C0A));
   }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > TextureFresnelColorWarp {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x2D120E02C8B05C0A));
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureFresnelWarp {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(Schema.GetOffset(0x2D120E020BCD7353));
   }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > TextureFresnelWarp {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x2D120E020BCD7353));
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureSpecularWarp {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(Schema.GetOffset(0x2D120E02B904CD45));
   }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > TextureSpecularWarp {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x2D120E02B904CD45));
-  }
-  public ref CStrongHandle< InfoForResourceTypeCTextureBase > TextureEnvMap {
-    get => ref _Handle.AsRef<CStrongHandle< InfoForResourceTypeCTextureBase >>(Schema.GetOffset(0x2D120E0280FDA7DD));
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureEnvMap {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(Schema.GetOffset(0x2D120E0280FDA7DD));
   }
 
 

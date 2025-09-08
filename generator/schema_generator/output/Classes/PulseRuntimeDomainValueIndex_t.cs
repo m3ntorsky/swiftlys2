@@ -9,9 +9,6 @@ internal partial class PulseRuntimeDomainValueIndex_t : SchemaClass, IPulseRunti
   public PulseRuntimeDomainValueIndex_t(nint handle) : base(handle) {
   }
 
-  public PulseRuntimeDomainValueIndex_t(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short Value {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xCA672082DCB0894A));
   }

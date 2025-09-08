@@ -9,18 +9,6 @@ internal partial class CBaseFlex : CBaseAnimGraph, IBaseFlex {
   public CBaseFlex(nint handle) : base(handle) {
   }
 
-  public CBaseFlex(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
-  public ref CUtlVector< float32 > FlexWeight {
-    get => ref _Handle.AsRef<CUtlVector< float32 >>(Schema.GetOffset(0xEE4FEF48AB868EDA));
-  }
-  public ref Vector LookTargetPosition {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xEE4FEF480DCD7B00));
-  }
-  public ref bool Blinktoggle {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xEE4FEF48CA230309));
-  }
   public IGameTime_t AllowResponsesEndTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xEE4FEF4858EB0248));
   }

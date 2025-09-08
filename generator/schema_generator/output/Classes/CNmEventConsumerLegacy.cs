@@ -9,9 +9,6 @@ internal partial class CNmEventConsumerLegacy : CNmEventConsumer, INmEventConsum
   public CNmEventConsumerLegacy(nint handle) : base(handle) {
   }
 
-  public CNmEventConsumerLegacy(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

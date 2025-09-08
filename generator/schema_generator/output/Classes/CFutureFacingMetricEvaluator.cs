@@ -9,9 +9,6 @@ internal partial class CFutureFacingMetricEvaluator : CMotionMetricEvaluator, IF
   public CFutureFacingMetricEvaluator(nint handle) : base(handle) {
   }
 
-  public CFutureFacingMetricEvaluator(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref float Distance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6A3CD0D400DC4A68));
   }

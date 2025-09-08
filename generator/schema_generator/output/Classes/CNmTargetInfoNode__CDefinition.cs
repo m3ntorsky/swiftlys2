@@ -9,9 +9,6 @@ internal partial class CNmTargetInfoNode__CDefinition : CNmFloatValueNode::CDefi
   public CNmTargetInfoNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmTargetInfoNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref short InputValueNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x2288EABA95E89F27));
   }

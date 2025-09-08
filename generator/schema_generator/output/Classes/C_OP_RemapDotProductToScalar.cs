@@ -9,9 +9,6 @@ internal partial class C_OP_RemapDotProductToScalar : CParticleFunctionOperator,
   public C_OP_RemapDotProductToScalar(nint handle) : base(handle) {
   }
 
-  public C_OP_RemapDotProductToScalar(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int InputCP1 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x56A85935A0CCAE3F));
   }

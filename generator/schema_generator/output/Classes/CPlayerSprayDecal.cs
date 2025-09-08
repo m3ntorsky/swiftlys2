@@ -9,54 +9,7 @@ internal partial class CPlayerSprayDecal : CModelPointEntity, IPlayerSprayDecal 
   public CPlayerSprayDecal(nint handle) : base(handle) {
   }
 
-  public CPlayerSprayDecal(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
 
-  public ref int UniqueID {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x782380E1C7F9595F));
-  }
-  public ref uint AccountID {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x782380E15D6DC0F0));
-  }
-  public ref uint TraceID {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x782380E1D326AF6A));
-  }
-  public ref uint RtGcTime {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x782380E1F2BA46AC));
-  }
-  public ref Vector EndPos {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x782380E18DD24760));
-  }
-  public ref Vector Start {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x782380E141EEE6BF));
-  }
-  public ref Vector Left {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x782380E1C965C1D0));
-  }
-  public ref Vector Normal {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x782380E1363057B2));
-  }
-  public ref int Player {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x782380E1E30D6DFC));
-  }
-  public ref int Entity {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x782380E1A2D5FAD6));
-  }
-  public ref int Hitbox {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x782380E16D9A48B3));
-  }
-  public ref float CreationTime {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x782380E1525557E7));
-  }
-  public ref int TintID {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x782380E12CA2D64D));
-  }
-  public ref byte Version {
-    get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x782380E1B0AB8B1B));
-  }
-  public ISchemaFixedArray<uint8> Signature {
-    get => new SchemaFixedArray<uint8>(_Handle + Schema.GetOffset(0x782380E133A8D6DC));
-  }
 
   public void UniqueIDUpdated() {
     Schema.Update(_Handle, 0x782380E1C7F9595F);

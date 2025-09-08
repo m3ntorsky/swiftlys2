@@ -9,9 +9,6 @@ internal partial class CRenderBufferBinding : SchemaClass, IRenderBufferBinding 
   public CRenderBufferBinding(nint handle) : base(handle) {
   }
 
-  public CRenderBufferBinding(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref ulong Buffer {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xFC8416C144D3898D));
   }

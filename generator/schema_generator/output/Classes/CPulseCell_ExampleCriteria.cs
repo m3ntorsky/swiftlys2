@@ -9,9 +9,6 @@ internal partial class CPulseCell_ExampleCriteria : CPulseCell_BaseRequirement, 
   public CPulseCell_ExampleCriteria(nint handle) : base(handle) {
   }
 
-  public CPulseCell_ExampleCriteria(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
 
 
 

@@ -9,9 +9,6 @@ internal partial class C_OP_NormalLock : CParticleFunctionOperator, IC_OP_Normal
   public C_OP_NormalLock(nint handle) : base(handle) {
   }
 
-  public C_OP_NormalLock(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8C7847AD3F31A6BD));
   }

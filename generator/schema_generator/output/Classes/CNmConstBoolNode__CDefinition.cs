@@ -9,9 +9,6 @@ internal partial class CNmConstBoolNode__CDefinition : CNmBoolValueNode::CDefini
   public CNmConstBoolNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public CNmConstBoolNode__CDefinition(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Value {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDEAA315605AAB4AA));
   }

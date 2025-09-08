@@ -9,9 +9,6 @@ internal partial class CFuncNavBlocker : CBaseModelEntity, IFuncNavBlocker {
   public CFuncNavBlocker(nint handle) : base(handle) {
   }
 
-  public CFuncNavBlocker(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3F066D113A7C5965));
   }

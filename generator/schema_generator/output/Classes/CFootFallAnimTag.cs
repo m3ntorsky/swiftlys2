@@ -9,9 +9,6 @@ internal partial class CFootFallAnimTag : CAnimTagBase, IFootFallAnimTag {
   public CFootFallAnimTag(nint handle) : base(handle) {
   }
 
-  public CFootFallAnimTag(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref FootFallTagFoot_t Foot {
     get => ref _Handle.AsRef<FootFallTagFoot_t>(Schema.GetOffset(0xC142B61EEB2B8B39));
   }

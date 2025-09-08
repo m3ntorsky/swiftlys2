@@ -9,17 +9,14 @@ internal partial class CFuseSymbolTable : SchemaClass, IFuseSymbolTable {
   public CFuseSymbolTable(nint handle) : base(handle) {
   }
 
-  public CFuseSymbolTable(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
+  public ref CUtlVector Constants {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD8A03B41460C1382));
   }
-
-  public ref CUtlVector< ConstantInfo_t > Constants {
-    get => ref _Handle.AsRef<CUtlVector< ConstantInfo_t >>(Schema.GetOffset(0xD8A03B41460C1382));
+  public ref CUtlVector Variables {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD8A03B4106AE7DE2));
   }
-  public ref CUtlVector< VariableInfo_t > Variables {
-    get => ref _Handle.AsRef<CUtlVector< VariableInfo_t >>(Schema.GetOffset(0xD8A03B4106AE7DE2));
-  }
-  public ref CUtlVector< FunctionInfo_t > Functions {
-    get => ref _Handle.AsRef<CUtlVector< FunctionInfo_t >>(Schema.GetOffset(0xD8A03B41F6EF246E));
+  public ref CUtlVector Functions {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD8A03B41F6EF246E));
   }
   public ISchemaUntypedField ConstantMap {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD8A03B4198BF6E51));

@@ -9,9 +9,6 @@ internal partial class C_OP_SetControlPointsToParticle : CParticleFunctionOperat
   public C_OP_SetControlPointsToParticle(nint handle) : base(handle) {
   }
 
-  public C_OP_SetControlPointsToParticle(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref int ChildGroupID {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x119EA308E3F3C965));
   }

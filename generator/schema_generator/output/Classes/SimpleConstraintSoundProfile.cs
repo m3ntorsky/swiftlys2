@@ -9,17 +9,14 @@ internal partial class SimpleConstraintSoundProfile : SchemaClass, ISimpleConstr
   public SimpleConstraintSoundProfile(nint handle) : base(handle) {
   }
 
-  public SimpleConstraintSoundProfile(nint handle, ulong hash, bool isField, bool isNetworked) : base(handle, hash, isField, isNetworked) {
-  }
-
   public ref SimpleConstraintSoundProfile::SimpleConstraintsSoundProfileKeypoints_t Keypoints {
     get => ref _Handle.AsRef<SimpleConstraintSoundProfile::SimpleConstraintsSoundProfileKeypoints_t>(Schema.GetOffset(0xB768AA94AE55150C));
   }
-  public ISchemaFixedArray<float32> KeyPoints {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0xB768AA9449DA0463));
+  public ISchemaFixedArray<float> KeyPoints {
+    get => new SchemaFixedArray<float>(_Handle, 0xB768AA9449DA0463, 2, 4, 4);
   }
-  public ISchemaFixedArray<float32> ReversalSoundThresholds {
-    get => new SchemaFixedArray<float32>(_Handle + Schema.GetOffset(0xB768AA9405E06766));
+  public ISchemaFixedArray<float> ReversalSoundThresholds {
+    get => new SchemaFixedArray<float>(_Handle, 0xB768AA9405E06766, 3, 4, 4);
   }
 
 
