@@ -18,8 +18,8 @@ internal partial class SummaryTakeDamageInfo_t : SchemaClass, ISummaryTakeDamage
   public ITakeDamageResult Result {
     get => new CTakeDamageResult(_Handle + Schema.GetOffset(0x8A8061E20A377624));
   }
-  public CHandle<IBaseEntity> Target {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x8A8061E295A3933A));
+  public ref CHandle<CBaseEntity> Target {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x8A8061E295A3933A));
   }
 
 

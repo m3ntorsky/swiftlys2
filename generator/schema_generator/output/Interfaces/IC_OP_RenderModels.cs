@@ -64,7 +64,7 @@ public partial interface IC_OP_RenderModels : IParticleFunctionRenderer {
   
   public ISchemaFixedString ClothEffectName { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> OverrideMaterial { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> OverrideMaterial { get; }
   
   public ref bool OverrideTranslucentMaterials { get; }
   

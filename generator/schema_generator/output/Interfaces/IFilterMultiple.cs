@@ -8,6 +8,6 @@ public partial interface IFilterMultiple : IBaseFilter {
   
   public ISchemaFixedArray<CUtlSymbolLarge> FilterName { get; }
   
-  public CHandle<IBaseEntity> Filter { get; }
+  public ref CHandle<CBaseEntity> Filter { get; }
   
 }

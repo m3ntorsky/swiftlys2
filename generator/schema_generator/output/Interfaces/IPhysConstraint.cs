@@ -8,9 +8,9 @@ public partial interface IPhysConstraint : ILogicalEntity {
   
   public ref CUtlSymbolLarge NameAttach2 { get; }
   
-  public CHandle<IBaseEntity> Attach1 { get; }
+  public ref CHandle<CBaseEntity> Attach1 { get; }
   
-  public CHandle<IBaseEntity> Attach2 { get; }
+  public ref CHandle<CBaseEntity> Attach2 { get; }
   
   public ref CUtlSymbolLarge NameAttachment1 { get; }
   

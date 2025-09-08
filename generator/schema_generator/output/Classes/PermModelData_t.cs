@@ -18,8 +18,8 @@ internal partial class PermModelData_t : SchemaClass, IPermModelData_t {
   public ref CUtlVector ExtParts {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3E367D0B8564C2A6));
   }
-  public ref CUtlVector RefMeshes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3E367D0B9FB3727B));
+  public ref CUtlVector<CStrongHandle<InfoForResourceTypeCRenderMesh>> RefMeshes {
+    get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCRenderMesh>>>(Schema.GetOffset(0x3E367D0B9FB3727B));
   }
   public ref CUtlVector<ulong> RefMeshGroupMasks {
     get => ref _Handle.AsRef<CUtlVector<ulong>>(Schema.GetOffset(0x3E367D0BDC56A19B));
@@ -33,17 +33,17 @@ internal partial class PermModelData_t : SchemaClass, IPermModelData_t {
   public ref CUtlVector<float> LodGroupSwitchDistances {
     get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x3E367D0B52CCDE75));
   }
-  public ref CUtlVector RefPhysicsData {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3E367D0BF18951CB));
+  public ref CUtlVector<CStrongHandle<InfoForResourceTypeCPhysAggregateData>> RefPhysicsData {
+    get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCPhysAggregateData>>>(Schema.GetOffset(0x3E367D0BF18951CB));
   }
-  public ref CUtlVector RefPhysicsHitboxData {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3E367D0B26C451DD));
+  public ref CUtlVector<CStrongHandle<InfoForResourceTypeCPhysAggregateData>> RefPhysicsHitboxData {
+    get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCPhysAggregateData>>>(Schema.GetOffset(0x3E367D0B26C451DD));
   }
-  public ref CUtlVector RefAnimGroups {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3E367D0BDC24F793));
+  public ref CUtlVector<CStrongHandle<InfoForResourceTypeCAnimationGroup>> RefAnimGroups {
+    get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCAnimationGroup>>>(Schema.GetOffset(0x3E367D0BDC24F793));
   }
-  public ref CUtlVector RefSequenceGroups {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3E367D0B823AD8A3));
+  public ref CUtlVector<CStrongHandle<InfoForResourceTypeCSequenceGroupData>> RefSequenceGroups {
+    get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCSequenceGroupData>>>(Schema.GetOffset(0x3E367D0B823AD8A3));
   }
   public ref CUtlVector<CUtlString> MeshGroups {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x3E367D0B3EF7CCF4));
@@ -72,8 +72,8 @@ internal partial class PermModelData_t : SchemaClass, IPermModelData_t {
   public ref CUtlVector<CUtlString> BodyGroupsHiddenInTools {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x3E367D0BE312FA8D));
   }
-  public ref CUtlVector RefAnimIncludeModels {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3E367D0BD99121D7));
+  public ref CUtlVector<CStrongHandle<InfoForResourceTypeCModel>> RefAnimIncludeModels {
+    get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCModel>>>(Schema.GetOffset(0x3E367D0BD99121D7));
   }
   public ref CUtlVector AnimatedMaterialAttributes {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3E367D0BC29D5124));

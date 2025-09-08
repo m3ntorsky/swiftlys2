@@ -30,6 +30,6 @@ public partial interface ITriggerHurt : IBaseTrigger {
   
   public IEntityIOOutput OnHurtPlayer { get; }
   
-  public ref CUtlVector HurtEntities { get; }
+  public ref CUtlVector<CHandle<CBaseEntity>> HurtEntities { get; }
   
 }

@@ -10,7 +10,7 @@ public partial interface IPhysForce : IPointEntity {
   
   public ref float ForceTime { get; }
   
-  public CHandle<IBaseEntity> AttachedObject { get; }
+  public ref CHandle<CBaseEntity> AttachedObject { get; }
   
   public ref bool WasRestored { get; }
   

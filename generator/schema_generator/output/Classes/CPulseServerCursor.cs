@@ -9,11 +9,11 @@ internal partial class CPulseServerCursor : CPulseExecCursor, IPulseServerCursor
   public CPulseServerCursor(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> Activator {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x4FFA7BD2AB093BB2));
+  public ref CHandle<CBaseEntity> Activator {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x4FFA7BD2AB093BB2));
   }
-  public CHandle<IBaseEntity> Caller {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x4FFA7BD23F9735FC));
+  public ref CHandle<CBaseEntity> Caller {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x4FFA7BD23F9735FC));
   }
 
 

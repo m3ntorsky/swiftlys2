@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointGiveAmmo : IPointEntity {
 
-  public CHandle<IBaseEntity> Activator { get; }
+  public ref CHandle<CBaseEntity> Activator { get; }
   
 }

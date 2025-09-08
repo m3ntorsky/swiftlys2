@@ -9,8 +9,8 @@ internal partial class CInfoProjectedDecal : CPointEntity, IInfoProjectedDecal {
   public CInfoProjectedDecal(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material {
-    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0x99210447888CE42E));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0x99210447888CE42E));
   }
   public ref CUtlStringToken SequenceName {
     get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0x992104477462AF30));

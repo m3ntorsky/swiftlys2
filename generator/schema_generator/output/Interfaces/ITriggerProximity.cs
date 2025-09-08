@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITriggerProximity : IBaseTrigger {
 
-  public CHandle<IBaseEntity> MeasureTarget { get; }
+  public ref CHandle<CBaseEntity> MeasureTarget { get; }
   
   public ref CUtlSymbolLarge MeasureTarget { get; }
   

@@ -22,7 +22,7 @@ public partial interface IMoverPathNode : IPointEntity {
   
   public IEntityIOOutput OnPassThroughReverse { get; }
   
-  public CHandle<IPathMover> Mover { get; }
+  public ref CHandle<CPathMover> Mover { get; }
   
   public ref CTransform XWSPrevParent { get; }
   

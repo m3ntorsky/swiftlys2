@@ -12,8 +12,8 @@ internal partial class CSkyboxReference : CBaseEntity, ISkyboxReference {
   public ref WorldGroupId_t WorldGroupId {
     get => ref _Handle.AsRef<WorldGroupId_t>(Schema.GetOffset(0x98809790BECFAC7));
   }
-  public CHandle<ISkyCamera> SkyCamera {
-    get => new CHandle<CSkyCamera>(_Handle + Schema.GetOffset(0x988097906BB5B33));
+  public ref CHandle<CSkyCamera> SkyCamera {
+    get => ref _Handle.AsRef<CHandle<CSkyCamera>>(Schema.GetOffset(0x988097906BB5B33));
   }
 
 

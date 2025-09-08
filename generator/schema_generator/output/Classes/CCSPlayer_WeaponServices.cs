@@ -9,8 +9,8 @@ internal partial class CCSPlayer_WeaponServices : CPlayer_WeaponServices, ICSPla
   public CCSPlayer_WeaponServices(nint handle) : base(handle) {
   }
 
-  public CHandle<IBasePlayerWeapon> SavedWeapon {
-    get => new CHandle<CBasePlayerWeapon>(_Handle + Schema.GetOffset(0x13067CB248BC7512));
+  public ref CHandle<CBasePlayerWeapon> SavedWeapon {
+    get => ref _Handle.AsRef<CHandle<CBasePlayerWeapon>>(Schema.GetOffset(0x13067CB248BC7512));
   }
   public ref int TimeToMelee {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x13067CB2B21B94A7));

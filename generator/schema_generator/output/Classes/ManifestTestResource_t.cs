@@ -12,8 +12,8 @@ internal partial class ManifestTestResource_t : SchemaClass, IManifestTestResour
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xFF18C79F4D8F5786));
   }
-  public CStrongHandle<IInfoForResourceTypeManifestTestResource_t> Child {
-    get => new CStrongHandle<InfoForResourceTypeManifestTestResource_t>(_Handle + Schema.GetOffset(0xFF18C79F2827B07D));
+  public ref CStrongHandle<InfoForResourceTypeManifestTestResource_t> Child {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeManifestTestResource_t>>(Schema.GetOffset(0xFF18C79F2827B07D));
   }
 
 

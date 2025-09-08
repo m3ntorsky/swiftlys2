@@ -15,8 +15,8 @@ internal partial class CEnvWindShared : SchemaClass, IEnvWindShared {
   public IEntityIOOutput OnGustEnd {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x4E8F86FE82E285B4));
   }
-  public CHandle<IBaseEntity> EntOwner {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x4E8F86FED837CB33));
+  public ref CHandle<CBaseEntity> EntOwner {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x4E8F86FED837CB33));
   }
 
   public void StartTimeUpdated() {

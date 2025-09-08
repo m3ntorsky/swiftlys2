@@ -12,8 +12,8 @@ internal partial class CLogicBranchList : CLogicalEntity, ILogicBranchList {
   public ISchemaFixedArray<CUtlSymbolLarge> LogicBranchNames {
     get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0xB21E12B82C1677D7, 16, 8, 8);
   }
-  public ref CUtlVector LogicBranchList {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB21E12B8E4DEC285));
+  public ref CUtlVector<CHandle<CBaseEntity>> LogicBranchList {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(Schema.GetOffset(0xB21E12B8E4DEC285));
   }
   public ref CLogicBranchList::LogicBranchListenerLastState_t LastState {
     get => ref _Handle.AsRef<CLogicBranchList::LogicBranchListenerLastState_t>(Schema.GetOffset(0xB21E12B89A391AC5));

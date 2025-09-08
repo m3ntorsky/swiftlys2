@@ -12,8 +12,8 @@ internal partial class CBasePropDoor : CDynamicProp, IBasePropDoor {
   public ref float AutoReturnDelay {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x140EA8BE772B0615));
   }
-  public ref CUtlVector DoorList {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x140EA8BE1E34E0D7));
+  public ref CUtlVector<CHandle<CBasePropDoor>> DoorList {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CBasePropDoor>>>(Schema.GetOffset(0x140EA8BE1E34E0D7));
   }
   public ref int HardwareType {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x140EA8BEAA155C65));
@@ -21,8 +21,8 @@ internal partial class CBasePropDoor : CDynamicProp, IBasePropDoor {
   public ref bool NeedsHardware {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x140EA8BE4748BCCE));
   }
-  public CHandle<IBaseEntity> Blocker {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x140EA8BE21787A5F));
+  public ref CHandle<CBaseEntity> Blocker {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x140EA8BE21787A5F));
   }
   public ref bool FirstBlocked {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x140EA8BEF120E737));
@@ -36,8 +36,8 @@ internal partial class CBasePropDoor : CDynamicProp, IBasePropDoor {
   public ref Vector LatchWorldPosition {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x140EA8BEEBC4A818));
   }
-  public CHandle<IBaseEntity> Activator {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x140EA8BEAB093BB2));
+  public ref CHandle<CBaseEntity> Activator {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x140EA8BEAB093BB2));
   }
   public ref CUtlSymbolLarge SoundMoving {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE096B0232));

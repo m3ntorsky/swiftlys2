@@ -30,8 +30,8 @@ internal partial class C_OP_RenderGpuImplicit : CParticleFunctionRenderer, IC_OP
   public ref int ScaleCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xF780A8EDE3CC5E6));
   }
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material {
-    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0xF780A8E888CE42E));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0xF780A8E888CE42E));
   }
 
 

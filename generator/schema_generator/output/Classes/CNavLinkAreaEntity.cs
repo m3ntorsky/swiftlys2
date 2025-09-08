@@ -33,8 +33,8 @@ internal partial class CNavLinkAreaEntity : CPointEntity, INavLinkAreaEntity {
   public ref CUtlSymbolLarge StrFilterName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1A0F1851E3C44CC9));
   }
-  public CHandle<IBaseFilter> Filter {
-    get => new CHandle<CBaseFilter>(_Handle + Schema.GetOffset(0x1A0F185145D9E0B1));
+  public ref CHandle<CBaseFilter> Filter {
+    get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0x1A0F185145D9E0B1));
   }
   public IEntityIOOutput OnNavLinkStart {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x1A0F185115E018DB));

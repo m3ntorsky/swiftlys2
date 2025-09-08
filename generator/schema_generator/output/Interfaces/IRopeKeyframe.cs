@@ -20,7 +20,7 @@ public partial interface IRopeKeyframe : IBaseModelEntity {
   
   public ref CUtlSymbolLarge StrRopeMaterialModel { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> RopeMaterialModelIndex { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> RopeMaterialModelIndex { get; }
   
   public ref byte Subdiv { get; }
   
@@ -38,9 +38,9 @@ public partial interface IRopeKeyframe : IBaseModelEntity {
   
   public ref bool EndPointValid { get; }
   
-  public CHandle<IBaseEntity> StartPoint { get; }
+  public ref CHandle<CBaseEntity> StartPoint { get; }
   
-  public CHandle<IBaseEntity> EndPoint { get; }
+  public ref CHandle<CBaseEntity> EndPoint { get; }
   
   public IAttachmentHandle_t StartAttachment { get; }
   

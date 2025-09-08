@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapNamedModelElementEndCap : IParticleFunctionOperator {
 
-  public CStrongHandle<IInfoForResourceTypeCModel> Model { get; }
+  public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }
   
   public ref CUtlVector<CUtlString> InNames { get; }
   

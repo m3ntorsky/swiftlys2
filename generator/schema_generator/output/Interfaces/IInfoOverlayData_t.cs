@@ -16,7 +16,7 @@ public partial interface IInfoOverlayData_t : ISchemaClass {
   
   public ref Vector2D UVEnd { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
   
   public ref int RenderOrder { get; }
   

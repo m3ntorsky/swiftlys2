@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRenderProjectedMaterial_t : ISchemaClass {
 
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
   
 }

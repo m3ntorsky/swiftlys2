@@ -14,7 +14,7 @@ public partial interface IFishPool : IBaseEntity {
   
   public ref bool IsDormant { get; }
   
-  public ref CUtlVector Fishes { get; }
+  public ref CUtlVector<CHandle<CFish>> Fishes { get; }
   
   public ICountdownTimer VisTimer { get; }
   

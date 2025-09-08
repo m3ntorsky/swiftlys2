@@ -26,10 +26,10 @@ public partial interface IBaseGrenade : IBaseFlex {
   
   public ref CUtlString ExplosionSound { get; }
   
-  public CHandle<ICSPlayerPawn> Thrower { get; }
+  public ref CHandle<CCSPlayerPawn> Thrower { get; }
   
   public IGameTime_t NextAttack { get; }
   
-  public CHandle<ICSPlayerPawn> OriginalThrower { get; }
+  public ref CHandle<CCSPlayerPawn> OriginalThrower { get; }
   
 }

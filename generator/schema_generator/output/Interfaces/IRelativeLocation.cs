@@ -10,6 +10,6 @@ public partial interface IRelativeLocation : ISchemaClass {
   
   public ref Vector WorldSpacePos { get; }
   
-  public CHandle<IBaseEntity> Entity { get; }
+  public ref CHandle<CBaseEntity> Entity { get; }
   
 }

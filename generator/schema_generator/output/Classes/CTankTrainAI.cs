@@ -9,11 +9,11 @@ internal partial class CTankTrainAI : CPointEntity, ITankTrainAI {
   public CTankTrainAI(nint handle) : base(handle) {
   }
 
-  public CHandle<IFuncTrackTrain> Train {
-    get => new CHandle<CFuncTrackTrain>(_Handle + Schema.GetOffset(0x25820826D58EE22F));
+  public ref CHandle<CFuncTrackTrain> Train {
+    get => ref _Handle.AsRef<CHandle<CFuncTrackTrain>>(Schema.GetOffset(0x25820826D58EE22F));
   }
-  public CHandle<IBaseEntity> TargetEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x2582082625D042A9));
+  public ref CHandle<CBaseEntity> TargetEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x2582082625D042A9));
   }
   public ref int SoundPlaying {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x2582082658CF60D2));

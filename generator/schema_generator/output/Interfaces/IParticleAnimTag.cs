@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleAnimTag : IAnimTagBase {
 
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> ParticleSystem { get; }
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ParticleSystem { get; }
   
   public ref CUtlString ParticleSystemName { get; }
   

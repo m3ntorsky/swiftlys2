@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPlayer_ActionTrackingServices : IPlayerPawnComponent {
 
-  public CHandle<IBasePlayerWeapon> LastWeaponBeforeC4AutoSwitch { get; }
+  public ref CHandle<CBasePlayerWeapon> LastWeaponBeforeC4AutoSwitch { get; }
   
   public ref bool IsRescuing { get; }
   

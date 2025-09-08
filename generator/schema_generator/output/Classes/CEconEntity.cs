@@ -9,8 +9,8 @@ internal partial class CEconEntity : CBaseFlex, IEconEntity {
   public CEconEntity(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> OldProvidee {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xCD91F684289C89E0));
+  public ref CHandle<CBaseEntity> OldProvidee {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xCD91F684289C89E0));
   }
   public ref int OldOwnerClass {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xCD91F684D62FABE8));

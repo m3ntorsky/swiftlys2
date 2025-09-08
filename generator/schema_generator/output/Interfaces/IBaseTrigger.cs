@@ -18,11 +18,11 @@ public partial interface IBaseTrigger : IBaseToggle {
   
   public IEntityIOOutput OnNotTouching { get; }
   
-  public ref CUtlVector TouchingEntities { get; }
+  public ref CUtlVector<CHandle<CBaseEntity>> TouchingEntities { get; }
   
   public ref CUtlSymbolLarge FilterName { get; }
   
-  public CHandle<IBaseFilter> Filter { get; }
+  public ref CHandle<CBaseFilter> Filter { get; }
   
   public ref bool Disabled { get; }
   

@@ -4,9 +4,9 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISprite : IBaseModelEntity {
 
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> SpriteMaterial { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> SpriteMaterial { get; }
   
-  public CHandle<IBaseEntity> AttachedToEntity { get; }
+  public ref CHandle<CBaseEntity> AttachedToEntity { get; }
   
   public IAttachmentHandle_t Attachment { get; }
   

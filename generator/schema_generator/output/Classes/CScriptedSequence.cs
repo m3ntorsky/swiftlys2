@@ -168,11 +168,11 @@ internal partial class CScriptedSequence : CBaseEntity, IScriptedSequence {
   public ref bool PositionRelativeToOtherEntity {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBB0C45ED8CBF8E64));
   }
-  public CHandle<IBaseEntity> TargetEnt {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xBB0C45ED2DD292D7));
+  public ref CHandle<CBaseEntity> TargetEnt {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xBB0C45ED2DD292D7));
   }
-  public CHandle<IScriptedSequence> NextCine {
-    get => new CHandle<CScriptedSequence>(_Handle + Schema.GetOffset(0xBB0C45ED75574CC3));
+  public ref CHandle<CScriptedSequence> NextCine {
+    get => ref _Handle.AsRef<CHandle<CScriptedSequence>>(Schema.GetOffset(0xBB0C45ED75574CC3));
   }
   public ref bool Thinking {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBB0C45ED2C33DE1D));
@@ -186,8 +186,8 @@ internal partial class CScriptedSequence : CBaseEntity, IScriptedSequence {
   public ref bool AllowCustomInterruptConditions {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBB0C45EDA2069736));
   }
-  public CHandle<IBaseAnimGraph> ForcedTarget {
-    get => new CHandle<CBaseAnimGraph>(_Handle + Schema.GetOffset(0xBB0C45ED820DE873));
+  public ref CHandle<CBaseAnimGraph> ForcedTarget {
+    get => ref _Handle.AsRef<CHandle<CBaseAnimGraph>>(Schema.GetOffset(0xBB0C45ED820DE873));
   }
   public ref bool DontCancelOtherSequences {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBB0C45EDF5CD3DDC));
@@ -231,8 +231,8 @@ internal partial class CScriptedSequence : CBaseEntity, IScriptedSequence {
   public ref CTransform MatOtherToMain {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xBB0C45ED0E394D39));
   }
-  public CHandle<IBaseEntity> InteractionMainEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xBB0C45ED16430DA3));
+  public ref CHandle<CBaseEntity> InteractionMainEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xBB0C45ED16430DA3));
   }
   public ref int PlayerDeathBehavior {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xBB0C45EDC6ECC93B));

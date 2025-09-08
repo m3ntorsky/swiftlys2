@@ -8,8 +8,8 @@ public partial interface ILogicLineToEntity : ILogicalEntity {
   
   public ref CUtlSymbolLarge SourceName { get; }
   
-  public CHandle<IBaseEntity> StartEntity { get; }
+  public ref CHandle<CBaseEntity> StartEntity { get; }
   
-  public CHandle<IBaseEntity> EndEntity { get; }
+  public ref CHandle<CBaseEntity> EndEntity { get; }
   
 }

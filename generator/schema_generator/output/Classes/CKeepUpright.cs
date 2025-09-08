@@ -18,8 +18,8 @@ internal partial class CKeepUpright : CPointEntity, IKeepUpright {
   public ref CUtlSymbolLarge NameAttach {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB65A0D30BECAEF3F));
   }
-  public CHandle<IBaseEntity> AttachedObject {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xB65A0D301AE8F30A));
+  public ref CHandle<CBaseEntity> AttachedObject {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xB65A0D301AE8F30A));
   }
   public ref float AngularLimit {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB65A0D30497B8D18));

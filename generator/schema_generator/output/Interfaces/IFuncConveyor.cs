@@ -20,6 +20,6 @@ public partial interface IFuncConveyor : IBaseModelEntity {
   
   public ref float TransitionStartSpeed { get; }
   
-  public ref CUtlVector ConveyorModels { get; }
+  public ref CUtlVector<CHandle<CBaseEntity>> ConveyorModels { get; }
   
 }

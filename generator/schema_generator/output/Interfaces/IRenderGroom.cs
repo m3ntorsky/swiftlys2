@@ -8,7 +8,7 @@ public partial interface IRenderGroom : ISchemaClass {
   
   public ref CUtlVector<uint> HairPositionOffsets { get; }
   
-  public CStrongHandle<Iopyable<InfoForResourceTypeIMaterial2> SimParamsMat { get; }
+  public ref CStrongHandle<opyable<InfoForResourceTypeIMaterial2> SimParamsMat { get; }
   
   public ref CUtlVector<int> StrandSegmentCountHist { get; }
   

@@ -4,15 +4,15 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointEntityFinder : IBaseEntity {
 
-  public CHandle<IBaseEntity> Entity { get; }
+  public ref CHandle<CBaseEntity> Entity { get; }
   
   public ref CUtlSymbolLarge FilterName { get; }
   
-  public CHandle<IBaseFilter> Filter { get; }
+  public ref CHandle<CBaseFilter> Filter { get; }
   
   public ref CUtlSymbolLarge RefName { get; }
   
-  public CHandle<IBaseEntity> Reference { get; }
+  public ref CHandle<CBaseEntity> Reference { get; }
   
   public ref EntFinderMethod_t FindMethod { get; }
   

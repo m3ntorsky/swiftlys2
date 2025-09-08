@@ -9,8 +9,8 @@ internal partial class CNmIKRig : SchemaClass, INmIKRig {
   public CNmIKRig(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeCNmSkeleton> Skeleton {
-    get => new CStrongHandle<InfoForResourceTypeCNmSkeleton>(_Handle + Schema.GetOffset(0x9C509BCFE77F030E));
+  public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCNmSkeleton>>(Schema.GetOffset(0x9C509BCFE77F030E));
   }
   public ref CUtlVector Bodies {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x9C509BCF24483A49));

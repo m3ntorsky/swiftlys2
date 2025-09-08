@@ -8,7 +8,7 @@ public partial interface IActiveModelConfig_t : ISchemaClass {
   
   public ref CUtlSymbolLarge Name { get; }
   
-  public ref CUtlVector AssociatedEntities { get; }
+  public ref CUtlVector<CHandle<CBaseModelEntity>> AssociatedEntities { get; }
   
   public ref CUtlVector<CUtlSymbolLarge> AssociatedEntityNames { get; }
   

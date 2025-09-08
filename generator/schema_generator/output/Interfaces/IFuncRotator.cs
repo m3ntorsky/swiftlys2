@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncRotator : IBaseModelEntity {
 
-  public CHandle<IBaseEntity> RotatorTarget { get; }
+  public ref CHandle<CBaseEntity> RotatorTarget { get; }
   
   public ref bool IsRotating { get; }
   

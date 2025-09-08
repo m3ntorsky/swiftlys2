@@ -9,8 +9,8 @@ internal partial class CPointGiveAmmo : CPointEntity, IPointGiveAmmo {
   public CPointGiveAmmo(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> Activator {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x2A4FB25F9C480B5A));
+  public ref CHandle<CBaseEntity> Activator {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x2A4FB25F9C480B5A));
   }
 
 

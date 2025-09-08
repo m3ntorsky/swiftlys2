@@ -4,9 +4,9 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IGameChoreoServices : IIChoreoServices {
 
-  public CHandle<IBaseAnimGraph> Owner { get; }
+  public ref CHandle<CBaseAnimGraph> Owner { get; }
   
-  public CHandle<IScriptedSequence> ScriptedSequence { get; }
+  public ref CHandle<CScriptedSequence> ScriptedSequence { get; }
   
   public ref IChoreoServices::ScriptState_t ScriptState { get; }
   

@@ -21,8 +21,8 @@ internal partial class CInfoDynamicShadowHint : CPointEntity, IInfoDynamicShadow
   public ref int LightChoice {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x46DDE8EED82DFBD8));
   }
-  public CHandle<IBaseEntity> Light {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x46DDE8EEF68359B1));
+  public ref CHandle<CBaseEntity> Light {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x46DDE8EEF68359B1));
   }
 
 

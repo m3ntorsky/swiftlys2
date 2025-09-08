@@ -6,6 +6,6 @@ public partial interface ICSPlayer_PingServices : IPlayerPawnComponent {
 
   public IGameTime_t PlayerPingTokens { get; }
   
-  public CHandle<IBaseEntity> PlayerPing { get; }
+  public ref CHandle<CBaseEntity> PlayerPing { get; }
   
 }

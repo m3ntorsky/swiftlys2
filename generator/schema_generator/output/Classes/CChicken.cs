@@ -39,8 +39,8 @@ internal partial class CChicken : CDynamicProp, IChicken {
   public ref float TurnRate {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x66D7920D76FF88A8));
   }
-  public CHandle<IBaseEntity> FleeFrom {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x66D7920D24941539));
+  public ref CHandle<CBaseEntity> FleeFrom {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x66D7920D24941539));
   }
   public ICountdownTimer MoveRateThrottleTimer {
     get => new CountdownTimer(_Handle + Schema.GetOffset(0x66D7920D7F3A963B));

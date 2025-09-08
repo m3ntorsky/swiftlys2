@@ -15,8 +15,8 @@ internal partial class TextureGroup_t : SchemaClass, ITextureGroup_t {
   public ref bool ReplaceTextureWithGradient {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3186D8344E3CBC5A));
   }
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> Texture {
-    get => new CStrongHandle<InfoForResourceTypeCTextureBase>(_Handle + Schema.GetOffset(0x3186D8348C0A2FB6));
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Texture {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(Schema.GetOffset(0x3186D8348C0A2FB6));
   }
   public ISchemaUntypedField Gradient {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x3186D83405C95F25));

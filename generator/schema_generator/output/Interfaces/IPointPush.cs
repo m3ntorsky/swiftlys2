@@ -16,6 +16,6 @@ public partial interface IPointPush : IPointEntity {
   
   public ref CUtlSymbolLarge FilterName { get; }
   
-  public CHandle<IBaseFilter> Filter { get; }
+  public ref CHandle<CBaseFilter> Filter { get; }
   
 }

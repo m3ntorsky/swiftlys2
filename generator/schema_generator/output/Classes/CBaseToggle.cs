@@ -42,8 +42,8 @@ internal partial class CBaseToggle : CBaseModelEntity, IBaseToggle {
   public ref float Height {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC466ACE3EADD7FB0));
   }
-  public CHandle<IBaseEntity> Activator {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xC466ACE3AB093BB2));
+  public ref CHandle<CBaseEntity> Activator {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xC466ACE3AB093BB2));
   }
   public ref Vector FinalDest {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC466ACE35F250E93));

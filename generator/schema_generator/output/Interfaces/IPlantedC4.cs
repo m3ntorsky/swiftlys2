@@ -42,7 +42,7 @@ public partial interface IPlantedC4 : IBaseAnimGraph {
   
   public ref bool BombDefused { get; }
   
-  public CHandle<ICSPlayerPawn> BombDefuser { get; }
+  public ref CHandle<CCSPlayerPawn> BombDefuser { get; }
   
   public ref int ProgressBarTime { get; }
   

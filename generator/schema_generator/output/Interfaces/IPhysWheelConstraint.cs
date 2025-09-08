@@ -26,6 +26,6 @@ public partial interface IPhysWheelConstraint : IPhysConstraint {
   
   public ref float SpinAxisFriction { get; }
   
-  public CHandle<IBaseEntity> SteeringMimicsEntity { get; }
+  public ref CHandle<CBaseEntity> SteeringMimicsEntity { get; }
   
 }

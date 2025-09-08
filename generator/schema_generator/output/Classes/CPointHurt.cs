@@ -24,8 +24,8 @@ internal partial class CPointHurt : CPointEntity, IPointHurt {
   public ref CUtlSymbolLarge StrTarget {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x4FEAE15B8F64879));
   }
-  public CHandle<IBaseEntity> Activator {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x4FEAE159C480B5A));
+  public ref CHandle<CBaseEntity> Activator {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x4FEAE159C480B5A));
   }
 
 

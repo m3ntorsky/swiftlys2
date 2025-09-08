@@ -15,8 +15,8 @@ internal partial class C_INIT_RandomModelSequence : CParticleFunctionInitializer
   public ISchemaFixedString SequenceName {
     get => new SchemaFixedString(_Handle, 0x2F450DC3A270F66B, 256, 1, 1);
   }
-  public CStrongHandle<IInfoForResourceTypeCModel> Model {
-    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0x2F450DC3E100C814));
+  public ref CStrongHandle<InfoForResourceTypeCModel> Model {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0x2F450DC3E100C814));
   }
 
 

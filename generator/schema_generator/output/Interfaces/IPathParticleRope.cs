@@ -22,7 +22,7 @@ public partial interface IPathParticleRope : IBaseEntity {
   
   public ref int EffectState { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> EffectIndex { get; }
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> EffectIndex { get; }
   
   public ref CUtlVector<Vector> PathNodes_Position { get; }
   

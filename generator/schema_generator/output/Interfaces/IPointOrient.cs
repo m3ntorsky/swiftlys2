@@ -6,7 +6,7 @@ public partial interface IPointOrient : IBaseEntity {
 
   public ref CUtlSymbolLarge SpawnTargetName { get; }
   
-  public CHandle<IBaseEntity> Target { get; }
+  public ref CHandle<CBaseEntity> Target { get; }
   
   public ref bool Active { get; }
   

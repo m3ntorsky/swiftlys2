@@ -6,7 +6,7 @@ public partial interface ITriggerLerpObject : IBaseTrigger {
 
   public ref CUtlSymbolLarge LerpTarget { get; }
   
-  public CHandle<IBaseEntity> LerpTarget { get; }
+  public ref CHandle<CBaseEntity> LerpTarget { get; }
   
   public ref CUtlSymbolLarge LerpTargetAttachment { get; }
   
@@ -26,7 +26,7 @@ public partial interface ITriggerLerpObject : IBaseTrigger {
   
   public ref bool AttachTouchingObject { get; }
   
-  public CHandle<IBaseEntity> EntityToWaitForDisconnect { get; }
+  public ref CHandle<CBaseEntity> EntityToWaitForDisconnect { get; }
   
   public IEntityIOOutput OnLerpStarted { get; }
   

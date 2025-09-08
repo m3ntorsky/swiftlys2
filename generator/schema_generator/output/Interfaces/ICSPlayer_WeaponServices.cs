@@ -10,7 +10,7 @@ public partial interface ICSPlayer_WeaponServices : IPlayer_WeaponServices {
   
   public ref bool IsHoldingLookAtWeapon { get; }
   
-  public CHandle<IBasePlayerWeapon> SavedWeapon { get; }
+  public ref CHandle<CBasePlayerWeapon> SavedWeapon { get; }
   
   public ref int TimeToMelee { get; }
   

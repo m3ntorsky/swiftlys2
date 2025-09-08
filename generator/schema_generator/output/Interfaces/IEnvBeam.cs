@@ -6,7 +6,7 @@ public partial interface IEnvBeam : IBeam {
 
   public ref int Active { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> SpriteTexture { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> SpriteTexture { get; }
   
   public ref CUtlSymbolLarge StartEntity { get; }
   
@@ -36,7 +36,7 @@ public partial interface IEnvBeam : IBeam {
   
   public ref CUtlSymbolLarge FilterName { get; }
   
-  public CHandle<IBaseEntity> Filter { get; }
+  public ref CHandle<CBaseEntity> Filter { get; }
   
   public ref CUtlSymbolLarge Decal { get; }
   

@@ -14,7 +14,7 @@ public partial interface IEnvExplosion : IModelPointEntity {
   
   public ref float DamageForce { get; }
   
-  public CHandle<IBaseEntity> Inflictor { get; }
+  public ref CHandle<CBaseEntity> Inflictor { get; }
   
   public ref DamageTypes_t CustomDamageType { get; }
   
@@ -32,6 +32,6 @@ public partial interface IEnvExplosion : IModelPointEntity {
   
   public ref CUtlSymbolLarge EntityIgnoreName { get; }
   
-  public CHandle<IBaseEntity> EntityIgnore { get; }
+  public ref CHandle<CBaseEntity> EntityIgnore { get; }
   
 }

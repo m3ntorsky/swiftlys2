@@ -21,8 +21,8 @@ internal partial class CMorphSetData : SchemaClass, IMorphSetData {
   public ref CUtlVector MorphDatas {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xE777C2D4C1280FA2));
   }
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureAtlas {
-    get => new CStrongHandle<InfoForResourceTypeCTextureBase>(_Handle + Schema.GetOffset(0xE777C2D4B63CAC4D));
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureAtlas {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(Schema.GetOffset(0xE777C2D4B63CAC4D));
   }
   public ref CUtlVector FlexDesc {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xE777C2D4D73F3393));

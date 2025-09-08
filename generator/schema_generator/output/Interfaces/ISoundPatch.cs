@@ -14,7 +14,7 @@ public partial interface ISoundPatch : ISchemaClass {
   
   public ref CUtlSymbolLarge SoundScriptName { get; }
   
-  public CHandle<IBaseEntity> Ent { get; }
+  public ref CHandle<CBaseEntity> Ent { get; }
   
   public ref CEntityIndex SoundEntityIndex { get; }
   

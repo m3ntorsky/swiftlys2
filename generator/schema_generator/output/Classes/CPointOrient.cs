@@ -12,8 +12,8 @@ internal partial class CPointOrient : CBaseEntity, IPointOrient {
   public ref CUtlSymbolLarge SpawnTargetName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x31E4EBC561780472));
   }
-  public CHandle<IBaseEntity> Target {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x31E4EBC5CE35901A));
+  public ref CHandle<CBaseEntity> Target {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x31E4EBC5CE35901A));
   }
   public ref bool Active {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x31E4EBC58334208F));

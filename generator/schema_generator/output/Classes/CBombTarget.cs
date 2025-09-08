@@ -27,8 +27,8 @@ internal partial class CBombTarget : CBaseTrigger, IBombTarget {
   public ref CUtlSymbolLarge MountTarget {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1FEE3C375F784258));
   }
-  public CHandle<IBaseEntity> InstructorHint {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1FEE3C37D6C2F245));
+  public ref CHandle<CBaseEntity> InstructorHint {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1FEE3C37D6C2F245));
   }
   public ref int BombSiteDesignation {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1FEE3C376B71EF25));

@@ -18,17 +18,17 @@ internal partial class CPointCommentaryNode : CBaseAnimGraph, IPointCommentaryNo
   public ref CUtlSymbolLarge ViewTarget {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1EE820D57F25C3A9));
   }
-  public CHandle<IBaseEntity> ViewTarget {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1EE820D5367DC4F3));
+  public ref CHandle<CBaseEntity> ViewTarget {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1EE820D5367DC4F3));
   }
-  public CHandle<IBaseEntity> ViewTargetAngles {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1EE820D57036CBB3));
+  public ref CHandle<CBaseEntity> ViewTargetAngles {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1EE820D57036CBB3));
   }
   public ref CUtlSymbolLarge ViewPosition {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1EE820D5F077F9E3));
   }
-  public CHandle<IBaseEntity> ViewPositionMover {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1EE820D596E47DAA));
+  public ref CHandle<CBaseEntity> ViewPositionMover {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1EE820D596E47DAA));
   }
   public ref bool PreventMovement {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1EE820D50513BCD8));

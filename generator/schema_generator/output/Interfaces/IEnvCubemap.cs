@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvCubemap : IBaseEntity {
 
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> Entity_hCubemapTexture { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hCubemapTexture { get; }
   
   public ref bool Entity_bCustomCubemapTexture { get; }
   

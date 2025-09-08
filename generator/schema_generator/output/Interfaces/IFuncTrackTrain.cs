@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncTrackTrain : IBaseModelEntity {
 
-  public CHandle<IPathTrack> Ppath { get; }
+  public ref CHandle<CPathTrack> Ppath { get; }
   
   public ref float Length { get; }
   

@@ -8,9 +8,9 @@ public partial interface IPointAngleSensor : IPointEntity {
   
   public ref CUtlSymbolLarge LookAtName { get; }
   
-  public CHandle<IBaseEntity> TargetEntity { get; }
+  public ref CHandle<CBaseEntity> TargetEntity { get; }
   
-  public CHandle<IBaseEntity> LookAtEntity { get; }
+  public ref CHandle<CBaseEntity> LookAtEntity { get; }
   
   public ref float Duration { get; }
   

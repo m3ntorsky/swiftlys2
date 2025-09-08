@@ -12,15 +12,15 @@ public partial interface IPointCommentaryNode : IBaseAnimGraph {
   
   public ref CUtlSymbolLarge ViewTarget { get; }
   
-  public CHandle<IBaseEntity> ViewTarget { get; }
+  public ref CHandle<CBaseEntity> ViewTarget { get; }
   
-  public CHandle<IBaseEntity> ViewTargetAngles { get; }
+  public ref CHandle<CBaseEntity> ViewTargetAngles { get; }
   
   public ref CUtlSymbolLarge ViewPosition { get; }
   
-  public CHandle<IBaseEntity> ViewPosition { get; }
+  public ref CHandle<CBaseEntity> ViewPosition { get; }
   
-  public CHandle<IBaseEntity> ViewPositionMover { get; }
+  public ref CHandle<CBaseEntity> ViewPositionMover { get; }
   
   public ref bool PreventMovement { get; }
   

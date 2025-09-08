@@ -18,6 +18,6 @@ public partial interface IC_OP_RenderBlobs : IParticleFunctionRenderer {
   
   public ref CUtlVector MaterialVars { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
   
 }

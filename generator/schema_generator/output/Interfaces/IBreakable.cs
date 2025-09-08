@@ -8,7 +8,7 @@ public partial interface IBreakable : IBaseModelEntity {
   
   public ref Materials Material { get; }
   
-  public CHandle<IBaseEntity> Breaker { get; }
+  public ref CHandle<CBaseEntity> Breaker { get; }
   
   public ref Explosions Explosion { get; }
   
@@ -30,7 +30,7 @@ public partial interface IBreakable : IBaseModelEntity {
   
   public ref PerformanceMode_t PerformanceMode { get; }
   
-  public CHandle<IBasePlayerPawn> PhysicsAttacker { get; }
+  public ref CHandle<CBasePlayerPawn> PhysicsAttacker { get; }
   
   public IGameTime_t LastPhysicsInfluenceTime { get; }
   

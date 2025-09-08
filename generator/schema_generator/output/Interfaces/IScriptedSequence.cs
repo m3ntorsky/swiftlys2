@@ -110,9 +110,9 @@ public partial interface IScriptedSequence : IBaseEntity {
   
   public ref bool PositionRelativeToOtherEntity { get; }
   
-  public CHandle<IBaseEntity> TargetEnt { get; }
+  public ref CHandle<CBaseEntity> TargetEnt { get; }
   
-  public CHandle<IScriptedSequence> NextCine { get; }
+  public ref CHandle<CScriptedSequence> NextCine { get; }
   
   public ref bool Thinking { get; }
   
@@ -122,7 +122,7 @@ public partial interface IScriptedSequence : IBaseEntity {
   
   public ref bool AllowCustomInterruptConditions { get; }
   
-  public CHandle<IBaseAnimGraph> ForcedTarget { get; }
+  public ref CHandle<CBaseAnimGraph> ForcedTarget { get; }
   
   public ref bool DontCancelOtherSequences { get; }
   
@@ -152,7 +152,7 @@ public partial interface IScriptedSequence : IBaseEntity {
   
   public ref CTransform MatOtherToMain { get; }
   
-  public CHandle<IBaseEntity> InteractionMainEntity { get; }
+  public ref CHandle<CBaseEntity> InteractionMainEntity { get; }
   
   public ref int PlayerDeathBehavior { get; }
   

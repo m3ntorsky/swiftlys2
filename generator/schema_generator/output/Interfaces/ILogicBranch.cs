@@ -6,7 +6,7 @@ public partial interface ILogicBranch : ILogicalEntity {
 
   public ref bool InValue { get; }
   
-  public ref CUtlVector Listeners { get; }
+  public ref CUtlVector<CHandle<CBaseEntity>> Listeners { get; }
   
   public IEntityIOOutput OnTrue { get; }
   

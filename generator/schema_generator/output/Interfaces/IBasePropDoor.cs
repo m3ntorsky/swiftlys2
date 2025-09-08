@@ -6,7 +6,7 @@ public partial interface IBasePropDoor : IDynamicProp {
 
   public ref float AutoReturnDelay { get; }
   
-  public ref CUtlVector DoorList { get; }
+  public ref CUtlVector<CHandle<CBasePropDoor>> DoorList { get; }
   
   public ref int HardwareType { get; }
   
@@ -22,7 +22,7 @@ public partial interface IBasePropDoor : IDynamicProp {
   
   public ref QAngle ClosedAngles { get; }
   
-  public CHandle<IBaseEntity> Blocker { get; }
+  public ref CHandle<CBaseEntity> Blocker { get; }
   
   public ref bool FirstBlocked { get; }
   
@@ -32,7 +32,7 @@ public partial interface IBasePropDoor : IDynamicProp {
   
   public ref Vector LatchWorldPosition { get; }
   
-  public CHandle<IBaseEntity> Activator { get; }
+  public ref CHandle<CBaseEntity> Activator { get; }
   
   public ref CUtlSymbolLarge SoundMoving { get; }
   
@@ -58,7 +58,7 @@ public partial interface IBasePropDoor : IDynamicProp {
   
   public ref CUtlSymbolLarge SlaveName { get; }
   
-  public CHandle<IBasePropDoor> Master { get; }
+  public ref CHandle<CBasePropDoor> Master { get; }
   
   public IEntityIOOutput OnBlockedClosing { get; }
   

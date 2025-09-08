@@ -57,8 +57,8 @@ internal partial class CPropDoorRotating : CBasePropDoor, IPropDoorRotating {
   public ref bool AjarDoorShouldntAlwaysOpen {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x289EB6138B1717E1));
   }
-  public CHandle<IEntityBlocker> EntityBlocker {
-    get => new CHandle<CEntityBlocker>(_Handle + Schema.GetOffset(0x289EB6139318939A));
+  public ref CHandle<CEntityBlocker> EntityBlocker {
+    get => ref _Handle.AsRef<CHandle<CEntityBlocker>>(Schema.GetOffset(0x289EB6139318939A));
   }
 
 

@@ -18,6 +18,6 @@ public partial interface IMultiLightProxy : ILogicalEntity {
   
   public ref float CurrentBrightnessMultiplier { get; }
   
-  public ref CUtlVector Lights { get; }
+  public ref CUtlVector<CHandle<CLightEntity>> Lights { get; }
   
 }

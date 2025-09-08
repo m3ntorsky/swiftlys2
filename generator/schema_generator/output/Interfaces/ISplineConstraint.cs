@@ -6,7 +6,7 @@ public partial interface ISplineConstraint : IPhysConstraint {
 
   public ref Vector AnchorOffsetRestore { get; }
   
-  public CHandle<IBaseEntity> SplineEntity { get; }
+  public ref CHandle<CBaseEntity> SplineEntity { get; }
   
   public ref bool EnableLateralConstraint { get; }
   

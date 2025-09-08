@@ -24,7 +24,7 @@ public partial interface IEffectData : ISchemaClass {
   
   public ref CUtlStringToken SurfaceProp { get; }
   
-  public CWeakHandle<IInfoForResourceTypeIParticleSystemDefinition> EffectIndex { get; }
+  public ref CWeakHandle<InfoForResourceTypeIParticleSystemDefinition> EffectIndex { get; }
   
   public ref uint DamageType { get; }
   

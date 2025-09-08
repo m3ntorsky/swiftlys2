@@ -84,7 +84,7 @@ public partial interface IBaseModelEntity : IBaseEntity {
   
   public ref DecalMode_t RequiredDecalMode { get; }
   
-  public ref CUtlVector ConfigEntitiesToPropagateMaterialDecalsTo { get; }
+  public ref CUtlVector<CHandle<CBaseModelEntity>> ConfigEntitiesToPropagateMaterialDecalsTo { get; }
   
   public INetworkViewOffsetVector ViewOffset { get; }
   

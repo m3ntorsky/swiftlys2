@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointClientUIDialog : IBaseClientUIEntity {
 
-  public CHandle<IBaseEntity> Activator { get; }
+  public ref CHandle<CBaseEntity> Activator { get; }
   
   public ref bool StartEnabled { get; }
   

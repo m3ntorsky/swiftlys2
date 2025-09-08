@@ -16,7 +16,7 @@ public partial interface IParticleSystem : IBaseModelEntity {
   
   public ref bool AnimateDuringGameplayPause { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> EffectIndex { get; }
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> EffectIndex { get; }
   
   public IGameTime_t StartTime { get; }
   
@@ -26,7 +26,7 @@ public partial interface IParticleSystem : IBaseModelEntity {
   
   public ISchemaFixedArray<byte> ServerControlPointAssignments { get; }
   
-  public CHandle<IBaseEntity> ControlPointEnts { get; }
+  public ref CHandle<CBaseEntity> ControlPointEnts { get; }
   
   public ref bool NoSave { get; }
   

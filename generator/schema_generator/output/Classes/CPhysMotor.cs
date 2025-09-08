@@ -15,11 +15,11 @@ internal partial class CPhysMotor : CLogicalEntity, IPhysMotor {
   public ref CUtlSymbolLarge NameAnchor {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x88C095BFAD43DD27));
   }
-  public CHandle<IBaseEntity> AttachedObject {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x88C095BF5B0EDB58));
+  public ref CHandle<CBaseEntity> AttachedObject {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x88C095BF5B0EDB58));
   }
-  public CHandle<IBaseEntity> AnchorObject {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x88C095BFDE8F702D));
+  public ref CHandle<CBaseEntity> AnchorObject {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x88C095BFDE8F702D));
   }
   public ref float SpinUp {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x88C095BFB2CBE21C));

@@ -30,8 +30,8 @@ internal partial class CMultiLightProxy : CLogicalEntity, IMultiLightProxy {
   public ref float CurrentBrightnessMultiplier {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF2B647B3C03C5EEC));
   }
-  public ref CUtlVector Lights {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xF2B647B3A5ECA534));
+  public ref CUtlVector<CHandle<CLightEntity>> Lights {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CLightEntity>>>(Schema.GetOffset(0xF2B647B3A5ECA534));
   }
 
 

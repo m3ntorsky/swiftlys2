@@ -36,6 +36,6 @@ public partial interface IMaterialDrawDescriptor : ISchemaClass {
   
   public IRenderBufferBinding MeshletPackedIVB { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
   
 }

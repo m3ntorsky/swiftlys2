@@ -24,21 +24,21 @@ public partial interface ISceneEntity : IPointEntity {
   
   public ref CUtlSymbolLarge Target8 { get; }
   
-  public CHandle<IBaseEntity> Target1 { get; }
+  public ref CHandle<CBaseEntity> Target1 { get; }
   
-  public CHandle<IBaseEntity> Target2 { get; }
+  public ref CHandle<CBaseEntity> Target2 { get; }
   
-  public CHandle<IBaseEntity> Target3 { get; }
+  public ref CHandle<CBaseEntity> Target3 { get; }
   
-  public CHandle<IBaseEntity> Target4 { get; }
+  public ref CHandle<CBaseEntity> Target4 { get; }
   
-  public CHandle<IBaseEntity> Target5 { get; }
+  public ref CHandle<CBaseEntity> Target5 { get; }
   
-  public CHandle<IBaseEntity> Target6 { get; }
+  public ref CHandle<CBaseEntity> Target6 { get; }
   
-  public CHandle<IBaseEntity> Target7 { get; }
+  public ref CHandle<CBaseEntity> Target7 { get; }
   
-  public CHandle<IBaseEntity> Target8 { get; }
+  public ref CHandle<CBaseEntity> Target8 { get; }
   
   public ref CUtlSymbolLarge TargetAttachment { get; }
   
@@ -70,7 +70,7 @@ public partial interface ISceneEntity : IPointEntity {
   
   public ref int SpeechPriority { get; }
   
-  public CHandle<IBaseEntity> WaitingForThisResumeScene { get; }
+  public ref CHandle<CBaseEntity> WaitingForThisResumeScene { get; }
   
   public ref bool WaitingForResumeScene { get; }
   
@@ -88,9 +88,9 @@ public partial interface ISceneEntity : IPointEntity {
   
   public ref bool SceneFinished { get; }
   
-  public ref CUtlVector ActorList { get; }
+  public ref CUtlVector<CHandle<CBaseFlex>> ActorList { get; }
   
-  public ref CUtlVector RemoveActorList { get; }
+  public ref CUtlVector<CHandle<CBaseEntity>> RemoveActorList { get; }
   
   public ref int SceneFlushCounter { get; }
   
@@ -108,7 +108,7 @@ public partial interface ISceneEntity : IPointEntity {
   
   public IEntityIOOutput OnTrigger { get; }
   
-  public CHandle<ISceneEntity> InterruptScene { get; }
+  public ref CHandle<CSceneEntity> InterruptScene { get; }
   
   public ref int InterruptCount { get; }
   
@@ -122,17 +122,17 @@ public partial interface ISceneEntity : IPointEntity {
   
   public ref bool Restoring { get; }
   
-  public ref CUtlVector NotifySceneCompletion { get; }
+  public ref CUtlVector<CHandle<CSceneEntity>> NotifySceneCompletion { get; }
   
-  public ref CUtlVector ListManagers { get; }
+  public ref CUtlVector<CHandle<CSceneListManager>> ListManagers { get; }
   
   public ref CUtlSymbolLarge SoundName { get; }
   
   public ref CUtlSymbolLarge SequenceName { get; }
   
-  public CHandle<IBaseFlex> Actor { get; }
+  public ref CHandle<CBaseFlex> Actor { get; }
   
-  public CHandle<IBaseEntity> Activator { get; }
+  public ref CHandle<CBaseEntity> Activator { get; }
   
   public ref int BusyActor { get; }
   

@@ -9,11 +9,11 @@ internal partial class CTestBlendContainer : CVoiceContainerBase, ITestBlendCont
   public CTestBlendContainer(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeCVoiceContainerBase> FirstSound {
-    get => new CStrongHandle<InfoForResourceTypeCVoiceContainerBase>(_Handle + Schema.GetOffset(0x3E7BF53C666B0138));
+  public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> FirstSound {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>>(Schema.GetOffset(0x3E7BF53C666B0138));
   }
-  public CStrongHandle<IInfoForResourceTypeCVoiceContainerBase> SecondSound {
-    get => new CStrongHandle<InfoForResourceTypeCVoiceContainerBase>(_Handle + Schema.GetOffset(0x3E7BF53CA2BC3E5C));
+  public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> SecondSound {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>>(Schema.GetOffset(0x3E7BF53CA2BC3E5C));
   }
 
 

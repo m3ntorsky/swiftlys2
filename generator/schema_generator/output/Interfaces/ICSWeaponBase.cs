@@ -84,7 +84,7 @@ public partial interface ICSWeaponBase : IBasePlayerWeapon {
   
   public IGameTime_t NextPrevOwnerUseTime { get; }
   
-  public CHandle<ICSPlayerPawn> PrevOwner { get; }
+  public ref CHandle<CCSPlayerPawn> PrevOwner { get; }
   
   public IGameTick_t DropTick { get; }
   

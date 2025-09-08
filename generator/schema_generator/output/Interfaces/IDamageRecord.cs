@@ -4,13 +4,13 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDamageRecord : ISchemaClass {
 
-  public CHandle<ICSPlayerPawn> PlayerDamager { get; }
+  public ref CHandle<CCSPlayerPawn> PlayerDamager { get; }
   
-  public CHandle<ICSPlayerPawn> PlayerRecipient { get; }
+  public ref CHandle<CCSPlayerPawn> PlayerRecipient { get; }
   
-  public CHandle<ICSPlayerController> PlayerControllerDamager { get; }
+  public ref CHandle<CCSPlayerController> PlayerControllerDamager { get; }
   
-  public CHandle<ICSPlayerController> PlayerControllerRecipient { get; }
+  public ref CHandle<CCSPlayerController> PlayerControllerRecipient { get; }
   
   public ref CUtlString PlayerDamagerName { get; }
   

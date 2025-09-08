@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPlatTrigger : IBaseModelEntity {
 
-  public CHandle<IFuncPlat> Platform { get; }
+  public ref CHandle<CFuncPlat> Platform { get; }
   
 }

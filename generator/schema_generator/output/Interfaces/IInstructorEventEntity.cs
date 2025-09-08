@@ -8,6 +8,6 @@ public partial interface IInstructorEventEntity : IPointEntity {
   
   public ref CUtlSymbolLarge HintTargetEntity { get; }
   
-  public CHandle<IBasePlayerPawn> TargetPlayer { get; }
+  public ref CHandle<CBasePlayerPawn> TargetPlayer { get; }
   
 }

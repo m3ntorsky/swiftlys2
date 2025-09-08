@@ -9,7 +9,7 @@ internal partial class CMultiSource : CLogicalEntity, IMultiSource {
   public CMultiSource(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> RgEntities {
+  public CHandle<CBaseEntity> RgEntities {
     get => new CHandle<CBaseEntity>(_Handle, 0x87DC5C660CB2E479, 32, 4, 4);
   }
   public ISchemaFixedArray<int> RgTriggered {

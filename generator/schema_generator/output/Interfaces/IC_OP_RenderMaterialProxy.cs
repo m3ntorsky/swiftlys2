@@ -10,7 +10,7 @@ public partial interface IC_OP_RenderMaterialProxy : IParticleFunctionRenderer {
   
   public ref CUtlVector MaterialVars { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> OverrideMaterial { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> OverrideMaterial { get; }
   
   public IParticleCollectionFloatInput MaterialOverrideEnabled { get; }
   

@@ -12,11 +12,11 @@ public partial interface ITakeDamageInfo : ISchemaClass {
   
   public ref Vector DamageDirection { get; }
   
-  public CHandle<IBaseEntity> Inflictor { get; }
+  public ref CHandle<CBaseEntity> Inflictor { get; }
   
-  public CHandle<IBaseEntity> Attacker { get; }
+  public ref CHandle<CBaseEntity> Attacker { get; }
   
-  public CHandle<IBaseEntity> Ability { get; }
+  public ref CHandle<CBaseEntity> Ability { get; }
   
   public ref float Damage { get; }
   

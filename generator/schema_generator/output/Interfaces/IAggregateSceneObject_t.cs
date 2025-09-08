@@ -22,6 +22,6 @@ public partial interface IAggregateSceneObject_t : ISchemaClass {
   
   public ref CUtlVector<matrix3x4_t> FragmentTransforms { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCModel> RenderableModel { get; }
+  public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel { get; }
   
 }

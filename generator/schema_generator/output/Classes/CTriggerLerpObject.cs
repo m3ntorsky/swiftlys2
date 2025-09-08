@@ -12,8 +12,8 @@ internal partial class CTriggerLerpObject : CBaseTrigger, ITriggerLerpObject {
   public ref CUtlSymbolLarge LerpTarget {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x42FE8EA4853F2479));
   }
-  public CHandle<IBaseEntity> LerpTarget {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x42FE8EA4BAB18AEF));
+  public ref CHandle<CBaseEntity> LerpTarget {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x42FE8EA4BAB18AEF));
   }
   public ref CUtlSymbolLarge LerpTargetAttachment {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x42FE8EA4C1E312BC));
@@ -42,8 +42,8 @@ internal partial class CTriggerLerpObject : CBaseTrigger, ITriggerLerpObject {
   public ref bool AttachTouchingObject {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x42FE8EA4569C11D2));
   }
-  public CHandle<IBaseEntity> EntityToWaitForDisconnect {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x42FE8EA4E8928591));
+  public ref CHandle<CBaseEntity> EntityToWaitForDisconnect {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x42FE8EA4E8928591));
   }
   public IEntityIOOutput OnLerpStarted {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x42FE8EA4AE5EB5AA));

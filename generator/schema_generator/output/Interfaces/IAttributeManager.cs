@@ -4,11 +4,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAttributeManager : ISchemaClass {
 
-  public ref CUtlVector Providers { get; }
+  public ref CUtlVector<CHandle<CBaseEntity>> Providers { get; }
   
   public ref int ReapplyProvisionParity { get; }
   
-  public CHandle<IBaseEntity> Outer { get; }
+  public ref CHandle<CBaseEntity> Outer { get; }
   
   public ref bool PreventLoopback { get; }
   

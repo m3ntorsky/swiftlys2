@@ -18,7 +18,7 @@ public partial interface IEconEntity : IBaseFlex {
   
   public ref int FallbackStatTrak { get; }
   
-  public CHandle<IBaseEntity> OldProvidee { get; }
+  public ref CHandle<CBaseEntity> OldProvidee { get; }
   
   public ref int OldOwnerClass { get; }
   

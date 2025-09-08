@@ -30,7 +30,7 @@ public partial interface ILightComponent : IEntityComponent {
   
   public ref float Phi { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> LightCookie { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> LightCookie { get; }
   
   public ref int Cascades { get; }
   

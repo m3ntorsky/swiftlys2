@@ -36,8 +36,8 @@ internal partial class CSceneEventInfo : SchemaClass, ISceneEventInfo {
   public ref bool ShouldRemove {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x38A9D25E3CD02C8E));
   }
-  public CHandle<IBaseEntity> Target {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x38A9D25ECE35901A));
+  public ref CHandle<CBaseEntity> Target {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x38A9D25ECE35901A));
   }
   public ISceneEventId_t SceneEventId {
     get => new SceneEventId_t(_Handle + Schema.GetOffset(0x38A9D25EE76A0188));

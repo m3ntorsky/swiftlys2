@@ -54,8 +54,8 @@ internal partial class CBaseEntity : CEntityInstance, IBaseEntity {
   public ref CUtlSymbolLarge Target {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9DC483B8FA08A9E8));
   }
-  public CHandle<IBaseFilter> DamageFilter {
-    get => new CHandle<CBaseFilter>(_Handle + Schema.GetOffset(0x9DC483B831E01230));
+  public ref CHandle<CBaseFilter> DamageFilter {
+    get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0x9DC483B831E01230));
   }
   public ref CUtlSymbolLarge DamageFilterName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9DC483B8F58A21C1));
@@ -129,8 +129,8 @@ internal partial class CBaseEntity : CEntityInstance, IBaseEntity {
   public ref bool LagCompensate {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9DC483B835099A18));
   }
-  public CHandle<IBaseEntity> Blocker {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x9DC483B840B754B7));
+  public ref CHandle<CBaseEntity> Blocker {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x9DC483B840B754B7));
   }
   public ref float LocalTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9DC483B8E23DEFC7));

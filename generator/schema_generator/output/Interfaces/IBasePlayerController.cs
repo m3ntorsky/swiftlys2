@@ -8,15 +8,15 @@ public partial interface IBasePlayerController : IBaseEntity {
   
   public ref uint TickBase { get; }
   
-  public CHandle<IBasePlayerPawn> Pawn { get; }
+  public ref CHandle<CBasePlayerPawn> Pawn { get; }
   
   public ref bool KnownTeamMismatch { get; }
   
   public ref CSplitScreenSlot SplitScreenSlot { get; }
   
-  public CHandle<IBasePlayerController> SplitOwner { get; }
+  public ref CHandle<CBasePlayerController> SplitOwner { get; }
   
-  public ref CUtlVector SplitScreenPlayers { get; }
+  public ref CUtlVector<CHandle<CBasePlayerController>> SplitScreenPlayers { get; }
   
   public ref bool IsHLTV { get; }
   

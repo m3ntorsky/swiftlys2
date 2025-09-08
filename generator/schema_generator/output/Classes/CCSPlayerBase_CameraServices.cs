@@ -9,11 +9,11 @@ internal partial class CCSPlayerBase_CameraServices : CPlayer_CameraServices, IC
   public CCSPlayerBase_CameraServices(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector TriggerFogList {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5B25D902AAF6ED5B));
+  public ref CUtlVector<CHandle<CBaseEntity>> TriggerFogList {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(Schema.GetOffset(0x5B25D902AAF6ED5B));
   }
-  public CHandle<IBaseEntity> LastFogTrigger {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x5B25D90218A86E0F));
+  public ref CHandle<CBaseEntity> LastFogTrigger {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x5B25D90218A86E0F));
   }
 
   public void FOVUpdated() {

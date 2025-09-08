@@ -6,7 +6,7 @@ public partial interface IBaseCombatCharacter : IBaseFlex {
 
   public ref bool ForceServerRagdoll { get; }
   
-  public ref CUtlVector MyWearables { get; }
+  public ref CUtlVector<CHandle<CEconWearable>> MyWearables { get; }
   
   public ref float ImpactEnergyScale { get; }
   

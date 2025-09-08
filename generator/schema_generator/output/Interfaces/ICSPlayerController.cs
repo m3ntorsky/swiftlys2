@@ -110,9 +110,9 @@ public partial interface ICSPlayerController : IBasePlayerController {
   
   public ref bool CanControlObservedBot { get; }
   
-  public CHandle<ICSPlayerPawn> PlayerPawn { get; }
+  public ref CHandle<CCSPlayerPawn> PlayerPawn { get; }
   
-  public CHandle<ICSObserverPawn> ObserverPawn { get; }
+  public ref CHandle<CCSObserverPawn> ObserverPawn { get; }
   
   public ref int DesiredObserverMode { get; }
   
@@ -136,7 +136,7 @@ public partial interface ICSPlayerController : IBasePlayerController {
   
   public ref int PawnBotDifficulty { get; }
   
-  public CHandle<ICSPlayerController> OriginalControllerOfCurrentPawn { get; }
+  public ref CHandle<CCSPlayerController> OriginalControllerOfCurrentPawn { get; }
   
   public ref int Score { get; }
   

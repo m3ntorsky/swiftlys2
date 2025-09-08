@@ -38,11 +38,11 @@ public partial interface IBarnLight : IBaseModelEntity {
   
   public ref CUtlVector<CUtlString> LightStyleEvents { get; }
   
-  public ref CUtlVector LightStyleTargets { get; }
+  public ref CUtlVector<CHandle<CBaseModelEntity>> LightStyleTargets { get; }
   
   public IEntityIOOutput StyleEvent { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> LightCookie { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> LightCookie { get; }
   
   public ref float Shape { get; }
   

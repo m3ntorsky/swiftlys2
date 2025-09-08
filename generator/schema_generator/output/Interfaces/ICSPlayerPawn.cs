@@ -28,7 +28,7 @@ public partial interface ICSPlayerPawn : ICSPlayerPawnBase {
   
   public ref bool InBuyZone { get; }
   
-  public ref CUtlVector TouchingBuyZones { get; }
+  public ref CUtlVector<CHandle<CBaseEntity>> TouchingBuyZones { get; }
   
   public ref bool WasInBuyZone { get; }
   

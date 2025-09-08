@@ -28,7 +28,7 @@ public partial interface ICSBot : IBot {
   
   public ref bool IsFollowing { get; }
   
-  public CHandle<ICSPlayerPawn> Leader { get; }
+  public ref CHandle<CCSPlayerPawn> Leader { get; }
   
   public ref float FollowTimestamp { get; }
   
@@ -48,13 +48,13 @@ public partial interface ICSBot : IBot {
   
   public ref bool IsOpeningDoor { get; }
   
-  public CHandle<IBaseEntity> TaskEntity { get; }
+  public ref CHandle<CBaseEntity> TaskEntity { get; }
   
   public ref Vector GoalPosition { get; }
   
-  public CHandle<IBaseEntity> GoalEntity { get; }
+  public ref CHandle<CBaseEntity> GoalEntity { get; }
   
-  public CHandle<IBaseEntity> Avoid { get; }
+  public ref CHandle<CBaseEntity> Avoid { get; }
   
   public ref float AvoidTimestamp { get; }
   
@@ -186,7 +186,7 @@ public partial interface ICSBot : IBot {
   
   public ICountdownTimer IgnoreEnemiesTimer { get; }
   
-  public CHandle<ICSPlayerPawn> Enemy { get; }
+  public ref CHandle<CCSPlayerPawn> Enemy { get; }
   
   public ref bool IsEnemyVisible { get; }
   
@@ -208,17 +208,17 @@ public partial interface ICSBot : IBot {
   
   public ref int NearbyEnemyCount { get; }
   
-  public CHandle<ICSPlayerPawn> Bomber { get; }
+  public ref CHandle<CCSPlayerPawn> Bomber { get; }
   
   public ref int NearbyFriendCount { get; }
   
-  public CHandle<ICSPlayerPawn> ClosestVisibleFriend { get; }
+  public ref CHandle<CCSPlayerPawn> ClosestVisibleFriend { get; }
   
-  public CHandle<ICSPlayerPawn> ClosestVisibleHumanFriend { get; }
+  public ref CHandle<CCSPlayerPawn> ClosestVisibleHumanFriend { get; }
   
   public IIntervalTimer AttentionInterval { get; }
   
-  public CHandle<ICSPlayerPawn> Attacker { get; }
+  public ref CHandle<CCSPlayerPawn> Attacker { get; }
   
   public ref float AttackedTimestamp { get; }
   
@@ -274,7 +274,7 @@ public partial interface ICSBot : IBot {
   
   public ref float LastRadioSentTimestamp { get; }
   
-  public CHandle<ICSPlayerPawn> RadioSubject { get; }
+  public ref CHandle<CCSPlayerPawn> RadioSubject { get; }
   
   public ref Vector RadioPosition { get; }
   

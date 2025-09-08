@@ -48,7 +48,7 @@ public partial interface IBaseButton : IBaseToggle {
   
   public ref CUtlSymbolLarge GlowEntity { get; }
   
-  public CHandle<IBaseModelEntity> GlowEntity { get; }
+  public ref CHandle<CBaseModelEntity> GlowEntity { get; }
   
   public ref bool Usable { get; }
   

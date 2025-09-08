@@ -279,8 +279,8 @@ internal partial class CCSGameRules : CTeamplayRules, ICSGameRules {
   public ISchemaUntypedField BtGlobalBlackboard {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6295CF654E62FE91));
   }
-  public CHandle<IBaseEntity> PlayerResource {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x6295CF6553F9E5AE));
+  public ref CHandle<CBaseEntity> PlayerResource {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x6295CF6553F9E5AE));
   }
   public CUtlVector<int> TeamUniqueKillWeaponsMatch {
     get => new CUtlVector<int>(_Handle, 0x6295CF65EB474B78, 4, 24, 8);

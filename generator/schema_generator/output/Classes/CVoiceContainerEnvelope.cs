@@ -9,8 +9,8 @@ internal partial class CVoiceContainerEnvelope : CVoiceContainerBase, IVoiceCont
   public CVoiceContainerEnvelope(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeCVoiceContainerBase> Sound {
-    get => new CStrongHandle<InfoForResourceTypeCVoiceContainerBase>(_Handle + Schema.GetOffset(0x5CEF97E74E1C4FB4));
+  public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> Sound {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>>(Schema.GetOffset(0x5CEF97E74E1C4FB4));
   }
   public IVoiceContainerAnalysisBase AnalysisContainer {
     get => new CVoiceContainerAnalysisBase(_Handle + Schema.GetOffset(0x5CEF97E74C85F50E));

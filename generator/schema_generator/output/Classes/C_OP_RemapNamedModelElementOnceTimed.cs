@@ -9,8 +9,8 @@ internal partial class C_OP_RemapNamedModelElementOnceTimed : CParticleFunctionO
   public C_OP_RemapNamedModelElementOnceTimed(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeCModel> Model {
-    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0xBD6F6D8CE100C814));
+  public ref CStrongHandle<InfoForResourceTypeCModel> Model {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0xBD6F6D8CE100C814));
   }
   public ref CUtlVector<CUtlString> InNames {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xBD6F6D8CC6BEF30A));

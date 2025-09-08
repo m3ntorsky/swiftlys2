@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface Ilerpdata_t : ISchemaClass {
 
-  public CHandle<IBaseEntity> Ent { get; }
+  public ref CHandle<CBaseEntity> Ent { get; }
   
   public ref MoveType_t MoveType { get; }
   

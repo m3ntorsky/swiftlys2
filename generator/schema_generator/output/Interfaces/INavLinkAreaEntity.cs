@@ -20,7 +20,7 @@ public partial interface INavLinkAreaEntity : IPointEntity {
   
   public ref CUtlSymbolLarge StrFilterName { get; }
   
-  public CHandle<IBaseFilter> Filter { get; }
+  public ref CHandle<CBaseFilter> Filter { get; }
   
   public IEntityIOOutput OnNavLinkStart { get; }
   

@@ -36,8 +36,8 @@ internal partial class AggregateSceneObject_t : SchemaClass, IAggregateSceneObje
   public ref CUtlVector<matrix3x4_t> FragmentTransforms {
     get => ref _Handle.AsRef<CUtlVector<matrix3x4_t>>(Schema.GetOffset(0xEF81F2D4192EBA20));
   }
-  public CStrongHandle<IInfoForResourceTypeCModel> RenderableModel {
-    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0xEF81F2D42AEEFA82));
+  public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0xEF81F2D42AEEFA82));
   }
 
 

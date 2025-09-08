@@ -36,6 +36,6 @@ public partial interface IEnvWindShared : ISchemaClass {
   
   public IEntityIOOutput OnGustEnd { get; }
   
-  public CHandle<IBaseEntity> EntOwner { get; }
+  public ref CHandle<CBaseEntity> EntOwner { get; }
   
 }

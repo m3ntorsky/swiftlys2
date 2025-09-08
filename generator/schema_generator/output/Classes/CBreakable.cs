@@ -12,8 +12,8 @@ internal partial class CBreakable : CBaseModelEntity, IBreakable {
   public ref Materials Material {
     get => ref _Handle.AsRef<Materials>(Schema.GetOffset(0xC5CDE3293BBD7CE0));
   }
-  public CHandle<IBaseEntity> Breaker {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xC5CDE329161604FD));
+  public ref CHandle<CBaseEntity> Breaker {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xC5CDE329161604FD));
   }
   public ref Explosions Explosion {
     get => ref _Handle.AsRef<Explosions>(Schema.GetOffset(0xC5CDE3298FD2AD60));
@@ -45,8 +45,8 @@ internal partial class CBreakable : CBaseModelEntity, IBreakable {
   public ref PerformanceMode_t PerformanceMode {
     get => ref _Handle.AsRef<PerformanceMode_t>(Schema.GetOffset(0xC5CDE329C12B4C52));
   }
-  public CHandle<IBasePlayerPawn> PhysicsAttacker {
-    get => new CHandle<CBasePlayerPawn>(_Handle + Schema.GetOffset(0xC5CDE3297A5EB877));
+  public ref CHandle<CBasePlayerPawn> PhysicsAttacker {
+    get => ref _Handle.AsRef<CHandle<CBasePlayerPawn>>(Schema.GetOffset(0xC5CDE3297A5EB877));
   }
   public IGameTime_t LastPhysicsInfluenceTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xC5CDE3295B5C0E32));

@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEntityFlame : IBaseEntity {
 
-  public CHandle<IBaseEntity> EntAttached { get; }
+  public ref CHandle<CBaseEntity> EntAttached { get; }
   
   public ref bool CheapEffect { get; }
   
@@ -18,7 +18,7 @@ public partial interface IEntityFlame : IBaseEntity {
   
   public IGameTime_t Lifetime { get; }
   
-  public CHandle<IBaseEntity> Attacker { get; }
+  public ref CHandle<CBaseEntity> Attacker { get; }
   
   public ref float DirectDamagePerSecond { get; }
   

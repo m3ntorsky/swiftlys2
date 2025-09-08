@@ -8,7 +8,7 @@ public partial interface IDestructiblePartsSystemComponent : ISchemaClass {
   
   public ref CUtlVector<ushort> DamageLevelTakenByHitGroup { get; }
   
-  public CHandle<IBaseModelEntity> Owner { get; }
+  public ref CHandle<CBaseModelEntity> Owner { get; }
   
   public ref int LastHitDamageLevel { get; }
   

@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleNode_t : ISchemaClass {
 
-  public CHandle<IBaseEntity> Entity { get; }
+  public ref CHandle<CBaseEntity> Entity { get; }
   
   public IParticleIndex_t Index { get; }
   

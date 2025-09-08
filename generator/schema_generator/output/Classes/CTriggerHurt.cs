@@ -48,8 +48,8 @@ internal partial class CTriggerHurt : CBaseTrigger, ITriggerHurt {
   public IEntityIOOutput OnHurtPlayer {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x8D02278771C2F34C));
   }
-  public ref CUtlVector HurtEntities {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x8D0227874E045AC3));
+  public ref CUtlVector<CHandle<CBaseEntity>> HurtEntities {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(Schema.GetOffset(0x8D0227874E045AC3));
   }
 
 

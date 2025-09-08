@@ -9,8 +9,8 @@ internal partial class CLogicPlayerProxy : CLogicalEntity, ILogicPlayerProxy {
   public CLogicPlayerProxy(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> Player {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x81D444EB68856C16));
+  public ref CHandle<CBaseEntity> Player {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x81D444EB68856C16));
   }
   public IEntityIOOutput PlayerHasAmmo {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x81D444EB6A23AB96));

@@ -18,7 +18,7 @@ public partial interface IItemGeneric : IItem {
   
   public ref bool PlayerInTriggerRadius { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> SpawnParticleEffect { get; }
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> SpawnParticleEffect { get; }
   
   public ref CUtlSymbolLarge AmbientSoundEffect { get; }
   
@@ -26,13 +26,13 @@ public partial interface IItemGeneric : IItem {
   
   public ref CUtlSymbolLarge SpawnScriptFunction { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> PickupParticleEffect { get; }
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> PickupParticleEffect { get; }
   
   public ref CUtlSymbolLarge PickupSoundEffect { get; }
   
   public ref CUtlSymbolLarge PickupScriptFunction { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> TimeoutParticleEffect { get; }
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> TimeoutParticleEffect { get; }
   
   public ref CUtlSymbolLarge TimeoutSoundEffect { get; }
   
@@ -40,7 +40,7 @@ public partial interface IItemGeneric : IItem {
   
   public ref CUtlSymbolLarge PickupFilterName { get; }
   
-  public CHandle<IBaseFilter> PickupFilter { get; }
+  public ref CHandle<CBaseFilter> PickupFilter { get; }
   
   public IEntityIOOutput OnPickup { get; }
   
@@ -66,6 +66,6 @@ public partial interface IItemGeneric : IItem {
   
   public ref bool Useable { get; }
   
-  public CHandle<IItemGenericTriggerHelper> TriggerHelper { get; }
+  public ref CHandle<CItemGenericTriggerHelper> TriggerHelper { get; }
   
 }

@@ -42,9 +42,9 @@ public partial interface IBasePlayerPawn : IBaseCombatCharacter {
   
   public IAI_Expresser Expresser { get; }
   
-  public CHandle<IBasePlayerController> Controller { get; }
+  public ref CHandle<CBasePlayerController> Controller { get; }
   
-  public CHandle<IBasePlayerController> DefaultController { get; }
+  public ref CHandle<CBasePlayerController> DefaultController { get; }
   
   public ref float HltvReplayDelay { get; }
   

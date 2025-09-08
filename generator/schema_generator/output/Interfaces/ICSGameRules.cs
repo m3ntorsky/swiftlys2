@@ -328,7 +328,7 @@ public partial interface ICSGameRules : ITeamplayRules {
   
   public ISchemaUntypedField BtGlobalBlackboard { get; }
   
-  public CHandle<IBaseEntity> PlayerResource { get; }
+  public ref CHandle<CBaseEntity> PlayerResource { get; }
   
   public IRetakeGameRules RetakeRules { get; }
   

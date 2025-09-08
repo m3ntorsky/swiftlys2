@@ -12,10 +12,10 @@ public partial interface ICSPlayerBase_CameraServices : IPlayer_CameraServices {
   
   public ref float FOVRate { get; }
   
-  public CHandle<IBaseEntity> ZoomOwner { get; }
+  public ref CHandle<CBaseEntity> ZoomOwner { get; }
   
-  public ref CUtlVector TriggerFogList { get; }
+  public ref CUtlVector<CHandle<CBaseEntity>> TriggerFogList { get; }
   
-  public CHandle<IBaseEntity> LastFogTrigger { get; }
+  public ref CHandle<CBaseEntity> LastFogTrigger { get; }
   
 }

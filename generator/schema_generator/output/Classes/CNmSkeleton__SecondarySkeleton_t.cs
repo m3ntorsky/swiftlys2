@@ -12,8 +12,8 @@ internal partial class CNmSkeleton__SecondarySkeleton_t : SchemaClass, INmSkelet
   public ref CGlobalSymbol AttachToBoneID {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x50F456DAB2F06B3A));
   }
-  public CStrongHandle<IInfoForResourceTypeCNmSkeleton> Skeleton {
-    get => new CStrongHandle<InfoForResourceTypeCNmSkeleton>(_Handle + Schema.GetOffset(0x50F456DAE77F030E));
+  public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCNmSkeleton>>(Schema.GetOffset(0x50F456DAE77F030E));
   }
 
 

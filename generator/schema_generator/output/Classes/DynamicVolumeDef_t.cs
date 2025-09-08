@@ -9,11 +9,11 @@ internal partial class DynamicVolumeDef_t : SchemaClass, IDynamicVolumeDef_t {
   public DynamicVolumeDef_t(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> Source {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x9D661554D0835C78));
+  public ref CHandle<CBaseEntity> Source {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x9D661554D0835C78));
   }
-  public CHandle<IBaseEntity> Target {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x9D661554FA08A9E8));
+  public ref CHandle<CBaseEntity> Target {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x9D661554FA08A9E8));
   }
   public ref int HullIdx {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9D661554595B303D));

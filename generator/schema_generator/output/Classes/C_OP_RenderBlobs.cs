@@ -30,8 +30,8 @@ internal partial class C_OP_RenderBlobs : CParticleFunctionRenderer, IC_OP_Rende
   public ref CUtlVector MaterialVars {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB25239A3FA861D66));
   }
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material {
-    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0xB25239A3888CE42E));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0xB25239A3888CE42E));
   }
 
 

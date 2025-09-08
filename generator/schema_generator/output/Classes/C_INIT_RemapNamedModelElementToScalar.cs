@@ -9,8 +9,8 @@ internal partial class C_INIT_RemapNamedModelElementToScalar : CParticleFunction
   public C_INIT_RemapNamedModelElementToScalar(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeCModel> Model {
-    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0x4717248AE100C814));
+  public ref CStrongHandle<InfoForResourceTypeCModel> Model {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0x4717248AE100C814));
   }
   public ref CUtlVector<CUtlString> Names {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x4717248A0DA776AF));

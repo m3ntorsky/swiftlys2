@@ -9,8 +9,8 @@ internal partial class CTriggerProximity : CBaseTrigger, ITriggerProximity {
   public CTriggerProximity(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> MeasureTarget {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x98F0621FF81BC1A8));
+  public ref CHandle<CBaseEntity> MeasureTarget {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x98F0621FF81BC1A8));
   }
   public ref CUtlSymbolLarge MeasureTarget {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x98F0621F29C47B3A));

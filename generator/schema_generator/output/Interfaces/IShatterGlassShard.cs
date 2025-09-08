@@ -10,11 +10,11 @@ public partial interface IShatterGlassShard : ISchemaClass {
   
   public ref Vector2D LocalPanelSpaceOrigin { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCModel> Model { get; }
+  public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }
   
-  public CHandle<IShatterGlassShardPhysics> PhysicsEntity { get; }
+  public ref CHandle<CShatterGlassShardPhysics> PhysicsEntity { get; }
   
-  public CHandle<IFuncShatterglass> ParentPanel { get; }
+  public ref CHandle<CFuncShatterglass> ParentPanel { get; }
   
   public ref uint ParentShard { get; }
   
@@ -56,7 +56,7 @@ public partial interface IShatterGlassShard : ISchemaClass {
   
   public IGameTime_t PhysicsEntitySpawnedAtTime { get; }
   
-  public CHandle<IBaseEntity> EntityHittingMe { get; }
+  public ref CHandle<CBaseEntity> EntityHittingMe { get; }
   
   public ref CUtlVector<uint> Neighbors { get; }
   

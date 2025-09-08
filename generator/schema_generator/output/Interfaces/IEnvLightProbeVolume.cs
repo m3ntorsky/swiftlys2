@@ -4,23 +4,23 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvLightProbeVolume : IBaseEntity {
 
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_AmbientCube { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_AmbientCube { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_SDF { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_SDF { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_SH2_DC { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_SH2_DC { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_SH2_R { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_SH2_R { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_SH2_G { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_SH2_G { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_SH2_B { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_SH2_B { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> Entity_hLightProbeDirectLightIndicesTexture { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hLightProbeDirectLightIndicesTexture { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> Entity_hLightProbeDirectLightScalarsTexture { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hLightProbeDirectLightScalarsTexture { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> Entity_hLightProbeDirectLightShadowsTexture { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hLightProbeDirectLightShadowsTexture { get; }
   
   public ref Vector Entity_vBoxMins { get; }
   

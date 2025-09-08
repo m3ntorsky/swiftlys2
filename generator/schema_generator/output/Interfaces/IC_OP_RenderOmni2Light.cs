@@ -32,7 +32,7 @@ public partial interface IC_OP_RenderOmni2Light : IParticleFunctionRenderer {
   
   public IPerParticleFloatInput OuterConeAngle { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> LightCookie { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> LightCookie { get; }
   
   public ref bool SphericalCookie { get; }
   

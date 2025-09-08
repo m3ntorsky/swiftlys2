@@ -9,8 +9,8 @@ internal partial class CPointVelocitySensor : CPointEntity, IPointVelocitySensor
   public CPointVelocitySensor(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> TargetEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x96CA232125D042A9));
+  public ref CHandle<CBaseEntity> TargetEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x96CA232125D042A9));
   }
   public ref Vector Axis {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x96CA23210AF9CE54));

@@ -6,7 +6,7 @@ public partial interface IGameScriptedMoveDef_t : ISchemaClass {
 
   public ref Vector DestOffset { get; }
   
-  public CHandle<IBaseEntity> DestEntity { get; }
+  public ref CHandle<CBaseEntity> DestEntity { get; }
   
   public ref QAngle Dest { get; }
   

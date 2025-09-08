@@ -14,7 +14,7 @@ public partial interface IInfoOffscreenPanoramaTexture : IPointEntity {
   
   public ref CUtlSymbolLarge RenderAttrName { get; }
   
-  public ref CUtlVector TargetEntities { get; }
+  public ref CUtlVector<CHandle<CBaseModelEntity>> TargetEntities { get; }
   
   public ref int TargetChangeCount { get; }
   
@@ -22,6 +22,6 @@ public partial interface IInfoOffscreenPanoramaTexture : IPointEntity {
   
   public ref CUtlSymbolLarge TargetsName { get; }
   
-  public ref CUtlVector AdditionalTargetEntities { get; }
+  public ref CUtlVector<CHandle<CBaseModelEntity>> AdditionalTargetEntities { get; }
   
 }

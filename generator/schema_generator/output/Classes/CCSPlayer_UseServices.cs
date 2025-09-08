@@ -9,8 +9,8 @@ internal partial class CCSPlayer_UseServices : CPlayer_UseServices, ICSPlayer_Us
   public CCSPlayer_UseServices(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> LastKnownUseEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xE5F718912806F946));
+  public ref CHandle<CBaseEntity> LastKnownUseEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xE5F718912806F946));
   }
   public IGameTime_t LastUseTimeStamp {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xE5F7189104BF376E));

@@ -52,7 +52,7 @@ public partial interface IBaseEntity : IEntityInstance {
   
   public ref CUtlSymbolLarge Target { get; }
   
-  public CHandle<IBaseFilter> DamageFilter { get; }
+  public ref CHandle<CBaseFilter> DamageFilter { get; }
   
   public ref CUtlSymbolLarge DamageFilterName { get; }
   
@@ -102,13 +102,13 @@ public partial interface IBaseEntity : IEntityInstance {
   
   public ICollisionProperty Collision { get; }
   
-  public CHandle<IBaseEntity> EffectEntity { get; }
+  public ref CHandle<CBaseEntity> EffectEntity { get; }
   
-  public CHandle<IBaseEntity> OwnerEntity { get; }
+  public ref CHandle<CBaseEntity> OwnerEntity { get; }
   
   public ref uint Effects { get; }
   
-  public CHandle<IBaseEntity> GroundEntity { get; }
+  public ref CHandle<CBaseEntity> GroundEntity { get; }
   
   public ref int GroundBodyIndex { get; }
   
@@ -154,7 +154,7 @@ public partial interface IBaseEntity : IEntityInstance {
   
   public ref bool LagCompensate { get; }
   
-  public CHandle<IBaseEntity> Blocker { get; }
+  public ref CHandle<CBaseEntity> Blocker { get; }
   
   public ref float LocalTime { get; }
   

@@ -15,11 +15,11 @@ internal partial class CPointAngleSensor : CPointEntity, IPointAngleSensor {
   public ref CUtlSymbolLarge LookAtName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1E435601A28C338C));
   }
-  public CHandle<IBaseEntity> TargetEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1E43560125D042A9));
+  public ref CHandle<CBaseEntity> TargetEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1E43560125D042A9));
   }
-  public CHandle<IBaseEntity> LookAtEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1E435601073CB5DE));
+  public ref CHandle<CBaseEntity> LookAtEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1E435601073CB5DE));
   }
   public ref float Duration {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1E435601BC5E3BAB));

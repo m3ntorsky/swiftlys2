@@ -9,8 +9,8 @@ internal partial class CNmClip : SchemaClass, INmClip {
   public CNmClip(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeCNmSkeleton> Skeleton {
-    get => new CStrongHandle<InfoForResourceTypeCNmSkeleton>(_Handle + Schema.GetOffset(0x3FC883BDE77F030E));
+  public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCNmSkeleton>>(Schema.GetOffset(0x3FC883BDE77F030E));
   }
   public ref uint NumFrames {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x3FC883BDF764C355));

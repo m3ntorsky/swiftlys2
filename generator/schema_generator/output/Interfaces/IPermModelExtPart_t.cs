@@ -10,6 +10,6 @@ public partial interface IPermModelExtPart_t : ISchemaClass {
   
   public ref int Parent { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCModel> RefModel { get; }
+  public ref CStrongHandle<InfoForResourceTypeCModel> RefModel { get; }
   
 }

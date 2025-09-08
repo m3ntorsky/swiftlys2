@@ -51,8 +51,8 @@ internal partial class C_OP_RenderOmni2Light : CParticleFunctionRenderer, IC_OP_
   public IPerParticleFloatInput OuterConeAngle {
     get => new CPerParticleFloatInput(_Handle + Schema.GetOffset(0xDE9AF4EE90EF9464));
   }
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> LightCookie {
-    get => new CStrongHandle<InfoForResourceTypeCTextureBase>(_Handle + Schema.GetOffset(0xDE9AF4EE0609D103));
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> LightCookie {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(Schema.GetOffset(0xDE9AF4EE0609D103));
   }
   public ref bool SphericalCookie {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDE9AF4EE6C822B6E));

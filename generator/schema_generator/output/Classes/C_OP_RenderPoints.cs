@@ -9,8 +9,8 @@ internal partial class C_OP_RenderPoints : CParticleFunctionRenderer, IC_OP_Rend
   public C_OP_RenderPoints(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material {
-    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0x9B246DAE888CE42E));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0x9B246DAE888CE42E));
   }
 
 

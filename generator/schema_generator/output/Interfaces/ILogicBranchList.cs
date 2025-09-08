@@ -6,7 +6,7 @@ public partial interface ILogicBranchList : ILogicalEntity {
 
   public ISchemaFixedArray<CUtlSymbolLarge> LogicBranchNames { get; }
   
-  public ref CUtlVector LogicBranchList { get; }
+  public ref CUtlVector<CHandle<CBaseEntity>> LogicBranchList { get; }
   
   public ref CLogicBranchList::LogicBranchListenerLastState_t LastState { get; }
   

@@ -32,6 +32,6 @@ public partial interface IPhysBox : IBreakable {
   
   public IEntityIOOutput OnStartTouch { get; }
   
-  public CHandle<IBasePlayerPawn> CarryingPlayer { get; }
+  public ref CHandle<CBasePlayerPawn> CarryingPlayer { get; }
   
 }

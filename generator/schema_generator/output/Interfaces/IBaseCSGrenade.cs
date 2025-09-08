@@ -28,6 +28,6 @@ public partial interface IBaseCSGrenade : ICSWeaponBase {
   
   public ref float NextHoldFrac { get; }
   
-  public CHandle<ICSWeaponBase> SwitchToWeaponAfterThrow { get; }
+  public ref CHandle<CCSWeaponBase> SwitchToWeaponAfterThrow { get; }
   
 }

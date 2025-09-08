@@ -18,7 +18,7 @@ public partial interface IEnvSoundscape : IBaseEntity {
   
   public ISchemaFixedArray<CUtlSymbolLarge> PositionNames { get; }
   
-  public CHandle<IEnvSoundscape> ProxySoundscape { get; }
+  public ref CHandle<CEnvSoundscape> ProxySoundscape { get; }
   
   public ref bool Disabled { get; }
   

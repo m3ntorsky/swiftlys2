@@ -10,7 +10,7 @@ public partial interface IBaseCSGrenadeProjectile : IBaseGrenade {
   
   public ref int Bounces { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> ExplodeEffectIndex { get; }
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ExplodeEffectIndex { get; }
   
   public ref int ExplodeEffectTickBegin { get; }
   

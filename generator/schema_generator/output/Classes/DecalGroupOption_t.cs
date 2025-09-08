@@ -9,8 +9,8 @@ internal partial class DecalGroupOption_t : SchemaClass, IDecalGroupOption_t {
   public DecalGroupOption_t(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<Iopyable<InfoForResourceTypeIMaterial2> Material {
-    get => new CStrongHandle<opyable<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0x9F3DB78B888CE42E));
+  public ref CStrongHandle<opyable<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<opyable<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0x9F3DB78B888CE42E));
   }
   public ref CGlobalSymbol SequenceName {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x9F3DB78B7462AF30));

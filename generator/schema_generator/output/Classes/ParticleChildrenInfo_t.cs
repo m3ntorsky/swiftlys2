@@ -9,8 +9,8 @@ internal partial class ParticleChildrenInfo_t : SchemaClass, IParticleChildrenIn
   public ParticleChildrenInfo_t(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> ChildRef {
-    get => new CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>(_Handle + Schema.GetOffset(0x1EF548F3D87838A));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ChildRef {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0x1EF548F3D87838A));
   }
   public ref float Delay {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1EF548F7D68FD6E));

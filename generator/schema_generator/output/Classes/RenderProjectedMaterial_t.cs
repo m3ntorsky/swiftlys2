@@ -9,8 +9,8 @@ internal partial class RenderProjectedMaterial_t : SchemaClass, IRenderProjected
   public RenderProjectedMaterial_t(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material {
-    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0x62AF09D5888CE42E));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0x62AF09D5888CE42E));
   }
 
 

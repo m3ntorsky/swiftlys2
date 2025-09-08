@@ -9,8 +9,8 @@ internal partial class CPulseCell_Outflow_ScriptedSequence__CursorState_t : Sche
   public CPulseCell_Outflow_ScriptedSequence__CursorState_t(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> ScriptedSequence {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xA508823E4DD9D67A));
+  public ref CHandle<CBaseEntity> ScriptedSequence {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xA508823E4DD9D67A));
   }
 
 

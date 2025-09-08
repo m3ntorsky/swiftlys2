@@ -8,7 +8,7 @@ public partial interface IModelConfigElement_AttachedModel : IModelConfigElement
   
   public ref CUtlString EntityClass { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCModel> Model { get; }
+  public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }
   
   public ref Vector Offset { get; }
   

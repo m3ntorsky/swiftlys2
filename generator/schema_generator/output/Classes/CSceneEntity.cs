@@ -39,29 +39,29 @@ internal partial class CSceneEntity : CPointEntity, ISceneEntity {
   public ref CUtlSymbolLarge Target8 {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B7010355DC88));
   }
-  public CHandle<IBaseEntity> Target1 {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1099B701C951F3B1));
+  public ref CHandle<CBaseEntity> Target1 {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B701C951F3B1));
   }
-  public CHandle<IBaseEntity> Target2 {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1099B701C651EEF8));
+  public ref CHandle<CBaseEntity> Target2 {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B701C651EEF8));
   }
-  public CHandle<IBaseEntity> Target3 {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1099B701C751F08B));
+  public ref CHandle<CBaseEntity> Target3 {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B701C751F08B));
   }
-  public CHandle<IBaseEntity> Target4 {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1099B701CC51F86A));
+  public ref CHandle<CBaseEntity> Target4 {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B701CC51F86A));
   }
-  public CHandle<IBaseEntity> Target5 {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1099B701CD51F9FD));
+  public ref CHandle<CBaseEntity> Target5 {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B701CD51F9FD));
   }
-  public CHandle<IBaseEntity> Target6 {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1099B701CA51F544));
+  public ref CHandle<CBaseEntity> Target6 {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B701CA51F544));
   }
-  public CHandle<IBaseEntity> Target7 {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1099B701CB51F6D7));
+  public ref CHandle<CBaseEntity> Target7 {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B701CB51F6D7));
   }
-  public CHandle<IBaseEntity> Target8 {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1099B701C051E586));
+  public ref CHandle<CBaseEntity> Target8 {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B701C051E586));
   }
   public ref CUtlSymbolLarge TargetAttachment {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701FCD6246E));
@@ -93,8 +93,8 @@ internal partial class CSceneEntity : CPointEntity, ISceneEntity {
   public ref int SpeechPriority {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1099B701A055E60B));
   }
-  public CHandle<IBaseEntity> WaitingForThisResumeScene {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1099B7011B4B617A));
+  public ref CHandle<CBaseEntity> WaitingForThisResumeScene {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B7011B4B617A));
   }
   public ref bool WaitingForResumeScene {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1099B701F33D29C4));
@@ -120,8 +120,8 @@ internal partial class CSceneEntity : CPointEntity, ISceneEntity {
   public ref bool SceneFinished {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1099B701B78EE50D));
   }
-  public ref CUtlVector RemoveActorList {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1099B701C08C1458));
+  public ref CUtlVector<CHandle<CBaseEntity>> RemoveActorList {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(Schema.GetOffset(0x1099B701C08C1458));
   }
   public ref int SceneFlushCounter {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1099B701E744BD85));
@@ -144,8 +144,8 @@ internal partial class CSceneEntity : CPointEntity, ISceneEntity {
   public IEntityIOOutput OnTrigger {
     get => new CEntityIOOutput(_Handle, 0x1099B70181E0BFEC, 16, 40, 8);
   }
-  public CHandle<ISceneEntity> InterruptScene {
-    get => new CHandle<CSceneEntity>(_Handle + Schema.GetOffset(0x1099B7019B121B62));
+  public ref CHandle<CSceneEntity> InterruptScene {
+    get => ref _Handle.AsRef<CHandle<CSceneEntity>>(Schema.GetOffset(0x1099B7019B121B62));
   }
   public ref int InterruptCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1099B70114AAD933));
@@ -165,11 +165,11 @@ internal partial class CSceneEntity : CPointEntity, ISceneEntity {
   public ref bool Restoring {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1099B70103F03702));
   }
-  public ref CUtlVector NotifySceneCompletion {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1099B70111F17358));
+  public ref CUtlVector<CHandle<CSceneEntity>> NotifySceneCompletion {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CSceneEntity>>>(Schema.GetOffset(0x1099B70111F17358));
   }
-  public ref CUtlVector ListManagers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1099B701AD7882DF));
+  public ref CUtlVector<CHandle<CSceneListManager>> ListManagers {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CSceneListManager>>>(Schema.GetOffset(0x1099B701AD7882DF));
   }
   public ref CUtlSymbolLarge SoundName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701B17EB157));
@@ -177,11 +177,11 @@ internal partial class CSceneEntity : CPointEntity, ISceneEntity {
   public ref CUtlSymbolLarge SequenceName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701A55BC593));
   }
-  public CHandle<IBaseFlex> Actor {
-    get => new CHandle<CBaseFlex>(_Handle + Schema.GetOffset(0x1099B701C0FFC404));
+  public ref CHandle<CBaseFlex> Actor {
+    get => ref _Handle.AsRef<CHandle<CBaseFlex>>(Schema.GetOffset(0x1099B701C0FFC404));
   }
-  public CHandle<IBaseEntity> Activator {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x1099B701AB093BB2));
+  public ref CHandle<CBaseEntity> Activator {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B701AB093BB2));
   }
   public ref int BusyActor {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1099B70124F0E411));

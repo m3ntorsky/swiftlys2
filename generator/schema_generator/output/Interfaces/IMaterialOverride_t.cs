@@ -8,7 +8,7 @@ public partial interface IMaterialOverride_t : IBaseSceneObjectOverride_t {
   
   public ref uint DrawCallIndex { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
   
   public ref Vector LinearTintColor { get; }
   

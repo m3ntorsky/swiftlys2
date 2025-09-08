@@ -84,8 +84,8 @@ internal partial class CFuncShatterglass : CBaseModelEntity, IFuncShatterglass {
   public ref byte SurfaceType {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xB755F0FB3A6DDFE7));
   }
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> MaterialDamageBase {
-    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0xB755F0FB3000A1C6));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> MaterialDamageBase {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0xB755F0FB3000A1C6));
   }
 
 

@@ -4,9 +4,9 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPlayerPing : IBaseEntity {
 
-  public CHandle<ICSPlayerPawn> Player { get; }
+  public ref CHandle<CCSPlayerPawn> Player { get; }
   
-  public CHandle<IBaseEntity> PingedEntity { get; }
+  public ref CHandle<CBaseEntity> PingedEntity { get; }
   
   public ref int Type { get; }
   

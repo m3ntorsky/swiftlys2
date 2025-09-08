@@ -100,7 +100,7 @@ def convert_handle_type(type, interface=False):
   generic_t1 = generic_t1 if not interface else get_interface_name(generic_t1)
 
   # print(f"{name}<{generic_t1}>")
-  return (f"{name}<{generic_t1}>", False)
+  return (f"{name}<{generic_t1}>", True)
 
 def convert_utlvector_type(type, all_class_names, all_enum_names, interface = False):
   if type.startswith("CUtlVectorFixedGrowable"):

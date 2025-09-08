@@ -32,6 +32,6 @@ public partial interface ICSPlayerPawnBase : IBasePlayerPawn {
   
   public ref int ProgressBarDuration { get; }
   
-  public CHandle<ICSPlayerController> OriginalController { get; }
+  public ref CHandle<CCSPlayerController> OriginalController { get; }
   
 }

@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMultiSource : ILogicalEntity {
 
-  public CHandle<IBaseEntity> RgEntities { get; }
+  public ref CHandle<CBaseEntity> RgEntities { get; }
   
   public ISchemaFixedArray<int> RgTriggered { get; }
   

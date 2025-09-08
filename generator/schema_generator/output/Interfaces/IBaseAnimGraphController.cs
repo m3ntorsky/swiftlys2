@@ -32,7 +32,7 @@ public partial interface IBaseAnimGraphController : ISkeletonAnimationController
   
   public IGameTime_t PrevAnimUpdateTime { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCNmGraphDefinition> GraphDefinitionAG2 { get; }
+  public ref CStrongHandle<InfoForResourceTypeCNmGraphDefinition> GraphDefinitionAG2 { get; }
   
   public ref bool IsUsingAG2 { get; }
   

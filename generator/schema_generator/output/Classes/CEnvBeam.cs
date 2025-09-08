@@ -12,8 +12,8 @@ internal partial class CEnvBeam : CBeam, IEnvBeam {
   public ref int Active {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x84C6714A8E29CBCF));
   }
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> SpriteTexture {
-    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0x84C6714A095DE4B7));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> SpriteTexture {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0x84C6714A095DE4B7));
   }
   public ref CUtlSymbolLarge StartEntity {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x84C6714AA162CA40));
@@ -57,8 +57,8 @@ internal partial class CEnvBeam : CBeam, IEnvBeam {
   public ref CUtlSymbolLarge FilterName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x84C6714A09C86445));
   }
-  public CHandle<IBaseEntity> Filter {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x84C6714A45D9E0B1));
+  public ref CHandle<CBaseEntity> Filter {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x84C6714A45D9E0B1));
   }
   public ref CUtlSymbolLarge Decal {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x84C6714AC8536FA6));

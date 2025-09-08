@@ -6,6 +6,6 @@ public partial interface ISkyboxReference : IBaseEntity {
 
   public ref WorldGroupId_t WorldGroupId { get; }
   
-  public CHandle<ISkyCamera> SkyCamera { get; }
+  public ref CHandle<CSkyCamera> SkyCamera { get; }
   
 }

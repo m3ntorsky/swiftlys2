@@ -18,17 +18,17 @@ internal partial class CLogicMeasureMovement : CLogicalEntity, ILogicMeasureMove
   public ref CUtlSymbolLarge StrTargetReference {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x11EA27453E928D56));
   }
-  public CHandle<IBaseEntity> MeasureTarget {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x11EA2745F81BC1A8));
+  public ref CHandle<CBaseEntity> MeasureTarget {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x11EA2745F81BC1A8));
   }
-  public CHandle<IBaseEntity> MeasureReference {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x11EA274567F65D7A));
+  public ref CHandle<CBaseEntity> MeasureReference {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x11EA274567F65D7A));
   }
-  public CHandle<IBaseEntity> Target {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x11EA2745CE35901A));
+  public ref CHandle<CBaseEntity> Target {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x11EA2745CE35901A));
   }
-  public CHandle<IBaseEntity> TargetReference {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x11EA2745EB33504F));
+  public ref CHandle<CBaseEntity> TargetReference {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x11EA2745EB33504F));
   }
   public ref float Scale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x11EA2745B731A42F));

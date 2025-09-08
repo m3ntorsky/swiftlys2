@@ -15,7 +15,7 @@ internal partial class CFilterMultiple : CBaseFilter, IFilterMultiple {
   public ISchemaFixedArray<CUtlSymbolLarge> FilterName {
     get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0x6EA0578009C86445, 10, 8, 8);
   }
-  public CHandle<IBaseEntity> Filter {
+  public CHandle<CBaseEntity> Filter {
     get => new CHandle<CBaseEntity>(_Handle, 0x6EA0578045D9E0B1, 10, 4, 4);
   }
 

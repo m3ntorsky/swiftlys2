@@ -15,11 +15,11 @@ internal partial class CBasePlayerController : CBaseEntity, IBasePlayerControlle
   public ref CSplitScreenSlot SplitScreenSlot {
     get => ref _Handle.AsRef<CSplitScreenSlot>(Schema.GetOffset(0x3979FF6EDB96ED47));
   }
-  public CHandle<IBasePlayerController> SplitOwner {
-    get => new CHandle<CBasePlayerController>(_Handle + Schema.GetOffset(0x3979FF6E7F6EFD54));
+  public ref CHandle<CBasePlayerController> SplitOwner {
+    get => ref _Handle.AsRef<CHandle<CBasePlayerController>>(Schema.GetOffset(0x3979FF6E7F6EFD54));
   }
-  public ref CUtlVector SplitScreenPlayers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3979FF6E533D1C5D));
+  public ref CUtlVector<CHandle<CBasePlayerController>> SplitScreenPlayers {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CBasePlayerController>>>(Schema.GetOffset(0x3979FF6E533D1C5D));
   }
   public ref bool IsHLTV {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3979FF6E5DC66E6B));

@@ -20,7 +20,7 @@ public partial interface IAmbientGeneric : IPointEntity {
   
   public ref CUtlSymbolLarge SourceEntName { get; }
   
-  public CHandle<IBaseEntity> SoundSource { get; }
+  public ref CHandle<CBaseEntity> SoundSource { get; }
   
   public ref CEntityIndex SoundSourceEntIndex { get; }
   

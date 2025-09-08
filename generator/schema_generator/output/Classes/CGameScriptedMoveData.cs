@@ -60,8 +60,8 @@ internal partial class CGameScriptedMoveData : SchemaClass, IGameScriptedMoveDat
   public ref QAngle Dst {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0x6F78B5E7535FD052));
   }
-  public CHandle<IBaseEntity> DestEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x6F78B5E7A1CF74EC));
+  public ref CHandle<CBaseEntity> DestEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x6F78B5E7A1CF74EC));
   }
 
 

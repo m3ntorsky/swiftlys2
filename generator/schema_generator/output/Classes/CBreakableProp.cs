@@ -39,8 +39,8 @@ internal partial class CBreakableProp : CBaseProp, IBreakableProp {
   public ref Vector DefBurstOffset {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD9F5AF341E951FF1));
   }
-  public CHandle<IBaseEntity> Breaker {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xD9F5AF34161604FD));
+  public ref CHandle<CBaseEntity> Breaker {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xD9F5AF34161604FD));
   }
   public ref PerformanceMode_t PerformanceMode {
     get => ref _Handle.AsRef<PerformanceMode_t>(Schema.GetOffset(0xD9F5AF34C12B4C52));
@@ -81,8 +81,8 @@ internal partial class CBreakableProp : CBaseProp, IBreakableProp {
   public ref CUtlSymbolLarge ExplosionModifier {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34531D2849));
   }
-  public CHandle<IBasePlayerPawn> PhysicsAttacker {
-    get => new CHandle<CBasePlayerPawn>(_Handle + Schema.GetOffset(0xD9F5AF347A5EB877));
+  public ref CHandle<CBasePlayerPawn> PhysicsAttacker {
+    get => ref _Handle.AsRef<CHandle<CBasePlayerPawn>>(Schema.GetOffset(0xD9F5AF347A5EB877));
   }
   public IGameTime_t LastPhysicsInfluenceTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xD9F5AF345B5C0E32));
@@ -90,8 +90,8 @@ internal partial class CBreakableProp : CBaseProp, IBreakableProp {
   public ref float DefaultFadeScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD9F5AF344DA9700C));
   }
-  public CHandle<IBaseEntity> LastAttacker {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xD9F5AF3465CAEF84));
+  public ref CHandle<CBaseEntity> LastAttacker {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xD9F5AF3465CAEF84));
   }
   public ref CUtlSymbolLarge PuntSound {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34FB0FC5DB));

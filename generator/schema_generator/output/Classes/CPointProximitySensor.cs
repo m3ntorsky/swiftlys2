@@ -12,8 +12,8 @@ internal partial class CPointProximitySensor : CPointEntity, IPointProximitySens
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x769A8B133A7C5965));
   }
-  public CHandle<IBaseEntity> TargetEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x769A8B1325D042A9));
+  public ref CHandle<CBaseEntity> TargetEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x769A8B1325D042A9));
   }
   public ISchemaUntypedField Distance {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x769A8B13978BC0E2));

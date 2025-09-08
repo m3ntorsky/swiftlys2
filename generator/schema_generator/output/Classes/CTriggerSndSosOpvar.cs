@@ -9,8 +9,8 @@ internal partial class CTriggerSndSosOpvar : CBaseTrigger, ITriggerSndSosOpvar {
   public CTriggerSndSosOpvar(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector TouchingPlayers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD4B7BEBCD365BA28));
+  public ref CUtlVector<CHandle<CBaseEntity>> TouchingPlayers {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(Schema.GetOffset(0xD4B7BEBCD365BA28));
   }
   public ref Vector Position {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD4B7BEBC4142D14C));

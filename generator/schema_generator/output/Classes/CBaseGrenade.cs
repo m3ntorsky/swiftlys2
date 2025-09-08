@@ -33,8 +33,8 @@ internal partial class CBaseGrenade : CBaseFlex, IBaseGrenade {
   public IGameTime_t NextAttack {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xB6ACD98F3DFDCDEA));
   }
-  public CHandle<ICSPlayerPawn> OriginalThrower {
-    get => new CHandle<CCSPlayerPawn>(_Handle + Schema.GetOffset(0xB6ACD98F34FD45A3));
+  public ref CHandle<CCSPlayerPawn> OriginalThrower {
+    get => ref _Handle.AsRef<CHandle<CCSPlayerPawn>>(Schema.GetOffset(0xB6ACD98F34FD45A3));
   }
 
   public void IsLiveUpdated() {

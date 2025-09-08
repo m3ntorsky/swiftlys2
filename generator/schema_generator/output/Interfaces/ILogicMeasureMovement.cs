@@ -10,13 +10,13 @@ public partial interface ILogicMeasureMovement : ILogicalEntity {
   
   public ref CUtlSymbolLarge StrTargetReference { get; }
   
-  public CHandle<IBaseEntity> MeasureTarget { get; }
+  public ref CHandle<CBaseEntity> MeasureTarget { get; }
   
-  public CHandle<IBaseEntity> MeasureReference { get; }
+  public ref CHandle<CBaseEntity> MeasureReference { get; }
   
-  public CHandle<IBaseEntity> Target { get; }
+  public ref CHandle<CBaseEntity> Target { get; }
   
-  public CHandle<IBaseEntity> TargetReference { get; }
+  public ref CHandle<CBaseEntity> TargetReference { get; }
   
   public ref float Scale { get; }
   

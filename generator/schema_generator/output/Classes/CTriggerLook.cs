@@ -9,8 +9,8 @@ internal partial class CTriggerLook : CTriggerOnce, ITriggerLook {
   public CTriggerLook(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> LookTarget {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x400CA6913361F745));
+  public ref CHandle<CBaseEntity> LookTarget {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x400CA6913361F745));
   }
   public ref float FieldOfView {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x400CA69157C8F26D));

@@ -6,7 +6,7 @@ public partial interface IPointProximitySensor : IPointEntity {
 
   public ref bool Disabled { get; }
   
-  public CHandle<IBaseEntity> TargetEntity { get; }
+  public ref CHandle<CBaseEntity> TargetEntity { get; }
   
   public ISchemaUntypedField Distance { get; }
   

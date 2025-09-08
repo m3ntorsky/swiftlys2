@@ -15,8 +15,8 @@ internal partial class CPlayer_CameraServices : CPlayerPawnComponent, IPlayer_Ca
   public ref float OldPlayerViewOffsetZ {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCF10767CA126E73));
   }
-  public ref CUtlVector TriggerSoundscapeList {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xCF10767F74D6272));
+  public ref CUtlVector<CHandle<CEnvSoundscapeTriggerable>> TriggerSoundscapeList {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CEnvSoundscapeTriggerable>>>(Schema.GetOffset(0xCF10767F74D6272));
   }
 
   public void CsViewPunchAngleUpdated() {

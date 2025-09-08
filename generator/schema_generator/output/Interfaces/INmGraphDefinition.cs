@@ -6,7 +6,7 @@ public partial interface INmGraphDefinition : ISchemaClass {
 
   public ref CGlobalSymbol VariationID { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCNmSkeleton> Skeleton { get; }
+  public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton { get; }
   
   public ref CUtlVector<short> PersistentNodeIndices { get; }
   
@@ -24,6 +24,6 @@ public partial interface INmGraphDefinition : ISchemaClass {
   
   public ref CUtlVector<CUtlString> NodePaths { get; }
   
-  public ref CUtlVector Resources { get; }
+  public ref CUtlVector<CStrongHandle<oi>> Resources { get; }
   
 }

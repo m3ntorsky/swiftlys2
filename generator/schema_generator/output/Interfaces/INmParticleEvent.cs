@@ -8,7 +8,7 @@ public partial interface INmParticleEvent : INmEvent {
   
   public ref CNmParticleEvent::Type_t Type { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> ParticleSystem { get; }
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ParticleSystem { get; }
   
   public ref CUtlString Tags { get; }
   

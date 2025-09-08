@@ -12,8 +12,8 @@ internal partial class CSplineConstraint : CPhysConstraint, ISplineConstraint {
   public ref Vector AnchorOffsetRestore {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC2DC06A0E08CAB0B));
   }
-  public CHandle<IBaseEntity> SplineEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xC2DC06A0C3BD15D5));
+  public ref CHandle<CBaseEntity> SplineEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xC2DC06A0C3BD15D5));
   }
   public ref bool EnableLateralConstraint {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC2DC06A0B19E8CC2));

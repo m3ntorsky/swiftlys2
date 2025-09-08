@@ -64,9 +64,9 @@ public partial interface IParticleSystemDefinition : IIParticleSystemDefinition 
   
   public ref int SnapshotControlPoint { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIParticleSnapshot> Snapshot { get; }
+  public ref CStrongHandle<InfoForResourceTypeIParticleSnapshot> Snapshot { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> CullReplacementName { get; }
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> CullReplacementName { get; }
   
   public ref float CullRadius { get; }
   
@@ -74,13 +74,13 @@ public partial interface IParticleSystemDefinition : IIParticleSystemDefinition 
   
   public ref int CullControlPoint { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> Fallback { get; }
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> Fallback { get; }
   
   public ref int FallbackMaxCount { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> LowViolenceDef { get; }
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> LowViolenceDef { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> ReferenceReplacement { get; }
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ReferenceReplacement { get; }
   
   public ref float PreSimulationTime { get; }
   

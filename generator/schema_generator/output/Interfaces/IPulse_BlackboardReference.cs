@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulse_BlackboardReference : ISchemaClass {
 
-  public CStrongHandle<IInfoForResourceTypeIPulseGraphDef> BlackboardResource { get; }
+  public ref CStrongHandle<InfoForResourceTypeIPulseGraphDef> BlackboardResource { get; }
   
   public ISchemaUntypedField BlackboardResource { get; }
   

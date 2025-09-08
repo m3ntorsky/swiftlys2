@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDecalGroupOption_t : ISchemaClass {
 
-  public CStrongHandle<Iopyable<InfoForResourceTypeIMaterial2> Material { get; }
+  public ref CStrongHandle<opyable<InfoForResourceTypeIMaterial2> Material { get; }
   
   public ref CGlobalSymbol SequenceName { get; }
   

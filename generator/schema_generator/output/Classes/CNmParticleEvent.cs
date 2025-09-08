@@ -15,8 +15,8 @@ internal partial class CNmParticleEvent : CNmEvent, INmParticleEvent {
   public ref CNmParticleEvent::Type_t Type {
     get => ref _Handle.AsRef<CNmParticleEvent::Type_t>(Schema.GetOffset(0x441D270F0F04B4ED));
   }
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> ParticleSystem {
-    get => new CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>(_Handle + Schema.GetOffset(0x441D270FC9C33AF8));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ParticleSystem {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0x441D270FC9C33AF8));
   }
   public ref CUtlString Tags {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x441D270FB46C8540));

@@ -60,7 +60,7 @@ public partial interface IEnvVolumetricFogController : IBaseEntity {
   
   public ref bool IsMaster { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> FogIndirectTexture { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> FogIndirectTexture { get; }
   
   public ref int ForceRefreshCount { get; }
   

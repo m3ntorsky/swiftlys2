@@ -12,6 +12,6 @@ public partial interface IEnvParticleGlow : IParticleSystem {
   
   public ref Color ColorTint { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureOverride { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureOverride { get; }
   
 }

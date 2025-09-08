@@ -9,8 +9,8 @@ internal partial class C_OP_RemapNamedModelElementEndCap : CParticleFunctionOper
   public C_OP_RemapNamedModelElementEndCap(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeCModel> Model {
-    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0xC434ECD3E100C814));
+  public ref CStrongHandle<InfoForResourceTypeCModel> Model {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0xC434ECD3E100C814));
   }
   public ref CUtlVector<CUtlString> InNames {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xC434ECD3C6BEF30A));

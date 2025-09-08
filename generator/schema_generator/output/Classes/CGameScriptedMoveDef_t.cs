@@ -12,8 +12,8 @@ internal partial class CGameScriptedMoveDef_t : SchemaClass, IGameScriptedMoveDe
   public ref Vector DestOffset {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x278F5D457DA34A6E));
   }
-  public CHandle<IBaseEntity> DestEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x278F5D45A1CF74EC));
+  public ref CHandle<CBaseEntity> DestEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x278F5D45A1CF74EC));
   }
   public ref QAngle Dest {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0x278F5D45B61266D7));

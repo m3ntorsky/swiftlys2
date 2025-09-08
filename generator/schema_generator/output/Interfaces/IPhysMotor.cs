@@ -8,9 +8,9 @@ public partial interface IPhysMotor : ILogicalEntity {
   
   public ref CUtlSymbolLarge NameAnchor { get; }
   
-  public CHandle<IBaseEntity> AttachedObject { get; }
+  public ref CHandle<CBaseEntity> AttachedObject { get; }
   
-  public CHandle<IBaseEntity> AnchorObject { get; }
+  public ref CHandle<CBaseEntity> AnchorObject { get; }
   
   public ref float SpinUp { get; }
   

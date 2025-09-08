@@ -24,8 +24,8 @@ internal partial class CPointPrefab : CServerOnlyPointEntity, IPointPrefab {
   public ref bool LoadDynamic {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x2C6EB7C6A3437F12));
   }
-  public CHandle<IPointPrefab> AssociatedRelayEntity {
-    get => new CHandle<CPointPrefab>(_Handle + Schema.GetOffset(0x2C6EB7C683435943));
+  public ref CHandle<CPointPrefab> AssociatedRelayEntity {
+    get => ref _Handle.AsRef<CHandle<CPointPrefab>>(Schema.GetOffset(0x2C6EB7C683435943));
   }
 
 

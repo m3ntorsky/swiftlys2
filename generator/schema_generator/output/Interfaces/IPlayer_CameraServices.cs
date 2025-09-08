@@ -12,20 +12,20 @@ public partial interface IPlayer_CameraServices : IPlayerPawnComponent {
   
   public Ifogplayerparams_t PlayerFog { get; }
   
-  public CHandle<IColorCorrection> ColorCorrectionCtrl { get; }
+  public ref CHandle<CColorCorrection> ColorCorrectionCtrl { get; }
   
-  public CHandle<IBaseEntity> ViewEntity { get; }
+  public ref CHandle<CBaseEntity> ViewEntity { get; }
   
-  public CHandle<ITonemapController2> TonemapController { get; }
+  public ref CHandle<CTonemapController2> TonemapController { get; }
   
   public Iaudioparams_t Audio { get; }
   
-  public ref CUtlVector PostProcessingVolumes { get; }
+  public ref CUtlVector<CHandle<CPostProcessingVolume>> PostProcessingVolumes { get; }
   
   public ref float OldPlayerZ { get; }
   
   public ref float OldPlayerViewOffsetZ { get; }
   
-  public ref CUtlVector TriggerSoundscapeList { get; }
+  public ref CUtlVector<CHandle<CEnvSoundscapeTriggerable>> TriggerSoundscapeList { get; }
   
 }

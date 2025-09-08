@@ -30,8 +30,8 @@ internal partial class CItemGeneric : CItem, IItemGeneric {
   public ref bool PlayerInTriggerRadius {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE5C051B66DC39F9F));
   }
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> SpawnParticleEffect {
-    get => new CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>(_Handle + Schema.GetOffset(0xE5C051B6576146D5));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> SpawnParticleEffect {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xE5C051B6576146D5));
   }
   public ref CUtlSymbolLarge AmbientSoundEffect {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B65DD78861));
@@ -42,8 +42,8 @@ internal partial class CItemGeneric : CItem, IItemGeneric {
   public ref CUtlSymbolLarge SpawnScriptFunction {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B6BC2C9805));
   }
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> PickupParticleEffect {
-    get => new CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>(_Handle + Schema.GetOffset(0xE5C051B6A61E7280));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> PickupParticleEffect {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xE5C051B6A61E7280));
   }
   public ref CUtlSymbolLarge PickupSoundEffect {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B6ECB75E7B));
@@ -51,8 +51,8 @@ internal partial class CItemGeneric : CItem, IItemGeneric {
   public ref CUtlSymbolLarge PickupScriptFunction {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B64242F490));
   }
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> TimeoutParticleEffect {
-    get => new CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>(_Handle + Schema.GetOffset(0xE5C051B6FE95C38D));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> TimeoutParticleEffect {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xE5C051B6FE95C38D));
   }
   public ref CUtlSymbolLarge TimeoutSoundEffect {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B6F5AD0260));
@@ -63,8 +63,8 @@ internal partial class CItemGeneric : CItem, IItemGeneric {
   public ref CUtlSymbolLarge PickupFilterName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B613C0B032));
   }
-  public CHandle<IBaseFilter> PickupFilter {
-    get => new CHandle<CBaseFilter>(_Handle + Schema.GetOffset(0xE5C051B605240E41));
+  public ref CHandle<CBaseFilter> PickupFilter {
+    get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0xE5C051B605240E41));
   }
   public IEntityIOOutput OnPickup {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xE5C051B628BC1F6C));
@@ -102,8 +102,8 @@ internal partial class CItemGeneric : CItem, IItemGeneric {
   public ref bool Useable {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE5C051B6E4DBE46C));
   }
-  public CHandle<IItemGenericTriggerHelper> TriggerHelper {
-    get => new CHandle<CItemGenericTriggerHelper>(_Handle + Schema.GetOffset(0xE5C051B62DCBD7A9));
+  public ref CHandle<CItemGenericTriggerHelper> TriggerHelper {
+    get => ref _Handle.AsRef<CHandle<CItemGenericTriggerHelper>>(Schema.GetOffset(0xE5C051B62DCBD7A9));
   }
 
 

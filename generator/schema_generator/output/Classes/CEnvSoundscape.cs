@@ -30,8 +30,8 @@ internal partial class CEnvSoundscape : CBaseEntity, IEnvSoundscape {
   public ISchemaFixedArray<CUtlSymbolLarge> PositionNames {
     get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0x4C8F896A53DB5F86, 8, 8, 8);
   }
-  public CHandle<IEnvSoundscape> ProxySoundscape {
-    get => new CHandle<CEnvSoundscape>(_Handle + Schema.GetOffset(0x4C8F896ABC23786E));
+  public ref CHandle<CEnvSoundscape> ProxySoundscape {
+    get => ref _Handle.AsRef<CHandle<CEnvSoundscape>>(Schema.GetOffset(0x4C8F896ABC23786E));
   }
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4C8F896A3A7C5965));

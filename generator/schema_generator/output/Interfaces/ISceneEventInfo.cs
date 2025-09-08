@@ -22,7 +22,7 @@ public partial interface ISceneEventInfo : ISchemaClass {
   
   public ref bool ShouldRemove { get; }
   
-  public CHandle<IBaseEntity> Target { get; }
+  public ref CHandle<CBaseEntity> Target { get; }
   
   public ISceneEventId_t SceneEventId { get; }
   

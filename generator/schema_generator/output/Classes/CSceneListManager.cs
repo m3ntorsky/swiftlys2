@@ -9,13 +9,13 @@ internal partial class CSceneListManager : CLogicalEntity, ISceneListManager {
   public CSceneListManager(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector ListManagers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x6DF51C6DAD7882DF));
+  public ref CUtlVector<CHandle<CSceneListManager>> ListManagers {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CSceneListManager>>>(Schema.GetOffset(0x6DF51C6DAD7882DF));
   }
   public ISchemaFixedArray<CUtlSymbolLarge> Scenes {
     get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0x6DF51C6D967363E8, 16, 8, 8);
   }
-  public CHandle<IBaseEntity> Scenes {
+  public CHandle<CBaseEntity> Scenes {
     get => new CHandle<CBaseEntity>(_Handle, 0x6DF51C6D2B7EE872, 16, 4, 4);
   }
 

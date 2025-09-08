@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IInstancedSceneEntity : ISceneEntity {
 
-  public CHandle<IBaseEntity> Owner { get; }
+  public ref CHandle<CBaseEntity> Owner { get; }
   
   public ref bool HadOwner { get; }
   
@@ -16,6 +16,6 @@ public partial interface IInstancedSceneEntity : ISceneEntity {
   
   public ref bool RemoveOnCompletion { get; }
   
-  public CHandle<IBaseEntity> Target { get; }
+  public ref CHandle<CBaseEntity> Target { get; }
   
 }

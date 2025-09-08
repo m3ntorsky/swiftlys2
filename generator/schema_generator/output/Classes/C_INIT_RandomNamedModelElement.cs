@@ -9,8 +9,8 @@ internal partial class C_INIT_RandomNamedModelElement : CParticleFunctionInitial
   public C_INIT_RandomNamedModelElement(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeCModel> Model {
-    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0xA3E776D5E100C814));
+  public ref CStrongHandle<InfoForResourceTypeCModel> Model {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0xA3E776D5E100C814));
   }
   public ref CUtlVector<CUtlString> Names {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xA3E776D50DA776AF));

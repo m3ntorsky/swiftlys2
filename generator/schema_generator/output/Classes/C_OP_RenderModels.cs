@@ -99,8 +99,8 @@ internal partial class C_OP_RenderModels : CParticleFunctionRenderer, IC_OP_Rend
   public ISchemaFixedString ClothEffectName {
     get => new SchemaFixedString(_Handle, 0xC58C7B139D0B2FCD, 64, 1, 1);
   }
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> OverrideMaterial {
-    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0xC58C7B132C055CBE));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> OverrideMaterial {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0xC58C7B132C055CBE));
   }
   public ref bool OverrideTranslucentMaterials {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC58C7B13A9CF9EDA));

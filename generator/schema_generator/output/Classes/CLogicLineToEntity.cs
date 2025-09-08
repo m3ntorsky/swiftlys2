@@ -15,11 +15,11 @@ internal partial class CLogicLineToEntity : CLogicalEntity, ILogicLineToEntity {
   public ref CUtlSymbolLarge SourceName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x61067DC82F9BA2DB));
   }
-  public CHandle<IBaseEntity> StartEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x61067DC8904F2828));
+  public ref CHandle<CBaseEntity> StartEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x61067DC8904F2828));
   }
-  public CHandle<IBaseEntity> EndEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x61067DC89114A219));
+  public ref CHandle<CBaseEntity> EndEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x61067DC89114A219));
   }
 
 

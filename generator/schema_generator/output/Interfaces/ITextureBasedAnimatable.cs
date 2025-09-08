@@ -8,9 +8,9 @@ public partial interface ITextureBasedAnimatable : IBaseModelEntity {
   
   public ref float FPS { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> PositionKeys { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> PositionKeys { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> RotationKeys { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> RotationKeys { get; }
   
   public ref Vector AnimationBoundsMin { get; }
   

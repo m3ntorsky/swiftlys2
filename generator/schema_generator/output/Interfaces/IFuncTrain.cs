@@ -4,11 +4,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncTrain : IBasePlatTrain {
 
-  public CHandle<IBaseEntity> CurrentTarget { get; }
+  public ref CHandle<CBaseEntity> CurrentTarget { get; }
   
   public ref bool Activated { get; }
   
-  public CHandle<IBaseEntity> Enemy { get; }
+  public ref CHandle<CBaseEntity> Enemy { get; }
   
   public ref float BlockDamage { get; }
   

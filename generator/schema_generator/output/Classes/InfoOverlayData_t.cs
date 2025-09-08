@@ -27,8 +27,8 @@ internal partial class InfoOverlayData_t : SchemaClass, IInfoOverlayData_t {
   public ref Vector2D UVEnd {
     get => ref _Handle.AsRef<Vector2D>(Schema.GetOffset(0x7424CD5817C00983));
   }
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material {
-    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0x7424CD58972B1076));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0x7424CD58972B1076));
   }
   public ref int RenderOrder {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x7424CD58554E763B));

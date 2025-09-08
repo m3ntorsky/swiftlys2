@@ -12,8 +12,8 @@ internal partial class CNmGraphDefinition : SchemaClass, INmGraphDefinition {
   public ref CGlobalSymbol VariationID {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xE028E08C8B90A5E3));
   }
-  public CStrongHandle<IInfoForResourceTypeCNmSkeleton> Skeleton {
-    get => new CStrongHandle<InfoForResourceTypeCNmSkeleton>(_Handle + Schema.GetOffset(0xE028E08CE77F030E));
+  public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCNmSkeleton>>(Schema.GetOffset(0xE028E08CE77F030E));
   }
   public ref CUtlVector<short> PersistentNodeIndices {
     get => ref _Handle.AsRef<CUtlVector<short>>(Schema.GetOffset(0xE028E08C90896209));
@@ -39,8 +39,8 @@ internal partial class CNmGraphDefinition : SchemaClass, INmGraphDefinition {
   public ref CUtlVector<CUtlString> NodePaths {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xE028E08CFF3E5A07));
   }
-  public ref CUtlVector Resources {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xE028E08C227C3612));
+  public ref CUtlVector<CStrongHandle<oi>> Resources {
+    get => ref _Handle.AsRef<CUtlVector<CStrongHandle<oi>>>(Schema.GetOffset(0xE028E08C227C3612));
   }
 
 

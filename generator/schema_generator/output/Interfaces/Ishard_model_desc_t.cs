@@ -6,9 +6,9 @@ public partial interface Ishard_model_desc_t : ISchemaClass {
 
   public ref int ModelID { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> MaterialBase { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> MaterialBase { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> MaterialDamageOverlay { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> MaterialDamageOverlay { get; }
   
   public ref ShardSolid_t Solid { get; }
   

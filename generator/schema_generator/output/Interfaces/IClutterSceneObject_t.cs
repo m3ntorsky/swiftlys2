@@ -18,7 +18,7 @@ public partial interface IClutterSceneObject_t : ISchemaClass {
   
   public ref CUtlVector Tiles { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCModel> RenderableModel { get; }
+  public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel { get; }
   
   public ref CUtlStringToken MaterialGroup { get; }
   

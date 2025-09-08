@@ -26,7 +26,7 @@ public partial interface IBaseToggle : IBaseModelEntity {
   
   public ref float Height { get; }
   
-  public CHandle<IBaseEntity> Activator { get; }
+  public ref CHandle<CBaseEntity> Activator { get; }
   
   public ref Vector FinalDest { get; }
   

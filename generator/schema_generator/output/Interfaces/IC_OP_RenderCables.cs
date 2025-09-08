@@ -12,7 +12,7 @@ public partial interface IC_OP_RenderCables : IParticleFunctionRenderer {
   
   public ref ParticleColorBlendType_t ColorBlendType { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
   
   public ref TextureRepetitionMode_t TextureRepetitionMode { get; }
   

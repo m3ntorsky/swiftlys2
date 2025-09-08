@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ILogicPlayerProxy : ILogicalEntity {
 
-  public CHandle<IBaseEntity> Player { get; }
+  public ref CHandle<CBaseEntity> Player { get; }
   
   public IEntityIOOutput PlayerHasAmmo { get; }
   

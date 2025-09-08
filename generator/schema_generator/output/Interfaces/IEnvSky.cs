@@ -4,9 +4,9 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvSky : IBaseModelEntity {
 
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> SkyMaterial { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> SkyMaterial { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> SkyMaterialLightingOnly { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> SkyMaterialLightingOnly { get; }
   
   public ref bool StartDisabled { get; }
   

@@ -9,8 +9,8 @@ internal partial class CFuncLadder : CBaseModelEntity, IFuncLadder {
   public CFuncLadder(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Dismounts {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD85E0238E1BF2F19));
+  public ref CUtlVector<CHandle<CInfoLadderDismount>> Dismounts {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CInfoLadderDismount>>>(Schema.GetOffset(0xD85E0238E1BF2F19));
   }
   public ref Vector LocalTop {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD85E0238A709E4E3));

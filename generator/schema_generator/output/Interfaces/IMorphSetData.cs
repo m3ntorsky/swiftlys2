@@ -12,7 +12,7 @@ public partial interface IMorphSetData : ISchemaClass {
   
   public ref CUtlVector MorphDatas { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureAtlas { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureAtlas { get; }
   
   public ref CUtlVector FlexDesc { get; }
   

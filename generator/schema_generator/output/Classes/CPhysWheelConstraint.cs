@@ -42,8 +42,8 @@ internal partial class CPhysWheelConstraint : CPhysConstraint, IPhysWheelConstra
   public ref float SpinAxisFriction {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x597D72C266B468FC));
   }
-  public CHandle<IBaseEntity> SteeringMimicsEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x597D72C2CD5E886D));
+  public ref CHandle<CBaseEntity> SteeringMimicsEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x597D72C2CD5E886D));
   }
 
 

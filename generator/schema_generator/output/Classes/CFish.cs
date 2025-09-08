@@ -9,8 +9,8 @@ internal partial class CFish : CBaseAnimGraph, IFish {
   public CFish(nint handle) : base(handle) {
   }
 
-  public CHandle<IFishPool> Pool {
-    get => new CHandle<CFishPool>(_Handle + Schema.GetOffset(0xC43C8434366BF523));
+  public ref CHandle<CFishPool> Pool {
+    get => ref _Handle.AsRef<CHandle<CFishPool>>(Schema.GetOffset(0xC43C8434366BF523));
   }
   public ref uint Id {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xC43C8434B4B6E980));

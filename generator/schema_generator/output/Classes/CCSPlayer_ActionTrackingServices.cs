@@ -9,8 +9,8 @@ internal partial class CCSPlayer_ActionTrackingServices : CPlayerPawnComponent, 
   public CCSPlayer_ActionTrackingServices(nint handle) : base(handle) {
   }
 
-  public CHandle<IBasePlayerWeapon> LastWeaponBeforeC4AutoSwitch {
-    get => new CHandle<CBasePlayerWeapon>(_Handle + Schema.GetOffset(0xC890019D6687BAC0));
+  public ref CHandle<CBasePlayerWeapon> LastWeaponBeforeC4AutoSwitch {
+    get => ref _Handle.AsRef<CHandle<CBasePlayerWeapon>>(Schema.GetOffset(0xC890019D6687BAC0));
   }
 
   public void IsRescuingUpdated() {

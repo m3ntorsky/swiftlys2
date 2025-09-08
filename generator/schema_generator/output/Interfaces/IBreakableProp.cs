@@ -26,7 +26,7 @@ public partial interface IBreakableProp : IBaseProp {
   
   public ref Vector DefBurstOffset { get; }
   
-  public CHandle<IBaseEntity> Breaker { get; }
+  public ref CHandle<CBaseEntity> Breaker { get; }
   
   public ref PerformanceMode_t PerformanceMode { get; }
   
@@ -54,13 +54,13 @@ public partial interface IBreakableProp : IBaseProp {
   
   public ref CUtlSymbolLarge ExplosionModifier { get; }
   
-  public CHandle<IBasePlayerPawn> PhysicsAttacker { get; }
+  public ref CHandle<CBasePlayerPawn> PhysicsAttacker { get; }
   
   public IGameTime_t LastPhysicsInfluenceTime { get; }
   
   public ref float DefaultFadeScale { get; }
   
-  public CHandle<IBaseEntity> LastAttacker { get; }
+  public ref CHandle<CBaseEntity> LastAttacker { get; }
   
   public ref CUtlSymbolLarge PuntSound { get; }
   

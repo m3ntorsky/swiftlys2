@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface Ifogplayerparams_t : ISchemaClass {
 
-  public CHandle<IFogController> Ctrl { get; }
+  public ref CHandle<CFogController> Ctrl { get; }
   
   public ref float TransitionTime { get; }
   

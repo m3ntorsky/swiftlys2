@@ -16,12 +16,12 @@ public partial interface ICommentarySystem : ISchemaClass {
   
   public ref bool IsFirstSpawnGroupToLoad { get; }
   
-  public CHandle<IPointCommentaryNode> CurrentNode { get; }
+  public ref CHandle<CPointCommentaryNode> CurrentNode { get; }
   
-  public CHandle<IPointCommentaryNode> ActiveCommentaryNode { get; }
+  public ref CHandle<CPointCommentaryNode> ActiveCommentaryNode { get; }
   
-  public CHandle<IPointCommentaryNode> LastCommentaryNode { get; }
+  public ref CHandle<CPointCommentaryNode> LastCommentaryNode { get; }
   
-  public ref CUtlVector Nodes { get; }
+  public ref CUtlVector<CHandle<CPointCommentaryNode>> Nodes { get; }
   
 }

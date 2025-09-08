@@ -18,8 +18,8 @@ internal partial class PermModelExtPart_t : SchemaClass, IPermModelExtPart_t {
   public ref int Parent {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xCA30851D0AABB9D1));
   }
-  public CStrongHandle<IInfoForResourceTypeCModel> RefModel {
-    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0xCA30851D63E6E3DF));
+  public ref CStrongHandle<InfoForResourceTypeCModel> RefModel {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0xCA30851D63E6E3DF));
   }
 
 

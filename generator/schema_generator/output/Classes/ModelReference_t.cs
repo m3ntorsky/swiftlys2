@@ -9,8 +9,8 @@ internal partial class ModelReference_t : SchemaClass, IModelReference_t {
   public ModelReference_t(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeCModel> Model {
-    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0x72F202EC1CD79E7A));
+  public ref CStrongHandle<InfoForResourceTypeCModel> Model {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0x72F202EC1CD79E7A));
   }
   public ref float RelativeProbabilityOfSpawn {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x72F202ECDBFCAD1E));

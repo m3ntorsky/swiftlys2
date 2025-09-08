@@ -6,7 +6,7 @@ public partial interface IFuncMover : IBaseModelEntity {
 
   public ref CUtlSymbolLarge PathName { get; }
   
-  public CHandle<IPathMover> PathMover { get; }
+  public ref CHandle<CPathMover> PathMover { get; }
   
   public ref CUtlSymbolLarge PathNodeStart { get; }
   
@@ -44,7 +44,7 @@ public partial interface IFuncMover : IBaseModelEntity {
   
   public IGameTime_t TimeMovementStop { get; }
   
-  public CHandle<IMoverPathNode> StopAtNode { get; }
+  public ref CHandle<CMoverPathNode> StopAtNode { get; }
   
   public ref float PathLocationToBeginStop { get; }
   
@@ -86,7 +86,7 @@ public partial interface IFuncMover : IBaseModelEntity {
   
   public ref CUtlSymbolLarge OrientationMatchEntityName { get; }
   
-  public CHandle<IBaseEntity> OrientationMatchEntity { get; }
+  public ref CHandle<CBaseEntity> OrientationMatchEntity { get; }
   
   public ref float TimeToTraverseToNextNode { get; }
   
@@ -108,7 +108,7 @@ public partial interface IFuncMover : IBaseModelEntity {
   
   public ref bool IsVerboseLogging { get; }
   
-  public CHandle<IBaseEntity> FollowEntity { get; }
+  public ref CHandle<CBaseEntity> FollowEntity { get; }
   
   public ref float FollowDistance { get; }
   
@@ -120,7 +120,7 @@ public partial interface IFuncMover : IBaseModelEntity {
   
   public ref CUtlSymbolLarge StrOrientationFaceEntityName { get; }
   
-  public CHandle<IBaseEntity> OrientationFaceEntity { get; }
+  public ref CHandle<CBaseEntity> OrientationFaceEntity { get; }
   
   public IEntityIOOutput OnStart { get; }
   

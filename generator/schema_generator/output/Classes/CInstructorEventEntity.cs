@@ -15,8 +15,8 @@ internal partial class CInstructorEventEntity : CPointEntity, IInstructorEventEn
   public ref CUtlSymbolLarge HintTargetEntity {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6DE662880024C1BE));
   }
-  public CHandle<IBasePlayerPawn> TargetPlayer {
-    get => new CHandle<CBasePlayerPawn>(_Handle + Schema.GetOffset(0x6DE66288BA425153));
+  public ref CHandle<CBasePlayerPawn> TargetPlayer {
+    get => ref _Handle.AsRef<CHandle<CBasePlayerPawn>>(Schema.GetOffset(0x6DE66288BA425153));
   }
 
 

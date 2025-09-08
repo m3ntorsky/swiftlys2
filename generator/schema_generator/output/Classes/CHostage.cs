@@ -33,8 +33,8 @@ internal partial class CHostage : CHostageExpresserShim, IHostage {
   public ref bool Remove {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1A122BDFDE0A6D5D));
   }
-  public CHandle<ICSPlayerPawnBase> LastLeader {
-    get => new CHandle<CCSPlayerPawnBase>(_Handle + Schema.GetOffset(0x1A122BDF1598AC08));
+  public ref CHandle<CCSPlayerPawnBase> LastLeader {
+    get => ref _Handle.AsRef<CHandle<CCSPlayerPawnBase>>(Schema.GetOffset(0x1A122BDF1598AC08));
   }
   public ref bool HasBeenUsed {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1A122BDF4B85A934));

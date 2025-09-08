@@ -45,11 +45,11 @@ internal partial class SceneObject_t : SchemaClass, ISceneObject_t {
   public ref int LightProbeVolumePrecomputedHandshake {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD71D9993C6233022));
   }
-  public CStrongHandle<IInfoForResourceTypeCModel> RenderableModel {
-    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0xD71D99932AEEFA82));
+  public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0xD71D99932AEEFA82));
   }
-  public CStrongHandle<IInfoForResourceTypeCRenderMesh> Renderable {
-    get => new CStrongHandle<InfoForResourceTypeCRenderMesh>(_Handle + Schema.GetOffset(0xD71D9993972EF84D));
+  public ref CStrongHandle<InfoForResourceTypeCRenderMesh> Renderable {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCRenderMesh>>(Schema.GetOffset(0xD71D9993972EF84D));
   }
 
 

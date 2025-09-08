@@ -24,8 +24,8 @@ internal partial class CCSPlayerPawn : CCSPlayerPawnBase, ICSPlayerPawn {
   public ref bool InHostageResetZone {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB5C3C71CC));
   }
-  public ref CUtlVector TouchingBuyZones {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC7614AABD244D3EF));
+  public ref CUtlVector<CHandle<CBaseEntity>> TouchingBuyZones {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(Schema.GetOffset(0xC7614AABD244D3EF));
   }
   public ref bool WasInBuyZone {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABDE7A51C9));

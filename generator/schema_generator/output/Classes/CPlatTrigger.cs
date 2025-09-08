@@ -9,8 +9,8 @@ internal partial class CPlatTrigger : CBaseModelEntity, IPlatTrigger {
   public CPlatTrigger(nint handle) : base(handle) {
   }
 
-  public CHandle<IFuncPlat> Platform {
-    get => new CHandle<CFuncPlat>(_Handle + Schema.GetOffset(0xE5D76A656D16AFF0));
+  public ref CHandle<CFuncPlat> Platform {
+    get => ref _Handle.AsRef<CHandle<CFuncPlat>>(Schema.GetOffset(0xE5D76A656D16AFF0));
   }
 
 

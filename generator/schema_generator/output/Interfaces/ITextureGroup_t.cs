@@ -8,7 +8,7 @@ public partial interface ITextureGroup_t : ISchemaClass {
   
   public ref bool ReplaceTextureWithGradient { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> Texture { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Texture { get; }
   
   public ISchemaUntypedField Gradient { get; }
   

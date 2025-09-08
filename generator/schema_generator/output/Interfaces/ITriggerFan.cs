@@ -20,7 +20,7 @@ public partial interface ITriggerFan : IBaseTrigger {
   
   public ref Quaternion NoiseDelta { get; }
   
-  public CHandle<IInfoFan> InfoFan { get; }
+  public ref CHandle<CInfoFan> InfoFan { get; }
   
   public ref float Force { get; }
   

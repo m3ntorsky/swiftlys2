@@ -24,8 +24,8 @@ internal partial class CVoiceContainerRandomSampler : CVoiceContainerBase, IVoic
   public ref int NumDelayVariations {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDCA93E5C9356280C));
   }
-  public ref CUtlVector GrainResources {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xDCA93E5C95692BB9));
+  public ref CUtlVector<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>> GrainResources {
+    get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>>>(Schema.GetOffset(0xDCA93E5C95692BB9));
   }
 
 

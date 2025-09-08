@@ -28,8 +28,8 @@ public partial interface ISceneObject_t : ISchemaClass {
   
   public ref int LightProbeVolumePrecomputedHandshake { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCModel> RenderableModel { get; }
+  public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCRenderMesh> Renderable { get; }
+  public ref CStrongHandle<InfoForResourceTypeCRenderMesh> Renderable { get; }
   
 }

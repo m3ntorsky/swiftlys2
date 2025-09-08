@@ -57,8 +57,8 @@ internal partial class CMaterialDrawDescriptor : SchemaClass, IMaterialDrawDescr
   public IRenderBufferBinding MeshletPackedIVB {
     get => new CRenderBufferBinding(_Handle + Schema.GetOffset(0xE7C21000015D34E4));
   }
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material {
-    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0xE7C2100034ADFC00));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0xE7C2100034ADFC00));
   }
 
 

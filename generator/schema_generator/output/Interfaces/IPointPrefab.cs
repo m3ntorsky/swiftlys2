@@ -14,6 +14,6 @@ public partial interface IPointPrefab : IServerOnlyPointEntity {
   
   public ref bool LoadDynamic { get; }
   
-  public CHandle<IPointPrefab> AssociatedRelayEntity { get; }
+  public ref CHandle<CPointPrefab> AssociatedRelayEntity { get; }
   
 }

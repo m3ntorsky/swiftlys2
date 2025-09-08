@@ -36,6 +36,6 @@ public partial interface IPropDoorRotating : IBasePropDoor {
   
   public ref bool AjarDoorShouldntAlwaysOpen { get; }
   
-  public CHandle<IEntityBlocker> EntityBlocker { get; }
+  public ref CHandle<CEntityBlocker> EntityBlocker { get; }
   
 }

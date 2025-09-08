@@ -10,7 +10,7 @@ public partial interface IKeepUpright : IPointEntity {
   
   public ref CUtlSymbolLarge NameAttach { get; }
   
-  public CHandle<IBaseEntity> AttachedObject { get; }
+  public ref CHandle<CBaseEntity> AttachedObject { get; }
   
   public ref float AngularLimit { get; }
   

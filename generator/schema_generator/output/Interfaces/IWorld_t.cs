@@ -10,6 +10,6 @@ public partial interface IWorld_t : ISchemaClass {
   
   public IBakedLightingInfo_t WorldLightingInfo { get; }
   
-  public ref CUtlVector EntityLumps { get; }
+  public ref CUtlVector<CStrongHandle<opyable<InfoForResourceTypeCEntityLump>> EntityLumps { get; }
   
 }

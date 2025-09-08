@@ -9,14 +9,14 @@ internal partial class CFuncTrain : CBasePlatTrain, IFuncTrain {
   public CFuncTrain(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> CurrentTarget {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xAAD8EE8EBD175911));
+  public ref CHandle<CBaseEntity> CurrentTarget {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xAAD8EE8EBD175911));
   }
   public ref bool Activated {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xAAD8EE8E4337A09C));
   }
-  public CHandle<IBaseEntity> Enemy {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xAAD8EE8E430EC2D5));
+  public ref CHandle<CBaseEntity> Enemy {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xAAD8EE8E430EC2D5));
   }
   public ref float BlockDamage {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xAAD8EE8EA5348091));

@@ -6,11 +6,11 @@ public partial interface IDecalInstance : ISchemaClass {
 
   public ref CGlobalSymbol DecalGroup { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
   
   public ref CUtlStringToken SequenceName { get; }
   
-  public CHandle<IBaseEntity> Entity { get; }
+  public ref CHandle<CBaseEntity> Entity { get; }
   
   public ref int BoneIndex { get; }
   

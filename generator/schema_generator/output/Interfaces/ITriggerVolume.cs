@@ -6,6 +6,6 @@ public partial interface ITriggerVolume : IBaseModelEntity {
 
   public ref CUtlSymbolLarge FilterName { get; }
   
-  public CHandle<IBaseFilter> Filter { get; }
+  public ref CHandle<CBaseFilter> Filter { get; }
   
 }

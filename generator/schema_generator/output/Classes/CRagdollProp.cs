@@ -24,14 +24,14 @@ internal partial class CRagdollProp : CBaseAnimGraph, IRagdollProp {
   public ref bool FirstCollisionAfterLaunch {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9505BA78C9D93EAC));
   }
-  public CHandle<IBaseEntity> DamageEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x9505BA784C4C28C5));
+  public ref CHandle<CBaseEntity> DamageEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x9505BA784C4C28C5));
   }
-  public CHandle<IBaseEntity> Killer {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x9505BA780F088B1C));
+  public ref CHandle<CBaseEntity> Killer {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x9505BA780F088B1C));
   }
-  public CHandle<IBasePlayerPawn> PhysicsAttacker {
-    get => new CHandle<CBasePlayerPawn>(_Handle + Schema.GetOffset(0x9505BA787A5EB877));
+  public ref CHandle<CBasePlayerPawn> PhysicsAttacker {
+    get => ref _Handle.AsRef<CHandle<CBasePlayerPawn>>(Schema.GetOffset(0x9505BA787A5EB877));
   }
   public IGameTime_t LastPhysicsInfluenceTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x9505BA785B5C0E32));

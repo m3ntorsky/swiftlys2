@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFish : IBaseAnimGraph {
 
-  public CHandle<IFishPool> Pool { get; }
+  public ref CHandle<CFishPool> Pool { get; }
   
   public ref uint Id { get; }
   

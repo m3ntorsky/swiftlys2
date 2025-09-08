@@ -4,9 +4,9 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITankTrainAI : IPointEntity {
 
-  public CHandle<IFuncTrackTrain> Train { get; }
+  public ref CHandle<CFuncTrackTrain> Train { get; }
   
-  public CHandle<IBaseEntity> TargetEntity { get; }
+  public ref CHandle<CBaseEntity> TargetEntity { get; }
   
   public ref int SoundPlaying { get; }
   

@@ -4,18 +4,18 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderStatusEffect : IParticleFunctionRenderer {
 
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureColorWarp { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureColorWarp { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureDetail2 { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureDetail2 { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureDiffuseWarp { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureDiffuseWarp { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureFresnelColorWarp { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureFresnelColorWarp { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureFresnelWarp { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureFresnelWarp { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureSpecularWarp { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureSpecularWarp { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> TextureEnvMap { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureEnvMap { get; }
   
 }

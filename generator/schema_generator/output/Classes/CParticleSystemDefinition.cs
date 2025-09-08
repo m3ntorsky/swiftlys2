@@ -99,11 +99,11 @@ internal partial class CParticleSystemDefinition : IParticleSystemDefinition, IP
   public ref int SnapshotControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDA4320E0192638EC));
   }
-  public CStrongHandle<IInfoForResourceTypeIParticleSnapshot> Snapshot {
-    get => new CStrongHandle<InfoForResourceTypeIParticleSnapshot>(_Handle + Schema.GetOffset(0xDA4320E0FB69CF2F));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSnapshot> Snapshot {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSnapshot>>(Schema.GetOffset(0xDA4320E0FB69CF2F));
   }
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> CullReplacementName {
-    get => new CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>(_Handle + Schema.GetOffset(0xDA4320E0F766ED25));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> CullReplacementName {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xDA4320E0F766ED25));
   }
   public ref float CullRadius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDA4320E0E52D3471));
@@ -114,17 +114,17 @@ internal partial class CParticleSystemDefinition : IParticleSystemDefinition, IP
   public ref int CullControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDA4320E0E0BBD6A4));
   }
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> Fallback {
-    get => new CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>(_Handle + Schema.GetOffset(0xDA4320E0E0481D45));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> Fallback {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xDA4320E0E0481D45));
   }
   public ref int FallbackMaxCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDA4320E097AF336E));
   }
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> LowViolenceDef {
-    get => new CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>(_Handle + Schema.GetOffset(0xDA4320E012A2B819));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> LowViolenceDef {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xDA4320E012A2B819));
   }
-  public CStrongHandle<IInfoForResourceTypeIParticleSystemDefinition> ReferenceReplacement {
-    get => new CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>(_Handle + Schema.GetOffset(0xDA4320E0676869A0));
+  public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ReferenceReplacement {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xDA4320E0676869A0));
   }
   public ref float PreSimulationTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDA4320E0353642D6));

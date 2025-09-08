@@ -6,7 +6,7 @@ public partial interface ISoundContainerReferenceArray : ISchemaClass {
 
   public ref bool UseReference { get; }
   
-  public ref CUtlVector Sounds { get; }
+  public ref CUtlVector<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>> Sounds { get; }
   
   public ref CUtlVector<PointerTo<CVoiceContainerBase>> Sounds { get; }
   

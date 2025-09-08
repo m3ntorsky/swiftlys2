@@ -10,6 +10,6 @@ public partial interface ISummaryTakeDamageInfo_t : ISchemaClass {
   
   public ITakeDamageResult Result { get; }
   
-  public CHandle<IBaseEntity> Target { get; }
+  public ref CHandle<CBaseEntity> Target { get; }
   
 }

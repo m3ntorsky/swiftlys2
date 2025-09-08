@@ -30,8 +30,8 @@ internal partial class ClutterSceneObject_t : SchemaClass, IClutterSceneObject_t
   public ref CUtlVector Tiles {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xAE8D15361FD2CAEE));
   }
-  public CStrongHandle<IInfoForResourceTypeCModel> RenderableModel {
-    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0xAE8D15362AEEFA82));
+  public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0xAE8D15362AEEFA82));
   }
   public ref CUtlStringToken MaterialGroup {
     get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0xAE8D15362B778F03));

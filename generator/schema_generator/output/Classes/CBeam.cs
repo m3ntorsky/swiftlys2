@@ -15,8 +15,8 @@ internal partial class CBeam : CBaseModelEntity, IBeam {
   public ref float Damage {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4BCF3CE5DC60E53E));
   }
-  public CHandle<IBaseEntity> EndEntity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x4BCF3CE561070A9F));
+  public ref CHandle<CBaseEntity> EndEntity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x4BCF3CE561070A9F));
   }
   public ref int DissolveType {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4BCF3CE579AB525E));

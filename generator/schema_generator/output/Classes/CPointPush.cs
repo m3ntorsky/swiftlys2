@@ -27,8 +27,8 @@ internal partial class CPointPush : CPointEntity, IPointPush {
   public ref CUtlSymbolLarge FilterName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x282695C042E1968C));
   }
-  public CHandle<IBaseFilter> Filter {
-    get => new CHandle<CBaseFilter>(_Handle + Schema.GetOffset(0x282695C045D9E0B1));
+  public ref CHandle<CBaseFilter> Filter {
+    get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0x282695C045D9E0B1));
   }
 
 

@@ -30,9 +30,9 @@ public partial interface IHostage : IHostageExpresserShim {
   
   public ref int HostageState { get; }
   
-  public CHandle<IBaseEntity> Leader { get; }
+  public ref CHandle<CBaseEntity> Leader { get; }
   
-  public CHandle<ICSPlayerPawnBase> LastLeader { get; }
+  public ref CHandle<CCSPlayerPawnBase> LastLeader { get; }
   
   public ICountdownTimer ReuseTimer { get; }
   
@@ -60,7 +60,7 @@ public partial interface IHostage : IHostageExpresserShim {
   
   public ref bool HandsHaveBeenCut { get; }
   
-  public CHandle<ICSPlayerPawn> HostageGrabber { get; }
+  public ref CHandle<CCSPlayerPawn> HostageGrabber { get; }
   
   public IGameTime_t LastGrabTime { get; }
   

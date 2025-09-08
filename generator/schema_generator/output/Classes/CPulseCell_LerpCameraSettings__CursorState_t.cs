@@ -9,8 +9,8 @@ internal partial class CPulseCell_LerpCameraSettings__CursorState_t : CPulseCell
   public CPulseCell_LerpCameraSettings__CursorState_t(nint handle) : base(handle) {
   }
 
-  public CHandle<IPointCamera> Camera {
-    get => new CHandle<CPointCamera>(_Handle + Schema.GetOffset(0x84AB53FD538EFB98));
+  public ref CHandle<CPointCamera> Camera {
+    get => ref _Handle.AsRef<CHandle<CPointCamera>>(Schema.GetOffset(0x84AB53FD538EFB98));
   }
   public IPointCameraSettings_t OverlaidStart {
     get => new PointCameraSettings_t(_Handle + Schema.GetOffset(0x84AB53FD54E9A76F));

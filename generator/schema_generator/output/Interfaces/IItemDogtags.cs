@@ -4,8 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IItemDogtags : IItem {
 
-  public CHandle<ICSPlayerPawn> OwningPlayer { get; }
+  public ref CHandle<CCSPlayerPawn> OwningPlayer { get; }
   
-  public CHandle<ICSPlayerPawn> KillingPlayer { get; }
+  public ref CHandle<CCSPlayerPawn> KillingPlayer { get; }
   
 }

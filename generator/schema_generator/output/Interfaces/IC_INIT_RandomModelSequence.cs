@@ -8,6 +8,6 @@ public partial interface IC_INIT_RandomModelSequence : IParticleFunctionInitiali
   
   public ISchemaFixedString SequenceName { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCModel> Model { get; }
+  public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }
   
 }

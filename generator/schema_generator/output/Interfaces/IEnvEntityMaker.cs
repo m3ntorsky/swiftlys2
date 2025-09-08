@@ -8,9 +8,9 @@ public partial interface IEnvEntityMaker : IPointEntity {
   
   public ref Vector EntityMaxs { get; }
   
-  public CHandle<IBaseEntity> CurrentInstance { get; }
+  public ref CHandle<CBaseEntity> CurrentInstance { get; }
   
-  public CHandle<IBaseEntity> CurrentBlocker { get; }
+  public ref CHandle<CBaseEntity> CurrentBlocker { get; }
   
   public ref Vector BlockerOrigin { get; }
   

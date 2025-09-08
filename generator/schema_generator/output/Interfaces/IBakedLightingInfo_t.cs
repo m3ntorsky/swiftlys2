@@ -22,7 +22,7 @@ public partial interface IBakedLightingInfo_t : ISchemaClass {
   
   public ref byte VradQuality { get; }
   
-  public ref CUtlVector LightMaps { get; }
+  public ref CUtlVector<CStrongHandle<InfoForResourceTypeCTextureBase>> LightMaps { get; }
   
   public ref CUtlVector BakedShadows { get; }
   

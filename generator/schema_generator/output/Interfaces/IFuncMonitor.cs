@@ -14,7 +14,7 @@ public partial interface IFuncMonitor : IFuncBrush {
   
   public ref CUtlString BrushModelName { get; }
   
-  public CHandle<IBaseEntity> TargetCamera { get; }
+  public ref CHandle<CBaseEntity> TargetCamera { get; }
   
   public ref bool Enabled { get; }
   

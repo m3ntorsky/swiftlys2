@@ -14,6 +14,6 @@ public partial interface IVoiceContainerRandomSampler : IVoiceContainerBase {
   
   public ref int NumDelayVariations { get; }
   
-  public ref CUtlVector GrainResources { get; }
+  public ref CUtlVector<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>> GrainResources { get; }
   
 }

@@ -32,7 +32,7 @@ public partial interface IC_OP_RenderDeferredLight : IParticleFunctionRenderer {
   
   public IParticleAttributeIndex_t AlphaTestSharpnessField { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> Texture { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> Texture { get; }
   
   public ref int HSVShiftControlPoint { get; }
   

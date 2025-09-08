@@ -48,8 +48,8 @@ internal partial class CPointValueRemapper : CBaseEntity, IPointValueRemapper {
   public ref Vector PreviousTestPoint {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xA8CB433DBD7D11C2));
   }
-  public CHandle<IBasePlayerPawn> UsingPlayer {
-    get => new CHandle<CBasePlayerPawn>(_Handle + Schema.GetOffset(0xA8CB433D048D4614));
+  public ref CHandle<CBasePlayerPawn> UsingPlayer {
+    get => ref _Handle.AsRef<CHandle<CBasePlayerPawn>>(Schema.GetOffset(0xA8CB433D048D4614));
   }
   public ref float CustomOutputValue {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8CB433D952E20FE));

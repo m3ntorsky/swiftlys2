@@ -6,7 +6,7 @@ public partial interface IFuncLadder : IBaseModelEntity {
 
   public ref Vector LadderDir { get; }
   
-  public ref CUtlVector Dismounts { get; }
+  public ref CUtlVector<CHandle<CInfoLadderDismount>> Dismounts { get; }
   
   public ref Vector LocalTop { get; }
   

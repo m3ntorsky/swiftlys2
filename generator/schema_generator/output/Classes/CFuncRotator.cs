@@ -9,8 +9,8 @@ internal partial class CFuncRotator : CBaseModelEntity, IFuncRotator {
   public CFuncRotator(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> RotatorTarget {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x73DA1BB9F324C519));
+  public ref CHandle<CBaseEntity> RotatorTarget {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x73DA1BB9F324C519));
   }
   public ref bool IsRotating {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x73DA1BB94C9E159D));

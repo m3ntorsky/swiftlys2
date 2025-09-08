@@ -9,8 +9,8 @@ internal partial class ParticleNode_t : SchemaClass, IParticleNode_t {
   public ParticleNode_t(nint handle) : base(handle) {
   }
 
-  public CHandle<IBaseEntity> Entity {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0xBECF421C6EBADCB0));
+  public ref CHandle<CBaseEntity> Entity {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xBECF421C6EBADCB0));
   }
   public IParticleIndex_t Index {
     get => new ParticleIndex_t(_Handle + Schema.GetOffset(0xBECF421C8F270140));

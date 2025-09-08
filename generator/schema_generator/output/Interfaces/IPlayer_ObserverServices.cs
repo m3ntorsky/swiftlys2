@@ -6,7 +6,7 @@ public partial interface IPlayer_ObserverServices : IPlayerPawnComponent {
 
   public ref byte ObserverMode { get; }
   
-  public CHandle<IBaseEntity> ObserverTarget { get; }
+  public ref CHandle<CBaseEntity> ObserverTarget { get; }
   
   public ref ObserverMode_t ObserverLastMode { get; }
   

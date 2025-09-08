@@ -26,7 +26,7 @@ public partial interface IChicken : IDynamicProp {
   
   public ref float TurnRate { get; }
   
-  public CHandle<IBaseEntity> FleeFrom { get; }
+  public ref CHandle<CBaseEntity> FleeFrom { get; }
   
   public ICountdownTimer MoveRateThrottleTimer { get; }
   
@@ -38,7 +38,7 @@ public partial interface IChicken : IDynamicProp {
   
   public ref bool JumpedThisFrame { get; }
   
-  public CHandle<ICSPlayerPawn> Leader { get; }
+  public ref CHandle<CCSPlayerPawn> Leader { get; }
   
   public ICountdownTimer ReuseTimer { get; }
   

@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_LerpCameraSettings__CursorState_t : IPulseCell_BaseLerp::CursorState_t {
 
-  public CHandle<IPointCamera> Camera { get; }
+  public ref CHandle<CPointCamera> Camera { get; }
   
   public IPointCameraSettings_t OverlaidStart { get; }
   

@@ -30,11 +30,11 @@ public partial interface IEnvCubemapFog : IBaseEntity {
   
   public ref int CubemapSourceType { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> SkyMaterial { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> SkyMaterial { get; }
   
   public ref CUtlSymbolLarge SkyEntity { get; }
   
-  public CStrongHandle<IInfoForResourceTypeCTextureBase> FogCubemapTexture { get; }
+  public ref CStrongHandle<InfoForResourceTypeCTextureBase> FogCubemapTexture { get; }
   
   public ref bool HasHeightFogEnd { get; }
   

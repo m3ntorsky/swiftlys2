@@ -21,8 +21,8 @@ internal partial class C_OP_RenderCables : CParticleFunctionRenderer, IC_OP_Rend
   public ref ParticleColorBlendType_t ColorBlendType {
     get => ref _Handle.AsRef<ParticleColorBlendType_t>(Schema.GetOffset(0x16498877DBC6EFCF));
   }
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> Material {
-    get => new CStrongHandle<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0x16498877888CE42E));
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0x16498877888CE42E));
   }
   public ref TextureRepetitionMode_t TextureRepetitionMode {
     get => ref _Handle.AsRef<TextureRepetitionMode_t>(Schema.GetOffset(0x164988777CB37DBC));

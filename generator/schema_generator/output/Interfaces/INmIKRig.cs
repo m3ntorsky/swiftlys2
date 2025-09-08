@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmIKRig : ISchemaClass {
 
-  public CStrongHandle<IInfoForResourceTypeCNmSkeleton> Skeleton { get; }
+  public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton { get; }
   
   public ref CUtlVector Bodies { get; }
   

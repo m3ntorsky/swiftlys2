@@ -6,7 +6,7 @@ public partial interface IGunTarget : IBaseToggle {
 
   public ref bool On { get; }
   
-  public CHandle<IBaseEntity> TargetEnt { get; }
+  public ref CHandle<CBaseEntity> TargetEnt { get; }
   
   public IEntityIOOutput OnDeath { get; }
   

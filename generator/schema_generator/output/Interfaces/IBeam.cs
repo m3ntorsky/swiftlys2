@@ -14,15 +14,15 @@ public partial interface IBeam : IBaseModelEntity {
   
   public ref byte NumBeamEnts { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> BaseMaterial { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> BaseMaterial { get; }
   
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> HaloIndex { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> HaloIndex { get; }
   
   public ref BeamType_t BeamType { get; }
   
   public ref uint BeamFlags { get; }
   
-  public CHandle<IBaseEntity> AttachEntity { get; }
+  public ref CHandle<CBaseEntity> AttachEntity { get; }
   
   public IAttachmentHandle_t AttachIndex { get; }
   
@@ -48,7 +48,7 @@ public partial interface IBeam : IBaseModelEntity {
   
   public ref Vector EndPos { get; }
   
-  public CHandle<IBaseEntity> EndEntity { get; }
+  public ref CHandle<CBaseEntity> EndEntity { get; }
   
   public ref int DissolveType { get; }
   

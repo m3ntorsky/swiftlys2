@@ -15,8 +15,8 @@ internal partial class CRenderGroom : SchemaClass, IRenderGroom {
   public ref CUtlVector<uint> HairPositionOffsets {
     get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0xC3F698B40BA9FF3E));
   }
-  public CStrongHandle<Iopyable<InfoForResourceTypeIMaterial2> SimParamsMat {
-    get => new CStrongHandle<opyable<InfoForResourceTypeIMaterial2>(_Handle + Schema.GetOffset(0xC3F698B4E9EE5886));
+  public ref CStrongHandle<opyable<InfoForResourceTypeIMaterial2> SimParamsMat {
+    get => ref _Handle.AsRef<CStrongHandle<opyable<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0xC3F698B4E9EE5886));
   }
   public ref CUtlVector<int> StrandSegmentCountHist {
     get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xC3F698B4D2E373B9));

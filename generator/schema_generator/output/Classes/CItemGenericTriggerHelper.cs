@@ -9,8 +9,8 @@ internal partial class CItemGenericTriggerHelper : CBaseModelEntity, IItemGeneri
   public CItemGenericTriggerHelper(nint handle) : base(handle) {
   }
 
-  public CHandle<IItemGeneric> ParentItem {
-    get => new CHandle<CItemGeneric>(_Handle + Schema.GetOffset(0x9E59EC5AEA0B7250));
+  public ref CHandle<CItemGeneric> ParentItem {
+    get => ref _Handle.AsRef<CHandle<CItemGeneric>>(Schema.GetOffset(0x9E59EC5AEA0B7250));
   }
 
 

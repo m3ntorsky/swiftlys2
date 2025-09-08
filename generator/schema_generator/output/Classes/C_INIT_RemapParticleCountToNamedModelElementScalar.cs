@@ -9,8 +9,8 @@ internal partial class C_INIT_RemapParticleCountToNamedModelElementScalar : C_IN
   public C_INIT_RemapParticleCountToNamedModelElementScalar(nint handle) : base(handle) {
   }
 
-  public CStrongHandle<IInfoForResourceTypeCModel> Model {
-    get => new CStrongHandle<InfoForResourceTypeCModel>(_Handle + Schema.GetOffset(0xB011C761E100C814));
+  public ref CStrongHandle<InfoForResourceTypeCModel> Model {
+    get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0xB011C761E100C814));
   }
   public ref CUtlString OutputMinName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB011C761CF5C20FB));

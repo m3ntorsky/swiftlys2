@@ -14,7 +14,7 @@ public partial interface IRagdollProp : IBaseAnimGraph {
   
   public ref CUtlVector<QAngle> RagAngles { get; }
   
-  public CHandle<IBaseEntity> RagdollSource { get; }
+  public ref CHandle<CBaseEntity> RagdollSource { get; }
   
   public ref uint LastUpdateTickCount { get; }
   
@@ -22,11 +22,11 @@ public partial interface IRagdollProp : IBaseAnimGraph {
   
   public ref bool FirstCollisionAfterLaunch { get; }
   
-  public CHandle<IBaseEntity> DamageEntity { get; }
+  public ref CHandle<CBaseEntity> DamageEntity { get; }
   
-  public CHandle<IBaseEntity> Killer { get; }
+  public ref CHandle<CBaseEntity> Killer { get; }
   
-  public CHandle<IBasePlayerPawn> PhysicsAttacker { get; }
+  public ref CHandle<CBasePlayerPawn> PhysicsAttacker { get; }
   
   public IGameTime_t LastPhysicsInfluenceTime { get; }
   

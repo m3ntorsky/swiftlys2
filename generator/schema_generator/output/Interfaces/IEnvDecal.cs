@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvDecal : IBaseModelEntity {
 
-  public CStrongHandle<IInfoForResourceTypeIMaterial2> DecalMaterial { get; }
+  public ref CStrongHandle<InfoForResourceTypeIMaterial2> DecalMaterial { get; }
   
   public ref float Width { get; }
   

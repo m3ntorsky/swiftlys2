@@ -14,9 +14,9 @@ public partial interface IPointValueRemapper : IBaseEntity {
   
   public ref CUtlSymbolLarge RemapLineEndName { get; }
   
-  public CHandle<IBaseEntity> RemapLineStart { get; }
+  public ref CHandle<CBaseEntity> RemapLineStart { get; }
   
-  public CHandle<IBaseEntity> RemapLineEnd { get; }
+  public ref CHandle<CBaseEntity> RemapLineEnd { get; }
   
   public ref float MaximumChangePerSecond { get; }
   
@@ -36,7 +36,7 @@ public partial interface IPointValueRemapper : IBaseEntity {
   
   public ref CUtlSymbolLarge OutputEntity4Name { get; }
   
-  public ref CUtlVector OutputEntities { get; }
+  public ref CUtlVector<CHandle<CBaseEntity>> OutputEntities { get; }
   
   public ref ValueRemapperHapticsType_t HapticsType { get; }
   
@@ -64,7 +64,7 @@ public partial interface IPointValueRemapper : IBaseEntity {
   
   public ref Vector PreviousTestPoint { get; }
   
-  public CHandle<IBasePlayerPawn> UsingPlayer { get; }
+  public ref CHandle<CBasePlayerPawn> UsingPlayer { get; }
   
   public ref float CustomOutputValue { get; }
   

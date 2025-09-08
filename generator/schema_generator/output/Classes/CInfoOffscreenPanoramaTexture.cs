@@ -12,8 +12,8 @@ internal partial class CInfoOffscreenPanoramaTexture : CPointEntity, IInfoOffscr
   public ref CUtlSymbolLarge TargetsName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x584660AF82C9ED45));
   }
-  public ref CUtlVector AdditionalTargetEntities {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x584660AFD38E792A));
+  public ref CUtlVector<CHandle<CBaseModelEntity>> AdditionalTargetEntities {
+    get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseModelEntity>>>(Schema.GetOffset(0x584660AFD38E792A));
   }
 
   public void DisabledUpdated() {

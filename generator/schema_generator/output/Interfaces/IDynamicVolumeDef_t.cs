@@ -4,9 +4,9 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDynamicVolumeDef_t : ISchemaClass {
 
-  public CHandle<IBaseEntity> Source { get; }
+  public ref CHandle<CBaseEntity> Source { get; }
   
-  public CHandle<IBaseEntity> Target { get; }
+  public ref CHandle<CBaseEntity> Target { get; }
   
   public ref int HullIdx { get; }
   

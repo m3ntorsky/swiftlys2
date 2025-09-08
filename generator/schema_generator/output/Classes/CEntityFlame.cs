@@ -24,8 +24,8 @@ internal partial class CEntityFlame : CBaseEntity, IEntityFlame {
   public IGameTime_t Lifetime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x386F199439B35564));
   }
-  public CHandle<IBaseEntity> Attacker {
-    get => new CHandle<CBaseEntity>(_Handle + Schema.GetOffset(0x386F199468573D54));
+  public ref CHandle<CBaseEntity> Attacker {
+    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x386F199468573D54));
   }
   public ref float DirectDamagePerSecond {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x386F199482A435AE));

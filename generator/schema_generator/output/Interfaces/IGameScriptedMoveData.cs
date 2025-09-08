@@ -38,6 +38,6 @@ public partial interface IGameScriptedMoveData : ISchemaClass {
   
   public ref QAngle Dst { get; }
   
-  public CHandle<IBaseEntity> DestEntity { get; }
+  public ref CHandle<CBaseEntity> DestEntity { get; }
   
 }

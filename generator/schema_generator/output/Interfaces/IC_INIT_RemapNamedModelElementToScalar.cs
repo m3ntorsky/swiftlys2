@@ -4,7 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_RemapNamedModelElementToScalar : IParticleFunctionInitializer {
 
-  public CStrongHandle<IInfoForResourceTypeCModel> Model { get; }
+  public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }
   
   public ref CUtlVector<CUtlString> Names { get; }
   
