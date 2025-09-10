@@ -36,6 +36,11 @@ public:
     virtual void Initialize() = 0;
     virtual void Shutdown() = 0;
 
+    virtual void QueryClientConvar(int playerid, std::string cvar_name) = 0;
+    virtual int AddQueryClientCvarCallback(std::function<void(int, std::string, std::string)> callback) = 0;
+    virtual void RemoveQueryClientCvarCallback(int callback_id) = 0;
+    virtual void OnClientQueryCvar(int playerid, std::string cvar_name, std::string cvar_value) = 0;
+
     virtual void CreateConvar(std::string cvar_name, EConVarType type, uint64_t flags, const char* help_message, ConvarValue defaultValue) = 0;
     virtual void DeleteConvar(std::string cvar_name) = 0;
     virtual bool ExistsConvar(std::string cvar_name) = 0;

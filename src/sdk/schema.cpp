@@ -107,8 +107,6 @@ void CSDKSchema::Load()
 
 	logger->Info("SDK", std::format("Finished loading {} SDK enums.\n", enums_count));
 
-	printf("%d\n", sizeof(NetworkStateChangedData));
-
 	WriteJSON("addons/swiftly/gamedata/cs2/sdk.json", sdkJson);
 }
 

@@ -23,6 +23,9 @@
 #include <igameevents.h>
 #include <sh_vector.h>
 
+#include <api/sdk/serversideclient.h>
+#include <public/networksystem/netmessage.h>
+
 class SwiftlyMMBridge : public ISmmPlugin, public IMetamodListener
 {
 public:
@@ -36,6 +39,8 @@ public:
     void* GetInterface(const std::string& interface_name);
 
     void SendConsoleMessage(const std::string& message);
+
+    bool OnConvarQuery(const CNetMessagePB<CCLCMsg_RespondCvarValue>& msg);
 
 public:
     const char* GetAuthor();

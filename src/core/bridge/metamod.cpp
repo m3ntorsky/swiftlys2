@@ -20,8 +20,13 @@
 #include "../entrypoint.h"
 
 #include <api/interfaces/manager.h>
+#include <memory/gamedata/manager.h>
 
 SwiftlyMMBridge g_MMPluginBridge;
+
+SH_DECL_HOOK1(CServerSideClientBase, ProcessRespondCvarValue, SH_NOATTRIB, 0, bool, const CNetMessagePB<CCLCMsg_RespondCvarValue>&);
+
+int OnConVarQueryID = -1;
 
 ICvar* g_pcVar = nullptr;
 
@@ -34,6 +39,10 @@ bool SwiftlyMMBridge::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxle
     GET_V_IFACE_CURRENT(GetEngineFactory, g_pCVar, ICvar, CVAR_INTERFACE_VERSION);
 
     META_CONVAR_REGISTER(FCVAR_RELEASE | FCVAR_SERVER_CAN_EXECUTE | FCVAR_CLIENT_CAN_EXECUTE | FCVAR_GAMEDLL);
+
+    DynLibUtils::CModule eng = DetermineModuleByLibrary("engine2");
+    void* serverSideClientVTable = eng.GetVirtualTableByName("CServerSideClient");
+    OnConVarQueryID = SH_ADD_DVPHOOK(CServerSideClientBase, ProcessRespondCvarValue, (CServerSideClientBase*)serverSideClientVTable, SH_MEMBER(this, &SwiftlyMMBridge::OnConvarQuery), false);
 
     return g_SwiftlyCore.Load(BridgeKind_t::Metamod);
 }
@@ -50,10 +59,12 @@ void SwiftlyMMBridge::AllPluginsLoaded()
 
 void SwiftlyMMBridge::OnLevelInit(char const* pMapName, char const* pMapEntities, char const* pOldLevel, char const* pLandmarkName, bool loadGame, bool background)
 {
+    g_SwiftlyCore.OnMapLoad(pMapName);
 }
 
 void SwiftlyMMBridge::OnLevelShutdown()
 {
+    g_SwiftlyCore.OnMapUnload();
 }
 
 void* SwiftlyMMBridge::GetInterface(const std::string& interface_name)
@@ -69,6 +80,16 @@ void* SwiftlyMMBridge::GetInterface(const std::string& interface_name)
 void SwiftlyMMBridge::SendConsoleMessage(const std::string& message)
 {
     g_SMAPI->ConPrint(message.c_str());
+}
+
+bool SwiftlyMMBridge::OnConvarQuery(const CNetMessagePB<CCLCMsg_RespondCvarValue>& msg)
+{
+    auto client = META_IFACEPTR(CServerSideClientBase);
+    auto cvarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+
+    cvarmanager->OnClientQueryCvar(client->GetPlayerSlot().Get(), msg.name(), msg.value());
+
+    RETURN_META_VALUE(MRES_IGNORED, true);
 }
 
 const char* SwiftlyMMBridge::GetAuthor()

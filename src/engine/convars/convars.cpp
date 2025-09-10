@@ -26,6 +26,7 @@
 
 #include <public/networksystem/inetworkmessages.h>
 #include <public/engine/igameeventsystem.h>
+#include <public/tier1/utldelegateimpl.h>
 
 #include <format>
 
@@ -41,14 +42,48 @@ std::map<std::string, void*> g_mCvars;
 uint64_t g_uQueryCallbacks = 0;
 std::map<uint64_t, std::function<void(int, std::string, std::string)>> g_mQueryCallbacks;
 
-IVFunctionHook* g_pRespondCvarValue = nullptr;
-
 void CConvarManager::Initialize()
 {
 }
 
 void CConvarManager::Shutdown()
 {
+}
+
+void CConvarManager::QueryClientConvar(int playerid, std::string cvar_name)
+{
+    auto networkMessages = g_ifaceService.FetchInterface<INetworkMessages>(NETWORKMESSAGES_INTERFACE_VERSION);
+    auto gameEventSystem = g_ifaceService.FetchInterface<IGameEventSystem>(GAMEEVENTSYSTEM_INTERFACE_VERSION);
+
+    auto netmsg = networkMessages->FindNetworkMessagePartial("GetCvarValue");
+    auto msg = netmsg->AllocateMessage()->ToPB<CSVCMsg_GetCvarValue>();
+
+    msg->set_cvar_name(cvar_name);
+
+    CSingleRecipientFilter filter(playerid);
+    gameEventSystem->PostEventAbstract(-1, false, &filter, netmsg, msg, 0);
+
+    // see at the end of the file the comment for this one too
+    delete msg;
+}
+
+int CConvarManager::AddQueryClientCvarCallback(std::function<void(int, std::string, std::string)> callback)
+{
+    g_mQueryCallbacks[g_uQueryCallbacks++] = callback;
+    return g_uQueryCallbacks - 1;
+}
+
+void CConvarManager::RemoveQueryClientCvarCallback(int callback_id)
+{
+    g_mQueryCallbacks.erase(callback_id);
+}
+
+void CConvarManager::OnClientQueryCvar(int playerid, std::string cvar_name, std::string cvar_value)
+{
+    for (const auto& [id, callback] : g_mQueryCallbacks)
+    {
+        callback(playerid, cvar_name, cvar_value);
+    }
 }
 
 void CConvarManager::CreateConvar(std::string cvar_name, EConVarType type, uint64_t flags, const char* help_message, ConvarValue defaultValue)
