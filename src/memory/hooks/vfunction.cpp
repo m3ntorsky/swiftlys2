@@ -50,7 +50,13 @@ void VFunctionHook::SetHookFunction(void* instance, int index, const std::string
     if (!instance) return;
 
     dyno::IHookManager& manager = dyno::IHookManager::Get();
-    m_pHook = manager.hookVirtual(is_vtable ? instance : ((void**)instance)[0], index, [args, return_value] { return new DEFAULT_CALLCONV(GetDataObjectList(args), GetDataObject(return_value)); }).get();
+    if (is_vtable) {
+        void* func = ((void**)instance)[index];
+        m_pHook = manager.hookDetour(func, [args, return_value] { return new DEFAULT_CALLCONV(GetDataObjectList(args), GetDataObject(return_value)); }).get();
+    }
+    else {
+        m_pHook = manager.hookVirtual(instance, index, [args, return_value] { return new DEFAULT_CALLCONV(GetDataObjectList(args), GetDataObject(return_value)); }).get();
+    }
 }
 
 void VFunctionHook::Enable()
@@ -63,8 +69,6 @@ void VFunctionHook::Enable()
 
     for (auto& callback : m_vCallbacks[1])
         m_pHook->addCallback(dyno::CallbackType::Post, callback);
-
-    m_pHook->hook();
 }
 
 void VFunctionHook::Disable()
@@ -77,8 +81,6 @@ void VFunctionHook::Disable()
 
     for (auto& callback : m_vCallbacks[1])
         m_pHook->removeCallback(dyno::CallbackType::Post, callback);
-
-    m_pHook->unhook();
 }
 
 void* VFunctionHook::GetOriginal()

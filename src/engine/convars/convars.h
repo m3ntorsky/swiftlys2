@@ -27,10 +27,6 @@ public:
     virtual void Initialize() override;
     virtual void Shutdown() override;
 
-    virtual void QueryClientConvar(int playerid, std::string cvar_name) override;
-    virtual int AddQueryClientCvarCallback(std::function<void(int, std::string, std::string)> callback) override;
-    virtual void RemoveQueryClientCvarCallback(int callback_id) override;
-
     virtual void CreateConvar(std::string cvar_name, EConVarType type, uint64_t flags, const char* help_message, ConvarValue defaultValue) override;
     virtual void DeleteConvar(std::string cvar_name) override;
     virtual bool ExistsConvar(std::string cvar_name) override;

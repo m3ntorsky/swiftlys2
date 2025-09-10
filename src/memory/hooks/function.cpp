@@ -46,8 +46,6 @@ void FunctionHook::Enable()
 
     for (auto& callback : m_vCallbacks[1])
         m_pHook->addCallback(dyno::CallbackType::Post, callback);
-
-    m_pHook->hook();
 }
 
 void FunctionHook::Disable()
@@ -60,8 +58,6 @@ void FunctionHook::Disable()
 
     for (auto& callback : m_vCallbacks[1])
         m_pHook->removeCallback(dyno::CallbackType::Post, callback);
-
-    m_pHook->unhook();
 }
 
 void* FunctionHook::GetOriginal()

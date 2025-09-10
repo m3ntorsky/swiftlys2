@@ -45,64 +45,10 @@ IVFunctionHook* g_pRespondCvarValue = nullptr;
 
 void CConvarManager::Initialize()
 {
-    DynLibUtils::CModule eng = DetermineModuleByLibrary("engine2");
-    void* serverSideClientVTable = eng.GetVirtualTableByName("CServerSideClient");
-
-    auto hooksManager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
-    g_pRespondCvarValue = hooksManager->CreateVFunctionHook();
-
-    g_pRespondCvarValue->SetHookFunction(serverSideClientVTable, GetVirtualFunctionId(&CServerSideClientBase::ProcessRespondCvarValue), "pp", 'b', true);
-
-    g_pRespondCvarValue->SetCallback(dyno::CallbackType::Pre, [](dyno::CallbackType cbType, dyno::IHook& hook) -> dyno::ReturnAction {
-        auto client = hook.getArgument<CServerSideClientBase*>(0);
-        auto respondcvar = hook.getArgument<CNetMessagePB<CCLCMsg_RespondCvarValue>*>(1);
-
-        auto slot = client->GetPlayerSlot().Get();
-
-        for (auto it = g_mQueryCallbacks.begin(); it != g_mQueryCallbacks.end(); ++it)
-        {
-            it->second(slot, respondcvar->name(), respondcvar->value());
-        }
-
-        return dyno::ReturnAction::Ignored;
-    });
-
-    g_pRespondCvarValue->Enable();
 }
 
 void CConvarManager::Shutdown()
 {
-    if (g_pRespondCvarValue) {
-        g_pRespondCvarValue->Disable();
-    }
-}
-
-void CConvarManager::QueryClientConvar(int playerid, std::string cvar_name)
-{
-    auto networkMessages = g_ifaceService.FetchInterface<INetworkMessages>(NETWORKMESSAGES_INTERFACE_VERSION);
-    auto gameEventSystem = g_ifaceService.FetchInterface<IGameEventSystem>(GAMEEVENTSYSTEM_INTERFACE_VERSION);
-
-    auto netmsg = networkMessages->FindNetworkMessagePartial("GetCvarValue");
-    auto msg = netmsg->AllocateMessage()->ToPB<CSVCMsg_GetCvarValue>();
-
-    msg->set_cvar_name(cvar_name);
-
-    CSingleRecipientFilter filter(playerid);
-    gameEventSystem->PostEventAbstract(-1, false, &filter, netmsg, msg, 0);
-
-    // see at the end of the file the comment for this one too
-    delete msg;
-}
-
-int CConvarManager::AddQueryClientCvarCallback(std::function<void(int, std::string, std::string)> callback)
-{
-    g_mQueryCallbacks[g_uQueryCallbacks++] = callback;
-    return g_uQueryCallbacks - 1;
-}
-
-void CConvarManager::RemoveQueryClientCvarCallback(int callback_id)
-{
-    g_mQueryCallbacks.erase(callback_id);
 }
 
 void CConvarManager::CreateConvar(std::string cvar_name, EConVarType type, uint64_t flags, const char* help_message, ConvarValue defaultValue)
