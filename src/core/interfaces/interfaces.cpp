@@ -23,6 +23,7 @@
 
 #include <engine/convars/convars.h>
 #include <engine/entities/entitysystem.h>
+#include <engine/gameevents/gameevents.h>
 
 #include <memory/allocator/allocator.h>
 #include <memory/hooks/manager.h>
@@ -51,6 +52,7 @@ Configuration g_Configuration;
 CEntSystem g_EntSystem;
 CSDKSchema g_SDKSchema;
 CConvarManager g_ConvarManager;
+CEventManager g_GameEventManager;
 
 static std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
@@ -65,6 +67,7 @@ static std::map<std::string, void*> g_Interfaces = {
     {ENTITYSYSTEM_INTERFACE_VERSION, &g_EntSystem},
     {SDKSCHEMA_INTERFACE_VERSION, &g_SDKSchema},
     {CONVARMANAGER_INTERFACE_VERSION, &g_ConvarManager},
+    {GAMEEVENTMANAGER_INTERFACE_VERSION, &g_GameEventManager},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)

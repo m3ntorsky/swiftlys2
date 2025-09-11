@@ -43,17 +43,15 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     }
 
     auto configuration = g_ifaceService.FetchInterface<IConfiguration>(CONFIGURATION_INTERFACE_VERSION);
-    if (configuration) {
-        configuration->InitializeExamples();
+    configuration->InitializeExamples();
 
-        if (!configuration->Load()) {
-            logger->Error("Entrypoint", "Couldn't load the core configuration.");
-            return false;
-        }
+    if (!configuration->Load()) {
+        logger->Error("Entrypoint", "Couldn't load the core configuration.");
+        return false;
     }
 
     auto sdkclass = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
-    if (sdkclass) sdkclass->Load();
+    sdkclass->Load();
 
     if (auto pb = std::get_if<bool>(&configuration->GetValue("Logger.SaveCoreMessagesToFile"))) {
         logger->ShouldOutputToFile(LogType::INFO, *pb);
@@ -76,13 +74,16 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     gamedata->GetPatches()->Load(GetCurrentGame());
 
     auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
-    if (entsystem) entsystem->Initialize();
+    entsystem->Initialize();
 
     auto cvarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
-    if (cvarmanager) cvarmanager->Initialize();
+    cvarmanager->Initialize();
+
+    auto evmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    evmanager->Initialize(GetCurrentGame());
 
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
-    if (extManager) extManager->Load();
+    extManager->Load();
 
     return true;
 }
