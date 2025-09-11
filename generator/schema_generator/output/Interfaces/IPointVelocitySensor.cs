@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointVelocitySensor : IPointEntity {
 
+  
   public ref CHandle<CBaseEntity> TargetEntity { get; }
   
   public ref Vector Axis { get; }
@@ -15,5 +16,4 @@ public partial interface IPointVelocitySensor : IPointEntity {
   public ref float AvgInterval { get; }
   
   public ISchemaUntypedField Velocity { get; }
-  
 }

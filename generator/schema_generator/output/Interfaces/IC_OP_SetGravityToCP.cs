@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetGravityToCP : IParticleFunctionPreEmission {
 
+  
   public ref int CPInput { get; }
   
   public ref int CPOutput { get; }
@@ -13,5 +14,4 @@ public partial interface IC_OP_SetGravityToCP : IParticleFunctionPreEmission {
   public ref bool SetOrientation { get; }
   
   public ref bool SetZDown { get; }
-  
 }

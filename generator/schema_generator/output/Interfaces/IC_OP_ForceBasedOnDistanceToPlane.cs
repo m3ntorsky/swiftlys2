@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_ForceBasedOnDistanceToPlane : IParticleFunctionForce {
 
+  
   public ref float MinDist { get; }
   
   public ref Vector ForceAtMinDist { get; }
@@ -17,5 +18,4 @@ public partial interface IC_OP_ForceBasedOnDistanceToPlane : IParticleFunctionFo
   public ref int ControlPointNumber { get; }
   
   public ref float Exponent { get; }
-  
 }

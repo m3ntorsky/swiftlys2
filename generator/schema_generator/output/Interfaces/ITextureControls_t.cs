@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITextureControls_t : ISchemaClass {
 
+  
   public IParticleCollectionRendererFloatInput FinalTextureScaleU { get; }
   
   public IParticleCollectionRendererFloatInput FinalTextureScaleV { get; }
@@ -35,5 +36,4 @@ public partial interface ITextureControls_t : ISchemaClass {
   public ref SpriteCardPerParticleScale_t PerParticleZoom { get; }
   
   public ref SpriteCardPerParticleScale_t PerParticleDistortion { get; }
-  
 }

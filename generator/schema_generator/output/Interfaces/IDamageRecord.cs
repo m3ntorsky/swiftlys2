@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDamageRecord : ISchemaClass {
 
+  
   public ref CHandle<CCSPlayerPawn> PlayerDamager { get; }
   
   public ref CHandle<CCSPlayerPawn> PlayerRecipient { get; }
@@ -33,5 +34,4 @@ public partial interface IDamageRecord : ISchemaClass {
   public ref bool IsOtherEnemy { get; }
   
   public ref EKillTypes_t KillType { get; }
-  
 }

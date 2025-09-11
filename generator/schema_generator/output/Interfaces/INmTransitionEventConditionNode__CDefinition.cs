@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmTransitionEventConditionNode__CDefinition : INmBoolValueNode::CDefinition {
 
+  
   public ref CGlobalSymbol RequireRuleID { get; }
   
   public INmBitFlags EventConditionRules { get; }
@@ -11,5 +12,4 @@ public partial interface INmTransitionEventConditionNode__CDefinition : INmBoolV
   public ref short SourceStateNodeIdx { get; }
   
   public ref NmTransitionRuleCondition_t RuleCondition { get; }
-  
 }

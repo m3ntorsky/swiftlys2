@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMorphRectData : ISchemaClass {
 
+  
   public ref short XLeftDst { get; }
   
   public ref short YTopDst { get; }
@@ -12,6 +13,6 @@ public partial interface IMorphRectData : ISchemaClass {
   
   public ref float VHeightSrc { get; }
   
+// CUtlVector< CMorphBundleData >
   public ref CUtlVector BundleDatas { get; }
-  
 }

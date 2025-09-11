@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_RandomAlpha : IParticleFunctionInitializer {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public ref int AlphaMin { get; }
@@ -11,5 +12,4 @@ public partial interface IC_INIT_RandomAlpha : IParticleFunctionInitializer {
   public ref int AlphaMax { get; }
   
   public ref float AlphaRandExponent { get; }
-  
 }

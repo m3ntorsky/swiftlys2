@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDebugHistory : IBaseEntity {
 
-  public ref int NpcEvents { get; }
   
+  public ref int NpcEvents { get; }
 }

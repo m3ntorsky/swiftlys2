@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPlayerController_InGameMoneyServices : IPlayerControllerComponent {
 
+  
   public ref bool ReceivesMoneyNextRound { get; }
   
   public ref int MoneyEarnedForNextRound { get; }
@@ -15,5 +16,4 @@ public partial interface ICSPlayerController_InGameMoneyServices : IPlayerContro
   public ref int TotalCashSpent { get; }
   
   public ref int CashSpentThisRound { get; }
-  
 }

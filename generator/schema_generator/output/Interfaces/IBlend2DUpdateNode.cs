@@ -4,8 +4,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBlend2DUpdateNode : IAnimUpdateNodeBase {
 
+  
+// CUtlVector< BlendItem_t >
   public ref CUtlVector Items { get; }
   
+// CUtlVector< TagSpan_t >
   public ref CUtlVector Tags { get; }
   
   public IParamSpanUpdater ParamSpans { get; }
@@ -33,5 +36,4 @@ public partial interface IBlend2DUpdateNode : IAnimUpdateNodeBase {
   public ref bool LockWhenWaning { get; }
   
   public ref bool AnimEventsAndTagsOnMostWeightedOnly { get; }
-  
 }

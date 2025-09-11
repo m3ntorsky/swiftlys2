@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IModelConfigElement_SetRenderColor : IModelConfigElement {
 
-  public ref Color Color { get; }
   
+  public ref Color Color { get; }
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRenderInputLayoutField_t : ISchemaClass {
 
+  
   public ISchemaFixedString SemanticName { get; }
   
   public ref byte SemanticIndex { get; }
@@ -15,5 +16,4 @@ public partial interface IRenderInputLayoutField_t : ISchemaClass {
   public ref RenderSlotType_t SlotType { get; }
   
   public ISchemaFixedString ShaderSemantic { get; }
-  
 }

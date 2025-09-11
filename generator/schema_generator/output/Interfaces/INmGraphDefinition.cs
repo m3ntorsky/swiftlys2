@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmGraphDefinition : ISchemaClass {
 
+  
   public ref CGlobalSymbol VariationID { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton { get; }
@@ -18,12 +19,13 @@ public partial interface INmGraphDefinition : ISchemaClass {
   
   public ref CUtlVector<short> VirtualParameterNodeIndices { get; }
   
+// CUtlVector< CNmGraphDefinition::ReferencedGraphSlot_t >
   public ref CUtlVector ReferencedGraphSlots { get; }
   
+// CUtlVector< CNmGraphDefinition::ExternalGraphSlot_t >
   public ref CUtlVector ExternalGraphSlots { get; }
   
   public ref CUtlVector<CUtlString> NodePaths { get; }
   
   public ref CUtlVector<CStrongHandle<oi>> Resources { get; }
-  
 }

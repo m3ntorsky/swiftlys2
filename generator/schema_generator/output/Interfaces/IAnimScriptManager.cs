@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimScriptManager : ISchemaClass {
 
-  public ref CUtlVector ScriptInfo { get; }
   
+// CUtlVector< ScriptInfo_t >
+  public ref CUtlVector ScriptInfo { get; }
 }

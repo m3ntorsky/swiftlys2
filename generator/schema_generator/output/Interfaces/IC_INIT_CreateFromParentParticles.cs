@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_CreateFromParentParticles : IParticleFunctionInitializer {
 
+  
   public ref float VelocityScale { get; }
   
   public ref float Increment { get; }
@@ -13,5 +14,4 @@ public partial interface IC_INIT_CreateFromParentParticles : IParticleFunctionIn
   public ref int RandomSeed { get; }
   
   public ref bool SubFrame { get; }
-  
 }

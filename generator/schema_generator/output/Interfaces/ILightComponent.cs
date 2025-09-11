@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ILightComponent : IEntityComponent {
 
+  
   public INetworkVarChainer __m_pChainEntity { get; }
   
   public ref Color Color { get; }
@@ -143,5 +144,4 @@ public partial interface ILightComponent : IEntityComponent {
   public ref float MinRoughness { get; }
   
   public ref bool PvsModifyEntity { get; }
-  
 }

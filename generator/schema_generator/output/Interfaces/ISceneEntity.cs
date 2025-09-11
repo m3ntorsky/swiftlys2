@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISceneEntity : IPointEntity {
 
+  
   public ref CUtlSymbolLarge SceneFile { get; }
   
   public ref CUtlSymbolLarge ResumeSceneFile { get; }
@@ -137,5 +138,4 @@ public partial interface ISceneEntity : IPointEntity {
   public ref int BusyActor { get; }
   
   public ref SceneOnPlayerDeath_t PlayerDeathBehavior { get; }
-  
 }

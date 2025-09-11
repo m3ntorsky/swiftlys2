@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISeqCmdSeqDesc : ISchemaClass {
 
+  
   public ref CBufferString Name { get; }
   
   public ISeqSeqDescFlag Flags { get; }
@@ -20,12 +21,15 @@ public partial interface ISeqCmdSeqDesc : ISchemaClass {
   
   public ref short NumLocalResults { get; }
   
+// CUtlVector< CSeqCmdLayer >
   public ref CUtlVector CmdLayerArray { get; }
   
+// CUtlVector< CAnimEventDefinition >
   public ref CUtlVector EventArray { get; }
   
+// CUtlVector< CAnimActivity >
   public ref CUtlVector ActivityArray { get; }
   
+// CUtlVector< CSeqPoseSetting >
   public ref CUtlVector PoseSettingArray { get; }
-  
 }

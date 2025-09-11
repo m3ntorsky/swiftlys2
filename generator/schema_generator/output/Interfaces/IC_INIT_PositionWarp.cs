@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_PositionWarp : IParticleFunctionInitializer {
 
+  
   public IParticleCollectionVecInput WarpMin { get; }
   
   public IParticleCollectionVecInput WarpMax { get; }
@@ -23,5 +24,4 @@ public partial interface IC_INIT_PositionWarp : IParticleFunctionInitializer {
   public ref bool InvertWarp { get; }
   
   public ref bool UseCount { get; }
-  
 }

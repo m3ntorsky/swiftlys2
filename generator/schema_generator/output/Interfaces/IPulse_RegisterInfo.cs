@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulse_RegisterInfo : ISchemaClass {
 
+  
   public IPulseRuntimeRegisterIndex_t Reg { get; }
   
   public ISchemaUntypedField Type { get; }
@@ -13,5 +14,4 @@ public partial interface IPulse_RegisterInfo : ISchemaClass {
   public ref int WrittenByInstruction { get; }
   
   public ref int LastReadByInstruction { get; }
-  
 }

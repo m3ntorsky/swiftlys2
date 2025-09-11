@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IScriptTriggerPush : ITriggerPush {
 
-  public ref Vector Extent { get; }
   
+  public ref Vector Extent { get; }
 }

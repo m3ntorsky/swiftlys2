@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmIDSwitchNode__CDefinition : INmIDValueNode::CDefinition {
 
+  
   public ref short SwitchValueNodeIdx { get; }
   
   public ref short TrueValueNodeIdx { get; }
@@ -13,5 +14,4 @@ public partial interface INmIDSwitchNode__CDefinition : INmIDValueNode::CDefinit
   public ref CGlobalSymbol FalseValue { get; }
   
   public ref CGlobalSymbol TrueValue { get; }
-  
 }

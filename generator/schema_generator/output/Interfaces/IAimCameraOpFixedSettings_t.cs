@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAimCameraOpFixedSettings_t : ISchemaClass {
 
+  
   public ref int ChainIndex { get; }
   
   public ref int CameraJointIndex { get; }
@@ -17,5 +18,4 @@ public partial interface IAimCameraOpFixedSettings_t : ISchemaClass {
   public ref int DepenetrationJointIndex { get; }
   
   public ref CUtlVector<int> PropJoints { get; }
-  
 }

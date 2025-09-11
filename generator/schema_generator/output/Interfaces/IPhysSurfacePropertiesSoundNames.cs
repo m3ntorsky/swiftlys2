@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysSurfacePropertiesSoundNames : ISchemaClass {
 
+  
   public ref CUtlString ImpactSoft { get; }
   
   public ref CUtlString ImpactHard { get; }
@@ -27,5 +28,4 @@ public partial interface IPhysSurfacePropertiesSoundNames : ISchemaClass {
   public ref CUtlString SkidStop { get; }
   
   public ref CUtlString Resonant { get; }
-  
 }

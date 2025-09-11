@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISoundOpvarSetOBBWindEntity : ISoundOpvarSetPointBase {
 
+  
   public ref Vector Mins { get; }
   
   public ref Vector Maxs { get; }
@@ -19,5 +20,4 @@ public partial interface ISoundOpvarSetOBBWindEntity : ISoundOpvarSetPointBase {
   public ref float WindMapMin { get; }
   
   public ref float WindMapMax { get; }
-  
 }

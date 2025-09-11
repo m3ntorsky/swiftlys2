@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IStanceOverrideUpdateNode : IUnaryUpdateNode {
 
+  
+// CUtlVector< StanceInfo_t >
   public ref CUtlVector FootStanceInfo { get; }
   
   public IAnimUpdateNodeRef StanceSourceNode { get; }
@@ -11,5 +13,4 @@ public partial interface IStanceOverrideUpdateNode : IUnaryUpdateNode {
   public IAnimParamHandle Parameter { get; }
   
   public ref StanceOverrideMode Mode { get; }
-  
 }

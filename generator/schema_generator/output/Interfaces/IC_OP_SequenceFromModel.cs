@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SequenceFromModel : IParticleFunctionOperator {
 
+  
   public ref int ControlPointNumber { get; }
   
   public IParticleAttributeIndex_t FieldOutput { get; }
@@ -19,5 +20,4 @@ public partial interface IC_OP_SequenceFromModel : IParticleFunctionOperator {
   public ref float OutputMax { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
-  
 }

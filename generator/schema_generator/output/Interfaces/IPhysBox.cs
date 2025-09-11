@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysBox : IBreakable {
 
+  
   public ref int DamageType { get; }
   
   public ref int DamageToEnableMotion { get; }
@@ -33,5 +34,4 @@ public partial interface IPhysBox : IBreakable {
   public IEntityIOOutput OnStartTouch { get; }
   
   public ref CHandle<CBasePlayerPawn> CarryingPlayer { get; }
-  
 }

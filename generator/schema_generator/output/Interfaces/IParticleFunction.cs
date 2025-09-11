@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleFunction : ISchemaClass {
 
+  
   public IParticleCollectionFloatInput OpStrength { get; }
   
   public ref ParticleEndcapMode_t OpEndCapState { get; }
@@ -35,5 +36,4 @@ public partial interface IParticleFunction : ISchemaClass {
   public ref bool DisableOperator { get; }
   
   public ref CUtlString Notes { get; }
-  
 }

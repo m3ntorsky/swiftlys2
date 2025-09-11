@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITargetWarpUpdateNode : IUnaryUpdateNode {
 
+  
   public ref TargetWarpAngleMode_t AngleMode { get; }
   
   public IAnimParamHandle TargetPositionParameter { get; }
@@ -31,5 +32,4 @@ public partial interface ITargetWarpUpdateNode : IUnaryUpdateNode {
   public ref bool WarpAroundCenter { get; }
   
   public ref float MaxAngle { get; }
-  
 }

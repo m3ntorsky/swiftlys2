@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysSurfacePropertiesAudio : ISchemaClass {
 
+  
   public ref float Reflectivity { get; }
   
   public ref float HardnessFactor { get; }
@@ -19,5 +20,4 @@ public partial interface IPhysSurfacePropertiesAudio : ISchemaClass {
   public ref float StaticImpactVolume { get; }
   
   public ref float OcclusionFactor { get; }
-  
 }

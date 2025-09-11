@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmChainLookatTask : INmPoseTask {
 
+  
   public ref int ChainEndBoneIdx { get; }
   
   public ref int NumBonesInChain { get; }
@@ -25,5 +26,4 @@ public partial interface INmChainLookatTask : INmPoseTask {
   public ref float HorizontalAngleDegrees { get; }
   
   public ref float VerticalAngleDegrees { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseFlex : IBaseAnimGraph {
 
+  
   public ref CUtlVector<float> FlexWeight { get; }
   
   public ref Vector LookTargetPosition { get; }
@@ -17,5 +18,4 @@ public partial interface IBaseFlex : IBaseAnimGraph {
   public ISceneEventId_t NextSceneEventId { get; }
   
   public ref bool UpdateLayerPriorities { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_StatusEffect : IParticleFunctionInitializer {
 
+  
   public ref Detail2Combo_t Detail2Combo { get; }
   
   public ref float Detail2Rotation { get; }
@@ -39,5 +40,4 @@ public partial interface IC_INIT_StatusEffect : IParticleFunctionInitializer {
   public ref float MetalnessBlendToFull { get; }
   
   public ref float SelfIllumBlendToFull { get; }
-  
 }

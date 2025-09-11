@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_RingWave : IParticleFunctionInitializer {
 
+  
   public IParticleTransformInput TransformInput { get; }
   
   public IParticleCollectionFloatInput ParticlesPerOrbit { get; }
@@ -25,5 +26,4 @@ public partial interface IC_INIT_RingWave : IParticleFunctionInitializer {
   public ref bool EvenDistribution { get; }
   
   public ref bool XYVelocityOnly { get; }
-  
 }

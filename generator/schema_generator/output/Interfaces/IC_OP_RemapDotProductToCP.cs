@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapDotProductToCP : IParticleFunctionPreEmission {
 
+  
   public ref int InputCP1 { get; }
   
   public ref int InputCP2 { get; }
@@ -19,5 +20,4 @@ public partial interface IC_OP_RemapDotProductToCP : IParticleFunctionPreEmissio
   public IParticleCollectionFloatInput OutputMin { get; }
   
   public IParticleCollectionFloatInput OutputMax { get; }
-  
 }

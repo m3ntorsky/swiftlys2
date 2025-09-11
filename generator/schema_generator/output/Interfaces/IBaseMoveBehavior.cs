@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseMoveBehavior : IPathKeyFrame {
 
+  
   public ref int PositionInterpolator { get; }
   
   public ref int RotationInterpolator { get; }
@@ -25,5 +26,4 @@ public partial interface IBaseMoveBehavior : IPathKeyFrame {
   public ref float TimeIntoFrame { get; }
   
   public ref int Direction { get; }
-  
 }

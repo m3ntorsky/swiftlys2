@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFishPool : IBaseEntity {
 
+  
   public ref int FishCount { get; }
   
   public ref float MaxRange { get; }
@@ -17,5 +18,4 @@ public partial interface IFishPool : IBaseEntity {
   public ref CUtlVector<CHandle<CFish>> Fishes { get; }
   
   public ICountdownTimer VisTimer { get; }
-  
 }

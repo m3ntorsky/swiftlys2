@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IGameScriptedMoveDef_t : ISchemaClass {
 
+  
   public ref Vector DestOffset { get; }
   
   public ref CHandle<CBaseEntity> DestEntity { get; }
@@ -21,5 +22,4 @@ public partial interface IGameScriptedMoveDef_t : ISchemaClass {
   public ref bool IgnoreRotation { get; }
   
   public ref ForcedCrouchState_t ForcedCrouchState { get; }
-  
 }

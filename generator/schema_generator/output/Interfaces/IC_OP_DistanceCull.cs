@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_DistanceCull : IParticleFunctionOperator {
 
+  
   public ref int ControlPoint { get; }
   
   public ref Vector PointOffset { get; }
@@ -13,5 +14,4 @@ public partial interface IC_OP_DistanceCull : IParticleFunctionOperator {
   public ref bool CullInside { get; }
   
   public IParticleAttributeIndex_t Attribute { get; }
-  
 }

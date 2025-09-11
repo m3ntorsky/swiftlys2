@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBlendUpdateNode : IAnimUpdateNodeBase {
 
+  
+// CUtlVector< CAnimUpdateNodeRef >
   public ref CUtlVector Children { get; }
   
   public ref CUtlVector<byte> SortedOrder { get; }
@@ -29,5 +31,4 @@ public partial interface IBlendUpdateNode : IAnimUpdateNodeBase {
   public ref bool LockWhenWaning { get; }
   
   public ref bool IsAngle { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_MoveToHitbox : IParticleFunctionOperator {
 
+  
   public IParticleModelInput ModelInput { get; }
   
   public IParticleTransformInput TransformInput { get; }
@@ -21,5 +22,4 @@ public partial interface IC_OP_MoveToHitbox : IParticleFunctionOperator {
   public ref HitboxLerpType_t LerpType { get; }
   
   public IPerParticleFloatInput Interpolation { get; }
-  
 }

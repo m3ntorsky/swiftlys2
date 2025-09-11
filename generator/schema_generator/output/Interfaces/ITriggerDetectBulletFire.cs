@@ -4,8 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITriggerDetectBulletFire : IBaseTrigger {
 
+  
   public ref bool PlayerFireOnly { get; }
   
   public IEntityIOOutput OnDetectedBulletFire { get; }
-  
 }

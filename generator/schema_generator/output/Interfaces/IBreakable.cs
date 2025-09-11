@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBreakable : IBaseModelEntity {
 
+  
   public IPropDataComponent CPropDataComponent { get; }
   
   public ref Materials Material { get; }
@@ -33,5 +34,4 @@ public partial interface IBreakable : IBaseModelEntity {
   public ref CHandle<CBasePlayerPawn> PhysicsAttacker { get; }
   
   public IGameTime_t LastPhysicsInfluenceTime { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseCSGrenade : ICSWeaponBase {
 
+  
   public ref bool Redraw { get; }
   
   public ref bool IsHeldByPlayer { get; }
@@ -29,5 +30,4 @@ public partial interface IBaseCSGrenade : ICSWeaponBase {
   public ref float NextHoldFrac { get; }
   
   public ref CHandle<CCSWeaponBase> SwitchToWeaponAfterThrow { get; }
-  
 }

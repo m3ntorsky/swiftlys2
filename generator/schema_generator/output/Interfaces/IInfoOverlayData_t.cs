@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IInfoOverlayData_t : ISchemaClass {
 
+  
   public ref matrix3x4_t Transform { get; }
   
   public ref float Width { get; }
@@ -23,5 +24,4 @@ public partial interface IInfoOverlayData_t : ISchemaClass {
   public ref Vector4D TintColor { get; }
   
   public ref CUtlStringToken SequenceOverrideName { get; }
-  
 }

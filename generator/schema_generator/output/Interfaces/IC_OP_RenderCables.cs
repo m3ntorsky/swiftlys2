@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderCables : IParticleFunctionRenderer {
 
+  
   public IParticleCollectionFloatInput RadiusScale { get; }
   
   public IParticleCollectionFloatInput AlphaScale { get; }
@@ -47,5 +48,4 @@ public partial interface IC_OP_RenderCables : IParticleFunctionRenderer {
   public ref CUtlLeanVector<FloatInputMaterialVariable_t> MaterialFloatVars { get; }
   
   public ref CUtlLeanVector<VecInputMaterialVariable_t> MaterialVecVars { get; }
-  
 }

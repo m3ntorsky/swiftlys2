@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimGraphNetworkedVariables : ISchemaClass {
 
+  
   public ref CUtlVector<uint> PredNetBoolVariables { get; }
   
   public ref CUtlVector<byte> PredNetByteVariables { get; }
@@ -51,5 +52,4 @@ public partial interface IAnimGraphNetworkedVariables : ISchemaClass {
   public ref int RandomSeedOffset { get; }
   
   public ref float LastTeleportTime { get; }
-  
 }

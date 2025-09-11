@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Outflow_CycleRandom : IPulseCell_BaseFlow {
 
-  public ref CUtlVector Outputs { get; }
   
+// CUtlVector< CPulse_OutflowConnection >
+  public ref CUtlVector Outputs { get; }
 }

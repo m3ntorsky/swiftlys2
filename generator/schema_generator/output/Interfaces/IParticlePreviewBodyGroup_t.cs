@@ -4,8 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticlePreviewBodyGroup_t : ISchemaClass {
 
+  
   public ref CUtlString BodyGroupName { get; }
   
   public ref int Value { get; }
-  
 }

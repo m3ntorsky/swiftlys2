@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapScalarOnceTimed : IParticleFunctionOperator {
 
+  
   public ref bool Proportional { get; }
   
   public IParticleAttributeIndex_t FieldInput { get; }
@@ -19,5 +20,4 @@ public partial interface IC_OP_RemapScalarOnceTimed : IParticleFunctionOperator 
   public ref float OutputMax { get; }
   
   public ref float RemapTime { get; }
-  
 }

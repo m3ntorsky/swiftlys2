@@ -4,8 +4,10 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFootLockUpdateNode : IUnaryUpdateNode {
 
+  
   public IFootLockPoseOpFixedSettings OpFixedSettings { get; }
   
+// CUtlVector< FootFixedSettings >
   public ref CUtlVector FootSettings { get; }
   
   public IAnimInputDamping HipShiftDamping { get; }
@@ -43,5 +45,4 @@ public partial interface IFootLockUpdateNode : IUnaryUpdateNode {
   public ref bool EnableVerticalCurvedPaths { get; }
   
   public ref bool EnableRootHeightDamping { get; }
-  
 }

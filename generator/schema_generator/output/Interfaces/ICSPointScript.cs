@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPointScript : IBasePulseGraphInstance {
 
-  public ICSPointScriptEntity Parent { get; }
   
+  public ICSPointScriptEntity Parent { get; }
 }

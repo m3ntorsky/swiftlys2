@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMotionGraphUpdateNode : ILeafUpdateNode {
 
-  public ISchemaUntypedField MotionGraph { get; }
   
+  public ISchemaUntypedField MotionGraph { get; }
 }

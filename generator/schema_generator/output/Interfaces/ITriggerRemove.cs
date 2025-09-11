@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITriggerRemove : IBaseTrigger {
 
-  public IEntityIOOutput OnRemove { get; }
   
+  public IEntityIOOutput OnRemove { get; }
 }

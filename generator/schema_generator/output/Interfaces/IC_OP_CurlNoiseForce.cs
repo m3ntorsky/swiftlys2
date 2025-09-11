@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_CurlNoiseForce : IParticleFunctionForce {
 
+  
   public ref ParticleDirectionNoiseType_t NoiseType { get; }
   
   public IPerParticleVecInput NoiseFreq { get; }
@@ -17,5 +18,4 @@ public partial interface IC_OP_CurlNoiseForce : IParticleFunctionForce {
   public IPerParticleFloatInput WorleySeed { get; }
   
   public IPerParticleFloatInput WorleyJitter { get; }
-  
 }

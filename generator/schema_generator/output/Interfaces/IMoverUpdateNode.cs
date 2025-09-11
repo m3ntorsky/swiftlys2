@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMoverUpdateNode : IUnaryUpdateNode {
 
+  
   public IAnimInputDamping Damping { get; }
   
   public ref AnimValueSource FacingTarget { get; }
@@ -27,5 +28,4 @@ public partial interface IMoverUpdateNode : IUnaryUpdateNode {
   public ref bool ApplyRotation { get; }
   
   public ref bool LimitOnly { get; }
-  
 }

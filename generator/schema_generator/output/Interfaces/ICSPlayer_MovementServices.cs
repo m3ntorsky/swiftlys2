@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPlayer_MovementServices : IPlayer_MovementServices_Humanoid {
 
+  
   public ref Vector LadderNormal { get; }
   
   public ref int LadderSurfacePropIndex { get; }
@@ -85,5 +86,4 @@ public partial interface ICSPlayer_MovementServices : IPlayer_MovementServices_H
   public ref float TicksSinceLastSurfingDetected { get; }
   
   public ref bool WasSurfing { get; }
-  
 }

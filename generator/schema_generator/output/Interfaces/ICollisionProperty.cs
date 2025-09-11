@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICollisionProperty : ISchemaClass {
 
+  
   public IVPhysicsCollisionAttribute_t CollisionAttribute { get; }
   
   public ref Vector Mins { get; }
@@ -37,5 +38,4 @@ public partial interface ICollisionProperty : ISchemaClass {
   public ref Vector CapsuleCenter2 { get; }
   
   public ref float CapsuleRadius { get; }
-  
 }

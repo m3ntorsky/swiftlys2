@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITurnHelperUpdateNode : IUnaryUpdateNode {
 
+  
   public ref AnimValueSource FacingTarget { get; }
   
   public ref float TurnStartTimeOffset { get; }
@@ -15,5 +16,4 @@ public partial interface ITurnHelperUpdateNode : IUnaryUpdateNode {
   public ref float ManualTurnOffset { get; }
   
   public ref bool UseManualTurnOffset { get; }
-  
 }

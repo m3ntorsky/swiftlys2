@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_ControlPointToRadialScreenSpace : IParticleFunctionPreEmission {
 
+  
   public ref int CPIn { get; }
   
   public ref Vector CP1Pos { get; }
@@ -13,5 +14,4 @@ public partial interface IC_OP_ControlPointToRadialScreenSpace : IParticleFuncti
   public ref int CPOutField { get; }
   
   public ref int CPSSPosOut { get; }
-  
 }

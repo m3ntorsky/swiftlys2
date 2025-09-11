@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseSelectorOutflowList_t : ISchemaClass {
 
-  public ref CUtlVector Outflows { get; }
   
+// CUtlVector< OutflowWithRequirements_t >
+  public ref CUtlVector Outflows { get; }
 }

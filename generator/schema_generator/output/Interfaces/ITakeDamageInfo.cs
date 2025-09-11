@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITakeDamageInfo : ISchemaClass {
 
+  
   public ref Vector DamageForce { get; }
   
   public ref Vector DamagePosition { get; }
@@ -45,5 +46,4 @@ public partial interface ITakeDamageInfo : ISchemaClass {
   public ref float FriendlyFireDamageReductionRatio { get; }
   
   public ref bool InTakeDamageFlow { get; }
-  
 }

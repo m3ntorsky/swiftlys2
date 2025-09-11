@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncRotating : IBaseModelEntity {
 
+  
   public IEntityIOOutput OnStopped { get; }
   
   public IEntityIOOutput OnStarted { get; }
@@ -39,5 +40,4 @@ public partial interface IFuncRotating : IBaseModelEntity {
   public ref Vector ClientOrigin { get; }
   
   public ref QAngle ClientAngles { get; }
-  
 }

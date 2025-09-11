@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IStateMachineComponentUpdater : IAnimComponentUpdater {
 
-  public IAnimStateMachineUpdater StateMachine { get; }
   
+  public IAnimStateMachineUpdater StateMachine { get; }
 }

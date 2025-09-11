@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDirectionalBlendUpdateNode : ILeafUpdateNode {
 
+  
   public IHSequence Sequences { get; }
   
   public IAnimInputDamping Damping { get; }
@@ -19,5 +20,4 @@ public partial interface IDirectionalBlendUpdateNode : ILeafUpdateNode {
   public ref bool Loop { get; }
   
   public ref bool LockBlendOnReset { get; }
-  
 }

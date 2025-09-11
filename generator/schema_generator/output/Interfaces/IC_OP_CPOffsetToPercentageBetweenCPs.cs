@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_CPOffsetToPercentageBetweenCPs : IParticleFunctionOperator {
 
+  
   public ref float InputMin { get; }
   
   public ref float InputMax { get; }
@@ -25,5 +26,4 @@ public partial interface IC_OP_CPOffsetToPercentageBetweenCPs : IParticleFunctio
   public ref bool ScaleOffset { get; }
   
   public ref Vector Offset { get; }
-  
 }

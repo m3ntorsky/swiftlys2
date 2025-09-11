@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleFloatInput : IParticleInput {
 
+  
   public ref ParticleFloatType_t Type { get; }
   
   public ref ParticleFloatMapType_t MapType { get; }
@@ -97,5 +98,4 @@ public partial interface IParticleFloatInput : IParticleInput {
   public ref float BiasParameter { get; }
   
   public ISchemaUntypedField Curve { get; }
-  
 }

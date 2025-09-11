@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysMotor : ILogicalEntity {
 
+  
   public ref CUtlSymbolLarge NameAttach { get; }
   
   public ref CUtlSymbolLarge NameAnchor { get; }
@@ -29,5 +30,4 @@ public partial interface IPhysMotor : ILogicalEntity {
   public ref float SpeedWhenSpinUpOrSpinDownStarted { get; }
   
   public IMotorController Motor { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEconEntity : IBaseFlex {
 
+  
   public IAttributeContainer AttributeManager { get; }
   
   public ref uint OriginalOwnerXuidLow { get; }
@@ -21,5 +22,4 @@ public partial interface IEconEntity : IBaseFlex {
   public ref CHandle<CBaseEntity> OldProvidee { get; }
   
   public ref int OldOwnerClass { get; }
-  
 }

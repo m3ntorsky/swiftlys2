@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDSPMixgroupModifier : ISchemaClass {
 
+  
   public ref CUtlString Mixgroup { get; }
   
   public ref float Modifier { get; }
@@ -15,5 +16,4 @@ public partial interface IDSPMixgroupModifier : ISchemaClass {
   public ref float SourceModifierMin { get; }
   
   public ref float ListenerReverbModifierWhenSourceReverbIsActive { get; }
-  
 }

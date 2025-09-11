@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimDemoCaptureSettings : ISchemaClass {
 
+  
   public ref Vector2D ErrorRangeSplineRotation { get; }
   
   public ref Vector2D ErrorRangeSplineTranslation { get; }
@@ -30,8 +31,9 @@ public partial interface IAnimDemoCaptureSettings : ISchemaClass {
   
   public ref EDemoBoneSelectionMode BoneSelectionMode { get; }
   
+// CUtlVector< BoneDemoCaptureSettings_t >
   public ref CUtlVector Bones { get; }
   
+// CUtlVector< IKDemoCaptureSettings_t >
   public ref CUtlVector IkChains { get; }
-  
 }

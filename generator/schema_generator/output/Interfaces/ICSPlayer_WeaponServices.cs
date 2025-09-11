@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPlayer_WeaponServices : IPlayer_WeaponServices {
 
+  
   public IGameTime_t NextAttack { get; }
   
   public ref bool IsLookingAtWeapon { get; }
@@ -33,5 +34,4 @@ public partial interface ICSPlayer_WeaponServices : IPlayer_WeaponServices {
   public ref CUtlVector<byte> NetworkAnimTiming { get; }
   
   public ref bool BlockInspectUntilNextGraphUpdate { get; }
-  
 }

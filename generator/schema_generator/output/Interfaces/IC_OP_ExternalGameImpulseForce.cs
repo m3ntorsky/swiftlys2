@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_ExternalGameImpulseForce : IParticleFunctionForce {
 
+  
   public IPerParticleFloatInput ForceScale { get; }
   
   public ref bool Ropes { get; }
@@ -13,5 +14,4 @@ public partial interface IC_OP_ExternalGameImpulseForce : IParticleFunctionForce
   public ref bool Explosions { get; }
   
   public ref bool Particles { get; }
-  
 }

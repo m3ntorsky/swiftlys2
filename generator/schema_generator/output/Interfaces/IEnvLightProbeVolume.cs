@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvLightProbeVolume : IBaseEntity {
 
+  
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_AmbientCube { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_SDF { get; }
@@ -47,5 +48,4 @@ public partial interface IEnvLightProbeVolume : IBaseEntity {
   public ref int Entity_nLightProbeAtlasZ { get; }
   
   public ref bool Entity_bEnabled { get; }
-  
 }

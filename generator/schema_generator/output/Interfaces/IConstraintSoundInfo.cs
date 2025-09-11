@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IConstraintSoundInfo : ISchemaClass {
 
+  
   public IVelocitySampler Sampler { get; }
   
   public ISimpleConstraintSoundProfile SoundProfile { get; }
@@ -19,5 +20,4 @@ public partial interface IConstraintSoundInfo : ISchemaClass {
   public ref bool PlayTravelSound { get; }
   
   public ref bool PlayReversalSound { get; }
-  
 }

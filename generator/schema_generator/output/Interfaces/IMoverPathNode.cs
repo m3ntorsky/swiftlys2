@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMoverPathNode : IPointEntity {
 
+  
   public ref Vector InTangentLocal { get; }
   
   public ref Vector OutTangentLocal { get; }
@@ -25,5 +26,4 @@ public partial interface IMoverPathNode : IPointEntity {
   public ref CHandle<CPathMover> Mover { get; }
   
   public ref CTransform XWSPrevParent { get; }
-  
 }

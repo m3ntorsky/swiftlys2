@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSGO_TeamPreviewCharacterPosition : IBaseEntity {
 
+  
   public ref int Variant { get; }
   
   public ref int Random { get; }
@@ -19,5 +20,4 @@ public partial interface ICSGO_TeamPreviewCharacterPosition : IBaseEntity {
   public IEconItemView GlovesItem { get; }
   
   public IEconItemView WeaponItem { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderDeferredLight : IParticleFunctionRenderer {
 
+  
   public ref bool UseAlphaTestWindow { get; }
   
   public ref bool UseTexture { get; }
@@ -35,5 +36,4 @@ public partial interface IC_OP_RenderDeferredLight : IParticleFunctionRenderer {
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> Texture { get; }
   
   public ref int HSVShiftControlPoint { get; }
-  
 }

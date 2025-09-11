@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISSDSMsg_EndFrame : ISchemaClass {
 
-  public ref CUtlVector Views { get; }
   
+// CUtlVector< CSSDSEndFrameViewInfo >
+  public ref CUtlVector Views { get; }
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseScriptedSequenceData_t : ISchemaClass {
 
+  
   public ref int ActorID { get; }
   
   public ref CUtlString PreIdleSequence { get; }
@@ -27,5 +28,4 @@ public partial interface IPulseScriptedSequenceData_t : ISchemaClass {
   public ref bool LoopPostIdleSequence { get; }
   
   public ref bool IgnoreLookAt { get; }
-  
 }

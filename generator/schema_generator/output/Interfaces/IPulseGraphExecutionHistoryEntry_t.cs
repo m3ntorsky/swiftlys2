@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseGraphExecutionHistoryEntry_t : ISchemaClass {
 
+  
   public IPulseCursorID_t CursorID { get; }
   
   public IPulseDocNodeID_t EditorID { get; }
@@ -13,5 +14,4 @@ public partial interface IPulseGraphExecutionHistoryEntry_t : ISchemaClass {
   public ref uint Flags { get; }
   
   public ISchemaUntypedField TagName { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_LockToBone : IParticleFunctionOperator {
 
+  
   public IParticleModelInput ModelInput { get; }
   
   public IParticleTransformInput TransformInput { get; }
@@ -33,5 +34,4 @@ public partial interface IC_OP_LockToBone : IParticleFunctionOperator {
   public IPerParticleVecInput Rotation { get; }
   
   public IPerParticleFloatInput RotLerp { get; }
-  
 }

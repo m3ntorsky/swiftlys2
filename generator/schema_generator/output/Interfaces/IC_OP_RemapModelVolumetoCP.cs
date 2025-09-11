@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapModelVolumetoCP : IParticleFunctionPreEmission {
 
+  
   public ref BBoxVolumeType_t BBoxType { get; }
   
   public ref int InControlPointNumber { get; }
@@ -25,5 +26,4 @@ public partial interface IC_OP_RemapModelVolumetoCP : IParticleFunctionPreEmissi
   public ref bool BBoxOnly { get; }
   
   public ref bool CubeRoot { get; }
-  
 }

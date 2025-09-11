@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_RtEnvCull : IParticleFunctionInitializer {
 
+  
   public ref Vector TestDir { get; }
   
   public ref Vector TestNormal { get; }
@@ -19,5 +20,4 @@ public partial interface IC_INIT_RtEnvCull : IParticleFunctionInitializer {
   public ref int RTEnvCP { get; }
   
   public ref int Component { get; }
-  
 }

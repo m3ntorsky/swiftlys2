@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapDotProductToScalar : IParticleFunctionOperator {
 
+  
   public ref int InputCP1 { get; }
   
   public ref int InputCP2 { get; }
@@ -25,5 +26,4 @@ public partial interface IC_OP_RemapDotProductToScalar : IParticleFunctionOperat
   public ref bool ActiveRange { get; }
   
   public ref bool UseParticleNormal { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INetworkOriginCellCoordQuantizedVector : ISchemaClass {
 
+  
   public ref ushort CellX { get; }
   
   public ref ushort CellY { get; }
@@ -17,5 +18,4 @@ public partial interface INetworkOriginCellCoordQuantizedVector : ISchemaClass {
   public ref CNetworkedQuantizedFloat Y { get; }
   
   public ref CNetworkedQuantizedFloat Z { get; }
-  
 }

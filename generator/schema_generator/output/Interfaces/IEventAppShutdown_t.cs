@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEventAppShutdown_t : ISchemaClass {
 
-  public ref int Dummy0 { get; }
   
+  public ref int Dummy0 { get; }
 }

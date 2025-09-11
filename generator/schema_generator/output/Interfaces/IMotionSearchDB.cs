@@ -4,10 +4,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMotionSearchDB : ISchemaClass {
 
+  
   public IMotionSearchNode RootNode { get; }
   
   public IProductQuantizer ResidualQuantizer { get; }
   
+// CUtlVector< MotionDBIndex >
   public ref CUtlVector CodeIndices { get; }
-  
 }

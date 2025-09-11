@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITextureGroup_t : ISchemaClass {
 
+  
   public ref bool Enabled { get; }
   
   public ref bool ReplaceTextureWithGradient { get; }
@@ -21,5 +22,4 @@ public partial interface ITextureGroup_t : ISchemaClass {
   public IParticleCollectionRendererFloatInput TextureBlend { get; }
   
   public ITextureControls_t TextureControls { get; }
-  
 }

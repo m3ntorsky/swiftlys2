@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimEventDefinition : ISchemaClass {
 
+  
   public ref int Frame { get; }
   
   public ref int EndFrame { get; }
@@ -17,5 +18,4 @@ public partial interface IAnimEventDefinition : ISchemaClass {
   public ref CBufferString LegacyOptions { get; }
   
   public ref CGlobalSymbol EventName { get; }
-  
 }

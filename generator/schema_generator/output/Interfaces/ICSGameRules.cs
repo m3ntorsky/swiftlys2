@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSGameRules : ITeamplayRules {
 
+  
   public ref bool FreezePeriod { get; }
   
   public ref bool WarmupPeriod { get; }
@@ -381,5 +382,4 @@ public partial interface ICSGameRules : ITeamplayRules {
   public ref byte RoundStartCount { get; }
   
   public ref double LastPerfSampleTime { get; }
-  
 }

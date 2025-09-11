@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRR_Response : ISchemaClass {
 
+  
   public ref byte Type { get; }
   
   public ISchemaFixedString ResponseName { get; }
@@ -23,5 +24,4 @@ public partial interface IRR_Response : ISchemaClass {
   public IResponseFollowup Followup { get; }
   
   public ref CUtlSymbol RecipientFilter { get; }
-  
 }

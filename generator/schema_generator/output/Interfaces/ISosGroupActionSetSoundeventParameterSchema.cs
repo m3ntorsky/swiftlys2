@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISosGroupActionSetSoundeventParameterSchema : ISosGroupActionSchema {
 
+  
   public ref int MaxCount { get; }
   
   public ref float MinValue { get; }
@@ -13,5 +14,4 @@ public partial interface ISosGroupActionSetSoundeventParameterSchema : ISosGroup
   public ref CUtlString OpvarName { get; }
   
   public ref SosActionSortType_t SortType { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_InitFromCPSnapshot : IParticleFunctionInitializer {
 
+  
   public ref int ControlPointNumber { get; }
   
   public ref CUtlString StrSnapshotSubset { get; }
@@ -25,5 +26,4 @@ public partial interface IC_INIT_InitFromCPSnapshot : IParticleFunctionInitializ
   public ref int RandomSeed { get; }
   
   public ref bool LocalSpaceAngles { get; }
-  
 }

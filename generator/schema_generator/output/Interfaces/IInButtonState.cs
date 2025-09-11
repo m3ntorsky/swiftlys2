@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IInButtonState : ISchemaClass {
 
-  public ISchemaFixedArray<ulong> ButtonStates { get; }
   
+  public ISchemaFixedArray<ulong> ButtonStates { get; }
 }

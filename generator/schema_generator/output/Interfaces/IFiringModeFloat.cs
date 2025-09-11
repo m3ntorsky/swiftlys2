@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFiringModeFloat : ISchemaClass {
 
-  public ISchemaFixedArray<float> Values { get; }
   
+  public ISchemaFixedArray<float> Values { get; }
 }

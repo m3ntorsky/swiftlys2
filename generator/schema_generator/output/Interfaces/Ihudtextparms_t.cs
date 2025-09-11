@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface Ihudtextparms_t : ISchemaClass {
 
+  
   public ref Color Color1 { get; }
   
   public ref Color Color2 { get; }
@@ -15,5 +16,4 @@ public partial interface Ihudtextparms_t : ISchemaClass {
   public ref float X { get; }
   
   public ref float Y { get; }
-  
 }

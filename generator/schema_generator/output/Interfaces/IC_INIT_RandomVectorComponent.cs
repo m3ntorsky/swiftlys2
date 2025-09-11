@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_RandomVectorComponent : IParticleFunctionInitializer {
 
+  
   public ref float Min { get; }
   
   public ref float Max { get; }
@@ -11,5 +12,4 @@ public partial interface IC_INIT_RandomVectorComponent : IParticleFunctionInitia
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public ref int Component { get; }
-  
 }

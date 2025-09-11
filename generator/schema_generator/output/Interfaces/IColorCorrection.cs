@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IColorCorrection : IBaseEntity {
 
+  
   public ref float FadeInDuration { get; }
   
   public ref float FadeOutDuration { get; }
@@ -37,5 +38,4 @@ public partial interface IColorCorrection : IBaseEntity {
   public ISchemaFixedString NetlookupFilename { get; }
   
   public ref CUtlSymbolLarge LookupFilename { get; }
-  
 }

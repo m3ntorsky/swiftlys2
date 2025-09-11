@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleVisibilityInputs : ISchemaClass {
 
+  
   public ref float CameraBias { get; }
   
   public ref int CPin { get; }
@@ -41,5 +42,4 @@ public partial interface IParticleVisibilityInputs : ISchemaClass {
   public ref float RadiusScaleFOVBase { get; }
   
   public ref bool RightEye { get; }
-  
 }

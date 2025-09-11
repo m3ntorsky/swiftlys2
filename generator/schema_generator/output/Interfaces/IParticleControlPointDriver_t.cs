@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleControlPointDriver_t : ISchemaClass {
 
+  
   public ref int ControlPoint { get; }
   
   public ref ParticleAttachment_t AttachType { get; }
@@ -15,5 +16,4 @@ public partial interface IParticleControlPointDriver_t : ISchemaClass {
   public ref QAngle Offset { get; }
   
   public ref CUtlString EntityName { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimTagBase : ISchemaClass {
 
+  
   public ref CGlobalSymbol Name { get; }
   
   public ref CUtlString Comment { get; }
@@ -13,5 +14,4 @@ public partial interface IAnimTagBase : ISchemaClass {
   public IAnimTagID TagID { get; }
   
   public ref bool IsReferenced { get; }
-  
 }

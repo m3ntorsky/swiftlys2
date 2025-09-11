@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmBlend2DNode__CDefinition : INmPoseNode::CDefinition {
 
+  
   public ref CUtlVectorFixedGrowable<short> SourceNodeIndices { get; }
   
   public ref short InputParameterNodeIdx0 { get; }
@@ -17,5 +18,4 @@ public partial interface INmBlend2DNode__CDefinition : INmPoseNode::CDefinition 
   public ref CUtlVectorFixedGrowable<byte> HullIndices { get; }
   
   public ref bool AllowLooping { get; }
-  
 }

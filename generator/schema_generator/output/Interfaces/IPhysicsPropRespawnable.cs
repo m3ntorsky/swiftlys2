@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysicsPropRespawnable : IPhysicsProp {
 
+  
   public ref Vector OriginalSpawnOrigin { get; }
   
   public ref QAngle OriginalSpawnAngles { get; }
@@ -13,5 +14,4 @@ public partial interface IPhysicsPropRespawnable : IPhysicsProp {
   public ref Vector OriginalMaxs { get; }
   
   public ref float RespawnDuration { get; }
-  
 }

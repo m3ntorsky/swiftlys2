@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_OffsetVectorToVector : IParticleFunctionInitializer {
 
+  
   public IParticleAttributeIndex_t FieldInput { get; }
   
   public IParticleAttributeIndex_t FieldOutput { get; }
@@ -13,5 +14,4 @@ public partial interface IC_INIT_OffsetVectorToVector : IParticleFunctionInitial
   public ref Vector OutputMax { get; }
   
   public IRandomNumberGeneratorParameters RandomnessParameters { get; }
-  
 }

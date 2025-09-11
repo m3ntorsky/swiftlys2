@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IHitboxComponent : IEntityComponent {
 
-  public ISchemaFixedArray<uint> DisabledHitGroups { get; }
   
+  public ISchemaFixedArray<uint> DisabledHitGroups { get; }
 }

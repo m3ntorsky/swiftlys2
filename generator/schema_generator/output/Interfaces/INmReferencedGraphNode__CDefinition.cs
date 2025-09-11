@@ -4,8 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmReferencedGraphNode__CDefinition : INmPoseNode::CDefinition {
 
+  
   public ref short ReferencedGraphIdx { get; }
   
   public ref short FallbackNodeIdx { get; }
-  
 }

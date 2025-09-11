@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_DecayMaintainCount : IParticleFunctionOperator {
 
+  
   public ref int ParticlesToMaintain { get; }
   
   public ref float DecayDelay { get; }
@@ -15,5 +16,4 @@ public partial interface IC_OP_DecayMaintainCount : IParticleFunctionOperator {
   public IParticleCollectionFloatInput Scale { get; }
   
   public ref bool KillNewest { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ILogicCollisionPair : ILogicalEntity {
 
+  
   public ref CUtlSymbolLarge NameAttach1 { get; }
   
   public ref CUtlSymbolLarge NameAttach2 { get; }
@@ -13,5 +14,4 @@ public partial interface ILogicCollisionPair : ILogicalEntity {
   public ref bool Disabled { get; }
   
   public ref bool Succeeded { get; }
-  
 }

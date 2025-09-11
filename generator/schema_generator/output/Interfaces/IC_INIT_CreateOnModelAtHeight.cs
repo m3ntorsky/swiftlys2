@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_CreateOnModelAtHeight : IParticleFunctionInitializer {
 
+  
   public ref bool UseBones { get; }
   
   public ref bool ForceZ { get; }
@@ -31,5 +32,4 @@ public partial interface IC_INIT_CreateOnModelAtHeight : IParticleFunctionInitia
   public IParticleCollectionFloatInput HitboxVelocityScale { get; }
   
   public IParticleCollectionFloatInput MaxBoneVelocity { get; }
-  
 }

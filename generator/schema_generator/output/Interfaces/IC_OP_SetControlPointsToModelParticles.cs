@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetControlPointsToModelParticles : IParticleFunctionOperator {
 
+  
   public ISchemaFixedString HitboxSetName { get; }
   
   public ISchemaFixedString AttachmentName { get; }
@@ -17,5 +18,4 @@ public partial interface IC_OP_SetControlPointsToModelParticles : IParticleFunct
   public ref bool Skin { get; }
   
   public ref bool Attachment { get; }
-  
 }

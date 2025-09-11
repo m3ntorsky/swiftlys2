@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IOrientationWarpUpdateNode : IUnaryUpdateNode {
 
+  
   public ref OrientationWarpMode_t Mode { get; }
   
   public IAnimParamHandle TargetParam { get; }
@@ -29,5 +30,4 @@ public partial interface IOrientationWarpUpdateNode : IUnaryUpdateNode {
   public ref AnimValueSource PreferredRotationDirection { get; }
   
   public ref float PreferredRotationThreshold { get; }
-  
 }

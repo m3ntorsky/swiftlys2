@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvInstructorVRHint : IPointEntity {
 
+  
   public ref CUtlSymbolLarge Name { get; }
   
   public ref CUtlSymbolLarge HintTargetEntity { get; }
@@ -21,5 +22,4 @@ public partial interface IEnvInstructorVRHint : IPointEntity {
   public ref int AttachType { get; }
   
   public ref float HeightOffset { get; }
-  
 }

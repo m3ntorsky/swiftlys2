@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_WindForce : IParticleFunctionForce {
 
-  public ref Vector Force { get; }
   
+  public ref Vector Force { get; }
 }

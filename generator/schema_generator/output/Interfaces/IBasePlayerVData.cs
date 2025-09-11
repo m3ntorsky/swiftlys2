@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBasePlayerVData : IEntitySubclassVDataBase {
 
+  
   public ISchemaUntypedField ModelName { get; }
   
   public ISkillFloat HeadDamageMultiplier { get; }
@@ -31,5 +32,4 @@ public partial interface IBasePlayerVData : IEntitySubclassVDataBase {
   public ref float UseAngleTolerance { get; }
   
   public ref float CrouchTime { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISosGroupActionMemberCountEnvelopeSchema : ISosGroupActionSchema {
 
+  
   public ref int BaseCount { get; }
   
   public ref int TargetCount { get; }
@@ -19,5 +20,4 @@ public partial interface ISosGroupActionMemberCountEnvelopeSchema : ISosGroupAct
   public ref CUtlString ResultVarName { get; }
   
   public ref bool SaveToGroup { get; }
-  
 }

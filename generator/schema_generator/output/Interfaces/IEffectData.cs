@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEffectData : ISchemaClass {
 
+  
   public ref Vector Origin { get; }
   
   public ref Vector Start { get; }
@@ -45,5 +46,4 @@ public partial interface IEffectData : ISchemaClass {
   public ref ushort EffectName { get; }
   
   public ref byte ExplosionType { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IHullFlags_t : ISchemaClass {
 
+  
   public ref bool Hull_Human { get; }
   
   public ref bool Hull_SmallCentered { get; }
@@ -23,5 +24,4 @@ public partial interface IHullFlags_t : ISchemaClass {
   public ref bool Hull_MediumTall { get; }
   
   public ref bool Hull_Small { get; }
-  
 }

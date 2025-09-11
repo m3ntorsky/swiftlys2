@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INewParticleEffect : IIParticleEffect {
 
+  
   public INewParticleEffect Next { get; }
   
   public INewParticleEffect Prev { get; }
@@ -67,5 +68,4 @@ public partial interface INewParticleEffect : IIParticleEffect {
   public ref Vector AggregationCenter { get; }
   
   public ref int RefCount { get; }
-  
 }

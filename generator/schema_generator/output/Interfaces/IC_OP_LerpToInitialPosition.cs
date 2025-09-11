@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_LerpToInitialPosition : IParticleFunctionOperator {
 
+  
   public ref int ControlPointNumber { get; }
   
   public IPerParticleFloatInput Interpolation { get; }
@@ -13,5 +14,4 @@ public partial interface IC_OP_LerpToInitialPosition : IParticleFunctionOperator
   public IParticleCollectionFloatInput Scale { get; }
   
   public IParticleCollectionVecInput Scale { get; }
-  
 }

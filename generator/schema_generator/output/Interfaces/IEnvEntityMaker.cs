@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvEntityMaker : IPointEntity {
 
+  
   public ref Vector EntityMins { get; }
   
   public ref Vector EntityMaxs { get; }
@@ -27,5 +28,4 @@ public partial interface IEnvEntityMaker : IPointEntity {
   public IEntityIOOutput OutputOnSpawned { get; }
   
   public IEntityIOOutput OutputOnFailedSpawn { get; }
-  
 }

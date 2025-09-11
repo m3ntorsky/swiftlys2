@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmFloatMathNode__CDefinition : INmFloatValueNode::CDefinition {
 
+  
   public ref short InputValueNodeIdxA { get; }
   
   public ref short InputValueNodeIdxB { get; }
@@ -15,5 +16,4 @@ public partial interface INmFloatMathNode__CDefinition : INmFloatValueNode::CDef
   public ref CNmFloatMathNode::Operator_t Operator { get; }
   
   public ref float ValueB { get; }
-  
 }

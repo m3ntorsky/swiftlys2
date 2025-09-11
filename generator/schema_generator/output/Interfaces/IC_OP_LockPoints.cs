@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_LockPoints : IParticleFunctionOperator {
 
+  
   public ref int MinCol { get; }
   
   public ref int MaxCol { get; }
@@ -15,5 +16,4 @@ public partial interface IC_OP_LockPoints : IParticleFunctionOperator {
   public ref int ControlPoint { get; }
   
   public ref float BlendValue { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapTransformVisibilityToScalar : IParticleFunctionOperator {
 
+  
   public ref ParticleSetMethod_t SetMethod { get; }
   
   public IParticleTransformInput TransformInput { get; }
@@ -19,5 +20,4 @@ public partial interface IC_OP_RemapTransformVisibilityToScalar : IParticleFunct
   public ref float OutputMax { get; }
   
   public ref float Radius { get; }
-  
 }

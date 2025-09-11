@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFeSDFRigid_t : ISchemaClass {
 
+  
   public ref Vector LocalMin { get; }
   
   public ref Vector LocalMax { get; }
@@ -25,5 +26,4 @@ public partial interface IFeSDFRigid_t : ISchemaClass {
   public ref int Height { get; }
   
   public ref int Depth { get; }
-  
 }

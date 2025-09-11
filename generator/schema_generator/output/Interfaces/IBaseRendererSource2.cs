@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseRendererSource2 : IParticleFunctionRenderer {
 
+  
   public IParticleCollectionRendererFloatInput RadiusScale { get; }
   
   public IParticleCollectionRendererFloatInput AlphaScale { get; }
@@ -133,5 +134,4 @@ public partial interface IBaseRendererSource2 : IParticleFunctionRenderer {
   public ref bool BlendFramesSeq0 { get; }
   
   public ref bool MaxLuminanceBlendingSequence0 { get; }
-  
 }

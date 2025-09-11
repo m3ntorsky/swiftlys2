@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICountdownTimer : ISchemaClass {
 
+  
   public ref float Duration { get; }
   
   public IGameTime_t Timestamp { get; }
@@ -11,5 +12,4 @@ public partial interface ICountdownTimer : ISchemaClass {
   public ref float Timescale { get; }
   
   public ref WorldGroupId_t WorldGroupId { get; }
-  
 }

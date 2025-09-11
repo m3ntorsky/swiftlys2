@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICommentarySystem : ISchemaClass {
 
+  
   public ref bool CommentaryConvarsChanging { get; }
   
   public ref bool CommentaryEnabledMidGame { get; }
@@ -23,5 +24,4 @@ public partial interface ICommentarySystem : ISchemaClass {
   public ref CHandle<CPointCommentaryNode> LastCommentaryNode { get; }
   
   public ref CUtlVector<CHandle<CPointCommentaryNode>> Nodes { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISosGroupActionSoundeventMinMaxValuesSchema : ISosGroupActionSchema {
 
+  
   public ref CUtlString StrQueryPublicFieldName { get; }
   
   public ref CUtlString StrDelayPublicFieldName { get; }
@@ -23,5 +24,4 @@ public partial interface ISosGroupActionSoundeventMinMaxValuesSchema : ISosGroup
   public ref CUtlString StrMinValueName { get; }
   
   public ref CUtlString StrMaxValueName { get; }
-  
 }

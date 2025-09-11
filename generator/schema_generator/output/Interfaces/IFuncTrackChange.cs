@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncTrackChange : IFuncPlatRot {
 
+  
   public IPathTrack TrackTop { get; }
   
   public IPathTrack TrackBottom { get; }
@@ -21,5 +22,4 @@ public partial interface IFuncTrackChange : IFuncPlatRot {
   public ref int TargetState { get; }
   
   public ref int Use { get; }
-  
 }

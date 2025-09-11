@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMovementComponentUpdater : IAnimComponentUpdater {
 
+  
+// CUtlVector< CSmartPtr< CAnimMotorUpdaterBase > >
   public ref CUtlVector Motors { get; }
   
   public IAnimInputDamping FacingDamping { get; }
@@ -19,5 +21,4 @@ public partial interface IMovementComponentUpdater : IAnimComponentUpdater {
   public ref bool NetworkFacing { get; }
   
   public IAnimParamHandle ParamHandles { get; }
-  
 }

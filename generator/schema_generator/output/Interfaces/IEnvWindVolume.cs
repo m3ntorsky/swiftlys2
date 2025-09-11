@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvWindVolume : IBaseEntity {
 
+  
   public ref bool Active { get; }
   
   public ref Vector BoxMins { get; }
@@ -21,5 +22,4 @@ public partial interface IEnvWindVolume : IBaseEntity {
   public ref float WindSpeedVariationMultiplier { get; }
   
   public ref float WindDirectionVariationMultiplier { get; }
-  
 }

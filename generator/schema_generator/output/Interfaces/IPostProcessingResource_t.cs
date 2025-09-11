@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPostProcessingResource_t : ISchemaClass {
 
+  
   public ref bool HasTonemapParams { get; }
   
   public IPostProcessingTonemapParameters_t ToneMapParams { get; }
@@ -29,5 +30,4 @@ public partial interface IPostProcessingResource_t : ISchemaClass {
   public ref bool HasFogScatteringParams { get; }
   
   public IPostProcessingFogScatteringParameters_t FogScatteringParams { get; }
-  
 }

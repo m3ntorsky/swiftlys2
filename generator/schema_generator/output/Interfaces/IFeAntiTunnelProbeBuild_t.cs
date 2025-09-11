@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFeAntiTunnelProbeBuild_t : ISchemaClass {
 
+  
   public ref float Weight { get; }
   
   public ref float ActivationDistance { get; }
@@ -17,5 +18,4 @@ public partial interface IFeAntiTunnelProbeBuild_t : ISchemaClass {
   public ref ushort ProbeNode { get; }
   
   public ref CUtlVector<ushort> TargetNodes { get; }
-  
 }

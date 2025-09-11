@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderScreenShake : IParticleFunctionRenderer {
 
+  
   public ref float DurationScale { get; }
   
   public ref float RadiusScale { get; }
@@ -21,5 +22,4 @@ public partial interface IC_OP_RenderScreenShake : IParticleFunctionRenderer {
   public IParticleAttributeIndex_t AmplitudeField { get; }
   
   public ref int FilterCP { get; }
-  
 }

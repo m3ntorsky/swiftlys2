@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRnSoftbodyParticle_t : ISchemaClass {
 
-  public ref float MassInv { get; }
   
+  public ref float MassInv { get; }
 }

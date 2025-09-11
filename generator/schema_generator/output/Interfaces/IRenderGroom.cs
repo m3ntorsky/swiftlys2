@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRenderGroom : ISchemaClass {
 
+  
+// CUtlVector< RenderHairStrandInfo_t >
   public ref CUtlVector Hairs { get; }
   
   public ref CUtlVector<uint> HairPositionOffsets { get; }
@@ -31,5 +33,4 @@ public partial interface IRenderGroom : ISchemaClass {
   public ref int AttachMeshDrawCallIdx { get; }
   
   public ref bool EnableSimulation { get; }
-  
 }

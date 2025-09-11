@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRnBlendVertex_t : ISchemaClass {
 
+  
   public ref ushort Weight0 { get; }
   
   public ref ushort Index0 { get; }
@@ -19,5 +20,4 @@ public partial interface IRnBlendVertex_t : ISchemaClass {
   public ref ushort Flags { get; }
   
   public ref ushort TargetIndex { get; }
-  
 }

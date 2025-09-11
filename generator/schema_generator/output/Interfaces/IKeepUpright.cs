@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IKeepUpright : IPointEntity {
 
+  
   public ref Vector WorldGoalAxis { get; }
   
   public ref Vector LocalTestAxis { get; }
@@ -17,5 +18,4 @@ public partial interface IKeepUpright : IPointEntity {
   public ref bool Active { get; }
   
   public ref bool DampAllRotation { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface Ishard_model_desc_t : ISchemaClass {
 
+  
   public ref int ModelID { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> MaterialBase { get; }
@@ -29,5 +30,4 @@ public partial interface Ishard_model_desc_t : ISchemaClass {
   public ref bool ParentFrozen { get; }
   
   public ref CUtlStringToken SurfacePropStringToken { get; }
-  
 }

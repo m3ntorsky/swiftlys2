@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBasePlayerWeapon : IEconEntity {
 
+  
   public IGameTick_t NextPrimaryAttackTick { get; }
   
   public ref float NextPrimaryAttackTickRatio { get; }
@@ -19,5 +20,4 @@ public partial interface IBasePlayerWeapon : IEconEntity {
   public ISchemaFixedArray<int> ReserveAmmo { get; }
   
   public IEntityIOOutput OnPlayerUse { get; }
-  
 }

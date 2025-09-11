@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITransitionUpdateData : ISchemaClass {
 
+  
   public ref byte SrcStateIndex { get; }
   
   public ref byte DestStateIndex { get; }
@@ -11,5 +12,4 @@ public partial interface ITransitionUpdateData : ISchemaClass {
   public ISchemaUntypedField HandshakeMaskToDisableFirst { get; }
   
   public ISchemaUntypedField Disabled { get; }
-  
 }

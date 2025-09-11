@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFollowPathUpdateNode : IUnaryUpdateNode {
 
+  
   public ref float BlendOutTime { get; }
   
   public ref bool BlockNonPathMovement { get; }
@@ -29,5 +30,4 @@ public partial interface IFollowPathUpdateNode : IUnaryUpdateNode {
   public ref float TurnToFaceOffset { get; }
   
   public ref bool TurnToFace { get; }
-  
 }

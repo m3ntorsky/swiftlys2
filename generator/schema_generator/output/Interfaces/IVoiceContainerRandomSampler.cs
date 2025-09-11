@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVoiceContainerRandomSampler : IVoiceContainerBase {
 
+  
   public ref float Amplitude { get; }
   
   public ref float AmplitudeJitter { get; }
@@ -15,5 +16,4 @@ public partial interface IVoiceContainerRandomSampler : IVoiceContainerBase {
   public ref int NumDelayVariations { get; }
   
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>> GrainResources { get; }
-  
 }

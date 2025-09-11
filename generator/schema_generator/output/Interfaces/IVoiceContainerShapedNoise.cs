@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVoiceContainerShapedNoise : IVoiceContainerBase {
 
+  
   public ref bool UseCurveForFrequency { get; }
   
   public ref float Frequency { get; }
@@ -21,5 +22,4 @@ public partial interface IVoiceContainerShapedNoise : IVoiceContainerBase {
   public ref float GainInDecibels { get; }
   
   public ISchemaUntypedField GainSweep { get; }
-  
 }

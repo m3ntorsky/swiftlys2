@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEconItemAttribute : ISchemaClass {
 
+  
   public ref ushort AttributeDefinitionIndex { get; }
   
   public ref float Value { get; }
@@ -13,5 +14,4 @@ public partial interface IEconItemAttribute : ISchemaClass {
   public ref int RefundableCurrency { get; }
   
   public ref bool SetBonus { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvParticleGlow : IParticleSystem {
 
+  
   public ref float AlphaScale { get; }
   
   public ref float RadiusScale { get; }
@@ -13,5 +14,4 @@ public partial interface IEnvParticleGlow : IParticleSystem {
   public ref Color ColorTint { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureOverride { get; }
-  
 }

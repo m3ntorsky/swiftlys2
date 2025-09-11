@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IInferno : IBaseModelEntity {
 
+  
   public ISchemaFixedArray<Vector> FirePositions { get; }
   
   public ISchemaFixedArray<Vector> FireParentPositions { get; }
@@ -51,5 +52,4 @@ public partial interface IInferno : IBaseModelEntity {
   public ICountdownTimer NextSpreadTimer { get; }
   
   public ref ushort SourceItemDefIndex { get; }
-  
 }

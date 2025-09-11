@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimationGroup : ISchemaClass {
 
+  
   public ref uint Flags { get; }
   
   public ref CBufferString Name { get; }
@@ -19,5 +20,4 @@ public partial interface IAnimationGroup : ISchemaClass {
   public ref CUtlVector<CBufferString> Scripts { get; }
   
   public ref CUtlVector<CStrongHandle<oi>> AdditionalExtRefs { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IScriptedSequence : IBaseEntity {
 
+  
   public ref CUtlSymbolLarge Entry { get; }
   
   public ref CUtlSymbolLarge PreIdle { get; }
@@ -157,5 +158,4 @@ public partial interface IScriptedSequence : IBaseEntity {
   public ref int PlayerDeathBehavior { get; }
   
   public ref bool SkipFadeIn { get; }
-  
 }

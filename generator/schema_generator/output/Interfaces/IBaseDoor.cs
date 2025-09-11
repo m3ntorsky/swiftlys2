@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseDoor : IBaseToggle {
 
+  
   public ref QAngle MoveEntitySpace { get; }
   
   public ref Vector MoveDirParentSpace { get; }
@@ -59,5 +60,4 @@ public partial interface IBaseDoor : IBaseToggle {
   public ref bool IsChaining { get; }
   
   public ref bool IsUsable { get; }
-  
 }

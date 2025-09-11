@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IGameSceneNode : ISchemaClass {
 
+  
   public ref CTransform NodeToWorld { get; }
   
   public IEntityInstance Owner { get; }
@@ -69,5 +70,4 @@ public partial interface IGameSceneNode : ISchemaClass {
   public ref float ClientLocalScale { get; }
   
   public ref Vector RenderOrigin { get; }
-  
 }

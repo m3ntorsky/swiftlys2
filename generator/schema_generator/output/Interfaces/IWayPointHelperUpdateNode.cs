@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IWayPointHelperUpdateNode : IUnaryUpdateNode {
 
+  
   public ref float StartCycle { get; }
   
   public ref float EndCycle { get; }
@@ -13,5 +14,4 @@ public partial interface IWayPointHelperUpdateNode : IUnaryUpdateNode {
   public ref bool PreventOvershoot { get; }
   
   public ref bool PreventUndershoot { get; }
-  
 }

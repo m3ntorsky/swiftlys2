@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IIKDemoCaptureSettings_t : ISchemaClass {
 
+  
   public ref CUtlString ParentBoneName { get; }
   
   public ref IKChannelMode Mode { get; }
@@ -13,5 +14,4 @@ public partial interface IIKDemoCaptureSettings_t : ISchemaClass {
   public ref CUtlString OneBoneStart { get; }
   
   public ref CUtlString OneBoneEnd { get; }
-  
 }

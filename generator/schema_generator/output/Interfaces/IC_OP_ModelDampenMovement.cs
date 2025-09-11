@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_ModelDampenMovement : IParticleFunctionOperator {
 
+  
   public ref int ControlPointNumber { get; }
   
   public ref bool BoundBox { get; }
@@ -17,5 +18,4 @@ public partial interface IC_OP_ModelDampenMovement : IParticleFunctionOperator {
   public IPerParticleVecInput PosOffset { get; }
   
   public ref float Drag { get; }
-  
 }

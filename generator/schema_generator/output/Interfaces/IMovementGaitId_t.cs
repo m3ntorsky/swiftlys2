@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMovementGaitId_t : ISchemaClass {
 
-  public ref CGlobalSymbol Id { get; }
   
+  public ref CGlobalSymbol Id { get; }
 }

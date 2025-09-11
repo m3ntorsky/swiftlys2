@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseRuntimeConstantIndex_t : ISchemaClass {
 
-  public ref short Value { get; }
   
+  public ref short Value { get; }
 }

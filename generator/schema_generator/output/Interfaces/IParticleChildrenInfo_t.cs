@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleChildrenInfo_t : ISchemaClass {
 
+  
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ChildRef { get; }
   
   public ref float Delay { get; }
@@ -13,5 +14,4 @@ public partial interface IParticleChildrenInfo_t : ISchemaClass {
   public ref bool DisableChild { get; }
   
   public ref ParticleDetailLevel_t DetailLevel { get; }
-  
 }

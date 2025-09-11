@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBasePlayerWeaponVData : IEntitySubclassVDataBase {
 
+  
   public ISchemaUntypedField WorldModel { get; }
   
   public ISchemaUntypedField ToolsOnlyOwnerModelName { get; }
@@ -61,5 +62,4 @@ public partial interface IBasePlayerWeaponVData : IEntitySubclassVDataBase {
   public ref int Position { get; }
   
   public ISchemaUntypedField ShootSounds { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderModels : IParticleFunctionRenderer {
 
+  
   public ref bool OnlyRenderInEffectsBloomPass { get; }
   
   public ref bool OnlyRenderInEffectsWaterPass { get; }
@@ -12,6 +13,7 @@ public partial interface IC_OP_RenderModels : IParticleFunctionRenderer {
   
   public ref bool OnlyRenderInEffecsGameOverlay { get; }
   
+// CUtlVector< ModelReference_t >
   public ref CUtlVector ModelList { get; }
   
   public IParticleAttributeIndex_t BodyGroupField { get; }
@@ -70,6 +72,7 @@ public partial interface IC_OP_RenderModels : IParticleFunctionRenderer {
   
   public IPerParticleFloatInput Skin { get; }
   
+// CUtlVector< MaterialVariable_t >
   public ref CUtlVector MaterialVars { get; }
   
   public IPerParticleFloatInput RenderFilter { get; }
@@ -113,5 +116,4 @@ public partial interface IC_OP_RenderModels : IParticleFunctionRenderer {
   public IParticleCollectionVecInput ColorScale { get; }
   
   public ref ParticleColorBlendType_t ColorBlendType { get; }
-  
 }

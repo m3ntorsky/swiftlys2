@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IChangeLevel : IBaseTrigger {
 
+  
   public ref CUtlString MapName { get; }
   
   public ref CUtlString LandmarkName { get; }
@@ -17,5 +18,4 @@ public partial interface IChangeLevel : IBaseTrigger {
   public ref bool NewChapter { get; }
   
   public ref bool OnChangeLevelFired { get; }
-  
 }

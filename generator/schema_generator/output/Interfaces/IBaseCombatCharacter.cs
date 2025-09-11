@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseCombatCharacter : IBaseFlex {
 
+  
   public ref bool ForceServerRagdoll { get; }
   
   public ref CUtlVector<CHandle<CEconWearable>> MyWearables { get; }
@@ -25,5 +26,4 @@ public partial interface IBaseCombatCharacter : IBaseFlex {
   public ref uint NavHullIdx { get; }
   
   public IMovementStatsProperty MovementStats { get; }
-  
 }

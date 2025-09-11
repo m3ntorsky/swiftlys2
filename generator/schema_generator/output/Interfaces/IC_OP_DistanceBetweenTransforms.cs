@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_DistanceBetweenTransforms : IParticleFunctionOperator {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public IParticleTransformInput TransformStart { get; }
@@ -29,5 +30,4 @@ public partial interface IC_OP_DistanceBetweenTransforms : IParticleFunctionOper
   public ref bool LOS { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
-  
 }

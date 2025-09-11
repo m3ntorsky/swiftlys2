@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointClientUIWorldPanel : IBaseClientUIEntity {
 
+  
   public ref bool IgnoreInput { get; }
   
   public ref bool Lit { get; }
@@ -51,5 +52,4 @@ public partial interface IPointClientUIWorldPanel : IBaseClientUIEntity {
   public ref bool DisableMipGen { get; }
   
   public ref int ExplicitImageLayout { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvWindController : IBaseEntity {
 
+  
   public IEnvWindShared EnvWindShared { get; }
   
   public ref float DirectionVariation { get; }
@@ -25,5 +26,4 @@ public partial interface IEnvWindController : IBaseEntity {
   public ref bool IsMaster { get; }
   
   public ref bool FirstTime { get; }
-  
 }

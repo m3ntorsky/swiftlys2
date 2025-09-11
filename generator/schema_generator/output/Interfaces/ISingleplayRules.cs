@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISingleplayRules : IGameRules {
 
-  public ref bool SinglePlayerGameEnding { get; }
   
+  public ref bool SinglePlayerGameEnding { get; }
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysWheelConstraint : IPhysConstraint {
 
+  
   public ref float SuspensionFrequency { get; }
   
   public ref float SuspensionDampingRatio { get; }
@@ -27,5 +28,4 @@ public partial interface IPhysWheelConstraint : IPhysConstraint {
   public ref float SpinAxisFriction { get; }
   
   public ref CHandle<CBaseEntity> SteeringMimicsEntity { get; }
-  
 }

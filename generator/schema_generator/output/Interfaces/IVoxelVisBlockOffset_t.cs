@@ -4,8 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVoxelVisBlockOffset_t : ISchemaClass {
 
+  
   public ref uint Offset { get; }
   
   public ref uint ElementCount { get; }
-  
 }

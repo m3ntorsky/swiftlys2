@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFootCycleDefinition : ISchemaClass {
 
+  
   public ref Vector StancePositionMS { get; }
   
   public ref Vector MidpointPositionMS { get; }
@@ -21,5 +22,4 @@ public partial interface IFootCycleDefinition : ISchemaClass {
   public IFootCycle FootStrikeCycle { get; }
   
   public IFootCycle FootLandCycle { get; }
-  
 }

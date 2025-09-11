@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBuoyancyHelper : ISchemaClass {
 
+  
   public ref CUtlStringToken FluidType { get; }
   
   public ref float FluidDensity { get; }
@@ -23,5 +24,4 @@ public partial interface IBuoyancyHelper : ISchemaClass {
   public ref CUtlVector<float> FractionOfWheelSubmergedForWheelDrag { get; }
   
   public ref CUtlVector<float> WheelDrag { get; }
-  
 }

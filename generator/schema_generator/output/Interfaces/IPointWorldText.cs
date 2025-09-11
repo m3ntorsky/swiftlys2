@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointWorldText : IModelPointEntity {
 
+  
   public ISchemaFixedString MessageText { get; }
   
   public ISchemaFixedString FontName { get; }
@@ -35,5 +36,4 @@ public partial interface IPointWorldText : IModelPointEntity {
   public ref PointWorldTextJustifyVertical_t JustifyVertical { get; }
   
   public ref PointWorldTextReorientMode_t ReorientMode { get; }
-  
 }

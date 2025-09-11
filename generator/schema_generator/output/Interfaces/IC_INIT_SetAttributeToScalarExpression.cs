@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_SetAttributeToScalarExpression : IParticleFunctionInitializer {
 
+  
   public ref ScalarExpressionType_t Expression { get; }
   
   public IPerParticleFloatInput Input1 { get; }
@@ -15,5 +16,4 @@ public partial interface IC_INIT_SetAttributeToScalarExpression : IParticleFunct
   public IParticleAttributeIndex_t OutputField { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
-  
 }

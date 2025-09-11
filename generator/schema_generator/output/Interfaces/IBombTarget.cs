@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBombTarget : IBaseTrigger {
 
+  
   public IEntityIOOutput OnBombExplode { get; }
   
   public IEntityIOOutput OnBombPlanted { get; }
@@ -21,5 +22,4 @@ public partial interface IBombTarget : IBaseTrigger {
   public ref CHandle<CBaseEntity> InstructorHint { get; }
   
   public ref int BombSiteDesignation { get; }
-  
 }

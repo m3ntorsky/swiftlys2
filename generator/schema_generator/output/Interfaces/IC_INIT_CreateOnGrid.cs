@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_CreateOnGrid : IParticleFunctionInitializer {
 
+  
   public IParticleCollectionFloatInput XCount { get; }
   
   public IParticleCollectionFloatInput YCount { get; }
@@ -23,5 +24,4 @@ public partial interface IC_INIT_CreateOnGrid : IParticleFunctionInitializer {
   public ref bool Center { get; }
   
   public ref bool Hollow { get; }
-  
 }

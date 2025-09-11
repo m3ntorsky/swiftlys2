@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysicsSpring : IBaseEntity {
 
+  
   public ref float Frequency { get; }
   
   public ref float DampingRatio { get; }
@@ -19,5 +20,4 @@ public partial interface IPhysicsSpring : IBaseEntity {
   public ref Vector End { get; }
   
   public ref uint TeleportTick { get; }
-  
 }

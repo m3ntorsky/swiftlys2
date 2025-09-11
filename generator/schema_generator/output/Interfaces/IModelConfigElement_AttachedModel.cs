@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IModelConfigElement_AttachedModel : IModelConfigElement {
 
+  
   public ref CUtlString InstanceName { get; }
   
   public ref CUtlString EntityClass { get; }
@@ -31,5 +32,4 @@ public partial interface IModelConfigElement_AttachedModel : IModelConfigElement
   public ref CUtlString BodygroupOnOtherModels { get; }
   
   public ref CUtlString MaterialGroupOnOtherModels { get; }
-  
 }

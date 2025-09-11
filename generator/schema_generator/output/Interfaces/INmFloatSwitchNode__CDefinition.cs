@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmFloatSwitchNode__CDefinition : INmFloatValueNode::CDefinition {
 
+  
   public ref short SwitchValueNodeIdx { get; }
   
   public ref short TrueValueNodeIdx { get; }
@@ -13,5 +14,4 @@ public partial interface INmFloatSwitchNode__CDefinition : INmFloatValueNode::CD
   public ref float FalseValue { get; }
   
   public ref float TrueValue { get; }
-  
 }

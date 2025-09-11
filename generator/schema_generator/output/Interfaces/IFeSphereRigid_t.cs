@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFeSphereRigid_t : ISchemaClass {
 
+  
   public ref fltx4 Sphere { get; }
   
   public ref ushort Node { get; }
@@ -13,5 +14,4 @@ public partial interface IFeSphereRigid_t : ISchemaClass {
   public ref ushort VertexMapIndex { get; }
   
   public ref ushort Flags { get; }
-  
 }

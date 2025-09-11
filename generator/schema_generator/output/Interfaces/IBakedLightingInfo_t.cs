@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBakedLightingInfo_t : ISchemaClass {
 
+  
   public ref uint LightmapVersionNumber { get; }
   
   public ref uint LightmapGameVersionNumber { get; }
@@ -24,6 +25,6 @@ public partial interface IBakedLightingInfo_t : ISchemaClass {
   
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCTextureBase>> LightMaps { get; }
   
+// CUtlVector< BakedLightingInfo_t::BakedShadowAssignment_t >
   public ref CUtlVector BakedShadows { get; }
-  
 }

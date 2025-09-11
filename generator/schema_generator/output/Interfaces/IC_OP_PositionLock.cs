@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_PositionLock : IParticleFunctionOperator {
 
+  
   public IParticleTransformInput TransformInput { get; }
   
   public ref float StartTime_min { get; }
@@ -33,5 +34,4 @@ public partial interface IC_OP_PositionLock : IParticleFunctionOperator {
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public IParticleAttributeIndex_t FieldOutputPrev { get; }
-  
 }

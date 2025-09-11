@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_InitialRepulsionVelocity : IParticleFunctionInitializer {
 
+  
   public ISchemaFixedString CollisionGroupName { get; }
   
   public ref ParticleTraceSet_t TraceSet { get; }
@@ -29,5 +30,4 @@ public partial interface IC_INIT_InitialRepulsionVelocity : IParticleFunctionIni
   public ref int ChildCP { get; }
   
   public ref int ChildGroupID { get; }
-  
 }

@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFlexDesc : ISchemaClass {
 
-  public ref CUtlString Facs { get; }
   
+  public ref CUtlString Facs { get; }
 }

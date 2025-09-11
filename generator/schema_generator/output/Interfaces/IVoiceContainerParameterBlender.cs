@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVoiceContainerParameterBlender : IVoiceContainerBase {
 
+  
   public ISoundContainerReference FirstSound { get; }
   
   public ISoundContainerReference SecondSound { get; }
@@ -19,5 +20,4 @@ public partial interface IVoiceContainerParameterBlender : IVoiceContainerBase {
   public ISchemaUntypedField Curve3 { get; }
   
   public ISchemaUntypedField Curve4 { get; }
-  
 }

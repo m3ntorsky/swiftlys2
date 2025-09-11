@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_PinParticleToCP : IParticleFunctionOperator {
 
+  
   public ref int ControlPointNumber { get; }
   
   public IParticleCollectionVecInput Offset { get; }
@@ -31,5 +32,4 @@ public partial interface IC_OP_PinParticleToCP : IParticleFunctionOperator {
   public IPerParticleFloatInput Interpolation { get; }
   
   public ref bool RetainInitialVelocity { get; }
-  
 }

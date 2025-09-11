@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISosSoundEventGroupSchema : ISchemaClass {
 
+  
   public ref CUtlString Name { get; }
   
   public ref SosGroupType_t Type { get; }
@@ -21,5 +22,4 @@ public partial interface ISosSoundEventGroupSchema : ISchemaClass {
   public ref float LifeSpanTime { get; }
   
   public ISosGroupActionSchema Actions { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFeAntiTunnelProbe_t : ISchemaClass {
 
+  
   public ref float Weight { get; }
   
   public ref uint Flags { get; }
@@ -19,5 +20,4 @@ public partial interface IFeAntiTunnelProbe_t : ISchemaClass {
   public ref float CurvatureRadius { get; }
   
   public ref float Bias { get; }
-  
 }

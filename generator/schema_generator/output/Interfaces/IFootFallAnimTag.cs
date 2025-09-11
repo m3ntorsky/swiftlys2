@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFootFallAnimTag : IAnimTagBase {
 
-  public ref FootFallTagFoot_t Foot { get; }
   
+  public ref FootFallTagFoot_t Foot { get; }
 }

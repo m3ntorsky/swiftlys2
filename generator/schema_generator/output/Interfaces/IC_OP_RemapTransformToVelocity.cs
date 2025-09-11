@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapTransformToVelocity : IParticleFunctionOperator {
 
-  public IParticleTransformInput TransformInput { get; }
   
+  public IParticleTransformInput TransformInput { get; }
 }

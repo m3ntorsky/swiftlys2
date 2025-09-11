@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetControlPointPositions : IParticleFunctionPreEmission {
 
+  
   public ref bool UseWorldLocation { get; }
   
   public ref bool Orient { get; }
@@ -27,5 +28,4 @@ public partial interface IC_OP_SetControlPointPositions : IParticleFunctionPreEm
   public ref Vector CP4Pos { get; }
   
   public ref int HeadLocation { get; }
-  
 }

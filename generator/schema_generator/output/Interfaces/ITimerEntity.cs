@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITimerEntity : ILogicalEntity {
 
+  
   public IEntityIOOutput OnTimer { get; }
   
   public IEntityIOOutput OnTimerHigh { get; }
@@ -29,5 +30,4 @@ public partial interface ITimerEntity : ILogicalEntity {
   public ref float RemainingTime { get; }
   
   public ref bool Paused { get; }
-  
 }

@@ -4,10 +4,13 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimUpdateSharedData : ISchemaClass {
 
+  
+// CUtlVector< CSmartPtr< CAnimUpdateNodeBase > >
   public ref CUtlVector Nodes { get; }
   
   public ISchemaUntypedField NodeIndexMap { get; }
   
+// CUtlVector< CSmartPtr< CAnimComponentUpdater > >
   public ref CUtlVector Components { get; }
   
   public ISchemaUntypedField ParamListUpdater { get; }
@@ -23,5 +26,4 @@ public partial interface IAnimUpdateSharedData : ISchemaClass {
   public ISchemaUntypedField Skeleton { get; }
   
   public IAnimNodePath RootNodePath { get; }
-  
 }

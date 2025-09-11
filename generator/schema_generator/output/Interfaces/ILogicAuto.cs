@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ILogicAuto : IBaseEntity {
 
+  
   public IEntityIOOutput OnMapSpawn { get; }
   
   public IEntityIOOutput OnDemoMapSpawn { get; }
@@ -25,5 +26,4 @@ public partial interface ILogicAuto : IBaseEntity {
   public IEntityIOOutput OnVRNotEnabled { get; }
   
   public ref CUtlSymbolLarge Globalstate { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointOrient : IBaseEntity {
 
+  
   public ref CUtlSymbolLarge SpawnTargetName { get; }
   
   public ref CHandle<CBaseEntity> Target { get; }
@@ -17,5 +18,4 @@ public partial interface IPointOrient : IBaseEntity {
   public ref float MaxTurnRate { get; }
   
   public IGameTime_t LastGameTime { get; }
-  
 }

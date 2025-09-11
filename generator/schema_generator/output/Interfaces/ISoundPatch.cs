@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISoundPatch : ISchemaClass {
 
+  
   public ISoundEnvelope Pitch { get; }
   
   public ISoundEnvelope Volume { get; }
@@ -29,5 +30,4 @@ public partial interface ISoundPatch : ISchemaClass {
   public ref bool UpdatedSoundOrigin { get; }
   
   public ref CUtlSymbolLarge ClassName { get; }
-  
 }

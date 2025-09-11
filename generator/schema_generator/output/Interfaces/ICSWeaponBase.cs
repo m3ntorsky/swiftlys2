@@ -4,8 +4,10 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSWeaponBase : IBasePlayerWeapon {
 
+  
   public ref bool Removeable { get; }
   
+// CUtlVector< HSequence >
   public ref CUtlVector ThirdPersonFireSequences { get; }
   
   public IHSequence CurrentThirdPersonSequence { get; }
@@ -107,5 +109,4 @@ public partial interface ICSWeaponBase : IBasePlayerWeapon {
   public IGameTime_t LastLOSTraceFailureTime { get; }
   
   public ref float WatTickOffset { get; }
-  
 }

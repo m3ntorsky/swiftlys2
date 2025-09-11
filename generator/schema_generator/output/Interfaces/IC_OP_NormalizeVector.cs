@@ -4,8 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_NormalizeVector : IParticleFunctionOperator {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public ref float Scale { get; }
-  
 }

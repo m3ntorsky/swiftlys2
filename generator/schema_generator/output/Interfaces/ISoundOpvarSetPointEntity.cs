@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISoundOpvarSetPointEntity : ISoundOpvarSetPointBase {
 
+  
   public IEntityIOOutput OnEnter { get; }
   
   public IEntityIOOutput OnExit { get; }
@@ -51,5 +52,4 @@ public partial interface ISoundOpvarSetPointEntity : ISoundOpvarSetPointBase {
   public ref Vector PathingDirection { get; }
   
   public ref int PathingSourceIndex { get; }
-  
 }

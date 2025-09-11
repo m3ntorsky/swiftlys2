@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_DecayClampCount : IParticleFunctionOperator {
 
-  public IParticleCollectionFloatInput Count { get; }
   
+  public IParticleCollectionFloatInput Count { get; }
 }

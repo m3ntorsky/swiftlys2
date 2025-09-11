@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRectLight : IBarnLight {
 
-  public ref bool ShowLight { get; }
   
+  public ref bool ShowLight { get; }
 }

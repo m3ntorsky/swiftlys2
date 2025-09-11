@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapDensityToVector : IParticleFunctionOperator {
 
+  
   public ref float RadiusScale { get; }
   
   public IParticleAttributeIndex_t FieldOutput { get; }
@@ -19,5 +20,4 @@ public partial interface IC_OP_RemapDensityToVector : IParticleFunctionOperator 
   public ref bool UseParentDensity { get; }
   
   public ref int VoxelGridResolution { get; }
-  
 }

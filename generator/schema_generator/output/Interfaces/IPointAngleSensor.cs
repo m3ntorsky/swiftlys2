@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointAngleSensor : IPointEntity {
 
+  
   public ref bool Disabled { get; }
   
   public ref CUtlSymbolLarge LookAtName { get; }
@@ -27,5 +28,4 @@ public partial interface IPointAngleSensor : IPointEntity {
   public ISchemaUntypedField TargetDir { get; }
   
   public ISchemaUntypedField FacingPercentage { get; }
-  
 }

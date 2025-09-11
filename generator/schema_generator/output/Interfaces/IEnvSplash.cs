@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvSplash : IPointEntity {
 
-  public ref float Scale { get; }
   
+  public ref float Scale { get; }
 }

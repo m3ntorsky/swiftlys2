@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBeam : IBaseModelEntity {
 
+  
   public ref float FrameRate { get; }
   
   public ref float HDRColorScale { get; }
@@ -51,5 +52,4 @@ public partial interface IBeam : IBaseModelEntity {
   public ref CHandle<CBaseEntity> EndEntity { get; }
   
   public ref int DissolveType { get; }
-  
 }

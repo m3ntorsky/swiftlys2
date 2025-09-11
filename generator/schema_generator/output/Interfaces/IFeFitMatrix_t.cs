@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFeFitMatrix_t : ISchemaClass {
 
+  
   public ref CTransform Bone { get; }
   
   public ref Vector Center { get; }
@@ -13,5 +14,4 @@ public partial interface IFeFitMatrix_t : ISchemaClass {
   public ref ushort Node { get; }
   
   public ref ushort BeginDynamic { get; }
-  
 }

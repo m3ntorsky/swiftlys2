@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RampScalarLinearSimple : IParticleFunctionOperator {
 
+  
   public ref float Rate { get; }
   
   public ref float StartTime { get; }
@@ -11,5 +12,4 @@ public partial interface IC_OP_RampScalarLinearSimple : IParticleFunctionOperato
   public ref float EndTime { get; }
   
   public IParticleAttributeIndex_t Field { get; }
-  
 }

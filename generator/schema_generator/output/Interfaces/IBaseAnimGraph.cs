@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseAnimGraph : IBaseModelEntity {
 
+  
   public ref bool InitiallyPopulateInterpHistory { get; }
   
   public IIChoreoServices ChoreoServices { get; }
@@ -25,5 +26,4 @@ public partial interface IBaseAnimGraph : IBaseModelEntity {
   public ref bool RagdollEnabled { get; }
   
   public ref bool RagdollClientSide { get; }
-  
 }

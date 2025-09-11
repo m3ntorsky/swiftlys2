@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IHitReactUpdateNode : IUnaryUpdateNode {
 
+  
   public IHitReactFixedSettings_t OpFixedSettings { get; }
   
   public IAnimParamHandle TriggerParam { get; }
@@ -19,5 +20,4 @@ public partial interface IHitReactUpdateNode : IUnaryUpdateNode {
   public ref float MinDelayBetweenHits { get; }
   
   public ref bool ResetChild { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPlantedC4 : IBaseAnimGraph {
 
+  
   public ref bool BombTicking { get; }
   
   public IGameTime_t C4Blow { get; }
@@ -55,5 +56,4 @@ public partial interface IPlantedC4 : IBaseAnimGraph {
   public ref QAngle CatchUpToPlayerEye { get; }
   
   public IGameTime_t LastSpinDetectionTime { get; }
-  
 }

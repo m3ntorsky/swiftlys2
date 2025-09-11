@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IInfoWorldLayer : IBaseEntity {
 
+  
   public IEntityIOOutput OutputOnEntitiesSpawned { get; }
   
   public ref CUtlSymbolLarge WorldName { get; }
@@ -17,5 +18,4 @@ public partial interface IInfoWorldLayer : IBaseEntity {
   public ref bool CreateAsChildSpawnGroup { get; }
   
   public ref uint LayerSpawnGroup { get; }
-  
 }

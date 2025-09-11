@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFootPinningPoseOpFixedData_t : ISchemaClass {
 
+  
+// CUtlVector< FootFixedData_t >
   public ref CUtlVector FootInfo { get; }
   
   public ref float BlendTime { get; }
@@ -17,5 +19,4 @@ public partial interface IFootPinningPoseOpFixedData_t : ISchemaClass {
   public ref bool ApplyLegTwistLimits { get; }
   
   public ref bool ApplyFootRotationLimits { get; }
-  
 }

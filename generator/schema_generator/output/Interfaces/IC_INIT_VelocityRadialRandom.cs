@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_VelocityRadialRandom : IParticleFunctionInitializer {
 
+  
   public ref int ControlPointNumber { get; }
   
   public IPerParticleFloatInput SpeedMin { get; }
@@ -13,5 +14,4 @@ public partial interface IC_INIT_VelocityRadialRandom : IParticleFunctionInitial
   public ref Vector LocalCoordinateSystemSpeedScale { get; }
   
   public ref bool IgnoreDelta { get; }
-  
 }

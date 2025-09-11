@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMaterialParamFloat_t : IMaterialParam_t {
 
-  public ref float Value { get; }
   
+  public ref float Value { get; }
 }

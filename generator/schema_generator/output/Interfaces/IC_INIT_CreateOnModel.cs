@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_CreateOnModel : IParticleFunctionInitializer {
 
+  
   public IParticleModelInput ModelInput { get; }
   
   public IParticleTransformInput TransformInput { get; }
@@ -35,5 +36,4 @@ public partial interface IC_INIT_CreateOnModel : IParticleFunctionInitializer {
   public ref bool UseMesh { get; }
   
   public IParticleCollectionFloatInput ShellSize { get; }
-  
 }

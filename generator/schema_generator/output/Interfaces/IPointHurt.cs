@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointHurt : IPointEntity {
 
+  
   public ref int Damage { get; }
   
   public ref DamageTypes_t BitsDamageType { get; }
@@ -15,5 +16,4 @@ public partial interface IPointHurt : IPointEntity {
   public ref CUtlSymbolLarge StrTarget { get; }
   
   public ref CHandle<CBaseEntity> Activator { get; }
-  
 }

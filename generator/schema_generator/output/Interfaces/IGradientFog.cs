@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IGradientFog : IBaseEntity {
 
+  
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> GradientFogTexture { get; }
   
   public ref float FogStartDistance { get; }
@@ -35,5 +36,4 @@ public partial interface IGradientFog : IBaseEntity {
   public ref bool IsEnabled { get; }
   
   public ref bool GradientFogNeedsTextures { get; }
-  
 }

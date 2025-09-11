@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISAdditionalMatchStats_t : ISAdditionalPerRoundStats_t {
 
+  
   public ref int NumRoundsSurvived { get; }
   
   public ref int MaxNumRoundsSurvived { get; }
@@ -27,5 +28,4 @@ public partial interface ISAdditionalMatchStats_t : ISAdditionalPerRoundStats_t 
   public ref int NumTeamKills { get; }
   
   public ref int TeamDamage { get; }
-  
 }

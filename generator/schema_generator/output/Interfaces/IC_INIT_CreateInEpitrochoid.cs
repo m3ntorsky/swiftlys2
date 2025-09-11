@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_CreateInEpitrochoid : IParticleFunctionInitializer {
 
+  
   public ref int Component1 { get; }
   
   public ref int Component2 { get; }
@@ -23,5 +24,4 @@ public partial interface IC_INIT_CreateInEpitrochoid : IParticleFunctionInitiali
   public ref bool UseLocalCoords { get; }
   
   public ref bool OffsetExistingPos { get; }
-  
 }

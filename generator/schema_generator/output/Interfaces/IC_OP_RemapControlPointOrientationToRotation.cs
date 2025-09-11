@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapControlPointOrientationToRotation : IParticleFunctionOperator {
 
+  
   public ref int CP { get; }
   
   public IParticleAttributeIndex_t FieldOutput { get; }
@@ -11,5 +12,4 @@ public partial interface IC_OP_RemapControlPointOrientationToRotation : IParticl
   public ref float OffsetRot { get; }
   
   public ref int Component { get; }
-  
 }

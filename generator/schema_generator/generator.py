@@ -80,11 +80,23 @@ class Writer():
 
     fields = []
 
+    # the types whose generic has been erased, we add a comment to tell user whats the real type
+    erased_generics = [
+      "CUtlVector",
+      "CUtlVectorFixedGrowable",
+      "CUtlVectorEmbeddedNetworkVar",
+      "CNetworkUtlVectorBase",
+    ]
+
     if "fields" in self.class_def:
       for field in self.class_def["fields"]:
         field_info = parse_field(field, self.all_class_names, self.all_enum_names)
       
         field_info["REF"] = "ref " if field_info["IS_VALUE_TYPE"] else ""
+        field_info["COMMENT"] = ""
+
+        if field_info["IMPL_TYPE"] in erased_generics and "templated" in field:
+          field_info["COMMENT"] = f"\n// {field['templated']}"
 
         fields.append(render_template(self.interface_field_template, field_info))
 

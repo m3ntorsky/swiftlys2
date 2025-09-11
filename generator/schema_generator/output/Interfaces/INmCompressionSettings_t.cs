@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmCompressionSettings_t : ISchemaClass {
 
+  
   public INmCompressionSettings_t::QuantizationRange_t TranslationRangeX { get; }
   
   public INmCompressionSettings_t::QuantizationRange_t TranslationRangeY { get; }
@@ -19,5 +20,4 @@ public partial interface INmCompressionSettings_t : ISchemaClass {
   public ref bool IsTranslationStatic { get; }
   
   public ref bool IsScaleStatic { get; }
-  
 }

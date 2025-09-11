@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysExplosion : IPointEntity {
 
+  
   public ref bool ExplodeOnSpawn { get; }
   
   public ref float Magnitude { get; }
@@ -23,5 +24,4 @@ public partial interface IPhysExplosion : IPointEntity {
   public ref bool AffectInvulnerableEnts { get; }
   
   public IEntityIOOutput OnPushedPlayer { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmFloatComparisonNode__CDefinition : INmBoolValueNode::CDefinition {
 
+  
   public ref short InputValueNodeIdx { get; }
   
   public ref short ComparandValueNodeIdx { get; }
@@ -13,5 +14,4 @@ public partial interface INmFloatComparisonNode__CDefinition : INmBoolValueNode:
   public ref float Epsilon { get; }
   
   public ref float ComparisonValue { get; }
-  
 }

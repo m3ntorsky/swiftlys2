@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncMonitor : IFuncBrush {
 
+  
   public ref CUtlString TargetCamera { get; }
   
   public ref int ResolutionEnum { get; }
@@ -21,5 +22,4 @@ public partial interface IFuncMonitor : IFuncBrush {
   public ref bool Draw3DSkybox { get; }
   
   public ref bool StartEnabled { get; }
-  
 }

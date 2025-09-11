@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ILogicBranchList : ILogicalEntity {
 
+  
   public ISchemaFixedArray<CUtlSymbolLarge> LogicBranchNames { get; }
   
   public ref CUtlVector<CHandle<CBaseEntity>> LogicBranchList { get; }
@@ -15,5 +16,4 @@ public partial interface ILogicBranchList : ILogicalEntity {
   public IEntityIOOutput OnAllFalse { get; }
   
   public IEntityIOOutput OnMixed { get; }
-  
 }

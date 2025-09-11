@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_ContinuousEmitter : IParticleFunctionEmitter {
 
+  
   public IParticleCollectionFloatInput EmissionDuration { get; }
   
   public IParticleCollectionFloatInput StartTime { get; }
@@ -27,5 +28,4 @@ public partial interface IC_OP_ContinuousEmitter : IParticleFunctionEmitter {
   public ref bool ForceEmitOnFirstUpdate { get; }
   
   public ref bool ForceEmitOnLastUpdate { get; }
-  
 }

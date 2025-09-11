@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmSoundEvent : INmEvent {
 
+  
   public ref CNmEventRelevance_t Relevance { get; }
   
   public ref CNmSoundEvent::Type_t Type { get; }
@@ -21,5 +22,4 @@ public partial interface INmSoundEvent : INmEvent {
   public ref bool ContinuePlayingSoundAtDurationEnd { get; }
   
   public ref float DurationInterruptionThreshold { get; }
-  
 }

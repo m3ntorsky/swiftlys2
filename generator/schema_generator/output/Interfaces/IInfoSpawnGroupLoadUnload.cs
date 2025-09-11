@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IInfoSpawnGroupLoadUnload : ILogicalEntity {
 
+  
   public IEntityIOOutput OnSpawnGroupLoadStarted { get; }
   
   public IEntityIOOutput OnSpawnGroupLoadFinished { get; }
@@ -29,5 +30,4 @@ public partial interface IInfoSpawnGroupLoadUnload : ILogicalEntity {
   public ref bool QueueActiveSpawnGroupChange { get; }
   
   public ref bool QueueFinishLoading { get; }
-  
 }

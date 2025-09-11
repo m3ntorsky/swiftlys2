@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IInfoOffscreenPanoramaTexture : IPointEntity {
 
+  
   public ref bool Disabled { get; }
   
   public ref int ResolutionX { get; }
@@ -23,5 +24,4 @@ public partial interface IInfoOffscreenPanoramaTexture : IPointEntity {
   public ref CUtlSymbolLarge TargetsName { get; }
   
   public ref CUtlVector<CHandle<CBaseModelEntity>> AdditionalTargetEntities { get; }
-  
 }

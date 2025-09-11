@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAmbientGeneric : IPointEntity {
 
+  
   public ref float Radius { get; }
   
   public ref float MaxRadius { get; }
@@ -23,5 +24,4 @@ public partial interface IAmbientGeneric : IPointEntity {
   public ref CHandle<CBaseEntity> SoundSource { get; }
   
   public ref CEntityIndex SoundSourceEntIndex { get; }
-  
 }

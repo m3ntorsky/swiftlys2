@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBot : ISchemaClass {
 
+  
   public ICSPlayerController Controller { get; }
   
   public ICSPlayerPawn Player { get; }
@@ -29,5 +30,4 @@ public partial interface IBot : ISchemaClass {
   public ref Vector ViewForward { get; }
   
   public ref int PostureStackIndex { get; }
-  
 }

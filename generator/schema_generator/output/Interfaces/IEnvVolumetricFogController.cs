@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvVolumetricFogController : IBaseEntity {
 
+  
   public ref float Scattering { get; }
   
   public ref Color TintColor { get; }
@@ -75,5 +76,4 @@ public partial interface IEnvVolumetricFogController : IBaseEntity {
   public ref Vector WindDirection { get; }
   
   public ref bool FirstTime { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetFloatAttributeToVectorExpression : IParticleFunctionOperator {
 
+  
   public ref VectorFloatExpressionType_t Expression { get; }
   
   public IPerParticleVecInput Input1 { get; }
@@ -15,5 +16,4 @@ public partial interface IC_OP_SetFloatAttributeToVectorExpression : IParticleFu
   public IParticleAttributeIndex_t OutputField { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
-  
 }

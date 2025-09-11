@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPlayer_MovementServices : IPlayerPawnComponent {
 
+  
   public ref int Impulse { get; }
   
   public IInButtonState Buttons { get; }
@@ -35,5 +36,4 @@ public partial interface IPlayer_MovementServices : IPlayerPawnComponent {
   public ref QAngle LastFinishTickViewAngles { get; }
   
   public ref QAngle OldViewAngles { get; }
-  
 }

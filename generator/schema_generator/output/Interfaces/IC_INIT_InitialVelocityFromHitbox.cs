@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_InitialVelocityFromHitbox : IParticleFunctionInitializer {
 
+  
   public ref float VelocityMin { get; }
   
   public ref float VelocityMax { get; }
@@ -13,5 +14,4 @@ public partial interface IC_INIT_InitialVelocityFromHitbox : IParticleFunctionIn
   public ISchemaFixedString HitboxSetName { get; }
   
   public ref bool UseBones { get; }
-  
 }

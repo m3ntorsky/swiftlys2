@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVPhysXBodyPart_t : ISchemaClass {
 
+  
   public ref uint Flags { get; }
   
   public ref float Mass { get; }
@@ -27,5 +28,4 @@ public partial interface IVPhysXBodyPart_t : ISchemaClass {
   public ref bool OverrideMassCenter { get; }
   
   public ref Vector MassCenterOverride { get; }
-  
 }

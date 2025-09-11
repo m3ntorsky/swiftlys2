@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFeBoxRigid_t : ISchemaClass {
 
+  
   public ref CTransform TmFrame2 { get; }
   
   public ref ushort Node { get; }
@@ -15,5 +16,4 @@ public partial interface IFeBoxRigid_t : ISchemaClass {
   public ref ushort VertexMapIndex { get; }
   
   public ref ushort Flags { get; }
-  
 }

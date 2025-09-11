@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVPhysXJoint_t : ISchemaClass {
 
+  
   public ref ushort Type { get; }
   
   public ref ushort Body1 { get; }
@@ -63,5 +64,4 @@ public partial interface IVPhysXJoint_t : ISchemaClass {
   public ref float Plasticity { get; }
   
   public ref CUtlString Tag { get; }
-  
 }

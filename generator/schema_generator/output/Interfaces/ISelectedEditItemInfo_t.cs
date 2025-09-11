@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISelectedEditItemInfo_t : ISchemaClass {
 
-  public ref CUtlVector EditItems { get; }
   
+// CUtlVector< SosEditItemInfo_t >
+  public ref CUtlVector EditItems { get; }
 }

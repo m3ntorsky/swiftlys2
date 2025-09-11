@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_InitialVelocityNoise : IParticleFunctionInitializer {
 
+  
   public ref Vector AbsVal { get; }
   
   public ref Vector AbsValInv { get; }
@@ -23,5 +24,4 @@ public partial interface IC_INIT_InitialVelocityNoise : IParticleFunctionInitial
   public IParticleTransformInput TransformInput { get; }
   
   public ref bool IgnoreDt { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVMixBoxverb2Desc_t : ISchemaClass {
 
+  
   public ref float SizeMax { get; }
   
   public ref float SizeMin { get; }
@@ -37,5 +38,4 @@ public partial interface IVMixBoxverb2Desc_t : ISchemaClass {
   public ref float OutputGain { get; }
   
   public ref float Taps { get; }
-  
 }

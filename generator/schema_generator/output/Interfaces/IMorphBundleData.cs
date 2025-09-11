@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMorphBundleData : ISchemaClass {
 
+  
   public ref float ULeftSrc { get; }
   
   public ref float VTopSrc { get; }
@@ -11,5 +12,4 @@ public partial interface IMorphBundleData : ISchemaClass {
   public ref CUtlVector<float> Offsets { get; }
   
   public ref CUtlVector<float> Ranges { get; }
-  
 }

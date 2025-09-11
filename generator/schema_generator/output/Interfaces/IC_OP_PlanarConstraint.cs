@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_PlanarConstraint : IParticleFunctionConstraint {
 
+  
   public ref Vector PointOnPlane { get; }
   
   public ref Vector PlaneNormal { get; }
@@ -19,5 +20,4 @@ public partial interface IC_OP_PlanarConstraint : IParticleFunctionConstraint {
   public IParticleCollectionFloatInput MaximumDistanceToCP { get; }
   
   public ref bool UseOldCode { get; }
-  
 }

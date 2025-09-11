@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysSlideConstraint : IPhysConstraint {
 
+  
   public ref Vector AxisEnd { get; }
   
   public ref float SlideFriction { get; }
@@ -23,5 +24,4 @@ public partial interface IPhysSlideConstraint : IPhysConstraint {
   public ref bool UseEntityPivot { get; }
   
   public IConstraintSoundInfo SoundInfo { get; }
-  
 }

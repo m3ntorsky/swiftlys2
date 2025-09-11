@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_RemapTransformToVector : IParticleFunctionInitializer {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public ref Vector InputMin { get; }
@@ -29,5 +30,4 @@ public partial interface IC_INIT_RemapTransformToVector : IParticleFunctionIniti
   public ref bool Accelerate { get; }
   
   public ref float RemapBias { get; }
-  
 }

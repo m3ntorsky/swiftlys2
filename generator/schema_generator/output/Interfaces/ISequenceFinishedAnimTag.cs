@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISequenceFinishedAnimTag : IAnimTagBase {
 
-  public ref CUtlString SequenceName { get; }
   
+  public ref CUtlString SequenceName { get; }
 }

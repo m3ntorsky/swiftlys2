@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICitadelSoundOpvarSetOBB : IBaseEntity {
 
+  
   public ref CUtlSymbolLarge StackName { get; }
   
   public ref CUtlSymbolLarge OperatorName { get; }
@@ -19,5 +20,4 @@ public partial interface ICitadelSoundOpvarSetOBB : IBaseEntity {
   public ref Vector DistanceOuterMaxs { get; }
   
   public ref int AABBDirection { get; }
-  
 }

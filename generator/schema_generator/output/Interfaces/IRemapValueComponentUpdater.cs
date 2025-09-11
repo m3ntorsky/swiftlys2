@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRemapValueComponentUpdater : IAnimComponentUpdater {
 
-  public ref CUtlVector Items { get; }
   
+// CUtlVector< CRemapValueUpdateItem >
+  public ref CUtlVector Items { get; }
 }

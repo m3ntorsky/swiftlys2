@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvShake : IPointEntity {
 
+  
   public ref CUtlSymbolLarge LimitToEntity { get; }
   
   public ref float Amplitude { get; }
@@ -23,5 +24,4 @@ public partial interface IEnvShake : IPointEntity {
   public ref Vector MaxForce { get; }
   
   public IPhysicsShake ShakeCallback { get; }
-  
 }

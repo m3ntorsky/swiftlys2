@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISoundEventSphereEntity : ISoundEventEntity {
 
-  public ref float Radius { get; }
   
+  public ref float Radius { get; }
 }

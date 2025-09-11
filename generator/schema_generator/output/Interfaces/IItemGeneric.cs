@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IItemGeneric : IItem {
 
+  
   public ref bool HasTriggerRadius { get; }
   
   public ref bool HasPickupRadius { get; }
@@ -67,5 +68,4 @@ public partial interface IItemGeneric : IItem {
   public ref bool Useable { get; }
   
   public ref CHandle<CItemGenericTriggerHelper> TriggerHelper { get; }
-  
 }

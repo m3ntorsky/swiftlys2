@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFeVertexMapDesc_t : ISchemaClass {
 
+  
   public ref CUtlString Name { get; }
   
   public ref uint NameHash { get; }
@@ -27,5 +28,4 @@ public partial interface IFeVertexMapDesc_t : ISchemaClass {
   public ref short ScaleSourceNode { get; }
   
   public ref ushort NodeListCount { get; }
-  
 }

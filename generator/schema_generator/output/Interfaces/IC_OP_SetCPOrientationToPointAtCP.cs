@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetCPOrientationToPointAtCP : IParticleFunctionPreEmission {
 
+  
   public ref int InputCP { get; }
   
   public ref int OutputCP { get; }
@@ -15,5 +16,4 @@ public partial interface IC_OP_SetCPOrientationToPointAtCP : IParticleFunctionPr
   public ref bool AvoidSingularity { get; }
   
   public ref bool PointAway { get; }
-  
 }

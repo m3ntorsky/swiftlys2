@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPlayer_WaterServices : IPlayer_WaterServices {
 
+  
   public IGameTime_t NextDrownDamageTime { get; }
   
   public ref int DrownDmgRate { get; }
@@ -15,5 +16,4 @@ public partial interface ICSPlayer_WaterServices : IPlayer_WaterServices {
   public ref Vector WaterJumpVel { get; }
   
   public ref float SwimSoundTime { get; }
-  
 }

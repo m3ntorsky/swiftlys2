@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDecalGroupOption_t : ISchemaClass {
 
+  
   public ref CStrongHandle<opyable<InfoForResourceTypeIMaterial2> Material { get; }
   
   public ref CGlobalSymbol SequenceName { get; }
@@ -15,5 +16,4 @@ public partial interface IDecalGroupOption_t : ISchemaClass {
   public ref float MinAngleBetweenNormalAndGravity { get; }
   
   public ref float MaxAngleBetweenNormalAndGravity { get; }
-  
 }

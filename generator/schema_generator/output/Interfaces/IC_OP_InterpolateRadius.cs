@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_InterpolateRadius : IParticleFunctionOperator {
 
+  
   public ref float StartTime { get; }
   
   public ref float EndTime { get; }
@@ -15,5 +16,4 @@ public partial interface IC_OP_InterpolateRadius : IParticleFunctionOperator {
   public ref bool EaseInAndOut { get; }
   
   public ref float Bias { get; }
-  
 }

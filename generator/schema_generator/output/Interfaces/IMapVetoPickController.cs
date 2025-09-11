@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMapVetoPickController : IBaseEntity {
 
+  
   public ref bool PlayedIntroVcd { get; }
   
   public ref bool NeedToPlayFiveSecondsRemaining { get; }
@@ -51,5 +52,4 @@ public partial interface IMapVetoPickController : IBaseEntity {
   public ISchemaUntypedField OnNewPhaseStarted { get; }
   
   public ISchemaUntypedField OnLevelTransition { get; }
-  
 }

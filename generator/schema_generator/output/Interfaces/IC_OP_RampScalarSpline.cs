@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RampScalarSpline : IParticleFunctionOperator {
 
+  
   public ref float RateMin { get; }
   
   public ref float RateMax { get; }
@@ -23,5 +24,4 @@ public partial interface IC_OP_RampScalarSpline : IParticleFunctionOperator {
   public ref bool ProportionalOp { get; }
   
   public ref bool EaseOut { get; }
-  
 }

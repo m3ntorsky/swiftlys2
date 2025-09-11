@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_ControlpointLight : IParticleFunctionOperator {
 
+  
   public ref float Scale { get; }
   
   public ref int ControlPoint1 { get; }
@@ -69,5 +70,4 @@ public partial interface IC_OP_ControlpointLight : IParticleFunctionOperator {
   public ref bool ClampLowerRange { get; }
   
   public ref bool ClampUpperRange { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFeNodeBase_t : ISchemaClass {
 
+  
   public ref ushort Node { get; }
   
   public ISchemaFixedArray<ushort> Dummy { get; }
@@ -17,5 +18,4 @@ public partial interface IFeNodeBase_t : ISchemaClass {
   public ref ushort NodeY1 { get; }
   
   public ref QuaternionStorage Adjust { get; }
-  
 }

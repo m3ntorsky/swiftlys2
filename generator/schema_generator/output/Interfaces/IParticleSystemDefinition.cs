@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleSystemDefinition : IIParticleSystemDefinition {
 
+  
   public ref int BehaviorVersion { get; }
   
   public ref CUtlVector<PointerTo<CParticleFunctionPreEmission>> PreEmissionOperators { get; }
@@ -20,6 +21,7 @@ public partial interface IParticleSystemDefinition : IIParticleSystemDefinition 
   
   public ref CUtlVector<PointerTo<CParticleFunctionRenderer>> Renderers { get; }
   
+// CUtlVector< ParticleChildrenInfo_t >
   public ref CUtlVector Children { get; }
   
   public ref int FirstMultipleOverride_BackwardCompat { get; }
@@ -132,6 +134,6 @@ public partial interface IParticleSystemDefinition : IIParticleSystemDefinition 
   
   public ref bool ShouldSort { get; }
   
+// CUtlVector< ParticleControlPointConfiguration_t >
   public ref CUtlVector ControlPointConfigurations { get; }
-  
 }

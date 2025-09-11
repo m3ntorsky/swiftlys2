@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmLayerBlendNode__LayerDefinition_t : ISchemaClass {
 
+  
   public ref short InputNodeIdx { get; }
   
   public ref short WeightValueNodeIdx { get; }
@@ -19,5 +20,4 @@ public partial interface INmLayerBlendNode__LayerDefinition_t : ISchemaClass {
   public ref bool IsStateMachineLayer { get; }
   
   public ref NmPoseBlendMode_t BlendMode { get; }
-  
 }

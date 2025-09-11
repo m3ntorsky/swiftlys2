@@ -4,8 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_PointVectorAtNextParticle : IParticleFunctionOperator {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public IPerParticleFloatInput Interpolation { get; }
-  
 }

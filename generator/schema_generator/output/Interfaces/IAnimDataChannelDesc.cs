@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimDataChannelDesc : ISchemaClass {
 
+  
   public ref CBufferString ChannelClass { get; }
   
   public ref CBufferString VariableName { get; }
@@ -21,5 +22,4 @@ public partial interface IAnimDataChannelDesc : ISchemaClass {
   public ref CUtlVector<int> ElementIndexArray { get; }
   
   public ref CUtlVector<uint> ElementMaskArray { get; }
-  
 }

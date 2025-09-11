@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSTeam : ITeam {
 
+  
   public ref int LastRecievedShorthandedRoundBonus { get; }
   
   public ref int ShorthandedRoundBonusStartRound { get; }
@@ -31,5 +32,4 @@ public partial interface ICSTeam : ITeam {
   public ref float NextResourceTime { get; }
   
   public ref int LastUpdateSentAt { get; }
-  
 }

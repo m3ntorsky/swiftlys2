@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITriggerLook : ITriggerOnce {
 
+  
   public ref CHandle<CBaseEntity> LookTarget { get; }
   
   public ref float FieldOfView { get; }
@@ -33,5 +34,4 @@ public partial interface ITriggerLook : ITriggerOnce {
   public IEntityIOOutput OnStartLook { get; }
   
   public IEntityIOOutput OnEndLook { get; }
-  
 }

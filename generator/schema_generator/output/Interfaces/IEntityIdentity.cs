@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEntityIdentity : ISchemaClass {
 
+  
   public ref int NameStringableIndex { get; }
   
   public ref CUtlSymbolLarge Name { get; }
@@ -25,5 +26,4 @@ public partial interface IEntityIdentity : ISchemaClass {
   public IEntityIdentity PrevByClass { get; }
   
   public IEntityIdentity NextByClass { get; }
-  
 }

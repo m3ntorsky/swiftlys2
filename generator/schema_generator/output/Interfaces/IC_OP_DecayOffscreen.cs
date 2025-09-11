@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_DecayOffscreen : IParticleFunctionOperator {
 
-  public IParticleCollectionFloatInput OffscreenTime { get; }
   
+  public IParticleCollectionFloatInput OffscreenTime { get; }
 }

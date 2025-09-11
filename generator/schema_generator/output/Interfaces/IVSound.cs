@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVSound : ISchemaClass {
 
+  
   public ref int Rate { get; }
   
   public ref CVSoundFormat_t Format { get; }
@@ -16,6 +17,7 @@ public partial interface IVSound : ISchemaClass {
   
   public ref float Duration { get; }
   
+// CUtlVector< CAudioSentence >
   public ref CUtlVector Sentences { get; }
   
   public ref uint StreamingSize { get; }
@@ -25,5 +27,4 @@ public partial interface IVSound : ISchemaClass {
   public ref int LoopEnd { get; }
   
   public ref CUtlBinaryBlock EncodedHeader { get; }
-  
 }

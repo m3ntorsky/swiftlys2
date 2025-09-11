@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ILogicCase : ILogicalEntity {
 
+  
   public ISchemaFixedArray<CUtlSymbolLarge> Case { get; }
   
   public ref int ShuffleCases { get; }
@@ -15,5 +16,4 @@ public partial interface ILogicCase : ILogicalEntity {
   public IEntityIOOutput OnCase { get; }
   
   public ISchemaUntypedField OnDefault { get; }
-  
 }

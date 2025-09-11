@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISeqSeqDescFlag : ISchemaClass {
 
+  
   public ref bool Looping { get; }
   
   public ref bool Snap { get; }
@@ -25,5 +26,4 @@ public partial interface ISeqSeqDescFlag : ISchemaClass {
   public ref bool LegacyRealtime { get; }
   
   public ref bool ModelDoc { get; }
-  
 }

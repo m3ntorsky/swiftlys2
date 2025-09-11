@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBoneMaskUpdateNode : IBinaryUpdateNode {
 
+  
   public ref int WeightListIndex { get; }
   
   public ref float RootMotionBlend { get; }
@@ -17,5 +18,4 @@ public partial interface IBoneMaskUpdateNode : IBinaryUpdateNode {
   public ref AnimValueSource BlendValueSource { get; }
   
   public IAnimParamHandle BlendParameter { get; }
-  
 }

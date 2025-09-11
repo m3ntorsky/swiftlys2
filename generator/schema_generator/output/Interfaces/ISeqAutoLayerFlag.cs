@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISeqAutoLayerFlag : ISchemaClass {
 
+  
   public ref bool Post { get; }
   
   public ref bool Spline { get; }
@@ -19,5 +20,4 @@ public partial interface ISeqAutoLayerFlag : ISchemaClass {
   public ref bool FetchFrame { get; }
   
   public ref bool Subtract { get; }
-  
 }

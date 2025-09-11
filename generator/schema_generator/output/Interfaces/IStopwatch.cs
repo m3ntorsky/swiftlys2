@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IStopwatch : IStopwatchBase {
 
-  public ref float Interval { get; }
   
+  public ref float Interval { get; }
 }

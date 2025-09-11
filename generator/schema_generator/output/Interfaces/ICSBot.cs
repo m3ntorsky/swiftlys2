@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSBot : IBot {
 
+  
   public ref Vector EyePosition { get; }
   
   public ISchemaFixedString Name { get; }
@@ -281,5 +282,4 @@ public partial interface ICSBot : IBot {
   public ref float VoiceEndTimestamp { get; }
   
   public ref int LastValidReactionQueueFrame { get; }
-  
 }

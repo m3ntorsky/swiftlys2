@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderTreeShake : IParticleFunctionRenderer {
 
+  
   public ref float PeakStrength { get; }
   
   public IParticleAttributeIndex_t PeakStrengthFieldOverride { get; }
@@ -23,5 +24,4 @@ public partial interface IC_OP_RenderTreeShake : IParticleFunctionRenderer {
   public ref float ControlPointOrientationAmount { get; }
   
   public ref int ControlPointForLinearDirection { get; }
-  
 }

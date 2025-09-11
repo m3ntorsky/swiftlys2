@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_NoiseEmitter : IParticleFunctionEmitter {
 
+  
   public ref float EmissionDuration { get; }
   
   public ref float StartTime { get; }
@@ -33,5 +34,4 @@ public partial interface IC_OP_NoiseEmitter : IParticleFunctionEmitter {
   public ref Vector OffsetLoc { get; }
   
   public ref float WorldTimeScale { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmIKJoint : ISchemaClass {
 
+  
   public ref int ParentIndex { get; }
   
   public ref int BodyIndex { get; }
@@ -17,5 +18,4 @@ public partial interface INmIKJoint : ISchemaClass {
   public ref float MaxTwistLimit { get; }
   
   public ref float Weight { get; }
-  
 }

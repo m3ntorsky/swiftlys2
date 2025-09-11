@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IStanceScaleUpdateNode : IUnaryUpdateNode {
 
-  public IAnimParamHandle Param { get; }
   
+  public IAnimParamHandle Param { get; }
 }

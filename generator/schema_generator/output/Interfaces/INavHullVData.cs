@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INavHullVData : ISchemaClass {
 
+  
   public ref bool AgentEnabled { get; }
   
   public ref float AgentRadius { get; }
@@ -33,5 +34,4 @@ public partial interface INavHullVData : ISchemaClass {
   public ref bool FlowMapGenerationEnabled { get; }
   
   public ref float FlowMapNodeMaxRadius { get; }
-  
 }

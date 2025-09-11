@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapParticleCountToScalar : IParticleFunctionOperator {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public IParticleCollectionFloatInput InputMin { get; }
@@ -17,5 +18,4 @@ public partial interface IC_OP_RemapParticleCountToScalar : IParticleFunctionOpe
   public ref bool ActiveRange { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
-  
 }

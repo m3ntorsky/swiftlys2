@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITwoBoneIKSettings_t : ISchemaClass {
 
+  
   public ref IkEndEffectorType EndEffectorType { get; }
   
   public IAnimAttachment EndEffectorAttachment { get; }
@@ -33,5 +34,4 @@ public partial interface ITwoBoneIKSettings_t : ISchemaClass {
   public ref bool ConstrainTwist { get; }
   
   public ref float MaxTwist { get; }
-  
 }

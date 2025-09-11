@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFeHingeLimit_t : ISchemaClass {
 
+  
   public ISchemaFixedArray<ushort> Node { get; }
   
   public ref uint Flags { get; }
@@ -15,5 +16,4 @@ public partial interface IFeHingeLimit_t : ISchemaClass {
   public ref float AngleCenter { get; }
   
   public ref float AngleExtents { get; }
-  
 }

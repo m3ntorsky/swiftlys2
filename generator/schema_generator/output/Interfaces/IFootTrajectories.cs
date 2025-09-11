@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFootTrajectories : ISchemaClass {
 
-  public ref CUtlVector Trajectories { get; }
   
+// CUtlVector< CFootTrajectory >
+  public ref CUtlVector Trajectories { get; }
 }

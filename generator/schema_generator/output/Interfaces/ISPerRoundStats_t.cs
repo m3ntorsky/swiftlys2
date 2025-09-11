@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISPerRoundStats_t : ISchemaClass {
 
+  
   public ref int Kills { get; }
   
   public ref int Deaths { get; }
@@ -29,5 +30,4 @@ public partial interface ISPerRoundStats_t : ISchemaClass {
   public ref int UtilityDamage { get; }
   
   public ref int EnemiesFlashed { get; }
-  
 }

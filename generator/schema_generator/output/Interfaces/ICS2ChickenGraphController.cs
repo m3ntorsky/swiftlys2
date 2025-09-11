@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICS2ChickenGraphController : IAnimGraphControllerBase {
 
+  
   public ISchemaUntypedField Action { get; }
   
   public ISchemaUntypedField ActionSubtype { get; }
@@ -23,5 +24,4 @@ public partial interface ICS2ChickenGraphController : IAnimGraphControllerBase {
   public ref bool HasActionCompletedEvent { get; }
   
   public ref bool WaitingForCompletedEvent { get; }
-  
 }

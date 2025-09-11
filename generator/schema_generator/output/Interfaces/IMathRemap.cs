@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMathRemap : ILogicalEntity {
 
+  
   public ref float InMin { get; }
   
   public ref float InMax { get; }
@@ -25,5 +26,4 @@ public partial interface IMathRemap : ILogicalEntity {
   public IEntityIOOutput OnFellBelowMin { get; }
   
   public IEntityIOOutput OnFellBelowMax { get; }
-  
 }

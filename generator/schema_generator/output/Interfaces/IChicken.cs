@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IChicken : IDynamicProp {
 
+  
   public IAttributeContainer AttributeManager { get; }
   
   public ICountdownTimer UpdateTimer { get; }
@@ -59,5 +60,4 @@ public partial interface IChicken : IDynamicProp {
   public ICountdownTimer FollowMinuteTimer { get; }
   
   public ICountdownTimer BlockDirectionTimer { get; }
-  
 }

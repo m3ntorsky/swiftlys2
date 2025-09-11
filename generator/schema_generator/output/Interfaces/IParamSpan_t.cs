@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParamSpan_t : ISchemaClass {
 
+  
+// CUtlVector< ParamSpanSample_t >
   public ref CUtlVector Samples { get; }
   
   public IAnimParamHandle Param { get; }
@@ -13,5 +15,4 @@ public partial interface IParamSpan_t : ISchemaClass {
   public ref float StartCycle { get; }
   
   public ref float EndCycle { get; }
-  
 }

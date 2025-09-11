@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointPush : IPointEntity {
 
+  
   public ref bool Enabled { get; }
   
   public ref float Magnitude { get; }
@@ -17,5 +18,4 @@ public partial interface IPointPush : IPointEntity {
   public ref CUtlSymbolLarge FilterName { get; }
   
   public ref CHandle<CBaseFilter> Filter { get; }
-  
 }

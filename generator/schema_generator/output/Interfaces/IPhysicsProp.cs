@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysicsProp : IBreakableProp {
 
+  
   public IEntityIOOutput MotionEnabled { get; }
   
   public IEntityIOOutput OnAwakened { get; }
@@ -79,5 +80,4 @@ public partial interface IPhysicsProp : IBreakableProp {
   public ref bool Awake { get; }
   
   public ref bool AttachedToReferenceFrame { get; }
-  
 }

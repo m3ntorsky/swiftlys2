@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_DistanceBetweenCPsToCP : IParticleFunctionPreEmission {
 
+  
   public ref int StartCP { get; }
   
   public ref int EndCP { get; }
@@ -33,5 +34,4 @@ public partial interface IC_OP_DistanceBetweenCPsToCP : IParticleFunctionPreEmis
   public ref ParticleTraceSet_t TraceSet { get; }
   
   public ref ParticleParentSetMode_t SetParent { get; }
-  
 }

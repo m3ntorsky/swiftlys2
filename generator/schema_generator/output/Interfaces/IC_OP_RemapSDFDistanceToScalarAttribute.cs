@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapSDFDistanceToScalarAttribute : IParticleFunctionOperator {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public IParticleAttributeIndex_t VectorFieldInput { get; }
@@ -19,5 +20,4 @@ public partial interface IC_OP_RemapSDFDistanceToScalarAttribute : IParticleFunc
   public IParticleCollectionFloatInput ValueAtMax { get; }
   
   public IParticleCollectionFloatInput ValueAboveMax { get; }
-  
 }

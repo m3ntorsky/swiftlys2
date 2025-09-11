@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISpeedScaleUpdateNode : IUnaryUpdateNode {
 
-  public IAnimParamHandle ParamIndex { get; }
   
+  public IAnimParamHandle ParamIndex { get; }
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAimMatrixOpFixedSettings_t : ISchemaClass {
 
+  
   public IAnimAttachment Attachment { get; }
   
   public IAnimInputDamping Damping { get; }
@@ -29,5 +30,4 @@ public partial interface IAimMatrixOpFixedSettings_t : ISchemaClass {
   public ref float BiasAndClampPitchOffset { get; }
   
   public IBlendCurve BiasAndClampBlendCurve { get; }
-  
 }

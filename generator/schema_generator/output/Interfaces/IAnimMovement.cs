@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimMovement : ISchemaClass {
 
+  
   public ref int Endframe { get; }
   
   public ref int Motionflags { get; }
@@ -17,5 +18,4 @@ public partial interface IAnimMovement : ISchemaClass {
   public ref Vector Vector { get; }
   
   public ref Vector Position { get; }
-  
 }

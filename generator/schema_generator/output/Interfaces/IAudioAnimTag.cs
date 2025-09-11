@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAudioAnimTag : IAnimTagBase {
 
+  
   public ref CUtlString ClipName { get; }
   
   public ref CUtlString AttachmentName { get; }
@@ -17,5 +18,4 @@ public partial interface IAudioAnimTag : IAnimTagBase {
   public ref bool PlayOnServer { get; }
   
   public ref bool PlayOnClient { get; }
-  
 }

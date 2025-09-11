@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_CreateWithinSphereTransform : IParticleFunctionInitializer {
 
+  
   public IPerParticleFloatInput RadiusMin { get; }
   
   public IPerParticleFloatInput RadiusMax { get; }
@@ -31,5 +32,4 @@ public partial interface IC_INIT_CreateWithinSphereTransform : IParticleFunction
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public IParticleAttributeIndex_t FieldVelocity { get; }
-  
 }

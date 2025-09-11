@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointCommentaryNode : IBaseAnimGraph {
 
+  
   public ref CUtlSymbolLarge PreCommands { get; }
   
   public ref CUtlSymbolLarge PostCommands { get; }
@@ -63,5 +64,4 @@ public partial interface IPointCommentaryNode : IBaseAnimGraph {
   public ref int NodeNumberMax { get; }
   
   public ref bool ListenedTo { get; }
-  
 }

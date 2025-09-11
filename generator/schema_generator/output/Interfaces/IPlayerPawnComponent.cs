@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPlayerPawnComponent : ISchemaClass {
 
-  public INetworkVarChainer __m_pChainEntity { get; }
   
+  public INetworkVarChainer __m_pChainEntity { get; }
 }

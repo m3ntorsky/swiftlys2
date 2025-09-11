@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISosGroupMatchPattern : ISosGroupBranchPattern {
 
+  
   public ref CUtlString MatchSoundEventName { get; }
   
   public ref CUtlString MatchSoundEventSubString { get; }
@@ -13,5 +14,4 @@ public partial interface ISosGroupMatchPattern : ISosGroupBranchPattern {
   public ref float Opvar { get; }
   
   public ref CUtlString OpvarString { get; }
-  
 }

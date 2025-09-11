@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPrecipitationVData : IEntitySubclassVDataBase {
 
+  
   public ISchemaUntypedField ParticlePrecipitationEffect { get; }
   
   public ref float InnerDistance { get; }
@@ -17,5 +18,4 @@ public partial interface IPrecipitationVData : IEntitySubclassVDataBase {
   public ref int RTEnvCPComponent { get; }
   
   public ref CUtlString Modifier { get; }
-  
 }

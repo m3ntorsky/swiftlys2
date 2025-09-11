@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAmmoTypeInfo_t : ISchemaClass {
 
+  
   public ref int MaxCarry { get; }
   
   public IRangeInt SplashSize { get; }
@@ -13,5 +14,4 @@ public partial interface IAmmoTypeInfo_t : ISchemaClass {
   public ref float Mass { get; }
   
   public IRangeFloat Speed { get; }
-  
 }

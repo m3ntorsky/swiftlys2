@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IChainToSolveData_t : ISchemaClass {
 
+  
   public ref int ChainIndex { get; }
   
   public IIKSolverSettings_t SolverSettings { get; }
@@ -15,5 +16,4 @@ public partial interface IChainToSolveData_t : ISchemaClass {
   public ref float DebugNormalizedValue { get; }
   
   public ref VectorAligned DebugOffset { get; }
-  
 }

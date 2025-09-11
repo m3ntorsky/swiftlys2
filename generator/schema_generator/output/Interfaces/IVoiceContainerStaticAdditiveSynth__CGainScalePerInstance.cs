@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVoiceContainerStaticAdditiveSynth__CGainScalePerInstance : ISchemaClass {
 
+  
   public ref float MinVolume { get; }
   
   public ref int InstancesAtMinVolume { get; }
@@ -11,5 +12,4 @@ public partial interface IVoiceContainerStaticAdditiveSynth__CGainScalePerInstan
   public ref float MaxVolume { get; }
   
   public ref int InstancesAtMaxVolume { get; }
-  
 }

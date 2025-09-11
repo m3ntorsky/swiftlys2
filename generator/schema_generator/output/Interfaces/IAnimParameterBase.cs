@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimParameterBase : ISchemaClass {
 
+  
   public ref CGlobalSymbol Name { get; }
   
   public ref CUtlString Comment { get; }
@@ -17,5 +18,4 @@ public partial interface IAnimParameterBase : ISchemaClass {
   public ref bool NetworkingRequested { get; }
   
   public ref bool IsReferenced { get; }
-  
 }

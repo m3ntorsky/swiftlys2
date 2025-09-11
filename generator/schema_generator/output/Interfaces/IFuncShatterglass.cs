@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncShatterglass : IBaseModelEntity {
 
+  
   public ref matrix3x4_t MatPanelTransform { get; }
   
   public ref matrix3x4_t MatPanelTransformWsTemp { get; }
@@ -55,5 +56,4 @@ public partial interface IFuncShatterglass : IBaseModelEntity {
   public ref byte SurfaceType { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> MaterialDamageBase { get; }
-  
 }

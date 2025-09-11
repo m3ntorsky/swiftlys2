@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INodeData_t : ISchemaClass {
 
+  
   public ref int Parent { get; }
   
   public ref Vector Origin { get; }
@@ -17,5 +18,4 @@ public partial interface INodeData_t : ISchemaClass {
   public ref CUtlVector<int> ChildNodeIndices { get; }
   
   public ref CUtlString WorldNodePrefix { get; }
-  
 }

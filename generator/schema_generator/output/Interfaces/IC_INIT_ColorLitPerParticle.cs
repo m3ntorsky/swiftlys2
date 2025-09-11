@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_ColorLitPerParticle : IParticleFunctionInitializer {
 
+  
   public ref Color ColorMin { get; }
   
   public ref Color ColorMax { get; }
@@ -17,5 +18,4 @@ public partial interface IC_INIT_ColorLitPerParticle : IParticleFunctionInitiali
   public ref ParticleColorBlendMode_t TintBlendMode { get; }
   
   public ref float LightAmplification { get; }
-  
 }

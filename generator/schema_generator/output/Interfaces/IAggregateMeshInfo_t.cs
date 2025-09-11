@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAggregateMeshInfo_t : ISchemaClass {
 
+  
   public ref uint VisClusterMemberOffset { get; }
   
   public ref byte VisClusterMemberCount { get; }
@@ -27,5 +28,4 @@ public partial interface IAggregateMeshInfo_t : ISchemaClass {
   public ref uint VertexAlbedoStreamOffset { get; }
   
   public ref AggregateInstanceStream_t InstanceStreams { get; }
-  
 }

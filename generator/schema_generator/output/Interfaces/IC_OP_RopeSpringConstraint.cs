@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RopeSpringConstraint : IParticleFunctionConstraint {
 
+  
   public IParticleCollectionFloatInput RestLength { get; }
   
   public IParticleCollectionFloatInput MinDistance { get; }
@@ -13,5 +14,4 @@ public partial interface IC_OP_RopeSpringConstraint : IParticleFunctionConstrain
   public ref float AdjustmentScale { get; }
   
   public IParticleCollectionFloatInput InitialRestingLength { get; }
-  
 }

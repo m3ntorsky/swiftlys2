@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseGrenade : IBaseFlex {
 
+  
   public IEntityIOOutput OnPlayerPickup { get; }
   
   public IEntityIOOutput OnExplode { get; }
@@ -31,5 +32,4 @@ public partial interface IBaseGrenade : IBaseFlex {
   public IGameTime_t NextAttack { get; }
   
   public ref CHandle<CCSPlayerPawn> OriginalThrower { get; }
-  
 }

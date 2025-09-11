@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPlayerInputAnimMotorUpdater : IAnimMotorUpdaterBase {
 
+  
   public ref CUtlVector<float> SampleTimes { get; }
   
   public ref float SpringConstant { get; }
@@ -15,5 +16,4 @@ public partial interface IPlayerInputAnimMotorUpdater : IAnimMotorUpdaterBase {
   public IAnimParamHandle AnticipationHeadingParam { get; }
   
   public ref bool UseAcceleration { get; }
-  
 }

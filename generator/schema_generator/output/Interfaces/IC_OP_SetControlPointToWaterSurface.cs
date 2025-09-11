@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetControlPointToWaterSurface : IParticleFunctionPreEmission {
 
+  
   public ref int SourceCP { get; }
   
   public ref int DestCP { get; }
@@ -17,5 +18,4 @@ public partial interface IC_OP_SetControlPointToWaterSurface : IParticleFunction
   public IParticleCollectionFloatInput RetestRate { get; }
   
   public ref bool AdaptiveThreshold { get; }
-  
 }

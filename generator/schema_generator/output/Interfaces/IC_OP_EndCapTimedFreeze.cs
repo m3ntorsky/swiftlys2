@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_EndCapTimedFreeze : IParticleFunctionOperator {
 
-  public IParticleCollectionFloatInput FreezeTime { get; }
   
+  public IParticleCollectionFloatInput FreezeTime { get; }
 }

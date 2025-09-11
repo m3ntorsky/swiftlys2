@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSWeaponBaseGun : ICSWeaponBase {
 
+  
   public ref int ZoomLevel { get; }
   
   public ref int BurstShotsRemaining { get; }
@@ -23,5 +24,4 @@ public partial interface ICSWeaponBaseGun : ICSWeaponBase {
   public ref bool SkillBoltInterruptAvailable { get; }
   
   public ref bool SkillBoltLiftedFireKey { get; }
-  
 }

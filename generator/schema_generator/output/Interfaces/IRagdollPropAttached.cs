@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRagdollPropAttached : IRagdollProp {
 
+  
   public ref uint BoneIndexAttached { get; }
   
   public ref uint RagdollAttachedObjectIndex { get; }
@@ -15,5 +16,4 @@ public partial interface IRagdollPropAttached : IRagdollProp {
   public ref bool ShouldDetach { get; }
   
   public ref bool ShouldDeleteAttachedActivationRecord { get; }
-  
 }

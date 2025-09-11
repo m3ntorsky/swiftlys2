@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimGraphNetworkSettings : IAnimGraphSettingsGroup {
 
-  public ref bool NetworkingEnabled { get; }
   
+  public ref bool NetworkingEnabled { get; }
 }

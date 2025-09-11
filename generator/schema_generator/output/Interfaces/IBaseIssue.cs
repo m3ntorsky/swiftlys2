@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseIssue : ISchemaClass {
 
+  
   public ISchemaFixedString TypeString { get; }
   
   public ISchemaFixedString DetailsString { get; }
@@ -15,5 +16,4 @@ public partial interface IBaseIssue : ISchemaClass {
   public ref int NumPotentialVotes { get; }
   
   public IVoteController VoteController { get; }
-  
 }

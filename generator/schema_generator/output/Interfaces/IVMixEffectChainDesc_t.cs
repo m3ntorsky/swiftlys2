@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVMixEffectChainDesc_t : ISchemaClass {
 
-  public ref float CrossfadeTime { get; }
   
+  public ref float CrossfadeTime { get; }
 }

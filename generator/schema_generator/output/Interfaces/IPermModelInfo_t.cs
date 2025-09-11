@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPermModelInfo_t : ISchemaClass {
 
+  
   public ref uint Flags { get; }
   
   public ref Vector HullMin { get; }
@@ -23,5 +24,4 @@ public partial interface IPermModelInfo_t : ISchemaClass {
   public ref CUtlString SurfaceProperty { get; }
   
   public ref CUtlString KeyValueText { get; }
-  
 }

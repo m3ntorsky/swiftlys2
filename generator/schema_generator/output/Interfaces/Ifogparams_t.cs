@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface Ifogparams_t : ISchemaClass {
 
+  
   public ref Vector DirPrimary { get; }
   
   public ref Color ColorPrimary { get; }
@@ -53,5 +54,4 @@ public partial interface Ifogparams_t : ISchemaClass {
   public ref bool Padding2 { get; }
   
   public ref bool Padding { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_Noise : IParticleFunctionOperator {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public ref float OutputMin { get; }
@@ -15,5 +16,4 @@ public partial interface IC_OP_Noise : IParticleFunctionOperator {
   public ref bool Additive { get; }
   
   public ref float NoiseAnimationTimeScale { get; }
-  
 }

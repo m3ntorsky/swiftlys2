@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetVariable : IParticleFunctionPreEmission {
 
+  
   public IParticleVariableRef VariableReference { get; }
   
   public IParticleTransformInput TransformInput { get; }
@@ -15,5 +16,4 @@ public partial interface IC_OP_SetVariable : IParticleFunctionPreEmission {
   public IParticleCollectionVecInput Input { get; }
   
   public IParticleCollectionFloatInput FloatInput { get; }
-  
 }

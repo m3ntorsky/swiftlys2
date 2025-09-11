@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmBoneMaskSelectorNode__CDefinition : INmBoneMaskValueNode::CDefinition {
 
+  
   public ref short DefaultMaskNodeIdx { get; }
   
   public ref short ParameterValueNodeIdx { get; }
@@ -15,5 +16,4 @@ public partial interface INmBoneMaskSelectorNode__CDefinition : INmBoneMaskValue
   public ref CUtlVectorFixedGrowable<CGlobalSymbol> ParameterValues { get; }
   
   public ref float BlendTimeSeconds { get; }
-  
 }

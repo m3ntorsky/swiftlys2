@@ -4,8 +4,10 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMotionMatchingUpdateNode : ILeafUpdateNode {
 
+  
   public IMotionDataSet DataSet { get; }
   
+// CUtlVector< CSmartPtr< CMotionMetricEvaluator > >
   public ref CUtlVector Metrics { get; }
   
   public ref CUtlVector<float> Weights { get; }
@@ -49,5 +51,4 @@ public partial interface IMotionMatchingUpdateNode : ILeafUpdateNode {
   public ref float DistanceScale_MinScale { get; }
   
   public ref bool EnableDistanceScaling { get; }
-  
 }

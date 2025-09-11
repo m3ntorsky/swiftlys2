@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISpotlightEnd : IBaseModelEntity {
 
+  
   public ref float LightScale { get; }
   
   public ref float Radius { get; }
@@ -11,5 +12,4 @@ public partial interface ISpotlightEnd : IBaseModelEntity {
   public ref Vector SpotlightDir { get; }
   
   public ref Vector SpotlightOrg { get; }
-  
 }

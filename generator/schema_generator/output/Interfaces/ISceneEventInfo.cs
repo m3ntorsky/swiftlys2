@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISceneEventInfo : ISchemaClass {
 
+  
   public ref int Layer { get; }
   
   public ref int Priority { get; }
@@ -29,5 +30,4 @@ public partial interface ISceneEventInfo : ISchemaClass {
   public ref bool ClientSide { get; }
   
   public ref bool Started { get; }
-  
 }

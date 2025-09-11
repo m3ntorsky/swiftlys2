@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointPrefab : IServerOnlyPointEntity {
 
+  
   public ref CUtlSymbolLarge TargetMapName { get; }
   
   public ref CUtlSymbolLarge ForceWorldGroupID { get; }
@@ -15,5 +16,4 @@ public partial interface IPointPrefab : IServerOnlyPointEntity {
   public ref bool LoadDynamic { get; }
   
   public ref CHandle<CPointPrefab> AssociatedRelayEntity { get; }
-  
 }

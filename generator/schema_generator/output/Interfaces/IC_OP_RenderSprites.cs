@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderSprites : IBaseRendererSource2 {
 
+  
   public IParticleCollectionRendererFloatInput SequenceOverride { get; }
   
   public ref bool SequenceNumbersAreRawSequenceIndices { get; }
@@ -61,5 +62,4 @@ public partial interface IC_OP_RenderSprites : IBaseRendererSource2 {
   public ref float ShadowDensity { get; }
   
   public IReplicationParameters ReplicationParameters { get; }
-  
 }

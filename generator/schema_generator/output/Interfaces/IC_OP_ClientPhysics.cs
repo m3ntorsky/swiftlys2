@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_ClientPhysics : IParticleFunctionRenderer {
 
+  
   public ref CUtlString StrPhysicsType { get; }
   
   public ref bool StartAsleep { get; }
@@ -29,5 +30,4 @@ public partial interface IC_OP_ClientPhysics : IParticleFunctionRenderer {
   public ref ParticleColorBlendType_t ColorBlendType { get; }
   
   public ref ParticleAttrBoxFlags_t ForcedStatusEffects { get; }
-  
 }

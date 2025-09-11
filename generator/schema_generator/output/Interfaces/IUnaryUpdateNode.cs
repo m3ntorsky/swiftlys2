@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IUnaryUpdateNode : IAnimUpdateNodeBase {
 
-  public IAnimUpdateNodeRef ChildNode { get; }
   
+  public IAnimUpdateNodeRef ChildNode { get; }
 }

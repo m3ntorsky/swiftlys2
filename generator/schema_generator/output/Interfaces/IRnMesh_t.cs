@@ -4,16 +4,20 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRnMesh_t : ISchemaClass {
 
+  
   public ref Vector Min { get; }
   
   public ref Vector Max { get; }
   
+// CUtlVector< RnNode_t >
   public ref CUtlVector Nodes { get; }
   
   public ISchemaUntypedField Vertices { get; }
   
+// CUtlVector< RnTriangle_t >
   public ref CUtlVector Triangles { get; }
   
+// CUtlVector< RnWing_t >
   public ref CUtlVector Wings { get; }
   
   public ref CUtlVector<byte> TriangleEdgeFlags { get; }
@@ -25,5 +29,4 @@ public partial interface IRnMesh_t : ISchemaClass {
   public ref uint Flags { get; }
   
   public ref uint DebugFlags { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_MoveBetweenPoints : IParticleFunctionInitializer {
 
+  
   public IPerParticleFloatInput SpeedMin { get; }
   
   public IPerParticleFloatInput SpeedMax { get; }
@@ -17,5 +18,4 @@ public partial interface IC_INIT_MoveBetweenPoints : IParticleFunctionInitialize
   public ref int EndControlPointNumber { get; }
   
   public ref bool TrailBias { get; }
-  
 }

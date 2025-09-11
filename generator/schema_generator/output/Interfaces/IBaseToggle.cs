@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseToggle : IBaseModelEntity {
 
+  
   public ref TOGGLE_STATE Toggle_state { get; }
   
   public ref float MoveDistance { get; }
@@ -35,5 +36,4 @@ public partial interface IBaseToggle : IBaseModelEntity {
   public ref int MovementType { get; }
   
   public ref CUtlSymbolLarge Master { get; }
-  
 }

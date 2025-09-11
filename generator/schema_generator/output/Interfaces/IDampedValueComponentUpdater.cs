@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDampedValueComponentUpdater : IAnimComponentUpdater {
 
-  public ref CUtlVector Items { get; }
   
+// CUtlVector< CDampedValueUpdateItem >
+  public ref CUtlVector Items { get; }
 }

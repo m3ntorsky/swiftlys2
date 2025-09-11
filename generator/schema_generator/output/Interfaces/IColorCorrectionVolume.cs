@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IColorCorrectionVolume : IBaseTrigger {
 
+  
   public ref float MaxWeight { get; }
   
   public ref float FadeDuration { get; }
@@ -19,5 +20,4 @@ public partial interface IColorCorrectionVolume : IBaseTrigger {
   public ref float LastExitWeight { get; }
   
   public IGameTime_t LastExitTime { get; }
-  
 }

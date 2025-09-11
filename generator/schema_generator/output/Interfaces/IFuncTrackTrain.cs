@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncTrackTrain : IBaseModelEntity {
 
+  
   public ref CHandle<CPathTrack> Ppath { get; }
   
   public ref float Length { get; }
@@ -77,5 +78,4 @@ public partial interface IFuncTrackTrain : IBaseModelEntity {
   public ref bool AccelToSpeed { get; }
   
   public IGameTime_t NextMPSoundTime { get; }
-  
 }

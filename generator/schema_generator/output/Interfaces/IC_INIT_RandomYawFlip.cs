@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_RandomYawFlip : IParticleFunctionInitializer {
 
-  public ref float Percent { get; }
   
+  public ref float Percent { get; }
 }

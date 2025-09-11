@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_RemapScalar : IParticleFunctionInitializer {
 
+  
   public IParticleAttributeIndex_t FieldInput { get; }
   
   public IParticleAttributeIndex_t FieldOutput { get; }
@@ -25,5 +26,4 @@ public partial interface IC_INIT_RemapScalar : IParticleFunctionInitializer {
   public ref bool ActiveRange { get; }
   
   public ref float RemapBias { get; }
-  
 }

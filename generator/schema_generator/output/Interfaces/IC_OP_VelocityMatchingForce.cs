@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_VelocityMatchingForce : IParticleFunctionOperator {
 
+  
   public ref float DirScale { get; }
   
   public ref float SpdScale { get; }
@@ -15,5 +16,4 @@ public partial interface IC_OP_VelocityMatchingForce : IParticleFunctionOperator
   public ref bool UseAABB { get; }
   
   public ref int CPBroadcast { get; }
-  
 }

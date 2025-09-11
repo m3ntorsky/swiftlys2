@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMaterialParamVector_t : IMaterialParam_t {
 
-  public ref Vector4D Value { get; }
   
+  public ref Vector4D Value { get; }
 }

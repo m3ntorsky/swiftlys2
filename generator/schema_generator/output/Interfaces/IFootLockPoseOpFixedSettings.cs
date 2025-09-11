@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFootLockPoseOpFixedSettings : ISchemaClass {
 
+  
+// CUtlVector< FootFixedData_t >
   public ref CUtlVector FootInfo { get; }
   
   public IAnimInputDamping HipDampingSettings { get; }
@@ -39,5 +41,4 @@ public partial interface IFootLockPoseOpFixedSettings : ISchemaClass {
   public ref float MaxStretchAmount { get; }
   
   public ref float StretchExtensionScale { get; }
-  
 }

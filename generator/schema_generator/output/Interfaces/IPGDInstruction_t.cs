@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPGDInstruction_t : ISchemaClass {
 
+  
   public ref PulseInstructionCode_t Code { get; }
   
   public IPulseRuntimeVarIndex_t Var { get; }
@@ -27,5 +28,4 @@ public partial interface IPGDInstruction_t : ISchemaClass {
   public IPulseRuntimeDomainValueIndex_t DomainValueIdx { get; }
   
   public IPulseRuntimeBlackboardReferenceIndex_t BlackboardReferenceIdx { get; }
-  
 }

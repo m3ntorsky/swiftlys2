@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointTemplate : ILogicalEntity {
 
+  
   public ref CUtlSymbolLarge WorldName { get; }
   
   public ref CUtlSymbolLarge Source2EntityLumpName { get; }
@@ -25,5 +26,4 @@ public partial interface IPointTemplate : ILogicalEntity {
   public ISchemaUntypedField ScriptSpawnCallback { get; }
   
   public ISchemaUntypedField ScriptCallbackScope { get; }
-  
 }

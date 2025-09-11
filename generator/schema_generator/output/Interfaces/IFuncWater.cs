@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncWater : IBaseModelEntity {
 
-  public IBuoyancyHelper BuoyancyHelper { get; }
   
+  public IBuoyancyHelper BuoyancyHelper { get; }
 }

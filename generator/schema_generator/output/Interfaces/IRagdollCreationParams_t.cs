@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRagdollCreationParams_t : ISchemaClass {
 
+  
   public ref Vector Force { get; }
   
   public ref int ForceBone { get; }
@@ -13,5 +14,4 @@ public partial interface IRagdollCreationParams_t : ISchemaClass {
   public ref bool UseLRURetirement { get; }
   
   public ref int HealthToGrant { get; }
-  
 }

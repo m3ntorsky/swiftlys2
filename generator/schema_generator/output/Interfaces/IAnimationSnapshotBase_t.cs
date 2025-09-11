@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimationSnapshotBase_t : ISchemaClass {
 
+  
   public ref float RealTime { get; }
   
   public ref matrix3x4a_t RootToWorld { get; }
@@ -21,5 +22,4 @@ public partial interface IAnimationSnapshotBase_t : ISchemaClass {
   public ref bool HasDecodeDump { get; }
   
   public IAnimationDecodeDebugDumpElement_t DecodeDump { get; }
-  
 }

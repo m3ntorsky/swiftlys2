@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVPhysicsCollisionAttribute_t : ISchemaClass {
 
+  
   public ref ulong InteractsAs { get; }
   
   public ref ulong InteractsWith { get; }
@@ -19,5 +20,4 @@ public partial interface IVPhysicsCollisionAttribute_t : ISchemaClass {
   public ref byte CollisionGroup { get; }
   
   public ref byte CollisionFunctionMask { get; }
-  
 }

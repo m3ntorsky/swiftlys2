@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_ModelCull : IParticleFunctionInitializer {
 
+  
   public ref int ControlPointNumber { get; }
   
   public ref bool BoundBox { get; }
@@ -13,5 +14,4 @@ public partial interface IC_INIT_ModelCull : IParticleFunctionInitializer {
   public ref bool UseBones { get; }
   
   public ISchemaFixedString HitboxSetName { get; }
-  
 }

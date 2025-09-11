@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVoiceContainerStaticAdditiveSynth : IVoiceContainerBase {
 
-  public ref CUtlVector Tones { get; }
   
+// CUtlVector< CVoiceContainerStaticAdditiveSynth::CTone >
+  public ref CUtlVector Tones { get; }
 }

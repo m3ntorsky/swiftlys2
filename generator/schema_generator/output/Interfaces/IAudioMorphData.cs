@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAudioMorphData : ISchemaClass {
 
+  
   public ref CUtlVector<float> Times { get; }
   
   public ref CUtlVector<uint> NameHashCodes { get; }
@@ -15,5 +16,4 @@ public partial interface IAudioMorphData : ISchemaClass {
   public ref float EaseIn { get; }
   
   public ref float EaseOut { get; }
-  
 }

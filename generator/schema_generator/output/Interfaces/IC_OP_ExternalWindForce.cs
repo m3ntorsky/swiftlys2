@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_ExternalWindForce : IParticleFunctionForce {
 
+  
   public IPerParticleVecInput SamplePosition { get; }
   
   public IPerParticleVecInput Scale { get; }
@@ -25,5 +26,4 @@ public partial interface IC_OP_ExternalWindForce : IParticleFunctionForce {
   public IPerParticleFloatInput LocalBuoyancyScale { get; }
   
   public IPerParticleVecInput BuoyancyForce { get; }
-  
 }

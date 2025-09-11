@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEntityDissolve : IBaseModelEntity {
 
+  
   public ref float FadeInStart { get; }
   
   public ref float FadeInLength { get; }
@@ -23,5 +24,4 @@ public partial interface IEntityDissolve : IBaseModelEntity {
   public ref Vector DissolverOrigin { get; }
   
   public ref uint Magnitude { get; }
-  
 }

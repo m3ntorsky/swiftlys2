@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseButton : IBaseToggle {
 
+  
   public ref QAngle MoveEntitySpace { get; }
   
   public ref bool StayPushed { get; }
@@ -53,5 +54,4 @@ public partial interface IBaseButton : IBaseToggle {
   public ref bool Usable { get; }
   
   public ref CUtlSymbolLarge DisplayText { get; }
-  
 }

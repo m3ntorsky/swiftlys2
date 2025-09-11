@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RotateVector : IParticleFunctionOperator {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public ref Vector RotAxisMin { get; }
@@ -17,5 +18,4 @@ public partial interface IC_OP_RotateVector : IParticleFunctionOperator {
   public ref bool Normalize { get; }
   
   public IPerParticleFloatInput Scale { get; }
-  
 }

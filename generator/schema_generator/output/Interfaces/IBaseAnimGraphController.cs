@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseAnimGraphController : ISkeletonAnimationController {
 
+  
   public IAnimGraphNetworkedVariables AnimGraphNetworkedVars { get; }
   
   public ref bool SequenceFinished { get; }
@@ -43,5 +44,4 @@ public partial interface IBaseAnimGraphController : ISkeletonAnimationController
   public ref byte GraphCreationFlagsAG2 { get; }
   
   public ref int ServerGraphDefReloadCountAG2 { get; }
-  
 }

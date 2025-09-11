@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_RemapInitialTransformDirectionToRotation : IParticleFunctionInitializer {
 
+  
   public IParticleTransformInput TransformInput { get; }
   
   public IParticleAttributeIndex_t FieldOutput { get; }
@@ -11,5 +12,4 @@ public partial interface IC_INIT_RemapInitialTransformDirectionToRotation : IPar
   public ref float OffsetRot { get; }
   
   public ref int Component { get; }
-  
 }

@@ -4,12 +4,14 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IStateUpdateData : ISchemaClass {
 
+  
   public ref CUtlString Name { get; }
   
   public IAnimScriptHandle Script { get; }
   
   public ref CUtlVector<int> TransitionIndices { get; }
   
+// CUtlVector< CStateActionUpdater >
   public ref CUtlVector Actions { get; }
   
   public IAnimStateID StateID { get; }
@@ -23,5 +25,4 @@ public partial interface IStateUpdateData : ISchemaClass {
   public ISchemaUntypedField IsPassthroughRootMotion { get; }
   
   public ISchemaUntypedField PreEvaluatePassthroughTransitionPath { get; }
-  
 }

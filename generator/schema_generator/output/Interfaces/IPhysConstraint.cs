@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysConstraint : ILogicalEntity {
 
+  
   public ref CUtlSymbolLarge NameAttach1 { get; }
   
   public ref CUtlSymbolLarge NameAttach2 { get; }
@@ -27,5 +28,4 @@ public partial interface IPhysConstraint : ILogicalEntity {
   public ref bool SnapObjectPositions { get; }
   
   public IEntityIOOutput OnBreak { get; }
-  
 }

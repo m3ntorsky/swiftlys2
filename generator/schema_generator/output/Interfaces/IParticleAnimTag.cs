@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleAnimTag : IAnimTagBase {
 
+  
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ParticleSystem { get; }
   
   public ref CUtlString ParticleSystemName { get; }
@@ -25,5 +26,4 @@ public partial interface IParticleAnimTag : IAnimTagBase {
   public ref CUtlString AttachmentCP1Name { get; }
   
   public ref ParticleAttachment_t AttachmentCP1Type { get; }
-  
 }

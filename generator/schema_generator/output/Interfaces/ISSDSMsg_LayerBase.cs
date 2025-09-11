@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISSDSMsg_LayerBase : ISchemaClass {
 
+  
   public ISceneViewId_t ViewId { get; }
   
   public ref CUtlString ViewName { get; }
@@ -13,5 +14,4 @@ public partial interface ISSDSMsg_LayerBase : ISchemaClass {
   public ref CUtlString LayerName { get; }
   
   public ref CUtlString DisplayText { get; }
-  
 }

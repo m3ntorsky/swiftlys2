@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ILogicRelay : ILogicalEntity {
 
+  
   public ref bool Disabled { get; }
   
   public ref bool WaitForRefire { get; }
@@ -13,5 +14,4 @@ public partial interface ILogicRelay : ILogicalEntity {
   public ref bool FastRetrigger { get; }
   
   public ref bool PassthoughCaller { get; }
-  
 }

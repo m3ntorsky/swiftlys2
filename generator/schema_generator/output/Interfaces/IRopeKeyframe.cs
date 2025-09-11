@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRopeKeyframe : IBaseModelEntity {
 
+  
   public ref ushort RopeFlags { get; }
   
   public ref CUtlSymbolLarge NextLinkName { get; }
@@ -45,5 +46,4 @@ public partial interface IRopeKeyframe : IBaseModelEntity {
   public IAttachmentHandle_t StartAttachment { get; }
   
   public IAttachmentHandle_t EndAttachment { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISceneObject_t : ISchemaClass {
 
+  
   public ref uint ObjectID { get; }
   
   public ISchemaFixedArray<Vector4D> Transform { get; }
@@ -31,5 +32,4 @@ public partial interface ISceneObject_t : ISchemaClass {
   public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCRenderMesh> Renderable { get; }
-  
 }

@@ -4,8 +4,10 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDynamicNavConnectionsVolume : ITriggerMultiple {
 
+  
   public ref CUtlSymbolLarge ConnectionTarget { get; }
   
+// CUtlVector< DynamicVolumeDef_t >
   public ref CUtlVector Connections { get; }
   
   public ref CGlobalSymbol TransitionType { get; }
@@ -17,5 +19,4 @@ public partial interface IDynamicNavConnectionsVolume : ITriggerMultiple {
   public ref float UpdateDistance { get; }
   
   public ref float MaxConnectionDistance { get; }
-  
 }

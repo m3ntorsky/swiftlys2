@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulse_InvokeBinding : ISchemaClass {
 
+  
   public IPulseRegisterMap_t RegisterMap { get; }
   
   public ISchemaUntypedField FuncName { get; }
@@ -13,5 +14,4 @@ public partial interface IPulse_InvokeBinding : ISchemaClass {
   public IPulseRuntimeChunkIndex_t SrcChunk { get; }
   
   public ref int SrcInstruction { get; }
-  
 }

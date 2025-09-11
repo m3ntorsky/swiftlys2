@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IResourceId_t : ISchemaClass {
 
-  public ref ulong Value { get; }
   
+  public ref ulong Value { get; }
 }

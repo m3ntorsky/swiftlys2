@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IHSequence : ISchemaClass {
 
-  public ref int Value { get; }
   
+  public ref int Value { get; }
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_VelocityRandom : IParticleFunctionInitializer {
 
+  
   public ref int ControlPointNumber { get; }
   
   public IPerParticleFloatInput SpeedMin { get; }
@@ -17,5 +18,4 @@ public partial interface IC_INIT_VelocityRandom : IParticleFunctionInitializer {
   public ref bool IgnoreDT { get; }
   
   public IRandomNumberGeneratorParameters RandomnessParameters { get; }
-  
 }

@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_LimitCount : IPulseCell_BaseRequirement {
 
-  public ref int LimitCount { get; }
   
+  public ref int LimitCount { get; }
 }

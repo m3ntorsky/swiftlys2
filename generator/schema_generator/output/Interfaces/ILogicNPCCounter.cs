@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ILogicNPCCounter : IBaseEntity {
 
+  
   public IEntityIOOutput OnMinCountAll { get; }
   
   public IEntityIOOutput OnMaxCountAll { get; }
@@ -99,5 +100,4 @@ public partial interface ILogicNPCCounter : IBaseEntity {
   public ref int MaxFactor_3 { get; }
   
   public ref float DefaultDist_3 { get; }
-  
 }

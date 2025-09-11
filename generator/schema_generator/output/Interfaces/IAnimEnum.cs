@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimEnum : ISchemaClass {
 
-  public ref byte Value { get; }
   
+  public ref byte Value { get; }
 }

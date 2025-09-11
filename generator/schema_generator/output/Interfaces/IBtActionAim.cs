@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBtActionAim : IBtNode {
 
+  
   public ref CUtlString SensorInputKey { get; }
   
   public ref CUtlString AimReadyKey { get; }
@@ -27,5 +28,4 @@ public partial interface IBtActionAim : IBtNode {
   public ICountdownTimer FocusIntervalTimer { get; }
   
   public ref bool Acquired { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IClutterSceneObject_t : ISchemaClass {
 
+  
   public IAABB_t Bounds { get; }
   
   public ref ObjectTypeFlags_t Flags { get; }
@@ -16,6 +17,7 @@ public partial interface IClutterSceneObject_t : ISchemaClass {
   
   public ref CUtlVector<Color> InstanceTintSrgb { get; }
   
+// CUtlVector< ClutterTile_t >
   public ref CUtlVector Tiles { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel { get; }
@@ -25,5 +27,4 @@ public partial interface IClutterSceneObject_t : ISchemaClass {
   public ref float BeginCullSize { get; }
   
   public ref float EndCullSize { get; }
-  
 }

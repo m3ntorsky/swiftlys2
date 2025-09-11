@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_InstantaneousEmitter : IParticleFunctionEmitter {
 
+  
   public IParticleCollectionFloatInput ParticlesToEmit { get; }
   
   public IParticleCollectionFloatInput StartTime { get; }
@@ -19,5 +20,4 @@ public partial interface IC_OP_InstantaneousEmitter : IParticleFunctionEmitter {
   public ref int SnapshotControlPoint { get; }
   
   public ref CUtlString StrSnapshotSubset { get; }
-  
 }

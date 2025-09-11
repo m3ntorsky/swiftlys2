@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IReplicationParameters : ISchemaClass {
 
+  
   public ref ParticleReplicationMode_t ReplicationMode { get; }
   
   public ref bool ScaleChildParticleRadii { get; }
@@ -17,5 +18,4 @@ public partial interface IReplicationParameters : ISchemaClass {
   public IParticleCollectionVecInput MaxRandomDisplacement { get; }
   
   public IParticleCollectionFloatInput ModellingScale { get; }
-  
 }

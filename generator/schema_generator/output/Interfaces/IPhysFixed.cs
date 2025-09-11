@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysFixed : IPhysConstraint {
 
+  
   public ref float LinearFrequency { get; }
   
   public ref float LinearDampingRatio { get; }
@@ -19,5 +20,4 @@ public partial interface IPhysFixed : IPhysConstraint {
   public ref CUtlSymbolLarge BoneName1 { get; }
   
   public ref CUtlSymbolLarge BoneName2 { get; }
-  
 }

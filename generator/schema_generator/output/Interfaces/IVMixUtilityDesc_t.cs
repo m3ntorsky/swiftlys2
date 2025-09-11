@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVMixUtilityDesc_t : ISchemaClass {
 
+  
   public ref VMixChannelOperation_t Op { get; }
   
   public ref float InputPan { get; }
@@ -15,5 +16,4 @@ public partial interface IVMixUtilityDesc_t : ISchemaClass {
   public ref bool BassMono { get; }
   
   public ref float BassFreq { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_DriveCPFromGlobalSoundFloat : IParticleFunctionPreEmission {
 
+  
   public ref int OutputControlPoint { get; }
   
   public ref int OutputField { get; }
@@ -21,5 +22,4 @@ public partial interface IC_OP_DriveCPFromGlobalSoundFloat : IParticleFunctionPr
   public ref CUtlString OperatorName { get; }
   
   public ref CUtlString FieldName { get; }
-  
 }

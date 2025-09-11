@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_CycleScalar : IParticleFunctionOperator {
 
+  
   public IParticleAttributeIndex_t DestField { get; }
   
   public ref float StartValue { get; }
@@ -23,5 +24,4 @@ public partial interface IC_OP_CycleScalar : IParticleFunctionOperator {
   public ref int CPFieldMax { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
-  
 }

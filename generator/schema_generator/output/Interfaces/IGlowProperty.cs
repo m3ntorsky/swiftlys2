@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IGlowProperty : ISchemaClass {
 
+  
   public ref Vector GlowColor { get; }
   
   public ref int GlowType { get; }
@@ -25,5 +26,4 @@ public partial interface IGlowProperty : ISchemaClass {
   public ref bool EligibleForScreenHighlight { get; }
   
   public ref bool Glowing { get; }
-  
 }

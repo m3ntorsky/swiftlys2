@@ -4,10 +4,10 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEntityInstance : ISchemaClass {
 
+  
   public ref CUtlSymbolLarge PrivateVScripts { get; }
   
   public IEntityIdentity Entity { get; }
   
   public IScriptComponent CScriptComponent { get; }
-  
 }

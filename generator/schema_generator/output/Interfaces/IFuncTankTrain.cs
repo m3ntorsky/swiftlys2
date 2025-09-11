@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncTankTrain : IFuncTrackTrain {
 
-  public IEntityIOOutput OnDeath { get; }
   
+  public IEntityIOOutput OnDeath { get; }
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC4 : ICSWeaponBase {
 
+  
   public ref Vector LastValidPlayerHeldPosition { get; }
   
   public ref Vector LastValidDroppedPosition { get; }
@@ -25,5 +26,4 @@ public partial interface IC4 : ICSWeaponBase {
   public ISchemaFixedArray<bool> PlayedArmingBeeps { get; }
   
   public ref bool BombPlanted { get; }
-  
 }

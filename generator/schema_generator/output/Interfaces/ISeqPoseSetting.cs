@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISeqPoseSetting : ISchemaClass {
 
+  
   public ref CBufferString PoseParameter { get; }
   
   public ref CBufferString Attachment { get; }
@@ -19,5 +20,4 @@ public partial interface ISeqPoseSetting : ISchemaClass {
   public ref bool Z { get; }
   
   public ref int Type { get; }
-  
 }

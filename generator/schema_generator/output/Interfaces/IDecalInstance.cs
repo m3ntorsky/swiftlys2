@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDecalInstance : ISchemaClass {
 
+  
   public ref CGlobalSymbol DecalGroup { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
@@ -53,5 +54,4 @@ public partial interface IDecalInstance : ISchemaClass {
   public IDecalInstance Next { get; }
   
   public IDecalInstance Prev { get; }
-  
 }

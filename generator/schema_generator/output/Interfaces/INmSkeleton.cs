@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmSkeleton : ISchemaClass {
 
+  
   public ref CGlobalSymbol ID { get; }
   
   public ref CUtlLeanVector<CGlobalSymbol> BoneIDs { get; }
@@ -21,5 +22,4 @@ public partial interface INmSkeleton : ISchemaClass {
   public ref CUtlLeanVector<CNmSkeleton::SecondarySkeleton_t> SecondarySkeletons { get; }
   
   public ref bool IsPropSkeleton { get; }
-  
 }

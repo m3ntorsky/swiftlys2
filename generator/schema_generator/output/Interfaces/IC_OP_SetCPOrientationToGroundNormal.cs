@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetCPOrientationToGroundNormal : IParticleFunctionOperator {
 
+  
   public ref float InterpRate { get; }
   
   public ref float MaxTraceLength { get; }
@@ -21,5 +22,4 @@ public partial interface IC_OP_SetCPOrientationToGroundNormal : IParticleFunctio
   public ref int OutputCP { get; }
   
   public ref bool IncludeWater { get; }
-  
 }

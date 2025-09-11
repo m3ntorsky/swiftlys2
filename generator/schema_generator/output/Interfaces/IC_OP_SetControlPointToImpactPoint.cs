@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetControlPointToImpactPoint : IParticleFunctionPreEmission {
 
+  
   public ref int CPOut { get; }
   
   public ref int CPIn { get; }
@@ -27,5 +28,4 @@ public partial interface IC_OP_SetControlPointToImpactPoint : IParticleFunctionP
   public ref bool TraceToClosestSurface { get; }
   
   public ref bool IncludeWater { get; }
-  
 }

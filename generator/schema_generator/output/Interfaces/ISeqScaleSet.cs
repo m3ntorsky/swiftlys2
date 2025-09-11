@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISeqScaleSet : ISchemaClass {
 
+  
   public ref CBufferString Name { get; }
   
   public ref bool RootOffset { get; }
@@ -13,5 +14,4 @@ public partial interface ISeqScaleSet : ISchemaClass {
   public ref CUtlVector<short> LocalBoneArray { get; }
   
   public ref CUtlVector<float> BoneScaleArray { get; }
-  
 }

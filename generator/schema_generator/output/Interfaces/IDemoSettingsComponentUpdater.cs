@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDemoSettingsComponentUpdater : IAnimComponentUpdater {
 
-  public IAnimDemoCaptureSettings Settings { get; }
   
+  public IAnimDemoCaptureSettings Settings { get; }
 }

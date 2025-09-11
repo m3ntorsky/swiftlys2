@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IOldFeEdge_t : ISchemaClass {
 
+  
   public ISchemaFixedArray<float> K { get; }
   
   public ref float InvA { get; }
@@ -27,5 +28,4 @@ public partial interface IOldFeEdge_t : ISchemaClass {
   public ISchemaFixedArray<float> AxialModelWeights { get; }
   
   public ISchemaFixedArray<ushort> Node { get; }
-  
 }

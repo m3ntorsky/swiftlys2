@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface Ithinkfunc_t : ISchemaClass {
 
+  
   public ISchemaUntypedField Fn { get; }
   
   public ref CUtlStringToken Context { get; }
@@ -11,5 +12,4 @@ public partial interface Ithinkfunc_t : ISchemaClass {
   public IGameTick_t NextThinkTick { get; }
   
   public IGameTick_t LastThinkTick { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEntityIOConnectionData_t : ISchemaClass {
 
+  
   public ref CUtlString OutputName { get; }
   
   public ref uint TargetType { get; }
@@ -19,5 +20,4 @@ public partial interface IEntityIOConnectionData_t : ISchemaClass {
   public ref int TimesToFire { get; }
   
   public ISchemaUntypedField ParamMap { get; }
-  
 }

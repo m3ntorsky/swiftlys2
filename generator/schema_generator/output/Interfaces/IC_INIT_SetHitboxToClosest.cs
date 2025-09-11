@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_SetHitboxToClosest : IParticleFunctionInitializer {
 
+  
   public ref int ControlPointNumber { get; }
   
   public ref int DesiredHitbox { get; }
@@ -21,5 +22,4 @@ public partial interface IC_INIT_SetHitboxToClosest : IParticleFunctionInitializ
   public IParticleCollectionFloatInput HybridRatio { get; }
   
   public ref bool UpdatePosition { get; }
-  
 }

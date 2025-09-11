@@ -4,10 +4,10 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFollowTargetUpdateNode : IUnaryUpdateNode {
 
+  
   public IFollowTargetOpFixedSettings_t OpFixedData { get; }
   
   public IAnimParamHandle ParameterPosition { get; }
   
   public IAnimParamHandle ParameterOrientation { get; }
-  
 }

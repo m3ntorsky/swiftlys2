@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_AttractToControlPoint : IParticleFunctionForce {
 
+  
   public ref Vector ComponentScale { get; }
   
   public IPerParticleFloatInput ForceAmount { get; }
@@ -15,5 +16,4 @@ public partial interface IC_OP_AttractToControlPoint : IParticleFunctionForce {
   public IPerParticleFloatInput ForceAmountMin { get; }
   
   public ref bool ApplyMinForce { get; }
-  
 }

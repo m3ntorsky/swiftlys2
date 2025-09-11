@@ -4,8 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmCachedIDNode__CDefinition : INmIDValueNode::CDefinition {
 
+  
   public ref short InputValueNodeIdx { get; }
   
   public ref NmCachedValueMode_t Mode { get; }
-  
 }

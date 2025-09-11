@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetFromCPSnapshot : IParticleFunctionOperator {
 
+  
   public ref int ControlPointNumber { get; }
   
   public ref CUtlString StrSnapshotSubset { get; }
@@ -29,5 +30,4 @@ public partial interface IC_OP_SetFromCPSnapshot : IParticleFunctionOperator {
   public ref bool SubSample { get; }
   
   public ref bool Prev { get; }
-  
 }

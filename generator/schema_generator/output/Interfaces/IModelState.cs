@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IModelState : ISchemaClass {
 
+  
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }
   
   public ref CUtlSymbolLarge ModelName { get; }
@@ -19,5 +20,4 @@ public partial interface IModelState : ISchemaClass {
   public ref byte ForceLOD { get; }
   
   public ref byte ClothUpdateFlags { get; }
-  
 }

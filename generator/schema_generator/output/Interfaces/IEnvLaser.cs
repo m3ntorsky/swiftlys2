@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvLaser : IBeam {
 
+  
   public ref CUtlSymbolLarge LaserTarget { get; }
   
   public ISprite Sprite { get; }
@@ -13,5 +14,4 @@ public partial interface IEnvLaser : IBeam {
   public ref Vector FirePosition { get; }
   
   public ref float StartFrame { get; }
-  
 }

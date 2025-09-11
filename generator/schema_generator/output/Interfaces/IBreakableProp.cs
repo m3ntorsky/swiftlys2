@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBreakableProp : IBaseProp {
 
+  
   public IPropDataComponent CPropDataComponent { get; }
   
   public IEntityIOOutput OnStartDeath { get; }
@@ -67,5 +68,4 @@ public partial interface IBreakableProp : IBaseProp {
   public ref bool UsePuntSound { get; }
   
   public ref bool OriginalBlockLOS { get; }
-  
 }

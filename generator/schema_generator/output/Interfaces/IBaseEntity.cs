@@ -4,10 +4,12 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseEntity : IEntityInstance {
 
+  
   public IBodyComponent CBodyComponent { get; }
   
   public INetworkTransmitComponent NetworkTransmitComponent { get; }
   
+// CUtlVector< thinkfunc_t >
   public ref CUtlVector ThinkFunctions { get; }
   
   public ref int CurrentThinkContext { get; }
@@ -20,6 +22,7 @@ public partial interface IBaseEntity : IEntityInstance {
   
   public ref float LastNetworkChange { get; }
   
+// CUtlVector< ResponseContext_t >
   public ref CUtlVector ResponseContexts { get; }
   
   public ref CUtlSymbolLarge ResponseContext { get; }
@@ -163,5 +166,4 @@ public partial interface IBaseEntity : IEntityInstance {
   public ref BloodType BloodType { get; }
   
   public IPulseGraphInstance_ServerEntity PulseGraphInstance { get; }
-  
 }

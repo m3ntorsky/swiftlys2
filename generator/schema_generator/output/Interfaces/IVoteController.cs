@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVoteController : IBaseEntity {
 
+  
   public ref int ActiveIssueIndex { get; }
   
   public ref int OnlyTeamToVote { get; }
@@ -31,5 +32,4 @@ public partial interface IVoteController : IBaseEntity {
   public ref CUtlVector<PointerTo<CBaseIssue>> PotentialIssues { get; }
   
   public ref CUtlVector<PointerTo<CString>> VoteOptions { get; }
-  
 }

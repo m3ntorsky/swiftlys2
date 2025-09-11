@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ILogicDistanceCheck : ILogicalEntity {
 
+  
   public ref CUtlSymbolLarge EntityA { get; }
   
   public ref CUtlSymbolLarge EntityB { get; }
@@ -17,5 +18,4 @@ public partial interface ILogicDistanceCheck : ILogicalEntity {
   public IEntityIOOutput InZone2 { get; }
   
   public IEntityIOOutput InZone3 { get; }
-  
 }

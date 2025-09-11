@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPlayerController : IBasePlayerController {
 
+  
   public ICSPlayerController_InGameMoneyServices InGameMoneyServices { get; }
   
   public ICSPlayerController_InventoryServices InventoryServices { get; }
@@ -189,5 +190,4 @@ public partial interface ICSPlayerController : IBasePlayerController {
   public ref uint NonSuspiciousHitStreak { get; }
   
   public ref bool FireBulletsSeedSynchronized { get; }
-  
 }

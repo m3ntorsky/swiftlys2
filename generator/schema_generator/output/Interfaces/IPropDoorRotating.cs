@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPropDoorRotating : IBasePropDoor {
 
+  
   public ref Vector Axis { get; }
   
   public ref float Distance { get; }
@@ -37,5 +38,4 @@ public partial interface IPropDoorRotating : IBasePropDoor {
   public ref bool AjarDoorShouldntAlwaysOpen { get; }
   
   public ref CHandle<CEntityBlocker> EntityBlocker { get; }
-  
 }

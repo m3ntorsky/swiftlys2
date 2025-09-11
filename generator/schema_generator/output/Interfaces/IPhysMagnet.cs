@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysMagnet : IBaseAnimGraph {
 
+  
   public IEntityIOOutput OnMagnetAttach { get; }
   
   public IEntityIOOutput OnMagnetDetach { get; }
@@ -14,6 +15,7 @@ public partial interface IPhysMagnet : IBaseAnimGraph {
   
   public ref float TorqueLimit { get; }
   
+// CUtlVector< magnetted_objects_t >
   public ref CUtlVector MagnettedEntities { get; }
   
   public ref bool Active { get; }
@@ -27,5 +29,4 @@ public partial interface IPhysMagnet : IBaseAnimGraph {
   public IGameTime_t NextSuckTime { get; }
   
   public ref int MaxObjectsAttached { get; }
-  
 }

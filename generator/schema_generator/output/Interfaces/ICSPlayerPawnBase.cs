@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPlayerPawnBase : IBasePlayerPawn {
 
+  
   public ITouchExpansionComponent CTouchExpansionComponent { get; }
   
   public ICSPlayer_PingServices PingServices { get; }
@@ -33,5 +34,4 @@ public partial interface ICSPlayerPawnBase : IBasePlayerPawn {
   public ref int ProgressBarDuration { get; }
   
   public ref CHandle<CCSPlayerController> OriginalController { get; }
-  
 }

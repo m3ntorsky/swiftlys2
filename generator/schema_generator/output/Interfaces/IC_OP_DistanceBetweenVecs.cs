@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_DistanceBetweenVecs : IParticleFunctionOperator {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public IPerParticleVecInput Point1 { get; }
@@ -21,5 +22,4 @@ public partial interface IC_OP_DistanceBetweenVecs : IParticleFunctionOperator {
   public ref ParticleSetMethod_t SetMethod { get; }
   
   public ref bool DeltaTime { get; }
-  
 }

@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IItemGenericTriggerHelper : IBaseModelEntity {
 
-  public ref CHandle<CItemGeneric> ParentItem { get; }
   
+  public ref CHandle<CItemGeneric> ParentItem { get; }
 }

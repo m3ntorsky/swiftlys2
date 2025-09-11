@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IGameScriptedMoveData : ISchemaClass {
 
+  
   public ref Vector AccumulatedRootMotion { get; }
   
   public ref QAngle AccumulatedRootMotionRotation { get; }
@@ -39,5 +40,4 @@ public partial interface IGameScriptedMoveData : ISchemaClass {
   public ref QAngle Dst { get; }
   
   public ref CHandle<CBaseEntity> DestEntity { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBarnLight : IBaseModelEntity {
 
+  
   public ref bool Enabled { get; }
   
   public ref int ColorMode { get; }
@@ -155,5 +156,4 @@ public partial interface IBarnLight : IBaseModelEntity {
   public ref bool PvsModifyEntity { get; }
   
   public ref CUtlVector<ushort> VisClusters { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMaterialDrawDescriptor : ISchemaClass {
 
+  
   public ref float UvDensity { get; }
   
   public ref Vector TintColor { get; }
@@ -37,5 +38,4 @@ public partial interface IMaterialDrawDescriptor : ISchemaClass {
   public IRenderBufferBinding MeshletPackedIVB { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
-  
 }

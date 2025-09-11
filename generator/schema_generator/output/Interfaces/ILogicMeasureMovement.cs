@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ILogicMeasureMovement : ILogicalEntity {
 
+  
   public ref CUtlSymbolLarge StrMeasureTarget { get; }
   
   public ref CUtlSymbolLarge StrMeasureReference { get; }
@@ -21,5 +22,4 @@ public partial interface ILogicMeasureMovement : ILogicalEntity {
   public ref float Scale { get; }
   
   public ref int MeasureType { get; }
-  
 }

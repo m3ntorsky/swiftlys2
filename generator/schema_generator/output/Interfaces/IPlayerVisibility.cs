@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPlayerVisibility : IBaseEntity {
 
+  
   public ref float VisibilityStrength { get; }
   
   public ref float FogDistanceMultiplier { get; }
@@ -15,5 +16,4 @@ public partial interface IPlayerVisibility : IBaseEntity {
   public ref bool StartDisabled { get; }
   
   public ref bool IsEnabled { get; }
-  
 }

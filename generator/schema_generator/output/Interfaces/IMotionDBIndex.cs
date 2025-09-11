@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMotionDBIndex : ISchemaClass {
 
-  public ref uint Index { get; }
   
+  public ref uint Index { get; }
 }

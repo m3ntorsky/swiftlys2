@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_SetHitboxToModel : IParticleFunctionInitializer {
 
+  
   public ref int ControlPointNumber { get; }
   
   public ref int ForceInModel { get; }
@@ -23,5 +24,4 @@ public partial interface IC_INIT_SetHitboxToModel : IParticleFunctionInitializer
   public ISchemaFixedString HitboxSetName { get; }
   
   public IParticleCollectionFloatInput ShellSize { get; }
-  
 }

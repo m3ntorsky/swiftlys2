@@ -4,8 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMotionIndex : ISchemaClass {
 
+  
   public ref ushort Group { get; }
   
   public ref ushort Motion { get; }
-  
 }

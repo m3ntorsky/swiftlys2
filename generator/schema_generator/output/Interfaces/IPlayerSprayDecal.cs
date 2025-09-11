@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPlayerSprayDecal : IModelPointEntity {
 
+  
   public ref int UniqueID { get; }
   
   public ref uint AccountID { get; }
@@ -33,5 +34,4 @@ public partial interface IPlayerSprayDecal : IModelPointEntity {
   public ref byte Version { get; }
   
   public ISchemaFixedArray<byte> Signature { get; }
-  
 }

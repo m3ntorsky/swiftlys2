@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderTrails : IBaseTrailRenderer {
 
+  
   public ref bool EnableFadingAndClamping { get; }
   
   public ref float StartFadeDot { get; }
@@ -43,5 +44,4 @@ public partial interface IC_OP_RenderTrails : IBaseTrailRenderer {
   public ref float ForwardShift { get; }
   
   public ref bool FlipUVBasedOnPitchYaw { get; }
-  
 }

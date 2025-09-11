@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICS2WeaponGraphController : IAnimGraphControllerBase {
 
+  
   public ISchemaUntypedField Action { get; }
   
   public ISchemaUntypedField ActionReset { get; }
@@ -41,5 +42,4 @@ public partial interface ICS2WeaponGraphController : IAnimGraphControllerBase {
   public ISchemaUntypedField InspectExtraInfo { get; }
   
   public ISchemaUntypedField ReloadStage { get; }
-  
 }

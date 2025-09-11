@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVPhysXConstraintParams_t : ISchemaClass {
 
+  
   public ref byte Type { get; }
   
   public ref byte TranslateMotion { get; }
@@ -95,5 +96,4 @@ public partial interface IVPhysXConstraintParams_t : ISchemaClass {
   public ref float ProjectionLinearTolerance { get; }
   
   public ref float ProjectionAngularTolerance { get; }
-  
 }

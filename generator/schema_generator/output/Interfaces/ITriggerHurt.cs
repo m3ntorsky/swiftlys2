@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITriggerHurt : IBaseTrigger {
 
+  
   public ref float OriginalDamage { get; }
   
   public ref float Damage { get; }
@@ -31,5 +32,4 @@ public partial interface ITriggerHurt : IBaseTrigger {
   public IEntityIOOutput OnHurtPlayer { get; }
   
   public ref CUtlVector<CHandle<CBaseEntity>> HurtEntities { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISeqAutoLayer : ISchemaClass {
 
+  
   public ref short LocalReference { get; }
   
   public ref short LocalPose { get; }
@@ -17,5 +18,4 @@ public partial interface ISeqAutoLayer : ISchemaClass {
   public ref float Tail { get; }
   
   public ref float End { get; }
-  
 }

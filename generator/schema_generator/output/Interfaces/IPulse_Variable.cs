@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulse_Variable : ISchemaClass {
 
+  
   public ISchemaUntypedField Name { get; }
   
   public ref CUtlString Description { get; }
@@ -19,5 +20,4 @@ public partial interface IPulse_Variable : ISchemaClass {
   public ref bool IsObservable { get; }
   
   public IPulseDocNodeID_t EditorNodeID { get; }
-  
 }

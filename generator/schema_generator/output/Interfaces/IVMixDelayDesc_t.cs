@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVMixDelayDesc_t : ISchemaClass {
 
+  
   public IVMixFilterDesc_t FeedbackFilter { get; }
   
   public ref bool EnableFilter { get; }
@@ -17,5 +18,4 @@ public partial interface IVMixDelayDesc_t : ISchemaClass {
   public ref float FeedbackGain { get; }
   
   public ref float Width { get; }
-  
 }

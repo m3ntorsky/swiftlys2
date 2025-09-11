@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleNamedValueSource_t : ISchemaClass {
 
+  
   public ref CUtlString Name { get; }
   
   public ref bool IsPublic { get; }
@@ -12,6 +13,6 @@ public partial interface IParticleNamedValueSource_t : ISchemaClass {
   
   public IParticleNamedValueConfiguration_t DefaultConfig { get; }
   
+// CUtlVector< ParticleNamedValueConfiguration_t >
   public ref CUtlVector NamedConfigs { get; }
-  
 }

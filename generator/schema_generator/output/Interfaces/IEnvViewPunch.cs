@@ -4,8 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvViewPunch : IPointEntity {
 
+  
   public ref float Radius { get; }
   
   public ref QAngle ViewPunch { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISchemaSystemInternalRegistration : ISchemaClass {
 
+  
   public ref Vector2D Vector2D { get; }
   
   public ref Vector Vector { get; }
@@ -47,5 +48,4 @@ public partial interface ISchemaSystemInternalRegistration : ISchemaClass {
   public ISchemaUntypedField ResourceTypes { get; }
   
   public ISchemaUntypedField KV3 { get; }
-  
 }

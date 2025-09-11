@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvWindShared : ISchemaClass {
 
+  
   public IGameTime_t StartTime { get; }
   
   public ref uint WindSeed { get; }
@@ -37,5 +38,4 @@ public partial interface IEnvWindShared : ISchemaClass {
   public IEntityIOOutput OnGustEnd { get; }
   
   public ref CHandle<CBaseEntity> EntOwner { get; }
-  
 }

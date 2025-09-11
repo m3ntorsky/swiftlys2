@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPlayerController_ActionTrackingServices : IPlayerControllerComponent {
 
+  
+// CUtlVectorEmbeddedNetworkVar< CSPerRoundStats_t >
   public ref CUtlVectorEmbeddedNetworkVar PerRoundStats { get; }
   
   public ISMatchStats_t MatchStats { get; }
@@ -13,5 +15,4 @@ public partial interface ICSPlayerController_ActionTrackingServices : IPlayerCon
   public ref int NumRoundKillsHeadshots { get; }
   
   public ref uint TotalRoundDamageDealt { get; }
-  
 }

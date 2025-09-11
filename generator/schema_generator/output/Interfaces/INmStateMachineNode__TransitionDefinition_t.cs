@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmStateMachineNode__TransitionDefinition_t : ISchemaClass {
 
+  
   public ref short TargetStateIdx { get; }
   
   public ref short ConditionNodeIdx { get; }
@@ -11,5 +12,4 @@ public partial interface INmStateMachineNode__TransitionDefinition_t : ISchemaCl
   public ref short TransitionNodeIdx { get; }
   
   public ref bool CanBeForced { get; }
-  
 }

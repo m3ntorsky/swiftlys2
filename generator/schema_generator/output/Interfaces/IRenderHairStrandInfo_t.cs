@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRenderHairStrandInfo_t : ISchemaClass {
 
+  
   public ISchemaFixedArray<uint> GuideHairIndices_nSurfaceTriIndex { get; }
   
   public ISchemaFixedArray<ushort> GuideBary_vBaseBary { get; }
@@ -17,5 +18,4 @@ public partial interface IRenderHairStrandInfo_t : ISchemaClass {
   public ref uint PackedSurfaceTangentOs { get; }
   
   public ref uint DataOffset_Segments { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_AgeNoise : IParticleFunctionInitializer {
 
+  
   public ref bool AbsVal { get; }
   
   public ref bool AbsValInv { get; }
@@ -19,5 +20,4 @@ public partial interface IC_INIT_AgeNoise : IParticleFunctionInitializer {
   public ref float NoiseScaleLoc { get; }
   
   public ref Vector OffsetLoc { get; }
-  
 }

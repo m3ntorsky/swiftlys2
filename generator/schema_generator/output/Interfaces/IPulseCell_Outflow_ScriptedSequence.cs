@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Outflow_ScriptedSequence : IPulseCell_BaseYieldingInflow {
 
+  
   public ref CUtlString SyncGroup { get; }
   
   public ref int ExpectedNumSequencesInSyncGroup { get; }
@@ -16,12 +17,13 @@ public partial interface IPulseCell_Outflow_ScriptedSequence : IPulseCell_BaseYi
   
   public IPulseScriptedSequenceData_t ScriptedSequenceDataMain { get; }
   
+// CUtlVector< PulseScriptedSequenceData_t >
   public ref CUtlVector AdditionalActors { get; }
   
   public IPulse_ResumePoint OnFinished { get; }
   
   public IPulse_ResumePoint OnCanceled { get; }
   
+// CUtlVector< CPulse_OutflowConnection >
   public ref CUtlVector Triggers { get; }
-  
 }

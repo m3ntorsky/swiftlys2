@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderRopes : IBaseRendererSource2 {
 
+  
   public ref bool EnableFadingAndClamping { get; }
   
   public ref float MinSize { get; }
@@ -63,5 +64,4 @@ public partial interface IC_OP_RenderRopes : IBaseRendererSource2 {
   public ref bool DrawAsOpaque { get; }
   
   public ref bool GenerateNormals { get; }
-  
 }

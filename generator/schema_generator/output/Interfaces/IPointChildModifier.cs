@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointChildModifier : IPointEntity {
 
-  public ref bool OrphanInsteadOfDeletingChildrenOnRemove { get; }
   
+  public ref bool OrphanInsteadOfDeletingChildrenOnRemove { get; }
 }

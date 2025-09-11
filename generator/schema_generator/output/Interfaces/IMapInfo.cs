@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMapInfo : IPointEntity {
 
+  
   public ref int BuyingStatus { get; }
   
   public ref float BombRadius { get; }
@@ -31,5 +32,4 @@ public partial interface IMapInfo : IPointEntity {
   public ref float EnvWetnessCoverage { get; }
   
   public ref float EnvWetnessDryingAmount { get; }
-  
 }

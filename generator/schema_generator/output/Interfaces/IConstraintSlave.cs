@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IConstraintSlave : ISchemaClass {
 
+  
   public ref Quaternion BaseOrientation { get; }
   
   public ref Vector BasePosition { get; }
@@ -13,5 +14,4 @@ public partial interface IConstraintSlave : ISchemaClass {
   public ref float Weight { get; }
   
   public ref CUtlString Name { get; }
-  
 }

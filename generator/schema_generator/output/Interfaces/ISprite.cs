@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISprite : IBaseModelEntity {
 
+  
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> SpriteMaterial { get; }
   
   public ref CHandle<CBaseEntity> AttachedToEntity { get; }
@@ -49,5 +50,4 @@ public partial interface ISprite : IBaseModelEntity {
   public ref int SpriteWidth { get; }
   
   public ref int SpriteHeight { get; }
-  
 }

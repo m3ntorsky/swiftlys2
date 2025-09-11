@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_LightningSnapshotGenerator : IParticleFunctionPreEmission {
 
+  
   public ref int CPSnapshot { get; }
   
   public ref int CPStartPnt { get; }
@@ -33,5 +34,4 @@ public partial interface IC_OP_LightningSnapshotGenerator : IParticleFunctionPre
   public IParticleCollectionFloatInput RadiusEnd { get; }
   
   public IParticleCollectionFloatInput DedicatedPool { get; }
-  
 }

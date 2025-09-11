@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEventFrameBoundary_t : ISchemaClass {
 
-  public ref float FrameTime { get; }
   
+  public ref float FrameTime { get; }
 }

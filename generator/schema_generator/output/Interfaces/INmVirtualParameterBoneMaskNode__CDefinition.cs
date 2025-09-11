@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmVirtualParameterBoneMaskNode__CDefinition : INmBoneMaskValueNode::CDefinition {
 
-  public ref short ChildNodeIdx { get; }
   
+  public ref short ChildNodeIdx { get; }
 }

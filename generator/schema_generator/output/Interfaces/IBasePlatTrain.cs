@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBasePlatTrain : IBaseToggle {
 
+  
   public ref CUtlSymbolLarge NoiseMoving { get; }
   
   public ref CUtlSymbolLarge NoiseArrived { get; }
@@ -13,5 +14,4 @@ public partial interface IBasePlatTrain : IBaseToggle {
   public ref float TWidth { get; }
   
   public ref float TLength { get; }
-  
 }

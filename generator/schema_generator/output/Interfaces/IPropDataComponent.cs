@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPropDataComponent : IEntityComponent {
 
+  
   public ref float DmgModBullet { get; }
   
   public ref float DmgModClub { get; }
@@ -23,5 +24,4 @@ public partial interface IPropDataComponent : IEntityComponent {
   public ref int DisableTakePhysicsDamageSpawnFlag { get; }
   
   public ref int MotionDisabledSpawnFlag { get; }
-  
 }

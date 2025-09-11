@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_MaintainEmitter : IParticleFunctionEmitter {
 
+  
   public IParticleCollectionFloatInput ParticlesToMaintain { get; }
   
   public ref float StartTime { get; }
@@ -21,5 +22,4 @@ public partial interface IC_OP_MaintainEmitter : IParticleFunctionEmitter {
   public ref bool FinalEmitOnStop { get; }
   
   public IParticleCollectionFloatInput Scale { get; }
-  
 }

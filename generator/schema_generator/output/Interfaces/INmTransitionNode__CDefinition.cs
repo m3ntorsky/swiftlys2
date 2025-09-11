@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmTransitionNode__CDefinition : INmPoseNode::CDefinition {
 
+  
   public ref short TargetStateNodeIdx { get; }
   
   public ref short DurationOverrideNodeIdx { get; }
@@ -25,5 +26,4 @@ public partial interface INmTransitionNode__CDefinition : INmPoseNode::CDefiniti
   public ref NmEasingOperation_t BlendWeightEasing { get; }
   
   public ref NmRootMotionBlendMode_t RootMotionBlend { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBtActionMoveTo : IBtNode {
 
+  
   public ref CUtlString DestinationInputKey { get; }
   
   public ref CUtlString HidingSpotInputKey { get; }
@@ -31,5 +32,4 @@ public partial interface IBtActionMoveTo : IBtNode {
   public ref float HidingSpotCheckDistanceThreshold { get; }
   
   public ref float NearestAreaDistanceThreshold { get; }
-  
 }

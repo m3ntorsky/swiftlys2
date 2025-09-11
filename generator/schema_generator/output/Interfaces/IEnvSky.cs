@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvSky : IBaseModelEntity {
 
+  
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> SkyMaterial { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> SkyMaterialLightingOnly { get; }
@@ -27,5 +28,4 @@ public partial interface IEnvSky : IBaseModelEntity {
   public ref float FogMaxEnd { get; }
   
   public ref bool Enabled { get; }
-  
 }

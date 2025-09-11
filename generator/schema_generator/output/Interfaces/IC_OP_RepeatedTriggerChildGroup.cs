@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RepeatedTriggerChildGroup : IParticleFunctionPreEmission {
 
+  
   public ref int ChildGroupID { get; }
   
   public IParticleCollectionFloatInput ClusterRefireTime { get; }
@@ -13,5 +14,4 @@ public partial interface IC_OP_RepeatedTriggerChildGroup : IParticleFunctionPreE
   public IParticleCollectionFloatInput ClusterCooldown { get; }
   
   public ref bool LimitChildCount { get; }
-  
 }

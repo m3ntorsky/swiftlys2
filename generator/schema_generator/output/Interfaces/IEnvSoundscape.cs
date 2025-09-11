@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvSoundscape : IBaseEntity {
 
+  
   public IEntityIOOutput OnPlay { get; }
   
   public ref float Radius { get; }
@@ -25,5 +26,4 @@ public partial interface IEnvSoundscape : IBaseEntity {
   public ref CUtlSymbolLarge SoundscapeName { get; }
   
   public ref uint SoundEventHash { get; }
-  
 }

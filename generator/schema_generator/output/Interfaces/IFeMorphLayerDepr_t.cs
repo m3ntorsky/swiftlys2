@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFeMorphLayerDepr_t : ISchemaClass {
 
+  
   public ref CUtlString Name { get; }
   
   public ref uint NameHash { get; }
@@ -19,5 +20,4 @@ public partial interface IFeMorphLayerDepr_t : ISchemaClass {
   public ref CUtlVector<float> GoalDamping { get; }
   
   public ref uint Flags { get; }
-  
 }

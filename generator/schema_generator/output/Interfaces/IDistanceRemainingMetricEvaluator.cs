@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDistanceRemainingMetricEvaluator : IMotionMetricEvaluator {
 
+  
   public ref float MaxDistance { get; }
   
   public ref float MinDistance { get; }
@@ -17,5 +18,4 @@ public partial interface IDistanceRemainingMetricEvaluator : IMotionMetricEvalua
   public ref bool FilterGoalDistance { get; }
   
   public ref bool FilterGoalOvershoot { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SpringToVectorConstraint : IParticleFunctionConstraint {
 
+  
   public IPerParticleFloatInput RestLength { get; }
   
   public IPerParticleFloatInput MinDistance { get; }
@@ -13,5 +14,4 @@ public partial interface IC_OP_SpringToVectorConstraint : IParticleFunctionConst
   public IPerParticleFloatInput RestingLength { get; }
   
   public IPerParticleVecInput AnchorVector { get; }
-  
 }

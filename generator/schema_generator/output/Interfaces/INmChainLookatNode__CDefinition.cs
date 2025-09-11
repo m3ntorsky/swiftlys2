@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmChainLookatNode__CDefinition : INmPassthroughNode::CDefinition {
 
+  
   public ref CGlobalSymbol ChainEndBoneID { get; }
   
   public ref short LookatTargetNodeIdx { get; }
@@ -17,5 +18,4 @@ public partial interface INmChainLookatNode__CDefinition : INmPassthroughNode::C
   public ref bool IsTargetInWorldSpace { get; }
   
   public ref Vector ChainForwardDir { get; }
-  
 }

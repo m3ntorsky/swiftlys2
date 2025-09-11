@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVMixModDelayDesc_t : ISchemaClass {
 
+  
   public IVMixFilterDesc_t FeedbackFilter { get; }
   
   public ref bool PhaseInvert { get; }
@@ -21,5 +22,4 @@ public partial interface IVMixModDelayDesc_t : ISchemaClass {
   public ref float ModDepth { get; }
   
   public ref bool ApplyAntialiasing { get; }
-  
 }

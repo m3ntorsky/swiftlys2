@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVMixAutoFilterDesc_t : ISchemaClass {
 
+  
   public ref float EnvelopeAmount { get; }
   
   public ref float AttackTimeMS { get; }
@@ -19,5 +20,4 @@ public partial interface IVMixAutoFilterDesc_t : ISchemaClass {
   public ref float Phase { get; }
   
   public ref VMixLFOShape_t LFOShape { get; }
-  
 }

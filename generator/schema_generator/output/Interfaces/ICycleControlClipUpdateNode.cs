@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICycleControlClipUpdateNode : ILeafUpdateNode {
 
+  
+// CUtlVector< TagSpan_t >
   public ref CUtlVector Tags { get; }
   
   public IHSequence Sequence { get; }
@@ -15,5 +17,4 @@ public partial interface ICycleControlClipUpdateNode : ILeafUpdateNode {
   public IAnimParamHandle ParamIndex { get; }
   
   public ref bool LockWhenWaning { get; }
-  
 }

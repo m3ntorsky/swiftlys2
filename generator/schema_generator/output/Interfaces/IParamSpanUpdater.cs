@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParamSpanUpdater : ISchemaClass {
 
-  public ref CUtlVector Spans { get; }
   
+// CUtlVector< ParamSpan_t >
+  public ref CUtlVector Spans { get; }
 }

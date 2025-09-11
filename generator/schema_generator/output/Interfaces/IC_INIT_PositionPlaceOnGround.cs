@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_PositionPlaceOnGround : IParticleFunctionInitializer {
 
+  
   public IPerParticleFloatInput Offset { get; }
   
   public IPerParticleFloatInput MaxTraceLength { get; }
@@ -33,5 +34,4 @@ public partial interface IC_INIT_PositionPlaceOnGround : IParticleFunctionInitia
   public ref int PreserveOffsetCP { get; }
   
   public ref int IgnoreCP { get; }
-  
 }

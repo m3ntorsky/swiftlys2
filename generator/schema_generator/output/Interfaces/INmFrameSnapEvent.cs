@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmFrameSnapEvent : INmEvent {
 
-  public ref NmFrameSnapEventMode_t FrameSnapMode { get; }
   
+  public ref NmFrameSnapEventMode_t FrameSnapMode { get; }
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISoundEventPathCornerEntity : ISoundEventEntity {
 
+  
   public ref CUtlSymbolLarge PathCorner { get; }
   
   public ref int CountMax { get; }
@@ -16,6 +17,6 @@ public partial interface ISoundEventPathCornerEntity : ISoundEventEntity {
   
   public ref bool Playing { get; }
   
+// CNetworkUtlVectorBase< SoundeventPathCornerPairNetworked_t >
   public ref CUtlVector CornerPairsNetworked { get; }
-  
 }

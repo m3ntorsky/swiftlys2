@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISkeletonAnimCapture_t__Frame_t : ISchemaClass {
 
+  
   public ref float Time { get; }
   
   public ISkeletonAnimCapture_t::FrameStamp_t Stamp { get; }
@@ -21,5 +22,4 @@ public partial interface ISkeletonAnimCapture_t__Frame_t : ISchemaClass {
   public ref CUtlVector<VectorAligned> FeModelPos { get; }
   
   public ref CUtlVector<float> FlexControllerWeights { get; }
-  
 }

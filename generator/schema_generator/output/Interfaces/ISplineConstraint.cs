@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISplineConstraint : IPhysConstraint {
 
+  
   public ref Vector AnchorOffsetRestore { get; }
   
   public ref CHandle<CBaseEntity> SplineEntity { get; }
@@ -25,5 +26,4 @@ public partial interface ISplineConstraint : IPhysConstraint {
   public ref float JointFriction { get; }
   
   public ref Vector PreSolveAnchorPos { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_LifespanFromVelocity : IParticleFunctionInitializer {
 
+  
   public ref Vector ComponentScale { get; }
   
   public ref float TraceOffset { get; }
@@ -19,5 +20,4 @@ public partial interface IC_INIT_LifespanFromVelocity : IParticleFunctionInitial
   public ref ParticleTraceSet_t TraceSet { get; }
   
   public ref bool IncludeWater { get; }
-  
 }

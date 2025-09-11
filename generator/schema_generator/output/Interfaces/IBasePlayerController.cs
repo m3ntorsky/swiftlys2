@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBasePlayerController : IBaseEntity {
 
+  
   public ref ulong InButtonsWhichAreToggles { get; }
   
   public ref uint TickBase { get; }
@@ -51,5 +52,4 @@ public partial interface IBasePlayerController : IBaseEntity {
   public ref bool NoClipEnabled { get; }
   
   public ref uint DesiredFOV { get; }
-  
 }

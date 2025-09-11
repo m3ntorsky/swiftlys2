@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderSound : IParticleFunctionRenderer {
 
+  
   public ref float DurationScale { get; }
   
   public ref float SndLvlScale { get; }
@@ -27,5 +28,4 @@ public partial interface IC_OP_RenderSound : IParticleFunctionRenderer {
   public ISchemaFixedString SoundName { get; }
   
   public ref bool SuppressStopSoundEvent { get; }
-  
 }

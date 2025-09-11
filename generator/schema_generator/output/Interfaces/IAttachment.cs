@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAttachment : ISchemaClass {
 
+  
   public ref CUtlString Name { get; }
   
   public ISchemaFixedArray<CUtlString> InfluenceNames { get; }
@@ -19,5 +20,4 @@ public partial interface IAttachment : ISchemaClass {
   public ref byte Influences { get; }
   
   public ref bool IgnoreRotation { get; }
-  
 }

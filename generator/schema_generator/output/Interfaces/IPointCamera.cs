@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointCamera : IBaseEntity {
 
+  
   public ref float FOV { get; }
   
   public ref float Resolution { get; }
@@ -55,5 +56,4 @@ public partial interface IPointCamera : IBaseEntity {
   public ref bool IsOn { get; }
   
   public IPointCamera Next { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapDistanceToLineSegmentBase : IParticleFunctionOperator {
 
+  
   public ref int CP0 { get; }
   
   public ref int CP1 { get; }
@@ -13,5 +14,4 @@ public partial interface IC_OP_RemapDistanceToLineSegmentBase : IParticleFunctio
   public ref float MaxInputValue { get; }
   
   public ref bool InfiniteLine { get; }
-  
 }

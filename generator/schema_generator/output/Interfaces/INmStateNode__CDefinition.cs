@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmStateNode__CDefinition : INmPoseNode::CDefinition {
 
+  
   public ref short ChildNodeIdx { get; }
   
   public ref CUtlLeanVectorFixedGrowable<CGlobalSymbol,3> EntryEvents { get; }
@@ -23,5 +24,4 @@ public partial interface INmStateNode__CDefinition : INmPoseNode::CDefinition {
   public ref short LayerBoneMaskNodeIdx { get; }
   
   public ref bool IsOffState { get; }
-  
 }

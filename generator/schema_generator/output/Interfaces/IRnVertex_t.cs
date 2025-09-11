@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRnVertex_t : ISchemaClass {
 
-  public ref byte Edge { get; }
   
+  public ref byte Edge { get; }
 }

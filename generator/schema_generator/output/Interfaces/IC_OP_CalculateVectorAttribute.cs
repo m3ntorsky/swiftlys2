@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_CalculateVectorAttribute : IParticleFunctionOperator {
 
+  
   public ref Vector StartValue { get; }
   
   public IParticleAttributeIndex_t FieldInput1 { get; }
@@ -25,5 +26,4 @@ public partial interface IC_OP_CalculateVectorAttribute : IParticleFunctionOpera
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public ref Vector FinalOutputScale { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPathParticleRope : IBaseEntity {
 
+  
   public ref bool StartActive { get; }
   
   public ref float MaxSimulationTime { get; }
@@ -35,5 +36,4 @@ public partial interface IPathParticleRope : IBaseEntity {
   public ref CUtlVector<bool> PathNodes_PinEnabled { get; }
   
   public ref CUtlVector<float> PathNodes_RadiusScale { get; }
-  
 }

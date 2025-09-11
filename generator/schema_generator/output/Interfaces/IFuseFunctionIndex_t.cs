@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuseFunctionIndex_t : ISchemaClass {
 
-  public ref ushort Value { get; }
   
+  public ref ushort Value { get; }
 }

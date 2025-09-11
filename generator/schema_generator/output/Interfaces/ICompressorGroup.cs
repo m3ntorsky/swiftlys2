@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICompressorGroup : ISchemaClass {
 
+  
   public ref int TotalElementCount { get; }
   
   public ref CUtlVector<PointerTo<CString>> ChannelClass { get; }
@@ -37,5 +38,4 @@ public partial interface ICompressorGroup : ISchemaClass {
   public ref CUtlVector<PointerTo<SchemaUntypedField>> Vector2DCompressor { get; }
   
   public ref CUtlVector<PointerTo<SchemaUntypedField>> Vector4DCompressor { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IHitReactFixedSettings_t : ISchemaClass {
 
+  
   public ref int WeightListIndex { get; }
   
   public ref int EffectedBoneCount { get; }
@@ -37,5 +38,4 @@ public partial interface IHitReactFixedSettings_t : ISchemaClass {
   public ref float HipDipImpactScale { get; }
   
   public ref float HipDipDelay { get; }
-  
 }

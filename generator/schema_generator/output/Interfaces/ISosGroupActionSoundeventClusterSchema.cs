@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISosGroupActionSoundeventClusterSchema : ISosGroupActionSchema {
 
+  
   public ref int MinNearby { get; }
   
   public ref float ClusterEpsilon { get; }
@@ -17,5 +18,4 @@ public partial interface ISosGroupActionSoundeventClusterSchema : ISosGroupActio
   public ref CUtlString GroupBoundingBoxMinsOpvar { get; }
   
   public ref CUtlString GroupBoundingBoxMaxsOpvar { get; }
-  
 }

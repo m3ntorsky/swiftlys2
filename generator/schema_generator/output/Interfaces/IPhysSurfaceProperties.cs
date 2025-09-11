@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysSurfaceProperties : ISchemaClass {
 
+  
   public ref CUtlString Name { get; }
   
   public ref uint NameHash { get; }
@@ -21,5 +22,4 @@ public partial interface IPhysSurfaceProperties : ISchemaClass {
   public IPhysSurfacePropertiesSoundNames AudioSounds { get; }
   
   public IPhysSurfacePropertiesAudio AudioParams { get; }
-  
 }

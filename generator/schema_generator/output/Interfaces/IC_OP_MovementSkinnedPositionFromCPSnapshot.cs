@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_MovementSkinnedPositionFromCPSnapshot : IParticleFunctionOperator {
 
+  
   public ref int SnapshotControlPointNumber { get; }
   
   public ref int ControlPointNumber { get; }
@@ -27,5 +28,4 @@ public partial interface IC_OP_MovementSkinnedPositionFromCPSnapshot : IParticle
   public IParticleCollectionFloatInput SnapShotStartPoint { get; }
   
   public IPerParticleFloatInput Interpolation { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IJiggleBoneSettings_t : ISchemaClass {
 
+  
   public ref int BoneIndex { get; }
   
   public ref float SpringStrength { get; }
@@ -17,5 +18,4 @@ public partial interface IJiggleBoneSettings_t : ISchemaClass {
   public ref Vector BoundsMinLS { get; }
   
   public ref JiggleBoneSimSpace SimSpace { get; }
-  
 }

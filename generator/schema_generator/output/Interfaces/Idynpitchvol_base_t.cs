@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface Idynpitchvol_base_t : ISchemaClass {
 
+  
   public ref int Preset { get; }
   
   public ref int Pitchrun { get; }
@@ -53,5 +54,4 @@ public partial interface Idynpitchvol_base_t : ISchemaClass {
   public ref int Lfofrac { get; }
   
   public ref int Lfomult { get; }
-  
 }

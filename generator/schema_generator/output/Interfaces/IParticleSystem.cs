@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleSystem : IBaseModelEntity {
 
+  
   public ISchemaFixedString SnapshotFileName { get; }
   
   public ref bool Active { get; }
@@ -47,5 +48,4 @@ public partial interface IParticleSystem : IBaseModelEntity {
   public ref int TintCP { get; }
   
   public ref Color Tint { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVMixConvolutionDesc_t : ISchemaClass {
 
+  
   public ref float FldbGain { get; }
   
   public ref float PreDelayMS { get; }
@@ -19,5 +20,4 @@ public partial interface IVMixConvolutionDesc_t : ISchemaClass {
   public ref float LowCutoffFreq { get; }
   
   public ref float HighCutoffFreq { get; }
-  
 }

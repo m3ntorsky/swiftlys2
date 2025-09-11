@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITriggerLerpObject : IBaseTrigger {
 
+  
   public ref CUtlSymbolLarge LerpTarget { get; }
   
   public ref CHandle<CBaseEntity> LerpTarget { get; }
@@ -18,6 +19,7 @@ public partial interface ITriggerLerpObject : IBaseTrigger {
   
   public ref bool SingleLerpObject { get; }
   
+// CUtlVector< lerpdata_t >
   public ref CUtlVector LerpingObjects { get; }
   
   public ref CUtlSymbolLarge LerpEffect { get; }
@@ -31,5 +33,4 @@ public partial interface ITriggerLerpObject : IBaseTrigger {
   public IEntityIOOutput OnLerpStarted { get; }
   
   public IEntityIOOutput OnLerpFinished { get; }
-  
 }

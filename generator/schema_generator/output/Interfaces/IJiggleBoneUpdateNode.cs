@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IJiggleBoneUpdateNode : IUnaryUpdateNode {
 
-  public IJiggleBoneSettingsList_t OpFixedData { get; }
   
+  public IJiggleBoneSettingsList_t OpFixedData { get; }
 }

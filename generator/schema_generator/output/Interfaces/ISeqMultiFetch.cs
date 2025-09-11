@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISeqMultiFetch : ISchemaClass {
 
+  
   public ISeqMultiFetchFlag Flags { get; }
   
   public ref CUtlVector<short> LocalReferenceArray { get; }
@@ -23,5 +24,4 @@ public partial interface ISeqMultiFetch : ISchemaClass {
   public ref bool FixedBlendWeight { get; }
   
   public ISchemaFixedArray<float> FixedBlendWeightVals { get; }
-  
 }

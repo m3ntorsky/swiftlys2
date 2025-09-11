@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFeJiggleBone : ISchemaClass {
 
+  
   public ref uint Flags { get; }
   
   public ref float Length { get; }
@@ -73,5 +74,4 @@ public partial interface IFeJiggleBone : ISchemaClass {
   public ref Vector Point1 { get; }
   
   public ref ushort CollisionMask { get; }
-  
 }

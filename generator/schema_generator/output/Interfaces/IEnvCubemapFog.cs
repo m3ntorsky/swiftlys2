@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvCubemapFog : IBaseEntity {
 
+  
   public ref float EndDistance { get; }
   
   public ref float StartDistance { get; }
@@ -39,5 +40,4 @@ public partial interface IEnvCubemapFog : IBaseEntity {
   public ref bool HasHeightFogEnd { get; }
   
   public ref bool FirstTime { get; }
-  
 }

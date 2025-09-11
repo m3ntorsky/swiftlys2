@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapExternalWindToCP : IParticleFunctionPreEmission {
 
+  
   public ref int CP { get; }
   
   public ref int CPOutput { get; }
@@ -13,5 +14,4 @@ public partial interface IC_OP_RemapExternalWindToCP : IParticleFunctionPreEmiss
   public ref bool SetMagnitude { get; }
   
   public ref int OutVectorField { get; }
-  
 }

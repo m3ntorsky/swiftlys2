@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INPCPhysicsHull : ISchemaClass {
 
+  
   public ref CGlobalSymbol Name { get; }
   
   public ref NPCPhysicsHullType_t Type { get; }
@@ -19,5 +20,4 @@ public partial interface INPCPhysicsHull : ISchemaClass {
   public ref float GroundBoxHeight { get; }
   
   public ref float GroundBoxWidth { get; }
-  
 }

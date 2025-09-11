@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVoiceContainerLoopTrigger : IVoiceContainerBase {
 
+  
   public ISoundContainerReference Sound { get; }
   
   public ref float RetriggerTimeMin { get; }
@@ -13,5 +14,4 @@ public partial interface IVoiceContainerLoopTrigger : IVoiceContainerBase {
   public ref float FadeTime { get; }
   
   public ref bool CrossFade { get; }
-  
 }

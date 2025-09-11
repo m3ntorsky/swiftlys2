@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVMixPlateverbDesc_t : ISchemaClass {
 
+  
   public ref float Prefilter { get; }
   
   public ref float InputDiffusion1 { get; }
@@ -17,5 +18,4 @@ public partial interface IVMixPlateverbDesc_t : ISchemaClass {
   public ref float FeedbackDiffusion1 { get; }
   
   public ref float FeedbackDiffusion2 { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ILookComponentUpdater : IAnimComponentUpdater {
 
+  
   public IAnimParamHandle LookHeading { get; }
   
   public IAnimParamHandle LookHeadingNormalized { get; }
@@ -21,5 +22,4 @@ public partial interface ILookComponentUpdater : IAnimComponentUpdater {
   public IAnimParamHandle LookTargetWorldSpace { get; }
   
   public ref bool NetworkLookTarget { get; }
-  
 }

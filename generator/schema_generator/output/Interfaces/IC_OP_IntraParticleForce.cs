@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_IntraParticleForce : IParticleFunctionForce {
 
+  
   public ref float AttractionMinDistance { get; }
   
   public ref float AttractionMaxDistance { get; }
@@ -17,5 +18,4 @@ public partial interface IC_OP_IntraParticleForce : IParticleFunctionForce {
   public ref float RepulsionMaxStrength { get; }
   
   public ref bool UseAABB { get; }
-  
 }

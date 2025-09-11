@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_DistanceToCPInit : IParticleFunctionInitializer {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public IPerParticleFloatInput InputMin { get; }
@@ -33,5 +34,4 @@ public partial interface IC_INIT_DistanceToCPInit : IParticleFunctionInitializer
   public ref Vector DistanceScale { get; }
   
   public ref float RemapBias { get; }
-  
 }

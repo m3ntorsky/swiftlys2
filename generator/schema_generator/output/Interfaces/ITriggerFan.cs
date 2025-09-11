@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITriggerFan : IBaseTrigger {
 
+  
   public ref Vector FanOrigin { get; }
   
   public ref Vector FanOriginOffset { get; }
@@ -51,5 +52,4 @@ public partial interface ITriggerFan : IBaseTrigger {
   public ref bool RampDown { get; }
   
   public ref int ManagerFanIdx { get; }
-  
 }

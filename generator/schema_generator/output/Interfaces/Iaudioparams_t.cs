@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface Iaudioparams_t : ISchemaClass {
 
+  
   public ISchemaFixedArray<Vector> LocalSound { get; }
   
   public ref int SoundscapeIndex { get; }
@@ -13,5 +14,4 @@ public partial interface Iaudioparams_t : ISchemaClass {
   public ref int SoundscapeEntityListIndex { get; }
   
   public ref uint SoundEventHash { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_WorldTraceConstraint : IParticleFunctionConstraint {
 
+  
   public ref int CP { get; }
   
   public ref Vector CpOffset { get; }
@@ -57,5 +58,4 @@ public partial interface IC_OP_WorldTraceConstraint : IParticleFunctionConstrain
   public IParticleAttributeIndex_t EntityStickDataField { get; }
   
   public IParticleAttributeIndex_t EntityStickNormalField { get; }
-  
 }

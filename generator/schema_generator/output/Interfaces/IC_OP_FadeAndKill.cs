@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_FadeAndKill : IParticleFunctionOperator {
 
+  
   public ref float StartFadeInTime { get; }
   
   public ref float EndFadeInTime { get; }
@@ -17,5 +18,4 @@ public partial interface IC_OP_FadeAndKill : IParticleFunctionOperator {
   public ref float EndAlpha { get; }
   
   public ref bool ForcePreserveParticleOrder { get; }
-  
 }

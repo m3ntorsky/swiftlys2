@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPostProcessingBloomParameters_t : ISchemaClass {
 
+  
   public ref BloomBlendMode_t BlendMode { get; }
   
   public ref float BloomStrength { get; }
@@ -35,5 +36,4 @@ public partial interface IPostProcessingBloomParameters_t : ISchemaClass {
   public ISchemaFixedArray<float> BlurWeight { get; }
   
   public ISchemaFixedArray<Vector> BlurTint { get; }
-  
 }

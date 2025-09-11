@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICastSphereSATParams_t : ISchemaClass {
 
+  
   public ref Vector RayStart { get; }
   
   public ref Vector RayDelta { get; }
@@ -15,5 +16,4 @@ public partial interface ICastSphereSATParams_t : ISchemaClass {
   public ref float Scale { get; }
   
   public IRnHull_t Hull { get; }
-  
 }

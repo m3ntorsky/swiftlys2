@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_GameDecalRenderer : IParticleFunctionRenderer {
 
+  
   public ref CGlobalSymbol DecalGroupName { get; }
   
   public ref EventTypeSelection_t EventType { get; }
@@ -35,5 +36,4 @@ public partial interface IC_OP_GameDecalRenderer : IParticleFunctionRenderer {
   public ref bool NoDecalsOnOwner { get; }
   
   public ref bool VisualizeTraces { get; }
-  
 }

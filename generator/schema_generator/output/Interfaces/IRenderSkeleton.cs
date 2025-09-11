@@ -4,10 +4,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRenderSkeleton : ISchemaClass {
 
+  
+// CUtlVector< RenderSkeletonBone_t >
   public ref CUtlVector Bones { get; }
   
   public ref CUtlVector<int> BoneParents { get; }
   
   public ref int BoneWeightCount { get; }
-  
 }

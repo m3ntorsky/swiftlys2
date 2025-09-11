@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IShatterGlassShard : ISchemaClass {
 
+  
   public ref uint ShardHandle { get; }
   
   public ref CUtlVector<Vector2D> PanelVertices { get; }
@@ -59,5 +60,4 @@ public partial interface IShatterGlassShard : ISchemaClass {
   public ref CHandle<CBaseEntity> EntityHittingMe { get; }
   
   public ref CUtlVector<uint> Neighbors { get; }
-  
 }

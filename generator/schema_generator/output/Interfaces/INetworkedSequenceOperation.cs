@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INetworkedSequenceOperation : ISchemaClass {
 
+  
   public IHSequence Sequence { get; }
   
   public ref float PrevCycle { get; }
@@ -19,5 +20,4 @@ public partial interface INetworkedSequenceOperation : ISchemaClass {
   public ref float PrevCycleFromDiscontinuity { get; }
   
   public ref float PrevCycleForAnimEventDetection { get; }
-  
 }

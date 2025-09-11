@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmChainSolverTask : INmPoseTask {
 
+  
   public ref int EffectorBoneIdx { get; }
   
   public ref CTransform TargetTransform { get; }
@@ -27,5 +28,4 @@ public partial interface INmChainSolverTask : INmPoseTask {
   public ref CTransform DebugRequestedTargetTransformMS { get; }
   
   public ref float DebugTotalChainLength { get; }
-  
 }

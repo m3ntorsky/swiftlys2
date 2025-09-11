@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimLocalHierarchy : ISchemaClass {
 
+  
   public ref CBufferString Bone { get; }
   
   public ref CBufferString NewParent { get; }
@@ -15,5 +16,4 @@ public partial interface IAnimLocalHierarchy : ISchemaClass {
   public ref int TailFrame { get; }
   
   public ref int EndFrame { get; }
-  
 }

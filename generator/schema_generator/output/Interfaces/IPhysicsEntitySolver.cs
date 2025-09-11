@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysicsEntitySolver : ILogicalEntity {
 
+  
   public ref CHandle<CBaseEntity> MovingEntity { get; }
   
   public ref CHandle<CBaseEntity> PhysicsBlocker { get; }
@@ -11,5 +12,4 @@ public partial interface IPhysicsEntitySolver : ILogicalEntity {
   public ref float SeparationDuration { get; }
   
   public IGameTime_t CancelTime { get; }
-  
 }

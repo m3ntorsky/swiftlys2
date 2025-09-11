@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITriggerBrush : IBaseModelEntity {
 
+  
   public IEntityIOOutput OnStartTouch { get; }
   
   public IEntityIOOutput OnEndTouch { get; }
@@ -13,5 +14,4 @@ public partial interface ITriggerBrush : IBaseModelEntity {
   public ref int InputFilter { get; }
   
   public ref int DontMessageParent { get; }
-  
 }

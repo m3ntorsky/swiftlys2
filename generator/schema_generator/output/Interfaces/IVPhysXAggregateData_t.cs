@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVPhysXAggregateData_t : ISchemaClass {
 
+  
   public ref ushort Flags { get; }
   
   public ref ushort RefCounter { get; }
@@ -18,12 +19,16 @@ public partial interface IVPhysXAggregateData_t : ISchemaClass {
   
   public ref CUtlVector<matrix3x4a_t> BindPose { get; }
   
+// CUtlVector< VPhysXBodyPart_t >
   public ref CUtlVector Parts { get; }
   
+// CUtlVector< PhysShapeMarkup_t >
   public ref CUtlVector ShapeMarkups { get; }
   
+// CUtlVector< VPhysXConstraint2_t >
   public ref CUtlVector Constraints2 { get; }
   
+// CUtlVector< VPhysXJoint_t >
   public ref CUtlVector Joints { get; }
   
   public IPhysFeModelDesc_t FeModel { get; }
@@ -32,10 +37,10 @@ public partial interface IVPhysXAggregateData_t : ISchemaClass {
   
   public ref CUtlVector<uint> SurfacePropertyHashes { get; }
   
+// CUtlVector< VPhysXCollisionAttributes_t >
   public ref CUtlVector CollisionAttributes { get; }
   
   public ref CUtlVector<CUtlString> DebugPartNames { get; }
   
   public ref CUtlString EmbeddedKeyvalues { get; }
-  
 }

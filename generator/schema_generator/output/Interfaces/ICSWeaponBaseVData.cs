@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSWeaponBaseVData : IBasePlayerWeaponVData {
 
+  
   public ref CSWeaponType WeaponType { get; }
   
   public ref CSWeaponCategory WeaponCategory { get; }
@@ -165,5 +166,4 @@ public partial interface ICSWeaponBaseVData : IBasePlayerWeaponVData {
   public ref Vector SmokeColor { get; }
   
   public ref CGlobalSymbol AnimClass { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISeqSynthAnimDesc : ISchemaClass {
 
+  
   public ref CBufferString Name { get; }
   
   public ISeqSeqDescFlag Flags { get; }
@@ -14,6 +15,6 @@ public partial interface ISeqSynthAnimDesc : ISchemaClass {
   
   public ref short LocalBoneMask { get; }
   
+// CUtlVector< CAnimActivity >
   public ref CUtlVector ActivityArray { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITriggerSndSosOpvar : IBaseTrigger {
 
+  
   public ref CUtlVector<CHandle<CBaseEntity>> TouchingPlayers { get; }
   
   public ref Vector Position { get; }
@@ -31,5 +32,4 @@ public partial interface ITriggerSndSosOpvar : IBaseTrigger {
   public ref Vector VecNormPos { get; }
   
   public ref float NormCenterSize { get; }
-  
 }

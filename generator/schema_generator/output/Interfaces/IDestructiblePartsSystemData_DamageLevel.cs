@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDestructiblePartsSystemData_DamageLevel : ISchemaClass {
 
+  
   public ref CUtlString Name { get; }
   
   public ref CGlobalSymbol BreakablePieceName { get; }
@@ -21,5 +22,4 @@ public partial interface IDestructiblePartsSystemData_DamageLevel : ISchemaClass
   public ref bool ShouldDestroyOnDeath { get; }
   
   public IRangeFloat DeathDestroyTime { get; }
-  
 }

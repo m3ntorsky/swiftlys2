@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncConveyor : IBaseModelEntity {
 
+  
   public ref CUtlSymbolLarge ConveyorModels { get; }
   
   public ref float TransitionDurationSeconds { get; }
@@ -21,5 +22,4 @@ public partial interface IFuncConveyor : IBaseModelEntity {
   public ref float TransitionStartSpeed { get; }
   
   public ref CUtlVector<CHandle<CBaseEntity>> ConveyorModels { get; }
-  
 }

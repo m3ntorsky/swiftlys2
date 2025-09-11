@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPlayerPawn : ICSPlayerPawnBase {
 
+  
   public ICSPlayer_BulletServices BulletServices { get; }
   
   public ICSPlayer_HostageServices HostageServices { get; }
@@ -236,6 +237,7 @@ public partial interface ICSPlayerPawn : ICSPlayerPawnBase {
   
   public ISchemaFixedArray<Vector> VelocityHistory { get; }
   
+// CUtlVectorEmbeddedNetworkVar< PredictedDamageTag_t >
   public ref CUtlVectorEmbeddedNetworkVar PredictedDamageTags { get; }
   
   public ref int HighestAppliedDamageTagTick { get; }
@@ -251,5 +253,4 @@ public partial interface ICSPlayerPawn : ICSPlayerPawnBase {
   public ref float MolotovDamageTime { get; }
   
   public ref QAngle EyeAngles { get; }
-  
 }

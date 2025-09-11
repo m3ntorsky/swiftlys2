@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvProjectedTexture : IModelPointEntity {
 
+  
   public ref CHandle<CBaseEntity> TargetEntity { get; }
   
   public ref bool State { get; }
@@ -63,5 +64,4 @@ public partial interface IEnvProjectedTexture : IModelPointEntity {
   public ref float Rotation { get; }
   
   public ref bool FlipHorizontal { get; }
-  
 }

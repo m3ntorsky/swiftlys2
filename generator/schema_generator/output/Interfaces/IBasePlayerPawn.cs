@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBasePlayerPawn : IBaseCombatCharacter {
 
+  
   public IPlayer_WeaponServices WeaponServices { get; }
   
   public IPlayer_ItemServices ItemServices { get; }
@@ -22,6 +23,7 @@ public partial interface IBasePlayerPawn : IBaseCombatCharacter {
   
   public IPlayer_MovementServices MovementServices { get; }
   
+// CUtlVectorEmbeddedNetworkVar< ViewAngleServerChange_t >
   public ref CUtlVectorEmbeddedNetworkVar ServerViewAngleChanges { get; }
   
   public ref QAngle V_angle { get; }
@@ -52,6 +54,6 @@ public partial interface IBasePlayerPawn : IBaseCombatCharacter {
   
   public ref CEntityIndex HltvReplayEntity { get; }
   
+// CUtlVector< sndopvarlatchdata_t >
   public ref CUtlVector SndOpvarLatchData { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_StatusEffectCitadel : IParticleFunctionInitializer {
 
+  
   public ref float SFXColorWarpAmount { get; }
   
   public ref float SFXNormalAmount { get; }
@@ -41,5 +42,4 @@ public partial interface IC_INIT_StatusEffectCitadel : IParticleFunctionInitiali
   public ref float SFXSDetailScrollZ { get; }
   
   public ref float SFXSUseModelUVs { get; }
-  
 }

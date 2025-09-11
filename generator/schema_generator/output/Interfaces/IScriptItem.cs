@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IScriptItem : IItem {
 
-  public ref MoveType_t MoveTypeOverride { get; }
   
+  public ref MoveType_t MoveTypeOverride { get; }
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITonemapController2 : IBaseEntity {
 
+  
   public ref float AutoExposureMin { get; }
   
   public ref float AutoExposureMax { get; }
@@ -13,5 +14,4 @@ public partial interface ITonemapController2 : IBaseEntity {
   public ref float ExposureAdaptationSpeedDown { get; }
   
   public ref float TonemapEVSmoothingRange { get; }
-  
 }

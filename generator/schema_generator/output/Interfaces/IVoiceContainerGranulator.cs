@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVoiceContainerGranulator : IVoiceContainerBase {
 
+  
   public ref float GrainLength { get; }
   
   public ref float GrainCrossfadeAmount { get; }
@@ -15,5 +16,4 @@ public partial interface IVoiceContainerGranulator : IVoiceContainerBase {
   public ref bool ShouldWraparound { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> SourceAudio { get; }
-  
 }

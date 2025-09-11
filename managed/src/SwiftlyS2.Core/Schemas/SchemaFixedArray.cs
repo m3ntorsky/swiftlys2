@@ -12,7 +12,7 @@ internal class SchemaFixedArray<T> : SchemaField, ISchemaFixedArray<T> where T :
 
   public int ElementSize { get; set; }
 
-  public SchemaFixedArray(nint handle, ulong hash, bool isField, bool isNetworked, int elementCount, int elementSize, int elementAlignment) : base(handle, hash, isField, isNetworked) {
+  public SchemaFixedArray(nint handle, ulong hash, int elementCount, int elementSize, int elementAlignment) : base(handle, hash) {
   
     ElementAlignment = elementAlignment;
     ElementCount = elementCount;

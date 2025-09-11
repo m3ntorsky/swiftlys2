@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INavLinkAreaEntity : IPointEntity {
 
+  
   public ref float Width { get; }
   
   public ref Vector LocatorOffset { get; }
@@ -29,5 +30,4 @@ public partial interface INavLinkAreaEntity : IPointEntity {
   public ref bool IsTerminus { get; }
   
   public ref int Splits { get; }
-  
 }

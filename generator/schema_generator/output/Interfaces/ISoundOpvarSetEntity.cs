@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISoundOpvarSetEntity : IBaseEntity {
 
+  
   public ref CUtlSymbolLarge StackName { get; }
   
   public ref CUtlSymbolLarge OperatorName { get; }
@@ -19,5 +20,4 @@ public partial interface ISoundOpvarSetEntity : IBaseEntity {
   public ref CUtlSymbolLarge OpvarValueString { get; }
   
   public ref bool SetOnSpawn { get; }
-  
 }

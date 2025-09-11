@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRenderComponent : IEntityComponent {
 
+  
   public INetworkVarChainer __m_pChainEntity { get; }
   
   public ref bool IsRenderingWithViewModels { get; }
@@ -13,5 +14,4 @@ public partial interface IRenderComponent : IEntityComponent {
   public ref bool EnableRendering { get; }
   
   public ref bool InterpolationReadyToDraw { get; }
-  
 }

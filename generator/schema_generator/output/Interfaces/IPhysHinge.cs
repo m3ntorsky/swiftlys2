@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysHinge : IPhysConstraint {
 
+  
   public IConstraintSoundInfo SoundInfo { get; }
   
   public IEntityIOOutput NotifyMinLimitReached { get; }
@@ -39,5 +40,4 @@ public partial interface IPhysHinge : IPhysConstraint {
   public IEntityIOOutput OnStartMoving { get; }
   
   public IEntityIOOutput OnStopMoving { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimDesc_Flag : ISchemaClass {
 
+  
   public ref bool Looping { get; }
   
   public ref bool AllZeros { get; }
@@ -19,5 +20,4 @@ public partial interface IAnimDesc_Flag : ISchemaClass {
   public ref bool ImplicitSeqIgnoreDelta { get; }
   
   public ref bool AnimGraphAdditive { get; }
-  
 }

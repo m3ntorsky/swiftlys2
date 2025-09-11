@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPlayer_CameraServices : IPlayerPawnComponent {
 
+  
   public ref QAngle CsViewPunchAngle { get; }
   
   public IGameTick_t CsViewPunchAngleTick { get; }
@@ -27,5 +28,4 @@ public partial interface IPlayer_CameraServices : IPlayerPawnComponent {
   public ref float OldPlayerViewOffsetZ { get; }
   
   public ref CUtlVector<CHandle<CEnvSoundscapeTriggerable>> TriggerSoundscapeList { get; }
-  
 }

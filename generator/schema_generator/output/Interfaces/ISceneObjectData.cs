@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISceneObjectData : ISchemaClass {
 
+  
   public ref Vector MinBounds { get; }
   
   public ref Vector MaxBounds { get; }
@@ -15,5 +16,4 @@ public partial interface ISceneObjectData : ISchemaClass {
   public ref CUtlLeanVector<CMeshletDescriptor> Meshlets { get; }
   
   public ref Vector4D TintColor { get; }
-  
 }

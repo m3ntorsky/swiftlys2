@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBlendItem_t : ISchemaClass {
 
+  
+// CUtlVector< TagSpan_t >
   public ref CUtlVector Tags { get; }
   
   public IAnimUpdateNodeRef Child { get; }
@@ -15,5 +17,4 @@ public partial interface IBlendItem_t : ISchemaClass {
   public ref float Duration { get; }
   
   public ref bool UseCustomDuration { get; }
-  
 }

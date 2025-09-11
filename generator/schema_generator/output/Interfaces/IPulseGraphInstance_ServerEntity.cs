@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseGraphInstance_ServerEntity : IBasePulseGraphInstance {
 
+  
   public ref CHandle<CBaseEntity> Owner { get; }
   
   public ref bool Activated { get; }
@@ -15,5 +16,4 @@ public partial interface IPulseGraphInstance_ServerEntity : IBasePulseGraphInsta
   public ref CUtlSymbolLarge NameFixupLocal { get; }
   
   public ref CUtlSymbolLarge ProceduralWorldNameForRelays { get; }
-  
 }

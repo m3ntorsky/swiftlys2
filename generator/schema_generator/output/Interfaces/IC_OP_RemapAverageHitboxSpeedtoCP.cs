@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapAverageHitboxSpeedtoCP : IParticleFunctionPreEmission {
 
+  
   public ref int InControlPointNumber { get; }
   
   public ref int OutControlPointNumber { get; }
@@ -25,5 +26,4 @@ public partial interface IC_OP_RemapAverageHitboxSpeedtoCP : IParticleFunctionPr
   public IParticleCollectionVecInput ComparisonVelocity { get; }
   
   public ISchemaFixedString HitboxSetName { get; }
-  
 }

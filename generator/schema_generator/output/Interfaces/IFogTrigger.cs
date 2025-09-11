@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFogTrigger : IBaseTrigger {
 
-  public Ifogparams_t Fog { get; }
   
+  public Ifogparams_t Fog { get; }
 }

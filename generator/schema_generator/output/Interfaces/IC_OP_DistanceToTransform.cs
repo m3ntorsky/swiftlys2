@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_DistanceToTransform : IParticleFunctionOperator {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public IPerParticleFloatInput InputMin { get; }
@@ -33,5 +34,4 @@ public partial interface IC_OP_DistanceToTransform : IParticleFunctionOperator {
   public ref bool Additive { get; }
   
   public IPerParticleVecInput ComponentScale { get; }
-  
 }

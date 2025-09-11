@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IGeneralRandomRotation : IParticleFunctionInitializer {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public ref float Degrees { get; }
@@ -15,5 +16,4 @@ public partial interface IGeneralRandomRotation : IParticleFunctionInitializer {
   public ref float RotationRandExponent { get; }
   
   public ref bool RandomlyFlipDirection { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticlePreviewState_t : ISchemaClass {
 
+  
   public ref CUtlString PreviewModel { get; }
   
   public ref uint ModSpecificData { get; }
@@ -18,6 +19,7 @@ public partial interface IParticlePreviewState_t : ISchemaClass {
   
   public ref CUtlString MaterialGroupName { get; }
   
+// CUtlVector< ParticlePreviewBodyGroup_t >
   public ref CUtlVector BodyGroups { get; }
   
   public ref float PlaybackSpeed { get; }
@@ -35,5 +37,4 @@ public partial interface IParticlePreviewState_t : ISchemaClass {
   public ref bool AnimationNonLooping { get; }
   
   public ref Vector PreviewGravity { get; }
-  
 }

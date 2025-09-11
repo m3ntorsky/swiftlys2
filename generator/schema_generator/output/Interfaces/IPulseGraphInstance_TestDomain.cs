@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseGraphInstance_TestDomain : IBasePulseGraphInstance {
 
+  
   public ref bool IsRunningUnitTests { get; }
   
   public ref bool ExplicitTimeStepping { get; }
@@ -21,5 +22,4 @@ public partial interface IPulseGraphInstance_TestDomain : IBasePulseGraphInstanc
   public ref CUtlVector<CUtlString> Tracepoints { get; }
   
   public ref bool TestYesOrNoPath { get; }
-  
 }

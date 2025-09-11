@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPathParameters : ISchemaClass {
 
+  
   public ref int StartControlPointNumber { get; }
   
   public ref int EndControlPointNumber { get; }
@@ -19,5 +20,4 @@ public partial interface IPathParameters : ISchemaClass {
   public ref Vector MidPointOffset { get; }
   
   public ref Vector EndOffset { get; }
-  
 }

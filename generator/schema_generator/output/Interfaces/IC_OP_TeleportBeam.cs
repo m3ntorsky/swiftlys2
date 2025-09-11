@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_TeleportBeam : IParticleFunctionOperator {
 
+  
   public ref int CPPosition { get; }
   
   public ref int CPVelocity { get; }
@@ -25,5 +26,4 @@ public partial interface IC_OP_TeleportBeam : IParticleFunctionOperator {
   public ref float ArcSpeed { get; }
   
   public ref float Alpha { get; }
-  
 }

@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFootAdjustmentUpdateNode : IUnaryUpdateNode {
 
+  
+// CUtlVector< HSequence >
   public ref CUtlVector Clips { get; }
   
   public IPoseHandle BasePoseCacheHandle { get; }
@@ -21,5 +23,4 @@ public partial interface IFootAdjustmentUpdateNode : IUnaryUpdateNode {
   public ref bool ResetChild { get; }
   
   public ref bool AnimationDriven { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ILogicDistanceAutosave : ILogicalEntity {
 
+  
   public ref CUtlSymbolLarge TargetEntity { get; }
   
   public ref float DistanceToPlayer { get; }
@@ -15,5 +16,4 @@ public partial interface ILogicDistanceAutosave : ILogicalEntity {
   public ref bool ThinkDangerous { get; }
   
   public ref float DangerousTime { get; }
-  
 }

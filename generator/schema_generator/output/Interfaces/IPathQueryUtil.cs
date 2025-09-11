@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPathQueryUtil : ISchemaClass {
 
+  
   public ref CTransform PathToEntityTransform { get; }
   
   public ref CUtlVector<Vector> PathSamplePositions { get; }
@@ -13,5 +14,4 @@ public partial interface IPathQueryUtil : ISchemaClass {
   public ref CUtlVector<float> PathSampleDistances { get; }
   
   public ref bool IsClosedLoop { get; }
-  
 }

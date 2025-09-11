@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetPerChildControlPointFromAttribute : IParticleFunctionOperator {
 
+  
   public ref int ChildGroupID { get; }
   
   public ref int FirstControlPoint { get; }
@@ -19,5 +20,4 @@ public partial interface IC_OP_SetPerChildControlPointFromAttribute : IParticleF
   public IParticleAttributeIndex_t AttributeToRead { get; }
   
   public ref int CPField { get; }
-  
 }

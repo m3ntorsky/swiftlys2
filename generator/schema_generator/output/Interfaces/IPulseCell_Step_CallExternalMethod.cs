@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Step_CallExternalMethod : IPulseCell_BaseYieldingInflow {
 
+  
   public ISchemaUntypedField MethodName { get; }
   
   public ISchemaUntypedField GameBlackboard { get; }
@@ -13,5 +14,4 @@ public partial interface IPulseCell_Step_CallExternalMethod : IPulseCell_BaseYie
   public ref PulseMethodCallMode_t AsyncCallMode { get; }
   
   public IPulse_ResumePoint OnFinished { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ILogicCompare : ILogicalEntity {
 
+  
   public ref float InValue { get; }
   
   public ref float CompareValue { get; }
@@ -15,5 +16,4 @@ public partial interface ILogicCompare : ILogicalEntity {
   public ISchemaUntypedField OnNotEqualTo { get; }
   
   public ISchemaUntypedField OnGreaterThan { get; }
-  
 }

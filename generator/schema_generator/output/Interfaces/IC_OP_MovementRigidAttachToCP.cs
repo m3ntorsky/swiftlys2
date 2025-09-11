@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_MovementRigidAttachToCP : IParticleFunctionOperator {
 
+  
   public ref int ControlPointNumber { get; }
   
   public ref int ScaleControlPoint { get; }
@@ -15,5 +16,4 @@ public partial interface IC_OP_MovementRigidAttachToCP : IParticleFunctionOperat
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public ref bool OffsetLocal { get; }
-  
 }

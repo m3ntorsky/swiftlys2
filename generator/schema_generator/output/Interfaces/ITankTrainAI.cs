@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITankTrainAI : IPointEntity {
 
+  
   public ref CHandle<CFuncTrackTrain> Train { get; }
   
   public ref CHandle<CBaseEntity> TargetEntity { get; }
@@ -17,5 +18,4 @@ public partial interface ITankTrainAI : IPointEntity {
   public ref CUtlSymbolLarge MovementSoundName { get; }
   
   public ref CUtlSymbolLarge TargetEntityName { get; }
-  
 }

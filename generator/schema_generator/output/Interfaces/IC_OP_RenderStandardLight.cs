@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderStandardLight : IParticleFunctionRenderer {
 
+  
   public ref ParticleLightTypeChoiceList_t LightType { get; }
   
   public IParticleCollectionVecInput ColorScale { get; }
@@ -61,5 +62,4 @@ public partial interface IC_OP_RenderStandardLight : IParticleFunctionRenderer {
   public ref float LengthScale { get; }
   
   public ref float LengthFadeInTime { get; }
-  
 }

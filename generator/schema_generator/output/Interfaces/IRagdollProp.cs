@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRagdollProp : IBaseAnimGraph {
 
+  
   public Iragdoll_t Ragdoll { get; }
   
   public ref bool StartDisabled { get; }
@@ -61,5 +62,4 @@ public partial interface IRagdollProp : IBaseAnimGraph {
   public ref bool ShouldDeleteActivationRecord { get; }
   
   public ref bool ValidatePoweredRagdollPose { get; }
-  
 }

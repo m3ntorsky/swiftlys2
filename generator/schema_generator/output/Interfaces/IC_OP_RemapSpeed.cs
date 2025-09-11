@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapSpeed : IParticleFunctionOperator {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public ref float InputMin { get; }
@@ -17,5 +18,4 @@ public partial interface IC_OP_RemapSpeed : IParticleFunctionOperator {
   public ref ParticleSetMethod_t SetMethod { get; }
   
   public ref bool IgnoreDelta { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_CreateAlongPath : IParticleFunctionInitializer {
 
+  
   public ref float MaxDistance { get; }
   
   public IPathParameters PathParams { get; }
@@ -13,5 +14,4 @@ public partial interface IC_INIT_CreateAlongPath : IParticleFunctionInitializer 
   public ref Vector EndOffset { get; }
   
   public ref bool SaveOffset { get; }
-  
 }

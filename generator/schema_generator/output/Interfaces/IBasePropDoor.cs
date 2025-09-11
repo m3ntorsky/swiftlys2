@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBasePropDoor : IDynamicProp {
 
+  
   public ref float AutoReturnDelay { get; }
   
   public ref CUtlVector<CHandle<CBasePropDoor>> DoorList { get; }
@@ -79,5 +80,4 @@ public partial interface IBasePropDoor : IDynamicProp {
   public IEntityIOOutput OnLockedUse { get; }
   
   public IEntityIOOutput OnAjarOpen { get; }
-  
 }

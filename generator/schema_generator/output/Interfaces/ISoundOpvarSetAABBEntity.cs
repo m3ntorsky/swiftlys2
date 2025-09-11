@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISoundOpvarSetAABBEntity : ISoundOpvarSetPointEntity {
 
+  
   public ref Vector DistanceInnerMins { get; }
   
   public ref Vector DistanceInnerMaxs { get; }
@@ -21,5 +22,4 @@ public partial interface ISoundOpvarSetAABBEntity : ISoundOpvarSetPointEntity {
   public ref Vector OuterMins { get; }
   
   public ref Vector OuterMaxs { get; }
-  
 }

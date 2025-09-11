@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmVectorNegateNode__CDefinition : INmVectorValueNode::CDefinition {
 
-  public ref short InputValueNodeIdx { get; }
   
+  public ref short InputValueNodeIdx { get; }
 }

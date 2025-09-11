@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmParticleEvent : INmEvent {
 
+  
   public ref CNmEventRelevance_t Relevance { get; }
   
   public ref CNmParticleEvent::Type_t Type { get; }
@@ -29,5 +30,4 @@ public partial interface INmParticleEvent : INmEvent {
   public ref bool DetachFromOwner { get; }
   
   public ref bool PlayEndCap { get; }
-  
 }

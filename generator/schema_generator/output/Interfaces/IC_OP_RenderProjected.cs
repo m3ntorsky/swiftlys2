@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderProjected : IParticleFunctionRenderer {
 
+  
   public ref bool ProjectCharacter { get; }
   
   public ref bool ProjectWorld { get; }
@@ -18,6 +19,7 @@ public partial interface IC_OP_RenderProjected : IParticleFunctionRenderer {
   
   public ref float MaxProjectionDepth { get; }
   
+// CUtlVector< RenderProjectedMaterial_t >
   public ref CUtlVector ProjectedMaterials { get; }
   
   public IPerParticleFloatInput MaterialSelection { get; }
@@ -26,6 +28,7 @@ public partial interface IC_OP_RenderProjected : IParticleFunctionRenderer {
   
   public ref bool OrientToNormal { get; }
   
+// CUtlVector< MaterialVariable_t >
   public ref CUtlVector MaterialVars { get; }
   
   public IParticleCollectionFloatInput RadiusScale { get; }
@@ -39,5 +42,4 @@ public partial interface IC_OP_RenderProjected : IParticleFunctionRenderer {
   public IParticleCollectionVecInput ColorScale { get; }
   
   public ref ParticleColorBlendType_t ColorBlendType { get; }
-  
 }

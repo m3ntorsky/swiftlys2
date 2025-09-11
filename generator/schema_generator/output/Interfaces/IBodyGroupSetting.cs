@@ -4,8 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBodyGroupSetting : ISchemaClass {
 
+  
   public ref CUtlString BodyGroupName { get; }
   
   public ref int BodyGroupOption { get; }
-  
 }

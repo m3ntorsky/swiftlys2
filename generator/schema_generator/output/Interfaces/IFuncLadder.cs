@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncLadder : IBaseModelEntity {
 
+  
   public ref Vector LadderDir { get; }
   
   public ref CUtlVector<CHandle<CInfoLadderDismount>> Dismounts { get; }
@@ -27,5 +28,4 @@ public partial interface IFuncLadder : IBaseModelEntity {
   public IEntityIOOutput OnPlayerGotOnLadder { get; }
   
   public IEntityIOOutput OnPlayerGotOffLadder { get; }
-  
 }

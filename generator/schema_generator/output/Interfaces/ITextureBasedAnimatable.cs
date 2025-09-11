@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITextureBasedAnimatable : IBaseModelEntity {
 
+  
   public ref bool Loop { get; }
   
   public ref float FPS { get; }
@@ -19,5 +20,4 @@ public partial interface ITextureBasedAnimatable : IBaseModelEntity {
   public ref float StartTime { get; }
   
   public ref float StartFrame { get; }
-  
 }

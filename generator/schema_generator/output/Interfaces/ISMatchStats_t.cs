@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISMatchStats_t : ISPerRoundStats_t {
 
+  
   public ref int Enemy5Ks { get; }
   
   public ref int Enemy4Ks { get; }
@@ -45,5 +46,4 @@ public partial interface ISMatchStats_t : ISPerRoundStats_t {
   public ref int EntryCount { get; }
   
   public ref int EntryWins { get; }
-  
 }

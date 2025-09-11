@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPostProcessingVignetteParameters_t : ISchemaClass {
 
+  
   public ref float VignetteStrength { get; }
   
   public ref Vector2D Center { get; }
@@ -15,5 +16,4 @@ public partial interface IPostProcessingVignetteParameters_t : ISchemaClass {
   public ref float Feather { get; }
   
   public ref Vector ColorTint { get; }
-  
 }

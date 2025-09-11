@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleTransformInput : IParticleInput {
 
+  
   public ref ParticleTransformType_t Type { get; }
   
   public ISchemaUntypedField NamedValue { get; }
@@ -19,5 +20,4 @@ public partial interface IParticleTransformInput : IParticleInput {
   public ref int ControlPointRangeMax { get; }
   
   public ref float EndCPGrowthTime { get; }
-  
 }

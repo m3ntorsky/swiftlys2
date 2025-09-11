@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEventSetTime_t : ISchemaClass {
 
+  
   public IEngineLoopState_t LoopState { get; }
   
   public ref int ClientOutputFrames { get; }
@@ -19,5 +20,4 @@ public partial interface IEventSetTime_t : ISchemaClass {
   public ref double RenderFrameTimeUnscaled { get; }
   
   public ref double TickRemainder { get; }
-  
 }

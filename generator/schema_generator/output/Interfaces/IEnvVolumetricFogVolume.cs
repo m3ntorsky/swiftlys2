@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvVolumetricFogVolume : IBaseEntity {
 
+  
   public ref bool Active { get; }
   
   public ref Vector BoxMins { get; }
@@ -39,5 +40,4 @@ public partial interface IEnvVolumetricFogVolume : IBaseEntity {
   public ref bool OverrideSunLightStrength { get; }
   
   public ref bool OverrideNoiseStrength { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapSpeedtoCP : IParticleFunctionPreEmission {
 
+  
   public ref int InControlPointNumber { get; }
   
   public ref int OutControlPointNumber { get; }
@@ -19,5 +20,4 @@ public partial interface IC_OP_RemapSpeedtoCP : IParticleFunctionPreEmission {
   public ref float OutputMax { get; }
   
   public ref bool UseDeltaV { get; }
-  
 }

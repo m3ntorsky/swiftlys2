@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmBitFlags : ISchemaClass {
 
-  public ref uint Flags { get; }
   
+  public ref uint Flags { get; }
 }

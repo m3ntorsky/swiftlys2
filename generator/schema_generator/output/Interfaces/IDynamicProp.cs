@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDynamicProp : IBreakableProp {
 
+  
   public ref bool CreateNavObstacle { get; }
   
   public ref bool NavObstacleUpdatesOverridden { get; }
@@ -47,5 +48,4 @@ public partial interface IDynamicProp : IBreakableProp {
   public ref Color GlowColor { get; }
   
   public ref int GlowTeam { get; }
-  
 }

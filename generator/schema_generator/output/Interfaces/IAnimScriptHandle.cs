@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimScriptHandle : ISchemaClass {
 
-  public ref uint Id { get; }
   
+  public ref uint Id { get; }
 }

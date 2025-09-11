@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleVecInput : IParticleInput {
 
+  
   public ref ParticleVecType_t Type { get; }
   
   public ref Vector LiteralValue { get; }
@@ -49,5 +50,4 @@ public partial interface IParticleVecInput : IParticleInput {
   public ref Vector RandomMin { get; }
   
   public ref Vector RandomMax { get; }
-  
 }

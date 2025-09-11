@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISoundOpvarSetPointBase : IBaseEntity {
 
+  
   public ref bool Disabled { get; }
   
   public ref CEntityHandle Source { get; }
@@ -21,5 +22,4 @@ public partial interface ISoundOpvarSetPointBase : IBaseEntity {
   public ref int OpvarIndex { get; }
   
   public ref bool UseAutoCompare { get; }
-  
 }

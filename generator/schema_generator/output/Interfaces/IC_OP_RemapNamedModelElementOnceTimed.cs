@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapNamedModelElementOnceTimed : IParticleFunctionOperator {
 
+  
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }
   
   public ref CUtlVector<CUtlString> InNames { get; }
@@ -21,5 +22,4 @@ public partial interface IC_OP_RemapNamedModelElementOnceTimed : IParticleFuncti
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public ref float RemapTime { get; }
-  
 }

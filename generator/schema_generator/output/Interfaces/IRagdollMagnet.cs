@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRagdollMagnet : IPointEntity {
 
+  
   public ref bool Disabled { get; }
   
   public ref float Radius { get; }
@@ -11,5 +12,4 @@ public partial interface IRagdollMagnet : IPointEntity {
   public ref float Force { get; }
   
   public ref Vector Axis { get; }
-  
 }

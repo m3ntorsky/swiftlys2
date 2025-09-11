@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITriggerPhysics : IBaseTrigger {
 
+  
   public ref float GravityScale { get; }
   
   public ref float LinearLimit { get; }
@@ -29,5 +30,4 @@ public partial interface ITriggerPhysics : IBaseTrigger {
   public ref Vector LinearForceDirection { get; }
   
   public ref bool ConvertToDebrisWhenPossible { get; }
-  
 }

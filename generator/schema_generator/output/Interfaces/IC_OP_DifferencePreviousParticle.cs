@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_DifferencePreviousParticle : IParticleFunctionOperator {
 
+  
   public IParticleAttributeIndex_t FieldInput { get; }
   
   public IParticleAttributeIndex_t FieldOutput { get; }
@@ -21,5 +22,4 @@ public partial interface IC_OP_DifferencePreviousParticle : IParticleFunctionOpe
   public ref bool ActiveRange { get; }
   
   public ref bool SetPreviousParticle { get; }
-  
 }

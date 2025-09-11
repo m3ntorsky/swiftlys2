@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITimeline : IIntervalTimer {
 
+  
   public ISchemaFixedArray<float> Values { get; }
   
   public ISchemaFixedArray<int> ValueCounts { get; }
@@ -17,5 +18,4 @@ public partial interface ITimeline : IIntervalTimer {
   public ref TimelineCompression_t CompressionType { get; }
   
   public ref bool Stopped { get; }
-  
 }

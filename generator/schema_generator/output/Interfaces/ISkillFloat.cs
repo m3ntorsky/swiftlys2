@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISkillFloat : ISchemaClass {
 
-  public ISchemaFixedArray<float> Value { get; }
   
+  public ISchemaFixedArray<float> Value { get; }
 }

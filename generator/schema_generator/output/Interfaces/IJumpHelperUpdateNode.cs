@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IJumpHelperUpdateNode : ISequenceUpdateNode {
 
+  
   public IAnimParamHandle TargetParam { get; }
   
   public ref Vector OriginalJumpMovement { get; }
@@ -19,5 +20,4 @@ public partial interface IJumpHelperUpdateNode : ISequenceUpdateNode {
   public ISchemaFixedArray<bool> TranslationAxis { get; }
   
   public ref bool ScaleSpeed { get; }
-  
 }

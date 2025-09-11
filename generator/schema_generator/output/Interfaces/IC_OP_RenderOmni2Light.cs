@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderOmni2Light : IParticleFunctionRenderer {
 
+  
   public ref ParticleOmni2LightTypeChoiceList_t LightType { get; }
   
   public IParticleCollectionVecInput ColorBlend { get; }
@@ -35,5 +36,4 @@ public partial interface IC_OP_RenderOmni2Light : IParticleFunctionRenderer {
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> LightCookie { get; }
   
   public ref bool SphericalCookie { get; }
-  
 }

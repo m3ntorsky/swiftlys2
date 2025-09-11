@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IResponseFollowup : ISchemaClass {
 
+  
   public ref CString Followup_concept { get; }
   
   public ref CString Followup_contexts { get; }
@@ -19,5 +20,4 @@ public partial interface IResponseFollowup : ISchemaClass {
   public ref float Followup_entityiodelay { get; }
   
   public ref bool Fired { get; }
-  
 }

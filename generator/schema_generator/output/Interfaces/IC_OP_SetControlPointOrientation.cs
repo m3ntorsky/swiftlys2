@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetControlPointOrientation : IParticleFunctionPreEmission {
 
+  
   public ref bool UseWorldLocation { get; }
   
   public ref bool Randomize { get; }
@@ -19,5 +20,4 @@ public partial interface IC_OP_SetControlPointOrientation : IParticleFunctionPre
   public ref QAngle RotationB { get; }
   
   public IParticleCollectionFloatInput Interpolation { get; }
-  
 }

@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBodyComponentPoint : IBodyComponent {
 
-  public IGameSceneNode SceneNode { get; }
   
+  public IGameSceneNode SceneNode { get; }
 }

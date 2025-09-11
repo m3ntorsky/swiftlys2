@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMomentaryRotButton : IRotButton {
 
+  
   public ISchemaUntypedField Position { get; }
   
   public IEntityIOOutput OnUnpressed { get; }
@@ -31,5 +32,4 @@ public partial interface IMomentaryRotButton : IRotButton {
   public ref float ReturnSpeed { get; }
   
   public ref float StartPosition { get; }
-  
 }

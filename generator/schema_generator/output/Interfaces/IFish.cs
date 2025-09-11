@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFish : IBaseAnimGraph {
 
+  
   public ref CHandle<CFishPool> Pool { get; }
   
   public ref uint Id { get; }
@@ -51,5 +52,4 @@ public partial interface IFish : IBaseAnimGraph {
   public ICountdownTimer ProximityTimer { get; }
   
   public ref CUtlVector<PointerTo<CFish>> Visible { get; }
-  
 }

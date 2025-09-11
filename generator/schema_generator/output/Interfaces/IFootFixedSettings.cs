@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFootFixedSettings : ISchemaClass {
 
+  
   public ITraceSettings_t TraceSettings { get; }
   
   public ref VectorAligned FootBaseBindPosePositionMS { get; }
@@ -23,5 +24,4 @@ public partial interface IFootFixedSettings : ISchemaClass {
   public ref int DisableTagIndex { get; }
   
   public ref int FootIndex { get; }
-  
 }

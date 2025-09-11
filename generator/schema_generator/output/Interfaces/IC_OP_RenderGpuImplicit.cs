@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RenderGpuImplicit : IParticleFunctionRenderer {
 
+  
   public ref bool UsePerParticleRadius { get; }
   
   public ref uint VertexCountKb { get; }
@@ -19,5 +20,4 @@ public partial interface IC_OP_RenderGpuImplicit : IParticleFunctionRenderer {
   public ref int ScaleCP { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
-  
 }

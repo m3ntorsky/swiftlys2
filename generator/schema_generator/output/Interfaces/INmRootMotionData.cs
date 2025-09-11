@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmRootMotionData : ISchemaClass {
 
+  
   public ref CUtlVector<CTransform> Transforms { get; }
   
   public ref int NumFrames { get; }
@@ -13,5 +14,4 @@ public partial interface INmRootMotionData : ISchemaClass {
   public ref float AverageAngularVelocityRadians { get; }
   
   public ref CTransform TotalDelta { get; }
-  
 }

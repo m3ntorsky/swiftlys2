@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_ForceControlPointStub : IParticleFunctionPreEmission {
 
-  public ref int ControlPoint { get; }
   
+  public ref int ControlPoint { get; }
 }

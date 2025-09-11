@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IChoiceUpdateNode : IAnimUpdateNodeBase {
 
+  
+// CUtlVector< CAnimUpdateNodeRef >
   public ref CUtlVector Children { get; }
   
   public ref CUtlVector<float> Weights { get; }
@@ -23,5 +25,4 @@ public partial interface IChoiceUpdateNode : IAnimUpdateNodeBase {
   public ref bool ResetChosen { get; }
   
   public ref bool DontResetSameSelection { get; }
-  
 }

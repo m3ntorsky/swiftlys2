@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISolveIKChainPoseOpFixedSettings_t : ISchemaClass {
 
-  public ref CUtlVector ChainsToSolveData { get; }
   
+// CUtlVector< ChainToSolveData_t >
+  public ref CUtlVector ChainsToSolveData { get; }
 }

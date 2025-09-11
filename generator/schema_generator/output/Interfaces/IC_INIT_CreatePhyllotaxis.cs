@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_CreatePhyllotaxis : IParticleFunctionInitializer {
 
+  
   public ref int ControlPointNumber { get; }
   
   public ref int ScaleCP { get; }
@@ -31,5 +32,4 @@ public partial interface IC_INIT_CreatePhyllotaxis : IParticleFunctionInitialize
   public ref bool UseWithContEmit { get; }
   
   public ref bool UseOrigRadius { get; }
-  
 }

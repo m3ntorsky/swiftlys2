@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapCPtoScalar : IParticleFunctionOperator {
 
+  
   public ref int CPInput { get; }
   
   public IParticleAttributeIndex_t FieldOutput { get; }
@@ -25,5 +26,4 @@ public partial interface IC_OP_RemapCPtoScalar : IParticleFunctionOperator {
   public ref float InterpRate { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
-  
 }

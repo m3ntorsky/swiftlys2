@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_RandomSequence : IParticleFunctionInitializer {
 
+  
   public ref int SequenceMin { get; }
   
   public ref int SequenceMax { get; }
@@ -12,6 +13,6 @@ public partial interface IC_INIT_RandomSequence : IParticleFunctionInitializer {
   
   public ref bool Linear { get; }
   
+// CUtlVector< SequenceWeightedList_t >
   public ref CUtlVector WeightedList { get; }
-  
 }

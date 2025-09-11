@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncMover : IBaseModelEntity {
 
+  
   public ref CUtlSymbolLarge PathName { get; }
   
   public ref CHandle<CPathMover> PathMover { get; }
@@ -137,5 +138,4 @@ public partial interface IFuncMover : IBaseModelEntity {
   public ref bool StartedMoving { get; }
   
   public ref CFuncMover::FollowEntityDirection_t FollowEntityDirection { get; }
-  
 }

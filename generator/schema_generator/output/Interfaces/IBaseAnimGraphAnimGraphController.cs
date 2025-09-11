@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseAnimGraphAnimGraphController : IAnimGraphControllerBase {
 
+  
   public ISchemaUntypedField DestructiblePartDestroyedHitGroup { get; }
   
   public ISchemaUntypedField DestructiblePartDestroyedPartIndex { get; }
@@ -33,5 +34,4 @@ public partial interface IBaseAnimGraphAnimGraphController : IAnimGraphControlle
   public ISchemaUntypedField HITGROUP_GEAR_Destroyed { get; }
   
   public ISchemaUntypedField HITGROUP_SPECIAL_Destroyed { get; }
-  
 }

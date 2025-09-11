@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvCombinedLightProbeVolume : IBaseEntity {
 
+  
   public ref Color Entity_Color { get; }
   
   public ref float Entity_flBrightness { get; }
@@ -61,5 +62,4 @@ public partial interface IEnvCombinedLightProbeVolume : IBaseEntity {
   public ref int Entity_nLightProbeAtlasZ { get; }
   
   public ref bool Entity_bEnabled { get; }
-  
 }

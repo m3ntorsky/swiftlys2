@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVMixDynamicsDesc_t : ISchemaClass {
 
+  
   public ref float FldbGain { get; }
   
   public ref float FldbNoiseGateThreshold { get; }
@@ -27,5 +28,4 @@ public partial interface IVMixDynamicsDesc_t : ISchemaClass {
   public ref float WetMix { get; }
   
   public ref bool PeakMode { get; }
-  
 }

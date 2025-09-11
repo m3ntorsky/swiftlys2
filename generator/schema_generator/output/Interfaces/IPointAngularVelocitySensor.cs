@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointAngularVelocitySensor : IPointEntity {
 
+  
   public ref CHandle<CBaseEntity> TargetEntity { get; }
   
   public ref float Threshold { get; }
@@ -35,5 +36,4 @@ public partial interface IPointAngularVelocitySensor : IPointEntity {
   public IEntityIOOutput OnGreaterThanOrEqualTo { get; }
   
   public IEntityIOOutput OnEqualTo { get; }
-  
 }

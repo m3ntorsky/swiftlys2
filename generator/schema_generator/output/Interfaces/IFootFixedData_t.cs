@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFootFixedData_t : ISchemaClass {
 
+  
   public ref VectorAligned ToeOffset { get; }
   
   public ref VectorAligned HeelOffset { get; }
@@ -25,5 +26,4 @@ public partial interface IFootFixedData_t : ISchemaClass {
   public ref float MaxRotationLeft { get; }
   
   public ref float MaxRotationRight { get; }
-  
 }

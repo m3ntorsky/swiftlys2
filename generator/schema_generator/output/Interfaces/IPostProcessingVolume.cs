@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPostProcessingVolume : IBaseTrigger {
 
+  
   public ref CStrongHandle<InfoForResourceTypeCPostProcessingResource> PostSettings { get; }
   
   public ref float FadeDuration { get; }
@@ -27,5 +28,4 @@ public partial interface IPostProcessingVolume : IBaseTrigger {
   public ref bool Master { get; }
   
   public ref bool ExposureControl { get; }
-  
 }

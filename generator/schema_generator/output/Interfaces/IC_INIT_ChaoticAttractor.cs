@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_ChaoticAttractor : IParticleFunctionInitializer {
 
+  
   public ref float AParm { get; }
   
   public ref float BParm { get; }
@@ -21,5 +22,4 @@ public partial interface IC_INIT_ChaoticAttractor : IParticleFunctionInitializer
   public ref int BaseCP { get; }
   
   public ref bool UniformSpeed { get; }
-  
 }

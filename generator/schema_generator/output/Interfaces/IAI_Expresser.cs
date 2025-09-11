@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAI_Expresser : ISchemaClass {
 
+  
   public IGameTime_t StopTalkTime { get; }
   
   public IGameTime_t StopTalkTimeWithoutDelay { get; }
@@ -25,5 +26,4 @@ public partial interface IAI_Expresser : ISchemaClass {
   public ref int LastSpokenPriority { get; }
   
   public IBaseFlex Outer { get; }
-  
 }

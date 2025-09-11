@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPostProcessingLocalContrastParameters_t : ISchemaClass {
 
+  
   public ref float LocalContrastStrength { get; }
   
   public ref float LocalContrastEdgeStrength { get; }
@@ -13,5 +14,4 @@ public partial interface IPostProcessingLocalContrastParameters_t : ISchemaClass
   public ref float LocalContrastVignetteEnd { get; }
   
   public ref float LocalContrastVignetteBlur { get; }
-  
 }

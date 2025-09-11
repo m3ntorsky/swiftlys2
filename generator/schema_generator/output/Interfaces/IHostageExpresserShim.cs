@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IHostageExpresserShim : IBaseCombatCharacter {
 
-  public IAI_Expresser Expresser { get; }
   
+  public IAI_Expresser Expresser { get; }
 }

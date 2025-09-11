@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IModelSkeletonData_t : ISchemaClass {
 
+  
   public ref CUtlVector<CUtlString> BoneName { get; }
   
   public ref CUtlVector<short> Parent { get; }
@@ -17,5 +18,4 @@ public partial interface IModelSkeletonData_t : ISchemaClass {
   public ref CUtlVector<QuaternionStorage> BoneRotParent { get; }
   
   public ref CUtlVector<float> BoneScaleParent { get; }
-  
 }

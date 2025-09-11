@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IExampleSchemaVData_PolymorphicDerivedB : IExampleSchemaVData_PolymorphicBase {
 
-  public ref int DerivedB { get; }
   
+  public ref int DerivedB { get; }
 }

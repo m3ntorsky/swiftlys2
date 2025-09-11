@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMarkupVolumeTagged : IMarkupVolume {
 
+  
   public ref CUtlVector<CGlobalSymbol> GroupNames { get; }
   
   public ref CUtlVector<CGlobalSymbol> Tags { get; }
@@ -17,5 +18,4 @@ public partial interface IMarkupVolumeTagged : IMarkupVolume {
   public ref bool GroupOtherGroups { get; }
   
   public ref bool IsInGroup { get; }
-  
 }

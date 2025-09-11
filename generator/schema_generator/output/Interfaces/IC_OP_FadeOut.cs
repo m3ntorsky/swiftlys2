@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_FadeOut : IParticleFunctionOperator {
 
+  
   public ref float FadeOutTimeMin { get; }
   
   public ref float FadeOutTimeMax { get; }
@@ -15,5 +16,4 @@ public partial interface IC_OP_FadeOut : IParticleFunctionOperator {
   public ref bool Proportional { get; }
   
   public ref bool EaseInAndOut { get; }
-  
 }

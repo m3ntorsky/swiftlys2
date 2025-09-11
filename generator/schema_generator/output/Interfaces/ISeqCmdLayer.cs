@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISeqCmdLayer : ISchemaClass {
 
+  
   public ref short Cmd { get; }
   
   public ref short LocalReference { get; }
@@ -21,5 +22,4 @@ public partial interface ISeqCmdLayer : ISchemaClass {
   public ref float Var2 { get; }
   
   public ref short LineNumber { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVMixVocoderDesc_t : ISchemaClass {
 
+  
   public ref int BandCount { get; }
   
   public ref float Bandwidth { get; }
@@ -23,5 +24,4 @@ public partial interface IVMixVocoderDesc_t : ISchemaClass {
   public ref int DebugBand { get; }
   
   public ref bool PeakMode { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_RemapSpeedToScalar : IParticleFunctionInitializer {
 
+  
   public IParticleAttributeIndex_t FieldOutput { get; }
   
   public ref int ControlPointNumber { get; }
@@ -23,5 +24,4 @@ public partial interface IC_INIT_RemapSpeedToScalar : IParticleFunctionInitializ
   public ref ParticleSetMethod_t SetMethod { get; }
   
   public ref bool PerParticle { get; }
-  
 }

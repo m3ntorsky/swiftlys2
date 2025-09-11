@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVMixDynamicsBand_t : ISchemaClass {
 
+  
   public ref float FldbGainInput { get; }
   
   public ref float FldbGainOutput { get; }
@@ -23,5 +24,4 @@ public partial interface IVMixDynamicsBand_t : ISchemaClass {
   public ref bool Enable { get; }
   
   public ref bool Solo { get; }
-  
 }

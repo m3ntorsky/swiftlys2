@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEconItemView : IIEconItemInterface {
 
+  
   public ref ushort ItemDefinitionIndex { get; }
   
   public ref int EntityQuality { get; }
@@ -29,5 +30,4 @@ public partial interface IEconItemView : IIEconItemInterface {
   public ISchemaFixedString CustomName { get; }
   
   public ISchemaFixedString CustomNameOverride { get; }
-  
 }

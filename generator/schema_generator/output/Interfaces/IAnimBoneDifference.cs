@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimBoneDifference : ISchemaClass {
 
+  
   public ref CBufferString Name { get; }
   
   public ref CBufferString Parent { get; }
@@ -13,5 +14,4 @@ public partial interface IAnimBoneDifference : ISchemaClass {
   public ref bool HasRotation { get; }
   
   public ref bool HasMovement { get; }
-  
 }

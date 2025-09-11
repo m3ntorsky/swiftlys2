@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_OscillateVector : IParticleFunctionOperator {
 
+  
   public ref Vector RateMin { get; }
   
   public ref Vector RateMax { get; }
@@ -33,5 +34,4 @@ public partial interface IC_OP_OscillateVector : IParticleFunctionOperator {
   public IPerParticleFloatInput OscAdd { get; }
   
   public IPerParticleFloatInput RateScale { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmClipNode__CDefinition : INmClipReferenceNode::CDefinition {
 
+  
   public ref short PlayInReverseValueNodeIdx { get; }
   
   public ref short ResetTimeValueNodeIdx { get; }
@@ -17,5 +18,4 @@ public partial interface INmClipNode__CDefinition : INmClipReferenceNode::CDefin
   public ref bool AllowLooping { get; }
   
   public ref short DataSlotIdx { get; }
-  
 }

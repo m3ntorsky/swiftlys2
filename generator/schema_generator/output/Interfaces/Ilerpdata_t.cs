@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface Ilerpdata_t : ISchemaClass {
 
+  
   public ref CHandle<CBaseEntity> Ent { get; }
   
   public ref MoveType_t MoveType { get; }
@@ -15,5 +16,4 @@ public partial interface Ilerpdata_t : ISchemaClass {
   public ref Quaternion StartRot { get; }
   
   public IParticleIndex_t FXIndex { get; }
-  
 }

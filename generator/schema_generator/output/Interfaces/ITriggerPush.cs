@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITriggerPush : IBaseTrigger {
 
+  
   public ref QAngle PushEntitySpace { get; }
   
   public ref Vector PushDirEntitySpace { get; }
@@ -17,5 +18,4 @@ public partial interface ITriggerPush : IBaseTrigger {
   public IPathSimple PathSimple { get; }
   
   public ref uint SplinePushType { get; }
-  
 }

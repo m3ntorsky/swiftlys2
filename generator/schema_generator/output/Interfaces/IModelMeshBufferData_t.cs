@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IModelMeshBufferData_t : ISchemaClass {
 
+  
   public ref int BlockIndex { get; }
   
   public ref uint ElementCount { get; }
@@ -24,6 +25,6 @@ public partial interface IModelMeshBufferData_t : ISchemaClass {
   
   public ref bool CreatePooledBuffer { get; }
   
+// CUtlVector< RenderInputLayoutField_t >
   public ref CUtlVector InputLayoutFields { get; }
-  
 }

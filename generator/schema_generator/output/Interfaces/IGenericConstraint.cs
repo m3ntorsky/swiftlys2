@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IGenericConstraint : IPhysConstraint {
 
+  
   public ref JointMotion_t LinearMotionX { get; }
   
   public ref JointMotion_t LinearMotionY { get; }
@@ -99,5 +100,4 @@ public partial interface IGenericConstraint : IPhysConstraint {
   public IEntityIOOutput NotifyForceReachedY { get; }
   
   public IEntityIOOutput NotifyForceReachedZ { get; }
-  
 }

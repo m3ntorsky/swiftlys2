@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmFixedWeightBoneMaskNode__CDefinition : INmBoneMaskValueNode::CDefinition {
 
-  public ref float BoneWeight { get; }
   
+  public ref float BoneWeight { get; }
 }

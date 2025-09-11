@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmRootMotionEvent : INmEvent {
 
-  public ref float BlendTimeSeconds { get; }
   
+  public ref float BlendTimeSeconds { get; }
 }

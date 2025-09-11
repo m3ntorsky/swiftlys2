@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IItem : IBaseAnimGraph {
 
+  
   public IEntityIOOutput OnPlayerTouch { get; }
   
   public IEntityIOOutput OnPlayerPickup { get; }
@@ -19,5 +20,4 @@ public partial interface IItem : IBaseAnimGraph {
   public ref QAngle OriginalSpawnAngles { get; }
   
   public ref bool PhysStartAsleep { get; }
-  
 }

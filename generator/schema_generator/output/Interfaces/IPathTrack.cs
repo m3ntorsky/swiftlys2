@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPathTrack : IPointEntity {
 
+  
   public IPathTrack Pnext { get; }
   
   public IPathTrack Pprevious { get; }
@@ -21,5 +22,4 @@ public partial interface IPathTrack : IPointEntity {
   public ref TrackOrientationType_t OrientationType { get; }
   
   public IEntityIOOutput OnPass { get; }
-  
 }

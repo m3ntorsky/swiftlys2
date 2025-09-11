@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISkeletonInstance : IGameSceneNode {
 
+  
   public IModelState ModelState { get; }
   
   public ref bool IsAnimationEnabled { get; }
@@ -19,5 +20,4 @@ public partial interface ISkeletonInstance : IGameSceneNode {
   public ref CUtlStringToken MaterialGroup { get; }
   
   public ref byte HitboxSet { get; }
-  
 }

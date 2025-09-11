@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseClientUIEntity : IBaseModelEntity {
 
+  
   public ref bool Enabled { get; }
   
   public ref CUtlSymbolLarge DialogXMLName { get; }
@@ -31,5 +32,4 @@ public partial interface IBaseClientUIEntity : IBaseModelEntity {
   public IEntityIOOutput CustomOutput8 { get; }
   
   public IEntityIOOutput CustomOutput9 { get; }
-  
 }

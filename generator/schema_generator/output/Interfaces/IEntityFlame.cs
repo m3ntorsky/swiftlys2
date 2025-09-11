@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEntityFlame : IBaseEntity {
 
+  
   public ref CHandle<CBaseEntity> EntAttached { get; }
   
   public ref bool CheapEffect { get; }
@@ -23,5 +24,4 @@ public partial interface IEntityFlame : IBaseEntity {
   public ref float DirectDamagePerSecond { get; }
   
   public ref int CustomDamageType { get; }
-  
 }

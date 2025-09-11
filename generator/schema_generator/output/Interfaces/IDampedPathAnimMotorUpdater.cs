@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IDampedPathAnimMotorUpdater : IPathAnimMotorUpdaterBase {
 
+  
   public ref float AnticipationTime { get; }
   
   public ref float MinSpeedScale { get; }
@@ -17,5 +18,4 @@ public partial interface IDampedPathAnimMotorUpdater : IPathAnimMotorUpdaterBase
   public ref float MinSpringTension { get; }
   
   public ref float MaxSpringTension { get; }
-  
 }

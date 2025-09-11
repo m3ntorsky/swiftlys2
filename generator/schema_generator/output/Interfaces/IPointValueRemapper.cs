@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPointValueRemapper : IBaseEntity {
 
+  
   public ref bool Disabled { get; }
   
   public ref bool UpdateOnClient { get; }
@@ -91,5 +92,4 @@ public partial interface IPointValueRemapper : IBaseEntity {
   public IEntityIOOutput OnEngage { get; }
   
   public IEntityIOOutput OnDisengage { get; }
-  
 }

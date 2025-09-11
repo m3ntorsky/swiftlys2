@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISoundEventEntity : IBaseEntity {
 
+  
   public ref bool StartOnSpawn { get; }
   
   public ref bool ToLocalPlayer { get; }
@@ -31,5 +32,4 @@ public partial interface ISoundEventEntity : IBaseEntity {
   public ref CEntityHandle Source { get; }
   
   public ref int EntityIndexSelection { get; }
-  
 }

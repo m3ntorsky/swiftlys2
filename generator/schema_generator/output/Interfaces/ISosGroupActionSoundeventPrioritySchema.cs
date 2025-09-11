@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISosGroupActionSoundeventPrioritySchema : ISosGroupActionSchema {
 
+  
   public ref CUtlString PriorityValue { get; }
   
   public ref CUtlString PriorityVolumeScalar { get; }
@@ -11,5 +12,4 @@ public partial interface ISosGroupActionSoundeventPrioritySchema : ISosGroupActi
   public ref CUtlString PriorityContributeButDontRead { get; }
   
   public ref CUtlString PriorityReadButDontContribute { get; }
-  
 }

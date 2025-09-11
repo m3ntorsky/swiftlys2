@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IHitBoxSetList : ISchemaClass {
 
-  public ref CUtlVector HitBoxSets { get; }
   
+// CUtlVector< CHitBoxSet >
+  public ref CUtlVector HitBoxSets { get; }
 }

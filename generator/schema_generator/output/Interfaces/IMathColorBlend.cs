@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMathColorBlend : ILogicalEntity {
 
+  
   public ref float InMin { get; }
   
   public ref float InMax { get; }
@@ -13,5 +14,4 @@ public partial interface IMathColorBlend : ILogicalEntity {
   public ref Color OutColor2 { get; }
   
   public ISchemaUntypedField OutValue { get; }
-  
 }

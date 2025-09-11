@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVMixDynamics3BandDesc_t : ISchemaClass {
 
+  
   public ref float FldbGainOutput { get; }
   
   public ref float RMSTimeMS { get; }
@@ -23,5 +24,4 @@ public partial interface IVMixDynamics3BandDesc_t : ISchemaClass {
   public ref bool PeakMode { get; }
   
   public IVMixDynamicsBand_t BandDesc { get; }
-  
 }

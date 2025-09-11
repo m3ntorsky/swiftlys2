@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISkeletonAnimCapture_t__FrameStamp_t : ISchemaClass {
 
+  
   public ref float Time { get; }
   
   public ref float EntitySimTime { get; }
@@ -19,5 +20,4 @@ public partial interface ISkeletonAnimCapture_t__FrameStamp_t : ISchemaClass {
   public ref int FrameCount { get; }
   
   public ref int TickCount { get; }
-  
 }

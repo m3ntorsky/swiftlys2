@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMathCounter : ILogicalEntity {
 
+  
   public ref float Min { get; }
   
   public ref float Max { get; }
@@ -25,5 +26,4 @@ public partial interface IMathCounter : ILogicalEntity {
   public IEntityIOOutput OnChangedFromMin { get; }
   
   public IEntityIOOutput OnChangedFromMax { get; }
-  
 }

@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISelectorUpdateNode : IAnimUpdateNodeBase {
 
+  
+// CUtlVector< CAnimUpdateNodeRef >
   public ref CUtlVector Children { get; }
   
   public ref CUtlVector<byte> Tags { get; }
@@ -23,5 +25,4 @@ public partial interface ISelectorUpdateNode : IAnimUpdateNodeBase {
   public ref bool LockWhenWaning { get; }
   
   public ref bool SyncCyclesOnChange { get; }
-  
 }

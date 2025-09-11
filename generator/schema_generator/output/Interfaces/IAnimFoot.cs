@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimFoot : ISchemaClass {
 
+  
   public ref CUtlString Name { get; }
   
   public ref Vector BallOffset { get; }
@@ -13,5 +14,4 @@ public partial interface IAnimFoot : ISchemaClass {
   public ref int AnkleBoneIndex { get; }
   
   public ref int ToeBoneIndex { get; }
-  
 }

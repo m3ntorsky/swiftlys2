@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPhysBallSocket : IPhysConstraint {
 
+  
   public ref float JointFriction { get; }
   
   public ref bool EnableSwingLimit { get; }
@@ -15,5 +16,4 @@ public partial interface IPhysBallSocket : IPhysConstraint {
   public ref float MinTwistAngle { get; }
   
   public ref float MaxTwistAngle { get; }
-  
 }

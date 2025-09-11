@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_EnableChildrenFromParentParticleCount : IParticleFunctionPreEmission {
 
+  
   public ref int ChildGroupID { get; }
   
   public ref int FirstChild { get; }
@@ -15,5 +16,4 @@ public partial interface IC_OP_EnableChildrenFromParentParticleCount : IParticle
   public ref bool PlayEndcapOnStop { get; }
   
   public ref bool DestroyImmediately { get; }
-  
 }

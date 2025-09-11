@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseCSGrenadeProjectile : IBaseGrenade {
 
+  
   public ref Vector InitialPosition { get; }
   
   public ref Vector InitialVelocity { get; }
@@ -35,5 +36,4 @@ public partial interface IBaseCSGrenadeProjectile : IBaseGrenade {
   public ref int TicksAtZeroVelocity { get; }
   
   public ref bool HasEverHitEnemy { get; }
-  
 }

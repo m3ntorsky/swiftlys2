@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAnimScriptComponentUpdater : IAnimComponentUpdater {
 
-  public IAnimScriptHandle Script { get; }
   
+  public IAnimScriptHandle Script { get; }
 }

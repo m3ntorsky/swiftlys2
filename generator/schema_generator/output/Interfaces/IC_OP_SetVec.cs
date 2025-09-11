@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetVec : IParticleFunctionOperator {
 
+  
   public IPerParticleVecInput InputValue { get; }
   
   public IParticleAttributeIndex_t OutputField { get; }
@@ -13,5 +14,4 @@ public partial interface IC_OP_SetVec : IParticleFunctionOperator {
   public IPerParticleFloatInput Lerp { get; }
   
   public ref bool NormalizedOutput { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPropDoorRotatingBreakable : IPropDoorRotating {
 
+  
   public ref bool Breakable { get; }
   
   public ref bool IsAbleToCloseAreaPortals { get; }
@@ -11,5 +12,4 @@ public partial interface IPropDoorRotatingBreakable : IPropDoorRotating {
   public ref int CurrentDamageState { get; }
   
   public ref CUtlVector<CUtlSymbolLarge> DamageStates { get; }
-  
 }

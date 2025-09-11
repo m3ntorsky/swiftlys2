@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPlayerController_InventoryServices : IPlayerControllerComponent {
 
+  
   public ref ushort MusicID { get; }
   
   public ref MedalRank_t Rank { get; }
@@ -20,8 +21,9 @@ public partial interface ICSPlayerController_InventoryServices : IPlayerControll
   
   public ISchemaFixedArray<uint> EquippedPlayerSprayIDs { get; }
   
+// CUtlVectorEmbeddedNetworkVar< ServerAuthoritativeWeaponSlot_t >
   public ref CUtlVectorEmbeddedNetworkVar ServerAuthoritativeWeaponSlots { get; }
   
+// CUtlVectorEmbeddedNetworkVar< CSNetworkableLoadout_t >
   public ref CUtlVectorEmbeddedNetworkVar NetworkableLoadout { get; }
-  
 }

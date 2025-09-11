@@ -4,6 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseGraphExecutionHistoryCursorDesc_t : ISchemaClass {
 
+  
+// CUtlVector< PulseCursorID_t >
   public ref CUtlVector AncestorCursorIDs { get; }
   
   public IPulseDocNodeID_t SpawnNodeID { get; }
@@ -13,5 +15,4 @@ public partial interface IPulseGraphExecutionHistoryCursorDesc_t : ISchemaClass 
   public ref float LastReferenced { get; }
   
   public ref int LastValidEntryIdx { get; }
-  
 }

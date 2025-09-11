@@ -4,8 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_RemapDensityGradientToVectorAttribute : IParticleFunctionOperator {
 
+  
   public ref float RadiusScale { get; }
   
   public IParticleAttributeIndex_t FieldOutput { get; }
-  
 }

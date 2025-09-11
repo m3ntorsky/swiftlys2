@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncMoveLinear : IBaseToggle {
 
+  
   public ref MoveLinearAuthoredPos_t AuthoredPosition { get; }
   
   public ref QAngle MoveEntitySpace { get; }
@@ -29,5 +30,4 @@ public partial interface IFuncMoveLinear : IBaseToggle {
   public ref bool AllowMovableNavMeshDockingOnEntireEntity { get; }
   
   public ref bool CreateNavObstacle { get; }
-  
 }

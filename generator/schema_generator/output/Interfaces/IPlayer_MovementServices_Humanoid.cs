@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPlayer_MovementServices_Humanoid : IPlayer_MovementServices {
 
+  
   public ref float StepSoundTime { get; }
   
   public ref float FallVelocity { get; }
@@ -29,5 +30,4 @@ public partial interface IPlayer_MovementServices_Humanoid : IPlayer_MovementSer
   public ref int Stepside { get; }
   
   public ref Vector SmoothedVelocity { get; }
-  
 }

@@ -4,8 +4,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVoiceContainerBase : ISchemaClass {
 
+  
   public IVSound Sound { get; }
   
   public IVoiceContainerAnalysisBase EnvelopeAnalyzer { get; }
-  
 }

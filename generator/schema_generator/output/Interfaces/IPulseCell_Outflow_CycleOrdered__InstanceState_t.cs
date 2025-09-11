@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IPulseCell_Outflow_CycleOrdered__InstanceState_t : ISchemaClass {
 
-  public ref int NextIndex { get; }
   
+  public ref int NextIndex { get; }
 }

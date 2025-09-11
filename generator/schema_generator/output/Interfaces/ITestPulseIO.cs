@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITestPulseIO : ILogicalEntity {
 
+  
   public IEntityIOOutput OnVariantVoid { get; }
   
   public IEntityIOOutput OnVariantBool { get; }
@@ -19,5 +20,4 @@ public partial interface ITestPulseIO : ILogicalEntity {
   public IEntityIOOutput OnVariantVector { get; }
   
   public ref bool AllowEmptyInputs { get; }
-  
 }

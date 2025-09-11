@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IAimCameraUpdateNode : IUnaryUpdateNode {
 
+  
   public IAnimParamHandle ParameterPosition { get; }
   
   public IAnimParamHandle ParameterOrientation { get; }
@@ -23,5 +24,4 @@ public partial interface IAimCameraUpdateNode : IUnaryUpdateNode {
   public IAnimParamHandle ParameterCameraClearanceDistance { get; }
   
   public IAimCameraOpFixedSettings_t OpFixedSettings { get; }
-  
 }

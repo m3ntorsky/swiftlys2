@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmAnimationPoseNode__CDefinition : INmPoseNode::CDefinition {
 
+  
   public ref short PoseTimeValueNodeIdx { get; }
   
   public ref short DataSlotIdx { get; }
@@ -13,5 +14,4 @@ public partial interface INmAnimationPoseNode__CDefinition : INmPoseNode::CDefin
   public ref float UserSpecifiedTime { get; }
   
   public ref bool UseFramesAsInput { get; }
-  
 }

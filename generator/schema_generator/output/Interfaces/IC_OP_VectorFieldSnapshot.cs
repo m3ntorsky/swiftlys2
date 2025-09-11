@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_VectorFieldSnapshot : IParticleFunctionOperator {
 
+  
   public ref int ControlPointNumber { get; }
   
   public IParticleAttributeIndex_t AttributeToWrite { get; }
@@ -21,5 +22,4 @@ public partial interface IC_OP_VectorFieldSnapshot : IParticleFunctionOperator {
   public ref bool LockToSurface { get; }
   
   public ref float GridSpacing { get; }
-  
 }

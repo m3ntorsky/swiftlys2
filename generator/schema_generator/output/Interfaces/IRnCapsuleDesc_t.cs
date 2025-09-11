@@ -4,6 +4,6 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRnCapsuleDesc_t : IRnShapeDesc_t {
 
-  public IRnCapsule_t Capsule { get; }
   
+  public IRnCapsule_t Capsule { get; }
 }

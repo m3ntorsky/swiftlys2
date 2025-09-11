@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICSPlayerResource : IBaseEntity {
 
+  
   public ISchemaFixedArray<bool> HostageAlive { get; }
   
   public ISchemaFixedArray<bool> IsHostageFollowingSomeone { get; }
@@ -23,5 +24,4 @@ public partial interface ICSPlayerResource : IBaseEntity {
   public ref bool EndMatchNextMapAllVoted { get; }
   
   public ref bool FoundGoalPositions { get; }
-  
 }

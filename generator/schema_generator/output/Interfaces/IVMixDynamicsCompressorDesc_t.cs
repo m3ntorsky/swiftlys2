@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVMixDynamicsCompressorDesc_t : ISchemaClass {
 
+  
   public ref float FldbOutputGain { get; }
   
   public ref float FldbCompressionThreshold { get; }
@@ -21,5 +22,4 @@ public partial interface IVMixDynamicsCompressorDesc_t : ISchemaClass {
   public ref float WetMix { get; }
   
   public ref bool PeakMode { get; }
-  
 }

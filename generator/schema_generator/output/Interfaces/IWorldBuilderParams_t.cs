@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IWorldBuilderParams_t : ISchemaClass {
 
+  
   public ref float MinDrawVolumeSize { get; }
   
   public ref bool BuildBakedLighting { get; }
@@ -15,5 +16,4 @@ public partial interface IWorldBuilderParams_t : ISchemaClass {
   public ref ulong CompileTimestamp { get; }
   
   public ref ulong CompileFingerprint { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_INIT_InitSkinnedPositionFromCPSnapshot : IParticleFunctionInitializer {
 
+  
   public ref int SnapshotControlPointNumber { get; }
   
   public ref int ControlPointNumber { get; }
@@ -41,5 +42,4 @@ public partial interface IC_INIT_InitSkinnedPositionFromCPSnapshot : IParticleFu
   public ref bool CopyAlpha { get; }
   
   public ref bool SetRadius { get; }
-  
 }

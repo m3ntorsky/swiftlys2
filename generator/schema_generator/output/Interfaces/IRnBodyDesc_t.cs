@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IRnBodyDesc_t : ISchemaClass {
 
+  
   public ref CUtlString DebugName { get; }
   
   public ref Vector Position { get; }
@@ -77,5 +78,4 @@ public partial interface IRnBodyDesc_t : ISchemaClass {
   public ref bool HasShadowController { get; }
   
   public ref DynamicContinuousContactBehavior_t DynamicContinuousContactBehavior { get; }
-  
 }

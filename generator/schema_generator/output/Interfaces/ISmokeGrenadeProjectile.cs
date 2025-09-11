@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ISmokeGrenadeProjectile : IBaseCSGrenadeProjectile {
 
+  
   public ref int SmokeEffectTickBegin { get; }
   
   public ref bool DidSmokeEffect { get; }
@@ -27,5 +28,4 @@ public partial interface ISmokeGrenadeProjectile : IBaseCSGrenadeProjectile {
   public ref bool ExplodeFromInferno { get; }
   
   public ref bool DidGroundScorch { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseModelEntity : IBaseEntity {
 
+  
   public IRenderComponent CRenderComponent { get; }
   
   public IHitboxComponent CHitboxComponent { get; }
@@ -48,6 +49,7 @@ public partial interface IBaseModelEntity : IBaseEntity {
   
   public ref Color Render { get; }
   
+// CUtlVectorEmbeddedNetworkVar< EntityRenderAttribute_t >
   public ref CUtlVectorEmbeddedNetworkVar RenderAttributes { get; }
   
   public ref bool RenderToCubemaps { get; }
@@ -87,5 +89,4 @@ public partial interface IBaseModelEntity : IBaseEntity {
   public ref CUtlVector<CHandle<CBaseModelEntity>> ConfigEntitiesToPropagateMaterialDecalsTo { get; }
   
   public INetworkViewOffsetVector ViewOffset { get; }
-  
 }

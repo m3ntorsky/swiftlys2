@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IFuncRotator : IBaseModelEntity {
 
+  
   public ref CHandle<CBaseEntity> RotatorTarget { get; }
   
   public ref bool IsRotating { get; }
@@ -66,12 +67,14 @@ public partial interface IFuncRotator : IBaseModelEntity {
   
   public ref bool RecordHistory { get; }
   
+// CUtlVector< RotatorHistoryEntry_t >
   public ref CUtlVector RotatorHistory { get; }
   
   public ref bool ReturningToPreviousOrientation { get; }
   
+// CUtlVector< RotatorQueueEntry_t >
   public ref CUtlVector RotatorQueue { get; }
   
+// CUtlVector< RotatorHistoryEntry_t >
   public ref CUtlVector RotatorQueueHistory { get; }
-  
 }

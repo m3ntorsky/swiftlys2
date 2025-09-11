@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ICovMatrix3 : ISchemaClass {
 
+  
   public ref Vector Diag { get; }
   
   public ref float XY { get; }
@@ -11,5 +12,4 @@ public partial interface ICovMatrix3 : ISchemaClass {
   public ref float XZ { get; }
   
   public ref float YZ { get; }
-  
 }

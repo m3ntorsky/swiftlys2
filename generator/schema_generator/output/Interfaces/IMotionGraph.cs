@@ -4,8 +4,10 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IMotionGraph : ISchemaClass {
 
+  
   public IParamSpanUpdater ParamSpans { get; }
   
+// CUtlVector< TagSpan_t >
   public ref CUtlVector Tags { get; }
   
   public ISchemaUntypedField RootNode { get; }
@@ -17,5 +19,4 @@ public partial interface IMotionGraph : ISchemaClass {
   public ref int ConfigCount { get; }
   
   public ref bool Loop { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IConcreteAnimParameter : IAnimParameterBase {
 
+  
   public ref AnimParamButton_t PreviewButton { get; }
   
   public ref AnimParamNetworkSetting NetworkSetting { get; }
@@ -15,5 +16,4 @@ public partial interface IConcreteAnimParameter : IAnimParameterBase {
   public ref bool GameWritable { get; }
   
   public ref bool GraphWritable { get; }
-  
 }

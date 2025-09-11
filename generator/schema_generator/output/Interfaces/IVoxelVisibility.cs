@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IVoxelVisibility : ISchemaClass {
 
+  
   public ref uint BaseClusterCount { get; }
   
   public ref uint PVSBytesPerCluster { get; }
@@ -29,5 +30,4 @@ public partial interface IVoxelVisibility : ISchemaClass {
   public IVoxelVisBlockOffset_t MasksBlock { get; }
   
   public IVoxelVisBlockOffset_t VisBlocks { get; }
-  
 }

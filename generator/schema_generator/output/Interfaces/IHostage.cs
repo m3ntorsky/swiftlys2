@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IHostage : IHostageExpresserShim {
 
+  
   public IEntityIOOutput OnHostageBeginGrab { get; }
   
   public IEntityIOOutput OnFirstPickedUp { get; }
@@ -81,5 +82,4 @@ public partial interface IHostage : IHostageExpresserShim {
   public ref Vector SpawnGroundPos { get; }
   
   public ref Vector HostageResetPosition { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IStateNodeTransitionData : ISchemaClass {
 
+  
   public IBlendCurve Curve { get; }
   
   public ISchemaUntypedField BlendDuration { get; }
@@ -13,5 +14,4 @@ public partial interface IStateNodeTransitionData : ISchemaClass {
   public ISchemaUntypedField Reset { get; }
   
   public ISchemaUntypedField ResetCycleOption { get; }
-  
 }

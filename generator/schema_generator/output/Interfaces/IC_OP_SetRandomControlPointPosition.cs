@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IC_OP_SetRandomControlPointPosition : IParticleFunctionPreEmission {
 
+  
   public ref bool UseWorldLocation { get; }
   
   public ref bool Orient { get; }
@@ -19,5 +20,4 @@ public partial interface IC_OP_SetRandomControlPointPosition : IParticleFunction
   public ref Vector CPMaxPos { get; }
   
   public IParticleCollectionFloatInput Interpolation { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IBaseTrigger : IBaseToggle {
 
+  
   public IEntityIOOutput OnStartTouch { get; }
   
   public IEntityIOOutput OnStartTouchAll { get; }
@@ -27,5 +28,4 @@ public partial interface IBaseTrigger : IBaseToggle {
   public ref bool Disabled { get; }
   
   public ref bool UseAsyncQueries { get; }
-  
 }

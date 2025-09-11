@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface ITakeDamageResult : ISchemaClass {
 
+  
   public ITakeDamageInfo OriginatingInfo { get; }
   
   public ref int HealthLost { get; }
@@ -15,5 +16,4 @@ public partial interface ITakeDamageResult : ISchemaClass {
   public ref int TotalledHealthLost { get; }
   
   public ref int TotalledDamageDealt { get; }
-  
 }

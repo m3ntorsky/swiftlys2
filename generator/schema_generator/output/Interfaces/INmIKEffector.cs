@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface INmIKEffector : ISchemaClass {
 
+  
   public ref int BodyIndex { get; }
   
   public ref bool Enabled { get; }
@@ -13,5 +14,4 @@ public partial interface INmIKEffector : ISchemaClass {
   public ref Quaternion TargetOrientation { get; }
   
   public ref float Weight { get; }
-  
 }

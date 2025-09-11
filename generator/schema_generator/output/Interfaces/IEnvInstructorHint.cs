@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvInstructorHint : IPointEntity {
 
+  
   public ref CUtlSymbolLarge Name { get; }
   
   public ref CUtlSymbolLarge Replace_Key { get; }
@@ -51,5 +52,4 @@ public partial interface IEnvInstructorHint : IPointEntity {
   public ref bool AutoStart { get; }
   
   public ref bool LocalPlayerOnly { get; }
-  
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IEnvBeam : IBeam {
 
+  
   public ref int Active { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> SpriteTexture { get; }
@@ -41,5 +42,4 @@ public partial interface IEnvBeam : IBeam {
   public ref CUtlSymbolLarge Decal { get; }
   
   public IEntityIOOutput OnTouchedByEntity { get; }
-  
 }

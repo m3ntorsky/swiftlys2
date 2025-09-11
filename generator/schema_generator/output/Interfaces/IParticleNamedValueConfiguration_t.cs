@@ -4,6 +4,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 public partial interface IParticleNamedValueConfiguration_t : ISchemaClass {
 
+  
   public ref CUtlString ConfigName { get; }
   
   public ISchemaUntypedField ConfigValue { get; }
@@ -15,5 +16,4 @@ public partial interface IParticleNamedValueConfiguration_t : ISchemaClass {
   public ref CUtlString StrEntityScope { get; }
   
   public ref CUtlString StrAttachmentName { get; }
-  
 }
