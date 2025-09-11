@@ -83,8 +83,9 @@ void CEventManager::Initialize(std::string game_name)
 
 void CEventManager::Shutdown()
 {
-    if (g_pLoadEventsFromFile)
-        g_pLoadEventsFromFile->Disable();
+    if (g_pLoadEventsFromFile) g_pLoadEventsFromFile->Disable();
+    if (g_pFireEvent) g_pFireEvent->Disable();
+    if (g_pStartupServer) g_pStartupServer->Disable();
 }
 
 void CEventManager::RegisterGameEventsListeners(bool shouldRegister)

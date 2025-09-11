@@ -25,6 +25,7 @@
 #include <api/engine/convars/convars.h>
 #include <api/engine/entities/entitysystem.h>
 #include <api/engine/gameevents/gameevents.h>
+#include <api/engine/precacher/precacher.h>
 
 #include <api/extensions/extension.h>
 #include <api/extensions/manager.h>
@@ -58,5 +59,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define SDKSCHEMA_INTERFACE_VERSION                         "SDKSchemaAPI"
 #define CONVARMANAGER_INTERFACE_VERSION                     "ConVarManagerAPI"
 #define GAMEEVENTMANAGER_INTERFACE_VERSION                  "GameEventManagerAPI"
+#define PRECACHER_INTERFACE_VERSION                         "PrecacherAPI"
 
 #endif

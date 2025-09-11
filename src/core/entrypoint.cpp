@@ -22,6 +22,7 @@
 #include "console/colors.h"
 
 #include <api/memory/hooks/manager.h>
+#include <engine/gamesystem/gamesystem.h>
 
 SwiftlyCore g_SwiftlyCore;
 InterfacesManager g_ifaceService;
@@ -82,6 +83,11 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     auto evmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
     evmanager->Initialize(GetCurrentGame());
 
+    if (!InitGameSystem()) {
+        logger->Error("Game System", "Couldn't initialize the Game System.\n");
+        return false;
+    }
+
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
     extManager->Load();
 
@@ -90,8 +96,19 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
 
 bool SwiftlyCore::Unload()
 {
+    IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
+    extManager->Unload();
+
     auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
-    if (entsystem) entsystem->Shutdown();
+    entsystem->Shutdown();
+
+    auto cvarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    cvarmanager->Shutdown();
+
+    auto evmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    evmanager->Shutdown();
+
+    ShutdownGameSystem();
 
     return true;
 }
