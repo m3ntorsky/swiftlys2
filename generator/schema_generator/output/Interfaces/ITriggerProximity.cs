@@ -7,7 +7,7 @@ public partial interface ITriggerProximity : IBaseTrigger {
   
   public ref CHandle<CBaseEntity> MeasureTarget { get; }
   
-  public ref CUtlSymbolLarge MeasureTarget { get; }
+  public ISchemaUntypedField MeasureTarget { get; }
   
   public ref float Radius { get; }
   

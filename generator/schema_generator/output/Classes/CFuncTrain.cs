@@ -24,8 +24,8 @@ internal partial class CFuncTrain : CBasePlatTrain, IFuncTrain {
   public IGameTime_t NextBlockTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0xAAD8EE8E82BC1902));
   }
-  public ref CUtlSymbolLarge LastTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xAAD8EE8ECF22FD34));
+  public ISchemaUntypedField LastTarget {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xAAD8EE8ECF22FD34));
   }
 
 

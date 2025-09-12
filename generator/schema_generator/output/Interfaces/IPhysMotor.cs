@@ -5,9 +5,9 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IPhysMotor : ILogicalEntity {
 
   
-  public ref CUtlSymbolLarge NameAttach { get; }
+  public ISchemaUntypedField NameAttach { get; }
   
-  public ref CUtlSymbolLarge NameAnchor { get; }
+  public ISchemaUntypedField NameAnchor { get; }
   
   public ref CHandle<CBaseEntity> AttachedObject { get; }
   

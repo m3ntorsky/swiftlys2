@@ -9,11 +9,11 @@ internal partial class CNmSelectorNode__CDefinition : CNmPoseNode::CDefinition, 
   public CNmSelectorNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public ref CUtlLeanVectorFixedGrowable<int16,5> OptionNodeIndices {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<int16,5>>(Schema.GetOffset(0x4E964386DA97B15D));
+  public ISchemaUntypedField OptionNodeIndices {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x4E964386DA97B15D));
   }
-  public ref CUtlLeanVectorFixedGrowable<int16,5> ConditionNodeIndices {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<int16,5>>(Schema.GetOffset(0x4E9643864A144D0F));
+  public ISchemaUntypedField ConditionNodeIndices {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x4E9643864A144D0F));
   }
 
 

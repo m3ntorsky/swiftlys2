@@ -12,8 +12,8 @@ internal partial class CSimpleSimTimer : SchemaClass, ISimpleSimTimer {
   public IGameTime_t Next {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x4169D31C3BE2574E));
   }
-  public ref WorldGroupId_t WorldGroupId {
-    get => ref _Handle.AsRef<WorldGroupId_t>(Schema.GetOffset(0x4169D31C7414B193));
+  public ref uint WorldGroupId {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x4169D31C7414B193));
   }
 
 

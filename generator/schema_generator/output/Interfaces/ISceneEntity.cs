@@ -5,25 +5,25 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface ISceneEntity : IPointEntity {
 
   
-  public ref CUtlSymbolLarge SceneFile { get; }
+  public ISchemaUntypedField SceneFile { get; }
   
-  public ref CUtlSymbolLarge ResumeSceneFile { get; }
+  public ISchemaUntypedField ResumeSceneFile { get; }
   
-  public ref CUtlSymbolLarge Target1 { get; }
+  public ISchemaUntypedField Target1 { get; }
   
-  public ref CUtlSymbolLarge Target2 { get; }
+  public ISchemaUntypedField Target2 { get; }
   
-  public ref CUtlSymbolLarge Target3 { get; }
+  public ISchemaUntypedField Target3 { get; }
   
-  public ref CUtlSymbolLarge Target4 { get; }
+  public ISchemaUntypedField Target4 { get; }
   
-  public ref CUtlSymbolLarge Target5 { get; }
+  public ISchemaUntypedField Target5 { get; }
   
-  public ref CUtlSymbolLarge Target6 { get; }
+  public ISchemaUntypedField Target6 { get; }
   
-  public ref CUtlSymbolLarge Target7 { get; }
+  public ISchemaUntypedField Target7 { get; }
   
-  public ref CUtlSymbolLarge Target8 { get; }
+  public ISchemaUntypedField Target8 { get; }
   
   public ref CHandle<CBaseEntity> Target1 { get; }
   
@@ -41,7 +41,7 @@ public partial interface ISceneEntity : IPointEntity {
   
   public ref CHandle<CBaseEntity> Target8 { get; }
   
-  public ref CUtlSymbolLarge TargetAttachment { get; }
+  public ISchemaUntypedField TargetAttachment { get; }
   
   public ref bool IsPlayingBack { get; }
   
@@ -127,9 +127,9 @@ public partial interface ISceneEntity : IPointEntity {
   
   public ref CUtlVector<CHandle<CSceneListManager>> ListManagers { get; }
   
-  public ref CUtlSymbolLarge SoundName { get; }
+  public ISchemaUntypedField SoundName { get; }
   
-  public ref CUtlSymbolLarge SequenceName { get; }
+  public ISchemaUntypedField SequenceName { get; }
   
   public ref CHandle<CBaseFlex> Actor { get; }
   

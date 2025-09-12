@@ -15,11 +15,11 @@ internal partial class CPathParticleRope : CBaseEntity, IPathParticleRope {
   public ref float MaxSimulationTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBC0C741B80F036E5));
   }
-  public ref CUtlSymbolLarge EffectName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBC0C741B82D2BFC7));
+  public ISchemaUntypedField EffectName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xBC0C741B82D2BFC7));
   }
-  public ref CUtlVector<CUtlSymbolLarge> PathNodes_Name {
-    get => ref _Handle.AsRef<CUtlVector<CUtlSymbolLarge>>(Schema.GetOffset(0xBC0C741BFFAFA92F));
+  public ref CUtlVector PathNodes_Name {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xBC0C741BFFAFA92F));
   }
 
   public void ParticleSpacingUpdated() {

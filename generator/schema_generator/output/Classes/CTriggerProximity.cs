@@ -12,8 +12,8 @@ internal partial class CTriggerProximity : CBaseTrigger, ITriggerProximity {
   public ref CHandle<CBaseEntity> MeasureTarget {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x98F0621FF81BC1A8));
   }
-  public ref CUtlSymbolLarge MeasureTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x98F0621F29C47B3A));
+  public ISchemaUntypedField MeasureTarget {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x98F0621F29C47B3A));
   }
   public ref float Radius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x98F0621F2E1F6E07));

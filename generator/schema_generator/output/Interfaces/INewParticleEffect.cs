@@ -63,7 +63,7 @@ public partial interface INewParticleEffect : IIParticleEffect {
   
   public ref Vector LastMax { get; }
   
-  public ref CSplitScreenSlot SplitScreenUser { get; }
+  public ref uint SplitScreenUser { get; }
   
   public ref Vector AggregationCenter { get; }
   

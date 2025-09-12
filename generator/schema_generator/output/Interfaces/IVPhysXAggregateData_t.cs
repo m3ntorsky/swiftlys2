@@ -17,7 +17,7 @@ public partial interface IVPhysXAggregateData_t : ISchemaClass {
   
   public ref CUtlVector<ushort> IndexHash { get; }
   
-  public ref CUtlVector<matrix3x4a_t> BindPose { get; }
+  public ref CUtlVector<matrix3x4_t> BindPose { get; }
   
 // CUtlVector< VPhysXBodyPart_t >
   public ref CUtlVector Parts { get; }

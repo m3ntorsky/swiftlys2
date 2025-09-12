@@ -7,9 +7,9 @@ public partial interface IAI_ChangeHintGroup : IBaseEntity {
   
   public ref int SearchType { get; }
   
-  public ref CUtlSymbolLarge StrSearchName { get; }
+  public ISchemaUntypedField StrSearchName { get; }
   
-  public ref CUtlSymbolLarge StrNewHintGroup { get; }
+  public ISchemaUntypedField StrNewHintGroup { get; }
   
   public ref float Radius { get; }
 }

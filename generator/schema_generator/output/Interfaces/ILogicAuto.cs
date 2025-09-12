@@ -25,5 +25,5 @@ public partial interface ILogicAuto : IBaseEntity {
   
   public IEntityIOOutput OnVRNotEnabled { get; }
   
-  public ref CUtlSymbolLarge Globalstate { get; }
+  public ISchemaUntypedField Globalstate { get; }
 }

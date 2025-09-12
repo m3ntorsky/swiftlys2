@@ -5,19 +5,19 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IPointCommentaryNode : IBaseAnimGraph {
 
   
-  public ref CUtlSymbolLarge PreCommands { get; }
+  public ISchemaUntypedField PreCommands { get; }
   
-  public ref CUtlSymbolLarge PostCommands { get; }
+  public ISchemaUntypedField PostCommands { get; }
   
-  public ref CUtlSymbolLarge CommentaryFile { get; }
+  public ISchemaUntypedField CommentaryFile { get; }
   
-  public ref CUtlSymbolLarge ViewTarget { get; }
+  public ISchemaUntypedField ViewTarget { get; }
   
   public ref CHandle<CBaseEntity> ViewTarget { get; }
   
   public ref CHandle<CBaseEntity> ViewTargetAngles { get; }
   
-  public ref CUtlSymbolLarge ViewPosition { get; }
+  public ISchemaUntypedField ViewPosition { get; }
   
   public ref CHandle<CBaseEntity> ViewPosition { get; }
   
@@ -55,9 +55,9 @@ public partial interface IPointCommentaryNode : IBaseAnimGraph {
   
   public ref float StartTimeInCommentary { get; }
   
-  public ref CUtlSymbolLarge Title { get; }
+  public ISchemaUntypedField Title { get; }
   
-  public ref CUtlSymbolLarge Speakers { get; }
+  public ISchemaUntypedField Speakers { get; }
   
   public ref int NodeNumber { get; }
   

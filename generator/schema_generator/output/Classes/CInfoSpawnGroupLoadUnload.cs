@@ -21,14 +21,14 @@ internal partial class CInfoSpawnGroupLoadUnload : CLogicalEntity, IInfoSpawnGro
   public IEntityIOOutput OnSpawnGroupUnloadFinished {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x2537640F1268C477));
   }
-  public ref CUtlSymbolLarge SpawnGroupName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2537640FBEEECC58));
+  public ISchemaUntypedField SpawnGroupName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x2537640FBEEECC58));
   }
-  public ref CUtlSymbolLarge SpawnGroupFilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2537640FE9A4A47E));
+  public ISchemaUntypedField SpawnGroupFilterName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x2537640FE9A4A47E));
   }
-  public ref CUtlSymbolLarge LandmarkName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2537640F3207F70E));
+  public ISchemaUntypedField LandmarkName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x2537640F3207F70E));
   }
   public ref CUtlString FixedSpawnGroupName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x2537640FB094CD41));

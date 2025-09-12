@@ -5,9 +5,9 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface Ilocksound_t : ISchemaClass {
 
   
-  public ref CUtlSymbolLarge LockedSound { get; }
+  public ISchemaUntypedField LockedSound { get; }
   
-  public ref CUtlSymbolLarge UnlockedSound { get; }
+  public ISchemaUntypedField UnlockedSound { get; }
   
   public IGameTime_t FlwaitSound { get; }
 }

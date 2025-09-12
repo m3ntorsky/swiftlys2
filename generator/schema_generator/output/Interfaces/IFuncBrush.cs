@@ -11,7 +11,7 @@ public partial interface IFuncBrush : IBaseModelEntity {
   
   public ref bool SolidBsp { get; }
   
-  public ref CUtlSymbolLarge ExcludedClass { get; }
+  public ISchemaUntypedField ExcludedClass { get; }
   
   public ref bool InvertExclusion { get; }
   

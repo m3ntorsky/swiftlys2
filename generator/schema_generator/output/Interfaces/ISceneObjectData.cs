@@ -9,11 +9,11 @@ public partial interface ISceneObjectData : ISchemaClass {
   
   public ref Vector MaxBounds { get; }
   
-  public ref CUtlLeanVector<CMaterialDrawDescriptor> DrawCalls { get; }
+  public ISchemaUntypedField DrawCalls { get; }
   
-  public ref CUtlLeanVector<AABB_t> DrawBounds { get; }
+  public ISchemaUntypedField DrawBounds { get; }
   
-  public ref CUtlLeanVector<CMeshletDescriptor> Meshlets { get; }
+  public ISchemaUntypedField Meshlets { get; }
   
   public ref Vector4D TintColor { get; }
 }

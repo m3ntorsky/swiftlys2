@@ -24,8 +24,8 @@ internal partial class CBaseEntity : CEntityInstance, IBaseEntity {
   public ref bool DisabledContextThinks {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9DC483B8C2C22BED));
   }
-  public ref CBitVec<64> IsSteadyState {
-    get => ref _Handle.AsRef<CBitVec<64>>(Schema.GetOffset(0x9DC483B84626D6B4));
+  public ISchemaUntypedField IsSteadyState {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9DC483B84626D6B4));
   }
   public ref float LastNetworkChange {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9DC483B80351D699));
@@ -33,8 +33,8 @@ internal partial class CBaseEntity : CEntityInstance, IBaseEntity {
   public ref CUtlVector ResponseContexts {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x9DC483B85120C9AE));
   }
-  public ref CUtlSymbolLarge ResponseContext {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9DC483B8ECDEFE61));
+  public ISchemaUntypedField ResponseContext {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9DC483B8ECDEFE61));
   }
   public ref float DamageAccumulator {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9DC483B85B3DCE98));
@@ -51,14 +51,14 @@ internal partial class CBaseEntity : CEntityInstance, IBaseEntity {
   public ref bool RestoreInHierarchy {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9DC483B8D3622095));
   }
-  public ref CUtlSymbolLarge Target {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9DC483B8FA08A9E8));
+  public ISchemaUntypedField Target {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9DC483B8FA08A9E8));
   }
   public ref CHandle<CBaseFilter> DamageFilter {
     get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0x9DC483B831E01230));
   }
-  public ref CUtlSymbolLarge DamageFilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9DC483B8F58A21C1));
+  public ISchemaUntypedField DamageFilterName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9DC483B8F58A21C1));
   }
   public ref float MoveDoneTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9DC483B860639E87));
@@ -66,8 +66,8 @@ internal partial class CBaseEntity : CEntityInstance, IBaseEntity {
   public ref Vector PrevVPhysicsUpdatePos {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x9DC483B825F6A1B4));
   }
-  public ref CUtlSymbolLarge Globalname {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9DC483B82F8B8190));
+  public ISchemaUntypedField Globalname {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9DC483B82F8B8190));
   }
   public ref int SentToClients {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9DC483B81C68C809));

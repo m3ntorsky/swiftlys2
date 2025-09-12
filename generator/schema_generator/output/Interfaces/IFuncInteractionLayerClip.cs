@@ -7,7 +7,7 @@ public partial interface IFuncInteractionLayerClip : IBaseModelEntity {
   
   public ref bool Disabled { get; }
   
-  public ref CUtlSymbolLarge InteractsAs { get; }
+  public ISchemaUntypedField InteractsAs { get; }
   
-  public ref CUtlSymbolLarge InteractsWith { get; }
+  public ISchemaUntypedField InteractsWith { get; }
 }

@@ -11,17 +11,18 @@ public partial interface IInfoOffscreenPanoramaTexture : IPointEntity {
   
   public ref int ResolutionY { get; }
   
-  public ref CUtlSymbolLarge LayoutFileName { get; }
+  public ISchemaUntypedField LayoutFileName { get; }
   
-  public ref CUtlSymbolLarge RenderAttrName { get; }
+  public ISchemaUntypedField RenderAttrName { get; }
   
   public ref CUtlVector<CHandle<CBaseModelEntity>> TargetEntities { get; }
   
   public ref int TargetChangeCount { get; }
   
-  public ref CUtlVector<CUtlSymbolLarge> CSSClasses { get; }
+// CNetworkUtlVectorBase< CUtlSymbolLarge >
+  public ref CUtlVector CSSClasses { get; }
   
-  public ref CUtlSymbolLarge TargetsName { get; }
+  public ISchemaUntypedField TargetsName { get; }
   
   public ref CUtlVector<CHandle<CBaseModelEntity>> AdditionalTargetEntities { get; }
 }

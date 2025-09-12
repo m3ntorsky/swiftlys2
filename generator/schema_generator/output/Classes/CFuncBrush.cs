@@ -18,8 +18,8 @@ internal partial class CFuncBrush : CBaseModelEntity, IFuncBrush {
   public ref bool SolidBsp {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x26435484A50CEC89));
   }
-  public ref CUtlSymbolLarge ExcludedClass {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2643548495B3D111));
+  public ISchemaUntypedField ExcludedClass {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x2643548495B3D111));
   }
   public ref bool InvertExclusion {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x264354845DE14F07));

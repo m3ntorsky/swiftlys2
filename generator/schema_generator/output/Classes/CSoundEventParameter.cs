@@ -9,8 +9,8 @@ internal partial class CSoundEventParameter : CBaseEntity, ISoundEventParameter 
   public CSoundEventParameter(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge ParamName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xEFEED49AFF6F4311));
+  public ISchemaUntypedField ParamName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xEFEED49AFF6F4311));
   }
   public ref float FloatValue {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xEFEED49A80BDA558));

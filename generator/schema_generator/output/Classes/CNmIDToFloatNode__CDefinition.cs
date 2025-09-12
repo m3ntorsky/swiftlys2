@@ -15,11 +15,11 @@ internal partial class CNmIDToFloatNode__CDefinition : CNmFloatValueNode::CDefin
   public ref float DefaultValue {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9F6F687DBBE0341F));
   }
-  public ref CUtlLeanVectorFixedGrowable<CGlobalSymbol,5> IDs {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<CGlobalSymbol,5>>(Schema.GetOffset(0x9F6F687D0C180009));
+  public ISchemaUntypedField IDs {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9F6F687D0C180009));
   }
-  public ref CUtlLeanVectorFixedGrowable<float32,5> Values {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<float32,5>>(Schema.GetOffset(0x9F6F687DFBEDDADB));
+  public ISchemaUntypedField Values {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9F6F687DFBEDDADB));
   }
 
 

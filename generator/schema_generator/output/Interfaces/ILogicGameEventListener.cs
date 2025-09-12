@@ -7,9 +7,9 @@ public partial interface ILogicGameEventListener : ILogicalEntity {
   
   public IEntityIOOutput OnEventFired { get; }
   
-  public ref CUtlSymbolLarge GameEventName { get; }
+  public ISchemaUntypedField GameEventName { get; }
   
-  public ref CUtlSymbolLarge GameEventItem { get; }
+  public ISchemaUntypedField GameEventItem { get; }
   
   public ref bool Enabled { get; }
   

@@ -13,11 +13,11 @@ public partial interface ISoundPatch : ISchemaClass {
   
   public ref float LastTime { get; }
   
-  public ref CUtlSymbolLarge SoundScriptName { get; }
+  public ISchemaUntypedField SoundScriptName { get; }
   
   public ref CHandle<CBaseEntity> Ent { get; }
   
-  public ref CEntityIndex SoundEntityIndex { get; }
+  public ref uint SoundEntityIndex { get; }
   
   public ref Vector SoundOrigin { get; }
   
@@ -29,5 +29,5 @@ public partial interface ISoundPatch : ISchemaClass {
   
   public ref bool UpdatedSoundOrigin { get; }
   
-  public ref CUtlSymbolLarge ClassName { get; }
+  public ISchemaUntypedField ClassName { get; }
 }

@@ -18,8 +18,8 @@ internal partial class CPropDoorRotatingBreakable : CPropDoorRotating, IPropDoor
   public ref int CurrentDamageState {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xCB925ACA29591458));
   }
-  public ref CUtlVector<CUtlSymbolLarge> DamageStates {
-    get => ref _Handle.AsRef<CUtlVector<CUtlSymbolLarge>>(Schema.GetOffset(0xCB925ACA4FD16F52));
+  public ref CUtlVector DamageStates {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xCB925ACA4FD16F52));
   }
 
 

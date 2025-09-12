@@ -84,8 +84,8 @@ internal partial class CCSPlayerPawn : CCSPlayerPawnBase, ICSPlayerPawn {
   public ref int SpotRules {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB776CCE44));
   }
-  public ref CEntityIndex BombSiteIndex {
-    get => ref _Handle.AsRef<CEntityIndex>(Schema.GetOffset(0xC7614AAB14DD85B5));
+  public ref uint BombSiteIndex {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xC7614AAB14DD85B5));
   }
   public ref bool InBombZoneTrigger {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB73871310));

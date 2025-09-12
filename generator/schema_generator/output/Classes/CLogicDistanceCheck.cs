@@ -9,11 +9,11 @@ internal partial class CLogicDistanceCheck : CLogicalEntity, ILogicDistanceCheck
   public CLogicDistanceCheck(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge EntityA {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x523E7E6D07823CB9));
+  public ISchemaUntypedField EntityA {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x523E7E6D07823CB9));
   }
-  public ref CUtlSymbolLarge EntityB {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x523E7E6D04823800));
+  public ISchemaUntypedField EntityB {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x523E7E6D04823800));
   }
   public ref float Zone1Distance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x523E7E6DFF385A8F));

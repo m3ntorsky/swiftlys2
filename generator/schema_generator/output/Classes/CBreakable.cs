@@ -18,8 +18,8 @@ internal partial class CBreakable : CBaseModelEntity, IBreakable {
   public ref Explosions Explosion {
     get => ref _Handle.AsRef<Explosions>(Schema.GetOffset(0xC5CDE3298FD2AD60));
   }
-  public ref CUtlSymbolLarge SpawnObject {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC5CDE329D32D7547));
+  public ISchemaUntypedField SpawnObject {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC5CDE329D32D7547));
   }
   public ref float PressureDelay {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC5CDE3294852270B));
@@ -27,8 +27,8 @@ internal partial class CBreakable : CBaseModelEntity, IBreakable {
   public ref int MinHealthDmg {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC5CDE32991F14A4A));
   }
-  public ref CUtlSymbolLarge PropData {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC5CDE32958671088));
+  public ISchemaUntypedField PropData {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC5CDE32958671088));
   }
   public ref float ImpactEnergyScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC5CDE329C66BAC1B));

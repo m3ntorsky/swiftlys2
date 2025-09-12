@@ -13,11 +13,11 @@ public partial interface IInfoSpawnGroupLoadUnload : ILogicalEntity {
   
   public IEntityIOOutput OnSpawnGroupUnloadFinished { get; }
   
-  public ref CUtlSymbolLarge SpawnGroupName { get; }
+  public ISchemaUntypedField SpawnGroupName { get; }
   
-  public ref CUtlSymbolLarge SpawnGroupFilterName { get; }
+  public ISchemaUntypedField SpawnGroupFilterName { get; }
   
-  public ref CUtlSymbolLarge LandmarkName { get; }
+  public ISchemaUntypedField LandmarkName { get; }
   
   public ref CUtlString FixedSpawnGroupName { get; }
   

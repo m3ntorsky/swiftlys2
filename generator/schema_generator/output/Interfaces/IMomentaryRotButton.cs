@@ -23,7 +23,7 @@ public partial interface IMomentaryRotButton : IRotButton {
   
   public ref float IdealYaw { get; }
   
-  public ref CUtlSymbolLarge Noise { get; }
+  public ISchemaUntypedField Noise { get; }
   
   public ref bool UpdateTarget { get; }
   

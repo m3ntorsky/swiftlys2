@@ -17,9 +17,9 @@ public partial interface ISoundEventEntity : IBaseEntity {
   
   public ref float SavedElapsedTime { get; }
   
-  public ref CUtlSymbolLarge SourceEntityName { get; }
+  public ISchemaUntypedField SourceEntityName { get; }
   
-  public ref CUtlSymbolLarge AttachmentName { get; }
+  public ISchemaUntypedField AttachmentName { get; }
   
   public ISchemaUntypedField OnGUIDChanged { get; }
   
@@ -27,9 +27,9 @@ public partial interface ISoundEventEntity : IBaseEntity {
   
   public ref float ClientCullRadius { get; }
   
-  public ref CUtlSymbolLarge SoundName { get; }
+  public ISchemaUntypedField SoundName { get; }
   
-  public ref CEntityHandle Source { get; }
+  public ref CHandle<IEntityInstance> Source { get; }
   
   public ref int EntityIndexSelection { get; }
 }

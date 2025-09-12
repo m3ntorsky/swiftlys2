@@ -52,7 +52,7 @@ public partial interface IBasePlayerPawn : IBaseCombatCharacter {
   
   public ref float HltvReplayEnd { get; }
   
-  public ref CEntityIndex HltvReplayEntity { get; }
+  public ref uint HltvReplayEntity { get; }
   
 // CUtlVector< sndopvarlatchdata_t >
   public ref CUtlVector SndOpvarLatchData { get; }

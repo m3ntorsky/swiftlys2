@@ -9,11 +9,11 @@ internal partial class CLogicCollisionPair : CLogicalEntity, ILogicCollisionPair
   public CLogicCollisionPair(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge NameAttach1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9E0FC6AC6776530A));
+  public ISchemaUntypedField NameAttach1 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9E0FC6AC6776530A));
   }
-  public ref CUtlSymbolLarge NameAttach2 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9E0FC6AC66765177));
+  public ISchemaUntypedField NameAttach2 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9E0FC6AC66765177));
   }
   public ref bool SupportMultipleEntitiesWithSameName {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9E0FC6ACD009870A));

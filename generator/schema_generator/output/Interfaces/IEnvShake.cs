@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IEnvShake : IPointEntity {
 
   
-  public ref CUtlSymbolLarge LimitToEntity { get; }
+  public ISchemaUntypedField LimitToEntity { get; }
   
   public ref float Amplitude { get; }
   

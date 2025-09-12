@@ -5,11 +5,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface ISoundOpvarSetEntity : IBaseEntity {
 
   
-  public ref CUtlSymbolLarge StackName { get; }
+  public ISchemaUntypedField StackName { get; }
   
-  public ref CUtlSymbolLarge OperatorName { get; }
+  public ISchemaUntypedField OperatorName { get; }
   
-  public ref CUtlSymbolLarge OpvarName { get; }
+  public ISchemaUntypedField OpvarName { get; }
   
   public ref int OpvarType { get; }
   
@@ -17,7 +17,7 @@ public partial interface ISoundOpvarSetEntity : IBaseEntity {
   
   public ref float OpvarValue { get; }
   
-  public ref CUtlSymbolLarge OpvarValueString { get; }
+  public ISchemaUntypedField OpvarValueString { get; }
   
   public ref bool SetOnSpawn { get; }
 }

@@ -7,13 +7,13 @@ public partial interface IEntityIdentity : ISchemaClass {
   
   public ref int NameStringableIndex { get; }
   
-  public ref CUtlSymbolLarge Name { get; }
+  public ISchemaUntypedField Name { get; }
   
-  public ref CUtlSymbolLarge DesignerName { get; }
+  public ISchemaUntypedField DesignerName { get; }
   
   public ref uint Flags { get; }
   
-  public ref WorldGroupId_t WorldGroupId { get; }
+  public ref uint WorldGroupId { get; }
   
   public ref uint DataObjectTypes { get; }
   

@@ -17,11 +17,11 @@ public partial interface IAmbientGeneric : IPointEntity {
   
   public ref bool Looping { get; }
   
-  public ref CUtlSymbolLarge Sound { get; }
+  public ISchemaUntypedField Sound { get; }
   
-  public ref CUtlSymbolLarge SourceEntName { get; }
+  public ISchemaUntypedField SourceEntName { get; }
   
   public ref CHandle<CBaseEntity> SoundSource { get; }
   
-  public ref CEntityIndex SoundSourceEntIndex { get; }
+  public ref uint SoundSourceEntIndex { get; }
 }

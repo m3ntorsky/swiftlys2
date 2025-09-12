@@ -5,21 +5,21 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IScriptedSequence : IBaseEntity {
 
   
-  public ref CUtlSymbolLarge Entry { get; }
+  public ISchemaUntypedField Entry { get; }
   
-  public ref CUtlSymbolLarge PreIdle { get; }
+  public ISchemaUntypedField PreIdle { get; }
   
-  public ref CUtlSymbolLarge Play { get; }
+  public ISchemaUntypedField Play { get; }
   
-  public ref CUtlSymbolLarge PostIdle { get; }
+  public ISchemaUntypedField PostIdle { get; }
   
-  public ref CUtlSymbolLarge ModifierToAddOnPlay { get; }
+  public ISchemaUntypedField ModifierToAddOnPlay { get; }
   
-  public ref CUtlSymbolLarge NextScript { get; }
+  public ISchemaUntypedField NextScript { get; }
   
-  public ref CUtlSymbolLarge Entity { get; }
+  public ISchemaUntypedField Entity { get; }
   
-  public ref CUtlSymbolLarge SyncGroup { get; }
+  public ISchemaUntypedField SyncGroup { get; }
   
   public ref ScriptedMoveTo_t MoveTo { get; }
   

@@ -27,8 +27,8 @@ internal partial class CBaseCombatCharacter : CBaseFlex, IBaseCombatCharacter {
   public ref CUtlVector VecRelationships {
     get => ref _Handle.Deref<CUtlVector>(Schema.GetOffset(0xB47DE3DE2B978F5E));
   }
-  public ref CUtlSymbolLarge StrRelationships {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB47DE3DEF96E2AD7));
+  public ISchemaUntypedField StrRelationships {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB47DE3DEF96E2AD7));
   }
   public ref Hull_t Hull {
     get => ref _Handle.AsRef<Hull_t>(Schema.GetOffset(0xB47DE3DE20B7E577));

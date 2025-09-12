@@ -12,8 +12,8 @@ internal partial class CEnvMuzzleFlash : CPointEntity, IEnvMuzzleFlash {
   public ref float Scale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x2EBDF9DEB731A42F));
   }
-  public ref CUtlSymbolLarge ParentAttachment {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2EBDF9DE0061F288));
+  public ISchemaUntypedField ParentAttachment {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x2EBDF9DE0061F288));
   }
 
 

@@ -7,9 +7,9 @@ public partial interface IInfoWorldLayer : IBaseEntity {
   
   public IEntityIOOutput OutputOnEntitiesSpawned { get; }
   
-  public ref CUtlSymbolLarge WorldName { get; }
+  public ISchemaUntypedField WorldName { get; }
   
-  public ref CUtlSymbolLarge LayerName { get; }
+  public ISchemaUntypedField LayerName { get; }
   
   public ref bool WorldLayerVisible { get; }
   

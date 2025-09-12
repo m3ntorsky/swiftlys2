@@ -13,9 +13,9 @@ public partial interface IPropDataComponent : IEntityComponent {
   
   public ref float DmgModFire { get; }
   
-  public ref CUtlSymbolLarge PhysicsDamageTableName { get; }
+  public ISchemaUntypedField PhysicsDamageTableName { get; }
   
-  public ref CUtlSymbolLarge BasePropData { get; }
+  public ISchemaUntypedField BasePropData { get; }
   
   public ref int Interactions { get; }
   

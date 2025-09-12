@@ -9,14 +9,14 @@ internal partial class CEnvInstructorHint : CPointEntity, IEnvInstructorHint {
   public CEnvInstructorHint(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB2774FF65FE));
+  public ISchemaUntypedField Name {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9C18AB2774FF65FE));
   }
-  public ref CUtlSymbolLarge Replace_Key {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB27CAC8205B));
+  public ISchemaUntypedField Replace_Key {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9C18AB27CAC8205B));
   }
-  public ref CUtlSymbolLarge HintTargetEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB270024C1BE));
+  public ISchemaUntypedField HintTargetEntity {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9C18AB270024C1BE));
   }
   public ref int Timeout {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9C18AB272EC6CDDF));
@@ -24,17 +24,17 @@ internal partial class CEnvInstructorHint : CPointEntity, IEnvInstructorHint {
   public ref int DisplayLimit {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9C18AB27271D9139));
   }
-  public ref CUtlSymbolLarge Icon_Onscreen {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB27548D6DF4));
+  public ISchemaUntypedField Icon_Onscreen {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9C18AB27548D6DF4));
   }
-  public ref CUtlSymbolLarge Icon_Offscreen {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB274628C556));
+  public ISchemaUntypedField Icon_Offscreen {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9C18AB274628C556));
   }
-  public ref CUtlSymbolLarge Caption {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB27BE8E34DD));
+  public ISchemaUntypedField Caption {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9C18AB27BE8E34DD));
   }
-  public ref CUtlSymbolLarge ActivatorCaption {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB271D0AA53E));
+  public ISchemaUntypedField ActivatorCaption {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9C18AB271D0AA53E));
   }
   public ref Color Color {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x9C18AB27D7D017D8));
@@ -69,8 +69,8 @@ internal partial class CEnvInstructorHint : CPointEntity, IEnvInstructorHint {
   public ref bool SuppressRest {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9C18AB27A146CD34));
   }
-  public ref CUtlSymbolLarge Binding {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB2705585C6A));
+  public ISchemaUntypedField Binding {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9C18AB2705585C6A));
   }
   public ref bool AllowNoDrawTarget {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9C18AB275B687C32));

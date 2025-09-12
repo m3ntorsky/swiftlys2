@@ -30,8 +30,8 @@ internal partial class CSchemaSystemInternalRegistration : SchemaClass, ISchemaS
   public ref RadianEuler RadianEuler {
     get => ref _Handle.AsRef<RadianEuler>(Schema.GetOffset(0xDDD6CA30E6A91A09));
   }
-  public ref DegreeEuler DegreeEuler {
-    get => ref _Handle.AsRef<DegreeEuler>(Schema.GetOffset(0xDDD6CA30FCD6D92E));
+  public ISchemaUntypedField DegreeEuler {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xDDD6CA30FCD6D92E));
   }
   public ref QuaternionStorage QuaternionStorage {
     get => ref _Handle.AsRef<QuaternionStorage>(Schema.GetOffset(0xDDD6CA303C6C2D0E));
@@ -39,8 +39,8 @@ internal partial class CSchemaSystemInternalRegistration : SchemaClass, ISchemaS
   public ref matrix3x4_t Matrix3x4_t {
     get => ref _Handle.AsRef<matrix3x4_t>(Schema.GetOffset(0xDDD6CA30EC15D3EA));
   }
-  public ref matrix3x4a_t Matrix3x4a_t {
-    get => ref _Handle.AsRef<matrix3x4a_t>(Schema.GetOffset(0xDDD6CA30E298503B));
+  public ref matrix3x4_t Matrix3x4a_t {
+    get => ref _Handle.AsRef<matrix3x4_t>(Schema.GetOffset(0xDDD6CA30E298503B));
   }
   public ref Color Color {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0xDDD6CA30D7D017D8));
@@ -60,8 +60,8 @@ internal partial class CSchemaSystemInternalRegistration : SchemaClass, ISchemaS
   public ref CUtlString CUtlString {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDDD6CA3041577950));
   }
-  public ref CUtlSymbol CUtlSymbol {
-    get => ref _Handle.AsRef<CUtlSymbol>(Schema.GetOffset(0xDDD6CA30EA008FA9));
+  public ISchemaUntypedField CUtlSymbol {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xDDD6CA30EA008FA9));
   }
   public ref CUtlStringToken StringToken {
     get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0xDDD6CA3049D8C20D));

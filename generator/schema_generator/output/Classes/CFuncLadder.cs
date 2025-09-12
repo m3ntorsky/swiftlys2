@@ -21,8 +21,8 @@ internal partial class CFuncLadder : CBaseModelEntity, IFuncLadder {
   public ref bool HasSlack {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD85E02381745DB1D));
   }
-  public ref CUtlSymbolLarge SurfacePropName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD85E0238749EACC6));
+  public ISchemaUntypedField SurfacePropName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD85E0238749EACC6));
   }
   public IEntityIOOutput OnPlayerGotOnLadder {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xD85E02381B2BA3FC));

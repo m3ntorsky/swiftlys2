@@ -5,9 +5,9 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IPulse_Chunk : ISchemaClass {
 
   
-  public ref CUtlLeanVector<PGDInstruction_t> Instructions { get; }
+  public ISchemaUntypedField Instructions { get; }
   
-  public ref CUtlLeanVector<CPulse_RegisterInfo> Registers { get; }
+  public ISchemaUntypedField Registers { get; }
   
-  public ref CUtlLeanVector<PulseDocNodeID_t> InstructionEditorIDs { get; }
+  public ISchemaUntypedField InstructionEditorIDs { get; }
 }

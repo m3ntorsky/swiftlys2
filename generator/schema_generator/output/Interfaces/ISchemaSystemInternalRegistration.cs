@@ -19,13 +19,13 @@ public partial interface ISchemaSystemInternalRegistration : ISchemaClass {
   
   public ref RadianEuler RadianEuler { get; }
   
-  public ref DegreeEuler DegreeEuler { get; }
+  public ISchemaUntypedField DegreeEuler { get; }
   
   public ref QuaternionStorage QuaternionStorage { get; }
   
   public ref matrix3x4_t Matrix3x4_t { get; }
   
-  public ref matrix3x4a_t Matrix3x4a_t { get; }
+  public ref matrix3x4_t Matrix3x4a_t { get; }
   
   public ref Color Color { get; }
   
@@ -39,7 +39,7 @@ public partial interface ISchemaSystemInternalRegistration : ISchemaClass {
   
   public ref CUtlString CUtlString { get; }
   
-  public ref CUtlSymbol CUtlSymbol { get; }
+  public ISchemaUntypedField CUtlSymbol { get; }
   
   public ref CUtlStringToken StringToken { get; }
   

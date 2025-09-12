@@ -9,11 +9,11 @@ public partial interface IPulseGraphInstance_ServerEntity : IBasePulseGraphInsta
   
   public ref bool Activated { get; }
   
-  public ref CUtlSymbolLarge NameFixupStaticPrefix { get; }
+  public ISchemaUntypedField NameFixupStaticPrefix { get; }
   
-  public ref CUtlSymbolLarge NameFixupParent { get; }
+  public ISchemaUntypedField NameFixupParent { get; }
   
-  public ref CUtlSymbolLarge NameFixupLocal { get; }
+  public ISchemaUntypedField NameFixupLocal { get; }
   
-  public ref CUtlSymbolLarge ProceduralWorldNameForRelays { get; }
+  public ISchemaUntypedField ProceduralWorldNameForRelays { get; }
 }

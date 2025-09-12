@@ -9,11 +9,11 @@ internal partial class CMultiLightProxy : CLogicalEntity, IMultiLightProxy {
   public CMultiLightProxy(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge LightNameFilter {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xF2B647B3071F3A26));
+  public ISchemaUntypedField LightNameFilter {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xF2B647B3071F3A26));
   }
-  public ref CUtlSymbolLarge LightClassFilter {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xF2B647B32B566D5B));
+  public ISchemaUntypedField LightClassFilter {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xF2B647B32B566D5B));
   }
   public ref float LightRadiusFilter {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF2B647B3DBC59891));

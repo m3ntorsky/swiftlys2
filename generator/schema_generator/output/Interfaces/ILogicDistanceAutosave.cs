@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface ILogicDistanceAutosave : ILogicalEntity {
 
   
-  public ref CUtlSymbolLarge TargetEntity { get; }
+  public ISchemaUntypedField TargetEntity { get; }
   
   public ref float DistanceToPlayer { get; }
   

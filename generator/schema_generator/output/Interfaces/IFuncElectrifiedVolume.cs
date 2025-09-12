@@ -5,11 +5,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IFuncElectrifiedVolume : IFuncBrush {
 
   
-  public ref CUtlSymbolLarge EffectName { get; }
+  public ISchemaUntypedField EffectName { get; }
   
-  public ref CUtlSymbolLarge EffectInterpenetrateName { get; }
+  public ISchemaUntypedField EffectInterpenetrateName { get; }
   
-  public ref CUtlSymbolLarge EffectZapName { get; }
+  public ISchemaUntypedField EffectZapName { get; }
   
-  public ref CUtlSymbolLarge EffectSource { get; }
+  public ISchemaUntypedField EffectSource { get; }
 }

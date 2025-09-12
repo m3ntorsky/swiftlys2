@@ -24,8 +24,8 @@ internal partial class CBaseGrenade : CBaseFlex, IBaseGrenade {
   public ref float WarnAITime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB6ACD98FFC4F4550));
   }
-  public ref CUtlSymbolLarge BounceSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB6ACD98F060D1544));
+  public ISchemaUntypedField BounceSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB6ACD98F060D1544));
   }
   public ref CUtlString ExplosionSound {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB6ACD98FEA1C20EF));

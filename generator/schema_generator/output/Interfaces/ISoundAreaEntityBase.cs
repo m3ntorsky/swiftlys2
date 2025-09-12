@@ -7,7 +7,7 @@ public partial interface ISoundAreaEntityBase : IBaseEntity {
   
   public ref bool Disabled { get; }
   
-  public ref CUtlSymbolLarge SoundAreaType { get; }
+  public ISchemaUntypedField SoundAreaType { get; }
   
   public ref Vector Pos { get; }
 }

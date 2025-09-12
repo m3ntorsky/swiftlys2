@@ -15,5 +15,5 @@ public partial interface IFuncTrain : IBasePlatTrain {
   
   public IGameTime_t NextBlockTime { get; }
   
-  public ref CUtlSymbolLarge LastTarget { get; }
+  public ISchemaUntypedField LastTarget { get; }
 }

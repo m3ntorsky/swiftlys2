@@ -21,7 +21,7 @@ public partial interface IBaseTrigger : IBaseToggle {
   
   public ref CUtlVector<CHandle<CBaseEntity>> TouchingEntities { get; }
   
-  public ref CUtlSymbolLarge FilterName { get; }
+  public ISchemaUntypedField FilterName { get; }
   
   public ref CHandle<CBaseFilter> Filter { get; }
   

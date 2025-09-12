@@ -9,11 +9,11 @@ internal partial class CInstructorEventEntity : CPointEntity, IInstructorEventEn
   public CInstructorEventEntity(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6DE6628874FF65FE));
+  public ISchemaUntypedField Name {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6DE6628874FF65FE));
   }
-  public ref CUtlSymbolLarge HintTargetEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6DE662880024C1BE));
+  public ISchemaUntypedField HintTargetEntity {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6DE662880024C1BE));
   }
   public ref CHandle<CBasePlayerPawn> TargetPlayer {
     get => ref _Handle.AsRef<CHandle<CBasePlayerPawn>>(Schema.GetOffset(0x6DE66288BA425153));

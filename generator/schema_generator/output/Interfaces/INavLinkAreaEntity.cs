@@ -11,15 +11,15 @@ public partial interface INavLinkAreaEntity : IPointEntity {
   
   public ref QAngle LocatorAnglesOffset { get; }
   
-  public ref CUtlSymbolLarge StrMovementForward { get; }
+  public ISchemaUntypedField StrMovementForward { get; }
   
-  public ref CUtlSymbolLarge StrMovementReverse { get; }
+  public ISchemaUntypedField StrMovementReverse { get; }
   
   public ref bool Enabled { get; }
   
   public ref bool AllowCrossMovableConnections { get; }
   
-  public ref CUtlSymbolLarge StrFilterName { get; }
+  public ISchemaUntypedField StrFilterName { get; }
   
   public ref CHandle<CBaseFilter> Filter { get; }
   

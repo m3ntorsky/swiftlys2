@@ -39,8 +39,8 @@ internal partial class CFuncRotating : CBaseModelEntity, IFuncRotating {
   public ref float BlockDamage {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1A29EA94A5348091));
   }
-  public ref CUtlSymbolLarge NoiseRunning {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1A29EA943C33F758));
+  public ISchemaUntypedField NoiseRunning {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1A29EA943C33F758));
   }
   public ref bool Reversed {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1A29EA945A005113));

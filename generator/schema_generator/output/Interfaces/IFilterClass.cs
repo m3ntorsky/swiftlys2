@@ -5,5 +5,5 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IFilterClass : IBaseFilter {
 
   
-  public ref CUtlSymbolLarge FilterClass { get; }
+  public ISchemaUntypedField FilterClass { get; }
 }

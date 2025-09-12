@@ -78,8 +78,8 @@ internal partial class CCSPlayerController : CBasePlayerController, ICSPlayerCon
   public ref int DesiredObserverMode {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A17704B120));
   }
-  public ref CEntityHandle DesiredObserverTarget {
-    get => ref _Handle.AsRef<CEntityHandle>(Schema.GetOffset(0x28ECD7A161F130C8));
+  public ref CHandle<IEntityInstance> DesiredObserverTarget {
+    get => ref _Handle.AsRef<CHandle<IEntityInstance>>(Schema.GetOffset(0x28ECD7A161F130C8));
   }
   public ref int RoundScore {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1AA870DFE));

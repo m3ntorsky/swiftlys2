@@ -9,8 +9,8 @@ internal partial class CPhysForce : CPointEntity, IPhysForce {
   public CPhysForce(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge NameAttach {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x29E850D5BECAEF3F));
+  public ISchemaUntypedField NameAttach {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x29E850D5BECAEF3F));
   }
   public ref float Force {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x29E850D5B9B6AFA4));

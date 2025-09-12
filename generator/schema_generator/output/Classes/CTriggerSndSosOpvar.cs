@@ -24,14 +24,14 @@ internal partial class CTriggerSndSosOpvar : CBaseTrigger, ITriggerSndSosOpvar {
   public ref float MaxVal {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD4B7BEBC8CE3891E));
   }
-  public ref CUtlSymbolLarge OpvarName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD4B7BEBC4ECBF7E4));
+  public ISchemaUntypedField OpvarName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD4B7BEBC4ECBF7E4));
   }
-  public ref CUtlSymbolLarge StackName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD4B7BEBCC6D6063C));
+  public ISchemaUntypedField StackName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD4B7BEBCC6D6063C));
   }
-  public ref CUtlSymbolLarge OperatorName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD4B7BEBCC4AA99BE));
+  public ISchemaUntypedField OperatorName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD4B7BEBCC4AA99BE));
   }
   public ref bool VolIs2D {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD4B7BEBC384D3350));

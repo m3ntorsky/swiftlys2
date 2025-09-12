@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IFuncConveyor : IBaseModelEntity {
 
   
-  public ref CUtlSymbolLarge ConveyorModels { get; }
+  public ISchemaUntypedField ConveyorModels { get; }
   
   public ref float TransitionDurationSeconds { get; }
   

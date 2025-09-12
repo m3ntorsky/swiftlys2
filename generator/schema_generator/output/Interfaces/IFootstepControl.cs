@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IFootstepControl : IBaseTrigger {
 
   
-  public ref CUtlSymbolLarge Source { get; }
+  public ISchemaUntypedField Source { get; }
   
-  public ref CUtlSymbolLarge Destination { get; }
+  public ISchemaUntypedField Destination { get; }
 }

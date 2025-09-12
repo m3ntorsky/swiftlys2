@@ -7,5 +7,5 @@ public partial interface ICopyRecipientFilter : ISchemaClass {
   
   public ref int Flags { get; }
   
-  public ref CUtlVector<CPlayerSlot> Recipients { get; }
+  public ref CUtlVector<uint> Recipients { get; }
 }

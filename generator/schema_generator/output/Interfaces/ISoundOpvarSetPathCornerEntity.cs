@@ -9,5 +9,5 @@ public partial interface ISoundOpvarSetPathCornerEntity : ISoundOpvarSetPointEnt
   
   public ref float DistMaxSqr { get; }
   
-  public ref CUtlSymbolLarge PathCornerEntityName { get; }
+  public ISchemaUntypedField PathCornerEntityName { get; }
 }

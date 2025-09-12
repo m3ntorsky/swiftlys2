@@ -7,7 +7,7 @@ public partial interface INmSkeleton : ISchemaClass {
   
   public ref CGlobalSymbol ID { get; }
   
-  public ref CUtlLeanVector<CGlobalSymbol> BoneIDs { get; }
+  public ISchemaUntypedField BoneIDs { get; }
   
   public ref CUtlVector<int> ParentIndices { get; }
   
@@ -17,9 +17,9 @@ public partial interface INmSkeleton : ISchemaClass {
   
   public ref int NumBonesToSampleAtLowLOD { get; }
   
-  public ref CUtlLeanVector<NmBoneMaskSetDefinition_t> MaskDefinitions { get; }
+  public ISchemaUntypedField MaskDefinitions { get; }
   
-  public ref CUtlLeanVector<CNmSkeleton::SecondarySkeleton_t> SecondarySkeletons { get; }
+  public ISchemaUntypedField SecondarySkeletons { get; }
   
   public ref bool IsPropSkeleton { get; }
 }

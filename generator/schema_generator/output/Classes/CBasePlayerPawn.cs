@@ -33,8 +33,8 @@ internal partial class CBasePlayerPawn : CBaseCombatCharacter, IBasePlayerPawn {
   public ref float HltvReplayEnd {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCA2EED0479F16CD5));
   }
-  public ref CEntityIndex HltvReplayEntity {
-    get => ref _Handle.AsRef<CEntityIndex>(Schema.GetOffset(0xCA2EED04ADF32E26));
+  public ref uint HltvReplayEntity {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xCA2EED04ADF32E26));
   }
   public ref CUtlVector SndOpvarLatchData {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xCA2EED046B36858E));

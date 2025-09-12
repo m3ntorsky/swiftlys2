@@ -15,7 +15,7 @@ public partial interface IPointPush : IPointEntity {
   
   public ref float ConeOfInfluence { get; }
   
-  public ref CUtlSymbolLarge FilterName { get; }
+  public ISchemaUntypedField FilterName { get; }
   
   public ref CHandle<CBaseFilter> Filter { get; }
 }

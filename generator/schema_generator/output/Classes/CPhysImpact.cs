@@ -15,8 +15,8 @@ internal partial class CPhysImpact : CPointEntity, IPhysImpact {
   public ref float Distance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x2C5E7E543CB20D02));
   }
-  public ref CUtlSymbolLarge DirectionEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2C5E7E54329C8132));
+  public ISchemaUntypedField DirectionEntityName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x2C5E7E54329C8132));
   }
 
 

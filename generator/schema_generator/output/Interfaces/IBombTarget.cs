@@ -17,7 +17,7 @@ public partial interface IBombTarget : IBaseTrigger {
   
   public ref bool BombPlantedHere { get; }
   
-  public ref CUtlSymbolLarge MountTarget { get; }
+  public ISchemaUntypedField MountTarget { get; }
   
   public ref CHandle<CBaseEntity> InstructorHint { get; }
   

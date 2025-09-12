@@ -35,5 +35,5 @@ public partial interface IBaseToggle : IBaseModelEntity {
   
   public ref int MovementType { get; }
   
-  public ref CUtlSymbolLarge Master { get; }
+  public ISchemaUntypedField Master { get; }
 }

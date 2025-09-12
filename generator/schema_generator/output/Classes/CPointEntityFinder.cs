@@ -12,14 +12,14 @@ internal partial class CPointEntityFinder : CBaseEntity, IPointEntityFinder {
   public ref CHandle<CBaseEntity> Entity {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xC59CB1336EBADCB0));
   }
-  public ref CUtlSymbolLarge FilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC59CB13309C86445));
+  public ISchemaUntypedField FilterName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC59CB13309C86445));
   }
   public ref CHandle<CBaseFilter> Filter {
     get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0xC59CB13345D9E0B1));
   }
-  public ref CUtlSymbolLarge RefName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC59CB1339640D172));
+  public ISchemaUntypedField RefName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC59CB1339640D172));
   }
   public ref CHandle<CBaseEntity> Reference {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xC59CB1338100A1A4));

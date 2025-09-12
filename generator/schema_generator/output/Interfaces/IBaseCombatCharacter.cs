@@ -19,7 +19,7 @@ public partial interface IBaseCombatCharacter : IBaseFlex {
   
   public ref CUtlVector VecRelationships { get; }
   
-  public ref CUtlSymbolLarge StrRelationships { get; }
+  public ISchemaUntypedField StrRelationships { get; }
   
   public ref Hull_t Hull { get; }
   

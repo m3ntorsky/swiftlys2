@@ -36,8 +36,8 @@ internal partial class CEnvEntityMaker : CPointEntity, IEnvEntityMaker {
   public ref bool PostSpawnUseAngles {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5EC1669689448F21));
   }
-  public ref CUtlSymbolLarge Template {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5EC16696F24EC223));
+  public ISchemaUntypedField Template {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x5EC16696F24EC223));
   }
   public IEntityIOOutput OutputOnSpawned {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x5EC1669629B86CFF));

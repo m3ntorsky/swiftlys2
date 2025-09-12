@@ -7,7 +7,7 @@ public partial interface ILogicLineToEntity : ILogicalEntity {
   
   public ISchemaUntypedField Line { get; }
   
-  public ref CUtlSymbolLarge SourceName { get; }
+  public ISchemaUntypedField SourceName { get; }
   
   public ref CHandle<CBaseEntity> StartEntity { get; }
   

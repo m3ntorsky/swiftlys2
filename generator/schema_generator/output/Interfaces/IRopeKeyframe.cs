@@ -7,7 +7,7 @@ public partial interface IRopeKeyframe : IBaseModelEntity {
   
   public ref ushort RopeFlags { get; }
   
-  public ref CUtlSymbolLarge NextLinkName { get; }
+  public ISchemaUntypedField NextLinkName { get; }
   
   public ref short Slack { get; }
   
@@ -19,7 +19,7 @@ public partial interface IRopeKeyframe : IBaseModelEntity {
   
   public ref bool ConstrainBetweenEndpoints { get; }
   
-  public ref CUtlSymbolLarge StrRopeMaterialModel { get; }
+  public ISchemaUntypedField StrRopeMaterialModel { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> RopeMaterialModelIndex { get; }
   

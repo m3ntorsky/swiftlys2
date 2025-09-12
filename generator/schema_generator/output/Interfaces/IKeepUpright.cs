@@ -9,7 +9,7 @@ public partial interface IKeepUpright : IPointEntity {
   
   public ref Vector LocalTestAxis { get; }
   
-  public ref CUtlSymbolLarge NameAttach { get; }
+  public ISchemaUntypedField NameAttach { get; }
   
   public ref CHandle<CBaseEntity> AttachedObject { get; }
   

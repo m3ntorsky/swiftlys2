@@ -12,11 +12,11 @@ internal partial class CLogicGameEventListener : CLogicalEntity, ILogicGameEvent
   public IEntityIOOutput OnEventFired {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xB18EF22E84EA158));
   }
-  public ref CUtlSymbolLarge GameEventName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB18EF22C6581BAE));
+  public ISchemaUntypedField GameEventName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB18EF22C6581BAE));
   }
-  public ref CUtlSymbolLarge GameEventItem {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB18EF22ACB669EE));
+  public ISchemaUntypedField GameEventItem {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB18EF22ACB669EE));
   }
   public ref bool StartDisabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB18EF2261ED0C4F));

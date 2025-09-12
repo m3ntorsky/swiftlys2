@@ -41,9 +41,9 @@ public partial interface IRagdollProp : IBaseAnimGraph {
   
   public IGameTime_t LastOriginChangeTime { get; }
   
-  public ref CUtlSymbolLarge StrOriginClassName { get; }
+  public ISchemaUntypedField StrOriginClassName { get; }
   
-  public ref CUtlSymbolLarge StrSourceClassName { get; }
+  public ISchemaUntypedField StrSourceClassName { get; }
   
   public ref bool HasBeenPhysgunned { get; }
   

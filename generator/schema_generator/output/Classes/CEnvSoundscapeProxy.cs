@@ -9,8 +9,8 @@ internal partial class CEnvSoundscapeProxy : CEnvSoundscape, IEnvSoundscapeProxy
   public CEnvSoundscapeProxy(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge MainSoundscapeName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x58127BA672404420));
+  public ISchemaUntypedField MainSoundscapeName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x58127BA672404420));
   }
 
 

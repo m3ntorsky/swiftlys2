@@ -9,7 +9,7 @@ public partial interface IEnvSoundscape : IBaseEntity {
   
   public ref float Radius { get; }
   
-  public ref CUtlSymbolLarge SoundEventName { get; }
+  public ISchemaUntypedField SoundEventName { get; }
   
   public ref bool OverrideWithEvent { get; }
   
@@ -17,13 +17,13 @@ public partial interface IEnvSoundscape : IBaseEntity {
   
   public ref int SoundscapeEntityListId { get; }
   
-  public ISchemaFixedArray<CUtlSymbolLarge> PositionNames { get; }
+  public ISchemaUntypedField PositionNames { get; }
   
   public ref CHandle<CEnvSoundscape> ProxySoundscape { get; }
   
   public ref bool Disabled { get; }
   
-  public ref CUtlSymbolLarge SoundscapeName { get; }
+  public ISchemaUntypedField SoundscapeName { get; }
   
   public ref uint SoundEventHash { get; }
 }

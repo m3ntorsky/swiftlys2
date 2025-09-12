@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface ILogicBranchList : ILogicalEntity {
 
   
-  public ISchemaFixedArray<CUtlSymbolLarge> LogicBranchNames { get; }
+  public ISchemaUntypedField LogicBranchNames { get; }
   
   public ref CUtlVector<CHandle<CBaseEntity>> LogicBranchList { get; }
   

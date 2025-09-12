@@ -9,9 +9,10 @@ public partial interface IPathParticleRope : IBaseEntity {
   
   public ref float MaxSimulationTime { get; }
   
-  public ref CUtlSymbolLarge EffectName { get; }
+  public ISchemaUntypedField EffectName { get; }
   
-  public ref CUtlVector<CUtlSymbolLarge> PathNodes_Name { get; }
+// CUtlVector< CUtlSymbolLarge >
+  public ref CUtlVector PathNodes_Name { get; }
   
   public ref float ParticleSpacing { get; }
   

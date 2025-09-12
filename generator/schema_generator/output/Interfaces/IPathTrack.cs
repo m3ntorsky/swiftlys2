@@ -15,7 +15,7 @@ public partial interface IPathTrack : IPointEntity {
   
   public ref float Length { get; }
   
-  public ref CUtlSymbolLarge AltName { get; }
+  public ISchemaUntypedField AltName { get; }
   
   public ref int IterVal { get; }
   

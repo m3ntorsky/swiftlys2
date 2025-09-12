@@ -13,5 +13,5 @@ public partial interface IMultiSource : ILogicalEntity {
   
   public ref int Total { get; }
   
-  public ref CUtlSymbolLarge Globalstate { get; }
+  public ISchemaUntypedField Globalstate { get; }
 }

@@ -9,11 +9,11 @@ internal partial class CPhysConstraint : CLogicalEntity, IPhysConstraint {
   public CPhysConstraint(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge NameAttach1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB17225456776530A));
+  public ISchemaUntypedField NameAttach1 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB17225456776530A));
   }
-  public ref CUtlSymbolLarge NameAttach2 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB172254566765177));
+  public ISchemaUntypedField NameAttach2 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB172254566765177));
   }
   public ref CHandle<CBaseEntity> Attach1 {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xB1722545384EDC59));
@@ -21,14 +21,14 @@ internal partial class CPhysConstraint : CLogicalEntity, IPhysConstraint {
   public ref CHandle<CBaseEntity> Attach2 {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xB1722545354ED7A0));
   }
-  public ref CUtlSymbolLarge NameAttachment1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB172254517A81C36));
+  public ISchemaUntypedField NameAttachment1 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB172254517A81C36));
   }
-  public ref CUtlSymbolLarge NameAttachment2 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB172254516A81AA3));
+  public ISchemaUntypedField NameAttachment2 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB172254516A81AA3));
   }
-  public ref CUtlSymbolLarge BreakSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB17225456CFE49F7));
+  public ISchemaUntypedField BreakSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB17225456CFE49F7));
   }
   public ref float ForceLimit {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB1722545BA45B8F7));

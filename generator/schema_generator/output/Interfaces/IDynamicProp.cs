@@ -23,7 +23,7 @@ public partial interface IDynamicProp : IBreakableProp {
   
   public IEntityIOOutput OnAnimReachedEnd { get; }
   
-  public ref CUtlSymbolLarge IdleAnim { get; }
+  public ISchemaUntypedField IdleAnim { get; }
   
   public ref AnimLoopMode_t IdleAnimLoopMode { get; }
   

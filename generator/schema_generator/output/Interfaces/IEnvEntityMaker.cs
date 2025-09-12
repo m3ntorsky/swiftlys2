@@ -23,7 +23,7 @@ public partial interface IEnvEntityMaker : IPointEntity {
   
   public ref bool PostSpawnUseAngles { get; }
   
-  public ref CUtlSymbolLarge Template { get; }
+  public ISchemaUntypedField Template { get; }
   
   public IEntityIOOutput OutputOnSpawned { get; }
   

@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface ITriggerVolume : IBaseModelEntity {
 
   
-  public ref CUtlSymbolLarge FilterName { get; }
+  public ISchemaUntypedField FilterName { get; }
   
   public ref CHandle<CBaseFilter> Filter { get; }
 }

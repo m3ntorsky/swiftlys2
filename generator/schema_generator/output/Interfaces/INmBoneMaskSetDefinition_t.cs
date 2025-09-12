@@ -9,5 +9,5 @@ public partial interface INmBoneMaskSetDefinition_t : ISchemaClass {
   
   public INmBoneWeightList PrimaryWeightList { get; }
   
-  public ref CUtlLeanVector<CNmBoneWeightList> SecondaryWeightLists { get; }
+  public ISchemaUntypedField SecondaryWeightLists { get; }
 }

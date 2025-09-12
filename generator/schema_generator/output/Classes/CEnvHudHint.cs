@@ -9,8 +9,8 @@ internal partial class CEnvHudHint : CPointEntity, IEnvHudHint {
   public CEnvHudHint(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Message {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD3D49C23CC5243DC));
+  public ISchemaUntypedField Message {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD3D49C23CC5243DC));
   }
 
 

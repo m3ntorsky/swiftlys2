@@ -18,17 +18,17 @@ internal partial class CTankTrainAI : CPointEntity, ITankTrainAI {
   public ref int SoundPlaying {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x2582082658CF60D2));
   }
-  public ref CUtlSymbolLarge StartSoundName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x258208263F1AB605));
+  public ISchemaUntypedField StartSoundName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x258208263F1AB605));
   }
-  public ref CUtlSymbolLarge EngineSoundName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2582082627E36CD1));
+  public ISchemaUntypedField EngineSoundName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x2582082627E36CD1));
   }
-  public ref CUtlSymbolLarge MovementSoundName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x25820826F2195774));
+  public ISchemaUntypedField MovementSoundName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x25820826F2195774));
   }
-  public ref CUtlSymbolLarge TargetEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x25820826F88EC878));
+  public ISchemaUntypedField TargetEntityName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x25820826F88EC878));
   }
 
 

@@ -31,7 +31,8 @@ public partial interface IPointClientUIWorldPanel : IBaseClientUIEntity {
   
   public ref bool AllowInteractionFromAllSceneWorlds { get; }
   
-  public ref CUtlVector<CUtlSymbolLarge> CSSClasses { get; }
+// CNetworkUtlVectorBase< CUtlSymbolLarge >
+  public ref CUtlVector CSSClasses { get; }
   
   public ref bool Opaque { get; }
   

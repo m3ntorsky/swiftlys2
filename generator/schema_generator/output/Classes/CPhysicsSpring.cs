@@ -18,11 +18,11 @@ internal partial class CPhysicsSpring : CBaseEntity, IPhysicsSpring {
   public ref float RestLength {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5222EAA93AC4079));
   }
-  public ref CUtlSymbolLarge NameAttachStart {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5222EAAD19CEDD5));
+  public ISchemaUntypedField NameAttachStart {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x5222EAAD19CEDD5));
   }
-  public ref CUtlSymbolLarge NameAttachEnd {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5222EAACF4DE50C));
+  public ISchemaUntypedField NameAttachEnd {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x5222EAACF4DE50C));
   }
   public ref Vector Start {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x5222EAAA539BEFF));

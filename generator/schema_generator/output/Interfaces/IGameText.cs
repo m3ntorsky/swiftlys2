@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IGameText : IRulePointEntity {
 
   
-  public ref CUtlSymbolLarge Message { get; }
+  public ISchemaUntypedField Message { get; }
   
   public Ihudtextparms_t TextParms { get; }
 }

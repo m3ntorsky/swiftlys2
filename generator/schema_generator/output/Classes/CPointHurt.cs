@@ -21,8 +21,8 @@ internal partial class CPointHurt : CPointEntity, IPointHurt {
   public ref float Delay {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4FEAE157D68FD6E));
   }
-  public ref CUtlSymbolLarge StrTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x4FEAE15B8F64879));
+  public ISchemaUntypedField StrTarget {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x4FEAE15B8F64879));
   }
   public ref CHandle<CBaseEntity> Activator {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x4FEAE159C480B5A));

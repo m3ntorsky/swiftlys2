@@ -9,8 +9,8 @@ internal partial class CGameText : CRulePointEntity, IGameText {
   public CGameText(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Message {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8AF55797CC5243DC));
+  public ISchemaUntypedField Message {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x8AF55797CC5243DC));
   }
   public Ihudtextparms_t TextParms {
     get => new hudtextparms_t(_Handle + Schema.GetOffset(0x8AF5579715FCA35D));

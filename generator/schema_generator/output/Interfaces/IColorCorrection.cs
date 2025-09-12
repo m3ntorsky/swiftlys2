@@ -37,5 +37,5 @@ public partial interface IColorCorrection : IBaseEntity {
   
   public ISchemaFixedString NetlookupFilename { get; }
   
-  public ref CUtlSymbolLarge LookupFilename { get; }
+  public ISchemaUntypedField LookupFilename { get; }
 }

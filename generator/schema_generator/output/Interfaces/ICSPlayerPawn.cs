@@ -131,7 +131,7 @@ public partial interface ICSPlayerPawn : ICSPlayerPawnBase {
   
   public ref bool ResetArmorNextSpawn { get; }
   
-  public ref CEntityIndex LastKillerIndex { get; }
+  public ref uint LastKillerIndex { get; }
   
   public IEntitySpottedState_t EntitySpottedState { get; }
   
@@ -151,7 +151,7 @@ public partial interface ICSPlayerPawn : ICSPlayerPawnBase {
   
   public ref bool InNoDefuseArea { get; }
   
-  public ref CEntityIndex BombSiteIndex { get; }
+  public ref uint BombSiteIndex { get; }
   
   public ref int WhichBombZone { get; }
   

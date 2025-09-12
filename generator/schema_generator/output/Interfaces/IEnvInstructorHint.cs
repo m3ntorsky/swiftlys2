@@ -5,23 +5,23 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IEnvInstructorHint : IPointEntity {
 
   
-  public ref CUtlSymbolLarge Name { get; }
+  public ISchemaUntypedField Name { get; }
   
-  public ref CUtlSymbolLarge Replace_Key { get; }
+  public ISchemaUntypedField Replace_Key { get; }
   
-  public ref CUtlSymbolLarge HintTargetEntity { get; }
+  public ISchemaUntypedField HintTargetEntity { get; }
   
   public ref int Timeout { get; }
   
   public ref int DisplayLimit { get; }
   
-  public ref CUtlSymbolLarge Icon_Onscreen { get; }
+  public ISchemaUntypedField Icon_Onscreen { get; }
   
-  public ref CUtlSymbolLarge Icon_Offscreen { get; }
+  public ISchemaUntypedField Icon_Offscreen { get; }
   
-  public ref CUtlSymbolLarge Caption { get; }
+  public ISchemaUntypedField Caption { get; }
   
-  public ref CUtlSymbolLarge ActivatorCaption { get; }
+  public ISchemaUntypedField ActivatorCaption { get; }
   
   public ref Color Color { get; }
   
@@ -45,7 +45,7 @@ public partial interface IEnvInstructorHint : IPointEntity {
   
   public ref bool SuppressRest { get; }
   
-  public ref CUtlSymbolLarge Binding { get; }
+  public ISchemaUntypedField Binding { get; }
   
   public ref bool AllowNoDrawTarget { get; }
   

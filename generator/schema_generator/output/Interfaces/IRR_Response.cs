@@ -23,5 +23,5 @@ public partial interface IRR_Response : ISchemaClass {
   
   public IResponseFollowup Followup { get; }
   
-  public ref CUtlSymbol RecipientFilter { get; }
+  public ISchemaUntypedField RecipientFilter { get; }
 }

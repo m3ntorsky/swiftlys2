@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IPhysForce : IPointEntity {
 
   
-  public ref CUtlSymbolLarge NameAttach { get; }
+  public ISchemaUntypedField NameAttach { get; }
   
   public ref float Force { get; }
   

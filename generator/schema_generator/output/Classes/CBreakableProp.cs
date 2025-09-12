@@ -69,17 +69,17 @@ internal partial class CBreakableProp : CBaseProp, IBreakableProp {
   public ref float ExplosionDelay {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD9F5AF349DB4A86F));
   }
-  public ref CUtlSymbolLarge ExplosionBuildupSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34835ABA6C));
+  public ISchemaUntypedField ExplosionBuildupSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD9F5AF34835ABA6C));
   }
-  public ref CUtlSymbolLarge ExplosionCustomEffect {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34BC8BEFBE));
+  public ISchemaUntypedField ExplosionCustomEffect {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD9F5AF34BC8BEFBE));
   }
-  public ref CUtlSymbolLarge ExplosionCustomSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34E729842A));
+  public ISchemaUntypedField ExplosionCustomSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD9F5AF34E729842A));
   }
-  public ref CUtlSymbolLarge ExplosionModifier {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34531D2849));
+  public ISchemaUntypedField ExplosionModifier {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD9F5AF34531D2849));
   }
   public ref CHandle<CBasePlayerPawn> PhysicsAttacker {
     get => ref _Handle.AsRef<CHandle<CBasePlayerPawn>>(Schema.GetOffset(0xD9F5AF347A5EB877));
@@ -93,8 +93,8 @@ internal partial class CBreakableProp : CBaseProp, IBreakableProp {
   public ref CHandle<CBaseEntity> LastAttacker {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xD9F5AF3465CAEF84));
   }
-  public ref CUtlSymbolLarge PuntSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34FB0FC5DB));
+  public ISchemaUntypedField PuntSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD9F5AF34FB0FC5DB));
   }
   public ref bool UsePuntSound {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD9F5AF34BA328938));

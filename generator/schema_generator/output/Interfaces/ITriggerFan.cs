@@ -29,7 +29,7 @@ public partial interface ITriggerFan : IBaseTrigger {
   
   public ICountdownTimer RampTimer { get; }
   
-  public ref CUtlSymbolLarge InfoFan { get; }
+  public ISchemaUntypedField InfoFan { get; }
   
   public ref float RopeForceScale { get; }
   

@@ -12,8 +12,8 @@ internal partial class CPointAngleSensor : CPointEntity, IPointAngleSensor {
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1E4356013A7C5965));
   }
-  public ref CUtlSymbolLarge LookAtName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1E435601A28C338C));
+  public ISchemaUntypedField LookAtName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1E435601A28C338C));
   }
   public ref CHandle<CBaseEntity> TargetEntity {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1E43560125D042A9));

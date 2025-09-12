@@ -12,8 +12,8 @@ internal partial class CCopyRecipientFilter : SchemaClass, ICopyRecipientFilter 
   public ref int Flags {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xB27F546C36B92FAC));
   }
-  public ref CUtlVector<CPlayerSlot> Recipients {
-    get => ref _Handle.AsRef<CUtlVector<CPlayerSlot>>(Schema.GetOffset(0xB27F546CDF6522D1));
+  public ref CUtlVector<uint> Recipients {
+    get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0xB27F546CDF6522D1));
   }
 
 

@@ -9,23 +9,23 @@ internal partial class CPointValueRemapper : CBaseEntity, IPointValueRemapper {
   public CPointValueRemapper(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge RemapLineStartName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433DD35A8A1B));
+  public ISchemaUntypedField RemapLineStartName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8CB433DD35A8A1B));
   }
-  public ref CUtlSymbolLarge RemapLineEndName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D104A9202));
+  public ISchemaUntypedField RemapLineEndName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8CB433D104A9202));
   }
-  public ref CUtlSymbolLarge OutputEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D0F9F4D94));
+  public ISchemaUntypedField OutputEntityName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8CB433D0F9F4D94));
   }
-  public ref CUtlSymbolLarge OutputEntity2Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D8D3AC53C));
+  public ISchemaUntypedField OutputEntity2Name {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8CB433D8D3AC53C));
   }
-  public ref CUtlSymbolLarge OutputEntity3Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D8F43AAE7));
+  public ISchemaUntypedField OutputEntity3Name {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8CB433D8F43AAE7));
   }
-  public ref CUtlSymbolLarge OutputEntity4Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433DCCF46672));
+  public ISchemaUntypedField OutputEntity4Name {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8CB433DCCF46672));
   }
   public ref float CurrentMomentum {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8CB433DBCCCE092));
@@ -54,20 +54,20 @@ internal partial class CPointValueRemapper : CBaseEntity, IPointValueRemapper {
   public ref float CustomOutputValue {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8CB433D952E20FE));
   }
-  public ref CUtlSymbolLarge SoundEngage {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433DA8AF4343));
+  public ISchemaUntypedField SoundEngage {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8CB433DA8AF4343));
   }
-  public ref CUtlSymbolLarge SoundDisengage {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433DC289956F));
+  public ISchemaUntypedField SoundDisengage {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8CB433DC289956F));
   }
-  public ref CUtlSymbolLarge SoundReachedValueZero {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D1C304389));
+  public ISchemaUntypedField SoundReachedValueZero {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8CB433D1C304389));
   }
-  public ref CUtlSymbolLarge SoundReachedValueOne {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D685D5F85));
+  public ISchemaUntypedField SoundReachedValueOne {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8CB433D685D5F85));
   }
-  public ref CUtlSymbolLarge SoundMovingLoop {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D990A15C8));
+  public ISchemaUntypedField SoundMovingLoop {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8CB433D990A15C8));
   }
   public ISchemaUntypedField Position {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8CB433DFC27FA8A));

@@ -7,5 +7,5 @@ public partial interface IEnvMuzzleFlash : IPointEntity {
   
   public ref float Scale { get; }
   
-  public ref CUtlSymbolLarge ParentAttachment { get; }
+  public ISchemaUntypedField ParentAttachment { get; }
 }

@@ -11,9 +11,9 @@ public partial interface IPointValueRemapper : IBaseEntity {
   
   public ref ValueRemapperInputType_t InputType { get; }
   
-  public ref CUtlSymbolLarge RemapLineStartName { get; }
+  public ISchemaUntypedField RemapLineStartName { get; }
   
-  public ref CUtlSymbolLarge RemapLineEndName { get; }
+  public ISchemaUntypedField RemapLineEndName { get; }
   
   public ref CHandle<CBaseEntity> RemapLineStart { get; }
   
@@ -29,13 +29,13 @@ public partial interface IPointValueRemapper : IBaseEntity {
   
   public ref ValueRemapperOutputType_t OutputType { get; }
   
-  public ref CUtlSymbolLarge OutputEntityName { get; }
+  public ISchemaUntypedField OutputEntityName { get; }
   
-  public ref CUtlSymbolLarge OutputEntity2Name { get; }
+  public ISchemaUntypedField OutputEntity2Name { get; }
   
-  public ref CUtlSymbolLarge OutputEntity3Name { get; }
+  public ISchemaUntypedField OutputEntity3Name { get; }
   
-  public ref CUtlSymbolLarge OutputEntity4Name { get; }
+  public ISchemaUntypedField OutputEntity4Name { get; }
   
   public ref CUtlVector<CHandle<CBaseEntity>> OutputEntities { get; }
   
@@ -69,15 +69,15 @@ public partial interface IPointValueRemapper : IBaseEntity {
   
   public ref float CustomOutputValue { get; }
   
-  public ref CUtlSymbolLarge SoundEngage { get; }
+  public ISchemaUntypedField SoundEngage { get; }
   
-  public ref CUtlSymbolLarge SoundDisengage { get; }
+  public ISchemaUntypedField SoundDisengage { get; }
   
-  public ref CUtlSymbolLarge SoundReachedValueZero { get; }
+  public ISchemaUntypedField SoundReachedValueZero { get; }
   
-  public ref CUtlSymbolLarge SoundReachedValueOne { get; }
+  public ISchemaUntypedField SoundReachedValueOne { get; }
   
-  public ref CUtlSymbolLarge SoundMovingLoop { get; }
+  public ISchemaUntypedField SoundMovingLoop { get; }
   
   public ISchemaUntypedField Position { get; }
   

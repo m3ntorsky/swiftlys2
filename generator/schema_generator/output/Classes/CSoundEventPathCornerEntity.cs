@@ -9,8 +9,8 @@ internal partial class CSoundEventPathCornerEntity : CSoundEventEntity, ISoundEv
   public CSoundEventPathCornerEntity(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge PathCorner {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9EED262E0243CF47));
+  public ISchemaUntypedField PathCorner {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9EED262E0243CF47));
   }
   public ref int CountMax {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9EED262E6A1AD493));

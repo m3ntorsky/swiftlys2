@@ -9,8 +9,8 @@ internal partial class CFilterAttributeInt : CBaseFilter, IFilterAttributeInt {
   public CFilterAttributeInt(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge AttributeName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x7CC26955E63BC84D));
+  public ISchemaUntypedField AttributeName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x7CC26955E63BC84D));
   }
 
 

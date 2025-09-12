@@ -15,11 +15,11 @@ public partial interface ITriggerSndSosOpvar : IBaseTrigger {
   
   public ref float MaxVal { get; }
   
-  public ref CUtlSymbolLarge OpvarName { get; }
+  public ISchemaUntypedField OpvarName { get; }
   
-  public ref CUtlSymbolLarge StackName { get; }
+  public ISchemaUntypedField StackName { get; }
   
-  public ref CUtlSymbolLarge OperatorName { get; }
+  public ISchemaUntypedField OperatorName { get; }
   
   public ref bool VolIs2D { get; }
   

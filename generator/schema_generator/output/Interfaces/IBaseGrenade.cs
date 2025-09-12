@@ -23,7 +23,7 @@ public partial interface IBaseGrenade : IBaseFlex {
   
   public ref float Damage { get; }
   
-  public ref CUtlSymbolLarge BounceSound { get; }
+  public ISchemaUntypedField BounceSound { get; }
   
   public ref CUtlString ExplosionSound { get; }
   

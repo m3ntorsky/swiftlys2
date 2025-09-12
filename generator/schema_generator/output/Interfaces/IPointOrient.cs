@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IPointOrient : IBaseEntity {
 
   
-  public ref CUtlSymbolLarge SpawnTargetName { get; }
+  public ISchemaUntypedField SpawnTargetName { get; }
   
   public ref CHandle<CBaseEntity> Target { get; }
   

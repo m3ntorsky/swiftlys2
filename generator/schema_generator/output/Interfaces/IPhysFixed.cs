@@ -17,7 +17,7 @@ public partial interface IPhysFixed : IPhysConstraint {
   
   public ref bool EnableAngularConstraint { get; }
   
-  public ref CUtlSymbolLarge BoneName1 { get; }
+  public ISchemaUntypedField BoneName1 { get; }
   
-  public ref CUtlSymbolLarge BoneName2 { get; }
+  public ISchemaUntypedField BoneName2 { get; }
 }

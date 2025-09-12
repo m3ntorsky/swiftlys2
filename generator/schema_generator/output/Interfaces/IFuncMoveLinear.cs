@@ -11,11 +11,11 @@ public partial interface IFuncMoveLinear : IBaseToggle {
   
   public ref Vector MoveDirParentSpace { get; }
   
-  public ref CUtlSymbolLarge SoundStart { get; }
+  public ISchemaUntypedField SoundStart { get; }
   
-  public ref CUtlSymbolLarge SoundStop { get; }
+  public ISchemaUntypedField SoundStop { get; }
   
-  public ref CUtlSymbolLarge CurrentSound { get; }
+  public ISchemaUntypedField CurrentSound { get; }
   
   public ref float BlockDamage { get; }
   

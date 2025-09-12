@@ -39,9 +39,9 @@ public partial interface ISoundOpvarSetPointEntity : ISoundOpvarSetPointBase {
   
   public ref float DynamicMaximumOcclusion { get; }
   
-  public ref CEntityHandle DynamicEntity { get; }
+  public ref CHandle<IEntityInstance> DynamicEntity { get; }
   
-  public ref CUtlSymbolLarge DynamicEntityName { get; }
+  public ISchemaUntypedField DynamicEntityName { get; }
   
   public ref float PathingDistanceNormFactor { get; }
   

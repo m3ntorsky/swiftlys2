@@ -96,8 +96,8 @@ internal partial class CNewParticleEffect : IParticleEffect, INewParticleEffect 
   public ref Vector LastMax {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x80246F232638E44D));
   }
-  public ref CSplitScreenSlot SplitScreenUser {
-    get => ref _Handle.AsRef<CSplitScreenSlot>(Schema.GetOffset(0x80246F23480103D8));
+  public ref uint SplitScreenUser {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x80246F23480103D8));
   }
   public ref Vector AggregationCenter {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x80246F23094BDF24));

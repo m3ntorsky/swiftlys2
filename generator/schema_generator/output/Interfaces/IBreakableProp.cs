@@ -47,13 +47,13 @@ public partial interface IBreakableProp : IBaseProp {
   
   public ref float ExplosionDelay { get; }
   
-  public ref CUtlSymbolLarge ExplosionBuildupSound { get; }
+  public ISchemaUntypedField ExplosionBuildupSound { get; }
   
-  public ref CUtlSymbolLarge ExplosionCustomEffect { get; }
+  public ISchemaUntypedField ExplosionCustomEffect { get; }
   
-  public ref CUtlSymbolLarge ExplosionCustomSound { get; }
+  public ISchemaUntypedField ExplosionCustomSound { get; }
   
-  public ref CUtlSymbolLarge ExplosionModifier { get; }
+  public ISchemaUntypedField ExplosionModifier { get; }
   
   public ref CHandle<CBasePlayerPawn> PhysicsAttacker { get; }
   
@@ -63,7 +63,7 @@ public partial interface IBreakableProp : IBaseProp {
   
   public ref CHandle<CBaseEntity> LastAttacker { get; }
   
-  public ref CUtlSymbolLarge PuntSound { get; }
+  public ISchemaUntypedField PuntSound { get; }
   
   public ref bool UsePuntSound { get; }
   

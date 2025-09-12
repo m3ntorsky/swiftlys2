@@ -18,14 +18,14 @@ internal partial class CFuncMoveLinear : CBaseToggle, IFuncMoveLinear {
   public ref Vector MoveDirParentSpace {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xDC0EE894EC2120EF));
   }
-  public ref CUtlSymbolLarge SoundStart {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDC0EE894E2756078));
+  public ISchemaUntypedField SoundStart {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xDC0EE894E2756078));
   }
-  public ref CUtlSymbolLarge SoundStop {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDC0EE894E9EADD9C));
+  public ISchemaUntypedField SoundStop {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xDC0EE894E9EADD9C));
   }
-  public ref CUtlSymbolLarge CurrentSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDC0EE894C4F1FE51));
+  public ISchemaUntypedField CurrentSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xDC0EE894C4F1FE51));
   }
   public ref float BlockDamage {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDC0EE894A5348091));

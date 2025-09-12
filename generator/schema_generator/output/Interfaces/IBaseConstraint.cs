@@ -9,7 +9,7 @@ public partial interface IBaseConstraint : IBoneConstraintBase {
   
   public ref Vector UpVector { get; }
   
-  public ref CUtlLeanVector<CConstraintSlave> Slaves { get; }
+  public ISchemaUntypedField Slaves { get; }
   
 // CUtlVector< CConstraintTarget >
   public ref CUtlVector Targets { get; }

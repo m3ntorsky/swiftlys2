@@ -11,11 +11,11 @@ public partial interface IConstraintSoundInfo : ISchemaClass {
   
   public ref Vector ForwardAxis { get; }
   
-  public ref CUtlSymbolLarge TravelSoundFwd { get; }
+  public ISchemaUntypedField TravelSoundFwd { get; }
   
-  public ref CUtlSymbolLarge TravelSoundBack { get; }
+  public ISchemaUntypedField TravelSoundBack { get; }
   
-  public ISchemaFixedArray<CUtlSymbolLarge> ReversalSounds { get; }
+  public ISchemaUntypedField ReversalSounds { get; }
   
   public ref bool PlayTravelSound { get; }
   

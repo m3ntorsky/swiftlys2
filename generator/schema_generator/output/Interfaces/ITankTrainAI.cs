@@ -11,11 +11,11 @@ public partial interface ITankTrainAI : IPointEntity {
   
   public ref int SoundPlaying { get; }
   
-  public ref CUtlSymbolLarge StartSoundName { get; }
+  public ISchemaUntypedField StartSoundName { get; }
   
-  public ref CUtlSymbolLarge EngineSoundName { get; }
+  public ISchemaUntypedField EngineSoundName { get; }
   
-  public ref CUtlSymbolLarge MovementSoundName { get; }
+  public ISchemaUntypedField MovementSoundName { get; }
   
-  public ref CUtlSymbolLarge TargetEntityName { get; }
+  public ISchemaUntypedField TargetEntityName { get; }
 }

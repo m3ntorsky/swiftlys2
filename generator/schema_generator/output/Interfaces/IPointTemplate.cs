@@ -5,11 +5,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IPointTemplate : ILogicalEntity {
 
   
-  public ref CUtlSymbolLarge WorldName { get; }
+  public ISchemaUntypedField WorldName { get; }
   
-  public ref CUtlSymbolLarge Source2EntityLumpName { get; }
+  public ISchemaUntypedField Source2EntityLumpName { get; }
   
-  public ref CUtlSymbolLarge EntityFilterName { get; }
+  public ISchemaUntypedField EntityFilterName { get; }
   
   public ref float TimeoutInterval { get; }
   
@@ -21,7 +21,7 @@ public partial interface IPointTemplate : ILogicalEntity {
   
   public ref CUtlVector<uint> CreatedSpawnGroupHandles { get; }
   
-  public ref CUtlVector<CEntityHandle> SpawnedEntityHandles { get; }
+  public ref CUtlVector<CHandle<IEntityInstance>> SpawnedEntityHandles { get; }
   
   public ISchemaUntypedField ScriptSpawnCallback { get; }
   

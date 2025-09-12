@@ -359,7 +359,7 @@ public partial interface ICSGameRules : ITeamplayRules {
   
   public ref CUtlString RoundEndFunFactToken { get; }
   
-  public ref CPlayerSlot RoundEndFunFactPlayerSlot { get; }
+  public ref uint RoundEndFunFactPlayerSlot { get; }
   
   public ref int RoundEndFunFactData1 { get; }
   

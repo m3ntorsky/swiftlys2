@@ -9,14 +9,14 @@ internal partial class CLogicMeasureMovement : CLogicalEntity, ILogicMeasureMove
   public CLogicMeasureMovement(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge StrMeasureTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x11EA274585646A89));
+  public ISchemaUntypedField StrMeasureTarget {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x11EA274585646A89));
   }
-  public ref CUtlSymbolLarge StrMeasureReference {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x11EA2745CF4AF1BD));
+  public ISchemaUntypedField StrMeasureReference {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x11EA2745CF4AF1BD));
   }
-  public ref CUtlSymbolLarge StrTargetReference {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x11EA27453E928D56));
+  public ISchemaUntypedField StrTargetReference {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x11EA27453E928D56));
   }
   public ref CHandle<CBaseEntity> MeasureTarget {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x11EA2745F81BC1A8));

@@ -189,8 +189,8 @@ internal partial class CParticleSystemDefinition : IParticleSystemDefinition, IP
   public ref bool ScreenSpaceEffect {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDA4320E0175D9268));
   }
-  public ref CUtlSymbolLarge TargetLayerID {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDA4320E0FD7195C9));
+  public ISchemaUntypedField TargetLayerID {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xDA4320E0FD7195C9));
   }
   public ref int SkipRenderControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDA4320E091966FFF));

@@ -29,7 +29,7 @@ public partial interface IBaseRendererSource2 : IParticleFunctionRenderer {
   
   public ref ParticleSequenceCropOverride_t CropTextureOverride { get; }
   
-  public ref CUtlLeanVector<TextureGroup_t> TexturesInput { get; }
+  public ISchemaUntypedField TexturesInput { get; }
   
   public ref float AnimationRate { get; }
   

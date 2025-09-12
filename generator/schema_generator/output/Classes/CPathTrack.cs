@@ -24,8 +24,8 @@ internal partial class CPathTrack : CPointEntity, IPathTrack {
   public ref float Length {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF86750E83AFED1B5));
   }
-  public ref CUtlSymbolLarge AltName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xF86750E8501CA457));
+  public ISchemaUntypedField AltName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xF86750E8501CA457));
   }
   public ref int IterVal {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xF86750E808061552));

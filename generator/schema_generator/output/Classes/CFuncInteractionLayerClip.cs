@@ -12,11 +12,11 @@ internal partial class CFuncInteractionLayerClip : CBaseModelEntity, IFuncIntera
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5A9288DF3A7C5965));
   }
-  public ref CUtlSymbolLarge InteractsAs {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5A9288DF488FC5DC));
+  public ISchemaUntypedField InteractsAs {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x5A9288DF488FC5DC));
   }
-  public ref CUtlSymbolLarge InteractsWith {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5A9288DF84AB4214));
+  public ISchemaUntypedField InteractsWith {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x5A9288DF84AB4214));
   }
 
 

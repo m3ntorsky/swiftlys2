@@ -11,7 +11,7 @@ public partial interface IPathKeyFrame : ILogicalEntity {
   
   public ref Quaternion Angle { get; }
   
-  public ref CUtlSymbolLarge NextKey { get; }
+  public ISchemaUntypedField NextKey { get; }
   
   public ref float NextTime { get; }
   

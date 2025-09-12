@@ -9,8 +9,8 @@ internal partial class CModelState : SchemaClass, IModelState {
   public CModelState(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge ModelName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC0A51C0D7A1D881));
+  public ISchemaUntypedField ModelName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC0A51C0D7A1D881));
   }
   public ref byte ForceLOD {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xC0A51C091D53D5F));

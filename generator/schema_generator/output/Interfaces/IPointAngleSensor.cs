@@ -7,7 +7,7 @@ public partial interface IPointAngleSensor : IPointEntity {
   
   public ref bool Disabled { get; }
   
-  public ref CUtlSymbolLarge LookAtName { get; }
+  public ISchemaUntypedField LookAtName { get; }
   
   public ref CHandle<CBaseEntity> TargetEntity { get; }
   

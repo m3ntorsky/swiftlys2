@@ -27,17 +27,17 @@ internal partial class CAmbientGeneric : CPointEntity, IAmbientGeneric {
   public ref bool Looping {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD45BE96F4FEBC8C1));
   }
-  public ref CUtlSymbolLarge Sound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD45BE96F5FF1867C));
+  public ISchemaUntypedField Sound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD45BE96F5FF1867C));
   }
-  public ref CUtlSymbolLarge SourceEntName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD45BE96F2FABBF97));
+  public ISchemaUntypedField SourceEntName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xD45BE96F2FABBF97));
   }
   public ref CHandle<CBaseEntity> SoundSource {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xD45BE96FA2036C43));
   }
-  public ref CEntityIndex SoundSourceEntIndex {
-    get => ref _Handle.AsRef<CEntityIndex>(Schema.GetOffset(0xD45BE96F5C1CB026));
+  public ref uint SoundSourceEntIndex {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xD45BE96F5C1CB026));
   }
 
 

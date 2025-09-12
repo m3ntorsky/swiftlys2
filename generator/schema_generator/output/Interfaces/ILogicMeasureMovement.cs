@@ -5,11 +5,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface ILogicMeasureMovement : ILogicalEntity {
 
   
-  public ref CUtlSymbolLarge StrMeasureTarget { get; }
+  public ISchemaUntypedField StrMeasureTarget { get; }
   
-  public ref CUtlSymbolLarge StrMeasureReference { get; }
+  public ISchemaUntypedField StrMeasureReference { get; }
   
-  public ref CUtlSymbolLarge StrTargetReference { get; }
+  public ISchemaUntypedField StrTargetReference { get; }
   
   public ref CHandle<CBaseEntity> MeasureTarget { get; }
   

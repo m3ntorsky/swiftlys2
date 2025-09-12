@@ -21,11 +21,11 @@ internal partial class CPropDataComponent : CEntityComponent, IPropDataComponent
   public ref float DmgModFire {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1CFE413E7E842D23));
   }
-  public ref CUtlSymbolLarge PhysicsDamageTableName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1CFE413E7A45F0E2));
+  public ISchemaUntypedField PhysicsDamageTableName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1CFE413E7A45F0E2));
   }
-  public ref CUtlSymbolLarge BasePropData {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1CFE413EBF60E2A1));
+  public ISchemaUntypedField BasePropData {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1CFE413EBF60E2A1));
   }
   public ref int Interactions {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1CFE413EE8050E44));

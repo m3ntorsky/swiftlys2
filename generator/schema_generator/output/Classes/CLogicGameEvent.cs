@@ -9,8 +9,8 @@ internal partial class CLogicGameEvent : CLogicalEntity, ILogicGameEvent {
   public CLogicGameEvent(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge EventName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBED9751E78114A54));
+  public ISchemaUntypedField EventName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xBED9751E78114A54));
   }
 
 

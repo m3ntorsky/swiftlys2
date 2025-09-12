@@ -7,7 +7,7 @@ public partial interface ISceneListManager : ILogicalEntity {
   
   public ref CUtlVector<CHandle<CSceneListManager>> ListManagers { get; }
   
-  public ISchemaFixedArray<CUtlSymbolLarge> Scenes { get; }
+  public ISchemaUntypedField Scenes { get; }
   
   public ref CHandle<CBaseEntity> Scenes { get; }
 }

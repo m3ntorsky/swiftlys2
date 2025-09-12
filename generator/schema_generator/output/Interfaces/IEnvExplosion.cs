@@ -21,9 +21,9 @@ public partial interface IEnvExplosion : IModelPointEntity {
   
   public ref bool CreateDebris { get; }
   
-  public ref CUtlSymbolLarge CustomEffectName { get; }
+  public ISchemaUntypedField CustomEffectName { get; }
   
-  public ref CUtlSymbolLarge CustomSoundName { get; }
+  public ISchemaUntypedField CustomSoundName { get; }
   
   public ref bool SuppressParticleImpulse { get; }
   
@@ -31,7 +31,7 @@ public partial interface IEnvExplosion : IModelPointEntity {
   
   public ref Class_T ClassIgnore2 { get; }
   
-  public ref CUtlSymbolLarge EntityIgnoreName { get; }
+  public ISchemaUntypedField EntityIgnoreName { get; }
   
   public ref CHandle<CBaseEntity> EntityIgnore { get; }
 }

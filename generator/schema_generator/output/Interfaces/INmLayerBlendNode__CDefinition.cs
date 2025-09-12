@@ -9,5 +9,5 @@ public partial interface INmLayerBlendNode__CDefinition : INmPoseNode::CDefiniti
   
   public ref bool OnlySampleBaseRootMotion { get; }
   
-  public ref CUtlLeanVectorFixedGrowable<CNmLayerBlendNode::LayerDefinition_t,3> LayerDefinition { get; }
+  public ISchemaUntypedField LayerDefinition { get; }
 }

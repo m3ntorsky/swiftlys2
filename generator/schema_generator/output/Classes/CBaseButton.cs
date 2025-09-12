@@ -21,17 +21,17 @@ internal partial class CBaseButton : CBaseToggle, IBaseButton {
   public Ilocksound_t Ls {
     get => new locksound_t(_Handle + Schema.GetOffset(0x1911FA7FD3B05E88));
   }
-  public ref CUtlSymbolLarge UseSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1911FA7FCCC8AC24));
+  public ISchemaUntypedField UseSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1911FA7FCCC8AC24));
   }
-  public ref CUtlSymbolLarge LockedSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1911FA7FB3FCB84B));
+  public ISchemaUntypedField LockedSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1911FA7FB3FCB84B));
   }
-  public ref CUtlSymbolLarge UnlockedSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1911FA7FDC697A96));
+  public ISchemaUntypedField UnlockedSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1911FA7FDC697A96));
   }
-  public ref CUtlSymbolLarge OverrideAnticipationName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1911FA7FDBCCC724));
+  public ISchemaUntypedField OverrideAnticipationName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1911FA7FDBCCC724));
   }
   public ref bool Locked {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1911FA7FD08E97F3));
@@ -63,17 +63,17 @@ internal partial class CBaseButton : CBaseToggle, IBaseButton {
   public ref int State {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1911FA7F7C824322));
   }
-  public ref CEntityHandle Constraint {
-    get => ref _Handle.AsRef<CEntityHandle>(Schema.GetOffset(0x1911FA7F16F916EC));
+  public ref CHandle<IEntityInstance> Constraint {
+    get => ref _Handle.AsRef<CHandle<IEntityInstance>>(Schema.GetOffset(0x1911FA7F16F916EC));
   }
-  public ref CEntityHandle ConstraintParent {
-    get => ref _Handle.AsRef<CEntityHandle>(Schema.GetOffset(0x1911FA7F0E2D0AA4));
+  public ref CHandle<IEntityInstance> ConstraintParent {
+    get => ref _Handle.AsRef<CHandle<IEntityInstance>>(Schema.GetOffset(0x1911FA7F0E2D0AA4));
   }
   public ref bool ForceNpcExclude {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1911FA7F4194963F));
   }
-  public ref CUtlSymbolLarge GlowEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1911FA7F8B25D228));
+  public ISchemaUntypedField GlowEntity {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1911FA7F8B25D228));
   }
 
   public void GlowEntityUpdated() {

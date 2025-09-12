@@ -11,5 +11,5 @@ public partial interface ICountdownTimer : ISchemaClass {
   
   public ref float Timescale { get; }
   
-  public ref WorldGroupId_t WorldGroupId { get; }
+  public ref uint WorldGroupId { get; }
 }

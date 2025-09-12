@@ -9,7 +9,7 @@ public partial interface ICSPlayerResource : IBaseEntity {
   
   public ISchemaFixedArray<bool> IsHostageFollowingSomeone { get; }
   
-  public ISchemaFixedArray<CEntityIndex> HostageEntityIDs { get; }
+  public ISchemaFixedArray<uint> HostageEntityIDs { get; }
   
   public ref Vector BombsiteCenterA { get; }
   

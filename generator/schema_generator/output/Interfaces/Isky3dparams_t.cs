@@ -15,5 +15,5 @@ public partial interface Isky3dparams_t : ISchemaClass {
   
   public Ifogparams_t Fog { get; }
   
-  public ref WorldGroupId_t WorldGroupID { get; }
+  public ref uint WorldGroupID { get; }
 }

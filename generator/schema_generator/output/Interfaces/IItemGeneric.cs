@@ -21,25 +21,25 @@ public partial interface IItemGeneric : IItem {
   
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> SpawnParticleEffect { get; }
   
-  public ref CUtlSymbolLarge AmbientSoundEffect { get; }
+  public ISchemaUntypedField AmbientSoundEffect { get; }
   
   public ref bool AutoStartAmbientSound { get; }
   
-  public ref CUtlSymbolLarge SpawnScriptFunction { get; }
+  public ISchemaUntypedField SpawnScriptFunction { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> PickupParticleEffect { get; }
   
-  public ref CUtlSymbolLarge PickupSoundEffect { get; }
+  public ISchemaUntypedField PickupSoundEffect { get; }
   
-  public ref CUtlSymbolLarge PickupScriptFunction { get; }
+  public ISchemaUntypedField PickupScriptFunction { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> TimeoutParticleEffect { get; }
   
-  public ref CUtlSymbolLarge TimeoutSoundEffect { get; }
+  public ISchemaUntypedField TimeoutSoundEffect { get; }
   
-  public ref CUtlSymbolLarge TimeoutScriptFunction { get; }
+  public ISchemaUntypedField TimeoutScriptFunction { get; }
   
-  public ref CUtlSymbolLarge PickupFilterName { get; }
+  public ISchemaUntypedField PickupFilterName { get; }
   
   public ref CHandle<CBaseFilter> PickupFilter { get; }
   
@@ -53,13 +53,13 @@ public partial interface IItemGeneric : IItem {
   
   public IEntityIOOutput OnTriggerEndTouch { get; }
   
-  public ref CUtlSymbolLarge AllowPickupScriptFunction { get; }
+  public ISchemaUntypedField AllowPickupScriptFunction { get; }
   
   public ref float PickupRadius { get; }
   
   public ref float TriggerRadius { get; }
   
-  public ref CUtlSymbolLarge TriggerSoundEffect { get; }
+  public ISchemaUntypedField TriggerSoundEffect { get; }
   
   public ref bool GlowWhenInTrigger { get; }
   

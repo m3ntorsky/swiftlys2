@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface ISoundEventPathCornerEntity : ISoundEventEntity {
 
   
-  public ref CUtlSymbolLarge PathCorner { get; }
+  public ISchemaUntypedField PathCorner { get; }
   
   public ref int CountMax { get; }
   

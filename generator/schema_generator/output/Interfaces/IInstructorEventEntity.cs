@@ -5,9 +5,9 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IInstructorEventEntity : IPointEntity {
 
   
-  public ref CUtlSymbolLarge Name { get; }
+  public ISchemaUntypedField Name { get; }
   
-  public ref CUtlSymbolLarge HintTargetEntity { get; }
+  public ISchemaUntypedField HintTargetEntity { get; }
   
   public ref CHandle<CBasePlayerPawn> TargetPlayer { get; }
 }

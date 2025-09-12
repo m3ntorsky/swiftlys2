@@ -7,5 +7,5 @@ public partial interface ITankTargetChange : IPointEntity {
   
   public ISchemaUntypedField NewTarget { get; }
   
-  public ref CUtlSymbolLarge NewTargetName { get; }
+  public ISchemaUntypedField NewTargetName { get; }
 }

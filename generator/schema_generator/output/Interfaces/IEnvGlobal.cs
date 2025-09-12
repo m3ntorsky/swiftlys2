@@ -7,7 +7,7 @@ public partial interface IEnvGlobal : ILogicalEntity {
   
   public ISchemaUntypedField OutCounter { get; }
   
-  public ref CUtlSymbolLarge Globalstate { get; }
+  public ISchemaUntypedField Globalstate { get; }
   
   public ref int Triggermode { get; }
   

@@ -37,13 +37,13 @@ public partial interface IFuncShatterglass : IBaseModelEntity {
   
   public ref byte InitialDamageType { get; }
   
-  public ref CUtlSymbolLarge DamagePositioningEntityName01 { get; }
+  public ISchemaUntypedField DamagePositioningEntityName01 { get; }
   
-  public ref CUtlSymbolLarge DamagePositioningEntityName02 { get; }
+  public ISchemaUntypedField DamagePositioningEntityName02 { get; }
   
-  public ref CUtlSymbolLarge DamagePositioningEntityName03 { get; }
+  public ISchemaUntypedField DamagePositioningEntityName03 { get; }
   
-  public ref CUtlSymbolLarge DamagePositioningEntityName04 { get; }
+  public ISchemaUntypedField DamagePositioningEntityName04 { get; }
   
   public ref CUtlVector<Vector> InitialDamagePositions { get; }
   

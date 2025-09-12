@@ -5,9 +5,9 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IMultiLightProxy : ILogicalEntity {
 
   
-  public ref CUtlSymbolLarge LightNameFilter { get; }
+  public ISchemaUntypedField LightNameFilter { get; }
   
-  public ref CUtlSymbolLarge LightClassFilter { get; }
+  public ISchemaUntypedField LightClassFilter { get; }
   
   public ref float LightRadiusFilter { get; }
   

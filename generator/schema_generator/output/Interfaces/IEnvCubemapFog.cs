@@ -33,7 +33,7 @@ public partial interface IEnvCubemapFog : IBaseEntity {
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> SkyMaterial { get; }
   
-  public ref CUtlSymbolLarge SkyEntity { get; }
+  public ISchemaUntypedField SkyEntity { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> FogCubemapTexture { get; }
   

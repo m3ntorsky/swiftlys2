@@ -15,8 +15,8 @@ internal partial class CNmLayerBlendNode__CDefinition : CNmPoseNode::CDefinition
   public ref bool OnlySampleBaseRootMotion {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xF9CDDBC5ABE796B2));
   }
-  public ref CUtlLeanVectorFixedGrowable<CNmLayerBlendNode::LayerDefinition_t,3> LayerDefinition {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<CNmLayerBlendNode::LayerDefinition_t,3>>(Schema.GetOffset(0xF9CDDBC51AE2DAAF));
+  public ISchemaUntypedField LayerDefinition {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xF9CDDBC51AE2DAAF));
   }
 
 

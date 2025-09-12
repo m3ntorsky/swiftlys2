@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IInfoGameEventProxy : IPointEntity {
 
   
-  public ref CUtlSymbolLarge EventName { get; }
+  public ISchemaUntypedField EventName { get; }
   
   public ref float Range { get; }
 }

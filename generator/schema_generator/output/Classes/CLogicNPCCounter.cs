@@ -57,11 +57,11 @@ internal partial class CLogicNPCCounter : CBaseEntity, ILogicNPCCounter {
   public ISchemaUntypedField OnMinPlayerDist_3 {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x485D8879C49B3017));
   }
-  public ref CEntityHandle Source {
-    get => ref _Handle.AsRef<CEntityHandle>(Schema.GetOffset(0x485D887933D3CD82));
+  public ref CHandle<IEntityInstance> Source {
+    get => ref _Handle.AsRef<CHandle<IEntityInstance>>(Schema.GetOffset(0x485D887933D3CD82));
   }
-  public ref CUtlSymbolLarge SourceEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x485D88796C1387C0));
+  public ISchemaUntypedField SourceEntityName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x485D88796C1387C0));
   }
   public ref float DistanceMax {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x485D8879FDEBADA6));
@@ -81,8 +81,8 @@ internal partial class CLogicNPCCounter : CBaseEntity, ILogicNPCCounter {
   public ref int MaxFactorAll {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x485D88793E95FEF5));
   }
-  public ref CUtlSymbolLarge NPCClassname_1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x485D8879DF49E85F));
+  public ISchemaUntypedField NPCClassname_1 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x485D8879DF49E85F));
   }
   public ref int NPCState_1 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x485D887959CDEB41));
@@ -105,8 +105,8 @@ internal partial class CLogicNPCCounter : CBaseEntity, ILogicNPCCounter {
   public ref float DefaultDist_1 {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x485D88793E54B91C));
   }
-  public ref CUtlSymbolLarge NPCClassname_2 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x485D8879E049E9F2));
+  public ISchemaUntypedField NPCClassname_2 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x485D8879E049E9F2));
   }
   public ref int NPCState_2 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x485D887956CDE688));
@@ -129,8 +129,8 @@ internal partial class CLogicNPCCounter : CBaseEntity, ILogicNPCCounter {
   public ref float DefaultDist_2 {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x485D88794154BDD5));
   }
-  public ref CUtlSymbolLarge NPCClassname_3 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x485D8879E149EB85));
+  public ISchemaUntypedField NPCClassname_3 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x485D8879E149EB85));
   }
   public ref int NPCState_3 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x485D887957CDE81B));

@@ -5,11 +5,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface ICitadelSoundOpvarSetOBB : IBaseEntity {
 
   
-  public ref CUtlSymbolLarge StackName { get; }
+  public ISchemaUntypedField StackName { get; }
   
-  public ref CUtlSymbolLarge OperatorName { get; }
+  public ISchemaUntypedField OperatorName { get; }
   
-  public ref CUtlSymbolLarge OpvarName { get; }
+  public ISchemaUntypedField OpvarName { get; }
   
   public ref Vector DistanceInnerMins { get; }
   

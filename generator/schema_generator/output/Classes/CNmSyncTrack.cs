@@ -9,8 +9,8 @@ internal partial class CNmSyncTrack : SchemaClass, INmSyncTrack {
   public CNmSyncTrack(nint handle) : base(handle) {
   }
 
-  public ref CUtlLeanVectorFixedGrowable<CNmSyncTrack::Event_t,10> SyncEvents {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<CNmSyncTrack::Event_t,10>>(Schema.GetOffset(0x29C7FA0336BAB4FF));
+  public ISchemaUntypedField SyncEvents {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x29C7FA0336BAB4FF));
   }
   public ref int StartEventOffset {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x29C7FA03DDBC640E));

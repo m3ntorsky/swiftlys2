@@ -9,8 +9,8 @@ internal partial class CScriptComponent : CEntityComponent, IScriptComponent {
   public CScriptComponent(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge ScriptClassName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC922CE544F9B6681));
+  public ISchemaUntypedField ScriptClassName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC922CE544F9B6681));
   }
 
 

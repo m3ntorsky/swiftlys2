@@ -7,5 +7,5 @@ public partial interface ITriggerActiveWeaponDetect : IBaseTrigger {
   
   public IEntityIOOutput OnTouchedActiveWeapon { get; }
   
-  public ref CUtlSymbolLarge WeaponClassName { get; }
+  public ISchemaUntypedField WeaponClassName { get; }
 }

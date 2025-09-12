@@ -9,8 +9,8 @@ internal partial class CEntityInstance : SchemaClass, IEntityInstance {
   public CEntityInstance(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge PrivateVScripts {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB6DD442EB087F3B2));
+  public ISchemaUntypedField PrivateVScripts {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB6DD442EB087F3B2));
   }
   public IScriptComponent CScriptComponent {
     get => new CScriptComponent(_Handle + Schema.GetOffset(0xB6DD442E3F4202B4));

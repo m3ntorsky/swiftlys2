@@ -36,8 +36,8 @@ internal partial class CMomentaryRotButton : CRotButton, IMomentaryRotButton {
   public ref float IdealYaw {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x85A553CD48C477F5));
   }
-  public ref CUtlSymbolLarge Noise {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x85A553CD1F22B8CC));
+  public ISchemaUntypedField Noise {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x85A553CD1F22B8CC));
   }
   public ref bool UpdateTarget {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x85A553CDBE14BF5D));

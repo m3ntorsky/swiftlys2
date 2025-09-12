@@ -63,7 +63,7 @@ public partial interface IFuncRotator : IBaseModelEntity {
   
   public ref Vector LookAtForcedUp { get; }
   
-  public ref CUtlSymbolLarge StrRotatorTarget { get; }
+  public ISchemaUntypedField StrRotatorTarget { get; }
   
   public ref bool RecordHistory { get; }
   

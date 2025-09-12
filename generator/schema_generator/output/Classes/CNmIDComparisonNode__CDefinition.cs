@@ -15,8 +15,8 @@ internal partial class CNmIDComparisonNode__CDefinition : CNmBoolValueNode::CDef
   public ref CNmIDComparisonNode::Comparison_t Comparison {
     get => ref _Handle.AsRef<CNmIDComparisonNode::Comparison_t>(Schema.GetOffset(0xE0D928B5897F8DE4));
   }
-  public ref CUtlLeanVectorFixedGrowable<CGlobalSymbol,4> ComparisionIDs {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<CGlobalSymbol,4>>(Schema.GetOffset(0xE0D928B5E68D53FD));
+  public ISchemaUntypedField ComparisionIDs {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xE0D928B5E68D53FD));
   }
 
 

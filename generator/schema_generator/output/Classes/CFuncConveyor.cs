@@ -9,8 +9,8 @@ internal partial class CFuncConveyor : CBaseModelEntity, IFuncConveyor {
   public CFuncConveyor(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge ConveyorModels {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6E29EBA973AE4DBB));
+  public ISchemaUntypedField ConveyorModels {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6E29EBA973AE4DBB));
   }
   public ref float TransitionDurationSeconds {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6E29EBA9D5E92B1D));

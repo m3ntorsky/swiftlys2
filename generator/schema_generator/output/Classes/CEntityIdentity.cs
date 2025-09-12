@@ -9,17 +9,17 @@ internal partial class CEntityIdentity : SchemaClass, IEntityIdentity {
   public CEntityIdentity(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xAE42345F4D8F5786));
+  public ISchemaUntypedField Name {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xAE42345F4D8F5786));
   }
-  public ref CUtlSymbolLarge DesignerName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xAE42345FBFC1F33F));
+  public ISchemaUntypedField DesignerName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xAE42345FBFC1F33F));
   }
   public ref uint Flags {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xAE42345FDC74A14C));
   }
-  public ref WorldGroupId_t WorldGroupId {
-    get => ref _Handle.AsRef<WorldGroupId_t>(Schema.GetOffset(0xAE42345F0BECFAC7));
+  public ref uint WorldGroupId {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xAE42345F0BECFAC7));
   }
   public ref uint DataObjectTypes {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xAE42345F6C7E475F));

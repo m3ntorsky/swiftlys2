@@ -9,14 +9,14 @@ internal partial class CPointCommentaryNode : CBaseAnimGraph, IPointCommentaryNo
   public CPointCommentaryNode(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge PreCommands {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1EE820D5A9BA18C4));
+  public ISchemaUntypedField PreCommands {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1EE820D5A9BA18C4));
   }
-  public ref CUtlSymbolLarge PostCommands {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1EE820D52B9BBDED));
+  public ISchemaUntypedField PostCommands {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1EE820D52B9BBDED));
   }
-  public ref CUtlSymbolLarge ViewTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1EE820D57F25C3A9));
+  public ISchemaUntypedField ViewTarget {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1EE820D57F25C3A9));
   }
   public ref CHandle<CBaseEntity> ViewTarget {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1EE820D5367DC4F3));
@@ -24,8 +24,8 @@ internal partial class CPointCommentaryNode : CBaseAnimGraph, IPointCommentaryNo
   public ref CHandle<CBaseEntity> ViewTargetAngles {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1EE820D57036CBB3));
   }
-  public ref CUtlSymbolLarge ViewPosition {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1EE820D5F077F9E3));
+  public ISchemaUntypedField ViewPosition {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1EE820D5F077F9E3));
   }
   public ref CHandle<CBaseEntity> ViewPositionMover {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1EE820D596E47DAA));

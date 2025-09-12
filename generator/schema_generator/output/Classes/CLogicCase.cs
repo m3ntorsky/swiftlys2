@@ -9,8 +9,8 @@ internal partial class CLogicCase : CLogicalEntity, ILogicCase {
   public CLogicCase(nint handle) : base(handle) {
   }
 
-  public ISchemaFixedArray<CUtlSymbolLarge> Case {
-    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0x4B6BB20CBD726255, 32, 8, 8);
+  public ISchemaUntypedField Case {
+    get => new SchemaUntypedField(_Handle, 0x4B6BB20CBD726255, 32, 8, 8);
   }
   public ref int ShuffleCases {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4B6BB20C3441354F));

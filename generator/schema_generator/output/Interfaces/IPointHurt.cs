@@ -13,7 +13,7 @@ public partial interface IPointHurt : IPointEntity {
   
   public ref float Delay { get; }
   
-  public ref CUtlSymbolLarge StrTarget { get; }
+  public ISchemaUntypedField StrTarget { get; }
   
   public ref CHandle<CBaseEntity> Activator { get; }
 }

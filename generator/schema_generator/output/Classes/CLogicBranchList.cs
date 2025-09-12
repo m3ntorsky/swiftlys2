@@ -9,8 +9,8 @@ internal partial class CLogicBranchList : CLogicalEntity, ILogicBranchList {
   public CLogicBranchList(nint handle) : base(handle) {
   }
 
-  public ISchemaFixedArray<CUtlSymbolLarge> LogicBranchNames {
-    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0xB21E12B82C1677D7, 16, 8, 8);
+  public ISchemaUntypedField LogicBranchNames {
+    get => new SchemaUntypedField(_Handle, 0xB21E12B82C1677D7, 16, 8, 8);
   }
   public ref CUtlVector<CHandle<CBaseEntity>> LogicBranchList {
     get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(Schema.GetOffset(0xB21E12B8E4DEC285));

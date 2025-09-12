@@ -27,8 +27,8 @@ internal partial class VPhysXAggregateData_t : SchemaClass, IVPhysXAggregateData
   public ref CUtlVector<ushort> IndexHash {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0xB689D5A1FDBDCAEB));
   }
-  public ref CUtlVector<matrix3x4a_t> BindPose {
-    get => ref _Handle.AsRef<CUtlVector<matrix3x4a_t>>(Schema.GetOffset(0xB689D5A1751196C3));
+  public ref CUtlVector<matrix3x4_t> BindPose {
+    get => ref _Handle.AsRef<CUtlVector<matrix3x4_t>>(Schema.GetOffset(0xB689D5A1751196C3));
   }
   public ref CUtlVector Parts {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB689D5A1C7044545));

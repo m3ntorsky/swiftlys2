@@ -27,11 +27,11 @@ internal partial class CPhysFixed : CPhysConstraint, IPhysFixed {
   public ref bool EnableAngularConstraint {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8E8A3838F98A5C8B));
   }
-  public ref CUtlSymbolLarge BoneName1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8E8A3838EA2A0C6A));
+  public ISchemaUntypedField BoneName1 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x8E8A3838EA2A0C6A));
   }
-  public ref CUtlSymbolLarge BoneName2 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8E8A3838E92A0AD7));
+  public ISchemaUntypedField BoneName2 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x8E8A3838E92A0AD7));
   }
 
 

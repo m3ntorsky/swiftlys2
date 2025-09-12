@@ -9,8 +9,8 @@ internal partial class CCSPlace : CServerOnlyModelEntity, ICSPlace {
   public CCSPlace(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x7AF35BE34D8F5786));
+  public ISchemaUntypedField Name {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x7AF35BE34D8F5786));
   }
 
 

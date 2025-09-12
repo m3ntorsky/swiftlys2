@@ -5,13 +5,13 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IFuncMover : IBaseModelEntity {
 
   
-  public ref CUtlSymbolLarge PathName { get; }
+  public ISchemaUntypedField PathName { get; }
   
   public ref CHandle<CPathMover> PathMover { get; }
   
-  public ref CUtlSymbolLarge PathNodeStart { get; }
+  public ISchemaUntypedField PathNodeStart { get; }
   
-  public ref CUtlSymbolLarge PathNodeEnd { get; }
+  public ISchemaUntypedField PathNodeEnd { get; }
   
   public ref CFuncMover::Move_t MoveType { get; }
   
@@ -49,19 +49,19 @@ public partial interface IFuncMover : IBaseModelEntity {
   
   public ref float PathLocationToBeginStop { get; }
   
-  public ref CUtlSymbolLarge StartForwardSound { get; }
+  public ISchemaUntypedField StartForwardSound { get; }
   
-  public ref CUtlSymbolLarge LoopForwardSound { get; }
+  public ISchemaUntypedField LoopForwardSound { get; }
   
-  public ref CUtlSymbolLarge StopForwardSound { get; }
+  public ISchemaUntypedField StopForwardSound { get; }
   
-  public ref CUtlSymbolLarge StartReverseSound { get; }
+  public ISchemaUntypedField StartReverseSound { get; }
   
-  public ref CUtlSymbolLarge LoopReverseSound { get; }
+  public ISchemaUntypedField LoopReverseSound { get; }
   
-  public ref CUtlSymbolLarge StopReverseSound { get; }
+  public ISchemaUntypedField StopReverseSound { get; }
   
-  public ref CUtlSymbolLarge ArriveAtDestinationSound { get; }
+  public ISchemaUntypedField ArriveAtDestinationSound { get; }
   
   public IEntityIOOutput OnMovementEnd { get; }
   
@@ -85,7 +85,7 @@ public partial interface IFuncMover : IBaseModelEntity {
   
   public IEntityIOOutput OnNodePassed { get; }
   
-  public ref CUtlSymbolLarge OrientationMatchEntityName { get; }
+  public ISchemaUntypedField OrientationMatchEntityName { get; }
   
   public ref CHandle<CBaseEntity> OrientationMatchEntity { get; }
   
@@ -119,7 +119,7 @@ public partial interface IFuncMover : IBaseModelEntity {
   
   public ref float CurFollowSpeed { get; }
   
-  public ref CUtlSymbolLarge StrOrientationFaceEntityName { get; }
+  public ISchemaUntypedField StrOrientationFaceEntityName { get; }
   
   public ref CHandle<CBaseEntity> OrientationFaceEntity { get; }
   

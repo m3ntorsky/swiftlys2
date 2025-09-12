@@ -54,20 +54,20 @@ internal partial class CFuncTrackTrain : CBaseModelEntity, IFuncTrackTrain {
   public ref float Dir {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x416637FBD9FF9EB4));
   }
-  public ref CUtlSymbolLarge SoundMove {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x416637FB73E14089));
+  public ISchemaUntypedField SoundMove {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x416637FB73E14089));
   }
-  public ref CUtlSymbolLarge SoundMovePing {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x416637FB68B489FD));
+  public ISchemaUntypedField SoundMovePing {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x416637FB68B489FD));
   }
-  public ref CUtlSymbolLarge SoundStart {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x416637FB7CA15A30));
+  public ISchemaUntypedField SoundStart {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x416637FB7CA15A30));
   }
-  public ref CUtlSymbolLarge SoundStop {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x416637FB34D8E0B4));
+  public ISchemaUntypedField SoundStop {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x416637FB34D8E0B4));
   }
-  public ref CUtlSymbolLarge StrPathTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x416637FB7AF8129A));
+  public ISchemaUntypedField StrPathTarget {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x416637FB7AF8129A));
   }
   public ref float MoveSoundMinDuration {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x416637FB00A53693));

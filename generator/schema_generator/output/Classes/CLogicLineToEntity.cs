@@ -12,8 +12,8 @@ internal partial class CLogicLineToEntity : CLogicalEntity, ILogicLineToEntity {
   public ISchemaUntypedField Line {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x61067DC85589FAA7));
   }
-  public ref CUtlSymbolLarge SourceName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x61067DC82F9BA2DB));
+  public ISchemaUntypedField SourceName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x61067DC82F9BA2DB));
   }
   public ref CHandle<CBaseEntity> StartEntity {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x61067DC8904F2828));

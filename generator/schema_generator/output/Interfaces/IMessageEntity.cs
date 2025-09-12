@@ -7,7 +7,7 @@ public partial interface IMessageEntity : IPointEntity {
   
   public ref int Radius { get; }
   
-  public ref CUtlSymbolLarge MessageText { get; }
+  public ISchemaUntypedField MessageText { get; }
   
   public ref bool DrawText { get; }
   

@@ -9,8 +9,8 @@ internal partial class CSoundStackSave : CLogicalEntity, ISoundStackSave {
   public CSoundStackSave(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge StackName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xF9E7A22E3B3E9CD4));
+  public ISchemaUntypedField StackName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xF9E7A22E3B3E9CD4));
   }
 
 

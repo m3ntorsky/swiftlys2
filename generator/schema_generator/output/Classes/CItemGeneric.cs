@@ -33,35 +33,35 @@ internal partial class CItemGeneric : CItem, IItemGeneric {
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> SpawnParticleEffect {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xE5C051B6576146D5));
   }
-  public ref CUtlSymbolLarge AmbientSoundEffect {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B65DD78861));
+  public ISchemaUntypedField AmbientSoundEffect {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xE5C051B65DD78861));
   }
   public ref bool AutoStartAmbientSound {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE5C051B678660D41));
   }
-  public ref CUtlSymbolLarge SpawnScriptFunction {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B6BC2C9805));
+  public ISchemaUntypedField SpawnScriptFunction {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xE5C051B6BC2C9805));
   }
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> PickupParticleEffect {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xE5C051B6A61E7280));
   }
-  public ref CUtlSymbolLarge PickupSoundEffect {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B6ECB75E7B));
+  public ISchemaUntypedField PickupSoundEffect {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xE5C051B6ECB75E7B));
   }
-  public ref CUtlSymbolLarge PickupScriptFunction {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B64242F490));
+  public ISchemaUntypedField PickupScriptFunction {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xE5C051B64242F490));
   }
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> TimeoutParticleEffect {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xE5C051B6FE95C38D));
   }
-  public ref CUtlSymbolLarge TimeoutSoundEffect {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B6F5AD0260));
+  public ISchemaUntypedField TimeoutSoundEffect {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xE5C051B6F5AD0260));
   }
-  public ref CUtlSymbolLarge TimeoutScriptFunction {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B6E8BF2F2D));
+  public ISchemaUntypedField TimeoutScriptFunction {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xE5C051B6E8BF2F2D));
   }
-  public ref CUtlSymbolLarge PickupFilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B613C0B032));
+  public ISchemaUntypedField PickupFilterName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xE5C051B613C0B032));
   }
   public ref CHandle<CBaseFilter> PickupFilter {
     get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0xE5C051B605240E41));
@@ -81,8 +81,8 @@ internal partial class CItemGeneric : CItem, IItemGeneric {
   public IEntityIOOutput OnTriggerEndTouch {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xE5C051B63DA3CB84));
   }
-  public ref CUtlSymbolLarge AllowPickupScriptFunction {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B6DC2DF75F));
+  public ISchemaUntypedField AllowPickupScriptFunction {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xE5C051B6DC2DF75F));
   }
   public ref float PickupRadius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE5C051B64EED9A9D));
@@ -90,8 +90,8 @@ internal partial class CItemGeneric : CItem, IItemGeneric {
   public ref float TriggerRadius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE5C051B6051F7F0F));
   }
-  public ref CUtlSymbolLarge TriggerSoundEffect {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B67E4EA459));
+  public ISchemaUntypedField TriggerSoundEffect {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xE5C051B67E4EA459));
   }
   public ref bool GlowWhenInTrigger {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE5C051B6FCAD755D));

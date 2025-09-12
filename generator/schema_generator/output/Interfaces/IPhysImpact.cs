@@ -9,5 +9,5 @@ public partial interface IPhysImpact : IPointEntity {
   
   public ref float Distance { get; }
   
-  public ref CUtlSymbolLarge DirectionEntityName { get; }
+  public ISchemaUntypedField DirectionEntityName { get; }
 }

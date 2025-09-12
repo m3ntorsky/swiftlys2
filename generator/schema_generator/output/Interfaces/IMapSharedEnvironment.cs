@@ -5,5 +5,5 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IMapSharedEnvironment : ILogicalEntity {
 
   
-  public ref CUtlSymbolLarge TargetMapName { get; }
+  public ISchemaUntypedField TargetMapName { get; }
 }

@@ -18,11 +18,11 @@ internal partial class CNavLinkAreaEntity : CPointEntity, INavLinkAreaEntity {
   public ref QAngle LocatorAnglesOffset {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0x1A0F18517AFB1B3D));
   }
-  public ref CUtlSymbolLarge StrMovementForward {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1A0F18517B8433BA));
+  public ISchemaUntypedField StrMovementForward {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1A0F18517B8433BA));
   }
-  public ref CUtlSymbolLarge StrMovementReverse {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1A0F1851E8768AA5));
+  public ISchemaUntypedField StrMovementReverse {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1A0F1851E8768AA5));
   }
   public ref bool Enabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1A0F18516154EB7E));
@@ -30,8 +30,8 @@ internal partial class CNavLinkAreaEntity : CPointEntity, INavLinkAreaEntity {
   public ref bool AllowCrossMovableConnections {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1A0F1851A1D23BD9));
   }
-  public ref CUtlSymbolLarge StrFilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1A0F1851E3C44CC9));
+  public ISchemaUntypedField StrFilterName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1A0F1851E3C44CC9));
   }
   public ref CHandle<CBaseFilter> Filter {
     get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0x1A0F185145D9E0B1));

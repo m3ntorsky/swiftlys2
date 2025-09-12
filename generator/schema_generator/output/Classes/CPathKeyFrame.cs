@@ -18,8 +18,8 @@ internal partial class CPathKeyFrame : CLogicalEntity, IPathKeyFrame {
   public ref Quaternion Angle {
     get => ref _Handle.AsRef<Quaternion>(Schema.GetOffset(0x34025185CE339C27));
   }
-  public ref CUtlSymbolLarge NextKey {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x340251858326E814));
+  public ISchemaUntypedField NextKey {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x340251858326E814));
   }
   public ref float NextTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x340251854F129C67));

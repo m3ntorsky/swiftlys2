@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IDynamicNavConnectionsVolume : ITriggerMultiple {
 
   
-  public ref CUtlSymbolLarge ConnectionTarget { get; }
+  public ISchemaUntypedField ConnectionTarget { get; }
   
 // CUtlVector< DynamicVolumeDef_t >
   public ref CUtlVector Connections { get; }

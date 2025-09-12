@@ -33,8 +33,8 @@ internal partial class CMaterialDrawDescriptor : SchemaClass, IMaterialDrawDescr
   public ref byte MeshletPackedIVBIndex {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xE7C21000A98C8BAC));
   }
-  public ref CUtlLeanVector<CMaterialDrawDescriptor::RigidMeshPart_t> RigidMeshParts {
-    get => ref _Handle.AsRef<CUtlLeanVector<CMaterialDrawDescriptor::RigidMeshPart_t>>(Schema.GetOffset(0xE7C2100062848C01));
+  public ISchemaUntypedField RigidMeshParts {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xE7C2100062848C01));
   }
   public ref RenderPrimitiveType_t PrimitiveType {
     get => ref _Handle.AsRef<RenderPrimitiveType_t>(Schema.GetOffset(0xE7C2100041517C4A));

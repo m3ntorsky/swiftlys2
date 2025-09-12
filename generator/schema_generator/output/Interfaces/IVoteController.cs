@@ -23,9 +23,9 @@ public partial interface IVoteController : IBaseEntity {
   
   public ISchemaFixedArray<int> VotesCast { get; }
   
-  public ref CPlayerSlot PlayerHoldingVote { get; }
+  public ref uint PlayerHoldingVote { get; }
   
-  public ref CPlayerSlot PlayerOverrideForVote { get; }
+  public ref uint PlayerOverrideForVote { get; }
   
   public ref int HighestCountIndex { get; }
   

@@ -11,11 +11,11 @@ public partial interface IFuncTrackChange : IFuncPlatRot {
   
   public IFuncTrackTrain Train { get; }
   
-  public ref CUtlSymbolLarge TrackTopName { get; }
+  public ISchemaUntypedField TrackTopName { get; }
   
-  public ref CUtlSymbolLarge TrackBottomName { get; }
+  public ISchemaUntypedField TrackBottomName { get; }
   
-  public ref CUtlSymbolLarge TrainName { get; }
+  public ISchemaUntypedField TrainName { get; }
   
   public ref TRAIN_CODE Code { get; }
   

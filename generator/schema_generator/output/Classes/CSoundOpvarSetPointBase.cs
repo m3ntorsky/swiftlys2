@@ -12,11 +12,11 @@ internal partial class CSoundOpvarSetPointBase : CBaseEntity, ISoundOpvarSetPoin
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6C95A3E03A7C5965));
   }
-  public ref CEntityHandle Source {
-    get => ref _Handle.AsRef<CEntityHandle>(Schema.GetOffset(0x6C95A3E033D3CD82));
+  public ref CHandle<IEntityInstance> Source {
+    get => ref _Handle.AsRef<CHandle<IEntityInstance>>(Schema.GetOffset(0x6C95A3E033D3CD82));
   }
-  public ref CUtlSymbolLarge SourceEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6C95A3E06C1387C0));
+  public ISchemaUntypedField SourceEntityName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6C95A3E06C1387C0));
   }
   public ref Vector LastPosition {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6C95A3E0A5B68002));

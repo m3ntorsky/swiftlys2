@@ -15,8 +15,8 @@ internal partial class CNmStateMachineNode__StateDefinition_t : SchemaClass, INm
   public ref short EntryConditionNodeIdx {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x539BB8180B262993));
   }
-  public ref CUtlLeanVectorFixedGrowable<CNmStateMachineNode::TransitionDefinition_t,5> TransitionDefinitions {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<CNmStateMachineNode::TransitionDefinition_t,5>>(Schema.GetOffset(0x539BB818F02EF580));
+  public ISchemaUntypedField TransitionDefinitions {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x539BB818F02EF580));
   }
 
 

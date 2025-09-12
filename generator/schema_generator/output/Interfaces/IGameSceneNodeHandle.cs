@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IGameSceneNodeHandle : ISchemaClass {
 
   
-  public ref CEntityHandle Owner { get; }
+  public ref CHandle<IEntityInstance> Owner { get; }
   
   public ref CUtlStringToken Name { get; }
 }

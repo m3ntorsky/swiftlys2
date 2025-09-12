@@ -7,17 +7,17 @@ public partial interface ISoundOpvarSetPointBase : IBaseEntity {
   
   public ref bool Disabled { get; }
   
-  public ref CEntityHandle Source { get; }
+  public ref CHandle<IEntityInstance> Source { get; }
   
-  public ref CUtlSymbolLarge SourceEntityName { get; }
+  public ISchemaUntypedField SourceEntityName { get; }
   
   public ref Vector LastPosition { get; }
   
-  public ref CUtlSymbolLarge StackName { get; }
+  public ISchemaUntypedField StackName { get; }
   
-  public ref CUtlSymbolLarge OperatorName { get; }
+  public ISchemaUntypedField OperatorName { get; }
   
-  public ref CUtlSymbolLarge OpvarName { get; }
+  public ISchemaUntypedField OpvarName { get; }
   
   public ref int OpvarIndex { get; }
   

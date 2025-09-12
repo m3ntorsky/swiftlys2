@@ -7,5 +7,5 @@ public partial interface ISimpleSimTimer : ISchemaClass {
   
   public IGameTime_t Next { get; }
   
-  public ref WorldGroupId_t WorldGroupId { get; }
+  public ref uint WorldGroupId { get; }
 }

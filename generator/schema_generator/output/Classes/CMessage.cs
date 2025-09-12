@@ -9,8 +9,8 @@ internal partial class CMessage : CPointEntity, IMessage {
   public CMessage(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Message {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xCCCF499CC5243DC));
+  public ISchemaUntypedField Message {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xCCCF499CC5243DC));
   }
   public ref float MessageVolume {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCCCF499C87F24D6));
@@ -21,8 +21,8 @@ internal partial class CMessage : CPointEntity, IMessage {
   public ref float Radius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCCCF4997C5B0533));
   }
-  public ref CUtlSymbolLarge Noise {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xCCCF4991F22B8CC));
+  public ISchemaUntypedField Noise {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xCCCF4991F22B8CC));
   }
   public IEntityIOOutput OnShowMessage {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0xCCCF499D586D920));

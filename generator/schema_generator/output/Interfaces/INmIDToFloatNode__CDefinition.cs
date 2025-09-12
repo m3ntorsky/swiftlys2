@@ -9,7 +9,7 @@ public partial interface INmIDToFloatNode__CDefinition : INmFloatValueNode::CDef
   
   public ref float DefaultValue { get; }
   
-  public ref CUtlLeanVectorFixedGrowable<CGlobalSymbol,5> IDs { get; }
+  public ISchemaUntypedField IDs { get; }
   
-  public ref CUtlLeanVectorFixedGrowable<float32,5> Values { get; }
+  public ISchemaUntypedField Values { get; }
 }

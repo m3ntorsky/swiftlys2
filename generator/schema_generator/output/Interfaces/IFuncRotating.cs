@@ -25,7 +25,7 @@ public partial interface IFuncRotating : IBaseModelEntity {
   
   public ref float BlockDamage { get; }
   
-  public ref CUtlSymbolLarge NoiseRunning { get; }
+  public ISchemaUntypedField NoiseRunning { get; }
   
   public ref bool Reversed { get; }
   

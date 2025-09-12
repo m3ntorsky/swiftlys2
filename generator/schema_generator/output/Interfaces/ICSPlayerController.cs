@@ -19,7 +19,7 @@ public partial interface ICSPlayerController : IBasePlayerController {
   
   public ref uint UiCommunicationMuteFlags { get; }
   
-  public ref CUtlSymbolLarge CrosshairCodes { get; }
+  public ISchemaUntypedField CrosshairCodes { get; }
   
   public ref byte PendingTeamNum { get; }
   
@@ -47,7 +47,7 @@ public partial interface ICSPlayerController : IBasePlayerController {
   
   public IGameTime_t LastJoinTeamTime { get; }
   
-  public ref CUtlSymbolLarge Clan { get; }
+  public ISchemaUntypedField Clan { get; }
   
   public ISchemaFixedString ClanName { get; }
   
@@ -117,7 +117,7 @@ public partial interface ICSPlayerController : IBasePlayerController {
   
   public ref int DesiredObserverMode { get; }
   
-  public ref CEntityHandle DesiredObserverTarget { get; }
+  public ref CHandle<IEntityInstance> DesiredObserverTarget { get; }
   
   public ref bool PawnIsAlive { get; }
   

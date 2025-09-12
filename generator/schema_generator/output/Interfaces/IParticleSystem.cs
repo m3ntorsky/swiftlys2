@@ -37,9 +37,9 @@ public partial interface IParticleSystem : IBaseModelEntity {
   
   public ref bool StartActive { get; }
   
-  public ref CUtlSymbolLarge EffectName { get; }
+  public ISchemaUntypedField EffectName { get; }
   
-  public ISchemaFixedArray<CUtlSymbolLarge> ControlPointNames { get; }
+  public ISchemaUntypedField ControlPointNames { get; }
   
   public ref int DataCP { get; }
   

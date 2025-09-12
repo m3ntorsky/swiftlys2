@@ -11,9 +11,9 @@ public partial interface IPhysicsSpring : IBaseEntity {
   
   public ref float RestLength { get; }
   
-  public ref CUtlSymbolLarge NameAttachStart { get; }
+  public ISchemaUntypedField NameAttachStart { get; }
   
-  public ref CUtlSymbolLarge NameAttachEnd { get; }
+  public ISchemaUntypedField NameAttachEnd { get; }
   
   public ref Vector Start { get; }
   

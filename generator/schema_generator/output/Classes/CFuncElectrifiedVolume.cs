@@ -9,14 +9,14 @@ internal partial class CFuncElectrifiedVolume : CFuncBrush, IFuncElectrifiedVolu
   public CFuncElectrifiedVolume(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge EffectInterpenetrateName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A0E5987691FB19));
+  public ISchemaUntypedField EffectInterpenetrateName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x51A0E5987691FB19));
   }
-  public ref CUtlSymbolLarge EffectZapName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A0E598BE142B78));
+  public ISchemaUntypedField EffectZapName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x51A0E598BE142B78));
   }
-  public ref CUtlSymbolLarge EffectSource {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A0E598300F4ED9));
+  public ISchemaUntypedField EffectSource {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x51A0E598300F4ED9));
   }
 
   public void EffectNameUpdated() {

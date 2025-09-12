@@ -7,7 +7,7 @@ public partial interface IAttributeManager__cached_attribute_float_t : ISchemaCl
   
   public ref float In { get; }
   
-  public ref CUtlSymbolLarge AttribHook { get; }
+  public ISchemaUntypedField AttribHook { get; }
   
   public ref float Out { get; }
 }

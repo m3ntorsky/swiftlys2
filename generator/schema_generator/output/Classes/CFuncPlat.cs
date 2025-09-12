@@ -9,8 +9,8 @@ internal partial class CFuncPlat : CBasePlatTrain, IFuncPlat {
   public CFuncPlat(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Noise {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x57400D651F22B8CC));
+  public ISchemaUntypedField Noise {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x57400D651F22B8CC));
   }
 
 

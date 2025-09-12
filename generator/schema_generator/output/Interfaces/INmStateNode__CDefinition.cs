@@ -7,15 +7,15 @@ public partial interface INmStateNode__CDefinition : INmPoseNode::CDefinition {
   
   public ref short ChildNodeIdx { get; }
   
-  public ref CUtlLeanVectorFixedGrowable<CGlobalSymbol,3> EntryEvents { get; }
+  public ISchemaUntypedField EntryEvents { get; }
   
-  public ref CUtlLeanVectorFixedGrowable<CGlobalSymbol,3> ExecuteEvents { get; }
+  public ISchemaUntypedField ExecuteEvents { get; }
   
-  public ref CUtlLeanVectorFixedGrowable<CGlobalSymbol,3> ExitEvents { get; }
+  public ISchemaUntypedField ExitEvents { get; }
   
-  public ref CUtlLeanVectorFixedGrowable<CNmStateNode::TimedEvent_t,1> TimedRemainingEvents { get; }
+  public ISchemaUntypedField TimedRemainingEvents { get; }
   
-  public ref CUtlLeanVectorFixedGrowable<CNmStateNode::TimedEvent_t,1> TimedElapsedEvents { get; }
+  public ISchemaUntypedField TimedElapsedEvents { get; }
   
   public ref short LayerWeightNodeIdx { get; }
   

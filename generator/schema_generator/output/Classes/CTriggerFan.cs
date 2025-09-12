@@ -9,8 +9,8 @@ internal partial class CTriggerFan : CBaseTrigger, ITriggerFan {
   public CTriggerFan(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge InfoFan {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6A8B5C2B8E6431BA));
+  public ISchemaUntypedField InfoFan {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6A8B5C2B8E6431BA));
   }
   public ref float RopeForceScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6A8B5C2B08EB54C8));

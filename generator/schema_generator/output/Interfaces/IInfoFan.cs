@@ -11,5 +11,5 @@ public partial interface IInfoFan : IPointEntity {
   
   public ref float CurveDistRange { get; }
   
-  public ref CUtlSymbolLarge FanForceCurveString { get; }
+  public ISchemaUntypedField FanForceCurveString { get; }
 }

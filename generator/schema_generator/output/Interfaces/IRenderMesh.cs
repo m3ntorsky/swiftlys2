@@ -5,9 +5,9 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IRenderMesh : ISchemaClass {
 
   
-  public ref CUtlLeanVectorFixedGrowable<CSceneObjectData,1> SceneObjects { get; }
+  public ISchemaUntypedField SceneObjects { get; }
   
-  public ref CUtlLeanVector<CBaseConstraint*> Constraints { get; }
+  public ISchemaUntypedField Constraints { get; }
   
   public IRenderSkeleton Skeleton { get; }
   

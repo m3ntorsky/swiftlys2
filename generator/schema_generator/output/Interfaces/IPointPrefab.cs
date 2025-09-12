@@ -5,11 +5,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IPointPrefab : IServerOnlyPointEntity {
 
   
-  public ref CUtlSymbolLarge TargetMapName { get; }
+  public ISchemaUntypedField TargetMapName { get; }
   
-  public ref CUtlSymbolLarge ForceWorldGroupID { get; }
+  public ISchemaUntypedField ForceWorldGroupID { get; }
   
-  public ref CUtlSymbolLarge AssociatedRelayTargetName { get; }
+  public ISchemaUntypedField AssociatedRelayTargetName { get; }
   
   public ref bool FixupNames { get; }
   

@@ -15,11 +15,11 @@ internal partial class CMoverPathNode : CPointEntity, IMoverPathNode {
   public ref Vector OutTangentLocal {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x5847AABC788EFFFB));
   }
-  public ref CUtlSymbolLarge ParentPathUniqueID {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5847AABCC2958DE1));
+  public ISchemaUntypedField ParentPathUniqueID {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x5847AABCC2958DE1));
   }
-  public ref CUtlSymbolLarge PathNodeParameter {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5847AABC5B2492DE));
+  public ISchemaUntypedField PathNodeParameter {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x5847AABC5B2492DE));
   }
   public IEntityIOOutput OnStartFromOrInSegment {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x5847AABC6622BECB));

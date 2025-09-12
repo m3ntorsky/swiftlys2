@@ -35,29 +35,29 @@ public partial interface IBasePropDoor : IDynamicProp {
   
   public ref CHandle<CBaseEntity> Activator { get; }
   
-  public ref CUtlSymbolLarge SoundMoving { get; }
+  public ISchemaUntypedField SoundMoving { get; }
   
-  public ref CUtlSymbolLarge SoundOpen { get; }
+  public ISchemaUntypedField SoundOpen { get; }
   
-  public ref CUtlSymbolLarge SoundClose { get; }
+  public ISchemaUntypedField SoundClose { get; }
   
-  public ref CUtlSymbolLarge SoundLock { get; }
+  public ISchemaUntypedField SoundLock { get; }
   
-  public ref CUtlSymbolLarge SoundUnlock { get; }
+  public ISchemaUntypedField SoundUnlock { get; }
   
-  public ref CUtlSymbolLarge SoundLatch { get; }
+  public ISchemaUntypedField SoundLatch { get; }
   
-  public ref CUtlSymbolLarge SoundPound { get; }
+  public ISchemaUntypedField SoundPound { get; }
   
-  public ref CUtlSymbolLarge SoundJiggle { get; }
+  public ISchemaUntypedField SoundJiggle { get; }
   
-  public ref CUtlSymbolLarge SoundLockedAnim { get; }
+  public ISchemaUntypedField SoundLockedAnim { get; }
   
   public ref int NumCloseAttempts { get; }
   
   public ref CUtlStringToken PhysicsMaterial { get; }
   
-  public ref CUtlSymbolLarge SlaveName { get; }
+  public ISchemaUntypedField SlaveName { get; }
   
   public ref CHandle<CBasePropDoor> Master { get; }
   

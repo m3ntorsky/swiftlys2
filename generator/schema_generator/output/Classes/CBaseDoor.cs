@@ -39,20 +39,20 @@ internal partial class CBaseDoor : CBaseToggle, IBaseDoor {
   public ref float BlockDamage {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x798B70E7A5348091));
   }
-  public ref CUtlSymbolLarge NoiseMoving {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x798B70E7415AB84B));
+  public ISchemaUntypedField NoiseMoving {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x798B70E7415AB84B));
   }
-  public ref CUtlSymbolLarge NoiseArrived {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x798B70E7D2CDE47A));
+  public ISchemaUntypedField NoiseArrived {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x798B70E7D2CDE47A));
   }
-  public ref CUtlSymbolLarge NoiseMovingClosed {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x798B70E7ED56FC0F));
+  public ISchemaUntypedField NoiseMovingClosed {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x798B70E7ED56FC0F));
   }
-  public ref CUtlSymbolLarge NoiseArrivedClosed {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x798B70E78637F9A6));
+  public ISchemaUntypedField NoiseArrivedClosed {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x798B70E78637F9A6));
   }
-  public ref CUtlSymbolLarge ChainTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x798B70E762B5A227));
+  public ISchemaUntypedField ChainTarget {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x798B70E762B5A227));
   }
   public IEntityIOOutput OnBlockedClosing {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x798B70E7EC8BC45F));

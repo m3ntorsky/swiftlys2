@@ -36,8 +36,8 @@ internal partial class CRR_Response : SchemaClass, IRR_Response {
   public IResponseFollowup Followup {
     get => new ResponseFollowup(_Handle + Schema.GetOffset(0x7B800878B1F72BFD));
   }
-  public ref CUtlSymbol RecipientFilter {
-    get => ref _Handle.AsRef<CUtlSymbol>(Schema.GetOffset(0x7B800878CC301E4A));
+  public ISchemaUntypedField RecipientFilter {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x7B800878CC301E4A));
   }
 
 

@@ -5,19 +5,19 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IEnvInstructorVRHint : IPointEntity {
 
   
-  public ref CUtlSymbolLarge Name { get; }
+  public ISchemaUntypedField Name { get; }
   
-  public ref CUtlSymbolLarge HintTargetEntity { get; }
+  public ISchemaUntypedField HintTargetEntity { get; }
   
   public ref int Timeout { get; }
   
-  public ref CUtlSymbolLarge Caption { get; }
+  public ISchemaUntypedField Caption { get; }
   
-  public ref CUtlSymbolLarge StartSound { get; }
+  public ISchemaUntypedField StartSound { get; }
   
   public ref int LayoutFileType { get; }
   
-  public ref CUtlSymbolLarge CustomLayoutFile { get; }
+  public ISchemaUntypedField CustomLayoutFile { get; }
   
   public ref int AttachType { get; }
   

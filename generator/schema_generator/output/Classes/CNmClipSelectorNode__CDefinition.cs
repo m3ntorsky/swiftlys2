@@ -9,11 +9,11 @@ internal partial class CNmClipSelectorNode__CDefinition : CNmClipReferenceNode::
   public CNmClipSelectorNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public ref CUtlLeanVectorFixedGrowable<int16,5> OptionNodeIndices {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<int16,5>>(Schema.GetOffset(0xCF32AC18DA97B15D));
+  public ISchemaUntypedField OptionNodeIndices {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xCF32AC18DA97B15D));
   }
-  public ref CUtlLeanVectorFixedGrowable<int16,5> ConditionNodeIndices {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<int16,5>>(Schema.GetOffset(0xCF32AC184A144D0F));
+  public ISchemaUntypedField ConditionNodeIndices {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xCF32AC184A144D0F));
   }
 
 

@@ -15,8 +15,8 @@ internal partial class CKeepUpright : CPointEntity, IKeepUpright {
   public ref Vector LocalTestAxis {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xB65A0D30B678975D));
   }
-  public ref CUtlSymbolLarge NameAttach {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB65A0D30BECAEF3F));
+  public ISchemaUntypedField NameAttach {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB65A0D30BECAEF3F));
   }
   public ref CHandle<CBaseEntity> AttachedObject {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xB65A0D301AE8F30A));

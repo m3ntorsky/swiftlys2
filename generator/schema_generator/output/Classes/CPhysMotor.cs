@@ -9,11 +9,11 @@ internal partial class CPhysMotor : CLogicalEntity, IPhysMotor {
   public CPhysMotor(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge NameAttach {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x88C095BFBECAEF3F));
+  public ISchemaUntypedField NameAttach {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x88C095BFBECAEF3F));
   }
-  public ref CUtlSymbolLarge NameAnchor {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x88C095BFAD43DD27));
+  public ISchemaUntypedField NameAnchor {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x88C095BFAD43DD27));
   }
   public ref CHandle<CBaseEntity> AttachedObject {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x88C095BF5B0EDB58));

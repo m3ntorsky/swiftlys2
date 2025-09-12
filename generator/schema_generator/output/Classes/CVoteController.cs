@@ -21,11 +21,11 @@ internal partial class CVoteController : CBaseEntity, IVoteController {
   public ISchemaFixedArray<int> VotesCast {
     get => new SchemaFixedArray<int>(_Handle, 0x6F560B060247527D, 64, 4, 4);
   }
-  public ref CPlayerSlot PlayerHoldingVote {
-    get => ref _Handle.AsRef<CPlayerSlot>(Schema.GetOffset(0x6F560B06C170B10B));
+  public ref uint PlayerHoldingVote {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x6F560B06C170B10B));
   }
-  public ref CPlayerSlot PlayerOverrideForVote {
-    get => ref _Handle.AsRef<CPlayerSlot>(Schema.GetOffset(0x6F560B06BF6B0097));
+  public ref uint PlayerOverrideForVote {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x6F560B06BF6B0097));
   }
   public ref int HighestCountIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6F560B0602AF14EE));

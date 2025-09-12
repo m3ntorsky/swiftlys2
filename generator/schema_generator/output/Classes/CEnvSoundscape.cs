@@ -15,8 +15,8 @@ internal partial class CEnvSoundscape : CBaseEntity, IEnvSoundscape {
   public ref float Radius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4C8F896A5ACFC08D));
   }
-  public ref CUtlSymbolLarge SoundEventName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x4C8F896AABB0F687));
+  public ISchemaUntypedField SoundEventName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x4C8F896AABB0F687));
   }
   public ref bool OverrideWithEvent {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4C8F896A3DF1E5DB));
@@ -27,8 +27,8 @@ internal partial class CEnvSoundscape : CBaseEntity, IEnvSoundscape {
   public ref int SoundscapeEntityListId {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4C8F896A4F4663F0));
   }
-  public ISchemaFixedArray<CUtlSymbolLarge> PositionNames {
-    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0x4C8F896A53DB5F86, 8, 8, 8);
+  public ISchemaUntypedField PositionNames {
+    get => new SchemaUntypedField(_Handle, 0x4C8F896A53DB5F86, 8, 8, 8);
   }
   public ref CHandle<CEnvSoundscape> ProxySoundscape {
     get => ref _Handle.AsRef<CHandle<CEnvSoundscape>>(Schema.GetOffset(0x4C8F896ABC23786E));
@@ -36,8 +36,8 @@ internal partial class CEnvSoundscape : CBaseEntity, IEnvSoundscape {
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4C8F896A3A7C5965));
   }
-  public ref CUtlSymbolLarge SoundscapeName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x4C8F896ABBF7AD61));
+  public ISchemaUntypedField SoundscapeName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x4C8F896ABBF7AD61));
   }
   public ref uint SoundEventHash {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x4C8F896AC126D1EC));

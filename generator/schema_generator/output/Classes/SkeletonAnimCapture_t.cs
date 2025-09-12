@@ -9,14 +9,14 @@ internal partial class SkeletonAnimCapture_t : SchemaClass, ISkeletonAnimCapture
   public SkeletonAnimCapture_t(nint handle) : base(handle) {
   }
 
-  public ref CEntityIndex EntIndex {
-    get => ref _Handle.AsRef<CEntityIndex>(Schema.GetOffset(0x79FB6D7C5558C54A));
+  public ref uint EntIndex {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x79FB6D7C5558C54A));
   }
-  public ref CEntityIndex EntParent {
-    get => ref _Handle.AsRef<CEntityIndex>(Schema.GetOffset(0x79FB6D7C7D9203A6));
+  public ref uint EntParent {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x79FB6D7C7D9203A6));
   }
-  public ref CUtlVector<CEntityIndex> ImportedCollision {
-    get => ref _Handle.AsRef<CUtlVector<CEntityIndex>>(Schema.GetOffset(0x79FB6D7C5A900B2F));
+  public ref CUtlVector<uint> ImportedCollision {
+    get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0x79FB6D7C5A900B2F));
   }
   public ref CUtlString ModelName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x79FB6D7CD7A1D881));

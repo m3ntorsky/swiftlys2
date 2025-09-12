@@ -60,11 +60,11 @@ internal partial class CSoundOpvarSetPointEntity : CSoundOpvarSetPointBase, ISou
   public ref float DynamicMaximumOcclusion {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x20C7B9D22C356E6F));
   }
-  public ref CEntityHandle DynamicEntity {
-    get => ref _Handle.AsRef<CEntityHandle>(Schema.GetOffset(0x20C7B9D235753447));
+  public ref CHandle<IEntityInstance> DynamicEntity {
+    get => ref _Handle.AsRef<CHandle<IEntityInstance>>(Schema.GetOffset(0x20C7B9D235753447));
   }
-  public ref CUtlSymbolLarge DynamicEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x20C7B9D28FB78B06));
+  public ISchemaUntypedField DynamicEntityName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x20C7B9D28FB78B06));
   }
   public ref float PathingDistanceNormFactor {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x20C7B9D25735CE5A));

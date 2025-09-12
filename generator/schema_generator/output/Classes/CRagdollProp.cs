@@ -51,11 +51,11 @@ internal partial class CRagdollProp : CBaseAnimGraph, IRagdollProp {
   public IGameTime_t LastOriginChangeTime {
     get => new GameTime_t(_Handle + Schema.GetOffset(0x9505BA78B66C9A18));
   }
-  public ref CUtlSymbolLarge StrOriginClassName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9505BA7809148529));
+  public ISchemaUntypedField StrOriginClassName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9505BA7809148529));
   }
-  public ref CUtlSymbolLarge StrSourceClassName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9505BA78F3FD1A0C));
+  public ISchemaUntypedField StrSourceClassName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9505BA78F3FD1A0C));
   }
   public ref bool HasBeenPhysgunned {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9505BA785058D154));

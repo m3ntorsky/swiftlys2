@@ -24,8 +24,8 @@ internal partial class CColorCorrection : CBaseEntity, IColorCorrection {
   public ref bool StartDisabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x86645E1161ED0C4F));
   }
-  public ref CUtlSymbolLarge LookupFilename {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x86645E112611A2C6));
+  public ISchemaUntypedField LookupFilename {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x86645E112611A2C6));
   }
 
   public void FadeInDurationUpdated() {

@@ -45,8 +45,8 @@ internal partial class CBaseRendererSource2 : CParticleFunctionRenderer, IBaseRe
   public ref ParticleSequenceCropOverride_t CropTextureOverride {
     get => ref _Handle.AsRef<ParticleSequenceCropOverride_t>(Schema.GetOffset(0xA732A575F1DF7F72));
   }
-  public ref CUtlLeanVector<TextureGroup_t> TexturesInput {
-    get => ref _Handle.AsRef<CUtlLeanVector<TextureGroup_t>>(Schema.GetOffset(0xA732A5759C246F7B));
+  public ISchemaUntypedField TexturesInput {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA732A5759C246F7B));
   }
   public ref float AnimationRate {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA732A575607083AD));

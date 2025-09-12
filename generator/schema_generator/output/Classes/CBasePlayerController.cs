@@ -12,8 +12,8 @@ internal partial class CBasePlayerController : CBaseEntity, IBasePlayerControlle
   public ref ulong InButtonsWhichAreToggles {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x3979FF6E84B9651F));
   }
-  public ref CSplitScreenSlot SplitScreenSlot {
-    get => ref _Handle.AsRef<CSplitScreenSlot>(Schema.GetOffset(0x3979FF6EDB96ED47));
+  public ref uint SplitScreenSlot {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x3979FF6EDB96ED47));
   }
   public ref CHandle<CBasePlayerController> SplitOwner {
     get => ref _Handle.AsRef<CHandle<CBasePlayerController>>(Schema.GetOffset(0x3979FF6E7F6EFD54));

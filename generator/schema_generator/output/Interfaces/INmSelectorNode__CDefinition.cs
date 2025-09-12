@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface INmSelectorNode__CDefinition : INmPoseNode::CDefinition {
 
   
-  public ref CUtlLeanVectorFixedGrowable<int16,5> OptionNodeIndices { get; }
+  public ISchemaUntypedField OptionNodeIndices { get; }
   
-  public ref CUtlLeanVectorFixedGrowable<int16,5> ConditionNodeIndices { get; }
+  public ISchemaUntypedField ConditionNodeIndices { get; }
 }

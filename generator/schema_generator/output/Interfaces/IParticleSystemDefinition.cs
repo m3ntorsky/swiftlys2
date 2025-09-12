@@ -126,7 +126,7 @@ public partial interface IParticleSystemDefinition : IIParticleSystemDefinition 
   
   public ref bool ScreenSpaceEffect { get; }
   
-  public ref CUtlSymbolLarge TargetLayerID { get; }
+  public ISchemaUntypedField TargetLayerID { get; }
   
   public ref int SkipRenderControlPoint { get; }
   

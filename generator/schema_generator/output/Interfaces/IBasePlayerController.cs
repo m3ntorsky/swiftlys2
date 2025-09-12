@@ -13,7 +13,7 @@ public partial interface IBasePlayerController : IBaseEntity {
   
   public ref bool KnownTeamMismatch { get; }
   
-  public ref CSplitScreenSlot SplitScreenSlot { get; }
+  public ref uint SplitScreenSlot { get; }
   
   public ref CHandle<CBasePlayerController> SplitOwner { get; }
   

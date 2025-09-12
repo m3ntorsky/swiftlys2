@@ -15,17 +15,17 @@ internal partial class CPulseGraphInstance_ServerEntity : CBasePulseGraphInstanc
   public ref bool Activated {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6DFF458BF8E37A5C));
   }
-  public ref CUtlSymbolLarge NameFixupStaticPrefix {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6DFF458BFFD2D6AB));
+  public ISchemaUntypedField NameFixupStaticPrefix {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6DFF458BFFD2D6AB));
   }
-  public ref CUtlSymbolLarge NameFixupParent {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6DFF458B7B08ECF1));
+  public ISchemaUntypedField NameFixupParent {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6DFF458B7B08ECF1));
   }
-  public ref CUtlSymbolLarge NameFixupLocal {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6DFF458B508F29A4));
+  public ISchemaUntypedField NameFixupLocal {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6DFF458B508F29A4));
   }
-  public ref CUtlSymbolLarge ProceduralWorldNameForRelays {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6DFF458B05373F31));
+  public ISchemaUntypedField ProceduralWorldNameForRelays {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6DFF458B05373F31));
   }
 
 

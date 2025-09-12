@@ -13,9 +13,9 @@ public partial interface IEffectData : ISchemaClass {
   
   public ref QAngle Angles { get; }
   
-  public ref CEntityHandle Entity { get; }
+  public ref CHandle<IEntityInstance> Entity { get; }
   
-  public ref CEntityHandle OtherEntity { get; }
+  public ref CHandle<IEntityInstance> OtherEntity { get; }
   
   public ref float Scale { get; }
   
@@ -25,7 +25,7 @@ public partial interface IEffectData : ISchemaClass {
   
   public ref CUtlStringToken SurfaceProp { get; }
   
-  public ref CWeakHandle<InfoForResourceTypeIParticleSystemDefinition> EffectIndex { get; }
+  public ISchemaUntypedField EffectIndex { get; }
   
   public ref uint DamageType { get; }
   

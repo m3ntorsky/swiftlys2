@@ -9,14 +9,14 @@ internal partial class sndopvarlatchdata_t : SchemaClass, Isndopvarlatchdata_t {
   public sndopvarlatchdata_t(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Stack {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8347C0D511ACB037));
+  public ISchemaUntypedField Stack {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x8347C0D511ACB037));
   }
-  public ref CUtlSymbolLarge Operator {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8347C0D55D107B55));
+  public ISchemaUntypedField Operator {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x8347C0D55D107B55));
   }
-  public ref CUtlSymbolLarge Opvar {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8347C0D508A9F41F));
+  public ISchemaUntypedField Opvar {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x8347C0D508A9F41F));
   }
   public ref float Val {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8347C0D5E31D0C86));

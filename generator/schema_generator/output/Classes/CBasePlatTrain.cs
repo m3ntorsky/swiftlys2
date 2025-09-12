@@ -9,11 +9,11 @@ internal partial class CBasePlatTrain : CBaseToggle, IBasePlatTrain {
   public CBasePlatTrain(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge NoiseMoving {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x78773ABC415AB84B));
+  public ISchemaUntypedField NoiseMoving {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x78773ABC415AB84B));
   }
-  public ref CUtlSymbolLarge NoiseArrived {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x78773ABCD2CDE47A));
+  public ISchemaUntypedField NoiseArrived {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x78773ABCD2CDE47A));
   }
   public ref float Volume {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x78773ABCE3962F2F));

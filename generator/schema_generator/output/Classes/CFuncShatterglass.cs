@@ -57,17 +57,17 @@ internal partial class CFuncShatterglass : CBaseModelEntity, IFuncShatterglass {
   public ref byte InitialDamageType {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xB755F0FBED01D1E1));
   }
-  public ref CUtlSymbolLarge DamagePositioningEntityName01 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB755F0FBADF2770D));
+  public ISchemaUntypedField DamagePositioningEntityName01 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB755F0FBADF2770D));
   }
-  public ref CUtlSymbolLarge DamagePositioningEntityName02 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB755F0FBAAF27254));
+  public ISchemaUntypedField DamagePositioningEntityName02 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB755F0FBAAF27254));
   }
-  public ref CUtlSymbolLarge DamagePositioningEntityName03 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB755F0FBABF273E7));
+  public ISchemaUntypedField DamagePositioningEntityName03 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB755F0FBABF273E7));
   }
-  public ref CUtlSymbolLarge DamagePositioningEntityName04 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB755F0FBA8F26F2E));
+  public ISchemaUntypedField DamagePositioningEntityName04 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB755F0FBA8F26F2E));
   }
   public ref CUtlVector<Vector> InitialDamagePositions {
     get => ref _Handle.AsRef<CUtlVector<Vector>>(Schema.GetOffset(0xB755F0FB6D8C7F56));

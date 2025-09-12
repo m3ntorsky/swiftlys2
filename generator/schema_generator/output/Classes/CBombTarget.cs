@@ -24,8 +24,8 @@ internal partial class CBombTarget : CBaseTrigger, IBombTarget {
   public ref bool IsHeistBombTarget {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1FEE3C374F83FD3F));
   }
-  public ref CUtlSymbolLarge MountTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1FEE3C375F784258));
+  public ISchemaUntypedField MountTarget {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1FEE3C375F784258));
   }
   public ref CHandle<CBaseEntity> InstructorHint {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1FEE3C37D6C2F245));

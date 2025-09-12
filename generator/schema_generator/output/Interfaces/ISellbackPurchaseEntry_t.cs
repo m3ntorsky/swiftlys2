@@ -13,5 +13,5 @@ public partial interface ISellbackPurchaseEntry_t : ISchemaClass {
   
   public ref bool PrevHelmet { get; }
   
-  public ref CEntityHandle Item { get; }
+  public ref CHandle<IEntityInstance> Item { get; }
 }

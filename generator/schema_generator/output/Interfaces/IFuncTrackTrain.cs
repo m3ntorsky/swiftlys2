@@ -35,15 +35,15 @@ public partial interface IFuncTrackTrain : IBaseModelEntity {
   
   public ref float Dir { get; }
   
-  public ref CUtlSymbolLarge SoundMove { get; }
+  public ISchemaUntypedField SoundMove { get; }
   
-  public ref CUtlSymbolLarge SoundMovePing { get; }
+  public ISchemaUntypedField SoundMovePing { get; }
   
-  public ref CUtlSymbolLarge SoundStart { get; }
+  public ISchemaUntypedField SoundStart { get; }
   
-  public ref CUtlSymbolLarge SoundStop { get; }
+  public ISchemaUntypedField SoundStop { get; }
   
-  public ref CUtlSymbolLarge StrPathTarget { get; }
+  public ISchemaUntypedField StrPathTarget { get; }
   
   public ref float MoveSoundMinDuration { get; }
   

@@ -13,13 +13,13 @@ public partial interface IBreakable : IBaseModelEntity {
   
   public ref Explosions Explosion { get; }
   
-  public ref CUtlSymbolLarge SpawnObject { get; }
+  public ISchemaUntypedField SpawnObject { get; }
   
   public ref float PressureDelay { get; }
   
   public ref int MinHealthDmg { get; }
   
-  public ref CUtlSymbolLarge PropData { get; }
+  public ISchemaUntypedField PropData { get; }
   
   public ref float ImpactEnergyScale { get; }
   

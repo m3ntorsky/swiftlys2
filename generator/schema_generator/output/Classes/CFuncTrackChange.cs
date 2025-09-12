@@ -18,14 +18,14 @@ internal partial class CFuncTrackChange : CFuncPlatRot, IFuncTrackChange {
   public IFuncTrackTrain Train {
     get => new CFuncTrackTrain(_Handle + Schema.GetOffset(0x25A8A26FB8642689));
   }
-  public ref CUtlSymbolLarge TrackTopName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x25A8A26FF9BD489C));
+  public ISchemaUntypedField TrackTopName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x25A8A26FF9BD489C));
   }
-  public ref CUtlSymbolLarge TrackBottomName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x25A8A26F7F34C2D4));
+  public ISchemaUntypedField TrackBottomName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x25A8A26F7F34C2D4));
   }
-  public ref CUtlSymbolLarge TrainName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x25A8A26FA3DC4C82));
+  public ISchemaUntypedField TrainName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x25A8A26FA3DC4C82));
   }
   public ref TRAIN_CODE Code {
     get => ref _Handle.AsRef<TRAIN_CODE>(Schema.GetOffset(0x25A8A26FB70C9D94));

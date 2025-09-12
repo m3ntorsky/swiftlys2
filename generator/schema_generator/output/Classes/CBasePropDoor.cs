@@ -39,32 +39,32 @@ internal partial class CBasePropDoor : CDynamicProp, IBasePropDoor {
   public ref CHandle<CBaseEntity> Activator {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x140EA8BEAB093BB2));
   }
-  public ref CUtlSymbolLarge SoundMoving {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE096B0232));
+  public ISchemaUntypedField SoundMoving {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x140EA8BE096B0232));
   }
-  public ref CUtlSymbolLarge SoundOpen {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE736F2FD4));
+  public ISchemaUntypedField SoundOpen {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x140EA8BE736F2FD4));
   }
-  public ref CUtlSymbolLarge SoundClose {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE25C06648));
+  public ISchemaUntypedField SoundClose {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x140EA8BE25C06648));
   }
-  public ref CUtlSymbolLarge SoundLock {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE79ED369B));
+  public ISchemaUntypedField SoundLock {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x140EA8BE79ED369B));
   }
-  public ref CUtlSymbolLarge SoundUnlock {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE784A9850));
+  public ISchemaUntypedField SoundUnlock {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x140EA8BE784A9850));
   }
-  public ref CUtlSymbolLarge SoundLatch {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE1128D286));
+  public ISchemaUntypedField SoundLatch {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x140EA8BE1128D286));
   }
-  public ref CUtlSymbolLarge SoundPound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE100E3D8E));
+  public ISchemaUntypedField SoundPound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x140EA8BE100E3D8E));
   }
-  public ref CUtlSymbolLarge SoundJiggle {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BEA6C5140C));
+  public ISchemaUntypedField SoundJiggle {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x140EA8BEA6C5140C));
   }
-  public ref CUtlSymbolLarge SoundLockedAnim {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BEF4D24043));
+  public ISchemaUntypedField SoundLockedAnim {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x140EA8BEF4D24043));
   }
   public ref int NumCloseAttempts {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x140EA8BEEE2FAC03));
@@ -72,8 +72,8 @@ internal partial class CBasePropDoor : CDynamicProp, IBasePropDoor {
   public ref CUtlStringToken PhysicsMaterial {
     get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0x140EA8BEF6A7286B));
   }
-  public ref CUtlSymbolLarge SlaveName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BEAA484A63));
+  public ISchemaUntypedField SlaveName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x140EA8BEAA484A63));
   }
   public IEntityIOOutput OnBlockedClosing {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x140EA8BEEC8BC45F));

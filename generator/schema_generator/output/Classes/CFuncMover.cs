@@ -9,17 +9,17 @@ internal partial class CFuncMover : CBaseModelEntity, IFuncMover {
   public CFuncMover(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge PathName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B6981A419FD));
+  public ISchemaUntypedField PathName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x320E8B6981A419FD));
   }
   public ref CHandle<CPathMover> PathMover {
     get => ref _Handle.AsRef<CHandle<CPathMover>>(Schema.GetOffset(0x320E8B69AFA877CD));
   }
-  public ref CUtlSymbolLarge PathNodeStart {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B691B0A1252));
+  public ISchemaUntypedField PathNodeStart {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x320E8B691B0A1252));
   }
-  public ref CUtlSymbolLarge PathNodeEnd {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69F1D1AED7));
+  public ISchemaUntypedField PathNodeEnd {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x320E8B69F1D1AED7));
   }
   public ref CFuncMover::Move_t MoveType {
     get => ref _Handle.AsRef<CFuncMover::Move_t>(Schema.GetOffset(0x320E8B69E635C185));
@@ -75,26 +75,26 @@ internal partial class CFuncMover : CBaseModelEntity, IFuncMover {
   public ref float PathLocationToBeginStop {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x320E8B69976C5777));
   }
-  public ref CUtlSymbolLarge StartForwardSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69CBDFD56B));
+  public ISchemaUntypedField StartForwardSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x320E8B69CBDFD56B));
   }
-  public ref CUtlSymbolLarge LoopForwardSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69C875F2F7));
+  public ISchemaUntypedField LoopForwardSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x320E8B69C875F2F7));
   }
-  public ref CUtlSymbolLarge StopForwardSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69B72A6EC9));
+  public ISchemaUntypedField StopForwardSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x320E8B69B72A6EC9));
   }
-  public ref CUtlSymbolLarge StartReverseSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B6927D9C282));
+  public ISchemaUntypedField StartReverseSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x320E8B6927D9C282));
   }
-  public ref CUtlSymbolLarge LoopReverseSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69FC2C15CE));
+  public ISchemaUntypedField LoopReverseSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x320E8B69FC2C15CE));
   }
-  public ref CUtlSymbolLarge StopReverseSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69B0EFF4BC));
+  public ISchemaUntypedField StopReverseSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x320E8B69B0EFF4BC));
   }
-  public ref CUtlSymbolLarge ArriveAtDestinationSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B696350F6A0));
+  public ISchemaUntypedField ArriveAtDestinationSound {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x320E8B696350F6A0));
   }
   public IEntityIOOutput OnMovementEnd {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x320E8B699BD1966A));
@@ -129,8 +129,8 @@ internal partial class CFuncMover : CBaseModelEntity, IFuncMover {
   public IEntityIOOutput OnNodePassed {
     get => new CEntityIOOutput(_Handle + Schema.GetOffset(0x320E8B69709328FC));
   }
-  public ref CUtlSymbolLarge OrientationMatchEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69384CF18A));
+  public ISchemaUntypedField OrientationMatchEntityName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x320E8B69384CF18A));
   }
   public ref CHandle<CBaseEntity> OrientationMatchEntity {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x320E8B6924A0D317));
@@ -180,8 +180,8 @@ internal partial class CFuncMover : CBaseModelEntity, IFuncMover {
   public ref float CurFollowSpeed {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x320E8B6958BEEE69));
   }
-  public ref CUtlSymbolLarge StrOrientationFaceEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B694B008CC7));
+  public ISchemaUntypedField StrOrientationFaceEntityName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x320E8B694B008CC7));
   }
   public ref CHandle<CBaseEntity> OrientationFaceEntity {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x320E8B696BA187E1));

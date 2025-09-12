@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface IMessage : IPointEntity {
 
   
-  public ref CUtlSymbolLarge Message { get; }
+  public ISchemaUntypedField Message { get; }
   
   public ref float MessageVolume { get; }
   
@@ -13,7 +13,7 @@ public partial interface IMessage : IPointEntity {
   
   public ref float Radius { get; }
   
-  public ref CUtlSymbolLarge Noise { get; }
+  public ISchemaUntypedField Noise { get; }
   
   public IEntityIOOutput OnShowMessage { get; }
 }

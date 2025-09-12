@@ -96,8 +96,8 @@ internal partial class CFuncRotator : CBaseModelEntity, IFuncRotator {
   public ref Vector LookAtForcedUp {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x73DA1BB948B272FF));
   }
-  public ref CUtlSymbolLarge StrRotatorTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x73DA1BB95D9EF510));
+  public ISchemaUntypedField StrRotatorTarget {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x73DA1BB95D9EF510));
   }
   public ref bool RecordHistory {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x73DA1BB9A1A2B6DC));

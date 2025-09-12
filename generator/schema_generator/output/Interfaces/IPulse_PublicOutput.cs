@@ -9,5 +9,5 @@ public partial interface IPulse_PublicOutput : ISchemaClass {
   
   public ref CUtlString Description { get; }
   
-  public ref CUtlLeanVector<CPulseRuntimeMethodArg> Args { get; }
+  public ISchemaUntypedField Args { get; }
 }

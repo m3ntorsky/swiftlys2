@@ -12,8 +12,8 @@ internal partial class CFilterMultiple : CBaseFilter, IFilterMultiple {
   public ref filter_t FilterType {
     get => ref _Handle.AsRef<filter_t>(Schema.GetOffset(0x6EA0578071861EDB));
   }
-  public ISchemaFixedArray<CUtlSymbolLarge> FilterName {
-    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0x6EA0578009C86445, 10, 8, 8);
+  public ISchemaUntypedField FilterName {
+    get => new SchemaUntypedField(_Handle, 0x6EA0578009C86445, 10, 8, 8);
   }
   public CHandle<CBaseEntity> Filter {
     get => new CHandle<CBaseEntity>(_Handle, 0x6EA0578045D9E0B1, 10, 4, 4);

@@ -5,11 +5,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface Isndopvarlatchdata_t : ISchemaClass {
 
   
-  public ref CUtlSymbolLarge Stack { get; }
+  public ISchemaUntypedField Stack { get; }
   
-  public ref CUtlSymbolLarge Operator { get; }
+  public ISchemaUntypedField Operator { get; }
   
-  public ref CUtlSymbolLarge Opvar { get; }
+  public ISchemaUntypedField Opvar { get; }
   
   public ref float Val { get; }
   

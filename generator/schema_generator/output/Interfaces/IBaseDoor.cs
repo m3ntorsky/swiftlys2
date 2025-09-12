@@ -25,15 +25,15 @@ public partial interface IBaseDoor : IBaseToggle {
   
   public ref float BlockDamage { get; }
   
-  public ref CUtlSymbolLarge NoiseMoving { get; }
+  public ISchemaUntypedField NoiseMoving { get; }
   
-  public ref CUtlSymbolLarge NoiseArrived { get; }
+  public ISchemaUntypedField NoiseArrived { get; }
   
-  public ref CUtlSymbolLarge NoiseMovingClosed { get; }
+  public ISchemaUntypedField NoiseMovingClosed { get; }
   
-  public ref CUtlSymbolLarge NoiseArrivedClosed { get; }
+  public ISchemaUntypedField NoiseArrivedClosed { get; }
   
-  public ref CUtlSymbolLarge ChainTarget { get; }
+  public ISchemaUntypedField ChainTarget { get; }
   
   public IEntityIOOutput OnBlockedClosing { get; }
   

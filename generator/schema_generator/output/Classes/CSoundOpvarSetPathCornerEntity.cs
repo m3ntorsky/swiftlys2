@@ -15,8 +15,8 @@ internal partial class CSoundOpvarSetPathCornerEntity : CSoundOpvarSetPointEntit
   public ref float DistMaxSqr {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x36840954993EE3BF));
   }
-  public ref CUtlSymbolLarge PathCornerEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x36840954EF6D6403));
+  public ISchemaUntypedField PathCornerEntityName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x36840954EF6D6403));
   }
 
 

@@ -7,5 +7,5 @@ public partial interface IIntervalTimer : ISchemaClass {
   
   public IGameTime_t Timestamp { get; }
   
-  public ref WorldGroupId_t WorldGroupId { get; }
+  public ref uint WorldGroupId { get; }
 }

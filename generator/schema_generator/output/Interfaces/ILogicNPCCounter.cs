@@ -37,9 +37,9 @@ public partial interface ILogicNPCCounter : IBaseEntity {
   
   public ISchemaUntypedField OnMinPlayerDist_3 { get; }
   
-  public ref CEntityHandle Source { get; }
+  public ref CHandle<IEntityInstance> Source { get; }
   
-  public ref CUtlSymbolLarge SourceEntityName { get; }
+  public ISchemaUntypedField SourceEntityName { get; }
   
   public ref float DistanceMax { get; }
   
@@ -53,7 +53,7 @@ public partial interface ILogicNPCCounter : IBaseEntity {
   
   public ref int MaxFactorAll { get; }
   
-  public ref CUtlSymbolLarge NPCClassname_1 { get; }
+  public ISchemaUntypedField NPCClassname_1 { get; }
   
   public ref int NPCState_1 { get; }
   
@@ -69,7 +69,7 @@ public partial interface ILogicNPCCounter : IBaseEntity {
   
   public ref float DefaultDist_1 { get; }
   
-  public ref CUtlSymbolLarge NPCClassname_2 { get; }
+  public ISchemaUntypedField NPCClassname_2 { get; }
   
   public ref int NPCState_2 { get; }
   
@@ -85,7 +85,7 @@ public partial interface ILogicNPCCounter : IBaseEntity {
   
   public ref float DefaultDist_2 { get; }
   
-  public ref CUtlSymbolLarge NPCClassname_3 { get; }
+  public ISchemaUntypedField NPCClassname_3 { get; }
   
   public ref int NPCState_3 { get; }
   

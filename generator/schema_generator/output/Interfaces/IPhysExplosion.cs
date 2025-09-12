@@ -13,7 +13,7 @@ public partial interface IPhysExplosion : IPointEntity {
   
   public ref float Radius { get; }
   
-  public ref CUtlSymbolLarge TargetEntityName { get; }
+  public ISchemaUntypedField TargetEntityName { get; }
   
   public ref float InnerRadius { get; }
   

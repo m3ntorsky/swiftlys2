@@ -9,9 +9,9 @@ public partial interface IMoverPathNode : IPointEntity {
   
   public ref Vector OutTangentLocal { get; }
   
-  public ref CUtlSymbolLarge ParentPathUniqueID { get; }
+  public ISchemaUntypedField ParentPathUniqueID { get; }
   
-  public ref CUtlSymbolLarge PathNodeParameter { get; }
+  public ISchemaUntypedField PathNodeParameter { get; }
   
   public IEntityIOOutput OnStartFromOrInSegment { get; }
   

@@ -69,11 +69,11 @@ internal partial class C_OP_RenderCables : CParticleFunctionRenderer, IC_OP_Rend
   public IParticleTransformInput LightingTransform {
     get => new CParticleTransformInput(_Handle + Schema.GetOffset(0x164988776557F58F));
   }
-  public ref CUtlLeanVector<FloatInputMaterialVariable_t> MaterialFloatVars {
-    get => ref _Handle.AsRef<CUtlLeanVector<FloatInputMaterialVariable_t>>(Schema.GetOffset(0x164988777A7B4D6C));
+  public ISchemaUntypedField MaterialFloatVars {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x164988777A7B4D6C));
   }
-  public ref CUtlLeanVector<VecInputMaterialVariable_t> MaterialVecVars {
-    get => ref _Handle.AsRef<CUtlLeanVector<VecInputMaterialVariable_t>>(Schema.GetOffset(0x16498877E670B944));
+  public ISchemaUntypedField MaterialVecVars {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x16498877E670B944));
   }
 
 

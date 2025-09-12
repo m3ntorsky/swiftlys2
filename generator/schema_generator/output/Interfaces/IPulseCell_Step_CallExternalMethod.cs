@@ -9,7 +9,7 @@ public partial interface IPulseCell_Step_CallExternalMethod : IPulseCell_BaseYie
   
   public ISchemaUntypedField GameBlackboard { get; }
   
-  public ref CUtlLeanVector<CPulseRuntimeMethodArg> ExpectedArgs { get; }
+  public ISchemaUntypedField ExpectedArgs { get; }
   
   public ref PulseMethodCallMode_t AsyncCallMode { get; }
   

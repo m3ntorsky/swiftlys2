@@ -12,11 +12,11 @@ internal partial class CParticleSystem : CBaseModelEntity, IParticleSystem {
   public ref bool StartActive {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8F6D2B25953CBC21));
   }
-  public ref CUtlSymbolLarge EffectName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8F6D2B2582D2BFC7));
+  public ISchemaUntypedField EffectName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x8F6D2B2582D2BFC7));
   }
-  public ISchemaFixedArray<CUtlSymbolLarge> ControlPointNames {
-    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0x8F6D2B258DBFEC78, 64, 8, 8);
+  public ISchemaUntypedField ControlPointNames {
+    get => new SchemaUntypedField(_Handle, 0x8F6D2B258DBFEC78, 64, 8, 8);
   }
   public ref int DataCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8F6D2B258DC46F82));

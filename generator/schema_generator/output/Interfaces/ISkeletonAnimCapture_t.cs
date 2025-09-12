@@ -5,11 +5,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface ISkeletonAnimCapture_t : ISchemaClass {
 
   
-  public ref CEntityIndex EntIndex { get; }
+  public ref uint EntIndex { get; }
   
-  public ref CEntityIndex EntParent { get; }
+  public ref uint EntParent { get; }
   
-  public ref CUtlVector<CEntityIndex> ImportedCollision { get; }
+  public ref CUtlVector<uint> ImportedCollision { get; }
   
   public ref CUtlString ModelName { get; }
   

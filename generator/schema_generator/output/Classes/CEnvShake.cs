@@ -9,8 +9,8 @@ internal partial class CEnvShake : CPointEntity, IEnvShake {
   public CEnvShake(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge LimitToEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x10FEA945E1C029E2));
+  public ISchemaUntypedField LimitToEntity {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x10FEA945E1C029E2));
   }
   public ref float Amplitude {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x10FEA945A38BF822));

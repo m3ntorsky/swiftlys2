@@ -9,35 +9,35 @@ internal partial class CSceneEntity : CPointEntity, ISceneEntity {
   public CSceneEntity(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge SceneFile {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B7011ED89EC5));
+  public ISchemaUntypedField SceneFile {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1099B7011ED89EC5));
   }
-  public ref CUtlSymbolLarge ResumeSceneFile {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701B722F1C4));
+  public ISchemaUntypedField ResumeSceneFile {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1099B701B722F1C4));
   }
-  public ref CUtlSymbolLarge Target1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701FC55D183));
+  public ISchemaUntypedField Target1 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1099B701FC55D183));
   }
-  public ref CUtlSymbolLarge Target2 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701FD55D316));
+  public ISchemaUntypedField Target2 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1099B701FD55D316));
   }
-  public ref CUtlSymbolLarge Target3 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701FE55D4A9));
+  public ISchemaUntypedField Target3 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1099B701FE55D4A9));
   }
-  public ref CUtlSymbolLarge Target4 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701FF55D63C));
+  public ISchemaUntypedField Target4 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1099B701FF55D63C));
   }
-  public ref CUtlSymbolLarge Target5 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B7010055D7CF));
+  public ISchemaUntypedField Target5 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1099B7010055D7CF));
   }
-  public ref CUtlSymbolLarge Target6 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B7010155D962));
+  public ISchemaUntypedField Target6 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1099B7010155D962));
   }
-  public ref CUtlSymbolLarge Target7 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B7010255DAF5));
+  public ISchemaUntypedField Target7 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1099B7010255DAF5));
   }
-  public ref CUtlSymbolLarge Target8 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B7010355DC88));
+  public ISchemaUntypedField Target8 {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1099B7010355DC88));
   }
   public ref CHandle<CBaseEntity> Target1 {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B701C951F3B1));
@@ -63,8 +63,8 @@ internal partial class CSceneEntity : CPointEntity, ISceneEntity {
   public ref CHandle<CBaseEntity> Target8 {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B701C051E586));
   }
-  public ref CUtlSymbolLarge TargetAttachment {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701FCD6246E));
+  public ISchemaUntypedField TargetAttachment {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1099B701FCD6246E));
   }
   public ref float CurrentTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1099B701C4610999));
@@ -171,11 +171,11 @@ internal partial class CSceneEntity : CPointEntity, ISceneEntity {
   public ref CUtlVector<CHandle<CSceneListManager>> ListManagers {
     get => ref _Handle.AsRef<CUtlVector<CHandle<CSceneListManager>>>(Schema.GetOffset(0x1099B701AD7882DF));
   }
-  public ref CUtlSymbolLarge SoundName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701B17EB157));
+  public ISchemaUntypedField SoundName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1099B701B17EB157));
   }
-  public ref CUtlSymbolLarge SequenceName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701A55BC593));
+  public ISchemaUntypedField SequenceName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1099B701A55BC593));
   }
   public ref CHandle<CBaseFlex> Actor {
     get => ref _Handle.AsRef<CHandle<CBaseFlex>>(Schema.GetOffset(0x1099B701C0FFC404));

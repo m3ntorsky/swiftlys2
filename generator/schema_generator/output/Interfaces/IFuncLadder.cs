@@ -23,7 +23,7 @@ public partial interface IFuncLadder : IBaseModelEntity {
   
   public ref bool HasSlack { get; }
   
-  public ref CUtlSymbolLarge SurfacePropName { get; }
+  public ISchemaUntypedField SurfacePropName { get; }
   
   public IEntityIOOutput OnPlayerGotOnLadder { get; }
   

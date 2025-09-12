@@ -5,11 +5,11 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface ITriggerLerpObject : IBaseTrigger {
 
   
-  public ref CUtlSymbolLarge LerpTarget { get; }
+  public ISchemaUntypedField LerpTarget { get; }
   
   public ref CHandle<CBaseEntity> LerpTarget { get; }
   
-  public ref CUtlSymbolLarge LerpTargetAttachment { get; }
+  public ISchemaUntypedField LerpTargetAttachment { get; }
   
   public IAttachmentHandle_t LerpTargetAttachment { get; }
   
@@ -22,9 +22,9 @@ public partial interface ITriggerLerpObject : IBaseTrigger {
 // CUtlVector< lerpdata_t >
   public ref CUtlVector LerpingObjects { get; }
   
-  public ref CUtlSymbolLarge LerpEffect { get; }
+  public ISchemaUntypedField LerpEffect { get; }
   
-  public ref CUtlSymbolLarge LerpSound { get; }
+  public ISchemaUntypedField LerpSound { get; }
   
   public ref bool AttachTouchingObject { get; }
   

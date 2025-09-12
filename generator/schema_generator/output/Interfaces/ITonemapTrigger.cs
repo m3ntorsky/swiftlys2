@@ -5,7 +5,7 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface ITonemapTrigger : IBaseTrigger {
 
   
-  public ref CUtlSymbolLarge TonemapControllerName { get; }
+  public ISchemaUntypedField TonemapControllerName { get; }
   
-  public ref CEntityHandle TonemapController { get; }
+  public ref CHandle<IEntityInstance> TonemapController { get; }
 }

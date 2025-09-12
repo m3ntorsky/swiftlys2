@@ -13,13 +13,13 @@ public partial interface IBaseButton : IBaseToggle {
   
   public Ilocksound_t Ls { get; }
   
-  public ref CUtlSymbolLarge UseSound { get; }
+  public ISchemaUntypedField UseSound { get; }
   
-  public ref CUtlSymbolLarge LockedSound { get; }
+  public ISchemaUntypedField LockedSound { get; }
   
-  public ref CUtlSymbolLarge UnlockedSound { get; }
+  public ISchemaUntypedField UnlockedSound { get; }
   
-  public ref CUtlSymbolLarge OverrideAnticipationName { get; }
+  public ISchemaUntypedField OverrideAnticipationName { get; }
   
   public ref bool Locked { get; }
   
@@ -41,17 +41,17 @@ public partial interface IBaseButton : IBaseToggle {
   
   public ref int State { get; }
   
-  public ref CEntityHandle Constraint { get; }
+  public ref CHandle<IEntityInstance> Constraint { get; }
   
-  public ref CEntityHandle ConstraintParent { get; }
+  public ref CHandle<IEntityInstance> ConstraintParent { get; }
   
   public ref bool ForceNpcExclude { get; }
   
-  public ref CUtlSymbolLarge GlowEntity { get; }
+  public ISchemaUntypedField GlowEntity { get; }
   
   public ref CHandle<CBaseModelEntity> GlowEntity { get; }
   
   public ref bool Usable { get; }
   
-  public ref CUtlSymbolLarge DisplayText { get; }
+  public ISchemaUntypedField DisplayText { get; }
 }

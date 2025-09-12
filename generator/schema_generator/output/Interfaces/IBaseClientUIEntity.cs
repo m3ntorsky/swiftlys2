@@ -7,11 +7,11 @@ public partial interface IBaseClientUIEntity : IBaseModelEntity {
   
   public ref bool Enabled { get; }
   
-  public ref CUtlSymbolLarge DialogXMLName { get; }
+  public ISchemaUntypedField DialogXMLName { get; }
   
-  public ref CUtlSymbolLarge PanelClassName { get; }
+  public ISchemaUntypedField PanelClassName { get; }
   
-  public ref CUtlSymbolLarge PanelID { get; }
+  public ISchemaUntypedField PanelID { get; }
   
   public IEntityIOOutput CustomOutput0 { get; }
   

@@ -7,11 +7,11 @@ public partial interface IPointEntityFinder : IBaseEntity {
   
   public ref CHandle<CBaseEntity> Entity { get; }
   
-  public ref CUtlSymbolLarge FilterName { get; }
+  public ISchemaUntypedField FilterName { get; }
   
   public ref CHandle<CBaseFilter> Filter { get; }
   
-  public ref CUtlSymbolLarge RefName { get; }
+  public ISchemaUntypedField RefName { get; }
   
   public ref CHandle<CBaseEntity> Reference { get; }
   

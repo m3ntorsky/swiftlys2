@@ -9,5 +9,5 @@ public partial interface INmIDComparisonNode__CDefinition : INmBoolValueNode::CD
   
   public ref CNmIDComparisonNode::Comparison_t Comparison { get; }
   
-  public ref CUtlLeanVectorFixedGrowable<CGlobalSymbol,4> ComparisionIDs { get; }
+  public ISchemaUntypedField ComparisionIDs { get; }
 }

@@ -33,8 +33,8 @@ internal partial class CBaseTrigger : CBaseToggle, IBaseTrigger {
   public ref CUtlVector<CHandle<CBaseEntity>> TouchingEntities {
     get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(Schema.GetOffset(0x96DE10B1070A5E2D));
   }
-  public ref CUtlSymbolLarge FilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x96DE10B109C86445));
+  public ISchemaUntypedField FilterName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x96DE10B109C86445));
   }
   public ref CHandle<CBaseFilter> Filter {
     get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0x96DE10B145D9E0B1));

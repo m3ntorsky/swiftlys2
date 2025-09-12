@@ -21,14 +21,14 @@ internal partial class CSoundPatch : SchemaClass, ISoundPatch {
   public ref float LastTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBE66ED3D2E79549E));
   }
-  public ref CUtlSymbolLarge SoundScriptName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBE66ED3D6486B844));
+  public ISchemaUntypedField SoundScriptName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xBE66ED3D6486B844));
   }
   public ref CHandle<CBaseEntity> Ent {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xBE66ED3D8BBDB334));
   }
-  public ref CEntityIndex SoundEntityIndex {
-    get => ref _Handle.AsRef<CEntityIndex>(Schema.GetOffset(0xBE66ED3DEC098195));
+  public ref uint SoundEntityIndex {
+    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xBE66ED3DEC098195));
   }
   public ref Vector SoundOrigin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xBE66ED3D384D083E));
@@ -45,8 +45,8 @@ internal partial class CSoundPatch : SchemaClass, ISoundPatch {
   public ref bool UpdatedSoundOrigin {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBE66ED3DACCF22F1));
   }
-  public ref CUtlSymbolLarge ClassName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBE66ED3D71BB2314));
+  public ISchemaUntypedField ClassName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xBE66ED3D71BB2314));
   }
 
 

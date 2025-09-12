@@ -9,11 +9,11 @@ internal partial class CRopeKeyframe : CBaseModelEntity, IRopeKeyframe {
   public CRopeKeyframe(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge NextLinkName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x76EE758EFD59AE1A));
+  public ISchemaUntypedField NextLinkName {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x76EE758EFD59AE1A));
   }
-  public ref CUtlSymbolLarge StrRopeMaterialModel {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x76EE758E7A58C07A));
+  public ISchemaUntypedField StrRopeMaterialModel {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x76EE758E7A58C07A));
   }
   public ref bool CreatedFromMapFile {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x76EE758EB4684909));

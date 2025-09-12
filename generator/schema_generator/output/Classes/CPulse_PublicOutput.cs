@@ -15,8 +15,8 @@ internal partial class CPulse_PublicOutput : SchemaClass, IPulse_PublicOutput {
   public ref CUtlString Description {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x74B3BCA4678744E9));
   }
-  public ref CUtlLeanVector<CPulseRuntimeMethodArg> Args {
-    get => ref _Handle.AsRef<CUtlLeanVector<CPulseRuntimeMethodArg>>(Schema.GetOffset(0x74B3BCA4DAB98BBC));
+  public ISchemaUntypedField Args {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x74B3BCA4DAB98BBC));
   }
 
 

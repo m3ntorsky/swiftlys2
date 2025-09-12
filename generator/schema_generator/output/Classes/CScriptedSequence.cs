@@ -9,29 +9,29 @@ internal partial class CScriptedSequence : CBaseEntity, IScriptedSequence {
   public CScriptedSequence(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Entry {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45EDE900465B));
+  public ISchemaUntypedField Entry {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xBB0C45EDE900465B));
   }
-  public ref CUtlSymbolLarge PreIdle {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45EDF21548B8));
+  public ISchemaUntypedField PreIdle {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xBB0C45EDF21548B8));
   }
-  public ref CUtlSymbolLarge Play {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45ED387C901B));
+  public ISchemaUntypedField Play {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xBB0C45ED387C901B));
   }
-  public ref CUtlSymbolLarge PostIdle {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45EDD456723D));
+  public ISchemaUntypedField PostIdle {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xBB0C45EDD456723D));
   }
-  public ref CUtlSymbolLarge ModifierToAddOnPlay {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45ED4B56AE97));
+  public ISchemaUntypedField ModifierToAddOnPlay {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xBB0C45ED4B56AE97));
   }
-  public ref CUtlSymbolLarge NextScript {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45ED484B7743));
+  public ISchemaUntypedField NextScript {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xBB0C45ED484B7743));
   }
-  public ref CUtlSymbolLarge Entity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45ED71B7E842));
+  public ISchemaUntypedField Entity {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xBB0C45ED71B7E842));
   }
-  public ref CUtlSymbolLarge SyncGroup {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45ED943A51A5));
+  public ISchemaUntypedField SyncGroup {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xBB0C45ED943A51A5));
   }
   public ref ScriptedMoveTo_t MoveTo {
     get => ref _Handle.AsRef<ScriptedMoveTo_t>(Schema.GetOffset(0xBB0C45EDA9282EB9));

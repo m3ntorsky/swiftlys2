@@ -9,8 +9,8 @@ internal partial class CDynamicNavConnectionsVolume : CTriggerMultiple, IDynamic
   public CDynamicNavConnectionsVolume(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge ConnectionTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA03D49DB1120FFE4));
+  public ISchemaUntypedField ConnectionTarget {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA03D49DB1120FFE4));
   }
   public ref CUtlVector Connections {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA03D49DB11986B7E));

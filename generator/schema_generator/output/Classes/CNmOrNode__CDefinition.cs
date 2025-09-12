@@ -9,8 +9,8 @@ internal partial class CNmOrNode__CDefinition : CNmBoolValueNode::CDefinition, I
   public CNmOrNode__CDefinition(nint handle) : base(handle) {
   }
 
-  public ref CUtlLeanVectorFixedGrowable<int16,4> ConditionNodeIndices {
-    get => ref _Handle.AsRef<CUtlLeanVectorFixedGrowable<int16,4>>(Schema.GetOffset(0x9BF82E864A144D0F));
+  public ISchemaUntypedField ConditionNodeIndices {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x9BF82E864A144D0F));
   }
 
 

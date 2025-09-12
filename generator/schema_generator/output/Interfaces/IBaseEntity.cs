@@ -18,14 +18,14 @@ public partial interface IBaseEntity : IEntityInstance {
   
   public ref bool DisabledContextThinks { get; }
   
-  public ref CBitVec<64> IsSteadyState { get; }
+  public ISchemaUntypedField IsSteadyState { get; }
   
   public ref float LastNetworkChange { get; }
   
 // CUtlVector< ResponseContext_t >
   public ref CUtlVector ResponseContexts { get; }
   
-  public ref CUtlSymbolLarge ResponseContext { get; }
+  public ISchemaUntypedField ResponseContext { get; }
   
   public ref int Health { get; }
   
@@ -53,11 +53,11 @@ public partial interface IBaseEntity : IEntityInstance {
   
   public ref bool RestoreInHierarchy { get; }
   
-  public ref CUtlSymbolLarge Target { get; }
+  public ISchemaUntypedField Target { get; }
   
   public ref CHandle<CBaseFilter> DamageFilter { get; }
   
-  public ref CUtlSymbolLarge DamageFilterName { get; }
+  public ISchemaUntypedField DamageFilterName { get; }
   
   public ref float MoveDoneTime { get; }
   
@@ -77,7 +77,7 @@ public partial interface IBaseEntity : IEntityInstance {
   
   public ref byte TeamNum { get; }
   
-  public ref CUtlSymbolLarge Globalname { get; }
+  public ISchemaUntypedField Globalname { get; }
   
   public ref int SentToClients { get; }
   

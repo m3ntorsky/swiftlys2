@@ -13,7 +13,7 @@ public partial interface ITriggerPush : IBaseTrigger {
   
   public ref bool UsePathSimple { get; }
   
-  public ref CUtlSymbolLarge PathSimpleName { get; }
+  public ISchemaUntypedField PathSimpleName { get; }
   
   public IPathSimple PathSimple { get; }
   

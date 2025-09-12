@@ -12,8 +12,8 @@ internal partial class CEnvGlobal : CLogicalEntity, IEnvGlobal {
   public ISchemaUntypedField OutCounter {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC5E41E3E69415251));
   }
-  public ref CUtlSymbolLarge Globalstate {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC5E41E3E77A86653));
+  public ISchemaUntypedField Globalstate {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC5E41E3E77A86653));
   }
   public ref int Triggermode {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC5E41E3E845DF22C));

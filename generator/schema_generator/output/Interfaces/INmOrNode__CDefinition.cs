@@ -5,5 +5,5 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 public partial interface INmOrNode__CDefinition : INmBoolValueNode::CDefinition {
 
   
-  public ref CUtlLeanVectorFixedGrowable<int16,4> ConditionNodeIndices { get; }
+  public ISchemaUntypedField ConditionNodeIndices { get; }
 }

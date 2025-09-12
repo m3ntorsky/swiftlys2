@@ -7,7 +7,7 @@ public partial interface IFilterMultiple : IBaseFilter {
   
   public ref filter_t FilterType { get; }
   
-  public ISchemaFixedArray<CUtlSymbolLarge> FilterName { get; }
+  public ISchemaUntypedField FilterName { get; }
   
   public ref CHandle<CBaseEntity> Filter { get; }
 }

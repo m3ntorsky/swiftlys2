@@ -9,9 +9,9 @@ public partial interface IEnvBeam : IBeam {
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> SpriteTexture { get; }
   
-  public ref CUtlSymbolLarge StartEntity { get; }
+  public ISchemaUntypedField StartEntity { get; }
   
-  public ref CUtlSymbolLarge EndEntity { get; }
+  public ISchemaUntypedField EndEntity { get; }
   
   public ref float Life { get; }
   
@@ -23,7 +23,7 @@ public partial interface IEnvBeam : IBeam {
   
   public ref float Restrike { get; }
   
-  public ref CUtlSymbolLarge SpriteName { get; }
+  public ISchemaUntypedField SpriteName { get; }
   
   public ref int FrameStart { get; }
   
@@ -35,11 +35,11 @@ public partial interface IEnvBeam : IBeam {
   
   public ref Touch_t TouchType { get; }
   
-  public ref CUtlSymbolLarge FilterName { get; }
+  public ISchemaUntypedField FilterName { get; }
   
   public ref CHandle<CBaseEntity> Filter { get; }
   
-  public ref CUtlSymbolLarge Decal { get; }
+  public ISchemaUntypedField Decal { get; }
   
   public IEntityIOOutput OnTouchedByEntity { get; }
 }

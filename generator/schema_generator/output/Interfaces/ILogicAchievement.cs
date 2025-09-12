@@ -7,7 +7,7 @@ public partial interface ILogicAchievement : ILogicalEntity {
   
   public ref bool Disabled { get; }
   
-  public ref CUtlSymbolLarge AchievementEventID { get; }
+  public ISchemaUntypedField AchievementEventID { get; }
   
   public IEntityIOOutput OnFired { get; }
 }
