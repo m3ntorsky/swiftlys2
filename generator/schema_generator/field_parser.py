@@ -22,8 +22,8 @@ def parse_field(field_def, all_class_names, all_enum_names):
     "HASH": '0x{:02X}'.format(hash),
     "NAME": convert_field_name(field_def["name"]),
     "IS_NETWORKED": "true" if networked else "false",
-    "IMPL_TYPE": impl_type,
-    "INTERFACE_TYPE": interface_type,
+    "IMPL_TYPE": impl_type.replace(":", "_"),
+    "INTERFACE_TYPE": interface_type.replace(":", "_"),
     "IS_VALUE_TYPE": is_value_type,
     "KIND": kind
   }

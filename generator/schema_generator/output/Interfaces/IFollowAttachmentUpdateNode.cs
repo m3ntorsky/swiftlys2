@@ -1,9 +1,0 @@
-using SwiftlyS2.Shared.Schemas;
-
-namespace SwiftlyS2.Core.SchemaDefinitions;
-
-public partial interface IFollowAttachmentUpdateNode : IUnaryUpdateNode {
-
-  
-  public IFollowAttachmentSettings_t OpFixedData { get; }
-}

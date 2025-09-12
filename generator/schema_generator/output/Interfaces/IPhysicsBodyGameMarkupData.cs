@@ -1,9 +1,0 @@
-using SwiftlyS2.Shared.Schemas;
-
-namespace SwiftlyS2.Core.SchemaDefinitions;
-
-public partial interface IPhysicsBodyGameMarkupData : ISchemaClass {
-
-  
-  public ISchemaUntypedField PhysicsBodyMarkupByBoneName { get; }
-}

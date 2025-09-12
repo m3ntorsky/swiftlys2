@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.Natives;
 /// </summary>
 /// <typeparam name="T"></typeparam>
 [StructLayout(LayoutKind.Sequential, Size = 8)]
-public ref struct CStrongHandle<T> where T : INativeHandle {
+public struct CStrongHandle<T> where T : INativeHandle {
 
   private nint _pBinding;
 

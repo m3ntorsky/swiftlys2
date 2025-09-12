@@ -7,5 +7,5 @@ public struct CUtlString {
 
   private CUtlBinaryBlock _storage;
 
-  public string Value; // TODO: Implement with natives
+  // public string Value; // TODO: Implement with natives
 }

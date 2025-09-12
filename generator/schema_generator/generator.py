@@ -1,9 +1,23 @@
-from class_name_convertor import get_interface_name
+from class_name_convertor import get_interface_name, get_impl_name
 import json
 import os
 from tqdm import tqdm
+from pathlib import Path
 
 from field_parser import parse_field
+
+OUT_DIR = Path("../../managed/src/SwiftlyS2.Generated/Schemas/")
+
+if not os.path.exists(OUT_DIR):
+  os.makedirs(OUT_DIR)
+  os.makedirs(OUT_DIR / "Classes")
+  os.makedirs(OUT_DIR / "Interfaces")
+  os.makedirs(OUT_DIR / "Enums")
+
+# no one need them
+blacklisted_classes = [
+  "FeSimdTri_t"
+]
 
 def render_template(template, params):
   for param, value in params.items():
@@ -21,7 +35,7 @@ class Writer():
     self.size = class_def["size"]
     self.class_name = self.class_name.replace(":", "_")
     
-    self.interface_name = get_interface_name(self.class_name)
+    self.interface_name = get_impl_name(self.class_name)
 
 
     self.class_ref_field_template = open("templates/class_ref_field_template.cs", "r").read()
@@ -38,30 +52,41 @@ class Writer():
     self.enum_template = open("templates/enum_template.cs", "r").read()
 
     self.base_class = self.class_def["base_classes"][0] if "base_classes" in self.class_def else "SchemaClass"
+    self.base_class = self.base_class.replace(":", "_")
   
   def write_conversion(self, conversions):
     params = {
-      "INTERFACE_NAME": self.interface_name,
-      "CLASS_NAME": self.class_name,
+      "INTERFACE_NAME": get_interface_name(self.class_name),
+      "CLASS_NAME": get_impl_name(self.class_name),
     }
     conversions.append(render_template(self.conversion_type_template, params))
 
   def write_class(self):
-    self.class_file_handle = open(f"output/Classes/{self.class_name}.cs", "w")
+    self.class_file_handle = open(OUT_DIR / "Classes" / f"{get_impl_name(self.class_name)}.cs", "w")
 
     fields = []
     updators = []
 
+    duplicated_counter = 0
+    names = []
+
     if "fields" in self.class_def:
       for field in self.class_def["fields"]:
+
         field_info = parse_field(field, self.all_class_names, self.all_enum_names)
-        
+
+        if field_info["NAME"] in names:
+          duplicated_counter += 1
+          field_info["NAME"] = f"{field_info['NAME']}{duplicated_counter}"
+        else:
+          names.append(field_info["NAME"])
+
         field_info["REF_METHOD"] = "Deref" if field_info["KIND"] == "ptr" else "AsRef"
 
         if field_info["IS_NETWORKED"] == "true":
           updators.append(render_template(self.class_updator_template, field_info))
 
-        elif field_info["KIND"] == "fixed_array":
+        if field_info["KIND"] == "fixed_array" and field_info["IMPL_TYPE"] != "SchemaUntypedField":
           fields.append(render_template(self.class_fixed_array_field_template, field_info))
         elif field_info["IS_VALUE_TYPE"]:
           fields.append(render_template(self.class_value_field_template, field_info))
@@ -69,9 +94,9 @@ class Writer():
           fields.append(render_template(self.class_ref_field_template, field_info))
 
     params = {
-      "CLASS_NAME": self.class_name,
-      "INTERFACE_NAME": self.interface_name,
-      "BASE_CLASS": self.base_class,
+      "CLASS_NAME": get_impl_name(self.class_name),
+      "INTERFACE_NAME": get_interface_name(self.class_name),
+      "BASE_CLASS": get_impl_name(self.base_class),
       "BASE_INTERFACE": get_interface_name(self.base_class),
       "FIELDS": "\n".join(fields),
       "UPDATORS": "\n".join(updators)
@@ -80,7 +105,7 @@ class Writer():
     self.class_file_handle.write(render_template(self.class_template, params))
 
   def write_interface(self):
-    self.interface_file_handle = open(f"output/Interfaces/{self.interface_name}.cs", "w")
+    self.interface_file_handle = open(OUT_DIR / "Interfaces" / f"{get_interface_name(self.class_name)}.cs", "w")
 
     fields = []
 
@@ -92,10 +117,20 @@ class Writer():
       "CNetworkUtlVectorBase",
     ]
 
+    duplicated_counter = 0
+    names = []
+
     if "fields" in self.class_def:
       for field in self.class_def["fields"]:
         field_info = parse_field(field, self.all_class_names, self.all_enum_names)
       
+        
+        if field_info["NAME"] in names:
+          duplicated_counter += 1
+          field_info["NAME"] = f"{field_info['NAME']}{duplicated_counter}"
+        else:
+          names.append(field_info["NAME"])
+
         field_info["REF"] = "ref " if field_info["IS_VALUE_TYPE"] else ""
         field_info["COMMENT"] = ""
 
@@ -105,14 +140,14 @@ class Writer():
         fields.append(render_template(self.interface_field_template, field_info))
 
     params = {
-      "INTERFACE_NAME": self.interface_name,
+      "INTERFACE_NAME": get_interface_name(self.class_name),
       "BASE_INTERFACE": get_interface_name(self.base_class),
       "FIELDS": "\n".join(fields)
     }
     self.interface_file_handle.write(render_template(self.interface_template, params))
 
   def write_enum(self):
-    enum_file_handle = open(f"output/Enums/{self.class_name}.cs", "w")
+    enum_file_handle = open(OUT_DIR / "Enums" / f"{self.class_name}.cs", "w")
     types = {
       1: "byte",
       2: "ushort",
@@ -124,7 +159,8 @@ class Writer():
 
     fields = []
     for field in self.class_def["fields"]:
-      value = str(field["value"]) if field["value"] != -1 else f"{type}.MaxValue"
+      value = field["value"] if field["value"] != -1 else f"{type}.MaxValue"
+      value = value if value != -2 else f"{type}.MaxValue - 1"
       fields.append(f" {field["name"]} = {value},")
 
     params = {
@@ -134,13 +170,6 @@ class Writer():
     }
     enum_file_handle.write(render_template(self.enum_template, params))
 
-
-if not os.path.exists("output"):
-  os.makedirs("output/Classes")
-  os.makedirs("output/Interfaces")
-  os.makedirs("output/Enums")
-
-
 with open("sdk.json", "r") as f:
   data = json.load(f)
 
@@ -149,16 +178,22 @@ with open("sdk.json", "r") as f:
 
   conversions = []
   for class_def in tqdm(data["classes"], desc="Classes"):
+    if class_def["name"] in blacklisted_classes:
+      continue
+
     writer = Writer(class_def, all_class_names, all_enum_names)
     writer.write_conversion(conversions)
     writer.write_class()
     writer.write_interface()
 
   for enum_def in tqdm(data["enums"], desc="Enums"):
+    if enum_def["name"] in blacklisted_classes:
+      continue
+
     writer = Writer(enum_def, all_class_names, all_enum_names)
     writer.write_enum()
 
-  with open("output/Conversions.cs", "w") as f:
+  with open(OUT_DIR / "Conversions.cs", "w") as f:
     with open ("templates/conversion_template.cs", "r") as t:
       f.write(render_template(t.read(), {
         "CONVERSIONS": "\n".join(conversions)

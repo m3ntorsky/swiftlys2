@@ -1,9 +1,0 @@
-using SwiftlyS2.Shared.Schemas;
-
-namespace SwiftlyS2.Core.SchemaDefinitions;
-
-public partial interface IRnMeshDesc_t : IRnShapeDesc_t {
-
-  
-  public IRnMesh_t Mesh { get; }
-}

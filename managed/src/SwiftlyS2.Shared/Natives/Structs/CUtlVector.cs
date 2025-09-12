@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 namespace SwiftlyS2.Shared.Natives;
 
 [StructLayout(LayoutKind.Sequential, Size = 24)]
-public struct CUtlVector<T> {
+public struct CUtlVector<T> where T : unmanaged {
 
   private int _size;
   private int _pad;
@@ -20,5 +20,15 @@ public struct CUtlVector<T> {
   public int Size { get => _size; internal set => _size = value; }
   
   public CUtlMemory<T> Memory { get => _utlMemory; internal set => _utlMemory = value; }
+
+}
+
+/// <summary>
+/// Unsafe untyped cutlvector.
+/// </summary>
+[StructLayout(LayoutKind.Sequential, Size = 24)]
+public struct CUtlVector
+{
+
 
 }
