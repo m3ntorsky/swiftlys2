@@ -4,6 +4,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum EMode_t : uint {
 
- Peak = 0;
- RMS = 1;
+ Peak = 0,
+
+ RMS = 1,
 }

@@ -4,7 +4,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum NmTransitionRule_t : byte {
 
- AllowTransition = 0;
- ConditionallyAllowTransition = 1;
- BlockTransition = 2;
+ AllowTransition = 0,
+
+ ConditionallyAllowTransition = 1,
+
+ BlockTransition = 2,
 }

@@ -4,6 +4,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum BlurFilterType_t : uint {
 
- BLURFILTER_GAUSSIAN = 0;
- BLURFILTER_BOX = 1;
+ BLURFILTER_GAUSSIAN = 0,
+
+ BLURFILTER_BOX = 1,
 }

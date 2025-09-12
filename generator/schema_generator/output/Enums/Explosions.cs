@@ -4,7 +4,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum Explosions : uint {
 
- expRandom = 0;
- expDirected = 1;
- expUsePrecise = 2;
+ expRandom = 0,
+
+ expDirected = 1,
+
+ expUsePrecise = 2,
 }

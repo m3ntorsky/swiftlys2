@@ -125,12 +125,12 @@ class Writer():
     fields = []
     for field in self.class_def["fields"]:
       value = str(field["value"]) if field["value"] != -1 else f"{type}.MaxValue"
-      fields.append(f" {field["name"]} = {value};")
+      fields.append(f" {field["name"]} = {value},")
 
     params = {
       "ENUM_NAME": self.class_name,
       "BASE_TYPE": type,
-      "ENUM_VALUES": "\n".join(fields)
+      "ENUM_VALUES": "\n\n".join(fields)
     }
     enum_file_handle.write(render_template(self.enum_template, params))
 

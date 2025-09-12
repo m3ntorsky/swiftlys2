@@ -4,9 +4,13 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum EWaveform : byte {
 
- Sine = 0;
- Square = 1;
- Saw = 2;
- Triangle = 3;
- Noise = 4;
+ Sine = 0,
+
+ Square = 1,
+
+ Saw = 2,
+
+ Triangle = 3,
+
+ Noise = 4,
 }

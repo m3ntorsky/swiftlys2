@@ -4,7 +4,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum VPhysXJoint_t__Flags_t : uint {
 
- JOINT_FLAGS_NONE = 0;
- JOINT_FLAGS_BODY1_FIXED = 1;
- JOINT_FLAGS_USE_BLOCK_SOLVER = 2;
+ JOINT_FLAGS_NONE = 0,
+
+ JOINT_FLAGS_BODY1_FIXED = 1,
+
+ JOINT_FLAGS_USE_BLOCK_SOLVER = 2,
 }

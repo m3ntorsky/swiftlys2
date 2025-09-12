@@ -4,6 +4,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum ValueRemapperInputType_t : uint {
 
- InputType_PlayerShootPosition = 0;
- InputType_PlayerShootPositionAroundAxis = 1;
+ InputType_PlayerShootPosition = 0,
+
+ InputType_PlayerShootPositionAroundAxis = 1,
 }

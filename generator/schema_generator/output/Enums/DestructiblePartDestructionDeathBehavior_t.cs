@@ -4,8 +4,11 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum DestructiblePartDestructionDeathBehavior_t : uint {
 
- eDoNotKill = 0;
- eKill = 1;
- eGib = 2;
- eRemove = 3;
+ eDoNotKill = 0,
+
+ eKill = 1,
+
+ eGib = 2,
+
+ eRemove = 3,
 }

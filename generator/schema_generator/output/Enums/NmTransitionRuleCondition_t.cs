@@ -4,8 +4,11 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum NmTransitionRuleCondition_t : byte {
 
- AnyAllowed = 0;
- FullyAllowed = 1;
- ConditionallyAllowed = 2;
- Blocked = 3;
+ AnyAllowed = 0,
+
+ FullyAllowed = 1,
+
+ ConditionallyAllowed = 2,
+
+ Blocked = 3,
 }

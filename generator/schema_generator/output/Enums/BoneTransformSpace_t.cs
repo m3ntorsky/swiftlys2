@@ -4,8 +4,11 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum BoneTransformSpace_t : uint {
 
- BoneTransformSpace_Invalid = uint.MaxValue;
- BoneTransformSpace_Parent = 0;
- BoneTransformSpace_Model = 1;
- BoneTransformSpace_World = 2;
+ BoneTransformSpace_Invalid = uint.MaxValue,
+
+ BoneTransformSpace_Parent = 0,
+
+ BoneTransformSpace_Model = 1,
+
+ BoneTransformSpace_World = 2,
 }

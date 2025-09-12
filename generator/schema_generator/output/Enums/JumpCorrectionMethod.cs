@@ -4,6 +4,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum JumpCorrectionMethod : uint {
 
- ScaleMotion = 0;
- AddCorrectionDelta = 1;
+ ScaleMotion = 0,
+
+ AddCorrectionDelta = 1,
 }

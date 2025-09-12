@@ -4,5 +4,5 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum PulseCollisionGroup_t : uint {
 
- DEFAULT = 0;
+ DEFAULT = 0,
 }

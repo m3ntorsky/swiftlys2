@@ -4,7 +4,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum PoseType_t : byte {
 
- POSETYPE_STATIC = 0;
- POSETYPE_DYNAMIC = 1;
- POSETYPE_INVALID = 255;
+ POSETYPE_STATIC = 0,
+
+ POSETYPE_DYNAMIC = 1,
+
+ POSETYPE_INVALID = 255,
 }

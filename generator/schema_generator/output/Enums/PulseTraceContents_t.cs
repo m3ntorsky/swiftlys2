@@ -4,6 +4,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum PulseTraceContents_t : uint {
 
- STATIC_LEVEL = 0;
- SOLID = 1;
+ STATIC_LEVEL = 0,
+
+ SOLID = 1,
 }

@@ -4,7 +4,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum ParticleLightingQuality_t : uint {
 
- PARTICLE_LIGHTING_PER_PARTICLE = 0;
- PARTICLE_LIGHTING_PER_VERTEX = 1;
- PARTICLE_LIGHTING_PER_PIXEL = uint.MaxValue;
+ PARTICLE_LIGHTING_PER_PARTICLE = 0,
+
+ PARTICLE_LIGHTING_PER_VERTEX = 1,
+
+ PARTICLE_LIGHTING_PER_PIXEL = uint.MaxValue,
 }

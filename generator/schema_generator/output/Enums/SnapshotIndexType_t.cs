@@ -4,6 +4,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum SnapshotIndexType_t : uint {
 
- SNAPSHOT_INDEX_INCREMENT = 0;
- SNAPSHOT_INDEX_DIRECT = 1;
+ SNAPSHOT_INDEX_INCREMENT = 0,
+
+ SNAPSHOT_INDEX_DIRECT = 1,
 }

@@ -4,8 +4,11 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum NmTargetWarpAlgorithm_t : byte {
 
- Lerp = 0;
- Hermite = 1;
- HermiteFeaturePreserving = 2;
- Bezier = 3;
+ Lerp = 0,
+
+ Hermite = 1,
+
+ HermiteFeaturePreserving = 2,
+
+ Bezier = 3,
 }

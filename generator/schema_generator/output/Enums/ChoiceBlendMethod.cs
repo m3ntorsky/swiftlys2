@@ -4,6 +4,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum ChoiceBlendMethod : uint {
 
- SingleBlendTime = 0;
- PerChoiceBlendTimes = 1;
+ SingleBlendTime = 0,
+
+ PerChoiceBlendTimes = 1,
 }

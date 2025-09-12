@@ -4,6 +4,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum AnimNodeNetworkMode : uint {
 
- ServerAuthoritative = 0;
- ClientSimulate = 1;
+ ServerAuthoritative = 0,
+
+ ClientSimulate = 1,
 }

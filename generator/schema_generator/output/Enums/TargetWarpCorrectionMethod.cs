@@ -4,6 +4,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum TargetWarpCorrectionMethod : uint {
 
- ScaleMotion = 0;
- AddCorrectionDelta = 1;
+ ScaleMotion = 0,
+
+ AddCorrectionDelta = 1,
 }

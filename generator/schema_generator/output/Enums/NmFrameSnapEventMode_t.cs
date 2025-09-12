@@ -4,6 +4,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum NmFrameSnapEventMode_t : uint {
 
- Floor = 0;
- Round = 1;
+ Floor = 0,
+
+ Round = 1,
 }

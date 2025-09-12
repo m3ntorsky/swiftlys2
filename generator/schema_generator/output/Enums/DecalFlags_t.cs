@@ -4,8 +4,11 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum DecalFlags_t : uint {
 
- eNone = 0;
- eCannotClear = 1;
- eAll = 4294967295;
- eAllButCannotClear = 4294967294;
+ eNone = 0,
+
+ eCannotClear = 1,
+
+ eAll = 4294967295,
+
+ eAllButCannotClear = 4294967294,
 }

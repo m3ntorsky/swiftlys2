@@ -4,6 +4,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum EDestructiblePartRadiusDamageApplyType : uint {
 
- ScaleByExplosionRadius = 0;
- PrioritizeClosestPart = 1;
+ ScaleByExplosionRadius = 0,
+
+ PrioritizeClosestPart = 1,
 }

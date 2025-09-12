@@ -4,9 +4,13 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum PointOrientGoalDirectionType_t : uint {
 
- eAbsOrigin = 0;
- eCenter = 1;
- eHead = 2;
- eForward = 3;
- eEyesForward = 4;
+ eAbsOrigin = 0,
+
+ eCenter = 1,
+
+ eHead = 2,
+
+ eForward = 3,
+
+ eEyesForward = 4,
 }

@@ -4,7 +4,9 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum EntFinderMethod_t : uint {
 
- ENT_FIND_METHOD_NEAREST = 0;
- ENT_FIND_METHOD_FARTHEST = 1;
- ENT_FIND_METHOD_RANDOM = 2;
+ ENT_FIND_METHOD_NEAREST = 0,
+
+ ENT_FIND_METHOD_FARTHEST = 1,
+
+ ENT_FIND_METHOD_RANDOM = 2,
 }
