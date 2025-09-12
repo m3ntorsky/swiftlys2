@@ -1,0 +1,13 @@
+using SwiftlyS2.Shared.Schemas;
+
+namespace SwiftlyS2.Shared.SchemaDefinitions;
+
+public enum EDestructibleParts_DestroyParameterFlags : uint {
+
+ GenerateBreakpieces = 1;
+ EnableFlinches = 2;
+ ForceDamageApply = 4;
+ IgnoreKillEntityFlag = 8;
+ IgnoreHealthCheck = 16;
+ Default = 3;
+}

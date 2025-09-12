@@ -1,6 +1,7 @@
 from class_name_convertor import get_interface_name
 import json
 import os
+from tqdm import tqdm
 
 from field_parser import parse_field
 
@@ -17,12 +18,11 @@ class Writer():
     self.all_enum_names = all_enum_names
 
     self.class_name = class_def["name"]
+    self.size = class_def["size"]
     self.class_name = self.class_name.replace(":", "_")
     
     self.interface_name = get_interface_name(self.class_name)
 
-    self.class_file_handle = open(f"output/Classes/{self.class_name}.cs", "w")
-    self.interface_file_handle = open(f"output/Interfaces/{self.interface_name}.cs", "w")
 
     self.class_ref_field_template = open("templates/class_ref_field_template.cs", "r").read()
     self.class_value_field_template = open("templates/class_value_field_template.cs", "r").read()
@@ -35,6 +35,8 @@ class Writer():
 
     self.conversion_type_template = open("templates/conversion_type_template.cs", "r").read()
 
+    self.enum_template = open("templates/enum_template.cs", "r").read()
+
     self.base_class = self.class_def["base_classes"][0] if "base_classes" in self.class_def else "SchemaClass"
   
   def write_conversion(self, conversions):
@@ -45,6 +47,7 @@ class Writer():
     conversions.append(render_template(self.conversion_type_template, params))
 
   def write_class(self):
+    self.class_file_handle = open(f"output/Classes/{self.class_name}.cs", "w")
 
     fields = []
     updators = []
@@ -77,6 +80,7 @@ class Writer():
     self.class_file_handle.write(render_template(self.class_template, params))
 
   def write_interface(self):
+    self.interface_file_handle = open(f"output/Interfaces/{self.interface_name}.cs", "w")
 
     fields = []
 
@@ -107,9 +111,34 @@ class Writer():
     }
     self.interface_file_handle.write(render_template(self.interface_template, params))
 
+  def write_enum(self):
+    enum_file_handle = open(f"output/Enums/{self.class_name}.cs", "w")
+    types = {
+      1: "byte",
+      2: "ushort",
+      4: "uint",
+      8: "ulong"
+    }
+
+    type = types[self.size]
+
+    fields = []
+    for field in self.class_def["fields"]:
+      value = str(field["value"]) if field["value"] != -1 else f"{type}.MaxValue"
+      fields.append(f" {field["name"]} = {value};")
+
+    params = {
+      "ENUM_NAME": self.class_name,
+      "BASE_TYPE": type,
+      "ENUM_VALUES": "\n".join(fields)
+    }
+    enum_file_handle.write(render_template(self.enum_template, params))
+
+
 if not os.path.exists("output"):
   os.makedirs("output/Classes")
   os.makedirs("output/Interfaces")
+  os.makedirs("output/Enums")
 
 
 with open("sdk.json", "r") as f:
@@ -119,14 +148,15 @@ with open("sdk.json", "r") as f:
   all_enum_names = [enum_def["name"] for enum_def in data["enums"]]
 
   conversions = []
-  for class_def in data["classes"]:
-    try:
-      writer = Writer(class_def, all_class_names, all_enum_names)
-      writer.write_conversion(conversions)
-      writer.write_class()
-      writer.write_interface()
-    except Exception as e:
-      print(f"Error: {e}")
+  for class_def in tqdm(data["classes"], desc="Classes"):
+    writer = Writer(class_def, all_class_names, all_enum_names)
+    writer.write_conversion(conversions)
+    writer.write_class()
+    writer.write_interface()
+
+  for enum_def in tqdm(data["enums"], desc="Enums"):
+    writer = Writer(enum_def, all_class_names, all_enum_names)
+    writer.write_enum()
 
   with open("output/Conversions.cs", "w") as f:
     with open ("templates/conversion_template.cs", "r") as t:

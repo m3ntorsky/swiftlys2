@@ -1,0 +1,11 @@
+using SwiftlyS2.Shared.Schemas;
+
+namespace SwiftlyS2.Shared.SchemaDefinitions;
+
+public enum ChoiceMethod : uint {
+
+ WeightedRandom = 0;
+ WeightedRandomNoRepeat = 1;
+ Iterate = 2;
+ IterateRandom = 3;
+}

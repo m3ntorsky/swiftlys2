@@ -1,0 +1,10 @@
+using SwiftlyS2.Shared.Schemas;
+
+namespace SwiftlyS2.Shared.SchemaDefinitions;
+
+public enum CSWeaponSilencerType : uint {
+
+ WEAPONSILENCER_NONE = 0;
+ WEAPONSILENCER_DETACHABLE = 1;
+ WEAPONSILENCER_INTEGRATED = 2;
+}

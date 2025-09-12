@@ -1,0 +1,10 @@
+using SwiftlyS2.Shared.Schemas;
+
+namespace SwiftlyS2.Shared.SchemaDefinitions;
+
+public enum CanPlaySequence_t : uint {
+
+ CANNOT_PLAY = 0;
+ CAN_PLAY_NOW = 1;
+ CAN_PLAY_ENQUEUED = 2;
+}

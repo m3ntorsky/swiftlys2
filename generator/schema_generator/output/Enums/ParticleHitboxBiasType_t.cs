@@ -1,0 +1,9 @@
+using SwiftlyS2.Shared.Schemas;
+
+namespace SwiftlyS2.Shared.SchemaDefinitions;
+
+public enum ParticleHitboxBiasType_t : uint {
+
+ PARTICLE_HITBOX_BIAS_ENTITY = 0;
+ PARTICLE_HITBOX_BIAS_HITBOX = 1;
+}

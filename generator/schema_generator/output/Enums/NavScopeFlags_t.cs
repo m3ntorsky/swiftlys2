@@ -1,0 +1,11 @@
+using SwiftlyS2.Shared.Schemas;
+
+namespace SwiftlyS2.Shared.SchemaDefinitions;
+
+public enum NavScopeFlags_t : byte {
+
+ eGround = 1;
+ eAir = 2;
+ eAll = 3;
+ eNone = 0;
+}

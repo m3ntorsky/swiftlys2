@@ -1,0 +1,10 @@
+using SwiftlyS2.Shared.Schemas;
+
+namespace SwiftlyS2.Shared.SchemaDefinitions;
+
+public enum WorldTextPanelHorizontalAlign_t : uint {
+
+ WORLDTEXT_HORIZONTAL_ALIGN_LEFT = 0;
+ WORLDTEXT_HORIZONTAL_ALIGN_CENTER = 1;
+ WORLDTEXT_HORIZONTAL_ALIGN_RIGHT = 2;
+}

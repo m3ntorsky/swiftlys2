@@ -1,0 +1,8 @@
+using SwiftlyS2.Shared.Schemas;
+
+namespace SwiftlyS2.Shared.SchemaDefinitions;
+
+public enum $ENUM_NAME$ : $BASE_TYPE$ {
+
+$ENUM_VALUES$
+}

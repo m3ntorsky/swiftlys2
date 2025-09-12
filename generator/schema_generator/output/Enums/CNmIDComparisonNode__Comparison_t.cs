@@ -1,0 +1,9 @@
+using SwiftlyS2.Shared.Schemas;
+
+namespace SwiftlyS2.Shared.SchemaDefinitions;
+
+public enum CNmIDComparisonNode__Comparison_t : byte {
+
+ Matches = 0;
+ DoesntMatch = 1;
+}

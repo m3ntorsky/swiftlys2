@@ -1,0 +1,9 @@
+using SwiftlyS2.Shared.Schemas;
+
+namespace SwiftlyS2.Shared.SchemaDefinitions;
+
+public enum CNmSoundEvent__Type_t : uint {
+
+ Play = 0;
+ Stop = 1;
+}
