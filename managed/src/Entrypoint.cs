@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 using SwiftlyS2.Core;
-using SwiftlyS2.Core.Natives.Tables;
+using SwiftlyS2.Core.Natives;
 
 namespace SwiftlyS2;
 
