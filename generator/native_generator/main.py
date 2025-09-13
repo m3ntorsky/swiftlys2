@@ -96,22 +96,23 @@ def parse_native(lines: list[str]):
     namespace_prefix, class_name = split_by_last_dot(namespace_content)
     print(class_name)
 
-    out_path = Path("output") /  f"{class_name}.cs"
+    out_path = Path("../../managed/src/SwiftlyS2.Generated/Natives/") /  f"{class_name}.cs"
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     chunks: list[str] = []
     emit(chunks, "using System.Buffers;")
     emit(chunks, "using System.Text;")
     emit(chunks)
-    emit(chunks, f"namespace SwiftlyS2.NativeTables.{class_name};")
+    emit(chunks, f"namespace SwiftlyS2.Core.Natives;")
     emit(chunks)
-    emit(chunks, f"public static class NativeTable_{class_name} {{")
+    emit(chunks, f"internal static class Native{class_name} {{")
 
     for raw_line in native_lines:
         if raw_line.strip() == "":
             continue
         left, right = raw_line.split("=", 1)
         return_type, function_name = left.split(" ", 1)
+        function_name = function_name.strip()
         params_and_comment = right.split("//", 1)
         native_params_raw = params_and_comment[0] if params_and_comment else ""
         comment = params_and_comment[1] if len(params_and_comment) > 1 else ""
@@ -194,12 +195,12 @@ def parse_native(lines: list[str]):
 
 
 def main():
+    out_dir = Path("../../managed/src/SwiftlyS2.Generated/Natives/")
+    out_dir.mkdir(parents=True, exist_ok=True)
     definitions_dir = Path("../../natives")
-    for entry in os.listdir(definitions_dir):
-        file_path = definitions_dir / entry
-        if file_path.is_file():
-            with open(file_path, "r", encoding="utf-8") as f:
-                parse_native(f.readlines())
+    for file_path in definitions_dir.rglob("*.native"):
+        with open(file_path, "r", encoding="utf-8") as f:
+            parse_native(f.readlines())
 
 
 if __name__ == "__main__":
