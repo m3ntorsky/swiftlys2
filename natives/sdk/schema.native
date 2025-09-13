@@ -1,4 +1,4 @@
-namespace SDK.Schema
+class Schema
 
 void SetStateChanged = ptr entity, uint64 hash
 uint32 FindChainOffset = string className

@@ -1,4 +1,4 @@
-namespace Monitor.Logger
+class Logger
 
 void Log = int32 logType, string message
 void Log = int32 logType, string category, string message

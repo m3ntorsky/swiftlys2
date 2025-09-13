@@ -1,4 +1,4 @@
-namespace Memory.GameData.Offsets
+class Offsets
 
 bool Exists = string name
-int Fetch = string name
+int32 Fetch = string name

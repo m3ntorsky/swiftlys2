@@ -1,9 +1,9 @@
 using System.Buffers;
 using System.Text;
 
-namespace SwiftlyS2.Natives;
+namespace SwiftlyS2.Core.Natives;
 
-public static class NativeLogger {
+internal static class NativeLogger {
   private unsafe static delegate* unmanaged<int, byte*, void> _Log;
   public unsafe static void Log(int logType, string message) {
     var pool = ArrayPool<byte>.Shared;

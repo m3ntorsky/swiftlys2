@@ -1,9 +1,9 @@
 using System.Buffers;
 using System.Text;
 
-namespace SwiftlyS2.Natives;
+namespace SwiftlyS2.Core.Natives;
 
-public static class NativeSignatures {
+internal static class NativeSignatures {
   private unsafe static delegate* unmanaged<byte*, bool> _Exists;
   public unsafe static bool Exists(string signatureName) {
     var pool = ArrayPool<byte>.Shared;

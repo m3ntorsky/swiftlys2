@@ -1,4 +1,4 @@
-namespace Memory.GameData.Patches
+class Patches
 
 void Apply = string patchName
 void Revert = string patchName

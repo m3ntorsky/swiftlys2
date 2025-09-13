@@ -1,9 +1,9 @@
 using System.Buffers;
 using System.Text;
 
-namespace SwiftlyS2.Natives;
+namespace SwiftlyS2.Core.Natives;
 
-public static class NativeOffsets {
+internal static class NativeOffsets {
   private unsafe static delegate* unmanaged<byte*, bool> _Exists;
   public unsafe static bool Exists(string name) {
     var pool = ArrayPool<byte>.Shared;

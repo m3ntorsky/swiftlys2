@@ -1,9 +1,9 @@
 using System.Buffers;
 using System.Text;
 
-namespace SwiftlyS2.Natives;
+namespace SwiftlyS2.Core.Natives;
 
-public static class NativeSchema {
+internal static class NativeSchema {
   private unsafe static delegate* unmanaged<void*, ulong, void> _SetStateChanged;
   public unsafe static void SetStateChanged(void* entity, ulong hash) {
     _SetStateChanged(entity, hash);

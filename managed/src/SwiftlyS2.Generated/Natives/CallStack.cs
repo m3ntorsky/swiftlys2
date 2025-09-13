@@ -1,9 +1,9 @@
 using System.Buffers;
 using System.Text;
 
-namespace SwiftlyS2.Natives;
+namespace SwiftlyS2.Core.Natives;
 
-public static class NativeCallStack {
+internal static class NativeCallStack {
   private unsafe static delegate* unmanaged<byte*, byte*, ulong> _Register;
   public unsafe static ulong Register(string pluginName, string stackMsg) {
     var pool = ArrayPool<byte>.Shared;

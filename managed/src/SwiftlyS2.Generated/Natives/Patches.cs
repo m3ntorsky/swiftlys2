@@ -1,9 +1,9 @@
 using System.Buffers;
 using System.Text;
 
-namespace SwiftlyS2.Natives;
+namespace SwiftlyS2.Core.Natives;
 
-public static class NativePatches {
+internal static class NativePatches {
   private unsafe static delegate* unmanaged<byte*, void> _Apply;
   public unsafe static void Apply(string patchName) {
     var pool = ArrayPool<byte>.Shared;

@@ -1,4 +1,4 @@
-namespace Monitor.Resmon
+class Resmon
 
 bool IsEnabled = void
 void RecordTime = string pluginName, string key, double time // time is milliseconds as float (0.123 for 123 nanoseconds)

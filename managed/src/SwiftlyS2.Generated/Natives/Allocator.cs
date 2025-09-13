@@ -1,9 +1,9 @@
 using System.Buffers;
 using System.Text;
 
-namespace SwiftlyS2.Natives;
+namespace SwiftlyS2.Core.Natives;
 
-public static class NativeAllocator {
+internal static class NativeAllocator {
   private unsafe static delegate* unmanaged<ulong, void*> _Alloc;
   public unsafe static void* Alloc(ulong size) {
     var ret = _Alloc(size);

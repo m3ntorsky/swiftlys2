@@ -1,9 +1,9 @@
 using System.Buffers;
 using System.Text;
 
-namespace SwiftlyS2.Natives;
+namespace SwiftlyS2.Core.Natives;
 
-public static class NativeResmon {
+internal static class NativeResmon {
   private unsafe static delegate* unmanaged<bool> _IsEnabled;
   public unsafe static bool IsEnabled() {
     var ret = _IsEnabled();

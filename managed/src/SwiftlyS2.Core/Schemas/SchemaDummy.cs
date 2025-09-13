@@ -1,4 +1,4 @@
-using SwiftlyS2.Natives;
+using SwiftlyS2.Core.Natives;
 
 namespace SwiftlyS2.Core.Schemas;
 
