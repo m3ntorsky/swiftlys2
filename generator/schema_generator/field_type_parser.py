@@ -1,4 +1,4 @@
-from class_name_convertor import get_interface_name
+from class_name_convertor import get_interface_name, get_impl_name
 
 
 unmanaged_type_maps = {
@@ -15,6 +15,7 @@ unmanaged_type_maps = {
   "double": "double",
   "bool": "bool",
   "char": "char",
+  "VectorAligned": "Vector",
   "Vector": "Vector",
   "QAngle": "QAngle",
   "CUtlVector": "CUtlVector",
@@ -27,29 +28,35 @@ unmanaged_type_maps = {
   "Color": "Color",
   "CHandle": "CHandle",
   "CBufferString": "CBufferString",
+  "CGlobalSymbolCaseSensitive": "CGlobalSymbol",
   "CGlobalSymbol": "CGlobalSymbol",
   "CTransform": "CTransform",
-  "CUtlLeanVector": "CUtlLeanVector",
   "CNetworkedQuantizedFloat": "CNetworkedQuantizedFloat",
   "CUtlBinaryBlock": "CUtlBinaryBlock",
   "fltx4": "fltx4",
   "FourVectors": "FourVectors",
-  "CEntityIndex": "CEntityIndex",
+  "CEntityIndex": "uint",
+  "CSplitScreenSlot": "uint",
+  "CPlayerSlot": "uint",
+  "WorldGroupId_t": "uint",
   "matrix3x4_t": "matrix3x4_t",
-  "matrix3x4a_t": "matrix3x4a_t",
-  "CUtlSymbol": "CUtlSymbol",
-  "CSplitScreenSlot": "CSplitScreenSlot",
-  "CPlayerSlot": "CPlayerSlot",
+  "matrix3x4a_t": "matrix3x4_t", # should works?
   "RadianEuler": "RadianEuler",
-  "WorldGroupId_t": "WorldGroupId_t",
   "CNetworkUtlVectorBase": "CUtlVector",
-  "CTypedBitVec": "CBitVec",
-  "DegreeEuler": "DegreeEuler",
-  "CEntityHandle": "CEntityHandle",
-  "CWeakHandle": "CWeakHandle"
+  "CEntityHandle": "CHandle<CEntityInstance>",
 }
 
 blacklisted_types = [
+  "CUtlStringTokenWithStorage",
+  "FourVectors2D",
+  "CStrongHandleVoid",
+  "CUtlVectorFixedGrowable",
+  "QuaternionStorage",
+  "CWeakHandle",
+  "DegreeEuler",
+  "CTypedBitVec",
+  "CUtlSymbol",
+  "CUtlLeanVector",
   "CSmartPtr",
   "CUtlHashtable",
   "CUtlOrderedMap",
@@ -89,15 +96,21 @@ blacklisted_types = [
 def convert_handle_type(type, interface=False):
   if type.startswith("CWeakHandle"):
     name = "CWeakHandle"
+  elif type.startswith("CStrongHandleCopyable"):
+    length = len("CStrongHandleCopyable")
+    name = "CStrongHandle"
   elif type.startswith("CStrongHandle"):
+    length = len("CStrongHandle")
     name = "CStrongHandle"
   else:
+    length = len("CHandle")
     name = "CHandle"
 
-  generic_t1 = type[len(name)+1:]
+
+  generic_t1 = type[length+1:]
   generic_t1 = generic_t1[:-1]
 
-  generic_t1 = generic_t1 if not interface else get_interface_name(generic_t1)
+  generic_t1 = get_impl_name(generic_t1) if not interface else get_interface_name(generic_t1)
 
   # print(f"{name}<{generic_t1}>")
   return (f"{name}<{generic_t1}>", True)
@@ -107,7 +120,7 @@ def convert_utlvector_type(type, all_class_names, all_enum_names, interface = Fa
     name = "CUtlVectorFixedGrowable"
     length = len("CUtlVectorFixedGrowable")
   elif type.startswith("CUtlVectorEmbeddedNetworkVar"):
-    name = "CUtlVectorEmbeddedNetworkVar"
+    name = "CUtlVector"
     length = len("CUtlVectorEmbeddedNetworkVar")
   elif type.startswith("CNetworkUtlVectorBase"):
     name = "CUtlVector"
@@ -130,7 +143,7 @@ def convert_utlvector_type(type, all_class_names, all_enum_names, interface = Fa
   generic_t1_type, is_value_type = convert_field_type(generic_t1, "ref", all_class_names, all_enum_names, interface)
 
   if is_ptr and generic_t1_type == "char":
-    return (f"{name}<PointerTo<CString>>", True)
+    return (f"{name}<CString>", True)
   if is_ptr:
     # print(f"{name}<PointerTo<{generic_t1_type}>>")
     return (f"{name}<PointerTo<{generic_t1_type}>>", True)
@@ -148,8 +161,8 @@ def convert_field_type(type, kind, all_class_names, all_enum_names, interface = 
   prefix = "I" if interface else ""
 
   for blacklisted_type in blacklisted_types:
-    if type.startswith(blacklisted_type):
-      return (f"{prefix}SchemaUntypedField", False)
+    if type.startswith(blacklisted_type) and type != "CUtlSymbolLarge": # bypass CUtlSymbol
+      return (f"SchemaUntypedField", False)
 
   if kind == "ptr" and type == "char": # char*
     return (f"CString", True)
@@ -160,25 +173,38 @@ def convert_field_type(type, kind, all_class_names, all_enum_names, interface = 
     if type.startswith(key):
 
       if type.startswith("CWeakHandle") or type.startswith("CStrongHandle") or type.startswith("CHandle"):
-        return convert_handle_type(type, interface)
+        name, is_value_type = convert_handle_type(type, True)
+        if kind == "fixed_array":
+          return (f"{prefix}SchemaFixedArray<{name}>", False)
+        return (name, is_value_type)
       
       if type.startswith("CUtlVector") or type.startswith("CNetworkUtlVector"):
-        return convert_utlvector_type(type, all_class_names, all_enum_names, interface)
+        name, is_value_type = convert_utlvector_type(type, all_class_names, all_enum_names, True)
+        if kind == "fixed_array":
+          return (f"{prefix}SchemaFixedArray<{name}>", False)
+        return (name, is_value_type)
     
       if kind == "fixed_array":
         if type == "char":
           return (f"{prefix}SchemaFixedString", False)
-        return (f"{prefix}SchemaFixedArray<{type.replace(key, value)}>", False)
+        if "[" not in type:
+          return (f"{prefix}SchemaFixedArray<{type.replace(key, value)}>", False)
+        else:
+          return (f"SchemaUntypedField", False)
       return (f"{type.replace(key, value)}", True)
   
 
       # print(generic_t1_type)
 
   if type in all_enum_names:
+    if kind == "fixed_array":
+      return (f"{prefix}SchemaFixedArray<{type}>", False)
     return (type, True)
 
   if type in all_class_names:
-    complex_type = type if not interface else get_interface_name(type)
+    if kind == "fixed_array":
+      return (f"SchemaUntypedField", False)
+    complex_type = get_impl_name(type) if not interface else get_interface_name(type)
     return (complex_type, False)
   
   print(f"Unknown type: {type}")

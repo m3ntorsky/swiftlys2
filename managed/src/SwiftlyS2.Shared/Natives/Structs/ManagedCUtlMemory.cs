@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace SwiftlyS2.Shared.Natives;
 
 public class ManagedCUtlMemory<T> where T : unmanaged {

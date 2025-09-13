@@ -1,9 +1,0 @@
-using SwiftlyS2.Shared.Schemas;
-
-namespace SwiftlyS2.Core.SchemaDefinitions;
-
-public partial interface IPulseGraphInstance_TestDomain_Derived : IPulseGraphInstance_TestDomain {
-
-  public ref int InstanceValueX { get; }
-  
-}

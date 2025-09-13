@@ -34,4 +34,7 @@ build/
 # Python
 __pycache__/
 
+# vscode
+.vscode/
+
 vsxmake2022/

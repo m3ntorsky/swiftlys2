@@ -1,6 +1,6 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
-using SwiftlyS2.Core.Natives.Tables;
+using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Core.Natives;
 internal class NativeBinding
@@ -9,7 +9,7 @@ internal class NativeBinding
   {
     unsafe
     {
-
+    
       try {
         var pNativeTables = (NativeFunction*)nativeTable;
 

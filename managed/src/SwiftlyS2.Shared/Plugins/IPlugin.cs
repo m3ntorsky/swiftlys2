@@ -12,7 +12,7 @@ public interface IPlugin {
 
   public void ConfigureSharedServices(IServiceCollection sharedServices);
 
-  public void InjectSharedServices(IServiceProvider sharedProvider);
+  public void UseSharedServices(IServiceProvider sharedProvider);
 
   public void Load(ISwiftlyCore core);
 

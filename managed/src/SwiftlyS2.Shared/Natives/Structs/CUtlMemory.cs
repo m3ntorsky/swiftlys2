@@ -1,9 +1,12 @@
+using System.Collections;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using SwiftlyS2.Core.Extensions;
 
 namespace SwiftlyS2.Shared.Natives;
 
 [StructLayout(LayoutKind.Sequential, Size = 16)]
-public struct CUtlMemory<T> {
+public struct CUtlMemory<T> where T : unmanaged {
   private nint _memory;
   private int _allocationCount;
   private int _growSize;
@@ -23,5 +26,4 @@ public struct CUtlMemory<T> {
   public int AllocationCount { get => _allocationCount; internal set => _allocationCount = value; }
 
   public int GrowSize { get => _growSize; internal set => _growSize = value; }
-
 }

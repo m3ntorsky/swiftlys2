@@ -49,6 +49,11 @@ internal static class PtrExtensions {
   }
 
   [MethodImpl(MethodImplOptions.AggressiveInlining)]
+  public static bool IsValidPtr(this nint ptr) {
+    return ptr != 0 && ptr != IntPtr.MaxValue;
+  }
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public static T AsHandle<T>(this nint ptr) where T : INativeHandle {
     return NativeHandleConversion.As<T>(ptr);
   }

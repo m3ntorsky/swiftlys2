@@ -1,0 +1,103 @@
+using System.Data.Common;
+using System.Reflection;
+using System.Text.Json;
+using Microsoft.Extensions.Configuration;
+using SwiftlyS2.Core.Plugins;
+using SwiftlyS2.Shared.Services;
+
+namespace SwiftlyS2.Core.Services;
+
+internal class PluginConfigurationService : IPluginConfigurationService {
+
+  private ConfigurationService _ConfigurationService { get; init; }
+  private PluginId _Id { get; init; }
+  private IConfigurationBuilder? _Builder { get; set; }
+  private IConfigurationRoot? _Root { get; set; }
+
+  public PluginConfigurationService(PluginId id, ConfigurationService configurationService) {
+    _Id = id;
+    _ConfigurationService = configurationService;
+  }
+
+  public string GetRoot() {
+    return Path.Combine(_ConfigurationService.GetConfigRoot(), "plugins", _Id.Name);
+  }
+
+  public string GetConfigPath(string name) {
+    return Path.Combine(GetRoot(), name);
+  }
+
+  public IPluginConfigurationService InitializeByTemplate(string name, string templatePath) {
+
+    var configPath = GetConfigPath(name);
+
+    if (File.Exists(configPath)) {
+      return this;
+    }
+
+    var dir = Path.GetDirectoryName(configPath);
+    if (dir is not null) {
+      Directory.CreateDirectory(dir);
+    }
+    File.Create(configPath).Close();
+
+    var templateAbsPath = Path.Combine(_Id.BaseDirectory, "templates", templatePath);
+
+    if (!File.Exists(templateAbsPath)) {
+      throw new FileNotFoundException($"Template file not found: {templateAbsPath}");
+    }
+
+    File.Copy(templateAbsPath, configPath);
+    return this;
+  }
+
+  public IPluginConfigurationService InitializeJson<T>(string name) where T : class, new() {
+    
+    var configPath = GetConfigPath(name);
+
+    if (File.Exists(configPath)) {
+      return this;
+    }
+
+    var dir = Path.GetDirectoryName(configPath);
+    if (dir is not null) {
+      Directory.CreateDirectory(dir);
+    }
+    File.Create(configPath).Close();
+
+    var config = new T();
+
+    var options = new JsonSerializerOptions {
+      WriteIndented = true,
+      PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+    };
+
+    var configJson = JsonSerializer.Serialize(config, options);
+    File.WriteAllText(configPath, configJson);
+
+    return this;
+  }
+
+  public IConfigurationBuilder CreateBuilder() {
+    return new ConfigurationBuilder()
+      .SetBasePath(GetRoot());
+  }
+
+  public IPluginConfigurationService Configure(Action<IConfigurationBuilder> configureBuilder) {
+    _Builder = CreateBuilder();
+    configureBuilder(_Builder);
+    _Root = _Builder.Build();
+    return this;
+  }
+
+  public IConfigurationRoot Root {
+    get {
+      if (_Root is null) {
+        throw new InvalidOperationException("Configuration is not configured yet!");
+      }
+      return _Root;
+    }
+  }
+
+
+}

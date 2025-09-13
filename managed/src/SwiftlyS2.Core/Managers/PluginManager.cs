@@ -2,6 +2,7 @@ using McMaster.NETCore.Plugins;
 using Microsoft.Extensions.DependencyInjection;
 using SwiftlyS2.Core.Events;
 using SwiftlyS2.Core.Plugins;
+using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.Plugins;
 
@@ -11,18 +12,22 @@ namespace SwiftlyS2.Core.Managers;
 internal class PluginManager {
   private IServiceProvider _Provider { get; init; }
 
+  private RootDirService _RootDirService { get; init; }
+
   private List<PluginContext> _Plugins { get; } = new();
 
   public PluginManager(
-    IServiceProvider provider
+    IServiceProvider provider,
+    RootDirService rootDirService
   ) {
     _Provider = provider;
+    _RootDirService = rootDirService;
   }
 
   public void LoadPlugins()
   {
     // TODO: test only, needs optimize
-    var pluginDir = Path.Join(AppContext.BaseDirectory, "plugins");
+    var pluginDir = _RootDirService.CombineRoot("plugins");
     var pluginPaths = Directory.GetFiles(pluginDir, "*.dll");
 
     ServiceCollection sharedServices = new();
@@ -36,7 +41,7 @@ internal class PluginManager {
 
     var sharedProvider = sharedServices.BuildServiceProvider();
 
-    _Plugins.ForEach(context => context.Plugin.InjectSharedServices(sharedProvider));
+    _Plugins.ForEach(context => context.Plugin.UseSharedServices(sharedProvider));
   }
 
   public PluginContext? LoadPlugin(
@@ -57,7 +62,7 @@ internal class PluginManager {
 
     var plugin = (BasePlugin)Activator.CreateInstance(pluginType)!;
 
-    var core = new SwiftlyCore(plugin.PluginId, _Provider);
+    var core = new SwiftlyCore(plugin.PluginId, Path.GetDirectoryName(dllPath)!, _Provider);
     
     try {
       plugin.Load(core);
@@ -96,6 +101,6 @@ internal class PluginManager {
 
     _Plugins.ForEach(context => context.Plugin.ConfigureSharedServices(sharedServices));
     var sharedProvider = sharedServices.BuildServiceProvider();
-    _Plugins.ForEach(context => context.Plugin.InjectSharedServices(sharedProvider));
+    _Plugins.ForEach(context => context.Plugin.UseSharedServices(sharedProvider));
   }
 }
