@@ -17,6 +17,12 @@ internal class ConfigurationService {
     return _rootDirService.CombineRoot(configPath);
   }
 
+  public void InitializeConfig(string configPath) {
+    if (!File.Exists(CombineConfigPath(configPath))) {
+      
+    }
+  }
+
   public IConfiguration GetConfig(string configPath) {
     return new ConfigurationBuilder()
       .AddJsonFile(CombineConfigPath(configPath))

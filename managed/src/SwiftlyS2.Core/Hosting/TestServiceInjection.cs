@@ -9,18 +9,10 @@ internal static class TestServiceInjection
   public static void AddTestService(this IServiceCollection self)
   {
     self.AddSingleton<TestService>();
-    self.AddSingleton<PluginManager>();
   }
 
   public static void UseTestService(this IServiceProvider self)
   {
-    try
-    {
-      self.GetRequiredService<TestService>();
-      self.GetRequiredService<PluginManager>().LoadPlugins();
-
-    } catch (Exception e) {
-      Console.WriteLine(e);
-    }
+    self.GetRequiredService<TestService>();
   }
 }

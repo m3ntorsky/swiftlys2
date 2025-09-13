@@ -12,10 +12,13 @@ internal static class Bootstrap {
 
     ServiceCollection services = new ServiceCollection();
     
-    services.AddTestService();
+    services.AddProfileService();
+    services.AddConfigurationService();
+    services.AddRootDirService();
+    services.AddPluginManager();
     
     var provider = services.BuildServiceProvider();
     
-    provider.UseTestService();
+    provider.UsePluginManager();
   }
 }
