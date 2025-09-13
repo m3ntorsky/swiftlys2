@@ -1,3 +1,5 @@
+using SwiftlyS2.Natives;
+
 namespace SwiftlyS2.Core.Schemas;
 
 internal static class Schema {
@@ -7,6 +9,7 @@ internal static class Schema {
   }
 
   public static int GetOffset(ulong hash) {
+    NativeSchema.GetOffset(hash);
     return 0;
   }
 
