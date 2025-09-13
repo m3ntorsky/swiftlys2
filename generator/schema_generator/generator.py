@@ -147,6 +147,7 @@ class Writer():
 
         field_info["REF"] = "ref " if field_info["IS_VALUE_TYPE"] else ""
         field_info["COMMENT"] = ""
+        field_info["NULLABLE"] = "?" if field_info["KIND"] == "ptr" and not field_info["IS_VALUE_TYPE"] and field_info["IMPL_TYPE"] != "SchemaUntypedField" else ""
 
         if field_info["IMPL_TYPE"] in erased_generics or field_info["IMPL_TYPE"] == "SchemaUntypedField":
           if "templated" in field:

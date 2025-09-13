@@ -8,10 +8,6 @@ internal class Entrypoint
     [UnmanagedCallersOnly]
     public unsafe static void Start(IntPtr nativeTable, int nativeTableSize)
     {
-        try {
-            Bootstrap.Start(nativeTable, nativeTableSize);
-        } catch (Exception e) {
-            Console.WriteLine(e);
-        }
+        Bootstrap.Start(nativeTable, nativeTableSize);
     }
 }

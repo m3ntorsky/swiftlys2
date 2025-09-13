@@ -13,7 +13,6 @@ internal class TestService {
   ) {
     _Logger = loggerFactory.CreateLogger<TestService>();
 
-    CCSWeaponBase a = null!;
 
     Test();
   }
@@ -22,7 +21,7 @@ internal class TestService {
   {
     Task.Run(async () =>
     {
-      while (false)
+      while (true)
       {
         await Task.Delay(1000);
         unsafe
@@ -35,8 +34,13 @@ internal class TestService {
           }
 
           CCSPlayerController player = new CCSPlayerControllerImpl(pRules);
-          _Logger.LogError("playername: "+ player.PlayerName.Value);
-          
+          _Logger.LogError("account: "+ player.InGameMoneyServices!.Account);
+          _Logger.LogError("connected: " + player.Connected);
+          _Logger.LogError("mins: " + player.Collision?.Mins.ToString());  
+          _Logger.LogError("maxs: " + player.Collision?.Maxs.ToString());
+          _Logger.LogError("steamid: " + player.SteamID);
+          _Logger.LogError("pawn: " + player.PlayerPawn.EntityIndex);
+
           // for (int i = 0; i < player.PlayerName.ElementCount; i++) {
           //   Console.WriteLine(player.PlayerName[i]);
           //   if (player.PlayerName[i] == 0) {
