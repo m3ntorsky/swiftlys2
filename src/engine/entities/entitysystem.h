@@ -43,6 +43,8 @@ public:
     virtual CEntitySystem* GetEntitySystem() override;
 
     virtual void* GetGameRules() override;
+
+    void StartupServer(const GameSessionConfiguration_t& config, ISource2WorldSession*, const char*);
 };
 
 extern void* g_pGameRules;

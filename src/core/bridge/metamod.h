@@ -22,6 +22,7 @@
 #include <ISmmPlugin.h>
 #include <igameevents.h>
 #include <sh_vector.h>
+#include <core/sourcehook/sourcehook.h>
 
 #include <api/sdk/serversideclient.h>
 #include <public/networksystem/netmessage.h>

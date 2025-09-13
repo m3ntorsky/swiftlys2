@@ -6,6 +6,7 @@ build/
 out/
 bin/
 obj/
+.vs/
 
 # Dependencies
 external/*

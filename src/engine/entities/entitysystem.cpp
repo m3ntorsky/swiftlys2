@@ -18,6 +18,8 @@
 
 #include "entitysystem.h"
 
+#include <core/bridge/metamod.h>
+
 #include <public/entity2/entitykeyvalues.h>
 #include <public/entity2/entitysystem.h>
 #include <public/iserver.h>
@@ -31,8 +33,9 @@ typedef void* (*UTIL_CreateEntityByName)(const char*, int);
 typedef void (*CEntityInstance_AcceptInput)(void*, const char*, void*, void*, variant_t*, int);
 typedef void (*CEntitySystem_AddEntityIOEvent)(void*, void*, const char*, void*, void*, variant_t*, float, int, void*, void*);
 
+SH_DECL_EXTERN3_void(INetworkServerService, StartupServer, SH_NOATTRIB, 0, const GameSessionConfiguration_t&, ISource2WorldSession*, const char*);
+
 CGameEntitySystem* g_pGameEntitySystem = nullptr;
-IVFunctionHook* g_pStartupServerHook = nullptr;
 
 void* g_pGameRules = nullptr;
 
@@ -45,35 +48,34 @@ CGameEntitySystem* GameEntitySystem()
 
 void CEntSystem::Initialize()
 {
-    auto hooksManager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    auto networkserverservice = g_ifaceService.FetchInterface<INetworkServerService>(NETWORKSERVERSERVICE_INTERFACE_VERSION);
 
-    g_pStartupServerHook = hooksManager->CreateVFunctionHook();
-
-    g_pStartupServerHook->SetHookFunction(NETWORKSERVERSERVICE_INTERFACE_VERSION, GetVirtualFunctionId(&INetworkServerService::StartupServer), "pppp", 'v');
-    g_pStartupServerHook->SetCallback(dyno::CallbackType::Post, [](dyno::CallbackType m_cbType, dyno::IHook& hook) -> dyno::ReturnAction {
-        if (g_bDone) return dyno::ReturnAction::Ignored;
-
-        auto pGameResService = g_ifaceService.FetchInterface<IGameResourceService>(GAMERESOURCESERVICESERVER_INTERFACE_VERSION);
-        if (!pGameResService) return dyno::ReturnAction::Ignored;
-
-        auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
-
-        CGameEntitySystem* entSystem = *reinterpret_cast<CGameEntitySystem**>((uintptr_t)(pGameResService)+gamedata->GetOffsets()->Fetch("GameEntitySystem"));
-        g_pGameEntitySystem = entSystem;
-        g_pGameEntitySystem->AddListenerEntity(&g_entityListener);
-
-        g_bDone = true;
-
-        return dyno::ReturnAction::Ignored;
-    });
-
-    g_pStartupServerHook->Enable();
+    SH_ADD_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEntSystem::StartupServer, true);
 }
 
 void CEntSystem::Shutdown()
 {
-    if (!g_pStartupServerHook) return;
-    g_pStartupServerHook->Disable();
+    auto networkserverservice = g_ifaceService.FetchInterface<INetworkServerService>(NETWORKSERVERSERVICE_INTERFACE_VERSION);
+
+    SH_REMOVE_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEntSystem::StartupServer, true);
+
+    g_pGameEntitySystem->RemoveListenerEntity(&g_entityListener);
+}
+
+void CEntSystem::StartupServer(const GameSessionConfiguration_t& config, ISource2WorldSession*, const char*)
+{
+    if (g_bDone) return;
+
+    auto pGameResService = g_ifaceService.FetchInterface<IGameResourceService>(GAMERESOURCESERVICESERVER_INTERFACE_VERSION);
+    if (!pGameResService) return;
+
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+
+    CGameEntitySystem* entSystem = *reinterpret_cast<CGameEntitySystem**>((uintptr_t)(pGameResService)+gamedata->GetOffsets()->Fetch("GameEntitySystem"));
+    g_pGameEntitySystem = entSystem;
+    g_pGameEntitySystem->AddListenerEntity(&g_entityListener);
+
+    g_bDone = true;
 }
 
 void CEntSystem::Spawn(void* pEntity, void* pKeyValues)

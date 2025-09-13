@@ -18,6 +18,8 @@
 
 #include "gameevents.h"
 
+#include <core/bridge/metamod.h>
+
 #include <api/interfaces/manager.h>
 
 #include <api/shared/files.h>
@@ -34,6 +36,10 @@
 
 using json = nlohmann::json;
 
+SH_DECL_EXTERN2(IGameEventManager2, FireEvent, SH_NOATTRIB, 0, bool, IGameEvent*, bool);
+SH_DECL_EXTERN2(IGameEventManager2, LoadEventsFromFile, SH_NOATTRIB, 0, int, const char*, bool);
+SH_DECL_EXTERN3_void(INetworkServerService, StartupServer, SH_NOATTRIB, 0, const GameSessionConfiguration_t&, ISource2WorldSession*, const char*);
+
 std::map<uint64_t, std::function<bool(std::string, IGameEvent*, bool&)>> g_mEventListeners;
 std::map<uint64_t, std::function<bool(std::string, IGameEvent*, bool&)>> g_mPostEventListeners;
 
@@ -42,9 +48,8 @@ std::stack<IGameEvent*> g_sEventStack;
 std::set<std::string> g_sEnqueueListenEvents;
 bool g_bEventsLoaded = false;
 
-IVFunctionHook* g_pLoadEventsFromFile = nullptr;
-IVFunctionHook* g_pFireEvent = nullptr;
-IVFunctionHook* g_pStartupServer = nullptr;
+int g_uLoadEventFromFileHookID = 0;
+
 IGameEventManager2* g_gameEventManager = nullptr;
 
 void CEventManager::Initialize(std::string game_name)
@@ -62,30 +67,94 @@ void CEventManager::Initialize(std::string game_name)
     DynLibUtils::CModule servermodule = DetermineModuleByLibrary("server");
     auto CGameEventManagerVTable = servermodule.GetVirtualTableByName("CGameEventManager");
 
-    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
-    g_pLoadEventsFromFile = hooksmanager->CreateVFunctionHook();
+    auto networkserverservice = g_ifaceService.FetchInterface<INetworkServerService>(NETWORKSERVERSERVICE_INTERFACE_VERSION);
 
-    g_pLoadEventsFromFile->SetHookFunction(CGameEventManagerVTable, GetVirtualFunctionId(&IGameEventManager2::LoadEventsFromFile), "psb", 'v', true);
+    SH_ADD_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEventManager::OnStartupServer, true);
 
-    g_pLoadEventsFromFile->SetCallback(dyno::CallbackType::Pre, [](dyno::CallbackType cb, dyno::IHook& hook) -> dyno::ReturnAction {
-        if (g_gameEventManager) return dyno::ReturnAction::Ignored;
-
-        g_gameEventManager = hook.getArgument<IGameEventManager2*>(0);
-
-        auto evmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
-        evmanager->RegisterGameEventsListeners(false);
-
-        return dyno::ReturnAction::Ignored;
-    });
-
-    g_pLoadEventsFromFile->Enable();
+    g_uLoadEventFromFileHookID = SH_ADD_DVPHOOK(IGameEventManager2, LoadEventsFromFile, (IGameEventManager2*)(void*)CGameEventManagerVTable, SH_MEMBER(this, &CEventManager::LoadEventsFromFile), false);
 }
 
 void CEventManager::Shutdown()
 {
-    if (g_pLoadEventsFromFile) g_pLoadEventsFromFile->Disable();
-    if (g_pFireEvent) g_pFireEvent->Disable();
-    if (g_pStartupServer) g_pStartupServer->Disable();
+    auto networkserverservice = g_ifaceService.FetchInterface<INetworkServerService>(NETWORKSERVERSERVICE_INTERFACE_VERSION);
+
+    SH_REMOVE_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEvent, false);
+    SH_REMOVE_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEventPost, true);
+    // SH_REMOVE_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEventManager::OnStartupServer, true);
+    SH_REMOVE_HOOK_ID(g_uLoadEventFromFileHookID);
+}
+
+int CEventManager::LoadEventsFromFile(const char* filePath, bool searchAll)
+{
+    if (!g_gameEventManager) {
+        g_gameEventManager = META_IFACEPTR(IGameEventManager2);
+
+        auto evmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+        evmanager->RegisterGameEventsListeners(false);
+
+        SH_ADD_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEvent, false);
+        SH_ADD_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEventPost, true);
+    }
+
+    RETURN_META_VALUE(MRES_IGNORED, 0);
+}
+
+bool CEventManager::OnFireEvent(IGameEvent* pEvent, bool bDontBroadcast)
+{
+    if (!pEvent)
+    {
+        RETURN_META_VALUE(MRES_IGNORED, false);
+    }
+
+    std::string event_name = pEvent->GetName();
+    bool shouldBroadcast = bDontBroadcast;
+    for (const auto& [id, callback] : g_mEventListeners)
+        if (!callback(event_name, pEvent, shouldBroadcast)) {
+            g_sEventStack.push(g_gameEventManager->DuplicateEvent(pEvent));
+            g_gameEventManager->FreeEvent(pEvent);
+            RETURN_META_VALUE(MRES_SUPERCEDE, false);
+        }
+
+    g_sEventStack.push(g_gameEventManager->DuplicateEvent(pEvent));
+
+    if (shouldBroadcast != bDontBroadcast)
+    {
+        RETURN_META_VALUE_NEWPARAMS(MRES_IGNORED, true, &IGameEventManager2::FireEvent, (pEvent, shouldBroadcast));
+    }
+
+    RETURN_META_VALUE(MRES_IGNORED, true);
+}
+
+bool CEventManager::OnFireEventPost(IGameEvent* pEvent, bool bDontBroadcast)
+{
+    if (!pEvent)
+    {
+        RETURN_META_VALUE(MRES_IGNORED, false);
+    }
+
+    IGameEvent* realGameEvent = g_sEventStack.top();
+    if (!realGameEvent) RETURN_META_VALUE(MRES_IGNORED, true);
+
+    std::string event_name = realGameEvent->GetName();
+    bool shouldBroadcast = bDontBroadcast;
+
+    for (const auto& [id, callback] : g_mEventListeners)
+        if (!callback(event_name, realGameEvent, shouldBroadcast)) {
+            g_gameEventManager->FreeEvent(realGameEvent);
+            g_sEventStack.pop();
+            RETURN_META_VALUE(MRES_SUPERCEDE, false);
+        }
+
+    g_gameEventManager->FreeEvent(realGameEvent);
+    g_sEventStack.pop();
+
+    RETURN_META_VALUE(MRES_IGNORED, true);
+}
+
+void CEventManager::OnStartupServer(const GameSessionConfiguration_t& config, ISource2WorldSession*, const char*)
+{
+    auto evmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    evmanager->RegisterGameEventsListeners(true);
 }
 
 void CEventManager::RegisterGameEventsListeners(bool shouldRegister)
@@ -99,72 +168,6 @@ void CEventManager::RegisterGameEventsListeners(bool shouldRegister)
             RegisterGameEventListener(*it);
 
         g_sEnqueueListenEvents.clear();
-    }
-
-    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
-
-    if (!g_pFireEvent) {
-        g_pFireEvent = hooksmanager->CreateVFunctionHook();
-        g_pFireEvent->SetHookFunction(g_gameEventManager, GetVirtualFunctionId(&IGameEventManager2::FireEvent), "ppb", 'v', false);
-
-        g_pFireEvent->SetCallback(dyno::CallbackType::Pre, [](dyno::CallbackType cb, dyno::IHook& hook) -> dyno::ReturnAction {
-            IGameEvent* event = hook.getArgument<IGameEvent*>(1);
-            if (!event) return dyno::ReturnAction::Ignored;
-
-            std::string event_name = event->GetName();
-            bool shouldBroadcast = hook.getArgument<bool>(2);
-            for (const auto& [id, callback] : g_mEventListeners)
-                if (!callback(event_name, event, shouldBroadcast)) {
-                    g_gameEventManager->FreeEvent(event);
-                    hook.setReturn(false);
-                    return dyno::ReturnAction::Supercede;
-                }
-
-            g_sEventStack.push(g_gameEventManager->DuplicateEvent(event));
-
-            if (shouldBroadcast != hook.getArgument<bool>(2))
-            {
-                hook.setArgument<bool>(2, shouldBroadcast);
-            }
-
-            return dyno::ReturnAction::Ignored;
-        });
-
-        g_pFireEvent->SetCallback(dyno::CallbackType::Post, [](dyno::CallbackType cb, dyno::IHook& hook) -> dyno::ReturnAction {
-            IGameEvent* realGameEvent = g_sEventStack.top();
-            if (!realGameEvent) return dyno::ReturnAction::Ignored;
-
-            std::string event_name = realGameEvent->GetName();
-            bool shouldBroadcast = hook.getArgument<bool>(2);
-
-            for (const auto& [id, callback] : g_mEventListeners)
-                if (!callback(event_name, realGameEvent, shouldBroadcast)) {
-                    g_gameEventManager->FreeEvent(realGameEvent);
-                    g_sEventStack.pop();
-                    hook.setReturn(false);
-                    return dyno::ReturnAction::Supercede;
-                }
-
-            g_gameEventManager->FreeEvent(realGameEvent);
-            g_sEventStack.pop();
-            return dyno::ReturnAction::Ignored;
-        });
-
-        g_pFireEvent->Enable();
-    }
-
-    if (!g_pStartupServer) {
-        g_pStartupServer = hooksmanager->CreateVFunctionHook();
-
-        g_pStartupServer->SetHookFunction(NETWORKSERVERSERVICE_INTERFACE_VERSION, GetVirtualFunctionId(&INetworkServerService::StartupServer), "ppps", 'v');
-
-        g_pStartupServer->SetCallback(dyno::CallbackType::Post, [](dyno::CallbackType cb, dyno::IHook& hook) -> dyno::ReturnAction {
-            auto evmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
-            evmanager->RegisterGameEventsListeners(true);
-            return dyno::ReturnAction::Ignored;
-        });
-
-        g_pStartupServer->Enable();
     }
 }
 

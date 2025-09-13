@@ -18,7 +18,11 @@
 
 #include <api/server/players/manager.h>
 
+#include <public/eiface.h>
+
 #include "player.h"
+
+#include "networkbasetypes.pb.h"
 
 #include <steam/steam_api_common.h>
 #include <steam/isteamuser.h>
@@ -43,6 +47,10 @@ public:
     virtual void SendMsg(MessageType type, const std::string& message) override;
 
     virtual void SteamAPIServerActivated() override;
+
+    bool ClientConnect(CPlayerSlot slot, const char* pszName, uint64_t xuid, const char* pszNetworkID, bool unk1, CBufferString* pRejectReason);
+    void OnClientConnected(CPlayerSlot slot, const char* pszName, uint64_t xuid, const char* pszNetworkID, const char* pszAddress, bool bFakePlayer);
+    void ClientDisconnect(CPlayerSlot slot, ENetworkDisconnectionReason reason, const char* pszName, uint64_t xuid, const char* pszNetworkID);
 
     STEAM_GAMESERVER_CALLBACK_MANUAL(CPlayerManager, OnValidateAuthTicket, ValidateAuthTicketResponse_t, m_CallbackValidateAuthTicketResponse);
 private:

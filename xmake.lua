@@ -62,6 +62,7 @@ target("swiftlys2")
         sdk_path.."/game/server",
         sdk_path.."/common",
 
+        metamod_path,
         metamod_path.."/core",
         metamod_path.."/core/sourcehook",
     })
