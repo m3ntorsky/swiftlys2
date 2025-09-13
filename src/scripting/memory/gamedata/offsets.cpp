@@ -31,5 +31,5 @@ int Bridge_GameData_Offsets_Fetch(const char* name)
     return gamedata->GetOffsets()->Fetch(name);
 }
 
-DEFINE_NATIVE("Memory.GameData.Offsets.Exists", Bridge_GameData_Offsets_Exists);
-DEFINE_NATIVE("Memory.GameData.Offsets.Fetch", Bridge_GameData_Offsets_Fetch);
+DEFINE_NATIVE("Offsets.Exists", Bridge_GameData_Offsets_Exists);
+DEFINE_NATIVE("Offsets.Fetch", Bridge_GameData_Offsets_Fetch);

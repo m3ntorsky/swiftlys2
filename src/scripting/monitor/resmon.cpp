@@ -43,7 +43,7 @@ void Bridge_Monitor_Resmon_StopRecording(const char* resourceName, const char* k
     resmon->StopRecording(resourceName, key);
 }
 
-DEFINE_NATIVE("Monitor.Resmon.IsEnabled", Bridge_Monitor_Resmon_IsEnabled);
-DEFINE_NATIVE("Monitor.Resmon.RecordTime", Bridge_Monitor_Resmon_RecordTime);
-DEFINE_NATIVE("Monitor.Resmon.StartRecording", Bridge_Monitor_Resmon_StartRecording);
-DEFINE_NATIVE("Monitor.Resmon.StopRecording", Bridge_Monitor_Resmon_StopRecording);
+DEFINE_NATIVE("Resmon.IsEnabled", Bridge_Monitor_Resmon_IsEnabled);
+DEFINE_NATIVE("Resmon.RecordTime", Bridge_Monitor_Resmon_RecordTime);
+DEFINE_NATIVE("Resmon.StartRecording", Bridge_Monitor_Resmon_StartRecording);
+DEFINE_NATIVE("Resmon.StopRecording", Bridge_Monitor_Resmon_StopRecording);

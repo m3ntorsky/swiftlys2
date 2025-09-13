@@ -37,6 +37,6 @@ bool Bridge_GameData_Patches_Exists(const char* name)
     return gamedata->GetPatches()->Exists(name);
 }
 
-DEFINE_NATIVE("Memory.GameData.Patches.Apply", Bridge_GameData_Patches_Apply);
-DEFINE_NATIVE("Memory.GameData.Patches.Revert", Bridge_GameData_Patches_Revert);
-DEFINE_NATIVE("Memory.GameData.Patches.Exists", Bridge_GameData_Patches_Exists);
+DEFINE_NATIVE("Patches.Apply", Bridge_GameData_Patches_Apply);
+DEFINE_NATIVE("Patches.Revert", Bridge_GameData_Patches_Revert);
+DEFINE_NATIVE("Patches.Exists", Bridge_GameData_Patches_Exists);

@@ -89,17 +89,17 @@ void Bridge_Monitor_Logger_ShouldOutputToConsole(int logType, bool enabled) {
     logger->ShouldOutputToConsole((LogType)logType, enabled);
 }
 
-DEFINE_NATIVE("Monitor.Logger.Log", Bridge_Monitor_Logger_Log);
-DEFINE_NATIVE("Monitor.Logger.Log", Bridge_Monitor_Logger_LogCategory);
-DEFINE_NATIVE("Monitor.Logger.Info", Bridge_Monitor_Logger_Info);
-DEFINE_NATIVE("Monitor.Logger.Info", Bridge_Monitor_Logger_InfoCategory);
-DEFINE_NATIVE("Monitor.Logger.Warning", Bridge_Monitor_Logger_Warning);
-DEFINE_NATIVE("Monitor.Logger.Warning", Bridge_Monitor_Logger_WarningCategory);
-DEFINE_NATIVE("Monitor.Logger.Error", Bridge_Monitor_Logger_Error);
-DEFINE_NATIVE("Monitor.Logger.Error", Bridge_Monitor_Logger_ErrorCategory);
-DEFINE_NATIVE("Monitor.Logger.Debug", Bridge_Monitor_Logger_Debug);
-DEFINE_NATIVE("Monitor.Logger.Debug", Bridge_Monitor_Logger_DebugCategory);
-DEFINE_NATIVE("Monitor.Logger.SetLogFile", Bridge_Monitor_Logger_SetLogFile);
-DEFINE_NATIVE("Monitor.Logger.ShouldOutputToFile", Bridge_Monitor_Logger_ShouldOutputToFile);
-DEFINE_NATIVE("Monitor.Logger.ShouldColorCategoryInConsole", Bridge_Monitor_Logger_ShouldColorCategoryInConsole);
-DEFINE_NATIVE("Monitor.Logger.ShouldOutputToConsole", Bridge_Monitor_Logger_ShouldOutputToConsole);
+DEFINE_NATIVE("Logger.Log", Bridge_Monitor_Logger_Log);
+DEFINE_NATIVE("Logger.LogCategory", Bridge_Monitor_Logger_LogCategory);
+DEFINE_NATIVE("Logger.Info", Bridge_Monitor_Logger_Info);
+DEFINE_NATIVE("Logger.InfoCategory", Bridge_Monitor_Logger_InfoCategory);
+DEFINE_NATIVE("Logger.Warning", Bridge_Monitor_Logger_Warning);
+DEFINE_NATIVE("Logger.WarningCategory", Bridge_Monitor_Logger_WarningCategory);
+DEFINE_NATIVE("Logger.Error", Bridge_Monitor_Logger_Error);
+DEFINE_NATIVE("Logger.ErrorCategory", Bridge_Monitor_Logger_ErrorCategory);
+DEFINE_NATIVE("Logger.Debug", Bridge_Monitor_Logger_Debug);
+DEFINE_NATIVE("Logger.DebugCategory", Bridge_Monitor_Logger_DebugCategory);
+DEFINE_NATIVE("Logger.SetLogFile", Bridge_Monitor_Logger_SetLogFile);
+DEFINE_NATIVE("Logger.ShouldOutputToFile", Bridge_Monitor_Logger_ShouldOutputToFile);
+DEFINE_NATIVE("Logger.ShouldColorCategoryInConsole", Bridge_Monitor_Logger_ShouldColorCategoryInConsole);
+DEFINE_NATIVE("Logger.ShouldOutputToConsole", Bridge_Monitor_Logger_ShouldOutputToConsole);

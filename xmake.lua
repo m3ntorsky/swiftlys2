@@ -45,6 +45,9 @@ target("swiftlys2")
         "src/api/memory/hooks/dynohook",
         "src/api/memory/hooks",
 
+        "src/core/managed/host",
+        "src/core/managed/libs/dotnet",
+
         sdk_path,
         sdk_path.."/thirdparty/protobuf-3.21.8/src",
         sdk_path.."/public",

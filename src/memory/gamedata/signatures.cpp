@@ -36,7 +36,7 @@ void GameDataSignatures::Load(const std::string& game)
 {
     auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
 
-    auto files = Files::FetchFileNames("addons/swiftly/gamedata/" + game);
+    auto files = Files::FetchFileNames("addons\\swiftly\\gamedata\\" + game);
     for (auto file : files) {
         if (!ends_with(file, "signatures.jsonc")) continue;
 

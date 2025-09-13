@@ -19,9 +19,12 @@
 #include "entrypoint.h"
 #include "bridge/metamod.h"
 #include <api/interfaces/manager.h>
-#include "console/colors.h"
-
+#include <api/interfaces/interfaces.h>
+#include <api/scripting/scripting.h>    
 #include <api/memory/hooks/manager.h>
+#include "console/colors.h"
+#include <core/managed/host/host.h>
+
 #include <engine/gamesystem/gamesystem.h>
 
 SwiftlyCore g_SwiftlyCore;
@@ -90,6 +93,11 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
 
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
     extManager->Load();
+
+    auto scripting = g_ifaceService.FetchInterface<IScriptingAPI>(SCRIPTING_INTERFACE_VERSION);
+
+    InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/");
+    InitializeDotNetAPI(scripting->GetNativeFunctions(), scripting->GetNativeFunctionsCount());
 
     return true;
 }
