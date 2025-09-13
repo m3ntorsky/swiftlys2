@@ -9,7 +9,6 @@ internal class NativeBinding
   {
     unsafe
     {
-    
       try {
         var pNativeTables = (NativeFunction*)nativeTable;
 
@@ -22,7 +21,9 @@ internal class NativeBinding
           var funcName = names[1];
 
           // TODO: might need nested namespace support.
-          var nativeNameSpace = "SwiftlyS2.Natives.Tables." + className;
+          var nativeNameSpace = "SwiftlyS2.Core.Natives.Native" + className;
+
+          Console.WriteLine("[NativeBinding] Injecting " + nativeNameSpace + "." + funcName + " => " + string.Format("{0:X}", pNativeTables[i].Function));
 
           var nativeClass = Type.GetType(nativeNameSpace)!;
           var nativeStaticField = nativeClass.GetField("_"+funcName, BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);

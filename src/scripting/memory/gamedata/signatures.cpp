@@ -31,5 +31,5 @@ void* Bridge_GameData_Signatures_Fetch(const char* name)
     return gamedata->GetSignatures()->Fetch(name);
 }
 
-DEFINE_NATIVE("Memory.GameData.Signatures.Exists", Bridge_GameData_Signatures_Exists);
-DEFINE_NATIVE("Memory.GameData.Signatures.Fetch", Bridge_GameData_Signatures_Fetch);
+DEFINE_NATIVE("Signatures.Exists", Bridge_GameData_Signatures_Exists);
+DEFINE_NATIVE("Signatures.Fetch", Bridge_GameData_Signatures_Fetch);

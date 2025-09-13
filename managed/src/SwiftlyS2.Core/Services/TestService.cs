@@ -1,12 +1,55 @@
+using Microsoft.Extensions.Logging;
+using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.SchemaDefinitions;
 using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Core.Services;
 
 internal class TestService {
+
+  private ILogger<TestService> _Logger { get; init; }
   public unsafe TestService(
+    ILoggerFactory loggerFactory
   ) {
-    CCSPlayerController player;
-    // player.PlayerPawn.Value.DamageFilterName
+    _Logger = loggerFactory.CreateLogger<TestService>();
+
+
+    Test();
+  }
+
+  public void Test()
+  {
+    Task.Run(async () =>
+    {
+      while (true)
+      {
+        await Task.Delay(1000);
+        unsafe
+        {
+          var pRules = (nint)NativeTest.Test();
+          _Logger.LogInformation("pPlayer: "+ pRules.ToString());
+          if (pRules == nint.Zero)
+          {
+            continue;
+          }
+
+          CCSPlayerController player = new CCSPlayerControllerImpl(pRules);
+          _Logger.LogError("account: "+ player.InGameMoneyServices!.Account);
+          _Logger.LogError("connected: " + player.Connected);
+          _Logger.LogError("mins: " + player.Collision?.Mins.ToString());  
+          _Logger.LogError("maxs: " + player.Collision?.Maxs.ToString());
+          _Logger.LogError("steamid: " + player.SteamID);
+          _Logger.LogError("pawn: " + player.PlayerPawn.EntityIndex);
+
+          // for (int i = 0; i < player.PlayerName.ElementCount; i++) {
+          //   Console.WriteLine(player.PlayerName[i]);
+          //   if (player.PlayerName[i] == 0) {
+          //     break;
+          //   }
+          // }
+
+        }
+      }
+    });
   }
 }

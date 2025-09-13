@@ -1,5 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Plugins;
 using SwiftlyS2.Shared.SchemaDefinitions;
@@ -14,7 +15,7 @@ public class TestConfig {
 
 public class TestPlugin : BasePlugin {
 
-  public override string PluginId => "test-plugin";
+  public override string PluginId => "testplugin";
 
   public override string PluginName => "Test Plugin";
 
@@ -35,20 +36,17 @@ public class TestPlugin : BasePlugin {
     };
 
     var root = core.Configuration
-      .InitializeJson<TestConfig>("test.json")
-      .InitializeByTemplate("test2.json", "test2.template.json")
+      .InitializeJson<TestConfig>("test.jsonc")
       .Configure(builder => {
-        builder.AddJsonFile("test3.jsonc", optional: false, reloadOnChange: true);
-        builder.AddYamlFile("test2.yaml", optional: false, reloadOnChange: true);
+        builder.AddJsonFile("test.jsonc", optional: false, reloadOnChange: true);
       })
       .Root;
 
-    CCSPlayerController player = null!;
-    CFishPool pool = null!;
-
     var config = new TestConfig();
-    core.Configuration.Root.GetSection("Test").Bind(config);
 
+    var logger = core.LoggerFactory.CreateLogger<TestPlugin>();
+
+    logger.LogInformation("TestPlugin loaded");
 
   
   }

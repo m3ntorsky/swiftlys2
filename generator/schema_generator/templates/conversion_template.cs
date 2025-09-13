@@ -23,7 +23,7 @@ $CONVERSIONS$
 
   public static T As<T>(nint handle) where T : INativeHandle
   {
-    return (T)_conversions[typeof(T)](handle);
+    return (T)_conversions![typeof(T)](handle);
   }
 }
 

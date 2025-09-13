@@ -31,5 +31,5 @@ void Bridge_Monitor_CallStack_Unregister(const char* pluginName, uint64_t callst
     callstack->UnregisterPluginCallstack(pluginName, callstackId);
 }
 
-DEFINE_NATIVE("Monitor.CallStack.Register", Bridge_Monitor_CallStack_Register);
-DEFINE_NATIVE("Monitor.CallStack.Unregister", Bridge_Monitor_CallStack_Unregister);
+DEFINE_NATIVE("CallStack.Register", Bridge_Monitor_CallStack_Register);
+DEFINE_NATIVE("CallStack.Unregister", Bridge_Monitor_CallStack_Unregister);

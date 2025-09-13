@@ -70,11 +70,11 @@ void* Bridge_SDK_Schema_GetVData(void* pEntity)
     return schema->GetVData(pEntity);
 }
 
-DEFINE_NATIVE("SDK.Schema.SetStateChanged", Bridge_SDK_Schema_SetStateChanged);
-DEFINE_NATIVE("SDK.Schema.FindChainOffset", Bridge_SDK_Schema_FindChainOffset);
-DEFINE_NATIVE("SDK.Schema.GetOffset", Bridge_SDK_Schema_GetOffset);
-DEFINE_NATIVE("SDK.Schema.IsStruct", Bridge_SDK_Schema_IsStruct);
-DEFINE_NATIVE("SDK.Schema.IsClassLoaded", Bridge_SDK_Schema_IsClassLoaded);
-DEFINE_NATIVE("SDK.Schema.GetPropPtr", Bridge_SDK_Schema_GetPropPtr);
-DEFINE_NATIVE("SDK.Schema.WritePropPtr", Bridge_SDK_Schema_WritePropPtr);
-DEFINE_NATIVE("SDK.Schema.GetVData", Bridge_SDK_Schema_GetVData);
+DEFINE_NATIVE("Schema.SetStateChanged", Bridge_SDK_Schema_SetStateChanged);
+DEFINE_NATIVE("Schema.FindChainOffset", Bridge_SDK_Schema_FindChainOffset);
+DEFINE_NATIVE("Schema.GetOffset", Bridge_SDK_Schema_GetOffset);
+DEFINE_NATIVE("Schema.IsStruct", Bridge_SDK_Schema_IsStruct);
+DEFINE_NATIVE("Schema.IsClassLoaded", Bridge_SDK_Schema_IsClassLoaded);
+DEFINE_NATIVE("Schema.GetPropPtr", Bridge_SDK_Schema_GetPropPtr);
+DEFINE_NATIVE("Schema.WritePropPtr", Bridge_SDK_Schema_WritePropPtr);
+DEFINE_NATIVE("Schema.GetVData", Bridge_SDK_Schema_GetVData);

@@ -73,12 +73,12 @@ void Bridge_Memory_Copy(void* dest, void* src, uint64_t size)
     memalloc->Copy(dest, src, size);
 }
 
-DEFINE_NATIVE("Memory.Allocator.Alloc", Bridge_Memory_Alloc);
-DEFINE_NATIVE("Memory.Allocator.TrackedAlloc", Bridge_Memory_TrackedAlloc);
-DEFINE_NATIVE("Memory.Allocator.Free", Bridge_Memory_Free);
-DEFINE_NATIVE("Memory.Allocator.Resize", Bridge_Memory_Resize);
-DEFINE_NATIVE("Memory.Allocator.GetSize", Bridge_Memory_GetSize);
-DEFINE_NATIVE("Memory.Allocator.GetTotalAllocated", Bridge_Memory_GetTotalAllocated);
-DEFINE_NATIVE("Memory.Allocator.GetAllocatedByTrackedIdentifier", Bridge_Memory_GetAllocatedByTrackedIdentifier);
-DEFINE_NATIVE("Memory.Allocator.IsPointerValid", Bridge_Memory_IsPointerValid);
-DEFINE_NATIVE("Memory.Allocator.Copy", Bridge_Memory_Copy);
+DEFINE_NATIVE("Allocator.Alloc", Bridge_Memory_Alloc);
+DEFINE_NATIVE("Allocator.TrackedAlloc", Bridge_Memory_TrackedAlloc);
+DEFINE_NATIVE("Allocator.Free", Bridge_Memory_Free);
+DEFINE_NATIVE("Allocator.Resize", Bridge_Memory_Resize);
+DEFINE_NATIVE("Allocator.GetSize", Bridge_Memory_GetSize);
+DEFINE_NATIVE("Allocator.GetTotalAllocated", Bridge_Memory_GetTotalAllocated);
+DEFINE_NATIVE("Allocator.GetAllocatedByTrackedIdentifier", Bridge_Memory_GetAllocatedByTrackedIdentifier);
+DEFINE_NATIVE("Allocator.IsPointerValid", Bridge_Memory_IsPointerValid);
+DEFINE_NATIVE("Allocator.Copy", Bridge_Memory_Copy);
