@@ -36,51 +36,11 @@ void CPlayerManager::Initialize()
         g_Players[i] = nullptr;
     }
 
-    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    auto gameclients = g_ifaceService.FetchInterface<IServerGameClients>(INTERFACEVERSION_SERVERGAMECLIENTS);
 
-    g_pClientConnectHook = hooksmanager->CreateVFunctionHook();
-    g_pClientConnectedHook = hooksmanager->CreateVFunctionHook();
-    g_pClientDisconnectHook = hooksmanager->CreateVFunctionHook();
-
-    // g_pClientConnectHook->SetHookFunction(INTERFACEVERSION_SERVERGAMECLIENTS, GetVirtualFunctionId(&IServerGameClients::ClientConnect), "pisUsbp", 'b');
-    // g_pClientConnectedHook->SetHookFunction(INTERFACEVERSION_SERVERGAMECLIENTS, GetVirtualFunctionId(&IServerGameClients::OnClientConnected), "pisUssb", 'v');
-    // g_pClientDisconnectHook->SetHookFunction(INTERFACEVERSION_SERVERGAMECLIENTS, GetVirtualFunctionId(&IServerGameClients::ClientDisconnect), "piusUs", 'v');
-
-    // g_pClientConnectHook->SetCallback(dyno::CallbackType::Pre, [](dyno::CallbackType m_cbType, dyno::IHook& hook) -> dyno::ReturnAction {
-    //     auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
-    //     auto playerid = hook.getArgument<CPlayerSlot>(1).Get();
-    //     auto player = playermanager->RegisterPlayer(playerid);
-    //     player->Initialize(playerid);
-
-    //     return dyno::ReturnAction::Ignored;
-    // });
-
-    // g_pClientConnectedHook->SetCallback(dyno::CallbackType::Pre, [](dyno::CallbackType m_cbType, dyno::IHook& hook) -> dyno::ReturnAction {
-    //     auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
-    //     auto playerid = hook.getArgument<CPlayerSlot>(1).Get();
-    //     auto isFakeClient = hook.getArgument<bool>(6);
-    //     if (isFakeClient) {
-    //         auto player = playermanager->RegisterPlayer(playerid);
-    //         player->Initialize(playerid);
-    //     }
-    //     else {
-    //         auto cvarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
-    //         cvarmanager->QueryClientConvar(playerid, "cl_language");
-    //     }
-
-    //     return dyno::ReturnAction::Ignored;
-    // });
-
-    // g_pClientDisconnectHook->SetCallback(dyno::CallbackType::Post, [](dyno::CallbackType m_cbType, dyno::IHook& hook) -> dyno::ReturnAction {
-    //     auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
-    //     auto playerid = hook.getArgument<CPlayerSlot>(1).Get();
-    //     playermanager->UnregisterPlayer(playerid);
-    //     return dyno::ReturnAction::Ignored;
-    // });
-
-    // g_pClientConnectHook->Enable();
-    // g_pClientConnectedHook->Enable();
-    // g_pClientDisconnectHook->Enable();
+    SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientConnect, gameclients, this, &CPlayerManager::ClientConnect, false);
+    SH_ADD_HOOK_MEMFUNC(IServerGameClients, OnClientConnected, gameclients, this, &CPlayerManager::OnClientConnected, false);
+    SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientDisconnect, gameclients, this, &CPlayerManager::ClientDisconnect, true);
 }
 
 void CPlayerManager::Shutdown() {

@@ -102,8 +102,8 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
 
     auto scripting = g_ifaceService.FetchInterface<IScriptingAPI>(SCRIPTING_INTERFACE_VERSION);
 
-    // InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/");
-    // InitializeDotNetAPI(scripting->GetNativeFunctions(), scripting->GetNativeFunctionsCount());
+    InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/");
+    InitializeDotNetAPI(scripting->GetNativeFunctions(), scripting->GetNativeFunctionsCount());
 
     return true;
 }
