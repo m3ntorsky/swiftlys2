@@ -9,4 +9,6 @@ public partial interface CFilterAttributeInt : CBaseFilter {
 
   
   public ref CUtlSymbolLarge AttributeName { get; }
+
+
 }

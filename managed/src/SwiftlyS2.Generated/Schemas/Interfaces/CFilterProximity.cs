@@ -9,4 +9,6 @@ public partial interface CFilterProximity : CBaseFilter {
 
   
   public ref float Radius { get; }
+
+
 }

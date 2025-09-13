@@ -15,4 +15,6 @@ public partial interface C_OP_RemapCrossProductOfTwoVectorsToVector : CParticleF
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ref bool Normalize { get; }
+
+
 }

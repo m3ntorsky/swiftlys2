@@ -17,4 +17,6 @@ public partial interface C_INIT_CreateAlongPath : CParticleFunctionInitializer {
   public ref Vector EndOffset { get; }
   
   public ref bool SaveOffset { get; }
+
+
 }

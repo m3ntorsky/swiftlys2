@@ -15,4 +15,6 @@ public partial interface C_OP_RenderVRHapticEvent : CParticleFunctionRenderer {
   public ref int OutputField { get; }
   
   public CPerParticleFloatInput Amplitude { get; }
+
+
 }

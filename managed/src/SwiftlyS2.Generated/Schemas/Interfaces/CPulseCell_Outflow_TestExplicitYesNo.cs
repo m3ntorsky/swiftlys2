@@ -11,4 +11,6 @@ public partial interface CPulseCell_Outflow_TestExplicitYesNo : CPulseCell_BaseF
   public CPulse_OutflowConnection Yes { get; }
   
   public CPulse_OutflowConnection No { get; }
+
+
 }

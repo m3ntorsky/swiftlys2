@@ -23,4 +23,9 @@ public partial interface CNetworkedSequenceOperation : ISchemaClass {
   public ref float PrevCycleFromDiscontinuity { get; }
   
   public ref float PrevCycleForAnimEventDetection { get; }
+
+  public void SequenceUpdated();
+  public void PrevCycleUpdated();
+  public void CycleUpdated();
+  public void WeightUpdated();
 }

@@ -12,4 +12,6 @@ public partial interface CProductQuantizer : ISchemaClass {
   public ref CUtlVector SubQuantizers { get; }
   
   public ref int Dimensions { get; }
+
+
 }

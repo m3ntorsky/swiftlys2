@@ -23,4 +23,6 @@ public partial interface C_OP_RemapScalarOnceTimed : CParticleFunctionOperator {
   public ref float OutputMax { get; }
   
   public ref float RemapTime { get; }
+
+
 }

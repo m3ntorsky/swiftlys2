@@ -13,4 +13,6 @@ public partial interface CDampedValueUpdateItem : ISchemaClass {
   public CAnimParamHandle ParamIn { get; }
   
   public CAnimParamHandle ParamOut { get; }
+
+
 }

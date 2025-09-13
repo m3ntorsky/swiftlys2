@@ -9,4 +9,6 @@ public partial interface CAnimUpdateNodeRef : ISchemaClass {
 
   
   public ref int NodeIndex { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CExampleSchemaVData_Monomorphic : ISchemaClass {
   public ref int Example1 { get; }
   
   public ref int Example2 { get; }
+
+
 }

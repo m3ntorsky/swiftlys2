@@ -9,4 +9,6 @@ public partial interface CModelConfigElement_SetMaterialGroupOnAttachedModels : 
 
   
   public ref CUtlString MaterialGroupName { get; }
+
+
 }

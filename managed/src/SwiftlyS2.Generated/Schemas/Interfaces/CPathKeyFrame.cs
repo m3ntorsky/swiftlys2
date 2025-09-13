@@ -23,4 +23,6 @@ public partial interface CPathKeyFrame : CLogicalEntity {
   public CPathKeyFrame PrevKey { get; }
   
   public ref float MoveSpeed { get; }
+
+
 }

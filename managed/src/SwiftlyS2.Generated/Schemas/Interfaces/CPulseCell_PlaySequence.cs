@@ -15,4 +15,6 @@ public partial interface CPulseCell_PlaySequence : CPulseCell_BaseYieldingInflow
   public CPulse_ResumePoint OnFinished { get; }
   
   public CPulse_ResumePoint OnCanceled { get; }
+
+
 }

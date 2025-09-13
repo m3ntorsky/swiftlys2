@@ -11,4 +11,7 @@ public partial interface CSoundAreaEntityOrientedBox : CSoundAreaEntityBase {
   public ref Vector Min { get; }
   
   public ref Vector Max { get; }
+
+  public void MinUpdated();
+  public void MaxUpdated();
 }

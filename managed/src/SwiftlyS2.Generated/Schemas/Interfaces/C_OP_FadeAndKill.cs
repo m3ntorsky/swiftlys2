@@ -21,4 +21,6 @@ public partial interface C_OP_FadeAndKill : CParticleFunctionOperator {
   public ref float EndAlpha { get; }
   
   public ref bool ForcePreserveParticleOrder { get; }
+
+
 }

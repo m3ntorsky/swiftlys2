@@ -13,4 +13,6 @@ public partial interface CNmGraphEventConditionNode__CDefinition : CNmBoolValueN
   public CNmBitFlags EventConditionRules { get; }
   
   public SchemaUntypedField Conditions { get; }
+
+
 }

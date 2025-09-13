@@ -48,4 +48,6 @@ public partial interface WorldNode_t : ISchemaClass {
   public BakedLightingInfo_t NodeLightingInfo { get; }
   
   public ref bool HasBakedGeometryFlag { get; }
+
+
 }

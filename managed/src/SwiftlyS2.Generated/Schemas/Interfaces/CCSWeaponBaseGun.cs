@@ -27,4 +27,9 @@ public partial interface CCSWeaponBaseGun : CCSWeaponBase {
   public ref bool SkillBoltInterruptAvailable { get; }
   
   public ref bool SkillBoltLiftedFireKey { get; }
+
+  public void ZoomLevelUpdated();
+  public void BurstShotsRemainingUpdated();
+  public void NeedsBoltActionUpdated();
+  public void RevolverCylinderIdxUpdated();
 }

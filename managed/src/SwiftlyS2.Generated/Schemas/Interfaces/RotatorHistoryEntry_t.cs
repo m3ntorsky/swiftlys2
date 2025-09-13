@@ -11,4 +11,6 @@ public partial interface RotatorHistoryEntry_t : ISchemaClass {
   public ref Quaternion InvChange { get; }
   
   public GameTime_t TimeRotationStart { get; }
+
+
 }

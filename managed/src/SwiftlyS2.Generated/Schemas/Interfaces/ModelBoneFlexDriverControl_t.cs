@@ -17,4 +17,6 @@ public partial interface ModelBoneFlexDriverControl_t : ISchemaClass {
   public ref float Min { get; }
   
   public ref float Max { get; }
+
+
 }

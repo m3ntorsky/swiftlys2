@@ -25,4 +25,6 @@ public partial interface CFuncTrackChange : CFuncPlatRot {
   public ref int TargetState { get; }
   
   public ref int Use { get; }
+
+
 }

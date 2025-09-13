@@ -31,4 +31,6 @@ public partial interface PGDInstruction_t : ISchemaClass {
   public PulseRuntimeDomainValueIndex_t DomainValueIdx { get; }
   
   public PulseRuntimeBlackboardReferenceIndex_t BlackboardReferenceIdx { get; }
+
+
 }

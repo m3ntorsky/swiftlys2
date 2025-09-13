@@ -13,4 +13,6 @@ public partial interface CNmIDComparisonNode__CDefinition : CNmBoolValueNode__CD
   public ref CNmIDComparisonNode__Comparison_t Comparison { get; }
   
   public SchemaUntypedField ComparisionIDs { get; }
+
+
 }

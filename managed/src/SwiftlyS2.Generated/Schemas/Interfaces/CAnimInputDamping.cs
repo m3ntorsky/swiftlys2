@@ -13,4 +13,6 @@ public partial interface CAnimInputDamping : ISchemaClass {
   public ref float SpeedScale { get; }
   
   public ref float FallingSpeedScale { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CModelConfigElement_Command : CModelConfigElement {
   public ref CUtlString Command { get; }
   
   public SchemaUntypedField Args { get; }
+
+
 }

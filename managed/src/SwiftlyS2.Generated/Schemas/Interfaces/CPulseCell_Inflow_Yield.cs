@@ -9,4 +9,6 @@ public partial interface CPulseCell_Inflow_Yield : CPulseCell_BaseYieldingInflow
 
   
   public CPulse_ResumePoint UnyieldResume { get; }
+
+
 }

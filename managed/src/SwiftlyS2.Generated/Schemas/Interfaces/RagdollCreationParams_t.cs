@@ -17,4 +17,6 @@ public partial interface RagdollCreationParams_t : ISchemaClass {
   public ref bool UseLRURetirement { get; }
   
   public ref int HealthToGrant { get; }
+
+
 }

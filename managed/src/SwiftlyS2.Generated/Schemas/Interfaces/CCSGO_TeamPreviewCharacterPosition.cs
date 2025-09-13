@@ -23,4 +23,13 @@ public partial interface CCSGO_TeamPreviewCharacterPosition : CBaseEntity {
   public CEconItemView GlovesItem { get; }
   
   public CEconItemView WeaponItem { get; }
+
+  public void VariantUpdated();
+  public void RandomUpdated();
+  public void OrdinalUpdated();
+  public void WeaponNameUpdated();
+  public void XuidUpdated();
+  public void AgentItemUpdated();
+  public void GlovesItemUpdated();
+  public void WeaponItemUpdated();
 }

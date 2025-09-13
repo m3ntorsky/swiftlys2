@@ -33,4 +33,6 @@ public partial interface C_OP_OscillateScalar : CParticleFunctionOperator {
   public ref float OscMult { get; }
   
   public ref float OscAdd { get; }
+
+
 }

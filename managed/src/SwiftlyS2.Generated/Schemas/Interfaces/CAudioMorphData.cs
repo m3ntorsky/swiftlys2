@@ -19,4 +19,6 @@ public partial interface CAudioMorphData : ISchemaClass {
   public ref float EaseIn { get; }
   
   public ref float EaseOut { get; }
+
+
 }

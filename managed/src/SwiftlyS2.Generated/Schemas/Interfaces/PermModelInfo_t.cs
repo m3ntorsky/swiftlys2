@@ -27,4 +27,6 @@ public partial interface PermModelInfo_t : ISchemaClass {
   public ref CUtlString SurfaceProperty { get; }
   
   public ref CUtlString KeyValueText { get; }
+
+
 }

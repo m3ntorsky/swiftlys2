@@ -19,4 +19,6 @@ public partial interface C_OP_AttractToControlPoint : CParticleFunctionForce {
   public CPerParticleFloatInput ForceAmountMin { get; }
   
   public ref bool ApplyMinForce { get; }
+
+
 }

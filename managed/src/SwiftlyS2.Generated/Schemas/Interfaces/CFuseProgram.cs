@@ -17,4 +17,6 @@ public partial interface CFuseProgram : ISchemaClass {
   public ref CUtlVector VariablesWritten { get; }
   
   public ref int MaxTempVarsUsed { get; }
+
+
 }

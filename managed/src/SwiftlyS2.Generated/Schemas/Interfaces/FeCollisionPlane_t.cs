@@ -15,4 +15,6 @@ public partial interface FeCollisionPlane_t : ISchemaClass {
   public RnPlane_t Plane { get; }
   
   public ref float Strength { get; }
+
+
 }

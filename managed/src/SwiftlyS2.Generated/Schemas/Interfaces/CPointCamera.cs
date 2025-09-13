@@ -59,4 +59,27 @@ public partial interface CPointCamera : CBaseEntity {
   public ref bool IsOn { get; }
   
   public CPointCamera Next { get; }
+
+  public void FOVUpdated();
+  public void ResolutionUpdated();
+  public void FogEnableUpdated();
+  public void FogColorUpdated();
+  public void FogStartUpdated();
+  public void FogEndUpdated();
+  public void FogMaxDensityUpdated();
+  public void ActiveUpdated();
+  public void UseScreenAspectRatioUpdated();
+  public void AspectRatioUpdated();
+  public void NoSkyUpdated();
+  public void BrightnessUpdated();
+  public void ZFarUpdated();
+  public void ZNearUpdated();
+  public void CanHLTVUseUpdated();
+  public void AlignWithParentUpdated();
+  public void DofEnabledUpdated();
+  public void DofNearBlurryUpdated();
+  public void DofNearCrispUpdated();
+  public void DofFarCrispUpdated();
+  public void DofFarBlurryUpdated();
+  public void DofTiltToGroundUpdated();
 }

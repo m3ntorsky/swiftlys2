@@ -19,4 +19,9 @@ public partial interface CRagdollPropAttached : CRagdollProp {
   public ref bool ShouldDetach { get; }
   
   public ref bool ShouldDeleteAttachedActivationRecord { get; }
+
+  public void BoneIndexAttachedUpdated();
+  public void RagdollAttachedObjectIndexUpdated();
+  public void AttachmentPointBoneSpaceUpdated();
+  public void AttachmentPointRagdollSpaceUpdated();
 }

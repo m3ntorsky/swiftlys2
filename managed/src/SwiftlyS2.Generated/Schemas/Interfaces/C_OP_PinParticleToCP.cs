@@ -35,4 +35,6 @@ public partial interface C_OP_PinParticleToCP : CParticleFunctionOperator {
   public CPerParticleFloatInput Interpolation { get; }
   
   public ref bool RetainInitialVelocity { get; }
+
+
 }

@@ -79,4 +79,40 @@ public partial interface CEnvVolumetricFogController : CBaseEntity {
   public ref Vector WindDirection { get; }
   
   public ref bool FirstTime { get; }
+
+  public void ScatteringUpdated();
+  public void TintColorUpdated();
+  public void AnisotropyUpdated();
+  public void FadeSpeedUpdated();
+  public void DrawDistanceUpdated();
+  public void FadeInStartUpdated();
+  public void FadeInEndUpdated();
+  public void IndirectStrengthUpdated();
+  public void VolumeDepthUpdated();
+  public void FirstVolumeSliceThicknessUpdated();
+  public void IndirectTextureDimXUpdated();
+  public void IndirectTextureDimYUpdated();
+  public void IndirectTextureDimZUpdated();
+  public void BoxMinsUpdated();
+  public void BoxMaxsUpdated();
+  public void ActiveUpdated();
+  public void StartAnisoTimeUpdated();
+  public void StartScatterTimeUpdated();
+  public void StartDrawDistanceTimeUpdated();
+  public void StartAnisotropyUpdated();
+  public void StartScatteringUpdated();
+  public void StartDrawDistanceUpdated();
+  public void DefaultAnisotropyUpdated();
+  public void DefaultScatteringUpdated();
+  public void DefaultDrawDistanceUpdated();
+  public void StartDisabledUpdated();
+  public void EnableIndirectUpdated();
+  public void IsMasterUpdated();
+  public void FogIndirectTextureUpdated();
+  public void ForceRefreshCountUpdated();
+  public void NoiseSpeedUpdated();
+  public void NoiseStrengthUpdated();
+  public void NoiseScaleUpdated();
+  public void WindSpeedUpdated();
+  public void WindDirectionUpdated();
 }

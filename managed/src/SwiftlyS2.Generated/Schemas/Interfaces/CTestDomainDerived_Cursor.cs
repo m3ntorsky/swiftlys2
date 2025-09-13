@@ -11,4 +11,6 @@ public partial interface CTestDomainDerived_Cursor : CPulseExecCursor {
   public ref int CursorValueA { get; }
   
   public ref int CursorValueB { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CKnife : CCSWeaponBase {
 
   
   public ref bool FirstAttack { get; }
+
+  public void FirstAttackUpdated();
 }

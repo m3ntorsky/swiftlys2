@@ -81,4 +81,6 @@ public partial interface CFuncTrackTrain : CBaseModelEntity {
   public ref bool AccelToSpeed { get; }
   
   public GameTime_t NextMPSoundTime { get; }
+
+
 }

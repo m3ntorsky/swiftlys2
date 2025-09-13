@@ -27,4 +27,6 @@ public partial interface CCS2ChickenGraphController : CAnimGraphControllerBase {
   public ref bool HasActionCompletedEvent { get; }
   
   public ref bool WaitingForCompletedEvent { get; }
+
+
 }

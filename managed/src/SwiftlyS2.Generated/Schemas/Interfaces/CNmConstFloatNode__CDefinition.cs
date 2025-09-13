@@ -9,4 +9,6 @@ public partial interface CNmConstFloatNode__CDefinition : CNmFloatValueNode__CDe
 
   
   public ref float Value { get; }
+
+
 }

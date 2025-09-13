@@ -19,4 +19,6 @@ public partial interface FeHingeLimit_t : ISchemaClass {
   public ref float AngleCenter { get; }
   
   public ref float AngleExtents { get; }
+
+
 }

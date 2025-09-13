@@ -21,4 +21,6 @@ public partial interface FeNodeBase_t : ISchemaClass {
   public ref ushort NodeY1 { get; }
   
   public SchemaUntypedField Adjust { get; }
+
+
 }

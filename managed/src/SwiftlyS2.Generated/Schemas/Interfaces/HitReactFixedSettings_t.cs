@@ -41,4 +41,6 @@ public partial interface HitReactFixedSettings_t : ISchemaClass {
   public ref float HipDipImpactScale { get; }
   
   public ref float HipDipDelay { get; }
+
+
 }

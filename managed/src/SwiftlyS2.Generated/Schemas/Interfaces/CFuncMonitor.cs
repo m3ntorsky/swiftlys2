@@ -25,4 +25,13 @@ public partial interface CFuncMonitor : CFuncBrush {
   public ref bool Draw3DSkybox { get; }
   
   public ref bool StartEnabled { get; }
+
+  public void TargetCameraUpdated();
+  public void ResolutionEnumUpdated();
+  public void RenderShadowsUpdated();
+  public void UseUniqueColorTargetUpdated();
+  public void BrushModelNameUpdated();
+  public void TargetCamera1Updated();
+  public void EnabledUpdated();
+  public void Draw3DSkyboxUpdated();
 }

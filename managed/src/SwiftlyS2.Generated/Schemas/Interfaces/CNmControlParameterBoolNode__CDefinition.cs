@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmControlParameterBoolNode__CDefinition : CNmBoolValueNode__CDefinition {
 
 
+
+
 }

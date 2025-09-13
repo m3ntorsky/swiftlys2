@@ -17,4 +17,6 @@ public partial interface C_OP_SetGravityToCP : CParticleFunctionPreEmission {
   public ref bool SetOrientation { get; }
   
   public ref bool SetZDown { get; }
+
+
 }

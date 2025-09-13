@@ -9,4 +9,6 @@ public partial interface CCSGameModeRules_ArmsRace : CCSGameModeRules {
 
   
   public ref CUtlVector<CUtlString> WeaponSequence { get; }
+
+  public void WeaponSequenceUpdated();
 }

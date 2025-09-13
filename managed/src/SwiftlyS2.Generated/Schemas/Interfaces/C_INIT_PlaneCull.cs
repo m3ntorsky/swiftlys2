@@ -13,4 +13,6 @@ public partial interface C_INIT_PlaneCull : CParticleFunctionInitializer {
   public CParticleCollectionFloatInput Distance { get; }
   
   public ref bool CullInside { get; }
+
+
 }

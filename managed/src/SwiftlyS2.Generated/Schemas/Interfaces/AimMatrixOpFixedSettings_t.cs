@@ -33,4 +33,6 @@ public partial interface AimMatrixOpFixedSettings_t : ISchemaClass {
   public ref float BiasAndClampPitchOffset { get; }
   
   public CBlendCurve BiasAndClampBlendCurve { get; }
+
+
 }

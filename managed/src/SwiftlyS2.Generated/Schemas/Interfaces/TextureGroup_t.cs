@@ -25,4 +25,6 @@ public partial interface TextureGroup_t : ISchemaClass {
   public CParticleCollectionRendererFloatInput TextureBlend { get; }
   
   public TextureControls_t TextureControls { get; }
+
+
 }

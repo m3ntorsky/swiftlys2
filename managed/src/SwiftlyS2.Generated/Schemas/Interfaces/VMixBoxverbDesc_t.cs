@@ -41,4 +41,6 @@ public partial interface VMixBoxverbDesc_t : ISchemaClass {
   public ref float OutputGain { get; }
   
   public ref float Taps { get; }
+
+
 }

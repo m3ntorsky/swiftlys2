@@ -11,4 +11,6 @@ public partial interface CNmScaleNode__CDefinition : CNmPassthroughNode__CDefini
   public ref short MaskNodeIdx { get; }
   
   public ref short EnableNodeIdx { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CNmCurrentSyncEventNode__CDefinition : CNmFloatValueNod
   public ref short SourceStateNodeIdx { get; }
   
   public ref CNmCurrentSyncEventNode__InfoType_t InfoType { get; }
+
+
 }

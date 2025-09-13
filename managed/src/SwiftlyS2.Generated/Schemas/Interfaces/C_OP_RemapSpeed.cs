@@ -21,4 +21,6 @@ public partial interface C_OP_RemapSpeed : CParticleFunctionOperator {
   public ref ParticleSetMethod_t SetMethod { get; }
   
   public ref bool IgnoreDelta { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CBaseFilter : CLogicalEntity {
   public CEntityIOOutput OnPass { get; }
   
   public CEntityIOOutput OnFail { get; }
+
+
 }

@@ -25,4 +25,6 @@ public partial interface SkeletonAnimCapture_t__Frame_t : ISchemaClass {
   public ref CUtlVector<Vector> FeModelPos { get; }
   
   public ref CUtlVector<float> FlexControllerWeights { get; }
+
+
 }

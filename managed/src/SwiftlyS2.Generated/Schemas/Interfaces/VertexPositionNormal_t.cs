@@ -11,4 +11,6 @@ public partial interface VertexPositionNormal_t : ISchemaClass {
   public ref Vector Position { get; }
   
   public ref Vector Normal { get; }
+
+
 }

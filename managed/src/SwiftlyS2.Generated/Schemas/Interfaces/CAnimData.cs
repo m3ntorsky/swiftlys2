@@ -20,4 +20,6 @@ public partial interface CAnimData : ISchemaClass {
   
 // CUtlVector< CAnimFrameSegment >
   public ref CUtlVector SegmentArray { get; }
+
+
 }

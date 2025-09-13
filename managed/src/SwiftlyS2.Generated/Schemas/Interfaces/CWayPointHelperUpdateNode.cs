@@ -17,4 +17,6 @@ public partial interface CWayPointHelperUpdateNode : CUnaryUpdateNode {
   public ref bool PreventOvershoot { get; }
   
   public ref bool PreventUndershoot { get; }
+
+
 }

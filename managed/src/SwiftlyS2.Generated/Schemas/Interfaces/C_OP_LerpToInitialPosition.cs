@@ -17,4 +17,6 @@ public partial interface C_OP_LerpToInitialPosition : CParticleFunctionOperator 
   public CParticleCollectionFloatInput Scale { get; }
   
   public CParticleCollectionVecInput Scale1 { get; }
+
+
 }

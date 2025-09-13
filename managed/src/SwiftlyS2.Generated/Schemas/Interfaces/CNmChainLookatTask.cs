@@ -29,4 +29,6 @@ public partial interface CNmChainLookatTask : CNmPoseTask {
   public ref float HorizontalAngleDegrees { get; }
   
   public ref float VerticalAngleDegrees { get; }
+
+
 }

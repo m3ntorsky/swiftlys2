@@ -9,4 +9,6 @@ public partial interface vphysics_save_cphysicsbody_t : RnBodyDesc_t {
 
   
   public ref ulong OldPointer { get; }
+
+
 }

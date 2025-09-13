@@ -11,4 +11,6 @@ public partial interface CSoundEventParameter : CBaseEntity {
   public ref CUtlSymbolLarge ParamName { get; }
   
   public ref float FloatValue { get; }
+
+
 }

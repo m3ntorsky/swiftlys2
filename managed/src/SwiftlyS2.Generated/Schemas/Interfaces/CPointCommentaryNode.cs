@@ -67,4 +67,15 @@ public partial interface CPointCommentaryNode : CBaseAnimGraph {
   public ref int NodeNumberMax { get; }
   
   public ref bool ListenedTo { get; }
+
+  public void CommentaryFileUpdated();
+  public void ViewPosition2Updated();
+  public void ActiveUpdated();
+  public void StartTimeUpdated();
+  public void StartTimeInCommentaryUpdated();
+  public void TitleUpdated();
+  public void SpeakersUpdated();
+  public void NodeNumberUpdated();
+  public void NodeNumberMaxUpdated();
+  public void ListenedToUpdated();
 }

@@ -39,4 +39,6 @@ public partial interface CPointAngularVelocitySensor : CPointEntity {
   public CEntityIOOutput OnGreaterThanOrEqualTo { get; }
   
   public CEntityIOOutput OnEqualTo { get; }
+
+
 }

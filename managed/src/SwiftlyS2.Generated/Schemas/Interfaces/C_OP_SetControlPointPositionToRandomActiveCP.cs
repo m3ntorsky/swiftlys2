@@ -15,4 +15,6 @@ public partial interface C_OP_SetControlPointPositionToRandomActiveCP : CParticl
   public ref int HeadLocationMax { get; }
   
   public CParticleCollectionFloatInput ResetRate { get; }
+
+
 }

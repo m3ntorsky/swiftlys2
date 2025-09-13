@@ -13,4 +13,6 @@ public partial interface C_OP_SDFLighting : CParticleFunctionOperator {
   public ref Vector Tint_0 { get; }
   
   public ref Vector Tint_1 { get; }
+
+
 }

@@ -43,4 +43,23 @@ public partial interface CEnvCubemap : CBaseEntity {
   public ref bool Entity_bCopyDiffuseFromDefaultCubemap { get; }
   
   public ref bool Entity_bEnabled { get; }
+
+  public void Entity_hCubemapTextureUpdated();
+  public void Entity_bCustomCubemapTextureUpdated();
+  public void Entity_flInfluenceRadiusUpdated();
+  public void Entity_vBoxProjectMinsUpdated();
+  public void Entity_vBoxProjectMaxsUpdated();
+  public void Entity_bMoveableUpdated();
+  public void Entity_nHandshakeUpdated();
+  public void Entity_nEnvCubeMapArrayIndexUpdated();
+  public void Entity_nPriorityUpdated();
+  public void Entity_flEdgeFadeDistUpdated();
+  public void Entity_vEdgeFadeDistsUpdated();
+  public void Entity_flDiffuseScaleUpdated();
+  public void Entity_bStartDisabledUpdated();
+  public void Entity_bDefaultEnvMapUpdated();
+  public void Entity_bDefaultSpecEnvMapUpdated();
+  public void Entity_bIndoorCubeMapUpdated();
+  public void Entity_bCopyDiffuseFromDefaultCubemapUpdated();
+  public void Entity_bEnabledUpdated();
 }

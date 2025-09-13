@@ -27,4 +27,6 @@ public partial interface C_OP_PercentageBetweenTransforms : CParticleFunctionOpe
   public ref bool ActiveRange { get; }
   
   public ref bool RadialCheck { get; }
+
+
 }

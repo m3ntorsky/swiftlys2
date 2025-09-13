@@ -9,4 +9,6 @@ public partial interface CSlowDownOnSlopesUpdateNode : CUnaryUpdateNode {
 
   
   public ref float SlowDownStrength { get; }
+
+
 }

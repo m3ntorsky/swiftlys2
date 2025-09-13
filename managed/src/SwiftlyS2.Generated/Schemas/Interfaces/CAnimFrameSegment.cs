@@ -15,4 +15,6 @@ public partial interface CAnimFrameSegment : ISchemaClass {
   public ref int LocalChannel { get; }
   
   public ref CUtlBinaryBlock Container { get; }
+
+
 }

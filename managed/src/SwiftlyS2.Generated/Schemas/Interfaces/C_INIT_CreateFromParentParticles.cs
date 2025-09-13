@@ -17,4 +17,6 @@ public partial interface C_INIT_CreateFromParentParticles : CParticleFunctionIni
   public ref int RandomSeed { get; }
   
   public ref bool SubFrame { get; }
+
+
 }

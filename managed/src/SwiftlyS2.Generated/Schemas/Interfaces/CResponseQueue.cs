@@ -9,4 +9,6 @@ public partial interface CResponseQueue : ISchemaClass {
 
   
   public ref CUtlVector<PointerTo<CAI_Expresser>> ExpresserTargets { get; }
+
+
 }

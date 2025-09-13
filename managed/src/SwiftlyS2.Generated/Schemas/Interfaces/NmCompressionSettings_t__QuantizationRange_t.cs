@@ -11,4 +11,6 @@ public partial interface NmCompressionSettings_t__QuantizationRange_t : ISchemaC
   public ref float RangeStart { get; }
   
   public ref float RangeLength { get; }
+
+
 }

@@ -19,4 +19,6 @@ public partial interface CNmTarget : ISchemaClass {
   public ref bool HasOffsets { get; }
   
   public ref bool IsSet { get; }
+
+
 }

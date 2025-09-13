@@ -43,4 +43,6 @@ public partial interface CSequenceGroupData : ISchemaClass {
   
 // CUtlVector< CSeqIKLock >
   public ref CUtlVector LocalIKAutoplayLockArray { get; }
+
+
 }

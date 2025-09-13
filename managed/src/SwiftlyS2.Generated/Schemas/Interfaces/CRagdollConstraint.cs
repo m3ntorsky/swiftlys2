@@ -25,4 +25,6 @@ public partial interface CRagdollConstraint : CPhysConstraint {
   public ref float Yfriction { get; }
   
   public ref float Zfriction { get; }
+
+
 }

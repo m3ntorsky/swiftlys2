@@ -9,4 +9,6 @@ public partial interface CNmEntityAttributeIntEvent : CNmEntityAttributeEventBas
 
   
   public ref int IntValue { get; }
+
+
 }

@@ -37,4 +37,6 @@ public partial interface CNavHullVData : ISchemaClass {
   public ref bool FlowMapGenerationEnabled { get; }
   
   public ref float FlowMapNodeMaxRadius { get; }
+
+
 }

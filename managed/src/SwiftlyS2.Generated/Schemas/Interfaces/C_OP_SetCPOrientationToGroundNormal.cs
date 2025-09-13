@@ -25,4 +25,6 @@ public partial interface C_OP_SetCPOrientationToGroundNormal : CParticleFunction
   public ref int OutputCP { get; }
   
   public ref bool IncludeWater { get; }
+
+
 }

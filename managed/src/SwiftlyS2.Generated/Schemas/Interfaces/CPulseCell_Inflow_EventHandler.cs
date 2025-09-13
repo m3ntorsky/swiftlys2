@@ -9,4 +9,6 @@ public partial interface CPulseCell_Inflow_EventHandler : CPulseCell_Inflow_Base
 
   
   public SchemaUntypedField EventName { get; }
+
+
 }

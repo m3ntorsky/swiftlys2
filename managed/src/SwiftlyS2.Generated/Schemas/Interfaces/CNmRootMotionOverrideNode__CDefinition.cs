@@ -21,4 +21,6 @@ public partial interface CNmRootMotionOverrideNode__CDefinition : CNmPassthrough
   public ref float MaxAngularVelocityRadians { get; }
   
   public CNmBitFlags OverrideFlags { get; }
+
+
 }

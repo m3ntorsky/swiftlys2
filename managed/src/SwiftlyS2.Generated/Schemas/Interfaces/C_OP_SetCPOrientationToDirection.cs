@@ -11,4 +11,6 @@ public partial interface C_OP_SetCPOrientationToDirection : CParticleFunctionOpe
   public ref int InputControlPoint { get; }
   
   public ref int OutputControlPoint { get; }
+
+
 }

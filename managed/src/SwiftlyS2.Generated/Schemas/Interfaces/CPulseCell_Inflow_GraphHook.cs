@@ -9,4 +9,6 @@ public partial interface CPulseCell_Inflow_GraphHook : CPulseCell_Inflow_BaseEnt
 
   
   public SchemaUntypedField HookName { get; }
+
+
 }

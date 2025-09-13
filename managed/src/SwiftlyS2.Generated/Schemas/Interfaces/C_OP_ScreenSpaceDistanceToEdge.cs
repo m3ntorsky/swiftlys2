@@ -15,4 +15,6 @@ public partial interface C_OP_ScreenSpaceDistanceToEdge : CParticleFunctionOpera
   public CParticleRemapFloatInput OutputRemap { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
+
+
 }

@@ -25,4 +25,6 @@ public partial interface C_OP_MoveToHitbox : CParticleFunctionOperator {
   public ref HitboxLerpType_t LerpType { get; }
   
   public CPerParticleFloatInput Interpolation { get; }
+
+
 }

@@ -23,4 +23,6 @@ public partial interface FeAntiTunnelProbe_t : ISchemaClass {
   public ref float CurvatureRadius { get; }
   
   public ref float Bias { get; }
+
+
 }

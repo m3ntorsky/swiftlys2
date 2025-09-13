@@ -13,4 +13,6 @@ public partial interface CRevertSaved : CModelPointEntity {
   public ref float Duration { get; }
   
   public ref float HoldTime { get; }
+
+
 }

@@ -31,4 +31,6 @@ public partial interface C_OP_SetControlPointToImpactPoint : CParticleFunctionPr
   public ref bool TraceToClosestSurface { get; }
   
   public ref bool IncludeWater { get; }
+
+
 }

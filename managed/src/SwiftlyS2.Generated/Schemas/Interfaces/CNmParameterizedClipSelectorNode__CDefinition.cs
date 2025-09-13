@@ -17,4 +17,6 @@ public partial interface CNmParameterizedClipSelectorNode__CDefinition : CNmClip
   public ref bool IgnoreInvalidOptions { get; }
   
   public ref bool HasWeightsSet { get; }
+
+
 }

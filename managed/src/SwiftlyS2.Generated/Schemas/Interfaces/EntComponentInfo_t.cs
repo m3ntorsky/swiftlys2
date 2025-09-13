@@ -21,4 +21,6 @@ public partial interface EntComponentInfo_t : ISchemaClass {
   public ref uint Flags { get; }
   
   public CEntityComponentHelper BaseClassComponentHelper { get; }
+
+
 }

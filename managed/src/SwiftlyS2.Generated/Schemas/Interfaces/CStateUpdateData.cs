@@ -28,4 +28,6 @@ public partial interface CStateUpdateData : ISchemaClass {
   public SchemaUntypedField IsPassthroughRootMotion { get; }
   
   public SchemaUntypedField PreEvaluatePassthroughTransitionPath { get; }
+
+
 }

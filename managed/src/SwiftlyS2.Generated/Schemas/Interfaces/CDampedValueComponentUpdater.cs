@@ -10,4 +10,6 @@ public partial interface CDampedValueComponentUpdater : CAnimComponentUpdater {
   
 // CUtlVector< CDampedValueUpdateItem >
   public ref CUtlVector Items { get; }
+
+
 }

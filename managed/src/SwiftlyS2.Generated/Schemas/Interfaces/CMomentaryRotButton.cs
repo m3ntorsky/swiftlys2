@@ -35,4 +35,6 @@ public partial interface CMomentaryRotButton : CRotButton {
   public ref float ReturnSpeed { get; }
   
   public ref float StartPosition { get; }
+
+
 }

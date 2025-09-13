@@ -25,4 +25,6 @@ public partial interface CEnvInstructorVRHint : CPointEntity {
   public ref int AttachType { get; }
   
   public ref float HeightOffset { get; }
+
+
 }

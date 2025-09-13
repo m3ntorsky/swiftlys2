@@ -9,4 +9,6 @@ public partial interface CAnimParamHandleMap : ISchemaClass {
 
   
   public SchemaUntypedField List { get; }
+
+
 }

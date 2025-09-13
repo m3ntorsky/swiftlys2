@@ -12,4 +12,6 @@ public partial interface CRegionSVM : ISchemaClass {
   public ref CUtlVector Planes { get; }
   
   public ref CUtlVector<uint> Nodes { get; }
+
+
 }

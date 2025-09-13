@@ -21,4 +21,6 @@ public partial interface C_OP_ForceBasedOnDistanceToPlane : CParticleFunctionFor
   public ref int ControlPointNumber { get; }
   
   public ref float Exponent { get; }
+
+
 }

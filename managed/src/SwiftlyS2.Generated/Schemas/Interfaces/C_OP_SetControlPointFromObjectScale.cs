@@ -11,4 +11,6 @@ public partial interface C_OP_SetControlPointFromObjectScale : CParticleFunction
   public ref int CPInput { get; }
   
   public ref int CPOutput { get; }
+
+
 }

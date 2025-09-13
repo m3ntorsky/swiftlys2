@@ -9,4 +9,6 @@ public partial interface CExampleSchemaVData_PolymorphicDerivedA : CExampleSchem
 
   
   public ref int DerivedA { get; }
+
+
 }

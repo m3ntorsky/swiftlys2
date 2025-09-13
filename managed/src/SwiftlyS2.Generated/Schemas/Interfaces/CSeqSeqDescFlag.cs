@@ -29,4 +29,6 @@ public partial interface CSeqSeqDescFlag : ISchemaClass {
   public ref bool LegacyRealtime { get; }
   
   public ref bool ModelDoc { get; }
+
+
 }

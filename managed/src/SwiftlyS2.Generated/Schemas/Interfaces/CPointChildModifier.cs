@@ -9,4 +9,6 @@ public partial interface CPointChildModifier : CPointEntity {
 
   
   public ref bool OrphanInsteadOfDeletingChildrenOnRemove { get; }
+
+
 }

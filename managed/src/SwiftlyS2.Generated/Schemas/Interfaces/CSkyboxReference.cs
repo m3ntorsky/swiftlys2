@@ -11,4 +11,6 @@ public partial interface CSkyboxReference : CBaseEntity {
   public ref uint WorldGroupId { get; }
   
   public ref CHandle<CSkyCamera> SkyCamera { get; }
+
+
 }

@@ -33,4 +33,18 @@ public partial interface CSPerRoundStats_t : ISchemaClass {
   public ref int UtilityDamage { get; }
   
   public ref int EnemiesFlashed { get; }
+
+  public void KillsUpdated();
+  public void DeathsUpdated();
+  public void AssistsUpdated();
+  public void DamageUpdated();
+  public void EquipmentValueUpdated();
+  public void MoneySavedUpdated();
+  public void KillRewardUpdated();
+  public void LiveTimeUpdated();
+  public void HeadShotKillsUpdated();
+  public void ObjectiveUpdated();
+  public void CashEarnedUpdated();
+  public void UtilityDamageUpdated();
+  public void EnemiesFlashedUpdated();
 }

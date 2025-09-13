@@ -46,4 +46,6 @@ public partial interface VPhysXAggregateData_t : ISchemaClass {
   public ref CUtlVector<CUtlString> DebugPartNames { get; }
   
   public ref CUtlString EmbeddedKeyvalues { get; }
+
+
 }

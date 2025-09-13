@@ -9,4 +9,6 @@ public partial interface C_OP_EndCapTimedFreeze : CParticleFunctionOperator {
 
   
   public CParticleCollectionFloatInput FreezeTime { get; }
+
+
 }

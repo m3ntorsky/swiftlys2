@@ -103,4 +103,6 @@ public partial interface CLogicNPCCounter : CBaseEntity {
   public ref int MaxFactor_3 { get; }
   
   public ref float DefaultDist_3 { get; }
+
+
 }

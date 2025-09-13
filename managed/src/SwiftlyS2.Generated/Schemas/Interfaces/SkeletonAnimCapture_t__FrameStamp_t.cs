@@ -23,4 +23,6 @@ public partial interface SkeletonAnimCapture_t__FrameStamp_t : ISchemaClass {
   public ref int FrameCount { get; }
   
   public ref int TickCount { get; }
+
+
 }

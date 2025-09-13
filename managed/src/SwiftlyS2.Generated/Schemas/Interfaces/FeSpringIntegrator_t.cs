@@ -17,4 +17,6 @@ public partial interface FeSpringIntegrator_t : ISchemaClass {
   public ref float SpringDamping { get; }
   
   public ref float NodeWeight0 { get; }
+
+
 }

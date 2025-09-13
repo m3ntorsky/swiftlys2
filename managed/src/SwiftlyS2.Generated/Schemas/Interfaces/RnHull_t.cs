@@ -39,4 +39,6 @@ public partial interface RnHull_t : ISchemaClass {
   public ref uint Flags { get; }
   
   public CRegionSVM RegionSVM { get; }
+
+
 }

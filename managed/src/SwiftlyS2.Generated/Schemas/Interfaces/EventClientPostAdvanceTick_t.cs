@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventClientPostAdvanceTick_t : EventPostAdvanceTick_t {
 
 
+
+
 }

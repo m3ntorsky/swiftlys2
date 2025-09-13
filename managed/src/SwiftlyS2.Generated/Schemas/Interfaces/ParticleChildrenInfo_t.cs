@@ -17,4 +17,6 @@ public partial interface ParticleChildrenInfo_t : ISchemaClass {
   public ref bool DisableChild { get; }
   
   public ref ParticleDetailLevel_t DetailLevel { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CBoneConstraintRbf : CBoneConstraintBase {
   
 // CUtlVector< std::pair< CUtlString, uint32 > >
   public ref CUtlVector OutputBones { get; }
+
+
 }

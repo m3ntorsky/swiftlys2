@@ -11,4 +11,6 @@ public partial interface RnSoftbodySpring_t : ISchemaClass {
   public ISchemaFixedArray<ushort> Particle { get; }
   
   public ref float Length { get; }
+
+
 }

@@ -10,4 +10,6 @@ public partial interface JiggleBoneSettingsList_t : ISchemaClass {
   
 // CUtlVector< JiggleBoneSettings_t >
   public ref CUtlVector BoneSettings { get; }
+
+
 }

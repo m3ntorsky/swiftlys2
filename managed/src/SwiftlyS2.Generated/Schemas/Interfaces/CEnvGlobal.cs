@@ -17,4 +17,6 @@ public partial interface CEnvGlobal : CLogicalEntity {
   public ref int Initialstate { get; }
   
   public ref int Counter { get; }
+
+
 }

@@ -15,4 +15,6 @@ public partial interface CPulseCell_Outflow_ListenForAnimgraphTag : CPulseCell_B
   public CPulse_ResumePoint OnCanceled { get; }
   
   public ref CGlobalSymbol TagName { get; }
+
+
 }

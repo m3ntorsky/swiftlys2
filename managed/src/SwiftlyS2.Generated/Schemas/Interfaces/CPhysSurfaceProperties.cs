@@ -25,4 +25,6 @@ public partial interface CPhysSurfaceProperties : ISchemaClass {
   public CPhysSurfacePropertiesSoundNames AudioSounds { get; }
   
   public CPhysSurfacePropertiesAudio AudioParams { get; }
+
+
 }

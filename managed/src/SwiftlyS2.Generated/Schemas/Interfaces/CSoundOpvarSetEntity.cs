@@ -23,4 +23,6 @@ public partial interface CSoundOpvarSetEntity : CBaseEntity {
   public ref CUtlSymbolLarge OpvarValueString { get; }
   
   public ref bool SetOnSpawn { get; }
+
+
 }

@@ -27,4 +27,6 @@ public partial interface CNmStateNode__CDefinition : CNmPoseNode__CDefinition {
   public ref short LayerBoneMaskNodeIdx { get; }
   
   public ref bool IsOffState { get; }
+
+
 }

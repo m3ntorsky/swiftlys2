@@ -11,4 +11,6 @@ public partial interface C_OP_QuantizeFloat : CParticleFunctionOperator {
   public CPerParticleFloatInput InputValue { get; }
   
   public ParticleAttributeIndex_t OutputField { get; }
+
+
 }

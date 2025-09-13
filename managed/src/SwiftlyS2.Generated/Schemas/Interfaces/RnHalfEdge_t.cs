@@ -15,4 +15,6 @@ public partial interface RnHalfEdge_t : ISchemaClass {
   public ref byte Origin { get; }
   
   public ref byte Face { get; }
+
+
 }

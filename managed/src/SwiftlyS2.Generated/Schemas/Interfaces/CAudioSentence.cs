@@ -17,4 +17,6 @@ public partial interface CAudioSentence : ISchemaClass {
   public ref CUtlVector EmphasisSamples { get; }
   
   public CAudioMorphData MorphData { get; }
+
+
 }

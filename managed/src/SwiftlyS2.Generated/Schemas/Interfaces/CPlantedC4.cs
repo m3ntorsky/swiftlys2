@@ -59,4 +59,19 @@ public partial interface CPlantedC4 : CBaseAnimGraph {
   public ref QAngle CatchUpToPlayerEye { get; }
   
   public GameTime_t LastSpinDetectionTime { get; }
+
+  public void BombTickingUpdated();
+  public void C4BlowUpdated();
+  public void BombSiteUpdated();
+  public void SourceSoundscapeHashUpdated();
+  public void AttributeManagerUpdated();
+  public void CannotBeDefusedUpdated();
+  public void EntitySpottedStateUpdated();
+  public void HasExplodedUpdated();
+  public void TimerLengthUpdated();
+  public void BeingDefusedUpdated();
+  public void DefuseLengthUpdated();
+  public void DefuseCountDownUpdated();
+  public void BombDefusedUpdated();
+  public void BombDefuserUpdated();
 }

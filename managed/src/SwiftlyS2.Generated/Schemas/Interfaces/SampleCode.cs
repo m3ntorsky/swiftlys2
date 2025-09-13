@@ -9,4 +9,6 @@ public partial interface SampleCode : ISchemaClass {
 
   
   public ISchemaFixedArray<byte> SubCode { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CPointGamestatsCounter : CPointEntity {
   public ref CUtlSymbolLarge StrStatisticName { get; }
   
   public ref bool Disabled { get; }
+
+
 }

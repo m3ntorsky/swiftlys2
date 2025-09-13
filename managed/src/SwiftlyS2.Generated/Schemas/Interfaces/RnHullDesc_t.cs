@@ -9,4 +9,6 @@ public partial interface RnHullDesc_t : RnShapeDesc_t {
 
   
   public RnHull_t Hull { get; }
+
+
 }

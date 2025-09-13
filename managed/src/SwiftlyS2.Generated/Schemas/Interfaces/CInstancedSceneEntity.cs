@@ -21,4 +21,6 @@ public partial interface CInstancedSceneEntity : CSceneEntity {
   public ref bool RemoveOnCompletion { get; }
   
   public ref CHandle<CBaseEntity> Target { get; }
+
+
 }

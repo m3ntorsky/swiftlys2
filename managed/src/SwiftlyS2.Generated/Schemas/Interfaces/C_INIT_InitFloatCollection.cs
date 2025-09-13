@@ -11,4 +11,6 @@ public partial interface C_INIT_InitFloatCollection : CParticleFunctionInitializ
   public CParticleCollectionFloatInput InputValue { get; }
   
   public ParticleAttributeIndex_t OutputField { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CNmIDEvent : CNmEvent {
   public ref CGlobalSymbol ID { get; }
   
   public ref CGlobalSymbol SecondaryID { get; }
+
+
 }

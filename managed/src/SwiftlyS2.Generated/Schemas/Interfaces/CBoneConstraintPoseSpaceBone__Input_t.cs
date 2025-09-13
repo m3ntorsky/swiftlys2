@@ -11,4 +11,6 @@ public partial interface CBoneConstraintPoseSpaceBone__Input_t : ISchemaClass {
   public ref Vector InputValue { get; }
   
   public ref CUtlVector<CTransform> OutputTransformList { get; }
+
+
 }

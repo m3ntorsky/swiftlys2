@@ -9,4 +9,6 @@ public partial interface MaterialParamString_t : MaterialParam_t {
 
   
   public ref CUtlString Value { get; }
+
+
 }

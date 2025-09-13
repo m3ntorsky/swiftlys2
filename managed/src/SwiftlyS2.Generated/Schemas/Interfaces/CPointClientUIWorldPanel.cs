@@ -55,4 +55,29 @@ public partial interface CPointClientUIWorldPanel : CBaseClientUIEntity {
   public ref bool DisableMipGen { get; }
   
   public ref int ExplicitImageLayout { get; }
+
+  public void IgnoreInputUpdated();
+  public void LitUpdated();
+  public void FollowPlayerAcrossTeleportUpdated();
+  public void WidthUpdated();
+  public void HeightUpdated();
+  public void DPIUpdated();
+  public void InteractDistanceUpdated();
+  public void DepthOffsetUpdated();
+  public void OwnerContextUpdated();
+  public void HorizontalAlignUpdated();
+  public void VerticalAlignUpdated();
+  public void OrientationUpdated();
+  public void AllowInteractionFromAllSceneWorldsUpdated();
+  public void CSSClassesUpdated();
+  public void OpaqueUpdated();
+  public void NoDepthUpdated();
+  public void VisibleWhenParentNoDrawUpdated();
+  public void RenderBackfaceUpdated();
+  public void UseOffScreenIndicatorUpdated();
+  public void ExcludeFromSaveGamesUpdated();
+  public void GrabbableUpdated();
+  public void OnlyRenderToTextureUpdated();
+  public void DisableMipGenUpdated();
+  public void ExplicitImageLayoutUpdated();
 }

@@ -9,4 +9,6 @@ public partial interface CPulseCell_LimitCount__InstanceState_t : ISchemaClass {
 
   
   public ref int CurrentCount { get; }
+
+
 }

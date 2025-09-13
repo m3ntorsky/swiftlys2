@@ -11,4 +11,6 @@ public partial interface C_OP_RemapDensityGradientToVectorAttribute : CParticleF
   public ref float RadiusScale { get; }
   
   public ParticleAttributeIndex_t FieldOutput { get; }
+
+
 }

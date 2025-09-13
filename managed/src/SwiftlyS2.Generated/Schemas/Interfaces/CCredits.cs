@@ -13,4 +13,6 @@ public partial interface CCredits : CPointEntity {
   public ref bool RolledOutroCredits { get; }
   
   public ref float LogoLength { get; }
+
+
 }

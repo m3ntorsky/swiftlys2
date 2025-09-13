@@ -14,4 +14,6 @@ public partial interface CStaticPoseCache : ISchemaClass {
   public ref int BoneCount { get; }
   
   public ref int MorphCount { get; }
+
+
 }

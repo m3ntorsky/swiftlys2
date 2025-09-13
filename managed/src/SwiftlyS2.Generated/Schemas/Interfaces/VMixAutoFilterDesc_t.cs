@@ -23,4 +23,6 @@ public partial interface VMixAutoFilterDesc_t : ISchemaClass {
   public ref float Phase { get; }
   
   public ref VMixLFOShape_t LFOShape { get; }
+
+
 }

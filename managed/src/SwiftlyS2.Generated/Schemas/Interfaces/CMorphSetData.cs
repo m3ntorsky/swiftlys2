@@ -27,4 +27,6 @@ public partial interface CMorphSetData : ISchemaClass {
   
 // CUtlVector< CFlexRule >
   public ref CUtlVector FlexRules { get; }
+
+
 }

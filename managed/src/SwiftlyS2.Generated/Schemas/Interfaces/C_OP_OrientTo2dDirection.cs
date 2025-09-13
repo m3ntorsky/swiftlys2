@@ -13,4 +13,6 @@ public partial interface C_OP_OrientTo2dDirection : CParticleFunctionOperator {
   public ref float SpinStrength { get; }
   
   public ParticleAttributeIndex_t FieldOutput { get; }
+
+
 }

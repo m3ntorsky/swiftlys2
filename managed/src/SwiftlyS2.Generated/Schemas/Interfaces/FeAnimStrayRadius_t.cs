@@ -13,4 +13,6 @@ public partial interface FeAnimStrayRadius_t : ISchemaClass {
   public ref float MaxDist { get; }
   
   public ref float RelaxationFactor { get; }
+
+
 }

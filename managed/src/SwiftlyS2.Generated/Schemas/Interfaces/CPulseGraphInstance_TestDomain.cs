@@ -25,4 +25,6 @@ public partial interface CPulseGraphInstance_TestDomain : CBasePulseGraphInstanc
   public ref CUtlVector<CUtlString> Tracepoints { get; }
   
   public ref bool TestYesOrNoPath { get; }
+
+
 }

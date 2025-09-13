@@ -29,4 +29,6 @@ public partial interface C_OP_TeleportBeam : CParticleFunctionOperator {
   public ref float ArcSpeed { get; }
   
   public ref float Alpha { get; }
+
+
 }

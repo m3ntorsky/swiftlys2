@@ -9,4 +9,6 @@ public partial interface PulseDocNodeID_t : ISchemaClass {
 
   
   public ref int Value { get; }
+
+
 }

@@ -23,4 +23,6 @@ public partial interface C_OP_RenderGpuImplicit : CParticleFunctionRenderer {
   public ref int ScaleCP { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
+
+
 }

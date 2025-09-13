@@ -13,4 +13,6 @@ public partial interface C_INIT_PositionOffsetToCP : CParticleFunctionInitialize
   public ref int ControlPointNumberEnd { get; }
   
   public ref bool LocalCoords { get; }
+
+
 }

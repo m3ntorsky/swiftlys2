@@ -15,4 +15,6 @@ public partial interface VMixFreeverbDesc_t : ISchemaClass {
   public ref float Width { get; }
   
   public ref float LateReflections { get; }
+
+
 }

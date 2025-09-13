@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmVelocityBasedSpeedScaleNode__CDefinition : CNmSpeedScaleBaseNode__CDefinition {
 
 
+
+
 }

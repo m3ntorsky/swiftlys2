@@ -13,4 +13,6 @@ public partial interface CPulseCell_TestWaitWithCursorState : CPulseCell_BaseYie
   public CPulse_ResumePoint WakeCancel { get; }
   
   public CPulse_ResumePoint WakeFail { get; }
+
+
 }

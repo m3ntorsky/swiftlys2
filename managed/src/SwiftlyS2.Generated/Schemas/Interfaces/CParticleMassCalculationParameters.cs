@@ -15,4 +15,6 @@ public partial interface CParticleMassCalculationParameters : ISchemaClass {
   public CPerParticleFloatInput NominalRadius { get; }
   
   public CPerParticleFloatInput Scale { get; }
+
+
 }

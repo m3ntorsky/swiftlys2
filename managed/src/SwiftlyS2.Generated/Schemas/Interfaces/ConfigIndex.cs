@@ -11,4 +11,6 @@ public partial interface ConfigIndex : ISchemaClass {
   public ref ushort Group { get; }
   
   public ref ushort Config { get; }
+
+
 }

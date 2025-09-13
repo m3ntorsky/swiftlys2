@@ -33,4 +33,6 @@ public partial interface C_OP_DistanceBetweenTransforms : CParticleFunctionOpera
   public ref bool LOS { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
+
+
 }

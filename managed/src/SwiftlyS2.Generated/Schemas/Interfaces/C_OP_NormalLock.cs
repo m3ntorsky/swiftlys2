@@ -9,4 +9,6 @@ public partial interface C_OP_NormalLock : CParticleFunctionOperator {
 
   
   public ref int ControlPointNumber { get; }
+
+
 }

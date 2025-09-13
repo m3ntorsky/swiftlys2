@@ -11,4 +11,7 @@ public partial interface AABB_t : ISchemaClass {
   public ref Vector MinBounds { get; }
   
   public ref Vector MaxBounds { get; }
+
+  public void MinBoundsUpdated();
+  public void MaxBoundsUpdated();
 }

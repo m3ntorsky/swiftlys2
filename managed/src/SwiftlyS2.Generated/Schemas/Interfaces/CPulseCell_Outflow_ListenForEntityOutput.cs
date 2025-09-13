@@ -17,4 +17,6 @@ public partial interface CPulseCell_Outflow_ListenForEntityOutput : CPulseCell_B
   public ref CUtlString StrEntityOutputParam { get; }
   
   public ref bool ListenUntilCanceled { get; }
+
+
 }

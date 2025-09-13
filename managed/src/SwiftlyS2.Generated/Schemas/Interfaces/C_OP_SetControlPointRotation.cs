@@ -15,4 +15,6 @@ public partial interface C_OP_SetControlPointRotation : CParticleFunctionPreEmis
   public ref int CP { get; }
   
   public ref int LocalCP { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CDrawCullingData : ISchemaClass {
   public ISchemaFixedArray<byte> ConeAxis { get; }
   
   public ref byte ConeCutoff { get; }
+
+
 }

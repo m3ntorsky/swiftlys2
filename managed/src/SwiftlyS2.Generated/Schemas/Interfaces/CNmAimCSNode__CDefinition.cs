@@ -15,4 +15,6 @@ public partial interface CNmAimCSNode__CDefinition : CNmPassthroughNode__CDefini
   public ref short EnabledNodeIdx { get; }
   
   public ref float BlendTimeSeconds { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface SceneViewId_t : ISchemaClass {
   public ref ulong ViewId { get; }
   
   public ref ulong FrameCount { get; }
+
+
 }

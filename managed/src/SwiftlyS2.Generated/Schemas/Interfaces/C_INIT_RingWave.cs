@@ -29,4 +29,6 @@ public partial interface C_INIT_RingWave : CParticleFunctionInitializer {
   public ref bool EvenDistribution { get; }
   
   public ref bool XYVelocityOnly { get; }
+
+
 }

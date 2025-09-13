@@ -21,4 +21,8 @@ public partial interface CBaseFlex : CBaseAnimGraph {
   public SceneEventId_t NextSceneEventId { get; }
   
   public ref bool UpdateLayerPriorities { get; }
+
+  public void FlexWeightUpdated();
+  public void LookTargetPositionUpdated();
+  public void BlinktoggleUpdated();
 }

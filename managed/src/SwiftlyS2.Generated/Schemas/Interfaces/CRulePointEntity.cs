@@ -9,4 +9,6 @@ public partial interface CRulePointEntity : CRuleEntity {
 
   
   public ref int Score { get; }
+
+
 }

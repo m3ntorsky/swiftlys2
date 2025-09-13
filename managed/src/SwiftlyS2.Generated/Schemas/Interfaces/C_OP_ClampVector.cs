@@ -13,4 +13,6 @@ public partial interface C_OP_ClampVector : CParticleFunctionOperator {
   public CPerParticleVecInput OutputMin { get; }
   
   public CPerParticleVecInput OutputMax { get; }
+
+
 }

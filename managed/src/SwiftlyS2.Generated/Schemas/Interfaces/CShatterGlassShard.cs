@@ -63,4 +63,6 @@ public partial interface CShatterGlassShard : ISchemaClass {
   public ref CHandle<CBaseEntity> EntityHittingMe { get; }
   
   public ref CUtlVector<uint> Neighbors { get; }
+
+
 }

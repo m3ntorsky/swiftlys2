@@ -17,4 +17,6 @@ public partial interface CPulseCell_Step_CallExternalMethod : CPulseCell_BaseYie
   public ref PulseMethodCallMode_t AsyncCallMode { get; }
   
   public CPulse_ResumePoint OnFinished { get; }
+
+
 }

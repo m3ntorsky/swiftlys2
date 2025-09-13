@@ -11,4 +11,6 @@ public partial interface GameAmmoTypeInfo_t : AmmoTypeInfo_t {
   public ref int BuySize { get; }
   
   public ref int Cost { get; }
+
+
 }

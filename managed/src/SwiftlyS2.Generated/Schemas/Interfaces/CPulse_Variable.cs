@@ -23,4 +23,6 @@ public partial interface CPulse_Variable : ISchemaClass {
   public ref bool IsObservable { get; }
   
   public PulseDocNodeID_t EditorNodeID { get; }
+
+
 }

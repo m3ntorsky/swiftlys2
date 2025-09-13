@@ -17,4 +17,6 @@ public partial interface IKTargetSettings_t : ISchemaClass {
   public AnimParamID AnimgraphParameterNameOrientation { get; }
   
   public ref IKTargetCoordinateSystem TargetCoordSystem { get; }
+
+
 }

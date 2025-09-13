@@ -17,4 +17,6 @@ public partial interface C_OP_RopeSpringConstraint : CParticleFunctionConstraint
   public ref float AdjustmentScale { get; }
   
   public CParticleCollectionFloatInput InitialRestingLength { get; }
+
+
 }

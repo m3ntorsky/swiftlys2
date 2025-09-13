@@ -9,4 +9,6 @@ public partial interface CUnaryUpdateNode : CAnimUpdateNodeBase {
 
   
   public CAnimUpdateNodeRef ChildNode { get; }
+
+
 }

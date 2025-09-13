@@ -9,4 +9,6 @@ public partial interface CEnvSplash : CPointEntity {
 
   
   public ref float Scale { get; }
+
+
 }

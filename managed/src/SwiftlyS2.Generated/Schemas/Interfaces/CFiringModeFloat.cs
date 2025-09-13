@@ -9,4 +9,6 @@ public partial interface CFiringModeFloat : ISchemaClass {
 
   
   public ISchemaFixedArray<float> Values { get; }
+
+
 }

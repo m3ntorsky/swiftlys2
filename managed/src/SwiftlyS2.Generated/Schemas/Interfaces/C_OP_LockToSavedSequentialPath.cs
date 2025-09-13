@@ -15,4 +15,6 @@ public partial interface C_OP_LockToSavedSequentialPath : CParticleFunctionOpera
   public ref bool CPPairs { get; }
   
   public CPathParameters PathParams { get; }
+
+
 }

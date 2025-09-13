@@ -21,4 +21,6 @@ public partial interface C_OP_MaintainSequentialPath : CParticleFunctionOperator
   public ref bool UseParticleCount { get; }
   
   public CPathParameters PathParams { get; }
+
+
 }

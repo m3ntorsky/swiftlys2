@@ -11,4 +11,6 @@ public partial interface TraceSettings_t : ISchemaClass {
   public ref float TraceHeight { get; }
   
   public ref float TraceRadius { get; }
+
+
 }

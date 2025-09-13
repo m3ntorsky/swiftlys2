@@ -19,4 +19,6 @@ public partial interface C_OP_MovementRigidAttachToCP : CParticleFunctionOperato
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ref bool OffsetLocal { get; }
+
+
 }

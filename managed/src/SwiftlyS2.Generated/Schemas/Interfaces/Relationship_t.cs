@@ -11,4 +11,6 @@ public partial interface Relationship_t : ISchemaClass {
   public ref Disposition_t Disposition { get; }
   
   public ref int Priority { get; }
+
+
 }

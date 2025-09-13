@@ -13,4 +13,6 @@ public partial interface C_OP_SetControlPointPositionToTimeOfDayValue : CParticl
   public ISchemaFixedString TimeOfDayParameter { get; }
   
   public ref Vector DefaultValue { get; }
+
+
 }

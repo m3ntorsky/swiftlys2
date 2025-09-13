@@ -9,4 +9,6 @@ public partial interface CPointCameraVFOV : CPointCamera {
 
   
   public ref float VerticalFOV { get; }
+
+
 }

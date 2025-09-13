@@ -13,4 +13,6 @@ public partial interface FeBuildTaperedCapsuleRigid_t : FeTaperedCapsuleRigid_t 
   public ref uint VertexMapHash { get; }
   
   public ref uint AntitunnelGroupBits { get; }
+
+
 }

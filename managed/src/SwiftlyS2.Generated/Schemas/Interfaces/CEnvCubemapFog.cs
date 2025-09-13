@@ -43,4 +43,22 @@ public partial interface CEnvCubemapFog : CBaseEntity {
   public ref bool HasHeightFogEnd { get; }
   
   public ref bool FirstTime { get; }
+
+  public void EndDistanceUpdated();
+  public void StartDistanceUpdated();
+  public void FogFalloffExponentUpdated();
+  public void HeightFogEnabledUpdated();
+  public void FogHeightWidthUpdated();
+  public void FogHeightEndUpdated();
+  public void FogHeightStartUpdated();
+  public void FogHeightExponentUpdated();
+  public void LODBiasUpdated();
+  public void ActiveUpdated();
+  public void StartDisabledUpdated();
+  public void FogMaxOpacityUpdated();
+  public void CubemapSourceTypeUpdated();
+  public void SkyMaterialUpdated();
+  public void SkyEntityUpdated();
+  public void FogCubemapTextureUpdated();
+  public void HasHeightFogEndUpdated();
 }

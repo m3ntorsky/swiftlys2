@@ -15,4 +15,6 @@ public partial interface EventClientFrameSimulate_t : ISchemaClass {
   public ref float FrameTime { get; }
   
   public ref bool ScheduleSendTickPacket { get; }
+
+
 }

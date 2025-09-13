@@ -11,4 +11,6 @@ public partial interface CAnimSequenceParams : ISchemaClass {
   public ref float FadeInTime { get; }
   
   public ref float FadeOutTime { get; }
+
+
 }

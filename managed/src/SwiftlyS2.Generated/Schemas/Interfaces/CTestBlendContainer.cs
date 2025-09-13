@@ -11,4 +11,6 @@ public partial interface CTestBlendContainer : CVoiceContainerBase {
   public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> FirstSound { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> SecondSound { get; }
+
+
 }

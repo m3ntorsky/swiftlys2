@@ -9,4 +9,6 @@ public partial interface CModelConfigElement_UserPick : CModelConfigElement {
 
   
   public ref CUtlVector<CUtlString> Choices { get; }
+
+
 }

@@ -15,4 +15,6 @@ public partial interface CPropDoorRotatingBreakable : CPropDoorRotating {
   public ref int CurrentDamageState { get; }
   
   public ref CUtlVector<CUtlSymbolLarge> DamageStates { get; }
+
+
 }

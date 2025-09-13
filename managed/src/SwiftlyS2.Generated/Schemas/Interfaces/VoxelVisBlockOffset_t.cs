@@ -11,4 +11,6 @@ public partial interface VoxelVisBlockOffset_t : ISchemaClass {
   public ref uint Offset { get; }
   
   public ref uint ElementCount { get; }
+
+
 }

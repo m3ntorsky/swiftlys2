@@ -9,4 +9,6 @@ public partial interface RnFace_t : ISchemaClass {
 
   
   public ref byte Edge { get; }
+
+
 }

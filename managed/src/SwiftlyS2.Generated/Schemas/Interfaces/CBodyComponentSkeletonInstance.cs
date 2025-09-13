@@ -9,4 +9,6 @@ public partial interface CBodyComponentSkeletonInstance : CBodyComponent {
 
   
   public CSkeletonInstance SkeletonInstance { get; }
+
+  public void SkeletonInstanceUpdated();
 }

@@ -15,4 +15,6 @@ public partial interface EngineLoopState_t : ISchemaClass {
   public ref int RenderWidth { get; }
   
   public ref int RenderHeight { get; }
+
+
 }

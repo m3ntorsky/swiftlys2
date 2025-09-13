@@ -17,4 +17,6 @@ public partial interface CEnvLaser : CBeam {
   public ref Vector FirePosition { get; }
   
   public ref float StartFrame { get; }
+
+
 }

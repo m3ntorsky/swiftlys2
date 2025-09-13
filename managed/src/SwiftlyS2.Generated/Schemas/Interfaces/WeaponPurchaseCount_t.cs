@@ -11,4 +11,7 @@ public partial interface WeaponPurchaseCount_t : ISchemaClass {
   public ref ushort ItemDefIndex { get; }
   
   public ref ushort Count { get; }
+
+  public void ItemDefIndexUpdated();
+  public void CountUpdated();
 }

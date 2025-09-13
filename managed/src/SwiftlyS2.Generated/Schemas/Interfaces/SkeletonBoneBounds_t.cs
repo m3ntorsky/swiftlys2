@@ -11,4 +11,6 @@ public partial interface SkeletonBoneBounds_t : ISchemaClass {
   public ref Vector Center { get; }
   
   public ref Vector Size { get; }
+
+
 }

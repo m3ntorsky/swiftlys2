@@ -11,4 +11,6 @@ public partial interface CMovementStatsProperty : ISchemaClass {
   public ref int UseCounter { get; }
   
   public CVectorExponentialMovingAverage EmaMovementDirection { get; }
+
+
 }

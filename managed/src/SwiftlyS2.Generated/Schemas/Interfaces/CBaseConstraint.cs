@@ -16,4 +16,6 @@ public partial interface CBaseConstraint : CBoneConstraintBase {
   
 // CUtlVector< CConstraintTarget >
   public ref CUtlVector Targets { get; }
+
+
 }

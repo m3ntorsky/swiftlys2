@@ -15,4 +15,9 @@ public partial interface CountdownTimer : ISchemaClass {
   public ref float Timescale { get; }
   
   public ref uint WorldGroupId { get; }
+
+  public void DurationUpdated();
+  public void TimestampUpdated();
+  public void TimescaleUpdated();
+  public void WorldGroupIdUpdated();
 }

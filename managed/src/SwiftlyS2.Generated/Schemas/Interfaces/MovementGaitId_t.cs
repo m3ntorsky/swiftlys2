@@ -9,4 +9,6 @@ public partial interface MovementGaitId_t : ISchemaClass {
 
   
   public ref CGlobalSymbol Id { get; }
+
+
 }

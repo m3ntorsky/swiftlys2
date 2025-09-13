@@ -9,4 +9,6 @@ public partial interface CNmFootEvent : CNmEvent {
 
   
   public ref NmFootPhase_t Phase { get; }
+
+
 }

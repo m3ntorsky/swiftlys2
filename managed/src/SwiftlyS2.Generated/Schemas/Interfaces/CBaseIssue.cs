@@ -19,4 +19,6 @@ public partial interface CBaseIssue : ISchemaClass {
   public ref int NumPotentialVotes { get; }
   
   public CVoteController VoteController { get; }
+
+
 }

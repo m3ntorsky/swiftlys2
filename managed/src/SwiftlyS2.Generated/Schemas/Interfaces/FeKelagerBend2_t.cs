@@ -15,4 +15,6 @@ public partial interface FeKelagerBend2_t : ISchemaClass {
   public ISchemaFixedArray<ushort> Node { get; }
   
   public ref ushort Reserved { get; }
+
+
 }

@@ -35,4 +35,6 @@ public partial interface C_INIT_CreatePhyllotaxis : CParticleFunctionInitializer
   public ref bool UseWithContEmit { get; }
   
   public ref bool UseOrigRadius { get; }
+
+
 }

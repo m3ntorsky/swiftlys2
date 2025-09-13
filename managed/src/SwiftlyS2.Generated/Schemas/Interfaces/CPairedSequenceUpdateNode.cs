@@ -9,4 +9,6 @@ public partial interface CPairedSequenceUpdateNode : CSequenceUpdateNodeBase {
 
   
   public ref CGlobalSymbol PairedSequenceRole { get; }
+
+
 }

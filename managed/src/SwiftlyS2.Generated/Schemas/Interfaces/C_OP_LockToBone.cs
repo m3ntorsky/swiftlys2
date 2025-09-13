@@ -37,4 +37,6 @@ public partial interface C_OP_LockToBone : CParticleFunctionOperator {
   public CPerParticleVecInput Rotation { get; }
   
   public CPerParticleFloatInput RotLerp { get; }
+
+
 }

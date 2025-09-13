@@ -63,4 +63,6 @@ public partial interface CBaseDoor : CBaseToggle {
   public ref bool IsChaining { get; }
   
   public ref bool IsUsable { get; }
+
+  public void IsUsableUpdated();
 }

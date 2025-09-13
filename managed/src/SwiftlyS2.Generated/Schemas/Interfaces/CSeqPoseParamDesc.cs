@@ -17,4 +17,6 @@ public partial interface CSeqPoseParamDesc : ISchemaClass {
   public ref float Loop { get; }
   
   public ref bool Looping { get; }
+
+
 }

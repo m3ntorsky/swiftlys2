@@ -9,4 +9,6 @@ public partial interface MaterialParamTexture_t : MaterialParam_t {
 
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> Value { get; }
+
+
 }

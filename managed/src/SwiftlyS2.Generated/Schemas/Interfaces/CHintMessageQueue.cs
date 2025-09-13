@@ -13,4 +13,6 @@ public partial interface CHintMessageQueue : ISchemaClass {
   public ref CUtlVector<PointerTo<CHintMessage>> Messages { get; }
   
   public CBasePlayerController PlayerController { get; }
+
+
 }

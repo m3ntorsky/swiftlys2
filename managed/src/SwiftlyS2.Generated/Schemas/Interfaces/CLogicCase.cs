@@ -19,4 +19,6 @@ public partial interface CLogicCase : CLogicalEntity {
   public SchemaUntypedField OnCase { get; }
   
   public SchemaUntypedField OnDefault { get; }
+
+
 }

@@ -23,4 +23,6 @@ public partial interface C_OP_RemapSDFDistanceToVectorAttribute : CParticleFunct
   public ref Vector ValueAtMax { get; }
   
   public ref Vector ValueAboveMax { get; }
+
+
 }

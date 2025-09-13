@@ -23,4 +23,6 @@ public partial interface C_OP_SetRandomControlPointPosition : CParticleFunctionP
   public ref Vector CPMaxPos { get; }
   
   public CParticleCollectionFloatInput Interpolation { get; }
+
+
 }

@@ -10,4 +10,6 @@ public partial interface PulseNodeDynamicOutflows_t : ISchemaClass {
   
 // CUtlVector< PulseNodeDynamicOutflows_t::DynamicOutflow_t >
   public ref CUtlVector Outflows { get; }
+
+
 }

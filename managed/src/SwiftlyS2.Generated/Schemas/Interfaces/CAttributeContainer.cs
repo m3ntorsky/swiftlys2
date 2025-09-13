@@ -9,4 +9,6 @@ public partial interface CAttributeContainer : CAttributeManager {
 
   
   public CEconItemView Item { get; }
+
+  public void ItemUpdated();
 }

@@ -15,4 +15,6 @@ public partial interface CNmFollowBoneNode__CDefinition : CNmPassthroughNode__CD
   public ref short EnabledNodeIdx { get; }
   
   public ref NmFollowBoneMode_t Mode { get; }
+
+
 }

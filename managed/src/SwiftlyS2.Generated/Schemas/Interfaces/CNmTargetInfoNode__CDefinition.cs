@@ -13,4 +13,6 @@ public partial interface CNmTargetInfoNode__CDefinition : CNmFloatValueNode__CDe
   public ref CNmTargetInfoNode__Info_t InfoType { get; }
   
   public ref bool IsWorldSpaceTarget { get; }
+
+
 }

@@ -23,4 +23,6 @@ public partial interface ConstraintSoundInfo : ISchemaClass {
   public ref bool PlayTravelSound { get; }
   
   public ref bool PlayReversalSound { get; }
+
+
 }

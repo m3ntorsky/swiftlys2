@@ -55,4 +55,11 @@ public partial interface CFish : CBaseAnimGraph {
   public CountdownTimer ProximityTimer { get; }
   
   public ref CUtlVector<PointerTo<CFish>> Visible { get; }
+
+  public void XUpdated();
+  public void YUpdated();
+  public void ZUpdated();
+  public void AngleUpdated();
+  public void PoolOriginUpdated();
+  public void WaterLevelUpdated();
 }

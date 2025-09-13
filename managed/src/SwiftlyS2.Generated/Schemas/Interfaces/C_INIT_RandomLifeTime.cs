@@ -13,4 +13,6 @@ public partial interface C_INIT_RandomLifeTime : CParticleFunctionInitializer {
   public ref float LifetimeMax { get; }
   
   public ref float LifetimeRandExponent { get; }
+
+
 }

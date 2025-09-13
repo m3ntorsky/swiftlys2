@@ -13,4 +13,6 @@ public partial interface C_OP_Diffusion : CParticleFunctionOperator {
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ref int VoxelGridResolution { get; }
+
+
 }

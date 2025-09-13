@@ -9,4 +9,6 @@ public partial interface CInButtonState : ISchemaClass {
 
   
   public ISchemaFixedArray<ulong> ButtonStates { get; }
+
+
 }

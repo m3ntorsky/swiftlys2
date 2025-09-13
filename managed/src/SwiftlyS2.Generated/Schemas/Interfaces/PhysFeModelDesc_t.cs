@@ -265,4 +265,6 @@ public partial interface PhysFeModelDesc_t : ISchemaClass {
   public ref ushort RodVelocitySmoothIterations { get; }
   
   public ref ushort QuadVelocitySmoothIterations { get; }
+
+
 }

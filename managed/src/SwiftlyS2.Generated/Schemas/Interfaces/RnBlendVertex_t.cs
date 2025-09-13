@@ -23,4 +23,6 @@ public partial interface RnBlendVertex_t : ISchemaClass {
   public ref ushort Flags { get; }
   
   public ref ushort TargetIndex { get; }
+
+
 }

@@ -17,4 +17,6 @@ public partial interface CEnvSpark : CPointEntity {
   public ref int Type { get; }
   
   public CEntityIOOutput OnSpark { get; }
+
+
 }

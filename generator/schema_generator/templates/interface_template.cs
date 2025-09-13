@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface $INTERFACE_NAME$ : $BASE_INTERFACE$ {
 
 $FIELDS$
+
+$UPDATORS$
 }

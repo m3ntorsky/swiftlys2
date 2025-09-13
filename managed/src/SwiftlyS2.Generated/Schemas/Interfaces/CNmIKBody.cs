@@ -15,4 +15,6 @@ public partial interface CNmIKBody : ISchemaClass {
   public ref Vector Radius { get; }
   
   public ref float Resistance { get; }
+
+
 }

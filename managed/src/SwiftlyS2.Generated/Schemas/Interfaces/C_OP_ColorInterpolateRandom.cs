@@ -19,4 +19,6 @@ public partial interface C_OP_ColorInterpolateRandom : CParticleFunctionOperator
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ref bool EaseInOut { get; }
+
+
 }

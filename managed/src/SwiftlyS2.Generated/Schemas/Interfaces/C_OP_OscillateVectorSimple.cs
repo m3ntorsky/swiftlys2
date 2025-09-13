@@ -19,4 +19,6 @@ public partial interface C_OP_OscillateVectorSimple : CParticleFunctionOperator 
   public ref float OscAdd { get; }
   
   public ref bool Offset { get; }
+
+
 }

@@ -19,4 +19,6 @@ public partial interface CAnimLocalHierarchy : ISchemaClass {
   public ref int TailFrame { get; }
   
   public ref int EndFrame { get; }
+
+
 }

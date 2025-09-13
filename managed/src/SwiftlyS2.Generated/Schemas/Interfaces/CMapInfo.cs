@@ -35,4 +35,6 @@ public partial interface CMapInfo : CPointEntity {
   public ref float EnvWetnessCoverage { get; }
   
   public ref float EnvWetnessDryingAmount { get; }
+
+
 }

@@ -15,4 +15,6 @@ public partial interface CFlexController : ISchemaClass {
   public ref float Min { get; }
   
   public ref float Max { get; }
+
+
 }

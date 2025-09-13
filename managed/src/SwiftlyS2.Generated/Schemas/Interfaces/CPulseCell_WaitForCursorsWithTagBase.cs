@@ -11,4 +11,6 @@ public partial interface CPulseCell_WaitForCursorsWithTagBase : CPulseCell_BaseY
   public ref int CursorsAllowedToWait { get; }
   
   public CPulse_ResumePoint WaitComplete { get; }
+
+
 }

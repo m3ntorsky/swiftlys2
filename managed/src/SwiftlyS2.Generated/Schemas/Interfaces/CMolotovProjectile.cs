@@ -15,4 +15,6 @@ public partial interface CMolotovProjectile : CBaseCSGrenadeProjectile {
   public IntervalTimer StillTimer { get; }
   
   public ref bool HasBouncedOffPlayer { get; }
+
+  public void IsIncGrenadeUpdated();
 }

@@ -15,4 +15,6 @@ public partial interface C_OP_RemapTransformOrientationToYaw : CParticleFunction
   public ref float RotOffset { get; }
   
   public ref float SpinStrength { get; }
+
+
 }

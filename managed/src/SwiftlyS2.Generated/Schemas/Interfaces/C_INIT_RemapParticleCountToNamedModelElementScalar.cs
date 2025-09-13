@@ -15,4 +15,6 @@ public partial interface C_INIT_RemapParticleCountToNamedModelElementScalar : C_
   public ref CUtlString OutputMaxName { get; }
   
   public ref bool ModelFromRenderer { get; }
+
+
 }

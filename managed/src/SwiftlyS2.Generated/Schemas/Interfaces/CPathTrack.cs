@@ -25,4 +25,6 @@ public partial interface CPathTrack : CPointEntity {
   public ref TrackOrientationType_t OrientationType { get; }
   
   public CEntityIOOutput OnPass { get; }
+
+
 }

@@ -21,4 +21,6 @@ public partial interface CKeepUpright : CPointEntity {
   public ref bool Active { get; }
   
   public ref bool DampAllRotation { get; }
+
+
 }

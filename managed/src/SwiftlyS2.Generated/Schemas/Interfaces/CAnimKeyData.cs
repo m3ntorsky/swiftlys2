@@ -22,4 +22,6 @@ public partial interface CAnimKeyData : ISchemaClass {
   
 // CUtlVector< CAnimDataChannelDesc >
   public ref CUtlVector DataChannelArray { get; }
+
+
 }

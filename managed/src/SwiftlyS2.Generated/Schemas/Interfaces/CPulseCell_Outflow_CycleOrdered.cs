@@ -10,4 +10,6 @@ public partial interface CPulseCell_Outflow_CycleOrdered : CPulseCell_BaseFlow {
   
 // CUtlVector< CPulse_OutflowConnection >
   public ref CUtlVector Outputs { get; }
+
+
 }

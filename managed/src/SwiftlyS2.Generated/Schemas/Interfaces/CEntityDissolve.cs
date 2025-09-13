@@ -27,4 +27,15 @@ public partial interface CEntityDissolve : CBaseModelEntity {
   public ref Vector DissolverOrigin { get; }
   
   public ref uint Magnitude { get; }
+
+  public void FadeInStartUpdated();
+  public void FadeInLengthUpdated();
+  public void FadeOutModelStartUpdated();
+  public void FadeOutModelLengthUpdated();
+  public void FadeOutStartUpdated();
+  public void FadeOutLengthUpdated();
+  public void StartTimeUpdated();
+  public void DissolveTypeUpdated();
+  public void DissolverOriginUpdated();
+  public void MagnitudeUpdated();
 }

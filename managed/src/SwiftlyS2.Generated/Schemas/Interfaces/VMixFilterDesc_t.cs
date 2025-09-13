@@ -19,4 +19,6 @@ public partial interface VMixFilterDesc_t : ISchemaClass {
   public ref float CutoffFreq { get; }
   
   public ref float Q { get; }
+
+
 }

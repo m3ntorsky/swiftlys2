@@ -17,4 +17,6 @@ public partial interface CSosGroupMatchPattern : CSosGroupBranchPattern {
   public ref float Opvar { get; }
   
   public ref CUtlString OpvarString { get; }
+
+
 }

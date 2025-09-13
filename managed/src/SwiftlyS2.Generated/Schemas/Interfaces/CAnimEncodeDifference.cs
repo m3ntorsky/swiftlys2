@@ -24,4 +24,6 @@ public partial interface CAnimEncodeDifference : ISchemaClass {
   public ref CUtlVector<byte> HasMorphBitArray { get; }
   
   public ref CUtlVector<byte> HasUserBitArray { get; }
+
+
 }

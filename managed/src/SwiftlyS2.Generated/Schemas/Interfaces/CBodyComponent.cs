@@ -11,4 +11,6 @@ public partial interface CBodyComponent : CEntityComponent {
   public CGameSceneNode SceneNode { get; }
   
   public CNetworkVarChainer __m_pChainEntity { get; }
+
+
 }

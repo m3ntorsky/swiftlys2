@@ -11,4 +11,6 @@ public partial interface CSosGroupActionTimeBlockLimitSchema : CSosGroupActionSc
   public ref int MaxCount { get; }
   
   public ref float MaxDuration { get; }
+
+
 }

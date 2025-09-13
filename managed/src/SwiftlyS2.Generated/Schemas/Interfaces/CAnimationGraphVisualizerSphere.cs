@@ -13,4 +13,6 @@ public partial interface CAnimationGraphVisualizerSphere : CAnimationGraphVisual
   public ref float Radius { get; }
   
   public ref Color Color { get; }
+
+
 }

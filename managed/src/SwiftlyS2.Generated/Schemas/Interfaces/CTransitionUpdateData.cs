@@ -15,4 +15,6 @@ public partial interface CTransitionUpdateData : ISchemaClass {
   public SchemaUntypedField HandshakeMaskToDisableFirst { get; }
   
   public SchemaUntypedField Disabled { get; }
+
+
 }

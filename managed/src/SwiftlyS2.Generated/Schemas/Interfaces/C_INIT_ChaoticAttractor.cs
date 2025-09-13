@@ -25,4 +25,6 @@ public partial interface C_INIT_ChaoticAttractor : CParticleFunctionInitializer 
   public ref int BaseCP { get; }
   
   public ref bool UniformSpeed { get; }
+
+
 }

@@ -19,4 +19,6 @@ public partial interface CConcreteAnimParameter : CAnimParameterBase {
   public ref bool GameWritable { get; }
   
   public ref bool GraphWritable { get; }
+
+
 }

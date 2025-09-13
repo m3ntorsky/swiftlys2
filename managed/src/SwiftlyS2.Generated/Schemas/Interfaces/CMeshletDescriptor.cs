@@ -19,4 +19,6 @@ public partial interface CMeshletDescriptor : ISchemaClass {
   public ref byte VertexCount { get; }
   
   public ref byte TriangleCount { get; }
+
+
 }

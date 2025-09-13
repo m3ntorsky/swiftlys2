@@ -13,4 +13,6 @@ public partial interface CSoundContainerReferenceArray : ISchemaClass {
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>> Sounds { get; }
   
   public ref CUtlVector<PointerTo<CVoiceContainerBase>> Sounds1 { get; }
+
+
 }

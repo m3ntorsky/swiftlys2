@@ -35,4 +35,6 @@ public partial interface CBasePlayerVData : CEntitySubclassVDataBase {
   public ref float UseAngleTolerance { get; }
   
   public ref float CrouchTime { get; }
+
+
 }

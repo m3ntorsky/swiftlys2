@@ -11,4 +11,6 @@ public partial interface CNmStateMachineNode__CDefinition : CNmPoseNode__CDefini
   public SchemaUntypedField StateDefinitions { get; }
   
   public ref short DefaultStateIndex { get; }
+
+
 }

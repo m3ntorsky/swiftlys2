@@ -11,4 +11,6 @@ public partial interface CNmFloatClampNode__CDefinition : CNmFloatValueNode__CDe
   public ref short InputValueNodeIdx { get; }
   
   public SchemaUntypedField ClampRange { get; }
+
+
 }

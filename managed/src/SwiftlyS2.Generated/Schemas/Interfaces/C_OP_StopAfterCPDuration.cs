@@ -13,4 +13,6 @@ public partial interface C_OP_StopAfterCPDuration : CParticleFunctionPreEmission
   public ref bool DestroyImmediately { get; }
   
   public ref bool PlayEndCap { get; }
+
+
 }

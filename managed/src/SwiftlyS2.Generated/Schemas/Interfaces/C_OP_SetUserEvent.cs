@@ -17,4 +17,6 @@ public partial interface C_OP_SetUserEvent : CParticleFunctionOperator {
   public CPerParticleFloatInput FallingEdge { get; }
   
   public ref EventTypeSelection_t FallingEventType { get; }
+
+
 }

@@ -21,4 +21,6 @@ public partial interface CBoneMaskUpdateNode : CBinaryUpdateNode {
   public ref AnimValueSource BlendValueSource { get; }
   
   public CAnimParamHandle BlendParameter { get; }
+
+
 }

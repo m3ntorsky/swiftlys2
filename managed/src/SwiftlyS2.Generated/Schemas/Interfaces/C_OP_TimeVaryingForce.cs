@@ -15,4 +15,6 @@ public partial interface C_OP_TimeVaryingForce : CParticleFunctionForce {
   public ref float EndLerpTime { get; }
   
   public ref Vector EndingForce { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CPulseCell_PickBestOutflowSelector : CPulseCell_BaseFlo
   public ref PulseBestOutflowRules_t CheckType { get; }
   
   public PulseSelectorOutflowList_t OutflowList { get; }
+
+
 }

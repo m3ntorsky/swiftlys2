@@ -11,4 +11,6 @@ public partial interface CRagdollUpdateNode : CUnaryUpdateNode {
   public ref int WeightListIndex { get; }
   
   public ref RagdollPoseControl PoseControlMethod { get; }
+
+
 }

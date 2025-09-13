@@ -21,4 +21,6 @@ public partial interface CNmClipNode__CDefinition : CNmClipReferenceNode__CDefin
   public ref bool AllowLooping { get; }
   
   public ref short DataSlotIdx { get; }
+
+
 }

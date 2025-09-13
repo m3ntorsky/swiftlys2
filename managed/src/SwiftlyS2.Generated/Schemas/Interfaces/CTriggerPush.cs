@@ -21,4 +21,6 @@ public partial interface CTriggerPush : CBaseTrigger {
   public CPathSimple PathSimple { get; }
   
   public ref uint SplinePushType { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CCSGameModeRules : ISchemaClass {
 
   
   public CNetworkVarChainer __m_pChainEntity { get; }
+
+
 }

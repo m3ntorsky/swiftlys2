@@ -92,4 +92,31 @@ public partial interface CBaseModelEntity : CBaseEntity {
   public ref CUtlVector<CHandle<CBaseModelEntity>> ConfigEntitiesToPropagateMaterialDecalsTo { get; }
   
   public CNetworkViewOffsetVector ViewOffset { get; }
+
+  public void CRenderComponentUpdated();
+  public void CHitboxComponentUpdated();
+  public void DestructiblePartsSystemComponentUpdated();
+  public void RenderModeUpdated();
+  public void RenderFXUpdated();
+  public void RenderUpdated();
+  public void RenderAttributesUpdated();
+  public void RenderToCubemapsUpdated();
+  public void NoInterpolateUpdated();
+  public void CollisionUpdated();
+  public void GlowUpdated();
+  public void GlowBackfaceMultUpdated();
+  public void FadeMinDistUpdated();
+  public void FadeMaxDistUpdated();
+  public void FadeScaleUpdated();
+  public void ShadowStrengthUpdated();
+  public void ObjectCullingUpdated();
+  public void AddDecalUpdated();
+  public void DecalPositionUpdated();
+  public void DecalForwardAxisUpdated();
+  public void DecalHealBloodRateUpdated();
+  public void DecalHealHeightRateUpdated();
+  public void DecalModeUpdated();
+  public void RequiredDecalModeUpdated();
+  public void ConfigEntitiesToPropagateMaterialDecalsToUpdated();
+  public void ViewOffsetUpdated();
 }

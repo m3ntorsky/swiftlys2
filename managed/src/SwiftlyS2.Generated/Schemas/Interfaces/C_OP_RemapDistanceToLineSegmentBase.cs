@@ -17,4 +17,6 @@ public partial interface C_OP_RemapDistanceToLineSegmentBase : CParticleFunction
   public ref float MaxInputValue { get; }
   
   public ref bool InfiniteLine { get; }
+
+
 }

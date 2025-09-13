@@ -21,4 +21,6 @@ public partial interface CNmBlend2DNode__CDefinition : CNmPoseNode__CDefinition 
   public SchemaUntypedField HullIndices { get; }
   
   public ref bool AllowLooping { get; }
+
+
 }

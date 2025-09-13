@@ -11,4 +11,6 @@ public partial interface CBoneConstraintPoseSpaceMorph__Input_t : ISchemaClass {
   public ref Vector InputValue { get; }
   
   public ref CUtlVector<float> OutputWeightList { get; }
+
+
 }

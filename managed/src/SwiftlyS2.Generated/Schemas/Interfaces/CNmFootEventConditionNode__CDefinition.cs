@@ -13,4 +13,6 @@ public partial interface CNmFootEventConditionNode__CDefinition : CNmBoolValueNo
   public ref NmFootPhaseCondition_t PhaseCondition { get; }
   
   public CNmBitFlags EventConditionRules { get; }
+
+
 }

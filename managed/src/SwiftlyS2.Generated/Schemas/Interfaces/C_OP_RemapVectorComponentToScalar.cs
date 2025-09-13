@@ -13,4 +13,6 @@ public partial interface C_OP_RemapVectorComponentToScalar : CParticleFunctionOp
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ref int Component { get; }
+
+
 }

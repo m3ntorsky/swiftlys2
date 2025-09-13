@@ -11,4 +11,6 @@ public partial interface CNmReferencedGraphNode__CDefinition : CNmPoseNode__CDef
   public ref short ReferencedGraphIdx { get; }
   
   public ref short FallbackNodeIdx { get; }
+
+
 }

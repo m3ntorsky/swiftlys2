@@ -11,4 +11,6 @@ public partial interface FloatInputMaterialVariable_t : ISchemaClass {
   public ref CUtlString StrVariable { get; }
   
   public CParticleCollectionFloatInput Input { get; }
+
+
 }

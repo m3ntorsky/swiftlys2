@@ -19,4 +19,6 @@ public partial interface CLogicBranchList : CLogicalEntity {
   public CEntityIOOutput OnAllFalse { get; }
   
   public CEntityIOOutput OnMixed { get; }
+
+
 }

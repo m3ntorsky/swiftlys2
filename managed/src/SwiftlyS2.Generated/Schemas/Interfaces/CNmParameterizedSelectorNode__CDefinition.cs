@@ -17,4 +17,6 @@ public partial interface CNmParameterizedSelectorNode__CDefinition : CNmPoseNode
   public ref bool IgnoreInvalidOptions { get; }
   
   public ref bool HasWeightsSet { get; }
+
+
 }

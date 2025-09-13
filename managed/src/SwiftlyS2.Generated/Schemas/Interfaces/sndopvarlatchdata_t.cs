@@ -17,4 +17,6 @@ public partial interface sndopvarlatchdata_t : ISchemaClass {
   public ref float Val { get; }
   
   public ref Vector Pos { get; }
+
+
 }

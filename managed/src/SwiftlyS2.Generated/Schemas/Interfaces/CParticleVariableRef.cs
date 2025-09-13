@@ -11,4 +11,6 @@ public partial interface CParticleVariableRef : ISchemaClass {
   public SchemaUntypedField VariableName { get; }
   
   public ref PulseValueType_t VariableType { get; }
+
+
 }

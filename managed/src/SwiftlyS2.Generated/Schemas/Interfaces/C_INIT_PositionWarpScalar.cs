@@ -19,4 +19,6 @@ public partial interface C_INIT_PositionWarpScalar : CParticleFunctionInitialize
   public ref int ScaleControlPointNumber { get; }
   
   public ref int ControlPointNumber { get; }
+
+
 }

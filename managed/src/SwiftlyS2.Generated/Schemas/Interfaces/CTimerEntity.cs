@@ -33,4 +33,6 @@ public partial interface CTimerEntity : CLogicalEntity {
   public ref float RemainingTime { get; }
   
   public ref bool Paused { get; }
+
+
 }

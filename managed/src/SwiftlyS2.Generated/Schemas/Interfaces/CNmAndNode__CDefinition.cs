@@ -9,4 +9,6 @@ public partial interface CNmAndNode__CDefinition : CNmBoolValueNode__CDefinition
 
   
   public SchemaUntypedField ConditionNodeIndices { get; }
+
+
 }

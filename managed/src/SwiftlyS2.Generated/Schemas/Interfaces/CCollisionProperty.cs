@@ -41,4 +41,19 @@ public partial interface CCollisionProperty : ISchemaClass {
   public ref Vector CapsuleCenter2 { get; }
   
   public ref float CapsuleRadius { get; }
+
+  public void CollisionAttributeUpdated();
+  public void MinsUpdated();
+  public void MaxsUpdated();
+  public void SolidFlagsUpdated();
+  public void SolidTypeUpdated();
+  public void TriggerBloatUpdated();
+  public void SurroundTypeUpdated();
+  public void CollisionGroupUpdated();
+  public void EnablePhysicsUpdated();
+  public void SpecifiedSurroundingMinsUpdated();
+  public void SpecifiedSurroundingMaxsUpdated();
+  public void CapsuleCenter1Updated();
+  public void CapsuleCenter2Updated();
+  public void CapsuleRadiusUpdated();
 }

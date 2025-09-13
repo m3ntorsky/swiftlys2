@@ -17,4 +17,6 @@ public partial interface FeSphereRigid_t : ISchemaClass {
   public ref ushort VertexMapIndex { get; }
   
   public ref ushort Flags { get; }
+
+
 }

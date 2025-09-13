@@ -11,4 +11,6 @@ public partial interface SequenceWeightedList_t : ISchemaClass {
   public ref int Sequence { get; }
   
   public ref float RelativeWeight { get; }
+
+
 }

@@ -11,4 +11,7 @@ public partial interface CFootstepControl : CBaseTrigger {
   public ref CUtlSymbolLarge Source { get; }
   
   public ref CUtlSymbolLarge Destination { get; }
+
+  public void SourceUpdated();
+  public void DestinationUpdated();
 }

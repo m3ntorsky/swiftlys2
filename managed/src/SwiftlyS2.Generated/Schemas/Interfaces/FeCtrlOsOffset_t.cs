@@ -11,4 +11,6 @@ public partial interface FeCtrlOsOffset_t : ISchemaClass {
   public ref ushort CtrlParent { get; }
   
   public ref ushort CtrlChild { get; }
+
+
 }

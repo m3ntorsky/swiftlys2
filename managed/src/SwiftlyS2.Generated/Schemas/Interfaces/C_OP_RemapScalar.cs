@@ -21,4 +21,6 @@ public partial interface C_OP_RemapScalar : CParticleFunctionOperator {
   public ref float OutputMax { get; }
   
   public ref bool OldCode { get; }
+
+
 }

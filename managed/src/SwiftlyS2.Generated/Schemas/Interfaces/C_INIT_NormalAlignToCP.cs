@@ -11,4 +11,6 @@ public partial interface C_INIT_NormalAlignToCP : CParticleFunctionInitializer {
   public CParticleTransformInput TransformInput { get; }
   
   public ref ParticleControlPointAxis_t ControlPointAxis { get; }
+
+
 }

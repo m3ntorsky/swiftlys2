@@ -27,4 +27,6 @@ public partial interface CPhysExplosion : CPointEntity {
   public ref bool AffectInvulnerableEnts { get; }
   
   public CEntityIOOutput OnPushedPlayer { get; }
+
+
 }

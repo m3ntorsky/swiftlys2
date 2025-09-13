@@ -9,4 +9,6 @@ public partial interface CFuncWall : CBaseModelEntity {
 
   
   public ref int State { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CQuaternionAnimParameter : CConcreteAnimParameter {
   public ref Quaternion DefaultValue { get; }
   
   public ref bool Interpolate { get; }
+
+
 }

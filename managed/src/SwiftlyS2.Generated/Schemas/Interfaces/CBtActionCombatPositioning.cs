@@ -15,4 +15,6 @@ public partial interface CBtActionCombatPositioning : CBtNode {
   public CountdownTimer ActionTimer { get; }
   
   public ref bool Crouching { get; }
+
+
 }

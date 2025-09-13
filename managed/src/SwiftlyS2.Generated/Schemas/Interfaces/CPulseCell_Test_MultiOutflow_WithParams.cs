@@ -11,4 +11,6 @@ public partial interface CPulseCell_Test_MultiOutflow_WithParams : CPulseCell_Ba
   public SignatureOutflow_Continue Out1 { get; }
   
   public SignatureOutflow_Continue Out2 { get; }
+
+
 }

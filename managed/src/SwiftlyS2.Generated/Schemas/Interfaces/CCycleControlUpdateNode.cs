@@ -13,4 +13,6 @@ public partial interface CCycleControlUpdateNode : CUnaryUpdateNode {
   public CAnimParamHandle ParamIndex { get; }
   
   public ref bool LockWhenWaning { get; }
+
+
 }

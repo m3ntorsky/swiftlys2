@@ -29,4 +29,6 @@ public partial interface C_OP_CylindricalDistanceToTransform : CParticleFunction
   public ref bool Additive { get; }
   
   public ref bool Capsule { get; }
+
+
 }

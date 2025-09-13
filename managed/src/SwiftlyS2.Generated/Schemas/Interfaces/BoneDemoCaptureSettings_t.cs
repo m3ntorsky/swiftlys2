@@ -21,4 +21,6 @@ public partial interface BoneDemoCaptureSettings_t : ISchemaClass {
   public ref float ErrorQuantizationTranslationMax { get; }
   
   public ref float ErrorQuantizationScaleMax { get; }
+
+
 }

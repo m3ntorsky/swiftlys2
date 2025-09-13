@@ -17,4 +17,6 @@ public partial interface CInfoDynamicShadowHint : CPointEntity {
   public ref int LightChoice { get; }
   
   public ref CHandle<CBaseEntity> Light { get; }
+
+
 }

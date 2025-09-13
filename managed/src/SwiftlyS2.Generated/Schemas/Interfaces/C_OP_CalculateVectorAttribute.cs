@@ -29,4 +29,6 @@ public partial interface C_OP_CalculateVectorAttribute : CParticleFunctionOperat
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ref Vector FinalOutputScale { get; }
+
+
 }

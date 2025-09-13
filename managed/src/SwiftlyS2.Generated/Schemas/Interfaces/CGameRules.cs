@@ -19,4 +19,8 @@ public partial interface CGameRules : ISchemaClass {
   public ref int PauseStartTick { get; }
   
   public ref bool GamePaused { get; }
+
+  public void TotalPausedTicksUpdated();
+  public void PauseStartTickUpdated();
+  public void GamePausedUpdated();
 }

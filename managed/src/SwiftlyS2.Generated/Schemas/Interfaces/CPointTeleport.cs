@@ -15,4 +15,6 @@ public partial interface CPointTeleport : CServerOnlyPointEntity {
   public ref bool TeleportParentedEntities { get; }
   
   public ref bool TeleportUseCurrentAngle { get; }
+
+
 }

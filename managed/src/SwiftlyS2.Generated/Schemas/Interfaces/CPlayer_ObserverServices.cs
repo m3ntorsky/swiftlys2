@@ -15,4 +15,7 @@ public partial interface CPlayer_ObserverServices : CPlayerPawnComponent {
   public ref ObserverMode_t ObserverLastMode { get; }
   
   public ref bool ForcedObserverMode { get; }
+
+  public void ObserverModeUpdated();
+  public void ObserverTargetUpdated();
 }

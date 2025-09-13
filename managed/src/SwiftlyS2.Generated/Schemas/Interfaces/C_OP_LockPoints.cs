@@ -19,4 +19,6 @@ public partial interface C_OP_LockPoints : CParticleFunctionOperator {
   public ref int ControlPoint { get; }
   
   public ref float BlendValue { get; }
+
+
 }

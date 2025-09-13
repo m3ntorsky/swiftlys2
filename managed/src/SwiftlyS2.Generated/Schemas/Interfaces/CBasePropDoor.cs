@@ -83,4 +83,11 @@ public partial interface CBasePropDoor : CDynamicProp {
   public CEntityIOOutput OnLockedUse { get; }
   
   public CEntityIOOutput OnAjarOpen { get; }
+
+  public void DoorStateUpdated();
+  public void LockedUpdated();
+  public void NoNPCsUpdated();
+  public void ClosedPositionUpdated();
+  public void ClosedAnglesUpdated();
+  public void MasterUpdated();
 }

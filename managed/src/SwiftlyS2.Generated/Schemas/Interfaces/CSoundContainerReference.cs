@@ -13,4 +13,6 @@ public partial interface CSoundContainerReference : ISchemaClass {
   public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> Sound { get; }
   
   public CVoiceContainerBase Sound1 { get; }
+
+
 }

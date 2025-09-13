@@ -17,4 +17,6 @@ public partial interface AmmoTypeInfo_t : ISchemaClass {
   public ref float Mass { get; }
   
   public CRangeFloat Speed { get; }
+
+
 }

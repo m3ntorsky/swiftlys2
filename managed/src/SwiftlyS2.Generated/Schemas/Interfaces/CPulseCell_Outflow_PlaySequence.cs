@@ -9,4 +9,6 @@ public partial interface CPulseCell_Outflow_PlaySequence : CPulseCell_Outflow_Pl
 
   
   public ref CUtlString ParamSequenceName { get; }
+
+
 }

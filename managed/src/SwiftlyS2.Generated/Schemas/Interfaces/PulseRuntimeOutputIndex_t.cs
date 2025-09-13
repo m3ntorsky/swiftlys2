@@ -9,4 +9,6 @@ public partial interface PulseRuntimeOutputIndex_t : ISchemaClass {
 
   
   public ref int Value { get; }
+
+
 }

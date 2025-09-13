@@ -17,4 +17,6 @@ public partial interface FeSimdSpringIntegrator_t : ISchemaClass {
   public ref fltx4 SpringDamping { get; }
   
   public ref fltx4 NodeWeight0 { get; }
+
+
 }

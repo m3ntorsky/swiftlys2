@@ -23,4 +23,6 @@ public partial interface CAttachment : ISchemaClass {
   public ref byte Influences { get; }
   
   public ref bool IgnoreRotation { get; }
+
+
 }

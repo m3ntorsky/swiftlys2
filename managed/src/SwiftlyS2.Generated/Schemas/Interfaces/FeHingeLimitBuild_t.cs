@@ -15,4 +15,6 @@ public partial interface FeHingeLimitBuild_t : ISchemaClass {
   public ref float LimitCW { get; }
   
   public ref float LimitCCW { get; }
+
+
 }

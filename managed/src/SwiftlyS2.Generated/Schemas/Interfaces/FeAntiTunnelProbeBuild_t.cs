@@ -21,4 +21,6 @@ public partial interface FeAntiTunnelProbeBuild_t : ISchemaClass {
   public ref ushort ProbeNode { get; }
   
   public ref CUtlVector<ushort> TargetNodes { get; }
+
+
 }

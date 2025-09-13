@@ -15,4 +15,6 @@ public partial interface CPulseCell_InlineNodeSkipSelector : CPulseCell_BaseFlow
   public PulseSelectorOutflowList_t PassOutflow { get; }
   
   public CPulse_OutflowConnection FailOutflow { get; }
+
+
 }

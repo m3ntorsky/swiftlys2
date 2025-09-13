@@ -9,4 +9,6 @@ public partial interface CNmFrameSnapEvent : CNmEvent {
 
   
   public ref NmFrameSnapEventMode_t FrameSnapMode { get; }
+
+
 }

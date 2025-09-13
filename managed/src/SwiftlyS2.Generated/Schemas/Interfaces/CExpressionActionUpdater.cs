@@ -13,4 +13,6 @@ public partial interface CExpressionActionUpdater : CAnimActionUpdater {
   public ref AnimParamType_t ParamType { get; }
   
   public AnimScriptHandle Script { get; }
+
+
 }

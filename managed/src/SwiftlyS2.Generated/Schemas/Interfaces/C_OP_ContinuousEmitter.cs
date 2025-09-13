@@ -31,4 +31,6 @@ public partial interface C_OP_ContinuousEmitter : CParticleFunctionEmitter {
   public ref bool ForceEmitOnFirstUpdate { get; }
   
   public ref bool ForceEmitOnLastUpdate { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CSymbolAnimParameter : CConcreteAnimParameter {
 
   
   public ref CGlobalSymbol DefaultValue { get; }
+
+
 }

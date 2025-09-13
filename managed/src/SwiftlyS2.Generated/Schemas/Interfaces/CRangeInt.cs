@@ -9,4 +9,6 @@ public partial interface CRangeInt : ISchemaClass {
 
   
   public ISchemaFixedArray<int> Value { get; }
+
+
 }

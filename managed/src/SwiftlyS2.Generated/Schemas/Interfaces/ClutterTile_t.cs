@@ -13,4 +13,6 @@ public partial interface ClutterTile_t : ISchemaClass {
   public ref uint LastInstance { get; }
   
   public AABB_t BoundsWs { get; }
+
+
 }

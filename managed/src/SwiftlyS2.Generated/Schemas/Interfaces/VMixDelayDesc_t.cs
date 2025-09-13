@@ -21,4 +21,6 @@ public partial interface VMixDelayDesc_t : ISchemaClass {
   public ref float FeedbackGain { get; }
   
   public ref float Width { get; }
+
+
 }

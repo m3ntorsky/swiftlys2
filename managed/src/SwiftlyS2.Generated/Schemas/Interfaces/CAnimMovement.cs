@@ -21,4 +21,6 @@ public partial interface CAnimMovement : ISchemaClass {
   public ref Vector Vector { get; }
   
   public ref Vector Position { get; }
+
+
 }

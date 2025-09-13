@@ -19,4 +19,6 @@ public partial interface C_OP_SetAttributeToScalarExpression : CParticleFunction
   public ParticleAttributeIndex_t OutputField { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
+
+
 }

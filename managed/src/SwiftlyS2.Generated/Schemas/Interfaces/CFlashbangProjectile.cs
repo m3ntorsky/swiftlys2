@@ -13,4 +13,6 @@ public partial interface CFlashbangProjectile : CBaseCSGrenadeProjectile {
   public ref byte NumOpponentsHit { get; }
   
   public ref byte NumTeammatesHit { get; }
+
+
 }

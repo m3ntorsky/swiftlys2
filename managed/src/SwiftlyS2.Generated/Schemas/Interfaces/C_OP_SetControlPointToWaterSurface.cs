@@ -21,4 +21,6 @@ public partial interface C_OP_SetControlPointToWaterSurface : CParticleFunctionP
   public CParticleCollectionFloatInput RetestRate { get; }
   
   public ref bool AdaptiveThreshold { get; }
+
+
 }

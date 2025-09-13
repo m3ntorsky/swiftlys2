@@ -15,4 +15,6 @@ public partial interface CMaterialDrawDescriptor__RigidMeshPart_t : ISchemaClass
   public ref uint StartIndexOffset { get; }
   
   public ref uint PrimitiveCount { get; }
+
+
 }

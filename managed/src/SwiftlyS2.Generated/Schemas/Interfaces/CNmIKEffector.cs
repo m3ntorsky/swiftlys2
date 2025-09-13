@@ -17,4 +17,6 @@ public partial interface CNmIKEffector : ISchemaClass {
   public ref Quaternion TargetOrientation { get; }
   
   public ref float Weight { get; }
+
+
 }

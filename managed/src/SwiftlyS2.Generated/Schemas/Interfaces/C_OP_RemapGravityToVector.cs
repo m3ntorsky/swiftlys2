@@ -15,4 +15,6 @@ public partial interface C_OP_RemapGravityToVector : CParticleFunctionOperator {
   public ref ParticleSetMethod_t SetMethod { get; }
   
   public ref bool NormalizedOutput { get; }
+
+
 }

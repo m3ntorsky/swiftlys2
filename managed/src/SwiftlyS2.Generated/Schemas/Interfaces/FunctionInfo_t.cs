@@ -17,4 +17,6 @@ public partial interface FunctionInfo_t : ISchemaClass {
   public FuseFunctionIndex_t Index { get; }
   
   public ref bool IsPure { get; }
+
+
 }

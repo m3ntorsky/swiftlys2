@@ -9,4 +9,6 @@ public partial interface CBaseDMStart : CPointEntity {
 
   
   public ref CUtlSymbolLarge Master { get; }
+
+
 }

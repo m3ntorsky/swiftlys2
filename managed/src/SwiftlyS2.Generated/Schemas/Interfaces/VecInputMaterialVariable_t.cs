@@ -11,4 +11,6 @@ public partial interface VecInputMaterialVariable_t : ISchemaClass {
   public ref CUtlString StrVariable { get; }
   
   public CParticleCollectionVecInput Input { get; }
+
+
 }

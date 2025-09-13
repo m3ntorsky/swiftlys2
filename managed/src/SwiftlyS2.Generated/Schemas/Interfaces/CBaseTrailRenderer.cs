@@ -21,4 +21,6 @@ public partial interface CBaseTrailRenderer : CBaseRendererSource2 {
   public CParticleCollectionRendererFloatInput EndFadeSize { get; }
   
   public ref bool ClampV { get; }
+
+
 }

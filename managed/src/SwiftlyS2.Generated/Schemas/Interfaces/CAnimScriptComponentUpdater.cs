@@ -9,4 +9,6 @@ public partial interface CAnimScriptComponentUpdater : CAnimComponentUpdater {
 
   
   public AnimScriptHandle Script { get; }
+
+
 }

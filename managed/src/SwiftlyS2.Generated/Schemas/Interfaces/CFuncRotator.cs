@@ -80,4 +80,6 @@ public partial interface CFuncRotator : CBaseModelEntity {
   
 // CUtlVector< RotatorHistoryEntry_t >
   public ref CUtlVector RotatorQueueHistory { get; }
+
+
 }

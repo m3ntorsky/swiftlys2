@@ -63,4 +63,8 @@ public partial interface CChicken : CDynamicProp {
   public CountdownTimer FollowMinuteTimer { get; }
   
   public CountdownTimer BlockDirectionTimer { get; }
+
+  public void AttributeManagerUpdated();
+  public void JumpedThisFrameUpdated();
+  public void LeaderUpdated();
 }

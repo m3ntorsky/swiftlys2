@@ -15,4 +15,6 @@ public partial interface CBoneConstraintDotToMorph : CBoneConstraintBase {
   public ref CUtlString MorphChannelName { get; }
   
   public ISchemaFixedArray<float> Remap { get; }
+
+
 }

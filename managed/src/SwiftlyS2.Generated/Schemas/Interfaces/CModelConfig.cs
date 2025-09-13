@@ -15,4 +15,6 @@ public partial interface CModelConfig : ISchemaClass {
   public ref bool TopLevel { get; }
   
   public ref bool ActiveInEditorByDefault { get; }
+
+
 }

@@ -27,4 +27,6 @@ public partial interface CPhysSlideConstraint : CPhysConstraint {
   public ref bool UseEntityPivot { get; }
   
   public ConstraintSoundInfo SoundInfo { get; }
+
+
 }

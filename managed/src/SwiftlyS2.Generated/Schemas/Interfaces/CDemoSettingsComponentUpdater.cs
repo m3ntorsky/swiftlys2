@@ -9,4 +9,6 @@ public partial interface CDemoSettingsComponentUpdater : CAnimComponentUpdater {
 
   
   public CAnimDemoCaptureSettings Settings { get; }
+
+
 }

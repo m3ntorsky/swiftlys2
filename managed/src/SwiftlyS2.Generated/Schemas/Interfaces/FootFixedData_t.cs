@@ -29,4 +29,6 @@ public partial interface FootFixedData_t : ISchemaClass {
   public ref float MaxRotationLeft { get; }
   
   public ref float MaxRotationRight { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CNmClip__ModelSpaceSamplingChainLink_t : ISchemaClass {
   public ref int ParentBoneIdx { get; }
   
   public ref int ParentChainLinkIdx { get; }
+
+
 }

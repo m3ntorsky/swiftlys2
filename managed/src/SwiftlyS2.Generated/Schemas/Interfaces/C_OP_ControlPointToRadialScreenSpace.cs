@@ -17,4 +17,6 @@ public partial interface C_OP_ControlPointToRadialScreenSpace : CParticleFunctio
   public ref int CPOutField { get; }
   
   public ref int CPSSPosOut { get; }
+
+
 }

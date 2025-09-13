@@ -29,4 +29,6 @@ public partial interface C_OP_CPOffsetToPercentageBetweenCPs : CParticleFunction
   public ref bool ScaleOffset { get; }
   
   public ref Vector Offset { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CHostageExpresserShim : CBaseCombatCharacter {
 
   
   public CAI_Expresser Expresser { get; }
+
+
 }

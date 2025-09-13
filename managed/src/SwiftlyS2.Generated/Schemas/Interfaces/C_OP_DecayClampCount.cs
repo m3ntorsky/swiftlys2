@@ -9,4 +9,6 @@ public partial interface C_OP_DecayClampCount : CParticleFunctionOperator {
 
   
   public CParticleCollectionFloatInput Count { get; }
+
+
 }

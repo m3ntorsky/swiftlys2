@@ -9,4 +9,6 @@ public partial interface CFilterMassGreater : CBaseFilter {
 
   
   public ref float FilterMass { get; }
+
+
 }

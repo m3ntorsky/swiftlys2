@@ -19,4 +19,6 @@ public partial interface CFuncBrush : CBaseModelEntity {
   public ref bool InvertExclusion { get; }
   
   public ref bool ScriptedMovement { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface C_OP_ParentVortices : CParticleFunctionForce {
   public ref Vector TwistAxis { get; }
   
   public ref bool FlipBasedOnYaw { get; }
+
+
 }

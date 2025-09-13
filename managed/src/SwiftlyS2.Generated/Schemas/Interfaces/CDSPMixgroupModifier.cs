@@ -19,4 +19,6 @@ public partial interface CDSPMixgroupModifier : ISchemaClass {
   public ref float SourceModifierMin { get; }
   
   public ref float ListenerReverbModifierWhenSourceReverbIsActive { get; }
+
+
 }

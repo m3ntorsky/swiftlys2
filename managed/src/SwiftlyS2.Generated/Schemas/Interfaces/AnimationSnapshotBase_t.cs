@@ -25,4 +25,6 @@ public partial interface AnimationSnapshotBase_t : ISchemaClass {
   public ref bool HasDecodeDump { get; }
   
   public AnimationDecodeDebugDumpElement_t DecodeDump { get; }
+
+
 }

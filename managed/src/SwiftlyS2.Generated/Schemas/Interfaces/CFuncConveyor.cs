@@ -25,4 +25,11 @@ public partial interface CFuncConveyor : CBaseModelEntity {
   public ref float TransitionStartSpeed { get; }
   
   public ref CUtlVector<CHandle<CBaseEntity>> ConveyorModels1 { get; }
+
+  public void MoveDirEntitySpaceUpdated();
+  public void TargetSpeedUpdated();
+  public void TransitionStartTickUpdated();
+  public void TransitionDurationTicksUpdated();
+  public void TransitionStartSpeedUpdated();
+  public void ConveyorModels1Updated();
 }

@@ -11,4 +11,6 @@ public partial interface CNmTargetPointNode__CDefinition : CNmVectorValueNode__C
   public ref short InputValueNodeIdx { get; }
   
   public ref bool IsWorldSpaceTarget { get; }
+
+
 }

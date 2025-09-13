@@ -17,4 +17,6 @@ public partial interface FeRodConstraint_t : ISchemaClass {
   public ref float Weight0 { get; }
   
   public ref float RelaxationFactor { get; }
+
+
 }

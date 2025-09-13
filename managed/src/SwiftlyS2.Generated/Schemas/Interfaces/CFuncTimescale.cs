@@ -17,4 +17,6 @@ public partial interface CFuncTimescale : CBaseEntity {
   public ref float BlendDeltaMultiplier { get; }
   
   public ref bool IsStarted { get; }
+
+
 }

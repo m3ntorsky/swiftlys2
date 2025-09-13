@@ -9,4 +9,6 @@ public partial interface CFogTrigger : CBaseTrigger {
 
   
   public fogparams_t Fog { get; }
+
+
 }

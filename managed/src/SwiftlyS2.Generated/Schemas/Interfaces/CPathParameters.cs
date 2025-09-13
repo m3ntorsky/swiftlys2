@@ -23,4 +23,6 @@ public partial interface CPathParameters : ISchemaClass {
   public ref Vector MidPointOffset { get; }
   
   public ref Vector EndOffset { get; }
+
+
 }

@@ -19,4 +19,6 @@ public partial interface AnimationDecodeDebugDumpElement_t : ISchemaClass {
   public ref CUtlVector<CUtlString> InternalOps { get; }
   
   public ref CUtlVector<CUtlString> DecodedAnims { get; }
+
+
 }

@@ -31,4 +31,6 @@ public partial interface CBtActionAim : CBtNode {
   public CountdownTimer FocusIntervalTimer { get; }
   
   public ref bool Acquired { get; }
+
+
 }

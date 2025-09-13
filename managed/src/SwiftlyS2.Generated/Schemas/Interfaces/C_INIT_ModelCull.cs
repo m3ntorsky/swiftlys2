@@ -17,4 +17,6 @@ public partial interface C_INIT_ModelCull : CParticleFunctionInitializer {
   public ref bool UseBones { get; }
   
   public ISchemaFixedString HitboxSetName { get; }
+
+
 }

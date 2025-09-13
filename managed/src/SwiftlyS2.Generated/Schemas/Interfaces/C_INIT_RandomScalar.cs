@@ -15,4 +15,6 @@ public partial interface C_INIT_RandomScalar : CParticleFunctionInitializer {
   public ref float Exponent { get; }
   
   public ParticleAttributeIndex_t FieldOutput { get; }
+
+
 }

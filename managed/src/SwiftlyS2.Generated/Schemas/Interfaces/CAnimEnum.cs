@@ -9,4 +9,6 @@ public partial interface CAnimEnum : ISchemaClass {
 
   
   public ref byte Value { get; }
+
+
 }

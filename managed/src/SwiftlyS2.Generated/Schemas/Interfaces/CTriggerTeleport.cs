@@ -15,4 +15,6 @@ public partial interface CTriggerTeleport : CBaseTrigger {
   public ref bool MirrorPlayer { get; }
   
   public ref bool CheckDestIfClearForPlayer { get; }
+
+
 }

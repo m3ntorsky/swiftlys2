@@ -9,4 +9,6 @@ public partial interface CBodyComponentPoint : CBodyComponent {
 
   
   public CGameSceneNode SceneNode { get; }
+
+  public void SceneNodeUpdated();
 }

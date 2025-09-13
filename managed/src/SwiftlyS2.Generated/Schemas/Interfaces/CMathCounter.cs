@@ -29,4 +29,6 @@ public partial interface CMathCounter : CLogicalEntity {
   public CEntityIOOutput OnChangedFromMin { get; }
   
   public CEntityIOOutput OnChangedFromMax { get; }
+
+
 }

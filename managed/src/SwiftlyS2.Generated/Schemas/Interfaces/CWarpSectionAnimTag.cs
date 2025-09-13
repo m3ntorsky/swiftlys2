@@ -11,4 +11,6 @@ public partial interface CWarpSectionAnimTag : CWarpSectionAnimTagBase {
   public ref bool WarpPosition { get; }
   
   public ref bool WarpOrientation { get; }
+
+
 }

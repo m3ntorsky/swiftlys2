@@ -27,4 +27,6 @@ public partial interface CAimCameraUpdateNode : CUnaryUpdateNode {
   public CAnimParamHandle ParameterCameraClearanceDistance { get; }
   
   public AimCameraOpFixedSettings_t OpFixedSettings { get; }
+
+
 }

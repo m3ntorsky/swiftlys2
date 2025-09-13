@@ -11,4 +11,6 @@ public partial interface CFutureFacingMetricEvaluator : CMotionMetricEvaluator {
   public ref float Distance { get; }
   
   public ref float Time { get; }
+
+
 }

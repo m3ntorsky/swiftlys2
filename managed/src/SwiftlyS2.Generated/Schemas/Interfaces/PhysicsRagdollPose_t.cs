@@ -13,4 +13,7 @@ public partial interface PhysicsRagdollPose_t : ISchemaClass {
   public ref CHandle<CBaseEntity> Owner { get; }
   
   public ref bool SetFromDebugHistory { get; }
+
+  public void TransformsUpdated();
+  public void OwnerUpdated();
 }

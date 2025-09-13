@@ -15,4 +15,6 @@ public partial interface C_INIT_SequenceFromCP : CParticleFunctionInitializer {
   public ref int CP { get; }
   
   public ref Vector Offset { get; }
+
+
 }

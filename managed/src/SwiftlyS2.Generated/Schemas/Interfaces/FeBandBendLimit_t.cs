@@ -13,4 +13,6 @@ public partial interface FeBandBendLimit_t : ISchemaClass {
   public ref float DistMax { get; }
   
   public ISchemaFixedArray<ushort> Node { get; }
+
+
 }

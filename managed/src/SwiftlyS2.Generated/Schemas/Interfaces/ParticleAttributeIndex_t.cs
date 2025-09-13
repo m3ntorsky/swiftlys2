@@ -9,4 +9,6 @@ public partial interface ParticleAttributeIndex_t : ISchemaClass {
 
   
   public ref int Value { get; }
+
+
 }

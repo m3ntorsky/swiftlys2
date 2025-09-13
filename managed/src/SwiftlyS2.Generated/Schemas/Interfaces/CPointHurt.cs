@@ -19,4 +19,6 @@ public partial interface CPointHurt : CPointEntity {
   public ref CUtlSymbolLarge StrTarget { get; }
   
   public ref CHandle<CBaseEntity> Activator { get; }
+
+
 }

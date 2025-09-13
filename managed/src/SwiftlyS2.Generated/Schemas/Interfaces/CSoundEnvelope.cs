@@ -15,4 +15,6 @@ public partial interface CSoundEnvelope : ISchemaClass {
   public ref float Rate { get; }
   
   public ref bool Forceupdate { get; }
+
+
 }

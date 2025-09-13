@@ -9,4 +9,6 @@ public partial interface C_OP_SDFForce : CParticleFunctionForce {
 
   
   public ref float ForceScale { get; }
+
+
 }

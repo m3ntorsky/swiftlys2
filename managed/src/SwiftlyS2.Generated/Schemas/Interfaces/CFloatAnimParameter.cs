@@ -15,4 +15,6 @@ public partial interface CFloatAnimParameter : CConcreteAnimParameter {
   public ref float MaxValue { get; }
   
   public ref bool Interpolate { get; }
+
+
 }

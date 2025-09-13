@@ -19,4 +19,6 @@ public partial interface CNmBoneMaskSelectorNode__CDefinition : CNmBoneMaskValue
   public SchemaUntypedField ParameterValues { get; }
   
   public ref float BlendTimeSeconds { get; }
+
+
 }

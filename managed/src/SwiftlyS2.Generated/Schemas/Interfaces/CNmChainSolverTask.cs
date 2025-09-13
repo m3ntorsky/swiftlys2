@@ -31,4 +31,6 @@ public partial interface CNmChainSolverTask : CNmPoseTask {
   public ref CTransform DebugRequestedTargetTransformMS { get; }
   
   public ref float DebugTotalChainLength { get; }
+
+
 }

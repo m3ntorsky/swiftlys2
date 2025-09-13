@@ -9,4 +9,6 @@ public partial interface CNmConstIDNode__CDefinition : CNmIDValueNode__CDefiniti
 
   
   public ref CGlobalSymbol Value { get; }
+
+
 }

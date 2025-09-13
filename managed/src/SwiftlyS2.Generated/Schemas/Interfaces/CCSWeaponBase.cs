@@ -112,4 +112,32 @@ public partial interface CCSWeaponBase : CBasePlayerWeapon {
   public GameTime_t LastLOSTraceFailureTime { get; }
   
   public ref float WatTickOffset { get; }
+
+  public void WeaponGameplayAnimStateUpdated();
+  public void WeaponGameplayAnimStateTimestampUpdated();
+  public void InspectCancelCompleteTimeUpdated();
+  public void InspectPendingUpdated();
+  public void InspectShouldLoopUpdated();
+  public void WeaponModeUpdated();
+  public void AccuracyPenaltyUpdated();
+  public void RecoilIndexUpdated();
+  public void RecoilIndex1Updated();
+  public void BurstModeUpdated();
+  public void PostponeFireReadyTicksUpdated();
+  public void PostponeFireReadyFracUpdated();
+  public void InReloadUpdated();
+  public void DroppedAtTimeUpdated();
+  public void IsHauledBackUpdated();
+  public void SilencerOnUpdated();
+  public void TimeSilencerSwitchCompleteUpdated();
+  public void OriginalTeamNumberUpdated();
+  public void MostRecentTeamNumberUpdated();
+  public void DroppedNearBuyZoneUpdated();
+  public void NextPrevOwnerUseTimeUpdated();
+  public void PrevOwnerUpdated();
+  public void DropTickUpdated();
+  public void WasActiveWeaponWhenDroppedUpdated();
+  public void LastShotTimeUpdated();
+  public void IronSightModeUpdated();
+  public void WatTickOffsetUpdated();
 }

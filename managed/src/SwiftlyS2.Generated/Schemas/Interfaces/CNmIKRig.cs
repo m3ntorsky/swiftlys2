@@ -15,4 +15,6 @@ public partial interface CNmIKRig : ISchemaClass {
   
 // CUtlVector< CNmIKJoint >
   public ref CUtlVector Joints { get; }
+
+
 }

@@ -37,4 +37,6 @@ public partial interface PostProcessingTonemapParameters_t : ISchemaClass {
   public ref float MinHighlightLum { get; }
   
   public ref float MaxHighlightLum { get; }
+
+
 }

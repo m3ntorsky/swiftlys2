@@ -13,4 +13,6 @@ public partial interface AggregateLODSetup_t : ISchemaClass {
   public ref float MaxObjectScale { get; }
   
   public ref CUtlVector<float> SwitchDistances { get; }
+
+
 }

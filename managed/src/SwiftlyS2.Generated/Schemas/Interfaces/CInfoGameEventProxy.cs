@@ -11,4 +11,6 @@ public partial interface CInfoGameEventProxy : CPointEntity {
   public ref CUtlSymbolLarge EventName { get; }
   
   public ref float Range { get; }
+
+
 }

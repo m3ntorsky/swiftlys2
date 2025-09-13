@@ -20,4 +20,8 @@ public partial interface CAttributeManager : ISchemaClass {
   
 // CUtlVector< CAttributeManager::cached_attribute_float_t >
   public ref CUtlVector CachedResults { get; }
+
+  public void ReapplyProvisionParityUpdated();
+  public void OuterUpdated();
+  public void ProviderTypeUpdated();
 }

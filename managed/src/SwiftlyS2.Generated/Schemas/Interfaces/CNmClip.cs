@@ -33,4 +33,6 @@ public partial interface CNmClip : ISchemaClass {
   public ref CUtlVector ModelSpaceSamplingChain { get; }
   
   public ref CUtlVector<int> ModelSpaceBoneSamplingIndices { get; }
+
+
 }

@@ -21,4 +21,6 @@ public partial interface C_INIT_VelocityRandom : CParticleFunctionInitializer {
   public ref bool IgnoreDT { get; }
   
   public CRandomNumberGeneratorParameters RandomnessParameters { get; }
+
+
 }

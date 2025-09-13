@@ -21,4 +21,6 @@ public partial interface C_INIT_CreateSpiralSphere : CParticleFunctionInitialize
   public ref float InitialSpeedMax { get; }
   
   public ref bool UseParticleCount { get; }
+
+
 }

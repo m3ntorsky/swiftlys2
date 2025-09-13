@@ -12,4 +12,6 @@ public partial interface CDirectPlaybackTagData : ISchemaClass {
   
 // CUtlVector< TagSpan_t >
   public ref CUtlVector Tags { get; }
+
+
 }

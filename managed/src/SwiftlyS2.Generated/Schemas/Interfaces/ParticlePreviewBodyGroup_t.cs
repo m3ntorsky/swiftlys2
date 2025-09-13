@@ -11,4 +11,6 @@ public partial interface ParticlePreviewBodyGroup_t : ISchemaClass {
   public ref CUtlString BodyGroupName { get; }
   
   public ref int Value { get; }
+
+
 }

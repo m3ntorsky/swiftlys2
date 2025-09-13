@@ -31,4 +31,6 @@ public partial interface AggregateMeshInfo_t : ISchemaClass {
   public ref uint VertexAlbedoStreamOffset { get; }
   
   public ref AggregateInstanceStream_t InstanceStreams { get; }
+
+
 }

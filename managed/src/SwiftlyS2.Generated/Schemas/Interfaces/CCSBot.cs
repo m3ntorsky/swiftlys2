@@ -285,4 +285,6 @@ public partial interface CCSBot : CBot {
   public ref float VoiceEndTimestamp { get; }
   
   public ref int LastValidReactionQueueFrame { get; }
+
+
 }

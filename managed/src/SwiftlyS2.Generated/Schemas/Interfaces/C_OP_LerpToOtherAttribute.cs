@@ -15,4 +15,6 @@ public partial interface C_OP_LerpToOtherAttribute : CParticleFunctionOperator {
   public ParticleAttributeIndex_t FieldInput { get; }
   
   public ParticleAttributeIndex_t FieldOutput { get; }
+
+
 }

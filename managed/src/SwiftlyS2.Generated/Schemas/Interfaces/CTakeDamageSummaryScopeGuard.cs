@@ -9,4 +9,6 @@ public partial interface CTakeDamageSummaryScopeGuard : ISchemaClass {
 
   
   public ref CUtlVector<PointerTo<SummaryTakeDamageInfo_t>> Summaries { get; }
+
+
 }

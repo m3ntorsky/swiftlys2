@@ -15,4 +15,6 @@ public partial interface CMotionMetricEvaluator : ISchemaClass {
   public ref float Weight { get; }
   
   public ref int DimensionStartIndex { get; }
+
+
 }

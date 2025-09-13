@@ -18,4 +18,6 @@ public partial interface CAnimGraphDebugReplay : ISchemaClass {
   public ref int WriteIndex { get; }
   
   public ref int FrameCount { get; }
+
+
 }

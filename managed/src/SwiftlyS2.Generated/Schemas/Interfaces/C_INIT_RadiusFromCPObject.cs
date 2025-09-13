@@ -9,4 +9,6 @@ public partial interface C_INIT_RadiusFromCPObject : CParticleFunctionInitialize
 
   
   public ref int ControlPoint { get; }
+
+
 }

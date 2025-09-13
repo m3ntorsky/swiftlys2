@@ -19,4 +19,6 @@ public partial interface CLookAtUpdateNode : CUnaryUpdateNode {
   public ref bool ResetChild { get; }
   
   public ref bool LockWhenWaning { get; }
+
+
 }

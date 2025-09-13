@@ -15,4 +15,6 @@ public partial interface VMixPitchShiftDesc_t : ISchemaClass {
   public ref int Quality { get; }
   
   public ref int ProcType { get; }
+
+
 }

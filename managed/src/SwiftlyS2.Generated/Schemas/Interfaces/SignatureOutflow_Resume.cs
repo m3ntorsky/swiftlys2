@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SignatureOutflow_Resume : CPulse_ResumePoint {
 
 
+
+
 }

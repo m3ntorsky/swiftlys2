@@ -23,4 +23,13 @@ public partial interface CCitadelSoundOpvarSetOBB : CBaseEntity {
   public ref Vector DistanceOuterMaxs { get; }
   
   public ref int AABBDirection { get; }
+
+  public void StackNameUpdated();
+  public void OperatorNameUpdated();
+  public void OpvarNameUpdated();
+  public void DistanceInnerMinsUpdated();
+  public void DistanceInnerMaxsUpdated();
+  public void DistanceOuterMinsUpdated();
+  public void DistanceOuterMaxsUpdated();
+  public void AABBDirectionUpdated();
 }

@@ -15,4 +15,6 @@ public partial interface CSeqIKLock : ISchemaClass {
   public ref short LocalBone { get; }
   
   public ref bool BonesOrientedAlongPositiveX { get; }
+
+
 }

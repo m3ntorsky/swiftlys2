@@ -18,4 +18,6 @@ public partial interface PulseGraphExecutionHistoryCursorDesc_t : ISchemaClass {
   public ref float LastReferenced { get; }
   
   public ref int LastValidEntryIdx { get; }
+
+
 }

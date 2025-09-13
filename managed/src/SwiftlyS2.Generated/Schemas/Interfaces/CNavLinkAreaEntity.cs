@@ -33,4 +33,6 @@ public partial interface CNavLinkAreaEntity : CPointEntity {
   public ref bool IsTerminus { get; }
   
   public ref int Splits { get; }
+
+
 }

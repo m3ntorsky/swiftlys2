@@ -9,4 +9,6 @@ public partial interface CNetworkVarChainer : ISchemaClass {
 
   
   public ChangeAccessorFieldPathIndex_t PathIndex { get; }
+
+
 }

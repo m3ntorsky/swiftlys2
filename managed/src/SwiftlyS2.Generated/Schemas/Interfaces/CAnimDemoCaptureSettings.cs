@@ -39,4 +39,6 @@ public partial interface CAnimDemoCaptureSettings : ISchemaClass {
   
 // CUtlVector< IKDemoCaptureSettings_t >
   public ref CUtlVector IkChains { get; }
+
+
 }

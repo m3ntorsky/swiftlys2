@@ -9,4 +9,6 @@ public partial interface CLogicGameEvent : CLogicalEntity {
 
   
   public ref CUtlSymbolLarge EventName { get; }
+
+
 }

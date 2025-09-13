@@ -57,4 +57,8 @@ public partial interface CBaseButton : CBaseToggle {
   public ref bool Usable { get; }
   
   public ref CUtlSymbolLarge DisplayText { get; }
+
+  public void GlowEntity1Updated();
+  public void UsableUpdated();
+  public void DisplayTextUpdated();
 }

@@ -13,4 +13,6 @@ public partial interface CNmFootstepEventPercentageThroughNode__CDefinition : CN
   public ref NmFootPhaseCondition_t PhaseCondition { get; }
   
   public CNmBitFlags EventConditionRules { get; }
+
+
 }

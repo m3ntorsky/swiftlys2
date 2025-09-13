@@ -11,4 +11,6 @@ public partial interface CPulseCell_TestWaitWithCursorState__CursorState_t : ISc
   public ref float WaitValue { get; }
   
   public ref bool FailOnCancel { get; }
+
+
 }

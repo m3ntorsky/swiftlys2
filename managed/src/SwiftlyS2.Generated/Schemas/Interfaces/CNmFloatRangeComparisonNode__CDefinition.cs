@@ -13,4 +13,6 @@ public partial interface CNmFloatRangeComparisonNode__CDefinition : CNmBoolValue
   public ref short InputValueNodeIdx { get; }
   
   public ref bool IsInclusiveCheck { get; }
+
+
 }

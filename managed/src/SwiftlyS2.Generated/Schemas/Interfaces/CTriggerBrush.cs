@@ -17,4 +17,6 @@ public partial interface CTriggerBrush : CBaseModelEntity {
   public ref int InputFilter { get; }
   
   public ref int DontMessageParent { get; }
+
+
 }

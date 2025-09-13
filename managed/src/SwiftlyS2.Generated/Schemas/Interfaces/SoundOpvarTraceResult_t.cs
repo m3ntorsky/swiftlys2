@@ -13,4 +13,6 @@ public partial interface SoundOpvarTraceResult_t : ISchemaClass {
   public ref bool DidHit { get; }
   
   public ref float DistSqrToCenter { get; }
+
+
 }

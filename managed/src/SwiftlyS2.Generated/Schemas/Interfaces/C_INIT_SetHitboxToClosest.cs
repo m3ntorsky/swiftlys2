@@ -25,4 +25,6 @@ public partial interface C_INIT_SetHitboxToClosest : CParticleFunctionInitialize
   public CParticleCollectionFloatInput HybridRatio { get; }
   
   public ref bool UpdatePosition { get; }
+
+
 }

@@ -15,4 +15,6 @@ public partial interface PulseObservableBoolExpression_t : ISchemaClass {
   
 // CUtlVector< PulseRuntimeBlackboardReferenceIndex_t >
   public ref CUtlVector DependentObservableBlackboardReferences { get; }
+
+
 }

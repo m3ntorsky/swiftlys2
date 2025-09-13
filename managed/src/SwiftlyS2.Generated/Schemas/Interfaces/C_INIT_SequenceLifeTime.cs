@@ -9,4 +9,6 @@ public partial interface C_INIT_SequenceLifeTime : CParticleFunctionInitializer 
 
   
   public ref float Framerate { get; }
+
+
 }

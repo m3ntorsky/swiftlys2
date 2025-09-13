@@ -15,4 +15,6 @@ public partial interface CIronSightController : ISchemaClass {
   public ref float IronSightAmountGained { get; }
   
   public ref float IronSightAmountBiased { get; }
+
+
 }

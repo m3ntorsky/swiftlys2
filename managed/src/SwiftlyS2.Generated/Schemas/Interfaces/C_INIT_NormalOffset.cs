@@ -17,4 +17,6 @@ public partial interface C_INIT_NormalOffset : CParticleFunctionInitializer {
   public ref bool LocalCoords { get; }
   
   public ref bool Normalize { get; }
+
+
 }

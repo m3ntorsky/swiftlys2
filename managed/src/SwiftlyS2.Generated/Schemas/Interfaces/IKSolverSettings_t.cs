@@ -13,4 +13,6 @@ public partial interface IKSolverSettings_t : ISchemaClass {
   public ref int NumIterations { get; }
   
   public ref EIKEndEffectorRotationFixUpMode EndEffectorRotationFixUpMode { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CNmFloatCurveNode__CDefinition : CNmFloatValueNode__CDe
   public ref short InputValueNodeIdx { get; }
   
   public SchemaUntypedField Curve { get; }
+
+
 }

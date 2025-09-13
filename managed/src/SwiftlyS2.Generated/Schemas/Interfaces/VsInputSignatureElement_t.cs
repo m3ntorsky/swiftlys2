@@ -15,4 +15,6 @@ public partial interface VsInputSignatureElement_t : ISchemaClass {
   public ISchemaFixedString D3DSemanticName { get; }
   
   public ref int D3DSemanticIndex { get; }
+
+
 }

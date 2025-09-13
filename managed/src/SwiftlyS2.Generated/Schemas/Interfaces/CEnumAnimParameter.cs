@@ -13,4 +13,6 @@ public partial interface CEnumAnimParameter : CConcreteAnimParameter {
   public ref CUtlVector<CUtlString> EnumOptions { get; }
   
   public ref CUtlVector<ulong> EnumReferenced { get; }
+
+
 }

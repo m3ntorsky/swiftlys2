@@ -17,4 +17,6 @@ public partial interface CGameChoreoServices : IChoreoServices {
   public ref IChoreoServices__ChoreoState_t ChoreoState { get; }
   
   public GameTime_t TimeStartedState { get; }
+
+
 }

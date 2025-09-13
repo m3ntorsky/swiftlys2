@@ -9,4 +9,6 @@ public partial interface CPointGiveAmmo : CPointEntity {
 
   
   public ref CHandle<CBaseEntity> Activator { get; }
+
+
 }

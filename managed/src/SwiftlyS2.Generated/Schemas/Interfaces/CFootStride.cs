@@ -11,4 +11,6 @@ public partial interface CFootStride : ISchemaClass {
   public CFootCycleDefinition Definition { get; }
   
   public CFootTrajectories Trajectories { get; }
+
+
 }

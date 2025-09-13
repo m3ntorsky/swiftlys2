@@ -19,4 +19,6 @@ public partial interface SequenceHistory_t : ISchemaClass {
   public ref float PlaybackRate { get; }
   
   public ref float CyclesPerSecond { get; }
+
+
 }

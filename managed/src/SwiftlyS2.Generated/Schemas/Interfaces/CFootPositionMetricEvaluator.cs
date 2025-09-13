@@ -11,4 +11,6 @@ public partial interface CFootPositionMetricEvaluator : CMotionMetricEvaluator {
   public ref CUtlVector<int> FootIndices { get; }
   
   public ref bool IgnoreSlope { get; }
+
+
 }

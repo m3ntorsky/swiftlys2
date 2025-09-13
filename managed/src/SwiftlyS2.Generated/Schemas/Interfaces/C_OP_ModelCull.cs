@@ -17,4 +17,6 @@ public partial interface C_OP_ModelCull : CParticleFunctionOperator {
   public ref bool UseBones { get; }
   
   public ISchemaFixedString HitboxSetName { get; }
+
+
 }

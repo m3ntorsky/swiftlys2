@@ -13,4 +13,6 @@ public partial interface C_OP_LocalAccelerationForce : CParticleFunctionForce {
   public ref int ScaleCP { get; }
   
   public CParticleCollectionVecInput Accel { get; }
+
+
 }

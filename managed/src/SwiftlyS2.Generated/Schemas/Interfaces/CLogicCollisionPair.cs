@@ -17,4 +17,6 @@ public partial interface CLogicCollisionPair : CLogicalEntity {
   public ref bool Disabled { get; }
   
   public ref bool Succeeded { get; }
+
+
 }

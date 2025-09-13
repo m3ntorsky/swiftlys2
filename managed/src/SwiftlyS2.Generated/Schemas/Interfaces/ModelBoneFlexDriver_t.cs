@@ -14,4 +14,6 @@ public partial interface ModelBoneFlexDriver_t : ISchemaClass {
   
 // CUtlVector< ModelBoneFlexDriverControl_t >
   public ref CUtlVector Controls { get; }
+
+
 }

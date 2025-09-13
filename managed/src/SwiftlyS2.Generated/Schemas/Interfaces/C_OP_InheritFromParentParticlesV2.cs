@@ -21,4 +21,6 @@ public partial interface C_OP_InheritFromParentParticlesV2 : CParticleFunctionOp
   public ref MissingParentInheritBehavior_t MissingParentBehavior { get; }
   
   public CPerParticleFloatInput Interpolation { get; }
+
+
 }

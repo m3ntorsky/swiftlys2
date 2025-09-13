@@ -13,4 +13,6 @@ public partial interface VsInputSignature_t : ISchemaClass {
   
 // CUtlVector< VsInputSignatureElement_t >
   public ref CUtlVector Depth_elems { get; }
+
+
 }

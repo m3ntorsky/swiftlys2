@@ -23,4 +23,6 @@ public partial interface C_INIT_InitialSequenceFromModel : CParticleFunctionInit
   public ref float OutputMax { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
+
+
 }

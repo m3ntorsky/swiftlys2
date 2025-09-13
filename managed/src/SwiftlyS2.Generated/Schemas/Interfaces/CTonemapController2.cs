@@ -17,4 +17,10 @@ public partial interface CTonemapController2 : CBaseEntity {
   public ref float ExposureAdaptationSpeedDown { get; }
   
   public ref float TonemapEVSmoothingRange { get; }
+
+  public void AutoExposureMinUpdated();
+  public void AutoExposureMaxUpdated();
+  public void ExposureAdaptationSpeedUpUpdated();
+  public void ExposureAdaptationSpeedDownUpdated();
+  public void TonemapEVSmoothingRangeUpdated();
 }

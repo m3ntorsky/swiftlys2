@@ -11,4 +11,6 @@ public partial interface AnimationSnapshot_t : AnimationSnapshotBase_t {
   public ref int EntIndex { get; }
   
   public ref CUtlString ModelName { get; }
+
+
 }

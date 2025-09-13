@@ -30,4 +30,6 @@ public partial interface CRagdollComponentUpdater : CAnimComponentUpdater {
   public ref float MaxStretch { get; }
   
   public ref bool SolidCollisionAtZeroWeight { get; }
+
+
 }

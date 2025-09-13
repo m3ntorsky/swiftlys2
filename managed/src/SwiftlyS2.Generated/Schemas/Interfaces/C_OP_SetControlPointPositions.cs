@@ -31,4 +31,6 @@ public partial interface C_OP_SetControlPointPositions : CParticleFunctionPreEmi
   public ref Vector CP4Pos { get; }
   
   public ref int HeadLocation { get; }
+
+
 }

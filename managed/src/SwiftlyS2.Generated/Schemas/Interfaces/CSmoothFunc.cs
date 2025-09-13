@@ -17,4 +17,6 @@ public partial interface CSmoothFunc : ISchemaClass {
   public ref float SmoothRemainingTime { get; }
   
   public ref int SmoothDir { get; }
+
+
 }

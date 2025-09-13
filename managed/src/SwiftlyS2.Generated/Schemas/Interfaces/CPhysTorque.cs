@@ -9,4 +9,6 @@ public partial interface CPhysTorque : CPhysForce {
 
   
   public ref Vector Axis { get; }
+
+
 }

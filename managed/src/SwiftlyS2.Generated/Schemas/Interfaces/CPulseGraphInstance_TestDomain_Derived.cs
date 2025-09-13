@@ -9,4 +9,6 @@ public partial interface CPulseGraphInstance_TestDomain_Derived : CPulseGraphIns
 
   
   public ref int InstanceValueX { get; }
+
+
 }

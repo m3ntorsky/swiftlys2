@@ -9,4 +9,6 @@ public partial interface CAnimScriptBase : ISchemaClass {
 
   
   public ref bool IsValid { get; }
+
+
 }

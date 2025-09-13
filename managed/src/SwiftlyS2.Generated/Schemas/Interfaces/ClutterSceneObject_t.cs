@@ -30,4 +30,6 @@ public partial interface ClutterSceneObject_t : ISchemaClass {
   public ref float BeginCullSize { get; }
   
   public ref float EndCullSize { get; }
+
+
 }

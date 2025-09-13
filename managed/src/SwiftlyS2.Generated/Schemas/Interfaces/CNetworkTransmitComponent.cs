@@ -9,4 +9,6 @@ public partial interface CNetworkTransmitComponent : ISchemaClass {
 
   
   public ref byte TransmitStateOwnedCounter { get; }
+
+
 }

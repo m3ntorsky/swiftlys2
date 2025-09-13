@@ -9,4 +9,6 @@ public partial interface EventPreDataUpdate_t : ISchemaClass {
 
   
   public ref int Count { get; }
+
+
 }

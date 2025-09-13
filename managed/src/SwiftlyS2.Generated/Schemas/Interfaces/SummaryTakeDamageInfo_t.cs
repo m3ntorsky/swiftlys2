@@ -15,4 +15,6 @@ public partial interface SummaryTakeDamageInfo_t : ISchemaClass {
   public CTakeDamageResult Result { get; }
   
   public ref CHandle<CBaseEntity> Target { get; }
+
+
 }

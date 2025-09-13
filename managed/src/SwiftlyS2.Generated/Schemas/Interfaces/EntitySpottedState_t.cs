@@ -11,4 +11,7 @@ public partial interface EntitySpottedState_t : ISchemaClass {
   public ref bool Spotted { get; }
   
   public ISchemaFixedArray<uint> SpottedByMask { get; }
+
+  public void SpottedUpdated();
+  public void SpottedByMaskUpdated();
 }

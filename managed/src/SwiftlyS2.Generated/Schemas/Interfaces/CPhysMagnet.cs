@@ -32,4 +32,6 @@ public partial interface CPhysMagnet : CBaseAnimGraph {
   public GameTime_t NextSuckTime { get; }
   
   public ref int MaxObjectsAttached { get; }
+
+
 }

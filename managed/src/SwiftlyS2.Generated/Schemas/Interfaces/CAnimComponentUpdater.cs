@@ -15,4 +15,6 @@ public partial interface CAnimComponentUpdater : ISchemaClass {
   public ref AnimNodeNetworkMode NetworkMode { get; }
   
   public ref bool StartEnabled { get; }
+
+
 }

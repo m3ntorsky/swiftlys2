@@ -15,4 +15,6 @@ public partial interface FeWorldCollisionParams_t : ISchemaClass {
   public ref ushort ListBegin { get; }
   
   public ref ushort ListEnd { get; }
+
+
 }

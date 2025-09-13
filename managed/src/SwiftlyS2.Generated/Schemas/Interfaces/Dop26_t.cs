@@ -9,4 +9,6 @@ public partial interface Dop26_t : ISchemaClass {
 
   
   public ISchemaFixedArray<float> Support { get; }
+
+
 }

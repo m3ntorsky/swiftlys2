@@ -29,4 +29,6 @@ public partial interface C_INIT_RemapScalar : CParticleFunctionInitializer {
   public ref bool ActiveRange { get; }
   
   public ref float RemapBias { get; }
+
+
 }

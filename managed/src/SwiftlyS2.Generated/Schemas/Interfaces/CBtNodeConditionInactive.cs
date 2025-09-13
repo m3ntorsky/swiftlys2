@@ -13,4 +13,6 @@ public partial interface CBtNodeConditionInactive : CBtNodeCondition {
   public ref float SensorInactivityThresholdSeconds { get; }
   
   public CountdownTimer SensorInactivityTimer { get; }
+
+
 }

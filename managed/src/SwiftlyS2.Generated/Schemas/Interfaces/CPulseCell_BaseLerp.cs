@@ -9,4 +9,6 @@ public partial interface CPulseCell_BaseLerp : CPulseCell_BaseYieldingInflow {
 
   
   public CPulse_ResumePoint WakeResume { get; }
+
+
 }

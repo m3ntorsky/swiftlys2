@@ -13,4 +13,6 @@ public partial interface C_OP_ReinitializeScalarEndCap : CParticleFunctionOperat
   public ref float OutputMin { get; }
   
   public ref float OutputMax { get; }
+
+
 }

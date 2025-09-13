@@ -17,4 +17,6 @@ public partial interface CSosGroupActionSetSoundeventParameterSchema : CSosGroup
   public ref CUtlString OpvarName { get; }
   
   public ref SosActionSortType_t SortType { get; }
+
+
 }

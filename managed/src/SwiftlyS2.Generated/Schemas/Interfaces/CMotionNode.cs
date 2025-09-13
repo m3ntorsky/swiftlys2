@@ -11,4 +11,6 @@ public partial interface CMotionNode : ISchemaClass {
   public ref CUtlString Name { get; }
   
   public AnimNodeID Id { get; }
+
+
 }

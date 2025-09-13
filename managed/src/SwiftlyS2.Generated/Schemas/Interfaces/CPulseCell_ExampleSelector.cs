@@ -9,4 +9,6 @@ public partial interface CPulseCell_ExampleSelector : CPulseCell_BaseFlow {
 
   
   public PulseSelectorOutflowList_t OutflowList { get; }
+
+
 }

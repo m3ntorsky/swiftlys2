@@ -15,4 +15,6 @@ public partial interface CAnimationGraphVisualizerPie : CAnimationGraphVisualize
   public ref Vector WsEnd { get; }
   
   public ref Color Color { get; }
+
+
 }

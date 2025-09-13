@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSceneEntityAlias_logic_choreographed_scene : CSceneEntity {
 
 
+
+
 }

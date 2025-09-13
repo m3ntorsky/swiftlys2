@@ -46,6 +46,7 @@ class Writer():
     self.class_template = open("templates/class_template.cs", "r").read()
     self.interface_template = open("templates/interface_template.cs", "r").read()
     self.class_updator_template = open("templates/class_updator_template.cs", "r").read()
+    self.interface_updator_template = open("templates/interface_updator_template.cs", "r").read()
 
     self.conversion_type_template = open("templates/conversion_type_template.cs", "r").read()
 
@@ -108,6 +109,7 @@ class Writer():
     self.interface_file_handle = open(OUT_DIR / "Interfaces" / f"{get_interface_name(self.class_name)}.cs", "w")
 
     fields = []
+    updators = []
 
     # the types whose generic has been erased, we add a comment to tell user whats the real type
     erased_generics = [
@@ -137,12 +139,16 @@ class Writer():
         if field_info["IMPL_TYPE"] in erased_generics and "templated" in field:
           field_info["COMMENT"] = f"\n// {field['templated']}"
 
+        if field_info["IS_NETWORKED"] == "true":
+          updators.append(render_template(self.interface_updator_template, field_info))
+
         fields.append(render_template(self.interface_field_template, field_info))
 
     params = {
       "INTERFACE_NAME": get_interface_name(self.class_name),
       "BASE_INTERFACE": get_interface_name(self.base_class),
-      "FIELDS": "\n".join(fields)
+      "FIELDS": "\n".join(fields),
+      "UPDATORS": "\n".join(updators)
     }
     self.interface_file_handle.write(render_template(self.interface_template, params))
 

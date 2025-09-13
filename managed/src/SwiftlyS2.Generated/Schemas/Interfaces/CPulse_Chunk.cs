@@ -13,4 +13,6 @@ public partial interface CPulse_Chunk : ISchemaClass {
   public SchemaUntypedField Registers { get; }
   
   public SchemaUntypedField InstructionEditorIDs { get; }
+
+
 }

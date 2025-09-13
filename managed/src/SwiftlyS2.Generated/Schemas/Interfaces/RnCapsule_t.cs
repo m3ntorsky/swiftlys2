@@ -11,4 +11,6 @@ public partial interface RnCapsule_t : ISchemaClass {
   public ISchemaFixedArray<Vector> Center { get; }
   
   public ref float Radius { get; }
+
+
 }

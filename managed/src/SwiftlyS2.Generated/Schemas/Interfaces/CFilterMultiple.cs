@@ -13,4 +13,6 @@ public partial interface CFilterMultiple : CBaseFilter {
   public ISchemaFixedArray<CUtlSymbolLarge> FilterName { get; }
   
   public ISchemaFixedArray<CHandle<CBaseEntity>> Filter { get; }
+
+
 }

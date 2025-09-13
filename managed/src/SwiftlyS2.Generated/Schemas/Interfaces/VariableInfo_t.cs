@@ -19,4 +19,6 @@ public partial interface VariableInfo_t : ISchemaClass {
   public ref FuseVariableType_t VarType { get; }
   
   public ref FuseVariableAccess_t Access { get; }
+
+
 }

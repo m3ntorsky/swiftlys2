@@ -13,4 +13,6 @@ public partial interface RnSoftbodyCapsule_t : ISchemaClass {
   public ref float Radius { get; }
   
   public ISchemaFixedArray<ushort> Particle { get; }
+
+
 }

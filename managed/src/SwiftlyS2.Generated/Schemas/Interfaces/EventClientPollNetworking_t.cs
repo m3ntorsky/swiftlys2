@@ -9,4 +9,6 @@ public partial interface EventClientPollNetworking_t : ISchemaClass {
 
   
   public ref int TickCount { get; }
+
+
 }

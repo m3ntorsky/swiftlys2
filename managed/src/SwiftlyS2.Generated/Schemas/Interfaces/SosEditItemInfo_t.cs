@@ -17,4 +17,6 @@ public partial interface SosEditItemInfo_t : ISchemaClass {
   public ref CUtlString ItemKVString { get; }
   
   public ref Vector2D ItemPos { get; }
+
+
 }

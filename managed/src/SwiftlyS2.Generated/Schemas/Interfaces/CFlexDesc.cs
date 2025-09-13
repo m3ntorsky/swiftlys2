@@ -9,4 +9,6 @@ public partial interface CFlexDesc : ISchemaClass {
 
   
   public ref CUtlString Facs { get; }
+
+
 }

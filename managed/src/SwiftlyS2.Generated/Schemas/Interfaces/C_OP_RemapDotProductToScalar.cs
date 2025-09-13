@@ -29,4 +29,6 @@ public partial interface C_OP_RemapDotProductToScalar : CParticleFunctionOperato
   public ref bool ActiveRange { get; }
   
   public ref bool UseParticleNormal { get; }
+
+
 }

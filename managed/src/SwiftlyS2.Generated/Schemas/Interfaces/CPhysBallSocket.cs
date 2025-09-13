@@ -19,4 +19,6 @@ public partial interface CPhysBallSocket : CPhysConstraint {
   public ref float MinTwistAngle { get; }
   
   public ref float MaxTwistAngle { get; }
+
+
 }

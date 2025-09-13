@@ -11,4 +11,6 @@ public partial interface CVoiceContainerEnvelope : CVoiceContainerBase {
   public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> Sound { get; }
   
   public CVoiceContainerAnalysisBase AnalysisContainer { get; }
+
+
 }

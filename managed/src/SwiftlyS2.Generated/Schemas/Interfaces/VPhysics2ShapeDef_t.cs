@@ -21,4 +21,6 @@ public partial interface VPhysics2ShapeDef_t : ISchemaClass {
   public ref CUtlVector Meshes { get; }
   
   public ref CUtlVector<ushort> CollisionAttributeIndices { get; }
+
+
 }

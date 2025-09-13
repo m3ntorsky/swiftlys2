@@ -13,4 +13,6 @@ public partial interface CVoiceContainerRealtimeFMSineWave : CVoiceContainerBase
   public ref float ModulatorFrequency { get; }
   
   public ref float ModulatorAmount { get; }
+
+
 }

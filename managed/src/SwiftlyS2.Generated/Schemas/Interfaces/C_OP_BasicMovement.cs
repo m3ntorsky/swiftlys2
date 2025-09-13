@@ -17,4 +17,6 @@ public partial interface C_OP_BasicMovement : CParticleFunctionOperator {
   public ref int MaxConstraintPasses { get; }
   
   public ref bool UseNewCode { get; }
+
+
 }

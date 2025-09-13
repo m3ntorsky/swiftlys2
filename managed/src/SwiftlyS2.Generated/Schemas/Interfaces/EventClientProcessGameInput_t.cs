@@ -13,4 +13,6 @@ public partial interface EventClientProcessGameInput_t : ISchemaClass {
   public ref float RealTime { get; }
   
   public ref float FrameTime { get; }
+
+
 }

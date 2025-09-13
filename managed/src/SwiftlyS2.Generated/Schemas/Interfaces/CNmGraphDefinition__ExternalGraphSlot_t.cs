@@ -11,4 +11,6 @@ public partial interface CNmGraphDefinition__ExternalGraphSlot_t : ISchemaClass 
   public ref short NodeIdx { get; }
   
   public ref CGlobalSymbol SlotID { get; }
+
+
 }

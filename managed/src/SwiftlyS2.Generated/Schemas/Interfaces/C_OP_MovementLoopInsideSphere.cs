@@ -15,4 +15,6 @@ public partial interface C_OP_MovementLoopInsideSphere : CParticleFunctionOperat
   public CParticleCollectionVecInput Scale { get; }
   
   public ParticleAttributeIndex_t DistSqrAttr { get; }
+
+
 }

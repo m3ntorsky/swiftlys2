@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_BaseYieldingInflow : CPulseCell_BaseFlow {
 
 
+
+
 }

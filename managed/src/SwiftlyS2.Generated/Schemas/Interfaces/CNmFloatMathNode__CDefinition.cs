@@ -19,4 +19,6 @@ public partial interface CNmFloatMathNode__CDefinition : CNmFloatValueNode__CDef
   public ref CNmFloatMathNode__Operator_t Operator { get; }
   
   public ref float ValueB { get; }
+
+
 }

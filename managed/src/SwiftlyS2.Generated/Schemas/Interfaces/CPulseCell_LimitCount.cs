@@ -9,4 +9,6 @@ public partial interface CPulseCell_LimitCount : CPulseCell_BaseRequirement {
 
   
   public ref int LimitCount { get; }
+
+
 }

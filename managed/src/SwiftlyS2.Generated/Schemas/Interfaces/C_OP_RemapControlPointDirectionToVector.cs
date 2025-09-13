@@ -13,4 +13,6 @@ public partial interface C_OP_RemapControlPointDirectionToVector : CParticleFunc
   public ref float Scale { get; }
   
   public ref int ControlPointNumber { get; }
+
+
 }

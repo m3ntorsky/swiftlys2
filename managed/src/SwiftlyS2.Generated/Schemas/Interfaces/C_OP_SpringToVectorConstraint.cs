@@ -17,4 +17,6 @@ public partial interface C_OP_SpringToVectorConstraint : CParticleFunctionConstr
   public CPerParticleFloatInput RestingLength { get; }
   
   public CPerParticleVecInput AnchorVector { get; }
+
+
 }

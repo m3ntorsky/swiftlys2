@@ -13,4 +13,6 @@ public partial interface CAudioPhonemeTag : ISchemaClass {
   public ref float EndTime { get; }
   
   public ref int PhonemeCode { get; }
+
+
 }

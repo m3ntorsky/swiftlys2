@@ -17,4 +17,6 @@ public partial interface C_OP_SelectivelyEnableChildren : CParticleFunctionPreEm
   public ref bool PlayEndcapOnStop { get; }
   
   public ref bool DestroyImmediately { get; }
+
+
 }

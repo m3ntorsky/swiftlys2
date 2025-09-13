@@ -17,4 +17,6 @@ public partial interface CRenderComponent : CEntityComponent {
   public ref bool EnableRendering { get; }
   
   public ref bool InterpolationReadyToDraw { get; }
+
+
 }

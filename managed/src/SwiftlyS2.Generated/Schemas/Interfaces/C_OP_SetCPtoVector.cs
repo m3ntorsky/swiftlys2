@@ -11,4 +11,6 @@ public partial interface C_OP_SetCPtoVector : CParticleFunctionOperator {
   public ref int CPInput { get; }
   
   public ParticleAttributeIndex_t FieldOutput { get; }
+
+
 }

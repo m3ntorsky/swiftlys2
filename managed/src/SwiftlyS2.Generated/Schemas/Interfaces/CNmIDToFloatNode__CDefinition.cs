@@ -15,4 +15,6 @@ public partial interface CNmIDToFloatNode__CDefinition : CNmFloatValueNode__CDef
   public SchemaUntypedField IDs { get; }
   
   public SchemaUntypedField Values { get; }
+
+
 }

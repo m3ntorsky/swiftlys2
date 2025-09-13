@@ -17,4 +17,6 @@ public partial interface CAnimFoot : ISchemaClass {
   public ref int AnkleBoneIndex { get; }
   
   public ref int ToeBoneIndex { get; }
+
+
 }

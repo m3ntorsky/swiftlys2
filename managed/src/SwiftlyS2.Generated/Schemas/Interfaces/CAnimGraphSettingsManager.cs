@@ -10,4 +10,6 @@ public partial interface CAnimGraphSettingsManager : ISchemaClass {
   
 // CUtlVector< CSmartPtr< CAnimGraphSettingsGroup > >
   public ref CUtlVector SettingsGroups { get; }
+
+
 }

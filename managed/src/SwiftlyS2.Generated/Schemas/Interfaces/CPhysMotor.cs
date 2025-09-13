@@ -33,4 +33,6 @@ public partial interface CPhysMotor : CLogicalEntity {
   public ref float SpeedWhenSpinUpOrSpinDownStarted { get; }
   
   public CMotorController Motor { get; }
+
+
 }

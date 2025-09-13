@@ -10,4 +10,6 @@ public partial interface CParamSpanUpdater : ISchemaClass {
   
 // CUtlVector< ParamSpan_t >
   public ref CUtlVector Spans { get; }
+
+
 }

@@ -45,4 +45,6 @@ public partial interface CEnvBeam : CBeam {
   public ref CUtlSymbolLarge Decal { get; }
   
   public CEntityIOOutput OnTouchedByEntity { get; }
+
+
 }

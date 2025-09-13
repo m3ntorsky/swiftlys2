@@ -55,4 +55,13 @@ public partial interface CBasePlayerController : CBaseEntity {
   public ref bool NoClipEnabled { get; }
   
   public ref uint DesiredFOV { get; }
+
+  public void TickBaseUpdated();
+  public void PawnUpdated();
+  public void KnownTeamMismatchUpdated();
+  public void ConnectedUpdated();
+  public void PlayerNameUpdated();
+  public void SteamIDUpdated();
+  public void NoClipEnabledUpdated();
+  public void DesiredFOVUpdated();
 }

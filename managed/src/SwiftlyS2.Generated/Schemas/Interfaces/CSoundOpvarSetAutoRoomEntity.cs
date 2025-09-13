@@ -19,4 +19,6 @@ public partial interface CSoundOpvarSetAutoRoomEntity : CSoundOpvarSetPointEntit
   public ref float HeightTolerance { get; }
   
   public ref float SizeSqr { get; }
+
+
 }

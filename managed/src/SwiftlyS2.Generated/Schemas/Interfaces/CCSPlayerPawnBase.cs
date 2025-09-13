@@ -37,4 +37,14 @@ public partial interface CCSPlayerPawnBase : CBasePlayerPawn {
   public ref int ProgressBarDuration { get; }
   
   public ref CHandle<CCSPlayerController> OriginalController { get; }
+
+  public void CTouchExpansionComponentUpdated();
+  public void PingServicesUpdated();
+  public void PlayerStateUpdated();
+  public void HasMovedSinceSpawnUpdated();
+  public void FlashDurationUpdated();
+  public void FlashMaxAlphaUpdated();
+  public void ProgressBarStartTimeUpdated();
+  public void ProgressBarDurationUpdated();
+  public void OriginalControllerUpdated();
 }

@@ -139,4 +139,6 @@ public partial interface CParticleSystemDefinition : IParticleSystemDefinition {
   
 // CUtlVector< ParticleControlPointConfiguration_t >
   public ref CUtlVector ControlPointConfigurations { get; }
+
+
 }

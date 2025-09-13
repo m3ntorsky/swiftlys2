@@ -15,4 +15,6 @@ public partial interface CAnimActivity : ISchemaClass {
   public ref int Flags { get; }
   
   public ref int Weight { get; }
+
+
 }

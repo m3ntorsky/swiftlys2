@@ -45,4 +45,6 @@ public partial interface CParticleVisibilityInputs : ISchemaClass {
   public ref float RadiusScaleFOVBase { get; }
   
   public ref bool RightEye { get; }
+
+
 }

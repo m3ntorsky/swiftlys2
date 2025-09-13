@@ -11,4 +11,6 @@ public partial interface CEmitTagActionUpdater : CAnimActionUpdater {
   public ref int TagIndex { get; }
   
   public ref bool IsZeroDuration { get; }
+
+
 }

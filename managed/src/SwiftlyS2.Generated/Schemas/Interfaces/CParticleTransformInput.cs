@@ -23,4 +23,6 @@ public partial interface CParticleTransformInput : CParticleInput {
   public ref int ControlPointRangeMax { get; }
   
   public ref float EndCPGrowthTime { get; }
+
+
 }

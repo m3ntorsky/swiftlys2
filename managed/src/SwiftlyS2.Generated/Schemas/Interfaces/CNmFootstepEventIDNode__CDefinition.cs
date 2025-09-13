@@ -11,4 +11,6 @@ public partial interface CNmFootstepEventIDNode__CDefinition : CNmIDValueNode__C
   public ref short SourceStateNodeIdx { get; }
   
   public CNmBitFlags EventConditionRules { get; }
+
+
 }

@@ -15,4 +15,6 @@ public partial interface C_OP_MovementRotateParticleAroundAxis : CParticleFuncti
   public CParticleTransformInput TransformInput { get; }
   
   public ref bool LocalSpace { get; }
+
+
 }

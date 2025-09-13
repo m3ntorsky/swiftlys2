@@ -57,4 +57,28 @@ public partial interface fogparams_t : ISchemaClass {
   public ref bool Padding2 { get; }
   
   public ref bool Padding { get; }
+
+  public void DirPrimaryUpdated();
+  public void ColorPrimaryUpdated();
+  public void ColorSecondaryUpdated();
+  public void ColorPrimaryLerpToUpdated();
+  public void ColorSecondaryLerpToUpdated();
+  public void StartUpdated();
+  public void EndUpdated();
+  public void FarzUpdated();
+  public void MaxdensityUpdated();
+  public void ExponentUpdated();
+  public void HDRColorScaleUpdated();
+  public void SkyboxFogFactorUpdated();
+  public void SkyboxFogFactorLerpToUpdated();
+  public void StartLerpToUpdated();
+  public void EndLerpToUpdated();
+  public void MaxdensityLerpToUpdated();
+  public void LerptimeUpdated();
+  public void DurationUpdated();
+  public void BlendtobackgroundUpdated();
+  public void ScatteringUpdated();
+  public void LocallightscaleUpdated();
+  public void EnableUpdated();
+  public void BlendUpdated();
 }

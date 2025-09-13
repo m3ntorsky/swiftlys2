@@ -13,4 +13,6 @@ public partial interface C_INIT_RandomModelSequence : CParticleFunctionInitializ
   public ISchemaFixedString SequenceName { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }
+
+
 }

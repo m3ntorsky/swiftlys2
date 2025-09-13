@@ -15,4 +15,6 @@ public partial interface CNmEvent : ISchemaClass {
   public ref CGlobalSymbol SyncID { get; }
   
   public ref bool ClientOnly { get; }
+
+
 }

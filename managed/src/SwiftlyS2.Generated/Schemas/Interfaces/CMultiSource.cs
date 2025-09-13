@@ -17,4 +17,6 @@ public partial interface CMultiSource : CLogicalEntity {
   public ref int Total { get; }
   
   public ref CUtlSymbolLarge Globalstate { get; }
+
+
 }

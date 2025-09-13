@@ -9,4 +9,6 @@ public partial interface CSkeletonAnimationController : ISkeletonAnimationContro
 
   
   public CSkeletonInstance SkeletonInstance { get; }
+
+
 }

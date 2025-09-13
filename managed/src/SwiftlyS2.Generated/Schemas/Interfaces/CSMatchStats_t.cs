@@ -49,4 +49,10 @@ public partial interface CSMatchStats_t : CSPerRoundStats_t {
   public ref int EntryCount { get; }
   
   public ref int EntryWins { get; }
+
+  public void Enemy5KsUpdated();
+  public void Enemy4KsUpdated();
+  public void Enemy3KsUpdated();
+  public void EnemyKnifeKillsUpdated();
+  public void EnemyTaserKillsUpdated();
 }

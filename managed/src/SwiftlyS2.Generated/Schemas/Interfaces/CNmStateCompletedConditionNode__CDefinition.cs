@@ -13,4 +13,6 @@ public partial interface CNmStateCompletedConditionNode__CDefinition : CNmBoolVa
   public ref short TransitionDurationOverrideNodeIdx { get; }
   
   public ref float TransitionDurationSeconds { get; }
+
+
 }

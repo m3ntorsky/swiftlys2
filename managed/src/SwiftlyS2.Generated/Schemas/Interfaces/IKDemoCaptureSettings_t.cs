@@ -17,4 +17,6 @@ public partial interface IKDemoCaptureSettings_t : ISchemaClass {
   public ref CUtlString OneBoneStart { get; }
   
   public ref CUtlString OneBoneEnd { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface FuseVariableIndex_t : ISchemaClass {
 
   
   public ref ushort Value { get; }
+
+
 }

@@ -21,4 +21,12 @@ public partial interface CNetworkOriginCellCoordQuantizedVector : ISchemaClass {
   public ref CNetworkedQuantizedFloat Y { get; }
   
   public ref CNetworkedQuantizedFloat Z { get; }
+
+  public void CellXUpdated();
+  public void CellYUpdated();
+  public void CellZUpdated();
+  public void OutsideWorldUpdated();
+  public void XUpdated();
+  public void YUpdated();
+  public void ZUpdated();
 }

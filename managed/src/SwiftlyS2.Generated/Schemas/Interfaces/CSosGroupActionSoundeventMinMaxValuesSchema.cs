@@ -27,4 +27,6 @@ public partial interface CSosGroupActionSoundeventMinMaxValuesSchema : CSosGroup
   public ref CUtlString StrMinValueName { get; }
   
   public ref CUtlString StrMaxValueName { get; }
+
+
 }

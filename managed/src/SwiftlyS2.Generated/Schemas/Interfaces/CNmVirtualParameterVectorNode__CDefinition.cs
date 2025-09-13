@@ -9,4 +9,6 @@ public partial interface CNmVirtualParameterVectorNode__CDefinition : CNmVectorV
 
   
   public ref short ChildNodeIdx { get; }
+
+
 }

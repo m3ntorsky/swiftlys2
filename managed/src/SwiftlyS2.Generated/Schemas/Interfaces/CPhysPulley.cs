@@ -15,4 +15,6 @@ public partial interface CPhysPulley : CPhysConstraint {
   public ref float AddLength { get; }
   
   public ref float GearRatio { get; }
+
+
 }

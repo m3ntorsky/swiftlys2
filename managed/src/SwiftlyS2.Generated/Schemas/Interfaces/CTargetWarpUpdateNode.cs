@@ -35,4 +35,6 @@ public partial interface CTargetWarpUpdateNode : CUnaryUpdateNode {
   public ref bool WarpAroundCenter { get; }
   
   public ref float MaxAngle { get; }
+
+
 }

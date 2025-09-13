@@ -17,4 +17,6 @@ public partial interface C_INIT_InitFromVectorFieldSnapshot : CParticleFunctionI
   public ref bool UseVerticalVelocity { get; }
   
   public CPerParticleVecInput Scale { get; }
+
+
 }

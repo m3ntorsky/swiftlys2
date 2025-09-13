@@ -21,4 +21,6 @@ public partial interface C_OP_RenderLightBeam : CParticleFunctionRenderer {
   public CParticleCollectionFloatInput Range { get; }
   
   public CParticleCollectionFloatInput Thickness { get; }
+
+
 }

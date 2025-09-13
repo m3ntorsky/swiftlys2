@@ -55,4 +55,6 @@ public partial interface CSoundOpvarSetPointEntity : CSoundOpvarSetPointBase {
   public ref Vector PathingDirection { get; }
   
   public ref int PathingSourceIndex { get; }
+
+
 }

@@ -12,4 +12,6 @@ public partial interface AnimationDecodeDebugDump_t : ISchemaClass {
   
 // CUtlVector< AnimationDecodeDebugDumpElement_t >
   public ref CUtlVector Elems { get; }
+
+
 }

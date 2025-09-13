@@ -19,4 +19,6 @@ public partial interface C_OP_RemapAverageScalarValuetoCP : CParticleFunctionPre
   public ParticleAttributeIndex_t Field { get; }
   
   public CParticleRemapFloatInput OutputRemap { get; }
+
+
 }

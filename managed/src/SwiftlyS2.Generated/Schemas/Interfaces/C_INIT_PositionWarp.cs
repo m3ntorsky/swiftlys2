@@ -27,4 +27,6 @@ public partial interface C_INIT_PositionWarp : CParticleFunctionInitializer {
   public ref bool InvertWarp { get; }
   
   public ref bool UseCount { get; }
+
+
 }

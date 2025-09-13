@@ -9,4 +9,6 @@ public partial interface EventClientSceneSystemThreadStateChange_t : ISchemaClas
 
   
   public ref bool ThreadsActive { get; }
+
+
 }

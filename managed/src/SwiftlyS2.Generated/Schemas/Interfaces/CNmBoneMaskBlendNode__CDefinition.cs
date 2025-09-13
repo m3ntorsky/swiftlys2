@@ -13,4 +13,6 @@ public partial interface CNmBoneMaskBlendNode__CDefinition : CNmBoneMaskValueNod
   public ref short TargetMaskNodeIdx { get; }
   
   public ref short BlendWeightValueNodeIdx { get; }
+
+
 }

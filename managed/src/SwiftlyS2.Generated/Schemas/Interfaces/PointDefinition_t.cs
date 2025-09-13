@@ -13,4 +13,6 @@ public partial interface PointDefinition_t : ISchemaClass {
   public ref bool LocalCoords { get; }
   
   public ref Vector Offset { get; }
+
+
 }

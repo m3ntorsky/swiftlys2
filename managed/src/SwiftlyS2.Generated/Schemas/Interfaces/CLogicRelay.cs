@@ -17,4 +17,6 @@ public partial interface CLogicRelay : CLogicalEntity {
   public ref bool FastRetrigger { get; }
   
   public ref bool PassthoughCaller { get; }
+
+
 }

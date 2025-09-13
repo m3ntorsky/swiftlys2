@@ -11,4 +11,6 @@ public partial interface C_INIT_InitFromParentKilled : CParticleFunctionInitiali
   public ParticleAttributeIndex_t AttributeToCopy { get; }
   
   public ref EventTypeSelection_t EventType { get; }
+
+
 }

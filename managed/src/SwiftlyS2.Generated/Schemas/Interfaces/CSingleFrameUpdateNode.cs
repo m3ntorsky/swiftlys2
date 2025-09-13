@@ -16,4 +16,6 @@ public partial interface CSingleFrameUpdateNode : CLeafUpdateNode {
   public HSequence Sequence { get; }
   
   public ref float Cycle { get; }
+
+
 }

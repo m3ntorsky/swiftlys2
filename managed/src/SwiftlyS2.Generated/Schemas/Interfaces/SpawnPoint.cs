@@ -13,4 +13,6 @@ public partial interface SpawnPoint : CServerOnlyPointEntity {
   public ref bool Enabled { get; }
   
   public ref int Type { get; }
+
+
 }

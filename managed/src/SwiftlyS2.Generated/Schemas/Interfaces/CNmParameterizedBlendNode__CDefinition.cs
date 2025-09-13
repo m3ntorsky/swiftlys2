@@ -13,4 +13,6 @@ public partial interface CNmParameterizedBlendNode__CDefinition : CNmPoseNode__C
   public ref short InputParameterValueNodeIdx { get; }
   
   public ref bool AllowLooping { get; }
+
+
 }

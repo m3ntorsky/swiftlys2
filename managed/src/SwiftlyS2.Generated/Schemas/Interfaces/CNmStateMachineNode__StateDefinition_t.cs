@@ -13,4 +13,6 @@ public partial interface CNmStateMachineNode__StateDefinition_t : ISchemaClass {
   public ref short EntryConditionNodeIdx { get; }
   
   public SchemaUntypedField TransitionDefinitions { get; }
+
+
 }

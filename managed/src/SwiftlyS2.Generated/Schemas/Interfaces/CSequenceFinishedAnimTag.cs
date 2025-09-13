@@ -9,4 +9,6 @@ public partial interface CSequenceFinishedAnimTag : CAnimTagBase {
 
   
   public ref CUtlString SequenceName { get; }
+
+
 }

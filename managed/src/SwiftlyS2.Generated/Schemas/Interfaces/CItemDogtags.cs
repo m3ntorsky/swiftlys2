@@ -11,4 +11,7 @@ public partial interface CItemDogtags : CItem {
   public ref CHandle<CCSPlayerPawn> OwningPlayer { get; }
   
   public ref CHandle<CCSPlayerPawn> KillingPlayer { get; }
+
+  public void OwningPlayerUpdated();
+  public void KillingPlayerUpdated();
 }

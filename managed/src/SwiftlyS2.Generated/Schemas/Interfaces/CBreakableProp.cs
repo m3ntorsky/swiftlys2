@@ -71,4 +71,6 @@ public partial interface CBreakableProp : CBaseProp {
   public ref bool UsePuntSound { get; }
   
   public ref bool OriginalBlockLOS { get; }
+
+  public void CPropDataComponentUpdated();
 }

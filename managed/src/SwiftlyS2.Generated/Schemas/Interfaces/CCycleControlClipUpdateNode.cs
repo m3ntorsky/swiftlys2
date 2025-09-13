@@ -20,4 +20,6 @@ public partial interface CCycleControlClipUpdateNode : CLeafUpdateNode {
   public CAnimParamHandle ParamIndex { get; }
   
   public ref bool LockWhenWaning { get; }
+
+
 }

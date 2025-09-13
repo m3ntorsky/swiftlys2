@@ -37,4 +37,6 @@ public partial interface CEnvExplosion : CModelPointEntity {
   public ref CUtlSymbolLarge EntityIgnoreName { get; }
   
   public ref CHandle<CBaseEntity> EntityIgnore { get; }
+
+
 }

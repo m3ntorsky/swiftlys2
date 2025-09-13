@@ -27,4 +27,6 @@ public partial interface HullFlags_t : ISchemaClass {
   public ref bool Hull_MediumTall { get; }
   
   public ref bool Hull_Small { get; }
+
+
 }

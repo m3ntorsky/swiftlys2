@@ -21,4 +21,6 @@ public partial interface C_OP_RemapParticleCountToScalar : CParticleFunctionOper
   public ref bool ActiveRange { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
+
+
 }

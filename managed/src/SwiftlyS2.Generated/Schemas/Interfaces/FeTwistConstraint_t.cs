@@ -15,4 +15,6 @@ public partial interface FeTwistConstraint_t : ISchemaClass {
   public ref float TwistRelax { get; }
   
   public ref float SwingRelax { get; }
+
+
 }

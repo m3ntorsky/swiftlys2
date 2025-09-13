@@ -9,4 +9,6 @@ public partial interface C_INIT_RemapQAnglesToRotation : CParticleFunctionInitia
 
   
   public CParticleTransformInput TransformInput { get; }
+
+
 }

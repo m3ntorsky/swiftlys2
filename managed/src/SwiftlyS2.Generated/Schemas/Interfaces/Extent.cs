@@ -11,4 +11,6 @@ public partial interface Extent : ISchemaClass {
   public ref Vector Lo { get; }
   
   public ref Vector Hi { get; }
+
+
 }

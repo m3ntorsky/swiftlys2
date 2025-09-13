@@ -15,4 +15,6 @@ public partial interface C_INIT_VelocityFromCP : CParticleFunctionInitializer {
   public ref float VelocityScale { get; }
   
   public ref bool DirectionOnly { get; }
+
+
 }

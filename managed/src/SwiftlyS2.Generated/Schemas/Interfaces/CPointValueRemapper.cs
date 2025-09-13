@@ -95,4 +95,22 @@ public partial interface CPointValueRemapper : CBaseEntity {
   public CEntityIOOutput OnEngage { get; }
   
   public CEntityIOOutput OnDisengage { get; }
+
+  public void DisabledUpdated();
+  public void UpdateOnClientUpdated();
+  public void InputTypeUpdated();
+  public void RemapLineStartUpdated();
+  public void RemapLineEndUpdated();
+  public void MaximumChangePerSecondUpdated();
+  public void DisengageDistanceUpdated();
+  public void EngageDistanceUpdated();
+  public void RequiresUseKeyUpdated();
+  public void OutputTypeUpdated();
+  public void OutputEntitiesUpdated();
+  public void HapticsTypeUpdated();
+  public void MomentumTypeUpdated();
+  public void MomentumModifierUpdated();
+  public void SnapValueUpdated();
+  public void RatchetTypeUpdated();
+  public void InputOffsetUpdated();
 }

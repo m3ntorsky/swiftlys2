@@ -9,4 +9,6 @@ public partial interface CFootFallAnimTag : CAnimTagBase {
 
   
   public ref FootFallTagFoot_t Foot { get; }
+
+
 }

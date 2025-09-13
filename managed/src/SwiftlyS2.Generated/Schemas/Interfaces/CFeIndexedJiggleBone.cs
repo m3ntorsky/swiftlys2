@@ -13,4 +13,6 @@ public partial interface CFeIndexedJiggleBone : ISchemaClass {
   public ref uint JiggleParent { get; }
   
   public CFeJiggleBone JiggleBone { get; }
+
+
 }

@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Test_MultiInflow_NoDefault : CPulseCell_BaseFlow {
 
 
+
+
 }

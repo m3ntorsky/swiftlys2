@@ -15,4 +15,6 @@ public partial interface C_INIT_RandomAlpha : CParticleFunctionInitializer {
   public ref int AlphaMax { get; }
   
   public ref float AlphaRandExponent { get; }
+
+
 }

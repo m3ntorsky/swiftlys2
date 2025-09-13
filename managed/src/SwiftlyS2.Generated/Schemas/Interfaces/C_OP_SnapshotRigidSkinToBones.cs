@@ -13,4 +13,6 @@ public partial interface C_OP_SnapshotRigidSkinToBones : CParticleFunctionOperat
   public ref bool TransformRadii { get; }
   
   public ref int ControlPointNumber { get; }
+
+
 }

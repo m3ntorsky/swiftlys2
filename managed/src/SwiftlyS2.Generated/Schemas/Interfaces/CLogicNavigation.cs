@@ -11,4 +11,6 @@ public partial interface CLogicNavigation : CLogicalEntity {
   public ref bool IsOn { get; }
   
   public ref navproperties_t NavProperty { get; }
+
+
 }

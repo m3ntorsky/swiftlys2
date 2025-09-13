@@ -13,4 +13,6 @@ public partial interface FeNodeReverseOffset_t : ISchemaClass {
   public ref ushort BoneCtrl { get; }
   
   public ref ushort TargetNode { get; }
+
+
 }

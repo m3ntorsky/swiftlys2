@@ -17,4 +17,6 @@ public partial interface C_OP_SetVec : CParticleFunctionOperator {
   public CPerParticleFloatInput Lerp { get; }
   
   public ref bool NormalizedOutput { get; }
+
+
 }

@@ -25,4 +25,6 @@ public partial interface CSeqCmdLayer : ISchemaClass {
   public ref float Var2 { get; }
   
   public ref short LineNumber { get; }
+
+
 }

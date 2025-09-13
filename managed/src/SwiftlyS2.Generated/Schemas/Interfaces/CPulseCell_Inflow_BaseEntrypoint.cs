@@ -11,4 +11,6 @@ public partial interface CPulseCell_Inflow_BaseEntrypoint : CPulseCell_BaseFlow 
   public PulseRuntimeChunkIndex_t EntryChunk { get; }
   
   public PulseRegisterMap_t RegisterMap { get; }
+
+
 }

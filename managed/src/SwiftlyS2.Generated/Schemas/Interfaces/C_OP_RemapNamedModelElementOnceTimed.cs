@@ -25,4 +25,6 @@ public partial interface C_OP_RemapNamedModelElementOnceTimed : CParticleFunctio
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ref float RemapTime { get; }
+
+
 }

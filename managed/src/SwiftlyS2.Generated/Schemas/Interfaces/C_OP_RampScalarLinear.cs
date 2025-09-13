@@ -23,4 +23,6 @@ public partial interface C_OP_RampScalarLinear : CParticleFunctionOperator {
   public ParticleAttributeIndex_t Field { get; }
   
   public ref bool ProportionalOp { get; }
+
+
 }

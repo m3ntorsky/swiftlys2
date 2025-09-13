@@ -9,4 +9,6 @@ public partial interface CSpeedScaleUpdateNode : CUnaryUpdateNode {
 
   
   public CAnimParamHandle ParamIndex { get; }
+
+
 }

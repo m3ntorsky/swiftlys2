@@ -19,4 +19,6 @@ public partial interface CPhysLength : CPhysConstraint {
   public ref float TotalLength { get; }
   
   public ref bool EnableCollision { get; }
+
+
 }

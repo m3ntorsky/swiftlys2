@@ -19,4 +19,6 @@ public partial interface C_INIT_RandomNamedModelElement : CParticleFunctionIniti
   public ref bool ModelFromRenderer { get; }
   
   public ParticleAttributeIndex_t FieldOutput { get; }
+
+
 }

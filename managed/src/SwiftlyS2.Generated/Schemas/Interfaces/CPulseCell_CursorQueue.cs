@@ -9,4 +9,6 @@ public partial interface CPulseCell_CursorQueue : CPulseCell_WaitForCursorsWithT
 
   
   public ref int CursorsAllowedToRunParallel { get; }
+
+
 }

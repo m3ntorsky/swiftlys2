@@ -37,4 +37,7 @@ public partial interface CTriggerLook : CTriggerOnce {
   public CEntityIOOutput OnStartLook { get; }
   
   public CEntityIOOutput OnEndLook { get; }
+
+  public void TestOcclusionUpdated();
+  public void TestAllVisibleOcclusionUpdated();
 }

@@ -9,4 +9,6 @@ public partial interface CPulseCell_Outflow_ListenForEntityOutput__CursorState_t
 
   
   public ref CHandle<CBaseEntity> Entity { get; }
+
+
 }

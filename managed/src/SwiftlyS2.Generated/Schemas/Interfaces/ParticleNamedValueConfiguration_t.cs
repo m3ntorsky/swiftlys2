@@ -19,4 +19,6 @@ public partial interface ParticleNamedValueConfiguration_t : ISchemaClass {
   public ref CUtlString StrEntityScope { get; }
   
   public ref CUtlString StrAttachmentName { get; }
+
+
 }

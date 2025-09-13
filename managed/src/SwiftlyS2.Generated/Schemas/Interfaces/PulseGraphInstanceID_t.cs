@@ -9,4 +9,6 @@ public partial interface PulseGraphInstanceID_t : ISchemaClass {
 
   
   public ref uint Value { get; }
+
+
 }

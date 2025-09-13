@@ -21,4 +21,6 @@ public partial interface CSosGroupActionSoundeventClusterSchema : CSosGroupActio
   public ref CUtlString GroupBoundingBoxMinsOpvar { get; }
   
   public ref CUtlString GroupBoundingBoxMaxsOpvar { get; }
+
+
 }

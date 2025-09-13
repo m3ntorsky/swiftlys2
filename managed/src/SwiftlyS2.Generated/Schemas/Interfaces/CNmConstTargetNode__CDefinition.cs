@@ -9,4 +9,6 @@ public partial interface CNmConstTargetNode__CDefinition : CNmTargetValueNode__C
 
   
   public CNmTarget Value { get; }
+
+
 }

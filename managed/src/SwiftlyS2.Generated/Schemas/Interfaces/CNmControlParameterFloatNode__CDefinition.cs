@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmControlParameterFloatNode__CDefinition : CNmFloatValueNode__CDefinition {
 
 
+
+
 }

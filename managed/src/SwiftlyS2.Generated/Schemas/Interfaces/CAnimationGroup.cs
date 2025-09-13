@@ -24,4 +24,6 @@ public partial interface CAnimationGroup : ISchemaClass {
   
 // CUtlVector< CStrongHandleVoid >
   public ref CUtlVector AdditionalExtRefs { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CNmSkeleton__SecondarySkeleton_t : ISchemaClass {
   public ref CGlobalSymbol AttachToBoneID { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton { get; }
+
+
 }

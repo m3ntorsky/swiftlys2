@@ -9,4 +9,6 @@ public partial interface C_OP_SetSimulationRate : CParticleFunctionPreEmission {
 
   
   public CParticleCollectionFloatInput SimulationScale { get; }
+
+
 }

@@ -23,4 +23,6 @@ public partial interface C_OP_SetPerChildControlPointFromAttribute : CParticleFu
   public ParticleAttributeIndex_t AttributeToRead { get; }
   
   public ref int CPField { get; }
+
+
 }

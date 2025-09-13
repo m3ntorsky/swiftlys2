@@ -17,4 +17,10 @@ public partial interface CEnvParticleGlow : CParticleSystem {
   public ref Color ColorTint { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureOverride { get; }
+
+  public void AlphaScaleUpdated();
+  public void RadiusScaleUpdated();
+  public void SelfIllumScaleUpdated();
+  public void ColorTintUpdated();
+  public void TextureOverrideUpdated();
 }

@@ -11,4 +11,6 @@ public partial interface CFlexOp : ISchemaClass {
   public ref FlexOpCode_t OpCode { get; }
   
   public ref int Data { get; }
+
+
 }

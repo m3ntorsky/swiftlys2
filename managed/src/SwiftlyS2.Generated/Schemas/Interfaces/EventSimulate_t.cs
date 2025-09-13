@@ -13,4 +13,6 @@ public partial interface EventSimulate_t : ISchemaClass {
   public ref bool FirstTick { get; }
   
   public ref bool LastTick { get; }
+
+
 }

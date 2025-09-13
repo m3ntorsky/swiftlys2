@@ -13,4 +13,6 @@ public partial interface CGunTarget : CBaseToggle {
   public ref CHandle<CBaseEntity> TargetEnt { get; }
   
   public CEntityIOOutput OnDeath { get; }
+
+
 }

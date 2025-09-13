@@ -27,4 +27,6 @@ public partial interface CEnvShake : CPointEntity {
   public ref Vector MaxForce { get; }
   
   public CPhysicsShake ShakeCallback { get; }
+
+
 }

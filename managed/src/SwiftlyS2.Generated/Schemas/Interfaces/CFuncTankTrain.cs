@@ -9,4 +9,6 @@ public partial interface CFuncTankTrain : CFuncTrackTrain {
 
   
   public CEntityIOOutput OnDeath { get; }
+
+
 }

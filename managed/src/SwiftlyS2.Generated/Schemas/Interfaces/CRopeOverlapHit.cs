@@ -11,4 +11,6 @@ public partial interface CRopeOverlapHit : ISchemaClass {
   public ref CHandle<CBaseEntity> Entity { get; }
   
   public ref CUtlVector<int> OverlappingLinks { get; }
+
+
 }

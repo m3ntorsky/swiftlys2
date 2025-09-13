@@ -29,4 +29,6 @@ public partial interface C_INIT_InitFromCPSnapshot : CParticleFunctionInitialize
   public ref int RandomSeed { get; }
   
   public ref bool LocalSpaceAngles { get; }
+
+
 }

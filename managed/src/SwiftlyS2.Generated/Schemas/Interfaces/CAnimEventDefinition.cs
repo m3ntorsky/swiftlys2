@@ -21,4 +21,6 @@ public partial interface CAnimEventDefinition : ISchemaClass {
   public ref CBufferString LegacyOptions { get; }
   
   public ref CGlobalSymbol EventName { get; }
+
+
 }

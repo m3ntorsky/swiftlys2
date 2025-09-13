@@ -13,4 +13,6 @@ public partial interface FeQuad_t : ISchemaClass {
   public ref float Slack { get; }
   
   public ISchemaFixedArray<Vector4D> Shape { get; }
+
+
 }

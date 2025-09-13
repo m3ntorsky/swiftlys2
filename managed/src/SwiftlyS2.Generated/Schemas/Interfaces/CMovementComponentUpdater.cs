@@ -24,4 +24,6 @@ public partial interface CMovementComponentUpdater : CAnimComponentUpdater {
   public ref bool NetworkFacing { get; }
   
   public SchemaUntypedField ParamHandles { get; }
+
+
 }

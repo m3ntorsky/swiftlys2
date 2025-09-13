@@ -15,4 +15,6 @@ public partial interface C_OP_SetSingleControlPointPosition : CParticleFunctionP
   public CParticleCollectionVecInput CP1Pos { get; }
   
   public CParticleTransformInput TransformInput { get; }
+
+
 }

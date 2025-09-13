@@ -15,4 +15,6 @@ public partial interface FeNodeWindBase_t : ISchemaClass {
   public ref ushort NodeY0 { get; }
   
   public ref ushort NodeY1 { get; }
+
+
 }

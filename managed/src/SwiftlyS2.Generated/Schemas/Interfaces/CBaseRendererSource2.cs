@@ -137,4 +137,6 @@ public partial interface CBaseRendererSource2 : CParticleFunctionRenderer {
   public ref bool BlendFramesSeq0 { get; }
   
   public ref bool MaxLuminanceBlendingSequence0 { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CPulseCell_LerpCameraSettings__CursorState_t : CPulseCe
   public PointCameraSettings_t OverlaidStart { get; }
   
   public PointCameraSettings_t OverlaidEnd { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CInfoDynamicShadowHintBox : CInfoDynamicShadowHint {
   public ref Vector BoxMins { get; }
   
   public ref Vector BoxMaxs { get; }
+
+
 }

@@ -14,4 +14,6 @@ public partial interface CRenderSkeleton : ISchemaClass {
   public ref CUtlVector<int> BoneParents { get; }
   
   public ref int BoneWeightCount { get; }
+
+
 }

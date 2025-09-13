@@ -27,4 +27,6 @@ public partial interface C_OP_CycleScalar : CParticleFunctionOperator {
   public ref int CPFieldMax { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
+
+
 }

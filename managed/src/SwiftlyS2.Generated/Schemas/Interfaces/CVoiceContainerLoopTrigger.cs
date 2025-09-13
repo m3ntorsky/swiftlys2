@@ -17,4 +17,6 @@ public partial interface CVoiceContainerLoopTrigger : CVoiceContainerBase {
   public ref float FadeTime { get; }
   
   public ref bool CrossFade { get; }
+
+
 }

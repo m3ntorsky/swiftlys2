@@ -9,4 +9,6 @@ public partial interface C_OP_RenderPoints : CParticleFunctionRenderer {
 
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
+
+
 }

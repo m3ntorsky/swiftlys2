@@ -25,4 +25,6 @@ public partial interface CSoundOpvarSetAABBEntity : CSoundOpvarSetPointEntity {
   public ref Vector OuterMins { get; }
   
   public ref Vector OuterMaxs { get; }
+
+
 }

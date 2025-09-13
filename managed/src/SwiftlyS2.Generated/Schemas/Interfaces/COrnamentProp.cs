@@ -9,4 +9,6 @@ public partial interface COrnamentProp : CDynamicProp {
 
   
   public ref CUtlSymbolLarge InitialOwner { get; }
+
+
 }

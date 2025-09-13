@@ -9,4 +9,6 @@ public partial interface CSkillFloat : ISchemaClass {
 
   
   public ISchemaFixedArray<float> Value { get; }
+
+
 }

@@ -29,4 +29,6 @@ public partial interface FeSDFRigid_t : ISchemaClass {
   public ref int Height { get; }
   
   public ref int Depth { get; }
+
+
 }

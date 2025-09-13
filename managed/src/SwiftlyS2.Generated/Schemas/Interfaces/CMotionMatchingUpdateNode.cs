@@ -54,4 +54,6 @@ public partial interface CMotionMatchingUpdateNode : CLeafUpdateNode {
   public ref float DistanceScale_MinScale { get; }
   
   public ref bool EnableDistanceScaling { get; }
+
+
 }

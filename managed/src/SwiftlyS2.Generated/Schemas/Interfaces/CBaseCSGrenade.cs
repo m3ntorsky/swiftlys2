@@ -33,4 +33,18 @@ public partial interface CBaseCSGrenade : CCSWeaponBase {
   public ref float NextHoldFrac { get; }
   
   public ref CHandle<CCSWeaponBase> SwitchToWeaponAfterThrow { get; }
+
+  public void RedrawUpdated();
+  public void IsHeldByPlayerUpdated();
+  public void PinPulledUpdated();
+  public void JumpThrowUpdated();
+  public void ThrowAnimatingUpdated();
+  public void ThrowTimeUpdated();
+  public void ThrowStrengthUpdated();
+  public void DropTimeUpdated();
+  public void PinPullTimeUpdated();
+  public void JustPulledPinUpdated();
+  public void NextHoldTickUpdated();
+  public void NextHoldFracUpdated();
+  public void SwitchToWeaponAfterThrowUpdated();
 }

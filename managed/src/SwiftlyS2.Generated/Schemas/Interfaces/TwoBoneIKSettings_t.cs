@@ -37,4 +37,6 @@ public partial interface TwoBoneIKSettings_t : ISchemaClass {
   public ref bool ConstrainTwist { get; }
   
   public ref float MaxTwist { get; }
+
+
 }

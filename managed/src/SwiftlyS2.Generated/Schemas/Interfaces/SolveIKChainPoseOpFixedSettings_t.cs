@@ -10,4 +10,6 @@ public partial interface SolveIKChainPoseOpFixedSettings_t : ISchemaClass {
   
 // CUtlVector< ChainToSolveData_t >
   public ref CUtlVector ChainsToSolveData { get; }
+
+
 }

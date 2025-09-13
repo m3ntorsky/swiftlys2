@@ -9,4 +9,6 @@ public partial interface PointDefinitionWithTimeValues_t : PointDefinition_t {
 
   
   public ref float TimeDuration { get; }
+
+
 }

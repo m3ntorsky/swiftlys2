@@ -11,4 +11,6 @@ public partial interface CAnimUserDifference : ISchemaClass {
   public ref CBufferString Name { get; }
   
   public ref int Type { get; }
+
+
 }

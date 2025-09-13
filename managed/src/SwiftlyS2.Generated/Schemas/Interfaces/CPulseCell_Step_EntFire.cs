@@ -9,4 +9,6 @@ public partial interface CPulseCell_Step_EntFire : CPulseCell_BaseFlow {
 
   
   public ref CUtlString Input { get; }
+
+
 }

@@ -19,4 +19,6 @@ public partial interface C_INIT_RemapInitialDirectionToTransformToVector : CPart
   public ref Vector OffsetAxis { get; }
   
   public ref bool Normalize { get; }
+
+
 }

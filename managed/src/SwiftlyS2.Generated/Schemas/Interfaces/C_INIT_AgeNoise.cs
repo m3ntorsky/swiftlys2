@@ -23,4 +23,6 @@ public partial interface C_INIT_AgeNoise : CParticleFunctionInitializer {
   public ref float NoiseScaleLoc { get; }
   
   public ref Vector OffsetLoc { get; }
+
+
 }

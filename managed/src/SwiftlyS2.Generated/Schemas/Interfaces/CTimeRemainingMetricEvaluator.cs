@@ -15,4 +15,6 @@ public partial interface CTimeRemainingMetricEvaluator : CMotionMetricEvaluator 
   public ref bool FilterByTimeRemaining { get; }
   
   public ref float MinTimeRemaining { get; }
+
+
 }

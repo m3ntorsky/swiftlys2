@@ -15,4 +15,6 @@ public partial interface C_INIT_RemapInitialTransformDirectionToRotation : CPart
   public ref float OffsetRot { get; }
   
   public ref int Component { get; }
+
+
 }

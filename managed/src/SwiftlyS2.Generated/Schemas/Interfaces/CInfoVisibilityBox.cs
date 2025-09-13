@@ -13,4 +13,8 @@ public partial interface CInfoVisibilityBox : CBaseEntity {
   public ref Vector BoxSize { get; }
   
   public ref bool Enabled { get; }
+
+  public void ModeUpdated();
+  public void BoxSizeUpdated();
+  public void EnabledUpdated();
 }

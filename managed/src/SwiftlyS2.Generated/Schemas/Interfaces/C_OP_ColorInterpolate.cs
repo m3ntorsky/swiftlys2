@@ -17,4 +17,6 @@ public partial interface C_OP_ColorInterpolate : CParticleFunctionOperator {
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ref bool EaseInOut { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CPulseCell_SoundEventStart : CPulseCell_BaseFlow {
 
   
   public ref SoundEventStartType_t Type { get; }
+
+
 }

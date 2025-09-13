@@ -15,4 +15,6 @@ public partial interface C_OP_PlaneCull : CParticleFunctionOperator {
   public ref bool LocalSpace { get; }
   
   public ref float PlaneOffset { get; }
+
+
 }

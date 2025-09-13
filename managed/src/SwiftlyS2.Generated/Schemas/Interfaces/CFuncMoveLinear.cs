@@ -33,4 +33,6 @@ public partial interface CFuncMoveLinear : CBaseToggle {
   public ref bool AllowMovableNavMeshDockingOnEntireEntity { get; }
   
   public ref bool CreateNavObstacle { get; }
+
+
 }

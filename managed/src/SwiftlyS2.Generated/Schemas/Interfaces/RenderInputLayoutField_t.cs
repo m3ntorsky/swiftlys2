@@ -19,4 +19,6 @@ public partial interface RenderInputLayoutField_t : ISchemaClass {
   public ref RenderSlotType_t SlotType { get; }
   
   public ISchemaFixedString ShaderSemantic { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CNmBoneWeightList : ISchemaClass {
   public ref CUtlVector<CGlobalSymbol> BoneIDs { get; }
   
   public ref CUtlVector<float> Weights { get; }
+
+
 }

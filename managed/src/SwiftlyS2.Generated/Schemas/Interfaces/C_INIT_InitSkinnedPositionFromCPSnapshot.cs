@@ -45,4 +45,6 @@ public partial interface C_INIT_InitSkinnedPositionFromCPSnapshot : CParticleFun
   public ref bool CopyAlpha { get; }
   
   public ref bool SetRadius { get; }
+
+
 }

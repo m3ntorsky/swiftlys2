@@ -17,4 +17,6 @@ public partial interface CNmRootMotionData : ISchemaClass {
   public ref float AverageAngularVelocityRadians { get; }
   
   public ref CTransform TotalDelta { get; }
+
+
 }

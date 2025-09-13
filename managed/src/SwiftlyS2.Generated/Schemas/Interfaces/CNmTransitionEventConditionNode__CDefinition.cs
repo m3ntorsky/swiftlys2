@@ -15,4 +15,6 @@ public partial interface CNmTransitionEventConditionNode__CDefinition : CNmBoolV
   public ref short SourceStateNodeIdx { get; }
   
   public ref NmTransitionRuleCondition_t RuleCondition { get; }
+
+
 }

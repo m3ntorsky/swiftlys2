@@ -13,4 +13,6 @@ public partial interface C_OP_RenderPostProcessing : CParticleFunctionRenderer {
   public ref CStrongHandle<InfoForResourceTypeCPostProcessingResource> PostTexture { get; }
   
   public ref ParticlePostProcessPriorityGroup_t Priority { get; }
+
+
 }

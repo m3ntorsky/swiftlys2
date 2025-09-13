@@ -31,4 +31,6 @@ public partial interface FeVertexMapDesc_t : ISchemaClass {
   public ref short ScaleSourceNode { get; }
   
   public ref ushort NodeListCount { get; }
+
+
 }

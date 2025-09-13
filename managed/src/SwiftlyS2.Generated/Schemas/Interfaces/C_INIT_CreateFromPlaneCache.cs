@@ -13,4 +13,6 @@ public partial interface C_INIT_CreateFromPlaneCache : CParticleFunctionInitiali
   public ref Vector OffsetMax { get; }
   
   public ref bool UseNormal { get; }
+
+
 }

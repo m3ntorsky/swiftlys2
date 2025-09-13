@@ -23,4 +23,6 @@ public partial interface CSeqAutoLayerFlag : ISchemaClass {
   public ref bool FetchFrame { get; }
   
   public ref bool Subtract { get; }
+
+
 }

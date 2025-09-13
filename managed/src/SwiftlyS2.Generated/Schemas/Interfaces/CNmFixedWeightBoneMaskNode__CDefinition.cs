@@ -9,4 +9,6 @@ public partial interface CNmFixedWeightBoneMaskNode__CDefinition : CNmBoneMaskVa
 
   
   public ref float BoneWeight { get; }
+
+
 }

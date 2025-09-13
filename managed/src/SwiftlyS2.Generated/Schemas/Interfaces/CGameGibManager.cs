@@ -15,4 +15,6 @@ public partial interface CGameGibManager : CBaseEntity {
   public ref int MaxPieces { get; }
   
   public ref int LastFrame { get; }
+
+
 }

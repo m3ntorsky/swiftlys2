@@ -9,4 +9,6 @@ public partial interface CPointClientUIWorldTextPanel : CPointClientUIWorldPanel
 
   
   public ISchemaFixedString MessageText { get; }
+
+  public void MessageTextUpdated();
 }

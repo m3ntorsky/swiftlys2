@@ -11,4 +11,6 @@ public partial interface CNmParameterizedBlendNode__Parameterization_t : ISchema
   public SchemaUntypedField BlendRanges { get; }
   
   public SchemaUntypedField ParameterRange { get; }
+
+
 }

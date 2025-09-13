@@ -25,4 +25,6 @@ public partial interface C_OP_DifferencePreviousParticle : CParticleFunctionOper
   public ref bool ActiveRange { get; }
   
   public ref bool SetPreviousParticle { get; }
+
+
 }

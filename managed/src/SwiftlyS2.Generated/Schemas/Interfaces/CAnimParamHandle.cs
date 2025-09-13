@@ -11,4 +11,6 @@ public partial interface CAnimParamHandle : ISchemaClass {
   public ref AnimParamType_t Type { get; }
   
   public ref byte Index { get; }
+
+
 }

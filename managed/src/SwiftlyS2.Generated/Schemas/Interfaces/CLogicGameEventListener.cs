@@ -17,4 +17,6 @@ public partial interface CLogicGameEventListener : CLogicalEntity {
   public ref bool Enabled { get; }
   
   public ref bool StartDisabled { get; }
+
+  public void EnabledUpdated();
 }

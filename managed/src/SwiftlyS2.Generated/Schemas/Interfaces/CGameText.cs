@@ -11,4 +11,6 @@ public partial interface CGameText : CRulePointEntity {
   public ref CUtlSymbolLarge Message { get; }
   
   public hudtextparms_t TextParms { get; }
+
+
 }

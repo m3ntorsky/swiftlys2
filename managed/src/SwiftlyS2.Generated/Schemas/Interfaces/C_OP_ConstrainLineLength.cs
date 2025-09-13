@@ -11,4 +11,6 @@ public partial interface C_OP_ConstrainLineLength : CParticleFunctionConstraint 
   public ref float MinDistance { get; }
   
   public ref float MaxDistance { get; }
+
+
 }

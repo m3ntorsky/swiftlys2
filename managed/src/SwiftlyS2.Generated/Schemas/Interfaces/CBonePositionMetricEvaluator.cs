@@ -9,4 +9,6 @@ public partial interface CBonePositionMetricEvaluator : CMotionMetricEvaluator {
 
   
   public ref int BoneIndex { get; }
+
+
 }

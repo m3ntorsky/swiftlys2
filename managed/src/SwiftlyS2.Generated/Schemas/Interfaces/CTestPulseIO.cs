@@ -23,4 +23,6 @@ public partial interface CTestPulseIO : CLogicalEntity {
   public CEntityIOOutput OnVariantVector { get; }
   
   public ref bool AllowEmptyInputs { get; }
+
+
 }

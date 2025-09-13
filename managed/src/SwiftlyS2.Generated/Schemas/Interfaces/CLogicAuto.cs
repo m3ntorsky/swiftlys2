@@ -29,4 +29,6 @@ public partial interface CLogicAuto : CBaseEntity {
   public CEntityIOOutput OnVRNotEnabled { get; }
   
   public ref CUtlSymbolLarge Globalstate { get; }
+
+
 }

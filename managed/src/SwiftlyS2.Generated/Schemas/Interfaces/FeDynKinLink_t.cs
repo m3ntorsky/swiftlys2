@@ -11,4 +11,6 @@ public partial interface FeDynKinLink_t : ISchemaClass {
   public ref ushort Parent { get; }
   
   public ref ushort Child { get; }
+
+
 }

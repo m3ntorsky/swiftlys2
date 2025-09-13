@@ -9,4 +9,6 @@ public partial interface CModelConfigElement_SetRenderColor : CModelConfigElemen
 
   
   public ref Color Color { get; }
+
+
 }

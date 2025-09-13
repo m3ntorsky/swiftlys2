@@ -11,4 +11,6 @@ public partial interface CPathHelperUpdateNode : CUnaryUpdateNode {
   public ref float StoppingRadius { get; }
   
   public ref float StoppingSpeedScale { get; }
+
+
 }

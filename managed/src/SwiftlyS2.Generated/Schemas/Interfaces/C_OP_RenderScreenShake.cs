@@ -25,4 +25,6 @@ public partial interface C_OP_RenderScreenShake : CParticleFunctionRenderer {
   public ParticleAttributeIndex_t AmplitudeField { get; }
   
   public ref int FilterCP { get; }
+
+
 }

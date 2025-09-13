@@ -13,4 +13,6 @@ public partial interface VMixOscDesc_t : ISchemaClass {
   public ref float Freq { get; }
   
   public ref float Phase { get; }
+
+
 }

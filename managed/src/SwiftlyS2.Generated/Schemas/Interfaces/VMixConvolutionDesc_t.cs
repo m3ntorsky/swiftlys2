@@ -23,4 +23,6 @@ public partial interface VMixConvolutionDesc_t : ISchemaClass {
   public ref float LowCutoffFreq { get; }
   
   public ref float HighCutoffFreq { get; }
+
+
 }

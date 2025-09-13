@@ -37,4 +37,6 @@ public partial interface CBreakable : CBaseModelEntity {
   public ref CHandle<CBasePlayerPawn> PhysicsAttacker { get; }
   
   public GameTime_t LastPhysicsInfluenceTime { get; }
+
+  public void CPropDataComponentUpdated();
 }

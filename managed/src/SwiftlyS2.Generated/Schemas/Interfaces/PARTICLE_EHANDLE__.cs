@@ -9,4 +9,6 @@ public partial interface PARTICLE_EHANDLE__ : ISchemaClass {
 
   
   public ref int Unused { get; }
+
+
 }

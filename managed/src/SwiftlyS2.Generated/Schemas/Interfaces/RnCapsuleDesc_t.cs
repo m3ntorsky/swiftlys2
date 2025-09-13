@@ -9,4 +9,6 @@ public partial interface RnCapsuleDesc_t : RnShapeDesc_t {
 
   
   public RnCapsule_t Capsule { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CCommentaryAuto : CBaseEntity {
   public CEntityIOOutput OnCommentaryMidGame { get; }
   
   public CEntityIOOutput OnCommentaryMultiplayerSpawn { get; }
+
+
 }

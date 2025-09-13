@@ -13,4 +13,6 @@ public partial interface C_OP_DirectionBetweenVecsToVec : CParticleFunctionOpera
   public CPerParticleVecInput Point1 { get; }
   
   public CPerParticleVecInput Point2 { get; }
+
+
 }

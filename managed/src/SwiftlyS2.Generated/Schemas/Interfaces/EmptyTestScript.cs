@@ -9,4 +9,6 @@ public partial interface EmptyTestScript : CAnimScriptBase {
 
   
   public SchemaUntypedField Test { get; }
+
+
 }

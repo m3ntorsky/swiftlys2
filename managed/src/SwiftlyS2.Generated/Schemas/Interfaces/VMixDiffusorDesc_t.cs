@@ -15,4 +15,6 @@ public partial interface VMixDiffusorDesc_t : ISchemaClass {
   public ref float Feedback { get; }
   
   public ref float OutputGain { get; }
+
+
 }

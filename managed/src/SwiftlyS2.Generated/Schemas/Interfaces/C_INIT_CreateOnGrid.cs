@@ -27,4 +27,6 @@ public partial interface C_INIT_CreateOnGrid : CParticleFunctionInitializer {
   public ref bool Center { get; }
   
   public ref bool Hollow { get; }
+
+
 }

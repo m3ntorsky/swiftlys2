@@ -10,4 +10,6 @@ public partial interface CAnimScriptManager : ISchemaClass {
   
 // CUtlVector< ScriptInfo_t >
   public ref CUtlVector ScriptInfo { get; }
+
+
 }

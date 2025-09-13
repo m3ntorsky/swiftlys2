@@ -11,4 +11,6 @@ public partial interface CPulseCell_Timeline__TimelineEvent_t : ISchemaClass {
   public ref float TimeFromPrevious { get; }
   
   public CPulse_OutflowConnection EventOutflow { get; }
+
+
 }

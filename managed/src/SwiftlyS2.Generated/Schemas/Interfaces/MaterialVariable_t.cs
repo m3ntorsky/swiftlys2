@@ -13,4 +13,6 @@ public partial interface MaterialVariable_t : ISchemaClass {
   public ParticleAttributeIndex_t VariableField { get; }
   
   public ref float Scale { get; }
+
+
 }

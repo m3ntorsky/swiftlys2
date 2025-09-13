@@ -15,4 +15,6 @@ public partial interface CFuncElectrifiedVolume : CFuncBrush {
   public ref CUtlSymbolLarge EffectZapName { get; }
   
   public ref CUtlSymbolLarge EffectSource { get; }
+
+  public void EffectNameUpdated();
 }

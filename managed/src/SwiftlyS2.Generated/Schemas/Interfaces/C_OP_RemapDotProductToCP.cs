@@ -23,4 +23,6 @@ public partial interface C_OP_RemapDotProductToCP : CParticleFunctionPreEmission
   public CParticleCollectionFloatInput OutputMin { get; }
   
   public CParticleCollectionFloatInput OutputMax { get; }
+
+
 }

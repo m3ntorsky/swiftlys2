@@ -16,4 +16,6 @@ public partial interface World_t : ISchemaClass {
   public BakedLightingInfo_t WorldLightingInfo { get; }
   
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCEntityLump>> EntityLumps { get; }
+
+
 }

@@ -30,4 +30,6 @@ public partial interface LookAtOpFixedSettings_t : ISchemaClass {
   public ref bool TargetIsPosition { get; }
   
   public ref bool UseHysteresis { get; }
+
+
 }

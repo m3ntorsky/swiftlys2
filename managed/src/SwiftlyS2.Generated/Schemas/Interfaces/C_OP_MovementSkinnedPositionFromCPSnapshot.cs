@@ -31,4 +31,6 @@ public partial interface C_OP_MovementSkinnedPositionFromCPSnapshot : CParticleF
   public CParticleCollectionFloatInput SnapShotStartPoint { get; }
   
   public CPerParticleFloatInput Interpolation { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface C_INIT_RandomYawFlip : CParticleFunctionInitializer {
 
   
   public ref float Percent { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface C_OP_DampenToCP : CParticleFunctionOperator {
   public ref float Range { get; }
   
   public ref float Scale { get; }
+
+
 }

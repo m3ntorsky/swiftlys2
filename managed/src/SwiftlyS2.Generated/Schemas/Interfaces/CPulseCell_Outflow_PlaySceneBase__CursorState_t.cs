@@ -11,4 +11,6 @@ public partial interface CPulseCell_Outflow_PlaySceneBase__CursorState_t : ISche
   public ref CHandle<CBaseEntity> SceneInstance { get; }
   
   public ref CHandle<CBaseEntity> MainActor { get; }
+
+
 }

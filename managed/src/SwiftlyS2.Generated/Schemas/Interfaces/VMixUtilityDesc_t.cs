@@ -19,4 +19,6 @@ public partial interface VMixUtilityDesc_t : ISchemaClass {
   public ref bool BassMono { get; }
   
   public ref float BassFreq { get; }
+
+
 }

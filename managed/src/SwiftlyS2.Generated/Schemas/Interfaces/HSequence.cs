@@ -9,4 +9,6 @@ public partial interface HSequence : ISchemaClass {
 
   
   public ref int Value { get; }
+
+
 }

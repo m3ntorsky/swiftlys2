@@ -15,4 +15,6 @@ public partial interface CLogicActiveAutosave : CLogicAutosave {
   public GameTime_t StartTime { get; }
   
   public ref float DangerousTime { get; }
+
+
 }

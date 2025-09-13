@@ -9,4 +9,6 @@ public partial interface CFilterTeam : CBaseFilter {
 
   
   public ref int FilterTeam { get; }
+
+
 }

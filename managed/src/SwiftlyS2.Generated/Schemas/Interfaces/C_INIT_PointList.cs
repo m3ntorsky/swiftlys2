@@ -18,4 +18,6 @@ public partial interface C_INIT_PointList : CParticleFunctionInitializer {
   public ref bool ClosedLoop { get; }
   
   public ref int NumPointsAlongPath { get; }
+
+
 }

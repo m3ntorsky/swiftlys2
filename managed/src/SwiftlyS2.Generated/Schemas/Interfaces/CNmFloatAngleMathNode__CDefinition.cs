@@ -11,4 +11,6 @@ public partial interface CNmFloatAngleMathNode__CDefinition : CNmFloatValueNode_
   public ref short InputValueNodeIdx { get; }
   
   public ref CNmFloatAngleMathNode__Operation_t Operation { get; }
+
+
 }

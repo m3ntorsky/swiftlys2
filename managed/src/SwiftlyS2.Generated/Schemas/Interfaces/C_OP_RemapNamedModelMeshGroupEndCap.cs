@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapNamedModelMeshGroupEndCap : C_OP_RemapNamedModelElementEndCap {
 
 
+
+
 }

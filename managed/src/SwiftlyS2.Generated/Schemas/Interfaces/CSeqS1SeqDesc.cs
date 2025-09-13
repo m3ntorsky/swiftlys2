@@ -33,4 +33,6 @@ public partial interface CSeqS1SeqDesc : ISchemaClass {
   
 // CUtlVector< CFootMotion >
   public ref CUtlVector FootMotion { get; }
+
+
 }

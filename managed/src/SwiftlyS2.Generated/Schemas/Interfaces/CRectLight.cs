@@ -9,4 +9,6 @@ public partial interface CRectLight : CBarnLight {
 
   
   public ref bool ShowLight { get; }
+
+  public void ShowLightUpdated();
 }

@@ -9,4 +9,6 @@ public partial interface CRagdollAnimTag : CAnimTagBase {
 
   
   public ref CGlobalSymbol ProfileName { get; }
+
+
 }

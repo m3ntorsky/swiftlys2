@@ -9,4 +9,6 @@ public partial interface CStopwatchBase : CSimpleSimTimer {
 
   
   public ref bool IsRunning { get; }
+
+
 }

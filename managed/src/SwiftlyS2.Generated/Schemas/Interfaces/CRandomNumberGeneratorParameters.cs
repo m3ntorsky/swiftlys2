@@ -11,4 +11,6 @@ public partial interface CRandomNumberGeneratorParameters : ISchemaClass {
   public ref bool DistributeEvenly { get; }
   
   public ref int Seed { get; }
+
+
 }

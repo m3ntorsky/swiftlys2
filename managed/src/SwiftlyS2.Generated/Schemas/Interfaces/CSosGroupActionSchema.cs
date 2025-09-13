@@ -13,4 +13,6 @@ public partial interface CSosGroupActionSchema : ISchemaClass {
   public ref ActionType_t ActionType { get; }
   
   public ref ActionType_t ActionInstanceType { get; }
+
+
 }

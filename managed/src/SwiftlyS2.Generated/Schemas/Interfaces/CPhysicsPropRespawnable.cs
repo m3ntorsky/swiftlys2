@@ -17,4 +17,6 @@ public partial interface CPhysicsPropRespawnable : CPhysicsProp {
   public ref Vector OriginalMaxs { get; }
   
   public ref float RespawnDuration { get; }
+
+
 }

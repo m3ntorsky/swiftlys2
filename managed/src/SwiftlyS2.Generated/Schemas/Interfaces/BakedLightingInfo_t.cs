@@ -30,4 +30,6 @@ public partial interface BakedLightingInfo_t : ISchemaClass {
   
 // CUtlVector< BakedLightingInfo_t::BakedShadowAssignment_t >
   public ref CUtlVector BakedShadows { get; }
+
+
 }

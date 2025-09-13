@@ -43,4 +43,23 @@ public partial interface CEnvVolumetricFogVolume : CBaseEntity {
   public ref bool OverrideSunLightStrength { get; }
   
   public ref bool OverrideNoiseStrength { get; }
+
+  public void ActiveUpdated();
+  public void BoxMinsUpdated();
+  public void BoxMaxsUpdated();
+  public void StartDisabledUpdated();
+  public void IndirectUseLPVsUpdated();
+  public void StrengthUpdated();
+  public void FalloffShapeUpdated();
+  public void FalloffExponentUpdated();
+  public void HeightFogDepthUpdated();
+  public void HeightFogEdgeWidthUpdated();
+  public void IndirectLightStrengthUpdated();
+  public void SunLightStrengthUpdated();
+  public void NoiseStrengthUpdated();
+  public void TintColorUpdated();
+  public void OverrideTintColorUpdated();
+  public void OverrideIndirectLightStrengthUpdated();
+  public void OverrideSunLightStrengthUpdated();
+  public void OverrideNoiseStrengthUpdated();
 }

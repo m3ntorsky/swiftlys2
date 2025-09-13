@@ -25,4 +25,6 @@ public partial interface C_OP_DistanceBetweenVecs : CParticleFunctionOperator {
   public ref ParticleSetMethod_t SetMethod { get; }
   
   public ref bool DeltaTime { get; }
+
+
 }

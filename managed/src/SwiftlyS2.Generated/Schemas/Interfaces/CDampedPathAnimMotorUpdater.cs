@@ -21,4 +21,6 @@ public partial interface CDampedPathAnimMotorUpdater : CPathAnimMotorUpdaterBase
   public ref float MinSpringTension { get; }
   
   public ref float MaxSpringTension { get; }
+
+
 }

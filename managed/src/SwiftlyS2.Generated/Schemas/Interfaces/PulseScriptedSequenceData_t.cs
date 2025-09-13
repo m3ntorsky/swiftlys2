@@ -31,4 +31,6 @@ public partial interface PulseScriptedSequenceData_t : ISchemaClass {
   public ref bool LoopPostIdleSequence { get; }
   
   public ref bool IgnoreLookAt { get; }
+
+
 }

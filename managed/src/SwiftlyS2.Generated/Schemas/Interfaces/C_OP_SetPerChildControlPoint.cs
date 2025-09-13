@@ -23,4 +23,6 @@ public partial interface C_OP_SetPerChildControlPoint : CParticleFunctionOperato
   public ParticleAttributeIndex_t OrientationField { get; }
   
   public ref bool NumBasedOnParticleCount { get; }
+
+
 }

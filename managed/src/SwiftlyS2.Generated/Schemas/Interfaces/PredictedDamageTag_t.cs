@@ -15,4 +15,9 @@ public partial interface PredictedDamageTag_t : ISchemaClass {
   public ref float FlinchModLarge { get; }
   
   public ref float FriendlyFireDamageReductionRatio { get; }
+
+  public void TagTickUpdated();
+  public void FlinchModSmallUpdated();
+  public void FlinchModLargeUpdated();
+  public void FriendlyFireDamageReductionRatioUpdated();
 }

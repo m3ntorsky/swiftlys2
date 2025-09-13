@@ -65,4 +65,6 @@ public partial interface C_OP_RenderSprites : CBaseRendererSource2 {
   public ref float ShadowDensity { get; }
   
   public CReplicationParameters ReplicationParameters { get; }
+
+
 }

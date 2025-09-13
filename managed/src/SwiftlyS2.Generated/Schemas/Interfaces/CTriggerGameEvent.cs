@@ -13,4 +13,8 @@ public partial interface CTriggerGameEvent : CBaseTrigger {
   public ref CUtlString StrEndTouchEventName { get; }
   
   public ref CUtlString StrTriggerID { get; }
+
+  public void StrStartTouchEventNameUpdated();
+  public void StrEndTouchEventNameUpdated();
+  public void StrTriggerIDUpdated();
 }

@@ -28,4 +28,6 @@ public partial interface ModelEmbeddedMesh_t : ISchemaClass {
   public ref int VBIBBlock { get; }
   
   public ref int ToolsVBBlock { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface C_INIT_VelocityFromNormal : CParticleFunctionInitialize
   public ref float SpeedMax { get; }
   
   public ref bool IgnoreDt { get; }
+
+
 }

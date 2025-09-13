@@ -13,4 +13,6 @@ public partial interface CSceneListManager : CLogicalEntity {
   public ISchemaFixedArray<CUtlSymbolLarge> Scenes { get; }
   
   public ISchemaFixedArray<CHandle<CBaseEntity>> Scenes1 { get; }
+
+
 }

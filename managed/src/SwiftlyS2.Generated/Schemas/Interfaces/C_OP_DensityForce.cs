@@ -13,4 +13,6 @@ public partial interface C_OP_DensityForce : CParticleFunctionForce {
   public ref float ForceScale { get; }
   
   public ref float TargetDensity { get; }
+
+
 }

@@ -27,4 +27,6 @@ public partial interface C_INIT_SetHitboxToModel : CParticleFunctionInitializer 
   public ISchemaFixedString HitboxSetName { get; }
   
   public CParticleCollectionFloatInput ShellSize { get; }
+
+
 }

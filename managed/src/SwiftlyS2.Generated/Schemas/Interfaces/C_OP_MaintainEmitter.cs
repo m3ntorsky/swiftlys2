@@ -25,4 +25,6 @@ public partial interface C_OP_MaintainEmitter : CParticleFunctionEmitter {
   public ref bool FinalEmitOnStop { get; }
   
   public CParticleCollectionFloatInput Scale { get; }
+
+
 }

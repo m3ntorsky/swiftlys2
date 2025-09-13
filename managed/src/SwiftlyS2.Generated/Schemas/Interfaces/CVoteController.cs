@@ -35,4 +35,10 @@ public partial interface CVoteController : CBaseEntity {
   public ref CUtlVector<PointerTo<CBaseIssue>> PotentialIssues { get; }
   
   public ref CUtlVector<CString> VoteOptions { get; }
+
+  public void ActiveIssueIndexUpdated();
+  public void OnlyTeamToVoteUpdated();
+  public void VoteOptionCountUpdated();
+  public void PotentialVotesUpdated();
+  public void IsYesNoVoteUpdated();
 }

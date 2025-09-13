@@ -13,4 +13,6 @@ public partial interface CNmFloatRemapNode__CDefinition : CNmFloatValueNode__CDe
   public CNmFloatRemapNode__RemapRange_t InputRange { get; }
   
   public CNmFloatRemapNode__RemapRange_t OutputRange { get; }
+
+
 }

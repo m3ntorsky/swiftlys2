@@ -10,4 +10,6 @@ public partial interface CHitBoxSetList : ISchemaClass {
   
 // CUtlVector< CHitBoxSet >
   public ref CUtlVector HitBoxSets { get; }
+
+
 }

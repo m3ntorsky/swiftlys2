@@ -29,4 +29,6 @@ public partial interface C_INIT_RemapCPtoScalar : CParticleFunctionInitializer {
   public ref ParticleSetMethod_t SetMethod { get; }
   
   public ref float RemapBias { get; }
+
+
 }

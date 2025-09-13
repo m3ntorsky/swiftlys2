@@ -11,4 +11,6 @@ public partial interface CBlendCurve : ISchemaClass {
   public ref float ControlPoint1 { get; }
   
   public ref float ControlPoint2 { get; }
+
+
 }

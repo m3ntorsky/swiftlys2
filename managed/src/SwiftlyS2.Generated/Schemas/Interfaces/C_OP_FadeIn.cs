@@ -15,4 +15,6 @@ public partial interface C_OP_FadeIn : CParticleFunctionOperator {
   public ref float FadeInTimeExp { get; }
   
   public ref bool Proportional { get; }
+
+
 }

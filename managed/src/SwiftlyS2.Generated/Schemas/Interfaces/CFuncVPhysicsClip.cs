@@ -9,4 +9,6 @@ public partial interface CFuncVPhysicsClip : CBaseModelEntity {
 
   
   public ref bool Disabled { get; }
+
+
 }

@@ -15,4 +15,6 @@ public partial interface C_OP_LagCompensation : CParticleFunctionOperator {
   public ref int LatencyCPField { get; }
   
   public ref int DesiredVelocityCPField { get; }
+
+
 }

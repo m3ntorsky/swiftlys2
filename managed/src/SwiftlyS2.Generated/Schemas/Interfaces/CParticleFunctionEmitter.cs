@@ -9,4 +9,6 @@ public partial interface CParticleFunctionEmitter : CParticleFunction {
 
   
   public ref int EmitterIndex { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CScriptNavBlocker : CFuncNavBlocker {
 
   
   public ref Vector Extent { get; }
+
+
 }

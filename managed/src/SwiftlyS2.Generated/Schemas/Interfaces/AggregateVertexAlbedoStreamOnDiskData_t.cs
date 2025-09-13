@@ -9,4 +9,6 @@ public partial interface AggregateVertexAlbedoStreamOnDiskData_t : ISchemaClass 
 
   
   public ref CUtlBinaryBlock BufferData { get; }
+
+
 }

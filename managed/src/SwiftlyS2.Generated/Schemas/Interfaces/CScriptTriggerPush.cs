@@ -9,4 +9,6 @@ public partial interface CScriptTriggerPush : CTriggerPush {
 
   
   public ref Vector Extent { get; }
+
+
 }

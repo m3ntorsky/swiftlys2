@@ -19,4 +19,6 @@ public partial interface C_OP_DecayMaintainCount : CParticleFunctionOperator {
   public CParticleCollectionFloatInput Scale { get; }
   
   public ref bool KillNewest { get; }
+
+
 }

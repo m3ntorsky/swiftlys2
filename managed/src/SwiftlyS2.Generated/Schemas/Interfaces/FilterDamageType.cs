@@ -9,4 +9,6 @@ public partial interface FilterDamageType : CBaseFilter {
 
   
   public ref int DamageType { get; }
+
+
 }

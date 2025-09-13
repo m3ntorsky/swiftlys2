@@ -9,4 +9,6 @@ public partial interface CPulseCell_Step_PublicOutput : CPulseCell_BaseFlow {
 
   
   public PulseRuntimeOutputIndex_t OutputIndex { get; }
+
+
 }

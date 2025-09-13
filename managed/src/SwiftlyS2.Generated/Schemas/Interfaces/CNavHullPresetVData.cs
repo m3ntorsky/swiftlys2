@@ -9,4 +9,6 @@ public partial interface CNavHullPresetVData : ISchemaClass {
 
   
   public ref CUtlVector<CUtlString> NavHulls { get; }
+
+
 }

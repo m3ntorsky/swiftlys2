@@ -17,4 +17,6 @@ public partial interface CFogVolume : CServerOnlyModelEntity {
   public ref bool Disabled { get; }
   
   public ref bool InFogVolumesList { get; }
+
+
 }

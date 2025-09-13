@@ -23,4 +23,6 @@ public partial interface NmCompressionSettings_t : ISchemaClass {
   public ref bool IsTranslationStatic { get; }
   
   public ref bool IsScaleStatic { get; }
+
+
 }

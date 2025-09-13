@@ -9,4 +9,6 @@ public partial interface CRemapFloat : ISchemaClass {
 
   
   public ISchemaFixedArray<float> Value { get; }
+
+
 }

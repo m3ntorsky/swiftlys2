@@ -21,4 +21,6 @@ public partial interface C_OP_ModelDampenMovement : CParticleFunctionOperator {
   public CPerParticleVecInput PosOffset { get; }
   
   public ref float Drag { get; }
+
+
 }

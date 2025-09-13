@@ -19,4 +19,6 @@ public partial interface C_INIT_CreateSequentialPathV2 : CParticleFunctionInitia
   public ref bool SaveOffset { get; }
   
   public CPathParameters PathParams { get; }
+
+
 }

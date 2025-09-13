@@ -15,4 +15,6 @@ public partial interface C_OP_RemapCPVelocityToVector : CParticleFunctionOperato
   public ref float Scale { get; }
   
   public ref bool Normalize { get; }
+
+
 }

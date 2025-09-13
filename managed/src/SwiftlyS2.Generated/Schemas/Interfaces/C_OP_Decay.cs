@@ -11,4 +11,6 @@ public partial interface C_OP_Decay : CParticleFunctionOperator {
   public ref bool RopeDecay { get; }
   
   public ref bool ForcePreserveParticleOrder { get; }
+
+
 }

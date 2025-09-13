@@ -23,4 +23,6 @@ public partial interface EntityIOConnectionData_t : ISchemaClass {
   public ref int TimesToFire { get; }
   
   public SchemaUntypedField ParamMap { get; }
+
+
 }

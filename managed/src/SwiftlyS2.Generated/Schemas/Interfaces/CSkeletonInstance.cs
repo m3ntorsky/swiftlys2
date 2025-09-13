@@ -23,4 +23,10 @@ public partial interface CSkeletonInstance : CGameSceneNode {
   public ref CUtlStringToken MaterialGroup { get; }
   
   public ref byte HitboxSet { get; }
+
+  public void ModelStateUpdated();
+  public void IsAnimationEnabledUpdated();
+  public void UseParentRenderBoundsUpdated();
+  public void MaterialGroupUpdated();
+  public void HitboxSetUpdated();
 }

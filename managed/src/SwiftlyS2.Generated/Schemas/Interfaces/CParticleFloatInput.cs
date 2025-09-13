@@ -101,4 +101,6 @@ public partial interface CParticleFloatInput : CParticleInput {
   public ref float BiasParameter { get; }
   
   public SchemaUntypedField Curve { get; }
+
+
 }

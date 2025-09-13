@@ -17,4 +17,6 @@ public partial interface C_INIT_VelocityRadialRandom : CParticleFunctionInitiali
   public ref Vector LocalCoordinateSystemSpeedScale { get; }
   
   public ref bool IgnoreDelta { get; }
+
+
 }

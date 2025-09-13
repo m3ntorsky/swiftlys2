@@ -9,4 +9,6 @@ public partial interface SceneEventId_t : ISchemaClass {
 
   
   public ref uint Value { get; }
+
+
 }

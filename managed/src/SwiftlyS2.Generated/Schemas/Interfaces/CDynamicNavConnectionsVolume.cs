@@ -22,4 +22,6 @@ public partial interface CDynamicNavConnectionsVolume : CTriggerMultiple {
   public ref float UpdateDistance { get; }
   
   public ref float MaxConnectionDistance { get; }
+
+
 }

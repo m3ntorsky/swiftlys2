@@ -21,4 +21,6 @@ public partial interface C_OP_SetControlPointsToModelParticles : CParticleFuncti
   public ref bool Skin { get; }
   
   public ref bool Attachment { get; }
+
+
 }

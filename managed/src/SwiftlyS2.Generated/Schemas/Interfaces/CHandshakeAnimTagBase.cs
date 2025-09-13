@@ -9,4 +9,6 @@ public partial interface CHandshakeAnimTagBase : CAnimTagBase {
 
   
   public ref bool IsDisableTag { get; }
+
+
 }

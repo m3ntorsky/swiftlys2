@@ -9,4 +9,6 @@ public partial interface C_OP_DecayOffscreen : CParticleFunctionOperator {
 
   
   public CParticleCollectionFloatInput OffscreenTime { get; }
+
+
 }

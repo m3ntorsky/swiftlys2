@@ -9,4 +9,6 @@ public partial interface EventAppShutdown_t : ISchemaClass {
 
   
   public ref int Dummy0 { get; }
+
+
 }

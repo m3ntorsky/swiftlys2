@@ -23,4 +23,6 @@ public partial interface DynamicVolumeDef_t : ISchemaClass {
   public ref uint AreaDst { get; }
   
   public ref bool Attached { get; }
+
+
 }

@@ -25,4 +25,6 @@ public partial interface VMixDynamicsCompressorDesc_t : ISchemaClass {
   public ref float WetMix { get; }
   
   public ref bool PeakMode { get; }
+
+
 }

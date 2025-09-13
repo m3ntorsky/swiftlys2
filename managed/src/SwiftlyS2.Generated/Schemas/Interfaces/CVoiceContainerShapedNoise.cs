@@ -25,4 +25,6 @@ public partial interface CVoiceContainerShapedNoise : CVoiceContainerBase {
   public ref float GainInDecibels { get; }
   
   public SchemaUntypedField GainSweep { get; }
+
+
 }

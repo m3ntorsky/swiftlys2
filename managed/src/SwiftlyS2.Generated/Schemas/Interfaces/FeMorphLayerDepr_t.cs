@@ -23,4 +23,6 @@ public partial interface FeMorphLayerDepr_t : ISchemaClass {
   public ref CUtlVector<float> GoalDamping { get; }
   
   public ref uint Flags { get; }
+
+
 }

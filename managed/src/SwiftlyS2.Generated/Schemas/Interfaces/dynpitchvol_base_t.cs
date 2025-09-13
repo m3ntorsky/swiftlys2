@@ -57,4 +57,6 @@ public partial interface dynpitchvol_base_t : ISchemaClass {
   public ref int Lfofrac { get; }
   
   public ref int Lfomult { get; }
+
+
 }

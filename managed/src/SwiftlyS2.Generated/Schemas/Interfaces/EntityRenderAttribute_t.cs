@@ -11,4 +11,7 @@ public partial interface EntityRenderAttribute_t : ISchemaClass {
   public ref CUtlStringToken ID { get; }
   
   public ref Vector4D Values { get; }
+
+  public void IDUpdated();
+  public void ValuesUpdated();
 }

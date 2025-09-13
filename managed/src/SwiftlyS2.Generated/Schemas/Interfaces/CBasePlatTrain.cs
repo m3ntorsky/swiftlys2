@@ -17,4 +17,6 @@ public partial interface CBasePlatTrain : CBaseToggle {
   public ref float TWidth { get; }
   
   public ref float TLength { get; }
+
+
 }

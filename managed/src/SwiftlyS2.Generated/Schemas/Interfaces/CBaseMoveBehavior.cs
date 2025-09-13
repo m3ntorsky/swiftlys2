@@ -29,4 +29,6 @@ public partial interface CBaseMoveBehavior : CPathKeyFrame {
   public ref float TimeIntoFrame { get; }
   
   public ref int Direction { get; }
+
+
 }

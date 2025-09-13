@@ -37,4 +37,6 @@ public partial interface C_OP_DistanceBetweenCPsToCP : CParticleFunctionPreEmiss
   public ref ParticleTraceSet_t TraceSet { get; }
   
   public ref ParticleParentSetMode_t SetParent { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CAnimationGraphVisualizerLine : CAnimationGraphVisualiz
   public ref Vector WsPositionEnd { get; }
   
   public ref Color Color { get; }
+
+
 }

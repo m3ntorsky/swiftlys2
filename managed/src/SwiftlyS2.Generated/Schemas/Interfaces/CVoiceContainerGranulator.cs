@@ -19,4 +19,6 @@ public partial interface CVoiceContainerGranulator : CVoiceContainerBase {
   public ref bool ShouldWraparound { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> SourceAudio { get; }
+
+
 }

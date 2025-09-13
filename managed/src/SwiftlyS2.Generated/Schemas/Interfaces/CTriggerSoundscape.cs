@@ -13,4 +13,6 @@ public partial interface CTriggerSoundscape : CBaseTrigger {
   public ref CUtlSymbolLarge SoundscapeName { get; }
   
   public ref CUtlVector<CHandle<CBasePlayerPawn>> Spectators { get; }
+
+
 }

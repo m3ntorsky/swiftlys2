@@ -9,4 +9,6 @@ public partial interface CFiringModeInt : ISchemaClass {
 
   
   public ISchemaFixedArray<int> Values { get; }
+
+
 }

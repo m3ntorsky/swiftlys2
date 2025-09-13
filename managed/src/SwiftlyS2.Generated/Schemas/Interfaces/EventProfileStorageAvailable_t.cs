@@ -9,4 +9,6 @@ public partial interface EventProfileStorageAvailable_t : ISchemaClass {
 
   
   public ref uint SplitScreenSlot { get; }
+
+
 }

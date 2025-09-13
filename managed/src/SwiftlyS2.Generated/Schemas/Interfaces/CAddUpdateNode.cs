@@ -17,4 +17,6 @@ public partial interface CAddUpdateNode : CBinaryUpdateNode {
   public ref bool UseModelSpace { get; }
   
   public ref bool ApplyScale { get; }
+
+
 }

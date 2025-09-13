@@ -9,4 +9,6 @@ public partial interface CFollowAttachmentUpdateNode : CUnaryUpdateNode {
 
   
   public FollowAttachmentSettings_t OpFixedData { get; }
+
+
 }

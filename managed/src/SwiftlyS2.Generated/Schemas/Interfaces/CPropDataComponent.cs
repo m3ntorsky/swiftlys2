@@ -27,4 +27,6 @@ public partial interface CPropDataComponent : CEntityComponent {
   public ref int DisableTakePhysicsDamageSpawnFlag { get; }
   
   public ref int MotionDisabledSpawnFlag { get; }
+
+
 }

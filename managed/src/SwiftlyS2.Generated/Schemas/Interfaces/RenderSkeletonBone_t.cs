@@ -17,4 +17,6 @@ public partial interface RenderSkeletonBone_t : ISchemaClass {
   public SkeletonBoneBounds_t Bbox { get; }
   
   public ref float SphereRadius { get; }
+
+
 }

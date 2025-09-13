@@ -9,4 +9,6 @@ public partial interface CCPPScriptComponentUpdater : CAnimComponentUpdater {
 
   
   public ref CUtlVector<CGlobalSymbol> ScriptsToRun { get; }
+
+
 }

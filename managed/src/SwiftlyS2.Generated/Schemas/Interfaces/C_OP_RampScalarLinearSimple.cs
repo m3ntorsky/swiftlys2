@@ -15,4 +15,6 @@ public partial interface C_OP_RampScalarLinearSimple : CParticleFunctionOperator
   public ref float EndTime { get; }
   
   public ParticleAttributeIndex_t Field { get; }
+
+
 }

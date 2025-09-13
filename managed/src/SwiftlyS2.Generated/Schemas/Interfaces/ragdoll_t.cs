@@ -19,4 +19,6 @@ public partial interface ragdoll_t : ISchemaClass {
   public ref bool AllowStretch { get; }
   
   public ref bool Unused { get; }
+
+
 }

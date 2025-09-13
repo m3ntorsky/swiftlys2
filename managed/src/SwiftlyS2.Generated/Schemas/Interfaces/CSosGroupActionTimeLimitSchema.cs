@@ -9,4 +9,6 @@ public partial interface CSosGroupActionTimeLimitSchema : CSosGroupActionSchema 
 
   
   public ref float MaxDuration { get; }
+
+
 }

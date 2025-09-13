@@ -33,4 +33,6 @@ public partial interface COrientationWarpUpdateNode : CUnaryUpdateNode {
   public ref AnimValueSource PreferredRotationDirection { get; }
   
   public ref float PreferredRotationThreshold { get; }
+
+
 }

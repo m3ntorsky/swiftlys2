@@ -17,4 +17,6 @@ public partial interface CMathColorBlend : CLogicalEntity {
   public ref Color OutColor2 { get; }
   
   public SchemaUntypedField OutValue { get; }
+
+
 }

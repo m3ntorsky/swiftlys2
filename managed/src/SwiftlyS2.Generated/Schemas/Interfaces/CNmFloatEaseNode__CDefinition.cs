@@ -17,4 +17,6 @@ public partial interface CNmFloatEaseNode__CDefinition : CNmFloatValueNode__CDef
   public ref NmEasingOperation_t EasingOp { get; }
   
   public ref bool UseStartValue { get; }
+
+
 }

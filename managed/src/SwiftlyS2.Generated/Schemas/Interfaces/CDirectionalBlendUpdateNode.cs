@@ -23,4 +23,6 @@ public partial interface CDirectionalBlendUpdateNode : CLeafUpdateNode {
   public ref bool Loop { get; }
   
   public ref bool LockBlendOnReset { get; }
+
+
 }

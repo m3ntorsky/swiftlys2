@@ -27,4 +27,6 @@ public partial interface CCommentarySystem : ISchemaClass {
   public ref CHandle<CPointCommentaryNode> LastCommentaryNode { get; }
   
   public ref CUtlVector<CHandle<CPointCommentaryNode>> Nodes { get; }
+
+
 }

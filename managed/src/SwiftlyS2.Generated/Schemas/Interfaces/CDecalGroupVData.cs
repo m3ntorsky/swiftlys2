@@ -12,4 +12,6 @@ public partial interface CDecalGroupVData : ISchemaClass {
   public ref CUtlVector Options { get; }
   
   public ref float TotalProbability { get; }
+
+
 }

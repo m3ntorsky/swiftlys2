@@ -9,4 +9,6 @@ public partial interface AttachmentHandle_t : ISchemaClass {
 
   
   public ref byte Value { get; }
+
+
 }

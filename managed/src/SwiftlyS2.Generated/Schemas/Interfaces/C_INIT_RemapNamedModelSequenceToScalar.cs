@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_RemapNamedModelSequenceToScalar : C_INIT_RemapNamedModelElementToScalar {
 
 
+
+
 }

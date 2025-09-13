@@ -13,4 +13,6 @@ public partial interface FeFitWeight_t : ISchemaClass {
   public ref ushort Node { get; }
   
   public ref ushort Dummy { get; }
+
+
 }

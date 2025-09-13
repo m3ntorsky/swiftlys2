@@ -19,4 +19,9 @@ public partial interface CCSPlayerController_InGameMoneyServices : CPlayerContro
   public ref int TotalCashSpent { get; }
   
   public ref int CashSpentThisRound { get; }
+
+  public void AccountUpdated();
+  public void StartAccountUpdated();
+  public void TotalCashSpentUpdated();
+  public void CashSpentThisRoundUpdated();
 }

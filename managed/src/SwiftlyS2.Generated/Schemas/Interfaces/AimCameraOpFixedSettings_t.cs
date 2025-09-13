@@ -21,4 +21,6 @@ public partial interface AimCameraOpFixedSettings_t : ISchemaClass {
   public ref int DepenetrationJointIndex { get; }
   
   public ref CUtlVector<int> PropJoints { get; }
+
+
 }

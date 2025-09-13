@@ -13,4 +13,6 @@ public partial interface CVoiceContainerBlender : CVoiceContainerBase {
   public CSoundContainerReference SecondSound { get; }
   
   public ref float BlendFactor { get; }
+
+
 }

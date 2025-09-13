@@ -21,4 +21,6 @@ public partial interface CVoiceContainerStaticAdditiveSynth__CHarmonic : ISchema
   public SchemaUntypedField Curve { get; }
   
   public CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance VolumeScaling { get; }
+
+
 }

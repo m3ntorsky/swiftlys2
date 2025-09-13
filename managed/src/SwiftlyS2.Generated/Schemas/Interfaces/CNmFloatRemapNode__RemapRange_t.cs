@@ -11,4 +11,6 @@ public partial interface CNmFloatRemapNode__RemapRange_t : ISchemaClass {
   public ref float Begin { get; }
   
   public ref float End { get; }
+
+
 }

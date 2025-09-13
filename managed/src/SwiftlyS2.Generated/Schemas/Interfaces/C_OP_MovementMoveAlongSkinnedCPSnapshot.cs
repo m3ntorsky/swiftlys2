@@ -19,4 +19,6 @@ public partial interface C_OP_MovementMoveAlongSkinnedCPSnapshot : CParticleFunc
   public CPerParticleFloatInput Interpolation { get; }
   
   public CPerParticleFloatInput TValue { get; }
+
+
 }

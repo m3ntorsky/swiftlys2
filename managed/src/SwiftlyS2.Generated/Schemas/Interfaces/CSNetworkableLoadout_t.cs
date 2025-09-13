@@ -13,4 +13,8 @@ public partial interface CSNetworkableLoadout_t : ISchemaClass {
   public ref ushort Team { get; }
   
   public ref ushort Slot { get; }
+
+  public void ItemUpdated();
+  public void TeamUpdated();
+  public void SlotUpdated();
 }

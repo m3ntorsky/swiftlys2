@@ -22,4 +22,6 @@ public partial interface CFuseSymbolTable : ISchemaClass {
   public SchemaUntypedField VariableMap { get; }
   
   public SchemaUntypedField FunctionMap { get; }
+
+
 }

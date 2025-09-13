@@ -13,4 +13,6 @@ public partial interface C_OP_ColorAdjustHSL : CParticleFunctionOperator {
   public CPerParticleFloatInput SaturationAdjust { get; }
   
   public CPerParticleFloatInput LightnessAdjust { get; }
+
+
 }

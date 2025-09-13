@@ -21,4 +21,6 @@ public partial interface CFeMorphLayer : ISchemaClass {
   public ref CUtlVector<float> GoalStrength { get; }
   
   public ref CUtlVector<float> GoalDamping { get; }
+
+
 }

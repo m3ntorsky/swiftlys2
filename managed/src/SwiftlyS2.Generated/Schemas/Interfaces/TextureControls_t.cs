@@ -39,4 +39,6 @@ public partial interface TextureControls_t : ISchemaClass {
   public ref SpriteCardPerParticleScale_t PerParticleZoom { get; }
   
   public ref SpriteCardPerParticleScale_t PerParticleDistortion { get; }
+
+
 }

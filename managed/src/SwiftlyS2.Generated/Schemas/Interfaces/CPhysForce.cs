@@ -19,4 +19,6 @@ public partial interface CPhysForce : CPointEntity {
   public ref bool WasRestored { get; }
   
   public CConstantForceController Integrator { get; }
+
+
 }

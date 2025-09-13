@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysHingeAlias_phys_hinge_local : CPhysHinge {
 
 
+
+
 }

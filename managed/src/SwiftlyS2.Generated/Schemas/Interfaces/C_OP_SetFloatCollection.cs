@@ -15,4 +15,6 @@ public partial interface C_OP_SetFloatCollection : CParticleFunctionOperator {
   public ref ParticleSetMethod_t SetMethod { get; }
   
   public CParticleCollectionFloatInput Lerp { get; }
+
+
 }

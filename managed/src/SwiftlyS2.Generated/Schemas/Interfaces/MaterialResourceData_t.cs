@@ -46,4 +46,6 @@ public partial interface MaterialResourceData_t : ISchemaClass {
   public ref CUtlVector StringAttributes { get; }
   
   public ref CUtlVector<CUtlString> RenderAttributesUsed { get; }
+
+
 }

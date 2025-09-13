@@ -17,4 +17,6 @@ public partial interface constraint_breakableparams_t : ISchemaClass {
   public ISchemaFixedArray<float> BodyMassScale { get; }
   
   public ref bool IsActive { get; }
+
+
 }

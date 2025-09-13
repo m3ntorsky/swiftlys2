@@ -9,4 +9,6 @@ public partial interface C_INIT_ScaleVelocity : CParticleFunctionInitializer {
 
   
   public CParticleCollectionVecInput Scale { get; }
+
+
 }

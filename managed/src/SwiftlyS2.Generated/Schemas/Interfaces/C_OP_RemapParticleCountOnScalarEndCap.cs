@@ -21,4 +21,6 @@ public partial interface C_OP_RemapParticleCountOnScalarEndCap : CParticleFuncti
   public ref bool Backwards { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
+
+
 }

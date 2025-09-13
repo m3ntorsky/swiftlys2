@@ -15,4 +15,6 @@ public partial interface CFutureVelocityMetricEvaluator : CMotionMetricEvaluator
   public ref float TargetSpeed { get; }
   
   public ref VelocityMetricMode Mode { get; }
+
+
 }

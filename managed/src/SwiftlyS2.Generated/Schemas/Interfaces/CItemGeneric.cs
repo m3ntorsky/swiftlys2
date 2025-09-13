@@ -71,4 +71,6 @@ public partial interface CItemGeneric : CItem {
   public ref bool Useable { get; }
   
   public ref CHandle<CItemGenericTriggerHelper> TriggerHelper { get; }
+
+
 }

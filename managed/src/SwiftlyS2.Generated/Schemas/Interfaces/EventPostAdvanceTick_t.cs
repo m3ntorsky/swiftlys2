@@ -15,4 +15,6 @@ public partial interface EventPostAdvanceTick_t : EventSimulate_t {
   public ref int TotalTicksThisFrame { get; }
   
   public ref int TotalTicks { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CPulse_PublicOutput : ISchemaClass {
   public ref CUtlString Description { get; }
   
   public SchemaUntypedField Args { get; }
+
+
 }

@@ -30,4 +30,6 @@ public partial interface SkeletonAnimCapture_t : ISchemaClass {
   
 // CUtlVector< SkeletonAnimCapture_t::Frame_t >
   public ref CUtlVector Frames { get; }
+
+
 }

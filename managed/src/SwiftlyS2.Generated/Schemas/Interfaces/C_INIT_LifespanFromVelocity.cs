@@ -23,4 +23,6 @@ public partial interface C_INIT_LifespanFromVelocity : CParticleFunctionInitiali
   public ref ParticleTraceSet_t TraceSet { get; }
   
   public ref bool IncludeWater { get; }
+
+
 }

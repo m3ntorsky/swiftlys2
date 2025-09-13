@@ -24,4 +24,6 @@ public partial interface CAnimSkeleton : ISchemaClass {
   public ref CUtlVector<CUtlString> MorphNames { get; }
   
   public ref CUtlVector<int> LodBoneCounts { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CVoiceContainerSetElement : ISchemaClass {
   public CSoundContainerReference Sound { get; }
   
   public ref float VolumeDB { get; }
+
+
 }

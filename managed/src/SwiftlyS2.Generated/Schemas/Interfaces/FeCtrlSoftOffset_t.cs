@@ -15,4 +15,6 @@ public partial interface FeCtrlSoftOffset_t : ISchemaClass {
   public ref Vector Offset { get; }
   
   public ref float Alpha { get; }
+
+
 }

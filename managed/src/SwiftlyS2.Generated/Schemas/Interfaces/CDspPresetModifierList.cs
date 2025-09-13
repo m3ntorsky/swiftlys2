@@ -12,4 +12,6 @@ public partial interface CDspPresetModifierList : ISchemaClass {
   
 // CUtlVector< CDSPMixgroupModifier >
   public ref CUtlVector Modifiers { get; }
+
+
 }

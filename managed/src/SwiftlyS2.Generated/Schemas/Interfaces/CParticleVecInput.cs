@@ -53,4 +53,6 @@ public partial interface CParticleVecInput : CParticleInput {
   public ref Vector RandomMin { get; }
   
   public ref Vector RandomMax { get; }
+
+
 }

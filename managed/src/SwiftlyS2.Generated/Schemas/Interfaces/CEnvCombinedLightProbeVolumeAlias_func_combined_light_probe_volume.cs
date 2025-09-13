@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume : CEnvCombinedLightProbeVolume {
 
 
+
+
 }

@@ -17,4 +17,6 @@ public partial interface DynamicMeshDeformParams_t : ISchemaClass {
   public ref bool ComputeDynamicMeshTensionAfterAnimation { get; }
   
   public ref bool SmoothNormalsAcrossUvSeams { get; }
+
+
 }

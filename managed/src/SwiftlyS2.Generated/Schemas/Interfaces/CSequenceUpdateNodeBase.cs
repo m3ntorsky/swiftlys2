@@ -11,4 +11,6 @@ public partial interface CSequenceUpdateNodeBase : CLeafUpdateNode {
   public ref float PlaybackSpeed { get; }
   
   public ref bool Loop { get; }
+
+
 }

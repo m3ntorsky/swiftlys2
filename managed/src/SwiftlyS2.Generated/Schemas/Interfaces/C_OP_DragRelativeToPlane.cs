@@ -17,4 +17,6 @@ public partial interface C_OP_DragRelativeToPlane : CParticleFunctionOperator {
   public CParticleCollectionVecInput PlaneNormal { get; }
   
   public ref int ControlPointNumber { get; }
+
+
 }

@@ -21,4 +21,6 @@ public partial interface C_OP_SetChildControlPoints : CParticleFunctionOperator 
   public ref bool SetOrientation { get; }
   
   public ref ParticleOrientationType_t Orientation { get; }
+
+
 }

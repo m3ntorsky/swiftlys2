@@ -11,4 +11,6 @@ public partial interface CTankTargetChange : CPointEntity {
   public SchemaUntypedField NewTarget { get; }
   
   public ref CUtlSymbolLarge NewTargetName { get; }
+
+
 }

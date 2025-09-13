@@ -13,4 +13,6 @@ public partial interface CIntAnimParameter : CConcreteAnimParameter {
   public ref int MinValue { get; }
   
   public ref int MaxValue { get; }
+
+
 }

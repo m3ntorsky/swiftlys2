@@ -13,4 +13,6 @@ public partial interface C_INIT_RandomTrailLength : CParticleFunctionInitializer
   public ref float MaxLength { get; }
   
   public ref float LengthRandExponent { get; }
+
+
 }

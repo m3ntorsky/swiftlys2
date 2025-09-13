@@ -15,4 +15,6 @@ public partial interface CClothSettingsAnimTag : CAnimTagBase {
   public ref float EaseOut { get; }
   
   public ref CUtlString VertexSet { get; }
+
+
 }

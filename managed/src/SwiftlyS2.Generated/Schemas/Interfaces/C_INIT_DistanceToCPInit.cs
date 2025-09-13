@@ -37,4 +37,6 @@ public partial interface C_INIT_DistanceToCPInit : CParticleFunctionInitializer 
   public ref Vector DistanceScale { get; }
   
   public ref float RemapBias { get; }
+
+
 }

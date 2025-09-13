@@ -11,4 +11,6 @@ public partial interface CPoseHandle : ISchemaClass {
   public ref ushort Index { get; }
   
   public ref PoseType_t Type { get; }
+
+
 }

@@ -19,4 +19,6 @@ public partial interface lerpdata_t : ISchemaClass {
   public ref Quaternion StartRot { get; }
   
   public ParticleIndex_t FXIndex { get; }
+
+
 }

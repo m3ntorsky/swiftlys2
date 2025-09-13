@@ -9,4 +9,6 @@ public partial interface CNmIsTargetSetNode__CDefinition : CNmBoolValueNode__CDe
 
   
   public ref short InputValueNodeIdx { get; }
+
+
 }

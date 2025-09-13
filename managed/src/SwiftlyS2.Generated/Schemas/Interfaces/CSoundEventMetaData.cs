@@ -9,4 +9,6 @@ public partial interface CSoundEventMetaData : ISchemaClass {
 
   
   public ref CStrongHandle<InfoForResourceTypeCVMixListResource> SoundEventVMix { get; }
+
+
 }

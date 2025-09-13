@@ -11,4 +11,6 @@ public partial interface CVoiceContainerAnalysisBase : ISchemaClass {
   public ref bool RegenerateCurveOnCompile { get; }
   
   public SchemaUntypedField Curve { get; }
+
+
 }

@@ -36,4 +36,6 @@ public partial interface CTriggerLerpObject : CBaseTrigger {
   public CEntityIOOutput OnLerpStarted { get; }
   
   public CEntityIOOutput OnLerpFinished { get; }
+
+
 }

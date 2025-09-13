@@ -53,4 +53,17 @@ public partial interface CSprite : CBaseModelEntity {
   public ref int SpriteWidth { get; }
   
   public ref int SpriteHeight { get; }
+
+  public void SpriteMaterialUpdated();
+  public void AttachedToEntityUpdated();
+  public void AttachmentUpdated();
+  public void SpriteFramerateUpdated();
+  public void FrameUpdated();
+  public void BrightnessUpdated();
+  public void BrightnessDurationUpdated();
+  public void SpriteScaleUpdated();
+  public void ScaleDurationUpdated();
+  public void WorldSpaceScaleUpdated();
+  public void GlowProxySizeUpdated();
+  public void HDRColorScaleUpdated();
 }

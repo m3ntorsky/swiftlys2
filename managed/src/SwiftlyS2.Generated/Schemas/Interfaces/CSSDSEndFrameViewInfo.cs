@@ -11,4 +11,6 @@ public partial interface CSSDSEndFrameViewInfo : ISchemaClass {
   public ref ulong ViewId { get; }
   
   public ref CUtlString ViewName { get; }
+
+
 }

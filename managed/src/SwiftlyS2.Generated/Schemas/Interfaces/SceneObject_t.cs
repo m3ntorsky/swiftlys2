@@ -35,4 +35,6 @@ public partial interface SceneObject_t : ISchemaClass {
   public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCRenderMesh> Renderable { get; }
+
+
 }

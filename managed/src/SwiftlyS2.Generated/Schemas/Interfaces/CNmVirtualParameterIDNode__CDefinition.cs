@@ -9,4 +9,6 @@ public partial interface CNmVirtualParameterIDNode__CDefinition : CNmIDValueNode
 
   
   public ref short ChildNodeIdx { get; }
+
+
 }

@@ -32,4 +32,6 @@ public partial interface MoodAnimationLayer_t : ISchemaClass {
   public ref float FadeIn { get; }
   
   public ref float FadeOut { get; }
+
+
 }

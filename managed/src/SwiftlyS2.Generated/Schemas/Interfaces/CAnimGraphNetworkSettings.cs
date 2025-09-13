@@ -9,4 +9,6 @@ public partial interface CAnimGraphNetworkSettings : CAnimGraphSettingsGroup {
 
   
   public ref bool NetworkingEnabled { get; }
+
+
 }

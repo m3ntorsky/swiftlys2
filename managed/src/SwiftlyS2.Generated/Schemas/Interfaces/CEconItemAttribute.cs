@@ -17,4 +17,10 @@ public partial interface CEconItemAttribute : ISchemaClass {
   public ref int RefundableCurrency { get; }
   
   public ref bool SetBonus { get; }
+
+  public void AttributeDefinitionIndexUpdated();
+  public void ValueUpdated();
+  public void InitialValueUpdated();
+  public void RefundableCurrencyUpdated();
+  public void SetBonusUpdated();
 }

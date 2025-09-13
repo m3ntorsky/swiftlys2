@@ -9,4 +9,6 @@ public partial interface CBuyZone : CBaseTrigger {
 
   
   public ref int LegacyTeamNum { get; }
+
+
 }

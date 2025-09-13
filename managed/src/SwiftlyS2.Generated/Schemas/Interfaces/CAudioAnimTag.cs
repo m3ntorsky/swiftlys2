@@ -21,4 +21,6 @@ public partial interface CAudioAnimTag : CAnimTagBase {
   public ref bool PlayOnServer { get; }
   
   public ref bool PlayOnClient { get; }
+
+
 }

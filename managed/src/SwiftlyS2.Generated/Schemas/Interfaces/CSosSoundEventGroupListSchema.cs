@@ -10,4 +10,6 @@ public partial interface CSosSoundEventGroupListSchema : ISchemaClass {
   
 // CUtlVector< CSosSoundEventGroupSchema >
   public ref CUtlVector GroupList { get; }
+
+
 }

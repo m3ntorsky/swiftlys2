@@ -29,4 +29,6 @@ public partial interface C_OP_RemapCPtoScalar : CParticleFunctionOperator {
   public ref float InterpRate { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
+
+
 }

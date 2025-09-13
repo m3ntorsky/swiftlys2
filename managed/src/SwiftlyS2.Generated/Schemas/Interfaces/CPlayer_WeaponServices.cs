@@ -17,4 +17,9 @@ public partial interface CPlayer_WeaponServices : CPlayerPawnComponent {
   public ISchemaFixedArray<ushort> Ammo { get; }
   
   public ref bool PreventWeaponPickup { get; }
+
+  public void MyWeaponsUpdated();
+  public void ActiveWeaponUpdated();
+  public void LastWeaponUpdated();
+  public void AmmoUpdated();
 }

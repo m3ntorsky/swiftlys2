@@ -11,4 +11,7 @@ public partial interface CHandleTest : CBaseEntity {
   public ref CHandle<CBaseEntity> Handle { get; }
   
   public ref bool SendHandle { get; }
+
+  public void HandleUpdated();
+  public void SendHandleUpdated();
 }

@@ -15,4 +15,6 @@ public partial interface CNmTargetOffsetNode__CDefinition : CNmTargetValueNode__
   public ref Quaternion RotationOffset { get; }
   
   public ref Vector TranslationOffset { get; }
+
+
 }

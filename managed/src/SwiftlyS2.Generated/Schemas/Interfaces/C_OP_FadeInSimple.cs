@@ -11,4 +11,6 @@ public partial interface C_OP_FadeInSimple : CParticleFunctionOperator {
   public ref float FadeInTime { get; }
   
   public ParticleAttributeIndex_t FieldOutput { get; }
+
+
 }

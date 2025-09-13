@@ -11,4 +11,6 @@ public partial interface CNmFloatCurveEvent : CNmEvent {
   public ref CGlobalSymbol ID { get; }
   
   public SchemaUntypedField Curve { get; }
+
+
 }

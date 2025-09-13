@@ -11,4 +11,6 @@ public partial interface CNmTargetWarpEvent : CNmEvent {
   public ref NmTargetWarpRule_t Rule { get; }
   
   public ref NmTargetWarpAlgorithm_t Algorithm { get; }
+
+
 }

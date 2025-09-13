@@ -37,4 +37,20 @@ public partial interface CPlayerSprayDecal : CModelPointEntity {
   public ref byte Version { get; }
   
   public ISchemaFixedArray<byte> Signature { get; }
+
+  public void UniqueIDUpdated();
+  public void AccountIDUpdated();
+  public void TraceIDUpdated();
+  public void RtGcTimeUpdated();
+  public void EndPosUpdated();
+  public void StartUpdated();
+  public void LeftUpdated();
+  public void NormalUpdated();
+  public void PlayerUpdated();
+  public void EntityUpdated();
+  public void HitboxUpdated();
+  public void CreationTimeUpdated();
+  public void TintIDUpdated();
+  public void VersionUpdated();
+  public void SignatureUpdated();
 }

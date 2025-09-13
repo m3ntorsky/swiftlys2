@@ -11,4 +11,6 @@ public partial interface NmSyncTrackTimeRange_t : ISchemaClass {
   public NmSyncTrackTime_t StartTime { get; }
   
   public NmSyncTrackTime_t EndTime { get; }
+
+
 }

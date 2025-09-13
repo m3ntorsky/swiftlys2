@@ -28,4 +28,6 @@ public partial interface CSelectorUpdateNode : CAnimUpdateNodeBase {
   public ref bool LockWhenWaning { get; }
   
   public ref bool SyncCyclesOnChange { get; }
+
+
 }

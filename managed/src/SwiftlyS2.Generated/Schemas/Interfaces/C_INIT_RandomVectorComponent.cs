@@ -15,4 +15,6 @@ public partial interface C_INIT_RandomVectorComponent : CParticleFunctionInitial
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ref int Component { get; }
+
+
 }

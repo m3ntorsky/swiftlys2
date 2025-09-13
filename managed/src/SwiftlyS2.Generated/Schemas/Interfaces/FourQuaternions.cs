@@ -15,4 +15,6 @@ public partial interface FourQuaternions : ISchemaClass {
   public ref fltx4 Z { get; }
   
   public ref fltx4 W { get; }
+
+
 }

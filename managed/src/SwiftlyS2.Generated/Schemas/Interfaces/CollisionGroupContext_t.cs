@@ -9,4 +9,6 @@ public partial interface CollisionGroupContext_t : ISchemaClass {
 
   
   public ref int CollisionGroupNumber { get; }
+
+
 }

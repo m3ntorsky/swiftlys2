@@ -11,4 +11,6 @@ public partial interface CSosGroupActionSoundeventCountSchema : CSosGroupActionS
   public ref bool ExcludeStoppedSounds { get; }
   
   public ref CUtlString StrCountKeyName { get; }
+
+
 }

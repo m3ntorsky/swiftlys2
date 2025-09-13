@@ -29,4 +29,6 @@ public partial interface CNmTransitionNode__CDefinition : CNmPoseNode__CDefiniti
   public ref NmEasingOperation_t BlendWeightEasing { get; }
   
   public ref NmRootMotionBlendMode_t RootMotionBlend { get; }
+
+
 }

@@ -13,4 +13,8 @@ public partial interface CSoundAreaEntityBase : CBaseEntity {
   public ref CUtlSymbolLarge SoundAreaType { get; }
   
   public ref Vector Pos { get; }
+
+  public void DisabledUpdated();
+  public void SoundAreaTypeUpdated();
+  public void PosUpdated();
 }

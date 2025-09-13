@@ -11,4 +11,7 @@ public partial interface CGameSceneNodeHandle : ISchemaClass {
   public ref CHandle<CEntityInstance> Owner { get; }
   
   public ref CUtlStringToken Name { get; }
+
+  public void OwnerUpdated();
+  public void NameUpdated();
 }

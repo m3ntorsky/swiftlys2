@@ -23,4 +23,6 @@ public partial interface CPhysicsSpring : CBaseEntity {
   public ref Vector End { get; }
   
   public ref uint TeleportTick { get; }
+
+
 }

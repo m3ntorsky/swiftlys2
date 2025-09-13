@@ -13,4 +13,7 @@ public partial interface CPathSimple : CBaseEntity {
   public ref CUtlString PathString { get; }
   
   public ref bool ClosedLoop { get; }
+
+  public void CPathQueryComponentUpdated();
+  public void PathStringUpdated();
 }

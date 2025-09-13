@@ -20,4 +20,6 @@ public partial interface CSeqSynthAnimDesc : ISchemaClass {
   
 // CUtlVector< CAnimActivity >
   public ref CUtlVector ActivityArray { get; }
+
+
 }

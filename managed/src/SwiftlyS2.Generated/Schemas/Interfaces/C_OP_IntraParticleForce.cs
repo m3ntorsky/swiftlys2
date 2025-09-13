@@ -21,4 +21,6 @@ public partial interface C_OP_IntraParticleForce : CParticleFunctionForce {
   public ref float RepulsionMaxStrength { get; }
   
   public ref bool UseAABB { get; }
+
+
 }

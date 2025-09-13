@@ -12,4 +12,6 @@ public partial interface EntityKeyValueData_t : ISchemaClass {
   public ref CUtlVector Connections { get; }
   
   public ref CUtlBinaryBlock KeyValuesData { get; }
+
+
 }

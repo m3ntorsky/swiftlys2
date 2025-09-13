@@ -15,4 +15,6 @@ public partial interface CPulse_OutflowConnection : ISchemaClass {
   public ref int Instruction { get; }
   
   public PulseRegisterMap_t OutflowRegisterMap { get; }
+
+
 }

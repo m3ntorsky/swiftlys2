@@ -13,4 +13,6 @@ public partial interface FeEdgeDesc_t : ISchemaClass {
   public SchemaUntypedField Side { get; }
   
   public ISchemaFixedArray<ushort> VirtElem { get; }
+
+
 }

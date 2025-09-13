@@ -13,4 +13,6 @@ public partial interface CPulseCell_ExampleCriteria__Criteria_t : ISchemaClass {
   public ref float FloatValue2 { get; }
   
   public ref bool MyBool { get; }
+
+
 }

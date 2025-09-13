@@ -15,4 +15,6 @@ public partial interface FeSimdQuad_t : ISchemaClass {
   public ISchemaFixedArray<FourVectors> Shape { get; }
   
   public ISchemaFixedArray<fltx4> F4Weights { get; }
+
+
 }

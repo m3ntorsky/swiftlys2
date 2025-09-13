@@ -27,4 +27,6 @@ public partial interface CSSDSMsg_ViewTarget : ISchemaClass {
   public ref int MultisampleNumSamples { get; }
   
   public ref int Format { get; }
+
+
 }

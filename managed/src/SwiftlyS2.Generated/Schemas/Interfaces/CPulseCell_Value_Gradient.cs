@@ -9,4 +9,6 @@ public partial interface CPulseCell_Value_Gradient : CPulseCell_BaseValue {
 
   
   public SchemaUntypedField Gradient { get; }
+
+
 }

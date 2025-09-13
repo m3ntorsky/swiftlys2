@@ -25,4 +25,6 @@ public partial interface CFootCycleDefinition : ISchemaClass {
   public CFootCycle FootStrikeCycle { get; }
   
   public CFootCycle FootLandCycle { get; }
+
+
 }

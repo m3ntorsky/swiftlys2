@@ -21,4 +21,6 @@ public partial interface JiggleBoneSettings_t : ISchemaClass {
   public ref Vector BoundsMinLS { get; }
   
   public ref JiggleBoneSimSpace SimSpace { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CNmIDSelectorNode__CDefinition : CNmIDValueNode__CDefin
   public SchemaUntypedField Values { get; }
   
   public ref CGlobalSymbol DefaultValue { get; }
+
+
 }

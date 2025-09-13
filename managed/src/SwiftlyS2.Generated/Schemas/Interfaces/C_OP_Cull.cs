@@ -15,4 +15,6 @@ public partial interface C_OP_Cull : CParticleFunctionOperator {
   public ref float CullEnd { get; }
   
   public ref float CullExp { get; }
+
+
 }

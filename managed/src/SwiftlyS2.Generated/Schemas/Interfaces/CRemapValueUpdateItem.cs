@@ -19,4 +19,6 @@ public partial interface CRemapValueUpdateItem : ISchemaClass {
   public ref float MinOutputValue { get; }
   
   public ref float MaxOutputValue { get; }
+
+
 }

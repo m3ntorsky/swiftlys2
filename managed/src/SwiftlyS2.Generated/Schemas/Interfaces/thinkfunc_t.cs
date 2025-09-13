@@ -15,4 +15,6 @@ public partial interface thinkfunc_t : ISchemaClass {
   public GameTick_t NextThinkTick { get; }
   
   public GameTick_t LastThinkTick { get; }
+
+
 }

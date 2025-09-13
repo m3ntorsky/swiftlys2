@@ -37,4 +37,19 @@ public partial interface CDamageRecord : ISchemaClass {
   public ref bool IsOtherEnemy { get; }
   
   public ref EKillTypes_t KillType { get; }
+
+  public void PlayerDamagerUpdated();
+  public void PlayerRecipientUpdated();
+  public void PlayerControllerDamagerUpdated();
+  public void PlayerControllerRecipientUpdated();
+  public void PlayerDamagerNameUpdated();
+  public void PlayerRecipientNameUpdated();
+  public void DamagerXuidUpdated();
+  public void RecipientXuidUpdated();
+  public void DamageUpdated();
+  public void ActualHealthRemovedUpdated();
+  public void NumHitsUpdated();
+  public void LastBulletUpdateUpdated();
+  public void IsOtherEnemyUpdated();
+  public void KillTypeUpdated();
 }

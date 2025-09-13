@@ -17,4 +17,6 @@ public partial interface CPulseCell_IntervalTimer__CursorState_t : ISchemaClass 
   public ref float WaitIntervalHigh { get; }
   
   public ref bool CompleteOnNextWake { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CNmPassthroughNode__CDefinition : CNmPoseNode__CDefinit
 
   
   public ref short ChildNodeIdx { get; }
+
+
 }

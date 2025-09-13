@@ -11,4 +11,6 @@ public partial interface CPulseCell_IntervalTimer : CPulseCell_BaseYieldingInflo
   public CPulse_ResumePoint Completed { get; }
   
   public SignatureOutflow_Continue OnInterval { get; }
+
+
 }

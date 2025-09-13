@@ -9,4 +9,6 @@ public partial interface CNmBoneMaskNode__CDefinition : CNmBoneMaskValueNode__CD
 
   
   public ref CGlobalSymbol BoneMaskID { get; }
+
+
 }

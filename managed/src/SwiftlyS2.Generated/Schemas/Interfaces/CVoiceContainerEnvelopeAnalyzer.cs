@@ -13,4 +13,6 @@ public partial interface CVoiceContainerEnvelopeAnalyzer : CVoiceContainerAnalys
   public ref float AnalysisWindowMs { get; }
   
   public ref float Threshold { get; }
+
+
 }

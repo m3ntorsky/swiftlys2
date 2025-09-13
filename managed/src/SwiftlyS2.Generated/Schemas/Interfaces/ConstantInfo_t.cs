@@ -13,4 +13,6 @@ public partial interface ConstantInfo_t : ISchemaClass {
   public ref CUtlStringToken NameToken { get; }
   
   public ref float Value { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface RenderProjectedMaterial_t : ISchemaClass {
 
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
+
+
 }

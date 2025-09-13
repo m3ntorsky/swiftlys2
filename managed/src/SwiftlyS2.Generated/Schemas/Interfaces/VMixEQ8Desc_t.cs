@@ -9,4 +9,6 @@ public partial interface VMixEQ8Desc_t : ISchemaClass {
 
   
   public SchemaUntypedField Stages { get; }
+
+
 }

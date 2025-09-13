@@ -33,4 +33,16 @@ public partial interface CEconItemView : IEconItemInterface {
   public ISchemaFixedString CustomName { get; }
   
   public ISchemaFixedString CustomNameOverride { get; }
+
+  public void ItemDefinitionIndexUpdated();
+  public void EntityQualityUpdated();
+  public void EntityLevelUpdated();
+  public void ItemIDHighUpdated();
+  public void ItemIDLowUpdated();
+  public void AccountIDUpdated();
+  public void InventoryPositionUpdated();
+  public void InitializedUpdated();
+  public void AttributeListUpdated();
+  public void NetworkedDynamicAttributesUpdated();
+  public void CustomNameUpdated();
 }

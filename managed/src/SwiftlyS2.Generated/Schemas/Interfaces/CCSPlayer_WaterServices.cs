@@ -19,4 +19,6 @@ public partial interface CCSPlayer_WaterServices : CPlayer_WaterServices {
   public ref Vector WaterJumpVel { get; }
   
   public ref float SwimSoundTime { get; }
+
+
 }

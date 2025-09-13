@@ -9,4 +9,6 @@ public partial interface CBodyComponentBaseAnimGraph : CBodyComponentSkeletonIns
 
   
   public CBaseAnimGraphController AnimationController { get; }
+
+  public void AnimationControllerUpdated();
 }

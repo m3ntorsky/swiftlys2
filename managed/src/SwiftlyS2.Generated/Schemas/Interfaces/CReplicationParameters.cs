@@ -21,4 +21,6 @@ public partial interface CReplicationParameters : ISchemaClass {
   public CParticleCollectionVecInput MaxRandomDisplacement { get; }
   
   public CParticleCollectionFloatInput ModellingScale { get; }
+
+
 }

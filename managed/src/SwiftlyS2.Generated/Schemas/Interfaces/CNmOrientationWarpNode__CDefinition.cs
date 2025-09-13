@@ -17,4 +17,6 @@ public partial interface CNmOrientationWarpNode__CDefinition : CNmPoseNode__CDef
   public ref bool IsOffsetRelativeToCharacter { get; }
   
   public ref CNmRootMotionData__SamplingMode_t SamplingMode { get; }
+
+
 }

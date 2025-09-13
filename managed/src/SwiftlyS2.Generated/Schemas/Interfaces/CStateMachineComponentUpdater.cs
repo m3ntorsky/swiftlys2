@@ -9,4 +9,6 @@ public partial interface CStateMachineComponentUpdater : CAnimComponentUpdater {
 
   
   public CAnimStateMachineUpdater StateMachine { get; }
+
+
 }

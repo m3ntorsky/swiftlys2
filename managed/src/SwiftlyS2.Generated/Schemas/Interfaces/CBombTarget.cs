@@ -25,4 +25,6 @@ public partial interface CBombTarget : CBaseTrigger {
   public ref CHandle<CBaseEntity> InstructorHint { get; }
   
   public ref int BombSiteDesignation { get; }
+
+  public void BombPlantedHereUpdated();
 }

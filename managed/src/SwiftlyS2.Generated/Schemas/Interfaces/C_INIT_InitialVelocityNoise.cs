@@ -27,4 +27,6 @@ public partial interface C_INIT_InitialVelocityNoise : CParticleFunctionInitiali
   public CParticleTransformInput TransformInput { get; }
   
   public ref bool IgnoreDt { get; }
+
+
 }

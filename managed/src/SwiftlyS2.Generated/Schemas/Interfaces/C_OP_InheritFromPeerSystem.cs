@@ -15,4 +15,6 @@ public partial interface C_OP_InheritFromPeerSystem : CParticleFunctionOperator 
   public ref int Increment { get; }
   
   public ref int GroupID { get; }
+
+
 }

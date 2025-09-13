@@ -31,4 +31,6 @@ public partial interface C_INIT_RemapScalarToVector : CParticleFunctionInitializ
   public ref bool LocalCoords { get; }
   
   public ref float RemapBias { get; }
+
+
 }

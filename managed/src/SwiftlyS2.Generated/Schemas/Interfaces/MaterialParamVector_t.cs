@@ -9,4 +9,6 @@ public partial interface MaterialParamVector_t : MaterialParam_t {
 
   
   public ref Vector4D Value { get; }
+
+
 }

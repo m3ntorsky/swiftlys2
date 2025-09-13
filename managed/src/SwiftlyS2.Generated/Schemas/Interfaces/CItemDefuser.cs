@@ -11,4 +11,6 @@ public partial interface CItemDefuser : CItem {
   public EntitySpottedState_t EntitySpottedState { get; }
   
   public ref int SpotRules { get; }
+
+
 }

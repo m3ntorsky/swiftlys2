@@ -13,4 +13,6 @@ public partial interface CVoiceContainerSelector : CVoiceContainerBase {
   public CSoundContainerReferenceArray SoundsToPlay { get; }
   
   public ref CUtlVector<float> ProbabilityWeights { get; }
+
+
 }

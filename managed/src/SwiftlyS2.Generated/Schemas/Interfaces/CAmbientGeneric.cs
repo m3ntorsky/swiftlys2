@@ -27,4 +27,6 @@ public partial interface CAmbientGeneric : CPointEntity {
   public ref CHandle<CBaseEntity> SoundSource { get; }
   
   public ref uint SoundSourceEntIndex { get; }
+
+
 }

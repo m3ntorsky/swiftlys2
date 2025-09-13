@@ -11,4 +11,6 @@ public partial interface FeWeightedNode_t : ISchemaClass {
   public ref ushort Node { get; }
   
   public ref ushort Weight { get; }
+
+
 }

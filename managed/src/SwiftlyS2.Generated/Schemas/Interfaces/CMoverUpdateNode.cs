@@ -31,4 +31,6 @@ public partial interface CMoverUpdateNode : CUnaryUpdateNode {
   public ref bool ApplyRotation { get; }
   
   public ref bool LimitOnly { get; }
+
+
 }

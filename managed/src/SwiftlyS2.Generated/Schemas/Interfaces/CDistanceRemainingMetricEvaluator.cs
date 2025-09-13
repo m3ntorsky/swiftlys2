@@ -21,4 +21,6 @@ public partial interface CDistanceRemainingMetricEvaluator : CMotionMetricEvalua
   public ref bool FilterGoalDistance { get; }
   
   public ref bool FilterGoalOvershoot { get; }
+
+
 }

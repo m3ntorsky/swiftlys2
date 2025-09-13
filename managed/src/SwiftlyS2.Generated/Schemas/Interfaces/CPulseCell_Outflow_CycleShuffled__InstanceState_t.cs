@@ -11,4 +11,6 @@ public partial interface CPulseCell_Outflow_CycleShuffled__InstanceState_t : ISc
   public SchemaUntypedField Shuffle { get; }
   
   public ref int NextShuffle { get; }
+
+
 }

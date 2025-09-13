@@ -13,4 +13,6 @@ public partial interface CVectorQuantizer : ISchemaClass {
   public ref int Centroids { get; }
   
   public ref int Dimensions { get; }
+
+
 }

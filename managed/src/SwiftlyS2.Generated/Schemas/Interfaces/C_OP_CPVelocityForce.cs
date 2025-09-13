@@ -11,4 +11,6 @@ public partial interface C_OP_CPVelocityForce : CParticleFunctionForce {
   public ref int ControlPointNumber { get; }
   
   public CPerParticleFloatInput Scale { get; }
+
+
 }

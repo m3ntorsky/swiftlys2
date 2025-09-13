@@ -19,4 +19,6 @@ public partial interface C_INIT_AddVectorToVector : CParticleFunctionInitializer
   public ref Vector OffsetMax { get; }
   
   public CRandomNumberGeneratorParameters RandomnessParameters { get; }
+
+
 }

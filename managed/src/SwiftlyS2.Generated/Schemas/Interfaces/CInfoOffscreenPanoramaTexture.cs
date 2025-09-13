@@ -27,4 +27,13 @@ public partial interface CInfoOffscreenPanoramaTexture : CPointEntity {
   public ref CUtlSymbolLarge TargetsName { get; }
   
   public ref CUtlVector<CHandle<CBaseModelEntity>> AdditionalTargetEntities { get; }
+
+  public void DisabledUpdated();
+  public void ResolutionXUpdated();
+  public void ResolutionYUpdated();
+  public void LayoutFileNameUpdated();
+  public void RenderAttrNameUpdated();
+  public void TargetEntitiesUpdated();
+  public void TargetChangeCountUpdated();
+  public void CSSClassesUpdated();
 }

@@ -19,4 +19,6 @@ public partial interface C_OP_UpdateLightSource : CParticleFunctionOperator {
   public ref float MaximumLightingRadius { get; }
   
   public ref float PositionDampingConstant { get; }
+
+
 }

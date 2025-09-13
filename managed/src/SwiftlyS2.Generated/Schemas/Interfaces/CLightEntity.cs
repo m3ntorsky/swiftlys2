@@ -9,4 +9,6 @@ public partial interface CLightEntity : CBaseModelEntity {
 
   
   public CLightComponent CLightComponent { get; }
+
+  public void CLightComponentUpdated();
 }

@@ -9,4 +9,6 @@ public partial interface RnSoftbodyParticle_t : ISchemaClass {
 
   
   public ref float MassInv { get; }
+
+
 }

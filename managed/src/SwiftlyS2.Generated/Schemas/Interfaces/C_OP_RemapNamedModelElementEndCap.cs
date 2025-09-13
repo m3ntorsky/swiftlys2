@@ -21,4 +21,6 @@ public partial interface C_OP_RemapNamedModelElementEndCap : CParticleFunctionOp
   public ParticleAttributeIndex_t FieldInput { get; }
   
   public ParticleAttributeIndex_t FieldOutput { get; }
+
+
 }

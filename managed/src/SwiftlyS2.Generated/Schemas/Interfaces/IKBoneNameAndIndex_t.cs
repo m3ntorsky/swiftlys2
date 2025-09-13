@@ -9,4 +9,6 @@ public partial interface IKBoneNameAndIndex_t : ISchemaClass {
 
   
   public ref CUtlString Name { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface ResponseParams : ISchemaClass {
   public ref short Flags { get; }
   
   public ResponseFollowup Followup { get; }
+
+
 }

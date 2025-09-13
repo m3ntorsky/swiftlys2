@@ -13,4 +13,6 @@ public partial interface CAnimDecoder : ISchemaClass {
   public ref int Version { get; }
   
   public ref int Type { get; }
+
+
 }

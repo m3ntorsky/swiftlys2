@@ -9,4 +9,6 @@ public partial interface VertexPositionColor_t : ISchemaClass {
 
   
   public ref Vector Position { get; }
+
+
 }

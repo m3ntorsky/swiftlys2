@@ -11,4 +11,6 @@ public partial interface PulseNodeDynamicOutflows_t__DynamicOutflow_t : ISchemaC
   public ref CGlobalSymbol OutflowID { get; }
   
   public CPulse_OutflowConnection Connection { get; }
+
+
 }

@@ -15,4 +15,6 @@ public partial interface CGamePlayerZone : CRuleBrushEntity {
   public SchemaUntypedField PlayersInCount { get; }
   
   public SchemaUntypedField PlayersOutCount { get; }
+
+
 }

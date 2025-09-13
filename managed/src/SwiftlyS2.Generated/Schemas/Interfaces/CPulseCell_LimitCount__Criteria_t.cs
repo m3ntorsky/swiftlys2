@@ -9,4 +9,6 @@ public partial interface CPulseCell_LimitCount__Criteria_t : ISchemaClass {
 
   
   public ref bool LimitCountPasses { get; }
+
+
 }

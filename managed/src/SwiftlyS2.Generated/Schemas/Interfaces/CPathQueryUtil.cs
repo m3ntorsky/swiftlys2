@@ -17,4 +17,6 @@ public partial interface CPathQueryUtil : ISchemaClass {
   public ref CUtlVector<float> PathSampleDistances { get; }
   
   public ref bool IsClosedLoop { get; }
+
+
 }

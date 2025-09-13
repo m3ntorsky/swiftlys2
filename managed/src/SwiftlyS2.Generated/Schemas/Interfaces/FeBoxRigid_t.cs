@@ -19,4 +19,6 @@ public partial interface FeBoxRigid_t : ISchemaClass {
   public ref ushort VertexMapIndex { get; }
   
   public ref ushort Flags { get; }
+
+
 }

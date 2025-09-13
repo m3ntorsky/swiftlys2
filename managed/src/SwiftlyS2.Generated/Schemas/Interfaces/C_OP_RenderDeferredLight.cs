@@ -39,4 +39,6 @@ public partial interface C_OP_RenderDeferredLight : CParticleFunctionRenderer {
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> Texture { get; }
   
   public ref int HSVShiftControlPoint { get; }
+
+
 }

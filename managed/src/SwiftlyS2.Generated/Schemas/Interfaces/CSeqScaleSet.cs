@@ -17,4 +17,6 @@ public partial interface CSeqScaleSet : ISchemaClass {
   public ref CUtlVector<short> LocalBoneArray { get; }
   
   public ref CUtlVector<float> BoneScaleArray { get; }
+
+
 }

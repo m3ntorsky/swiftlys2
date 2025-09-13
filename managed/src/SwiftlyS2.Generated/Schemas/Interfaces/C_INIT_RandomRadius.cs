@@ -13,4 +13,6 @@ public partial interface C_INIT_RandomRadius : CParticleFunctionInitializer {
   public ref float RadiusMax { get; }
   
   public ref float RadiusRandExponent { get; }
+
+
 }

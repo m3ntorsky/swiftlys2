@@ -43,4 +43,6 @@ public partial interface C_INIT_StatusEffect : CParticleFunctionInitializer {
   public ref float MetalnessBlendToFull { get; }
   
   public ref float SelfIllumBlendToFull { get; }
+
+
 }

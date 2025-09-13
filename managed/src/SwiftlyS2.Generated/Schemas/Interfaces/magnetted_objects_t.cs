@@ -9,4 +9,6 @@ public partial interface magnetted_objects_t : ISchemaClass {
 
   
   public ref CHandle<CBaseEntity> Entity { get; }
+
+
 }

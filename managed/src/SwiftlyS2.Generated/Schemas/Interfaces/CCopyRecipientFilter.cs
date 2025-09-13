@@ -11,4 +11,6 @@ public partial interface CCopyRecipientFilter : ISchemaClass {
   public ref int Flags { get; }
   
   public ref CUtlVector<uint> Recipients { get; }
+
+
 }

@@ -31,4 +31,14 @@ public partial interface CPlayer_CameraServices : CPlayerPawnComponent {
   public ref float OldPlayerViewOffsetZ { get; }
   
   public ref CUtlVector<CHandle<CEnvSoundscapeTriggerable>> TriggerSoundscapeList { get; }
+
+  public void CsViewPunchAngleUpdated();
+  public void CsViewPunchAngleTickUpdated();
+  public void CsViewPunchAngleTickRatioUpdated();
+  public void PlayerFogUpdated();
+  public void ColorCorrectionCtrlUpdated();
+  public void ViewEntityUpdated();
+  public void TonemapControllerUpdated();
+  public void AudioUpdated();
+  public void PostProcessingVolumesUpdated();
 }

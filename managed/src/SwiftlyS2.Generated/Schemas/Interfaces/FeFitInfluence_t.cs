@@ -13,4 +13,6 @@ public partial interface FeFitInfluence_t : ISchemaClass {
   public ref float Weight { get; }
   
   public ref uint MatrixNode { get; }
+
+
 }

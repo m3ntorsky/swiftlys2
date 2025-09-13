@@ -11,4 +11,6 @@ public partial interface CPhysicsBodyGameMarkup : ISchemaClass {
   public ref CUtlString TargetBody { get; }
   
   public ref CGlobalSymbol Tag { get; }
+
+
 }

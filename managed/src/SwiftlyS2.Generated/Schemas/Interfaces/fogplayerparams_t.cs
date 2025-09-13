@@ -35,4 +35,6 @@ public partial interface fogplayerparams_t : ISchemaClass {
   public ref float NewHDRColorScale { get; }
   
   public ref float NewFarZ { get; }
+
+  public void CtrlUpdated();
 }

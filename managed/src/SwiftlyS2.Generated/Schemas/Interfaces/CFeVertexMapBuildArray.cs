@@ -9,4 +9,6 @@ public partial interface CFeVertexMapBuildArray : ISchemaClass {
 
   
   public ref CUtlVector<PointerTo<FeVertexMapBuild_t>> Array { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface BaseSceneObjectOverride_t : ISchemaClass {
 
   
   public ref uint SceneObjectIndex { get; }
+
+
 }

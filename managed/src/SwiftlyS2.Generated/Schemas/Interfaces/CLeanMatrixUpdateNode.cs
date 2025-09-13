@@ -27,4 +27,6 @@ public partial interface CLeanMatrixUpdateNode : CLeafUpdateNode {
   public ref float MaxValue { get; }
   
   public ref int SequenceMaxFrame { get; }
+
+
 }

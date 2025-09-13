@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPathParticleRopeAlias_path_particle_rope_clientside : CPathParticleRope {
 
 
+
+
 }

@@ -15,4 +15,6 @@ public partial interface C_INIT_SetRigidAttachment : CParticleFunctionInitialize
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ref bool LocalSpace { get; }
+
+
 }

@@ -31,4 +31,6 @@ public partial interface CPhysConstraint : CLogicalEntity {
   public ref bool SnapObjectPositions { get; }
   
   public CEntityIOOutput OnBreak { get; }
+
+
 }

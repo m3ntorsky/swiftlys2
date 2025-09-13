@@ -29,4 +29,15 @@ public partial interface CEnvWindController : CBaseEntity {
   public ref bool IsMaster { get; }
   
   public ref bool FirstTime { get; }
+
+  public void EnvWindSharedUpdated();
+  public void DirectionVariationUpdated();
+  public void SpeedVariationUpdated();
+  public void TurbulenceUpdated();
+  public void VolumeHalfExtentXYUpdated();
+  public void VolumeHalfExtentZUpdated();
+  public void VolumeResolutionXYUpdated();
+  public void VolumeResolutionZUpdated();
+  public void ClipmapLevelsUpdated();
+  public void IsMasterUpdated();
 }

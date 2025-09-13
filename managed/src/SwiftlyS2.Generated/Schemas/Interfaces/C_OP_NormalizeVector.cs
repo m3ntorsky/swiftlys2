@@ -11,4 +11,6 @@ public partial interface C_OP_NormalizeVector : CParticleFunctionOperator {
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ref float Scale { get; }
+
+
 }

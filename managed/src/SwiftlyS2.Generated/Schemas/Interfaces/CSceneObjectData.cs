@@ -19,4 +19,6 @@ public partial interface CSceneObjectData : ISchemaClass {
   public SchemaUntypedField Meshlets { get; }
   
   public ref Vector4D TintColor { get; }
+
+
 }

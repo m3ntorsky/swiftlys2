@@ -9,4 +9,6 @@ public partial interface MotionDBIndex : ISchemaClass {
 
   
   public ref uint Index { get; }
+
+
 }

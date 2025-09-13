@@ -13,4 +13,6 @@ public partial interface C_OP_RemapDistanceToLineSegmentToScalar : C_OP_RemapDis
   public ref float MinOutputValue { get; }
   
   public ref float MaxOutputValue { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CEnvEntityIgniter : CBaseEntity {
 
   
   public ref float Lifetime { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface C_OP_RenderText : CParticleFunctionRenderer {
   public ref Color OutlineColor { get; }
   
   public ref CUtlString DefaultText { get; }
+
+
 }

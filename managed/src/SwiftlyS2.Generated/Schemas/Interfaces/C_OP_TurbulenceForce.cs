@@ -23,4 +23,6 @@ public partial interface C_OP_TurbulenceForce : CParticleFunctionForce {
   public ref Vector NoiseAmount2 { get; }
   
   public ref Vector NoiseAmount3 { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CModelConfigElement_RandomPick : CModelConfigElement {
   public ref CUtlVector<CUtlString> Choices { get; }
   
   public ref CUtlVector<float> ChoiceWeights { get; }
+
+
 }

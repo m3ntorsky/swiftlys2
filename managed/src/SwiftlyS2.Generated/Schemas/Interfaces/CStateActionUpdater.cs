@@ -11,4 +11,6 @@ public partial interface CStateActionUpdater : ISchemaClass {
   public SchemaUntypedField Action { get; }
   
   public ref StateActionBehavior Behavior { get; }
+
+
 }

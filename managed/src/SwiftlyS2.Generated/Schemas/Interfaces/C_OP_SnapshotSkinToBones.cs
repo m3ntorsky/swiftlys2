@@ -21,4 +21,6 @@ public partial interface C_OP_SnapshotSkinToBones : CParticleFunctionOperator {
   public ref float JumpThreshold { get; }
   
   public ref float PrevPosScale { get; }
+
+
 }

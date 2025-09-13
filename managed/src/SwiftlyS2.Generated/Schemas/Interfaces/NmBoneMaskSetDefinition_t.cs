@@ -13,4 +13,6 @@ public partial interface NmBoneMaskSetDefinition_t : ISchemaClass {
   public CNmBoneWeightList PrimaryWeightList { get; }
   
   public SchemaUntypedField SecondaryWeightLists { get; }
+
+
 }

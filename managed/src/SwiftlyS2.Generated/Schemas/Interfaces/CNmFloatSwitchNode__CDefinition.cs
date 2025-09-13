@@ -17,4 +17,6 @@ public partial interface CNmFloatSwitchNode__CDefinition : CNmFloatValueNode__CD
   public ref float FalseValue { get; }
   
   public ref float TrueValue { get; }
+
+
 }

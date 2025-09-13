@@ -18,4 +18,6 @@ public partial interface ParticleNamedValueSource_t : ISchemaClass {
   
 // CUtlVector< ParticleNamedValueConfiguration_t >
   public ref CUtlVector NamedConfigs { get; }
+
+
 }

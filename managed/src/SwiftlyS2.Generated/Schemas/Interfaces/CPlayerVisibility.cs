@@ -19,4 +19,11 @@ public partial interface CPlayerVisibility : CBaseEntity {
   public ref bool StartDisabled { get; }
   
   public ref bool IsEnabled { get; }
+
+  public void VisibilityStrengthUpdated();
+  public void FogDistanceMultiplierUpdated();
+  public void FogMaxDensityMultiplierUpdated();
+  public void FadeTimeUpdated();
+  public void StartDisabledUpdated();
+  public void IsEnabledUpdated();
 }

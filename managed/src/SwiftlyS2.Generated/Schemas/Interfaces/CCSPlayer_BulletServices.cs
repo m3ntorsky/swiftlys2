@@ -9,4 +9,6 @@ public partial interface CCSPlayer_BulletServices : CPlayerPawnComponent {
 
   
   public ref int TotalHitsOnServer { get; }
+
+  public void TotalHitsOnServerUpdated();
 }

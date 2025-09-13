@@ -9,4 +9,6 @@ public partial interface CNmCurrentSyncEventIDNode__CDefinition : CNmIDValueNode
 
   
   public ref short SourceStateNodeIdx { get; }
+
+
 }

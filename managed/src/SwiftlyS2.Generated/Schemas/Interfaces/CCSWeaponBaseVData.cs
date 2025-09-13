@@ -169,4 +169,6 @@ public partial interface CCSWeaponBaseVData : CBasePlayerWeaponVData {
   public ref Vector SmokeColor { get; }
   
   public ref CGlobalSymbol AnimClass { get; }
+
+
 }

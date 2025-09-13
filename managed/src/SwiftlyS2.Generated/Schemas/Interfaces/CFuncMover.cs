@@ -141,4 +141,6 @@ public partial interface CFuncMover : CBaseModelEntity {
   public ref bool StartedMoving { get; }
   
   public ref CFuncMover__FollowEntityDirection_t FollowEntityDirection { get; }
+
+
 }

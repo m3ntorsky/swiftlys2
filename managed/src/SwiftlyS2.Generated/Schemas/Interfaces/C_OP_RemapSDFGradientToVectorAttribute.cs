@@ -9,4 +9,6 @@ public partial interface C_OP_RemapSDFGradientToVectorAttribute : CParticleFunct
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }
+
+
 }

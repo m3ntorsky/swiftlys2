@@ -17,4 +17,6 @@ public partial interface CStopAtGoalUpdateNode : CUnaryUpdateNode {
   public ref float MinScale { get; }
   
   public CAnimInputDamping Damping { get; }
+
+
 }

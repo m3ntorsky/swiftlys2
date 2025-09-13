@@ -25,4 +25,6 @@ public partial interface C_OP_DriveCPFromGlobalSoundFloat : CParticleFunctionPre
   public ref CUtlString OperatorName { get; }
   
   public ref CUtlString FieldName { get; }
+
+
 }

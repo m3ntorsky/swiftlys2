@@ -33,4 +33,18 @@ public partial interface shard_model_desc_t : ISchemaClass {
   public ref bool ParentFrozen { get; }
   
   public ref CUtlStringToken SurfacePropStringToken { get; }
+
+  public void ModelIDUpdated();
+  public void MaterialBaseUpdated();
+  public void MaterialDamageOverlayUpdated();
+  public void SolidUpdated();
+  public void PanelSizeUpdated();
+  public void StressPositionAUpdated();
+  public void StressPositionBUpdated();
+  public void PanelVerticesUpdated();
+  public void InitialPanelVerticesUpdated();
+  public void GlassHalfThicknessUpdated();
+  public void HasParentUpdated();
+  public void ParentFrozenUpdated();
+  public void SurfacePropStringTokenUpdated();
 }

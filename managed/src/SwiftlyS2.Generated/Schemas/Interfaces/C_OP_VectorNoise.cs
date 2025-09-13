@@ -21,4 +21,6 @@ public partial interface C_OP_VectorNoise : CParticleFunctionOperator {
   public ref bool Offset { get; }
   
   public ref float NoiseAnimationTimeScale { get; }
+
+
 }

@@ -19,4 +19,6 @@ public partial interface DecalGroupOption_t : ISchemaClass {
   public ref float MinAngleBetweenNormalAndGravity { get; }
   
   public ref float MaxAngleBetweenNormalAndGravity { get; }
+
+
 }

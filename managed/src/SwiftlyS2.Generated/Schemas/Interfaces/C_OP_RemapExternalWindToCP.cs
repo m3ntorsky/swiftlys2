@@ -17,4 +17,6 @@ public partial interface C_OP_RemapExternalWindToCP : CParticleFunctionPreEmissi
   public ref bool SetMagnitude { get; }
   
   public ref int OutVectorField { get; }
+
+
 }

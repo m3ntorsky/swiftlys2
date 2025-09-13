@@ -13,4 +13,6 @@ public partial interface CEntityInstance : ISchemaClass {
   public CEntityIdentity Entity { get; }
   
   public CScriptComponent CScriptComponent { get; }
+
+  public void EntityUpdated();
 }

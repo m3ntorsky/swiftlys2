@@ -65,4 +65,6 @@ public partial interface C_OP_RenderStandardLight : CParticleFunctionRenderer {
   public ref float LengthScale { get; }
   
   public ref float LengthFadeInTime { get; }
+
+
 }

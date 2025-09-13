@@ -9,4 +9,6 @@ public partial interface CParticleFunctionInitializer : CParticleFunction {
 
   
   public ref int AssociatedEmitterIndex { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CNmStateNode__TimedEvent_t : ISchemaClass {
   public ref float TimeValueSeconds { get; }
   
   public ref CNmStateNode__TimedEvent_t__Comparison_t ComparisionOperator { get; }
+
+
 }

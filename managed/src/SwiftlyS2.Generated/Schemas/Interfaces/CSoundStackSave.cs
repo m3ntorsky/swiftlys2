@@ -9,4 +9,6 @@ public partial interface CSoundStackSave : CLogicalEntity {
 
   
   public ref CUtlSymbolLarge StackName { get; }
+
+
 }

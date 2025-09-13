@@ -33,4 +33,6 @@ public partial interface PostProcessingResource_t : ISchemaClass {
   public ref bool HasFogScatteringParams { get; }
   
   public PostProcessingFogScatteringParameters_t FogScatteringParams { get; }
+
+
 }

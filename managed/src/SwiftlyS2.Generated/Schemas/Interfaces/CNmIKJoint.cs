@@ -21,4 +21,6 @@ public partial interface CNmIKJoint : ISchemaClass {
   public ref float MaxTwistLimit { get; }
   
   public ref float Weight { get; }
+
+
 }

@@ -33,4 +33,6 @@ public partial interface CHitBox : ISchemaClass {
   public ref Color CRenderColor { get; }
   
   public ref ushort HitBoxIndex { get; }
+
+
 }

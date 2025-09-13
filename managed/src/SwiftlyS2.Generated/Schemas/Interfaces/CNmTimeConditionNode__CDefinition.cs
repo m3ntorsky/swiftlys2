@@ -17,4 +17,6 @@ public partial interface CNmTimeConditionNode__CDefinition : CNmBoolValueNode__C
   public ref CNmTimeConditionNode__ComparisonType_t Type { get; }
   
   public ref CNmTimeConditionNode__Operator_t Operator { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface FeFollowNode_t : ISchemaClass {
   public ref ushort ChildNode { get; }
   
   public ref float Weight { get; }
+
+
 }

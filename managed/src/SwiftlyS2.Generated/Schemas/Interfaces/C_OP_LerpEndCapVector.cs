@@ -13,4 +13,6 @@ public partial interface C_OP_LerpEndCapVector : CParticleFunctionOperator {
   public ref Vector Output { get; }
   
   public ref float LerpTime { get; }
+
+
 }

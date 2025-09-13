@@ -11,4 +11,6 @@ public partial interface CAnimNodePath : ISchemaClass {
   public SchemaUntypedField Path { get; }
   
   public ref int Count { get; }
+
+
 }

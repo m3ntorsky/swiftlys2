@@ -9,4 +9,6 @@ public partial interface CVPhysXSurfacePropertiesList : ISchemaClass {
 
   
   public ref CUtlVector<PointerTo<CPhysSurfaceProperties>> SurfacePropertiesList { get; }
+
+
 }

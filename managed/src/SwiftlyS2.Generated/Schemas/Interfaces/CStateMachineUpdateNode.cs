@@ -21,4 +21,6 @@ public partial interface CStateMachineUpdateNode : CAnimUpdateNodeBase {
   public ref bool LockStateWhenWaning { get; }
   
   public ref bool ResetWhenActivated { get; }
+
+
 }

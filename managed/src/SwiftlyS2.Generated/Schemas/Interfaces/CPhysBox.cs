@@ -37,4 +37,6 @@ public partial interface CPhysBox : CBreakable {
   public CEntityIOOutput OnStartTouch { get; }
   
   public ref CHandle<CBasePlayerPawn> CarryingPlayer { get; }
+
+
 }

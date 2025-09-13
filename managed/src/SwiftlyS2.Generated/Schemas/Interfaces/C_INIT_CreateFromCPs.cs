@@ -15,4 +15,6 @@ public partial interface C_INIT_CreateFromCPs : CParticleFunctionInitializer {
   public ref int MaxCP { get; }
   
   public CParticleCollectionFloatInput DynamicCPCount { get; }
+
+
 }

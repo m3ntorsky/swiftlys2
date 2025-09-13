@@ -19,4 +19,6 @@ public partial interface C_OP_SetControlPointFieldToScalarExpression : CParticle
   public ref int OutputCP { get; }
   
   public ref int OutVectorField { get; }
+
+
 }

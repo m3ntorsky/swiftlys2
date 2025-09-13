@@ -41,4 +41,16 @@ public partial interface CColorCorrection : CBaseEntity {
   public ISchemaFixedString NetlookupFilename { get; }
   
   public ref CUtlSymbolLarge LookupFilename { get; }
+
+  public void FadeInDurationUpdated();
+  public void FadeOutDurationUpdated();
+  public void MaxWeightUpdated();
+  public void EnabledUpdated();
+  public void MasterUpdated();
+  public void ClientSideUpdated();
+  public void ExclusiveUpdated();
+  public void MinFalloffUpdated();
+  public void MaxFalloffUpdated();
+  public void CurWeightUpdated();
+  public void NetlookupFilenameUpdated();
 }

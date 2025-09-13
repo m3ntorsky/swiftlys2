@@ -9,4 +9,6 @@ public partial interface MaterialParamInt_t : MaterialParam_t {
 
   
   public ref int Value { get; }
+
+
 }

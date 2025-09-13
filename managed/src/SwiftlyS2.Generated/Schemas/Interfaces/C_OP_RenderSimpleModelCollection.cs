@@ -25,4 +25,6 @@ public partial interface C_OP_RenderSimpleModelCollection : CParticleFunctionRen
   public CPerParticleFloatInput DrawFilter { get; }
   
   public ParticleAttributeIndex_t AngularVelocityField { get; }
+
+
 }

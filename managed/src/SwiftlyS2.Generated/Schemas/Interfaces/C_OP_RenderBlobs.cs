@@ -24,4 +24,6 @@ public partial interface C_OP_RenderBlobs : CParticleFunctionRenderer {
   public ref CUtlVector MaterialVars { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
+
+
 }

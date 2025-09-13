@@ -17,4 +17,6 @@ public partial interface CFilterEnemy : CBaseFilter {
   public ref int MaxSquadmatesPerEnemy { get; }
   
   public ref CUtlSymbolLarge PlayerName { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CFollowTargetUpdateNode : CUnaryUpdateNode {
   public CAnimParamHandle ParameterPosition { get; }
   
   public CAnimParamHandle ParameterOrientation { get; }
+
+
 }

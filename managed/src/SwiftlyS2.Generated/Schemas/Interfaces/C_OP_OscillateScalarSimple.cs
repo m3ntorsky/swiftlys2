@@ -17,4 +17,6 @@ public partial interface C_OP_OscillateScalarSimple : CParticleFunctionOperator 
   public ref float OscMult { get; }
   
   public ref float OscAdd { get; }
+
+
 }

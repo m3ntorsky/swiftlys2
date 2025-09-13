@@ -39,4 +39,20 @@ public partial interface CGradientFog : CBaseEntity {
   public ref bool IsEnabled { get; }
   
   public ref bool GradientFogNeedsTextures { get; }
+
+  public void GradientFogTextureUpdated();
+  public void FogStartDistanceUpdated();
+  public void FogEndDistanceUpdated();
+  public void HeightFogEnabledUpdated();
+  public void FogStartHeightUpdated();
+  public void FogEndHeightUpdated();
+  public void FarZUpdated();
+  public void FogMaxOpacityUpdated();
+  public void FogFalloffExponentUpdated();
+  public void FogVerticalExponentUpdated();
+  public void FogColorUpdated();
+  public void FogStrengthUpdated();
+  public void FadeTimeUpdated();
+  public void StartDisabledUpdated();
+  public void IsEnabledUpdated();
 }

@@ -13,4 +13,6 @@ public partial interface VelocitySampler : ISchemaClass {
   public GameTime_t PrevSampleTime { get; }
   
   public ref float IdealSampleRate { get; }
+
+
 }

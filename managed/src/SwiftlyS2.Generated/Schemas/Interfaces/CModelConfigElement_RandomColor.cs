@@ -9,4 +9,6 @@ public partial interface CModelConfigElement_RandomColor : CModelConfigElement {
 
   
   public SchemaUntypedField Gradient { get; }
+
+
 }

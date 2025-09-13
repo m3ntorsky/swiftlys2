@@ -37,4 +37,6 @@ public partial interface C_OP_PositionLock : CParticleFunctionOperator {
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ParticleAttributeIndex_t FieldOutputPrev { get; }
+
+
 }

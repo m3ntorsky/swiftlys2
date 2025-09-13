@@ -13,4 +13,6 @@ public partial interface CPulseCell_Inflow_EntOutputHandler : CPulseCell_Inflow_
   public SchemaUntypedField SourceOutput { get; }
   
   public SchemaUntypedField ExpectedParamType { get; }
+
+
 }

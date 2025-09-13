@@ -11,4 +11,6 @@ public partial interface CEconWearable : CEconEntity {
   public ref int ForceSkin { get; }
   
   public ref bool AlwaysAllow { get; }
+
+
 }

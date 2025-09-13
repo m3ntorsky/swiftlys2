@@ -9,4 +9,6 @@ public partial interface CStopwatch : CStopwatchBase {
 
   
   public ref float Interval { get; }
+
+
 }

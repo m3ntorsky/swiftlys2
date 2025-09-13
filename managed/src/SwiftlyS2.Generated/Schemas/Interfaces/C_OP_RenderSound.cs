@@ -31,4 +31,6 @@ public partial interface C_OP_RenderSound : CParticleFunctionRenderer {
   public ISchemaFixedString SoundName { get; }
   
   public ref bool SuppressStopSoundEvent { get; }
+
+
 }

@@ -27,4 +27,6 @@ public partial interface C_OP_RampScalarSpline : CParticleFunctionOperator {
   public ref bool ProportionalOp { get; }
   
   public ref bool EaseOut { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CTriggerBuoyancy : CBaseTrigger {
   public CBuoyancyHelper BuoyancyHelper { get; }
   
   public ref float FluidDensity { get; }
+
+  public void FluidDensityUpdated();
 }

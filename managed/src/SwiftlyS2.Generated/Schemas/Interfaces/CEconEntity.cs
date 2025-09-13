@@ -25,4 +25,12 @@ public partial interface CEconEntity : CBaseFlex {
   public ref CHandle<CBaseEntity> OldProvidee { get; }
   
   public ref int OldOwnerClass { get; }
+
+  public void AttributeManagerUpdated();
+  public void OriginalOwnerXuidLowUpdated();
+  public void OriginalOwnerXuidHighUpdated();
+  public void FallbackPaintKitUpdated();
+  public void FallbackSeedUpdated();
+  public void FallbackWearUpdated();
+  public void FallbackStatTrakUpdated();
 }

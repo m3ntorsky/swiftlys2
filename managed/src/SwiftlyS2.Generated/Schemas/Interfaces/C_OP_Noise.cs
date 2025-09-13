@@ -19,4 +19,6 @@ public partial interface C_OP_Noise : CParticleFunctionOperator {
   public ref bool Additive { get; }
   
   public ref float NoiseAnimationTimeScale { get; }
+
+
 }

@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvSoundscapeProxyAlias_snd_soundscape_proxy : CEnvSoundscapeProxy {
 
 
+
+
 }

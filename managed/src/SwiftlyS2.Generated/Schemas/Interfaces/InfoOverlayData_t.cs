@@ -27,4 +27,6 @@ public partial interface InfoOverlayData_t : ISchemaClass {
   public ref Vector4D TintColor { get; }
   
   public ref CUtlStringToken SequenceOverrideName { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CPulseCell_Outflow_CycleOrdered__InstanceState_t : ISch
 
   
   public ref int NextIndex { get; }
+
+
 }

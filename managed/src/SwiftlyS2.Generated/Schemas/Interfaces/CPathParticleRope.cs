@@ -39,4 +39,17 @@ public partial interface CPathParticleRope : CBaseEntity {
   public ref CUtlVector<bool> PathNodes_PinEnabled { get; }
   
   public ref CUtlVector<float> PathNodes_RadiusScale { get; }
+
+  public void ParticleSpacingUpdated();
+  public void SlackUpdated();
+  public void RadiusUpdated();
+  public void ColorTintUpdated();
+  public void EffectStateUpdated();
+  public void EffectIndexUpdated();
+  public void PathNodes_PositionUpdated();
+  public void PathNodes_TangentInUpdated();
+  public void PathNodes_TangentOutUpdated();
+  public void PathNodes_ColorUpdated();
+  public void PathNodes_PinEnabledUpdated();
+  public void PathNodes_RadiusScaleUpdated();
 }

@@ -13,4 +13,6 @@ public partial interface PhysShapeMarkup_t : ISchemaClass {
   public ref int ShapeInBody { get; }
   
   public ref CGlobalSymbol HitGroup { get; }
+
+
 }

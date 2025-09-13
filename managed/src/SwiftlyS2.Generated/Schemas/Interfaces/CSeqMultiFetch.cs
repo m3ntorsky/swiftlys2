@@ -27,4 +27,6 @@ public partial interface CSeqMultiFetch : ISchemaClass {
   public ref bool FixedBlendWeight { get; }
   
   public ISchemaFixedArray<float> FixedBlendWeightVals { get; }
+
+
 }

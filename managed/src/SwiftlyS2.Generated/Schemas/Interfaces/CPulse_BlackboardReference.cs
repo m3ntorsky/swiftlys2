@@ -15,4 +15,6 @@ public partial interface CPulse_BlackboardReference : ISchemaClass {
   public PulseDocNodeID_t NodeID { get; }
   
   public ref CGlobalSymbol NodeName { get; }
+
+
 }

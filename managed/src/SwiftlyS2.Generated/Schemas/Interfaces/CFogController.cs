@@ -13,4 +13,6 @@ public partial interface CFogController : CBaseEntity {
   public ref bool UseAngles { get; }
   
   public ref int ChangedVariables { get; }
+
+  public void FogUpdated();
 }

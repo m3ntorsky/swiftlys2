@@ -19,4 +19,6 @@ public partial interface WorldBuilderParams_t : ISchemaClass {
   public ref ulong CompileTimestamp { get; }
   
   public ref ulong CompileFingerprint { get; }
+
+
 }

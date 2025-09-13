@@ -31,4 +31,6 @@ public partial interface C_OP_PercentageBetweenTransformLerpCPs : CParticleFunct
   public ref bool ActiveRange { get; }
   
   public ref bool RadialCheck { get; }
+
+
 }

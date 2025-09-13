@@ -18,4 +18,6 @@ public partial interface C_OP_LockToPointList : CParticleFunctionOperator {
   public ref bool ClosedLoop { get; }
   
   public ref int NumPointsAlongPath { get; }
+
+
 }

@@ -29,4 +29,14 @@ public partial interface CGlowProperty : ISchemaClass {
   public ref bool EligibleForScreenHighlight { get; }
   
   public ref bool Glowing { get; }
+
+  public void GlowTypeUpdated();
+  public void GlowTeamUpdated();
+  public void GlowRangeUpdated();
+  public void GlowRangeMinUpdated();
+  public void GlowColorOverrideUpdated();
+  public void FlashingUpdated();
+  public void GlowTimeUpdated();
+  public void GlowStartTimeUpdated();
+  public void EligibleForScreenHighlightUpdated();
 }

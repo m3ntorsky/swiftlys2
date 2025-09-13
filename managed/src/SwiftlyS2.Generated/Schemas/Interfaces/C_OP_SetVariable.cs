@@ -19,4 +19,6 @@ public partial interface C_OP_SetVariable : CParticleFunctionPreEmission {
   public CParticleCollectionVecInput Input { get; }
   
   public CParticleCollectionFloatInput FloatInput { get; }
+
+
 }

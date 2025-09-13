@@ -17,4 +17,6 @@ public partial interface CAnimBoneDifference : ISchemaClass {
   public ref bool HasRotation { get; }
   
   public ref bool HasMovement { get; }
+
+
 }

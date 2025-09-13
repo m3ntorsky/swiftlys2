@@ -9,4 +9,6 @@ public partial interface CSkillInt : ISchemaClass {
 
   
   public ISchemaFixedArray<int> Value { get; }
+
+
 }

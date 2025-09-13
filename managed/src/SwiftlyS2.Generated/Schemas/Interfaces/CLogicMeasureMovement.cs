@@ -25,4 +25,6 @@ public partial interface CLogicMeasureMovement : CLogicalEntity {
   public ref float Scale { get; }
   
   public ref int MeasureType { get; }
+
+
 }

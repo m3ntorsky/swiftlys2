@@ -9,4 +9,6 @@ public partial interface MaterialParamBuffer_t : MaterialParam_t {
 
   
   public ref CUtlBinaryBlock Value { get; }
+
+
 }

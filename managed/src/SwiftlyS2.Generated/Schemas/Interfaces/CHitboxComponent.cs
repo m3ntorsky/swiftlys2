@@ -9,4 +9,6 @@ public partial interface CHitboxComponent : CEntityComponent {
 
   
   public ISchemaFixedArray<uint> DisabledHitGroups { get; }
+
+  public void DisabledHitGroupsUpdated();
 }

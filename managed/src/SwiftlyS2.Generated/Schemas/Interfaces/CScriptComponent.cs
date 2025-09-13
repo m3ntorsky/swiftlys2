@@ -9,4 +9,6 @@ public partial interface CScriptComponent : CEntityComponent {
 
   
   public ref CUtlSymbolLarge ScriptClassName { get; }
+
+
 }

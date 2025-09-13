@@ -17,4 +17,6 @@ public partial interface CTriggerProximity : CBaseTrigger {
   public ref int Touchers { get; }
   
   public SchemaUntypedField NearestEntityDistance { get; }
+
+
 }

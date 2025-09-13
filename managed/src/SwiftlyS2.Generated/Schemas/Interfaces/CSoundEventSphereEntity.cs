@@ -9,4 +9,6 @@ public partial interface CSoundEventSphereEntity : CSoundEventEntity {
 
   
   public ref float Radius { get; }
+
+  public void RadiusUpdated();
 }

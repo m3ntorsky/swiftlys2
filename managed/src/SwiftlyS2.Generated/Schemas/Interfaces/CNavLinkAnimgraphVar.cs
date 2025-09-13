@@ -11,4 +11,6 @@ public partial interface CNavLinkAnimgraphVar : ISchemaClass {
   public ref CGlobalSymbol AnimGraphNavlinkType { get; }
   
   public ref uint AlignmentDegrees { get; }
+
+
 }

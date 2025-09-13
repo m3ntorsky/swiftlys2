@@ -9,4 +9,6 @@ public partial interface PulseRuntimeDomainValueIndex_t : ISchemaClass {
 
   
   public ref short Value { get; }
+
+
 }

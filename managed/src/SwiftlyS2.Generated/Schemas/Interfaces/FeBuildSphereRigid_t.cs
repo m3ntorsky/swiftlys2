@@ -13,4 +13,6 @@ public partial interface FeBuildSphereRigid_t : FeSphereRigid_t {
   public ref uint VertexMapHash { get; }
   
   public ref uint AntitunnelGroupBits { get; }
+
+
 }

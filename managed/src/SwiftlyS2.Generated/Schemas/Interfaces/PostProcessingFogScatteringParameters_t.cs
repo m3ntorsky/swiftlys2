@@ -17,4 +17,6 @@ public partial interface PostProcessingFogScatteringParameters_t : ISchemaClass 
   public ref float VolumetricScale { get; }
   
   public ref float GradientScale { get; }
+
+
 }

@@ -29,4 +29,6 @@ public partial interface CParticleAnimTag : CAnimTagBase {
   public ref CUtlString AttachmentCP1Name { get; }
   
   public ref ParticleAttachment_t AttachmentCP1Type { get; }
+
+
 }

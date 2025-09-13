@@ -15,4 +15,6 @@ public partial interface ExtraVertexStreamOverride_t : BaseSceneObjectOverride_t
   public ref MeshDrawPrimitiveFlags_t AdditionalMeshDrawPrimitiveFlags { get; }
   
   public CRenderBufferBinding ExtraBufferBinding { get; }
+
+
 }

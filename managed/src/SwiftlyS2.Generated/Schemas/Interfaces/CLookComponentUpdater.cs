@@ -25,4 +25,6 @@ public partial interface CLookComponentUpdater : CAnimComponentUpdater {
   public CAnimParamHandle LookTargetWorldSpace { get; }
   
   public ref bool NetworkLookTarget { get; }
+
+
 }

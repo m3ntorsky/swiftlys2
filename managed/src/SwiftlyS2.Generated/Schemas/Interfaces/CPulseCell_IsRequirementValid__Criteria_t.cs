@@ -9,4 +9,6 @@ public partial interface CPulseCell_IsRequirementValid__Criteria_t : ISchemaClas
 
   
   public ref bool IsValid { get; }
+
+
 }

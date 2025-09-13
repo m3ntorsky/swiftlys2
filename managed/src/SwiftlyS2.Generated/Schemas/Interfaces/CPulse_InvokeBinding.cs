@@ -17,4 +17,6 @@ public partial interface CPulse_InvokeBinding : ISchemaClass {
   public PulseRuntimeChunkIndex_t SrcChunk { get; }
   
   public ref int SrcInstruction { get; }
+
+
 }

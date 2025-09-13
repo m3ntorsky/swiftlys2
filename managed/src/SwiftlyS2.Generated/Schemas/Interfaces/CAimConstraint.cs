@@ -11,4 +11,6 @@ public partial interface CAimConstraint : CBaseConstraint {
   public ref Quaternion AimOffset { get; }
   
   public ref uint UpType { get; }
+
+
 }

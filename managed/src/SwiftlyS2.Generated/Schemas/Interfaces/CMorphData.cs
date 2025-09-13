@@ -12,4 +12,6 @@ public partial interface CMorphData : ISchemaClass {
   
 // CUtlVector< CMorphRectData >
   public ref CUtlVector MorphRectDatas { get; }
+
+
 }

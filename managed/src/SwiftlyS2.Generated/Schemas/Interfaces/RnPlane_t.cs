@@ -11,4 +11,6 @@ public partial interface RnPlane_t : ISchemaClass {
   public ref Vector Normal { get; }
   
   public ref float Offset { get; }
+
+
 }

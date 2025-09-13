@@ -17,4 +17,6 @@ public partial interface CAnimReplayFrame : ISchemaClass {
   public ref CTransform LocalToWorldTransform { get; }
   
   public ref float TimeStamp { get; }
+
+
 }

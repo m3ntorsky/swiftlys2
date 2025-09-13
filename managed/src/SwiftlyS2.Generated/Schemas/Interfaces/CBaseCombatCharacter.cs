@@ -29,4 +29,6 @@ public partial interface CBaseCombatCharacter : CBaseFlex {
   public ref uint NavHullIdx { get; }
   
   public CMovementStatsProperty MovementStats { get; }
+
+  public void MyWearablesUpdated();
 }

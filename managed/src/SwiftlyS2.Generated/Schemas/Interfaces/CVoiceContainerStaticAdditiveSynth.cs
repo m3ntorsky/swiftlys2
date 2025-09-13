@@ -10,4 +10,6 @@ public partial interface CVoiceContainerStaticAdditiveSynth : CVoiceContainerBas
   
 // CUtlVector< CVoiceContainerStaticAdditiveSynth::CTone >
   public ref CUtlVector Tones { get; }
+
+
 }

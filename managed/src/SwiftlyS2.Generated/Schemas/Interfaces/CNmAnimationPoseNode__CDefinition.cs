@@ -17,4 +17,6 @@ public partial interface CNmAnimationPoseNode__CDefinition : CNmPoseNode__CDefin
   public ref float UserSpecifiedTime { get; }
   
   public ref bool UseFramesAsInput { get; }
+
+
 }

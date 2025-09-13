@@ -17,4 +17,6 @@ public partial interface C_INIT_RemapInitialVisibilityScalar : CParticleFunction
   public ref float OutputMin { get; }
   
   public ref float OutputMax { get; }
+
+
 }

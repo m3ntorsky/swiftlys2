@@ -71,4 +71,6 @@ public partial interface CNewParticleEffect : IParticleEffect {
   public ref Vector AggregationCenter { get; }
   
   public ref int RefCount { get; }
+
+
 }

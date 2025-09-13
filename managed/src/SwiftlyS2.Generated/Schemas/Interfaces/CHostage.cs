@@ -85,4 +85,17 @@ public partial interface CHostage : CHostageExpresserShim {
   public ref Vector SpawnGroundPos { get; }
   
   public ref Vector HostageResetPosition { get; }
+
+  public void EntitySpottedStateUpdated();
+  public void VelUpdated();
+  public void IsRescuedUpdated();
+  public void JumpedThisFrameUpdated();
+  public void HostageStateUpdated();
+  public void LeaderUpdated();
+  public void ReuseTimerUpdated();
+  public void HandsHaveBeenCutUpdated();
+  public void HostageGrabberUpdated();
+  public void RescueStartTimeUpdated();
+  public void GrabSuccessTimeUpdated();
+  public void DropStartTimeUpdated();
 }

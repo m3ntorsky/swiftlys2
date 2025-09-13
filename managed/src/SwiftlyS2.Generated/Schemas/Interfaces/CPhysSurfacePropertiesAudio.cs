@@ -23,4 +23,6 @@ public partial interface CPhysSurfacePropertiesAudio : ISchemaClass {
   public ref float StaticImpactVolume { get; }
   
   public ref float OcclusionFactor { get; }
+
+
 }

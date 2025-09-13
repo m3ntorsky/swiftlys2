@@ -11,4 +11,6 @@ public partial interface CEnvMuzzleFlash : CPointEntity {
   public ref float Scale { get; }
   
   public ref CUtlSymbolLarge ParentAttachment { get; }
+
+
 }

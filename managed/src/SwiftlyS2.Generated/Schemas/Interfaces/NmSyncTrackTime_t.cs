@@ -11,4 +11,6 @@ public partial interface NmSyncTrackTime_t : ISchemaClass {
   public ref int EventIdx { get; }
   
   public NmPercent_t PercentageThrough { get; }
+
+
 }

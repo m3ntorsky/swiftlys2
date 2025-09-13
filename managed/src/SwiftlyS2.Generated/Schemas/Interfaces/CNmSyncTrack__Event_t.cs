@@ -13,4 +13,6 @@ public partial interface CNmSyncTrack__Event_t : ISchemaClass {
   public NmPercent_t StartTime { get; }
   
   public NmPercent_t Duration { get; }
+
+
 }

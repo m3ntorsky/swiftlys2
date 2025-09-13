@@ -23,4 +23,6 @@ public partial interface CSeqPoseSetting : ISchemaClass {
   public ref bool Z { get; }
   
   public ref int Type { get; }
+
+
 }

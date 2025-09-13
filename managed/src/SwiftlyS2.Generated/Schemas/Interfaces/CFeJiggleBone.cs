@@ -77,4 +77,6 @@ public partial interface CFeJiggleBone : ISchemaClass {
   public ref Vector Point1 { get; }
   
   public ref ushort CollisionMask { get; }
+
+
 }

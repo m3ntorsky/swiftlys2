@@ -11,4 +11,6 @@ public partial interface CVoiceContainerDecayingSineWave : CVoiceContainerBase {
   public ref float Frequency { get; }
   
   public ref float DecayTime { get; }
+
+
 }

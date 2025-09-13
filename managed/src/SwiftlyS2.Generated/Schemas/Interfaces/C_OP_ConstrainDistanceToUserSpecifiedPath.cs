@@ -18,4 +18,6 @@ public partial interface C_OP_ConstrainDistanceToUserSpecifiedPath : CParticleFu
   
 // CUtlVector< PointDefinitionWithTimeValues_t >
   public ref CUtlVector PointList { get; }
+
+
 }

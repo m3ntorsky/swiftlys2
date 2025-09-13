@@ -15,4 +15,6 @@ public partial interface CMaterialAttributeAnimTag : CAnimTagBase {
   public ref float Value { get; }
   
   public ref Color Color { get; }
+
+
 }

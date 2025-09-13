@@ -17,4 +17,6 @@ public partial interface FollowTargetOpFixedSettings_t : ISchemaClass {
   public ref bool WorldCoodinateTarget { get; }
   
   public ref bool MatchTargetOrientation { get; }
+
+
 }

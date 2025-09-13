@@ -25,4 +25,12 @@ public partial interface CDynamicLight : CBaseModelEntity {
   public ref float OuterAngle { get; }
   
   public ref float SpotRadius { get; }
+
+  public void FlagsUpdated();
+  public void LightStyleUpdated();
+  public void RadiusUpdated();
+  public void ExponentUpdated();
+  public void InnerAngleUpdated();
+  public void OuterAngleUpdated();
+  public void SpotRadiusUpdated();
 }

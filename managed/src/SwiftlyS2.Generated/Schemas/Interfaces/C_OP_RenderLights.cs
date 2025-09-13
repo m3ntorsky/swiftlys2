@@ -21,4 +21,6 @@ public partial interface C_OP_RenderLights : C_OP_RenderPoints {
   public ref float StartFadeSize { get; }
   
   public ref float EndFadeSize { get; }
+
+
 }

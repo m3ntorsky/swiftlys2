@@ -31,4 +31,17 @@ public partial interface CEnvSky : CBaseModelEntity {
   public ref float FogMaxEnd { get; }
   
   public ref bool Enabled { get; }
+
+  public void SkyMaterialUpdated();
+  public void SkyMaterialLightingOnlyUpdated();
+  public void StartDisabledUpdated();
+  public void TintColorUpdated();
+  public void TintColorLightingOnlyUpdated();
+  public void BrightnessScaleUpdated();
+  public void FogTypeUpdated();
+  public void FogMinStartUpdated();
+  public void FogMinEndUpdated();
+  public void FogMaxStartUpdated();
+  public void FogMaxEndUpdated();
+  public void EnabledUpdated();
 }

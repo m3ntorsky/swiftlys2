@@ -23,4 +23,6 @@ public partial interface CSoundOpvarSetOBBWindEntity : CSoundOpvarSetPointBase {
   public ref float WindMapMin { get; }
   
   public ref float WindMapMax { get; }
+
+
 }

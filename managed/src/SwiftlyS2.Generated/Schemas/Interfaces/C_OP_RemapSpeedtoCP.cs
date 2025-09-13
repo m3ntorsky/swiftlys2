@@ -23,4 +23,6 @@ public partial interface C_OP_RemapSpeedtoCP : CParticleFunctionPreEmission {
   public ref float OutputMax { get; }
   
   public ref bool UseDeltaV { get; }
+
+
 }

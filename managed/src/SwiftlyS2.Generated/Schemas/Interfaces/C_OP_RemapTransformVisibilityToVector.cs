@@ -23,4 +23,6 @@ public partial interface C_OP_RemapTransformVisibilityToVector : CParticleFuncti
   public ref Vector OutputMax { get; }
   
   public ref float Radius { get; }
+
+
 }

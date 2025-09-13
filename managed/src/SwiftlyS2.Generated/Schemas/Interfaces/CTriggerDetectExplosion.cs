@@ -9,4 +9,6 @@ public partial interface CTriggerDetectExplosion : CBaseTrigger {
 
   
   public CEntityIOOutput OnDetectedExplosion { get; }
+
+
 }

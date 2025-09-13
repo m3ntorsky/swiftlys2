@@ -9,4 +9,6 @@ public partial interface CTwoBoneIKUpdateNode : CUnaryUpdateNode {
 
   
   public TwoBoneIKSettings_t OpFixedData { get; }
+
+
 }

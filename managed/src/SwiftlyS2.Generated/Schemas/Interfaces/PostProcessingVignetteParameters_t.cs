@@ -19,4 +19,6 @@ public partial interface PostProcessingVignetteParameters_t : ISchemaClass {
   public ref float Feather { get; }
   
   public ref Vector ColorTint { get; }
+
+
 }

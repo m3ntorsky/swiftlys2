@@ -13,4 +13,6 @@ public partial interface CShatterGlassShardPhysics : CPhysicsProp {
   public ref uint ParentShard { get; }
   
   public shard_model_desc_t ShardDesc { get; }
+
+  public void ShardDescUpdated();
 }

@@ -11,4 +11,6 @@ public partial interface CNmGraphDefinition__ReferencedGraphSlot_t : ISchemaClas
   public ref short NodeIdx { get; }
   
   public ref short DataSlotIdx { get; }
+
+
 }

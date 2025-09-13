@@ -17,4 +17,10 @@ public partial interface CRetakeGameRules : ISchemaClass {
   public ref int FirstSecondHalfRound { get; }
   
   public ref int BombSite { get; }
+
+  public void MatchSeedUpdated();
+  public void BlockersPresentUpdated();
+  public void RoundInProgressUpdated();
+  public void FirstSecondHalfRoundUpdated();
+  public void BombSiteUpdated();
 }

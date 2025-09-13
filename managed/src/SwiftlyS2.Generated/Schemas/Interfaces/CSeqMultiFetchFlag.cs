@@ -19,4 +19,6 @@ public partial interface CSeqMultiFetchFlag : ISchemaClass {
   public ref bool B2D { get; }
   
   public ref bool B2D_TRI { get; }
+
+
 }

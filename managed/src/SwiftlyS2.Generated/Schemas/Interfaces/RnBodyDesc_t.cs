@@ -81,4 +81,6 @@ public partial interface RnBodyDesc_t : ISchemaClass {
   public ref bool HasShadowController { get; }
   
   public ref DynamicContinuousContactBehavior_t DynamicContinuousContactBehavior { get; }
+
+
 }

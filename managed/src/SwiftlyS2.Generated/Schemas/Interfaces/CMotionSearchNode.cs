@@ -17,4 +17,6 @@ public partial interface CMotionSearchNode : ISchemaClass {
   public ref CUtlVector<CUtlVector<int>> SampleIndices { get; }
   
   public ref CUtlVector<int> SelectableSamples { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CPointClientUIDialog : CBaseClientUIEntity {
   public ref CHandle<CBaseEntity> Activator { get; }
   
   public ref bool StartEnabled { get; }
+
+  public void ActivatorUpdated();
 }

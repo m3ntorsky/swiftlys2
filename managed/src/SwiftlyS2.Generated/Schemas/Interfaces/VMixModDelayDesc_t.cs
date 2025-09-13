@@ -25,4 +25,6 @@ public partial interface VMixModDelayDesc_t : ISchemaClass {
   public ref float ModDepth { get; }
   
   public ref bool ApplyAntialiasing { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CVoiceContainerBase : ISchemaClass {
   public CVSound Sound { get; }
   
   public CVoiceContainerAnalysisBase EnvelopeAnalyzer { get; }
+
+
 }

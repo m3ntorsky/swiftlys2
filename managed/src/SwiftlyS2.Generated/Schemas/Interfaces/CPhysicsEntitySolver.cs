@@ -15,4 +15,6 @@ public partial interface CPhysicsEntitySolver : CLogicalEntity {
   public ref float SeparationDuration { get; }
   
   public GameTime_t CancelTime { get; }
+
+
 }

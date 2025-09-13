@@ -16,4 +16,6 @@ public partial interface CNavLinkMovementVData : ISchemaClass {
   
 // CUtlVector< CNavLinkAnimgraphVar >
   public ref CUtlVector AnimgraphVars { get; }
+
+
 }

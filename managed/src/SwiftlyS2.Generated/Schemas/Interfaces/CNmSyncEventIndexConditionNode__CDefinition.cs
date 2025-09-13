@@ -13,4 +13,6 @@ public partial interface CNmSyncEventIndexConditionNode__CDefinition : CNmBoolVa
   public ref CNmSyncEventIndexConditionNode__TriggerMode_t TriggerMode { get; }
   
   public ref int SyncEventIdx { get; }
+
+
 }

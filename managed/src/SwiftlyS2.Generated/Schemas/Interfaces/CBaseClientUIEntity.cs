@@ -35,4 +35,9 @@ public partial interface CBaseClientUIEntity : CBaseModelEntity {
   public CEntityIOOutput CustomOutput8 { get; }
   
   public CEntityIOOutput CustomOutput9 { get; }
+
+  public void EnabledUpdated();
+  public void DialogXMLNameUpdated();
+  public void PanelClassNameUpdated();
+  public void PanelIDUpdated();
 }

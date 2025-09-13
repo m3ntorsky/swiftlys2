@@ -11,4 +11,6 @@ public partial interface CTriggerVolume : CBaseModelEntity {
   public ref CUtlSymbolLarge FilterName { get; }
   
   public ref CHandle<CBaseFilter> Filter { get; }
+
+
 }

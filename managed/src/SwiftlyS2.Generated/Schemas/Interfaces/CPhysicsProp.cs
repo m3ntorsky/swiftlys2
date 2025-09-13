@@ -83,4 +83,6 @@ public partial interface CPhysicsProp : CBreakableProp {
   public ref bool Awake { get; }
   
   public ref bool AttachedToReferenceFrame { get; }
+
+  public void AwakeUpdated();
 }

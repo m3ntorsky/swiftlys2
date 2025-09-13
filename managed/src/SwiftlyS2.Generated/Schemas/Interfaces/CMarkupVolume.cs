@@ -9,4 +9,6 @@ public partial interface CMarkupVolume : CBaseModelEntity {
 
   
   public ref bool Disabled { get; }
+
+
 }

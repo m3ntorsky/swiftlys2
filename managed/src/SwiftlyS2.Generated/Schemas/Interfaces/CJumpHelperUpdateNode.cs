@@ -23,4 +23,6 @@ public partial interface CJumpHelperUpdateNode : CSequenceUpdateNode {
   public ISchemaFixedArray<bool> TranslationAxis { get; }
   
   public ref bool ScaleSpeed { get; }
+
+
 }

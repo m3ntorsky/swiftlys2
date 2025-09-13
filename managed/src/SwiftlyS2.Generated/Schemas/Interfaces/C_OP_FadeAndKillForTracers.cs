@@ -19,4 +19,6 @@ public partial interface C_OP_FadeAndKillForTracers : CParticleFunctionOperator 
   public ref float StartAlpha { get; }
   
   public ref float EndAlpha { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface VMixSubgraphSwitchDesc_t : ISchemaClass {
   public ref bool OnlyTailsOnFadeOut { get; }
   
   public ref float InterpolationTime { get; }
+
+
 }

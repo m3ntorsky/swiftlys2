@@ -13,4 +13,6 @@ public partial interface CMarkupVolumeTagged_NavGame : CMarkupVolumeWithRef {
   public ref bool FloodFillAttribute { get; }
   
   public ref bool SplitNavSpace { get; }
+
+
 }

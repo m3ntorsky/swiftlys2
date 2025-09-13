@@ -15,4 +15,6 @@ public partial interface C_INIT_RandomVector : CParticleFunctionInitializer {
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public CRandomNumberGeneratorParameters RandomnessParameters { get; }
+
+
 }

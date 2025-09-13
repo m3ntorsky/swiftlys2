@@ -55,4 +55,20 @@ public partial interface CMapVetoPickController : CBaseEntity {
   public SchemaUntypedField OnNewPhaseStarted { get; }
   
   public SchemaUntypedField OnLevelTransition { get; }
+
+  public void DraftTypeUpdated();
+  public void TeamWinningCoinTossUpdated();
+  public void TeamWithFirstChoiceUpdated();
+  public void VoteMapIdsListUpdated();
+  public void AccountIDsUpdated();
+  public void MapId0Updated();
+  public void MapId1Updated();
+  public void MapId2Updated();
+  public void MapId3Updated();
+  public void MapId4Updated();
+  public void MapId5Updated();
+  public void StartingSide0Updated();
+  public void CurrentPhaseUpdated();
+  public void PhaseStartTickUpdated();
+  public void PhaseDurationTicksUpdated();
 }

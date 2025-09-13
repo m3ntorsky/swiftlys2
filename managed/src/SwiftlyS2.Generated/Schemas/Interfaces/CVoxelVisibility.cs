@@ -33,4 +33,6 @@ public partial interface CVoxelVisibility : ISchemaClass {
   public VoxelVisBlockOffset_t MasksBlock { get; }
   
   public VoxelVisBlockOffset_t VisBlocks { get; }
+
+
 }

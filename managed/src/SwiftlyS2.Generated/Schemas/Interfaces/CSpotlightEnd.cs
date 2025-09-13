@@ -15,4 +15,7 @@ public partial interface CSpotlightEnd : CBaseModelEntity {
   public ref Vector SpotlightDir { get; }
   
   public ref Vector SpotlightOrg { get; }
+
+  public void LightScaleUpdated();
+  public void RadiusUpdated();
 }

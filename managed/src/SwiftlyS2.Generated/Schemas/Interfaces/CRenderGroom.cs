@@ -36,4 +36,6 @@ public partial interface CRenderGroom : ISchemaClass {
   public ref int AttachMeshDrawCallIdx { get; }
   
   public ref bool EnableSimulation { get; }
+
+
 }

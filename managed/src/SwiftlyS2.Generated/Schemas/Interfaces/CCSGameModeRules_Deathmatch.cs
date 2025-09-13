@@ -13,4 +13,8 @@ public partial interface CCSGameModeRules_Deathmatch : CCSGameModeRules {
   public ref float DMBonusTimeLength { get; }
   
   public ref CUtlString DMBonusWeapon { get; }
+
+  public void DMBonusStartTimeUpdated();
+  public void DMBonusTimeLengthUpdated();
+  public void DMBonusWeaponUpdated();
 }

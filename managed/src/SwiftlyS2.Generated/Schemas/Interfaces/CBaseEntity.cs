@@ -169,4 +169,41 @@ public partial interface CBaseEntity : CEntityInstance {
   public ref BloodType BloodType { get; }
   
   public CPulseGraphInstance_ServerEntity PulseGraphInstance { get; }
+
+  public void CBodyComponentUpdated();
+  public void HealthUpdated();
+  public void MaxHealthUpdated();
+  public void LifeStateUpdated();
+  public void TakesDamageUpdated();
+  public void TakeDamageFlagsUpdated();
+  public void PlatformTypeUpdated();
+  public void MoveCollideUpdated();
+  public void MoveTypeUpdated();
+  public void SubclassIDUpdated();
+  public void AnimTimeUpdated();
+  public void SimulationTimeUpdated();
+  public void CreateTimeUpdated();
+  public void ClientSideRagdollUpdated();
+  public void InterpolationFrameUpdated();
+  public void TeamNumUpdated();
+  public void SpeedUpdated();
+  public void SpawnflagsUpdated();
+  public void NextThinkTickUpdated();
+  public void FlagsUpdated();
+  public void VelocityUpdated();
+  public void BaseVelocityUpdated();
+  public void EffectEntityUpdated();
+  public void OwnerEntityUpdated();
+  public void EffectsUpdated();
+  public void GroundEntityUpdated();
+  public void GroundBodyIndexUpdated();
+  public void FrictionUpdated();
+  public void ElasticityUpdated();
+  public void GravityScaleUpdated();
+  public void TimeScaleUpdated();
+  public void WaterLevelUpdated();
+  public void GravityDisabledUpdated();
+  public void AnimatedEveryTickUpdated();
+  public void NavIgnoreUntilTimeUpdated();
+  public void BloodTypeUpdated();
 }

@@ -11,4 +11,6 @@ public partial interface MaterialGroup_t : ISchemaClass {
   public ref CUtlString Name { get; }
   
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeIMaterial2>> Materials { get; }
+
+
 }

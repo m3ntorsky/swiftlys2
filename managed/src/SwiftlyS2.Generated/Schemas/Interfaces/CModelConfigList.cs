@@ -13,4 +13,6 @@ public partial interface CModelConfigList : ISchemaClass {
   public ref bool HideRenderColorInTools { get; }
   
   public ref CUtlVector<PointerTo<CModelConfig>> Configs { get; }
+
+
 }

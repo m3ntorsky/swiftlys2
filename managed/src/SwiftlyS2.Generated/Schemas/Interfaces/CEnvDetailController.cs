@@ -11,4 +11,7 @@ public partial interface CEnvDetailController : CBaseEntity {
   public ref float FadeStartDist { get; }
   
   public ref float FadeEndDist { get; }
+
+  public void FadeStartDistUpdated();
+  public void FadeEndDistUpdated();
 }

@@ -9,4 +9,6 @@ public partial interface CBoolAnimParameter : CConcreteAnimParameter {
 
   
   public ref bool DefaultValue { get; }
+
+
 }

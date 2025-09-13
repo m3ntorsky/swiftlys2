@@ -15,4 +15,6 @@ public partial interface CPulse_OutputConnection : ISchemaClass {
   public SchemaUntypedField TargetInput { get; }
   
   public SchemaUntypedField Param { get; }
+
+
 }

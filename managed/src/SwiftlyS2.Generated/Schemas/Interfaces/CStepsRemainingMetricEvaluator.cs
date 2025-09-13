@@ -11,4 +11,6 @@ public partial interface CStepsRemainingMetricEvaluator : CMotionMetricEvaluator
   public ref CUtlVector<int> FootIndices { get; }
   
   public ref float MinStepsRemaining { get; }
+
+
 }

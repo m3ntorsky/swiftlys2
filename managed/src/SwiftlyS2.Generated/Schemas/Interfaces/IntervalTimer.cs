@@ -11,4 +11,7 @@ public partial interface IntervalTimer : ISchemaClass {
   public GameTime_t Timestamp { get; }
   
   public ref uint WorldGroupId { get; }
+
+  public void TimestampUpdated();
+  public void WorldGroupIdUpdated();
 }

@@ -17,4 +17,6 @@ public partial interface CPulseCell_Inflow_Method : CPulseCell_Inflow_BaseEntryp
   public SchemaUntypedField ReturnType { get; }
   
   public SchemaUntypedField Args { get; }
+
+
 }

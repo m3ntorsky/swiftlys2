@@ -22,4 +22,6 @@ public partial interface CDestructiblePartsSystemData_HitGroupInfoAndDamageLevel
   
 // CUtlVector< CDestructiblePartsSystemData_DamageLevel >
   public ref CUtlVector DamageLevels { get; }
+
+
 }

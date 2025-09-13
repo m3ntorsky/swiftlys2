@@ -13,4 +13,6 @@ public partial interface CPulseCell_LerpCameraSettings : CPulseCell_BaseLerp {
   public PointCameraSettings_t Start { get; }
   
   public PointCameraSettings_t End { get; }
+
+
 }

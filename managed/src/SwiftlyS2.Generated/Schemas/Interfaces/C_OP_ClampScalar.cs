@@ -13,4 +13,6 @@ public partial interface C_OP_ClampScalar : CParticleFunctionOperator {
   public CPerParticleFloatInput OutputMin { get; }
   
   public CPerParticleFloatInput OutputMax { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CNmTransitionEvent : CNmEvent {
   public ref NmTransitionRule_t Rule { get; }
   
   public ref CGlobalSymbol ID { get; }
+
+
 }

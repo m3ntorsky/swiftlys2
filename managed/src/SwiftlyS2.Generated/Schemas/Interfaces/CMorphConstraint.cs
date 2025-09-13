@@ -15,4 +15,6 @@ public partial interface CMorphConstraint : CBaseConstraint {
   public ref float Min { get; }
   
   public ref float Max { get; }
+
+
 }

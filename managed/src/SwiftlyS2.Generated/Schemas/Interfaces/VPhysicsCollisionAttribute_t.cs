@@ -23,4 +23,13 @@ public partial interface VPhysicsCollisionAttribute_t : ISchemaClass {
   public ref byte CollisionGroup { get; }
   
   public ref byte CollisionFunctionMask { get; }
+
+  public void InteractsAsUpdated();
+  public void InteractsWithUpdated();
+  public void InteractsExcludeUpdated();
+  public void EntityIdUpdated();
+  public void OwnerIdUpdated();
+  public void HierarchyIdUpdated();
+  public void CollisionGroupUpdated();
+  public void CollisionFunctionMaskUpdated();
 }

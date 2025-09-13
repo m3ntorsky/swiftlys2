@@ -9,4 +9,6 @@ public partial interface CFootCycleMetricEvaluator : CMotionMetricEvaluator {
 
   
   public ref CUtlVector<int> FootIndices { get; }
+
+
 }

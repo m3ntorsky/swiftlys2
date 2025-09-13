@@ -11,4 +11,6 @@ public partial interface CPulseCell_WaitForObservable : CPulseCell_BaseYieldingI
   public PulseObservableBoolExpression_t Condition { get; }
   
   public CPulse_ResumePoint OnTrue { get; }
+
+
 }

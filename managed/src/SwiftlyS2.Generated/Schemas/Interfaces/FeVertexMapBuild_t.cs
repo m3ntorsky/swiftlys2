@@ -19,4 +19,6 @@ public partial interface FeVertexMapBuild_t : ISchemaClass {
   public ref int ScaleSourceNode { get; }
   
   public ref CUtlVector<float> Weights { get; }
+
+
 }

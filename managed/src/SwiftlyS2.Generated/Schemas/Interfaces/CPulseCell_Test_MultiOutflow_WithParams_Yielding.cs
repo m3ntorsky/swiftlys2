@@ -17,4 +17,6 @@ public partial interface CPulseCell_Test_MultiOutflow_WithParams_Yielding : CPul
   public SignatureOutflow_Resume YieldResume1 { get; }
   
   public SignatureOutflow_Resume YieldResume2 { get; }
+
+
 }

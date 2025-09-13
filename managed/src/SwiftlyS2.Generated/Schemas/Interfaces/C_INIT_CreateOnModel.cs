@@ -39,4 +39,6 @@ public partial interface C_INIT_CreateOnModel : CParticleFunctionInitializer {
   public ref bool UseMesh { get; }
   
   public CParticleCollectionFloatInput ShellSize { get; }
+
+
 }

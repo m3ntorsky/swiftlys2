@@ -39,4 +39,6 @@ public partial interface PostProcessingBloomParameters_t : ISchemaClass {
   public ISchemaFixedArray<float> BlurWeight { get; }
   
   public ISchemaFixedArray<Vector> BlurTint { get; }
+
+
 }

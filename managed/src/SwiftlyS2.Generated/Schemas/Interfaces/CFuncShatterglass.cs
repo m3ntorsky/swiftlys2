@@ -59,4 +59,6 @@ public partial interface CFuncShatterglass : CBaseModelEntity {
   public ref byte SurfaceType { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> MaterialDamageBase { get; }
+
+
 }

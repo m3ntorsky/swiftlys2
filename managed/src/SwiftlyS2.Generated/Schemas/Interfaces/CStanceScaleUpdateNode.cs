@@ -9,4 +9,6 @@ public partial interface CStanceScaleUpdateNode : CUnaryUpdateNode {
 
   
   public CAnimParamHandle Param { get; }
+
+
 }

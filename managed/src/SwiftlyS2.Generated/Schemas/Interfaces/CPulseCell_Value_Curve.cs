@@ -9,4 +9,6 @@ public partial interface CPulseCell_Value_Curve : CPulseCell_BaseValue {
 
   
   public SchemaUntypedField Curve { get; }
+
+
 }

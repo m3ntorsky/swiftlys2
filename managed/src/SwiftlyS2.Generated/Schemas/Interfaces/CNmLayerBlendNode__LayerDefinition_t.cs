@@ -23,4 +23,6 @@ public partial interface CNmLayerBlendNode__LayerDefinition_t : ISchemaClass {
   public ref bool IsStateMachineLayer { get; }
   
   public ref NmPoseBlendMode_t BlendMode { get; }
+
+
 }

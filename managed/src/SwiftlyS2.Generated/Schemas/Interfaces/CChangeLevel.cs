@@ -21,4 +21,6 @@ public partial interface CChangeLevel : CBaseTrigger {
   public ref bool NewChapter { get; }
   
   public ref bool OnChangeLevelFired { get; }
+
+
 }

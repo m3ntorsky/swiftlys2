@@ -14,4 +14,6 @@ public partial interface CMotionSearchDB : ISchemaClass {
   
 // CUtlVector< MotionDBIndex >
   public ref CUtlVector CodeIndices { get; }
+
+
 }

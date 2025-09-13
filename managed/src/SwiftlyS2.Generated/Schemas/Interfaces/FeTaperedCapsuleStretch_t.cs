@@ -15,4 +15,6 @@ public partial interface FeTaperedCapsuleStretch_t : ISchemaClass {
   public ref ushort Dummy { get; }
   
   public ISchemaFixedArray<float> Radius { get; }
+
+
 }

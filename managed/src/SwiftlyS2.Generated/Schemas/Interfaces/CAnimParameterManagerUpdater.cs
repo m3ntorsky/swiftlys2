@@ -22,4 +22,6 @@ public partial interface CAnimParameterManagerUpdater : ISchemaClass {
   public ref CUtlVector AutoResetParams { get; }
   
   public SchemaUntypedField AutoResetMap { get; }
+
+
 }

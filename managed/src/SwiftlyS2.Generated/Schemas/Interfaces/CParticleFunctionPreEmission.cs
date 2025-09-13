@@ -9,4 +9,6 @@ public partial interface CParticleFunctionPreEmission : CParticleFunctionOperato
 
   
   public ref bool RunOnce { get; }
+
+
 }

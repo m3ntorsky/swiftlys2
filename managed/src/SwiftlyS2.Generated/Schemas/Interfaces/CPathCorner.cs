@@ -13,4 +13,6 @@ public partial interface CPathCorner : CPointEntity {
   public ref float Radius { get; }
   
   public CEntityIOOutput OnPass { get; }
+
+
 }

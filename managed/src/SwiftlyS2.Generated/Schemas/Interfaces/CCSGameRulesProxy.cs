@@ -9,4 +9,6 @@ public partial interface CCSGameRulesProxy : CGameRulesProxy {
 
   
   public CCSGameRules GameRules { get; }
+
+  public void GameRulesUpdated();
 }

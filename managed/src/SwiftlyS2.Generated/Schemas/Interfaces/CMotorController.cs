@@ -15,4 +15,6 @@ public partial interface CMotorController : ISchemaClass {
   public ref Vector Axis { get; }
   
   public ref float InertiaFactor { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CDestructiblePartsSystemData : ISchemaClass {
   public SchemaUntypedField PartsDataByHitGroup { get; }
   
   public CRangeInt MinMaxNumberHitGroupsToDestroyWhenGibbing { get; }
+
+
 }

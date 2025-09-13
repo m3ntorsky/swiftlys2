@@ -9,4 +9,6 @@ public partial interface CScriptTriggerHurt : CTriggerHurt {
 
   
   public ref Vector Extent { get; }
+
+
 }

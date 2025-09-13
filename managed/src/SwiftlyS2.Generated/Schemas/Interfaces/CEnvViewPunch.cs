@@ -11,4 +11,6 @@ public partial interface CEnvViewPunch : CPointEntity {
   public ref float Radius { get; }
   
   public ref QAngle ViewPunch { get; }
+
+
 }

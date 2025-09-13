@@ -39,4 +39,6 @@ public partial interface C_OP_RenderOmni2Light : CParticleFunctionRenderer {
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> LightCookie { get; }
   
   public ref bool SphericalCookie { get; }
+
+
 }

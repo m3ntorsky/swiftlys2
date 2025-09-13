@@ -11,4 +11,6 @@ public partial interface CPulseCell_WaitForCursorsWithTag : CPulseCell_WaitForCu
   public ref bool TagSelfWhenComplete { get; }
   
   public ref PulseCursorCancelPriority_t DesiredKillPriority { get; }
+
+
 }

@@ -15,4 +15,6 @@ public partial interface CMorphBundleData : ISchemaClass {
   public ref CUtlVector<float> Offsets { get; }
   
   public ref CUtlVector<float> Ranges { get; }
+
+
 }

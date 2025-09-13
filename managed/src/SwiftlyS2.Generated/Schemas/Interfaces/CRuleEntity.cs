@@ -9,4 +9,6 @@ public partial interface CRuleEntity : CBaseModelEntity {
 
   
   public ref CUtlSymbolLarge Master { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CPhysicsWire : CBaseEntity {
 
   
   public ref int Density { get; }
+
+
 }

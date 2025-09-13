@@ -13,4 +13,6 @@ public partial interface C_OP_LazyCullCompareFloat : CParticleFunctionOperator {
   public CPerParticleFloatInput Comparsion2 { get; }
   
   public CPerParticleFloatInput CullTime { get; }
+
+
 }

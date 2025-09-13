@@ -16,4 +16,6 @@ public partial interface OutflowWithRequirements_t : ISchemaClass {
   public ref CUtlVector RequirementNodeIDs { get; }
   
   public ref CUtlVector<int> CursorStateBlockIndex { get; }
+
+
 }

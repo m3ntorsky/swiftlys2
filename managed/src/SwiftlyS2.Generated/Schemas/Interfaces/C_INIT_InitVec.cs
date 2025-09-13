@@ -17,4 +17,6 @@ public partial interface C_INIT_InitVec : CParticleFunctionInitializer {
   public ref bool NormalizedOutput { get; }
   
   public ref bool WritePreviousPosition { get; }
+
+
 }

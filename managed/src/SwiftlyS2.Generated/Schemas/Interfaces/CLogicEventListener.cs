@@ -15,4 +15,6 @@ public partial interface CLogicEventListener : CLogicalEntity {
   public ref int Team { get; }
   
   public CEntityIOOutput OnEventFired { get; }
+
+
 }

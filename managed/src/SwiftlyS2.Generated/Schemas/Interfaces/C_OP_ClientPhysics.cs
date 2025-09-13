@@ -33,4 +33,6 @@ public partial interface C_OP_ClientPhysics : CParticleFunctionRenderer {
   public ref ParticleColorBlendType_t ColorBlendType { get; }
   
   public ref ParticleAttrBoxFlags_t ForcedStatusEffects { get; }
+
+
 }

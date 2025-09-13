@@ -10,4 +10,6 @@ public partial interface CBoneConstraintPoseSpaceBone : CBaseConstraint {
   
 // CUtlVector< CBoneConstraintPoseSpaceBone::Input_t >
   public ref CUtlVector InputList { get; }
+
+
 }

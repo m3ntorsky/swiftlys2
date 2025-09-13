@@ -13,4 +13,6 @@ public partial interface CLogicAutosave : CLogicalEntity {
   public ref int MinHitPoints { get; }
   
   public ref int MinHitPointsToCommit { get; }
+
+
 }

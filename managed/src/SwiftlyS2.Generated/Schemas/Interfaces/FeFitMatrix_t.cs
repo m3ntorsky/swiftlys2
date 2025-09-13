@@ -17,4 +17,6 @@ public partial interface FeFitMatrix_t : ISchemaClass {
   public ref ushort Node { get; }
   
   public ref ushort BeginDynamic { get; }
+
+
 }

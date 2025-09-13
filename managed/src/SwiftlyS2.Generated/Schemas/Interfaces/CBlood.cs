@@ -15,4 +15,6 @@ public partial interface CBlood : CPointEntity {
   public ref float Amount { get; }
   
   public ref BloodType Color { get; }
+
+
 }

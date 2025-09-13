@@ -21,4 +21,9 @@ public partial interface CInfoWorldLayer : CBaseEntity {
   public ref bool CreateAsChildSpawnGroup { get; }
   
   public ref uint LayerSpawnGroup { get; }
+
+  public void WorldNameUpdated();
+  public void LayerNameUpdated();
+  public void WorldLayerVisibleUpdated();
+  public void EntitiesSpawnedUpdated();
 }

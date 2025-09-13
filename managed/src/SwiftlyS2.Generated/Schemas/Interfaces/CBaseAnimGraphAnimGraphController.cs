@@ -37,4 +37,6 @@ public partial interface CBaseAnimGraphAnimGraphController : CAnimGraphControlle
   public SchemaUntypedField HITGROUP_GEAR_Destroyed { get; }
   
   public SchemaUntypedField HITGROUP_SPECIAL_Destroyed { get; }
+
+
 }

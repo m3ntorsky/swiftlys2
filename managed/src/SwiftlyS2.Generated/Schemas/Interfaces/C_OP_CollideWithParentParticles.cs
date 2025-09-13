@@ -11,4 +11,6 @@ public partial interface C_OP_CollideWithParentParticles : CParticleFunctionCons
   public CPerParticleFloatInput ParentRadiusScale { get; }
   
   public CPerParticleFloatInput RadiusScale { get; }
+
+
 }

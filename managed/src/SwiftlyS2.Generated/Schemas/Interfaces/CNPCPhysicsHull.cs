@@ -23,4 +23,6 @@ public partial interface CNPCPhysicsHull : ISchemaClass {
   public ref float GroundBoxHeight { get; }
   
   public ref float GroundBoxWidth { get; }
+
+
 }

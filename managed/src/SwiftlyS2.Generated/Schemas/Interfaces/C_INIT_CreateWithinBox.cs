@@ -19,4 +19,6 @@ public partial interface C_INIT_CreateWithinBox : CParticleFunctionInitializer {
   public CRandomNumberGeneratorParameters RandomnessParameters { get; }
   
   public ref bool UseNewCode { get; }
+
+
 }

@@ -15,4 +15,6 @@ public partial interface CLogicNPCCounterAABB : CLogicNPCCounter {
   public ref Vector OuterMins { get; }
   
   public ref Vector OuterMaxs { get; }
+
+
 }

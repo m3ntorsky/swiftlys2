@@ -21,4 +21,12 @@ public partial interface CTimeline : IntervalTimer {
   public ref TimelineCompression_t CompressionType { get; }
   
   public ref bool Stopped { get; }
+
+  public void ValuesUpdated();
+  public void ValueCountsUpdated();
+  public void BucketCountUpdated();
+  public void IntervalUpdated();
+  public void FinalValueUpdated();
+  public void CompressionTypeUpdated();
+  public void StoppedUpdated();
 }

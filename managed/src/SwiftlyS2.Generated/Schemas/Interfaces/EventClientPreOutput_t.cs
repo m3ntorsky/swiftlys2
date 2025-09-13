@@ -19,4 +19,6 @@ public partial interface EventClientPreOutput_t : ISchemaClass {
   public ref float RealTime { get; }
   
   public ref bool RenderOnly { get; }
+
+
 }

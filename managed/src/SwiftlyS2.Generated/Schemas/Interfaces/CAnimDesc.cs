@@ -41,4 +41,6 @@ public partial interface CAnimDesc : ISchemaClass {
   public ref CUtlVector<Vector> BoneWorldMax { get; }
   
   public CAnimSequenceParams SequenceParams { get; }
+
+
 }

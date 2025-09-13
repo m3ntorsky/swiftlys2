@@ -25,4 +25,6 @@ public partial interface CNmSkeleton : ISchemaClass {
   public SchemaUntypedField SecondarySkeletons { get; }
   
   public ref bool IsPropSkeleton { get; }
+
+
 }

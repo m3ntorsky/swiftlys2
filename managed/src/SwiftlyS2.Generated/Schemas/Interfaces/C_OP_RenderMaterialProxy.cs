@@ -24,4 +24,6 @@ public partial interface C_OP_RenderMaterialProxy : CParticleFunctionRenderer {
   public CPerParticleFloatInput Alpha { get; }
   
   public ref ParticleColorBlendType_t ColorBlendType { get; }
+
+
 }

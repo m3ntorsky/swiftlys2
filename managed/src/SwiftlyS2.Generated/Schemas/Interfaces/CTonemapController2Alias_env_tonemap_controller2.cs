@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTonemapController2Alias_env_tonemap_controller2 : CTonemapController2 {
 
 
+
+
 }

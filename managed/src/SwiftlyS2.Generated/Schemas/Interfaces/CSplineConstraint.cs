@@ -29,4 +29,6 @@ public partial interface CSplineConstraint : CPhysConstraint {
   public ref float JointFriction { get; }
   
   public ref Vector PreSolveAnchorPos { get; }
+
+
 }

@@ -10,4 +10,6 @@ public partial interface CCSPlayer_BuyServices : CPlayerPawnComponent {
   
 // CUtlVectorEmbeddedNetworkVar< SellbackPurchaseEntry_t >
   public ref CUtlVector SellbackPurchaseEntries { get; }
+
+  public void SellbackPurchaseEntriesUpdated();
 }

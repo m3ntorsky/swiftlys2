@@ -21,4 +21,6 @@ public partial interface CPointPush : CPointEntity {
   public ref CUtlSymbolLarge FilterName { get; }
   
   public ref CHandle<CBaseFilter> Filter { get; }
+
+
 }

@@ -15,4 +15,6 @@ public partial interface constraint_axislimit_t : ISchemaClass {
   public ref float MotorTargetAngSpeed { get; }
   
   public ref float MotorMaxTorque { get; }
+
+
 }

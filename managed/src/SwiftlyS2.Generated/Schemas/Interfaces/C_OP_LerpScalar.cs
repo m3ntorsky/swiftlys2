@@ -15,4 +15,6 @@ public partial interface C_OP_LerpScalar : CParticleFunctionOperator {
   public ref float StartTime { get; }
   
   public ref float EndTime { get; }
+
+
 }

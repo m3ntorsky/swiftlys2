@@ -9,4 +9,6 @@ public partial interface C_OP_AlphaDecay : CParticleFunctionOperator {
 
   
   public ref float MinAlpha { get; }
+
+
 }

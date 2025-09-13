@@ -51,4 +51,6 @@ public partial interface C_OP_RenderCables : CParticleFunctionRenderer {
   public SchemaUntypedField MaterialFloatVars { get; }
   
   public SchemaUntypedField MaterialVecVars { get; }
+
+
 }

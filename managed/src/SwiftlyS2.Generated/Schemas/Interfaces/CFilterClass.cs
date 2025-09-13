@@ -9,4 +9,6 @@ public partial interface CFilterClass : CBaseFilter {
 
   
   public ref CUtlSymbolLarge FilterClass { get; }
+
+
 }

@@ -22,4 +22,6 @@ public partial interface PhysSoftbodyDesc_t : ISchemaClass {
   public ref CUtlVector<CTransform> InitPose { get; }
   
   public ref CUtlVector<CUtlString> ParticleBoneName { get; }
+
+
 }

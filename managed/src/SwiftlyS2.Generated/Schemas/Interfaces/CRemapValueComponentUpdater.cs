@@ -10,4 +10,6 @@ public partial interface CRemapValueComponentUpdater : CAnimComponentUpdater {
   
 // CUtlVector< CRemapValueUpdateItem >
   public ref CUtlVector Items { get; }
+
+
 }

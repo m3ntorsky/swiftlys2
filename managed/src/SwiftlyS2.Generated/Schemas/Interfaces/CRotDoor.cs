@@ -9,4 +9,6 @@ public partial interface CRotDoor : CBaseDoor {
 
   
   public ref bool SolidBsp { get; }
+
+
 }

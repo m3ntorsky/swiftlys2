@@ -31,4 +31,6 @@ public partial interface VPhysXBodyPart_t : ISchemaClass {
   public ref bool OverrideMassCenter { get; }
   
   public ref Vector MassCenterOverride { get; }
+
+
 }

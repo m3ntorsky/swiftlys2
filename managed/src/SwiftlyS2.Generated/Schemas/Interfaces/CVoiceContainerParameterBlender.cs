@@ -23,4 +23,6 @@ public partial interface CVoiceContainerParameterBlender : CVoiceContainerBase {
   public SchemaUntypedField Curve3 { get; }
   
   public SchemaUntypedField Curve4 { get; }
+
+
 }

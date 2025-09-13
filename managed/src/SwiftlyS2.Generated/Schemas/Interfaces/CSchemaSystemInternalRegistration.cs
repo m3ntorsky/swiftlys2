@@ -51,4 +51,6 @@ public partial interface CSchemaSystemInternalRegistration : ISchemaClass {
   public SchemaUntypedField ResourceTypes { get; }
   
   public SchemaUntypedField KV3 { get; }
+
+
 }

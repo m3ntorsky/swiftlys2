@@ -9,4 +9,6 @@ public partial interface CNmVirtualParameterBoolNode__CDefinition : CNmBoolValue
 
   
   public ref short ChildNodeIdx { get; }
+
+
 }

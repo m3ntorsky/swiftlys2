@@ -13,4 +13,8 @@ public partial interface CNetworkVelocityVector : ISchemaClass {
   public ref CNetworkedQuantizedFloat Y { get; }
   
   public ref CNetworkedQuantizedFloat Z { get; }
+
+  public void XUpdated();
+  public void YUpdated();
+  public void ZUpdated();
 }

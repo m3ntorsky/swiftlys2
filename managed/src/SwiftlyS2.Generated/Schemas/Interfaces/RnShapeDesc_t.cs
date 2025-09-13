@@ -19,4 +19,6 @@ public partial interface RnShapeDesc_t : ISchemaClass {
   public ref bool UserFriendlyNameLong { get; }
   
   public ref uint ToolMaterialHash { get; }
+
+
 }

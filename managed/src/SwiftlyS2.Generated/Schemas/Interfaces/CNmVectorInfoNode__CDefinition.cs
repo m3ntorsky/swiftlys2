@@ -11,4 +11,6 @@ public partial interface CNmVectorInfoNode__CDefinition : CNmFloatValueNode__CDe
   public ref short InputValueNodeIdx { get; }
   
   public ref CNmVectorInfoNode__Info_t DesiredInfo { get; }
+
+
 }

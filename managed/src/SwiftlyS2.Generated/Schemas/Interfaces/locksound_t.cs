@@ -13,4 +13,6 @@ public partial interface locksound_t : ISchemaClass {
   public ref CUtlSymbolLarge UnlockedSound { get; }
   
   public GameTime_t FlwaitSound { get; }
+
+
 }

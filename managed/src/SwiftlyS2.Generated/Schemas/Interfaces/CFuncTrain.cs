@@ -19,4 +19,6 @@ public partial interface CFuncTrain : CBasePlatTrain {
   public GameTime_t NextBlockTime { get; }
   
   public ref CUtlSymbolLarge LastTarget { get; }
+
+
 }

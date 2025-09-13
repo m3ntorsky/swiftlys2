@@ -14,4 +14,6 @@ public partial interface CPulseCell_Outflow_PlaySceneBase : CPulseCell_BaseYield
   
 // CUtlVector< CPulse_OutflowConnection >
   public ref CUtlVector Triggers { get; }
+
+
 }

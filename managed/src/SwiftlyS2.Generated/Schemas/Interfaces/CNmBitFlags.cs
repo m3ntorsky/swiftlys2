@@ -9,4 +9,6 @@ public partial interface CNmBitFlags : ISchemaClass {
 
   
   public ref uint Flags { get; }
+
+
 }

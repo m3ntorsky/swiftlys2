@@ -35,4 +35,6 @@ public partial interface CModelConfigElement_AttachedModel : CModelConfigElement
   public ref CUtlString BodygroupOnOtherModels { get; }
   
   public ref CUtlString MaterialGroupOnOtherModels { get; }
+
+
 }

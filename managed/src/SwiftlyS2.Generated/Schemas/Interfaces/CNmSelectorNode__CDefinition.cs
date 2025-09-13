@@ -11,4 +11,6 @@ public partial interface CNmSelectorNode__CDefinition : CNmPoseNode__CDefinition
   public SchemaUntypedField OptionNodeIndices { get; }
   
   public SchemaUntypedField ConditionNodeIndices { get; }
+
+
 }

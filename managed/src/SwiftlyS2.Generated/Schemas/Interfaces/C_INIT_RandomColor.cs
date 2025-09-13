@@ -27,4 +27,6 @@ public partial interface C_INIT_RandomColor : CParticleFunctionInitializer {
   public ref ParticleColorBlendMode_t TintBlendMode { get; }
   
   public ref float LightAmplification { get; }
+
+
 }

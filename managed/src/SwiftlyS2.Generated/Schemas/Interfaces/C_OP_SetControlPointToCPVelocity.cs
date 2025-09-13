@@ -19,4 +19,6 @@ public partial interface C_OP_SetControlPointToCPVelocity : CParticleFunctionPre
   public ref int CPField { get; }
   
   public CParticleCollectionVecInput ComparisonVelocity { get; }
+
+
 }

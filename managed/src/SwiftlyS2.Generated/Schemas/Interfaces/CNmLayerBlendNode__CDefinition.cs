@@ -13,4 +13,6 @@ public partial interface CNmLayerBlendNode__CDefinition : CNmPoseNode__CDefiniti
   public ref bool OnlySampleBaseRootMotion { get; }
   
   public SchemaUntypedField LayerDefinition { get; }
+
+
 }

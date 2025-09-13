@@ -11,4 +11,6 @@ public partial interface CFuncPlatRot : CFuncPlat {
   public ref QAngle End { get; }
   
   public ref QAngle Start { get; }
+
+
 }

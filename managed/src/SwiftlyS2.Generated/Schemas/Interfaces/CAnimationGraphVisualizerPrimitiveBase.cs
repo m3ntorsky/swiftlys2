@@ -13,4 +13,6 @@ public partial interface CAnimationGraphVisualizerPrimitiveBase : ISchemaClass {
   public SchemaUntypedField OwningAnimNodePaths { get; }
   
   public ref int OwningAnimNodePathCount { get; }
+
+
 }

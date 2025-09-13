@@ -17,4 +17,6 @@ public partial interface C_OP_LerpVector : CParticleFunctionOperator {
   public ref float EndTime { get; }
   
   public ref ParticleSetMethod_t SetMethod { get; }
+
+
 }

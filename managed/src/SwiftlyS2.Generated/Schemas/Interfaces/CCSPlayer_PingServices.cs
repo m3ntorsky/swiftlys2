@@ -11,4 +11,6 @@ public partial interface CCSPlayer_PingServices : CPlayerPawnComponent {
   public SchemaUntypedField PlayerPingTokens { get; }
   
   public ref CHandle<CBaseEntity> PlayerPing { get; }
+
+  public void PlayerPingUpdated();
 }

@@ -35,4 +35,15 @@ public partial interface CCSTeam : CTeam {
   public ref float NextResourceTime { get; }
   
   public ref int LastUpdateSentAt { get; }
+
+  public void SurrenderedUpdated();
+  public void TeamMatchStatUpdated();
+  public void NumMapVictoriesUpdated();
+  public void ScoreFirstHalfUpdated();
+  public void ScoreSecondHalfUpdated();
+  public void ScoreOvertimeUpdated();
+  public void ClanTeamnameUpdated();
+  public void ClanIDUpdated();
+  public void TeamFlagImageUpdated();
+  public void TeamLogoImageUpdated();
 }

@@ -13,4 +13,6 @@ public partial interface C_INIT_RandomAlphaWindowThreshold : CParticleFunctionIn
   public ref float Max { get; }
   
   public ref float Exponent { get; }
+
+
 }

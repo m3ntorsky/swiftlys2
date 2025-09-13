@@ -11,4 +11,6 @@ public partial interface WaterWheelDrag_t : ISchemaClass {
   public ref float FractionOfWheelSubmerged { get; }
   
   public ref float WheelDrag { get; }
+
+
 }

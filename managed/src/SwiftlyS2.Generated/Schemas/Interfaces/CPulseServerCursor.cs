@@ -11,4 +11,6 @@ public partial interface CPulseServerCursor : CPulseExecCursor {
   public ref CHandle<CBaseEntity> Activator { get; }
   
   public ref CHandle<CBaseEntity> Caller { get; }
+
+
 }

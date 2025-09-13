@@ -39,4 +39,21 @@ public partial interface CPointWorldText : CModelPointEntity {
   public ref PointWorldTextJustifyVertical_t JustifyVertical { get; }
   
   public ref PointWorldTextReorientMode_t ReorientMode { get; }
+
+  public void MessageTextUpdated();
+  public void FontNameUpdated();
+  public void BackgroundMaterialNameUpdated();
+  public void EnabledUpdated();
+  public void FullbrightUpdated();
+  public void WorldUnitsPerPxUpdated();
+  public void FontSizeUpdated();
+  public void DepthOffsetUpdated();
+  public void DrawBackgroundUpdated();
+  public void BackgroundBorderWidthUpdated();
+  public void BackgroundBorderHeightUpdated();
+  public void BackgroundWorldToUVUpdated();
+  public void ColorUpdated();
+  public void JustifyHorizontalUpdated();
+  public void JustifyVerticalUpdated();
+  public void ReorientModeUpdated();
 }

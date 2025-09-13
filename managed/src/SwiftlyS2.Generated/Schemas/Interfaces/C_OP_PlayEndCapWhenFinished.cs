@@ -11,4 +11,6 @@ public partial interface C_OP_PlayEndCapWhenFinished : CParticleFunctionPreEmiss
   public ref bool FireOnEmissionEnd { get; }
   
   public ref bool IncludeChildren { get; }
+
+
 }

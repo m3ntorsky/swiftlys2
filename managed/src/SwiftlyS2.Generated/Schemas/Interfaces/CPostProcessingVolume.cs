@@ -31,4 +31,17 @@ public partial interface CPostProcessingVolume : CBaseTrigger {
   public ref bool Master { get; }
   
   public ref bool ExposureControl { get; }
+
+  public void PostSettingsUpdated();
+  public void FadeDurationUpdated();
+  public void MinLogExposureUpdated();
+  public void MaxLogExposureUpdated();
+  public void MinExposureUpdated();
+  public void MaxExposureUpdated();
+  public void ExposureCompensationUpdated();
+  public void ExposureFadeSpeedUpUpdated();
+  public void ExposureFadeSpeedDownUpdated();
+  public void TonemapEVSmoothingRangeUpdated();
+  public void MasterUpdated();
+  public void ExposureControlUpdated();
 }

@@ -25,4 +25,6 @@ public partial interface CNmTargetWarpNode__CDefinition : CNmPoseNode__CDefiniti
   public ref float TargetUpdateDistanceThreshold { get; }
   
   public ref float TargetUpdateAngleThresholdRadians { get; }
+
+
 }

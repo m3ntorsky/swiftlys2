@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRagdollPropAlias_physics_prop_ragdoll : CRagdollProp {
 
 
+
+
 }

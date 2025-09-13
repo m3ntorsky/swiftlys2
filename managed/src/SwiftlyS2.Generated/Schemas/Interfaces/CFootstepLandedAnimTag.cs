@@ -15,4 +15,6 @@ public partial interface CFootstepLandedAnimTag : CAnimTagBase {
   public ref CUtlString DebugAnimSourceString { get; }
   
   public ref CUtlString BoneName { get; }
+
+
 }

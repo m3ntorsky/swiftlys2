@@ -15,4 +15,6 @@ public partial interface VPhysXConstraint2_t : ISchemaClass {
   public ref ushort Child { get; }
   
   public VPhysXConstraintParams_t Params { get; }
+
+
 }

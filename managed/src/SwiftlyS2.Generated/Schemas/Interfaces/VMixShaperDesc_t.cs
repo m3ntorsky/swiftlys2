@@ -17,4 +17,6 @@ public partial interface VMixShaperDesc_t : ISchemaClass {
   public ref float WetMix { get; }
   
   public ref int OversampleFactor { get; }
+
+
 }

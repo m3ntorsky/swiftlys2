@@ -13,4 +13,6 @@ public partial interface C_OP_SDFConstraint : CParticleFunctionConstraint {
   public CParticleCollectionFloatInput MaxDist { get; }
   
   public ref int MaxIterations { get; }
+
+
 }

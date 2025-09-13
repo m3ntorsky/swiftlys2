@@ -31,4 +31,6 @@ public partial interface OldFeEdge_t : ISchemaClass {
   public ISchemaFixedArray<float> AxialModelWeights { get; }
   
   public ISchemaFixedArray<ushort> Node { get; }
+
+
 }

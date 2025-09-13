@@ -19,4 +19,6 @@ public partial interface CMotionGraphGroup : ISchemaClass {
   public ref CUtlVector<int> SampleToConfig { get; }
   
   public AnimScriptHandle IsActiveScript { get; }
+
+
 }

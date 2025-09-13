@@ -17,4 +17,6 @@ public partial interface CPulseGraphExecutionHistory : ISchemaClass {
   public SchemaUntypedField MapCellDesc { get; }
   
   public SchemaUntypedField MapCursorDesc { get; }
+
+
 }

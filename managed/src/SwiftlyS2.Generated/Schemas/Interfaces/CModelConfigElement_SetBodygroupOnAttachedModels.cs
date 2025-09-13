@@ -11,4 +11,6 @@ public partial interface CModelConfigElement_SetBodygroupOnAttachedModels : CMod
   public ref CUtlString GroupName { get; }
   
   public ref int Choice { get; }
+
+
 }

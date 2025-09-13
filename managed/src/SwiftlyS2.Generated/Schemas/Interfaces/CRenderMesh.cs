@@ -21,4 +21,6 @@ public partial interface CRenderMesh : ISchemaClass {
   public DynamicMeshDeformParams_t MeshDeformParams { get; }
   
   public CRenderGroom GroomData { get; }
+
+
 }

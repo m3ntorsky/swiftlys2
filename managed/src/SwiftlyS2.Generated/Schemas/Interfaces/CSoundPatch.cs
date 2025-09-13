@@ -33,4 +33,6 @@ public partial interface CSoundPatch : ISchemaClass {
   public ref bool UpdatedSoundOrigin { get; }
   
   public ref CUtlSymbolLarge ClassName { get; }
+
+
 }

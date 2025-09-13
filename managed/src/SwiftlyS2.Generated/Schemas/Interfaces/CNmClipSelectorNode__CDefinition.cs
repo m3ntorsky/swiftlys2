@@ -11,4 +11,6 @@ public partial interface CNmClipSelectorNode__CDefinition : CNmClipReferenceNode
   public SchemaUntypedField OptionNodeIndices { get; }
   
   public SchemaUntypedField ConditionNodeIndices { get; }
+
+
 }

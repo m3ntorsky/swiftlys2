@@ -31,4 +31,6 @@ public partial interface C_INIT_RemapParticleCountToScalar : CParticleFunctionIn
   public ref bool Wrap { get; }
   
   public ref float RemapBias { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CPathAnimMotorUpdaterBase : CAnimMotorUpdaterBase {
 
   
   public ref bool LockToPath { get; }
+
+
 }

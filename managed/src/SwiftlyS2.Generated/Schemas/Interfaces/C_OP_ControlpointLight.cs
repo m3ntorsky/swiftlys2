@@ -73,4 +73,6 @@ public partial interface C_OP_ControlpointLight : CParticleFunctionOperator {
   public ref bool ClampLowerRange { get; }
   
   public ref bool ClampUpperRange { get; }
+
+
 }

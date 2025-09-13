@@ -11,4 +11,6 @@ public partial interface CNmCachedBoolNode__CDefinition : CNmBoolValueNode__CDef
   public ref short InputValueNodeIdx { get; }
   
   public ref NmCachedValueMode_t Mode { get; }
+
+
 }

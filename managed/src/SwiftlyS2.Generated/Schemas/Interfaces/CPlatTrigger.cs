@@ -9,4 +9,6 @@ public partial interface CPlatTrigger : CBaseModelEntity {
 
   
   public ref CHandle<CFuncPlat> Platform { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CPulseCell_Outflow_PlayVCD : CPulseCell_Outflow_PlaySce
 
   
   public ref CUtlString VcdFilename { get; }
+
+
 }

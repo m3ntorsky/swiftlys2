@@ -27,4 +27,6 @@ public partial interface VMixVocoderDesc_t : ISchemaClass {
   public ref int DebugBand { get; }
   
   public ref bool PeakMode { get; }
+
+
 }

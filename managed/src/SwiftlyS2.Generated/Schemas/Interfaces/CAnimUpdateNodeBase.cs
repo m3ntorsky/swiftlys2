@@ -13,4 +13,6 @@ public partial interface CAnimUpdateNodeBase : ISchemaClass {
   public ref AnimNodeNetworkMode NetworkMode { get; }
   
   public ref CUtlString Name { get; }
+
+
 }

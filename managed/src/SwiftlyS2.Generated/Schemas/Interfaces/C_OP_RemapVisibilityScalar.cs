@@ -21,4 +21,6 @@ public partial interface C_OP_RemapVisibilityScalar : CParticleFunctionOperator 
   public ref float OutputMax { get; }
   
   public ref float RadiusScale { get; }
+
+
 }

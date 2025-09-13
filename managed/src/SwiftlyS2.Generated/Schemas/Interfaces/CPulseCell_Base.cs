@@ -9,4 +9,6 @@ public partial interface CPulseCell_Base : ISchemaClass {
 
   
   public PulseDocNodeID_t EditorNodeID { get; }
+
+
 }

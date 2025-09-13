@@ -19,4 +19,6 @@ public partial interface C_OP_SetCPOrientationToPointAtCP : CParticleFunctionPre
   public ref bool AvoidSingularity { get; }
   
   public ref bool PointAway { get; }
+
+
 }

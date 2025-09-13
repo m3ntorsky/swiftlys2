@@ -25,4 +25,6 @@ public partial interface C_OP_VectorFieldSnapshot : CParticleFunctionOperator {
   public ref bool LockToSurface { get; }
   
   public ref float GridSpacing { get; }
+
+
 }

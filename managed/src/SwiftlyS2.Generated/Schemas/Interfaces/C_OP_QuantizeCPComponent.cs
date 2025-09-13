@@ -15,4 +15,6 @@ public partial interface C_OP_QuantizeCPComponent : CParticleFunctionPreEmission
   public ref int OutVectorField { get; }
   
   public CParticleCollectionFloatInput QuantizeValue { get; }
+
+
 }

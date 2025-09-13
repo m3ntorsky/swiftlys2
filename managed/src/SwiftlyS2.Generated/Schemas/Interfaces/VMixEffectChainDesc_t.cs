@@ -9,4 +9,6 @@ public partial interface VMixEffectChainDesc_t : ISchemaClass {
 
   
   public ref float CrossfadeTime { get; }
+
+
 }

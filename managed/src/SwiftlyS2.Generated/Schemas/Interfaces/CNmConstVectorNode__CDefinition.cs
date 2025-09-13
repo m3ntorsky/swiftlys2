@@ -9,4 +9,6 @@ public partial interface CNmConstVectorNode__CDefinition : CNmVectorValueNode__C
 
   
   public ref Vector Value { get; }
+
+
 }

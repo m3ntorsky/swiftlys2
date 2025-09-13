@@ -24,4 +24,6 @@ public partial interface C_OP_RenderAsModels : CParticleFunctionRenderer {
   public ParticleAttributeIndex_t ZAxisScalingAttribute { get; }
   
   public ref int SizeCullBloat { get; }
+
+
 }

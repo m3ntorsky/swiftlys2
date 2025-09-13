@@ -17,4 +17,6 @@ public partial interface FollowAttachmentSettings_t : ISchemaClass {
   public ref bool MatchTranslation { get; }
   
   public ref bool MatchRotation { get; }
+
+
 }

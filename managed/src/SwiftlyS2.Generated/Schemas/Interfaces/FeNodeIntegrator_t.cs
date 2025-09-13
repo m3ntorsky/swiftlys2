@@ -15,4 +15,6 @@ public partial interface FeNodeIntegrator_t : ISchemaClass {
   public ref float AnimationVertexAttraction { get; }
   
   public ref float Gravity { get; }
+
+
 }

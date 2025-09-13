@@ -21,4 +21,6 @@ public partial interface CSlopeComponentUpdater : CAnimComponentUpdater {
   public CAnimParamHandle SlopeNormal { get; }
   
   public CAnimParamHandle SlopeNormal_WorldSpace { get; }
+
+
 }

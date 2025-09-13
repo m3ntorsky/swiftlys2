@@ -9,4 +9,6 @@ public partial interface CNmVirtualParameterFloatNode__CDefinition : CNmFloatVal
 
   
   public ref short ChildNodeIdx { get; }
+
+
 }

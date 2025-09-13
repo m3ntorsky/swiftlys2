@@ -17,4 +17,6 @@ public partial interface C_OP_WaterImpulseRenderer : CParticleFunctionRenderer {
   public CPerParticleFloatInput Shape { get; }
   
   public ref EventTypeSelection_t EventType { get; }
+
+
 }

@@ -37,4 +37,6 @@ public partial interface C_OP_OscillateVector : CParticleFunctionOperator {
   public CPerParticleFloatInput OscAdd { get; }
   
   public CPerParticleFloatInput RateScale { get; }
+
+
 }

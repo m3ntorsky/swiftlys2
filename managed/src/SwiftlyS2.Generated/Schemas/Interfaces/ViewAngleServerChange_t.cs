@@ -13,4 +13,8 @@ public partial interface ViewAngleServerChange_t : ISchemaClass {
   public ref QAngle Angle { get; }
   
   public ref uint Index { get; }
+
+  public void TypeUpdated();
+  public void AngleUpdated();
+  public void IndexUpdated();
 }

@@ -11,4 +11,6 @@ public partial interface CWeaponTaser : CCSWeaponBaseGun {
   public GameTime_t FireTime { get; }
   
   public ref int LastAttackTick { get; }
+
+  public void FireTimeUpdated();
 }

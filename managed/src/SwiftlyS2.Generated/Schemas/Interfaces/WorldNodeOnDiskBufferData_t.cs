@@ -16,4 +16,6 @@ public partial interface WorldNodeOnDiskBufferData_t : ISchemaClass {
   public ref CUtlVector InputLayoutFields { get; }
   
   public ref CUtlVector<byte> Data { get; }
+
+
 }

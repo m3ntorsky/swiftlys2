@@ -19,4 +19,6 @@ public partial interface CTurnHelperUpdateNode : CUnaryUpdateNode {
   public ref float ManualTurnOffset { get; }
   
   public ref bool UseManualTurnOffset { get; }
+
+
 }

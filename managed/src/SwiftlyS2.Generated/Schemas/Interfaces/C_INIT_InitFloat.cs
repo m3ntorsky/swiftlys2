@@ -15,4 +15,6 @@ public partial interface C_INIT_InitFloat : CParticleFunctionInitializer {
   public ref ParticleSetMethod_t SetMethod { get; }
   
   public CPerParticleFloatInput InputStrength { get; }
+
+
 }

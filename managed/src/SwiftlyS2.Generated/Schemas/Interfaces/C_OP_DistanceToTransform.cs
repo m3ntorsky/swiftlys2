@@ -37,4 +37,6 @@ public partial interface C_OP_DistanceToTransform : CParticleFunctionOperator {
   public ref bool Additive { get; }
   
   public CPerParticleVecInput ComponentScale { get; }
+
+
 }

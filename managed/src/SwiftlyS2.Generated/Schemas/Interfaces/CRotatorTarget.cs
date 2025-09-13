@@ -11,4 +11,6 @@ public partial interface CRotatorTarget : CPointEntity {
   public CEntityIOOutput OnArrivedAt { get; }
   
   public ref RotatorTargetSpace_t Space { get; }
+
+
 }

@@ -35,4 +35,6 @@ public partial interface CBtActionMoveTo : CBtNode {
   public ref float HidingSpotCheckDistanceThreshold { get; }
   
   public ref float NearestAreaDistanceThreshold { get; }
+
+
 }

@@ -14,4 +14,6 @@ public partial interface CMotionNodeSequence : CMotionNode {
   public HSequence Sequence { get; }
   
   public ref float PlaybackSpeed { get; }
+
+
 }

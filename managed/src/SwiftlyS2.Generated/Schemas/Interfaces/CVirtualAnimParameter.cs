@@ -11,4 +11,6 @@ public partial interface CVirtualAnimParameter : CAnimParameterBase {
   public ref CUtlString ExpressionString { get; }
   
   public ref AnimParamType_t ParamType { get; }
+
+
 }

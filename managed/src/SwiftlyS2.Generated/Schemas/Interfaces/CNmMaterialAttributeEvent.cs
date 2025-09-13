@@ -19,4 +19,6 @@ public partial interface CNmMaterialAttributeEvent : CNmEvent {
   public SchemaUntypedField Z { get; }
   
   public SchemaUntypedField W { get; }
+
+
 }

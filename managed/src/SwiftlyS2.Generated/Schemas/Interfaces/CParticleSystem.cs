@@ -51,4 +51,20 @@ public partial interface CParticleSystem : CBaseModelEntity {
   public ref int TintCP { get; }
   
   public ref Color Tint { get; }
+
+  public void SnapshotFileNameUpdated();
+  public void ActiveUpdated();
+  public void FrozenUpdated();
+  public void FreezeTransitionDurationUpdated();
+  public void StopTypeUpdated();
+  public void AnimateDuringGameplayPauseUpdated();
+  public void EffectIndexUpdated();
+  public void StartTimeUpdated();
+  public void PreSimTimeUpdated();
+  public void ServerControlPointsUpdated();
+  public void ServerControlPointAssignmentsUpdated();
+  public void ControlPointEntsUpdated();
+  public void NoSaveUpdated();
+  public void NoFreezeUpdated();
+  public void NoRampUpdated();
 }

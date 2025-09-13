@@ -34,4 +34,6 @@ public partial interface CBlendUpdateNode : CAnimUpdateNodeBase {
   public ref bool LockWhenWaning { get; }
   
   public ref bool IsAngle { get; }
+
+
 }

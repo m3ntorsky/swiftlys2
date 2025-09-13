@@ -9,4 +9,6 @@ public partial interface CEnvSoundscapeProxy : CEnvSoundscape {
 
   
   public ref CUtlSymbolLarge MainSoundscapeName { get; }
+
+
 }

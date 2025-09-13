@@ -41,4 +41,19 @@ public partial interface CEnvWindShared : ISchemaClass {
   public CEntityIOOutput OnGustEnd { get; }
   
   public ref CHandle<CBaseEntity> EntOwner { get; }
+
+  public void StartTimeUpdated();
+  public void WindSeedUpdated();
+  public void MinWindUpdated();
+  public void MaxWindUpdated();
+  public void WindRadiusUpdated();
+  public void MinGustUpdated();
+  public void MaxGustUpdated();
+  public void MinGustDelayUpdated();
+  public void MaxGustDelayUpdated();
+  public void GustDurationUpdated();
+  public void GustDirChangeUpdated();
+  public void InitialWindDirUpdated();
+  public void InitialWindSpeedUpdated();
+  public void LocationUpdated();
 }

@@ -15,4 +15,6 @@ public partial interface C_OP_SetControlPointToHand : CParticleFunctionPreEmissi
   public ref Vector CP1Pos { get; }
   
   public ref bool OrientToHand { get; }
+
+
 }

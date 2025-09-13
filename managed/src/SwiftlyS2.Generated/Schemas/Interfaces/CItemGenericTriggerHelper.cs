@@ -9,4 +9,6 @@ public partial interface CItemGenericTriggerHelper : CBaseModelEntity {
 
   
   public ref CHandle<CItemGeneric> ParentItem { get; }
+
+
 }

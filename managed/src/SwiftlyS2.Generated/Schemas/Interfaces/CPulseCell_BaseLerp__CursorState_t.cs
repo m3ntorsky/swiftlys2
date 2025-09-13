@@ -11,4 +11,6 @@ public partial interface CPulseCell_BaseLerp__CursorState_t : ISchemaClass {
   public GameTime_t StartTime { get; }
   
   public GameTime_t EndTime { get; }
+
+
 }

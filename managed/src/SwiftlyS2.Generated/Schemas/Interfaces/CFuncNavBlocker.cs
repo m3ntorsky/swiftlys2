@@ -11,4 +11,6 @@ public partial interface CFuncNavBlocker : CBaseModelEntity {
   public ref bool Disabled { get; }
   
   public ref int BlockedTeamNumber { get; }
+
+
 }

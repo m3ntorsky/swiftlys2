@@ -15,4 +15,7 @@ public partial interface CSkyCamera : CBaseEntity {
   public ref bool UseAngles { get; }
   
   public CSkyCamera Next { get; }
+
+  public void SkyboxDataUpdated();
+  public void SkyboxSlotTokenUpdated();
 }

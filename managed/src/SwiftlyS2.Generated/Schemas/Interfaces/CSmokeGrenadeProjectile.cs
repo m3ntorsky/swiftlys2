@@ -31,4 +31,13 @@ public partial interface CSmokeGrenadeProjectile : CBaseCSGrenadeProjectile {
   public ref bool ExplodeFromInferno { get; }
   
   public ref bool DidGroundScorch { get; }
+
+  public void SmokeEffectTickBeginUpdated();
+  public void DidSmokeEffectUpdated();
+  public void RandomSeedUpdated();
+  public void SmokeColorUpdated();
+  public void SmokeDetonationPosUpdated();
+  public void VoxelFrameDataUpdated();
+  public void VoxelFrameDataSizeUpdated();
+  public void VoxelUpdateUpdated();
 }

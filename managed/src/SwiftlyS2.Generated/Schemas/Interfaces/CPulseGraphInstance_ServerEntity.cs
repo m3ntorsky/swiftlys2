@@ -19,4 +19,6 @@ public partial interface CPulseGraphInstance_ServerEntity : CBasePulseGraphInsta
   public ref CUtlSymbolLarge NameFixupLocal { get; }
   
   public ref CUtlSymbolLarge ProceduralWorldNameForRelays { get; }
+
+
 }

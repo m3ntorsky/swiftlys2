@@ -27,4 +27,6 @@ public partial interface CBuoyancyHelper : ISchemaClass {
   public ref CUtlVector<float> FractionOfWheelSubmergedForWheelDrag { get; }
   
   public ref CUtlVector<float> WheelDrag { get; }
+
+
 }

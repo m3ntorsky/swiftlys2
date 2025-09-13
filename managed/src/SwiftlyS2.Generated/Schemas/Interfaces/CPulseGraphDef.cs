@@ -40,4 +40,6 @@ public partial interface CPulseGraphDef : ISchemaClass {
   public ref CUtlVector BlackboardReferences { get; }
   
   public ref CUtlVector<PointerTo<CPulse_OutputConnection>> OutputConnections { get; }
+
+
 }

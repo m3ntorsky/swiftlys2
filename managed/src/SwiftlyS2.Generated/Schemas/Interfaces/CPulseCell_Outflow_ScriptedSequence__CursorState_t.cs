@@ -9,4 +9,6 @@ public partial interface CPulseCell_Outflow_ScriptedSequence__CursorState_t : IS
 
   
   public ref CHandle<CBaseEntity> ScriptedSequence { get; }
+
+
 }

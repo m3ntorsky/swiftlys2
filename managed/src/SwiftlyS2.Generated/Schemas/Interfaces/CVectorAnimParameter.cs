@@ -11,4 +11,6 @@ public partial interface CVectorAnimParameter : CConcreteAnimParameter {
   public ref Vector DefaultValue { get; }
   
   public ref bool Interpolate { get; }
+
+
 }

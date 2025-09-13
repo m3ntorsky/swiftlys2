@@ -15,4 +15,6 @@ public partial interface C_OP_ScreenSpaceRotateTowardTarget : CParticleFunctionO
   public ref ParticleSetMethod_t SetMethod { get; }
   
   public CPerParticleFloatInput ScreenEdgeAlignmentDistance { get; }
+
+
 }

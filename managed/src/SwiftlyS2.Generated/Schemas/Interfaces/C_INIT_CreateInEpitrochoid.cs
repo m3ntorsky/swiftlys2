@@ -27,4 +27,6 @@ public partial interface C_INIT_CreateInEpitrochoid : CParticleFunctionInitializ
   public ref bool UseLocalCoords { get; }
   
   public ref bool OffsetExistingPos { get; }
+
+
 }

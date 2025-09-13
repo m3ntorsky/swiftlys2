@@ -103,4 +103,6 @@ public partial interface CGenericConstraint : CPhysConstraint {
   public CEntityIOOutput NotifyForceReachedY { get; }
   
   public CEntityIOOutput NotifyForceReachedZ { get; }
+
+
 }

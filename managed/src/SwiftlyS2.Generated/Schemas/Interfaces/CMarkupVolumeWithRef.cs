@@ -15,4 +15,6 @@ public partial interface CMarkupVolumeWithRef : CMarkupVolumeTagged {
   public ref Vector RefPosWorldSpace { get; }
   
   public ref float RefDot { get; }
+
+
 }

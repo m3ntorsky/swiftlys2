@@ -13,4 +13,6 @@ public partial interface ControlPointReference_t : ISchemaClass {
   public ref Vector OffsetFromControlPoint { get; }
   
   public ref bool OffsetInLocalSpace { get; }
+
+
 }

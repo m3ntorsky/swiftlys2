@@ -37,4 +37,10 @@ public partial interface CCSPlayer_WeaponServices : CPlayer_WeaponServices {
   public ref CUtlVector<byte> NetworkAnimTiming { get; }
   
   public ref bool BlockInspectUntilNextGraphUpdate { get; }
+
+  public void NextAttackUpdated();
+  public void IsLookingAtWeaponUpdated();
+  public void IsHoldingLookAtWeaponUpdated();
+  public void NetworkAnimTimingUpdated();
+  public void BlockInspectUntilNextGraphUpdateUpdated();
 }

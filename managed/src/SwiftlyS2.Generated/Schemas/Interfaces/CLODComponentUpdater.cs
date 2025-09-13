@@ -9,4 +9,6 @@ public partial interface CLODComponentUpdater : CAnimComponentUpdater {
 
   
   public ref int ServerLOD { get; }
+
+
 }

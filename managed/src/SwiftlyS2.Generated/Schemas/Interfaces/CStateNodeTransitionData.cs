@@ -17,4 +17,6 @@ public partial interface CStateNodeTransitionData : ISchemaClass {
   public SchemaUntypedField Reset { get; }
   
   public SchemaUntypedField ResetCycleOption { get; }
+
+
 }

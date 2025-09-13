@@ -11,4 +11,6 @@ public partial interface PackedAABB_t : ISchemaClass {
   public ref uint PackedMin { get; }
   
   public ref uint PackedMax { get; }
+
+
 }

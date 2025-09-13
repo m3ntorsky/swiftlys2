@@ -11,4 +11,6 @@ public partial interface CNmSyncTrack : ISchemaClass {
   public SchemaUntypedField SyncEvents { get; }
   
   public ref int StartEventOffset { get; }
+
+
 }

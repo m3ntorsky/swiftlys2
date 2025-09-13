@@ -11,4 +11,6 @@ public partial interface RelationshipOverride_t : Relationship_t {
   public ref CHandle<CBaseEntity> Entity { get; }
   
   public ref Class_T ClassType { get; }
+
+
 }

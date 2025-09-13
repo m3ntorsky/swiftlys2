@@ -11,4 +11,6 @@ public partial interface C_INIT_InitVecCollection : CParticleFunctionInitializer
   public CParticleCollectionVecInput InputValue { get; }
   
   public ParticleAttributeIndex_t OutputField { get; }
+
+
 }

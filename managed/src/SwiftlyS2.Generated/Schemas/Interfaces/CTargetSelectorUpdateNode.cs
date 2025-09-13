@@ -28,4 +28,6 @@ public partial interface CTargetSelectorUpdateNode : CAnimUpdateNodeBase {
   public ref bool EnablePhaseMatching { get; }
   
   public ref float PhaseMatchingMaxRootMotionSkip { get; }
+
+
 }

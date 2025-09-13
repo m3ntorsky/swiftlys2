@@ -67,4 +67,35 @@ public partial interface CEnvProjectedTexture : CModelPointEntity {
   public ref float Rotation { get; }
   
   public ref bool FlipHorizontal { get; }
+
+  public void TargetEntityUpdated();
+  public void StateUpdated();
+  public void AlwaysUpdateUpdated();
+  public void LightFOVUpdated();
+  public void EnableShadowsUpdated();
+  public void SimpleProjectionUpdated();
+  public void LightOnlyTargetUpdated();
+  public void LightWorldUpdated();
+  public void CameraSpaceUpdated();
+  public void BrightnessScaleUpdated();
+  public void LightColorUpdated();
+  public void IntensityUpdated();
+  public void LinearAttenuationUpdated();
+  public void QuadraticAttenuationUpdated();
+  public void VolumetricUpdated();
+  public void NoiseStrengthUpdated();
+  public void FlashlightTimeUpdated();
+  public void NumPlanesUpdated();
+  public void PlaneOffsetUpdated();
+  public void VolumetricIntensityUpdated();
+  public void ColorTransitionTimeUpdated();
+  public void AmbientUpdated();
+  public void SpotlightTextureNameUpdated();
+  public void SpotlightTextureFrameUpdated();
+  public void ShadowQualityUpdated();
+  public void NearZUpdated();
+  public void FarZUpdated();
+  public void ProjectionSizeUpdated();
+  public void RotationUpdated();
+  public void FlipHorizontalUpdated();
 }

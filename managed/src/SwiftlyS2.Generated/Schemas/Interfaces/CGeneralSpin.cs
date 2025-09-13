@@ -13,4 +13,6 @@ public partial interface CGeneralSpin : CParticleFunctionOperator {
   public ref int SpinRateMinDegrees { get; }
   
   public ref float SpinRateStopTime { get; }
+
+
 }

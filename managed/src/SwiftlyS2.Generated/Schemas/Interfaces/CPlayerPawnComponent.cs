@@ -9,4 +9,6 @@ public partial interface CPlayerPawnComponent : ISchemaClass {
 
   
   public CNetworkVarChainer __m_pChainEntity { get; }
+
+
 }

@@ -21,4 +21,6 @@ public partial interface CFishPool : CBaseEntity {
   public ref CUtlVector<CHandle<CFish>> Fishes { get; }
   
   public CountdownTimer VisTimer { get; }
+
+
 }

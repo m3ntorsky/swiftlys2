@@ -22,4 +22,6 @@ public partial interface CMotionGraph : ISchemaClass {
   public ref int ConfigCount { get; }
   
   public ref bool Loop { get; }
+
+
 }

@@ -29,4 +29,6 @@ public partial interface C_OP_RemapModelVolumetoCP : CParticleFunctionPreEmissio
   public ref bool BBoxOnly { get; }
   
   public ref bool CubeRoot { get; }
+
+
 }

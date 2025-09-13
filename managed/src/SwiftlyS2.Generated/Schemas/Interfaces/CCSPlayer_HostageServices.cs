@@ -11,4 +11,7 @@ public partial interface CCSPlayer_HostageServices : CPlayerPawnComponent {
   public ref CHandle<CBaseEntity> CarriedHostage { get; }
   
   public ref CHandle<CBaseEntity> CarriedHostageProp { get; }
+
+  public void CarriedHostageUpdated();
+  public void CarriedHostagePropUpdated();
 }

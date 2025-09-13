@@ -10,4 +10,6 @@ public partial interface SelectedEditItemInfo_t : ISchemaClass {
   
 // CUtlVector< SosEditItemInfo_t >
   public ref CUtlVector EditItems { get; }
+
+
 }

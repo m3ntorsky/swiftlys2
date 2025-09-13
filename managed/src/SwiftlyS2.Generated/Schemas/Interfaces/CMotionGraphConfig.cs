@@ -17,4 +17,6 @@ public partial interface CMotionGraphConfig : ISchemaClass {
   public ref int SampleStart { get; }
   
   public ref int SampleCount { get; }
+
+
 }

@@ -30,4 +30,6 @@ public partial interface CVSound : ISchemaClass {
   public ref int LoopEnd { get; }
   
   public ref CUtlBinaryBlock EncodedHeader { get; }
+
+
 }

@@ -57,4 +57,6 @@ public partial interface PermModelData_t : ISchemaClass {
   
 // CUtlVector< PermModelDataAnimatedMaterialAttribute_t >
   public ref CUtlVector AnimatedMaterialAttributes { get; }
+
+
 }

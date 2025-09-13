@@ -17,4 +17,6 @@ public partial interface C_OP_RepeatedTriggerChildGroup : CParticleFunctionPreEm
   public CParticleCollectionFloatInput ClusterCooldown { get; }
   
   public ref bool LimitChildCount { get; }
+
+
 }

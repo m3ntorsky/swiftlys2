@@ -11,4 +11,6 @@ public partial interface CEnvBeverage : CBaseEntity {
   public ref bool CanInDispenser { get; }
   
   public ref int BeverageType { get; }
+
+
 }

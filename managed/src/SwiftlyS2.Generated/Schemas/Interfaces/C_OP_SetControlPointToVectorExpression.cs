@@ -19,4 +19,6 @@ public partial interface C_OP_SetControlPointToVectorExpression : CParticleFunct
   public CPerParticleFloatInput Lerp { get; }
   
   public ref bool NormalizedOutput { get; }
+
+
 }

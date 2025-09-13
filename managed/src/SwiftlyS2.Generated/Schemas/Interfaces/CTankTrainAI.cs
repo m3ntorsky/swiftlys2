@@ -21,4 +21,6 @@ public partial interface CTankTrainAI : CPointEntity {
   public ref CUtlSymbolLarge MovementSoundName { get; }
   
   public ref CUtlSymbolLarge TargetEntityName { get; }
+
+
 }

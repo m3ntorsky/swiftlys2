@@ -15,4 +15,6 @@ public partial interface CInfoProjectedDecal : CPointEntity {
   public ref float Distance { get; }
   
   public ref bool NotInMultiplayer { get; }
+
+
 }

@@ -29,4 +29,12 @@ public partial interface CBaseAnimGraph : CBaseModelEntity {
   public ref bool RagdollEnabled { get; }
   
   public ref bool RagdollClientSide { get; }
+
+  public void InitiallyPopulateInterpHistoryUpdated();
+  public void AnimGraphUpdateEnabledUpdated();
+  public void ForceUpdated();
+  public void ForceBoneUpdated();
+  public void RagdollPoseUpdated();
+  public void RagdollEnabledUpdated();
+  public void RagdollClientSideUpdated();
 }

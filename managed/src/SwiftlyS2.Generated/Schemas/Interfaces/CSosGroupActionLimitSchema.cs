@@ -13,4 +13,6 @@ public partial interface CSosGroupActionLimitSchema : CSosGroupActionSchema {
   public ref SosActionStopType_t StopType { get; }
   
   public ref SosActionSortType_t SortType { get; }
+
+
 }

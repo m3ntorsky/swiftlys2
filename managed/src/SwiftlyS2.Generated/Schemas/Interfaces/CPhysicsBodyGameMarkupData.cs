@@ -9,4 +9,6 @@ public partial interface CPhysicsBodyGameMarkupData : ISchemaClass {
 
   
   public SchemaUntypedField PhysicsBodyMarkupByBoneName { get; }
+
+
 }

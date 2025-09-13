@@ -39,4 +39,6 @@ public partial interface CBlend2DUpdateNode : CAnimUpdateNodeBase {
   public ref bool LockWhenWaning { get; }
   
   public ref bool AnimEventsAndTagsOnMostWeightedOnly { get; }
+
+
 }

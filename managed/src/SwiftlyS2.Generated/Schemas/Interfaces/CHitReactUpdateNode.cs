@@ -23,4 +23,6 @@ public partial interface CHitReactUpdateNode : CUnaryUpdateNode {
   public ref float MinDelayBetweenHits { get; }
   
   public ref bool ResetChild { get; }
+
+
 }

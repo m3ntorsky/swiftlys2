@@ -21,4 +21,6 @@ public partial interface CAnimBone : ISchemaClass {
   public SchemaUntypedField Alignment { get; }
   
   public ref int Flags { get; }
+
+
 }

@@ -35,4 +35,6 @@ public partial interface C_INIT_CreateWithinSphereTransform : CParticleFunctionI
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ParticleAttributeIndex_t FieldVelocity { get; }
+
+
 }

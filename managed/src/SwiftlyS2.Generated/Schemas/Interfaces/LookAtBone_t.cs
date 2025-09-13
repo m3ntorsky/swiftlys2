@@ -11,4 +11,6 @@ public partial interface LookAtBone_t : ISchemaClass {
   public ref int Index { get; }
   
   public ref float Weight { get; }
+
+
 }

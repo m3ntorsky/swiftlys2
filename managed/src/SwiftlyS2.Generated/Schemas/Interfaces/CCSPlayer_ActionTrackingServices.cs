@@ -15,4 +15,8 @@ public partial interface CCSPlayer_ActionTrackingServices : CPlayerPawnComponent
   public WeaponPurchaseTracker_t WeaponPurchasesThisMatch { get; }
   
   public WeaponPurchaseTracker_t WeaponPurchasesThisRound { get; }
+
+  public void IsRescuingUpdated();
+  public void WeaponPurchasesThisMatchUpdated();
+  public void WeaponPurchasesThisRoundUpdated();
 }

@@ -15,4 +15,6 @@ public partial interface CGameMoney : CRulePointEntity {
   public ref int Money { get; }
   
   public ref CUtlString StrAwardText { get; }
+
+
 }

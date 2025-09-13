@@ -47,4 +47,17 @@ public partial interface CBaseAnimGraphController : CSkeletonAnimationController
   public ref byte GraphCreationFlagsAG2 { get; }
   
   public ref int ServerGraphDefReloadCountAG2 { get; }
+
+  public void AnimGraphNetworkedVarsUpdated();
+  public void SequenceUpdated();
+  public void SeqStartTimeUpdated();
+  public void SeqFixedCycleUpdated();
+  public void AnimLoopModeUpdated();
+  public void PlaybackRateUpdated();
+  public void GraphDefinitionAG2Updated();
+  public void IsUsingAG2Updated();
+  public void SerializedPoseRecipeAG2Updated();
+  public void SerializePoseRecipeSizeAG2Updated();
+  public void GraphCreationFlagsAG2Updated();
+  public void ServerGraphDefReloadCountAG2Updated();
 }

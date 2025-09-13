@@ -11,4 +11,6 @@ public partial interface FollowAttachmentData : ISchemaClass {
   public ref int BoneIndex { get; }
   
   public AttachmentHandle_t AttachmentHandle { get; }
+
+
 }

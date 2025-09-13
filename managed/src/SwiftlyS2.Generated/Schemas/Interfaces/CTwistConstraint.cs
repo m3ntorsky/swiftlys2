@@ -13,4 +13,6 @@ public partial interface CTwistConstraint : CBaseConstraint {
   public ref Quaternion ParentBindRotation { get; }
   
   public ref Quaternion ChildBindRotation { get; }
+
+
 }

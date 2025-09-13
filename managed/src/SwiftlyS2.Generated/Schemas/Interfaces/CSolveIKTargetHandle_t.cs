@@ -11,4 +11,6 @@ public partial interface CSolveIKTargetHandle_t : ISchemaClass {
   public CAnimParamHandle PositionHandle { get; }
   
   public CAnimParamHandle OrientationHandle { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CTiltTwistConstraint : CBaseConstraint {
   public ref int TargetAxis { get; }
   
   public ref int SlaveAxis { get; }
+
+
 }

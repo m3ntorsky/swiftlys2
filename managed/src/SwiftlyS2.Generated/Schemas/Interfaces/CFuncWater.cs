@@ -9,4 +9,6 @@ public partial interface CFuncWater : CBaseModelEntity {
 
   
   public CBuoyancyHelper BuoyancyHelper { get; }
+
+
 }

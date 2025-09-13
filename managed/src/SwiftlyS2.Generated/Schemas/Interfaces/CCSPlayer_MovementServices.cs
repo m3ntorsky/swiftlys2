@@ -89,4 +89,24 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
   public ref float TicksSinceLastSurfingDetected { get; }
   
   public ref bool WasSurfing { get; }
+
+  public void LadderNormalUpdated();
+  public void LadderSurfacePropIndexUpdated();
+  public void DuckAmountUpdated();
+  public void DuckSpeedUpdated();
+  public void DuckOverrideUpdated();
+  public void DesiresDuckUpdated();
+  public void DuckOffsetUpdated();
+  public void DuckTimeMsecsUpdated();
+  public void DuckJumpTimeMsecsUpdated();
+  public void JumpTimeMsecsUpdated();
+  public void LastDuckTimeUpdated();
+  public void GameCodeHasMovedPlayerAfterCommandUpdated();
+  public void OldJumpPressedUpdated();
+  public void StashGrenadeParameterWhenUpdated();
+  public void ButtonDownMaskPrevUpdated();
+  public void OffsetTickCompleteTimeUpdated();
+  public void OffsetTickStashedSpeedUpdated();
+  public void StaminaUpdated();
+  public void WasSurfingUpdated();
 }

@@ -17,4 +17,6 @@ public partial interface C_OP_ExternalGameImpulseForce : CParticleFunctionForce 
   public ref bool Explosions { get; }
   
   public ref bool Particles { get; }
+
+
 }

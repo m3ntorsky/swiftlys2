@@ -9,4 +9,6 @@ public partial interface CMultiplayer_Expresser : CAI_ExpresserWithFollowup {
 
   
   public ref bool AllowMultipleScenes { get; }
+
+
 }

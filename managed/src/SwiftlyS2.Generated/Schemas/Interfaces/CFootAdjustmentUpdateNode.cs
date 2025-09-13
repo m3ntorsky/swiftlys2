@@ -26,4 +26,6 @@ public partial interface CFootAdjustmentUpdateNode : CUnaryUpdateNode {
   public ref bool ResetChild { get; }
   
   public ref bool AnimationDriven { get; }
+
+
 }

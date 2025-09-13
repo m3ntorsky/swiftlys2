@@ -13,4 +13,8 @@ public partial interface ServerAuthoritativeWeaponSlot_t : ISchemaClass {
   public ref ushort Slot { get; }
   
   public ref ushort ItemDefIdx { get; }
+
+  public void ClassUpdated();
+  public void SlotUpdated();
+  public void ItemDefIdxUpdated();
 }

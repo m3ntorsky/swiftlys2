@@ -55,4 +55,6 @@ public partial interface CEnvInstructorHint : CPointEntity {
   public ref bool AutoStart { get; }
   
   public ref bool LocalPlayerOnly { get; }
+
+
 }

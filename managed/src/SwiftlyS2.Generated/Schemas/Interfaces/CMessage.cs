@@ -19,4 +19,6 @@ public partial interface CMessage : CPointEntity {
   public ref CUtlSymbolLarge Noise { get; }
   
   public CEntityIOOutput OnShowMessage { get; }
+
+
 }

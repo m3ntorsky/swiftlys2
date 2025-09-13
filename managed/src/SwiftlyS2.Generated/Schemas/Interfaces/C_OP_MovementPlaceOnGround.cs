@@ -41,4 +41,6 @@ public partial interface C_OP_MovementPlaceOnGround : CParticleFunctionOperator 
   public ref int PreserveOffsetCP { get; }
   
   public ref int IgnoreCP { get; }
+
+
 }

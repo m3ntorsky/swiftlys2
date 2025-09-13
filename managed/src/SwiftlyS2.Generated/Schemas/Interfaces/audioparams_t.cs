@@ -17,4 +17,10 @@ public partial interface audioparams_t : ISchemaClass {
   public ref int SoundscapeEntityListIndex { get; }
   
   public ref uint SoundEventHash { get; }
+
+  public void LocalSoundUpdated();
+  public void SoundscapeIndexUpdated();
+  public void LocalBitsUpdated();
+  public void SoundscapeEntityListIndexUpdated();
+  public void SoundEventHashUpdated();
 }

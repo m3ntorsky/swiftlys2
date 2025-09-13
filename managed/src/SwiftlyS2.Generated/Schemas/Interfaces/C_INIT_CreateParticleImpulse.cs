@@ -17,4 +17,6 @@ public partial interface C_INIT_CreateParticleImpulse : CParticleFunctionInitial
   public CPerParticleFloatInput InputFalloffExp { get; }
   
   public ref ParticleImpulseType_t ImpulseType { get; }
+
+
 }

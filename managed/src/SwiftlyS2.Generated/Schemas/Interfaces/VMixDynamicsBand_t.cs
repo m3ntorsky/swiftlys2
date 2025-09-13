@@ -27,4 +27,6 @@ public partial interface VMixDynamicsBand_t : ISchemaClass {
   public ref bool Enable { get; }
   
   public ref bool Solo { get; }
+
+
 }

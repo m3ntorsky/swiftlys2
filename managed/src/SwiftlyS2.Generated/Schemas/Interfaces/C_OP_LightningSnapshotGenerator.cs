@@ -37,4 +37,6 @@ public partial interface C_OP_LightningSnapshotGenerator : CParticleFunctionPreE
   public CParticleCollectionFloatInput RadiusEnd { get; }
   
   public CParticleCollectionFloatInput DedicatedPool { get; }
+
+
 }

@@ -21,4 +21,6 @@ public partial interface RenderHairStrandInfo_t : ISchemaClass {
   public ref uint PackedSurfaceTangentOs { get; }
   
   public ref uint DataOffset_Segments { get; }
+
+
 }

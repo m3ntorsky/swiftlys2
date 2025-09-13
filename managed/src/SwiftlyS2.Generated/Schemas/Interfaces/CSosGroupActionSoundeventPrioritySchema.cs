@@ -15,4 +15,6 @@ public partial interface CSosGroupActionSoundeventPrioritySchema : CSosGroupActi
   public ref CUtlString PriorityContributeButDontRead { get; }
   
   public ref CUtlString PriorityReadButDontContribute { get; }
+
+
 }

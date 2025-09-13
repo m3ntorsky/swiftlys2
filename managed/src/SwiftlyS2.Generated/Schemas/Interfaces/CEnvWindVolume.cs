@@ -25,4 +25,14 @@ public partial interface CEnvWindVolume : CBaseEntity {
   public ref float WindSpeedVariationMultiplier { get; }
   
   public ref float WindDirectionVariationMultiplier { get; }
+
+  public void ActiveUpdated();
+  public void BoxMinsUpdated();
+  public void BoxMaxsUpdated();
+  public void StartDisabledUpdated();
+  public void ShapeUpdated();
+  public void WindSpeedMultiplierUpdated();
+  public void WindTurbulenceMultiplierUpdated();
+  public void WindSpeedVariationMultiplierUpdated();
+  public void WindDirectionVariationMultiplierUpdated();
 }

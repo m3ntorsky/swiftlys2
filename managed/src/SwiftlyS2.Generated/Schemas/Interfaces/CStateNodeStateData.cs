@@ -13,4 +13,6 @@ public partial interface CStateNodeStateData : ISchemaClass {
   public SchemaUntypedField ExclusiveRootMotion { get; }
   
   public SchemaUntypedField ExclusiveRootMotionFirstFrame { get; }
+
+
 }

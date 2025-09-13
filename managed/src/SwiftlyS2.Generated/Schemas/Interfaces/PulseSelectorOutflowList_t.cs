@@ -10,4 +10,6 @@ public partial interface PulseSelectorOutflowList_t : ISchemaClass {
   
 // CUtlVector< OutflowWithRequirements_t >
   public ref CUtlVector Outflows { get; }
+
+
 }

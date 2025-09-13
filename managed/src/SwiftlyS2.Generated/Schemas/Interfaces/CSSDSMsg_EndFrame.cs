@@ -10,4 +10,6 @@ public partial interface CSSDSMsg_EndFrame : ISchemaClass {
   
 // CUtlVector< CSSDSEndFrameViewInfo >
   public ref CUtlVector Views { get; }
+
+
 }

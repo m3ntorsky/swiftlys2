@@ -19,4 +19,6 @@ public partial interface CGeneralRandomRotation : CParticleFunctionInitializer {
   public ref float RotationRandExponent { get; }
   
   public ref bool RandomlyFlipDirection { get; }
+
+
 }

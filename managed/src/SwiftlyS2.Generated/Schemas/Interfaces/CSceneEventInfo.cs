@@ -33,4 +33,6 @@ public partial interface CSceneEventInfo : ISchemaClass {
   public ref bool ClientSide { get; }
   
   public ref bool Started { get; }
+
+
 }

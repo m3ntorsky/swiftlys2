@@ -10,4 +10,6 @@ public partial interface CFootTrajectories : ISchemaClass {
   
 // CUtlVector< CFootTrajectory >
   public ref CUtlVector Trajectories { get; }
+
+
 }

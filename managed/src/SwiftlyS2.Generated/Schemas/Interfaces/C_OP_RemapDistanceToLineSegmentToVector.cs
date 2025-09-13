@@ -13,4 +13,6 @@ public partial interface C_OP_RemapDistanceToLineSegmentToVector : C_OP_RemapDis
   public ref Vector MinOutputValue { get; }
   
   public ref Vector MaxOutputValue { get; }
+
+
 }

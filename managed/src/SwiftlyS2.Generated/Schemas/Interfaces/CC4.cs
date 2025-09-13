@@ -29,4 +29,10 @@ public partial interface CC4 : CCSWeaponBase {
   public ISchemaFixedArray<bool> PlayedArmingBeeps { get; }
   
   public ref bool BombPlanted { get; }
+
+  public void StartedArmingUpdated();
+  public void ArmedTimeUpdated();
+  public void BombPlacedAnimationUpdated();
+  public void IsPlantingViaUseUpdated();
+  public void EntitySpottedStateUpdated();
 }

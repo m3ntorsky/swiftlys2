@@ -9,4 +9,6 @@ public partial interface EventPostDataUpdate_t : ISchemaClass {
 
   
   public ref int Count { get; }
+
+
 }

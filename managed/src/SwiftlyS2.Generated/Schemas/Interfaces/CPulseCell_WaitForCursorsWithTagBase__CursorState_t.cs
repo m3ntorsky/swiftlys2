@@ -9,4 +9,6 @@ public partial interface CPulseCell_WaitForCursorsWithTagBase__CursorState_t : I
 
   
   public SchemaUntypedField TagName { get; }
+
+
 }

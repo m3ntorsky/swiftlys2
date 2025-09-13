@@ -15,4 +15,6 @@ public partial interface CNmFloatCurveEventNode__CDefinition : CNmFloatValueNode
   public ref float DefaultValue { get; }
   
   public CNmBitFlags EventConditionRules { get; }
+
+
 }

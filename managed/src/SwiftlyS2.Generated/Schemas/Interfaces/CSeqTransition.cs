@@ -11,4 +11,6 @@ public partial interface CSeqTransition : ISchemaClass {
   public ref float FadeInTime { get; }
   
   public ref float FadeOutTime { get; }
+
+
 }

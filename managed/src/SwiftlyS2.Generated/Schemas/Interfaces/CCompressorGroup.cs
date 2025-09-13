@@ -41,4 +41,6 @@ public partial interface CCompressorGroup : ISchemaClass {
   public ref CUtlVector<PointerTo<SchemaUntypedField>> Vector2DCompressor { get; }
   
   public ref CUtlVector<PointerTo<SchemaUntypedField>> Vector4DCompressor { get; }
+
+
 }

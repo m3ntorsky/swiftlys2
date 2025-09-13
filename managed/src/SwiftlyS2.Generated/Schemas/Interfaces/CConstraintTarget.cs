@@ -19,4 +19,6 @@ public partial interface CConstraintTarget : ISchemaClass {
   public ref float Weight { get; }
   
   public ref bool IsAttachment { get; }
+
+
 }

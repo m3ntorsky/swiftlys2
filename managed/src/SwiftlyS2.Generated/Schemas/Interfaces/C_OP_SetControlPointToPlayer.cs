@@ -13,4 +13,6 @@ public partial interface C_OP_SetControlPointToPlayer : CParticleFunctionPreEmis
   public ref Vector CP1Pos { get; }
   
   public ref bool OrientToEyes { get; }
+
+
 }

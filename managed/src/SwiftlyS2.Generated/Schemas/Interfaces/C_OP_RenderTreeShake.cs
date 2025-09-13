@@ -27,4 +27,6 @@ public partial interface C_OP_RenderTreeShake : CParticleFunctionRenderer {
   public ref float ControlPointOrientationAmount { get; }
   
   public ref int ControlPointForLinearDirection { get; }
+
+
 }

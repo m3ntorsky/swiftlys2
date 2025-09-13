@@ -9,4 +9,6 @@ public partial interface CExampleSchemaVData_PolymorphicBase : ISchemaClass {
 
   
   public ref int Base { get; }
+
+
 }

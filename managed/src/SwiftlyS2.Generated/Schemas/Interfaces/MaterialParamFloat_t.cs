@@ -9,4 +9,6 @@ public partial interface MaterialParamFloat_t : MaterialParam_t {
 
   
   public ref float Value { get; }
+
+
 }

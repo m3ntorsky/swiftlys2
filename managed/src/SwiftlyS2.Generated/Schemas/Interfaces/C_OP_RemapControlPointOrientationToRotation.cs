@@ -15,4 +15,6 @@ public partial interface C_OP_RemapControlPointOrientationToRotation : CParticle
   public ref float OffsetRot { get; }
   
   public ref int Component { get; }
+
+
 }

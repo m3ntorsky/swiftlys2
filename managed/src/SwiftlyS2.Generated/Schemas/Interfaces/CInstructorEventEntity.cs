@@ -13,4 +13,6 @@ public partial interface CInstructorEventEntity : CPointEntity {
   public ref CUtlSymbolLarge HintTargetEntity { get; }
   
   public ref CHandle<CBasePlayerPawn> TargetPlayer { get; }
+
+
 }

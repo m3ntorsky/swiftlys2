@@ -15,4 +15,6 @@ public partial interface CSubtractUpdateNode : CBinaryUpdateNode {
   public ref bool ApplyChannelsSeparately { get; }
   
   public ref bool UseModelSpace { get; }
+
+
 }

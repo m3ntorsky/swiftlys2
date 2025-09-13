@@ -35,4 +35,6 @@ public partial interface CSeqCmdSeqDesc : ISchemaClass {
   
 // CUtlVector< CSeqPoseSetting >
   public ref CUtlVector PoseSettingArray { get; }
+
+
 }

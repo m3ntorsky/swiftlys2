@@ -17,4 +17,6 @@ public partial interface VMixDualCompressorDesc_t : ISchemaClass {
   public ref bool PeakMode { get; }
   
   public VMixDynamicsBand_t BandDesc { get; }
+
+
 }

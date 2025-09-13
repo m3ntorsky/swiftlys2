@@ -15,4 +15,6 @@ public partial interface CLogicBranch : CLogicalEntity {
   public CEntityIOOutput OnTrue { get; }
   
   public CEntityIOOutput OnFalse { get; }
+
+
 }

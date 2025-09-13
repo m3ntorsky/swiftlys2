@@ -25,4 +25,6 @@ public partial interface CDestructiblePartsSystemData_DamageLevel : ISchemaClass
   public ref bool ShouldDestroyOnDeath { get; }
   
   public CRangeFloat DeathDestroyTime { get; }
+
+
 }

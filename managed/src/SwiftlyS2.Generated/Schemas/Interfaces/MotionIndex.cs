@@ -11,4 +11,6 @@ public partial interface MotionIndex : ISchemaClass {
   public ref ushort Group { get; }
   
   public ref ushort Motion { get; }
+
+
 }

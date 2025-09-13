@@ -18,4 +18,6 @@ public partial interface ScriptInfo_t : ISchemaClass {
   public ref CUtlVector<int> ProxyWriteParams { get; }
   
   public ref AnimScriptType ScriptType { get; }
+
+
 }

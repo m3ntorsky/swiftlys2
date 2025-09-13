@@ -31,4 +31,10 @@ public partial interface CFuncLadder : CBaseModelEntity {
   public CEntityIOOutput OnPlayerGotOnLadder { get; }
   
   public CEntityIOOutput OnPlayerGotOffLadder { get; }
+
+  public void LadderDirUpdated();
+  public void PlayerMountPositionTopUpdated();
+  public void PlayerMountPositionBottomUpdated();
+  public void AutoRideSpeedUpdated();
+  public void FakeLadderUpdated();
 }

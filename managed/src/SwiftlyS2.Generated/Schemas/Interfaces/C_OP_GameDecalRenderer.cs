@@ -39,4 +39,6 @@ public partial interface C_OP_GameDecalRenderer : CParticleFunctionRenderer {
   public ref bool NoDecalsOnOwner { get; }
   
   public ref bool VisualizeTraces { get; }
+
+
 }

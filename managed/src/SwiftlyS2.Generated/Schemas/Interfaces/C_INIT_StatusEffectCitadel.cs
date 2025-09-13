@@ -45,4 +45,6 @@ public partial interface C_INIT_StatusEffectCitadel : CParticleFunctionInitializ
   public ref float SFXSDetailScrollZ { get; }
   
   public ref float SFXSUseModelUVs { get; }
+
+
 }

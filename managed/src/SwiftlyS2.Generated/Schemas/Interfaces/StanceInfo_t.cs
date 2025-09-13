@@ -11,4 +11,6 @@ public partial interface StanceInfo_t : ISchemaClass {
   public ref Vector Position { get; }
   
   public ref float Direction { get; }
+
+
 }

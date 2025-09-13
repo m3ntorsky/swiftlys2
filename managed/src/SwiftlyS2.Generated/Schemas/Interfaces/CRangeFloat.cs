@@ -9,4 +9,6 @@ public partial interface CRangeFloat : ISchemaClass {
 
   
   public ISchemaFixedArray<float> Value { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CPathMover : CPathSimple {
   public ref CUtlVector<CHandle<CFuncMover>> Movers { get; }
   
   public ref CTransform XInitialPathWorldToLocal { get; }
+
+
 }

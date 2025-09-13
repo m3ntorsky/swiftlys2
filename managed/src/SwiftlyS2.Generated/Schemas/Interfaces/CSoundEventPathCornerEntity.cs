@@ -22,4 +22,6 @@ public partial interface CSoundEventPathCornerEntity : CSoundEventEntity {
   
 // CNetworkUtlVectorBase< SoundeventPathCornerPairNetworked_t >
   public ref CUtlVector CornerPairsNetworked { get; }
+
+  public void CornerPairsNetworkedUpdated();
 }

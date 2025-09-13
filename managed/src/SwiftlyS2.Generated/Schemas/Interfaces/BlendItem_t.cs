@@ -20,4 +20,6 @@ public partial interface BlendItem_t : ISchemaClass {
   public ref float Duration { get; }
   
   public ref bool UseCustomDuration { get; }
+
+
 }

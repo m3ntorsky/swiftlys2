@@ -11,4 +11,6 @@ public partial interface NavGravity_t : ISchemaClass {
   public ref Vector Gravity { get; }
   
   public ref bool Default { get; }
+
+
 }

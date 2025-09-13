@@ -13,4 +13,6 @@ public partial interface PulseRegisterMap_t : ISchemaClass {
   public SchemaUntypedField InparamsWhichCanBeMoved { get; }
   
   public SchemaUntypedField Outparams { get; }
+
+
 }

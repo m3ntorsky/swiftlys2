@@ -15,4 +15,6 @@ public partial interface FeStiffHingeBuild_t : ISchemaClass {
   public ISchemaFixedArray<float> MotionBias { get; }
   
   public ISchemaFixedArray<ushort> Node { get; }
+
+
 }

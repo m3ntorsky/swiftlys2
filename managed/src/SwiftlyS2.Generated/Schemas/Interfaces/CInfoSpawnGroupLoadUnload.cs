@@ -33,4 +33,6 @@ public partial interface CInfoSpawnGroupLoadUnload : CLogicalEntity {
   public ref bool QueueActiveSpawnGroupChange { get; }
   
   public ref bool QueueFinishLoading { get; }
+
+
 }

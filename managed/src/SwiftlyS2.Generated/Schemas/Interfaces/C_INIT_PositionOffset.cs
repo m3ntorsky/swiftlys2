@@ -19,4 +19,6 @@ public partial interface C_INIT_PositionOffset : CParticleFunctionInitializer {
   public ref bool Proportional { get; }
   
   public CRandomNumberGeneratorParameters RandomnessParameters { get; }
+
+
 }

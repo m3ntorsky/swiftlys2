@@ -27,4 +27,14 @@ public partial interface CCSPlayerResource : CBaseEntity {
   public ref bool EndMatchNextMapAllVoted { get; }
   
   public ref bool FoundGoalPositions { get; }
+
+  public void HostageAliveUpdated();
+  public void IsHostageFollowingSomeoneUpdated();
+  public void HostageEntityIDsUpdated();
+  public void BombsiteCenterAUpdated();
+  public void BombsiteCenterBUpdated();
+  public void HostageRescueXUpdated();
+  public void HostageRescueYUpdated();
+  public void HostageRescueZUpdated();
+  public void EndMatchNextMapAllVotedUpdated();
 }

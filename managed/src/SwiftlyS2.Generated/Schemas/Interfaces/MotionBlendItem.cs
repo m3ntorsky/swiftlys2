@@ -11,4 +11,6 @@ public partial interface MotionBlendItem : ISchemaClass {
   public SchemaUntypedField Child { get; }
   
   public ref float KeyValue { get; }
+
+
 }

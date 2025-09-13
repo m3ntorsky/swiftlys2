@@ -9,4 +9,6 @@ public partial interface CNmVirtualParameterBoneMaskNode__CDefinition : CNmBoneM
 
   
   public ref short ChildNodeIdx { get; }
+
+
 }

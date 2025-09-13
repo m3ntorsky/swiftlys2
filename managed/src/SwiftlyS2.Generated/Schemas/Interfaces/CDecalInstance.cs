@@ -57,4 +57,6 @@ public partial interface CDecalInstance : ISchemaClass {
   public CDecalInstance Next { get; }
   
   public CDecalInstance Prev { get; }
+
+
 }

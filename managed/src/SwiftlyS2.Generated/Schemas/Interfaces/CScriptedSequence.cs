@@ -161,4 +161,6 @@ public partial interface CScriptedSequence : CBaseEntity {
   public ref int PlayerDeathBehavior { get; }
   
   public ref bool SkipFadeIn { get; }
+
+
 }

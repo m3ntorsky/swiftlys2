@@ -9,4 +9,6 @@ public partial interface CNmGraphNode__CDefinition : ISchemaClass {
 
   
   public ref short NodeIdx { get; }
+
+
 }

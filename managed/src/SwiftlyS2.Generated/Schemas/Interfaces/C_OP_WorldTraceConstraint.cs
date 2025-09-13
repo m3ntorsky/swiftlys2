@@ -61,4 +61,6 @@ public partial interface C_OP_WorldTraceConstraint : CParticleFunctionConstraint
   public ParticleAttributeIndex_t EntityStickDataField { get; }
   
   public ParticleAttributeIndex_t EntityStickNormalField { get; }
+
+
 }

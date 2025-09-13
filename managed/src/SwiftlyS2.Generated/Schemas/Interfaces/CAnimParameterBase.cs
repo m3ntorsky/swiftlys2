@@ -21,4 +21,6 @@ public partial interface CAnimParameterBase : ISchemaClass {
   public ref bool NetworkingRequested { get; }
   
   public ref bool IsReferenced { get; }
+
+
 }

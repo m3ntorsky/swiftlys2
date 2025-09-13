@@ -9,4 +9,6 @@ public partial interface FeSourceEdge_t : ISchemaClass {
 
   
   public ISchemaFixedArray<ushort> Node { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CScriptItem : CItem {
 
   
   public ref MoveType_t MoveTypeOverride { get; }
+
+
 }

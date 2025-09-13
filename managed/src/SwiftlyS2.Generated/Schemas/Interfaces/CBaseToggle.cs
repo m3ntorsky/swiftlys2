@@ -39,4 +39,6 @@ public partial interface CBaseToggle : CBaseModelEntity {
   public ref int MovementType { get; }
   
   public ref CUtlSymbolLarge Master { get; }
+
+
 }

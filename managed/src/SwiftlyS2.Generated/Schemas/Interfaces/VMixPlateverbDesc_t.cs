@@ -21,4 +21,6 @@ public partial interface VMixPlateverbDesc_t : ISchemaClass {
   public ref float FeedbackDiffusion1 { get; }
   
   public ref float FeedbackDiffusion2 { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CNmVectorNegateNode__CDefinition : CNmVectorValueNode__
 
   
   public ref short InputValueNodeIdx { get; }
+
+
 }

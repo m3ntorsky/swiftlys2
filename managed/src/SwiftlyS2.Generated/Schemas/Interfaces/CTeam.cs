@@ -15,4 +15,9 @@ public partial interface CTeam : CBaseEntity {
   public ref int Score { get; }
   
   public ISchemaFixedString Teamname { get; }
+
+  public void PlayerControllersUpdated();
+  public void PlayersUpdated();
+  public void ScoreUpdated();
+  public void TeamnameUpdated();
 }

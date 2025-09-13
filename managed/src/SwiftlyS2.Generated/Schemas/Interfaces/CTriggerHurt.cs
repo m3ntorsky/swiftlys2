@@ -35,4 +35,6 @@ public partial interface CTriggerHurt : CBaseTrigger {
   public CEntityIOOutput OnHurtPlayer { get; }
   
   public ref CUtlVector<CHandle<CBaseEntity>> HurtEntities { get; }
+
+
 }

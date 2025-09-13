@@ -15,4 +15,6 @@ public partial interface CAI_ChangeHintGroup : CBaseEntity {
   public ref CUtlSymbolLarge StrNewHintGroup { get; }
   
   public ref float Radius { get; }
+
+
 }

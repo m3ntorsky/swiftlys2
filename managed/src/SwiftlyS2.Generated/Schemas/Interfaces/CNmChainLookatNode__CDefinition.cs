@@ -21,4 +21,6 @@ public partial interface CNmChainLookatNode__CDefinition : CNmPassthroughNode__C
   public ref bool IsTargetInWorldSpace { get; }
   
   public ref Vector ChainForwardDir { get; }
+
+
 }

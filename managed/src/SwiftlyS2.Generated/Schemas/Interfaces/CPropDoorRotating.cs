@@ -41,4 +41,6 @@ public partial interface CPropDoorRotating : CBasePropDoor {
   public ref bool AjarDoorShouldntAlwaysOpen { get; }
   
   public ref CHandle<CEntityBlocker> EntityBlocker { get; }
+
+
 }

@@ -32,4 +32,6 @@ public partial interface RnMesh_t : ISchemaClass {
   public ref uint Flags { get; }
   
   public ref uint DebugFlags { get; }
+
+
 }

@@ -21,4 +21,6 @@ public partial interface C_OP_RenderStatusEffect : CParticleFunctionRenderer {
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureSpecularWarp { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureEnvMap { get; }
+
+
 }

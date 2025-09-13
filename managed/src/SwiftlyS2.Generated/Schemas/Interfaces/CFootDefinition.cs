@@ -25,4 +25,6 @@ public partial interface CFootDefinition : ISchemaClass {
   public ref float TraceHeight { get; }
   
   public ref float TraceRadius { get; }
+
+
 }

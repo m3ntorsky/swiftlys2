@@ -15,4 +15,6 @@ public partial interface CAnimStateMachineUpdater : ISchemaClass {
   public ref CUtlVector Transitions { get; }
   
   public ref int StartStateIndex { get; }
+
+
 }

@@ -15,4 +15,6 @@ public partial interface CEntityComponentHelper : ISchemaClass {
   public ref int Priority { get; }
   
   public CEntityComponentHelper Next { get; }
+
+
 }

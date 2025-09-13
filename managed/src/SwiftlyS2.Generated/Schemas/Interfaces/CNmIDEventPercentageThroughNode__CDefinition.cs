@@ -13,4 +13,6 @@ public partial interface CNmIDEventPercentageThroughNode__CDefinition : CNmBoolV
   public CNmBitFlags EventConditionRules { get; }
   
   public ref CGlobalSymbol EventID { get; }
+
+
 }

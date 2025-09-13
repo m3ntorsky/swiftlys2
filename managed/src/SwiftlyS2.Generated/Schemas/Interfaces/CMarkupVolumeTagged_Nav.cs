@@ -9,4 +9,6 @@ public partial interface CMarkupVolumeTagged_Nav : CMarkupVolumeTagged {
 
   
   public ref NavScopeFlags_t Scopes { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CNavVolumeSphere : CNavVolume {
   public ref Vector Center { get; }
   
   public ref float Radius { get; }
+
+
 }

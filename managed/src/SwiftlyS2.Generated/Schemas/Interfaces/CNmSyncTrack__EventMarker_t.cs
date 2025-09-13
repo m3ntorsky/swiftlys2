@@ -11,4 +11,6 @@ public partial interface CNmSyncTrack__EventMarker_t : ISchemaClass {
   public NmPercent_t StartTime { get; }
   
   public ref CGlobalSymbol ID { get; }
+
+
 }

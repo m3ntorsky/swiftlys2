@@ -11,4 +11,6 @@ public partial interface CToggleComponentActionUpdater : CAnimActionUpdater {
   public AnimComponentID ComponentID { get; }
   
   public ref bool SetEnabled { get; }
+
+
 }

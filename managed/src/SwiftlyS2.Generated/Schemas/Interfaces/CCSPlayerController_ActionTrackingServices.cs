@@ -18,4 +18,10 @@ public partial interface CCSPlayerController_ActionTrackingServices : CPlayerCon
   public ref int NumRoundKillsHeadshots { get; }
   
   public ref uint TotalRoundDamageDealt { get; }
+
+  public void PerRoundStatsUpdated();
+  public void MatchStatsUpdated();
+  public void NumRoundKillsUpdated();
+  public void NumRoundKillsHeadshotsUpdated();
+  public void TotalRoundDamageDealtUpdated();
 }

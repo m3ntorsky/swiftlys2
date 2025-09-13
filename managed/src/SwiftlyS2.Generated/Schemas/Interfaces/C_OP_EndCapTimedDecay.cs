@@ -9,4 +9,6 @@ public partial interface C_OP_EndCapTimedDecay : CParticleFunctionOperator {
 
   
   public ref float DecayTime { get; }
+
+
 }

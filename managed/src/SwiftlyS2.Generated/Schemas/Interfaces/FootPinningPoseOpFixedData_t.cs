@@ -22,4 +22,6 @@ public partial interface FootPinningPoseOpFixedData_t : ISchemaClass {
   public ref bool ApplyLegTwistLimits { get; }
   
   public ref bool ApplyFootRotationLimits { get; }
+
+
 }

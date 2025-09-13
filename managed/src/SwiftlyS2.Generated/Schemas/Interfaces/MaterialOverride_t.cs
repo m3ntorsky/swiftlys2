@@ -15,4 +15,6 @@ public partial interface MaterialOverride_t : BaseSceneObjectOverride_t {
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
   
   public ref Vector LinearTintColor { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface FeBuildBoxRigid_t : FeBoxRigid_t {
   public ref uint VertexMapHash { get; }
   
   public ref uint AntitunnelGroupBits { get; }
+
+
 }

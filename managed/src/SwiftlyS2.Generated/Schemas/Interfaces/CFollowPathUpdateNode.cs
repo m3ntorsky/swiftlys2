@@ -33,4 +33,6 @@ public partial interface CFollowPathUpdateNode : CUnaryUpdateNode {
   public ref float TurnToFaceOffset { get; }
   
   public ref bool TurnToFace { get; }
+
+
 }

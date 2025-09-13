@@ -9,4 +9,6 @@ public partial interface MaterialParam_t : ISchemaClass {
 
   
   public ref CUtlString Name { get; }
+
+
 }

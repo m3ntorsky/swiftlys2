@@ -25,4 +25,14 @@ public partial interface CEnvDecal : CBaseModelEntity {
   public ref bool ProjectOnWater { get; }
   
   public ref float DepthSortBias { get; }
+
+  public void DecalMaterialUpdated();
+  public void WidthUpdated();
+  public void HeightUpdated();
+  public void DepthUpdated();
+  public void RenderOrderUpdated();
+  public void ProjectOnWorldUpdated();
+  public void ProjectOnCharactersUpdated();
+  public void ProjectOnWaterUpdated();
+  public void DepthSortBiasUpdated();
 }

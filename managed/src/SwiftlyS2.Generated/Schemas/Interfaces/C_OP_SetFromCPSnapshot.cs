@@ -33,4 +33,6 @@ public partial interface C_OP_SetFromCPSnapshot : CParticleFunctionOperator {
   public ref bool SubSample { get; }
   
   public ref bool Prev { get; }
+
+
 }

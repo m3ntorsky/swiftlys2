@@ -15,4 +15,6 @@ public partial interface CNmStateMachineNode__TransitionDefinition_t : ISchemaCl
   public ref short TransitionNodeIdx { get; }
   
   public ref bool CanBeForced { get; }
+
+
 }

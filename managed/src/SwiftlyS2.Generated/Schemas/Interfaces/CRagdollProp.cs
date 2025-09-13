@@ -65,4 +65,10 @@ public partial interface CRagdollProp : CBaseAnimGraph {
   public ref bool ShouldDeleteActivationRecord { get; }
   
   public ref bool ValidatePoweredRagdollPose { get; }
+
+  public void RagEnabledUpdated();
+  public void RagPosUpdated();
+  public void RagAnglesUpdated();
+  public void RagdollSourceUpdated();
+  public void BlendWeightUpdated();
 }

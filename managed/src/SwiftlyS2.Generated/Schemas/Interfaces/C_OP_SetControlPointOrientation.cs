@@ -23,4 +23,6 @@ public partial interface C_OP_SetControlPointOrientation : CParticleFunctionPreE
   public ref QAngle RotationB { get; }
   
   public CParticleCollectionFloatInput Interpolation { get; }
+
+
 }

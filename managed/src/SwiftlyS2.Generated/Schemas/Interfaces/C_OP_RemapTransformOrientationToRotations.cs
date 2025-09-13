@@ -15,4 +15,6 @@ public partial interface C_OP_RemapTransformOrientationToRotations : CParticleFu
   public ref bool UseQuat { get; }
   
   public ref bool WriteNormal { get; }
+
+
 }

@@ -15,4 +15,6 @@ public partial interface CDecoyProjectile : CBaseCSGrenadeProjectile {
   public GameTime_t ExpireTime { get; }
   
   public ref ushort DecoyWeaponDefIndex { get; }
+
+  public void DecoyShotTickUpdated();
 }

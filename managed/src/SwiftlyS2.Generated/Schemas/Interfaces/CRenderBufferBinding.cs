@@ -11,4 +11,6 @@ public partial interface CRenderBufferBinding : ISchemaClass {
   public ref ulong Buffer { get; }
   
   public ref uint BindOffsetBytes { get; }
+
+
 }

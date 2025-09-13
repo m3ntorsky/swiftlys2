@@ -21,4 +21,6 @@ public partial interface C_INIT_SetVectorAttributeToVectorExpression : CParticle
   public ref ParticleSetMethod_t SetMethod { get; }
   
   public ref bool NormalizedOutput { get; }
+
+
 }

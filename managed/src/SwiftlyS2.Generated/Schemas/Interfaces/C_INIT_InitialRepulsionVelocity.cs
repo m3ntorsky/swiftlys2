@@ -33,4 +33,6 @@ public partial interface C_INIT_InitialRepulsionVelocity : CParticleFunctionInit
   public ref int ChildCP { get; }
   
   public ref int ChildGroupID { get; }
+
+
 }

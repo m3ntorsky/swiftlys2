@@ -10,4 +10,6 @@ public partial interface CAnimTagManagerUpdater : ISchemaClass {
   
 // CUtlVector< CSmartPtr< CAnimTagBase > >
   public ref CUtlVector Tags { get; }
+
+
 }

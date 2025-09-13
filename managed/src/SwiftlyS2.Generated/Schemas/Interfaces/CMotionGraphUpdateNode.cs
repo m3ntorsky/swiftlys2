@@ -9,4 +9,6 @@ public partial interface CMotionGraphUpdateNode : CLeafUpdateNode {
 
   
   public SchemaUntypedField MotionGraph { get; }
+
+
 }

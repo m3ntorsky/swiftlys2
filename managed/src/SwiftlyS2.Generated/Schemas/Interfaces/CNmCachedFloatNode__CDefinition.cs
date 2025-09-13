@@ -11,4 +11,6 @@ public partial interface CNmCachedFloatNode__CDefinition : CNmFloatValueNode__CD
   public ref short InputValueNodeIdx { get; }
   
   public ref NmCachedValueMode_t Mode { get; }
+
+
 }

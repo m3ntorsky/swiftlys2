@@ -29,4 +29,6 @@ public partial interface CAnimUpdateSharedData : ISchemaClass {
   public SchemaUntypedField Skeleton { get; }
   
   public CAnimNodePath RootNodePath { get; }
+
+
 }

@@ -65,4 +65,6 @@ public partial interface CBasePlayerWeaponVData : CEntitySubclassVDataBase {
   public ref int Position { get; }
   
   public SchemaUntypedField ShootSounds { get; }
+
+
 }

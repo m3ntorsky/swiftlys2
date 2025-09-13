@@ -11,4 +11,6 @@ public partial interface CRandStopwatch : CStopwatchBase {
   public ref float MinInterval { get; }
   
   public ref float MaxInterval { get; }
+
+
 }

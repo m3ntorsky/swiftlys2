@@ -15,4 +15,6 @@ public partial interface C_OP_TwistAroundAxis : CParticleFunctionForce {
   public ref bool LocalSpace { get; }
   
   public ref int ControlPointNumber { get; }
+
+
 }

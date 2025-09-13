@@ -23,4 +23,6 @@ public partial interface CItem : CBaseAnimGraph {
   public ref QAngle OriginalSpawnAngles { get; }
   
   public ref bool PhysStartAsleep { get; }
+
+
 }

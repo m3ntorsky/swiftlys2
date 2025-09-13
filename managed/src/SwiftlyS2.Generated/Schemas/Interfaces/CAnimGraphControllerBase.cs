@@ -9,4 +9,6 @@ public partial interface CAnimGraphControllerBase : ISchemaClass {
 
   
   public SchemaUntypedField ParamsToResetInPostGraphUpdate { get; }
+
+
 }

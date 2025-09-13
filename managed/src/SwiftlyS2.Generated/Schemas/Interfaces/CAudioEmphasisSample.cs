@@ -11,4 +11,6 @@ public partial interface CAudioEmphasisSample : ISchemaClass {
   public ref float Time { get; }
   
   public ref float Value { get; }
+
+
 }

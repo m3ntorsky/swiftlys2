@@ -15,4 +15,6 @@ public partial interface CTriggerImpact : CTriggerMultiple {
   public ref float Viewkick { get; }
   
   public SchemaUntypedField OutputForce { get; }
+
+
 }

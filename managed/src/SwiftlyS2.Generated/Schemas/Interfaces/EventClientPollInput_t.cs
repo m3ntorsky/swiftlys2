@@ -11,4 +11,6 @@ public partial interface EventClientPollInput_t : ISchemaClass {
   public EngineLoopState_t LoopState { get; }
   
   public ref float RealTime { get; }
+
+
 }

@@ -17,4 +17,6 @@ public partial interface CSosGroupBranchPattern : ISchemaClass {
   public ref bool MatchOpvar { get; }
   
   public ref bool MatchString { get; }
+
+
 }

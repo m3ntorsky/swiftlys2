@@ -9,4 +9,6 @@ public partial interface AmmoIndex_t : ISchemaClass {
 
   
   public ref byte Value { get; }
+
+
 }

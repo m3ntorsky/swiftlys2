@@ -12,4 +12,6 @@ public partial interface CSolveIKChainUpdateNode : CUnaryUpdateNode {
   public ref CUtlVector TargetHandles { get; }
   
   public SolveIKChainPoseOpFixedSettings_t OpFixedData { get; }
+
+
 }

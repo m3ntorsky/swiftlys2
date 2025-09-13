@@ -21,4 +21,10 @@ public partial interface CCSPlayerBase_CameraServices : CPlayer_CameraServices {
   public ref CUtlVector<CHandle<CBaseEntity>> TriggerFogList { get; }
   
   public ref CHandle<CBaseEntity> LastFogTrigger { get; }
+
+  public void FOVUpdated();
+  public void FOVStartUpdated();
+  public void FOVTimeUpdated();
+  public void FOVRateUpdated();
+  public void ZoomOwnerUpdated();
 }

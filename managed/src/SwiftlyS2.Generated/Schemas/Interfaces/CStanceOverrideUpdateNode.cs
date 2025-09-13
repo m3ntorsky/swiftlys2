@@ -16,4 +16,6 @@ public partial interface CStanceOverrideUpdateNode : CUnaryUpdateNode {
   public CAnimParamHandle Parameter { get; }
   
   public ref StanceOverrideMode Mode { get; }
+
+
 }

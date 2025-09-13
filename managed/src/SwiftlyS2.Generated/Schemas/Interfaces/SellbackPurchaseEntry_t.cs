@@ -17,4 +17,10 @@ public partial interface SellbackPurchaseEntry_t : ISchemaClass {
   public ref bool PrevHelmet { get; }
   
   public ref CHandle<CEntityInstance> Item { get; }
+
+  public void DefIdxUpdated();
+  public void CostUpdated();
+  public void PrevArmorUpdated();
+  public void PrevHelmetUpdated();
+  public void ItemUpdated();
 }

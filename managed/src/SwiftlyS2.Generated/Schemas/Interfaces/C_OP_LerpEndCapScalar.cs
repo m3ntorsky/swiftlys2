@@ -13,4 +13,6 @@ public partial interface C_OP_LerpEndCapScalar : CParticleFunctionOperator {
   public ref float Output { get; }
   
   public ref float LerpTime { get; }
+
+
 }

@@ -12,4 +12,6 @@ public partial interface CFootStepTriggerUpdateNode : CUnaryUpdateNode {
   public ref CUtlVector Triggers { get; }
   
   public ref float Tolerance { get; }
+
+
 }

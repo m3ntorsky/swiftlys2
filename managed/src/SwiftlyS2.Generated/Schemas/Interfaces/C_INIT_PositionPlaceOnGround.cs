@@ -37,4 +37,6 @@ public partial interface C_INIT_PositionPlaceOnGround : CParticleFunctionInitial
   public ref int PreserveOffsetCP { get; }
   
   public ref int IgnoreCP { get; }
+
+
 }

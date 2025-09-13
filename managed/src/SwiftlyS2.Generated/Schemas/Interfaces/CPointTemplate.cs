@@ -29,4 +29,6 @@ public partial interface CPointTemplate : CLogicalEntity {
   public SchemaUntypedField ScriptSpawnCallback { get; }
   
   public SchemaUntypedField ScriptCallbackScope { get; }
+
+
 }

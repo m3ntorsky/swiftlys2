@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Step_DebugLog : CPulseCell_BaseFlow {
 
 
+
+
 }

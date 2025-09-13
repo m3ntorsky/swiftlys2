@@ -12,4 +12,6 @@ public partial interface CMotionNodeBlend1D : CMotionNode {
   public ref CUtlVector BlendItems { get; }
   
   public ref int ParamIndex { get; }
+
+
 }

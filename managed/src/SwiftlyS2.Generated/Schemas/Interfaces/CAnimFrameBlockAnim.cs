@@ -13,4 +13,6 @@ public partial interface CAnimFrameBlockAnim : ISchemaClass {
   public ref int EndFrame { get; }
   
   public ref CUtlVector<int> SegmentIndexArray { get; }
+
+
 }

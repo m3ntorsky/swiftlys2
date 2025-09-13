@@ -11,4 +11,7 @@ public partial interface CSoundEventOBBEntity : CSoundEventEntity {
   public ref Vector Mins { get; }
   
   public ref Vector Maxs { get; }
+
+  public void MinsUpdated();
+  public void MaxsUpdated();
 }

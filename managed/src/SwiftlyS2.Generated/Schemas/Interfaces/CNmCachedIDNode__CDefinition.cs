@@ -11,4 +11,6 @@ public partial interface CNmCachedIDNode__CDefinition : CNmIDValueNode__CDefinit
   public ref short InputValueNodeIdx { get; }
   
   public ref NmCachedValueMode_t Mode { get; }
+
+
 }

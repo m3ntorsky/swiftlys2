@@ -21,4 +21,6 @@ public partial interface C_OP_RemapDirectionToCPToVector : CParticleFunctionOper
   public ref bool Normalize { get; }
   
   public ParticleAttributeIndex_t FieldStrength { get; }
+
+
 }

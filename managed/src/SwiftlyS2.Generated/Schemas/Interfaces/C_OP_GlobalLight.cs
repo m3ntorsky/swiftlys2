@@ -13,4 +13,6 @@ public partial interface C_OP_GlobalLight : CParticleFunctionOperator {
   public ref bool ClampLowerRange { get; }
   
   public ref bool ClampUpperRange { get; }
+
+
 }

@@ -27,4 +27,6 @@ public partial interface FootFixedSettings : ISchemaClass {
   public ref int DisableTagIndex { get; }
   
   public ref int FootIndex { get; }
+
+
 }

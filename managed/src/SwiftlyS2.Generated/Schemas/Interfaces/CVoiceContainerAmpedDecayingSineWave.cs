@@ -9,4 +9,6 @@ public partial interface CVoiceContainerAmpedDecayingSineWave : CVoiceContainerD
 
   
   public ref float GainAmount { get; }
+
+
 }

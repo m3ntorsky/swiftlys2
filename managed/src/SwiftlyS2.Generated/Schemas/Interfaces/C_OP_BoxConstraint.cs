@@ -17,4 +17,6 @@ public partial interface C_OP_BoxConstraint : CParticleFunctionConstraint {
   public ref bool LocalSpace { get; }
   
   public ref bool AccountForRadius { get; }
+
+
 }

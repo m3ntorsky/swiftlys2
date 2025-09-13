@@ -9,4 +9,6 @@ public partial interface CMapSharedEnvironment : CLogicalEntity {
 
   
   public ref CUtlSymbolLarge TargetMapName { get; }
+
+
 }

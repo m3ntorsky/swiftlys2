@@ -35,4 +35,6 @@ public partial interface C_INIT_CreateOnModelAtHeight : CParticleFunctionInitial
   public CParticleCollectionFloatInput HitboxVelocityScale { get; }
   
   public CParticleCollectionFloatInput MaxBoneVelocity { get; }
+
+
 }

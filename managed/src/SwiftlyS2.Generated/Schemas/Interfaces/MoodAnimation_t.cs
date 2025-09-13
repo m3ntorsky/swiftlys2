@@ -11,4 +11,6 @@ public partial interface MoodAnimation_t : ISchemaClass {
   public SchemaUntypedField Name { get; }
   
   public ref float Weight { get; }
+
+
 }

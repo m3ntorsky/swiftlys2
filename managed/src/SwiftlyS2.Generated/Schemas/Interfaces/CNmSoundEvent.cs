@@ -25,4 +25,6 @@ public partial interface CNmSoundEvent : CNmEvent {
   public ref bool ContinuePlayingSoundAtDurationEnd { get; }
   
   public ref float DurationInterruptionThreshold { get; }
+
+
 }

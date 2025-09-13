@@ -9,4 +9,6 @@ public partial interface CNavVolumeVector : CNavVolume {
 
   
   public ref bool HasBeenPreFiltered { get; }
+
+
 }

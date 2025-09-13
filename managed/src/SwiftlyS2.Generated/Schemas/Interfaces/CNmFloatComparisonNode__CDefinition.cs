@@ -17,4 +17,6 @@ public partial interface CNmFloatComparisonNode__CDefinition : CNmBoolValueNode_
   public ref float Epsilon { get; }
   
   public ref float ComparisonValue { get; }
+
+
 }

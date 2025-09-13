@@ -13,4 +13,6 @@ public partial interface C_OP_SetToCP : CParticleFunctionOperator {
   public ref Vector Offset { get; }
   
   public ref bool OffsetLocal { get; }
+
+
 }

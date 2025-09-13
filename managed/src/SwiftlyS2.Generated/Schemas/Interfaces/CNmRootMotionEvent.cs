@@ -9,4 +9,6 @@ public partial interface CNmRootMotionEvent : CNmEvent {
 
   
   public ref float BlendTimeSeconds { get; }
+
+
 }

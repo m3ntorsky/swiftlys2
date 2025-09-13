@@ -17,4 +17,6 @@ public partial interface CNmIDSwitchNode__CDefinition : CNmIDValueNode__CDefinit
   public ref CGlobalSymbol FalseValue { get; }
   
   public ref CGlobalSymbol TrueValue { get; }
+
+
 }

@@ -15,4 +15,6 @@ public partial interface C_OP_HSVShiftToCP : CParticleFunctionPreEmission {
   public ref int OutputCP { get; }
   
   public ref Color DefaultHSVColor { get; }
+
+
 }

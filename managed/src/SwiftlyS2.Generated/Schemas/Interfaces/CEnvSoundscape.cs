@@ -29,4 +29,6 @@ public partial interface CEnvSoundscape : CBaseEntity {
   public ref CUtlSymbolLarge SoundscapeName { get; }
   
   public ref uint SoundEventHash { get; }
+
+
 }

@@ -39,4 +39,6 @@ public partial interface CParticleFunction : ISchemaClass {
   public ref bool DisableOperator { get; }
   
   public ref CUtlString Notes { get; }
+
+
 }

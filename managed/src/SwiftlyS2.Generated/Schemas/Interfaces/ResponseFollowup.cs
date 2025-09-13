@@ -23,4 +23,6 @@ public partial interface ResponseFollowup : ISchemaClass {
   public ref float Followup_entityiodelay { get; }
   
   public ref bool Fired { get; }
+
+
 }

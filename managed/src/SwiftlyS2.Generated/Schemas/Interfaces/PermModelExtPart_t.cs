@@ -15,4 +15,6 @@ public partial interface PermModelExtPart_t : ISchemaClass {
   public ref int Parent { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCModel> RefModel { get; }
+
+
 }

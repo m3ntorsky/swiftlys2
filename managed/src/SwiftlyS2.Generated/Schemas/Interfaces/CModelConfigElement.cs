@@ -11,4 +11,6 @@ public partial interface CModelConfigElement : ISchemaClass {
   public ref CUtlString ElementName { get; }
   
   public ref CUtlVector<PointerTo<CModelConfigElement>> NestedElements { get; }
+
+
 }

@@ -19,4 +19,6 @@ public partial interface C_OP_InterpolateRadius : CParticleFunctionOperator {
   public ref bool EaseInAndOut { get; }
   
   public ref float Bias { get; }
+
+
 }

@@ -17,4 +17,6 @@ public partial interface PulseGraphExecutionHistoryEntry_t : ISchemaClass {
   public ref uint Flags { get; }
   
   public SchemaUntypedField TagName { get; }
+
+
 }

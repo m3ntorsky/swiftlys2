@@ -67,4 +67,6 @@ public partial interface VPhysXJoint_t : ISchemaClass {
   public ref float Plasticity { get; }
   
   public ref CUtlString Tag { get; }
+
+
 }

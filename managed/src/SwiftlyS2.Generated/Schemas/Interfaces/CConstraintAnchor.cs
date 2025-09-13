@@ -9,4 +9,6 @@ public partial interface CConstraintAnchor : CBaseAnimGraph {
 
   
   public ref float MassScale { get; }
+
+
 }

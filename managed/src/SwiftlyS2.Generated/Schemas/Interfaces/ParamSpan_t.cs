@@ -18,4 +18,6 @@ public partial interface ParamSpan_t : ISchemaClass {
   public ref float StartCycle { get; }
   
   public ref float EndCycle { get; }
+
+
 }

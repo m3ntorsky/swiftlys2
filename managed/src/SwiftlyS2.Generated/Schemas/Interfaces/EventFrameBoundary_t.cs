@@ -9,4 +9,6 @@ public partial interface EventFrameBoundary_t : ISchemaClass {
 
   
   public ref float FrameTime { get; }
+
+
 }

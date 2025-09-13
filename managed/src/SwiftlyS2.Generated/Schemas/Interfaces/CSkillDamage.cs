@@ -13,4 +13,6 @@ public partial interface CSkillDamage : ISchemaClass {
   public ref float NPCDamageScalarVsNPC { get; }
   
   public ref float PhysicsForceDamage { get; }
+
+
 }

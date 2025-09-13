@@ -23,4 +23,6 @@ public partial interface C_OP_RemapDensityToVector : CParticleFunctionOperator {
   public ref bool UseParentDensity { get; }
   
   public ref int VoxelGridResolution { get; }
+
+
 }

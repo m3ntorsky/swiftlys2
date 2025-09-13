@@ -11,4 +11,6 @@ public partial interface FeSoftParent_t : ISchemaClass {
   public ref int Parent { get; }
   
   public ref float Alpha { get; }
+
+
 }

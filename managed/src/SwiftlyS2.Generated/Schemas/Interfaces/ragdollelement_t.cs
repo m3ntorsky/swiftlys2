@@ -15,4 +15,6 @@ public partial interface ragdollelement_t : ISchemaClass {
   public ref float Radius { get; }
   
   public ref int Height { get; }
+
+
 }

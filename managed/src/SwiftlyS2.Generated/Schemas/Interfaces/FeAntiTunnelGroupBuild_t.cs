@@ -11,4 +11,6 @@ public partial interface FeAntiTunnelGroupBuild_t : ISchemaClass {
   public ref uint VertexMapHash { get; }
   
   public ref uint CollisionMask { get; }
+
+
 }

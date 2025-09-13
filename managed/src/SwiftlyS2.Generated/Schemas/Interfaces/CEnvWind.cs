@@ -9,4 +9,6 @@ public partial interface CEnvWind : CBaseEntity {
 
   
   public CEnvWindShared EnvWindShared { get; }
+
+  public void EnvWindSharedUpdated();
 }

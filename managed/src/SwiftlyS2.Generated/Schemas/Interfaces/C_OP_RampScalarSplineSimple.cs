@@ -17,4 +17,6 @@ public partial interface C_OP_RampScalarSplineSimple : CParticleFunctionOperator
   public ParticleAttributeIndex_t Field { get; }
   
   public ref bool EaseOut { get; }
+
+
 }

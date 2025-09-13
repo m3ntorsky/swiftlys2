@@ -11,4 +11,6 @@ public partial interface CBreakableStageHelper : ISchemaClass {
   public ref int CurrentStage { get; }
   
   public ref int StageCount { get; }
+
+
 }

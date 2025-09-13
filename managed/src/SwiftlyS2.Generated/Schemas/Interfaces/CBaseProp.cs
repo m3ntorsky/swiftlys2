@@ -15,4 +15,6 @@ public partial interface CBaseProp : CBaseAnimGraph {
   public ref bool ConformToCollisionBounds { get; }
   
   public ref CTransform MPreferredCatchTransform { get; }
+
+
 }

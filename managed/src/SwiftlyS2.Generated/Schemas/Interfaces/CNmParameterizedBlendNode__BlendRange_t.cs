@@ -13,4 +13,6 @@ public partial interface CNmParameterizedBlendNode__BlendRange_t : ISchemaClass 
   public ref short InputIdx1 { get; }
   
   public SchemaUntypedField ParameterValueRange { get; }
+
+
 }

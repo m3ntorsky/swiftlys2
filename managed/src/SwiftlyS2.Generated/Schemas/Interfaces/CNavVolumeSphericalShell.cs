@@ -9,4 +9,6 @@ public partial interface CNavVolumeSphericalShell : CNavVolumeSphere {
 
   
   public ref float RadiusInner { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface GameTime_t : ISchemaClass {
 
   
   public ref float Value { get; }
+
+
 }

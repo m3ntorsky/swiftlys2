@@ -18,4 +18,6 @@ public partial interface CSeqBoneMaskList : ISchemaClass {
   
 // CUtlVector< std::pair< CBufferString, float32 > >
   public ref CUtlVector MorphCtrlWeightArray { get; }
+
+
 }

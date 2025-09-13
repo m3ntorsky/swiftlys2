@@ -15,4 +15,6 @@ public partial interface CEnvFade : CLogicalEntity {
   public ref float HoldDuration { get; }
   
   public CEntityIOOutput OnBeginFade { get; }
+
+  public void FadeColorUpdated();
 }

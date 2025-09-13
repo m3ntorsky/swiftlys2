@@ -9,4 +9,6 @@ public partial interface CJiggleBoneUpdateNode : CUnaryUpdateNode {
 
   
   public JiggleBoneSettingsList_t OpFixedData { get; }
+
+
 }

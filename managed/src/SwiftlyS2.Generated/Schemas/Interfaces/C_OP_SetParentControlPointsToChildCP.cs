@@ -17,4 +17,6 @@ public partial interface C_OP_SetParentControlPointsToChildCP : CParticleFunctio
   public ref int FirstSourcePoint { get; }
   
   public ref bool SetOrientation { get; }
+
+
 }

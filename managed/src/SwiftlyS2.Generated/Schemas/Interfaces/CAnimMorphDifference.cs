@@ -9,4 +9,6 @@ public partial interface CAnimMorphDifference : ISchemaClass {
 
   
   public ref CBufferString Name { get; }
+
+
 }

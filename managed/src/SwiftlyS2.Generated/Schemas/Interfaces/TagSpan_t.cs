@@ -13,4 +13,6 @@ public partial interface TagSpan_t : ISchemaClass {
   public ref float StartCycle { get; }
   
   public ref float EndCycle { get; }
+
+
 }

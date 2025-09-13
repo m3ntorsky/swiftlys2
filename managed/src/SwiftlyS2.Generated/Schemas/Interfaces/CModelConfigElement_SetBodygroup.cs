@@ -11,4 +11,6 @@ public partial interface CModelConfigElement_SetBodygroup : CModelConfigElement 
   public ref CGlobalSymbol GroupName { get; }
   
   public ref int Choice { get; }
+
+
 }

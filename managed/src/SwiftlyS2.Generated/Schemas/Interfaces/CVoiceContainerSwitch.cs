@@ -10,4 +10,6 @@ public partial interface CVoiceContainerSwitch : CVoiceContainerBase {
   
 // CUtlVector< CSoundContainerReference >
   public ref CUtlVector SoundsToPlay { get; }
+
+
 }

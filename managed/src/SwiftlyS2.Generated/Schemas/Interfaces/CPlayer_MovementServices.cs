@@ -39,4 +39,8 @@ public partial interface CPlayer_MovementServices : CPlayerPawnComponent {
   public ref QAngle LastFinishTickViewAngles { get; }
   
   public ref QAngle OldViewAngles { get; }
+
+  public void ToggleButtonDownMaskUpdated();
+  public void MaxspeedUpdated();
+  public void ForceSubtickMoveWhenUpdated();
 }

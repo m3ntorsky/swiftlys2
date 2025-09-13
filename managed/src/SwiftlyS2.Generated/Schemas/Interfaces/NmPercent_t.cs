@@ -9,4 +9,6 @@ public partial interface NmPercent_t : ISchemaClass {
 
   
   public ref float Value { get; }
+
+
 }

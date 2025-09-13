@@ -11,4 +11,6 @@ public partial interface C_OP_CollideWithSelf : CParticleFunctionConstraint {
   public CPerParticleFloatInput RadiusScale { get; }
   
   public CPerParticleFloatInput MinimumSpeed { get; }
+
+
 }

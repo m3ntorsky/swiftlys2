@@ -11,4 +11,6 @@ public partial interface CAnimGraphModelBinding : ISchemaClass {
   public ref CUtlString ModelName { get; }
   
   public SchemaUntypedField SharedData { get; }
+
+
 }

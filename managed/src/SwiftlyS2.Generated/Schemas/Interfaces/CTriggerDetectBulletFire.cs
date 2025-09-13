@@ -11,4 +11,6 @@ public partial interface CTriggerDetectBulletFire : CBaseTrigger {
   public ref bool PlayerFireOnly { get; }
   
   public CEntityIOOutput OnDetectedBulletFire { get; }
+
+
 }

@@ -31,4 +31,6 @@ public partial interface CPhysSurfacePropertiesSoundNames : ISchemaClass {
   public ref CUtlString SkidStop { get; }
   
   public ref CUtlString Resonant { get; }
+
+
 }

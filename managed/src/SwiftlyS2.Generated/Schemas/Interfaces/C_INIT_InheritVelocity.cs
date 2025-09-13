@@ -11,4 +11,6 @@ public partial interface C_INIT_InheritVelocity : CParticleFunctionInitializer {
   public ref int ControlPointNumber { get; }
   
   public ref float VelocityScale { get; }
+
+
 }

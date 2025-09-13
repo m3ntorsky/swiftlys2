@@ -9,4 +9,6 @@ public partial interface CSimTimer : CSimpleSimTimer {
 
   
   public ref float Interval { get; }
+
+
 }

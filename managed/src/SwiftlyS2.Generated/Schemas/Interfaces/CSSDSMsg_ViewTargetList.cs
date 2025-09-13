@@ -14,4 +14,6 @@ public partial interface CSSDSMsg_ViewTargetList : ISchemaClass {
   
 // CUtlVector< CSSDSMsg_ViewTarget >
   public ref CUtlVector Targets { get; }
+
+
 }

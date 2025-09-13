@@ -11,4 +11,6 @@ public partial interface ragdollhierarchyjoint_t : ISchemaClass {
   public ref int ParentIndex { get; }
   
   public ref int ChildIndex { get; }
+
+
 }

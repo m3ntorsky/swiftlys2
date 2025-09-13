@@ -9,4 +9,6 @@ public partial interface CWeaponCZ75a : CCSWeaponBaseGun {
 
   
   public ref bool MagazineRemoved { get; }
+
+  public void MagazineRemovedUpdated();
 }

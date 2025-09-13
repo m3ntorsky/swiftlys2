@@ -9,4 +9,6 @@ public partial interface PulseRuntimeStateOffset_t : ISchemaClass {
 
   
   public ref ushort Value { get; }
+
+
 }

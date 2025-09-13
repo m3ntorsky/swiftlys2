@@ -31,4 +31,6 @@ public partial interface CEnvEntityMaker : CPointEntity {
   public CEntityIOOutput OutputOnSpawned { get; }
   
   public CEntityIOOutput OutputOnFailedSpawn { get; }
+
+
 }

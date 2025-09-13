@@ -13,4 +13,6 @@ public partial interface C_INIT_Orient2DRelToCP : CParticleFunctionInitializer {
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public ref float RotOffset { get; }
+
+
 }

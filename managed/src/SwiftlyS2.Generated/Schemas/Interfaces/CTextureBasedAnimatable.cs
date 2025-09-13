@@ -23,4 +23,13 @@ public partial interface CTextureBasedAnimatable : CBaseModelEntity {
   public ref float StartTime { get; }
   
   public ref float StartFrame { get; }
+
+  public void LoopUpdated();
+  public void FPSUpdated();
+  public void PositionKeysUpdated();
+  public void RotationKeysUpdated();
+  public void AnimationBoundsMinUpdated();
+  public void AnimationBoundsMaxUpdated();
+  public void StartTimeUpdated();
+  public void StartFrameUpdated();
 }

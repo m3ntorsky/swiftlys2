@@ -17,4 +17,6 @@ public partial interface CAnimAttachment : ISchemaClass {
   public ISchemaFixedArray<float> InfluenceWeights { get; }
   
   public ref byte NumInfluences { get; }
+
+
 }

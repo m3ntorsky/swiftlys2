@@ -33,4 +33,18 @@ public partial interface CTriggerPhysics : CBaseTrigger {
   public ref Vector LinearForceDirection { get; }
   
   public ref bool ConvertToDebrisWhenPossible { get; }
+
+  public void GravityScaleUpdated();
+  public void LinearLimitUpdated();
+  public void LinearDampingUpdated();
+  public void AngularLimitUpdated();
+  public void AngularDampingUpdated();
+  public void LinearForceUpdated();
+  public void FrequencyUpdated();
+  public void DampingRatioUpdated();
+  public void LinearForcePointAtUpdated();
+  public void CollapseToForcePointUpdated();
+  public void LinearForcePointAtWorldUpdated();
+  public void LinearForceDirectionUpdated();
+  public void ConvertToDebrisWhenPossibleUpdated();
 }

@@ -19,4 +19,6 @@ public partial interface C_OP_RenderStatusEffectCitadel : CParticleFunctionRende
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureSelfIllum { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureDetail { get; }
+
+
 }

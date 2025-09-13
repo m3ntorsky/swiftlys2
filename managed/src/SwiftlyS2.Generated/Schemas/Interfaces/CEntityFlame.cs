@@ -27,4 +27,7 @@ public partial interface CEntityFlame : CBaseEntity {
   public ref float DirectDamagePerSecond { get; }
   
   public ref int CustomDamageType { get; }
+
+  public void EntAttachedUpdated();
+  public void CheapEffectUpdated();
 }

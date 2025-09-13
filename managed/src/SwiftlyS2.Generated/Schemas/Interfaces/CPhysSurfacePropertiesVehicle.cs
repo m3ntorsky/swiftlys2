@@ -11,4 +11,6 @@ public partial interface CPhysSurfacePropertiesVehicle : ISchemaClass {
   public ref float WheelDrag { get; }
   
   public ref float WheelFrictionScale { get; }
+
+
 }

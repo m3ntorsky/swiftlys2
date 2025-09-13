@@ -15,4 +15,6 @@ public partial interface CPulseTurtleGraphicsCursor : CPulseExecCursor {
   public ref float HeadingDeg { get; }
   
   public ref bool PenUp { get; }
+
+
 }

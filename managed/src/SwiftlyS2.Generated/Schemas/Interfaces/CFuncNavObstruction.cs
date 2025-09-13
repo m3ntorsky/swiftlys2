@@ -11,4 +11,6 @@ public partial interface CFuncNavObstruction : CBaseModelEntity {
   public ref bool Disabled { get; }
   
   public ref bool UseAsyncObstacleUpdate { get; }
+
+
 }

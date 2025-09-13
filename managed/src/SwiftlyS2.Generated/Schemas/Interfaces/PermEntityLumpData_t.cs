@@ -13,4 +13,6 @@ public partial interface PermEntityLumpData_t : ISchemaClass {
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCEntityLump>> ChildLumps { get; }
   
   public SchemaUntypedField EntityKeyValues { get; }
+
+
 }

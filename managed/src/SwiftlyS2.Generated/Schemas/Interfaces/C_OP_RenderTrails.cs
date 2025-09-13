@@ -47,4 +47,6 @@ public partial interface C_OP_RenderTrails : CBaseTrailRenderer {
   public ref float ForwardShift { get; }
   
   public ref bool FlipUVBasedOnPitchYaw { get; }
+
+
 }

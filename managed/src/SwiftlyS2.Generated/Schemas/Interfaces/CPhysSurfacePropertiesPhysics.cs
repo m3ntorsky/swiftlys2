@@ -19,4 +19,6 @@ public partial interface CPhysSurfacePropertiesPhysics : ISchemaClass {
   public ref float SoftContactFrequency { get; }
   
   public ref float SoftContactDampingRatio { get; }
+
+
 }

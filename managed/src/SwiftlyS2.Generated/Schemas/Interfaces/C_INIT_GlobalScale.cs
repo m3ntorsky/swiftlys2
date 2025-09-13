@@ -19,4 +19,6 @@ public partial interface C_INIT_GlobalScale : CParticleFunctionInitializer {
   public ref bool ScalePosition { get; }
   
   public ref bool ScaleVelocity { get; }
+
+
 }

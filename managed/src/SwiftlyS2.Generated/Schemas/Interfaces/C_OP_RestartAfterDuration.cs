@@ -19,4 +19,6 @@ public partial interface C_OP_RestartAfterDuration : CParticleFunctionOperator {
   public ref int ChildGroupID { get; }
   
   public ref bool OnlyChildren { get; }
+
+
 }

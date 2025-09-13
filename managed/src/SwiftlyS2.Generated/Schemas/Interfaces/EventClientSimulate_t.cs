@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventClientSimulate_t : EventSimulate_t {
 
 
+
+
 }

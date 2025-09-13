@@ -49,4 +49,21 @@ public partial interface CRopeKeyframe : CBaseModelEntity {
   public AttachmentHandle_t StartAttachment { get; }
   
   public AttachmentHandle_t EndAttachment { get; }
+
+  public void RopeFlagsUpdated();
+  public void SlackUpdated();
+  public void WidthUpdated();
+  public void TextureScaleUpdated();
+  public void SegmentsUpdated();
+  public void ConstrainBetweenEndpointsUpdated();
+  public void RopeMaterialModelIndexUpdated();
+  public void SubdivUpdated();
+  public void ChangeCountUpdated();
+  public void RopeLengthUpdated();
+  public void LockedPointsUpdated();
+  public void ScrollSpeedUpdated();
+  public void StartPointUpdated();
+  public void EndPointUpdated();
+  public void StartAttachmentUpdated();
+  public void EndAttachmentUpdated();
 }

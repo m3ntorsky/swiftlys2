@@ -23,4 +23,6 @@ public partial interface C_OP_RemapSDFDistanceToScalarAttribute : CParticleFunct
   public CParticleCollectionFloatInput ValueAtMax { get; }
   
   public CParticleCollectionFloatInput ValueAboveMax { get; }
+
+
 }

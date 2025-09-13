@@ -15,4 +15,6 @@ public partial interface CRagdollMagnet : CPointEntity {
   public ref float Force { get; }
   
   public ref Vector Axis { get; }
+
+
 }

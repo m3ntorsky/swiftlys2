@@ -23,4 +23,6 @@ public partial interface C_OP_PlanarConstraint : CParticleFunctionConstraint {
   public CParticleCollectionFloatInput MaximumDistanceToCP { get; }
   
   public ref bool UseOldCode { get; }
+
+
 }

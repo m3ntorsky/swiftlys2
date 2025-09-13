@@ -39,4 +39,11 @@ public partial interface CBaseCSGrenadeProjectile : CBaseGrenade {
   public ref int TicksAtZeroVelocity { get; }
   
   public ref bool HasEverHitEnemy { get; }
+
+  public void InitialPositionUpdated();
+  public void InitialVelocityUpdated();
+  public void BouncesUpdated();
+  public void ExplodeEffectIndexUpdated();
+  public void ExplodeEffectTickBeginUpdated();
+  public void ExplodeEffectOriginUpdated();
 }

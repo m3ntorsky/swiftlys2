@@ -12,4 +12,6 @@ public partial interface CAttributeList : ISchemaClass {
   public ref CUtlVector Attributes { get; }
   
   public CAttributeManager Manager { get; }
+
+  public void AttributesUpdated();
 }

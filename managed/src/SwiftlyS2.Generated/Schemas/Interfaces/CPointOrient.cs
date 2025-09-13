@@ -21,4 +21,6 @@ public partial interface CPointOrient : CBaseEntity {
   public ref float MaxTurnRate { get; }
   
   public GameTime_t LastGameTime { get; }
+
+
 }

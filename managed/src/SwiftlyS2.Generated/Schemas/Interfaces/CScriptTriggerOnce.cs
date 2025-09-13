@@ -9,4 +9,6 @@ public partial interface CScriptTriggerOnce : CTriggerOnce {
 
   
   public ref Vector Extent { get; }
+
+
 }

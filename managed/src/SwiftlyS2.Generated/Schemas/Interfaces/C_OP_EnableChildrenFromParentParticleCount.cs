@@ -19,4 +19,6 @@ public partial interface C_OP_EnableChildrenFromParentParticleCount : CParticleF
   public ref bool PlayEndcapOnStop { get; }
   
   public ref bool DestroyImmediately { get; }
+
+
 }

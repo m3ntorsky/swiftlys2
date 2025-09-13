@@ -15,4 +15,6 @@ public partial interface CCachedPose : ISchemaClass {
   public HSequence Sequence { get; }
   
   public ref float Cycle { get; }
+
+
 }

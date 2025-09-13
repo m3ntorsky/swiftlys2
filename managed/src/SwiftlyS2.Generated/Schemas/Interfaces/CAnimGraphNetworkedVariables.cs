@@ -55,4 +55,29 @@ public partial interface CAnimGraphNetworkedVariables : ISchemaClass {
   public ref int RandomSeedOffset { get; }
   
   public ref float LastTeleportTime { get; }
+
+  public void PredNetBoolVariablesUpdated();
+  public void PredNetByteVariablesUpdated();
+  public void PredNetUInt16VariablesUpdated();
+  public void PredNetIntVariablesUpdated();
+  public void PredNetUInt32VariablesUpdated();
+  public void PredNetUInt64VariablesUpdated();
+  public void PredNetFloatVariablesUpdated();
+  public void PredNetVectorVariablesUpdated();
+  public void PredNetQuaternionVariablesUpdated();
+  public void PredNetGlobalSymbolVariablesUpdated();
+  public void OwnerOnlyPredNetBoolVariablesUpdated();
+  public void OwnerOnlyPredNetByteVariablesUpdated();
+  public void OwnerOnlyPredNetUInt16VariablesUpdated();
+  public void OwnerOnlyPredNetIntVariablesUpdated();
+  public void OwnerOnlyPredNetUInt32VariablesUpdated();
+  public void OwnerOnlyPredNetUInt64VariablesUpdated();
+  public void OwnerOnlyPredNetFloatVariablesUpdated();
+  public void OwnerOnlyPredNetVectorVariablesUpdated();
+  public void OwnerOnlyPredNetQuaternionVariablesUpdated();
+  public void OwnerOnlyPredNetGlobalSymbolVariablesUpdated();
+  public void BoolVariablesCountUpdated();
+  public void OwnerOnlyBoolVariablesCountUpdated();
+  public void RandomSeedOffsetUpdated();
+  public void LastTeleportTimeUpdated();
 }

@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmClipReferenceNode__CDefinition : CNmPoseNode__CDefinition {
 
 
+
+
 }

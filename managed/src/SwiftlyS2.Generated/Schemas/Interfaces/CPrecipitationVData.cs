@@ -21,4 +21,6 @@ public partial interface CPrecipitationVData : CEntitySubclassVDataBase {
   public ref int RTEnvCPComponent { get; }
   
   public ref CUtlString Modifier { get; }
+
+
 }

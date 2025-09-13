@@ -9,4 +9,6 @@ public partial interface CDebugHistory : CBaseEntity {
 
   
   public ref int NpcEvents { get; }
+
+
 }

@@ -19,4 +19,6 @@ public partial interface CTakeDamageResult : ISchemaClass {
   public ref int TotalledHealthLost { get; }
   
   public ref int TotalledDamageDealt { get; }
+
+
 }

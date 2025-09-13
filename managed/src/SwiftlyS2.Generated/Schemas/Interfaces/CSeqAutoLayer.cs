@@ -21,4 +21,6 @@ public partial interface CSeqAutoLayer : ISchemaClass {
   public ref float Tail { get; }
   
   public ref float End { get; }
+
+
 }

@@ -33,4 +33,6 @@ public partial interface C_INIT_RemapTransformToVector : CParticleFunctionInitia
   public ref bool Accelerate { get; }
   
   public ref float RemapBias { get; }
+
+
 }

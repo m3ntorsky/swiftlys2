@@ -29,4 +29,6 @@ public partial interface CPulseCell_Outflow_ScriptedSequence : CPulseCell_BaseYi
   
 // CUtlVector< CPulse_OutflowConnection >
   public ref CUtlVector Triggers { get; }
+
+
 }

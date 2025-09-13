@@ -17,4 +17,6 @@ public partial interface FeAxialEdgeBend_t : ISchemaClass {
   public ISchemaFixedArray<float> Weight { get; }
   
   public ISchemaFixedArray<ushort> Node { get; }
+
+
 }

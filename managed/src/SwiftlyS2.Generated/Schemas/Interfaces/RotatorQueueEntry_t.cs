@@ -11,4 +11,6 @@ public partial interface RotatorQueueEntry_t : ISchemaClass {
   public ref Quaternion Target { get; }
   
   public ref RotatorTargetSpace_t Space { get; }
+
+
 }

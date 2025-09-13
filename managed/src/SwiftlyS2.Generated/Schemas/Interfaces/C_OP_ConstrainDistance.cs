@@ -17,4 +17,6 @@ public partial interface C_OP_ConstrainDistance : CParticleFunctionConstraint {
   public ref Vector CenterOffset { get; }
   
   public ref bool GlobalCenter { get; }
+
+
 }

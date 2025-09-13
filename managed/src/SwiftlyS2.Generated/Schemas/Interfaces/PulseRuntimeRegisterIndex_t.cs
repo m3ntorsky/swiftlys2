@@ -9,4 +9,6 @@ public partial interface PulseRuntimeRegisterIndex_t : ISchemaClass {
 
   
   public ref short Value { get; }
+
+
 }

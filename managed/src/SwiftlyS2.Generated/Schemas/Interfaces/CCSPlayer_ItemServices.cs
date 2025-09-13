@@ -11,4 +11,7 @@ public partial interface CCSPlayer_ItemServices : CPlayer_ItemServices {
   public ref bool HasDefuser { get; }
   
   public ref bool HasHelmet { get; }
+
+  public void HasDefuserUpdated();
+  public void HasHelmetUpdated();
 }

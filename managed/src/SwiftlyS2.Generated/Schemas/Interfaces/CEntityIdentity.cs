@@ -29,4 +29,6 @@ public partial interface CEntityIdentity : ISchemaClass {
   public CEntityIdentity PrevByClass { get; }
   
   public CEntityIdentity NextByClass { get; }
+
+  public void NameStringableIndexUpdated();
 }

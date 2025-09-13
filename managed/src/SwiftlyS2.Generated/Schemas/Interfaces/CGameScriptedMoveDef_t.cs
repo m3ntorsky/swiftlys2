@@ -25,4 +25,6 @@ public partial interface CGameScriptedMoveDef_t : ISchemaClass {
   public ref bool IgnoreRotation { get; }
   
   public ref ForcedCrouchState_t ForcedCrouchState { get; }
+
+
 }

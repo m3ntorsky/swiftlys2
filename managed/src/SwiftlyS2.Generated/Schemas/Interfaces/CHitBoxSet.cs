@@ -16,4 +16,6 @@ public partial interface CHitBoxSet : ISchemaClass {
   public ref CUtlVector HitBoxes { get; }
   
   public ref CUtlString SourceFilename { get; }
+
+
 }

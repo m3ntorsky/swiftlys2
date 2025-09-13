@@ -15,4 +15,8 @@ public partial interface CDestructiblePartsSystemComponent : ISchemaClass {
   public ref CHandle<CBaseModelEntity> Owner { get; }
   
   public ref int LastHitDamageLevel { get; }
+
+  public void DamageLevelTakenByHitGroupUpdated();
+  public void OwnerUpdated();
+  public void LastHitDamageLevelUpdated();
 }

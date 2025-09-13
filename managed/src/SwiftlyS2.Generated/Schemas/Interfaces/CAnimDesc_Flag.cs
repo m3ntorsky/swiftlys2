@@ -23,4 +23,6 @@ public partial interface CAnimDesc_Flag : ISchemaClass {
   public ref bool ImplicitSeqIgnoreDelta { get; }
   
   public ref bool AnimGraphAdditive { get; }
+
+
 }

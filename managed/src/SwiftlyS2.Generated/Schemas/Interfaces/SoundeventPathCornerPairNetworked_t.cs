@@ -17,4 +17,10 @@ public partial interface SoundeventPathCornerPairNetworked_t : ISchemaClass {
   public ref float P1Pct { get; }
   
   public ref float P2Pct { get; }
+
+  public void P1Updated();
+  public void P2Updated();
+  public void PathLengthSqrUpdated();
+  public void P1PctUpdated();
+  public void P2PctUpdated();
 }

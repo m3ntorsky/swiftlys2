@@ -21,4 +21,6 @@ public partial interface CLogicDistanceCheck : CLogicalEntity {
   public CEntityIOOutput InZone2 { get; }
   
   public CEntityIOOutput InZone3 { get; }
+
+
 }

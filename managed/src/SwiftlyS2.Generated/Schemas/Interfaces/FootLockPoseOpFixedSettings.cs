@@ -44,4 +44,6 @@ public partial interface FootLockPoseOpFixedSettings : ISchemaClass {
   public ref float MaxStretchAmount { get; }
   
   public ref float StretchExtensionScale { get; }
+
+
 }

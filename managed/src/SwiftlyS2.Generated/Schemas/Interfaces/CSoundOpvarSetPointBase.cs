@@ -25,4 +25,10 @@ public partial interface CSoundOpvarSetPointBase : CBaseEntity {
   public ref int OpvarIndex { get; }
   
   public ref bool UseAutoCompare { get; }
+
+  public void StackNameUpdated();
+  public void OperatorNameUpdated();
+  public void OpvarNameUpdated();
+  public void OpvarIndexUpdated();
+  public void UseAutoCompareUpdated();
 }

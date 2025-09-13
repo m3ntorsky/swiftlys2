@@ -17,4 +17,6 @@ public partial interface C_INIT_InheritFromParentParticles : CParticleFunctionIn
   public ref bool RandomDistribution { get; }
   
   public ref int RandomSeed { get; }
+
+
 }

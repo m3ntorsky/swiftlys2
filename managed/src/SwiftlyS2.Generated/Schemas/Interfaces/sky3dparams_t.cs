@@ -19,4 +19,11 @@ public partial interface sky3dparams_t : ISchemaClass {
   public fogparams_t Fog { get; }
   
   public ref uint WorldGroupID { get; }
+
+  public void ScaleUpdated();
+  public void OriginUpdated();
+  public void Clip3DSkyBoxNearToWorldFarUpdated();
+  public void Clip3DSkyBoxNearToWorldFarOffsetUpdated();
+  public void FogUpdated();
+  public void WorldGroupIDUpdated();
 }

@@ -9,4 +9,6 @@ public partial interface CBtNodeCondition : CBtNodeDecorator {
 
   
   public ref bool Negated { get; }
+
+
 }

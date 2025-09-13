@@ -23,4 +23,6 @@ public partial interface CMultiLightProxy : CLogicalEntity {
   public ref float CurrentBrightnessMultiplier { get; }
   
   public ref CUtlVector<CHandle<CLightEntity>> Lights { get; }
+
+
 }

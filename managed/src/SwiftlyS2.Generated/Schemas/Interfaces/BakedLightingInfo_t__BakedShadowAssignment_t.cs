@@ -13,4 +13,6 @@ public partial interface BakedLightingInfo_t__BakedShadowAssignment_t : ISchemaC
   public ref uint MapHash { get; }
   
   public ref byte ShadowChannel { get; }
+
+
 }

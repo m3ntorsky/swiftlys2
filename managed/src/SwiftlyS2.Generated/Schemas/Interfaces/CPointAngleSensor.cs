@@ -31,4 +31,6 @@ public partial interface CPointAngleSensor : CPointEntity {
   public SchemaUntypedField TargetDir { get; }
   
   public SchemaUntypedField FacingPercentage { get; }
+
+
 }

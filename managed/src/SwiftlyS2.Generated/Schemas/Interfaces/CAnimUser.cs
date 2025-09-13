@@ -11,4 +11,6 @@ public partial interface CAnimUser : ISchemaClass {
   public ref CBufferString Name { get; }
   
   public ref int Type { get; }
+
+
 }

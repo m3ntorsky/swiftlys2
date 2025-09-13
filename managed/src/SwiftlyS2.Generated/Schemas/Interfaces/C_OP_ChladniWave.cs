@@ -27,4 +27,6 @@ public partial interface C_OP_ChladniWave : CParticleFunctionOperator {
   public ref int LocalSpaceControlPoint { get; }
   
   public ref bool B3D { get; }
+
+
 }

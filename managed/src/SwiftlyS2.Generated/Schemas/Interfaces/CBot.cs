@@ -33,4 +33,6 @@ public partial interface CBot : ISchemaClass {
   public ref Vector ViewForward { get; }
   
   public ref int PostureStackIndex { get; }
+
+
 }

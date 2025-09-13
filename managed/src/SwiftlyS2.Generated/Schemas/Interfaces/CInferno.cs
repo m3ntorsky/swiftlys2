@@ -55,4 +55,14 @@ public partial interface CInferno : CBaseModelEntity {
   public CountdownTimer NextSpreadTimer { get; }
   
   public ref ushort SourceItemDefIndex { get; }
+
+  public void FirePositionsUpdated();
+  public void FireParentPositionsUpdated();
+  public void FireIsBurningUpdated();
+  public void BurnNormalUpdated();
+  public void FireCountUpdated();
+  public void InfernoTypeUpdated();
+  public void FireEffectTickBeginUpdated();
+  public void FireLifetimeUpdated();
+  public void InPostEffectTimeUpdated();
 }

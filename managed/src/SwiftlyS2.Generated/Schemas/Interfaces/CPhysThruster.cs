@@ -9,4 +9,6 @@ public partial interface CPhysThruster : CPhysForce {
 
   
   public ref Vector LocalOrigin { get; }
+
+
 }

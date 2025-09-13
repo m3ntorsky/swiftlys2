@@ -23,4 +23,9 @@ public partial interface CColorCorrectionVolume : CBaseTrigger {
   public ref float LastExitWeight { get; }
   
   public GameTime_t LastExitTime { get; }
+
+  public void MaxWeightUpdated();
+  public void FadeDurationUpdated();
+  public void WeightUpdated();
+  public void LookupFilenameUpdated();
 }

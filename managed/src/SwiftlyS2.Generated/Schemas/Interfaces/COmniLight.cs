@@ -13,4 +13,8 @@ public partial interface COmniLight : CBarnLight {
   public ref float OuterAngle { get; }
   
   public ref bool ShowLight { get; }
+
+  public void InnerAngleUpdated();
+  public void OuterAngleUpdated();
+  public void ShowLightUpdated();
 }

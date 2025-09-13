@@ -14,4 +14,6 @@ public partial interface SkeletonDemoDb_t : ISchemaClass {
   public ref CUtlVector CameraTrack { get; }
   
   public ref float RecordingTime { get; }
+
+
 }

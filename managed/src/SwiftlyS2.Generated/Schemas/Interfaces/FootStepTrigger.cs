@@ -13,4 +13,6 @@ public partial interface FootStepTrigger : ISchemaClass {
   public ref int FootIndex { get; }
   
   public ref StepPhase TriggerPhase { get; }
+
+
 }

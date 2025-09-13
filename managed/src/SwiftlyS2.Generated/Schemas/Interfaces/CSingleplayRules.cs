@@ -9,4 +9,6 @@ public partial interface CSingleplayRules : CGameRules {
 
   
   public ref bool SinglePlayerGameEnding { get; }
+
+
 }

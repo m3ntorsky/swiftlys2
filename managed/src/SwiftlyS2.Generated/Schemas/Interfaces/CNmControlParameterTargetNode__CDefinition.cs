@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmControlParameterTargetNode__CDefinition : CNmTargetValueNode__CDefinition {
 
 
+
+
 }

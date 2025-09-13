@@ -13,4 +13,6 @@ public partial interface CHintMessage : ISchemaClass {
   public ref CUtlVector<CString> Args { get; }
   
   public ref float Duration { get; }
+
+
 }

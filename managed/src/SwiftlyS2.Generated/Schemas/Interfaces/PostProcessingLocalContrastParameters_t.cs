@@ -17,4 +17,6 @@ public partial interface PostProcessingLocalContrastParameters_t : ISchemaClass 
   public ref float LocalContrastVignetteEnd { get; }
   
   public ref float LocalContrastVignetteBlur { get; }
+
+
 }

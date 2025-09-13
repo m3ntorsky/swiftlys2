@@ -55,4 +55,17 @@ public partial interface CTriggerFan : CBaseTrigger {
   public ref bool RampDown { get; }
   
   public ref int ManagerFanIdx { get; }
+
+  public void FanOriginUpdated();
+  public void FanOriginOffsetUpdated();
+  public void FanEndUpdated();
+  public void NoiseDirectionTargetUpdated();
+  public void DirectionUpdated();
+  public void PushTowardsInfoTargetUpdated();
+  public void PushAwayFromInfoTargetUpdated();
+  public void NoiseDeltaUpdated();
+  public void InfoFanUpdated();
+  public void ForceUpdated();
+  public void FalloffUpdated();
+  public void RampTimerUpdated();
 }

@@ -33,4 +33,6 @@ public partial interface C_OP_RemapCPtoVector : CParticleFunctionOperator {
   public ref bool Offset { get; }
   
   public ref bool Accelerate { get; }
+
+
 }

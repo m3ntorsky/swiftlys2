@@ -13,4 +13,6 @@ public partial interface CLogicAchievement : CLogicalEntity {
   public ref CUtlSymbolLarge AchievementEventID { get; }
   
   public CEntityIOOutput OnFired { get; }
+
+
 }

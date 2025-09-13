@@ -9,4 +9,6 @@ public partial interface CTriggerMultiple : CBaseTrigger {
 
   
   public CEntityIOOutput OnTrigger { get; }
+
+
 }

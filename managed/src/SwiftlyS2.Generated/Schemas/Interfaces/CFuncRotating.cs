@@ -43,4 +43,6 @@ public partial interface CFuncRotating : CBaseModelEntity {
   public ref Vector ClientOrigin { get; }
   
   public ref QAngle ClientAngles { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface CPulseCell_Test_MultiOutflow_WithParams_Yielding__Curso
 
   
   public ref int TestStep { get; }
+
+
 }

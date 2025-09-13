@@ -9,4 +9,6 @@ public partial interface EventClientProcessNetworking_t : ISchemaClass {
 
   
   public ref int TickCount { get; }
+
+
 }

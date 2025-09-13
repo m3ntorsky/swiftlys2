@@ -9,4 +9,6 @@ public partial interface CCycleBase : ISchemaClass {
 
   
   public ref float Cycle { get; }
+
+
 }

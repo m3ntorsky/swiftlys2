@@ -11,4 +11,6 @@ public partial interface CScriptUniformRandomStream : ISchemaClass {
   public SchemaUntypedField ScriptScope { get; }
   
   public ref int InitialSeed { get; }
+
+
 }

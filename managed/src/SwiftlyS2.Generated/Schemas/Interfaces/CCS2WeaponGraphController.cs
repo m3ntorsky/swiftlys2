@@ -45,4 +45,6 @@ public partial interface CCS2WeaponGraphController : CAnimGraphControllerBase {
   public SchemaUntypedField InspectExtraInfo { get; }
   
   public SchemaUntypedField ReloadStage { get; }
+
+
 }

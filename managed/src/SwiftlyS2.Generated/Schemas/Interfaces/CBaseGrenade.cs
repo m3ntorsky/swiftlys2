@@ -35,4 +35,10 @@ public partial interface CBaseGrenade : CBaseFlex {
   public GameTime_t NextAttack { get; }
   
   public ref CHandle<CCSPlayerPawn> OriginalThrower { get; }
+
+  public void IsLiveUpdated();
+  public void DmgRadiusUpdated();
+  public void DetonateTimeUpdated();
+  public void DamageUpdated();
+  public void ThrowerUpdated();
 }

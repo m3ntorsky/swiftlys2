@@ -15,4 +15,6 @@ public partial interface CNmVectorCreateNode__CDefinition : CNmVectorValueNode__
   public ref short InputValueYNodeIdx { get; }
   
   public ref short InputValueZNodeIdx { get; }
+
+
 }

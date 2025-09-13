@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface dynpitchvol_t : dynpitchvol_base_t {
 
 
+
+
 }

@@ -21,4 +21,6 @@ public partial interface CPointEntityFinder : CBaseEntity {
   public ref EntFinderMethod_t FindMethod { get; }
   
   public CEntityIOOutput OnFoundEntity { get; }
+
+
 }

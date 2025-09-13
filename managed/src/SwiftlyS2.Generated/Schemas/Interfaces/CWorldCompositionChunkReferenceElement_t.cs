@@ -11,4 +11,6 @@ public partial interface CWorldCompositionChunkReferenceElement_t : ISchemaClass
   public ref CUtlString StrMapToLoad { get; }
   
   public ref CUtlString StrLandmarkName { get; }
+
+
 }

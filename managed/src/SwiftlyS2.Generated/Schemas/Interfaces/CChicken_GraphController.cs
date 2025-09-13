@@ -15,4 +15,6 @@ public partial interface CChicken_GraphController : CBaseAnimGraphAnimGraphContr
   public SchemaUntypedField ActivityFinished { get; }
   
   public SchemaUntypedField ParamTurnAngle { get; }
+
+
 }

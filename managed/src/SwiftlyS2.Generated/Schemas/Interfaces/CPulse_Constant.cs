@@ -11,4 +11,6 @@ public partial interface CPulse_Constant : ISchemaClass {
   public SchemaUntypedField Type { get; }
   
   public SchemaUntypedField Value { get; }
+
+
 }

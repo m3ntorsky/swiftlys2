@@ -49,4 +49,6 @@ public partial interface CTakeDamageInfo : ISchemaClass {
   public ref float FriendlyFireDamageReductionRatio { get; }
   
   public ref bool InTakeDamageFlow { get; }
+
+
 }

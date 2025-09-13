@@ -30,4 +30,6 @@ public partial interface ModelMeshBufferData_t : ISchemaClass {
   
 // CUtlVector< RenderInputLayoutField_t >
   public ref CUtlVector InputLayoutFields { get; }
+
+
 }

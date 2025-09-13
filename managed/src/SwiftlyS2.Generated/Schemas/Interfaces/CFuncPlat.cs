@@ -9,4 +9,6 @@ public partial interface CFuncPlat : CBasePlatTrain {
 
   
   public ref CUtlSymbolLarge Noise { get; }
+
+
 }

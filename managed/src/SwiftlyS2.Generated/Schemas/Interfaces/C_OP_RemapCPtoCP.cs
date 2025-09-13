@@ -27,4 +27,6 @@ public partial interface C_OP_RemapCPtoCP : CParticleFunctionPreEmission {
   public ref bool Derivative { get; }
   
   public ref float InterpRate { get; }
+
+
 }

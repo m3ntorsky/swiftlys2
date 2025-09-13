@@ -19,4 +19,6 @@ public partial interface CPlayerInputAnimMotorUpdater : CAnimMotorUpdaterBase {
   public CAnimParamHandle AnticipationHeadingParam { get; }
   
   public ref bool UseAcceleration { get; }
+
+
 }

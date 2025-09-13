@@ -99,4 +99,6 @@ public partial interface VPhysXConstraintParams_t : ISchemaClass {
   public ref float ProjectionLinearTolerance { get; }
   
   public ref float ProjectionAngularTolerance { get; }
+
+
 }

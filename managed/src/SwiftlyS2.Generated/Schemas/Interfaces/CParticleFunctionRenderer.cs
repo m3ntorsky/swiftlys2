@@ -13,4 +13,6 @@ public partial interface CParticleFunctionRenderer : CParticleFunction {
   public ref bool CannotBeRefracted { get; }
   
   public ref bool SkipRenderingOnMobile { get; }
+
+
 }

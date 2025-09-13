@@ -11,4 +11,6 @@ public partial interface PermModelDataAnimatedMaterialAttribute_t : ISchemaClass
   public ref CUtlString AttributeName { get; }
   
   public ref int NumChannels { get; }
+
+
 }

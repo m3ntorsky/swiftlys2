@@ -13,4 +13,6 @@ public partial interface C_OP_RenderClientPhysicsImpulse : CParticleFunctionRend
   public CPerParticleFloatInput Magnitude { get; }
   
   public ref int SimIdFilter { get; }
+
+
 }

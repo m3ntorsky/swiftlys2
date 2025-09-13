@@ -27,4 +27,6 @@ public partial interface C_INIT_CreationNoise : CParticleFunctionInitializer {
   public ref Vector OffsetLoc { get; }
   
   public ref float WorldTimeScale { get; }
+
+
 }

@@ -29,4 +29,14 @@ public partial interface CCSPlayerController_InventoryServices : CPlayerControll
   
 // CUtlVectorEmbeddedNetworkVar< CSNetworkableLoadout_t >
   public ref CUtlVector NetworkableLoadout { get; }
+
+  public void MusicIDUpdated();
+  public void RankUpdated();
+  public void PersonaDataPublicLevelUpdated();
+  public void PersonaDataPublicCommendsLeaderUpdated();
+  public void PersonaDataPublicCommendsTeacherUpdated();
+  public void PersonaDataPublicCommendsFriendlyUpdated();
+  public void PersonaDataXpTrailLevelUpdated();
+  public void ServerAuthoritativeWeaponSlotsUpdated();
+  public void NetworkableLoadoutUpdated();
 }

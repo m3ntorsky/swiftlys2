@@ -9,4 +9,6 @@ public partial interface AnimNodeID : ISchemaClass {
 
   
   public ref uint Id { get; }
+
+
 }

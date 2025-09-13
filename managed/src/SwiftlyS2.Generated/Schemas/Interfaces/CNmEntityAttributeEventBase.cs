@@ -9,4 +9,6 @@ public partial interface CNmEntityAttributeEventBase : CNmEvent {
 
   
   public ref CUtlString AttributeName { get; }
+
+
 }

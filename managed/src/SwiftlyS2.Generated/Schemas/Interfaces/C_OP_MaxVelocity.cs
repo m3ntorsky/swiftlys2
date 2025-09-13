@@ -15,4 +15,6 @@ public partial interface C_OP_MaxVelocity : CParticleFunctionOperator {
   public ref int OverrideCP { get; }
   
   public ref int OverrideCPField { get; }
+
+
 }

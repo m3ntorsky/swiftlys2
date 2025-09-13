@@ -15,4 +15,6 @@ public partial interface CVoiceContainerStaticAdditiveSynth__CGainScalePerInstan
   public ref float MaxVolume { get; }
   
   public ref int InstancesAtMaxVolume { get; }
+
+
 }

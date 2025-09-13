@@ -15,4 +15,6 @@ public partial interface C_OP_SetControlPointToCenter : CParticleFunctionPreEmis
   public ref bool UseAvgParticlePos { get; }
   
   public ref ParticleParentSetMode_t SetParent { get; }
+
+
 }

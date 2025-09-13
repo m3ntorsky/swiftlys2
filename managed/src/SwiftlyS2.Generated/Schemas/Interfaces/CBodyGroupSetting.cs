@@ -11,4 +11,6 @@ public partial interface CBodyGroupSetting : ISchemaClass {
   public ref CUtlString BodyGroupName { get; }
   
   public ref int BodyGroupOption { get; }
+
+
 }

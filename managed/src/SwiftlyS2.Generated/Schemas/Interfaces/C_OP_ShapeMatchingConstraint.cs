@@ -9,4 +9,6 @@ public partial interface C_OP_ShapeMatchingConstraint : CParticleFunctionConstra
 
   
   public ref float ShapeRestorationTime { get; }
+
+
 }

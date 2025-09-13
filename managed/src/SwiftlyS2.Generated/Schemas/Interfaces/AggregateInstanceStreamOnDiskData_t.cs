@@ -11,4 +11,6 @@ public partial interface AggregateInstanceStreamOnDiskData_t : ISchemaClass {
   public ref uint DecodedSize { get; }
   
   public ref CUtlBinaryBlock BufferData { get; }
+
+
 }

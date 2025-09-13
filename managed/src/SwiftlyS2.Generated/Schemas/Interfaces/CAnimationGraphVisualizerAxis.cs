@@ -11,4 +11,6 @@ public partial interface CAnimationGraphVisualizerAxis : CAnimationGraphVisualiz
   public ref CTransform XWsTransform { get; }
   
   public ref float AxisSize { get; }
+
+
 }

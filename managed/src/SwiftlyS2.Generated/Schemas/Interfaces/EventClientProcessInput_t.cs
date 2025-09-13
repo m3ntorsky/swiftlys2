@@ -15,4 +15,6 @@ public partial interface EventClientProcessInput_t : ISchemaClass {
   public ref float TickInterval { get; }
   
   public ref double TickStartTime { get; }
+
+
 }

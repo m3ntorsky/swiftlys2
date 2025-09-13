@@ -11,4 +11,6 @@ public partial interface ModelReference_t : ISchemaClass {
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }
   
   public ref float RelativeProbabilityOfSpawn { get; }
+
+
 }

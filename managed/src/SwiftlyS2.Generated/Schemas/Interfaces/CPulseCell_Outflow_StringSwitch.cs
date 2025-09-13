@@ -12,4 +12,6 @@ public partial interface CPulseCell_Outflow_StringSwitch : CPulseCell_BaseFlow {
   
 // CUtlVector< CPulse_OutflowConnection >
   public ref CUtlVector CaseOutflows { get; }
+
+
 }

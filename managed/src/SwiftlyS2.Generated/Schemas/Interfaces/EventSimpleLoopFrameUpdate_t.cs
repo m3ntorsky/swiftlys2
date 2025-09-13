@@ -13,4 +13,6 @@ public partial interface EventSimpleLoopFrameUpdate_t : ISchemaClass {
   public ref float RealTime { get; }
   
   public ref float FrameTime { get; }
+
+
 }

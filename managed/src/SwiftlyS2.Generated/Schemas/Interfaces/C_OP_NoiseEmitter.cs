@@ -37,4 +37,6 @@ public partial interface C_OP_NoiseEmitter : CParticleFunctionEmitter {
   public ref Vector OffsetLoc { get; }
   
   public ref float WorldTimeScale { get; }
+
+
 }

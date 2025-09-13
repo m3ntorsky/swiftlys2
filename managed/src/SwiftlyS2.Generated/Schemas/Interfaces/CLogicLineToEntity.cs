@@ -15,4 +15,6 @@ public partial interface CLogicLineToEntity : CLogicalEntity {
   public ref CHandle<CBaseEntity> StartEntity { get; }
   
   public ref CHandle<CBaseEntity> EndEntity { get; }
+
+
 }

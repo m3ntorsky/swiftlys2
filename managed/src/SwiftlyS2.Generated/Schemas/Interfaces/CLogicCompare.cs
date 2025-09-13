@@ -19,4 +19,6 @@ public partial interface CLogicCompare : CLogicalEntity {
   public SchemaUntypedField OnNotEqualTo { get; }
   
   public SchemaUntypedField OnGreaterThan { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CNmIDEventConditionNode__CDefinition : CNmBoolValueNode
   public CNmBitFlags EventConditionRules { get; }
   
   public SchemaUntypedField EventIDs { get; }
+
+
 }

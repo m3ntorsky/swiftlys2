@@ -21,4 +21,6 @@ public partial interface CMarkupVolumeTagged : CMarkupVolume {
   public ref bool GroupOtherGroups { get; }
   
   public ref bool IsInGroup { get; }
+
+
 }

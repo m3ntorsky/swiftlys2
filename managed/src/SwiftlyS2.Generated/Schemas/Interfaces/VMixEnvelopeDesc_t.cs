@@ -13,4 +13,6 @@ public partial interface VMixEnvelopeDesc_t : ISchemaClass {
   public ref float HoldTimeMS { get; }
   
   public ref float ReleaseTimeMS { get; }
+
+
 }

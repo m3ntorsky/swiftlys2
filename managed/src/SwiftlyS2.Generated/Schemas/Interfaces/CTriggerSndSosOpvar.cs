@@ -35,4 +35,6 @@ public partial interface CTriggerSndSosOpvar : CBaseTrigger {
   public ref Vector VecNormPos { get; }
   
   public ref float NormCenterSize { get; }
+
+
 }

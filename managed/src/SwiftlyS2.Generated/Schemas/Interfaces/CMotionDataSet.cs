@@ -12,4 +12,6 @@ public partial interface CMotionDataSet : ISchemaClass {
   public ref CUtlVector Groups { get; }
   
   public ref int DimensionCount { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface FeBuildSDFRigid_t : FeSDFRigid_t {
   public ref uint VertexMapHash { get; }
   
   public ref uint AntitunnelGroupBits { get; }
+
+
 }

@@ -13,4 +13,6 @@ public partial interface CFuncInteractionLayerClip : CBaseModelEntity {
   public ref CUtlSymbolLarge InteractsAs { get; }
   
   public ref CUtlSymbolLarge InteractsWith { get; }
+
+
 }

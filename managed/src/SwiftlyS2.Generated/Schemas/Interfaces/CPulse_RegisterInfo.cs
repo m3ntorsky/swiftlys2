@@ -17,4 +17,6 @@ public partial interface CPulse_RegisterInfo : ISchemaClass {
   public ref int WrittenByInstruction { get; }
   
   public ref int LastReadByInstruction { get; }
+
+
 }

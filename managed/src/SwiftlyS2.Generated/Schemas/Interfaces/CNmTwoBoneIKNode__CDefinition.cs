@@ -19,4 +19,6 @@ public partial interface CNmTwoBoneIKNode__CDefinition : CNmPassthroughNode__CDe
   public ref NmIKBlendMode_t BlendMode { get; }
   
   public ref bool IsTargetInWorldSpace { get; }
+
+
 }

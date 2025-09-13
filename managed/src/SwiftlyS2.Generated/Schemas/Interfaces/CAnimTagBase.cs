@@ -17,4 +17,6 @@ public partial interface CAnimTagBase : ISchemaClass {
   public AnimTagID TagID { get; }
   
   public ref bool IsReferenced { get; }
+
+
 }

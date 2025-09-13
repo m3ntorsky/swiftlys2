@@ -28,4 +28,6 @@ public partial interface CChoiceUpdateNode : CAnimUpdateNodeBase {
   public ref bool ResetChosen { get; }
   
   public ref bool DontResetSameSelection { get; }
+
+
 }

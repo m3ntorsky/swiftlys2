@@ -55,4 +55,25 @@ public partial interface CBeam : CBaseModelEntity {
   public ref CHandle<CBaseEntity> EndEntity { get; }
   
   public ref int DissolveType { get; }
+
+  public void FrameRateUpdated();
+  public void HDRColorScaleUpdated();
+  public void NumBeamEntsUpdated();
+  public void BaseMaterialUpdated();
+  public void HaloIndexUpdated();
+  public void BeamTypeUpdated();
+  public void BeamFlagsUpdated();
+  public void AttachEntityUpdated();
+  public void AttachIndexUpdated();
+  public void WidthUpdated();
+  public void EndWidthUpdated();
+  public void FadeLengthUpdated();
+  public void HaloScaleUpdated();
+  public void AmplitudeUpdated();
+  public void StartFrameUpdated();
+  public void SpeedUpdated();
+  public void FrameUpdated();
+  public void ClipStyleUpdated();
+  public void TurnedOffUpdated();
+  public void EndPosUpdated();
 }

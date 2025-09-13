@@ -14,4 +14,6 @@ public partial interface CVoiceContainerStaticAdditiveSynth__CTone : ISchemaClas
   public SchemaUntypedField Curve { get; }
   
   public ref bool SyncInstances { get; }
+
+
 }

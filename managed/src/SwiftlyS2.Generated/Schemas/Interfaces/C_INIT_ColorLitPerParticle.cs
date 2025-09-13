@@ -21,4 +21,6 @@ public partial interface C_INIT_ColorLitPerParticle : CParticleFunctionInitializ
   public ref ParticleColorBlendMode_t TintBlendMode { get; }
   
   public ref float LightAmplification { get; }
+
+
 }

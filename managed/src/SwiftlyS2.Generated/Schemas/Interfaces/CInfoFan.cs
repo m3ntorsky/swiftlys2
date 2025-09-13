@@ -15,4 +15,9 @@ public partial interface CInfoFan : CPointEntity {
   public ref float CurveDistRange { get; }
   
   public ref CUtlSymbolLarge FanForceCurveString { get; }
+
+  public void FanForceMaxRadiusUpdated();
+  public void FanForceMinRadiusUpdated();
+  public void CurveDistRangeUpdated();
+  public void FanForceCurveStringUpdated();
 }

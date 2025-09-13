@@ -19,4 +19,6 @@ public partial interface ParticleControlPointDriver_t : ISchemaClass {
   public ref QAngle Offset1 { get; }
   
   public ref CUtlString EntityName { get; }
+
+
 }

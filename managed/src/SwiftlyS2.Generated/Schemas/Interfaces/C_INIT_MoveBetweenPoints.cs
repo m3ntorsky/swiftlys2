@@ -21,4 +21,6 @@ public partial interface C_INIT_MoveBetweenPoints : CParticleFunctionInitializer
   public ref int EndControlPointNumber { get; }
   
   public ref bool TrailBias { get; }
+
+
 }

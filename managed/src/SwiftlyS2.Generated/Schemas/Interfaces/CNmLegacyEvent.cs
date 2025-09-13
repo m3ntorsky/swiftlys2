@@ -11,4 +11,6 @@ public partial interface CNmLegacyEvent : CNmEvent {
   public ref CUtlString AnimEventClassName { get; }
   
   public SchemaUntypedField KV { get; }
+
+
 }

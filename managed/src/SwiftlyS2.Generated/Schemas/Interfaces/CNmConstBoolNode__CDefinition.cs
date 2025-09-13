@@ -9,4 +9,6 @@ public partial interface CNmConstBoolNode__CDefinition : CNmBoolValueNode__CDefi
 
   
   public ref bool Value { get; }
+
+
 }

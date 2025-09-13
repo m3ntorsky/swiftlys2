@@ -11,4 +11,6 @@ public partial interface C_OP_PointVectorAtNextParticle : CParticleFunctionOpera
   public ParticleAttributeIndex_t FieldOutput { get; }
   
   public CPerParticleFloatInput Interpolation { get; }
+
+
 }

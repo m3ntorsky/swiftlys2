@@ -15,4 +15,6 @@ public partial interface CPulseCell_BooleanSwitchState : CPulseCell_BaseState {
   public CPulse_OutflowConnection WhenTrue { get; }
   
   public CPulse_OutflowConnection WhenFalse { get; }
+
+
 }

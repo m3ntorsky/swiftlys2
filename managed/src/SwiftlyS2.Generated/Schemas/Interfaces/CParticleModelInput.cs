@@ -13,4 +13,6 @@ public partial interface CParticleModelInput : CParticleInput {
   public SchemaUntypedField NamedValue { get; }
   
   public ref int ControlPoint { get; }
+
+
 }

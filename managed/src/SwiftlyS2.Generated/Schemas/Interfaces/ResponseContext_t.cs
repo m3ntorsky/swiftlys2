@@ -13,4 +13,6 @@ public partial interface ResponseContext_t : ISchemaClass {
   public ref CUtlSymbolLarge Value { get; }
   
   public GameTime_t ExpirationTime { get; }
+
+
 }

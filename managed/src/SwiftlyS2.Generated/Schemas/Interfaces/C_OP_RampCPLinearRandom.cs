@@ -13,4 +13,6 @@ public partial interface C_OP_RampCPLinearRandom : CParticleFunctionPreEmission 
   public ref Vector RateMin { get; }
   
   public ref Vector RateMax { get; }
+
+
 }

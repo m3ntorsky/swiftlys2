@@ -17,4 +17,6 @@ public partial interface CMessageEntity : CPointEntity {
   public ref bool DeveloperOnly { get; }
   
   public ref bool Enabled { get; }
+
+
 }

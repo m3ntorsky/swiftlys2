@@ -193,4 +193,58 @@ public partial interface CCSPlayerController : CBasePlayerController {
   public ref uint NonSuspiciousHitStreak { get; }
   
   public ref bool FireBulletsSeedSynchronized { get; }
+
+  public void InGameMoneyServicesUpdated();
+  public void InventoryServicesUpdated();
+  public void ActionTrackingServicesUpdated();
+  public void DamageServicesUpdated();
+  public void PingUpdated();
+  public void HasCommunicationAbuseMuteUpdated();
+  public void UiCommunicationMuteFlagsUpdated();
+  public void CrosshairCodesUpdated();
+  public void PendingTeamNumUpdated();
+  public void ForceTeamTimeUpdated();
+  public void CompTeammateColorUpdated();
+  public void EverPlayedOnTeamUpdated();
+  public void ClanUpdated();
+  public void CoachingTeamUpdated();
+  public void PlayerDominatedUpdated();
+  public void PlayerDominatingMeUpdated();
+  public void CompetitiveRankingUpdated();
+  public void CompetitiveWinsUpdated();
+  public void CompetitiveRankTypeUpdated();
+  public void CompetitiveRankingPredicted_WinUpdated();
+  public void CompetitiveRankingPredicted_LossUpdated();
+  public void CompetitiveRankingPredicted_TieUpdated();
+  public void EndMatchNextMapVoteUpdated();
+  public void ActiveQuestIdUpdated();
+  public void RtActiveMissionPeriodUpdated();
+  public void QuestProgressReasonUpdated();
+  public void PlayerTvControlFlagsUpdated();
+  public void DisconnectionTickUpdated();
+  public void ControllingBotUpdated();
+  public void HasControlledBotThisRoundUpdated();
+  public void CanControlObservedBotUpdated();
+  public void PlayerPawnUpdated();
+  public void ObserverPawnUpdated();
+  public void PawnIsAliveUpdated();
+  public void PawnHealthUpdated();
+  public void PawnArmorUpdated();
+  public void PawnHasDefuserUpdated();
+  public void PawnHasHelmetUpdated();
+  public void PawnCharacterDefIndexUpdated();
+  public void PawnLifetimeStartUpdated();
+  public void PawnLifetimeEndUpdated();
+  public void PawnBotDifficultyUpdated();
+  public void OriginalControllerOfCurrentPawnUpdated();
+  public void ScoreUpdated();
+  public void RecentKillQueueUpdated();
+  public void FirstKillUpdated();
+  public void KillCountUpdated();
+  public void MvpNoMusicUpdated();
+  public void MvpReasonUpdated();
+  public void MusicKitIDUpdated();
+  public void MusicKitMVPsUpdated();
+  public void MVPsUpdated();
+  public void FireBulletsSeedSynchronizedUpdated();
 }

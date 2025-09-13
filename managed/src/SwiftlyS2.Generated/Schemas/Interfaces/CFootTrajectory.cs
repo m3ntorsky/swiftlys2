@@ -13,4 +13,6 @@ public partial interface CFootTrajectory : ISchemaClass {
   public ref float RotationOffset { get; }
   
   public ref float Progression { get; }
+
+
 }

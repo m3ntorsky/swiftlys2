@@ -23,4 +23,6 @@ public partial interface CPhysFixed : CPhysConstraint {
   public ref CUtlSymbolLarge BoneName1 { get; }
   
   public ref CUtlSymbolLarge BoneName2 { get; }
+
+
 }

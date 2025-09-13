@@ -13,4 +13,6 @@ public partial interface C_OP_RenderFlattenGrass : CParticleFunctionRenderer {
   public ParticleAttributeIndex_t StrengthFieldOverride { get; }
   
   public ref float RadiusScale { get; }
+
+
 }

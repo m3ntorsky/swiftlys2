@@ -119,4 +119,6 @@ public partial interface C_OP_RenderModels : CParticleFunctionRenderer {
   public CParticleCollectionVecInput ColorScale { get; }
   
   public ref ParticleColorBlendType_t ColorBlendType { get; }
+
+
 }

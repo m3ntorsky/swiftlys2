@@ -13,4 +13,6 @@ public partial interface C_OP_MovementMaintainOffset : CParticleFunctionOperator
   public ref int CP { get; }
   
   public ref bool RadiusScale { get; }
+
+
 }

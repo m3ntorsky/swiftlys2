@@ -11,4 +11,6 @@ public partial interface CPulseCell_Inflow_ObservableVariableListener : CPulseCe
   public PulseRuntimeBlackboardReferenceIndex_t BlackboardReference { get; }
   
   public ref bool SelfReference { get; }
+
+
 }

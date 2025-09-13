@@ -10,4 +10,6 @@ public partial interface CActionComponentUpdater : CAnimComponentUpdater {
   
 // CUtlVector< CSmartPtr< CAnimActionUpdater > >
   public ref CUtlVector Actions { get; }
+
+
 }

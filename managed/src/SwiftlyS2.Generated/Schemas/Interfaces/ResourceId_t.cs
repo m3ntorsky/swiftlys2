@@ -9,4 +9,6 @@ public partial interface ResourceId_t : ISchemaClass {
 
   
   public ref ulong Value { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface C_INIT_RandomSecondSequence : CParticleFunctionInitiali
   public ref int SequenceMin { get; }
   
   public ref int SequenceMax { get; }
+
+
 }

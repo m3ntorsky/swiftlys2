@@ -9,4 +9,6 @@ public partial interface CNmNotNode__CDefinition : CNmBoolValueNode__CDefinition
 
   
   public ref short InputValueNodeIdx { get; }
+
+
 }

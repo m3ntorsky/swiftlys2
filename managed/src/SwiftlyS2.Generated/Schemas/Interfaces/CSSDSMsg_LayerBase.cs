@@ -17,4 +17,6 @@ public partial interface CSSDSMsg_LayerBase : ISchemaClass {
   public ref CUtlString LayerName { get; }
   
   public ref CUtlString DisplayText { get; }
+
+
 }

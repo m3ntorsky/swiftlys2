@@ -11,4 +11,6 @@ public partial interface CResponseCriteriaSet : ISchemaClass {
   public ref int NumPrefixedContexts { get; }
   
   public ref bool OverrideOnAppend { get; }
+
+
 }

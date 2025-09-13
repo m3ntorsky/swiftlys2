@@ -8,4 +8,6 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmZeroPoseNode__CDefinition : CNmPoseNode__CDefinition {
 
 
+
+
 }

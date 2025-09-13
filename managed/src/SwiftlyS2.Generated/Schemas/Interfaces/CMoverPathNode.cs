@@ -29,4 +29,6 @@ public partial interface CMoverPathNode : CPointEntity {
   public ref CHandle<CPathMover> Mover { get; }
   
   public ref CTransform XWSPrevParent { get; }
+
+
 }

@@ -9,4 +9,6 @@ public partial interface AnimScriptHandle : ISchemaClass {
 
   
   public ref uint Id { get; }
+
+
 }

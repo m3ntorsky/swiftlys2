@@ -11,4 +11,6 @@ public partial interface C_OP_RenderScreenVelocityRotate : CParticleFunctionRend
   public ref float RotateRateDegrees { get; }
   
   public ref float ForwardDegrees { get; }
+
+
 }

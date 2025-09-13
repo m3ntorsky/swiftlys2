@@ -9,4 +9,6 @@ public partial interface CSoundAreaEntitySphere : CSoundAreaEntityBase {
 
   
   public ref float Radius { get; }
+
+  public void RadiusUpdated();
 }

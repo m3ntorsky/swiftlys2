@@ -59,4 +59,20 @@ public partial interface CBasePlayerPawn : CBaseCombatCharacter {
   
 // CUtlVector< sndopvarlatchdata_t >
   public ref CUtlVector SndOpvarLatchData { get; }
+
+  public void WeaponServicesUpdated();
+  public void ItemServicesUpdated();
+  public void AutoaimServicesUpdated();
+  public void ObserverServicesUpdated();
+  public void WaterServicesUpdated();
+  public void UseServicesUpdated();
+  public void FlashlightServicesUpdated();
+  public void CameraServicesUpdated();
+  public void MovementServicesUpdated();
+  public void ServerViewAngleChangesUpdated();
+  public void HideHUDUpdated();
+  public void Skybox3dUpdated();
+  public void DeathTimeUpdated();
+  public void ControllerUpdated();
+  public void DefaultControllerUpdated();
 }

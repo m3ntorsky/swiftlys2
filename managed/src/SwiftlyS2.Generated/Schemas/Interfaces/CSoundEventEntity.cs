@@ -35,4 +35,6 @@ public partial interface CSoundEventEntity : CBaseEntity {
   public ref CHandle<CEntityInstance> Source { get; }
   
   public ref int EntityIndexSelection { get; }
+
+
 }

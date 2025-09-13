@@ -21,4 +21,6 @@ public partial interface ParticleNode_t : ISchemaClass {
   public ref float EndcapTime { get; }
   
   public ref bool MarkedForDelete { get; }
+
+
 }

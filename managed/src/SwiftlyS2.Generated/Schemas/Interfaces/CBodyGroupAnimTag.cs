@@ -12,4 +12,6 @@ public partial interface CBodyGroupAnimTag : CAnimTagBase {
   
 // CUtlVector< CBodyGroupSetting >
   public ref CUtlVector BodyGroupSettings { get; }
+
+
 }

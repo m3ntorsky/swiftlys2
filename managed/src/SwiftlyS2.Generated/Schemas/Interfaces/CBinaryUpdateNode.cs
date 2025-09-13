@@ -19,4 +19,6 @@ public partial interface CBinaryUpdateNode : CAnimUpdateNodeBase {
   public ref bool ResetChild1 { get; }
   
   public ref bool ResetChild2 { get; }
+
+
 }

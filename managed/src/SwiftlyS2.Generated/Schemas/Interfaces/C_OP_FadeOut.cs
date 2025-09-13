@@ -19,4 +19,6 @@ public partial interface C_OP_FadeOut : CParticleFunctionOperator {
   public ref bool Proportional { get; }
   
   public ref bool EaseInAndOut { get; }
+
+
 }

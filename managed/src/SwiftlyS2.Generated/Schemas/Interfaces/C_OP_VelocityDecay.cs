@@ -9,4 +9,6 @@ public partial interface C_OP_VelocityDecay : CParticleFunctionOperator {
 
   
   public ref float MinVelocity { get; }
+
+
 }

@@ -48,4 +48,6 @@ public partial interface CFootLockUpdateNode : CUnaryUpdateNode {
   public ref bool EnableVerticalCurvedPaths { get; }
   
   public ref bool EnableRootHeightDamping { get; }
+
+
 }

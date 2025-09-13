@@ -11,4 +11,7 @@ public partial interface CWeaponBaseItem : CCSWeaponBase {
   public ref bool SequenceInProgress { get; }
   
   public ref bool Redraw { get; }
+
+  public void SequenceInProgressUpdated();
+  public void RedrawUpdated();
 }

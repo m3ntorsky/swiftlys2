@@ -31,4 +31,6 @@ public partial interface CBaseTrigger : CBaseToggle {
   public ref bool Disabled { get; }
   
   public ref bool UseAsyncQueries { get; }
+
+  public void DisabledUpdated();
 }

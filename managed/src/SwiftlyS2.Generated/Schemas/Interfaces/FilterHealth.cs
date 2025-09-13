@@ -13,4 +13,6 @@ public partial interface FilterHealth : CBaseFilter {
   public ref int HealthMin { get; }
   
   public ref int HealthMax { get; }
+
+
 }

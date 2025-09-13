@@ -17,4 +17,6 @@ public partial interface FeRigidColliderIndices_t : ISchemaClass {
   public ref ushort SDFRigidIndex { get; }
   
   public ref ushort CollisionPlaneIndex { get; }
+
+
 }

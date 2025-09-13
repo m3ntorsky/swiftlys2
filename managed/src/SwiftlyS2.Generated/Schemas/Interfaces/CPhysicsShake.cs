@@ -9,4 +9,6 @@ public partial interface CPhysicsShake : ISchemaClass {
 
   
   public ref Vector Force { get; }
+
+
 }

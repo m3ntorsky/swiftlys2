@@ -13,4 +13,6 @@ public partial interface CInfoPlayerStart : CPointEntity {
   public ref bool IsMaster { get; }
   
   public ref CGlobalSymbol PawnSubclass { get; }
+
+
 }

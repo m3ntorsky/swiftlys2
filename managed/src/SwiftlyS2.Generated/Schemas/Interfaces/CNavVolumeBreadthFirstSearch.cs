@@ -11,4 +11,6 @@ public partial interface CNavVolumeBreadthFirstSearch : CNavVolumeCalculatedVect
   public ref Vector StartPos { get; }
   
   public ref float SearchDist { get; }
+
+
 }

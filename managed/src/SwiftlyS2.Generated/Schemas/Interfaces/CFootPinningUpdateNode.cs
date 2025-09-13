@@ -16,4 +16,6 @@ public partial interface CFootPinningUpdateNode : CUnaryUpdateNode {
   public ref CUtlVector Params { get; }
   
   public ref bool ResetChild { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface AutoRoomDoorwayPairs_t : ISchemaClass {
   public ref Vector P1 { get; }
   
   public ref Vector P2 { get; }
+
+
 }

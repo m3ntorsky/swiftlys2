@@ -32,4 +32,6 @@ public partial interface CNmGraphDefinition : ISchemaClass {
   
 // CUtlVector< CStrongHandleVoid >
   public ref CUtlVector Resources { get; }
+
+
 }

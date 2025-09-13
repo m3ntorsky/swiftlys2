@@ -23,4 +23,6 @@ public partial interface C_OP_ConstrainDistanceToPath : CParticleFunctionConstra
   public ParticleAttributeIndex_t FieldScale { get; }
   
   public ParticleAttributeIndex_t ManualTField { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface CTonemapTrigger : CBaseTrigger {
   public ref CUtlSymbolLarge TonemapControllerName { get; }
   
   public ref CHandle<CEntityInstance> TonemapController { get; }
+
+
 }

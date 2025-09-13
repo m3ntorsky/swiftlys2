@@ -17,4 +17,6 @@ public partial interface EventClientOutput_t : ISchemaClass {
   public ref float RenderFrameTimeUnbounded { get; }
   
   public ref bool RenderOnly { get; }
+
+
 }

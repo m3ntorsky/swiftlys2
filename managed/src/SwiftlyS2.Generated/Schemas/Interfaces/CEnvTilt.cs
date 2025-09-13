@@ -15,4 +15,6 @@ public partial interface CEnvTilt : CPointEntity {
   public ref float TiltTime { get; }
   
   public GameTime_t StopTime { get; }
+
+
 }

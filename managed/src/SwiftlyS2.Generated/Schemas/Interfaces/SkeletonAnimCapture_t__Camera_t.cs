@@ -11,4 +11,6 @@ public partial interface SkeletonAnimCapture_t__Camera_t : ISchemaClass {
   public ref CTransform TmCamera { get; }
   
   public ref float Time { get; }
+
+
 }

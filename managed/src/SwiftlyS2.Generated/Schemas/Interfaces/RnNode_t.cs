@@ -15,4 +15,6 @@ public partial interface RnNode_t : ISchemaClass {
   public ref Vector Max { get; }
   
   public ref uint TriangleOffset { get; }
+
+
 }

@@ -11,4 +11,6 @@ public partial interface ParamSpanSample_t : ISchemaClass {
   public SchemaUntypedField Value { get; }
   
   public ref float Cycle { get; }
+
+
 }

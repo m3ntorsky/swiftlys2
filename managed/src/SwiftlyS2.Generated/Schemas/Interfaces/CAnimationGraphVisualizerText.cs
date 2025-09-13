@@ -13,4 +13,6 @@ public partial interface CAnimationGraphVisualizerText : CAnimationGraphVisualiz
   public ref Color Color { get; }
   
   public ref CUtlString Text { get; }
+
+
 }

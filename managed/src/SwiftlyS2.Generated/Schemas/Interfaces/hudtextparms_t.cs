@@ -19,4 +19,6 @@ public partial interface hudtextparms_t : ISchemaClass {
   public ref float X { get; }
   
   public ref float Y { get; }
+
+
 }

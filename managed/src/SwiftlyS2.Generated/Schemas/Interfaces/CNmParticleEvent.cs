@@ -33,4 +33,6 @@ public partial interface CNmParticleEvent : CNmEvent {
   public ref bool DetachFromOwner { get; }
   
   public ref bool PlayEndCap { get; }
+
+
 }

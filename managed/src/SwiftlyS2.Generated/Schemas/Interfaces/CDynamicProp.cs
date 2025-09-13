@@ -51,4 +51,7 @@ public partial interface CDynamicProp : CBreakableProp {
   public ref Color GlowColor { get; }
   
   public ref int GlowTeam { get; }
+
+  public void UseHitboxesForRenderBoxUpdated();
+  public void UseAnimGraphUpdated();
 }

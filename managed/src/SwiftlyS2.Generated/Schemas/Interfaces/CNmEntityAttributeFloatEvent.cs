@@ -9,4 +9,6 @@ public partial interface CNmEntityAttributeFloatEvent : CNmEntityAttributeEventB
 
   
   public SchemaUntypedField FloatValue { get; }
+
+
 }

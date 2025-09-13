@@ -23,4 +23,6 @@ public partial interface C_OP_InstantaneousEmitter : CParticleFunctionEmitter {
   public ref int SnapshotControlPoint { get; }
   
   public ref CUtlString StrSnapshotSubset { get; }
+
+
 }

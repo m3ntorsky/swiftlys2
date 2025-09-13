@@ -27,4 +27,6 @@ public partial interface C_INIT_RemapSpeedToScalar : CParticleFunctionInitialize
   public ref ParticleSetMethod_t SetMethod { get; }
   
   public ref bool PerParticle { get; }
+
+
 }

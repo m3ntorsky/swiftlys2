@@ -19,4 +19,6 @@ public partial interface CastSphereSATParams_t : ISchemaClass {
   public ref float Scale { get; }
   
   public RnHull_t Hull { get; }
+
+
 }

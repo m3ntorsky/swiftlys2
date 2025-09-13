@@ -13,4 +13,6 @@ public partial interface CNmIDEventNode__CDefinition : CNmIDValueNode__CDefiniti
   public CNmBitFlags EventConditionRules { get; }
   
   public ref CGlobalSymbol DefaultValue { get; }
+
+
 }

@@ -21,4 +21,6 @@ public partial interface C_OP_SetControlPointFieldFromVectorExpression : CPartic
   public ref int OutputCP { get; }
   
   public ref int OutVectorField { get; }
+
+
 }

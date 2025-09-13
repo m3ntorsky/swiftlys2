@@ -23,4 +23,6 @@ public partial interface EventSetTime_t : ISchemaClass {
   public ref double RenderFrameTimeUnscaled { get; }
   
   public ref double TickRemainder { get; }
+
+
 }

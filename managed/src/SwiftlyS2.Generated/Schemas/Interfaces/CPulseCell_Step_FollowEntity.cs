@@ -11,4 +11,6 @@ public partial interface CPulseCell_Step_FollowEntity : CPulseCell_BaseFlow {
   public ref CUtlString ParamBoneOrAttachName { get; }
   
   public ref CUtlString ParamBoneOrAttachNameChild { get; }
+
+
 }

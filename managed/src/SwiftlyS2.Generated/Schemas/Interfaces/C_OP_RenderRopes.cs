@@ -67,4 +67,6 @@ public partial interface C_OP_RenderRopes : CBaseRendererSource2 {
   public ref bool DrawAsOpaque { get; }
   
   public ref bool GenerateNormals { get; }
+
+
 }

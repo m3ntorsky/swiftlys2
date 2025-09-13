@@ -13,4 +13,6 @@ public partial interface CPulseRuntimeMethodArg : ISchemaClass {
   public ref CUtlString Description { get; }
   
   public SchemaUntypedField Type { get; }
+
+
 }

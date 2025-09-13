@@ -19,4 +19,6 @@ public partial interface CLogicDistanceAutosave : CLogicalEntity {
   public ref bool ThinkDangerous { get; }
   
   public ref float DangerousTime { get; }
+
+
 }

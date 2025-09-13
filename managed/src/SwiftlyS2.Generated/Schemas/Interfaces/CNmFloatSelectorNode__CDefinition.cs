@@ -17,4 +17,6 @@ public partial interface CNmFloatSelectorNode__CDefinition : CNmFloatValueNode__
   public ref float EaseTime { get; }
   
   public ref NmEasingOperation_t EasingOp { get; }
+
+
 }

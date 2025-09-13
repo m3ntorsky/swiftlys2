@@ -11,4 +11,6 @@ public partial interface FourVectors2D : ISchemaClass {
   public ref fltx4 X { get; }
   
   public ref fltx4 Y { get; }
+
+
 }

@@ -23,4 +23,10 @@ public partial interface CModelState : ISchemaClass {
   public ref byte ForceLOD { get; }
   
   public ref byte ClothUpdateFlags { get; }
+
+  public void ModelUpdated();
+  public void ClientClothCreationSuppressedUpdated();
+  public void MeshGroupMaskUpdated();
+  public void BodyGroupChoicesUpdated();
+  public void IdealMotionTypeUpdated();
 }

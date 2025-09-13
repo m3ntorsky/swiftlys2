@@ -9,4 +9,6 @@ public partial interface CPulseCell_PlaySequence__CursorState_t : ISchemaClass {
 
   
   public ref CHandle<CBaseAnimGraph> Target { get; }
+
+
 }

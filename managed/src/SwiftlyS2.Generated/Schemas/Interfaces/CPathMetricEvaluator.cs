@@ -15,4 +15,6 @@ public partial interface CPathMetricEvaluator : CMotionMetricEvaluator {
   public ref bool ExtrapolateMovement { get; }
   
   public ref float MinExtrapolationSpeed { get; }
+
+
 }

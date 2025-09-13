@@ -9,4 +9,6 @@ public partial interface RnTriangle_t : ISchemaClass {
 
   
   public ISchemaFixedArray<int> Index { get; }
+
+
 }

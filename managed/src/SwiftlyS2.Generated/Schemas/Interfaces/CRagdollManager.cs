@@ -15,4 +15,6 @@ public partial interface CRagdollManager : CBaseEntity {
   public ref bool SaveImportant { get; }
   
   public ref bool CanTakeDamage { get; }
+
+  public void CurrentMaxRagdollCountUpdated();
 }

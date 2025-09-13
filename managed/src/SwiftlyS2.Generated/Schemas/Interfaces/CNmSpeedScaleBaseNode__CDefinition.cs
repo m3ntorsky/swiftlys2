@@ -11,4 +11,6 @@ public partial interface CNmSpeedScaleBaseNode__CDefinition : CNmPassthroughNode
   public ref short InputValueNodeIdx { get; }
   
   public ref float DefaultInputValue { get; }
+
+
 }

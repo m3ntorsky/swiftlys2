@@ -11,4 +11,6 @@ public partial interface CSimpleSimTimer : ISchemaClass {
   public GameTime_t Next { get; }
   
   public ref uint WorldGroupId { get; }
+
+
 }

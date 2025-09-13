@@ -23,4 +23,6 @@ public partial interface VPhysXCollisionAttributes_t : ISchemaClass {
   public ref CUtlVector<CUtlString> InteractWithStrings { get; }
   
   public ref CUtlVector<CUtlString> InteractExcludeStrings { get; }
+
+
 }

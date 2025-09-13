@@ -73,4 +73,11 @@ public partial interface CGameSceneNode : ISchemaClass {
   public ref float ClientLocalScale { get; }
   
   public ref Vector RenderOrigin { get; }
+
+  public void Parent1Updated();
+  public void OriginUpdated();
+  public void RotationUpdated();
+  public void ScaleUpdated();
+  public void NameUpdated();
+  public void HierarchyAttachNameUpdated();
 }

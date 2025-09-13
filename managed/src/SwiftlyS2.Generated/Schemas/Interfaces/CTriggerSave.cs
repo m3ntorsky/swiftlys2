@@ -13,4 +13,6 @@ public partial interface CTriggerSave : CBaseTrigger {
   public ref float DangerousTimer { get; }
   
   public ref int MinHitPoints { get; }
+
+
 }

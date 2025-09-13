@@ -13,4 +13,6 @@ public partial interface CCSPlayer_UseServices : CPlayer_UseServices {
   public GameTime_t LastUseTimeStamp { get; }
   
   public GameTime_t TimeLastUsedWindow { get; }
+
+
 }

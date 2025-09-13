@@ -9,4 +9,6 @@ public partial interface CTriggerRemove : CBaseTrigger {
 
   
   public CEntityIOOutput OnRemove { get; }
+
+
 }

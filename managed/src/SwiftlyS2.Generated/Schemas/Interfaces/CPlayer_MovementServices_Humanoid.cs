@@ -33,4 +33,12 @@ public partial interface CPlayer_MovementServices_Humanoid : CPlayer_MovementSer
   public ref int Stepside { get; }
   
   public ref Vector SmoothedVelocity { get; }
+
+  public void FallVelocityUpdated();
+  public void InCrouchUpdated();
+  public void CrouchStateUpdated();
+  public void CrouchTransitionStartTimeUpdated();
+  public void DuckedUpdated();
+  public void DuckingUpdated();
+  public void InDuckJumpUpdated();
 }

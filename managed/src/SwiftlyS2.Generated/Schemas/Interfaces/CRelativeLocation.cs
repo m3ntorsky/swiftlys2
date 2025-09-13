@@ -15,4 +15,6 @@ public partial interface CRelativeLocation : ISchemaClass {
   public ref Vector WorldSpacePos { get; }
   
   public ref CHandle<CBaseEntity> Entity { get; }
+
+
 }

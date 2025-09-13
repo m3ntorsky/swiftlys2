@@ -13,4 +13,6 @@ public partial interface SimpleConstraintSoundProfile : ISchemaClass {
   public ISchemaFixedArray<float> KeyPoints { get; }
   
   public ISchemaFixedArray<float> ReversalSoundThresholds { get; }
+
+
 }

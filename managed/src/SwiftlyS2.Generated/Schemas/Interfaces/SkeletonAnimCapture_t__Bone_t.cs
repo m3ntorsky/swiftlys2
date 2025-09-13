@@ -13,4 +13,6 @@ public partial interface SkeletonAnimCapture_t__Bone_t : ISchemaClass {
   public ref CTransform BindPose { get; }
   
   public ref int Parent { get; }
+
+
 }
