@@ -16,6 +16,7 @@ internal class SwiftlyLoggerFormatter : ConsoleFormatter
     var timestamp = DateTime.Now.ToString("MM/dd HH:mm:ss");
     var logLevel = GetLogLevelString(logEntry.LogLevel);
     var category = logEntry.Category;
+    var id = $"[{logEntry.EventId.ToString()}]";
 
     var logLevelColor = logEntry.LogLevel switch
     {
@@ -28,11 +29,11 @@ internal class SwiftlyLoggerFormatter : ConsoleFormatter
       _ => "grey42"
     };
 
-    AnsiConsole.MarkupLineInterpolated($"[lightsteelblue]SwiftlyS2[/] [lightsteelblue]|[/] [grey42]{timestamp}[/] [lightsteelblue]|[/] [{logLevelColor}]{logLevel}[/] [lightsteelblue]|[/] [lightsteelblue]{category}[/]");
+    AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]SwiftlyS2[/] [lightsteelblue]|[/] [grey42]{timestamp}[/] [lightsteelblue]|[/] [{logLevelColor}]{logLevel}[/] [lightsteelblue]|[/] [lightsteelblue]{category}{id}[/]");
 
     if (logEntry.State != null)
     {
-      AnsiConsole.MarkupLineInterpolated($"\t[grey85]{logEntry.State}[/]\n");
+      AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]SwiftlyS2[/] [lightsteelblue]|[/] [grey85]{logEntry.State}[/]");
     }
 
     if (logEntry.Exception != null)

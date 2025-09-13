@@ -8,10 +8,13 @@ namespace SwiftlyS2.Core.Services;
 internal class TestService {
 
   private ILogger<TestService> _Logger { get; init; }
+  private ProfileService _ProfileService { get; init; }
   public unsafe TestService(
-    ILoggerFactory loggerFactory
+    ILoggerFactory loggerFactory,
+    ProfileService profileService
   ) {
     _Logger = loggerFactory.CreateLogger<TestService>();
+    _ProfileService = profileService;
 
 
     Test();
@@ -27,6 +30,9 @@ internal class TestService {
         await Task.Delay(2000);
         unsafe
         {
+
+          _ProfileService.StartRecording("TestService");
+
           var pRules = (nint)NativeTest.Test();
           _Logger.LogInformation("pPlayer: "+ pRules.ToString());
           if (pRules == nint.Zero)
@@ -45,14 +51,16 @@ internal class TestService {
             _Logger.LogError("pawn: " + player.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin.ToString());
           }
 
-          // for (int i = 0; i < player.PlayerName.ElementCount; i++) {
-          //   Console.WriteLine(player.PlayerName[i]);
-          //   if (player.PlayerName[i] == 0) {
-          //     break;
-          //   }
-          // }
+            // for (int i = 0; i < player.PlayerName.ElementCount; i++) {
+            //   Console.WriteLine(player.PlayerName[i]);
+            //   if (player.PlayerName[i] == 0) {
+            //     break;
+            //   }
+            // }
 
-        }
+          _ProfileService.StopRecording("TestService");
+
+          }
         } catch (Exception e) {
           _Logger.LogError(e, "");
         }
