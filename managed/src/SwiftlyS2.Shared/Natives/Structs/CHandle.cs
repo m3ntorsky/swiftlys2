@@ -5,7 +5,7 @@ using SwiftlyS2.Shared.SchemaDefinitions;
 namespace SwiftlyS2.Shared.Natives;
 
 [StructLayout(LayoutKind.Sequential, Size = 4)]
-public struct CHandle<T> where T : CEntityInstance {
+public struct CHandle<T> where T : class, CEntityInstance {
   private uint _index;
 
   public uint Raw { 
@@ -13,10 +13,16 @@ public struct CHandle<T> where T : CEntityInstance {
     set => _index = value;
   }
 
-  public readonly T Value {
+  public readonly T? Value {
     get {
-      nint ptr = 0; // TODO: Get entity from pointer with a safety check
-      return NativeHandleConversion.As<T>(ptr);
+      unsafe {
+        if (!IsValid) {
+          return null;
+        }
+        fixed(void* ptr = &this) {
+          return NativeHandleConversion.As<T>((nint)NativeEntity.HandleGet(ptr));
+        }
+      }
     }
   }
 
@@ -24,7 +30,15 @@ public struct CHandle<T> where T : CEntityInstance {
 
   public readonly uint SerialNumber => (_index >> 15) & 0x1FFFF;
 
-  public readonly bool IsValid => throw new NotImplementedException(); // TODO: Implement this with native entity system
+  public readonly bool IsValid {
+    get {
+      unsafe {
+        fixed(void* ptr = &this) {
+          return NativeEntity.HandleIsValid(ptr);
+        }
+      }
+    }
+  }
 
 
   public static implicit operator T(CHandle<T> handle) => handle.Value;

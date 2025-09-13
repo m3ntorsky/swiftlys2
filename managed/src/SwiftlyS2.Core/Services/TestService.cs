@@ -23,7 +23,8 @@ internal class TestService {
     {
       while (true)
       {
-        await Task.Delay(1000);
+        try {
+        await Task.Delay(2000);
         unsafe
         {
           var pRules = (nint)NativeTest.Test();
@@ -39,7 +40,10 @@ internal class TestService {
           _Logger.LogError("mins: " + player.Collision?.Mins.ToString());  
           _Logger.LogError("maxs: " + player.Collision?.Maxs.ToString());
           _Logger.LogError("steamid: " + player.SteamID);
-          _Logger.LogError("pawn: " + player.PlayerPawn.EntityIndex);
+          _Logger.LogError("pawn: " + player.PlayerPawn.IsValid);
+          if (player.PlayerPawn.IsValid) {
+            _Logger.LogError("pawn: " + player.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin.ToString());
+          }
 
           // for (int i = 0; i < player.PlayerName.ElementCount; i++) {
           //   Console.WriteLine(player.PlayerName[i]);
@@ -48,6 +52,9 @@ internal class TestService {
           //   }
           // }
 
+        }
+        } catch (Exception e) {
+          _Logger.LogError(e, "");
         }
       }
     });
