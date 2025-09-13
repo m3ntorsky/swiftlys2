@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Logging;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.Services;
 
@@ -20,5 +21,10 @@ public interface ISwiftlyCore {
   /// Configuration service.
   /// </summary>
   public IPluginConfigurationService Configuration { get; }
+
+  /// <summary>
+  /// Logger factory.
+  /// </summary>
+  public ILoggerFactory LoggerFactory { get; }
 
 }

@@ -23,6 +23,8 @@ internal class NativeBinding
           // TODO: might need nested namespace support.
           var nativeNameSpace = "SwiftlyS2.Core.Natives.Native" + className;
 
+          Console.WriteLine("[NativeBinding] Injecting " + nativeNameSpace + "." + funcName + " => " + string.Format("{0:X}", pNativeTables[i].Function));
+
           var nativeClass = Type.GetType(nativeNameSpace)!;
           var nativeStaticField = nativeClass.GetField("_"+funcName, BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
           nativeStaticField!.SetValue(null, pNativeTables[i].Function);

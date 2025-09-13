@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Events;
 using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared;
@@ -13,8 +14,8 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   private ServiceProvider _ServiceProvider { get; init; }
 
   public EventSubscriber CustomEventSubscriber { get; init; }
-
   public PluginConfigurationService Configuration { get; init; }
+  public ILoggerFactory LoggerFactory { get; init; }
 
 
   public SwiftlyCore(string pluginId, string pluginBaseDirectory, IServiceProvider coreProvider) {
@@ -26,12 +27,14 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     services.AddSingleton(id);
     services.AddSingleton(coreProvider.GetRequiredService<ProfileService>());
     services.AddSingleton(coreProvider.GetRequiredService<ConfigurationService>());
+    services.AddSingleton(coreProvider.GetRequiredService<ILoggerFactory>());
     services.AddSingleton<EventSubscriber>();
     services.AddSingleton<PluginConfigurationService>();
 
     _ServiceProvider = services.BuildServiceProvider();
     CustomEventSubscriber = _ServiceProvider.GetRequiredService<EventSubscriber>();
     Configuration = _ServiceProvider.GetRequiredService<PluginConfigurationService>();
+    LoggerFactory = _ServiceProvider.GetRequiredService<ILoggerFactory>();
   }
 
   public void Dispose() {
@@ -40,5 +43,6 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
 
   IEventSubscriber ISwiftlyCore.Events => CustomEventSubscriber;
   IPluginConfigurationService ISwiftlyCore.Configuration => Configuration;
+  ILoggerFactory ISwiftlyCore.LoggerFactory => LoggerFactory;
 
 }
