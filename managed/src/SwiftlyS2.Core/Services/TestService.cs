@@ -13,6 +13,8 @@ internal class TestService {
   ) {
     _Logger = loggerFactory.CreateLogger<TestService>();
 
+    CCSWeaponBase a = null!;
+
     Test();
   }
 
