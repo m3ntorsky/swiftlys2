@@ -29,7 +29,7 @@ public ISchemaFixedString DetailsString {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE0727D1E61EC9307));
   }
   public CVoteController VoteController {
-    get => new CVoteControllerImpl(_Handle + Schema.GetOffset(0xE0727D1ECB818C7B));
+    get => new CVoteControllerImpl(_Handle.Read<nint>(Schema.GetOffset(0xE0727D1ECB818C7B)));
   }
 
 

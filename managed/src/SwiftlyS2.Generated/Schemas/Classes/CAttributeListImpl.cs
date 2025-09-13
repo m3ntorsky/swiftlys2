@@ -17,7 +17,7 @@ internal partial class CAttributeListImpl : SchemaClass, CAttributeList {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1028A18A7E139C14));
   }
   public CAttributeManager Manager {
-    get => new CAttributeManagerImpl(_Handle + Schema.GetOffset(0x1028A18AB9A09BE6));
+    get => new CAttributeManagerImpl(_Handle.Read<nint>(Schema.GetOffset(0x1028A18AB9A09BE6)));
   }
 
   public void AttributesUpdated() {

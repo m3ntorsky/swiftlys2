@@ -17,7 +17,7 @@ internal partial class CVoiceContainerBaseImpl : SchemaClass, CVoiceContainerBas
     get => new CVSoundImpl(_Handle + Schema.GetOffset(0x9D65DC3663C1A950));
   }
   public CVoiceContainerAnalysisBase EnvelopeAnalyzer {
-    get => new CVoiceContainerAnalysisBaseImpl(_Handle + Schema.GetOffset(0x9D65DC362102947D));
+    get => new CVoiceContainerAnalysisBaseImpl(_Handle.Read<nint>(Schema.GetOffset(0x9D65DC362102947D)));
   }
 
 

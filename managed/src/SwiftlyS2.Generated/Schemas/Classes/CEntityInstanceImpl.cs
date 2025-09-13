@@ -17,10 +17,10 @@ internal partial class CEntityInstanceImpl : SchemaClass, CEntityInstance {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB6DD442EB087F3B2));
   }
   public CEntityIdentity Entity {
-    get => new CEntityIdentityImpl(_Handle + Schema.GetOffset(0xB6DD442EA8A45978));
+    get => new CEntityIdentityImpl(_Handle.Read<nint>(Schema.GetOffset(0xB6DD442EA8A45978)));
   }
   public CScriptComponent CScriptComponent {
-    get => new CScriptComponentImpl(_Handle + Schema.GetOffset(0xB6DD442E3F4202B4));
+    get => new CScriptComponentImpl(_Handle.Read<nint>(Schema.GetOffset(0xB6DD442E3F4202B4)));
   }
 
   public void EntityUpdated() {

@@ -44,7 +44,7 @@ public class TestPlugin : BasePlugin {
       .Root;
 
     CCSPlayerController player = null!;
-    CFishPool pool = null!;
+    CWeaponAWP awp = null!;
 
     var config = new TestConfig();
     core.Configuration.Root.GetSection("Test").Bind(config);

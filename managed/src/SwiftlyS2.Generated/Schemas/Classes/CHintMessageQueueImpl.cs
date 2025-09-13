@@ -20,7 +20,7 @@ internal partial class CHintMessageQueueImpl : SchemaClass, CHintMessageQueue {
     get => ref _Handle.AsRef<CUtlVector<PointerTo<CHintMessage>>>(Schema.GetOffset(0xBE134896139CC55));
   }
   public CBasePlayerController PlayerController {
-    get => new CBasePlayerControllerImpl(_Handle + Schema.GetOffset(0xBE13489DCE6762E));
+    get => new CBasePlayerControllerImpl(_Handle.Read<nint>(Schema.GetOffset(0xBE13489DCE6762E)));
   }
 
 

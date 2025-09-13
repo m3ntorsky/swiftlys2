@@ -14,13 +14,13 @@ internal partial class CFuncTrackChangeImpl : CFuncPlatRotImpl, CFuncTrackChange
   }
 
   public CPathTrack TrackTop {
-    get => new CPathTrackImpl(_Handle + Schema.GetOffset(0x25A8A26FF7C2CCBF));
+    get => new CPathTrackImpl(_Handle.Read<nint>(Schema.GetOffset(0x25A8A26FF7C2CCBF)));
   }
   public CPathTrack TrackBottom {
-    get => new CPathTrackImpl(_Handle + Schema.GetOffset(0x25A8A26F37EC7637));
+    get => new CPathTrackImpl(_Handle.Read<nint>(Schema.GetOffset(0x25A8A26F37EC7637)));
   }
   public CFuncTrackTrain Train {
-    get => new CFuncTrackTrainImpl(_Handle + Schema.GetOffset(0x25A8A26FB8642689));
+    get => new CFuncTrackTrainImpl(_Handle.Read<nint>(Schema.GetOffset(0x25A8A26FB8642689)));
   }
   public ref CUtlSymbolLarge TrackTopName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x25A8A26FF9BD489C));

@@ -17,16 +17,16 @@ internal partial class CGameSceneNodeImpl : SchemaClass, CGameSceneNode {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xD9451D94E9EB4068));
   }
   public CEntityInstance Owner {
-    get => new CEntityInstanceImpl(_Handle + Schema.GetOffset(0xD9451D9406B325DA));
+    get => new CEntityInstanceImpl(_Handle.Read<nint>(Schema.GetOffset(0xD9451D9406B325DA)));
   }
   public CGameSceneNode Parent {
-    get => new CGameSceneNodeImpl(_Handle + Schema.GetOffset(0xD9451D94B89C7C3F));
+    get => new CGameSceneNodeImpl(_Handle.Read<nint>(Schema.GetOffset(0xD9451D94B89C7C3F)));
   }
   public CGameSceneNode Child {
-    get => new CGameSceneNodeImpl(_Handle + Schema.GetOffset(0xD9451D944A0B773F));
+    get => new CGameSceneNodeImpl(_Handle.Read<nint>(Schema.GetOffset(0xD9451D944A0B773F)));
   }
   public CGameSceneNode NextSibling {
-    get => new CGameSceneNodeImpl(_Handle + Schema.GetOffset(0xD9451D9440E828FC));
+    get => new CGameSceneNodeImpl(_Handle.Read<nint>(Schema.GetOffset(0xD9451D9440E828FC)));
   }
   public CGameSceneNodeHandle Parent1 {
     get => new CGameSceneNodeHandleImpl(_Handle + Schema.GetOffset(0xD9451D949FD3A1B7));

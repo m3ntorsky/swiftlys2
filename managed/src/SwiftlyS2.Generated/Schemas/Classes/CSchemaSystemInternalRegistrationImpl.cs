@@ -56,7 +56,7 @@ internal partial class CSchemaSystemInternalRegistrationImpl : SchemaClass, CSch
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xDDD6CA3045C7677A));
   }
   public SchemaUntypedField KeyValues {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xDDD6CA3011F5FBEC));
+    get => new SchemaUntypedField(_Handle.Read<nint>(Schema.GetOffset(0xDDD6CA3011F5FBEC)));
   }
   public ref CUtlBinaryBlock CUtlBinaryBlock {
     get => ref _Handle.AsRef<CUtlBinaryBlock>(Schema.GetOffset(0xDDD6CA307F63D33D));

@@ -14,7 +14,7 @@ internal partial class CSkeletonAnimationControllerImpl : ISkeletonAnimationCont
   }
 
   public CSkeletonInstance SkeletonInstance {
-    get => new CSkeletonInstanceImpl(_Handle + Schema.GetOffset(0x47164D01F28853));
+    get => new CSkeletonInstanceImpl(_Handle.Read<nint>(Schema.GetOffset(0x47164D01F28853)));
   }
 
 

@@ -14,7 +14,7 @@ internal partial class CHostageExpresserShimImpl : CBaseCombatCharacterImpl, CHo
   }
 
   public CAI_Expresser Expresser {
-    get => new CAI_ExpresserImpl(_Handle + Schema.GetOffset(0xD6B3DCE7697CAC2A));
+    get => new CAI_ExpresserImpl(_Handle.Read<nint>(Schema.GetOffset(0xD6B3DCE7697CAC2A)));
   }
 
 

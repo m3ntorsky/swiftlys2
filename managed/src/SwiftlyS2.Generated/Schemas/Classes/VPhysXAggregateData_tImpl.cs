@@ -47,7 +47,7 @@ internal partial class VPhysXAggregateData_tImpl : SchemaClass, VPhysXAggregateD
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB689D5A15E6E8FEC));
   }
   public PhysFeModelDesc_t FeModel {
-    get => new PhysFeModelDesc_tImpl(_Handle + Schema.GetOffset(0xB689D5A1299418A7));
+    get => new PhysFeModelDesc_tImpl(_Handle.Read<nint>(Schema.GetOffset(0xB689D5A1299418A7)));
   }
   public ref CUtlVector<ushort> BoneParents {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0xB689D5A171828F04));

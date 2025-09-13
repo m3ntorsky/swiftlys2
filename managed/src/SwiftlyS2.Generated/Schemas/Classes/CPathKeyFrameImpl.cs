@@ -29,10 +29,10 @@ internal partial class CPathKeyFrameImpl : CLogicalEntityImpl, CPathKeyFrame {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x340251854F129C67));
   }
   public CPathKeyFrame NextKey1 {
-    get => new CPathKeyFrameImpl(_Handle + Schema.GetOffset(0x3402518585EE45D5));
+    get => new CPathKeyFrameImpl(_Handle.Read<nint>(Schema.GetOffset(0x3402518585EE45D5)));
   }
   public CPathKeyFrame PrevKey {
-    get => new CPathKeyFrameImpl(_Handle + Schema.GetOffset(0x34025185B9327481));
+    get => new CPathKeyFrameImpl(_Handle.Read<nint>(Schema.GetOffset(0x34025185B9327481)));
   }
   public ref float MoveSpeed {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x3402518566D18279));

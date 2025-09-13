@@ -14,13 +14,13 @@ internal partial class CPathTrackImpl : CPointEntityImpl, CPathTrack {
   }
 
   public CPathTrack Pnext {
-    get => new CPathTrackImpl(_Handle + Schema.GetOffset(0xF86750E8B008D5EE));
+    get => new CPathTrackImpl(_Handle.Read<nint>(Schema.GetOffset(0xF86750E8B008D5EE)));
   }
   public CPathTrack Pprevious {
-    get => new CPathTrackImpl(_Handle + Schema.GetOffset(0xF86750E8BD38AFD2));
+    get => new CPathTrackImpl(_Handle.Read<nint>(Schema.GetOffset(0xF86750E8BD38AFD2)));
   }
   public CPathTrack Paltpath {
-    get => new CPathTrackImpl(_Handle + Schema.GetOffset(0xF86750E868D10551));
+    get => new CPathTrackImpl(_Handle.Read<nint>(Schema.GetOffset(0xF86750E868D10551)));
   }
   public ref float Radius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF86750E85ACFC08D));

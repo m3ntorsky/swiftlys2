@@ -14,7 +14,7 @@ internal partial class CTakeDamageResultImpl : SchemaClass, CTakeDamageResult {
   }
 
   public CTakeDamageInfo OriginatingInfo {
-    get => new CTakeDamageInfoImpl(_Handle + Schema.GetOffset(0xD4A7564D5B166E20));
+    get => new CTakeDamageInfoImpl(_Handle.Read<nint>(Schema.GetOffset(0xD4A7564D5B166E20)));
   }
   public ref int HealthLost {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD4A7564D8F4D7431));

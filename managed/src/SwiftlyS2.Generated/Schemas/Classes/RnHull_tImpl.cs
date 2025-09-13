@@ -53,7 +53,7 @@ internal partial class RnHull_tImpl : SchemaClass, RnHull_t {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x856EB4A1CE6E9C28));
   }
   public CRegionSVM RegionSVM {
-    get => new CRegionSVMImpl(_Handle + Schema.GetOffset(0x856EB4A18AD82DC9));
+    get => new CRegionSVMImpl(_Handle.Read<nint>(Schema.GetOffset(0x856EB4A18AD82DC9)));
   }
 
 

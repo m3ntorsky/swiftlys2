@@ -20,7 +20,7 @@ internal partial class CSoundContainerReferenceImpl : SchemaClass, CSoundContain
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>>(Schema.GetOffset(0x4663CCA14E1C4FB4));
   }
   public CVoiceContainerBase Sound1 {
-    get => new CVoiceContainerBaseImpl(_Handle + Schema.GetOffset(0x4663CCA13D8D58B6));
+    get => new CVoiceContainerBaseImpl(_Handle.Read<nint>(Schema.GetOffset(0x4663CCA13D8D58B6)));
   }
 
 

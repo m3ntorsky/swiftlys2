@@ -176,7 +176,7 @@ public ISchemaFixedArray<float> PlayerTravelDistance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1CFE165D59D7AE8F));
   }
   public CCSPlayerPawn NoiseSource {
-    get => new CCSPlayerPawnImpl(_Handle + Schema.GetOffset(0x1CFE165D6FD60BAC));
+    get => new CCSPlayerPawnImpl(_Handle.Read<nint>(Schema.GetOffset(0x1CFE165D6FD60BAC)));
   }
   public CountdownTimer NoiseBendTimer {
     get => new CountdownTimerImpl(_Handle + Schema.GetOffset(0x1CFE165D0106074F));

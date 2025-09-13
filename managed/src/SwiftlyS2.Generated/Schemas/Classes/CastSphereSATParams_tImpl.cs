@@ -29,7 +29,7 @@ internal partial class CastSphereSATParams_tImpl : SchemaClass, CastSphereSATPar
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6282EF48B731A42F));
   }
   public RnHull_t Hull {
-    get => new RnHull_tImpl(_Handle + Schema.GetOffset(0x6282EF48FAD20488));
+    get => new RnHull_tImpl(_Handle.Read<nint>(Schema.GetOffset(0x6282EF48FAD20488)));
   }
 
 

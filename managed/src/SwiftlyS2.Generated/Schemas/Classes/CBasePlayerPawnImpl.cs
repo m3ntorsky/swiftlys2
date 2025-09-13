@@ -14,31 +14,31 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
   }
 
   public CPlayer_WeaponServices WeaponServices {
-    get => new CPlayer_WeaponServicesImpl(_Handle + Schema.GetOffset(0xCA2EED0451B23A93));
+    get => new CPlayer_WeaponServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xCA2EED0451B23A93)));
   }
   public CPlayer_ItemServices ItemServices {
-    get => new CPlayer_ItemServicesImpl(_Handle + Schema.GetOffset(0xCA2EED04AABBB9B8));
+    get => new CPlayer_ItemServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xCA2EED04AABBB9B8)));
   }
   public CPlayer_AutoaimServices AutoaimServices {
-    get => new CPlayer_AutoaimServicesImpl(_Handle + Schema.GetOffset(0xCA2EED0413209115));
+    get => new CPlayer_AutoaimServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xCA2EED0413209115)));
   }
   public CPlayer_ObserverServices ObserverServices {
-    get => new CPlayer_ObserverServicesImpl(_Handle + Schema.GetOffset(0xCA2EED044ED1A579));
+    get => new CPlayer_ObserverServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xCA2EED044ED1A579)));
   }
   public CPlayer_WaterServices WaterServices {
-    get => new CPlayer_WaterServicesImpl(_Handle + Schema.GetOffset(0xCA2EED04A5653452));
+    get => new CPlayer_WaterServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xCA2EED04A5653452)));
   }
   public CPlayer_UseServices UseServices {
-    get => new CPlayer_UseServicesImpl(_Handle + Schema.GetOffset(0xCA2EED04A87C910A));
+    get => new CPlayer_UseServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xCA2EED04A87C910A)));
   }
   public CPlayer_FlashlightServices FlashlightServices {
-    get => new CPlayer_FlashlightServicesImpl(_Handle + Schema.GetOffset(0xCA2EED046CF76641));
+    get => new CPlayer_FlashlightServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xCA2EED046CF76641)));
   }
   public CPlayer_CameraServices CameraServices {
-    get => new CPlayer_CameraServicesImpl(_Handle + Schema.GetOffset(0xCA2EED043B7DFD20));
+    get => new CPlayer_CameraServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xCA2EED043B7DFD20)));
   }
   public CPlayer_MovementServices MovementServices {
-    get => new CPlayer_MovementServicesImpl(_Handle + Schema.GetOffset(0xCA2EED04CF73E28A));
+    get => new CPlayer_MovementServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xCA2EED04CF73E28A)));
   }
   public ref CUtlVector ServerViewAngleChanges {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xCA2EED049182F3B7));
@@ -68,7 +68,7 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xCA2EED04BA12A114));
   }
   public CAI_Expresser Expresser {
-    get => new CAI_ExpresserImpl(_Handle + Schema.GetOffset(0xCA2EED04697CAC2A));
+    get => new CAI_ExpresserImpl(_Handle.Read<nint>(Schema.GetOffset(0xCA2EED04697CAC2A)));
   }
   public ref CHandle<CBasePlayerController> Controller {
     get => ref _Handle.AsRef<CHandle<CBasePlayerController>>(Schema.GetOffset(0xCA2EED0429882A6B));

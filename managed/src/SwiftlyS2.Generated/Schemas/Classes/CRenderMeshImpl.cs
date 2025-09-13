@@ -32,7 +32,7 @@ internal partial class CRenderMeshImpl : SchemaClass, CRenderMesh {
     get => new DynamicMeshDeformParams_tImpl(_Handle + Schema.GetOffset(0x8593C3BF061DBB9B));
   }
   public CRenderGroom GroomData {
-    get => new CRenderGroomImpl(_Handle + Schema.GetOffset(0x8593C3BFCFCDEA93));
+    get => new CRenderGroomImpl(_Handle.Read<nint>(Schema.GetOffset(0x8593C3BFCFCDEA93)));
   }
 
 

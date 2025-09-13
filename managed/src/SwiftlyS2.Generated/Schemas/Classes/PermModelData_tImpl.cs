@@ -71,7 +71,7 @@ internal partial class PermModelData_tImpl : SchemaClass, PermModelData_t {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3E367D0B3670337F));
   }
   public CModelConfigList ModelConfigList {
-    get => new CModelConfigListImpl(_Handle + Schema.GetOffset(0x3E367D0B99085156));
+    get => new CModelConfigListImpl(_Handle.Read<nint>(Schema.GetOffset(0x3E367D0B99085156)));
   }
   public ref CUtlVector<CUtlString> BodyGroupsHiddenInTools {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x3E367D0BE312FA8D));

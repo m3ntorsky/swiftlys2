@@ -29,16 +29,16 @@ internal partial class CBaseMoveBehaviorImpl : CPathKeyFrameImpl, CBaseMoveBehav
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4C94E0603F4A5B51));
   }
   public CPathKeyFrame CurrentKeyFrame {
-    get => new CPathKeyFrameImpl(_Handle + Schema.GetOffset(0x4C94E060AF22FD24));
+    get => new CPathKeyFrameImpl(_Handle.Read<nint>(Schema.GetOffset(0x4C94E060AF22FD24)));
   }
   public CPathKeyFrame TargetKeyFrame {
-    get => new CPathKeyFrameImpl(_Handle + Schema.GetOffset(0x4C94E0606B9E13EA));
+    get => new CPathKeyFrameImpl(_Handle.Read<nint>(Schema.GetOffset(0x4C94E0606B9E13EA)));
   }
   public CPathKeyFrame PreKeyFrame {
-    get => new CPathKeyFrameImpl(_Handle + Schema.GetOffset(0x4C94E0609753526C));
+    get => new CPathKeyFrameImpl(_Handle.Read<nint>(Schema.GetOffset(0x4C94E0609753526C)));
   }
   public CPathKeyFrame PostKeyFrame {
-    get => new CPathKeyFrameImpl(_Handle + Schema.GetOffset(0x4C94E06033EC8ED5));
+    get => new CPathKeyFrameImpl(_Handle.Read<nint>(Schema.GetOffset(0x4C94E06033EC8ED5)));
   }
   public ref float TimeIntoFrame {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4C94E060C6B111CD));

@@ -14,16 +14,16 @@ internal partial class CCSPlayerControllerImpl : CBasePlayerControllerImpl, CCSP
   }
 
   public CCSPlayerController_InGameMoneyServices InGameMoneyServices {
-    get => new CCSPlayerController_InGameMoneyServicesImpl(_Handle + Schema.GetOffset(0x28ECD7A184B7AA82));
+    get => new CCSPlayerController_InGameMoneyServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0x28ECD7A184B7AA82)));
   }
   public CCSPlayerController_InventoryServices InventoryServices {
-    get => new CCSPlayerController_InventoryServicesImpl(_Handle + Schema.GetOffset(0x28ECD7A1E5A0A8C9));
+    get => new CCSPlayerController_InventoryServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0x28ECD7A1E5A0A8C9)));
   }
   public CCSPlayerController_ActionTrackingServices ActionTrackingServices {
-    get => new CCSPlayerController_ActionTrackingServicesImpl(_Handle + Schema.GetOffset(0x28ECD7A1B8174144));
+    get => new CCSPlayerController_ActionTrackingServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0x28ECD7A1B8174144)));
   }
   public CCSPlayerController_DamageServices DamageServices {
-    get => new CCSPlayerController_DamageServicesImpl(_Handle + Schema.GetOffset(0x28ECD7A1A2CE0372));
+    get => new CCSPlayerController_DamageServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0x28ECD7A1A2CE0372)));
   }
   public ref uint Ping {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x28ECD7A15FA2671C));

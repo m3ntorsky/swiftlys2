@@ -17,7 +17,7 @@ internal partial class CBaseAnimGraphImpl : CBaseModelEntityImpl, CBaseAnimGraph
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE501DB1E3087361C));
   }
   public IChoreoServices ChoreoServices {
-    get => new IChoreoServicesImpl(_Handle + Schema.GetOffset(0xE501DB1E89C6D559));
+    get => new IChoreoServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xE501DB1E89C6D559)));
   }
   public ref bool AnimGraphUpdateEnabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE501DB1E724F7FEE));

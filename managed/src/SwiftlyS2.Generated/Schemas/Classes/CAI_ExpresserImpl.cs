@@ -44,7 +44,7 @@ internal partial class CAI_ExpresserImpl : SchemaClass, CAI_Expresser {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFB9DA1AC9722D67B));
   }
   public CBaseFlex Outer {
-    get => new CBaseFlexImpl(_Handle + Schema.GetOffset(0xFB9DA1AC7359CF3A));
+    get => new CBaseFlexImpl(_Handle.Read<nint>(Schema.GetOffset(0xFB9DA1AC7359CF3A)));
   }
 
 

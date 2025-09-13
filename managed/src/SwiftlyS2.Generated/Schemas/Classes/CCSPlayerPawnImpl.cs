@@ -14,22 +14,22 @@ internal partial class CCSPlayerPawnImpl : CCSPlayerPawnBaseImpl, CCSPlayerPawn 
   }
 
   public CCSPlayer_BulletServices BulletServices {
-    get => new CCSPlayer_BulletServicesImpl(_Handle + Schema.GetOffset(0xC7614AAB8E2741BB));
+    get => new CCSPlayer_BulletServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xC7614AAB8E2741BB)));
   }
   public CCSPlayer_HostageServices HostageServices {
-    get => new CCSPlayer_HostageServicesImpl(_Handle + Schema.GetOffset(0xC7614AAB63EBD1D8));
+    get => new CCSPlayer_HostageServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xC7614AAB63EBD1D8)));
   }
   public CCSPlayer_BuyServices BuyServices {
-    get => new CCSPlayer_BuyServicesImpl(_Handle + Schema.GetOffset(0xC7614AAB807A410D));
+    get => new CCSPlayer_BuyServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xC7614AAB807A410D)));
   }
   public CCSPlayer_ActionTrackingServices ActionTrackingServices {
-    get => new CCSPlayer_ActionTrackingServicesImpl(_Handle + Schema.GetOffset(0xC7614AABB8174144));
+    get => new CCSPlayer_ActionTrackingServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xC7614AABB8174144)));
   }
   public CCSPlayer_RadioServices RadioServices {
-    get => new CCSPlayer_RadioServicesImpl(_Handle + Schema.GetOffset(0xC7614AAB6C70C036));
+    get => new CCSPlayer_RadioServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xC7614AAB6C70C036)));
   }
   public CCSPlayer_DamageReactServices DamageReactServices {
-    get => new CCSPlayer_DamageReactServicesImpl(_Handle + Schema.GetOffset(0xC7614AABF4CD61D9));
+    get => new CCSPlayer_DamageReactServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xC7614AABF4CD61D9)));
   }
   public ref ushort CharacterDefIndex {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xC7614AABA96BAF31));
@@ -278,7 +278,7 @@ public ISchemaFixedString RagdollDamageWeaponName {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB3697C5BB));
   }
   public CCSBot Bot {
-    get => new CCSBotImpl(_Handle + Schema.GetOffset(0xC7614AAB172AF0B4));
+    get => new CCSBotImpl(_Handle.Read<nint>(Schema.GetOffset(0xC7614AAB172AF0B4)));
   }
   public ref bool BotAllowActive {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB673BB7CD));

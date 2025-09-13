@@ -14,7 +14,7 @@ internal partial class CCSPointScriptImpl : CBasePulseGraphInstanceImpl, CCSPoin
   }
 
   public CCSPointScriptEntity Parent {
-    get => new CCSPointScriptEntityImpl(_Handle + Schema.GetOffset(0xE179A65B89C7C3F));
+    get => new CCSPointScriptEntityImpl(_Handle.Read<nint>(Schema.GetOffset(0xE179A65B89C7C3F)));
   }
 
 

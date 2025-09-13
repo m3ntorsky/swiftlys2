@@ -494,7 +494,7 @@ public ISchemaFixedArray<int> EndMatchMapGroupVoteOptions {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6295CF65AE3AF0A5));
   }
   public CCSGameModeRules GameModeRules {
-    get => new CCSGameModeRulesImpl(_Handle + Schema.GetOffset(0x6295CF650B12F105));
+    get => new CCSGameModeRulesImpl(_Handle.Read<nint>(Schema.GetOffset(0x6295CF650B12F105)));
   }
   public SchemaUntypedField BtGlobalBlackboard {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6295CF654E62FE91));

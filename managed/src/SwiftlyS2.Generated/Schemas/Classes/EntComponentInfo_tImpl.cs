@@ -32,7 +32,7 @@ internal partial class EntComponentInfo_tImpl : SchemaClass, EntComponentInfo_t 
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xDEAD526ACE6E9C28));
   }
   public CEntityComponentHelper BaseClassComponentHelper {
-    get => new CEntityComponentHelperImpl(_Handle + Schema.GetOffset(0xDEAD526A9799DD51));
+    get => new CEntityComponentHelperImpl(_Handle.Read<nint>(Schema.GetOffset(0xDEAD526A9799DD51)));
   }
 
 

@@ -20,7 +20,7 @@ internal partial class ResponseParamsImpl : SchemaClass, ResponseParams {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x5C5BE8C49C677A2C));
   }
   public ResponseFollowup Followup {
-    get => new ResponseFollowupImpl(_Handle + Schema.GetOffset(0x5C5BE8C481D8C38F));
+    get => new ResponseFollowupImpl(_Handle.Read<nint>(Schema.GetOffset(0x5C5BE8C481D8C38F)));
   }
 
 

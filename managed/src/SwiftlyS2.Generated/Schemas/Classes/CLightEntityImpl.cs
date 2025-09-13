@@ -14,7 +14,7 @@ internal partial class CLightEntityImpl : CBaseModelEntityImpl, CLightEntity {
   }
 
   public CLightComponent CLightComponent {
-    get => new CLightComponentImpl(_Handle + Schema.GetOffset(0xA3C95F05104F0185));
+    get => new CLightComponentImpl(_Handle.Read<nint>(Schema.GetOffset(0xA3C95F05104F0185)));
   }
 
   public void CLightComponentUpdated() {

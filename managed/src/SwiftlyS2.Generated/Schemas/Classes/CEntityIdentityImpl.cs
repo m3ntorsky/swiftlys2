@@ -35,16 +35,16 @@ internal partial class CEntityIdentityImpl : SchemaClass, CEntityIdentity {
     get => new ChangeAccessorFieldPathIndex_tImpl(_Handle + Schema.GetOffset(0xAE42345F2DA3F47A));
   }
   public CEntityIdentity Prev {
-    get => new CEntityIdentityImpl(_Handle + Schema.GetOffset(0xAE42345FD49AD9AA));
+    get => new CEntityIdentityImpl(_Handle.Read<nint>(Schema.GetOffset(0xAE42345FD49AD9AA)));
   }
   public CEntityIdentity Next {
-    get => new CEntityIdentityImpl(_Handle + Schema.GetOffset(0xAE42345F32B11E0E));
+    get => new CEntityIdentityImpl(_Handle.Read<nint>(Schema.GetOffset(0xAE42345F32B11E0E)));
   }
   public CEntityIdentity PrevByClass {
-    get => new CEntityIdentityImpl(_Handle + Schema.GetOffset(0xAE42345F1F46E9A5));
+    get => new CEntityIdentityImpl(_Handle.Read<nint>(Schema.GetOffset(0xAE42345F1F46E9A5)));
   }
   public CEntityIdentity NextByClass {
-    get => new CEntityIdentityImpl(_Handle + Schema.GetOffset(0xAE42345F908D6209));
+    get => new CEntityIdentityImpl(_Handle.Read<nint>(Schema.GetOffset(0xAE42345F908D6209)));
   }
 
   public void NameStringableIndexUpdated() {

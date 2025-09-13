@@ -14,13 +14,13 @@ internal partial class CNewParticleEffectImpl : IParticleEffectImpl, CNewParticl
   }
 
   public CNewParticleEffect Next {
-    get => new CNewParticleEffectImpl(_Handle + Schema.GetOffset(0x80246F2332B11E0E));
+    get => new CNewParticleEffectImpl(_Handle.Read<nint>(Schema.GetOffset(0x80246F2332B11E0E)));
   }
   public CNewParticleEffect Prev {
-    get => new CNewParticleEffectImpl(_Handle + Schema.GetOffset(0x80246F23D49AD9AA));
+    get => new CNewParticleEffectImpl(_Handle.Read<nint>(Schema.GetOffset(0x80246F23D49AD9AA)));
   }
   public IParticleCollection Particles {
-    get => new IParticleCollectionImpl(_Handle + Schema.GetOffset(0x80246F230264D666));
+    get => new IParticleCollectionImpl(_Handle.Read<nint>(Schema.GetOffset(0x80246F230264D666)));
   }
   public ref CString DebugName {
     get => ref _Handle.AsRef<CString>(Schema.GetOffset(0x80246F23831E1E2D));
@@ -71,10 +71,10 @@ internal partial class CNewParticleEffectImpl : IParticleEffectImpl, CNewParticl
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x80246F23B731A42F));
   }
   public PARTICLE_EHANDLE__ Owner {
-    get => new PARTICLE_EHANDLE__Impl(_Handle + Schema.GetOffset(0x80246F23F6D89572));
+    get => new PARTICLE_EHANDLE__Impl(_Handle.Read<nint>(Schema.GetOffset(0x80246F23F6D89572)));
   }
   public CParticleProperty OwningParticleProperty {
-    get => new CParticlePropertyImpl(_Handle + Schema.GetOffset(0x80246F2374DD533C));
+    get => new CParticlePropertyImpl(_Handle.Read<nint>(Schema.GetOffset(0x80246F2374DD533C)));
   }
   public ref float FreezeTransitionStart {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x80246F233AB5D201));

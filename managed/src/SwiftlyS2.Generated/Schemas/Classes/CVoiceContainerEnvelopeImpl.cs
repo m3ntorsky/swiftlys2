@@ -17,7 +17,7 @@ internal partial class CVoiceContainerEnvelopeImpl : CVoiceContainerBaseImpl, CV
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCVoiceContainerBase>>(Schema.GetOffset(0x5CEF97E74E1C4FB4));
   }
   public CVoiceContainerAnalysisBase AnalysisContainer {
-    get => new CVoiceContainerAnalysisBaseImpl(_Handle + Schema.GetOffset(0x5CEF97E74C85F50E));
+    get => new CVoiceContainerAnalysisBaseImpl(_Handle.Read<nint>(Schema.GetOffset(0x5CEF97E74C85F50E)));
   }
 
 

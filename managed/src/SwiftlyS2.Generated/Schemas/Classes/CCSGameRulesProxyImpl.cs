@@ -14,7 +14,7 @@ internal partial class CCSGameRulesProxyImpl : CGameRulesProxyImpl, CCSGameRules
   }
 
   public CCSGameRules GameRules {
-    get => new CCSGameRulesImpl(_Handle + Schema.GetOffset(0x242D3ADB925C1F40));
+    get => new CCSGameRulesImpl(_Handle.Read<nint>(Schema.GetOffset(0x242D3ADB925C1F40)));
   }
 
   public void GameRulesUpdated() {

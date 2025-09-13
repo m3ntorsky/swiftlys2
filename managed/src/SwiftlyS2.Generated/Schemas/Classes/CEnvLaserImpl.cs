@@ -17,7 +17,7 @@ internal partial class CEnvLaserImpl : CBeamImpl, CEnvLaser {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x83A2D3C8C257F4D));
   }
   public CSprite Sprite {
-    get => new CSpriteImpl(_Handle + Schema.GetOffset(0x83A2D3CEFBFA166));
+    get => new CSpriteImpl(_Handle.Read<nint>(Schema.GetOffset(0x83A2D3CEFBFA166)));
   }
   public ref CUtlSymbolLarge SpriteName {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x83A2D3C096530FF));

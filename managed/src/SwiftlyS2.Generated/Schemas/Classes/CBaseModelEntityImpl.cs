@@ -14,7 +14,7 @@ internal partial class CBaseModelEntityImpl : CBaseEntityImpl, CBaseModelEntity 
   }
 
   public CRenderComponent CRenderComponent {
-    get => new CRenderComponentImpl(_Handle + Schema.GetOffset(0x517849F7E8F59505));
+    get => new CRenderComponentImpl(_Handle.Read<nint>(Schema.GetOffset(0x517849F7E8F59505)));
   }
   public CHitboxComponent CHitboxComponent {
     get => new CHitboxComponentImpl(_Handle + Schema.GetOffset(0x517849F70E786123));
@@ -50,7 +50,7 @@ internal partial class CBaseModelEntityImpl : CBaseEntityImpl, CBaseModelEntity 
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x517849F76D7C6A3C));
   }
   public CDestructiblePartsSystemComponent DestructiblePartsSystemComponent {
-    get => new CDestructiblePartsSystemComponentImpl(_Handle + Schema.GetOffset(0x517849F77992C14B));
+    get => new CDestructiblePartsSystemComponentImpl(_Handle.Read<nint>(Schema.GetOffset(0x517849F77992C14B)));
   }
   public ref HitGroup_t LastHitGroup {
     get => ref _Handle.AsRef<HitGroup_t>(Schema.GetOffset(0x517849F7EE206371));

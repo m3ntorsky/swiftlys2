@@ -23,7 +23,7 @@ internal partial class CSkyCameraImpl : CBaseEntityImpl, CSkyCamera {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xCD44EF44434C3DB4));
   }
   public CSkyCamera Next {
-    get => new CSkyCameraImpl(_Handle + Schema.GetOffset(0xCD44EF4432B11E0E));
+    get => new CSkyCameraImpl(_Handle.Read<nint>(Schema.GetOffset(0xCD44EF4432B11E0E)));
   }
 
   public void SkyboxDataUpdated() {

@@ -89,7 +89,7 @@ internal partial class CPointCameraImpl : CBaseEntityImpl, CPointCamera {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3E5CC0836387DB60));
   }
   public CPointCamera Next {
-    get => new CPointCameraImpl(_Handle + Schema.GetOffset(0x3E5CC08332B11E0E));
+    get => new CPointCameraImpl(_Handle.Read<nint>(Schema.GetOffset(0x3E5CC08332B11E0E)));
   }
 
   public void FOVUpdated() {

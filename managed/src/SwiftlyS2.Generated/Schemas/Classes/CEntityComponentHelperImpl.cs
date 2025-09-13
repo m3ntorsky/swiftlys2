@@ -17,13 +17,13 @@ internal partial class CEntityComponentHelperImpl : SchemaClass, CEntityComponen
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x714DB384DC74A14C));
   }
   public EntComponentInfo_t Info {
-    get => new EntComponentInfo_tImpl(_Handle + Schema.GetOffset(0x714DB3840F0BFD1B));
+    get => new EntComponentInfo_tImpl(_Handle.Read<nint>(Schema.GetOffset(0x714DB3840F0BFD1B)));
   }
   public ref int Priority {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x714DB384E7EFB335));
   }
   public CEntityComponentHelper Next {
-    get => new CEntityComponentHelperImpl(_Handle + Schema.GetOffset(0x714DB38432B11E0E));
+    get => new CEntityComponentHelperImpl(_Handle.Read<nint>(Schema.GetOffset(0x714DB38432B11E0E)));
   }
 
 

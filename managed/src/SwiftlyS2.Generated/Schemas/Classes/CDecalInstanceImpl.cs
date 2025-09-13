@@ -83,10 +83,10 @@ internal partial class CDecalInstanceImpl : SchemaClass, CDecalInstance {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x88CA447C8A2CC817));
   }
   public CDecalInstance Next {
-    get => new CDecalInstanceImpl(_Handle + Schema.GetOffset(0x88CA447C32B11E0E));
+    get => new CDecalInstanceImpl(_Handle.Read<nint>(Schema.GetOffset(0x88CA447C32B11E0E)));
   }
   public CDecalInstance Prev {
-    get => new CDecalInstanceImpl(_Handle + Schema.GetOffset(0x88CA447CD49AD9AA));
+    get => new CDecalInstanceImpl(_Handle.Read<nint>(Schema.GetOffset(0x88CA447CD49AD9AA)));
   }
 
 

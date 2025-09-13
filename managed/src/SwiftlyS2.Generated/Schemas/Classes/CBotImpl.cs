@@ -14,10 +14,10 @@ internal partial class CBotImpl : SchemaClass, CBot {
   }
 
   public CCSPlayerController Controller {
-    get => new CCSPlayerControllerImpl(_Handle + Schema.GetOffset(0x804AC5DB8F2DD553));
+    get => new CCSPlayerControllerImpl(_Handle.Read<nint>(Schema.GetOffset(0x804AC5DB8F2DD553)));
   }
   public CCSPlayerPawn Player {
-    get => new CCSPlayerPawnImpl(_Handle + Schema.GetOffset(0x804AC5DB2EC01D0E));
+    get => new CCSPlayerPawnImpl(_Handle.Read<nint>(Schema.GetOffset(0x804AC5DB2EC01D0E)));
   }
   public ref bool HasSpawned {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x804AC5DBC2790687));

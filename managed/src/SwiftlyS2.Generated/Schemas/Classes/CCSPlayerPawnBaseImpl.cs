@@ -17,7 +17,7 @@ internal partial class CCSPlayerPawnBaseImpl : CBasePlayerPawnImpl, CCSPlayerPaw
     get => new CTouchExpansionComponentImpl(_Handle + Schema.GetOffset(0xD8F889768A159531));
   }
   public CCSPlayer_PingServices PingServices {
-    get => new CCSPlayer_PingServicesImpl(_Handle + Schema.GetOffset(0xD8F889767A1487DF));
+    get => new CCSPlayer_PingServicesImpl(_Handle.Read<nint>(Schema.GetOffset(0xD8F889767A1487DF)));
   }
   public GameTime_t BlindUntilTime {
     get => new GameTime_tImpl(_Handle + Schema.GetOffset(0xD8F889765869ECC5));

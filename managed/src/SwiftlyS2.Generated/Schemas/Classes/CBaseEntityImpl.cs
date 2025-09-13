@@ -14,7 +14,7 @@ internal partial class CBaseEntityImpl : CEntityInstanceImpl, CBaseEntity {
   }
 
   public CBodyComponent CBodyComponent {
-    get => new CBodyComponentImpl(_Handle + Schema.GetOffset(0x9DC483B8D116E3C5));
+    get => new CBodyComponentImpl(_Handle.Read<nint>(Schema.GetOffset(0x9DC483B8D116E3C5)));
   }
   public CNetworkTransmitComponent NetworkTransmitComponent {
     get => new CNetworkTransmitComponentImpl(_Handle + Schema.GetOffset(0x9DC483B8FF010CE4));
@@ -158,7 +158,7 @@ internal partial class CBaseEntityImpl : CEntityInstanceImpl, CBaseEntity {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9DC483B87BDCED73));
   }
   public CCollisionProperty Collision {
-    get => new CCollisionPropertyImpl(_Handle + Schema.GetOffset(0x9DC483B8C1E3AAA1));
+    get => new CCollisionPropertyImpl(_Handle.Read<nint>(Schema.GetOffset(0x9DC483B8C1E3AAA1)));
   }
   public ref CHandle<CBaseEntity> EffectEntity {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x9DC483B86BA85951));
@@ -251,7 +251,7 @@ internal partial class CBaseEntityImpl : CEntityInstanceImpl, CBaseEntity {
     get => ref _Handle.AsRef<BloodType>(Schema.GetOffset(0x9DC483B8E472F393));
   }
   public CPulseGraphInstance_ServerEntity PulseGraphInstance {
-    get => new CPulseGraphInstance_ServerEntityImpl(_Handle + Schema.GetOffset(0x9DC483B87D608947));
+    get => new CPulseGraphInstance_ServerEntityImpl(_Handle.Read<nint>(Schema.GetOffset(0x9DC483B87D608947)));
   }
 
   public void CBodyComponentUpdated() {

@@ -14,7 +14,7 @@ internal partial class CBodyComponentImpl : CEntityComponentImpl, CBodyComponent
   }
 
   public CGameSceneNode SceneNode {
-    get => new CGameSceneNodeImpl(_Handle + Schema.GetOffset(0x4EF2C865D7D13495));
+    get => new CGameSceneNodeImpl(_Handle.Read<nint>(Schema.GetOffset(0x4EF2C865D7D13495)));
   }
   public CNetworkVarChainer __m_pChainEntity {
     get => new CNetworkVarChainerImpl(_Handle + Schema.GetOffset(0x4EF2C865F63F0E7D));

@@ -19,6 +19,14 @@ blacklisted_classes = [
   "FeSimdTri_t"
 ]
 
+
+managed_types = [
+  "SchemaClass",
+  "SchemaField",
+  "SchemaFixedArray",
+  "SchemaFixedString"
+]
+
 def render_template(template, params):
   for param, value in params.items():
     template = template.replace(f"${param}$", str(value))
@@ -41,6 +49,7 @@ class Writer():
     self.class_ref_field_template = open("templates/class_ref_field_template.cs", "r").read()
     self.class_value_field_template = open("templates/class_value_field_template.cs", "r").read()
     self.class_fixed_array_field_template = open("templates/class_fixed_array_field_template.cs", "r").read()
+    self.class_ptr_field_template = open("templates/class_ptr_field_template.cs", "r").read()
 
     self.interface_field_template = open("templates/interface_field_template.cs", "r").read()
     self.class_template = open("templates/class_template.cs", "r").read()
@@ -92,7 +101,10 @@ class Writer():
         elif field_info["IS_VALUE_TYPE"]:
           fields.append(render_template(self.class_value_field_template, field_info))
         else:
-          fields.append(render_template(self.class_ref_field_template, field_info))
+          if field_info["KIND"] == "ptr" and field_info["IMPL_TYPE"] not in managed_types:
+            fields.append(render_template(self.class_ptr_field_template, field_info))
+          else:
+            fields.append(render_template(self.class_ref_field_template, field_info))
 
     params = {
       "CLASS_NAME": get_impl_name(self.class_name),

@@ -29,7 +29,7 @@ internal partial class CTriggerPushImpl : CBaseTriggerImpl, CTriggerPush {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x92E0F2F2AB7E7D7F));
   }
   public CPathSimple PathSimple {
-    get => new CPathSimpleImpl(_Handle + Schema.GetOffset(0x92E0F2F2FA868DCC));
+    get => new CPathSimpleImpl(_Handle.Read<nint>(Schema.GetOffset(0x92E0F2F2FA868DCC)));
   }
   public ref uint SplinePushType {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x92E0F2F229A29DE0));
