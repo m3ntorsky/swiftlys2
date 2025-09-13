@@ -13,7 +13,7 @@ public abstract class BasePlugin : IPlugin {
 
   public virtual void ConfigureSharedServices(IServiceCollection sharedServices) {}
 
-  public virtual void InjectSharedServices(IServiceProvider sharedProvider) {}
+  public virtual void UseSharedServices(IServiceProvider sharedProvider) {}
 
   public abstract void Load(ISwiftlyCore core);
 

@@ -41,7 +41,7 @@ internal class PluginManager {
 
     var sharedProvider = sharedServices.BuildServiceProvider();
 
-    _Plugins.ForEach(context => context.Plugin.InjectSharedServices(sharedProvider));
+    _Plugins.ForEach(context => context.Plugin.UseSharedServices(sharedProvider));
   }
 
   public PluginContext? LoadPlugin(
@@ -101,6 +101,6 @@ internal class PluginManager {
 
     _Plugins.ForEach(context => context.Plugin.ConfigureSharedServices(sharedServices));
     var sharedProvider = sharedServices.BuildServiceProvider();
-    _Plugins.ForEach(context => context.Plugin.InjectSharedServices(sharedProvider));
+    _Plugins.ForEach(context => context.Plugin.UseSharedServices(sharedProvider));
   }
 }

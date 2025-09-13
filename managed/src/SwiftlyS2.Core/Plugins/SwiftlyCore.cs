@@ -38,7 +38,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     _ServiceProvider.Dispose();
   }
 
-  IEventSubscriber ISwiftlyCore.CustomEvents => CustomEventSubscriber;
+  IEventSubscriber ISwiftlyCore.Events => CustomEventSubscriber;
   IPluginConfigurationService ISwiftlyCore.Configuration => Configuration;
 
 }

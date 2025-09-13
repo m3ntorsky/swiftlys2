@@ -12,7 +12,7 @@ public interface ISwiftlyCore {
   /// <summary>
   /// Custom event subscriber.
   /// </summary>
-  public IEventSubscriber CustomEvents { get; }
+  public IEventSubscriber Events { get; }
 
 
 
