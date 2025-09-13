@@ -10,15 +10,15 @@ public partial interface CAnimData : ISchemaClass {
   
   public ref CBufferString Name { get; }
   
-// CUtlVector< CAnimDesc >
+  // CUtlVector< CAnimDesc >
   public ref CUtlVector AnimArray { get; }
   
-// CUtlVector< CAnimDecoder >
+  // CUtlVector< CAnimDecoder >
   public ref CUtlVector DecoderArray { get; }
   
   public ref int MaxUniqueFrameIndex { get; }
   
-// CUtlVector< CAnimFrameSegment >
+  // CUtlVector< CAnimFrameSegment >
   public ref CUtlVector SegmentArray { get; }
 
 

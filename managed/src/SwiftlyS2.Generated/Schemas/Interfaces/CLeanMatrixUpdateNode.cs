@@ -8,8 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLeanMatrixUpdateNode : CLeafUpdateNode {
 
   
+  // int32[3]
   public SchemaUntypedField FrameCorners { get; }
   
+  // CPoseHandle
   public SchemaUntypedField Poses { get; }
   
   public CAnimInputDamping Damping { get; }

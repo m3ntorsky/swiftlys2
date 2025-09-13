@@ -10,6 +10,7 @@ public partial interface PulseGraphExecutionHistoryNodeDesc_t : ISchemaClass {
   
   public ref CBufferString StrCellDesc { get; }
   
+  // PulseSymbol_t
   public SchemaUntypedField StrBindingName { get; }
 
 

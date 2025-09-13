@@ -12,6 +12,7 @@ public partial interface CNmIDComparisonNode__CDefinition : CNmBoolValueNode__CD
   
   public ref CNmIDComparisonNode__Comparison_t Comparison { get; }
   
+  // CUtlLeanVectorFixedGrowable< CGlobalSymbol, 4 >
   public SchemaUntypedField ComparisionIDs { get; }
 
 

@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDampedValueComponentUpdater : CAnimComponentUpdater {
 
   
-// CUtlVector< CDampedValueUpdateItem >
+  // CUtlVector< CDampedValueUpdateItem >
   public ref CUtlVector Items { get; }
 
 

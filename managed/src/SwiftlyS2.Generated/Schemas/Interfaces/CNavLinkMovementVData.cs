@@ -8,13 +8,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNavLinkMovementVData : ISchemaClass {
 
   
+  // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >
   public SchemaUntypedField ToolsOnlyOwnerModelName { get; }
   
   public ref bool IsInterpolated { get; }
   
   public ref uint RecommendedDistance { get; }
   
-// CUtlVector< CNavLinkAnimgraphVar >
+  // CUtlVector< CNavLinkAnimgraphVar >
   public ref CUtlVector AnimgraphVars { get; }
 
 

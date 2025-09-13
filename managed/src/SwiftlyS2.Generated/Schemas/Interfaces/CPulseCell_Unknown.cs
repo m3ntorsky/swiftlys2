@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Unknown : CPulseCell_Base {
 
   
+  // KeyValues3
   public SchemaUntypedField UnknownKeys { get; }
 
 

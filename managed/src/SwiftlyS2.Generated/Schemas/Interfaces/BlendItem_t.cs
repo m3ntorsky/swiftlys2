@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface BlendItem_t : ISchemaClass {
 
   
-// CUtlVector< TagSpan_t >
+  // CUtlVector< TagSpan_t >
   public ref CUtlVector Tags { get; }
   
   public CAnimUpdateNodeRef Child { get; }

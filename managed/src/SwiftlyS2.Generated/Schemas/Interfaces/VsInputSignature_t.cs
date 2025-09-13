@@ -8,10 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VsInputSignature_t : ISchemaClass {
 
   
-// CUtlVector< VsInputSignatureElement_t >
+  // CUtlVector< VsInputSignatureElement_t >
   public ref CUtlVector Elems { get; }
   
-// CUtlVector< VsInputSignatureElement_t >
+  // CUtlVector< VsInputSignatureElement_t >
   public ref CUtlVector Depth_elems { get; }
 
 

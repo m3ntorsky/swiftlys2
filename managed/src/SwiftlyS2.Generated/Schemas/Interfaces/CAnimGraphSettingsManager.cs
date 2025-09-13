@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimGraphSettingsManager : ISchemaClass {
 
   
-// CUtlVector< CSmartPtr< CAnimGraphSettingsGroup > >
+  // CUtlVector< CSmartPtr< CAnimGraphSettingsGroup > >
   public ref CUtlVector SettingsGroups { get; }
 
 

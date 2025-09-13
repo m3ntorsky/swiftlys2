@@ -10,10 +10,10 @@ public partial interface CNmIKRig : ISchemaClass {
   
   public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton { get; }
   
-// CUtlVector< CNmIKBody >
+  // CUtlVector< CNmIKBody >
   public ref CUtlVector Bodies { get; }
   
-// CUtlVector< CNmIKJoint >
+  // CUtlVector< CNmIKJoint >
   public ref CUtlVector Joints { get; }
 
 

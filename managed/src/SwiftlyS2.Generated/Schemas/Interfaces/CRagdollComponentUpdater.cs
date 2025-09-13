@@ -8,17 +8,17 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRagdollComponentUpdater : CAnimComponentUpdater {
 
   
-// CUtlVector< CAnimNodePath >
+  // CUtlVector< CAnimNodePath >
   public ref CUtlVector RagdollNodePaths { get; }
   
-// CUtlVector< CAnimNodePath >
+  // CUtlVector< CAnimNodePath >
   public ref CUtlVector FollowAttachmentNodePaths { get; }
   
   public ref CUtlVector<int> BoneIndices { get; }
   
   public ref CUtlVector<CUtlString> BoneNames { get; }
   
-// CUtlVector< WeightList >
+  // CUtlVector< WeightList >
   public ref CUtlVector WeightLists { get; }
   
   public ref CUtlVector<int> BoneToWeightIndices { get; }

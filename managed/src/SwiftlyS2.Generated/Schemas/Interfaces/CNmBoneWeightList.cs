@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmBoneWeightList : ISchemaClass {
 
   
+  // CResourceName
   public SchemaUntypedField SkeletonName { get; }
   
   public ref CUtlVector<CGlobalSymbol> BoneIDs { get; }

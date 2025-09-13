@@ -10,7 +10,7 @@ public partial interface CDynamicNavConnectionsVolume : CTriggerMultiple {
   
   public ref CUtlSymbolLarge ConnectionTarget { get; }
   
-// CUtlVector< DynamicVolumeDef_t >
+  // CUtlVector< DynamicVolumeDef_t >
   public ref CUtlVector Connections { get; }
   
   public ref CGlobalSymbol TransitionType { get; }

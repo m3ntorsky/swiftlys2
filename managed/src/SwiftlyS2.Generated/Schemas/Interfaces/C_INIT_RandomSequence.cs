@@ -16,7 +16,7 @@ public partial interface C_INIT_RandomSequence : CParticleFunctionInitializer {
   
   public ref bool Linear { get; }
   
-// CUtlVector< SequenceWeightedList_t >
+  // CUtlVector< SequenceWeightedList_t >
   public ref CUtlVector WeightedList { get; }
 
 

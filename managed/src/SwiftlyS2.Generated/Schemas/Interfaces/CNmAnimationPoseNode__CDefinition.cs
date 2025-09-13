@@ -12,6 +12,7 @@ public partial interface CNmAnimationPoseNode__CDefinition : CNmPoseNode__CDefin
   
   public ref short DataSlotIdx { get; }
   
+  // Range_t
   public SchemaUntypedField InputTimeRemapRange { get; }
   
   public ref float UserSpecifiedTime { get; }

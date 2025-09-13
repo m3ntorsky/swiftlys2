@@ -8,33 +8,33 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface WorldNode_t : ISchemaClass {
 
   
-// CUtlVector< SceneObject_t >
+  // CUtlVector< SceneObject_t >
   public ref CUtlVector SceneObjects { get; }
   
-// CUtlVector< InfoOverlayData_t >
+  // CUtlVector< InfoOverlayData_t >
   public ref CUtlVector InfoOverlays { get; }
   
   public ref CUtlVector<ushort> VisClusterMembership { get; }
   
-// CUtlVector< AggregateSceneObject_t >
+  // CUtlVector< AggregateSceneObject_t >
   public ref CUtlVector AggregateSceneObjects { get; }
   
-// CUtlVector< ClutterSceneObject_t >
+  // CUtlVector< ClutterSceneObject_t >
   public ref CUtlVector ClutterSceneObjects { get; }
   
-// CUtlVector< ExtraVertexStreamOverride_t >
+  // CUtlVector< ExtraVertexStreamOverride_t >
   public ref CUtlVector ExtraVertexStreamOverrides { get; }
   
-// CUtlVector< MaterialOverride_t >
+  // CUtlVector< MaterialOverride_t >
   public ref CUtlVector MaterialOverrides { get; }
   
-// CUtlVector< WorldNodeOnDiskBufferData_t >
+  // CUtlVector< WorldNodeOnDiskBufferData_t >
   public ref CUtlVector ExtraVertexStreams { get; }
   
-// CUtlVector< AggregateInstanceStreamOnDiskData_t >
+  // CUtlVector< AggregateInstanceStreamOnDiskData_t >
   public ref CUtlVector AggregateInstanceStreams { get; }
   
-// CUtlVector< AggregateVertexAlbedoStreamOnDiskData_t >
+  // CUtlVector< AggregateVertexAlbedoStreamOnDiskData_t >
   public ref CUtlVector VertexAlbedoStreams { get; }
   
   public ref CUtlVector<CUtlString> LayerNames { get; }

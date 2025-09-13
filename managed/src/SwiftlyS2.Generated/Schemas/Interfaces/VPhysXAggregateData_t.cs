@@ -22,16 +22,16 @@ public partial interface VPhysXAggregateData_t : ISchemaClass {
   
   public ref CUtlVector<matrix3x4_t> BindPose { get; }
   
-// CUtlVector< VPhysXBodyPart_t >
+  // CUtlVector< VPhysXBodyPart_t >
   public ref CUtlVector Parts { get; }
   
-// CUtlVector< PhysShapeMarkup_t >
+  // CUtlVector< PhysShapeMarkup_t >
   public ref CUtlVector ShapeMarkups { get; }
   
-// CUtlVector< VPhysXConstraint2_t >
+  // CUtlVector< VPhysXConstraint2_t >
   public ref CUtlVector Constraints2 { get; }
   
-// CUtlVector< VPhysXJoint_t >
+  // CUtlVector< VPhysXJoint_t >
   public ref CUtlVector Joints { get; }
   
   public PhysFeModelDesc_t FeModel { get; }
@@ -40,7 +40,7 @@ public partial interface VPhysXAggregateData_t : ISchemaClass {
   
   public ref CUtlVector<uint> SurfacePropertyHashes { get; }
   
-// CUtlVector< VPhysXCollisionAttributes_t >
+  // CUtlVector< VPhysXCollisionAttributes_t >
   public ref CUtlVector CollisionAttributes { get; }
   
   public ref CUtlVector<CUtlString> DebugPartNames { get; }

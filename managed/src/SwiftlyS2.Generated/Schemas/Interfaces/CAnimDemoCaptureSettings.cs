@@ -34,10 +34,10 @@ public partial interface CAnimDemoCaptureSettings : ISchemaClass {
   
   public ref EDemoBoneSelectionMode BoneSelectionMode { get; }
   
-// CUtlVector< BoneDemoCaptureSettings_t >
+  // CUtlVector< BoneDemoCaptureSettings_t >
   public ref CUtlVector Bones { get; }
   
-// CUtlVector< IKDemoCaptureSettings_t >
+  // CUtlVector< IKDemoCaptureSettings_t >
   public ref CUtlVector IkChains { get; }
 
 

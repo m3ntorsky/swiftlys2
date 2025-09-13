@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Value_Gradient : CPulseCell_BaseValue {
 
   
+  // CColorGradient
   public SchemaUntypedField Gradient { get; }
 
 

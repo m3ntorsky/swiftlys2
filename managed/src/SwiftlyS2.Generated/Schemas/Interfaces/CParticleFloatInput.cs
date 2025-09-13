@@ -14,6 +14,7 @@ public partial interface CParticleFloatInput : CParticleInput {
   
   public ref float LiteralValue { get; }
   
+  // CParticleNamedValueRef
   public SchemaUntypedField NamedValue { get; }
   
   public ref int ControlPoint { get; }
@@ -100,6 +101,7 @@ public partial interface CParticleFloatInput : CParticleInput {
   
   public ref float BiasParameter { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField Curve { get; }
 
 

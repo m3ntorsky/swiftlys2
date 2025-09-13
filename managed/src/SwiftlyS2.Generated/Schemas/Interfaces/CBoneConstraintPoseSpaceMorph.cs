@@ -14,7 +14,7 @@ public partial interface CBoneConstraintPoseSpaceMorph : CBoneConstraintBase {
   
   public ref CUtlVector<CUtlString> OutputMorph { get; }
   
-// CUtlVector< CBoneConstraintPoseSpaceMorph::Input_t >
+  // CUtlVector< CBoneConstraintPoseSpaceMorph::Input_t >
   public ref CUtlVector InputList { get; }
   
   public ref bool Clamp { get; }

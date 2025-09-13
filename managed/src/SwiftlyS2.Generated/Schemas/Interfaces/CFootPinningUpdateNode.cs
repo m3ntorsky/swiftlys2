@@ -12,7 +12,7 @@ public partial interface CFootPinningUpdateNode : CUnaryUpdateNode {
   
   public ref FootPinningTimingSource TimingSource { get; }
   
-// CUtlVector< CAnimParamHandle >
+  // CUtlVector< CAnimParamHandle >
   public ref CUtlVector Params { get; }
   
   public ref bool ResetChild { get; }

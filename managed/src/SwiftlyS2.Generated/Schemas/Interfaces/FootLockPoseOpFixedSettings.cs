@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FootLockPoseOpFixedSettings : ISchemaClass {
 
   
-// CUtlVector< FootFixedData_t >
+  // CUtlVector< FootFixedData_t >
   public ref CUtlVector FootInfo { get; }
   
   public CAnimInputDamping HipDampingSettings { get; }

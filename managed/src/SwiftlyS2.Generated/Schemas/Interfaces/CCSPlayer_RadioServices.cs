@@ -14,6 +14,7 @@ public partial interface CCSPlayer_RadioServices : CPlayerPawnComponent {
   
   public GameTime_t C4PlantTalkTimer { get; }
   
+  // GameTime_t
   public SchemaUntypedField RadioTokenSlots { get; }
   
   public ref bool IgnoreRadio { get; }

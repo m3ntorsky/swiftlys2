@@ -10,7 +10,7 @@ public partial interface CCSPlayerController_DamageServices : CPlayerControllerC
   
   public ref int SendUpdate { get; }
   
-// CUtlVectorEmbeddedNetworkVar< CDamageRecord >
+  // CUtlVectorEmbeddedNetworkVar< CDamageRecord >
   public ref CUtlVector DamageList { get; }
 
   public void SendUpdateUpdated();

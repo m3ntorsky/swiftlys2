@@ -12,7 +12,7 @@ public partial interface CSSDSMsg_ViewTargetList : ISchemaClass {
   
   public ref CUtlString ViewName { get; }
   
-// CUtlVector< CSSDSMsg_ViewTarget >
+  // CUtlVector< CSSDSMsg_ViewTarget >
   public ref CUtlVector Targets { get; }
 
 

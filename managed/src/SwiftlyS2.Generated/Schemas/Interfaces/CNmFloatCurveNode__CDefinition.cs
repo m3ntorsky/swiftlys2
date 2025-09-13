@@ -10,6 +10,7 @@ public partial interface CNmFloatCurveNode__CDefinition : CNmFloatValueNode__CDe
   
   public ref short InputValueNodeIdx { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField Curve { get; }
 
 

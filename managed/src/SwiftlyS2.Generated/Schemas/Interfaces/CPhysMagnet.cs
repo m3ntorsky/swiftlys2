@@ -18,7 +18,7 @@ public partial interface CPhysMagnet : CBaseAnimGraph {
   
   public ref float TorqueLimit { get; }
   
-// CUtlVector< magnetted_objects_t >
+  // CUtlVector< magnetted_objects_t >
   public ref CUtlVector MagnettedEntities { get; }
   
   public ref bool Active { get; }

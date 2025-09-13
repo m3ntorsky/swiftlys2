@@ -10,6 +10,7 @@ public partial interface CNmFloatCurveEvent : CNmEvent {
   
   public ref CGlobalSymbol ID { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField Curve { get; }
 
 

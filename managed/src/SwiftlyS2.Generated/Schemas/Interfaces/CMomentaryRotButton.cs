@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMomentaryRotButton : CRotButton {
 
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField Position { get; }
   
   public CEntityIOOutput OnUnpressed { get; }

@@ -10,14 +10,19 @@ public partial interface CNmStateNode__CDefinition : CNmPoseNode__CDefinition {
   
   public ref short ChildNodeIdx { get; }
   
+  // CUtlLeanVectorFixedGrowable< CGlobalSymbol, 3 >
   public SchemaUntypedField EntryEvents { get; }
   
+  // CUtlLeanVectorFixedGrowable< CGlobalSymbol, 3 >
   public SchemaUntypedField ExecuteEvents { get; }
   
+  // CUtlLeanVectorFixedGrowable< CGlobalSymbol, 3 >
   public SchemaUntypedField ExitEvents { get; }
   
+  // CUtlLeanVectorFixedGrowable< CNmStateNode::TimedEvent_t, 1 >
   public SchemaUntypedField TimedRemainingEvents { get; }
   
+  // CUtlLeanVectorFixedGrowable< CNmStateNode::TimedEvent_t, 1 >
   public SchemaUntypedField TimedElapsedEvents { get; }
   
   public ref short LayerWeightNodeIdx { get; }

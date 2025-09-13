@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CHitBoxSetList : ISchemaClass {
 
   
-// CUtlVector< CHitBoxSet >
+  // CUtlVector< CHitBoxSet >
   public ref CUtlVector HitBoxSets { get; }
 
 

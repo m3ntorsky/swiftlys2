@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBlendUpdateNode : CAnimUpdateNodeBase {
 
   
-// CUtlVector< CAnimUpdateNodeRef >
+  // CUtlVector< CAnimUpdateNodeRef >
   public ref CUtlVector Children { get; }
   
   public ref CUtlVector<byte> SortedOrder { get; }

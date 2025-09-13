@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPrecipitationVData : CEntitySubclassVDataBase {
 
   
+  // CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > >
   public SchemaUntypedField ParticlePrecipitationEffect { get; }
   
   public ref float InnerDistance { get; }

@@ -28,6 +28,7 @@ public partial interface CBeam : CBaseModelEntity {
   
   public ISchemaFixedArray<CHandle<CBaseEntity>> AttachEntity { get; }
   
+  // AttachmentHandle_t
   public SchemaUntypedField AttachIndex { get; }
   
   public ref float Width { get; }

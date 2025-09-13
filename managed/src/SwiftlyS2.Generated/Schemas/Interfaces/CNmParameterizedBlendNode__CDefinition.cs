@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmParameterizedBlendNode__CDefinition : CNmPoseNode__CDefinition {
 
   
+  // CUtlVectorFixedGrowable< int16, 5 >
   public SchemaUntypedField SourceNodeIndices { get; }
   
   public ref short InputParameterValueNodeIdx { get; }

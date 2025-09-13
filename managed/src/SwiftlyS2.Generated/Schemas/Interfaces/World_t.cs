@@ -10,7 +10,7 @@ public partial interface World_t : ISchemaClass {
   
   public WorldBuilderParams_t BuilderParams { get; }
   
-// CUtlVector< NodeData_t >
+  // CUtlVector< NodeData_t >
   public ref CUtlVector WorldNodes { get; }
   
   public BakedLightingInfo_t WorldLightingInfo { get; }

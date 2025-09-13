@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVoiceContainerSwitch : CVoiceContainerBase {
 
   
-// CUtlVector< CSoundContainerReference >
+  // CUtlVector< CSoundContainerReference >
   public ref CUtlVector SoundsToPlay { get; }
 
 

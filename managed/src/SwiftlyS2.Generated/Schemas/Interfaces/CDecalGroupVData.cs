@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDecalGroupVData : ISchemaClass {
 
   
-// CUtlVector< DecalGroupOption_t >
+  // CUtlVector< DecalGroupOption_t >
   public ref CUtlVector Options { get; }
   
   public ref float TotalProbability { get; }

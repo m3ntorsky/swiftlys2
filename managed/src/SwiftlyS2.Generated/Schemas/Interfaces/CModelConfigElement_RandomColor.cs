@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CModelConfigElement_RandomColor : CModelConfigElement {
 
   
+  // CColorGradient
   public SchemaUntypedField Gradient { get; }
 
 

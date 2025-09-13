@@ -8,8 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRenderMesh : ISchemaClass {
 
   
+  // CUtlLeanVectorFixedGrowable< CSceneObjectData, 1 >
   public SchemaUntypedField SceneObjects { get; }
   
+  // CUtlLeanVector< CBaseConstraint* >
   public SchemaUntypedField Constraints { get; }
   
   public CRenderSkeleton Skeleton { get; }

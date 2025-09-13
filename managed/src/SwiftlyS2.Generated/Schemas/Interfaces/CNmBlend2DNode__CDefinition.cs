@@ -8,16 +8,20 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmBlend2DNode__CDefinition : CNmPoseNode__CDefinition {
 
   
+  // CUtlVectorFixedGrowable< int16, 5 >
   public SchemaUntypedField SourceNodeIndices { get; }
   
   public ref short InputParameterNodeIdx0 { get; }
   
   public ref short InputParameterNodeIdx1 { get; }
   
+  // CUtlVectorFixedGrowable< Vector2D, 10 >
   public SchemaUntypedField Values { get; }
   
+  // CUtlVectorFixedGrowable< uint8, 30 >
   public SchemaUntypedField Indices { get; }
   
+  // CUtlVectorFixedGrowable< uint8, 10 >
   public SchemaUntypedField HullIndices { get; }
   
   public ref bool AllowLooping { get; }

@@ -18,7 +18,7 @@ public partial interface CSeqSynthAnimDesc : ISchemaClass {
   
   public ref short LocalBoneMask { get; }
   
-// CUtlVector< CAnimActivity >
+  // CUtlVector< CAnimActivity >
   public ref CUtlVector ActivityArray { get; }
 
 

@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRenderGroom : ISchemaClass {
 
   
-// CUtlVector< RenderHairStrandInfo_t >
+  // CUtlVector< RenderHairStrandInfo_t >
   public ref CUtlVector Hairs { get; }
   
   public ref CUtlVector<uint> HairPositionOffsets { get; }

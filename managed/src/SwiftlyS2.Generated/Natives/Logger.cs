@@ -1,3 +1,5 @@
+#pragma warning disable CS0649
+
 using System.Buffers;
 using System.Text;
 
@@ -17,8 +19,8 @@ internal static class NativeLogger {
 
   }
   }
-  private unsafe static delegate* unmanaged<int, byte*, byte*, void> _Log;
-  public unsafe static void Log(int logType, string category, string message) {
+  private unsafe static delegate* unmanaged<int, byte*, byte*, void> _LogCategory;
+  public unsafe static void LogCategory(int logType, string category, string message) {
     var pool = ArrayPool<byte>.Shared;
     var categoryLength = Encoding.UTF8.GetByteCount(category);
     var categoryBuffer = pool.Rent(categoryLength + 1);
@@ -31,7 +33,7 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _Log(logType, categoryBufferPtr, messageBufferPtr);
+    _LogCategory(logType, categoryBufferPtr, messageBufferPtr);
     pool.Return(categoryBuffer);
 
     pool.Return(messageBuffer);
@@ -91,8 +93,8 @@ internal static class NativeLogger {
 
   }
   }
-  private unsafe static delegate* unmanaged<byte*, byte*, void> _Info;
-  public unsafe static void Info(string category, string message) {
+  private unsafe static delegate* unmanaged<byte*, byte*, void> _InfoCategory;
+  public unsafe static void InfoCategory(string category, string message) {
     var pool = ArrayPool<byte>.Shared;
     var categoryLength = Encoding.UTF8.GetByteCount(category);
     var categoryBuffer = pool.Rent(categoryLength + 1);
@@ -105,7 +107,7 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _Info(categoryBufferPtr, messageBufferPtr);
+    _InfoCategory(categoryBufferPtr, messageBufferPtr);
     pool.Return(categoryBuffer);
 
     pool.Return(messageBuffer);
@@ -113,8 +115,8 @@ internal static class NativeLogger {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, byte*, void> _Warning;
-  public unsafe static void Warning(string category, string message) {
+  private unsafe static delegate* unmanaged<byte*, byte*, void> _WarningCategory;
+  public unsafe static void WarningCategory(string category, string message) {
     var pool = ArrayPool<byte>.Shared;
     var categoryLength = Encoding.UTF8.GetByteCount(category);
     var categoryBuffer = pool.Rent(categoryLength + 1);
@@ -127,7 +129,7 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _Warning(categoryBufferPtr, messageBufferPtr);
+    _WarningCategory(categoryBufferPtr, messageBufferPtr);
     pool.Return(categoryBuffer);
 
     pool.Return(messageBuffer);
@@ -135,8 +137,8 @@ internal static class NativeLogger {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, byte*, void> _Error;
-  public unsafe static void Error(string category, string message) {
+  private unsafe static delegate* unmanaged<byte*, byte*, void> _ErrorCategory;
+  public unsafe static void ErrorCategory(string category, string message) {
     var pool = ArrayPool<byte>.Shared;
     var categoryLength = Encoding.UTF8.GetByteCount(category);
     var categoryBuffer = pool.Rent(categoryLength + 1);
@@ -149,7 +151,7 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _Error(categoryBufferPtr, messageBufferPtr);
+    _ErrorCategory(categoryBufferPtr, messageBufferPtr);
     pool.Return(categoryBuffer);
 
     pool.Return(messageBuffer);
@@ -157,8 +159,8 @@ internal static class NativeLogger {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, byte*, void> _Debug;
-  public unsafe static void Debug(string category, string message) {
+  private unsafe static delegate* unmanaged<byte*, byte*, void> _DebugCategory;
+  public unsafe static void DebugCategory(string category, string message) {
     var pool = ArrayPool<byte>.Shared;
     var categoryLength = Encoding.UTF8.GetByteCount(category);
     var categoryBuffer = pool.Rent(categoryLength + 1);
@@ -171,7 +173,7 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _Debug(categoryBufferPtr, messageBufferPtr);
+    _DebugCategory(categoryBufferPtr, messageBufferPtr);
     pool.Return(categoryBuffer);
 
     pool.Return(messageBuffer);

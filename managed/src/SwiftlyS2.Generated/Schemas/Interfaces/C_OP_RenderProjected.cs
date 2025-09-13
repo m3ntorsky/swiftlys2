@@ -22,7 +22,7 @@ public partial interface C_OP_RenderProjected : CParticleFunctionRenderer {
   
   public ref float MaxProjectionDepth { get; }
   
-// CUtlVector< RenderProjectedMaterial_t >
+  // CUtlVector< RenderProjectedMaterial_t >
   public ref CUtlVector ProjectedMaterials { get; }
   
   public CPerParticleFloatInput MaterialSelection { get; }
@@ -31,7 +31,7 @@ public partial interface C_OP_RenderProjected : CParticleFunctionRenderer {
   
   public ref bool OrientToNormal { get; }
   
-// CUtlVector< MaterialVariable_t >
+  // CUtlVector< MaterialVariable_t >
   public ref CUtlVector MaterialVars { get; }
   
   public CParticleCollectionFloatInput RadiusScale { get; }

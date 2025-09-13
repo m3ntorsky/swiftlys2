@@ -24,10 +24,10 @@ public partial interface CCSPlayerController_InventoryServices : CPlayerControll
   
   public ISchemaFixedArray<uint> EquippedPlayerSprayIDs { get; }
   
-// CUtlVectorEmbeddedNetworkVar< ServerAuthoritativeWeaponSlot_t >
+  // CUtlVectorEmbeddedNetworkVar< ServerAuthoritativeWeaponSlot_t >
   public ref CUtlVector ServerAuthoritativeWeaponSlots { get; }
   
-// CUtlVectorEmbeddedNetworkVar< CSNetworkableLoadout_t >
+  // CUtlVectorEmbeddedNetworkVar< CSNetworkableLoadout_t >
   public ref CUtlVector NetworkableLoadout { get; }
 
   public void MusicIDUpdated();

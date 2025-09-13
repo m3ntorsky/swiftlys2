@@ -10,7 +10,7 @@ public partial interface CMorphData : ISchemaClass {
   
   public ref CUtlString Name { get; }
   
-// CUtlVector< CMorphRectData >
+  // CUtlVector< CMorphRectData >
   public ref CUtlVector MorphRectDatas { get; }
 
 

@@ -14,6 +14,7 @@ public partial interface CFuncRotating : CBaseModelEntity {
   
   public CEntityIOOutput OnReachedStart { get; }
   
+  // RotationVector
   public SchemaUntypedField LocalRotationVector { get; }
   
   public ref float FanFriction { get; }

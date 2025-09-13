@@ -14,7 +14,7 @@ public partial interface CSequenceUpdateNode : CSequenceUpdateNodeBase {
   
   public CParamSpanUpdater ParamSpans { get; }
   
-// CUtlVector< TagSpan_t >
+  // CUtlVector< TagSpan_t >
   public ref CUtlVector Tags { get; }
 
 

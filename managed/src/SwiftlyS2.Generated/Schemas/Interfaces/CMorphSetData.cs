@@ -14,18 +14,18 @@ public partial interface CMorphSetData : ISchemaClass {
   
   public ref CUtlVector<MorphBundleType_t> BundleTypes { get; }
   
-// CUtlVector< CMorphData >
+  // CUtlVector< CMorphData >
   public ref CUtlVector MorphDatas { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureAtlas { get; }
   
-// CUtlVector< CFlexDesc >
+  // CUtlVector< CFlexDesc >
   public ref CUtlVector FlexDesc { get; }
   
-// CUtlVector< CFlexController >
+  // CUtlVector< CFlexController >
   public ref CUtlVector FlexControllers { get; }
   
-// CUtlVector< CFlexRule >
+  // CUtlVector< CFlexRule >
   public ref CUtlVector FlexRules { get; }
 
 

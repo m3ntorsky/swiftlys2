@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Inflow_GraphHook : CPulseCell_Inflow_BaseEntrypoint {
 
   
+  // PulseSymbol_t
   public SchemaUntypedField HookName { get; }
 
 

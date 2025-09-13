@@ -10,6 +10,7 @@ public partial interface CAnimGraphModelBinding : ISchemaClass {
   
   public ref CUtlString ModelName { get; }
   
+  // CSmartPtr< CAnimUpdateSharedData >
   public SchemaUntypedField SharedData { get; }
 
 

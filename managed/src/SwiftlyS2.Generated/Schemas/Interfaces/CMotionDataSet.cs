@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionDataSet : ISchemaClass {
 
   
-// CUtlVector< CMotionGraphGroup >
+  // CUtlVector< CMotionGraphGroup >
   public ref CUtlVector Groups { get; }
   
   public ref int DimensionCount { get; }

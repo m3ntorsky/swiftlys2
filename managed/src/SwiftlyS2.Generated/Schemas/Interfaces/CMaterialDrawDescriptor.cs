@@ -24,6 +24,7 @@ public partial interface CMaterialDrawDescriptor : ISchemaClass {
   
   public ref byte MeshletPackedIVBIndex { get; }
   
+  // CUtlLeanVector< CMaterialDrawDescriptor::RigidMeshPart_t >
   public SchemaUntypedField RigidMeshParts { get; }
   
   public ref RenderPrimitiveType_t PrimitiveType { get; }

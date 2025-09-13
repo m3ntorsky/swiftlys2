@@ -10,17 +10,17 @@ public partial interface CAnimKeyData : ISchemaClass {
   
   public ref CBufferString Name { get; }
   
-// CUtlVector< CAnimBone >
+  // CUtlVector< CAnimBone >
   public ref CUtlVector BoneArray { get; }
   
-// CUtlVector< CAnimUser >
+  // CUtlVector< CAnimUser >
   public ref CUtlVector UserArray { get; }
   
   public ref CUtlVector<CBufferString> MorphArray { get; }
   
   public ref int ChannelElements { get; }
   
-// CUtlVector< CAnimDataChannelDesc >
+  // CUtlVector< CAnimDataChannelDesc >
   public ref CUtlVector DataChannelArray { get; }
 
 

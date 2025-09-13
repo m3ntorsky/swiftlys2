@@ -20,6 +20,7 @@ public partial interface CBaseCombatCharacter : CBaseFlex {
   
   public ref bool DeathEventsDispatched { get; }
   
+  // CUtlVector< RelationshipOverride_t >
   public ref CUtlVector VecRelationships { get; }
   
   public ref CUtlSymbolLarge StrRelationships { get; }

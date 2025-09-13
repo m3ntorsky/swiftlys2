@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvGlobal : CLogicalEntity {
 
   
+  // CEntityOutputTemplate< int32 >
   public SchemaUntypedField OutCounter { get; }
   
   public ref CUtlSymbolLarge Globalstate { get; }

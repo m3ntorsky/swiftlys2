@@ -8,8 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmParameterizedSelectorNode__CDefinition : CNmPoseNode__CDefinition {
 
   
+  // CUtlLeanVectorFixedGrowable< int16, 5 >
   public SchemaUntypedField OptionNodeIndices { get; }
   
+  // CUtlLeanVectorFixedGrowable< uint8, 5 >
   public SchemaUntypedField OptionWeights { get; }
   
   public ref short ParameterNodeIdx { get; }

@@ -12,7 +12,7 @@ public partial interface ModelBoneFlexDriver_t : ISchemaClass {
   
   public ref uint BoneNameToken { get; }
   
-// CUtlVector< ModelBoneFlexDriverControl_t >
+  // CUtlVector< ModelBoneFlexDriverControl_t >
   public ref CUtlVector Controls { get; }
 
 

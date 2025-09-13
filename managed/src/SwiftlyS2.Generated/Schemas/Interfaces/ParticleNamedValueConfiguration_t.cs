@@ -10,6 +10,7 @@ public partial interface ParticleNamedValueConfiguration_t : ISchemaClass {
   
   public ref CUtlString ConfigName { get; }
   
+  // KeyValues3
   public SchemaUntypedField ConfigValue { get; }
   
   public ref ParticleAttachment_t AttachType { get; }

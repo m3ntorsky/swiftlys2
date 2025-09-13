@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTankTargetChange : CPointEntity {
 
   
+  // CVariantBase< CVariantDefaultAllocator >
   public SchemaUntypedField NewTarget { get; }
   
   public ref CUtlSymbolLarge NewTargetName { get; }

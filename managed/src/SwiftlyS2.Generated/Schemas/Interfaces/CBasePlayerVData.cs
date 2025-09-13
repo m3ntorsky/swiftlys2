@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBasePlayerVData : CEntitySubclassVDataBase {
 
   
+  // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >
   public SchemaUntypedField ModelName { get; }
   
   public CSkillFloat HeadDamageMultiplier { get; }

@@ -28,6 +28,7 @@ public partial interface CEffectData : ISchemaClass {
   
   public ref CUtlStringToken SurfaceProp { get; }
   
+  // CWeakHandle< InfoForResourceTypeIParticleSystemDefinition >
   public SchemaUntypedField EffectIndex { get; }
   
   public ref uint DamageType { get; }

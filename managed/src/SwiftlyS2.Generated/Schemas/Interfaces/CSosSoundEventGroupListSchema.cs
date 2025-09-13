@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSosSoundEventGroupListSchema : ISchemaClass {
 
   
-// CUtlVector< CSosSoundEventGroupSchema >
+  // CUtlVector< CSosSoundEventGroupSchema >
   public ref CUtlVector GroupList { get; }
 
 

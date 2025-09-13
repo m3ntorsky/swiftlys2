@@ -1,15 +1,15 @@
 class Logger
 
 void Log = int32 logType, string message
-void Log = int32 logType, string category, string message
+void LogCategory = int32 logType, string category, string message
 void Info = string message
 void Warning = string message
 void Error = string message
 void Debug = string message
-void Info = string category, string message
-void Warning = string category, string message
-void Error = string category, string message
-void Debug = string category, string message
+void InfoCategory = string category, string message
+void WarningCategory = string category, string message
+void ErrorCategory = string category, string message
+void DebugCategory = string category, string message
 void SetLogFile = int32 logType, string path
 void ShouldOutputToFile = int32 logType, bool enabled
 void ShouldColorCategoryInConsole = string category, bool enabled

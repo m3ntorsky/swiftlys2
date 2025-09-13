@@ -1,10 +1,11 @@
 using System.Runtime.InteropServices;
 using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.Natives;
 
 [StructLayout(LayoutKind.Sequential, Size = 4)]
-public struct CHandle<T> where T : INativeHandle { // TODO: Change this to IBaseEntity?
+public struct CHandle<T> where T : CEntityInstance {
   private uint _index;
 
   public uint Raw { 

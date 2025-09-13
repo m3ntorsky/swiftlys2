@@ -20,7 +20,7 @@ public partial interface CDestructiblePartsSystemData_HitGroupInfoAndDamageLevel
   
   public ref CGlobalSymbol BodyGroupName { get; }
   
-// CUtlVector< CDestructiblePartsSystemData_DamageLevel >
+  // CUtlVector< CDestructiblePartsSystemData_DamageLevel >
   public ref CUtlVector DamageLevels { get; }
 
 

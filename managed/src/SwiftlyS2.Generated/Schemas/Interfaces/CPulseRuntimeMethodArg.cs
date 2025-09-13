@@ -8,10 +8,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseRuntimeMethodArg : ISchemaClass {
 
   
+  // CKV3MemberNameWithStorage
   public SchemaUntypedField Name { get; }
   
   public ref CUtlString Description { get; }
   
+  // CPulseValueFullType
   public SchemaUntypedField Type { get; }
 
 

@@ -10,6 +10,7 @@ public partial interface FeEdgeDesc_t : ISchemaClass {
   
   public ISchemaFixedArray<ushort> Edge { get; }
   
+  // uint16[2]
   public SchemaUntypedField Side { get; }
   
   public ISchemaFixedArray<ushort> VirtElem { get; }

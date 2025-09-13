@@ -8,12 +8,15 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulse_Variable : ISchemaClass {
 
   
+  // PulseSymbol_t
   public SchemaUntypedField Name { get; }
   
   public ref CUtlString Description { get; }
   
+  // CPulseValueFullType
   public SchemaUntypedField Type { get; }
   
+  // KeyValues3
   public SchemaUntypedField DefaultValue { get; }
   
   public ref PulseVariableKeysSource_t KeysSource { get; }

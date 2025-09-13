@@ -10,12 +10,16 @@ public partial interface CStateNodeTransitionData : ISchemaClass {
   
   public CBlendCurve Curve { get; }
   
+  // CAnimValue< float32 >
   public SchemaUntypedField BlendDuration { get; }
   
+  // CAnimValue< float32 >
   public SchemaUntypedField ResetCycleValue { get; }
   
+  // bitfield
   public SchemaUntypedField Reset { get; }
   
+  // bitfield
   public SchemaUntypedField ResetCycleOption { get; }
 
 

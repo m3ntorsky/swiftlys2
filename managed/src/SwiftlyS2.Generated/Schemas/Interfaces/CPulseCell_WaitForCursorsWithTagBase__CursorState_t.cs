@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_WaitForCursorsWithTagBase__CursorState_t : ISchemaClass {
 
   
+  // PulseSymbol_t
   public SchemaUntypedField TagName { get; }
 
 

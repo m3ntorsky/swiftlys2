@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmEntityAttributeFloatEvent : CNmEntityAttributeEventBase {
 
   
+  // CPiecewiseCurve
   public SchemaUntypedField FloatValue { get; }
 
 

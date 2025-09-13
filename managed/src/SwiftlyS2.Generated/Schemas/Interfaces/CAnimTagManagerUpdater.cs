@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimTagManagerUpdater : ISchemaClass {
 
   
-// CUtlVector< CSmartPtr< CAnimTagBase > >
+  // CUtlVector< CSmartPtr< CAnimTagBase > >
   public ref CUtlVector Tags { get; }
 
 

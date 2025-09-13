@@ -14,7 +14,7 @@ public partial interface CAnimEncodedFrames : ISchemaClass {
   
   public ref int FramesPerBlock { get; }
   
-// CUtlVector< CAnimFrameBlockAnim >
+  // CUtlVector< CAnimFrameBlockAnim >
   public ref CUtlVector FrameblockArray { get; }
   
   public CAnimEncodeDifference UsageDifferences { get; }

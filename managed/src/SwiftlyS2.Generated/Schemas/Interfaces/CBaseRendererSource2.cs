@@ -32,6 +32,7 @@ public partial interface CBaseRendererSource2 : CParticleFunctionRenderer {
   
   public ref ParticleSequenceCropOverride_t CropTextureOverride { get; }
   
+  // CUtlLeanVector< TextureGroup_t >
   public SchemaUntypedField TexturesInput { get; }
   
   public ref float AnimationRate { get; }

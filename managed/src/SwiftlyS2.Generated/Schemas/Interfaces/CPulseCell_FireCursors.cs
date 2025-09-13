@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_FireCursors : CPulseCell_BaseYieldingInflow {
 
   
-// CUtlVector< CPulse_OutflowConnection >
+  // CUtlVector< CPulse_OutflowConnection >
   public ref CUtlVector Outflows { get; }
   
   public ref bool WaitForChildOutflows { get; }

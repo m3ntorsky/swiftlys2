@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixEQ8Desc_t : ISchemaClass {
 
   
+  // VMixFilterDesc_t
   public SchemaUntypedField Stages { get; }
 
 

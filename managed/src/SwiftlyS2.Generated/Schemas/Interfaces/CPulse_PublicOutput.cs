@@ -8,10 +8,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulse_PublicOutput : ISchemaClass {
 
   
+  // PulseSymbol_t
   public SchemaUntypedField Name { get; }
   
   public ref CUtlString Description { get; }
   
+  // CUtlLeanVector< CPulseRuntimeMethodArg >
   public SchemaUntypedField Args { get; }
 
 

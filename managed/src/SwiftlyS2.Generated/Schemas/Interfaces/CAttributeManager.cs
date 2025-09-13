@@ -18,7 +18,7 @@ public partial interface CAttributeManager : ISchemaClass {
   
   public ref attributeprovidertypes_t ProviderType { get; }
   
-// CUtlVector< CAttributeManager::cached_attribute_float_t >
+  // CUtlVector< CAttributeManager::cached_attribute_float_t >
   public ref CUtlVector CachedResults { get; }
 
   public void ReapplyProvisionParityUpdated();

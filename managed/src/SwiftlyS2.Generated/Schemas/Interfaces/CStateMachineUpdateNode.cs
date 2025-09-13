@@ -10,10 +10,10 @@ public partial interface CStateMachineUpdateNode : CAnimUpdateNodeBase {
   
   public CAnimStateMachineUpdater StateMachine { get; }
   
-// CUtlVector< CStateNodeStateData >
+  // CUtlVector< CStateNodeStateData >
   public ref CUtlVector StateData { get; }
   
-// CUtlVector< CStateNodeTransitionData >
+  // CUtlVector< CStateNodeTransitionData >
   public ref CUtlVector TransitionData { get; }
   
   public ref bool BlockWaningTags { get; }

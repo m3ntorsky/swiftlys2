@@ -12,14 +12,17 @@ public partial interface CCSWeaponBaseVData : CBasePlayerWeaponVData {
   
   public ref CSWeaponCategory WeaponCategory { get; }
   
+  // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >
   public SchemaUntypedField Model_AG2 { get; }
   
+  // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCNmSkeleton > >
   public SchemaUntypedField AnimSkeleton { get; }
   
   public ref Vector MuzzlePos0 { get; }
   
   public ref Vector MuzzlePos1 { get; }
   
+  // CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > >
   public SchemaUntypedField TracerParticle { get; }
   
   public ref gear_slot_t GearSlot { get; }

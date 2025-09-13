@@ -12,6 +12,7 @@ public partial interface CPulse_DomainValue : ISchemaClass {
   
   public ref CGlobalSymbol Value { get; }
   
+  // CPulseValueFullType
   public SchemaUntypedField RequiredRuntimeType { get; }
 
 

@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EmptyTestScript : CAnimScriptBase {
 
   
+  // CAnimScriptParam< float32 >
   public SchemaUntypedField Test { get; }
 
 

@@ -8,8 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmParameterizedBlendNode__Parameterization_t : ISchemaClass {
 
   
+  // CUtlLeanVectorFixedGrowable< CNmParameterizedBlendNode::BlendRange_t, 5 >
   public SchemaUntypedField BlendRanges { get; }
   
+  // Range_t
   public SchemaUntypedField ParameterRange { get; }
 
 

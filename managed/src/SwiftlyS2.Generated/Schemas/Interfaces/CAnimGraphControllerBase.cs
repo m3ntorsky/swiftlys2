@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimGraphControllerBase : ISchemaClass {
 
   
+  // CUtlVectorFixedGrowable< CGlobalSymbol, 8 >
   public SchemaUntypedField ParamsToResetInPostGraphUpdate { get; }
 
 

@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ParamSpan_t : ISchemaClass {
 
   
-// CUtlVector< ParamSpanSample_t >
+  // CUtlVector< ParamSpanSample_t >
   public ref CUtlVector Samples { get; }
   
   public CAnimParamHandle Param { get; }

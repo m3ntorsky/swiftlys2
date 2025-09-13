@@ -14,7 +14,7 @@ public partial interface MoodAnimationLayer_t : ISchemaClass {
   
   public ref bool ActiveTalking { get; }
   
-// CUtlVector< MoodAnimation_t >
+  // CUtlVector< MoodAnimation_t >
   public ref CUtlVector LayerAnimations { get; }
   
   public CRangeFloat Intensity { get; }

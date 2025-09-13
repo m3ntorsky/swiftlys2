@@ -26,6 +26,7 @@ public partial interface VMixDynamics3BandDesc_t : ISchemaClass {
   
   public ref bool PeakMode { get; }
   
+  // VMixDynamicsBand_t
   public SchemaUntypedField BandDesc { get; }
 
 

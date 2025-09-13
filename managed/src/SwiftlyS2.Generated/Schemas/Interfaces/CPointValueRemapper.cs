@@ -82,8 +82,10 @@ public partial interface CPointValueRemapper : CBaseEntity {
   
   public ref CUtlSymbolLarge SoundMovingLoop { get; }
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField Position { get; }
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField PositionDelta { get; }
   
   public CEntityIOOutput OnReachedValueZero { get; }

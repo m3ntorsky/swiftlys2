@@ -22,7 +22,7 @@ public partial interface CTriggerLerpObject : CBaseTrigger {
   
   public ref bool SingleLerpObject { get; }
   
-// CUtlVector< lerpdata_t >
+  // CUtlVector< lerpdata_t >
   public ref CUtlVector LerpingObjects { get; }
   
   public ref CUtlSymbolLarge LerpEffect { get; }

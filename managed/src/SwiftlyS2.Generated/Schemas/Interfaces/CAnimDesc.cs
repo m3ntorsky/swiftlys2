@@ -16,18 +16,18 @@ public partial interface CAnimDesc : ISchemaClass {
   
   public CAnimEncodedFrames Data { get; }
   
-// CUtlVector< CAnimMovement >
+  // CUtlVector< CAnimMovement >
   public ref CUtlVector MovementArray { get; }
   
   public ref CTransform XInitialOffset { get; }
   
-// CUtlVector< CAnimEventDefinition >
+  // CUtlVector< CAnimEventDefinition >
   public ref CUtlVector EventArray { get; }
   
-// CUtlVector< CAnimActivity >
+  // CUtlVector< CAnimActivity >
   public ref CUtlVector ActivityArray { get; }
   
-// CUtlVector< CAnimLocalHierarchy >
+  // CUtlVector< CAnimLocalHierarchy >
   public ref CUtlVector HierarchyArray { get; }
   
   public ref float Framestalltime { get; }

@@ -100,6 +100,8 @@ def parse_native(lines: list[str]):
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     chunks: list[str] = []
+    emit(chunks, "#pragma warning disable CS0649")
+    emit(chunks)
     emit(chunks, "using System.Buffers;")
     emit(chunks, "using System.Text;")
     emit(chunks)

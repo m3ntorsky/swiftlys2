@@ -8,8 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmIDSelectorNode__CDefinition : CNmIDValueNode__CDefinition {
 
   
+  // CUtlVectorFixedGrowable< int16, 5 >
   public SchemaUntypedField ConditionNodeIndices { get; }
   
+  // CUtlVectorFixedGrowable< CGlobalSymbol, 5 >
   public SchemaUntypedField Values { get; }
   
   public ref CGlobalSymbol DefaultValue { get; }

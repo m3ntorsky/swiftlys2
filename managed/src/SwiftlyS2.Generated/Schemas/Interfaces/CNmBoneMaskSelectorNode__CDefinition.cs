@@ -14,8 +14,10 @@ public partial interface CNmBoneMaskSelectorNode__CDefinition : CNmBoneMaskValue
   
   public ref bool SwitchDynamically { get; }
   
+  // CUtlVectorFixedGrowable< int16, 7 >
   public SchemaUntypedField MaskNodeIndices { get; }
   
+  // CUtlVectorFixedGrowable< CGlobalSymbol, 7 >
   public SchemaUntypedField ParameterValues { get; }
   
   public ref float BlendTimeSeconds { get; }

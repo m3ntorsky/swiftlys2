@@ -10,11 +10,12 @@ public partial interface CCSWeaponBase : CBasePlayerWeapon {
   
   public ref bool Removeable { get; }
   
-// CUtlVector< HSequence >
+  // CUtlVector< HSequence >
   public ref CUtlVector ThirdPersonFireSequences { get; }
   
   public HSequence CurrentThirdPersonSequence { get; }
   
+  // HSequence
   public SchemaUntypedField ThirdPersonSequences { get; }
   
   public ref bool PlayerAmmoStockOnPickup { get; }

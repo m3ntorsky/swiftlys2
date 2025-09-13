@@ -14,6 +14,7 @@ public partial interface CParticleVecInput : CParticleInput {
   
   public ref Color LiteralColor { get; }
   
+  // CParticleNamedValueRef
   public SchemaUntypedField NamedValue { get; }
   
   public ref bool FollowNamedValue { get; }
@@ -48,6 +49,7 @@ public partial interface CParticleVecInput : CParticleInput {
   
   public ref Vector InterpOutput1 { get; }
   
+  // CColorGradient
   public SchemaUntypedField Gradient { get; }
   
   public ref Vector RandomMin { get; }

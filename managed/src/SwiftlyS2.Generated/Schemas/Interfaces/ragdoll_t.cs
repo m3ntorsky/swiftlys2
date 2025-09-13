@@ -8,10 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ragdoll_t : ISchemaClass {
 
   
-// CUtlVector< ragdollelement_t >
+  // CUtlVector< ragdollelement_t >
   public ref CUtlVector List { get; }
   
-// CUtlVector< ragdollhierarchyjoint_t >
+  // CUtlVector< ragdollhierarchyjoint_t >
   public ref CUtlVector HierarchyJoints { get; }
   
   public ref CUtlVector<int> BoneIndex { get; }

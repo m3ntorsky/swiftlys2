@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootMotion : ISchemaClass {
 
   
-// CUtlVector< CFootStride >
+  // CUtlVector< CFootStride >
   public ref CUtlVector Strides { get; }
   
   public ref CUtlString Name { get; }

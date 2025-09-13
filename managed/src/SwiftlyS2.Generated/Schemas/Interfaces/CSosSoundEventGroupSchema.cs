@@ -24,6 +24,7 @@ public partial interface CSosSoundEventGroupSchema : ISchemaClass {
   
   public ref float LifeSpanTime { get; }
   
+  // CSosGroupActionSchema
   public SchemaUntypedField Actions { get; }
 
 

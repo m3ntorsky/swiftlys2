@@ -8,35 +8,39 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseGraphDef : ISchemaClass {
 
   
+  // PulseSymbol_t
   public SchemaUntypedField DomainIdentifier { get; }
   
+  // CPulseValueFullType
   public SchemaUntypedField DomainSubType { get; }
   
+  // PulseSymbol_t
   public SchemaUntypedField ParentMapName { get; }
   
+  // PulseSymbol_t
   public SchemaUntypedField ParentXmlName { get; }
   
   public ref CUtlVector<PointerTo<CPulse_Chunk>> Chunks { get; }
   
   public ref CUtlVector<PointerTo<CPulseCell_Base>> Cells { get; }
   
-// CUtlVector< CPulse_Variable >
+  // CUtlVector< CPulse_Variable >
   public ref CUtlVector Vars { get; }
   
-// CUtlVector< CPulse_PublicOutput >
+  // CUtlVector< CPulse_PublicOutput >
   public ref CUtlVector PublicOutputs { get; }
   
   public ref CUtlVector<PointerTo<CPulse_InvokeBinding>> InvokeBindings { get; }
   
   public ref CUtlVector<PointerTo<CPulse_CallInfo>> CallInfos { get; }
   
-// CUtlVector< CPulse_Constant >
+  // CUtlVector< CPulse_Constant >
   public ref CUtlVector Constants { get; }
   
-// CUtlVector< CPulse_DomainValue >
+  // CUtlVector< CPulse_DomainValue >
   public ref CUtlVector DomainValues { get; }
   
-// CUtlVector< CPulse_BlackboardReference >
+  // CUtlVector< CPulse_BlackboardReference >
   public ref CUtlVector BlackboardReferences { get; }
   
   public ref CUtlVector<PointerTo<CPulse_OutputConnection>> OutputConnections { get; }

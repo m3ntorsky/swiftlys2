@@ -8,10 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSoundOpvarSetAutoRoomEntity : CSoundOpvarSetPointEntity {
 
   
-// CUtlVector< SoundOpvarTraceResult_t >
+  // CUtlVector< SoundOpvarTraceResult_t >
   public ref CUtlVector TraceResults { get; }
   
-// CUtlVector< AutoRoomDoorwayPairs_t >
+  // CUtlVector< AutoRoomDoorwayPairs_t >
   public ref CUtlVector DoorwayPairs { get; }
   
   public ref float Size { get; }

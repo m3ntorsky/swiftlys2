@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRemapValueComponentUpdater : CAnimComponentUpdater {
 
   
-// CUtlVector< CRemapValueUpdateItem >
+  // CUtlVector< CRemapValueUpdateItem >
   public ref CUtlVector Items { get; }
 
 

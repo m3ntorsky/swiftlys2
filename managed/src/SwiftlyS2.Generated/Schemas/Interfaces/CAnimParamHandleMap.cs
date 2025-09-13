@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimParamHandleMap : ISchemaClass {
 
   
+  // CUtlHashtable< uint16, int16 >
   public SchemaUntypedField List { get; }
 
 

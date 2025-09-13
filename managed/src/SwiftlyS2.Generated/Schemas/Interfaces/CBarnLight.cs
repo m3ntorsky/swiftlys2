@@ -44,6 +44,7 @@ public partial interface CBarnLight : CBaseModelEntity {
   
   public ref CUtlVector<CHandle<CBaseModelEntity>> LightStyleTargets { get; }
   
+  // CEntityIOOutput
   public SchemaUntypedField StyleEvent { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> LightCookie { get; }

@@ -22,7 +22,7 @@ public partial interface CAnimationGroup : ISchemaClass {
   
   public ref CUtlVector<CBufferString> Scripts { get; }
   
-// CUtlVector< CStrongHandleVoid >
+  // CUtlVector< CStrongHandleVoid >
   public ref CUtlVector AdditionalExtRefs { get; }
 
 

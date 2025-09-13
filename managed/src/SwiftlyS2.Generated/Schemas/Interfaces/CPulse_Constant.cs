@@ -8,8 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulse_Constant : ISchemaClass {
 
   
+  // CPulseValueFullType
   public SchemaUntypedField Type { get; }
   
+  // KeyValues3
   public SchemaUntypedField Value { get; }
 
 

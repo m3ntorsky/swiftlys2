@@ -8,8 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmFloatSelectorNode__CDefinition : CNmFloatValueNode__CDefinition {
 
   
+  // CUtlVectorFixedGrowable< int16, 5 >
   public SchemaUntypedField ConditionNodeIndices { get; }
   
+  // CUtlVectorFixedGrowable< float32, 5 >
   public SchemaUntypedField Values { get; }
   
   public ref float DefaultValue { get; }

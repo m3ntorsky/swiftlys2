@@ -24,7 +24,7 @@ public partial interface CParticleSystemDefinition : IParticleSystemDefinition {
   
   public ref CUtlVector<PointerTo<CParticleFunctionRenderer>> Renderers { get; }
   
-// CUtlVector< ParticleChildrenInfo_t >
+  // CUtlVector< ParticleChildrenInfo_t >
   public ref CUtlVector Children { get; }
   
   public ref int FirstMultipleOverride_BackwardCompat { get; }
@@ -137,7 +137,7 @@ public partial interface CParticleSystemDefinition : IParticleSystemDefinition {
   
   public ref bool ShouldSort { get; }
   
-// CUtlVector< ParticleControlPointConfiguration_t >
+  // CUtlVector< ParticleControlPointConfiguration_t >
   public ref CUtlVector ControlPointConfigurations { get; }
 
 

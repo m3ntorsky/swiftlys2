@@ -18,7 +18,7 @@ public partial interface CAnimSkeleton : ISchemaClass {
   
   public ref CUtlVector<int> Parents { get; }
   
-// CUtlVector< CAnimFoot >
+  // CUtlVector< CAnimFoot >
   public ref CUtlVector Feet { get; }
   
   public ref CUtlVector<CUtlString> MorphNames { get; }

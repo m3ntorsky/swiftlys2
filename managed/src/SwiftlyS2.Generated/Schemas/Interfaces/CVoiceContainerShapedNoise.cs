@@ -12,18 +12,21 @@ public partial interface CVoiceContainerShapedNoise : CVoiceContainerBase {
   
   public ref float Frequency { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField FrequencySweep { get; }
   
   public ref bool UseCurveForResonance { get; }
   
   public ref float Resonance { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField ResonanceSweep { get; }
   
   public ref bool UseCurveForAmplitude { get; }
   
   public ref float GainInDecibels { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField GainSweep { get; }
 
 

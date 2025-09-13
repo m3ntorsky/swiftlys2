@@ -12,37 +12,37 @@ public partial interface MaterialResourceData_t : ISchemaClass {
   
   public ref CUtlString ShaderName { get; }
   
-// CUtlVector< MaterialParamInt_t >
+  // CUtlVector< MaterialParamInt_t >
   public ref CUtlVector IntParams { get; }
   
-// CUtlVector< MaterialParamFloat_t >
+  // CUtlVector< MaterialParamFloat_t >
   public ref CUtlVector FloatParams { get; }
   
-// CUtlVector< MaterialParamVector_t >
+  // CUtlVector< MaterialParamVector_t >
   public ref CUtlVector VectorParams { get; }
   
-// CUtlVector< MaterialParamTexture_t >
+  // CUtlVector< MaterialParamTexture_t >
   public ref CUtlVector TextureParams { get; }
   
-// CUtlVector< MaterialParamBuffer_t >
+  // CUtlVector< MaterialParamBuffer_t >
   public ref CUtlVector DynamicParams { get; }
   
-// CUtlVector< MaterialParamBuffer_t >
+  // CUtlVector< MaterialParamBuffer_t >
   public ref CUtlVector DynamicTextureParams { get; }
   
-// CUtlVector< MaterialParamInt_t >
+  // CUtlVector< MaterialParamInt_t >
   public ref CUtlVector IntAttributes { get; }
   
-// CUtlVector< MaterialParamFloat_t >
+  // CUtlVector< MaterialParamFloat_t >
   public ref CUtlVector FloatAttributes { get; }
   
-// CUtlVector< MaterialParamVector_t >
+  // CUtlVector< MaterialParamVector_t >
   public ref CUtlVector VectorAttributes { get; }
   
-// CUtlVector< MaterialParamTexture_t >
+  // CUtlVector< MaterialParamTexture_t >
   public ref CUtlVector TextureAttributes { get; }
   
-// CUtlVector< MaterialParamString_t >
+  // CUtlVector< MaterialParamString_t >
   public ref CUtlVector StringAttributes { get; }
   
   public ref CUtlVector<CUtlString> RenderAttributesUsed { get; }

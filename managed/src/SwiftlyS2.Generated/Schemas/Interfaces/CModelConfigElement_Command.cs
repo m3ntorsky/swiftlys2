@@ -10,6 +10,7 @@ public partial interface CModelConfigElement_Command : CModelConfigElement {
   
   public ref CUtlString Command { get; }
   
+  // KeyValues3
   public SchemaUntypedField Args { get; }
 
 

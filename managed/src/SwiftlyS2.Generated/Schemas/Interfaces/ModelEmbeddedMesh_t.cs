@@ -16,13 +16,13 @@ public partial interface ModelEmbeddedMesh_t : ISchemaClass {
   
   public ref int MorphBlock { get; }
   
-// CUtlVector< ModelMeshBufferData_t >
+  // CUtlVector< ModelMeshBufferData_t >
   public ref CUtlVector VertexBuffers { get; }
   
-// CUtlVector< ModelMeshBufferData_t >
+  // CUtlVector< ModelMeshBufferData_t >
   public ref CUtlVector IndexBuffers { get; }
   
-// CUtlVector< ModelMeshBufferData_t >
+  // CUtlVector< ModelMeshBufferData_t >
   public ref CUtlVector ToolsBuffers { get; }
   
   public ref int VBIBBlock { get; }

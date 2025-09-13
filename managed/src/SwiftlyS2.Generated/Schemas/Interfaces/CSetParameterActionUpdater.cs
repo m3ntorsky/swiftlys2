@@ -10,6 +10,7 @@ public partial interface CSetParameterActionUpdater : CAnimActionUpdater {
   
   public CAnimParamHandle Param { get; }
   
+  // CAnimVariant
   public SchemaUntypedField Value { get; }
 
 

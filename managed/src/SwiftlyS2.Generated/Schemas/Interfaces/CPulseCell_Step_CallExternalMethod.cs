@@ -8,10 +8,13 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Step_CallExternalMethod : CPulseCell_BaseYieldingInflow {
 
   
+  // PulseSymbol_t
   public SchemaUntypedField MethodName { get; }
   
+  // PulseSymbol_t
   public SchemaUntypedField GameBlackboard { get; }
   
+  // CUtlLeanVector< CPulseRuntimeMethodArg >
   public SchemaUntypedField ExpectedArgs { get; }
   
   public ref PulseMethodCallMode_t AsyncCallMode { get; }

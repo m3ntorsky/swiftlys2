@@ -12,12 +12,16 @@ public partial interface CNmMaterialAttributeEvent : CNmEvent {
   
   public ref CUtlStringToken AttributeNameToken { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField X { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField Y { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField Z { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField W { get; }
 
 

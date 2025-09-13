@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderAsModels : CParticleFunctionRenderer {
 
   
-// CUtlVector< ModelReference_t >
+  // CUtlVector< ModelReference_t >
   public ref CUtlVector ModelList { get; }
   
   public ref float ModelScale { get; }

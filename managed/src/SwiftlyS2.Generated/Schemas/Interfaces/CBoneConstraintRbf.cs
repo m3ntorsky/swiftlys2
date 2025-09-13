@@ -8,10 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBoneConstraintRbf : CBoneConstraintBase {
 
   
-// CUtlVector< std::pair< CUtlString, uint32 > >
+  // CUtlVector< std::pair< CUtlString, uint32 > >
   public ref CUtlVector InputBones { get; }
   
-// CUtlVector< std::pair< CUtlString, uint32 > >
+  // CUtlVector< std::pair< CUtlString, uint32 > >
   public ref CUtlVector OutputBones { get; }
 
 

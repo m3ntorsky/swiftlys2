@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootStepTriggerUpdateNode : CUnaryUpdateNode {
 
   
-// CUtlVector< FootStepTrigger >
+  // CUtlVector< FootStepTrigger >
   public ref CUtlVector Triggers { get; }
   
   public ref float Tolerance { get; }

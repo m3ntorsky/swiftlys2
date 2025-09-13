@@ -12,12 +12,16 @@ public partial interface CLogicCompare : CLogicalEntity {
   
   public ref float CompareValue { get; }
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField OnLessThan { get; }
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField OnEqualTo { get; }
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField OnNotEqualTo { get; }
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField OnGreaterThan { get; }
 
 

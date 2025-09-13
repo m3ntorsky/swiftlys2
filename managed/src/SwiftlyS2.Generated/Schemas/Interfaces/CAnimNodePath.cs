@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimNodePath : ISchemaClass {
 
   
+  // AnimNodeID
   public SchemaUntypedField Path { get; }
   
   public ref int Count { get; }

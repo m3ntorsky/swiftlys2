@@ -12,8 +12,10 @@ public partial interface CNmIDToFloatNode__CDefinition : CNmFloatValueNode__CDef
   
   public ref float DefaultValue { get; }
   
+  // CUtlLeanVectorFixedGrowable< CGlobalSymbol, 5 >
   public SchemaUntypedField IDs { get; }
   
+  // CUtlLeanVectorFixedGrowable< float32, 5 >
   public SchemaUntypedField Values { get; }
 
 

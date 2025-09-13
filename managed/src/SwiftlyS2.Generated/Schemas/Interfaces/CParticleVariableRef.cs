@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleVariableRef : ISchemaClass {
 
   
+  // CKV3MemberNameWithStorage
   public SchemaUntypedField VariableName { get; }
   
   public ref PulseValueType_t VariableType { get; }

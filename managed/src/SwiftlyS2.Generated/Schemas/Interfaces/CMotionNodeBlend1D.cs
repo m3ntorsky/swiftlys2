@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionNodeBlend1D : CMotionNode {
 
   
-// CUtlVector< MotionBlendItem >
+  // CUtlVector< MotionBlendItem >
   public ref CUtlVector BlendItems { get; }
   
   public ref int ParamIndex { get; }

@@ -8,20 +8,25 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBasePlayerWeaponVData : CEntitySubclassVDataBase {
 
   
+  // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >
   public SchemaUntypedField WorldModel { get; }
   
+  // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >
   public SchemaUntypedField ToolsOnlyOwnerModelName { get; }
   
   public ref bool BuiltRightHanded { get; }
   
   public ref bool AllowFlipping { get; }
   
+  // CAttachmentNameSymbolWithStorage
   public SchemaUntypedField MuzzleAttachment { get; }
   
+  // CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > >
   public SchemaUntypedField MuzzleFlashParticle { get; }
   
   public ref CUtlString MuzzleFlashParticleConfig { get; }
   
+  // CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > >
   public SchemaUntypedField BarrelSmokeParticle { get; }
   
   public ref byte MuzzleSmokeShotThreshold { get; }
@@ -64,6 +69,7 @@ public partial interface CBasePlayerWeaponVData : CEntitySubclassVDataBase {
   
   public ref int Position { get; }
   
+  // CUtlOrderedMap< WeaponSound_t, CSoundEventName >
   public SchemaUntypedField ShootSounds { get; }
 
 

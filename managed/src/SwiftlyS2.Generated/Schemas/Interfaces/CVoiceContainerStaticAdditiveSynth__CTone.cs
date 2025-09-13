@@ -8,9 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVoiceContainerStaticAdditiveSynth__CTone : ISchemaClass {
 
   
-// CUtlVector< CVoiceContainerStaticAdditiveSynth::CHarmonic >
+  // CUtlVector< CVoiceContainerStaticAdditiveSynth::CHarmonic >
   public ref CUtlVector Harmonics { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField Curve { get; }
   
   public ref bool SyncInstances { get; }

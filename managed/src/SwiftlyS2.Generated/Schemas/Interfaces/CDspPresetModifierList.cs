@@ -10,7 +10,7 @@ public partial interface CDspPresetModifierList : ISchemaClass {
   
   public ref CUtlString DspName { get; }
   
-// CUtlVector< CDSPMixgroupModifier >
+  // CUtlVector< CDSPMixgroupModifier >
   public ref CUtlVector Modifiers { get; }
 
 

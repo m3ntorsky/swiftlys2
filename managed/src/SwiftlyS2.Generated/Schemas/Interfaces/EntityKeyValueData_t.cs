@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EntityKeyValueData_t : ISchemaClass {
 
   
-// CUtlVector< EntityIOConnectionData_t >
+  // CUtlVector< EntityIOConnectionData_t >
   public ref CUtlVector Connections { get; }
   
   public ref CUtlBinaryBlock KeyValuesData { get; }

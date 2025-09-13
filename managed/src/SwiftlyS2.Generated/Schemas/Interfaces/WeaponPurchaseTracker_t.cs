@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface WeaponPurchaseTracker_t : ISchemaClass {
 
   
-// CUtlVectorEmbeddedNetworkVar< WeaponPurchaseCount_t >
+  // CUtlVectorEmbeddedNetworkVar< WeaponPurchaseCount_t >
   public ref CUtlVector WeaponPurchases { get; }
 
   public void WeaponPurchasesUpdated();

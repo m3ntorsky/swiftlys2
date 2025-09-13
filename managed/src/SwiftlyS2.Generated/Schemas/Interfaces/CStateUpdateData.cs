@@ -14,19 +14,24 @@ public partial interface CStateUpdateData : ISchemaClass {
   
   public ref CUtlVector<int> TransitionIndices { get; }
   
-// CUtlVector< CStateActionUpdater >
+  // CUtlVector< CStateActionUpdater >
   public ref CUtlVector Actions { get; }
   
   public AnimStateID StateID { get; }
   
+  // bitfield
   public SchemaUntypedField IsStartState { get; }
   
+  // bitfield
   public SchemaUntypedField IsEndState { get; }
   
+  // bitfield
   public SchemaUntypedField IsPassthrough { get; }
   
+  // bitfield
   public SchemaUntypedField IsPassthroughRootMotion { get; }
   
+  // bitfield
   public SchemaUntypedField PreEvaluatePassthroughTransitionPath { get; }
 
 

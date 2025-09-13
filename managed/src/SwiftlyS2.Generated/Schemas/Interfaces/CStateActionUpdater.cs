@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStateActionUpdater : ISchemaClass {
 
   
+  // CSmartPtr< CAnimActionUpdater >
   public SchemaUntypedField Action { get; }
   
   public ref StateActionBehavior Behavior { get; }

@@ -18,12 +18,15 @@ public partial interface CSchemaSystemInternalRegistration : ISchemaClass {
   
   public ref QAngle QAngle { get; }
   
+  // RotationVector
   public SchemaUntypedField RotationVector { get; }
   
   public ref RadianEuler RadianEuler { get; }
   
+  // DegreeEuler
   public SchemaUntypedField DegreeEuler { get; }
   
+  // QuaternionStorage
   public SchemaUntypedField QuaternionStorage { get; }
   
   public ref matrix3x4_t Matrix3x4_t { get; }
@@ -36,20 +39,25 @@ public partial interface CSchemaSystemInternalRegistration : ISchemaClass {
   
   public ref CTransform CTransform { get; }
   
+  // KeyValues
   public SchemaUntypedField KeyValues { get; }
   
   public ref CUtlBinaryBlock CUtlBinaryBlock { get; }
   
   public ref CUtlString CUtlString { get; }
   
+  // CUtlSymbol
   public SchemaUntypedField CUtlSymbol { get; }
   
   public ref CUtlStringToken StringToken { get; }
   
+  // CUtlStringTokenWithStorage
   public SchemaUntypedField StringTokenWithStorage { get; }
   
+  // CResourceArray< CResourcePointer< CResourceString > >
   public SchemaUntypedField ResourceTypes { get; }
   
+  // KeyValues3
   public SchemaUntypedField KV3 { get; }
 
 

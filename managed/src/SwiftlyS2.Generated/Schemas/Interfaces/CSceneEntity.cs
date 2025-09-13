@@ -110,6 +110,7 @@ public partial interface CSceneEntity : CPointEntity {
   
   public CEntityIOOutput OnResumed { get; }
   
+  // CEntityIOOutput
   public SchemaUntypedField OnTrigger { get; }
   
   public ref CHandle<CSceneEntity> InterruptScene { get; }

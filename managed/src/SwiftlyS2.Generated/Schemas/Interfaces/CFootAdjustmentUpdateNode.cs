@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootAdjustmentUpdateNode : CUnaryUpdateNode {
 
   
-// CUtlVector< HSequence >
+  // CUtlVector< HSequence >
   public ref CUtlVector Clips { get; }
   
   public CPoseHandle BasePoseCacheHandle { get; }

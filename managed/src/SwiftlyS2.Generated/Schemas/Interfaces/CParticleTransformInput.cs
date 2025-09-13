@@ -10,6 +10,7 @@ public partial interface CParticleTransformInput : CParticleInput {
   
   public ref ParticleTransformType_t Type { get; }
   
+  // CParticleNamedValueRef
   public SchemaUntypedField NamedValue { get; }
   
   public ref bool FollowNamedValue { get; }

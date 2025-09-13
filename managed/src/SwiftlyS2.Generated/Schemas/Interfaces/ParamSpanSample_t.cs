@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ParamSpanSample_t : ISchemaClass {
 
   
+  // CAnimVariant
   public SchemaUntypedField Value { get; }
   
   public ref float Cycle { get; }

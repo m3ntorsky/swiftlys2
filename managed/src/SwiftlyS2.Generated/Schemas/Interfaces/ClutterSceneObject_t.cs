@@ -20,7 +20,7 @@ public partial interface ClutterSceneObject_t : ISchemaClass {
   
   public ref CUtlVector<Color> InstanceTintSrgb { get; }
   
-// CUtlVector< ClutterTile_t >
+  // CUtlVector< ClutterTile_t >
   public ref CUtlVector Tiles { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel { get; }

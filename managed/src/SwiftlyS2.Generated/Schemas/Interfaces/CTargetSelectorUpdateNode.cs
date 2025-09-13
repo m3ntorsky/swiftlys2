@@ -10,7 +10,7 @@ public partial interface CTargetSelectorUpdateNode : CAnimUpdateNodeBase {
   
   public ref TargetSelectorAngleMode_t AngleMode { get; }
   
-// CUtlVector< CAnimUpdateNodeRef >
+  // CUtlVector< CAnimUpdateNodeRef >
   public ref CUtlVector Children { get; }
   
   public CAnimParamHandle TargetPosition { get; }

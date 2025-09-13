@@ -16,8 +16,10 @@ public partial interface CSkeletonInstance : CGameSceneNode {
   
   public ref bool DisableSolidCollisionsForHierarchy { get; }
   
+  // bitfield
   public SchemaUntypedField DirtyMotionType { get; }
   
+  // bitfield
   public SchemaUntypedField IsGeneratingLatchedParentSpaceState { get; }
   
   public ref CUtlStringToken MaterialGroup { get; }

@@ -12,10 +12,13 @@ public partial interface CSceneObjectData : ISchemaClass {
   
   public ref Vector MaxBounds { get; }
   
+  // CUtlLeanVector< CMaterialDrawDescriptor >
   public SchemaUntypedField DrawCalls { get; }
   
+  // CUtlLeanVector< AABB_t >
   public SchemaUntypedField DrawBounds { get; }
   
+  // CUtlLeanVector< CMeshletDescriptor >
   public SchemaUntypedField Meshlets { get; }
   
   public ref Vector4D TintColor { get; }

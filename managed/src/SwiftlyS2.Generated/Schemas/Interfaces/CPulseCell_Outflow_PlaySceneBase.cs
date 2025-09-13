@@ -12,7 +12,7 @@ public partial interface CPulseCell_Outflow_PlaySceneBase : CPulseCell_BaseYield
   
   public CPulse_ResumePoint OnCanceled { get; }
   
-// CUtlVector< CPulse_OutflowConnection >
+  // CUtlVector< CPulse_OutflowConnection >
   public ref CUtlVector Triggers { get; }
 
 

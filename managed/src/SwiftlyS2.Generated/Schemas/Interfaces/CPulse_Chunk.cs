@@ -8,10 +8,13 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulse_Chunk : ISchemaClass {
 
   
+  // CUtlLeanVector< PGDInstruction_t >
   public SchemaUntypedField Instructions { get; }
   
+  // CUtlLeanVector< CPulse_RegisterInfo >
   public SchemaUntypedField Registers { get; }
   
+  // CUtlLeanVector< PulseDocNodeID_t >
   public SchemaUntypedField InstructionEditorIDs { get; }
 
 

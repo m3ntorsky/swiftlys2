@@ -30,6 +30,7 @@ public partial interface CBreakable : CBaseModelEntity {
   
   public CEntityIOOutput OnBreak { get; }
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField OnHealthChanged { get; }
   
   public ref PerformanceMode_t PerformanceMode { get; }

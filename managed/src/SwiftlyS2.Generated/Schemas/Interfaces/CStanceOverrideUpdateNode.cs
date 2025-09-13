@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStanceOverrideUpdateNode : CUnaryUpdateNode {
 
   
-// CUtlVector< StanceInfo_t >
+  // CUtlVector< StanceInfo_t >
   public ref CUtlVector FootStanceInfo { get; }
   
   public CAnimUpdateNodeRef StanceSourceNode { get; }

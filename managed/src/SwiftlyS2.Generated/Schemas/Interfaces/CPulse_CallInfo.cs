@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulse_CallInfo : ISchemaClass {
 
   
+  // PulseSymbol_t
   public SchemaUntypedField PortName { get; }
   
   public PulseDocNodeID_t EditorNodeID { get; }

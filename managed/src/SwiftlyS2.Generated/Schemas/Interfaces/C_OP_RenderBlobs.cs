@@ -20,7 +20,7 @@ public partial interface C_OP_RenderBlobs : CParticleFunctionRenderer {
   
   public ref int ScaleCP { get; }
   
-// CUtlVector< MaterialVariable_t >
+  // CUtlVector< MaterialVariable_t >
   public ref CUtlVector MaterialVars { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }

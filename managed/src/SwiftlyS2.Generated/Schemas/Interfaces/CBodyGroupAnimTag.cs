@@ -10,7 +10,7 @@ public partial interface CBodyGroupAnimTag : CAnimTagBase {
   
   public ref int Priority { get; }
   
-// CUtlVector< CBodyGroupSetting >
+  // CUtlVector< CBodyGroupSetting >
   public ref CUtlVector BodyGroupSettings { get; }
 
 

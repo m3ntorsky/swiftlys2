@@ -24,16 +24,16 @@ public partial interface CSeqCmdSeqDesc : ISchemaClass {
   
   public ref short NumLocalResults { get; }
   
-// CUtlVector< CSeqCmdLayer >
+  // CUtlVector< CSeqCmdLayer >
   public ref CUtlVector CmdLayerArray { get; }
   
-// CUtlVector< CAnimEventDefinition >
+  // CUtlVector< CAnimEventDefinition >
   public ref CUtlVector EventArray { get; }
   
-// CUtlVector< CAnimActivity >
+  // CUtlVector< CAnimActivity >
   public ref CUtlVector ActivityArray { get; }
   
-// CUtlVector< CSeqPoseSetting >
+  // CUtlVector< CSeqPoseSetting >
   public ref CUtlVector PoseSettingArray { get; }
 
 

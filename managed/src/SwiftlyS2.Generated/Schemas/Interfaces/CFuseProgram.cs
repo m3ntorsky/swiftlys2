@@ -10,10 +10,10 @@ public partial interface CFuseProgram : ISchemaClass {
   
   public ref CUtlVector<byte> ProgramBuffer { get; }
   
-// CUtlVector< FuseVariableIndex_t >
+  // CUtlVector< FuseVariableIndex_t >
   public ref CUtlVector VariablesRead { get; }
   
-// CUtlVector< FuseVariableIndex_t >
+  // CUtlVector< FuseVariableIndex_t >
   public ref CUtlVector VariablesWritten { get; }
   
   public ref int MaxTempVarsUsed { get; }

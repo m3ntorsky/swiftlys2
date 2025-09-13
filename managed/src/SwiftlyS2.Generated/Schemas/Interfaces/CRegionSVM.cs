@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRegionSVM : ISchemaClass {
 
   
-// CUtlVector< RnPlane_t >
+  // CUtlVector< RnPlane_t >
   public ref CUtlVector Planes { get; }
   
   public ref CUtlVector<uint> Nodes { get; }

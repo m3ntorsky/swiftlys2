@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayer_PingServices : CPlayerPawnComponent {
 
   
+  // GameTime_t
   public SchemaUntypedField PlayerPingTokens { get; }
   
   public ref CHandle<CBaseEntity> PlayerPing { get; }

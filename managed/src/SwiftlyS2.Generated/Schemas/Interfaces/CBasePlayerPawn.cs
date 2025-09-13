@@ -26,7 +26,7 @@ public partial interface CBasePlayerPawn : CBaseCombatCharacter {
   
   public CPlayer_MovementServices MovementServices { get; }
   
-// CUtlVectorEmbeddedNetworkVar< ViewAngleServerChange_t >
+  // CUtlVectorEmbeddedNetworkVar< ViewAngleServerChange_t >
   public ref CUtlVector ServerViewAngleChanges { get; }
   
   public ref QAngle V_angle { get; }
@@ -57,7 +57,7 @@ public partial interface CBasePlayerPawn : CBaseCombatCharacter {
   
   public ref uint HltvReplayEntity { get; }
   
-// CUtlVector< sndopvarlatchdata_t >
+  // CUtlVector< sndopvarlatchdata_t >
   public ref CUtlVector SndOpvarLatchData { get; }
 
   public void WeaponServicesUpdated();

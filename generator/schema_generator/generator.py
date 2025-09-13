@@ -136,8 +136,11 @@ class Writer():
         field_info["REF"] = "ref " if field_info["IS_VALUE_TYPE"] else ""
         field_info["COMMENT"] = ""
 
-        if field_info["IMPL_TYPE"] in erased_generics and "templated" in field:
-          field_info["COMMENT"] = f"\n// {field['templated']}"
+        if field_info["IMPL_TYPE"] in erased_generics or field_info["IMPL_TYPE"] == "SchemaUntypedField":
+          if "templated" in field:
+            field_info["COMMENT"] = f"\n  // {field['templated']}"
+          else:
+            field_info["COMMENT"] = f"\n  // {field['type']}"
 
         if field_info["IS_NETWORKED"] == "true":
           updators.append(render_template(self.interface_updator_template, field_info))

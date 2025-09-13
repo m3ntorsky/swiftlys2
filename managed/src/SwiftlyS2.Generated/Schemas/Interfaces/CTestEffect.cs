@@ -12,8 +12,10 @@ public partial interface CTestEffect : CBaseEntity {
   
   public ref int Beam { get; }
   
+  // CBeam
   public SchemaUntypedField Beam1 { get; }
   
+  // GameTime_t
   public SchemaUntypedField BeamTime { get; }
   
   public GameTime_t StartTime { get; }

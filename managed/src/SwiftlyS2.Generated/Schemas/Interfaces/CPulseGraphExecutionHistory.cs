@@ -14,8 +14,10 @@ public partial interface CPulseGraphExecutionHistory : ISchemaClass {
   
   public ref CUtlVector<PointerTo<PulseGraphExecutionHistoryEntry_t>> History { get; }
   
+  // CUtlOrderedMap< PulseDocNodeID_t, PulseGraphExecutionHistoryNodeDesc_t* >
   public SchemaUntypedField MapCellDesc { get; }
   
+  // CUtlOrderedMap< PulseCursorID_t, PulseGraphExecutionHistoryCursorDesc_t* >
   public SchemaUntypedField MapCursorDesc { get; }
 
 

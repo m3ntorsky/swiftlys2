@@ -10,6 +10,7 @@ public partial interface CNmLegacyEvent : CNmEvent {
   
   public ref CUtlString AnimEventClassName { get; }
   
+  // KeyValues3
   public SchemaUntypedField KV { get; }
 
 

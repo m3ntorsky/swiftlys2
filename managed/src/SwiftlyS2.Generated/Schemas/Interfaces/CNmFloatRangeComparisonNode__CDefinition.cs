@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmFloatRangeComparisonNode__CDefinition : CNmBoolValueNode__CDefinition {
 
   
+  // Range_t
   public SchemaUntypedField Range { get; }
   
   public ref short InputValueNodeIdx { get; }

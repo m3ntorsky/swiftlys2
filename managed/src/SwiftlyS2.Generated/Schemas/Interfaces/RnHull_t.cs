@@ -22,18 +22,18 @@ public partial interface RnHull_t : ISchemaClass {
   
   public ref float SurfaceArea { get; }
   
-// CUtlVector< RnVertex_t >
+  // CUtlVector< RnVertex_t >
   public ref CUtlVector Vertices { get; }
   
   public ref CUtlVector<Vector> VertexPositions { get; }
   
-// CUtlVector< RnHalfEdge_t >
+  // CUtlVector< RnHalfEdge_t >
   public ref CUtlVector Edges { get; }
   
-// CUtlVector< RnFace_t >
+  // CUtlVector< RnFace_t >
   public ref CUtlVector Faces { get; }
   
-// CUtlVector< RnPlane_t >
+  // CUtlVector< RnPlane_t >
   public ref CUtlVector FacePlanes { get; }
   
   public ref uint Flags { get; }

@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSolveIKChainUpdateNode : CUnaryUpdateNode {
 
   
-// CUtlVector< CSolveIKTargetHandle_t >
+  // CUtlVector< CSolveIKTargetHandle_t >
   public ref CUtlVector TargetHandles { get; }
   
   public SolveIKChainPoseOpFixedSettings_t OpFixedData { get; }

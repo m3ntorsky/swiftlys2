@@ -24,6 +24,7 @@ public partial interface CSoundEventEntity : CBaseEntity {
   
   public ref CUtlSymbolLarge AttachmentName { get; }
   
+  // CEntityOutputTemplate< uint64 >
   public SchemaUntypedField OnGUIDChanged { get; }
   
   public CEntityIOOutput OnSoundFinished { get; }

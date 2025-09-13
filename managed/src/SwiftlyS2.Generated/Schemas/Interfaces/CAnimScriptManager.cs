@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimScriptManager : ISchemaClass {
 
   
-// CUtlVector< ScriptInfo_t >
+  // CUtlVector< ScriptInfo_t >
   public ref CUtlVector ScriptInfo { get; }
 
 

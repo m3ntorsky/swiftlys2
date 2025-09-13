@@ -10,6 +10,7 @@ public partial interface CPulse_BlackboardReference : ISchemaClass {
   
   public ref CStrongHandle<InfoForResourceTypeIPulseGraphDef> BlackboardResource { get; }
   
+  // PulseSymbol_t
   public SchemaUntypedField BlackboardResource1 { get; }
   
   public PulseDocNodeID_t NodeID { get; }

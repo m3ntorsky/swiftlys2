@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDirectionalBlendUpdateNode : CLeafUpdateNode {
 
   
+  // HSequence
   public SchemaUntypedField Sequences { get; }
   
   public CAnimInputDamping Damping { get; }

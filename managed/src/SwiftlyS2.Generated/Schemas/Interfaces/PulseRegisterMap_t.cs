@@ -8,10 +8,13 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PulseRegisterMap_t : ISchemaClass {
 
   
+  // KeyValues3
   public SchemaUntypedField Inparams { get; }
   
+  // CKV3MemberNameSet
   public SchemaUntypedField InparamsWhichCanBeMoved { get; }
   
+  // KeyValues3
   public SchemaUntypedField Outparams { get; }
 
 

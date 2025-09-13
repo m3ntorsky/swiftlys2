@@ -1,3 +1,5 @@
+#pragma warning disable CS0649
+
 using System.Buffers;
 using System.Text;
 

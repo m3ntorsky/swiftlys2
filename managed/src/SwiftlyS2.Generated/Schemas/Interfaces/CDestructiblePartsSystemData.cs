@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDestructiblePartsSystemData : ISchemaClass {
 
   
+  // CUtlOrderedMap< HitGroup_t, CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels >
   public SchemaUntypedField PartsDataByHitGroup { get; }
   
   public CRangeInt MinMaxNumberHitGroupsToDestroyWhenGibbing { get; }

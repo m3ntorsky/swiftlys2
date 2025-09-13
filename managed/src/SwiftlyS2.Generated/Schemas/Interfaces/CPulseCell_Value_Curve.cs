@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Value_Curve : CPulseCell_BaseValue {
 
   
+  // CPiecewiseCurve
   public SchemaUntypedField Curve { get; }
 
 

@@ -8,24 +8,30 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimUpdateSharedData : ISchemaClass {
 
   
-// CUtlVector< CSmartPtr< CAnimUpdateNodeBase > >
+  // CUtlVector< CSmartPtr< CAnimUpdateNodeBase > >
   public ref CUtlVector Nodes { get; }
   
+  // CUtlHashtable< CAnimNodePath, int32 >
   public SchemaUntypedField NodeIndexMap { get; }
   
-// CUtlVector< CSmartPtr< CAnimComponentUpdater > >
+  // CUtlVector< CSmartPtr< CAnimComponentUpdater > >
   public ref CUtlVector Components { get; }
   
+  // CSmartPtr< CAnimParameterManagerUpdater >
   public SchemaUntypedField ParamListUpdater { get; }
   
+  // CSmartPtr< CAnimTagManagerUpdater >
   public SchemaUntypedField TagManagerUpdater { get; }
   
+  // CSmartPtr< CAnimScriptManager >
   public SchemaUntypedField ScriptManager { get; }
   
   public CAnimGraphSettingsManager Settings { get; }
   
+  // CSmartPtr< CStaticPoseCacheBuilder >
   public SchemaUntypedField StaticPoseCache { get; }
   
+  // CSmartPtr< CAnimSkeleton >
   public SchemaUntypedField Skeleton { get; }
   
   public CAnimNodePath RootNodePath { get; }

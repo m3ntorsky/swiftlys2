@@ -10,7 +10,7 @@ public partial interface ScriptInfo_t : ISchemaClass {
   
   public ref CUtlString Code { get; }
   
-// CUtlVector< CAnimParamHandle >
+  // CUtlVector< CAnimParamHandle >
   public ref CUtlVector ParamsModified { get; }
   
   public ref CUtlVector<int> ProxyReadParams { get; }

@@ -20,6 +20,7 @@ public partial interface CMathRemap : CLogicalEntity {
   
   public ref bool Enabled { get; }
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField OutValue { get; }
   
   public CEntityIOOutput OnRoseAboveMin { get; }

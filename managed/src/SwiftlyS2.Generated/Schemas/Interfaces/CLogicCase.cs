@@ -16,8 +16,10 @@ public partial interface CLogicCase : CLogicalEntity {
   
   public ISchemaFixedArray<byte> UchShuffleCaseMap { get; }
   
+  // CEntityIOOutput
   public SchemaUntypedField OnCase { get; }
   
+  // CEntityOutputTemplate< CVariantBase< CVariantDefaultAllocator > >
   public SchemaUntypedField OnDefault { get; }
 
 

@@ -12,6 +12,7 @@ public partial interface CNmIDEventConditionNode__CDefinition : CNmBoolValueNode
   
   public CNmBitFlags EventConditionRules { get; }
   
+  // CUtlVectorFixedGrowable< CGlobalSymbol, 5 >
   public SchemaUntypedField EventIDs { get; }
 
 

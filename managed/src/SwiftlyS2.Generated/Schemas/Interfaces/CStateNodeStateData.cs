@@ -10,8 +10,10 @@ public partial interface CStateNodeStateData : ISchemaClass {
   
   public CAnimUpdateNodeRef Child { get; }
   
+  // bitfield
   public SchemaUntypedField ExclusiveRootMotion { get; }
   
+  // bitfield
   public SchemaUntypedField ExclusiveRootMotionFirstFrame { get; }
 
 

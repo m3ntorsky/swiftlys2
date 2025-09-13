@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PulseNodeDynamicOutflows_t : ISchemaClass {
 
   
-// CUtlVector< PulseNodeDynamicOutflows_t::DynamicOutflow_t >
+  // CUtlVector< PulseNodeDynamicOutflows_t::DynamicOutflow_t >
   public ref CUtlVector Outflows { get; }
 
 

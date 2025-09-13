@@ -10,7 +10,7 @@ public partial interface CSequenceTagSpans : ISchemaClass {
   
   public ref CGlobalSymbol SequenceName { get; }
   
-// CUtlVector< TagSpan_t >
+  // CUtlVector< TagSpan_t >
   public ref CUtlVector Tags { get; }
 
 

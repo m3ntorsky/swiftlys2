@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStaticPoseCache : ISchemaClass {
 
   
-// CUtlVector< CCachedPose >
+  // CUtlVector< CCachedPose >
   public ref CUtlVector Poses { get; }
   
   public ref int BoneCount { get; }

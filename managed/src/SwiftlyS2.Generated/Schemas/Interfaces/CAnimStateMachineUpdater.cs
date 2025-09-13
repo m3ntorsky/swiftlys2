@@ -8,10 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimStateMachineUpdater : ISchemaClass {
 
   
-// CUtlVector< CStateUpdateData >
+  // CUtlVector< CStateUpdateData >
   public ref CUtlVector States { get; }
   
-// CUtlVector< CTransitionUpdateData >
+  // CUtlVector< CTransitionUpdateData >
   public ref CUtlVector Transitions { get; }
   
   public ref int StartStateIndex { get; }

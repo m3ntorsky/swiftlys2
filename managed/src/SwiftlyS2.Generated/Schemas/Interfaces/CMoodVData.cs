@@ -8,11 +8,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMoodVData : ISchemaClass {
 
   
+  // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >
   public SchemaUntypedField ModelName { get; }
   
   public ref MoodType_t MoodType { get; }
   
-// CUtlVector< MoodAnimationLayer_t >
+  // CUtlVector< MoodAnimationLayer_t >
   public ref CUtlVector AnimationLayers { get; }
 
 

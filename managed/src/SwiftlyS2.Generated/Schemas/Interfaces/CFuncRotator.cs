@@ -70,15 +70,15 @@ public partial interface CFuncRotator : CBaseModelEntity {
   
   public ref bool RecordHistory { get; }
   
-// CUtlVector< RotatorHistoryEntry_t >
+  // CUtlVector< RotatorHistoryEntry_t >
   public ref CUtlVector RotatorHistory { get; }
   
   public ref bool ReturningToPreviousOrientation { get; }
   
-// CUtlVector< RotatorQueueEntry_t >
+  // CUtlVector< RotatorQueueEntry_t >
   public ref CUtlVector RotatorQueue { get; }
   
-// CUtlVector< RotatorHistoryEntry_t >
+  // CUtlVector< RotatorHistoryEntry_t >
   public ref CUtlVector RotatorQueueHistory { get; }
 
 

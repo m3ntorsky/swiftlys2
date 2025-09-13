@@ -10,7 +10,7 @@ public partial interface CMotionMatchingUpdateNode : CLeafUpdateNode {
   
   public CMotionDataSet DataSet { get; }
   
-// CUtlVector< CSmartPtr< CMotionMetricEvaluator > >
+  // CUtlVector< CSmartPtr< CMotionMetricEvaluator > >
   public ref CUtlVector Metrics { get; }
   
   public ref CUtlVector<float> Weights { get; }

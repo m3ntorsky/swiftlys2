@@ -12,8 +12,10 @@ public partial interface CGamePlayerZone : CRuleBrushEntity {
   
   public CEntityIOOutput OnPlayerOutZone { get; }
   
+  // CEntityOutputTemplate< int32 >
   public SchemaUntypedField PlayersInCount { get; }
   
+  // CEntityOutputTemplate< int32 >
   public SchemaUntypedField PlayersOutCount { get; }
 
 

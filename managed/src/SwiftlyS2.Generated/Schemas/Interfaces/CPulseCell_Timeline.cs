@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Timeline : CPulseCell_BaseYieldingInflow {
 
   
-// CUtlVector< CPulseCell_Timeline::TimelineEvent_t >
+  // CUtlVector< CPulseCell_Timeline::TimelineEvent_t >
   public ref CUtlVector TimelineEvents { get; }
   
   public ref bool WaitForChildOutflows { get; }

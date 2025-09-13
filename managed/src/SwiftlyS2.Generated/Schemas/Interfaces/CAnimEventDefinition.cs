@@ -16,6 +16,7 @@ public partial interface CAnimEventDefinition : ISchemaClass {
   
   public ref float Duration { get; }
   
+  // KeyValues3
   public SchemaUntypedField EventData { get; }
   
   public ref CBufferString LegacyOptions { get; }

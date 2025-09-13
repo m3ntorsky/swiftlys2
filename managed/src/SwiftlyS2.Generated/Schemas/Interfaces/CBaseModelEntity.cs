@@ -52,7 +52,7 @@ public partial interface CBaseModelEntity : CBaseEntity {
   
   public ref Color Render { get; }
   
-// CUtlVectorEmbeddedNetworkVar< EntityRenderAttribute_t >
+  // CUtlVectorEmbeddedNetworkVar< EntityRenderAttribute_t >
   public ref CUtlVector RenderAttributes { get; }
   
   public ref bool RenderToCubemaps { get; }

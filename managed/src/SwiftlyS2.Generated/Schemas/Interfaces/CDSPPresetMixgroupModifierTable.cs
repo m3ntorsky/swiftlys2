@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDSPPresetMixgroupModifierTable : ISchemaClass {
 
   
-// CUtlVector< CDspPresetModifierList >
+  // CUtlVector< CDspPresetModifierList >
   public ref CUtlVector Table { get; }
 
 

@@ -8,19 +8,22 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFuseSymbolTable : ISchemaClass {
 
   
-// CUtlVector< ConstantInfo_t >
+  // CUtlVector< ConstantInfo_t >
   public ref CUtlVector Constants { get; }
   
-// CUtlVector< VariableInfo_t >
+  // CUtlVector< VariableInfo_t >
   public ref CUtlVector Variables { get; }
   
-// CUtlVector< FunctionInfo_t >
+  // CUtlVector< FunctionInfo_t >
   public ref CUtlVector Functions { get; }
   
+  // CUtlHashtable< CUtlStringToken, int32 >
   public SchemaUntypedField ConstantMap { get; }
   
+  // CUtlHashtable< CUtlStringToken, int32 >
   public SchemaUntypedField VariableMap { get; }
   
+  // CUtlHashtable< CUtlStringToken, int32 >
   public SchemaUntypedField FunctionMap { get; }
 
 

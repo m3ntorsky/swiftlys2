@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MotionBlendItem : ISchemaClass {
 
   
+  // CSmartPtr< CMotionNode >
   public SchemaUntypedField Child { get; }
   
   public ref float KeyValue { get; }

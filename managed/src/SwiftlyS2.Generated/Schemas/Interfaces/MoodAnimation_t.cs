@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MoodAnimation_t : ISchemaClass {
 
   
+  // CModelAnimNameWithDeltas
   public SchemaUntypedField Name { get; }
   
   public ref float Weight { get; }

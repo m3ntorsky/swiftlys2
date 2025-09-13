@@ -12,7 +12,7 @@ public partial interface CBaseEntity : CEntityInstance {
   
   public CNetworkTransmitComponent NetworkTransmitComponent { get; }
   
-// CUtlVector< thinkfunc_t >
+  // CUtlVector< thinkfunc_t >
   public ref CUtlVector ThinkFunctions { get; }
   
   public ref int CurrentThinkContext { get; }
@@ -21,11 +21,12 @@ public partial interface CBaseEntity : CEntityInstance {
   
   public ref bool DisabledContextThinks { get; }
   
+  // CTypedBitVec< 64 >
   public SchemaUntypedField IsSteadyState { get; }
   
   public ref float LastNetworkChange { get; }
   
-// CUtlVector< ResponseContext_t >
+  // CUtlVector< ResponseContext_t >
   public ref CUtlVector ResponseContexts { get; }
   
   public ref CUtlSymbolLarge ResponseContext { get; }

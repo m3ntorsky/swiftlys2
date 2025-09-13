@@ -8,12 +8,16 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulse_OutputConnection : ISchemaClass {
 
   
+  // PulseSymbol_t
   public SchemaUntypedField SourceOutput { get; }
   
+  // PulseSymbol_t
   public SchemaUntypedField TargetEntity { get; }
   
+  // PulseSymbol_t
   public SchemaUntypedField TargetInput { get; }
   
+  // PulseSymbol_t
   public SchemaUntypedField Param { get; }
 
 

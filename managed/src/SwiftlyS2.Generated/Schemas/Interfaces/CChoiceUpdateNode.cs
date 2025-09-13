@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CChoiceUpdateNode : CAnimUpdateNodeBase {
 
   
-// CUtlVector< CAnimUpdateNodeRef >
+  // CUtlVector< CAnimUpdateNodeRef >
   public ref CUtlVector Children { get; }
   
   public ref CUtlVector<float> Weights { get; }

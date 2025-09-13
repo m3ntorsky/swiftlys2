@@ -16,22 +16,23 @@ public partial interface CSeqS1SeqDesc : ISchemaClass {
   
   public ref int LocalWeightlist { get; }
   
-// CUtlVector< CSeqAutoLayer >
+  // CUtlVector< CSeqAutoLayer >
   public ref CUtlVector AutoLayerArray { get; }
   
-// CUtlVector< CSeqIKLock >
+  // CUtlVector< CSeqIKLock >
   public ref CUtlVector IKLockArray { get; }
   
   public CSeqTransition Transition { get; }
   
+  // KeyValues3
   public SchemaUntypedField SequenceKeys { get; }
   
   public ref CBufferString LegacyKeyValueText { get; }
   
-// CUtlVector< CAnimActivity >
+  // CUtlVector< CAnimActivity >
   public ref CUtlVector ActivityArray { get; }
   
-// CUtlVector< CFootMotion >
+  // CUtlVector< CFootMotion >
   public ref CUtlVector FootMotion { get; }
 
 

@@ -16,30 +16,43 @@ public partial interface CNewParticleEffect : IParticleEffect {
   
   public ref CString DebugName { get; }
   
+  // bitfield
   public SchemaUntypedField DontRemove { get; }
   
+  // bitfield
   public SchemaUntypedField Remove { get; }
   
+  // bitfield
   public SchemaUntypedField NeedsBBoxUpdate { get; }
   
+  // bitfield
   public SchemaUntypedField IsFirstFrame { get; }
   
+  // bitfield
   public SchemaUntypedField AutoUpdateBBox { get; }
   
+  // bitfield
   public SchemaUntypedField Allocated { get; }
   
+  // bitfield
   public SchemaUntypedField Simulate { get; }
   
+  // bitfield
   public SchemaUntypedField ShouldPerformCullCheck { get; }
   
+  // bitfield
   public SchemaUntypedField ForceNoDraw { get; }
   
+  // bitfield
   public SchemaUntypedField SuppressScreenSpaceEffect { get; }
   
+  // bitfield
   public SchemaUntypedField ShouldSave { get; }
   
+  // bitfield
   public SchemaUntypedField ShouldSimulateDuringGamePaused { get; }
   
+  // bitfield
   public SchemaUntypedField ShouldCheckFoW { get; }
   
   public ref Vector SortOrigin { get; }

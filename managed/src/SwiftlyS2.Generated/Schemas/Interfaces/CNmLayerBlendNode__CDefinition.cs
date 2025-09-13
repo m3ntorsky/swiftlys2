@@ -12,6 +12,7 @@ public partial interface CNmLayerBlendNode__CDefinition : CNmPoseNode__CDefiniti
   
   public ref bool OnlySampleBaseRootMotion { get; }
   
+  // CUtlLeanVectorFixedGrowable< CNmLayerBlendNode::LayerDefinition_t, 3 >
   public SchemaUntypedField LayerDefinition { get; }
 
 

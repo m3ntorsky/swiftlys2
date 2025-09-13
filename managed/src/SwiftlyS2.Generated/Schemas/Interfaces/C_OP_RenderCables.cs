@@ -48,8 +48,10 @@ public partial interface C_OP_RenderCables : CParticleFunctionRenderer {
   
   public CParticleTransformInput LightingTransform { get; }
   
+  // CUtlLeanVector< FloatInputMaterialVariable_t >
   public SchemaUntypedField MaterialFloatVars { get; }
   
+  // CUtlLeanVector< VecInputMaterialVariable_t >
   public SchemaUntypedField MaterialVecVars { get; }
 
 

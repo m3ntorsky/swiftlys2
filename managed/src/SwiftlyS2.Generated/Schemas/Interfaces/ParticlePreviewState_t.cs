@@ -22,7 +22,7 @@ public partial interface ParticlePreviewState_t : ISchemaClass {
   
   public ref CUtlString MaterialGroupName { get; }
   
-// CUtlVector< ParticlePreviewBodyGroup_t >
+  // CUtlVector< ParticlePreviewBodyGroup_t >
   public ref CUtlVector BodyGroups { get; }
   
   public ref float PlaybackSpeed { get; }

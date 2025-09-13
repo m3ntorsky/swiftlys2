@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface thinkfunc_t : ISchemaClass {
 
   
+  // HSCRIPT
   public SchemaUntypedField Fn { get; }
   
   public ref CUtlStringToken Context { get; }

@@ -16,11 +16,12 @@ public partial interface CNmClip : ISchemaClass {
   
   public ref CUtlBinaryBlock CompressedPoseData { get; }
   
-// CUtlVector< NmCompressionSettings_t >
+  // CUtlVector< NmCompressionSettings_t >
   public ref CUtlVector TrackCompressionSettings { get; }
   
   public ref CUtlVector<uint> CompressedPoseOffsets { get; }
   
+  // CUtlVectorFixedGrowable< CNmClip*, 1 >
   public SchemaUntypedField SecondaryAnimations { get; }
   
   public CNmSyncTrack SyncTrack { get; }
@@ -29,7 +30,7 @@ public partial interface CNmClip : ISchemaClass {
   
   public ref bool IsAdditive { get; }
   
-// CUtlVector< CNmClip::ModelSpaceSamplingChainLink_t >
+  // CUtlVector< CNmClip::ModelSpaceSamplingChainLink_t >
   public ref CUtlVector ModelSpaceSamplingChain { get; }
   
   public ref CUtlVector<int> ModelSpaceBoneSamplingIndices { get; }

@@ -8,16 +8,16 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VPhysics2ShapeDef_t : ISchemaClass {
 
   
-// CUtlVector< RnSphereDesc_t >
+  // CUtlVector< RnSphereDesc_t >
   public ref CUtlVector Spheres { get; }
   
-// CUtlVector< RnCapsuleDesc_t >
+  // CUtlVector< RnCapsuleDesc_t >
   public ref CUtlVector Capsules { get; }
   
-// CUtlVector< RnHullDesc_t >
+  // CUtlVector< RnHullDesc_t >
   public ref CUtlVector Hulls { get; }
   
-// CUtlVector< RnMeshDesc_t >
+  // CUtlVector< RnMeshDesc_t >
   public ref CUtlVector Meshes { get; }
   
   public ref CUtlVector<ushort> CollisionAttributeIndices { get; }

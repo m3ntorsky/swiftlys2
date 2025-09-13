@@ -16,6 +16,7 @@ public partial interface CLogicPlayerProxy : CLogicalEntity {
   
   public CEntityIOOutput PlayerDied { get; }
   
+  // CEntityOutputTemplate< int32 >
   public SchemaUntypedField RequestedPlayerHealth { get; }
 
 

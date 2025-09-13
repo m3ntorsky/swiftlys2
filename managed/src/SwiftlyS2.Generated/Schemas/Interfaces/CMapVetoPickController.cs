@@ -46,14 +46,19 @@ public partial interface CMapVetoPickController : CBaseEntity {
   
   public ref int PhaseDurationTicks { get; }
   
+  // CEntityOutputTemplate< CUtlSymbolLarge >
   public SchemaUntypedField OnMapVetoed { get; }
   
+  // CEntityOutputTemplate< CUtlSymbolLarge >
   public SchemaUntypedField OnMapPicked { get; }
   
+  // CEntityOutputTemplate< int32 >
   public SchemaUntypedField OnSidesPicked { get; }
   
+  // CEntityOutputTemplate< int32 >
   public SchemaUntypedField OnNewPhaseStarted { get; }
   
+  // CEntityOutputTemplate< int32 >
   public SchemaUntypedField OnLevelTransition { get; }
 
   public void DraftTypeUpdated();

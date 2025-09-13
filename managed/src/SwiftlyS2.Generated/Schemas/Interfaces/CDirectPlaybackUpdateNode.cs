@@ -12,7 +12,7 @@ public partial interface CDirectPlaybackUpdateNode : CUnaryUpdateNode {
   
   public ref bool ResetOnFinish { get; }
   
-// CUtlVector< CDirectPlaybackTagData >
+  // CUtlVector< CDirectPlaybackTagData >
   public ref CUtlVector AllTags { get; }
 
 

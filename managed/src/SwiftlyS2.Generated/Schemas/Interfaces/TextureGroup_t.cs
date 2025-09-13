@@ -14,6 +14,7 @@ public partial interface TextureGroup_t : ISchemaClass {
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> Texture { get; }
   
+  // CColorGradient
   public SchemaUntypedField Gradient { get; }
   
   public ref SpriteCardTextureType_t TextureType { get; }

@@ -20,7 +20,7 @@ public partial interface CVSound : ISchemaClass {
   
   public ref float Duration { get; }
   
-// CUtlVector< CAudioSentence >
+  // CUtlVector< CAudioSentence >
   public ref CUtlVector Sentences { get; }
   
   public ref uint StreamingSize { get; }

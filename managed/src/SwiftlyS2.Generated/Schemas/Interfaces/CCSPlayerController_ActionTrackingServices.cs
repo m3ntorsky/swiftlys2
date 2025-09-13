@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayerController_ActionTrackingServices : CPlayerControllerComponent {
 
   
-// CUtlVectorEmbeddedNetworkVar< CSPerRoundStats_t >
+  // CUtlVectorEmbeddedNetworkVar< CSPerRoundStats_t >
   public ref CUtlVector PerRoundStats { get; }
   
   public CSMatchStats_t MatchStats { get; }

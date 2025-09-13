@@ -10,10 +10,12 @@ public partial interface CConstantForceController : ISchemaClass {
   
   public ref Vector Linear { get; }
   
+  // RotationVector
   public SchemaUntypedField Angular { get; }
   
   public ref Vector LinearSave { get; }
   
+  // RotationVector
   public SchemaUntypedField AngularSave { get; }
 
 

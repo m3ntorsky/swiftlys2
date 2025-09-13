@@ -12,8 +12,10 @@ public partial interface CTransitionUpdateData : ISchemaClass {
   
   public ref byte DestStateIndex { get; }
   
+  // bitfield
   public SchemaUntypedField HandshakeMaskToDisableFirst { get; }
   
+  // bitfield
   public SchemaUntypedField Disabled { get; }
 
 

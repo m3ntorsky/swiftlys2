@@ -14,6 +14,7 @@ public partial interface FeEffectDesc_t : ISchemaClass {
   
   public ref int Type { get; }
   
+  // KeyValues3
   public SchemaUntypedField Params { get; }
 
 

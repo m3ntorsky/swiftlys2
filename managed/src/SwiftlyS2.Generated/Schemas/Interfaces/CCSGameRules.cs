@@ -130,6 +130,7 @@ public partial interface CCSGameRules : CTeamplayRules {
   
   public ISchemaFixedArray<float> TeamRespawnWaveTimes { get; }
   
+  // GameTime_t
   public SchemaUntypedField NextRespawnWave { get; }
   
   public ref Vector MinimapMins { get; }
@@ -330,6 +331,7 @@ public partial interface CCSGameRules : CTeamplayRules {
   
   public CCSGameModeRules GameModeRules { get; }
   
+  // KeyValues3
   public SchemaUntypedField BtGlobalBlackboard { get; }
   
   public ref CHandle<CBaseEntity> PlayerResource { get; }

@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLogicLineToEntity : CLogicalEntity {
 
   
+  // CEntityOutputTemplate< Vector >
   public SchemaUntypedField Line { get; }
   
   public ref CUtlSymbolLarge SourceName { get; }

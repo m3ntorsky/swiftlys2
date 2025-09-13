@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysicsBodyGameMarkupData : ISchemaClass {
 
   
+  // CUtlOrderedMap< CUtlString, CPhysicsBodyGameMarkup >
   public SchemaUntypedField PhysicsBodyMarkupByBoneName { get; }
 
 

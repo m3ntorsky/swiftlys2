@@ -10,7 +10,7 @@ public partial interface CDirectPlaybackTagData : ISchemaClass {
   
   public ref CUtlString SequenceName { get; }
   
-// CUtlVector< TagSpan_t >
+  // CUtlVector< TagSpan_t >
   public ref CUtlVector Tags { get; }
 
 

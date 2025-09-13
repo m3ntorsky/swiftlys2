@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CScriptUniformRandomStream : ISchemaClass {
 
   
+  // HSCRIPT
   public SchemaUntypedField ScriptScope { get; }
   
   public ref int InitialSeed { get; }

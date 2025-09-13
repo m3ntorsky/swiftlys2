@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CProductQuantizer : ISchemaClass {
 
   
-// CUtlVector< CVectorQuantizer >
+  // CUtlVector< CVectorQuantizer >
   public ref CUtlVector SubQuantizers { get; }
   
   public ref int Dimensions { get; }

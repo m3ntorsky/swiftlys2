@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmOrNode__CDefinition : CNmBoolValueNode__CDefinition {
 
   
+  // CUtlLeanVectorFixedGrowable< int16, 4 >
   public SchemaUntypedField ConditionNodeIndices { get; }
 
 

@@ -8,12 +8,16 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CChicken_GraphController : CBaseAnimGraphAnimGraphController {
 
   
+  // CAnimGraphParamRef< char* >
   public SchemaUntypedField ParamActivity { get; }
   
+  // CAnimGraphParamRef< bool >
   public SchemaUntypedField ParamEndActivityImmediately { get; }
   
+  // CAnimGraphTagRef
   public SchemaUntypedField ActivityFinished { get; }
   
+  // CAnimGraphParamRef< float32 >
   public SchemaUntypedField ParamTurnAngle { get; }
 
 

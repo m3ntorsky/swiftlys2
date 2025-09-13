@@ -8,13 +8,13 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimEncodeDifference : ISchemaClass {
 
   
-// CUtlVector< CAnimBoneDifference >
+  // CUtlVector< CAnimBoneDifference >
   public ref CUtlVector BoneArray { get; }
   
-// CUtlVector< CAnimMorphDifference >
+  // CUtlVector< CAnimMorphDifference >
   public ref CUtlVector MorphArray { get; }
   
-// CUtlVector< CAnimUserDifference >
+  // CUtlVector< CAnimUserDifference >
   public ref CUtlVector UserArray { get; }
   
   public ref CUtlVector<byte> HasRotationBitArray { get; }

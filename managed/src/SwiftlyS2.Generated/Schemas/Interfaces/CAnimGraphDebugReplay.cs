@@ -10,7 +10,7 @@ public partial interface CAnimGraphDebugReplay : ISchemaClass {
   
   public ref CUtlString AnimGraphFileName { get; }
   
-// CUtlVector< CSmartPtr< CAnimReplayFrame > >
+  // CUtlVector< CSmartPtr< CAnimReplayFrame > >
   public ref CUtlVector FrameList { get; }
   
   public ref int StartIndex { get; }

@@ -10,8 +10,10 @@ public partial interface CPulse_RegisterInfo : ISchemaClass {
   
   public PulseRuntimeRegisterIndex_t Reg { get; }
   
+  // CPulseValueFullType
   public SchemaUntypedField Type { get; }
   
+  // CKV3MemberNameWithStorage
   public SchemaUntypedField OriginName { get; }
   
   public ref int WrittenByInstruction { get; }

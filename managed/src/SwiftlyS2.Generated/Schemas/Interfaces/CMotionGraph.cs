@@ -10,9 +10,10 @@ public partial interface CMotionGraph : ISchemaClass {
   
   public CParamSpanUpdater ParamSpans { get; }
   
-// CUtlVector< TagSpan_t >
+  // CUtlVector< TagSpan_t >
   public ref CUtlVector Tags { get; }
   
+  // CSmartPtr< CMotionNode >
   public SchemaUntypedField RootNode { get; }
   
   public ref int ParameterCount { get; }

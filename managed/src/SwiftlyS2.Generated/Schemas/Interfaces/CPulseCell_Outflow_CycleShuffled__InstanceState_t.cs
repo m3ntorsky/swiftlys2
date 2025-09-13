@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Outflow_CycleShuffled__InstanceState_t : ISchemaClass {
 
   
+  // CUtlVectorFixedGrowable< uint8, 8 >
   public SchemaUntypedField Shuffle { get; }
   
   public ref int NextShuffle { get; }

@@ -12,7 +12,7 @@ public partial interface OutflowWithRequirements_t : ISchemaClass {
   
   public PulseDocNodeID_t DestinationFlowNodeID { get; }
   
-// CUtlVector< PulseDocNodeID_t >
+  // CUtlVector< PulseDocNodeID_t >
   public ref CUtlVector RequirementNodeIDs { get; }
   
   public ref CUtlVector<int> CursorStateBlockIndex { get; }

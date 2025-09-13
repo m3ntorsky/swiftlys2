@@ -26,6 +26,7 @@ public partial interface CRR_Response : ISchemaClass {
   
   public ResponseFollowup Followup { get; }
   
+  // CUtlSymbol
   public SchemaUntypedField RecipientFilter { get; }
 
 

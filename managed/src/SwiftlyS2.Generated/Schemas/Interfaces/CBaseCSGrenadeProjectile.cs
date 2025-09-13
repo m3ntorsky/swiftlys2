@@ -32,6 +32,7 @@ public partial interface CBaseCSGrenadeProjectile : CBaseGrenade {
   
   public GameTime_t LastBounceSoundTime { get; }
   
+  // RotationVector
   public SchemaUntypedField GrenadeSpin { get; }
   
   public ref Vector LastHitSurfaceNormal { get; }

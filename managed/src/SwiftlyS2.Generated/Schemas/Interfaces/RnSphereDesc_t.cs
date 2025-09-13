@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnSphereDesc_t : RnShapeDesc_t {
 
   
+  // SphereBase_t< float32 >
   public SchemaUntypedField Sphere { get; }
 
 

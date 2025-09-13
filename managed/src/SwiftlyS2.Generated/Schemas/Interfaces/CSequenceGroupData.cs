@@ -14,34 +14,35 @@ public partial interface CSequenceGroupData : ISchemaClass {
   
   public ref CUtlVector<CBufferString> LocalSequenceNameArray { get; }
   
-// CUtlVector< CSeqS1SeqDesc >
+  // CUtlVector< CSeqS1SeqDesc >
   public ref CUtlVector LocalS1SeqDescArray { get; }
   
-// CUtlVector< CSeqS1SeqDesc >
+  // CUtlVector< CSeqS1SeqDesc >
   public ref CUtlVector LocalMultiSeqDescArray { get; }
   
-// CUtlVector< CSeqSynthAnimDesc >
+  // CUtlVector< CSeqSynthAnimDesc >
   public ref CUtlVector LocalSynthAnimDescArray { get; }
   
-// CUtlVector< CSeqCmdSeqDesc >
+  // CUtlVector< CSeqCmdSeqDesc >
   public ref CUtlVector LocalCmdSeqDescArray { get; }
   
-// CUtlVector< CSeqBoneMaskList >
+  // CUtlVector< CSeqBoneMaskList >
   public ref CUtlVector LocalBoneMaskArray { get; }
   
-// CUtlVector< CSeqScaleSet >
+  // CUtlVector< CSeqScaleSet >
   public ref CUtlVector LocalScaleSetArray { get; }
   
   public ref CUtlVector<CBufferString> LocalBoneNameArray { get; }
   
   public ref CBufferString LocalNodeName { get; }
   
-// CUtlVector< CSeqPoseParamDesc >
+  // CUtlVector< CSeqPoseParamDesc >
   public ref CUtlVector LocalPoseParamArray { get; }
   
+  // KeyValues3
   public SchemaUntypedField KeyValues { get; }
   
-// CUtlVector< CSeqIKLock >
+  // CUtlVector< CSeqIKLock >
   public ref CUtlVector LocalIKAutoplayLockArray { get; }
 
 

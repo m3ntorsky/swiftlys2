@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeSimdRodConstraintAnim_t : ISchemaClass {
 
   
+  // uint16[4]
   public SchemaUntypedField Node { get; }
   
   public ref fltx4 F4Weight0 { get; }

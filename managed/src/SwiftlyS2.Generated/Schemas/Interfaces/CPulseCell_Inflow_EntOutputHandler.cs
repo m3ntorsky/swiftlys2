@@ -8,10 +8,13 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Inflow_EntOutputHandler : CPulseCell_Inflow_BaseEntrypoint {
 
   
+  // PulseSymbol_t
   public SchemaUntypedField SourceEntity { get; }
   
+  // PulseSymbol_t
   public SchemaUntypedField SourceOutput { get; }
   
+  // CPulseValueFullType
   public SchemaUntypedField ExpectedParamType { get; }
 
 

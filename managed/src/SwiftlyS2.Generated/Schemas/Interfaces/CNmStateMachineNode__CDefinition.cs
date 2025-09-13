@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmStateMachineNode__CDefinition : CNmPoseNode__CDefinition {
 
   
+  // CUtlLeanVectorFixedGrowable< CNmStateMachineNode::StateDefinition_t, 5 >
   public SchemaUntypedField StateDefinitions { get; }
   
   public ref short DefaultStateIndex { get; }

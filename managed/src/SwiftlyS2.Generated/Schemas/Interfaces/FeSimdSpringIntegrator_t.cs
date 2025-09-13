@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeSimdSpringIntegrator_t : ISchemaClass {
 
   
+  // uint16[4]
   public SchemaUntypedField Node { get; }
   
   public ref fltx4 SpringRestLength { get; }

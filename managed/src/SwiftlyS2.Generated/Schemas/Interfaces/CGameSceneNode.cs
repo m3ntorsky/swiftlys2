@@ -40,22 +40,31 @@ public partial interface CGameSceneNode : ISchemaClass {
   
   public ref bool ForceParentToBeNetworked { get; }
   
+  // bitfield
   public SchemaUntypedField DirtyHierarchy { get; }
   
+  // bitfield
   public SchemaUntypedField DirtyBoneMergeInfo { get; }
   
+  // bitfield
   public SchemaUntypedField NetworkedPositionChanged { get; }
   
+  // bitfield
   public SchemaUntypedField NetworkedAnglesChanged { get; }
   
+  // bitfield
   public SchemaUntypedField NetworkedScaleChanged { get; }
   
+  // bitfield
   public SchemaUntypedField WillBeCallingPostDataUpdate { get; }
   
+  // bitfield
   public SchemaUntypedField BoneMergeFlex { get; }
   
+  // bitfield
   public SchemaUntypedField LatchAbsOrigin { get; }
   
+  // bitfield
   public SchemaUntypedField DirtyBoneMergeBoneToRoot { get; }
   
   public ref byte HierarchicalDepth { get; }

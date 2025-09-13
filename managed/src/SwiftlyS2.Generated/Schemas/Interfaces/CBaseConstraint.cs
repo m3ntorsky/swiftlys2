@@ -12,9 +12,10 @@ public partial interface CBaseConstraint : CBoneConstraintBase {
   
   public ref Vector UpVector { get; }
   
+  // CUtlLeanVector< CConstraintSlave >
   public SchemaUntypedField Slaves { get; }
   
-// CUtlVector< CConstraintTarget >
+  // CUtlVector< CConstraintTarget >
   public ref CUtlVector Targets { get; }
 
 

@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEntityIOOutput : ISchemaClass {
 
   
+  // CVariantBase< CVariantDefaultAllocator >
   public SchemaUntypedField Value { get; }
 
 

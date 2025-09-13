@@ -8,10 +8,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBlend2DUpdateNode : CAnimUpdateNodeBase {
 
   
-// CUtlVector< BlendItem_t >
+  // CUtlVector< BlendItem_t >
   public ref CUtlVector Items { get; }
   
-// CUtlVector< TagSpan_t >
+  // CUtlVector< TagSpan_t >
   public ref CUtlVector Tags { get; }
   
   public CParamSpanUpdater ParamSpans { get; }

@@ -18,8 +18,10 @@ public partial interface CMathCounter : CLogicalEntity {
   
   public ref bool Disabled { get; }
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField OutValue { get; }
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField OnGetValue { get; }
   
   public CEntityIOOutput OnHitMin { get; }

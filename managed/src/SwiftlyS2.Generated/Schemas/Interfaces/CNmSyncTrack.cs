@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmSyncTrack : ISchemaClass {
 
   
+  // CUtlLeanVectorFixedGrowable< CNmSyncTrack::Event_t, 10 >
   public SchemaUntypedField SyncEvents { get; }
   
   public ref int StartEventOffset { get; }

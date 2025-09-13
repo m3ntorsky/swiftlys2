@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PulseGraphExecutionHistoryCursorDesc_t : ISchemaClass {
 
   
-// CUtlVector< PulseCursorID_t >
+  // CUtlVector< PulseCursorID_t >
   public ref CUtlVector AncestorCursorIDs { get; }
   
   public PulseDocNodeID_t SpawnNodeID { get; }

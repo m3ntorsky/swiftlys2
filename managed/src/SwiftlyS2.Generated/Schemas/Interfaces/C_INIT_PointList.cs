@@ -10,7 +10,7 @@ public partial interface C_INIT_PointList : CParticleFunctionInitializer {
   
   public ParticleAttributeIndex_t FieldOutput { get; }
   
-// CUtlVector< PointDefinition_t >
+  // CUtlVector< PointDefinition_t >
   public ref CUtlVector PointList { get; }
   
   public ref bool PlaceAlongPath { get; }

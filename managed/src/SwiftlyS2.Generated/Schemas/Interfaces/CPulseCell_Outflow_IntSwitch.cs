@@ -10,7 +10,7 @@ public partial interface CPulseCell_Outflow_IntSwitch : CPulseCell_BaseFlow {
   
   public CPulse_OutflowConnection DefaultCaseOutflow { get; }
   
-// CUtlVector< CPulse_OutflowConnection >
+  // CUtlVector< CPulse_OutflowConnection >
   public ref CUtlVector CaseOutflows { get; }
 
 

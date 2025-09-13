@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAttributeList : ISchemaClass {
 
   
-// CUtlVectorEmbeddedNetworkVar< CEconItemAttribute >
+  // CUtlVectorEmbeddedNetworkVar< CEconItemAttribute >
   public ref CUtlVector Attributes { get; }
   
   public CAttributeManager Manager { get; }

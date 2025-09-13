@@ -14,6 +14,7 @@ public partial interface CBreakableProp : CBaseProp {
   
   public CEntityIOOutput OnBreak { get; }
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField OnHealthChanged { get; }
   
   public CEntityIOOutput OnTakeDamage { get; }

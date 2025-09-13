@@ -18,6 +18,7 @@ public partial interface CPointVelocitySensor : CPointEntity {
   
   public ref float AvgInterval { get; }
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField Velocity { get; }
 
 

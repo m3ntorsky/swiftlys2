@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Outflow_CycleShuffled : CPulseCell_BaseFlow {
 
   
-// CUtlVector< CPulse_OutflowConnection >
+  // CUtlVector< CPulse_OutflowConnection >
   public ref CUtlVector Outputs { get; }
 
 

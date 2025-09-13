@@ -10,6 +10,7 @@ public partial interface CPulse_InvokeBinding : ISchemaClass {
   
   public PulseRegisterMap_t RegisterMap { get; }
   
+  // PulseSymbol_t
   public SchemaUntypedField FuncName { get; }
   
   public PulseRuntimeCellIndex_t CellIndex { get; }

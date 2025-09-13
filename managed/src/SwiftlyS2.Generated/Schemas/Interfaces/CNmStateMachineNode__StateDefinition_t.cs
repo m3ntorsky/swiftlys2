@@ -12,6 +12,7 @@ public partial interface CNmStateMachineNode__StateDefinition_t : ISchemaClass {
   
   public ref short EntryConditionNodeIdx { get; }
   
+  // CUtlLeanVectorFixedGrowable< CNmStateMachineNode::TransitionDefinition_t, 5 >
   public SchemaUntypedField TransitionDefinitions { get; }
 
 

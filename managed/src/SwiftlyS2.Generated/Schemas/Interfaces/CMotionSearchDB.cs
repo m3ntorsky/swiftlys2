@@ -12,7 +12,7 @@ public partial interface CMotionSearchDB : ISchemaClass {
   
   public CProductQuantizer ResidualQuantizer { get; }
   
-// CUtlVector< MotionDBIndex >
+  // CUtlVector< MotionDBIndex >
   public ref CUtlVector CodeIndices { get; }
 
 

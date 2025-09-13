@@ -14,14 +14,18 @@ public partial interface CVoiceContainerParameterBlender : CVoiceContainerBase {
   
   public ref bool EnableOcclusionBlend { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField Curve1 { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField Curve2 { get; }
   
   public ref bool EnableDistanceBlend { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField Curve3 { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField Curve4 { get; }
 
 

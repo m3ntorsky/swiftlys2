@@ -10,10 +10,10 @@ public partial interface CAudioSentence : ISchemaClass {
   
   public ref bool ShouldVoiceDuck { get; }
   
-// CUtlVector< CAudioPhonemeTag >
+  // CUtlVector< CAudioPhonemeTag >
   public ref CUtlVector RunTimePhonemes { get; }
   
-// CUtlVector< CAudioEmphasisSample >
+  // CUtlVector< CAudioEmphasisSample >
   public ref CUtlVector EmphasisSamples { get; }
   
   public CAudioMorphData MorphData { get; }

@@ -8,7 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CActionComponentUpdater : CAnimComponentUpdater {
 
   
-// CUtlVector< CSmartPtr< CAnimActionUpdater > >
+  // CUtlVector< CSmartPtr< CAnimActionUpdater > >
   public ref CUtlVector Actions { get; }
 
 

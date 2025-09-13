@@ -8,6 +8,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulse_OutflowConnection : ISchemaClass {
 
   
+  // PulseSymbol_t
   public SchemaUntypedField SourceOutflowName { get; }
   
   public PulseRuntimeChunkIndex_t DestChunk { get; }

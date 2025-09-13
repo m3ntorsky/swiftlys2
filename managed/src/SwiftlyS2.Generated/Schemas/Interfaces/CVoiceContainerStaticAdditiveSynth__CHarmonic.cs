@@ -18,6 +18,7 @@ public partial interface CVoiceContainerStaticAdditiveSynth__CHarmonic : ISchema
   
   public ref float Phase { get; }
   
+  // CPiecewiseCurve
   public SchemaUntypedField Curve { get; }
   
   public CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance VolumeScaling { get; }

@@ -12,6 +12,7 @@ public partial interface CPointProximitySensor : CPointEntity {
   
   public ref CHandle<CBaseEntity> TargetEntity { get; }
   
+  // CEntityOutputTemplate< float32 >
   public SchemaUntypedField Distance { get; }
 
 

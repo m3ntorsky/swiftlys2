@@ -14,10 +14,12 @@ public partial interface CAnimBone : ISchemaClass {
   
   public ref Vector Pos { get; }
   
+  // QuaternionStorage
   public SchemaUntypedField Quat { get; }
   
   public ref float Scale { get; }
   
+  // QuaternionStorage
   public SchemaUntypedField Alignment { get; }
   
   public ref int Flags { get; }

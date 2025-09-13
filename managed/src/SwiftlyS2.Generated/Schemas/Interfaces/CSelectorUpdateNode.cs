@@ -8,13 +8,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSelectorUpdateNode : CAnimUpdateNodeBase {
 
   
-// CUtlVector< CAnimUpdateNodeRef >
+  // CUtlVector< CAnimUpdateNodeRef >
   public ref CUtlVector Children { get; }
   
   public ref CUtlVector<byte> Tags { get; }
   
   public CBlendCurve BlendCurve { get; }
   
+  // CAnimValue< float32 >
   public SchemaUntypedField BlendTime { get; }
   
   public CAnimParamHandle Parameter { get; }

@@ -8,14 +8,17 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Inflow_Method : CPulseCell_Inflow_BaseEntrypoint {
 
   
+  // PulseSymbol_t
   public SchemaUntypedField MethodName { get; }
   
   public ref CUtlString Description { get; }
   
   public ref bool IsPublic { get; }
   
+  // CPulseValueFullType
   public SchemaUntypedField ReturnType { get; }
   
+  // CUtlLeanVector< CPulseRuntimeMethodArg >
   public SchemaUntypedField Args { get; }
 
 
