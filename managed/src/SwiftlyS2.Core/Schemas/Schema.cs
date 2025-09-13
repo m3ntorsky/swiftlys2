@@ -3,18 +3,15 @@ using SwiftlyS2.Core.Natives;
 namespace SwiftlyS2.Core.Schemas;
 
 internal static class Schema {
-
-  public static int GetSize(ulong hash) {
-    return 0;
-  }
-
+  
   public static int GetOffset(ulong hash) {
-    NativeSchema.GetOffset(hash);
-    return 0;
+    return NativeSchema.GetOffset(hash);
   }
 
   public static void Update(nint handle, ulong hash) {
-
+    unsafe { 
+      NativeSchema.SetStateChanged(handle.ToPointer(), hash);
+    }
   }
 
 }
