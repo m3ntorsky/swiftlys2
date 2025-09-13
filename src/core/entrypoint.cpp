@@ -144,3 +144,14 @@ std::string SwiftlyCore::GetCurrentGame()
     default: return "unknown";
     }
 }
+
+int SwiftlyCore::GetMaxGameClients()
+{
+    auto engine = g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER);
+    if (!engine) return 0;
+
+    switch (engine->GetAppID()) {
+    case 730: return 64;
+    default: return 0;
+    }
+}

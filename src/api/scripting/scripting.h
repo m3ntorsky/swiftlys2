@@ -16,30 +16,19 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_server_configuration_h
-#define src_server_configuration_h
+#ifndef src_api_scripting_scripting_h
+#define src_api_scripting_scripting_h
 
-#include <api/server/configuration/configuration.h>
+struct NativeFunction {
+    const char* name;
+    void* function;
+};
 
-class Configuration : public IConfiguration
+class IScriptingAPI
 {
 public:
-    virtual void InitializeExamples() override;
-
-    virtual bool Load() override;
-    virtual bool IsLoaded() override;
-
-    virtual std::map<std::string, ValueType>& GetConfiguration() override;
-
-    virtual ValueType& GetValue(const std::string& key) override;
-    virtual void SetValue(const std::string& key, ValueType value) override;
-    virtual bool HasKey(const std::string& key) override;
-
-private:
-    std::map<std::string, ValueType> m_mConfiguration;
-    std::map<std::string, int> m_mConfigurationArraySizes;
-
-    bool m_bLoaded = false;
+    virtual NativeFunction* GetNativeFunctions() = 0;
+    virtual int GetNativeFunctionsCount() = 0;
 };
 
 #endif

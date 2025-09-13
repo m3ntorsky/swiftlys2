@@ -1,0 +1,4 @@
+namespace Memory.GameData.Offsets
+
+bool Exists = string name
+int Fetch = string name

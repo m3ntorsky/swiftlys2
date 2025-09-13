@@ -549,16 +549,6 @@ std::map<std::string, ValueType>& Configuration::GetConfiguration()
     return m_mConfiguration;
 }
 
-std::map<std::string, int>& Configuration::GetConfigurationArraySizes()
-{
-    return m_mConfigurationArraySizes;
-}
-
-void Configuration::SetArraySize(const std::string& key, int size)
-{
-    m_mConfigurationArraySizes[key] = size;
-}
-
 ValueType& Configuration::GetValue(const std::string& key)
 {
     return m_mConfiguration[key];

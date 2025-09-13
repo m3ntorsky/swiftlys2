@@ -16,30 +16,30 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_server_configuration_h
-#define src_server_configuration_h
+#ifndef src_api_server_players_manager_h
+#define src_api_server_players_manager_h
 
-#include <api/server/configuration/configuration.h>
+#include "player.h"
 
-class Configuration : public IConfiguration
+class IPlayerManager
 {
 public:
-    virtual void InitializeExamples() override;
+    virtual void Initialize() = 0;
+    virtual void Shutdown() = 0;
 
-    virtual bool Load() override;
-    virtual bool IsLoaded() override;
+    virtual IPlayer* RegisterPlayer(int playerid) = 0;
+    virtual void UnregisterPlayer(int playerid) = 0;
 
-    virtual std::map<std::string, ValueType>& GetConfiguration() override;
+    virtual IPlayer* GetPlayer(int playerid) = 0;
 
-    virtual ValueType& GetValue(const std::string& key) override;
-    virtual void SetValue(const std::string& key, ValueType value) override;
-    virtual bool HasKey(const std::string& key) override;
+    virtual bool IsPlayerOnline(int playerid) = 0;
 
-private:
-    std::map<std::string, ValueType> m_mConfiguration;
-    std::map<std::string, int> m_mConfigurationArraySizes;
+    virtual int GetPlayerCount() = 0;
+    virtual int GetPlayerCap() = 0;
 
-    bool m_bLoaded = false;
+    virtual void SendMessage(MessageType type, const std::string& message) = 0;
+
+    virtual void SteamAPIServerActivated() = 0;
 };
 
 #endif

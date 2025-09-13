@@ -16,30 +16,27 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_server_configuration_h
-#define src_server_configuration_h
+#include <scripting/scripting.h>
+#include <api/interfaces/manager.h>
 
-#include <api/server/configuration/configuration.h>
-
-class Configuration : public IConfiguration
+void Bridge_GameData_Patches_Apply(const char* name)
 {
-public:
-    virtual void InitializeExamples() override;
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    gamedata->GetPatches()->Apply(name);
+}
 
-    virtual bool Load() override;
-    virtual bool IsLoaded() override;
+void Bridge_GameData_Patches_Revert(const char* name)
+{
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    gamedata->GetPatches()->Revert(name);
+}
 
-    virtual std::map<std::string, ValueType>& GetConfiguration() override;
+bool Bridge_GameData_Patches_Exists(const char* name)
+{
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    return gamedata->GetPatches()->Exists(name);
+}
 
-    virtual ValueType& GetValue(const std::string& key) override;
-    virtual void SetValue(const std::string& key, ValueType value) override;
-    virtual bool HasKey(const std::string& key) override;
-
-private:
-    std::map<std::string, ValueType> m_mConfiguration;
-    std::map<std::string, int> m_mConfigurationArraySizes;
-
-    bool m_bLoaded = false;
-};
-
-#endif
+DEFINE_NATIVE("Memory.GameData.Patches.Apply", Bridge_GameData_Patches_Apply);
+DEFINE_NATIVE("Memory.GameData.Patches.Revert", Bridge_GameData_Patches_Revert);
+DEFINE_NATIVE("Memory.GameData.Patches.Exists", Bridge_GameData_Patches_Exists);

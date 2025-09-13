@@ -16,30 +16,20 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_server_configuration_h
-#define src_server_configuration_h
+#include <scripting/scripting.h>
+#include <api/interfaces/manager.h>
 
-#include <api/server/configuration/configuration.h>
-
-class Configuration : public IConfiguration
+uint64_t Bridge_Monitor_CallStack_Register(const char* pluginName, const char* stackMsg)
 {
-public:
-    virtual void InitializeExamples() override;
+    auto callstack = g_ifaceService.FetchInterface<ICallStack>(CALLSTACK_INTERFACE_VERSION);
+    return callstack->RegisterPluginCallstack(pluginName, stackMsg);
+}
 
-    virtual bool Load() override;
-    virtual bool IsLoaded() override;
+void Bridge_Monitor_CallStack_Unregister(const char* pluginName, uint64_t callstackId)
+{
+    auto callstack = g_ifaceService.FetchInterface<ICallStack>(CALLSTACK_INTERFACE_VERSION);
+    callstack->UnregisterPluginCallstack(pluginName, callstackId);
+}
 
-    virtual std::map<std::string, ValueType>& GetConfiguration() override;
-
-    virtual ValueType& GetValue(const std::string& key) override;
-    virtual void SetValue(const std::string& key, ValueType value) override;
-    virtual bool HasKey(const std::string& key) override;
-
-private:
-    std::map<std::string, ValueType> m_mConfiguration;
-    std::map<std::string, int> m_mConfigurationArraySizes;
-
-    bool m_bLoaded = false;
-};
-
-#endif
+DEFINE_NATIVE("Monitor.CallStack.Register", Bridge_Monitor_CallStack_Register);
+DEFINE_NATIVE("Monitor.CallStack.Unregister", Bridge_Monitor_CallStack_Unregister);

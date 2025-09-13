@@ -96,6 +96,53 @@ std::vector<std::string> terminalPrefixColors = {
     "{ORANGE}",
 };
 
+std::map<std::string, std::string> colors = {
+    {"{DEFAULT}", "\x01"},
+    {"{WHITE}", "\x01"},
+    {"{DARKRED}", "\x02"},
+    {"{LIGHTPURPLE}", "\x03"},
+    {"{GREEN}", "\x04"},
+    {"{OLIVE}", "\x05"},
+    {"{LIME}", "\x06"},
+    {"{RED}", "\x07"},
+    {"{GRAY}", "\x08"},
+    {"{GREY}", "\x08"},
+    {"{LIGHTYELLOW}", "\x09"},
+    {"{YELLOW}", "\x09"},
+    {"{SILVER}", "\x0A"},
+    {"{BLUEGREY}", "\x0A"},
+    {"{LIGHTBLUE}", "\x0B"},
+    {"{BLUE}", "\x0B"},
+    {"{DARKBLUE}", "\x0C"},
+    {"{PURPLE}", "\x0E"},
+    {"{MAGENTA}", "\x0E"},
+    {"{LIGHTRED}", "\x0F"},
+    {"{GOLD}", "\x10"},
+    {"{ORANGE}", "\x10"},
+};
+
+std::string ProcessColor(std::string str, int team)
+{
+    str = replace(str, "{TEAMCOLOR}", team == 3 ? "{LIGHTBLUE}" : (team == 2 ? "{YELLOW}" : "{LIGHTPURPLE}"));
+    str = replace(str, "{teamcolor}", team == 3 ? "{lightblue}" : (team == 2 ? "{yellow}" : "{lightpurple}"));
+    for (auto it = colors.begin(); it != colors.end(); ++it)
+    {
+        str = replace(str, it->first, it->second);
+        str = replace(str, str_tolower(it->first), it->second);
+    }
+    return str;
+}
+
+std::string ClearColors(std::string str)
+{
+    for (auto it = terminalColors.begin(); it != terminalColors.end(); ++it)
+    {
+        str = replace(str, it->first, "");
+        str = replace(str, str_tolower(it->first), "");
+    }
+    return str;
+}
+
 std::string TerminalProcessColor(std::string str)
 {
     for (auto it = terminalColors.begin(); it != terminalColors.end(); ++it)

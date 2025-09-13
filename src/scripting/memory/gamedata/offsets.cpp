@@ -16,30 +16,20 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_server_configuration_h
-#define src_server_configuration_h
+#include <scripting/scripting.h>
+#include <api/interfaces/manager.h>
 
-#include <api/server/configuration/configuration.h>
-
-class Configuration : public IConfiguration
+bool Bridge_GameData_Offsets_Exists(const char* name)
 {
-public:
-    virtual void InitializeExamples() override;
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    return gamedata->GetOffsets()->Exists(name);
+}
 
-    virtual bool Load() override;
-    virtual bool IsLoaded() override;
+int Bridge_GameData_Offsets_Fetch(const char* name)
+{
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    return gamedata->GetOffsets()->Fetch(name);
+}
 
-    virtual std::map<std::string, ValueType>& GetConfiguration() override;
-
-    virtual ValueType& GetValue(const std::string& key) override;
-    virtual void SetValue(const std::string& key, ValueType value) override;
-    virtual bool HasKey(const std::string& key) override;
-
-private:
-    std::map<std::string, ValueType> m_mConfiguration;
-    std::map<std::string, int> m_mConfigurationArraySizes;
-
-    bool m_bLoaded = false;
-};
-
-#endif
+DEFINE_NATIVE("Memory.GameData.Offsets.Exists", Bridge_GameData_Offsets_Exists);
+DEFINE_NATIVE("Memory.GameData.Offsets.Fetch", Bridge_GameData_Offsets_Fetch);

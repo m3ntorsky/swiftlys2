@@ -47,6 +47,7 @@ std::vector<std::string> explode(std::string str, std::string delimiter);
 std::set<std::string> explodeToSet(std::string str, std::string delimiter);
 std::string implode(std::vector<std::string> elements, std::string delimiter);
 std::string ProcessColor(std::string str, int team);
+std::string ClearColors(std::string str);
 bool ends_with(std::string value, std::string ending);
 bool starts_with(std::string value, std::string starting);
 uint64_t GetTime();

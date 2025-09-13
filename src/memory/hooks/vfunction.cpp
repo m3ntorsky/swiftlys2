@@ -20,12 +20,25 @@
 
 #include <api/interfaces/manager.h>
 
-void VFunctionHook::SetCallback(dyno::CallbackType callbackType, dyno::CallbackHandler callback)
+int VFunctionHook::SetCallback(dyno::CallbackType callbackType, dyno::CallbackHandler callback)
+{
+    if (callbackType < dyno::CallbackType::Pre || callbackType > dyno::CallbackType::Post)
+        return -1;
+
+    m_vCallbacks[static_cast<int>(callbackType)].push_back(callback);
+    return m_vCallbacks[static_cast<int>(callbackType)].size() - 1;
+}
+
+void VFunctionHook::RemoveCallback(dyno::CallbackType callbackType, int cb_idx)
 {
     if (callbackType < dyno::CallbackType::Pre || callbackType > dyno::CallbackType::Post)
         return;
 
-    m_vCallbacks[static_cast<int>(callbackType)].push_back(callback);
+    int cbtype = static_cast<int>(callbackType);
+    if (cb_idx < 0 || cb_idx >= m_vCallbacks[cbtype].size())
+        return;
+
+    m_vCallbacks[cbtype].erase(m_vCallbacks[cbtype].begin() + cb_idx);
 }
 
 void VFunctionHook::RemoveCallback(dyno::CallbackType callbackType)

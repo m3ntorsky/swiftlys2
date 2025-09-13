@@ -16,30 +16,15 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_server_configuration_h
-#define src_server_configuration_h
+#include "scripting.h"
 
-#include <api/server/configuration/configuration.h>
+NativeFunction g_NativeFunctions[MAX_NATIVE_FUNCTIONS];
+int g_NativeFunctionCount = 0;
 
-class Configuration : public IConfiguration
-{
-public:
-    virtual void InitializeExamples() override;
+NativeFunction* CScriptingAPI::GetNativeFunctions() {
+    return g_NativeFunctions;
+}
 
-    virtual bool Load() override;
-    virtual bool IsLoaded() override;
-
-    virtual std::map<std::string, ValueType>& GetConfiguration() override;
-
-    virtual ValueType& GetValue(const std::string& key) override;
-    virtual void SetValue(const std::string& key, ValueType value) override;
-    virtual bool HasKey(const std::string& key) override;
-
-private:
-    std::map<std::string, ValueType> m_mConfiguration;
-    std::map<std::string, int> m_mConfigurationArraySizes;
-
-    bool m_bLoaded = false;
-};
-
-#endif
+int CScriptingAPI::GetNativeFunctionsCount() {
+    return g_NativeFunctionCount;
+}

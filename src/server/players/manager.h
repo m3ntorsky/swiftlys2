@@ -16,30 +16,29 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_server_configuration_h
-#define src_server_configuration_h
+#include <api/server/players/manager.h>
 
-#include <api/server/configuration/configuration.h>
+#include "player.h"
 
-class Configuration : public IConfiguration
+class CPlayerManager : public IPlayerManager
 {
 public:
-    virtual void InitializeExamples() override;
+    virtual void Initialize() override;
+    virtual void Shutdown() override;
 
-    virtual bool Load() override;
-    virtual bool IsLoaded() override;
+    virtual IPlayer* RegisterPlayer(int playerid) override;
+    virtual void UnregisterPlayer(int playerid) override;
 
-    virtual std::map<std::string, ValueType>& GetConfiguration() override;
+    virtual IPlayer* GetPlayer(int playerid) override;
 
-    virtual ValueType& GetValue(const std::string& key) override;
-    virtual void SetValue(const std::string& key, ValueType value) override;
-    virtual bool HasKey(const std::string& key) override;
+    virtual bool IsPlayerOnline(int playerid) override;
 
+    virtual int GetPlayerCount() override;
+    virtual int GetPlayerCap() override;
+
+    virtual void SendMessage(MessageType type, const std::string& message) override;
+
+    virtual void SteamAPIServerActivated() override;
 private:
-    std::map<std::string, ValueType> m_mConfiguration;
-    std::map<std::string, int> m_mConfigurationArraySizes;
-
-    bool m_bLoaded = false;
+    CPlayer** g_Players = nullptr;
 };
-
-#endif

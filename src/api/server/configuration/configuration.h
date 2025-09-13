@@ -53,9 +53,6 @@ public:
     virtual bool IsLoaded() = 0;
 
     virtual std::map<std::string, ValueType>& GetConfiguration() = 0;
-    virtual std::map<std::string, int>& GetConfigurationArraySizes() = 0;
-
-    virtual void SetArraySize(const std::string& key, int size) = 0;
 
     virtual ValueType& GetValue(const std::string& key) = 0;
     virtual void SetValue(const std::string& key, ValueType value) = 0;

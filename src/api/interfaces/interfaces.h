@@ -26,6 +26,7 @@
 #include <api/engine/entities/entitysystem.h>
 #include <api/engine/gameevents/gameevents.h>
 #include <api/engine/precacher/precacher.h>
+#include <api/engine/voicemanager/voicemanager.h>
 
 #include <api/extensions/extension.h>
 #include <api/extensions/manager.h>
@@ -60,5 +61,7 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define CONVARMANAGER_INTERFACE_VERSION                     "ConVarManagerAPI"
 #define GAMEEVENTMANAGER_INTERFACE_VERSION                  "GameEventManagerAPI"
 #define PRECACHER_INTERFACE_VERSION                         "PrecacherAPI"
+#define VOICEMANAGER_INTERFACE_VERSION                      "VoiceManagerAPI"
+#define SCRIPTING_INTERFACE_VERSION                         "ScriptingAPI"
 
 #endif

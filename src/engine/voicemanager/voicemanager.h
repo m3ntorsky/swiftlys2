@@ -16,30 +16,24 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_server_configuration_h
-#define src_server_configuration_h
+#ifndef src_engine_voicemanager_voicemanager_h
+#define src_engine_voicemanager_voicemanager_h
 
-#include <api/server/configuration/configuration.h>
+#include <api/engine/voicemanager/voicemanager.h>
 
-class Configuration : public IConfiguration
+class CVoiceManager : public IVoiceManager
 {
 public:
-    virtual void InitializeExamples() override;
+    virtual void Initialize() override;
+    virtual void Shutdown() override;
 
-    virtual bool Load() override;
-    virtual bool IsLoaded() override;
+    virtual void SetClientListenOverride(int playerid, int targetid, ListenOverride override) override;
+    virtual void ResetClientListenOverride(int playerid) override;
+    virtual ListenOverride GetClientListenOverride(int playerid, int targetid) override;
 
-    virtual std::map<std::string, ValueType>& GetConfiguration() override;
-
-    virtual ValueType& GetValue(const std::string& key) override;
-    virtual void SetValue(const std::string& key, ValueType value) override;
-    virtual bool HasKey(const std::string& key) override;
-
-private:
-    std::map<std::string, ValueType> m_mConfiguration;
-    std::map<std::string, int> m_mConfigurationArraySizes;
-
-    bool m_bLoaded = false;
+    virtual void SetClientVoiceFlags(int playerid, VoiceFlagValue flags) override;
+    virtual void ResetClientVoiceFlags(int playerid) override;
+    virtual VoiceFlagValue GetClientVoiceFlags(int playerid) override;
 };
 
 #endif

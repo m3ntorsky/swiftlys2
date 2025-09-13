@@ -42,6 +42,7 @@ public:
     void SendConsoleMessage(const std::string& message);
 
     std::string GetCurrentGame();
+    int GetMaxGameClients();
 };
 
 extern SwiftlyCore g_SwiftlyCore;

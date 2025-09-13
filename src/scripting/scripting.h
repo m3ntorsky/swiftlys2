@@ -1,6 +1,6 @@
 /************************************************************************************************
  *  SwiftlyS2 is a scripting framework for Source2-based games.
- *  Copyright (C) 2025 Swiftly Solution SRL via Sava Andrei-Sebastian and it's contributors
+ *  Copyright (C) 2025 Swiftly Solution SRL via Sava Andrei-Sebastian and it's contributors (samyycX)
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -16,30 +16,23 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_server_configuration_h
-#define src_server_configuration_h
+#ifndef _src_scripting_scripting_h
+#define _src_scripting_scripting_h
 
-#include <api/server/configuration/configuration.h>
+#include <api/scripting/scripting.h>
 
-class Configuration : public IConfiguration
+class CScriptingAPI : public IScriptingAPI
 {
 public:
-    virtual void InitializeExamples() override;
-
-    virtual bool Load() override;
-    virtual bool IsLoaded() override;
-
-    virtual std::map<std::string, ValueType>& GetConfiguration() override;
-
-    virtual ValueType& GetValue(const std::string& key) override;
-    virtual void SetValue(const std::string& key, ValueType value) override;
-    virtual bool HasKey(const std::string& key) override;
-
-private:
-    std::map<std::string, ValueType> m_mConfiguration;
-    std::map<std::string, int> m_mConfigurationArraySizes;
-
-    bool m_bLoaded = false;
+    virtual NativeFunction* GetNativeFunctions() override;
+    virtual int GetNativeFunctionsCount() override;
 };
 
-#endif
+const int MAX_NATIVE_FUNCTIONS = 1024;
+extern NativeFunction g_NativeFunctions[MAX_NATIVE_FUNCTIONS];
+extern int g_NativeFunctionCount;
+
+#endif 
+
+#define DEFINE_NATIVE(name, func) \
+    static int dummy_##func = (g_NativeFunctions[g_NativeFunctionCount++] = {name, (void*)func}, 0)

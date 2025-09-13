@@ -35,6 +35,8 @@
 #include <monitor/callstack/callstack.h>
 #include <monitor/crashreporter/crashreporter.h>
 
+#include <scripting/scripting.h>
+
 #include <sdk/schema.h>
 
 #include <server/configuration/configuration.h>
@@ -55,6 +57,7 @@ CSDKSchema g_SDKSchema;
 CConvarManager g_ConvarManager;
 CEventManager g_GameEventManager;
 CPrecacher g_Precacher;
+CScriptingAPI g_ScriptingAPI;
 
 static std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
@@ -71,6 +74,7 @@ static std::map<std::string, void*> g_Interfaces = {
     {CONVARMANAGER_INTERFACE_VERSION, &g_ConvarManager},
     {GAMEEVENTMANAGER_INTERFACE_VERSION, &g_GameEventManager},
     {PRECACHER_INTERFACE_VERSION, &g_Precacher},
+    {SCRIPTING_INTERFACE_VERSION, &g_ScriptingAPI},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)

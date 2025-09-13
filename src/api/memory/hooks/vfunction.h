@@ -51,7 +51,8 @@
 class IVFunctionHook
 {
 public:
-    virtual void SetCallback(dyno::CallbackType callbackType, dyno::CallbackHandler callback) = 0;
+    virtual int SetCallback(dyno::CallbackType callbackType, dyno::CallbackHandler callback) = 0;
+    virtual void RemoveCallback(dyno::CallbackType callbackType, int cb_idx) = 0;
     virtual void RemoveCallback(dyno::CallbackType callbackType) = 0;
 
     virtual void SetHookFunction(const std::string& interface, int index, const std::string& args, const char return_value) = 0;

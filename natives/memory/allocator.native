@@ -1,0 +1,11 @@
+namespace Memory.Allocator
+
+ptr Alloc = uint64 size
+ptr TrackedAlloc = uint64 size, string identifier, string details
+void Free = ptr pointer
+ptr Resize = ptr pointer, uint64 new_size
+uint64 GetSize = ptr pointer // works only for pointers allocated through Memory.Allocator
+uint64 GetTotalAllocated = void
+uint64 GetAllocatedByTrackedIdentifier = string identifier
+bool IsPointerValid = ptr pointer
+void Copy = ptr src, ptr dst, uint64_t size
