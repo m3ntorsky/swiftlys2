@@ -21,14 +21,14 @@ internal class SwiftlyLoggerFormatter : ConsoleFormatter
     {
       LogLevel.Trace => "grey42",
       LogLevel.Debug => "grey42",
-      LogLevel.Information => "green",
-      LogLevel.Warning => "yellow",
-      LogLevel.Error => "red",
-      LogLevel.Critical => "red",
+      LogLevel.Information => "silver",
+      LogLevel.Warning => "yellow1",
+      LogLevel.Error => "red3",
+      LogLevel.Critical => "red3",
       _ => "grey42"
     };
 
-    AnsiConsole.MarkupLineInterpolated($"[aquamarine1]SwiftlyS2[/] | [grey42]{timestamp}[/] | [{logLevelColor}]{logLevel}[/] | [aquamarine1]{category}[/]");
+    AnsiConsole.MarkupLineInterpolated($"[lightsteelblue]SwiftlyS2[/] [lightsteelblue]|[/] [grey42]{timestamp}[/] [lightsteelblue]|[/] [{logLevelColor}]{logLevel}[/] [lightsteelblue]|[/] [lightsteelblue]{category}[/]");
 
     if (logEntry.State != null)
     {
