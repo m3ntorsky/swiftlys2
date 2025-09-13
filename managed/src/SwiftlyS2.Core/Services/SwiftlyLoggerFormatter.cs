@@ -46,13 +46,13 @@ internal class SwiftlyLoggerFormatter : ConsoleFormatter
   {
     return logLevel switch
     {
-      LogLevel.Trace => "Trace",
-      LogLevel.Debug => "Debug",
-      LogLevel.Information => "Information",
-      LogLevel.Warning => "Warning",
-      LogLevel.Error => "Error",
-      LogLevel.Critical => "Critical",
-      _ => "Unknown"
+      LogLevel.Trace =>           "Trace      ",
+      LogLevel.Debug =>           "Debug      ",
+      LogLevel.Information =>     "Information",
+      LogLevel.Warning =>         "Warning    ",
+      LogLevel.Error =>           "Error      ",
+      LogLevel.Critical =>        "Critical   ",
+      _ =>                        "Unknown    "
     };
   }
 }

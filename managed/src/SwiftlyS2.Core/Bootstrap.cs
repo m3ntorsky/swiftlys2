@@ -19,6 +19,7 @@ internal static class Bootstrap {
     
     services.AddProfileService();
     services.AddConfigurationService();
+    services.AddTestService();
     services.AddRootDirService();
     services.AddPluginManager();
     services.AddLoggerFactory();
@@ -26,5 +27,6 @@ internal static class Bootstrap {
     var provider = services.BuildServiceProvider();
     
     provider.UsePluginManager();
+    provider.UseTestService();
   }
 }

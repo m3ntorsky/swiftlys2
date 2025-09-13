@@ -21,6 +21,7 @@
 #include <public/entity2/entitykeyvalues.h>
 #include <public/entity2/entitysystem.h>
 #include <public/iserver.h>
+#include "listener.h"
 
 #include <api/interfaces/manager.h>
 
@@ -59,6 +60,7 @@ void CEntSystem::Initialize()
 
         CGameEntitySystem* entSystem = *reinterpret_cast<CGameEntitySystem**>((uintptr_t)(pGameResService)+gamedata->GetOffsets()->Fetch("GameEntitySystem"));
         g_pGameEntitySystem = entSystem;
+        g_pGameEntitySystem->AddListenerEntity(&g_entityListener);
 
         g_bDone = true;
 

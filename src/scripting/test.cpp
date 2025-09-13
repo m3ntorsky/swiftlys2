@@ -16,35 +16,22 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef _core_entrypoint_h
-#define _core_entrypoint_h
+#include <api/interfaces/manager.h>
+#include <scripting/scripting.h>
+#include <api/engine/entities/entitysystem.h>
 
-#include <string>
-
-enum class BridgeKind_t
+void* Test()
 {
-    Metamod = 0,
-};
+    auto entitysystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    EntityInstanceIter_t iter;
+    for (auto ent = iter.First(); ent != nullptr; ent = iter.Next())
+    {
+        if (strcmp(ent->m_pEntity->m_designerName.String(), "cs_player_controller") == 0)
+        {
+            return ent;
+        }
+    }
+    return 0;
+}
 
-class SwiftlyCore
-{
-private:
-    BridgeKind_t m_iKind;
-
-public:
-    bool Load(BridgeKind_t kind);
-    bool Unload();
-
-    void OnMapLoad(std::string map_name);
-    void OnMapUnload();
-    
-    void* GetInterface(const std::string& iface_name);
-    void SendConsoleMessage(const std::string& message);
-
-    std::string GetCurrentGame();
-    int GetMaxGameClients();
-};
-
-extern SwiftlyCore g_SwiftlyCore;
-
-#endif
+DEFINE_NATIVE("Test.Test", Test);

@@ -10,12 +10,8 @@ internal abstract class SchemaField : NativeHandle, ISchemaField {
   private ulong _hash { get; set; } = 0;
 
   public SchemaField(nint handle, ulong hash) : base(handle) {
-    FieldOffset = GetOffset(hash);
+    FieldOffset = Schema.GetOffset(hash);
     _hash = hash;
-  }
-
-  private int GetOffset(ulong hash) {
-    return 0;
   }
 
 
