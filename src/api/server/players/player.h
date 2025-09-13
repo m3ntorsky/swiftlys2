@@ -27,6 +27,8 @@
 #include <public/bitvec.h>
 #include <public/const.h>
 
+#include "networkbasetypes.pb.h"
+
 enum MessageType : uint8_t
 {
     Notify = 1,
@@ -44,13 +46,15 @@ public:
     virtual void Initialize(int playerid) = 0;
     virtual void Shutdown() = 0;
 
-    virtual void SendMessage(MessageType type, const std::string& message) = 0;
+    virtual void SendMsg(MessageType type, const std::string& message) = 0;
 
     virtual bool IsFakeClient() = 0;
     virtual bool IsAuthorized() = 0;
 
     virtual uint32_t GetConnectedTime() = 0;
     virtual int GetSlot() = 0;
+
+    virtual void SetUnauthorizedSteamID(uint64_t steamID) = 0;
 
     virtual uint64_t GetUnauthorizedSteamID() = 0;
     virtual uint64_t GetSteamID() = 0;
@@ -70,6 +74,8 @@ public:
     /** Engine Stuff **/
     virtual uint64_t& GetPressedButtons() = 0;
     virtual void PerformCommand(const std::string& command) = 0;
+    virtual std::string GetIPAddress() = 0;
+    virtual void Kick(const std::string& sReason, ENetworkDisconnectionReason uReason) = 0;
 };
 
 #endif

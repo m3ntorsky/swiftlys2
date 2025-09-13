@@ -40,6 +40,7 @@
 #include <sdk/schema.h>
 
 #include <server/configuration/configuration.h>
+#include <server/players/manager.h>
 
 #include <map>
 
@@ -58,6 +59,7 @@ CConvarManager g_ConvarManager;
 CEventManager g_GameEventManager;
 CPrecacher g_Precacher;
 CScriptingAPI g_ScriptingAPI;
+CPlayerManager g_PlayerManager;
 
 static std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
@@ -75,6 +77,7 @@ static std::map<std::string, void*> g_Interfaces = {
     {GAMEEVENTMANAGER_INTERFACE_VERSION, &g_GameEventManager},
     {PRECACHER_INTERFACE_VERSION, &g_Precacher},
     {SCRIPTING_INTERFACE_VERSION, &g_ScriptingAPI},
+    {PLAYERMANAGER_INTERFACE_VERSION, &g_PlayerManager},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)

@@ -21,19 +21,23 @@
 
 #include <api/server/players/player.h>
 
+#include <chrono>
+
 class CPlayer : public IPlayer
 {
 public:
     virtual void Initialize(int playerid) override;
     virtual void Shutdown() override;
 
-    virtual void SendMessage(MessageType type, const std::string& message) override;
+    virtual void SendMsg(MessageType type, const std::string& message) override;
 
     virtual bool IsFakeClient() override;
     virtual bool IsAuthorized() override;
 
     virtual uint32_t GetConnectedTime() override;
     virtual int GetSlot() override;
+
+    virtual void SetUnauthorizedSteamID(uint64_t steamID) override;
 
     virtual uint64_t GetUnauthorizedSteamID() override;
     virtual uint64_t GetSteamID() override;
@@ -50,6 +54,8 @@ public:
 
     virtual uint64_t& GetPressedButtons() override;
     virtual void PerformCommand(const std::string& command) override;
+    virtual std::string GetIPAddress() override;
+    virtual void Kick(const std::string& sReason, ENetworkDisconnectionReason uReason) override;
 private:
     int m_iPlayerId;
     bool m_bAuthorized;
@@ -59,6 +65,10 @@ private:
     CPlayerBitVec m_bvSelfMutes = {};
 
     uint64_t m_uPressedButtons = 0;
+
+    std::chrono::high_resolution_clock::time_point m_uConnectedTimeStart;
+
+    uint64_t m_uUnauthorizedSteamID = 0;
 };
 
 #endif

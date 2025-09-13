@@ -88,6 +88,9 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
         return false;
     }
 
+    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    playermanager->Initialize();
+
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
     extManager->Load();
 
@@ -98,6 +101,9 @@ bool SwiftlyCore::Unload()
 {
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
     extManager->Unload();
+
+    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    playermanager->Shutdown();
 
     auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->Shutdown();

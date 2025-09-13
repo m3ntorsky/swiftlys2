@@ -40,6 +40,8 @@ public:
     virtual void AddEntityListener(IEntityListener* listener) override;
     virtual void RemoveEntityListener(IEntityListener* listener) override;
 
+    virtual CEntitySystem* GetEntitySystem() override;
+
     virtual void* GetGameRules() override;
 };
 

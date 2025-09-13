@@ -44,6 +44,8 @@ public:
     virtual void AddEntityListener(IEntityListener* listener) = 0;
     virtual void RemoveEntityListener(IEntityListener* listener) = 0;
 
+    virtual CEntitySystem* GetEntitySystem() = 0;
+
     virtual void* GetGameRules() = 0;
 };
 

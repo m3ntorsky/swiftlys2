@@ -44,6 +44,7 @@
 #include <api/sdk/schema.h>
 
 #include <api/server/configuration/configuration.h>
+#include <api/server/players/manager.h>
 
 SW_API void* GetPureInterface(const char* iface_name);
 
@@ -63,5 +64,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define PRECACHER_INTERFACE_VERSION                         "PrecacherAPI"
 #define VOICEMANAGER_INTERFACE_VERSION                      "VoiceManagerAPI"
 #define SCRIPTING_INTERFACE_VERSION                         "ScriptingAPI"
+#define PLAYERMANAGER_INTERFACE_VERSION                     "PlayerManagerAPI"
 
 #endif

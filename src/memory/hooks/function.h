@@ -43,6 +43,7 @@ public:
 private:
     dyno::IHook* m_pHook = nullptr;
     std::vector<dyno::CallbackHandler> m_vCallbacks[2];
+    bool m_bEnabled = false;
 };
 
 #endif

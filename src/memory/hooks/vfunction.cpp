@@ -25,6 +25,8 @@ int VFunctionHook::SetCallback(dyno::CallbackType callbackType, dyno::CallbackHa
     if (callbackType < dyno::CallbackType::Pre || callbackType > dyno::CallbackType::Post)
         return -1;
 
+    if (m_bEnabled) m_pHook->addCallback(callbackType, callback);
+
     m_vCallbacks[static_cast<int>(callbackType)].push_back(callback);
     return m_vCallbacks[static_cast<int>(callbackType)].size() - 1;
 }
@@ -38,6 +40,8 @@ void VFunctionHook::RemoveCallback(dyno::CallbackType callbackType, int cb_idx)
     if (cb_idx < 0 || cb_idx >= m_vCallbacks[cbtype].size())
         return;
 
+    auto& cb = m_vCallbacks[cbtype][cb_idx];
+    if (m_bEnabled) m_pHook->removeCallback(callbackType, cb);
     m_vCallbacks[cbtype].erase(m_vCallbacks[cbtype].begin() + cb_idx);
 }
 
@@ -45,6 +49,12 @@ void VFunctionHook::RemoveCallback(dyno::CallbackType callbackType)
 {
     if (callbackType < dyno::CallbackType::Pre || callbackType > dyno::CallbackType::Post)
         return;
+
+    if (m_bEnabled) {
+        for (auto& callback : m_vCallbacks[static_cast<int>(callbackType)]) {
+            m_pHook->removeCallback(callbackType, callback);
+        }
+    }
 
     m_vCallbacks[static_cast<int>(callbackType)].clear();
 }
@@ -82,6 +92,8 @@ void VFunctionHook::Enable()
 
     for (auto& callback : m_vCallbacks[1])
         m_pHook->addCallback(dyno::CallbackType::Post, callback);
+
+    m_bEnabled = true;
 }
 
 void VFunctionHook::Disable()
@@ -94,6 +106,8 @@ void VFunctionHook::Disable()
 
     for (auto& callback : m_vCallbacks[1])
         m_pHook->removeCallback(dyno::CallbackType::Post, callback);
+
+    m_bEnabled = true;
 }
 
 void* VFunctionHook::GetOriginal()

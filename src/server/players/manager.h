@@ -20,6 +20,10 @@
 
 #include "player.h"
 
+#include <steam/steam_api_common.h>
+#include <steam/isteamuser.h>
+#include <steam/steamclientpublic.h>
+
 class CPlayerManager : public IPlayerManager
 {
 public:
@@ -36,9 +40,11 @@ public:
     virtual int GetPlayerCount() override;
     virtual int GetPlayerCap() override;
 
-    virtual void SendMessage(MessageType type, const std::string& message) override;
+    virtual void SendMsg(MessageType type, const std::string& message) override;
 
     virtual void SteamAPIServerActivated() override;
+
+    STEAM_GAMESERVER_CALLBACK_MANUAL(CPlayerManager, OnValidateAuthTicket, ValidateAuthTicketResponse_t, m_CallbackValidateAuthTicketResponse);
 private:
     CPlayer** g_Players = nullptr;
 };

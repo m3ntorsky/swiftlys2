@@ -168,3 +168,8 @@ void* CEntSystem::GetGameRules()
 {
     return g_pGameRules;
 }
+
+CEntitySystem* CEntSystem::GetEntitySystem()
+{
+    return g_pGameEntitySystem;
+}

@@ -26,7 +26,6 @@
 
 #include <public/networksystem/inetworkmessages.h>
 #include <public/engine/igameeventsystem.h>
-#include <public/tier1/utldelegateimpl.h>
 
 #include <format>
 

@@ -25,6 +25,8 @@
 #include <random>
 #include <chrono>
 
+#include <regex>
+
 const char* wws = " \t\n\r\f\v";
 
 std::map<std::string, std::string> terminalColors = {
@@ -135,6 +137,8 @@ std::string ProcessColor(std::string str, int team)
 
 std::string ClearColors(std::string str)
 {
+    str = replace(str, "{TEAMCOLOR}", "");
+    str = replace(str, "{teamcolor}", "");
     for (auto it = terminalColors.begin(); it != terminalColors.end(); ++it)
     {
         str = replace(str, it->first, "");
@@ -342,4 +346,10 @@ std::string& ltrim(std::string& s, const char* t)
 std::string& trim(std::string& s, const char* t)
 {
     return ltrim(rtrim(s, t), t);
+}
+
+std::string RemoveHtmlTags(std::string input) {
+    std::regex pattern("<(/?)(div|font)[^>]*>");
+
+    return std::regex_replace(input, pattern, "");
 }
