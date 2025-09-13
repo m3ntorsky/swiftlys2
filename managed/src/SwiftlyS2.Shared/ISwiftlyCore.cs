@@ -1,4 +1,5 @@
 using SwiftlyS2.Shared.Events;
+using SwiftlyS2.Shared.Services;
 
 namespace SwiftlyS2.Shared;
 
@@ -13,5 +14,11 @@ public interface ISwiftlyCore {
   /// </summary>
   public IEventSubscriber CustomEvents { get; }
 
+
+
+  /// <summary>
+  /// Configuration service.
+  /// </summary>
+  public IPluginConfigurationService Configuration { get; }
 
 }
