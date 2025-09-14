@@ -20,6 +20,7 @@
 #define src_network_sounds_soundevent_h
 
 #include <api/network/sounds/soundevent.h>
+#include <api/sdk/recipientfilter.h>
 
 #include <map>
 

@@ -24,16 +24,16 @@
 
 #include <mathlib/vector.h>
 
-#include <api/sdk/recipientfilter.h>
+class CRecipientFilter;
 
 #define SOUNDEVENT_NAME_HASH_SEED 0x53524332
 #define SOUNDEVENT_FIELD_NAME_HASH_SEED 0x31415926
 
- /*
- reversed from game, there's more type than the following,
- but we only implement these for now, because we don't know what other types' serialization looks like,
- and these should be sufficient in most case
- */
+/*
+reversed from game, there's more type than the following,
+but we only implement these for now, because we don't know what other types' serialization looks like,
+and these should be sufficient in most case
+*/
 
 enum SosFieldType {
     SE_Bool = 1,

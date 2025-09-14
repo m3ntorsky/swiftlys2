@@ -41,6 +41,9 @@
 #include <api/monitor/callstack/callstack.h>
 #include <api/monitor/crashreporter/crashreporter.h>
 
+#include <api/network/sounds/soundevents.h>
+#include <api/network/database/manager.h>
+
 #include <api/sdk/schema.h>
 
 #include <api/server/configuration/configuration.h>
@@ -66,5 +69,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define SCRIPTING_INTERFACE_VERSION                         "ScriptingAPI"
 #define PLAYERMANAGER_INTERFACE_VERSION                     "PlayerManagerAPI"
 #define SOUNDEVENTMANAGER_INTERFACE_VERSION                 "SoundEventManagerAPI"
+#define DATABASEMANAGER_INTERFACE_VERSION                   "DatabaseManagerAPI"
 
 #endif

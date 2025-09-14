@@ -23,17 +23,17 @@ std::string stripJsonComments(const std::string& jsonc)
 {
     std::string result;
     result.reserve(jsonc.size());
-    
+
     bool inString = false;
     bool inSingleLineComment = false;
     bool inMultiLineComment = false;
     bool escaped = false;
-    
+
     for (size_t i = 0; i < jsonc.size(); ++i)
     {
         char current = jsonc[i];
         char next = (i + 1 < jsonc.size()) ? jsonc[i + 1] : '\0';
-        
+
         if (inString)
         {
             result += current;
@@ -89,12 +89,17 @@ std::string stripJsonComments(const std::string& jsonc)
             }
         }
     }
-    
+
     return result;
 }
 
 nlohmann::json parseJsonc(const std::string& jsonc)
 {
     std::string cleanJson = stripJsonComments(jsonc);
-    return nlohmann::json::parse(cleanJson);
+    try {
+        return nlohmann::json::parse(cleanJson);
+    }
+    catch (nlohmann::json::exception& e) {
+        return nlohmann::json();
+    }
 }

@@ -37,6 +37,7 @@
 #include <monitor/crashreporter/crashreporter.h>
 
 #include <network/sounds/soundevents.h>
+#include <network/database/manager.h>
 
 #include <scripting/scripting.h>
 
@@ -65,6 +66,7 @@ CScriptingAPI g_ScriptingAPI;
 CPlayerManager g_PlayerManager;
 CVoiceManager g_VoiceManager;
 CSoundEventManager g_SoundEventManager;
+CDatabaseManager g_DatabaseManager;
 
 static std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
@@ -85,6 +87,7 @@ static std::map<std::string, void*> g_Interfaces = {
     {PLAYERMANAGER_INTERFACE_VERSION, &g_PlayerManager},
     {VOICEMANAGER_INTERFACE_VERSION, &g_VoiceManager},
     {SOUNDEVENTMANAGER_INTERFACE_VERSION, &g_SoundEventManager},
+    {DATABASEMANAGER_INTERFACE_VERSION, &g_DatabaseManager},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)

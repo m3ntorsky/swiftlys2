@@ -97,6 +97,9 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     playermanager->Initialize();
 
+    auto databasemanager = g_ifaceService.FetchInterface<IDatabaseManager>(DATABASEMANAGER_INTERFACE_VERSION);
+    databasemanager->Initialize();
+
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
     extManager->Load();
 
