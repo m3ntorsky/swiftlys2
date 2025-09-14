@@ -25,6 +25,7 @@
 #include <engine/entities/entitysystem.h>
 #include <engine/gameevents/gameevents.h>
 #include <engine/precacher/precacher.h>
+#include <engine/voicemanager/voicemanager.h>
 
 #include <memory/allocator/allocator.h>
 #include <memory/hooks/manager.h>
@@ -34,6 +35,8 @@
 #include <monitor/resmon/monitor.h>
 #include <monitor/callstack/callstack.h>
 #include <monitor/crashreporter/crashreporter.h>
+
+#include <network/sounds/soundevents.h>
 
 #include <scripting/scripting.h>
 
@@ -60,6 +63,8 @@ CEventManager g_GameEventManager;
 CPrecacher g_Precacher;
 CScriptingAPI g_ScriptingAPI;
 CPlayerManager g_PlayerManager;
+CVoiceManager g_VoiceManager;
+CSoundEventManager g_SoundEventManager;
 
 static std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
@@ -78,10 +83,14 @@ static std::map<std::string, void*> g_Interfaces = {
     {PRECACHER_INTERFACE_VERSION, &g_Precacher},
     {SCRIPTING_INTERFACE_VERSION, &g_ScriptingAPI},
     {PLAYERMANAGER_INTERFACE_VERSION, &g_PlayerManager},
+    {VOICEMANAGER_INTERFACE_VERSION, &g_VoiceManager},
+    {SOUNDEVENTMANAGER_INTERFACE_VERSION, &g_SoundEventManager},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)
 {
-    if (!g_Interfaces.contains(iface_name)) return g_SwiftlyCore.GetInterface(iface_name);
-    return g_Interfaces.at(iface_name);
+    auto it = g_Interfaces.find(iface_name);
+    if (it != g_Interfaces.end()) return it->second;
+
+    return g_SwiftlyCore.GetInterface(iface_name);
 }

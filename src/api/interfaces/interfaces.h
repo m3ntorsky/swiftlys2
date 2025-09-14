@@ -65,5 +65,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define VOICEMANAGER_INTERFACE_VERSION                      "VoiceManagerAPI"
 #define SCRIPTING_INTERFACE_VERSION                         "ScriptingAPI"
 #define PLAYERMANAGER_INTERFACE_VERSION                     "PlayerManagerAPI"
+#define SOUNDEVENTMANAGER_INTERFACE_VERSION                 "SoundEventManagerAPI"
 
 #endif

@@ -27,8 +27,6 @@ SH_DECL_EXTERN2_void(IServerGameClients, ClientCommand, SH_NOATTRIB, 0, CPlayerS
 
 #define CBaseEntity_m_iTeamNum 0x9DC483B8A5BFEFB3
 
-IVFunctionHook* g_pClientListening = nullptr;
-
 void CVoiceManager::Initialize()
 {
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
