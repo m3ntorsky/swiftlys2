@@ -21,6 +21,8 @@
 
 #include <api/engine/voicemanager/voicemanager.h>
 
+#include <public/entity2/entitysystem.h>
+
 class CVoiceManager : public IVoiceManager
 {
 public:
@@ -28,12 +30,13 @@ public:
     virtual void Shutdown() override;
 
     virtual void SetClientListenOverride(int playerid, int targetid, ListenOverride override) override;
-    virtual void ResetClientListenOverride(int playerid) override;
     virtual ListenOverride GetClientListenOverride(int playerid, int targetid) override;
 
     virtual void SetClientVoiceFlags(int playerid, VoiceFlagValue flags) override;
-    virtual void ResetClientVoiceFlags(int playerid) override;
     virtual VoiceFlagValue GetClientVoiceFlags(int playerid) override;
+
+    bool SetClientListening(CPlayerSlot iReceiver, CPlayerSlot iSender, bool bListen);
+    void OnClientCommand(CPlayerSlot slot, const CCommand& args);
 };
 
 #endif

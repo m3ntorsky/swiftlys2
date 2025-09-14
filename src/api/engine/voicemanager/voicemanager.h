@@ -53,11 +53,9 @@ public:
     virtual void Shutdown() = 0;
 
     virtual void SetClientListenOverride(int playerid, int targetid, ListenOverride override) = 0;
-    virtual void ResetClientListenOverride(int playerid) = 0;
     virtual ListenOverride GetClientListenOverride(int playerid, int targetid) = 0;
 
     virtual void SetClientVoiceFlags(int playerid, VoiceFlagValue flags) = 0;
-    virtual void ResetClientVoiceFlags(int playerid) = 0;
     virtual VoiceFlagValue GetClientVoiceFlags(int playerid) = 0;
 };
 
