@@ -1,0 +1,93 @@
+using Microsoft.Extensions.Logging;
+using Spectre.Console;
+
+namespace SwiftlyS2.Core.Services;
+
+internal class SwiftlyLoggerProvider : ILoggerProvider
+{
+  public ILogger CreateLogger(string categoryName)
+  {
+    return new SwiftlyLogger(categoryName);
+  }
+
+  public void Dispose()
+  {
+  }
+}
+
+internal class SwiftlyLogger : ILogger
+{
+  private readonly string _categoryName;
+
+  public SwiftlyLogger(string categoryName)
+  {
+    _categoryName = categoryName;
+  }
+
+  public IDisposable? BeginScope<TState>(TState state) where TState : notnull
+  {
+    return NullScope.Instance;
+  }
+
+  public bool IsEnabled(LogLevel logLevel)
+  {
+    return logLevel != LogLevel.None;
+  }
+
+  public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception? exception, Func<TState, Exception?, string> formatter)
+  {
+    if (!IsEnabled(logLevel)) return;
+
+    var timestamp = DateTime.Now.ToString("MM/dd HH:mm:ss");
+    var level = GetLogLevelString(logLevel);
+    var id = $"[{eventId.ToString()}]";
+    var color = GetLogLevelColor(logLevel);
+
+    AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]SwiftlyS2[/] [lightsteelblue]|[/] [grey42]{timestamp}[/] [lightsteelblue]|[/] [{color}]{level}[/] [lightsteelblue]|[/] [lightsteelblue]{_categoryName}{id}[/]");
+
+    string? message = formatter != null ? formatter(state, exception) : state?.ToString();
+    if (!string.IsNullOrEmpty(message))
+    {
+      AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]SwiftlyS2[/] [lightsteelblue]|[/] [grey85]{message}[/]");
+    }
+
+    if (exception != null)
+    {
+      AnsiConsole.WriteException(exception);
+    }
+  }
+
+  private static string GetLogLevelString(LogLevel logLevel)
+  {
+    return logLevel switch
+    {
+      LogLevel.Trace =>           "Trace      ",
+      LogLevel.Debug =>           "Debug      ",
+      LogLevel.Information =>     "Information",
+      LogLevel.Warning =>         "Warning    ",
+      LogLevel.Error =>           "Error      ",
+      LogLevel.Critical =>        "Critical   ",
+      _ =>                        "Unknown    "
+    };
+  }
+
+  private static string GetLogLevelColor(LogLevel logLevel)
+  {
+    return logLevel switch
+    {
+      LogLevel.Trace => "grey42",
+      LogLevel.Debug => "grey42",
+      LogLevel.Information => "silver",
+      LogLevel.Warning => "yellow1",
+      LogLevel.Error => "red3",
+      LogLevel.Critical => "red3",
+      _ => "grey42"
+    };
+  }
+
+  private sealed class NullScope : IDisposable
+  {
+    public static readonly NullScope Instance = new NullScope();
+    public void Dispose() { }
+  }
+}

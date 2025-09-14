@@ -1,5 +1,7 @@
+using System.Diagnostics;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Core.Natives.NativeObjects;
 using SwiftlyS2.Core.SchemaDefinitions;
 using SwiftlyS2.Shared.SchemaDefinitions;
 
@@ -35,21 +37,29 @@ internal class TestService {
 
           var pRules = (nint)NativeTest.Test();
           _Logger.LogInformation("pPlayer: "+ pRules.ToString());
-          if (pRules == nint.Zero)
-          {
-            continue;
-          }
+          // if (pRules == nint.Zero)
+          // {
+          //   continue;
+          // }
 
-          CCSPlayerController player = new CCSPlayerControllerImpl(pRules);
-          _Logger.LogError("account: "+ player.InGameMoneyServices!.Account);
-          _Logger.LogError("connected: " + player.Connected);
-          _Logger.LogError("mins: " + player.Collision?.Mins.ToString());  
-          _Logger.LogError("maxs: " + player.Collision?.Maxs.ToString());
-          _Logger.LogError("steamid: " + player.SteamID);
-          _Logger.LogError("pawn: " + player.PlayerPawn.IsValid);
-          if (player.PlayerPawn.IsValid) {
-            _Logger.LogError("pawn: " + player.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin.ToString());
+          NativeHandle h = new(pRules);
+
+          Stopwatch sw = Stopwatch.StartNew();
+          sw.Start();
+          for (int i = 0; i < 100000; i++) {
+            CCSPlayerController player = NativeHandleConversion.As<CCSPlayerController>(0);
           }
+          sw.Stop();
+          _Logger.LogInformation("Time: " + sw.ElapsedMilliseconds);
+          // _Logger.LogError("account: "+ player.InGameMoneyServices!.Account);
+          // _Logger.LogError("connected: " + player.Connected);
+          // _Logger.LogError("mins: " + player.Collision?.Mins.ToString());  
+          // _Logger.LogError("maxs: " + player.Collision?.Maxs.ToString());
+          // _Logger.LogError("steamid: " + player.SteamID);
+          // _Logger.LogError("pawn: " + player.PlayerPawn.IsValid);
+          // if (player.PlayerPawn.IsValid) {
+          //   _Logger.LogError("pawn: " + player.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin.ToString());
+          // }
 
             // for (int i = 0; i < player.PlayerName.ElementCount; i++) {
             //   Console.WriteLine(player.PlayerName[i]);
