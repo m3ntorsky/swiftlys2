@@ -23,6 +23,7 @@
 
 #include <api/interfaces/manager.h>
 #include <api/shared/files.h>
+#include <api/shared/jsonc.h>
 #include <api/shared/plat.h>
 #include <api/memory/virtual/call.h>
 
@@ -45,12 +46,6 @@ public:
 private:
 	uint8 pad_0024[4];
 };
-
-void WriteJSON(std::string path, json& j)
-{
-	std::string content = j.dump(4);
-	Files::Write(path, content, false);
-}
 
 void CSDKSchema::Load()
 {

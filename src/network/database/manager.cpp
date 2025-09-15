@@ -32,6 +32,13 @@ void CDatabaseManager::Initialize()
     std::string file_path = "addons/swiftly/configs/database.jsonc";
     json j = parseJsonc(Files::Read(file_path));
 
+    if (j.empty() || !j.contains("default_connection") || !j.contains("connections"))
+    {
+        auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
+        logger->Error("Database Manager", "Failed to load database credentials. The 'addons/swiftly/configs/database.jsonc' file is missing or invalid.\n");
+        return;
+    }
+
     m_sDefaultConnection = j["default_connection"].get<std::string>();
     for (auto& [key, value] : j["connections"].items())
     {

@@ -24,5 +24,6 @@
 
 std::string stripJsonComments(const std::string& jsonc);
 nlohmann::json parseJsonc(const std::string& jsonc);
+void WriteJSON(std::string path, nlohmann::json& j);
 
 #endif

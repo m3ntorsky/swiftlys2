@@ -24,10 +24,12 @@
 
 #include <api/shared/files.h>
 #include <api/shared/jsonc.h>
+#include <api/shared/string.h>
 
 #include <memory/gamedata/manager.h>
 
 #include <public/iserver.h>
+#include <public/filesystem.h>
 
 #include <map>
 #include <stack>
@@ -43,7 +45,9 @@ SH_DECL_EXTERN3_void(INetworkServerService, StartupServer, SH_NOATTRIB, 0, const
 std::map<uint64_t, std::function<bool(std::string, IGameEvent*, bool&)>> g_mEventListeners;
 std::map<uint64_t, std::function<bool(std::string, IGameEvent*, bool&)>> g_mPostEventListeners;
 
-std::vector<std::string> g_vEventNames;
+std::set<std::string> g_sDumpedFiles;
+json dumpedEvents;
+
 std::stack<IGameEvent*> g_sEventStack;
 std::set<std::string> g_sEnqueueListenEvents;
 bool g_bEventsLoaded = false;
@@ -54,16 +58,6 @@ IGameEventManager2* g_gameEventManager = nullptr;
 
 void CEventManager::Initialize(std::string game_name)
 {
-    std::string file_path = "addons/swiftly/gamedata/" + game_name + "/gameevents.json";
-    json j = parseJsonc(Files::Read(file_path));
-    for (const auto& item : j)
-    {
-        g_vEventNames.push_back(item.get<std::string>());
-    }
-
-    auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-    logger->Debug("Game Events", std::format("Loaded {} events from gamedata.\n", g_vEventNames.size()));
-
     DynLibUtils::CModule servermodule = DetermineModuleByLibrary("server");
     auto CGameEventManagerVTable = servermodule.GetVirtualTableByName("CGameEventManager");
 
@@ -94,6 +88,20 @@ int CEventManager::LoadEventsFromFile(const char* filePath, bool searchAll)
 
         SH_ADD_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEvent, false);
         SH_ADD_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEventPost, true);
+    }
+
+    if (!g_sDumpedFiles.contains(filePath))
+    {
+        g_sDumpedFiles.insert(filePath);
+
+        auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
+        logger->Info("Game Events", std::format("Dumping game events from file: '{}'...\n", filePath));
+
+        auto filesystem = g_ifaceService.FetchInterface<IFileSystem>(FILESYSTEM_INTERFACE_VERSION);
+
+        filesystem->CopyAFile(filePath, "GAME", GeneratePath(std::format("addons/swiftly/gamedata/cs2/gameevents{}", replace(filePath, Files::getBase(filePath), ""))).c_str(), false);
+
+        logger->Info("Game Events", std::format("Dumped game events from file '{}'.\n", filePath));
     }
 
     RETURN_META_VALUE(MRES_IGNORED, 0);
