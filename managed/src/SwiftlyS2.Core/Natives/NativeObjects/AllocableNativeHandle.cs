@@ -8,7 +8,7 @@ internal abstract class AllocableNativeHandle : SafeHandleZeroOrMinusOneIsInvali
 
   public bool IsValid { get => !IsInvalid; }
 
-  protected AllocableNativeHandle(nint handle) : base(true) {
+  protected AllocableNativeHandle(nint handle, bool ownsHandle) : base(ownsHandle) {
     SetHandle(handle);
   }
 

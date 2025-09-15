@@ -1,5 +1,7 @@
 using System.Buffers;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Natives.NativeObjects;
@@ -22,6 +24,8 @@ internal class TestService {
 
     Test();
   }
+
+  
 
   public void Test()
   {
@@ -46,13 +50,17 @@ internal class TestService {
           CCSPlayerController player = new CCSPlayerControllerImpl(pRules);
           _Logger.LogInformation("player: " + player.PlayerName.Value);
 
+          
+
           unsafe {
-            var handle = NativeSounds.CreateSoundEvent();
-            NativeSounds.AddAllClients(handle);
-            NativeSounds.SetName(handle, "Weapon_AK47.Single");
-            NativeSounds.SetFloat(handle, "public.volume", 5.0f);
-            NativeSounds.SetSourceEntityIndex(handle, (int)player.PlayerPawn.EntityIndex);
-            NativeSounds.Emit(handle);
+
+            // NativeEntitySystem.Despawn((void*)player.PlayerPawn.Value.GetHandle(), "SetScale", null, null, true, 0);
+            // var handle = NativeSounds.CreateSoundEvent();
+            // NativeSounds.AddAllClients(handle);
+            // NativeSounds.SetName(handle, "Weapon_AK47.Single");
+            // NativeSounds.SetFloat(handle, "public.volume", 5.0f);
+            // NativeSounds.SetSourceEntityIndex(handle, (int)player.PlayerPawn.EntityIndex);
+            // NativeSounds.Emit(handle);
 
 
             }
