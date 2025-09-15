@@ -1,3 +1,4 @@
+using System.Buffers;
 using System.Diagnostics;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Natives;
@@ -37,36 +38,25 @@ internal class TestService {
 
           var pRules = (nint)NativeTest.Test();
           _Logger.LogInformation("pPlayer: "+ pRules.ToString());
-          // if (pRules == nint.Zero)
-          // {
-          //   continue;
-          // }
-
-          NativeHandle h = new(pRules);
-
-          Stopwatch sw = Stopwatch.StartNew();
-          sw.Start();
-          for (int i = 0; i < 100000; i++) {
-            CCSPlayerController player = NativeHandleConversion.As<CCSPlayerController>(0);
+          if (pRules == nint.Zero)
+          {
+            continue;
           }
-          sw.Stop();
-          _Logger.LogInformation("Time: " + sw.ElapsedMilliseconds);
-          // _Logger.LogError("account: "+ player.InGameMoneyServices!.Account);
-          // _Logger.LogError("connected: " + player.Connected);
-          // _Logger.LogError("mins: " + player.Collision?.Mins.ToString());  
-          // _Logger.LogError("maxs: " + player.Collision?.Maxs.ToString());
-          // _Logger.LogError("steamid: " + player.SteamID);
-          // _Logger.LogError("pawn: " + player.PlayerPawn.IsValid);
-          // if (player.PlayerPawn.IsValid) {
-          //   _Logger.LogError("pawn: " + player.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin.ToString());
-          // }
 
-            // for (int i = 0; i < player.PlayerName.ElementCount; i++) {
-            //   Console.WriteLine(player.PlayerName[i]);
-            //   if (player.PlayerName[i] == 0) {
-            //     break;
-            //   }
-            // }
+          CCSPlayerController player = new CCSPlayerControllerImpl(pRules);
+          _Logger.LogInformation("player: " + player.PlayerName.Value);
+
+          unsafe {
+            var handle = NativeSounds.CreateSoundEvent();
+            NativeSounds.AddAllClients(handle);
+            NativeSounds.SetName(handle, "Weapon_AK47.Single");
+            NativeSounds.SetFloat(handle, "public.volume", 5.0f);
+            NativeSounds.SetSourceEntityIndex(handle, (int)player.PlayerPawn.EntityIndex);
+            NativeSounds.Emit(handle);
+
+
+            }
+
 
           _ProfileService.StopRecording("TestService");
 
