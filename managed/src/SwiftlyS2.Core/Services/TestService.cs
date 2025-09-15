@@ -47,20 +47,6 @@ internal class TestService {
 
           var pool = ArrayPool<byte>.Shared;
           var buffer = pool.Rent(32);
-          fixed (byte* bufferPtr = buffer)
-          {
-            Stopwatch sw = Stopwatch.StartNew();
-            sw.Start();
-            for (int i = 0; i < 100000; i++) {
-              var a = NativeVariantType.Create(123);
-                a.Serialize((nint)bufferPtr);
-                var b = NativeVariantType.Deserialize((nint)bufferPtr);
-                var c = b.Take<int>();
-            }
-            sw.Stop();
-            pool.Return(buffer);
-            _Logger.LogInformation("Time: " + sw.ElapsedMilliseconds);
-        }
           // _Logger.LogError("account: "+ player.InGameMoneyServices!.Account);
           // _Logger.LogError("connected: " + player.Connected);
           // _Logger.LogError("mins: " + player.Collision?.Mins.ToString());  
