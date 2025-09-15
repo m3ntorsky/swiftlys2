@@ -1,0 +1,3 @@
+class Translations
+
+string Fetch = string key, int32 playerid

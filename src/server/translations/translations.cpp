@@ -145,10 +145,12 @@ std::string CTranslations::FetchTranslation(const std::string& key, int playerid
 
     auto language = std::get<std::string>(configuration->GetValue("core.Language"));
 
-    if (std::get<bool>(configuration->GetValue("core.UsePlayerLanguage"))) {
-        auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
-        auto player = playermanager->GetPlayer(playerid);
-        if (player) language = player->GetLanguage();
+    if (playerid > -1) {
+        if (std::get<bool>(configuration->GetValue("core.UsePlayerLanguage"))) {
+            auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+            auto player = playermanager->GetPlayer(playerid);
+            if (player) language = player->GetLanguage();
+        }
     }
 
     auto it2 = it->second.find(language);
