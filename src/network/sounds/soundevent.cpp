@@ -76,9 +76,9 @@ uint32_t CSoundEvent::Emit()
 
     uint32_t guid;
 #ifdef _WIN32
-    CALL_VIRTUAL(void, gamedata->GetOffsets()->Fetch("CSoundSystem::TakeGuid"), g_pSoundSystem, &guid);
+    CALL_VIRTUAL(void, gamedata->GetOffsets()->Fetch("CSoundSystem::TakeGuid"), soundsystem, &guid);
 #else
-    guid = CALL_VIRTUAL(uint32_t, gamedata->GetOffsets()->Fetch("CSoundSystem::TakeGuid"), g_pSoundSystem);
+    guid = CALL_VIRTUAL(uint32_t, gamedata->GetOffsets()->Fetch("CSoundSystem::TakeGuid"), soundsystem);
 #endif
 
     data->set_soundevent_hash(soundeventHash);

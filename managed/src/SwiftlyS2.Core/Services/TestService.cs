@@ -38,31 +38,25 @@ internal class TestService {
 
           var pRules = (nint)NativeTest.Test();
           _Logger.LogInformation("pPlayer: "+ pRules.ToString());
-          // if (pRules == nint.Zero)
-          // {
-          //   continue;
-          // }
+          if (pRules == nint.Zero)
+          {
+            continue;
+          }
 
-          NativeHandle h = new(pRules);
+          CCSPlayerController player = new CCSPlayerControllerImpl(pRules);
+          _Logger.LogInformation("player: " + player.PlayerName.Value);
 
-          var pool = ArrayPool<byte>.Shared;
-          var buffer = pool.Rent(32);
-          // _Logger.LogError("account: "+ player.InGameMoneyServices!.Account);
-          // _Logger.LogError("connected: " + player.Connected);
-          // _Logger.LogError("mins: " + player.Collision?.Mins.ToString());  
-          // _Logger.LogError("maxs: " + player.Collision?.Maxs.ToString());
-          // _Logger.LogError("steamid: " + player.SteamID);
-          // _Logger.LogError("pawn: " + player.PlayerPawn.IsValid);
-          // if (player.PlayerPawn.IsValid) {
-          //   _Logger.LogError("pawn: " + player.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin.ToString());
-          // }
+          unsafe {
+            var handle = NativeSounds.CreateSoundEvent();
+            NativeSounds.AddAllClients(handle);
+            NativeSounds.SetName(handle, "Weapon_AK47.Single");
+            NativeSounds.SetFloat(handle, "public.volume", 5.0f);
+            NativeSounds.SetSourceEntityIndex(handle, (int)player.PlayerPawn.EntityIndex);
+            NativeSounds.Emit(handle);
 
-            // for (int i = 0; i < player.PlayerName.ElementCount; i++) {
-            //   Console.WriteLine(player.PlayerName[i]);
-            //   if (player.PlayerName[i] == 0) {
-            //     break;
-            //   }
-            // }
+
+            }
+
 
           _ProfileService.StopRecording("TestService");
 
