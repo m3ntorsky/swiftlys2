@@ -48,6 +48,7 @@
 
 #include <api/server/configuration/configuration.h>
 #include <api/server/players/manager.h>
+#include <api/server/translations/translations.h>
 
 SW_API void* GetPureInterface(const char* iface_name);
 
@@ -70,5 +71,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define PLAYERMANAGER_INTERFACE_VERSION                     "PlayerManagerAPI"
 #define SOUNDEVENTMANAGER_INTERFACE_VERSION                 "SoundEventManagerAPI"
 #define DATABASEMANAGER_INTERFACE_VERSION                   "DatabaseManagerAPI"
+#define TRANSLATIONS_INTERFACE_VERSION                      "TranslationsAPI"
 
 #endif

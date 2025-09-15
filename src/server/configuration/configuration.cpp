@@ -458,24 +458,12 @@ bool Configuration::Load()
 
         bool wasEdited = false;
 
-        RegisterConfiguration(wasEdited, config_json, "core", "core", "Logging.Enabled", true);
-        RegisterConfiguration(wasEdited, config_json, "core", "core", "Logging.Mode", std::string("daily"));
-        RegisterConfiguration(wasEdited, config_json, "core", "core", "Logging.SaveCoreMessages", false);
-
-        std::string loggingMode = config_json["Logging"]["Mode"].get<std::string>();
-        if (loggingMode != "daily" && loggingMode != "map" && loggingMode != "permanent") {
-            logger->Error("Configurations", "Error in core.json: The field \"Logging.Mode\" needs to be: \"daily\" or \"map\".");
-            return false;
-        }
-
         RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "CommandPrefixes", { "!" }, true, " ");
         RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "CommandSilentPrefixes", { "/" }, true, " ");
         RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "PatchesToPerform", {}, true, " ");
 
         if (g_SwiftlyCore.GetCurrentGame() == "cs2") RegisterConfiguration(wasEdited, config_json, "core", "core", "CS2ServerGuidelines", "https://blog.counter-strike.net/index.php/server_guidelines/");
         RegisterConfiguration(wasEdited, config_json, "core", "core", std::format("Follow{}ServerGuidelines", str_toupper(g_SwiftlyCore.GetCurrentGame())), true);
-
-        RegisterConfiguration(wasEdited, config_json, "core", "core", "ConsoleFiltering", true);
 
         RegisterConfiguration(wasEdited, config_json, "core", "core", "Language", "en");
         RegisterConfiguration(wasEdited, config_json, "core", "core", "UsePlayerLanguage", true);

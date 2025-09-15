@@ -100,6 +100,9 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     auto databasemanager = g_ifaceService.FetchInterface<IDatabaseManager>(DATABASEMANAGER_INTERFACE_VERSION);
     databasemanager->Initialize();
 
+    auto translations = g_ifaceService.FetchInterface<ITranslations>(TRANSLATIONS_INTERFACE_VERSION);
+    translations->Initialize();
+
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
     extManager->Load();
 

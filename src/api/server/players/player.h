@@ -61,6 +61,8 @@ public:
 
     virtual void ChangeAuthorizationState(bool bAuthorized) = 0;
 
+    virtual std::string& GetLanguage() = 0;
+
     /** Player SDK Classes **/
     virtual void* GetController() = 0;
     virtual void* GetPawn() = 0;

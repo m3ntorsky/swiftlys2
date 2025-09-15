@@ -6,14 +6,8 @@
     "CommandSilentPrefixes": [
         "/"
     ],
-    "ConsoleFiltering": true,
     "FollowCS2ServerGuidelines": true,
     "Language": "en",
-    "Logging": {
-        "Enabled": true,
-        "Mode": "daily",
-        "SaveCoreMessages": false
-    },
     "Menu": {
         "AvailableInputModes": [
             "chat",

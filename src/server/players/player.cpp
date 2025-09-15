@@ -157,6 +157,11 @@ void CPlayer::ChangeAuthorizationState(bool bAuthorized)
     m_bAuthorized = bAuthorized;
 }
 
+std::string& CPlayer::GetLanguage()
+{
+    return m_sLanguage;
+}
+
 void* CPlayer::GetController()
 {
     auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
