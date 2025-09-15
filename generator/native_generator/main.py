@@ -76,7 +76,7 @@ def make_string_return_marshal(state: dict):
             else f"{INDENT}{INDENT}var pool = ArrayPool<byte>.Shared;"
         )
         + f"{EOL}"
-        f"{INDENT}{INDENT}var retBuffer = pool.Rent(ret);{EOL}"
+        f"{INDENT}{INDENT}var retBuffer = pool.Rent(ret+1);{EOL}"
         f"{INDENT}{INDENT}fixed (byte* retBufferPtr = retBuffer) {{{EOL}",
         f"{INDENT}{INDENT}var retString = Encoding.UTF8.GetString(retBufferPtr, ret);{EOL}"
         f"{INDENT}{INDENT}pool.Return(retBuffer);{EOL}{EOL}",

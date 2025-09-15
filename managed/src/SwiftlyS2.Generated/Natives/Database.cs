@@ -10,7 +10,7 @@ internal static class NativeDatabase {
   public unsafe static string GetDefaultConnection() {
     var ret = _GetDefaultConnection(null);
     var pool = ArrayPool<byte>.Shared;
-    var retBuffer = pool.Rent(ret);
+    var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
     ret = _GetDefaultConnection(retBufferPtr);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
@@ -23,7 +23,7 @@ internal static class NativeDatabase {
   public unsafe static string GetDefaultConnectionCredentials() {
     var ret = _GetDefaultConnectionCredentials(null);
     var pool = ArrayPool<byte>.Shared;
-    var retBuffer = pool.Rent(ret);
+    var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
     ret = _GetDefaultConnectionCredentials(retBufferPtr);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
@@ -42,7 +42,7 @@ internal static class NativeDatabase {
     fixed (byte* connectionNameBufferPtr = connectionNameBuffer) {
     var ret = _GetCredentials(null, connectionNameBufferPtr);
 
-    var retBuffer = pool.Rent(ret);
+    var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
     ret = _GetCredentials(retBufferPtr, connectionNameBufferPtr);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);

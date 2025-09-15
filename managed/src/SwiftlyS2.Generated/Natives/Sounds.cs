@@ -37,7 +37,7 @@ internal static class NativeSounds {
   public unsafe static string GetName(void* soundEvent) {
     var ret = _GetName(null, soundEvent);
     var pool = ArrayPool<byte>.Shared;
-    var retBuffer = pool.Rent(ret);
+    var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
     ret = _GetName(retBufferPtr, soundEvent);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
