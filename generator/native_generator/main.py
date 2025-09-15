@@ -15,21 +15,25 @@ PARAM_TYPE_MAP = {
     "ptr": "void*",
     "string": "string",
     "void": "void",
+    "variant": "NativeVariantType"
 }
 
 DELEGATE_PARAM_TYPE_MAP = {
     **PARAM_TYPE_MAP,
     "string": "byte*",
+    "variant": "byte*"
 }
 
 DELEGATE_RETURN_TYPE_MAP = {
     **PARAM_TYPE_MAP,
     "string": "int",
+    "variant": "int"
 }
 
 RETURN_TYPE_MAP = {
     **PARAM_TYPE_MAP,
     "string": "string",
+    "variant": "NativeVariantType"
 }
 
 EOL = os.linesep
@@ -43,7 +47,7 @@ def split_by_last_dot(value: str):
 
 
 def is_buffer_return(return_type: str) -> bool:
-    return return_type == "string"
+    return return_type == "string" or return_type == "variant"
 
 
 def make_string_marshal(param_name: str, state: dict):
@@ -85,6 +89,41 @@ def make_string_return_marshal(state: dict):
     state["closing_bracket"] = state.get("closing_bracket", 0) + 1
     return pre_lines
 
+def make_variant_marshal(param_name: str, state: dict):
+    pre_lines = [
+        f"{param_name}BufferPtr",
+        (
+            ""
+            if state.get("pool")
+            else f"{INDENT}{INDENT}var pool = ArrayPool<byte>.Shared;"
+        )
+        + f"{EOL}"
+        f"{INDENT}{INDENT}var {param_name}Buffer = pool.Rent({param_name}.GetSerializationSize());{EOL}"
+        f"{INDENT}{INDENT}fixed (byte* {param_name}BufferPtr = {param_name}Buffer) {{{EOL}"
+        f"{INDENT}{INDENT}{param_name}.Serialize((nint){param_name}BufferPtr);{EOL}",
+        f"{INDENT}{INDENT}pool.Return({param_name}Buffer);{EOL}{EOL}"
+    ]
+    state["pool"] = True
+    state["closing_bracket"] = state.get("closing_bracket", 0) + 1
+    return pre_lines
+
+def make_variant_return_marshal(state: dict):
+    pre_lines = [
+        "retVariant",
+        (
+            ""
+            if state.get("pool")
+            else f"{INDENT}{INDENT}var pool = ArrayPool<byte>.Shared;"
+        )
+        + f"{EOL}"
+        f"{INDENT}{INDENT}var retBuffer = pool.Rent(ret);{EOL}"
+        f"{INDENT}{INDENT}fixed (byte* retBufferPtr = retBuffer) {{{EOL}",
+        f"{INDENT}{INDENT}var retVariant = NativeVariantType.Deserialize((nint)retBufferPtr);{EOL}"
+        f"{INDENT}{INDENT}pool.Return(retBuffer);{EOL}{EOL}"
+    ]
+    state["pool"] = True
+    state["closing_bracket"] = state.get("closing_bracket", 0) + 1
+    return pre_lines
 
 def emit(chunks: list[str], text: str = ""):
     chunks.append(text + EOL)
@@ -150,13 +189,22 @@ def parse_native(lines: list[str]):
                 new_name, pre_code, post_code = make_string_marshal(n, state)
                 renamed_param[n] = new_name
                 marshals.append((pre_code, post_code))
+            elif t == "NativeVariantType":
+                new_name, pre_code, post_code = make_variant_marshal(n, state)
+                renamed_param[n] = new_name
+                marshals.append((pre_code, post_code))
             else:
                 renamed_param[n] = n
 
         if is_buffer_return(return_type):
-            new_name, pre_code, post_code = make_string_return_marshal(state)
-            renamed_ret = new_name
-            ret_marshal = (pre_code, post_code)
+            if return_type == "variant":
+                new_name, pre_code, post_code = make_variant_return_marshal(state)
+                renamed_ret = new_name
+                ret_marshal = (pre_code, post_code)
+            elif return_type == "string":
+                new_name, pre_code, post_code = make_string_return_marshal(state)
+                renamed_ret = new_name
+                ret_marshal = (pre_code, post_code)
 
         for pre_code, _ in marshals:
             chunks.append(pre_code)

@@ -49,6 +49,16 @@ internal static class PtrExtensions {
   }
 
   [MethodImpl(MethodImplOptions.AggressiveInlining)]
+  public static void CopyFrom(this nint ptr, nint source, int size) {
+    unsafe { Unsafe.CopyBlockUnaligned((void*)ptr, (void*)source, (uint)size); }
+  }
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
+  public static void CopyFrom(this nint ptr, int offset, nint source, int size) {
+    unsafe { Unsafe.CopyBlockUnaligned((void*)(ptr + offset), (void*)source, (uint)size); }
+  }
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public static bool IsValidPtr(this nint ptr) {
     return ptr != 0 && ptr != IntPtr.MaxValue;
   }

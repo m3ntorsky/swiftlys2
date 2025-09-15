@@ -1,3 +1,4 @@
+using System.Buffers;
 using System.Diagnostics;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Natives;
@@ -44,13 +45,22 @@ internal class TestService {
 
           NativeHandle h = new(pRules);
 
-          Stopwatch sw = Stopwatch.StartNew();
-          sw.Start();
-          for (int i = 0; i < 100000; i++) {
-            CCSPlayerController player = NativeHandleConversion.As<CCSPlayerController>(0);
-          }
-          sw.Stop();
-          _Logger.LogInformation("Time: " + sw.ElapsedMilliseconds);
+          var pool = ArrayPool<byte>.Shared;
+          var buffer = pool.Rent(32);
+          fixed (byte* bufferPtr = buffer)
+          {
+            Stopwatch sw = Stopwatch.StartNew();
+            sw.Start();
+            for (int i = 0; i < 100000; i++) {
+              var a = NativeVariantType.Create(123);
+                a.Serialize((nint)bufferPtr);
+                var b = NativeVariantType.Deserialize((nint)bufferPtr);
+                var c = b.Take<int>();
+            }
+            sw.Stop();
+            pool.Return(buffer);
+            _Logger.LogInformation("Time: " + sw.ElapsedMilliseconds);
+        }
           // _Logger.LogError("account: "+ player.InGameMoneyServices!.Account);
           // _Logger.LogError("connected: " + player.Connected);
           // _Logger.LogError("mins: " + player.Collision?.Mins.ToString());  
