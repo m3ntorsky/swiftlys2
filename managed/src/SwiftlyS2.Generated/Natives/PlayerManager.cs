@@ -1,0 +1,37 @@
+#pragma warning disable CS0649
+
+using System.Buffers;
+using System.Text;
+
+namespace SwiftlyS2.Core.Natives;
+
+internal static class NativePlayerManager {
+  private unsafe static delegate* unmanaged<int, bool> _IsPlayerOnline;
+  public unsafe static bool IsPlayerOnline(int playerid) {
+    var ret = _IsPlayerOnline(playerid);
+    return ret;
+  }
+  private unsafe static delegate* unmanaged<int> _GetPlayerCount;
+  public unsafe static int GetPlayerCount() {
+    var ret = _GetPlayerCount();
+    return ret;
+  }
+  private unsafe static delegate* unmanaged<int> _GetPlayerCap;
+  public unsafe static int GetPlayerCap() {
+    var ret = _GetPlayerCap();
+    return ret;
+  }
+  private unsafe static delegate* unmanaged<int, byte*, void> _SendMessage;
+  public unsafe static void SendMessage(int kind, string message) {
+    var pool = ArrayPool<byte>.Shared;
+    var messageLength = Encoding.UTF8.GetByteCount(message);
+    var messageBuffer = pool.Rent(messageLength + 1);
+    Encoding.UTF8.GetBytes(message, messageBuffer);
+    messageBuffer[messageLength] = 0;
+    fixed (byte* messageBufferPtr = messageBuffer) {
+    _SendMessage(kind, messageBufferPtr);
+    pool.Return(messageBuffer);
+
+  }
+  }
+}
