@@ -54,7 +54,6 @@ public class TestPlugin : BasePlugin {
 
     var e = core.GameEvent.Create<EventShowSurvivalRespawnStatus>();
     e.LocToken = "ABC";
-
     e.SetString("loc_token", "ABC");
 
     e.Fire();
