@@ -37,7 +37,7 @@ public:
 
     void OnMapLoad(std::string map_name);
     void OnMapUnload();
-    
+
     void* GetInterface(const std::string& iface_name);
     void SendConsoleMessage(const std::string& message);
 

@@ -38,7 +38,6 @@
 
 #include <api/monitor/logger/logger.h>
 #include <api/monitor/resmon/monitor.h>
-#include <api/monitor/callstack/callstack.h>
 #include <api/monitor/crashreporter/crashreporter.h>
 
 #include <api/network/sounds/soundevents.h>
@@ -56,7 +55,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define LOGGER_INTERFACE_VERSION                            "LoggerAPI"
 #define RESOURCE_MONITOR_INTERFACE_VERSION                  "ResourceMonitorAPI"
 #define MEMORYALLOCATOR_INTERFACE_VERSION                   "MemoryAllocatorAPI"
-#define CALLSTACK_INTERFACE_VERSION                         "CallStackAPI"
 #define CRASHREPORTER_INTERFACE_VERSION                     "CrashReporterAPI"
 #define HOOKSMANAGER_INTERFACE_VERSION                      "HooksManagerAPI"
 #define GAMEDATA_INTERFACE_VERSION                          "GameDataAPI"

@@ -1,4 +1,0 @@
-class CallStack
-
-uint64 Register = string pluginName, string stackMsg
-void Unregister = string pluginName, uint64 callstackId

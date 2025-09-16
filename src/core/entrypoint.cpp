@@ -29,7 +29,6 @@
 #include <engine/entities/entitysystem.h>
 #include <engine/gamesystem/gamesystem.h>
 
-
 SwiftlyCore g_SwiftlyCore;
 InterfacesManager g_ifaceService;
 
