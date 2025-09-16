@@ -50,10 +50,27 @@ public class TestPlugin : BasePlugin {
     var logger = core.LoggerFactory.CreateLogger<TestPlugin>();
 
     logger.LogInformation("TestPlugin jump loaded");
-    core.GameEvent.HookPre<EventPlayerJump>(@event =>
-    {
-      logger.LogInformation("Dmg health: " + @event.UserId.PlayerName.Value);
-      return HookResult.Continue;
+
+
+
+    var e = core.GameEvent.Create<EventShowSurvivalRespawnStatus>();
+    e.LocToken = "ABC";
+
+    e.SetString("loc_token", "ABC");
+
+    e.Fire();
+
+
+    Task.Run(async () => {
+      await Task.Delay(10000);
+      while(true)
+      {
+        await Task.Delay(10);
+        Console.WriteLine(e.GetHandle());
+        Console.WriteLine(e.GetHashCode());
+        Console.WriteLine("FIRED3");
+        // GC.
+      }
     });
 
 
