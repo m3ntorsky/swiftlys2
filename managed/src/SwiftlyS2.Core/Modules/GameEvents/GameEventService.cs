@@ -22,7 +22,6 @@ internal class GameEventService : IGameEventService, IDisposable {
 
   public Guid HookPre<T>(Func<T, HookResult> callback) where T : IGameEvent<T> {
     GameEventCallback<T> cb = new(callback, true, _LoggerFactory, _Context);
-    GameEventPublisher.Subscribe(cb);
     lock (_lock) {
       _callbacks.Add(cb);
     }
@@ -31,7 +30,6 @@ internal class GameEventService : IGameEventService, IDisposable {
 
   public Guid HookPost<T>(Func<T, HookResult> callback) where T : IGameEvent<T> {
     GameEventCallback<T> cb = new(callback, false, _LoggerFactory, _Context);
-    GameEventPublisher.Subscribe(cb);
     lock (_lock) {
       _callbacks.Add(cb);
     }
@@ -43,7 +41,7 @@ internal class GameEventService : IGameEventService, IDisposable {
       for (int i = 0; i < _callbacks.Count; i++) {
         var callback = _callbacks[i];
         if (callback.Guid == guid) {
-          GameEventPublisher.Unsubscribe(callback);
+          callback.Dispose();
           _callbacks.RemoveAt(i);
           break;
         }
@@ -57,7 +55,7 @@ internal class GameEventService : IGameEventService, IDisposable {
       for (int i = 0; i < _callbacks.Count; i++) {
         var callback = _callbacks[i];
         if (callback.IsPreHook) {
-          GameEventPublisher.Unsubscribe(callback);
+          callback.Dispose();
           _callbacks.RemoveAt(i);
         }
       }
@@ -69,7 +67,7 @@ internal class GameEventService : IGameEventService, IDisposable {
       for (int i = 0; i < _callbacks.Count; i++) {
         var callback = _callbacks[i];
         if (!callback.IsPreHook) {
-          GameEventPublisher.Unsubscribe(callback);
+          callback.Dispose();
           _callbacks.RemoveAt(i);
         }
       }
@@ -84,8 +82,9 @@ internal class GameEventService : IGameEventService, IDisposable {
 
   public void Dispose() {
     lock (_lock) {
-      foreach (var callback in _callbacks) {
-        GameEventPublisher.Unsubscribe(callback);
+      foreach (var callback in _callbacks)
+      {
+        callback.Dispose();
       }
       _callbacks.Clear();
     }

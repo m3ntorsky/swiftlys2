@@ -5,7 +5,7 @@ namespace SwiftlyS2.Shared.GameEvents;
 /// <summary>
 /// Plugin-scoped service for managing game events.
 /// </summary>
-public interface IGameEventService : IDisposable {
+public interface IGameEventService {
 
   /// <summary>
   /// Hooks a pre-event callback.

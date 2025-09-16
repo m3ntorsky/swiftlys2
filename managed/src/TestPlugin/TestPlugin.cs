@@ -52,25 +52,10 @@ public class TestPlugin : BasePlugin {
     logger.LogInformation("TestPlugin jump loaded");
 
 
-    var e = core.GameEvent.Create<EventShowSurvivalRespawnStatus>();
-    e.LocToken = "ABC";
-    e.SetString("loc_token", "ABC");
-
-    e.Fire();
-
-
-    Task.Run(async () => {
-      await Task.Delay(10000);
-      while(true)
-      {
-        await Task.Delay(10);
-        Console.WriteLine(e.GetHandle());
-        Console.WriteLine(e.GetHashCode());
-        Console.WriteLine("FIRED3");
-        // GC.
-      }
+    core.GameEvent.HookPre<EventPlayerJump>(e => {
+      Console.WriteLine("TestPlugin jump pre");
+      return HookResult.Continue;
     });
-
 
   }
 
