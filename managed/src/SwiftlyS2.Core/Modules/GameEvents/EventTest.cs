@@ -1,11 +1,12 @@
-namespace SwiftlyS2.Core.GameEvents;
+using SwiftlyS2.Core.GameEvents;
 
-internal class EventTest : GameEvent {
+namespace SwiftlyS2.Shared.GameEvents;
 
-  public override string Name => "EventTest";
+public interface EventTest : IGameEvent<EventTest> {
 
-  internal override ulong Hash => 0;
+  static EventTest IGameEvent<EventTest>.FromAllocated(nint ptr) => new EventTestImpl(ptr, true);
 
-  public EventTest(nint handle) : base(handle) {
-  }
+  static EventTest IGameEvent<EventTest>.FromExternal(nint ptr) => new EventTestImpl(ptr, false);
+
+  static string IGameEvent<EventTest>.GetName() => "player_team";
 }

@@ -7,16 +7,16 @@ using SwiftlyS2.Shared.Natives;
 namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeEntitySystem {
-  private unsafe static delegate* unmanaged<void*, void*, void> _Spawn;
-  public unsafe static void Spawn(void* entity, void* keyvalues) {
+  private unsafe static delegate* unmanaged<nint, nint, void> _Spawn;
+  public unsafe static void Spawn(nint entity, nint keyvalues) {
     _Spawn(entity, keyvalues);
   }
-  private unsafe static delegate* unmanaged<void*, void> _Despawn;
-  public unsafe static void Despawn(void* entity) {
+  private unsafe static delegate* unmanaged<nint, void> _Despawn;
+  public unsafe static void Despawn(nint entity) {
     _Despawn(entity);
   }
-  private unsafe static delegate* unmanaged<byte*, void*> _CreateEntityByName;
-  public unsafe static void* CreateEntityByName(string name) {
+  private unsafe static delegate* unmanaged<byte*, nint> _CreateEntityByName;
+  public unsafe static nint CreateEntityByName(string name) {
     var pool = ArrayPool<byte>.Shared;
     var nameLength = Encoding.UTF8.GetByteCount(name);
     var nameBuffer = pool.Rent(nameLength + 1);
@@ -29,8 +29,8 @@ internal static class NativeEntitySystem {
     return ret;
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, int, int, void> _AcceptInputInt32;
-  public unsafe static void AcceptInputInt32(void* entity, string input, void* activator, void* caller, int value, int outputID) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, int, int, void> _AcceptInputInt32;
+  public unsafe static void AcceptInputInt32(nint entity, string input, nint activator, nint caller, int value, int outputID) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -42,8 +42,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, uint, int, void> _AcceptInputUInt32;
-  public unsafe static void AcceptInputUInt32(void* entity, string input, void* activator, void* caller, uint value, int outputID) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, uint, int, void> _AcceptInputUInt32;
+  public unsafe static void AcceptInputUInt32(nint entity, string input, nint activator, nint caller, uint value, int outputID) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -55,8 +55,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, long, int, void> _AcceptInputInt64;
-  public unsafe static void AcceptInputInt64(void* entity, string input, void* activator, void* caller, long value, int outputID) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, long, int, void> _AcceptInputInt64;
+  public unsafe static void AcceptInputInt64(nint entity, string input, nint activator, nint caller, long value, int outputID) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -68,8 +68,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, ulong, int, void> _AcceptInputUInt64;
-  public unsafe static void AcceptInputUInt64(void* entity, string input, void* activator, void* caller, ulong value, int outputID) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, ulong, int, void> _AcceptInputUInt64;
+  public unsafe static void AcceptInputUInt64(nint entity, string input, nint activator, nint caller, ulong value, int outputID) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -81,8 +81,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, float, int, void> _AcceptInputFloat;
-  public unsafe static void AcceptInputFloat(void* entity, string input, void* activator, void* caller, float value, int outputID) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, float, int, void> _AcceptInputFloat;
+  public unsafe static void AcceptInputFloat(nint entity, string input, nint activator, nint caller, float value, int outputID) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -94,8 +94,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, double, int, void> _AcceptInputDouble;
-  public unsafe static void AcceptInputDouble(void* entity, string input, void* activator, void* caller, double value, int outputID) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, double, int, void> _AcceptInputDouble;
+  public unsafe static void AcceptInputDouble(nint entity, string input, nint activator, nint caller, double value, int outputID) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -107,8 +107,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, bool, int, void> _AcceptInputBool;
-  public unsafe static void AcceptInputBool(void* entity, string input, void* activator, void* caller, bool value, int outputID) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, bool, int, void> _AcceptInputBool;
+  public unsafe static void AcceptInputBool(nint entity, string input, nint activator, nint caller, bool value, int outputID) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -120,8 +120,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, byte*, int, void> _AcceptInputString;
-  public unsafe static void AcceptInputString(void* entity, string input, void* activator, void* caller, string value, int outputID) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, byte*, int, void> _AcceptInputString;
+  public unsafe static void AcceptInputString(nint entity, string input, nint activator, nint caller, string value, int outputID) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -142,8 +142,8 @@ internal static class NativeEntitySystem {
   }
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, int, float, void> _AddEntityIOEventInt32;
-  public unsafe static void AddEntityIOEventInt32(void* entity, string input, void* activator, void* caller, int value, float delay) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, int, float, void> _AddEntityIOEventInt32;
+  public unsafe static void AddEntityIOEventInt32(nint entity, string input, nint activator, nint caller, int value, float delay) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -155,8 +155,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, uint, float, void> _AddEntityIOEventUInt32;
-  public unsafe static void AddEntityIOEventUInt32(void* entity, string input, void* activator, void* caller, uint value, float delay) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, uint, float, void> _AddEntityIOEventUInt32;
+  public unsafe static void AddEntityIOEventUInt32(nint entity, string input, nint activator, nint caller, uint value, float delay) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -168,8 +168,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, long, float, void> _AddEntityIOEventInt64;
-  public unsafe static void AddEntityIOEventInt64(void* entity, string input, void* activator, void* caller, long value, float delay) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, long, float, void> _AddEntityIOEventInt64;
+  public unsafe static void AddEntityIOEventInt64(nint entity, string input, nint activator, nint caller, long value, float delay) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -181,8 +181,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, ulong, float, void> _AddEntityIOEventUInt64;
-  public unsafe static void AddEntityIOEventUInt64(void* entity, string input, void* activator, void* caller, ulong value, float delay) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, ulong, float, void> _AddEntityIOEventUInt64;
+  public unsafe static void AddEntityIOEventUInt64(nint entity, string input, nint activator, nint caller, ulong value, float delay) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -194,8 +194,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, float, float, void> _AddEntityIOEventFloat;
-  public unsafe static void AddEntityIOEventFloat(void* entity, string input, void* activator, void* caller, float value, float delay) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, float, float, void> _AddEntityIOEventFloat;
+  public unsafe static void AddEntityIOEventFloat(nint entity, string input, nint activator, nint caller, float value, float delay) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -207,8 +207,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, double, float, void> _AddEntityIOEventDouble;
-  public unsafe static void AddEntityIOEventDouble(void* entity, string input, void* activator, void* caller, double value, float delay) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, double, float, void> _AddEntityIOEventDouble;
+  public unsafe static void AddEntityIOEventDouble(nint entity, string input, nint activator, nint caller, double value, float delay) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -220,8 +220,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, bool, float, void> _AddEntityIOEventBool;
-  public unsafe static void AddEntityIOEventBool(void* entity, string input, void* activator, void* caller, bool value, float delay) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, bool, float, void> _AddEntityIOEventBool;
+  public unsafe static void AddEntityIOEventBool(nint entity, string input, nint activator, nint caller, bool value, float delay) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -233,8 +233,8 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<void*, byte*, void*, void*, byte*, float, void> _AddEntityIOEventString;
-  public unsafe static void AddEntityIOEventString(void* entity, string input, void* activator, void* caller, string value, float delay) {
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, byte*, float, void> _AddEntityIOEventString;
+  public unsafe static void AddEntityIOEventString(nint entity, string input, nint activator, nint caller, string value, float delay) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -255,18 +255,18 @@ internal static class NativeEntitySystem {
   }
   }
   }
-  private unsafe static delegate* unmanaged<void*, bool> _IsValidEntity;
-  public unsafe static bool IsValidEntity(void* entity) {
+  private unsafe static delegate* unmanaged<nint, bool> _IsValidEntity;
+  public unsafe static bool IsValidEntity(nint entity) {
     var ret = _IsValidEntity(entity);
     return ret;
   }
-  private unsafe static delegate* unmanaged<void*> _GetGameRules;
-  public unsafe static void* GetGameRules() {
+  private unsafe static delegate* unmanaged<nint> _GetGameRules;
+  public unsafe static nint GetGameRules() {
     var ret = _GetGameRules();
     return ret;
   }
-  private unsafe static delegate* unmanaged<void*> _GetEntitySystem;
-  public unsafe static void* GetEntitySystem() {
+  private unsafe static delegate* unmanaged<nint> _GetEntitySystem;
+  public unsafe static nint GetEntitySystem() {
     var ret = _GetEntitySystem();
     return ret;
   }

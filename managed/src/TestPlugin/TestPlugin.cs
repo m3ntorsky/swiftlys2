@@ -2,6 +2,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Shared;
+using SwiftlyS2.Shared.GameEvents;
+using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.Plugins;
 using SwiftlyS2.Shared.SchemaDefinitions;
 
@@ -31,7 +33,7 @@ public class TestPlugin : BasePlugin {
 
   public override void Load(ISwiftlyCore core) {
 
-    core.Events.OnTick += () => {
+    core.Event.OnTick += () => {
       Console.WriteLine("TestPlugin on tick");
     };
 
@@ -48,7 +50,15 @@ public class TestPlugin : BasePlugin {
 
     logger.LogInformation("TestPlugin loaded");
 
-  
+
+    core.GameEvent.HookPre<EventTest>((@event) =>
+    {
+      var controller = @event.GetPlayerController("userid");
+      Console.WriteLine("Player teamed: "+controller.PlayerName.Value);
+      return HookResult.Continue;
+    });
+
+
   }
 
   public override void Unload() {

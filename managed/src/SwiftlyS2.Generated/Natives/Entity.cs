@@ -7,13 +7,13 @@ using SwiftlyS2.Shared.Natives;
 namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeEntity {
-  private unsafe static delegate* unmanaged<void*, bool> _HandleIsValid;
-  public unsafe static bool HandleIsValid(void* handle) {
+  private unsafe static delegate* unmanaged<nint, bool> _HandleIsValid;
+  public unsafe static bool HandleIsValid(nint handle) {
     var ret = _HandleIsValid(handle);
     return ret;
   }
-  private unsafe static delegate* unmanaged<void*, void*> _HandleGet;
-  public unsafe static void* HandleGet(void* handle) {
+  private unsafe static delegate* unmanaged<nint, nint> _HandleGet;
+  public unsafe static nint HandleGet(nint handle) {
     var ret = _HandleGet(handle);
     return ret;
   }

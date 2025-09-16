@@ -45,18 +45,18 @@ internal static class NativePlayer {
     var ret = _GetSteamID(playerid);
     return ret;
   }
-  private unsafe static delegate* unmanaged<int, void*> _GetController;
-  public unsafe static void* GetController(int playerid) {
+  private unsafe static delegate* unmanaged<int, nint> _GetController;
+  public unsafe static nint GetController(int playerid) {
     var ret = _GetController(playerid);
     return ret;
   }
-  private unsafe static delegate* unmanaged<int, void*> _GetPawn;
-  public unsafe static void* GetPawn(int playerid) {
+  private unsafe static delegate* unmanaged<int, nint> _GetPawn;
+  public unsafe static nint GetPawn(int playerid) {
     var ret = _GetPawn(playerid);
     return ret;
   }
-  private unsafe static delegate* unmanaged<int, void*> _GetPlayerPawn;
-  public unsafe static void* GetPlayerPawn(int playerid) {
+  private unsafe static delegate* unmanaged<int, nint> _GetPlayerPawn;
+  public unsafe static nint GetPlayerPawn(int playerid) {
     var ret = _GetPlayerPawn(playerid);
     return ret;
   }

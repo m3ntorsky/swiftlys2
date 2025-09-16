@@ -1,13 +1,20 @@
 using Microsoft.Extensions.Logging;
 using Spectre.Console;
 
-namespace SwiftlyS2.Core.Services;
+namespace SwiftlyS2.Core.Misc;
 
 internal class SwiftlyLoggerProvider : ILoggerProvider
 {
+  private readonly string _contextName;
+
+  public SwiftlyLoggerProvider(string contextName)
+  {
+    _contextName = contextName;
+  }
+
   public ILogger CreateLogger(string categoryName)
   {
-    return new SwiftlyLogger(categoryName);
+    return new SwiftlyLogger(categoryName, _contextName);
   }
 
   public void Dispose()
@@ -18,10 +25,12 @@ internal class SwiftlyLoggerProvider : ILoggerProvider
 internal class SwiftlyLogger : ILogger
 {
   private readonly string _categoryName;
+  private readonly string _contextName;
 
-  public SwiftlyLogger(string categoryName)
+  public SwiftlyLogger(string categoryName, string contextName)
   {
     _categoryName = categoryName;
+    _contextName = contextName;
   }
 
   public IDisposable? BeginScope<TState>(TState state) where TState : notnull
@@ -43,12 +52,12 @@ internal class SwiftlyLogger : ILogger
     var id = $"[{eventId.ToString()}]";
     var color = GetLogLevelColor(logLevel);
 
-    AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]SwiftlyS2[/] [lightsteelblue]|[/] [grey42]{timestamp}[/] [lightsteelblue]|[/] [{color}]{level}[/] [lightsteelblue]|[/] [lightsteelblue]{_categoryName}{id}[/]");
+    AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]{_contextName}[/] [lightsteelblue]|[/] [grey42]{timestamp}[/] [lightsteelblue]|[/] [{color}]{level}[/] [lightsteelblue]|[/] [lightsteelblue]{_categoryName}{id}[/]");
 
     string? message = formatter != null ? formatter(state, exception) : state?.ToString();
     if (!string.IsNullOrEmpty(message))
     {
-      AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]SwiftlyS2[/] [lightsteelblue]|[/] [grey85]{message}[/]");
+      AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]{_contextName}[/] [lightsteelblue]|[/] [grey85]{message}[/]");
     }
 
     if (exception != null)

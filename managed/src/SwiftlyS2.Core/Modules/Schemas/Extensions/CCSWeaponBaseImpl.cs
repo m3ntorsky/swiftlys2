@@ -9,9 +9,7 @@ internal partial class CCSWeaponBaseImpl : CCSWeaponBase {
 
   public CCSWeaponBaseVData VData { 
     get {
-      unsafe {
-        return new CCSWeaponBaseVDataImpl((nint)NativeSchema.GetVData(_Handle.ToPointer()));
-      }
+      return new CCSWeaponBaseVDataImpl((nint)NativeSchema.GetVData(_Handle));
     }
   }
 }
