@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRenderComponent : CEntityComponent {
+public partial interface CRenderComponent : CEntityComponent, IConvertibleNativeHandle<CRenderComponent> {
+
+  static CRenderComponent IConvertibleNativeHandle<CRenderComponent>.From(nint handle) => new CRenderComponentImpl(handle);
 
   
   public CNetworkVarChainer __m_pChainEntity { get; }

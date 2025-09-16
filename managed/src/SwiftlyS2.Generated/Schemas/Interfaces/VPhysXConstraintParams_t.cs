@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VPhysXConstraintParams_t : ISchemaClass {
+public partial interface VPhysXConstraintParams_t : ISchemaClass, IConvertibleNativeHandle<VPhysXConstraintParams_t> {
+
+  static VPhysXConstraintParams_t IConvertibleNativeHandle<VPhysXConstraintParams_t>.From(nint handle) => new VPhysXConstraintParams_tImpl(handle);
 
   
   public ref byte Type { get; }

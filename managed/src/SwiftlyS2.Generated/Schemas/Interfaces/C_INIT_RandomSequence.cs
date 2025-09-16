@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomSequence : CParticleFunctionInitializer {
+public partial interface C_INIT_RandomSequence : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RandomSequence> {
+
+  static C_INIT_RandomSequence IConvertibleNativeHandle<C_INIT_RandomSequence>.From(nint handle) => new C_INIT_RandomSequenceImpl(handle);
 
   
   public ref int SequenceMin { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoTarget : CPointEntity {
+public partial interface CInfoTarget : CPointEntity, IConvertibleNativeHandle<CInfoTarget> {
+
+  static CInfoTarget IConvertibleNativeHandle<CInfoTarget>.From(nint handle) => new CInfoTargetImpl(handle);
 
 
 

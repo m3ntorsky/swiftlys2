@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomRotation : CGeneralRandomRotation {
+public partial interface C_INIT_RandomRotation : CGeneralRandomRotation, IConvertibleNativeHandle<C_INIT_RandomRotation> {
+
+  static C_INIT_RandomRotation IConvertibleNativeHandle<C_INIT_RandomRotation>.From(nint handle) => new C_INIT_RandomRotationImpl(handle);
 
 
 

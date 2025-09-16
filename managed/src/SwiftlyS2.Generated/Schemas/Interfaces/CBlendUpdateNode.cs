@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBlendUpdateNode : CAnimUpdateNodeBase {
+public partial interface CBlendUpdateNode : CAnimUpdateNodeBase, IConvertibleNativeHandle<CBlendUpdateNode> {
+
+  static CBlendUpdateNode IConvertibleNativeHandle<CBlendUpdateNode>.From(nint handle) => new CBlendUpdateNodeImpl(handle);
 
   
   // CUtlVector< CAnimUpdateNodeRef >

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCVSoundStackScriptList : ISchemaClass {
+public partial interface InfoForResourceTypeCVSoundStackScriptList : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCVSoundStackScriptList> {
+
+  static InfoForResourceTypeCVSoundStackScriptList IConvertibleNativeHandle<InfoForResourceTypeCVSoundStackScriptList>.From(nint handle) => new InfoForResourceTypeCVSoundStackScriptListImpl(handle);
 
 
 

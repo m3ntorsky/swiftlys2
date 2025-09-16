@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmOrNode__CDefinition : CNmBoolValueNode__CDefinition {
+public partial interface CNmOrNode__CDefinition : CNmBoolValueNode__CDefinition, IConvertibleNativeHandle<CNmOrNode__CDefinition> {
+
+  static CNmOrNode__CDefinition IConvertibleNativeHandle<CNmOrNode__CDefinition>.From(nint handle) => new CNmOrNode__CDefinitionImpl(handle);
 
   
   // CUtlLeanVectorFixedGrowable< int16, 4 >

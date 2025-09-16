@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHandleTest : CBaseEntity {
+public partial interface CHandleTest : CBaseEntity, IConvertibleNativeHandle<CHandleTest> {
+
+  static CHandleTest IConvertibleNativeHandle<CHandleTest>.From(nint handle) => new CHandleTestImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Handle { get; }

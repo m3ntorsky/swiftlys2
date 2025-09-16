@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDestructiblePartsSystemData : ISchemaClass {
+public partial interface CDestructiblePartsSystemData : ISchemaClass, IConvertibleNativeHandle<CDestructiblePartsSystemData> {
+
+  static CDestructiblePartsSystemData IConvertibleNativeHandle<CDestructiblePartsSystemData>.From(nint handle) => new CDestructiblePartsSystemDataImpl(handle);
 
   
   // CUtlOrderedMap< HitGroup_t, CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels >

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CWeaponBaseItem : CCSWeaponBase {
+public partial interface CWeaponBaseItem : CCSWeaponBase, IConvertibleNativeHandle<CWeaponBaseItem> {
+
+  static CWeaponBaseItem IConvertibleNativeHandle<CWeaponBaseItem>.From(nint handle) => new CWeaponBaseItemImpl(handle);
 
   
   public ref bool SequenceInProgress { get; }

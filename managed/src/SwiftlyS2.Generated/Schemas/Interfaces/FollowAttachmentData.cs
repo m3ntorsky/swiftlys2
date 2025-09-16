@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FollowAttachmentData : ISchemaClass {
+public partial interface FollowAttachmentData : ISchemaClass, IConvertibleNativeHandle<FollowAttachmentData> {
+
+  static FollowAttachmentData IConvertibleNativeHandle<FollowAttachmentData>.From(nint handle) => new FollowAttachmentDataImpl(handle);
 
   
   public ref int BoneIndex { get; }

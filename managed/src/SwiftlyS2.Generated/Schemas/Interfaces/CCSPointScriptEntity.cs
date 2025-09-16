@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPointScriptEntity : CBaseEntity {
+public partial interface CCSPointScriptEntity : CBaseEntity, IConvertibleNativeHandle<CCSPointScriptEntity> {
+
+  static CCSPointScriptEntity IConvertibleNativeHandle<CCSPointScriptEntity>.From(nint handle) => new CCSPointScriptEntityImpl(handle);
 
 
 

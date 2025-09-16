@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCNmSkeleton : ISchemaClass {
+public partial interface InfoForResourceTypeCNmSkeleton : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCNmSkeleton> {
+
+  static InfoForResourceTypeCNmSkeleton IConvertibleNativeHandle<InfoForResourceTypeCNmSkeleton>.From(nint handle) => new InfoForResourceTypeCNmSkeletonImpl(handle);
 
 
 

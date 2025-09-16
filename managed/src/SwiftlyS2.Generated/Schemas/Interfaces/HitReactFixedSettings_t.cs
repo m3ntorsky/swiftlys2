@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface HitReactFixedSettings_t : ISchemaClass {
+public partial interface HitReactFixedSettings_t : ISchemaClass, IConvertibleNativeHandle<HitReactFixedSettings_t> {
+
+  static HitReactFixedSettings_t IConvertibleNativeHandle<HitReactFixedSettings_t>.From(nint handle) => new HitReactFixedSettings_tImpl(handle);
 
   
   public ref int WeightListIndex { get; }

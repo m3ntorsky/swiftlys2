@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseObservableBoolExpression_t : ISchemaClass {
+public partial interface PulseObservableBoolExpression_t : ISchemaClass, IConvertibleNativeHandle<PulseObservableBoolExpression_t> {
+
+  static PulseObservableBoolExpression_t IConvertibleNativeHandle<PulseObservableBoolExpression_t>.From(nint handle) => new PulseObservableBoolExpression_tImpl(handle);
 
   
   public CPulse_OutflowConnection EvaluateConnection { get; }

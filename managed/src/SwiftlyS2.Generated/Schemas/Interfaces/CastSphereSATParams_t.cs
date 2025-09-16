@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CastSphereSATParams_t : ISchemaClass {
+public partial interface CastSphereSATParams_t : ISchemaClass, IConvertibleNativeHandle<CastSphereSATParams_t> {
+
+  static CastSphereSATParams_t IConvertibleNativeHandle<CastSphereSATParams_t>.From(nint handle) => new CastSphereSATParams_tImpl(handle);
 
   
   public ref Vector RayStart { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleFunctionInitializer : CParticleFunction {
+public partial interface CParticleFunctionInitializer : CParticleFunction, IConvertibleNativeHandle<CParticleFunctionInitializer> {
+
+  static CParticleFunctionInitializer IConvertibleNativeHandle<CParticleFunctionInitializer>.From(nint handle) => new CParticleFunctionInitializerImpl(handle);
 
   
   public ref int AssociatedEmitterIndex { get; }

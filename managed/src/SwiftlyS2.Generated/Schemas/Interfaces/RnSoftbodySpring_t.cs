@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnSoftbodySpring_t : ISchemaClass {
+public partial interface RnSoftbodySpring_t : ISchemaClass, IConvertibleNativeHandle<RnSoftbodySpring_t> {
+
+  static RnSoftbodySpring_t IConvertibleNativeHandle<RnSoftbodySpring_t>.From(nint handle) => new RnSoftbodySpring_tImpl(handle);
 
   
   public ISchemaFixedArray<ushort> Particle { get; }

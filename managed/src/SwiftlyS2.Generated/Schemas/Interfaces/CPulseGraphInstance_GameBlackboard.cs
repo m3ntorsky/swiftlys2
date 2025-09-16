@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseGraphInstance_GameBlackboard : CPulseGraphInstance_ServerEntity {
+public partial interface CPulseGraphInstance_GameBlackboard : CPulseGraphInstance_ServerEntity, IConvertibleNativeHandle<CPulseGraphInstance_GameBlackboard> {
+
+  static CPulseGraphInstance_GameBlackboard IConvertibleNativeHandle<CPulseGraphInstance_GameBlackboard>.From(nint handle) => new CPulseGraphInstance_GameBlackboardImpl(handle);
 
 
 

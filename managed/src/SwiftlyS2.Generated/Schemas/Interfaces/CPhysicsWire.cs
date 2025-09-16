@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysicsWire : CBaseEntity {
+public partial interface CPhysicsWire : CBaseEntity, IConvertibleNativeHandle<CPhysicsWire> {
+
+  static CPhysicsWire IConvertibleNativeHandle<CPhysicsWire>.From(nint handle) => new CPhysicsWireImpl(handle);
 
   
   public ref int Density { get; }

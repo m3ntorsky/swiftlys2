@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_NormalOffset : CParticleFunctionInitializer {
+public partial interface C_INIT_NormalOffset : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_NormalOffset> {
+
+  static C_INIT_NormalOffset IConvertibleNativeHandle<C_INIT_NormalOffset>.From(nint handle) => new C_INIT_NormalOffsetImpl(handle);
 
   
   public ref Vector OffsetMin { get; }

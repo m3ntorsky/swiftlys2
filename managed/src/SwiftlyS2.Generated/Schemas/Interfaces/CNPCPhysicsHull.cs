@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNPCPhysicsHull : ISchemaClass {
+public partial interface CNPCPhysicsHull : ISchemaClass, IConvertibleNativeHandle<CNPCPhysicsHull> {
+
+  static CNPCPhysicsHull IConvertibleNativeHandle<CNPCPhysicsHull>.From(nint handle) => new CNPCPhysicsHullImpl(handle);
 
   
   public ref CGlobalSymbol Name { get; }

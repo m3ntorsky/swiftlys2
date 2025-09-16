@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseRuntimeMethodArg : ISchemaClass {
+public partial interface CPulseRuntimeMethodArg : ISchemaClass, IConvertibleNativeHandle<CPulseRuntimeMethodArg> {
+
+  static CPulseRuntimeMethodArg IConvertibleNativeHandle<CPulseRuntimeMethodArg>.From(nint handle) => new CPulseRuntimeMethodArgImpl(handle);
 
   
   // CKV3MemberNameWithStorage

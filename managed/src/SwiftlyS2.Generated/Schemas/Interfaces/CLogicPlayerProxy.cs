@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicPlayerProxy : CLogicalEntity {
+public partial interface CLogicPlayerProxy : CLogicalEntity, IConvertibleNativeHandle<CLogicPlayerProxy> {
+
+  static CLogicPlayerProxy IConvertibleNativeHandle<CLogicPlayerProxy>.From(nint handle) => new CLogicPlayerProxyImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Player { get; }

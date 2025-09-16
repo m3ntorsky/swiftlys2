@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnMeshDesc_t : RnShapeDesc_t {
+public partial interface RnMeshDesc_t : RnShapeDesc_t, IConvertibleNativeHandle<RnMeshDesc_t> {
+
+  static RnMeshDesc_t IConvertibleNativeHandle<RnMeshDesc_t>.From(nint handle) => new RnMeshDesc_tImpl(handle);
 
   
   public RnMesh_t Mesh { get; }

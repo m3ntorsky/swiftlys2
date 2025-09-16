@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvCombinedLightProbeVolume : CBaseEntity {
+public partial interface CEnvCombinedLightProbeVolume : CBaseEntity, IConvertibleNativeHandle<CEnvCombinedLightProbeVolume> {
+
+  static CEnvCombinedLightProbeVolume IConvertibleNativeHandle<CEnvCombinedLightProbeVolume>.From(nint handle) => new CEnvCombinedLightProbeVolumeImpl(handle);
 
   
   public ref Color Entity_Color { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerDetectExplosion : CBaseTrigger {
+public partial interface CTriggerDetectExplosion : CBaseTrigger, IConvertibleNativeHandle<CTriggerDetectExplosion> {
+
+  static CTriggerDetectExplosion IConvertibleNativeHandle<CTriggerDetectExplosion>.From(nint handle) => new CTriggerDetectExplosionImpl(handle);
 
   
   public CEntityIOOutput OnDetectedExplosion { get; }

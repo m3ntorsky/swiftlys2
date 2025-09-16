@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayer_BuyServices : CPlayerPawnComponent {
+public partial interface CCSPlayer_BuyServices : CPlayerPawnComponent, IConvertibleNativeHandle<CCSPlayer_BuyServices> {
+
+  static CCSPlayer_BuyServices IConvertibleNativeHandle<CCSPlayer_BuyServices>.From(nint handle) => new CCSPlayer_BuyServicesImpl(handle);
 
   
   // CUtlVectorEmbeddedNetworkVar< SellbackPurchaseEntry_t >

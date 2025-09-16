@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEffectData : ISchemaClass {
+public partial interface CEffectData : ISchemaClass, IConvertibleNativeHandle<CEffectData> {
+
+  static CEffectData IConvertibleNativeHandle<CEffectData>.From(nint handle) => new CEffectDataImpl(handle);
 
   
   public ref Vector Origin { get; }

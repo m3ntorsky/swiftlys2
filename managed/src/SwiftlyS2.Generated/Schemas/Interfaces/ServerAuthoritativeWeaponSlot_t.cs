@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ServerAuthoritativeWeaponSlot_t : ISchemaClass {
+public partial interface ServerAuthoritativeWeaponSlot_t : ISchemaClass, IConvertibleNativeHandle<ServerAuthoritativeWeaponSlot_t> {
+
+  static ServerAuthoritativeWeaponSlot_t IConvertibleNativeHandle<ServerAuthoritativeWeaponSlot_t>.From(nint handle) => new ServerAuthoritativeWeaponSlot_tImpl(handle);
 
   
   public ref ushort Class { get; }

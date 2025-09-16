@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixSubgraphSwitchDesc_t : ISchemaClass {
+public partial interface VMixSubgraphSwitchDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixSubgraphSwitchDesc_t> {
+
+  static VMixSubgraphSwitchDesc_t IConvertibleNativeHandle<VMixSubgraphSwitchDesc_t>.From(nint handle) => new VMixSubgraphSwitchDesc_tImpl(handle);
 
   
   public ref VMixSubgraphSwitchInterpolationType_t InterpolationMode { get; }

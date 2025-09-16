@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCChoreoSceneFileData : ISchemaClass {
+public partial interface InfoForResourceTypeCChoreoSceneFileData : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCChoreoSceneFileData> {
+
+  static InfoForResourceTypeCChoreoSceneFileData IConvertibleNativeHandle<InfoForResourceTypeCChoreoSceneFileData>.From(nint handle) => new InfoForResourceTypeCChoreoSceneFileDataImpl(handle);
 
 
 

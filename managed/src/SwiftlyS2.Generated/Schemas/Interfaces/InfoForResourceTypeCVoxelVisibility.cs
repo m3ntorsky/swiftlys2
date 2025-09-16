@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCVoxelVisibility : ISchemaClass {
+public partial interface InfoForResourceTypeCVoxelVisibility : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCVoxelVisibility> {
+
+  static InfoForResourceTypeCVoxelVisibility IConvertibleNativeHandle<InfoForResourceTypeCVoxelVisibility>.From(nint handle) => new InfoForResourceTypeCVoxelVisibilityImpl(handle);
 
 
 

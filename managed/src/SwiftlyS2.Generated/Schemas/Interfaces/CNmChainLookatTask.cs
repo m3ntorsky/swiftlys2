@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmChainLookatTask : CNmPoseTask {
+public partial interface CNmChainLookatTask : CNmPoseTask, IConvertibleNativeHandle<CNmChainLookatTask> {
+
+  static CNmChainLookatTask IConvertibleNativeHandle<CNmChainLookatTask>.From(nint handle) => new CNmChainLookatTaskImpl(handle);
 
   
   public ref int ChainEndBoneIdx { get; }

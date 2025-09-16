@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRandSimTimer : CSimpleSimTimer {
+public partial interface CRandSimTimer : CSimpleSimTimer, IConvertibleNativeHandle<CRandSimTimer> {
+
+  static CRandSimTimer IConvertibleNativeHandle<CRandSimTimer>.From(nint handle) => new CRandSimTimerImpl(handle);
 
   
   public ref float MinInterval { get; }

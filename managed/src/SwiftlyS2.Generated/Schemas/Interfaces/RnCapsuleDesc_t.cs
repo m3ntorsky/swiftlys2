@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnCapsuleDesc_t : RnShapeDesc_t {
+public partial interface RnCapsuleDesc_t : RnShapeDesc_t, IConvertibleNativeHandle<RnCapsuleDesc_t> {
+
+  static RnCapsuleDesc_t IConvertibleNativeHandle<RnCapsuleDesc_t>.From(nint handle) => new RnCapsuleDesc_tImpl(handle);
 
   
   public RnCapsule_t Capsule { get; }

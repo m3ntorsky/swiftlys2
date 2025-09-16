@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStepsRemainingMetricEvaluator : CMotionMetricEvaluator {
+public partial interface CStepsRemainingMetricEvaluator : CMotionMetricEvaluator, IConvertibleNativeHandle<CStepsRemainingMetricEvaluator> {
+
+  static CStepsRemainingMetricEvaluator IConvertibleNativeHandle<CStepsRemainingMetricEvaluator>.From(nint handle) => new CStepsRemainingMetricEvaluatorImpl(handle);
 
   
   public ref CUtlVector<int> FootIndices { get; }

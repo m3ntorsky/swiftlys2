@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SelectedEditItemInfo_t : ISchemaClass {
+public partial interface SelectedEditItemInfo_t : ISchemaClass, IConvertibleNativeHandle<SelectedEditItemInfo_t> {
+
+  static SelectedEditItemInfo_t IConvertibleNativeHandle<SelectedEditItemInfo_t>.From(nint handle) => new SelectedEditItemInfo_tImpl(handle);
 
   
   // CUtlVector< SosEditItemInfo_t >

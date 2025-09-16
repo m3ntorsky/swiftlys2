@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBtNodeConditionInactive : CBtNodeCondition {
+public partial interface CBtNodeConditionInactive : CBtNodeCondition, IConvertibleNativeHandle<CBtNodeConditionInactive> {
+
+  static CBtNodeConditionInactive IConvertibleNativeHandle<CBtNodeConditionInactive>.From(nint handle) => new CBtNodeConditionInactiveImpl(handle);
 
   
   public ref float RoundStartThresholdSeconds { get; }

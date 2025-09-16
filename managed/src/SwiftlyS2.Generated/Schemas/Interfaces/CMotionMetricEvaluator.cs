@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionMetricEvaluator : ISchemaClass {
+public partial interface CMotionMetricEvaluator : ISchemaClass, IConvertibleNativeHandle<CMotionMetricEvaluator> {
+
+  static CMotionMetricEvaluator IConvertibleNativeHandle<CMotionMetricEvaluator>.From(nint handle) => new CMotionMetricEvaluatorImpl(handle);
 
   
   public ref CUtlVector<float> Means { get; }

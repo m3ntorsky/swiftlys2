@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCTextureBase : ISchemaClass {
+public partial interface InfoForResourceTypeCTextureBase : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCTextureBase> {
+
+  static InfoForResourceTypeCTextureBase IConvertibleNativeHandle<InfoForResourceTypeCTextureBase>.From(nint handle) => new InfoForResourceTypeCTextureBaseImpl(handle);
 
 
 

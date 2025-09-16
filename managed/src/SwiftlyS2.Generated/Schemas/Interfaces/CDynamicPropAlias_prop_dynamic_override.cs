@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDynamicPropAlias_prop_dynamic_override : CDynamicProp {
+public partial interface CDynamicPropAlias_prop_dynamic_override : CDynamicProp, IConvertibleNativeHandle<CDynamicPropAlias_prop_dynamic_override> {
+
+  static CDynamicPropAlias_prop_dynamic_override IConvertibleNativeHandle<CDynamicPropAlias_prop_dynamic_override>.From(nint handle) => new CDynamicPropAlias_prop_dynamic_overrideImpl(handle);
 
 
 

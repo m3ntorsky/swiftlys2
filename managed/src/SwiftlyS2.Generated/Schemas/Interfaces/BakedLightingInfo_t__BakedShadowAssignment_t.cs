@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface BakedLightingInfo_t__BakedShadowAssignment_t : ISchemaClass {
+public partial interface BakedLightingInfo_t__BakedShadowAssignment_t : ISchemaClass, IConvertibleNativeHandle<BakedLightingInfo_t__BakedShadowAssignment_t> {
+
+  static BakedLightingInfo_t__BakedShadowAssignment_t IConvertibleNativeHandle<BakedLightingInfo_t__BakedShadowAssignment_t>.From(nint handle) => new BakedLightingInfo_t__BakedShadowAssignment_tImpl(handle);
 
   
   public ref uint LightHash { get; }

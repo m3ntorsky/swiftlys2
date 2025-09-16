@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMorphSetData : ISchemaClass {
+public partial interface CMorphSetData : ISchemaClass, IConvertibleNativeHandle<CMorphSetData> {
+
+  static CMorphSetData IConvertibleNativeHandle<CMorphSetData>.From(nint handle) => new CMorphSetDataImpl(handle);
 
   
   public ref int Width { get; }

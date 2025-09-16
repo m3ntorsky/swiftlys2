@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CScriptTriggerHurt : CTriggerHurt {
+public partial interface CScriptTriggerHurt : CTriggerHurt, IConvertibleNativeHandle<CScriptTriggerHurt> {
+
+  static CScriptTriggerHurt IConvertibleNativeHandle<CScriptTriggerHurt>.From(nint handle) => new CScriptTriggerHurtImpl(handle);
 
   
   public ref Vector Extent { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTonemapController2 : CBaseEntity {
+public partial interface CTonemapController2 : CBaseEntity, IConvertibleNativeHandle<CTonemapController2> {
+
+  static CTonemapController2 IConvertibleNativeHandle<CTonemapController2>.From(nint handle) => new CTonemapController2Impl(handle);
 
   
   public ref float AutoExposureMin { get; }

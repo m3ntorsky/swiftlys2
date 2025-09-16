@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ClientPhysics : CParticleFunctionRenderer {
+public partial interface C_OP_ClientPhysics : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_ClientPhysics> {
+
+  static C_OP_ClientPhysics IConvertibleNativeHandle<C_OP_ClientPhysics>.From(nint handle) => new C_OP_ClientPhysicsImpl(handle);
 
   
   public ref CUtlString StrPhysicsType { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ExternalWindForce : CParticleFunctionForce {
+public partial interface C_OP_ExternalWindForce : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_ExternalWindForce> {
+
+  static C_OP_ExternalWindForce IConvertibleNativeHandle<C_OP_ExternalWindForce>.From(nint handle) => new C_OP_ExternalWindForceImpl(handle);
 
   
   public CPerParticleVecInput SamplePosition { get; }

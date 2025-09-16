@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointsToParticle : CParticleFunctionOperator {
+public partial interface C_OP_SetControlPointsToParticle : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_SetControlPointsToParticle> {
+
+  static C_OP_SetControlPointsToParticle IConvertibleNativeHandle<C_OP_SetControlPointsToParticle>.From(nint handle) => new C_OP_SetControlPointsToParticleImpl(handle);
 
   
   public ref int ChildGroupID { get; }

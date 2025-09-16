@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNetworkTransmitComponent : ISchemaClass {
+public partial interface CNetworkTransmitComponent : ISchemaClass, IConvertibleNativeHandle<CNetworkTransmitComponent> {
+
+  static CNetworkTransmitComponent IConvertibleNativeHandle<CNetworkTransmitComponent>.From(nint handle) => new CNetworkTransmitComponentImpl(handle);
 
   
   public ref byte TransmitStateOwnedCounter { get; }

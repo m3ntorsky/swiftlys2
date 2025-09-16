@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqTransition : ISchemaClass {
+public partial interface CSeqTransition : ISchemaClass, IConvertibleNativeHandle<CSeqTransition> {
+
+  static CSeqTransition IConvertibleNativeHandle<CSeqTransition>.From(nint handle) => new CSeqTransitionImpl(handle);
 
   
   public ref float FadeInTime { get; }

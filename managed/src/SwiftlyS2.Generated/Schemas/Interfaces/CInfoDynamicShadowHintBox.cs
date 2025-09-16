@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoDynamicShadowHintBox : CInfoDynamicShadowHint {
+public partial interface CInfoDynamicShadowHintBox : CInfoDynamicShadowHint, IConvertibleNativeHandle<CInfoDynamicShadowHintBox> {
+
+  static CInfoDynamicShadowHintBox IConvertibleNativeHandle<CInfoDynamicShadowHintBox>.From(nint handle) => new CInfoDynamicShadowHintBoxImpl(handle);
 
   
   public ref Vector BoxMins { get; }

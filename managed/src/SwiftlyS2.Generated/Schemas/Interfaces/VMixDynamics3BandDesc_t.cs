@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixDynamics3BandDesc_t : ISchemaClass {
+public partial interface VMixDynamics3BandDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixDynamics3BandDesc_t> {
+
+  static VMixDynamics3BandDesc_t IConvertibleNativeHandle<VMixDynamics3BandDesc_t>.From(nint handle) => new VMixDynamics3BandDesc_tImpl(handle);
 
   
   public ref float FldbGainOutput { get; }

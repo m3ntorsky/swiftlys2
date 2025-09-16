@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayerController_DamageServices : CPlayerControllerComponent {
+public partial interface CCSPlayerController_DamageServices : CPlayerControllerComponent, IConvertibleNativeHandle<CCSPlayerController_DamageServices> {
+
+  static CCSPlayerController_DamageServices IConvertibleNativeHandle<CCSPlayerController_DamageServices>.From(nint handle) => new CCSPlayerController_DamageServicesImpl(handle);
 
   
   public ref int SendUpdate { get; }

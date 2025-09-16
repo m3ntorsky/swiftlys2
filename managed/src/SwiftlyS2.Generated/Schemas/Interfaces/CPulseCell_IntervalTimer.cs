@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_IntervalTimer : CPulseCell_BaseYieldingInflow {
+public partial interface CPulseCell_IntervalTimer : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_IntervalTimer> {
+
+  static CPulseCell_IntervalTimer IConvertibleNativeHandle<CPulseCell_IntervalTimer>.From(nint handle) => new CPulseCell_IntervalTimerImpl(handle);
 
   
   public CPulse_ResumePoint Completed { get; }

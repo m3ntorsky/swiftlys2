@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCCompositeMaterialKit : ISchemaClass {
+public partial interface InfoForResourceTypeCCompositeMaterialKit : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCCompositeMaterialKit> {
+
+  static InfoForResourceTypeCCompositeMaterialKit IConvertibleNativeHandle<InfoForResourceTypeCCompositeMaterialKit>.From(nint handle) => new InfoForResourceTypeCCompositeMaterialKitImpl(handle);
 
 
 

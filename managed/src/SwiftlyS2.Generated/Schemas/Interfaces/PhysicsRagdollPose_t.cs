@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PhysicsRagdollPose_t : ISchemaClass {
+public partial interface PhysicsRagdollPose_t : ISchemaClass, IConvertibleNativeHandle<PhysicsRagdollPose_t> {
+
+  static PhysicsRagdollPose_t IConvertibleNativeHandle<PhysicsRagdollPose_t>.From(nint handle) => new PhysicsRagdollPose_tImpl(handle);
 
   
   public ref CUtlVector<CTransform> Transforms { get; }

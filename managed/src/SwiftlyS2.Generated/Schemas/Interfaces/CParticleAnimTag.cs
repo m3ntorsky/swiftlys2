@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleAnimTag : CAnimTagBase {
+public partial interface CParticleAnimTag : CAnimTagBase, IConvertibleNativeHandle<CParticleAnimTag> {
+
+  static CParticleAnimTag IConvertibleNativeHandle<CParticleAnimTag>.From(nint handle) => new CParticleAnimTagImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ParticleSystem { get; }

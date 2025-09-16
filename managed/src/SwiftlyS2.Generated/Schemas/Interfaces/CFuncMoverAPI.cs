@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncMoverAPI : ISchemaClass {
+public partial interface CFuncMoverAPI : ISchemaClass, IConvertibleNativeHandle<CFuncMoverAPI> {
+
+  static CFuncMoverAPI IConvertibleNativeHandle<CFuncMoverAPI>.From(nint handle) => new CFuncMoverAPIImpl(handle);
 
 
 

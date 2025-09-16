@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleVisibilityInputs : ISchemaClass {
+public partial interface CParticleVisibilityInputs : ISchemaClass, IConvertibleNativeHandle<CParticleVisibilityInputs> {
+
+  static CParticleVisibilityInputs IConvertibleNativeHandle<CParticleVisibilityInputs>.From(nint handle) => new CParticleVisibilityInputsImpl(handle);
 
   
   public ref float CameraBias { get; }

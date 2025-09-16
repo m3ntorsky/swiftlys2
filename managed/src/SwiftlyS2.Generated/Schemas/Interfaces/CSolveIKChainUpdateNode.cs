@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSolveIKChainUpdateNode : CUnaryUpdateNode {
+public partial interface CSolveIKChainUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CSolveIKChainUpdateNode> {
+
+  static CSolveIKChainUpdateNode IConvertibleNativeHandle<CSolveIKChainUpdateNode>.From(nint handle) => new CSolveIKChainUpdateNodeImpl(handle);
 
   
   // CUtlVector< CSolveIKTargetHandle_t >

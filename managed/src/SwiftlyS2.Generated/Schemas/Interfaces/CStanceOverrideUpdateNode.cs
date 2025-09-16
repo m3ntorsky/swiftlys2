@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStanceOverrideUpdateNode : CUnaryUpdateNode {
+public partial interface CStanceOverrideUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CStanceOverrideUpdateNode> {
+
+  static CStanceOverrideUpdateNode IConvertibleNativeHandle<CStanceOverrideUpdateNode>.From(nint handle) => new CStanceOverrideUpdateNodeImpl(handle);
 
   
   // CUtlVector< StanceInfo_t >

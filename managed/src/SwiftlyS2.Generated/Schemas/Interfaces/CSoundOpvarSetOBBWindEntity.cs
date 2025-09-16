@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundOpvarSetOBBWindEntity : CSoundOpvarSetPointBase {
+public partial interface CSoundOpvarSetOBBWindEntity : CSoundOpvarSetPointBase, IConvertibleNativeHandle<CSoundOpvarSetOBBWindEntity> {
+
+  static CSoundOpvarSetOBBWindEntity IConvertibleNativeHandle<CSoundOpvarSetOBBWindEntity>.From(nint handle) => new CSoundOpvarSetOBBWindEntityImpl(handle);
 
   
   public ref Vector Mins { get; }

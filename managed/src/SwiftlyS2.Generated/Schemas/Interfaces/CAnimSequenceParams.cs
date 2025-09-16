@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimSequenceParams : ISchemaClass {
+public partial interface CAnimSequenceParams : ISchemaClass, IConvertibleNativeHandle<CAnimSequenceParams> {
+
+  static CAnimSequenceParams IConvertibleNativeHandle<CAnimSequenceParams>.From(nint handle) => new CAnimSequenceParamsImpl(handle);
 
   
   public ref float FadeInTime { get; }

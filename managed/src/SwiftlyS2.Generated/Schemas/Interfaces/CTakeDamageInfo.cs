@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTakeDamageInfo : ISchemaClass {
+public partial interface CTakeDamageInfo : ISchemaClass, IConvertibleNativeHandle<CTakeDamageInfo> {
+
+  static CTakeDamageInfo IConvertibleNativeHandle<CTakeDamageInfo>.From(nint handle) => new CTakeDamageInfoImpl(handle);
 
   
   public ref Vector DamageForce { get; }

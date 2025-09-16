@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CItem : CBaseAnimGraph {
+public partial interface CItem : CBaseAnimGraph, IConvertibleNativeHandle<CItem> {
+
+  static CItem IConvertibleNativeHandle<CItem>.From(nint handle) => new CItemImpl(handle);
 
   
   public CEntityIOOutput OnPlayerTouch { get; }

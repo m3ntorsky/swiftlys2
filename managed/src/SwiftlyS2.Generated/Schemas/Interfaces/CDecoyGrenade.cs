@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDecoyGrenade : CBaseCSGrenade {
+public partial interface CDecoyGrenade : CBaseCSGrenade, IConvertibleNativeHandle<CDecoyGrenade> {
+
+  static CDecoyGrenade IConvertibleNativeHandle<CDecoyGrenade>.From(nint handle) => new CDecoyGrenadeImpl(handle);
 
 
 

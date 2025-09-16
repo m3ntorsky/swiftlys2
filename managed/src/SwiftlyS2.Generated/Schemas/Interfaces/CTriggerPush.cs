@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerPush : CBaseTrigger {
+public partial interface CTriggerPush : CBaseTrigger, IConvertibleNativeHandle<CTriggerPush> {
+
+  static CTriggerPush IConvertibleNativeHandle<CTriggerPush>.From(nint handle) => new CTriggerPushImpl(handle);
 
   
   public ref QAngle PushEntitySpace { get; }

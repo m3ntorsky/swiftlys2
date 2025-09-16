@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_CylindricalDistanceToTransform : CParticleFunctionOperator {
+public partial interface C_OP_CylindricalDistanceToTransform : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_CylindricalDistanceToTransform> {
+
+  static C_OP_CylindricalDistanceToTransform IConvertibleNativeHandle<C_OP_CylindricalDistanceToTransform>.From(nint handle) => new C_OP_CylindricalDistanceToTransformImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

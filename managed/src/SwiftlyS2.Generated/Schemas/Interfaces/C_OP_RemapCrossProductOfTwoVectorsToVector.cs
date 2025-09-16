@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapCrossProductOfTwoVectorsToVector : CParticleFunctionOperator {
+public partial interface C_OP_RemapCrossProductOfTwoVectorsToVector : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapCrossProductOfTwoVectorsToVector> {
+
+  static C_OP_RemapCrossProductOfTwoVectorsToVector IConvertibleNativeHandle<C_OP_RemapCrossProductOfTwoVectorsToVector>.From(nint handle) => new C_OP_RemapCrossProductOfTwoVectorsToVectorImpl(handle);
 
   
   public CPerParticleVecInput InputVec1 { get; }

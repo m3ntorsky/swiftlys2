@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreationNoise : CParticleFunctionInitializer {
+public partial interface C_INIT_CreationNoise : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreationNoise> {
+
+  static C_INIT_CreationNoise IConvertibleNativeHandle<C_INIT_CreationNoise>.From(nint handle) => new C_INIT_CreationNoiseImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

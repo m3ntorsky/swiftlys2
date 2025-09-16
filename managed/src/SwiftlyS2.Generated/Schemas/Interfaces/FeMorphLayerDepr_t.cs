@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeMorphLayerDepr_t : ISchemaClass {
+public partial interface FeMorphLayerDepr_t : ISchemaClass, IConvertibleNativeHandle<FeMorphLayerDepr_t> {
+
+  static FeMorphLayerDepr_t IConvertibleNativeHandle<FeMorphLayerDepr_t>.From(nint handle) => new FeMorphLayerDepr_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

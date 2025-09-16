@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRopeOverlapHit : ISchemaClass {
+public partial interface CRopeOverlapHit : ISchemaClass, IConvertibleNativeHandle<CRopeOverlapHit> {
+
+  static CRopeOverlapHit IConvertibleNativeHandle<CRopeOverlapHit>.From(nint handle) => new CRopeOverlapHitImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Entity { get; }

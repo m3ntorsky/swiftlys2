@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathMover : CPathSimple {
+public partial interface CPathMover : CPathSimple, IConvertibleNativeHandle<CPathMover> {
+
+  static CPathMover IConvertibleNativeHandle<CPathMover>.From(nint handle) => new CPathMoverImpl(handle);
 
   
   public ref CUtlVector<CHandle<CMoverPathNode>> PathNodes { get; }

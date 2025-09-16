@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionSearchNode : ISchemaClass {
+public partial interface CMotionSearchNode : ISchemaClass, IConvertibleNativeHandle<CMotionSearchNode> {
+
+  static CMotionSearchNode IConvertibleNativeHandle<CMotionSearchNode>.From(nint handle) => new CMotionSearchNodeImpl(handle);
 
   
   public ref CUtlVector<PointerTo<CMotionSearchNode>> Children { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleFunctionForce : CParticleFunction {
+public partial interface CParticleFunctionForce : CParticleFunction, IConvertibleNativeHandle<CParticleFunctionForce> {
+
+  static CParticleFunctionForce IConvertibleNativeHandle<CParticleFunctionForce>.From(nint handle) => new CParticleFunctionForceImpl(handle);
 
 
 

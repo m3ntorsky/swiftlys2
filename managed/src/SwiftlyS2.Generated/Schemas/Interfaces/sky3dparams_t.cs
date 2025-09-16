@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface sky3dparams_t : ISchemaClass {
+public partial interface sky3dparams_t : ISchemaClass, IConvertibleNativeHandle<sky3dparams_t> {
+
+  static sky3dparams_t IConvertibleNativeHandle<sky3dparams_t>.From(nint handle) => new sky3dparams_tImpl(handle);
 
   
   public ref short Scale { get; }

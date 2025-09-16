@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RemapInitialVisibilityScalar : CParticleFunctionInitializer {
+public partial interface C_INIT_RemapInitialVisibilityScalar : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RemapInitialVisibilityScalar> {
+
+  static C_INIT_RemapInitialVisibilityScalar IConvertibleNativeHandle<C_INIT_RemapInitialVisibilityScalar>.From(nint handle) => new C_INIT_RemapInitialVisibilityScalarImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

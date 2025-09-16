@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimMovement : ISchemaClass {
+public partial interface CAnimMovement : ISchemaClass, IConvertibleNativeHandle<CAnimMovement> {
+
+  static CAnimMovement IConvertibleNativeHandle<CAnimMovement>.From(nint handle) => new CAnimMovementImpl(handle);
 
   
   public ref int Endframe { get; }

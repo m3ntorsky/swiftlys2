@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTakeDamageSummaryScopeGuard : ISchemaClass {
+public partial interface CTakeDamageSummaryScopeGuard : ISchemaClass, IConvertibleNativeHandle<CTakeDamageSummaryScopeGuard> {
+
+  static CTakeDamageSummaryScopeGuard IConvertibleNativeHandle<CTakeDamageSummaryScopeGuard>.From(nint handle) => new CTakeDamageSummaryScopeGuardImpl(handle);
 
   
   public ref CUtlVector<PointerTo<SummaryTakeDamageInfo_t>> Summaries { get; }

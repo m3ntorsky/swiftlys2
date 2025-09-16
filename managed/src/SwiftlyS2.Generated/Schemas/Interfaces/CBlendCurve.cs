@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBlendCurve : ISchemaClass {
+public partial interface CBlendCurve : ISchemaClass, IConvertibleNativeHandle<CBlendCurve> {
+
+  static CBlendCurve IConvertibleNativeHandle<CBlendCurve>.From(nint handle) => new CBlendCurveImpl(handle);
 
   
   public ref float ControlPoint1 { get; }

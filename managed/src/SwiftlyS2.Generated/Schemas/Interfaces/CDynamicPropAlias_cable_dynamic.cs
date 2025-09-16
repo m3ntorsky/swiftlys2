@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDynamicPropAlias_cable_dynamic : CDynamicProp {
+public partial interface CDynamicPropAlias_cable_dynamic : CDynamicProp, IConvertibleNativeHandle<CDynamicPropAlias_cable_dynamic> {
+
+  static CDynamicPropAlias_cable_dynamic IConvertibleNativeHandle<CDynamicPropAlias_cable_dynamic>.From(nint handle) => new CDynamicPropAlias_cable_dynamicImpl(handle);
 
 
 

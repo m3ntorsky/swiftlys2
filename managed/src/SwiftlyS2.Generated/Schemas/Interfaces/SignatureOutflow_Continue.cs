@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SignatureOutflow_Continue : CPulse_OutflowConnection {
+public partial interface SignatureOutflow_Continue : CPulse_OutflowConnection, IConvertibleNativeHandle<SignatureOutflow_Continue> {
+
+  static SignatureOutflow_Continue IConvertibleNativeHandle<SignatureOutflow_Continue>.From(nint handle) => new SignatureOutflow_ContinueImpl(handle);
 
 
 

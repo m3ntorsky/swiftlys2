@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateWithinSphereTransform : CParticleFunctionInitializer {
+public partial interface C_INIT_CreateWithinSphereTransform : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateWithinSphereTransform> {
+
+  static C_INIT_CreateWithinSphereTransform IConvertibleNativeHandle<C_INIT_CreateWithinSphereTransform>.From(nint handle) => new C_INIT_CreateWithinSphereTransformImpl(handle);
 
   
   public CPerParticleFloatInput RadiusMin { get; }

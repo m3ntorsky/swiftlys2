@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMultiplayer_Expresser : CAI_ExpresserWithFollowup {
+public partial interface CMultiplayer_Expresser : CAI_ExpresserWithFollowup, IConvertibleNativeHandle<CMultiplayer_Expresser> {
+
+  static CMultiplayer_Expresser IConvertibleNativeHandle<CMultiplayer_Expresser>.From(nint handle) => new CMultiplayer_ExpresserImpl(handle);
 
   
   public ref bool AllowMultipleScenes { get; }

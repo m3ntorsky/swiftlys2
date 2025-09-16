@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_LifespanFromVelocity : CParticleFunctionInitializer {
+public partial interface C_INIT_LifespanFromVelocity : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_LifespanFromVelocity> {
+
+  static C_INIT_LifespanFromVelocity IConvertibleNativeHandle<C_INIT_LifespanFromVelocity>.From(nint handle) => new C_INIT_LifespanFromVelocityImpl(handle);
 
   
   public ref Vector ComponentScale { get; }

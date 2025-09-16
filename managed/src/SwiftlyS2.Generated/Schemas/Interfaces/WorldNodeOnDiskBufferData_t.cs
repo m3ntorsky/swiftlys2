@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface WorldNodeOnDiskBufferData_t : ISchemaClass {
+public partial interface WorldNodeOnDiskBufferData_t : ISchemaClass, IConvertibleNativeHandle<WorldNodeOnDiskBufferData_t> {
+
+  static WorldNodeOnDiskBufferData_t IConvertibleNativeHandle<WorldNodeOnDiskBufferData_t>.From(nint handle) => new WorldNodeOnDiskBufferData_tImpl(handle);
 
   
   public ref int ElementCount { get; }

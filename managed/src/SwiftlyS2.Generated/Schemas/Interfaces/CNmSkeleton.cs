@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmSkeleton : ISchemaClass {
+public partial interface CNmSkeleton : ISchemaClass, IConvertibleNativeHandle<CNmSkeleton> {
+
+  static CNmSkeleton IConvertibleNativeHandle<CNmSkeleton>.From(nint handle) => new CNmSkeletonImpl(handle);
 
   
   public ref CGlobalSymbol ID { get; }

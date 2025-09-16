@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_VelocityRandom : CParticleFunctionInitializer {
+public partial interface C_INIT_VelocityRandom : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_VelocityRandom> {
+
+  static C_INIT_VelocityRandom IConvertibleNativeHandle<C_INIT_VelocityRandom>.From(nint handle) => new C_INIT_VelocityRandomImpl(handle);
 
   
   public ref int ControlPointNumber { get; }

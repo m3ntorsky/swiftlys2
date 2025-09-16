@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ViewAngleServerChange_t : ISchemaClass {
+public partial interface ViewAngleServerChange_t : ISchemaClass, IConvertibleNativeHandle<ViewAngleServerChange_t> {
+
+  static ViewAngleServerChange_t IConvertibleNativeHandle<ViewAngleServerChange_t>.From(nint handle) => new ViewAngleServerChange_tImpl(handle);
 
   
   public ref FixAngleSet_t Type { get; }

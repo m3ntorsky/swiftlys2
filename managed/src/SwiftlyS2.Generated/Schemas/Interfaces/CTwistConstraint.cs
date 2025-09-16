@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTwistConstraint : CBaseConstraint {
+public partial interface CTwistConstraint : CBaseConstraint, IConvertibleNativeHandle<CTwistConstraint> {
+
+  static CTwistConstraint IConvertibleNativeHandle<CTwistConstraint>.From(nint handle) => new CTwistConstraintImpl(handle);
 
   
   public ref bool Inverse { get; }

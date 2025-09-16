@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoDeathmatchSpawn : SpawnPoint {
+public partial interface CInfoDeathmatchSpawn : SpawnPoint, IConvertibleNativeHandle<CInfoDeathmatchSpawn> {
+
+  static CInfoDeathmatchSpawn IConvertibleNativeHandle<CInfoDeathmatchSpawn>.From(nint handle) => new CInfoDeathmatchSpawnImpl(handle);
 
 
 

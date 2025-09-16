@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CColorCorrection : CBaseEntity {
+public partial interface CColorCorrection : CBaseEntity, IConvertibleNativeHandle<CColorCorrection> {
+
+  static CColorCorrection IConvertibleNativeHandle<CColorCorrection>.From(nint handle) => new CColorCorrectionImpl(handle);
 
   
   public ref float FadeInDuration { get; }

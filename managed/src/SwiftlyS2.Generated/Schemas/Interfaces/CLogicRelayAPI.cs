@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicRelayAPI : ISchemaClass {
+public partial interface CLogicRelayAPI : ISchemaClass, IConvertibleNativeHandle<CLogicRelayAPI> {
+
+  static CLogicRelayAPI IConvertibleNativeHandle<CLogicRelayAPI>.From(nint handle) => new CLogicRelayAPIImpl(handle);
 
 
 

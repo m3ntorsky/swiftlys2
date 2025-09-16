@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointServerCommand : CPointEntity {
+public partial interface CPointServerCommand : CPointEntity, IConvertibleNativeHandle<CPointServerCommand> {
+
+  static CPointServerCommand IConvertibleNativeHandle<CPointServerCommand>.From(nint handle) => new CPointServerCommandImpl(handle);
 
 
 

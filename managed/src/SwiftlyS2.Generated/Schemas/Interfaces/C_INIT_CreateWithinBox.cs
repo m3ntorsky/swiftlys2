@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateWithinBox : CParticleFunctionInitializer {
+public partial interface C_INIT_CreateWithinBox : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateWithinBox> {
+
+  static C_INIT_CreateWithinBox IConvertibleNativeHandle<C_INIT_CreateWithinBox>.From(nint handle) => new C_INIT_CreateWithinBoxImpl(handle);
 
   
   public CPerParticleVecInput Min { get; }

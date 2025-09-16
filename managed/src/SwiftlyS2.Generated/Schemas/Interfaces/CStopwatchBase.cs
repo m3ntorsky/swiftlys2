@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStopwatchBase : CSimpleSimTimer {
+public partial interface CStopwatchBase : CSimpleSimTimer, IConvertibleNativeHandle<CStopwatchBase> {
+
+  static CStopwatchBase IConvertibleNativeHandle<CStopwatchBase>.From(nint handle) => new CStopwatchBaseImpl(handle);
 
   
   public ref bool IsRunning { get; }

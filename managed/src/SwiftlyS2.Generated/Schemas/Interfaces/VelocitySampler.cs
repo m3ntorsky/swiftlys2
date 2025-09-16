@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VelocitySampler : ISchemaClass {
+public partial interface VelocitySampler : ISchemaClass, IConvertibleNativeHandle<VelocitySampler> {
+
+  static VelocitySampler IConvertibleNativeHandle<VelocitySampler>.From(nint handle) => new VelocitySamplerImpl(handle);
 
   
   public ref Vector PrevSample { get; }

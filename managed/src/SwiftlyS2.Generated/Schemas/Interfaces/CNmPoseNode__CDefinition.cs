@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmPoseNode__CDefinition : CNmGraphNode__CDefinition {
+public partial interface CNmPoseNode__CDefinition : CNmGraphNode__CDefinition, IConvertibleNativeHandle<CNmPoseNode__CDefinition> {
+
+  static CNmPoseNode__CDefinition IConvertibleNativeHandle<CNmPoseNode__CDefinition>.From(nint handle) => new CNmPoseNode__CDefinitionImpl(handle);
 
 
 

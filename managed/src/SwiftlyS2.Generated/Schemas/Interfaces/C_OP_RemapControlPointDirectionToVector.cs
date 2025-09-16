@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapControlPointDirectionToVector : CParticleFunctionOperator {
+public partial interface C_OP_RemapControlPointDirectionToVector : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapControlPointDirectionToVector> {
+
+  static C_OP_RemapControlPointDirectionToVector IConvertibleNativeHandle<C_OP_RemapControlPointDirectionToVector>.From(nint handle) => new C_OP_RemapControlPointDirectionToVectorImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

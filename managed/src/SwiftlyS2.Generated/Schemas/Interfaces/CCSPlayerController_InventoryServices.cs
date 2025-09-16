@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayerController_InventoryServices : CPlayerControllerComponent {
+public partial interface CCSPlayerController_InventoryServices : CPlayerControllerComponent, IConvertibleNativeHandle<CCSPlayerController_InventoryServices> {
+
+  static CCSPlayerController_InventoryServices IConvertibleNativeHandle<CCSPlayerController_InventoryServices>.From(nint handle) => new CCSPlayerController_InventoryServicesImpl(handle);
 
   
   public ref ushort MusicID { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_PositionLock : CParticleFunctionOperator {
+public partial interface C_OP_PositionLock : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_PositionLock> {
+
+  static C_OP_PositionLock IConvertibleNativeHandle<C_OP_PositionLock>.From(nint handle) => new C_OP_PositionLockImpl(handle);
 
   
   public CParticleTransformInput TransformInput { get; }

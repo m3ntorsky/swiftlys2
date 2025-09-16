@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CModelConfigList : ISchemaClass {
+public partial interface CModelConfigList : ISchemaClass, IConvertibleNativeHandle<CModelConfigList> {
+
+  static CModelConfigList IConvertibleNativeHandle<CModelConfigList>.From(nint handle) => new CModelConfigListImpl(handle);
 
   
   public ref bool HideMaterialGroupInTools { get; }

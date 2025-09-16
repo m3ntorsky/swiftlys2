@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmRootMotionOverrideNode__CDefinition : CNmPassthroughNode__CDefinition {
+public partial interface CNmRootMotionOverrideNode__CDefinition : CNmPassthroughNode__CDefinition, IConvertibleNativeHandle<CNmRootMotionOverrideNode__CDefinition> {
+
+  static CNmRootMotionOverrideNode__CDefinition IConvertibleNativeHandle<CNmRootMotionOverrideNode__CDefinition>.From(nint handle) => new CNmRootMotionOverrideNode__CDefinitionImpl(handle);
 
   
   public ref short DesiredMovingVelocityNodeIdx { get; }

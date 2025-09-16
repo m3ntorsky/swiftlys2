@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAK47 : CCSWeaponBaseGun {
+public partial interface CAK47 : CCSWeaponBaseGun, IConvertibleNativeHandle<CAK47> {
+
+  static CAK47 IConvertibleNativeHandle<CAK47>.From(nint handle) => new CAK47Impl(handle);
 
 
 

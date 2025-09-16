@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseGraphInstanceID_t : ISchemaClass {
+public partial interface PulseGraphInstanceID_t : ISchemaClass, IConvertibleNativeHandle<PulseGraphInstanceID_t> {
+
+  static PulseGraphInstanceID_t IConvertibleNativeHandle<PulseGraphInstanceID_t>.From(nint handle) => new PulseGraphInstanceID_tImpl(handle);
 
   
   public ref uint Value { get; }

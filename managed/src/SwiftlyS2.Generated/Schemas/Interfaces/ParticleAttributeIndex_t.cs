@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ParticleAttributeIndex_t : ISchemaClass {
+public partial interface ParticleAttributeIndex_t : ISchemaClass, IConvertibleNativeHandle<ParticleAttributeIndex_t> {
+
+  static ParticleAttributeIndex_t IConvertibleNativeHandle<ParticleAttributeIndex_t>.From(nint handle) => new ParticleAttributeIndex_tImpl(handle);
 
   
   public ref int Value { get; }

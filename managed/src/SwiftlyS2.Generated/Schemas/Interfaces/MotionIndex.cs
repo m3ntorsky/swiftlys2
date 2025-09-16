@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MotionIndex : ISchemaClass {
+public partial interface MotionIndex : ISchemaClass, IConvertibleNativeHandle<MotionIndex> {
+
+  static MotionIndex IConvertibleNativeHandle<MotionIndex>.From(nint handle) => new MotionIndexImpl(handle);
 
   
   public ref ushort Group { get; }

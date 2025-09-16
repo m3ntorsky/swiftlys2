@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSkillFloat : ISchemaClass {
+public partial interface CSkillFloat : ISchemaClass, IConvertibleNativeHandle<CSkillFloat> {
+
+  static CSkillFloat IConvertibleNativeHandle<CSkillFloat>.From(nint handle) => new CSkillFloatImpl(handle);
 
   
   public ISchemaFixedArray<float> Value { get; }

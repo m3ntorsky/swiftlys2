@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapNamedModelElementEndCap : CParticleFunctionOperator {
+public partial interface C_OP_RemapNamedModelElementEndCap : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapNamedModelElementEndCap> {
+
+  static C_OP_RemapNamedModelElementEndCap IConvertibleNativeHandle<C_OP_RemapNamedModelElementEndCap>.From(nint handle) => new C_OP_RemapNamedModelElementEndCapImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface GameTime_t : ISchemaClass {
+public partial interface GameTime_t : ISchemaClass, IConvertibleNativeHandle<GameTime_t> {
+
+  static GameTime_t IConvertibleNativeHandle<GameTime_t>.From(nint handle) => new GameTime_tImpl(handle);
 
   
   public ref float Value { get; }

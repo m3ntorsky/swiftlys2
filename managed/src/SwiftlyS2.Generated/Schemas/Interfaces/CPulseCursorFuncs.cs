@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCursorFuncs : ISchemaClass {
+public partial interface CPulseCursorFuncs : ISchemaClass, IConvertibleNativeHandle<CPulseCursorFuncs> {
+
+  static CPulseCursorFuncs IConvertibleNativeHandle<CPulseCursorFuncs>.From(nint handle) => new CPulseCursorFuncsImpl(handle);
 
 
 

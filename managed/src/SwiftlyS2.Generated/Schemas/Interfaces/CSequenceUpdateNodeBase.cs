@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSequenceUpdateNodeBase : CLeafUpdateNode {
+public partial interface CSequenceUpdateNodeBase : CLeafUpdateNode, IConvertibleNativeHandle<CSequenceUpdateNodeBase> {
+
+  static CSequenceUpdateNodeBase IConvertibleNativeHandle<CSequenceUpdateNodeBase>.From(nint handle) => new CSequenceUpdateNodeBaseImpl(handle);
 
   
   public ref float PlaybackSpeed { get; }

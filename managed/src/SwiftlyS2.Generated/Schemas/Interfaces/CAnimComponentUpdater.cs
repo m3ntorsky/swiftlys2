@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimComponentUpdater : ISchemaClass {
+public partial interface CAnimComponentUpdater : ISchemaClass, IConvertibleNativeHandle<CAnimComponentUpdater> {
+
+  static CAnimComponentUpdater IConvertibleNativeHandle<CAnimComponentUpdater>.From(nint handle) => new CAnimComponentUpdaterImpl(handle);
 
   
   public ref CUtlString Name { get; }

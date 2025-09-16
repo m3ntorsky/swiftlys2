@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixOscDesc_t : ISchemaClass {
+public partial interface VMixOscDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixOscDesc_t> {
+
+  static VMixOscDesc_t IConvertibleNativeHandle<VMixOscDesc_t>.From(nint handle) => new VMixOscDesc_tImpl(handle);
 
   
   public ref VMixLFOShape_t OscType { get; }

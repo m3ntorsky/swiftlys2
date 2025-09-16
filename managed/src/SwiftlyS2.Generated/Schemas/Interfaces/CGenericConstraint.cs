@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGenericConstraint : CPhysConstraint {
+public partial interface CGenericConstraint : CPhysConstraint, IConvertibleNativeHandle<CGenericConstraint> {
+
+  static CGenericConstraint IConvertibleNativeHandle<CGenericConstraint>.From(nint handle) => new CGenericConstraintImpl(handle);
 
   
   public ref JointMotion_t LinearMotionX { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EmptyTestScript : CAnimScriptBase {
+public partial interface EmptyTestScript : CAnimScriptBase, IConvertibleNativeHandle<EmptyTestScript> {
+
+  static EmptyTestScript IConvertibleNativeHandle<EmptyTestScript>.From(nint handle) => new EmptyTestScriptImpl(handle);
 
   
   // CAnimScriptParam< float32 >

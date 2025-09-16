@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_Humanoid {
+public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_Humanoid, IConvertibleNativeHandle<CCSPlayer_MovementServices> {
+
+  static CCSPlayer_MovementServices IConvertibleNativeHandle<CCSPlayer_MovementServices>.From(nint handle) => new CCSPlayer_MovementServicesImpl(handle);
 
   
   public ref Vector LadderNormal { get; }

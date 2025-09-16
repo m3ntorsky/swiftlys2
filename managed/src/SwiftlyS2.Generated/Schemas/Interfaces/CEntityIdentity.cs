@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEntityIdentity : ISchemaClass {
+public partial interface CEntityIdentity : ISchemaClass, IConvertibleNativeHandle<CEntityIdentity> {
+
+  static CEntityIdentity IConvertibleNativeHandle<CEntityIdentity>.From(nint handle) => new CEntityIdentityImpl(handle);
 
   
   public ref int NameStringableIndex { get; }

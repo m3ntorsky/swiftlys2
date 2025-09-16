@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseNodeDynamicOutflows_t : ISchemaClass {
+public partial interface PulseNodeDynamicOutflows_t : ISchemaClass, IConvertibleNativeHandle<PulseNodeDynamicOutflows_t> {
+
+  static PulseNodeDynamicOutflows_t IConvertibleNativeHandle<PulseNodeDynamicOutflows_t>.From(nint handle) => new PulseNodeDynamicOutflows_tImpl(handle);
 
   
   // CUtlVector< PulseNodeDynamicOutflows_t::DynamicOutflow_t >

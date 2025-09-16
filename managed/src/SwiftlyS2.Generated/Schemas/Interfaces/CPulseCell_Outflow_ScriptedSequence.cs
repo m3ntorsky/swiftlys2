@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Outflow_ScriptedSequence : CPulseCell_BaseYieldingInflow {
+public partial interface CPulseCell_Outflow_ScriptedSequence : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_Outflow_ScriptedSequence> {
+
+  static CPulseCell_Outflow_ScriptedSequence IConvertibleNativeHandle<CPulseCell_Outflow_ScriptedSequence>.From(nint handle) => new CPulseCell_Outflow_ScriptedSequenceImpl(handle);
 
   
   public ref CUtlString SyncGroup { get; }

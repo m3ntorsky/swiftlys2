@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeVMapResourceData_t : ISchemaClass {
+public partial interface InfoForResourceTypeVMapResourceData_t : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeVMapResourceData_t> {
+
+  static InfoForResourceTypeVMapResourceData_t IConvertibleNativeHandle<InfoForResourceTypeVMapResourceData_t>.From(nint handle) => new InfoForResourceTypeVMapResourceData_tImpl(handle);
 
 
 

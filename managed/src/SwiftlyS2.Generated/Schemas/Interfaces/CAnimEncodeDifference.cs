@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimEncodeDifference : ISchemaClass {
+public partial interface CAnimEncodeDifference : ISchemaClass, IConvertibleNativeHandle<CAnimEncodeDifference> {
+
+  static CAnimEncodeDifference IConvertibleNativeHandle<CAnimEncodeDifference>.From(nint handle) => new CAnimEncodeDifferenceImpl(handle);
 
   
   // CUtlVector< CAnimBoneDifference >

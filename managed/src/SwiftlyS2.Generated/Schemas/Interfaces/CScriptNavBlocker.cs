@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CScriptNavBlocker : CFuncNavBlocker {
+public partial interface CScriptNavBlocker : CFuncNavBlocker, IConvertibleNativeHandle<CScriptNavBlocker> {
+
+  static CScriptNavBlocker IConvertibleNativeHandle<CScriptNavBlocker>.From(nint handle) => new CScriptNavBlockerImpl(handle);
 
   
   public ref Vector Extent { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_DragRelativeToPlane : CParticleFunctionOperator {
+public partial interface C_OP_DragRelativeToPlane : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_DragRelativeToPlane> {
+
+  static C_OP_DragRelativeToPlane IConvertibleNativeHandle<C_OP_DragRelativeToPlane>.From(nint handle) => new C_OP_DragRelativeToPlaneImpl(handle);
 
   
   public CParticleCollectionFloatInput DragAtPlane { get; }

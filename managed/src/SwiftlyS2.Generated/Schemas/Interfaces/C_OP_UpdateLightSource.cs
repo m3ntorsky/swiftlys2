@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_UpdateLightSource : CParticleFunctionOperator {
+public partial interface C_OP_UpdateLightSource : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_UpdateLightSource> {
+
+  static C_OP_UpdateLightSource IConvertibleNativeHandle<C_OP_UpdateLightSource>.From(nint handle) => new C_OP_UpdateLightSourceImpl(handle);
 
   
   public ref Color ColorTint { get; }

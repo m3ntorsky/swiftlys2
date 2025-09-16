@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysSurfacePropertiesVehicle : ISchemaClass {
+public partial interface CPhysSurfacePropertiesVehicle : ISchemaClass, IConvertibleNativeHandle<CPhysSurfacePropertiesVehicle> {
+
+  static CPhysSurfacePropertiesVehicle IConvertibleNativeHandle<CPhysSurfacePropertiesVehicle>.From(nint handle) => new CPhysSurfacePropertiesVehicleImpl(handle);
 
   
   public ref float WheelDrag { get; }

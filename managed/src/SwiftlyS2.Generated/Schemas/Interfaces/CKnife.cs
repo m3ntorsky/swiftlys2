@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CKnife : CCSWeaponBase {
+public partial interface CKnife : CCSWeaponBase, IConvertibleNativeHandle<CKnife> {
+
+  static CKnife IConvertibleNativeHandle<CKnife>.From(nint handle) => new CKnifeImpl(handle);
 
   
   public ref bool FirstAttack { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_DistanceToNeighborCull : CParticleFunctionInitializer {
+public partial interface C_INIT_DistanceToNeighborCull : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_DistanceToNeighborCull> {
+
+  static C_INIT_DistanceToNeighborCull IConvertibleNativeHandle<C_INIT_DistanceToNeighborCull>.From(nint handle) => new C_INIT_DistanceToNeighborCullImpl(handle);
 
   
   public CPerParticleFloatInput Distance { get; }

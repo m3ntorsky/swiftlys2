@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Outflow_PlaySceneBase : CPulseCell_BaseYieldingInflow {
+public partial interface CPulseCell_Outflow_PlaySceneBase : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_Outflow_PlaySceneBase> {
+
+  static CPulseCell_Outflow_PlaySceneBase IConvertibleNativeHandle<CPulseCell_Outflow_PlaySceneBase>.From(nint handle) => new CPulseCell_Outflow_PlaySceneBaseImpl(handle);
 
   
   public CPulse_ResumePoint OnFinished { get; }

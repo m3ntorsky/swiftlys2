@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnWing_t : ISchemaClass {
+public partial interface RnWing_t : ISchemaClass, IConvertibleNativeHandle<RnWing_t> {
+
+  static RnWing_t IConvertibleNativeHandle<RnWing_t>.From(nint handle) => new RnWing_tImpl(handle);
 
   
   public ISchemaFixedArray<int> Index { get; }

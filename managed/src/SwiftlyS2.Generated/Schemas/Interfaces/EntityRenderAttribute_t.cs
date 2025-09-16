@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EntityRenderAttribute_t : ISchemaClass {
+public partial interface EntityRenderAttribute_t : ISchemaClass, IConvertibleNativeHandle<EntityRenderAttribute_t> {
+
+  static EntityRenderAttribute_t IConvertibleNativeHandle<EntityRenderAttribute_t>.From(nint handle) => new EntityRenderAttribute_tImpl(handle);
 
   
   public ref CUtlStringToken ID { get; }

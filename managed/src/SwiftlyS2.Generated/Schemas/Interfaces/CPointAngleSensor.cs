@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointAngleSensor : CPointEntity {
+public partial interface CPointAngleSensor : CPointEntity, IConvertibleNativeHandle<CPointAngleSensor> {
+
+  static CPointAngleSensor IConvertibleNativeHandle<CPointAngleSensor>.From(nint handle) => new CPointAngleSensorImpl(handle);
 
   
   public ref bool Disabled { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IKSolverSettings_t : ISchemaClass {
+public partial interface IKSolverSettings_t : ISchemaClass, IConvertibleNativeHandle<IKSolverSettings_t> {
+
+  static IKSolverSettings_t IConvertibleNativeHandle<IKSolverSettings_t>.From(nint handle) => new IKSolverSettings_tImpl(handle);
 
   
   public ref IKSolverType SolverType { get; }

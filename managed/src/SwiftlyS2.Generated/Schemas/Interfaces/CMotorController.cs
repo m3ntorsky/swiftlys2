@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotorController : ISchemaClass {
+public partial interface CMotorController : ISchemaClass, IConvertibleNativeHandle<CMotorController> {
+
+  static CMotorController IConvertibleNativeHandle<CMotorController>.From(nint handle) => new CMotorControllerImpl(handle);
 
   
   public ref float Speed { get; }

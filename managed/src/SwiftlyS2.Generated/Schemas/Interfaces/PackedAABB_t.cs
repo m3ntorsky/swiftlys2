@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PackedAABB_t : ISchemaClass {
+public partial interface PackedAABB_t : ISchemaClass, IConvertibleNativeHandle<PackedAABB_t> {
+
+  static PackedAABB_t IConvertibleNativeHandle<PackedAABB_t>.From(nint handle) => new PackedAABB_tImpl(handle);
 
   
   public ref uint PackedMin { get; }

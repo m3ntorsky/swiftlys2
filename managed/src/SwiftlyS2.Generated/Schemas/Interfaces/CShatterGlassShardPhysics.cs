@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CShatterGlassShardPhysics : CPhysicsProp {
+public partial interface CShatterGlassShardPhysics : CPhysicsProp, IConvertibleNativeHandle<CShatterGlassShardPhysics> {
+
+  static CShatterGlassShardPhysics IConvertibleNativeHandle<CShatterGlassShardPhysics>.From(nint handle) => new CShatterGlassShardPhysicsImpl(handle);
 
   
   public ref bool Debris { get; }

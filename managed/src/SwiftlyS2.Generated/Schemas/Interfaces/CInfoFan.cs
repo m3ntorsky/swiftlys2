@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoFan : CPointEntity {
+public partial interface CInfoFan : CPointEntity, IConvertibleNativeHandle<CInfoFan> {
+
+  static CInfoFan IConvertibleNativeHandle<CInfoFan>.From(nint handle) => new CInfoFanImpl(handle);
 
   
   public ref float FanForceMaxRadius { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeSimdSpringIntegrator_t : ISchemaClass {
+public partial interface FeSimdSpringIntegrator_t : ISchemaClass, IConvertibleNativeHandle<FeSimdSpringIntegrator_t> {
+
+  static FeSimdSpringIntegrator_t IConvertibleNativeHandle<FeSimdSpringIntegrator_t>.From(nint handle) => new FeSimdSpringIntegrator_tImpl(handle);
 
   
   // uint16[4]

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseCSGrenadeProjectile : CBaseGrenade {
+public partial interface CBaseCSGrenadeProjectile : CBaseGrenade, IConvertibleNativeHandle<CBaseCSGrenadeProjectile> {
+
+  static CBaseCSGrenadeProjectile IConvertibleNativeHandle<CBaseCSGrenadeProjectile>.From(nint handle) => new CBaseCSGrenadeProjectileImpl(handle);
 
   
   public ref Vector InitialPosition { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CWeaponMP5SD : CCSWeaponBaseGun {
+public partial interface CWeaponMP5SD : CCSWeaponBaseGun, IConvertibleNativeHandle<CWeaponMP5SD> {
+
+  static CWeaponMP5SD IConvertibleNativeHandle<CWeaponMP5SD>.From(nint handle) => new CWeaponMP5SDImpl(handle);
 
 
 

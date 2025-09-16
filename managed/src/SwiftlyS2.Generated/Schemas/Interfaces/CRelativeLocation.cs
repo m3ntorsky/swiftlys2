@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRelativeLocation : ISchemaClass {
+public partial interface CRelativeLocation : ISchemaClass, IConvertibleNativeHandle<CRelativeLocation> {
+
+  static CRelativeLocation IConvertibleNativeHandle<CRelativeLocation>.From(nint handle) => new CRelativeLocationImpl(handle);
 
   
   public ref RelativeLocationType_t Type { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PermModelDataAnimatedMaterialAttribute_t : ISchemaClass {
+public partial interface PermModelDataAnimatedMaterialAttribute_t : ISchemaClass, IConvertibleNativeHandle<PermModelDataAnimatedMaterialAttribute_t> {
+
+  static PermModelDataAnimatedMaterialAttribute_t IConvertibleNativeHandle<PermModelDataAnimatedMaterialAttribute_t>.From(nint handle) => new PermModelDataAnimatedMaterialAttribute_tImpl(handle);
 
   
   public ref CUtlString AttributeName { get; }

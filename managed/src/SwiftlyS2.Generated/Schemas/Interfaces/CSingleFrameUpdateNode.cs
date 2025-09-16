@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSingleFrameUpdateNode : CLeafUpdateNode {
+public partial interface CSingleFrameUpdateNode : CLeafUpdateNode, IConvertibleNativeHandle<CSingleFrameUpdateNode> {
+
+  static CSingleFrameUpdateNode IConvertibleNativeHandle<CSingleFrameUpdateNode>.From(nint handle) => new CSingleFrameUpdateNodeImpl(handle);
 
   
   // CUtlVector< CSmartPtr< CAnimActionUpdater > >

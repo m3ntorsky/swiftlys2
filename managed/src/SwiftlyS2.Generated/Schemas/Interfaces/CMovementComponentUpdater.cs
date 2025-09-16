@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMovementComponentUpdater : CAnimComponentUpdater {
+public partial interface CMovementComponentUpdater : CAnimComponentUpdater, IConvertibleNativeHandle<CMovementComponentUpdater> {
+
+  static CMovementComponentUpdater IConvertibleNativeHandle<CMovementComponentUpdater>.From(nint handle) => new CMovementComponentUpdaterImpl(handle);
 
   
   // CUtlVector< CSmartPtr< CAnimMotorUpdaterBase > >

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncVPhysicsClip : CBaseModelEntity {
+public partial interface CFuncVPhysicsClip : CBaseModelEntity, IConvertibleNativeHandle<CFuncVPhysicsClip> {
+
+  static CFuncVPhysicsClip IConvertibleNativeHandle<CFuncVPhysicsClip>.From(nint handle) => new CFuncVPhysicsClipImpl(handle);
 
   
   public ref bool Disabled { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_GlobalLight : CParticleFunctionOperator {
+public partial interface C_OP_GlobalLight : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_GlobalLight> {
+
+  static C_OP_GlobalLight IConvertibleNativeHandle<C_OP_GlobalLight>.From(nint handle) => new C_OP_GlobalLightImpl(handle);
 
   
   public ref float Scale { get; }

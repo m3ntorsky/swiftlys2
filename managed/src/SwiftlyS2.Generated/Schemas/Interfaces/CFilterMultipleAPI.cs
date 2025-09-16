@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFilterMultipleAPI : ISchemaClass {
+public partial interface CFilterMultipleAPI : ISchemaClass, IConvertibleNativeHandle<CFilterMultipleAPI> {
+
+  static CFilterMultipleAPI IConvertibleNativeHandle<CFilterMultipleAPI>.From(nint handle) => new CFilterMultipleAPIImpl(handle);
 
 
 

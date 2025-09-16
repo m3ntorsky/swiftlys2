@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseAnimGraphController : CSkeletonAnimationController {
+public partial interface CBaseAnimGraphController : CSkeletonAnimationController, IConvertibleNativeHandle<CBaseAnimGraphController> {
+
+  static CBaseAnimGraphController IConvertibleNativeHandle<CBaseAnimGraphController>.From(nint handle) => new CBaseAnimGraphControllerImpl(handle);
 
   
   public CAnimGraphNetworkedVariables AnimGraphNetworkedVars { get; }

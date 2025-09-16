@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixUtilityDesc_t : ISchemaClass {
+public partial interface VMixUtilityDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixUtilityDesc_t> {
+
+  static VMixUtilityDesc_t IConvertibleNativeHandle<VMixUtilityDesc_t>.From(nint handle) => new VMixUtilityDesc_tImpl(handle);
 
   
   public ref VMixChannelOperation_t Op { get; }

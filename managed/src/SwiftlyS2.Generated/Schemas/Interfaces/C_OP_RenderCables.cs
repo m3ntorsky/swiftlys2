@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderCables : CParticleFunctionRenderer {
+public partial interface C_OP_RenderCables : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderCables> {
+
+  static C_OP_RenderCables IConvertibleNativeHandle<C_OP_RenderCables>.From(nint handle) => new C_OP_RenderCablesImpl(handle);
 
   
   public CParticleCollectionFloatInput RadiusScale { get; }

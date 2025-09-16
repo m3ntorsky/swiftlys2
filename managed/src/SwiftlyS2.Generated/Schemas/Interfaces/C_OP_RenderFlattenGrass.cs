@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderFlattenGrass : CParticleFunctionRenderer {
+public partial interface C_OP_RenderFlattenGrass : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderFlattenGrass> {
+
+  static C_OP_RenderFlattenGrass IConvertibleNativeHandle<C_OP_RenderFlattenGrass>.From(nint handle) => new C_OP_RenderFlattenGrassImpl(handle);
 
   
   public ref float FlattenStrength { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCVDataResource : ISchemaClass {
+public partial interface InfoForResourceTypeCVDataResource : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCVDataResource> {
+
+  static InfoForResourceTypeCVDataResource IConvertibleNativeHandle<InfoForResourceTypeCVDataResource>.From(nint handle) => new InfoForResourceTypeCVDataResourceImpl(handle);
 
 
 

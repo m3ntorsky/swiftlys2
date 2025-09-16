@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeStiffHingeBuild_t : ISchemaClass {
+public partial interface FeStiffHingeBuild_t : ISchemaClass, IConvertibleNativeHandle<FeStiffHingeBuild_t> {
+
+  static FeStiffHingeBuild_t IConvertibleNativeHandle<FeStiffHingeBuild_t>.From(nint handle) => new FeStiffHingeBuild_tImpl(handle);
 
   
   public ref float MaxAngle { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmVirtualParameterVectorNode__CDefinition : CNmVectorValueNode__CDefinition {
+public partial interface CNmVirtualParameterVectorNode__CDefinition : CNmVectorValueNode__CDefinition, IConvertibleNativeHandle<CNmVirtualParameterVectorNode__CDefinition> {
+
+  static CNmVirtualParameterVectorNode__CDefinition IConvertibleNativeHandle<CNmVirtualParameterVectorNode__CDefinition>.From(nint handle) => new CNmVirtualParameterVectorNode__CDefinitionImpl(handle);
 
   
   public ref short ChildNodeIdx { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionNodeBlend1D : CMotionNode {
+public partial interface CMotionNodeBlend1D : CMotionNode, IConvertibleNativeHandle<CMotionNodeBlend1D> {
+
+  static CMotionNodeBlend1D IConvertibleNativeHandle<CMotionNodeBlend1D>.From(nint handle) => new CMotionNodeBlend1DImpl(handle);
 
   
   // CUtlVector< MotionBlendItem >

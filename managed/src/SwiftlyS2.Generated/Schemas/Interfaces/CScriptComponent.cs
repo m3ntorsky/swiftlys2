@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CScriptComponent : CEntityComponent {
+public partial interface CScriptComponent : CEntityComponent, IConvertibleNativeHandle<CScriptComponent> {
+
+  static CScriptComponent IConvertibleNativeHandle<CScriptComponent>.From(nint handle) => new CScriptComponentImpl(handle);
 
   
   public ref CUtlSymbolLarge ScriptClassName { get; }

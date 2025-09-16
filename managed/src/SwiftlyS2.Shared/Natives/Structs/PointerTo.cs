@@ -7,8 +7,8 @@ namespace SwiftlyS2.Shared.Natives;
 /// Pointer to a native handle.
 /// </summary>
 [StructLayout(LayoutKind.Sequential, Size = 8)]
-public struct PointerTo<T> where T : INativeHandle {
+public struct PointerTo<T> where T : INativeHandle, IConvertibleNativeHandle<T> {
   private nint _pointer;
 
-  public readonly T Value => NativeHandleConversion.As<T>(_pointer);
+  public readonly T Value => T.From(_pointer);
 }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHitboxComponent : CEntityComponent {
+public partial interface CHitboxComponent : CEntityComponent, IConvertibleNativeHandle<CHitboxComponent> {
+
+  static CHitboxComponent IConvertibleNativeHandle<CHitboxComponent>.From(nint handle) => new CHitboxComponentImpl(handle);
 
   
   public ISchemaFixedArray<uint> DisabledHitGroups { get; }

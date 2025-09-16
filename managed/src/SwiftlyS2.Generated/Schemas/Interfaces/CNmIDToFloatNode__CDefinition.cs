@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmIDToFloatNode__CDefinition : CNmFloatValueNode__CDefinition {
+public partial interface CNmIDToFloatNode__CDefinition : CNmFloatValueNode__CDefinition, IConvertibleNativeHandle<CNmIDToFloatNode__CDefinition> {
+
+  static CNmIDToFloatNode__CDefinition IConvertibleNativeHandle<CNmIDToFloatNode__CDefinition>.From(nint handle) => new CNmIDToFloatNode__CDefinitionImpl(handle);
 
   
   public ref short InputValueNodeIdx { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCS2WeaponGraphController : CAnimGraphControllerBase {
+public partial interface CCS2WeaponGraphController : CAnimGraphControllerBase, IConvertibleNativeHandle<CCS2WeaponGraphController> {
+
+  static CCS2WeaponGraphController IConvertibleNativeHandle<CCS2WeaponGraphController>.From(nint handle) => new CCS2WeaponGraphControllerImpl(handle);
 
   
   // CAnimGraph2ParamOptionalRef< CGlobalSymbol >

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlayerSprayDecal : CModelPointEntity {
+public partial interface CPlayerSprayDecal : CModelPointEntity, IConvertibleNativeHandle<CPlayerSprayDecal> {
+
+  static CPlayerSprayDecal IConvertibleNativeHandle<CPlayerSprayDecal>.From(nint handle) => new CPlayerSprayDecalImpl(handle);
 
   
   public ref int UniqueID { get; }

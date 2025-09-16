@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SkeletonAnimCapture_t__Camera_t : ISchemaClass {
+public partial interface SkeletonAnimCapture_t__Camera_t : ISchemaClass, IConvertibleNativeHandle<SkeletonAnimCapture_t__Camera_t> {
+
+  static SkeletonAnimCapture_t__Camera_t IConvertibleNativeHandle<SkeletonAnimCapture_t__Camera_t>.From(nint handle) => new SkeletonAnimCapture_t__Camera_tImpl(handle);
 
   
   public ref CTransform TmCamera { get; }

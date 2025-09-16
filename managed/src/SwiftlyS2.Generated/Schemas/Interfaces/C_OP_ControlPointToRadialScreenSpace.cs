@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ControlPointToRadialScreenSpace : CParticleFunctionPreEmission {
+public partial interface C_OP_ControlPointToRadialScreenSpace : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_ControlPointToRadialScreenSpace> {
+
+  static C_OP_ControlPointToRadialScreenSpace IConvertibleNativeHandle<C_OP_ControlPointToRadialScreenSpace>.From(nint handle) => new C_OP_ControlPointToRadialScreenSpaceImpl(handle);
 
   
   public ref int CPIn { get; }

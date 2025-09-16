@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvSoundscapeProxy : CEnvSoundscape {
+public partial interface CEnvSoundscapeProxy : CEnvSoundscape, IConvertibleNativeHandle<CEnvSoundscapeProxy> {
+
+  static CEnvSoundscapeProxy IConvertibleNativeHandle<CEnvSoundscapeProxy>.From(nint handle) => new CEnvSoundscapeProxyImpl(handle);
 
   
   public ref CUtlSymbolLarge MainSoundscapeName { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseMoveBehavior : CPathKeyFrame {
+public partial interface CBaseMoveBehavior : CPathKeyFrame, IConvertibleNativeHandle<CBaseMoveBehavior> {
+
+  static CBaseMoveBehavior IConvertibleNativeHandle<CBaseMoveBehavior>.From(nint handle) => new CBaseMoveBehaviorImpl(handle);
 
   
   public ref int PositionInterpolator { get; }

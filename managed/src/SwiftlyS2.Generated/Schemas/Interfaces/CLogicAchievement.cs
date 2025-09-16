@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicAchievement : CLogicalEntity {
+public partial interface CLogicAchievement : CLogicalEntity, IConvertibleNativeHandle<CLogicAchievement> {
+
+  static CLogicAchievement IConvertibleNativeHandle<CLogicAchievement>.From(nint handle) => new CLogicAchievementImpl(handle);
 
   
   public ref bool Disabled { get; }

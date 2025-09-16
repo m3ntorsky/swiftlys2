@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoOverlayData_t : ISchemaClass {
+public partial interface InfoOverlayData_t : ISchemaClass, IConvertibleNativeHandle<InfoOverlayData_t> {
+
+  static InfoOverlayData_t IConvertibleNativeHandle<InfoOverlayData_t>.From(nint handle) => new InfoOverlayData_tImpl(handle);
 
   
   public ref matrix3x4_t Transform { get; }

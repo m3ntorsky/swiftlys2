@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_PlaySequence : CPulseCell_BaseYieldingInflow {
+public partial interface CPulseCell_PlaySequence : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_PlaySequence> {
+
+  static CPulseCell_PlaySequence IConvertibleNativeHandle<CPulseCell_PlaySequence>.From(nint handle) => new CPulseCell_PlaySequenceImpl(handle);
 
   
   public ref CUtlString SequenceName { get; }

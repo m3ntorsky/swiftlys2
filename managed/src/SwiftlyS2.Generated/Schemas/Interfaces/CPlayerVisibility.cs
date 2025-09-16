@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlayerVisibility : CBaseEntity {
+public partial interface CPlayerVisibility : CBaseEntity, IConvertibleNativeHandle<CPlayerVisibility> {
+
+  static CPlayerVisibility IConvertibleNativeHandle<CPlayerVisibility>.From(nint handle) => new CPlayerVisibilityImpl(handle);
 
   
   public ref float VisibilityStrength { get; }

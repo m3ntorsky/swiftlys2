@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerLerpObject : CBaseTrigger {
+public partial interface CTriggerLerpObject : CBaseTrigger, IConvertibleNativeHandle<CTriggerLerpObject> {
+
+  static CTriggerLerpObject IConvertibleNativeHandle<CTriggerLerpObject>.From(nint handle) => new CTriggerLerpObjectImpl(handle);
 
   
   public ref CUtlSymbolLarge LerpTarget { get; }

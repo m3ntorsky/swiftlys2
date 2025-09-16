@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLookAtUpdateNode : CUnaryUpdateNode {
+public partial interface CLookAtUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CLookAtUpdateNode> {
+
+  static CLookAtUpdateNode IConvertibleNativeHandle<CLookAtUpdateNode>.From(nint handle) => new CLookAtUpdateNodeImpl(handle);
 
   
   public LookAtOpFixedSettings_t OpFixedSettings { get; }

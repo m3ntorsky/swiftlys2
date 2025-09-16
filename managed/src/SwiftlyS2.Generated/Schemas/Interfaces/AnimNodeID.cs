@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AnimNodeID : ISchemaClass {
+public partial interface AnimNodeID : ISchemaClass, IConvertibleNativeHandle<AnimNodeID> {
+
+  static AnimNodeID IConvertibleNativeHandle<AnimNodeID>.From(nint handle) => new AnimNodeIDImpl(handle);
 
   
   public ref uint Id { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBasePlayerWeaponVData : CEntitySubclassVDataBase {
+public partial interface CBasePlayerWeaponVData : CEntitySubclassVDataBase, IConvertibleNativeHandle<CBasePlayerWeaponVData> {
+
+  static CBasePlayerWeaponVData IConvertibleNativeHandle<CBasePlayerWeaponVData>.From(nint handle) => new CBasePlayerWeaponVDataImpl(handle);
 
   
   // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >

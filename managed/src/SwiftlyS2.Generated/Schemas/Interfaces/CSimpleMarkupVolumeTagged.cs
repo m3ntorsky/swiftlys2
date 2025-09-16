@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSimpleMarkupVolumeTagged : CMarkupVolumeTagged {
+public partial interface CSimpleMarkupVolumeTagged : CMarkupVolumeTagged, IConvertibleNativeHandle<CSimpleMarkupVolumeTagged> {
+
+  static CSimpleMarkupVolumeTagged IConvertibleNativeHandle<CSimpleMarkupVolumeTagged>.From(nint handle) => new CSimpleMarkupVolumeTaggedImpl(handle);
 
 
 

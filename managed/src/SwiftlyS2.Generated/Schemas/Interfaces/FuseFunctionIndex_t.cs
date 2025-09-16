@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FuseFunctionIndex_t : ISchemaClass {
+public partial interface FuseFunctionIndex_t : ISchemaClass, IConvertibleNativeHandle<FuseFunctionIndex_t> {
+
+  static FuseFunctionIndex_t IConvertibleNativeHandle<FuseFunctionIndex_t>.From(nint handle) => new FuseFunctionIndex_tImpl(handle);
 
   
   public ref ushort Value { get; }

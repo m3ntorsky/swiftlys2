@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTargetSelectorUpdateNode : CAnimUpdateNodeBase {
+public partial interface CTargetSelectorUpdateNode : CAnimUpdateNodeBase, IConvertibleNativeHandle<CTargetSelectorUpdateNode> {
+
+  static CTargetSelectorUpdateNode IConvertibleNativeHandle<CTargetSelectorUpdateNode>.From(nint handle) => new CTargetSelectorUpdateNodeImpl(handle);
 
   
   public ref TargetSelectorAngleMode_t AngleMode { get; }

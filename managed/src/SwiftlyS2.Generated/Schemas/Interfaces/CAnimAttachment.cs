@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimAttachment : ISchemaClass {
+public partial interface CAnimAttachment : ISchemaClass, IConvertibleNativeHandle<CAnimAttachment> {
+
+  static CAnimAttachment IConvertibleNativeHandle<CAnimAttachment>.From(nint handle) => new CAnimAttachmentImpl(handle);
 
   
   public ISchemaFixedArray<Quaternion> InfluenceRotations { get; }

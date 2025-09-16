@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimUserDifference : ISchemaClass {
+public partial interface CAnimUserDifference : ISchemaClass, IConvertibleNativeHandle<CAnimUserDifference> {
+
+  static CAnimUserDifference IConvertibleNativeHandle<CAnimUserDifference>.From(nint handle) => new CAnimUserDifferenceImpl(handle);
 
   
   public ref CBufferString Name { get; }

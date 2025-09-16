@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSceneEventInfo : ISchemaClass {
+public partial interface CSceneEventInfo : ISchemaClass, IConvertibleNativeHandle<CSceneEventInfo> {
+
+  static CSceneEventInfo IConvertibleNativeHandle<CSceneEventInfo>.From(nint handle) => new CSceneEventInfoImpl(handle);
 
   
   public ref int Layer { get; }

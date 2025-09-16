@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FourQuaternions : ISchemaClass {
+public partial interface FourQuaternions : ISchemaClass, IConvertibleNativeHandle<FourQuaternions> {
+
+  static FourQuaternions IConvertibleNativeHandle<FourQuaternions>.From(nint handle) => new FourQuaternionsImpl(handle);
 
   
   public ref fltx4 X { get; }

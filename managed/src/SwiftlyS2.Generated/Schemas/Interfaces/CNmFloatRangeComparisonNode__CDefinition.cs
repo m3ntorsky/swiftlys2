@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFloatRangeComparisonNode__CDefinition : CNmBoolValueNode__CDefinition {
+public partial interface CNmFloatRangeComparisonNode__CDefinition : CNmBoolValueNode__CDefinition, IConvertibleNativeHandle<CNmFloatRangeComparisonNode__CDefinition> {
+
+  static CNmFloatRangeComparisonNode__CDefinition IConvertibleNativeHandle<CNmFloatRangeComparisonNode__CDefinition>.From(nint handle) => new CNmFloatRangeComparisonNode__CDefinitionImpl(handle);
 
   
   // Range_t

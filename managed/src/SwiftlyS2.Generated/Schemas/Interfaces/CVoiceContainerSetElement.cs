@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerSetElement : ISchemaClass {
+public partial interface CVoiceContainerSetElement : ISchemaClass, IConvertibleNativeHandle<CVoiceContainerSetElement> {
+
+  static CVoiceContainerSetElement IConvertibleNativeHandle<CVoiceContainerSetElement>.From(nint handle) => new CVoiceContainerSetElementImpl(handle);
 
   
   public CSoundContainerReference Sound { get; }

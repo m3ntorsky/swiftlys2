@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseEntityAPI : ISchemaClass {
+public partial interface CBaseEntityAPI : ISchemaClass, IConvertibleNativeHandle<CBaseEntityAPI> {
+
+  static CBaseEntityAPI IConvertibleNativeHandle<CBaseEntityAPI>.From(nint handle) => new CBaseEntityAPIImpl(handle);
 
 
 

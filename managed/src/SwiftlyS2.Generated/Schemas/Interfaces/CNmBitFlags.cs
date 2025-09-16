@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmBitFlags : ISchemaClass {
+public partial interface CNmBitFlags : ISchemaClass, IConvertibleNativeHandle<CNmBitFlags> {
+
+  static CNmBitFlags IConvertibleNativeHandle<CNmBitFlags>.From(nint handle) => new CNmBitFlagsImpl(handle);
 
   
   public ref uint Flags { get; }

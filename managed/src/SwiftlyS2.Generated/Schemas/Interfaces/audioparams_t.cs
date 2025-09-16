@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface audioparams_t : ISchemaClass {
+public partial interface audioparams_t : ISchemaClass, IConvertibleNativeHandle<audioparams_t> {
+
+  static audioparams_t IConvertibleNativeHandle<audioparams_t>.From(nint handle) => new audioparams_tImpl(handle);
 
   
   public ISchemaFixedArray<Vector> LocalSound { get; }

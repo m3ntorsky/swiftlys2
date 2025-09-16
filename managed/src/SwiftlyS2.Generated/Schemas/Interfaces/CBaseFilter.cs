@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseFilter : CLogicalEntity {
+public partial interface CBaseFilter : CLogicalEntity, IConvertibleNativeHandle<CBaseFilter> {
+
+  static CBaseFilter IConvertibleNativeHandle<CBaseFilter>.From(nint handle) => new CBaseFilterImpl(handle);
 
   
   public ref bool Negated { get; }

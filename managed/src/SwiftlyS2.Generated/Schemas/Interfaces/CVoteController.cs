@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoteController : CBaseEntity {
+public partial interface CVoteController : CBaseEntity, IConvertibleNativeHandle<CVoteController> {
+
+  static CVoteController IConvertibleNativeHandle<CVoteController>.From(nint handle) => new CVoteControllerImpl(handle);
 
   
   public ref int ActiveIssueIndex { get; }

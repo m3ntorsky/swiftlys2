@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSceneListManager : CLogicalEntity {
+public partial interface CSceneListManager : CLogicalEntity, IConvertibleNativeHandle<CSceneListManager> {
+
+  static CSceneListManager IConvertibleNativeHandle<CSceneListManager>.From(nint handle) => new CSceneListManagerImpl(handle);
 
   
   public ref CUtlVector<CHandle<CSceneListManager>> ListManagers { get; }

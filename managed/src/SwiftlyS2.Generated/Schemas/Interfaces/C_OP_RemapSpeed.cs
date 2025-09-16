@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapSpeed : CParticleFunctionOperator {
+public partial interface C_OP_RemapSpeed : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapSpeed> {
+
+  static C_OP_RemapSpeed IConvertibleNativeHandle<C_OP_RemapSpeed>.From(nint handle) => new C_OP_RemapSpeedImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

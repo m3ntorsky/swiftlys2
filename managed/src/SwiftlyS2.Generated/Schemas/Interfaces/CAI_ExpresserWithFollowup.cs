@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAI_ExpresserWithFollowup : CAI_Expresser {
+public partial interface CAI_ExpresserWithFollowup : CAI_Expresser, IConvertibleNativeHandle<CAI_ExpresserWithFollowup> {
+
+  static CAI_ExpresserWithFollowup IConvertibleNativeHandle<CAI_ExpresserWithFollowup>.From(nint handle) => new CAI_ExpresserWithFollowupImpl(handle);
 
 
 

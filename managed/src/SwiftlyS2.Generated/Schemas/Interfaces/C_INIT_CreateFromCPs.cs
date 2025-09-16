@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateFromCPs : CParticleFunctionInitializer {
+public partial interface C_INIT_CreateFromCPs : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateFromCPs> {
+
+  static C_INIT_CreateFromCPs IConvertibleNativeHandle<C_INIT_CreateFromCPs>.From(nint handle) => new C_INIT_CreateFromCPsImpl(handle);
 
   
   public ref int Increment { get; }

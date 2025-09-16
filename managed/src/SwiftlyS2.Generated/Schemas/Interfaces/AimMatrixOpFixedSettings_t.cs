@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AimMatrixOpFixedSettings_t : ISchemaClass {
+public partial interface AimMatrixOpFixedSettings_t : ISchemaClass, IConvertibleNativeHandle<AimMatrixOpFixedSettings_t> {
+
+  static AimMatrixOpFixedSettings_t IConvertibleNativeHandle<AimMatrixOpFixedSettings_t>.From(nint handle) => new AimMatrixOpFixedSettings_tImpl(handle);
 
   
   public CAnimAttachment Attachment { get; }

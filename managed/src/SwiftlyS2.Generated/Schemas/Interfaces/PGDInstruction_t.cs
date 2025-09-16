@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PGDInstruction_t : ISchemaClass {
+public partial interface PGDInstruction_t : ISchemaClass, IConvertibleNativeHandle<PGDInstruction_t> {
+
+  static PGDInstruction_t IConvertibleNativeHandle<PGDInstruction_t>.From(nint handle) => new PGDInstruction_tImpl(handle);
 
   
   public ref PulseInstructionCode_t Code { get; }

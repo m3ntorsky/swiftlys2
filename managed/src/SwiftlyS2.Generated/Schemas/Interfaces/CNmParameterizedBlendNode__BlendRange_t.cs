@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmParameterizedBlendNode__BlendRange_t : ISchemaClass {
+public partial interface CNmParameterizedBlendNode__BlendRange_t : ISchemaClass, IConvertibleNativeHandle<CNmParameterizedBlendNode__BlendRange_t> {
+
+  static CNmParameterizedBlendNode__BlendRange_t IConvertibleNativeHandle<CNmParameterizedBlendNode__BlendRange_t>.From(nint handle) => new CNmParameterizedBlendNode__BlendRange_tImpl(handle);
 
   
   public ref short InputIdx0 { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Step_TestDomainCreateFakeEntity : CPulseCell_BaseFlow {
+public partial interface CPulseCell_Step_TestDomainCreateFakeEntity : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_Step_TestDomainCreateFakeEntity> {
+
+  static CPulseCell_Step_TestDomainCreateFakeEntity IConvertibleNativeHandle<CPulseCell_Step_TestDomainCreateFakeEntity>.From(nint handle) => new CPulseCell_Step_TestDomainCreateFakeEntityImpl(handle);
 
 
 

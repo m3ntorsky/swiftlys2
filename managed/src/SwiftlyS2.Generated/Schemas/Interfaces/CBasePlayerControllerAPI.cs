@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBasePlayerControllerAPI : ISchemaClass {
+public partial interface CBasePlayerControllerAPI : ISchemaClass, IConvertibleNativeHandle<CBasePlayerControllerAPI> {
+
+  static CBasePlayerControllerAPI IConvertibleNativeHandle<CBasePlayerControllerAPI>.From(nint handle) => new CBasePlayerControllerAPIImpl(handle);
 
 
 

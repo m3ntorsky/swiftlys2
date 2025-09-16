@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMorphBundleData : ISchemaClass {
+public partial interface CMorphBundleData : ISchemaClass, IConvertibleNativeHandle<CMorphBundleData> {
+
+  static CMorphBundleData IConvertibleNativeHandle<CMorphBundleData>.From(nint handle) => new CMorphBundleDataImpl(handle);
 
   
   public ref float ULeftSrc { get; }

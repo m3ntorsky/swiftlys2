@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateInEpitrochoid : CParticleFunctionInitializer {
+public partial interface C_INIT_CreateInEpitrochoid : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateInEpitrochoid> {
+
+  static C_INIT_CreateInEpitrochoid IConvertibleNativeHandle<C_INIT_CreateInEpitrochoid>.From(nint handle) => new C_INIT_CreateInEpitrochoidImpl(handle);
 
   
   public ref int Component1 { get; }

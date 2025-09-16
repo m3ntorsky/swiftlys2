@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBlood : CPointEntity {
+public partial interface CBlood : CPointEntity, IConvertibleNativeHandle<CBlood> {
+
+  static CBlood IConvertibleNativeHandle<CBlood>.From(nint handle) => new CBloodImpl(handle);
 
   
   public ref QAngle SprayAngles { get; }

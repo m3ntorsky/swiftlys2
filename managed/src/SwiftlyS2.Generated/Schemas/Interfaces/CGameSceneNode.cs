@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGameSceneNode : ISchemaClass {
+public partial interface CGameSceneNode : ISchemaClass, IConvertibleNativeHandle<CGameSceneNode> {
+
+  static CGameSceneNode IConvertibleNativeHandle<CGameSceneNode>.From(nint handle) => new CGameSceneNodeImpl(handle);
 
   
   public ref CTransform NodeToWorld { get; }

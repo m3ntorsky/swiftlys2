@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_WorldTraceConstraint : CParticleFunctionConstraint {
+public partial interface C_OP_WorldTraceConstraint : CParticleFunctionConstraint, IConvertibleNativeHandle<C_OP_WorldTraceConstraint> {
+
+  static C_OP_WorldTraceConstraint IConvertibleNativeHandle<C_OP_WorldTraceConstraint>.From(nint handle) => new C_OP_WorldTraceConstraintImpl(handle);
 
   
   public ref int CP { get; }

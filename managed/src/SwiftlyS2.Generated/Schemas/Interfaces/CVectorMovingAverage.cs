@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVectorMovingAverage : ISchemaClass {
+public partial interface CVectorMovingAverage : ISchemaClass, IConvertibleNativeHandle<CVectorMovingAverage> {
+
+  static CVectorMovingAverage IConvertibleNativeHandle<CVectorMovingAverage>.From(nint handle) => new CVectorMovingAverageImpl(handle);
 
 
 

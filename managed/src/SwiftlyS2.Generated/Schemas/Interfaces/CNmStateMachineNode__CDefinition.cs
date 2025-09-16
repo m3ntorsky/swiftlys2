@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmStateMachineNode__CDefinition : CNmPoseNode__CDefinition {
+public partial interface CNmStateMachineNode__CDefinition : CNmPoseNode__CDefinition, IConvertibleNativeHandle<CNmStateMachineNode__CDefinition> {
+
+  static CNmStateMachineNode__CDefinition IConvertibleNativeHandle<CNmStateMachineNode__CDefinition>.From(nint handle) => new CNmStateMachineNode__CDefinitionImpl(handle);
 
   
   // CUtlLeanVectorFixedGrowable< CNmStateMachineNode::StateDefinition_t, 5 >

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderOmni2Light : CParticleFunctionRenderer {
+public partial interface C_OP_RenderOmni2Light : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderOmni2Light> {
+
+  static C_OP_RenderOmni2Light IConvertibleNativeHandle<C_OP_RenderOmni2Light>.From(nint handle) => new C_OP_RenderOmni2LightImpl(handle);
 
   
   public ref ParticleOmni2LightTypeChoiceList_t LightType { get; }

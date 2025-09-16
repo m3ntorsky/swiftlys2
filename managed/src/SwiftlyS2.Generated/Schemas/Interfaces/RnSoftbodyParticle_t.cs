@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnSoftbodyParticle_t : ISchemaClass {
+public partial interface RnSoftbodyParticle_t : ISchemaClass, IConvertibleNativeHandle<RnSoftbodyParticle_t> {
+
+  static RnSoftbodyParticle_t IConvertibleNativeHandle<RnSoftbodyParticle_t>.From(nint handle) => new RnSoftbodyParticle_tImpl(handle);
 
   
   public ref float MassInv { get; }

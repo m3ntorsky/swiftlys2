@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupActionSetSoundeventParameterSchema : CSosGroupActionSchema {
+public partial interface CSosGroupActionSetSoundeventParameterSchema : CSosGroupActionSchema, IConvertibleNativeHandle<CSosGroupActionSetSoundeventParameterSchema> {
+
+  static CSosGroupActionSetSoundeventParameterSchema IConvertibleNativeHandle<CSosGroupActionSetSoundeventParameterSchema>.From(nint handle) => new CSosGroupActionSetSoundeventParameterSchemaImpl(handle);
 
   
   public ref int MaxCount { get; }

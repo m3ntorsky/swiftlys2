@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseDMStart : CPointEntity {
+public partial interface CBaseDMStart : CPointEntity, IConvertibleNativeHandle<CBaseDMStart> {
+
+  static CBaseDMStart IConvertibleNativeHandle<CBaseDMStart>.From(nint handle) => new CBaseDMStartImpl(handle);
 
   
   public ref CUtlSymbolLarge Master { get; }

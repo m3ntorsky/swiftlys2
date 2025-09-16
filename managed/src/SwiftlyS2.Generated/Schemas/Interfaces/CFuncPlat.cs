@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncPlat : CBasePlatTrain {
+public partial interface CFuncPlat : CBasePlatTrain, IConvertibleNativeHandle<CFuncPlat> {
+
+  static CFuncPlat IConvertibleNativeHandle<CFuncPlat>.From(nint handle) => new CFuncPlatImpl(handle);
 
   
   public ref CUtlSymbolLarge Noise { get; }

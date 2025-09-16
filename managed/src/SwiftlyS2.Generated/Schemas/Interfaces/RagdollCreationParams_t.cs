@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RagdollCreationParams_t : ISchemaClass {
+public partial interface RagdollCreationParams_t : ISchemaClass, IConvertibleNativeHandle<RagdollCreationParams_t> {
+
+  static RagdollCreationParams_t IConvertibleNativeHandle<RagdollCreationParams_t>.From(nint handle) => new RagdollCreationParams_tImpl(handle);
 
   
   public ref Vector Force { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCycleControlUpdateNode : CUnaryUpdateNode {
+public partial interface CCycleControlUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CCycleControlUpdateNode> {
+
+  static CCycleControlUpdateNode IConvertibleNativeHandle<CCycleControlUpdateNode>.From(nint handle) => new CCycleControlUpdateNodeImpl(handle);
 
   
   public ref AnimValueSource ValueSource { get; }

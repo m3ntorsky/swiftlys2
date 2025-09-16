@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmBoneMaskValueNode__CDefinition : CNmValueNode__CDefinition {
+public partial interface CNmBoneMaskValueNode__CDefinition : CNmValueNode__CDefinition, IConvertibleNativeHandle<CNmBoneMaskValueNode__CDefinition> {
+
+  static CNmBoneMaskValueNode__CDefinition IConvertibleNativeHandle<CNmBoneMaskValueNode__CDefinition>.From(nint handle) => new CNmBoneMaskValueNode__CDefinitionImpl(handle);
 
 
 

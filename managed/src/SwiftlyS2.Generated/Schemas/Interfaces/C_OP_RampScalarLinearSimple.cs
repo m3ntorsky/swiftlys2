@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RampScalarLinearSimple : CParticleFunctionOperator {
+public partial interface C_OP_RampScalarLinearSimple : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RampScalarLinearSimple> {
+
+  static C_OP_RampScalarLinearSimple IConvertibleNativeHandle<C_OP_RampScalarLinearSimple>.From(nint handle) => new C_OP_RampScalarLinearSimpleImpl(handle);
 
   
   public ref float Rate { get; }

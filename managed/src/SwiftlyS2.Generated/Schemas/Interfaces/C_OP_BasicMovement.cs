@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_BasicMovement : CParticleFunctionOperator {
+public partial interface C_OP_BasicMovement : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_BasicMovement> {
+
+  static C_OP_BasicMovement IConvertibleNativeHandle<C_OP_BasicMovement>.From(nint handle) => new C_OP_BasicMovementImpl(handle);
 
   
   public CParticleCollectionVecInput Gravity { get; }

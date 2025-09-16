@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Val_TestDomainFindEntityByName : CPulseCell_BaseValue {
+public partial interface CPulseCell_Val_TestDomainFindEntityByName : CPulseCell_BaseValue, IConvertibleNativeHandle<CPulseCell_Val_TestDomainFindEntityByName> {
+
+  static CPulseCell_Val_TestDomainFindEntityByName IConvertibleNativeHandle<CPulseCell_Val_TestDomainFindEntityByName>.From(nint handle) => new CPulseCell_Val_TestDomainFindEntityByNameImpl(handle);
 
 
 

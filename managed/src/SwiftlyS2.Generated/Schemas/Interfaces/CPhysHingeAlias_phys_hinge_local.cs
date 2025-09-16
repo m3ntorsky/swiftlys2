@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysHingeAlias_phys_hinge_local : CPhysHinge {
+public partial interface CPhysHingeAlias_phys_hinge_local : CPhysHinge, IConvertibleNativeHandle<CPhysHingeAlias_phys_hinge_local> {
+
+  static CPhysHingeAlias_phys_hinge_local IConvertibleNativeHandle<CPhysHingeAlias_phys_hinge_local>.From(nint handle) => new CPhysHingeAlias_phys_hinge_localImpl(handle);
 
 
 

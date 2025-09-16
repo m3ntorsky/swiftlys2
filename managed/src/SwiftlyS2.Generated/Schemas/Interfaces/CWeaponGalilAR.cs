@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CWeaponGalilAR : CCSWeaponBaseGun {
+public partial interface CWeaponGalilAR : CCSWeaponBaseGun, IConvertibleNativeHandle<CWeaponGalilAR> {
+
+  static CWeaponGalilAR IConvertibleNativeHandle<CWeaponGalilAR>.From(nint handle) => new CWeaponGalilARImpl(handle);
 
 
 

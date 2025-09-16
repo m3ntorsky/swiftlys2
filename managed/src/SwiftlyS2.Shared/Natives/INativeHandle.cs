@@ -19,4 +19,15 @@ public interface INativeHandle
   /// <returns>The raw handle.</returns>
   public unsafe nint GetHandle();
 
+
+  /// <summary>
+  /// Convert this handle to another type.
+  /// </summary>
+  /// <typeparam name="K">The type to convert to.</typeparam>
+  /// <returns>The converted handle.</returns>
+  K As<K>() where K : IConvertibleNativeHandle<K>
+  {
+    return K.From(GetHandle());
+  }
+
 }

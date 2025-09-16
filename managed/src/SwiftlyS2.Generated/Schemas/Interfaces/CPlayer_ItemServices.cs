@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlayer_ItemServices : CPlayerPawnComponent {
+public partial interface CPlayer_ItemServices : CPlayerPawnComponent, IConvertibleNativeHandle<CPlayer_ItemServices> {
+
+  static CPlayer_ItemServices IConvertibleNativeHandle<CPlayer_ItemServices>.From(nint handle) => new CPlayer_ItemServicesImpl(handle);
 
 
 

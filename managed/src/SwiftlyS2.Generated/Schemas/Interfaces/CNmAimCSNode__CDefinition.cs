@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmAimCSNode__CDefinition : CNmPassthroughNode__CDefinition {
+public partial interface CNmAimCSNode__CDefinition : CNmPassthroughNode__CDefinition, IConvertibleNativeHandle<CNmAimCSNode__CDefinition> {
+
+  static CNmAimCSNode__CDefinition IConvertibleNativeHandle<CNmAimCSNode__CDefinition>.From(nint handle) => new CNmAimCSNode__CDefinitionImpl(handle);
 
   
   public ref short VerticalAngleNodeIdx { get; }

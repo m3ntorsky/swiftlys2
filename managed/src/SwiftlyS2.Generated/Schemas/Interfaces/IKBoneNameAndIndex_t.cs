@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IKBoneNameAndIndex_t : ISchemaClass {
+public partial interface IKBoneNameAndIndex_t : ISchemaClass, IConvertibleNativeHandle<IKBoneNameAndIndex_t> {
+
+  static IKBoneNameAndIndex_t IConvertibleNativeHandle<IKBoneNameAndIndex_t>.From(nint handle) => new IKBoneNameAndIndex_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

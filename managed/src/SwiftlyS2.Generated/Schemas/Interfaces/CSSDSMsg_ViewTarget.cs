@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSSDSMsg_ViewTarget : ISchemaClass {
+public partial interface CSSDSMsg_ViewTarget : ISchemaClass, IConvertibleNativeHandle<CSSDSMsg_ViewTarget> {
+
+  static CSSDSMsg_ViewTarget IConvertibleNativeHandle<CSSDSMsg_ViewTarget>.From(nint handle) => new CSSDSMsg_ViewTargetImpl(handle);
 
   
   public ref CUtlString Name { get; }

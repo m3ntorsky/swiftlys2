@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvMuzzleFlash : CPointEntity {
+public partial interface CEnvMuzzleFlash : CPointEntity, IConvertibleNativeHandle<CEnvMuzzleFlash> {
+
+  static CEnvMuzzleFlash IConvertibleNativeHandle<CEnvMuzzleFlash>.From(nint handle) => new CEnvMuzzleFlashImpl(handle);
 
   
   public ref float Scale { get; }

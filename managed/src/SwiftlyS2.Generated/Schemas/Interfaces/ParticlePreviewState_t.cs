@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ParticlePreviewState_t : ISchemaClass {
+public partial interface ParticlePreviewState_t : ISchemaClass, IConvertibleNativeHandle<ParticlePreviewState_t> {
+
+  static ParticlePreviewState_t IConvertibleNativeHandle<ParticlePreviewState_t>.From(nint handle) => new ParticlePreviewState_tImpl(handle);
 
   
   public ref CUtlString PreviewModel { get; }

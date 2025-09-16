@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerDetectBulletFire : CBaseTrigger {
+public partial interface CTriggerDetectBulletFire : CBaseTrigger, IConvertibleNativeHandle<CTriggerDetectBulletFire> {
+
+  static CTriggerDetectBulletFire IConvertibleNativeHandle<CTriggerDetectBulletFire>.From(nint handle) => new CTriggerDetectBulletFireImpl(handle);
 
   
   public ref bool PlayerFireOnly { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollManager : CBaseEntity {
+public partial interface CRagdollManager : CBaseEntity, IConvertibleNativeHandle<CRagdollManager> {
+
+  static CRagdollManager IConvertibleNativeHandle<CRagdollManager>.From(nint handle) => new CRagdollManagerImpl(handle);
 
   
   public ref byte CurrentMaxRagdollCount { get; }

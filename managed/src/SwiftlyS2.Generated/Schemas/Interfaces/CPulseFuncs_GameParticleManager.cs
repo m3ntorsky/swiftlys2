@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseFuncs_GameParticleManager : ISchemaClass {
+public partial interface CPulseFuncs_GameParticleManager : ISchemaClass, IConvertibleNativeHandle<CPulseFuncs_GameParticleManager> {
+
+  static CPulseFuncs_GameParticleManager IConvertibleNativeHandle<CPulseFuncs_GameParticleManager>.From(nint handle) => new CPulseFuncs_GameParticleManagerImpl(handle);
 
 
 

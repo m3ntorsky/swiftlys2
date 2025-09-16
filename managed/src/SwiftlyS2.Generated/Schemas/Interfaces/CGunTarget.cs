@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGunTarget : CBaseToggle {
+public partial interface CGunTarget : CBaseToggle, IConvertibleNativeHandle<CGunTarget> {
+
+  static CGunTarget IConvertibleNativeHandle<CGunTarget>.From(nint handle) => new CGunTargetImpl(handle);
 
   
   public ref bool On { get; }

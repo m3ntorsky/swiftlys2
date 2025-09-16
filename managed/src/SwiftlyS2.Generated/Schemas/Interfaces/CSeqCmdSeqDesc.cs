@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqCmdSeqDesc : ISchemaClass {
+public partial interface CSeqCmdSeqDesc : ISchemaClass, IConvertibleNativeHandle<CSeqCmdSeqDesc> {
+
+  static CSeqCmdSeqDesc IConvertibleNativeHandle<CSeqCmdSeqDesc>.From(nint handle) => new CSeqCmdSeqDescImpl(handle);
 
   
   public ref CBufferString Name { get; }

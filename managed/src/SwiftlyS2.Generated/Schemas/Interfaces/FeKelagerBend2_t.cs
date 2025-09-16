@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeKelagerBend2_t : ISchemaClass {
+public partial interface FeKelagerBend2_t : ISchemaClass, IConvertibleNativeHandle<FeKelagerBend2_t> {
+
+  static FeKelagerBend2_t IConvertibleNativeHandle<FeKelagerBend2_t>.From(nint handle) => new FeKelagerBend2_tImpl(handle);
 
   
   public ISchemaFixedArray<float> Weight { get; }

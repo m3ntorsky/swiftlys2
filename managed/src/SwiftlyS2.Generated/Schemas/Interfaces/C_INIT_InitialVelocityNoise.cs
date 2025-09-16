@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_InitialVelocityNoise : CParticleFunctionInitializer {
+public partial interface C_INIT_InitialVelocityNoise : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_InitialVelocityNoise> {
+
+  static C_INIT_InitialVelocityNoise IConvertibleNativeHandle<C_INIT_InitialVelocityNoise>.From(nint handle) => new C_INIT_InitialVelocityNoiseImpl(handle);
 
   
   public ref Vector AbsVal { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGameRules : ISchemaClass {
+public partial interface CGameRules : ISchemaClass, IConvertibleNativeHandle<CGameRules> {
+
+  static CGameRules IConvertibleNativeHandle<CGameRules>.From(nint handle) => new CGameRulesImpl(handle);
 
   
   public CNetworkVarChainer __m_pChainEntity { get; }

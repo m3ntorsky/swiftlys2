@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_Diffusion : CParticleFunctionOperator {
+public partial interface C_OP_Diffusion : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_Diffusion> {
+
+  static C_OP_Diffusion IConvertibleNativeHandle<C_OP_Diffusion>.From(nint handle) => new C_OP_DiffusionImpl(handle);
 
   
   public ref float RadiusScale { get; }

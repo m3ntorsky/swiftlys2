@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGeneralSpin : CParticleFunctionOperator {
+public partial interface CGeneralSpin : CParticleFunctionOperator, IConvertibleNativeHandle<CGeneralSpin> {
+
+  static CGeneralSpin IConvertibleNativeHandle<CGeneralSpin>.From(nint handle) => new CGeneralSpinImpl(handle);
 
   
   public ref int SpinRateDegrees { get; }

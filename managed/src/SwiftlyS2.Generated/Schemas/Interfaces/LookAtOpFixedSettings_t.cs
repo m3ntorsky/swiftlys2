@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface LookAtOpFixedSettings_t : ISchemaClass {
+public partial interface LookAtOpFixedSettings_t : ISchemaClass, IConvertibleNativeHandle<LookAtOpFixedSettings_t> {
+
+  static LookAtOpFixedSettings_t IConvertibleNativeHandle<LookAtOpFixedSettings_t>.From(nint handle) => new LookAtOpFixedSettings_tImpl(handle);
 
   
   public CAnimAttachment Attachment { get; }

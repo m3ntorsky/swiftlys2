@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayerResource : CBaseEntity {
+public partial interface CCSPlayerResource : CBaseEntity, IConvertibleNativeHandle<CCSPlayerResource> {
+
+  static CCSPlayerResource IConvertibleNativeHandle<CCSPlayerResource>.From(nint handle) => new CCSPlayerResourceImpl(handle);
 
   
   public ISchemaFixedArray<bool> HostageAlive { get; }

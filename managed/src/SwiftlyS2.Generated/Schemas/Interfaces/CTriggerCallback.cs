@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerCallback : CBaseTrigger {
+public partial interface CTriggerCallback : CBaseTrigger, IConvertibleNativeHandle<CTriggerCallback> {
+
+  static CTriggerCallback IConvertibleNativeHandle<CTriggerCallback>.From(nint handle) => new CTriggerCallbackImpl(handle);
 
 
 

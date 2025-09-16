@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventServerSimulate_t : EventSimulate_t {
+public partial interface EventServerSimulate_t : EventSimulate_t, IConvertibleNativeHandle<EventServerSimulate_t> {
+
+  static EventServerSimulate_t IConvertibleNativeHandle<EventServerSimulate_t>.From(nint handle) => new EventServerSimulate_tImpl(handle);
 
 
 

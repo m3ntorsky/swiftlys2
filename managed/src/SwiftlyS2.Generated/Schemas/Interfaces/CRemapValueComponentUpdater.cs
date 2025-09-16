@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRemapValueComponentUpdater : CAnimComponentUpdater {
+public partial interface CRemapValueComponentUpdater : CAnimComponentUpdater, IConvertibleNativeHandle<CRemapValueComponentUpdater> {
+
+  static CRemapValueComponentUpdater IConvertibleNativeHandle<CRemapValueComponentUpdater>.From(nint handle) => new CRemapValueComponentUpdaterImpl(handle);
 
   
   // CUtlVector< CRemapValueUpdateItem >

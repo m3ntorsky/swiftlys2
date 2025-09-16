@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmClip : ISchemaClass {
+public partial interface CNmClip : ISchemaClass, IConvertibleNativeHandle<CNmClip> {
+
+  static CNmClip IConvertibleNativeHandle<CNmClip>.From(nint handle) => new CNmClipImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton { get; }

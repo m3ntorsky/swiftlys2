@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeBuildBoxRigid_t : FeBoxRigid_t {
+public partial interface FeBuildBoxRigid_t : FeBoxRigid_t, IConvertibleNativeHandle<FeBuildBoxRigid_t> {
+
+  static FeBuildBoxRigid_t IConvertibleNativeHandle<FeBuildBoxRigid_t>.From(nint handle) => new FeBuildBoxRigid_tImpl(handle);
 
   
   public ref int Priority { get; }

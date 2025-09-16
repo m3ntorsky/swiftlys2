@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAI_Expresser : ISchemaClass {
+public partial interface CAI_Expresser : ISchemaClass, IConvertibleNativeHandle<CAI_Expresser> {
+
+  static CAI_Expresser IConvertibleNativeHandle<CAI_Expresser>.From(nint handle) => new CAI_ExpresserImpl(handle);
 
   
   public GameTime_t StopTalkTime { get; }

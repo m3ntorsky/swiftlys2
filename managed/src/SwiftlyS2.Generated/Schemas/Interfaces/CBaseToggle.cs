@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseToggle : CBaseModelEntity {
+public partial interface CBaseToggle : CBaseModelEntity, IConvertibleNativeHandle<CBaseToggle> {
+
+  static CBaseToggle IConvertibleNativeHandle<CBaseToggle>.From(nint handle) => new CBaseToggleImpl(handle);
 
   
   public ref TOGGLE_STATE Toggle_state { get; }

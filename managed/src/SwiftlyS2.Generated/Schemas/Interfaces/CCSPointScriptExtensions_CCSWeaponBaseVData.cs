@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPointScriptExtensions_CCSWeaponBaseVData : ISchemaClass {
+public partial interface CCSPointScriptExtensions_CCSWeaponBaseVData : ISchemaClass, IConvertibleNativeHandle<CCSPointScriptExtensions_CCSWeaponBaseVData> {
+
+  static CCSPointScriptExtensions_CCSWeaponBaseVData IConvertibleNativeHandle<CCSPointScriptExtensions_CCSWeaponBaseVData>.From(nint handle) => new CCSPointScriptExtensions_CCSWeaponBaseVDataImpl(handle);
 
 
 

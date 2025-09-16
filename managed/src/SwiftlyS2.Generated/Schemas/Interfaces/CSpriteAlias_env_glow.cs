@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSpriteAlias_env_glow : CSprite {
+public partial interface CSpriteAlias_env_glow : CSprite, IConvertibleNativeHandle<CSpriteAlias_env_glow> {
+
+  static CSpriteAlias_env_glow IConvertibleNativeHandle<CSpriteAlias_env_glow>.From(nint handle) => new CSpriteAlias_env_glowImpl(handle);
 
 
 

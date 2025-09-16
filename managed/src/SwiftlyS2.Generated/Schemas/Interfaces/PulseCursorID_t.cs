@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseCursorID_t : ISchemaClass {
+public partial interface PulseCursorID_t : ISchemaClass, IConvertibleNativeHandle<PulseCursorID_t> {
+
+  static PulseCursorID_t IConvertibleNativeHandle<PulseCursorID_t>.From(nint handle) => new PulseCursorID_tImpl(handle);
 
   
   public ref int Value { get; }

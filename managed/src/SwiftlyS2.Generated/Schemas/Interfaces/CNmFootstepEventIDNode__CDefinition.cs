@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFootstepEventIDNode__CDefinition : CNmIDValueNode__CDefinition {
+public partial interface CNmFootstepEventIDNode__CDefinition : CNmIDValueNode__CDefinition, IConvertibleNativeHandle<CNmFootstepEventIDNode__CDefinition> {
+
+  static CNmFootstepEventIDNode__CDefinition IConvertibleNativeHandle<CNmFootstepEventIDNode__CDefinition>.From(nint handle) => new CNmFootstepEventIDNode__CDefinitionImpl(handle);
 
   
   public ref short SourceStateNodeIdx { get; }

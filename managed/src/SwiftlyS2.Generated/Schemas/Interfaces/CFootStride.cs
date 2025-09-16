@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootStride : ISchemaClass {
+public partial interface CFootStride : ISchemaClass, IConvertibleNativeHandle<CFootStride> {
+
+  static CFootStride IConvertibleNativeHandle<CFootStride>.From(nint handle) => new CFootStrideImpl(handle);
 
   
   public CFootCycleDefinition Definition { get; }

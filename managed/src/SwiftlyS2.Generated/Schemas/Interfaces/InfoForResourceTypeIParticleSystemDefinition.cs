@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeIParticleSystemDefinition : ISchemaClass {
+public partial interface InfoForResourceTypeIParticleSystemDefinition : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeIParticleSystemDefinition> {
+
+  static InfoForResourceTypeIParticleSystemDefinition IConvertibleNativeHandle<InfoForResourceTypeIParticleSystemDefinition>.From(nint handle) => new InfoForResourceTypeIParticleSystemDefinitionImpl(handle);
 
 
 

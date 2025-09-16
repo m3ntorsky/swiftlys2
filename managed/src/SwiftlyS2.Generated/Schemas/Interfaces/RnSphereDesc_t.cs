@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnSphereDesc_t : RnShapeDesc_t {
+public partial interface RnSphereDesc_t : RnShapeDesc_t, IConvertibleNativeHandle<RnSphereDesc_t> {
+
+  static RnSphereDesc_t IConvertibleNativeHandle<RnSphereDesc_t>.From(nint handle) => new RnSphereDesc_tImpl(handle);
 
   
   // SphereBase_t< float32 >

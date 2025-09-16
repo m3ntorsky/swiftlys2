@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderBlobs : CParticleFunctionRenderer {
+public partial interface C_OP_RenderBlobs : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderBlobs> {
+
+  static C_OP_RenderBlobs IConvertibleNativeHandle<C_OP_RenderBlobs>.From(nint handle) => new C_OP_RenderBlobsImpl(handle);
 
   
   public CParticleCollectionRendererFloatInput CubeWidth { get; }

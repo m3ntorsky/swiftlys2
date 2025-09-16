@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncShatterglass : CBaseModelEntity {
+public partial interface CFuncShatterglass : CBaseModelEntity, IConvertibleNativeHandle<CFuncShatterglass> {
+
+  static CFuncShatterglass IConvertibleNativeHandle<CFuncShatterglass>.From(nint handle) => new CFuncShatterglassImpl(handle);
 
   
   public ref matrix3x4_t MatPanelTransform { get; }

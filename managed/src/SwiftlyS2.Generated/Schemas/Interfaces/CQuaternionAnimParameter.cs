@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CQuaternionAnimParameter : CConcreteAnimParameter {
+public partial interface CQuaternionAnimParameter : CConcreteAnimParameter, IConvertibleNativeHandle<CQuaternionAnimParameter> {
+
+  static CQuaternionAnimParameter IConvertibleNativeHandle<CQuaternionAnimParameter>.From(nint handle) => new CQuaternionAnimParameterImpl(handle);
 
   
   public ref Quaternion DefaultValue { get; }

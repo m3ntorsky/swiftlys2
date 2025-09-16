@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerSndSosOpvar : CBaseTrigger {
+public partial interface CTriggerSndSosOpvar : CBaseTrigger, IConvertibleNativeHandle<CTriggerSndSosOpvar> {
+
+  static CTriggerSndSosOpvar IConvertibleNativeHandle<CTriggerSndSosOpvar>.From(nint handle) => new CTriggerSndSosOpvarImpl(handle);
 
   
   public ref CUtlVector<CHandle<CBaseEntity>> TouchingPlayers { get; }

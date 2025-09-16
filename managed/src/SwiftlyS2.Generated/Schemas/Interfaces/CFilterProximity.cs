@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFilterProximity : CBaseFilter {
+public partial interface CFilterProximity : CBaseFilter, IConvertibleNativeHandle<CFilterProximity> {
+
+  static CFilterProximity IConvertibleNativeHandle<CFilterProximity>.From(nint handle) => new CFilterProximityImpl(handle);
 
   
   public ref float Radius { get; }

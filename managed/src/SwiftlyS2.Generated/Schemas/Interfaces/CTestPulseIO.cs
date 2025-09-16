@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTestPulseIO : CLogicalEntity {
+public partial interface CTestPulseIO : CLogicalEntity, IConvertibleNativeHandle<CTestPulseIO> {
+
+  static CTestPulseIO IConvertibleNativeHandle<CTestPulseIO>.From(nint handle) => new CTestPulseIOImpl(handle);
 
   
   public CEntityIOOutput OnVariantVoid { get; }

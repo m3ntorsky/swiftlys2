@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_InlineNodeSkipSelector : CPulseCell_BaseFlow {
+public partial interface CPulseCell_InlineNodeSkipSelector : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_InlineNodeSkipSelector> {
+
+  static CPulseCell_InlineNodeSkipSelector IConvertibleNativeHandle<CPulseCell_InlineNodeSkipSelector>.From(nint handle) => new CPulseCell_InlineNodeSkipSelectorImpl(handle);
 
   
   public PulseDocNodeID_t FlowNodeID { get; }

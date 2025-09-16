@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimGraphSettingsManager : ISchemaClass {
+public partial interface CAnimGraphSettingsManager : ISchemaClass, IConvertibleNativeHandle<CAnimGraphSettingsManager> {
+
+  static CAnimGraphSettingsManager IConvertibleNativeHandle<CAnimGraphSettingsManager>.From(nint handle) => new CAnimGraphSettingsManagerImpl(handle);
 
   
   // CUtlVector< CSmartPtr< CAnimGraphSettingsGroup > >

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RtEnvCull : CParticleFunctionOperator {
+public partial interface C_OP_RtEnvCull : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RtEnvCull> {
+
+  static C_OP_RtEnvCull IConvertibleNativeHandle<C_OP_RtEnvCull>.From(nint handle) => new C_OP_RtEnvCullImpl(handle);
 
   
   public ref Vector TestDir { get; }

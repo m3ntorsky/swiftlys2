@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmTargetOffsetNode__CDefinition : CNmTargetValueNode__CDefinition {
+public partial interface CNmTargetOffsetNode__CDefinition : CNmTargetValueNode__CDefinition, IConvertibleNativeHandle<CNmTargetOffsetNode__CDefinition> {
+
+  static CNmTargetOffsetNode__CDefinition IConvertibleNativeHandle<CNmTargetOffsetNode__CDefinition>.From(nint handle) => new CNmTargetOffsetNode__CDefinitionImpl(handle);
 
   
   public ref short InputValueNodeIdx { get; }

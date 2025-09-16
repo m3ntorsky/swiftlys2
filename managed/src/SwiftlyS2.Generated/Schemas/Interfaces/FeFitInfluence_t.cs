@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeFitInfluence_t : ISchemaClass {
+public partial interface FeFitInfluence_t : ISchemaClass, IConvertibleNativeHandle<FeFitInfluence_t> {
+
+  static FeFitInfluence_t IConvertibleNativeHandle<FeFitInfluence_t>.From(nint handle) => new FeFitInfluence_tImpl(handle);
 
   
   public ref uint VertexNode { get; }

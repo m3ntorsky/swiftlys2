@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAudioSentence : ISchemaClass {
+public partial interface CAudioSentence : ISchemaClass, IConvertibleNativeHandle<CAudioSentence> {
+
+  static CAudioSentence IConvertibleNativeHandle<CAudioSentence>.From(nint handle) => new CAudioSentenceImpl(handle);
 
   
   public ref bool ShouldVoiceDuck { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundOpvarSetEntity : CBaseEntity {
+public partial interface CSoundOpvarSetEntity : CBaseEntity, IConvertibleNativeHandle<CSoundOpvarSetEntity> {
+
+  static CSoundOpvarSetEntity IConvertibleNativeHandle<CSoundOpvarSetEntity>.From(nint handle) => new CSoundOpvarSetEntityImpl(handle);
 
   
   public ref CUtlSymbolLarge StackName { get; }

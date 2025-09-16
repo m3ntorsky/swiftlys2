@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointValueRemapper : CBaseEntity {
+public partial interface CPointValueRemapper : CBaseEntity, IConvertibleNativeHandle<CPointValueRemapper> {
+
+  static CPointValueRemapper IConvertibleNativeHandle<CPointValueRemapper>.From(nint handle) => new CPointValueRemapperImpl(handle);
 
   
   public ref bool Disabled { get; }

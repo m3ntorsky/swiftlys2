@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerStaticAdditiveSynth__CTone : ISchemaClass {
+public partial interface CVoiceContainerStaticAdditiveSynth__CTone : ISchemaClass, IConvertibleNativeHandle<CVoiceContainerStaticAdditiveSynth__CTone> {
+
+  static CVoiceContainerStaticAdditiveSynth__CTone IConvertibleNativeHandle<CVoiceContainerStaticAdditiveSynth__CTone>.From(nint handle) => new CVoiceContainerStaticAdditiveSynth__CToneImpl(handle);
 
   
   // CUtlVector< CVoiceContainerStaticAdditiveSynth::CHarmonic >

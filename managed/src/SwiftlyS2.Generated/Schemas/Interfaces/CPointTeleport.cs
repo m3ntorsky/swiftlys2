@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointTeleport : CServerOnlyPointEntity {
+public partial interface CPointTeleport : CServerOnlyPointEntity, IConvertibleNativeHandle<CPointTeleport> {
+
+  static CPointTeleport IConvertibleNativeHandle<CPointTeleport>.From(nint handle) => new CPointTeleportImpl(handle);
 
   
   public ref Vector SaveOrigin { get; }

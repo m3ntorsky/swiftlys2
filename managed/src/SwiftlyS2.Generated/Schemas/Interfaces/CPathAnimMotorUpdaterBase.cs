@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathAnimMotorUpdaterBase : CAnimMotorUpdaterBase {
+public partial interface CPathAnimMotorUpdaterBase : CAnimMotorUpdaterBase, IConvertibleNativeHandle<CPathAnimMotorUpdaterBase> {
+
+  static CPathAnimMotorUpdaterBase IConvertibleNativeHandle<CPathAnimMotorUpdaterBase>.From(nint handle) => new CPathAnimMotorUpdaterBaseImpl(handle);
 
   
   public ref bool LockToPath { get; }

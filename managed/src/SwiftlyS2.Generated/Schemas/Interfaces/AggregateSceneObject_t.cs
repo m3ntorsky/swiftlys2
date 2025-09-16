@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AggregateSceneObject_t : ISchemaClass {
+public partial interface AggregateSceneObject_t : ISchemaClass, IConvertibleNativeHandle<AggregateSceneObject_t> {
+
+  static AggregateSceneObject_t IConvertibleNativeHandle<AggregateSceneObject_t>.From(nint handle) => new AggregateSceneObject_tImpl(handle);
 
   
   public ref ObjectTypeFlags_t AllFlags { get; }

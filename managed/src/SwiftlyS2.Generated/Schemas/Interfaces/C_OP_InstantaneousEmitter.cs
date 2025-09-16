@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_InstantaneousEmitter : CParticleFunctionEmitter {
+public partial interface C_OP_InstantaneousEmitter : CParticleFunctionEmitter, IConvertibleNativeHandle<C_OP_InstantaneousEmitter> {
+
+  static C_OP_InstantaneousEmitter IConvertibleNativeHandle<C_OP_InstantaneousEmitter>.From(nint handle) => new C_OP_InstantaneousEmitterImpl(handle);
 
   
   public CParticleCollectionFloatInput ParticlesToEmit { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointOrientationToCPVelocity : CParticleFunctionPreEmission {
+public partial interface C_OP_SetControlPointOrientationToCPVelocity : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetControlPointOrientationToCPVelocity> {
+
+  static C_OP_SetControlPointOrientationToCPVelocity IConvertibleNativeHandle<C_OP_SetControlPointOrientationToCPVelocity>.From(nint handle) => new C_OP_SetControlPointOrientationToCPVelocityImpl(handle);
 
   
   public ref int CPInput { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseTrailRenderer : CBaseRendererSource2 {
+public partial interface CBaseTrailRenderer : CBaseRendererSource2, IConvertibleNativeHandle<CBaseTrailRenderer> {
+
+  static CBaseTrailRenderer IConvertibleNativeHandle<CBaseTrailRenderer>.From(nint handle) => new CBaseTrailRendererImpl(handle);
 
   
   public ref ParticleOrientationChoiceList_t OrientationType { get; }

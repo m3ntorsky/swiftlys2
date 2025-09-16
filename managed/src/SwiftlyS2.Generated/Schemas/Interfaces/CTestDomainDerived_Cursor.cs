@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTestDomainDerived_Cursor : CPulseExecCursor {
+public partial interface CTestDomainDerived_Cursor : CPulseExecCursor, IConvertibleNativeHandle<CTestDomainDerived_Cursor> {
+
+  static CTestDomainDerived_Cursor IConvertibleNativeHandle<CTestDomainDerived_Cursor>.From(nint handle) => new CTestDomainDerived_CursorImpl(handle);
 
   
   public ref int CursorValueA { get; }

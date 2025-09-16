@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CResponseQueue : ISchemaClass {
+public partial interface CResponseQueue : ISchemaClass, IConvertibleNativeHandle<CResponseQueue> {
+
+  static CResponseQueue IConvertibleNativeHandle<CResponseQueue>.From(nint handle) => new CResponseQueueImpl(handle);
 
   
   public ref CUtlVector<PointerTo<CAI_Expresser>> ExpresserTargets { get; }

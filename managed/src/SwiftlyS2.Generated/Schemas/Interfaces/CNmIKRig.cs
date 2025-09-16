@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmIKRig : ISchemaClass {
+public partial interface CNmIKRig : ISchemaClass, IConvertibleNativeHandle<CNmIKRig> {
+
+  static CNmIKRig IConvertibleNativeHandle<CNmIKRig>.From(nint handle) => new CNmIKRigImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton { get; }

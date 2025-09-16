@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ModelBoneFlexDriver_t : ISchemaClass {
+public partial interface ModelBoneFlexDriver_t : ISchemaClass, IConvertibleNativeHandle<ModelBoneFlexDriver_t> {
+
+  static ModelBoneFlexDriver_t IConvertibleNativeHandle<ModelBoneFlexDriver_t>.From(nint handle) => new ModelBoneFlexDriver_tImpl(handle);
 
   
   public ref CUtlString BoneName { get; }

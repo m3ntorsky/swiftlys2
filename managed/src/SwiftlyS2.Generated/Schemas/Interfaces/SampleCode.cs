@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SampleCode : ISchemaClass {
+public partial interface SampleCode : ISchemaClass, IConvertibleNativeHandle<SampleCode> {
+
+  static SampleCode IConvertibleNativeHandle<SampleCode>.From(nint handle) => new SampleCodeImpl(handle);
 
   
   public ISchemaFixedArray<byte> SubCode { get; }

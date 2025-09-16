@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmGraphDefinition__ReferencedGraphSlot_t : ISchemaClass {
+public partial interface CNmGraphDefinition__ReferencedGraphSlot_t : ISchemaClass, IConvertibleNativeHandle<CNmGraphDefinition__ReferencedGraphSlot_t> {
+
+  static CNmGraphDefinition__ReferencedGraphSlot_t IConvertibleNativeHandle<CNmGraphDefinition__ReferencedGraphSlot_t>.From(nint handle) => new CNmGraphDefinition__ReferencedGraphSlot_tImpl(handle);
 
   
   public ref short NodeIdx { get; }

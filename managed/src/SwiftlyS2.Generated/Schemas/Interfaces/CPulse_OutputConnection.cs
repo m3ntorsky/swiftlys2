@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulse_OutputConnection : ISchemaClass {
+public partial interface CPulse_OutputConnection : ISchemaClass, IConvertibleNativeHandle<CPulse_OutputConnection> {
+
+  static CPulse_OutputConnection IConvertibleNativeHandle<CPulse_OutputConnection>.From(nint handle) => new CPulse_OutputConnectionImpl(handle);
 
   
   // PulseSymbol_t

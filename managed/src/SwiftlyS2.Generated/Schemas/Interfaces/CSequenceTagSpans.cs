@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSequenceTagSpans : ISchemaClass {
+public partial interface CSequenceTagSpans : ISchemaClass, IConvertibleNativeHandle<CSequenceTagSpans> {
+
+  static CSequenceTagSpans IConvertibleNativeHandle<CSequenceTagSpans>.From(nint handle) => new CSequenceTagSpansImpl(handle);
 
   
   public ref CGlobalSymbol SequenceName { get; }

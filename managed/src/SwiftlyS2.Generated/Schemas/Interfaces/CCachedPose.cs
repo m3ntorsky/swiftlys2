@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCachedPose : ISchemaClass {
+public partial interface CCachedPose : ISchemaClass, IConvertibleNativeHandle<CCachedPose> {
+
+  static CCachedPose IConvertibleNativeHandle<CCachedPose>.From(nint handle) => new CCachedPoseImpl(handle);
 
   
   public ref CUtlVector<CTransform> Transforms { get; }

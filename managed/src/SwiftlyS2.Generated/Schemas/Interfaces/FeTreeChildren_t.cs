@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeTreeChildren_t : ISchemaClass {
+public partial interface FeTreeChildren_t : ISchemaClass, IConvertibleNativeHandle<FeTreeChildren_t> {
+
+  static FeTreeChildren_t IConvertibleNativeHandle<FeTreeChildren_t>.From(nint handle) => new FeTreeChildren_tImpl(handle);
 
   
   public ISchemaFixedArray<ushort> Child { get; }

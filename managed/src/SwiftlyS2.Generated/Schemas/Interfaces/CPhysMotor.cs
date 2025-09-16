@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysMotor : CLogicalEntity {
+public partial interface CPhysMotor : CLogicalEntity, IConvertibleNativeHandle<CPhysMotor> {
+
+  static CPhysMotor IConvertibleNativeHandle<CPhysMotor>.From(nint handle) => new CPhysMotorImpl(handle);
 
   
   public ref CUtlSymbolLarge NameAttach { get; }

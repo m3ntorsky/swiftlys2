@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPropDoorRotatingBreakable : CPropDoorRotating {
+public partial interface CPropDoorRotatingBreakable : CPropDoorRotating, IConvertibleNativeHandle<CPropDoorRotatingBreakable> {
+
+  static CPropDoorRotatingBreakable IConvertibleNativeHandle<CPropDoorRotatingBreakable>.From(nint handle) => new CPropDoorRotatingBreakableImpl(handle);
 
   
   public ref bool Breakable { get; }

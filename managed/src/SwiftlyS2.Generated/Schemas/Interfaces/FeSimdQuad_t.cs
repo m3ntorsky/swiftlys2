@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeSimdQuad_t : ISchemaClass {
+public partial interface FeSimdQuad_t : ISchemaClass, IConvertibleNativeHandle<FeSimdQuad_t> {
+
+  static FeSimdQuad_t IConvertibleNativeHandle<FeSimdQuad_t>.From(nint handle) => new FeSimdQuad_tImpl(handle);
 
   
   // uint16[4]

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNetworkVarChainer : ISchemaClass {
+public partial interface CNetworkVarChainer : ISchemaClass, IConvertibleNativeHandle<CNetworkVarChainer> {
+
+  static CNetworkVarChainer IConvertibleNativeHandle<CNetworkVarChainer>.From(nint handle) => new CNetworkVarChainerImpl(handle);
 
   
   public ChangeAccessorFieldPathIndex_t PathIndex { get; }

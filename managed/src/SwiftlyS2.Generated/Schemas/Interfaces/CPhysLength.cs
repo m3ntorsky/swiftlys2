@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysLength : CPhysConstraint {
+public partial interface CPhysLength : CPhysConstraint, IConvertibleNativeHandle<CPhysLength> {
+
+  static CPhysLength IConvertibleNativeHandle<CPhysLength>.From(nint handle) => new CPhysLengthImpl(handle);
 
   
   public ISchemaFixedArray<Vector> Offset { get; }

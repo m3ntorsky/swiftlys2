@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventSplitScreenStateChanged_t : ISchemaClass {
+public partial interface EventSplitScreenStateChanged_t : ISchemaClass, IConvertibleNativeHandle<EventSplitScreenStateChanged_t> {
+
+  static EventSplitScreenStateChanged_t IConvertibleNativeHandle<EventSplitScreenStateChanged_t>.From(nint handle) => new EventSplitScreenStateChanged_tImpl(handle);
 
 
 

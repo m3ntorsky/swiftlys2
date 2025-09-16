@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RemapParticleCountToScalar : CParticleFunctionInitializer {
+public partial interface C_INIT_RemapParticleCountToScalar : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RemapParticleCountToScalar> {
+
+  static C_INIT_RemapParticleCountToScalar IConvertibleNativeHandle<C_INIT_RemapParticleCountToScalar>.From(nint handle) => new C_INIT_RemapParticleCountToScalarImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

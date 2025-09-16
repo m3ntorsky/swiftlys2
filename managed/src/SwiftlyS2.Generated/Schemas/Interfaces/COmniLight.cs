@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface COmniLight : CBarnLight {
+public partial interface COmniLight : CBarnLight, IConvertibleNativeHandle<COmniLight> {
+
+  static COmniLight IConvertibleNativeHandle<COmniLight>.From(nint handle) => new COmniLightImpl(handle);
 
   
   public ref float InnerAngle { get; }

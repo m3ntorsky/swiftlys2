@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqAutoLayerFlag : ISchemaClass {
+public partial interface CSeqAutoLayerFlag : ISchemaClass, IConvertibleNativeHandle<CSeqAutoLayerFlag> {
+
+  static CSeqAutoLayerFlag IConvertibleNativeHandle<CSeqAutoLayerFlag>.From(nint handle) => new CSeqAutoLayerFlagImpl(handle);
 
   
   public ref bool Post { get; }

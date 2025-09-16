@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionGraphGroup : ISchemaClass {
+public partial interface CMotionGraphGroup : ISchemaClass, IConvertibleNativeHandle<CMotionGraphGroup> {
+
+  static CMotionGraphGroup IConvertibleNativeHandle<CMotionGraphGroup>.From(nint handle) => new CMotionGraphGroupImpl(handle);
 
   
   public CMotionSearchDB SearchDB { get; }

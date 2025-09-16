@@ -64,7 +64,7 @@ internal static class PtrExtensions {
   }
 
   [MethodImpl(MethodImplOptions.AggressiveInlining)]
-  public static T AsHandle<T>(this nint ptr) where T : INativeHandle {
-    return NativeHandleConversion.As<T>(ptr);
+  public static T AsHandle<T>(this nint ptr) where T : INativeHandle, IConvertibleNativeHandle<T> {
+    return T.From(ptr);
   }
 }

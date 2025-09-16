@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSplineConstraint : CPhysConstraint {
+public partial interface CSplineConstraint : CPhysConstraint, IConvertibleNativeHandle<CSplineConstraint> {
+
+  static CSplineConstraint IConvertibleNativeHandle<CSplineConstraint>.From(nint handle) => new CSplineConstraintImpl(handle);
 
   
   public ref Vector AnchorOffsetRestore { get; }

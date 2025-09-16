@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointEntityFinder : CBaseEntity {
+public partial interface CPointEntityFinder : CBaseEntity, IConvertibleNativeHandle<CPointEntityFinder> {
+
+  static CPointEntityFinder IConvertibleNativeHandle<CPointEntityFinder>.From(nint handle) => new CPointEntityFinderImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Entity { get; }

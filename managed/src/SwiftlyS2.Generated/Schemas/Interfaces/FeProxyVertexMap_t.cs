@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeProxyVertexMap_t : ISchemaClass {
+public partial interface FeProxyVertexMap_t : ISchemaClass, IConvertibleNativeHandle<FeProxyVertexMap_t> {
+
+  static FeProxyVertexMap_t IConvertibleNativeHandle<FeProxyVertexMap_t>.From(nint handle) => new FeProxyVertexMap_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

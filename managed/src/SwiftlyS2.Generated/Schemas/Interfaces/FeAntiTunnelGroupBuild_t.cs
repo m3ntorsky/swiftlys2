@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeAntiTunnelGroupBuild_t : ISchemaClass {
+public partial interface FeAntiTunnelGroupBuild_t : ISchemaClass, IConvertibleNativeHandle<FeAntiTunnelGroupBuild_t> {
+
+  static FeAntiTunnelGroupBuild_t IConvertibleNativeHandle<FeAntiTunnelGroupBuild_t>.From(nint handle) => new FeAntiTunnelGroupBuild_tImpl(handle);
 
   
   public ref uint VertexMapHash { get; }

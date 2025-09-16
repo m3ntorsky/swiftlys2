@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCSequenceGroupData : ISchemaClass {
+public partial interface InfoForResourceTypeCSequenceGroupData : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCSequenceGroupData> {
+
+  static InfoForResourceTypeCSequenceGroupData IConvertibleNativeHandle<InfoForResourceTypeCSequenceGroupData>.From(nint handle) => new InfoForResourceTypeCSequenceGroupDataImpl(handle);
 
 
 

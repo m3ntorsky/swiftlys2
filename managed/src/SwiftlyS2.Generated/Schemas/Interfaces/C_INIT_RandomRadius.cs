@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomRadius : CParticleFunctionInitializer {
+public partial interface C_INIT_RandomRadius : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RandomRadius> {
+
+  static C_INIT_RandomRadius IConvertibleNativeHandle<C_INIT_RandomRadius>.From(nint handle) => new C_INIT_RandomRadiusImpl(handle);
 
   
   public ref float RadiusMin { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollConstraint : CPhysConstraint {
+public partial interface CRagdollConstraint : CPhysConstraint, IConvertibleNativeHandle<CRagdollConstraint> {
+
+  static CRagdollConstraint IConvertibleNativeHandle<CRagdollConstraint>.From(nint handle) => new CRagdollConstraintImpl(handle);
 
   
   public ref float Xmin { get; }

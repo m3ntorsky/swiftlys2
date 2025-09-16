@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionNodeSequence : CMotionNode {
+public partial interface CMotionNodeSequence : CMotionNode, IConvertibleNativeHandle<CMotionNodeSequence> {
+
+  static CMotionNodeSequence IConvertibleNativeHandle<CMotionNodeSequence>.From(nint handle) => new CMotionNodeSequenceImpl(handle);
 
   
   // CUtlVector< TagSpan_t >

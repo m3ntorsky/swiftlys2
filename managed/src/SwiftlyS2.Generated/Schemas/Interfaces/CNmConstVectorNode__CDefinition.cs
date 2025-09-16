@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmConstVectorNode__CDefinition : CNmVectorValueNode__CDefinition {
+public partial interface CNmConstVectorNode__CDefinition : CNmVectorValueNode__CDefinition, IConvertibleNativeHandle<CNmConstVectorNode__CDefinition> {
+
+  static CNmConstVectorNode__CDefinition IConvertibleNativeHandle<CNmConstVectorNode__CDefinition>.From(nint handle) => new CNmConstVectorNode__CDefinitionImpl(handle);
 
   
   public ref Vector Value { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateOnGrid : CParticleFunctionInitializer {
+public partial interface C_INIT_CreateOnGrid : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateOnGrid> {
+
+  static C_INIT_CreateOnGrid IConvertibleNativeHandle<C_INIT_CreateOnGrid>.From(nint handle) => new C_INIT_CreateOnGridImpl(handle);
 
   
   public CParticleCollectionFloatInput XCount { get; }

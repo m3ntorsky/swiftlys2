@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundStackSave : CLogicalEntity {
+public partial interface CSoundStackSave : CLogicalEntity, IConvertibleNativeHandle<CSoundStackSave> {
+
+  static CSoundStackSave IConvertibleNativeHandle<CSoundStackSave>.From(nint handle) => new CSoundStackSaveImpl(handle);
 
   
   public ref CUtlSymbolLarge StackName { get; }

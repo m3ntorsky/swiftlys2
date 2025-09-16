@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimScriptComponentUpdater : CAnimComponentUpdater {
+public partial interface CAnimScriptComponentUpdater : CAnimComponentUpdater, IConvertibleNativeHandle<CAnimScriptComponentUpdater> {
+
+  static CAnimScriptComponentUpdater IConvertibleNativeHandle<CAnimScriptComponentUpdater>.From(nint handle) => new CAnimScriptComponentUpdaterImpl(handle);
 
   
   public AnimScriptHandle Script { get; }

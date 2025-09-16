@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlantedC4 : CBaseAnimGraph {
+public partial interface CPlantedC4 : CBaseAnimGraph, IConvertibleNativeHandle<CPlantedC4> {
+
+  static CPlantedC4 IConvertibleNativeHandle<CPlantedC4>.From(nint handle) => new CPlantedC4Impl(handle);
 
   
   public ref bool BombTicking { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_PlaySequence__CursorState_t : ISchemaClass {
+public partial interface CPulseCell_PlaySequence__CursorState_t : ISchemaClass, IConvertibleNativeHandle<CPulseCell_PlaySequence__CursorState_t> {
+
+  static CPulseCell_PlaySequence__CursorState_t IConvertibleNativeHandle<CPulseCell_PlaySequence__CursorState_t>.From(nint handle) => new CPulseCell_PlaySequence__CursorState_tImpl(handle);
 
   
   public ref CHandle<CBaseAnimGraph> Target { get; }

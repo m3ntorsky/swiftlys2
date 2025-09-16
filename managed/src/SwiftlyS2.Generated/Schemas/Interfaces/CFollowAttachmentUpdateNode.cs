@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFollowAttachmentUpdateNode : CUnaryUpdateNode {
+public partial interface CFollowAttachmentUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CFollowAttachmentUpdateNode> {
+
+  static CFollowAttachmentUpdateNode IConvertibleNativeHandle<CFollowAttachmentUpdateNode>.From(nint handle) => new CFollowAttachmentUpdateNodeImpl(handle);
 
   
   public FollowAttachmentSettings_t OpFixedData { get; }

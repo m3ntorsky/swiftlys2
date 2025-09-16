@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RelationshipOverride_t : Relationship_t {
+public partial interface RelationshipOverride_t : Relationship_t, IConvertibleNativeHandle<RelationshipOverride_t> {
+
+  static RelationshipOverride_t IConvertibleNativeHandle<RelationshipOverride_t>.From(nint handle) => new RelationshipOverride_tImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Entity { get; }

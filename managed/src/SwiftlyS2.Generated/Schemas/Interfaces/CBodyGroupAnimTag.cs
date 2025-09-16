@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBodyGroupAnimTag : CAnimTagBase {
+public partial interface CBodyGroupAnimTag : CAnimTagBase, IConvertibleNativeHandle<CBodyGroupAnimTag> {
+
+  static CBodyGroupAnimTag IConvertibleNativeHandle<CBodyGroupAnimTag>.From(nint handle) => new CBodyGroupAnimTagImpl(handle);
 
   
   public ref int Priority { get; }

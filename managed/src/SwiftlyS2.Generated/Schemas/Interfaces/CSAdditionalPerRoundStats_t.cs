@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSAdditionalPerRoundStats_t : ISchemaClass {
+public partial interface CSAdditionalPerRoundStats_t : ISchemaClass, IConvertibleNativeHandle<CSAdditionalPerRoundStats_t> {
+
+  static CSAdditionalPerRoundStats_t IConvertibleNativeHandle<CSAdditionalPerRoundStats_t>.From(nint handle) => new CSAdditionalPerRoundStats_tImpl(handle);
 
   
   public ref int NumChickensKilled { get; }

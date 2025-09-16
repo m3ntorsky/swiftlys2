@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimTagManagerUpdater : ISchemaClass {
+public partial interface CAnimTagManagerUpdater : ISchemaClass, IConvertibleNativeHandle<CAnimTagManagerUpdater> {
+
+  static CAnimTagManagerUpdater IConvertibleNativeHandle<CAnimTagManagerUpdater>.From(nint handle) => new CAnimTagManagerUpdaterImpl(handle);
 
   
   // CUtlVector< CSmartPtr< CAnimTagBase > >

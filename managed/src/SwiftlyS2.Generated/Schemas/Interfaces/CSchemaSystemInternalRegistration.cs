@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSchemaSystemInternalRegistration : ISchemaClass {
+public partial interface CSchemaSystemInternalRegistration : ISchemaClass, IConvertibleNativeHandle<CSchemaSystemInternalRegistration> {
+
+  static CSchemaSystemInternalRegistration IConvertibleNativeHandle<CSchemaSystemInternalRegistration>.From(nint handle) => new CSchemaSystemInternalRegistrationImpl(handle);
 
   
   public ref Vector2D Vector2D { get; }

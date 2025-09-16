@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixBoxverbDesc_t : ISchemaClass {
+public partial interface VMixBoxverbDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixBoxverbDesc_t> {
+
+  static VMixBoxverbDesc_t IConvertibleNativeHandle<VMixBoxverbDesc_t>.From(nint handle) => new VMixBoxverbDesc_tImpl(handle);
 
   
   public ref float SizeMax { get; }

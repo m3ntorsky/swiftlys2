@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTeam : CBaseEntity {
+public partial interface CTeam : CBaseEntity, IConvertibleNativeHandle<CTeam> {
+
+  static CTeam IConvertibleNativeHandle<CTeam>.From(nint handle) => new CTeamImpl(handle);
 
   
   public ref CUtlVector<CHandle<CBasePlayerController>> PlayerControllers { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicLineToEntity : CLogicalEntity {
+public partial interface CLogicLineToEntity : CLogicalEntity, IConvertibleNativeHandle<CLogicLineToEntity> {
+
+  static CLogicLineToEntity IConvertibleNativeHandle<CLogicLineToEntity>.From(nint handle) => new CLogicLineToEntityImpl(handle);
 
   
   // CEntityOutputTemplate< Vector >

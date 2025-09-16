@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapTransformToVelocity : CParticleFunctionOperator {
+public partial interface C_OP_RemapTransformToVelocity : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapTransformToVelocity> {
+
+  static C_OP_RemapTransformToVelocity IConvertibleNativeHandle<C_OP_RemapTransformToVelocity>.From(nint handle) => new C_OP_RemapTransformToVelocityImpl(handle);
 
   
   public CParticleTransformInput TransformInput { get; }

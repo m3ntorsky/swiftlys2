@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MoodAnimation_t : ISchemaClass {
+public partial interface MoodAnimation_t : ISchemaClass, IConvertibleNativeHandle<MoodAnimation_t> {
+
+  static MoodAnimation_t IConvertibleNativeHandle<MoodAnimation_t>.From(nint handle) => new MoodAnimation_tImpl(handle);
 
   
   // CModelAnimNameWithDeltas

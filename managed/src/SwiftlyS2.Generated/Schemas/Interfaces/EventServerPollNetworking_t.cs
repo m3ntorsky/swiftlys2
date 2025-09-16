@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventServerPollNetworking_t : EventSimulate_t {
+public partial interface EventServerPollNetworking_t : EventSimulate_t, IConvertibleNativeHandle<EventServerPollNetworking_t> {
+
+  static EventServerPollNetworking_t IConvertibleNativeHandle<EventServerPollNetworking_t>.From(nint handle) => new EventServerPollNetworking_tImpl(handle);
 
 
 

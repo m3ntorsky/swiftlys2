@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_InheritFromParentParticles : CParticleFunctionInitializer {
+public partial interface C_INIT_InheritFromParentParticles : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_InheritFromParentParticles> {
+
+  static C_INIT_InheritFromParentParticles IConvertibleNativeHandle<C_INIT_InheritFromParentParticles>.From(nint handle) => new C_INIT_InheritFromParentParticlesImpl(handle);
 
   
   public ref float Scale { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SpawnPoint : CServerOnlyPointEntity {
+public partial interface SpawnPoint : CServerOnlyPointEntity, IConvertibleNativeHandle<SpawnPoint> {
+
+  static SpawnPoint IConvertibleNativeHandle<SpawnPoint>.From(nint handle) => new SpawnPointImpl(handle);
 
   
   public ref int Priority { get; }

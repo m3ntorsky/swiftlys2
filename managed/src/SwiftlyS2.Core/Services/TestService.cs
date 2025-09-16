@@ -47,8 +47,14 @@ internal class TestService {
             continue;
           }
 
-          CCSPlayerController player = new CCSPlayerControllerImpl(pRules);
-          _Logger.LogInformation("player: " + player.PlayerName.Value);
+          CBaseEntity ent = new CBaseEntityImpl(pRules);
+          
+          Stopwatch sw = Stopwatch.StartNew();
+          for (int i = 0; i < 100000; i++) {
+            CCSPlayerController player = ent.As<CCSPlayerController>();
+          }
+          sw.Stop();
+          _Logger.LogInformation("Time taken: " + sw.ElapsedMilliseconds + "ms");
 
           
 

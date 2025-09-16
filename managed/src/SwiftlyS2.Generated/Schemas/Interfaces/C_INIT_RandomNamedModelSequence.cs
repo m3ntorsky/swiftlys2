@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomNamedModelSequence : C_INIT_RandomNamedModelElement {
+public partial interface C_INIT_RandomNamedModelSequence : C_INIT_RandomNamedModelElement, IConvertibleNativeHandle<C_INIT_RandomNamedModelSequence> {
+
+  static C_INIT_RandomNamedModelSequence IConvertibleNativeHandle<C_INIT_RandomNamedModelSequence>.From(nint handle) => new C_INIT_RandomNamedModelSequenceImpl(handle);
 
 
 

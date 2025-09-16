@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDamageRecord : ISchemaClass {
+public partial interface CDamageRecord : ISchemaClass, IConvertibleNativeHandle<CDamageRecord> {
+
+  static CDamageRecord IConvertibleNativeHandle<CDamageRecord>.From(nint handle) => new CDamageRecordImpl(handle);
 
   
   public ref CHandle<CCSPlayerPawn> PlayerDamager { get; }

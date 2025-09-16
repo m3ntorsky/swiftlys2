@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeSphereRigid_t : ISchemaClass {
+public partial interface FeSphereRigid_t : ISchemaClass, IConvertibleNativeHandle<FeSphereRigid_t> {
+
+  static FeSphereRigid_t IConvertibleNativeHandle<FeSphereRigid_t>.From(nint handle) => new FeSphereRigid_tImpl(handle);
 
   
   public ref fltx4 Sphere { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CKeepUpright : CPointEntity {
+public partial interface CKeepUpright : CPointEntity, IConvertibleNativeHandle<CKeepUpright> {
+
+  static CKeepUpright IConvertibleNativeHandle<CKeepUpright>.From(nint handle) => new CKeepUprightImpl(handle);
 
   
   public ref Vector WorldGoalAxis { get; }

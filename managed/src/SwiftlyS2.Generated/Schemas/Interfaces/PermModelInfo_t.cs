@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PermModelInfo_t : ISchemaClass {
+public partial interface PermModelInfo_t : ISchemaClass, IConvertibleNativeHandle<PermModelInfo_t> {
+
+  static PermModelInfo_t IConvertibleNativeHandle<PermModelInfo_t>.From(nint handle) => new PermModelInfo_tImpl(handle);
 
   
   public ref uint Flags { get; }

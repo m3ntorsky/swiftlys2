@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapSpeedtoCP : CParticleFunctionPreEmission {
+public partial interface C_OP_RemapSpeedtoCP : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_RemapSpeedtoCP> {
+
+  static C_OP_RemapSpeedtoCP IConvertibleNativeHandle<C_OP_RemapSpeedtoCP>.From(nint handle) => new C_OP_RemapSpeedtoCPImpl(handle);
 
   
   public ref int InControlPointNumber { get; }

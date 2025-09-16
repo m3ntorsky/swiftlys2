@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoPlayerTerrorist : SpawnPoint {
+public partial interface CInfoPlayerTerrorist : SpawnPoint, IConvertibleNativeHandle<CInfoPlayerTerrorist> {
+
+  static CInfoPlayerTerrorist IConvertibleNativeHandle<CInfoPlayerTerrorist>.From(nint handle) => new CInfoPlayerTerroristImpl(handle);
 
 
 

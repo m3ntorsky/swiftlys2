@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvSoundscapeProxyAlias_snd_soundscape_proxy : CEnvSoundscapeProxy {
+public partial interface CEnvSoundscapeProxyAlias_snd_soundscape_proxy : CEnvSoundscapeProxy, IConvertibleNativeHandle<CEnvSoundscapeProxyAlias_snd_soundscape_proxy> {
+
+  static CEnvSoundscapeProxyAlias_snd_soundscape_proxy IConvertibleNativeHandle<CEnvSoundscapeProxyAlias_snd_soundscape_proxy>.From(nint handle) => new CEnvSoundscapeProxyAlias_snd_soundscape_proxyImpl(handle);
 
 
 

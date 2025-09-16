@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EntInput_t : ISchemaClass {
+public partial interface EntInput_t : ISchemaClass, IConvertibleNativeHandle<EntInput_t> {
+
+  static EntInput_t IConvertibleNativeHandle<EntInput_t>.From(nint handle) => new EntInput_tImpl(handle);
 
 
 

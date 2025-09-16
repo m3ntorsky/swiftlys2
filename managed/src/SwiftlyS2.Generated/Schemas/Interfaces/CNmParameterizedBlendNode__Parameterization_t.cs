@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmParameterizedBlendNode__Parameterization_t : ISchemaClass {
+public partial interface CNmParameterizedBlendNode__Parameterization_t : ISchemaClass, IConvertibleNativeHandle<CNmParameterizedBlendNode__Parameterization_t> {
+
+  static CNmParameterizedBlendNode__Parameterization_t IConvertibleNativeHandle<CNmParameterizedBlendNode__Parameterization_t>.From(nint handle) => new CNmParameterizedBlendNode__Parameterization_tImpl(handle);
 
   
   // CUtlLeanVectorFixedGrowable< CNmParameterizedBlendNode::BlendRange_t, 5 >

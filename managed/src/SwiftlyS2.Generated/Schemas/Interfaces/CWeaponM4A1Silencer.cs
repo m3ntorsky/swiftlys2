@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CWeaponM4A1Silencer : CCSWeaponBaseGun {
+public partial interface CWeaponM4A1Silencer : CCSWeaponBaseGun, IConvertibleNativeHandle<CWeaponM4A1Silencer> {
+
+  static CWeaponM4A1Silencer IConvertibleNativeHandle<CWeaponM4A1Silencer>.From(nint handle) => new CWeaponM4A1SilencerImpl(handle);
 
 
 

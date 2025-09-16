@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeAxialEdgeBend_t : ISchemaClass {
+public partial interface FeAxialEdgeBend_t : ISchemaClass, IConvertibleNativeHandle<FeAxialEdgeBend_t> {
+
+  static FeAxialEdgeBend_t IConvertibleNativeHandle<FeAxialEdgeBend_t>.From(nint handle) => new FeAxialEdgeBend_tImpl(handle);
 
   
   public ref float Te { get; }

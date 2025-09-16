@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncMonitor : CFuncBrush {
+public partial interface CFuncMonitor : CFuncBrush, IConvertibleNativeHandle<CFuncMonitor> {
+
+  static CFuncMonitor IConvertibleNativeHandle<CFuncMonitor>.From(nint handle) => new CFuncMonitorImpl(handle);
 
   
   public ref CUtlString TargetCamera { get; }

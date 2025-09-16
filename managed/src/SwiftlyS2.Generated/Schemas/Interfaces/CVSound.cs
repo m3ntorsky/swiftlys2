@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVSound : ISchemaClass {
+public partial interface CVSound : ISchemaClass, IConvertibleNativeHandle<CVSound> {
+
+  static CVSound IConvertibleNativeHandle<CVSound>.From(nint handle) => new CVSoundImpl(handle);
 
   
   public ref int Rate { get; }

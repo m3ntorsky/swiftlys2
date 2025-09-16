@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseGraphInstance_TestDomain_FakeEntityOwner : CBasePulseGraphInstance {
+public partial interface CPulseGraphInstance_TestDomain_FakeEntityOwner : CBasePulseGraphInstance, IConvertibleNativeHandle<CPulseGraphInstance_TestDomain_FakeEntityOwner> {
+
+  static CPulseGraphInstance_TestDomain_FakeEntityOwner IConvertibleNativeHandle<CPulseGraphInstance_TestDomain_FakeEntityOwner>.From(nint handle) => new CPulseGraphInstance_TestDomain_FakeEntityOwnerImpl(handle);
 
 
 

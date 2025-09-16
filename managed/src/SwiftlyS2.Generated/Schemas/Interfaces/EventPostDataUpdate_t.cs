@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventPostDataUpdate_t : ISchemaClass {
+public partial interface EventPostDataUpdate_t : ISchemaClass, IConvertibleNativeHandle<EventPostDataUpdate_t> {
+
+  static EventPostDataUpdate_t IConvertibleNativeHandle<EventPostDataUpdate_t>.From(nint handle) => new EventPostDataUpdate_tImpl(handle);
 
   
   public ref int Count { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundOpvarSetAABBEntity : CSoundOpvarSetPointEntity {
+public partial interface CSoundOpvarSetAABBEntity : CSoundOpvarSetPointEntity, IConvertibleNativeHandle<CSoundOpvarSetAABBEntity> {
+
+  static CSoundOpvarSetAABBEntity IConvertibleNativeHandle<CSoundOpvarSetAABBEntity>.From(nint handle) => new CSoundOpvarSetAABBEntityImpl(handle);
 
   
   public ref Vector DistanceInnerMins { get; }

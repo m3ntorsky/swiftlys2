@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ScreenSpaceDistanceToEdge : CParticleFunctionOperator {
+public partial interface C_OP_ScreenSpaceDistanceToEdge : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_ScreenSpaceDistanceToEdge> {
+
+  static C_OP_ScreenSpaceDistanceToEdge IConvertibleNativeHandle<C_OP_ScreenSpaceDistanceToEdge>.From(nint handle) => new C_OP_ScreenSpaceDistanceToEdgeImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

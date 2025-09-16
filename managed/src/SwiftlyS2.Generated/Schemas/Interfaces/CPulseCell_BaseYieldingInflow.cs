@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_BaseYieldingInflow : CPulseCell_BaseFlow {
+public partial interface CPulseCell_BaseYieldingInflow : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_BaseYieldingInflow> {
+
+  static CPulseCell_BaseYieldingInflow IConvertibleNativeHandle<CPulseCell_BaseYieldingInflow>.From(nint handle) => new CPulseCell_BaseYieldingInflowImpl(handle);
 
 
 

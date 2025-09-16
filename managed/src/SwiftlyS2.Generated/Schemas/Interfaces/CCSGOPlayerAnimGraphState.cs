@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSGOPlayerAnimGraphState : ISchemaClass {
+public partial interface CCSGOPlayerAnimGraphState : ISchemaClass, IConvertibleNativeHandle<CCSGOPlayerAnimGraphState> {
+
+  static CCSGOPlayerAnimGraphState IConvertibleNativeHandle<CCSGOPlayerAnimGraphState>.From(nint handle) => new CCSGOPlayerAnimGraphStateImpl(handle);
 
 
 

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDynamicLight : CBaseModelEntity {
+public partial interface CDynamicLight : CBaseModelEntity, IConvertibleNativeHandle<CDynamicLight> {
+
+  static CDynamicLight IConvertibleNativeHandle<CDynamicLight>.From(nint handle) => new CDynamicLightImpl(handle);
 
   
   public ref byte ActualFlags { get; }

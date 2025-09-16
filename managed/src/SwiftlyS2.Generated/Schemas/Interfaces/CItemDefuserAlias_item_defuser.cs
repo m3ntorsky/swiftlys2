@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CItemDefuserAlias_item_defuser : CItemDefuser {
+public partial interface CItemDefuserAlias_item_defuser : CItemDefuser, IConvertibleNativeHandle<CItemDefuserAlias_item_defuser> {
+
+  static CItemDefuserAlias_item_defuser IConvertibleNativeHandle<CItemDefuserAlias_item_defuser>.From(nint handle) => new CItemDefuserAlias_item_defuserImpl(handle);
 
 
 

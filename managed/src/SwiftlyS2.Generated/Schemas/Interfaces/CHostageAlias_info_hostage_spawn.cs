@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHostageAlias_info_hostage_spawn : CHostage {
+public partial interface CHostageAlias_info_hostage_spawn : CHostage, IConvertibleNativeHandle<CHostageAlias_info_hostage_spawn> {
+
+  static CHostageAlias_info_hostage_spawn IConvertibleNativeHandle<CHostageAlias_info_hostage_spawn>.From(nint handle) => new CHostageAlias_info_hostage_spawnImpl(handle);
 
 
 

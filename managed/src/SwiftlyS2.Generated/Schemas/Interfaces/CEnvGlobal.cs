@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvGlobal : CLogicalEntity {
+public partial interface CEnvGlobal : CLogicalEntity, IConvertibleNativeHandle<CEnvGlobal> {
+
+  static CEnvGlobal IConvertibleNativeHandle<CEnvGlobal>.From(nint handle) => new CEnvGlobalImpl(handle);
 
   
   // CEntityOutputTemplate< int32 >

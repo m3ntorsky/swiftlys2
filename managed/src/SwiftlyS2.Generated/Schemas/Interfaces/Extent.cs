@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface Extent : ISchemaClass {
+public partial interface Extent : ISchemaClass, IConvertibleNativeHandle<Extent> {
+
+  static Extent IConvertibleNativeHandle<Extent>.From(nint handle) => new ExtentImpl(handle);
 
   
   public ref Vector Lo { get; }

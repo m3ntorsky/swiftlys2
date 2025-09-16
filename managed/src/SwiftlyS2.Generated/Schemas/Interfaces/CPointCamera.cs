@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointCamera : CBaseEntity {
+public partial interface CPointCamera : CBaseEntity, IConvertibleNativeHandle<CPointCamera> {
+
+  static CPointCamera IConvertibleNativeHandle<CPointCamera>.From(nint handle) => new CPointCameraImpl(handle);
 
   
   public ref float FOV { get; }

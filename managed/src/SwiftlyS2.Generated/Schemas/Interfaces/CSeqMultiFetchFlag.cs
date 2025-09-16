@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqMultiFetchFlag : ISchemaClass {
+public partial interface CSeqMultiFetchFlag : ISchemaClass, IConvertibleNativeHandle<CSeqMultiFetchFlag> {
+
+  static CSeqMultiFetchFlag IConvertibleNativeHandle<CSeqMultiFetchFlag>.From(nint handle) => new CSeqMultiFetchFlagImpl(handle);
 
   
   public ref bool Realtime { get; }

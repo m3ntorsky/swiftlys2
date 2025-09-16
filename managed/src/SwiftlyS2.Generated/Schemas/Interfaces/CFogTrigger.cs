@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFogTrigger : CBaseTrigger {
+public partial interface CFogTrigger : CBaseTrigger, IConvertibleNativeHandle<CFogTrigger> {
+
+  static CFogTrigger IConvertibleNativeHandle<CFogTrigger>.From(nint handle) => new CFogTriggerImpl(handle);
 
   
   public fogparams_t Fog { get; }

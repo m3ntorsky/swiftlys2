@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_t : ISchemaClass {
+public partial interface CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_t : ISchemaClass, IConvertibleNativeHandle<CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_t> {
+
+  static CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_t IConvertibleNativeHandle<CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_t>.From(nint handle) => new CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_tImpl(handle);
 
   
   public ref int TestStep { get; }

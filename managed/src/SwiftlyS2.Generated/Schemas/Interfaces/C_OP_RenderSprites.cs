@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderSprites : CBaseRendererSource2 {
+public partial interface C_OP_RenderSprites : CBaseRendererSource2, IConvertibleNativeHandle<C_OP_RenderSprites> {
+
+  static C_OP_RenderSprites IConvertibleNativeHandle<C_OP_RenderSprites>.From(nint handle) => new C_OP_RenderSpritesImpl(handle);
 
   
   public CParticleCollectionRendererFloatInput SequenceOverride { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AmmoIndex_t : ISchemaClass {
+public partial interface AmmoIndex_t : ISchemaClass, IConvertibleNativeHandle<AmmoIndex_t> {
+
+  static AmmoIndex_t IConvertibleNativeHandle<AmmoIndex_t>.From(nint handle) => new AmmoIndex_tImpl(handle);
 
   
   public ref byte Value { get; }

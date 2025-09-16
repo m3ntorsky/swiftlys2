@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FollowAttachmentSettings_t : ISchemaClass {
+public partial interface FollowAttachmentSettings_t : ISchemaClass, IConvertibleNativeHandle<FollowAttachmentSettings_t> {
+
+  static FollowAttachmentSettings_t IConvertibleNativeHandle<FollowAttachmentSettings_t>.From(nint handle) => new FollowAttachmentSettings_tImpl(handle);
 
   
   public CAnimAttachment Attachment { get; }

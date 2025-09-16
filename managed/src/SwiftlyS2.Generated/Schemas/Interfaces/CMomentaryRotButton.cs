@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMomentaryRotButton : CRotButton {
+public partial interface CMomentaryRotButton : CRotButton, IConvertibleNativeHandle<CMomentaryRotButton> {
+
+  static CMomentaryRotButton IConvertibleNativeHandle<CMomentaryRotButton>.From(nint handle) => new CMomentaryRotButtonImpl(handle);
 
   
   // CEntityOutputTemplate< float32 >

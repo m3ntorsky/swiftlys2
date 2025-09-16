@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupActionSchema : ISchemaClass {
+public partial interface CSosGroupActionSchema : ISchemaClass, IConvertibleNativeHandle<CSosGroupActionSchema> {
+
+  static CSosGroupActionSchema IConvertibleNativeHandle<CSosGroupActionSchema>.From(nint handle) => new CSosGroupActionSchemaImpl(handle);
 
   
   public ref CUtlString Name { get; }

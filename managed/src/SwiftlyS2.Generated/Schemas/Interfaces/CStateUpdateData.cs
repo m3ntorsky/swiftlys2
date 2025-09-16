@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStateUpdateData : ISchemaClass {
+public partial interface CStateUpdateData : ISchemaClass, IConvertibleNativeHandle<CStateUpdateData> {
+
+  static CStateUpdateData IConvertibleNativeHandle<CStateUpdateData>.From(nint handle) => new CStateUpdateDataImpl(handle);
 
   
   public ref CUtlString Name { get; }

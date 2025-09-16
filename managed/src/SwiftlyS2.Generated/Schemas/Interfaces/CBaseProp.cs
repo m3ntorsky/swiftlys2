@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseProp : CBaseAnimGraph {
+public partial interface CBaseProp : CBaseAnimGraph, IConvertibleNativeHandle<CBaseProp> {
+
+  static CBaseProp IConvertibleNativeHandle<CBaseProp>.From(nint handle) => new CBasePropImpl(handle);
 
   
   public ref bool ModelOverrodeBlockLOS { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseRendererSource2 : CParticleFunctionRenderer {
+public partial interface CBaseRendererSource2 : CParticleFunctionRenderer, IConvertibleNativeHandle<CBaseRendererSource2> {
+
+  static CBaseRendererSource2 IConvertibleNativeHandle<CBaseRendererSource2>.From(nint handle) => new CBaseRendererSource2Impl(handle);
 
   
   public CParticleCollectionRendererFloatInput RadiusScale { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosSoundEventGroupSchema : ISchemaClass {
+public partial interface CSosSoundEventGroupSchema : ISchemaClass, IConvertibleNativeHandle<CSosSoundEventGroupSchema> {
+
+  static CSosSoundEventGroupSchema IConvertibleNativeHandle<CSosSoundEventGroupSchema>.From(nint handle) => new CSosSoundEventGroupSchemaImpl(handle);
 
   
   public ref CUtlString Name { get; }

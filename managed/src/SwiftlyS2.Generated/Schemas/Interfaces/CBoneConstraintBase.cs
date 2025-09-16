@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBoneConstraintBase : ISchemaClass {
+public partial interface CBoneConstraintBase : ISchemaClass, IConvertibleNativeHandle<CBoneConstraintBase> {
+
+  static CBoneConstraintBase IConvertibleNativeHandle<CBoneConstraintBase>.From(nint handle) => new CBoneConstraintBaseImpl(handle);
 
 
 

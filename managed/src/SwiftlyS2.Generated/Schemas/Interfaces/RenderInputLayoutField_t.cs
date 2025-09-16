@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RenderInputLayoutField_t : ISchemaClass {
+public partial interface RenderInputLayoutField_t : ISchemaClass, IConvertibleNativeHandle<RenderInputLayoutField_t> {
+
+  static RenderInputLayoutField_t IConvertibleNativeHandle<RenderInputLayoutField_t>.From(nint handle) => new RenderInputLayoutField_tImpl(handle);
 
   
   public ISchemaFixedString SemanticName { get; }

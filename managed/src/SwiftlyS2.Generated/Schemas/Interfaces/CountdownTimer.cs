@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CountdownTimer : ISchemaClass {
+public partial interface CountdownTimer : ISchemaClass, IConvertibleNativeHandle<CountdownTimer> {
+
+  static CountdownTimer IConvertibleNativeHandle<CountdownTimer>.From(nint handle) => new CountdownTimerImpl(handle);
 
   
   public ref float Duration { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMultiLightProxy : CLogicalEntity {
+public partial interface CMultiLightProxy : CLogicalEntity, IConvertibleNativeHandle<CMultiLightProxy> {
+
+  static CMultiLightProxy IConvertibleNativeHandle<CMultiLightProxy>.From(nint handle) => new CMultiLightProxyImpl(handle);
 
   
   public ref CUtlSymbolLarge LightNameFilter { get; }

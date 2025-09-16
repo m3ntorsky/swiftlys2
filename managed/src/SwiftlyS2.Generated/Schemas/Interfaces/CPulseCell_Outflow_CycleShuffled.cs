@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Outflow_CycleShuffled : CPulseCell_BaseFlow {
+public partial interface CPulseCell_Outflow_CycleShuffled : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_Outflow_CycleShuffled> {
+
+  static CPulseCell_Outflow_CycleShuffled IConvertibleNativeHandle<CPulseCell_Outflow_CycleShuffled>.From(nint handle) => new CPulseCell_Outflow_CycleShuffledImpl(handle);
 
   
   // CUtlVector< CPulse_OutflowConnection >

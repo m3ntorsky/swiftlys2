@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerEnvelopeAnalyzer : CVoiceContainerAnalysisBase {
+public partial interface CVoiceContainerEnvelopeAnalyzer : CVoiceContainerAnalysisBase, IConvertibleNativeHandle<CVoiceContainerEnvelopeAnalyzer> {
+
+  static CVoiceContainerEnvelopeAnalyzer IConvertibleNativeHandle<CVoiceContainerEnvelopeAnalyzer>.From(nint handle) => new CVoiceContainerEnvelopeAnalyzerImpl(handle);
 
   
   public ref EMode_t Mode { get; }

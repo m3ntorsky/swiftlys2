@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MaterialParamVector_t : MaterialParam_t {
+public partial interface MaterialParamVector_t : MaterialParam_t, IConvertibleNativeHandle<MaterialParamVector_t> {
+
+  static MaterialParamVector_t IConvertibleNativeHandle<MaterialParamVector_t>.From(nint handle) => new MaterialParamVector_tImpl(handle);
 
   
   public ref Vector4D Value { get; }

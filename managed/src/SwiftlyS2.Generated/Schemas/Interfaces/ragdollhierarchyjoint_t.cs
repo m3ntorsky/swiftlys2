@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ragdollhierarchyjoint_t : ISchemaClass {
+public partial interface ragdollhierarchyjoint_t : ISchemaClass, IConvertibleNativeHandle<ragdollhierarchyjoint_t> {
+
+  static ragdollhierarchyjoint_t IConvertibleNativeHandle<ragdollhierarchyjoint_t>.From(nint handle) => new ragdollhierarchyjoint_tImpl(handle);
 
   
   public ref int ParentIndex { get; }

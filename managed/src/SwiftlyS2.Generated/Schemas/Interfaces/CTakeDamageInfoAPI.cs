@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTakeDamageInfoAPI : ISchemaClass {
+public partial interface CTakeDamageInfoAPI : ISchemaClass, IConvertibleNativeHandle<CTakeDamageInfoAPI> {
+
+  static CTakeDamageInfoAPI IConvertibleNativeHandle<CTakeDamageInfoAPI>.From(nint handle) => new CTakeDamageInfoAPIImpl(handle);
 
 
 

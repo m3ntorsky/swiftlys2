@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBot : ISchemaClass {
+public partial interface CBot : ISchemaClass, IConvertibleNativeHandle<CBot> {
+
+  static CBot IConvertibleNativeHandle<CBot>.From(nint handle) => new CBotImpl(handle);
 
   
   public CCSPlayerController? Controller { get; }

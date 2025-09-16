@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncTimescale : CBaseEntity {
+public partial interface CFuncTimescale : CBaseEntity, IConvertibleNativeHandle<CFuncTimescale> {
+
+  static CFuncTimescale IConvertibleNativeHandle<CFuncTimescale>.From(nint handle) => new CFuncTimescaleImpl(handle);
 
   
   public ref float DesiredTimescale { get; }

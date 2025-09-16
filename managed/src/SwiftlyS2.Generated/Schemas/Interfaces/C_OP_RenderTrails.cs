@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderTrails : CBaseTrailRenderer {
+public partial interface C_OP_RenderTrails : CBaseTrailRenderer, IConvertibleNativeHandle<C_OP_RenderTrails> {
+
+  static C_OP_RenderTrails IConvertibleNativeHandle<C_OP_RenderTrails>.From(nint handle) => new C_OP_RenderTrailsImpl(handle);
 
   
   public ref bool EnableFadingAndClamping { get; }

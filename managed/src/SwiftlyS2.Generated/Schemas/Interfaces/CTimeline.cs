@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTimeline : IntervalTimer {
+public partial interface CTimeline : IntervalTimer, IConvertibleNativeHandle<CTimeline> {
+
+  static CTimeline IConvertibleNativeHandle<CTimeline>.From(nint handle) => new CTimelineImpl(handle);
 
   
   public ISchemaFixedArray<float> Values { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqPoseSetting : ISchemaClass {
+public partial interface CSeqPoseSetting : ISchemaClass, IConvertibleNativeHandle<CSeqPoseSetting> {
+
+  static CSeqPoseSetting IConvertibleNativeHandle<CSeqPoseSetting>.From(nint handle) => new CSeqPoseSettingImpl(handle);
 
   
   public ref CBufferString PoseParameter { get; }

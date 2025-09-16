@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_InheritFromPeerSystem : CParticleFunctionOperator {
+public partial interface C_OP_InheritFromPeerSystem : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_InheritFromPeerSystem> {
+
+  static C_OP_InheritFromPeerSystem IConvertibleNativeHandle<C_OP_InheritFromPeerSystem>.From(nint handle) => new C_OP_InheritFromPeerSystemImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

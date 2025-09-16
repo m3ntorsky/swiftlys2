@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_DecayMaintainCount : CParticleFunctionOperator {
+public partial interface C_OP_DecayMaintainCount : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_DecayMaintainCount> {
+
+  static C_OP_DecayMaintainCount IConvertibleNativeHandle<C_OP_DecayMaintainCount>.From(nint handle) => new C_OP_DecayMaintainCountImpl(handle);
 
   
   public ref int ParticlesToMaintain { get; }

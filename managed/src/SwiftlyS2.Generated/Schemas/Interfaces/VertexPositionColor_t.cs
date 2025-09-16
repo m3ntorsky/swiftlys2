@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VertexPositionColor_t : ISchemaClass {
+public partial interface VertexPositionColor_t : ISchemaClass, IConvertibleNativeHandle<VertexPositionColor_t> {
+
+  static VertexPositionColor_t IConvertibleNativeHandle<VertexPositionColor_t>.From(nint handle) => new VertexPositionColor_tImpl(handle);
 
   
   public ref Vector Position { get; }

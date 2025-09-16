@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeNodeWindBase_t : ISchemaClass {
+public partial interface FeNodeWindBase_t : ISchemaClass, IConvertibleNativeHandle<FeNodeWindBase_t> {
+
+  static FeNodeWindBase_t IConvertibleNativeHandle<FeNodeWindBase_t>.From(nint handle) => new FeNodeWindBase_tImpl(handle);
 
   
   public ref ushort NodeX0 { get; }

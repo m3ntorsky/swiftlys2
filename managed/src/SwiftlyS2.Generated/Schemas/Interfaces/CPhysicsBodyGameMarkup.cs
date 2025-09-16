@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysicsBodyGameMarkup : ISchemaClass {
+public partial interface CPhysicsBodyGameMarkup : ISchemaClass, IConvertibleNativeHandle<CPhysicsBodyGameMarkup> {
+
+  static CPhysicsBodyGameMarkup IConvertibleNativeHandle<CPhysicsBodyGameMarkup>.From(nint handle) => new CPhysicsBodyGameMarkupImpl(handle);
 
   
   public ref CUtlString TargetBody { get; }

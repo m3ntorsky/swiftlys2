@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface COrnamentProp : CDynamicProp {
+public partial interface COrnamentProp : CDynamicProp, IConvertibleNativeHandle<COrnamentProp> {
+
+  static COrnamentProp IConvertibleNativeHandle<COrnamentProp>.From(nint handle) => new COrnamentPropImpl(handle);
 
   
   public ref CUtlSymbolLarge InitialOwner { get; }

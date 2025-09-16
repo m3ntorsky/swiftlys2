@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBasePlatTrain : CBaseToggle {
+public partial interface CBasePlatTrain : CBaseToggle, IConvertibleNativeHandle<CBasePlatTrain> {
+
+  static CBasePlatTrain IConvertibleNativeHandle<CBasePlatTrain>.From(nint handle) => new CBasePlatTrainImpl(handle);
 
   
   public ref CUtlSymbolLarge NoiseMoving { get; }

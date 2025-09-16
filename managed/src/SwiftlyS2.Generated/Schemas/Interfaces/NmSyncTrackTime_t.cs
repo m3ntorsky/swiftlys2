@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface NmSyncTrackTime_t : ISchemaClass {
+public partial interface NmSyncTrackTime_t : ISchemaClass, IConvertibleNativeHandle<NmSyncTrackTime_t> {
+
+  static NmSyncTrackTime_t IConvertibleNativeHandle<NmSyncTrackTime_t>.From(nint handle) => new NmSyncTrackTime_tImpl(handle);
 
   
   public ref int EventIdx { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CIronSightController : ISchemaClass {
+public partial interface CIronSightController : ISchemaClass, IConvertibleNativeHandle<CIronSightController> {
+
+  static CIronSightController IConvertibleNativeHandle<CIronSightController>.From(nint handle) => new CIronSightControllerImpl(handle);
 
   
   public ref bool IronSightAvailable { get; }

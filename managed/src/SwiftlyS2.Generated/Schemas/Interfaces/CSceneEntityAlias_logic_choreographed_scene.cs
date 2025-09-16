@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSceneEntityAlias_logic_choreographed_scene : CSceneEntity {
+public partial interface CSceneEntityAlias_logic_choreographed_scene : CSceneEntity, IConvertibleNativeHandle<CSceneEntityAlias_logic_choreographed_scene> {
+
+  static CSceneEntityAlias_logic_choreographed_scene IConvertibleNativeHandle<CSceneEntityAlias_logic_choreographed_scene>.From(nint handle) => new CSceneEntityAlias_logic_choreographed_sceneImpl(handle);
 
 
 

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeSpringIntegrator_t : ISchemaClass {
+public partial interface FeSpringIntegrator_t : ISchemaClass, IConvertibleNativeHandle<FeSpringIntegrator_t> {
+
+  static FeSpringIntegrator_t IConvertibleNativeHandle<FeSpringIntegrator_t>.From(nint handle) => new FeSpringIntegrator_tImpl(handle);
 
   
   public ISchemaFixedArray<ushort> Node { get; }

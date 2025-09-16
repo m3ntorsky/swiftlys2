@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundOpvarSetAutoRoomEntity : CSoundOpvarSetPointEntity {
+public partial interface CSoundOpvarSetAutoRoomEntity : CSoundOpvarSetPointEntity, IConvertibleNativeHandle<CSoundOpvarSetAutoRoomEntity> {
+
+  static CSoundOpvarSetAutoRoomEntity IConvertibleNativeHandle<CSoundOpvarSetAutoRoomEntity>.From(nint handle) => new CSoundOpvarSetAutoRoomEntityImpl(handle);
 
   
   // CUtlVector< SoundOpvarTraceResult_t >

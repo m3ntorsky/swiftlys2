@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventProfileStorageAvailable_t : ISchemaClass {
+public partial interface EventProfileStorageAvailable_t : ISchemaClass, IConvertibleNativeHandle<EventProfileStorageAvailable_t> {
+
+  static EventProfileStorageAvailable_t IConvertibleNativeHandle<EventProfileStorageAvailable_t>.From(nint handle) => new EventProfileStorageAvailable_tImpl(handle);
 
   
   public ref uint SplitScreenSlot { get; }

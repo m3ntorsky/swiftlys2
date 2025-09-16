@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStateNodeTransitionData : ISchemaClass {
+public partial interface CStateNodeTransitionData : ISchemaClass, IConvertibleNativeHandle<CStateNodeTransitionData> {
+
+  static CStateNodeTransitionData IConvertibleNativeHandle<CStateNodeTransitionData>.From(nint handle) => new CStateNodeTransitionDataImpl(handle);
 
   
   public CBlendCurve Curve { get; }

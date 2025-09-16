@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventClientOutput_t : ISchemaClass {
+public partial interface EventClientOutput_t : ISchemaClass, IConvertibleNativeHandle<EventClientOutput_t> {
+
+  static EventClientOutput_t IConvertibleNativeHandle<EventClientOutput_t>.From(nint handle) => new EventClientOutput_tImpl(handle);
 
   
   public EngineLoopState_t LoopState { get; }

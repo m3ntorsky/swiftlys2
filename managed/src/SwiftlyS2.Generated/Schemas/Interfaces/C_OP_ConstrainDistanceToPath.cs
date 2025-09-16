@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ConstrainDistanceToPath : CParticleFunctionConstraint {
+public partial interface C_OP_ConstrainDistanceToPath : CParticleFunctionConstraint, IConvertibleNativeHandle<C_OP_ConstrainDistanceToPath> {
+
+  static C_OP_ConstrainDistanceToPath IConvertibleNativeHandle<C_OP_ConstrainDistanceToPath>.From(nint handle) => new C_OP_ConstrainDistanceToPathImpl(handle);
 
   
   public ref float MinDistance { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointFieldFromVectorExpression : CParticleFunctionPreEmission {
+public partial interface C_OP_SetControlPointFieldFromVectorExpression : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetControlPointFieldFromVectorExpression> {
+
+  static C_OP_SetControlPointFieldFromVectorExpression IConvertibleNativeHandle<C_OP_SetControlPointFieldFromVectorExpression>.From(nint handle) => new C_OP_SetControlPointFieldFromVectorExpressionImpl(handle);
 
   
   public ref VectorFloatExpressionType_t Expression { get; }

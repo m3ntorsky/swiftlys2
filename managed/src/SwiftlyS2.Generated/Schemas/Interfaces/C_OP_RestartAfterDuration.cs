@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RestartAfterDuration : CParticleFunctionOperator {
+public partial interface C_OP_RestartAfterDuration : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RestartAfterDuration> {
+
+  static C_OP_RestartAfterDuration IConvertibleNativeHandle<C_OP_RestartAfterDuration>.From(nint handle) => new C_OP_RestartAfterDurationImpl(handle);
 
   
   public ref float DurationMin { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ForceControlPointStub : CParticleFunctionPreEmission {
+public partial interface C_OP_ForceControlPointStub : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_ForceControlPointStub> {
+
+  static C_OP_ForceControlPointStub IConvertibleNativeHandle<C_OP_ForceControlPointStub>.From(nint handle) => new C_OP_ForceControlPointStubImpl(handle);
 
   
   public ref int ControlPoint { get; }

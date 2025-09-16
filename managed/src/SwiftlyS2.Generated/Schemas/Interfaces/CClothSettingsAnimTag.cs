@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CClothSettingsAnimTag : CAnimTagBase {
+public partial interface CClothSettingsAnimTag : CAnimTagBase, IConvertibleNativeHandle<CClothSettingsAnimTag> {
+
+  static CClothSettingsAnimTag IConvertibleNativeHandle<CClothSettingsAnimTag>.From(nint handle) => new CClothSettingsAnimTagImpl(handle);
 
   
   public ref float Stiffness { get; }

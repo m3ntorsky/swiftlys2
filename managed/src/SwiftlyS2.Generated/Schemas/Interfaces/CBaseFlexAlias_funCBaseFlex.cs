@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseFlexAlias_funCBaseFlex : CBaseFlex {
+public partial interface CBaseFlexAlias_funCBaseFlex : CBaseFlex, IConvertibleNativeHandle<CBaseFlexAlias_funCBaseFlex> {
+
+  static CBaseFlexAlias_funCBaseFlex IConvertibleNativeHandle<CBaseFlexAlias_funCBaseFlex>.From(nint handle) => new CBaseFlexAlias_funCBaseFlexImpl(handle);
 
 
 

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PARTICLE_EHANDLE__ : ISchemaClass {
+public partial interface PARTICLE_EHANDLE__ : ISchemaClass, IConvertibleNativeHandle<PARTICLE_EHANDLE__> {
+
+  static PARTICLE_EHANDLE__ IConvertibleNativeHandle<PARTICLE_EHANDLE__>.From(nint handle) => new PARTICLE_EHANDLE__Impl(handle);
 
   
   public ref int Unused { get; }

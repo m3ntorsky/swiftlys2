@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetSimulationRate : CParticleFunctionPreEmission {
+public partial interface C_OP_SetSimulationRate : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetSimulationRate> {
+
+  static C_OP_SetSimulationRate IConvertibleNativeHandle<C_OP_SetSimulationRate>.From(nint handle) => new C_OP_SetSimulationRateImpl(handle);
 
   
   public CParticleCollectionFloatInput SimulationScale { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmVectorNegateNode__CDefinition : CNmVectorValueNode__CDefinition {
+public partial interface CNmVectorNegateNode__CDefinition : CNmVectorValueNode__CDefinition, IConvertibleNativeHandle<CNmVectorNegateNode__CDefinition> {
+
+  static CNmVectorNegateNode__CDefinition IConvertibleNativeHandle<CNmVectorNegateNode__CDefinition>.From(nint handle) => new CNmVectorNegateNode__CDefinitionImpl(handle);
 
   
   public ref short InputValueNodeIdx { get; }

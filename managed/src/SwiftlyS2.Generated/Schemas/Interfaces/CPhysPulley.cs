@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysPulley : CPhysConstraint {
+public partial interface CPhysPulley : CPhysConstraint, IConvertibleNativeHandle<CPhysPulley> {
+
+  static CPhysPulley IConvertibleNativeHandle<CPhysPulley>.From(nint handle) => new CPhysPulleyImpl(handle);
 
   
   public ref Vector Position2 { get; }

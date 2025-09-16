@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysSurfacePropertiesAudio : ISchemaClass {
+public partial interface CPhysSurfacePropertiesAudio : ISchemaClass, IConvertibleNativeHandle<CPhysSurfacePropertiesAudio> {
+
+  static CPhysSurfacePropertiesAudio IConvertibleNativeHandle<CPhysSurfacePropertiesAudio>.From(nint handle) => new CPhysSurfacePropertiesAudioImpl(handle);
 
   
   public ref float Reflectivity { get; }

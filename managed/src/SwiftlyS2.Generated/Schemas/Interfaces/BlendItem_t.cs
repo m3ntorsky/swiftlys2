@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface BlendItem_t : ISchemaClass {
+public partial interface BlendItem_t : ISchemaClass, IConvertibleNativeHandle<BlendItem_t> {
+
+  static BlendItem_t IConvertibleNativeHandle<BlendItem_t>.From(nint handle) => new BlendItem_tImpl(handle);
 
   
   // CUtlVector< TagSpan_t >

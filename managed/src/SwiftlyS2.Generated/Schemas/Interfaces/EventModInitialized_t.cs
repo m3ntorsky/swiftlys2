@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventModInitialized_t : ISchemaClass {
+public partial interface EventModInitialized_t : ISchemaClass, IConvertibleNativeHandle<EventModInitialized_t> {
+
+  static EventModInitialized_t IConvertibleNativeHandle<EventModInitialized_t>.From(nint handle) => new EventModInitialized_tImpl(handle);
 
 
 

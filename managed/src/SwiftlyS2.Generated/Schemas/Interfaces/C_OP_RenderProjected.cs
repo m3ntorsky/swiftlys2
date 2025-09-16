@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderProjected : CParticleFunctionRenderer {
+public partial interface C_OP_RenderProjected : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderProjected> {
+
+  static C_OP_RenderProjected IConvertibleNativeHandle<C_OP_RenderProjected>.From(nint handle) => new C_OP_RenderProjectedImpl(handle);
 
   
   public ref bool ProjectCharacter { get; }

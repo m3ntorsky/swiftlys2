@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FilterDamageType : CBaseFilter {
+public partial interface FilterDamageType : CBaseFilter, IConvertibleNativeHandle<FilterDamageType> {
+
+  static FilterDamageType IConvertibleNativeHandle<FilterDamageType>.From(nint handle) => new FilterDamageTypeImpl(handle);
 
   
   public ref int DamageType { get; }

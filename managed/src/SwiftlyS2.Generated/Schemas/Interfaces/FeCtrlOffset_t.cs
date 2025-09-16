@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeCtrlOffset_t : ISchemaClass {
+public partial interface FeCtrlOffset_t : ISchemaClass, IConvertibleNativeHandle<FeCtrlOffset_t> {
+
+  static FeCtrlOffset_t IConvertibleNativeHandle<FeCtrlOffset_t>.From(nint handle) => new FeCtrlOffset_tImpl(handle);
 
   
   public ref Vector Offset { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCVPhysXSurfacePropertiesList : ISchemaClass {
+public partial interface InfoForResourceTypeCVPhysXSurfacePropertiesList : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCVPhysXSurfacePropertiesList> {
+
+  static InfoForResourceTypeCVPhysXSurfacePropertiesList IConvertibleNativeHandle<InfoForResourceTypeCVPhysXSurfacePropertiesList>.From(nint handle) => new InfoForResourceTypeCVPhysXSurfacePropertiesListImpl(handle);
 
 
 

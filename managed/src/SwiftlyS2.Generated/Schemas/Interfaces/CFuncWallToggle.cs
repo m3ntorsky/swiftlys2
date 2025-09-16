@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncWallToggle : CFuncWall {
+public partial interface CFuncWallToggle : CFuncWall, IConvertibleNativeHandle<CFuncWallToggle> {
+
+  static CFuncWallToggle IConvertibleNativeHandle<CFuncWallToggle>.From(nint handle) => new CFuncWallToggleImpl(handle);
 
 
 

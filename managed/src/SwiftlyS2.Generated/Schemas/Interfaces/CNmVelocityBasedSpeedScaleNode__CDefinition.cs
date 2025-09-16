@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmVelocityBasedSpeedScaleNode__CDefinition : CNmSpeedScaleBaseNode__CDefinition {
+public partial interface CNmVelocityBasedSpeedScaleNode__CDefinition : CNmSpeedScaleBaseNode__CDefinition, IConvertibleNativeHandle<CNmVelocityBasedSpeedScaleNode__CDefinition> {
+
+  static CNmVelocityBasedSpeedScaleNode__CDefinition IConvertibleNativeHandle<CNmVelocityBasedSpeedScaleNode__CDefinition>.From(nint handle) => new CNmVelocityBasedSpeedScaleNode__CDefinitionImpl(handle);
 
 
 

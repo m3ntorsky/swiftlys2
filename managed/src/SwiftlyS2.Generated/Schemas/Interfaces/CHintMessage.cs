@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHintMessage : ISchemaClass {
+public partial interface CHintMessage : ISchemaClass, IConvertibleNativeHandle<CHintMessage> {
+
+  static CHintMessage IConvertibleNativeHandle<CHintMessage>.From(nint handle) => new CHintMessageImpl(handle);
 
   
   public ref CString HintString { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmConstBoolNode__CDefinition : CNmBoolValueNode__CDefinition {
+public partial interface CNmConstBoolNode__CDefinition : CNmBoolValueNode__CDefinition, IConvertibleNativeHandle<CNmConstBoolNode__CDefinition> {
+
+  static CNmConstBoolNode__CDefinition IConvertibleNativeHandle<CNmConstBoolNode__CDefinition>.From(nint handle) => new CNmConstBoolNode__CDefinitionImpl(handle);
 
   
   public ref bool Value { get; }

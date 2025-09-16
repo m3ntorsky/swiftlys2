@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseCombatCharacter : CBaseFlex {
+public partial interface CBaseCombatCharacter : CBaseFlex, IConvertibleNativeHandle<CBaseCombatCharacter> {
+
+  static CBaseCombatCharacter IConvertibleNativeHandle<CBaseCombatCharacter>.From(nint handle) => new CBaseCombatCharacterImpl(handle);
 
   
   public ref bool ForceServerRagdoll { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRulePointEntity : CRuleEntity {
+public partial interface CRulePointEntity : CRuleEntity, IConvertibleNativeHandle<CRulePointEntity> {
+
+  static CRulePointEntity IConvertibleNativeHandle<CRulePointEntity>.From(nint handle) => new CRulePointEntityImpl(handle);
 
   
   public ref int Score { get; }

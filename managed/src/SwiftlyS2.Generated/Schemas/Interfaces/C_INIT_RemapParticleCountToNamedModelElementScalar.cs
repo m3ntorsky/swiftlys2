@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RemapParticleCountToNamedModelElementScalar : C_INIT_RemapParticleCountToScalar {
+public partial interface C_INIT_RemapParticleCountToNamedModelElementScalar : C_INIT_RemapParticleCountToScalar, IConvertibleNativeHandle<C_INIT_RemapParticleCountToNamedModelElementScalar> {
+
+  static C_INIT_RemapParticleCountToNamedModelElementScalar IConvertibleNativeHandle<C_INIT_RemapParticleCountToNamedModelElementScalar>.From(nint handle) => new C_INIT_RemapParticleCountToNamedModelElementScalarImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseButton : CBaseToggle {
+public partial interface CBaseButton : CBaseToggle, IConvertibleNativeHandle<CBaseButton> {
+
+  static CBaseButton IConvertibleNativeHandle<CBaseButton>.From(nint handle) => new CBaseButtonImpl(handle);
 
   
   public ref QAngle MoveEntitySpace { get; }

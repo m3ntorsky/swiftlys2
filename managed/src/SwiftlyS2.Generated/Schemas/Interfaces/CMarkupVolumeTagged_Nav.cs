@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMarkupVolumeTagged_Nav : CMarkupVolumeTagged {
+public partial interface CMarkupVolumeTagged_Nav : CMarkupVolumeTagged, IConvertibleNativeHandle<CMarkupVolumeTagged_Nav> {
+
+  static CMarkupVolumeTagged_Nav IConvertibleNativeHandle<CMarkupVolumeTagged_Nav>.From(nint handle) => new CMarkupVolumeTagged_NavImpl(handle);
 
   
   public ref NavScopeFlags_t Scopes { get; }

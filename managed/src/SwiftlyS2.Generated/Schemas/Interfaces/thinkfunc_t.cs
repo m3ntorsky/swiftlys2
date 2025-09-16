@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface thinkfunc_t : ISchemaClass {
+public partial interface thinkfunc_t : ISchemaClass, IConvertibleNativeHandle<thinkfunc_t> {
+
+  static thinkfunc_t IConvertibleNativeHandle<thinkfunc_t>.From(nint handle) => new thinkfunc_tImpl(handle);
 
   
   // HSCRIPT

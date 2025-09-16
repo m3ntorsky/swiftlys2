@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventClientSceneSystemThreadStateChange_t : ISchemaClass {
+public partial interface EventClientSceneSystemThreadStateChange_t : ISchemaClass, IConvertibleNativeHandle<EventClientSceneSystemThreadStateChange_t> {
+
+  static EventClientSceneSystemThreadStateChange_t IConvertibleNativeHandle<EventClientSceneSystemThreadStateChange_t>.From(nint handle) => new EventClientSceneSystemThreadStateChange_tImpl(handle);
 
   
   public ref bool ThreadsActive { get; }

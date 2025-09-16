@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventAppShutdown_t : ISchemaClass {
+public partial interface EventAppShutdown_t : ISchemaClass, IConvertibleNativeHandle<EventAppShutdown_t> {
+
+  static EventAppShutdown_t IConvertibleNativeHandle<EventAppShutdown_t>.From(nint handle) => new EventAppShutdown_tImpl(handle);
 
   
   public ref int Dummy0 { get; }

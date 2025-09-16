@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface BaseSceneObjectOverride_t : ISchemaClass {
+public partial interface BaseSceneObjectOverride_t : ISchemaClass, IConvertibleNativeHandle<BaseSceneObjectOverride_t> {
+
+  static BaseSceneObjectOverride_t IConvertibleNativeHandle<BaseSceneObjectOverride_t>.From(nint handle) => new BaseSceneObjectOverride_tImpl(handle);
 
   
   public ref uint SceneObjectIndex { get; }

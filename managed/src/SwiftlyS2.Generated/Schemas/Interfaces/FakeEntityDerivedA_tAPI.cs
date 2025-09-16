@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FakeEntityDerivedA_tAPI : ISchemaClass {
+public partial interface FakeEntityDerivedA_tAPI : ISchemaClass, IConvertibleNativeHandle<FakeEntityDerivedA_tAPI> {
+
+  static FakeEntityDerivedA_tAPI IConvertibleNativeHandle<FakeEntityDerivedA_tAPI>.From(nint handle) => new FakeEntityDerivedA_tAPIImpl(handle);
 
 
 

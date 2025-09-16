@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBodyGroupSetting : ISchemaClass {
+public partial interface CBodyGroupSetting : ISchemaClass, IConvertibleNativeHandle<CBodyGroupSetting> {
+
+  static CBodyGroupSetting IConvertibleNativeHandle<CBodyGroupSetting>.From(nint handle) => new CBodyGroupSettingImpl(handle);
 
   
   public ref CUtlString BodyGroupName { get; }

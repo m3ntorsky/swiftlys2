@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ParticleNamedValueConfiguration_t : ISchemaClass {
+public partial interface ParticleNamedValueConfiguration_t : ISchemaClass, IConvertibleNativeHandle<ParticleNamedValueConfiguration_t> {
+
+  static ParticleNamedValueConfiguration_t IConvertibleNativeHandle<ParticleNamedValueConfiguration_t>.From(nint handle) => new ParticleNamedValueConfiguration_tImpl(handle);
 
   
   public ref CUtlString ConfigName { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysExplosion : CPointEntity {
+public partial interface CPhysExplosion : CPointEntity, IConvertibleNativeHandle<CPhysExplosion> {
+
+  static CPhysExplosion IConvertibleNativeHandle<CPhysExplosion>.From(nint handle) => new CPhysExplosionImpl(handle);
 
   
   public ref bool ExplodeOnSpawn { get; }

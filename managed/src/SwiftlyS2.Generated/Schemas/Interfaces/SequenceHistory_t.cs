@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SequenceHistory_t : ISchemaClass {
+public partial interface SequenceHistory_t : ISchemaClass, IConvertibleNativeHandle<SequenceHistory_t> {
+
+  static SequenceHistory_t IConvertibleNativeHandle<SequenceHistory_t>.From(nint handle) => new SequenceHistory_tImpl(handle);
 
   
   public HSequence Sequence { get; }

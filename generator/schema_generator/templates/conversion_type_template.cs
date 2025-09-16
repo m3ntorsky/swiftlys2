@@ -1,1 +1,0 @@
-    conversions.RegisterConversion<$INTERFACE_NAME$, $CLASS_NAME$>((handle) => new $CLASS_NAME$(handle));

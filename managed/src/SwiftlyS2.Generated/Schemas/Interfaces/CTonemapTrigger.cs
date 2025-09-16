@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTonemapTrigger : CBaseTrigger {
+public partial interface CTonemapTrigger : CBaseTrigger, IConvertibleNativeHandle<CTonemapTrigger> {
+
+  static CTonemapTrigger IConvertibleNativeHandle<CTonemapTrigger>.From(nint handle) => new CTonemapTriggerImpl(handle);
 
   
   public ref CUtlSymbolLarge TonemapControllerName { get; }

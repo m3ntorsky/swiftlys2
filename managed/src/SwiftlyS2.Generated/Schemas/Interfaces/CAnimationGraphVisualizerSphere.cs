@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimationGraphVisualizerSphere : CAnimationGraphVisualizerPrimitiveBase {
+public partial interface CAnimationGraphVisualizerSphere : CAnimationGraphVisualizerPrimitiveBase, IConvertibleNativeHandle<CAnimationGraphVisualizerSphere> {
+
+  static CAnimationGraphVisualizerSphere IConvertibleNativeHandle<CAnimationGraphVisualizerSphere>.From(nint handle) => new CAnimationGraphVisualizerSphereImpl(handle);
 
   
   public ref Vector WsPosition { get; }

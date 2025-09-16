@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixPitchShiftDesc_t : ISchemaClass {
+public partial interface VMixPitchShiftDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixPitchShiftDesc_t> {
+
+  static VMixPitchShiftDesc_t IConvertibleNativeHandle<VMixPitchShiftDesc_t>.From(nint handle) => new VMixPitchShiftDesc_tImpl(handle);
 
   
   public ref int GrainSampleCount { get; }

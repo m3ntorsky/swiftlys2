@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCPanoramaLayout : ISchemaClass {
+public partial interface InfoForResourceTypeCPanoramaLayout : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCPanoramaLayout> {
+
+  static InfoForResourceTypeCPanoramaLayout IConvertibleNativeHandle<InfoForResourceTypeCPanoramaLayout>.From(nint handle) => new InfoForResourceTypeCPanoramaLayoutImpl(handle);
 
 
 

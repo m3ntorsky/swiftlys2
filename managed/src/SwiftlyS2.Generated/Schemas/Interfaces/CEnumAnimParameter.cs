@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnumAnimParameter : CConcreteAnimParameter {
+public partial interface CEnumAnimParameter : CConcreteAnimParameter, IConvertibleNativeHandle<CEnumAnimParameter> {
+
+  static CEnumAnimParameter IConvertibleNativeHandle<CEnumAnimParameter>.From(nint handle) => new CEnumAnimParameterImpl(handle);
 
   
   public ref byte DefaultValue { get; }

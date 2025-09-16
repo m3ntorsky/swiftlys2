@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBasePlayerPawn : CBaseCombatCharacter {
+public partial interface CBasePlayerPawn : CBaseCombatCharacter, IConvertibleNativeHandle<CBasePlayerPawn> {
+
+  static CBasePlayerPawn IConvertibleNativeHandle<CBasePlayerPawn>.From(nint handle) => new CBasePlayerPawnImpl(handle);
 
   
   public CPlayer_WeaponServices? WeaponServices { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRectLight : CBarnLight {
+public partial interface CRectLight : CBarnLight, IConvertibleNativeHandle<CRectLight> {
+
+  static CRectLight IConvertibleNativeHandle<CRectLight>.From(nint handle) => new CRectLightImpl(handle);
 
   
   public ref bool ShowLight { get; }

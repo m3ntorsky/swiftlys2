@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseModelEntity : CBaseEntity {
+public partial interface CBaseModelEntity : CBaseEntity, IConvertibleNativeHandle<CBaseModelEntity> {
+
+  static CBaseModelEntity IConvertibleNativeHandle<CBaseModelEntity>.From(nint handle) => new CBaseModelEntityImpl(handle);
 
   
   public CRenderComponent? CRenderComponent { get; }

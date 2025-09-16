@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface vphysics_save_cphysicsbody_t : RnBodyDesc_t {
+public partial interface vphysics_save_cphysicsbody_t : RnBodyDesc_t, IConvertibleNativeHandle<vphysics_save_cphysicsbody_t> {
+
+  static vphysics_save_cphysicsbody_t IConvertibleNativeHandle<vphysics_save_cphysicsbody_t>.From(nint handle) => new vphysics_save_cphysicsbody_tImpl(handle);
 
   
   public ref ulong OldPointer { get; }

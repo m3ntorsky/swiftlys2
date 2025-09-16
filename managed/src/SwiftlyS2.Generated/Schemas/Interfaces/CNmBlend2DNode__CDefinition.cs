@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmBlend2DNode__CDefinition : CNmPoseNode__CDefinition {
+public partial interface CNmBlend2DNode__CDefinition : CNmPoseNode__CDefinition, IConvertibleNativeHandle<CNmBlend2DNode__CDefinition> {
+
+  static CNmBlend2DNode__CDefinition IConvertibleNativeHandle<CNmBlend2DNode__CDefinition>.From(nint handle) => new CNmBlend2DNode__CDefinitionImpl(handle);
 
   
   // CUtlVectorFixedGrowable< int16, 5 >

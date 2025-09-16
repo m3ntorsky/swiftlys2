@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionDataSet : ISchemaClass {
+public partial interface CMotionDataSet : ISchemaClass, IConvertibleNativeHandle<CMotionDataSet> {
+
+  static CMotionDataSet IConvertibleNativeHandle<CMotionDataSet>.From(nint handle) => new CMotionDataSetImpl(handle);
 
   
   // CUtlVector< CMotionGraphGroup >

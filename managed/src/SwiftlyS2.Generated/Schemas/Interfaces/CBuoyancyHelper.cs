@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBuoyancyHelper : ISchemaClass {
+public partial interface CBuoyancyHelper : ISchemaClass, IConvertibleNativeHandle<CBuoyancyHelper> {
+
+  static CBuoyancyHelper IConvertibleNativeHandle<CBuoyancyHelper>.From(nint handle) => new CBuoyancyHelperImpl(handle);
 
   
   public ref CUtlStringToken FluidType { get; }

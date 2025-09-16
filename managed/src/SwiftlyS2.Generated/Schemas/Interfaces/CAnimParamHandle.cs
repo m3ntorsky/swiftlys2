@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimParamHandle : ISchemaClass {
+public partial interface CAnimParamHandle : ISchemaClass, IConvertibleNativeHandle<CAnimParamHandle> {
+
+  static CAnimParamHandle IConvertibleNativeHandle<CAnimParamHandle>.From(nint handle) => new CAnimParamHandleImpl(handle);
 
   
   public ref AnimParamType_t Type { get; }

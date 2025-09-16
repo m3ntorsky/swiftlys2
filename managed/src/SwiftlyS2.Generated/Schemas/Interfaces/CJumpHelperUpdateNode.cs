@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CJumpHelperUpdateNode : CSequenceUpdateNode {
+public partial interface CJumpHelperUpdateNode : CSequenceUpdateNode, IConvertibleNativeHandle<CJumpHelperUpdateNode> {
+
+  static CJumpHelperUpdateNode IConvertibleNativeHandle<CJumpHelperUpdateNode>.From(nint handle) => new CJumpHelperUpdateNodeImpl(handle);
 
   
   public CAnimParamHandle TargetParam { get; }

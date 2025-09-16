@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootTrajectory : ISchemaClass {
+public partial interface CFootTrajectory : ISchemaClass, IConvertibleNativeHandle<CFootTrajectory> {
+
+  static CFootTrajectory IConvertibleNativeHandle<CFootTrajectory>.From(nint handle) => new CFootTrajectoryImpl(handle);
 
   
   public ref Vector Offset { get; }

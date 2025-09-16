@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MaterialParamString_t : MaterialParam_t {
+public partial interface MaterialParamString_t : MaterialParam_t, IConvertibleNativeHandle<MaterialParamString_t> {
+
+  static MaterialParamString_t IConvertibleNativeHandle<MaterialParamString_t>.From(nint handle) => new MaterialParamString_tImpl(handle);
 
   
   public ref CUtlString Value { get; }

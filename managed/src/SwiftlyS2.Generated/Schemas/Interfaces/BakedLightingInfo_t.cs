@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface BakedLightingInfo_t : ISchemaClass {
+public partial interface BakedLightingInfo_t : ISchemaClass, IConvertibleNativeHandle<BakedLightingInfo_t> {
+
+  static BakedLightingInfo_t IConvertibleNativeHandle<BakedLightingInfo_t>.From(nint handle) => new BakedLightingInfo_tImpl(handle);
 
   
   public ref uint LightmapVersionNumber { get; }

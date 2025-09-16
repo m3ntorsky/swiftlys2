@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHitBoxSet : ISchemaClass {
+public partial interface CHitBoxSet : ISchemaClass, IConvertibleNativeHandle<CHitBoxSet> {
+
+  static CHitBoxSet IConvertibleNativeHandle<CHitBoxSet>.From(nint handle) => new CHitBoxSetImpl(handle);
 
   
   public ref CUtlString Name { get; }

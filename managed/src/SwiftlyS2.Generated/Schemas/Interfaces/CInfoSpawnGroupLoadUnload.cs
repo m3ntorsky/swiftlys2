@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoSpawnGroupLoadUnload : CLogicalEntity {
+public partial interface CInfoSpawnGroupLoadUnload : CLogicalEntity, IConvertibleNativeHandle<CInfoSpawnGroupLoadUnload> {
+
+  static CInfoSpawnGroupLoadUnload IConvertibleNativeHandle<CInfoSpawnGroupLoadUnload>.From(nint handle) => new CInfoSpawnGroupLoadUnloadImpl(handle);
 
   
   public CEntityIOOutput OnSpawnGroupLoadStarted { get; }

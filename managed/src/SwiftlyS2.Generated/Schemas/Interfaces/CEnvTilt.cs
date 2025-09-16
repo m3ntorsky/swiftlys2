@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvTilt : CPointEntity {
+public partial interface CEnvTilt : CPointEntity, IConvertibleNativeHandle<CEnvTilt> {
+
+  static CEnvTilt IConvertibleNativeHandle<CEnvTilt>.From(nint handle) => new CEnvTiltImpl(handle);
 
   
   public ref float Duration { get; }

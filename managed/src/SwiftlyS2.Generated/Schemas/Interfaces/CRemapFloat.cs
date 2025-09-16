@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRemapFloat : ISchemaClass {
+public partial interface CRemapFloat : ISchemaClass, IConvertibleNativeHandle<CRemapFloat> {
+
+  static CRemapFloat IConvertibleNativeHandle<CRemapFloat>.From(nint handle) => new CRemapFloatImpl(handle);
 
   
   public ISchemaFixedArray<float> Value { get; }

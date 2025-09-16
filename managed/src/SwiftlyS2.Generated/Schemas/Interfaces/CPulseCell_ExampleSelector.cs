@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_ExampleSelector : CPulseCell_BaseFlow {
+public partial interface CPulseCell_ExampleSelector : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_ExampleSelector> {
+
+  static CPulseCell_ExampleSelector IConvertibleNativeHandle<CPulseCell_ExampleSelector>.From(nint handle) => new CPulseCell_ExampleSelectorImpl(handle);
 
   
   public PulseSelectorOutflowList_t OutflowList { get; }

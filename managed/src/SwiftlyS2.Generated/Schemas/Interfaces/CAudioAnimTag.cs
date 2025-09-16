@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAudioAnimTag : CAnimTagBase {
+public partial interface CAudioAnimTag : CAnimTagBase, IConvertibleNativeHandle<CAudioAnimTag> {
+
+  static CAudioAnimTag IConvertibleNativeHandle<CAudioAnimTag>.From(nint handle) => new CAudioAnimTagImpl(handle);
 
   
   public ref CUtlString ClipName { get; }

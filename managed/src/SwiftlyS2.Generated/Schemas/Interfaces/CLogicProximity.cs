@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicProximity : CPointEntity {
+public partial interface CLogicProximity : CPointEntity, IConvertibleNativeHandle<CLogicProximity> {
+
+  static CLogicProximity IConvertibleNativeHandle<CLogicProximity>.From(nint handle) => new CLogicProximityImpl(handle);
 
 
 

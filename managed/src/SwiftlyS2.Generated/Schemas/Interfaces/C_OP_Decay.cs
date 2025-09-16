@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_Decay : CParticleFunctionOperator {
+public partial interface C_OP_Decay : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_Decay> {
+
+  static C_OP_Decay IConvertibleNativeHandle<C_OP_Decay>.From(nint handle) => new C_OP_DecayImpl(handle);
 
   
   public ref bool RopeDecay { get; }

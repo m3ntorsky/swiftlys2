@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IKDemoCaptureSettings_t : ISchemaClass {
+public partial interface IKDemoCaptureSettings_t : ISchemaClass, IConvertibleNativeHandle<IKDemoCaptureSettings_t> {
+
+  static IKDemoCaptureSettings_t IConvertibleNativeHandle<IKDemoCaptureSettings_t>.From(nint handle) => new IKDemoCaptureSettings_tImpl(handle);
 
   
   public ref CUtlString ParentBoneName { get; }

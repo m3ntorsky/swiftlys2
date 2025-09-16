@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_DifferencePreviousParticle : CParticleFunctionOperator {
+public partial interface C_OP_DifferencePreviousParticle : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_DifferencePreviousParticle> {
+
+  static C_OP_DifferencePreviousParticle IConvertibleNativeHandle<C_OP_DifferencePreviousParticle>.From(nint handle) => new C_OP_DifferencePreviousParticleImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldInput { get; }

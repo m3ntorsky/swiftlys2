@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointToHMD : CParticleFunctionPreEmission {
+public partial interface C_OP_SetControlPointToHMD : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetControlPointToHMD> {
+
+  static C_OP_SetControlPointToHMD IConvertibleNativeHandle<C_OP_SetControlPointToHMD>.From(nint handle) => new C_OP_SetControlPointToHMDImpl(handle);
 
   
   public ref int CP1 { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FourCovMatrices3 : ISchemaClass {
+public partial interface FourCovMatrices3 : ISchemaClass, IConvertibleNativeHandle<FourCovMatrices3> {
+
+  static FourCovMatrices3 IConvertibleNativeHandle<FourCovMatrices3>.From(nint handle) => new FourCovMatrices3Impl(handle);
 
   
   public ref FourVectors Diag { get; }

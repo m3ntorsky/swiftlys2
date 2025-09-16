@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseRuntimeBlackboardReferenceIndex_t : ISchemaClass {
+public partial interface PulseRuntimeBlackboardReferenceIndex_t : ISchemaClass, IConvertibleNativeHandle<PulseRuntimeBlackboardReferenceIndex_t> {
+
+  static PulseRuntimeBlackboardReferenceIndex_t IConvertibleNativeHandle<PulseRuntimeBlackboardReferenceIndex_t>.From(nint handle) => new PulseRuntimeBlackboardReferenceIndex_tImpl(handle);
 
   
   public ref short Value { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointRotation : CParticleFunctionPreEmission {
+public partial interface C_OP_SetControlPointRotation : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetControlPointRotation> {
+
+  static C_OP_SetControlPointRotation IConvertibleNativeHandle<C_OP_SetControlPointRotation>.From(nint handle) => new C_OP_SetControlPointRotationImpl(handle);
 
   
   public CParticleCollectionVecInput RotAxis { get; }

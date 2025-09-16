@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSSDSMsg_PreLayer : CSSDSMsg_LayerBase {
+public partial interface CSSDSMsg_PreLayer : CSSDSMsg_LayerBase, IConvertibleNativeHandle<CSSDSMsg_PreLayer> {
+
+  static CSSDSMsg_PreLayer IConvertibleNativeHandle<CSSDSMsg_PreLayer>.From(nint handle) => new CSSDSMsg_PreLayerImpl(handle);
 
 
 

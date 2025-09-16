@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CC4 : CCSWeaponBase {
+public partial interface CC4 : CCSWeaponBase, IConvertibleNativeHandle<CC4> {
+
+  static CC4 IConvertibleNativeHandle<CC4>.From(nint handle) => new CC4Impl(handle);
 
   
   public ref Vector LastValidPlayerHeldPosition { get; }

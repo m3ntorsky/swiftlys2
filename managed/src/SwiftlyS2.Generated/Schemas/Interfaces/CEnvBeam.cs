@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvBeam : CBeam {
+public partial interface CEnvBeam : CBeam, IConvertibleNativeHandle<CEnvBeam> {
+
+  static CEnvBeam IConvertibleNativeHandle<CEnvBeam>.From(nint handle) => new CEnvBeamImpl(handle);
 
   
   public ref int Active { get; }

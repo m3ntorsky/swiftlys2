@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ModelMeshBufferData_t : ISchemaClass {
+public partial interface ModelMeshBufferData_t : ISchemaClass, IConvertibleNativeHandle<ModelMeshBufferData_t> {
+
+  static ModelMeshBufferData_t IConvertibleNativeHandle<ModelMeshBufferData_t>.From(nint handle) => new ModelMeshBufferData_tImpl(handle);
 
   
   public ref int BlockIndex { get; }

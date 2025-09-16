@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointToImpactPoint : CParticleFunctionPreEmission {
+public partial interface C_OP_SetControlPointToImpactPoint : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetControlPointToImpactPoint> {
+
+  static C_OP_SetControlPointToImpactPoint IConvertibleNativeHandle<C_OP_SetControlPointToImpactPoint>.From(nint handle) => new C_OP_SetControlPointToImpactPointImpl(handle);
 
   
   public ref int CPOut { get; }
