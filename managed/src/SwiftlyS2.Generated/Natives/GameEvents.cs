@@ -380,39 +380,21 @@ internal static class NativeGameEvents {
 
   }
   }
-  private unsafe static delegate* unmanaged<byte*, nint, ulong> _AddListenerPreCallback;
+  private unsafe static delegate* unmanaged<nint, ulong> _AddListenerPreCallback;
   /// <summary>
-  /// the callback should receive the following: IntPtr gameEvent, bool* dontBroadcast, return bool (true -> ignored, false -> supercede)
+  /// the callback should receive the following: uint32 eventNameHash, IntPtr gameEvent, bool* dontBroadcast, return bool (true -> ignored, false -> supercede)
   /// </summary>
-  public unsafe static ulong AddListenerPreCallback(string eventName, nint callback) {
-    var pool = ArrayPool<byte>.Shared;
-    var eventNameLength = Encoding.UTF8.GetByteCount(eventName);
-    var eventNameBuffer = pool.Rent(eventNameLength + 1);
-    Encoding.UTF8.GetBytes(eventName, eventNameBuffer);
-    eventNameBuffer[eventNameLength] = 0;
-    fixed (byte* eventNameBufferPtr = eventNameBuffer) {
-    var ret = _AddListenerPreCallback(eventNameBufferPtr, callback);
-    pool.Return(eventNameBuffer);
-
+  public unsafe static ulong AddListenerPreCallback(nint callback) {
+    var ret = _AddListenerPreCallback(callback);
     return ret;
   }
-  }
-  private unsafe static delegate* unmanaged<byte*, nint, ulong> _AddListenerPostCallback;
+  private unsafe static delegate* unmanaged<nint, ulong> _AddListenerPostCallback;
   /// <summary>
-  /// the callback should receive the following: IntPtr gameEvent, bool* dontBroadcast, return bool (true -> ignored, false -> supercede)
+  /// the callback should receive the following: uint32 eventNameHash, IntPtr gameEvent, bool* dontBroadcast, return bool (true -> ignored, false -> supercede)
   /// </summary>
-  public unsafe static ulong AddListenerPostCallback(string eventName, nint callback) {
-    var pool = ArrayPool<byte>.Shared;
-    var eventNameLength = Encoding.UTF8.GetByteCount(eventName);
-    var eventNameBuffer = pool.Rent(eventNameLength + 1);
-    Encoding.UTF8.GetBytes(eventName, eventNameBuffer);
-    eventNameBuffer[eventNameLength] = 0;
-    fixed (byte* eventNameBufferPtr = eventNameBuffer) {
-    var ret = _AddListenerPostCallback(eventNameBufferPtr, callback);
-    pool.Return(eventNameBuffer);
-
+  public unsafe static ulong AddListenerPostCallback(nint callback) {
+    var ret = _AddListenerPostCallback(callback);
     return ret;
-  }
   }
   private unsafe static delegate* unmanaged<ulong, void> _RemoveListenerPreCallback;
   public unsafe static void RemoveListenerPreCallback(ulong listenerID) {

@@ -1,0 +1,19 @@
+using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.GameEvents;
+using SwiftlyS2.Core.GameEventDefinitions;
+
+namespace SwiftlyS2.Shared.GameEventDefinitions;
+
+/// <summary> 
+/// Event "update_matchmaking_stats"
+/// </summary>
+public interface EventUpdateMatchmakingStats : IGameEvent<EventUpdateMatchmakingStats> {
+
+  static EventUpdateMatchmakingStats IGameEvent<EventUpdateMatchmakingStats>.FromAllocated(nint ptr) => new EventUpdateMatchmakingStatsImpl(ptr, true);
+
+  static EventUpdateMatchmakingStats IGameEvent<EventUpdateMatchmakingStats>.FromExternal(nint ptr) => new EventUpdateMatchmakingStatsImpl(ptr, false);
+
+  static string IGameEvent<EventUpdateMatchmakingStats>.GetName() => "update_matchmaking_stats";
+
+  static uint IGameEvent<EventUpdateMatchmakingStats>.GetHash() => 0xFB94AEE7u;
+}

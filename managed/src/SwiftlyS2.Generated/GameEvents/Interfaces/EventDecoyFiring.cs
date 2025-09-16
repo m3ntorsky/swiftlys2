@@ -1,0 +1,45 @@
+using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.GameEvents;
+using SwiftlyS2.Core.GameEventDefinitions;
+
+namespace SwiftlyS2.Shared.GameEventDefinitions;
+
+/// <summary> 
+/// Event "decoy_firing"
+/// </summary>
+public interface EventDecoyFiring : IGameEvent<EventDecoyFiring> {
+
+  static EventDecoyFiring IGameEvent<EventDecoyFiring>.FromAllocated(nint ptr) => new EventDecoyFiringImpl(ptr, true);
+
+  static EventDecoyFiring IGameEvent<EventDecoyFiring>.FromExternal(nint ptr) => new EventDecoyFiringImpl(ptr, false);
+
+  static string IGameEvent<EventDecoyFiring>.GetName() => "decoy_firing";
+
+  static uint IGameEvent<EventDecoyFiring>.GetHash() => 0xA0DD941Fu;
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerController UserId { get; }
+
+  /// <summary>
+  /// type: short
+  /// </summary>
+  short EntityID { get; set; }
+
+  /// <summary>
+  /// type: float
+  /// </summary>
+  float X { get; set; }
+
+  /// <summary>
+  /// type: float
+  /// </summary>
+  float Y { get; set; }
+
+  /// <summary>
+  /// type: float
+  /// </summary>
+  float Z { get; set; }
+
+}

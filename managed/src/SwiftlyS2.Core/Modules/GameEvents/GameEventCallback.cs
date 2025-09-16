@@ -8,7 +8,7 @@ using SwiftlyS2.Shared.Misc;
 namespace SwiftlyS2.Core.GameEvents;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-internal delegate int UnmanagedEventCallback(nint pEvent, nint pDontBroadcast);
+internal delegate HookResult UnmanagedEventCallback(uint hash, nint pEvent, nint pDontBroadcast);
 
 internal abstract class GameEventCallback : IEquatable<GameEventCallback> {
 
@@ -55,17 +55,22 @@ internal class GameEventCallback<T> : GameEventCallback where T : IGameEvent<T>
     _callback = callback;
     _logger = loggerFactory.CreateLogger<GameEventCallback<T>>();
 
-    _unmanagedCallback = (pEvent, pDontBroadcast) => {
+    _unmanagedCallback = (hash, pEvent, pDontBroadcast) => {
       try {
+        if (hash != T.GetHash()) return HookResult.Continue;
         var @event = T.FromExternal(pEvent);
         var result = _callback(@event);
         pDontBroadcast.Write(@event.DontBroadcast);
-        return (int)result;
+        return result;
       } catch (Exception e) {
         _logger.LogError(e, "Error in event {EventName} callback from context {ContextName}", EventName, _Context.Name);
-        return (int)HookResult.Continue;
+        return HookResult.Continue;
       } 
     };
     UnmanagedWrapperPtr = Marshal.GetFunctionPointerForDelegate(_unmanagedCallback);
+  }
+
+  ~GameEventCallback() {
+    throw new Exception("GameEventCallback destructor called");
   }
 }

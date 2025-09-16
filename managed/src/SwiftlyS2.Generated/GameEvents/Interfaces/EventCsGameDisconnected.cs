@@ -1,0 +1,19 @@
+using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.GameEvents;
+using SwiftlyS2.Core.GameEventDefinitions;
+
+namespace SwiftlyS2.Shared.GameEventDefinitions;
+
+/// <summary> 
+/// Event "cs_game_disconnected"
+/// </summary>
+public interface EventCsGameDisconnected : IGameEvent<EventCsGameDisconnected> {
+
+  static EventCsGameDisconnected IGameEvent<EventCsGameDisconnected>.FromAllocated(nint ptr) => new EventCsGameDisconnectedImpl(ptr, true);
+
+  static EventCsGameDisconnected IGameEvent<EventCsGameDisconnected>.FromExternal(nint ptr) => new EventCsGameDisconnectedImpl(ptr, false);
+
+  static string IGameEvent<EventCsGameDisconnected>.GetName() => "cs_game_disconnected";
+
+  static uint IGameEvent<EventCsGameDisconnected>.GetHash() => 0xC1557D00u;
+}

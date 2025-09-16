@@ -12,10 +12,11 @@ internal static class GameEventPublisher {
   public static void Subscribe(GameEventCallback callback) {
     lock (_lock) {
       unsafe {
+        NativeGameEvents.RegisterListener(callback.EventName);
         if (callback.IsPreHook) {
-          _callbacks[callback] = NativeGameEvents.AddListenerPreCallback(callback.EventName, callback.UnmanagedWrapperPtr);
+          _callbacks[callback] = NativeGameEvents.AddListenerPreCallback(callback.UnmanagedWrapperPtr);
         } else {
-          _callbacks[callback] = NativeGameEvents.AddListenerPostCallback(callback.EventName, callback.UnmanagedWrapperPtr);
+          _callbacks[callback] = NativeGameEvents.AddListenerPostCallback(callback.UnmanagedWrapperPtr);
         }
       }
     }

@@ -1,0 +1,26 @@
+using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.GameEvents;
+using SwiftlyS2.Core.GameEventDefinitions;
+
+namespace SwiftlyS2.Shared.GameEventDefinitions;
+
+/// <summary> 
+/// Event "hltv_replay_status"
+/// </summary>
+public interface EventHltvReplayStatus : IGameEvent<EventHltvReplayStatus> {
+
+  static EventHltvReplayStatus IGameEvent<EventHltvReplayStatus>.FromAllocated(nint ptr) => new EventHltvReplayStatusImpl(ptr, true);
+
+  static EventHltvReplayStatus IGameEvent<EventHltvReplayStatus>.FromExternal(nint ptr) => new EventHltvReplayStatusImpl(ptr, false);
+
+  static string IGameEvent<EventHltvReplayStatus>.GetName() => "hltv_replay_status";
+
+  static uint IGameEvent<EventHltvReplayStatus>.GetHash() => 0x262D2D46u;
+  /// <summary>
+  /// reason for hltv replay status change ()
+  /// <br/>
+  /// type: long
+  /// </summary>
+  int Reason { get; set; }
+
+}

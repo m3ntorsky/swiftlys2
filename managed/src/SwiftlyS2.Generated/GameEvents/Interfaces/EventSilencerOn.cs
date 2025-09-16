@@ -1,0 +1,25 @@
+using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.GameEvents;
+using SwiftlyS2.Core.GameEventDefinitions;
+
+namespace SwiftlyS2.Shared.GameEventDefinitions;
+
+/// <summary> 
+/// Event "silencer_on"
+/// </summary>
+public interface EventSilencerOn : IGameEvent<EventSilencerOn> {
+
+  static EventSilencerOn IGameEvent<EventSilencerOn>.FromAllocated(nint ptr) => new EventSilencerOnImpl(ptr, true);
+
+  static EventSilencerOn IGameEvent<EventSilencerOn>.FromExternal(nint ptr) => new EventSilencerOnImpl(ptr, false);
+
+  static string IGameEvent<EventSilencerOn>.GetName() => "silencer_on";
+
+  static uint IGameEvent<EventSilencerOn>.GetHash() => 0xA834DFDAu;
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerController UserId { get; }
+
+}

@@ -2,6 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Shared;
+using SwiftlyS2.Shared.GameEventDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.Plugins;
@@ -48,13 +49,10 @@ public class TestPlugin : BasePlugin {
 
     var logger = core.LoggerFactory.CreateLogger<TestPlugin>();
 
-    logger.LogInformation("TestPlugin loaded");
-
-
-    core.GameEvent.HookPre<EventTest>((@event) =>
+    logger.LogInformation("TestPlugin jump loaded");
+    core.GameEvent.HookPre<EventPlayerJump>(@event =>
     {
-      var controller = @event.GetPlayerController("userid");
-      Console.WriteLine("Player teamed: "+controller.PlayerName.Value);
+      logger.LogInformation("Dmg health: " + @event.UserId.PlayerName.Value);
       return HookResult.Continue;
     });
 
