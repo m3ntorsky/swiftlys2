@@ -23,6 +23,7 @@
 
 void CPrecacher::AddItem(const std::string& item)
 {
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     if (m_sCacheItems.contains(item)) return;
     if (m_sCachedItems.contains(item)) return;
     if (item.size() <= 0) return;
@@ -37,6 +38,7 @@ bool CPrecacher::HasItemInList(const std::string& item)
 
 void CPrecacher::CacheItems(IEntityResourceManifest* pResourceManifest)
 {
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
     static int l_iAddResourceOffset = gamedata->GetOffsets()->Fetch("CEntityResourceManifest::AddResource");
@@ -56,6 +58,7 @@ bool CPrecacher::IsItemCached(const std::string& item)
 
 void CPrecacher::RemoveItem(const std::string& item)
 {
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     if (!m_sCacheItems.contains(item)) return;
     m_sCacheItems.erase(item);
 }

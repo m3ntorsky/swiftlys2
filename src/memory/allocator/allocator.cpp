@@ -20,6 +20,7 @@
 
 void* MemoryAllocator::Alloc(uint64_t size)
 {
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     void* ptr = malloc(size);
     if (ptr)
     {
@@ -31,6 +32,7 @@ void* MemoryAllocator::Alloc(uint64_t size)
 
 void* MemoryAllocator::TrackedAlloc(uint64_t size, std::string identifier, std::string details)
 {
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     void* ptr = Alloc(size);
     if (ptr)
     {
@@ -41,6 +43,7 @@ void* MemoryAllocator::TrackedAlloc(uint64_t size, std::string identifier, std::
 
 void MemoryAllocator::Free(void* ptr)
 {
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     auto it = allocations.find(ptr);
     if (it != allocations.end())
     {
@@ -60,6 +63,7 @@ void MemoryAllocator::Free(void* ptr)
 
 void* MemoryAllocator::Resize(void* ptr, uint64_t newSize)
 {
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     auto it = allocations.find(ptr);
     if (it != allocations.end())
     {
@@ -145,6 +149,7 @@ std::map<void*, uint64_t> MemoryAllocator::GetAllocations()
 
 MemoryAllocator::~MemoryAllocator()
 {
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     for (const auto& [ptr, size] : allocations)
     {
         free(ptr);

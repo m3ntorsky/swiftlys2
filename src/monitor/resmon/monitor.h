@@ -21,6 +21,8 @@
 
 #include <api/monitor/resmon/monitor.h>
 
+#include <mutex>
+
 struct RecordInfo
 {
     char event;
@@ -49,6 +51,8 @@ private:
     std::map<std::string, std::map<std::string, double>> m_mOngoingRecords;
 
     std::vector<RecordInfo> m_vProfilerEvents;
+
+    std::mutex m_mtxLock;
 
     void ClearData();
 };

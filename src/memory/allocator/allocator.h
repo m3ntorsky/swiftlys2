@@ -21,6 +21,8 @@
 
 #include <api/memory/allocator/allocator.h>
 
+#include <mutex>
+
 class MemoryAllocator : public IMemoryAllocator
 {
 public:
@@ -48,6 +50,8 @@ private:
     std::map<void*, uint64_t> allocations;
     std::map<std::string, std::vector<std::pair<std::string, void*>>> trackedAllocations;
     uint64_t totalAllocated = 0;
+
+    std::mutex m_mtxLock;
 
     bool m_bCompact = false;
 };

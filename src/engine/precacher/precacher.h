@@ -22,6 +22,7 @@
 #include <api/engine/precacher/precacher.h>
 
 #include <set>
+#include <mutex>
 
 class CPrecacher : public IPrecacher
 {
@@ -35,6 +36,8 @@ public:
 private:
     std::set<std::string> m_sCacheItems;
     std::set<std::string> m_sCachedItems;
+
+    std::mutex m_mtxLock;
 };
 
 #endif

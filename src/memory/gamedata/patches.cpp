@@ -140,6 +140,7 @@ std::vector<uint8_t> HexToByte(const char* src, uint64_t& length)
 
 void GameDataPatches::Apply(const std::string& name)
 {
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
     auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     auto signature = m_mPatches[name].second;
@@ -169,6 +170,7 @@ void GameDataPatches::Apply(const std::string& name)
 
 void GameDataPatches::Revert(const std::string& name)
 {
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
     auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 

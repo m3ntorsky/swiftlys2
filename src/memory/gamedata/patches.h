@@ -24,6 +24,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <mutex>
 
 class GameDataPatches : public IGameDataPatches
 {
@@ -36,6 +37,8 @@ public:
 private:
     std::map<std::string, std::pair<std::string, std::string>> m_mPatches;
     std::map<std::string, std::vector<uint8_t>> m_mOriginalBytes;
+
+    std::mutex m_mtxLock;
 };
 
 #endif

@@ -21,6 +21,8 @@
 
 #include <api/engine/gameevents/gameevents.h>
 
+#include <mutex>
+
  // WHY THE ACTUAL FUCK YOU NEED THIS TO COMPILE ?????????????
 #include <public/entity2/entitysystem.h>
 
@@ -47,6 +49,8 @@ public:
     int LoadEventsFromFile(const char* filePath, bool searchAll);
     bool OnFireEvent(IGameEvent* pEvent, bool bDontBroadcast);
     bool OnFireEventPost(IGameEvent* pEvent, bool bDontBroadcast);
+private:
+    std::mutex m_mtxLock;
 };
 
 #endif

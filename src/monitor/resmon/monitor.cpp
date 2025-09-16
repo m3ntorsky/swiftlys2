@@ -27,6 +27,7 @@ bool ResourceMonitor::Enable()
     if (m_bEnabled)
         return false;
 
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     m_bEnabled = true;
     ClearData();
     return true;
@@ -37,6 +38,7 @@ bool ResourceMonitor::Disable()
     if (!m_bEnabled)
         return false;
 
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     m_bEnabled = false;
     ClearData();
     return true;
@@ -52,6 +54,7 @@ void ResourceMonitor::RecordTime(std::string plugin_name, std::string key, doubl
     if (!m_bEnabled)
         return;
 
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     m_mPerformanceData[plugin_name][key].push_back(time);
 }
 
@@ -60,6 +63,7 @@ void ResourceMonitor::StartRecording(std::string plugin_name, std::string key)
     if (!m_bEnabled)
         return;
 
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     auto registered_timestamp = std::chrono::high_resolution_clock::now().time_since_epoch();
     m_mOngoingRecords[plugin_name][key] = std::chrono::duration<double, std::milli>(registered_timestamp).count();
 
@@ -85,6 +89,7 @@ void ResourceMonitor::StopRecording(std::string plugin_name, std::string key)
     if (it_key == it_plugin->second.end())
         return;
 
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     double start_time = it_key->second;
     auto registered_timestamp = std::chrono::high_resolution_clock::now().time_since_epoch();
     double end_time = std::chrono::duration<double, std::milli>(registered_timestamp).count();
@@ -161,6 +166,7 @@ std::string ResourceMonitor::GetPerformanceAsJSON(std::string plugin_name)
 
 void ResourceMonitor::ClearData()
 {
+    std::lock_guard<std::mutex> lock(m_mtxLock);
     m_mPerformanceData.clear();
     m_mOngoingRecords.clear();
     m_vProfilerEvents.clear();
