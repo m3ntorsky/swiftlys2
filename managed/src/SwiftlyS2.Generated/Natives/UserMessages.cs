@@ -474,6 +474,155 @@ internal static class NativeUserMessages {
     return ret;
   }
   }
+  private unsafe static delegate* unmanaged<nint, byte*, double, void> _SetDouble;
+  public unsafe static void SetDouble(nint netmsg, string fieldName, double value) {
+    var pool = ArrayPool<byte>.Shared;
+    var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
+    var fieldNameBuffer = pool.Rent(fieldNameLength + 1);
+    Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
+    fieldNameBuffer[fieldNameLength] = 0;
+    fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
+    _SetDouble(netmsg, fieldNameBufferPtr, value);
+    pool.Return(fieldNameBuffer);
+
+  }
+  }
+  private unsafe static delegate* unmanaged<nint, byte*, int, double, void> _SetRepeatedDouble;
+  public unsafe static void SetRepeatedDouble(nint netmsg, string fieldName, int index, double value) {
+    var pool = ArrayPool<byte>.Shared;
+    var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
+    var fieldNameBuffer = pool.Rent(fieldNameLength + 1);
+    Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
+    fieldNameBuffer[fieldNameLength] = 0;
+    fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
+    _SetRepeatedDouble(netmsg, fieldNameBufferPtr, index, value);
+    pool.Return(fieldNameBuffer);
+
+  }
+  }
+  private unsafe static delegate* unmanaged<nint, byte*, double, void> _AddDouble;
+  public unsafe static void AddDouble(nint netmsg, string fieldName, double value) {
+    var pool = ArrayPool<byte>.Shared;
+    var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
+    var fieldNameBuffer = pool.Rent(fieldNameLength + 1);
+    Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
+    fieldNameBuffer[fieldNameLength] = 0;
+    fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
+    _AddDouble(netmsg, fieldNameBufferPtr, value);
+    pool.Return(fieldNameBuffer);
+
+  }
+  }
+  private unsafe static delegate* unmanaged<byte*, nint, byte*, int> _GetString;
+  public unsafe static string GetString(nint netmsg, string fieldName) {
+    var pool = ArrayPool<byte>.Shared;
+    var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
+    var fieldNameBuffer = pool.Rent(fieldNameLength + 1);
+    Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
+    fieldNameBuffer[fieldNameLength] = 0;
+    fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
+    var ret = _GetString(null, netmsg, fieldNameBufferPtr);
+
+    var retBuffer = pool.Rent(ret+1);
+    fixed (byte* retBufferPtr = retBuffer) {
+    ret = _GetString(retBufferPtr, netmsg, fieldNameBufferPtr);
+    var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
+    pool.Return(retBuffer);
+
+    pool.Return(fieldNameBuffer);
+
+    return retString;
+  }
+  }
+  }
+  private unsafe static delegate* unmanaged<byte*, nint, byte*, int, int> _GetRepeatedString;
+  public unsafe static string GetRepeatedString(nint netmsg, string fieldName, int index) {
+    var pool = ArrayPool<byte>.Shared;
+    var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
+    var fieldNameBuffer = pool.Rent(fieldNameLength + 1);
+    Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
+    fieldNameBuffer[fieldNameLength] = 0;
+    fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
+    var ret = _GetRepeatedString(null, netmsg, fieldNameBufferPtr, index);
+
+    var retBuffer = pool.Rent(ret+1);
+    fixed (byte* retBufferPtr = retBuffer) {
+    ret = _GetRepeatedString(retBufferPtr, netmsg, fieldNameBufferPtr, index);
+    var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
+    pool.Return(retBuffer);
+
+    pool.Return(fieldNameBuffer);
+
+    return retString;
+  }
+  }
+  }
+  private unsafe static delegate* unmanaged<nint, byte*, byte*, void> _SetString;
+  public unsafe static void SetString(nint netmsg, string fieldName, string value) {
+    var pool = ArrayPool<byte>.Shared;
+    var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
+    var fieldNameBuffer = pool.Rent(fieldNameLength + 1);
+    Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
+    fieldNameBuffer[fieldNameLength] = 0;
+    fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
+
+    var valueLength = Encoding.UTF8.GetByteCount(value);
+    var valueBuffer = pool.Rent(valueLength + 1);
+    Encoding.UTF8.GetBytes(value, valueBuffer);
+    valueBuffer[valueLength] = 0;
+    fixed (byte* valueBufferPtr = valueBuffer) {
+    _SetString(netmsg, fieldNameBufferPtr, valueBufferPtr);
+    pool.Return(fieldNameBuffer);
+
+    pool.Return(valueBuffer);
+
+  }
+  }
+  }
+  private unsafe static delegate* unmanaged<nint, byte*, int, byte*, void> _SetRepeatedString;
+  public unsafe static void SetRepeatedString(nint netmsg, string fieldName, int index, string value) {
+    var pool = ArrayPool<byte>.Shared;
+    var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
+    var fieldNameBuffer = pool.Rent(fieldNameLength + 1);
+    Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
+    fieldNameBuffer[fieldNameLength] = 0;
+    fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
+
+    var valueLength = Encoding.UTF8.GetByteCount(value);
+    var valueBuffer = pool.Rent(valueLength + 1);
+    Encoding.UTF8.GetBytes(value, valueBuffer);
+    valueBuffer[valueLength] = 0;
+    fixed (byte* valueBufferPtr = valueBuffer) {
+    _SetRepeatedString(netmsg, fieldNameBufferPtr, index, valueBufferPtr);
+    pool.Return(fieldNameBuffer);
+
+    pool.Return(valueBuffer);
+
+  }
+  }
+  }
+  private unsafe static delegate* unmanaged<nint, byte*, byte*, void> _AddString;
+  public unsafe static void AddString(nint netmsg, string fieldName, string value) {
+    var pool = ArrayPool<byte>.Shared;
+    var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
+    var fieldNameBuffer = pool.Rent(fieldNameLength + 1);
+    Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
+    fieldNameBuffer[fieldNameLength] = 0;
+    fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
+
+    var valueLength = Encoding.UTF8.GetByteCount(value);
+    var valueBuffer = pool.Rent(valueLength + 1);
+    Encoding.UTF8.GetBytes(value, valueBuffer);
+    valueBuffer[valueLength] = 0;
+    fixed (byte* valueBufferPtr = valueBuffer) {
+    _AddString(netmsg, fieldNameBufferPtr, valueBufferPtr);
+    pool.Return(fieldNameBuffer);
+
+    pool.Return(valueBuffer);
+
+  }
+  }
+  }
   private unsafe static delegate* unmanaged<nint, byte*, Vector2D> _GetVector2D;
   public unsafe static Vector2D GetVector2D(nint netmsg, string fieldName) {
     var pool = ArrayPool<byte>.Shared;
