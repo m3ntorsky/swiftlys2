@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDSPMixgroupModifier : ISchemaClass, IConvertibleNativeHandle<CDSPMixgroupModifier> {
+public partial interface CDSPMixgroupModifier : ISchemaClass<CDSPMixgroupModifier> {
 
-  static CDSPMixgroupModifier IConvertibleNativeHandle<CDSPMixgroupModifier>.From(nint handle) => new CDSPMixgroupModifierImpl(handle);
+  static CDSPMixgroupModifier ISchemaClass<CDSPMixgroupModifier>.From(nint handle) => new CDSPMixgroupModifierImpl(handle);
 
   
   public ref CUtlString Mixgroup { get; }

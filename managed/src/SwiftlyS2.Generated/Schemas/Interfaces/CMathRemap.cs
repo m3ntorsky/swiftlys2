@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMathRemap : CLogicalEntity, IConvertibleNativeHandle<CMathRemap> {
+public partial interface CMathRemap : CLogicalEntity, ISchemaClass<CMathRemap> {
 
-  static CMathRemap IConvertibleNativeHandle<CMathRemap>.From(nint handle) => new CMathRemapImpl(handle);
+  static CMathRemap ISchemaClass<CMathRemap>.From(nint handle) => new CMathRemapImpl(handle);
 
   
   public ref float InMin { get; }

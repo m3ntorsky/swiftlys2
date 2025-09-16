@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeSimdRodConstraintAnim_t : ISchemaClass, IConvertibleNativeHandle<FeSimdRodConstraintAnim_t> {
+public partial interface FeSimdRodConstraintAnim_t : ISchemaClass<FeSimdRodConstraintAnim_t> {
 
-  static FeSimdRodConstraintAnim_t IConvertibleNativeHandle<FeSimdRodConstraintAnim_t>.From(nint handle) => new FeSimdRodConstraintAnim_tImpl(handle);
+  static FeSimdRodConstraintAnim_t ISchemaClass<FeSimdRodConstraintAnim_t>.From(nint handle) => new FeSimdRodConstraintAnim_tImpl(handle);
 
   
   // uint16[4]

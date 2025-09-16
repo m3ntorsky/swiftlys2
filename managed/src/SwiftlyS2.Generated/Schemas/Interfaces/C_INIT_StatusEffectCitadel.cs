@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_StatusEffectCitadel : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_StatusEffectCitadel> {
+public partial interface C_INIT_StatusEffectCitadel : CParticleFunctionInitializer, ISchemaClass<C_INIT_StatusEffectCitadel> {
 
-  static C_INIT_StatusEffectCitadel IConvertibleNativeHandle<C_INIT_StatusEffectCitadel>.From(nint handle) => new C_INIT_StatusEffectCitadelImpl(handle);
+  static C_INIT_StatusEffectCitadel ISchemaClass<C_INIT_StatusEffectCitadel>.From(nint handle) => new C_INIT_StatusEffectCitadelImpl(handle);
 
   
   public ref float SFXColorWarpAmount { get; }

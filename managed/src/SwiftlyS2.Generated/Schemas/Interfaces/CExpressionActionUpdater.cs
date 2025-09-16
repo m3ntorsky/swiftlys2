@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CExpressionActionUpdater : CAnimActionUpdater, IConvertibleNativeHandle<CExpressionActionUpdater> {
+public partial interface CExpressionActionUpdater : CAnimActionUpdater, ISchemaClass<CExpressionActionUpdater> {
 
-  static CExpressionActionUpdater IConvertibleNativeHandle<CExpressionActionUpdater>.From(nint handle) => new CExpressionActionUpdaterImpl(handle);
+  static CExpressionActionUpdater ISchemaClass<CExpressionActionUpdater>.From(nint handle) => new CExpressionActionUpdaterImpl(handle);
 
   
   public CAnimParamHandle Param { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AutoRoomDoorwayPairs_t : ISchemaClass, IConvertibleNativeHandle<AutoRoomDoorwayPairs_t> {
+public partial interface AutoRoomDoorwayPairs_t : ISchemaClass<AutoRoomDoorwayPairs_t> {
 
-  static AutoRoomDoorwayPairs_t IConvertibleNativeHandle<AutoRoomDoorwayPairs_t>.From(nint handle) => new AutoRoomDoorwayPairs_tImpl(handle);
+  static AutoRoomDoorwayPairs_t ISchemaClass<AutoRoomDoorwayPairs_t>.From(nint handle) => new AutoRoomDoorwayPairs_tImpl(handle);
 
   
   public ref Vector P1 { get; }

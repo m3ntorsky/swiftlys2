@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFishPool : CBaseEntity, IConvertibleNativeHandle<CFishPool> {
+public partial interface CFishPool : CBaseEntity, ISchemaClass<CFishPool> {
 
-  static CFishPool IConvertibleNativeHandle<CFishPool>.From(nint handle) => new CFishPoolImpl(handle);
+  static CFishPool ISchemaClass<CFishPool>.From(nint handle) => new CFishPoolImpl(handle);
 
   
   public ref int FishCount { get; }

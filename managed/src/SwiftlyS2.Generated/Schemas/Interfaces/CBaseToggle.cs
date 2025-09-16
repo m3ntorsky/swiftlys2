@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseToggle : CBaseModelEntity, IConvertibleNativeHandle<CBaseToggle> {
+public partial interface CBaseToggle : CBaseModelEntity, ISchemaClass<CBaseToggle> {
 
-  static CBaseToggle IConvertibleNativeHandle<CBaseToggle>.From(nint handle) => new CBaseToggleImpl(handle);
+  static CBaseToggle ISchemaClass<CBaseToggle>.From(nint handle) => new CBaseToggleImpl(handle);
 
   
   public ref TOGGLE_STATE Toggle_state { get; }

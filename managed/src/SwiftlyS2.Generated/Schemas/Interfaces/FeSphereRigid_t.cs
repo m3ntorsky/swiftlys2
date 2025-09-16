@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeSphereRigid_t : ISchemaClass, IConvertibleNativeHandle<FeSphereRigid_t> {
+public partial interface FeSphereRigid_t : ISchemaClass<FeSphereRigid_t> {
 
-  static FeSphereRigid_t IConvertibleNativeHandle<FeSphereRigid_t>.From(nint handle) => new FeSphereRigid_tImpl(handle);
+  static FeSphereRigid_t ISchemaClass<FeSphereRigid_t>.From(nint handle) => new FeSphereRigid_tImpl(handle);
 
   
   public ref fltx4 Sphere { get; }

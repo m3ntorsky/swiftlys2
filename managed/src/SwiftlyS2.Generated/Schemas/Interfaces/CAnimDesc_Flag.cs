@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimDesc_Flag : ISchemaClass, IConvertibleNativeHandle<CAnimDesc_Flag> {
+public partial interface CAnimDesc_Flag : ISchemaClass<CAnimDesc_Flag> {
 
-  static CAnimDesc_Flag IConvertibleNativeHandle<CAnimDesc_Flag>.From(nint handle) => new CAnimDesc_FlagImpl(handle);
+  static CAnimDesc_Flag ISchemaClass<CAnimDesc_Flag>.From(nint handle) => new CAnimDesc_FlagImpl(handle);
 
   
   public ref bool Looping { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeIPulseGraphDef : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeIPulseGraphDef> {
+public partial interface InfoForResourceTypeIPulseGraphDef : ISchemaClass<InfoForResourceTypeIPulseGraphDef> {
 
-  static InfoForResourceTypeIPulseGraphDef IConvertibleNativeHandle<InfoForResourceTypeIPulseGraphDef>.From(nint handle) => new InfoForResourceTypeIPulseGraphDefImpl(handle);
+  static InfoForResourceTypeIPulseGraphDef ISchemaClass<InfoForResourceTypeIPulseGraphDef>.From(nint handle) => new InfoForResourceTypeIPulseGraphDefImpl(handle);
 
 
 

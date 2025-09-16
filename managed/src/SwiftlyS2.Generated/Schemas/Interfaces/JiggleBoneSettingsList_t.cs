@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface JiggleBoneSettingsList_t : ISchemaClass, IConvertibleNativeHandle<JiggleBoneSettingsList_t> {
+public partial interface JiggleBoneSettingsList_t : ISchemaClass<JiggleBoneSettingsList_t> {
 
-  static JiggleBoneSettingsList_t IConvertibleNativeHandle<JiggleBoneSettingsList_t>.From(nint handle) => new JiggleBoneSettingsList_tImpl(handle);
+  static JiggleBoneSettingsList_t ISchemaClass<JiggleBoneSettingsList_t>.From(nint handle) => new JiggleBoneSettingsList_tImpl(handle);
 
   
   // CUtlVector< JiggleBoneSettings_t >

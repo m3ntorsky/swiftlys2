@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EntOutput_t : ISchemaClass, IConvertibleNativeHandle<EntOutput_t> {
+public partial interface EntOutput_t : ISchemaClass<EntOutput_t> {
 
-  static EntOutput_t IConvertibleNativeHandle<EntOutput_t>.From(nint handle) => new EntOutput_tImpl(handle);
+  static EntOutput_t ISchemaClass<EntOutput_t>.From(nint handle) => new EntOutput_tImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicPlayerProxy : CLogicalEntity, IConvertibleNativeHandle<CLogicPlayerProxy> {
+public partial interface CLogicPlayerProxy : CLogicalEntity, ISchemaClass<CLogicPlayerProxy> {
 
-  static CLogicPlayerProxy IConvertibleNativeHandle<CLogicPlayerProxy>.From(nint handle) => new CLogicPlayerProxyImpl(handle);
+  static CLogicPlayerProxy ISchemaClass<CLogicPlayerProxy>.From(nint handle) => new CLogicPlayerProxyImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Player { get; }

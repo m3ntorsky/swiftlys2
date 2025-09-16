@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMorphConstraint : CBaseConstraint, IConvertibleNativeHandle<CMorphConstraint> {
+public partial interface CMorphConstraint : CBaseConstraint, ISchemaClass<CMorphConstraint> {
 
-  static CMorphConstraint IConvertibleNativeHandle<CMorphConstraint>.From(nint handle) => new CMorphConstraintImpl(handle);
+  static CMorphConstraint ISchemaClass<CMorphConstraint>.From(nint handle) => new CMorphConstraintImpl(handle);
 
   
   public ref CUtlString TargetMorph { get; }

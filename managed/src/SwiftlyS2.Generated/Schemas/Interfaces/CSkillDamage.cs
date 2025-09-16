@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSkillDamage : ISchemaClass, IConvertibleNativeHandle<CSkillDamage> {
+public partial interface CSkillDamage : ISchemaClass<CSkillDamage> {
 
-  static CSkillDamage IConvertibleNativeHandle<CSkillDamage>.From(nint handle) => new CSkillDamageImpl(handle);
+  static CSkillDamage ISchemaClass<CSkillDamage>.From(nint handle) => new CSkillDamageImpl(handle);
 
   
   public CSkillFloat Damage { get; }

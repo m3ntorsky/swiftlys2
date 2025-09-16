@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInstructorEventEntity : CPointEntity, IConvertibleNativeHandle<CInstructorEventEntity> {
+public partial interface CInstructorEventEntity : CPointEntity, ISchemaClass<CInstructorEventEntity> {
 
-  static CInstructorEventEntity IConvertibleNativeHandle<CInstructorEventEntity>.From(nint handle) => new CInstructorEventEntityImpl(handle);
+  static CInstructorEventEntity ISchemaClass<CInstructorEventEntity>.From(nint handle) => new CInstructorEventEntityImpl(handle);
 
   
   public ref CUtlSymbolLarge Name { get; }

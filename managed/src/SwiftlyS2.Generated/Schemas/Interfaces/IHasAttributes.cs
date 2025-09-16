@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IHasAttributes : ISchemaClass, IConvertibleNativeHandle<IHasAttributes> {
+public partial interface IHasAttributes : ISchemaClass<IHasAttributes> {
 
-  static IHasAttributes IConvertibleNativeHandle<IHasAttributes>.From(nint handle) => new IHasAttributesImpl(handle);
+  static IHasAttributes ISchemaClass<IHasAttributes>.From(nint handle) => new IHasAttributesImpl(handle);
 
 
 

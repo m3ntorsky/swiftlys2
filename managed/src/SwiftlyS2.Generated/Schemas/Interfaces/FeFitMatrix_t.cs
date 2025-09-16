@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeFitMatrix_t : ISchemaClass, IConvertibleNativeHandle<FeFitMatrix_t> {
+public partial interface FeFitMatrix_t : ISchemaClass<FeFitMatrix_t> {
 
-  static FeFitMatrix_t IConvertibleNativeHandle<FeFitMatrix_t>.From(nint handle) => new FeFitMatrix_tImpl(handle);
+  static FeFitMatrix_t ISchemaClass<FeFitMatrix_t>.From(nint handle) => new FeFitMatrix_tImpl(handle);
 
   
   public ref CTransform Bone { get; }

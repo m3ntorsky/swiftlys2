@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleFunctionRenderer : CParticleFunction, IConvertibleNativeHandle<CParticleFunctionRenderer> {
+public partial interface CParticleFunctionRenderer : CParticleFunction, ISchemaClass<CParticleFunctionRenderer> {
 
-  static CParticleFunctionRenderer IConvertibleNativeHandle<CParticleFunctionRenderer>.From(nint handle) => new CParticleFunctionRendererImpl(handle);
+  static CParticleFunctionRenderer ISchemaClass<CParticleFunctionRenderer>.From(nint handle) => new CParticleFunctionRendererImpl(handle);
 
   
   public CParticleVisibilityInputs VisibilityInputs { get; }

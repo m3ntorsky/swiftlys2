@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface COrnamentProp : CDynamicProp, IConvertibleNativeHandle<COrnamentProp> {
+public partial interface COrnamentProp : CDynamicProp, ISchemaClass<COrnamentProp> {
 
-  static COrnamentProp IConvertibleNativeHandle<COrnamentProp>.From(nint handle) => new COrnamentPropImpl(handle);
+  static COrnamentProp ISchemaClass<COrnamentProp>.From(nint handle) => new COrnamentPropImpl(handle);
 
   
   public ref CUtlSymbolLarge InitialOwner { get; }

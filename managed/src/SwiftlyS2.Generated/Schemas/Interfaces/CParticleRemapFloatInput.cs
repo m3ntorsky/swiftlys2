@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleRemapFloatInput : CParticleFloatInput, IConvertibleNativeHandle<CParticleRemapFloatInput> {
+public partial interface CParticleRemapFloatInput : CParticleFloatInput, ISchemaClass<CParticleRemapFloatInput> {
 
-  static CParticleRemapFloatInput IConvertibleNativeHandle<CParticleRemapFloatInput>.From(nint handle) => new CParticleRemapFloatInputImpl(handle);
+  static CParticleRemapFloatInput ISchemaClass<CParticleRemapFloatInput>.From(nint handle) => new CParticleRemapFloatInputImpl(handle);
 
 
 

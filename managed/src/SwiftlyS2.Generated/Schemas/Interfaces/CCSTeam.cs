@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSTeam : CTeam, IConvertibleNativeHandle<CCSTeam> {
+public partial interface CCSTeam : CTeam, ISchemaClass<CCSTeam> {
 
-  static CCSTeam IConvertibleNativeHandle<CCSTeam>.From(nint handle) => new CCSTeamImpl(handle);
+  static CCSTeam ISchemaClass<CCSTeam>.From(nint handle) => new CCSTeamImpl(handle);
 
   
   public ref int LastRecievedShorthandedRoundBonus { get; }

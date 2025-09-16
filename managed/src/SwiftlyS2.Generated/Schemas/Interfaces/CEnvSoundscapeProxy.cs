@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvSoundscapeProxy : CEnvSoundscape, IConvertibleNativeHandle<CEnvSoundscapeProxy> {
+public partial interface CEnvSoundscapeProxy : CEnvSoundscape, ISchemaClass<CEnvSoundscapeProxy> {
 
-  static CEnvSoundscapeProxy IConvertibleNativeHandle<CEnvSoundscapeProxy>.From(nint handle) => new CEnvSoundscapeProxyImpl(handle);
+  static CEnvSoundscapeProxy ISchemaClass<CEnvSoundscapeProxy>.From(nint handle) => new CEnvSoundscapeProxyImpl(handle);
 
   
   public ref CUtlSymbolLarge MainSoundscapeName { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmChainLookatNode__CDefinition : CNmPassthroughNode__CDefinition, IConvertibleNativeHandle<CNmChainLookatNode__CDefinition> {
+public partial interface CNmChainLookatNode__CDefinition : CNmPassthroughNode__CDefinition, ISchemaClass<CNmChainLookatNode__CDefinition> {
 
-  static CNmChainLookatNode__CDefinition IConvertibleNativeHandle<CNmChainLookatNode__CDefinition>.From(nint handle) => new CNmChainLookatNode__CDefinitionImpl(handle);
+  static CNmChainLookatNode__CDefinition ISchemaClass<CNmChainLookatNode__CDefinition>.From(nint handle) => new CNmChainLookatNode__CDefinitionImpl(handle);
 
   
   public ref CGlobalSymbol ChainEndBoneID { get; }

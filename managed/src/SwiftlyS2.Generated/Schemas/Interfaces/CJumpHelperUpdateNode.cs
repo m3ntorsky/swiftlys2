@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CJumpHelperUpdateNode : CSequenceUpdateNode, IConvertibleNativeHandle<CJumpHelperUpdateNode> {
+public partial interface CJumpHelperUpdateNode : CSequenceUpdateNode, ISchemaClass<CJumpHelperUpdateNode> {
 
-  static CJumpHelperUpdateNode IConvertibleNativeHandle<CJumpHelperUpdateNode>.From(nint handle) => new CJumpHelperUpdateNodeImpl(handle);
+  static CJumpHelperUpdateNode ISchemaClass<CJumpHelperUpdateNode>.From(nint handle) => new CJumpHelperUpdateNodeImpl(handle);
 
   
   public CAnimParamHandle TargetParam { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLookComponentUpdater : CAnimComponentUpdater, IConvertibleNativeHandle<CLookComponentUpdater> {
+public partial interface CLookComponentUpdater : CAnimComponentUpdater, ISchemaClass<CLookComponentUpdater> {
 
-  static CLookComponentUpdater IConvertibleNativeHandle<CLookComponentUpdater>.From(nint handle) => new CLookComponentUpdaterImpl(handle);
+  static CLookComponentUpdater ISchemaClass<CLookComponentUpdater>.From(nint handle) => new CLookComponentUpdaterImpl(handle);
 
   
   public CAnimParamHandle LookHeading { get; }

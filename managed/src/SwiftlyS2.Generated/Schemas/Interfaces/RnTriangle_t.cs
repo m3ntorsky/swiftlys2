@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnTriangle_t : ISchemaClass, IConvertibleNativeHandle<RnTriangle_t> {
+public partial interface RnTriangle_t : ISchemaClass<RnTriangle_t> {
 
-  static RnTriangle_t IConvertibleNativeHandle<RnTriangle_t>.From(nint handle) => new RnTriangle_tImpl(handle);
+  static RnTriangle_t ISchemaClass<RnTriangle_t>.From(nint handle) => new RnTriangle_tImpl(handle);
 
   
   public ISchemaFixedArray<int> Index { get; }

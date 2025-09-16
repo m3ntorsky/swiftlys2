@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPropDataComponent : CEntityComponent, IConvertibleNativeHandle<CPropDataComponent> {
+public partial interface CPropDataComponent : CEntityComponent, ISchemaClass<CPropDataComponent> {
 
-  static CPropDataComponent IConvertibleNativeHandle<CPropDataComponent>.From(nint handle) => new CPropDataComponentImpl(handle);
+  static CPropDataComponent ISchemaClass<CPropDataComponent>.From(nint handle) => new CPropDataComponentImpl(handle);
 
   
   public ref float DmgModBullet { get; }

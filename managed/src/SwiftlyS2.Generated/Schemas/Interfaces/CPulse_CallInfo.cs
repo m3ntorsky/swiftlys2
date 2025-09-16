@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulse_CallInfo : ISchemaClass, IConvertibleNativeHandle<CPulse_CallInfo> {
+public partial interface CPulse_CallInfo : ISchemaClass<CPulse_CallInfo> {
 
-  static CPulse_CallInfo IConvertibleNativeHandle<CPulse_CallInfo>.From(nint handle) => new CPulse_CallInfoImpl(handle);
+  static CPulse_CallInfo ISchemaClass<CPulse_CallInfo>.From(nint handle) => new CPulse_CallInfoImpl(handle);
 
   
   // PulseSymbol_t

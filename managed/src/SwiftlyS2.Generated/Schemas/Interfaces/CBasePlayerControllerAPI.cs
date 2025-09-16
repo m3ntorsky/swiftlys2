@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBasePlayerControllerAPI : ISchemaClass, IConvertibleNativeHandle<CBasePlayerControllerAPI> {
+public partial interface CBasePlayerControllerAPI : ISchemaClass<CBasePlayerControllerAPI> {
 
-  static CBasePlayerControllerAPI IConvertibleNativeHandle<CBasePlayerControllerAPI>.From(nint handle) => new CBasePlayerControllerAPIImpl(handle);
+  static CBasePlayerControllerAPI ISchemaClass<CBasePlayerControllerAPI>.From(nint handle) => new CBasePlayerControllerAPIImpl(handle);
 
 
 

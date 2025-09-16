@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHintMessageQueue : ISchemaClass, IConvertibleNativeHandle<CHintMessageQueue> {
+public partial interface CHintMessageQueue : ISchemaClass<CHintMessageQueue> {
 
-  static CHintMessageQueue IConvertibleNativeHandle<CHintMessageQueue>.From(nint handle) => new CHintMessageQueueImpl(handle);
+  static CHintMessageQueue ISchemaClass<CHintMessageQueue>.From(nint handle) => new CHintMessageQueueImpl(handle);
 
   
   public ref float TmMessageEnd { get; }

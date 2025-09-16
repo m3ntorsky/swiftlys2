@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnumAnimParameter : CConcreteAnimParameter, IConvertibleNativeHandle<CEnumAnimParameter> {
+public partial interface CEnumAnimParameter : CConcreteAnimParameter, ISchemaClass<CEnumAnimParameter> {
 
-  static CEnumAnimParameter IConvertibleNativeHandle<CEnumAnimParameter>.From(nint handle) => new CEnumAnimParameterImpl(handle);
+  static CEnumAnimParameter ISchemaClass<CEnumAnimParameter>.From(nint handle) => new CEnumAnimParameterImpl(handle);
 
   
   public ref byte DefaultValue { get; }

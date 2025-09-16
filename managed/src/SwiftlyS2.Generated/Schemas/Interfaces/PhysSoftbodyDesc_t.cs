@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PhysSoftbodyDesc_t : ISchemaClass, IConvertibleNativeHandle<PhysSoftbodyDesc_t> {
+public partial interface PhysSoftbodyDesc_t : ISchemaClass<PhysSoftbodyDesc_t> {
 
-  static PhysSoftbodyDesc_t IConvertibleNativeHandle<PhysSoftbodyDesc_t>.From(nint handle) => new PhysSoftbodyDesc_tImpl(handle);
+  static PhysSoftbodyDesc_t ISchemaClass<PhysSoftbodyDesc_t>.From(nint handle) => new PhysSoftbodyDesc_tImpl(handle);
 
   
   public ref CUtlVector<uint> ParticleBoneHash { get; }

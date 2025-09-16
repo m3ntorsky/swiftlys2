@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FloatInputMaterialVariable_t : ISchemaClass, IConvertibleNativeHandle<FloatInputMaterialVariable_t> {
+public partial interface FloatInputMaterialVariable_t : ISchemaClass<FloatInputMaterialVariable_t> {
 
-  static FloatInputMaterialVariable_t IConvertibleNativeHandle<FloatInputMaterialVariable_t>.From(nint handle) => new FloatInputMaterialVariable_tImpl(handle);
+  static FloatInputMaterialVariable_t ISchemaClass<FloatInputMaterialVariable_t>.From(nint handle) => new FloatInputMaterialVariable_tImpl(handle);
 
   
   public ref CUtlString StrVariable { get; }

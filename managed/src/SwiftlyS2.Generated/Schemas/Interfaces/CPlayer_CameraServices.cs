@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlayer_CameraServices : CPlayerPawnComponent, IConvertibleNativeHandle<CPlayer_CameraServices> {
+public partial interface CPlayer_CameraServices : CPlayerPawnComponent, ISchemaClass<CPlayer_CameraServices> {
 
-  static CPlayer_CameraServices IConvertibleNativeHandle<CPlayer_CameraServices>.From(nint handle) => new CPlayer_CameraServicesImpl(handle);
+  static CPlayer_CameraServices ISchemaClass<CPlayer_CameraServices>.From(nint handle) => new CPlayer_CameraServicesImpl(handle);
 
   
   public ref QAngle CsViewPunchAngle { get; }

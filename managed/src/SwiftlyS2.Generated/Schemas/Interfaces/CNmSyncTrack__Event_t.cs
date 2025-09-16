@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmSyncTrack__Event_t : ISchemaClass, IConvertibleNativeHandle<CNmSyncTrack__Event_t> {
+public partial interface CNmSyncTrack__Event_t : ISchemaClass<CNmSyncTrack__Event_t> {
 
-  static CNmSyncTrack__Event_t IConvertibleNativeHandle<CNmSyncTrack__Event_t>.From(nint handle) => new CNmSyncTrack__Event_tImpl(handle);
+  static CNmSyncTrack__Event_t ISchemaClass<CNmSyncTrack__Event_t>.From(nint handle) => new CNmSyncTrack__Event_tImpl(handle);
 
   
   public ref CGlobalSymbol ID { get; }

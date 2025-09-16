@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCurrentRotationVelocityMetricEvaluator : CMotionMetricEvaluator, IConvertibleNativeHandle<CCurrentRotationVelocityMetricEvaluator> {
+public partial interface CCurrentRotationVelocityMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CCurrentRotationVelocityMetricEvaluator> {
 
-  static CCurrentRotationVelocityMetricEvaluator IConvertibleNativeHandle<CCurrentRotationVelocityMetricEvaluator>.From(nint handle) => new CCurrentRotationVelocityMetricEvaluatorImpl(handle);
+  static CCurrentRotationVelocityMetricEvaluator ISchemaClass<CCurrentRotationVelocityMetricEvaluator>.From(nint handle) => new CCurrentRotationVelocityMetricEvaluatorImpl(handle);
 
 
 

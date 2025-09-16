@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SnapshotSkinToBones : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_SnapshotSkinToBones> {
+public partial interface C_OP_SnapshotSkinToBones : CParticleFunctionOperator, ISchemaClass<C_OP_SnapshotSkinToBones> {
 
-  static C_OP_SnapshotSkinToBones IConvertibleNativeHandle<C_OP_SnapshotSkinToBones>.From(nint handle) => new C_OP_SnapshotSkinToBonesImpl(handle);
+  static C_OP_SnapshotSkinToBones ISchemaClass<C_OP_SnapshotSkinToBones>.From(nint handle) => new C_OP_SnapshotSkinToBonesImpl(handle);
 
   
   public ref bool TransformNormals { get; }

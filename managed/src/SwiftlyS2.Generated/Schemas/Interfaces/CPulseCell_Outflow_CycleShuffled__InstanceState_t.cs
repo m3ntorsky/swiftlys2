@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Outflow_CycleShuffled__InstanceState_t : ISchemaClass, IConvertibleNativeHandle<CPulseCell_Outflow_CycleShuffled__InstanceState_t> {
+public partial interface CPulseCell_Outflow_CycleShuffled__InstanceState_t : ISchemaClass<CPulseCell_Outflow_CycleShuffled__InstanceState_t> {
 
-  static CPulseCell_Outflow_CycleShuffled__InstanceState_t IConvertibleNativeHandle<CPulseCell_Outflow_CycleShuffled__InstanceState_t>.From(nint handle) => new CPulseCell_Outflow_CycleShuffled__InstanceState_tImpl(handle);
+  static CPulseCell_Outflow_CycleShuffled__InstanceState_t ISchemaClass<CPulseCell_Outflow_CycleShuffled__InstanceState_t>.From(nint handle) => new CPulseCell_Outflow_CycleShuffled__InstanceState_tImpl(handle);
 
   
   // CUtlVectorFixedGrowable< uint8, 8 >

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FootStepTrigger : ISchemaClass, IConvertibleNativeHandle<FootStepTrigger> {
+public partial interface FootStepTrigger : ISchemaClass<FootStepTrigger> {
 
-  static FootStepTrigger IConvertibleNativeHandle<FootStepTrigger>.From(nint handle) => new FootStepTriggerImpl(handle);
+  static FootStepTrigger ISchemaClass<FootStepTrigger>.From(nint handle) => new FootStepTriggerImpl(handle);
 
   
   public ref CUtlVector<int> Tags { get; }

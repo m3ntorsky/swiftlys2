@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathMover : CPathSimple, IConvertibleNativeHandle<CPathMover> {
+public partial interface CPathMover : CPathSimple, ISchemaClass<CPathMover> {
 
-  static CPathMover IConvertibleNativeHandle<CPathMover>.From(nint handle) => new CPathMoverImpl(handle);
+  static CPathMover ISchemaClass<CPathMover>.From(nint handle) => new CPathMoverImpl(handle);
 
   
   public ref CUtlVector<CHandle<CMoverPathNode>> PathNodes { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Value_Curve : CPulseCell_BaseValue, IConvertibleNativeHandle<CPulseCell_Value_Curve> {
+public partial interface CPulseCell_Value_Curve : CPulseCell_BaseValue, ISchemaClass<CPulseCell_Value_Curve> {
 
-  static CPulseCell_Value_Curve IConvertibleNativeHandle<CPulseCell_Value_Curve>.From(nint handle) => new CPulseCell_Value_CurveImpl(handle);
+  static CPulseCell_Value_Curve ISchemaClass<CPulseCell_Value_Curve>.From(nint handle) => new CPulseCell_Value_CurveImpl(handle);
 
   
   // CPiecewiseCurve

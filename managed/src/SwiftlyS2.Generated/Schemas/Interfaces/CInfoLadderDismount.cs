@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoLadderDismount : CBaseEntity, IConvertibleNativeHandle<CInfoLadderDismount> {
+public partial interface CInfoLadderDismount : CBaseEntity, ISchemaClass<CInfoLadderDismount> {
 
-  static CInfoLadderDismount IConvertibleNativeHandle<CInfoLadderDismount>.From(nint handle) => new CInfoLadderDismountImpl(handle);
+  static CInfoLadderDismount ISchemaClass<CInfoLadderDismount>.From(nint handle) => new CInfoLadderDismountImpl(handle);
 
 
 

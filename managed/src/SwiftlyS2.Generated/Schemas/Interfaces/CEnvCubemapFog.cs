@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvCubemapFog : CBaseEntity, IConvertibleNativeHandle<CEnvCubemapFog> {
+public partial interface CEnvCubemapFog : CBaseEntity, ISchemaClass<CEnvCubemapFog> {
 
-  static CEnvCubemapFog IConvertibleNativeHandle<CEnvCubemapFog>.From(nint handle) => new CEnvCubemapFogImpl(handle);
+  static CEnvCubemapFog ISchemaClass<CEnvCubemapFog>.From(nint handle) => new CEnvCubemapFogImpl(handle);
 
   
   public ref float EndDistance { get; }

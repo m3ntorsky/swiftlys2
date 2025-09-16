@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapDistanceToLineSegmentToScalar : C_OP_RemapDistanceToLineSegmentBase, IConvertibleNativeHandle<C_OP_RemapDistanceToLineSegmentToScalar> {
+public partial interface C_OP_RemapDistanceToLineSegmentToScalar : C_OP_RemapDistanceToLineSegmentBase, ISchemaClass<C_OP_RemapDistanceToLineSegmentToScalar> {
 
-  static C_OP_RemapDistanceToLineSegmentToScalar IConvertibleNativeHandle<C_OP_RemapDistanceToLineSegmentToScalar>.From(nint handle) => new C_OP_RemapDistanceToLineSegmentToScalarImpl(handle);
+  static C_OP_RemapDistanceToLineSegmentToScalar ISchemaClass<C_OP_RemapDistanceToLineSegmentToScalar>.From(nint handle) => new C_OP_RemapDistanceToLineSegmentToScalarImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

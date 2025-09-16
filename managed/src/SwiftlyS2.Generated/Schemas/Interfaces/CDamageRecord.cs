@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDamageRecord : ISchemaClass, IConvertibleNativeHandle<CDamageRecord> {
+public partial interface CDamageRecord : ISchemaClass<CDamageRecord> {
 
-  static CDamageRecord IConvertibleNativeHandle<CDamageRecord>.From(nint handle) => new CDamageRecordImpl(handle);
+  static CDamageRecord ISchemaClass<CDamageRecord>.From(nint handle) => new CDamageRecordImpl(handle);
 
   
   public ref CHandle<CCSPlayerPawn> PlayerDamager { get; }

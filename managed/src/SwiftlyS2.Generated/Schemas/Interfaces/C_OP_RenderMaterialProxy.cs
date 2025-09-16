@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderMaterialProxy : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderMaterialProxy> {
+public partial interface C_OP_RenderMaterialProxy : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderMaterialProxy> {
 
-  static C_OP_RenderMaterialProxy IConvertibleNativeHandle<C_OP_RenderMaterialProxy>.From(nint handle) => new C_OP_RenderMaterialProxyImpl(handle);
+  static C_OP_RenderMaterialProxy ISchemaClass<C_OP_RenderMaterialProxy>.From(nint handle) => new C_OP_RenderMaterialProxyImpl(handle);
 
   
   public ref int MaterialControlPoint { get; }

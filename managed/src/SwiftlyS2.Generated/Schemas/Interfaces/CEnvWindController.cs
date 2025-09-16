@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvWindController : CBaseEntity, IConvertibleNativeHandle<CEnvWindController> {
+public partial interface CEnvWindController : CBaseEntity, ISchemaClass<CEnvWindController> {
 
-  static CEnvWindController IConvertibleNativeHandle<CEnvWindController>.From(nint handle) => new CEnvWindControllerImpl(handle);
+  static CEnvWindController ISchemaClass<CEnvWindController>.From(nint handle) => new CEnvWindControllerImpl(handle);
 
   
   public CEnvWindShared EnvWindShared { get; }

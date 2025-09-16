@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseCombatCharacter : CBaseFlex, IConvertibleNativeHandle<CBaseCombatCharacter> {
+public partial interface CBaseCombatCharacter : CBaseFlex, ISchemaClass<CBaseCombatCharacter> {
 
-  static CBaseCombatCharacter IConvertibleNativeHandle<CBaseCombatCharacter>.From(nint handle) => new CBaseCombatCharacterImpl(handle);
+  static CBaseCombatCharacter ISchemaClass<CBaseCombatCharacter>.From(nint handle) => new CBaseCombatCharacterImpl(handle);
 
   
   public ref bool ForceServerRagdoll { get; }

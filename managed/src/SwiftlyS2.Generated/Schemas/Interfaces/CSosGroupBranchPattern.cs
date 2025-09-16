@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupBranchPattern : ISchemaClass, IConvertibleNativeHandle<CSosGroupBranchPattern> {
+public partial interface CSosGroupBranchPattern : ISchemaClass<CSosGroupBranchPattern> {
 
-  static CSosGroupBranchPattern IConvertibleNativeHandle<CSosGroupBranchPattern>.From(nint handle) => new CSosGroupBranchPatternImpl(handle);
+  static CSosGroupBranchPattern ISchemaClass<CSosGroupBranchPattern>.From(nint handle) => new CSosGroupBranchPatternImpl(handle);
 
   
   public ref bool MatchEventName { get; }

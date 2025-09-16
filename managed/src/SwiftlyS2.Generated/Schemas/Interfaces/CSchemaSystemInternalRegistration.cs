@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSchemaSystemInternalRegistration : ISchemaClass, IConvertibleNativeHandle<CSchemaSystemInternalRegistration> {
+public partial interface CSchemaSystemInternalRegistration : ISchemaClass<CSchemaSystemInternalRegistration> {
 
-  static CSchemaSystemInternalRegistration IConvertibleNativeHandle<CSchemaSystemInternalRegistration>.From(nint handle) => new CSchemaSystemInternalRegistrationImpl(handle);
+  static CSchemaSystemInternalRegistration ISchemaClass<CSchemaSystemInternalRegistration>.From(nint handle) => new CSchemaSystemInternalRegistrationImpl(handle);
 
   
   public ref Vector2D Vector2D { get; }

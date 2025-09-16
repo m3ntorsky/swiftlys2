@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysicsPropMultiplayer : CPhysicsProp, IConvertibleNativeHandle<CPhysicsPropMultiplayer> {
+public partial interface CPhysicsPropMultiplayer : CPhysicsProp, ISchemaClass<CPhysicsPropMultiplayer> {
 
-  static CPhysicsPropMultiplayer IConvertibleNativeHandle<CPhysicsPropMultiplayer>.From(nint handle) => new CPhysicsPropMultiplayerImpl(handle);
+  static CPhysicsPropMultiplayer ISchemaClass<CPhysicsPropMultiplayer>.From(nint handle) => new CPhysicsPropMultiplayerImpl(handle);
 
 
 

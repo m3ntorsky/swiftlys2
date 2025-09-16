@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface constraint_breakableparams_t : ISchemaClass, IConvertibleNativeHandle<constraint_breakableparams_t> {
+public partial interface constraint_breakableparams_t : ISchemaClass<constraint_breakableparams_t> {
 
-  static constraint_breakableparams_t IConvertibleNativeHandle<constraint_breakableparams_t>.From(nint handle) => new constraint_breakableparams_tImpl(handle);
+  static constraint_breakableparams_t ISchemaClass<constraint_breakableparams_t>.From(nint handle) => new constraint_breakableparams_tImpl(handle);
 
   
   public ref float Strength { get; }

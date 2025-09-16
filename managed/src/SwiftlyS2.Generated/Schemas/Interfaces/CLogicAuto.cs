@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicAuto : CBaseEntity, IConvertibleNativeHandle<CLogicAuto> {
+public partial interface CLogicAuto : CBaseEntity, ISchemaClass<CLogicAuto> {
 
-  static CLogicAuto IConvertibleNativeHandle<CLogicAuto>.From(nint handle) => new CLogicAutoImpl(handle);
+  static CLogicAuto ISchemaClass<CLogicAuto>.From(nint handle) => new CLogicAutoImpl(handle);
 
   
   public CEntityIOOutput OnMapSpawn { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCS2WeaponGraphController : CAnimGraphControllerBase, IConvertibleNativeHandle<CCS2WeaponGraphController> {
+public partial interface CCS2WeaponGraphController : CAnimGraphControllerBase, ISchemaClass<CCS2WeaponGraphController> {
 
-  static CCS2WeaponGraphController IConvertibleNativeHandle<CCS2WeaponGraphController>.From(nint handle) => new CCS2WeaponGraphControllerImpl(handle);
+  static CCS2WeaponGraphController ISchemaClass<CCS2WeaponGraphController>.From(nint handle) => new CCS2WeaponGraphControllerImpl(handle);
 
   
   // CAnimGraph2ParamOptionalRef< CGlobalSymbol >

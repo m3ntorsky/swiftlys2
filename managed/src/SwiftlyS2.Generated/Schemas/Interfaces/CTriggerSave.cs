@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerSave : CBaseTrigger, IConvertibleNativeHandle<CTriggerSave> {
+public partial interface CTriggerSave : CBaseTrigger, ISchemaClass<CTriggerSave> {
 
-  static CTriggerSave IConvertibleNativeHandle<CTriggerSave>.From(nint handle) => new CTriggerSaveImpl(handle);
+  static CTriggerSave ISchemaClass<CTriggerSave>.From(nint handle) => new CTriggerSaveImpl(handle);
 
   
   public ref bool ForceNewLevelUnit { get; }

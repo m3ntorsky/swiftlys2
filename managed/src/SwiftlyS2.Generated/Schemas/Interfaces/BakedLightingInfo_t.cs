@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface BakedLightingInfo_t : ISchemaClass, IConvertibleNativeHandle<BakedLightingInfo_t> {
+public partial interface BakedLightingInfo_t : ISchemaClass<BakedLightingInfo_t> {
 
-  static BakedLightingInfo_t IConvertibleNativeHandle<BakedLightingInfo_t>.From(nint handle) => new BakedLightingInfo_tImpl(handle);
+  static BakedLightingInfo_t ISchemaClass<BakedLightingInfo_t>.From(nint handle) => new BakedLightingInfo_tImpl(handle);
 
   
   public ref uint LightmapVersionNumber { get; }

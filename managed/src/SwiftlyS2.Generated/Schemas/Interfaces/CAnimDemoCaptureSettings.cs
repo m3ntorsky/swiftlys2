@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimDemoCaptureSettings : ISchemaClass, IConvertibleNativeHandle<CAnimDemoCaptureSettings> {
+public partial interface CAnimDemoCaptureSettings : ISchemaClass<CAnimDemoCaptureSettings> {
 
-  static CAnimDemoCaptureSettings IConvertibleNativeHandle<CAnimDemoCaptureSettings>.From(nint handle) => new CAnimDemoCaptureSettingsImpl(handle);
+  static CAnimDemoCaptureSettings ISchemaClass<CAnimDemoCaptureSettings>.From(nint handle) => new CAnimDemoCaptureSettingsImpl(handle);
 
   
   public ref Vector2D ErrorRangeSplineRotation { get; }

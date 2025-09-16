@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSolveIKChainUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CSolveIKChainUpdateNode> {
+public partial interface CSolveIKChainUpdateNode : CUnaryUpdateNode, ISchemaClass<CSolveIKChainUpdateNode> {
 
-  static CSolveIKChainUpdateNode IConvertibleNativeHandle<CSolveIKChainUpdateNode>.From(nint handle) => new CSolveIKChainUpdateNodeImpl(handle);
+  static CSolveIKChainUpdateNode ISchemaClass<CSolveIKChainUpdateNode>.From(nint handle) => new CSolveIKChainUpdateNodeImpl(handle);
 
   
   // CUtlVector< CSolveIKTargetHandle_t >

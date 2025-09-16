@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulse_DomainValue : ISchemaClass, IConvertibleNativeHandle<CPulse_DomainValue> {
+public partial interface CPulse_DomainValue : ISchemaClass<CPulse_DomainValue> {
 
-  static CPulse_DomainValue IConvertibleNativeHandle<CPulse_DomainValue>.From(nint handle) => new CPulse_DomainValueImpl(handle);
+  static CPulse_DomainValue ISchemaClass<CPulse_DomainValue>.From(nint handle) => new CPulse_DomainValueImpl(handle);
 
   
   public ref PulseDomainValueType_t Type { get; }

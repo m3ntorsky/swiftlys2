@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathAnimMotorUpdaterBase : CAnimMotorUpdaterBase, IConvertibleNativeHandle<CPathAnimMotorUpdaterBase> {
+public partial interface CPathAnimMotorUpdaterBase : CAnimMotorUpdaterBase, ISchemaClass<CPathAnimMotorUpdaterBase> {
 
-  static CPathAnimMotorUpdaterBase IConvertibleNativeHandle<CPathAnimMotorUpdaterBase>.From(nint handle) => new CPathAnimMotorUpdaterBaseImpl(handle);
+  static CPathAnimMotorUpdaterBase ISchemaClass<CPathAnimMotorUpdaterBase>.From(nint handle) => new CPathAnimMotorUpdaterBaseImpl(handle);
 
   
   public ref bool LockToPath { get; }

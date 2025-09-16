@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface BoneDemoCaptureSettings_t : ISchemaClass, IConvertibleNativeHandle<BoneDemoCaptureSettings_t> {
+public partial interface BoneDemoCaptureSettings_t : ISchemaClass<BoneDemoCaptureSettings_t> {
 
-  static BoneDemoCaptureSettings_t IConvertibleNativeHandle<BoneDemoCaptureSettings_t>.From(nint handle) => new BoneDemoCaptureSettings_tImpl(handle);
+  static BoneDemoCaptureSettings_t ISchemaClass<BoneDemoCaptureSettings_t>.From(nint handle) => new BoneDemoCaptureSettings_tImpl(handle);
 
   
   public ref CUtlString BoneName { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoOffscreenPanoramaTexture : CPointEntity, IConvertibleNativeHandle<CInfoOffscreenPanoramaTexture> {
+public partial interface CInfoOffscreenPanoramaTexture : CPointEntity, ISchemaClass<CInfoOffscreenPanoramaTexture> {
 
-  static CInfoOffscreenPanoramaTexture IConvertibleNativeHandle<CInfoOffscreenPanoramaTexture>.From(nint handle) => new CInfoOffscreenPanoramaTextureImpl(handle);
+  static CInfoOffscreenPanoramaTexture ISchemaClass<CInfoOffscreenPanoramaTexture>.From(nint handle) => new CInfoOffscreenPanoramaTextureImpl(handle);
 
   
   public ref bool Disabled { get; }

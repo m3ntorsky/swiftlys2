@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayer_ActionTrackingServices : CPlayerPawnComponent, IConvertibleNativeHandle<CCSPlayer_ActionTrackingServices> {
+public partial interface CCSPlayer_ActionTrackingServices : CPlayerPawnComponent, ISchemaClass<CCSPlayer_ActionTrackingServices> {
 
-  static CCSPlayer_ActionTrackingServices IConvertibleNativeHandle<CCSPlayer_ActionTrackingServices>.From(nint handle) => new CCSPlayer_ActionTrackingServicesImpl(handle);
+  static CCSPlayer_ActionTrackingServices ISchemaClass<CCSPlayer_ActionTrackingServices>.From(nint handle) => new CCSPlayer_ActionTrackingServicesImpl(handle);
 
   
   public ref CHandle<CBasePlayerWeapon> LastWeaponBeforeC4AutoSwitch { get; }

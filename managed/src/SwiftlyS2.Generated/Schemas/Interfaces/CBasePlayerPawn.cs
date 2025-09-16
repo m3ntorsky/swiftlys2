@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBasePlayerPawn : CBaseCombatCharacter, IConvertibleNativeHandle<CBasePlayerPawn> {
+public partial interface CBasePlayerPawn : CBaseCombatCharacter, ISchemaClass<CBasePlayerPawn> {
 
-  static CBasePlayerPawn IConvertibleNativeHandle<CBasePlayerPawn>.From(nint handle) => new CBasePlayerPawnImpl(handle);
+  static CBasePlayerPawn ISchemaClass<CBasePlayerPawn>.From(nint handle) => new CBasePlayerPawnImpl(handle);
 
   
   public CPlayer_WeaponServices? WeaponServices { get; }

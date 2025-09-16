@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAttributeList : ISchemaClass, IConvertibleNativeHandle<CAttributeList> {
+public partial interface CAttributeList : ISchemaClass<CAttributeList> {
 
-  static CAttributeList IConvertibleNativeHandle<CAttributeList>.From(nint handle) => new CAttributeListImpl(handle);
+  static CAttributeList ISchemaClass<CAttributeList>.From(nint handle) => new CAttributeListImpl(handle);
 
   
   // CUtlVectorEmbeddedNetworkVar< CEconItemAttribute >

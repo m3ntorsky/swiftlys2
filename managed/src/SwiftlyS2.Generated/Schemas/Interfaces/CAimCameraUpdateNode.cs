@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAimCameraUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CAimCameraUpdateNode> {
+public partial interface CAimCameraUpdateNode : CUnaryUpdateNode, ISchemaClass<CAimCameraUpdateNode> {
 
-  static CAimCameraUpdateNode IConvertibleNativeHandle<CAimCameraUpdateNode>.From(nint handle) => new CAimCameraUpdateNodeImpl(handle);
+  static CAimCameraUpdateNode ISchemaClass<CAimCameraUpdateNode>.From(nint handle) => new CAimCameraUpdateNodeImpl(handle);
 
   
   public CAnimParamHandle ParameterPosition { get; }

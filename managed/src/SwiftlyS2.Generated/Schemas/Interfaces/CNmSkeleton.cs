@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmSkeleton : ISchemaClass, IConvertibleNativeHandle<CNmSkeleton> {
+public partial interface CNmSkeleton : ISchemaClass<CNmSkeleton> {
 
-  static CNmSkeleton IConvertibleNativeHandle<CNmSkeleton>.From(nint handle) => new CNmSkeletonImpl(handle);
+  static CNmSkeleton ISchemaClass<CNmSkeleton>.From(nint handle) => new CNmSkeletonImpl(handle);
 
   
   public ref CGlobalSymbol ID { get; }

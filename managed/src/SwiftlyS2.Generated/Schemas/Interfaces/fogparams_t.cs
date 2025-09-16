@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface fogparams_t : ISchemaClass, IConvertibleNativeHandle<fogparams_t> {
+public partial interface fogparams_t : ISchemaClass<fogparams_t> {
 
-  static fogparams_t IConvertibleNativeHandle<fogparams_t>.From(nint handle) => new fogparams_tImpl(handle);
+  static fogparams_t ISchemaClass<fogparams_t>.From(nint handle) => new fogparams_tImpl(handle);
 
   
   public ref Vector DirPrimary { get; }

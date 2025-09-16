@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerShapedNoise : CVoiceContainerBase, IConvertibleNativeHandle<CVoiceContainerShapedNoise> {
+public partial interface CVoiceContainerShapedNoise : CVoiceContainerBase, ISchemaClass<CVoiceContainerShapedNoise> {
 
-  static CVoiceContainerShapedNoise IConvertibleNativeHandle<CVoiceContainerShapedNoise>.From(nint handle) => new CVoiceContainerShapedNoiseImpl(handle);
+  static CVoiceContainerShapedNoise ISchemaClass<CVoiceContainerShapedNoise>.From(nint handle) => new CVoiceContainerShapedNoiseImpl(handle);
 
   
   public ref bool UseCurveForFrequency { get; }

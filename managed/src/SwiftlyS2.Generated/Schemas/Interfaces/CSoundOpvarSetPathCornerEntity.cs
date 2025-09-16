@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundOpvarSetPathCornerEntity : CSoundOpvarSetPointEntity, IConvertibleNativeHandle<CSoundOpvarSetPathCornerEntity> {
+public partial interface CSoundOpvarSetPathCornerEntity : CSoundOpvarSetPointEntity, ISchemaClass<CSoundOpvarSetPathCornerEntity> {
 
-  static CSoundOpvarSetPathCornerEntity IConvertibleNativeHandle<CSoundOpvarSetPathCornerEntity>.From(nint handle) => new CSoundOpvarSetPathCornerEntityImpl(handle);
+  static CSoundOpvarSetPathCornerEntity ISchemaClass<CSoundOpvarSetPathCornerEntity>.From(nint handle) => new CSoundOpvarSetPathCornerEntityImpl(handle);
 
   
   public ref float DistMinSqr { get; }

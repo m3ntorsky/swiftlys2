@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_IntraParticleForce : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_IntraParticleForce> {
+public partial interface C_OP_IntraParticleForce : CParticleFunctionForce, ISchemaClass<C_OP_IntraParticleForce> {
 
-  static C_OP_IntraParticleForce IConvertibleNativeHandle<C_OP_IntraParticleForce>.From(nint handle) => new C_OP_IntraParticleForceImpl(handle);
+  static C_OP_IntraParticleForce ISchemaClass<C_OP_IntraParticleForce>.From(nint handle) => new C_OP_IntraParticleForceImpl(handle);
 
   
   public ref float AttractionMinDistance { get; }

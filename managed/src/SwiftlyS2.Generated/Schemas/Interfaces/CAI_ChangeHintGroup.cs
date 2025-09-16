@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAI_ChangeHintGroup : CBaseEntity, IConvertibleNativeHandle<CAI_ChangeHintGroup> {
+public partial interface CAI_ChangeHintGroup : CBaseEntity, ISchemaClass<CAI_ChangeHintGroup> {
 
-  static CAI_ChangeHintGroup IConvertibleNativeHandle<CAI_ChangeHintGroup>.From(nint handle) => new CAI_ChangeHintGroupImpl(handle);
+  static CAI_ChangeHintGroup ISchemaClass<CAI_ChangeHintGroup>.From(nint handle) => new CAI_ChangeHintGroupImpl(handle);
 
   
   public ref int SearchType { get; }

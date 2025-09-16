@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ParticleNode_t : ISchemaClass, IConvertibleNativeHandle<ParticleNode_t> {
+public partial interface ParticleNode_t : ISchemaClass<ParticleNode_t> {
 
-  static ParticleNode_t IConvertibleNativeHandle<ParticleNode_t>.From(nint handle) => new ParticleNode_tImpl(handle);
+  static ParticleNode_t ISchemaClass<ParticleNode_t>.From(nint handle) => new ParticleNode_tImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Entity { get; }

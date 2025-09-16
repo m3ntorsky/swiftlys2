@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleAnimTag : CAnimTagBase, IConvertibleNativeHandle<CParticleAnimTag> {
+public partial interface CParticleAnimTag : CAnimTagBase, ISchemaClass<CParticleAnimTag> {
 
-  static CParticleAnimTag IConvertibleNativeHandle<CParticleAnimTag>.From(nint handle) => new CParticleAnimTagImpl(handle);
+  static CParticleAnimTag ISchemaClass<CParticleAnimTag>.From(nint handle) => new CParticleAnimTagImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ParticleSystem { get; }

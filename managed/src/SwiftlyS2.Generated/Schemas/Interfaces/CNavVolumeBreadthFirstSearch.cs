@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavVolumeBreadthFirstSearch : CNavVolumeCalculatedVector, IConvertibleNativeHandle<CNavVolumeBreadthFirstSearch> {
+public partial interface CNavVolumeBreadthFirstSearch : CNavVolumeCalculatedVector, ISchemaClass<CNavVolumeBreadthFirstSearch> {
 
-  static CNavVolumeBreadthFirstSearch IConvertibleNativeHandle<CNavVolumeBreadthFirstSearch>.From(nint handle) => new CNavVolumeBreadthFirstSearchImpl(handle);
+  static CNavVolumeBreadthFirstSearch ISchemaClass<CNavVolumeBreadthFirstSearch>.From(nint handle) => new CNavVolumeBreadthFirstSearchImpl(handle);
 
   
   public ref Vector StartPos { get; }

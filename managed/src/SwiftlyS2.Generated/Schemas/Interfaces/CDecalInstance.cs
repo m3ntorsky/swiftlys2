@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDecalInstance : ISchemaClass, IConvertibleNativeHandle<CDecalInstance> {
+public partial interface CDecalInstance : ISchemaClass<CDecalInstance> {
 
-  static CDecalInstance IConvertibleNativeHandle<CDecalInstance>.From(nint handle) => new CDecalInstanceImpl(handle);
+  static CDecalInstance ISchemaClass<CDecalInstance>.From(nint handle) => new CDecalInstanceImpl(handle);
 
   
   public ref CGlobalSymbol DecalGroup { get; }

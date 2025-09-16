@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncWallToggle : CFuncWall, IConvertibleNativeHandle<CFuncWallToggle> {
+public partial interface CFuncWallToggle : CFuncWall, ISchemaClass<CFuncWallToggle> {
 
-  static CFuncWallToggle IConvertibleNativeHandle<CFuncWallToggle>.From(nint handle) => new CFuncWallToggleImpl(handle);
+  static CFuncWallToggle ISchemaClass<CFuncWallToggle>.From(nint handle) => new CFuncWallToggleImpl(handle);
 
 
 

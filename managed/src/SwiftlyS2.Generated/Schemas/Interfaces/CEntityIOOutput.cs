@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEntityIOOutput : ISchemaClass, IConvertibleNativeHandle<CEntityIOOutput> {
+public partial interface CEntityIOOutput : ISchemaClass<CEntityIOOutput> {
 
-  static CEntityIOOutput IConvertibleNativeHandle<CEntityIOOutput>.From(nint handle) => new CEntityIOOutputImpl(handle);
+  static CEntityIOOutput ISchemaClass<CEntityIOOutput>.From(nint handle) => new CEntityIOOutputImpl(handle);
 
   
   // CVariantBase< CVariantDefaultAllocator >

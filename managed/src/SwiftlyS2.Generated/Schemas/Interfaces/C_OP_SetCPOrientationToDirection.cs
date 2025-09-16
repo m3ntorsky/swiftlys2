@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetCPOrientationToDirection : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_SetCPOrientationToDirection> {
+public partial interface C_OP_SetCPOrientationToDirection : CParticleFunctionOperator, ISchemaClass<C_OP_SetCPOrientationToDirection> {
 
-  static C_OP_SetCPOrientationToDirection IConvertibleNativeHandle<C_OP_SetCPOrientationToDirection>.From(nint handle) => new C_OP_SetCPOrientationToDirectionImpl(handle);
+  static C_OP_SetCPOrientationToDirection ISchemaClass<C_OP_SetCPOrientationToDirection>.From(nint handle) => new C_OP_SetCPOrientationToDirectionImpl(handle);
 
   
   public ref int InputControlPoint { get; }

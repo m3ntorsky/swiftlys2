@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSingleplayRules : CGameRules, IConvertibleNativeHandle<CSingleplayRules> {
+public partial interface CSingleplayRules : CGameRules, ISchemaClass<CSingleplayRules> {
 
-  static CSingleplayRules IConvertibleNativeHandle<CSingleplayRules>.From(nint handle) => new CSingleplayRulesImpl(handle);
+  static CSingleplayRules ISchemaClass<CSingleplayRules>.From(nint handle) => new CSingleplayRulesImpl(handle);
 
   
   public ref bool SinglePlayerGameEnding { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicNPCCounter : CBaseEntity, IConvertibleNativeHandle<CLogicNPCCounter> {
+public partial interface CLogicNPCCounter : CBaseEntity, ISchemaClass<CLogicNPCCounter> {
 
-  static CLogicNPCCounter IConvertibleNativeHandle<CLogicNPCCounter>.From(nint handle) => new CLogicNPCCounterImpl(handle);
+  static CLogicNPCCounter ISchemaClass<CLogicNPCCounter>.From(nint handle) => new CLogicNPCCounterImpl(handle);
 
   
   public CEntityIOOutput OnMinCountAll { get; }

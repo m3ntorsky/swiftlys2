@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PGDInstruction_t : ISchemaClass, IConvertibleNativeHandle<PGDInstruction_t> {
+public partial interface PGDInstruction_t : ISchemaClass<PGDInstruction_t> {
 
-  static PGDInstruction_t IConvertibleNativeHandle<PGDInstruction_t>.From(nint handle) => new PGDInstruction_tImpl(handle);
+  static PGDInstruction_t ISchemaClass<PGDInstruction_t>.From(nint handle) => new PGDInstruction_tImpl(handle);
 
   
   public ref PulseInstructionCode_t Code { get; }

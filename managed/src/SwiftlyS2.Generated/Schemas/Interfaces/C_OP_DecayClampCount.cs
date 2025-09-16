@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_DecayClampCount : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_DecayClampCount> {
+public partial interface C_OP_DecayClampCount : CParticleFunctionOperator, ISchemaClass<C_OP_DecayClampCount> {
 
-  static C_OP_DecayClampCount IConvertibleNativeHandle<C_OP_DecayClampCount>.From(nint handle) => new C_OP_DecayClampCountImpl(handle);
+  static C_OP_DecayClampCount ISchemaClass<C_OP_DecayClampCount>.From(nint handle) => new C_OP_DecayClampCountImpl(handle);
 
   
   public CParticleCollectionFloatInput Count { get; }

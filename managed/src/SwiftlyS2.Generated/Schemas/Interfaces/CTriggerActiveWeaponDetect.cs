@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerActiveWeaponDetect : CBaseTrigger, IConvertibleNativeHandle<CTriggerActiveWeaponDetect> {
+public partial interface CTriggerActiveWeaponDetect : CBaseTrigger, ISchemaClass<CTriggerActiveWeaponDetect> {
 
-  static CTriggerActiveWeaponDetect IConvertibleNativeHandle<CTriggerActiveWeaponDetect>.From(nint handle) => new CTriggerActiveWeaponDetectImpl(handle);
+  static CTriggerActiveWeaponDetect ISchemaClass<CTriggerActiveWeaponDetect>.From(nint handle) => new CTriggerActiveWeaponDetectImpl(handle);
 
   
   public CEntityIOOutput OnTouchedActiveWeapon { get; }

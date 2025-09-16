@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SellbackPurchaseEntry_t : ISchemaClass, IConvertibleNativeHandle<SellbackPurchaseEntry_t> {
+public partial interface SellbackPurchaseEntry_t : ISchemaClass<SellbackPurchaseEntry_t> {
 
-  static SellbackPurchaseEntry_t IConvertibleNativeHandle<SellbackPurchaseEntry_t>.From(nint handle) => new SellbackPurchaseEntry_tImpl(handle);
+  static SellbackPurchaseEntry_t ISchemaClass<SellbackPurchaseEntry_t>.From(nint handle) => new SellbackPurchaseEntry_tImpl(handle);
 
   
   public ref ushort DefIdx { get; }

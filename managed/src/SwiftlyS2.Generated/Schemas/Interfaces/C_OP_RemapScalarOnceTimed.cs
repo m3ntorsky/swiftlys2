@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapScalarOnceTimed : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapScalarOnceTimed> {
+public partial interface C_OP_RemapScalarOnceTimed : CParticleFunctionOperator, ISchemaClass<C_OP_RemapScalarOnceTimed> {
 
-  static C_OP_RemapScalarOnceTimed IConvertibleNativeHandle<C_OP_RemapScalarOnceTimed>.From(nint handle) => new C_OP_RemapScalarOnceTimedImpl(handle);
+  static C_OP_RemapScalarOnceTimed ISchemaClass<C_OP_RemapScalarOnceTimed>.From(nint handle) => new C_OP_RemapScalarOnceTimedImpl(handle);
 
   
   public ref bool Proportional { get; }

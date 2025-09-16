@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFireCrackerBlast : CInferno, IConvertibleNativeHandle<CFireCrackerBlast> {
+public partial interface CFireCrackerBlast : CInferno, ISchemaClass<CFireCrackerBlast> {
 
-  static CFireCrackerBlast IConvertibleNativeHandle<CFireCrackerBlast>.From(nint handle) => new CFireCrackerBlastImpl(handle);
+  static CFireCrackerBlast ISchemaClass<CFireCrackerBlast>.From(nint handle) => new CFireCrackerBlastImpl(handle);
 
 
 

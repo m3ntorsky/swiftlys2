@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmSpeedScaleNode__CDefinition : CNmSpeedScaleBaseNode__CDefinition, IConvertibleNativeHandle<CNmSpeedScaleNode__CDefinition> {
+public partial interface CNmSpeedScaleNode__CDefinition : CNmSpeedScaleBaseNode__CDefinition, ISchemaClass<CNmSpeedScaleNode__CDefinition> {
 
-  static CNmSpeedScaleNode__CDefinition IConvertibleNativeHandle<CNmSpeedScaleNode__CDefinition>.From(nint handle) => new CNmSpeedScaleNode__CDefinitionImpl(handle);
+  static CNmSpeedScaleNode__CDefinition ISchemaClass<CNmSpeedScaleNode__CDefinition>.From(nint handle) => new CNmSpeedScaleNode__CDefinitionImpl(handle);
 
 
 

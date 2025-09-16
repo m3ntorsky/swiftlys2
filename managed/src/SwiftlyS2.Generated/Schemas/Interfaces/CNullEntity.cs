@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNullEntity : CBaseEntity, IConvertibleNativeHandle<CNullEntity> {
+public partial interface CNullEntity : CBaseEntity, ISchemaClass<CNullEntity> {
 
-  static CNullEntity IConvertibleNativeHandle<CNullEntity>.From(nint handle) => new CNullEntityImpl(handle);
+  static CNullEntity ISchemaClass<CNullEntity>.From(nint handle) => new CNullEntityImpl(handle);
 
 
 

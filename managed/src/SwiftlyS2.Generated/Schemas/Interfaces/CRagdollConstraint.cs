@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollConstraint : CPhysConstraint, IConvertibleNativeHandle<CRagdollConstraint> {
+public partial interface CRagdollConstraint : CPhysConstraint, ISchemaClass<CRagdollConstraint> {
 
-  static CRagdollConstraint IConvertibleNativeHandle<CRagdollConstraint>.From(nint handle) => new CRagdollConstraintImpl(handle);
+  static CRagdollConstraint ISchemaClass<CRagdollConstraint>.From(nint handle) => new CRagdollConstraintImpl(handle);
 
   
   public ref float Xmin { get; }

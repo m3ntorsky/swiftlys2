@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFilterTeam : CBaseFilter, IConvertibleNativeHandle<CFilterTeam> {
+public partial interface CFilterTeam : CBaseFilter, ISchemaClass<CFilterTeam> {
 
-  static CFilterTeam IConvertibleNativeHandle<CFilterTeam>.From(nint handle) => new CFilterTeamImpl(handle);
+  static CFilterTeam ISchemaClass<CFilterTeam>.From(nint handle) => new CFilterTeamImpl(handle);
 
   
   public ref int FilterTeam { get; }

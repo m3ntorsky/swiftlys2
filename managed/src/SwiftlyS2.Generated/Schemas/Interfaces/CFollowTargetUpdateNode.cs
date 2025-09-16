@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFollowTargetUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CFollowTargetUpdateNode> {
+public partial interface CFollowTargetUpdateNode : CUnaryUpdateNode, ISchemaClass<CFollowTargetUpdateNode> {
 
-  static CFollowTargetUpdateNode IConvertibleNativeHandle<CFollowTargetUpdateNode>.From(nint handle) => new CFollowTargetUpdateNodeImpl(handle);
+  static CFollowTargetUpdateNode ISchemaClass<CFollowTargetUpdateNode>.From(nint handle) => new CFollowTargetUpdateNodeImpl(handle);
 
   
   public FollowTargetOpFixedSettings_t OpFixedData { get; }

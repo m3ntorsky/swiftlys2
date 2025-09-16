@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoVisibilityBox : CBaseEntity, IConvertibleNativeHandle<CInfoVisibilityBox> {
+public partial interface CInfoVisibilityBox : CBaseEntity, ISchemaClass<CInfoVisibilityBox> {
 
-  static CInfoVisibilityBox IConvertibleNativeHandle<CInfoVisibilityBox>.From(nint handle) => new CInfoVisibilityBoxImpl(handle);
+  static CInfoVisibilityBox ISchemaClass<CInfoVisibilityBox>.From(nint handle) => new CInfoVisibilityBoxImpl(handle);
 
   
   public ref int Mode { get; }

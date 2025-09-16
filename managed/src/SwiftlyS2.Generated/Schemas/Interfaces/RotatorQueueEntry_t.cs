@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RotatorQueueEntry_t : ISchemaClass, IConvertibleNativeHandle<RotatorQueueEntry_t> {
+public partial interface RotatorQueueEntry_t : ISchemaClass<RotatorQueueEntry_t> {
 
-  static RotatorQueueEntry_t IConvertibleNativeHandle<RotatorQueueEntry_t>.From(nint handle) => new RotatorQueueEntry_tImpl(handle);
+  static RotatorQueueEntry_t ISchemaClass<RotatorQueueEntry_t>.From(nint handle) => new RotatorQueueEntry_tImpl(handle);
 
   
   public ref Quaternion Target { get; }

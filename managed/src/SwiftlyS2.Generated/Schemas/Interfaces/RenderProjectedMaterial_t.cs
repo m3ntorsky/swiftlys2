@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RenderProjectedMaterial_t : ISchemaClass, IConvertibleNativeHandle<RenderProjectedMaterial_t> {
+public partial interface RenderProjectedMaterial_t : ISchemaClass<RenderProjectedMaterial_t> {
 
-  static RenderProjectedMaterial_t IConvertibleNativeHandle<RenderProjectedMaterial_t>.From(nint handle) => new RenderProjectedMaterial_tImpl(handle);
+  static RenderProjectedMaterial_t ISchemaClass<RenderProjectedMaterial_t>.From(nint handle) => new RenderProjectedMaterial_tImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }

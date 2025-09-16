@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncTrain : CBasePlatTrain, IConvertibleNativeHandle<CFuncTrain> {
+public partial interface CFuncTrain : CBasePlatTrain, ISchemaClass<CFuncTrain> {
 
-  static CFuncTrain IConvertibleNativeHandle<CFuncTrain>.From(nint handle) => new CFuncTrainImpl(handle);
+  static CFuncTrain ISchemaClass<CFuncTrain>.From(nint handle) => new CFuncTrainImpl(handle);
 
   
   public ref CHandle<CBaseEntity> CurrentTarget { get; }

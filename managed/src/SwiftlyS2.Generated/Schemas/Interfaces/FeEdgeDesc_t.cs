@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeEdgeDesc_t : ISchemaClass, IConvertibleNativeHandle<FeEdgeDesc_t> {
+public partial interface FeEdgeDesc_t : ISchemaClass<FeEdgeDesc_t> {
 
-  static FeEdgeDesc_t IConvertibleNativeHandle<FeEdgeDesc_t>.From(nint handle) => new FeEdgeDesc_tImpl(handle);
+  static FeEdgeDesc_t ISchemaClass<FeEdgeDesc_t>.From(nint handle) => new FeEdgeDesc_tImpl(handle);
 
   
   public ISchemaFixedArray<ushort> Edge { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ChangeAccessorFieldPathIndex_t : ISchemaClass, IConvertibleNativeHandle<ChangeAccessorFieldPathIndex_t> {
+public partial interface ChangeAccessorFieldPathIndex_t : ISchemaClass<ChangeAccessorFieldPathIndex_t> {
 
-  static ChangeAccessorFieldPathIndex_t IConvertibleNativeHandle<ChangeAccessorFieldPathIndex_t>.From(nint handle) => new ChangeAccessorFieldPathIndex_tImpl(handle);
+  static ChangeAccessorFieldPathIndex_t ISchemaClass<ChangeAccessorFieldPathIndex_t>.From(nint handle) => new ChangeAccessorFieldPathIndex_tImpl(handle);
 
   
   public ref int Value { get; }

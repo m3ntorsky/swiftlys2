@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CShatterGlassShard : ISchemaClass, IConvertibleNativeHandle<CShatterGlassShard> {
+public partial interface CShatterGlassShard : ISchemaClass<CShatterGlassShard> {
 
-  static CShatterGlassShard IConvertibleNativeHandle<CShatterGlassShard>.From(nint handle) => new CShatterGlassShardImpl(handle);
+  static CShatterGlassShard ISchemaClass<CShatterGlassShard>.From(nint handle) => new CShatterGlassShardImpl(handle);
 
   
   public ref uint ShardHandle { get; }

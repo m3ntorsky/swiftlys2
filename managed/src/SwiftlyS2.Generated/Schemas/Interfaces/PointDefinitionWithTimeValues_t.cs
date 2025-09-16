@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PointDefinitionWithTimeValues_t : PointDefinition_t, IConvertibleNativeHandle<PointDefinitionWithTimeValues_t> {
+public partial interface PointDefinitionWithTimeValues_t : PointDefinition_t, ISchemaClass<PointDefinitionWithTimeValues_t> {
 
-  static PointDefinitionWithTimeValues_t IConvertibleNativeHandle<PointDefinitionWithTimeValues_t>.From(nint handle) => new PointDefinitionWithTimeValues_tImpl(handle);
+  static PointDefinitionWithTimeValues_t ISchemaClass<PointDefinitionWithTimeValues_t>.From(nint handle) => new PointDefinitionWithTimeValues_tImpl(handle);
 
   
   public ref float TimeDuration { get; }

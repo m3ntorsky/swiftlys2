@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmStateMachineNode__CDefinition : CNmPoseNode__CDefinition, IConvertibleNativeHandle<CNmStateMachineNode__CDefinition> {
+public partial interface CNmStateMachineNode__CDefinition : CNmPoseNode__CDefinition, ISchemaClass<CNmStateMachineNode__CDefinition> {
 
-  static CNmStateMachineNode__CDefinition IConvertibleNativeHandle<CNmStateMachineNode__CDefinition>.From(nint handle) => new CNmStateMachineNode__CDefinitionImpl(handle);
+  static CNmStateMachineNode__CDefinition ISchemaClass<CNmStateMachineNode__CDefinition>.From(nint handle) => new CNmStateMachineNode__CDefinitionImpl(handle);
 
   
   // CUtlLeanVectorFixedGrowable< CNmStateMachineNode::StateDefinition_t, 5 >

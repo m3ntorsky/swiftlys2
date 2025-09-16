@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmIKJoint : ISchemaClass, IConvertibleNativeHandle<CNmIKJoint> {
+public partial interface CNmIKJoint : ISchemaClass<CNmIKJoint> {
 
-  static CNmIKJoint IConvertibleNativeHandle<CNmIKJoint>.From(nint handle) => new CNmIKJointImpl(handle);
+  static CNmIKJoint ISchemaClass<CNmIKJoint>.From(nint handle) => new CNmIKJointImpl(handle);
 
   
   public ref int ParentIndex { get; }

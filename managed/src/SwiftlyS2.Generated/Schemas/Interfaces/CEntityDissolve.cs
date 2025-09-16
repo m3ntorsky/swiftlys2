@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEntityDissolve : CBaseModelEntity, IConvertibleNativeHandle<CEntityDissolve> {
+public partial interface CEntityDissolve : CBaseModelEntity, ISchemaClass<CEntityDissolve> {
 
-  static CEntityDissolve IConvertibleNativeHandle<CEntityDissolve>.From(nint handle) => new CEntityDissolveImpl(handle);
+  static CEntityDissolve ISchemaClass<CEntityDissolve>.From(nint handle) => new CEntityDissolveImpl(handle);
 
   
   public ref float FadeInStart { get; }

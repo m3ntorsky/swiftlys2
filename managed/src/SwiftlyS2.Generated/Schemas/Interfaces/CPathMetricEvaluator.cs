@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathMetricEvaluator : CMotionMetricEvaluator, IConvertibleNativeHandle<CPathMetricEvaluator> {
+public partial interface CPathMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CPathMetricEvaluator> {
 
-  static CPathMetricEvaluator IConvertibleNativeHandle<CPathMetricEvaluator>.From(nint handle) => new CPathMetricEvaluatorImpl(handle);
+  static CPathMetricEvaluator ISchemaClass<CPathMetricEvaluator>.From(nint handle) => new CPathMetricEvaluatorImpl(handle);
 
   
   public ref CUtlVector<float> PathTimeSamples { get; }

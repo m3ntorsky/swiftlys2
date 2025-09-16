@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ConnectParentParticleToNearest : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_ConnectParentParticleToNearest> {
+public partial interface C_OP_ConnectParentParticleToNearest : CParticleFunctionOperator, ISchemaClass<C_OP_ConnectParentParticleToNearest> {
 
-  static C_OP_ConnectParentParticleToNearest IConvertibleNativeHandle<C_OP_ConnectParentParticleToNearest>.From(nint handle) => new C_OP_ConnectParentParticleToNearestImpl(handle);
+  static C_OP_ConnectParentParticleToNearest ISchemaClass<C_OP_ConnectParentParticleToNearest>.From(nint handle) => new C_OP_ConnectParentParticleToNearestImpl(handle);
 
   
   public ref int FirstControlPoint { get; }

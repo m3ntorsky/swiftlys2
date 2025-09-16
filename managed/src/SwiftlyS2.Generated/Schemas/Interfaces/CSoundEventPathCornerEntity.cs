@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundEventPathCornerEntity : CSoundEventEntity, IConvertibleNativeHandle<CSoundEventPathCornerEntity> {
+public partial interface CSoundEventPathCornerEntity : CSoundEventEntity, ISchemaClass<CSoundEventPathCornerEntity> {
 
-  static CSoundEventPathCornerEntity IConvertibleNativeHandle<CSoundEventPathCornerEntity>.From(nint handle) => new CSoundEventPathCornerEntityImpl(handle);
+  static CSoundEventPathCornerEntity ISchemaClass<CSoundEventPathCornerEntity>.From(nint handle) => new CSoundEventPathCornerEntityImpl(handle);
 
   
   public ref CUtlSymbolLarge PathCorner { get; }

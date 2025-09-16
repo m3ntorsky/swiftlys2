@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollPropAlias_physics_prop_ragdoll : CRagdollProp, IConvertibleNativeHandle<CRagdollPropAlias_physics_prop_ragdoll> {
+public partial interface CRagdollPropAlias_physics_prop_ragdoll : CRagdollProp, ISchemaClass<CRagdollPropAlias_physics_prop_ragdoll> {
 
-  static CRagdollPropAlias_physics_prop_ragdoll IConvertibleNativeHandle<CRagdollPropAlias_physics_prop_ragdoll>.From(nint handle) => new CRagdollPropAlias_physics_prop_ragdollImpl(handle);
+  static CRagdollPropAlias_physics_prop_ragdoll ISchemaClass<CRagdollPropAlias_physics_prop_ragdoll>.From(nint handle) => new CRagdollPropAlias_physics_prop_ragdollImpl(handle);
 
 
 

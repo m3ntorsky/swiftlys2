@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathTrack : CPointEntity, IConvertibleNativeHandle<CPathTrack> {
+public partial interface CPathTrack : CPointEntity, ISchemaClass<CPathTrack> {
 
-  static CPathTrack IConvertibleNativeHandle<CPathTrack>.From(nint handle) => new CPathTrackImpl(handle);
+  static CPathTrack ISchemaClass<CPathTrack>.From(nint handle) => new CPathTrackImpl(handle);
 
   
   public CPathTrack? Pnext { get; }

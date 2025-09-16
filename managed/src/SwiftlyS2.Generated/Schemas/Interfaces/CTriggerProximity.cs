@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerProximity : CBaseTrigger, IConvertibleNativeHandle<CTriggerProximity> {
+public partial interface CTriggerProximity : CBaseTrigger, ISchemaClass<CTriggerProximity> {
 
-  static CTriggerProximity IConvertibleNativeHandle<CTriggerProximity>.From(nint handle) => new CTriggerProximityImpl(handle);
+  static CTriggerProximity ISchemaClass<CTriggerProximity>.From(nint handle) => new CTriggerProximityImpl(handle);
 
   
   public ref CHandle<CBaseEntity> MeasureTarget { get; }

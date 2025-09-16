@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicMeasureMovement : CLogicalEntity, IConvertibleNativeHandle<CLogicMeasureMovement> {
+public partial interface CLogicMeasureMovement : CLogicalEntity, ISchemaClass<CLogicMeasureMovement> {
 
-  static CLogicMeasureMovement IConvertibleNativeHandle<CLogicMeasureMovement>.From(nint handle) => new CLogicMeasureMovementImpl(handle);
+  static CLogicMeasureMovement ISchemaClass<CLogicMeasureMovement>.From(nint handle) => new CLogicMeasureMovementImpl(handle);
 
   
   public ref CUtlSymbolLarge StrMeasureTarget { get; }

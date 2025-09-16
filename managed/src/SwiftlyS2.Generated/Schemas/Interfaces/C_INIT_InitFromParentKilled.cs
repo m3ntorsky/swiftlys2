@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_InitFromParentKilled : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_InitFromParentKilled> {
+public partial interface C_INIT_InitFromParentKilled : CParticleFunctionInitializer, ISchemaClass<C_INIT_InitFromParentKilled> {
 
-  static C_INIT_InitFromParentKilled IConvertibleNativeHandle<C_INIT_InitFromParentKilled>.From(nint handle) => new C_INIT_InitFromParentKilledImpl(handle);
+  static C_INIT_InitFromParentKilled ISchemaClass<C_INIT_InitFromParentKilled>.From(nint handle) => new C_INIT_InitFromParentKilledImpl(handle);
 
   
   public ParticleAttributeIndex_t AttributeToCopy { get; }

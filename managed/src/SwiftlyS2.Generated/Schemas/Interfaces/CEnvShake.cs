@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvShake : CPointEntity, IConvertibleNativeHandle<CEnvShake> {
+public partial interface CEnvShake : CPointEntity, ISchemaClass<CEnvShake> {
 
-  static CEnvShake IConvertibleNativeHandle<CEnvShake>.From(nint handle) => new CEnvShakeImpl(handle);
+  static CEnvShake ISchemaClass<CEnvShake>.From(nint handle) => new CEnvShakeImpl(handle);
 
   
   public ref CUtlSymbolLarge LimitToEntity { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysBox : CBreakable, IConvertibleNativeHandle<CPhysBox> {
+public partial interface CPhysBox : CBreakable, ISchemaClass<CPhysBox> {
 
-  static CPhysBox IConvertibleNativeHandle<CPhysBox>.From(nint handle) => new CPhysBoxImpl(handle);
+  static CPhysBox ISchemaClass<CPhysBox>.From(nint handle) => new CPhysBoxImpl(handle);
 
   
   public ref int DamageType { get; }

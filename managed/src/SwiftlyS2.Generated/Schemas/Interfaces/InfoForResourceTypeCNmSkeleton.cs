@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCNmSkeleton : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCNmSkeleton> {
+public partial interface InfoForResourceTypeCNmSkeleton : ISchemaClass<InfoForResourceTypeCNmSkeleton> {
 
-  static InfoForResourceTypeCNmSkeleton IConvertibleNativeHandle<InfoForResourceTypeCNmSkeleton>.From(nint handle) => new InfoForResourceTypeCNmSkeletonImpl(handle);
+  static InfoForResourceTypeCNmSkeleton ISchemaClass<InfoForResourceTypeCNmSkeleton>.From(nint handle) => new InfoForResourceTypeCNmSkeletonImpl(handle);
 
 
 

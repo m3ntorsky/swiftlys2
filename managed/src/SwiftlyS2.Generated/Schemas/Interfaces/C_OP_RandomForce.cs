@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RandomForce : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_RandomForce> {
+public partial interface C_OP_RandomForce : CParticleFunctionForce, ISchemaClass<C_OP_RandomForce> {
 
-  static C_OP_RandomForce IConvertibleNativeHandle<C_OP_RandomForce>.From(nint handle) => new C_OP_RandomForceImpl(handle);
+  static C_OP_RandomForce ISchemaClass<C_OP_RandomForce>.From(nint handle) => new C_OP_RandomForceImpl(handle);
 
   
   public ref Vector MinForce { get; }

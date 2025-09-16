@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimDecoder : ISchemaClass, IConvertibleNativeHandle<CAnimDecoder> {
+public partial interface CAnimDecoder : ISchemaClass<CAnimDecoder> {
 
-  static CAnimDecoder IConvertibleNativeHandle<CAnimDecoder>.From(nint handle) => new CAnimDecoderImpl(handle);
+  static CAnimDecoder ISchemaClass<CAnimDecoder>.From(nint handle) => new CAnimDecoderImpl(handle);
 
   
   public ref CBufferString Name { get; }

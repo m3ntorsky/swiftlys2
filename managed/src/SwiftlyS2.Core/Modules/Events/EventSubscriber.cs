@@ -11,10 +11,10 @@ namespace SwiftlyS2.Core.Events;
 /// </summary>
 internal class EventSubscriber : IEventSubscriber, IDisposable {
 
-  private Services.CoreContext _Id { get; init; }
+  private CoreContext _Id { get; init; }
   private ProfileService _ProfileService { get; init; }
 
-  public EventSubscriber(Services.CoreContext id, IServiceProvider provider) {
+  public EventSubscriber(CoreContext id, IServiceProvider provider) {
     _Id = id;
     _ProfileService = provider.GetRequiredService<ProfileService>();
     EventPublisher.Subscribe(this);

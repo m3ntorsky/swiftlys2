@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_PositionOffset : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_PositionOffset> {
+public partial interface C_INIT_PositionOffset : CParticleFunctionInitializer, ISchemaClass<C_INIT_PositionOffset> {
 
-  static C_INIT_PositionOffset IConvertibleNativeHandle<C_INIT_PositionOffset>.From(nint handle) => new C_INIT_PositionOffsetImpl(handle);
+  static C_INIT_PositionOffset ISchemaClass<C_INIT_PositionOffset>.From(nint handle) => new C_INIT_PositionOffsetImpl(handle);
 
   
   public CPerParticleVecInput OffsetMin { get; }

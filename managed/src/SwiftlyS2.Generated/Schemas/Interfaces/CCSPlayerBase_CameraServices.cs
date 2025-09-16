@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayerBase_CameraServices : CPlayer_CameraServices, IConvertibleNativeHandle<CCSPlayerBase_CameraServices> {
+public partial interface CCSPlayerBase_CameraServices : CPlayer_CameraServices, ISchemaClass<CCSPlayerBase_CameraServices> {
 
-  static CCSPlayerBase_CameraServices IConvertibleNativeHandle<CCSPlayerBase_CameraServices>.From(nint handle) => new CCSPlayerBase_CameraServicesImpl(handle);
+  static CCSPlayerBase_CameraServices ISchemaClass<CCSPlayerBase_CameraServices>.From(nint handle) => new CCSPlayerBase_CameraServicesImpl(handle);
 
   
   public ref uint FOV { get; }

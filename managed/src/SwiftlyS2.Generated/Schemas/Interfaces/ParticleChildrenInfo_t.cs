@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ParticleChildrenInfo_t : ISchemaClass, IConvertibleNativeHandle<ParticleChildrenInfo_t> {
+public partial interface ParticleChildrenInfo_t : ISchemaClass<ParticleChildrenInfo_t> {
 
-  static ParticleChildrenInfo_t IConvertibleNativeHandle<ParticleChildrenInfo_t>.From(nint handle) => new ParticleChildrenInfo_tImpl(handle);
+  static ParticleChildrenInfo_t ISchemaClass<ParticleChildrenInfo_t>.From(nint handle) => new ParticleChildrenInfo_tImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ChildRef { get; }

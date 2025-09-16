@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CItem_Healthshot : CWeaponBaseItem, IConvertibleNativeHandle<CItem_Healthshot> {
+public partial interface CItem_Healthshot : CWeaponBaseItem, ISchemaClass<CItem_Healthshot> {
 
-  static CItem_Healthshot IConvertibleNativeHandle<CItem_Healthshot>.From(nint handle) => new CItem_HealthshotImpl(handle);
+  static CItem_Healthshot ISchemaClass<CItem_Healthshot>.From(nint handle) => new CItem_HealthshotImpl(handle);
 
 
 

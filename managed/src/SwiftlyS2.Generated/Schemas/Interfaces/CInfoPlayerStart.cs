@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoPlayerStart : CPointEntity, IConvertibleNativeHandle<CInfoPlayerStart> {
+public partial interface CInfoPlayerStart : CPointEntity, ISchemaClass<CInfoPlayerStart> {
 
-  static CInfoPlayerStart IConvertibleNativeHandle<CInfoPlayerStart>.From(nint handle) => new CInfoPlayerStartImpl(handle);
+  static CInfoPlayerStart ISchemaClass<CInfoPlayerStart>.From(nint handle) => new CInfoPlayerStartImpl(handle);
 
   
   public ref bool Disabled { get; }

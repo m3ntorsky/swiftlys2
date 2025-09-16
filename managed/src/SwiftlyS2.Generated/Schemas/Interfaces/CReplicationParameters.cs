@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CReplicationParameters : ISchemaClass, IConvertibleNativeHandle<CReplicationParameters> {
+public partial interface CReplicationParameters : ISchemaClass<CReplicationParameters> {
 
-  static CReplicationParameters IConvertibleNativeHandle<CReplicationParameters>.From(nint handle) => new CReplicationParametersImpl(handle);
+  static CReplicationParameters ISchemaClass<CReplicationParameters>.From(nint handle) => new CReplicationParametersImpl(handle);
 
   
   public ref ParticleReplicationMode_t ReplicationMode { get; }

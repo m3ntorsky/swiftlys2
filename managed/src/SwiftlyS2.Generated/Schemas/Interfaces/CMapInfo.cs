@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMapInfo : CPointEntity, IConvertibleNativeHandle<CMapInfo> {
+public partial interface CMapInfo : CPointEntity, ISchemaClass<CMapInfo> {
 
-  static CMapInfo IConvertibleNativeHandle<CMapInfo>.From(nint handle) => new CMapInfoImpl(handle);
+  static CMapInfo ISchemaClass<CMapInfo>.From(nint handle) => new CMapInfoImpl(handle);
 
   
   public ref int BuyingStatus { get; }

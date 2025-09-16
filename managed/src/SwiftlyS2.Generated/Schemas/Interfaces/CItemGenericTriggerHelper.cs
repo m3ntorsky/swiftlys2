@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CItemGenericTriggerHelper : CBaseModelEntity, IConvertibleNativeHandle<CItemGenericTriggerHelper> {
+public partial interface CItemGenericTriggerHelper : CBaseModelEntity, ISchemaClass<CItemGenericTriggerHelper> {
 
-  static CItemGenericTriggerHelper IConvertibleNativeHandle<CItemGenericTriggerHelper>.From(nint handle) => new CItemGenericTriggerHelperImpl(handle);
+  static CItemGenericTriggerHelper ISchemaClass<CItemGenericTriggerHelper>.From(nint handle) => new CItemGenericTriggerHelperImpl(handle);
 
   
   public ref CHandle<CItemGeneric> ParentItem { get; }

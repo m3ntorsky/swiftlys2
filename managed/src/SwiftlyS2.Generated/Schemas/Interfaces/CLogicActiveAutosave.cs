@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicActiveAutosave : CLogicAutosave, IConvertibleNativeHandle<CLogicActiveAutosave> {
+public partial interface CLogicActiveAutosave : CLogicAutosave, ISchemaClass<CLogicActiveAutosave> {
 
-  static CLogicActiveAutosave IConvertibleNativeHandle<CLogicActiveAutosave>.From(nint handle) => new CLogicActiveAutosaveImpl(handle);
+  static CLogicActiveAutosave ISchemaClass<CLogicActiveAutosave>.From(nint handle) => new CLogicActiveAutosaveImpl(handle);
 
   
   public ref int TriggerHitPoints { get; }

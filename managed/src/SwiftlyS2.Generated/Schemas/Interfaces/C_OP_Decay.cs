@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_Decay : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_Decay> {
+public partial interface C_OP_Decay : CParticleFunctionOperator, ISchemaClass<C_OP_Decay> {
 
-  static C_OP_Decay IConvertibleNativeHandle<C_OP_Decay>.From(nint handle) => new C_OP_DecayImpl(handle);
+  static C_OP_Decay ISchemaClass<C_OP_Decay>.From(nint handle) => new C_OP_DecayImpl(handle);
 
   
   public ref bool RopeDecay { get; }

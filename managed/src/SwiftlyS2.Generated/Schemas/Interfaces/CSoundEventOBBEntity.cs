@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundEventOBBEntity : CSoundEventEntity, IConvertibleNativeHandle<CSoundEventOBBEntity> {
+public partial interface CSoundEventOBBEntity : CSoundEventEntity, ISchemaClass<CSoundEventOBBEntity> {
 
-  static CSoundEventOBBEntity IConvertibleNativeHandle<CSoundEventOBBEntity>.From(nint handle) => new CSoundEventOBBEntityImpl(handle);
+  static CSoundEventOBBEntity ISchemaClass<CSoundEventOBBEntity>.From(nint handle) => new CSoundEventOBBEntityImpl(handle);
 
   
   public ref Vector Mins { get; }

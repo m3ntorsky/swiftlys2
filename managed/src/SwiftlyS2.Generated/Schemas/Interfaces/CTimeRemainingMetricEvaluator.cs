@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTimeRemainingMetricEvaluator : CMotionMetricEvaluator, IConvertibleNativeHandle<CTimeRemainingMetricEvaluator> {
+public partial interface CTimeRemainingMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CTimeRemainingMetricEvaluator> {
 
-  static CTimeRemainingMetricEvaluator IConvertibleNativeHandle<CTimeRemainingMetricEvaluator>.From(nint handle) => new CTimeRemainingMetricEvaluatorImpl(handle);
+  static CTimeRemainingMetricEvaluator ISchemaClass<CTimeRemainingMetricEvaluator>.From(nint handle) => new CTimeRemainingMetricEvaluatorImpl(handle);
 
   
   public ref bool MatchByTimeRemaining { get; }

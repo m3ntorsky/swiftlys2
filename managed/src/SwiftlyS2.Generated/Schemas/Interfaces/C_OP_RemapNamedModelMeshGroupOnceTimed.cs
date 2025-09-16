@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapNamedModelMeshGroupOnceTimed : C_OP_RemapNamedModelElementOnceTimed, IConvertibleNativeHandle<C_OP_RemapNamedModelMeshGroupOnceTimed> {
+public partial interface C_OP_RemapNamedModelMeshGroupOnceTimed : C_OP_RemapNamedModelElementOnceTimed, ISchemaClass<C_OP_RemapNamedModelMeshGroupOnceTimed> {
 
-  static C_OP_RemapNamedModelMeshGroupOnceTimed IConvertibleNativeHandle<C_OP_RemapNamedModelMeshGroupOnceTimed>.From(nint handle) => new C_OP_RemapNamedModelMeshGroupOnceTimedImpl(handle);
+  static C_OP_RemapNamedModelMeshGroupOnceTimed ISchemaClass<C_OP_RemapNamedModelMeshGroupOnceTimed>.From(nint handle) => new C_OP_RemapNamedModelMeshGroupOnceTimedImpl(handle);
 
 
 

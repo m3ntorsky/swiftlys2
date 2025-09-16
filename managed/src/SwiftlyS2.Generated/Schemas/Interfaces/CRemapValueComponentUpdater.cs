@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRemapValueComponentUpdater : CAnimComponentUpdater, IConvertibleNativeHandle<CRemapValueComponentUpdater> {
+public partial interface CRemapValueComponentUpdater : CAnimComponentUpdater, ISchemaClass<CRemapValueComponentUpdater> {
 
-  static CRemapValueComponentUpdater IConvertibleNativeHandle<CRemapValueComponentUpdater>.From(nint handle) => new CRemapValueComponentUpdaterImpl(handle);
+  static CRemapValueComponentUpdater ISchemaClass<CRemapValueComponentUpdater>.From(nint handle) => new CRemapValueComponentUpdaterImpl(handle);
 
   
   // CUtlVector< CRemapValueUpdateItem >

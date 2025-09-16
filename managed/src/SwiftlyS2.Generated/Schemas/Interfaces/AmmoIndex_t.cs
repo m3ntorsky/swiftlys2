@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AmmoIndex_t : ISchemaClass, IConvertibleNativeHandle<AmmoIndex_t> {
+public partial interface AmmoIndex_t : ISchemaClass<AmmoIndex_t> {
 
-  static AmmoIndex_t IConvertibleNativeHandle<AmmoIndex_t>.From(nint handle) => new AmmoIndex_tImpl(handle);
+  static AmmoIndex_t ISchemaClass<AmmoIndex_t>.From(nint handle) => new AmmoIndex_tImpl(handle);
 
   
   public ref byte Value { get; }

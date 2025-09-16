@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CResponseQueue : ISchemaClass, IConvertibleNativeHandle<CResponseQueue> {
+public partial interface CResponseQueue : ISchemaClass<CResponseQueue> {
 
-  static CResponseQueue IConvertibleNativeHandle<CResponseQueue>.From(nint handle) => new CResponseQueueImpl(handle);
+  static CResponseQueue ISchemaClass<CResponseQueue>.From(nint handle) => new CResponseQueueImpl(handle);
 
   
   public ref CUtlVector<PointerTo<CAI_Expresser>> ExpresserTargets { get; }

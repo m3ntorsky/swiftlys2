@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixPannerDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixPannerDesc_t> {
+public partial interface VMixPannerDesc_t : ISchemaClass<VMixPannerDesc_t> {
 
-  static VMixPannerDesc_t IConvertibleNativeHandle<VMixPannerDesc_t>.From(nint handle) => new VMixPannerDesc_tImpl(handle);
+  static VMixPannerDesc_t ISchemaClass<VMixPannerDesc_t>.From(nint handle) => new VMixPannerDesc_tImpl(handle);
 
   
   public ref VMixPannerType_t Type { get; }

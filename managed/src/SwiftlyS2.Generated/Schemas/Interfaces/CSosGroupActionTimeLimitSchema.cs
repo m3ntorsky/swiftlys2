@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupActionTimeLimitSchema : CSosGroupActionSchema, IConvertibleNativeHandle<CSosGroupActionTimeLimitSchema> {
+public partial interface CSosGroupActionTimeLimitSchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionTimeLimitSchema> {
 
-  static CSosGroupActionTimeLimitSchema IConvertibleNativeHandle<CSosGroupActionTimeLimitSchema>.From(nint handle) => new CSosGroupActionTimeLimitSchemaImpl(handle);
+  static CSosGroupActionTimeLimitSchema ISchemaClass<CSosGroupActionTimeLimitSchema>.From(nint handle) => new CSosGroupActionTimeLimitSchemaImpl(handle);
 
   
   public ref float MaxDuration { get; }

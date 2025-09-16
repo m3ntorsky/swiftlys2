@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AttachmentHandle_t : ISchemaClass, IConvertibleNativeHandle<AttachmentHandle_t> {
+public partial interface AttachmentHandle_t : ISchemaClass<AttachmentHandle_t> {
 
-  static AttachmentHandle_t IConvertibleNativeHandle<AttachmentHandle_t>.From(nint handle) => new AttachmentHandle_tImpl(handle);
+  static AttachmentHandle_t ISchemaClass<AttachmentHandle_t>.From(nint handle) => new AttachmentHandle_tImpl(handle);
 
   
   public ref byte Value { get; }

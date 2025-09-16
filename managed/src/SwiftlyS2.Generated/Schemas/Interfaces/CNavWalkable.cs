@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavWalkable : CPointEntity, IConvertibleNativeHandle<CNavWalkable> {
+public partial interface CNavWalkable : CPointEntity, ISchemaClass<CNavWalkable> {
 
-  static CNavWalkable IConvertibleNativeHandle<CNavWalkable>.From(nint handle) => new CNavWalkableImpl(handle);
+  static CNavWalkable ISchemaClass<CNavWalkable>.From(nint handle) => new CNavWalkableImpl(handle);
 
 
 

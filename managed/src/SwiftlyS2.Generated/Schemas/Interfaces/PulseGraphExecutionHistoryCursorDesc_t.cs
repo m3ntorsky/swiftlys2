@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseGraphExecutionHistoryCursorDesc_t : ISchemaClass, IConvertibleNativeHandle<PulseGraphExecutionHistoryCursorDesc_t> {
+public partial interface PulseGraphExecutionHistoryCursorDesc_t : ISchemaClass<PulseGraphExecutionHistoryCursorDesc_t> {
 
-  static PulseGraphExecutionHistoryCursorDesc_t IConvertibleNativeHandle<PulseGraphExecutionHistoryCursorDesc_t>.From(nint handle) => new PulseGraphExecutionHistoryCursorDesc_tImpl(handle);
+  static PulseGraphExecutionHistoryCursorDesc_t ISchemaClass<PulseGraphExecutionHistoryCursorDesc_t>.From(nint handle) => new PulseGraphExecutionHistoryCursorDesc_tImpl(handle);
 
   
   // CUtlVector< PulseCursorID_t >

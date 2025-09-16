@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Outflow_CycleOrdered : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_Outflow_CycleOrdered> {
+public partial interface CPulseCell_Outflow_CycleOrdered : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_Outflow_CycleOrdered> {
 
-  static CPulseCell_Outflow_CycleOrdered IConvertibleNativeHandle<CPulseCell_Outflow_CycleOrdered>.From(nint handle) => new CPulseCell_Outflow_CycleOrderedImpl(handle);
+  static CPulseCell_Outflow_CycleOrdered ISchemaClass<CPulseCell_Outflow_CycleOrdered>.From(nint handle) => new CPulseCell_Outflow_CycleOrderedImpl(handle);
 
   
   // CUtlVector< CPulse_OutflowConnection >

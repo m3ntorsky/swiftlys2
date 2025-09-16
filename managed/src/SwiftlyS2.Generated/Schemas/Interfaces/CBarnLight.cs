@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBarnLight : CBaseModelEntity, IConvertibleNativeHandle<CBarnLight> {
+public partial interface CBarnLight : CBaseModelEntity, ISchemaClass<CBarnLight> {
 
-  static CBarnLight IConvertibleNativeHandle<CBarnLight>.From(nint handle) => new CBarnLightImpl(handle);
+  static CBarnLight ISchemaClass<CBarnLight>.From(nint handle) => new CBarnLightImpl(handle);
 
   
   public ref bool Enabled { get; }

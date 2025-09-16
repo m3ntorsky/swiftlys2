@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlayerControllerComponent : ISchemaClass, IConvertibleNativeHandle<CPlayerControllerComponent> {
+public partial interface CPlayerControllerComponent : ISchemaClass<CPlayerControllerComponent> {
 
-  static CPlayerControllerComponent IConvertibleNativeHandle<CPlayerControllerComponent>.From(nint handle) => new CPlayerControllerComponentImpl(handle);
+  static CPlayerControllerComponent ISchemaClass<CPlayerControllerComponent>.From(nint handle) => new CPlayerControllerComponentImpl(handle);
 
   
   public CNetworkVarChainer __m_pChainEntity { get; }

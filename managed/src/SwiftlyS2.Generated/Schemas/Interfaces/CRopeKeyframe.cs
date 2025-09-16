@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRopeKeyframe : CBaseModelEntity, IConvertibleNativeHandle<CRopeKeyframe> {
+public partial interface CRopeKeyframe : CBaseModelEntity, ISchemaClass<CRopeKeyframe> {
 
-  static CRopeKeyframe IConvertibleNativeHandle<CRopeKeyframe>.From(nint handle) => new CRopeKeyframeImpl(handle);
+  static CRopeKeyframe ISchemaClass<CRopeKeyframe>.From(nint handle) => new CRopeKeyframeImpl(handle);
 
   
   public ref ushort RopeFlags { get; }

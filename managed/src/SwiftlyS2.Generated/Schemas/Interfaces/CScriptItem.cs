@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CScriptItem : CItem, IConvertibleNativeHandle<CScriptItem> {
+public partial interface CScriptItem : CItem, ISchemaClass<CScriptItem> {
 
-  static CScriptItem IConvertibleNativeHandle<CScriptItem>.From(nint handle) => new CScriptItemImpl(handle);
+  static CScriptItem ISchemaClass<CScriptItem>.From(nint handle) => new CScriptItemImpl(handle);
 
   
   public ref MoveType_t MoveTypeOverride { get; }

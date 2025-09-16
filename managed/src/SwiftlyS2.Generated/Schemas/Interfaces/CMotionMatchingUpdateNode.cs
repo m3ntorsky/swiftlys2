@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionMatchingUpdateNode : CLeafUpdateNode, IConvertibleNativeHandle<CMotionMatchingUpdateNode> {
+public partial interface CMotionMatchingUpdateNode : CLeafUpdateNode, ISchemaClass<CMotionMatchingUpdateNode> {
 
-  static CMotionMatchingUpdateNode IConvertibleNativeHandle<CMotionMatchingUpdateNode>.From(nint handle) => new CMotionMatchingUpdateNodeImpl(handle);
+  static CMotionMatchingUpdateNode ISchemaClass<CMotionMatchingUpdateNode>.From(nint handle) => new CMotionMatchingUpdateNodeImpl(handle);
 
   
   public CMotionDataSet DataSet { get; }

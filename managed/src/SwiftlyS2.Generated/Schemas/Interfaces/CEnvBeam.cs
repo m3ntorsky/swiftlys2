@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvBeam : CBeam, IConvertibleNativeHandle<CEnvBeam> {
+public partial interface CEnvBeam : CBeam, ISchemaClass<CEnvBeam> {
 
-  static CEnvBeam IConvertibleNativeHandle<CEnvBeam>.From(nint handle) => new CEnvBeamImpl(handle);
+  static CEnvBeam ISchemaClass<CEnvBeam>.From(nint handle) => new CEnvBeamImpl(handle);
 
   
   public ref int Active { get; }

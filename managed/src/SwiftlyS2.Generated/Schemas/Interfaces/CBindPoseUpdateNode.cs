@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBindPoseUpdateNode : CLeafUpdateNode, IConvertibleNativeHandle<CBindPoseUpdateNode> {
+public partial interface CBindPoseUpdateNode : CLeafUpdateNode, ISchemaClass<CBindPoseUpdateNode> {
 
-  static CBindPoseUpdateNode IConvertibleNativeHandle<CBindPoseUpdateNode>.From(nint handle) => new CBindPoseUpdateNodeImpl(handle);
+  static CBindPoseUpdateNode ISchemaClass<CBindPoseUpdateNode>.From(nint handle) => new CBindPoseUpdateNodeImpl(handle);
 
 
 

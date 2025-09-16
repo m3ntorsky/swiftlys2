@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ParticlePreviewState_t : ISchemaClass, IConvertibleNativeHandle<ParticlePreviewState_t> {
+public partial interface ParticlePreviewState_t : ISchemaClass<ParticlePreviewState_t> {
 
-  static ParticlePreviewState_t IConvertibleNativeHandle<ParticlePreviewState_t>.From(nint handle) => new ParticlePreviewState_tImpl(handle);
+  static ParticlePreviewState_t ISchemaClass<ParticlePreviewState_t>.From(nint handle) => new ParticlePreviewState_tImpl(handle);
 
   
   public ref CUtlString PreviewModel { get; }

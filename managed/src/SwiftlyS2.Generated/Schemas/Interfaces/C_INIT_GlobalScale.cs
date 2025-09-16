@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_GlobalScale : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_GlobalScale> {
+public partial interface C_INIT_GlobalScale : CParticleFunctionInitializer, ISchemaClass<C_INIT_GlobalScale> {
 
-  static C_INIT_GlobalScale IConvertibleNativeHandle<C_INIT_GlobalScale>.From(nint handle) => new C_INIT_GlobalScaleImpl(handle);
+  static C_INIT_GlobalScale ISchemaClass<C_INIT_GlobalScale>.From(nint handle) => new C_INIT_GlobalScaleImpl(handle);
 
   
   public ref float Scale { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSimpleMarkupVolumeTagged : CMarkupVolumeTagged, IConvertibleNativeHandle<CSimpleMarkupVolumeTagged> {
+public partial interface CSimpleMarkupVolumeTagged : CMarkupVolumeTagged, ISchemaClass<CSimpleMarkupVolumeTagged> {
 
-  static CSimpleMarkupVolumeTagged IConvertibleNativeHandle<CSimpleMarkupVolumeTagged>.From(nint handle) => new CSimpleMarkupVolumeTaggedImpl(handle);
+  static CSimpleMarkupVolumeTagged ISchemaClass<CSimpleMarkupVolumeTagged>.From(nint handle) => new CSimpleMarkupVolumeTaggedImpl(handle);
 
 
 

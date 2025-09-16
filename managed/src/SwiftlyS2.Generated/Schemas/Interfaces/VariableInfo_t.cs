@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VariableInfo_t : ISchemaClass, IConvertibleNativeHandle<VariableInfo_t> {
+public partial interface VariableInfo_t : ISchemaClass<VariableInfo_t> {
 
-  static VariableInfo_t IConvertibleNativeHandle<VariableInfo_t>.From(nint handle) => new VariableInfo_tImpl(handle);
+  static VariableInfo_t ISchemaClass<VariableInfo_t>.From(nint handle) => new VariableInfo_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNetworkOriginCellCoordQuantizedVector : ISchemaClass, IConvertibleNativeHandle<CNetworkOriginCellCoordQuantizedVector> {
+public partial interface CNetworkOriginCellCoordQuantizedVector : ISchemaClass<CNetworkOriginCellCoordQuantizedVector> {
 
-  static CNetworkOriginCellCoordQuantizedVector IConvertibleNativeHandle<CNetworkOriginCellCoordQuantizedVector>.From(nint handle) => new CNetworkOriginCellCoordQuantizedVectorImpl(handle);
+  static CNetworkOriginCellCoordQuantizedVector ISchemaClass<CNetworkOriginCellCoordQuantizedVector>.From(nint handle) => new CNetworkOriginCellCoordQuantizedVectorImpl(handle);
 
   
   public ref ushort CellX { get; }

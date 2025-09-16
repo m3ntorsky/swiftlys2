@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerPhysics : CBaseTrigger, IConvertibleNativeHandle<CTriggerPhysics> {
+public partial interface CTriggerPhysics : CBaseTrigger, ISchemaClass<CTriggerPhysics> {
 
-  static CTriggerPhysics IConvertibleNativeHandle<CTriggerPhysics>.From(nint handle) => new CTriggerPhysicsImpl(handle);
+  static CTriggerPhysics ISchemaClass<CTriggerPhysics>.From(nint handle) => new CTriggerPhysicsImpl(handle);
 
   
   public ref float GravityScale { get; }

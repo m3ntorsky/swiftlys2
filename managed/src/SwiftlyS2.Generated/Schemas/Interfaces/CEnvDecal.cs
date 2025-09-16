@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvDecal : CBaseModelEntity, IConvertibleNativeHandle<CEnvDecal> {
+public partial interface CEnvDecal : CBaseModelEntity, ISchemaClass<CEnvDecal> {
 
-  static CEnvDecal IConvertibleNativeHandle<CEnvDecal>.From(nint handle) => new CEnvDecalImpl(handle);
+  static CEnvDecal ISchemaClass<CEnvDecal>.From(nint handle) => new CEnvDecalImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> DecalMaterial { get; }

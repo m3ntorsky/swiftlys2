@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FourVectors2D : ISchemaClass, IConvertibleNativeHandle<FourVectors2D> {
+public partial interface FourVectors2D : ISchemaClass<FourVectors2D> {
 
-  static FourVectors2D IConvertibleNativeHandle<FourVectors2D>.From(nint handle) => new FourVectors2DImpl(handle);
+  static FourVectors2D ISchemaClass<FourVectors2D>.From(nint handle) => new FourVectors2DImpl(handle);
 
   
   public ref fltx4 X { get; }

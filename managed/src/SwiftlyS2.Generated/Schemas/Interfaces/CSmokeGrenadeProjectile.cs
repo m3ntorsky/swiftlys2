@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSmokeGrenadeProjectile : CBaseCSGrenadeProjectile, IConvertibleNativeHandle<CSmokeGrenadeProjectile> {
+public partial interface CSmokeGrenadeProjectile : CBaseCSGrenadeProjectile, ISchemaClass<CSmokeGrenadeProjectile> {
 
-  static CSmokeGrenadeProjectile IConvertibleNativeHandle<CSmokeGrenadeProjectile>.From(nint handle) => new CSmokeGrenadeProjectileImpl(handle);
+  static CSmokeGrenadeProjectile ISchemaClass<CSmokeGrenadeProjectile>.From(nint handle) => new CSmokeGrenadeProjectileImpl(handle);
 
   
   public ref int SmokeEffectTickBegin { get; }

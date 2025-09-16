@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IParticleEffect : ISchemaClass, IConvertibleNativeHandle<IParticleEffect> {
+public partial interface IParticleEffect : ISchemaClass<IParticleEffect> {
 
-  static IParticleEffect IConvertibleNativeHandle<IParticleEffect>.From(nint handle) => new IParticleEffectImpl(handle);
+  static IParticleEffect ISchemaClass<IParticleEffect>.From(nint handle) => new IParticleEffectImpl(handle);
 
 
 

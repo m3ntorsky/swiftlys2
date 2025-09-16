@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerHostageReset : CBaseTrigger, IConvertibleNativeHandle<CTriggerHostageReset> {
+public partial interface CTriggerHostageReset : CBaseTrigger, ISchemaClass<CTriggerHostageReset> {
 
-  static CTriggerHostageReset IConvertibleNativeHandle<CTriggerHostageReset>.From(nint handle) => new CTriggerHostageResetImpl(handle);
+  static CTriggerHostageReset ISchemaClass<CTriggerHostageReset>.From(nint handle) => new CTriggerHostageResetImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncMoveLinearAlias_momentary_door : CFuncMoveLinear, IConvertibleNativeHandle<CFuncMoveLinearAlias_momentary_door> {
+public partial interface CFuncMoveLinearAlias_momentary_door : CFuncMoveLinear, ISchemaClass<CFuncMoveLinearAlias_momentary_door> {
 
-  static CFuncMoveLinearAlias_momentary_door IConvertibleNativeHandle<CFuncMoveLinearAlias_momentary_door>.From(nint handle) => new CFuncMoveLinearAlias_momentary_doorImpl(handle);
+  static CFuncMoveLinearAlias_momentary_door ISchemaClass<CFuncMoveLinearAlias_momentary_door>.From(nint handle) => new CFuncMoveLinearAlias_momentary_doorImpl(handle);
 
 
 

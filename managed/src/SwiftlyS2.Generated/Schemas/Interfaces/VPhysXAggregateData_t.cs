@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VPhysXAggregateData_t : ISchemaClass, IConvertibleNativeHandle<VPhysXAggregateData_t> {
+public partial interface VPhysXAggregateData_t : ISchemaClass<VPhysXAggregateData_t> {
 
-  static VPhysXAggregateData_t IConvertibleNativeHandle<VPhysXAggregateData_t>.From(nint handle) => new VPhysXAggregateData_tImpl(handle);
+  static VPhysXAggregateData_t ISchemaClass<VPhysXAggregateData_t>.From(nint handle) => new VPhysXAggregateData_tImpl(handle);
 
   
   public ref ushort Flags { get; }

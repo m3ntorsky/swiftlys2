@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MaterialParamFloat_t : MaterialParam_t, IConvertibleNativeHandle<MaterialParamFloat_t> {
+public partial interface MaterialParamFloat_t : MaterialParam_t, ISchemaClass<MaterialParamFloat_t> {
 
-  static MaterialParamFloat_t IConvertibleNativeHandle<MaterialParamFloat_t>.From(nint handle) => new MaterialParamFloat_tImpl(handle);
+  static MaterialParamFloat_t ISchemaClass<MaterialParamFloat_t>.From(nint handle) => new MaterialParamFloat_tImpl(handle);
 
   
   public ref float Value { get; }

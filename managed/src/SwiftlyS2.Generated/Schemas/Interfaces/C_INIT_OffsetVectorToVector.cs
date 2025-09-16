@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_OffsetVectorToVector : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_OffsetVectorToVector> {
+public partial interface C_INIT_OffsetVectorToVector : CParticleFunctionInitializer, ISchemaClass<C_INIT_OffsetVectorToVector> {
 
-  static C_INIT_OffsetVectorToVector IConvertibleNativeHandle<C_INIT_OffsetVectorToVector>.From(nint handle) => new C_INIT_OffsetVectorToVectorImpl(handle);
+  static C_INIT_OffsetVectorToVector ISchemaClass<C_INIT_OffsetVectorToVector>.From(nint handle) => new C_INIT_OffsetVectorToVectorImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldInput { get; }

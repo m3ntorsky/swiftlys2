@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VPhysics2ShapeDef_t : ISchemaClass, IConvertibleNativeHandle<VPhysics2ShapeDef_t> {
+public partial interface VPhysics2ShapeDef_t : ISchemaClass<VPhysics2ShapeDef_t> {
 
-  static VPhysics2ShapeDef_t IConvertibleNativeHandle<VPhysics2ShapeDef_t>.From(nint handle) => new VPhysics2ShapeDef_tImpl(handle);
+  static VPhysics2ShapeDef_t ISchemaClass<VPhysics2ShapeDef_t>.From(nint handle) => new VPhysics2ShapeDef_tImpl(handle);
 
   
   // CUtlVector< RnSphereDesc_t >

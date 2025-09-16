@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CWaterBullet : CBaseAnimGraph, IConvertibleNativeHandle<CWaterBullet> {
+public partial interface CWaterBullet : CBaseAnimGraph, ISchemaClass<CWaterBullet> {
 
-  static CWaterBullet IConvertibleNativeHandle<CWaterBullet>.From(nint handle) => new CWaterBulletImpl(handle);
+  static CWaterBullet ISchemaClass<CWaterBullet>.From(nint handle) => new CWaterBulletImpl(handle);
 
 
 

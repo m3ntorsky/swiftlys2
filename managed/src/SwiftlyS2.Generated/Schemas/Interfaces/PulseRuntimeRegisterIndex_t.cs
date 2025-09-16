@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseRuntimeRegisterIndex_t : ISchemaClass, IConvertibleNativeHandle<PulseRuntimeRegisterIndex_t> {
+public partial interface PulseRuntimeRegisterIndex_t : ISchemaClass<PulseRuntimeRegisterIndex_t> {
 
-  static PulseRuntimeRegisterIndex_t IConvertibleNativeHandle<PulseRuntimeRegisterIndex_t>.From(nint handle) => new PulseRuntimeRegisterIndex_tImpl(handle);
+  static PulseRuntimeRegisterIndex_t ISchemaClass<PulseRuntimeRegisterIndex_t>.From(nint handle) => new PulseRuntimeRegisterIndex_tImpl(handle);
 
   
   public ref short Value { get; }

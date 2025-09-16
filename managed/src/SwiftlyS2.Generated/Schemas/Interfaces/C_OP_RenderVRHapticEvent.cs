@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderVRHapticEvent : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderVRHapticEvent> {
+public partial interface C_OP_RenderVRHapticEvent : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderVRHapticEvent> {
 
-  static C_OP_RenderVRHapticEvent IConvertibleNativeHandle<C_OP_RenderVRHapticEvent>.From(nint handle) => new C_OP_RenderVRHapticEventImpl(handle);
+  static C_OP_RenderVRHapticEvent ISchemaClass<C_OP_RenderVRHapticEvent>.From(nint handle) => new C_OP_RenderVRHapticEventImpl(handle);
 
   
   public ref ParticleVRHandChoiceList_t Hand { get; }

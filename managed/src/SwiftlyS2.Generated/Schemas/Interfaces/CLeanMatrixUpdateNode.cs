@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLeanMatrixUpdateNode : CLeafUpdateNode, IConvertibleNativeHandle<CLeanMatrixUpdateNode> {
+public partial interface CLeanMatrixUpdateNode : CLeafUpdateNode, ISchemaClass<CLeanMatrixUpdateNode> {
 
-  static CLeanMatrixUpdateNode IConvertibleNativeHandle<CLeanMatrixUpdateNode>.From(nint handle) => new CLeanMatrixUpdateNodeImpl(handle);
+  static CLeanMatrixUpdateNode ISchemaClass<CLeanMatrixUpdateNode>.From(nint handle) => new CLeanMatrixUpdateNodeImpl(handle);
 
   
   // int32[3]

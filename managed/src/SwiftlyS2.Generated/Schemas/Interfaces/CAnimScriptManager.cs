@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimScriptManager : ISchemaClass, IConvertibleNativeHandle<CAnimScriptManager> {
+public partial interface CAnimScriptManager : ISchemaClass<CAnimScriptManager> {
 
-  static CAnimScriptManager IConvertibleNativeHandle<CAnimScriptManager>.From(nint handle) => new CAnimScriptManagerImpl(handle);
+  static CAnimScriptManager ISchemaClass<CAnimScriptManager>.From(nint handle) => new CAnimScriptManagerImpl(handle);
 
   
   // CUtlVector< ScriptInfo_t >

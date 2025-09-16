@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_ChaoticAttractor : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_ChaoticAttractor> {
+public partial interface C_INIT_ChaoticAttractor : CParticleFunctionInitializer, ISchemaClass<C_INIT_ChaoticAttractor> {
 
-  static C_INIT_ChaoticAttractor IConvertibleNativeHandle<C_INIT_ChaoticAttractor>.From(nint handle) => new C_INIT_ChaoticAttractorImpl(handle);
+  static C_INIT_ChaoticAttractor ISchemaClass<C_INIT_ChaoticAttractor>.From(nint handle) => new C_INIT_ChaoticAttractorImpl(handle);
 
   
   public ref float AParm { get; }

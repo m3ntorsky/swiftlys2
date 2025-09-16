@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmEventConsumerAttributes : CNmEventConsumer, IConvertibleNativeHandle<CNmEventConsumerAttributes> {
+public partial interface CNmEventConsumerAttributes : CNmEventConsumer, ISchemaClass<CNmEventConsumerAttributes> {
 
-  static CNmEventConsumerAttributes IConvertibleNativeHandle<CNmEventConsumerAttributes>.From(nint handle) => new CNmEventConsumerAttributesImpl(handle);
+  static CNmEventConsumerAttributes ISchemaClass<CNmEventConsumerAttributes>.From(nint handle) => new CNmEventConsumerAttributesImpl(handle);
 
 
 

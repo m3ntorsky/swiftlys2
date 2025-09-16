@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSlopeComponentUpdater : CAnimComponentUpdater, IConvertibleNativeHandle<CSlopeComponentUpdater> {
+public partial interface CSlopeComponentUpdater : CAnimComponentUpdater, ISchemaClass<CSlopeComponentUpdater> {
 
-  static CSlopeComponentUpdater IConvertibleNativeHandle<CSlopeComponentUpdater>.From(nint handle) => new CSlopeComponentUpdaterImpl(handle);
+  static CSlopeComponentUpdater ISchemaClass<CSlopeComponentUpdater>.From(nint handle) => new CSlopeComponentUpdaterImpl(handle);
 
   
   public ref float TraceDistance { get; }

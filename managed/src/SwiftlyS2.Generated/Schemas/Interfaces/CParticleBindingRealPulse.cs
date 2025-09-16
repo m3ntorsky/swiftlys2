@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleBindingRealPulse : CParticleCollectionBindingInstance, IConvertibleNativeHandle<CParticleBindingRealPulse> {
+public partial interface CParticleBindingRealPulse : CParticleCollectionBindingInstance, ISchemaClass<CParticleBindingRealPulse> {
 
-  static CParticleBindingRealPulse IConvertibleNativeHandle<CParticleBindingRealPulse>.From(nint handle) => new CParticleBindingRealPulseImpl(handle);
+  static CParticleBindingRealPulse ISchemaClass<CParticleBindingRealPulse>.From(nint handle) => new CParticleBindingRealPulseImpl(handle);
 
 
 

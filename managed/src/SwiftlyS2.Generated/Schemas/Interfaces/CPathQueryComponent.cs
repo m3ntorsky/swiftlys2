@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathQueryComponent : CEntityComponent, IConvertibleNativeHandle<CPathQueryComponent> {
+public partial interface CPathQueryComponent : CEntityComponent, ISchemaClass<CPathQueryComponent> {
 
-  static CPathQueryComponent IConvertibleNativeHandle<CPathQueryComponent>.From(nint handle) => new CPathQueryComponentImpl(handle);
+  static CPathQueryComponent ISchemaClass<CPathQueryComponent>.From(nint handle) => new CPathQueryComponentImpl(handle);
 
 
 

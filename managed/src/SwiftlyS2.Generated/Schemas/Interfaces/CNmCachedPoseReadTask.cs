@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmCachedPoseReadTask : CNmPoseTask, IConvertibleNativeHandle<CNmCachedPoseReadTask> {
+public partial interface CNmCachedPoseReadTask : CNmPoseTask, ISchemaClass<CNmCachedPoseReadTask> {
 
-  static CNmCachedPoseReadTask IConvertibleNativeHandle<CNmCachedPoseReadTask>.From(nint handle) => new CNmCachedPoseReadTaskImpl(handle);
+  static CNmCachedPoseReadTask ISchemaClass<CNmCachedPoseReadTask>.From(nint handle) => new CNmCachedPoseReadTaskImpl(handle);
 
 
 

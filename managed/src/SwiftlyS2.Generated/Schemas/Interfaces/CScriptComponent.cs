@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CScriptComponent : CEntityComponent, IConvertibleNativeHandle<CScriptComponent> {
+public partial interface CScriptComponent : CEntityComponent, ISchemaClass<CScriptComponent> {
 
-  static CScriptComponent IConvertibleNativeHandle<CScriptComponent>.From(nint handle) => new CScriptComponentImpl(handle);
+  static CScriptComponent ISchemaClass<CScriptComponent>.From(nint handle) => new CScriptComponentImpl(handle);
 
   
   public ref CUtlSymbolLarge ScriptClassName { get; }

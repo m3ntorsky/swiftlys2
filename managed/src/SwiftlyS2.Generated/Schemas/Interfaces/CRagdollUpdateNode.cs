@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CRagdollUpdateNode> {
+public partial interface CRagdollUpdateNode : CUnaryUpdateNode, ISchemaClass<CRagdollUpdateNode> {
 
-  static CRagdollUpdateNode IConvertibleNativeHandle<CRagdollUpdateNode>.From(nint handle) => new CRagdollUpdateNodeImpl(handle);
+  static CRagdollUpdateNode ISchemaClass<CRagdollUpdateNode>.From(nint handle) => new CRagdollUpdateNodeImpl(handle);
 
   
   public ref int WeightListIndex { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSWeaponBase : CBasePlayerWeapon, IConvertibleNativeHandle<CCSWeaponBase> {
+public partial interface CCSWeaponBase : CBasePlayerWeapon, ISchemaClass<CCSWeaponBase> {
 
-  static CCSWeaponBase IConvertibleNativeHandle<CCSWeaponBase>.From(nint handle) => new CCSWeaponBaseImpl(handle);
+  static CCSWeaponBase ISchemaClass<CCSWeaponBase>.From(nint handle) => new CCSWeaponBaseImpl(handle);
 
   
   public ref bool Removeable { get; }

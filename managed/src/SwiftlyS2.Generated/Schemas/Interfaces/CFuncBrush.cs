@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncBrush : CBaseModelEntity, IConvertibleNativeHandle<CFuncBrush> {
+public partial interface CFuncBrush : CBaseModelEntity, ISchemaClass<CFuncBrush> {
 
-  static CFuncBrush IConvertibleNativeHandle<CFuncBrush>.From(nint handle) => new CFuncBrushImpl(handle);
+  static CFuncBrush ISchemaClass<CFuncBrush>.From(nint handle) => new CFuncBrushImpl(handle);
 
   
   public ref BrushSolidities_e Solidity { get; }

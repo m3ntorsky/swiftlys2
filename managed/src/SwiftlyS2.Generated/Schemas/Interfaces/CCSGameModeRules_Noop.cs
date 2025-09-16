@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSGameModeRules_Noop : CCSGameModeRules, IConvertibleNativeHandle<CCSGameModeRules_Noop> {
+public partial interface CCSGameModeRules_Noop : CCSGameModeRules, ISchemaClass<CCSGameModeRules_Noop> {
 
-  static CCSGameModeRules_Noop IConvertibleNativeHandle<CCSGameModeRules_Noop>.From(nint handle) => new CCSGameModeRules_NoopImpl(handle);
+  static CCSGameModeRules_Noop ISchemaClass<CCSGameModeRules_Noop>.From(nint handle) => new CCSGameModeRules_NoopImpl(handle);
 
 
 

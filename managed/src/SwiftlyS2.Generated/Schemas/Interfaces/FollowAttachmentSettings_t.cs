@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FollowAttachmentSettings_t : ISchemaClass, IConvertibleNativeHandle<FollowAttachmentSettings_t> {
+public partial interface FollowAttachmentSettings_t : ISchemaClass<FollowAttachmentSettings_t> {
 
-  static FollowAttachmentSettings_t IConvertibleNativeHandle<FollowAttachmentSettings_t>.From(nint handle) => new FollowAttachmentSettings_tImpl(handle);
+  static FollowAttachmentSettings_t ISchemaClass<FollowAttachmentSettings_t>.From(nint handle) => new FollowAttachmentSettings_tImpl(handle);
 
   
   public CAnimAttachment Attachment { get; }

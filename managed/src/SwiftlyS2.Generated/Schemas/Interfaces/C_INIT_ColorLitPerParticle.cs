@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_ColorLitPerParticle : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_ColorLitPerParticle> {
+public partial interface C_INIT_ColorLitPerParticle : CParticleFunctionInitializer, ISchemaClass<C_INIT_ColorLitPerParticle> {
 
-  static C_INIT_ColorLitPerParticle IConvertibleNativeHandle<C_INIT_ColorLitPerParticle>.From(nint handle) => new C_INIT_ColorLitPerParticleImpl(handle);
+  static C_INIT_ColorLitPerParticle ISchemaClass<C_INIT_ColorLitPerParticle>.From(nint handle) => new C_INIT_ColorLitPerParticleImpl(handle);
 
   
   public ref Color ColorMin { get; }

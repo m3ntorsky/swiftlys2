@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCVoiceContainerBase : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCVoiceContainerBase> {
+public partial interface InfoForResourceTypeCVoiceContainerBase : ISchemaClass<InfoForResourceTypeCVoiceContainerBase> {
 
-  static InfoForResourceTypeCVoiceContainerBase IConvertibleNativeHandle<InfoForResourceTypeCVoiceContainerBase>.From(nint handle) => new InfoForResourceTypeCVoiceContainerBaseImpl(handle);
+  static InfoForResourceTypeCVoiceContainerBase ISchemaClass<InfoForResourceTypeCVoiceContainerBase>.From(nint handle) => new InfoForResourceTypeCVoiceContainerBaseImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointPush : CPointEntity, IConvertibleNativeHandle<CPointPush> {
+public partial interface CPointPush : CPointEntity, ISchemaClass<CPointPush> {
 
-  static CPointPush IConvertibleNativeHandle<CPointPush>.From(nint handle) => new CPointPushImpl(handle);
+  static CPointPush ISchemaClass<CPointPush>.From(nint handle) => new CPointPushImpl(handle);
 
   
   public ref bool Enabled { get; }

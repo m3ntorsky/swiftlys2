@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmAnimationPoseNode__CDefinition : CNmPoseNode__CDefinition, IConvertibleNativeHandle<CNmAnimationPoseNode__CDefinition> {
+public partial interface CNmAnimationPoseNode__CDefinition : CNmPoseNode__CDefinition, ISchemaClass<CNmAnimationPoseNode__CDefinition> {
 
-  static CNmAnimationPoseNode__CDefinition IConvertibleNativeHandle<CNmAnimationPoseNode__CDefinition>.From(nint handle) => new CNmAnimationPoseNode__CDefinitionImpl(handle);
+  static CNmAnimationPoseNode__CDefinition ISchemaClass<CNmAnimationPoseNode__CDefinition>.From(nint handle) => new CNmAnimationPoseNode__CDefinitionImpl(handle);
 
   
   public ref short PoseTimeValueNodeIdx { get; }

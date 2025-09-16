@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMapSharedEnvironment : CLogicalEntity, IConvertibleNativeHandle<CMapSharedEnvironment> {
+public partial interface CMapSharedEnvironment : CLogicalEntity, ISchemaClass<CMapSharedEnvironment> {
 
-  static CMapSharedEnvironment IConvertibleNativeHandle<CMapSharedEnvironment>.From(nint handle) => new CMapSharedEnvironmentImpl(handle);
+  static CMapSharedEnvironment ISchemaClass<CMapSharedEnvironment>.From(nint handle) => new CMapSharedEnvironmentImpl(handle);
 
   
   public ref CUtlSymbolLarge TargetMapName { get; }

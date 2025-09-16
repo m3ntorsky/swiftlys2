@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_SequenceLifeTime : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_SequenceLifeTime> {
+public partial interface C_INIT_SequenceLifeTime : CParticleFunctionInitializer, ISchemaClass<C_INIT_SequenceLifeTime> {
 
-  static C_INIT_SequenceLifeTime IConvertibleNativeHandle<C_INIT_SequenceLifeTime>.From(nint handle) => new C_INIT_SequenceLifeTimeImpl(handle);
+  static C_INIT_SequenceLifeTime ISchemaClass<C_INIT_SequenceLifeTime>.From(nint handle) => new C_INIT_SequenceLifeTimeImpl(handle);
 
   
   public ref float Framerate { get; }

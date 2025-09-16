@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqCmdLayer : ISchemaClass, IConvertibleNativeHandle<CSeqCmdLayer> {
+public partial interface CSeqCmdLayer : ISchemaClass<CSeqCmdLayer> {
 
-  static CSeqCmdLayer IConvertibleNativeHandle<CSeqCmdLayer>.From(nint handle) => new CSeqCmdLayerImpl(handle);
+  static CSeqCmdLayer ISchemaClass<CSeqCmdLayer>.From(nint handle) => new CSeqCmdLayerImpl(handle);
 
   
   public ref short Cmd { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDebugHistory : CBaseEntity, IConvertibleNativeHandle<CDebugHistory> {
+public partial interface CDebugHistory : CBaseEntity, ISchemaClass<CDebugHistory> {
 
-  static CDebugHistory IConvertibleNativeHandle<CDebugHistory>.From(nint handle) => new CDebugHistoryImpl(handle);
+  static CDebugHistory ISchemaClass<CDebugHistory>.From(nint handle) => new CDebugHistoryImpl(handle);
 
   
   public ref int NpcEvents { get; }

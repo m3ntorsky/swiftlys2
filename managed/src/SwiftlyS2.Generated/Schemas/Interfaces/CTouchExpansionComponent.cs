@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTouchExpansionComponent : CEntityComponent, IConvertibleNativeHandle<CTouchExpansionComponent> {
+public partial interface CTouchExpansionComponent : CEntityComponent, ISchemaClass<CTouchExpansionComponent> {
 
-  static CTouchExpansionComponent IConvertibleNativeHandle<CTouchExpansionComponent>.From(nint handle) => new CTouchExpansionComponentImpl(handle);
+  static CTouchExpansionComponent ISchemaClass<CTouchExpansionComponent>.From(nint handle) => new CTouchExpansionComponentImpl(handle);
 
 
 

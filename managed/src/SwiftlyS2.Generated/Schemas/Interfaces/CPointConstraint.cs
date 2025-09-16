@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointConstraint : CBaseConstraint, IConvertibleNativeHandle<CPointConstraint> {
+public partial interface CPointConstraint : CBaseConstraint, ISchemaClass<CPointConstraint> {
 
-  static CPointConstraint IConvertibleNativeHandle<CPointConstraint>.From(nint handle) => new CPointConstraintImpl(handle);
+  static CPointConstraint ISchemaClass<CPointConstraint>.From(nint handle) => new CPointConstraintImpl(handle);
 
 
 

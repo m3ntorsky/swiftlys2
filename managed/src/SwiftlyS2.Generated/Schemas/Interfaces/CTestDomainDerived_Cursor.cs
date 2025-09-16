@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTestDomainDerived_Cursor : CPulseExecCursor, IConvertibleNativeHandle<CTestDomainDerived_Cursor> {
+public partial interface CTestDomainDerived_Cursor : CPulseExecCursor, ISchemaClass<CTestDomainDerived_Cursor> {
 
-  static CTestDomainDerived_Cursor IConvertibleNativeHandle<CTestDomainDerived_Cursor>.From(nint handle) => new CTestDomainDerived_CursorImpl(handle);
+  static CTestDomainDerived_Cursor ISchemaClass<CTestDomainDerived_Cursor>.From(nint handle) => new CTestDomainDerived_CursorImpl(handle);
 
   
   public ref int CursorValueA { get; }

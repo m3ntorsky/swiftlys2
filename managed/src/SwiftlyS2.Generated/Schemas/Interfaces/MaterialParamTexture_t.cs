@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MaterialParamTexture_t : MaterialParam_t, IConvertibleNativeHandle<MaterialParamTexture_t> {
+public partial interface MaterialParamTexture_t : MaterialParam_t, ISchemaClass<MaterialParamTexture_t> {
 
-  static MaterialParamTexture_t IConvertibleNativeHandle<MaterialParamTexture_t>.From(nint handle) => new MaterialParamTexture_tImpl(handle);
+  static MaterialParamTexture_t ISchemaClass<MaterialParamTexture_t>.From(nint handle) => new MaterialParamTexture_tImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> Value { get; }

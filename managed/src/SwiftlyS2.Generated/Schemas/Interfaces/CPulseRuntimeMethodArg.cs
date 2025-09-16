@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseRuntimeMethodArg : ISchemaClass, IConvertibleNativeHandle<CPulseRuntimeMethodArg> {
+public partial interface CPulseRuntimeMethodArg : ISchemaClass<CPulseRuntimeMethodArg> {
 
-  static CPulseRuntimeMethodArg IConvertibleNativeHandle<CPulseRuntimeMethodArg>.From(nint handle) => new CPulseRuntimeMethodArgImpl(handle);
+  static CPulseRuntimeMethodArg ISchemaClass<CPulseRuntimeMethodArg>.From(nint handle) => new CPulseRuntimeMethodArgImpl(handle);
 
   
   // CKV3MemberNameWithStorage

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleFunctionPreEmission : CParticleFunctionOperator, IConvertibleNativeHandle<CParticleFunctionPreEmission> {
+public partial interface CParticleFunctionPreEmission : CParticleFunctionOperator, ISchemaClass<CParticleFunctionPreEmission> {
 
-  static CParticleFunctionPreEmission IConvertibleNativeHandle<CParticleFunctionPreEmission>.From(nint handle) => new CParticleFunctionPreEmissionImpl(handle);
+  static CParticleFunctionPreEmission ISchemaClass<CParticleFunctionPreEmission>.From(nint handle) => new CParticleFunctionPreEmissionImpl(handle);
 
   
   public ref bool RunOnce { get; }

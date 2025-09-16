@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_TwistAroundAxis : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_TwistAroundAxis> {
+public partial interface C_OP_TwistAroundAxis : CParticleFunctionForce, ISchemaClass<C_OP_TwistAroundAxis> {
 
-  static C_OP_TwistAroundAxis IConvertibleNativeHandle<C_OP_TwistAroundAxis>.From(nint handle) => new C_OP_TwistAroundAxisImpl(handle);
+  static C_OP_TwistAroundAxis ISchemaClass<C_OP_TwistAroundAxis>.From(nint handle) => new C_OP_TwistAroundAxisImpl(handle);
 
   
   public ref float ForceAmount { get; }

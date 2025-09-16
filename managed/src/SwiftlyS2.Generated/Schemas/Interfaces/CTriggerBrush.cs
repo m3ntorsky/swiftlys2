@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerBrush : CBaseModelEntity, IConvertibleNativeHandle<CTriggerBrush> {
+public partial interface CTriggerBrush : CBaseModelEntity, ISchemaClass<CTriggerBrush> {
 
-  static CTriggerBrush IConvertibleNativeHandle<CTriggerBrush>.From(nint handle) => new CTriggerBrushImpl(handle);
+  static CTriggerBrush ISchemaClass<CTriggerBrush>.From(nint handle) => new CTriggerBrushImpl(handle);
 
   
   public CEntityIOOutput OnStartTouch { get; }

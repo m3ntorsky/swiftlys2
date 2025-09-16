@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimInputDamping : ISchemaClass, IConvertibleNativeHandle<CAnimInputDamping> {
+public partial interface CAnimInputDamping : ISchemaClass<CAnimInputDamping> {
 
-  static CAnimInputDamping IConvertibleNativeHandle<CAnimInputDamping>.From(nint handle) => new CAnimInputDampingImpl(handle);
+  static CAnimInputDamping ISchemaClass<CAnimInputDamping>.From(nint handle) => new CAnimInputDampingImpl(handle);
 
   
   public ref DampingSpeedFunction SpeedFunction { get; }

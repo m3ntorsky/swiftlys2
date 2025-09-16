@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ExternalWindForce : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_ExternalWindForce> {
+public partial interface C_OP_ExternalWindForce : CParticleFunctionForce, ISchemaClass<C_OP_ExternalWindForce> {
 
-  static C_OP_ExternalWindForce IConvertibleNativeHandle<C_OP_ExternalWindForce>.From(nint handle) => new C_OP_ExternalWindForceImpl(handle);
+  static C_OP_ExternalWindForce ISchemaClass<C_OP_ExternalWindForce>.From(nint handle) => new C_OP_ExternalWindForceImpl(handle);
 
   
   public CPerParticleVecInput SamplePosition { get; }

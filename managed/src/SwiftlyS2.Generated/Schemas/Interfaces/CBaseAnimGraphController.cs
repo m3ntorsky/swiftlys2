@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseAnimGraphController : CSkeletonAnimationController, IConvertibleNativeHandle<CBaseAnimGraphController> {
+public partial interface CBaseAnimGraphController : CSkeletonAnimationController, ISchemaClass<CBaseAnimGraphController> {
 
-  static CBaseAnimGraphController IConvertibleNativeHandle<CBaseAnimGraphController>.From(nint handle) => new CBaseAnimGraphControllerImpl(handle);
+  static CBaseAnimGraphController ISchemaClass<CBaseAnimGraphController>.From(nint handle) => new CBaseAnimGraphControllerImpl(handle);
 
   
   public CAnimGraphNetworkedVariables AnimGraphNetworkedVars { get; }

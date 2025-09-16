@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmClipNode__CDefinition : CNmClipReferenceNode__CDefinition, IConvertibleNativeHandle<CNmClipNode__CDefinition> {
+public partial interface CNmClipNode__CDefinition : CNmClipReferenceNode__CDefinition, ISchemaClass<CNmClipNode__CDefinition> {
 
-  static CNmClipNode__CDefinition IConvertibleNativeHandle<CNmClipNode__CDefinition>.From(nint handle) => new CNmClipNode__CDefinitionImpl(handle);
+  static CNmClipNode__CDefinition ISchemaClass<CNmClipNode__CDefinition>.From(nint handle) => new CNmClipNode__CDefinitionImpl(handle);
 
   
   public ref short PlayInReverseValueNodeIdx { get; }

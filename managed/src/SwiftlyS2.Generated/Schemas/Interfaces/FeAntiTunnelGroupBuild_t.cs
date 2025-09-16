@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeAntiTunnelGroupBuild_t : ISchemaClass, IConvertibleNativeHandle<FeAntiTunnelGroupBuild_t> {
+public partial interface FeAntiTunnelGroupBuild_t : ISchemaClass<FeAntiTunnelGroupBuild_t> {
 
-  static FeAntiTunnelGroupBuild_t IConvertibleNativeHandle<FeAntiTunnelGroupBuild_t>.From(nint handle) => new FeAntiTunnelGroupBuild_tImpl(handle);
+  static FeAntiTunnelGroupBuild_t ISchemaClass<FeAntiTunnelGroupBuild_t>.From(nint handle) => new FeAntiTunnelGroupBuild_tImpl(handle);
 
   
   public ref uint VertexMapHash { get; }

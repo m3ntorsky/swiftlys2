@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface HitReactFixedSettings_t : ISchemaClass, IConvertibleNativeHandle<HitReactFixedSettings_t> {
+public partial interface HitReactFixedSettings_t : ISchemaClass<HitReactFixedSettings_t> {
 
-  static HitReactFixedSettings_t IConvertibleNativeHandle<HitReactFixedSettings_t>.From(nint handle) => new HitReactFixedSettings_tImpl(handle);
+  static HitReactFixedSettings_t ISchemaClass<HitReactFixedSettings_t>.From(nint handle) => new HitReactFixedSettings_tImpl(handle);
 
   
   public ref int WeightListIndex { get; }

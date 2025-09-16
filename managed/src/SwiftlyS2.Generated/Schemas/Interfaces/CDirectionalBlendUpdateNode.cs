@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDirectionalBlendUpdateNode : CLeafUpdateNode, IConvertibleNativeHandle<CDirectionalBlendUpdateNode> {
+public partial interface CDirectionalBlendUpdateNode : CLeafUpdateNode, ISchemaClass<CDirectionalBlendUpdateNode> {
 
-  static CDirectionalBlendUpdateNode IConvertibleNativeHandle<CDirectionalBlendUpdateNode>.From(nint handle) => new CDirectionalBlendUpdateNodeImpl(handle);
+  static CDirectionalBlendUpdateNode ISchemaClass<CDirectionalBlendUpdateNode>.From(nint handle) => new CDirectionalBlendUpdateNodeImpl(handle);
 
   
   // HSequence

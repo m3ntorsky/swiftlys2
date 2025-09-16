@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AggregateInstanceStreamOnDiskData_t : ISchemaClass, IConvertibleNativeHandle<AggregateInstanceStreamOnDiskData_t> {
+public partial interface AggregateInstanceStreamOnDiskData_t : ISchemaClass<AggregateInstanceStreamOnDiskData_t> {
 
-  static AggregateInstanceStreamOnDiskData_t IConvertibleNativeHandle<AggregateInstanceStreamOnDiskData_t>.From(nint handle) => new AggregateInstanceStreamOnDiskData_tImpl(handle);
+  static AggregateInstanceStreamOnDiskData_t ISchemaClass<AggregateInstanceStreamOnDiskData_t>.From(nint handle) => new AggregateInstanceStreamOnDiskData_tImpl(handle);
 
   
   public ref uint DecodedSize { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixBoxverb2Desc_t : ISchemaClass, IConvertibleNativeHandle<VMixBoxverb2Desc_t> {
+public partial interface VMixBoxverb2Desc_t : ISchemaClass<VMixBoxverb2Desc_t> {
 
-  static VMixBoxverb2Desc_t IConvertibleNativeHandle<VMixBoxverb2Desc_t>.From(nint handle) => new VMixBoxverb2Desc_tImpl(handle);
+  static VMixBoxverb2Desc_t ISchemaClass<VMixBoxverb2Desc_t>.From(nint handle) => new VMixBoxverb2Desc_tImpl(handle);
 
   
   public ref float SizeMax { get; }

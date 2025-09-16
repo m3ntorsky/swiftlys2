@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FakeEntity_tAPI : ISchemaClass, IConvertibleNativeHandle<FakeEntity_tAPI> {
+public partial interface FakeEntity_tAPI : ISchemaClass<FakeEntity_tAPI> {
 
-  static FakeEntity_tAPI IConvertibleNativeHandle<FakeEntity_tAPI>.From(nint handle) => new FakeEntity_tAPIImpl(handle);
+  static FakeEntity_tAPI ISchemaClass<FakeEntity_tAPI>.From(nint handle) => new FakeEntity_tAPIImpl(handle);
 
 
 

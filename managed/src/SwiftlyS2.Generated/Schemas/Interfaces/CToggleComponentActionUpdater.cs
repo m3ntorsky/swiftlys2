@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CToggleComponentActionUpdater : CAnimActionUpdater, IConvertibleNativeHandle<CToggleComponentActionUpdater> {
+public partial interface CToggleComponentActionUpdater : CAnimActionUpdater, ISchemaClass<CToggleComponentActionUpdater> {
 
-  static CToggleComponentActionUpdater IConvertibleNativeHandle<CToggleComponentActionUpdater>.From(nint handle) => new CToggleComponentActionUpdaterImpl(handle);
+  static CToggleComponentActionUpdater ISchemaClass<CToggleComponentActionUpdater>.From(nint handle) => new CToggleComponentActionUpdaterImpl(handle);
 
   
   public AnimComponentID ComponentID { get; }

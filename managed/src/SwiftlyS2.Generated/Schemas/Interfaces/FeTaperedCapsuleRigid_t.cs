@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeTaperedCapsuleRigid_t : ISchemaClass, IConvertibleNativeHandle<FeTaperedCapsuleRigid_t> {
+public partial interface FeTaperedCapsuleRigid_t : ISchemaClass<FeTaperedCapsuleRigid_t> {
 
-  static FeTaperedCapsuleRigid_t IConvertibleNativeHandle<FeTaperedCapsuleRigid_t>.From(nint handle) => new FeTaperedCapsuleRigid_tImpl(handle);
+  static FeTaperedCapsuleRigid_t ISchemaClass<FeTaperedCapsuleRigid_t>.From(nint handle) => new FeTaperedCapsuleRigid_tImpl(handle);
 
   
   public ISchemaFixedArray<fltx4> Sphere { get; }

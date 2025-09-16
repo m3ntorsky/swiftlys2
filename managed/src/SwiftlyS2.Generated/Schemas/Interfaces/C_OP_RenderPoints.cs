@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderPoints : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderPoints> {
+public partial interface C_OP_RenderPoints : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderPoints> {
 
-  static C_OP_RenderPoints IConvertibleNativeHandle<C_OP_RenderPoints>.From(nint handle) => new C_OP_RenderPointsImpl(handle);
+  static C_OP_RenderPoints ISchemaClass<C_OP_RenderPoints>.From(nint handle) => new C_OP_RenderPointsImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }

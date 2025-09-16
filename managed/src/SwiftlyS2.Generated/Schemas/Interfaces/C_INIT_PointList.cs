@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_PointList : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_PointList> {
+public partial interface C_INIT_PointList : CParticleFunctionInitializer, ISchemaClass<C_INIT_PointList> {
 
-  static C_INIT_PointList IConvertibleNativeHandle<C_INIT_PointList>.From(nint handle) => new C_INIT_PointListImpl(handle);
+  static C_INIT_PointList ISchemaClass<C_INIT_PointList>.From(nint handle) => new C_INIT_PointListImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

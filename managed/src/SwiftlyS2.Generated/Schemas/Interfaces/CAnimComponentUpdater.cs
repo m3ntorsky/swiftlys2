@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimComponentUpdater : ISchemaClass, IConvertibleNativeHandle<CAnimComponentUpdater> {
+public partial interface CAnimComponentUpdater : ISchemaClass<CAnimComponentUpdater> {
 
-  static CAnimComponentUpdater IConvertibleNativeHandle<CAnimComponentUpdater>.From(nint handle) => new CAnimComponentUpdaterImpl(handle);
+  static CAnimComponentUpdater ISchemaClass<CAnimComponentUpdater>.From(nint handle) => new CAnimComponentUpdaterImpl(handle);
 
   
   public ref CUtlString Name { get; }

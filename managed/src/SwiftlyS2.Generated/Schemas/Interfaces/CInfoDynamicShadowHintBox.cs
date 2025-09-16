@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoDynamicShadowHintBox : CInfoDynamicShadowHint, IConvertibleNativeHandle<CInfoDynamicShadowHintBox> {
+public partial interface CInfoDynamicShadowHintBox : CInfoDynamicShadowHint, ISchemaClass<CInfoDynamicShadowHintBox> {
 
-  static CInfoDynamicShadowHintBox IConvertibleNativeHandle<CInfoDynamicShadowHintBox>.From(nint handle) => new CInfoDynamicShadowHintBoxImpl(handle);
+  static CInfoDynamicShadowHintBox ISchemaClass<CInfoDynamicShadowHintBox>.From(nint handle) => new CInfoDynamicShadowHintBoxImpl(handle);
 
   
   public ref Vector BoxMins { get; }

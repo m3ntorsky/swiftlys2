@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSequenceFinishedAnimTag : CAnimTagBase, IConvertibleNativeHandle<CSequenceFinishedAnimTag> {
+public partial interface CSequenceFinishedAnimTag : CAnimTagBase, ISchemaClass<CSequenceFinishedAnimTag> {
 
-  static CSequenceFinishedAnimTag IConvertibleNativeHandle<CSequenceFinishedAnimTag>.From(nint handle) => new CSequenceFinishedAnimTagImpl(handle);
+  static CSequenceFinishedAnimTag ISchemaClass<CSequenceFinishedAnimTag>.From(nint handle) => new CSequenceFinishedAnimTagImpl(handle);
 
   
   public ref CUtlString SequenceName { get; }

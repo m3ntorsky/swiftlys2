@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoDynamicShadowHint : CPointEntity, IConvertibleNativeHandle<CInfoDynamicShadowHint> {
+public partial interface CInfoDynamicShadowHint : CPointEntity, ISchemaClass<CInfoDynamicShadowHint> {
 
-  static CInfoDynamicShadowHint IConvertibleNativeHandle<CInfoDynamicShadowHint>.From(nint handle) => new CInfoDynamicShadowHintImpl(handle);
+  static CInfoDynamicShadowHint ISchemaClass<CInfoDynamicShadowHint>.From(nint handle) => new CInfoDynamicShadowHintImpl(handle);
 
   
   public ref bool Disabled { get; }

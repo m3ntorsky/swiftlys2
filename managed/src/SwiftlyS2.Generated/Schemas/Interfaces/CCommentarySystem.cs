@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCommentarySystem : ISchemaClass, IConvertibleNativeHandle<CCommentarySystem> {
+public partial interface CCommentarySystem : ISchemaClass<CCommentarySystem> {
 
-  static CCommentarySystem IConvertibleNativeHandle<CCommentarySystem>.From(nint handle) => new CCommentarySystemImpl(handle);
+  static CCommentarySystem ISchemaClass<CCommentarySystem>.From(nint handle) => new CCommentarySystemImpl(handle);
 
   
   public ref bool CommentaryConvarsChanging { get; }

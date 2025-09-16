@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFootstepEventPercentageThroughNode__CDefinition : CNmFloatValueNode__CDefinition, IConvertibleNativeHandle<CNmFootstepEventPercentageThroughNode__CDefinition> {
+public partial interface CNmFootstepEventPercentageThroughNode__CDefinition : CNmFloatValueNode__CDefinition, ISchemaClass<CNmFootstepEventPercentageThroughNode__CDefinition> {
 
-  static CNmFootstepEventPercentageThroughNode__CDefinition IConvertibleNativeHandle<CNmFootstepEventPercentageThroughNode__CDefinition>.From(nint handle) => new CNmFootstepEventPercentageThroughNode__CDefinitionImpl(handle);
+  static CNmFootstepEventPercentageThroughNode__CDefinition ISchemaClass<CNmFootstepEventPercentageThroughNode__CDefinition>.From(nint handle) => new CNmFootstepEventPercentageThroughNode__CDefinitionImpl(handle);
 
   
   public ref short SourceStateNodeIdx { get; }

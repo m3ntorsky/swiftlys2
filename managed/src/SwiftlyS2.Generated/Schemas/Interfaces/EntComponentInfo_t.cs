@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EntComponentInfo_t : ISchemaClass, IConvertibleNativeHandle<EntComponentInfo_t> {
+public partial interface EntComponentInfo_t : ISchemaClass<EntComponentInfo_t> {
 
-  static EntComponentInfo_t IConvertibleNativeHandle<EntComponentInfo_t>.From(nint handle) => new EntComponentInfo_tImpl(handle);
+  static EntComponentInfo_t ISchemaClass<EntComponentInfo_t>.From(nint handle) => new EntComponentInfo_tImpl(handle);
 
   
   public ref CString Name { get; }

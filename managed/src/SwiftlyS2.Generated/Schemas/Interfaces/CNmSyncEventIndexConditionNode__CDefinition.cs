@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmSyncEventIndexConditionNode__CDefinition : CNmBoolValueNode__CDefinition, IConvertibleNativeHandle<CNmSyncEventIndexConditionNode__CDefinition> {
+public partial interface CNmSyncEventIndexConditionNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmSyncEventIndexConditionNode__CDefinition> {
 
-  static CNmSyncEventIndexConditionNode__CDefinition IConvertibleNativeHandle<CNmSyncEventIndexConditionNode__CDefinition>.From(nint handle) => new CNmSyncEventIndexConditionNode__CDefinitionImpl(handle);
+  static CNmSyncEventIndexConditionNode__CDefinition ISchemaClass<CNmSyncEventIndexConditionNode__CDefinition>.From(nint handle) => new CNmSyncEventIndexConditionNode__CDefinitionImpl(handle);
 
   
   public ref short SourceStateNodeIdx { get; }

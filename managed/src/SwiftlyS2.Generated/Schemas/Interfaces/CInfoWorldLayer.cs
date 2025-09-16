@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoWorldLayer : CBaseEntity, IConvertibleNativeHandle<CInfoWorldLayer> {
+public partial interface CInfoWorldLayer : CBaseEntity, ISchemaClass<CInfoWorldLayer> {
 
-  static CInfoWorldLayer IConvertibleNativeHandle<CInfoWorldLayer>.From(nint handle) => new CInfoWorldLayerImpl(handle);
+  static CInfoWorldLayer ISchemaClass<CInfoWorldLayer>.From(nint handle) => new CInfoWorldLayerImpl(handle);
 
   
   public CEntityIOOutput OutputOnEntitiesSpawned { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerLook : CTriggerOnce, IConvertibleNativeHandle<CTriggerLook> {
+public partial interface CTriggerLook : CTriggerOnce, ISchemaClass<CTriggerLook> {
 
-  static CTriggerLook IConvertibleNativeHandle<CTriggerLook>.From(nint handle) => new CTriggerLookImpl(handle);
+  static CTriggerLook ISchemaClass<CTriggerLook>.From(nint handle) => new CTriggerLookImpl(handle);
 
   
   public ref CHandle<CBaseEntity> LookTarget { get; }

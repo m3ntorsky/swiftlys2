@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PostProcessingResource_t : ISchemaClass, IConvertibleNativeHandle<PostProcessingResource_t> {
+public partial interface PostProcessingResource_t : ISchemaClass<PostProcessingResource_t> {
 
-  static PostProcessingResource_t IConvertibleNativeHandle<PostProcessingResource_t>.From(nint handle) => new PostProcessingResource_tImpl(handle);
+  static PostProcessingResource_t ISchemaClass<PostProcessingResource_t>.From(nint handle) => new PostProcessingResource_tImpl(handle);
 
   
   public ref bool HasTonemapParams { get; }

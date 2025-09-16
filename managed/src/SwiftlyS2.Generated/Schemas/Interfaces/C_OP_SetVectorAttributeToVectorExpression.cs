@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetVectorAttributeToVectorExpression : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_SetVectorAttributeToVectorExpression> {
+public partial interface C_OP_SetVectorAttributeToVectorExpression : CParticleFunctionOperator, ISchemaClass<C_OP_SetVectorAttributeToVectorExpression> {
 
-  static C_OP_SetVectorAttributeToVectorExpression IConvertibleNativeHandle<C_OP_SetVectorAttributeToVectorExpression>.From(nint handle) => new C_OP_SetVectorAttributeToVectorExpressionImpl(handle);
+  static C_OP_SetVectorAttributeToVectorExpression ISchemaClass<C_OP_SetVectorAttributeToVectorExpression>.From(nint handle) => new C_OP_SetVectorAttributeToVectorExpressionImpl(handle);
 
   
   public ref VectorExpressionType_t Expression { get; }

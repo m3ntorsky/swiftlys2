@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollComponentUpdater : CAnimComponentUpdater, IConvertibleNativeHandle<CRagdollComponentUpdater> {
+public partial interface CRagdollComponentUpdater : CAnimComponentUpdater, ISchemaClass<CRagdollComponentUpdater> {
 
-  static CRagdollComponentUpdater IConvertibleNativeHandle<CRagdollComponentUpdater>.From(nint handle) => new CRagdollComponentUpdaterImpl(handle);
+  static CRagdollComponentUpdater ISchemaClass<CRagdollComponentUpdater>.From(nint handle) => new CRagdollComponentUpdaterImpl(handle);
 
   
   // CUtlVector< CAnimNodePath >

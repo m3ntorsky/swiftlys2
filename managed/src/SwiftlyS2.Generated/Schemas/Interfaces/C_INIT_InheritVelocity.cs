@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_InheritVelocity : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_InheritVelocity> {
+public partial interface C_INIT_InheritVelocity : CParticleFunctionInitializer, ISchemaClass<C_INIT_InheritVelocity> {
 
-  static C_INIT_InheritVelocity IConvertibleNativeHandle<C_INIT_InheritVelocity>.From(nint handle) => new C_INIT_InheritVelocityImpl(handle);
+  static C_INIT_InheritVelocity ISchemaClass<C_INIT_InheritVelocity>.From(nint handle) => new C_INIT_InheritVelocityImpl(handle);
 
   
   public ref int ControlPointNumber { get; }

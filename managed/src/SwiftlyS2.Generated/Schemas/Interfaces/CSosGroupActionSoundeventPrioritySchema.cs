@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupActionSoundeventPrioritySchema : CSosGroupActionSchema, IConvertibleNativeHandle<CSosGroupActionSoundeventPrioritySchema> {
+public partial interface CSosGroupActionSoundeventPrioritySchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionSoundeventPrioritySchema> {
 
-  static CSosGroupActionSoundeventPrioritySchema IConvertibleNativeHandle<CSosGroupActionSoundeventPrioritySchema>.From(nint handle) => new CSosGroupActionSoundeventPrioritySchemaImpl(handle);
+  static CSosGroupActionSoundeventPrioritySchema ISchemaClass<CSosGroupActionSoundeventPrioritySchema>.From(nint handle) => new CSosGroupActionSoundeventPrioritySchemaImpl(handle);
 
   
   public ref CUtlString PriorityValue { get; }

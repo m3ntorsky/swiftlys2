@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimGraphControllerBase : ISchemaClass, IConvertibleNativeHandle<CAnimGraphControllerBase> {
+public partial interface CAnimGraphControllerBase : ISchemaClass<CAnimGraphControllerBase> {
 
-  static CAnimGraphControllerBase IConvertibleNativeHandle<CAnimGraphControllerBase>.From(nint handle) => new CAnimGraphControllerBaseImpl(handle);
+  static CAnimGraphControllerBase ISchemaClass<CAnimGraphControllerBase>.From(nint handle) => new CAnimGraphControllerBaseImpl(handle);
 
   
   // CUtlVectorFixedGrowable< CGlobalSymbol, 8 >

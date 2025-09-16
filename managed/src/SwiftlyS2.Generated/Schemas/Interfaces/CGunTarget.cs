@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGunTarget : CBaseToggle, IConvertibleNativeHandle<CGunTarget> {
+public partial interface CGunTarget : CBaseToggle, ISchemaClass<CGunTarget> {
 
-  static CGunTarget IConvertibleNativeHandle<CGunTarget>.From(nint handle) => new CGunTargetImpl(handle);
+  static CGunTarget ISchemaClass<CGunTarget>.From(nint handle) => new CGunTargetImpl(handle);
 
   
   public ref bool On { get; }

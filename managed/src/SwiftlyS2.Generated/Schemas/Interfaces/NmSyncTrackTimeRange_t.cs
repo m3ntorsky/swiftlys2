@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface NmSyncTrackTimeRange_t : ISchemaClass, IConvertibleNativeHandle<NmSyncTrackTimeRange_t> {
+public partial interface NmSyncTrackTimeRange_t : ISchemaClass<NmSyncTrackTimeRange_t> {
 
-  static NmSyncTrackTimeRange_t IConvertibleNativeHandle<NmSyncTrackTimeRange_t>.From(nint handle) => new NmSyncTrackTimeRange_tImpl(handle);
+  static NmSyncTrackTimeRange_t ISchemaClass<NmSyncTrackTimeRange_t>.From(nint handle) => new NmSyncTrackTimeRange_tImpl(handle);
 
   
   public NmSyncTrackTime_t StartTime { get; }

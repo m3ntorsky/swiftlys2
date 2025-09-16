@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels : ISchemaClass, IConvertibleNativeHandle<CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels> {
+public partial interface CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels : ISchemaClass<CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels> {
 
-  static CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels IConvertibleNativeHandle<CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels>.From(nint handle) => new CDestructiblePartsSystemData_HitGroupInfoAndDamageLevelsImpl(handle);
+  static CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels ISchemaClass<CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels>.From(nint handle) => new CDestructiblePartsSystemData_HitGroupInfoAndDamageLevelsImpl(handle);
 
   
   public ref CGlobalSymbol DebugName { get; }

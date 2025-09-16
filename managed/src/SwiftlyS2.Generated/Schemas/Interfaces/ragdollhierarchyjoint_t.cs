@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ragdollhierarchyjoint_t : ISchemaClass, IConvertibleNativeHandle<ragdollhierarchyjoint_t> {
+public partial interface ragdollhierarchyjoint_t : ISchemaClass<ragdollhierarchyjoint_t> {
 
-  static ragdollhierarchyjoint_t IConvertibleNativeHandle<ragdollhierarchyjoint_t>.From(nint handle) => new ragdollhierarchyjoint_tImpl(handle);
+  static ragdollhierarchyjoint_t ISchemaClass<ragdollhierarchyjoint_t>.From(nint handle) => new ragdollhierarchyjoint_tImpl(handle);
 
   
   public ref int ParentIndex { get; }

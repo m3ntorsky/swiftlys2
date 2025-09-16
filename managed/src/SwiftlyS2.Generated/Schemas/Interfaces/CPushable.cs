@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPushable : CBreakable, IConvertibleNativeHandle<CPushable> {
+public partial interface CPushable : CBreakable, ISchemaClass<CPushable> {
 
-  static CPushable IConvertibleNativeHandle<CPushable>.From(nint handle) => new CPushableImpl(handle);
+  static CPushable ISchemaClass<CPushable>.From(nint handle) => new CPushableImpl(handle);
 
 
 

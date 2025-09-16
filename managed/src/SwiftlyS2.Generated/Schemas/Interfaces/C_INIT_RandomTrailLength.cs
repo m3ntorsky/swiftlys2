@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomTrailLength : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RandomTrailLength> {
+public partial interface C_INIT_RandomTrailLength : CParticleFunctionInitializer, ISchemaClass<C_INIT_RandomTrailLength> {
 
-  static C_INIT_RandomTrailLength IConvertibleNativeHandle<C_INIT_RandomTrailLength>.From(nint handle) => new C_INIT_RandomTrailLengthImpl(handle);
+  static C_INIT_RandomTrailLength ISchemaClass<C_INIT_RandomTrailLength>.From(nint handle) => new C_INIT_RandomTrailLengthImpl(handle);
 
   
   public ref float MinLength { get; }

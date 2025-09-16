@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncVehicleClip : CBaseModelEntity, IConvertibleNativeHandle<CFuncVehicleClip> {
+public partial interface CFuncVehicleClip : CBaseModelEntity, ISchemaClass<CFuncVehicleClip> {
 
-  static CFuncVehicleClip IConvertibleNativeHandle<CFuncVehicleClip>.From(nint handle) => new CFuncVehicleClipImpl(handle);
+  static CFuncVehicleClip ISchemaClass<CFuncVehicleClip>.From(nint handle) => new CFuncVehicleClipImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapTransformVisibilityToScalar : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapTransformVisibilityToScalar> {
+public partial interface C_OP_RemapTransformVisibilityToScalar : CParticleFunctionOperator, ISchemaClass<C_OP_RemapTransformVisibilityToScalar> {
 
-  static C_OP_RemapTransformVisibilityToScalar IConvertibleNativeHandle<C_OP_RemapTransformVisibilityToScalar>.From(nint handle) => new C_OP_RemapTransformVisibilityToScalarImpl(handle);
+  static C_OP_RemapTransformVisibilityToScalar ISchemaClass<C_OP_RemapTransformVisibilityToScalar>.From(nint handle) => new C_OP_RemapTransformVisibilityToScalarImpl(handle);
 
   
   public ref ParticleSetMethod_t SetMethod { get; }

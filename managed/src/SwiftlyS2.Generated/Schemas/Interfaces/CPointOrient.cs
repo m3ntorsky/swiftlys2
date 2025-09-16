@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointOrient : CBaseEntity, IConvertibleNativeHandle<CPointOrient> {
+public partial interface CPointOrient : CBaseEntity, ISchemaClass<CPointOrient> {
 
-  static CPointOrient IConvertibleNativeHandle<CPointOrient>.From(nint handle) => new CPointOrientImpl(handle);
+  static CPointOrient ISchemaClass<CPointOrient>.From(nint handle) => new CPointOrientImpl(handle);
 
   
   public ref CUtlSymbolLarge SpawnTargetName { get; }

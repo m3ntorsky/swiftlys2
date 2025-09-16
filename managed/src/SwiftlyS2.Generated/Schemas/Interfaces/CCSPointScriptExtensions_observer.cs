@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPointScriptExtensions_observer : ISchemaClass, IConvertibleNativeHandle<CCSPointScriptExtensions_observer> {
+public partial interface CCSPointScriptExtensions_observer : ISchemaClass<CCSPointScriptExtensions_observer> {
 
-  static CCSPointScriptExtensions_observer IConvertibleNativeHandle<CCSPointScriptExtensions_observer>.From(nint handle) => new CCSPointScriptExtensions_observerImpl(handle);
+  static CCSPointScriptExtensions_observer ISchemaClass<CCSPointScriptExtensions_observer>.From(nint handle) => new CCSPointScriptExtensions_observerImpl(handle);
 
 
 

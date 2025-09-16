@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSkeletonAnimationController : ISkeletonAnimationController, IConvertibleNativeHandle<CSkeletonAnimationController> {
+public partial interface CSkeletonAnimationController : ISkeletonAnimationController, ISchemaClass<CSkeletonAnimationController> {
 
-  static CSkeletonAnimationController IConvertibleNativeHandle<CSkeletonAnimationController>.From(nint handle) => new CSkeletonAnimationControllerImpl(handle);
+  static CSkeletonAnimationController ISchemaClass<CSkeletonAnimationController>.From(nint handle) => new CSkeletonAnimationControllerImpl(handle);
 
   
   public CSkeletonInstance? SkeletonInstance { get; }

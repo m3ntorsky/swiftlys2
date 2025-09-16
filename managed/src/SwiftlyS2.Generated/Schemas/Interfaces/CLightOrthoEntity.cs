@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLightOrthoEntity : CLightEntity, IConvertibleNativeHandle<CLightOrthoEntity> {
+public partial interface CLightOrthoEntity : CLightEntity, ISchemaClass<CLightOrthoEntity> {
 
-  static CLightOrthoEntity IConvertibleNativeHandle<CLightOrthoEntity>.From(nint handle) => new CLightOrthoEntityImpl(handle);
+  static CLightOrthoEntity ISchemaClass<CLightOrthoEntity>.From(nint handle) => new CLightOrthoEntityImpl(handle);
 
 
 

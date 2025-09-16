@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CWarpSectionAnimTag : CWarpSectionAnimTagBase, IConvertibleNativeHandle<CWarpSectionAnimTag> {
+public partial interface CWarpSectionAnimTag : CWarpSectionAnimTagBase, ISchemaClass<CWarpSectionAnimTag> {
 
-  static CWarpSectionAnimTag IConvertibleNativeHandle<CWarpSectionAnimTag>.From(nint handle) => new CWarpSectionAnimTagImpl(handle);
+  static CWarpSectionAnimTag ISchemaClass<CWarpSectionAnimTag>.From(nint handle) => new CWarpSectionAnimTagImpl(handle);
 
   
   public ref bool WarpPosition { get; }

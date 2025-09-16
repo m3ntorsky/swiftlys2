@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CScriptedSequence : CBaseEntity, IConvertibleNativeHandle<CScriptedSequence> {
+public partial interface CScriptedSequence : CBaseEntity, ISchemaClass<CScriptedSequence> {
 
-  static CScriptedSequence IConvertibleNativeHandle<CScriptedSequence>.From(nint handle) => new CScriptedSequenceImpl(handle);
+  static CScriptedSequence ISchemaClass<CScriptedSequence>.From(nint handle) => new CScriptedSequenceImpl(handle);
 
   
   public ref CUtlSymbolLarge Entry { get; }

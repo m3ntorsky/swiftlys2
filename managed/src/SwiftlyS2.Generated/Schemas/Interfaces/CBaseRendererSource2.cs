@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseRendererSource2 : CParticleFunctionRenderer, IConvertibleNativeHandle<CBaseRendererSource2> {
+public partial interface CBaseRendererSource2 : CParticleFunctionRenderer, ISchemaClass<CBaseRendererSource2> {
 
-  static CBaseRendererSource2 IConvertibleNativeHandle<CBaseRendererSource2>.From(nint handle) => new CBaseRendererSource2Impl(handle);
+  static CBaseRendererSource2 ISchemaClass<CBaseRendererSource2>.From(nint handle) => new CBaseRendererSource2Impl(handle);
 
   
   public CParticleCollectionRendererFloatInput RadiusScale { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface WeightList : ISchemaClass, IConvertibleNativeHandle<WeightList> {
+public partial interface WeightList : ISchemaClass<WeightList> {
 
-  static WeightList IConvertibleNativeHandle<WeightList>.From(nint handle) => new WeightListImpl(handle);
+  static WeightList ISchemaClass<WeightList>.From(nint handle) => new WeightListImpl(handle);
 
   
   public ref CUtlString Name { get; }

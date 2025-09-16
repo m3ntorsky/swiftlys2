@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_QuantizeCPComponent : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_QuantizeCPComponent> {
+public partial interface C_OP_QuantizeCPComponent : CParticleFunctionPreEmission, ISchemaClass<C_OP_QuantizeCPComponent> {
 
-  static C_OP_QuantizeCPComponent IConvertibleNativeHandle<C_OP_QuantizeCPComponent>.From(nint handle) => new C_OP_QuantizeCPComponentImpl(handle);
+  static C_OP_QuantizeCPComponent ISchemaClass<C_OP_QuantizeCPComponent>.From(nint handle) => new C_OP_QuantizeCPComponentImpl(handle);
 
   
   public CParticleCollectionFloatInput InputValue { get; }

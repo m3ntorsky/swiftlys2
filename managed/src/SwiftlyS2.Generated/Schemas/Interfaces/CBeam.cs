@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBeam : CBaseModelEntity, IConvertibleNativeHandle<CBeam> {
+public partial interface CBeam : CBaseModelEntity, ISchemaClass<CBeam> {
 
-  static CBeam IConvertibleNativeHandle<CBeam>.From(nint handle) => new CBeamImpl(handle);
+  static CBeam ISchemaClass<CBeam>.From(nint handle) => new CBeamImpl(handle);
 
   
   public ref float FrameRate { get; }

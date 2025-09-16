@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface COrientationWarpUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<COrientationWarpUpdateNode> {
+public partial interface COrientationWarpUpdateNode : CUnaryUpdateNode, ISchemaClass<COrientationWarpUpdateNode> {
 
-  static COrientationWarpUpdateNode IConvertibleNativeHandle<COrientationWarpUpdateNode>.From(nint handle) => new COrientationWarpUpdateNodeImpl(handle);
+  static COrientationWarpUpdateNode ISchemaClass<COrientationWarpUpdateNode>.From(nint handle) => new COrientationWarpUpdateNodeImpl(handle);
 
   
   public ref OrientationWarpMode_t Mode { get; }

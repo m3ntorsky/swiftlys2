@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleFunctionForce : CParticleFunction, IConvertibleNativeHandle<CParticleFunctionForce> {
+public partial interface CParticleFunctionForce : CParticleFunction, ISchemaClass<CParticleFunctionForce> {
 
-  static CParticleFunctionForce IConvertibleNativeHandle<CParticleFunctionForce>.From(nint handle) => new CParticleFunctionForceImpl(handle);
+  static CParticleFunctionForce ISchemaClass<CParticleFunctionForce>.From(nint handle) => new CParticleFunctionForceImpl(handle);
 
 
 

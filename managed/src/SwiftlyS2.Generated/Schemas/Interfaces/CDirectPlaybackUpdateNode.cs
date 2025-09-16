@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDirectPlaybackUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CDirectPlaybackUpdateNode> {
+public partial interface CDirectPlaybackUpdateNode : CUnaryUpdateNode, ISchemaClass<CDirectPlaybackUpdateNode> {
 
-  static CDirectPlaybackUpdateNode IConvertibleNativeHandle<CDirectPlaybackUpdateNode>.From(nint handle) => new CDirectPlaybackUpdateNodeImpl(handle);
+  static CDirectPlaybackUpdateNode ISchemaClass<CDirectPlaybackUpdateNode>.From(nint handle) => new CDirectPlaybackUpdateNodeImpl(handle);
 
   
   public ref bool FinishEarly { get; }

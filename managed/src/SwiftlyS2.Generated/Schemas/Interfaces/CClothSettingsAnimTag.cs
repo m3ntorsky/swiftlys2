@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CClothSettingsAnimTag : CAnimTagBase, IConvertibleNativeHandle<CClothSettingsAnimTag> {
+public partial interface CClothSettingsAnimTag : CAnimTagBase, ISchemaClass<CClothSettingsAnimTag> {
 
-  static CClothSettingsAnimTag IConvertibleNativeHandle<CClothSettingsAnimTag>.From(nint handle) => new CClothSettingsAnimTagImpl(handle);
+  static CClothSettingsAnimTag ISchemaClass<CClothSettingsAnimTag>.From(nint handle) => new CClothSettingsAnimTagImpl(handle);
 
   
   public ref float Stiffness { get; }

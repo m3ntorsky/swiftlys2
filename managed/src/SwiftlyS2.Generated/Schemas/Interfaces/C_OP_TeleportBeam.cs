@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_TeleportBeam : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_TeleportBeam> {
+public partial interface C_OP_TeleportBeam : CParticleFunctionOperator, ISchemaClass<C_OP_TeleportBeam> {
 
-  static C_OP_TeleportBeam IConvertibleNativeHandle<C_OP_TeleportBeam>.From(nint handle) => new C_OP_TeleportBeamImpl(handle);
+  static C_OP_TeleportBeam ISchemaClass<C_OP_TeleportBeam>.From(nint handle) => new C_OP_TeleportBeamImpl(handle);
 
   
   public ref int CPPosition { get; }

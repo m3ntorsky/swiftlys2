@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerTeleport : CBaseTrigger, IConvertibleNativeHandle<CTriggerTeleport> {
+public partial interface CTriggerTeleport : CBaseTrigger, ISchemaClass<CTriggerTeleport> {
 
-  static CTriggerTeleport IConvertibleNativeHandle<CTriggerTeleport>.From(nint handle) => new CTriggerTeleportImpl(handle);
+  static CTriggerTeleport ISchemaClass<CTriggerTeleport>.From(nint handle) => new CTriggerTeleportImpl(handle);
 
   
   public ref CUtlSymbolLarge Landmark { get; }

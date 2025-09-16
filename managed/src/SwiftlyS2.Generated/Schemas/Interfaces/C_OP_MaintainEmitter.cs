@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_MaintainEmitter : CParticleFunctionEmitter, IConvertibleNativeHandle<C_OP_MaintainEmitter> {
+public partial interface C_OP_MaintainEmitter : CParticleFunctionEmitter, ISchemaClass<C_OP_MaintainEmitter> {
 
-  static C_OP_MaintainEmitter IConvertibleNativeHandle<C_OP_MaintainEmitter>.From(nint handle) => new C_OP_MaintainEmitterImpl(handle);
+  static C_OP_MaintainEmitter ISchemaClass<C_OP_MaintainEmitter>.From(nint handle) => new C_OP_MaintainEmitterImpl(handle);
 
   
   public CParticleCollectionFloatInput ParticlesToMaintain { get; }

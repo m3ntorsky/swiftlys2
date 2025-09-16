@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmLegacyEvent : CNmEvent, IConvertibleNativeHandle<CNmLegacyEvent> {
+public partial interface CNmLegacyEvent : CNmEvent, ISchemaClass<CNmLegacyEvent> {
 
-  static CNmLegacyEvent IConvertibleNativeHandle<CNmLegacyEvent>.From(nint handle) => new CNmLegacyEventImpl(handle);
+  static CNmLegacyEvent ISchemaClass<CNmLegacyEvent>.From(nint handle) => new CNmLegacyEventImpl(handle);
 
   
   public ref CUtlString AnimEventClassName { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSPerRoundStats_t : ISchemaClass, IConvertibleNativeHandle<CSPerRoundStats_t> {
+public partial interface CSPerRoundStats_t : ISchemaClass<CSPerRoundStats_t> {
 
-  static CSPerRoundStats_t IConvertibleNativeHandle<CSPerRoundStats_t>.From(nint handle) => new CSPerRoundStats_tImpl(handle);
+  static CSPerRoundStats_t ISchemaClass<CSPerRoundStats_t>.From(nint handle) => new CSPerRoundStats_tImpl(handle);
 
   
   public ref int Kills { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ModelReference_t : ISchemaClass, IConvertibleNativeHandle<ModelReference_t> {
+public partial interface ModelReference_t : ISchemaClass<ModelReference_t> {
 
-  static ModelReference_t IConvertibleNativeHandle<ModelReference_t>.From(nint handle) => new ModelReference_tImpl(handle);
+  static ModelReference_t ISchemaClass<ModelReference_t>.From(nint handle) => new ModelReference_tImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }

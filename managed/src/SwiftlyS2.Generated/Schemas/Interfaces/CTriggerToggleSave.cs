@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerToggleSave : CBaseTrigger, IConvertibleNativeHandle<CTriggerToggleSave> {
+public partial interface CTriggerToggleSave : CBaseTrigger, ISchemaClass<CTriggerToggleSave> {
 
-  static CTriggerToggleSave IConvertibleNativeHandle<CTriggerToggleSave>.From(nint handle) => new CTriggerToggleSaveImpl(handle);
+  static CTriggerToggleSave ISchemaClass<CTriggerToggleSave>.From(nint handle) => new CTriggerToggleSaveImpl(handle);
 
 
 

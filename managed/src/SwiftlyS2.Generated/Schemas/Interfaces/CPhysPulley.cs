@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysPulley : CPhysConstraint, IConvertibleNativeHandle<CPhysPulley> {
+public partial interface CPhysPulley : CPhysConstraint, ISchemaClass<CPhysPulley> {
 
-  static CPhysPulley IConvertibleNativeHandle<CPhysPulley>.From(nint handle) => new CPhysPulleyImpl(handle);
+  static CPhysPulley ISchemaClass<CPhysPulley>.From(nint handle) => new CPhysPulleyImpl(handle);
 
   
   public ref Vector Position2 { get; }

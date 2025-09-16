@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncMoveLinear : CBaseToggle, IConvertibleNativeHandle<CFuncMoveLinear> {
+public partial interface CFuncMoveLinear : CBaseToggle, ISchemaClass<CFuncMoveLinear> {
 
-  static CFuncMoveLinear IConvertibleNativeHandle<CFuncMoveLinear>.From(nint handle) => new CFuncMoveLinearImpl(handle);
+  static CFuncMoveLinear ISchemaClass<CFuncMoveLinear>.From(nint handle) => new CFuncMoveLinearImpl(handle);
 
   
   public ref MoveLinearAuthoredPos_t AuthoredPosition { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulse_Constant : ISchemaClass, IConvertibleNativeHandle<CPulse_Constant> {
+public partial interface CPulse_Constant : ISchemaClass<CPulse_Constant> {
 
-  static CPulse_Constant IConvertibleNativeHandle<CPulse_Constant>.From(nint handle) => new CPulse_ConstantImpl(handle);
+  static CPulse_Constant ISchemaClass<CPulse_Constant>.From(nint handle) => new CPulse_ConstantImpl(handle);
 
   
   // CPulseValueFullType

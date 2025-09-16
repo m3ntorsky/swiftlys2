@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CastSphereSATParams_t : ISchemaClass, IConvertibleNativeHandle<CastSphereSATParams_t> {
+public partial interface CastSphereSATParams_t : ISchemaClass<CastSphereSATParams_t> {
 
-  static CastSphereSATParams_t IConvertibleNativeHandle<CastSphereSATParams_t>.From(nint handle) => new CastSphereSATParams_tImpl(handle);
+  static CastSphereSATParams_t ISchemaClass<CastSphereSATParams_t>.From(nint handle) => new CastSphereSATParams_tImpl(handle);
 
   
   public ref Vector RayStart { get; }

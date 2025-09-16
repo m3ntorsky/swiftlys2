@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDynamicProp : CBreakableProp, IConvertibleNativeHandle<CDynamicProp> {
+public partial interface CDynamicProp : CBreakableProp, ISchemaClass<CDynamicProp> {
 
-  static CDynamicProp IConvertibleNativeHandle<CDynamicProp>.From(nint handle) => new CDynamicPropImpl(handle);
+  static CDynamicProp ISchemaClass<CDynamicProp>.From(nint handle) => new CDynamicPropImpl(handle);
 
   
   public ref bool CreateNavObstacle { get; }

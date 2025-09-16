@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimationGraphVisualizerAxis : CAnimationGraphVisualizerPrimitiveBase, IConvertibleNativeHandle<CAnimationGraphVisualizerAxis> {
+public partial interface CAnimationGraphVisualizerAxis : CAnimationGraphVisualizerPrimitiveBase, ISchemaClass<CAnimationGraphVisualizerAxis> {
 
-  static CAnimationGraphVisualizerAxis IConvertibleNativeHandle<CAnimationGraphVisualizerAxis>.From(nint handle) => new CAnimationGraphVisualizerAxisImpl(handle);
+  static CAnimationGraphVisualizerAxis ISchemaClass<CAnimationGraphVisualizerAxis>.From(nint handle) => new CAnimationGraphVisualizerAxisImpl(handle);
 
   
   public ref CTransform XWsTransform { get; }

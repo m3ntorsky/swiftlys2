@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncTankTrain : CFuncTrackTrain, IConvertibleNativeHandle<CFuncTankTrain> {
+public partial interface CFuncTankTrain : CFuncTrackTrain, ISchemaClass<CFuncTankTrain> {
 
-  static CFuncTankTrain IConvertibleNativeHandle<CFuncTankTrain>.From(nint handle) => new CFuncTankTrainImpl(handle);
+  static CFuncTankTrain ISchemaClass<CFuncTankTrain>.From(nint handle) => new CFuncTankTrainImpl(handle);
 
   
   public CEntityIOOutput OnDeath { get; }

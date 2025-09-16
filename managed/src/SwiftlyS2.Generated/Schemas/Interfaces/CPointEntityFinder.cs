@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointEntityFinder : CBaseEntity, IConvertibleNativeHandle<CPointEntityFinder> {
+public partial interface CPointEntityFinder : CBaseEntity, ISchemaClass<CPointEntityFinder> {
 
-  static CPointEntityFinder IConvertibleNativeHandle<CPointEntityFinder>.From(nint handle) => new CPointEntityFinderImpl(handle);
+  static CPointEntityFinder ISchemaClass<CPointEntityFinder>.From(nint handle) => new CPointEntityFinderImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Entity { get; }

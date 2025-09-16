@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RemapNamedModelSequenceToScalar : C_INIT_RemapNamedModelElementToScalar, IConvertibleNativeHandle<C_INIT_RemapNamedModelSequenceToScalar> {
+public partial interface C_INIT_RemapNamedModelSequenceToScalar : C_INIT_RemapNamedModelElementToScalar, ISchemaClass<C_INIT_RemapNamedModelSequenceToScalar> {
 
-  static C_INIT_RemapNamedModelSequenceToScalar IConvertibleNativeHandle<C_INIT_RemapNamedModelSequenceToScalar>.From(nint handle) => new C_INIT_RemapNamedModelSequenceToScalarImpl(handle);
+  static C_INIT_RemapNamedModelSequenceToScalar ISchemaClass<C_INIT_RemapNamedModelSequenceToScalar>.From(nint handle) => new C_INIT_RemapNamedModelSequenceToScalarImpl(handle);
 
 
 

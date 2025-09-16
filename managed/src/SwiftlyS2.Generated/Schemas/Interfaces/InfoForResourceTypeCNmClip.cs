@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCNmClip : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCNmClip> {
+public partial interface InfoForResourceTypeCNmClip : ISchemaClass<InfoForResourceTypeCNmClip> {
 
-  static InfoForResourceTypeCNmClip IConvertibleNativeHandle<InfoForResourceTypeCNmClip>.From(nint handle) => new InfoForResourceTypeCNmClipImpl(handle);
+  static InfoForResourceTypeCNmClip ISchemaClass<InfoForResourceTypeCNmClip>.From(nint handle) => new InfoForResourceTypeCNmClipImpl(handle);
 
 
 

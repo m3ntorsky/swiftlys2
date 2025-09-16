@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimTagBase : ISchemaClass, IConvertibleNativeHandle<CAnimTagBase> {
+public partial interface CAnimTagBase : ISchemaClass<CAnimTagBase> {
 
-  static CAnimTagBase IConvertibleNativeHandle<CAnimTagBase>.From(nint handle) => new CAnimTagBaseImpl(handle);
+  static CAnimTagBase ISchemaClass<CAnimTagBase>.From(nint handle) => new CAnimTagBaseImpl(handle);
 
   
   public ref CGlobalSymbol Name { get; }

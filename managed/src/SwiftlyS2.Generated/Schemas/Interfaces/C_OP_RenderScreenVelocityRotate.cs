@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderScreenVelocityRotate : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderScreenVelocityRotate> {
+public partial interface C_OP_RenderScreenVelocityRotate : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderScreenVelocityRotate> {
 
-  static C_OP_RenderScreenVelocityRotate IConvertibleNativeHandle<C_OP_RenderScreenVelocityRotate>.From(nint handle) => new C_OP_RenderScreenVelocityRotateImpl(handle);
+  static C_OP_RenderScreenVelocityRotate ISchemaClass<C_OP_RenderScreenVelocityRotate>.From(nint handle) => new C_OP_RenderScreenVelocityRotateImpl(handle);
 
   
   public ref float RotateRateDegrees { get; }

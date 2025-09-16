@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysicsEntitySolver : CLogicalEntity, IConvertibleNativeHandle<CPhysicsEntitySolver> {
+public partial interface CPhysicsEntitySolver : CLogicalEntity, ISchemaClass<CPhysicsEntitySolver> {
 
-  static CPhysicsEntitySolver IConvertibleNativeHandle<CPhysicsEntitySolver>.From(nint handle) => new CPhysicsEntitySolverImpl(handle);
+  static CPhysicsEntitySolver ISchemaClass<CPhysicsEntitySolver>.From(nint handle) => new CPhysicsEntitySolverImpl(handle);
 
   
   public ref CHandle<CBaseEntity> MovingEntity { get; }

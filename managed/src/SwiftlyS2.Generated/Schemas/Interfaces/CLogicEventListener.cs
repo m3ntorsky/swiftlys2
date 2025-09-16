@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicEventListener : CLogicalEntity, IConvertibleNativeHandle<CLogicEventListener> {
+public partial interface CLogicEventListener : CLogicalEntity, ISchemaClass<CLogicEventListener> {
 
-  static CLogicEventListener IConvertibleNativeHandle<CLogicEventListener>.From(nint handle) => new CLogicEventListenerImpl(handle);
+  static CLogicEventListener ISchemaClass<CLogicEventListener>.From(nint handle) => new CLogicEventListenerImpl(handle);
 
   
   public ref CUtlString StrEventName { get; }

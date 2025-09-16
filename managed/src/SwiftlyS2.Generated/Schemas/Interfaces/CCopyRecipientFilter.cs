@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCopyRecipientFilter : ISchemaClass, IConvertibleNativeHandle<CCopyRecipientFilter> {
+public partial interface CCopyRecipientFilter : ISchemaClass<CCopyRecipientFilter> {
 
-  static CCopyRecipientFilter IConvertibleNativeHandle<CCopyRecipientFilter>.From(nint handle) => new CCopyRecipientFilterImpl(handle);
+  static CCopyRecipientFilter ISchemaClass<CCopyRecipientFilter>.From(nint handle) => new CCopyRecipientFilterImpl(handle);
 
   
   public ref int Flags { get; }

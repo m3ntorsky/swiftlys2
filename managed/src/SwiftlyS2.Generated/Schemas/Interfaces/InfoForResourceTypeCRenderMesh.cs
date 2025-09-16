@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCRenderMesh : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCRenderMesh> {
+public partial interface InfoForResourceTypeCRenderMesh : ISchemaClass<InfoForResourceTypeCRenderMesh> {
 
-  static InfoForResourceTypeCRenderMesh IConvertibleNativeHandle<InfoForResourceTypeCRenderMesh>.From(nint handle) => new InfoForResourceTypeCRenderMeshImpl(handle);
+  static InfoForResourceTypeCRenderMesh ISchemaClass<InfoForResourceTypeCRenderMesh>.From(nint handle) => new InfoForResourceTypeCRenderMeshImpl(handle);
 
 
 

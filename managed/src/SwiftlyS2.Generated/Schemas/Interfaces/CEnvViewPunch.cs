@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvViewPunch : CPointEntity, IConvertibleNativeHandle<CEnvViewPunch> {
+public partial interface CEnvViewPunch : CPointEntity, ISchemaClass<CEnvViewPunch> {
 
-  static CEnvViewPunch IConvertibleNativeHandle<CEnvViewPunch>.From(nint handle) => new CEnvViewPunchImpl(handle);
+  static CEnvViewPunch ISchemaClass<CEnvViewPunch>.From(nint handle) => new CEnvViewPunchImpl(handle);
 
   
   public ref float Radius { get; }

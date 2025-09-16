@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSceneEventInfo : ISchemaClass, IConvertibleNativeHandle<CSceneEventInfo> {
+public partial interface CSceneEventInfo : ISchemaClass<CSceneEventInfo> {
 
-  static CSceneEventInfo IConvertibleNativeHandle<CSceneEventInfo>.From(nint handle) => new CSceneEventInfoImpl(handle);
+  static CSceneEventInfo ISchemaClass<CSceneEventInfo>.From(nint handle) => new CSceneEventInfoImpl(handle);
 
   
   public ref int Layer { get; }

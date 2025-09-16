@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBasePropDoor : CDynamicProp, IConvertibleNativeHandle<CBasePropDoor> {
+public partial interface CBasePropDoor : CDynamicProp, ISchemaClass<CBasePropDoor> {
 
-  static CBasePropDoor IConvertibleNativeHandle<CBasePropDoor>.From(nint handle) => new CBasePropDoorImpl(handle);
+  static CBasePropDoor ISchemaClass<CBasePropDoor>.From(nint handle) => new CBasePropDoorImpl(handle);
 
   
   public ref float AutoReturnDelay { get; }

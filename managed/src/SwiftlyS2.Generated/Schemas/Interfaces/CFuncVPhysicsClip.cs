@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncVPhysicsClip : CBaseModelEntity, IConvertibleNativeHandle<CFuncVPhysicsClip> {
+public partial interface CFuncVPhysicsClip : CBaseModelEntity, ISchemaClass<CFuncVPhysicsClip> {
 
-  static CFuncVPhysicsClip IConvertibleNativeHandle<CFuncVPhysicsClip>.From(nint handle) => new CFuncVPhysicsClipImpl(handle);
+  static CFuncVPhysicsClip ISchemaClass<CFuncVPhysicsClip>.From(nint handle) => new CFuncVPhysicsClipImpl(handle);
 
   
   public ref bool Disabled { get; }

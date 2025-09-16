@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_LifespanFromVelocity : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_LifespanFromVelocity> {
+public partial interface C_INIT_LifespanFromVelocity : CParticleFunctionInitializer, ISchemaClass<C_INIT_LifespanFromVelocity> {
 
-  static C_INIT_LifespanFromVelocity IConvertibleNativeHandle<C_INIT_LifespanFromVelocity>.From(nint handle) => new C_INIT_LifespanFromVelocityImpl(handle);
+  static C_INIT_LifespanFromVelocity ISchemaClass<C_INIT_LifespanFromVelocity>.From(nint handle) => new C_INIT_LifespanFromVelocityImpl(handle);
 
   
   public ref Vector ComponentScale { get; }

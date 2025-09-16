@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootCycleMetricEvaluator : CMotionMetricEvaluator, IConvertibleNativeHandle<CFootCycleMetricEvaluator> {
+public partial interface CFootCycleMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CFootCycleMetricEvaluator> {
 
-  static CFootCycleMetricEvaluator IConvertibleNativeHandle<CFootCycleMetricEvaluator>.From(nint handle) => new CFootCycleMetricEvaluatorImpl(handle);
+  static CFootCycleMetricEvaluator ISchemaClass<CFootCycleMetricEvaluator>.From(nint handle) => new CFootCycleMetricEvaluatorImpl(handle);
 
   
   public ref CUtlVector<int> FootIndices { get; }

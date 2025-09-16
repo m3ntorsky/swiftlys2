@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerLerpObject : CBaseTrigger, IConvertibleNativeHandle<CTriggerLerpObject> {
+public partial interface CTriggerLerpObject : CBaseTrigger, ISchemaClass<CTriggerLerpObject> {
 
-  static CTriggerLerpObject IConvertibleNativeHandle<CTriggerLerpObject>.From(nint handle) => new CTriggerLerpObjectImpl(handle);
+  static CTriggerLerpObject ISchemaClass<CTriggerLerpObject>.From(nint handle) => new CTriggerLerpObjectImpl(handle);
 
   
   public ref CUtlSymbolLarge LerpTarget { get; }

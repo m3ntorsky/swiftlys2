@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CConcreteAnimParameter : CAnimParameterBase, IConvertibleNativeHandle<CConcreteAnimParameter> {
+public partial interface CConcreteAnimParameter : CAnimParameterBase, ISchemaClass<CConcreteAnimParameter> {
 
-  static CConcreteAnimParameter IConvertibleNativeHandle<CConcreteAnimParameter>.From(nint handle) => new CConcreteAnimParameterImpl(handle);
+  static CConcreteAnimParameter ISchemaClass<CConcreteAnimParameter>.From(nint handle) => new CConcreteAnimParameterImpl(handle);
 
   
   public ref AnimParamButton_t PreviewButton { get; }

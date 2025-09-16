@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_PositionWarpScalar : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_PositionWarpScalar> {
+public partial interface C_INIT_PositionWarpScalar : CParticleFunctionInitializer, ISchemaClass<C_INIT_PositionWarpScalar> {
 
-  static C_INIT_PositionWarpScalar IConvertibleNativeHandle<C_INIT_PositionWarpScalar>.From(nint handle) => new C_INIT_PositionWarpScalarImpl(handle);
+  static C_INIT_PositionWarpScalar ISchemaClass<C_INIT_PositionWarpScalar>.From(nint handle) => new C_INIT_PositionWarpScalarImpl(handle);
 
   
   public ref Vector WarpMin { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvFade : CLogicalEntity, IConvertibleNativeHandle<CEnvFade> {
+public partial interface CEnvFade : CLogicalEntity, ISchemaClass<CEnvFade> {
 
-  static CEnvFade IConvertibleNativeHandle<CEnvFade>.From(nint handle) => new CEnvFadeImpl(handle);
+  static CEnvFade ISchemaClass<CEnvFade>.From(nint handle) => new CEnvFadeImpl(handle);
 
   
   public ref Color FadeColor { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointPositionToRandomActiveCP : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetControlPointPositionToRandomActiveCP> {
+public partial interface C_OP_SetControlPointPositionToRandomActiveCP : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetControlPointPositionToRandomActiveCP> {
 
-  static C_OP_SetControlPointPositionToRandomActiveCP IConvertibleNativeHandle<C_OP_SetControlPointPositionToRandomActiveCP>.From(nint handle) => new C_OP_SetControlPointPositionToRandomActiveCPImpl(handle);
+  static C_OP_SetControlPointPositionToRandomActiveCP ISchemaClass<C_OP_SetControlPointPositionToRandomActiveCP>.From(nint handle) => new C_OP_SetControlPointPositionToRandomActiveCPImpl(handle);
 
   
   public ref int CP1 { get; }

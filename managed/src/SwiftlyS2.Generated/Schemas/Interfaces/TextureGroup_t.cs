@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface TextureGroup_t : ISchemaClass, IConvertibleNativeHandle<TextureGroup_t> {
+public partial interface TextureGroup_t : ISchemaClass<TextureGroup_t> {
 
-  static TextureGroup_t IConvertibleNativeHandle<TextureGroup_t>.From(nint handle) => new TextureGroup_tImpl(handle);
+  static TextureGroup_t ISchemaClass<TextureGroup_t>.From(nint handle) => new TextureGroup_tImpl(handle);
 
   
   public ref bool Enabled { get; }

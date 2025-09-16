@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ClutterTile_t : ISchemaClass, IConvertibleNativeHandle<ClutterTile_t> {
+public partial interface ClutterTile_t : ISchemaClass<ClutterTile_t> {
 
-  static ClutterTile_t IConvertibleNativeHandle<ClutterTile_t>.From(nint handle) => new ClutterTile_tImpl(handle);
+  static ClutterTile_t ISchemaClass<ClutterTile_t>.From(nint handle) => new ClutterTile_tImpl(handle);
 
   
   public ref uint FirstInstance { get; }

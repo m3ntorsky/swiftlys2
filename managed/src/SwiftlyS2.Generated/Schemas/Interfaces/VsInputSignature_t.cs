@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VsInputSignature_t : ISchemaClass, IConvertibleNativeHandle<VsInputSignature_t> {
+public partial interface VsInputSignature_t : ISchemaClass<VsInputSignature_t> {
 
-  static VsInputSignature_t IConvertibleNativeHandle<VsInputSignature_t>.From(nint handle) => new VsInputSignature_tImpl(handle);
+  static VsInputSignature_t ISchemaClass<VsInputSignature_t>.From(nint handle) => new VsInputSignature_tImpl(handle);
 
   
   // CUtlVector< VsInputSignatureElement_t >

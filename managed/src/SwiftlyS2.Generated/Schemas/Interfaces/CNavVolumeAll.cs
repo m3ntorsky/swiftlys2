@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavVolumeAll : CNavVolumeVector, IConvertibleNativeHandle<CNavVolumeAll> {
+public partial interface CNavVolumeAll : CNavVolumeVector, ISchemaClass<CNavVolumeAll> {
 
-  static CNavVolumeAll IConvertibleNativeHandle<CNavVolumeAll>.From(nint handle) => new CNavVolumeAllImpl(handle);
+  static CNavVolumeAll ISchemaClass<CNavVolumeAll>.From(nint handle) => new CNavVolumeAllImpl(handle);
 
 
 

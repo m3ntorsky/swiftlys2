@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayerController_ActionTrackingServices : CPlayerControllerComponent, IConvertibleNativeHandle<CCSPlayerController_ActionTrackingServices> {
+public partial interface CCSPlayerController_ActionTrackingServices : CPlayerControllerComponent, ISchemaClass<CCSPlayerController_ActionTrackingServices> {
 
-  static CCSPlayerController_ActionTrackingServices IConvertibleNativeHandle<CCSPlayerController_ActionTrackingServices>.From(nint handle) => new CCSPlayerController_ActionTrackingServicesImpl(handle);
+  static CCSPlayerController_ActionTrackingServices ISchemaClass<CCSPlayerController_ActionTrackingServices>.From(nint handle) => new CCSPlayerController_ActionTrackingServicesImpl(handle);
 
   
   // CUtlVectorEmbeddedNetworkVar< CSPerRoundStats_t >

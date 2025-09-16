@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmRootMotionData : ISchemaClass, IConvertibleNativeHandle<CNmRootMotionData> {
+public partial interface CNmRootMotionData : ISchemaClass<CNmRootMotionData> {
 
-  static CNmRootMotionData IConvertibleNativeHandle<CNmRootMotionData>.From(nint handle) => new CNmRootMotionDataImpl(handle);
+  static CNmRootMotionData ISchemaClass<CNmRootMotionData>.From(nint handle) => new CNmRootMotionDataImpl(handle);
 
   
   public ref CUtlVector<CTransform> Transforms { get; }

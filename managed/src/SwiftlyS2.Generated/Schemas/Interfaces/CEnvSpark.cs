@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvSpark : CPointEntity, IConvertibleNativeHandle<CEnvSpark> {
+public partial interface CEnvSpark : CPointEntity, ISchemaClass<CEnvSpark> {
 
-  static CEnvSpark IConvertibleNativeHandle<CEnvSpark>.From(nint handle) => new CEnvSparkImpl(handle);
+  static CEnvSpark ISchemaClass<CEnvSpark>.From(nint handle) => new CEnvSparkImpl(handle);
 
   
   public ref float Delay { get; }

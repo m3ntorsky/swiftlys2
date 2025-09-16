@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPrecipitationBlocker : CBaseModelEntity, IConvertibleNativeHandle<CPrecipitationBlocker> {
+public partial interface CPrecipitationBlocker : CBaseModelEntity, ISchemaClass<CPrecipitationBlocker> {
 
-  static CPrecipitationBlocker IConvertibleNativeHandle<CPrecipitationBlocker>.From(nint handle) => new CPrecipitationBlockerImpl(handle);
+  static CPrecipitationBlocker ISchemaClass<CPrecipitationBlocker>.From(nint handle) => new CPrecipitationBlockerImpl(handle);
 
 
 

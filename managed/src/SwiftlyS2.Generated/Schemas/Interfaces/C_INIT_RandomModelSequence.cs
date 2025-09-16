@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomModelSequence : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RandomModelSequence> {
+public partial interface C_INIT_RandomModelSequence : CParticleFunctionInitializer, ISchemaClass<C_INIT_RandomModelSequence> {
 
-  static C_INIT_RandomModelSequence IConvertibleNativeHandle<C_INIT_RandomModelSequence>.From(nint handle) => new C_INIT_RandomModelSequenceImpl(handle);
+  static C_INIT_RandomModelSequence ISchemaClass<C_INIT_RandomModelSequence>.From(nint handle) => new C_INIT_RandomModelSequenceImpl(handle);
 
   
   public ISchemaFixedString ActivityName { get; }

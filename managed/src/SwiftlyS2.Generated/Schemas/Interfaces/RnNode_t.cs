@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnNode_t : ISchemaClass, IConvertibleNativeHandle<RnNode_t> {
+public partial interface RnNode_t : ISchemaClass<RnNode_t> {
 
-  static RnNode_t IConvertibleNativeHandle<RnNode_t>.From(nint handle) => new RnNode_tImpl(handle);
+  static RnNode_t ISchemaClass<RnNode_t>.From(nint handle) => new RnNode_tImpl(handle);
 
   
   public ref Vector Min { get; }

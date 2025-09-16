@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqAutoLayerFlag : ISchemaClass, IConvertibleNativeHandle<CSeqAutoLayerFlag> {
+public partial interface CSeqAutoLayerFlag : ISchemaClass<CSeqAutoLayerFlag> {
 
-  static CSeqAutoLayerFlag IConvertibleNativeHandle<CSeqAutoLayerFlag>.From(nint handle) => new CSeqAutoLayerFlagImpl(handle);
+  static CSeqAutoLayerFlag ISchemaClass<CSeqAutoLayerFlag>.From(nint handle) => new CSeqAutoLayerFlagImpl(handle);
 
   
   public ref bool Post { get; }

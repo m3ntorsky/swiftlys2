@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapControlPointDirectionToVector : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapControlPointDirectionToVector> {
+public partial interface C_OP_RemapControlPointDirectionToVector : CParticleFunctionOperator, ISchemaClass<C_OP_RemapControlPointDirectionToVector> {
 
-  static C_OP_RemapControlPointDirectionToVector IConvertibleNativeHandle<C_OP_RemapControlPointDirectionToVector>.From(nint handle) => new C_OP_RemapControlPointDirectionToVectorImpl(handle);
+  static C_OP_RemapControlPointDirectionToVector ISchemaClass<C_OP_RemapControlPointDirectionToVector>.From(nint handle) => new C_OP_RemapControlPointDirectionToVectorImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

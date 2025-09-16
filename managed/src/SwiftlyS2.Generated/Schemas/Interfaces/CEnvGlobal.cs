@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvGlobal : CLogicalEntity, IConvertibleNativeHandle<CEnvGlobal> {
+public partial interface CEnvGlobal : CLogicalEntity, ISchemaClass<CEnvGlobal> {
 
-  static CEnvGlobal IConvertibleNativeHandle<CEnvGlobal>.From(nint handle) => new CEnvGlobalImpl(handle);
+  static CEnvGlobal ISchemaClass<CEnvGlobal>.From(nint handle) => new CEnvGlobalImpl(handle);
 
   
   // CEntityOutputTemplate< int32 >

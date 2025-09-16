@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AABB_t : ISchemaClass, IConvertibleNativeHandle<AABB_t> {
+public partial interface AABB_t : ISchemaClass<AABB_t> {
 
-  static AABB_t IConvertibleNativeHandle<AABB_t>.From(nint handle) => new AABB_tImpl(handle);
+  static AABB_t ISchemaClass<AABB_t>.From(nint handle) => new AABB_tImpl(handle);
 
   
   public ref Vector MinBounds { get; }

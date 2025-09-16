@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomYawFlip : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RandomYawFlip> {
+public partial interface C_INIT_RandomYawFlip : CParticleFunctionInitializer, ISchemaClass<C_INIT_RandomYawFlip> {
 
-  static C_INIT_RandomYawFlip IConvertibleNativeHandle<C_INIT_RandomYawFlip>.From(nint handle) => new C_INIT_RandomYawFlipImpl(handle);
+  static C_INIT_RandomYawFlip ISchemaClass<C_INIT_RandomYawFlip>.From(nint handle) => new C_INIT_RandomYawFlipImpl(handle);
 
   
   public ref float Percent { get; }

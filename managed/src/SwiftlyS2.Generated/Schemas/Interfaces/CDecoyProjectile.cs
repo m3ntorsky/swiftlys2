@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDecoyProjectile : CBaseCSGrenadeProjectile, IConvertibleNativeHandle<CDecoyProjectile> {
+public partial interface CDecoyProjectile : CBaseCSGrenadeProjectile, ISchemaClass<CDecoyProjectile> {
 
-  static CDecoyProjectile IConvertibleNativeHandle<CDecoyProjectile>.From(nint handle) => new CDecoyProjectileImpl(handle);
+  static CDecoyProjectile ISchemaClass<CDecoyProjectile>.From(nint handle) => new CDecoyProjectileImpl(handle);
 
   
   public ref int DecoyShotTick { get; }

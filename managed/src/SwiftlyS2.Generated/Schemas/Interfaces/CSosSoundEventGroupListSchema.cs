@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosSoundEventGroupListSchema : ISchemaClass, IConvertibleNativeHandle<CSosSoundEventGroupListSchema> {
+public partial interface CSosSoundEventGroupListSchema : ISchemaClass<CSosSoundEventGroupListSchema> {
 
-  static CSosSoundEventGroupListSchema IConvertibleNativeHandle<CSosSoundEventGroupListSchema>.From(nint handle) => new CSosSoundEventGroupListSchemaImpl(handle);
+  static CSosSoundEventGroupListSchema ISchemaClass<CSosSoundEventGroupListSchema>.From(nint handle) => new CSosSoundEventGroupListSchemaImpl(handle);
 
   
   // CUtlVector< CSosSoundEventGroupSchema >

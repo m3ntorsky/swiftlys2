@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PermModelDataAnimatedMaterialAttribute_t : ISchemaClass, IConvertibleNativeHandle<PermModelDataAnimatedMaterialAttribute_t> {
+public partial interface PermModelDataAnimatedMaterialAttribute_t : ISchemaClass<PermModelDataAnimatedMaterialAttribute_t> {
 
-  static PermModelDataAnimatedMaterialAttribute_t IConvertibleNativeHandle<PermModelDataAnimatedMaterialAttribute_t>.From(nint handle) => new PermModelDataAnimatedMaterialAttribute_tImpl(handle);
+  static PermModelDataAnimatedMaterialAttribute_t ISchemaClass<PermModelDataAnimatedMaterialAttribute_t>.From(nint handle) => new PermModelDataAnimatedMaterialAttribute_tImpl(handle);
 
   
   public ref CUtlString AttributeName { get; }

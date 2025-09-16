@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomNamedModelMeshGroup : C_INIT_RandomNamedModelElement, IConvertibleNativeHandle<C_INIT_RandomNamedModelMeshGroup> {
+public partial interface C_INIT_RandomNamedModelMeshGroup : C_INIT_RandomNamedModelElement, ISchemaClass<C_INIT_RandomNamedModelMeshGroup> {
 
-  static C_INIT_RandomNamedModelMeshGroup IConvertibleNativeHandle<C_INIT_RandomNamedModelMeshGroup>.From(nint handle) => new C_INIT_RandomNamedModelMeshGroupImpl(handle);
+  static C_INIT_RandomNamedModelMeshGroup ISchemaClass<C_INIT_RandomNamedModelMeshGroup>.From(nint handle) => new C_INIT_RandomNamedModelMeshGroupImpl(handle);
 
 
 

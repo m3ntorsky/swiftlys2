@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_InheritFromPeerSystem : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_InheritFromPeerSystem> {
+public partial interface C_OP_InheritFromPeerSystem : CParticleFunctionOperator, ISchemaClass<C_OP_InheritFromPeerSystem> {
 
-  static C_OP_InheritFromPeerSystem IConvertibleNativeHandle<C_OP_InheritFromPeerSystem>.From(nint handle) => new C_OP_InheritFromPeerSystemImpl(handle);
+  static C_OP_InheritFromPeerSystem ISchemaClass<C_OP_InheritFromPeerSystem>.From(nint handle) => new C_OP_InheritFromPeerSystemImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

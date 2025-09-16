@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysicsPropRespawnable : CPhysicsProp, IConvertibleNativeHandle<CPhysicsPropRespawnable> {
+public partial interface CPhysicsPropRespawnable : CPhysicsProp, ISchemaClass<CPhysicsPropRespawnable> {
 
-  static CPhysicsPropRespawnable IConvertibleNativeHandle<CPhysicsPropRespawnable>.From(nint handle) => new CPhysicsPropRespawnableImpl(handle);
+  static CPhysicsPropRespawnable ISchemaClass<CPhysicsPropRespawnable>.From(nint handle) => new CPhysicsPropRespawnableImpl(handle);
 
   
   public ref Vector OriginalSpawnOrigin { get; }

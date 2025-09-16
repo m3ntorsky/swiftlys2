@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventServerSimulate_t : EventSimulate_t, IConvertibleNativeHandle<EventServerSimulate_t> {
+public partial interface EventServerSimulate_t : EventSimulate_t, ISchemaClass<EventServerSimulate_t> {
 
-  static EventServerSimulate_t IConvertibleNativeHandle<EventServerSimulate_t>.From(nint handle) => new EventServerSimulate_tImpl(handle);
+  static EventServerSimulate_t ISchemaClass<EventServerSimulate_t>.From(nint handle) => new EventServerSimulate_tImpl(handle);
 
 
 

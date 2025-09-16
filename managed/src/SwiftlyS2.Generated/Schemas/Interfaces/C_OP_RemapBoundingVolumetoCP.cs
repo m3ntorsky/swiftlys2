@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapBoundingVolumetoCP : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_RemapBoundingVolumetoCP> {
+public partial interface C_OP_RemapBoundingVolumetoCP : CParticleFunctionPreEmission, ISchemaClass<C_OP_RemapBoundingVolumetoCP> {
 
-  static C_OP_RemapBoundingVolumetoCP IConvertibleNativeHandle<C_OP_RemapBoundingVolumetoCP>.From(nint handle) => new C_OP_RemapBoundingVolumetoCPImpl(handle);
+  static C_OP_RemapBoundingVolumetoCP ISchemaClass<C_OP_RemapBoundingVolumetoCP>.From(nint handle) => new C_OP_RemapBoundingVolumetoCPImpl(handle);
 
   
   public ref int OutControlPointNumber { get; }

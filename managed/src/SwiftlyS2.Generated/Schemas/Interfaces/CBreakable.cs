@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBreakable : CBaseModelEntity, IConvertibleNativeHandle<CBreakable> {
+public partial interface CBreakable : CBaseModelEntity, ISchemaClass<CBreakable> {
 
-  static CBreakable IConvertibleNativeHandle<CBreakable>.From(nint handle) => new CBreakableImpl(handle);
+  static CBreakable ISchemaClass<CBreakable>.From(nint handle) => new CBreakableImpl(handle);
 
   
   public CPropDataComponent CPropDataComponent { get; }

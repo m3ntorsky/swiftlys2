@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FilterDamageType : CBaseFilter, IConvertibleNativeHandle<FilterDamageType> {
+public partial interface FilterDamageType : CBaseFilter, ISchemaClass<FilterDamageType> {
 
-  static FilterDamageType IConvertibleNativeHandle<FilterDamageType>.From(nint handle) => new FilterDamageTypeImpl(handle);
+  static FilterDamageType ISchemaClass<FilterDamageType>.From(nint handle) => new FilterDamageTypeImpl(handle);
 
   
   public ref int DamageType { get; }

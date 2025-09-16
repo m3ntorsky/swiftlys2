@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface sndopvarlatchdata_t : ISchemaClass, IConvertibleNativeHandle<sndopvarlatchdata_t> {
+public partial interface sndopvarlatchdata_t : ISchemaClass<sndopvarlatchdata_t> {
 
-  static sndopvarlatchdata_t IConvertibleNativeHandle<sndopvarlatchdata_t>.From(nint handle) => new sndopvarlatchdata_tImpl(handle);
+  static sndopvarlatchdata_t ISchemaClass<sndopvarlatchdata_t>.From(nint handle) => new sndopvarlatchdata_tImpl(handle);
 
   
   public ref CUtlSymbolLarge Stack { get; }

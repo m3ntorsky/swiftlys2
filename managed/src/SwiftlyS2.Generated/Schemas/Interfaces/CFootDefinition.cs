@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootDefinition : ISchemaClass, IConvertibleNativeHandle<CFootDefinition> {
+public partial interface CFootDefinition : ISchemaClass<CFootDefinition> {
 
-  static CFootDefinition IConvertibleNativeHandle<CFootDefinition>.From(nint handle) => new CFootDefinitionImpl(handle);
+  static CFootDefinition ISchemaClass<CFootDefinition>.From(nint handle) => new CFootDefinitionImpl(handle);
 
   
   public ref CUtlString Name { get; }

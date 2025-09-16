@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface QuestProgress : ISchemaClass, IConvertibleNativeHandle<QuestProgress> {
+public partial interface QuestProgress : ISchemaClass<QuestProgress> {
 
-  static QuestProgress IConvertibleNativeHandle<QuestProgress>.From(nint handle) => new QuestProgressImpl(handle);
+  static QuestProgress ISchemaClass<QuestProgress>.From(nint handle) => new QuestProgressImpl(handle);
 
 
 

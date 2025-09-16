@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EntityKeyValueData_t : ISchemaClass, IConvertibleNativeHandle<EntityKeyValueData_t> {
+public partial interface EntityKeyValueData_t : ISchemaClass<EntityKeyValueData_t> {
 
-  static EntityKeyValueData_t IConvertibleNativeHandle<EntityKeyValueData_t>.From(nint handle) => new EntityKeyValueData_tImpl(handle);
+  static EntityKeyValueData_t ISchemaClass<EntityKeyValueData_t>.From(nint handle) => new EntityKeyValueData_tImpl(handle);
 
   
   // CUtlVector< EntityIOConnectionData_t >

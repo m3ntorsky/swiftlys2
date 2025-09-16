@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_MaxVelocity : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_MaxVelocity> {
+public partial interface C_OP_MaxVelocity : CParticleFunctionOperator, ISchemaClass<C_OP_MaxVelocity> {
 
-  static C_OP_MaxVelocity IConvertibleNativeHandle<C_OP_MaxVelocity>.From(nint handle) => new C_OP_MaxVelocityImpl(handle);
+  static C_OP_MaxVelocity ISchemaClass<C_OP_MaxVelocity>.From(nint handle) => new C_OP_MaxVelocityImpl(handle);
 
   
   public ref float MaxVelocity { get; }

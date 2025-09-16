@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface magnetted_objects_t : ISchemaClass, IConvertibleNativeHandle<magnetted_objects_t> {
+public partial interface magnetted_objects_t : ISchemaClass<magnetted_objects_t> {
 
-  static magnetted_objects_t IConvertibleNativeHandle<magnetted_objects_t>.From(nint handle) => new magnetted_objects_tImpl(handle);
+  static magnetted_objects_t ISchemaClass<magnetted_objects_t>.From(nint handle) => new magnetted_objects_tImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Entity { get; }

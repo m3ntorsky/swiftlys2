@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTankTargetChange : CPointEntity, IConvertibleNativeHandle<CTankTargetChange> {
+public partial interface CTankTargetChange : CPointEntity, ISchemaClass<CTankTargetChange> {
 
-  static CTankTargetChange IConvertibleNativeHandle<CTankTargetChange>.From(nint handle) => new CTankTargetChangeImpl(handle);
+  static CTankTargetChange ISchemaClass<CTankTargetChange>.From(nint handle) => new CTankTargetChangeImpl(handle);
 
   
   // CVariantBase< CVariantDefaultAllocator >

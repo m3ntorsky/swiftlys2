@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerDetectExplosion : CBaseTrigger, IConvertibleNativeHandle<CTriggerDetectExplosion> {
+public partial interface CTriggerDetectExplosion : CBaseTrigger, ISchemaClass<CTriggerDetectExplosion> {
 
-  static CTriggerDetectExplosion IConvertibleNativeHandle<CTriggerDetectExplosion>.From(nint handle) => new CTriggerDetectExplosionImpl(handle);
+  static CTriggerDetectExplosion ISchemaClass<CTriggerDetectExplosion>.From(nint handle) => new CTriggerDetectExplosionImpl(handle);
 
   
   public CEntityIOOutput OnDetectedExplosion { get; }

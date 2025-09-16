@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CProductQuantizer : ISchemaClass, IConvertibleNativeHandle<CProductQuantizer> {
+public partial interface CProductQuantizer : ISchemaClass<CProductQuantizer> {
 
-  static CProductQuantizer IConvertibleNativeHandle<CProductQuantizer>.From(nint handle) => new CProductQuantizerImpl(handle);
+  static CProductQuantizer ISchemaClass<CProductQuantizer>.From(nint handle) => new CProductQuantizerImpl(handle);
 
   
   // CUtlVector< CVectorQuantizer >

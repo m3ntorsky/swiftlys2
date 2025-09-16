@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface COmniLight : CBarnLight, IConvertibleNativeHandle<COmniLight> {
+public partial interface COmniLight : CBarnLight, ISchemaClass<COmniLight> {
 
-  static COmniLight IConvertibleNativeHandle<COmniLight>.From(nint handle) => new COmniLightImpl(handle);
+  static COmniLight ISchemaClass<COmniLight>.From(nint handle) => new COmniLightImpl(handle);
 
   
   public ref float InnerAngle { get; }

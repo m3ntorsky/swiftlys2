@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ExternalGameImpulseForce : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_ExternalGameImpulseForce> {
+public partial interface C_OP_ExternalGameImpulseForce : CParticleFunctionForce, ISchemaClass<C_OP_ExternalGameImpulseForce> {
 
-  static C_OP_ExternalGameImpulseForce IConvertibleNativeHandle<C_OP_ExternalGameImpulseForce>.From(nint handle) => new C_OP_ExternalGameImpulseForceImpl(handle);
+  static C_OP_ExternalGameImpulseForce ISchemaClass<C_OP_ExternalGameImpulseForce>.From(nint handle) => new C_OP_ExternalGameImpulseForceImpl(handle);
 
   
   public CPerParticleFloatInput ForceScale { get; }

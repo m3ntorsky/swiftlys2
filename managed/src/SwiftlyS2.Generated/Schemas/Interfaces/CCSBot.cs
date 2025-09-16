@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSBot : CBot, IConvertibleNativeHandle<CCSBot> {
+public partial interface CCSBot : CBot, ISchemaClass<CCSBot> {
 
-  static CCSBot IConvertibleNativeHandle<CCSBot>.From(nint handle) => new CCSBotImpl(handle);
+  static CCSBot ISchemaClass<CCSBot>.From(nint handle) => new CCSBotImpl(handle);
 
   
   public ref Vector EyePosition { get; }

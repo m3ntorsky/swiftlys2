@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseGrenade : CBaseFlex, IConvertibleNativeHandle<CBaseGrenade> {
+public partial interface CBaseGrenade : CBaseFlex, ISchemaClass<CBaseGrenade> {
 
-  static CBaseGrenade IConvertibleNativeHandle<CBaseGrenade>.From(nint handle) => new CBaseGrenadeImpl(handle);
+  static CBaseGrenade ISchemaClass<CBaseGrenade>.From(nint handle) => new CBaseGrenadeImpl(handle);
 
   
   public CEntityIOOutput OnPlayerPickup { get; }

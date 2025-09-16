@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSceneListManager : CLogicalEntity, IConvertibleNativeHandle<CSceneListManager> {
+public partial interface CSceneListManager : CLogicalEntity, ISchemaClass<CSceneListManager> {
 
-  static CSceneListManager IConvertibleNativeHandle<CSceneListManager>.From(nint handle) => new CSceneListManagerImpl(handle);
+  static CSceneListManager ISchemaClass<CSceneListManager>.From(nint handle) => new CSceneListManagerImpl(handle);
 
   
   public ref CUtlVector<CHandle<CSceneListManager>> ListManagers { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MaterialOverride_t : BaseSceneObjectOverride_t, IConvertibleNativeHandle<MaterialOverride_t> {
+public partial interface MaterialOverride_t : BaseSceneObjectOverride_t, ISchemaClass<MaterialOverride_t> {
 
-  static MaterialOverride_t IConvertibleNativeHandle<MaterialOverride_t>.From(nint handle) => new MaterialOverride_tImpl(handle);
+  static MaterialOverride_t ISchemaClass<MaterialOverride_t>.From(nint handle) => new MaterialOverride_tImpl(handle);
 
   
   public ref uint SubSceneObject { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_LocalAccelerationForce : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_LocalAccelerationForce> {
+public partial interface C_OP_LocalAccelerationForce : CParticleFunctionForce, ISchemaClass<C_OP_LocalAccelerationForce> {
 
-  static C_OP_LocalAccelerationForce IConvertibleNativeHandle<C_OP_LocalAccelerationForce>.From(nint handle) => new C_OP_LocalAccelerationForceImpl(handle);
+  static C_OP_LocalAccelerationForce ISchemaClass<C_OP_LocalAccelerationForce>.From(nint handle) => new C_OP_LocalAccelerationForceImpl(handle);
 
   
   public ref int CP { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ConstrainLineLength : CParticleFunctionConstraint, IConvertibleNativeHandle<C_OP_ConstrainLineLength> {
+public partial interface C_OP_ConstrainLineLength : CParticleFunctionConstraint, ISchemaClass<C_OP_ConstrainLineLength> {
 
-  static C_OP_ConstrainLineLength IConvertibleNativeHandle<C_OP_ConstrainLineLength>.From(nint handle) => new C_OP_ConstrainLineLengthImpl(handle);
+  static C_OP_ConstrainLineLength ISchemaClass<C_OP_ConstrainLineLength>.From(nint handle) => new C_OP_ConstrainLineLengthImpl(handle);
 
   
   public ref float MinDistance { get; }

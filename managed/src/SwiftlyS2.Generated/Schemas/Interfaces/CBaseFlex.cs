@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseFlex : CBaseAnimGraph, IConvertibleNativeHandle<CBaseFlex> {
+public partial interface CBaseFlex : CBaseAnimGraph, ISchemaClass<CBaseFlex> {
 
-  static CBaseFlex IConvertibleNativeHandle<CBaseFlex>.From(nint handle) => new CBaseFlexImpl(handle);
+  static CBaseFlex ISchemaClass<CBaseFlex>.From(nint handle) => new CBaseFlexImpl(handle);
 
   
   public ref CUtlVector<float> FlexWeight { get; }

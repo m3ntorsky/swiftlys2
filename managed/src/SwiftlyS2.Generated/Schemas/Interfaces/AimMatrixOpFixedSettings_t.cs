@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AimMatrixOpFixedSettings_t : ISchemaClass, IConvertibleNativeHandle<AimMatrixOpFixedSettings_t> {
+public partial interface AimMatrixOpFixedSettings_t : ISchemaClass<AimMatrixOpFixedSettings_t> {
 
-  static AimMatrixOpFixedSettings_t IConvertibleNativeHandle<AimMatrixOpFixedSettings_t>.From(nint handle) => new AimMatrixOpFixedSettings_tImpl(handle);
+  static AimMatrixOpFixedSettings_t ISchemaClass<AimMatrixOpFixedSettings_t>.From(nint handle) => new AimMatrixOpFixedSettings_tImpl(handle);
 
   
   public CAnimAttachment Attachment { get; }

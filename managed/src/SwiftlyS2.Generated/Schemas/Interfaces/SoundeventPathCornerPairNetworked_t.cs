@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SoundeventPathCornerPairNetworked_t : ISchemaClass, IConvertibleNativeHandle<SoundeventPathCornerPairNetworked_t> {
+public partial interface SoundeventPathCornerPairNetworked_t : ISchemaClass<SoundeventPathCornerPairNetworked_t> {
 
-  static SoundeventPathCornerPairNetworked_t IConvertibleNativeHandle<SoundeventPathCornerPairNetworked_t>.From(nint handle) => new SoundeventPathCornerPairNetworked_tImpl(handle);
+  static SoundeventPathCornerPairNetworked_t ISchemaClass<SoundeventPathCornerPairNetworked_t>.From(nint handle) => new SoundeventPathCornerPairNetworked_tImpl(handle);
 
   
   public ref Vector P1 { get; }

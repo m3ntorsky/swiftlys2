@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncLadder : CBaseModelEntity, IConvertibleNativeHandle<CFuncLadder> {
+public partial interface CFuncLadder : CBaseModelEntity, ISchemaClass<CFuncLadder> {
 
-  static CFuncLadder IConvertibleNativeHandle<CFuncLadder>.From(nint handle) => new CFuncLadderImpl(handle);
+  static CFuncLadder ISchemaClass<CFuncLadder>.From(nint handle) => new CFuncLadderImpl(handle);
 
   
   public ref Vector LadderDir { get; }

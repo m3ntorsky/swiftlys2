@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStopwatch : CStopwatchBase, IConvertibleNativeHandle<CStopwatch> {
+public partial interface CStopwatch : CStopwatchBase, ISchemaClass<CStopwatch> {
 
-  static CStopwatch IConvertibleNativeHandle<CStopwatch>.From(nint handle) => new CStopwatchImpl(handle);
+  static CStopwatch ISchemaClass<CStopwatch>.From(nint handle) => new CStopwatchImpl(handle);
 
   
   public ref float Interval { get; }

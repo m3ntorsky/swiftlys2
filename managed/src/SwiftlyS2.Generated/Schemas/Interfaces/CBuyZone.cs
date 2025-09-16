@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBuyZone : CBaseTrigger, IConvertibleNativeHandle<CBuyZone> {
+public partial interface CBuyZone : CBaseTrigger, ISchemaClass<CBuyZone> {
 
-  static CBuyZone IConvertibleNativeHandle<CBuyZone>.From(nint handle) => new CBuyZoneImpl(handle);
+  static CBuyZone ISchemaClass<CBuyZone>.From(nint handle) => new CBuyZoneImpl(handle);
 
   
   public ref int LegacyTeamNum { get; }

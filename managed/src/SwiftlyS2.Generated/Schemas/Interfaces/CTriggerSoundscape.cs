@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerSoundscape : CBaseTrigger, IConvertibleNativeHandle<CTriggerSoundscape> {
+public partial interface CTriggerSoundscape : CBaseTrigger, ISchemaClass<CTriggerSoundscape> {
 
-  static CTriggerSoundscape IConvertibleNativeHandle<CTriggerSoundscape>.From(nint handle) => new CTriggerSoundscapeImpl(handle);
+  static CTriggerSoundscape ISchemaClass<CTriggerSoundscape>.From(nint handle) => new CTriggerSoundscapeImpl(handle);
 
   
   public ref CHandle<CEnvSoundscapeTriggerable> Soundscape { get; }

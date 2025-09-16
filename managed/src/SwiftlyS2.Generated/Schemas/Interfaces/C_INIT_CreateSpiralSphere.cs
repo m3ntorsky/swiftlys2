@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateSpiralSphere : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateSpiralSphere> {
+public partial interface C_INIT_CreateSpiralSphere : CParticleFunctionInitializer, ISchemaClass<C_INIT_CreateSpiralSphere> {
 
-  static C_INIT_CreateSpiralSphere IConvertibleNativeHandle<C_INIT_CreateSpiralSphere>.From(nint handle) => new C_INIT_CreateSpiralSphereImpl(handle);
+  static C_INIT_CreateSpiralSphere ISchemaClass<C_INIT_CreateSpiralSphere>.From(nint handle) => new C_INIT_CreateSpiralSphereImpl(handle);
 
   
   public ref int ControlPointNumber { get; }

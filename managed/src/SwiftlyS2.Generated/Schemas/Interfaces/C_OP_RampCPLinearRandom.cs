@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RampCPLinearRandom : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_RampCPLinearRandom> {
+public partial interface C_OP_RampCPLinearRandom : CParticleFunctionPreEmission, ISchemaClass<C_OP_RampCPLinearRandom> {
 
-  static C_OP_RampCPLinearRandom IConvertibleNativeHandle<C_OP_RampCPLinearRandom>.From(nint handle) => new C_OP_RampCPLinearRandomImpl(handle);
+  static C_OP_RampCPLinearRandom ISchemaClass<C_OP_RampCPLinearRandom>.From(nint handle) => new C_OP_RampCPLinearRandomImpl(handle);
 
   
   public ref int OutControlPointNumber { get; }

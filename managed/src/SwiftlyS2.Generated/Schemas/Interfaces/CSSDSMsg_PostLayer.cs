@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSSDSMsg_PostLayer : CSSDSMsg_LayerBase, IConvertibleNativeHandle<CSSDSMsg_PostLayer> {
+public partial interface CSSDSMsg_PostLayer : CSSDSMsg_LayerBase, ISchemaClass<CSSDSMsg_PostLayer> {
 
-  static CSSDSMsg_PostLayer IConvertibleNativeHandle<CSSDSMsg_PostLayer>.From(nint handle) => new CSSDSMsg_PostLayerImpl(handle);
+  static CSSDSMsg_PostLayer ISchemaClass<CSSDSMsg_PostLayer>.From(nint handle) => new CSSDSMsg_PostLayerImpl(handle);
 
 
 

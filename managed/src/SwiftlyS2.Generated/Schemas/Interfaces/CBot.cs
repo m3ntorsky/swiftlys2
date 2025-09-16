@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBot : ISchemaClass, IConvertibleNativeHandle<CBot> {
+public partial interface CBot : ISchemaClass<CBot> {
 
-  static CBot IConvertibleNativeHandle<CBot>.From(nint handle) => new CBotImpl(handle);
+  static CBot ISchemaClass<CBot>.From(nint handle) => new CBotImpl(handle);
 
   
   public CCSPlayerController? Controller { get; }

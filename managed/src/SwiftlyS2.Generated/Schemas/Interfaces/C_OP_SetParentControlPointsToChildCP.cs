@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetParentControlPointsToChildCP : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetParentControlPointsToChildCP> {
+public partial interface C_OP_SetParentControlPointsToChildCP : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetParentControlPointsToChildCP> {
 
-  static C_OP_SetParentControlPointsToChildCP IConvertibleNativeHandle<C_OP_SetParentControlPointsToChildCP>.From(nint handle) => new C_OP_SetParentControlPointsToChildCPImpl(handle);
+  static C_OP_SetParentControlPointsToChildCP ISchemaClass<C_OP_SetParentControlPointsToChildCP>.From(nint handle) => new C_OP_SetParentControlPointsToChildCPImpl(handle);
 
   
   public ref int ChildGroupID { get; }

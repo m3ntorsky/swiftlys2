@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPetPlacement : CBaseEntity, IConvertibleNativeHandle<CCSPetPlacement> {
+public partial interface CCSPetPlacement : CBaseEntity, ISchemaClass<CCSPetPlacement> {
 
-  static CCSPetPlacement IConvertibleNativeHandle<CCSPetPlacement>.From(nint handle) => new CCSPetPlacementImpl(handle);
+  static CCSPetPlacement ISchemaClass<CCSPetPlacement>.From(nint handle) => new CCSPetPlacementImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapControlPointOrientationToRotation : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapControlPointOrientationToRotation> {
+public partial interface C_OP_RemapControlPointOrientationToRotation : CParticleFunctionOperator, ISchemaClass<C_OP_RemapControlPointOrientationToRotation> {
 
-  static C_OP_RemapControlPointOrientationToRotation IConvertibleNativeHandle<C_OP_RemapControlPointOrientationToRotation>.From(nint handle) => new C_OP_RemapControlPointOrientationToRotationImpl(handle);
+  static C_OP_RemapControlPointOrientationToRotation ISchemaClass<C_OP_RemapControlPointOrientationToRotation>.From(nint handle) => new C_OP_RemapControlPointOrientationToRotationImpl(handle);
 
   
   public ref int CP { get; }

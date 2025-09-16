@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AggregateLODSetup_t : ISchemaClass, IConvertibleNativeHandle<AggregateLODSetup_t> {
+public partial interface AggregateLODSetup_t : ISchemaClass<AggregateLODSetup_t> {
 
-  static AggregateLODSetup_t IConvertibleNativeHandle<AggregateLODSetup_t>.From(nint handle) => new AggregateLODSetup_tImpl(handle);
+  static AggregateLODSetup_t ISchemaClass<AggregateLODSetup_t>.From(nint handle) => new AggregateLODSetup_tImpl(handle);
 
   
   public ref Vector LODOrigin { get; }

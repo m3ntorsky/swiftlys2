@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRelativeLocation : ISchemaClass, IConvertibleNativeHandle<CRelativeLocation> {
+public partial interface CRelativeLocation : ISchemaClass<CRelativeLocation> {
 
-  static CRelativeLocation IConvertibleNativeHandle<CRelativeLocation>.From(nint handle) => new CRelativeLocationImpl(handle);
+  static CRelativeLocation ISchemaClass<CRelativeLocation>.From(nint handle) => new CRelativeLocationImpl(handle);
 
   
   public ref RelativeLocationType_t Type { get; }

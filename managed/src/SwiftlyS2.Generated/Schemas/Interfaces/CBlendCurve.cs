@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBlendCurve : ISchemaClass, IConvertibleNativeHandle<CBlendCurve> {
+public partial interface CBlendCurve : ISchemaClass<CBlendCurve> {
 
-  static CBlendCurve IConvertibleNativeHandle<CBlendCurve>.From(nint handle) => new CBlendCurveImpl(handle);
+  static CBlendCurve ISchemaClass<CBlendCurve>.From(nint handle) => new CBlendCurveImpl(handle);
 
   
   public ref float ControlPoint1 { get; }

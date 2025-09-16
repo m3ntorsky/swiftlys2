@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEconWearable : CEconEntity, IConvertibleNativeHandle<CEconWearable> {
+public partial interface CEconWearable : CEconEntity, ISchemaClass<CEconWearable> {
 
-  static CEconWearable IConvertibleNativeHandle<CEconWearable>.From(nint handle) => new CEconWearableImpl(handle);
+  static CEconWearable ISchemaClass<CEconWearable>.From(nint handle) => new CEconWearableImpl(handle);
 
   
   public ref int ForceSkin { get; }

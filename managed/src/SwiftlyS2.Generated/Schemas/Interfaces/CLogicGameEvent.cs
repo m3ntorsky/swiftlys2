@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicGameEvent : CLogicalEntity, IConvertibleNativeHandle<CLogicGameEvent> {
+public partial interface CLogicGameEvent : CLogicalEntity, ISchemaClass<CLogicGameEvent> {
 
-  static CLogicGameEvent IConvertibleNativeHandle<CLogicGameEvent>.From(nint handle) => new CLogicGameEventImpl(handle);
+  static CLogicGameEvent ISchemaClass<CLogicGameEvent>.From(nint handle) => new CLogicGameEventImpl(handle);
 
   
   public ref CUtlSymbolLarge EventName { get; }

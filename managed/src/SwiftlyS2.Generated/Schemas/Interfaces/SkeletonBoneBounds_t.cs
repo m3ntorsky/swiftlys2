@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SkeletonBoneBounds_t : ISchemaClass, IConvertibleNativeHandle<SkeletonBoneBounds_t> {
+public partial interface SkeletonBoneBounds_t : ISchemaClass<SkeletonBoneBounds_t> {
 
-  static SkeletonBoneBounds_t IConvertibleNativeHandle<SkeletonBoneBounds_t>.From(nint handle) => new SkeletonBoneBounds_tImpl(handle);
+  static SkeletonBoneBounds_t ISchemaClass<SkeletonBoneBounds_t>.From(nint handle) => new SkeletonBoneBounds_tImpl(handle);
 
   
   public ref Vector Center { get; }

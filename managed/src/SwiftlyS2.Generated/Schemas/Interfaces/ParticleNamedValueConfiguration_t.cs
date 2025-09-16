@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ParticleNamedValueConfiguration_t : ISchemaClass, IConvertibleNativeHandle<ParticleNamedValueConfiguration_t> {
+public partial interface ParticleNamedValueConfiguration_t : ISchemaClass<ParticleNamedValueConfiguration_t> {
 
-  static ParticleNamedValueConfiguration_t IConvertibleNativeHandle<ParticleNamedValueConfiguration_t>.From(nint handle) => new ParticleNamedValueConfiguration_tImpl(handle);
+  static ParticleNamedValueConfiguration_t ISchemaClass<ParticleNamedValueConfiguration_t>.From(nint handle) => new ParticleNamedValueConfiguration_tImpl(handle);
 
   
   public ref CUtlString ConfigName { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRenderComponent : CEntityComponent, IConvertibleNativeHandle<CRenderComponent> {
+public partial interface CRenderComponent : CEntityComponent, ISchemaClass<CRenderComponent> {
 
-  static CRenderComponent IConvertibleNativeHandle<CRenderComponent>.From(nint handle) => new CRenderComponentImpl(handle);
+  static CRenderComponent ISchemaClass<CRenderComponent>.From(nint handle) => new CRenderComponentImpl(handle);
 
   
   public CNetworkVarChainer __m_pChainEntity { get; }

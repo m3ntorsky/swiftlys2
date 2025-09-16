@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCNmIKRig : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCNmIKRig> {
+public partial interface InfoForResourceTypeCNmIKRig : ISchemaClass<InfoForResourceTypeCNmIKRig> {
 
-  static InfoForResourceTypeCNmIKRig IConvertibleNativeHandle<InfoForResourceTypeCNmIKRig>.From(nint handle) => new InfoForResourceTypeCNmIKRigImpl(handle);
+  static InfoForResourceTypeCNmIKRig ISchemaClass<InfoForResourceTypeCNmIKRig>.From(nint handle) => new InfoForResourceTypeCNmIKRigImpl(handle);
 
 
 

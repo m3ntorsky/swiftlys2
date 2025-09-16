@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBasePulseGraphInstance : ISchemaClass, IConvertibleNativeHandle<CBasePulseGraphInstance> {
+public partial interface CBasePulseGraphInstance : ISchemaClass<CBasePulseGraphInstance> {
 
-  static CBasePulseGraphInstance IConvertibleNativeHandle<CBasePulseGraphInstance>.From(nint handle) => new CBasePulseGraphInstanceImpl(handle);
+  static CBasePulseGraphInstance ISchemaClass<CBasePulseGraphInstance>.From(nint handle) => new CBasePulseGraphInstanceImpl(handle);
 
 
 

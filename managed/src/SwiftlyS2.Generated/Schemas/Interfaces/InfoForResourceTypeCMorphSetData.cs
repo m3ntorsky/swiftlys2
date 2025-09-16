@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCMorphSetData : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCMorphSetData> {
+public partial interface InfoForResourceTypeCMorphSetData : ISchemaClass<InfoForResourceTypeCMorphSetData> {
 
-  static InfoForResourceTypeCMorphSetData IConvertibleNativeHandle<InfoForResourceTypeCMorphSetData>.From(nint handle) => new InfoForResourceTypeCMorphSetDataImpl(handle);
+  static InfoForResourceTypeCMorphSetData ISchemaClass<InfoForResourceTypeCMorphSetData>.From(nint handle) => new InfoForResourceTypeCMorphSetDataImpl(handle);
 
 
 

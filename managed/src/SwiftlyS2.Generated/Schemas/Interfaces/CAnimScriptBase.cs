@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimScriptBase : ISchemaClass, IConvertibleNativeHandle<CAnimScriptBase> {
+public partial interface CAnimScriptBase : ISchemaClass<CAnimScriptBase> {
 
-  static CAnimScriptBase IConvertibleNativeHandle<CAnimScriptBase>.From(nint handle) => new CAnimScriptBaseImpl(handle);
+  static CAnimScriptBase ISchemaClass<CAnimScriptBase>.From(nint handle) => new CAnimScriptBaseImpl(handle);
 
   
   public ref bool IsValid { get; }

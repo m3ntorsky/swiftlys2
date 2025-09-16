@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseGraphInstance_TestDomain_FakeEntityOwner : CBasePulseGraphInstance, IConvertibleNativeHandle<CPulseGraphInstance_TestDomain_FakeEntityOwner> {
+public partial interface CPulseGraphInstance_TestDomain_FakeEntityOwner : CBasePulseGraphInstance, ISchemaClass<CPulseGraphInstance_TestDomain_FakeEntityOwner> {
 
-  static CPulseGraphInstance_TestDomain_FakeEntityOwner IConvertibleNativeHandle<CPulseGraphInstance_TestDomain_FakeEntityOwner>.From(nint handle) => new CPulseGraphInstance_TestDomain_FakeEntityOwnerImpl(handle);
+  static CPulseGraphInstance_TestDomain_FakeEntityOwner ISchemaClass<CPulseGraphInstance_TestDomain_FakeEntityOwner>.From(nint handle) => new CPulseGraphInstance_TestDomain_FakeEntityOwnerImpl(handle);
 
 
 

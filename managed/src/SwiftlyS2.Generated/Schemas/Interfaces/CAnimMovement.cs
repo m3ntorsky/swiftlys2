@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimMovement : ISchemaClass, IConvertibleNativeHandle<CAnimMovement> {
+public partial interface CAnimMovement : ISchemaClass<CAnimMovement> {
 
-  static CAnimMovement IConvertibleNativeHandle<CAnimMovement>.From(nint handle) => new CAnimMovementImpl(handle);
+  static CAnimMovement ISchemaClass<CAnimMovement>.From(nint handle) => new CAnimMovementImpl(handle);
 
   
   public ref int Endframe { get; }

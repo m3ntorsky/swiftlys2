@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHostage : CHostageExpresserShim, IConvertibleNativeHandle<CHostage> {
+public partial interface CHostage : CHostageExpresserShim, ISchemaClass<CHostage> {
 
-  static CHostage IConvertibleNativeHandle<CHostage>.From(nint handle) => new CHostageImpl(handle);
+  static CHostage ISchemaClass<CHostage>.From(nint handle) => new CHostageImpl(handle);
 
   
   public CEntityIOOutput OnHostageBeginGrab { get; }

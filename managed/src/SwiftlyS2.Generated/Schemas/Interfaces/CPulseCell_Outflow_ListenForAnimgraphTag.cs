@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Outflow_ListenForAnimgraphTag : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_Outflow_ListenForAnimgraphTag> {
+public partial interface CPulseCell_Outflow_ListenForAnimgraphTag : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_Outflow_ListenForAnimgraphTag> {
 
-  static CPulseCell_Outflow_ListenForAnimgraphTag IConvertibleNativeHandle<CPulseCell_Outflow_ListenForAnimgraphTag>.From(nint handle) => new CPulseCell_Outflow_ListenForAnimgraphTagImpl(handle);
+  static CPulseCell_Outflow_ListenForAnimgraphTag ISchemaClass<CPulseCell_Outflow_ListenForAnimgraphTag>.From(nint handle) => new CPulseCell_Outflow_ListenForAnimgraphTagImpl(handle);
 
   
   public CPulse_ResumePoint OnStart { get; }

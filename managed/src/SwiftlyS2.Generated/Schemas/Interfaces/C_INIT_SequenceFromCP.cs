@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_SequenceFromCP : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_SequenceFromCP> {
+public partial interface C_INIT_SequenceFromCP : CParticleFunctionInitializer, ISchemaClass<C_INIT_SequenceFromCP> {
 
-  static C_INIT_SequenceFromCP IConvertibleNativeHandle<C_INIT_SequenceFromCP>.From(nint handle) => new C_INIT_SequenceFromCPImpl(handle);
+  static C_INIT_SequenceFromCP ISchemaClass<C_INIT_SequenceFromCP>.From(nint handle) => new C_INIT_SequenceFromCPImpl(handle);
 
   
   public ref bool KillUnused { get; }

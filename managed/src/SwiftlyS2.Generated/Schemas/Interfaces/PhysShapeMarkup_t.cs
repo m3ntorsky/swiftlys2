@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PhysShapeMarkup_t : ISchemaClass, IConvertibleNativeHandle<PhysShapeMarkup_t> {
+public partial interface PhysShapeMarkup_t : ISchemaClass<PhysShapeMarkup_t> {
 
-  static PhysShapeMarkup_t IConvertibleNativeHandle<PhysShapeMarkup_t>.From(nint handle) => new PhysShapeMarkup_tImpl(handle);
+  static PhysShapeMarkup_t ISchemaClass<PhysShapeMarkup_t>.From(nint handle) => new PhysShapeMarkup_tImpl(handle);
 
   
   public ref int BodyInAggregate { get; }

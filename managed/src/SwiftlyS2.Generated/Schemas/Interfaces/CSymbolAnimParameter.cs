@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSymbolAnimParameter : CConcreteAnimParameter, IConvertibleNativeHandle<CSymbolAnimParameter> {
+public partial interface CSymbolAnimParameter : CConcreteAnimParameter, ISchemaClass<CSymbolAnimParameter> {
 
-  static CSymbolAnimParameter IConvertibleNativeHandle<CSymbolAnimParameter>.From(nint handle) => new CSymbolAnimParameterImpl(handle);
+  static CSymbolAnimParameter ISchemaClass<CSymbolAnimParameter>.From(nint handle) => new CSymbolAnimParameterImpl(handle);
 
   
   public ref CGlobalSymbol DefaultValue { get; }

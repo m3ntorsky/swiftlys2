@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeIAnimGraphModelBinding : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeIAnimGraphModelBinding> {
+public partial interface InfoForResourceTypeIAnimGraphModelBinding : ISchemaClass<InfoForResourceTypeIAnimGraphModelBinding> {
 
-  static InfoForResourceTypeIAnimGraphModelBinding IConvertibleNativeHandle<InfoForResourceTypeIAnimGraphModelBinding>.From(nint handle) => new InfoForResourceTypeIAnimGraphModelBindingImpl(handle);
+  static InfoForResourceTypeIAnimGraphModelBinding ISchemaClass<InfoForResourceTypeIAnimGraphModelBinding>.From(nint handle) => new InfoForResourceTypeIAnimGraphModelBindingImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerBombReset : CBaseTrigger, IConvertibleNativeHandle<CTriggerBombReset> {
+public partial interface CTriggerBombReset : CBaseTrigger, ISchemaClass<CTriggerBombReset> {
 
-  static CTriggerBombReset IConvertibleNativeHandle<CTriggerBombReset>.From(nint handle) => new CTriggerBombResetImpl(handle);
+  static CTriggerBombReset ISchemaClass<CTriggerBombReset>.From(nint handle) => new CTriggerBombResetImpl(handle);
 
 
 

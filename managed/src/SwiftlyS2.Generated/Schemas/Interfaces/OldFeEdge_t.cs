@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface OldFeEdge_t : ISchemaClass, IConvertibleNativeHandle<OldFeEdge_t> {
+public partial interface OldFeEdge_t : ISchemaClass<OldFeEdge_t> {
 
-  static OldFeEdge_t IConvertibleNativeHandle<OldFeEdge_t>.From(nint handle) => new OldFeEdge_tImpl(handle);
+  static OldFeEdge_t ISchemaClass<OldFeEdge_t>.From(nint handle) => new OldFeEdge_tImpl(handle);
 
   
   public ISchemaFixedArray<float> K { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvVolumetricFogController : CBaseEntity, IConvertibleNativeHandle<CEnvVolumetricFogController> {
+public partial interface CEnvVolumetricFogController : CBaseEntity, ISchemaClass<CEnvVolumetricFogController> {
 
-  static CEnvVolumetricFogController IConvertibleNativeHandle<CEnvVolumetricFogController>.From(nint handle) => new CEnvVolumetricFogControllerImpl(handle);
+  static CEnvVolumetricFogController ISchemaClass<CEnvVolumetricFogController>.From(nint handle) => new CEnvVolumetricFogControllerImpl(handle);
 
   
   public ref float Scattering { get; }

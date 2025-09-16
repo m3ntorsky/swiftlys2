@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeFitWeight_t : ISchemaClass, IConvertibleNativeHandle<FeFitWeight_t> {
+public partial interface FeFitWeight_t : ISchemaClass<FeFitWeight_t> {
 
-  static FeFitWeight_t IConvertibleNativeHandle<FeFitWeight_t>.From(nint handle) => new FeFitWeight_tImpl(handle);
+  static FeFitWeight_t ISchemaClass<FeFitWeight_t>.From(nint handle) => new FeFitWeight_tImpl(handle);
 
   
   public ref float Weight { get; }

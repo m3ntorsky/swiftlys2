@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface dynpitchvol_t : dynpitchvol_base_t, IConvertibleNativeHandle<dynpitchvol_t> {
+public partial interface dynpitchvol_t : dynpitchvol_base_t, ISchemaClass<dynpitchvol_t> {
 
-  static dynpitchvol_t IConvertibleNativeHandle<dynpitchvol_t>.From(nint handle) => new dynpitchvol_tImpl(handle);
+  static dynpitchvol_t ISchemaClass<dynpitchvol_t>.From(nint handle) => new dynpitchvol_tImpl(handle);
 
 
 

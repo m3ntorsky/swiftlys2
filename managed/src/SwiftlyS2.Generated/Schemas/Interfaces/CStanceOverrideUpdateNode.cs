@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStanceOverrideUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CStanceOverrideUpdateNode> {
+public partial interface CStanceOverrideUpdateNode : CUnaryUpdateNode, ISchemaClass<CStanceOverrideUpdateNode> {
 
-  static CStanceOverrideUpdateNode IConvertibleNativeHandle<CStanceOverrideUpdateNode>.From(nint handle) => new CStanceOverrideUpdateNodeImpl(handle);
+  static CStanceOverrideUpdateNode ISchemaClass<CStanceOverrideUpdateNode>.From(nint handle) => new CStanceOverrideUpdateNodeImpl(handle);
 
   
   // CUtlVector< StanceInfo_t >

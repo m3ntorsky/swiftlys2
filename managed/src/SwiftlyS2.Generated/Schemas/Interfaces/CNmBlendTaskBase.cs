@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmBlendTaskBase : CNmPoseTask, IConvertibleNativeHandle<CNmBlendTaskBase> {
+public partial interface CNmBlendTaskBase : CNmPoseTask, ISchemaClass<CNmBlendTaskBase> {
 
-  static CNmBlendTaskBase IConvertibleNativeHandle<CNmBlendTaskBase>.From(nint handle) => new CNmBlendTaskBaseImpl(handle);
+  static CNmBlendTaskBase ISchemaClass<CNmBlendTaskBase>.From(nint handle) => new CNmBlendTaskBaseImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayerController : CBasePlayerController, IConvertibleNativeHandle<CCSPlayerController> {
+public partial interface CCSPlayerController : CBasePlayerController, ISchemaClass<CCSPlayerController> {
 
-  static CCSPlayerController IConvertibleNativeHandle<CCSPlayerController>.From(nint handle) => new CCSPlayerControllerImpl(handle);
+  static CCSPlayerController ISchemaClass<CCSPlayerController>.From(nint handle) => new CCSPlayerControllerImpl(handle);
 
   
   public CCSPlayerController_InGameMoneyServices? InGameMoneyServices { get; }

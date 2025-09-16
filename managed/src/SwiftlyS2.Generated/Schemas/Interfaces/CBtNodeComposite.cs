@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBtNodeComposite : CBtNode, IConvertibleNativeHandle<CBtNodeComposite> {
+public partial interface CBtNodeComposite : CBtNode, ISchemaClass<CBtNodeComposite> {
 
-  static CBtNodeComposite IConvertibleNativeHandle<CBtNodeComposite>.From(nint handle) => new CBtNodeCompositeImpl(handle);
+  static CBtNodeComposite ISchemaClass<CBtNodeComposite>.From(nint handle) => new CBtNodeCompositeImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ExtraVertexStreamOverride_t : BaseSceneObjectOverride_t, IConvertibleNativeHandle<ExtraVertexStreamOverride_t> {
+public partial interface ExtraVertexStreamOverride_t : BaseSceneObjectOverride_t, ISchemaClass<ExtraVertexStreamOverride_t> {
 
-  static ExtraVertexStreamOverride_t IConvertibleNativeHandle<ExtraVertexStreamOverride_t>.From(nint handle) => new ExtraVertexStreamOverride_tImpl(handle);
+  static ExtraVertexStreamOverride_t ISchemaClass<ExtraVertexStreamOverride_t>.From(nint handle) => new ExtraVertexStreamOverride_tImpl(handle);
 
   
   public ref uint SubSceneObject { get; }

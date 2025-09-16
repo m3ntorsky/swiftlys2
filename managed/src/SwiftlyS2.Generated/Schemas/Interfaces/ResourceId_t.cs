@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ResourceId_t : ISchemaClass, IConvertibleNativeHandle<ResourceId_t> {
+public partial interface ResourceId_t : ISchemaClass<ResourceId_t> {
 
-  static ResourceId_t IConvertibleNativeHandle<ResourceId_t>.From(nint handle) => new ResourceId_tImpl(handle);
+  static ResourceId_t ISchemaClass<ResourceId_t>.From(nint handle) => new ResourceId_tImpl(handle);
 
   
   public ref ulong Value { get; }

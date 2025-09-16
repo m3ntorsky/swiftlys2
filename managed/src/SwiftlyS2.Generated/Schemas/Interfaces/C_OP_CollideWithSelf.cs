@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_CollideWithSelf : CParticleFunctionConstraint, IConvertibleNativeHandle<C_OP_CollideWithSelf> {
+public partial interface C_OP_CollideWithSelf : CParticleFunctionConstraint, ISchemaClass<C_OP_CollideWithSelf> {
 
-  static C_OP_CollideWithSelf IConvertibleNativeHandle<C_OP_CollideWithSelf>.From(nint handle) => new C_OP_CollideWithSelfImpl(handle);
+  static C_OP_CollideWithSelf ISchemaClass<C_OP_CollideWithSelf>.From(nint handle) => new C_OP_CollideWithSelfImpl(handle);
 
   
   public CPerParticleFloatInput RadiusScale { get; }

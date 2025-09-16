@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncLadderAlias_func_useableladder : CFuncLadder, IConvertibleNativeHandle<CFuncLadderAlias_func_useableladder> {
+public partial interface CFuncLadderAlias_func_useableladder : CFuncLadder, ISchemaClass<CFuncLadderAlias_func_useableladder> {
 
-  static CFuncLadderAlias_func_useableladder IConvertibleNativeHandle<CFuncLadderAlias_func_useableladder>.From(nint handle) => new CFuncLadderAlias_func_useableladderImpl(handle);
+  static CFuncLadderAlias_func_useableladder ISchemaClass<CFuncLadderAlias_func_useableladder>.From(nint handle) => new CFuncLadderAlias_func_useableladderImpl(handle);
 
 
 

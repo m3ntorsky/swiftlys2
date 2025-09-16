@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventModInitialized_t : ISchemaClass, IConvertibleNativeHandle<EventModInitialized_t> {
+public partial interface EventModInitialized_t : ISchemaClass<EventModInitialized_t> {
 
-  static EventModInitialized_t IConvertibleNativeHandle<EventModInitialized_t>.From(nint handle) => new EventModInitialized_tImpl(handle);
+  static EventModInitialized_t ISchemaClass<EventModInitialized_t>.From(nint handle) => new EventModInitialized_tImpl(handle);
 
 
 

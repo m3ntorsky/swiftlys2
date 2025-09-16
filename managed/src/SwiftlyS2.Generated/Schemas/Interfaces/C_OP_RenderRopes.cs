@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderRopes : CBaseRendererSource2, IConvertibleNativeHandle<C_OP_RenderRopes> {
+public partial interface C_OP_RenderRopes : CBaseRendererSource2, ISchemaClass<C_OP_RenderRopes> {
 
-  static C_OP_RenderRopes IConvertibleNativeHandle<C_OP_RenderRopes>.From(nint handle) => new C_OP_RenderRopesImpl(handle);
+  static C_OP_RenderRopes ISchemaClass<C_OP_RenderRopes>.From(nint handle) => new C_OP_RenderRopesImpl(handle);
 
   
   public ref bool EnableFadingAndClamping { get; }

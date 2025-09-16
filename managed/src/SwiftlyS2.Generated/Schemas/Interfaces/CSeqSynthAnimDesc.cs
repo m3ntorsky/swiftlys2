@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqSynthAnimDesc : ISchemaClass, IConvertibleNativeHandle<CSeqSynthAnimDesc> {
+public partial interface CSeqSynthAnimDesc : ISchemaClass<CSeqSynthAnimDesc> {
 
-  static CSeqSynthAnimDesc IConvertibleNativeHandle<CSeqSynthAnimDesc>.From(nint handle) => new CSeqSynthAnimDescImpl(handle);
+  static CSeqSynthAnimDesc ISchemaClass<CSeqSynthAnimDesc>.From(nint handle) => new CSeqSynthAnimDescImpl(handle);
 
   
   public ref CBufferString Name { get; }

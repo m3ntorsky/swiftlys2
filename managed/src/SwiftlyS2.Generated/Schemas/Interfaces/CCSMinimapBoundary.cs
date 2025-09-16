@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSMinimapBoundary : CBaseEntity, IConvertibleNativeHandle<CCSMinimapBoundary> {
+public partial interface CCSMinimapBoundary : CBaseEntity, ISchemaClass<CCSMinimapBoundary> {
 
-  static CCSMinimapBoundary IConvertibleNativeHandle<CCSMinimapBoundary>.From(nint handle) => new CCSMinimapBoundaryImpl(handle);
+  static CCSMinimapBoundary ISchemaClass<CCSMinimapBoundary>.From(nint handle) => new CCSMinimapBoundaryImpl(handle);
 
 
 

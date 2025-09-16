@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointClientUIDialog : CBaseClientUIEntity, IConvertibleNativeHandle<CPointClientUIDialog> {
+public partial interface CPointClientUIDialog : CBaseClientUIEntity, ISchemaClass<CPointClientUIDialog> {
 
-  static CPointClientUIDialog IConvertibleNativeHandle<CPointClientUIDialog>.From(nint handle) => new CPointClientUIDialogImpl(handle);
+  static CPointClientUIDialog ISchemaClass<CPointClientUIDialog>.From(nint handle) => new CPointClientUIDialogImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Activator { get; }

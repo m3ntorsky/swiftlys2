@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SequenceWeightedList_t : ISchemaClass, IConvertibleNativeHandle<SequenceWeightedList_t> {
+public partial interface SequenceWeightedList_t : ISchemaClass<SequenceWeightedList_t> {
 
-  static SequenceWeightedList_t IConvertibleNativeHandle<SequenceWeightedList_t>.From(nint handle) => new SequenceWeightedList_tImpl(handle);
+  static SequenceWeightedList_t ISchemaClass<SequenceWeightedList_t>.From(nint handle) => new SequenceWeightedList_tImpl(handle);
 
   
   public ref int Sequence { get; }

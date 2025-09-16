@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavHullVData : ISchemaClass, IConvertibleNativeHandle<CNavHullVData> {
+public partial interface CNavHullVData : ISchemaClass<CNavHullVData> {
 
-  static CNavHullVData IConvertibleNativeHandle<CNavHullVData>.From(nint handle) => new CNavHullVDataImpl(handle);
+  static CNavHullVData ISchemaClass<CNavHullVData>.From(nint handle) => new CNavHullVDataImpl(handle);
 
   
   public ref bool AgentEnabled { get; }

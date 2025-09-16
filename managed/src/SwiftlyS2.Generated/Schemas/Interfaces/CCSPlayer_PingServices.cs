@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayer_PingServices : CPlayerPawnComponent, IConvertibleNativeHandle<CCSPlayer_PingServices> {
+public partial interface CCSPlayer_PingServices : CPlayerPawnComponent, ISchemaClass<CCSPlayer_PingServices> {
 
-  static CCSPlayer_PingServices IConvertibleNativeHandle<CCSPlayer_PingServices>.From(nint handle) => new CCSPlayer_PingServicesImpl(handle);
+  static CCSPlayer_PingServices ISchemaClass<CCSPlayer_PingServices>.From(nint handle) => new CCSPlayer_PingServicesImpl(handle);
 
   
   // GameTime_t

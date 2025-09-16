@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysMagnet : CBaseAnimGraph, IConvertibleNativeHandle<CPhysMagnet> {
+public partial interface CPhysMagnet : CBaseAnimGraph, ISchemaClass<CPhysMagnet> {
 
-  static CPhysMagnet IConvertibleNativeHandle<CPhysMagnet>.From(nint handle) => new CPhysMagnetImpl(handle);
+  static CPhysMagnet ISchemaClass<CPhysMagnet>.From(nint handle) => new CPhysMagnetImpl(handle);
 
   
   public CEntityIOOutput OnMagnetAttach { get; }

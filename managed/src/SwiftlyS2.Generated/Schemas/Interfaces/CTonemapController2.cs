@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTonemapController2 : CBaseEntity, IConvertibleNativeHandle<CTonemapController2> {
+public partial interface CTonemapController2 : CBaseEntity, ISchemaClass<CTonemapController2> {
 
-  static CTonemapController2 IConvertibleNativeHandle<CTonemapController2>.From(nint handle) => new CTonemapController2Impl(handle);
+  static CTonemapController2 ISchemaClass<CTonemapController2>.From(nint handle) => new CTonemapController2Impl(handle);
 
   
   public ref float AutoExposureMin { get; }

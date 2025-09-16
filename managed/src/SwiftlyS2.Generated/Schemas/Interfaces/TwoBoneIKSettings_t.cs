@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface TwoBoneIKSettings_t : ISchemaClass, IConvertibleNativeHandle<TwoBoneIKSettings_t> {
+public partial interface TwoBoneIKSettings_t : ISchemaClass<TwoBoneIKSettings_t> {
 
-  static TwoBoneIKSettings_t IConvertibleNativeHandle<TwoBoneIKSettings_t>.From(nint handle) => new TwoBoneIKSettings_tImpl(handle);
+  static TwoBoneIKSettings_t ISchemaClass<TwoBoneIKSettings_t>.From(nint handle) => new TwoBoneIKSettings_tImpl(handle);
 
   
   public ref IkEndEffectorType EndEffectorType { get; }

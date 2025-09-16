@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleVisibilityInputs : ISchemaClass, IConvertibleNativeHandle<CParticleVisibilityInputs> {
+public partial interface CParticleVisibilityInputs : ISchemaClass<CParticleVisibilityInputs> {
 
-  static CParticleVisibilityInputs IConvertibleNativeHandle<CParticleVisibilityInputs>.From(nint handle) => new CParticleVisibilityInputsImpl(handle);
+  static CParticleVisibilityInputs ISchemaClass<CParticleVisibilityInputs>.From(nint handle) => new CParticleVisibilityInputsImpl(handle);
 
   
   public ref float CameraBias { get; }

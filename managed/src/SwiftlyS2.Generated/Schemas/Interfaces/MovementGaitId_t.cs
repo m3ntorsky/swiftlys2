@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MovementGaitId_t : ISchemaClass, IConvertibleNativeHandle<MovementGaitId_t> {
+public partial interface MovementGaitId_t : ISchemaClass<MovementGaitId_t> {
 
-  static MovementGaitId_t IConvertibleNativeHandle<MovementGaitId_t>.From(nint handle) => new MovementGaitId_tImpl(handle);
+  static MovementGaitId_t ISchemaClass<MovementGaitId_t>.From(nint handle) => new MovementGaitId_tImpl(handle);
 
   
   public ref CGlobalSymbol Id { get; }

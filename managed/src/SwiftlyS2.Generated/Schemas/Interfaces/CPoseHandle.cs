@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPoseHandle : ISchemaClass, IConvertibleNativeHandle<CPoseHandle> {
+public partial interface CPoseHandle : ISchemaClass<CPoseHandle> {
 
-  static CPoseHandle IConvertibleNativeHandle<CPoseHandle>.From(nint handle) => new CPoseHandleImpl(handle);
+  static CPoseHandle ISchemaClass<CPoseHandle>.From(nint handle) => new CPoseHandleImpl(handle);
 
   
   public ref ushort Index { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_LazyCullCompareFloat : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_LazyCullCompareFloat> {
+public partial interface C_OP_LazyCullCompareFloat : CParticleFunctionOperator, ISchemaClass<C_OP_LazyCullCompareFloat> {
 
-  static C_OP_LazyCullCompareFloat IConvertibleNativeHandle<C_OP_LazyCullCompareFloat>.From(nint handle) => new C_OP_LazyCullCompareFloatImpl(handle);
+  static C_OP_LazyCullCompareFloat ISchemaClass<C_OP_LazyCullCompareFloat>.From(nint handle) => new C_OP_LazyCullCompareFloatImpl(handle);
 
   
   public CPerParticleFloatInput Comparsion1 { get; }

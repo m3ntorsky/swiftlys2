@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicBranch : CLogicalEntity, IConvertibleNativeHandle<CLogicBranch> {
+public partial interface CLogicBranch : CLogicalEntity, ISchemaClass<CLogicBranch> {
 
-  static CLogicBranch IConvertibleNativeHandle<CLogicBranch>.From(nint handle) => new CLogicBranchImpl(handle);
+  static CLogicBranch ISchemaClass<CLogicBranch>.From(nint handle) => new CLogicBranchImpl(handle);
 
   
   public ref bool InValue { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootTrajectory : ISchemaClass, IConvertibleNativeHandle<CFootTrajectory> {
+public partial interface CFootTrajectory : ISchemaClass<CFootTrajectory> {
 
-  static CFootTrajectory IConvertibleNativeHandle<CFootTrajectory>.From(nint handle) => new CFootTrajectoryImpl(handle);
+  static CFootTrajectory ISchemaClass<CFootTrajectory>.From(nint handle) => new CFootTrajectoryImpl(handle);
 
   
   public ref Vector Offset { get; }

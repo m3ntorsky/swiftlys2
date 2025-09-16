@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetGravityToCP : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetGravityToCP> {
+public partial interface C_OP_SetGravityToCP : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetGravityToCP> {
 
-  static C_OP_SetGravityToCP IConvertibleNativeHandle<C_OP_SetGravityToCP>.From(nint handle) => new C_OP_SetGravityToCPImpl(handle);
+  static C_OP_SetGravityToCP ISchemaClass<C_OP_SetGravityToCP>.From(nint handle) => new C_OP_SetGravityToCPImpl(handle);
 
   
   public ref int CPInput { get; }

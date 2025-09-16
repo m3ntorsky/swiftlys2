@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnableMotionFixup : CBaseEntity, IConvertibleNativeHandle<CEnableMotionFixup> {
+public partial interface CEnableMotionFixup : CBaseEntity, ISchemaClass<CEnableMotionFixup> {
 
-  static CEnableMotionFixup IConvertibleNativeHandle<CEnableMotionFixup>.From(nint handle) => new CEnableMotionFixupImpl(handle);
+  static CEnableMotionFixup ISchemaClass<CEnableMotionFixup>.From(nint handle) => new CEnableMotionFixupImpl(handle);
 
 
 

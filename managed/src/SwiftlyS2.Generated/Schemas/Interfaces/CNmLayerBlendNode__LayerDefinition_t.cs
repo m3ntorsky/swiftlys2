@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmLayerBlendNode__LayerDefinition_t : ISchemaClass, IConvertibleNativeHandle<CNmLayerBlendNode__LayerDefinition_t> {
+public partial interface CNmLayerBlendNode__LayerDefinition_t : ISchemaClass<CNmLayerBlendNode__LayerDefinition_t> {
 
-  static CNmLayerBlendNode__LayerDefinition_t IConvertibleNativeHandle<CNmLayerBlendNode__LayerDefinition_t>.From(nint handle) => new CNmLayerBlendNode__LayerDefinition_tImpl(handle);
+  static CNmLayerBlendNode__LayerDefinition_t ISchemaClass<CNmLayerBlendNode__LayerDefinition_t>.From(nint handle) => new CNmLayerBlendNode__LayerDefinition_tImpl(handle);
 
   
   public ref short InputNodeIdx { get; }

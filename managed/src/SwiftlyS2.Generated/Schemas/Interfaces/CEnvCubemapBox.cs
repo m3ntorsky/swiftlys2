@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvCubemapBox : CEnvCubemap, IConvertibleNativeHandle<CEnvCubemapBox> {
+public partial interface CEnvCubemapBox : CEnvCubemap, ISchemaClass<CEnvCubemapBox> {
 
-  static CEnvCubemapBox IConvertibleNativeHandle<CEnvCubemapBox>.From(nint handle) => new CEnvCubemapBoxImpl(handle);
+  static CEnvCubemapBox ISchemaClass<CEnvCubemapBox>.From(nint handle) => new CEnvCubemapBoxImpl(handle);
 
 
 

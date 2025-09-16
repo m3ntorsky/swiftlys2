@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventClientAdvanceNonRenderedFrame_t : ISchemaClass, IConvertibleNativeHandle<EventClientAdvanceNonRenderedFrame_t> {
+public partial interface EventClientAdvanceNonRenderedFrame_t : ISchemaClass<EventClientAdvanceNonRenderedFrame_t> {
 
-  static EventClientAdvanceNonRenderedFrame_t IConvertibleNativeHandle<EventClientAdvanceNonRenderedFrame_t>.From(nint handle) => new EventClientAdvanceNonRenderedFrame_tImpl(handle);
+  static EventClientAdvanceNonRenderedFrame_t ISchemaClass<EventClientAdvanceNonRenderedFrame_t>.From(nint handle) => new EventClientAdvanceNonRenderedFrame_tImpl(handle);
 
 
 

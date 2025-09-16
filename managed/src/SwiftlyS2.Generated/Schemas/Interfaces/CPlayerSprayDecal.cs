@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlayerSprayDecal : CModelPointEntity, IConvertibleNativeHandle<CPlayerSprayDecal> {
+public partial interface CPlayerSprayDecal : CModelPointEntity, ISchemaClass<CPlayerSprayDecal> {
 
-  static CPlayerSprayDecal IConvertibleNativeHandle<CPlayerSprayDecal>.From(nint handle) => new CPlayerSprayDecalImpl(handle);
+  static CPlayerSprayDecal ISchemaClass<CPlayerSprayDecal>.From(nint handle) => new CPlayerSprayDecalImpl(handle);
 
   
   public ref int UniqueID { get; }

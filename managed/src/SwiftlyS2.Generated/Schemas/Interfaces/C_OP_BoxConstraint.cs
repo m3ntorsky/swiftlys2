@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_BoxConstraint : CParticleFunctionConstraint, IConvertibleNativeHandle<C_OP_BoxConstraint> {
+public partial interface C_OP_BoxConstraint : CParticleFunctionConstraint, ISchemaClass<C_OP_BoxConstraint> {
 
-  static C_OP_BoxConstraint IConvertibleNativeHandle<C_OP_BoxConstraint>.From(nint handle) => new C_OP_BoxConstraintImpl(handle);
+  static C_OP_BoxConstraint ISchemaClass<C_OP_BoxConstraint>.From(nint handle) => new C_OP_BoxConstraintImpl(handle);
 
   
   public CParticleCollectionVecInput Min { get; }

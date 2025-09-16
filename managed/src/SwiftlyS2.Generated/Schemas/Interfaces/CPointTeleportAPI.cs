@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointTeleportAPI : ISchemaClass, IConvertibleNativeHandle<CPointTeleportAPI> {
+public partial interface CPointTeleportAPI : ISchemaClass<CPointTeleportAPI> {
 
-  static CPointTeleportAPI IConvertibleNativeHandle<CPointTeleportAPI>.From(nint handle) => new CPointTeleportAPIImpl(handle);
+  static CPointTeleportAPI ISchemaClass<CPointTeleportAPI>.From(nint handle) => new CPointTeleportAPIImpl(handle);
 
 
 

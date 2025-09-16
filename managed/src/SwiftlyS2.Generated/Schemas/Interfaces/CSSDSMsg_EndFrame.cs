@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSSDSMsg_EndFrame : ISchemaClass, IConvertibleNativeHandle<CSSDSMsg_EndFrame> {
+public partial interface CSSDSMsg_EndFrame : ISchemaClass<CSSDSMsg_EndFrame> {
 
-  static CSSDSMsg_EndFrame IConvertibleNativeHandle<CSSDSMsg_EndFrame>.From(nint handle) => new CSSDSMsg_EndFrameImpl(handle);
+  static CSSDSMsg_EndFrame ISchemaClass<CSSDSMsg_EndFrame>.From(nint handle) => new CSSDSMsg_EndFrameImpl(handle);
 
   
   // CUtlVector< CSSDSEndFrameViewInfo >

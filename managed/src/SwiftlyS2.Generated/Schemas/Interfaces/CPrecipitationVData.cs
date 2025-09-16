@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPrecipitationVData : CEntitySubclassVDataBase, IConvertibleNativeHandle<CPrecipitationVData> {
+public partial interface CPrecipitationVData : CEntitySubclassVDataBase, ISchemaClass<CPrecipitationVData> {
 
-  static CPrecipitationVData IConvertibleNativeHandle<CPrecipitationVData>.From(nint handle) => new CPrecipitationVDataImpl(handle);
+  static CPrecipitationVData ISchemaClass<CPrecipitationVData>.From(nint handle) => new CPrecipitationVDataImpl(handle);
 
   
   // CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > >

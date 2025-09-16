@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMovementStatsProperty : ISchemaClass, IConvertibleNativeHandle<CMovementStatsProperty> {
+public partial interface CMovementStatsProperty : ISchemaClass<CMovementStatsProperty> {
 
-  static CMovementStatsProperty IConvertibleNativeHandle<CMovementStatsProperty>.From(nint handle) => new CMovementStatsPropertyImpl(handle);
+  static CMovementStatsProperty ISchemaClass<CMovementStatsProperty>.From(nint handle) => new CMovementStatsPropertyImpl(handle);
 
   
   public ref int UseCounter { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmBoneMaskBlendNode__CDefinition : CNmBoneMaskValueNode__CDefinition, IConvertibleNativeHandle<CNmBoneMaskBlendNode__CDefinition> {
+public partial interface CNmBoneMaskBlendNode__CDefinition : CNmBoneMaskValueNode__CDefinition, ISchemaClass<CNmBoneMaskBlendNode__CDefinition> {
 
-  static CNmBoneMaskBlendNode__CDefinition IConvertibleNativeHandle<CNmBoneMaskBlendNode__CDefinition>.From(nint handle) => new CNmBoneMaskBlendNode__CDefinitionImpl(handle);
+  static CNmBoneMaskBlendNode__CDefinition ISchemaClass<CNmBoneMaskBlendNode__CDefinition>.From(nint handle) => new CNmBoneMaskBlendNode__CDefinitionImpl(handle);
 
   
   public ref short SourceMaskNodeIdx { get; }

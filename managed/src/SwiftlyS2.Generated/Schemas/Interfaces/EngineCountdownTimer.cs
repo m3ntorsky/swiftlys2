@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EngineCountdownTimer : ISchemaClass, IConvertibleNativeHandle<EngineCountdownTimer> {
+public partial interface EngineCountdownTimer : ISchemaClass<EngineCountdownTimer> {
 
-  static EngineCountdownTimer IConvertibleNativeHandle<EngineCountdownTimer>.From(nint handle) => new EngineCountdownTimerImpl(handle);
+  static EngineCountdownTimer ISchemaClass<EngineCountdownTimer>.From(nint handle) => new EngineCountdownTimerImpl(handle);
 
   
   public ref float Duration { get; }

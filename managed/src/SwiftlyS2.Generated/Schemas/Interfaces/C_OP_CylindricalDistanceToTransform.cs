@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_CylindricalDistanceToTransform : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_CylindricalDistanceToTransform> {
+public partial interface C_OP_CylindricalDistanceToTransform : CParticleFunctionOperator, ISchemaClass<C_OP_CylindricalDistanceToTransform> {
 
-  static C_OP_CylindricalDistanceToTransform IConvertibleNativeHandle<C_OP_CylindricalDistanceToTransform>.From(nint handle) => new C_OP_CylindricalDistanceToTransformImpl(handle);
+  static C_OP_CylindricalDistanceToTransform ISchemaClass<C_OP_CylindricalDistanceToTransform>.From(nint handle) => new C_OP_CylindricalDistanceToTransformImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

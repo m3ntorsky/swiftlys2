@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_LockToSavedSequentialPath : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_LockToSavedSequentialPath> {
+public partial interface C_OP_LockToSavedSequentialPath : CParticleFunctionOperator, ISchemaClass<C_OP_LockToSavedSequentialPath> {
 
-  static C_OP_LockToSavedSequentialPath IConvertibleNativeHandle<C_OP_LockToSavedSequentialPath>.From(nint handle) => new C_OP_LockToSavedSequentialPathImpl(handle);
+  static C_OP_LockToSavedSequentialPath ISchemaClass<C_OP_LockToSavedSequentialPath>.From(nint handle) => new C_OP_LockToSavedSequentialPathImpl(handle);
 
   
   public ref float FadeStart { get; }

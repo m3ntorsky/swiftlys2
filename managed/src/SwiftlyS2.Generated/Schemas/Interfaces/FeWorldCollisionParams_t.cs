@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeWorldCollisionParams_t : ISchemaClass, IConvertibleNativeHandle<FeWorldCollisionParams_t> {
+public partial interface FeWorldCollisionParams_t : ISchemaClass<FeWorldCollisionParams_t> {
 
-  static FeWorldCollisionParams_t IConvertibleNativeHandle<FeWorldCollisionParams_t>.From(nint handle) => new FeWorldCollisionParams_tImpl(handle);
+  static FeWorldCollisionParams_t ISchemaClass<FeWorldCollisionParams_t>.From(nint handle) => new FeWorldCollisionParams_tImpl(handle);
 
   
   public ref float WorldFriction { get; }

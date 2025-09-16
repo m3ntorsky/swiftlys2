@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSpeedScaleUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CSpeedScaleUpdateNode> {
+public partial interface CSpeedScaleUpdateNode : CUnaryUpdateNode, ISchemaClass<CSpeedScaleUpdateNode> {
 
-  static CSpeedScaleUpdateNode IConvertibleNativeHandle<CSpeedScaleUpdateNode>.From(nint handle) => new CSpeedScaleUpdateNodeImpl(handle);
+  static CSpeedScaleUpdateNode ISchemaClass<CSpeedScaleUpdateNode>.From(nint handle) => new CSpeedScaleUpdateNodeImpl(handle);
 
   
   public CAnimParamHandle ParamIndex { get; }

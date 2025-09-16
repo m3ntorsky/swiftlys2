@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayerController_InventoryServices : CPlayerControllerComponent, IConvertibleNativeHandle<CCSPlayerController_InventoryServices> {
+public partial interface CCSPlayerController_InventoryServices : CPlayerControllerComponent, ISchemaClass<CCSPlayerController_InventoryServices> {
 
-  static CCSPlayerController_InventoryServices IConvertibleNativeHandle<CCSPlayerController_InventoryServices>.From(nint handle) => new CCSPlayerController_InventoryServicesImpl(handle);
+  static CCSPlayerController_InventoryServices ISchemaClass<CCSPlayerController_InventoryServices>.From(nint handle) => new CCSPlayerController_InventoryServicesImpl(handle);
 
   
   public ref ushort MusicID { get; }

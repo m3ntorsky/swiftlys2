@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_InitFloatCollection : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_InitFloatCollection> {
+public partial interface C_INIT_InitFloatCollection : CParticleFunctionInitializer, ISchemaClass<C_INIT_InitFloatCollection> {
 
-  static C_INIT_InitFloatCollection IConvertibleNativeHandle<C_INIT_InitFloatCollection>.From(nint handle) => new C_INIT_InitFloatCollectionImpl(handle);
+  static C_INIT_InitFloatCollection ISchemaClass<C_INIT_InitFloatCollection>.From(nint handle) => new C_INIT_InitFloatCollectionImpl(handle);
 
   
   public CParticleCollectionFloatInput InputValue { get; }

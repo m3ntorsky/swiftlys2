@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqBoneMaskList : ISchemaClass, IConvertibleNativeHandle<CSeqBoneMaskList> {
+public partial interface CSeqBoneMaskList : ISchemaClass<CSeqBoneMaskList> {
 
-  static CSeqBoneMaskList IConvertibleNativeHandle<CSeqBoneMaskList>.From(nint handle) => new CSeqBoneMaskListImpl(handle);
+  static CSeqBoneMaskList ISchemaClass<CSeqBoneMaskList>.From(nint handle) => new CSeqBoneMaskListImpl(handle);
 
   
   public ref CBufferString Name { get; }

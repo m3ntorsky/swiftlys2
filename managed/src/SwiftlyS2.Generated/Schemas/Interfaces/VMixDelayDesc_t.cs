@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixDelayDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixDelayDesc_t> {
+public partial interface VMixDelayDesc_t : ISchemaClass<VMixDelayDesc_t> {
 
-  static VMixDelayDesc_t IConvertibleNativeHandle<VMixDelayDesc_t>.From(nint handle) => new VMixDelayDesc_tImpl(handle);
+  static VMixDelayDesc_t ISchemaClass<VMixDelayDesc_t>.From(nint handle) => new VMixDelayDesc_tImpl(handle);
 
   
   public VMixFilterDesc_t FeedbackFilter { get; }

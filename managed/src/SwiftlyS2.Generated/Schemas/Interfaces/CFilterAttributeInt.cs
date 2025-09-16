@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFilterAttributeInt : CBaseFilter, IConvertibleNativeHandle<CFilterAttributeInt> {
+public partial interface CFilterAttributeInt : CBaseFilter, ISchemaClass<CFilterAttributeInt> {
 
-  static CFilterAttributeInt IConvertibleNativeHandle<CFilterAttributeInt>.From(nint handle) => new CFilterAttributeIntImpl(handle);
+  static CFilterAttributeInt ISchemaClass<CFilterAttributeInt>.From(nint handle) => new CFilterAttributeIntImpl(handle);
 
   
   public ref CUtlSymbolLarge AttributeName { get; }

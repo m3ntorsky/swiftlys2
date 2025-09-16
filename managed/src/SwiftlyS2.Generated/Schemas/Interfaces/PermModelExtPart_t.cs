@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PermModelExtPart_t : ISchemaClass, IConvertibleNativeHandle<PermModelExtPart_t> {
+public partial interface PermModelExtPart_t : ISchemaClass<PermModelExtPart_t> {
 
-  static PermModelExtPart_t IConvertibleNativeHandle<PermModelExtPart_t>.From(nint handle) => new PermModelExtPart_tImpl(handle);
+  static PermModelExtPart_t ISchemaClass<PermModelExtPart_t>.From(nint handle) => new PermModelExtPart_tImpl(handle);
 
   
   public ref CTransform Transform { get; }

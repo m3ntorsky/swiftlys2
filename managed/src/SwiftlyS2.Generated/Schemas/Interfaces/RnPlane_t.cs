@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnPlane_t : ISchemaClass, IConvertibleNativeHandle<RnPlane_t> {
+public partial interface RnPlane_t : ISchemaClass<RnPlane_t> {
 
-  static RnPlane_t IConvertibleNativeHandle<RnPlane_t>.From(nint handle) => new RnPlane_tImpl(handle);
+  static RnPlane_t ISchemaClass<RnPlane_t>.From(nint handle) => new RnPlane_tImpl(handle);
 
   
   public ref Vector Normal { get; }

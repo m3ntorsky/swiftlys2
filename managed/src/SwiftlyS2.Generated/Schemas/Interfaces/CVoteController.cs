@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoteController : CBaseEntity, IConvertibleNativeHandle<CVoteController> {
+public partial interface CVoteController : CBaseEntity, ISchemaClass<CVoteController> {
 
-  static CVoteController IConvertibleNativeHandle<CVoteController>.From(nint handle) => new CVoteControllerImpl(handle);
+  static CVoteController ISchemaClass<CVoteController>.From(nint handle) => new CVoteControllerImpl(handle);
 
   
   public ref int ActiveIssueIndex { get; }

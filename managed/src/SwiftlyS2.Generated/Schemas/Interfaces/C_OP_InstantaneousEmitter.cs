@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_InstantaneousEmitter : CParticleFunctionEmitter, IConvertibleNativeHandle<C_OP_InstantaneousEmitter> {
+public partial interface C_OP_InstantaneousEmitter : CParticleFunctionEmitter, ISchemaClass<C_OP_InstantaneousEmitter> {
 
-  static C_OP_InstantaneousEmitter IConvertibleNativeHandle<C_OP_InstantaneousEmitter>.From(nint handle) => new C_OP_InstantaneousEmitterImpl(handle);
+  static C_OP_InstantaneousEmitter ISchemaClass<C_OP_InstantaneousEmitter>.From(nint handle) => new C_OP_InstantaneousEmitterImpl(handle);
 
   
   public CParticleCollectionFloatInput ParticlesToEmit { get; }

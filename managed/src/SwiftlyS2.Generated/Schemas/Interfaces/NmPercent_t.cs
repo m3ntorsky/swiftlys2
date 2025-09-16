@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface NmPercent_t : ISchemaClass, IConvertibleNativeHandle<NmPercent_t> {
+public partial interface NmPercent_t : ISchemaClass<NmPercent_t> {
 
-  static NmPercent_t IConvertibleNativeHandle<NmPercent_t>.From(nint handle) => new NmPercent_tImpl(handle);
+  static NmPercent_t ISchemaClass<NmPercent_t>.From(nint handle) => new NmPercent_tImpl(handle);
 
   
   public ref float Value { get; }

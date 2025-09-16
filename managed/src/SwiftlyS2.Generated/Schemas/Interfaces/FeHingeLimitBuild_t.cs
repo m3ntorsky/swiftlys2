@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeHingeLimitBuild_t : ISchemaClass, IConvertibleNativeHandle<FeHingeLimitBuild_t> {
+public partial interface FeHingeLimitBuild_t : ISchemaClass<FeHingeLimitBuild_t> {
 
-  static FeHingeLimitBuild_t IConvertibleNativeHandle<FeHingeLimitBuild_t>.From(nint handle) => new FeHingeLimitBuild_tImpl(handle);
+  static FeHingeLimitBuild_t ISchemaClass<FeHingeLimitBuild_t>.From(nint handle) => new FeHingeLimitBuild_tImpl(handle);
 
   
   public ISchemaFixedArray<ushort> Node { get; }

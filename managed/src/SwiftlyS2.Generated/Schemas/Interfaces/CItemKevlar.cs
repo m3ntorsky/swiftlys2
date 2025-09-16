@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CItemKevlar : CItem, IConvertibleNativeHandle<CItemKevlar> {
+public partial interface CItemKevlar : CItem, ISchemaClass<CItemKevlar> {
 
-  static CItemKevlar IConvertibleNativeHandle<CItemKevlar>.From(nint handle) => new CItemKevlarImpl(handle);
+  static CItemKevlar ISchemaClass<CItemKevlar>.From(nint handle) => new CItemKevlarImpl(handle);
 
 
 

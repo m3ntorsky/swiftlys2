@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGeneralRandomRotation : CParticleFunctionInitializer, IConvertibleNativeHandle<CGeneralRandomRotation> {
+public partial interface CGeneralRandomRotation : CParticleFunctionInitializer, ISchemaClass<CGeneralRandomRotation> {
 
-  static CGeneralRandomRotation IConvertibleNativeHandle<CGeneralRandomRotation>.From(nint handle) => new CGeneralRandomRotationImpl(handle);
+  static CGeneralRandomRotation ISchemaClass<CGeneralRandomRotation>.From(nint handle) => new CGeneralRandomRotationImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RenderHairStrandInfo_t : ISchemaClass, IConvertibleNativeHandle<RenderHairStrandInfo_t> {
+public partial interface RenderHairStrandInfo_t : ISchemaClass<RenderHairStrandInfo_t> {
 
-  static RenderHairStrandInfo_t IConvertibleNativeHandle<RenderHairStrandInfo_t>.From(nint handle) => new RenderHairStrandInfo_tImpl(handle);
+  static RenderHairStrandInfo_t ISchemaClass<RenderHairStrandInfo_t>.From(nint handle) => new RenderHairStrandInfo_tImpl(handle);
 
   
   public ISchemaFixedArray<uint> GuideHairIndices_nSurfaceTriIndex { get; }

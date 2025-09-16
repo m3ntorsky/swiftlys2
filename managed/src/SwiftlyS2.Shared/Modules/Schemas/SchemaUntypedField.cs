@@ -3,7 +3,7 @@ using SwiftlyS2.Shared.Schemas;
 
 namespace SwiftlyS2.Shared.Schemas;
 
-public class SchemaUntypedField : INativeHandle, IConvertibleNativeHandle<SchemaUntypedField> {
+public class SchemaUntypedField : INativeHandle, ISchemaClass<SchemaUntypedField> {
 
   private nint _handle;
   public nint Address => _handle;

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimUpdateSharedData : ISchemaClass, IConvertibleNativeHandle<CAnimUpdateSharedData> {
+public partial interface CAnimUpdateSharedData : ISchemaClass<CAnimUpdateSharedData> {
 
-  static CAnimUpdateSharedData IConvertibleNativeHandle<CAnimUpdateSharedData>.From(nint handle) => new CAnimUpdateSharedDataImpl(handle);
+  static CAnimUpdateSharedData ISchemaClass<CAnimUpdateSharedData>.From(nint handle) => new CAnimUpdateSharedDataImpl(handle);
 
   
   // CUtlVector< CSmartPtr< CAnimUpdateNodeBase > >

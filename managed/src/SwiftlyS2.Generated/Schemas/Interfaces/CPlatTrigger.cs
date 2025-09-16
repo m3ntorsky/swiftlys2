@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlatTrigger : CBaseModelEntity, IConvertibleNativeHandle<CPlatTrigger> {
+public partial interface CPlatTrigger : CBaseModelEntity, ISchemaClass<CPlatTrigger> {
 
-  static CPlatTrigger IConvertibleNativeHandle<CPlatTrigger>.From(nint handle) => new CPlatTriggerImpl(handle);
+  static CPlatTrigger ISchemaClass<CPlatTrigger>.From(nint handle) => new CPlatTriggerImpl(handle);
 
   
   public ref CHandle<CFuncPlat> Platform { get; }

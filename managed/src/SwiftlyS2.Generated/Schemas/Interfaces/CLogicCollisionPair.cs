@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicCollisionPair : CLogicalEntity, IConvertibleNativeHandle<CLogicCollisionPair> {
+public partial interface CLogicCollisionPair : CLogicalEntity, ISchemaClass<CLogicCollisionPair> {
 
-  static CLogicCollisionPair IConvertibleNativeHandle<CLogicCollisionPair>.From(nint handle) => new CLogicCollisionPairImpl(handle);
+  static CLogicCollisionPair ISchemaClass<CLogicCollisionPair>.From(nint handle) => new CLogicCollisionPairImpl(handle);
 
   
   public ref CUtlSymbolLarge NameAttach1 { get; }

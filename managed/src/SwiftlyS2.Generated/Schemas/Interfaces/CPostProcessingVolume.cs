@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPostProcessingVolume : CBaseTrigger, IConvertibleNativeHandle<CPostProcessingVolume> {
+public partial interface CPostProcessingVolume : CBaseTrigger, ISchemaClass<CPostProcessingVolume> {
 
-  static CPostProcessingVolume IConvertibleNativeHandle<CPostProcessingVolume>.From(nint handle) => new CPostProcessingVolumeImpl(handle);
+  static CPostProcessingVolume ISchemaClass<CPostProcessingVolume>.From(nint handle) => new CPostProcessingVolumeImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCPostProcessingResource> PostSettings { get; }

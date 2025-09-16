@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootstepLandedAnimTag : CAnimTagBase, IConvertibleNativeHandle<CFootstepLandedAnimTag> {
+public partial interface CFootstepLandedAnimTag : CAnimTagBase, ISchemaClass<CFootstepLandedAnimTag> {
 
-  static CFootstepLandedAnimTag IConvertibleNativeHandle<CFootstepLandedAnimTag>.From(nint handle) => new CFootstepLandedAnimTagImpl(handle);
+  static CFootstepLandedAnimTag ISchemaClass<CFootstepLandedAnimTag>.From(nint handle) => new CFootstepLandedAnimTagImpl(handle);
 
   
   public ref FootstepLandedFootSoundType_t FootstepType { get; }

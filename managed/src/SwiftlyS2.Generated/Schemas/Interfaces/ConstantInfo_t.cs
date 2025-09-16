@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ConstantInfo_t : ISchemaClass, IConvertibleNativeHandle<ConstantInfo_t> {
+public partial interface ConstantInfo_t : ISchemaClass<ConstantInfo_t> {
 
-  static ConstantInfo_t IConvertibleNativeHandle<ConstantInfo_t>.From(nint handle) => new ConstantInfo_tImpl(handle);
+  static ConstantInfo_t ISchemaClass<ConstantInfo_t>.From(nint handle) => new ConstantInfo_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

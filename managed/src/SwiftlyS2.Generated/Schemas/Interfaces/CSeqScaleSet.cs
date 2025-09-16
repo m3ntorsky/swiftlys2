@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqScaleSet : ISchemaClass, IConvertibleNativeHandle<CSeqScaleSet> {
+public partial interface CSeqScaleSet : ISchemaClass<CSeqScaleSet> {
 
-  static CSeqScaleSet IConvertibleNativeHandle<CSeqScaleSet>.From(nint handle) => new CSeqScaleSetImpl(handle);
+  static CSeqScaleSet ISchemaClass<CSeqScaleSet>.From(nint handle) => new CSeqScaleSetImpl(handle);
 
   
   public ref CBufferString Name { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixDiffusorDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixDiffusorDesc_t> {
+public partial interface VMixDiffusorDesc_t : ISchemaClass<VMixDiffusorDesc_t> {
 
-  static VMixDiffusorDesc_t IConvertibleNativeHandle<VMixDiffusorDesc_t>.From(nint handle) => new VMixDiffusorDesc_tImpl(handle);
+  static VMixDiffusorDesc_t ISchemaClass<VMixDiffusorDesc_t>.From(nint handle) => new VMixDiffusorDesc_tImpl(handle);
 
   
   public ref float Size { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SummaryTakeDamageInfo_t : ISchemaClass, IConvertibleNativeHandle<SummaryTakeDamageInfo_t> {
+public partial interface SummaryTakeDamageInfo_t : ISchemaClass<SummaryTakeDamageInfo_t> {
 
-  static SummaryTakeDamageInfo_t IConvertibleNativeHandle<SummaryTakeDamageInfo_t>.From(nint handle) => new SummaryTakeDamageInfo_tImpl(handle);
+  static SummaryTakeDamageInfo_t ISchemaClass<SummaryTakeDamageInfo_t>.From(nint handle) => new SummaryTakeDamageInfo_tImpl(handle);
 
   
   public ref int SummarisedCount { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSkillInt : ISchemaClass, IConvertibleNativeHandle<CSkillInt> {
+public partial interface CSkillInt : ISchemaClass<CSkillInt> {
 
-  static CSkillInt IConvertibleNativeHandle<CSkillInt>.From(nint handle) => new CSkillIntImpl(handle);
+  static CSkillInt ISchemaClass<CSkillInt>.From(nint handle) => new CSkillIntImpl(handle);
 
   
   public ISchemaFixedArray<int> Value { get; }

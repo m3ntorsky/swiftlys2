@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface Dop26_t : ISchemaClass, IConvertibleNativeHandle<Dop26_t> {
+public partial interface Dop26_t : ISchemaClass<Dop26_t> {
 
-  static Dop26_t IConvertibleNativeHandle<Dop26_t>.From(nint handle) => new Dop26_tImpl(handle);
+  static Dop26_t ISchemaClass<Dop26_t>.From(nint handle) => new Dop26_tImpl(handle);
 
   
   public ISchemaFixedArray<float> Support { get; }

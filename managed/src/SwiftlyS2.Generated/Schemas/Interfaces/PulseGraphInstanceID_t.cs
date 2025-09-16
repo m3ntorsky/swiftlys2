@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseGraphInstanceID_t : ISchemaClass, IConvertibleNativeHandle<PulseGraphInstanceID_t> {
+public partial interface PulseGraphInstanceID_t : ISchemaClass<PulseGraphInstanceID_t> {
 
-  static PulseGraphInstanceID_t IConvertibleNativeHandle<PulseGraphInstanceID_t>.From(nint handle) => new PulseGraphInstanceID_tImpl(handle);
+  static PulseGraphInstanceID_t ISchemaClass<PulseGraphInstanceID_t>.From(nint handle) => new PulseGraphInstanceID_tImpl(handle);
 
   
   public ref uint Value { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmIDEventPercentageThroughNode__CDefinition : CNmBoolValueNode__CDefinition, IConvertibleNativeHandle<CNmIDEventPercentageThroughNode__CDefinition> {
+public partial interface CNmIDEventPercentageThroughNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmIDEventPercentageThroughNode__CDefinition> {
 
-  static CNmIDEventPercentageThroughNode__CDefinition IConvertibleNativeHandle<CNmIDEventPercentageThroughNode__CDefinition>.From(nint handle) => new CNmIDEventPercentageThroughNode__CDefinitionImpl(handle);
+  static CNmIDEventPercentageThroughNode__CDefinition ISchemaClass<CNmIDEventPercentageThroughNode__CDefinition>.From(nint handle) => new CNmIDEventPercentageThroughNode__CDefinitionImpl(handle);
 
   
   public ref short SourceStateNodeIdx { get; }

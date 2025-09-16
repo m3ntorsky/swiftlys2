@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncPlatRot : CFuncPlat, IConvertibleNativeHandle<CFuncPlatRot> {
+public partial interface CFuncPlatRot : CFuncPlat, ISchemaClass<CFuncPlatRot> {
 
-  static CFuncPlatRot IConvertibleNativeHandle<CFuncPlatRot>.From(nint handle) => new CFuncPlatRotImpl(handle);
+  static CFuncPlatRot ISchemaClass<CFuncPlatRot>.From(nint handle) => new CFuncPlatRotImpl(handle);
 
   
   public ref QAngle End { get; }

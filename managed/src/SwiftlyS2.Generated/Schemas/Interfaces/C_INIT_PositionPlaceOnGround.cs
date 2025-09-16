@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_PositionPlaceOnGround : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_PositionPlaceOnGround> {
+public partial interface C_INIT_PositionPlaceOnGround : CParticleFunctionInitializer, ISchemaClass<C_INIT_PositionPlaceOnGround> {
 
-  static C_INIT_PositionPlaceOnGround IConvertibleNativeHandle<C_INIT_PositionPlaceOnGround>.From(nint handle) => new C_INIT_PositionPlaceOnGroundImpl(handle);
+  static C_INIT_PositionPlaceOnGround ISchemaClass<C_INIT_PositionPlaceOnGround>.From(nint handle) => new C_INIT_PositionPlaceOnGroundImpl(handle);
 
   
   public CPerParticleFloatInput Offset { get; }

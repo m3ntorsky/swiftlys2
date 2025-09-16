@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderSimpleModelCollection : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderSimpleModelCollection> {
+public partial interface C_OP_RenderSimpleModelCollection : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderSimpleModelCollection> {
 
-  static C_OP_RenderSimpleModelCollection IConvertibleNativeHandle<C_OP_RenderSimpleModelCollection>.From(nint handle) => new C_OP_RenderSimpleModelCollectionImpl(handle);
+  static C_OP_RenderSimpleModelCollection ISchemaClass<C_OP_RenderSimpleModelCollection>.From(nint handle) => new C_OP_RenderSimpleModelCollectionImpl(handle);
 
   
   public ref bool CenterOffset { get; }

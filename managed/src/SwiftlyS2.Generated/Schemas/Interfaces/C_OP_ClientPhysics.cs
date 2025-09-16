@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ClientPhysics : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_ClientPhysics> {
+public partial interface C_OP_ClientPhysics : CParticleFunctionRenderer, ISchemaClass<C_OP_ClientPhysics> {
 
-  static C_OP_ClientPhysics IConvertibleNativeHandle<C_OP_ClientPhysics>.From(nint handle) => new C_OP_ClientPhysicsImpl(handle);
+  static C_OP_ClientPhysics ISchemaClass<C_OP_ClientPhysics>.From(nint handle) => new C_OP_ClientPhysicsImpl(handle);
 
   
   public ref CUtlString StrPhysicsType { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncNavObstruction : CBaseModelEntity, IConvertibleNativeHandle<CFuncNavObstruction> {
+public partial interface CFuncNavObstruction : CBaseModelEntity, ISchemaClass<CFuncNavObstruction> {
 
-  static CFuncNavObstruction IConvertibleNativeHandle<CFuncNavObstruction>.From(nint handle) => new CFuncNavObstructionImpl(handle);
+  static CFuncNavObstruction ISchemaClass<CFuncNavObstruction>.From(nint handle) => new CFuncNavObstructionImpl(handle);
 
   
   public ref bool Disabled { get; }

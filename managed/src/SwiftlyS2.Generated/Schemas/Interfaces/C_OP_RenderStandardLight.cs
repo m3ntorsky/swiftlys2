@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderStandardLight : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderStandardLight> {
+public partial interface C_OP_RenderStandardLight : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderStandardLight> {
 
-  static C_OP_RenderStandardLight IConvertibleNativeHandle<C_OP_RenderStandardLight>.From(nint handle) => new C_OP_RenderStandardLightImpl(handle);
+  static C_OP_RenderStandardLight ISchemaClass<C_OP_RenderStandardLight>.From(nint handle) => new C_OP_RenderStandardLightImpl(handle);
 
   
   public ref ParticleLightTypeChoiceList_t LightType { get; }

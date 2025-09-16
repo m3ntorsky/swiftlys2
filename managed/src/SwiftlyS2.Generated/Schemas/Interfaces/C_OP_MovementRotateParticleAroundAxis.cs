@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_MovementRotateParticleAroundAxis : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_MovementRotateParticleAroundAxis> {
+public partial interface C_OP_MovementRotateParticleAroundAxis : CParticleFunctionOperator, ISchemaClass<C_OP_MovementRotateParticleAroundAxis> {
 
-  static C_OP_MovementRotateParticleAroundAxis IConvertibleNativeHandle<C_OP_MovementRotateParticleAroundAxis>.From(nint handle) => new C_OP_MovementRotateParticleAroundAxisImpl(handle);
+  static C_OP_MovementRotateParticleAroundAxis ISchemaClass<C_OP_MovementRotateParticleAroundAxis>.From(nint handle) => new C_OP_MovementRotateParticleAroundAxisImpl(handle);
 
   
   public CParticleCollectionVecInput RotAxis { get; }

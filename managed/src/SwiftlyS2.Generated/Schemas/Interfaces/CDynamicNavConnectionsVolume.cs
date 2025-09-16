@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDynamicNavConnectionsVolume : CTriggerMultiple, IConvertibleNativeHandle<CDynamicNavConnectionsVolume> {
+public partial interface CDynamicNavConnectionsVolume : CTriggerMultiple, ISchemaClass<CDynamicNavConnectionsVolume> {
 
-  static CDynamicNavConnectionsVolume IConvertibleNativeHandle<CDynamicNavConnectionsVolume>.From(nint handle) => new CDynamicNavConnectionsVolumeImpl(handle);
+  static CDynamicNavConnectionsVolume ISchemaClass<CDynamicNavConnectionsVolume>.From(nint handle) => new CDynamicNavConnectionsVolumeImpl(handle);
 
   
   public ref CUtlSymbolLarge ConnectionTarget { get; }

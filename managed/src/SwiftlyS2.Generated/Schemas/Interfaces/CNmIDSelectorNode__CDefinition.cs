@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmIDSelectorNode__CDefinition : CNmIDValueNode__CDefinition, IConvertibleNativeHandle<CNmIDSelectorNode__CDefinition> {
+public partial interface CNmIDSelectorNode__CDefinition : CNmIDValueNode__CDefinition, ISchemaClass<CNmIDSelectorNode__CDefinition> {
 
-  static CNmIDSelectorNode__CDefinition IConvertibleNativeHandle<CNmIDSelectorNode__CDefinition>.From(nint handle) => new CNmIDSelectorNode__CDefinitionImpl(handle);
+  static CNmIDSelectorNode__CDefinition ISchemaClass<CNmIDSelectorNode__CDefinition>.From(nint handle) => new CNmIDSelectorNode__CDefinitionImpl(handle);
 
   
   // CUtlVectorFixedGrowable< int16, 5 >

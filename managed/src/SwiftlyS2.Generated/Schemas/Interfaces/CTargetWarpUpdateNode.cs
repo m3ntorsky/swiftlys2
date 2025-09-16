@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTargetWarpUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CTargetWarpUpdateNode> {
+public partial interface CTargetWarpUpdateNode : CUnaryUpdateNode, ISchemaClass<CTargetWarpUpdateNode> {
 
-  static CTargetWarpUpdateNode IConvertibleNativeHandle<CTargetWarpUpdateNode>.From(nint handle) => new CTargetWarpUpdateNodeImpl(handle);
+  static CTargetWarpUpdateNode ISchemaClass<CTargetWarpUpdateNode>.From(nint handle) => new CTargetWarpUpdateNodeImpl(handle);
 
   
   public ref TargetWarpAngleMode_t AngleMode { get; }

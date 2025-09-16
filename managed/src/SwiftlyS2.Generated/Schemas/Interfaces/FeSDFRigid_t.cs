@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeSDFRigid_t : ISchemaClass, IConvertibleNativeHandle<FeSDFRigid_t> {
+public partial interface FeSDFRigid_t : ISchemaClass<FeSDFRigid_t> {
 
-  static FeSDFRigid_t IConvertibleNativeHandle<FeSDFRigid_t>.From(nint handle) => new FeSDFRigid_tImpl(handle);
+  static FeSDFRigid_t ISchemaClass<FeSDFRigid_t>.From(nint handle) => new FeSDFRigid_tImpl(handle);
 
   
   public ref Vector LocalMin { get; }

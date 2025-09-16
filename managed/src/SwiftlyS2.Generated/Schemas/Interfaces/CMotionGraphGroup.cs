@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionGraphGroup : ISchemaClass, IConvertibleNativeHandle<CMotionGraphGroup> {
+public partial interface CMotionGraphGroup : ISchemaClass<CMotionGraphGroup> {
 
-  static CMotionGraphGroup IConvertibleNativeHandle<CMotionGraphGroup>.From(nint handle) => new CMotionGraphGroupImpl(handle);
+  static CMotionGraphGroup ISchemaClass<CMotionGraphGroup>.From(nint handle) => new CMotionGraphGroupImpl(handle);
 
   
   public CMotionSearchDB SearchDB { get; }

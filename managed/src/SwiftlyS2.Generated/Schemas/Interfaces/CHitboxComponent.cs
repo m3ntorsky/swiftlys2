@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHitboxComponent : CEntityComponent, IConvertibleNativeHandle<CHitboxComponent> {
+public partial interface CHitboxComponent : CEntityComponent, ISchemaClass<CHitboxComponent> {
 
-  static CHitboxComponent IConvertibleNativeHandle<CHitboxComponent>.From(nint handle) => new CHitboxComponentImpl(handle);
+  static CHitboxComponent ISchemaClass<CHitboxComponent>.From(nint handle) => new CHitboxComponentImpl(handle);
 
   
   public ISchemaFixedArray<uint> DisabledHitGroups { get; }

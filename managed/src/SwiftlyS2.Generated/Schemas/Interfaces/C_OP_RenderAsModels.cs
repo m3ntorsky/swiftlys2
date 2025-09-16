@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderAsModels : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderAsModels> {
+public partial interface C_OP_RenderAsModels : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderAsModels> {
 
-  static C_OP_RenderAsModels IConvertibleNativeHandle<C_OP_RenderAsModels>.From(nint handle) => new C_OP_RenderAsModelsImpl(handle);
+  static C_OP_RenderAsModels ISchemaClass<C_OP_RenderAsModels>.From(nint handle) => new C_OP_RenderAsModelsImpl(handle);
 
   
   // CUtlVector< ModelReference_t >

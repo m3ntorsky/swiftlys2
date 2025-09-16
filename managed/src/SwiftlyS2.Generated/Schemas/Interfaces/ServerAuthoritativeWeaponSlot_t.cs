@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ServerAuthoritativeWeaponSlot_t : ISchemaClass, IConvertibleNativeHandle<ServerAuthoritativeWeaponSlot_t> {
+public partial interface ServerAuthoritativeWeaponSlot_t : ISchemaClass<ServerAuthoritativeWeaponSlot_t> {
 
-  static ServerAuthoritativeWeaponSlot_t IConvertibleNativeHandle<ServerAuthoritativeWeaponSlot_t>.From(nint handle) => new ServerAuthoritativeWeaponSlot_tImpl(handle);
+  static ServerAuthoritativeWeaponSlot_t ISchemaClass<ServerAuthoritativeWeaponSlot_t>.From(nint handle) => new ServerAuthoritativeWeaponSlot_tImpl(handle);
 
   
   public ref ushort Class { get; }

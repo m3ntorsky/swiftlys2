@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGameGibManager : CBaseEntity, IConvertibleNativeHandle<CGameGibManager> {
+public partial interface CGameGibManager : CBaseEntity, ISchemaClass<CGameGibManager> {
 
-  static CGameGibManager IConvertibleNativeHandle<CGameGibManager>.From(nint handle) => new CGameGibManagerImpl(handle);
+  static CGameGibManager ISchemaClass<CGameGibManager>.From(nint handle) => new CGameGibManagerImpl(handle);
 
   
   public ref bool AllowNewGibs { get; }

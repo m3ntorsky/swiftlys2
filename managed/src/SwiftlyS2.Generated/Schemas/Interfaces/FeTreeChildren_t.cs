@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeTreeChildren_t : ISchemaClass, IConvertibleNativeHandle<FeTreeChildren_t> {
+public partial interface FeTreeChildren_t : ISchemaClass<FeTreeChildren_t> {
 
-  static FeTreeChildren_t IConvertibleNativeHandle<FeTreeChildren_t>.From(nint handle) => new FeTreeChildren_tImpl(handle);
+  static FeTreeChildren_t ISchemaClass<FeTreeChildren_t>.From(nint handle) => new FeTreeChildren_tImpl(handle);
 
   
   public ISchemaFixedArray<ushort> Child { get; }

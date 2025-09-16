@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundOpvarSetPointBase : CBaseEntity, IConvertibleNativeHandle<CSoundOpvarSetPointBase> {
+public partial interface CSoundOpvarSetPointBase : CBaseEntity, ISchemaClass<CSoundOpvarSetPointBase> {
 
-  static CSoundOpvarSetPointBase IConvertibleNativeHandle<CSoundOpvarSetPointBase>.From(nint handle) => new CSoundOpvarSetPointBaseImpl(handle);
+  static CSoundOpvarSetPointBase ISchemaClass<CSoundOpvarSetPointBase>.From(nint handle) => new CSoundOpvarSetPointBaseImpl(handle);
 
   
   public ref bool Disabled { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface NmCompressionSettings_t : ISchemaClass, IConvertibleNativeHandle<NmCompressionSettings_t> {
+public partial interface NmCompressionSettings_t : ISchemaClass<NmCompressionSettings_t> {
 
-  static NmCompressionSettings_t IConvertibleNativeHandle<NmCompressionSettings_t>.From(nint handle) => new NmCompressionSettings_tImpl(handle);
+  static NmCompressionSettings_t ISchemaClass<NmCompressionSettings_t>.From(nint handle) => new NmCompressionSettings_tImpl(handle);
 
   
   public NmCompressionSettings_t__QuantizationRange_t TranslationRangeX { get; }

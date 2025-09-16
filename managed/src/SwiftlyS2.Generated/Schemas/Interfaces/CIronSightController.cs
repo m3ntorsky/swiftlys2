@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CIronSightController : ISchemaClass, IConvertibleNativeHandle<CIronSightController> {
+public partial interface CIronSightController : ISchemaClass<CIronSightController> {
 
-  static CIronSightController IConvertibleNativeHandle<CIronSightController>.From(nint handle) => new CIronSightControllerImpl(handle);
+  static CIronSightController ISchemaClass<CIronSightController>.From(nint handle) => new CIronSightControllerImpl(handle);
 
   
   public ref bool IronSightAvailable { get; }

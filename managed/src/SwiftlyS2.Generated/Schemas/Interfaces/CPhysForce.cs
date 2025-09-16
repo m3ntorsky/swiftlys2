@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysForce : CPointEntity, IConvertibleNativeHandle<CPhysForce> {
+public partial interface CPhysForce : CPointEntity, ISchemaClass<CPhysForce> {
 
-  static CPhysForce IConvertibleNativeHandle<CPhysForce>.From(nint handle) => new CPhysForceImpl(handle);
+  static CPhysForce ISchemaClass<CPhysForce>.From(nint handle) => new CPhysForceImpl(handle);
 
   
   public ref CUtlSymbolLarge NameAttach { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvLightProbeVolume : CBaseEntity, IConvertibleNativeHandle<CEnvLightProbeVolume> {
+public partial interface CEnvLightProbeVolume : CBaseEntity, ISchemaClass<CEnvLightProbeVolume> {
 
-  static CEnvLightProbeVolume IConvertibleNativeHandle<CEnvLightProbeVolume>.From(nint handle) => new CEnvLightProbeVolumeImpl(handle);
+  static CEnvLightProbeVolume ISchemaClass<CEnvLightProbeVolume>.From(nint handle) => new CEnvLightProbeVolumeImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_AmbientCube { get; }

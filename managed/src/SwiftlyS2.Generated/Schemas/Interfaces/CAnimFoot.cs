@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimFoot : ISchemaClass, IConvertibleNativeHandle<CAnimFoot> {
+public partial interface CAnimFoot : ISchemaClass<CAnimFoot> {
 
-  static CAnimFoot IConvertibleNativeHandle<CAnimFoot>.From(nint handle) => new CAnimFootImpl(handle);
+  static CAnimFoot ISchemaClass<CAnimFoot>.From(nint handle) => new CAnimFootImpl(handle);
 
   
   public ref CUtlString Name { get; }

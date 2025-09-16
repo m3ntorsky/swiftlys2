@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRandomNumberGeneratorParameters : ISchemaClass, IConvertibleNativeHandle<CRandomNumberGeneratorParameters> {
+public partial interface CRandomNumberGeneratorParameters : ISchemaClass<CRandomNumberGeneratorParameters> {
 
-  static CRandomNumberGeneratorParameters IConvertibleNativeHandle<CRandomNumberGeneratorParameters>.From(nint handle) => new CRandomNumberGeneratorParametersImpl(handle);
+  static CRandomNumberGeneratorParameters ISchemaClass<CRandomNumberGeneratorParameters>.From(nint handle) => new CRandomNumberGeneratorParametersImpl(handle);
 
   
   public ref bool DistributeEvenly { get; }

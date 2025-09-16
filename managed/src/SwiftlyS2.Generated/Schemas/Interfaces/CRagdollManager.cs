@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollManager : CBaseEntity, IConvertibleNativeHandle<CRagdollManager> {
+public partial interface CRagdollManager : CBaseEntity, ISchemaClass<CRagdollManager> {
 
-  static CRagdollManager IConvertibleNativeHandle<CRagdollManager>.From(nint handle) => new CRagdollManagerImpl(handle);
+  static CRagdollManager ISchemaClass<CRagdollManager>.From(nint handle) => new CRagdollManagerImpl(handle);
 
   
   public ref byte CurrentMaxRagdollCount { get; }

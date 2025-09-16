@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollProp : CBaseAnimGraph, IConvertibleNativeHandle<CRagdollProp> {
+public partial interface CRagdollProp : CBaseAnimGraph, ISchemaClass<CRagdollProp> {
 
-  static CRagdollProp IConvertibleNativeHandle<CRagdollProp>.From(nint handle) => new CRagdollPropImpl(handle);
+  static CRagdollProp ISchemaClass<CRagdollProp>.From(nint handle) => new CRagdollPropImpl(handle);
 
   
   public ragdoll_t Ragdoll { get; }

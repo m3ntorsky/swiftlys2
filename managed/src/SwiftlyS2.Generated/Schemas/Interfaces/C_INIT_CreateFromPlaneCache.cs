@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateFromPlaneCache : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateFromPlaneCache> {
+public partial interface C_INIT_CreateFromPlaneCache : CParticleFunctionInitializer, ISchemaClass<C_INIT_CreateFromPlaneCache> {
 
-  static C_INIT_CreateFromPlaneCache IConvertibleNativeHandle<C_INIT_CreateFromPlaneCache>.From(nint handle) => new C_INIT_CreateFromPlaneCacheImpl(handle);
+  static C_INIT_CreateFromPlaneCache ISchemaClass<C_INIT_CreateFromPlaneCache>.From(nint handle) => new C_INIT_CreateFromPlaneCacheImpl(handle);
 
   
   public ref Vector OffsetMin { get; }

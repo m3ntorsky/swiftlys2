@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FootFixedData_t : ISchemaClass, IConvertibleNativeHandle<FootFixedData_t> {
+public partial interface FootFixedData_t : ISchemaClass<FootFixedData_t> {
 
-  static FootFixedData_t IConvertibleNativeHandle<FootFixedData_t>.From(nint handle) => new FootFixedData_tImpl(handle);
+  static FootFixedData_t ISchemaClass<FootFixedData_t>.From(nint handle) => new FootFixedData_tImpl(handle);
 
   
   public ref Vector ToeOffset { get; }

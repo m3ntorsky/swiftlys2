@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSNetworkableLoadout_t : ISchemaClass, IConvertibleNativeHandle<CSNetworkableLoadout_t> {
+public partial interface CSNetworkableLoadout_t : ISchemaClass<CSNetworkableLoadout_t> {
 
-  static CSNetworkableLoadout_t IConvertibleNativeHandle<CSNetworkableLoadout_t>.From(nint handle) => new CSNetworkableLoadout_tImpl(handle);
+  static CSNetworkableLoadout_t ISchemaClass<CSNetworkableLoadout_t>.From(nint handle) => new CSNetworkableLoadout_tImpl(handle);
 
   
   public CEconItemView Item { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSObserverPawn : CCSPlayerPawnBase, IConvertibleNativeHandle<CCSObserverPawn> {
+public partial interface CCSObserverPawn : CCSPlayerPawnBase, ISchemaClass<CCSObserverPawn> {
 
-  static CCSObserverPawn IConvertibleNativeHandle<CCSObserverPawn>.From(nint handle) => new CCSObserverPawnImpl(handle);
+  static CCSObserverPawn ISchemaClass<CCSObserverPawn>.From(nint handle) => new CCSObserverPawnImpl(handle);
 
 
 

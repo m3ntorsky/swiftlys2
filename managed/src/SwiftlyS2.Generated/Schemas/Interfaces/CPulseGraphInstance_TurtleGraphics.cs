@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseGraphInstance_TurtleGraphics : CBasePulseGraphInstance, IConvertibleNativeHandle<CPulseGraphInstance_TurtleGraphics> {
+public partial interface CPulseGraphInstance_TurtleGraphics : CBasePulseGraphInstance, ISchemaClass<CPulseGraphInstance_TurtleGraphics> {
 
-  static CPulseGraphInstance_TurtleGraphics IConvertibleNativeHandle<CPulseGraphInstance_TurtleGraphics>.From(nint handle) => new CPulseGraphInstance_TurtleGraphicsImpl(handle);
+  static CPulseGraphInstance_TurtleGraphics ISchemaClass<CPulseGraphInstance_TurtleGraphics>.From(nint handle) => new CPulseGraphInstance_TurtleGraphicsImpl(handle);
 
 
 

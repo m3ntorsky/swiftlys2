@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointWorldText : CModelPointEntity, IConvertibleNativeHandle<CPointWorldText> {
+public partial interface CPointWorldText : CModelPointEntity, ISchemaClass<CPointWorldText> {
 
-  static CPointWorldText IConvertibleNativeHandle<CPointWorldText>.From(nint handle) => new CPointWorldTextImpl(handle);
+  static CPointWorldText ISchemaClass<CPointWorldText>.From(nint handle) => new CPointWorldTextImpl(handle);
 
   
   public ISchemaFixedString MessageText { get; }

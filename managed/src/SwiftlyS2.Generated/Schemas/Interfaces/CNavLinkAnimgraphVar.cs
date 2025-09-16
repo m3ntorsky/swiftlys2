@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavLinkAnimgraphVar : ISchemaClass, IConvertibleNativeHandle<CNavLinkAnimgraphVar> {
+public partial interface CNavLinkAnimgraphVar : ISchemaClass<CNavLinkAnimgraphVar> {
 
-  static CNavLinkAnimgraphVar IConvertibleNativeHandle<CNavLinkAnimgraphVar>.From(nint handle) => new CNavLinkAnimgraphVarImpl(handle);
+  static CNavLinkAnimgraphVar ISchemaClass<CNavLinkAnimgraphVar>.From(nint handle) => new CNavLinkAnimgraphVarImpl(handle);
 
   
   public ref CGlobalSymbol AnimGraphNavlinkType { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_CursorQueue : CPulseCell_WaitForCursorsWithTagBase, IConvertibleNativeHandle<CPulseCell_CursorQueue> {
+public partial interface CPulseCell_CursorQueue : CPulseCell_WaitForCursorsWithTagBase, ISchemaClass<CPulseCell_CursorQueue> {
 
-  static CPulseCell_CursorQueue IConvertibleNativeHandle<CPulseCell_CursorQueue>.From(nint handle) => new CPulseCell_CursorQueueImpl(handle);
+  static CPulseCell_CursorQueue ISchemaClass<CPulseCell_CursorQueue>.From(nint handle) => new CPulseCell_CursorQueueImpl(handle);
 
   
   public ref int CursorsAllowedToRunParallel { get; }

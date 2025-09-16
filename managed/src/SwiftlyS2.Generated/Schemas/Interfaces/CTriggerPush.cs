@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerPush : CBaseTrigger, IConvertibleNativeHandle<CTriggerPush> {
+public partial interface CTriggerPush : CBaseTrigger, ISchemaClass<CTriggerPush> {
 
-  static CTriggerPush IConvertibleNativeHandle<CTriggerPush>.From(nint handle) => new CTriggerPushImpl(handle);
+  static CTriggerPush ISchemaClass<CTriggerPush>.From(nint handle) => new CTriggerPushImpl(handle);
 
   
   public ref QAngle PushEntitySpace { get; }

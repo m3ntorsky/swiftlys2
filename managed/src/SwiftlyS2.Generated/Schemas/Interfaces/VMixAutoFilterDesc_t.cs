@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixAutoFilterDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixAutoFilterDesc_t> {
+public partial interface VMixAutoFilterDesc_t : ISchemaClass<VMixAutoFilterDesc_t> {
 
-  static VMixAutoFilterDesc_t IConvertibleNativeHandle<VMixAutoFilterDesc_t>.From(nint handle) => new VMixAutoFilterDesc_tImpl(handle);
+  static VMixAutoFilterDesc_t ISchemaClass<VMixAutoFilterDesc_t>.From(nint handle) => new VMixAutoFilterDesc_tImpl(handle);
 
   
   public ref float EnvelopeAmount { get; }

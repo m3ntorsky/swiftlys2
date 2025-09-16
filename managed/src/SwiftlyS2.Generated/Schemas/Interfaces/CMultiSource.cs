@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMultiSource : CLogicalEntity, IConvertibleNativeHandle<CMultiSource> {
+public partial interface CMultiSource : CLogicalEntity, ISchemaClass<CMultiSource> {
 
-  static CMultiSource IConvertibleNativeHandle<CMultiSource>.From(nint handle) => new CMultiSourceImpl(handle);
+  static CMultiSource ISchemaClass<CMultiSource>.From(nint handle) => new CMultiSourceImpl(handle);
 
   
   public ISchemaFixedArray<CHandle<CBaseEntity>> RgEntities { get; }

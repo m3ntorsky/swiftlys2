@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_Spin : CGeneralSpin, IConvertibleNativeHandle<C_OP_Spin> {
+public partial interface C_OP_Spin : CGeneralSpin, ISchemaClass<C_OP_Spin> {
 
-  static C_OP_Spin IConvertibleNativeHandle<C_OP_Spin>.From(nint handle) => new C_OP_SpinImpl(handle);
+  static C_OP_Spin ISchemaClass<C_OP_Spin>.From(nint handle) => new C_OP_SpinImpl(handle);
 
 
 

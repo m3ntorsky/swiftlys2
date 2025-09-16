@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFeMorphLayer : ISchemaClass, IConvertibleNativeHandle<CFeMorphLayer> {
+public partial interface CFeMorphLayer : ISchemaClass<CFeMorphLayer> {
 
-  static CFeMorphLayer IConvertibleNativeHandle<CFeMorphLayer>.From(nint handle) => new CFeMorphLayerImpl(handle);
+  static CFeMorphLayer ISchemaClass<CFeMorphLayer>.From(nint handle) => new CFeMorphLayerImpl(handle);
 
   
   public ref CUtlString Name { get; }

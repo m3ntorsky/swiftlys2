@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Val_TestDomainGetEntityName : CPulseCell_BaseValue, IConvertibleNativeHandle<CPulseCell_Val_TestDomainGetEntityName> {
+public partial interface CPulseCell_Val_TestDomainGetEntityName : CPulseCell_BaseValue, ISchemaClass<CPulseCell_Val_TestDomainGetEntityName> {
 
-  static CPulseCell_Val_TestDomainGetEntityName IConvertibleNativeHandle<CPulseCell_Val_TestDomainGetEntityName>.From(nint handle) => new CPulseCell_Val_TestDomainGetEntityNameImpl(handle);
+  static CPulseCell_Val_TestDomainGetEntityName ISchemaClass<CPulseCell_Val_TestDomainGetEntityName>.From(nint handle) => new CPulseCell_Val_TestDomainGetEntityNameImpl(handle);
 
 
 

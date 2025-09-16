@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMapVetoPickController : CBaseEntity, IConvertibleNativeHandle<CMapVetoPickController> {
+public partial interface CMapVetoPickController : CBaseEntity, ISchemaClass<CMapVetoPickController> {
 
-  static CMapVetoPickController IConvertibleNativeHandle<CMapVetoPickController>.From(nint handle) => new CMapVetoPickControllerImpl(handle);
+  static CMapVetoPickController ISchemaClass<CMapVetoPickController>.From(nint handle) => new CMapVetoPickControllerImpl(handle);
 
   
   public ref bool PlayedIntroVcd { get; }

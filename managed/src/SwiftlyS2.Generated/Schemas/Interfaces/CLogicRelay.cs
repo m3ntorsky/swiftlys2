@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicRelay : CLogicalEntity, IConvertibleNativeHandle<CLogicRelay> {
+public partial interface CLogicRelay : CLogicalEntity, ISchemaClass<CLogicRelay> {
 
-  static CLogicRelay IConvertibleNativeHandle<CLogicRelay>.From(nint handle) => new CLogicRelayImpl(handle);
+  static CLogicRelay ISchemaClass<CLogicRelay>.From(nint handle) => new CLogicRelayImpl(handle);
 
   
   public ref bool Disabled { get; }

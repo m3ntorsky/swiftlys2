@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysImpact : CPointEntity, IConvertibleNativeHandle<CPhysImpact> {
+public partial interface CPhysImpact : CPointEntity, ISchemaClass<CPhysImpact> {
 
-  static CPhysImpact IConvertibleNativeHandle<CPhysImpact>.From(nint handle) => new CPhysImpactImpl(handle);
+  static CPhysImpact ISchemaClass<CPhysImpact>.From(nint handle) => new CPhysImpactImpl(handle);
 
   
   public ref float Damage { get; }

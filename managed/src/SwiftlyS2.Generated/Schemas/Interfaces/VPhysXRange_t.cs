@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VPhysXRange_t : ISchemaClass, IConvertibleNativeHandle<VPhysXRange_t> {
+public partial interface VPhysXRange_t : ISchemaClass<VPhysXRange_t> {
 
-  static VPhysXRange_t IConvertibleNativeHandle<VPhysXRange_t>.From(nint handle) => new VPhysXRange_tImpl(handle);
+  static VPhysXRange_t ISchemaClass<VPhysXRange_t>.From(nint handle) => new VPhysXRange_tImpl(handle);
 
   
   public ref float Min { get; }

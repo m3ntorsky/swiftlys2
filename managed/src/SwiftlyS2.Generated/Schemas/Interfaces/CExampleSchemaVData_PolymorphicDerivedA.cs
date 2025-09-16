@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CExampleSchemaVData_PolymorphicDerivedA : CExampleSchemaVData_PolymorphicBase, IConvertibleNativeHandle<CExampleSchemaVData_PolymorphicDerivedA> {
+public partial interface CExampleSchemaVData_PolymorphicDerivedA : CExampleSchemaVData_PolymorphicBase, ISchemaClass<CExampleSchemaVData_PolymorphicDerivedA> {
 
-  static CExampleSchemaVData_PolymorphicDerivedA IConvertibleNativeHandle<CExampleSchemaVData_PolymorphicDerivedA>.From(nint handle) => new CExampleSchemaVData_PolymorphicDerivedAImpl(handle);
+  static CExampleSchemaVData_PolymorphicDerivedA ISchemaClass<CExampleSchemaVData_PolymorphicDerivedA>.From(nint handle) => new CExampleSchemaVData_PolymorphicDerivedAImpl(handle);
 
   
   public ref int DerivedA { get; }

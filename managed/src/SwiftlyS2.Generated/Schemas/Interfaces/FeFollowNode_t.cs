@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeFollowNode_t : ISchemaClass, IConvertibleNativeHandle<FeFollowNode_t> {
+public partial interface FeFollowNode_t : ISchemaClass<FeFollowNode_t> {
 
-  static FeFollowNode_t IConvertibleNativeHandle<FeFollowNode_t>.From(nint handle) => new FeFollowNode_tImpl(handle);
+  static FeFollowNode_t ISchemaClass<FeFollowNode_t>.From(nint handle) => new FeFollowNode_tImpl(handle);
 
   
   public ref ushort ParentNode { get; }

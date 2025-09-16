@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapSDFGradientToVectorAttribute : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapSDFGradientToVectorAttribute> {
+public partial interface C_OP_RemapSDFGradientToVectorAttribute : CParticleFunctionOperator, ISchemaClass<C_OP_RemapSDFGradientToVectorAttribute> {
 
-  static C_OP_RemapSDFGradientToVectorAttribute IConvertibleNativeHandle<C_OP_RemapSDFGradientToVectorAttribute>.From(nint handle) => new C_OP_RemapSDFGradientToVectorAttributeImpl(handle);
+  static C_OP_RemapSDFGradientToVectorAttribute ISchemaClass<C_OP_RemapSDFGradientToVectorAttribute>.From(nint handle) => new C_OP_RemapSDFGradientToVectorAttributeImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

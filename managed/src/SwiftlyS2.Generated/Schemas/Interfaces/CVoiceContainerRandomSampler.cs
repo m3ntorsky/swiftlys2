@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerRandomSampler : CVoiceContainerBase, IConvertibleNativeHandle<CVoiceContainerRandomSampler> {
+public partial interface CVoiceContainerRandomSampler : CVoiceContainerBase, ISchemaClass<CVoiceContainerRandomSampler> {
 
-  static CVoiceContainerRandomSampler IConvertibleNativeHandle<CVoiceContainerRandomSampler>.From(nint handle) => new CVoiceContainerRandomSamplerImpl(handle);
+  static CVoiceContainerRandomSampler ISchemaClass<CVoiceContainerRandomSampler>.From(nint handle) => new CVoiceContainerRandomSamplerImpl(handle);
 
   
   public ref float Amplitude { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollPropAttached : CRagdollProp, IConvertibleNativeHandle<CRagdollPropAttached> {
+public partial interface CRagdollPropAttached : CRagdollProp, ISchemaClass<CRagdollPropAttached> {
 
-  static CRagdollPropAttached IConvertibleNativeHandle<CRagdollPropAttached>.From(nint handle) => new CRagdollPropAttachedImpl(handle);
+  static CRagdollPropAttached ISchemaClass<CRagdollPropAttached>.From(nint handle) => new CRagdollPropAttachedImpl(handle);
 
   
   public ref uint BoneIndexAttached { get; }

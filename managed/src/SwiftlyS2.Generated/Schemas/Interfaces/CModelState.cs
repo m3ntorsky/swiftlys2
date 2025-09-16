@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CModelState : ISchemaClass, IConvertibleNativeHandle<CModelState> {
+public partial interface CModelState : ISchemaClass<CModelState> {
 
-  static CModelState IConvertibleNativeHandle<CModelState>.From(nint handle) => new CModelStateImpl(handle);
+  static CModelState ISchemaClass<CModelState>.From(nint handle) => new CModelStateImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }

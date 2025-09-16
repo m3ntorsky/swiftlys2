@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEditableMotionGraph : CMotionGraph, IConvertibleNativeHandle<CEditableMotionGraph> {
+public partial interface CEditableMotionGraph : CMotionGraph, ISchemaClass<CEditableMotionGraph> {
 
-  static CEditableMotionGraph IConvertibleNativeHandle<CEditableMotionGraph>.From(nint handle) => new CEditableMotionGraphImpl(handle);
+  static CEditableMotionGraph ISchemaClass<CEditableMotionGraph>.From(nint handle) => new CEditableMotionGraphImpl(handle);
 
 
 

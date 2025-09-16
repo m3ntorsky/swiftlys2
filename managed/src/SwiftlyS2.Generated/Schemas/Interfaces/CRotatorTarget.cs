@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRotatorTarget : CPointEntity, IConvertibleNativeHandle<CRotatorTarget> {
+public partial interface CRotatorTarget : CPointEntity, ISchemaClass<CRotatorTarget> {
 
-  static CRotatorTarget IConvertibleNativeHandle<CRotatorTarget>.From(nint handle) => new CRotatorTargetImpl(handle);
+  static CRotatorTarget ISchemaClass<CRotatorTarget>.From(nint handle) => new CRotatorTargetImpl(handle);
 
   
   public CEntityIOOutput OnArrivedAt { get; }

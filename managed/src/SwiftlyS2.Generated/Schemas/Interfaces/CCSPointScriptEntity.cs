@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPointScriptEntity : CBaseEntity, IConvertibleNativeHandle<CCSPointScriptEntity> {
+public partial interface CCSPointScriptEntity : CBaseEntity, ISchemaClass<CCSPointScriptEntity> {
 
-  static CCSPointScriptEntity IConvertibleNativeHandle<CCSPointScriptEntity>.From(nint handle) => new CCSPointScriptEntityImpl(handle);
+  static CCSPointScriptEntity ISchemaClass<CCSPointScriptEntity>.From(nint handle) => new CCSPointScriptEntityImpl(handle);
 
 
 

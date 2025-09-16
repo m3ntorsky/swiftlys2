@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvEntityIgniter : CBaseEntity, IConvertibleNativeHandle<CEnvEntityIgniter> {
+public partial interface CEnvEntityIgniter : CBaseEntity, ISchemaClass<CEnvEntityIgniter> {
 
-  static CEnvEntityIgniter IConvertibleNativeHandle<CEnvEntityIgniter>.From(nint handle) => new CEnvEntityIgniterImpl(handle);
+  static CEnvEntityIgniter ISchemaClass<CEnvEntityIgniter>.From(nint handle) => new CEnvEntityIgniterImpl(handle);
 
   
   public ref float Lifetime { get; }

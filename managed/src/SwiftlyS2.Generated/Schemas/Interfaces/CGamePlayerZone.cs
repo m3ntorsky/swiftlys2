@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGamePlayerZone : CRuleBrushEntity, IConvertibleNativeHandle<CGamePlayerZone> {
+public partial interface CGamePlayerZone : CRuleBrushEntity, ISchemaClass<CGamePlayerZone> {
 
-  static CGamePlayerZone IConvertibleNativeHandle<CGamePlayerZone>.From(nint handle) => new CGamePlayerZoneImpl(handle);
+  static CGamePlayerZone ISchemaClass<CGamePlayerZone>.From(nint handle) => new CGamePlayerZoneImpl(handle);
 
   
   public CEntityIOOutput OnPlayerInZone { get; }

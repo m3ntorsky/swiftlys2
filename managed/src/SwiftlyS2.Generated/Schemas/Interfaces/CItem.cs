@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CItem : CBaseAnimGraph, IConvertibleNativeHandle<CItem> {
+public partial interface CItem : CBaseAnimGraph, ISchemaClass<CItem> {
 
-  static CItem IConvertibleNativeHandle<CItem>.From(nint handle) => new CItemImpl(handle);
+  static CItem ISchemaClass<CItem>.From(nint handle) => new CItemImpl(handle);
 
   
   public CEntityIOOutput OnPlayerTouch { get; }

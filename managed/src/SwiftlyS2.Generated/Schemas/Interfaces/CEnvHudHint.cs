@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvHudHint : CPointEntity, IConvertibleNativeHandle<CEnvHudHint> {
+public partial interface CEnvHudHint : CPointEntity, ISchemaClass<CEnvHudHint> {
 
-  static CEnvHudHint IConvertibleNativeHandle<CEnvHudHint>.From(nint handle) => new CEnvHudHintImpl(handle);
+  static CEnvHudHint ISchemaClass<CEnvHudHint>.From(nint handle) => new CEnvHudHintImpl(handle);
 
   
   public ref CUtlSymbolLarge Message { get; }

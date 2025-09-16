@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PermEntityLumpData_t : ISchemaClass, IConvertibleNativeHandle<PermEntityLumpData_t> {
+public partial interface PermEntityLumpData_t : ISchemaClass<PermEntityLumpData_t> {
 
-  static PermEntityLumpData_t IConvertibleNativeHandle<PermEntityLumpData_t>.From(nint handle) => new PermEntityLumpData_tImpl(handle);
+  static PermEntityLumpData_t ISchemaClass<PermEntityLumpData_t>.From(nint handle) => new PermEntityLumpData_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

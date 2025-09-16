@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface WorldNode_t : ISchemaClass, IConvertibleNativeHandle<WorldNode_t> {
+public partial interface WorldNode_t : ISchemaClass<WorldNode_t> {
 
-  static WorldNode_t IConvertibleNativeHandle<WorldNode_t>.From(nint handle) => new WorldNode_tImpl(handle);
+  static WorldNode_t ISchemaClass<WorldNode_t>.From(nint handle) => new WorldNode_tImpl(handle);
 
   
   // CUtlVector< SceneObject_t >

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ScriptInfo_t : ISchemaClass, IConvertibleNativeHandle<ScriptInfo_t> {
+public partial interface ScriptInfo_t : ISchemaClass<ScriptInfo_t> {
 
-  static ScriptInfo_t IConvertibleNativeHandle<ScriptInfo_t>.From(nint handle) => new ScriptInfo_tImpl(handle);
+  static ScriptInfo_t ISchemaClass<ScriptInfo_t>.From(nint handle) => new ScriptInfo_tImpl(handle);
 
   
   public ref CUtlString Code { get; }

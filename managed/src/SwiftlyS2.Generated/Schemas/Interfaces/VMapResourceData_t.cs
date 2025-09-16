@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMapResourceData_t : ISchemaClass, IConvertibleNativeHandle<VMapResourceData_t> {
+public partial interface VMapResourceData_t : ISchemaClass<VMapResourceData_t> {
 
-  static VMapResourceData_t IConvertibleNativeHandle<VMapResourceData_t>.From(nint handle) => new VMapResourceData_tImpl(handle);
+  static VMapResourceData_t ISchemaClass<VMapResourceData_t>.From(nint handle) => new VMapResourceData_tImpl(handle);
 
 
 

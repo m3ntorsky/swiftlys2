@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysicsPropOverride : CPhysicsProp, IConvertibleNativeHandle<CPhysicsPropOverride> {
+public partial interface CPhysicsPropOverride : CPhysicsProp, ISchemaClass<CPhysicsPropOverride> {
 
-  static CPhysicsPropOverride IConvertibleNativeHandle<CPhysicsPropOverride>.From(nint handle) => new CPhysicsPropOverrideImpl(handle);
+  static CPhysicsPropOverride ISchemaClass<CPhysicsPropOverride>.From(nint handle) => new CPhysicsPropOverrideImpl(handle);
 
 
 

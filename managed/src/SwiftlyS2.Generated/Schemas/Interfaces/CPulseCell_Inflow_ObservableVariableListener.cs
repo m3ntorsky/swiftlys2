@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Inflow_ObservableVariableListener : CPulseCell_Inflow_BaseEntrypoint, IConvertibleNativeHandle<CPulseCell_Inflow_ObservableVariableListener> {
+public partial interface CPulseCell_Inflow_ObservableVariableListener : CPulseCell_Inflow_BaseEntrypoint, ISchemaClass<CPulseCell_Inflow_ObservableVariableListener> {
 
-  static CPulseCell_Inflow_ObservableVariableListener IConvertibleNativeHandle<CPulseCell_Inflow_ObservableVariableListener>.From(nint handle) => new CPulseCell_Inflow_ObservableVariableListenerImpl(handle);
+  static CPulseCell_Inflow_ObservableVariableListener ISchemaClass<CPulseCell_Inflow_ObservableVariableListener>.From(nint handle) => new CPulseCell_Inflow_ObservableVariableListenerImpl(handle);
 
   
   public PulseRuntimeBlackboardReferenceIndex_t BlackboardReference { get; }

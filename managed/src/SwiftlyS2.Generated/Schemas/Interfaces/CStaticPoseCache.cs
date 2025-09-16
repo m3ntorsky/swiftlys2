@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStaticPoseCache : ISchemaClass, IConvertibleNativeHandle<CStaticPoseCache> {
+public partial interface CStaticPoseCache : ISchemaClass<CStaticPoseCache> {
 
-  static CStaticPoseCache IConvertibleNativeHandle<CStaticPoseCache>.From(nint handle) => new CStaticPoseCacheImpl(handle);
+  static CStaticPoseCache ISchemaClass<CStaticPoseCache>.From(nint handle) => new CStaticPoseCacheImpl(handle);
 
   
   // CUtlVector< CCachedPose >

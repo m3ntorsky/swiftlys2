@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootStepTriggerUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CFootStepTriggerUpdateNode> {
+public partial interface CFootStepTriggerUpdateNode : CUnaryUpdateNode, ISchemaClass<CFootStepTriggerUpdateNode> {
 
-  static CFootStepTriggerUpdateNode IConvertibleNativeHandle<CFootStepTriggerUpdateNode>.From(nint handle) => new CFootStepTriggerUpdateNodeImpl(handle);
+  static CFootStepTriggerUpdateNode ISchemaClass<CFootStepTriggerUpdateNode>.From(nint handle) => new CFootStepTriggerUpdateNodeImpl(handle);
 
   
   // CUtlVector< FootStepTrigger >

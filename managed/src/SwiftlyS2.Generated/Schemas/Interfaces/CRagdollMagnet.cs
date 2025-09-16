@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollMagnet : CPointEntity, IConvertibleNativeHandle<CRagdollMagnet> {
+public partial interface CRagdollMagnet : CPointEntity, ISchemaClass<CRagdollMagnet> {
 
-  static CRagdollMagnet IConvertibleNativeHandle<CRagdollMagnet>.From(nint handle) => new CRagdollMagnetImpl(handle);
+  static CRagdollMagnet ISchemaClass<CRagdollMagnet>.From(nint handle) => new CRagdollMagnetImpl(handle);
 
   
   public ref bool Disabled { get; }

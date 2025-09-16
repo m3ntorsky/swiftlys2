@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSObserver_ObserverServices : CPlayer_ObserverServices, IConvertibleNativeHandle<CCSObserver_ObserverServices> {
+public partial interface CCSObserver_ObserverServices : CPlayer_ObserverServices, ISchemaClass<CCSObserver_ObserverServices> {
 
-  static CCSObserver_ObserverServices IConvertibleNativeHandle<CCSObserver_ObserverServices>.From(nint handle) => new CCSObserver_ObserverServicesImpl(handle);
+  static CCSObserver_ObserverServices ISchemaClass<CCSObserver_ObserverServices>.From(nint handle) => new CCSObserver_ObserverServicesImpl(handle);
 
 
 

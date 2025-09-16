@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupActionSoundeventClusterSchema : CSosGroupActionSchema, IConvertibleNativeHandle<CSosGroupActionSoundeventClusterSchema> {
+public partial interface CSosGroupActionSoundeventClusterSchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionSoundeventClusterSchema> {
 
-  static CSosGroupActionSoundeventClusterSchema IConvertibleNativeHandle<CSosGroupActionSoundeventClusterSchema>.From(nint handle) => new CSosGroupActionSoundeventClusterSchemaImpl(handle);
+  static CSosGroupActionSoundeventClusterSchema ISchemaClass<CSosGroupActionSoundeventClusterSchema>.From(nint handle) => new CSosGroupActionSoundeventClusterSchemaImpl(handle);
 
   
   public ref int MinNearby { get; }

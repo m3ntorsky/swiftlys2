@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysLength : CPhysConstraint, IConvertibleNativeHandle<CPhysLength> {
+public partial interface CPhysLength : CPhysConstraint, ISchemaClass<CPhysLength> {
 
-  static CPhysLength IConvertibleNativeHandle<CPhysLength>.From(nint handle) => new CPhysLengthImpl(handle);
+  static CPhysLength ISchemaClass<CPhysLength>.From(nint handle) => new CPhysLengthImpl(handle);
 
   
   public ISchemaFixedArray<Vector> Offset { get; }

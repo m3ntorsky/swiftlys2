@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLeafUpdateNode : CAnimUpdateNodeBase, IConvertibleNativeHandle<CLeafUpdateNode> {
+public partial interface CLeafUpdateNode : CAnimUpdateNodeBase, ISchemaClass<CLeafUpdateNode> {
 
-  static CLeafUpdateNode IConvertibleNativeHandle<CLeafUpdateNode>.From(nint handle) => new CLeafUpdateNodeImpl(handle);
+  static CLeafUpdateNode ISchemaClass<CLeafUpdateNode>.From(nint handle) => new CLeafUpdateNodeImpl(handle);
 
 
 

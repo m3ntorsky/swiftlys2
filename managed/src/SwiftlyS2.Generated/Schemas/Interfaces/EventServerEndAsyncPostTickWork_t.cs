@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventServerEndAsyncPostTickWork_t : ISchemaClass, IConvertibleNativeHandle<EventServerEndAsyncPostTickWork_t> {
+public partial interface EventServerEndAsyncPostTickWork_t : ISchemaClass<EventServerEndAsyncPostTickWork_t> {
 
-  static EventServerEndAsyncPostTickWork_t IConvertibleNativeHandle<EventServerEndAsyncPostTickWork_t>.From(nint handle) => new EventServerEndAsyncPostTickWork_tImpl(handle);
+  static EventServerEndAsyncPostTickWork_t ISchemaClass<EventServerEndAsyncPostTickWork_t>.From(nint handle) => new EventServerEndAsyncPostTickWork_tImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CScriptNavBlocker : CFuncNavBlocker, IConvertibleNativeHandle<CScriptNavBlocker> {
+public partial interface CScriptNavBlocker : CFuncNavBlocker, ISchemaClass<CScriptNavBlocker> {
 
-  static CScriptNavBlocker IConvertibleNativeHandle<CScriptNavBlocker>.From(nint handle) => new CScriptNavBlockerImpl(handle);
+  static CScriptNavBlocker ISchemaClass<CScriptNavBlocker>.From(nint handle) => new CScriptNavBlockerImpl(handle);
 
   
   public ref Vector Extent { get; }

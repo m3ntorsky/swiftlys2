@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFogTrigger : CBaseTrigger, IConvertibleNativeHandle<CFogTrigger> {
+public partial interface CFogTrigger : CBaseTrigger, ISchemaClass<CFogTrigger> {
 
-  static CFogTrigger IConvertibleNativeHandle<CFogTrigger>.From(nint handle) => new CFogTriggerImpl(handle);
+  static CFogTrigger ISchemaClass<CFogTrigger>.From(nint handle) => new CFogTriggerImpl(handle);
 
   
   public fogparams_t Fog { get; }

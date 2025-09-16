@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateOnModelAtHeight : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateOnModelAtHeight> {
+public partial interface C_INIT_CreateOnModelAtHeight : CParticleFunctionInitializer, ISchemaClass<C_INIT_CreateOnModelAtHeight> {
 
-  static C_INIT_CreateOnModelAtHeight IConvertibleNativeHandle<C_INIT_CreateOnModelAtHeight>.From(nint handle) => new C_INIT_CreateOnModelAtHeightImpl(handle);
+  static C_INIT_CreateOnModelAtHeight ISchemaClass<C_INIT_CreateOnModelAtHeight>.From(nint handle) => new C_INIT_CreateOnModelAtHeightImpl(handle);
 
   
   public ref bool UseBones { get; }

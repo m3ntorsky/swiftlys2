@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSpotlightEnd : CBaseModelEntity, IConvertibleNativeHandle<CSpotlightEnd> {
+public partial interface CSpotlightEnd : CBaseModelEntity, ISchemaClass<CSpotlightEnd> {
 
-  static CSpotlightEnd IConvertibleNativeHandle<CSpotlightEnd>.From(nint handle) => new CSpotlightEndImpl(handle);
+  static CSpotlightEnd ISchemaClass<CSpotlightEnd>.From(nint handle) => new CSpotlightEndImpl(handle);
 
   
   public ref float LightScale { get; }

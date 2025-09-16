@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncElectrifiedVolume : CFuncBrush, IConvertibleNativeHandle<CFuncElectrifiedVolume> {
+public partial interface CFuncElectrifiedVolume : CFuncBrush, ISchemaClass<CFuncElectrifiedVolume> {
 
-  static CFuncElectrifiedVolume IConvertibleNativeHandle<CFuncElectrifiedVolume>.From(nint handle) => new CFuncElectrifiedVolumeImpl(handle);
+  static CFuncElectrifiedVolume ISchemaClass<CFuncElectrifiedVolume>.From(nint handle) => new CFuncElectrifiedVolumeImpl(handle);
 
   
   public ref CUtlSymbolLarge EffectName { get; }

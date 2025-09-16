@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInButtonState : ISchemaClass, IConvertibleNativeHandle<CInButtonState> {
+public partial interface CInButtonState : ISchemaClass<CInButtonState> {
 
-  static CInButtonState IConvertibleNativeHandle<CInButtonState>.From(nint handle) => new CInButtonStateImpl(handle);
+  static CInButtonState ISchemaClass<CInButtonState>.From(nint handle) => new CInButtonStateImpl(handle);
 
   
   public ISchemaFixedArray<ulong> ButtonStates { get; }

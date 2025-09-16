@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavHullPresetVData : ISchemaClass, IConvertibleNativeHandle<CNavHullPresetVData> {
+public partial interface CNavHullPresetVData : ISchemaClass<CNavHullPresetVData> {
 
-  static CNavHullPresetVData IConvertibleNativeHandle<CNavHullPresetVData>.From(nint handle) => new CNavHullPresetVDataImpl(handle);
+  static CNavHullPresetVData ISchemaClass<CNavHullPresetVData>.From(nint handle) => new CNavHullPresetVDataImpl(handle);
 
   
   public ref CUtlVector<CUtlString> NavHulls { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_InitialVelocityNoise : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_InitialVelocityNoise> {
+public partial interface C_INIT_InitialVelocityNoise : CParticleFunctionInitializer, ISchemaClass<C_INIT_InitialVelocityNoise> {
 
-  static C_INIT_InitialVelocityNoise IConvertibleNativeHandle<C_INIT_InitialVelocityNoise>.From(nint handle) => new C_INIT_InitialVelocityNoiseImpl(handle);
+  static C_INIT_InitialVelocityNoise ISchemaClass<C_INIT_InitialVelocityNoise>.From(nint handle) => new C_INIT_InitialVelocityNoiseImpl(handle);
 
   
   public ref Vector AbsVal { get; }

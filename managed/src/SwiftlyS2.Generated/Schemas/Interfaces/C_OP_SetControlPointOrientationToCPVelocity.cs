@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointOrientationToCPVelocity : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetControlPointOrientationToCPVelocity> {
+public partial interface C_OP_SetControlPointOrientationToCPVelocity : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetControlPointOrientationToCPVelocity> {
 
-  static C_OP_SetControlPointOrientationToCPVelocity IConvertibleNativeHandle<C_OP_SetControlPointOrientationToCPVelocity>.From(nint handle) => new C_OP_SetControlPointOrientationToCPVelocityImpl(handle);
+  static C_OP_SetControlPointOrientationToCPVelocity ISchemaClass<C_OP_SetControlPointOrientationToCPVelocity>.From(nint handle) => new C_OP_SetControlPointOrientationToCPVelocityImpl(handle);
 
   
   public ref int CPInput { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGameScriptedMoveDef_t : ISchemaClass, IConvertibleNativeHandle<CGameScriptedMoveDef_t> {
+public partial interface CGameScriptedMoveDef_t : ISchemaClass<CGameScriptedMoveDef_t> {
 
-  static CGameScriptedMoveDef_t IConvertibleNativeHandle<CGameScriptedMoveDef_t>.From(nint handle) => new CGameScriptedMoveDef_tImpl(handle);
+  static CGameScriptedMoveDef_t ISchemaClass<CGameScriptedMoveDef_t>.From(nint handle) => new CGameScriptedMoveDef_tImpl(handle);
 
   
   public ref Vector DestOffset { get; }

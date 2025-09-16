@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseTestScriptLib : ISchemaClass, IConvertibleNativeHandle<CPulseTestScriptLib> {
+public partial interface CPulseTestScriptLib : ISchemaClass<CPulseTestScriptLib> {
 
-  static CPulseTestScriptLib IConvertibleNativeHandle<CPulseTestScriptLib>.From(nint handle) => new CPulseTestScriptLibImpl(handle);
+  static CPulseTestScriptLib ISchemaClass<CPulseTestScriptLib>.From(nint handle) => new CPulseTestScriptLibImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVariantDefaultAllocator : ISchemaClass, IConvertibleNativeHandle<CVariantDefaultAllocator> {
+public partial interface CVariantDefaultAllocator : ISchemaClass<CVariantDefaultAllocator> {
 
-  static CVariantDefaultAllocator IConvertibleNativeHandle<CVariantDefaultAllocator>.From(nint handle) => new CVariantDefaultAllocatorImpl(handle);
+  static CVariantDefaultAllocator ISchemaClass<CVariantDefaultAllocator>.From(nint handle) => new CVariantDefaultAllocatorImpl(handle);
 
 
 

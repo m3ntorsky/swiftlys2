@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimGraphDebugReplay : ISchemaClass, IConvertibleNativeHandle<CAnimGraphDebugReplay> {
+public partial interface CAnimGraphDebugReplay : ISchemaClass<CAnimGraphDebugReplay> {
 
-  static CAnimGraphDebugReplay IConvertibleNativeHandle<CAnimGraphDebugReplay>.From(nint handle) => new CAnimGraphDebugReplayImpl(handle);
+  static CAnimGraphDebugReplay ISchemaClass<CAnimGraphDebugReplay>.From(nint handle) => new CAnimGraphDebugReplayImpl(handle);
 
   
   public ref CUtlString AnimGraphFileName { get; }

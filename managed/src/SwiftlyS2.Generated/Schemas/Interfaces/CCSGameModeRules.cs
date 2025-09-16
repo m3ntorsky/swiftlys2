@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSGameModeRules : ISchemaClass, IConvertibleNativeHandle<CCSGameModeRules> {
+public partial interface CCSGameModeRules : ISchemaClass<CCSGameModeRules> {
 
-  static CCSGameModeRules IConvertibleNativeHandle<CCSGameModeRules>.From(nint handle) => new CCSGameModeRulesImpl(handle);
+  static CCSGameModeRules ISchemaClass<CCSGameModeRules>.From(nint handle) => new CCSGameModeRulesImpl(handle);
 
   
   public CNetworkVarChainer __m_pChainEntity { get; }

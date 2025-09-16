@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ParamSpanSample_t : ISchemaClass, IConvertibleNativeHandle<ParamSpanSample_t> {
+public partial interface ParamSpanSample_t : ISchemaClass<ParamSpanSample_t> {
 
-  static ParamSpanSample_t IConvertibleNativeHandle<ParamSpanSample_t>.From(nint handle) => new ParamSpanSample_tImpl(handle);
+  static ParamSpanSample_t ISchemaClass<ParamSpanSample_t>.From(nint handle) => new ParamSpanSample_tImpl(handle);
 
   
   // CAnimVariant

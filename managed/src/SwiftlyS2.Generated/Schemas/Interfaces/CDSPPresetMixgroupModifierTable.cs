@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDSPPresetMixgroupModifierTable : ISchemaClass, IConvertibleNativeHandle<CDSPPresetMixgroupModifierTable> {
+public partial interface CDSPPresetMixgroupModifierTable : ISchemaClass<CDSPPresetMixgroupModifierTable> {
 
-  static CDSPPresetMixgroupModifierTable IConvertibleNativeHandle<CDSPPresetMixgroupModifierTable>.From(nint handle) => new CDSPPresetMixgroupModifierTableImpl(handle);
+  static CDSPPresetMixgroupModifierTable ISchemaClass<CDSPPresetMixgroupModifierTable>.From(nint handle) => new CDSPPresetMixgroupModifierTableImpl(handle);
 
   
   // CUtlVector< CDspPresetModifierList >

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFloatAngleMathNode__CDefinition : CNmFloatValueNode__CDefinition, IConvertibleNativeHandle<CNmFloatAngleMathNode__CDefinition> {
+public partial interface CNmFloatAngleMathNode__CDefinition : CNmFloatValueNode__CDefinition, ISchemaClass<CNmFloatAngleMathNode__CDefinition> {
 
-  static CNmFloatAngleMathNode__CDefinition IConvertibleNativeHandle<CNmFloatAngleMathNode__CDefinition>.From(nint handle) => new CNmFloatAngleMathNode__CDefinitionImpl(handle);
+  static CNmFloatAngleMathNode__CDefinition ISchemaClass<CNmFloatAngleMathNode__CDefinition>.From(nint handle) => new CNmFloatAngleMathNode__CDefinitionImpl(handle);
 
   
   public ref short InputValueNodeIdx { get; }

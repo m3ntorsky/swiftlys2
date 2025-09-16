@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootstepTableHandle : ISchemaClass, IConvertibleNativeHandle<CFootstepTableHandle> {
+public partial interface CFootstepTableHandle : ISchemaClass<CFootstepTableHandle> {
 
-  static CFootstepTableHandle IConvertibleNativeHandle<CFootstepTableHandle>.From(nint handle) => new CFootstepTableHandleImpl(handle);
+  static CFootstepTableHandle ISchemaClass<CFootstepTableHandle>.From(nint handle) => new CFootstepTableHandleImpl(handle);
 
 
 

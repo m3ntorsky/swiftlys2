@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundOpvarSetEntity : CBaseEntity, IConvertibleNativeHandle<CSoundOpvarSetEntity> {
+public partial interface CSoundOpvarSetEntity : CBaseEntity, ISchemaClass<CSoundOpvarSetEntity> {
 
-  static CSoundOpvarSetEntity IConvertibleNativeHandle<CSoundOpvarSetEntity>.From(nint handle) => new CSoundOpvarSetEntityImpl(handle);
+  static CSoundOpvarSetEntity ISchemaClass<CSoundOpvarSetEntity>.From(nint handle) => new CSoundOpvarSetEntityImpl(handle);
 
   
   public ref CUtlSymbolLarge StackName { get; }

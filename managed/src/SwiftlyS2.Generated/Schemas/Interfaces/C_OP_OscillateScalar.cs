@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_OscillateScalar : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_OscillateScalar> {
+public partial interface C_OP_OscillateScalar : CParticleFunctionOperator, ISchemaClass<C_OP_OscillateScalar> {
 
-  static C_OP_OscillateScalar IConvertibleNativeHandle<C_OP_OscillateScalar>.From(nint handle) => new C_OP_OscillateScalarImpl(handle);
+  static C_OP_OscillateScalar ISchemaClass<C_OP_OscillateScalar>.From(nint handle) => new C_OP_OscillateScalarImpl(handle);
 
   
   public ref float RateMin { get; }

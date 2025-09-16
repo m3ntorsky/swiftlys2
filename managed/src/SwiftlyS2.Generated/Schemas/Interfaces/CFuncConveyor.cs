@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncConveyor : CBaseModelEntity, IConvertibleNativeHandle<CFuncConveyor> {
+public partial interface CFuncConveyor : CBaseModelEntity, ISchemaClass<CFuncConveyor> {
 
-  static CFuncConveyor IConvertibleNativeHandle<CFuncConveyor>.From(nint handle) => new CFuncConveyorImpl(handle);
+  static CFuncConveyor ISchemaClass<CFuncConveyor>.From(nint handle) => new CFuncConveyorImpl(handle);
 
   
   public ref CUtlSymbolLarge ConveyorModels { get; }

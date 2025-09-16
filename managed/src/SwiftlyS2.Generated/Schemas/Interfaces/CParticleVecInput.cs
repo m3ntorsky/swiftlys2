@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleVecInput : CParticleInput, IConvertibleNativeHandle<CParticleVecInput> {
+public partial interface CParticleVecInput : CParticleInput, ISchemaClass<CParticleVecInput> {
 
-  static CParticleVecInput IConvertibleNativeHandle<CParticleVecInput>.From(nint handle) => new CParticleVecInputImpl(handle);
+  static CParticleVecInput ISchemaClass<CParticleVecInput>.From(nint handle) => new CParticleVecInputImpl(handle);
 
   
   public ref ParticleVecType_t Type { get; }

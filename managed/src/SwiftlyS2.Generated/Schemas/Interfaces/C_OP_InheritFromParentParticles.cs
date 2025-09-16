@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_InheritFromParentParticles : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_InheritFromParentParticles> {
+public partial interface C_OP_InheritFromParentParticles : CParticleFunctionOperator, ISchemaClass<C_OP_InheritFromParentParticles> {
 
-  static C_OP_InheritFromParentParticles IConvertibleNativeHandle<C_OP_InheritFromParentParticles>.From(nint handle) => new C_OP_InheritFromParentParticlesImpl(handle);
+  static C_OP_InheritFromParentParticles ISchemaClass<C_OP_InheritFromParentParticles>.From(nint handle) => new C_OP_InheritFromParentParticlesImpl(handle);
 
   
   public ref float Scale { get; }

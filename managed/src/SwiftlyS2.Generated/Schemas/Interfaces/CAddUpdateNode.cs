@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAddUpdateNode : CBinaryUpdateNode, IConvertibleNativeHandle<CAddUpdateNode> {
+public partial interface CAddUpdateNode : CBinaryUpdateNode, ISchemaClass<CAddUpdateNode> {
 
-  static CAddUpdateNode IConvertibleNativeHandle<CAddUpdateNode>.From(nint handle) => new CAddUpdateNodeImpl(handle);
+  static CAddUpdateNode ISchemaClass<CAddUpdateNode>.From(nint handle) => new CAddUpdateNodeImpl(handle);
 
   
   public ref BinaryNodeChildOption FootMotionTiming { get; }

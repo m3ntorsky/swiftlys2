@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNetworkVarChainer : ISchemaClass, IConvertibleNativeHandle<CNetworkVarChainer> {
+public partial interface CNetworkVarChainer : ISchemaClass<CNetworkVarChainer> {
 
-  static CNetworkVarChainer IConvertibleNativeHandle<CNetworkVarChainer>.From(nint handle) => new CNetworkVarChainerImpl(handle);
+  static CNetworkVarChainer ISchemaClass<CNetworkVarChainer>.From(nint handle) => new CNetworkVarChainerImpl(handle);
 
   
   public ChangeAccessorFieldPathIndex_t PathIndex { get; }

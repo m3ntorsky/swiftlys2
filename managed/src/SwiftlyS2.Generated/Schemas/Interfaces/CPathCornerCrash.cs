@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathCornerCrash : CPathCorner, IConvertibleNativeHandle<CPathCornerCrash> {
+public partial interface CPathCornerCrash : CPathCorner, ISchemaClass<CPathCornerCrash> {
 
-  static CPathCornerCrash IConvertibleNativeHandle<CPathCornerCrash>.From(nint handle) => new CPathCornerCrashImpl(handle);
+  static CPathCornerCrash ISchemaClass<CPathCornerCrash>.From(nint handle) => new CPathCornerCrashImpl(handle);
 
 
 

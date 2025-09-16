@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RemapTransformToVector : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RemapTransformToVector> {
+public partial interface C_INIT_RemapTransformToVector : CParticleFunctionInitializer, ISchemaClass<C_INIT_RemapTransformToVector> {
 
-  static C_INIT_RemapTransformToVector IConvertibleNativeHandle<C_INIT_RemapTransformToVector>.From(nint handle) => new C_INIT_RemapTransformToVectorImpl(handle);
+  static C_INIT_RemapTransformToVector ISchemaClass<C_INIT_RemapTransformToVector>.From(nint handle) => new C_INIT_RemapTransformToVectorImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

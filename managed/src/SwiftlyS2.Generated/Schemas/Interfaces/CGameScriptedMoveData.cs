@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGameScriptedMoveData : ISchemaClass, IConvertibleNativeHandle<CGameScriptedMoveData> {
+public partial interface CGameScriptedMoveData : ISchemaClass<CGameScriptedMoveData> {
 
-  static CGameScriptedMoveData IConvertibleNativeHandle<CGameScriptedMoveData>.From(nint handle) => new CGameScriptedMoveDataImpl(handle);
+  static CGameScriptedMoveData ISchemaClass<CGameScriptedMoveData>.From(nint handle) => new CGameScriptedMoveDataImpl(handle);
 
   
   public ref Vector AccumulatedRootMotion { get; }

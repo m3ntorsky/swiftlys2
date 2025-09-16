@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapDistanceToLineSegmentBase : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapDistanceToLineSegmentBase> {
+public partial interface C_OP_RemapDistanceToLineSegmentBase : CParticleFunctionOperator, ISchemaClass<C_OP_RemapDistanceToLineSegmentBase> {
 
-  static C_OP_RemapDistanceToLineSegmentBase IConvertibleNativeHandle<C_OP_RemapDistanceToLineSegmentBase>.From(nint handle) => new C_OP_RemapDistanceToLineSegmentBaseImpl(handle);
+  static C_OP_RemapDistanceToLineSegmentBase ISchemaClass<C_OP_RemapDistanceToLineSegmentBase>.From(nint handle) => new C_OP_RemapDistanceToLineSegmentBaseImpl(handle);
 
   
   public ref int CP0 { get; }

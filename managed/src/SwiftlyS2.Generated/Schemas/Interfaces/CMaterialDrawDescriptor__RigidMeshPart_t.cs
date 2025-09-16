@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMaterialDrawDescriptor__RigidMeshPart_t : ISchemaClass, IConvertibleNativeHandle<CMaterialDrawDescriptor__RigidMeshPart_t> {
+public partial interface CMaterialDrawDescriptor__RigidMeshPart_t : ISchemaClass<CMaterialDrawDescriptor__RigidMeshPart_t> {
 
-  static CMaterialDrawDescriptor__RigidMeshPart_t IConvertibleNativeHandle<CMaterialDrawDescriptor__RigidMeshPart_t>.From(nint handle) => new CMaterialDrawDescriptor__RigidMeshPart_tImpl(handle);
+  static CMaterialDrawDescriptor__RigidMeshPart_t ISchemaClass<CMaterialDrawDescriptor__RigidMeshPart_t>.From(nint handle) => new CMaterialDrawDescriptor__RigidMeshPart_tImpl(handle);
 
   
   public ref ushort RigidBLASIndex { get; }

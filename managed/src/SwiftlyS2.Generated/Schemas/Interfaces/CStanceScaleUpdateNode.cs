@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStanceScaleUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CStanceScaleUpdateNode> {
+public partial interface CStanceScaleUpdateNode : CUnaryUpdateNode, ISchemaClass<CStanceScaleUpdateNode> {
 
-  static CStanceScaleUpdateNode IConvertibleNativeHandle<CStanceScaleUpdateNode>.From(nint handle) => new CStanceScaleUpdateNodeImpl(handle);
+  static CStanceScaleUpdateNode ISchemaClass<CStanceScaleUpdateNode>.From(nint handle) => new CStanceScaleUpdateNodeImpl(handle);
 
   
   public CAnimParamHandle Param { get; }

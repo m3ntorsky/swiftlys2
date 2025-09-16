@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VertexPositionNormal_t : ISchemaClass, IConvertibleNativeHandle<VertexPositionNormal_t> {
+public partial interface VertexPositionNormal_t : ISchemaClass<VertexPositionNormal_t> {
 
-  static VertexPositionNormal_t IConvertibleNativeHandle<VertexPositionNormal_t>.From(nint handle) => new VertexPositionNormal_tImpl(handle);
+  static VertexPositionNormal_t ISchemaClass<VertexPositionNormal_t>.From(nint handle) => new VertexPositionNormal_tImpl(handle);
 
   
   public ref Vector Position { get; }

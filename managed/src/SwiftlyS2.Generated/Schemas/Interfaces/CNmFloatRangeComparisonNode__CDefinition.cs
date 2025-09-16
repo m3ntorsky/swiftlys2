@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFloatRangeComparisonNode__CDefinition : CNmBoolValueNode__CDefinition, IConvertibleNativeHandle<CNmFloatRangeComparisonNode__CDefinition> {
+public partial interface CNmFloatRangeComparisonNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmFloatRangeComparisonNode__CDefinition> {
 
-  static CNmFloatRangeComparisonNode__CDefinition IConvertibleNativeHandle<CNmFloatRangeComparisonNode__CDefinition>.From(nint handle) => new CNmFloatRangeComparisonNode__CDefinitionImpl(handle);
+  static CNmFloatRangeComparisonNode__CDefinition ISchemaClass<CNmFloatRangeComparisonNode__CDefinition>.From(nint handle) => new CNmFloatRangeComparisonNode__CDefinitionImpl(handle);
 
   
   // Range_t

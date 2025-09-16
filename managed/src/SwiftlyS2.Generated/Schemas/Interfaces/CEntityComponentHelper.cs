@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEntityComponentHelper : ISchemaClass, IConvertibleNativeHandle<CEntityComponentHelper> {
+public partial interface CEntityComponentHelper : ISchemaClass<CEntityComponentHelper> {
 
-  static CEntityComponentHelper IConvertibleNativeHandle<CEntityComponentHelper>.From(nint handle) => new CEntityComponentHelperImpl(handle);
+  static CEntityComponentHelper ISchemaClass<CEntityComponentHelper>.From(nint handle) => new CEntityComponentHelperImpl(handle);
 
   
   public ref uint Flags { get; }

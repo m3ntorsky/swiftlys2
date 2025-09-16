@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ColorInterpolateRandom : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_ColorInterpolateRandom> {
+public partial interface C_OP_ColorInterpolateRandom : CParticleFunctionOperator, ISchemaClass<C_OP_ColorInterpolateRandom> {
 
-  static C_OP_ColorInterpolateRandom IConvertibleNativeHandle<C_OP_ColorInterpolateRandom>.From(nint handle) => new C_OP_ColorInterpolateRandomImpl(handle);
+  static C_OP_ColorInterpolateRandom ISchemaClass<C_OP_ColorInterpolateRandom>.From(nint handle) => new C_OP_ColorInterpolateRandomImpl(handle);
 
   
   public ref Color ColorFadeMin { get; }

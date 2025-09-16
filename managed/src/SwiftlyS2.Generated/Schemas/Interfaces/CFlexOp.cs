@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFlexOp : ISchemaClass, IConvertibleNativeHandle<CFlexOp> {
+public partial interface CFlexOp : ISchemaClass<CFlexOp> {
 
-  static CFlexOp IConvertibleNativeHandle<CFlexOp>.From(nint handle) => new CFlexOpImpl(handle);
+  static CFlexOp ISchemaClass<CFlexOp>.From(nint handle) => new CFlexOpImpl(handle);
 
   
   public ref FlexOpCode_t OpCode { get; }

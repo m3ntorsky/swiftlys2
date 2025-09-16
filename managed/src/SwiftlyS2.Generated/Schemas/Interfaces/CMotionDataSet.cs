@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionDataSet : ISchemaClass, IConvertibleNativeHandle<CMotionDataSet> {
+public partial interface CMotionDataSet : ISchemaClass<CMotionDataSet> {
 
-  static CMotionDataSet IConvertibleNativeHandle<CMotionDataSet>.From(nint handle) => new CMotionDataSetImpl(handle);
+  static CMotionDataSet ISchemaClass<CMotionDataSet>.From(nint handle) => new CMotionDataSetImpl(handle);
 
   
   // CUtlVector< CMotionGraphGroup >

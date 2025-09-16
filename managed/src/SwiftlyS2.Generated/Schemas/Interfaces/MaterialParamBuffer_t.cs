@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MaterialParamBuffer_t : MaterialParam_t, IConvertibleNativeHandle<MaterialParamBuffer_t> {
+public partial interface MaterialParamBuffer_t : MaterialParam_t, ISchemaClass<MaterialParamBuffer_t> {
 
-  static MaterialParamBuffer_t IConvertibleNativeHandle<MaterialParamBuffer_t>.From(nint handle) => new MaterialParamBuffer_tImpl(handle);
+  static MaterialParamBuffer_t ISchemaClass<MaterialParamBuffer_t>.From(nint handle) => new MaterialParamBuffer_tImpl(handle);
 
   
   public ref CUtlBinaryBlock Value { get; }

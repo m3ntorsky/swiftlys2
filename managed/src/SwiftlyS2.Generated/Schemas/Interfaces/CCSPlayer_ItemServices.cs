@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayer_ItemServices : CPlayer_ItemServices, IConvertibleNativeHandle<CCSPlayer_ItemServices> {
+public partial interface CCSPlayer_ItemServices : CPlayer_ItemServices, ISchemaClass<CCSPlayer_ItemServices> {
 
-  static CCSPlayer_ItemServices IConvertibleNativeHandle<CCSPlayer_ItemServices>.From(nint handle) => new CCSPlayer_ItemServicesImpl(handle);
+  static CCSPlayer_ItemServices ISchemaClass<CCSPlayer_ItemServices>.From(nint handle) => new CCSPlayer_ItemServicesImpl(handle);
 
   
   public ref bool HasDefuser { get; }

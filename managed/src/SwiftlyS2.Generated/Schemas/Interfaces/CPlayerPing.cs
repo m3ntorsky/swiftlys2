@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlayerPing : CBaseEntity, IConvertibleNativeHandle<CPlayerPing> {
+public partial interface CPlayerPing : CBaseEntity, ISchemaClass<CPlayerPing> {
 
-  static CPlayerPing IConvertibleNativeHandle<CPlayerPing>.From(nint handle) => new CPlayerPingImpl(handle);
+  static CPlayerPing ISchemaClass<CPlayerPing>.From(nint handle) => new CPlayerPingImpl(handle);
 
   
   public ref CHandle<CCSPlayerPawn> Player { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CZeroPoseUpdateNode : CLeafUpdateNode, IConvertibleNativeHandle<CZeroPoseUpdateNode> {
+public partial interface CZeroPoseUpdateNode : CLeafUpdateNode, ISchemaClass<CZeroPoseUpdateNode> {
 
-  static CZeroPoseUpdateNode IConvertibleNativeHandle<CZeroPoseUpdateNode>.From(nint handle) => new CZeroPoseUpdateNodeImpl(handle);
+  static CZeroPoseUpdateNode ISchemaClass<CZeroPoseUpdateNode>.From(nint handle) => new CZeroPoseUpdateNodeImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CServerRagdollTrigger : CBaseTrigger, IConvertibleNativeHandle<CServerRagdollTrigger> {
+public partial interface CServerRagdollTrigger : CBaseTrigger, ISchemaClass<CServerRagdollTrigger> {
 
-  static CServerRagdollTrigger IConvertibleNativeHandle<CServerRagdollTrigger>.From(nint handle) => new CServerRagdollTriggerImpl(handle);
+  static CServerRagdollTrigger ISchemaClass<CServerRagdollTrigger>.From(nint handle) => new CServerRagdollTriggerImpl(handle);
 
 
 

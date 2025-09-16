@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncMover : CBaseModelEntity, IConvertibleNativeHandle<CFuncMover> {
+public partial interface CFuncMover : CBaseModelEntity, ISchemaClass<CFuncMover> {
 
-  static CFuncMover IConvertibleNativeHandle<CFuncMover>.From(nint handle) => new CFuncMoverImpl(handle);
+  static CFuncMover ISchemaClass<CFuncMover>.From(nint handle) => new CFuncMoverImpl(handle);
 
   
   public ref CUtlSymbolLarge PathName { get; }

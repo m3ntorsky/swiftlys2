@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicDistanceAutosave : CLogicalEntity, IConvertibleNativeHandle<CLogicDistanceAutosave> {
+public partial interface CLogicDistanceAutosave : CLogicalEntity, ISchemaClass<CLogicDistanceAutosave> {
 
-  static CLogicDistanceAutosave IConvertibleNativeHandle<CLogicDistanceAutosave>.From(nint handle) => new CLogicDistanceAutosaveImpl(handle);
+  static CLogicDistanceAutosave ISchemaClass<CLogicDistanceAutosave>.From(nint handle) => new CLogicDistanceAutosaveImpl(handle);
 
   
   public ref CUtlSymbolLarge TargetEntity { get; }

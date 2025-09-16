@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_EndCapTimedDecay : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_EndCapTimedDecay> {
+public partial interface C_OP_EndCapTimedDecay : CParticleFunctionOperator, ISchemaClass<C_OP_EndCapTimedDecay> {
 
-  static C_OP_EndCapTimedDecay IConvertibleNativeHandle<C_OP_EndCapTimedDecay>.From(nint handle) => new C_OP_EndCapTimedDecayImpl(handle);
+  static C_OP_EndCapTimedDecay ISchemaClass<C_OP_EndCapTimedDecay>.From(nint handle) => new C_OP_EndCapTimedDecayImpl(handle);
 
   
   public ref float DecayTime { get; }

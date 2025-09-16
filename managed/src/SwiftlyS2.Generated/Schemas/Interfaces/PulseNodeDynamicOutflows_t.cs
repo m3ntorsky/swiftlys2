@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseNodeDynamicOutflows_t : ISchemaClass, IConvertibleNativeHandle<PulseNodeDynamicOutflows_t> {
+public partial interface PulseNodeDynamicOutflows_t : ISchemaClass<PulseNodeDynamicOutflows_t> {
 
-  static PulseNodeDynamicOutflows_t IConvertibleNativeHandle<PulseNodeDynamicOutflows_t>.From(nint handle) => new PulseNodeDynamicOutflows_tImpl(handle);
+  static PulseNodeDynamicOutflows_t ISchemaClass<PulseNodeDynamicOutflows_t>.From(nint handle) => new PulseNodeDynamicOutflows_tImpl(handle);
 
   
   // CUtlVector< PulseNodeDynamicOutflows_t::DynamicOutflow_t >

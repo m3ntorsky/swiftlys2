@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_EndCapTimedFreeze : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_EndCapTimedFreeze> {
+public partial interface C_OP_EndCapTimedFreeze : CParticleFunctionOperator, ISchemaClass<C_OP_EndCapTimedFreeze> {
 
-  static C_OP_EndCapTimedFreeze IConvertibleNativeHandle<C_OP_EndCapTimedFreeze>.From(nint handle) => new C_OP_EndCapTimedFreezeImpl(handle);
+  static C_OP_EndCapTimedFreeze ISchemaClass<C_OP_EndCapTimedFreeze>.From(nint handle) => new C_OP_EndCapTimedFreezeImpl(handle);
 
   
   public CParticleCollectionFloatInput FreezeTime { get; }

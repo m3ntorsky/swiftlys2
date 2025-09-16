@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseDoor : CBaseToggle, IConvertibleNativeHandle<CBaseDoor> {
+public partial interface CBaseDoor : CBaseToggle, ISchemaClass<CBaseDoor> {
 
-  static CBaseDoor IConvertibleNativeHandle<CBaseDoor>.From(nint handle) => new CBaseDoorImpl(handle);
+  static CBaseDoor ISchemaClass<CBaseDoor>.From(nint handle) => new CBaseDoorImpl(handle);
 
   
   public ref QAngle MoveEntitySpace { get; }

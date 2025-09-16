@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointValueRemapper : CBaseEntity, IConvertibleNativeHandle<CPointValueRemapper> {
+public partial interface CPointValueRemapper : CBaseEntity, ISchemaClass<CPointValueRemapper> {
 
-  static CPointValueRemapper IConvertibleNativeHandle<CPointValueRemapper>.From(nint handle) => new CPointValueRemapperImpl(handle);
+  static CPointValueRemapper ISchemaClass<CPointValueRemapper>.From(nint handle) => new CPointValueRemapperImpl(handle);
 
   
   public ref bool Disabled { get; }

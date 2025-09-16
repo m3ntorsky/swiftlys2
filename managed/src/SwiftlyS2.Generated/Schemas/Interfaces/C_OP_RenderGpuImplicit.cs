@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderGpuImplicit : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderGpuImplicit> {
+public partial interface C_OP_RenderGpuImplicit : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderGpuImplicit> {
 
-  static C_OP_RenderGpuImplicit IConvertibleNativeHandle<C_OP_RenderGpuImplicit>.From(nint handle) => new C_OP_RenderGpuImplicitImpl(handle);
+  static C_OP_RenderGpuImplicit ISchemaClass<C_OP_RenderGpuImplicit>.From(nint handle) => new C_OP_RenderGpuImplicitImpl(handle);
 
   
   public ref bool UsePerParticleRadius { get; }

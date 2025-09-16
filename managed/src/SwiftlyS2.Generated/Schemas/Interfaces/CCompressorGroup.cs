@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCompressorGroup : ISchemaClass, IConvertibleNativeHandle<CCompressorGroup> {
+public partial interface CCompressorGroup : ISchemaClass<CCompressorGroup> {
 
-  static CCompressorGroup IConvertibleNativeHandle<CCompressorGroup>.From(nint handle) => new CCompressorGroupImpl(handle);
+  static CCompressorGroup ISchemaClass<CCompressorGroup>.From(nint handle) => new CCompressorGroupImpl(handle);
 
   
   public ref int TotalElementCount { get; }

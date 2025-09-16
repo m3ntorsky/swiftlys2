@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointClientUIWorldTextPanel : CPointClientUIWorldPanel, IConvertibleNativeHandle<CPointClientUIWorldTextPanel> {
+public partial interface CPointClientUIWorldTextPanel : CPointClientUIWorldPanel, ISchemaClass<CPointClientUIWorldTextPanel> {
 
-  static CPointClientUIWorldTextPanel IConvertibleNativeHandle<CPointClientUIWorldTextPanel>.From(nint handle) => new CPointClientUIWorldTextPanelImpl(handle);
+  static CPointClientUIWorldTextPanel ISchemaClass<CPointClientUIWorldTextPanel>.From(nint handle) => new CPointClientUIWorldTextPanelImpl(handle);
 
   
   public ISchemaFixedString MessageText { get; }

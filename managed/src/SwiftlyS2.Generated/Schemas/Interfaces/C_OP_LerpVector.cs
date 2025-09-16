@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_LerpVector : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_LerpVector> {
+public partial interface C_OP_LerpVector : CParticleFunctionOperator, ISchemaClass<C_OP_LerpVector> {
 
-  static C_OP_LerpVector IConvertibleNativeHandle<C_OP_LerpVector>.From(nint handle) => new C_OP_LerpVectorImpl(handle);
+  static C_OP_LerpVector ISchemaClass<C_OP_LerpVector>.From(nint handle) => new C_OP_LerpVectorImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

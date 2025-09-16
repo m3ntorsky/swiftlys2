@@ -5,7 +5,7 @@ using SwiftlyS2.Shared.Schemas;
 
 namespace SwiftlyS2.Core.Schemas;
 
-internal abstract class SchemaClass : SchemaField, ISchemaClass {
+internal abstract class SchemaClass : SchemaField {
   public SchemaClass(nint handle) : base(handle, 0) {
   }
 

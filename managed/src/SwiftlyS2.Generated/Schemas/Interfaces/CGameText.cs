@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGameText : CRulePointEntity, IConvertibleNativeHandle<CGameText> {
+public partial interface CGameText : CRulePointEntity, ISchemaClass<CGameText> {
 
-  static CGameText IConvertibleNativeHandle<CGameText>.From(nint handle) => new CGameTextImpl(handle);
+  static CGameText ISchemaClass<CGameText>.From(nint handle) => new CGameTextImpl(handle);
 
   
   public ref CUtlSymbolLarge Message { get; }

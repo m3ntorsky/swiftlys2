@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PostProcessingFogScatteringParameters_t : ISchemaClass, IConvertibleNativeHandle<PostProcessingFogScatteringParameters_t> {
+public partial interface PostProcessingFogScatteringParameters_t : ISchemaClass<PostProcessingFogScatteringParameters_t> {
 
-  static PostProcessingFogScatteringParameters_t IConvertibleNativeHandle<PostProcessingFogScatteringParameters_t>.From(nint handle) => new PostProcessingFogScatteringParameters_tImpl(handle);
+  static PostProcessingFogScatteringParameters_t ISchemaClass<PostProcessingFogScatteringParameters_t>.From(nint handle) => new PostProcessingFogScatteringParameters_tImpl(handle);
 
   
   public ref float Radius { get; }

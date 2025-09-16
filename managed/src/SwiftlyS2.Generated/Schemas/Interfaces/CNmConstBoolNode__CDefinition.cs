@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmConstBoolNode__CDefinition : CNmBoolValueNode__CDefinition, IConvertibleNativeHandle<CNmConstBoolNode__CDefinition> {
+public partial interface CNmConstBoolNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmConstBoolNode__CDefinition> {
 
-  static CNmConstBoolNode__CDefinition IConvertibleNativeHandle<CNmConstBoolNode__CDefinition>.From(nint handle) => new CNmConstBoolNode__CDefinitionImpl(handle);
+  static CNmConstBoolNode__CDefinition ISchemaClass<CNmConstBoolNode__CDefinition>.From(nint handle) => new CNmConstBoolNode__CDefinitionImpl(handle);
 
   
   public ref bool Value { get; }

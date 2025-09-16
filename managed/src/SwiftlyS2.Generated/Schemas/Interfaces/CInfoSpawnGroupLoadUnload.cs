@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoSpawnGroupLoadUnload : CLogicalEntity, IConvertibleNativeHandle<CInfoSpawnGroupLoadUnload> {
+public partial interface CInfoSpawnGroupLoadUnload : CLogicalEntity, ISchemaClass<CInfoSpawnGroupLoadUnload> {
 
-  static CInfoSpawnGroupLoadUnload IConvertibleNativeHandle<CInfoSpawnGroupLoadUnload>.From(nint handle) => new CInfoSpawnGroupLoadUnloadImpl(handle);
+  static CInfoSpawnGroupLoadUnload ISchemaClass<CInfoSpawnGroupLoadUnload>.From(nint handle) => new CInfoSpawnGroupLoadUnloadImpl(handle);
 
   
   public CEntityIOOutput OnSpawnGroupLoadStarted { get; }

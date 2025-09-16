@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeEffectDesc_t : ISchemaClass, IConvertibleNativeHandle<FeEffectDesc_t> {
+public partial interface FeEffectDesc_t : ISchemaClass<FeEffectDesc_t> {
 
-  static FeEffectDesc_t IConvertibleNativeHandle<FeEffectDesc_t>.From(nint handle) => new FeEffectDesc_tImpl(handle);
+  static FeEffectDesc_t ISchemaClass<FeEffectDesc_t>.From(nint handle) => new FeEffectDesc_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCGcExportableExternalData : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCGcExportableExternalData> {
+public partial interface InfoForResourceTypeCGcExportableExternalData : ISchemaClass<InfoForResourceTypeCGcExportableExternalData> {
 
-  static InfoForResourceTypeCGcExportableExternalData IConvertibleNativeHandle<InfoForResourceTypeCGcExportableExternalData>.From(nint handle) => new InfoForResourceTypeCGcExportableExternalDataImpl(handle);
+  static InfoForResourceTypeCGcExportableExternalData ISchemaClass<InfoForResourceTypeCGcExportableExternalData>.From(nint handle) => new InfoForResourceTypeCGcExportableExternalDataImpl(handle);
 
 
 

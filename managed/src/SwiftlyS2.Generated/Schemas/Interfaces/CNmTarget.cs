@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmTarget : ISchemaClass, IConvertibleNativeHandle<CNmTarget> {
+public partial interface CNmTarget : ISchemaClass<CNmTarget> {
 
-  static CNmTarget IConvertibleNativeHandle<CNmTarget>.From(nint handle) => new CNmTargetImpl(handle);
+  static CNmTarget ISchemaClass<CNmTarget>.From(nint handle) => new CNmTargetImpl(handle);
 
   
   public ref CTransform Transform { get; }

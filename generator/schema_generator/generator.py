@@ -153,7 +153,7 @@ class Writer():
 
     params = {
       "INTERFACE_NAME": get_interface_name(self.class_name),
-      "BASE_INTERFACE": get_interface_name(self.base_class),
+      "BASE_INTERFACE": f"" if self.base_class == "SchemaClass" else get_interface_name(self.base_class) + ", ",
       "IMPL_TYPE": get_impl_name(self.class_name),
       "FIELDS": "\n".join(fields),
       "UPDATORS": "\n".join(updators)

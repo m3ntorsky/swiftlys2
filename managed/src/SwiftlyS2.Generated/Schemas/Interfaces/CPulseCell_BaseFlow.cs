@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_BaseFlow : CPulseCell_Base, IConvertibleNativeHandle<CPulseCell_BaseFlow> {
+public partial interface CPulseCell_BaseFlow : CPulseCell_Base, ISchemaClass<CPulseCell_BaseFlow> {
 
-  static CPulseCell_BaseFlow IConvertibleNativeHandle<CPulseCell_BaseFlow>.From(nint handle) => new CPulseCell_BaseFlowImpl(handle);
+  static CPulseCell_BaseFlow ISchemaClass<CPulseCell_BaseFlow>.From(nint handle) => new CPulseCell_BaseFlowImpl(handle);
 
 
 

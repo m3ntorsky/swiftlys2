@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointCameraVFOV : CPointCamera, IConvertibleNativeHandle<CPointCameraVFOV> {
+public partial interface CPointCameraVFOV : CPointCamera, ISchemaClass<CPointCameraVFOV> {
 
-  static CPointCameraVFOV IConvertibleNativeHandle<CPointCameraVFOV>.From(nint handle) => new CPointCameraVFOVImpl(handle);
+  static CPointCameraVFOV ISchemaClass<CPointCameraVFOV>.From(nint handle) => new CPointCameraVFOVImpl(handle);
 
   
   public ref float VerticalFOV { get; }

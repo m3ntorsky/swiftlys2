@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysSurfacePropertiesVehicle : ISchemaClass, IConvertibleNativeHandle<CPhysSurfacePropertiesVehicle> {
+public partial interface CPhysSurfacePropertiesVehicle : ISchemaClass<CPhysSurfacePropertiesVehicle> {
 
-  static CPhysSurfacePropertiesVehicle IConvertibleNativeHandle<CPhysSurfacePropertiesVehicle>.From(nint handle) => new CPhysSurfacePropertiesVehicleImpl(handle);
+  static CPhysSurfacePropertiesVehicle ISchemaClass<CPhysSurfacePropertiesVehicle>.From(nint handle) => new CPhysSurfacePropertiesVehicleImpl(handle);
 
   
   public ref float WheelDrag { get; }

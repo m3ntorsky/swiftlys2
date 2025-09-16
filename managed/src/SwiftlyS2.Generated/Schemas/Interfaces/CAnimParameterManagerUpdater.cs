@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimParameterManagerUpdater : ISchemaClass, IConvertibleNativeHandle<CAnimParameterManagerUpdater> {
+public partial interface CAnimParameterManagerUpdater : ISchemaClass<CAnimParameterManagerUpdater> {
 
-  static CAnimParameterManagerUpdater IConvertibleNativeHandle<CAnimParameterManagerUpdater>.From(nint handle) => new CAnimParameterManagerUpdaterImpl(handle);
+  static CAnimParameterManagerUpdater ISchemaClass<CAnimParameterManagerUpdater>.From(nint handle) => new CAnimParameterManagerUpdaterImpl(handle);
 
   
   // CUtlVector< CSmartPtr< CAnimParameterBase > >

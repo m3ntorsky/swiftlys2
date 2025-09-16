@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointAngleSensor : CPointEntity, IConvertibleNativeHandle<CPointAngleSensor> {
+public partial interface CPointAngleSensor : CPointEntity, ISchemaClass<CPointAngleSensor> {
 
-  static CPointAngleSensor IConvertibleNativeHandle<CPointAngleSensor>.From(nint handle) => new CPointAngleSensorImpl(handle);
+  static CPointAngleSensor ISchemaClass<CPointAngleSensor>.From(nint handle) => new CPointAngleSensorImpl(handle);
 
   
   public ref bool Disabled { get; }

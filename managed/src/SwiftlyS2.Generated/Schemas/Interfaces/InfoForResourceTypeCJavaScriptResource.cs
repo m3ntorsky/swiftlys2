@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCJavaScriptResource : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCJavaScriptResource> {
+public partial interface InfoForResourceTypeCJavaScriptResource : ISchemaClass<InfoForResourceTypeCJavaScriptResource> {
 
-  static InfoForResourceTypeCJavaScriptResource IConvertibleNativeHandle<InfoForResourceTypeCJavaScriptResource>.From(nint handle) => new InfoForResourceTypeCJavaScriptResourceImpl(handle);
+  static InfoForResourceTypeCJavaScriptResource ISchemaClass<InfoForResourceTypeCJavaScriptResource>.From(nint handle) => new InfoForResourceTypeCJavaScriptResourceImpl(handle);
 
 
 

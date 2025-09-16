@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFilterMultipleAPI : ISchemaClass, IConvertibleNativeHandle<CFilterMultipleAPI> {
+public partial interface CFilterMultipleAPI : ISchemaClass<CFilterMultipleAPI> {
 
-  static CFilterMultipleAPI IConvertibleNativeHandle<CFilterMultipleAPI>.From(nint handle) => new CFilterMultipleAPIImpl(handle);
+  static CFilterMultipleAPI ISchemaClass<CFilterMultipleAPI>.From(nint handle) => new CFilterMultipleAPIImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoxelVisibility : ISchemaClass, IConvertibleNativeHandle<CVoxelVisibility> {
+public partial interface CVoxelVisibility : ISchemaClass<CVoxelVisibility> {
 
-  static CVoxelVisibility IConvertibleNativeHandle<CVoxelVisibility>.From(nint handle) => new CVoxelVisibilityImpl(handle);
+  static CVoxelVisibility ISchemaClass<CVoxelVisibility>.From(nint handle) => new CVoxelVisibilityImpl(handle);
 
   
   public ref uint BaseClusterCount { get; }

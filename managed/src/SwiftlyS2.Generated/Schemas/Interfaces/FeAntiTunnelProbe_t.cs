@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeAntiTunnelProbe_t : ISchemaClass, IConvertibleNativeHandle<FeAntiTunnelProbe_t> {
+public partial interface FeAntiTunnelProbe_t : ISchemaClass<FeAntiTunnelProbe_t> {
 
-  static FeAntiTunnelProbe_t IConvertibleNativeHandle<FeAntiTunnelProbe_t>.From(nint handle) => new FeAntiTunnelProbe_tImpl(handle);
+  static FeAntiTunnelProbe_t ISchemaClass<FeAntiTunnelProbe_t>.From(nint handle) => new FeAntiTunnelProbe_tImpl(handle);
 
   
   public ref float Weight { get; }

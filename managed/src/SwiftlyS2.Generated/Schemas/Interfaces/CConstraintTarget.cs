@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CConstraintTarget : ISchemaClass, IConvertibleNativeHandle<CConstraintTarget> {
+public partial interface CConstraintTarget : ISchemaClass<CConstraintTarget> {
 
-  static CConstraintTarget IConvertibleNativeHandle<CConstraintTarget>.From(nint handle) => new CConstraintTargetImpl(handle);
+  static CConstraintTarget ISchemaClass<CConstraintTarget>.From(nint handle) => new CConstraintTargetImpl(handle);
 
   
   public ref Quaternion Offset { get; }

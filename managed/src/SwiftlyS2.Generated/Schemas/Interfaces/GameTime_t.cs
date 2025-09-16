@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface GameTime_t : ISchemaClass, IConvertibleNativeHandle<GameTime_t> {
+public partial interface GameTime_t : ISchemaClass<GameTime_t> {
 
-  static GameTime_t IConvertibleNativeHandle<GameTime_t>.From(nint handle) => new GameTime_tImpl(handle);
+  static GameTime_t ISchemaClass<GameTime_t>.From(nint handle) => new GameTime_tImpl(handle);
 
   
   public ref float Value { get; }

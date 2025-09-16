@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmTargetWarpEvent : CNmEvent, IConvertibleNativeHandle<CNmTargetWarpEvent> {
+public partial interface CNmTargetWarpEvent : CNmEvent, ISchemaClass<CNmTargetWarpEvent> {
 
-  static CNmTargetWarpEvent IConvertibleNativeHandle<CNmTargetWarpEvent>.From(nint handle) => new CNmTargetWarpEventImpl(handle);
+  static CNmTargetWarpEvent ISchemaClass<CNmTargetWarpEvent>.From(nint handle) => new CNmTargetWarpEventImpl(handle);
 
   
   public ref NmTargetWarpRule_t Rule { get; }

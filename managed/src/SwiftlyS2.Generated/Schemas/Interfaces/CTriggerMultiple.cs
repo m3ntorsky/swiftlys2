@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerMultiple : CBaseTrigger, IConvertibleNativeHandle<CTriggerMultiple> {
+public partial interface CTriggerMultiple : CBaseTrigger, ISchemaClass<CTriggerMultiple> {
 
-  static CTriggerMultiple IConvertibleNativeHandle<CTriggerMultiple>.From(nint handle) => new CTriggerMultipleImpl(handle);
+  static CTriggerMultiple ISchemaClass<CTriggerMultiple>.From(nint handle) => new CTriggerMultipleImpl(handle);
 
   
   public CEntityIOOutput OnTrigger { get; }

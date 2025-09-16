@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncIllusionary : CBaseModelEntity, IConvertibleNativeHandle<CFuncIllusionary> {
+public partial interface CFuncIllusionary : CBaseModelEntity, ISchemaClass<CFuncIllusionary> {
 
-  static CFuncIllusionary IConvertibleNativeHandle<CFuncIllusionary>.From(nint handle) => new CFuncIllusionaryImpl(handle);
+  static CFuncIllusionary ISchemaClass<CFuncIllusionary>.From(nint handle) => new CFuncIllusionaryImpl(handle);
 
 
 

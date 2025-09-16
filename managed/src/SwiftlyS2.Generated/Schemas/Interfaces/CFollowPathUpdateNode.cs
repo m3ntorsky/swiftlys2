@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFollowPathUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CFollowPathUpdateNode> {
+public partial interface CFollowPathUpdateNode : CUnaryUpdateNode, ISchemaClass<CFollowPathUpdateNode> {
 
-  static CFollowPathUpdateNode IConvertibleNativeHandle<CFollowPathUpdateNode>.From(nint handle) => new CFollowPathUpdateNodeImpl(handle);
+  static CFollowPathUpdateNode ISchemaClass<CFollowPathUpdateNode>.From(nint handle) => new CFollowPathUpdateNodeImpl(handle);
 
   
   public ref float BlendOutTime { get; }

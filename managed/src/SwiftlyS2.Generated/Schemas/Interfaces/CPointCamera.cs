@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointCamera : CBaseEntity, IConvertibleNativeHandle<CPointCamera> {
+public partial interface CPointCamera : CBaseEntity, ISchemaClass<CPointCamera> {
 
-  static CPointCamera IConvertibleNativeHandle<CPointCamera>.From(nint handle) => new CPointCameraImpl(handle);
+  static CPointCamera ISchemaClass<CPointCamera>.From(nint handle) => new CPointCameraImpl(handle);
 
   
   public ref float FOV { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RadiusFromCPObject : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RadiusFromCPObject> {
+public partial interface C_INIT_RadiusFromCPObject : CParticleFunctionInitializer, ISchemaClass<C_INIT_RadiusFromCPObject> {
 
-  static C_INIT_RadiusFromCPObject IConvertibleNativeHandle<C_INIT_RadiusFromCPObject>.From(nint handle) => new C_INIT_RadiusFromCPObjectImpl(handle);
+  static C_INIT_RadiusFromCPObject ISchemaClass<C_INIT_RadiusFromCPObject>.From(nint handle) => new C_INIT_RadiusFromCPObjectImpl(handle);
 
   
   public ref int ControlPoint { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimMorphDifference : ISchemaClass, IConvertibleNativeHandle<CAnimMorphDifference> {
+public partial interface CAnimMorphDifference : ISchemaClass<CAnimMorphDifference> {
 
-  static CAnimMorphDifference IConvertibleNativeHandle<CAnimMorphDifference>.From(nint handle) => new CAnimMorphDifferenceImpl(handle);
+  static CAnimMorphDifference ISchemaClass<CAnimMorphDifference>.From(nint handle) => new CAnimMorphDifferenceImpl(handle);
 
   
   public ref CBufferString Name { get; }

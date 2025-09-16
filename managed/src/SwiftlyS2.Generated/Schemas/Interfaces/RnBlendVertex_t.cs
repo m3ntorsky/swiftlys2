@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnBlendVertex_t : ISchemaClass, IConvertibleNativeHandle<RnBlendVertex_t> {
+public partial interface RnBlendVertex_t : ISchemaClass<RnBlendVertex_t> {
 
-  static RnBlendVertex_t IConvertibleNativeHandle<RnBlendVertex_t>.From(nint handle) => new RnBlendVertex_tImpl(handle);
+  static RnBlendVertex_t ISchemaClass<RnBlendVertex_t>.From(nint handle) => new RnBlendVertex_tImpl(handle);
 
   
   public ref ushort Weight0 { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventClientSceneSystemThreadStateChange_t : ISchemaClass, IConvertibleNativeHandle<EventClientSceneSystemThreadStateChange_t> {
+public partial interface EventClientSceneSystemThreadStateChange_t : ISchemaClass<EventClientSceneSystemThreadStateChange_t> {
 
-  static EventClientSceneSystemThreadStateChange_t IConvertibleNativeHandle<EventClientSceneSystemThreadStateChange_t>.From(nint handle) => new EventClientSceneSystemThreadStateChange_tImpl(handle);
+  static EventClientSceneSystemThreadStateChange_t ISchemaClass<EventClientSceneSystemThreadStateChange_t>.From(nint handle) => new EventClientSceneSystemThreadStateChange_tImpl(handle);
 
   
   public ref bool ThreadsActive { get; }

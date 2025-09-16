@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBodyComponentPoint : CBodyComponent, IConvertibleNativeHandle<CBodyComponentPoint> {
+public partial interface CBodyComponentPoint : CBodyComponent, ISchemaClass<CBodyComponentPoint> {
 
-  static CBodyComponentPoint IConvertibleNativeHandle<CBodyComponentPoint>.From(nint handle) => new CBodyComponentPointImpl(handle);
+  static CBodyComponentPoint ISchemaClass<CBodyComponentPoint>.From(nint handle) => new CBodyComponentPointImpl(handle);
 
   
   public CGameSceneNode SceneNode { get; }

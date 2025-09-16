@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MotionBlendItem : ISchemaClass, IConvertibleNativeHandle<MotionBlendItem> {
+public partial interface MotionBlendItem : ISchemaClass<MotionBlendItem> {
 
-  static MotionBlendItem IConvertibleNativeHandle<MotionBlendItem>.From(nint handle) => new MotionBlendItemImpl(handle);
+  static MotionBlendItem ISchemaClass<MotionBlendItem>.From(nint handle) => new MotionBlendItemImpl(handle);
 
   
   // CSmartPtr< CMotionNode >

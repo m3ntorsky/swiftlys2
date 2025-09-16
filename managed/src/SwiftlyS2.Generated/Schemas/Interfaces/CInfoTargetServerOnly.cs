@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoTargetServerOnly : CServerOnlyPointEntity, IConvertibleNativeHandle<CInfoTargetServerOnly> {
+public partial interface CInfoTargetServerOnly : CServerOnlyPointEntity, ISchemaClass<CInfoTargetServerOnly> {
 
-  static CInfoTargetServerOnly IConvertibleNativeHandle<CInfoTargetServerOnly>.From(nint handle) => new CInfoTargetServerOnlyImpl(handle);
+  static CInfoTargetServerOnly ISchemaClass<CInfoTargetServerOnly>.From(nint handle) => new CInfoTargetServerOnlyImpl(handle);
 
 
 

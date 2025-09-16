@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGameMoney : CRulePointEntity, IConvertibleNativeHandle<CGameMoney> {
+public partial interface CGameMoney : CRulePointEntity, ISchemaClass<CGameMoney> {
 
-  static CGameMoney IConvertibleNativeHandle<CGameMoney>.From(nint handle) => new CGameMoneyImpl(handle);
+  static CGameMoney ISchemaClass<CGameMoney>.From(nint handle) => new CGameMoneyImpl(handle);
 
   
   public CEntityIOOutput OnMoneySpent { get; }

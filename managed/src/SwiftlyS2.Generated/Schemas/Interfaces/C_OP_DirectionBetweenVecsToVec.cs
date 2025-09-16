@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_DirectionBetweenVecsToVec : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_DirectionBetweenVecsToVec> {
+public partial interface C_OP_DirectionBetweenVecsToVec : CParticleFunctionOperator, ISchemaClass<C_OP_DirectionBetweenVecsToVec> {
 
-  static C_OP_DirectionBetweenVecsToVec IConvertibleNativeHandle<C_OP_DirectionBetweenVecsToVec>.From(nint handle) => new C_OP_DirectionBetweenVecsToVecImpl(handle);
+  static C_OP_DirectionBetweenVecsToVec ISchemaClass<C_OP_DirectionBetweenVecsToVec>.From(nint handle) => new C_OP_DirectionBetweenVecsToVecImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

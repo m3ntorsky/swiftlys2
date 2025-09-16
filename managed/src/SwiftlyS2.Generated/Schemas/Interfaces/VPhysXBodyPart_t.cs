@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VPhysXBodyPart_t : ISchemaClass, IConvertibleNativeHandle<VPhysXBodyPart_t> {
+public partial interface VPhysXBodyPart_t : ISchemaClass<VPhysXBodyPart_t> {
 
-  static VPhysXBodyPart_t IConvertibleNativeHandle<VPhysXBodyPart_t>.From(nint handle) => new VPhysXBodyPart_tImpl(handle);
+  static VPhysXBodyPart_t ISchemaClass<VPhysXBodyPart_t>.From(nint handle) => new VPhysXBodyPart_tImpl(handle);
 
   
   public ref uint Flags { get; }

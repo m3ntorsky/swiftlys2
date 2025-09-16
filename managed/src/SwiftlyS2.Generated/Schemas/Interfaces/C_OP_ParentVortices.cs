@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ParentVortices : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_ParentVortices> {
+public partial interface C_OP_ParentVortices : CParticleFunctionForce, ISchemaClass<C_OP_ParentVortices> {
 
-  static C_OP_ParentVortices IConvertibleNativeHandle<C_OP_ParentVortices>.From(nint handle) => new C_OP_ParentVorticesImpl(handle);
+  static C_OP_ParentVortices ISchemaClass<C_OP_ParentVortices>.From(nint handle) => new C_OP_ParentVorticesImpl(handle);
 
   
   public ref float ForceScale { get; }

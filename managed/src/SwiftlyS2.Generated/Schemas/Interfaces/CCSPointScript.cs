@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPointScript : CBasePulseGraphInstance, IConvertibleNativeHandle<CCSPointScript> {
+public partial interface CCSPointScript : CBasePulseGraphInstance, ISchemaClass<CCSPointScript> {
 
-  static CCSPointScript IConvertibleNativeHandle<CCSPointScript>.From(nint handle) => new CCSPointScriptImpl(handle);
+  static CCSPointScript ISchemaClass<CCSPointScript>.From(nint handle) => new CCSPointScriptImpl(handle);
 
   
   public CCSPointScriptEntity? Parent { get; }

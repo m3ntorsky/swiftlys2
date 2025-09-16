@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCachedPose : ISchemaClass, IConvertibleNativeHandle<CCachedPose> {
+public partial interface CCachedPose : ISchemaClass<CCachedPose> {
 
-  static CCachedPose IConvertibleNativeHandle<CCachedPose>.From(nint handle) => new CCachedPoseImpl(handle);
+  static CCachedPose ISchemaClass<CCachedPose>.From(nint handle) => new CCachedPoseImpl(handle);
 
   
   public ref CUtlVector<CTransform> Transforms { get; }

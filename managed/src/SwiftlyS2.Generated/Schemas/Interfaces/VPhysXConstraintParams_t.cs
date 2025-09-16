@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VPhysXConstraintParams_t : ISchemaClass, IConvertibleNativeHandle<VPhysXConstraintParams_t> {
+public partial interface VPhysXConstraintParams_t : ISchemaClass<VPhysXConstraintParams_t> {
 
-  static VPhysXConstraintParams_t IConvertibleNativeHandle<VPhysXConstraintParams_t>.From(nint handle) => new VPhysXConstraintParams_tImpl(handle);
+  static VPhysXConstraintParams_t ISchemaClass<VPhysXConstraintParams_t>.From(nint handle) => new VPhysXConstraintParams_tImpl(handle);
 
   
   public ref byte Type { get; }

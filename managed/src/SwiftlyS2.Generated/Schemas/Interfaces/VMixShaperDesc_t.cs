@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixShaperDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixShaperDesc_t> {
+public partial interface VMixShaperDesc_t : ISchemaClass<VMixShaperDesc_t> {
 
-  static VMixShaperDesc_t IConvertibleNativeHandle<VMixShaperDesc_t>.From(nint handle) => new VMixShaperDesc_tImpl(handle);
+  static VMixShaperDesc_t ISchemaClass<VMixShaperDesc_t>.From(nint handle) => new VMixShaperDesc_tImpl(handle);
 
   
   public ref int Shape { get; }

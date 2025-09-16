@@ -1,6 +1,7 @@
 using System.Runtime.CompilerServices;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Shared.Schemas;
 
 namespace SwiftlyS2.Core.Extensions;
 
@@ -64,7 +65,7 @@ internal static class PtrExtensions {
   }
 
   [MethodImpl(MethodImplOptions.AggressiveInlining)]
-  public static T AsHandle<T>(this nint ptr) where T : INativeHandle, IConvertibleNativeHandle<T> {
+  public static T AsHandle<T>(this nint ptr) where T : INativeHandle, ISchemaClass<T> {
     return T.From(ptr);
   }
 }

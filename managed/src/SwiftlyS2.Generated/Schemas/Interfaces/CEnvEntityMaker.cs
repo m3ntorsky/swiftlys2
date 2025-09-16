@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvEntityMaker : CPointEntity, IConvertibleNativeHandle<CEnvEntityMaker> {
+public partial interface CEnvEntityMaker : CPointEntity, ISchemaClass<CEnvEntityMaker> {
 
-  static CEnvEntityMaker IConvertibleNativeHandle<CEnvEntityMaker>.From(nint handle) => new CEnvEntityMakerImpl(handle);
+  static CEnvEntityMaker ISchemaClass<CEnvEntityMaker>.From(nint handle) => new CEnvEntityMakerImpl(handle);
 
   
   public ref Vector EntityMins { get; }

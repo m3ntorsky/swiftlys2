@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqPoseParamDesc : ISchemaClass, IConvertibleNativeHandle<CSeqPoseParamDesc> {
+public partial interface CSeqPoseParamDesc : ISchemaClass<CSeqPoseParamDesc> {
 
-  static CSeqPoseParamDesc IConvertibleNativeHandle<CSeqPoseParamDesc>.From(nint handle) => new CSeqPoseParamDescImpl(handle);
+  static CSeqPoseParamDesc ISchemaClass<CSeqPoseParamDesc>.From(nint handle) => new CSeqPoseParamDescImpl(handle);
 
   
   public ref CBufferString Name { get; }

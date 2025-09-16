@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapModelVolumetoCP : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_RemapModelVolumetoCP> {
+public partial interface C_OP_RemapModelVolumetoCP : CParticleFunctionPreEmission, ISchemaClass<C_OP_RemapModelVolumetoCP> {
 
-  static C_OP_RemapModelVolumetoCP IConvertibleNativeHandle<C_OP_RemapModelVolumetoCP>.From(nint handle) => new C_OP_RemapModelVolumetoCPImpl(handle);
+  static C_OP_RemapModelVolumetoCP ISchemaClass<C_OP_RemapModelVolumetoCP>.From(nint handle) => new C_OP_RemapModelVolumetoCPImpl(handle);
 
   
   public ref BBoxVolumeType_t BBoxType { get; }

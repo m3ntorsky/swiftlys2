@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimLocalHierarchy : ISchemaClass, IConvertibleNativeHandle<CAnimLocalHierarchy> {
+public partial interface CAnimLocalHierarchy : ISchemaClass<CAnimLocalHierarchy> {
 
-  static CAnimLocalHierarchy IConvertibleNativeHandle<CAnimLocalHierarchy>.From(nint handle) => new CAnimLocalHierarchyImpl(handle);
+  static CAnimLocalHierarchy ISchemaClass<CAnimLocalHierarchy>.From(nint handle) => new CAnimLocalHierarchyImpl(handle);
 
   
   public ref CBufferString Bone { get; }

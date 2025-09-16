@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface NavGravity_t : ISchemaClass, IConvertibleNativeHandle<NavGravity_t> {
+public partial interface NavGravity_t : ISchemaClass<NavGravity_t> {
 
-  static NavGravity_t IConvertibleNativeHandle<NavGravity_t>.From(nint handle) => new NavGravity_tImpl(handle);
+  static NavGravity_t ISchemaClass<NavGravity_t>.From(nint handle) => new NavGravity_tImpl(handle);
 
   
   public ref Vector Gravity { get; }

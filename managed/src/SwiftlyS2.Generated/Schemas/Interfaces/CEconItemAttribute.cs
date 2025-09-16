@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEconItemAttribute : ISchemaClass, IConvertibleNativeHandle<CEconItemAttribute> {
+public partial interface CEconItemAttribute : ISchemaClass<CEconItemAttribute> {
 
-  static CEconItemAttribute IConvertibleNativeHandle<CEconItemAttribute>.From(nint handle) => new CEconItemAttributeImpl(handle);
+  static CEconItemAttribute ISchemaClass<CEconItemAttribute>.From(nint handle) => new CEconItemAttributeImpl(handle);
 
   
   public ref ushort AttributeDefinitionIndex { get; }

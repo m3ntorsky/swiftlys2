@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicAutosave : CLogicalEntity, IConvertibleNativeHandle<CLogicAutosave> {
+public partial interface CLogicAutosave : CLogicalEntity, ISchemaClass<CLogicAutosave> {
 
-  static CLogicAutosave IConvertibleNativeHandle<CLogicAutosave>.From(nint handle) => new CLogicAutosaveImpl(handle);
+  static CLogicAutosave ISchemaClass<CLogicAutosave>.From(nint handle) => new CLogicAutosaveImpl(handle);
 
   
   public ref bool ForceNewLevelUnit { get; }

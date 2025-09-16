@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAudioSentence : ISchemaClass, IConvertibleNativeHandle<CAudioSentence> {
+public partial interface CAudioSentence : ISchemaClass<CAudioSentence> {
 
-  static CAudioSentence IConvertibleNativeHandle<CAudioSentence>.From(nint handle) => new CAudioSentenceImpl(handle);
+  static CAudioSentence ISchemaClass<CAudioSentence>.From(nint handle) => new CAudioSentenceImpl(handle);
 
   
   public ref bool ShouldVoiceDuck { get; }

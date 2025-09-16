@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCAnimData : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCAnimData> {
+public partial interface InfoForResourceTypeCAnimData : ISchemaClass<InfoForResourceTypeCAnimData> {
 
-  static InfoForResourceTypeCAnimData IConvertibleNativeHandle<InfoForResourceTypeCAnimData>.From(nint handle) => new InfoForResourceTypeCAnimDataImpl(handle);
+  static InfoForResourceTypeCAnimData ISchemaClass<InfoForResourceTypeCAnimData>.From(nint handle) => new InfoForResourceTypeCAnimDataImpl(handle);
 
 
 

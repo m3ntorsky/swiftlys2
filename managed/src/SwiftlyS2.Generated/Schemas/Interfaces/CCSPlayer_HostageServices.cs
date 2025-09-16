@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayer_HostageServices : CPlayerPawnComponent, IConvertibleNativeHandle<CCSPlayer_HostageServices> {
+public partial interface CCSPlayer_HostageServices : CPlayerPawnComponent, ISchemaClass<CCSPlayer_HostageServices> {
 
-  static CCSPlayer_HostageServices IConvertibleNativeHandle<CCSPlayer_HostageServices>.From(nint handle) => new CCSPlayer_HostageServicesImpl(handle);
+  static CCSPlayer_HostageServices ISchemaClass<CCSPlayer_HostageServices>.From(nint handle) => new CCSPlayer_HostageServicesImpl(handle);
 
   
   public ref CHandle<CBaseEntity> CarriedHostage { get; }

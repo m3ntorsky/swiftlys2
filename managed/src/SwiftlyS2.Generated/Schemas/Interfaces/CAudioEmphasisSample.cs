@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAudioEmphasisSample : ISchemaClass, IConvertibleNativeHandle<CAudioEmphasisSample> {
+public partial interface CAudioEmphasisSample : ISchemaClass<CAudioEmphasisSample> {
 
-  static CAudioEmphasisSample IConvertibleNativeHandle<CAudioEmphasisSample>.From(nint handle) => new CAudioEmphasisSampleImpl(handle);
+  static CAudioEmphasisSample ISchemaClass<CAudioEmphasisSample>.From(nint handle) => new CAudioEmphasisSampleImpl(handle);
 
   
   public ref float Time { get; }

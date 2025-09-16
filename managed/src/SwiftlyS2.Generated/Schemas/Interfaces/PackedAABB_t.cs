@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PackedAABB_t : ISchemaClass, IConvertibleNativeHandle<PackedAABB_t> {
+public partial interface PackedAABB_t : ISchemaClass<PackedAABB_t> {
 
-  static PackedAABB_t IConvertibleNativeHandle<PackedAABB_t>.From(nint handle) => new PackedAABB_tImpl(handle);
+  static PackedAABB_t ISchemaClass<PackedAABB_t>.From(nint handle) => new PackedAABB_tImpl(handle);
 
   
   public ref uint PackedMin { get; }

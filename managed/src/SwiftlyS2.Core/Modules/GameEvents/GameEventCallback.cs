@@ -69,8 +69,4 @@ internal class GameEventCallback<T> : GameEventCallback where T : IGameEvent<T>
     };
     UnmanagedWrapperPtr = Marshal.GetFunctionPointerForDelegate(_unmanagedCallback);
   }
-
-  ~GameEventCallback() {
-    throw new Exception("GameEventCallback destructor called");
-  }
 }

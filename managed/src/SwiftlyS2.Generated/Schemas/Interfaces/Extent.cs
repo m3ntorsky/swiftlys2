@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface Extent : ISchemaClass, IConvertibleNativeHandle<Extent> {
+public partial interface Extent : ISchemaClass<Extent> {
 
-  static Extent IConvertibleNativeHandle<Extent>.From(nint handle) => new ExtentImpl(handle);
+  static Extent ISchemaClass<Extent>.From(nint handle) => new ExtentImpl(handle);
 
   
   public ref Vector Lo { get; }

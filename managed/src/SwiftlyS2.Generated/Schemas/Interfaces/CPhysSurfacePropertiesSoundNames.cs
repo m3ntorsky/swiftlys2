@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysSurfacePropertiesSoundNames : ISchemaClass, IConvertibleNativeHandle<CPhysSurfacePropertiesSoundNames> {
+public partial interface CPhysSurfacePropertiesSoundNames : ISchemaClass<CPhysSurfacePropertiesSoundNames> {
 
-  static CPhysSurfacePropertiesSoundNames IConvertibleNativeHandle<CPhysSurfacePropertiesSoundNames>.From(nint handle) => new CPhysSurfacePropertiesSoundNamesImpl(handle);
+  static CPhysSurfacePropertiesSoundNames ISchemaClass<CPhysSurfacePropertiesSoundNames>.From(nint handle) => new CPhysSurfacePropertiesSoundNamesImpl(handle);
 
   
   public ref CUtlString ImpactSoft { get; }

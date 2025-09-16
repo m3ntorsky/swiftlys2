@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface WorldNodeOnDiskBufferData_t : ISchemaClass, IConvertibleNativeHandle<WorldNodeOnDiskBufferData_t> {
+public partial interface WorldNodeOnDiskBufferData_t : ISchemaClass<WorldNodeOnDiskBufferData_t> {
 
-  static WorldNodeOnDiskBufferData_t IConvertibleNativeHandle<WorldNodeOnDiskBufferData_t>.From(nint handle) => new WorldNodeOnDiskBufferData_tImpl(handle);
+  static WorldNodeOnDiskBufferData_t ISchemaClass<WorldNodeOnDiskBufferData_t>.From(nint handle) => new WorldNodeOnDiskBufferData_tImpl(handle);
 
   
   public ref int ElementCount { get; }

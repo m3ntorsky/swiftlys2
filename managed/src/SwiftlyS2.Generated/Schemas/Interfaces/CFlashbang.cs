@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFlashbang : CBaseCSGrenade, IConvertibleNativeHandle<CFlashbang> {
+public partial interface CFlashbang : CBaseCSGrenade, ISchemaClass<CFlashbang> {
 
-  static CFlashbang IConvertibleNativeHandle<CFlashbang>.From(nint handle) => new CFlashbangImpl(handle);
+  static CFlashbang ISchemaClass<CFlashbang>.From(nint handle) => new CFlashbangImpl(handle);
 
 
 

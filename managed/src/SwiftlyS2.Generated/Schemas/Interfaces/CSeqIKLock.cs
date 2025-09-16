@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqIKLock : ISchemaClass, IConvertibleNativeHandle<CSeqIKLock> {
+public partial interface CSeqIKLock : ISchemaClass<CSeqIKLock> {
 
-  static CSeqIKLock IConvertibleNativeHandle<CSeqIKLock>.From(nint handle) => new CSeqIKLockImpl(handle);
+  static CSeqIKLock ISchemaClass<CSeqIKLock>.From(nint handle) => new CSeqIKLockImpl(handle);
 
   
   public ref float PosWeight { get; }

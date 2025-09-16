@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_LockPoints : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_LockPoints> {
+public partial interface C_OP_LockPoints : CParticleFunctionOperator, ISchemaClass<C_OP_LockPoints> {
 
-  static C_OP_LockPoints IConvertibleNativeHandle<C_OP_LockPoints>.From(nint handle) => new C_OP_LockPointsImpl(handle);
+  static C_OP_LockPoints ISchemaClass<C_OP_LockPoints>.From(nint handle) => new C_OP_LockPointsImpl(handle);
 
   
   public ref int MinCol { get; }

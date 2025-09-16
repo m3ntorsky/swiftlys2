@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionSearchNode : ISchemaClass, IConvertibleNativeHandle<CMotionSearchNode> {
+public partial interface CMotionSearchNode : ISchemaClass<CMotionSearchNode> {
 
-  static CMotionSearchNode IConvertibleNativeHandle<CMotionSearchNode>.From(nint handle) => new CMotionSearchNodeImpl(handle);
+  static CMotionSearchNode ISchemaClass<CMotionSearchNode>.From(nint handle) => new CMotionSearchNodeImpl(handle);
 
   
   public ref CUtlVector<PointerTo<CMotionSearchNode>> Children { get; }

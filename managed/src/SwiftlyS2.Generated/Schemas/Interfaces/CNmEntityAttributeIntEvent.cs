@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmEntityAttributeIntEvent : CNmEntityAttributeEventBase, IConvertibleNativeHandle<CNmEntityAttributeIntEvent> {
+public partial interface CNmEntityAttributeIntEvent : CNmEntityAttributeEventBase, ISchemaClass<CNmEntityAttributeIntEvent> {
 
-  static CNmEntityAttributeIntEvent IConvertibleNativeHandle<CNmEntityAttributeIntEvent>.From(nint handle) => new CNmEntityAttributeIntEventImpl(handle);
+  static CNmEntityAttributeIntEvent ISchemaClass<CNmEntityAttributeIntEvent>.From(nint handle) => new CNmEntityAttributeIntEventImpl(handle);
 
   
   public ref int IntValue { get; }

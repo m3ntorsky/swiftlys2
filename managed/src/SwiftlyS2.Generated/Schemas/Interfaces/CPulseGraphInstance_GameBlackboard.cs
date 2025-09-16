@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseGraphInstance_GameBlackboard : CPulseGraphInstance_ServerEntity, IConvertibleNativeHandle<CPulseGraphInstance_GameBlackboard> {
+public partial interface CPulseGraphInstance_GameBlackboard : CPulseGraphInstance_ServerEntity, ISchemaClass<CPulseGraphInstance_GameBlackboard> {
 
-  static CPulseGraphInstance_GameBlackboard IConvertibleNativeHandle<CPulseGraphInstance_GameBlackboard>.From(nint handle) => new CPulseGraphInstance_GameBlackboardImpl(handle);
+  static CPulseGraphInstance_GameBlackboard ISchemaClass<CPulseGraphInstance_GameBlackboard>.From(nint handle) => new CPulseGraphInstance_GameBlackboardImpl(handle);
 
 
 

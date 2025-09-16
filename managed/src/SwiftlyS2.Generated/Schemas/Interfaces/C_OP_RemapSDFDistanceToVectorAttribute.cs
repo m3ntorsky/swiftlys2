@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapSDFDistanceToVectorAttribute : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapSDFDistanceToVectorAttribute> {
+public partial interface C_OP_RemapSDFDistanceToVectorAttribute : CParticleFunctionOperator, ISchemaClass<C_OP_RemapSDFDistanceToVectorAttribute> {
 
-  static C_OP_RemapSDFDistanceToVectorAttribute IConvertibleNativeHandle<C_OP_RemapSDFDistanceToVectorAttribute>.From(nint handle) => new C_OP_RemapSDFDistanceToVectorAttributeImpl(handle);
+  static C_OP_RemapSDFDistanceToVectorAttribute ISchemaClass<C_OP_RemapSDFDistanceToVectorAttribute>.From(nint handle) => new C_OP_RemapSDFDistanceToVectorAttributeImpl(handle);
 
   
   public ParticleAttributeIndex_t VectorFieldOutput { get; }

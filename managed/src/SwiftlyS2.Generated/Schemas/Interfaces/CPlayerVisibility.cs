@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlayerVisibility : CBaseEntity, IConvertibleNativeHandle<CPlayerVisibility> {
+public partial interface CPlayerVisibility : CBaseEntity, ISchemaClass<CPlayerVisibility> {
 
-  static CPlayerVisibility IConvertibleNativeHandle<CPlayerVisibility>.From(nint handle) => new CPlayerVisibilityImpl(handle);
+  static CPlayerVisibility ISchemaClass<CPlayerVisibility>.From(nint handle) => new CPlayerVisibilityImpl(handle);
 
   
   public ref float VisibilityStrength { get; }

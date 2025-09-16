@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CModelConfigElement_SetMaterialGroupOnAttachedModels : CModelConfigElement, IConvertibleNativeHandle<CModelConfigElement_SetMaterialGroupOnAttachedModels> {
+public partial interface CModelConfigElement_SetMaterialGroupOnAttachedModels : CModelConfigElement, ISchemaClass<CModelConfigElement_SetMaterialGroupOnAttachedModels> {
 
-  static CModelConfigElement_SetMaterialGroupOnAttachedModels IConvertibleNativeHandle<CModelConfigElement_SetMaterialGroupOnAttachedModels>.From(nint handle) => new CModelConfigElement_SetMaterialGroupOnAttachedModelsImpl(handle);
+  static CModelConfigElement_SetMaterialGroupOnAttachedModels ISchemaClass<CModelConfigElement_SetMaterialGroupOnAttachedModels>.From(nint handle) => new CModelConfigElement_SetMaterialGroupOnAttachedModelsImpl(handle);
 
   
   public ref CUtlString MaterialGroupName { get; }

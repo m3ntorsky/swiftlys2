@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventSplitScreenStateChanged_t : ISchemaClass, IConvertibleNativeHandle<EventSplitScreenStateChanged_t> {
+public partial interface EventSplitScreenStateChanged_t : ISchemaClass<EventSplitScreenStateChanged_t> {
 
-  static EventSplitScreenStateChanged_t IConvertibleNativeHandle<EventSplitScreenStateChanged_t>.From(nint handle) => new EventSplitScreenStateChanged_tImpl(handle);
+  static EventSplitScreenStateChanged_t ISchemaClass<EventSplitScreenStateChanged_t>.From(nint handle) => new EventSplitScreenStateChanged_tImpl(handle);
 
 
 

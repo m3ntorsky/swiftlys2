@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseSelectorOutflowList_t : ISchemaClass, IConvertibleNativeHandle<PulseSelectorOutflowList_t> {
+public partial interface PulseSelectorOutflowList_t : ISchemaClass<PulseSelectorOutflowList_t> {
 
-  static PulseSelectorOutflowList_t IConvertibleNativeHandle<PulseSelectorOutflowList_t>.From(nint handle) => new PulseSelectorOutflowList_tImpl(handle);
+  static PulseSelectorOutflowList_t ISchemaClass<PulseSelectorOutflowList_t>.From(nint handle) => new PulseSelectorOutflowList_tImpl(handle);
 
   
   // CUtlVector< OutflowWithRequirements_t >

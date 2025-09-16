@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDynamicLight : CBaseModelEntity, IConvertibleNativeHandle<CDynamicLight> {
+public partial interface CDynamicLight : CBaseModelEntity, ISchemaClass<CDynamicLight> {
 
-  static CDynamicLight IConvertibleNativeHandle<CDynamicLight>.From(nint handle) => new CDynamicLightImpl(handle);
+  static CDynamicLight ISchemaClass<CDynamicLight>.From(nint handle) => new CDynamicLightImpl(handle);
 
   
   public ref byte ActualFlags { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateWithinBox : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateWithinBox> {
+public partial interface C_INIT_CreateWithinBox : CParticleFunctionInitializer, ISchemaClass<C_INIT_CreateWithinBox> {
 
-  static C_INIT_CreateWithinBox IConvertibleNativeHandle<C_INIT_CreateWithinBox>.From(nint handle) => new C_INIT_CreateWithinBoxImpl(handle);
+  static C_INIT_CreateWithinBox ISchemaClass<C_INIT_CreateWithinBox>.From(nint handle) => new C_INIT_CreateWithinBoxImpl(handle);
 
   
   public CPerParticleVecInput Min { get; }

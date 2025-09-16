@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoDeathmatchSpawn : SpawnPoint, IConvertibleNativeHandle<CInfoDeathmatchSpawn> {
+public partial interface CInfoDeathmatchSpawn : SpawnPoint, ISchemaClass<CInfoDeathmatchSpawn> {
 
-  static CInfoDeathmatchSpawn IConvertibleNativeHandle<CInfoDeathmatchSpawn>.From(nint handle) => new CInfoDeathmatchSpawnImpl(handle);
+  static CInfoDeathmatchSpawn ISchemaClass<CInfoDeathmatchSpawn>.From(nint handle) => new CInfoDeathmatchSpawnImpl(handle);
 
 
 

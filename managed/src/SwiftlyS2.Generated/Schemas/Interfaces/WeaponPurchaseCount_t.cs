@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface WeaponPurchaseCount_t : ISchemaClass, IConvertibleNativeHandle<WeaponPurchaseCount_t> {
+public partial interface WeaponPurchaseCount_t : ISchemaClass<WeaponPurchaseCount_t> {
 
-  static WeaponPurchaseCount_t IConvertibleNativeHandle<WeaponPurchaseCount_t>.From(nint handle) => new WeaponPurchaseCount_tImpl(handle);
+  static WeaponPurchaseCount_t ISchemaClass<WeaponPurchaseCount_t>.From(nint handle) => new WeaponPurchaseCount_tImpl(handle);
 
   
   public ref ushort ItemDefIndex { get; }

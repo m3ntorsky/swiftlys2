@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMovementHandshakeAnimTag : CHandshakeAnimTagBase, IConvertibleNativeHandle<CMovementHandshakeAnimTag> {
+public partial interface CMovementHandshakeAnimTag : CHandshakeAnimTagBase, ISchemaClass<CMovementHandshakeAnimTag> {
 
-  static CMovementHandshakeAnimTag IConvertibleNativeHandle<CMovementHandshakeAnimTag>.From(nint handle) => new CMovementHandshakeAnimTagImpl(handle);
+  static CMovementHandshakeAnimTag ISchemaClass<CMovementHandshakeAnimTag>.From(nint handle) => new CMovementHandshakeAnimTagImpl(handle);
 
 
 

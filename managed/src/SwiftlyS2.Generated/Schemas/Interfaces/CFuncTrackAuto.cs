@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncTrackAuto : CFuncTrackChange, IConvertibleNativeHandle<CFuncTrackAuto> {
+public partial interface CFuncTrackAuto : CFuncTrackChange, ISchemaClass<CFuncTrackAuto> {
 
-  static CFuncTrackAuto IConvertibleNativeHandle<CFuncTrackAuto>.From(nint handle) => new CFuncTrackAutoImpl(handle);
+  static CFuncTrackAuto ISchemaClass<CFuncTrackAuto>.From(nint handle) => new CFuncTrackAutoImpl(handle);
 
 
 

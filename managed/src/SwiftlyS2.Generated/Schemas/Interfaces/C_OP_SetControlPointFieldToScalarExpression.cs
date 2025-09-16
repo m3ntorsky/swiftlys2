@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointFieldToScalarExpression : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetControlPointFieldToScalarExpression> {
+public partial interface C_OP_SetControlPointFieldToScalarExpression : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetControlPointFieldToScalarExpression> {
 
-  static C_OP_SetControlPointFieldToScalarExpression IConvertibleNativeHandle<C_OP_SetControlPointFieldToScalarExpression>.From(nint handle) => new C_OP_SetControlPointFieldToScalarExpressionImpl(handle);
+  static C_OP_SetControlPointFieldToScalarExpression ISchemaClass<C_OP_SetControlPointFieldToScalarExpression>.From(nint handle) => new C_OP_SetControlPointFieldToScalarExpressionImpl(handle);
 
   
   public ref ScalarExpressionType_t Expression { get; }

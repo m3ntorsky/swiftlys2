@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixEnvelopeDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixEnvelopeDesc_t> {
+public partial interface VMixEnvelopeDesc_t : ISchemaClass<VMixEnvelopeDesc_t> {
 
-  static VMixEnvelopeDesc_t IConvertibleNativeHandle<VMixEnvelopeDesc_t>.From(nint handle) => new VMixEnvelopeDesc_tImpl(handle);
+  static VMixEnvelopeDesc_t ISchemaClass<VMixEnvelopeDesc_t>.From(nint handle) => new VMixEnvelopeDesc_tImpl(handle);
 
   
   public ref float AttackTimeMS { get; }

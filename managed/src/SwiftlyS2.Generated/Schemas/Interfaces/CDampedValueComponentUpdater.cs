@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDampedValueComponentUpdater : CAnimComponentUpdater, IConvertibleNativeHandle<CDampedValueComponentUpdater> {
+public partial interface CDampedValueComponentUpdater : CAnimComponentUpdater, ISchemaClass<CDampedValueComponentUpdater> {
 
-  static CDampedValueComponentUpdater IConvertibleNativeHandle<CDampedValueComponentUpdater>.From(nint handle) => new CDampedValueComponentUpdaterImpl(handle);
+  static CDampedValueComponentUpdater ISchemaClass<CDampedValueComponentUpdater>.From(nint handle) => new CDampedValueComponentUpdaterImpl(handle);
 
   
   // CUtlVector< CDampedValueUpdateItem >

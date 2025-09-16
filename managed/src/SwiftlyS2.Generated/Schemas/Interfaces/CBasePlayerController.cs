@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBasePlayerController : CBaseEntity, IConvertibleNativeHandle<CBasePlayerController> {
+public partial interface CBasePlayerController : CBaseEntity, ISchemaClass<CBasePlayerController> {
 
-  static CBasePlayerController IConvertibleNativeHandle<CBasePlayerController>.From(nint handle) => new CBasePlayerControllerImpl(handle);
+  static CBasePlayerController ISchemaClass<CBasePlayerController>.From(nint handle) => new CBasePlayerControllerImpl(handle);
 
   
   public ref ulong InButtonsWhichAreToggles { get; }

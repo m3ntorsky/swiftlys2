@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseGraphExecutionHistoryNodeDesc_t : ISchemaClass, IConvertibleNativeHandle<PulseGraphExecutionHistoryNodeDesc_t> {
+public partial interface PulseGraphExecutionHistoryNodeDesc_t : ISchemaClass<PulseGraphExecutionHistoryNodeDesc_t> {
 
-  static PulseGraphExecutionHistoryNodeDesc_t IConvertibleNativeHandle<PulseGraphExecutionHistoryNodeDesc_t>.From(nint handle) => new PulseGraphExecutionHistoryNodeDesc_tImpl(handle);
+  static PulseGraphExecutionHistoryNodeDesc_t ISchemaClass<PulseGraphExecutionHistoryNodeDesc_t>.From(nint handle) => new PulseGraphExecutionHistoryNodeDesc_tImpl(handle);
 
   
   public ref CBufferString StrCellDesc { get; }

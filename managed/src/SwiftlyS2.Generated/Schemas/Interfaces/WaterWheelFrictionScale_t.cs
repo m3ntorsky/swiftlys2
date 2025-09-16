@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface WaterWheelFrictionScale_t : ISchemaClass, IConvertibleNativeHandle<WaterWheelFrictionScale_t> {
+public partial interface WaterWheelFrictionScale_t : ISchemaClass<WaterWheelFrictionScale_t> {
 
-  static WaterWheelFrictionScale_t IConvertibleNativeHandle<WaterWheelFrictionScale_t>.From(nint handle) => new WaterWheelFrictionScale_tImpl(handle);
+  static WaterWheelFrictionScale_t ISchemaClass<WaterWheelFrictionScale_t>.From(nint handle) => new WaterWheelFrictionScale_tImpl(handle);
 
   
   public ref float FractionOfWheelSubmerged { get; }

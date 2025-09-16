@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTimeline : IntervalTimer, IConvertibleNativeHandle<CTimeline> {
+public partial interface CTimeline : IntervalTimer, ISchemaClass<CTimeline> {
 
-  static CTimeline IConvertibleNativeHandle<CTimeline>.From(nint handle) => new CTimelineImpl(handle);
+  static CTimeline ISchemaClass<CTimeline>.From(nint handle) => new CTimelineImpl(handle);
 
   
   public ISchemaFixedArray<float> Values { get; }

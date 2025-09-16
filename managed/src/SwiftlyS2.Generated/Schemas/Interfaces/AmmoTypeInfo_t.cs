@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AmmoTypeInfo_t : ISchemaClass, IConvertibleNativeHandle<AmmoTypeInfo_t> {
+public partial interface AmmoTypeInfo_t : ISchemaClass<AmmoTypeInfo_t> {
 
-  static AmmoTypeInfo_t IConvertibleNativeHandle<AmmoTypeInfo_t>.From(nint handle) => new AmmoTypeInfo_tImpl(handle);
+  static AmmoTypeInfo_t ISchemaClass<AmmoTypeInfo_t>.From(nint handle) => new AmmoTypeInfo_tImpl(handle);
 
   
   public ref int MaxCarry { get; }

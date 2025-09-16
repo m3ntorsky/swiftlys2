@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapTransformVisibilityToVector : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapTransformVisibilityToVector> {
+public partial interface C_OP_RemapTransformVisibilityToVector : CParticleFunctionOperator, ISchemaClass<C_OP_RemapTransformVisibilityToVector> {
 
-  static C_OP_RemapTransformVisibilityToVector IConvertibleNativeHandle<C_OP_RemapTransformVisibilityToVector>.From(nint handle) => new C_OP_RemapTransformVisibilityToVectorImpl(handle);
+  static C_OP_RemapTransformVisibilityToVector ISchemaClass<C_OP_RemapTransformVisibilityToVector>.From(nint handle) => new C_OP_RemapTransformVisibilityToVectorImpl(handle);
 
   
   public ref ParticleSetMethod_t SetMethod { get; }

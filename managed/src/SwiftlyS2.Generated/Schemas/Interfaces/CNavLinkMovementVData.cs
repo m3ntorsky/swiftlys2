@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavLinkMovementVData : ISchemaClass, IConvertibleNativeHandle<CNavLinkMovementVData> {
+public partial interface CNavLinkMovementVData : ISchemaClass<CNavLinkMovementVData> {
 
-  static CNavLinkMovementVData IConvertibleNativeHandle<CNavLinkMovementVData>.From(nint handle) => new CNavLinkMovementVDataImpl(handle);
+  static CNavLinkMovementVData ISchemaClass<CNavLinkMovementVData>.From(nint handle) => new CNavLinkMovementVDataImpl(handle);
 
   
   // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >

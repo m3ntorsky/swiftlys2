@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerSndSosOpvar : CBaseTrigger, IConvertibleNativeHandle<CTriggerSndSosOpvar> {
+public partial interface CTriggerSndSosOpvar : CBaseTrigger, ISchemaClass<CTriggerSndSosOpvar> {
 
-  static CTriggerSndSosOpvar IConvertibleNativeHandle<CTriggerSndSosOpvar>.From(nint handle) => new CTriggerSndSosOpvarImpl(handle);
+  static CTriggerSndSosOpvar ISchemaClass<CTriggerSndSosOpvar>.From(nint handle) => new CTriggerSndSosOpvarImpl(handle);
 
   
   public ref CUtlVector<CHandle<CBaseEntity>> TouchingPlayers { get; }

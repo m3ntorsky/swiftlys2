@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTakeDamageResult : ISchemaClass, IConvertibleNativeHandle<CTakeDamageResult> {
+public partial interface CTakeDamageResult : ISchemaClass<CTakeDamageResult> {
 
-  static CTakeDamageResult IConvertibleNativeHandle<CTakeDamageResult>.From(nint handle) => new CTakeDamageResultImpl(handle);
+  static CTakeDamageResult ISchemaClass<CTakeDamageResult>.From(nint handle) => new CTakeDamageResultImpl(handle);
 
   
   public CTakeDamageInfo? OriginatingInfo { get; }

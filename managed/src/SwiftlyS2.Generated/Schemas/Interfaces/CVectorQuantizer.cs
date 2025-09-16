@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVectorQuantizer : ISchemaClass, IConvertibleNativeHandle<CVectorQuantizer> {
+public partial interface CVectorQuantizer : ISchemaClass<CVectorQuantizer> {
 
-  static CVectorQuantizer IConvertibleNativeHandle<CVectorQuantizer>.From(nint handle) => new CVectorQuantizerImpl(handle);
+  static CVectorQuantizer ISchemaClass<CVectorQuantizer>.From(nint handle) => new CVectorQuantizerImpl(handle);
 
   
   public ref CUtlVector<float> CentroidVectors { get; }

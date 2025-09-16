@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootstepControl : CBaseTrigger, IConvertibleNativeHandle<CFootstepControl> {
+public partial interface CFootstepControl : CBaseTrigger, ISchemaClass<CFootstepControl> {
 
-  static CFootstepControl IConvertibleNativeHandle<CFootstepControl>.From(nint handle) => new CFootstepControlImpl(handle);
+  static CFootstepControl ISchemaClass<CFootstepControl>.From(nint handle) => new CFootstepControlImpl(handle);
 
   
   public ref CUtlSymbolLarge Source { get; }

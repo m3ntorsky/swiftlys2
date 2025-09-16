@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTeam : CBaseEntity, IConvertibleNativeHandle<CTeam> {
+public partial interface CTeam : CBaseEntity, ISchemaClass<CTeam> {
 
-  static CTeam IConvertibleNativeHandle<CTeam>.From(nint handle) => new CTeamImpl(handle);
+  static CTeam ISchemaClass<CTeam>.From(nint handle) => new CTeamImpl(handle);
 
   
   public ref CUtlVector<CHandle<CBasePlayerController>> PlayerControllers { get; }

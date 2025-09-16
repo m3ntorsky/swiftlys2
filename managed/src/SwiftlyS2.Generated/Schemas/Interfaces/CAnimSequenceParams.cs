@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimSequenceParams : ISchemaClass, IConvertibleNativeHandle<CAnimSequenceParams> {
+public partial interface CAnimSequenceParams : ISchemaClass<CAnimSequenceParams> {
 
-  static CAnimSequenceParams IConvertibleNativeHandle<CAnimSequenceParams>.From(nint handle) => new CAnimSequenceParamsImpl(handle);
+  static CAnimSequenceParams ISchemaClass<CAnimSequenceParams>.From(nint handle) => new CAnimSequenceParamsImpl(handle);
 
   
   public ref float FadeInTime { get; }

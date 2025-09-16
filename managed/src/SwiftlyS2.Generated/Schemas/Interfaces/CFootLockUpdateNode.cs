@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootLockUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CFootLockUpdateNode> {
+public partial interface CFootLockUpdateNode : CUnaryUpdateNode, ISchemaClass<CFootLockUpdateNode> {
 
-  static CFootLockUpdateNode IConvertibleNativeHandle<CFootLockUpdateNode>.From(nint handle) => new CFootLockUpdateNodeImpl(handle);
+  static CFootLockUpdateNode ISchemaClass<CFootLockUpdateNode>.From(nint handle) => new CFootLockUpdateNodeImpl(handle);
 
   
   public FootLockPoseOpFixedSettings OpFixedSettings { get; }

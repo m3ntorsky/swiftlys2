@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointsToModelParticles : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_SetControlPointsToModelParticles> {
+public partial interface C_OP_SetControlPointsToModelParticles : CParticleFunctionOperator, ISchemaClass<C_OP_SetControlPointsToModelParticles> {
 
-  static C_OP_SetControlPointsToModelParticles IConvertibleNativeHandle<C_OP_SetControlPointsToModelParticles>.From(nint handle) => new C_OP_SetControlPointsToModelParticlesImpl(handle);
+  static C_OP_SetControlPointsToModelParticles ISchemaClass<C_OP_SetControlPointsToModelParticles>.From(nint handle) => new C_OP_SetControlPointsToModelParticlesImpl(handle);
 
   
   public ISchemaFixedString HitboxSetName { get; }

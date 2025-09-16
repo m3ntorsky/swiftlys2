@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_BasicMovement : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_BasicMovement> {
+public partial interface C_OP_BasicMovement : CParticleFunctionOperator, ISchemaClass<C_OP_BasicMovement> {
 
-  static C_OP_BasicMovement IConvertibleNativeHandle<C_OP_BasicMovement>.From(nint handle) => new C_OP_BasicMovementImpl(handle);
+  static C_OP_BasicMovement ISchemaClass<C_OP_BasicMovement>.From(nint handle) => new C_OP_BasicMovementImpl(handle);
 
   
   public CParticleCollectionVecInput Gravity { get; }

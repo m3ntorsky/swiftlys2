@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CChicken : CDynamicProp, IConvertibleNativeHandle<CChicken> {
+public partial interface CChicken : CDynamicProp, ISchemaClass<CChicken> {
 
-  static CChicken IConvertibleNativeHandle<CChicken>.From(nint handle) => new CChickenImpl(handle);
+  static CChicken ISchemaClass<CChicken>.From(nint handle) => new CChickenImpl(handle);
 
   
   public CAttributeContainer AttributeManager { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncInteractionLayerClip : CBaseModelEntity, IConvertibleNativeHandle<CFuncInteractionLayerClip> {
+public partial interface CFuncInteractionLayerClip : CBaseModelEntity, ISchemaClass<CFuncInteractionLayerClip> {
 
-  static CFuncInteractionLayerClip IConvertibleNativeHandle<CFuncInteractionLayerClip>.From(nint handle) => new CFuncInteractionLayerClipImpl(handle);
+  static CFuncInteractionLayerClip ISchemaClass<CFuncInteractionLayerClip>.From(nint handle) => new CFuncInteractionLayerClipImpl(handle);
 
   
   public ref bool Disabled { get; }

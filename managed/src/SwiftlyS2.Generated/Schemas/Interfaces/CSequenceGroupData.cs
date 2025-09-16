@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSequenceGroupData : ISchemaClass, IConvertibleNativeHandle<CSequenceGroupData> {
+public partial interface CSequenceGroupData : ISchemaClass<CSequenceGroupData> {
 
-  static CSequenceGroupData IConvertibleNativeHandle<CSequenceGroupData>.From(nint handle) => new CSequenceGroupDataImpl(handle);
+  static CSequenceGroupData ISchemaClass<CSequenceGroupData>.From(nint handle) => new CSequenceGroupDataImpl(handle);
 
   
   public ref CBufferString Name { get; }

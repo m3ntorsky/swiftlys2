@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomRotation : CGeneralRandomRotation, IConvertibleNativeHandle<C_INIT_RandomRotation> {
+public partial interface C_INIT_RandomRotation : CGeneralRandomRotation, ISchemaClass<C_INIT_RandomRotation> {
 
-  static C_INIT_RandomRotation IConvertibleNativeHandle<C_INIT_RandomRotation>.From(nint handle) => new C_INIT_RandomRotationImpl(handle);
+  static C_INIT_RandomRotation ISchemaClass<C_INIT_RandomRotation>.From(nint handle) => new C_INIT_RandomRotationImpl(handle);
 
 
 

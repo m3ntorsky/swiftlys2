@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerSelector : CVoiceContainerBase, IConvertibleNativeHandle<CVoiceContainerSelector> {
+public partial interface CVoiceContainerSelector : CVoiceContainerBase, ISchemaClass<CVoiceContainerSelector> {
 
-  static CVoiceContainerSelector IConvertibleNativeHandle<CVoiceContainerSelector>.From(nint handle) => new CVoiceContainerSelectorImpl(handle);
+  static CVoiceContainerSelector ISchemaClass<CVoiceContainerSelector>.From(nint handle) => new CVoiceContainerSelectorImpl(handle);
 
   
   public ref PlayBackMode_t Mode { get; }

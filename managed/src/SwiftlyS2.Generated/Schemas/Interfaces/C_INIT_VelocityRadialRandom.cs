@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_VelocityRadialRandom : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_VelocityRadialRandom> {
+public partial interface C_INIT_VelocityRadialRandom : CParticleFunctionInitializer, ISchemaClass<C_INIT_VelocityRadialRandom> {
 
-  static C_INIT_VelocityRadialRandom IConvertibleNativeHandle<C_INIT_VelocityRadialRandom>.From(nint handle) => new C_INIT_VelocityRadialRandomImpl(handle);
+  static C_INIT_VelocityRadialRandom ISchemaClass<C_INIT_VelocityRadialRandom>.From(nint handle) => new C_INIT_VelocityRadialRandomImpl(handle);
 
   
   public ref int ControlPointNumber { get; }

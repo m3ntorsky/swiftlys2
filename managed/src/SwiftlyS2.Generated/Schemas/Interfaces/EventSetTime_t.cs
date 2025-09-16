@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventSetTime_t : ISchemaClass, IConvertibleNativeHandle<EventSetTime_t> {
+public partial interface EventSetTime_t : ISchemaClass<EventSetTime_t> {
 
-  static EventSetTime_t IConvertibleNativeHandle<EventSetTime_t>.From(nint handle) => new EventSetTime_tImpl(handle);
+  static EventSetTime_t ISchemaClass<EventSetTime_t>.From(nint handle) => new EventSetTime_tImpl(handle);
 
   
   public EngineLoopState_t LoopState { get; }

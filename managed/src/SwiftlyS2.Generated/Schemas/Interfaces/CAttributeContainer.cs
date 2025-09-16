@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAttributeContainer : CAttributeManager, IConvertibleNativeHandle<CAttributeContainer> {
+public partial interface CAttributeContainer : CAttributeManager, ISchemaClass<CAttributeContainer> {
 
-  static CAttributeContainer IConvertibleNativeHandle<CAttributeContainer>.From(nint handle) => new CAttributeContainerImpl(handle);
+  static CAttributeContainer ISchemaClass<CAttributeContainer>.From(nint handle) => new CAttributeContainerImpl(handle);
 
   
   public CEconItemView Item { get; }

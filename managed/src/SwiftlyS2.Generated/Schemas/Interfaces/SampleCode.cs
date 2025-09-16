@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SampleCode : ISchemaClass, IConvertibleNativeHandle<SampleCode> {
+public partial interface SampleCode : ISchemaClass<SampleCode> {
 
-  static SampleCode IConvertibleNativeHandle<SampleCode>.From(nint handle) => new SampleCodeImpl(handle);
+  static SampleCode ISchemaClass<SampleCode>.From(nint handle) => new SampleCodeImpl(handle);
 
   
   public ISchemaFixedArray<byte> SubCode { get; }
