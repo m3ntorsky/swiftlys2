@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicCase : CLogicalEntity, IConvertibleNativeHandle<CLogicCase> {
+public partial interface CLogicCase : CLogicalEntity, ISchemaClass<CLogicCase> {
 
-  static CLogicCase IConvertibleNativeHandle<CLogicCase>.From(nint handle) => new CLogicCaseImpl(handle);
+  static CLogicCase ISchemaClass<CLogicCase>.From(nint handle) => new CLogicCaseImpl(handle);
 
   
   public ISchemaFixedArray<CUtlSymbolLarge> Case { get; }

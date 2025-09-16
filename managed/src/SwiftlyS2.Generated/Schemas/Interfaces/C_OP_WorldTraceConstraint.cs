@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_WorldTraceConstraint : CParticleFunctionConstraint, IConvertibleNativeHandle<C_OP_WorldTraceConstraint> {
+public partial interface C_OP_WorldTraceConstraint : CParticleFunctionConstraint, ISchemaClass<C_OP_WorldTraceConstraint> {
 
-  static C_OP_WorldTraceConstraint IConvertibleNativeHandle<C_OP_WorldTraceConstraint>.From(nint handle) => new C_OP_WorldTraceConstraintImpl(handle);
+  static C_OP_WorldTraceConstraint ISchemaClass<C_OP_WorldTraceConstraint>.From(nint handle) => new C_OP_WorldTraceConstraintImpl(handle);
 
   
   public ref int CP { get; }

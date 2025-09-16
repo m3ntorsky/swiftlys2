@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCollisionProperty : ISchemaClass, IConvertibleNativeHandle<CCollisionProperty> {
+public partial interface CCollisionProperty : ISchemaClass<CCollisionProperty> {
 
-  static CCollisionProperty IConvertibleNativeHandle<CCollisionProperty>.From(nint handle) => new CCollisionPropertyImpl(handle);
+  static CCollisionProperty ISchemaClass<CCollisionProperty>.From(nint handle) => new CCollisionPropertyImpl(handle);
 
   
   public VPhysicsCollisionAttribute_t CollisionAttribute { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicCompare : CLogicalEntity, IConvertibleNativeHandle<CLogicCompare> {
+public partial interface CLogicCompare : CLogicalEntity, ISchemaClass<CLogicCompare> {
 
-  static CLogicCompare IConvertibleNativeHandle<CLogicCompare>.From(nint handle) => new CLogicCompareImpl(handle);
+  static CLogicCompare ISchemaClass<CLogicCompare>.From(nint handle) => new CLogicCompareImpl(handle);
 
   
   public ref float InValue { get; }

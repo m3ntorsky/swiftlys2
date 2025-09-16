@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapGravityToVector : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapGravityToVector> {
+public partial interface C_OP_RemapGravityToVector : CParticleFunctionOperator, ISchemaClass<C_OP_RemapGravityToVector> {
 
-  static C_OP_RemapGravityToVector IConvertibleNativeHandle<C_OP_RemapGravityToVector>.From(nint handle) => new C_OP_RemapGravityToVectorImpl(handle);
+  static C_OP_RemapGravityToVector ISchemaClass<C_OP_RemapGravityToVector>.From(nint handle) => new C_OP_RemapGravityToVectorImpl(handle);
 
   
   public CPerParticleVecInput Input1 { get; }

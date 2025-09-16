@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_PickBestOutflowSelector : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_PickBestOutflowSelector> {
+public partial interface CPulseCell_PickBestOutflowSelector : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_PickBestOutflowSelector> {
 
-  static CPulseCell_PickBestOutflowSelector IConvertibleNativeHandle<CPulseCell_PickBestOutflowSelector>.From(nint handle) => new CPulseCell_PickBestOutflowSelectorImpl(handle);
+  static CPulseCell_PickBestOutflowSelector ISchemaClass<CPulseCell_PickBestOutflowSelector>.From(nint handle) => new CPulseCell_PickBestOutflowSelectorImpl(handle);
 
   
   public ref PulseBestOutflowRules_t CheckType { get; }

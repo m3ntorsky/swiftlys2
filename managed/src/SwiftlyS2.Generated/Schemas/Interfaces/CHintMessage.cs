@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHintMessage : ISchemaClass, IConvertibleNativeHandle<CHintMessage> {
+public partial interface CHintMessage : ISchemaClass<CHintMessage> {
 
-  static CHintMessage IConvertibleNativeHandle<CHintMessage>.From(nint handle) => new CHintMessageImpl(handle);
+  static CHintMessage ISchemaClass<CHintMessage>.From(nint handle) => new CHintMessageImpl(handle);
 
   
   public ref CString HintString { get; }

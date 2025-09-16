@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLookAtUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CLookAtUpdateNode> {
+public partial interface CLookAtUpdateNode : CUnaryUpdateNode, ISchemaClass<CLookAtUpdateNode> {
 
-  static CLookAtUpdateNode IConvertibleNativeHandle<CLookAtUpdateNode>.From(nint handle) => new CLookAtUpdateNodeImpl(handle);
+  static CLookAtUpdateNode ISchemaClass<CLookAtUpdateNode>.From(nint handle) => new CLookAtUpdateNodeImpl(handle);
 
   
   public LookAtOpFixedSettings_t OpFixedSettings { get; }

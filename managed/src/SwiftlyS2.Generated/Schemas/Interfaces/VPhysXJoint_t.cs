@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VPhysXJoint_t : ISchemaClass, IConvertibleNativeHandle<VPhysXJoint_t> {
+public partial interface VPhysXJoint_t : ISchemaClass<VPhysXJoint_t> {
 
-  static VPhysXJoint_t IConvertibleNativeHandle<VPhysXJoint_t>.From(nint handle) => new VPhysXJoint_tImpl(handle);
+  static VPhysXJoint_t ISchemaClass<VPhysXJoint_t>.From(nint handle) => new VPhysXJoint_tImpl(handle);
 
   
   public ref ushort Type { get; }

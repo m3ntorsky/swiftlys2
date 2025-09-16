@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFlashbangProjectile : CBaseCSGrenadeProjectile, IConvertibleNativeHandle<CFlashbangProjectile> {
+public partial interface CFlashbangProjectile : CBaseCSGrenadeProjectile, ISchemaClass<CFlashbangProjectile> {
 
-  static CFlashbangProjectile IConvertibleNativeHandle<CFlashbangProjectile>.From(nint handle) => new CFlashbangProjectileImpl(handle);
+  static CFlashbangProjectile ISchemaClass<CFlashbangProjectile>.From(nint handle) => new CFlashbangProjectileImpl(handle);
 
   
   public ref float TimeToDetonate { get; }

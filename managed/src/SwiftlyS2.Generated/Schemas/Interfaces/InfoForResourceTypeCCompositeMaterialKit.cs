@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCCompositeMaterialKit : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCCompositeMaterialKit> {
+public partial interface InfoForResourceTypeCCompositeMaterialKit : ISchemaClass<InfoForResourceTypeCCompositeMaterialKit> {
 
-  static InfoForResourceTypeCCompositeMaterialKit IConvertibleNativeHandle<InfoForResourceTypeCCompositeMaterialKit>.From(nint handle) => new InfoForResourceTypeCCompositeMaterialKitImpl(handle);
+  static InfoForResourceTypeCCompositeMaterialKit ISchemaClass<InfoForResourceTypeCCompositeMaterialKit>.From(nint handle) => new InfoForResourceTypeCCompositeMaterialKitImpl(handle);
 
 
 

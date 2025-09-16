@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_InitFromVectorFieldSnapshot : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_InitFromVectorFieldSnapshot> {
+public partial interface C_INIT_InitFromVectorFieldSnapshot : CParticleFunctionInitializer, ISchemaClass<C_INIT_InitFromVectorFieldSnapshot> {
 
-  static C_INIT_InitFromVectorFieldSnapshot IConvertibleNativeHandle<C_INIT_InitFromVectorFieldSnapshot>.From(nint handle) => new C_INIT_InitFromVectorFieldSnapshotImpl(handle);
+  static C_INIT_InitFromVectorFieldSnapshot ISchemaClass<C_INIT_InitFromVectorFieldSnapshot>.From(nint handle) => new C_INIT_InitFromVectorFieldSnapshotImpl(handle);
 
   
   public ref int ControlPointNumber { get; }

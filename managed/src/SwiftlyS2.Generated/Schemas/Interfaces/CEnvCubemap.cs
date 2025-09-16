@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvCubemap : CBaseEntity, IConvertibleNativeHandle<CEnvCubemap> {
+public partial interface CEnvCubemap : CBaseEntity, ISchemaClass<CEnvCubemap> {
 
-  static CEnvCubemap IConvertibleNativeHandle<CEnvCubemap>.From(nint handle) => new CEnvCubemapImpl(handle);
+  static CEnvCubemap ISchemaClass<CEnvCubemap>.From(nint handle) => new CEnvCubemapImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hCubemapTexture { get; }

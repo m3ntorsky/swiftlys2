@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixDynamics3BandDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixDynamics3BandDesc_t> {
+public partial interface VMixDynamics3BandDesc_t : ISchemaClass<VMixDynamics3BandDesc_t> {
 
-  static VMixDynamics3BandDesc_t IConvertibleNativeHandle<VMixDynamics3BandDesc_t>.From(nint handle) => new VMixDynamics3BandDesc_tImpl(handle);
+  static VMixDynamics3BandDesc_t ISchemaClass<VMixDynamics3BandDesc_t>.From(nint handle) => new VMixDynamics3BandDesc_tImpl(handle);
 
   
   public ref float FldbGainOutput { get; }

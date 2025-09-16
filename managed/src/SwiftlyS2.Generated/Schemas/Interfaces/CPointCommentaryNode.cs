@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointCommentaryNode : CBaseAnimGraph, IConvertibleNativeHandle<CPointCommentaryNode> {
+public partial interface CPointCommentaryNode : CBaseAnimGraph, ISchemaClass<CPointCommentaryNode> {
 
-  static CPointCommentaryNode IConvertibleNativeHandle<CPointCommentaryNode>.From(nint handle) => new CPointCommentaryNodeImpl(handle);
+  static CPointCommentaryNode ISchemaClass<CPointCommentaryNode>.From(nint handle) => new CPointCommentaryNodeImpl(handle);
 
   
   public ref CUtlSymbolLarge PreCommands { get; }

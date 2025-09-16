@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CovMatrix3 : ISchemaClass, IConvertibleNativeHandle<CovMatrix3> {
+public partial interface CovMatrix3 : ISchemaClass<CovMatrix3> {
 
-  static CovMatrix3 IConvertibleNativeHandle<CovMatrix3>.From(nint handle) => new CovMatrix3Impl(handle);
+  static CovMatrix3 ISchemaClass<CovMatrix3>.From(nint handle) => new CovMatrix3Impl(handle);
 
   
   public ref Vector Diag { get; }

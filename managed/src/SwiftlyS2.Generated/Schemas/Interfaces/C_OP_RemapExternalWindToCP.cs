@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapExternalWindToCP : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_RemapExternalWindToCP> {
+public partial interface C_OP_RemapExternalWindToCP : CParticleFunctionPreEmission, ISchemaClass<C_OP_RemapExternalWindToCP> {
 
-  static C_OP_RemapExternalWindToCP IConvertibleNativeHandle<C_OP_RemapExternalWindToCP>.From(nint handle) => new C_OP_RemapExternalWindToCPImpl(handle);
+  static C_OP_RemapExternalWindToCP ISchemaClass<C_OP_RemapExternalWindToCP>.From(nint handle) => new C_OP_RemapExternalWindToCPImpl(handle);
 
   
   public ref int CP { get; }

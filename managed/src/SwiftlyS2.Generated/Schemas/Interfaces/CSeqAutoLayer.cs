@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqAutoLayer : ISchemaClass, IConvertibleNativeHandle<CSeqAutoLayer> {
+public partial interface CSeqAutoLayer : ISchemaClass<CSeqAutoLayer> {
 
-  static CSeqAutoLayer IConvertibleNativeHandle<CSeqAutoLayer>.From(nint handle) => new CSeqAutoLayerImpl(handle);
+  static CSeqAutoLayer ISchemaClass<CSeqAutoLayer>.From(nint handle) => new CSeqAutoLayerImpl(handle);
 
   
   public ref short LocalReference { get; }

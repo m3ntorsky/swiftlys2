@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupActionSchema : ISchemaClass, IConvertibleNativeHandle<CSosGroupActionSchema> {
+public partial interface CSosGroupActionSchema : ISchemaClass<CSosGroupActionSchema> {
 
-  static CSosGroupActionSchema IConvertibleNativeHandle<CSosGroupActionSchema>.From(nint handle) => new CSosGroupActionSchemaImpl(handle);
+  static CSosGroupActionSchema ISchemaClass<CSosGroupActionSchema>.From(nint handle) => new CSosGroupActionSchemaImpl(handle);
 
   
   public ref CUtlString Name { get; }

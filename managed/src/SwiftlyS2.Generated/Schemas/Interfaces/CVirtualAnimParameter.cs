@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVirtualAnimParameter : CAnimParameterBase, IConvertibleNativeHandle<CVirtualAnimParameter> {
+public partial interface CVirtualAnimParameter : CAnimParameterBase, ISchemaClass<CVirtualAnimParameter> {
 
-  static CVirtualAnimParameter IConvertibleNativeHandle<CVirtualAnimParameter>.From(nint handle) => new CVirtualAnimParameterImpl(handle);
+  static CVirtualAnimParameter ISchemaClass<CVirtualAnimParameter>.From(nint handle) => new CVirtualAnimParameterImpl(handle);
 
   
   public ref CUtlString ExpressionString { get; }

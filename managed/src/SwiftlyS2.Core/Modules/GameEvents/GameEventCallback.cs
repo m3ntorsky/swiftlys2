@@ -4,13 +4,14 @@ using SwiftlyS2.Core.Extensions;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared.Misc;
+using SwiftlyS2.Core.Natives;
 
 namespace SwiftlyS2.Core.GameEvents;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 internal delegate HookResult UnmanagedEventCallback(uint hash, nint pEvent, nint pDontBroadcast);
 
-internal abstract class GameEventCallback : IEquatable<GameEventCallback> {
+internal abstract class GameEventCallback : IEquatable<GameEventCallback>, IDisposable {
 
   public Guid Guid { get; init; }
 
@@ -21,6 +22,16 @@ internal abstract class GameEventCallback : IEquatable<GameEventCallback> {
   public bool IsPreHook { get; init; }
 
   public nint UnmanagedWrapperPtr { get; init; }
+
+  public ulong ListenerId { get; init; }
+
+  public void Dispose() {
+    if (IsPreHook) {
+      NativeGameEvents.RemoveListenerPreCallback(ListenerId);
+    } else {
+      NativeGameEvents.RemoveListenerPostCallback(ListenerId);
+    }
+  }
 
   public bool Equals(GameEventCallback? other) {
     if (other is null) return false;
@@ -38,7 +49,7 @@ internal abstract class GameEventCallback : IEquatable<GameEventCallback> {
   }
 }
 
-internal class GameEventCallback<T> : GameEventCallback where T : IGameEvent<T>
+internal class GameEventCallback<T> : GameEventCallback, IDisposable where T : IGameEvent<T>
 {
   private Func<T, HookResult> _callback { get; init; }
   private ILogger<GameEventCallback<T>> _logger { get; init; }
@@ -68,9 +79,7 @@ internal class GameEventCallback<T> : GameEventCallback where T : IGameEvent<T>
       } 
     };
     UnmanagedWrapperPtr = Marshal.GetFunctionPointerForDelegate(_unmanagedCallback);
-  }
-
-  ~GameEventCallback() {
-    throw new Exception("GameEventCallback destructor called");
+    NativeGameEvents.RegisterListener(EventName);
+    ListenerId = IsPreHook ? NativeGameEvents.AddListenerPreCallback(UnmanagedWrapperPtr) : NativeGameEvents.AddListenerPostCallback(UnmanagedWrapperPtr);
   }
 }

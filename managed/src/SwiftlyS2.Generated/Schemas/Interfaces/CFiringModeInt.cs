@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFiringModeInt : ISchemaClass, IConvertibleNativeHandle<CFiringModeInt> {
+public partial interface CFiringModeInt : ISchemaClass<CFiringModeInt> {
 
-  static CFiringModeInt IConvertibleNativeHandle<CFiringModeInt>.From(nint handle) => new CFiringModeIntImpl(handle);
+  static CFiringModeInt ISchemaClass<CFiringModeInt>.From(nint handle) => new CFiringModeIntImpl(handle);
 
   
   public ISchemaFixedArray<int> Values { get; }

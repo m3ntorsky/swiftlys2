@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SelectivelyEnableChildren : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SelectivelyEnableChildren> {
+public partial interface C_OP_SelectivelyEnableChildren : CParticleFunctionPreEmission, ISchemaClass<C_OP_SelectivelyEnableChildren> {
 
-  static C_OP_SelectivelyEnableChildren IConvertibleNativeHandle<C_OP_SelectivelyEnableChildren>.From(nint handle) => new C_OP_SelectivelyEnableChildrenImpl(handle);
+  static C_OP_SelectivelyEnableChildren ISchemaClass<C_OP_SelectivelyEnableChildren>.From(nint handle) => new C_OP_SelectivelyEnableChildrenImpl(handle);
 
   
   public CParticleCollectionFloatInput ChildGroupID { get; }

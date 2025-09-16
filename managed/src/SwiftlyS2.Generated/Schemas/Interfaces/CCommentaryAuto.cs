@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCommentaryAuto : CBaseEntity, IConvertibleNativeHandle<CCommentaryAuto> {
+public partial interface CCommentaryAuto : CBaseEntity, ISchemaClass<CCommentaryAuto> {
 
-  static CCommentaryAuto IConvertibleNativeHandle<CCommentaryAuto>.From(nint handle) => new CCommentaryAutoImpl(handle);
+  static CCommentaryAuto ISchemaClass<CCommentaryAuto>.From(nint handle) => new CCommentaryAutoImpl(handle);
 
   
   public CEntityIOOutput OnCommentaryNewGame { get; }

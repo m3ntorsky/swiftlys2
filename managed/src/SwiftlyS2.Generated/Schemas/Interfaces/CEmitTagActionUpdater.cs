@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEmitTagActionUpdater : CAnimActionUpdater, IConvertibleNativeHandle<CEmitTagActionUpdater> {
+public partial interface CEmitTagActionUpdater : CAnimActionUpdater, ISchemaClass<CEmitTagActionUpdater> {
 
-  static CEmitTagActionUpdater IConvertibleNativeHandle<CEmitTagActionUpdater>.From(nint handle) => new CEmitTagActionUpdaterImpl(handle);
+  static CEmitTagActionUpdater ISchemaClass<CEmitTagActionUpdater>.From(nint handle) => new CEmitTagActionUpdaterImpl(handle);
 
   
   public ref int TagIndex { get; }

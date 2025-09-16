@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncPlat : CBasePlatTrain, IConvertibleNativeHandle<CFuncPlat> {
+public partial interface CFuncPlat : CBasePlatTrain, ISchemaClass<CFuncPlat> {
 
-  static CFuncPlat IConvertibleNativeHandle<CFuncPlat>.From(nint handle) => new CFuncPlatImpl(handle);
+  static CFuncPlat ISchemaClass<CFuncPlat>.From(nint handle) => new CFuncPlatImpl(handle);
 
   
   public ref CUtlSymbolLarge Noise { get; }

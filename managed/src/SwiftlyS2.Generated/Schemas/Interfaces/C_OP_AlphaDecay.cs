@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_AlphaDecay : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_AlphaDecay> {
+public partial interface C_OP_AlphaDecay : CParticleFunctionOperator, ISchemaClass<C_OP_AlphaDecay> {
 
-  static C_OP_AlphaDecay IConvertibleNativeHandle<C_OP_AlphaDecay>.From(nint handle) => new C_OP_AlphaDecayImpl(handle);
+  static C_OP_AlphaDecay ISchemaClass<C_OP_AlphaDecay>.From(nint handle) => new C_OP_AlphaDecayImpl(handle);
 
   
   public ref float MinAlpha { get; }

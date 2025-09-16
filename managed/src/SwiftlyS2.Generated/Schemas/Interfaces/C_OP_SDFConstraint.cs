@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SDFConstraint : CParticleFunctionConstraint, IConvertibleNativeHandle<C_OP_SDFConstraint> {
+public partial interface C_OP_SDFConstraint : CParticleFunctionConstraint, ISchemaClass<C_OP_SDFConstraint> {
 
-  static C_OP_SDFConstraint IConvertibleNativeHandle<C_OP_SDFConstraint>.From(nint handle) => new C_OP_SDFConstraintImpl(handle);
+  static C_OP_SDFConstraint ISchemaClass<C_OP_SDFConstraint>.From(nint handle) => new C_OP_SDFConstraintImpl(handle);
 
   
   public CParticleCollectionFloatInput MinDist { get; }

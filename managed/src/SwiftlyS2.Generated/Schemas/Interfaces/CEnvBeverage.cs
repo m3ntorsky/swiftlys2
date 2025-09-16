@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvBeverage : CBaseEntity, IConvertibleNativeHandle<CEnvBeverage> {
+public partial interface CEnvBeverage : CBaseEntity, ISchemaClass<CEnvBeverage> {
 
-  static CEnvBeverage IConvertibleNativeHandle<CEnvBeverage>.From(nint handle) => new CEnvBeverageImpl(handle);
+  static CEnvBeverage ISchemaClass<CEnvBeverage>.From(nint handle) => new CEnvBeverageImpl(handle);
 
   
   public ref bool CanInDispenser { get; }

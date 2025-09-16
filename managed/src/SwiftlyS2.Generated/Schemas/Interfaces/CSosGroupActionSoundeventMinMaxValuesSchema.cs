@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupActionSoundeventMinMaxValuesSchema : CSosGroupActionSchema, IConvertibleNativeHandle<CSosGroupActionSoundeventMinMaxValuesSchema> {
+public partial interface CSosGroupActionSoundeventMinMaxValuesSchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionSoundeventMinMaxValuesSchema> {
 
-  static CSosGroupActionSoundeventMinMaxValuesSchema IConvertibleNativeHandle<CSosGroupActionSoundeventMinMaxValuesSchema>.From(nint handle) => new CSosGroupActionSoundeventMinMaxValuesSchemaImpl(handle);
+  static CSosGroupActionSoundeventMinMaxValuesSchema ISchemaClass<CSosGroupActionSoundeventMinMaxValuesSchema>.From(nint handle) => new CSosGroupActionSoundeventMinMaxValuesSchemaImpl(handle);
 
   
   public ref CUtlString StrQueryPublicFieldName { get; }

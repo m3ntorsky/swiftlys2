@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface $INTERFACE_NAME$ : $BASE_INTERFACE$, IConvertibleNativeHandle<$INTERFACE_NAME$> {
+public partial interface $INTERFACE_NAME$ : $BASE_INTERFACE$ISchemaClass<$INTERFACE_NAME$> {
 
-  static $INTERFACE_NAME$ IConvertibleNativeHandle<$INTERFACE_NAME$>.From(nint handle) => new $IMPL_TYPE$(handle);
+  static $INTERFACE_NAME$ ISchemaClass<$INTERFACE_NAME$>.From(nint handle) => new $IMPL_TYPE$(handle);
 
 $FIELDS$
 

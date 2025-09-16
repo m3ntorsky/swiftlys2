@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmBoneWeightList : ISchemaClass, IConvertibleNativeHandle<CNmBoneWeightList> {
+public partial interface CNmBoneWeightList : ISchemaClass<CNmBoneWeightList> {
 
-  static CNmBoneWeightList IConvertibleNativeHandle<CNmBoneWeightList>.From(nint handle) => new CNmBoneWeightListImpl(handle);
+  static CNmBoneWeightList ISchemaClass<CNmBoneWeightList>.From(nint handle) => new CNmBoneWeightListImpl(handle);
 
   
   // CResourceName

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface constraint_axislimit_t : ISchemaClass, IConvertibleNativeHandle<constraint_axislimit_t> {
+public partial interface constraint_axislimit_t : ISchemaClass<constraint_axislimit_t> {
 
-  static constraint_axislimit_t IConvertibleNativeHandle<constraint_axislimit_t>.From(nint handle) => new constraint_axislimit_tImpl(handle);
+  static constraint_axislimit_t ISchemaClass<constraint_axislimit_t>.From(nint handle) => new constraint_axislimit_tImpl(handle);
 
   
   public ref float MinRotation { get; }

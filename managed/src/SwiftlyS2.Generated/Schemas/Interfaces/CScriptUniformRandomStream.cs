@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CScriptUniformRandomStream : ISchemaClass, IConvertibleNativeHandle<CScriptUniformRandomStream> {
+public partial interface CScriptUniformRandomStream : ISchemaClass<CScriptUniformRandomStream> {
 
-  static CScriptUniformRandomStream IConvertibleNativeHandle<CScriptUniformRandomStream>.From(nint handle) => new CScriptUniformRandomStreamImpl(handle);
+  static CScriptUniformRandomStream ISchemaClass<CScriptUniformRandomStream>.From(nint handle) => new CScriptUniformRandomStreamImpl(handle);
 
   
   // HSCRIPT

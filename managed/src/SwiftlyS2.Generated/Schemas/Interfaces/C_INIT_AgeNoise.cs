@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_AgeNoise : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_AgeNoise> {
+public partial interface C_INIT_AgeNoise : CParticleFunctionInitializer, ISchemaClass<C_INIT_AgeNoise> {
 
-  static C_INIT_AgeNoise IConvertibleNativeHandle<C_INIT_AgeNoise>.From(nint handle) => new C_INIT_AgeNoiseImpl(handle);
+  static C_INIT_AgeNoise ISchemaClass<C_INIT_AgeNoise>.From(nint handle) => new C_INIT_AgeNoiseImpl(handle);
 
   
   public ref bool AbsVal { get; }

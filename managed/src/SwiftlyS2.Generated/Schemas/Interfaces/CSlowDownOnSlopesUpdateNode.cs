@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSlowDownOnSlopesUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CSlowDownOnSlopesUpdateNode> {
+public partial interface CSlowDownOnSlopesUpdateNode : CUnaryUpdateNode, ISchemaClass<CSlowDownOnSlopesUpdateNode> {
 
-  static CSlowDownOnSlopesUpdateNode IConvertibleNativeHandle<CSlowDownOnSlopesUpdateNode>.From(nint handle) => new CSlowDownOnSlopesUpdateNodeImpl(handle);
+  static CSlowDownOnSlopesUpdateNode ISchemaClass<CSlowDownOnSlopesUpdateNode>.From(nint handle) => new CSlowDownOnSlopesUpdateNodeImpl(handle);
 
   
   public ref float SlowDownStrength { get; }

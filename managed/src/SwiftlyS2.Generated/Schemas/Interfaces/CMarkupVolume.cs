@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMarkupVolume : CBaseModelEntity, IConvertibleNativeHandle<CMarkupVolume> {
+public partial interface CMarkupVolume : CBaseModelEntity, ISchemaClass<CMarkupVolume> {
 
-  static CMarkupVolume IConvertibleNativeHandle<CMarkupVolume>.From(nint handle) => new CMarkupVolumeImpl(handle);
+  static CMarkupVolume ISchemaClass<CMarkupVolume>.From(nint handle) => new CMarkupVolumeImpl(handle);
 
   
   public ref bool Disabled { get; }

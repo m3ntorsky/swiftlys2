@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicScript : CPointEntity, IConvertibleNativeHandle<CLogicScript> {
+public partial interface CLogicScript : CPointEntity, ISchemaClass<CLogicScript> {
 
-  static CLogicScript IConvertibleNativeHandle<CLogicScript>.From(nint handle) => new CLogicScriptImpl(handle);
+  static CLogicScript ISchemaClass<CLogicScript>.From(nint handle) => new CLogicScriptImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AnimationSnapshotBase_t : ISchemaClass, IConvertibleNativeHandle<AnimationSnapshotBase_t> {
+public partial interface AnimationSnapshotBase_t : ISchemaClass<AnimationSnapshotBase_t> {
 
-  static AnimationSnapshotBase_t IConvertibleNativeHandle<AnimationSnapshotBase_t>.From(nint handle) => new AnimationSnapshotBase_tImpl(handle);
+  static AnimationSnapshotBase_t ISchemaClass<AnimationSnapshotBase_t>.From(nint handle) => new AnimationSnapshotBase_tImpl(handle);
 
   
   public ref float RealTime { get; }

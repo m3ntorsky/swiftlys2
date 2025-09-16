@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimEventDefinition : ISchemaClass, IConvertibleNativeHandle<CAnimEventDefinition> {
+public partial interface CAnimEventDefinition : ISchemaClass<CAnimEventDefinition> {
 
-  static CAnimEventDefinition IConvertibleNativeHandle<CAnimEventDefinition>.From(nint handle) => new CAnimEventDefinitionImpl(handle);
+  static CAnimEventDefinition ISchemaClass<CAnimEventDefinition>.From(nint handle) => new CAnimEventDefinitionImpl(handle);
 
   
   public ref int Frame { get; }

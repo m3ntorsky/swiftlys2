@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmGraphDefinition__ExternalGraphSlot_t : ISchemaClass, IConvertibleNativeHandle<CNmGraphDefinition__ExternalGraphSlot_t> {
+public partial interface CNmGraphDefinition__ExternalGraphSlot_t : ISchemaClass<CNmGraphDefinition__ExternalGraphSlot_t> {
 
-  static CNmGraphDefinition__ExternalGraphSlot_t IConvertibleNativeHandle<CNmGraphDefinition__ExternalGraphSlot_t>.From(nint handle) => new CNmGraphDefinition__ExternalGraphSlot_tImpl(handle);
+  static CNmGraphDefinition__ExternalGraphSlot_t ISchemaClass<CNmGraphDefinition__ExternalGraphSlot_t>.From(nint handle) => new CNmGraphDefinition__ExternalGraphSlot_tImpl(handle);
 
   
   public ref short NodeIdx { get; }

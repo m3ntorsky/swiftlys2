@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicNavigation : CLogicalEntity, IConvertibleNativeHandle<CLogicNavigation> {
+public partial interface CLogicNavigation : CLogicalEntity, ISchemaClass<CLogicNavigation> {
 
-  static CLogicNavigation IConvertibleNativeHandle<CLogicNavigation>.From(nint handle) => new CLogicNavigationImpl(handle);
+  static CLogicNavigation ISchemaClass<CLogicNavigation>.From(nint handle) => new CLogicNavigationImpl(handle);
 
   
   public ref bool IsOn { get; }

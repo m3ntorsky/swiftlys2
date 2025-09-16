@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmClip__ModelSpaceSamplingChainLink_t : ISchemaClass, IConvertibleNativeHandle<CNmClip__ModelSpaceSamplingChainLink_t> {
+public partial interface CNmClip__ModelSpaceSamplingChainLink_t : ISchemaClass<CNmClip__ModelSpaceSamplingChainLink_t> {
 
-  static CNmClip__ModelSpaceSamplingChainLink_t IConvertibleNativeHandle<CNmClip__ModelSpaceSamplingChainLink_t>.From(nint handle) => new CNmClip__ModelSpaceSamplingChainLink_tImpl(handle);
+  static CNmClip__ModelSpaceSamplingChainLink_t ISchemaClass<CNmClip__ModelSpaceSamplingChainLink_t>.From(nint handle) => new CNmClip__ModelSpaceSamplingChainLink_tImpl(handle);
 
   
   public ref int BoneIdx { get; }

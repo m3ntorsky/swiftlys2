@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSplineConstraint : CPhysConstraint, IConvertibleNativeHandle<CSplineConstraint> {
+public partial interface CSplineConstraint : CPhysConstraint, ISchemaClass<CSplineConstraint> {
 
-  static CSplineConstraint IConvertibleNativeHandle<CSplineConstraint>.From(nint handle) => new CSplineConstraintImpl(handle);
+  static CSplineConstraint ISchemaClass<CSplineConstraint>.From(nint handle) => new CSplineConstraintImpl(handle);
 
   
   public ref Vector AnchorOffsetRestore { get; }

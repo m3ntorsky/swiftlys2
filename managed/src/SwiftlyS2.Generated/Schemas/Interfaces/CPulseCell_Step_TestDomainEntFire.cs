@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Step_TestDomainEntFire : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_Step_TestDomainEntFire> {
+public partial interface CPulseCell_Step_TestDomainEntFire : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_Step_TestDomainEntFire> {
 
-  static CPulseCell_Step_TestDomainEntFire IConvertibleNativeHandle<CPulseCell_Step_TestDomainEntFire>.From(nint handle) => new CPulseCell_Step_TestDomainEntFireImpl(handle);
+  static CPulseCell_Step_TestDomainEntFire ISchemaClass<CPulseCell_Step_TestDomainEntFire>.From(nint handle) => new CPulseCell_Step_TestDomainEntFireImpl(handle);
 
   
   public ref CUtlString Input { get; }

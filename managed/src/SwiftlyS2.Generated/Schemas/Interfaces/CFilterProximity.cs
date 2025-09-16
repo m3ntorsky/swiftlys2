@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFilterProximity : CBaseFilter, IConvertibleNativeHandle<CFilterProximity> {
+public partial interface CFilterProximity : CBaseFilter, ISchemaClass<CFilterProximity> {
 
-  static CFilterProximity IConvertibleNativeHandle<CFilterProximity>.From(nint handle) => new CFilterProximityImpl(handle);
+  static CFilterProximity ISchemaClass<CFilterProximity>.From(nint handle) => new CFilterProximityImpl(handle);
 
   
   public ref float Radius { get; }

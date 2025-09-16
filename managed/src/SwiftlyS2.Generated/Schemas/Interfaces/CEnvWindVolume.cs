@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvWindVolume : CBaseEntity, IConvertibleNativeHandle<CEnvWindVolume> {
+public partial interface CEnvWindVolume : CBaseEntity, ISchemaClass<CEnvWindVolume> {
 
-  static CEnvWindVolume IConvertibleNativeHandle<CEnvWindVolume>.From(nint handle) => new CEnvWindVolumeImpl(handle);
+  static CEnvWindVolume ISchemaClass<CEnvWindVolume>.From(nint handle) => new CEnvWindVolumeImpl(handle);
 
   
   public ref bool Active { get; }

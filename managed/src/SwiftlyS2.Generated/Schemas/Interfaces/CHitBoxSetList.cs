@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHitBoxSetList : ISchemaClass, IConvertibleNativeHandle<CHitBoxSetList> {
+public partial interface CHitBoxSetList : ISchemaClass<CHitBoxSetList> {
 
-  static CHitBoxSetList IConvertibleNativeHandle<CHitBoxSetList>.From(nint handle) => new CHitBoxSetListImpl(handle);
+  static CHitBoxSetList ISchemaClass<CHitBoxSetList>.From(nint handle) => new CHitBoxSetListImpl(handle);
 
   
   // CUtlVector< CHitBoxSet >

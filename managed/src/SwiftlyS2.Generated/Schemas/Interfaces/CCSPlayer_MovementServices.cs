@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_Humanoid, IConvertibleNativeHandle<CCSPlayer_MovementServices> {
+public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_Humanoid, ISchemaClass<CCSPlayer_MovementServices> {
 
-  static CCSPlayer_MovementServices IConvertibleNativeHandle<CCSPlayer_MovementServices>.From(nint handle) => new CCSPlayer_MovementServicesImpl(handle);
+  static CCSPlayer_MovementServices ISchemaClass<CCSPlayer_MovementServices>.From(nint handle) => new CCSPlayer_MovementServicesImpl(handle);
 
   
   public ref Vector LadderNormal { get; }

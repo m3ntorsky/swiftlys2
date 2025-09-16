@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEntityIdentity : ISchemaClass, IConvertibleNativeHandle<CEntityIdentity> {
+public partial interface CEntityIdentity : ISchemaClass<CEntityIdentity> {
 
-  static CEntityIdentity IConvertibleNativeHandle<CEntityIdentity>.From(nint handle) => new CEntityIdentityImpl(handle);
+  static CEntityIdentity ISchemaClass<CEntityIdentity>.From(nint handle) => new CEntityIdentityImpl(handle);
 
   
   public ref int NameStringableIndex { get; }

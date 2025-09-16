@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHandleDummy : CBaseEntity, IConvertibleNativeHandle<CHandleDummy> {
+public partial interface CHandleDummy : CBaseEntity, ISchemaClass<CHandleDummy> {
 
-  static CHandleDummy IConvertibleNativeHandle<CHandleDummy>.From(nint handle) => new CHandleDummyImpl(handle);
+  static CHandleDummy ISchemaClass<CHandleDummy>.From(nint handle) => new CHandleDummyImpl(handle);
 
 
 

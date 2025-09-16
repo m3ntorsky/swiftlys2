@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CItemDogtags : CItem, IConvertibleNativeHandle<CItemDogtags> {
+public partial interface CItemDogtags : CItem, ISchemaClass<CItemDogtags> {
 
-  static CItemDogtags IConvertibleNativeHandle<CItemDogtags>.From(nint handle) => new CItemDogtagsImpl(handle);
+  static CItemDogtags ISchemaClass<CItemDogtags>.From(nint handle) => new CItemDogtagsImpl(handle);
 
   
   public ref CHandle<CCSPlayerPawn> OwningPlayer { get; }

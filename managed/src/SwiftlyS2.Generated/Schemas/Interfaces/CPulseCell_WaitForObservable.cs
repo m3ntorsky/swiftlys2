@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_WaitForObservable : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_WaitForObservable> {
+public partial interface CPulseCell_WaitForObservable : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_WaitForObservable> {
 
-  static CPulseCell_WaitForObservable IConvertibleNativeHandle<CPulseCell_WaitForObservable>.From(nint handle) => new CPulseCell_WaitForObservableImpl(handle);
+  static CPulseCell_WaitForObservable ISchemaClass<CPulseCell_WaitForObservable>.From(nint handle) => new CPulseCell_WaitForObservableImpl(handle);
 
   
   public PulseObservableBoolExpression_t Condition { get; }

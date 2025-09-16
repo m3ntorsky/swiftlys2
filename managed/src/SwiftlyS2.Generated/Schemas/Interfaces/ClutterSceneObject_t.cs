@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ClutterSceneObject_t : ISchemaClass, IConvertibleNativeHandle<ClutterSceneObject_t> {
+public partial interface ClutterSceneObject_t : ISchemaClass<ClutterSceneObject_t> {
 
-  static ClutterSceneObject_t IConvertibleNativeHandle<ClutterSceneObject_t>.From(nint handle) => new ClutterSceneObject_tImpl(handle);
+  static ClutterSceneObject_t ISchemaClass<ClutterSceneObject_t>.From(nint handle) => new ClutterSceneObject_tImpl(handle);
 
   
   public AABB_t Bounds { get; }

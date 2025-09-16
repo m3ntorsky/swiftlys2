@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SequenceHistory_t : ISchemaClass, IConvertibleNativeHandle<SequenceHistory_t> {
+public partial interface SequenceHistory_t : ISchemaClass<SequenceHistory_t> {
 
-  static SequenceHistory_t IConvertibleNativeHandle<SequenceHistory_t>.From(nint handle) => new SequenceHistory_tImpl(handle);
+  static SequenceHistory_t ISchemaClass<SequenceHistory_t>.From(nint handle) => new SequenceHistory_tImpl(handle);
 
   
   public HSequence Sequence { get; }

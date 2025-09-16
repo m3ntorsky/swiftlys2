@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RagdollCreationParams_t : ISchemaClass, IConvertibleNativeHandle<RagdollCreationParams_t> {
+public partial interface RagdollCreationParams_t : ISchemaClass<RagdollCreationParams_t> {
 
-  static RagdollCreationParams_t IConvertibleNativeHandle<RagdollCreationParams_t>.From(nint handle) => new RagdollCreationParams_tImpl(handle);
+  static RagdollCreationParams_t ISchemaClass<RagdollCreationParams_t>.From(nint handle) => new RagdollCreationParams_tImpl(handle);
 
   
   public ref Vector Force { get; }

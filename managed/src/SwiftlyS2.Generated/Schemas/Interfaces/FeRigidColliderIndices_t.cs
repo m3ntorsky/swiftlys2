@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeRigidColliderIndices_t : ISchemaClass, IConvertibleNativeHandle<FeRigidColliderIndices_t> {
+public partial interface FeRigidColliderIndices_t : ISchemaClass<FeRigidColliderIndices_t> {
 
-  static FeRigidColliderIndices_t IConvertibleNativeHandle<FeRigidColliderIndices_t>.From(nint handle) => new FeRigidColliderIndices_tImpl(handle);
+  static FeRigidColliderIndices_t ISchemaClass<FeRigidColliderIndices_t>.From(nint handle) => new FeRigidColliderIndices_tImpl(handle);
 
   
   public ref ushort TaperedCapsuleRigidIndex { get; }

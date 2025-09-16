@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmVirtualParameterFloatNode__CDefinition : CNmFloatValueNode__CDefinition, IConvertibleNativeHandle<CNmVirtualParameterFloatNode__CDefinition> {
+public partial interface CNmVirtualParameterFloatNode__CDefinition : CNmFloatValueNode__CDefinition, ISchemaClass<CNmVirtualParameterFloatNode__CDefinition> {
 
-  static CNmVirtualParameterFloatNode__CDefinition IConvertibleNativeHandle<CNmVirtualParameterFloatNode__CDefinition>.From(nint handle) => new CNmVirtualParameterFloatNode__CDefinitionImpl(handle);
+  static CNmVirtualParameterFloatNode__CDefinition ISchemaClass<CNmVirtualParameterFloatNode__CDefinition>.From(nint handle) => new CNmVirtualParameterFloatNode__CDefinitionImpl(handle);
 
   
   public ref short ChildNodeIdx { get; }

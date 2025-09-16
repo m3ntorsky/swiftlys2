@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixFreeverbDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixFreeverbDesc_t> {
+public partial interface VMixFreeverbDesc_t : ISchemaClass<VMixFreeverbDesc_t> {
 
-  static VMixFreeverbDesc_t IConvertibleNativeHandle<VMixFreeverbDesc_t>.From(nint handle) => new VMixFreeverbDesc_tImpl(handle);
+  static VMixFreeverbDesc_t ISchemaClass<VMixFreeverbDesc_t>.From(nint handle) => new VMixFreeverbDesc_tImpl(handle);
 
   
   public ref float RoomSize { get; }

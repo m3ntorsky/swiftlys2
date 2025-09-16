@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetAttributeToScalarExpression : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_SetAttributeToScalarExpression> {
+public partial interface C_OP_SetAttributeToScalarExpression : CParticleFunctionOperator, ISchemaClass<C_OP_SetAttributeToScalarExpression> {
 
-  static C_OP_SetAttributeToScalarExpression IConvertibleNativeHandle<C_OP_SetAttributeToScalarExpression>.From(nint handle) => new C_OP_SetAttributeToScalarExpressionImpl(handle);
+  static C_OP_SetAttributeToScalarExpression ISchemaClass<C_OP_SetAttributeToScalarExpression>.From(nint handle) => new C_OP_SetAttributeToScalarExpressionImpl(handle);
 
   
   public ref ScalarExpressionType_t Expression { get; }

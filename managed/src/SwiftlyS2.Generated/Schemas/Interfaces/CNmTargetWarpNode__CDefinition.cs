@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmTargetWarpNode__CDefinition : CNmPoseNode__CDefinition, IConvertibleNativeHandle<CNmTargetWarpNode__CDefinition> {
+public partial interface CNmTargetWarpNode__CDefinition : CNmPoseNode__CDefinition, ISchemaClass<CNmTargetWarpNode__CDefinition> {
 
-  static CNmTargetWarpNode__CDefinition IConvertibleNativeHandle<CNmTargetWarpNode__CDefinition>.From(nint handle) => new CNmTargetWarpNode__CDefinitionImpl(handle);
+  static CNmTargetWarpNode__CDefinition ISchemaClass<CNmTargetWarpNode__CDefinition>.From(nint handle) => new CNmTargetWarpNode__CDefinitionImpl(handle);
 
   
   public ref short ClipReferenceNodeIdx { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimCycle : CCycleBase, IConvertibleNativeHandle<CAnimCycle> {
+public partial interface CAnimCycle : CCycleBase, ISchemaClass<CAnimCycle> {
 
-  static CAnimCycle IConvertibleNativeHandle<CAnimCycle>.From(nint handle) => new CAnimCycleImpl(handle);
+  static CAnimCycle ISchemaClass<CAnimCycle>.From(nint handle) => new CAnimCycleImpl(handle);
 
 
 

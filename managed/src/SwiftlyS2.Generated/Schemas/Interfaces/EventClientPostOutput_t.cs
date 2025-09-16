@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventClientPostOutput_t : ISchemaClass, IConvertibleNativeHandle<EventClientPostOutput_t> {
+public partial interface EventClientPostOutput_t : ISchemaClass<EventClientPostOutput_t> {
 
-  static EventClientPostOutput_t IConvertibleNativeHandle<EventClientPostOutput_t>.From(nint handle) => new EventClientPostOutput_tImpl(handle);
+  static EventClientPostOutput_t ISchemaClass<EventClientPostOutput_t>.From(nint handle) => new EventClientPostOutput_tImpl(handle);
 
   
   public EngineLoopState_t LoopState { get; }

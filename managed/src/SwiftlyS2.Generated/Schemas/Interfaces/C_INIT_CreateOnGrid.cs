@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateOnGrid : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateOnGrid> {
+public partial interface C_INIT_CreateOnGrid : CParticleFunctionInitializer, ISchemaClass<C_INIT_CreateOnGrid> {
 
-  static C_INIT_CreateOnGrid IConvertibleNativeHandle<C_INIT_CreateOnGrid>.From(nint handle) => new C_INIT_CreateOnGridImpl(handle);
+  static C_INIT_CreateOnGrid ISchemaClass<C_INIT_CreateOnGrid>.From(nint handle) => new C_INIT_CreateOnGridImpl(handle);
 
   
   public CParticleCollectionFloatInput XCount { get; }

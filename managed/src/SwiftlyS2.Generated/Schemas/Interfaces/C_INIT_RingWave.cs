@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RingWave : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RingWave> {
+public partial interface C_INIT_RingWave : CParticleFunctionInitializer, ISchemaClass<C_INIT_RingWave> {
 
-  static C_INIT_RingWave IConvertibleNativeHandle<C_INIT_RingWave>.From(nint handle) => new C_INIT_RingWaveImpl(handle);
+  static C_INIT_RingWave ISchemaClass<C_INIT_RingWave>.From(nint handle) => new C_INIT_RingWaveImpl(handle);
 
   
   public CParticleTransformInput TransformInput { get; }

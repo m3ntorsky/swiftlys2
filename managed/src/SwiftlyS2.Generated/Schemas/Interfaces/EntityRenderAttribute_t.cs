@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EntityRenderAttribute_t : ISchemaClass, IConvertibleNativeHandle<EntityRenderAttribute_t> {
+public partial interface EntityRenderAttribute_t : ISchemaClass<EntityRenderAttribute_t> {
 
-  static EntityRenderAttribute_t IConvertibleNativeHandle<EntityRenderAttribute_t>.From(nint handle) => new EntityRenderAttribute_tImpl(handle);
+  static EntityRenderAttribute_t ISchemaClass<EntityRenderAttribute_t>.From(nint handle) => new EntityRenderAttribute_tImpl(handle);
 
   
   public ref CUtlStringToken ID { get; }

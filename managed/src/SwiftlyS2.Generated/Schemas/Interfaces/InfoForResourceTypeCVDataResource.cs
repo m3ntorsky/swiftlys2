@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCVDataResource : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCVDataResource> {
+public partial interface InfoForResourceTypeCVDataResource : ISchemaClass<InfoForResourceTypeCVDataResource> {
 
-  static InfoForResourceTypeCVDataResource IConvertibleNativeHandle<InfoForResourceTypeCVDataResource>.From(nint handle) => new InfoForResourceTypeCVDataResourceImpl(handle);
+  static InfoForResourceTypeCVDataResource ISchemaClass<InfoForResourceTypeCVDataResource>.From(nint handle) => new InfoForResourceTypeCVDataResourceImpl(handle);
 
 
 

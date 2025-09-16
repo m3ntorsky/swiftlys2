@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PARTICLE_EHANDLE__ : ISchemaClass, IConvertibleNativeHandle<PARTICLE_EHANDLE__> {
+public partial interface PARTICLE_EHANDLE__ : ISchemaClass<PARTICLE_EHANDLE__> {
 
-  static PARTICLE_EHANDLE__ IConvertibleNativeHandle<PARTICLE_EHANDLE__>.From(nint handle) => new PARTICLE_EHANDLE__Impl(handle);
+  static PARTICLE_EHANDLE__ ISchemaClass<PARTICLE_EHANDLE__>.From(nint handle) => new PARTICLE_EHANDLE__Impl(handle);
 
   
   public ref int Unused { get; }

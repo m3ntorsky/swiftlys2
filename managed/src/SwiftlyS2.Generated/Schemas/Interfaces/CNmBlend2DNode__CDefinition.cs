@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmBlend2DNode__CDefinition : CNmPoseNode__CDefinition, IConvertibleNativeHandle<CNmBlend2DNode__CDefinition> {
+public partial interface CNmBlend2DNode__CDefinition : CNmPoseNode__CDefinition, ISchemaClass<CNmBlend2DNode__CDefinition> {
 
-  static CNmBlend2DNode__CDefinition IConvertibleNativeHandle<CNmBlend2DNode__CDefinition>.From(nint handle) => new CNmBlend2DNode__CDefinitionImpl(handle);
+  static CNmBlend2DNode__CDefinition ISchemaClass<CNmBlend2DNode__CDefinition>.From(nint handle) => new CNmBlend2DNode__CDefinitionImpl(handle);
 
   
   // CUtlVectorFixedGrowable< int16, 5 >

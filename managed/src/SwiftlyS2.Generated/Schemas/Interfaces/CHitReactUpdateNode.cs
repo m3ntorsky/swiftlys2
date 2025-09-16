@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHitReactUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CHitReactUpdateNode> {
+public partial interface CHitReactUpdateNode : CUnaryUpdateNode, ISchemaClass<CHitReactUpdateNode> {
 
-  static CHitReactUpdateNode IConvertibleNativeHandle<CHitReactUpdateNode>.From(nint handle) => new CHitReactUpdateNodeImpl(handle);
+  static CHitReactUpdateNode ISchemaClass<CHitReactUpdateNode>.From(nint handle) => new CHitReactUpdateNodeImpl(handle);
 
   
   public HitReactFixedSettings_t OpFixedSettings { get; }

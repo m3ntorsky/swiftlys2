@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathParameters : ISchemaClass, IConvertibleNativeHandle<CPathParameters> {
+public partial interface CPathParameters : ISchemaClass<CPathParameters> {
 
-  static CPathParameters IConvertibleNativeHandle<CPathParameters>.From(nint handle) => new CPathParametersImpl(handle);
+  static CPathParameters ISchemaClass<CPathParameters>.From(nint handle) => new CPathParametersImpl(handle);
 
   
   public ref int StartControlPointNumber { get; }

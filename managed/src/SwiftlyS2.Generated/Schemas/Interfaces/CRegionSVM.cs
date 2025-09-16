@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRegionSVM : ISchemaClass, IConvertibleNativeHandle<CRegionSVM> {
+public partial interface CRegionSVM : ISchemaClass<CRegionSVM> {
 
-  static CRegionSVM IConvertibleNativeHandle<CRegionSVM>.From(nint handle) => new CRegionSVMImpl(handle);
+  static CRegionSVM ISchemaClass<CRegionSVM>.From(nint handle) => new CRegionSVMImpl(handle);
 
   
   // CUtlVector< RnPlane_t >

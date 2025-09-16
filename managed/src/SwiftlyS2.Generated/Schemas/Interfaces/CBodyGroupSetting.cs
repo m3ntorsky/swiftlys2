@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBodyGroupSetting : ISchemaClass, IConvertibleNativeHandle<CBodyGroupSetting> {
+public partial interface CBodyGroupSetting : ISchemaClass<CBodyGroupSetting> {
 
-  static CBodyGroupSetting IConvertibleNativeHandle<CBodyGroupSetting>.From(nint handle) => new CBodyGroupSettingImpl(handle);
+  static CBodyGroupSetting ISchemaClass<CBodyGroupSetting>.From(nint handle) => new CBodyGroupSettingImpl(handle);
 
   
   public ref CUtlString BodyGroupName { get; }

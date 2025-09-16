@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDestructiblePartsSystemData : ISchemaClass, IConvertibleNativeHandle<CDestructiblePartsSystemData> {
+public partial interface CDestructiblePartsSystemData : ISchemaClass<CDestructiblePartsSystemData> {
 
-  static CDestructiblePartsSystemData IConvertibleNativeHandle<CDestructiblePartsSystemData>.From(nint handle) => new CDestructiblePartsSystemDataImpl(handle);
+  static CDestructiblePartsSystemData ISchemaClass<CDestructiblePartsSystemData>.From(nint handle) => new CDestructiblePartsSystemDataImpl(handle);
 
   
   // CUtlOrderedMap< HitGroup_t, CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels >

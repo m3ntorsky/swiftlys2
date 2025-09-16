@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysSurfacePropertiesAudio : ISchemaClass, IConvertibleNativeHandle<CPhysSurfacePropertiesAudio> {
+public partial interface CPhysSurfacePropertiesAudio : ISchemaClass<CPhysSurfacePropertiesAudio> {
 
-  static CPhysSurfacePropertiesAudio IConvertibleNativeHandle<CPhysSurfacePropertiesAudio>.From(nint handle) => new CPhysSurfacePropertiesAudioImpl(handle);
+  static CPhysSurfacePropertiesAudio ISchemaClass<CPhysSurfacePropertiesAudio>.From(nint handle) => new CPhysSurfacePropertiesAudioImpl(handle);
 
   
   public ref float Reflectivity { get; }

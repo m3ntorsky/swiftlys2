@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface WorldBuilderParams_t : ISchemaClass, IConvertibleNativeHandle<WorldBuilderParams_t> {
+public partial interface WorldBuilderParams_t : ISchemaClass<WorldBuilderParams_t> {
 
-  static WorldBuilderParams_t IConvertibleNativeHandle<WorldBuilderParams_t>.From(nint handle) => new WorldBuilderParams_tImpl(handle);
+  static WorldBuilderParams_t ISchemaClass<WorldBuilderParams_t>.From(nint handle) => new WorldBuilderParams_tImpl(handle);
 
   
   public ref float MinDrawVolumeSize { get; }

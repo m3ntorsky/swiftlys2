@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FollowTargetOpFixedSettings_t : ISchemaClass, IConvertibleNativeHandle<FollowTargetOpFixedSettings_t> {
+public partial interface FollowTargetOpFixedSettings_t : ISchemaClass<FollowTargetOpFixedSettings_t> {
 
-  static FollowTargetOpFixedSettings_t IConvertibleNativeHandle<FollowTargetOpFixedSettings_t>.From(nint handle) => new FollowTargetOpFixedSettings_tImpl(handle);
+  static FollowTargetOpFixedSettings_t ISchemaClass<FollowTargetOpFixedSettings_t>.From(nint handle) => new FollowTargetOpFixedSettings_tImpl(handle);
 
   
   public ref int BoneIndex { get; }

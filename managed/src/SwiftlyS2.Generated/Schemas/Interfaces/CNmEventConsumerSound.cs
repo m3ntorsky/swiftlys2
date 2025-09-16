@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmEventConsumerSound : CNmEventConsumer, IConvertibleNativeHandle<CNmEventConsumerSound> {
+public partial interface CNmEventConsumerSound : CNmEventConsumer, ISchemaClass<CNmEventConsumerSound> {
 
-  static CNmEventConsumerSound IConvertibleNativeHandle<CNmEventConsumerSound>.From(nint handle) => new CNmEventConsumerSoundImpl(handle);
+  static CNmEventConsumerSound ISchemaClass<CNmEventConsumerSound>.From(nint handle) => new CNmEventConsumerSoundImpl(handle);
 
 
 

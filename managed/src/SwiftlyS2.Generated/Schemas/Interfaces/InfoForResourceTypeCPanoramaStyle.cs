@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCPanoramaStyle : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCPanoramaStyle> {
+public partial interface InfoForResourceTypeCPanoramaStyle : ISchemaClass<InfoForResourceTypeCPanoramaStyle> {
 
-  static InfoForResourceTypeCPanoramaStyle IConvertibleNativeHandle<InfoForResourceTypeCPanoramaStyle>.From(nint handle) => new InfoForResourceTypeCPanoramaStyleImpl(handle);
+  static InfoForResourceTypeCPanoramaStyle ISchemaClass<InfoForResourceTypeCPanoramaStyle>.From(nint handle) => new InfoForResourceTypeCPanoramaStyleImpl(handle);
 
 
 

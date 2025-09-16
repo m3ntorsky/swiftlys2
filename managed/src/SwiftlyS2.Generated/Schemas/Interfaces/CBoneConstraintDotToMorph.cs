@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBoneConstraintDotToMorph : CBoneConstraintBase, IConvertibleNativeHandle<CBoneConstraintDotToMorph> {
+public partial interface CBoneConstraintDotToMorph : CBoneConstraintBase, ISchemaClass<CBoneConstraintDotToMorph> {
 
-  static CBoneConstraintDotToMorph IConvertibleNativeHandle<CBoneConstraintDotToMorph>.From(nint handle) => new CBoneConstraintDotToMorphImpl(handle);
+  static CBoneConstraintDotToMorph ISchemaClass<CBoneConstraintDotToMorph>.From(nint handle) => new CBoneConstraintDotToMorphImpl(handle);
 
   
   public ref CUtlString BoneName { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SoundOpvarTraceResult_t : ISchemaClass, IConvertibleNativeHandle<SoundOpvarTraceResult_t> {
+public partial interface SoundOpvarTraceResult_t : ISchemaClass<SoundOpvarTraceResult_t> {
 
-  static SoundOpvarTraceResult_t IConvertibleNativeHandle<SoundOpvarTraceResult_t>.From(nint handle) => new SoundOpvarTraceResult_tImpl(handle);
+  static SoundOpvarTraceResult_t ISchemaClass<SoundOpvarTraceResult_t>.From(nint handle) => new SoundOpvarTraceResult_tImpl(handle);
 
   
   public ref Vector Pos { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAK47 : CCSWeaponBaseGun, IConvertibleNativeHandle<CAK47> {
+public partial interface CAK47 : CCSWeaponBaseGun, ISchemaClass<CAK47> {
 
-  static CAK47 IConvertibleNativeHandle<CAK47>.From(nint handle) => new CAK47Impl(handle);
+  static CAK47 ISchemaClass<CAK47>.From(nint handle) => new CAK47Impl(handle);
 
 
 

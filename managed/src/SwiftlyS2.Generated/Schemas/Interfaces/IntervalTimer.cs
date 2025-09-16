@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IntervalTimer : ISchemaClass, IConvertibleNativeHandle<IntervalTimer> {
+public partial interface IntervalTimer : ISchemaClass<IntervalTimer> {
 
-  static IntervalTimer IConvertibleNativeHandle<IntervalTimer>.From(nint handle) => new IntervalTimerImpl(handle);
+  static IntervalTimer ISchemaClass<IntervalTimer>.From(nint handle) => new IntervalTimerImpl(handle);
 
   
   public GameTime_t Timestamp { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollAnimTag : CAnimTagBase, IConvertibleNativeHandle<CRagdollAnimTag> {
+public partial interface CRagdollAnimTag : CAnimTagBase, ISchemaClass<CRagdollAnimTag> {
 
-  static CRagdollAnimTag IConvertibleNativeHandle<CRagdollAnimTag>.From(nint handle) => new CRagdollAnimTagImpl(handle);
+  static CRagdollAnimTag ISchemaClass<CRagdollAnimTag>.From(nint handle) => new CRagdollAnimTagImpl(handle);
 
   
   public ref CGlobalSymbol ProfileName { get; }

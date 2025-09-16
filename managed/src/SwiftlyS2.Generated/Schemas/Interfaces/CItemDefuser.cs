@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CItemDefuser : CItem, IConvertibleNativeHandle<CItemDefuser> {
+public partial interface CItemDefuser : CItem, ISchemaClass<CItemDefuser> {
 
-  static CItemDefuser IConvertibleNativeHandle<CItemDefuser>.From(nint handle) => new CItemDefuserImpl(handle);
+  static CItemDefuser ISchemaClass<CItemDefuser>.From(nint handle) => new CItemDefuserImpl(handle);
 
   
   public EntitySpottedState_t EntitySpottedState { get; }

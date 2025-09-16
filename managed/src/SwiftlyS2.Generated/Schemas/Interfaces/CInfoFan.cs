@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoFan : CPointEntity, IConvertibleNativeHandle<CInfoFan> {
+public partial interface CInfoFan : CPointEntity, ISchemaClass<CInfoFan> {
 
-  static CInfoFan IConvertibleNativeHandle<CInfoFan>.From(nint handle) => new CInfoFanImpl(handle);
+  static CInfoFan ISchemaClass<CInfoFan>.From(nint handle) => new CInfoFanImpl(handle);
 
   
   public ref float FanForceMaxRadius { get; }

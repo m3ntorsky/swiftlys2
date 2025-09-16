@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerRemove : CBaseTrigger, IConvertibleNativeHandle<CTriggerRemove> {
+public partial interface CTriggerRemove : CBaseTrigger, ISchemaClass<CTriggerRemove> {
 
-  static CTriggerRemove IConvertibleNativeHandle<CTriggerRemove>.From(nint handle) => new CTriggerRemoveImpl(handle);
+  static CTriggerRemove ISchemaClass<CTriggerRemove>.From(nint handle) => new CTriggerRemoveImpl(handle);
 
   
   public CEntityIOOutput OnRemove { get; }

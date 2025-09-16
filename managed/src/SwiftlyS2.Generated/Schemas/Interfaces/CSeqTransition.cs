@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqTransition : ISchemaClass, IConvertibleNativeHandle<CSeqTransition> {
+public partial interface CSeqTransition : ISchemaClass<CSeqTransition> {
 
-  static CSeqTransition IConvertibleNativeHandle<CSeqTransition>.From(nint handle) => new CSeqTransitionImpl(handle);
+  static CSeqTransition ISchemaClass<CSeqTransition>.From(nint handle) => new CSeqTransitionImpl(handle);
 
   
   public ref float FadeInTime { get; }

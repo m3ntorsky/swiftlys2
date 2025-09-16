@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvLaser : CBeam, IConvertibleNativeHandle<CEnvLaser> {
+public partial interface CEnvLaser : CBeam, ISchemaClass<CEnvLaser> {
 
-  static CEnvLaser IConvertibleNativeHandle<CEnvLaser>.From(nint handle) => new CEnvLaserImpl(handle);
+  static CEnvLaser ISchemaClass<CEnvLaser>.From(nint handle) => new CEnvLaserImpl(handle);
 
   
   public ref CUtlSymbolLarge LaserTarget { get; }

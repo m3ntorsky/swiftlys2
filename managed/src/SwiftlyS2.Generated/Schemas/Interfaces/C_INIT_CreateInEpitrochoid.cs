@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateInEpitrochoid : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateInEpitrochoid> {
+public partial interface C_INIT_CreateInEpitrochoid : CParticleFunctionInitializer, ISchemaClass<C_INIT_CreateInEpitrochoid> {
 
-  static C_INIT_CreateInEpitrochoid IConvertibleNativeHandle<C_INIT_CreateInEpitrochoid>.From(nint handle) => new C_INIT_CreateInEpitrochoidImpl(handle);
+  static C_INIT_CreateInEpitrochoid ISchemaClass<C_INIT_CreateInEpitrochoid>.From(nint handle) => new C_INIT_CreateInEpitrochoidImpl(handle);
 
   
   public ref int Component1 { get; }

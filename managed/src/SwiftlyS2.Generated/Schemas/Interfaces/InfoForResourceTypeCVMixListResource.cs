@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCVMixListResource : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCVMixListResource> {
+public partial interface InfoForResourceTypeCVMixListResource : ISchemaClass<InfoForResourceTypeCVMixListResource> {
 
-  static InfoForResourceTypeCVMixListResource IConvertibleNativeHandle<InfoForResourceTypeCVMixListResource>.From(nint handle) => new InfoForResourceTypeCVMixListResourceImpl(handle);
+  static InfoForResourceTypeCVMixListResource ISchemaClass<InfoForResourceTypeCVMixListResource>.From(nint handle) => new InfoForResourceTypeCVMixListResourceImpl(handle);
 
 
 

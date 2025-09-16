@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathKeyFrame : CLogicalEntity, IConvertibleNativeHandle<CPathKeyFrame> {
+public partial interface CPathKeyFrame : CLogicalEntity, ISchemaClass<CPathKeyFrame> {
 
-  static CPathKeyFrame IConvertibleNativeHandle<CPathKeyFrame>.From(nint handle) => new CPathKeyFrameImpl(handle);
+  static CPathKeyFrame ISchemaClass<CPathKeyFrame>.From(nint handle) => new CPathKeyFrameImpl(handle);
 
   
   public ref Vector Origin { get; }

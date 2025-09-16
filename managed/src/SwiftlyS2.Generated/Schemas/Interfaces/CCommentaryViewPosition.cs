@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCommentaryViewPosition : CSprite, IConvertibleNativeHandle<CCommentaryViewPosition> {
+public partial interface CCommentaryViewPosition : CSprite, ISchemaClass<CCommentaryViewPosition> {
 
-  static CCommentaryViewPosition IConvertibleNativeHandle<CCommentaryViewPosition>.From(nint handle) => new CCommentaryViewPositionImpl(handle);
+  static CCommentaryViewPosition ISchemaClass<CCommentaryViewPosition>.From(nint handle) => new CCommentaryViewPositionImpl(handle);
 
 
 

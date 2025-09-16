@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_BooleanSwitchState : CPulseCell_BaseState, IConvertibleNativeHandle<CPulseCell_BooleanSwitchState> {
+public partial interface CPulseCell_BooleanSwitchState : CPulseCell_BaseState, ISchemaClass<CPulseCell_BooleanSwitchState> {
 
-  static CPulseCell_BooleanSwitchState IConvertibleNativeHandle<CPulseCell_BooleanSwitchState>.From(nint handle) => new CPulseCell_BooleanSwitchStateImpl(handle);
+  static CPulseCell_BooleanSwitchState ISchemaClass<CPulseCell_BooleanSwitchState>.From(nint handle) => new CPulseCell_BooleanSwitchStateImpl(handle);
 
   
   public PulseObservableBoolExpression_t Condition { get; }

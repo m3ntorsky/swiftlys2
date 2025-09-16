@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundEventMetaData : ISchemaClass, IConvertibleNativeHandle<CSoundEventMetaData> {
+public partial interface CSoundEventMetaData : ISchemaClass<CSoundEventMetaData> {
 
-  static CSoundEventMetaData IConvertibleNativeHandle<CSoundEventMetaData>.From(nint handle) => new CSoundEventMetaDataImpl(handle);
+  static CSoundEventMetaData ISchemaClass<CSoundEventMetaData>.From(nint handle) => new CSoundEventMetaDataImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCVMixListResource> SoundEventVMix { get; }

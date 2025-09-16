@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSequenceTagSpans : ISchemaClass, IConvertibleNativeHandle<CSequenceTagSpans> {
+public partial interface CSequenceTagSpans : ISchemaClass<CSequenceTagSpans> {
 
-  static CSequenceTagSpans IConvertibleNativeHandle<CSequenceTagSpans>.From(nint handle) => new CSequenceTagSpansImpl(handle);
+  static CSequenceTagSpans ISchemaClass<CSequenceTagSpans>.From(nint handle) => new CSequenceTagSpansImpl(handle);
 
   
   public ref CGlobalSymbol SequenceName { get; }

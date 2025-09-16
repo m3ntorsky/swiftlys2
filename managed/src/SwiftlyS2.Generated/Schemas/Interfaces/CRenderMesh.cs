@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRenderMesh : ISchemaClass, IConvertibleNativeHandle<CRenderMesh> {
+public partial interface CRenderMesh : ISchemaClass<CRenderMesh> {
 
-  static CRenderMesh IConvertibleNativeHandle<CRenderMesh>.From(nint handle) => new CRenderMeshImpl(handle);
+  static CRenderMesh ISchemaClass<CRenderMesh>.From(nint handle) => new CRenderMeshImpl(handle);
 
   
   // CUtlLeanVectorFixedGrowable< CSceneObjectData, 1 >

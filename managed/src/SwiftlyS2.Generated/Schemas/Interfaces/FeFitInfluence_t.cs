@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeFitInfluence_t : ISchemaClass, IConvertibleNativeHandle<FeFitInfluence_t> {
+public partial interface FeFitInfluence_t : ISchemaClass<FeFitInfluence_t> {
 
-  static FeFitInfluence_t IConvertibleNativeHandle<FeFitInfluence_t>.From(nint handle) => new FeFitInfluence_tImpl(handle);
+  static FeFitInfluence_t ISchemaClass<FeFitInfluence_t>.From(nint handle) => new FeFitInfluence_tImpl(handle);
 
   
   public ref uint VertexNode { get; }

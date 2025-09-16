@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMathColorBlend : CLogicalEntity, IConvertibleNativeHandle<CMathColorBlend> {
+public partial interface CMathColorBlend : CLogicalEntity, ISchemaClass<CMathColorBlend> {
 
-  static CMathColorBlend IConvertibleNativeHandle<CMathColorBlend>.From(nint handle) => new CMathColorBlendImpl(handle);
+  static CMathColorBlend ISchemaClass<CMathColorBlend>.From(nint handle) => new CMathColorBlendImpl(handle);
 
   
   public ref float InMin { get; }

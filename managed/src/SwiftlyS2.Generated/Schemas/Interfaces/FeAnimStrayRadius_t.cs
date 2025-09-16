@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeAnimStrayRadius_t : ISchemaClass, IConvertibleNativeHandle<FeAnimStrayRadius_t> {
+public partial interface FeAnimStrayRadius_t : ISchemaClass<FeAnimStrayRadius_t> {
 
-  static FeAnimStrayRadius_t IConvertibleNativeHandle<FeAnimStrayRadius_t>.From(nint handle) => new FeAnimStrayRadius_tImpl(handle);
+  static FeAnimStrayRadius_t ISchemaClass<FeAnimStrayRadius_t>.From(nint handle) => new FeAnimStrayRadius_tImpl(handle);
 
   
   public ISchemaFixedArray<ushort> Node { get; }

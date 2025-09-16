@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventSimulate_t : ISchemaClass, IConvertibleNativeHandle<EventSimulate_t> {
+public partial interface EventSimulate_t : ISchemaClass<EventSimulate_t> {
 
-  static EventSimulate_t IConvertibleNativeHandle<EventSimulate_t>.From(nint handle) => new EventSimulate_tImpl(handle);
+  static EventSimulate_t ISchemaClass<EventSimulate_t>.From(nint handle) => new EventSimulate_tImpl(handle);
 
   
   public EngineLoopState_t LoopState { get; }

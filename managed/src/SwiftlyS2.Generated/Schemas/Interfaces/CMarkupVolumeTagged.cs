@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMarkupVolumeTagged : CMarkupVolume, IConvertibleNativeHandle<CMarkupVolumeTagged> {
+public partial interface CMarkupVolumeTagged : CMarkupVolume, ISchemaClass<CMarkupVolumeTagged> {
 
-  static CMarkupVolumeTagged IConvertibleNativeHandle<CMarkupVolumeTagged>.From(nint handle) => new CMarkupVolumeTaggedImpl(handle);
+  static CMarkupVolumeTagged ISchemaClass<CMarkupVolumeTagged>.From(nint handle) => new CMarkupVolumeTaggedImpl(handle);
 
   
   public ref CUtlVector<CGlobalSymbol> GroupNames { get; }

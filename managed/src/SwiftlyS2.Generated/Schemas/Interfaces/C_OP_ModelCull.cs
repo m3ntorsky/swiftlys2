@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ModelCull : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_ModelCull> {
+public partial interface C_OP_ModelCull : CParticleFunctionOperator, ISchemaClass<C_OP_ModelCull> {
 
-  static C_OP_ModelCull IConvertibleNativeHandle<C_OP_ModelCull>.From(nint handle) => new C_OP_ModelCullImpl(handle);
+  static C_OP_ModelCull ISchemaClass<C_OP_ModelCull>.From(nint handle) => new C_OP_ModelCullImpl(handle);
 
   
   public ref int ControlPointNumber { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysTorque : CPhysForce, IConvertibleNativeHandle<CPhysTorque> {
+public partial interface CPhysTorque : CPhysForce, ISchemaClass<CPhysTorque> {
 
-  static CPhysTorque IConvertibleNativeHandle<CPhysTorque>.From(nint handle) => new CPhysTorqueImpl(handle);
+  static CPhysTorque ISchemaClass<CPhysTorque>.From(nint handle) => new CPhysTorqueImpl(handle);
 
   
   public ref Vector Axis { get; }

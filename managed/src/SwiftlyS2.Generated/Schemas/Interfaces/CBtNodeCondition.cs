@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBtNodeCondition : CBtNodeDecorator, IConvertibleNativeHandle<CBtNodeCondition> {
+public partial interface CBtNodeCondition : CBtNodeDecorator, ISchemaClass<CBtNodeCondition> {
 
-  static CBtNodeCondition IConvertibleNativeHandle<CBtNodeCondition>.From(nint handle) => new CBtNodeConditionImpl(handle);
+  static CBtNodeCondition ISchemaClass<CBtNodeCondition>.From(nint handle) => new CBtNodeConditionImpl(handle);
 
   
   public ref bool Negated { get; }

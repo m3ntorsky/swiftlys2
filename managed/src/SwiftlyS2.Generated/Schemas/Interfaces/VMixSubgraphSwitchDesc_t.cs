@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixSubgraphSwitchDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixSubgraphSwitchDesc_t> {
+public partial interface VMixSubgraphSwitchDesc_t : ISchemaClass<VMixSubgraphSwitchDesc_t> {
 
-  static VMixSubgraphSwitchDesc_t IConvertibleNativeHandle<VMixSubgraphSwitchDesc_t>.From(nint handle) => new VMixSubgraphSwitchDesc_tImpl(handle);
+  static VMixSubgraphSwitchDesc_t ISchemaClass<VMixSubgraphSwitchDesc_t>.From(nint handle) => new VMixSubgraphSwitchDesc_tImpl(handle);
 
   
   public ref VMixSubgraphSwitchInterpolationType_t InterpolationMode { get; }

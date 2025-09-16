@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_VelocityFromNormal : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_VelocityFromNormal> {
+public partial interface C_INIT_VelocityFromNormal : CParticleFunctionInitializer, ISchemaClass<C_INIT_VelocityFromNormal> {
 
-  static C_INIT_VelocityFromNormal IConvertibleNativeHandle<C_INIT_VelocityFromNormal>.From(nint handle) => new C_INIT_VelocityFromNormalImpl(handle);
+  static C_INIT_VelocityFromNormal ISchemaClass<C_INIT_VelocityFromNormal>.From(nint handle) => new C_INIT_VelocityFromNormalImpl(handle);
 
   
   public ref float SpeedMin { get; }

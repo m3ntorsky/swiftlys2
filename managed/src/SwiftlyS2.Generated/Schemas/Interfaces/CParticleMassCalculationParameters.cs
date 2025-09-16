@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleMassCalculationParameters : ISchemaClass, IConvertibleNativeHandle<CParticleMassCalculationParameters> {
+public partial interface CParticleMassCalculationParameters : ISchemaClass<CParticleMassCalculationParameters> {
 
-  static CParticleMassCalculationParameters IConvertibleNativeHandle<CParticleMassCalculationParameters>.From(nint handle) => new CParticleMassCalculationParametersImpl(handle);
+  static CParticleMassCalculationParameters ISchemaClass<CParticleMassCalculationParameters>.From(nint handle) => new CParticleMassCalculationParametersImpl(handle);
 
   
   public ref ParticleMassMode_t MassMode { get; }

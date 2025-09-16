@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCredits : CPointEntity, IConvertibleNativeHandle<CCredits> {
+public partial interface CCredits : CPointEntity, ISchemaClass<CCredits> {
 
-  static CCredits IConvertibleNativeHandle<CCredits>.From(nint handle) => new CCreditsImpl(handle);
+  static CCredits ISchemaClass<CCredits>.From(nint handle) => new CCreditsImpl(handle);
 
   
   public CEntityIOOutput OnCreditsDone { get; }

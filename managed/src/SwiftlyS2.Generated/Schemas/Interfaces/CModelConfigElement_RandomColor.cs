@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CModelConfigElement_RandomColor : CModelConfigElement, IConvertibleNativeHandle<CModelConfigElement_RandomColor> {
+public partial interface CModelConfigElement_RandomColor : CModelConfigElement, ISchemaClass<CModelConfigElement_RandomColor> {
 
-  static CModelConfigElement_RandomColor IConvertibleNativeHandle<CModelConfigElement_RandomColor>.From(nint handle) => new CModelConfigElement_RandomColorImpl(handle);
+  static CModelConfigElement_RandomColor ISchemaClass<CModelConfigElement_RandomColor>.From(nint handle) => new CModelConfigElement_RandomColorImpl(handle);
 
   
   // CColorGradient

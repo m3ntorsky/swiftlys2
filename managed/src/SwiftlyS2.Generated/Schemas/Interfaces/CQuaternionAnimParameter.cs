@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CQuaternionAnimParameter : CConcreteAnimParameter, IConvertibleNativeHandle<CQuaternionAnimParameter> {
+public partial interface CQuaternionAnimParameter : CConcreteAnimParameter, ISchemaClass<CQuaternionAnimParameter> {
 
-  static CQuaternionAnimParameter IConvertibleNativeHandle<CQuaternionAnimParameter>.From(nint handle) => new CQuaternionAnimParameterImpl(handle);
+  static CQuaternionAnimParameter ISchemaClass<CQuaternionAnimParameter>.From(nint handle) => new CQuaternionAnimParameterImpl(handle);
 
   
   public ref Quaternion DefaultValue { get; }

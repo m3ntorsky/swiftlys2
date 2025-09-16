@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysicsWire : CBaseEntity, IConvertibleNativeHandle<CPhysicsWire> {
+public partial interface CPhysicsWire : CBaseEntity, ISchemaClass<CPhysicsWire> {
 
-  static CPhysicsWire IConvertibleNativeHandle<CPhysicsWire>.From(nint handle) => new CPhysicsWireImpl(handle);
+  static CPhysicsWire ISchemaClass<CPhysicsWire>.From(nint handle) => new CPhysicsWireImpl(handle);
 
   
   public ref int Density { get; }

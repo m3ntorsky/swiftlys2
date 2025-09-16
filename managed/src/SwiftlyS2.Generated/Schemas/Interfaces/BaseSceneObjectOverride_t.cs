@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface BaseSceneObjectOverride_t : ISchemaClass, IConvertibleNativeHandle<BaseSceneObjectOverride_t> {
+public partial interface BaseSceneObjectOverride_t : ISchemaClass<BaseSceneObjectOverride_t> {
 
-  static BaseSceneObjectOverride_t IConvertibleNativeHandle<BaseSceneObjectOverride_t>.From(nint handle) => new BaseSceneObjectOverride_tImpl(handle);
+  static BaseSceneObjectOverride_t ISchemaClass<BaseSceneObjectOverride_t>.From(nint handle) => new BaseSceneObjectOverride_tImpl(handle);
 
   
   public ref uint SceneObjectIndex { get; }

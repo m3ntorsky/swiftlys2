@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MotionDBIndex : ISchemaClass, IConvertibleNativeHandle<MotionDBIndex> {
+public partial interface MotionDBIndex : ISchemaClass<MotionDBIndex> {
 
-  static MotionDBIndex IConvertibleNativeHandle<MotionDBIndex>.From(nint handle) => new MotionDBIndexImpl(handle);
+  static MotionDBIndex ISchemaClass<MotionDBIndex>.From(nint handle) => new MotionDBIndexImpl(handle);
 
   
   public ref uint Index { get; }

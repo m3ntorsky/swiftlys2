@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseAnimFuncs : ISchemaClass, IConvertibleNativeHandle<CPulseAnimFuncs> {
+public partial interface CPulseAnimFuncs : ISchemaClass<CPulseAnimFuncs> {
 
-  static CPulseAnimFuncs IConvertibleNativeHandle<CPulseAnimFuncs>.From(nint handle) => new CPulseAnimFuncsImpl(handle);
+  static CPulseAnimFuncs ISchemaClass<CPulseAnimFuncs>.From(nint handle) => new CPulseAnimFuncsImpl(handle);
 
 
 

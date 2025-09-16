@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointTeleport : CServerOnlyPointEntity, IConvertibleNativeHandle<CPointTeleport> {
+public partial interface CPointTeleport : CServerOnlyPointEntity, ISchemaClass<CPointTeleport> {
 
-  static CPointTeleport IConvertibleNativeHandle<CPointTeleport>.From(nint handle) => new CPointTeleportImpl(handle);
+  static CPointTeleport ISchemaClass<CPointTeleport>.From(nint handle) => new CPointTeleportImpl(handle);
 
   
   public ref Vector SaveOrigin { get; }

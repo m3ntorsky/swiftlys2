@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRR_Response : ISchemaClass, IConvertibleNativeHandle<CRR_Response> {
+public partial interface CRR_Response : ISchemaClass<CRR_Response> {
 
-  static CRR_Response IConvertibleNativeHandle<CRR_Response>.From(nint handle) => new CRR_ResponseImpl(handle);
+  static CRR_Response ISchemaClass<CRR_Response>.From(nint handle) => new CRR_ResponseImpl(handle);
 
   
   public ref byte Type { get; }

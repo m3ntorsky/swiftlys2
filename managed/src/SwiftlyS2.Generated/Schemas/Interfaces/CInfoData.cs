@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoData : CServerOnlyEntity, IConvertibleNativeHandle<CInfoData> {
+public partial interface CInfoData : CServerOnlyEntity, ISchemaClass<CInfoData> {
 
-  static CInfoData IConvertibleNativeHandle<CInfoData>.From(nint handle) => new CInfoDataImpl(handle);
+  static CInfoData ISchemaClass<CInfoData>.From(nint handle) => new CInfoDataImpl(handle);
 
 
 

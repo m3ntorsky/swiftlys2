@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMaterialDrawDescriptor : ISchemaClass, IConvertibleNativeHandle<CMaterialDrawDescriptor> {
+public partial interface CMaterialDrawDescriptor : ISchemaClass<CMaterialDrawDescriptor> {
 
-  static CMaterialDrawDescriptor IConvertibleNativeHandle<CMaterialDrawDescriptor>.From(nint handle) => new CMaterialDrawDescriptorImpl(handle);
+  static CMaterialDrawDescriptor ISchemaClass<CMaterialDrawDescriptor>.From(nint handle) => new CMaterialDrawDescriptorImpl(handle);
 
   
   public ref float UvDensity { get; }

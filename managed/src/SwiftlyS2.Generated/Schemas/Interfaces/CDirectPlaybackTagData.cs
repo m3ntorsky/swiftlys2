@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDirectPlaybackTagData : ISchemaClass, IConvertibleNativeHandle<CDirectPlaybackTagData> {
+public partial interface CDirectPlaybackTagData : ISchemaClass<CDirectPlaybackTagData> {
 
-  static CDirectPlaybackTagData IConvertibleNativeHandle<CDirectPlaybackTagData>.From(nint handle) => new CDirectPlaybackTagDataImpl(handle);
+  static CDirectPlaybackTagData ISchemaClass<CDirectPlaybackTagData>.From(nint handle) => new CDirectPlaybackTagDataImpl(handle);
 
   
   public ref CUtlString SequenceName { get; }

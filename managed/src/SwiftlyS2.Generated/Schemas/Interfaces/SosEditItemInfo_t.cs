@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SosEditItemInfo_t : ISchemaClass, IConvertibleNativeHandle<SosEditItemInfo_t> {
+public partial interface SosEditItemInfo_t : ISchemaClass<SosEditItemInfo_t> {
 
-  static SosEditItemInfo_t IConvertibleNativeHandle<SosEditItemInfo_t>.From(nint handle) => new SosEditItemInfo_tImpl(handle);
+  static SosEditItemInfo_t ISchemaClass<SosEditItemInfo_t>.From(nint handle) => new SosEditItemInfo_tImpl(handle);
 
   
   public ref SosEditItemType_t ItemType { get; }

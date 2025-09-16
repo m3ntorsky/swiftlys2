@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayerController_DamageServices : CPlayerControllerComponent, IConvertibleNativeHandle<CCSPlayerController_DamageServices> {
+public partial interface CCSPlayerController_DamageServices : CPlayerControllerComponent, ISchemaClass<CCSPlayerController_DamageServices> {
 
-  static CCSPlayerController_DamageServices IConvertibleNativeHandle<CCSPlayerController_DamageServices>.From(nint handle) => new CCSPlayerController_DamageServicesImpl(handle);
+  static CCSPlayerController_DamageServices ISchemaClass<CCSPlayerController_DamageServices>.From(nint handle) => new CCSPlayerController_DamageServicesImpl(handle);
 
   
   public ref int SendUpdate { get; }

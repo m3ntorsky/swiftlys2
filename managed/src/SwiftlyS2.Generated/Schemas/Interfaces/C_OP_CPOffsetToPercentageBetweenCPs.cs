@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_CPOffsetToPercentageBetweenCPs : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_CPOffsetToPercentageBetweenCPs> {
+public partial interface C_OP_CPOffsetToPercentageBetweenCPs : CParticleFunctionOperator, ISchemaClass<C_OP_CPOffsetToPercentageBetweenCPs> {
 
-  static C_OP_CPOffsetToPercentageBetweenCPs IConvertibleNativeHandle<C_OP_CPOffsetToPercentageBetweenCPs>.From(nint handle) => new C_OP_CPOffsetToPercentageBetweenCPsImpl(handle);
+  static C_OP_CPOffsetToPercentageBetweenCPs ISchemaClass<C_OP_CPOffsetToPercentageBetweenCPs>.From(nint handle) => new C_OP_CPOffsetToPercentageBetweenCPsImpl(handle);
 
   
   public ref float InputMin { get; }

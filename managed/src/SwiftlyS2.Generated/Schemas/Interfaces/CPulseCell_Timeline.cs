@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Timeline : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_Timeline> {
+public partial interface CPulseCell_Timeline : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_Timeline> {
 
-  static CPulseCell_Timeline IConvertibleNativeHandle<CPulseCell_Timeline>.From(nint handle) => new CPulseCell_TimelineImpl(handle);
+  static CPulseCell_Timeline ISchemaClass<CPulseCell_Timeline>.From(nint handle) => new CPulseCell_TimelineImpl(handle);
 
   
   // CUtlVector< CPulseCell_Timeline::TimelineEvent_t >

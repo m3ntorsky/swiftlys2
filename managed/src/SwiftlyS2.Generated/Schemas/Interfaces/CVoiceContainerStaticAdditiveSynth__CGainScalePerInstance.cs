@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance : ISchemaClass, IConvertibleNativeHandle<CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance> {
+public partial interface CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance : ISchemaClass<CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance> {
 
-  static CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance IConvertibleNativeHandle<CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance>.From(nint handle) => new CVoiceContainerStaticAdditiveSynth__CGainScalePerInstanceImpl(handle);
+  static CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance ISchemaClass<CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance>.From(nint handle) => new CVoiceContainerStaticAdditiveSynth__CGainScalePerInstanceImpl(handle);
 
   
   public ref float MinVolume { get; }

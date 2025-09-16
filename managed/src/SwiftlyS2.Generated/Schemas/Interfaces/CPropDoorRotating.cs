@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPropDoorRotating : CBasePropDoor, IConvertibleNativeHandle<CPropDoorRotating> {
+public partial interface CPropDoorRotating : CBasePropDoor, ISchemaClass<CPropDoorRotating> {
 
-  static CPropDoorRotating IConvertibleNativeHandle<CPropDoorRotating>.From(nint handle) => new CPropDoorRotatingImpl(handle);
+  static CPropDoorRotating ISchemaClass<CPropDoorRotating>.From(nint handle) => new CPropDoorRotatingImpl(handle);
 
   
   public ref Vector Axis { get; }

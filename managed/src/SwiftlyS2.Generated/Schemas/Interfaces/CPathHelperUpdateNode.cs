@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathHelperUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CPathHelperUpdateNode> {
+public partial interface CPathHelperUpdateNode : CUnaryUpdateNode, ISchemaClass<CPathHelperUpdateNode> {
 
-  static CPathHelperUpdateNode IConvertibleNativeHandle<CPathHelperUpdateNode>.From(nint handle) => new CPathHelperUpdateNodeImpl(handle);
+  static CPathHelperUpdateNode ISchemaClass<CPathHelperUpdateNode>.From(nint handle) => new CPathHelperUpdateNodeImpl(handle);
 
   
   public ref float StoppingRadius { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface NodeData_t : ISchemaClass, IConvertibleNativeHandle<NodeData_t> {
+public partial interface NodeData_t : ISchemaClass<NodeData_t> {
 
-  static NodeData_t IConvertibleNativeHandle<NodeData_t>.From(nint handle) => new NodeData_tImpl(handle);
+  static NodeData_t ISchemaClass<NodeData_t>.From(nint handle) => new NodeData_tImpl(handle);
 
   
   public ref int Parent { get; }

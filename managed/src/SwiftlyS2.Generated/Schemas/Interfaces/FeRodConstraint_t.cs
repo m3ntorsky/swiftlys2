@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeRodConstraint_t : ISchemaClass, IConvertibleNativeHandle<FeRodConstraint_t> {
+public partial interface FeRodConstraint_t : ISchemaClass<FeRodConstraint_t> {
 
-  static FeRodConstraint_t IConvertibleNativeHandle<FeRodConstraint_t>.From(nint handle) => new FeRodConstraint_tImpl(handle);
+  static FeRodConstraint_t ISchemaClass<FeRodConstraint_t>.From(nint handle) => new FeRodConstraint_tImpl(handle);
 
   
   public ISchemaFixedArray<ushort> Node { get; }

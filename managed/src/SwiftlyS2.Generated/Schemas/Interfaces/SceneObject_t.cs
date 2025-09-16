@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SceneObject_t : ISchemaClass, IConvertibleNativeHandle<SceneObject_t> {
+public partial interface SceneObject_t : ISchemaClass<SceneObject_t> {
 
-  static SceneObject_t IConvertibleNativeHandle<SceneObject_t>.From(nint handle) => new SceneObject_tImpl(handle);
+  static SceneObject_t ISchemaClass<SceneObject_t>.From(nint handle) => new SceneObject_tImpl(handle);
 
   
   public ref uint ObjectID { get; }

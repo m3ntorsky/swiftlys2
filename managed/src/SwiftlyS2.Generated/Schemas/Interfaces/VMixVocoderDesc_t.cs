@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixVocoderDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixVocoderDesc_t> {
+public partial interface VMixVocoderDesc_t : ISchemaClass<VMixVocoderDesc_t> {
 
-  static VMixVocoderDesc_t IConvertibleNativeHandle<VMixVocoderDesc_t>.From(nint handle) => new VMixVocoderDesc_tImpl(handle);
+  static VMixVocoderDesc_t ISchemaClass<VMixVocoderDesc_t>.From(nint handle) => new VMixVocoderDesc_tImpl(handle);
 
   
   public ref int BandCount { get; }

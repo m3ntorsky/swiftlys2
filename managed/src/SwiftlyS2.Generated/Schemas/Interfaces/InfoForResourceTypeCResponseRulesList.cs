@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCResponseRulesList : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCResponseRulesList> {
+public partial interface InfoForResourceTypeCResponseRulesList : ISchemaClass<InfoForResourceTypeCResponseRulesList> {
 
-  static InfoForResourceTypeCResponseRulesList IConvertibleNativeHandle<InfoForResourceTypeCResponseRulesList>.From(nint handle) => new InfoForResourceTypeCResponseRulesListImpl(handle);
+  static InfoForResourceTypeCResponseRulesList ISchemaClass<InfoForResourceTypeCResponseRulesList>.From(nint handle) => new InfoForResourceTypeCResponseRulesListImpl(handle);
 
 
 

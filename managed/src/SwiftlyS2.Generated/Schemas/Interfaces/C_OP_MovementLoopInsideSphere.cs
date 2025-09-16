@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_MovementLoopInsideSphere : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_MovementLoopInsideSphere> {
+public partial interface C_OP_MovementLoopInsideSphere : CParticleFunctionOperator, ISchemaClass<C_OP_MovementLoopInsideSphere> {
 
-  static C_OP_MovementLoopInsideSphere IConvertibleNativeHandle<C_OP_MovementLoopInsideSphere>.From(nint handle) => new C_OP_MovementLoopInsideSphereImpl(handle);
+  static C_OP_MovementLoopInsideSphere ISchemaClass<C_OP_MovementLoopInsideSphere>.From(nint handle) => new C_OP_MovementLoopInsideSphereImpl(handle);
 
   
   public ref int CP { get; }

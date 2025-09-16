@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFootEvent : CNmEvent, IConvertibleNativeHandle<CNmFootEvent> {
+public partial interface CNmFootEvent : CNmEvent, ISchemaClass<CNmFootEvent> {
 
-  static CNmFootEvent IConvertibleNativeHandle<CNmFootEvent>.From(nint handle) => new CNmFootEventImpl(handle);
+  static CNmFootEvent ISchemaClass<CNmFootEvent>.From(nint handle) => new CNmFootEventImpl(handle);
 
   
   public ref NmFootPhase_t Phase { get; }

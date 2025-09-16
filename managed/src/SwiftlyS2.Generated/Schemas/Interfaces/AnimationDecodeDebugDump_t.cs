@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AnimationDecodeDebugDump_t : ISchemaClass, IConvertibleNativeHandle<AnimationDecodeDebugDump_t> {
+public partial interface AnimationDecodeDebugDump_t : ISchemaClass<AnimationDecodeDebugDump_t> {
 
-  static AnimationDecodeDebugDump_t IConvertibleNativeHandle<AnimationDecodeDebugDump_t>.From(nint handle) => new AnimationDecodeDebugDump_tImpl(handle);
+  static AnimationDecodeDebugDump_t ISchemaClass<AnimationDecodeDebugDump_t>.From(nint handle) => new AnimationDecodeDebugDump_tImpl(handle);
 
   
   public ref AnimationProcessingType_t ProcessingType { get; }

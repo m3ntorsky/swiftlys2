@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmGraphEventConditionNode__Condition_t : ISchemaClass, IConvertibleNativeHandle<CNmGraphEventConditionNode__Condition_t> {
+public partial interface CNmGraphEventConditionNode__Condition_t : ISchemaClass<CNmGraphEventConditionNode__Condition_t> {
 
-  static CNmGraphEventConditionNode__Condition_t IConvertibleNativeHandle<CNmGraphEventConditionNode__Condition_t>.From(nint handle) => new CNmGraphEventConditionNode__Condition_tImpl(handle);
+  static CNmGraphEventConditionNode__Condition_t ISchemaClass<CNmGraphEventConditionNode__Condition_t>.From(nint handle) => new CNmGraphEventConditionNode__Condition_tImpl(handle);
 
   
   public ref CGlobalSymbol EventID { get; }

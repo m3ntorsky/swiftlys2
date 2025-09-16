@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCVPhysXSurfacePropertiesList : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCVPhysXSurfacePropertiesList> {
+public partial interface InfoForResourceTypeCVPhysXSurfacePropertiesList : ISchemaClass<InfoForResourceTypeCVPhysXSurfacePropertiesList> {
 
-  static InfoForResourceTypeCVPhysXSurfacePropertiesList IConvertibleNativeHandle<InfoForResourceTypeCVPhysXSurfacePropertiesList>.From(nint handle) => new InfoForResourceTypeCVPhysXSurfacePropertiesListImpl(handle);
+  static InfoForResourceTypeCVPhysXSurfacePropertiesList ISchemaClass<InfoForResourceTypeCVPhysXSurfacePropertiesList>.From(nint handle) => new InfoForResourceTypeCVPhysXSurfacePropertiesListImpl(handle);
 
 
 

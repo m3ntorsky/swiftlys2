@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDecalGroupVData : ISchemaClass, IConvertibleNativeHandle<CDecalGroupVData> {
+public partial interface CDecalGroupVData : ISchemaClass<CDecalGroupVData> {
 
-  static CDecalGroupVData IConvertibleNativeHandle<CDecalGroupVData>.From(nint handle) => new CDecalGroupVDataImpl(handle);
+  static CDecalGroupVData ISchemaClass<CDecalGroupVData>.From(nint handle) => new CDecalGroupVDataImpl(handle);
 
   
   // CUtlVector< DecalGroupOption_t >

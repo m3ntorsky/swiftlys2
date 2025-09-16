@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvExplosion : CModelPointEntity, IConvertibleNativeHandle<CEnvExplosion> {
+public partial interface CEnvExplosion : CModelPointEntity, ISchemaClass<CEnvExplosion> {
 
-  static CEnvExplosion IConvertibleNativeHandle<CEnvExplosion>.From(nint handle) => new CEnvExplosionImpl(handle);
+  static CEnvExplosion ISchemaClass<CEnvExplosion>.From(nint handle) => new CEnvExplosionImpl(handle);
 
   
   public ref int Magnitude { get; }

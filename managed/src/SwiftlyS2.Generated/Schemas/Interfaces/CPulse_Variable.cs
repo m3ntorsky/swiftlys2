@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulse_Variable : ISchemaClass, IConvertibleNativeHandle<CPulse_Variable> {
+public partial interface CPulse_Variable : ISchemaClass<CPulse_Variable> {
 
-  static CPulse_Variable IConvertibleNativeHandle<CPulse_Variable>.From(nint handle) => new CPulse_VariableImpl(handle);
+  static CPulse_Variable ISchemaClass<CPulse_Variable>.From(nint handle) => new CPulse_VariableImpl(handle);
 
   
   // PulseSymbol_t

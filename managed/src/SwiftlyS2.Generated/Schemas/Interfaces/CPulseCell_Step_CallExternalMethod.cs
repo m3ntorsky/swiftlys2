@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Step_CallExternalMethod : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_Step_CallExternalMethod> {
+public partial interface CPulseCell_Step_CallExternalMethod : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_Step_CallExternalMethod> {
 
-  static CPulseCell_Step_CallExternalMethod IConvertibleNativeHandle<CPulseCell_Step_CallExternalMethod>.From(nint handle) => new CPulseCell_Step_CallExternalMethodImpl(handle);
+  static CPulseCell_Step_CallExternalMethod ISchemaClass<CPulseCell_Step_CallExternalMethod>.From(nint handle) => new CPulseCell_Step_CallExternalMethodImpl(handle);
 
   
   // PulseSymbol_t

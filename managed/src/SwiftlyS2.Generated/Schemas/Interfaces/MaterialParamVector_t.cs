@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MaterialParamVector_t : MaterialParam_t, IConvertibleNativeHandle<MaterialParamVector_t> {
+public partial interface MaterialParamVector_t : MaterialParam_t, ISchemaClass<MaterialParamVector_t> {
 
-  static MaterialParamVector_t IConvertibleNativeHandle<MaterialParamVector_t>.From(nint handle) => new MaterialParamVector_tImpl(handle);
+  static MaterialParamVector_t ISchemaClass<MaterialParamVector_t>.From(nint handle) => new MaterialParamVector_tImpl(handle);
 
   
   public ref Vector4D Value { get; }

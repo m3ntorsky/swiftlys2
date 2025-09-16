@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStringAnimTag : CAnimTagBase, IConvertibleNativeHandle<CStringAnimTag> {
+public partial interface CStringAnimTag : CAnimTagBase, ISchemaClass<CStringAnimTag> {
 
-  static CStringAnimTag IConvertibleNativeHandle<CStringAnimTag>.From(nint handle) => new CStringAnimTagImpl(handle);
+  static CStringAnimTag ISchemaClass<CStringAnimTag>.From(nint handle) => new CStringAnimTagImpl(handle);
 
 
 

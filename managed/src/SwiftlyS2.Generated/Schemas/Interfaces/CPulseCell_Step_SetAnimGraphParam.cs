@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Step_SetAnimGraphParam : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_Step_SetAnimGraphParam> {
+public partial interface CPulseCell_Step_SetAnimGraphParam : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_Step_SetAnimGraphParam> {
 
-  static CPulseCell_Step_SetAnimGraphParam IConvertibleNativeHandle<CPulseCell_Step_SetAnimGraphParam>.From(nint handle) => new CPulseCell_Step_SetAnimGraphParamImpl(handle);
+  static CPulseCell_Step_SetAnimGraphParam ISchemaClass<CPulseCell_Step_SetAnimGraphParam>.From(nint handle) => new CPulseCell_Step_SetAnimGraphParamImpl(handle);
 
   
   public ref CUtlString ParamName { get; }

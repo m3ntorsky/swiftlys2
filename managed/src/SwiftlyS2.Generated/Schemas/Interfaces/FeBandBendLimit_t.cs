@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeBandBendLimit_t : ISchemaClass, IConvertibleNativeHandle<FeBandBendLimit_t> {
+public partial interface FeBandBendLimit_t : ISchemaClass<FeBandBendLimit_t> {
 
-  static FeBandBendLimit_t IConvertibleNativeHandle<FeBandBendLimit_t>.From(nint handle) => new FeBandBendLimit_tImpl(handle);
+  static FeBandBendLimit_t ISchemaClass<FeBandBendLimit_t>.From(nint handle) => new FeBandBendLimit_tImpl(handle);
 
   
   public ref float DistMin { get; }

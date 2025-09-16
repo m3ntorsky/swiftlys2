@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_VelocityDecay : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_VelocityDecay> {
+public partial interface C_OP_VelocityDecay : CParticleFunctionOperator, ISchemaClass<C_OP_VelocityDecay> {
 
-  static C_OP_VelocityDecay IConvertibleNativeHandle<C_OP_VelocityDecay>.From(nint handle) => new C_OP_VelocityDecayImpl(handle);
+  static C_OP_VelocityDecay ISchemaClass<C_OP_VelocityDecay>.From(nint handle) => new C_OP_VelocityDecayImpl(handle);
 
   
   public ref float MinVelocity { get; }

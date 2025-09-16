@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRetakeGameRules : ISchemaClass, IConvertibleNativeHandle<CRetakeGameRules> {
+public partial interface CRetakeGameRules : ISchemaClass<CRetakeGameRules> {
 
-  static CRetakeGameRules IConvertibleNativeHandle<CRetakeGameRules>.From(nint handle) => new CRetakeGameRulesImpl(handle);
+  static CRetakeGameRules ISchemaClass<CRetakeGameRules>.From(nint handle) => new CRetakeGameRulesImpl(handle);
 
   
   public ref int MatchSeed { get; }

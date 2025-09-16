@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSkeletonInstance : CGameSceneNode, IConvertibleNativeHandle<CSkeletonInstance> {
+public partial interface CSkeletonInstance : CGameSceneNode, ISchemaClass<CSkeletonInstance> {
 
-  static CSkeletonInstance IConvertibleNativeHandle<CSkeletonInstance>.From(nint handle) => new CSkeletonInstanceImpl(handle);
+  static CSkeletonInstance ISchemaClass<CSkeletonInstance>.From(nint handle) => new CSkeletonInstanceImpl(handle);
 
   
   public CModelState ModelState { get; }

@@ -1,5 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 using System.Security;
+using Spectre.Console;
 using SwiftlyS2.Core;
 
 namespace SwiftlyS2;
@@ -10,7 +11,11 @@ internal class Entrypoint
     [SecurityCritical]
     public unsafe static void Start(IntPtr nativeTable, int nativeTableSize)
     {   
-        Bootstrap.Start(nativeTable, nativeTableSize);
+        try {
+            Bootstrap.Start(nativeTable, nativeTableSize);
+        } catch (Exception e) {
+            AnsiConsole.WriteException(e);
+        }
     }
     
 }

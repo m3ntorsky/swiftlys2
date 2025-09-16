@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapCPtoCP : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_RemapCPtoCP> {
+public partial interface C_OP_RemapCPtoCP : CParticleFunctionPreEmission, ISchemaClass<C_OP_RemapCPtoCP> {
 
-  static C_OP_RemapCPtoCP IConvertibleNativeHandle<C_OP_RemapCPtoCP>.From(nint handle) => new C_OP_RemapCPtoCPImpl(handle);
+  static C_OP_RemapCPtoCP ISchemaClass<C_OP_RemapCPtoCP>.From(nint handle) => new C_OP_RemapCPtoCPImpl(handle);
 
   
   public ref int InputControlPoint { get; }

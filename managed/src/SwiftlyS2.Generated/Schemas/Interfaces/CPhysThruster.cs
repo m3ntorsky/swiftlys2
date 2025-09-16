@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysThruster : CPhysForce, IConvertibleNativeHandle<CPhysThruster> {
+public partial interface CPhysThruster : CPhysForce, ISchemaClass<CPhysThruster> {
 
-  static CPhysThruster IConvertibleNativeHandle<CPhysThruster>.From(nint handle) => new CPhysThrusterImpl(handle);
+  static CPhysThruster ISchemaClass<CPhysThruster>.From(nint handle) => new CPhysThrusterImpl(handle);
 
   
   public ref Vector LocalOrigin { get; }

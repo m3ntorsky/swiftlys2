@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncRotator : CBaseModelEntity, IConvertibleNativeHandle<CFuncRotator> {
+public partial interface CFuncRotator : CBaseModelEntity, ISchemaClass<CFuncRotator> {
 
-  static CFuncRotator IConvertibleNativeHandle<CFuncRotator>.From(nint handle) => new CFuncRotatorImpl(handle);
+  static CFuncRotator ISchemaClass<CFuncRotator>.From(nint handle) => new CFuncRotatorImpl(handle);
 
   
   public ref CHandle<CBaseEntity> RotatorTarget { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SpringToVectorConstraint : CParticleFunctionConstraint, IConvertibleNativeHandle<C_OP_SpringToVectorConstraint> {
+public partial interface C_OP_SpringToVectorConstraint : CParticleFunctionConstraint, ISchemaClass<C_OP_SpringToVectorConstraint> {
 
-  static C_OP_SpringToVectorConstraint IConvertibleNativeHandle<C_OP_SpringToVectorConstraint>.From(nint handle) => new C_OP_SpringToVectorConstraintImpl(handle);
+  static C_OP_SpringToVectorConstraint ISchemaClass<C_OP_SpringToVectorConstraint>.From(nint handle) => new C_OP_SpringToVectorConstraintImpl(handle);
 
   
   public CPerParticleFloatInput RestLength { get; }

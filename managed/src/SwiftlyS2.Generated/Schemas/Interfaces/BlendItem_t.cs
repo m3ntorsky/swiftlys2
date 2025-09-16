@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface BlendItem_t : ISchemaClass, IConvertibleNativeHandle<BlendItem_t> {
+public partial interface BlendItem_t : ISchemaClass<BlendItem_t> {
 
-  static BlendItem_t IConvertibleNativeHandle<BlendItem_t>.From(nint handle) => new BlendItem_tImpl(handle);
+  static BlendItem_t ISchemaClass<BlendItem_t>.From(nint handle) => new BlendItem_tImpl(handle);
 
   
   // CUtlVector< TagSpan_t >

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCTestResourceData : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCTestResourceData> {
+public partial interface InfoForResourceTypeCTestResourceData : ISchemaClass<InfoForResourceTypeCTestResourceData> {
 
-  static InfoForResourceTypeCTestResourceData IConvertibleNativeHandle<InfoForResourceTypeCTestResourceData>.From(nint handle) => new InfoForResourceTypeCTestResourceDataImpl(handle);
+  static InfoForResourceTypeCTestResourceData ISchemaClass<InfoForResourceTypeCTestResourceData>.From(nint handle) => new InfoForResourceTypeCTestResourceDataImpl(handle);
 
 
 

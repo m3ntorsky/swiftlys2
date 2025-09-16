@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmClip : ISchemaClass, IConvertibleNativeHandle<CNmClip> {
+public partial interface CNmClip : ISchemaClass<CNmClip> {
 
-  static CNmClip IConvertibleNativeHandle<CNmClip>.From(nint handle) => new CNmClipImpl(handle);
+  static CNmClip ISchemaClass<CNmClip>.From(nint handle) => new CNmClipImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton { get; }

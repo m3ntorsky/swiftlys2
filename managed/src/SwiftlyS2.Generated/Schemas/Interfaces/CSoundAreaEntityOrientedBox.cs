@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundAreaEntityOrientedBox : CSoundAreaEntityBase, IConvertibleNativeHandle<CSoundAreaEntityOrientedBox> {
+public partial interface CSoundAreaEntityOrientedBox : CSoundAreaEntityBase, ISchemaClass<CSoundAreaEntityOrientedBox> {
 
-  static CSoundAreaEntityOrientedBox IConvertibleNativeHandle<CSoundAreaEntityOrientedBox>.From(nint handle) => new CSoundAreaEntityOrientedBoxImpl(handle);
+  static CSoundAreaEntityOrientedBox ISchemaClass<CSoundAreaEntityOrientedBox>.From(nint handle) => new CSoundAreaEntityOrientedBoxImpl(handle);
 
   
   public ref Vector Min { get; }

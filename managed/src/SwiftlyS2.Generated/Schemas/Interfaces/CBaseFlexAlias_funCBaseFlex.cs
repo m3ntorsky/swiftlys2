@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseFlexAlias_funCBaseFlex : CBaseFlex, IConvertibleNativeHandle<CBaseFlexAlias_funCBaseFlex> {
+public partial interface CBaseFlexAlias_funCBaseFlex : CBaseFlex, ISchemaClass<CBaseFlexAlias_funCBaseFlex> {
 
-  static CBaseFlexAlias_funCBaseFlex IConvertibleNativeHandle<CBaseFlexAlias_funCBaseFlex>.From(nint handle) => new CBaseFlexAlias_funCBaseFlexImpl(handle);
+  static CBaseFlexAlias_funCBaseFlex ISchemaClass<CBaseFlexAlias_funCBaseFlex>.From(nint handle) => new CBaseFlexAlias_funCBaseFlexImpl(handle);
 
 
 

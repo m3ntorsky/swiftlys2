@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSimTimer : CSimpleSimTimer, IConvertibleNativeHandle<CSimTimer> {
+public partial interface CSimTimer : CSimpleSimTimer, ISchemaClass<CSimTimer> {
 
-  static CSimTimer IConvertibleNativeHandle<CSimTimer>.From(nint handle) => new CSimTimerImpl(handle);
+  static CSimTimer ISchemaClass<CSimTimer>.From(nint handle) => new CSimTimerImpl(handle);
 
   
   public ref float Interval { get; }

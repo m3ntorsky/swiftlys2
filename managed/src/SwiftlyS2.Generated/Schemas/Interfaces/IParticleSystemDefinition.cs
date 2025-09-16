@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IParticleSystemDefinition : ISchemaClass, IConvertibleNativeHandle<IParticleSystemDefinition> {
+public partial interface IParticleSystemDefinition : ISchemaClass<IParticleSystemDefinition> {
 
-  static IParticleSystemDefinition IConvertibleNativeHandle<IParticleSystemDefinition>.From(nint handle) => new IParticleSystemDefinitionImpl(handle);
+  static IParticleSystemDefinition ISchemaClass<IParticleSystemDefinition>.From(nint handle) => new IParticleSystemDefinitionImpl(handle);
 
 
 

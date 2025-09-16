@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseRuntimeStateOffset_t : ISchemaClass, IConvertibleNativeHandle<PulseRuntimeStateOffset_t> {
+public partial interface PulseRuntimeStateOffset_t : ISchemaClass<PulseRuntimeStateOffset_t> {
 
-  static PulseRuntimeStateOffset_t IConvertibleNativeHandle<PulseRuntimeStateOffset_t>.From(nint handle) => new PulseRuntimeStateOffset_tImpl(handle);
+  static PulseRuntimeStateOffset_t ISchemaClass<PulseRuntimeStateOffset_t>.From(nint handle) => new PulseRuntimeStateOffset_tImpl(handle);
 
   
   public ref ushort Value { get; }

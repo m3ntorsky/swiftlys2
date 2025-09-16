@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ScreenSpacePositionOfTarget : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_ScreenSpacePositionOfTarget> {
+public partial interface C_OP_ScreenSpacePositionOfTarget : CParticleFunctionOperator, ISchemaClass<C_OP_ScreenSpacePositionOfTarget> {
 
-  static C_OP_ScreenSpacePositionOfTarget IConvertibleNativeHandle<C_OP_ScreenSpacePositionOfTarget>.From(nint handle) => new C_OP_ScreenSpacePositionOfTargetImpl(handle);
+  static C_OP_ScreenSpacePositionOfTarget ISchemaClass<C_OP_ScreenSpacePositionOfTarget>.From(nint handle) => new C_OP_ScreenSpacePositionOfTargetImpl(handle);
 
   
   public CPerParticleVecInput TargetPosition { get; }

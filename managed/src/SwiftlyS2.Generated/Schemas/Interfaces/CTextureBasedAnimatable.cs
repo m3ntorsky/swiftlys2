@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTextureBasedAnimatable : CBaseModelEntity, IConvertibleNativeHandle<CTextureBasedAnimatable> {
+public partial interface CTextureBasedAnimatable : CBaseModelEntity, ISchemaClass<CTextureBasedAnimatable> {
 
-  static CTextureBasedAnimatable IConvertibleNativeHandle<CTextureBasedAnimatable>.From(nint handle) => new CTextureBasedAnimatableImpl(handle);
+  static CTextureBasedAnimatable ISchemaClass<CTextureBasedAnimatable>.From(nint handle) => new CTextureBasedAnimatableImpl(handle);
 
   
   public ref bool Loop { get; }

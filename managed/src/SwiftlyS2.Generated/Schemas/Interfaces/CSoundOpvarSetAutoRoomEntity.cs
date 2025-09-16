@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundOpvarSetAutoRoomEntity : CSoundOpvarSetPointEntity, IConvertibleNativeHandle<CSoundOpvarSetAutoRoomEntity> {
+public partial interface CSoundOpvarSetAutoRoomEntity : CSoundOpvarSetPointEntity, ISchemaClass<CSoundOpvarSetAutoRoomEntity> {
 
-  static CSoundOpvarSetAutoRoomEntity IConvertibleNativeHandle<CSoundOpvarSetAutoRoomEntity>.From(nint handle) => new CSoundOpvarSetAutoRoomEntityImpl(handle);
+  static CSoundOpvarSetAutoRoomEntity ISchemaClass<CSoundOpvarSetAutoRoomEntity>.From(nint handle) => new CSoundOpvarSetAutoRoomEntityImpl(handle);
 
   
   // CUtlVector< SoundOpvarTraceResult_t >

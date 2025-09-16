@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncWater : CBaseModelEntity, IConvertibleNativeHandle<CFuncWater> {
+public partial interface CFuncWater : CBaseModelEntity, ISchemaClass<CFuncWater> {
 
-  static CFuncWater IConvertibleNativeHandle<CFuncWater>.From(nint handle) => new CFuncWaterImpl(handle);
+  static CFuncWater ISchemaClass<CFuncWater>.From(nint handle) => new CFuncWaterImpl(handle);
 
   
   public CBuoyancyHelper BuoyancyHelper { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PhysicsParticleId_t : ISchemaClass, IConvertibleNativeHandle<PhysicsParticleId_t> {
+public partial interface PhysicsParticleId_t : ISchemaClass<PhysicsParticleId_t> {
 
-  static PhysicsParticleId_t IConvertibleNativeHandle<PhysicsParticleId_t>.From(nint handle) => new PhysicsParticleId_tImpl(handle);
+  static PhysicsParticleId_t ISchemaClass<PhysicsParticleId_t>.From(nint handle) => new PhysicsParticleId_tImpl(handle);
 
   
   public ref uint Value { get; }

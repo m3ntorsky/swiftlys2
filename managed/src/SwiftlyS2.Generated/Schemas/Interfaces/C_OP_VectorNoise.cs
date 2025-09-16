@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_VectorNoise : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_VectorNoise> {
+public partial interface C_OP_VectorNoise : CParticleFunctionOperator, ISchemaClass<C_OP_VectorNoise> {
 
-  static C_OP_VectorNoise IConvertibleNativeHandle<C_OP_VectorNoise>.From(nint handle) => new C_OP_VectorNoiseImpl(handle);
+  static C_OP_VectorNoise ISchemaClass<C_OP_VectorNoise>.From(nint handle) => new C_OP_VectorNoiseImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInferno : CBaseModelEntity, IConvertibleNativeHandle<CInferno> {
+public partial interface CInferno : CBaseModelEntity, ISchemaClass<CInferno> {
 
-  static CInferno IConvertibleNativeHandle<CInferno>.From(nint handle) => new CInfernoImpl(handle);
+  static CInferno ISchemaClass<CInferno>.From(nint handle) => new CInfernoImpl(handle);
 
   
   public ISchemaFixedArray<Vector> FirePositions { get; }

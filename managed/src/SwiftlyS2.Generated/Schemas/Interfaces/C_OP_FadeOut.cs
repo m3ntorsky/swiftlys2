@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_FadeOut : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_FadeOut> {
+public partial interface C_OP_FadeOut : CParticleFunctionOperator, ISchemaClass<C_OP_FadeOut> {
 
-  static C_OP_FadeOut IConvertibleNativeHandle<C_OP_FadeOut>.From(nint handle) => new C_OP_FadeOutImpl(handle);
+  static C_OP_FadeOut ISchemaClass<C_OP_FadeOut>.From(nint handle) => new C_OP_FadeOutImpl(handle);
 
   
   public ref float FadeOutTimeMin { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_WaitForCursorsWithTagBase__CursorState_t : ISchemaClass, IConvertibleNativeHandle<CPulseCell_WaitForCursorsWithTagBase__CursorState_t> {
+public partial interface CPulseCell_WaitForCursorsWithTagBase__CursorState_t : ISchemaClass<CPulseCell_WaitForCursorsWithTagBase__CursorState_t> {
 
-  static CPulseCell_WaitForCursorsWithTagBase__CursorState_t IConvertibleNativeHandle<CPulseCell_WaitForCursorsWithTagBase__CursorState_t>.From(nint handle) => new CPulseCell_WaitForCursorsWithTagBase__CursorState_tImpl(handle);
+  static CPulseCell_WaitForCursorsWithTagBase__CursorState_t ISchemaClass<CPulseCell_WaitForCursorsWithTagBase__CursorState_t>.From(nint handle) => new CPulseCell_WaitForCursorsWithTagBase__CursorState_tImpl(handle);
 
   
   // PulseSymbol_t

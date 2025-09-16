@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface fogplayerparams_t : ISchemaClass, IConvertibleNativeHandle<fogplayerparams_t> {
+public partial interface fogplayerparams_t : ISchemaClass<fogplayerparams_t> {
 
-  static fogplayerparams_t IConvertibleNativeHandle<fogplayerparams_t>.From(nint handle) => new fogplayerparams_tImpl(handle);
+  static fogplayerparams_t ISchemaClass<fogplayerparams_t>.From(nint handle) => new fogplayerparams_tImpl(handle);
 
   
   public ref CHandle<CFogController> Ctrl { get; }

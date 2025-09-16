@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointPrefab : CServerOnlyPointEntity, IConvertibleNativeHandle<CPointPrefab> {
+public partial interface CPointPrefab : CServerOnlyPointEntity, ISchemaClass<CPointPrefab> {
 
-  static CPointPrefab IConvertibleNativeHandle<CPointPrefab>.From(nint handle) => new CPointPrefabImpl(handle);
+  static CPointPrefab ISchemaClass<CPointPrefab>.From(nint handle) => new CPointPrefabImpl(handle);
 
   
   public ref CUtlSymbolLarge TargetMapName { get; }

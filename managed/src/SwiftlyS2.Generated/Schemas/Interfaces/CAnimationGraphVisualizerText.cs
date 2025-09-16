@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimationGraphVisualizerText : CAnimationGraphVisualizerPrimitiveBase, IConvertibleNativeHandle<CAnimationGraphVisualizerText> {
+public partial interface CAnimationGraphVisualizerText : CAnimationGraphVisualizerPrimitiveBase, ISchemaClass<CAnimationGraphVisualizerText> {
 
-  static CAnimationGraphVisualizerText IConvertibleNativeHandle<CAnimationGraphVisualizerText>.From(nint handle) => new CAnimationGraphVisualizerTextImpl(handle);
+  static CAnimationGraphVisualizerText ISchemaClass<CAnimationGraphVisualizerText>.From(nint handle) => new CAnimationGraphVisualizerTextImpl(handle);
 
   
   public ref Vector WsPosition { get; }

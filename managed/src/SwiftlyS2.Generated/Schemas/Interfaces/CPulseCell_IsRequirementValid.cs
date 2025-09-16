@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_IsRequirementValid : CPulseCell_BaseRequirement, IConvertibleNativeHandle<CPulseCell_IsRequirementValid> {
+public partial interface CPulseCell_IsRequirementValid : CPulseCell_BaseRequirement, ISchemaClass<CPulseCell_IsRequirementValid> {
 
-  static CPulseCell_IsRequirementValid IConvertibleNativeHandle<CPulseCell_IsRequirementValid>.From(nint handle) => new CPulseCell_IsRequirementValidImpl(handle);
+  static CPulseCell_IsRequirementValid ISchemaClass<CPulseCell_IsRequirementValid>.From(nint handle) => new CPulseCell_IsRequirementValidImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseMathlib : ISchemaClass, IConvertibleNativeHandle<CPulseMathlib> {
+public partial interface CPulseMathlib : ISchemaClass<CPulseMathlib> {
 
-  static CPulseMathlib IConvertibleNativeHandle<CPulseMathlib>.From(nint handle) => new CPulseMathlibImpl(handle);
+  static CPulseMathlib ISchemaClass<CPulseMathlib>.From(nint handle) => new CPulseMathlibImpl(handle);
 
 
 

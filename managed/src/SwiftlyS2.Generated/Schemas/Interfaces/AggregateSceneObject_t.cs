@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AggregateSceneObject_t : ISchemaClass, IConvertibleNativeHandle<AggregateSceneObject_t> {
+public partial interface AggregateSceneObject_t : ISchemaClass<AggregateSceneObject_t> {
 
-  static AggregateSceneObject_t IConvertibleNativeHandle<AggregateSceneObject_t>.From(nint handle) => new AggregateSceneObject_tImpl(handle);
+  static AggregateSceneObject_t ISchemaClass<AggregateSceneObject_t>.From(nint handle) => new AggregateSceneObject_tImpl(handle);
 
   
   public ref ObjectTypeFlags_t AllFlags { get; }

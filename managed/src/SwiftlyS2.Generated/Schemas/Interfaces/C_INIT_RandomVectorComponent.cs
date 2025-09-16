@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomVectorComponent : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RandomVectorComponent> {
+public partial interface C_INIT_RandomVectorComponent : CParticleFunctionInitializer, ISchemaClass<C_INIT_RandomVectorComponent> {
 
-  static C_INIT_RandomVectorComponent IConvertibleNativeHandle<C_INIT_RandomVectorComponent>.From(nint handle) => new C_INIT_RandomVectorComponentImpl(handle);
+  static C_INIT_RandomVectorComponent ISchemaClass<C_INIT_RandomVectorComponent>.From(nint handle) => new C_INIT_RandomVectorComponentImpl(handle);
 
   
   public ref float Min { get; }

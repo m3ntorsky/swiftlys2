@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMathCounter : CLogicalEntity, IConvertibleNativeHandle<CMathCounter> {
+public partial interface CMathCounter : CLogicalEntity, ISchemaClass<CMathCounter> {
 
-  static CMathCounter IConvertibleNativeHandle<CMathCounter>.From(nint handle) => new CMathCounterImpl(handle);
+  static CMathCounter ISchemaClass<CMathCounter>.From(nint handle) => new CMathCounterImpl(handle);
 
   
   public ref float Min { get; }

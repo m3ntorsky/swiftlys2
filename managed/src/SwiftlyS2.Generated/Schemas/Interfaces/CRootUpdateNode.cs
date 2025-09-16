@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRootUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CRootUpdateNode> {
+public partial interface CRootUpdateNode : CUnaryUpdateNode, ISchemaClass<CRootUpdateNode> {
 
-  static CRootUpdateNode IConvertibleNativeHandle<CRootUpdateNode>.From(nint handle) => new CRootUpdateNodeImpl(handle);
+  static CRootUpdateNode ISchemaClass<CRootUpdateNode>.From(nint handle) => new CRootUpdateNodeImpl(handle);
 
 
 

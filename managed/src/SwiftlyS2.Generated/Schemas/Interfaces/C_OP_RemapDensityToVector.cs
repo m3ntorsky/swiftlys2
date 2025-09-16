@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapDensityToVector : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapDensityToVector> {
+public partial interface C_OP_RemapDensityToVector : CParticleFunctionOperator, ISchemaClass<C_OP_RemapDensityToVector> {
 
-  static C_OP_RemapDensityToVector IConvertibleNativeHandle<C_OP_RemapDensityToVector>.From(nint handle) => new C_OP_RemapDensityToVectorImpl(handle);
+  static C_OP_RemapDensityToVector ISchemaClass<C_OP_RemapDensityToVector>.From(nint handle) => new C_OP_RemapDensityToVectorImpl(handle);
 
   
   public ref float RadiusScale { get; }

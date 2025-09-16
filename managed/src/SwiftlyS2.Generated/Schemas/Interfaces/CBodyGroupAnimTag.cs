@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBodyGroupAnimTag : CAnimTagBase, IConvertibleNativeHandle<CBodyGroupAnimTag> {
+public partial interface CBodyGroupAnimTag : CAnimTagBase, ISchemaClass<CBodyGroupAnimTag> {
 
-  static CBodyGroupAnimTag IConvertibleNativeHandle<CBodyGroupAnimTag>.From(nint handle) => new CBodyGroupAnimTagImpl(handle);
+  static CBodyGroupAnimTag ISchemaClass<CBodyGroupAnimTag>.From(nint handle) => new CBodyGroupAnimTagImpl(handle);
 
   
   public ref int Priority { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmRootMotionEvent : CNmEvent, IConvertibleNativeHandle<CNmRootMotionEvent> {
+public partial interface CNmRootMotionEvent : CNmEvent, ISchemaClass<CNmRootMotionEvent> {
 
-  static CNmRootMotionEvent IConvertibleNativeHandle<CNmRootMotionEvent>.From(nint handle) => new CNmRootMotionEventImpl(handle);
+  static CNmRootMotionEvent ISchemaClass<CNmRootMotionEvent>.From(nint handle) => new CNmRootMotionEventImpl(handle);
 
   
   public ref float BlendTimeSeconds { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupMatchPattern : CSosGroupBranchPattern, IConvertibleNativeHandle<CSosGroupMatchPattern> {
+public partial interface CSosGroupMatchPattern : CSosGroupBranchPattern, ISchemaClass<CSosGroupMatchPattern> {
 
-  static CSosGroupMatchPattern IConvertibleNativeHandle<CSosGroupMatchPattern>.From(nint handle) => new CSosGroupMatchPatternImpl(handle);
+  static CSosGroupMatchPattern ISchemaClass<CSosGroupMatchPattern>.From(nint handle) => new CSosGroupMatchPatternImpl(handle);
 
   
   public ref CUtlString MatchSoundEventName { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleFunctionOperator : CParticleFunction, IConvertibleNativeHandle<CParticleFunctionOperator> {
+public partial interface CParticleFunctionOperator : CParticleFunction, ISchemaClass<CParticleFunctionOperator> {
 
-  static CParticleFunctionOperator IConvertibleNativeHandle<CParticleFunctionOperator>.From(nint handle) => new CParticleFunctionOperatorImpl(handle);
+  static CParticleFunctionOperator ISchemaClass<CParticleFunctionOperator>.From(nint handle) => new CParticleFunctionOperatorImpl(handle);
 
 
 

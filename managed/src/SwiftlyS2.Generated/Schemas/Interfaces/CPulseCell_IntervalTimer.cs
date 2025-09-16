@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_IntervalTimer : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_IntervalTimer> {
+public partial interface CPulseCell_IntervalTimer : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_IntervalTimer> {
 
-  static CPulseCell_IntervalTimer IConvertibleNativeHandle<CPulseCell_IntervalTimer>.From(nint handle) => new CPulseCell_IntervalTimerImpl(handle);
+  static CPulseCell_IntervalTimer ISchemaClass<CPulseCell_IntervalTimer>.From(nint handle) => new CPulseCell_IntervalTimerImpl(handle);
 
   
   public CPulse_ResumePoint Completed { get; }

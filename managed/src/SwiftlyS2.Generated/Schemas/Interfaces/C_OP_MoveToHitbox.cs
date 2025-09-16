@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_MoveToHitbox : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_MoveToHitbox> {
+public partial interface C_OP_MoveToHitbox : CParticleFunctionOperator, ISchemaClass<C_OP_MoveToHitbox> {
 
-  static C_OP_MoveToHitbox IConvertibleNativeHandle<C_OP_MoveToHitbox>.From(nint handle) => new C_OP_MoveToHitboxImpl(handle);
+  static C_OP_MoveToHitbox ISchemaClass<C_OP_MoveToHitbox>.From(nint handle) => new C_OP_MoveToHitboxImpl(handle);
 
   
   public CParticleModelInput ModelInput { get; }

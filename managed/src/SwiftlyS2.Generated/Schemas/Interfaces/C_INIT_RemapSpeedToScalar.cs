@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RemapSpeedToScalar : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RemapSpeedToScalar> {
+public partial interface C_INIT_RemapSpeedToScalar : CParticleFunctionInitializer, ISchemaClass<C_INIT_RemapSpeedToScalar> {
 
-  static C_INIT_RemapSpeedToScalar IConvertibleNativeHandle<C_INIT_RemapSpeedToScalar>.From(nint handle) => new C_INIT_RemapSpeedToScalarImpl(handle);
+  static C_INIT_RemapSpeedToScalar ISchemaClass<C_INIT_RemapSpeedToScalar>.From(nint handle) => new C_INIT_RemapSpeedToScalarImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

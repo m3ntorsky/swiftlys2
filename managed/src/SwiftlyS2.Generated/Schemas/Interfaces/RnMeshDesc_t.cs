@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnMeshDesc_t : RnShapeDesc_t, IConvertibleNativeHandle<RnMeshDesc_t> {
+public partial interface RnMeshDesc_t : RnShapeDesc_t, ISchemaClass<RnMeshDesc_t> {
 
-  static RnMeshDesc_t IConvertibleNativeHandle<RnMeshDesc_t>.From(nint handle) => new RnMeshDesc_tImpl(handle);
+  static RnMeshDesc_t ISchemaClass<RnMeshDesc_t>.From(nint handle) => new RnMeshDesc_tImpl(handle);
 
   
   public RnMesh_t Mesh { get; }

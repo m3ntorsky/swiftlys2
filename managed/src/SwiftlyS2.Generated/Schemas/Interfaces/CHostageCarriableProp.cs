@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHostageCarriableProp : CBaseAnimGraph, IConvertibleNativeHandle<CHostageCarriableProp> {
+public partial interface CHostageCarriableProp : CBaseAnimGraph, ISchemaClass<CHostageCarriableProp> {
 
-  static CHostageCarriableProp IConvertibleNativeHandle<CHostageCarriableProp>.From(nint handle) => new CHostageCarriablePropImpl(handle);
+  static CHostageCarriableProp ISchemaClass<CHostageCarriableProp>.From(nint handle) => new CHostageCarriablePropImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CModelConfigElement_RandomPick : CModelConfigElement, IConvertibleNativeHandle<CModelConfigElement_RandomPick> {
+public partial interface CModelConfigElement_RandomPick : CModelConfigElement, ISchemaClass<CModelConfigElement_RandomPick> {
 
-  static CModelConfigElement_RandomPick IConvertibleNativeHandle<CModelConfigElement_RandomPick>.From(nint handle) => new CModelConfigElement_RandomPickImpl(handle);
+  static CModelConfigElement_RandomPick ISchemaClass<CModelConfigElement_RandomPick>.From(nint handle) => new CModelConfigElement_RandomPickImpl(handle);
 
   
   public ref CUtlVector<CUtlString> Choices { get; }

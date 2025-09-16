@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ControlpointLight : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_ControlpointLight> {
+public partial interface C_OP_ControlpointLight : CParticleFunctionOperator, ISchemaClass<C_OP_ControlpointLight> {
 
-  static C_OP_ControlpointLight IConvertibleNativeHandle<C_OP_ControlpointLight>.From(nint handle) => new C_OP_ControlpointLightImpl(handle);
+  static C_OP_ControlpointLight ISchemaClass<C_OP_ControlpointLight>.From(nint handle) => new C_OP_ControlpointLightImpl(handle);
 
   
   public ref float Scale { get; }

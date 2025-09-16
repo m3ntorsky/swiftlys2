@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseMoveBehavior : CPathKeyFrame, IConvertibleNativeHandle<CBaseMoveBehavior> {
+public partial interface CBaseMoveBehavior : CPathKeyFrame, ISchemaClass<CBaseMoveBehavior> {
 
-  static CBaseMoveBehavior IConvertibleNativeHandle<CBaseMoveBehavior>.From(nint handle) => new CBaseMoveBehaviorImpl(handle);
+  static CBaseMoveBehavior ISchemaClass<CBaseMoveBehavior>.From(nint handle) => new CBaseMoveBehaviorImpl(handle);
 
   
   public ref int PositionInterpolator { get; }

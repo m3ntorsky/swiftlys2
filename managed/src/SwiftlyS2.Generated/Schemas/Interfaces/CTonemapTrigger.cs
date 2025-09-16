@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTonemapTrigger : CBaseTrigger, IConvertibleNativeHandle<CTonemapTrigger> {
+public partial interface CTonemapTrigger : CBaseTrigger, ISchemaClass<CTonemapTrigger> {
 
-  static CTonemapTrigger IConvertibleNativeHandle<CTonemapTrigger>.From(nint handle) => new CTonemapTriggerImpl(handle);
+  static CTonemapTrigger ISchemaClass<CTonemapTrigger>.From(nint handle) => new CTonemapTriggerImpl(handle);
 
   
   public ref CUtlSymbolLarge TonemapControllerName { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmTransitionEventConditionNode__CDefinition : CNmBoolValueNode__CDefinition, IConvertibleNativeHandle<CNmTransitionEventConditionNode__CDefinition> {
+public partial interface CNmTransitionEventConditionNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmTransitionEventConditionNode__CDefinition> {
 
-  static CNmTransitionEventConditionNode__CDefinition IConvertibleNativeHandle<CNmTransitionEventConditionNode__CDefinition>.From(nint handle) => new CNmTransitionEventConditionNode__CDefinitionImpl(handle);
+  static CNmTransitionEventConditionNode__CDefinition ISchemaClass<CNmTransitionEventConditionNode__CDefinition>.From(nint handle) => new CNmTransitionEventConditionNode__CDefinitionImpl(handle);
 
   
   public ref CGlobalSymbol RequireRuleID { get; }

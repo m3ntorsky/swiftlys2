@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysHingeAlias_phys_hinge_local : CPhysHinge, IConvertibleNativeHandle<CPhysHingeAlias_phys_hinge_local> {
+public partial interface CPhysHingeAlias_phys_hinge_local : CPhysHinge, ISchemaClass<CPhysHingeAlias_phys_hinge_local> {
 
-  static CPhysHingeAlias_phys_hinge_local IConvertibleNativeHandle<CPhysHingeAlias_phys_hinge_local>.From(nint handle) => new CPhysHingeAlias_phys_hinge_localImpl(handle);
+  static CPhysHingeAlias_phys_hinge_local ISchemaClass<CPhysHingeAlias_phys_hinge_local>.From(nint handle) => new CPhysHingeAlias_phys_hinge_localImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CScriptTriggerHurt : CTriggerHurt, IConvertibleNativeHandle<CScriptTriggerHurt> {
+public partial interface CScriptTriggerHurt : CTriggerHurt, ISchemaClass<CScriptTriggerHurt> {
 
-  static CScriptTriggerHurt IConvertibleNativeHandle<CScriptTriggerHurt>.From(nint handle) => new CScriptTriggerHurtImpl(handle);
+  static CScriptTriggerHurt ISchemaClass<CScriptTriggerHurt>.From(nint handle) => new CScriptTriggerHurtImpl(handle);
 
   
   public ref Vector Extent { get; }

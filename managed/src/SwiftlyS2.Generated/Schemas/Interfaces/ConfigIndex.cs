@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ConfigIndex : ISchemaClass, IConvertibleNativeHandle<ConfigIndex> {
+public partial interface ConfigIndex : ISchemaClass<ConfigIndex> {
 
-  static ConfigIndex IConvertibleNativeHandle<ConfigIndex>.From(nint handle) => new ConfigIndexImpl(handle);
+  static ConfigIndex ISchemaClass<ConfigIndex>.From(nint handle) => new ConfigIndexImpl(handle);
 
   
   public ref ushort Group { get; }

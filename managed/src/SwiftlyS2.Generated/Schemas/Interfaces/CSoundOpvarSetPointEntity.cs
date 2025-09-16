@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundOpvarSetPointEntity : CSoundOpvarSetPointBase, IConvertibleNativeHandle<CSoundOpvarSetPointEntity> {
+public partial interface CSoundOpvarSetPointEntity : CSoundOpvarSetPointBase, ISchemaClass<CSoundOpvarSetPointEntity> {
 
-  static CSoundOpvarSetPointEntity IConvertibleNativeHandle<CSoundOpvarSetPointEntity>.From(nint handle) => new CSoundOpvarSetPointEntityImpl(handle);
+  static CSoundOpvarSetPointEntity ISchemaClass<CSoundOpvarSetPointEntity>.From(nint handle) => new CSoundOpvarSetPointEntityImpl(handle);
 
   
   public CEntityIOOutput OnEnter { get; }

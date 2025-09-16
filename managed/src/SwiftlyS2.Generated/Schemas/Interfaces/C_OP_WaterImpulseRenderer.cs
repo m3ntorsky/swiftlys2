@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_WaterImpulseRenderer : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_WaterImpulseRenderer> {
+public partial interface C_OP_WaterImpulseRenderer : CParticleFunctionRenderer, ISchemaClass<C_OP_WaterImpulseRenderer> {
 
-  static C_OP_WaterImpulseRenderer IConvertibleNativeHandle<C_OP_WaterImpulseRenderer>.From(nint handle) => new C_OP_WaterImpulseRendererImpl(handle);
+  static C_OP_WaterImpulseRenderer ISchemaClass<C_OP_WaterImpulseRenderer>.From(nint handle) => new C_OP_WaterImpulseRendererImpl(handle);
 
   
   public CPerParticleVecInput Pos { get; }

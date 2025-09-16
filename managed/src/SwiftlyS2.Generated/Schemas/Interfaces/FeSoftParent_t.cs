@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeSoftParent_t : ISchemaClass, IConvertibleNativeHandle<FeSoftParent_t> {
+public partial interface FeSoftParent_t : ISchemaClass<FeSoftParent_t> {
 
-  static FeSoftParent_t IConvertibleNativeHandle<FeSoftParent_t>.From(nint handle) => new FeSoftParent_tImpl(handle);
+  static FeSoftParent_t ISchemaClass<FeSoftParent_t>.From(nint handle) => new FeSoftParent_tImpl(handle);
 
   
   public ref int Parent { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FilterHealth : CBaseFilter, IConvertibleNativeHandle<FilterHealth> {
+public partial interface FilterHealth : CBaseFilter, ISchemaClass<FilterHealth> {
 
-  static FilterHealth IConvertibleNativeHandle<FilterHealth>.From(nint handle) => new FilterHealthImpl(handle);
+  static FilterHealth ISchemaClass<FilterHealth>.From(nint handle) => new FilterHealthImpl(handle);
 
   
   public ref bool AdrenalineActive { get; }

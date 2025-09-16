@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNetworkTransmitComponent : ISchemaClass, IConvertibleNativeHandle<CNetworkTransmitComponent> {
+public partial interface CNetworkTransmitComponent : ISchemaClass<CNetworkTransmitComponent> {
 
-  static CNetworkTransmitComponent IConvertibleNativeHandle<CNetworkTransmitComponent>.From(nint handle) => new CNetworkTransmitComponentImpl(handle);
+  static CNetworkTransmitComponent ISchemaClass<CNetworkTransmitComponent>.From(nint handle) => new CNetworkTransmitComponentImpl(handle);
 
   
   public ref byte TransmitStateOwnedCounter { get; }

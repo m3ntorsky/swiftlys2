@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseObservableBoolExpression_t : ISchemaClass, IConvertibleNativeHandle<PulseObservableBoolExpression_t> {
+public partial interface PulseObservableBoolExpression_t : ISchemaClass<PulseObservableBoolExpression_t> {
 
-  static PulseObservableBoolExpression_t IConvertibleNativeHandle<PulseObservableBoolExpression_t>.From(nint handle) => new PulseObservableBoolExpression_tImpl(handle);
+  static PulseObservableBoolExpression_t ISchemaClass<PulseObservableBoolExpression_t>.From(nint handle) => new PulseObservableBoolExpression_tImpl(handle);
 
   
   public CPulse_OutflowConnection EvaluateConnection { get; }

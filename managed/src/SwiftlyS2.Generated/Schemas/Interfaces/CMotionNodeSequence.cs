@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionNodeSequence : CMotionNode, IConvertibleNativeHandle<CMotionNodeSequence> {
+public partial interface CMotionNodeSequence : CMotionNode, ISchemaClass<CMotionNodeSequence> {
 
-  static CMotionNodeSequence IConvertibleNativeHandle<CMotionNodeSequence>.From(nint handle) => new CMotionNodeSequenceImpl(handle);
+  static CMotionNodeSequence ISchemaClass<CMotionNodeSequence>.From(nint handle) => new CMotionNodeSequenceImpl(handle);
 
   
   // CUtlVector< TagSpan_t >

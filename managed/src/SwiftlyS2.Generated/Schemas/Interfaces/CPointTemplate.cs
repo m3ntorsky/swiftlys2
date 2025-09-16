@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointTemplate : CLogicalEntity, IConvertibleNativeHandle<CPointTemplate> {
+public partial interface CPointTemplate : CLogicalEntity, ISchemaClass<CPointTemplate> {
 
-  static CPointTemplate IConvertibleNativeHandle<CPointTemplate>.From(nint handle) => new CPointTemplateImpl(handle);
+  static CPointTemplate ISchemaClass<CPointTemplate>.From(nint handle) => new CPointTemplateImpl(handle);
 
   
   public ref CUtlSymbolLarge WorldName { get; }

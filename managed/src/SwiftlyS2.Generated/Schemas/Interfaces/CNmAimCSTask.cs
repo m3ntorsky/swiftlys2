@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmAimCSTask : CNmPoseTask, IConvertibleNativeHandle<CNmAimCSTask> {
+public partial interface CNmAimCSTask : CNmPoseTask, ISchemaClass<CNmAimCSTask> {
 
-  static CNmAimCSTask IConvertibleNativeHandle<CNmAimCSTask>.From(nint handle) => new CNmAimCSTaskImpl(handle);
+  static CNmAimCSTask ISchemaClass<CNmAimCSTask>.From(nint handle) => new CNmAimCSTaskImpl(handle);
 
 
 

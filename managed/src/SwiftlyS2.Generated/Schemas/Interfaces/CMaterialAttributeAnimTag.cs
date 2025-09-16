@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMaterialAttributeAnimTag : CAnimTagBase, IConvertibleNativeHandle<CMaterialAttributeAnimTag> {
+public partial interface CMaterialAttributeAnimTag : CAnimTagBase, ISchemaClass<CMaterialAttributeAnimTag> {
 
-  static CMaterialAttributeAnimTag IConvertibleNativeHandle<CMaterialAttributeAnimTag>.From(nint handle) => new CMaterialAttributeAnimTagImpl(handle);
+  static CMaterialAttributeAnimTag ISchemaClass<CMaterialAttributeAnimTag>.From(nint handle) => new CMaterialAttributeAnimTagImpl(handle);
 
   
   public ref CUtlString AttributeName { get; }

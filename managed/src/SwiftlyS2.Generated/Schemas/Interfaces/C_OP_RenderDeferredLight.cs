@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderDeferredLight : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderDeferredLight> {
+public partial interface C_OP_RenderDeferredLight : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderDeferredLight> {
 
-  static C_OP_RenderDeferredLight IConvertibleNativeHandle<C_OP_RenderDeferredLight>.From(nint handle) => new C_OP_RenderDeferredLightImpl(handle);
+  static C_OP_RenderDeferredLight ISchemaClass<C_OP_RenderDeferredLight>.From(nint handle) => new C_OP_RenderDeferredLightImpl(handle);
 
   
   public ref bool UseAlphaTestWindow { get; }

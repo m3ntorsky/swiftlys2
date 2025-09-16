@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CWayPointHelperUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CWayPointHelperUpdateNode> {
+public partial interface CWayPointHelperUpdateNode : CUnaryUpdateNode, ISchemaClass<CWayPointHelperUpdateNode> {
 
-  static CWayPointHelperUpdateNode IConvertibleNativeHandle<CWayPointHelperUpdateNode>.From(nint handle) => new CWayPointHelperUpdateNodeImpl(handle);
+  static CWayPointHelperUpdateNode ISchemaClass<CWayPointHelperUpdateNode>.From(nint handle) => new CWayPointHelperUpdateNodeImpl(handle);
 
   
   public ref float StartCycle { get; }

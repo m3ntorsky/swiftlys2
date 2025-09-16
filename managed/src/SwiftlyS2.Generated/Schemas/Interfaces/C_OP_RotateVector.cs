@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RotateVector : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RotateVector> {
+public partial interface C_OP_RotateVector : CParticleFunctionOperator, ISchemaClass<C_OP_RotateVector> {
 
-  static C_OP_RotateVector IConvertibleNativeHandle<C_OP_RotateVector>.From(nint handle) => new C_OP_RotateVectorImpl(handle);
+  static C_OP_RotateVector ISchemaClass<C_OP_RotateVector>.From(nint handle) => new C_OP_RotateVectorImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

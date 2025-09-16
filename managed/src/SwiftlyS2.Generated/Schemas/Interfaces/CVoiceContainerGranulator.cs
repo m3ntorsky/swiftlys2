@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerGranulator : CVoiceContainerBase, IConvertibleNativeHandle<CVoiceContainerGranulator> {
+public partial interface CVoiceContainerGranulator : CVoiceContainerBase, ISchemaClass<CVoiceContainerGranulator> {
 
-  static CVoiceContainerGranulator IConvertibleNativeHandle<CVoiceContainerGranulator>.From(nint handle) => new CVoiceContainerGranulatorImpl(handle);
+  static CVoiceContainerGranulator ISchemaClass<CVoiceContainerGranulator>.From(nint handle) => new CVoiceContainerGranulatorImpl(handle);
 
   
   public ref float GrainLength { get; }

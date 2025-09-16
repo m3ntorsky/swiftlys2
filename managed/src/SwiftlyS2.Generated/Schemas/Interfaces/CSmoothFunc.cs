@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSmoothFunc : ISchemaClass, IConvertibleNativeHandle<CSmoothFunc> {
+public partial interface CSmoothFunc : ISchemaClass<CSmoothFunc> {
 
-  static CSmoothFunc IConvertibleNativeHandle<CSmoothFunc>.From(nint handle) => new CSmoothFuncImpl(handle);
+  static CSmoothFunc ISchemaClass<CSmoothFunc>.From(nint handle) => new CSmoothFuncImpl(handle);
 
   
   public ref float SmoothAmplitude { get; }

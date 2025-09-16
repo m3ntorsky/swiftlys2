@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeSimdSpringIntegrator_t : ISchemaClass, IConvertibleNativeHandle<FeSimdSpringIntegrator_t> {
+public partial interface FeSimdSpringIntegrator_t : ISchemaClass<FeSimdSpringIntegrator_t> {
 
-  static FeSimdSpringIntegrator_t IConvertibleNativeHandle<FeSimdSpringIntegrator_t>.From(nint handle) => new FeSimdSpringIntegrator_tImpl(handle);
+  static FeSimdSpringIntegrator_t ISchemaClass<FeSimdSpringIntegrator_t>.From(nint handle) => new FeSimdSpringIntegrator_tImpl(handle);
 
   
   // uint16[4]

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_PercentageBetweenTransformLerpCPs : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_PercentageBetweenTransformLerpCPs> {
+public partial interface C_OP_PercentageBetweenTransformLerpCPs : CParticleFunctionOperator, ISchemaClass<C_OP_PercentageBetweenTransformLerpCPs> {
 
-  static C_OP_PercentageBetweenTransformLerpCPs IConvertibleNativeHandle<C_OP_PercentageBetweenTransformLerpCPs>.From(nint handle) => new C_OP_PercentageBetweenTransformLerpCPsImpl(handle);
+  static C_OP_PercentageBetweenTransformLerpCPs ISchemaClass<C_OP_PercentageBetweenTransformLerpCPs>.From(nint handle) => new C_OP_PercentageBetweenTransformLerpCPsImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

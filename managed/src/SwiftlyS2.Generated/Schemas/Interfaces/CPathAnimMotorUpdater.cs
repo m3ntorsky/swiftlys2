@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathAnimMotorUpdater : CPathAnimMotorUpdaterBase, IConvertibleNativeHandle<CPathAnimMotorUpdater> {
+public partial interface CPathAnimMotorUpdater : CPathAnimMotorUpdaterBase, ISchemaClass<CPathAnimMotorUpdater> {
 
-  static CPathAnimMotorUpdater IConvertibleNativeHandle<CPathAnimMotorUpdater>.From(nint handle) => new CPathAnimMotorUpdaterImpl(handle);
+  static CPathAnimMotorUpdater ISchemaClass<CPathAnimMotorUpdater>.From(nint handle) => new CPathAnimMotorUpdaterImpl(handle);
 
 
 

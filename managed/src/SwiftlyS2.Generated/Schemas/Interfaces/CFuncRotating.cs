@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncRotating : CBaseModelEntity, IConvertibleNativeHandle<CFuncRotating> {
+public partial interface CFuncRotating : CBaseModelEntity, ISchemaClass<CFuncRotating> {
 
-  static CFuncRotating IConvertibleNativeHandle<CFuncRotating>.From(nint handle) => new CFuncRotatingImpl(handle);
+  static CFuncRotating ISchemaClass<CFuncRotating>.From(nint handle) => new CFuncRotatingImpl(handle);
 
   
   public CEntityIOOutput OnStopped { get; }

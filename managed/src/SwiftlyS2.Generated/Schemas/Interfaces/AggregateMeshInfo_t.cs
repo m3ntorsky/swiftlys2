@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AggregateMeshInfo_t : ISchemaClass, IConvertibleNativeHandle<AggregateMeshInfo_t> {
+public partial interface AggregateMeshInfo_t : ISchemaClass<AggregateMeshInfo_t> {
 
-  static AggregateMeshInfo_t IConvertibleNativeHandle<AggregateMeshInfo_t>.From(nint handle) => new AggregateMeshInfo_tImpl(handle);
+  static AggregateMeshInfo_t ISchemaClass<AggregateMeshInfo_t>.From(nint handle) => new AggregateMeshInfo_tImpl(handle);
 
   
   public ref uint VisClusterMemberOffset { get; }

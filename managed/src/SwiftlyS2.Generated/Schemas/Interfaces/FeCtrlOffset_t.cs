@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeCtrlOffset_t : ISchemaClass, IConvertibleNativeHandle<FeCtrlOffset_t> {
+public partial interface FeCtrlOffset_t : ISchemaClass<FeCtrlOffset_t> {
 
-  static FeCtrlOffset_t IConvertibleNativeHandle<FeCtrlOffset_t>.From(nint handle) => new FeCtrlOffset_tImpl(handle);
+  static FeCtrlOffset_t ISchemaClass<FeCtrlOffset_t>.From(nint handle) => new FeCtrlOffset_tImpl(handle);
 
   
   public ref Vector Offset { get; }

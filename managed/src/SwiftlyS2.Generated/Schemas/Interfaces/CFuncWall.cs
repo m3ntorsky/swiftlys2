@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncWall : CBaseModelEntity, IConvertibleNativeHandle<CFuncWall> {
+public partial interface CFuncWall : CBaseModelEntity, ISchemaClass<CFuncWall> {
 
-  static CFuncWall IConvertibleNativeHandle<CFuncWall>.From(nint handle) => new CFuncWallImpl(handle);
+  static CFuncWall ISchemaClass<CFuncWall>.From(nint handle) => new CFuncWallImpl(handle);
 
   
   public ref int State { get; }

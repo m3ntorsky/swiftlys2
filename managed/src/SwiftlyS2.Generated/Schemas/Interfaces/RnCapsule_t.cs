@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnCapsule_t : ISchemaClass, IConvertibleNativeHandle<RnCapsule_t> {
+public partial interface RnCapsule_t : ISchemaClass<RnCapsule_t> {
 
-  static RnCapsule_t IConvertibleNativeHandle<RnCapsule_t>.From(nint handle) => new RnCapsule_tImpl(handle);
+  static RnCapsule_t ISchemaClass<RnCapsule_t>.From(nint handle) => new RnCapsule_tImpl(handle);
 
   
   public ISchemaFixedArray<Vector> Center { get; }

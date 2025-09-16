@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootAdjustmentUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CFootAdjustmentUpdateNode> {
+public partial interface CFootAdjustmentUpdateNode : CUnaryUpdateNode, ISchemaClass<CFootAdjustmentUpdateNode> {
 
-  static CFootAdjustmentUpdateNode IConvertibleNativeHandle<CFootAdjustmentUpdateNode>.From(nint handle) => new CFootAdjustmentUpdateNodeImpl(handle);
+  static CFootAdjustmentUpdateNode ISchemaClass<CFootAdjustmentUpdateNode>.From(nint handle) => new CFootAdjustmentUpdateNodeImpl(handle);
 
   
   // CUtlVector< HSequence >

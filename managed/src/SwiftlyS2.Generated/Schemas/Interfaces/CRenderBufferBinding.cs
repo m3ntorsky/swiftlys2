@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRenderBufferBinding : ISchemaClass, IConvertibleNativeHandle<CRenderBufferBinding> {
+public partial interface CRenderBufferBinding : ISchemaClass<CRenderBufferBinding> {
 
-  static CRenderBufferBinding IConvertibleNativeHandle<CRenderBufferBinding>.From(nint handle) => new CRenderBufferBindingImpl(handle);
+  static CRenderBufferBinding ISchemaClass<CRenderBufferBinding>.From(nint handle) => new CRenderBufferBindingImpl(handle);
 
   
   public ref ulong Buffer { get; }

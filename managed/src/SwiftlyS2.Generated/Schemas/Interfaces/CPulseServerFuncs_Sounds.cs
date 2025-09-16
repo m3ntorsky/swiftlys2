@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseServerFuncs_Sounds : ISchemaClass, IConvertibleNativeHandle<CPulseServerFuncs_Sounds> {
+public partial interface CPulseServerFuncs_Sounds : ISchemaClass<CPulseServerFuncs_Sounds> {
 
-  static CPulseServerFuncs_Sounds IConvertibleNativeHandle<CPulseServerFuncs_Sounds>.From(nint handle) => new CPulseServerFuncs_SoundsImpl(handle);
+  static CPulseServerFuncs_Sounds ISchemaClass<CPulseServerFuncs_Sounds>.From(nint handle) => new CPulseServerFuncs_SoundsImpl(handle);
 
 
 

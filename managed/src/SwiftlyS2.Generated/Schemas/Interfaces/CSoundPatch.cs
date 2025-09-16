@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundPatch : ISchemaClass, IConvertibleNativeHandle<CSoundPatch> {
+public partial interface CSoundPatch : ISchemaClass<CSoundPatch> {
 
-  static CSoundPatch IConvertibleNativeHandle<CSoundPatch>.From(nint handle) => new CSoundPatchImpl(handle);
+  static CSoundPatch ISchemaClass<CSoundPatch>.From(nint handle) => new CSoundPatchImpl(handle);
 
   
   public CSoundEnvelope Pitch { get; }

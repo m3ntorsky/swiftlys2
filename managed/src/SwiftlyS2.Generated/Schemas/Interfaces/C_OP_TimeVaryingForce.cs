@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_TimeVaryingForce : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_TimeVaryingForce> {
+public partial interface C_OP_TimeVaryingForce : CParticleFunctionForce, ISchemaClass<C_OP_TimeVaryingForce> {
 
-  static C_OP_TimeVaryingForce IConvertibleNativeHandle<C_OP_TimeVaryingForce>.From(nint handle) => new C_OP_TimeVaryingForceImpl(handle);
+  static C_OP_TimeVaryingForce ISchemaClass<C_OP_TimeVaryingForce>.From(nint handle) => new C_OP_TimeVaryingForceImpl(handle);
 
   
   public ref float StartLerpTime { get; }

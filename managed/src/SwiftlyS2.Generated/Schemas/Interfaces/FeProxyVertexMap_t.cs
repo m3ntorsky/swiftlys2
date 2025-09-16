@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeProxyVertexMap_t : ISchemaClass, IConvertibleNativeHandle<FeProxyVertexMap_t> {
+public partial interface FeProxyVertexMap_t : ISchemaClass<FeProxyVertexMap_t> {
 
-  static FeProxyVertexMap_t IConvertibleNativeHandle<FeProxyVertexMap_t>.From(nint handle) => new FeProxyVertexMap_tImpl(handle);
+  static FeProxyVertexMap_t ISchemaClass<FeProxyVertexMap_t>.From(nint handle) => new FeProxyVertexMap_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

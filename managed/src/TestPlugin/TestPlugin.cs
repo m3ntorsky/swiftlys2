@@ -50,12 +50,12 @@ public class TestPlugin : BasePlugin {
     var logger = core.LoggerFactory.CreateLogger<TestPlugin>();
 
     logger.LogInformation("TestPlugin jump loaded");
-    core.GameEvent.HookPre<EventPlayerJump>(@event =>
-    {
-      logger.LogInformation("Dmg health: " + @event.UserId.PlayerName.Value);
+
+
+    core.GameEvent.HookPre<EventPlayerJump>(e => {
+      Console.WriteLine("TestPlugin jump pre");
       return HookResult.Continue;
     });
-
 
   }
 

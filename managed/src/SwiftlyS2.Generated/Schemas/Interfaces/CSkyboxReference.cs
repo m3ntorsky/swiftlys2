@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSkyboxReference : CBaseEntity, IConvertibleNativeHandle<CSkyboxReference> {
+public partial interface CSkyboxReference : CBaseEntity, ISchemaClass<CSkyboxReference> {
 
-  static CSkyboxReference IConvertibleNativeHandle<CSkyboxReference>.From(nint handle) => new CSkyboxReferenceImpl(handle);
+  static CSkyboxReference ISchemaClass<CSkyboxReference>.From(nint handle) => new CSkyboxReferenceImpl(handle);
 
   
   public ref uint WorldGroupId { get; }

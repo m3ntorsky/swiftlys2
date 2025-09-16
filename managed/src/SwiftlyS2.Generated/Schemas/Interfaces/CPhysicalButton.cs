@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysicalButton : CBaseButton, IConvertibleNativeHandle<CPhysicalButton> {
+public partial interface CPhysicalButton : CBaseButton, ISchemaClass<CPhysicalButton> {
 
-  static CPhysicalButton IConvertibleNativeHandle<CPhysicalButton>.From(nint handle) => new CPhysicalButtonImpl(handle);
+  static CPhysicalButton ISchemaClass<CPhysicalButton>.From(nint handle) => new CPhysicalButtonImpl(handle);
 
 
 

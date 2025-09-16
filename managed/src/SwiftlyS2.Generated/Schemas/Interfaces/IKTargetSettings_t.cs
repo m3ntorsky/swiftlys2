@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IKTargetSettings_t : ISchemaClass, IConvertibleNativeHandle<IKTargetSettings_t> {
+public partial interface IKTargetSettings_t : ISchemaClass<IKTargetSettings_t> {
 
-  static IKTargetSettings_t IConvertibleNativeHandle<IKTargetSettings_t>.From(nint handle) => new IKTargetSettings_tImpl(handle);
+  static IKTargetSettings_t ISchemaClass<IKTargetSettings_t>.From(nint handle) => new IKTargetSettings_tImpl(handle);
 
   
   public ref IKTargetSource TargetSource { get; }

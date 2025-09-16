@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MaterialGroup_t : ISchemaClass, IConvertibleNativeHandle<MaterialGroup_t> {
+public partial interface MaterialGroup_t : ISchemaClass<MaterialGroup_t> {
 
-  static MaterialGroup_t IConvertibleNativeHandle<MaterialGroup_t>.From(nint handle) => new MaterialGroup_tImpl(handle);
+  static MaterialGroup_t ISchemaClass<MaterialGroup_t>.From(nint handle) => new MaterialGroup_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

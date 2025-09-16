@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParamSpanUpdater : ISchemaClass, IConvertibleNativeHandle<CParamSpanUpdater> {
+public partial interface CParamSpanUpdater : ISchemaClass<CParamSpanUpdater> {
 
-  static CParamSpanUpdater IConvertibleNativeHandle<CParamSpanUpdater>.From(nint handle) => new CParamSpanUpdaterImpl(handle);
+  static CParamSpanUpdater ISchemaClass<CParamSpanUpdater>.From(nint handle) => new CParamSpanUpdaterImpl(handle);
 
   
   // CUtlVector< ParamSpan_t >

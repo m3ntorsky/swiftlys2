@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBasePlayerVData : CEntitySubclassVDataBase, IConvertibleNativeHandle<CBasePlayerVData> {
+public partial interface CBasePlayerVData : CEntitySubclassVDataBase, ISchemaClass<CBasePlayerVData> {
 
-  static CBasePlayerVData IConvertibleNativeHandle<CBasePlayerVData>.From(nint handle) => new CBasePlayerVDataImpl(handle);
+  static CBasePlayerVData ISchemaClass<CBasePlayerVData>.From(nint handle) => new CBasePlayerVDataImpl(handle);
 
   
   // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >

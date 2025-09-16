@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayerResource : CBaseEntity, IConvertibleNativeHandle<CCSPlayerResource> {
+public partial interface CCSPlayerResource : CBaseEntity, ISchemaClass<CCSPlayerResource> {
 
-  static CCSPlayerResource IConvertibleNativeHandle<CCSPlayerResource>.From(nint handle) => new CCSPlayerResourceImpl(handle);
+  static CCSPlayerResource ISchemaClass<CCSPlayerResource>.From(nint handle) => new CCSPlayerResourceImpl(handle);
 
   
   public ISchemaFixedArray<bool> HostageAlive { get; }

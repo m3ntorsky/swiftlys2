@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoOverlayData_t : ISchemaClass, IConvertibleNativeHandle<InfoOverlayData_t> {
+public partial interface InfoOverlayData_t : ISchemaClass<InfoOverlayData_t> {
 
-  static InfoOverlayData_t IConvertibleNativeHandle<InfoOverlayData_t>.From(nint handle) => new InfoOverlayData_tImpl(handle);
+  static InfoOverlayData_t ISchemaClass<InfoOverlayData_t>.From(nint handle) => new InfoOverlayData_tImpl(handle);
 
   
   public ref matrix3x4_t Transform { get; }

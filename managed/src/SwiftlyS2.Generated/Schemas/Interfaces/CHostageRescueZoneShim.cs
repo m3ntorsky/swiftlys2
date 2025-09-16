@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHostageRescueZoneShim : CBaseTrigger, IConvertibleNativeHandle<CHostageRescueZoneShim> {
+public partial interface CHostageRescueZoneShim : CBaseTrigger, ISchemaClass<CHostageRescueZoneShim> {
 
-  static CHostageRescueZoneShim IConvertibleNativeHandle<CHostageRescueZoneShim>.From(nint handle) => new CHostageRescueZoneShimImpl(handle);
+  static CHostageRescueZoneShim ISchemaClass<CHostageRescueZoneShim>.From(nint handle) => new CHostageRescueZoneShimImpl(handle);
 
 
 

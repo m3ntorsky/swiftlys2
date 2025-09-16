@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventServerPollNetworking_t : EventSimulate_t, IConvertibleNativeHandle<EventServerPollNetworking_t> {
+public partial interface EventServerPollNetworking_t : EventSimulate_t, ISchemaClass<EventServerPollNetworking_t> {
 
-  static EventServerPollNetworking_t IConvertibleNativeHandle<EventServerPollNetworking_t>.From(nint handle) => new EventServerPollNetworking_tImpl(handle);
+  static EventServerPollNetworking_t ISchemaClass<EventServerPollNetworking_t>.From(nint handle) => new EventServerPollNetworking_tImpl(handle);
 
 
 

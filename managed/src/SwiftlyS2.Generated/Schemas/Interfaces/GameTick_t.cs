@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface GameTick_t : ISchemaClass, IConvertibleNativeHandle<GameTick_t> {
+public partial interface GameTick_t : ISchemaClass<GameTick_t> {
 
-  static GameTick_t IConvertibleNativeHandle<GameTick_t>.From(nint handle) => new GameTick_tImpl(handle);
+  static GameTick_t ISchemaClass<GameTick_t>.From(nint handle) => new GameTick_tImpl(handle);
 
   
   public ref int Value { get; }

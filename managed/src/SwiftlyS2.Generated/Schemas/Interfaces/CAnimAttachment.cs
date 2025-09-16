@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimAttachment : ISchemaClass, IConvertibleNativeHandle<CAnimAttachment> {
+public partial interface CAnimAttachment : ISchemaClass<CAnimAttachment> {
 
-  static CAnimAttachment IConvertibleNativeHandle<CAnimAttachment>.From(nint handle) => new CAnimAttachmentImpl(handle);
+  static CAnimAttachment ISchemaClass<CAnimAttachment>.From(nint handle) => new CAnimAttachmentImpl(handle);
 
   
   public ISchemaFixedArray<Quaternion> InfluenceRotations { get; }

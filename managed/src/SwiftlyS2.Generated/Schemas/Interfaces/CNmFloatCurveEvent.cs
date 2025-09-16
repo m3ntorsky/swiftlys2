@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFloatCurveEvent : CNmEvent, IConvertibleNativeHandle<CNmFloatCurveEvent> {
+public partial interface CNmFloatCurveEvent : CNmEvent, ISchemaClass<CNmFloatCurveEvent> {
 
-  static CNmFloatCurveEvent IConvertibleNativeHandle<CNmFloatCurveEvent>.From(nint handle) => new CNmFloatCurveEventImpl(handle);
+  static CNmFloatCurveEvent ISchemaClass<CNmFloatCurveEvent>.From(nint handle) => new CNmFloatCurveEventImpl(handle);
 
   
   public ref CGlobalSymbol ID { get; }

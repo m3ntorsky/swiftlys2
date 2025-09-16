@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFeIndexedJiggleBone : ISchemaClass, IConvertibleNativeHandle<CFeIndexedJiggleBone> {
+public partial interface CFeIndexedJiggleBone : ISchemaClass<CFeIndexedJiggleBone> {
 
-  static CFeIndexedJiggleBone IConvertibleNativeHandle<CFeIndexedJiggleBone>.From(nint handle) => new CFeIndexedJiggleBoneImpl(handle);
+  static CFeIndexedJiggleBone ISchemaClass<CFeIndexedJiggleBone>.From(nint handle) => new CFeIndexedJiggleBoneImpl(handle);
 
   
   public ref uint Node { get; }

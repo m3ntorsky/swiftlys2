@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateFromCPs : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateFromCPs> {
+public partial interface C_INIT_CreateFromCPs : CParticleFunctionInitializer, ISchemaClass<C_INIT_CreateFromCPs> {
 
-  static C_INIT_CreateFromCPs IConvertibleNativeHandle<C_INIT_CreateFromCPs>.From(nint handle) => new C_INIT_CreateFromCPsImpl(handle);
+  static C_INIT_CreateFromCPs ISchemaClass<C_INIT_CreateFromCPs>.From(nint handle) => new C_INIT_CreateFromCPsImpl(handle);
 
   
   public ref int Increment { get; }

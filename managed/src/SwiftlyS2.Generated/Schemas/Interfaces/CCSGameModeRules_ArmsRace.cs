@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSGameModeRules_ArmsRace : CCSGameModeRules, IConvertibleNativeHandle<CCSGameModeRules_ArmsRace> {
+public partial interface CCSGameModeRules_ArmsRace : CCSGameModeRules, ISchemaClass<CCSGameModeRules_ArmsRace> {
 
-  static CCSGameModeRules_ArmsRace IConvertibleNativeHandle<CCSGameModeRules_ArmsRace>.From(nint handle) => new CCSGameModeRules_ArmsRaceImpl(handle);
+  static CCSGameModeRules_ArmsRace ISchemaClass<CCSGameModeRules_ArmsRace>.From(nint handle) => new CCSGameModeRules_ArmsRaceImpl(handle);
 
   
   public ref CUtlVector<CUtlString> WeaponSequence { get; }

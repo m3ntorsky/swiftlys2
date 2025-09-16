@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBuoyancyHelper : ISchemaClass, IConvertibleNativeHandle<CBuoyancyHelper> {
+public partial interface CBuoyancyHelper : ISchemaClass<CBuoyancyHelper> {
 
-  static CBuoyancyHelper IConvertibleNativeHandle<CBuoyancyHelper>.From(nint handle) => new CBuoyancyHelperImpl(handle);
+  static CBuoyancyHelper ISchemaClass<CBuoyancyHelper>.From(nint handle) => new CBuoyancyHelperImpl(handle);
 
   
   public ref CUtlStringToken FluidType { get; }

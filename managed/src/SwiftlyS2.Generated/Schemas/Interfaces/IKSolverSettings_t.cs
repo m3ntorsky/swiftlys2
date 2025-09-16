@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IKSolverSettings_t : ISchemaClass, IConvertibleNativeHandle<IKSolverSettings_t> {
+public partial interface IKSolverSettings_t : ISchemaClass<IKSolverSettings_t> {
 
-  static IKSolverSettings_t IConvertibleNativeHandle<IKSolverSettings_t>.From(nint handle) => new IKSolverSettings_tImpl(handle);
+  static IKSolverSettings_t ISchemaClass<IKSolverSettings_t>.From(nint handle) => new IKSolverSettings_tImpl(handle);
 
   
   public ref IKSolverType SolverType { get; }

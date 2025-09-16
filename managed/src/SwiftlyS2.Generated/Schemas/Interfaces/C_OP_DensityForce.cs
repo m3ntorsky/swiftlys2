@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_DensityForce : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_DensityForce> {
+public partial interface C_OP_DensityForce : CParticleFunctionForce, ISchemaClass<C_OP_DensityForce> {
 
-  static C_OP_DensityForce IConvertibleNativeHandle<C_OP_DensityForce>.From(nint handle) => new C_OP_DensityForceImpl(handle);
+  static C_OP_DensityForce ISchemaClass<C_OP_DensityForce>.From(nint handle) => new C_OP_DensityForceImpl(handle);
 
   
   public ref float RadiusScale { get; }

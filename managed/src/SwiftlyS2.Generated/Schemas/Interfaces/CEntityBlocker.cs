@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEntityBlocker : CBaseModelEntity, IConvertibleNativeHandle<CEntityBlocker> {
+public partial interface CEntityBlocker : CBaseModelEntity, ISchemaClass<CEntityBlocker> {
 
-  static CEntityBlocker IConvertibleNativeHandle<CEntityBlocker>.From(nint handle) => new CEntityBlockerImpl(handle);
+  static CEntityBlocker ISchemaClass<CEntityBlocker>.From(nint handle) => new CEntityBlockerImpl(handle);
 
 
 

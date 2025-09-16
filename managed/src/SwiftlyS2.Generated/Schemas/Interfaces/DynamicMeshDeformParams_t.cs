@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface DynamicMeshDeformParams_t : ISchemaClass, IConvertibleNativeHandle<DynamicMeshDeformParams_t> {
+public partial interface DynamicMeshDeformParams_t : ISchemaClass<DynamicMeshDeformParams_t> {
 
-  static DynamicMeshDeformParams_t IConvertibleNativeHandle<DynamicMeshDeformParams_t>.From(nint handle) => new DynamicMeshDeformParams_tImpl(handle);
+  static DynamicMeshDeformParams_t ISchemaClass<DynamicMeshDeformParams_t>.From(nint handle) => new DynamicMeshDeformParams_tImpl(handle);
 
   
   public ref float TensionCompressScale { get; }

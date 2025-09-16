@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ParticlePreviewBodyGroup_t : ISchemaClass, IConvertibleNativeHandle<ParticlePreviewBodyGroup_t> {
+public partial interface ParticlePreviewBodyGroup_t : ISchemaClass<ParticlePreviewBodyGroup_t> {
 
-  static ParticlePreviewBodyGroup_t IConvertibleNativeHandle<ParticlePreviewBodyGroup_t>.From(nint handle) => new ParticlePreviewBodyGroup_tImpl(handle);
+  static ParticlePreviewBodyGroup_t ISchemaClass<ParticlePreviewBodyGroup_t>.From(nint handle) => new ParticlePreviewBodyGroup_tImpl(handle);
 
   
   public ref CUtlString BodyGroupName { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerFan : CBaseTrigger, IConvertibleNativeHandle<CTriggerFan> {
+public partial interface CTriggerFan : CBaseTrigger, ISchemaClass<CTriggerFan> {
 
-  static CTriggerFan IConvertibleNativeHandle<CTriggerFan>.From(nint handle) => new CTriggerFanImpl(handle);
+  static CTriggerFan ISchemaClass<CTriggerFan>.From(nint handle) => new CTriggerFanImpl(handle);
 
   
   public ref Vector FanOrigin { get; }

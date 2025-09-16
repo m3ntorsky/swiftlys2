@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_OscillateVectorSimple : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_OscillateVectorSimple> {
+public partial interface C_OP_OscillateVectorSimple : CParticleFunctionOperator, ISchemaClass<C_OP_OscillateVectorSimple> {
 
-  static C_OP_OscillateVectorSimple IConvertibleNativeHandle<C_OP_OscillateVectorSimple>.From(nint handle) => new C_OP_OscillateVectorSimpleImpl(handle);
+  static C_OP_OscillateVectorSimple ISchemaClass<C_OP_OscillateVectorSimple>.From(nint handle) => new C_OP_OscillateVectorSimpleImpl(handle);
 
   
   public ref Vector Rate { get; }

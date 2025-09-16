@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAudioMorphData : ISchemaClass, IConvertibleNativeHandle<CAudioMorphData> {
+public partial interface CAudioMorphData : ISchemaClass<CAudioMorphData> {
 
-  static CAudioMorphData IConvertibleNativeHandle<CAudioMorphData>.From(nint handle) => new CAudioMorphDataImpl(handle);
+  static CAudioMorphData ISchemaClass<CAudioMorphData>.From(nint handle) => new CAudioMorphDataImpl(handle);
 
   
   public ref CUtlVector<float> Times { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeAxialEdgeBend_t : ISchemaClass, IConvertibleNativeHandle<FeAxialEdgeBend_t> {
+public partial interface FeAxialEdgeBend_t : ISchemaClass<FeAxialEdgeBend_t> {
 
-  static FeAxialEdgeBend_t IConvertibleNativeHandle<FeAxialEdgeBend_t>.From(nint handle) => new FeAxialEdgeBend_tImpl(handle);
+  static FeAxialEdgeBend_t ISchemaClass<FeAxialEdgeBend_t>.From(nint handle) => new FeAxialEdgeBend_tImpl(handle);
 
   
   public ref float Te { get; }

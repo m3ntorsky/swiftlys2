@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointPositionToTimeOfDayValue : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetControlPointPositionToTimeOfDayValue> {
+public partial interface C_OP_SetControlPointPositionToTimeOfDayValue : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetControlPointPositionToTimeOfDayValue> {
 
-  static C_OP_SetControlPointPositionToTimeOfDayValue IConvertibleNativeHandle<C_OP_SetControlPointPositionToTimeOfDayValue>.From(nint handle) => new C_OP_SetControlPointPositionToTimeOfDayValueImpl(handle);
+  static C_OP_SetControlPointPositionToTimeOfDayValue ISchemaClass<C_OP_SetControlPointPositionToTimeOfDayValue>.From(nint handle) => new C_OP_SetControlPointPositionToTimeOfDayValueImpl(handle);
 
   
   public ref int ControlPointNumber { get; }

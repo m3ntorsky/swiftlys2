@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCycleControlUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CCycleControlUpdateNode> {
+public partial interface CCycleControlUpdateNode : CUnaryUpdateNode, ISchemaClass<CCycleControlUpdateNode> {
 
-  static CCycleControlUpdateNode IConvertibleNativeHandle<CCycleControlUpdateNode>.From(nint handle) => new CCycleControlUpdateNodeImpl(handle);
+  static CCycleControlUpdateNode ISchemaClass<CCycleControlUpdateNode>.From(nint handle) => new CCycleControlUpdateNodeImpl(handle);
 
   
   public ref AnimValueSource ValueSource { get; }

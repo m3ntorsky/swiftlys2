@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventPreDataUpdate_t : ISchemaClass, IConvertibleNativeHandle<EventPreDataUpdate_t> {
+public partial interface EventPreDataUpdate_t : ISchemaClass<EventPreDataUpdate_t> {
 
-  static EventPreDataUpdate_t IConvertibleNativeHandle<EventPreDataUpdate_t>.From(nint handle) => new EventPreDataUpdate_tImpl(handle);
+  static EventPreDataUpdate_t ISchemaClass<EventPreDataUpdate_t>.From(nint handle) => new EventPreDataUpdate_tImpl(handle);
 
   
   public ref int Count { get; }

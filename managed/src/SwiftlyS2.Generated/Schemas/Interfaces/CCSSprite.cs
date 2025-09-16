@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSSprite : CSprite, IConvertibleNativeHandle<CCSSprite> {
+public partial interface CCSSprite : CSprite, ISchemaClass<CCSSprite> {
 
-  static CCSSprite IConvertibleNativeHandle<CCSSprite>.From(nint handle) => new CCSSpriteImpl(handle);
+  static CCSSprite ISchemaClass<CCSSprite>.From(nint handle) => new CCSSpriteImpl(handle);
 
 
 

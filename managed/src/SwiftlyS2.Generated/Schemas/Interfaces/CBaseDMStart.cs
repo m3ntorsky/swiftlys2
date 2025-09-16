@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseDMStart : CPointEntity, IConvertibleNativeHandle<CBaseDMStart> {
+public partial interface CBaseDMStart : CPointEntity, ISchemaClass<CBaseDMStart> {
 
-  static CBaseDMStart IConvertibleNativeHandle<CBaseDMStart>.From(nint handle) => new CBaseDMStartImpl(handle);
+  static CBaseDMStart ISchemaClass<CBaseDMStart>.From(nint handle) => new CBaseDMStartImpl(handle);
 
   
   public ref CUtlSymbolLarge Master { get; }

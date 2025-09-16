@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CConstraintAnchor : CBaseAnimGraph, IConvertibleNativeHandle<CConstraintAnchor> {
+public partial interface CConstraintAnchor : CBaseAnimGraph, ISchemaClass<CConstraintAnchor> {
 
-  static CConstraintAnchor IConvertibleNativeHandle<CConstraintAnchor>.From(nint handle) => new CConstraintAnchorImpl(handle);
+  static CConstraintAnchor ISchemaClass<CConstraintAnchor>.From(nint handle) => new CConstraintAnchorImpl(handle);
 
   
   public ref float MassScale { get; }

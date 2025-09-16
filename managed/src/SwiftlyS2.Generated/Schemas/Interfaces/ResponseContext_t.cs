@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ResponseContext_t : ISchemaClass, IConvertibleNativeHandle<ResponseContext_t> {
+public partial interface ResponseContext_t : ISchemaClass<ResponseContext_t> {
 
-  static ResponseContext_t IConvertibleNativeHandle<ResponseContext_t>.From(nint handle) => new ResponseContext_tImpl(handle);
+  static ResponseContext_t ISchemaClass<ResponseContext_t>.From(nint handle) => new ResponseContext_tImpl(handle);
 
   
   public ref CUtlSymbolLarge Name { get; }

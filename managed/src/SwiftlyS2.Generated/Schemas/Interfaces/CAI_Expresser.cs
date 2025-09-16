@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAI_Expresser : ISchemaClass, IConvertibleNativeHandle<CAI_Expresser> {
+public partial interface CAI_Expresser : ISchemaClass<CAI_Expresser> {
 
-  static CAI_Expresser IConvertibleNativeHandle<CAI_Expresser>.From(nint handle) => new CAI_ExpresserImpl(handle);
+  static CAI_Expresser ISchemaClass<CAI_Expresser>.From(nint handle) => new CAI_ExpresserImpl(handle);
 
   
   public GameTime_t StopTalkTime { get; }

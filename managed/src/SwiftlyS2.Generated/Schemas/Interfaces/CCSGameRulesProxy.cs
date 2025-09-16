@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSGameRulesProxy : CGameRulesProxy, IConvertibleNativeHandle<CCSGameRulesProxy> {
+public partial interface CCSGameRulesProxy : CGameRulesProxy, ISchemaClass<CCSGameRulesProxy> {
 
-  static CCSGameRulesProxy IConvertibleNativeHandle<CCSGameRulesProxy>.From(nint handle) => new CCSGameRulesProxyImpl(handle);
+  static CCSGameRulesProxy ISchemaClass<CCSGameRulesProxy>.From(nint handle) => new CCSGameRulesProxyImpl(handle);
 
   
   public CCSGameRules? GameRules { get; }

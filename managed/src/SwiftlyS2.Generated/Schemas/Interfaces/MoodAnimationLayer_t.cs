@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MoodAnimationLayer_t : ISchemaClass, IConvertibleNativeHandle<MoodAnimationLayer_t> {
+public partial interface MoodAnimationLayer_t : ISchemaClass<MoodAnimationLayer_t> {
 
-  static MoodAnimationLayer_t IConvertibleNativeHandle<MoodAnimationLayer_t>.From(nint handle) => new MoodAnimationLayer_tImpl(handle);
+  static MoodAnimationLayer_t ISchemaClass<MoodAnimationLayer_t>.From(nint handle) => new MoodAnimationLayer_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

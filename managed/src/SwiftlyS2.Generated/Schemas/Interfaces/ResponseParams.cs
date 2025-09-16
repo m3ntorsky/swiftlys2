@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ResponseParams : ISchemaClass, IConvertibleNativeHandle<ResponseParams> {
+public partial interface ResponseParams : ISchemaClass<ResponseParams> {
 
-  static ResponseParams IConvertibleNativeHandle<ResponseParams>.From(nint handle) => new ResponseParamsImpl(handle);
+  static ResponseParams ISchemaClass<ResponseParams>.From(nint handle) => new ResponseParamsImpl(handle);
 
   
   public ref short Odds { get; }

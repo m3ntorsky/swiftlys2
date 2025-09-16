@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_SoundEventStart : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_SoundEventStart> {
+public partial interface CPulseCell_SoundEventStart : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_SoundEventStart> {
 
-  static CPulseCell_SoundEventStart IConvertibleNativeHandle<CPulseCell_SoundEventStart>.From(nint handle) => new CPulseCell_SoundEventStartImpl(handle);
+  static CPulseCell_SoundEventStart ISchemaClass<CPulseCell_SoundEventStart>.From(nint handle) => new CPulseCell_SoundEventStartImpl(handle);
 
   
   public ref SoundEventStartType_t Type { get; }

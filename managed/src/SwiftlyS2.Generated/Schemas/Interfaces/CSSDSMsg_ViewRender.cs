@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSSDSMsg_ViewRender : ISchemaClass, IConvertibleNativeHandle<CSSDSMsg_ViewRender> {
+public partial interface CSSDSMsg_ViewRender : ISchemaClass<CSSDSMsg_ViewRender> {
 
-  static CSSDSMsg_ViewRender IConvertibleNativeHandle<CSSDSMsg_ViewRender>.From(nint handle) => new CSSDSMsg_ViewRenderImpl(handle);
+  static CSSDSMsg_ViewRender ISchemaClass<CSSDSMsg_ViewRender>.From(nint handle) => new CSSDSMsg_ViewRenderImpl(handle);
 
   
   public SceneViewId_t ViewId { get; }

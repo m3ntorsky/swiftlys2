@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IChoreoServices : ISchemaClass, IConvertibleNativeHandle<IChoreoServices> {
+public partial interface IChoreoServices : ISchemaClass<IChoreoServices> {
 
-  static IChoreoServices IConvertibleNativeHandle<IChoreoServices>.From(nint handle) => new IChoreoServicesImpl(handle);
+  static IChoreoServices ISchemaClass<IChoreoServices>.From(nint handle) => new IChoreoServicesImpl(handle);
 
 
 

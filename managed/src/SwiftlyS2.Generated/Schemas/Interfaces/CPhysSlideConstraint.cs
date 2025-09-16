@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysSlideConstraint : CPhysConstraint, IConvertibleNativeHandle<CPhysSlideConstraint> {
+public partial interface CPhysSlideConstraint : CPhysConstraint, ISchemaClass<CPhysSlideConstraint> {
 
-  static CPhysSlideConstraint IConvertibleNativeHandle<CPhysSlideConstraint>.From(nint handle) => new CPhysSlideConstraintImpl(handle);
+  static CPhysSlideConstraint ISchemaClass<CPhysSlideConstraint>.From(nint handle) => new CPhysSlideConstraintImpl(handle);
 
   
   public ref Vector AxisEnd { get; }

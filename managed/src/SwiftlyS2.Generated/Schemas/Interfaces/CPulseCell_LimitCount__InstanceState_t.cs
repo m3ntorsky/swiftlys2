@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_LimitCount__InstanceState_t : ISchemaClass, IConvertibleNativeHandle<CPulseCell_LimitCount__InstanceState_t> {
+public partial interface CPulseCell_LimitCount__InstanceState_t : ISchemaClass<CPulseCell_LimitCount__InstanceState_t> {
 
-  static CPulseCell_LimitCount__InstanceState_t IConvertibleNativeHandle<CPulseCell_LimitCount__InstanceState_t>.From(nint handle) => new CPulseCell_LimitCount__InstanceState_tImpl(handle);
+  static CPulseCell_LimitCount__InstanceState_t ISchemaClass<CPulseCell_LimitCount__InstanceState_t>.From(nint handle) => new CPulseCell_LimitCount__InstanceState_tImpl(handle);
 
   
   public ref int CurrentCount { get; }

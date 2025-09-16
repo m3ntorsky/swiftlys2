@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventClientPollNetworking_t : ISchemaClass, IConvertibleNativeHandle<EventClientPollNetworking_t> {
+public partial interface EventClientPollNetworking_t : ISchemaClass<EventClientPollNetworking_t> {
 
-  static EventClientPollNetworking_t IConvertibleNativeHandle<EventClientPollNetworking_t>.From(nint handle) => new EventClientPollNetworking_tImpl(handle);
+  static EventClientPollNetworking_t ISchemaClass<EventClientPollNetworking_t>.From(nint handle) => new EventClientPollNetworking_tImpl(handle);
 
   
   public ref int TickCount { get; }

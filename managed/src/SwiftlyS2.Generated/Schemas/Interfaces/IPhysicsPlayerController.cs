@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IPhysicsPlayerController : ISchemaClass, IConvertibleNativeHandle<IPhysicsPlayerController> {
+public partial interface IPhysicsPlayerController : ISchemaClass<IPhysicsPlayerController> {
 
-  static IPhysicsPlayerController IConvertibleNativeHandle<IPhysicsPlayerController>.From(nint handle) => new IPhysicsPlayerControllerImpl(handle);
+  static IPhysicsPlayerController ISchemaClass<IPhysicsPlayerController>.From(nint handle) => new IPhysicsPlayerControllerImpl(handle);
 
 
 

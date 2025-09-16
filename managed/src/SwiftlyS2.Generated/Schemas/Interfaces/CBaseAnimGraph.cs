@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseAnimGraph : CBaseModelEntity, IConvertibleNativeHandle<CBaseAnimGraph> {
+public partial interface CBaseAnimGraph : CBaseModelEntity, ISchemaClass<CBaseAnimGraph> {
 
-  static CBaseAnimGraph IConvertibleNativeHandle<CBaseAnimGraph>.From(nint handle) => new CBaseAnimGraphImpl(handle);
+  static CBaseAnimGraph ISchemaClass<CBaseAnimGraph>.From(nint handle) => new CBaseAnimGraphImpl(handle);
 
   
   public ref bool InitiallyPopulateInterpHistory { get; }

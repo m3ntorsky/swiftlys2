@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PostProcessingLocalContrastParameters_t : ISchemaClass, IConvertibleNativeHandle<PostProcessingLocalContrastParameters_t> {
+public partial interface PostProcessingLocalContrastParameters_t : ISchemaClass<PostProcessingLocalContrastParameters_t> {
 
-  static PostProcessingLocalContrastParameters_t IConvertibleNativeHandle<PostProcessingLocalContrastParameters_t>.From(nint handle) => new PostProcessingLocalContrastParameters_tImpl(handle);
+  static PostProcessingLocalContrastParameters_t ISchemaClass<PostProcessingLocalContrastParameters_t>.From(nint handle) => new PostProcessingLocalContrastParameters_tImpl(handle);
 
   
   public ref float LocalContrastStrength { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFloatMovingAverage : ISchemaClass, IConvertibleNativeHandle<CFloatMovingAverage> {
+public partial interface CFloatMovingAverage : ISchemaClass<CFloatMovingAverage> {
 
-  static CFloatMovingAverage IConvertibleNativeHandle<CFloatMovingAverage>.From(nint handle) => new CFloatMovingAverageImpl(handle);
+  static CFloatMovingAverage ISchemaClass<CFloatMovingAverage>.From(nint handle) => new CFloatMovingAverageImpl(handle);
 
 
 

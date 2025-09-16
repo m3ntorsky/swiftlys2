@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CKeepUpright : CPointEntity, IConvertibleNativeHandle<CKeepUpright> {
+public partial interface CKeepUpright : CPointEntity, ISchemaClass<CKeepUpright> {
 
-  static CKeepUpright IConvertibleNativeHandle<CKeepUpright>.From(nint handle) => new CKeepUprightImpl(handle);
+  static CKeepUpright ISchemaClass<CKeepUpright>.From(nint handle) => new CKeepUprightImpl(handle);
 
   
   public ref Vector WorldGoalAxis { get; }

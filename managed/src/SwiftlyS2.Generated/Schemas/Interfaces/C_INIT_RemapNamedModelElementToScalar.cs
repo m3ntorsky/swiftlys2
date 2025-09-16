@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RemapNamedModelElementToScalar : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RemapNamedModelElementToScalar> {
+public partial interface C_INIT_RemapNamedModelElementToScalar : CParticleFunctionInitializer, ISchemaClass<C_INIT_RemapNamedModelElementToScalar> {
 
-  static C_INIT_RemapNamedModelElementToScalar IConvertibleNativeHandle<C_INIT_RemapNamedModelElementToScalar>.From(nint handle) => new C_INIT_RemapNamedModelElementToScalarImpl(handle);
+  static C_INIT_RemapNamedModelElementToScalar ISchemaClass<C_INIT_RemapNamedModelElementToScalar>.From(nint handle) => new C_INIT_RemapNamedModelElementToScalarImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }

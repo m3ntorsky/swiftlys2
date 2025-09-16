@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RemapCPtoScalar : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RemapCPtoScalar> {
+public partial interface C_INIT_RemapCPtoScalar : CParticleFunctionInitializer, ISchemaClass<C_INIT_RemapCPtoScalar> {
 
-  static C_INIT_RemapCPtoScalar IConvertibleNativeHandle<C_INIT_RemapCPtoScalar>.From(nint handle) => new C_INIT_RemapCPtoScalarImpl(handle);
+  static C_INIT_RemapCPtoScalar ISchemaClass<C_INIT_RemapCPtoScalar>.From(nint handle) => new C_INIT_RemapCPtoScalarImpl(handle);
 
   
   public ref int CPInput { get; }

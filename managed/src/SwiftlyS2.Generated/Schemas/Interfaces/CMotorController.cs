@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotorController : ISchemaClass, IConvertibleNativeHandle<CMotorController> {
+public partial interface CMotorController : ISchemaClass<CMotorController> {
 
-  static CMotorController IConvertibleNativeHandle<CMotorController>.From(nint handle) => new CMotorControllerImpl(handle);
+  static CMotorController ISchemaClass<CMotorController>.From(nint handle) => new CMotorControllerImpl(handle);
 
   
   public ref float Speed { get; }

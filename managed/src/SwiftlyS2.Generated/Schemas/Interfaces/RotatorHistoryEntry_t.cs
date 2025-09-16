@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RotatorHistoryEntry_t : ISchemaClass, IConvertibleNativeHandle<RotatorHistoryEntry_t> {
+public partial interface RotatorHistoryEntry_t : ISchemaClass<RotatorHistoryEntry_t> {
 
-  static RotatorHistoryEntry_t IConvertibleNativeHandle<RotatorHistoryEntry_t>.From(nint handle) => new RotatorHistoryEntry_tImpl(handle);
+  static RotatorHistoryEntry_t ISchemaClass<RotatorHistoryEntry_t>.From(nint handle) => new RotatorHistoryEntry_tImpl(handle);
 
   
   public ref Quaternion InvChange { get; }

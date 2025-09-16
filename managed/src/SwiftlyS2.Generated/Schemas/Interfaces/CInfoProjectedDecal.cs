@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoProjectedDecal : CPointEntity, IConvertibleNativeHandle<CInfoProjectedDecal> {
+public partial interface CInfoProjectedDecal : CPointEntity, ISchemaClass<CInfoProjectedDecal> {
 
-  static CInfoProjectedDecal IConvertibleNativeHandle<CInfoProjectedDecal>.From(nint handle) => new CInfoProjectedDecalImpl(handle);
+  static CInfoProjectedDecal ISchemaClass<CInfoProjectedDecal>.From(nint handle) => new CInfoProjectedDecalImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }

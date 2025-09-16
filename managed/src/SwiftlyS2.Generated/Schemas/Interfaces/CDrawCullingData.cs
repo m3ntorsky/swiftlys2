@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDrawCullingData : ISchemaClass, IConvertibleNativeHandle<CDrawCullingData> {
+public partial interface CDrawCullingData : ISchemaClass<CDrawCullingData> {
 
-  static CDrawCullingData IConvertibleNativeHandle<CDrawCullingData>.From(nint handle) => new CDrawCullingDataImpl(handle);
+  static CDrawCullingData ISchemaClass<CDrawCullingData>.From(nint handle) => new CDrawCullingDataImpl(handle);
 
   
   public ISchemaFixedArray<byte> ConeAxis { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ParticleAttributeIndex_t : ISchemaClass, IConvertibleNativeHandle<ParticleAttributeIndex_t> {
+public partial interface ParticleAttributeIndex_t : ISchemaClass<ParticleAttributeIndex_t> {
 
-  static ParticleAttributeIndex_t IConvertibleNativeHandle<ParticleAttributeIndex_t>.From(nint handle) => new ParticleAttributeIndex_tImpl(handle);
+  static ParticleAttributeIndex_t ISchemaClass<ParticleAttributeIndex_t>.From(nint handle) => new ParticleAttributeIndex_tImpl(handle);
 
   
   public ref int Value { get; }

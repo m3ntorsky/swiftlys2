@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerBlender : CVoiceContainerBase, IConvertibleNativeHandle<CVoiceContainerBlender> {
+public partial interface CVoiceContainerBlender : CVoiceContainerBase, ISchemaClass<CVoiceContainerBlender> {
 
-  static CVoiceContainerBlender IConvertibleNativeHandle<CVoiceContainerBlender>.From(nint handle) => new CVoiceContainerBlenderImpl(handle);
+  static CVoiceContainerBlender ISchemaClass<CVoiceContainerBlender>.From(nint handle) => new CVoiceContainerBlenderImpl(handle);
 
   
   public CSoundContainerReference FirstSound { get; }

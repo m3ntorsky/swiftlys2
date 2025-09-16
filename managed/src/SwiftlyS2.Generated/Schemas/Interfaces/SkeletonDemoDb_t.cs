@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SkeletonDemoDb_t : ISchemaClass, IConvertibleNativeHandle<SkeletonDemoDb_t> {
+public partial interface SkeletonDemoDb_t : ISchemaClass<SkeletonDemoDb_t> {
 
-  static SkeletonDemoDb_t IConvertibleNativeHandle<SkeletonDemoDb_t>.From(nint handle) => new SkeletonDemoDb_tImpl(handle);
+  static SkeletonDemoDb_t ISchemaClass<SkeletonDemoDb_t>.From(nint handle) => new SkeletonDemoDb_tImpl(handle);
 
   
   public ref CUtlVector<PointerTo<SkeletonAnimCapture_t>> AnimCaptures { get; }

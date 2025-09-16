@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoParticleTarget : CPointEntity, IConvertibleNativeHandle<CInfoParticleTarget> {
+public partial interface CInfoParticleTarget : CPointEntity, ISchemaClass<CInfoParticleTarget> {
 
-  static CInfoParticleTarget IConvertibleNativeHandle<CInfoParticleTarget>.From(nint handle) => new CInfoParticleTargetImpl(handle);
+  static CInfoParticleTarget ISchemaClass<CInfoParticleTarget>.From(nint handle) => new CInfoParticleTargetImpl(handle);
 
 
 

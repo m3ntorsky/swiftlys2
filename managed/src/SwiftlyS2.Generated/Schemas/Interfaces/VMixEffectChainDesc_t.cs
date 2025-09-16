@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixEffectChainDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixEffectChainDesc_t> {
+public partial interface VMixEffectChainDesc_t : ISchemaClass<VMixEffectChainDesc_t> {
 
-  static VMixEffectChainDesc_t IConvertibleNativeHandle<VMixEffectChainDesc_t>.From(nint handle) => new VMixEffectChainDesc_tImpl(handle);
+  static VMixEffectChainDesc_t ISchemaClass<VMixEffectChainDesc_t>.From(nint handle) => new VMixEffectChainDesc_tImpl(handle);
 
   
   public ref float CrossfadeTime { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface NmBoneMaskSetDefinition_t : ISchemaClass, IConvertibleNativeHandle<NmBoneMaskSetDefinition_t> {
+public partial interface NmBoneMaskSetDefinition_t : ISchemaClass<NmBoneMaskSetDefinition_t> {
 
-  static NmBoneMaskSetDefinition_t IConvertibleNativeHandle<NmBoneMaskSetDefinition_t>.From(nint handle) => new NmBoneMaskSetDefinition_tImpl(handle);
+  static NmBoneMaskSetDefinition_t ISchemaClass<NmBoneMaskSetDefinition_t>.From(nint handle) => new NmBoneMaskSetDefinition_tImpl(handle);
 
   
   public ref CGlobalSymbol ID { get; }

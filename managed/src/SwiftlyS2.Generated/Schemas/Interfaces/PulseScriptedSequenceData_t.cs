@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseScriptedSequenceData_t : ISchemaClass, IConvertibleNativeHandle<PulseScriptedSequenceData_t> {
+public partial interface PulseScriptedSequenceData_t : ISchemaClass<PulseScriptedSequenceData_t> {
 
-  static PulseScriptedSequenceData_t IConvertibleNativeHandle<PulseScriptedSequenceData_t>.From(nint handle) => new PulseScriptedSequenceData_tImpl(handle);
+  static PulseScriptedSequenceData_t ISchemaClass<PulseScriptedSequenceData_t>.From(nint handle) => new PulseScriptedSequenceData_tImpl(handle);
 
   
   public ref int ActorID { get; }

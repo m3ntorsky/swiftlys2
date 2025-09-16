@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTestPulseIOAPI : ISchemaClass, IConvertibleNativeHandle<CTestPulseIOAPI> {
+public partial interface CTestPulseIOAPI : ISchemaClass<CTestPulseIOAPI> {
 
-  static CTestPulseIOAPI IConvertibleNativeHandle<CTestPulseIOAPI>.From(nint handle) => new CTestPulseIOAPIImpl(handle);
+  static CTestPulseIOAPI ISchemaClass<CTestPulseIOAPI>.From(nint handle) => new CTestPulseIOAPIImpl(handle);
 
 
 

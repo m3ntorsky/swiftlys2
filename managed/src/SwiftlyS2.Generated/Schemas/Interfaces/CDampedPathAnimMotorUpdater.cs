@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDampedPathAnimMotorUpdater : CPathAnimMotorUpdaterBase, IConvertibleNativeHandle<CDampedPathAnimMotorUpdater> {
+public partial interface CDampedPathAnimMotorUpdater : CPathAnimMotorUpdaterBase, ISchemaClass<CDampedPathAnimMotorUpdater> {
 
-  static CDampedPathAnimMotorUpdater IConvertibleNativeHandle<CDampedPathAnimMotorUpdater>.From(nint handle) => new CDampedPathAnimMotorUpdaterImpl(handle);
+  static CDampedPathAnimMotorUpdater ISchemaClass<CDampedPathAnimMotorUpdater>.From(nint handle) => new CDampedPathAnimMotorUpdaterImpl(handle);
 
   
   public ref float AnticipationTime { get; }

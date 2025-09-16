@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSceneEntityAlias_logic_choreographed_scene : CSceneEntity, IConvertibleNativeHandle<CSceneEntityAlias_logic_choreographed_scene> {
+public partial interface CSceneEntityAlias_logic_choreographed_scene : CSceneEntity, ISchemaClass<CSceneEntityAlias_logic_choreographed_scene> {
 
-  static CSceneEntityAlias_logic_choreographed_scene IConvertibleNativeHandle<CSceneEntityAlias_logic_choreographed_scene>.From(nint handle) => new CSceneEntityAlias_logic_choreographed_sceneImpl(handle);
+  static CSceneEntityAlias_logic_choreographed_scene ISchemaClass<CSceneEntityAlias_logic_choreographed_scene>.From(nint handle) => new CSceneEntityAlias_logic_choreographed_sceneImpl(handle);
 
 
 

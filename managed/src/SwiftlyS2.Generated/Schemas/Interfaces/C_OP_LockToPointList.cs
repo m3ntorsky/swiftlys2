@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_LockToPointList : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_LockToPointList> {
+public partial interface C_OP_LockToPointList : CParticleFunctionOperator, ISchemaClass<C_OP_LockToPointList> {
 
-  static C_OP_LockToPointList IConvertibleNativeHandle<C_OP_LockToPointList>.From(nint handle) => new C_OP_LockToPointListImpl(handle);
+  static C_OP_LockToPointList ISchemaClass<C_OP_LockToPointList>.From(nint handle) => new C_OP_LockToPointListImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRangeInt : ISchemaClass, IConvertibleNativeHandle<CRangeInt> {
+public partial interface CRangeInt : ISchemaClass<CRangeInt> {
 
-  static CRangeInt IConvertibleNativeHandle<CRangeInt>.From(nint handle) => new CRangeIntImpl(handle);
+  static CRangeInt ISchemaClass<CRangeInt>.From(nint handle) => new CRangeIntImpl(handle);
 
   
   public ISchemaFixedArray<int> Value { get; }

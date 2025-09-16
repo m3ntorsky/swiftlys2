@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmChainSolverTask : CNmPoseTask, IConvertibleNativeHandle<CNmChainSolverTask> {
+public partial interface CNmChainSolverTask : CNmPoseTask, ISchemaClass<CNmChainSolverTask> {
 
-  static CNmChainSolverTask IConvertibleNativeHandle<CNmChainSolverTask>.From(nint handle) => new CNmChainSolverTaskImpl(handle);
+  static CNmChainSolverTask ISchemaClass<CNmChainSolverTask>.From(nint handle) => new CNmChainSolverTaskImpl(handle);
 
   
   public ref int EffectorBoneIdx { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ResponseFollowup : ISchemaClass, IConvertibleNativeHandle<ResponseFollowup> {
+public partial interface ResponseFollowup : ISchemaClass<ResponseFollowup> {
 
-  static ResponseFollowup IConvertibleNativeHandle<ResponseFollowup>.From(nint handle) => new ResponseFollowupImpl(handle);
+  static ResponseFollowup ISchemaClass<ResponseFollowup>.From(nint handle) => new ResponseFollowupImpl(handle);
 
   
   public ref CString Followup_concept { get; }

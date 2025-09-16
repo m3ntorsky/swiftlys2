@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderClothForce : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderClothForce> {
+public partial interface C_OP_RenderClothForce : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderClothForce> {
 
-  static C_OP_RenderClothForce IConvertibleNativeHandle<C_OP_RenderClothForce>.From(nint handle) => new C_OP_RenderClothForceImpl(handle);
+  static C_OP_RenderClothForce ISchemaClass<C_OP_RenderClothForce>.From(nint handle) => new C_OP_RenderClothForceImpl(handle);
 
 
 

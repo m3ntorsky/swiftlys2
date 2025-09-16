@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPairedSequenceUpdateNode : CSequenceUpdateNodeBase, IConvertibleNativeHandle<CPairedSequenceUpdateNode> {
+public partial interface CPairedSequenceUpdateNode : CSequenceUpdateNodeBase, ISchemaClass<CPairedSequenceUpdateNode> {
 
-  static CPairedSequenceUpdateNode IConvertibleNativeHandle<CPairedSequenceUpdateNode>.From(nint handle) => new CPairedSequenceUpdateNodeImpl(handle);
+  static CPairedSequenceUpdateNode ISchemaClass<CPairedSequenceUpdateNode>.From(nint handle) => new CPairedSequenceUpdateNodeImpl(handle);
 
   
   public ref CGlobalSymbol PairedSequenceRole { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerGameEvent : CBaseTrigger, IConvertibleNativeHandle<CTriggerGameEvent> {
+public partial interface CTriggerGameEvent : CBaseTrigger, ISchemaClass<CTriggerGameEvent> {
 
-  static CTriggerGameEvent IConvertibleNativeHandle<CTriggerGameEvent>.From(nint handle) => new CTriggerGameEventImpl(handle);
+  static CTriggerGameEvent ISchemaClass<CTriggerGameEvent>.From(nint handle) => new CTriggerGameEventImpl(handle);
 
   
   public ref CUtlString StrStartTouchEventName { get; }

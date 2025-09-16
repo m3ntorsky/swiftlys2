@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FuseVariableIndex_t : ISchemaClass, IConvertibleNativeHandle<FuseVariableIndex_t> {
+public partial interface FuseVariableIndex_t : ISchemaClass<FuseVariableIndex_t> {
 
-  static FuseVariableIndex_t IConvertibleNativeHandle<FuseVariableIndex_t>.From(nint handle) => new FuseVariableIndex_tImpl(handle);
+  static FuseVariableIndex_t ISchemaClass<FuseVariableIndex_t>.From(nint handle) => new FuseVariableIndex_tImpl(handle);
 
   
   public ref ushort Value { get; }

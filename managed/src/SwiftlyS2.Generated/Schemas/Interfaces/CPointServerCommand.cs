@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointServerCommand : CPointEntity, IConvertibleNativeHandle<CPointServerCommand> {
+public partial interface CPointServerCommand : CPointEntity, ISchemaClass<CPointServerCommand> {
 
-  static CPointServerCommand IConvertibleNativeHandle<CPointServerCommand>.From(nint handle) => new CPointServerCommandImpl(handle);
+  static CPointServerCommand ISchemaClass<CPointServerCommand>.From(nint handle) => new CPointServerCommandImpl(handle);
 
 
 

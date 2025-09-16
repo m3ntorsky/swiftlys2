@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapNamedModelSequenceEndCap : C_OP_RemapNamedModelElementEndCap, IConvertibleNativeHandle<C_OP_RemapNamedModelSequenceEndCap> {
+public partial interface C_OP_RemapNamedModelSequenceEndCap : C_OP_RemapNamedModelElementEndCap, ISchemaClass<C_OP_RemapNamedModelSequenceEndCap> {
 
-  static C_OP_RemapNamedModelSequenceEndCap IConvertibleNativeHandle<C_OP_RemapNamedModelSequenceEndCap>.From(nint handle) => new C_OP_RemapNamedModelSequenceEndCapImpl(handle);
+  static C_OP_RemapNamedModelSequenceEndCap ISchemaClass<C_OP_RemapNamedModelSequenceEndCap>.From(nint handle) => new C_OP_RemapNamedModelSequenceEndCapImpl(handle);
 
 
 

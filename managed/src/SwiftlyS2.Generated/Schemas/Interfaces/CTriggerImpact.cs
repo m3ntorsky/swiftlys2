@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerImpact : CTriggerMultiple, IConvertibleNativeHandle<CTriggerImpact> {
+public partial interface CTriggerImpact : CTriggerMultiple, ISchemaClass<CTriggerImpact> {
 
-  static CTriggerImpact IConvertibleNativeHandle<CTriggerImpact>.From(nint handle) => new CTriggerImpactImpl(handle);
+  static CTriggerImpact ISchemaClass<CTriggerImpact>.From(nint handle) => new CTriggerImpactImpl(handle);
 
   
   public ref float Magnitude { get; }

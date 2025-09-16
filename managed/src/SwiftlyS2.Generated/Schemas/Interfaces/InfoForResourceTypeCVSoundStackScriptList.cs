@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCVSoundStackScriptList : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCVSoundStackScriptList> {
+public partial interface InfoForResourceTypeCVSoundStackScriptList : ISchemaClass<InfoForResourceTypeCVSoundStackScriptList> {
 
-  static InfoForResourceTypeCVSoundStackScriptList IConvertibleNativeHandle<InfoForResourceTypeCVSoundStackScriptList>.From(nint handle) => new InfoForResourceTypeCVSoundStackScriptListImpl(handle);
+  static InfoForResourceTypeCVSoundStackScriptList ISchemaClass<InfoForResourceTypeCVSoundStackScriptList>.From(nint handle) => new InfoForResourceTypeCVSoundStackScriptListImpl(handle);
 
 
 

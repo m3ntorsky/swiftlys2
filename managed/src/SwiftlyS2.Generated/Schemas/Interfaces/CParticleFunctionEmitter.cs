@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleFunctionEmitter : CParticleFunction, IConvertibleNativeHandle<CParticleFunctionEmitter> {
+public partial interface CParticleFunctionEmitter : CParticleFunction, ISchemaClass<CParticleFunctionEmitter> {
 
-  static CParticleFunctionEmitter IConvertibleNativeHandle<CParticleFunctionEmitter>.From(nint handle) => new CParticleFunctionEmitterImpl(handle);
+  static CParticleFunctionEmitter ISchemaClass<CParticleFunctionEmitter>.From(nint handle) => new CParticleFunctionEmitterImpl(handle);
 
   
   public ref int EmitterIndex { get; }

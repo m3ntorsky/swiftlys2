@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_InlineNodeSkipSelector : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_InlineNodeSkipSelector> {
+public partial interface CPulseCell_InlineNodeSkipSelector : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_InlineNodeSkipSelector> {
 
-  static CPulseCell_InlineNodeSkipSelector IConvertibleNativeHandle<CPulseCell_InlineNodeSkipSelector>.From(nint handle) => new CPulseCell_InlineNodeSkipSelectorImpl(handle);
+  static CPulseCell_InlineNodeSkipSelector ISchemaClass<CPulseCell_InlineNodeSkipSelector>.From(nint handle) => new CPulseCell_InlineNodeSkipSelectorImpl(handle);
 
   
   public PulseDocNodeID_t FlowNodeID { get; }

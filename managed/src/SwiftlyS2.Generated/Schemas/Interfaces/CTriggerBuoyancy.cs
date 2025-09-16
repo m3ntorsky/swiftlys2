@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerBuoyancy : CBaseTrigger, IConvertibleNativeHandle<CTriggerBuoyancy> {
+public partial interface CTriggerBuoyancy : CBaseTrigger, ISchemaClass<CTriggerBuoyancy> {
 
-  static CTriggerBuoyancy IConvertibleNativeHandle<CTriggerBuoyancy>.From(nint handle) => new CTriggerBuoyancyImpl(handle);
+  static CTriggerBuoyancy ISchemaClass<CTriggerBuoyancy>.From(nint handle) => new CTriggerBuoyancyImpl(handle);
 
   
   public CBuoyancyHelper BuoyancyHelper { get; }

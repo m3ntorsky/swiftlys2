@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_DistanceBetweenCPsToCP : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_DistanceBetweenCPsToCP> {
+public partial interface C_OP_DistanceBetweenCPsToCP : CParticleFunctionPreEmission, ISchemaClass<C_OP_DistanceBetweenCPsToCP> {
 
-  static C_OP_DistanceBetweenCPsToCP IConvertibleNativeHandle<C_OP_DistanceBetweenCPsToCP>.From(nint handle) => new C_OP_DistanceBetweenCPsToCPImpl(handle);
+  static C_OP_DistanceBetweenCPsToCP ISchemaClass<C_OP_DistanceBetweenCPsToCP>.From(nint handle) => new C_OP_DistanceBetweenCPsToCPImpl(handle);
 
   
   public ref int StartCP { get; }

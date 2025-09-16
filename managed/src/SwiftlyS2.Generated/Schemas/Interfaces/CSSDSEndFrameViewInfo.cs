@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSSDSEndFrameViewInfo : ISchemaClass, IConvertibleNativeHandle<CSSDSEndFrameViewInfo> {
+public partial interface CSSDSEndFrameViewInfo : ISchemaClass<CSSDSEndFrameViewInfo> {
 
-  static CSSDSEndFrameViewInfo IConvertibleNativeHandle<CSSDSEndFrameViewInfo>.From(nint handle) => new CSSDSEndFrameViewInfoImpl(handle);
+  static CSSDSEndFrameViewInfo ISchemaClass<CSSDSEndFrameViewInfo>.From(nint handle) => new CSSDSEndFrameViewInfoImpl(handle);
 
   
   public ref ulong ViewId { get; }

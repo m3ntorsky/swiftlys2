@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmEntityAttributeFloatEvent : CNmEntityAttributeEventBase, IConvertibleNativeHandle<CNmEntityAttributeFloatEvent> {
+public partial interface CNmEntityAttributeFloatEvent : CNmEntityAttributeEventBase, ISchemaClass<CNmEntityAttributeFloatEvent> {
 
-  static CNmEntityAttributeFloatEvent IConvertibleNativeHandle<CNmEntityAttributeFloatEvent>.From(nint handle) => new CNmEntityAttributeFloatEventImpl(handle);
+  static CNmEntityAttributeFloatEvent ISchemaClass<CNmEntityAttributeFloatEvent>.From(nint handle) => new CNmEntityAttributeFloatEventImpl(handle);
 
   
   // CPiecewiseCurve

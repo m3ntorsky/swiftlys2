@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerAnalysisBase : ISchemaClass, IConvertibleNativeHandle<CVoiceContainerAnalysisBase> {
+public partial interface CVoiceContainerAnalysisBase : ISchemaClass<CVoiceContainerAnalysisBase> {
 
-  static CVoiceContainerAnalysisBase IConvertibleNativeHandle<CVoiceContainerAnalysisBase>.From(nint handle) => new CVoiceContainerAnalysisBaseImpl(handle);
+  static CVoiceContainerAnalysisBase ISchemaClass<CVoiceContainerAnalysisBase>.From(nint handle) => new CVoiceContainerAnalysisBaseImpl(handle);
 
   
   public ref bool RegenerateCurveOnCompile { get; }

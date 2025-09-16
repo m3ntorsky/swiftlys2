@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMorphData : ISchemaClass, IConvertibleNativeHandle<CMorphData> {
+public partial interface CMorphData : ISchemaClass<CMorphData> {
 
-  static CMorphData IConvertibleNativeHandle<CMorphData>.From(nint handle) => new CMorphDataImpl(handle);
+  static CMorphData ISchemaClass<CMorphData>.From(nint handle) => new CMorphDataImpl(handle);
 
   
   public ref CUtlString Name { get; }

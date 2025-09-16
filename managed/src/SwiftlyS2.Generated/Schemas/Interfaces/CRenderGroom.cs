@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRenderGroom : ISchemaClass, IConvertibleNativeHandle<CRenderGroom> {
+public partial interface CRenderGroom : ISchemaClass<CRenderGroom> {
 
-  static CRenderGroom IConvertibleNativeHandle<CRenderGroom>.From(nint handle) => new CRenderGroomImpl(handle);
+  static CRenderGroom ISchemaClass<CRenderGroom>.From(nint handle) => new CRenderGroomImpl(handle);
 
   
   // CUtlVector< RenderHairStrandInfo_t >

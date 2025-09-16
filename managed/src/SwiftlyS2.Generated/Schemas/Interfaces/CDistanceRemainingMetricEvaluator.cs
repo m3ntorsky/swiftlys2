@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDistanceRemainingMetricEvaluator : CMotionMetricEvaluator, IConvertibleNativeHandle<CDistanceRemainingMetricEvaluator> {
+public partial interface CDistanceRemainingMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CDistanceRemainingMetricEvaluator> {
 
-  static CDistanceRemainingMetricEvaluator IConvertibleNativeHandle<CDistanceRemainingMetricEvaluator>.From(nint handle) => new CDistanceRemainingMetricEvaluatorImpl(handle);
+  static CDistanceRemainingMetricEvaluator ISchemaClass<CDistanceRemainingMetricEvaluator>.From(nint handle) => new CDistanceRemainingMetricEvaluatorImpl(handle);
 
   
   public ref float MaxDistance { get; }

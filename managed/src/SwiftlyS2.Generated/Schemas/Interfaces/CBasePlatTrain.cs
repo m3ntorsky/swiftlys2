@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBasePlatTrain : CBaseToggle, IConvertibleNativeHandle<CBasePlatTrain> {
+public partial interface CBasePlatTrain : CBaseToggle, ISchemaClass<CBasePlatTrain> {
 
-  static CBasePlatTrain IConvertibleNativeHandle<CBasePlatTrain>.From(nint handle) => new CBasePlatTrainImpl(handle);
+  static CBasePlatTrain ISchemaClass<CBasePlatTrain>.From(nint handle) => new CBasePlatTrainImpl(handle);
 
   
   public ref CUtlSymbolLarge NoiseMoving { get; }

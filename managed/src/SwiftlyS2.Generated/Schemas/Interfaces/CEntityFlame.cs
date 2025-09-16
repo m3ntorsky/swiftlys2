@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEntityFlame : CBaseEntity, IConvertibleNativeHandle<CEntityFlame> {
+public partial interface CEntityFlame : CBaseEntity, ISchemaClass<CEntityFlame> {
 
-  static CEntityFlame IConvertibleNativeHandle<CEntityFlame>.From(nint handle) => new CEntityFlameImpl(handle);
+  static CEntityFlame ISchemaClass<CEntityFlame>.From(nint handle) => new CEntityFlameImpl(handle);
 
   
   public ref CHandle<CBaseEntity> EntAttached { get; }

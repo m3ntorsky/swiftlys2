@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnHalfEdge_t : ISchemaClass, IConvertibleNativeHandle<RnHalfEdge_t> {
+public partial interface RnHalfEdge_t : ISchemaClass<RnHalfEdge_t> {
 
-  static RnHalfEdge_t IConvertibleNativeHandle<RnHalfEdge_t>.From(nint handle) => new RnHalfEdge_tImpl(handle);
+  static RnHalfEdge_t ISchemaClass<RnHalfEdge_t>.From(nint handle) => new RnHalfEdge_tImpl(handle);
 
   
   public ref byte Next { get; }

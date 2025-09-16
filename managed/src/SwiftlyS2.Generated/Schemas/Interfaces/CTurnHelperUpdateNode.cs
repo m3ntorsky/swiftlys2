@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTurnHelperUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CTurnHelperUpdateNode> {
+public partial interface CTurnHelperUpdateNode : CUnaryUpdateNode, ISchemaClass<CTurnHelperUpdateNode> {
 
-  static CTurnHelperUpdateNode IConvertibleNativeHandle<CTurnHelperUpdateNode>.From(nint handle) => new CTurnHelperUpdateNodeImpl(handle);
+  static CTurnHelperUpdateNode ISchemaClass<CTurnHelperUpdateNode>.From(nint handle) => new CTurnHelperUpdateNodeImpl(handle);
 
   
   public ref AnimValueSource FacingTarget { get; }

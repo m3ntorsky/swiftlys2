@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseServerCursor : CPulseExecCursor, IConvertibleNativeHandle<CPulseServerCursor> {
+public partial interface CPulseServerCursor : CPulseExecCursor, ISchemaClass<CPulseServerCursor> {
 
-  static CPulseServerCursor IConvertibleNativeHandle<CPulseServerCursor>.From(nint handle) => new CPulseServerCursorImpl(handle);
+  static CPulseServerCursor ISchemaClass<CPulseServerCursor>.From(nint handle) => new CPulseServerCursorImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Activator { get; }

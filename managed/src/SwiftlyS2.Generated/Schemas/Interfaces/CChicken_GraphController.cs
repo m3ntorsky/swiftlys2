@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CChicken_GraphController : CBaseAnimGraphAnimGraphController, IConvertibleNativeHandle<CChicken_GraphController> {
+public partial interface CChicken_GraphController : CBaseAnimGraphAnimGraphController, ISchemaClass<CChicken_GraphController> {
 
-  static CChicken_GraphController IConvertibleNativeHandle<CChicken_GraphController>.From(nint handle) => new CChicken_GraphControllerImpl(handle);
+  static CChicken_GraphController ISchemaClass<CChicken_GraphController>.From(nint handle) => new CChicken_GraphControllerImpl(handle);
 
   
   // CAnimGraphParamRef< char* >

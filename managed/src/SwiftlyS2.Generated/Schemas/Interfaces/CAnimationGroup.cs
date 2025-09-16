@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimationGroup : ISchemaClass, IConvertibleNativeHandle<CAnimationGroup> {
+public partial interface CAnimationGroup : ISchemaClass<CAnimationGroup> {
 
-  static CAnimationGroup IConvertibleNativeHandle<CAnimationGroup>.From(nint handle) => new CAnimationGroupImpl(handle);
+  static CAnimationGroup ISchemaClass<CAnimationGroup>.From(nint handle) => new CAnimationGroupImpl(handle);
 
   
   public ref uint Flags { get; }

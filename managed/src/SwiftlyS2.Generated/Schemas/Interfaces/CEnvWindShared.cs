@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvWindShared : ISchemaClass, IConvertibleNativeHandle<CEnvWindShared> {
+public partial interface CEnvWindShared : ISchemaClass<CEnvWindShared> {
 
-  static CEnvWindShared IConvertibleNativeHandle<CEnvWindShared>.From(nint handle) => new CEnvWindSharedImpl(handle);
+  static CEnvWindShared ISchemaClass<CEnvWindShared>.From(nint handle) => new CEnvWindSharedImpl(handle);
 
   
   public GameTime_t StartTime { get; }

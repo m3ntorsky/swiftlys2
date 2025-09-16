@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNetworkedSequenceOperation : ISchemaClass, IConvertibleNativeHandle<CNetworkedSequenceOperation> {
+public partial interface CNetworkedSequenceOperation : ISchemaClass<CNetworkedSequenceOperation> {
 
-  static CNetworkedSequenceOperation IConvertibleNativeHandle<CNetworkedSequenceOperation>.From(nint handle) => new CNetworkedSequenceOperationImpl(handle);
+  static CNetworkedSequenceOperation ISchemaClass<CNetworkedSequenceOperation>.From(nint handle) => new CNetworkedSequenceOperationImpl(handle);
 
   
   public HSequence Sequence { get; }

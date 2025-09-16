@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseCSGrenadeProjectile : CBaseGrenade, IConvertibleNativeHandle<CBaseCSGrenadeProjectile> {
+public partial interface CBaseCSGrenadeProjectile : CBaseGrenade, ISchemaClass<CBaseCSGrenadeProjectile> {
 
-  static CBaseCSGrenadeProjectile IConvertibleNativeHandle<CBaseCSGrenadeProjectile>.From(nint handle) => new CBaseCSGrenadeProjectileImpl(handle);
+  static CBaseCSGrenadeProjectile ISchemaClass<CBaseCSGrenadeProjectile>.From(nint handle) => new CBaseCSGrenadeProjectileImpl(handle);
 
   
   public ref Vector InitialPosition { get; }

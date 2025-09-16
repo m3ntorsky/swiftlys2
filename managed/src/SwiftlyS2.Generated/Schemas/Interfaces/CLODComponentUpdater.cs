@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLODComponentUpdater : CAnimComponentUpdater, IConvertibleNativeHandle<CLODComponentUpdater> {
+public partial interface CLODComponentUpdater : CAnimComponentUpdater, ISchemaClass<CLODComponentUpdater> {
 
-  static CLODComponentUpdater IConvertibleNativeHandle<CLODComponentUpdater>.From(nint handle) => new CLODComponentUpdaterImpl(handle);
+  static CLODComponentUpdater ISchemaClass<CLODComponentUpdater>.From(nint handle) => new CLODComponentUpdaterImpl(handle);
 
   
   public ref int ServerLOD { get; }

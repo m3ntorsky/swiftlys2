@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FollowAttachmentData : ISchemaClass, IConvertibleNativeHandle<FollowAttachmentData> {
+public partial interface FollowAttachmentData : ISchemaClass<FollowAttachmentData> {
 
-  static FollowAttachmentData IConvertibleNativeHandle<FollowAttachmentData>.From(nint handle) => new FollowAttachmentDataImpl(handle);
+  static FollowAttachmentData ISchemaClass<FollowAttachmentData>.From(nint handle) => new FollowAttachmentDataImpl(handle);
 
   
   public ref int BoneIndex { get; }

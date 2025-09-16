@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface HSequence : ISchemaClass, IConvertibleNativeHandle<HSequence> {
+public partial interface HSequence : ISchemaClass<HSequence> {
 
-  static HSequence IConvertibleNativeHandle<HSequence>.From(nint handle) => new HSequenceImpl(handle);
+  static HSequence ISchemaClass<HSequence>.From(nint handle) => new HSequenceImpl(handle);
 
   
   public ref int Value { get; }

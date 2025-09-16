@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBlockSelectionMetricEvaluator : CMotionMetricEvaluator, IConvertibleNativeHandle<CBlockSelectionMetricEvaluator> {
+public partial interface CBlockSelectionMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CBlockSelectionMetricEvaluator> {
 
-  static CBlockSelectionMetricEvaluator IConvertibleNativeHandle<CBlockSelectionMetricEvaluator>.From(nint handle) => new CBlockSelectionMetricEvaluatorImpl(handle);
+  static CBlockSelectionMetricEvaluator ISchemaClass<CBlockSelectionMetricEvaluator>.From(nint handle) => new CBlockSelectionMetricEvaluatorImpl(handle);
 
 
 

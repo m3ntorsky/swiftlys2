@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CResponseCriteriaSet : ISchemaClass, IConvertibleNativeHandle<CResponseCriteriaSet> {
+public partial interface CResponseCriteriaSet : ISchemaClass<CResponseCriteriaSet> {
 
-  static CResponseCriteriaSet IConvertibleNativeHandle<CResponseCriteriaSet>.From(nint handle) => new CResponseCriteriaSetImpl(handle);
+  static CResponseCriteriaSet ISchemaClass<CResponseCriteriaSet>.From(nint handle) => new CResponseCriteriaSetImpl(handle);
 
   
   public ref int NumPrefixedContexts { get; }

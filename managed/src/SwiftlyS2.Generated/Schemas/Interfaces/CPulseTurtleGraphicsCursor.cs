@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseTurtleGraphicsCursor : CPulseExecCursor, IConvertibleNativeHandle<CPulseTurtleGraphicsCursor> {
+public partial interface CPulseTurtleGraphicsCursor : CPulseExecCursor, ISchemaClass<CPulseTurtleGraphicsCursor> {
 
-  static CPulseTurtleGraphicsCursor IConvertibleNativeHandle<CPulseTurtleGraphicsCursor>.From(nint handle) => new CPulseTurtleGraphicsCursorImpl(handle);
+  static CPulseTurtleGraphicsCursor ISchemaClass<CPulseTurtleGraphicsCursor>.From(nint handle) => new CPulseTurtleGraphicsCursorImpl(handle);
 
   
   public ref Color Color { get; }

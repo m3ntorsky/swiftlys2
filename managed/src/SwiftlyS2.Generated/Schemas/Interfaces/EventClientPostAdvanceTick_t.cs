@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventClientPostAdvanceTick_t : EventPostAdvanceTick_t, IConvertibleNativeHandle<EventClientPostAdvanceTick_t> {
+public partial interface EventClientPostAdvanceTick_t : EventPostAdvanceTick_t, ISchemaClass<EventClientPostAdvanceTick_t> {
 
-  static EventClientPostAdvanceTick_t IConvertibleNativeHandle<EventClientPostAdvanceTick_t>.From(nint handle) => new EventClientPostAdvanceTick_tImpl(handle);
+  static EventClientPostAdvanceTick_t ISchemaClass<EventClientPostAdvanceTick_t>.From(nint handle) => new EventClientPostAdvanceTick_tImpl(handle);
 
 
 

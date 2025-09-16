@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysFixed : CPhysConstraint, IConvertibleNativeHandle<CPhysFixed> {
+public partial interface CPhysFixed : CPhysConstraint, ISchemaClass<CPhysFixed> {
 
-  static CPhysFixed IConvertibleNativeHandle<CPhysFixed>.From(nint handle) => new CPhysFixedImpl(handle);
+  static CPhysFixed ISchemaClass<CPhysFixed>.From(nint handle) => new CPhysFixedImpl(handle);
 
   
   public ref float LinearFrequency { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomLifeTime : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RandomLifeTime> {
+public partial interface C_INIT_RandomLifeTime : CParticleFunctionInitializer, ISchemaClass<C_INIT_RandomLifeTime> {
 
-  static C_INIT_RandomLifeTime IConvertibleNativeHandle<C_INIT_RandomLifeTime>.From(nint handle) => new C_INIT_RandomLifeTimeImpl(handle);
+  static C_INIT_RandomLifeTime ISchemaClass<C_INIT_RandomLifeTime>.From(nint handle) => new C_INIT_RandomLifeTimeImpl(handle);
 
   
   public ref float LifetimeMin { get; }

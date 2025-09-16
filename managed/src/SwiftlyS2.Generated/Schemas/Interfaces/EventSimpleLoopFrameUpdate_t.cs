@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventSimpleLoopFrameUpdate_t : ISchemaClass, IConvertibleNativeHandle<EventSimpleLoopFrameUpdate_t> {
+public partial interface EventSimpleLoopFrameUpdate_t : ISchemaClass<EventSimpleLoopFrameUpdate_t> {
 
-  static EventSimpleLoopFrameUpdate_t IConvertibleNativeHandle<EventSimpleLoopFrameUpdate_t>.From(nint handle) => new EventSimpleLoopFrameUpdate_tImpl(handle);
+  static EventSimpleLoopFrameUpdate_t ISchemaClass<EventSimpleLoopFrameUpdate_t>.From(nint handle) => new EventSimpleLoopFrameUpdate_tImpl(handle);
 
   
   public EngineLoopState_t LoopState { get; }

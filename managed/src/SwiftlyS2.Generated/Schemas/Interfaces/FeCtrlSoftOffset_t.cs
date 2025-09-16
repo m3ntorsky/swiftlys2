@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeCtrlSoftOffset_t : ISchemaClass, IConvertibleNativeHandle<FeCtrlSoftOffset_t> {
+public partial interface FeCtrlSoftOffset_t : ISchemaClass<FeCtrlSoftOffset_t> {
 
-  static FeCtrlSoftOffset_t IConvertibleNativeHandle<FeCtrlSoftOffset_t>.From(nint handle) => new FeCtrlSoftOffset_tImpl(handle);
+  static FeCtrlSoftOffset_t ISchemaClass<FeCtrlSoftOffset_t>.From(nint handle) => new FeCtrlSoftOffset_tImpl(handle);
 
   
   public ref ushort CtrlParent { get; }

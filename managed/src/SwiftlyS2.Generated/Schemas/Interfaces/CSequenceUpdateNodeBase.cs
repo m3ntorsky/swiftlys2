@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSequenceUpdateNodeBase : CLeafUpdateNode, IConvertibleNativeHandle<CSequenceUpdateNodeBase> {
+public partial interface CSequenceUpdateNodeBase : CLeafUpdateNode, ISchemaClass<CSequenceUpdateNodeBase> {
 
-  static CSequenceUpdateNodeBase IConvertibleNativeHandle<CSequenceUpdateNodeBase>.From(nint handle) => new CSequenceUpdateNodeBaseImpl(handle);
+  static CSequenceUpdateNodeBase ISchemaClass<CSequenceUpdateNodeBase>.From(nint handle) => new CSequenceUpdateNodeBaseImpl(handle);
 
   
   public ref float PlaybackSpeed { get; }

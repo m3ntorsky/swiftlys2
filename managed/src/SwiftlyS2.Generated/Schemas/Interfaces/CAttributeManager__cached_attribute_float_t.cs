@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAttributeManager__cached_attribute_float_t : ISchemaClass, IConvertibleNativeHandle<CAttributeManager__cached_attribute_float_t> {
+public partial interface CAttributeManager__cached_attribute_float_t : ISchemaClass<CAttributeManager__cached_attribute_float_t> {
 
-  static CAttributeManager__cached_attribute_float_t IConvertibleNativeHandle<CAttributeManager__cached_attribute_float_t>.From(nint handle) => new CAttributeManager__cached_attribute_float_tImpl(handle);
+  static CAttributeManager__cached_attribute_float_t ISchemaClass<CAttributeManager__cached_attribute_float_t>.From(nint handle) => new CAttributeManager__cached_attribute_float_tImpl(handle);
 
   
   public ref float In { get; }

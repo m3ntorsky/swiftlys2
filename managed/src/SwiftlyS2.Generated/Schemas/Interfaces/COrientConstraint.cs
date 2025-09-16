@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface COrientConstraint : CBaseConstraint, IConvertibleNativeHandle<COrientConstraint> {
+public partial interface COrientConstraint : CBaseConstraint, ISchemaClass<COrientConstraint> {
 
-  static COrientConstraint IConvertibleNativeHandle<COrientConstraint>.From(nint handle) => new COrientConstraintImpl(handle);
+  static COrientConstraint ISchemaClass<COrientConstraint>.From(nint handle) => new COrientConstraintImpl(handle);
 
 
 

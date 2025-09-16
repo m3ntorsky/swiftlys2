@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IKBoneNameAndIndex_t : ISchemaClass, IConvertibleNativeHandle<IKBoneNameAndIndex_t> {
+public partial interface IKBoneNameAndIndex_t : ISchemaClass<IKBoneNameAndIndex_t> {
 
-  static IKBoneNameAndIndex_t IConvertibleNativeHandle<IKBoneNameAndIndex_t>.From(nint handle) => new IKBoneNameAndIndex_tImpl(handle);
+  static IKBoneNameAndIndex_t ISchemaClass<IKBoneNameAndIndex_t>.From(nint handle) => new IKBoneNameAndIndex_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

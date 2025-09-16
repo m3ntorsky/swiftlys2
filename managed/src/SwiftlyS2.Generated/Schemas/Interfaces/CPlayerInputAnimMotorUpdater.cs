@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlayerInputAnimMotorUpdater : CAnimMotorUpdaterBase, IConvertibleNativeHandle<CPlayerInputAnimMotorUpdater> {
+public partial interface CPlayerInputAnimMotorUpdater : CAnimMotorUpdaterBase, ISchemaClass<CPlayerInputAnimMotorUpdater> {
 
-  static CPlayerInputAnimMotorUpdater IConvertibleNativeHandle<CPlayerInputAnimMotorUpdater>.From(nint handle) => new CPlayerInputAnimMotorUpdaterImpl(handle);
+  static CPlayerInputAnimMotorUpdater ISchemaClass<CPlayerInputAnimMotorUpdater>.From(nint handle) => new CPlayerInputAnimMotorUpdaterImpl(handle);
 
   
   public ref CUtlVector<float> SampleTimes { get; }

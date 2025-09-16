@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSGO_TeamIntroCounterTerroristPosition : CCSGO_TeamIntroCharacterPosition, IConvertibleNativeHandle<CCSGO_TeamIntroCounterTerroristPosition> {
+public partial interface CCSGO_TeamIntroCounterTerroristPosition : CCSGO_TeamIntroCharacterPosition, ISchemaClass<CCSGO_TeamIntroCounterTerroristPosition> {
 
-  static CCSGO_TeamIntroCounterTerroristPosition IConvertibleNativeHandle<CCSGO_TeamIntroCounterTerroristPosition>.From(nint handle) => new CCSGO_TeamIntroCounterTerroristPositionImpl(handle);
+  static CCSGO_TeamIntroCounterTerroristPosition ISchemaClass<CCSGO_TeamIntroCounterTerroristPosition>.From(nint handle) => new CCSGO_TeamIntroCounterTerroristPositionImpl(handle);
 
 
 

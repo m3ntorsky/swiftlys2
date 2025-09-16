@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBreakableStageHelper : ISchemaClass, IConvertibleNativeHandle<CBreakableStageHelper> {
+public partial interface CBreakableStageHelper : ISchemaClass<CBreakableStageHelper> {
 
-  static CBreakableStageHelper IConvertibleNativeHandle<CBreakableStageHelper>.From(nint handle) => new CBreakableStageHelperImpl(handle);
+  static CBreakableStageHelper ISchemaClass<CBreakableStageHelper>.From(nint handle) => new CBreakableStageHelperImpl(handle);
 
   
   public ref int CurrentStage { get; }

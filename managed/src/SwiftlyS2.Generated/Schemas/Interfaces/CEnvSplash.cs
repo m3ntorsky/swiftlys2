@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvSplash : CPointEntity, IConvertibleNativeHandle<CEnvSplash> {
+public partial interface CEnvSplash : CPointEntity, ISchemaClass<CEnvSplash> {
 
-  static CEnvSplash IConvertibleNativeHandle<CEnvSplash>.From(nint handle) => new CEnvSplashImpl(handle);
+  static CEnvSplash ISchemaClass<CEnvSplash>.From(nint handle) => new CEnvSplashImpl(handle);
 
   
   public ref float Scale { get; }

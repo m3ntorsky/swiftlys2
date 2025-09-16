@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointPositions : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetControlPointPositions> {
+public partial interface C_OP_SetControlPointPositions : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetControlPointPositions> {
 
-  static C_OP_SetControlPointPositions IConvertibleNativeHandle<C_OP_SetControlPointPositions>.From(nint handle) => new C_OP_SetControlPointPositionsImpl(handle);
+  static C_OP_SetControlPointPositions ISchemaClass<C_OP_SetControlPointPositions>.From(nint handle) => new C_OP_SetControlPointPositionsImpl(handle);
 
   
   public ref bool UseWorldLocation { get; }

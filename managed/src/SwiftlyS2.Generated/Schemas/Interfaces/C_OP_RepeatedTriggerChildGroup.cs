@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RepeatedTriggerChildGroup : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_RepeatedTriggerChildGroup> {
+public partial interface C_OP_RepeatedTriggerChildGroup : CParticleFunctionPreEmission, ISchemaClass<C_OP_RepeatedTriggerChildGroup> {
 
-  static C_OP_RepeatedTriggerChildGroup IConvertibleNativeHandle<C_OP_RepeatedTriggerChildGroup>.From(nint handle) => new C_OP_RepeatedTriggerChildGroupImpl(handle);
+  static C_OP_RepeatedTriggerChildGroup ISchemaClass<C_OP_RepeatedTriggerChildGroup>.From(nint handle) => new C_OP_RepeatedTriggerChildGroupImpl(handle);
 
   
   public ref int ChildGroupID { get; }

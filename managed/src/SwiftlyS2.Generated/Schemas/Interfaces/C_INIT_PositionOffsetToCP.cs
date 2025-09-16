@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_PositionOffsetToCP : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_PositionOffsetToCP> {
+public partial interface C_INIT_PositionOffsetToCP : CParticleFunctionInitializer, ISchemaClass<C_INIT_PositionOffsetToCP> {
 
-  static C_INIT_PositionOffsetToCP IConvertibleNativeHandle<C_INIT_PositionOffsetToCP>.From(nint handle) => new C_INIT_PositionOffsetToCPImpl(handle);
+  static C_INIT_PositionOffsetToCP ISchemaClass<C_INIT_PositionOffsetToCP>.From(nint handle) => new C_INIT_PositionOffsetToCPImpl(handle);
 
   
   public ref int ControlPointNumberStart { get; }

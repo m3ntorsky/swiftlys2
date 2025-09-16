@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_DistanceBetweenVecs : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_DistanceBetweenVecs> {
+public partial interface C_OP_DistanceBetweenVecs : CParticleFunctionOperator, ISchemaClass<C_OP_DistanceBetweenVecs> {
 
-  static C_OP_DistanceBetweenVecs IConvertibleNativeHandle<C_OP_DistanceBetweenVecs>.From(nint handle) => new C_OP_DistanceBetweenVecsImpl(handle);
+  static C_OP_DistanceBetweenVecs ISchemaClass<C_OP_DistanceBetweenVecs>.From(nint handle) => new C_OP_DistanceBetweenVecsImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

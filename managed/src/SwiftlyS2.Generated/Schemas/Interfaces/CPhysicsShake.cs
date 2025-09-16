@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysicsShake : ISchemaClass, IConvertibleNativeHandle<CPhysicsShake> {
+public partial interface CPhysicsShake : ISchemaClass<CPhysicsShake> {
 
-  static CPhysicsShake IConvertibleNativeHandle<CPhysicsShake>.From(nint handle) => new CPhysicsShakeImpl(handle);
+  static CPhysicsShake ISchemaClass<CPhysicsShake>.From(nint handle) => new CPhysicsShakeImpl(handle);
 
   
   public ref Vector Force { get; }

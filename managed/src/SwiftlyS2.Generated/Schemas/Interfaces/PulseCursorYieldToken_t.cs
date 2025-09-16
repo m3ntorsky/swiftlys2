@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseCursorYieldToken_t : ISchemaClass, IConvertibleNativeHandle<PulseCursorYieldToken_t> {
+public partial interface PulseCursorYieldToken_t : ISchemaClass<PulseCursorYieldToken_t> {
 
-  static PulseCursorYieldToken_t IConvertibleNativeHandle<PulseCursorYieldToken_t>.From(nint handle) => new PulseCursorYieldToken_tImpl(handle);
+  static PulseCursorYieldToken_t ISchemaClass<PulseCursorYieldToken_t>.From(nint handle) => new PulseCursorYieldToken_tImpl(handle);
 
   
   public ref int Value { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSkyCamera : CBaseEntity, IConvertibleNativeHandle<CSkyCamera> {
+public partial interface CSkyCamera : CBaseEntity, ISchemaClass<CSkyCamera> {
 
-  static CSkyCamera IConvertibleNativeHandle<CSkyCamera>.From(nint handle) => new CSkyCameraImpl(handle);
+  static CSkyCamera ISchemaClass<CSkyCamera>.From(nint handle) => new CSkyCameraImpl(handle);
 
   
   public sky3dparams_t SkyboxData { get; }

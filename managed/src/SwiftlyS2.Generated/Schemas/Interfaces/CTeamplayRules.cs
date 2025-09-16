@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTeamplayRules : CMultiplayRules, IConvertibleNativeHandle<CTeamplayRules> {
+public partial interface CTeamplayRules : CMultiplayRules, ISchemaClass<CTeamplayRules> {
 
-  static CTeamplayRules IConvertibleNativeHandle<CTeamplayRules>.From(nint handle) => new CTeamplayRulesImpl(handle);
+  static CTeamplayRules ISchemaClass<CTeamplayRules>.From(nint handle) => new CTeamplayRulesImpl(handle);
 
 
 

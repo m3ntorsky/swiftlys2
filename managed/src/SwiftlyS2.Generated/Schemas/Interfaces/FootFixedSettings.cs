@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FootFixedSettings : ISchemaClass, IConvertibleNativeHandle<FootFixedSettings> {
+public partial interface FootFixedSettings : ISchemaClass<FootFixedSettings> {
 
-  static FootFixedSettings IConvertibleNativeHandle<FootFixedSettings>.From(nint handle) => new FootFixedSettingsImpl(handle);
+  static FootFixedSettings ISchemaClass<FootFixedSettings>.From(nint handle) => new FootFixedSettingsImpl(handle);
 
   
   public TraceSettings_t TraceSettings { get; }

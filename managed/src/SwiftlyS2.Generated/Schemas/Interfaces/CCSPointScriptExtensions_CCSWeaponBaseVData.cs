@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPointScriptExtensions_CCSWeaponBaseVData : ISchemaClass, IConvertibleNativeHandle<CCSPointScriptExtensions_CCSWeaponBaseVData> {
+public partial interface CCSPointScriptExtensions_CCSWeaponBaseVData : ISchemaClass<CCSPointScriptExtensions_CCSWeaponBaseVData> {
 
-  static CCSPointScriptExtensions_CCSWeaponBaseVData IConvertibleNativeHandle<CCSPointScriptExtensions_CCSWeaponBaseVData>.From(nint handle) => new CCSPointScriptExtensions_CCSWeaponBaseVDataImpl(handle);
+  static CCSPointScriptExtensions_CCSWeaponBaseVData ISchemaClass<CCSPointScriptExtensions_CCSWeaponBaseVData>.From(nint handle) => new CCSPointScriptExtensions_CCSWeaponBaseVDataImpl(handle);
 
 
 

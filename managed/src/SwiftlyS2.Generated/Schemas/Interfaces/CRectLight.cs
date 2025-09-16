@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRectLight : CBarnLight, IConvertibleNativeHandle<CRectLight> {
+public partial interface CRectLight : CBarnLight, ISchemaClass<CRectLight> {
 
-  static CRectLight IConvertibleNativeHandle<CRectLight>.From(nint handle) => new CRectLightImpl(handle);
+  static CRectLight ISchemaClass<CRectLight>.From(nint handle) => new CRectLightImpl(handle);
 
   
   public ref bool ShowLight { get; }

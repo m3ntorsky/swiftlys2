@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundAreaEntityBase : CBaseEntity, IConvertibleNativeHandle<CSoundAreaEntityBase> {
+public partial interface CSoundAreaEntityBase : CBaseEntity, ISchemaClass<CSoundAreaEntityBase> {
 
-  static CSoundAreaEntityBase IConvertibleNativeHandle<CSoundAreaEntityBase>.From(nint handle) => new CSoundAreaEntityBaseImpl(handle);
+  static CSoundAreaEntityBase ISchemaClass<CSoundAreaEntityBase>.From(nint handle) => new CSoundAreaEntityBaseImpl(handle);
 
   
   public ref bool Disabled { get; }

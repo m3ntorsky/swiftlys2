@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlace : CServerOnlyModelEntity, IConvertibleNativeHandle<CCSPlace> {
+public partial interface CCSPlace : CServerOnlyModelEntity, ISchemaClass<CCSPlace> {
 
-  static CCSPlace IConvertibleNativeHandle<CCSPlace>.From(nint handle) => new CCSPlaceImpl(handle);
+  static CCSPlace ISchemaClass<CCSPlace>.From(nint handle) => new CCSPlaceImpl(handle);
 
   
   public ref CUtlSymbolLarge Name { get; }

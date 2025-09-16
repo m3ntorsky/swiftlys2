@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavSpaceInfo : CPointEntity, IConvertibleNativeHandle<CNavSpaceInfo> {
+public partial interface CNavSpaceInfo : CPointEntity, ISchemaClass<CNavSpaceInfo> {
 
-  static CNavSpaceInfo IConvertibleNativeHandle<CNavSpaceInfo>.From(nint handle) => new CNavSpaceInfoImpl(handle);
+  static CNavSpaceInfo ISchemaClass<CNavSpaceInfo>.From(nint handle) => new CNavSpaceInfoImpl(handle);
 
 
 

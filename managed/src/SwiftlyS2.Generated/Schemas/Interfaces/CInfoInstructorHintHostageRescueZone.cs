@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoInstructorHintHostageRescueZone : CPointEntity, IConvertibleNativeHandle<CInfoInstructorHintHostageRescueZone> {
+public partial interface CInfoInstructorHintHostageRescueZone : CPointEntity, ISchemaClass<CInfoInstructorHintHostageRescueZone> {
 
-  static CInfoInstructorHintHostageRescueZone IConvertibleNativeHandle<CInfoInstructorHintHostageRescueZone>.From(nint handle) => new CInfoInstructorHintHostageRescueZoneImpl(handle);
+  static CInfoInstructorHintHostageRescueZone ISchemaClass<CInfoInstructorHintHostageRescueZone>.From(nint handle) => new CInfoInstructorHintHostageRescueZoneImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerCallback : CBaseTrigger, IConvertibleNativeHandle<CTriggerCallback> {
+public partial interface CTriggerCallback : CBaseTrigger, ISchemaClass<CTriggerCallback> {
 
-  static CTriggerCallback IConvertibleNativeHandle<CTriggerCallback>.From(nint handle) => new CTriggerCallbackImpl(handle);
+  static CTriggerCallback ISchemaClass<CTriggerCallback>.From(nint handle) => new CTriggerCallbackImpl(handle);
 
 
 

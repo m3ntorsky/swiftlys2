@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundContainerReference : ISchemaClass, IConvertibleNativeHandle<CSoundContainerReference> {
+public partial interface CSoundContainerReference : ISchemaClass<CSoundContainerReference> {
 
-  static CSoundContainerReference IConvertibleNativeHandle<CSoundContainerReference>.From(nint handle) => new CSoundContainerReferenceImpl(handle);
+  static CSoundContainerReference ISchemaClass<CSoundContainerReference>.From(nint handle) => new CSoundContainerReferenceImpl(handle);
 
   
   public ref bool UseReference { get; }

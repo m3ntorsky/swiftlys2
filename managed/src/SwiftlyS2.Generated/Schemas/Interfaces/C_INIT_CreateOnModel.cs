@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateOnModel : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateOnModel> {
+public partial interface C_INIT_CreateOnModel : CParticleFunctionInitializer, ISchemaClass<C_INIT_CreateOnModel> {
 
-  static C_INIT_CreateOnModel IConvertibleNativeHandle<C_INIT_CreateOnModel>.From(nint handle) => new C_INIT_CreateOnModelImpl(handle);
+  static C_INIT_CreateOnModel ISchemaClass<C_INIT_CreateOnModel>.From(nint handle) => new C_INIT_CreateOnModelImpl(handle);
 
   
   public CParticleModelInput ModelInput { get; }

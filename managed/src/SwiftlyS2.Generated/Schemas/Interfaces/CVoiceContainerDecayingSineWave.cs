@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerDecayingSineWave : CVoiceContainerBase, IConvertibleNativeHandle<CVoiceContainerDecayingSineWave> {
+public partial interface CVoiceContainerDecayingSineWave : CVoiceContainerBase, ISchemaClass<CVoiceContainerDecayingSineWave> {
 
-  static CVoiceContainerDecayingSineWave IConvertibleNativeHandle<CVoiceContainerDecayingSineWave>.From(nint handle) => new CVoiceContainerDecayingSineWaveImpl(handle);
+  static CVoiceContainerDecayingSineWave ISchemaClass<CVoiceContainerDecayingSineWave>.From(nint handle) => new CVoiceContainerDecayingSineWaveImpl(handle);
 
   
   public ref float Frequency { get; }

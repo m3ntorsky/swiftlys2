@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnBodyDesc_t : ISchemaClass, IConvertibleNativeHandle<RnBodyDesc_t> {
+public partial interface RnBodyDesc_t : ISchemaClass<RnBodyDesc_t> {
 
-  static RnBodyDesc_t IConvertibleNativeHandle<RnBodyDesc_t>.From(nint handle) => new RnBodyDesc_tImpl(handle);
+  static RnBodyDesc_t ISchemaClass<RnBodyDesc_t>.From(nint handle) => new RnBodyDesc_tImpl(handle);
 
   
   public ref CUtlString DebugName { get; }

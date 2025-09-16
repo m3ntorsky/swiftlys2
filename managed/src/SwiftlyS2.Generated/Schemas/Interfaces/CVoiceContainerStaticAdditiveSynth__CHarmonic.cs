@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerStaticAdditiveSynth__CHarmonic : ISchemaClass, IConvertibleNativeHandle<CVoiceContainerStaticAdditiveSynth__CHarmonic> {
+public partial interface CVoiceContainerStaticAdditiveSynth__CHarmonic : ISchemaClass<CVoiceContainerStaticAdditiveSynth__CHarmonic> {
 
-  static CVoiceContainerStaticAdditiveSynth__CHarmonic IConvertibleNativeHandle<CVoiceContainerStaticAdditiveSynth__CHarmonic>.From(nint handle) => new CVoiceContainerStaticAdditiveSynth__CHarmonicImpl(handle);
+  static CVoiceContainerStaticAdditiveSynth__CHarmonic ISchemaClass<CVoiceContainerStaticAdditiveSynth__CHarmonic>.From(nint handle) => new CVoiceContainerStaticAdditiveSynth__CHarmonicImpl(handle);
 
   
   public ref EWaveform Waveform { get; }

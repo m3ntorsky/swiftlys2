@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvVolumetricFogVolume : CBaseEntity, IConvertibleNativeHandle<CEnvVolumetricFogVolume> {
+public partial interface CEnvVolumetricFogVolume : CBaseEntity, ISchemaClass<CEnvVolumetricFogVolume> {
 
-  static CEnvVolumetricFogVolume IConvertibleNativeHandle<CEnvVolumetricFogVolume>.From(nint handle) => new CEnvVolumetricFogVolumeImpl(handle);
+  static CEnvVolumetricFogVolume ISchemaClass<CEnvVolumetricFogVolume>.From(nint handle) => new CEnvVolumetricFogVolumeImpl(handle);
 
   
   public ref bool Active { get; }

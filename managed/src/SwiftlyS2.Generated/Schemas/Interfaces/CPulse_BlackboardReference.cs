@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulse_BlackboardReference : ISchemaClass, IConvertibleNativeHandle<CPulse_BlackboardReference> {
+public partial interface CPulse_BlackboardReference : ISchemaClass<CPulse_BlackboardReference> {
 
-  static CPulse_BlackboardReference IConvertibleNativeHandle<CPulse_BlackboardReference>.From(nint handle) => new CPulse_BlackboardReferenceImpl(handle);
+  static CPulse_BlackboardReference ISchemaClass<CPulse_BlackboardReference>.From(nint handle) => new CPulse_BlackboardReferenceImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeIPulseGraphDef> BlackboardResource { get; }

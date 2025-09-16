@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_TestWaitWithCursorState : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_TestWaitWithCursorState> {
+public partial interface CPulseCell_TestWaitWithCursorState : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_TestWaitWithCursorState> {
 
-  static CPulseCell_TestWaitWithCursorState IConvertibleNativeHandle<CPulseCell_TestWaitWithCursorState>.From(nint handle) => new CPulseCell_TestWaitWithCursorStateImpl(handle);
+  static CPulseCell_TestWaitWithCursorState ISchemaClass<CPulseCell_TestWaitWithCursorState>.From(nint handle) => new CPulseCell_TestWaitWithCursorStateImpl(handle);
 
   
   public CPulse_ResumePoint WakeResume { get; }

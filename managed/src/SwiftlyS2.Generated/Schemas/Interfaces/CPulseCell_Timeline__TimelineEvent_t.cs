@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Timeline__TimelineEvent_t : ISchemaClass, IConvertibleNativeHandle<CPulseCell_Timeline__TimelineEvent_t> {
+public partial interface CPulseCell_Timeline__TimelineEvent_t : ISchemaClass<CPulseCell_Timeline__TimelineEvent_t> {
 
-  static CPulseCell_Timeline__TimelineEvent_t IConvertibleNativeHandle<CPulseCell_Timeline__TimelineEvent_t>.From(nint handle) => new CPulseCell_Timeline__TimelineEvent_tImpl(handle);
+  static CPulseCell_Timeline__TimelineEvent_t ISchemaClass<CPulseCell_Timeline__TimelineEvent_t>.From(nint handle) => new CPulseCell_Timeline__TimelineEvent_tImpl(handle);
 
   
   public ref float TimeFromPrevious { get; }

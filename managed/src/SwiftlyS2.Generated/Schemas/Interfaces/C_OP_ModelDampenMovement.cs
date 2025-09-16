@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ModelDampenMovement : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_ModelDampenMovement> {
+public partial interface C_OP_ModelDampenMovement : CParticleFunctionOperator, ISchemaClass<C_OP_ModelDampenMovement> {
 
-  static C_OP_ModelDampenMovement IConvertibleNativeHandle<C_OP_ModelDampenMovement>.From(nint handle) => new C_OP_ModelDampenMovementImpl(handle);
+  static C_OP_ModelDampenMovement ISchemaClass<C_OP_ModelDampenMovement>.From(nint handle) => new C_OP_ModelDampenMovementImpl(handle);
 
   
   public ref int ControlPointNumber { get; }

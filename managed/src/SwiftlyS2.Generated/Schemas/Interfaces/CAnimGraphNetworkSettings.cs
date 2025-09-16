@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimGraphNetworkSettings : CAnimGraphSettingsGroup, IConvertibleNativeHandle<CAnimGraphNetworkSettings> {
+public partial interface CAnimGraphNetworkSettings : CAnimGraphSettingsGroup, ISchemaClass<CAnimGraphNetworkSettings> {
 
-  static CAnimGraphNetworkSettings IConvertibleNativeHandle<CAnimGraphNetworkSettings>.From(nint handle) => new CAnimGraphNetworkSettingsImpl(handle);
+  static CAnimGraphNetworkSettings ISchemaClass<CAnimGraphNetworkSettings>.From(nint handle) => new CAnimGraphNetworkSettingsImpl(handle);
 
   
   public ref bool NetworkingEnabled { get; }

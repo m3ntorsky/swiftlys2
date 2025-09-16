@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAimMatrixUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CAimMatrixUpdateNode> {
+public partial interface CAimMatrixUpdateNode : CUnaryUpdateNode, ISchemaClass<CAimMatrixUpdateNode> {
 
-  static CAimMatrixUpdateNode IConvertibleNativeHandle<CAimMatrixUpdateNode>.From(nint handle) => new CAimMatrixUpdateNodeImpl(handle);
+  static CAimMatrixUpdateNode ISchemaClass<CAimMatrixUpdateNode>.From(nint handle) => new CAimMatrixUpdateNodeImpl(handle);
 
   
   public AimMatrixOpFixedSettings_t OpFixedSettings { get; }

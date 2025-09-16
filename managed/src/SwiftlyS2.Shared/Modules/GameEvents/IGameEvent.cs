@@ -1,3 +1,4 @@
+using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.GameEvents;
@@ -6,7 +7,7 @@ namespace SwiftlyS2.Shared.GameEvents;
 /// Represents a strongly-typed game event with helpers to set/get payload fields and fire the event.
 /// </summary>
 /// <typeparam name="T">Concrete event type implementing <see cref="IGameEvent{T}"/>.</typeparam>
-public interface IGameEvent<T> where T : IGameEvent<T>
+public interface IGameEvent<T> : INativeHandle where T : IGameEvent<T>
 {
   /// <summary>
   /// Creates an event wrapper for a pointer allocated by the engine.

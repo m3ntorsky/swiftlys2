@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeCollisionPlane_t : ISchemaClass, IConvertibleNativeHandle<FeCollisionPlane_t> {
+public partial interface FeCollisionPlane_t : ISchemaClass<FeCollisionPlane_t> {
 
-  static FeCollisionPlane_t IConvertibleNativeHandle<FeCollisionPlane_t>.From(nint handle) => new FeCollisionPlane_tImpl(handle);
+  static FeCollisionPlane_t ISchemaClass<FeCollisionPlane_t>.From(nint handle) => new FeCollisionPlane_tImpl(handle);
 
   
   public ref ushort CtrlParent { get; }

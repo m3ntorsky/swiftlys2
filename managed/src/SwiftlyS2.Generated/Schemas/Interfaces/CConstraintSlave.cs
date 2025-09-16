@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CConstraintSlave : ISchemaClass, IConvertibleNativeHandle<CConstraintSlave> {
+public partial interface CConstraintSlave : ISchemaClass<CConstraintSlave> {
 
-  static CConstraintSlave IConvertibleNativeHandle<CConstraintSlave>.From(nint handle) => new CConstraintSlaveImpl(handle);
+  static CConstraintSlave ISchemaClass<CConstraintSlave>.From(nint handle) => new CConstraintSlaveImpl(handle);
 
   
   public ref Quaternion BaseOrientation { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDspPresetModifierList : ISchemaClass, IConvertibleNativeHandle<CDspPresetModifierList> {
+public partial interface CDspPresetModifierList : ISchemaClass<CDspPresetModifierList> {
 
-  static CDspPresetModifierList IConvertibleNativeHandle<CDspPresetModifierList>.From(nint handle) => new CDspPresetModifierListImpl(handle);
+  static CDspPresetModifierList ISchemaClass<CDspPresetModifierList>.From(nint handle) => new CDspPresetModifierListImpl(handle);
 
   
   public ref CUtlString DspName { get; }

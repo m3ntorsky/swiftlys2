@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseTrailRenderer : CBaseRendererSource2, IConvertibleNativeHandle<CBaseTrailRenderer> {
+public partial interface CBaseTrailRenderer : CBaseRendererSource2, ISchemaClass<CBaseTrailRenderer> {
 
-  static CBaseTrailRenderer IConvertibleNativeHandle<CBaseTrailRenderer>.From(nint handle) => new CBaseTrailRendererImpl(handle);
+  static CBaseTrailRenderer ISchemaClass<CBaseTrailRenderer>.From(nint handle) => new CBaseTrailRendererImpl(handle);
 
   
   public ref ParticleOrientationChoiceList_t OrientationType { get; }

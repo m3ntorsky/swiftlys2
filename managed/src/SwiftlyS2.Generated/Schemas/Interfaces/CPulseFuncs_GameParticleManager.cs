@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseFuncs_GameParticleManager : ISchemaClass, IConvertibleNativeHandle<CPulseFuncs_GameParticleManager> {
+public partial interface CPulseFuncs_GameParticleManager : ISchemaClass<CPulseFuncs_GameParticleManager> {
 
-  static CPulseFuncs_GameParticleManager IConvertibleNativeHandle<CPulseFuncs_GameParticleManager>.From(nint handle) => new CPulseFuncs_GameParticleManagerImpl(handle);
+  static CPulseFuncs_GameParticleManager ISchemaClass<CPulseFuncs_GameParticleManager>.From(nint handle) => new CPulseFuncs_GameParticleManagerImpl(handle);
 
 
 

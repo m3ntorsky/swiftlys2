@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CColorCorrectionVolume : CBaseTrigger, IConvertibleNativeHandle<CColorCorrectionVolume> {
+public partial interface CColorCorrectionVolume : CBaseTrigger, ISchemaClass<CColorCorrectionVolume> {
 
-  static CColorCorrectionVolume IConvertibleNativeHandle<CColorCorrectionVolume>.From(nint handle) => new CColorCorrectionVolumeImpl(handle);
+  static CColorCorrectionVolume ISchemaClass<CColorCorrectionVolume>.From(nint handle) => new CColorCorrectionVolumeImpl(handle);
 
   
   public ref float MaxWeight { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFish : CBaseAnimGraph, IConvertibleNativeHandle<CFish> {
+public partial interface CFish : CBaseAnimGraph, ISchemaClass<CFish> {
 
-  static CFish IConvertibleNativeHandle<CFish>.From(nint handle) => new CFishImpl(handle);
+  static CFish ISchemaClass<CFish>.From(nint handle) => new CFishImpl(handle);
 
   
   public ref CHandle<CFishPool> Pool { get; }

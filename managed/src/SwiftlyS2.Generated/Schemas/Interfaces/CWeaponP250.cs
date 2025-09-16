@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CWeaponP250 : CCSWeaponBaseGun, IConvertibleNativeHandle<CWeaponP250> {
+public partial interface CWeaponP250 : CCSWeaponBaseGun, ISchemaClass<CWeaponP250> {
 
-  static CWeaponP250 IConvertibleNativeHandle<CWeaponP250>.From(nint handle) => new CWeaponP250Impl(handle);
+  static CWeaponP250 ISchemaClass<CWeaponP250>.From(nint handle) => new CWeaponP250Impl(handle);
 
 
 

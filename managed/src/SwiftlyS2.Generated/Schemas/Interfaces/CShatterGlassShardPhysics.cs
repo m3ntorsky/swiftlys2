@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CShatterGlassShardPhysics : CPhysicsProp, IConvertibleNativeHandle<CShatterGlassShardPhysics> {
+public partial interface CShatterGlassShardPhysics : CPhysicsProp, ISchemaClass<CShatterGlassShardPhysics> {
 
-  static CShatterGlassShardPhysics IConvertibleNativeHandle<CShatterGlassShardPhysics>.From(nint handle) => new CShatterGlassShardPhysicsImpl(handle);
+  static CShatterGlassShardPhysics ISchemaClass<CShatterGlassShardPhysics>.From(nint handle) => new CShatterGlassShardPhysicsImpl(handle);
 
   
   public ref bool Debris { get; }

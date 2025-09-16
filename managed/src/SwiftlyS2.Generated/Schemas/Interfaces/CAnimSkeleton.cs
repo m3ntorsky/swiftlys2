@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimSkeleton : ISchemaClass, IConvertibleNativeHandle<CAnimSkeleton> {
+public partial interface CAnimSkeleton : ISchemaClass<CAnimSkeleton> {
 
-  static CAnimSkeleton IConvertibleNativeHandle<CAnimSkeleton>.From(nint handle) => new CAnimSkeletonImpl(handle);
+  static CAnimSkeleton ISchemaClass<CAnimSkeleton>.From(nint handle) => new CAnimSkeletonImpl(handle);
 
   
   public ref CUtlVector<CTransform> LocalSpaceTransforms { get; }

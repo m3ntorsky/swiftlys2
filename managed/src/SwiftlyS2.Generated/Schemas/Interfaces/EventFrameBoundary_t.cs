@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventFrameBoundary_t : ISchemaClass, IConvertibleNativeHandle<EventFrameBoundary_t> {
+public partial interface EventFrameBoundary_t : ISchemaClass<EventFrameBoundary_t> {
 
-  static EventFrameBoundary_t IConvertibleNativeHandle<EventFrameBoundary_t>.From(nint handle) => new EventFrameBoundary_tImpl(handle);
+  static EventFrameBoundary_t ISchemaClass<EventFrameBoundary_t>.From(nint handle) => new EventFrameBoundary_tImpl(handle);
 
   
   public ref float FrameTime { get; }

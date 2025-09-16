@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_CalculateVectorAttribute : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_CalculateVectorAttribute> {
+public partial interface C_OP_CalculateVectorAttribute : CParticleFunctionOperator, ISchemaClass<C_OP_CalculateVectorAttribute> {
 
-  static C_OP_CalculateVectorAttribute IConvertibleNativeHandle<C_OP_CalculateVectorAttribute>.From(nint handle) => new C_OP_CalculateVectorAttributeImpl(handle);
+  static C_OP_CalculateVectorAttribute ISchemaClass<C_OP_CalculateVectorAttribute>.From(nint handle) => new C_OP_CalculateVectorAttributeImpl(handle);
 
   
   public ref Vector StartValue { get; }

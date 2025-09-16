@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ModelEmbeddedMesh_t : ISchemaClass, IConvertibleNativeHandle<ModelEmbeddedMesh_t> {
+public partial interface ModelEmbeddedMesh_t : ISchemaClass<ModelEmbeddedMesh_t> {
 
-  static ModelEmbeddedMesh_t IConvertibleNativeHandle<ModelEmbeddedMesh_t>.From(nint handle) => new ModelEmbeddedMesh_tImpl(handle);
+  static ModelEmbeddedMesh_t ISchemaClass<ModelEmbeddedMesh_t>.From(nint handle) => new ModelEmbeddedMesh_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

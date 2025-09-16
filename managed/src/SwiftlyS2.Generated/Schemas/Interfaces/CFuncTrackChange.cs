@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncTrackChange : CFuncPlatRot, IConvertibleNativeHandle<CFuncTrackChange> {
+public partial interface CFuncTrackChange : CFuncPlatRot, ISchemaClass<CFuncTrackChange> {
 
-  static CFuncTrackChange IConvertibleNativeHandle<CFuncTrackChange>.From(nint handle) => new CFuncTrackChangeImpl(handle);
+  static CFuncTrackChange ISchemaClass<CFuncTrackChange>.From(nint handle) => new CFuncTrackChangeImpl(handle);
 
   
   public CPathTrack? TrackTop { get; }

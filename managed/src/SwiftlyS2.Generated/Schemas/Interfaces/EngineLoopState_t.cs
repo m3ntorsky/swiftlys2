@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EngineLoopState_t : ISchemaClass, IConvertibleNativeHandle<EngineLoopState_t> {
+public partial interface EngineLoopState_t : ISchemaClass<EngineLoopState_t> {
 
-  static EngineLoopState_t IConvertibleNativeHandle<EngineLoopState_t>.From(nint handle) => new EngineLoopState_tImpl(handle);
+  static EngineLoopState_t ISchemaClass<EngineLoopState_t>.From(nint handle) => new EngineLoopState_tImpl(handle);
 
   
   public ref int PlatWindowWidth { get; }

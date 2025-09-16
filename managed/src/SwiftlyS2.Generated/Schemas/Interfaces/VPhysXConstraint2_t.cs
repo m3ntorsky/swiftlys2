@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VPhysXConstraint2_t : ISchemaClass, IConvertibleNativeHandle<VPhysXConstraint2_t> {
+public partial interface VPhysXConstraint2_t : ISchemaClass<VPhysXConstraint2_t> {
 
-  static VPhysXConstraint2_t IConvertibleNativeHandle<VPhysXConstraint2_t>.From(nint handle) => new VPhysXConstraint2_tImpl(handle);
+  static VPhysXConstraint2_t ISchemaClass<VPhysXConstraint2_t>.From(nint handle) => new VPhysXConstraint2_tImpl(handle);
 
   
   public ref uint Flags { get; }

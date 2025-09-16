@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStateUpdateData : ISchemaClass, IConvertibleNativeHandle<CStateUpdateData> {
+public partial interface CStateUpdateData : ISchemaClass<CStateUpdateData> {
 
-  static CStateUpdateData IConvertibleNativeHandle<CStateUpdateData>.From(nint handle) => new CStateUpdateDataImpl(handle);
+  static CStateUpdateData ISchemaClass<CStateUpdateData>.From(nint handle) => new CStateUpdateDataImpl(handle);
 
   
   public ref CUtlString Name { get; }

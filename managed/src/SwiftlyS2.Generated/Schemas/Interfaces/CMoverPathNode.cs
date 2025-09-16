@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMoverPathNode : CPointEntity, IConvertibleNativeHandle<CMoverPathNode> {
+public partial interface CMoverPathNode : CPointEntity, ISchemaClass<CMoverPathNode> {
 
-  static CMoverPathNode IConvertibleNativeHandle<CMoverPathNode>.From(nint handle) => new CMoverPathNodeImpl(handle);
+  static CMoverPathNode ISchemaClass<CMoverPathNode>.From(nint handle) => new CMoverPathNodeImpl(handle);
 
   
   public ref Vector InTangentLocal { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGlowProperty : ISchemaClass, IConvertibleNativeHandle<CGlowProperty> {
+public partial interface CGlowProperty : ISchemaClass<CGlowProperty> {
 
-  static CGlowProperty IConvertibleNativeHandle<CGlowProperty>.From(nint handle) => new CGlowPropertyImpl(handle);
+  static CGlowProperty ISchemaClass<CGlowProperty>.From(nint handle) => new CGlowPropertyImpl(handle);
 
   
   public ref Vector GlowColor { get; }

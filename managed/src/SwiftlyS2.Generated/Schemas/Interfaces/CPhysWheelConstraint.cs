@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysWheelConstraint : CPhysConstraint, IConvertibleNativeHandle<CPhysWheelConstraint> {
+public partial interface CPhysWheelConstraint : CPhysConstraint, ISchemaClass<CPhysWheelConstraint> {
 
-  static CPhysWheelConstraint IConvertibleNativeHandle<CPhysWheelConstraint>.From(nint handle) => new CPhysWheelConstraintImpl(handle);
+  static CPhysWheelConstraint ISchemaClass<CPhysWheelConstraint>.From(nint handle) => new CPhysWheelConstraintImpl(handle);
 
   
   public ref float SuspensionFrequency { get; }

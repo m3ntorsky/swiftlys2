@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicProximity : CPointEntity, IConvertibleNativeHandle<CLogicProximity> {
+public partial interface CLogicProximity : CPointEntity, ISchemaClass<CLogicProximity> {
 
-  static CLogicProximity IConvertibleNativeHandle<CLogicProximity>.From(nint handle) => new CLogicProximityImpl(handle);
+  static CLogicProximity ISchemaClass<CLogicProximity>.From(nint handle) => new CLogicProximityImpl(handle);
 
 
 

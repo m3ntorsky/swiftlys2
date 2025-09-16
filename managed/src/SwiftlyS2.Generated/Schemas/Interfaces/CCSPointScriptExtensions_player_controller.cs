@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPointScriptExtensions_player_controller : ISchemaClass, IConvertibleNativeHandle<CCSPointScriptExtensions_player_controller> {
+public partial interface CCSPointScriptExtensions_player_controller : ISchemaClass<CCSPointScriptExtensions_player_controller> {
 
-  static CCSPointScriptExtensions_player_controller IConvertibleNativeHandle<CCSPointScriptExtensions_player_controller>.From(nint handle) => new CCSPointScriptExtensions_player_controllerImpl(handle);
+  static CCSPointScriptExtensions_player_controller ISchemaClass<CCSPointScriptExtensions_player_controller>.From(nint handle) => new CCSPointScriptExtensions_player_controllerImpl(handle);
 
 
 

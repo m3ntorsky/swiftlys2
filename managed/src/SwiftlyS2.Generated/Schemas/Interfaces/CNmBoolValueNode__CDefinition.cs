@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmBoolValueNode__CDefinition : CNmValueNode__CDefinition, IConvertibleNativeHandle<CNmBoolValueNode__CDefinition> {
+public partial interface CNmBoolValueNode__CDefinition : CNmValueNode__CDefinition, ISchemaClass<CNmBoolValueNode__CDefinition> {
 
-  static CNmBoolValueNode__CDefinition IConvertibleNativeHandle<CNmBoolValueNode__CDefinition>.From(nint handle) => new CNmBoolValueNode__CDefinitionImpl(handle);
+  static CNmBoolValueNode__CDefinition ISchemaClass<CNmBoolValueNode__CDefinition>.From(nint handle) => new CNmBoolValueNode__CDefinitionImpl(handle);
 
 
 

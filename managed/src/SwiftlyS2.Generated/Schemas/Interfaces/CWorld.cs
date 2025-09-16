@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CWorld : CBaseModelEntity, IConvertibleNativeHandle<CWorld> {
+public partial interface CWorld : CBaseModelEntity, ISchemaClass<CWorld> {
 
-  static CWorld IConvertibleNativeHandle<CWorld>.From(nint handle) => new CWorldImpl(handle);
+  static CWorld ISchemaClass<CWorld>.From(nint handle) => new CWorldImpl(handle);
 
 
 

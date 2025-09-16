@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ParticleNamedValueSource_t : ISchemaClass, IConvertibleNativeHandle<ParticleNamedValueSource_t> {
+public partial interface ParticleNamedValueSource_t : ISchemaClass<ParticleNamedValueSource_t> {
 
-  static ParticleNamedValueSource_t IConvertibleNativeHandle<ParticleNamedValueSource_t>.From(nint handle) => new ParticleNamedValueSource_tImpl(handle);
+  static ParticleNamedValueSource_t ISchemaClass<ParticleNamedValueSource_t>.From(nint handle) => new ParticleNamedValueSource_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

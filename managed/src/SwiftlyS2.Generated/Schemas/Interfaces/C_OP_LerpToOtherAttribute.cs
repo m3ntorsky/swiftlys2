@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_LerpToOtherAttribute : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_LerpToOtherAttribute> {
+public partial interface C_OP_LerpToOtherAttribute : CParticleFunctionOperator, ISchemaClass<C_OP_LerpToOtherAttribute> {
 
-  static C_OP_LerpToOtherAttribute IConvertibleNativeHandle<C_OP_LerpToOtherAttribute>.From(nint handle) => new C_OP_LerpToOtherAttributeImpl(handle);
+  static C_OP_LerpToOtherAttribute ISchemaClass<C_OP_LerpToOtherAttribute>.From(nint handle) => new C_OP_LerpToOtherAttributeImpl(handle);
 
   
   public CPerParticleFloatInput Interpolation { get; }

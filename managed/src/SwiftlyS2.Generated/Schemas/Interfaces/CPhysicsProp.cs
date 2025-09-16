@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysicsProp : CBreakableProp, IConvertibleNativeHandle<CPhysicsProp> {
+public partial interface CPhysicsProp : CBreakableProp, ISchemaClass<CPhysicsProp> {
 
-  static CPhysicsProp IConvertibleNativeHandle<CPhysicsProp>.From(nint handle) => new CPhysicsPropImpl(handle);
+  static CPhysicsProp ISchemaClass<CPhysicsProp>.From(nint handle) => new CPhysicsPropImpl(handle);
 
   
   public CEntityIOOutput MotionEnabled { get; }

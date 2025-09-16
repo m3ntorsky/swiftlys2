@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ModelMeshBufferData_t : ISchemaClass, IConvertibleNativeHandle<ModelMeshBufferData_t> {
+public partial interface ModelMeshBufferData_t : ISchemaClass<ModelMeshBufferData_t> {
 
-  static ModelMeshBufferData_t IConvertibleNativeHandle<ModelMeshBufferData_t>.From(nint handle) => new ModelMeshBufferData_tImpl(handle);
+  static ModelMeshBufferData_t ISchemaClass<ModelMeshBufferData_t>.From(nint handle) => new ModelMeshBufferData_tImpl(handle);
 
   
   public ref int BlockIndex { get; }

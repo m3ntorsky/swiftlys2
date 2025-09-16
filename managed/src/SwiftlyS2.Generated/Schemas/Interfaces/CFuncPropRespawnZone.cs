@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncPropRespawnZone : CBaseEntity, IConvertibleNativeHandle<CFuncPropRespawnZone> {
+public partial interface CFuncPropRespawnZone : CBaseEntity, ISchemaClass<CFuncPropRespawnZone> {
 
-  static CFuncPropRespawnZone IConvertibleNativeHandle<CFuncPropRespawnZone>.From(nint handle) => new CFuncPropRespawnZoneImpl(handle);
+  static CFuncPropRespawnZone ISchemaClass<CFuncPropRespawnZone>.From(nint handle) => new CFuncPropRespawnZoneImpl(handle);
 
 
 

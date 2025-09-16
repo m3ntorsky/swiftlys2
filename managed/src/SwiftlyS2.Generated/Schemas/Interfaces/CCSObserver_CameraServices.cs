@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSObserver_CameraServices : CCSPlayerBase_CameraServices, IConvertibleNativeHandle<CCSObserver_CameraServices> {
+public partial interface CCSObserver_CameraServices : CCSPlayerBase_CameraServices, ISchemaClass<CCSObserver_CameraServices> {
 
-  static CCSObserver_CameraServices IConvertibleNativeHandle<CCSObserver_CameraServices>.From(nint handle) => new CCSObserver_CameraServicesImpl(handle);
+  static CCSObserver_CameraServices ISchemaClass<CCSObserver_CameraServices>.From(nint handle) => new CCSObserver_CameraServicesImpl(handle);
 
 
 

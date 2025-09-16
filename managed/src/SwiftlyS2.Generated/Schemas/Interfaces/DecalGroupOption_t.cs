@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface DecalGroupOption_t : ISchemaClass, IConvertibleNativeHandle<DecalGroupOption_t> {
+public partial interface DecalGroupOption_t : ISchemaClass<DecalGroupOption_t> {
 
-  static DecalGroupOption_t IConvertibleNativeHandle<DecalGroupOption_t>.From(nint handle) => new DecalGroupOption_tImpl(handle);
+  static DecalGroupOption_t ISchemaClass<DecalGroupOption_t>.From(nint handle) => new DecalGroupOption_tImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }

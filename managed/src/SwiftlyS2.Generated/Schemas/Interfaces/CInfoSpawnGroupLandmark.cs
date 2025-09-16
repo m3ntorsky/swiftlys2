@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoSpawnGroupLandmark : CPointEntity, IConvertibleNativeHandle<CInfoSpawnGroupLandmark> {
+public partial interface CInfoSpawnGroupLandmark : CPointEntity, ISchemaClass<CInfoSpawnGroupLandmark> {
 
-  static CInfoSpawnGroupLandmark IConvertibleNativeHandle<CInfoSpawnGroupLandmark>.From(nint handle) => new CInfoSpawnGroupLandmarkImpl(handle);
+  static CInfoSpawnGroupLandmark ISchemaClass<CInfoSpawnGroupLandmark>.From(nint handle) => new CInfoSpawnGroupLandmarkImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeQuad_t : ISchemaClass, IConvertibleNativeHandle<FeQuad_t> {
+public partial interface FeQuad_t : ISchemaClass<FeQuad_t> {
 
-  static FeQuad_t IConvertibleNativeHandle<FeQuad_t>.From(nint handle) => new FeQuad_tImpl(handle);
+  static FeQuad_t ISchemaClass<FeQuad_t>.From(nint handle) => new FeQuad_tImpl(handle);
 
   
   public ISchemaFixedArray<ushort> Node { get; }

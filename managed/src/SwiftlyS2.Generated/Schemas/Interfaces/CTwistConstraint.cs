@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTwistConstraint : CBaseConstraint, IConvertibleNativeHandle<CTwistConstraint> {
+public partial interface CTwistConstraint : CBaseConstraint, ISchemaClass<CTwistConstraint> {
 
-  static CTwistConstraint IConvertibleNativeHandle<CTwistConstraint>.From(nint handle) => new CTwistConstraintImpl(handle);
+  static CTwistConstraint ISchemaClass<CTwistConstraint>.From(nint handle) => new CTwistConstraintImpl(handle);
 
   
   public ref bool Inverse { get; }

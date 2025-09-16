@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SkeletonAnimCapture_t__FrameStamp_t : ISchemaClass, IConvertibleNativeHandle<SkeletonAnimCapture_t__FrameStamp_t> {
+public partial interface SkeletonAnimCapture_t__FrameStamp_t : ISchemaClass<SkeletonAnimCapture_t__FrameStamp_t> {
 
-  static SkeletonAnimCapture_t__FrameStamp_t IConvertibleNativeHandle<SkeletonAnimCapture_t__FrameStamp_t>.From(nint handle) => new SkeletonAnimCapture_t__FrameStamp_tImpl(handle);
+  static SkeletonAnimCapture_t__FrameStamp_t ISchemaClass<SkeletonAnimCapture_t__FrameStamp_t>.From(nint handle) => new SkeletonAnimCapture_t__FrameStamp_tImpl(handle);
 
   
   public ref float Time { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBtActionAim : CBtNode, IConvertibleNativeHandle<CBtActionAim> {
+public partial interface CBtActionAim : CBtNode, ISchemaClass<CBtActionAim> {
 
-  static CBtActionAim IConvertibleNativeHandle<CBtActionAim>.From(nint handle) => new CBtActionAimImpl(handle);
+  static CBtActionAim ISchemaClass<CBtActionAim>.From(nint handle) => new CBtActionAimImpl(handle);
 
   
   public ref CUtlString SensorInputKey { get; }

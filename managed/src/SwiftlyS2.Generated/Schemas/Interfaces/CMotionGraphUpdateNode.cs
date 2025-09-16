@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionGraphUpdateNode : CLeafUpdateNode, IConvertibleNativeHandle<CMotionGraphUpdateNode> {
+public partial interface CMotionGraphUpdateNode : CLeafUpdateNode, ISchemaClass<CMotionGraphUpdateNode> {
 
-  static CMotionGraphUpdateNode IConvertibleNativeHandle<CMotionGraphUpdateNode>.From(nint handle) => new CMotionGraphUpdateNodeImpl(handle);
+  static CMotionGraphUpdateNode ISchemaClass<CMotionGraphUpdateNode>.From(nint handle) => new CMotionGraphUpdateNodeImpl(handle);
 
   
   // CSmartPtr< CMotionGraph >

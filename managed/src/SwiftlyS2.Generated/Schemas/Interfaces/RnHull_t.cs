@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnHull_t : ISchemaClass, IConvertibleNativeHandle<RnHull_t> {
+public partial interface RnHull_t : ISchemaClass<RnHull_t> {
 
-  static RnHull_t IConvertibleNativeHandle<RnHull_t>.From(nint handle) => new RnHull_tImpl(handle);
+  static RnHull_t ISchemaClass<RnHull_t>.From(nint handle) => new RnHull_tImpl(handle);
 
   
   public ref Vector Centroid { get; }

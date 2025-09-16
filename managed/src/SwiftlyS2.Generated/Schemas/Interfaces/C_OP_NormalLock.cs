@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_NormalLock : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_NormalLock> {
+public partial interface C_OP_NormalLock : CParticleFunctionOperator, ISchemaClass<C_OP_NormalLock> {
 
-  static C_OP_NormalLock IConvertibleNativeHandle<C_OP_NormalLock>.From(nint handle) => new C_OP_NormalLockImpl(handle);
+  static C_OP_NormalLock ISchemaClass<C_OP_NormalLock>.From(nint handle) => new C_OP_NormalLockImpl(handle);
 
   
   public ref int ControlPointNumber { get; }

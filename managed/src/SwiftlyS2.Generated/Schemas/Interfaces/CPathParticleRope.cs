@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathParticleRope : CBaseEntity, IConvertibleNativeHandle<CPathParticleRope> {
+public partial interface CPathParticleRope : CBaseEntity, ISchemaClass<CPathParticleRope> {
 
-  static CPathParticleRope IConvertibleNativeHandle<CPathParticleRope>.From(nint handle) => new CPathParticleRopeImpl(handle);
+  static CPathParticleRope ISchemaClass<CPathParticleRope>.From(nint handle) => new CPathParticleRopeImpl(handle);
 
   
   public ref bool StartActive { get; }

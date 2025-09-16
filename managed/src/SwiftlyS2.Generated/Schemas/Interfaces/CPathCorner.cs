@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathCorner : CPointEntity, IConvertibleNativeHandle<CPathCorner> {
+public partial interface CPathCorner : CPointEntity, ISchemaClass<CPathCorner> {
 
-  static CPathCorner IConvertibleNativeHandle<CPathCorner>.From(nint handle) => new CPathCornerImpl(handle);
+  static CPathCorner ISchemaClass<CPathCorner>.From(nint handle) => new CPathCornerImpl(handle);
 
   
   public ref float Wait { get; }

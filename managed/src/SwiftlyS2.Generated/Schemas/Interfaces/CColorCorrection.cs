@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CColorCorrection : CBaseEntity, IConvertibleNativeHandle<CColorCorrection> {
+public partial interface CColorCorrection : CBaseEntity, ISchemaClass<CColorCorrection> {
 
-  static CColorCorrection IConvertibleNativeHandle<CColorCorrection>.From(nint handle) => new CColorCorrectionImpl(handle);
+  static CColorCorrection ISchemaClass<CColorCorrection>.From(nint handle) => new CColorCorrectionImpl(handle);
 
   
   public ref float FadeInDuration { get; }

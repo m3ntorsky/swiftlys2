@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvSoundscape : CBaseEntity, IConvertibleNativeHandle<CEnvSoundscape> {
+public partial interface CEnvSoundscape : CBaseEntity, ISchemaClass<CEnvSoundscape> {
 
-  static CEnvSoundscape IConvertibleNativeHandle<CEnvSoundscape>.From(nint handle) => new CEnvSoundscapeImpl(handle);
+  static CEnvSoundscape ISchemaClass<CEnvSoundscape>.From(nint handle) => new CEnvSoundscapeImpl(handle);
 
   
   public CEntityIOOutput OnPlay { get; }

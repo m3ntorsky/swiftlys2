@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmIKBody : ISchemaClass, IConvertibleNativeHandle<CNmIKBody> {
+public partial interface CNmIKBody : ISchemaClass<CNmIKBody> {
 
-  static CNmIKBody IConvertibleNativeHandle<CNmIKBody>.From(nint handle) => new CNmIKBodyImpl(handle);
+  static CNmIKBody ISchemaClass<CNmIKBody>.From(nint handle) => new CNmIKBodyImpl(handle);
 
   
   public ref float Mass { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AnimTagID : ISchemaClass, IConvertibleNativeHandle<AnimTagID> {
+public partial interface AnimTagID : ISchemaClass<AnimTagID> {
 
-  static AnimTagID IConvertibleNativeHandle<AnimTagID>.From(nint handle) => new AnimTagIDImpl(handle);
+  static AnimTagID ISchemaClass<AnimTagID>.From(nint handle) => new AnimTagIDImpl(handle);
 
   
   public ref uint Id { get; }

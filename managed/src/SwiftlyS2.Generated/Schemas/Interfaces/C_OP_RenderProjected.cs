@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderProjected : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderProjected> {
+public partial interface C_OP_RenderProjected : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderProjected> {
 
-  static C_OP_RenderProjected IConvertibleNativeHandle<C_OP_RenderProjected>.From(nint handle) => new C_OP_RenderProjectedImpl(handle);
+  static C_OP_RenderProjected ISchemaClass<C_OP_RenderProjected>.From(nint handle) => new C_OP_RenderProjectedImpl(handle);
 
   
   public ref bool ProjectCharacter { get; }

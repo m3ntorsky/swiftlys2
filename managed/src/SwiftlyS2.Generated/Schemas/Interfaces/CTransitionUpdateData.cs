@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTransitionUpdateData : ISchemaClass, IConvertibleNativeHandle<CTransitionUpdateData> {
+public partial interface CTransitionUpdateData : ISchemaClass<CTransitionUpdateData> {
 
-  static CTransitionUpdateData IConvertibleNativeHandle<CTransitionUpdateData>.From(nint handle) => new CTransitionUpdateDataImpl(handle);
+  static CTransitionUpdateData ISchemaClass<CTransitionUpdateData>.From(nint handle) => new CTransitionUpdateDataImpl(handle);
 
   
   public ref byte SrcStateIndex { get; }

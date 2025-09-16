@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PredictedDamageTag_t : ISchemaClass, IConvertibleNativeHandle<PredictedDamageTag_t> {
+public partial interface PredictedDamageTag_t : ISchemaClass<PredictedDamageTag_t> {
 
-  static PredictedDamageTag_t IConvertibleNativeHandle<PredictedDamageTag_t>.From(nint handle) => new PredictedDamageTag_tImpl(handle);
+  static PredictedDamageTag_t ISchemaClass<PredictedDamageTag_t>.From(nint handle) => new PredictedDamageTag_tImpl(handle);
 
   
   public GameTick_t TagTick { get; }

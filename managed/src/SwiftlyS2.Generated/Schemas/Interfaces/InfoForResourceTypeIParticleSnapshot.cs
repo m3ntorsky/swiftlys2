@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeIParticleSnapshot : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeIParticleSnapshot> {
+public partial interface InfoForResourceTypeIParticleSnapshot : ISchemaClass<InfoForResourceTypeIParticleSnapshot> {
 
-  static InfoForResourceTypeIParticleSnapshot IConvertibleNativeHandle<InfoForResourceTypeIParticleSnapshot>.From(nint handle) => new InfoForResourceTypeIParticleSnapshotImpl(handle);
+  static InfoForResourceTypeIParticleSnapshot ISchemaClass<InfoForResourceTypeIParticleSnapshot>.From(nint handle) => new InfoForResourceTypeIParticleSnapshotImpl(handle);
 
 
 

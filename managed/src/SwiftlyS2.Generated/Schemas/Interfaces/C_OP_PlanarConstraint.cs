@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_PlanarConstraint : CParticleFunctionConstraint, IConvertibleNativeHandle<C_OP_PlanarConstraint> {
+public partial interface C_OP_PlanarConstraint : CParticleFunctionConstraint, ISchemaClass<C_OP_PlanarConstraint> {
 
-  static C_OP_PlanarConstraint IConvertibleNativeHandle<C_OP_PlanarConstraint>.From(nint handle) => new C_OP_PlanarConstraintImpl(handle);
+  static C_OP_PlanarConstraint ISchemaClass<C_OP_PlanarConstraint>.From(nint handle) => new C_OP_PlanarConstraintImpl(handle);
 
   
   public ref Vector PointOnPlane { get; }

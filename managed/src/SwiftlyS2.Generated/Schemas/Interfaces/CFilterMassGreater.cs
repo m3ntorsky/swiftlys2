@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFilterMassGreater : CBaseFilter, IConvertibleNativeHandle<CFilterMassGreater> {
+public partial interface CFilterMassGreater : CBaseFilter, ISchemaClass<CFilterMassGreater> {
 
-  static CFilterMassGreater IConvertibleNativeHandle<CFilterMassGreater>.From(nint handle) => new CFilterMassGreaterImpl(handle);
+  static CFilterMassGreater ISchemaClass<CFilterMassGreater>.From(nint handle) => new CFilterMassGreaterImpl(handle);
 
   
   public ref float FilterMass { get; }

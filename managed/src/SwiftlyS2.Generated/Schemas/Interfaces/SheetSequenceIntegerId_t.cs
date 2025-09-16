@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SheetSequenceIntegerId_t : ISchemaClass, IConvertibleNativeHandle<SheetSequenceIntegerId_t> {
+public partial interface SheetSequenceIntegerId_t : ISchemaClass<SheetSequenceIntegerId_t> {
 
-  static SheetSequenceIntegerId_t IConvertibleNativeHandle<SheetSequenceIntegerId_t>.From(nint handle) => new SheetSequenceIntegerId_tImpl(handle);
+  static SheetSequenceIntegerId_t ISchemaClass<SheetSequenceIntegerId_t>.From(nint handle) => new SheetSequenceIntegerId_tImpl(handle);
 
   
   public ref uint Value { get; }

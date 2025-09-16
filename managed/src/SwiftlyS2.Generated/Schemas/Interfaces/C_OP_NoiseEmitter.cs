@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_NoiseEmitter : CParticleFunctionEmitter, IConvertibleNativeHandle<C_OP_NoiseEmitter> {
+public partial interface C_OP_NoiseEmitter : CParticleFunctionEmitter, ISchemaClass<C_OP_NoiseEmitter> {
 
-  static C_OP_NoiseEmitter IConvertibleNativeHandle<C_OP_NoiseEmitter>.From(nint handle) => new C_OP_NoiseEmitterImpl(handle);
+  static C_OP_NoiseEmitter ISchemaClass<C_OP_NoiseEmitter>.From(nint handle) => new C_OP_NoiseEmitterImpl(handle);
 
   
   public ref float EmissionDuration { get; }

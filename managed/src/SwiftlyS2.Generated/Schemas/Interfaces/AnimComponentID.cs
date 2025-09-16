@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AnimComponentID : ISchemaClass, IConvertibleNativeHandle<AnimComponentID> {
+public partial interface AnimComponentID : ISchemaClass<AnimComponentID> {
 
-  static AnimComponentID IConvertibleNativeHandle<AnimComponentID>.From(nint handle) => new AnimComponentIDImpl(handle);
+  static AnimComponentID ISchemaClass<AnimComponentID>.From(nint handle) => new AnimComponentIDImpl(handle);
 
   
   public ref uint Id { get; }

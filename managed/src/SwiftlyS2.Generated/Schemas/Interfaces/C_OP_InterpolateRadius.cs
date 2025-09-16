@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_InterpolateRadius : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_InterpolateRadius> {
+public partial interface C_OP_InterpolateRadius : CParticleFunctionOperator, ISchemaClass<C_OP_InterpolateRadius> {
 
-  static C_OP_InterpolateRadius IConvertibleNativeHandle<C_OP_InterpolateRadius>.From(nint handle) => new C_OP_InterpolateRadiusImpl(handle);
+  static C_OP_InterpolateRadius ISchemaClass<C_OP_InterpolateRadius>.From(nint handle) => new C_OP_InterpolateRadiusImpl(handle);
 
   
   public ref float StartTime { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAudioPhonemeTag : ISchemaClass, IConvertibleNativeHandle<CAudioPhonemeTag> {
+public partial interface CAudioPhonemeTag : ISchemaClass<CAudioPhonemeTag> {
 
-  static CAudioPhonemeTag IConvertibleNativeHandle<CAudioPhonemeTag>.From(nint handle) => new CAudioPhonemeTagImpl(handle);
+  static CAudioPhonemeTag ISchemaClass<CAudioPhonemeTag>.From(nint handle) => new CAudioPhonemeTagImpl(handle);
 
   
   public ref float StartTime { get; }

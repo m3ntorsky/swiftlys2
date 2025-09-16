@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerEnvelopeAnalyzer : CVoiceContainerAnalysisBase, IConvertibleNativeHandle<CVoiceContainerEnvelopeAnalyzer> {
+public partial interface CVoiceContainerEnvelopeAnalyzer : CVoiceContainerAnalysisBase, ISchemaClass<CVoiceContainerEnvelopeAnalyzer> {
 
-  static CVoiceContainerEnvelopeAnalyzer IConvertibleNativeHandle<CVoiceContainerEnvelopeAnalyzer>.From(nint handle) => new CVoiceContainerEnvelopeAnalyzerImpl(handle);
+  static CVoiceContainerEnvelopeAnalyzer ISchemaClass<CVoiceContainerEnvelopeAnalyzer>.From(nint handle) => new CVoiceContainerEnvelopeAnalyzerImpl(handle);
 
   
   public ref EMode_t Mode { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSGOPlayerAnimGraphState : ISchemaClass, IConvertibleNativeHandle<CCSGOPlayerAnimGraphState> {
+public partial interface CCSGOPlayerAnimGraphState : ISchemaClass<CCSGOPlayerAnimGraphState> {
 
-  static CCSGOPlayerAnimGraphState IConvertibleNativeHandle<CCSGOPlayerAnimGraphState>.From(nint handle) => new CCSGOPlayerAnimGraphStateImpl(handle);
+  static CCSGOPlayerAnimGraphState ISchemaClass<CCSGOPlayerAnimGraphState>.From(nint handle) => new CCSGOPlayerAnimGraphStateImpl(handle);
 
 
 

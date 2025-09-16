@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFutureFacingMetricEvaluator : CMotionMetricEvaluator, IConvertibleNativeHandle<CFutureFacingMetricEvaluator> {
+public partial interface CFutureFacingMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CFutureFacingMetricEvaluator> {
 
-  static CFutureFacingMetricEvaluator IConvertibleNativeHandle<CFutureFacingMetricEvaluator>.From(nint handle) => new CFutureFacingMetricEvaluatorImpl(handle);
+  static CFutureFacingMetricEvaluator ISchemaClass<CFutureFacingMetricEvaluator>.From(nint handle) => new CFutureFacingMetricEvaluatorImpl(handle);
 
   
   public ref float Distance { get; }

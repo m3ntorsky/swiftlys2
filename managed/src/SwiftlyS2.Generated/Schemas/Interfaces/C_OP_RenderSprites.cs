@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderSprites : CBaseRendererSource2, IConvertibleNativeHandle<C_OP_RenderSprites> {
+public partial interface C_OP_RenderSprites : CBaseRendererSource2, ISchemaClass<C_OP_RenderSprites> {
 
-  static C_OP_RenderSprites IConvertibleNativeHandle<C_OP_RenderSprites>.From(nint handle) => new C_OP_RenderSpritesImpl(handle);
+  static C_OP_RenderSprites ISchemaClass<C_OP_RenderSprites>.From(nint handle) => new C_OP_RenderSpritesImpl(handle);
 
   
   public CParticleCollectionRendererFloatInput SequenceOverride { get; }

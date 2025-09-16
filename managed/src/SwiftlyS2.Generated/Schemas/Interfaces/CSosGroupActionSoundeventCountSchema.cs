@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupActionSoundeventCountSchema : CSosGroupActionSchema, IConvertibleNativeHandle<CSosGroupActionSoundeventCountSchema> {
+public partial interface CSosGroupActionSoundeventCountSchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionSoundeventCountSchema> {
 
-  static CSosGroupActionSoundeventCountSchema IConvertibleNativeHandle<CSosGroupActionSoundeventCountSchema>.From(nint handle) => new CSosGroupActionSoundeventCountSchemaImpl(handle);
+  static CSosGroupActionSoundeventCountSchema ISchemaClass<CSosGroupActionSoundeventCountSchema>.From(nint handle) => new CSosGroupActionSoundeventCountSchemaImpl(handle);
 
   
   public ref bool ExcludeStoppedSounds { get; }

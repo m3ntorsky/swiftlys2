@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ModelBoneFlexDriverControl_t : ISchemaClass, IConvertibleNativeHandle<ModelBoneFlexDriverControl_t> {
+public partial interface ModelBoneFlexDriverControl_t : ISchemaClass<ModelBoneFlexDriverControl_t> {
 
-  static ModelBoneFlexDriverControl_t IConvertibleNativeHandle<ModelBoneFlexDriverControl_t>.From(nint handle) => new ModelBoneFlexDriverControl_tImpl(handle);
+  static ModelBoneFlexDriverControl_t ISchemaClass<ModelBoneFlexDriverControl_t>.From(nint handle) => new ModelBoneFlexDriverControl_tImpl(handle);
 
   
   public ref ModelBoneFlexComponent_t BoneComponent { get; }

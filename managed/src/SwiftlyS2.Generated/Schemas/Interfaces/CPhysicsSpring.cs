@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysicsSpring : CBaseEntity, IConvertibleNativeHandle<CPhysicsSpring> {
+public partial interface CPhysicsSpring : CBaseEntity, ISchemaClass<CPhysicsSpring> {
 
-  static CPhysicsSpring IConvertibleNativeHandle<CPhysicsSpring>.From(nint handle) => new CPhysicsSpringImpl(handle);
+  static CPhysicsSpring ISchemaClass<CPhysicsSpring>.From(nint handle) => new CPhysicsSpringImpl(handle);
 
   
   public ref float Frequency { get; }

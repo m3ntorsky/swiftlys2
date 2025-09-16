@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EntitySpottedState_t : ISchemaClass, IConvertibleNativeHandle<EntitySpottedState_t> {
+public partial interface EntitySpottedState_t : ISchemaClass<EntitySpottedState_t> {
 
-  static EntitySpottedState_t IConvertibleNativeHandle<EntitySpottedState_t>.From(nint handle) => new EntitySpottedState_tImpl(handle);
+  static EntitySpottedState_t ISchemaClass<EntitySpottedState_t>.From(nint handle) => new EntitySpottedState_tImpl(handle);
 
   
   public ref bool Spotted { get; }

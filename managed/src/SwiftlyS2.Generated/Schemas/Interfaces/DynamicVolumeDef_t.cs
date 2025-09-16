@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface DynamicVolumeDef_t : ISchemaClass, IConvertibleNativeHandle<DynamicVolumeDef_t> {
+public partial interface DynamicVolumeDef_t : ISchemaClass<DynamicVolumeDef_t> {
 
-  static DynamicVolumeDef_t IConvertibleNativeHandle<DynamicVolumeDef_t>.From(nint handle) => new DynamicVolumeDef_tImpl(handle);
+  static DynamicVolumeDef_t ISchemaClass<DynamicVolumeDef_t>.From(nint handle) => new DynamicVolumeDef_tImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Source { get; }

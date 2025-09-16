@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoLandmark : CPointEntity, IConvertibleNativeHandle<CInfoLandmark> {
+public partial interface CInfoLandmark : CPointEntity, ISchemaClass<CInfoLandmark> {
 
-  static CInfoLandmark IConvertibleNativeHandle<CInfoLandmark>.From(nint handle) => new CInfoLandmarkImpl(handle);
+  static CInfoLandmark ISchemaClass<CInfoLandmark>.From(nint handle) => new CInfoLandmarkImpl(handle);
 
 
 

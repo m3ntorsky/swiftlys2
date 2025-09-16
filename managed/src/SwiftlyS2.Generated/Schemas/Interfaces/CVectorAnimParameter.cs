@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVectorAnimParameter : CConcreteAnimParameter, IConvertibleNativeHandle<CVectorAnimParameter> {
+public partial interface CVectorAnimParameter : CConcreteAnimParameter, ISchemaClass<CVectorAnimParameter> {
 
-  static CVectorAnimParameter IConvertibleNativeHandle<CVectorAnimParameter>.From(nint handle) => new CVectorAnimParameterImpl(handle);
+  static CVectorAnimParameter ISchemaClass<CVectorAnimParameter>.From(nint handle) => new CVectorAnimParameterImpl(handle);
 
   
   public ref Vector DefaultValue { get; }

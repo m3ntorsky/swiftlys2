@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CKnife : CCSWeaponBase, IConvertibleNativeHandle<CKnife> {
+public partial interface CKnife : CCSWeaponBase, ISchemaClass<CKnife> {
 
-  static CKnife IConvertibleNativeHandle<CKnife>.From(nint handle) => new CKnifeImpl(handle);
+  static CKnife ISchemaClass<CKnife>.From(nint handle) => new CKnifeImpl(handle);
 
   
   public ref bool FirstAttack { get; }

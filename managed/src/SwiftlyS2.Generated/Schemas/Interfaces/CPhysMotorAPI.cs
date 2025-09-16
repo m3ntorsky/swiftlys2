@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysMotorAPI : ISchemaClass, IConvertibleNativeHandle<CPhysMotorAPI> {
+public partial interface CPhysMotorAPI : ISchemaClass<CPhysMotorAPI> {
 
-  static CPhysMotorAPI IConvertibleNativeHandle<CPhysMotorAPI>.From(nint handle) => new CPhysMotorAPIImpl(handle);
+  static CPhysMotorAPI ISchemaClass<CPhysMotorAPI>.From(nint handle) => new CPhysMotorAPIImpl(handle);
 
 
 

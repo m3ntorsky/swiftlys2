@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SignatureOutflow_Continue : CPulse_OutflowConnection, IConvertibleNativeHandle<SignatureOutflow_Continue> {
+public partial interface SignatureOutflow_Continue : CPulse_OutflowConnection, ISchemaClass<SignatureOutflow_Continue> {
 
-  static SignatureOutflow_Continue IConvertibleNativeHandle<SignatureOutflow_Continue>.From(nint handle) => new SignatureOutflow_ContinueImpl(handle);
+  static SignatureOutflow_Continue ISchemaClass<SignatureOutflow_Continue>.From(nint handle) => new SignatureOutflow_ContinueImpl(handle);
 
 
 

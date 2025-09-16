@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCEntityLump : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCEntityLump> {
+public partial interface InfoForResourceTypeCEntityLump : ISchemaClass<InfoForResourceTypeCEntityLump> {
 
-  static InfoForResourceTypeCEntityLump IConvertibleNativeHandle<InfoForResourceTypeCEntityLump>.From(nint handle) => new InfoForResourceTypeCEntityLumpImpl(handle);
+  static InfoForResourceTypeCEntityLump ISchemaClass<InfoForResourceTypeCEntityLump>.From(nint handle) => new InfoForResourceTypeCEntityLumpImpl(handle);
 
 
 

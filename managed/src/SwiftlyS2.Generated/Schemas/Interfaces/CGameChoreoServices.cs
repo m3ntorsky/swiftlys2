@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGameChoreoServices : IChoreoServices, IConvertibleNativeHandle<CGameChoreoServices> {
+public partial interface CGameChoreoServices : IChoreoServices, ISchemaClass<CGameChoreoServices> {
 
-  static CGameChoreoServices IConvertibleNativeHandle<CGameChoreoServices>.From(nint handle) => new CGameChoreoServicesImpl(handle);
+  static CGameChoreoServices ISchemaClass<CGameChoreoServices>.From(nint handle) => new CGameChoreoServicesImpl(handle);
 
   
   public ref CHandle<CBaseAnimGraph> Owner { get; }

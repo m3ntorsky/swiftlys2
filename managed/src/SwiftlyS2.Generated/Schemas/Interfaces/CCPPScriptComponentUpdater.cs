@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCPPScriptComponentUpdater : CAnimComponentUpdater, IConvertibleNativeHandle<CCPPScriptComponentUpdater> {
+public partial interface CCPPScriptComponentUpdater : CAnimComponentUpdater, ISchemaClass<CCPPScriptComponentUpdater> {
 
-  static CCPPScriptComponentUpdater IConvertibleNativeHandle<CCPPScriptComponentUpdater>.From(nint handle) => new CCPPScriptComponentUpdaterImpl(handle);
+  static CCPPScriptComponentUpdater ISchemaClass<CCPPScriptComponentUpdater>.From(nint handle) => new CCPPScriptComponentUpdaterImpl(handle);
 
   
   public ref CUtlVector<CGlobalSymbol> ScriptsToRun { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderTreeShake : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderTreeShake> {
+public partial interface C_OP_RenderTreeShake : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderTreeShake> {
 
-  static C_OP_RenderTreeShake IConvertibleNativeHandle<C_OP_RenderTreeShake>.From(nint handle) => new C_OP_RenderTreeShakeImpl(handle);
+  static C_OP_RenderTreeShake ISchemaClass<C_OP_RenderTreeShake>.From(nint handle) => new C_OP_RenderTreeShakeImpl(handle);
 
   
   public ref float PeakStrength { get; }

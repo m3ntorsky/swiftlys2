@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface WeaponPurchaseTracker_t : ISchemaClass, IConvertibleNativeHandle<WeaponPurchaseTracker_t> {
+public partial interface WeaponPurchaseTracker_t : ISchemaClass<WeaponPurchaseTracker_t> {
 
-  static WeaponPurchaseTracker_t IConvertibleNativeHandle<WeaponPurchaseTracker_t>.From(nint handle) => new WeaponPurchaseTracker_tImpl(handle);
+  static WeaponPurchaseTracker_t ISchemaClass<WeaponPurchaseTracker_t>.From(nint handle) => new WeaponPurchaseTracker_tImpl(handle);
 
   
   // CUtlVectorEmbeddedNetworkVar< WeaponPurchaseCount_t >

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoPlayerTerrorist : SpawnPoint, IConvertibleNativeHandle<CInfoPlayerTerrorist> {
+public partial interface CInfoPlayerTerrorist : SpawnPoint, ISchemaClass<CInfoPlayerTerrorist> {
 
-  static CInfoPlayerTerrorist IConvertibleNativeHandle<CInfoPlayerTerrorist>.From(nint handle) => new CInfoPlayerTerroristImpl(handle);
+  static CInfoPlayerTerrorist ISchemaClass<CInfoPlayerTerrorist>.From(nint handle) => new CInfoPlayerTerroristImpl(handle);
 
 
 

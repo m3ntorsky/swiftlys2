@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBoolAnimParameter : CConcreteAnimParameter, IConvertibleNativeHandle<CBoolAnimParameter> {
+public partial interface CBoolAnimParameter : CConcreteAnimParameter, ISchemaClass<CBoolAnimParameter> {
 
-  static CBoolAnimParameter IConvertibleNativeHandle<CBoolAnimParameter>.From(nint handle) => new CBoolAnimParameterImpl(handle);
+  static CBoolAnimParameter ISchemaClass<CBoolAnimParameter>.From(nint handle) => new CBoolAnimParameterImpl(handle);
 
   
   public ref bool DefaultValue { get; }

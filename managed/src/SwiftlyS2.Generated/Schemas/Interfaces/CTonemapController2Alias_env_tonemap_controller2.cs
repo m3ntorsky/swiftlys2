@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTonemapController2Alias_env_tonemap_controller2 : CTonemapController2, IConvertibleNativeHandle<CTonemapController2Alias_env_tonemap_controller2> {
+public partial interface CTonemapController2Alias_env_tonemap_controller2 : CTonemapController2, ISchemaClass<CTonemapController2Alias_env_tonemap_controller2> {
 
-  static CTonemapController2Alias_env_tonemap_controller2 IConvertibleNativeHandle<CTonemapController2Alias_env_tonemap_controller2>.From(nint handle) => new CTonemapController2Alias_env_tonemap_controller2Impl(handle);
+  static CTonemapController2Alias_env_tonemap_controller2 ISchemaClass<CTonemapController2Alias_env_tonemap_controller2>.From(nint handle) => new CTonemapController2Alias_env_tonemap_controller2Impl(handle);
 
 
 

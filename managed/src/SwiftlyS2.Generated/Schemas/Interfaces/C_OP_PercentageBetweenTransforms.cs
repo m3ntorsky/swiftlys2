@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_PercentageBetweenTransforms : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_PercentageBetweenTransforms> {
+public partial interface C_OP_PercentageBetweenTransforms : CParticleFunctionOperator, ISchemaClass<C_OP_PercentageBetweenTransforms> {
 
-  static C_OP_PercentageBetweenTransforms IConvertibleNativeHandle<C_OP_PercentageBetweenTransforms>.From(nint handle) => new C_OP_PercentageBetweenTransformsImpl(handle);
+  static C_OP_PercentageBetweenTransforms ISchemaClass<C_OP_PercentageBetweenTransforms>.From(nint handle) => new C_OP_PercentageBetweenTransformsImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

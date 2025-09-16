@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerDetectBulletFire : CBaseTrigger, IConvertibleNativeHandle<CTriggerDetectBulletFire> {
+public partial interface CTriggerDetectBulletFire : CBaseTrigger, ISchemaClass<CTriggerDetectBulletFire> {
 
-  static CTriggerDetectBulletFire IConvertibleNativeHandle<CTriggerDetectBulletFire>.From(nint handle) => new CTriggerDetectBulletFireImpl(handle);
+  static CTriggerDetectBulletFire ISchemaClass<CTriggerDetectBulletFire>.From(nint handle) => new CTriggerDetectBulletFireImpl(handle);
 
   
   public ref bool PlayerFireOnly { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStateMachineComponentUpdater : CAnimComponentUpdater, IConvertibleNativeHandle<CStateMachineComponentUpdater> {
+public partial interface CStateMachineComponentUpdater : CAnimComponentUpdater, ISchemaClass<CStateMachineComponentUpdater> {
 
-  static CStateMachineComponentUpdater IConvertibleNativeHandle<CStateMachineComponentUpdater>.From(nint handle) => new CStateMachineComponentUpdaterImpl(handle);
+  static CStateMachineComponentUpdater ISchemaClass<CStateMachineComponentUpdater>.From(nint handle) => new CStateMachineComponentUpdaterImpl(handle);
 
   
   public CAnimStateMachineUpdater StateMachine { get; }

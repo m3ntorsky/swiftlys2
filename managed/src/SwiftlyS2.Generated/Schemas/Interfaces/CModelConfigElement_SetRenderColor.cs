@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CModelConfigElement_SetRenderColor : CModelConfigElement, IConvertibleNativeHandle<CModelConfigElement_SetRenderColor> {
+public partial interface CModelConfigElement_SetRenderColor : CModelConfigElement, ISchemaClass<CModelConfigElement_SetRenderColor> {
 
-  static CModelConfigElement_SetRenderColor IConvertibleNativeHandle<CModelConfigElement_SetRenderColor>.From(nint handle) => new CModelConfigElement_SetRenderColorImpl(handle);
+  static CModelConfigElement_SetRenderColor ISchemaClass<CModelConfigElement_SetRenderColor>.From(nint handle) => new CModelConfigElement_SetRenderColorImpl(handle);
 
   
   public ref Color Color { get; }

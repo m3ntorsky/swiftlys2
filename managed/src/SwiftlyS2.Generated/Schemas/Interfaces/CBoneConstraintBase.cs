@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBoneConstraintBase : ISchemaClass, IConvertibleNativeHandle<CBoneConstraintBase> {
+public partial interface CBoneConstraintBase : ISchemaClass<CBoneConstraintBase> {
 
-  static CBoneConstraintBase IConvertibleNativeHandle<CBoneConstraintBase>.From(nint handle) => new CBoneConstraintBaseImpl(handle);
+  static CBoneConstraintBase ISchemaClass<CBoneConstraintBase>.From(nint handle) => new CBoneConstraintBaseImpl(handle);
 
 
 

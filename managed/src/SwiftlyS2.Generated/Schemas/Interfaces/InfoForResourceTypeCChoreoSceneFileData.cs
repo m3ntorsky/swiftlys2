@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCChoreoSceneFileData : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCChoreoSceneFileData> {
+public partial interface InfoForResourceTypeCChoreoSceneFileData : ISchemaClass<InfoForResourceTypeCChoreoSceneFileData> {
 
-  static InfoForResourceTypeCChoreoSceneFileData IConvertibleNativeHandle<InfoForResourceTypeCChoreoSceneFileData>.From(nint handle) => new InfoForResourceTypeCChoreoSceneFileDataImpl(handle);
+  static InfoForResourceTypeCChoreoSceneFileData ISchemaClass<InfoForResourceTypeCChoreoSceneFileData>.From(nint handle) => new InfoForResourceTypeCChoreoSceneFileDataImpl(handle);
 
 
 

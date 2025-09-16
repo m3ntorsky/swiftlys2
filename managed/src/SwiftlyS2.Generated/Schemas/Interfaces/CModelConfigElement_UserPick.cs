@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CModelConfigElement_UserPick : CModelConfigElement, IConvertibleNativeHandle<CModelConfigElement_UserPick> {
+public partial interface CModelConfigElement_UserPick : CModelConfigElement, ISchemaClass<CModelConfigElement_UserPick> {
 
-  static CModelConfigElement_UserPick IConvertibleNativeHandle<CModelConfigElement_UserPick>.From(nint handle) => new CModelConfigElement_UserPickImpl(handle);
+  static CModelConfigElement_UserPick ISchemaClass<CModelConfigElement_UserPick>.From(nint handle) => new CModelConfigElement_UserPickImpl(handle);
 
   
   public ref CUtlVector<CUtlString> Choices { get; }

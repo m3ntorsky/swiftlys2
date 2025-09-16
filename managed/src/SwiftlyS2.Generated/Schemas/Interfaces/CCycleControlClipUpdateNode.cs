@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCycleControlClipUpdateNode : CLeafUpdateNode, IConvertibleNativeHandle<CCycleControlClipUpdateNode> {
+public partial interface CCycleControlClipUpdateNode : CLeafUpdateNode, ISchemaClass<CCycleControlClipUpdateNode> {
 
-  static CCycleControlClipUpdateNode IConvertibleNativeHandle<CCycleControlClipUpdateNode>.From(nint handle) => new CCycleControlClipUpdateNodeImpl(handle);
+  static CCycleControlClipUpdateNode ISchemaClass<CCycleControlClipUpdateNode>.From(nint handle) => new CCycleControlClipUpdateNodeImpl(handle);
 
   
   // CUtlVector< TagSpan_t >

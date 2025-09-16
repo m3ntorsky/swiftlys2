@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMarkupVolumeTagged_NavGame : CMarkupVolumeWithRef, IConvertibleNativeHandle<CMarkupVolumeTagged_NavGame> {
+public partial interface CMarkupVolumeTagged_NavGame : CMarkupVolumeWithRef, ISchemaClass<CMarkupVolumeTagged_NavGame> {
 
-  static CMarkupVolumeTagged_NavGame IConvertibleNativeHandle<CMarkupVolumeTagged_NavGame>.From(nint handle) => new CMarkupVolumeTagged_NavGameImpl(handle);
+  static CMarkupVolumeTagged_NavGame ISchemaClass<CMarkupVolumeTagged_NavGame>.From(nint handle) => new CMarkupVolumeTagged_NavGameImpl(handle);
 
   
   public ref NavScopeFlags_t Scopes { get; }

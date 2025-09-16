@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSceneObjectData : ISchemaClass, IConvertibleNativeHandle<CSceneObjectData> {
+public partial interface CSceneObjectData : ISchemaClass<CSceneObjectData> {
 
-  static CSceneObjectData IConvertibleNativeHandle<CSceneObjectData>.From(nint handle) => new CSceneObjectDataImpl(handle);
+  static CSceneObjectData ISchemaClass<CSceneObjectData>.From(nint handle) => new CSceneObjectDataImpl(handle);
 
   
   public ref Vector MinBounds { get; }

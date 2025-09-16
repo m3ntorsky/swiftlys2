@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MoodAnimation_t : ISchemaClass, IConvertibleNativeHandle<MoodAnimation_t> {
+public partial interface MoodAnimation_t : ISchemaClass<MoodAnimation_t> {
 
-  static MoodAnimation_t IConvertibleNativeHandle<MoodAnimation_t>.From(nint handle) => new MoodAnimation_tImpl(handle);
+  static MoodAnimation_t ISchemaClass<MoodAnimation_t>.From(nint handle) => new MoodAnimation_tImpl(handle);
 
   
   // CModelAnimNameWithDeltas

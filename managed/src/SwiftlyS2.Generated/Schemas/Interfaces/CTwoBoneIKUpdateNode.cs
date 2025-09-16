@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTwoBoneIKUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CTwoBoneIKUpdateNode> {
+public partial interface CTwoBoneIKUpdateNode : CUnaryUpdateNode, ISchemaClass<CTwoBoneIKUpdateNode> {
 
-  static CTwoBoneIKUpdateNode IConvertibleNativeHandle<CTwoBoneIKUpdateNode>.From(nint handle) => new CTwoBoneIKUpdateNodeImpl(handle);
+  static CTwoBoneIKUpdateNode ISchemaClass<CTwoBoneIKUpdateNode>.From(nint handle) => new CTwoBoneIKUpdateNodeImpl(handle);
 
   
   public TwoBoneIKSettings_t OpFixedData { get; }

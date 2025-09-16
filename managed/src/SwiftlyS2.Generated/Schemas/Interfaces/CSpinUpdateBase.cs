@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSpinUpdateBase : CParticleFunctionOperator, IConvertibleNativeHandle<CSpinUpdateBase> {
+public partial interface CSpinUpdateBase : CParticleFunctionOperator, ISchemaClass<CSpinUpdateBase> {
 
-  static CSpinUpdateBase IConvertibleNativeHandle<CSpinUpdateBase>.From(nint handle) => new CSpinUpdateBaseImpl(handle);
+  static CSpinUpdateBase ISchemaClass<CSpinUpdateBase>.From(nint handle) => new CSpinUpdateBaseImpl(handle);
 
 
 

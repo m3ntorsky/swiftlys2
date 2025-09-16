@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_AttractToControlPoint : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_AttractToControlPoint> {
+public partial interface C_OP_AttractToControlPoint : CParticleFunctionForce, ISchemaClass<C_OP_AttractToControlPoint> {
 
-  static C_OP_AttractToControlPoint IConvertibleNativeHandle<C_OP_AttractToControlPoint>.From(nint handle) => new C_OP_AttractToControlPointImpl(handle);
+  static C_OP_AttractToControlPoint ISchemaClass<C_OP_AttractToControlPoint>.From(nint handle) => new C_OP_AttractToControlPointImpl(handle);
 
   
   public ref Vector ComponentScale { get; }

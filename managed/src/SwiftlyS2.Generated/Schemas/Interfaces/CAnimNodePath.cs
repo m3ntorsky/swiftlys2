@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimNodePath : ISchemaClass, IConvertibleNativeHandle<CAnimNodePath> {
+public partial interface CAnimNodePath : ISchemaClass<CAnimNodePath> {
 
-  static CAnimNodePath IConvertibleNativeHandle<CAnimNodePath>.From(nint handle) => new CAnimNodePathImpl(handle);
+  static CAnimNodePath ISchemaClass<CAnimNodePath>.From(nint handle) => new CAnimNodePathImpl(handle);
 
   
   // AnimNodeID

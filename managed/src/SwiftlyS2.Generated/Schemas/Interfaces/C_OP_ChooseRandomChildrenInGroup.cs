@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ChooseRandomChildrenInGroup : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_ChooseRandomChildrenInGroup> {
+public partial interface C_OP_ChooseRandomChildrenInGroup : CParticleFunctionPreEmission, ISchemaClass<C_OP_ChooseRandomChildrenInGroup> {
 
-  static C_OP_ChooseRandomChildrenInGroup IConvertibleNativeHandle<C_OP_ChooseRandomChildrenInGroup>.From(nint handle) => new C_OP_ChooseRandomChildrenInGroupImpl(handle);
+  static C_OP_ChooseRandomChildrenInGroup ISchemaClass<C_OP_ChooseRandomChildrenInGroup>.From(nint handle) => new C_OP_ChooseRandomChildrenInGroupImpl(handle);
 
   
   public ref int ChildGroupID { get; }

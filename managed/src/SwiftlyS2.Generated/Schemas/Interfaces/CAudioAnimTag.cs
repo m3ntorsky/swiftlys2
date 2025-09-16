@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAudioAnimTag : CAnimTagBase, IConvertibleNativeHandle<CAudioAnimTag> {
+public partial interface CAudioAnimTag : CAnimTagBase, ISchemaClass<CAudioAnimTag> {
 
-  static CAudioAnimTag IConvertibleNativeHandle<CAudioAnimTag>.From(nint handle) => new CAudioAnimTagImpl(handle);
+  static CAudioAnimTag ISchemaClass<CAudioAnimTag>.From(nint handle) => new CAudioAnimTagImpl(handle);
 
   
   public ref CUtlString ClipName { get; }

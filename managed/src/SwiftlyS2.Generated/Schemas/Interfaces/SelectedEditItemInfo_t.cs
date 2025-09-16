@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SelectedEditItemInfo_t : ISchemaClass, IConvertibleNativeHandle<SelectedEditItemInfo_t> {
+public partial interface SelectedEditItemInfo_t : ISchemaClass<SelectedEditItemInfo_t> {
 
-  static SelectedEditItemInfo_t IConvertibleNativeHandle<SelectedEditItemInfo_t>.From(nint handle) => new SelectedEditItemInfo_tImpl(handle);
+  static SelectedEditItemInfo_t ISchemaClass<SelectedEditItemInfo_t>.From(nint handle) => new SelectedEditItemInfo_tImpl(handle);
 
   
   // CUtlVector< SosEditItemInfo_t >

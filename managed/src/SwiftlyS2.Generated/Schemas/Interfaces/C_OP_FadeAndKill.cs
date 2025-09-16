@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_FadeAndKill : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_FadeAndKill> {
+public partial interface C_OP_FadeAndKill : CParticleFunctionOperator, ISchemaClass<C_OP_FadeAndKill> {
 
-  static C_OP_FadeAndKill IConvertibleNativeHandle<C_OP_FadeAndKill>.From(nint handle) => new C_OP_FadeAndKillImpl(handle);
+  static C_OP_FadeAndKill ISchemaClass<C_OP_FadeAndKill>.From(nint handle) => new C_OP_FadeAndKillImpl(handle);
 
   
   public ref float StartFadeInTime { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHostageExpresserShim : CBaseCombatCharacter, IConvertibleNativeHandle<CHostageExpresserShim> {
+public partial interface CHostageExpresserShim : CBaseCombatCharacter, ISchemaClass<CHostageExpresserShim> {
 
-  static CHostageExpresserShim IConvertibleNativeHandle<CHostageExpresserShim>.From(nint handle) => new CHostageExpresserShimImpl(handle);
+  static CHostageExpresserShim ISchemaClass<CHostageExpresserShim>.From(nint handle) => new CHostageExpresserShimImpl(handle);
 
   
   public CAI_Expresser? Expresser { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimGraphModelBinding : ISchemaClass, IConvertibleNativeHandle<CAnimGraphModelBinding> {
+public partial interface CAnimGraphModelBinding : ISchemaClass<CAnimGraphModelBinding> {
 
-  static CAnimGraphModelBinding IConvertibleNativeHandle<CAnimGraphModelBinding>.From(nint handle) => new CAnimGraphModelBindingImpl(handle);
+  static CAnimGraphModelBinding ISchemaClass<CAnimGraphModelBinding>.From(nint handle) => new CAnimGraphModelBindingImpl(handle);
 
   
   public ref CUtlString ModelName { get; }

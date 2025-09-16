@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnShapeDesc_t : ISchemaClass, IConvertibleNativeHandle<RnShapeDesc_t> {
+public partial interface RnShapeDesc_t : ISchemaClass<RnShapeDesc_t> {
 
-  static RnShapeDesc_t IConvertibleNativeHandle<RnShapeDesc_t>.From(nint handle) => new RnShapeDesc_tImpl(handle);
+  static RnShapeDesc_t ISchemaClass<RnShapeDesc_t>.From(nint handle) => new RnShapeDesc_tImpl(handle);
 
   
   public ref uint CollisionAttributeIndex { get; }

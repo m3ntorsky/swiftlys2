@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CItemSoda : CBaseAnimGraph, IConvertibleNativeHandle<CItemSoda> {
+public partial interface CItemSoda : CBaseAnimGraph, ISchemaClass<CItemSoda> {
 
-  static CItemSoda IConvertibleNativeHandle<CItemSoda>.From(nint handle) => new CItemSodaImpl(handle);
+  static CItemSoda ISchemaClass<CItemSoda>.From(nint handle) => new CItemSodaImpl(handle);
 
 
 

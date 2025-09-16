@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Step_TestDomainTracepoint : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_Step_TestDomainTracepoint> {
+public partial interface CPulseCell_Step_TestDomainTracepoint : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_Step_TestDomainTracepoint> {
 
-  static CPulseCell_Step_TestDomainTracepoint IConvertibleNativeHandle<CPulseCell_Step_TestDomainTracepoint>.From(nint handle) => new CPulseCell_Step_TestDomainTracepointImpl(handle);
+  static CPulseCell_Step_TestDomainTracepoint ISchemaClass<CPulseCell_Step_TestDomainTracepoint>.From(nint handle) => new CPulseCell_Step_TestDomainTracepointImpl(handle);
 
 
 

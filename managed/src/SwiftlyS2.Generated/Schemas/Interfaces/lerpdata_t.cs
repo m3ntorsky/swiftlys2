@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface lerpdata_t : ISchemaClass, IConvertibleNativeHandle<lerpdata_t> {
+public partial interface lerpdata_t : ISchemaClass<lerpdata_t> {
 
-  static lerpdata_t IConvertibleNativeHandle<lerpdata_t>.From(nint handle) => new lerpdata_tImpl(handle);
+  static lerpdata_t ISchemaClass<lerpdata_t>.From(nint handle) => new lerpdata_tImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Ent { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvParticleGlow : CParticleSystem, IConvertibleNativeHandle<CEnvParticleGlow> {
+public partial interface CEnvParticleGlow : CParticleSystem, ISchemaClass<CEnvParticleGlow> {
 
-  static CEnvParticleGlow IConvertibleNativeHandle<CEnvParticleGlow>.From(nint handle) => new CEnvParticleGlowImpl(handle);
+  static CEnvParticleGlow ISchemaClass<CEnvParticleGlow>.From(nint handle) => new CEnvParticleGlowImpl(handle);
 
   
   public ref float AlphaScale { get; }

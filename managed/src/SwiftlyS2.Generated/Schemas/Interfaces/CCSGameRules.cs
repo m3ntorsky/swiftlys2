@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSGameRules : CTeamplayRules, IConvertibleNativeHandle<CCSGameRules> {
+public partial interface CCSGameRules : CTeamplayRules, ISchemaClass<CCSGameRules> {
 
-  static CCSGameRules IConvertibleNativeHandle<CCSGameRules>.From(nint handle) => new CCSGameRulesImpl(handle);
+  static CCSGameRules ISchemaClass<CCSGameRules>.From(nint handle) => new CCSGameRulesImpl(handle);
 
   
   public ref bool FreezePeriod { get; }

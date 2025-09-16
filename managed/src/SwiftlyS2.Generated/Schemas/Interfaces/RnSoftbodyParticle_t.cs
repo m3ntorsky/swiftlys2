@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnSoftbodyParticle_t : ISchemaClass, IConvertibleNativeHandle<RnSoftbodyParticle_t> {
+public partial interface RnSoftbodyParticle_t : ISchemaClass<RnSoftbodyParticle_t> {
 
-  static RnSoftbodyParticle_t IConvertibleNativeHandle<RnSoftbodyParticle_t>.From(nint handle) => new RnSoftbodyParticle_tImpl(handle);
+  static RnSoftbodyParticle_t ISchemaClass<RnSoftbodyParticle_t>.From(nint handle) => new RnSoftbodyParticle_tImpl(handle);
 
   
   public ref float MassInv { get; }

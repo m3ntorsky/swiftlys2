@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAI_ExpresserWithFollowup : CAI_Expresser, IConvertibleNativeHandle<CAI_ExpresserWithFollowup> {
+public partial interface CAI_ExpresserWithFollowup : CAI_Expresser, ISchemaClass<CAI_ExpresserWithFollowup> {
 
-  static CAI_ExpresserWithFollowup IConvertibleNativeHandle<CAI_ExpresserWithFollowup>.From(nint handle) => new CAI_ExpresserWithFollowupImpl(handle);
+  static CAI_ExpresserWithFollowup ISchemaClass<CAI_ExpresserWithFollowup>.From(nint handle) => new CAI_ExpresserWithFollowupImpl(handle);
 
 
 

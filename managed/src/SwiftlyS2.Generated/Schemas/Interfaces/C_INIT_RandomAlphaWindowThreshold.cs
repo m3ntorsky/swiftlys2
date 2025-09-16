@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomAlphaWindowThreshold : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RandomAlphaWindowThreshold> {
+public partial interface C_INIT_RandomAlphaWindowThreshold : CParticleFunctionInitializer, ISchemaClass<C_INIT_RandomAlphaWindowThreshold> {
 
-  static C_INIT_RandomAlphaWindowThreshold IConvertibleNativeHandle<C_INIT_RandomAlphaWindowThreshold>.From(nint handle) => new C_INIT_RandomAlphaWindowThresholdImpl(handle);
+  static C_INIT_RandomAlphaWindowThreshold ISchemaClass<C_INIT_RandomAlphaWindowThreshold>.From(nint handle) => new C_INIT_RandomAlphaWindowThresholdImpl(handle);
 
   
   public ref float Min { get; }

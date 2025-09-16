@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEffectData : ISchemaClass, IConvertibleNativeHandle<CEffectData> {
+public partial interface CEffectData : ISchemaClass<CEffectData> {
 
-  static CEffectData IConvertibleNativeHandle<CEffectData>.From(nint handle) => new CEffectDataImpl(handle);
+  static CEffectData ISchemaClass<CEffectData>.From(nint handle) => new CEffectDataImpl(handle);
 
   
   public ref Vector Origin { get; }

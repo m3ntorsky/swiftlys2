@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CConstantForceController : ISchemaClass, IConvertibleNativeHandle<CConstantForceController> {
+public partial interface CConstantForceController : ISchemaClass<CConstantForceController> {
 
-  static CConstantForceController IConvertibleNativeHandle<CConstantForceController>.From(nint handle) => new CConstantForceControllerImpl(handle);
+  static CConstantForceController ISchemaClass<CConstantForceController>.From(nint handle) => new CConstantForceControllerImpl(handle);
 
   
   public ref Vector Linear { get; }

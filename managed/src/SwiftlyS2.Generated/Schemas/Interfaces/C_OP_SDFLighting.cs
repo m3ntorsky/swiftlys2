@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SDFLighting : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_SDFLighting> {
+public partial interface C_OP_SDFLighting : CParticleFunctionOperator, ISchemaClass<C_OP_SDFLighting> {
 
-  static C_OP_SDFLighting IConvertibleNativeHandle<C_OP_SDFLighting>.From(nint handle) => new C_OP_SDFLightingImpl(handle);
+  static C_OP_SDFLighting ISchemaClass<C_OP_SDFLighting>.From(nint handle) => new C_OP_SDFLightingImpl(handle);
 
   
   public ref Vector LightingDir { get; }

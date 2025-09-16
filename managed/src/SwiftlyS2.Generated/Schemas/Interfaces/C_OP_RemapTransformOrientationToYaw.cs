@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapTransformOrientationToYaw : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapTransformOrientationToYaw> {
+public partial interface C_OP_RemapTransformOrientationToYaw : CParticleFunctionOperator, ISchemaClass<C_OP_RemapTransformOrientationToYaw> {
 
-  static C_OP_RemapTransformOrientationToYaw IConvertibleNativeHandle<C_OP_RemapTransformOrientationToYaw>.From(nint handle) => new C_OP_RemapTransformOrientationToYawImpl(handle);
+  static C_OP_RemapTransformOrientationToYaw ISchemaClass<C_OP_RemapTransformOrientationToYaw>.From(nint handle) => new C_OP_RemapTransformOrientationToYawImpl(handle);
 
   
   public CParticleTransformInput TransformInput { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicLineToEntity : CLogicalEntity, IConvertibleNativeHandle<CLogicLineToEntity> {
+public partial interface CLogicLineToEntity : CLogicalEntity, ISchemaClass<CLogicLineToEntity> {
 
-  static CLogicLineToEntity IConvertibleNativeHandle<CLogicLineToEntity>.From(nint handle) => new CLogicLineToEntityImpl(handle);
+  static CLogicLineToEntity ISchemaClass<CLogicLineToEntity>.From(nint handle) => new CLogicLineToEntityImpl(handle);
 
   
   // CEntityOutputTemplate< Vector >

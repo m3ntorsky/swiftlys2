@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRevertSaved : CModelPointEntity, IConvertibleNativeHandle<CRevertSaved> {
+public partial interface CRevertSaved : CModelPointEntity, ISchemaClass<CRevertSaved> {
 
-  static CRevertSaved IConvertibleNativeHandle<CRevertSaved>.From(nint handle) => new CRevertSavedImpl(handle);
+  static CRevertSaved ISchemaClass<CRevertSaved>.From(nint handle) => new CRevertSavedImpl(handle);
 
   
   public ref float LoadTime { get; }

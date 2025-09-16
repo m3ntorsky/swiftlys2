@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_StopAfterCPDuration : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_StopAfterCPDuration> {
+public partial interface C_OP_StopAfterCPDuration : CParticleFunctionPreEmission, ISchemaClass<C_OP_StopAfterCPDuration> {
 
-  static C_OP_StopAfterCPDuration IConvertibleNativeHandle<C_OP_StopAfterCPDuration>.From(nint handle) => new C_OP_StopAfterCPDurationImpl(handle);
+  static C_OP_StopAfterCPDuration ISchemaClass<C_OP_StopAfterCPDuration>.From(nint handle) => new C_OP_StopAfterCPDurationImpl(handle);
 
   
   public CParticleCollectionFloatInput Duration { get; }

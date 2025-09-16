@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulse_ResumePoint : CPulse_OutflowConnection, IConvertibleNativeHandle<CPulse_ResumePoint> {
+public partial interface CPulse_ResumePoint : CPulse_OutflowConnection, ISchemaClass<CPulse_ResumePoint> {
 
-  static CPulse_ResumePoint IConvertibleNativeHandle<CPulse_ResumePoint>.From(nint handle) => new CPulse_ResumePointImpl(handle);
+  static CPulse_ResumePoint ISchemaClass<CPulse_ResumePoint>.From(nint handle) => new CPulse_ResumePointImpl(handle);
 
 
 

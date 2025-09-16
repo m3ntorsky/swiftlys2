@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGeneralSpin : CParticleFunctionOperator, IConvertibleNativeHandle<CGeneralSpin> {
+public partial interface CGeneralSpin : CParticleFunctionOperator, ISchemaClass<CGeneralSpin> {
 
-  static CGeneralSpin IConvertibleNativeHandle<CGeneralSpin>.From(nint handle) => new CGeneralSpinImpl(handle);
+  static CGeneralSpin ISchemaClass<CGeneralSpin>.From(nint handle) => new CGeneralSpinImpl(handle);
 
   
   public ref int SpinRateDegrees { get; }

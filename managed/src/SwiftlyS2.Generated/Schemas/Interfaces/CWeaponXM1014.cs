@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CWeaponXM1014 : CCSWeaponBase, IConvertibleNativeHandle<CWeaponXM1014> {
+public partial interface CWeaponXM1014 : CCSWeaponBase, ISchemaClass<CWeaponXM1014> {
 
-  static CWeaponXM1014 IConvertibleNativeHandle<CWeaponXM1014>.From(nint handle) => new CWeaponXM1014Impl(handle);
+  static CWeaponXM1014 ISchemaClass<CWeaponXM1014>.From(nint handle) => new CWeaponXM1014Impl(handle);
 
 
 

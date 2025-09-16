@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqSeqDescFlag : ISchemaClass, IConvertibleNativeHandle<CSeqSeqDescFlag> {
+public partial interface CSeqSeqDescFlag : ISchemaClass<CSeqSeqDescFlag> {
 
-  static CSeqSeqDescFlag IConvertibleNativeHandle<CSeqSeqDescFlag>.From(nint handle) => new CSeqSeqDescFlagImpl(handle);
+  static CSeqSeqDescFlag ISchemaClass<CSeqSeqDescFlag>.From(nint handle) => new CSeqSeqDescFlagImpl(handle);
 
   
   public ref bool Looping { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqMultiFetchFlag : ISchemaClass, IConvertibleNativeHandle<CSeqMultiFetchFlag> {
+public partial interface CSeqMultiFetchFlag : ISchemaClass<CSeqMultiFetchFlag> {
 
-  static CSeqMultiFetchFlag IConvertibleNativeHandle<CSeqMultiFetchFlag>.From(nint handle) => new CSeqMultiFetchFlagImpl(handle);
+  static CSeqMultiFetchFlag ISchemaClass<CSeqMultiFetchFlag>.From(nint handle) => new CSeqMultiFetchFlagImpl(handle);
 
   
   public ref bool Realtime { get; }

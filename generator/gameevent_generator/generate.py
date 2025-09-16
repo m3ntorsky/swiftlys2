@@ -97,6 +97,8 @@ def to_pascal_case(name: str) -> str:
 
 def _split_concatenated_lowercase(word: str):
   s = word.lower()
+  if s == "assister":
+    return ["Assister"]
   tokens = wordninja.split(s)
   return tokens
 

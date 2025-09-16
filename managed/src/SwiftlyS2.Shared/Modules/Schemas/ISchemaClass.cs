@@ -2,5 +2,22 @@ using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Shared.Schemas;
 
-public interface ISchemaClass : ISchemaField, INativeHandle {
+public interface ISchemaClass : INativeHandle {
+
+  /// <summary>
+  /// Convert this handle to another type.
+  /// </summary>
+  /// <typeparam name="K">The type to convert to.</typeparam>
+  /// <returns>The converted handle.</returns>
+  K As<K>() where K : ISchemaClass<K>
+  {
+    return K.From(GetHandle());
+  }
+}
+
+public interface ISchemaClass<T> : ISchemaField, ISchemaClass, INativeHandle where T : ISchemaClass<T> {
+
+  internal static abstract T From(nint handle);
+
+
 }

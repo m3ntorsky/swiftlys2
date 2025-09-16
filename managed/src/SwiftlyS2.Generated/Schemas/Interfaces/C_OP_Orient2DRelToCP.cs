@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_Orient2DRelToCP : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_Orient2DRelToCP> {
+public partial interface C_OP_Orient2DRelToCP : CParticleFunctionOperator, ISchemaClass<C_OP_Orient2DRelToCP> {
 
-  static C_OP_Orient2DRelToCP IConvertibleNativeHandle<C_OP_Orient2DRelToCP>.From(nint handle) => new C_OP_Orient2DRelToCPImpl(handle);
+  static C_OP_Orient2DRelToCP ISchemaClass<C_OP_Orient2DRelToCP>.From(nint handle) => new C_OP_Orient2DRelToCPImpl(handle);
 
   
   public ref float RotOffset { get; }

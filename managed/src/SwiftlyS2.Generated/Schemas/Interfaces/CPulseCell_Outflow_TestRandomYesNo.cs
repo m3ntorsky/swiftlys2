@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Outflow_TestRandomYesNo : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_Outflow_TestRandomYesNo> {
+public partial interface CPulseCell_Outflow_TestRandomYesNo : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_Outflow_TestRandomYesNo> {
 
-  static CPulseCell_Outflow_TestRandomYesNo IConvertibleNativeHandle<CPulseCell_Outflow_TestRandomYesNo>.From(nint handle) => new CPulseCell_Outflow_TestRandomYesNoImpl(handle);
+  static CPulseCell_Outflow_TestRandomYesNo ISchemaClass<CPulseCell_Outflow_TestRandomYesNo>.From(nint handle) => new CPulseCell_Outflow_TestRandomYesNoImpl(handle);
 
   
   public CPulse_OutflowConnection Yes { get; }

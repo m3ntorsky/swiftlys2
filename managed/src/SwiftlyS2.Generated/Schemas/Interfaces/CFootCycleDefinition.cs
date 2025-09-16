@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootCycleDefinition : ISchemaClass, IConvertibleNativeHandle<CFootCycleDefinition> {
+public partial interface CFootCycleDefinition : ISchemaClass<CFootCycleDefinition> {
 
-  static CFootCycleDefinition IConvertibleNativeHandle<CFootCycleDefinition>.From(nint handle) => new CFootCycleDefinitionImpl(handle);
+  static CFootCycleDefinition ISchemaClass<CFootCycleDefinition>.From(nint handle) => new CFootCycleDefinitionImpl(handle);
 
   
   public ref Vector StancePositionMS { get; }

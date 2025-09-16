@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupActionMemberCountEnvelopeSchema : CSosGroupActionSchema, IConvertibleNativeHandle<CSosGroupActionMemberCountEnvelopeSchema> {
+public partial interface CSosGroupActionMemberCountEnvelopeSchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionMemberCountEnvelopeSchema> {
 
-  static CSosGroupActionMemberCountEnvelopeSchema IConvertibleNativeHandle<CSosGroupActionMemberCountEnvelopeSchema>.From(nint handle) => new CSosGroupActionMemberCountEnvelopeSchemaImpl(handle);
+  static CSosGroupActionMemberCountEnvelopeSchema ISchemaClass<CSosGroupActionMemberCountEnvelopeSchema>.From(nint handle) => new CSosGroupActionMemberCountEnvelopeSchemaImpl(handle);
 
   
   public ref int BaseCount { get; }

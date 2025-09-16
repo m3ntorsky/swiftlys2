@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderScreenShake : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderScreenShake> {
+public partial interface C_OP_RenderScreenShake : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderScreenShake> {
 
-  static C_OP_RenderScreenShake IConvertibleNativeHandle<C_OP_RenderScreenShake>.From(nint handle) => new C_OP_RenderScreenShakeImpl(handle);
+  static C_OP_RenderScreenShake ISchemaClass<C_OP_RenderScreenShake>.From(nint handle) => new C_OP_RenderScreenShakeImpl(handle);
 
   
   public ref float DurationScale { get; }

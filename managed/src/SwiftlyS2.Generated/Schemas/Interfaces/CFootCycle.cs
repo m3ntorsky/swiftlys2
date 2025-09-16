@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootCycle : CCycleBase, IConvertibleNativeHandle<CFootCycle> {
+public partial interface CFootCycle : CCycleBase, ISchemaClass<CFootCycle> {
 
-  static CFootCycle IConvertibleNativeHandle<CFootCycle>.From(nint handle) => new CFootCycleImpl(handle);
+  static CFootCycle ISchemaClass<CFootCycle>.From(nint handle) => new CFootCycleImpl(handle);
 
 
 

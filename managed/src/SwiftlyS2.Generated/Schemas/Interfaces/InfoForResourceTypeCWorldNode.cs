@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCWorldNode : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCWorldNode> {
+public partial interface InfoForResourceTypeCWorldNode : ISchemaClass<InfoForResourceTypeCWorldNode> {
 
-  static InfoForResourceTypeCWorldNode IConvertibleNativeHandle<InfoForResourceTypeCWorldNode>.From(nint handle) => new InfoForResourceTypeCWorldNodeImpl(handle);
+  static InfoForResourceTypeCWorldNode ISchemaClass<InfoForResourceTypeCWorldNode>.From(nint handle) => new InfoForResourceTypeCWorldNodeImpl(handle);
 
 
 

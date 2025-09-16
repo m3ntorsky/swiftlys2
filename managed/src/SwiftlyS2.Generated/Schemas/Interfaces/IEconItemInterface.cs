@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IEconItemInterface : ISchemaClass, IConvertibleNativeHandle<IEconItemInterface> {
+public partial interface IEconItemInterface : ISchemaClass<IEconItemInterface> {
 
-  static IEconItemInterface IConvertibleNativeHandle<IEconItemInterface>.From(nint handle) => new IEconItemInterfaceImpl(handle);
+  static IEconItemInterface ISchemaClass<IEconItemInterface>.From(nint handle) => new IEconItemInterfaceImpl(handle);
 
 
 

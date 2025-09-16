@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointToImpactPoint : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetControlPointToImpactPoint> {
+public partial interface C_OP_SetControlPointToImpactPoint : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetControlPointToImpactPoint> {
 
-  static C_OP_SetControlPointToImpactPoint IConvertibleNativeHandle<C_OP_SetControlPointToImpactPoint>.From(nint handle) => new C_OP_SetControlPointToImpactPointImpl(handle);
+  static C_OP_SetControlPointToImpactPoint ISchemaClass<C_OP_SetControlPointToImpactPoint>.From(nint handle) => new C_OP_SetControlPointToImpactPointImpl(handle);
 
   
   public ref int CPOut { get; }

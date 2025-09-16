@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface LookAtBone_t : ISchemaClass, IConvertibleNativeHandle<LookAtBone_t> {
+public partial interface LookAtBone_t : ISchemaClass<LookAtBone_t> {
 
-  static LookAtBone_t IConvertibleNativeHandle<LookAtBone_t>.From(nint handle) => new LookAtBone_tImpl(handle);
+  static LookAtBone_t ISchemaClass<LookAtBone_t>.From(nint handle) => new LookAtBone_tImpl(handle);
 
   
   public ref int Index { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerVolume : CBaseModelEntity, IConvertibleNativeHandle<CTriggerVolume> {
+public partial interface CTriggerVolume : CBaseModelEntity, ISchemaClass<CTriggerVolume> {
 
-  static CTriggerVolume IConvertibleNativeHandle<CTriggerVolume>.From(nint handle) => new CTriggerVolumeImpl(handle);
+  static CTriggerVolume ISchemaClass<CTriggerVolume>.From(nint handle) => new CTriggerVolumeImpl(handle);
 
   
   public ref CUtlSymbolLarge FilterName { get; }

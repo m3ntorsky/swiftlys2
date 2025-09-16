@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDynamicPropAlias_cable_dynamic : CDynamicProp, IConvertibleNativeHandle<CDynamicPropAlias_cable_dynamic> {
+public partial interface CDynamicPropAlias_cable_dynamic : CDynamicProp, ISchemaClass<CDynamicPropAlias_cable_dynamic> {
 
-  static CDynamicPropAlias_cable_dynamic IConvertibleNativeHandle<CDynamicPropAlias_cable_dynamic>.From(nint handle) => new CDynamicPropAlias_cable_dynamicImpl(handle);
+  static CDynamicPropAlias_cable_dynamic ISchemaClass<CDynamicPropAlias_cable_dynamic>.From(nint handle) => new CDynamicPropAlias_cable_dynamicImpl(handle);
 
 
 

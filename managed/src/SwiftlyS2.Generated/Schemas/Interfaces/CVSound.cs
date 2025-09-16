@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVSound : ISchemaClass, IConvertibleNativeHandle<CVSound> {
+public partial interface CVSound : ISchemaClass<CVSound> {
 
-  static CVSound IConvertibleNativeHandle<CVSound>.From(nint handle) => new CVSoundImpl(handle);
+  static CVSound ISchemaClass<CVSound>.From(nint handle) => new CVSoundImpl(handle);
 
   
   public ref int Rate { get; }

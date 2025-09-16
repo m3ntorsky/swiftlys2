@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CollisionGroupContext_t : ISchemaClass, IConvertibleNativeHandle<CollisionGroupContext_t> {
+public partial interface CollisionGroupContext_t : ISchemaClass<CollisionGroupContext_t> {
 
-  static CollisionGroupContext_t IConvertibleNativeHandle<CollisionGroupContext_t>.From(nint handle) => new CollisionGroupContext_tImpl(handle);
+  static CollisionGroupContext_t ISchemaClass<CollisionGroupContext_t>.From(nint handle) => new CollisionGroupContext_tImpl(handle);
 
   
   public ref int CollisionGroupNumber { get; }

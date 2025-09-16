@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_StatusEffect : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_StatusEffect> {
+public partial interface C_INIT_StatusEffect : CParticleFunctionInitializer, ISchemaClass<C_INIT_StatusEffect> {
 
-  static C_INIT_StatusEffect IConvertibleNativeHandle<C_INIT_StatusEffect>.From(nint handle) => new C_INIT_StatusEffectImpl(handle);
+  static C_INIT_StatusEffect ISchemaClass<C_INIT_StatusEffect>.From(nint handle) => new C_INIT_StatusEffectImpl(handle);
 
   
   public ref Detail2Combo_t Detail2Combo { get; }

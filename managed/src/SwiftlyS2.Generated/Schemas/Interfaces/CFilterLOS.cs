@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFilterLOS : CBaseFilter, IConvertibleNativeHandle<CFilterLOS> {
+public partial interface CFilterLOS : CBaseFilter, ISchemaClass<CFilterLOS> {
 
-  static CFilterLOS IConvertibleNativeHandle<CFilterLOS>.From(nint handle) => new CFilterLOSImpl(handle);
+  static CFilterLOS ISchemaClass<CFilterLOS>.From(nint handle) => new CFilterLOSImpl(handle);
 
 
 

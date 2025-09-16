@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmParameterizedBlendNode__BlendRange_t : ISchemaClass, IConvertibleNativeHandle<CNmParameterizedBlendNode__BlendRange_t> {
+public partial interface CNmParameterizedBlendNode__BlendRange_t : ISchemaClass<CNmParameterizedBlendNode__BlendRange_t> {
 
-  static CNmParameterizedBlendNode__BlendRange_t IConvertibleNativeHandle<CNmParameterizedBlendNode__BlendRange_t>.From(nint handle) => new CNmParameterizedBlendNode__BlendRange_tImpl(handle);
+  static CNmParameterizedBlendNode__BlendRange_t ISchemaClass<CNmParameterizedBlendNode__BlendRange_t>.From(nint handle) => new CNmParameterizedBlendNode__BlendRange_tImpl(handle);
 
   
   public ref short InputIdx0 { get; }

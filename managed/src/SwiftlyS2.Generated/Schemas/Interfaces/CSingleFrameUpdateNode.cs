@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSingleFrameUpdateNode : CLeafUpdateNode, IConvertibleNativeHandle<CSingleFrameUpdateNode> {
+public partial interface CSingleFrameUpdateNode : CLeafUpdateNode, ISchemaClass<CSingleFrameUpdateNode> {
 
-  static CSingleFrameUpdateNode IConvertibleNativeHandle<CSingleFrameUpdateNode>.From(nint handle) => new CSingleFrameUpdateNodeImpl(handle);
+  static CSingleFrameUpdateNode ISchemaClass<CSingleFrameUpdateNode>.From(nint handle) => new CSingleFrameUpdateNodeImpl(handle);
 
   
   // CUtlVector< CSmartPtr< CAnimActionUpdater > >

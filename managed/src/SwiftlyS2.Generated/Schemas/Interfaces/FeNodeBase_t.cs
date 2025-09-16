@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeNodeBase_t : ISchemaClass, IConvertibleNativeHandle<FeNodeBase_t> {
+public partial interface FeNodeBase_t : ISchemaClass<FeNodeBase_t> {
 
-  static FeNodeBase_t IConvertibleNativeHandle<FeNodeBase_t>.From(nint handle) => new FeNodeBase_tImpl(handle);
+  static FeNodeBase_t ISchemaClass<FeNodeBase_t>.From(nint handle) => new FeNodeBase_tImpl(handle);
 
   
   public ref ushort Node { get; }

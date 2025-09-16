@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_Orient2DRelToCP : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_Orient2DRelToCP> {
+public partial interface C_INIT_Orient2DRelToCP : CParticleFunctionInitializer, ISchemaClass<C_INIT_Orient2DRelToCP> {
 
-  static C_INIT_Orient2DRelToCP IConvertibleNativeHandle<C_INIT_Orient2DRelToCP>.From(nint handle) => new C_INIT_Orient2DRelToCPImpl(handle);
+  static C_INIT_Orient2DRelToCP ISchemaClass<C_INIT_Orient2DRelToCP>.From(nint handle) => new C_INIT_Orient2DRelToCPImpl(handle);
 
   
   public ref int CP { get; }

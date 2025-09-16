@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuseProgram : ISchemaClass, IConvertibleNativeHandle<CFuseProgram> {
+public partial interface CFuseProgram : ISchemaClass<CFuseProgram> {
 
-  static CFuseProgram IConvertibleNativeHandle<CFuseProgram>.From(nint handle) => new CFuseProgramImpl(handle);
+  static CFuseProgram ISchemaClass<CFuseProgram>.From(nint handle) => new CFuseProgramImpl(handle);
 
   
   public ref CUtlVector<byte> ProgramBuffer { get; }

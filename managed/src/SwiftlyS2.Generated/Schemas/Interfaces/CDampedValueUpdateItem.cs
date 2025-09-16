@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDampedValueUpdateItem : ISchemaClass, IConvertibleNativeHandle<CDampedValueUpdateItem> {
+public partial interface CDampedValueUpdateItem : ISchemaClass<CDampedValueUpdateItem> {
 
-  static CDampedValueUpdateItem IConvertibleNativeHandle<CDampedValueUpdateItem>.From(nint handle) => new CDampedValueUpdateItemImpl(handle);
+  static CDampedValueUpdateItem ISchemaClass<CDampedValueUpdateItem>.From(nint handle) => new CDampedValueUpdateItemImpl(handle);
 
   
   public CAnimInputDamping Damping { get; }

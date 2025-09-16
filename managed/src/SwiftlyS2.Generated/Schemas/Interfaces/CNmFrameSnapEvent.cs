@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFrameSnapEvent : CNmEvent, IConvertibleNativeHandle<CNmFrameSnapEvent> {
+public partial interface CNmFrameSnapEvent : CNmEvent, ISchemaClass<CNmFrameSnapEvent> {
 
-  static CNmFrameSnapEvent IConvertibleNativeHandle<CNmFrameSnapEvent>.From(nint handle) => new CNmFrameSnapEventImpl(handle);
+  static CNmFrameSnapEvent ISchemaClass<CNmFrameSnapEvent>.From(nint handle) => new CNmFrameSnapEventImpl(handle);
 
   
   public ref NmFrameSnapEventMode_t FrameSnapMode { get; }

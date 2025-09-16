@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CShower : CModelPointEntity, IConvertibleNativeHandle<CShower> {
+public partial interface CShower : CModelPointEntity, ISchemaClass<CShower> {
 
-  static CShower IConvertibleNativeHandle<CShower>.From(nint handle) => new CShowerImpl(handle);
+  static CShower ISchemaClass<CShower>.From(nint handle) => new CShowerImpl(handle);
 
 
 

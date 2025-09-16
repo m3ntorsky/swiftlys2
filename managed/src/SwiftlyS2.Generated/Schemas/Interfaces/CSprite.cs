@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSprite : CBaseModelEntity, IConvertibleNativeHandle<CSprite> {
+public partial interface CSprite : CBaseModelEntity, ISchemaClass<CSprite> {
 
-  static CSprite IConvertibleNativeHandle<CSprite>.From(nint handle) => new CSpriteImpl(handle);
+  static CSprite ISchemaClass<CSprite>.From(nint handle) => new CSpriteImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> SpriteMaterial { get; }

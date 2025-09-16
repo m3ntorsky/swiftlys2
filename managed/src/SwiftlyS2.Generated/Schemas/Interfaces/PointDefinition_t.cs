@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PointDefinition_t : ISchemaClass, IConvertibleNativeHandle<PointDefinition_t> {
+public partial interface PointDefinition_t : ISchemaClass<PointDefinition_t> {
 
-  static PointDefinition_t IConvertibleNativeHandle<PointDefinition_t>.From(nint handle) => new PointDefinition_tImpl(handle);
+  static PointDefinition_t ISchemaClass<PointDefinition_t>.From(nint handle) => new PointDefinition_tImpl(handle);
 
   
   public ref int ControlPoint { get; }

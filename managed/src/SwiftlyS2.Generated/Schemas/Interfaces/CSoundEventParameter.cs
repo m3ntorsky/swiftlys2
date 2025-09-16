@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundEventParameter : CBaseEntity, IConvertibleNativeHandle<CSoundEventParameter> {
+public partial interface CSoundEventParameter : CBaseEntity, ISchemaClass<CSoundEventParameter> {
 
-  static CSoundEventParameter IConvertibleNativeHandle<CSoundEventParameter>.From(nint handle) => new CSoundEventParameterImpl(handle);
+  static CSoundEventParameter ISchemaClass<CSoundEventParameter>.From(nint handle) => new CSoundEventParameterImpl(handle);
 
   
   public ref CUtlSymbolLarge ParamName { get; }

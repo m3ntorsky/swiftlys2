@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ConstraintSoundInfo : ISchemaClass, IConvertibleNativeHandle<ConstraintSoundInfo> {
+public partial interface ConstraintSoundInfo : ISchemaClass<ConstraintSoundInfo> {
 
-  static ConstraintSoundInfo IConvertibleNativeHandle<ConstraintSoundInfo>.From(nint handle) => new ConstraintSoundInfoImpl(handle);
+  static ConstraintSoundInfo ISchemaClass<ConstraintSoundInfo>.From(nint handle) => new ConstraintSoundInfoImpl(handle);
 
   
   public VelocitySampler Sampler { get; }

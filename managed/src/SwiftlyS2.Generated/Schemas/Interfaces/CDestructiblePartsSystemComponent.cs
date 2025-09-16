@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDestructiblePartsSystemComponent : ISchemaClass, IConvertibleNativeHandle<CDestructiblePartsSystemComponent> {
+public partial interface CDestructiblePartsSystemComponent : ISchemaClass<CDestructiblePartsSystemComponent> {
 
-  static CDestructiblePartsSystemComponent IConvertibleNativeHandle<CDestructiblePartsSystemComponent>.From(nint handle) => new CDestructiblePartsSystemComponentImpl(handle);
+  static CDestructiblePartsSystemComponent ISchemaClass<CDestructiblePartsSystemComponent>.From(nint handle) => new CDestructiblePartsSystemComponentImpl(handle);
 
   
   public CNetworkVarChainer __m_pChainEntity { get; }

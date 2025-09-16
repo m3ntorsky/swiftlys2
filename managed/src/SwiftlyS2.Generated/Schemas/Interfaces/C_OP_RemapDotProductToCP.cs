@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapDotProductToCP : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_RemapDotProductToCP> {
+public partial interface C_OP_RemapDotProductToCP : CParticleFunctionPreEmission, ISchemaClass<C_OP_RemapDotProductToCP> {
 
-  static C_OP_RemapDotProductToCP IConvertibleNativeHandle<C_OP_RemapDotProductToCP>.From(nint handle) => new C_OP_RemapDotProductToCPImpl(handle);
+  static C_OP_RemapDotProductToCP ISchemaClass<C_OP_RemapDotProductToCP>.From(nint handle) => new C_OP_RemapDotProductToCPImpl(handle);
 
   
   public ref int InputCP1 { get; }

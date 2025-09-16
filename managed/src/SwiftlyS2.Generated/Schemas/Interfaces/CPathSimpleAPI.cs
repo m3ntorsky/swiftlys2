@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathSimpleAPI : ISchemaClass, IConvertibleNativeHandle<CPathSimpleAPI> {
+public partial interface CPathSimpleAPI : ISchemaClass<CPathSimpleAPI> {
 
-  static CPathSimpleAPI IConvertibleNativeHandle<CPathSimpleAPI>.From(nint handle) => new CPathSimpleAPIImpl(handle);
+  static CPathSimpleAPI ISchemaClass<CPathSimpleAPI>.From(nint handle) => new CPathSimpleAPIImpl(handle);
 
 
 

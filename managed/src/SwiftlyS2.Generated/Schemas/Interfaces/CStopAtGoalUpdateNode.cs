@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStopAtGoalUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CStopAtGoalUpdateNode> {
+public partial interface CStopAtGoalUpdateNode : CUnaryUpdateNode, ISchemaClass<CStopAtGoalUpdateNode> {
 
-  static CStopAtGoalUpdateNode IConvertibleNativeHandle<CStopAtGoalUpdateNode>.From(nint handle) => new CStopAtGoalUpdateNodeImpl(handle);
+  static CStopAtGoalUpdateNode ISchemaClass<CStopAtGoalUpdateNode>.From(nint handle) => new CStopAtGoalUpdateNodeImpl(handle);
 
   
   public ref float OuterRadius { get; }

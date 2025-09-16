@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapNamedModelElementOnceTimed : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapNamedModelElementOnceTimed> {
+public partial interface C_OP_RemapNamedModelElementOnceTimed : CParticleFunctionOperator, ISchemaClass<C_OP_RemapNamedModelElementOnceTimed> {
 
-  static C_OP_RemapNamedModelElementOnceTimed IConvertibleNativeHandle<C_OP_RemapNamedModelElementOnceTimed>.From(nint handle) => new C_OP_RemapNamedModelElementOnceTimedImpl(handle);
+  static C_OP_RemapNamedModelElementOnceTimed ISchemaClass<C_OP_RemapNamedModelElementOnceTimed>.From(nint handle) => new C_OP_RemapNamedModelElementOnceTimedImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }

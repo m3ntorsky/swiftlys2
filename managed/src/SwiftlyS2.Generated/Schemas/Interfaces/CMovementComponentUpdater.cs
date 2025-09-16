@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMovementComponentUpdater : CAnimComponentUpdater, IConvertibleNativeHandle<CMovementComponentUpdater> {
+public partial interface CMovementComponentUpdater : CAnimComponentUpdater, ISchemaClass<CMovementComponentUpdater> {
 
-  static CMovementComponentUpdater IConvertibleNativeHandle<CMovementComponentUpdater>.From(nint handle) => new CMovementComponentUpdaterImpl(handle);
+  static CMovementComponentUpdater ISchemaClass<CMovementComponentUpdater>.From(nint handle) => new CMovementComponentUpdaterImpl(handle);
 
   
   // CUtlVector< CSmartPtr< CAnimMotorUpdaterBase > >

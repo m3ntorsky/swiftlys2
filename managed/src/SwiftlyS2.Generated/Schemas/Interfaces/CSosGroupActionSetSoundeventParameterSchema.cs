@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupActionSetSoundeventParameterSchema : CSosGroupActionSchema, IConvertibleNativeHandle<CSosGroupActionSetSoundeventParameterSchema> {
+public partial interface CSosGroupActionSetSoundeventParameterSchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionSetSoundeventParameterSchema> {
 
-  static CSosGroupActionSetSoundeventParameterSchema IConvertibleNativeHandle<CSosGroupActionSetSoundeventParameterSchema>.From(nint handle) => new CSosGroupActionSetSoundeventParameterSchemaImpl(handle);
+  static CSosGroupActionSetSoundeventParameterSchema ISchemaClass<CSosGroupActionSetSoundeventParameterSchema>.From(nint handle) => new CSosGroupActionSetSoundeventParameterSchemaImpl(handle);
 
   
   public ref int MaxCount { get; }

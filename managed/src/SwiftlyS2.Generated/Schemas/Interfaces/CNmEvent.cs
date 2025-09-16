@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmEvent : ISchemaClass, IConvertibleNativeHandle<CNmEvent> {
+public partial interface CNmEvent : ISchemaClass<CNmEvent> {
 
-  static CNmEvent IConvertibleNativeHandle<CNmEvent>.From(nint handle) => new CNmEventImpl(handle);
+  static CNmEvent ISchemaClass<CNmEvent>.From(nint handle) => new CNmEventImpl(handle);
 
   
   public ref float StartTimeSeconds { get; }

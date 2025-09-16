@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSelectorUpdateNode : CAnimUpdateNodeBase, IConvertibleNativeHandle<CSelectorUpdateNode> {
+public partial interface CSelectorUpdateNode : CAnimUpdateNodeBase, ISchemaClass<CSelectorUpdateNode> {
 
-  static CSelectorUpdateNode IConvertibleNativeHandle<CSelectorUpdateNode>.From(nint handle) => new CSelectorUpdateNodeImpl(handle);
+  static CSelectorUpdateNode ISchemaClass<CSelectorUpdateNode>.From(nint handle) => new CSelectorUpdateNodeImpl(handle);
 
   
   // CUtlVector< CAnimUpdateNodeRef >

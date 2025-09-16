@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimEncodeDifference : ISchemaClass, IConvertibleNativeHandle<CAnimEncodeDifference> {
+public partial interface CAnimEncodeDifference : ISchemaClass<CAnimEncodeDifference> {
 
-  static CAnimEncodeDifference IConvertibleNativeHandle<CAnimEncodeDifference>.From(nint handle) => new CAnimEncodeDifferenceImpl(handle);
+  static CAnimEncodeDifference ISchemaClass<CAnimEncodeDifference>.From(nint handle) => new CAnimEncodeDifferenceImpl(handle);
 
   
   // CUtlVector< CAnimBoneDifference >

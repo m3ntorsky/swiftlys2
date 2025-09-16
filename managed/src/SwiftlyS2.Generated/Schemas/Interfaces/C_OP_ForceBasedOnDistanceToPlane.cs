@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ForceBasedOnDistanceToPlane : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_ForceBasedOnDistanceToPlane> {
+public partial interface C_OP_ForceBasedOnDistanceToPlane : CParticleFunctionForce, ISchemaClass<C_OP_ForceBasedOnDistanceToPlane> {
 
-  static C_OP_ForceBasedOnDistanceToPlane IConvertibleNativeHandle<C_OP_ForceBasedOnDistanceToPlane>.From(nint handle) => new C_OP_ForceBasedOnDistanceToPlaneImpl(handle);
+  static C_OP_ForceBasedOnDistanceToPlane ISchemaClass<C_OP_ForceBasedOnDistanceToPlane>.From(nint handle) => new C_OP_ForceBasedOnDistanceToPlaneImpl(handle);
 
   
   public ref float MinDist { get; }

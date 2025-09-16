@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVPhysXSurfacePropertiesList : ISchemaClass, IConvertibleNativeHandle<CVPhysXSurfacePropertiesList> {
+public partial interface CVPhysXSurfacePropertiesList : ISchemaClass<CVPhysXSurfacePropertiesList> {
 
-  static CVPhysXSurfacePropertiesList IConvertibleNativeHandle<CVPhysXSurfacePropertiesList>.From(nint handle) => new CVPhysXSurfacePropertiesListImpl(handle);
+  static CVPhysXSurfacePropertiesList ISchemaClass<CVPhysXSurfacePropertiesList>.From(nint handle) => new CVPhysXSurfacePropertiesListImpl(handle);
 
   
   public ref CUtlVector<PointerTo<CPhysSurfaceProperties>> SurfacePropertiesList { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderLightBeam : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderLightBeam> {
+public partial interface C_OP_RenderLightBeam : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderLightBeam> {
 
-  static C_OP_RenderLightBeam IConvertibleNativeHandle<C_OP_RenderLightBeam>.From(nint handle) => new C_OP_RenderLightBeamImpl(handle);
+  static C_OP_RenderLightBeam ISchemaClass<C_OP_RenderLightBeam>.From(nint handle) => new C_OP_RenderLightBeamImpl(handle);
 
   
   public CParticleCollectionVecInput ColorBlend { get; }

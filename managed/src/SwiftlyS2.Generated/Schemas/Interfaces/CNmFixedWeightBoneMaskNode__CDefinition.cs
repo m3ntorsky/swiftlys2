@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFixedWeightBoneMaskNode__CDefinition : CNmBoneMaskValueNode__CDefinition, IConvertibleNativeHandle<CNmFixedWeightBoneMaskNode__CDefinition> {
+public partial interface CNmFixedWeightBoneMaskNode__CDefinition : CNmBoneMaskValueNode__CDefinition, ISchemaClass<CNmFixedWeightBoneMaskNode__CDefinition> {
 
-  static CNmFixedWeightBoneMaskNode__CDefinition IConvertibleNativeHandle<CNmFixedWeightBoneMaskNode__CDefinition>.From(nint handle) => new CNmFixedWeightBoneMaskNode__CDefinitionImpl(handle);
+  static CNmFixedWeightBoneMaskNode__CDefinition ISchemaClass<CNmFixedWeightBoneMaskNode__CDefinition>.From(nint handle) => new CNmFixedWeightBoneMaskNode__CDefinitionImpl(handle);
 
   
   public ref float BoneWeight { get; }

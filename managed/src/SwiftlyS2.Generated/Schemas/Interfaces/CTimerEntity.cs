@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTimerEntity : CLogicalEntity, IConvertibleNativeHandle<CTimerEntity> {
+public partial interface CTimerEntity : CLogicalEntity, ISchemaClass<CTimerEntity> {
 
-  static CTimerEntity IConvertibleNativeHandle<CTimerEntity>.From(nint handle) => new CTimerEntityImpl(handle);
+  static CTimerEntity ISchemaClass<CTimerEntity>.From(nint handle) => new CTimerEntityImpl(handle);
 
   
   public CEntityIOOutput OnTimer { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimFrameSegment : ISchemaClass, IConvertibleNativeHandle<CAnimFrameSegment> {
+public partial interface CAnimFrameSegment : ISchemaClass<CAnimFrameSegment> {
 
-  static CAnimFrameSegment IConvertibleNativeHandle<CAnimFrameSegment>.From(nint handle) => new CAnimFrameSegmentImpl(handle);
+  static CAnimFrameSegment ISchemaClass<CAnimFrameSegment>.From(nint handle) => new CAnimFrameSegmentImpl(handle);
 
   
   public ref int UniqueFrameIndex { get; }

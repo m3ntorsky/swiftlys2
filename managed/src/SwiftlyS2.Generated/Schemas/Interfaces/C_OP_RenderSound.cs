@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderSound : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderSound> {
+public partial interface C_OP_RenderSound : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderSound> {
 
-  static C_OP_RenderSound IConvertibleNativeHandle<C_OP_RenderSound>.From(nint handle) => new C_OP_RenderSoundImpl(handle);
+  static C_OP_RenderSound ISchemaClass<C_OP_RenderSound>.From(nint handle) => new C_OP_RenderSoundImpl(handle);
 
   
   public ref float DurationScale { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CItemGeneric : CItem, IConvertibleNativeHandle<CItemGeneric> {
+public partial interface CItemGeneric : CItem, ISchemaClass<CItemGeneric> {
 
-  static CItemGeneric IConvertibleNativeHandle<CItemGeneric>.From(nint handle) => new CItemGenericImpl(handle);
+  static CItemGeneric ISchemaClass<CItemGeneric>.From(nint handle) => new CItemGenericImpl(handle);
 
   
   public ref bool HasTriggerRadius { get; }

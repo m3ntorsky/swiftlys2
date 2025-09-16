@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_UpdateLightSource : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_UpdateLightSource> {
+public partial interface C_OP_UpdateLightSource : CParticleFunctionOperator, ISchemaClass<C_OP_UpdateLightSource> {
 
-  static C_OP_UpdateLightSource IConvertibleNativeHandle<C_OP_UpdateLightSource>.From(nint handle) => new C_OP_UpdateLightSourceImpl(handle);
+  static C_OP_UpdateLightSource ISchemaClass<C_OP_UpdateLightSource>.From(nint handle) => new C_OP_UpdateLightSourceImpl(handle);
 
   
   public ref Color ColorTint { get; }

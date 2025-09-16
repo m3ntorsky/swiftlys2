@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseModelEntityAPI : ISchemaClass, IConvertibleNativeHandle<CBaseModelEntityAPI> {
+public partial interface CBaseModelEntityAPI : ISchemaClass<CBaseModelEntityAPI> {
 
-  static CBaseModelEntityAPI IConvertibleNativeHandle<CBaseModelEntityAPI>.From(nint handle) => new CBaseModelEntityAPIImpl(handle);
+  static CBaseModelEntityAPI ISchemaClass<CBaseModelEntityAPI>.From(nint handle) => new CBaseModelEntityAPIImpl(handle);
 
 
 

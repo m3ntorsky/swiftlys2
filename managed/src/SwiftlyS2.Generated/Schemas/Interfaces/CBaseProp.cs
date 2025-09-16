@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseProp : CBaseAnimGraph, IConvertibleNativeHandle<CBaseProp> {
+public partial interface CBaseProp : CBaseAnimGraph, ISchemaClass<CBaseProp> {
 
-  static CBaseProp IConvertibleNativeHandle<CBaseProp>.From(nint handle) => new CBasePropImpl(handle);
+  static CBaseProp ISchemaClass<CBaseProp>.From(nint handle) => new CBasePropImpl(handle);
 
   
   public ref bool ModelOverrodeBlockLOS { get; }

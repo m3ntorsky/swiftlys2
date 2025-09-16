@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CModelConfigElement_SetBodygroup : CModelConfigElement, IConvertibleNativeHandle<CModelConfigElement_SetBodygroup> {
+public partial interface CModelConfigElement_SetBodygroup : CModelConfigElement, ISchemaClass<CModelConfigElement_SetBodygroup> {
 
-  static CModelConfigElement_SetBodygroup IConvertibleNativeHandle<CModelConfigElement_SetBodygroup>.From(nint handle) => new CModelConfigElement_SetBodygroupImpl(handle);
+  static CModelConfigElement_SetBodygroup ISchemaClass<CModelConfigElement_SetBodygroup>.From(nint handle) => new CModelConfigElement_SetBodygroupImpl(handle);
 
   
   public ref CGlobalSymbol GroupName { get; }

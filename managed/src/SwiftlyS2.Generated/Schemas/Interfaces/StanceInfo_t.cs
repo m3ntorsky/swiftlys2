@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface StanceInfo_t : ISchemaClass, IConvertibleNativeHandle<StanceInfo_t> {
+public partial interface StanceInfo_t : ISchemaClass<StanceInfo_t> {
 
-  static StanceInfo_t IConvertibleNativeHandle<StanceInfo_t>.From(nint handle) => new StanceInfo_tImpl(handle);
+  static StanceInfo_t ISchemaClass<StanceInfo_t>.From(nint handle) => new StanceInfo_tImpl(handle);
 
   
   public ref Vector Position { get; }

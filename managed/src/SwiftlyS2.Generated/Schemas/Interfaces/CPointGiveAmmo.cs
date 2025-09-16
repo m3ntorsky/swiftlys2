@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointGiveAmmo : CPointEntity, IConvertibleNativeHandle<CPointGiveAmmo> {
+public partial interface CPointGiveAmmo : CPointEntity, ISchemaClass<CPointGiveAmmo> {
 
-  static CPointGiveAmmo IConvertibleNativeHandle<CPointGiveAmmo>.From(nint handle) => new CPointGiveAmmoImpl(handle);
+  static CPointGiveAmmo ISchemaClass<CPointGiveAmmo>.From(nint handle) => new CPointGiveAmmoImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Activator { get; }

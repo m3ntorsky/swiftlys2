@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VelocitySampler : ISchemaClass, IConvertibleNativeHandle<VelocitySampler> {
+public partial interface VelocitySampler : ISchemaClass<VelocitySampler> {
 
-  static VelocitySampler IConvertibleNativeHandle<VelocitySampler>.From(nint handle) => new VelocitySamplerImpl(handle);
+  static VelocitySampler ISchemaClass<VelocitySampler>.From(nint handle) => new VelocitySamplerImpl(handle);
 
   
   public ref Vector PrevSample { get; }

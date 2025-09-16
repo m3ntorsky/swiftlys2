@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_NormalAlignToCP : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_NormalAlignToCP> {
+public partial interface C_INIT_NormalAlignToCP : CParticleFunctionInitializer, ISchemaClass<C_INIT_NormalAlignToCP> {
 
-  static C_INIT_NormalAlignToCP IConvertibleNativeHandle<C_INIT_NormalAlignToCP>.From(nint handle) => new C_INIT_NormalAlignToCPImpl(handle);
+  static C_INIT_NormalAlignToCP ISchemaClass<C_INIT_NormalAlignToCP>.From(nint handle) => new C_INIT_NormalAlignToCPImpl(handle);
 
   
   public CParticleTransformInput TransformInput { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_DifferencePreviousParticle : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_DifferencePreviousParticle> {
+public partial interface C_OP_DifferencePreviousParticle : CParticleFunctionOperator, ISchemaClass<C_OP_DifferencePreviousParticle> {
 
-  static C_OP_DifferencePreviousParticle IConvertibleNativeHandle<C_OP_DifferencePreviousParticle>.From(nint handle) => new C_OP_DifferencePreviousParticleImpl(handle);
+  static C_OP_DifferencePreviousParticle ISchemaClass<C_OP_DifferencePreviousParticle>.From(nint handle) => new C_OP_DifferencePreviousParticleImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldInput { get; }

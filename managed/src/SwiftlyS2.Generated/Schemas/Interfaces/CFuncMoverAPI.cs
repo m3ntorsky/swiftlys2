@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncMoverAPI : ISchemaClass, IConvertibleNativeHandle<CFuncMoverAPI> {
+public partial interface CFuncMoverAPI : ISchemaClass<CFuncMoverAPI> {
 
-  static CFuncMoverAPI IConvertibleNativeHandle<CFuncMoverAPI>.From(nint handle) => new CFuncMoverAPIImpl(handle);
+  static CFuncMoverAPI ISchemaClass<CFuncMoverAPI>.From(nint handle) => new CFuncMoverAPIImpl(handle);
 
 
 

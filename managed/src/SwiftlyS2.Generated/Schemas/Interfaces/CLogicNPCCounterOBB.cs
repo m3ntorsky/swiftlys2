@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicNPCCounterOBB : CLogicNPCCounterAABB, IConvertibleNativeHandle<CLogicNPCCounterOBB> {
+public partial interface CLogicNPCCounterOBB : CLogicNPCCounterAABB, ISchemaClass<CLogicNPCCounterOBB> {
 
-  static CLogicNPCCounterOBB IConvertibleNativeHandle<CLogicNPCCounterOBB>.From(nint handle) => new CLogicNPCCounterOBBImpl(handle);
+  static CLogicNPCCounterOBB ISchemaClass<CLogicNPCCounterOBB>.From(nint handle) => new CLogicNPCCounterOBBImpl(handle);
 
 
 

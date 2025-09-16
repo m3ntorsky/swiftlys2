@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncTimescale : CBaseEntity, IConvertibleNativeHandle<CFuncTimescale> {
+public partial interface CFuncTimescale : CBaseEntity, ISchemaClass<CFuncTimescale> {
 
-  static CFuncTimescale IConvertibleNativeHandle<CFuncTimescale>.From(nint handle) => new CFuncTimescaleImpl(handle);
+  static CFuncTimescale ISchemaClass<CFuncTimescale>.From(nint handle) => new CFuncTimescaleImpl(handle);
 
   
   public ref float DesiredTimescale { get; }

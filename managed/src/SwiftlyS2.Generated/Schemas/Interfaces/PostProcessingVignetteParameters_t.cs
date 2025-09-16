@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PostProcessingVignetteParameters_t : ISchemaClass, IConvertibleNativeHandle<PostProcessingVignetteParameters_t> {
+public partial interface PostProcessingVignetteParameters_t : ISchemaClass<PostProcessingVignetteParameters_t> {
 
-  static PostProcessingVignetteParameters_t IConvertibleNativeHandle<PostProcessingVignetteParameters_t>.From(nint handle) => new PostProcessingVignetteParameters_tImpl(handle);
+  static PostProcessingVignetteParameters_t ISchemaClass<PostProcessingVignetteParameters_t>.From(nint handle) => new PostProcessingVignetteParameters_tImpl(handle);
 
   
   public ref float VignetteStrength { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixPlateverbDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixPlateverbDesc_t> {
+public partial interface VMixPlateverbDesc_t : ISchemaClass<VMixPlateverbDesc_t> {
 
-  static VMixPlateverbDesc_t IConvertibleNativeHandle<VMixPlateverbDesc_t>.From(nint handle) => new VMixPlateverbDesc_tImpl(handle);
+  static VMixPlateverbDesc_t ISchemaClass<VMixPlateverbDesc_t>.From(nint handle) => new VMixPlateverbDesc_tImpl(handle);
 
   
   public ref float Prefilter { get; }

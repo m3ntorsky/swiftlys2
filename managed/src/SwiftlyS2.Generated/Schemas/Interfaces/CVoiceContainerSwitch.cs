@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerSwitch : CVoiceContainerBase, IConvertibleNativeHandle<CVoiceContainerSwitch> {
+public partial interface CVoiceContainerSwitch : CVoiceContainerBase, ISchemaClass<CVoiceContainerSwitch> {
 
-  static CVoiceContainerSwitch IConvertibleNativeHandle<CVoiceContainerSwitch>.From(nint handle) => new CVoiceContainerSwitchImpl(handle);
+  static CVoiceContainerSwitch ISchemaClass<CVoiceContainerSwitch>.From(nint handle) => new CVoiceContainerSwitchImpl(handle);
 
   
   // CUtlVector< CSoundContainerReference >

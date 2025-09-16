@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGameSceneNode : ISchemaClass, IConvertibleNativeHandle<CGameSceneNode> {
+public partial interface CGameSceneNode : ISchemaClass<CGameSceneNode> {
 
-  static CGameSceneNode IConvertibleNativeHandle<CGameSceneNode>.From(nint handle) => new CGameSceneNodeImpl(handle);
+  static CGameSceneNode ISchemaClass<CGameSceneNode>.From(nint handle) => new CGameSceneNodeImpl(handle);
 
   
   public ref CTransform NodeToWorld { get; }

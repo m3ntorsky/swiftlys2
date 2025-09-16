@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IRagdoll : ISchemaClass, IConvertibleNativeHandle<IRagdoll> {
+public partial interface IRagdoll : ISchemaClass<IRagdoll> {
 
-  static IRagdoll IConvertibleNativeHandle<IRagdoll>.From(nint handle) => new IRagdollImpl(handle);
+  static IRagdoll ISchemaClass<IRagdoll>.From(nint handle) => new IRagdollImpl(handle);
 
 
 

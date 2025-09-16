@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPointPulseAPI : ISchemaClass, IConvertibleNativeHandle<CCSPointPulseAPI> {
+public partial interface CCSPointPulseAPI : ISchemaClass<CCSPointPulseAPI> {
 
-  static CCSPointPulseAPI IConvertibleNativeHandle<CCSPointPulseAPI>.From(nint handle) => new CCSPointPulseAPIImpl(handle);
+  static CCSPointPulseAPI ISchemaClass<CCSPointPulseAPI>.From(nint handle) => new CCSPointPulseAPIImpl(handle);
 
 
 

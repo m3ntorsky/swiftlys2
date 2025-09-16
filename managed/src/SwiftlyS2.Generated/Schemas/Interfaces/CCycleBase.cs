@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCycleBase : ISchemaClass, IConvertibleNativeHandle<CCycleBase> {
+public partial interface CCycleBase : ISchemaClass<CCycleBase> {
 
-  static CCycleBase IConvertibleNativeHandle<CCycleBase>.From(nint handle) => new CCycleBaseImpl(handle);
+  static CCycleBase ISchemaClass<CCycleBase>.From(nint handle) => new CCycleBaseImpl(handle);
 
   
   public ref float Cycle { get; }

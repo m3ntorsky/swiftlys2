@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmSyncTrack : ISchemaClass, IConvertibleNativeHandle<CNmSyncTrack> {
+public partial interface CNmSyncTrack : ISchemaClass<CNmSyncTrack> {
 
-  static CNmSyncTrack IConvertibleNativeHandle<CNmSyncTrack>.From(nint handle) => new CNmSyncTrackImpl(handle);
+  static CNmSyncTrack ISchemaClass<CNmSyncTrack>.From(nint handle) => new CNmSyncTrackImpl(handle);
 
   
   // CUtlLeanVectorFixedGrowable< CNmSyncTrack::Event_t, 10 >

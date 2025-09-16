@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundEventSphereEntity : CSoundEventEntity, IConvertibleNativeHandle<CSoundEventSphereEntity> {
+public partial interface CSoundEventSphereEntity : CSoundEventEntity, ISchemaClass<CSoundEventSphereEntity> {
 
-  static CSoundEventSphereEntity IConvertibleNativeHandle<CSoundEventSphereEntity>.From(nint handle) => new CSoundEventSphereEntityImpl(handle);
+  static CSoundEventSphereEntity ISchemaClass<CSoundEventSphereEntity>.From(nint handle) => new CSoundEventSphereEntityImpl(handle);
 
   
   public ref float Radius { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface WrappedPhysicsJoint_t : ISchemaClass, IConvertibleNativeHandle<WrappedPhysicsJoint_t> {
+public partial interface WrappedPhysicsJoint_t : ISchemaClass<WrappedPhysicsJoint_t> {
 
-  static WrappedPhysicsJoint_t IConvertibleNativeHandle<WrappedPhysicsJoint_t>.From(nint handle) => new WrappedPhysicsJoint_tImpl(handle);
+  static WrappedPhysicsJoint_t ISchemaClass<WrappedPhysicsJoint_t>.From(nint handle) => new WrappedPhysicsJoint_tImpl(handle);
 
 
 

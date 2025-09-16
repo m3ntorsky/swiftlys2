@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSWeaponBaseGun : CCSWeaponBase, IConvertibleNativeHandle<CCSWeaponBaseGun> {
+public partial interface CCSWeaponBaseGun : CCSWeaponBase, ISchemaClass<CCSWeaponBaseGun> {
 
-  static CCSWeaponBaseGun IConvertibleNativeHandle<CCSWeaponBaseGun>.From(nint handle) => new CCSWeaponBaseGunImpl(handle);
+  static CCSWeaponBaseGun ISchemaClass<CCSWeaponBaseGun>.From(nint handle) => new CCSWeaponBaseGunImpl(handle);
 
   
   public ref int ZoomLevel { get; }

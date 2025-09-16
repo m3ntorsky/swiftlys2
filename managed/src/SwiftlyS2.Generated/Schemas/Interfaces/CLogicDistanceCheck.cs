@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicDistanceCheck : CLogicalEntity, IConvertibleNativeHandle<CLogicDistanceCheck> {
+public partial interface CLogicDistanceCheck : CLogicalEntity, ISchemaClass<CLogicDistanceCheck> {
 
-  static CLogicDistanceCheck IConvertibleNativeHandle<CLogicDistanceCheck>.From(nint handle) => new CLogicDistanceCheckImpl(handle);
+  static CLogicDistanceCheck ISchemaClass<CLogicDistanceCheck>.From(nint handle) => new CLogicDistanceCheckImpl(handle);
 
   
   public ref CUtlSymbolLarge EntityA { get; }

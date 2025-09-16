@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvProjectedTexture : CModelPointEntity, IConvertibleNativeHandle<CEnvProjectedTexture> {
+public partial interface CEnvProjectedTexture : CModelPointEntity, ISchemaClass<CEnvProjectedTexture> {
 
-  static CEnvProjectedTexture IConvertibleNativeHandle<CEnvProjectedTexture>.From(nint handle) => new CEnvProjectedTextureImpl(handle);
+  static CEnvProjectedTexture ISchemaClass<CEnvProjectedTexture>.From(nint handle) => new CEnvProjectedTextureImpl(handle);
 
   
   public ref CHandle<CBaseEntity> TargetEntity { get; }

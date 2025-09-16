@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStopwatchBase : CSimpleSimTimer, IConvertibleNativeHandle<CStopwatchBase> {
+public partial interface CStopwatchBase : CSimpleSimTimer, ISchemaClass<CStopwatchBase> {
 
-  static CStopwatchBase IConvertibleNativeHandle<CStopwatchBase>.From(nint handle) => new CStopwatchBaseImpl(handle);
+  static CStopwatchBase ISchemaClass<CStopwatchBase>.From(nint handle) => new CStopwatchBaseImpl(handle);
 
   
   public ref bool IsRunning { get; }

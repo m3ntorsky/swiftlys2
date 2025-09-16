@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RemapParticleCountToNamedModelSequenceScalar : C_INIT_RemapParticleCountToNamedModelElementScalar, IConvertibleNativeHandle<C_INIT_RemapParticleCountToNamedModelSequenceScalar> {
+public partial interface C_INIT_RemapParticleCountToNamedModelSequenceScalar : C_INIT_RemapParticleCountToNamedModelElementScalar, ISchemaClass<C_INIT_RemapParticleCountToNamedModelSequenceScalar> {
 
-  static C_INIT_RemapParticleCountToNamedModelSequenceScalar IConvertibleNativeHandle<C_INIT_RemapParticleCountToNamedModelSequenceScalar>.From(nint handle) => new C_INIT_RemapParticleCountToNamedModelSequenceScalarImpl(handle);
+  static C_INIT_RemapParticleCountToNamedModelSequenceScalar ISchemaClass<C_INIT_RemapParticleCountToNamedModelSequenceScalar>.From(nint handle) => new C_INIT_RemapParticleCountToNamedModelSequenceScalarImpl(handle);
 
 
 

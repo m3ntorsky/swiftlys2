@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRotButton : CBaseButton, IConvertibleNativeHandle<CRotButton> {
+public partial interface CRotButton : CBaseButton, ISchemaClass<CRotButton> {
 
-  static CRotButton IConvertibleNativeHandle<CRotButton>.From(nint handle) => new CRotButtonImpl(handle);
+  static CRotButton ISchemaClass<CRotButton>.From(nint handle) => new CRotButtonImpl(handle);
 
 
 

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventClientPreOutput_t : ISchemaClass, IConvertibleNativeHandle<EventClientPreOutput_t> {
+public partial interface EventClientPreOutput_t : ISchemaClass<EventClientPreOutput_t> {
 
-  static EventClientPreOutput_t IConvertibleNativeHandle<EventClientPreOutput_t>.From(nint handle) => new EventClientPreOutput_tImpl(handle);
+  static EventClientPreOutput_t ISchemaClass<EventClientPreOutput_t>.From(nint handle) => new EventClientPreOutput_tImpl(handle);
 
   
   public EngineLoopState_t LoopState { get; }

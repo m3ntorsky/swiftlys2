@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRenderSkeleton : ISchemaClass, IConvertibleNativeHandle<CRenderSkeleton> {
+public partial interface CRenderSkeleton : ISchemaClass<CRenderSkeleton> {
 
-  static CRenderSkeleton IConvertibleNativeHandle<CRenderSkeleton>.From(nint handle) => new CRenderSkeletonImpl(handle);
+  static CRenderSkeleton ISchemaClass<CRenderSkeleton>.From(nint handle) => new CRenderSkeletonImpl(handle);
 
   
   // CUtlVector< RenderSkeletonBone_t >

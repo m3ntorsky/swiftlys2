@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimParameterBase : ISchemaClass, IConvertibleNativeHandle<CAnimParameterBase> {
+public partial interface CAnimParameterBase : ISchemaClass<CAnimParameterBase> {
 
-  static CAnimParameterBase IConvertibleNativeHandle<CAnimParameterBase>.From(nint handle) => new CAnimParameterBaseImpl(handle);
+  static CAnimParameterBase ISchemaClass<CAnimParameterBase>.From(nint handle) => new CAnimParameterBaseImpl(handle);
 
   
   public ref CGlobalSymbol Name { get; }

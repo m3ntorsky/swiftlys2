@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapCPVelocityToVector : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapCPVelocityToVector> {
+public partial interface C_OP_RemapCPVelocityToVector : CParticleFunctionOperator, ISchemaClass<C_OP_RemapCPVelocityToVector> {
 
-  static C_OP_RemapCPVelocityToVector IConvertibleNativeHandle<C_OP_RemapCPVelocityToVector>.From(nint handle) => new C_OP_RemapCPVelocityToVectorImpl(handle);
+  static C_OP_RemapCPVelocityToVector ISchemaClass<C_OP_RemapCPVelocityToVector>.From(nint handle) => new C_OP_RemapCPVelocityToVectorImpl(handle);
 
   
   public ref int ControlPoint { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_LerpCameraSettings : CPulseCell_BaseLerp, IConvertibleNativeHandle<CPulseCell_LerpCameraSettings> {
+public partial interface CPulseCell_LerpCameraSettings : CPulseCell_BaseLerp, ISchemaClass<CPulseCell_LerpCameraSettings> {
 
-  static CPulseCell_LerpCameraSettings IConvertibleNativeHandle<CPulseCell_LerpCameraSettings>.From(nint handle) => new CPulseCell_LerpCameraSettingsImpl(handle);
+  static CPulseCell_LerpCameraSettings ISchemaClass<CPulseCell_LerpCameraSettings>.From(nint handle) => new CPulseCell_LerpCameraSettingsImpl(handle);
 
   
   public ref float Seconds { get; }

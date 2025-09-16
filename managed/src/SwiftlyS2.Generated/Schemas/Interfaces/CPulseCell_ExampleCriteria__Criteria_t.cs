@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_ExampleCriteria__Criteria_t : ISchemaClass, IConvertibleNativeHandle<CPulseCell_ExampleCriteria__Criteria_t> {
+public partial interface CPulseCell_ExampleCriteria__Criteria_t : ISchemaClass<CPulseCell_ExampleCriteria__Criteria_t> {
 
-  static CPulseCell_ExampleCriteria__Criteria_t IConvertibleNativeHandle<CPulseCell_ExampleCriteria__Criteria_t>.From(nint handle) => new CPulseCell_ExampleCriteria__Criteria_tImpl(handle);
+  static CPulseCell_ExampleCriteria__Criteria_t ISchemaClass<CPulseCell_ExampleCriteria__Criteria_t>.From(nint handle) => new CPulseCell_ExampleCriteria__Criteria_tImpl(handle);
 
   
   public ref float FloatValue1 { get; }

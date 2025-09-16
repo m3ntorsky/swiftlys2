@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAmbientGeneric : CPointEntity, IConvertibleNativeHandle<CAmbientGeneric> {
+public partial interface CAmbientGeneric : CPointEntity, ISchemaClass<CAmbientGeneric> {
 
-  static CAmbientGeneric IConvertibleNativeHandle<CAmbientGeneric>.From(nint handle) => new CAmbientGenericImpl(handle);
+  static CAmbientGeneric ISchemaClass<CAmbientGeneric>.From(nint handle) => new CAmbientGenericImpl(handle);
 
   
   public ref float Radius { get; }

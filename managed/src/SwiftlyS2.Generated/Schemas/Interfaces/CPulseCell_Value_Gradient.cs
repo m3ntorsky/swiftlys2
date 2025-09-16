@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Value_Gradient : CPulseCell_BaseValue, IConvertibleNativeHandle<CPulseCell_Value_Gradient> {
+public partial interface CPulseCell_Value_Gradient : CPulseCell_BaseValue, ISchemaClass<CPulseCell_Value_Gradient> {
 
-  static CPulseCell_Value_Gradient IConvertibleNativeHandle<CPulseCell_Value_Gradient>.From(nint handle) => new CPulseCell_Value_GradientImpl(handle);
+  static CPulseCell_Value_Gradient ISchemaClass<CPulseCell_Value_Gradient>.From(nint handle) => new CPulseCell_Value_GradientImpl(handle);
 
   
   // CColorGradient

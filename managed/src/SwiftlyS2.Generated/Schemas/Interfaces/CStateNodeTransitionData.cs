@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStateNodeTransitionData : ISchemaClass, IConvertibleNativeHandle<CStateNodeTransitionData> {
+public partial interface CStateNodeTransitionData : ISchemaClass<CStateNodeTransitionData> {
 
-  static CStateNodeTransitionData IConvertibleNativeHandle<CStateNodeTransitionData>.From(nint handle) => new CStateNodeTransitionDataImpl(handle);
+  static CStateNodeTransitionData ISchemaClass<CStateNodeTransitionData>.From(nint handle) => new CStateNodeTransitionDataImpl(handle);
 
   
   public CBlendCurve Curve { get; }

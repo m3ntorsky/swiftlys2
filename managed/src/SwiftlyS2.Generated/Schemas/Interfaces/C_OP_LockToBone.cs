@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_LockToBone : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_LockToBone> {
+public partial interface C_OP_LockToBone : CParticleFunctionOperator, ISchemaClass<C_OP_LockToBone> {
 
-  static C_OP_LockToBone IConvertibleNativeHandle<C_OP_LockToBone>.From(nint handle) => new C_OP_LockToBoneImpl(handle);
+  static C_OP_LockToBone ISchemaClass<C_OP_LockToBone>.From(nint handle) => new C_OP_LockToBoneImpl(handle);
 
   
   public CParticleModelInput ModelInput { get; }

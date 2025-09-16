@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CChangeLevel : CBaseTrigger, IConvertibleNativeHandle<CChangeLevel> {
+public partial interface CChangeLevel : CBaseTrigger, ISchemaClass<CChangeLevel> {
 
-  static CChangeLevel IConvertibleNativeHandle<CChangeLevel>.From(nint handle) => new CChangeLevelImpl(handle);
+  static CChangeLevel ISchemaClass<CChangeLevel>.From(nint handle) => new CChangeLevelImpl(handle);
 
   
   public ref CUtlString MapName { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointChildModifier : CPointEntity, IConvertibleNativeHandle<CPointChildModifier> {
+public partial interface CPointChildModifier : CPointEntity, ISchemaClass<CPointChildModifier> {
 
-  static CPointChildModifier IConvertibleNativeHandle<CPointChildModifier>.From(nint handle) => new CPointChildModifierImpl(handle);
+  static CPointChildModifier ISchemaClass<CPointChildModifier>.From(nint handle) => new CPointChildModifierImpl(handle);
 
   
   public ref bool OrphanInsteadOfDeletingChildrenOnRemove { get; }

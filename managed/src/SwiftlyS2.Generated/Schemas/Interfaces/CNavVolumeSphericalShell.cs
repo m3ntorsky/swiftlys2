@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavVolumeSphericalShell : CNavVolumeSphere, IConvertibleNativeHandle<CNavVolumeSphericalShell> {
+public partial interface CNavVolumeSphericalShell : CNavVolumeSphere, ISchemaClass<CNavVolumeSphericalShell> {
 
-  static CNavVolumeSphericalShell IConvertibleNativeHandle<CNavVolumeSphericalShell>.From(nint handle) => new CNavVolumeSphericalShellImpl(handle);
+  static CNavVolumeSphericalShell ISchemaClass<CNavVolumeSphericalShell>.From(nint handle) => new CNavVolumeSphericalShellImpl(handle);
 
   
   public ref float RadiusInner { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeIVectorGraphic : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeIVectorGraphic> {
+public partial interface InfoForResourceTypeIVectorGraphic : ISchemaClass<InfoForResourceTypeIVectorGraphic> {
 
-  static InfoForResourceTypeIVectorGraphic IConvertibleNativeHandle<InfoForResourceTypeIVectorGraphic>.From(nint handle) => new InfoForResourceTypeIVectorGraphicImpl(handle);
+  static InfoForResourceTypeIVectorGraphic ISchemaClass<InfoForResourceTypeIVectorGraphic>.From(nint handle) => new InfoForResourceTypeIVectorGraphicImpl(handle);
 
 
 

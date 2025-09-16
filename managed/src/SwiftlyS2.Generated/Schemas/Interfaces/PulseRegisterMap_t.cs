@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseRegisterMap_t : ISchemaClass, IConvertibleNativeHandle<PulseRegisterMap_t> {
+public partial interface PulseRegisterMap_t : ISchemaClass<PulseRegisterMap_t> {
 
-  static PulseRegisterMap_t IConvertibleNativeHandle<PulseRegisterMap_t>.From(nint handle) => new PulseRegisterMap_tImpl(handle);
+  static PulseRegisterMap_t ISchemaClass<PulseRegisterMap_t>.From(nint handle) => new PulseRegisterMap_tImpl(handle);
 
   
   // KeyValues3

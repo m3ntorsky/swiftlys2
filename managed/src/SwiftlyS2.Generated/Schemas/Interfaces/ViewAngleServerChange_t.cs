@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ViewAngleServerChange_t : ISchemaClass, IConvertibleNativeHandle<ViewAngleServerChange_t> {
+public partial interface ViewAngleServerChange_t : ISchemaClass<ViewAngleServerChange_t> {
 
-  static ViewAngleServerChange_t IConvertibleNativeHandle<ViewAngleServerChange_t>.From(nint handle) => new ViewAngleServerChange_tImpl(handle);
+  static ViewAngleServerChange_t ISchemaClass<ViewAngleServerChange_t>.From(nint handle) => new ViewAngleServerChange_tImpl(handle);
 
   
   public ref FixAngleSet_t Type { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface Relationship_t : ISchemaClass, IConvertibleNativeHandle<Relationship_t> {
+public partial interface Relationship_t : ISchemaClass<Relationship_t> {
 
-  static Relationship_t IConvertibleNativeHandle<Relationship_t>.From(nint handle) => new Relationship_tImpl(handle);
+  static Relationship_t ISchemaClass<Relationship_t>.From(nint handle) => new Relationship_tImpl(handle);
 
   
   public ref Disposition_t Disposition { get; }

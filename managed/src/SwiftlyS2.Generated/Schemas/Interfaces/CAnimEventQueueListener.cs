@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimEventQueueListener : CAnimEventListenerBase, IConvertibleNativeHandle<CAnimEventQueueListener> {
+public partial interface CAnimEventQueueListener : CAnimEventListenerBase, ISchemaClass<CAnimEventQueueListener> {
 
-  static CAnimEventQueueListener IConvertibleNativeHandle<CAnimEventQueueListener>.From(nint handle) => new CAnimEventQueueListenerImpl(handle);
+  static CAnimEventQueueListener ISchemaClass<CAnimEventQueueListener>.From(nint handle) => new CAnimEventQueueListenerImpl(handle);
 
 
 

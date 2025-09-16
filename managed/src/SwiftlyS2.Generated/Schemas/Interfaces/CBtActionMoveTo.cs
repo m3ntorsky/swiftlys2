@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBtActionMoveTo : CBtNode, IConvertibleNativeHandle<CBtActionMoveTo> {
+public partial interface CBtActionMoveTo : CBtNode, ISchemaClass<CBtActionMoveTo> {
 
-  static CBtActionMoveTo IConvertibleNativeHandle<CBtActionMoveTo>.From(nint handle) => new CBtActionMoveToImpl(handle);
+  static CBtActionMoveTo ISchemaClass<CBtActionMoveTo>.From(nint handle) => new CBtActionMoveToImpl(handle);
 
   
   public ref CUtlString DestinationInputKey { get; }

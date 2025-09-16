@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavLinkAreaEntity : CPointEntity, IConvertibleNativeHandle<CNavLinkAreaEntity> {
+public partial interface CNavLinkAreaEntity : CPointEntity, ISchemaClass<CNavLinkAreaEntity> {
 
-  static CNavLinkAreaEntity IConvertibleNativeHandle<CNavLinkAreaEntity>.From(nint handle) => new CNavLinkAreaEntityImpl(handle);
+  static CNavLinkAreaEntity ISchemaClass<CNavLinkAreaEntity>.From(nint handle) => new CNavLinkAreaEntityImpl(handle);
 
   
   public ref float Width { get; }

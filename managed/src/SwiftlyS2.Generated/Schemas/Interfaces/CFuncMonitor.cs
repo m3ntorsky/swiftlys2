@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncMonitor : CFuncBrush, IConvertibleNativeHandle<CFuncMonitor> {
+public partial interface CFuncMonitor : CFuncBrush, ISchemaClass<CFuncMonitor> {
 
-  static CFuncMonitor IConvertibleNativeHandle<CFuncMonitor>.From(nint handle) => new CFuncMonitorImpl(handle);
+  static CFuncMonitor ISchemaClass<CFuncMonitor>.From(nint handle) => new CFuncMonitorImpl(handle);
 
   
   public ref CUtlString TargetCamera { get; }

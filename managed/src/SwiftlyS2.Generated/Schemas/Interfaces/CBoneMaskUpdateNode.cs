@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBoneMaskUpdateNode : CBinaryUpdateNode, IConvertibleNativeHandle<CBoneMaskUpdateNode> {
+public partial interface CBoneMaskUpdateNode : CBinaryUpdateNode, ISchemaClass<CBoneMaskUpdateNode> {
 
-  static CBoneMaskUpdateNode IConvertibleNativeHandle<CBoneMaskUpdateNode>.From(nint handle) => new CBoneMaskUpdateNodeImpl(handle);
+  static CBoneMaskUpdateNode ISchemaClass<CBoneMaskUpdateNode>.From(nint handle) => new CBoneMaskUpdateNodeImpl(handle);
 
   
   public ref int WeightListIndex { get; }

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuseSymbolTable : ISchemaClass, IConvertibleNativeHandle<CFuseSymbolTable> {
+public partial interface CFuseSymbolTable : ISchemaClass<CFuseSymbolTable> {
 
-  static CFuseSymbolTable IConvertibleNativeHandle<CFuseSymbolTable>.From(nint handle) => new CFuseSymbolTableImpl(handle);
+  static CFuseSymbolTable ISchemaClass<CFuseSymbolTable>.From(nint handle) => new CFuseSymbolTableImpl(handle);
 
   
   // CUtlVector< ConstantInfo_t >

@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FourQuaternions : ISchemaClass, IConvertibleNativeHandle<FourQuaternions> {
+public partial interface FourQuaternions : ISchemaClass<FourQuaternions> {
 
-  static FourQuaternions IConvertibleNativeHandle<FourQuaternions>.From(nint handle) => new FourQuaternionsImpl(handle);
+  static FourQuaternions ISchemaClass<FourQuaternions>.From(nint handle) => new FourQuaternionsImpl(handle);
 
   
   public ref fltx4 X { get; }

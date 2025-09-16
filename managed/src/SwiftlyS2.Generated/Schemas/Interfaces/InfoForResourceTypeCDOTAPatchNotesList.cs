@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCDOTAPatchNotesList : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCDOTAPatchNotesList> {
+public partial interface InfoForResourceTypeCDOTAPatchNotesList : ISchemaClass<InfoForResourceTypeCDOTAPatchNotesList> {
 
-  static InfoForResourceTypeCDOTAPatchNotesList IConvertibleNativeHandle<InfoForResourceTypeCDOTAPatchNotesList>.From(nint handle) => new InfoForResourceTypeCDOTAPatchNotesListImpl(handle);
+  static InfoForResourceTypeCDOTAPatchNotesList ISchemaClass<InfoForResourceTypeCDOTAPatchNotesList>.From(nint handle) => new InfoForResourceTypeCDOTAPatchNotesListImpl(handle);
 
 
 

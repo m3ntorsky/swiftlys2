@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_LightningSnapshotGenerator : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_LightningSnapshotGenerator> {
+public partial interface C_OP_LightningSnapshotGenerator : CParticleFunctionPreEmission, ISchemaClass<C_OP_LightningSnapshotGenerator> {
 
-  static C_OP_LightningSnapshotGenerator IConvertibleNativeHandle<C_OP_LightningSnapshotGenerator>.From(nint handle) => new C_OP_LightningSnapshotGeneratorImpl(handle);
+  static C_OP_LightningSnapshotGenerator ISchemaClass<C_OP_LightningSnapshotGenerator>.From(nint handle) => new C_OP_LightningSnapshotGeneratorImpl(handle);
 
   
   public ref int CPSnapshot { get; }

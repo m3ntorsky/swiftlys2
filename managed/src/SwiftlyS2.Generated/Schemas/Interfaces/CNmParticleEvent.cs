@@ -8,9 +8,9 @@ using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmParticleEvent : CNmEvent, IConvertibleNativeHandle<CNmParticleEvent> {
+public partial interface CNmParticleEvent : CNmEvent, ISchemaClass<CNmParticleEvent> {
 
-  static CNmParticleEvent IConvertibleNativeHandle<CNmParticleEvent>.From(nint handle) => new CNmParticleEventImpl(handle);
+  static CNmParticleEvent ISchemaClass<CNmParticleEvent>.From(nint handle) => new CNmParticleEventImpl(handle);
 
   
   public ref CNmEventRelevance_t Relevance { get; }
