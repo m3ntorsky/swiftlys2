@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AnimationDecodeDebugDump_t : ISchemaClass {
+public partial interface AnimationDecodeDebugDump_t : ISchemaClass, IConvertibleNativeHandle<AnimationDecodeDebugDump_t> {
+
+  static AnimationDecodeDebugDump_t IConvertibleNativeHandle<AnimationDecodeDebugDump_t>.From(nint handle) => new AnimationDecodeDebugDump_tImpl(handle);
 
   
   public ref AnimationProcessingType_t ProcessingType { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_InitFloat : CParticleFunctionInitializer {
+public partial interface C_INIT_InitFloat : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_InitFloat> {
+
+  static C_INIT_InitFloat IConvertibleNativeHandle<C_INIT_InitFloat>.From(nint handle) => new C_INIT_InitFloatImpl(handle);
 
   
   public CPerParticleFloatInput InputValue { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeNodeIntegrator_t : ISchemaClass {
+public partial interface FeNodeIntegrator_t : ISchemaClass, IConvertibleNativeHandle<FeNodeIntegrator_t> {
+
+  static FeNodeIntegrator_t IConvertibleNativeHandle<FeNodeIntegrator_t>.From(nint handle) => new FeNodeIntegrator_tImpl(handle);
 
   
   public ref float PointDamping { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmVirtualParameterBoolNode__CDefinition : CNmBoolValueNode__CDefinition {
+public partial interface CNmVirtualParameterBoolNode__CDefinition : CNmBoolValueNode__CDefinition, IConvertibleNativeHandle<CNmVirtualParameterBoolNode__CDefinition> {
+
+  static CNmVirtualParameterBoolNode__CDefinition IConvertibleNativeHandle<CNmVirtualParameterBoolNode__CDefinition>.From(nint handle) => new CNmVirtualParameterBoolNode__CDefinitionImpl(handle);
 
   
   public ref short ChildNodeIdx { get; }

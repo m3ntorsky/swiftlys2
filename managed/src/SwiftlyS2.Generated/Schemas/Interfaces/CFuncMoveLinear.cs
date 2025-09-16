@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncMoveLinear : CBaseToggle {
+public partial interface CFuncMoveLinear : CBaseToggle, IConvertibleNativeHandle<CFuncMoveLinear> {
+
+  static CFuncMoveLinear IConvertibleNativeHandle<CFuncMoveLinear>.From(nint handle) => new CFuncMoveLinearImpl(handle);
 
   
   public ref MoveLinearAuthoredPos_t AuthoredPosition { get; }

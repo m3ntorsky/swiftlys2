@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VsInputSignatureElement_t : ISchemaClass {
+public partial interface VsInputSignatureElement_t : ISchemaClass, IConvertibleNativeHandle<VsInputSignatureElement_t> {
+
+  static VsInputSignatureElement_t IConvertibleNativeHandle<VsInputSignatureElement_t>.From(nint handle) => new VsInputSignatureElement_tImpl(handle);
 
   
   public ISchemaFixedString Name { get; }

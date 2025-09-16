@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysicsShake : ISchemaClass {
+public partial interface CPhysicsShake : ISchemaClass, IConvertibleNativeHandle<CPhysicsShake> {
+
+  static CPhysicsShake IConvertibleNativeHandle<CPhysicsShake>.From(nint handle) => new CPhysicsShakeImpl(handle);
 
   
   public ref Vector Force { get; }

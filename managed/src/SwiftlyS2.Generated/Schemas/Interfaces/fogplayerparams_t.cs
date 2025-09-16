@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface fogplayerparams_t : ISchemaClass {
+public partial interface fogplayerparams_t : ISchemaClass, IConvertibleNativeHandle<fogplayerparams_t> {
+
+  static fogplayerparams_t IConvertibleNativeHandle<fogplayerparams_t>.From(nint handle) => new fogplayerparams_tImpl(handle);
 
   
   public ref CHandle<CFogController> Ctrl { get; }

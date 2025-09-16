@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PostProcessingTonemapParameters_t : ISchemaClass {
+public partial interface PostProcessingTonemapParameters_t : ISchemaClass, IConvertibleNativeHandle<PostProcessingTonemapParameters_t> {
+
+  static PostProcessingTonemapParameters_t IConvertibleNativeHandle<PostProcessingTonemapParameters_t>.From(nint handle) => new PostProcessingTonemapParameters_tImpl(handle);
 
   
   public ref float ExposureBias { get; }

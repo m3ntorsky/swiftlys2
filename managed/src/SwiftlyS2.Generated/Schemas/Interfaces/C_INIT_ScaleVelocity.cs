@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_ScaleVelocity : CParticleFunctionInitializer {
+public partial interface C_INIT_ScaleVelocity : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_ScaleVelocity> {
+
+  static C_INIT_ScaleVelocity IConvertibleNativeHandle<C_INIT_ScaleVelocity>.From(nint handle) => new C_INIT_ScaleVelocityImpl(handle);
 
   
   public CParticleCollectionVecInput Scale { get; }

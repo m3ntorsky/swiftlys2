@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ScreenSpacePositionOfTarget : CParticleFunctionOperator {
+public partial interface C_OP_ScreenSpacePositionOfTarget : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_ScreenSpacePositionOfTarget> {
+
+  static C_OP_ScreenSpacePositionOfTarget IConvertibleNativeHandle<C_OP_ScreenSpacePositionOfTarget>.From(nint handle) => new C_OP_ScreenSpacePositionOfTargetImpl(handle);
 
   
   public CPerParticleVecInput TargetPosition { get; }

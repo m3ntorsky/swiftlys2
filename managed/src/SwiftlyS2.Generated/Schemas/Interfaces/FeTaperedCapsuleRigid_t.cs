@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeTaperedCapsuleRigid_t : ISchemaClass {
+public partial interface FeTaperedCapsuleRigid_t : ISchemaClass, IConvertibleNativeHandle<FeTaperedCapsuleRigid_t> {
+
+  static FeTaperedCapsuleRigid_t IConvertibleNativeHandle<FeTaperedCapsuleRigid_t>.From(nint handle) => new FeTaperedCapsuleRigid_tImpl(handle);
 
   
   public ISchemaFixedArray<fltx4> Sphere { get; }

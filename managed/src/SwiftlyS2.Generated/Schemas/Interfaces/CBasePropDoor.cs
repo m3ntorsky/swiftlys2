@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBasePropDoor : CDynamicProp {
+public partial interface CBasePropDoor : CDynamicProp, IConvertibleNativeHandle<CBasePropDoor> {
+
+  static CBasePropDoor IConvertibleNativeHandle<CBasePropDoor>.From(nint handle) => new CBasePropDoorImpl(handle);
 
   
   public ref float AutoReturnDelay { get; }

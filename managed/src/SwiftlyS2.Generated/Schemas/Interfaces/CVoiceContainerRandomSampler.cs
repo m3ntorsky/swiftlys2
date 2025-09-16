@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerRandomSampler : CVoiceContainerBase {
+public partial interface CVoiceContainerRandomSampler : CVoiceContainerBase, IConvertibleNativeHandle<CVoiceContainerRandomSampler> {
+
+  static CVoiceContainerRandomSampler IConvertibleNativeHandle<CVoiceContainerRandomSampler>.From(nint handle) => new CVoiceContainerRandomSamplerImpl(handle);
 
   
   public ref float Amplitude { get; }

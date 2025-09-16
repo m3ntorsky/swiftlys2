@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmIDSelectorNode__CDefinition : CNmIDValueNode__CDefinition {
+public partial interface CNmIDSelectorNode__CDefinition : CNmIDValueNode__CDefinition, IConvertibleNativeHandle<CNmIDSelectorNode__CDefinition> {
+
+  static CNmIDSelectorNode__CDefinition IConvertibleNativeHandle<CNmIDSelectorNode__CDefinition>.From(nint handle) => new CNmIDSelectorNode__CDefinitionImpl(handle);
 
   
   // CUtlVectorFixedGrowable< int16, 5 >

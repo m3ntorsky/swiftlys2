@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSGameRulesProxy : CGameRulesProxy {
+public partial interface CCSGameRulesProxy : CGameRulesProxy, IConvertibleNativeHandle<CCSGameRulesProxy> {
+
+  static CCSGameRulesProxy IConvertibleNativeHandle<CCSGameRulesProxy>.From(nint handle) => new CCSGameRulesProxyImpl(handle);
 
   
   public CCSGameRules? GameRules { get; }

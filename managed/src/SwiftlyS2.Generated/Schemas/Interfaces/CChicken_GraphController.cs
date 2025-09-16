@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CChicken_GraphController : CBaseAnimGraphAnimGraphController {
+public partial interface CChicken_GraphController : CBaseAnimGraphAnimGraphController, IConvertibleNativeHandle<CChicken_GraphController> {
+
+  static CChicken_GraphController IConvertibleNativeHandle<CChicken_GraphController>.From(nint handle) => new CChicken_GraphControllerImpl(handle);
 
   
   // CAnimGraphParamRef< char* >

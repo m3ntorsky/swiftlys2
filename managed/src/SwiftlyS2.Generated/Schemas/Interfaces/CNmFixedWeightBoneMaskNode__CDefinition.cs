@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFixedWeightBoneMaskNode__CDefinition : CNmBoneMaskValueNode__CDefinition {
+public partial interface CNmFixedWeightBoneMaskNode__CDefinition : CNmBoneMaskValueNode__CDefinition, IConvertibleNativeHandle<CNmFixedWeightBoneMaskNode__CDefinition> {
+
+  static CNmFixedWeightBoneMaskNode__CDefinition IConvertibleNativeHandle<CNmFixedWeightBoneMaskNode__CDefinition>.From(nint handle) => new CNmFixedWeightBoneMaskNode__CDefinitionImpl(handle);
 
   
   public ref float BoneWeight { get; }

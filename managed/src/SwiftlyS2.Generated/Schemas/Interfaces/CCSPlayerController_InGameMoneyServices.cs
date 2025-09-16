@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayerController_InGameMoneyServices : CPlayerControllerComponent {
+public partial interface CCSPlayerController_InGameMoneyServices : CPlayerControllerComponent, IConvertibleNativeHandle<CCSPlayerController_InGameMoneyServices> {
+
+  static CCSPlayerController_InGameMoneyServices IConvertibleNativeHandle<CCSPlayerController_InGameMoneyServices>.From(nint handle) => new CCSPlayerController_InGameMoneyServicesImpl(handle);
 
   
   public ref bool ReceivesMoneyNextRound { get; }

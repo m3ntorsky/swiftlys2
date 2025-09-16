@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointGamestatsCounter : CPointEntity {
+public partial interface CPointGamestatsCounter : CPointEntity, IConvertibleNativeHandle<CPointGamestatsCounter> {
+
+  static CPointGamestatsCounter IConvertibleNativeHandle<CPointGamestatsCounter>.From(nint handle) => new CPointGamestatsCounterImpl(handle);
 
   
   public ref CUtlSymbolLarge StrStatisticName { get; }

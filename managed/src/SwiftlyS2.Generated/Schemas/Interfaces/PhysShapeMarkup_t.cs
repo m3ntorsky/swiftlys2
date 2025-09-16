@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PhysShapeMarkup_t : ISchemaClass {
+public partial interface PhysShapeMarkup_t : ISchemaClass, IConvertibleNativeHandle<PhysShapeMarkup_t> {
+
+  static PhysShapeMarkup_t IConvertibleNativeHandle<PhysShapeMarkup_t>.From(nint handle) => new PhysShapeMarkup_tImpl(handle);
 
   
   public ref int BodyInAggregate { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AggregateVertexAlbedoStreamOnDiskData_t : ISchemaClass {
+public partial interface AggregateVertexAlbedoStreamOnDiskData_t : ISchemaClass, IConvertibleNativeHandle<AggregateVertexAlbedoStreamOnDiskData_t> {
+
+  static AggregateVertexAlbedoStreamOnDiskData_t IConvertibleNativeHandle<AggregateVertexAlbedoStreamOnDiskData_t>.From(nint handle) => new AggregateVertexAlbedoStreamOnDiskData_tImpl(handle);
 
   
   public ref CUtlBinaryBlock BufferData { get; }

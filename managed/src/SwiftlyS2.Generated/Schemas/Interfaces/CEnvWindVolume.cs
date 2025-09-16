@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvWindVolume : CBaseEntity {
+public partial interface CEnvWindVolume : CBaseEntity, IConvertibleNativeHandle<CEnvWindVolume> {
+
+  static CEnvWindVolume IConvertibleNativeHandle<CEnvWindVolume>.From(nint handle) => new CEnvWindVolumeImpl(handle);
 
   
   public ref bool Active { get; }

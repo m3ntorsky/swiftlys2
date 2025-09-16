@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollPropAttached : CRagdollProp {
+public partial interface CRagdollPropAttached : CRagdollProp, IConvertibleNativeHandle<CRagdollPropAttached> {
+
+  static CRagdollPropAttached IConvertibleNativeHandle<CRagdollPropAttached>.From(nint handle) => new CRagdollPropAttachedImpl(handle);
 
   
   public ref uint BoneIndexAttached { get; }

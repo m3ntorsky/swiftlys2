@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAI_ChangeHintGroup : CBaseEntity {
+public partial interface CAI_ChangeHintGroup : CBaseEntity, IConvertibleNativeHandle<CAI_ChangeHintGroup> {
+
+  static CAI_ChangeHintGroup IConvertibleNativeHandle<CAI_ChangeHintGroup>.From(nint handle) => new CAI_ChangeHintGroupImpl(handle);
 
   
   public ref int SearchType { get; }

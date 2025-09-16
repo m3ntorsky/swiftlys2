@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_TestWaitWithCursorState : CPulseCell_BaseYieldingInflow {
+public partial interface CPulseCell_TestWaitWithCursorState : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_TestWaitWithCursorState> {
+
+  static CPulseCell_TestWaitWithCursorState IConvertibleNativeHandle<CPulseCell_TestWaitWithCursorState>.From(nint handle) => new CPulseCell_TestWaitWithCursorStateImpl(handle);
 
   
   public CPulse_ResumePoint WakeResume { get; }

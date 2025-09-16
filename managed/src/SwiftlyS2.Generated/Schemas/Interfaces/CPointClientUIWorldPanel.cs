@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointClientUIWorldPanel : CBaseClientUIEntity {
+public partial interface CPointClientUIWorldPanel : CBaseClientUIEntity, IConvertibleNativeHandle<CPointClientUIWorldPanel> {
+
+  static CPointClientUIWorldPanel IConvertibleNativeHandle<CPointClientUIWorldPanel>.From(nint handle) => new CPointClientUIWorldPanelImpl(handle);
 
   
   public ref bool IgnoreInput { get; }

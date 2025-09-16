@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FollowTargetOpFixedSettings_t : ISchemaClass {
+public partial interface FollowTargetOpFixedSettings_t : ISchemaClass, IConvertibleNativeHandle<FollowTargetOpFixedSettings_t> {
+
+  static FollowTargetOpFixedSettings_t IConvertibleNativeHandle<FollowTargetOpFixedSettings_t>.From(nint handle) => new FollowTargetOpFixedSettings_tImpl(handle);
 
   
   public ref int BoneIndex { get; }

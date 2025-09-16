@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFlashbangProjectile : CBaseCSGrenadeProjectile {
+public partial interface CFlashbangProjectile : CBaseCSGrenadeProjectile, IConvertibleNativeHandle<CFlashbangProjectile> {
+
+  static CFlashbangProjectile IConvertibleNativeHandle<CFlashbangProjectile>.From(nint handle) => new CFlashbangProjectileImpl(handle);
 
   
   public ref float TimeToDetonate { get; }

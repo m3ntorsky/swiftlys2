@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootCycleDefinition : ISchemaClass {
+public partial interface CFootCycleDefinition : ISchemaClass, IConvertibleNativeHandle<CFootCycleDefinition> {
+
+  static CFootCycleDefinition IConvertibleNativeHandle<CFootCycleDefinition>.From(nint handle) => new CFootCycleDefinitionImpl(handle);
 
   
   public ref Vector StancePositionMS { get; }

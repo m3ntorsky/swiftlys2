@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface hudtextparms_t : ISchemaClass {
+public partial interface hudtextparms_t : ISchemaClass, IConvertibleNativeHandle<hudtextparms_t> {
+
+  static hudtextparms_t IConvertibleNativeHandle<hudtextparms_t>.From(nint handle) => new hudtextparms_tImpl(handle);
 
   
   public ref Color Color1 { get; }

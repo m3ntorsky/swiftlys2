@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmEventConsumerSound : CNmEventConsumer {
+public partial interface CNmEventConsumerSound : CNmEventConsumer, IConvertibleNativeHandle<CNmEventConsumerSound> {
+
+  static CNmEventConsumerSound IConvertibleNativeHandle<CNmEventConsumerSound>.From(nint handle) => new CNmEventConsumerSoundImpl(handle);
 
 
 

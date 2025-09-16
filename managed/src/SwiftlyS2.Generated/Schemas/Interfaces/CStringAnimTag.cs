@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStringAnimTag : CAnimTagBase {
+public partial interface CStringAnimTag : CAnimTagBase, IConvertibleNativeHandle<CStringAnimTag> {
+
+  static CStringAnimTag IConvertibleNativeHandle<CStringAnimTag>.From(nint handle) => new CStringAnimTagImpl(handle);
 
 
 

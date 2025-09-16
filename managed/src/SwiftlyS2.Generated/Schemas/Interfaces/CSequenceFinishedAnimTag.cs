@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSequenceFinishedAnimTag : CAnimTagBase {
+public partial interface CSequenceFinishedAnimTag : CAnimTagBase, IConvertibleNativeHandle<CSequenceFinishedAnimTag> {
+
+  static CSequenceFinishedAnimTag IConvertibleNativeHandle<CSequenceFinishedAnimTag>.From(nint handle) => new CSequenceFinishedAnimTagImpl(handle);
 
   
   public ref CUtlString SequenceName { get; }

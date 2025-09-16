@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFloatComparisonNode__CDefinition : CNmBoolValueNode__CDefinition {
+public partial interface CNmFloatComparisonNode__CDefinition : CNmBoolValueNode__CDefinition, IConvertibleNativeHandle<CNmFloatComparisonNode__CDefinition> {
+
+  static CNmFloatComparisonNode__CDefinition IConvertibleNativeHandle<CNmFloatComparisonNode__CDefinition>.From(nint handle) => new CNmFloatComparisonNode__CDefinitionImpl(handle);
 
   
   public ref short InputValueNodeIdx { get; }

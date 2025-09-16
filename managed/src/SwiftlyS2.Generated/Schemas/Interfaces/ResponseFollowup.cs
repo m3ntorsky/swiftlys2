@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ResponseFollowup : ISchemaClass {
+public partial interface ResponseFollowup : ISchemaClass, IConvertibleNativeHandle<ResponseFollowup> {
+
+  static ResponseFollowup IConvertibleNativeHandle<ResponseFollowup>.From(nint handle) => new ResponseFollowupImpl(handle);
 
   
   public ref CString Followup_concept { get; }

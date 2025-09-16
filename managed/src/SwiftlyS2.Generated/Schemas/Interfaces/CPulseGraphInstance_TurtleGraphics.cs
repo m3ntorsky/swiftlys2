@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseGraphInstance_TurtleGraphics : CBasePulseGraphInstance {
+public partial interface CPulseGraphInstance_TurtleGraphics : CBasePulseGraphInstance, IConvertibleNativeHandle<CPulseGraphInstance_TurtleGraphics> {
+
+  static CPulseGraphInstance_TurtleGraphics IConvertibleNativeHandle<CPulseGraphInstance_TurtleGraphics>.From(nint handle) => new CPulseGraphInstance_TurtleGraphicsImpl(handle);
 
 
 

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointTemplate : CLogicalEntity {
+public partial interface CPointTemplate : CLogicalEntity, IConvertibleNativeHandle<CPointTemplate> {
+
+  static CPointTemplate IConvertibleNativeHandle<CPointTemplate>.From(nint handle) => new CPointTemplateImpl(handle);
 
   
   public ref CUtlSymbolLarge WorldName { get; }

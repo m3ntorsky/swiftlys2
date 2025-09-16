@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface constraint_hingeparams_t : ISchemaClass {
+public partial interface constraint_hingeparams_t : ISchemaClass, IConvertibleNativeHandle<constraint_hingeparams_t> {
+
+  static constraint_hingeparams_t IConvertibleNativeHandle<constraint_hingeparams_t>.From(nint handle) => new constraint_hingeparams_tImpl(handle);
 
   
   public ref Vector WorldPosition { get; }

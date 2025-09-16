@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmChainLookatNode__CDefinition : CNmPassthroughNode__CDefinition {
+public partial interface CNmChainLookatNode__CDefinition : CNmPassthroughNode__CDefinition, IConvertibleNativeHandle<CNmChainLookatNode__CDefinition> {
+
+  static CNmChainLookatNode__CDefinition IConvertibleNativeHandle<CNmChainLookatNode__CDefinition>.From(nint handle) => new CNmChainLookatNode__CDefinitionImpl(handle);
 
   
   public ref CGlobalSymbol ChainEndBoneID { get; }

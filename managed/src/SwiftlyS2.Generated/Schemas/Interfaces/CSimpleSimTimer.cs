@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSimpleSimTimer : ISchemaClass {
+public partial interface CSimpleSimTimer : ISchemaClass, IConvertibleNativeHandle<CSimpleSimTimer> {
+
+  static CSimpleSimTimer IConvertibleNativeHandle<CSimpleSimTimer>.From(nint handle) => new CSimpleSimTimerImpl(handle);
 
   
   public GameTime_t Next { get; }

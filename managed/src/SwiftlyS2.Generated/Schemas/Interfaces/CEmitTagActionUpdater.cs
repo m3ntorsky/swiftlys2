@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEmitTagActionUpdater : CAnimActionUpdater {
+public partial interface CEmitTagActionUpdater : CAnimActionUpdater, IConvertibleNativeHandle<CEmitTagActionUpdater> {
+
+  static CEmitTagActionUpdater IConvertibleNativeHandle<CEmitTagActionUpdater>.From(nint handle) => new CEmitTagActionUpdaterImpl(handle);
 
   
   public ref int TagIndex { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapAverageHitboxSpeedtoCP : CParticleFunctionPreEmission {
+public partial interface C_OP_RemapAverageHitboxSpeedtoCP : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_RemapAverageHitboxSpeedtoCP> {
+
+  static C_OP_RemapAverageHitboxSpeedtoCP IConvertibleNativeHandle<C_OP_RemapAverageHitboxSpeedtoCP>.From(nint handle) => new C_OP_RemapAverageHitboxSpeedtoCPImpl(handle);
 
   
   public ref int InControlPointNumber { get; }

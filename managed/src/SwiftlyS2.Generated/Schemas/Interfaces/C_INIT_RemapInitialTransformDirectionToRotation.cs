@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RemapInitialTransformDirectionToRotation : CParticleFunctionInitializer {
+public partial interface C_INIT_RemapInitialTransformDirectionToRotation : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RemapInitialTransformDirectionToRotation> {
+
+  static C_INIT_RemapInitialTransformDirectionToRotation IConvertibleNativeHandle<C_INIT_RemapInitialTransformDirectionToRotation>.From(nint handle) => new C_INIT_RemapInitialTransformDirectionToRotationImpl(handle);
 
   
   public CParticleTransformInput TransformInput { get; }

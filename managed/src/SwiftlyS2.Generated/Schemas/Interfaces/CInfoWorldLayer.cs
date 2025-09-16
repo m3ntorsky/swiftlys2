@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoWorldLayer : CBaseEntity {
+public partial interface CInfoWorldLayer : CBaseEntity, IConvertibleNativeHandle<CInfoWorldLayer> {
+
+  static CInfoWorldLayer IConvertibleNativeHandle<CInfoWorldLayer>.From(nint handle) => new CInfoWorldLayerImpl(handle);
 
   
   public CEntityIOOutput OutputOnEntitiesSpawned { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqSeqDescFlag : ISchemaClass {
+public partial interface CSeqSeqDescFlag : ISchemaClass, IConvertibleNativeHandle<CSeqSeqDescFlag> {
+
+  static CSeqSeqDescFlag IConvertibleNativeHandle<CSeqSeqDescFlag>.From(nint handle) => new CSeqSeqDescFlagImpl(handle);
 
   
   public ref bool Looping { get; }

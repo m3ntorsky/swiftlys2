@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CWarpSectionAnimTag : CWarpSectionAnimTagBase {
+public partial interface CWarpSectionAnimTag : CWarpSectionAnimTagBase, IConvertibleNativeHandle<CWarpSectionAnimTag> {
+
+  static CWarpSectionAnimTag IConvertibleNativeHandle<CWarpSectionAnimTag>.From(nint handle) => new CWarpSectionAnimTagImpl(handle);
 
   
   public ref bool WarpPosition { get; }

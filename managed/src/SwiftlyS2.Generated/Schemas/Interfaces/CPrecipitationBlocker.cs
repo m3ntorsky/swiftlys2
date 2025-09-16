@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPrecipitationBlocker : CBaseModelEntity {
+public partial interface CPrecipitationBlocker : CBaseModelEntity, IConvertibleNativeHandle<CPrecipitationBlocker> {
+
+  static CPrecipitationBlocker IConvertibleNativeHandle<CPrecipitationBlocker>.From(nint handle) => new CPrecipitationBlockerImpl(handle);
 
 
 

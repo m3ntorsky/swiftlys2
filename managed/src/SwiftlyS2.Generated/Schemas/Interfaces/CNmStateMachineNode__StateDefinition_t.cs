@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmStateMachineNode__StateDefinition_t : ISchemaClass {
+public partial interface CNmStateMachineNode__StateDefinition_t : ISchemaClass, IConvertibleNativeHandle<CNmStateMachineNode__StateDefinition_t> {
+
+  static CNmStateMachineNode__StateDefinition_t IConvertibleNativeHandle<CNmStateMachineNode__StateDefinition_t>.From(nint handle) => new CNmStateMachineNode__StateDefinition_tImpl(handle);
 
   
   public ref short StateNodeIdx { get; }

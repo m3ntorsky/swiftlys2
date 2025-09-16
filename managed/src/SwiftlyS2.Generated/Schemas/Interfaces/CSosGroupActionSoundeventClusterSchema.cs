@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupActionSoundeventClusterSchema : CSosGroupActionSchema {
+public partial interface CSosGroupActionSoundeventClusterSchema : CSosGroupActionSchema, IConvertibleNativeHandle<CSosGroupActionSoundeventClusterSchema> {
+
+  static CSosGroupActionSoundeventClusterSchema IConvertibleNativeHandle<CSosGroupActionSoundeventClusterSchema>.From(nint handle) => new CSosGroupActionSoundeventClusterSchemaImpl(handle);
 
   
   public ref int MinNearby { get; }

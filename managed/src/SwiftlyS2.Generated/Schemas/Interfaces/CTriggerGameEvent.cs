@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerGameEvent : CBaseTrigger {
+public partial interface CTriggerGameEvent : CBaseTrigger, IConvertibleNativeHandle<CTriggerGameEvent> {
+
+  static CTriggerGameEvent IConvertibleNativeHandle<CTriggerGameEvent>.From(nint handle) => new CTriggerGameEventImpl(handle);
 
   
   public ref CUtlString StrStartTouchEventName { get; }

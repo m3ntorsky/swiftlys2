@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTankTargetChange : CPointEntity {
+public partial interface CTankTargetChange : CPointEntity, IConvertibleNativeHandle<CTankTargetChange> {
+
+  static CTankTargetChange IConvertibleNativeHandle<CTankTargetChange>.From(nint handle) => new CTankTargetChangeImpl(handle);
 
   
   // CVariantBase< CVariantDefaultAllocator >

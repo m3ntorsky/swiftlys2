@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysBallSocket : CPhysConstraint {
+public partial interface CPhysBallSocket : CPhysConstraint, IConvertibleNativeHandle<CPhysBallSocket> {
+
+  static CPhysBallSocket IConvertibleNativeHandle<CPhysBallSocket>.From(nint handle) => new CPhysBallSocketImpl(handle);
 
   
   public ref float JointFriction { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VPhysXJoint_t : ISchemaClass {
+public partial interface VPhysXJoint_t : ISchemaClass, IConvertibleNativeHandle<VPhysXJoint_t> {
+
+  static VPhysXJoint_t IConvertibleNativeHandle<VPhysXJoint_t>.From(nint handle) => new VPhysXJoint_tImpl(handle);
 
   
   public ref ushort Type { get; }

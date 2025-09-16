@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvCubemap : CBaseEntity {
+public partial interface CEnvCubemap : CBaseEntity, IConvertibleNativeHandle<CEnvCubemap> {
+
+  static CEnvCubemap IConvertibleNativeHandle<CEnvCubemap>.From(nint handle) => new CEnvCubemapImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hCubemapTexture { get; }

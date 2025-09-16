@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CItem_Healthshot : CWeaponBaseItem {
+public partial interface CItem_Healthshot : CWeaponBaseItem, IConvertibleNativeHandle<CItem_Healthshot> {
+
+  static CItem_Healthshot IConvertibleNativeHandle<CItem_Healthshot>.From(nint handle) => new CItem_HealthshotImpl(handle);
 
 
 

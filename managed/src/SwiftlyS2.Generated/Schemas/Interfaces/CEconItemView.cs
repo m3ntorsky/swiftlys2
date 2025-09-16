@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEconItemView : IEconItemInterface {
+public partial interface CEconItemView : IEconItemInterface, IConvertibleNativeHandle<CEconItemView> {
+
+  static CEconItemView IConvertibleNativeHandle<CEconItemView>.From(nint handle) => new CEconItemViewImpl(handle);
 
   
   public ref ushort ItemDefinitionIndex { get; }

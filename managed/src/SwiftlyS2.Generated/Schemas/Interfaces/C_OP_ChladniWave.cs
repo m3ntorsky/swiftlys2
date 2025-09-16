@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ChladniWave : CParticleFunctionOperator {
+public partial interface C_OP_ChladniWave : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_ChladniWave> {
+
+  static C_OP_ChladniWave IConvertibleNativeHandle<C_OP_ChladniWave>.From(nint handle) => new C_OP_ChladniWaveImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

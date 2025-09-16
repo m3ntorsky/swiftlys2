@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDestructiblePartsSystemComponent : ISchemaClass {
+public partial interface CDestructiblePartsSystemComponent : ISchemaClass, IConvertibleNativeHandle<CDestructiblePartsSystemComponent> {
+
+  static CDestructiblePartsSystemComponent IConvertibleNativeHandle<CDestructiblePartsSystemComponent>.From(nint handle) => new CDestructiblePartsSystemComponentImpl(handle);
 
   
   public CNetworkVarChainer __m_pChainEntity { get; }

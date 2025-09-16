@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSSDSMsg_ViewRender : ISchemaClass {
+public partial interface CSSDSMsg_ViewRender : ISchemaClass, IConvertibleNativeHandle<CSSDSMsg_ViewRender> {
+
+  static CSSDSMsg_ViewRender IConvertibleNativeHandle<CSSDSMsg_ViewRender>.From(nint handle) => new CSSDSMsg_ViewRenderImpl(handle);
 
   
   public SceneViewId_t ViewId { get; }

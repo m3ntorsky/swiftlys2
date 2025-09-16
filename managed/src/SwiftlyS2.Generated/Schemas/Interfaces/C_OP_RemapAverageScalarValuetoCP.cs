@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapAverageScalarValuetoCP : CParticleFunctionPreEmission {
+public partial interface C_OP_RemapAverageScalarValuetoCP : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_RemapAverageScalarValuetoCP> {
+
+  static C_OP_RemapAverageScalarValuetoCP IConvertibleNativeHandle<C_OP_RemapAverageScalarValuetoCP>.From(nint handle) => new C_OP_RemapAverageScalarValuetoCPImpl(handle);
 
   
   public ref SetStatisticExpressionType_t Expression { get; }

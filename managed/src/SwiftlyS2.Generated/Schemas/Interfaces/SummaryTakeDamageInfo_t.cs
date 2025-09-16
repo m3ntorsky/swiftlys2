@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SummaryTakeDamageInfo_t : ISchemaClass {
+public partial interface SummaryTakeDamageInfo_t : ISchemaClass, IConvertibleNativeHandle<SummaryTakeDamageInfo_t> {
+
+  static SummaryTakeDamageInfo_t IConvertibleNativeHandle<SummaryTakeDamageInfo_t>.From(nint handle) => new SummaryTakeDamageInfo_tImpl(handle);
 
   
   public ref int SummarisedCount { get; }

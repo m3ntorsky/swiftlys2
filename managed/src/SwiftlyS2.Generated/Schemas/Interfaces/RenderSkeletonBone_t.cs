@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RenderSkeletonBone_t : ISchemaClass {
+public partial interface RenderSkeletonBone_t : ISchemaClass, IConvertibleNativeHandle<RenderSkeletonBone_t> {
+
+  static RenderSkeletonBone_t IConvertibleNativeHandle<RenderSkeletonBone_t>.From(nint handle) => new RenderSkeletonBone_tImpl(handle);
 
   
   public ref CUtlString BoneName { get; }

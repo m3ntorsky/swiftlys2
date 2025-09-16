@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDestructiblePartsSystemData_DamageLevel : ISchemaClass {
+public partial interface CDestructiblePartsSystemData_DamageLevel : ISchemaClass, IConvertibleNativeHandle<CDestructiblePartsSystemData_DamageLevel> {
+
+  static CDestructiblePartsSystemData_DamageLevel IConvertibleNativeHandle<CDestructiblePartsSystemData_DamageLevel>.From(nint handle) => new CDestructiblePartsSystemData_DamageLevelImpl(handle);
 
   
   public ref CUtlString Name { get; }

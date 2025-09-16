@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoPlayerStart : CPointEntity {
+public partial interface CInfoPlayerStart : CPointEntity, IConvertibleNativeHandle<CInfoPlayerStart> {
+
+  static CInfoPlayerStart IConvertibleNativeHandle<CInfoPlayerStart>.From(nint handle) => new CInfoPlayerStartImpl(handle);
 
   
   public ref bool Disabled { get; }

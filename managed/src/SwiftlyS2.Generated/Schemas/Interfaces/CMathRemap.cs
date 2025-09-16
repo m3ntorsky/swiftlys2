@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMathRemap : CLogicalEntity {
+public partial interface CMathRemap : CLogicalEntity, IConvertibleNativeHandle<CMathRemap> {
+
+  static CMathRemap IConvertibleNativeHandle<CMathRemap>.From(nint handle) => new CMathRemapImpl(handle);
 
   
   public ref float InMin { get; }

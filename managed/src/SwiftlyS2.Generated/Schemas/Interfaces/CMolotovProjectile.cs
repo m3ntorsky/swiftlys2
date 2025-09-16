@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMolotovProjectile : CBaseCSGrenadeProjectile {
+public partial interface CMolotovProjectile : CBaseCSGrenadeProjectile, IConvertibleNativeHandle<CMolotovProjectile> {
+
+  static CMolotovProjectile IConvertibleNativeHandle<CMolotovProjectile>.From(nint handle) => new CMolotovProjectileImpl(handle);
 
   
   public ref bool IsIncGrenade { get; }

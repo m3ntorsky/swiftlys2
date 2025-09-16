@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ISkeletonAnimationController : ISchemaClass {
+public partial interface ISkeletonAnimationController : ISchemaClass, IConvertibleNativeHandle<ISkeletonAnimationController> {
+
+  static ISkeletonAnimationController IConvertibleNativeHandle<ISkeletonAnimationController>.From(nint handle) => new ISkeletonAnimationControllerImpl(handle);
 
 
 

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseGraphDef : ISchemaClass {
+public partial interface CPulseGraphDef : ISchemaClass, IConvertibleNativeHandle<CPulseGraphDef> {
+
+  static CPulseGraphDef IConvertibleNativeHandle<CPulseGraphDef>.From(nint handle) => new CPulseGraphDefImpl(handle);
 
   
   // PulseSymbol_t

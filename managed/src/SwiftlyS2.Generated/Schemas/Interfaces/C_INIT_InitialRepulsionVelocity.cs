@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_InitialRepulsionVelocity : CParticleFunctionInitializer {
+public partial interface C_INIT_InitialRepulsionVelocity : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_InitialRepulsionVelocity> {
+
+  static C_INIT_InitialRepulsionVelocity IConvertibleNativeHandle<C_INIT_InitialRepulsionVelocity>.From(nint handle) => new C_INIT_InitialRepulsionVelocityImpl(handle);
 
   
   public ISchemaFixedString CollisionGroupName { get; }

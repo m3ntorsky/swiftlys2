@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMorphConstraint : CBaseConstraint {
+public partial interface CMorphConstraint : CBaseConstraint, IConvertibleNativeHandle<CMorphConstraint> {
+
+  static CMorphConstraint IConvertibleNativeHandle<CMorphConstraint>.From(nint handle) => new CMorphConstraintImpl(handle);
 
   
   public ref CUtlString TargetMorph { get; }

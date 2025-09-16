@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvParticleGlow : CParticleSystem {
+public partial interface CEnvParticleGlow : CParticleSystem, IConvertibleNativeHandle<CEnvParticleGlow> {
+
+  static CEnvParticleGlow IConvertibleNativeHandle<CEnvParticleGlow>.From(nint handle) => new CEnvParticleGlowImpl(handle);
 
   
   public ref float AlphaScale { get; }

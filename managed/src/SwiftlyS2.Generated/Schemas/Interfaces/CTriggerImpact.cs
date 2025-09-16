@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerImpact : CTriggerMultiple {
+public partial interface CTriggerImpact : CTriggerMultiple, IConvertibleNativeHandle<CTriggerImpact> {
+
+  static CTriggerImpact IConvertibleNativeHandle<CTriggerImpact>.From(nint handle) => new CTriggerImpactImpl(handle);
 
   
   public ref float Magnitude { get; }

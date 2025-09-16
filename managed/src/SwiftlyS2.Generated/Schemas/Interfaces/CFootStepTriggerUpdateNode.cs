@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFootStepTriggerUpdateNode : CUnaryUpdateNode {
+public partial interface CFootStepTriggerUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CFootStepTriggerUpdateNode> {
+
+  static CFootStepTriggerUpdateNode IConvertibleNativeHandle<CFootStepTriggerUpdateNode>.From(nint handle) => new CFootStepTriggerUpdateNodeImpl(handle);
 
   
   // CUtlVector< FootStepTrigger >

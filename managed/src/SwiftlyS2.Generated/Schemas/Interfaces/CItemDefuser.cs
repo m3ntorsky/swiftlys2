@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CItemDefuser : CItem {
+public partial interface CItemDefuser : CItem, IConvertibleNativeHandle<CItemDefuser> {
+
+  static CItemDefuser IConvertibleNativeHandle<CItemDefuser>.From(nint handle) => new CItemDefuserImpl(handle);
 
   
   public EntitySpottedState_t EntitySpottedState { get; }

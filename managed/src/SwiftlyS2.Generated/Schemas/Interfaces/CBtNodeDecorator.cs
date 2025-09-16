@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBtNodeDecorator : CBtNode {
+public partial interface CBtNodeDecorator : CBtNode, IConvertibleNativeHandle<CBtNodeDecorator> {
+
+  static CBtNodeDecorator IConvertibleNativeHandle<CBtNodeDecorator>.From(nint handle) => new CBtNodeDecoratorImpl(handle);
 
 
 

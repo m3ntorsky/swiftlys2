@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseClientUIEntity : CBaseModelEntity {
+public partial interface CBaseClientUIEntity : CBaseModelEntity, IConvertibleNativeHandle<CBaseClientUIEntity> {
+
+  static CBaseClientUIEntity IConvertibleNativeHandle<CBaseClientUIEntity>.From(nint handle) => new CBaseClientUIEntityImpl(handle);
 
   
   public ref bool Enabled { get; }

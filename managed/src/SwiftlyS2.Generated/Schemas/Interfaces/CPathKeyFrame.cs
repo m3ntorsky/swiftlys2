@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathKeyFrame : CLogicalEntity {
+public partial interface CPathKeyFrame : CLogicalEntity, IConvertibleNativeHandle<CPathKeyFrame> {
+
+  static CPathKeyFrame IConvertibleNativeHandle<CPathKeyFrame>.From(nint handle) => new CPathKeyFrameImpl(handle);
 
   
   public ref Vector Origin { get; }

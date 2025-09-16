@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPerParticleVecInput : CParticleVecInput {
+public partial interface CPerParticleVecInput : CParticleVecInput, IConvertibleNativeHandle<CPerParticleVecInput> {
+
+  static CPerParticleVecInput IConvertibleNativeHandle<CPerParticleVecInput>.From(nint handle) => new CPerParticleVecInputImpl(handle);
 
 
 

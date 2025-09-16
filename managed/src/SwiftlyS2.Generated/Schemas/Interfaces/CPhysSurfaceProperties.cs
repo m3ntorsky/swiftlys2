@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysSurfaceProperties : ISchemaClass {
+public partial interface CPhysSurfaceProperties : ISchemaClass, IConvertibleNativeHandle<CPhysSurfaceProperties> {
+
+  static CPhysSurfaceProperties IConvertibleNativeHandle<CPhysSurfaceProperties>.From(nint handle) => new CPhysSurfacePropertiesImpl(handle);
 
   
   public ref CUtlString Name { get; }

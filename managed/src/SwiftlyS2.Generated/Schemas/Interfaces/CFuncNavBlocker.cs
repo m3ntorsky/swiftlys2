@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncNavBlocker : CBaseModelEntity {
+public partial interface CFuncNavBlocker : CBaseModelEntity, IConvertibleNativeHandle<CFuncNavBlocker> {
+
+  static CFuncNavBlocker IConvertibleNativeHandle<CFuncNavBlocker>.From(nint handle) => new CFuncNavBlockerImpl(handle);
 
   
   public ref bool Disabled { get; }

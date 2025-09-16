@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SceneViewId_t : ISchemaClass {
+public partial interface SceneViewId_t : ISchemaClass, IConvertibleNativeHandle<SceneViewId_t> {
+
+  static SceneViewId_t IConvertibleNativeHandle<SceneViewId_t>.From(nint handle) => new SceneViewId_tImpl(handle);
 
   
   public ref ulong ViewId { get; }

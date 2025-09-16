@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimNodePath : ISchemaClass {
+public partial interface CAnimNodePath : ISchemaClass, IConvertibleNativeHandle<CAnimNodePath> {
+
+  static CAnimNodePath IConvertibleNativeHandle<CAnimNodePath>.From(nint handle) => new CAnimNodePathImpl(handle);
 
   
   // AnimNodeID

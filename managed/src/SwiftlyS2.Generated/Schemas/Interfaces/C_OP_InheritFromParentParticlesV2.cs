@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_InheritFromParentParticlesV2 : CParticleFunctionOperator {
+public partial interface C_OP_InheritFromParentParticlesV2 : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_InheritFromParentParticlesV2> {
+
+  static C_OP_InheritFromParentParticlesV2 IConvertibleNativeHandle<C_OP_InheritFromParentParticlesV2>.From(nint handle) => new C_OP_InheritFromParentParticlesV2Impl(handle);
 
   
   public CPerParticleFloatInput Scale { get; }

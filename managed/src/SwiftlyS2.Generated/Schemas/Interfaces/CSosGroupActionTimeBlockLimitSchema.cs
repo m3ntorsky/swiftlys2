@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSosGroupActionTimeBlockLimitSchema : CSosGroupActionSchema {
+public partial interface CSosGroupActionTimeBlockLimitSchema : CSosGroupActionSchema, IConvertibleNativeHandle<CSosGroupActionTimeBlockLimitSchema> {
+
+  static CSosGroupActionTimeBlockLimitSchema IConvertibleNativeHandle<CSosGroupActionTimeBlockLimitSchema>.From(nint handle) => new CSosGroupActionTimeBlockLimitSchemaImpl(handle);
 
   
   public ref int MaxCount { get; }

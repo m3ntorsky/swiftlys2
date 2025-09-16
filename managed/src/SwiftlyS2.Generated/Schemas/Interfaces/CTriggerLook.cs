@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerLook : CTriggerOnce {
+public partial interface CTriggerLook : CTriggerOnce, IConvertibleNativeHandle<CTriggerLook> {
+
+  static CTriggerLook IConvertibleNativeHandle<CTriggerLook>.From(nint handle) => new CTriggerLookImpl(handle);
 
   
   public ref CHandle<CBaseEntity> LookTarget { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStopAtGoalUpdateNode : CUnaryUpdateNode {
+public partial interface CStopAtGoalUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CStopAtGoalUpdateNode> {
+
+  static CStopAtGoalUpdateNode IConvertibleNativeHandle<CStopAtGoalUpdateNode>.From(nint handle) => new CStopAtGoalUpdateNodeImpl(handle);
 
   
   public ref float OuterRadius { get; }

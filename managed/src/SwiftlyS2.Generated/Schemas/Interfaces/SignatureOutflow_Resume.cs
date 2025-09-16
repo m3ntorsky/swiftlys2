@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SignatureOutflow_Resume : CPulse_ResumePoint {
+public partial interface SignatureOutflow_Resume : CPulse_ResumePoint, IConvertibleNativeHandle<SignatureOutflow_Resume> {
+
+  static SignatureOutflow_Resume IConvertibleNativeHandle<SignatureOutflow_Resume>.From(nint handle) => new SignatureOutflow_ResumeImpl(handle);
 
 
 

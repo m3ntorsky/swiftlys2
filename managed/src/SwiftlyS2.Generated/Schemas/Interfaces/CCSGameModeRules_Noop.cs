@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSGameModeRules_Noop : CCSGameModeRules {
+public partial interface CCSGameModeRules_Noop : CCSGameModeRules, IConvertibleNativeHandle<CCSGameModeRules_Noop> {
+
+  static CCSGameModeRules_Noop IConvertibleNativeHandle<CCSGameModeRules_Noop>.From(nint handle) => new CCSGameModeRules_NoopImpl(handle);
 
 
 

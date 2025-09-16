@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBodyComponent : CEntityComponent {
+public partial interface CBodyComponent : CEntityComponent, IConvertibleNativeHandle<CBodyComponent> {
+
+  static CBodyComponent IConvertibleNativeHandle<CBodyComponent>.From(nint handle) => new CBodyComponentImpl(handle);
 
   
   public CGameSceneNode? SceneNode { get; }

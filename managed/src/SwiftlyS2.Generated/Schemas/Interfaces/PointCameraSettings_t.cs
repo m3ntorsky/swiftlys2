@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PointCameraSettings_t : ISchemaClass {
+public partial interface PointCameraSettings_t : ISchemaClass, IConvertibleNativeHandle<PointCameraSettings_t> {
+
+  static PointCameraSettings_t IConvertibleNativeHandle<PointCameraSettings_t>.From(nint handle) => new PointCameraSettings_tImpl(handle);
 
   
   public ref float NearBlurryDistance { get; }

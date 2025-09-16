@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDynamicPropAlias_dynamic_prop : CDynamicProp {
+public partial interface CDynamicPropAlias_dynamic_prop : CDynamicProp, IConvertibleNativeHandle<CDynamicPropAlias_dynamic_prop> {
+
+  static CDynamicPropAlias_dynamic_prop IConvertibleNativeHandle<CDynamicPropAlias_dynamic_prop>.From(nint handle) => new CDynamicPropAlias_dynamic_propImpl(handle);
 
 
 

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CServerRagdollTrigger : CBaseTrigger {
+public partial interface CServerRagdollTrigger : CBaseTrigger, IConvertibleNativeHandle<CServerRagdollTrigger> {
+
+  static CServerRagdollTrigger IConvertibleNativeHandle<CServerRagdollTrigger>.From(nint handle) => new CServerRagdollTriggerImpl(handle);
 
 
 

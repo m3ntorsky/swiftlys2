@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderPostProcessing : CParticleFunctionRenderer {
+public partial interface C_OP_RenderPostProcessing : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderPostProcessing> {
+
+  static C_OP_RenderPostProcessing IConvertibleNativeHandle<C_OP_RenderPostProcessing>.From(nint handle) => new C_OP_RenderPostProcessingImpl(handle);
 
   
   public CPerParticleFloatInput PostProcessStrength { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleFunction : ISchemaClass {
+public partial interface CParticleFunction : ISchemaClass, IConvertibleNativeHandle<CParticleFunction> {
+
+  static CParticleFunction IConvertibleNativeHandle<CParticleFunction>.From(nint handle) => new CParticleFunctionImpl(handle);
 
   
   public CParticleCollectionFloatInput OpStrength { get; }

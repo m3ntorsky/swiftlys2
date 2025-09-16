@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayer_BulletServices : CPlayerPawnComponent {
+public partial interface CCSPlayer_BulletServices : CPlayerPawnComponent, IConvertibleNativeHandle<CCSPlayer_BulletServices> {
+
+  static CCSPlayer_BulletServices IConvertibleNativeHandle<CCSPlayer_BulletServices>.From(nint handle) => new CCSPlayer_BulletServicesImpl(handle);
 
   
   public ref int TotalHitsOnServer { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundOpvarSetPointBase : CBaseEntity {
+public partial interface CSoundOpvarSetPointBase : CBaseEntity, IConvertibleNativeHandle<CSoundOpvarSetPointBase> {
+
+  static CSoundOpvarSetPointBase IConvertibleNativeHandle<CSoundOpvarSetPointBase>.From(nint handle) => new CSoundOpvarSetPointBaseImpl(handle);
 
   
   public ref bool Disabled { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSpeedScaleUpdateNode : CUnaryUpdateNode {
+public partial interface CSpeedScaleUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CSpeedScaleUpdateNode> {
+
+  static CSpeedScaleUpdateNode IConvertibleNativeHandle<CSpeedScaleUpdateNode>.From(nint handle) => new CSpeedScaleUpdateNodeImpl(handle);
 
   
   public CAnimParamHandle ParamIndex { get; }

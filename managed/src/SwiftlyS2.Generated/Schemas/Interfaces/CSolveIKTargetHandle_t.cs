@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSolveIKTargetHandle_t : ISchemaClass {
+public partial interface CSolveIKTargetHandle_t : ISchemaClass, IConvertibleNativeHandle<CSolveIKTargetHandle_t> {
+
+  static CSolveIKTargetHandle_t IConvertibleNativeHandle<CSolveIKTargetHandle_t>.From(nint handle) => new CSolveIKTargetHandle_tImpl(handle);
 
   
   public CAnimParamHandle PositionHandle { get; }

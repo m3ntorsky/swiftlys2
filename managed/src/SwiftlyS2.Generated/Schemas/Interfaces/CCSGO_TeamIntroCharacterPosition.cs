@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSGO_TeamIntroCharacterPosition : CCSGO_TeamPreviewCharacterPosition {
+public partial interface CCSGO_TeamIntroCharacterPosition : CCSGO_TeamPreviewCharacterPosition, IConvertibleNativeHandle<CCSGO_TeamIntroCharacterPosition> {
+
+  static CCSGO_TeamIntroCharacterPosition IConvertibleNativeHandle<CCSGO_TeamIntroCharacterPosition>.From(nint handle) => new CCSGO_TeamIntroCharacterPositionImpl(handle);
 
 
 

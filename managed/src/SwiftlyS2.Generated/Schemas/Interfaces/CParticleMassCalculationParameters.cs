@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleMassCalculationParameters : ISchemaClass {
+public partial interface CParticleMassCalculationParameters : ISchemaClass, IConvertibleNativeHandle<CParticleMassCalculationParameters> {
+
+  static CParticleMassCalculationParameters IConvertibleNativeHandle<CParticleMassCalculationParameters>.From(nint handle) => new CParticleMassCalculationParametersImpl(handle);
 
   
   public ref ParticleMassMode_t MassMode { get; }

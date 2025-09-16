@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeIPulseGraphDef : ISchemaClass {
+public partial interface InfoForResourceTypeIPulseGraphDef : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeIPulseGraphDef> {
+
+  static InfoForResourceTypeIPulseGraphDef IConvertibleNativeHandle<InfoForResourceTypeIPulseGraphDef>.From(nint handle) => new InfoForResourceTypeIPulseGraphDefImpl(handle);
 
 
 

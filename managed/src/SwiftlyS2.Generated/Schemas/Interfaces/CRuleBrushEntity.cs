@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRuleBrushEntity : CRuleEntity {
+public partial interface CRuleBrushEntity : CRuleEntity, IConvertibleNativeHandle<CRuleBrushEntity> {
+
+  static CRuleBrushEntity IConvertibleNativeHandle<CRuleBrushEntity>.From(nint handle) => new CRuleBrushEntityImpl(handle);
 
 
 

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFloatSelectorNode__CDefinition : CNmFloatValueNode__CDefinition {
+public partial interface CNmFloatSelectorNode__CDefinition : CNmFloatValueNode__CDefinition, IConvertibleNativeHandle<CNmFloatSelectorNode__CDefinition> {
+
+  static CNmFloatSelectorNode__CDefinition IConvertibleNativeHandle<CNmFloatSelectorNode__CDefinition>.From(nint handle) => new CNmFloatSelectorNode__CDefinitionImpl(handle);
 
   
   // CUtlVectorFixedGrowable< int16, 5 >

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDrawCullingData : ISchemaClass {
+public partial interface CDrawCullingData : ISchemaClass, IConvertibleNativeHandle<CDrawCullingData> {
+
+  static CDrawCullingData IConvertibleNativeHandle<CDrawCullingData>.From(nint handle) => new CDrawCullingDataImpl(handle);
 
   
   public ISchemaFixedArray<byte> ConeAxis { get; }

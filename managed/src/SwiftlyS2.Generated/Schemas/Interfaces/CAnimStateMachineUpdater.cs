@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimStateMachineUpdater : ISchemaClass {
+public partial interface CAnimStateMachineUpdater : ISchemaClass, IConvertibleNativeHandle<CAnimStateMachineUpdater> {
+
+  static CAnimStateMachineUpdater IConvertibleNativeHandle<CAnimStateMachineUpdater>.From(nint handle) => new CAnimStateMachineUpdaterImpl(handle);
 
   
   // CUtlVector< CStateUpdateData >

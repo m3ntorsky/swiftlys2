@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlayer_ObserverServices : CPlayerPawnComponent {
+public partial interface CPlayer_ObserverServices : CPlayerPawnComponent, IConvertibleNativeHandle<CPlayer_ObserverServices> {
+
+  static CPlayer_ObserverServices IConvertibleNativeHandle<CPlayer_ObserverServices>.From(nint handle) => new CPlayer_ObserverServicesImpl(handle);
 
   
   public ref byte ObserverMode { get; }

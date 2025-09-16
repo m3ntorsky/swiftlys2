@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSkyCamera : CBaseEntity {
+public partial interface CSkyCamera : CBaseEntity, IConvertibleNativeHandle<CSkyCamera> {
+
+  static CSkyCamera IConvertibleNativeHandle<CSkyCamera>.From(nint handle) => new CSkyCameraImpl(handle);
 
   
   public sky3dparams_t SkyboxData { get; }

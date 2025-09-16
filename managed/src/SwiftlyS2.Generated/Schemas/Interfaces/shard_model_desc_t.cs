@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface shard_model_desc_t : ISchemaClass {
+public partial interface shard_model_desc_t : ISchemaClass, IConvertibleNativeHandle<shard_model_desc_t> {
+
+  static shard_model_desc_t IConvertibleNativeHandle<shard_model_desc_t>.From(nint handle) => new shard_model_desc_tImpl(handle);
 
   
   public ref int ModelID { get; }

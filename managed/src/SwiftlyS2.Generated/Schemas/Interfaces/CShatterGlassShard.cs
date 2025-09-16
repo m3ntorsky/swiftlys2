@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CShatterGlassShard : ISchemaClass {
+public partial interface CShatterGlassShard : ISchemaClass, IConvertibleNativeHandle<CShatterGlassShard> {
+
+  static CShatterGlassShard IConvertibleNativeHandle<CShatterGlassShard>.From(nint handle) => new CShatterGlassShardImpl(handle);
 
   
   public ref uint ShardHandle { get; }

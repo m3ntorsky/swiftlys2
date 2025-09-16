@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmIKEffector : ISchemaClass {
+public partial interface CNmIKEffector : ISchemaClass, IConvertibleNativeHandle<CNmIKEffector> {
+
+  static CNmIKEffector IConvertibleNativeHandle<CNmIKEffector>.From(nint handle) => new CNmIKEffectorImpl(handle);
 
   
   public ref int BodyIndex { get; }

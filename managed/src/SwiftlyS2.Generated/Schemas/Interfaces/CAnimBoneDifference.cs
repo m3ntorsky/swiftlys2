@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimBoneDifference : ISchemaClass {
+public partial interface CAnimBoneDifference : ISchemaClass, IConvertibleNativeHandle<CAnimBoneDifference> {
+
+  static CAnimBoneDifference IConvertibleNativeHandle<CAnimBoneDifference>.From(nint handle) => new CAnimBoneDifferenceImpl(handle);
 
   
   public ref CBufferString Name { get; }

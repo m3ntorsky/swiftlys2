@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFilterEnemy : CBaseFilter {
+public partial interface CFilterEnemy : CBaseFilter, IConvertibleNativeHandle<CFilterEnemy> {
+
+  static CFilterEnemy IConvertibleNativeHandle<CFilterEnemy>.From(nint handle) => new CFilterEnemyImpl(handle);
 
   
   public ref CUtlSymbolLarge EnemyName { get; }

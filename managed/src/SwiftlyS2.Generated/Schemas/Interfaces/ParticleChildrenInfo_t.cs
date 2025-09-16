@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ParticleChildrenInfo_t : ISchemaClass {
+public partial interface ParticleChildrenInfo_t : ISchemaClass, IConvertibleNativeHandle<ParticleChildrenInfo_t> {
+
+  static ParticleChildrenInfo_t IConvertibleNativeHandle<ParticleChildrenInfo_t>.From(nint handle) => new ParticleChildrenInfo_tImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ChildRef { get; }

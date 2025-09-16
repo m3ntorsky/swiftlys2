@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBonePositionMetricEvaluator : CMotionMetricEvaluator {
+public partial interface CBonePositionMetricEvaluator : CMotionMetricEvaluator, IConvertibleNativeHandle<CBonePositionMetricEvaluator> {
+
+  static CBonePositionMetricEvaluator IConvertibleNativeHandle<CBonePositionMetricEvaluator>.From(nint handle) => new CBonePositionMetricEvaluatorImpl(handle);
 
   
   public ref int BoneIndex { get; }

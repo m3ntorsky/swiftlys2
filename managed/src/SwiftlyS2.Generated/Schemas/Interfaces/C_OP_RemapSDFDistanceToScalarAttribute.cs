@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RemapSDFDistanceToScalarAttribute : CParticleFunctionOperator {
+public partial interface C_OP_RemapSDFDistanceToScalarAttribute : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_RemapSDFDistanceToScalarAttribute> {
+
+  static C_OP_RemapSDFDistanceToScalarAttribute IConvertibleNativeHandle<C_OP_RemapSDFDistanceToScalarAttribute>.From(nint handle) => new C_OP_RemapSDFDistanceToScalarAttributeImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

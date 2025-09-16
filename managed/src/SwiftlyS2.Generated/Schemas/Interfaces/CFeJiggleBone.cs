@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFeJiggleBone : ISchemaClass {
+public partial interface CFeJiggleBone : ISchemaClass, IConvertibleNativeHandle<CFeJiggleBone> {
+
+  static CFeJiggleBone IConvertibleNativeHandle<CFeJiggleBone>.From(nint handle) => new CFeJiggleBoneImpl(handle);
 
   
   public ref uint Flags { get; }

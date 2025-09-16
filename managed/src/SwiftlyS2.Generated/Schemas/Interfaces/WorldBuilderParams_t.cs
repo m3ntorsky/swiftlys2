@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface WorldBuilderParams_t : ISchemaClass {
+public partial interface WorldBuilderParams_t : ISchemaClass, IConvertibleNativeHandle<WorldBuilderParams_t> {
+
+  static WorldBuilderParams_t IConvertibleNativeHandle<WorldBuilderParams_t>.From(nint handle) => new WorldBuilderParams_tImpl(handle);
 
   
   public ref float MinDrawVolumeSize { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_PerParticleForce : CParticleFunctionForce {
+public partial interface C_OP_PerParticleForce : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_PerParticleForce> {
+
+  static C_OP_PerParticleForce IConvertibleNativeHandle<C_OP_PerParticleForce>.From(nint handle) => new C_OP_PerParticleForceImpl(handle);
 
   
   public CPerParticleFloatInput ForceScale { get; }

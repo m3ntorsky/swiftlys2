@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CWayPointHelperUpdateNode : CUnaryUpdateNode {
+public partial interface CWayPointHelperUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CWayPointHelperUpdateNode> {
+
+  static CWayPointHelperUpdateNode IConvertibleNativeHandle<CWayPointHelperUpdateNode>.From(nint handle) => new CWayPointHelperUpdateNodeImpl(handle);
 
   
   public ref float StartCycle { get; }

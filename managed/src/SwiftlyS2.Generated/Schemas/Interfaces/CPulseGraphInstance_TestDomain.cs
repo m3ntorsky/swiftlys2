@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseGraphInstance_TestDomain : CBasePulseGraphInstance {
+public partial interface CPulseGraphInstance_TestDomain : CBasePulseGraphInstance, IConvertibleNativeHandle<CPulseGraphInstance_TestDomain> {
+
+  static CPulseGraphInstance_TestDomain IConvertibleNativeHandle<CPulseGraphInstance_TestDomain>.From(nint handle) => new CPulseGraphInstance_TestDomainImpl(handle);
 
   
   public ref bool IsRunningUnitTests { get; }

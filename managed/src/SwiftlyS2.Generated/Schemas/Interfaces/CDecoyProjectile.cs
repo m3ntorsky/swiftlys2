@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDecoyProjectile : CBaseCSGrenadeProjectile {
+public partial interface CDecoyProjectile : CBaseCSGrenadeProjectile, IConvertibleNativeHandle<CDecoyProjectile> {
+
+  static CDecoyProjectile IConvertibleNativeHandle<CDecoyProjectile>.From(nint handle) => new CDecoyProjectileImpl(handle);
 
   
   public ref int DecoyShotTick { get; }

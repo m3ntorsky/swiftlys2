@@ -20,7 +20,7 @@ public struct CHandle<T> where T : class, CEntityInstance {
           return null;
         }
         fixed(void* ptr = &this) {
-          return NativeHandleConversion.As<T>((nint)NativeEntity.HandleGet(ptr));
+          return (T?)T.From((nint)NativeEntity.HandleGet(ptr));
         }
       }
     }

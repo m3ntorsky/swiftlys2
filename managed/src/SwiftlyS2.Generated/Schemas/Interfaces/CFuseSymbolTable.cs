@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuseSymbolTable : ISchemaClass {
+public partial interface CFuseSymbolTable : ISchemaClass, IConvertibleNativeHandle<CFuseSymbolTable> {
+
+  static CFuseSymbolTable IConvertibleNativeHandle<CFuseSymbolTable>.From(nint handle) => new CFuseSymbolTableImpl(handle);
 
   
   // CUtlVector< ConstantInfo_t >

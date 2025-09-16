@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBlockSelectionMetricEvaluator : CMotionMetricEvaluator {
+public partial interface CBlockSelectionMetricEvaluator : CMotionMetricEvaluator, IConvertibleNativeHandle<CBlockSelectionMetricEvaluator> {
+
+  static CBlockSelectionMetricEvaluator IConvertibleNativeHandle<CBlockSelectionMetricEvaluator>.From(nint handle) => new CBlockSelectionMetricEvaluatorImpl(handle);
 
 
 

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ConstantInfo_t : ISchemaClass {
+public partial interface ConstantInfo_t : ISchemaClass, IConvertibleNativeHandle<ConstantInfo_t> {
+
+  static ConstantInfo_t IConvertibleNativeHandle<ConstantInfo_t>.From(nint handle) => new ConstantInfo_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

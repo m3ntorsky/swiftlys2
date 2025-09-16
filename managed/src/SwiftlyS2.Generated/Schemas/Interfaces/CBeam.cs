@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBeam : CBaseModelEntity {
+public partial interface CBeam : CBaseModelEntity, IConvertibleNativeHandle<CBeam> {
+
+  static CBeam IConvertibleNativeHandle<CBeam>.From(nint handle) => new CBeamImpl(handle);
 
   
   public ref float FrameRate { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSmoothFunc : ISchemaClass {
+public partial interface CSmoothFunc : ISchemaClass, IConvertibleNativeHandle<CSmoothFunc> {
+
+  static CSmoothFunc IConvertibleNativeHandle<CSmoothFunc>.From(nint handle) => new CSmoothFuncImpl(handle);
 
   
   public ref float SmoothAmplitude { get; }

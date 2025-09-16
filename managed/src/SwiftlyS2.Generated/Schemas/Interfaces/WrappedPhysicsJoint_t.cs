@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface WrappedPhysicsJoint_t : ISchemaClass {
+public partial interface WrappedPhysicsJoint_t : ISchemaClass, IConvertibleNativeHandle<WrappedPhysicsJoint_t> {
+
+  static WrappedPhysicsJoint_t IConvertibleNativeHandle<WrappedPhysicsJoint_t>.From(nint handle) => new WrappedPhysicsJoint_tImpl(handle);
 
 
 

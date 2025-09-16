@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTargetWarpUpdateNode : CUnaryUpdateNode {
+public partial interface CTargetWarpUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CTargetWarpUpdateNode> {
+
+  static CTargetWarpUpdateNode IConvertibleNativeHandle<CTargetWarpUpdateNode>.From(nint handle) => new CTargetWarpUpdateNodeImpl(handle);
 
   
   public ref TargetWarpAngleMode_t AngleMode { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PhysFeModelDesc_t : ISchemaClass {
+public partial interface PhysFeModelDesc_t : ISchemaClass, IConvertibleNativeHandle<PhysFeModelDesc_t> {
+
+  static PhysFeModelDesc_t IConvertibleNativeHandle<PhysFeModelDesc_t>.From(nint handle) => new PhysFeModelDesc_tImpl(handle);
 
   
   public ref CUtlVector<uint> CtrlHash { get; }

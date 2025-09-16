@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SosEditItemInfo_t : ISchemaClass {
+public partial interface SosEditItemInfo_t : ISchemaClass, IConvertibleNativeHandle<SosEditItemInfo_t> {
+
+  static SosEditItemInfo_t IConvertibleNativeHandle<SosEditItemInfo_t>.From(nint handle) => new SosEditItemInfo_tImpl(handle);
 
   
   public ref SosEditItemType_t ItemType { get; }

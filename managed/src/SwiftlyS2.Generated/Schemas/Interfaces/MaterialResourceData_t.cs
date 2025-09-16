@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MaterialResourceData_t : ISchemaClass {
+public partial interface MaterialResourceData_t : ISchemaClass, IConvertibleNativeHandle<MaterialResourceData_t> {
+
+  static MaterialResourceData_t IConvertibleNativeHandle<MaterialResourceData_t>.From(nint handle) => new MaterialResourceData_tImpl(handle);
 
   
   public ref CUtlString MaterialName { get; }

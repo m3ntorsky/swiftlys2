@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CModelConfig : ISchemaClass {
+public partial interface CModelConfig : ISchemaClass, IConvertibleNativeHandle<CModelConfig> {
+
+  static CModelConfig IConvertibleNativeHandle<CModelConfig>.From(nint handle) => new CModelConfigImpl(handle);
 
   
   public ref CUtlString ConfigName { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTaskStatusAnimTag : CAnimTagBase {
+public partial interface CTaskStatusAnimTag : CAnimTagBase, IConvertibleNativeHandle<CTaskStatusAnimTag> {
+
+  static CTaskStatusAnimTag IConvertibleNativeHandle<CTaskStatusAnimTag>.From(nint handle) => new CTaskStatusAnimTagImpl(handle);
 
 
 

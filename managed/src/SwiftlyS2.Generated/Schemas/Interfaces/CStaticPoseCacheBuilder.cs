@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CStaticPoseCacheBuilder : CStaticPoseCache {
+public partial interface CStaticPoseCacheBuilder : CStaticPoseCache, IConvertibleNativeHandle<CStaticPoseCacheBuilder> {
+
+  static CStaticPoseCacheBuilder IConvertibleNativeHandle<CStaticPoseCacheBuilder>.From(nint handle) => new CStaticPoseCacheBuilderImpl(handle);
 
 
 

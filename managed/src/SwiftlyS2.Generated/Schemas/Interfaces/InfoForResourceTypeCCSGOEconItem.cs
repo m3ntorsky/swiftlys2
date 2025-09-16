@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCCSGOEconItem : ISchemaClass {
+public partial interface InfoForResourceTypeCCSGOEconItem : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCCSGOEconItem> {
+
+  static InfoForResourceTypeCCSGOEconItem IConvertibleNativeHandle<InfoForResourceTypeCCSGOEconItem>.From(nint handle) => new InfoForResourceTypeCCSGOEconItemImpl(handle);
 
 
 

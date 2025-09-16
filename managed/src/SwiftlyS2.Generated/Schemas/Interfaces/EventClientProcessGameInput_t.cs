@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventClientProcessGameInput_t : ISchemaClass {
+public partial interface EventClientProcessGameInput_t : ISchemaClass, IConvertibleNativeHandle<EventClientProcessGameInput_t> {
+
+  static EventClientProcessGameInput_t IConvertibleNativeHandle<EventClientProcessGameInput_t>.From(nint handle) => new EventClientProcessGameInput_tImpl(handle);
 
   
   public EngineLoopState_t LoopState { get; }

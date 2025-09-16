@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateAlongPath : CParticleFunctionInitializer {
+public partial interface C_INIT_CreateAlongPath : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateAlongPath> {
+
+  static C_INIT_CreateAlongPath IConvertibleNativeHandle<C_INIT_CreateAlongPath>.From(nint handle) => new C_INIT_CreateAlongPathImpl(handle);
 
   
   public ref float MaxDistance { get; }

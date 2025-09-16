@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PostProcessingBloomParameters_t : ISchemaClass {
+public partial interface PostProcessingBloomParameters_t : ISchemaClass, IConvertibleNativeHandle<PostProcessingBloomParameters_t> {
+
+  static PostProcessingBloomParameters_t IConvertibleNativeHandle<PostProcessingBloomParameters_t>.From(nint handle) => new PostProcessingBloomParameters_tImpl(handle);
 
   
   public ref BloomBlendMode_t BlendMode { get; }

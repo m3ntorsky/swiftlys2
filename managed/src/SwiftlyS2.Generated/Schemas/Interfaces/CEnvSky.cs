@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvSky : CBaseModelEntity {
+public partial interface CEnvSky : CBaseModelEntity, IConvertibleNativeHandle<CEnvSky> {
+
+  static CEnvSky IConvertibleNativeHandle<CEnvSky>.From(nint handle) => new CEnvSkyImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> SkyMaterial { get; }

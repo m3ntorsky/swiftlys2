@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeSourceEdge_t : ISchemaClass {
+public partial interface FeSourceEdge_t : ISchemaClass, IConvertibleNativeHandle<FeSourceEdge_t> {
+
+  static FeSourceEdge_t IConvertibleNativeHandle<FeSourceEdge_t>.From(nint handle) => new FeSourceEdge_tImpl(handle);
 
   
   public ISchemaFixedArray<ushort> Node { get; }

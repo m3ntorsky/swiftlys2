@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_MovementPlaceOnGround : CParticleFunctionOperator {
+public partial interface C_OP_MovementPlaceOnGround : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_MovementPlaceOnGround> {
+
+  static C_OP_MovementPlaceOnGround IConvertibleNativeHandle<C_OP_MovementPlaceOnGround>.From(nint handle) => new C_OP_MovementPlaceOnGroundImpl(handle);
 
   
   public CPerParticleFloatInput Offset { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CConstraintAnchor : CBaseAnimGraph {
+public partial interface CConstraintAnchor : CBaseAnimGraph, IConvertibleNativeHandle<CConstraintAnchor> {
+
+  static CConstraintAnchor IConvertibleNativeHandle<CConstraintAnchor>.From(nint handle) => new CConstraintAnchorImpl(handle);
 
   
   public ref float MassScale { get; }

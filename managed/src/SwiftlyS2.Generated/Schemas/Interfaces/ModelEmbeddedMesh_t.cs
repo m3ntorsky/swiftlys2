@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ModelEmbeddedMesh_t : ISchemaClass {
+public partial interface ModelEmbeddedMesh_t : ISchemaClass, IConvertibleNativeHandle<ModelEmbeddedMesh_t> {
+
+  static ModelEmbeddedMesh_t IConvertibleNativeHandle<ModelEmbeddedMesh_t>.From(nint handle) => new ModelEmbeddedMesh_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

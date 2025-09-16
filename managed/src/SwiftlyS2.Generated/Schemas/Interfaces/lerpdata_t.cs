@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface lerpdata_t : ISchemaClass {
+public partial interface lerpdata_t : ISchemaClass, IConvertibleNativeHandle<lerpdata_t> {
+
+  static lerpdata_t IConvertibleNativeHandle<lerpdata_t>.From(nint handle) => new lerpdata_tImpl(handle);
 
   
   public ref CHandle<CBaseEntity> Ent { get; }

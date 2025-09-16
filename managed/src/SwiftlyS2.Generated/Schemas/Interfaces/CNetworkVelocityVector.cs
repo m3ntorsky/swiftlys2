@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNetworkVelocityVector : ISchemaClass {
+public partial interface CNetworkVelocityVector : ISchemaClass, IConvertibleNativeHandle<CNetworkVelocityVector> {
+
+  static CNetworkVelocityVector IConvertibleNativeHandle<CNetworkVelocityVector>.From(nint handle) => new CNetworkVelocityVectorImpl(handle);
 
   
   public ref CNetworkedQuantizedFloat X { get; }

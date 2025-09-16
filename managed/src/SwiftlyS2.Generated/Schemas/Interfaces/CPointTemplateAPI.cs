@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointTemplateAPI : ISchemaClass {
+public partial interface CPointTemplateAPI : ISchemaClass, IConvertibleNativeHandle<CPointTemplateAPI> {
+
+  static CPointTemplateAPI IConvertibleNativeHandle<CPointTemplateAPI>.From(nint handle) => new CPointTemplateAPIImpl(handle);
 
 
 

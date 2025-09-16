@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSimTimer : CSimpleSimTimer {
+public partial interface CSimTimer : CSimpleSimTimer, IConvertibleNativeHandle<CSimTimer> {
+
+  static CSimTimer IConvertibleNativeHandle<CSimTimer>.From(nint handle) => new CSimTimerImpl(handle);
 
   
   public ref float Interval { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCopyRecipientFilter : ISchemaClass {
+public partial interface CCopyRecipientFilter : ISchemaClass, IConvertibleNativeHandle<CCopyRecipientFilter> {
+
+  static CCopyRecipientFilter IConvertibleNativeHandle<CCopyRecipientFilter>.From(nint handle) => new CCopyRecipientFilterImpl(handle);
 
   
   public ref int Flags { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VoxelVisBlockOffset_t : ISchemaClass {
+public partial interface VoxelVisBlockOffset_t : ISchemaClass, IConvertibleNativeHandle<VoxelVisBlockOffset_t> {
+
+  static VoxelVisBlockOffset_t IConvertibleNativeHandle<VoxelVisBlockOffset_t>.From(nint handle) => new VoxelVisBlockOffset_tImpl(handle);
 
   
   public ref uint Offset { get; }

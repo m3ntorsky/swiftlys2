@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EngineLoopState_t : ISchemaClass {
+public partial interface EngineLoopState_t : ISchemaClass, IConvertibleNativeHandle<EngineLoopState_t> {
+
+  static EngineLoopState_t IConvertibleNativeHandle<EngineLoopState_t>.From(nint handle) => new EngineLoopState_tImpl(handle);
 
   
   public ref int PlatWindowWidth { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ActiveModelConfig_t : ISchemaClass {
+public partial interface ActiveModelConfig_t : ISchemaClass, IConvertibleNativeHandle<ActiveModelConfig_t> {
+
+  static ActiveModelConfig_t IConvertibleNativeHandle<ActiveModelConfig_t>.From(nint handle) => new ActiveModelConfig_tImpl(handle);
 
   
   public ModelConfigHandle_t Handle { get; }

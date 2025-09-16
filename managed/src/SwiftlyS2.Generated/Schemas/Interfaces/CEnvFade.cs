@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvFade : CLogicalEntity {
+public partial interface CEnvFade : CLogicalEntity, IConvertibleNativeHandle<CEnvFade> {
+
+  static CEnvFade IConvertibleNativeHandle<CEnvFade>.From(nint handle) => new CEnvFadeImpl(handle);
 
   
   public ref Color FadeColor { get; }

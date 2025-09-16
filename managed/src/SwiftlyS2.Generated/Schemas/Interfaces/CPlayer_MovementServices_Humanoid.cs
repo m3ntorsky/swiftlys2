@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlayer_MovementServices_Humanoid : CPlayer_MovementServices {
+public partial interface CPlayer_MovementServices_Humanoid : CPlayer_MovementServices, IConvertibleNativeHandle<CPlayer_MovementServices_Humanoid> {
+
+  static CPlayer_MovementServices_Humanoid IConvertibleNativeHandle<CPlayer_MovementServices_Humanoid>.From(nint handle) => new CPlayer_MovementServices_HumanoidImpl(handle);
 
   
   public ref float StepSoundTime { get; }

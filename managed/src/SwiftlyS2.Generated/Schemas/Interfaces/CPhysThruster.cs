@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysThruster : CPhysForce {
+public partial interface CPhysThruster : CPhysForce, IConvertibleNativeHandle<CPhysThruster> {
+
+  static CPhysThruster IConvertibleNativeHandle<CPhysThruster>.From(nint handle) => new CPhysThrusterImpl(handle);
 
   
   public ref Vector LocalOrigin { get; }

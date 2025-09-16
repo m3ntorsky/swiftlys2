@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSymbolAnimParameter : CConcreteAnimParameter {
+public partial interface CSymbolAnimParameter : CConcreteAnimParameter, IConvertibleNativeHandle<CSymbolAnimParameter> {
+
+  static CSymbolAnimParameter IConvertibleNativeHandle<CSymbolAnimParameter>.From(nint handle) => new CSymbolAnimParameterImpl(handle);
 
   
   public ref CGlobalSymbol DefaultValue { get; }

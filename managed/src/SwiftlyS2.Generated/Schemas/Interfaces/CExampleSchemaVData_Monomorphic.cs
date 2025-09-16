@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CExampleSchemaVData_Monomorphic : ISchemaClass {
+public partial interface CExampleSchemaVData_Monomorphic : ISchemaClass, IConvertibleNativeHandle<CExampleSchemaVData_Monomorphic> {
+
+  static CExampleSchemaVData_Monomorphic IConvertibleNativeHandle<CExampleSchemaVData_Monomorphic>.From(nint handle) => new CExampleSchemaVData_MonomorphicImpl(handle);
 
   
   public ref int Example1 { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRandomNumberGeneratorParameters : ISchemaClass {
+public partial interface CRandomNumberGeneratorParameters : ISchemaClass, IConvertibleNativeHandle<CRandomNumberGeneratorParameters> {
+
+  static CRandomNumberGeneratorParameters IConvertibleNativeHandle<CRandomNumberGeneratorParameters>.From(nint handle) => new CRandomNumberGeneratorParametersImpl(handle);
 
   
   public ref bool DistributeEvenly { get; }

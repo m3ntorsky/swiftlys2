@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetControlPointToWaterSurface : CParticleFunctionPreEmission {
+public partial interface C_OP_SetControlPointToWaterSurface : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetControlPointToWaterSurface> {
+
+  static C_OP_SetControlPointToWaterSurface IConvertibleNativeHandle<C_OP_SetControlPointToWaterSurface>.From(nint handle) => new C_OP_SetControlPointToWaterSurfaceImpl(handle);
 
   
   public ref int SourceCP { get; }

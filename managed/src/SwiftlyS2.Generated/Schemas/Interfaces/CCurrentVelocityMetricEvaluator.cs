@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCurrentVelocityMetricEvaluator : CMotionMetricEvaluator {
+public partial interface CCurrentVelocityMetricEvaluator : CMotionMetricEvaluator, IConvertibleNativeHandle<CCurrentVelocityMetricEvaluator> {
+
+  static CCurrentVelocityMetricEvaluator IConvertibleNativeHandle<CCurrentVelocityMetricEvaluator>.From(nint handle) => new CCurrentVelocityMetricEvaluatorImpl(handle);
 
 
 

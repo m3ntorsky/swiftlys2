@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFilterAttributeInt : CBaseFilter {
+public partial interface CFilterAttributeInt : CBaseFilter, IConvertibleNativeHandle<CFilterAttributeInt> {
+
+  static CFilterAttributeInt IConvertibleNativeHandle<CFilterAttributeInt>.From(nint handle) => new CFilterAttributeIntImpl(handle);
 
   
   public ref CUtlSymbolLarge AttributeName { get; }

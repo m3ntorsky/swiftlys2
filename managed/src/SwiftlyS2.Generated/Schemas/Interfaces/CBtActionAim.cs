@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBtActionAim : CBtNode {
+public partial interface CBtActionAim : CBtNode, IConvertibleNativeHandle<CBtActionAim> {
+
+  static CBtActionAim IConvertibleNativeHandle<CBtActionAim>.From(nint handle) => new CBtActionAimImpl(handle);
 
   
   public ref CUtlString SensorInputKey { get; }

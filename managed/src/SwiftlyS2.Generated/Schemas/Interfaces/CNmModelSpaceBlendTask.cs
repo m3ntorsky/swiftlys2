@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmModelSpaceBlendTask : CNmBlendTaskBase {
+public partial interface CNmModelSpaceBlendTask : CNmBlendTaskBase, IConvertibleNativeHandle<CNmModelSpaceBlendTask> {
+
+  static CNmModelSpaceBlendTask IConvertibleNativeHandle<CNmModelSpaceBlendTask>.From(nint handle) => new CNmModelSpaceBlendTaskImpl(handle);
 
 
 

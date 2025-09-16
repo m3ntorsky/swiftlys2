@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_DriveCPFromGlobalSoundFloat : CParticleFunctionPreEmission {
+public partial interface C_OP_DriveCPFromGlobalSoundFloat : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_DriveCPFromGlobalSoundFloat> {
+
+  static C_OP_DriveCPFromGlobalSoundFloat IConvertibleNativeHandle<C_OP_DriveCPFromGlobalSoundFloat>.From(nint handle) => new C_OP_DriveCPFromGlobalSoundFloatImpl(handle);
 
   
   public ref int OutputControlPoint { get; }

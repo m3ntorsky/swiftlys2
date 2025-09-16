@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CModelConfigElement_SetRenderColor : CModelConfigElement {
+public partial interface CModelConfigElement_SetRenderColor : CModelConfigElement, IConvertibleNativeHandle<CModelConfigElement_SetRenderColor> {
+
+  static CModelConfigElement_SetRenderColor IConvertibleNativeHandle<CModelConfigElement_SetRenderColor>.From(nint handle) => new CModelConfigElement_SetRenderColorImpl(handle);
 
   
   public ref Color Color { get; }

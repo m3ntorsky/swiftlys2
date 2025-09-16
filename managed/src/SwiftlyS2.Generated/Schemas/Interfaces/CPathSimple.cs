@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathSimple : CBaseEntity {
+public partial interface CPathSimple : CBaseEntity, IConvertibleNativeHandle<CPathSimple> {
+
+  static CPathSimple IConvertibleNativeHandle<CPathSimple>.From(nint handle) => new CPathSimpleImpl(handle);
 
   
   public CPathQueryComponent CPathQueryComponent { get; }

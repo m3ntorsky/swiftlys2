@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncTrackChange : CFuncPlatRot {
+public partial interface CFuncTrackChange : CFuncPlatRot, IConvertibleNativeHandle<CFuncTrackChange> {
+
+  static CFuncTrackChange IConvertibleNativeHandle<CFuncTrackChange>.From(nint handle) => new CFuncTrackChangeImpl(handle);
 
   
   public CPathTrack? TrackTop { get; }

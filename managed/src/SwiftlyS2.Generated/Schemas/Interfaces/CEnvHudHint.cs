@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvHudHint : CPointEntity {
+public partial interface CEnvHudHint : CPointEntity, IConvertibleNativeHandle<CEnvHudHint> {
+
+  static CEnvHudHint IConvertibleNativeHandle<CEnvHudHint>.From(nint handle) => new CEnvHudHintImpl(handle);
 
   
   public ref CUtlSymbolLarge Message { get; }

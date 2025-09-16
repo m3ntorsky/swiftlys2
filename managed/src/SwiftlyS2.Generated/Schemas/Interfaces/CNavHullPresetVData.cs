@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavHullPresetVData : ISchemaClass {
+public partial interface CNavHullPresetVData : ISchemaClass, IConvertibleNativeHandle<CNavHullPresetVData> {
+
+  static CNavHullPresetVData IConvertibleNativeHandle<CNavHullPresetVData>.From(nint handle) => new CNavHullPresetVDataImpl(handle);
 
   
   public ref CUtlVector<CUtlString> NavHulls { get; }

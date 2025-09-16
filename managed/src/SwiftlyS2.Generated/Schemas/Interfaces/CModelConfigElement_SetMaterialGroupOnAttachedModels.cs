@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CModelConfigElement_SetMaterialGroupOnAttachedModels : CModelConfigElement {
+public partial interface CModelConfigElement_SetMaterialGroupOnAttachedModels : CModelConfigElement, IConvertibleNativeHandle<CModelConfigElement_SetMaterialGroupOnAttachedModels> {
+
+  static CModelConfigElement_SetMaterialGroupOnAttachedModels IConvertibleNativeHandle<CModelConfigElement_SetMaterialGroupOnAttachedModels>.From(nint handle) => new CModelConfigElement_SetMaterialGroupOnAttachedModelsImpl(handle);
 
   
   public ref CUtlString MaterialGroupName { get; }

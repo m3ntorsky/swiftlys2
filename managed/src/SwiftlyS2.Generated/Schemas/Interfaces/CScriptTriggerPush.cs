@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CScriptTriggerPush : CTriggerPush {
+public partial interface CScriptTriggerPush : CTriggerPush, IConvertibleNativeHandle<CScriptTriggerPush> {
+
+  static CScriptTriggerPush IConvertibleNativeHandle<CScriptTriggerPush>.From(nint handle) => new CScriptTriggerPushImpl(handle);
 
   
   public ref Vector Extent { get; }

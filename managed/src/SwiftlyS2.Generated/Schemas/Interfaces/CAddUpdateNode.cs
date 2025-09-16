@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAddUpdateNode : CBinaryUpdateNode {
+public partial interface CAddUpdateNode : CBinaryUpdateNode, IConvertibleNativeHandle<CAddUpdateNode> {
+
+  static CAddUpdateNode IConvertibleNativeHandle<CAddUpdateNode>.From(nint handle) => new CAddUpdateNodeImpl(handle);
 
   
   public ref BinaryNodeChildOption FootMotionTiming { get; }

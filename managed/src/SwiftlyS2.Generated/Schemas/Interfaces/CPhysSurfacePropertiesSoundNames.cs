@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysSurfacePropertiesSoundNames : ISchemaClass {
+public partial interface CPhysSurfacePropertiesSoundNames : ISchemaClass, IConvertibleNativeHandle<CPhysSurfacePropertiesSoundNames> {
+
+  static CPhysSurfacePropertiesSoundNames IConvertibleNativeHandle<CPhysSurfacePropertiesSoundNames>.From(nint handle) => new CPhysSurfacePropertiesSoundNamesImpl(handle);
 
   
   public ref CUtlString ImpactSoft { get; }

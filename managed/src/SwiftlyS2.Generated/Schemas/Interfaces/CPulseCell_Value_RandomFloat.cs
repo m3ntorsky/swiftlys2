@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Value_RandomFloat : CPulseCell_BaseValue {
+public partial interface CPulseCell_Value_RandomFloat : CPulseCell_BaseValue, IConvertibleNativeHandle<CPulseCell_Value_RandomFloat> {
+
+  static CPulseCell_Value_RandomFloat IConvertibleNativeHandle<CPulseCell_Value_RandomFloat>.From(nint handle) => new CPulseCell_Value_RandomFloatImpl(handle);
 
 
 

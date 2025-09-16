@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FootFixedData_t : ISchemaClass {
+public partial interface FootFixedData_t : ISchemaClass, IConvertibleNativeHandle<FootFixedData_t> {
+
+  static FootFixedData_t IConvertibleNativeHandle<FootFixedData_t>.From(nint handle) => new FootFixedData_tImpl(handle);
 
   
   public ref Vector ToeOffset { get; }

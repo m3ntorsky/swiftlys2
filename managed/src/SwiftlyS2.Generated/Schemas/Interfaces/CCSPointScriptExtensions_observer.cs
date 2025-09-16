@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPointScriptExtensions_observer : ISchemaClass {
+public partial interface CCSPointScriptExtensions_observer : ISchemaClass, IConvertibleNativeHandle<CCSPointScriptExtensions_observer> {
+
+  static CCSPointScriptExtensions_observer IConvertibleNativeHandle<CCSPointScriptExtensions_observer>.From(nint handle) => new CCSPointScriptExtensions_observerImpl(handle);
 
 
 

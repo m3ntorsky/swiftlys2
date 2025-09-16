@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayer_PingServices : CPlayerPawnComponent {
+public partial interface CCSPlayer_PingServices : CPlayerPawnComponent, IConvertibleNativeHandle<CCSPlayer_PingServices> {
+
+  static CCSPlayer_PingServices IConvertibleNativeHandle<CCSPlayer_PingServices>.From(nint handle) => new CCSPlayer_PingServicesImpl(handle);
 
   
   // GameTime_t

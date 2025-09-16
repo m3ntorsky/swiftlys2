@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MaterialParamTexture_t : MaterialParam_t {
+public partial interface MaterialParamTexture_t : MaterialParam_t, IConvertibleNativeHandle<MaterialParamTexture_t> {
+
+  static MaterialParamTexture_t IConvertibleNativeHandle<MaterialParamTexture_t>.From(nint handle) => new MaterialParamTexture_tImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> Value { get; }

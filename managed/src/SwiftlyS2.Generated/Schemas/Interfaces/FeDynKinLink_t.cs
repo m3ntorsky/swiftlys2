@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeDynKinLink_t : ISchemaClass {
+public partial interface FeDynKinLink_t : ISchemaClass, IConvertibleNativeHandle<FeDynKinLink_t> {
+
+  static FeDynKinLink_t IConvertibleNativeHandle<FeDynKinLink_t>.From(nint handle) => new FeDynKinLink_tImpl(handle);
 
   
   public ref ushort Parent { get; }

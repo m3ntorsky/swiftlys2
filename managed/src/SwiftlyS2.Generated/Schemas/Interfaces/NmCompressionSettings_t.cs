@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface NmCompressionSettings_t : ISchemaClass {
+public partial interface NmCompressionSettings_t : ISchemaClass, IConvertibleNativeHandle<NmCompressionSettings_t> {
+
+  static NmCompressionSettings_t IConvertibleNativeHandle<NmCompressionSettings_t>.From(nint handle) => new NmCompressionSettings_tImpl(handle);
 
   
   public NmCompressionSettings_t__QuantizationRange_t TranslationRangeX { get; }

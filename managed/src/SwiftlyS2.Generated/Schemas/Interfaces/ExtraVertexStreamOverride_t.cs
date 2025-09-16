@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ExtraVertexStreamOverride_t : BaseSceneObjectOverride_t {
+public partial interface ExtraVertexStreamOverride_t : BaseSceneObjectOverride_t, IConvertibleNativeHandle<ExtraVertexStreamOverride_t> {
+
+  static ExtraVertexStreamOverride_t IConvertibleNativeHandle<ExtraVertexStreamOverride_t>.From(nint handle) => new ExtraVertexStreamOverride_tImpl(handle);
 
   
   public ref uint SubSceneObject { get; }

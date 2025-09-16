@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_PointVectorAtNextParticle : CParticleFunctionOperator {
+public partial interface C_OP_PointVectorAtNextParticle : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_PointVectorAtNextParticle> {
+
+  static C_OP_PointVectorAtNextParticle IConvertibleNativeHandle<C_OP_PointVectorAtNextParticle>.From(nint handle) => new C_OP_PointVectorAtNextParticleImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

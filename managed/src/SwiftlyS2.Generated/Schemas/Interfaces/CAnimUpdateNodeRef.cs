@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimUpdateNodeRef : ISchemaClass {
+public partial interface CAnimUpdateNodeRef : ISchemaClass, IConvertibleNativeHandle<CAnimUpdateNodeRef> {
+
+  static CAnimUpdateNodeRef IConvertibleNativeHandle<CAnimUpdateNodeRef>.From(nint handle) => new CAnimUpdateNodeRefImpl(handle);
 
   
   public ref int NodeIndex { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerFan : CBaseTrigger {
+public partial interface CTriggerFan : CBaseTrigger, IConvertibleNativeHandle<CTriggerFan> {
+
+  static CTriggerFan IConvertibleNativeHandle<CTriggerFan>.From(nint handle) => new CTriggerFanImpl(handle);
 
   
   public ref Vector FanOrigin { get; }

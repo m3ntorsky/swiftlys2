@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMessageEntity : CPointEntity {
+public partial interface CMessageEntity : CPointEntity, IConvertibleNativeHandle<CMessageEntity> {
+
+  static CMessageEntity IConvertibleNativeHandle<CMessageEntity>.From(nint handle) => new CMessageEntityImpl(handle);
 
   
   public ref int Radius { get; }

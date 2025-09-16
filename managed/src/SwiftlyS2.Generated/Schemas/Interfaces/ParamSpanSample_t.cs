@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ParamSpanSample_t : ISchemaClass {
+public partial interface ParamSpanSample_t : ISchemaClass, IConvertibleNativeHandle<ParamSpanSample_t> {
+
+  static ParamSpanSample_t IConvertibleNativeHandle<ParamSpanSample_t>.From(nint handle) => new ParamSpanSample_tImpl(handle);
 
   
   // CAnimVariant

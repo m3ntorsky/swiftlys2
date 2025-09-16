@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmGraphDefinition : ISchemaClass {
+public partial interface CNmGraphDefinition : ISchemaClass, IConvertibleNativeHandle<CNmGraphDefinition> {
+
+  static CNmGraphDefinition IConvertibleNativeHandle<CNmGraphDefinition>.From(nint handle) => new CNmGraphDefinitionImpl(handle);
 
   
   public ref CGlobalSymbol VariationID { get; }

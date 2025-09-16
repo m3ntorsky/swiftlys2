@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavVolumeMarkupVolume : CNavVolume {
+public partial interface CNavVolumeMarkupVolume : CNavVolume, IConvertibleNativeHandle<CNavVolumeMarkupVolume> {
+
+  static CNavVolumeMarkupVolume IConvertibleNativeHandle<CNavVolumeMarkupVolume>.From(nint handle) => new CNavVolumeMarkupVolumeImpl(handle);
 
 
 

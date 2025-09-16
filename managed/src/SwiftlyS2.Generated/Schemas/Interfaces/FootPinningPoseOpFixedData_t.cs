@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FootPinningPoseOpFixedData_t : ISchemaClass {
+public partial interface FootPinningPoseOpFixedData_t : ISchemaClass, IConvertibleNativeHandle<FootPinningPoseOpFixedData_t> {
+
+  static FootPinningPoseOpFixedData_t IConvertibleNativeHandle<FootPinningPoseOpFixedData_t>.From(nint handle) => new FootPinningPoseOpFixedData_tImpl(handle);
 
   
   // CUtlVector< FootFixedData_t >

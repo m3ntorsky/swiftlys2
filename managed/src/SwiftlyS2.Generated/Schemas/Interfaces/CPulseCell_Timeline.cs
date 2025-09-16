@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Timeline : CPulseCell_BaseYieldingInflow {
+public partial interface CPulseCell_Timeline : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_Timeline> {
+
+  static CPulseCell_Timeline IConvertibleNativeHandle<CPulseCell_Timeline>.From(nint handle) => new CPulseCell_TimelineImpl(handle);
 
   
   // CUtlVector< CPulseCell_Timeline::TimelineEvent_t >

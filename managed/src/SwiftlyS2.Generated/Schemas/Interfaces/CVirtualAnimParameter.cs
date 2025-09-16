@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVirtualAnimParameter : CAnimParameterBase {
+public partial interface CVirtualAnimParameter : CAnimParameterBase, IConvertibleNativeHandle<CVirtualAnimParameter> {
+
+  static CVirtualAnimParameter IConvertibleNativeHandle<CVirtualAnimParameter>.From(nint handle) => new CVirtualAnimParameterImpl(handle);
 
   
   public ref CUtlString ExpressionString { get; }

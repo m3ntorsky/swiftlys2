@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeHingeLimitBuild_t : ISchemaClass {
+public partial interface FeHingeLimitBuild_t : ISchemaClass, IConvertibleNativeHandle<FeHingeLimitBuild_t> {
+
+  static FeHingeLimitBuild_t IConvertibleNativeHandle<FeHingeLimitBuild_t>.From(nint handle) => new FeHingeLimitBuild_tImpl(handle);
 
   
   public ISchemaFixedArray<ushort> Node { get; }

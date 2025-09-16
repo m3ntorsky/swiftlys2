@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CScriptItem : CItem {
+public partial interface CScriptItem : CItem, IConvertibleNativeHandle<CScriptItem> {
+
+  static CScriptItem IConvertibleNativeHandle<CScriptItem>.From(nint handle) => new CScriptItemImpl(handle);
 
   
   public ref MoveType_t MoveTypeOverride { get; }

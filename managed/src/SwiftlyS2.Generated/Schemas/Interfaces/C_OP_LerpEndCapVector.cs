@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_LerpEndCapVector : CParticleFunctionOperator {
+public partial interface C_OP_LerpEndCapVector : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_LerpEndCapVector> {
+
+  static C_OP_LerpEndCapVector IConvertibleNativeHandle<C_OP_LerpEndCapVector>.From(nint handle) => new C_OP_LerpEndCapVectorImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

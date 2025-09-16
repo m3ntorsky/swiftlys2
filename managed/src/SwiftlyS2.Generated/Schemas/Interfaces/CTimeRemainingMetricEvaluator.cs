@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTimeRemainingMetricEvaluator : CMotionMetricEvaluator {
+public partial interface CTimeRemainingMetricEvaluator : CMotionMetricEvaluator, IConvertibleNativeHandle<CTimeRemainingMetricEvaluator> {
+
+  static CTimeRemainingMetricEvaluator IConvertibleNativeHandle<CTimeRemainingMetricEvaluator>.From(nint handle) => new CTimeRemainingMetricEvaluatorImpl(handle);
 
   
   public ref bool MatchByTimeRemaining { get; }

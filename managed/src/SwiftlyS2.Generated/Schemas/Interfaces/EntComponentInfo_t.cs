@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EntComponentInfo_t : ISchemaClass {
+public partial interface EntComponentInfo_t : ISchemaClass, IConvertibleNativeHandle<EntComponentInfo_t> {
+
+  static EntComponentInfo_t IConvertibleNativeHandle<EntComponentInfo_t>.From(nint handle) => new EntComponentInfo_tImpl(handle);
 
   
   public ref CString Name { get; }

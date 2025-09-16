@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlatTrigger : CBaseModelEntity {
+public partial interface CPlatTrigger : CBaseModelEntity, IConvertibleNativeHandle<CPlatTrigger> {
+
+  static CPlatTrigger IConvertibleNativeHandle<CPlatTrigger>.From(nint handle) => new CPlatTriggerImpl(handle);
 
   
   public ref CHandle<CFuncPlat> Platform { get; }

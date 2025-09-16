@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAudioMorphData : ISchemaClass {
+public partial interface CAudioMorphData : ISchemaClass, IConvertibleNativeHandle<CAudioMorphData> {
+
+  static CAudioMorphData IConvertibleNativeHandle<CAudioMorphData>.From(nint handle) => new CAudioMorphDataImpl(handle);
 
   
   public ref CUtlVector<float> Times { get; }

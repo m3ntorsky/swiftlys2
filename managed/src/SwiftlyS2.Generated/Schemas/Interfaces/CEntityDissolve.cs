@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEntityDissolve : CBaseModelEntity {
+public partial interface CEntityDissolve : CBaseModelEntity, IConvertibleNativeHandle<CEntityDissolve> {
+
+  static CEntityDissolve IConvertibleNativeHandle<CEntityDissolve>.From(nint handle) => new CEntityDissolveImpl(handle);
 
   
   public ref float FadeInStart { get; }

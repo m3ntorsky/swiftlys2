@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCollisionProperty : ISchemaClass {
+public partial interface CCollisionProperty : ISchemaClass, IConvertibleNativeHandle<CCollisionProperty> {
+
+  static CCollisionProperty IConvertibleNativeHandle<CCollisionProperty>.From(nint handle) => new CCollisionPropertyImpl(handle);
 
   
   public VPhysicsCollisionAttribute_t CollisionAttribute { get; }

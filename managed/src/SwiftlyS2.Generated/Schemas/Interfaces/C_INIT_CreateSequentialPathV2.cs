@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_CreateSequentialPathV2 : CParticleFunctionInitializer {
+public partial interface C_INIT_CreateSequentialPathV2 : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_CreateSequentialPathV2> {
+
+  static C_INIT_CreateSequentialPathV2 IConvertibleNativeHandle<C_INIT_CreateSequentialPathV2>.From(nint handle) => new C_INIT_CreateSequentialPathV2Impl(handle);
 
   
   public CPerParticleFloatInput MaxDistance { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNullEntity : CBaseEntity {
+public partial interface CNullEntity : CBaseEntity, IConvertibleNativeHandle<CNullEntity> {
+
+  static CNullEntity IConvertibleNativeHandle<CNullEntity>.From(nint handle) => new CNullEntityImpl(handle);
 
 
 

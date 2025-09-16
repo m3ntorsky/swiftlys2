@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_CurlNoiseForce : CParticleFunctionForce {
+public partial interface C_OP_CurlNoiseForce : CParticleFunctionForce, IConvertibleNativeHandle<C_OP_CurlNoiseForce> {
+
+  static C_OP_CurlNoiseForce IConvertibleNativeHandle<C_OP_CurlNoiseForce>.From(nint handle) => new C_OP_CurlNoiseForceImpl(handle);
 
   
   public ref ParticleDirectionNoiseType_t NoiseType { get; }

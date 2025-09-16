@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHintMessageQueue : ISchemaClass {
+public partial interface CHintMessageQueue : ISchemaClass, IConvertibleNativeHandle<CHintMessageQueue> {
+
+  static CHintMessageQueue IConvertibleNativeHandle<CHintMessageQueue>.From(nint handle) => new CHintMessageQueueImpl(handle);
 
   
   public ref float TmMessageEnd { get; }

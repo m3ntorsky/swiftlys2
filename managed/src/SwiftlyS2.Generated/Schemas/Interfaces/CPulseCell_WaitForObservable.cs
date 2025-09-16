@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_WaitForObservable : CPulseCell_BaseYieldingInflow {
+public partial interface CPulseCell_WaitForObservable : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_WaitForObservable> {
+
+  static CPulseCell_WaitForObservable IConvertibleNativeHandle<CPulseCell_WaitForObservable>.From(nint handle) => new CPulseCell_WaitForObservableImpl(handle);
 
   
   public PulseObservableBoolExpression_t Condition { get; }

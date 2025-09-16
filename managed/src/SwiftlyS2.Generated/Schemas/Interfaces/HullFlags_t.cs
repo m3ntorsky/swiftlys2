@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface HullFlags_t : ISchemaClass {
+public partial interface HullFlags_t : ISchemaClass, IConvertibleNativeHandle<HullFlags_t> {
+
+  static HullFlags_t IConvertibleNativeHandle<HullFlags_t>.From(nint handle) => new HullFlags_tImpl(handle);
 
   
   public ref bool Hull_Human { get; }

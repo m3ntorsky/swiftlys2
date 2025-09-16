@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoGameEventProxy : CPointEntity {
+public partial interface CInfoGameEventProxy : CPointEntity, IConvertibleNativeHandle<CInfoGameEventProxy> {
+
+  static CInfoGameEventProxy IConvertibleNativeHandle<CInfoGameEventProxy>.From(nint handle) => new CInfoGameEventProxyImpl(handle);
 
   
   public ref CUtlSymbolLarge EventName { get; }

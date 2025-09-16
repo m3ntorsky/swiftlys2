@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncLadderAlias_func_useableladder : CFuncLadder {
+public partial interface CFuncLadderAlias_func_useableladder : CFuncLadder, IConvertibleNativeHandle<CFuncLadderAlias_func_useableladder> {
+
+  static CFuncLadderAlias_func_useableladder IConvertibleNativeHandle<CFuncLadderAlias_func_useableladder>.From(nint handle) => new CFuncLadderAlias_func_useableladderImpl(handle);
 
 
 

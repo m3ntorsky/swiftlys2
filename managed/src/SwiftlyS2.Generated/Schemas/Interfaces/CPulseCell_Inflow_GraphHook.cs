@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Inflow_GraphHook : CPulseCell_Inflow_BaseEntrypoint {
+public partial interface CPulseCell_Inflow_GraphHook : CPulseCell_Inflow_BaseEntrypoint, IConvertibleNativeHandle<CPulseCell_Inflow_GraphHook> {
+
+  static CPulseCell_Inflow_GraphHook IConvertibleNativeHandle<CPulseCell_Inflow_GraphHook>.From(nint handle) => new CPulseCell_Inflow_GraphHookImpl(handle);
 
   
   // PulseSymbol_t

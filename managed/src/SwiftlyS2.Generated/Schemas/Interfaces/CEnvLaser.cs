@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvLaser : CBeam {
+public partial interface CEnvLaser : CBeam, IConvertibleNativeHandle<CEnvLaser> {
+
+  static CEnvLaser IConvertibleNativeHandle<CEnvLaser>.From(nint handle) => new CEnvLaserImpl(handle);
 
   
   public ref CUtlSymbolLarge LaserTarget { get; }

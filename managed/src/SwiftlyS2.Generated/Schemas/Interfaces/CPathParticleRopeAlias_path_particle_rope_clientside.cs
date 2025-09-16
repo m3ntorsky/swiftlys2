@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathParticleRopeAlias_path_particle_rope_clientside : CPathParticleRope {
+public partial interface CPathParticleRopeAlias_path_particle_rope_clientside : CPathParticleRope, IConvertibleNativeHandle<CPathParticleRopeAlias_path_particle_rope_clientside> {
+
+  static CPathParticleRopeAlias_path_particle_rope_clientside IConvertibleNativeHandle<CPathParticleRopeAlias_path_particle_rope_clientside>.From(nint handle) => new CPathParticleRopeAlias_path_particle_rope_clientsideImpl(handle);
 
 
 

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmControlParameterBoolNode__CDefinition : CNmBoolValueNode__CDefinition {
+public partial interface CNmControlParameterBoolNode__CDefinition : CNmBoolValueNode__CDefinition, IConvertibleNativeHandle<CNmControlParameterBoolNode__CDefinition> {
+
+  static CNmControlParameterBoolNode__CDefinition IConvertibleNativeHandle<CNmControlParameterBoolNode__CDefinition>.From(nint handle) => new CNmControlParameterBoolNode__CDefinitionImpl(handle);
 
 
 

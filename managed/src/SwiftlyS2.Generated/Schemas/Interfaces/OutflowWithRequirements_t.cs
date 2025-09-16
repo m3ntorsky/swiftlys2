@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface OutflowWithRequirements_t : ISchemaClass {
+public partial interface OutflowWithRequirements_t : ISchemaClass, IConvertibleNativeHandle<OutflowWithRequirements_t> {
+
+  static OutflowWithRequirements_t IConvertibleNativeHandle<OutflowWithRequirements_t>.From(nint handle) => new OutflowWithRequirements_tImpl(handle);
 
   
   public CPulse_OutflowConnection Connection { get; }

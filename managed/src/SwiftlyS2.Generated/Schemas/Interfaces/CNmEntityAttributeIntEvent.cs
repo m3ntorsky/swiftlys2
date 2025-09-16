@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmEntityAttributeIntEvent : CNmEntityAttributeEventBase {
+public partial interface CNmEntityAttributeIntEvent : CNmEntityAttributeEventBase, IConvertibleNativeHandle<CNmEntityAttributeIntEvent> {
+
+  static CNmEntityAttributeIntEvent IConvertibleNativeHandle<CNmEntityAttributeIntEvent>.From(nint handle) => new CNmEntityAttributeIntEventImpl(handle);
 
   
   public ref int IntValue { get; }

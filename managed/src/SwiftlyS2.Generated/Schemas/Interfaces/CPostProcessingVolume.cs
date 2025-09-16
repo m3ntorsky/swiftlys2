@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPostProcessingVolume : CBaseTrigger {
+public partial interface CPostProcessingVolume : CBaseTrigger, IConvertibleNativeHandle<CPostProcessingVolume> {
+
+  static CPostProcessingVolume IConvertibleNativeHandle<CPostProcessingVolume>.From(nint handle) => new CPostProcessingVolumeImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCPostProcessingResource> PostSettings { get; }

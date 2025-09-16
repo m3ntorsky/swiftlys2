@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlayerInputAnimMotorUpdater : CAnimMotorUpdaterBase {
+public partial interface CPlayerInputAnimMotorUpdater : CAnimMotorUpdaterBase, IConvertibleNativeHandle<CPlayerInputAnimMotorUpdater> {
+
+  static CPlayerInputAnimMotorUpdater IConvertibleNativeHandle<CPlayerInputAnimMotorUpdater>.From(nint handle) => new CPlayerInputAnimMotorUpdaterImpl(handle);
 
   
   public ref CUtlVector<float> SampleTimes { get; }

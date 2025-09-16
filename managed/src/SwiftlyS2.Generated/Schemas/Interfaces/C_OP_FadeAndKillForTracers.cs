@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_FadeAndKillForTracers : CParticleFunctionOperator {
+public partial interface C_OP_FadeAndKillForTracers : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_FadeAndKillForTracers> {
+
+  static C_OP_FadeAndKillForTracers IConvertibleNativeHandle<C_OP_FadeAndKillForTracers>.From(nint handle) => new C_OP_FadeAndKillForTracersImpl(handle);
 
   
   public ref float StartFadeInTime { get; }

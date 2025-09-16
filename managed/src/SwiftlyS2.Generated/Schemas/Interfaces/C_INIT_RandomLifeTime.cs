@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomLifeTime : CParticleFunctionInitializer {
+public partial interface C_INIT_RandomLifeTime : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RandomLifeTime> {
+
+  static C_INIT_RandomLifeTime IConvertibleNativeHandle<C_INIT_RandomLifeTime>.From(nint handle) => new C_INIT_RandomLifeTimeImpl(handle);
 
   
   public ref float LifetimeMin { get; }

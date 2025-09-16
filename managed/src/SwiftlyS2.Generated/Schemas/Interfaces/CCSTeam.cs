@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSTeam : CTeam {
+public partial interface CCSTeam : CTeam, IConvertibleNativeHandle<CCSTeam> {
+
+  static CCSTeam IConvertibleNativeHandle<CCSTeam>.From(nint handle) => new CCSTeamImpl(handle);
 
   
   public ref int LastRecievedShorthandedRoundBonus { get; }

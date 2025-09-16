@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHostageCarriableProp : CBaseAnimGraph {
+public partial interface CHostageCarriableProp : CBaseAnimGraph, IConvertibleNativeHandle<CHostageCarriableProp> {
+
+  static CHostageCarriableProp IConvertibleNativeHandle<CHostageCarriableProp>.From(nint handle) => new CHostageCarriablePropImpl(handle);
 
 
 

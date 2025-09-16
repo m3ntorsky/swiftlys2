@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ModelReference_t : ISchemaClass {
+public partial interface ModelReference_t : ISchemaClass, IConvertibleNativeHandle<ModelReference_t> {
+
+  static ModelReference_t IConvertibleNativeHandle<ModelReference_t>.From(nint handle) => new ModelReference_tImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }

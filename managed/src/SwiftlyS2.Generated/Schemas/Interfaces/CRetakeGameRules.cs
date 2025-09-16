@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRetakeGameRules : ISchemaClass {
+public partial interface CRetakeGameRules : ISchemaClass, IConvertibleNativeHandle<CRetakeGameRules> {
+
+  static CRetakeGameRules IConvertibleNativeHandle<CRetakeGameRules>.From(nint handle) => new CRetakeGameRulesImpl(handle);
 
   
   public ref int MatchSeed { get; }

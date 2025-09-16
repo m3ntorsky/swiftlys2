@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFloatEaseNode__CDefinition : CNmFloatValueNode__CDefinition {
+public partial interface CNmFloatEaseNode__CDefinition : CNmFloatValueNode__CDefinition, IConvertibleNativeHandle<CNmFloatEaseNode__CDefinition> {
+
+  static CNmFloatEaseNode__CDefinition IConvertibleNativeHandle<CNmFloatEaseNode__CDefinition>.From(nint handle) => new CNmFloatEaseNode__CDefinitionImpl(handle);
 
   
   public ref float EaseTime { get; }

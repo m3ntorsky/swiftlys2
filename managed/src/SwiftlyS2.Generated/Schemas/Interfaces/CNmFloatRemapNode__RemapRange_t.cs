@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFloatRemapNode__RemapRange_t : ISchemaClass {
+public partial interface CNmFloatRemapNode__RemapRange_t : ISchemaClass, IConvertibleNativeHandle<CNmFloatRemapNode__RemapRange_t> {
+
+  static CNmFloatRemapNode__RemapRange_t IConvertibleNativeHandle<CNmFloatRemapNode__RemapRange_t>.From(nint handle) => new CNmFloatRemapNode__RemapRange_tImpl(handle);
 
   
   public ref float Begin { get; }

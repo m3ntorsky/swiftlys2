@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_IsRequirementValid : CPulseCell_BaseRequirement {
+public partial interface CPulseCell_IsRequirementValid : CPulseCell_BaseRequirement, IConvertibleNativeHandle<CPulseCell_IsRequirementValid> {
+
+  static CPulseCell_IsRequirementValid IConvertibleNativeHandle<CPulseCell_IsRequirementValid>.From(nint handle) => new CPulseCell_IsRequirementValidImpl(handle);
 
 
 

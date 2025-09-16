@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCResourceManifestInternal : ISchemaClass {
+public partial interface InfoForResourceTypeCResourceManifestInternal : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCResourceManifestInternal> {
+
+  static InfoForResourceTypeCResourceManifestInternal IConvertibleNativeHandle<InfoForResourceTypeCResourceManifestInternal>.From(nint handle) => new InfoForResourceTypeCResourceManifestInternalImpl(handle);
 
 
 

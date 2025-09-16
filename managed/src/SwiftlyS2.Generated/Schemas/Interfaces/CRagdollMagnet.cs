@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollMagnet : CPointEntity {
+public partial interface CRagdollMagnet : CPointEntity, IConvertibleNativeHandle<CRagdollMagnet> {
+
+  static CRagdollMagnet IConvertibleNativeHandle<CRagdollMagnet>.From(nint handle) => new CRagdollMagnetImpl(handle);
 
   
   public ref bool Disabled { get; }

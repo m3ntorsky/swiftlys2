@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseCSGrenade : CCSWeaponBase {
+public partial interface CBaseCSGrenade : CCSWeaponBase, IConvertibleNativeHandle<CBaseCSGrenade> {
+
+  static CBaseCSGrenade IConvertibleNativeHandle<CBaseCSGrenade>.From(nint handle) => new CBaseCSGrenadeImpl(handle);
 
   
   public ref bool Redraw { get; }

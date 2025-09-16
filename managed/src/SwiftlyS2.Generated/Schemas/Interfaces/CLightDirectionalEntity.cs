@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLightDirectionalEntity : CLightEntity {
+public partial interface CLightDirectionalEntity : CLightEntity, IConvertibleNativeHandle<CLightDirectionalEntity> {
+
+  static CLightDirectionalEntity IConvertibleNativeHandle<CLightDirectionalEntity>.From(nint handle) => new CLightDirectionalEntityImpl(handle);
 
 
 

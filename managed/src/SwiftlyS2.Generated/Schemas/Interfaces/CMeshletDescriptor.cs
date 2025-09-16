@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMeshletDescriptor : ISchemaClass {
+public partial interface CMeshletDescriptor : ISchemaClass, IConvertibleNativeHandle<CMeshletDescriptor> {
+
+  static CMeshletDescriptor IConvertibleNativeHandle<CMeshletDescriptor>.From(nint handle) => new CMeshletDescriptorImpl(handle);
 
   
   public PackedAABB_t PackedAABB { get; }

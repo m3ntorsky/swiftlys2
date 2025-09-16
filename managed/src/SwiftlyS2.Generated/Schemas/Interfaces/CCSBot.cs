@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSBot : CBot {
+public partial interface CCSBot : CBot, IConvertibleNativeHandle<CCSBot> {
+
+  static CCSBot IConvertibleNativeHandle<CCSBot>.From(nint handle) => new CCSBotImpl(handle);
 
   
   public ref Vector EyePosition { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavLinkMovementVData : ISchemaClass {
+public partial interface CNavLinkMovementVData : ISchemaClass, IConvertibleNativeHandle<CNavLinkMovementVData> {
+
+  static CNavLinkMovementVData IConvertibleNativeHandle<CNavLinkMovementVData>.From(nint handle) => new CNavLinkMovementVDataImpl(handle);
 
   
   // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >

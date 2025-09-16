@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCDotaItemDefinitionResource : ISchemaClass {
+public partial interface InfoForResourceTypeCDotaItemDefinitionResource : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCDotaItemDefinitionResource> {
+
+  static InfoForResourceTypeCDotaItemDefinitionResource IConvertibleNativeHandle<InfoForResourceTypeCDotaItemDefinitionResource>.From(nint handle) => new InfoForResourceTypeCDotaItemDefinitionResourceImpl(handle);
 
 
 

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRenderBufferBinding : ISchemaClass {
+public partial interface CRenderBufferBinding : ISchemaClass, IConvertibleNativeHandle<CRenderBufferBinding> {
+
+  static CRenderBufferBinding IConvertibleNativeHandle<CRenderBufferBinding>.From(nint handle) => new CRenderBufferBindingImpl(handle);
 
   
   public ref ulong Buffer { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSWeaponBaseGun : CCSWeaponBase {
+public partial interface CCSWeaponBaseGun : CCSWeaponBase, IConvertibleNativeHandle<CCSWeaponBaseGun> {
+
+  static CCSWeaponBaseGun IConvertibleNativeHandle<CCSWeaponBaseGun>.From(nint handle) => new CCSWeaponBaseGunImpl(handle);
 
   
   public ref int ZoomLevel { get; }

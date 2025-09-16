@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_PercentageBetweenTransformsVector : CParticleFunctionOperator {
+public partial interface C_OP_PercentageBetweenTransformsVector : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_PercentageBetweenTransformsVector> {
+
+  static C_OP_PercentageBetweenTransformsVector IConvertibleNativeHandle<C_OP_PercentageBetweenTransformsVector>.From(nint handle) => new C_OP_PercentageBetweenTransformsVectorImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

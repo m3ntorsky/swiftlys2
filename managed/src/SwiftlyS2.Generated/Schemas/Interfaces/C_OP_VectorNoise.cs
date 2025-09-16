@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_VectorNoise : CParticleFunctionOperator {
+public partial interface C_OP_VectorNoise : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_VectorNoise> {
+
+  static C_OP_VectorNoise IConvertibleNativeHandle<C_OP_VectorNoise>.From(nint handle) => new C_OP_VectorNoiseImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

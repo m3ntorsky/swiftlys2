@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDirectPlaybackUpdateNode : CUnaryUpdateNode {
+public partial interface CDirectPlaybackUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CDirectPlaybackUpdateNode> {
+
+  static CDirectPlaybackUpdateNode IConvertibleNativeHandle<CDirectPlaybackUpdateNode>.From(nint handle) => new CDirectPlaybackUpdateNodeImpl(handle);
 
   
   public ref bool FinishEarly { get; }

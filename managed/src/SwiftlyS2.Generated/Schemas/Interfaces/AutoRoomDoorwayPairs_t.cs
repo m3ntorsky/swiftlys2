@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AutoRoomDoorwayPairs_t : ISchemaClass {
+public partial interface AutoRoomDoorwayPairs_t : ISchemaClass, IConvertibleNativeHandle<AutoRoomDoorwayPairs_t> {
+
+  static AutoRoomDoorwayPairs_t IConvertibleNativeHandle<AutoRoomDoorwayPairs_t>.From(nint handle) => new AutoRoomDoorwayPairs_tImpl(handle);
 
   
   public ref Vector P1 { get; }

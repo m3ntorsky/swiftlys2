@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionSearchDB : ISchemaClass {
+public partial interface CMotionSearchDB : ISchemaClass, IConvertibleNativeHandle<CMotionSearchDB> {
+
+  static CMotionSearchDB IConvertibleNativeHandle<CMotionSearchDB>.From(nint handle) => new CMotionSearchDBImpl(handle);
 
   
   public CMotionSearchNode RootNode { get; }

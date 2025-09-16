@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvDetailController : CBaseEntity {
+public partial interface CEnvDetailController : CBaseEntity, IConvertibleNativeHandle<CEnvDetailController> {
+
+  static CEnvDetailController IConvertibleNativeHandle<CEnvDetailController>.From(nint handle) => new CEnvDetailControllerImpl(handle);
 
   
   public ref float FadeStartDist { get; }

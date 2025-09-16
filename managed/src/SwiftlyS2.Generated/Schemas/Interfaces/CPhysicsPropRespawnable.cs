@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysicsPropRespawnable : CPhysicsProp {
+public partial interface CPhysicsPropRespawnable : CPhysicsProp, IConvertibleNativeHandle<CPhysicsPropRespawnable> {
+
+  static CPhysicsPropRespawnable IConvertibleNativeHandle<CPhysicsPropRespawnable>.From(nint handle) => new CPhysicsPropRespawnableImpl(handle);
 
   
   public ref Vector OriginalSpawnOrigin { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollUpdateNode : CUnaryUpdateNode {
+public partial interface CRagdollUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CRagdollUpdateNode> {
+
+  static CRagdollUpdateNode IConvertibleNativeHandle<CRagdollUpdateNode>.From(nint handle) => new CRagdollUpdateNodeImpl(handle);
 
   
   public ref int WeightListIndex { get; }

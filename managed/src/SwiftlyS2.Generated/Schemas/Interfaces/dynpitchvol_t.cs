@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface dynpitchvol_t : dynpitchvol_base_t {
+public partial interface dynpitchvol_t : dynpitchvol_base_t, IConvertibleNativeHandle<dynpitchvol_t> {
+
+  static dynpitchvol_t IConvertibleNativeHandle<dynpitchvol_t>.From(nint handle) => new dynpitchvol_tImpl(handle);
 
 
 

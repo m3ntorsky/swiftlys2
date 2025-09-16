@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFiringModeInt : ISchemaClass {
+public partial interface CFiringModeInt : ISchemaClass, IConvertibleNativeHandle<CFiringModeInt> {
+
+  static CFiringModeInt IConvertibleNativeHandle<CFiringModeInt>.From(nint handle) => new CFiringModeIntImpl(handle);
 
   
   public ISchemaFixedArray<int> Values { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDynamicProp : CBreakableProp {
+public partial interface CDynamicProp : CBreakableProp, IConvertibleNativeHandle<CDynamicProp> {
+
+  static CDynamicProp IConvertibleNativeHandle<CDynamicProp>.From(nint handle) => new CDynamicPropImpl(handle);
 
   
   public ref bool CreateNavObstacle { get; }

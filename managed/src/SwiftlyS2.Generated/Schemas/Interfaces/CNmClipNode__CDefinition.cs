@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmClipNode__CDefinition : CNmClipReferenceNode__CDefinition {
+public partial interface CNmClipNode__CDefinition : CNmClipReferenceNode__CDefinition, IConvertibleNativeHandle<CNmClipNode__CDefinition> {
+
+  static CNmClipNode__CDefinition IConvertibleNativeHandle<CNmClipNode__CDefinition>.From(nint handle) => new CNmClipNode__CDefinitionImpl(handle);
 
   
   public ref short PlayInReverseValueNodeIdx { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface WaterWheelDrag_t : ISchemaClass {
+public partial interface WaterWheelDrag_t : ISchemaClass, IConvertibleNativeHandle<WaterWheelDrag_t> {
+
+  static WaterWheelDrag_t IConvertibleNativeHandle<WaterWheelDrag_t>.From(nint handle) => new WaterWheelDrag_tImpl(handle);
 
   
   public ref float FractionOfWheelSubmerged { get; }

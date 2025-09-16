@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNewParticleEffect : IParticleEffect {
+public partial interface CNewParticleEffect : IParticleEffect, IConvertibleNativeHandle<CNewParticleEffect> {
+
+  static CNewParticleEffect IConvertibleNativeHandle<CNewParticleEffect>.From(nint handle) => new CNewParticleEffectImpl(handle);
 
   
   public CNewParticleEffect? Next { get; }

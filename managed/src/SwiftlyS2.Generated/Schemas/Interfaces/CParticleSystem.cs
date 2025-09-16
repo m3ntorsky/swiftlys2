@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleSystem : CBaseModelEntity {
+public partial interface CParticleSystem : CBaseModelEntity, IConvertibleNativeHandle<CParticleSystem> {
+
+  static CParticleSystem IConvertibleNativeHandle<CParticleSystem>.From(nint handle) => new CParticleSystemImpl(handle);
 
   
   public ISchemaFixedString SnapshotFileName { get; }

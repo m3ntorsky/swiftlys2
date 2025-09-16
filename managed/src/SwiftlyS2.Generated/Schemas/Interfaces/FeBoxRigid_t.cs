@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeBoxRigid_t : ISchemaClass {
+public partial interface FeBoxRigid_t : ISchemaClass, IConvertibleNativeHandle<FeBoxRigid_t> {
+
+  static FeBoxRigid_t IConvertibleNativeHandle<FeBoxRigid_t>.From(nint handle) => new FeBoxRigid_tImpl(handle);
 
   
   public ref CTransform TmFrame2 { get; }

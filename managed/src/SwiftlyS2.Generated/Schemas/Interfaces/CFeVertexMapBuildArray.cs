@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFeVertexMapBuildArray : ISchemaClass {
+public partial interface CFeVertexMapBuildArray : ISchemaClass, IConvertibleNativeHandle<CFeVertexMapBuildArray> {
+
+  static CFeVertexMapBuildArray IConvertibleNativeHandle<CFeVertexMapBuildArray>.From(nint handle) => new CFeVertexMapBuildArrayImpl(handle);
 
   
   public ref CUtlVector<PointerTo<FeVertexMapBuild_t>> Array { get; }

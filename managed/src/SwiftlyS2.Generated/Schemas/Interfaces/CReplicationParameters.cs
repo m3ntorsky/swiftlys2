@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CReplicationParameters : ISchemaClass {
+public partial interface CReplicationParameters : ISchemaClass, IConvertibleNativeHandle<CReplicationParameters> {
+
+  static CReplicationParameters IConvertibleNativeHandle<CReplicationParameters>.From(nint handle) => new CReplicationParametersImpl(handle);
 
   
   public ref ParticleReplicationMode_t ReplicationMode { get; }

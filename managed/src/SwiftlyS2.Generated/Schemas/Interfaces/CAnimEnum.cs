@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimEnum : ISchemaClass {
+public partial interface CAnimEnum : ISchemaClass, IConvertibleNativeHandle<CAnimEnum> {
+
+  static CAnimEnum IConvertibleNativeHandle<CAnimEnum>.From(nint handle) => new CAnimEnumImpl(handle);
 
   
   public ref byte Value { get; }

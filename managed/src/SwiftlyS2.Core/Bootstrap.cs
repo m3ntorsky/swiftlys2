@@ -15,7 +15,6 @@ internal static class Bootstrap {
   public static void Start(IntPtr nativeTable, int nativeTableSize) {
     
     NativeBinding.BindNatives(nativeTable, nativeTableSize);
-    NativeHandleConversion.RegisterConversions();
 
     AnsiConsole.Write(new FigletText("SwiftlyS2").LeftJustified().Color(Spectre.Console.Color.LightSteelBlue1));
 

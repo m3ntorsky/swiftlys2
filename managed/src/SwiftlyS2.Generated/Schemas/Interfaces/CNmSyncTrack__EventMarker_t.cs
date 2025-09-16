@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmSyncTrack__EventMarker_t : ISchemaClass {
+public partial interface CNmSyncTrack__EventMarker_t : ISchemaClass, IConvertibleNativeHandle<CNmSyncTrack__EventMarker_t> {
+
+  static CNmSyncTrack__EventMarker_t IConvertibleNativeHandle<CNmSyncTrack__EventMarker_t>.From(nint handle) => new CNmSyncTrack__EventMarker_tImpl(handle);
 
   
   public NmPercent_t StartTime { get; }

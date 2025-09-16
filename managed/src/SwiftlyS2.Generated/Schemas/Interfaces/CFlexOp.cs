@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFlexOp : ISchemaClass {
+public partial interface CFlexOp : ISchemaClass, IConvertibleNativeHandle<CFlexOp> {
+
+  static CFlexOp IConvertibleNativeHandle<CFlexOp>.From(nint handle) => new CFlexOpImpl(handle);
 
   
   public ref FlexOpCode_t OpCode { get; }

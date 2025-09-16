@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume : CEnvCombinedLightProbeVolume {
+public partial interface CEnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume : CEnvCombinedLightProbeVolume, IConvertibleNativeHandle<CEnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume> {
+
+  static CEnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume IConvertibleNativeHandle<CEnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume>.From(nint handle) => new CEnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volumeImpl(handle);
 
 
 

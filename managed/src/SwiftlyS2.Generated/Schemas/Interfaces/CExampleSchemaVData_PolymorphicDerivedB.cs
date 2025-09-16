@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CExampleSchemaVData_PolymorphicDerivedB : CExampleSchemaVData_PolymorphicBase {
+public partial interface CExampleSchemaVData_PolymorphicDerivedB : CExampleSchemaVData_PolymorphicBase, IConvertibleNativeHandle<CExampleSchemaVData_PolymorphicDerivedB> {
+
+  static CExampleSchemaVData_PolymorphicDerivedB IConvertibleNativeHandle<CExampleSchemaVData_PolymorphicDerivedB>.From(nint handle) => new CExampleSchemaVData_PolymorphicDerivedBImpl(handle);
 
   
   public ref int DerivedB { get; }

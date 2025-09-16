@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPlayer_ItemServices : CPlayer_ItemServices {
+public partial interface CCSPlayer_ItemServices : CPlayer_ItemServices, IConvertibleNativeHandle<CCSPlayer_ItemServices> {
+
+  static CCSPlayer_ItemServices IConvertibleNativeHandle<CCSPlayer_ItemServices>.From(nint handle) => new CCSPlayer_ItemServicesImpl(handle);
 
   
   public ref bool HasDefuser { get; }

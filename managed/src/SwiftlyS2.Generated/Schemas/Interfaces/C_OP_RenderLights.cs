@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderLights : C_OP_RenderPoints {
+public partial interface C_OP_RenderLights : C_OP_RenderPoints, IConvertibleNativeHandle<C_OP_RenderLights> {
+
+  static C_OP_RenderLights IConvertibleNativeHandle<C_OP_RenderLights>.From(nint handle) => new C_OP_RenderLightsImpl(handle);
 
   
   public ref float AnimationRate { get; }

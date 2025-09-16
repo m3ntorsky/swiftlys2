@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_WaitForCursorsWithTag : CPulseCell_WaitForCursorsWithTagBase {
+public partial interface CPulseCell_WaitForCursorsWithTag : CPulseCell_WaitForCursorsWithTagBase, IConvertibleNativeHandle<CPulseCell_WaitForCursorsWithTag> {
+
+  static CPulseCell_WaitForCursorsWithTag IConvertibleNativeHandle<CPulseCell_WaitForCursorsWithTag>.From(nint handle) => new CPulseCell_WaitForCursorsWithTagImpl(handle);
 
   
   public ref bool TagSelfWhenComplete { get; }

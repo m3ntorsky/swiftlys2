@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCommentaryAuto : CBaseEntity {
+public partial interface CCommentaryAuto : CBaseEntity, IConvertibleNativeHandle<CCommentaryAuto> {
+
+  static CCommentaryAuto IConvertibleNativeHandle<CCommentaryAuto>.From(nint handle) => new CCommentaryAutoImpl(handle);
 
   
   public CEntityIOOutput OnCommentaryNewGame { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicActiveAutosave : CLogicAutosave {
+public partial interface CLogicActiveAutosave : CLogicAutosave, IConvertibleNativeHandle<CLogicActiveAutosave> {
+
+  static CLogicActiveAutosave IConvertibleNativeHandle<CLogicActiveAutosave>.From(nint handle) => new CLogicActiveAutosaveImpl(handle);
 
   
   public ref int TriggerHitPoints { get; }

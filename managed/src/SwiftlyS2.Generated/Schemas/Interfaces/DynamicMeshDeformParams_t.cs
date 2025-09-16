@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface DynamicMeshDeformParams_t : ISchemaClass {
+public partial interface DynamicMeshDeformParams_t : ISchemaClass, IConvertibleNativeHandle<DynamicMeshDeformParams_t> {
+
+  static DynamicMeshDeformParams_t IConvertibleNativeHandle<DynamicMeshDeformParams_t>.From(nint handle) => new DynamicMeshDeformParams_tImpl(handle);
 
   
   public ref float TensionCompressScale { get; }

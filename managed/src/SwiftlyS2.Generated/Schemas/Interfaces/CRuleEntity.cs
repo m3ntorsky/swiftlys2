@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRuleEntity : CBaseModelEntity {
+public partial interface CRuleEntity : CBaseModelEntity, IConvertibleNativeHandle<CRuleEntity> {
+
+  static CRuleEntity IConvertibleNativeHandle<CRuleEntity>.From(nint handle) => new CRuleEntityImpl(handle);
 
   
   public ref CUtlSymbolLarge Master { get; }

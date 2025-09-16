@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_Cull : CParticleFunctionOperator {
+public partial interface C_OP_Cull : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_Cull> {
+
+  static C_OP_Cull IConvertibleNativeHandle<C_OP_Cull>.From(nint handle) => new C_OP_CullImpl(handle);
 
   
   public ref float CullPerc { get; }

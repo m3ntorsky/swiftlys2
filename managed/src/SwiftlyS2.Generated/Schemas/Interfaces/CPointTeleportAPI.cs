@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointTeleportAPI : ISchemaClass {
+public partial interface CPointTeleportAPI : ISchemaClass, IConvertibleNativeHandle<CPointTeleportAPI> {
+
+  static CPointTeleportAPI IConvertibleNativeHandle<CPointTeleportAPI>.From(nint handle) => new CPointTeleportAPIImpl(handle);
 
 
 

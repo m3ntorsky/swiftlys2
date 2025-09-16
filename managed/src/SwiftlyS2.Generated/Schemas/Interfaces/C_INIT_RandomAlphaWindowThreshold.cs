@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomAlphaWindowThreshold : CParticleFunctionInitializer {
+public partial interface C_INIT_RandomAlphaWindowThreshold : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RandomAlphaWindowThreshold> {
+
+  static C_INIT_RandomAlphaWindowThreshold IConvertibleNativeHandle<C_INIT_RandomAlphaWindowThreshold>.From(nint handle) => new C_INIT_RandomAlphaWindowThresholdImpl(handle);
 
   
   public ref float Min { get; }

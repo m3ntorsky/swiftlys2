@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundContainerReference : ISchemaClass {
+public partial interface CSoundContainerReference : ISchemaClass, IConvertibleNativeHandle<CSoundContainerReference> {
+
+  static CSoundContainerReference IConvertibleNativeHandle<CSoundContainerReference>.From(nint handle) => new CSoundContainerReferenceImpl(handle);
 
   
   public ref bool UseReference { get; }

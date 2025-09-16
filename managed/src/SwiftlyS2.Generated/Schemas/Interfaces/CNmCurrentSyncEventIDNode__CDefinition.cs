@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmCurrentSyncEventIDNode__CDefinition : CNmIDValueNode__CDefinition {
+public partial interface CNmCurrentSyncEventIDNode__CDefinition : CNmIDValueNode__CDefinition, IConvertibleNativeHandle<CNmCurrentSyncEventIDNode__CDefinition> {
+
+  static CNmCurrentSyncEventIDNode__CDefinition IConvertibleNativeHandle<CNmCurrentSyncEventIDNode__CDefinition>.From(nint handle) => new CNmCurrentSyncEventIDNode__CDefinitionImpl(handle);
 
   
   public ref short SourceStateNodeIdx { get; }

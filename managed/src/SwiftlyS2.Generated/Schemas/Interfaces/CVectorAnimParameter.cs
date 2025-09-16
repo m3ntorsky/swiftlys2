@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVectorAnimParameter : CConcreteAnimParameter {
+public partial interface CVectorAnimParameter : CConcreteAnimParameter, IConvertibleNativeHandle<CVectorAnimParameter> {
+
+  static CVectorAnimParameter IConvertibleNativeHandle<CVectorAnimParameter>.From(nint handle) => new CVectorAnimParameterImpl(handle);
 
   
   public ref Vector DefaultValue { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncTrackTrain : CBaseModelEntity {
+public partial interface CFuncTrackTrain : CBaseModelEntity, IConvertibleNativeHandle<CFuncTrackTrain> {
+
+  static CFuncTrackTrain IConvertibleNativeHandle<CFuncTrackTrain>.From(nint handle) => new CFuncTrackTrainImpl(handle);
 
   
   public ref CHandle<CPathTrack> Ppath { get; }

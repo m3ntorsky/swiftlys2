@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SequenceFromModel : CParticleFunctionOperator {
+public partial interface C_OP_SequenceFromModel : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_SequenceFromModel> {
+
+  static C_OP_SequenceFromModel IConvertibleNativeHandle<C_OP_SequenceFromModel>.From(nint handle) => new C_OP_SequenceFromModelImpl(handle);
 
   
   public ref int ControlPointNumber { get; }

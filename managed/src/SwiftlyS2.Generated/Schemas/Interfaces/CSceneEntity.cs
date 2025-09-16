@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSceneEntity : CPointEntity {
+public partial interface CSceneEntity : CPointEntity, IConvertibleNativeHandle<CSceneEntity> {
+
+  static CSceneEntity IConvertibleNativeHandle<CSceneEntity>.From(nint handle) => new CSceneEntityImpl(handle);
 
   
   public ref CUtlSymbolLarge SceneFile { get; }

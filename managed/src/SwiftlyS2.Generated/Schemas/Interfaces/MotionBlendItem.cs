@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface MotionBlendItem : ISchemaClass {
+public partial interface MotionBlendItem : ISchemaClass, IConvertibleNativeHandle<MotionBlendItem> {
+
+  static MotionBlendItem IConvertibleNativeHandle<MotionBlendItem>.From(nint handle) => new MotionBlendItemImpl(handle);
 
   
   // CSmartPtr< CMotionNode >

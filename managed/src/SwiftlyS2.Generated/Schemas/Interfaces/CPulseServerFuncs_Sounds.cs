@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseServerFuncs_Sounds : ISchemaClass {
+public partial interface CPulseServerFuncs_Sounds : ISchemaClass, IConvertibleNativeHandle<CPulseServerFuncs_Sounds> {
+
+  static CPulseServerFuncs_Sounds IConvertibleNativeHandle<CPulseServerFuncs_Sounds>.From(nint handle) => new CPulseServerFuncs_SoundsImpl(handle);
 
 
 

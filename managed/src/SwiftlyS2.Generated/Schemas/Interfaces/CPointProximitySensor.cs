@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointProximitySensor : CPointEntity {
+public partial interface CPointProximitySensor : CPointEntity, IConvertibleNativeHandle<CPointProximitySensor> {
+
+  static CPointProximitySensor IConvertibleNativeHandle<CPointProximitySensor>.From(nint handle) => new CPointProximitySensorImpl(handle);
 
   
   public ref bool Disabled { get; }

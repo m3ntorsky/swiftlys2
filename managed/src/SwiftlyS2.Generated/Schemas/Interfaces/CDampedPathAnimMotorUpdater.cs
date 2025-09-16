@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDampedPathAnimMotorUpdater : CPathAnimMotorUpdaterBase {
+public partial interface CDampedPathAnimMotorUpdater : CPathAnimMotorUpdaterBase, IConvertibleNativeHandle<CDampedPathAnimMotorUpdater> {
+
+  static CDampedPathAnimMotorUpdater IConvertibleNativeHandle<CDampedPathAnimMotorUpdater>.From(nint handle) => new CDampedPathAnimMotorUpdaterImpl(handle);
 
   
   public ref float AnticipationTime { get; }

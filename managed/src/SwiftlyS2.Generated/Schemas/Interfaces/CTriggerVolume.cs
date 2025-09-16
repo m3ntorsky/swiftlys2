@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerVolume : CBaseModelEntity {
+public partial interface CTriggerVolume : CBaseModelEntity, IConvertibleNativeHandle<CTriggerVolume> {
+
+  static CTriggerVolume IConvertibleNativeHandle<CTriggerVolume>.From(nint handle) => new CTriggerVolumeImpl(handle);
 
   
   public ref CUtlSymbolLarge FilterName { get; }

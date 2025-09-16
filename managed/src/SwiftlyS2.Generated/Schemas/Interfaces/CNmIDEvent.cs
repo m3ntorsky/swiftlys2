@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmIDEvent : CNmEvent {
+public partial interface CNmIDEvent : CNmEvent, IConvertibleNativeHandle<CNmIDEvent> {
+
+  static CNmIDEvent IConvertibleNativeHandle<CNmIDEvent>.From(nint handle) => new CNmIDEventImpl(handle);
 
   
   public ref CGlobalSymbol ID { get; }

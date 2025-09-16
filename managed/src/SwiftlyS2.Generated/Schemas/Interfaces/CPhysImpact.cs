@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysImpact : CPointEntity {
+public partial interface CPhysImpact : CPointEntity, IConvertibleNativeHandle<CPhysImpact> {
+
+  static CPhysImpact IConvertibleNativeHandle<CPhysImpact>.From(nint handle) => new CPhysImpactImpl(handle);
 
   
   public ref float Damage { get; }

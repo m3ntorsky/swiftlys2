@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_WaterImpulseRenderer : CParticleFunctionRenderer {
+public partial interface C_OP_WaterImpulseRenderer : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_WaterImpulseRenderer> {
+
+  static C_OP_WaterImpulseRenderer IConvertibleNativeHandle<C_OP_WaterImpulseRenderer>.From(nint handle) => new C_OP_WaterImpulseRendererImpl(handle);
 
   
   public CPerParticleVecInput Pos { get; }

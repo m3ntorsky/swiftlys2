@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvVolumetricFogVolume : CBaseEntity {
+public partial interface CEnvVolumetricFogVolume : CBaseEntity, IConvertibleNativeHandle<CEnvVolumetricFogVolume> {
+
+  static CEnvVolumetricFogVolume IConvertibleNativeHandle<CEnvVolumetricFogVolume>.From(nint handle) => new CEnvVolumetricFogVolumeImpl(handle);
 
   
   public ref bool Active { get; }

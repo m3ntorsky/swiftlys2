@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSGameModeRules_Deathmatch : CCSGameModeRules {
+public partial interface CCSGameModeRules_Deathmatch : CCSGameModeRules, IConvertibleNativeHandle<CCSGameModeRules_Deathmatch> {
+
+  static CCSGameModeRules_Deathmatch IConvertibleNativeHandle<CCSGameModeRules_Deathmatch>.From(nint handle) => new CCSGameModeRules_DeathmatchImpl(handle);
 
   
   public GameTime_t DMBonusStartTime { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_VelocityMatchingForce : CParticleFunctionOperator {
+public partial interface C_OP_VelocityMatchingForce : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_VelocityMatchingForce> {
+
+  static C_OP_VelocityMatchingForce IConvertibleNativeHandle<C_OP_VelocityMatchingForce>.From(nint handle) => new C_OP_VelocityMatchingForceImpl(handle);
 
   
   public ref float DirScale { get; }

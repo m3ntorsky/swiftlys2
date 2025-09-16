@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleProperty : ISchemaClass {
+public partial interface CParticleProperty : ISchemaClass, IConvertibleNativeHandle<CParticleProperty> {
+
+  static CParticleProperty IConvertibleNativeHandle<CParticleProperty>.From(nint handle) => new CParticlePropertyImpl(handle);
 
 
 

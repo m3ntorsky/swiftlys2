@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicCollisionPair : CLogicalEntity {
+public partial interface CLogicCollisionPair : CLogicalEntity, IConvertibleNativeHandle<CLogicCollisionPair> {
+
+  static CLogicCollisionPair IConvertibleNativeHandle<CLogicCollisionPair>.From(nint handle) => new CLogicCollisionPairImpl(handle);
 
   
   public ref CUtlSymbolLarge NameAttach1 { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeFitMatrix_t : ISchemaClass {
+public partial interface FeFitMatrix_t : ISchemaClass, IConvertibleNativeHandle<FeFitMatrix_t> {
+
+  static FeFitMatrix_t IConvertibleNativeHandle<FeFitMatrix_t>.From(nint handle) => new FeFitMatrix_tImpl(handle);
 
   
   public ref CTransform Bone { get; }

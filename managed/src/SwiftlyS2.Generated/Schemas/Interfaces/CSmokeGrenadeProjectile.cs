@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSmokeGrenadeProjectile : CBaseCSGrenadeProjectile {
+public partial interface CSmokeGrenadeProjectile : CBaseCSGrenadeProjectile, IConvertibleNativeHandle<CSmokeGrenadeProjectile> {
+
+  static CSmokeGrenadeProjectile IConvertibleNativeHandle<CSmokeGrenadeProjectile>.From(nint handle) => new CSmokeGrenadeProjectileImpl(handle);
 
   
   public ref int SmokeEffectTickBegin { get; }

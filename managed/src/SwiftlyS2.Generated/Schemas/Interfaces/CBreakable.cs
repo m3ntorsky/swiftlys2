@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBreakable : CBaseModelEntity {
+public partial interface CBreakable : CBaseModelEntity, IConvertibleNativeHandle<CBreakable> {
+
+  static CBreakable IConvertibleNativeHandle<CBreakable>.From(nint handle) => new CBreakableImpl(handle);
 
   
   public CPropDataComponent CPropDataComponent { get; }

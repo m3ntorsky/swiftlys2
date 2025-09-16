@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvEntityIgniter : CBaseEntity {
+public partial interface CEnvEntityIgniter : CBaseEntity, IConvertibleNativeHandle<CEnvEntityIgniter> {
+
+  static CEnvEntityIgniter IConvertibleNativeHandle<CEnvEntityIgniter>.From(nint handle) => new CEnvEntityIgniterImpl(handle);
 
   
   public ref float Lifetime { get; }

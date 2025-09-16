@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable : CEnvSoundscapeTriggerable {
+public partial interface CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable : CEnvSoundscapeTriggerable, IConvertibleNativeHandle<CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable> {
+
+  static CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable IConvertibleNativeHandle<CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable>.From(nint handle) => new CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerableImpl(handle);
 
 
 

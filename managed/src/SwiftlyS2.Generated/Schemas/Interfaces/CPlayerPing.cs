@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPlayerPing : CBaseEntity {
+public partial interface CPlayerPing : CBaseEntity, IConvertibleNativeHandle<CPlayerPing> {
+
+  static CPlayerPing IConvertibleNativeHandle<CPlayerPing>.From(nint handle) => new CPlayerPingImpl(handle);
 
   
   public ref CHandle<CCSPlayerPawn> Player { get; }

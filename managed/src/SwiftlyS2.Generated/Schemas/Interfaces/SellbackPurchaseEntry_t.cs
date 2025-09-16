@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SellbackPurchaseEntry_t : ISchemaClass {
+public partial interface SellbackPurchaseEntry_t : ISchemaClass, IConvertibleNativeHandle<SellbackPurchaseEntry_t> {
+
+  static SellbackPurchaseEntry_t IConvertibleNativeHandle<SellbackPurchaseEntry_t>.From(nint handle) => new SellbackPurchaseEntry_tImpl(handle);
 
   
   public ref ushort DefIdx { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface AnimationSnapshot_t : AnimationSnapshotBase_t {
+public partial interface AnimationSnapshot_t : AnimationSnapshotBase_t, IConvertibleNativeHandle<AnimationSnapshot_t> {
+
+  static AnimationSnapshot_t IConvertibleNativeHandle<AnimationSnapshot_t>.From(nint handle) => new AnimationSnapshot_tImpl(handle);
 
   
   public ref int EntIndex { get; }

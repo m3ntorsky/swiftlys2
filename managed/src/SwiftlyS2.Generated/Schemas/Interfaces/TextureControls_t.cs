@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface TextureControls_t : ISchemaClass {
+public partial interface TextureControls_t : ISchemaClass, IConvertibleNativeHandle<TextureControls_t> {
+
+  static TextureControls_t IConvertibleNativeHandle<TextureControls_t>.From(nint handle) => new TextureControls_tImpl(handle);
 
   
   public CParticleCollectionRendererFloatInput FinalTextureScaleU { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_BaseLerp : CPulseCell_BaseYieldingInflow {
+public partial interface CPulseCell_BaseLerp : CPulseCell_BaseYieldingInflow, IConvertibleNativeHandle<CPulseCell_BaseLerp> {
+
+  static CPulseCell_BaseLerp IConvertibleNativeHandle<CPulseCell_BaseLerp>.From(nint handle) => new CPulseCell_BaseLerpImpl(handle);
 
   
   public CPulse_ResumePoint WakeResume { get; }

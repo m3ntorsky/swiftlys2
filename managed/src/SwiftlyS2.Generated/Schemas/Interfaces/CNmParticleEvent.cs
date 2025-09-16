@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmParticleEvent : CNmEvent {
+public partial interface CNmParticleEvent : CNmEvent, IConvertibleNativeHandle<CNmParticleEvent> {
+
+  static CNmParticleEvent IConvertibleNativeHandle<CNmParticleEvent>.From(nint handle) => new CNmParticleEventImpl(handle);
 
   
   public ref CNmEventRelevance_t Relevance { get; }

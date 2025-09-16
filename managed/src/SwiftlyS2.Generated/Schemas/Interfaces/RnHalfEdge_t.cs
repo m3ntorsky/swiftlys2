@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface RnHalfEdge_t : ISchemaClass {
+public partial interface RnHalfEdge_t : ISchemaClass, IConvertibleNativeHandle<RnHalfEdge_t> {
+
+  static RnHalfEdge_t IConvertibleNativeHandle<RnHalfEdge_t>.From(nint handle) => new RnHalfEdge_tImpl(handle);
 
   
   public ref byte Next { get; }

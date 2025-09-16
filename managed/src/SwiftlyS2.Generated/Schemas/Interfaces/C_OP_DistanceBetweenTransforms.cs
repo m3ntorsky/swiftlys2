@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_DistanceBetweenTransforms : CParticleFunctionOperator {
+public partial interface C_OP_DistanceBetweenTransforms : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_DistanceBetweenTransforms> {
+
+  static C_OP_DistanceBetweenTransforms IConvertibleNativeHandle<C_OP_DistanceBetweenTransforms>.From(nint handle) => new C_OP_DistanceBetweenTransformsImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

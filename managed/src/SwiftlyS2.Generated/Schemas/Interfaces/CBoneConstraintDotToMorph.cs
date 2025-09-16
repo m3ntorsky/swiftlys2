@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBoneConstraintDotToMorph : CBoneConstraintBase {
+public partial interface CBoneConstraintDotToMorph : CBoneConstraintBase, IConvertibleNativeHandle<CBoneConstraintDotToMorph> {
+
+  static CBoneConstraintDotToMorph IConvertibleNativeHandle<CBoneConstraintDotToMorph>.From(nint handle) => new CBoneConstraintDotToMorphImpl(handle);
 
   
   public ref CUtlString BoneName { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFlexDesc : ISchemaClass {
+public partial interface CFlexDesc : ISchemaClass, IConvertibleNativeHandle<CFlexDesc> {
+
+  static CFlexDesc IConvertibleNativeHandle<CFlexDesc>.From(nint handle) => new CFlexDescImpl(handle);
 
   
   public ref CUtlString Facs { get; }

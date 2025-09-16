@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHostageRescueZoneShim : CBaseTrigger {
+public partial interface CHostageRescueZoneShim : CBaseTrigger, IConvertibleNativeHandle<CHostageRescueZoneShim> {
+
+  static CHostageRescueZoneShim IConvertibleNativeHandle<CHostageRescueZoneShim>.From(nint handle) => new CHostageRescueZoneShimImpl(handle);
 
 
 

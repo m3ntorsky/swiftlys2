@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_MaintainSequentialPath : CParticleFunctionOperator {
+public partial interface C_OP_MaintainSequentialPath : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_MaintainSequentialPath> {
+
+  static C_OP_MaintainSequentialPath IConvertibleNativeHandle<C_OP_MaintainSequentialPath>.From(nint handle) => new C_OP_MaintainSequentialPathImpl(handle);
 
   
   public ref float MaxDistance { get; }

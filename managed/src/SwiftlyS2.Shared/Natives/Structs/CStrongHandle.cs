@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.Natives;
 /// </summary>
 /// <typeparam name="T"></typeparam>
 [StructLayout(LayoutKind.Sequential, Size = 8)]
-public struct CStrongHandle<T> where T : INativeHandle {
+public struct CStrongHandle<T> where T : INativeHandle, IConvertibleNativeHandle<T> {
 
   private nint _pBinding;
 
@@ -23,7 +23,7 @@ public struct CStrongHandle<T> where T : INativeHandle {
       }
       var handle = _pBinding.Read<nint>();
 
-      return NativeHandleConversion.As<T>(handle);
+      return T.From(handle);
     }
   }
 }

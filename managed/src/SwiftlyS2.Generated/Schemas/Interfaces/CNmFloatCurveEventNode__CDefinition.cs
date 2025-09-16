@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFloatCurveEventNode__CDefinition : CNmFloatValueNode__CDefinition {
+public partial interface CNmFloatCurveEventNode__CDefinition : CNmFloatValueNode__CDefinition, IConvertibleNativeHandle<CNmFloatCurveEventNode__CDefinition> {
+
+  static CNmFloatCurveEventNode__CDefinition IConvertibleNativeHandle<CNmFloatCurveEventNode__CDefinition>.From(nint handle) => new CNmFloatCurveEventNode__CDefinitionImpl(handle);
 
   
   public ref CGlobalSymbol EventID { get; }

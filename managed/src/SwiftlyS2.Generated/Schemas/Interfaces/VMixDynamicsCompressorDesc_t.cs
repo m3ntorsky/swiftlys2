@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixDynamicsCompressorDesc_t : ISchemaClass {
+public partial interface VMixDynamicsCompressorDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixDynamicsCompressorDesc_t> {
+
+  static VMixDynamicsCompressorDesc_t IConvertibleNativeHandle<VMixDynamicsCompressorDesc_t>.From(nint handle) => new VMixDynamicsCompressorDesc_tImpl(handle);
 
   
   public ref float FldbOutputGain { get; }

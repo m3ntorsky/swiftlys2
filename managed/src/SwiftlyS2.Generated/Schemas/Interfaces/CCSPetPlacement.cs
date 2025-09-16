@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSPetPlacement : CBaseEntity {
+public partial interface CCSPetPlacement : CBaseEntity, IConvertibleNativeHandle<CCSPetPlacement> {
+
+  static CCSPetPlacement IConvertibleNativeHandle<CCSPetPlacement>.From(nint handle) => new CCSPetPlacementImpl(handle);
 
 
 

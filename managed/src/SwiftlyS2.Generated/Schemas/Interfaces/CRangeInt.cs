@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRangeInt : ISchemaClass {
+public partial interface CRangeInt : ISchemaClass, IConvertibleNativeHandle<CRangeInt> {
+
+  static CRangeInt IConvertibleNativeHandle<CRangeInt>.From(nint handle) => new CRangeIntImpl(handle);
 
   
   public ISchemaFixedArray<int> Value { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFollowBoneNode__CDefinition : CNmPassthroughNode__CDefinition {
+public partial interface CNmFollowBoneNode__CDefinition : CNmPassthroughNode__CDefinition, IConvertibleNativeHandle<CNmFollowBoneNode__CDefinition> {
+
+  static CNmFollowBoneNode__CDefinition IConvertibleNativeHandle<CNmFollowBoneNode__CDefinition>.From(nint handle) => new CNmFollowBoneNode__CDefinitionImpl(handle);
 
   
   public ref CGlobalSymbol Bone { get; }

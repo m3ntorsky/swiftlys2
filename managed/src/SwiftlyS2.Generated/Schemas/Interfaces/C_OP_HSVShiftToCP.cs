@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_HSVShiftToCP : CParticleFunctionPreEmission {
+public partial interface C_OP_HSVShiftToCP : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_HSVShiftToCP> {
+
+  static C_OP_HSVShiftToCP IConvertibleNativeHandle<C_OP_HSVShiftToCP>.From(nint handle) => new C_OP_HSVShiftToCPImpl(handle);
 
   
   public ref int ColorCP { get; }

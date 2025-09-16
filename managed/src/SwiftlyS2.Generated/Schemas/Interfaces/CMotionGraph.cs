@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionGraph : ISchemaClass {
+public partial interface CMotionGraph : ISchemaClass, IConvertibleNativeHandle<CMotionGraph> {
+
+  static CMotionGraph IConvertibleNativeHandle<CMotionGraph>.From(nint handle) => new CMotionGraphImpl(handle);
 
   
   public CParamSpanUpdater ParamSpans { get; }

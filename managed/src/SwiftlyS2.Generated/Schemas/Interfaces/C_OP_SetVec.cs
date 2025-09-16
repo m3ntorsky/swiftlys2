@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetVec : CParticleFunctionOperator {
+public partial interface C_OP_SetVec : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_SetVec> {
+
+  static C_OP_SetVec IConvertibleNativeHandle<C_OP_SetVec>.From(nint handle) => new C_OP_SetVecImpl(handle);
 
   
   public CPerParticleVecInput InputValue { get; }

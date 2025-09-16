@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSkillDamage : ISchemaClass {
+public partial interface CSkillDamage : ISchemaClass, IConvertibleNativeHandle<CSkillDamage> {
+
+  static CSkillDamage IConvertibleNativeHandle<CSkillDamage>.From(nint handle) => new CSkillDamageImpl(handle);
 
   
   public CSkillFloat Damage { get; }

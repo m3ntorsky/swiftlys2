@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmAimCSTask : CNmPoseTask {
+public partial interface CNmAimCSTask : CNmPoseTask, IConvertibleNativeHandle<CNmAimCSTask> {
+
+  static CNmAimCSTask IConvertibleNativeHandle<CNmAimCSTask>.From(nint handle) => new CNmAimCSTaskImpl(handle);
 
 
 

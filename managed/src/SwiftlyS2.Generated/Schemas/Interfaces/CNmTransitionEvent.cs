@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmTransitionEvent : CNmEvent {
+public partial interface CNmTransitionEvent : CNmEvent, IConvertibleNativeHandle<CNmTransitionEvent> {
+
+  static CNmTransitionEvent IConvertibleNativeHandle<CNmTransitionEvent>.From(nint handle) => new CNmTransitionEventImpl(handle);
 
   
   public ref NmTransitionRule_t Rule { get; }

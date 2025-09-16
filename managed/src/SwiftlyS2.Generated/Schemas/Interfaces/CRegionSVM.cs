@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRegionSVM : ISchemaClass {
+public partial interface CRegionSVM : ISchemaClass, IConvertibleNativeHandle<CRegionSVM> {
+
+  static CRegionSVM IConvertibleNativeHandle<CRegionSVM>.From(nint handle) => new CRegionSVMImpl(handle);
 
   
   // CUtlVector< RnPlane_t >

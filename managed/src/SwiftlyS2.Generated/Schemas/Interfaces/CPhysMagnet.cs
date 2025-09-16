@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysMagnet : CBaseAnimGraph {
+public partial interface CPhysMagnet : CBaseAnimGraph, IConvertibleNativeHandle<CPhysMagnet> {
+
+  static CPhysMagnet IConvertibleNativeHandle<CPhysMagnet>.From(nint handle) => new CPhysMagnetImpl(handle);
 
   
   public CEntityIOOutput OnMagnetAttach { get; }

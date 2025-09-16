@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointPush : CPointEntity {
+public partial interface CPointPush : CPointEntity, IConvertibleNativeHandle<CPointPush> {
+
+  static CPointPush IConvertibleNativeHandle<CPointPush>.From(nint handle) => new CPointPushImpl(handle);
 
   
   public ref bool Enabled { get; }

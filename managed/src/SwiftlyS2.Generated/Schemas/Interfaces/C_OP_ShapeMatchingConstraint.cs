@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_ShapeMatchingConstraint : CParticleFunctionConstraint {
+public partial interface C_OP_ShapeMatchingConstraint : CParticleFunctionConstraint, IConvertibleNativeHandle<C_OP_ShapeMatchingConstraint> {
+
+  static C_OP_ShapeMatchingConstraint IConvertibleNativeHandle<C_OP_ShapeMatchingConstraint>.From(nint handle) => new C_OP_ShapeMatchingConstraintImpl(handle);
 
   
   public ref float ShapeRestorationTime { get; }

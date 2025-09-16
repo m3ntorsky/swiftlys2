@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMarkupVolumeTagged : CMarkupVolume {
+public partial interface CMarkupVolumeTagged : CMarkupVolume, IConvertibleNativeHandle<CMarkupVolumeTagged> {
+
+  static CMarkupVolumeTagged IConvertibleNativeHandle<CMarkupVolumeTagged>.From(nint handle) => new CMarkupVolumeTaggedImpl(handle);
 
   
   public ref CUtlVector<CGlobalSymbol> GroupNames { get; }

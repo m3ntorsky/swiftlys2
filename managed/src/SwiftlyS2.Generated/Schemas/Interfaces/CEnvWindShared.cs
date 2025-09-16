@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvWindShared : ISchemaClass {
+public partial interface CEnvWindShared : ISchemaClass, IConvertibleNativeHandle<CEnvWindShared> {
+
+  static CEnvWindShared IConvertibleNativeHandle<CEnvWindShared>.From(nint handle) => new CEnvWindSharedImpl(handle);
 
   
   public GameTime_t StartTime { get; }

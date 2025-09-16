@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeBandBendLimit_t : ISchemaClass {
+public partial interface FeBandBendLimit_t : ISchemaClass, IConvertibleNativeHandle<FeBandBendLimit_t> {
+
+  static FeBandBendLimit_t IConvertibleNativeHandle<FeBandBendLimit_t>.From(nint handle) => new FeBandBendLimit_tImpl(handle);
 
   
   public ref float DistMin { get; }

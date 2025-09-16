@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAimConstraint : CBaseConstraint {
+public partial interface CAimConstraint : CBaseConstraint, IConvertibleNativeHandle<CAimConstraint> {
+
+  static CAimConstraint IConvertibleNativeHandle<CAimConstraint>.From(nint handle) => new CAimConstraintImpl(handle);
 
   
   public ref Quaternion AimOffset { get; }

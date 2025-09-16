@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventClientAdvanceNonRenderedFrame_t : ISchemaClass {
+public partial interface EventClientAdvanceNonRenderedFrame_t : ISchemaClass, IConvertibleNativeHandle<EventClientAdvanceNonRenderedFrame_t> {
+
+  static EventClientAdvanceNonRenderedFrame_t IConvertibleNativeHandle<EventClientAdvanceNonRenderedFrame_t>.From(nint handle) => new EventClientAdvanceNonRenderedFrame_tImpl(handle);
 
 
 

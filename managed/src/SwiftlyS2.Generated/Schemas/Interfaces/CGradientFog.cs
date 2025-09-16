@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGradientFog : CBaseEntity {
+public partial interface CGradientFog : CBaseEntity, IConvertibleNativeHandle<CGradientFog> {
+
+  static CGradientFog IConvertibleNativeHandle<CGradientFog>.From(nint handle) => new CGradientFogImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> GradientFogTexture { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerDecayingSineWave : CVoiceContainerBase {
+public partial interface CVoiceContainerDecayingSineWave : CVoiceContainerBase, IConvertibleNativeHandle<CVoiceContainerDecayingSineWave> {
+
+  static CVoiceContainerDecayingSineWave IConvertibleNativeHandle<CVoiceContainerDecayingSineWave>.From(nint handle) => new CVoiceContainerDecayingSineWaveImpl(handle);
 
   
   public ref float Frequency { get; }

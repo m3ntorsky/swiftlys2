@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseGrenade : CBaseFlex {
+public partial interface CBaseGrenade : CBaseFlex, IConvertibleNativeHandle<CBaseGrenade> {
+
+  static CBaseGrenade IConvertibleNativeHandle<CBaseGrenade>.From(nint handle) => new CBaseGrenadeImpl(handle);
 
   
   public CEntityIOOutput OnPlayerPickup { get; }

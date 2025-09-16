@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimEventListenerBase : ISchemaClass {
+public partial interface CAnimEventListenerBase : ISchemaClass, IConvertibleNativeHandle<CAnimEventListenerBase> {
+
+  static CAnimEventListenerBase IConvertibleNativeHandle<CAnimEventListenerBase>.From(nint handle) => new CAnimEventListenerBaseImpl(handle);
 
 
 

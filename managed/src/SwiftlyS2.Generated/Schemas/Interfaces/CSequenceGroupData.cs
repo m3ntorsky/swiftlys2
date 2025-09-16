@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSequenceGroupData : ISchemaClass {
+public partial interface CSequenceGroupData : ISchemaClass, IConvertibleNativeHandle<CSequenceGroupData> {
+
+  static CSequenceGroupData IConvertibleNativeHandle<CSequenceGroupData>.From(nint handle) => new CSequenceGroupDataImpl(handle);
 
   
   public ref CBufferString Name { get; }

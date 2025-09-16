@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAudioEmphasisSample : ISchemaClass {
+public partial interface CAudioEmphasisSample : ISchemaClass, IConvertibleNativeHandle<CAudioEmphasisSample> {
+
+  static CAudioEmphasisSample IConvertibleNativeHandle<CAudioEmphasisSample>.From(nint handle) => new CAudioEmphasisSampleImpl(handle);
 
   
   public ref float Time { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTurnHelperUpdateNode : CUnaryUpdateNode {
+public partial interface CTurnHelperUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CTurnHelperUpdateNode> {
+
+  static CTurnHelperUpdateNode IConvertibleNativeHandle<CTurnHelperUpdateNode>.From(nint handle) => new CTurnHelperUpdateNodeImpl(handle);
 
   
   public ref AnimValueSource FacingTarget { get; }

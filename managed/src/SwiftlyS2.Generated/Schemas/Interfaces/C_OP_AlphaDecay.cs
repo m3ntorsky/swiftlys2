@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_AlphaDecay : CParticleFunctionOperator {
+public partial interface C_OP_AlphaDecay : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_AlphaDecay> {
+
+  static C_OP_AlphaDecay IConvertibleNativeHandle<C_OP_AlphaDecay>.From(nint handle) => new C_OP_AlphaDecayImpl(handle);
 
   
   public ref float MinAlpha { get; }

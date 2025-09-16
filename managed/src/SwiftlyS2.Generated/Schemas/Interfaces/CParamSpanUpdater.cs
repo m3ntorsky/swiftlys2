@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParamSpanUpdater : ISchemaClass {
+public partial interface CParamSpanUpdater : ISchemaClass, IConvertibleNativeHandle<CParamSpanUpdater> {
+
+  static CParamSpanUpdater IConvertibleNativeHandle<CParamSpanUpdater>.From(nint handle) => new CParamSpanUpdaterImpl(handle);
 
   
   // CUtlVector< ParamSpan_t >

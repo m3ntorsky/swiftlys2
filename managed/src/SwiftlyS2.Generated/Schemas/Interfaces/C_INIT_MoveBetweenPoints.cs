@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_MoveBetweenPoints : CParticleFunctionInitializer {
+public partial interface C_INIT_MoveBetweenPoints : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_MoveBetweenPoints> {
+
+  static C_INIT_MoveBetweenPoints IConvertibleNativeHandle<C_INIT_MoveBetweenPoints>.From(nint handle) => new C_INIT_MoveBetweenPointsImpl(handle);
 
   
   public CPerParticleFloatInput SpeedMin { get; }

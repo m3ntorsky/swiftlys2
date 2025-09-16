@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGameSceneNodeHandle : ISchemaClass {
+public partial interface CGameSceneNodeHandle : ISchemaClass, IConvertibleNativeHandle<CGameSceneNodeHandle> {
+
+  static CGameSceneNodeHandle IConvertibleNativeHandle<CGameSceneNodeHandle>.From(nint handle) => new CGameSceneNodeHandleImpl(handle);
 
   
   public ref CHandle<CEntityInstance> Owner { get; }

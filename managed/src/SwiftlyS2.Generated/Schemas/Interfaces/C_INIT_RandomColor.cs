@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomColor : CParticleFunctionInitializer {
+public partial interface C_INIT_RandomColor : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RandomColor> {
+
+  static C_INIT_RandomColor IConvertibleNativeHandle<C_INIT_RandomColor>.From(nint handle) => new C_INIT_RandomColorImpl(handle);
 
   
   public ref Color ColorMin { get; }

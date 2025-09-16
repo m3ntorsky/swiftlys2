@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderClientPhysicsImpulse : CParticleFunctionRenderer {
+public partial interface C_OP_RenderClientPhysicsImpulse : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderClientPhysicsImpulse> {
+
+  static C_OP_RenderClientPhysicsImpulse IConvertibleNativeHandle<C_OP_RenderClientPhysicsImpulse>.From(nint handle) => new C_OP_RenderClientPhysicsImpulseImpl(handle);
 
   
   public CPerParticleFloatInput Radius { get; }

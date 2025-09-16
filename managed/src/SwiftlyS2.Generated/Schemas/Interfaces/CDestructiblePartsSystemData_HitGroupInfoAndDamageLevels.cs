@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels : ISchemaClass {
+public partial interface CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels : ISchemaClass, IConvertibleNativeHandle<CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels> {
+
+  static CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels IConvertibleNativeHandle<CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels>.From(nint handle) => new CDestructiblePartsSystemData_HitGroupInfoAndDamageLevelsImpl(handle);
 
   
   public ref CGlobalSymbol DebugName { get; }

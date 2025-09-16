@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_OrientTo2dDirection : CParticleFunctionOperator {
+public partial interface C_OP_OrientTo2dDirection : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_OrientTo2dDirection> {
+
+  static C_OP_OrientTo2dDirection IConvertibleNativeHandle<C_OP_OrientTo2dDirection>.From(nint handle) => new C_OP_OrientTo2dDirectionImpl(handle);
 
   
   public ref float RotOffset { get; }

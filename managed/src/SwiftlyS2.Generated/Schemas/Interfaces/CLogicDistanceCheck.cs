@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicDistanceCheck : CLogicalEntity {
+public partial interface CLogicDistanceCheck : CLogicalEntity, IConvertibleNativeHandle<CLogicDistanceCheck> {
+
+  static CLogicDistanceCheck IConvertibleNativeHandle<CLogicDistanceCheck>.From(nint handle) => new CLogicDistanceCheckImpl(handle);
 
   
   public ref CUtlSymbolLarge EntityA { get; }

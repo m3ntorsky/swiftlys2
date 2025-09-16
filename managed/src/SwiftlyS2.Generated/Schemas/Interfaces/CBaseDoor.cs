@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBaseDoor : CBaseToggle {
+public partial interface CBaseDoor : CBaseToggle, IConvertibleNativeHandle<CBaseDoor> {
+
+  static CBaseDoor IConvertibleNativeHandle<CBaseDoor>.From(nint handle) => new CBaseDoorImpl(handle);
 
   
   public ref QAngle MoveEntitySpace { get; }

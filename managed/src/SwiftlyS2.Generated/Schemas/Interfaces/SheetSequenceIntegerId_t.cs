@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SheetSequenceIntegerId_t : ISchemaClass {
+public partial interface SheetSequenceIntegerId_t : ISchemaClass, IConvertibleNativeHandle<SheetSequenceIntegerId_t> {
+
+  static SheetSequenceIntegerId_t IConvertibleNativeHandle<SheetSequenceIntegerId_t>.From(nint handle) => new SheetSequenceIntegerId_tImpl(handle);
 
   
   public ref uint Value { get; }

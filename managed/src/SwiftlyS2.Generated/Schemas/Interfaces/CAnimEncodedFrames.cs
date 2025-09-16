@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimEncodedFrames : ISchemaClass {
+public partial interface CAnimEncodedFrames : ISchemaClass, IConvertibleNativeHandle<CAnimEncodedFrames> {
+
+  static CAnimEncodedFrames IConvertibleNativeHandle<CAnimEncodedFrames>.From(nint handle) => new CAnimEncodedFramesImpl(handle);
 
   
   public ref CBufferString FileName { get; }

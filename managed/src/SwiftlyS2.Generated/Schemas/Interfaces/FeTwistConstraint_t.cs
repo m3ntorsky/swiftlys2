@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeTwistConstraint_t : ISchemaClass {
+public partial interface FeTwistConstraint_t : ISchemaClass, IConvertibleNativeHandle<FeTwistConstraint_t> {
+
+  static FeTwistConstraint_t IConvertibleNativeHandle<FeTwistConstraint_t>.From(nint handle) => new FeTwistConstraint_tImpl(handle);
 
   
   public ref ushort NodeOrient { get; }

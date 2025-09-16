@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFish : CBaseAnimGraph {
+public partial interface CFish : CBaseAnimGraph, IConvertibleNativeHandle<CFish> {
+
+  static CFish IConvertibleNativeHandle<CFish>.From(nint handle) => new CFishImpl(handle);
 
   
   public ref CHandle<CFishPool> Pool { get; }

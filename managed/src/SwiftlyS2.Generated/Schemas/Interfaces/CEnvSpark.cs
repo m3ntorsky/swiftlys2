@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvSpark : CPointEntity {
+public partial interface CEnvSpark : CPointEntity, IConvertibleNativeHandle<CEnvSpark> {
+
+  static CEnvSpark IConvertibleNativeHandle<CEnvSpark>.From(nint handle) => new CEnvSparkImpl(handle);
 
   
   public ref float Delay { get; }

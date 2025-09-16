@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixFreeverbDesc_t : ISchemaClass {
+public partial interface VMixFreeverbDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixFreeverbDesc_t> {
+
+  static VMixFreeverbDesc_t IConvertibleNativeHandle<VMixFreeverbDesc_t>.From(nint handle) => new VMixFreeverbDesc_tImpl(handle);
 
   
   public ref float RoomSize { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulse_RegisterInfo : ISchemaClass {
+public partial interface CPulse_RegisterInfo : ISchemaClass, IConvertibleNativeHandle<CPulse_RegisterInfo> {
+
+  static CPulse_RegisterInfo IConvertibleNativeHandle<CPulse_RegisterInfo>.From(nint handle) => new CPulse_RegisterInfoImpl(handle);
 
   
   public PulseRuntimeRegisterIndex_t Reg { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPoseHandle : ISchemaClass {
+public partial interface CPoseHandle : ISchemaClass, IConvertibleNativeHandle<CPoseHandle> {
+
+  static CPoseHandle IConvertibleNativeHandle<CPoseHandle>.From(nint handle) => new CPoseHandleImpl(handle);
 
   
   public ref ushort Index { get; }

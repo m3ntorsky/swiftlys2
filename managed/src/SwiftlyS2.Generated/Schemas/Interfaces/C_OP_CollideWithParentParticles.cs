@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_CollideWithParentParticles : CParticleFunctionConstraint {
+public partial interface C_OP_CollideWithParentParticles : CParticleFunctionConstraint, IConvertibleNativeHandle<C_OP_CollideWithParentParticles> {
+
+  static C_OP_CollideWithParentParticles IConvertibleNativeHandle<C_OP_CollideWithParentParticles>.From(nint handle) => new C_OP_CollideWithParentParticlesImpl(handle);
 
   
   public CPerParticleFloatInput ParentRadiusScale { get; }

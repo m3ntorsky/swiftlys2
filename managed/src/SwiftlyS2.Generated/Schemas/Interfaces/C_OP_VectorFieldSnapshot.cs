@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_VectorFieldSnapshot : CParticleFunctionOperator {
+public partial interface C_OP_VectorFieldSnapshot : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_VectorFieldSnapshot> {
+
+  static C_OP_VectorFieldSnapshot IConvertibleNativeHandle<C_OP_VectorFieldSnapshot>.From(nint handle) => new C_OP_VectorFieldSnapshotImpl(handle);
 
   
   public ref int ControlPointNumber { get; }

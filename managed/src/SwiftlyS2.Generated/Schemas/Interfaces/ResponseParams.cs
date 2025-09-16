@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ResponseParams : ISchemaClass {
+public partial interface ResponseParams : ISchemaClass, IConvertibleNativeHandle<ResponseParams> {
+
+  static ResponseParams IConvertibleNativeHandle<ResponseParams>.From(nint handle) => new ResponseParamsImpl(handle);
 
   
   public ref short Odds { get; }

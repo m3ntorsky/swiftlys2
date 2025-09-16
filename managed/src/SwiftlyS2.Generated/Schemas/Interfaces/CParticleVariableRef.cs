@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CParticleVariableRef : ISchemaClass {
+public partial interface CParticleVariableRef : ISchemaClass, IConvertibleNativeHandle<CParticleVariableRef> {
+
+  static CParticleVariableRef IConvertibleNativeHandle<CParticleVariableRef>.From(nint handle) => new CParticleVariableRefImpl(handle);
 
   
   // CKV3MemberNameWithStorage

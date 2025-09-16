@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSObserver_CameraServices : CCSPlayerBase_CameraServices {
+public partial interface CCSObserver_CameraServices : CCSPlayerBase_CameraServices, IConvertibleNativeHandle<CCSObserver_CameraServices> {
+
+  static CCSObserver_CameraServices IConvertibleNativeHandle<CCSObserver_CameraServices>.From(nint handle) => new CCSObserver_CameraServicesImpl(handle);
 
 
 

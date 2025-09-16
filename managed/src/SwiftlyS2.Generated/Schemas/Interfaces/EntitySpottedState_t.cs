@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EntitySpottedState_t : ISchemaClass {
+public partial interface EntitySpottedState_t : ISchemaClass, IConvertibleNativeHandle<EntitySpottedState_t> {
+
+  static EntitySpottedState_t IConvertibleNativeHandle<EntitySpottedState_t>.From(nint handle) => new EntitySpottedState_tImpl(handle);
 
   
   public ref bool Spotted { get; }

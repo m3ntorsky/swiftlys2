@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PulseRuntimeVarIndex_t : ISchemaClass {
+public partial interface PulseRuntimeVarIndex_t : ISchemaClass, IConvertibleNativeHandle<PulseRuntimeVarIndex_t> {
+
+  static PulseRuntimeVarIndex_t IConvertibleNativeHandle<PulseRuntimeVarIndex_t>.From(nint handle) => new PulseRuntimeVarIndex_tImpl(handle);
 
   
   public ref int Value { get; }

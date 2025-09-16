@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Outflow_TestExplicitYesNo : CPulseCell_BaseFlow {
+public partial interface CPulseCell_Outflow_TestExplicitYesNo : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_Outflow_TestExplicitYesNo> {
+
+  static CPulseCell_Outflow_TestExplicitYesNo IConvertibleNativeHandle<CPulseCell_Outflow_TestExplicitYesNo>.From(nint handle) => new CPulseCell_Outflow_TestExplicitYesNoImpl(handle);
 
   
   public CPulse_OutflowConnection Yes { get; }

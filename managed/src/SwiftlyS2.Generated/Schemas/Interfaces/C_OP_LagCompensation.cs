@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_LagCompensation : CParticleFunctionOperator {
+public partial interface C_OP_LagCompensation : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_LagCompensation> {
+
+  static C_OP_LagCompensation IConvertibleNativeHandle<C_OP_LagCompensation>.From(nint handle) => new C_OP_LagCompensationImpl(handle);
 
   
   public ref int DesiredVelocityCP { get; }

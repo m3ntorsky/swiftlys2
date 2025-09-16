@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_StatusEffectCitadel : CParticleFunctionInitializer {
+public partial interface C_INIT_StatusEffectCitadel : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_StatusEffectCitadel> {
+
+  static C_INIT_StatusEffectCitadel IConvertibleNativeHandle<C_INIT_StatusEffectCitadel>.From(nint handle) => new C_INIT_StatusEffectCitadelImpl(handle);
 
   
   public ref float SFXColorWarpAmount { get; }

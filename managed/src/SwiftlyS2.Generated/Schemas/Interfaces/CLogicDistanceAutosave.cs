@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicDistanceAutosave : CLogicalEntity {
+public partial interface CLogicDistanceAutosave : CLogicalEntity, IConvertibleNativeHandle<CLogicDistanceAutosave> {
+
+  static CLogicDistanceAutosave IConvertibleNativeHandle<CLogicDistanceAutosave>.From(nint handle) => new CLogicDistanceAutosaveImpl(handle);
 
   
   public ref CUtlSymbolLarge TargetEntity { get; }

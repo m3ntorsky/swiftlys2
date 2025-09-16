@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_MovementMaintainOffset : CParticleFunctionOperator {
+public partial interface C_OP_MovementMaintainOffset : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_MovementMaintainOffset> {
+
+  static C_OP_MovementMaintainOffset IConvertibleNativeHandle<C_OP_MovementMaintainOffset>.From(nint handle) => new C_OP_MovementMaintainOffsetImpl(handle);
 
   
   public ref Vector Offset { get; }

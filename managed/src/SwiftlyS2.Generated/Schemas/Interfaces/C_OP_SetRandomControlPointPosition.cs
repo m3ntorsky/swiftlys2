@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_SetRandomControlPointPosition : CParticleFunctionPreEmission {
+public partial interface C_OP_SetRandomControlPointPosition : CParticleFunctionPreEmission, IConvertibleNativeHandle<C_OP_SetRandomControlPointPosition> {
+
+  static C_OP_SetRandomControlPointPosition IConvertibleNativeHandle<C_OP_SetRandomControlPointPosition>.From(nint handle) => new C_OP_SetRandomControlPointPositionImpl(handle);
 
   
   public ref bool UseWorldLocation { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_Value_RandomInt : CPulseCell_BaseValue {
+public partial interface CPulseCell_Value_RandomInt : CPulseCell_BaseValue, IConvertibleNativeHandle<CPulseCell_Value_RandomInt> {
+
+  static CPulseCell_Value_RandomInt IConvertibleNativeHandle<CPulseCell_Value_RandomInt>.From(nint handle) => new CPulseCell_Value_RandomIntImpl(handle);
 
 
 

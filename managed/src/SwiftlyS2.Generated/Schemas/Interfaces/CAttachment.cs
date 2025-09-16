@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAttachment : ISchemaClass {
+public partial interface CAttachment : ISchemaClass, IConvertibleNativeHandle<CAttachment> {
+
+  static CAttachment IConvertibleNativeHandle<CAttachment>.From(nint handle) => new CAttachmentImpl(handle);
 
   
   public ref CUtlString Name { get; }

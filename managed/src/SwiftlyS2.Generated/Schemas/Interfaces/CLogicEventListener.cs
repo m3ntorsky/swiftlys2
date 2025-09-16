@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicEventListener : CLogicalEntity {
+public partial interface CLogicEventListener : CLogicalEntity, IConvertibleNativeHandle<CLogicEventListener> {
+
+  static CLogicEventListener IConvertibleNativeHandle<CLogicEventListener>.From(nint handle) => new CLogicEventListenerImpl(handle);
 
   
   public ref CUtlString StrEventName { get; }

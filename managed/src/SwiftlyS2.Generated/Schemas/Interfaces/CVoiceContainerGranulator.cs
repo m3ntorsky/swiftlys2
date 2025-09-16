@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CVoiceContainerGranulator : CVoiceContainerBase {
+public partial interface CVoiceContainerGranulator : CVoiceContainerBase, IConvertibleNativeHandle<CVoiceContainerGranulator> {
+
+  static CVoiceContainerGranulator IConvertibleNativeHandle<CVoiceContainerGranulator>.From(nint handle) => new CVoiceContainerGranulatorImpl(handle);
 
   
   public ref float GrainLength { get; }

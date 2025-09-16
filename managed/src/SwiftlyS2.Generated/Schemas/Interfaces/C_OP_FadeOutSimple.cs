@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_FadeOutSimple : CParticleFunctionOperator {
+public partial interface C_OP_FadeOutSimple : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_FadeOutSimple> {
+
+  static C_OP_FadeOutSimple IConvertibleNativeHandle<C_OP_FadeOutSimple>.From(nint handle) => new C_OP_FadeOutSimpleImpl(handle);
 
   
   public ref float FadeOutTime { get; }

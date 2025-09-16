@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmFloatValueNode__CDefinition : CNmValueNode__CDefinition {
+public partial interface CNmFloatValueNode__CDefinition : CNmValueNode__CDefinition, IConvertibleNativeHandle<CNmFloatValueNode__CDefinition> {
+
+  static CNmFloatValueNode__CDefinition IConvertibleNativeHandle<CNmFloatValueNode__CDefinition>.From(nint handle) => new CNmFloatValueNode__CDefinitionImpl(handle);
 
 
 

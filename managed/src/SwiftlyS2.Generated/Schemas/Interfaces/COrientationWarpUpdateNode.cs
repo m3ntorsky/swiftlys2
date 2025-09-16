@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface COrientationWarpUpdateNode : CUnaryUpdateNode {
+public partial interface COrientationWarpUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<COrientationWarpUpdateNode> {
+
+  static COrientationWarpUpdateNode IConvertibleNativeHandle<COrientationWarpUpdateNode>.From(nint handle) => new COrientationWarpUpdateNodeImpl(handle);
 
   
   public ref OrientationWarpMode_t Mode { get; }

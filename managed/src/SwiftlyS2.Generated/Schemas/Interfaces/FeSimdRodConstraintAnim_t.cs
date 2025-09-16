@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeSimdRodConstraintAnim_t : ISchemaClass {
+public partial interface FeSimdRodConstraintAnim_t : ISchemaClass, IConvertibleNativeHandle<FeSimdRodConstraintAnim_t> {
+
+  static FeSimdRodConstraintAnim_t IConvertibleNativeHandle<FeSimdRodConstraintAnim_t>.From(nint handle) => new FeSimdRodConstraintAnim_tImpl(handle);
 
   
   // uint16[4]

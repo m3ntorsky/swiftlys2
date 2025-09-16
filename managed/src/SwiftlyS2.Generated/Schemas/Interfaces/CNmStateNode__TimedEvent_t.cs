@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmStateNode__TimedEvent_t : ISchemaClass {
+public partial interface CNmStateNode__TimedEvent_t : ISchemaClass, IConvertibleNativeHandle<CNmStateNode__TimedEvent_t> {
+
+  static CNmStateNode__TimedEvent_t IConvertibleNativeHandle<CNmStateNode__TimedEvent_t>.From(nint handle) => new CNmStateNode__TimedEvent_tImpl(handle);
 
   
   public ref CGlobalSymbol ID { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBodyComponentBaseModelEntity : CBodyComponentSkeletonInstance {
+public partial interface CBodyComponentBaseModelEntity : CBodyComponentSkeletonInstance, IConvertibleNativeHandle<CBodyComponentBaseModelEntity> {
+
+  static CBodyComponentBaseModelEntity IConvertibleNativeHandle<CBodyComponentBaseModelEntity>.From(nint handle) => new CBodyComponentBaseModelEntityImpl(handle);
 
 
 

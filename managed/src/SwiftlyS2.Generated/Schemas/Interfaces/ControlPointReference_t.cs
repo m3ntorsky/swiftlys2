@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ControlPointReference_t : ISchemaClass {
+public partial interface ControlPointReference_t : ISchemaClass, IConvertibleNativeHandle<ControlPointReference_t> {
+
+  static ControlPointReference_t IConvertibleNativeHandle<ControlPointReference_t>.From(nint handle) => new ControlPointReference_tImpl(handle);
 
   
   public ref int ControlPointNameString { get; }

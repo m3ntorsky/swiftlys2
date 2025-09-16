@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventPreDataUpdate_t : ISchemaClass {
+public partial interface EventPreDataUpdate_t : ISchemaClass, IConvertibleNativeHandle<EventPreDataUpdate_t> {
+
+  static EventPreDataUpdate_t IConvertibleNativeHandle<EventPreDataUpdate_t>.From(nint handle) => new EventPreDataUpdate_tImpl(handle);
 
   
   public ref int Count { get; }

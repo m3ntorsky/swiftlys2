@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CInfoInstructorHintBombTargetB : CPointEntity {
+public partial interface CInfoInstructorHintBombTargetB : CPointEntity, IConvertibleNativeHandle<CInfoInstructorHintBombTargetB> {
+
+  static CInfoInstructorHintBombTargetB IConvertibleNativeHandle<CInfoInstructorHintBombTargetB>.From(nint handle) => new CInfoInstructorHintBombTargetBImpl(handle);
 
 
 

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEnvProjectedTexture : CModelPointEntity {
+public partial interface CEnvProjectedTexture : CModelPointEntity, IConvertibleNativeHandle<CEnvProjectedTexture> {
+
+  static CEnvProjectedTexture IConvertibleNativeHandle<CEnvProjectedTexture>.From(nint handle) => new CEnvProjectedTextureImpl(handle);
 
   
   public ref CHandle<CBaseEntity> TargetEntity { get; }

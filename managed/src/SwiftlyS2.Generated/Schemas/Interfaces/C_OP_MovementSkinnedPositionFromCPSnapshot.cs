@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_MovementSkinnedPositionFromCPSnapshot : CParticleFunctionOperator {
+public partial interface C_OP_MovementSkinnedPositionFromCPSnapshot : CParticleFunctionOperator, IConvertibleNativeHandle<C_OP_MovementSkinnedPositionFromCPSnapshot> {
+
+  static C_OP_MovementSkinnedPositionFromCPSnapshot IConvertibleNativeHandle<C_OP_MovementSkinnedPositionFromCPSnapshot>.From(nint handle) => new C_OP_MovementSkinnedPositionFromCPSnapshotImpl(handle);
 
   
   public ref int SnapshotControlPointNumber { get; }

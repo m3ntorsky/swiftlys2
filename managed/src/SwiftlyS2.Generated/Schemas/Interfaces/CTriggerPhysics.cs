@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerPhysics : CBaseTrigger {
+public partial interface CTriggerPhysics : CBaseTrigger, IConvertibleNativeHandle<CTriggerPhysics> {
+
+  static CTriggerPhysics IConvertibleNativeHandle<CTriggerPhysics>.From(nint handle) => new CTriggerPhysicsImpl(handle);
 
   
   public ref float GravityScale { get; }

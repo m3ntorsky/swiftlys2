@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CEntityInstance : ISchemaClass {
+public partial interface CEntityInstance : ISchemaClass, IConvertibleNativeHandle<CEntityInstance> {
+
+  static CEntityInstance IConvertibleNativeHandle<CEntityInstance>.From(nint handle) => new CEntityInstanceImpl(handle);
 
   
   public ref CUtlSymbolLarge PrivateVScripts { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ClutterSceneObject_t : ISchemaClass {
+public partial interface ClutterSceneObject_t : ISchemaClass, IConvertibleNativeHandle<ClutterSceneObject_t> {
+
+  static ClutterSceneObject_t IConvertibleNativeHandle<ClutterSceneObject_t>.From(nint handle) => new ClutterSceneObject_tImpl(handle);
 
   
   public AABB_t Bounds { get; }

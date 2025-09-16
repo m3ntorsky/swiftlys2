@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixDualCompressorDesc_t : ISchemaClass {
+public partial interface VMixDualCompressorDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixDualCompressorDesc_t> {
+
+  static VMixDualCompressorDesc_t IConvertibleNativeHandle<VMixDualCompressorDesc_t>.From(nint handle) => new VMixDualCompressorDesc_tImpl(handle);
 
   
   public ref float RMSTimeMS { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_RenderStatusEffect : CParticleFunctionRenderer {
+public partial interface C_OP_RenderStatusEffect : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_RenderStatusEffect> {
+
+  static C_OP_RenderStatusEffect IConvertibleNativeHandle<C_OP_RenderStatusEffect>.From(nint handle) => new C_OP_RenderStatusEffectImpl(handle);
 
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> TextureColorWarp { get; }

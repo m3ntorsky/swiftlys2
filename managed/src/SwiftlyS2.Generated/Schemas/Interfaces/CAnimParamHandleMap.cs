@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimParamHandleMap : ISchemaClass {
+public partial interface CAnimParamHandleMap : ISchemaClass, IConvertibleNativeHandle<CAnimParamHandleMap> {
+
+  static CAnimParamHandleMap IConvertibleNativeHandle<CAnimParamHandleMap>.From(nint handle) => new CAnimParamHandleMapImpl(handle);
 
   
   // CUtlHashtable< uint16, int16 >

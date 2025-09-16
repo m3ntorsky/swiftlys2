@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPulseCell_PickBestOutflowSelector : CPulseCell_BaseFlow {
+public partial interface CPulseCell_PickBestOutflowSelector : CPulseCell_BaseFlow, IConvertibleNativeHandle<CPulseCell_PickBestOutflowSelector> {
+
+  static CPulseCell_PickBestOutflowSelector IConvertibleNativeHandle<CPulseCell_PickBestOutflowSelector>.From(nint handle) => new CPulseCell_PickBestOutflowSelectorImpl(handle);
 
   
   public ref PulseBestOutflowRules_t CheckType { get; }

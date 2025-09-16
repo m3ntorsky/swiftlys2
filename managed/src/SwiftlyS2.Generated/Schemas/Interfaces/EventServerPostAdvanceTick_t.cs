@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EventServerPostAdvanceTick_t : EventPostAdvanceTick_t {
+public partial interface EventServerPostAdvanceTick_t : EventPostAdvanceTick_t, IConvertibleNativeHandle<EventServerPostAdvanceTick_t> {
+
+  static EventServerPostAdvanceTick_t IConvertibleNativeHandle<EventServerPostAdvanceTick_t>.From(nint handle) => new EventServerPostAdvanceTick_tImpl(handle);
 
 
 

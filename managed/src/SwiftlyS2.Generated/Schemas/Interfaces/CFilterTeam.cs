@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFilterTeam : CBaseFilter {
+public partial interface CFilterTeam : CBaseFilter, IConvertibleNativeHandle<CFilterTeam> {
+
+  static CFilterTeam IConvertibleNativeHandle<CFilterTeam>.From(nint handle) => new CFilterTeamImpl(handle);
 
   
   public ref int FilterTeam { get; }

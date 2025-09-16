@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface EntityKeyValueData_t : ISchemaClass {
+public partial interface EntityKeyValueData_t : ISchemaClass, IConvertibleNativeHandle<EntityKeyValueData_t> {
+
+  static EntityKeyValueData_t IConvertibleNativeHandle<EntityKeyValueData_t>.From(nint handle) => new EntityKeyValueData_tImpl(handle);
 
   
   // CUtlVector< EntityIOConnectionData_t >

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SequenceWeightedList_t : ISchemaClass {
+public partial interface SequenceWeightedList_t : ISchemaClass, IConvertibleNativeHandle<SequenceWeightedList_t> {
+
+  static SequenceWeightedList_t IConvertibleNativeHandle<SequenceWeightedList_t>.From(nint handle) => new SequenceWeightedList_tImpl(handle);
 
   
   public ref int Sequence { get; }

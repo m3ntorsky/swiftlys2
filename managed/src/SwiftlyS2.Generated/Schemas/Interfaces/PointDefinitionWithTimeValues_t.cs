@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface PointDefinitionWithTimeValues_t : PointDefinition_t {
+public partial interface PointDefinitionWithTimeValues_t : PointDefinition_t, IConvertibleNativeHandle<PointDefinitionWithTimeValues_t> {
+
+  static PointDefinitionWithTimeValues_t IConvertibleNativeHandle<PointDefinitionWithTimeValues_t>.From(nint handle) => new PointDefinitionWithTimeValues_tImpl(handle);
 
   
   public ref float TimeDuration { get; }

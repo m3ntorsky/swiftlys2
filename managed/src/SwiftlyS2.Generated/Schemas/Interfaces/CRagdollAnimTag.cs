@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRagdollAnimTag : CAnimTagBase {
+public partial interface CRagdollAnimTag : CAnimTagBase, IConvertibleNativeHandle<CRagdollAnimTag> {
+
+  static CRagdollAnimTag IConvertibleNativeHandle<CRagdollAnimTag>.From(nint handle) => new CRagdollAnimTagImpl(handle);
 
   
   public ref CGlobalSymbol ProfileName { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_RandomAlpha : CParticleFunctionInitializer {
+public partial interface C_INIT_RandomAlpha : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_RandomAlpha> {
+
+  static C_INIT_RandomAlpha IConvertibleNativeHandle<C_INIT_RandomAlpha>.From(nint handle) => new C_INIT_RandomAlphaImpl(handle);
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

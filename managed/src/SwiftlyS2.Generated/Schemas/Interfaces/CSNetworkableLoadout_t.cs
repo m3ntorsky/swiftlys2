@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSNetworkableLoadout_t : ISchemaClass {
+public partial interface CSNetworkableLoadout_t : ISchemaClass, IConvertibleNativeHandle<CSNetworkableLoadout_t> {
+
+  static CSNetworkableLoadout_t IConvertibleNativeHandle<CSNetworkableLoadout_t>.From(nint handle) => new CSNetworkableLoadout_tImpl(handle);
 
   
   public CEconItemView Item { get; }

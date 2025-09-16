@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface locksound_t : ISchemaClass {
+public partial interface locksound_t : ISchemaClass, IConvertibleNativeHandle<locksound_t> {
+
+  static locksound_t IConvertibleNativeHandle<locksound_t>.From(nint handle) => new locksound_tImpl(handle);
 
   
   public ref CUtlSymbolLarge LockedSound { get; }

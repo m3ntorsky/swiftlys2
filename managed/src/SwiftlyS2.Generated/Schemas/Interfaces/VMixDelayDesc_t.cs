@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface VMixDelayDesc_t : ISchemaClass {
+public partial interface VMixDelayDesc_t : ISchemaClass, IConvertibleNativeHandle<VMixDelayDesc_t> {
+
+  static VMixDelayDesc_t IConvertibleNativeHandle<VMixDelayDesc_t>.From(nint handle) => new VMixDelayDesc_tImpl(handle);
 
   
   public VMixFilterDesc_t FeedbackFilter { get; }

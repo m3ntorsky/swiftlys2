@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_OP_GameDecalRenderer : CParticleFunctionRenderer {
+public partial interface C_OP_GameDecalRenderer : CParticleFunctionRenderer, IConvertibleNativeHandle<C_OP_GameDecalRenderer> {
+
+  static C_OP_GameDecalRenderer IConvertibleNativeHandle<C_OP_GameDecalRenderer>.From(nint handle) => new C_OP_GameDecalRendererImpl(handle);
 
   
   public ref CGlobalSymbol DecalGroupName { get; }

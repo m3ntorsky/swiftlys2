@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavLinkAnimgraphVar : ISchemaClass {
+public partial interface CNavLinkAnimgraphVar : ISchemaClass, IConvertibleNativeHandle<CNavLinkAnimgraphVar> {
+
+  static CNavLinkAnimgraphVar IConvertibleNativeHandle<CNavLinkAnimgraphVar>.From(nint handle) => new CNavLinkAnimgraphVarImpl(handle);
 
   
   public ref CGlobalSymbol AnimGraphNavlinkType { get; }

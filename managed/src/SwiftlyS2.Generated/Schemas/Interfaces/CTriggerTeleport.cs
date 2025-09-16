@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTriggerTeleport : CBaseTrigger {
+public partial interface CTriggerTeleport : CBaseTrigger, IConvertibleNativeHandle<CTriggerTeleport> {
+
+  static CTriggerTeleport IConvertibleNativeHandle<CTriggerTeleport>.From(nint handle) => new CTriggerTeleportImpl(handle);
 
   
   public ref CUtlSymbolLarge Landmark { get; }

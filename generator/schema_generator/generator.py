@@ -57,19 +57,10 @@ class Writer():
     self.class_updator_template = open("templates/class_updator_template.cs", "r").read()
     self.interface_updator_template = open("templates/interface_updator_template.cs", "r").read()
 
-    self.conversion_type_template = open("templates/conversion_type_template.cs", "r").read()
-
     self.enum_template = open("templates/enum_template.cs", "r").read()
 
     self.base_class = self.class_def["base_classes"][0] if "base_classes" in self.class_def else "SchemaClass"
     self.base_class = self.base_class.replace(":", "_")
-  
-  def write_conversion(self, conversions):
-    params = {
-      "INTERFACE_NAME": get_interface_name(self.class_name),
-      "CLASS_NAME": get_impl_name(self.class_name),
-    }
-    conversions.append(render_template(self.conversion_type_template, params))
 
   def write_class(self):
     self.class_file_handle = open(OUT_DIR / "Classes" / f"{get_impl_name(self.class_name)}.cs", "w")
@@ -163,6 +154,7 @@ class Writer():
     params = {
       "INTERFACE_NAME": get_interface_name(self.class_name),
       "BASE_INTERFACE": get_interface_name(self.base_class),
+      "IMPL_TYPE": get_impl_name(self.class_name),
       "FIELDS": "\n".join(fields),
       "UPDATORS": "\n".join(updators)
     }
@@ -198,13 +190,11 @@ with open("sdk.json", "r") as f:
   all_class_names = [class_def["name"] for class_def in data["classes"]]
   all_enum_names = [enum_def["name"] for enum_def in data["enums"]]
 
-  conversions = []
   for class_def in tqdm(data["classes"], desc="Classes"):
     if class_def["name"] in blacklisted_classes:
       continue
 
     writer = Writer(class_def, all_class_names, all_enum_names)
-    writer.write_conversion(conversions)
     writer.write_class()
     writer.write_interface()
 
@@ -214,9 +204,3 @@ with open("sdk.json", "r") as f:
 
     writer = Writer(enum_def, all_class_names, all_enum_names)
     writer.write_enum()
-
-  with open(OUT_DIR / "Conversions.cs", "w") as f:
-    with open ("templates/conversion_template.cs", "r") as t:
-      f.write(render_template(t.read(), {
-        "CONVERSIONS": "\n".join(conversions)
-      }))

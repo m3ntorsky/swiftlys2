@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPathQueryUtil : ISchemaClass {
+public partial interface CPathQueryUtil : ISchemaClass, IConvertibleNativeHandle<CPathQueryUtil> {
+
+  static CPathQueryUtil IConvertibleNativeHandle<CPathQueryUtil>.From(nint handle) => new CPathQueryUtilImpl(handle);
 
   
   public ref CTransform PathToEntityTransform { get; }

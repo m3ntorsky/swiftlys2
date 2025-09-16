@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CLogicMeasureMovement : CLogicalEntity {
+public partial interface CLogicMeasureMovement : CLogicalEntity, IConvertibleNativeHandle<CLogicMeasureMovement> {
+
+  static CLogicMeasureMovement IConvertibleNativeHandle<CLogicMeasureMovement>.From(nint handle) => new CLogicMeasureMovementImpl(handle);
 
   
   public ref CUtlSymbolLarge StrMeasureTarget { get; }

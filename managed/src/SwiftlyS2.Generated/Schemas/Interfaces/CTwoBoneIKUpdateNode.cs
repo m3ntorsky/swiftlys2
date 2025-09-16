@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CTwoBoneIKUpdateNode : CUnaryUpdateNode {
+public partial interface CTwoBoneIKUpdateNode : CUnaryUpdateNode, IConvertibleNativeHandle<CTwoBoneIKUpdateNode> {
+
+  static CTwoBoneIKUpdateNode IConvertibleNativeHandle<CTwoBoneIKUpdateNode>.From(nint handle) => new CTwoBoneIKUpdateNodeImpl(handle);
 
   
   public TwoBoneIKSettings_t OpFixedData { get; }

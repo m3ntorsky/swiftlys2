@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmIsTargetSetNode__CDefinition : CNmBoolValueNode__CDefinition {
+public partial interface CNmIsTargetSetNode__CDefinition : CNmBoolValueNode__CDefinition, IConvertibleNativeHandle<CNmIsTargetSetNode__CDefinition> {
+
+  static CNmIsTargetSetNode__CDefinition IConvertibleNativeHandle<CNmIsTargetSetNode__CDefinition>.From(nint handle) => new CNmIsTargetSetNode__CDefinitionImpl(handle);
 
   
   public ref short InputValueNodeIdx { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSGameModeRules_ArmsRace : CCSGameModeRules {
+public partial interface CCSGameModeRules_ArmsRace : CCSGameModeRules, IConvertibleNativeHandle<CCSGameModeRules_ArmsRace> {
+
+  static CCSGameModeRules_ArmsRace IConvertibleNativeHandle<CCSGameModeRules_ArmsRace>.From(nint handle) => new CCSGameModeRules_ArmsRaceImpl(handle);
 
   
   public ref CUtlVector<CUtlString> WeaponSequence { get; }

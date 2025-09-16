@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface SolveIKChainPoseOpFixedSettings_t : ISchemaClass {
+public partial interface SolveIKChainPoseOpFixedSettings_t : ISchemaClass, IConvertibleNativeHandle<SolveIKChainPoseOpFixedSettings_t> {
+
+  static SolveIKChainPoseOpFixedSettings_t IConvertibleNativeHandle<SolveIKChainPoseOpFixedSettings_t>.From(nint handle) => new SolveIKChainPoseOpFixedSettings_tImpl(handle);
 
   
   // CUtlVector< ChainToSolveData_t >

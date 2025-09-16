@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimScriptBase : ISchemaClass {
+public partial interface CAnimScriptBase : ISchemaClass, IConvertibleNativeHandle<CAnimScriptBase> {
+
+  static CAnimScriptBase IConvertibleNativeHandle<CAnimScriptBase>.From(nint handle) => new CAnimScriptBaseImpl(handle);
 
   
   public ref bool IsValid { get; }

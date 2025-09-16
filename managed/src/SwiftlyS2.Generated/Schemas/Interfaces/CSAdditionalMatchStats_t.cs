@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSAdditionalMatchStats_t : CSAdditionalPerRoundStats_t {
+public partial interface CSAdditionalMatchStats_t : CSAdditionalPerRoundStats_t, IConvertibleNativeHandle<CSAdditionalMatchStats_t> {
+
+  static CSAdditionalMatchStats_t IConvertibleNativeHandle<CSAdditionalMatchStats_t>.From(nint handle) => new CSAdditionalMatchStats_tImpl(handle);
 
   
   public ref int NumRoundsSurvived { get; }

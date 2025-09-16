@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IKTargetSettings_t : ISchemaClass {
+public partial interface IKTargetSettings_t : ISchemaClass, IConvertibleNativeHandle<IKTargetSettings_t> {
+
+  static IKTargetSettings_t IConvertibleNativeHandle<IKTargetSettings_t>.From(nint handle) => new IKTargetSettings_tImpl(handle);
 
   
   public ref IKTargetSource TargetSource { get; }

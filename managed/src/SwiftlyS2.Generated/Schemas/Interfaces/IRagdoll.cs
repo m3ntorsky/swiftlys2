@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface IRagdoll : ISchemaClass {
+public partial interface IRagdoll : ISchemaClass, IConvertibleNativeHandle<IRagdoll> {
+
+  static IRagdoll IConvertibleNativeHandle<IRagdoll>.From(nint handle) => new IRagdollImpl(handle);
 
 
 

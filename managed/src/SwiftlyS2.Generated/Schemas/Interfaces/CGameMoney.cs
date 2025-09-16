@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CGameMoney : CRulePointEntity {
+public partial interface CGameMoney : CRulePointEntity, IConvertibleNativeHandle<CGameMoney> {
+
+  static CGameMoney IConvertibleNativeHandle<CGameMoney>.From(nint handle) => new CGameMoneyImpl(handle);
 
   
   public CEntityIOOutput OnMoneySpent { get; }

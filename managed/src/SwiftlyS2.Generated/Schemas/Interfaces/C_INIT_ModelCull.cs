@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_ModelCull : CParticleFunctionInitializer {
+public partial interface C_INIT_ModelCull : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_ModelCull> {
+
+  static C_INIT_ModelCull IConvertibleNativeHandle<C_INIT_ModelCull>.From(nint handle) => new C_INIT_ModelCullImpl(handle);
 
   
   public ref int ControlPointNumber { get; }

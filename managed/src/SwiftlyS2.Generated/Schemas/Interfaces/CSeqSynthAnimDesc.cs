@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSeqSynthAnimDesc : ISchemaClass {
+public partial interface CSeqSynthAnimDesc : ISchemaClass, IConvertibleNativeHandle<CSeqSynthAnimDesc> {
+
+  static CSeqSynthAnimDesc IConvertibleNativeHandle<CSeqSynthAnimDesc>.From(nint handle) => new CSeqSynthAnimDescImpl(handle);
 
   
   public ref CBufferString Name { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNavWalkable : CPointEntity {
+public partial interface CNavWalkable : CPointEntity, IConvertibleNativeHandle<CNavWalkable> {
+
+  static CNavWalkable IConvertibleNativeHandle<CNavWalkable>.From(nint handle) => new CNavWalkableImpl(handle);
 
 
 

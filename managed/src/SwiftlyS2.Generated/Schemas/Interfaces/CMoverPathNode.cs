@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMoverPathNode : CPointEntity {
+public partial interface CMoverPathNode : CPointEntity, IConvertibleNativeHandle<CMoverPathNode> {
+
+  static CMoverPathNode IConvertibleNativeHandle<CMoverPathNode>.From(nint handle) => new CMoverPathNodeImpl(handle);
 
   
   public ref Vector InTangentLocal { get; }

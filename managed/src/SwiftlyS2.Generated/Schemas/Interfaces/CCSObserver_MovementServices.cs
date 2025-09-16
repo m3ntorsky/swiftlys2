@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CCSObserver_MovementServices : CPlayer_MovementServices {
+public partial interface CCSObserver_MovementServices : CPlayer_MovementServices, IConvertibleNativeHandle<CCSObserver_MovementServices> {
+
+  static CCSObserver_MovementServices IConvertibleNativeHandle<CCSObserver_MovementServices>.From(nint handle) => new CCSObserver_MovementServicesImpl(handle);
 
 
 

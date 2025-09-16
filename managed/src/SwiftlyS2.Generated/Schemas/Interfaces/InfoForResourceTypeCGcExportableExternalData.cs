@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface InfoForResourceTypeCGcExportableExternalData : ISchemaClass {
+public partial interface InfoForResourceTypeCGcExportableExternalData : ISchemaClass, IConvertibleNativeHandle<InfoForResourceTypeCGcExportableExternalData> {
+
+  static InfoForResourceTypeCGcExportableExternalData IConvertibleNativeHandle<InfoForResourceTypeCGcExportableExternalData>.From(nint handle) => new InfoForResourceTypeCGcExportableExternalDataImpl(handle);
 
 
 

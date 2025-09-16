@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CDSPMixgroupModifier : ISchemaClass {
+public partial interface CDSPMixgroupModifier : ISchemaClass, IConvertibleNativeHandle<CDSPMixgroupModifier> {
+
+  static CDSPMixgroupModifier IConvertibleNativeHandle<CDSPMixgroupModifier>.From(nint handle) => new CDSPMixgroupModifierImpl(handle);
 
   
   public ref CUtlString Mixgroup { get; }

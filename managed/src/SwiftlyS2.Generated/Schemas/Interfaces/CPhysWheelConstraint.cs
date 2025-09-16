@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysWheelConstraint : CPhysConstraint {
+public partial interface CPhysWheelConstraint : CPhysConstraint, IConvertibleNativeHandle<CPhysWheelConstraint> {
+
+  static CPhysWheelConstraint IConvertibleNativeHandle<CPhysWheelConstraint>.From(nint handle) => new CPhysWheelConstraintImpl(handle);
 
   
   public ref float SuspensionFrequency { get; }

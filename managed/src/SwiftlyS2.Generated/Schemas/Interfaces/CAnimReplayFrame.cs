@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CAnimReplayFrame : ISchemaClass {
+public partial interface CAnimReplayFrame : ISchemaClass, IConvertibleNativeHandle<CAnimReplayFrame> {
+
+  static CAnimReplayFrame IConvertibleNativeHandle<CAnimReplayFrame>.From(nint handle) => new CAnimReplayFrameImpl(handle);
 
   
   public ref CUtlVector<CUtlBinaryBlock> InputDataBlocks { get; }

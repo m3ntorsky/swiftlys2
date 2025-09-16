@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CMotionGraphConfig : ISchemaClass {
+public partial interface CMotionGraphConfig : ISchemaClass, IConvertibleNativeHandle<CMotionGraphConfig> {
+
+  static CMotionGraphConfig IConvertibleNativeHandle<CMotionGraphConfig>.From(nint handle) => new CMotionGraphConfigImpl(handle);
 
   
   public ISchemaFixedArray<float> ParamValues { get; }

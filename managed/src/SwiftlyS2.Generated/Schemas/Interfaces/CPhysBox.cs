@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPhysBox : CBreakable {
+public partial interface CPhysBox : CBreakable, IConvertibleNativeHandle<CPhysBox> {
+
+  static CPhysBox IConvertibleNativeHandle<CPhysBox>.From(nint handle) => new CPhysBoxImpl(handle);
 
   
   public ref int DamageType { get; }

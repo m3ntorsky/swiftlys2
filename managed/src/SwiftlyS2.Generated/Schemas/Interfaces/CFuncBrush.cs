@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncBrush : CBaseModelEntity {
+public partial interface CFuncBrush : CBaseModelEntity, IConvertibleNativeHandle<CFuncBrush> {
+
+  static CFuncBrush IConvertibleNativeHandle<CFuncBrush>.From(nint handle) => new CFuncBrushImpl(handle);
 
   
   public ref BrushSolidities_e Solidity { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CHandshakeAnimTagBase : CAnimTagBase {
+public partial interface CHandshakeAnimTagBase : CAnimTagBase, IConvertibleNativeHandle<CHandshakeAnimTagBase> {
+
+  static CHandshakeAnimTagBase IConvertibleNativeHandle<CHandshakeAnimTagBase>.From(nint handle) => new CHandshakeAnimTagBaseImpl(handle);
 
   
   public ref bool IsDisableTag { get; }

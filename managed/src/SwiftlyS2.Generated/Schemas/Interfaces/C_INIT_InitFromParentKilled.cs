@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface C_INIT_InitFromParentKilled : CParticleFunctionInitializer {
+public partial interface C_INIT_InitFromParentKilled : CParticleFunctionInitializer, IConvertibleNativeHandle<C_INIT_InitFromParentKilled> {
+
+  static C_INIT_InitFromParentKilled IConvertibleNativeHandle<C_INIT_InitFromParentKilled>.From(nint handle) => new C_INIT_InitFromParentKilledImpl(handle);
 
   
   public ParticleAttributeIndex_t AttributeToCopy { get; }

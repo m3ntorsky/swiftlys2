@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncWater : CBaseModelEntity {
+public partial interface CFuncWater : CBaseModelEntity, IConvertibleNativeHandle<CFuncWater> {
+
+  static CFuncWater IConvertibleNativeHandle<CFuncWater>.From(nint handle) => new CFuncWaterImpl(handle);
 
   
   public CBuoyancyHelper BuoyancyHelper { get; }

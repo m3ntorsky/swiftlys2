@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CNmEventConsumerParticle : CNmEventConsumer {
+public partial interface CNmEventConsumerParticle : CNmEventConsumer, IConvertibleNativeHandle<CNmEventConsumerParticle> {
+
+  static CNmEventConsumerParticle IConvertibleNativeHandle<CNmEventConsumerParticle>.From(nint handle) => new CNmEventConsumerParticleImpl(handle);
 
 
 

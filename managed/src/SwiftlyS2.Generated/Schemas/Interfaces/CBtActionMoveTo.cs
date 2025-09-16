@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CBtActionMoveTo : CBtNode {
+public partial interface CBtActionMoveTo : CBtNode, IConvertibleNativeHandle<CBtActionMoveTo> {
+
+  static CBtActionMoveTo IConvertibleNativeHandle<CBtActionMoveTo>.From(nint handle) => new CBtActionMoveToImpl(handle);
 
   
   public ref CUtlString DestinationInputKey { get; }

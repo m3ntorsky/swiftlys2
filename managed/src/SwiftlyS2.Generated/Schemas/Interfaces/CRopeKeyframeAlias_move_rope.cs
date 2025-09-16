@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CRopeKeyframeAlias_move_rope : CRopeKeyframe {
+public partial interface CRopeKeyframeAlias_move_rope : CRopeKeyframe, IConvertibleNativeHandle<CRopeKeyframeAlias_move_rope> {
+
+  static CRopeKeyframeAlias_move_rope IConvertibleNativeHandle<CRopeKeyframeAlias_move_rope>.From(nint handle) => new CRopeKeyframeAlias_move_ropeImpl(handle);
 
 
 

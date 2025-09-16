@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CPointHurt : CPointEntity {
+public partial interface CPointHurt : CPointEntity, IConvertibleNativeHandle<CPointHurt> {
+
+  static CPointHurt IConvertibleNativeHandle<CPointHurt>.From(nint handle) => new CPointHurtImpl(handle);
 
   
   public ref int Damage { get; }

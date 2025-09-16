@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CSoundEventSphereEntity : CSoundEventEntity {
+public partial interface CSoundEventSphereEntity : CSoundEventEntity, IConvertibleNativeHandle<CSoundEventSphereEntity> {
+
+  static CSoundEventSphereEntity IConvertibleNativeHandle<CSoundEventSphereEntity>.From(nint handle) => new CSoundEventSphereEntityImpl(handle);
 
   
   public ref float Radius { get; }

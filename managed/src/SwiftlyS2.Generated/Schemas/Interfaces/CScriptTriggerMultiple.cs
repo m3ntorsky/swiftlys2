@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CScriptTriggerMultiple : CTriggerMultiple {
+public partial interface CScriptTriggerMultiple : CTriggerMultiple, IConvertibleNativeHandle<CScriptTriggerMultiple> {
+
+  static CScriptTriggerMultiple IConvertibleNativeHandle<CScriptTriggerMultiple>.From(nint handle) => new CScriptTriggerMultipleImpl(handle);
 
   
   public ref Vector Extent { get; }

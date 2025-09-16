@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface CFuncMover : CBaseModelEntity {
+public partial interface CFuncMover : CBaseModelEntity, IConvertibleNativeHandle<CFuncMover> {
+
+  static CFuncMover IConvertibleNativeHandle<CFuncMover>.From(nint handle) => new CFuncMoverImpl(handle);
 
   
   public ref CUtlSymbolLarge PathName { get; }

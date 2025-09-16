@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface FeEffectDesc_t : ISchemaClass {
+public partial interface FeEffectDesc_t : ISchemaClass, IConvertibleNativeHandle<FeEffectDesc_t> {
+
+  static FeEffectDesc_t IConvertibleNativeHandle<FeEffectDesc_t>.From(nint handle) => new FeEffectDesc_tImpl(handle);
 
   
   public ref CUtlString Name { get; }

@@ -4,10 +4,13 @@
 
 using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public partial interface ConfigIndex : ISchemaClass {
+public partial interface ConfigIndex : ISchemaClass, IConvertibleNativeHandle<ConfigIndex> {
+
+  static ConfigIndex IConvertibleNativeHandle<ConfigIndex>.From(nint handle) => new ConfigIndexImpl(handle);
 
   
   public ref ushort Group { get; }
