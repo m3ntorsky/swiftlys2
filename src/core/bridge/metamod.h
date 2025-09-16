@@ -23,6 +23,8 @@
 #include <igameevents.h>
 #include <sh_vector.h>
 #include <core/sourcehook/sourcehook.h>
+#include <public/steam/steam_api_common.h>
+#include <public/steam/isteamugc.h>
 
 #include <api/sdk/serversideclient.h>
 #include <public/networksystem/netmessage.h>
@@ -42,6 +44,8 @@ public:
     void SendConsoleMessage(const std::string& message);
 
     bool OnConvarQuery(const CNetMessagePB<CCLCMsg_RespondCvarValue>& msg);
+    void Hook_GameServerSteamAPIActivated();
+    void Hook_GameServerSteamAPIDeactivated();
 
 public:
     const char* GetAuthor();
@@ -55,6 +59,7 @@ public:
 };
 
 extern SwiftlyMMBridge g_MMPluginBridge;
+extern CSteamGameServerAPIContext g_SteamAPI;
 
 PLUGIN_GLOBALVARS();
 

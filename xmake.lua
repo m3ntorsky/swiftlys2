@@ -134,6 +134,7 @@ target("swiftlys2")
             sdk_path.."/lib/public/win64/interfaces.lib",
             sdk_path.."/lib/public/win64/mathlib.lib",
             sdk_path.."/lib/public/win64/2015/libprotobuf.lib",
+            sdk_path.."/lib/public/win64/steam_api64.lib",
         })
     else
         add_links({
@@ -142,6 +143,7 @@ target("swiftlys2")
             sdk_path.."/lib/linux64/interfaces.a",
             sdk_path.."/lib/linux64/mathlib.a",
             sdk_path.."/lib/linux64/release/libprotobuf.a",
+            sdk_path.."/lib/linux64/libsteam_api.so",
         })
     end
 
@@ -236,7 +238,6 @@ target("swiftlys2")
             "odbc32",
             "odbccp32",
             "dbghelp",
-            sdk_path.."/lib/public/win64/steam_api64.lib",
         })
     else
         add_links({
@@ -254,8 +255,6 @@ target("swiftlys2")
             "brotlidec",
             "backtrace",
             "stdc++",
-
-            sdk_path.."/lib/linux64/libsteam_api.so",
         })
     end
 

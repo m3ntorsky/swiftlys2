@@ -23,13 +23,18 @@
 #include <memory/gamedata/manager.h>
 
 #include <public/iserver.h>
+#include <public/tier0/icommandline.h>
+#include <steam/steam_gameserver.h>
 
 SwiftlyMMBridge g_MMPluginBridge;
+CSteamGameServerAPIContext g_SteamAPI;
 
 class GameSessionConfiguration_t
 {
 };
 
+SH_DECL_HOOK0_void(IServerGameDLL, GameServerSteamAPIActivated, SH_NOATTRIB, 0);
+SH_DECL_HOOK0_void(IServerGameDLL, GameServerSteamAPIDeactivated, SH_NOATTRIB, 0);
 SH_DECL_HOOK1(CServerSideClientBase, ProcessRespondCvarValue, SH_NOATTRIB, 0, bool, const CNetMessagePB<CCLCMsg_RespondCvarValue>&);
 SH_DECL_HOOK2(IGameEventManager2, FireEvent, SH_NOATTRIB, 0, bool, IGameEvent*, bool);
 SH_DECL_HOOK2(IGameEventManager2, LoadEventsFromFile, SH_NOATTRIB, 0, int, const char*, bool);
@@ -58,11 +63,29 @@ bool SwiftlyMMBridge::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxle
     void* serverSideClientVTable = eng.GetVirtualTableByName("CServerSideClient");
     OnConVarQueryID = SH_ADD_DVPHOOK(CServerSideClientBase, ProcessRespondCvarValue, (CServerSideClientBase*)serverSideClientVTable, SH_MEMBER(this, &SwiftlyMMBridge::OnConvarQuery), false);
 
-    return g_SwiftlyCore.Load(BridgeKind_t::Metamod);
+    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
+
+    SH_ADD_HOOK_MEMFUNC(IServerGameDLL, GameServerSteamAPIActivated, server, this, &SwiftlyMMBridge::Hook_GameServerSteamAPIActivated, false);
+    SH_ADD_HOOK_MEMFUNC(IServerGameDLL, GameServerSteamAPIDeactivated, server, this, &SwiftlyMMBridge::Hook_GameServerSteamAPIDeactivated, false);
+
+    bool result = g_SwiftlyCore.Load(BridgeKind_t::Metamod);
+
+    if (late)
+    {
+        g_SteamAPI.Init();
+        auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+        playermanager->SteamAPIServerActivated();
+    }
+
+    return result;
 }
 
 bool SwiftlyMMBridge::Unload(char* error, size_t maxlen)
 {
+    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
+    SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameServerSteamAPIActivated, server, this, &SwiftlyMMBridge::Hook_GameServerSteamAPIActivated, false);
+    SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameServerSteamAPIDeactivated, server, this, &SwiftlyMMBridge::Hook_GameServerSteamAPIDeactivated, false);
+
     return g_SwiftlyCore.Unload();
 }
 
@@ -115,6 +138,22 @@ bool SwiftlyMMBridge::OnConvarQuery(const CNetMessagePB<CCLCMsg_RespondCvarValue
     cvarmanager->OnClientQueryCvar(client->GetPlayerSlot().Get(), msg.name(), msg.value());
 
     RETURN_META_VALUE(MRES_IGNORED, true);
+}
+
+void SwiftlyMMBridge::Hook_GameServerSteamAPIActivated()
+{
+    if (!CommandLine()->HasParm("-dedicated") || g_SteamAPI.SteamUGC())
+        return;
+
+    g_SteamAPI.Init();
+    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    playermanager->SteamAPIServerActivated();
+    RETURN_META(MRES_IGNORED);
+}
+
+void SwiftlyMMBridge::Hook_GameServerSteamAPIDeactivated()
+{
+    RETURN_META(MRES_IGNORED);
 }
 
 const char* SwiftlyMMBridge::GetAuthor()
