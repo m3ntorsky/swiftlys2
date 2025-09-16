@@ -2,6 +2,7 @@
 
 using System.Buffers;
 using System.Text;
+using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Core.Natives;
 

@@ -15,21 +15,29 @@ PARAM_TYPE_MAP = {
     "ptr": "void*",
     "string": "string",
     "void": "void",
+    "vector2": "Vector2D",
+    "vector": "Vector",
+    "vector4": "Vector4D",
+    "qangle": "QAngle",
+    "bytes": "byte[]",
 }
 
 DELEGATE_PARAM_TYPE_MAP = {
     **PARAM_TYPE_MAP,
     "string": "byte*",
+    "bytes": "byte*"
 }
 
 DELEGATE_RETURN_TYPE_MAP = {
     **PARAM_TYPE_MAP,
     "string": "int",
+    "bytes": "int",
 }
 
 RETURN_TYPE_MAP = {
     **PARAM_TYPE_MAP,
     "string": "string",
+    "bytes": "byte[]",
 }
 
 EOL = os.linesep
@@ -43,8 +51,13 @@ def split_by_last_dot(value: str):
 
 
 def is_buffer_return(return_type: str) -> bool:
+    return is_string_buffer_return(return_type) or is_bytes_buffer_return(return_type)
+
+def is_string_buffer_return(return_type: str) -> bool:
     return return_type == "string"
 
+def is_bytes_buffer_return(return_type: str) -> bool:
+    return return_type == "bytes"
 
 def make_string_marshal(param_name: str, state: dict):
     pre_lines = [
@@ -66,6 +79,16 @@ def make_string_marshal(param_name: str, state: dict):
     state["closing_bracket"] = state.get("closing_bracket", 0) + 1
     return pre_lines
 
+def make_bytes_marshal(param_name: str, state: dict):
+    pre_lines = [
+        f"{param_name}BufferPtr",
+        f"{EOL}"
+        f"{INDENT}{INDENT}fixed (byte* {param_name}BufferPtr = {param_name}) {{{EOL}",
+        f"{INDENT}{INDENT}",
+    ]
+    state["pool"] = False
+    state["closing_bracket"] = state.get("closing_bracket", 0) + 1
+    return pre_lines
 
 def make_string_return_marshal(state: dict):
     pre_lines = [
@@ -85,6 +108,24 @@ def make_string_return_marshal(state: dict):
     state["closing_bracket"] = state.get("closing_bracket", 0) + 1
     return pre_lines
 
+def make_bytes_return_marshal(state: dict):
+    pre_lines = [
+        "retBytes",
+        (
+            ""
+            if state.get("pool")
+            else f"{INDENT}{INDENT}var pool = ArrayPool<byte>.Shared;"
+        )
+        + f"{EOL}"
+        f"{INDENT}{INDENT}var retBuffer = pool.Rent(ret);{EOL}"
+        f"{INDENT}{INDENT}fixed (byte* retBufferPtr = retBuffer) {{{EOL}",
+        f"{INDENT}{INDENT}var retBytes = new byte[ret];{EOL}"
+        f"{INDENT}{INDENT}for(int i = 0; i < ret; i++) retBytes[i] = retBufferPtr[i];{EOL}"
+        f"{INDENT}{INDENT}pool.Return(retBuffer);{EOL}{EOL}",
+    ]
+    state["pool"] = True
+    state["closing_bracket"] = state.get("closing_bracket", 0) + 1
+    return pre_lines
 
 def emit(chunks: list[str], text: str = ""):
     chunks.append(text + EOL)
@@ -104,6 +145,7 @@ def parse_native(lines: list[str]):
     emit(chunks)
     emit(chunks, "using System.Buffers;")
     emit(chunks, "using System.Text;")
+    emit(chunks, "using SwiftlyS2.Shared.Natives;")
     emit(chunks)
     emit(chunks, f"namespace SwiftlyS2.Core.Natives;")
     emit(chunks)
@@ -150,11 +192,19 @@ def parse_native(lines: list[str]):
                 new_name, pre_code, post_code = make_string_marshal(n, state)
                 renamed_param[n] = new_name
                 marshals.append((pre_code, post_code))
+            elif t == "byte[]":
+                new_name, pre_code, post_code = make_bytes_marshal(n, state)
+                renamed_param[n] = new_name
+                marshals.append((pre_code, post_code))
             else:
                 renamed_param[n] = n
 
-        if is_buffer_return(return_type):
+        if is_string_buffer_return(return_type):
             new_name, pre_code, post_code = make_string_return_marshal(state)
+            renamed_ret = new_name
+            ret_marshal = (pre_code, post_code)
+        elif is_bytes_buffer_return(return_type):
+            new_name, pre_code, post_code = make_bytes_return_marshal(state)
             renamed_ret = new_name
             ret_marshal = (pre_code, post_code)
 
