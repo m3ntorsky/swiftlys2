@@ -3,9 +3,12 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Microsoft.Extensions.Logging;
+using SwiftlyS2.Core.GameEvents;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Natives.NativeObjects;
 using SwiftlyS2.Core.SchemaDefinitions;
+using SwiftlyS2.Shared;
+using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Core.Services;
@@ -14,13 +17,15 @@ internal class TestService {
 
   private ILogger<TestService> _Logger { get; init; }
   private ProfileService _ProfileService { get; init; }
+  private ISwiftlyCore _Core { get; init; }
   public unsafe TestService(
-    ILoggerFactory loggerFactory,
-    ProfileService profileService
+    ILogger<TestService> logger,
+    ProfileService profileService,
+    ISwiftlyCore core
   ) {
-    _Logger = loggerFactory.CreateLogger<TestService>();
     _ProfileService = profileService;
-
+    _Core = core;
+    _Logger = logger;
 
     Test();
   }
@@ -29,6 +34,18 @@ internal class TestService {
 
   public void Test()
   {
+    // try {
+
+    //   _Core.GameEvent.HookPre<EventTest>((@event) => {
+    //   throw new Exception("WTF");
+    //   return false;
+    // });
+
+
+    // } catch (Exception e) {
+    //   _Logger.LogError(e, "");
+    // }
+
     Task.Run(async () =>
     {
       while (true)

@@ -21,8 +21,8 @@ internal static class NativeSignatures {
     return ret;
   }
   }
-  private unsafe static delegate* unmanaged<byte*, void*> _Fetch;
-  public unsafe static void* Fetch(string signatureName) {
+  private unsafe static delegate* unmanaged<byte*, nint> _Fetch;
+  public unsafe static nint Fetch(string signatureName) {
     var pool = ArrayPool<byte>.Shared;
     var signatureNameLength = Encoding.UTF8.GetByteCount(signatureName);
     var signatureNameBuffer = pool.Rent(signatureNameLength + 1);

@@ -2,7 +2,7 @@ using System.Data.Common;
 using System.Reflection;
 using System.Text.Json;
 using Microsoft.Extensions.Configuration;
-using SwiftlyS2.Core.Plugins;
+using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared.Services;
 
 namespace SwiftlyS2.Core.Services;
@@ -10,11 +10,11 @@ namespace SwiftlyS2.Core.Services;
 internal class PluginConfigurationService : IPluginConfigurationService {
 
   private ConfigurationService _ConfigurationService { get; init; }
-  private PluginId _Id { get; init; }
+  private Services.CoreContext _Id { get; init; }
   private IConfigurationBuilder? _Builder { get; set; }
   private IConfigurationRoot? _Root { get; set; }
 
-  public PluginConfigurationService(PluginId id, ConfigurationService configurationService) {
+  public PluginConfigurationService(Services.CoreContext id, ConfigurationService configurationService) {
     _Id = id;
     _ConfigurationService = configurationService;
   }

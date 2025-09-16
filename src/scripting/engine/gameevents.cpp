@@ -167,29 +167,27 @@ void Bridge_GameEvents_RegisterListener(const char* eventName)
 
 uint64_t Bridge_GameEvents_AddListenerPreCallback(const char* eventName, void* callback)
 {
-    uint64_t hash = hash_64_fnv1a_const(eventName);
     auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
-    return eventmanager->AddGameEventFireListener([eventName, callback, hash](std::string event_name, IGameEvent* event, bool& dont_broadcast) -> bool
+    return eventmanager->AddGameEventFireListener([eventName, callback](std::string event_name, IGameEvent* event, bool& dont_broadcast) -> bool
     {
         if (event_name != eventName) return true;
 
-        typedef bool (*CallbackType)(uint64_t hash, void* event, bool* dont_broadcast);
+        typedef bool (*CallbackType)(void* event, bool* dont_broadcast);
         auto cb = reinterpret_cast<CallbackType>(callback);
-        return cb(hash, event, &dont_broadcast);
+        return cb(event, &dont_broadcast);
     });
 }
 
 uint64_t Bridge_GameEvents_AddListenerPostCallback(const char* eventName, void* callback)
 {
-    uint64_t hash = hash_64_fnv1a_const(eventName);
     auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
-    return eventmanager->AddPostGameEventFireListener([eventName, callback, hash](std::string event_name, IGameEvent* event, bool& dont_broadcast) -> bool
+    return eventmanager->AddPostGameEventFireListener([eventName, callback](std::string event_name, IGameEvent* event, bool& dont_broadcast) -> bool
     {
         if (event_name != eventName) return true;
 
-        typedef bool (*CallbackType)(uint64_t hash, void* event, bool* dont_broadcast);
+        typedef bool (*CallbackType)(void* event, bool* dont_broadcast);
         auto cb = reinterpret_cast<CallbackType>(callback);
-        return cb(hash, event, &dont_broadcast);
+        return cb(event, &dont_broadcast);
     });
 }
 

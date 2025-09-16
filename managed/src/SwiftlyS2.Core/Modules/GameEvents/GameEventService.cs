@@ -1,0 +1,93 @@
+using System.Reflection;
+using Microsoft.Extensions.Logging;
+using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Core.Services;
+using SwiftlyS2.Shared.GameEvents;
+using SwiftlyS2.Shared.Misc;
+
+namespace SwiftlyS2.Core.GameEvents;
+
+internal class GameEventService : IGameEventService, IDisposable {
+
+  private ILoggerFactory _LoggerFactory { get; init; }
+  private CoreContext _Context { get; init; }
+
+  public GameEventService(ILoggerFactory loggerFactory, CoreContext context) {
+    _LoggerFactory = loggerFactory;
+    _Context = context;
+  }
+
+  private readonly List<GameEventCallback> _callbacks = new();
+  private object _lock = new();
+
+  public Guid HookPre<T>(Func<T, HookResult> callback) where T : IGameEvent<T> {
+    GameEventCallback<T> cb = new(callback, true, _LoggerFactory, _Context);
+    GameEventPublisher.Subscribe(cb);
+    lock (_lock) {
+      _callbacks.Add(cb);
+    }
+    return cb.Guid;
+  }
+
+  public Guid HookPost<T>(Func<T, HookResult> callback) where T : IGameEvent<T> {
+    GameEventCallback<T> cb = new(callback, false, _LoggerFactory, _Context);
+    GameEventPublisher.Subscribe(cb);
+    lock (_lock) {
+      _callbacks.Add(cb);
+    }
+    return cb.Guid;
+  }
+
+  public void Unhook(Guid guid) {
+    lock (_lock) {
+      for (int i = 0; i < _callbacks.Count; i++) {
+        var callback = _callbacks[i];
+        if (callback.Guid == guid) {
+          GameEventPublisher.Unsubscribe(callback);
+          _callbacks.RemoveAt(i);
+          break;
+        }
+      }
+    }
+  }
+
+
+  public void UnhookPre<T>() where T : IGameEvent<T> {
+    lock (_lock) {
+      for (int i = 0; i < _callbacks.Count; i++) {
+        var callback = _callbacks[i];
+        if (callback.IsPreHook) {
+          GameEventPublisher.Unsubscribe(callback);
+          _callbacks.RemoveAt(i);
+        }
+      }
+    }
+  }
+
+  public void UnhookPost<T>() where T : IGameEvent<T> {
+    lock (_lock) {
+      for (int i = 0; i < _callbacks.Count; i++) {
+        var callback = _callbacks[i];
+        if (!callback.IsPreHook) {
+          GameEventPublisher.Unsubscribe(callback);
+          _callbacks.RemoveAt(i);
+        }
+      }
+    }
+  }
+
+  public T Create<T>() where T : IGameEvent<T> {
+    unsafe {
+      return T.FromAllocated((nint)NativeGameEvents.CreateEvent(T.GetName()));
+    }
+  }
+
+  public void Dispose() {
+    lock (_lock) {
+      foreach (var callback in _callbacks) {
+        GameEventPublisher.Unsubscribe(callback);
+      }
+      _callbacks.Clear();
+    }
+  }
+}

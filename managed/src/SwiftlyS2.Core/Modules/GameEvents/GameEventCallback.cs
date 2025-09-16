@@ -1,23 +1,71 @@
+using System.Runtime.InteropServices;
+using SwiftlyS2.Shared.GameEvents;
+using SwiftlyS2.Core.Extensions;
+using Microsoft.Extensions.Logging;
+using SwiftlyS2.Core.Services;
+using SwiftlyS2.Shared.Misc;
+
 namespace SwiftlyS2.Core.GameEvents;
 
-internal abstract class GameEventCallback {
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+internal delegate int UnmanagedEventCallback(nint pEvent, nint pDontBroadcast);
 
-  public abstract bool Fire(ulong hash, nint handle);
-}
+internal abstract class GameEventCallback : IEquatable<GameEventCallback> {
 
-internal class GameEventCallback<T> where T : GameEvent, new() {
+  public Guid Guid { get; init; }
 
-  private T _dummy = new();
-  private Func<T, bool> _callback { get; init; }
+  public string EventName { get; init; } = "";
 
-  public GameEventCallback(Func<T, bool> callback) {
-    _callback = callback;
+  public Type EventType { get; init; } = typeof(object);
+
+  public bool IsPreHook { get; init; }
+
+  public nint UnmanagedWrapperPtr { get; init; }
+
+  public bool Equals(GameEventCallback? other) {
+    if (other is null) return false;
+    return Guid == other.Guid;
   }
 
-  public bool Fire(ulong hash, nint handle) {
-    if (hash != _dummy.Hash) return true;
-    T ev = new();
-    // ev.FromExternal(handle);
-    return _callback(ev);
+  public override bool Equals(object? obj)
+  {
+    if (ReferenceEquals(this, obj)) return true;
+    return obj is GameEventCallback other && Equals(other);
+  }
+
+  public override int GetHashCode() {
+    return Guid.GetHashCode();
+  }
+}
+
+internal class GameEventCallback<T> : GameEventCallback where T : IGameEvent<T>
+{
+  private Func<T, HookResult> _callback { get; init; }
+  private ILogger<GameEventCallback<T>> _logger { get; init; }
+  private CoreContext _Context { get; init; }
+
+  private UnmanagedEventCallback _unmanagedCallback;
+
+  public GameEventCallback(Func<T, HookResult> callback, bool pre, ILoggerFactory loggerFactory, CoreContext context) {
+    Guid = Guid.NewGuid();
+    EventType = typeof(T);
+    IsPreHook = pre;
+    EventName = T.GetName();
+    _Context = context;
+    _callback = callback;
+    _logger = loggerFactory.CreateLogger<GameEventCallback<T>>();
+
+    _unmanagedCallback = (pEvent, pDontBroadcast) => {
+      try {
+        var @event = T.FromExternal(pEvent);
+        var result = _callback(@event);
+        pDontBroadcast.Write(@event.DontBroadcast);
+        return (int)result;
+      } catch (Exception e) {
+        _logger.LogError(e, "Error in event {EventName} callback from context {ContextName}", EventName, _Context.Name);
+        return (int)HookResult.Continue;
+      } 
+    };
+    UnmanagedWrapperPtr = Marshal.GetFunctionPointerForDelegate(_unmanagedCallback);
   }
 }

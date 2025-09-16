@@ -9,9 +9,7 @@ internal static class Schema {
   }
 
   public static void Update(nint handle, ulong hash) {
-    unsafe { 
-      NativeSchema.SetStateChanged(handle.ToPointer(), hash);
-    }
+    NativeSchema.SetStateChanged(handle, hash);
   }
 
 }

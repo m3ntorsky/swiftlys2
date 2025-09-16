@@ -20,7 +20,7 @@ public struct CHandle<T> where T : class, CEntityInstance {
           return null;
         }
         fixed(void* ptr = &this) {
-          return (T?)T.From((nint)NativeEntity.HandleGet(ptr));
+          return (T?)T.From((nint)NativeEntity.HandleGet((nint)ptr));
         }
       }
     }
@@ -34,7 +34,7 @@ public struct CHandle<T> where T : class, CEntityInstance {
     get {
       unsafe {
         fixed(void* ptr = &this) {
-          return NativeEntity.HandleIsValid(ptr);
+          return NativeEntity.HandleIsValid((nint)ptr);
         }
       }
     }

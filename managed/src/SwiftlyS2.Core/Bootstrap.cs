@@ -9,6 +9,8 @@ using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Core.Extensions;
+using SwiftlyS2.Core.GameEvents;
+using SwiftlyS2.Shared;
 namespace SwiftlyS2.Core;
 
 internal static class Bootstrap {
@@ -25,8 +27,14 @@ internal static class Bootstrap {
     services.AddTestService();
     services.AddRootDirService();
     services.AddPluginManager();
-    services.AddLoggerFactory();
-    
+    services.AddLogger();
+
+    services.AddSingleton<ISwiftlyCore, SwiftlyCore>((provider) => new SwiftlyCore(
+      "SwiftlyS2",
+      AppContext.BaseDirectory,
+      provider
+    ));
+
     var provider = services.BuildServiceProvider();
     
     provider.UsePluginManager();

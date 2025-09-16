@@ -7,13 +7,13 @@ using SwiftlyS2.Shared.Natives;
 namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeAllocator {
-  private unsafe static delegate* unmanaged<ulong, void*> _Alloc;
-  public unsafe static void* Alloc(ulong size) {
+  private unsafe static delegate* unmanaged<ulong, nint> _Alloc;
+  public unsafe static nint Alloc(ulong size) {
     var ret = _Alloc(size);
     return ret;
   }
-  private unsafe static delegate* unmanaged<ulong, byte*, byte*, void*> _TrackedAlloc;
-  public unsafe static void* TrackedAlloc(ulong size, string identifier, string details) {
+  private unsafe static delegate* unmanaged<ulong, byte*, byte*, nint> _TrackedAlloc;
+  public unsafe static nint TrackedAlloc(ulong size, string identifier, string details) {
     var pool = ArrayPool<byte>.Shared;
     var identifierLength = Encoding.UTF8.GetByteCount(identifier);
     var identifierBuffer = pool.Rent(identifierLength + 1);
@@ -35,20 +35,20 @@ internal static class NativeAllocator {
   }
   }
   }
-  private unsafe static delegate* unmanaged<void*, void> _Free;
-  public unsafe static void Free(void* pointer) {
+  private unsafe static delegate* unmanaged<nint, void> _Free;
+  public unsafe static void Free(nint pointer) {
     _Free(pointer);
   }
-  private unsafe static delegate* unmanaged<void*, ulong, void*> _Resize;
-  public unsafe static void* Resize(void* pointer, ulong new_size) {
+  private unsafe static delegate* unmanaged<nint, ulong, nint> _Resize;
+  public unsafe static nint Resize(nint pointer, ulong new_size) {
     var ret = _Resize(pointer, new_size);
     return ret;
   }
-  private unsafe static delegate* unmanaged<void*, ulong> _GetSize;
+  private unsafe static delegate* unmanaged<nint, ulong> _GetSize;
   /// <summary>
   /// works only for pointers allocated through Memory.Allocator
   /// </summary>
-  public unsafe static ulong GetSize(void* pointer) {
+  public unsafe static ulong GetSize(nint pointer) {
     var ret = _GetSize(pointer);
     return ret;
   }
@@ -71,13 +71,13 @@ internal static class NativeAllocator {
     return ret;
   }
   }
-  private unsafe static delegate* unmanaged<void*, bool> _IsPointerValid;
-  public unsafe static bool IsPointerValid(void* pointer) {
+  private unsafe static delegate* unmanaged<nint, bool> _IsPointerValid;
+  public unsafe static bool IsPointerValid(nint pointer) {
     var ret = _IsPointerValid(pointer);
     return ret;
   }
-  private unsafe static delegate* unmanaged<void*, void*, ulong, void> _Copy;
-  public unsafe static void Copy(void* src, void* dst, ulong size) {
+  private unsafe static delegate* unmanaged<nint, nint, ulong, void> _Copy;
+  public unsafe static void Copy(nint src, nint dst, ulong size) {
     _Copy(src, dst, size);
   }
 }

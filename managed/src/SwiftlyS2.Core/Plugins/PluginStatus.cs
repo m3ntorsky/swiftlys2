@@ -1,4 +1,4 @@
-namespace SwiftlyS2.Core.Plugins;
+namespace SwiftlyS2.Core.Services;
 
 enum PluginStatus {
   Loaded,

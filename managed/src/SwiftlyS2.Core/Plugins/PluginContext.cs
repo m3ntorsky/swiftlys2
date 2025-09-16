@@ -2,7 +2,7 @@ using McMaster.NETCore.Plugins;
 using Microsoft.Extensions.DependencyInjection;
 using SwiftlyS2.Shared.Plugins;
 
-namespace SwiftlyS2.Core.Plugins;
+namespace SwiftlyS2.Core.Services;
 
 internal class PluginContext : IDisposable {
 

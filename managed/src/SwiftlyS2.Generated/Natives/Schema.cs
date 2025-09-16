@@ -7,8 +7,8 @@ using SwiftlyS2.Shared.Natives;
 namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeSchema {
-  private unsafe static delegate* unmanaged<void*, ulong, void> _SetStateChanged;
-  public unsafe static void SetStateChanged(void* entity, ulong hash) {
+  private unsafe static delegate* unmanaged<nint, ulong, void> _SetStateChanged;
+  public unsafe static void SetStateChanged(nint entity, ulong hash) {
     _SetStateChanged(entity, hash);
   }
   private unsafe static delegate* unmanaged<byte*, uint> _FindChainOffset;
@@ -58,17 +58,17 @@ internal static class NativeSchema {
     return ret;
   }
   }
-  private unsafe static delegate* unmanaged<void*, ulong, void*> _GetPropPtr;
-  public unsafe static void* GetPropPtr(void* entity, ulong hash) {
+  private unsafe static delegate* unmanaged<nint, ulong, nint> _GetPropPtr;
+  public unsafe static nint GetPropPtr(nint entity, ulong hash) {
     var ret = _GetPropPtr(entity, hash);
     return ret;
   }
-  private unsafe static delegate* unmanaged<void*, ulong, void*, uint, void> _WritePropPtr;
-  public unsafe static void WritePropPtr(void* entity, ulong hash, void* value, uint size) {
+  private unsafe static delegate* unmanaged<nint, ulong, nint, uint, void> _WritePropPtr;
+  public unsafe static void WritePropPtr(nint entity, ulong hash, nint value, uint size) {
     _WritePropPtr(entity, hash, value, size);
   }
-  private unsafe static delegate* unmanaged<void*, void*> _GetVData;
-  public unsafe static void* GetVData(void* entity) {
+  private unsafe static delegate* unmanaged<nint, nint> _GetVData;
+  public unsafe static nint GetVData(nint entity) {
     var ret = _GetVData(entity);
     return ret;
   }

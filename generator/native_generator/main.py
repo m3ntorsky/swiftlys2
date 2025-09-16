@@ -12,7 +12,7 @@ PARAM_TYPE_MAP = {
     "int64": "long",
     "uint32": "uint",
     "uint64": "ulong",
-    "ptr": "void*",
+    "ptr": "nint",
     "string": "string",
     "void": "void",
     "vector2": "Vector2D",
