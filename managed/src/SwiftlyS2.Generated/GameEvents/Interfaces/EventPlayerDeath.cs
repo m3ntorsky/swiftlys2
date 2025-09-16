@@ -36,7 +36,7 @@ public interface EventPlayerDeath : IGameEvent<EventPlayerDeath> {
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  int AsSister { get; set; }
+  int Assister { get; set; }
 
   /// <summary>
   /// assister helped with a flash

@@ -52,7 +52,6 @@ public class TestPlugin : BasePlugin {
     logger.LogInformation("TestPlugin jump loaded");
 
 
-
     var e = core.GameEvent.Create<EventShowSurvivalRespawnStatus>();
     e.LocToken = "ABC";
 

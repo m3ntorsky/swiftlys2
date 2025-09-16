@@ -26,7 +26,7 @@ internal class EventPlayerDeathImpl : GameEvent<EventPlayerDeath>, EventPlayerDe
   { get => GetPlayerSlot("attacker"); set => SetPlayerSlot("attacker", value); }
 
   // player who assisted in the kill
-  public int AsSister
+  public int Assister
   { get => GetPlayerSlot("assister"); set => SetPlayerSlot("assister", value); }
 
   // assister helped with a flash
