@@ -221,4 +221,43 @@ internal static class NativeSounds {
     return ret;
   }
   }
+  private unsafe static delegate* unmanaged<nint, byte*, Vector, void> _SetFloat3;
+  public unsafe static void SetFloat3(nint soundEvent, string fieldName, Vector value) {
+    var pool = ArrayPool<byte>.Shared;
+    var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
+    var fieldNameBuffer = pool.Rent(fieldNameLength + 1);
+    Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
+    fieldNameBuffer[fieldNameLength] = 0;
+    fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
+    _SetFloat3(soundEvent, fieldNameBufferPtr, value);
+    pool.Return(fieldNameBuffer);
+
+  }
+  }
+  private unsafe static delegate* unmanaged<nint, byte*, Vector> _GetFloat3;
+  public unsafe static Vector GetFloat3(nint soundEvent, string fieldName) {
+    var pool = ArrayPool<byte>.Shared;
+    var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
+    var fieldNameBuffer = pool.Rent(fieldNameLength + 1);
+    Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
+    fieldNameBuffer[fieldNameLength] = 0;
+    fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
+    var ret = _GetFloat3(soundEvent, fieldNameBufferPtr);
+    pool.Return(fieldNameBuffer);
+
+    return ret;
+  }
+  }
+  private unsafe static delegate* unmanaged<nint, ulong> _GetClients;
+  /// <summary>
+  /// returns player mask
+  /// </summary>
+  public unsafe static ulong GetClients(nint soundEvent) {
+    var ret = _GetClients(soundEvent);
+    return ret;
+  }
+  private unsafe static delegate* unmanaged<nint, ulong, void> _SetClients;
+  public unsafe static void SetClients(nint soundEvent, ulong playermask) {
+    _SetClients(soundEvent, playermask);
+  }
 }

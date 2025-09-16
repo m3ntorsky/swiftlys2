@@ -22,3 +22,7 @@ void SetUInt64 = ptr soundEvent, string fieldName, uint64 value
 uint64 GetUInt64 = ptr soundEvent, string fieldName
 void SetFloat = ptr soundEvent, string fieldName, float value
 float GetFloat = ptr soundEvent, string fieldName
+void SetFloat3 = ptr soundEvent, string fieldName, vector value
+vector GetFloat3 = ptr soundEvent, string fieldName
+uint64 GetClients = ptr soundEvent // returns player mask
+void SetClients = ptr soundEvent, uint64 playermask

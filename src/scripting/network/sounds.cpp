@@ -138,6 +138,37 @@ float Bridge_Sounds_GetFloat(void* event, const char* fieldName)
     return ((ISoundEvent*)event)->GetFloat(fieldName);
 }
 
+void Bridge_Sounds_SetFloat3(void* event, const char* fieldName, Vector value)
+{
+    ((ISoundEvent*)event)->SetFloat3(fieldName, value);
+}
+
+Vector Bridge_Sounds_GetFloat3(void* event, const char* fieldName)
+{
+    return ((ISoundEvent*)event)->GetFloat3(fieldName);
+}
+
+uint64_t Bridge_Sounds_GetClients(void* event)
+{
+    auto vec = ((ISoundEvent*)event)->GetClients();
+
+    uint64_t res = 0;
+    for (int i = 0; i < vec.size(); i++)
+        res |= (1ull << vec[i]);
+
+    return res;
+}
+
+void Bridge_Sounds_SetClients(void* event, uint64_t clients)
+{
+    std::vector<int> vec;
+    for (int i = 0; i < 64; i++)
+    {
+        if (clients & (1ull << i))
+            ((ISoundEvent*)event)->AddClient(i);
+    }
+}
+
 DEFINE_NATIVE("Sounds.CreateSoundEvent", Bridge_Sounds_CreateSoundEvent);
 DEFINE_NATIVE("Sounds.DestroySoundEvent", Bridge_Sounds_DestroySoundEvent);
 DEFINE_NATIVE("Sounds.Emit", Bridge_Sounds_Emit);
@@ -160,3 +191,7 @@ DEFINE_NATIVE("Sounds.SetUInt64", Bridge_Sounds_SetUInt64);
 DEFINE_NATIVE("Sounds.GetUInt64", Bridge_Sounds_GetUInt64);
 DEFINE_NATIVE("Sounds.SetFloat", Bridge_Sounds_SetFloat);
 DEFINE_NATIVE("Sounds.GetFloat", Bridge_Sounds_GetFloat);
+DEFINE_NATIVE("Sounds.SetFloat3", Bridge_Sounds_SetFloat3);
+DEFINE_NATIVE("Sounds.GetFloat3", Bridge_Sounds_GetFloat3);
+DEFINE_NATIVE("Sounds.GetClients", Bridge_Sounds_GetClients);
+DEFINE_NATIVE("Sounds.SetClients", Bridge_Sounds_SetClients);
