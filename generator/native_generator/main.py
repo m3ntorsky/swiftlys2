@@ -19,6 +19,7 @@ PARAM_TYPE_MAP = {
     "vector": "Vector",
     "vector4": "Vector4D",
     "qangle": "QAngle",
+    "color": "Color",
     "bytes": "byte[]",
 }
 
