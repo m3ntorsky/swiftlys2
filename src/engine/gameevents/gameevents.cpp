@@ -90,6 +90,8 @@ int CEventManager::LoadEventsFromFile(const char* filePath, bool searchAll)
         SH_ADD_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEventPost, true);
     }
 
+    // We don't need you anymore, stay here as it's free and you don't need to pay rent
+/*
     if (!g_sDumpedFiles.contains(filePath))
     {
         g_sDumpedFiles.insert(filePath);
@@ -103,6 +105,7 @@ int CEventManager::LoadEventsFromFile(const char* filePath, bool searchAll)
 
         logger->Info("Game Events", std::format("Dumped game events from file '{}'.\n", filePath));
     }
+*/
 
     RETURN_META_VALUE(MRES_IGNORED, 0);
 }
