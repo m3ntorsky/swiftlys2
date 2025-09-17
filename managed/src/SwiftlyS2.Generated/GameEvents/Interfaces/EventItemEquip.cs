@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "item_equip"
 /// </summary>
-public interface EventItemEquip : IGameEvent<EventItemEquip> {
+public interface EventItemEquip : ITypedGameEvent<EventItemEquip> {
 
-  static EventItemEquip IGameEvent<EventItemEquip>.FromAllocated(nint ptr) => new EventItemEquipImpl(ptr, true);
+  static EventItemEquip ITypedGameEvent<EventItemEquip>.Wrap(IGameEvent accessor) => new EventItemEquipImpl(accessor);
 
-  static EventItemEquip IGameEvent<EventItemEquip>.FromExternal(nint ptr) => new EventItemEquipImpl(ptr, false);
+  static string ITypedGameEvent<EventItemEquip>.GetName() => "item_equip";
 
-  static string IGameEvent<EventItemEquip>.GetName() => "item_equip";
-
-  static uint IGameEvent<EventItemEquip>.GetHash() => 0x3D5F333Du;
+  static uint ITypedGameEvent<EventItemEquip>.GetHash() => 0x3D5F333Du;
   /// <summary>
   /// <br/>
   /// type: player_controller

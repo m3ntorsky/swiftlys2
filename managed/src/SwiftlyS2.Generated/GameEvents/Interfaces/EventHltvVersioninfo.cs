@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "hltv_versioninfo"
 /// </summary>
-public interface EventHltvVersioninfo : IGameEvent<EventHltvVersioninfo> {
+public interface EventHltvVersioninfo : ITypedGameEvent<EventHltvVersioninfo> {
 
-  static EventHltvVersioninfo IGameEvent<EventHltvVersioninfo>.FromAllocated(nint ptr) => new EventHltvVersioninfoImpl(ptr, true);
+  static EventHltvVersioninfo ITypedGameEvent<EventHltvVersioninfo>.Wrap(IGameEvent accessor) => new EventHltvVersioninfoImpl(accessor);
 
-  static EventHltvVersioninfo IGameEvent<EventHltvVersioninfo>.FromExternal(nint ptr) => new EventHltvVersioninfoImpl(ptr, false);
+  static string ITypedGameEvent<EventHltvVersioninfo>.GetName() => "hltv_versioninfo";
 
-  static string IGameEvent<EventHltvVersioninfo>.GetName() => "hltv_versioninfo";
-
-  static uint IGameEvent<EventHltvVersioninfo>.GetHash() => 0xAB9E0AFCu;
+  static uint ITypedGameEvent<EventHltvVersioninfo>.GetHash() => 0xAB9E0AFCu;
   /// <summary>
   /// type: long
   /// </summary>

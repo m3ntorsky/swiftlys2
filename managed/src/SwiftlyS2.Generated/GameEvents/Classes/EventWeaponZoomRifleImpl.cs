@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "weapon_zoom_rifle"
 /// </summary>
-internal class EventWeaponZoomRifleImpl : GameEvent<EventWeaponZoomRifle>, EventWeaponZoomRifle
+internal class EventWeaponZoomRifleImpl : TypedGameEvent<EventWeaponZoomRifle>, EventWeaponZoomRifle
 {
 
-  public EventWeaponZoomRifleImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventWeaponZoomRifleImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

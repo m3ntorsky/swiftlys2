@@ -9,14 +9,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "flare_ignite_npc"
 /// </summary>
-internal class EventFlareIgniteNpcImpl : GameEvent<EventFlareIgniteNpc>, EventFlareIgniteNpc
+internal class EventFlareIgniteNpcImpl : TypedGameEvent<EventFlareIgniteNpc>, EventFlareIgniteNpc
 {
 
-  public EventFlareIgniteNpcImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventFlareIgniteNpcImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // entity ignited
   public int EntIndex
-  { get => GetInt("entindex"); set => SetInt("entindex", value); }
+  { get => Accessor.GetInt32("entindex"); set => Accessor.SetInt32("entindex", value); }
 }

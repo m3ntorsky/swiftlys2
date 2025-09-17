@@ -22,3 +22,6 @@ void AddEntityIOEventString = ptr entity, string input, ptr activator, ptr calle
 bool IsValidEntity = ptr entity
 ptr GetGameRules = void
 ptr GetEntitySystem = void
+bool EntityHandleIsValid = uint32 handle
+ptr EntityHandleGet = uint32 handle
+uint32 GetEntityHandleFromEntity = ptr entity

@@ -9,19 +9,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "vote_passed"
 /// </summary>
-internal class EventVotePassedImpl : GameEvent<EventVotePassed>, EventVotePassed
+internal class EventVotePassedImpl : TypedGameEvent<EventVotePassed>, EventVotePassed
 {
 
-  public EventVotePassedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventVotePassedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public string Details
-  { get => GetString("details"); set => SetString("details", value); }
+  { get => Accessor.GetString("details"); set => Accessor.SetString("details", value); }
 
   public string Param1
-  { get => GetString("param1"); set => SetString("param1", value); }
+  { get => Accessor.GetString("param1"); set => Accessor.SetString("param1", value); }
 
   public byte Team
-  { get => (byte)GetInt("team"); set => SetInt("team", value); }
+  { get => (byte)Accessor.GetInt32("team"); set => Accessor.SetInt32("team", value); }
 }

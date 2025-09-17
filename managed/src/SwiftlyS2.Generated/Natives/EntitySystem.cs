@@ -270,4 +270,19 @@ internal static class NativeEntitySystem {
     var ret = _GetEntitySystem();
     return ret;
   }
+  private unsafe static delegate* unmanaged<uint, bool> _EntityHandleIsValid;
+  public unsafe static bool EntityHandleIsValid(uint handle) {
+    var ret = _EntityHandleIsValid(handle);
+    return ret;
+  }
+  private unsafe static delegate* unmanaged<uint, nint> _EntityHandleGet;
+  public unsafe static nint EntityHandleGet(uint handle) {
+    var ret = _EntityHandleGet(handle);
+    return ret;
+  }
+  private unsafe static delegate* unmanaged<nint, uint> _GetEntityHandleFromEntity;
+  public unsafe static uint GetEntityHandleFromEntity(nint entity) {
+    var ret = _GetEntityHandleFromEntity(entity);
+    return ret;
+  }
 }

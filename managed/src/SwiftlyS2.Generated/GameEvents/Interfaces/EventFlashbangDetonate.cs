@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "flashbang_detonate"
 /// </summary>
-public interface EventFlashbangDetonate : IGameEvent<EventFlashbangDetonate> {
+public interface EventFlashbangDetonate : ITypedGameEvent<EventFlashbangDetonate> {
 
-  static EventFlashbangDetonate IGameEvent<EventFlashbangDetonate>.FromAllocated(nint ptr) => new EventFlashbangDetonateImpl(ptr, true);
+  static EventFlashbangDetonate ITypedGameEvent<EventFlashbangDetonate>.Wrap(IGameEvent accessor) => new EventFlashbangDetonateImpl(accessor);
 
-  static EventFlashbangDetonate IGameEvent<EventFlashbangDetonate>.FromExternal(nint ptr) => new EventFlashbangDetonateImpl(ptr, false);
+  static string ITypedGameEvent<EventFlashbangDetonate>.GetName() => "flashbang_detonate";
 
-  static string IGameEvent<EventFlashbangDetonate>.GetName() => "flashbang_detonate";
-
-  static uint IGameEvent<EventFlashbangDetonate>.GetHash() => 0x575C9970u;
+  static uint ITypedGameEvent<EventFlashbangDetonate>.GetHash() => 0x575C9970u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn

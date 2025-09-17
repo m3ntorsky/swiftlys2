@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "hltv_title"
 /// </summary>
-public interface EventHltvTitle : IGameEvent<EventHltvTitle> {
+public interface EventHltvTitle : ITypedGameEvent<EventHltvTitle> {
 
-  static EventHltvTitle IGameEvent<EventHltvTitle>.FromAllocated(nint ptr) => new EventHltvTitleImpl(ptr, true);
+  static EventHltvTitle ITypedGameEvent<EventHltvTitle>.Wrap(IGameEvent accessor) => new EventHltvTitleImpl(accessor);
 
-  static EventHltvTitle IGameEvent<EventHltvTitle>.FromExternal(nint ptr) => new EventHltvTitleImpl(ptr, false);
+  static string ITypedGameEvent<EventHltvTitle>.GetName() => "hltv_title";
 
-  static string IGameEvent<EventHltvTitle>.GetName() => "hltv_title";
-
-  static uint IGameEvent<EventHltvTitle>.GetHash() => 0xA9B9262Au;
+  static uint ITypedGameEvent<EventHltvTitle>.GetHash() => 0xA9B9262Au;
   /// <summary>
   /// type: string
   /// </summary>

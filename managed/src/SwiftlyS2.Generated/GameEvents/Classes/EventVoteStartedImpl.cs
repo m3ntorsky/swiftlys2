@@ -9,26 +9,26 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "vote_started"
 /// </summary>
-internal class EventVoteStartedImpl : GameEvent<EventVoteStarted>, EventVoteStarted
+internal class EventVoteStartedImpl : TypedGameEvent<EventVoteStarted>, EventVoteStarted
 {
 
-  public EventVoteStartedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventVoteStartedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public string Issue
-  { get => GetString("issue"); set => SetString("issue", value); }
+  { get => Accessor.GetString("issue"); set => Accessor.SetString("issue", value); }
 
   public string Param1
-  { get => GetString("param1"); set => SetString("param1", value); }
+  { get => Accessor.GetString("param1"); set => Accessor.SetString("param1", value); }
 
   public string VoteData
-  { get => GetString("votedata"); set => SetString("votedata", value); }
+  { get => Accessor.GetString("votedata"); set => Accessor.SetString("votedata", value); }
 
   public byte Team
-  { get => (byte)GetInt("team"); set => SetInt("team", value); }
+  { get => (byte)Accessor.GetInt32("team"); set => Accessor.SetInt32("team", value); }
 
   // entity id of the player who initiated the vote
   public int Initiator
-  { get => GetInt("initiator"); set => SetInt("initiator", value); }
+  { get => Accessor.GetInt32("initiator"); set => Accessor.SetInt32("initiator", value); }
 }

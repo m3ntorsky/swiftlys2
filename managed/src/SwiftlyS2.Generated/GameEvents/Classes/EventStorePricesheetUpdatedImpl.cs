@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "store_pricesheet_updated"
 /// </summary>
-internal class EventStorePricesheetUpdatedImpl : GameEvent<EventStorePricesheetUpdated>, EventStorePricesheetUpdated
+internal class EventStorePricesheetUpdatedImpl : TypedGameEvent<EventStorePricesheetUpdated>, EventStorePricesheetUpdated
 {
 
-  public EventStorePricesheetUpdatedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventStorePricesheetUpdatedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

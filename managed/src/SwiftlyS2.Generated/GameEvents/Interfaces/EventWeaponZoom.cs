@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "weapon_zoom"
 /// </summary>
-public interface EventWeaponZoom : IGameEvent<EventWeaponZoom> {
+public interface EventWeaponZoom : ITypedGameEvent<EventWeaponZoom> {
 
-  static EventWeaponZoom IGameEvent<EventWeaponZoom>.FromAllocated(nint ptr) => new EventWeaponZoomImpl(ptr, true);
+  static EventWeaponZoom ITypedGameEvent<EventWeaponZoom>.Wrap(IGameEvent accessor) => new EventWeaponZoomImpl(accessor);
 
-  static EventWeaponZoom IGameEvent<EventWeaponZoom>.FromExternal(nint ptr) => new EventWeaponZoomImpl(ptr, false);
+  static string ITypedGameEvent<EventWeaponZoom>.GetName() => "weapon_zoom";
 
-  static string IGameEvent<EventWeaponZoom>.GetName() => "weapon_zoom";
-
-  static uint IGameEvent<EventWeaponZoom>.GetHash() => 0xBF1A06E1u;
+  static uint ITypedGameEvent<EventWeaponZoom>.GetHash() => 0xBF1A06E1u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn

@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "local_player_controller_team"
 /// </summary>
-internal class EventLocalPlayerControllerTeamImpl : GameEvent<EventLocalPlayerControllerTeam>, EventLocalPlayerControllerTeam
+internal class EventLocalPlayerControllerTeamImpl : TypedGameEvent<EventLocalPlayerControllerTeam>, EventLocalPlayerControllerTeam
 {
 
-  public EventLocalPlayerControllerTeamImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventLocalPlayerControllerTeamImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

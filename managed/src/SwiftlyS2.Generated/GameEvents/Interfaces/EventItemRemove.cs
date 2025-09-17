@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "item_remove"
 /// </summary>
-public interface EventItemRemove : IGameEvent<EventItemRemove> {
+public interface EventItemRemove : ITypedGameEvent<EventItemRemove> {
 
-  static EventItemRemove IGameEvent<EventItemRemove>.FromAllocated(nint ptr) => new EventItemRemoveImpl(ptr, true);
+  static EventItemRemove ITypedGameEvent<EventItemRemove>.Wrap(IGameEvent accessor) => new EventItemRemoveImpl(accessor);
 
-  static EventItemRemove IGameEvent<EventItemRemove>.FromExternal(nint ptr) => new EventItemRemoveImpl(ptr, false);
+  static string ITypedGameEvent<EventItemRemove>.GetName() => "item_remove";
 
-  static string IGameEvent<EventItemRemove>.GetName() => "item_remove";
-
-  static uint IGameEvent<EventItemRemove>.GetHash() => 0x4853B5C7u;
+  static uint ITypedGameEvent<EventItemRemove>.GetHash() => 0x4853B5C7u;
   /// <summary>
   /// <br/>
   /// type: player_controller

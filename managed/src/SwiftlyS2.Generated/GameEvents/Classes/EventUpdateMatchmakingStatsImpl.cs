@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "update_matchmaking_stats"
 /// </summary>
-internal class EventUpdateMatchmakingStatsImpl : GameEvent<EventUpdateMatchmakingStats>, EventUpdateMatchmakingStats
+internal class EventUpdateMatchmakingStatsImpl : TypedGameEvent<EventUpdateMatchmakingStats>, EventUpdateMatchmakingStats
 {
 
-  public EventUpdateMatchmakingStatsImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventUpdateMatchmakingStatsImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

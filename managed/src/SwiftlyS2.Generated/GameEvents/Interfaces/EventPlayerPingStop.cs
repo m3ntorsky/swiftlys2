@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_ping_stop"
 /// </summary>
-public interface EventPlayerPingStop : IGameEvent<EventPlayerPingStop> {
+public interface EventPlayerPingStop : ITypedGameEvent<EventPlayerPingStop> {
 
-  static EventPlayerPingStop IGameEvent<EventPlayerPingStop>.FromAllocated(nint ptr) => new EventPlayerPingStopImpl(ptr, true);
+  static EventPlayerPingStop ITypedGameEvent<EventPlayerPingStop>.Wrap(IGameEvent accessor) => new EventPlayerPingStopImpl(accessor);
 
-  static EventPlayerPingStop IGameEvent<EventPlayerPingStop>.FromExternal(nint ptr) => new EventPlayerPingStopImpl(ptr, false);
+  static string ITypedGameEvent<EventPlayerPingStop>.GetName() => "player_ping_stop";
 
-  static string IGameEvent<EventPlayerPingStop>.GetName() => "player_ping_stop";
-
-  static uint IGameEvent<EventPlayerPingStop>.GetHash() => 0x5C803792u;
+  static uint ITypedGameEvent<EventPlayerPingStop>.GetHash() => 0x5C803792u;
   /// <summary>
   /// type: short
   /// </summary>

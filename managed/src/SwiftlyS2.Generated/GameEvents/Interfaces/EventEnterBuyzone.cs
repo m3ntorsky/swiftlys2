@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "enter_buyzone"
 /// </summary>
-public interface EventEnterBuyzone : IGameEvent<EventEnterBuyzone> {
+public interface EventEnterBuyzone : ITypedGameEvent<EventEnterBuyzone> {
 
-  static EventEnterBuyzone IGameEvent<EventEnterBuyzone>.FromAllocated(nint ptr) => new EventEnterBuyzoneImpl(ptr, true);
+  static EventEnterBuyzone ITypedGameEvent<EventEnterBuyzone>.Wrap(IGameEvent accessor) => new EventEnterBuyzoneImpl(accessor);
 
-  static EventEnterBuyzone IGameEvent<EventEnterBuyzone>.FromExternal(nint ptr) => new EventEnterBuyzoneImpl(ptr, false);
+  static string ITypedGameEvent<EventEnterBuyzone>.GetName() => "enter_buyzone";
 
-  static string IGameEvent<EventEnterBuyzone>.GetName() => "enter_buyzone";
-
-  static uint IGameEvent<EventEnterBuyzone>.GetHash() => 0x9E49E798u;
+  static uint ITypedGameEvent<EventEnterBuyzone>.GetHash() => 0x9E49E798u;
   /// <summary>
   /// <br/>
   /// type: player_controller

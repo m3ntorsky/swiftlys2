@@ -10,13 +10,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "hltv_message"
 /// a HLTV message send by moderators
 /// </summary>
-internal class EventHltvMessageImpl : GameEvent<EventHltvMessage>, EventHltvMessage
+internal class EventHltvMessageImpl : TypedGameEvent<EventHltvMessage>, EventHltvMessage
 {
 
-  public EventHltvMessageImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHltvMessageImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public string Text
-  { get => GetString("text"); set => SetString("text", value); }
+  { get => Accessor.GetString("text"); set => Accessor.SetString("text", value); }
 }

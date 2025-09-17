@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bonus_updated"
 /// </summary>
-public interface EventBonusUpdated : IGameEvent<EventBonusUpdated> {
+public interface EventBonusUpdated : ITypedGameEvent<EventBonusUpdated> {
 
-  static EventBonusUpdated IGameEvent<EventBonusUpdated>.FromAllocated(nint ptr) => new EventBonusUpdatedImpl(ptr, true);
+  static EventBonusUpdated ITypedGameEvent<EventBonusUpdated>.Wrap(IGameEvent accessor) => new EventBonusUpdatedImpl(accessor);
 
-  static EventBonusUpdated IGameEvent<EventBonusUpdated>.FromExternal(nint ptr) => new EventBonusUpdatedImpl(ptr, false);
+  static string ITypedGameEvent<EventBonusUpdated>.GetName() => "bonus_updated";
 
-  static string IGameEvent<EventBonusUpdated>.GetName() => "bonus_updated";
-
-  static uint IGameEvent<EventBonusUpdated>.GetHash() => 0x80BE746Cu;
+  static uint ITypedGameEvent<EventBonusUpdated>.GetHash() => 0x80BE746Cu;
   /// <summary>
   /// type: short
   /// </summary>

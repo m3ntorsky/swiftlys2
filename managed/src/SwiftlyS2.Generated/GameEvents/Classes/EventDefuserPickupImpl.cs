@@ -9,18 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "defuser_pickup"
 /// </summary>
-internal class EventDefuserPickupImpl : GameEvent<EventDefuserPickup>, EventDefuserPickup
+internal class EventDefuserPickupImpl : TypedGameEvent<EventDefuserPickup>, EventDefuserPickup
 {
 
-  public EventDefuserPickupImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventDefuserPickupImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // defuser's entity ID
   public int EntityID
-  { get => GetInt("entityid"); set => SetInt("entityid", value); }
+  { get => Accessor.GetInt32("entityid"); set => Accessor.SetInt32("entityid", value); }
 
   // player who picked up the defuser
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

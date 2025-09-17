@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "map_shutdown"
 /// </summary>
-public interface EventMapShutdown : IGameEvent<EventMapShutdown> {
+public interface EventMapShutdown : ITypedGameEvent<EventMapShutdown> {
 
-  static EventMapShutdown IGameEvent<EventMapShutdown>.FromAllocated(nint ptr) => new EventMapShutdownImpl(ptr, true);
+  static EventMapShutdown ITypedGameEvent<EventMapShutdown>.Wrap(IGameEvent accessor) => new EventMapShutdownImpl(accessor);
 
-  static EventMapShutdown IGameEvent<EventMapShutdown>.FromExternal(nint ptr) => new EventMapShutdownImpl(ptr, false);
+  static string ITypedGameEvent<EventMapShutdown>.GetName() => "map_shutdown";
 
-  static string IGameEvent<EventMapShutdown>.GetName() => "map_shutdown";
-
-  static uint IGameEvent<EventMapShutdown>.GetHash() => 0xCA1507ECu;
+  static uint ITypedGameEvent<EventMapShutdown>.GetHash() => 0xCA1507ECu;
 }

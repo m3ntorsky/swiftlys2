@@ -9,16 +9,16 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_falldamage"
 /// </summary>
-internal class EventPlayerFalldamageImpl : GameEvent<EventPlayerFalldamage>, EventPlayerFalldamage
+internal class EventPlayerFalldamageImpl : TypedGameEvent<EventPlayerFalldamage>, EventPlayerFalldamage
 {
 
-  public EventPlayerFalldamageImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerFalldamageImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public float Damage
-  { get => GetFloat("damage"); set => SetFloat("damage", value); }
+  { get => Accessor.GetFloat("damage"); set => Accessor.SetFloat("damage", value); }
 }

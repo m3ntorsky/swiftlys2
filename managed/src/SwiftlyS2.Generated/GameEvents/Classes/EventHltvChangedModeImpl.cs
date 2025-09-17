@@ -9,19 +9,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hltv_changed_mode"
 /// </summary>
-internal class EventHltvChangedModeImpl : GameEvent<EventHltvChangedMode>, EventHltvChangedMode
+internal class EventHltvChangedModeImpl : TypedGameEvent<EventHltvChangedMode>, EventHltvChangedMode
 {
 
-  public EventHltvChangedModeImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHltvChangedModeImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public int OldMode
-  { get => GetInt("oldmode"); set => SetInt("oldmode", value); }
+  { get => Accessor.GetInt32("oldmode"); set => Accessor.SetInt32("oldmode", value); }
 
   public int NewMode
-  { get => GetInt("newmode"); set => SetInt("newmode", value); }
+  { get => Accessor.GetInt32("newmode"); set => Accessor.SetInt32("newmode", value); }
 
   public int ObsTarget
-  { get => GetInt("obs_target"); set => SetInt("obs_target", value); }
+  { get => Accessor.GetInt32("obs_target"); set => Accessor.SetInt32("obs_target", value); }
 }

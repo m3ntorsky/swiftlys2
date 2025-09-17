@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "round_start_post_nav"
 /// </summary>
-public interface EventRoundStartPostNav : IGameEvent<EventRoundStartPostNav> {
+public interface EventRoundStartPostNav : ITypedGameEvent<EventRoundStartPostNav> {
 
-  static EventRoundStartPostNav IGameEvent<EventRoundStartPostNav>.FromAllocated(nint ptr) => new EventRoundStartPostNavImpl(ptr, true);
+  static EventRoundStartPostNav ITypedGameEvent<EventRoundStartPostNav>.Wrap(IGameEvent accessor) => new EventRoundStartPostNavImpl(accessor);
 
-  static EventRoundStartPostNav IGameEvent<EventRoundStartPostNav>.FromExternal(nint ptr) => new EventRoundStartPostNavImpl(ptr, false);
+  static string ITypedGameEvent<EventRoundStartPostNav>.GetName() => "round_start_post_nav";
 
-  static string IGameEvent<EventRoundStartPostNav>.GetName() => "round_start_post_nav";
-
-  static uint IGameEvent<EventRoundStartPostNav>.GetHash() => 0x0F2F9F25u;
+  static uint ITypedGameEvent<EventRoundStartPostNav>.GetHash() => 0x0F2F9F25u;
 }

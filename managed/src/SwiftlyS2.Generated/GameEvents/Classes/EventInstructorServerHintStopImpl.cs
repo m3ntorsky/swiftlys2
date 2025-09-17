@@ -10,18 +10,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "instructor_server_hint_stop"
 /// destroys a server/map created hint
 /// </summary>
-internal class EventInstructorServerHintStopImpl : GameEvent<EventInstructorServerHintStop>, EventInstructorServerHintStop
+internal class EventInstructorServerHintStopImpl : TypedGameEvent<EventInstructorServerHintStop>, EventInstructorServerHintStop
 {
 
-  public EventInstructorServerHintStopImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventInstructorServerHintStopImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // The hint to stop. Will stop ALL hints with this name
   public string HintName
-  { get => GetString("hint_name"); set => SetString("hint_name", value); }
+  { get => Accessor.GetString("hint_name"); set => Accessor.SetString("hint_name", value); }
 
   // entity id of the env_instructor_hint that fired the event
   public int HintEntindex
-  { get => GetInt("hint_entindex"); set => SetInt("hint_entindex", value); }
+  { get => Accessor.GetInt32("hint_entindex"); set => Accessor.SetInt32("hint_entindex", value); }
 }

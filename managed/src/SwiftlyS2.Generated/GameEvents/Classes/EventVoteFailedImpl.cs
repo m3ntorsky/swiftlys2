@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "vote_failed"
 /// </summary>
-internal class EventVoteFailedImpl : GameEvent<EventVoteFailed>, EventVoteFailed
+internal class EventVoteFailedImpl : TypedGameEvent<EventVoteFailed>, EventVoteFailed
 {
 
-  public EventVoteFailedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventVoteFailedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public byte Team
-  { get => (byte)GetInt("team"); set => SetInt("team", value); }
+  { get => (byte)Accessor.GetInt32("team"); set => Accessor.SetInt32("team", value); }
 }

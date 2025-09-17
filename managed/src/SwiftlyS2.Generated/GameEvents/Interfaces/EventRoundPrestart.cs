@@ -8,13 +8,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "round_prestart"
 /// sent before all other round restart actions
 /// </summary>
-public interface EventRoundPrestart : IGameEvent<EventRoundPrestart> {
+public interface EventRoundPrestart : ITypedGameEvent<EventRoundPrestart> {
 
-  static EventRoundPrestart IGameEvent<EventRoundPrestart>.FromAllocated(nint ptr) => new EventRoundPrestartImpl(ptr, true);
+  static EventRoundPrestart ITypedGameEvent<EventRoundPrestart>.Wrap(IGameEvent accessor) => new EventRoundPrestartImpl(accessor);
 
-  static EventRoundPrestart IGameEvent<EventRoundPrestart>.FromExternal(nint ptr) => new EventRoundPrestartImpl(ptr, false);
+  static string ITypedGameEvent<EventRoundPrestart>.GetName() => "round_prestart";
 
-  static string IGameEvent<EventRoundPrestart>.GetName() => "round_prestart";
-
-  static uint IGameEvent<EventRoundPrestart>.GetHash() => 0xE6A3E50Fu;
+  static uint ITypedGameEvent<EventRoundPrestart>.GetHash() => 0xE6A3E50Fu;
 }

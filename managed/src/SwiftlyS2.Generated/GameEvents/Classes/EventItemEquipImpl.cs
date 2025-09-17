@@ -9,38 +9,38 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "item_equip"
 /// </summary>
-internal class EventItemEquipImpl : GameEvent<EventItemEquip>, EventItemEquip
+internal class EventItemEquipImpl : TypedGameEvent<EventItemEquip>, EventItemEquip
 {
 
-  public EventItemEquipImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventItemEquipImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // either a weapon such as 'tmp' or 'hegrenade', or an item such as 'nvgs'
   public string Item
-  { get => GetString("item"); set => SetString("item", value); }
+  { get => Accessor.GetString("item"); set => Accessor.SetString("item", value); }
 
   public int DefIndex
-  { get => GetInt("defindex"); set => SetInt("defindex", value); }
+  { get => Accessor.GetInt32("defindex"); set => Accessor.SetInt32("defindex", value); }
 
   public bool CanZoom
-  { get => GetBool("canzoom"); set => SetBool("canzoom", value); }
+  { get => Accessor.GetBool("canzoom"); set => Accessor.SetBool("canzoom", value); }
 
   public bool HasSilencer
-  { get => GetBool("hassilencer"); set => SetBool("hassilencer", value); }
+  { get => Accessor.GetBool("hassilencer"); set => Accessor.SetBool("hassilencer", value); }
 
   public bool IsSilenced
-  { get => GetBool("issilenced"); set => SetBool("issilenced", value); }
+  { get => Accessor.GetBool("issilenced"); set => Accessor.SetBool("issilenced", value); }
 
   public bool HasTracers
-  { get => GetBool("hastracers"); set => SetBool("hastracers", value); }
+  { get => Accessor.GetBool("hastracers"); set => Accessor.SetBool("hastracers", value); }
 
   public short WepType
-  { get => (short)GetInt("weptype"); set => SetInt("weptype", value); }
+  { get => (short)Accessor.GetInt32("weptype"); set => Accessor.SetInt32("weptype", value); }
 
   public bool IsPainted
-  { get => GetBool("ispainted"); set => SetBool("ispainted", value); }
+  { get => Accessor.GetBool("ispainted"); set => Accessor.SetBool("ispainted", value); }
 }

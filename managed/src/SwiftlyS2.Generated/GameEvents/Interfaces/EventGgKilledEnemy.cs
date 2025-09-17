@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "gg_killed_enemy"
 /// </summary>
-public interface EventGgKilledEnemy : IGameEvent<EventGgKilledEnemy> {
+public interface EventGgKilledEnemy : ITypedGameEvent<EventGgKilledEnemy> {
 
-  static EventGgKilledEnemy IGameEvent<EventGgKilledEnemy>.FromAllocated(nint ptr) => new EventGgKilledEnemyImpl(ptr, true);
+  static EventGgKilledEnemy ITypedGameEvent<EventGgKilledEnemy>.Wrap(IGameEvent accessor) => new EventGgKilledEnemyImpl(accessor);
 
-  static EventGgKilledEnemy IGameEvent<EventGgKilledEnemy>.FromExternal(nint ptr) => new EventGgKilledEnemyImpl(ptr, false);
+  static string ITypedGameEvent<EventGgKilledEnemy>.GetName() => "gg_killed_enemy";
 
-  static string IGameEvent<EventGgKilledEnemy>.GetName() => "gg_killed_enemy";
-
-  static uint IGameEvent<EventGgKilledEnemy>.GetHash() => 0x85DB35E2u;
+  static uint ITypedGameEvent<EventGgKilledEnemy>.GetHash() => 0x85DB35E2u;
   /// <summary>
   /// user ID who died
   /// <br/>

@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "material_default_complete"
 /// </summary>
-public interface EventMaterialDefaultComplete : IGameEvent<EventMaterialDefaultComplete> {
+public interface EventMaterialDefaultComplete : ITypedGameEvent<EventMaterialDefaultComplete> {
 
-  static EventMaterialDefaultComplete IGameEvent<EventMaterialDefaultComplete>.FromAllocated(nint ptr) => new EventMaterialDefaultCompleteImpl(ptr, true);
+  static EventMaterialDefaultComplete ITypedGameEvent<EventMaterialDefaultComplete>.Wrap(IGameEvent accessor) => new EventMaterialDefaultCompleteImpl(accessor);
 
-  static EventMaterialDefaultComplete IGameEvent<EventMaterialDefaultComplete>.FromExternal(nint ptr) => new EventMaterialDefaultCompleteImpl(ptr, false);
+  static string ITypedGameEvent<EventMaterialDefaultComplete>.GetName() => "material_default_complete";
 
-  static string IGameEvent<EventMaterialDefaultComplete>.GetName() => "material_default_complete";
-
-  static uint IGameEvent<EventMaterialDefaultComplete>.GetHash() => 0x6235E5E8u;
+  static uint ITypedGameEvent<EventMaterialDefaultComplete>.GetHash() => 0x6235E5E8u;
 }

@@ -62,7 +62,7 @@ bool SwiftlyMMBridge::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxle
 
     DynLibUtils::CModule eng = DetermineModuleByLibrary("engine2");
     void* serverSideClientVTable = eng.GetVirtualTableByName("CServerSideClient");
-    OnConVarQueryID = SH_ADD_DVPHOOK(CServerSideClientBase, ProcessRespondCvarValue, (CServerSideClientBase*)serverSideClientVTable, SH_MEMBER(this, &SwiftlyMMBridge::OnConvarQuery), false);
+    // OnConVarQueryID = SH_ADD_DVPHOOK(CServerSideClientBase, ProcessRespondCvarValue, (CServerSideClientBase*)serverSideClientVTable, SH_MEMBER(this, &SwiftlyMMBridge::OnConvarQuery), false);
 
     auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
 

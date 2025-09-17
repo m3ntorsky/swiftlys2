@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "round_start_post_nav"
 /// </summary>
-internal class EventRoundStartPostNavImpl : GameEvent<EventRoundStartPostNav>, EventRoundStartPostNav
+internal class EventRoundStartPostNavImpl : TypedGameEvent<EventRoundStartPostNav>, EventRoundStartPostNav
 {
 
-  public EventRoundStartPostNavImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventRoundStartPostNavImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "switch_team"
 /// </summary>
-public interface EventSwitchTeam : IGameEvent<EventSwitchTeam> {
+public interface EventSwitchTeam : ITypedGameEvent<EventSwitchTeam> {
 
-  static EventSwitchTeam IGameEvent<EventSwitchTeam>.FromAllocated(nint ptr) => new EventSwitchTeamImpl(ptr, true);
+  static EventSwitchTeam ITypedGameEvent<EventSwitchTeam>.Wrap(IGameEvent accessor) => new EventSwitchTeamImpl(accessor);
 
-  static EventSwitchTeam IGameEvent<EventSwitchTeam>.FromExternal(nint ptr) => new EventSwitchTeamImpl(ptr, false);
+  static string ITypedGameEvent<EventSwitchTeam>.GetName() => "switch_team";
 
-  static string IGameEvent<EventSwitchTeam>.GetName() => "switch_team";
-
-  static uint IGameEvent<EventSwitchTeam>.GetHash() => 0x53717ECBu;
+  static uint ITypedGameEvent<EventSwitchTeam>.GetHash() => 0x53717ECBu;
   /// <summary>
   /// number of active players on both T and CT
   /// <br/>

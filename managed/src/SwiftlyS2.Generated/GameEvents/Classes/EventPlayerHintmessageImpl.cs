@@ -9,14 +9,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_hintmessage"
 /// </summary>
-internal class EventPlayerHintmessageImpl : GameEvent<EventPlayerHintmessage>, EventPlayerHintmessage
+internal class EventPlayerHintmessageImpl : TypedGameEvent<EventPlayerHintmessage>, EventPlayerHintmessage
 {
 
-  public EventPlayerHintmessageImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerHintmessageImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // localizable string of a hint
   public string HintMessage
-  { get => GetString("hintmessage"); set => SetString("hintmessage", value); }
+  { get => Accessor.GetString("hintmessage"); set => Accessor.SetString("hintmessage", value); }
 }

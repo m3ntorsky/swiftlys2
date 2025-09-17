@@ -9,14 +9,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "vip_escaped"
 /// </summary>
-internal class EventVipEscapedImpl : GameEvent<EventVipEscaped>, EventVipEscaped
+internal class EventVipEscapedImpl : TypedGameEvent<EventVipEscaped>, EventVipEscaped
 {
 
-  public EventVipEscapedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventVipEscapedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // player who was the VIP
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "finale_start"
 /// </summary>
-internal class EventFinaleStartImpl : GameEvent<EventFinaleStart>, EventFinaleStart
+internal class EventFinaleStartImpl : TypedGameEvent<EventFinaleStart>, EventFinaleStart
 {
 
-  public EventFinaleStartImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventFinaleStartImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public short Rushes
-  { get => (short)GetInt("rushes"); set => SetInt("rushes", value); }
+  { get => (short)Accessor.GetInt32("rushes"); set => Accessor.SetInt32("rushes", value); }
 }

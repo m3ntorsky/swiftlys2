@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "hostage_hurt"
 /// </summary>
-public interface EventHostageHurt : IGameEvent<EventHostageHurt> {
+public interface EventHostageHurt : ITypedGameEvent<EventHostageHurt> {
 
-  static EventHostageHurt IGameEvent<EventHostageHurt>.FromAllocated(nint ptr) => new EventHostageHurtImpl(ptr, true);
+  static EventHostageHurt ITypedGameEvent<EventHostageHurt>.Wrap(IGameEvent accessor) => new EventHostageHurtImpl(accessor);
 
-  static EventHostageHurt IGameEvent<EventHostageHurt>.FromExternal(nint ptr) => new EventHostageHurtImpl(ptr, false);
+  static string ITypedGameEvent<EventHostageHurt>.GetName() => "hostage_hurt";
 
-  static string IGameEvent<EventHostageHurt>.GetName() => "hostage_hurt";
-
-  static uint IGameEvent<EventHostageHurt>.GetHash() => 0x5F292C42u;
+  static uint ITypedGameEvent<EventHostageHurt>.GetHash() => 0x5F292C42u;
   /// <summary>
   /// player who hurt the hostage
   /// <br/>

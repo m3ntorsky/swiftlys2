@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_intermission"
 /// </summary>
-internal class EventCsIntermissionImpl : GameEvent<EventCsIntermission>, EventCsIntermission
+internal class EventCsIntermissionImpl : TypedGameEvent<EventCsIntermission>, EventCsIntermission
 {
 
-  public EventCsIntermissionImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventCsIntermissionImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

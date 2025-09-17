@@ -9,17 +9,17 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "weapon_fire_on_empty"
 /// </summary>
-internal class EventWeaponFireOnEmptyImpl : GameEvent<EventWeaponFireOnEmpty>, EventWeaponFireOnEmpty
+internal class EventWeaponFireOnEmptyImpl : TypedGameEvent<EventWeaponFireOnEmpty>, EventWeaponFireOnEmpty
 {
 
-  public EventWeaponFireOnEmptyImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventWeaponFireOnEmptyImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // weapon name used
   public string Weapon
-  { get => GetString("weapon"); set => SetString("weapon", value); }
+  { get => Accessor.GetString("weapon"); set => Accessor.SetString("weapon", value); }
 }

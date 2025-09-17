@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "round_end"
 /// </summary>
-public interface EventRoundEnd : IGameEvent<EventRoundEnd> {
+public interface EventRoundEnd : ITypedGameEvent<EventRoundEnd> {
 
-  static EventRoundEnd IGameEvent<EventRoundEnd>.FromAllocated(nint ptr) => new EventRoundEndImpl(ptr, true);
+  static EventRoundEnd ITypedGameEvent<EventRoundEnd>.Wrap(IGameEvent accessor) => new EventRoundEndImpl(accessor);
 
-  static EventRoundEnd IGameEvent<EventRoundEnd>.FromExternal(nint ptr) => new EventRoundEndImpl(ptr, false);
+  static string ITypedGameEvent<EventRoundEnd>.GetName() => "round_end";
 
-  static string IGameEvent<EventRoundEnd>.GetName() => "round_end";
-
-  static uint IGameEvent<EventRoundEnd>.GetHash() => 0x3ABA4E21u;
+  static uint ITypedGameEvent<EventRoundEnd>.GetHash() => 0x3ABA4E21u;
   /// <summary>
   /// winner team/user i
   /// <br/>

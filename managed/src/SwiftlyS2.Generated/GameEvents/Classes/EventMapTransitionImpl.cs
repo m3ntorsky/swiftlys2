@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "map_transition"
 /// </summary>
-internal class EventMapTransitionImpl : GameEvent<EventMapTransition>, EventMapTransition
+internal class EventMapTransitionImpl : TypedGameEvent<EventMapTransition>, EventMapTransition
 {
 
-  public EventMapTransitionImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventMapTransitionImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

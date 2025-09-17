@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "survival_no_respawns_warning"
 /// </summary>
-public interface EventSurvivalNoRespawnsWarning : IGameEvent<EventSurvivalNoRespawnsWarning> {
+public interface EventSurvivalNoRespawnsWarning : ITypedGameEvent<EventSurvivalNoRespawnsWarning> {
 
-  static EventSurvivalNoRespawnsWarning IGameEvent<EventSurvivalNoRespawnsWarning>.FromAllocated(nint ptr) => new EventSurvivalNoRespawnsWarningImpl(ptr, true);
+  static EventSurvivalNoRespawnsWarning ITypedGameEvent<EventSurvivalNoRespawnsWarning>.Wrap(IGameEvent accessor) => new EventSurvivalNoRespawnsWarningImpl(accessor);
 
-  static EventSurvivalNoRespawnsWarning IGameEvent<EventSurvivalNoRespawnsWarning>.FromExternal(nint ptr) => new EventSurvivalNoRespawnsWarningImpl(ptr, false);
+  static string ITypedGameEvent<EventSurvivalNoRespawnsWarning>.GetName() => "survival_no_respawns_warning";
 
-  static string IGameEvent<EventSurvivalNoRespawnsWarning>.GetName() => "survival_no_respawns_warning";
-
-  static uint IGameEvent<EventSurvivalNoRespawnsWarning>.GetHash() => 0xE1C858A2u;
+  static uint ITypedGameEvent<EventSurvivalNoRespawnsWarning>.GetHash() => 0xE1C858A2u;
   /// <summary>
   /// <br/>
   /// type: player_controller

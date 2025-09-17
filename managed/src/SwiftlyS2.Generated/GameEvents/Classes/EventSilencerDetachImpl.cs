@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "silencer_detach"
 /// </summary>
-internal class EventSilencerDetachImpl : GameEvent<EventSilencerDetach>, EventSilencerDetach
+internal class EventSilencerDetachImpl : TypedGameEvent<EventSilencerDetach>, EventSilencerDetach
 {
 
-  public EventSilencerDetachImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventSilencerDetachImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

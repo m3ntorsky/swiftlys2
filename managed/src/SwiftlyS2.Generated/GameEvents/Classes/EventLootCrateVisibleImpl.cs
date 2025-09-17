@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "loot_crate_visible"
 /// </summary>
-internal class EventLootCrateVisibleImpl : GameEvent<EventLootCrateVisible>, EventLootCrateVisible
+internal class EventLootCrateVisibleImpl : TypedGameEvent<EventLootCrateVisible>, EventLootCrateVisible
 {
 
-  public EventLootCrateVisibleImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventLootCrateVisibleImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // player entindex
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // crate entindex
   public short Subject
-  { get => (short)GetInt("subject"); set => SetInt("subject", value); }
+  { get => (short)Accessor.GetInt32("subject"); set => Accessor.SetInt32("subject", value); }
 
   // type of crate (metal, wood, or paradrop)
   public string Type
-  { get => GetString("type"); set => SetString("type", value); }
+  { get => Accessor.GetString("type"); set => Accessor.SetString("type", value); }
 }

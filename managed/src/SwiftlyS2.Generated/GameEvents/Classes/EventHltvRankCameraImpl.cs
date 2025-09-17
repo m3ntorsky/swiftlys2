@@ -10,22 +10,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "hltv_rank_camera"
 /// a camera ranking
 /// </summary>
-internal class EventHltvRankCameraImpl : GameEvent<EventHltvRankCamera>, EventHltvRankCamera
+internal class EventHltvRankCameraImpl : TypedGameEvent<EventHltvRankCamera>, EventHltvRankCamera
 {
 
-  public EventHltvRankCameraImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHltvRankCameraImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // fixed camera index
   public byte Index
-  { get => (byte)GetInt("index"); set => SetInt("index", value); }
+  { get => (byte)Accessor.GetInt32("index"); set => Accessor.SetInt32("index", value); }
 
   // ranking, how interesting is this camera view
   public float Rank
-  { get => GetFloat("rank"); set => SetFloat("rank", value); }
+  { get => Accessor.GetFloat("rank"); set => Accessor.SetFloat("rank", value); }
 
   // best/closest target entity
   public int Target
-  { get => GetPlayerSlot("target"); set => SetPlayerSlot("target", value); }
+  { get => Accessor.GetPlayerSlot("target"); set => Accessor.SetPlayerSlot("target", value); }
 }

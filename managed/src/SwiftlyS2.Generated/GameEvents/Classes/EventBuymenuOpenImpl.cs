@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "buymenu_open"
 /// </summary>
-internal class EventBuymenuOpenImpl : GameEvent<EventBuymenuOpen>, EventBuymenuOpen
+internal class EventBuymenuOpenImpl : TypedGameEvent<EventBuymenuOpen>, EventBuymenuOpen
 {
 
-  public EventBuymenuOpenImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventBuymenuOpenImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

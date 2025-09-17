@@ -297,20 +297,18 @@ def render_interface(event: GameEventDef) -> str:
   lines.append("namespace SwiftlyS2.Shared.GameEventDefinitions;")
   lines.append("")
   lines.extend(render_header_comment(event))
-  lines.append(f"public interface {type_name} : IGameEvent<{type_name}> {{")
+  lines.append(f"public interface {type_name} : ITypedGameEvent<{type_name}> {{")
   lines.append("")
   # static abstract implementations required by IGameEvent<T>
-  lines.append(f"  static {type_name} IGameEvent<{type_name}>.FromAllocated(nint ptr) => new {type_name}Impl(ptr, true);")
+  lines.append(f"  static {type_name} ITypedGameEvent<{type_name}>.Wrap(IGameEvent accessor) => new {type_name}Impl(accessor);")
   lines.append("")
-  lines.append(f"  static {type_name} IGameEvent<{type_name}>.FromExternal(nint ptr) => new {type_name}Impl(ptr, false);")
-  lines.append("")
-  lines.append(f"  static string IGameEvent<{type_name}>.GetName() => \"{original_name}\";")
+  lines.append(f"  static string ITypedGameEvent<{type_name}>.GetName() => \"{original_name}\";")
   lines.append("")
   hash_value = fnv1a32(original_name)
   if hash_value in HASHES:
     print("WARNING: Hash collision detected for event: ", original_name)
   HASHES.append(hash_value)
-  lines.append(f"  static uint IGameEvent<{type_name}>.GetHash() => 0x{hash_value:08X}u;")
+  lines.append(f"  static uint ITypedGameEvent<{type_name}>.GetHash() => 0x{hash_value:08X}u;")
   # fields as properties
   used_prop_names: Dict[str, int] = {}
   for fname, fdef in event.fields.items():
@@ -376,10 +374,10 @@ def render_class(event: GameEventDef) -> str:
   lines.append("")
   lines.append("// generated")
   lines.extend(render_header_comment(event))
-  lines.append(f"internal class {type_name}Impl : GameEvent<{type_name}>, {type_name}")
+  lines.append(f"internal class {type_name}Impl : TypedGameEvent<{type_name}>, {type_name}")
   lines.append("{")
   lines.append("")
-  lines.append(f"  public {type_name}Impl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)")
+  lines.append(f"  public {type_name}Impl(IGameEvent accessor) : base(accessor)")
   lines.append("  {")
   lines.append("  }")
 
@@ -396,7 +394,7 @@ def render_class(event: GameEventDef) -> str:
         prop_name = f"{prop_name}{used_prop_names[prop_name]}"
       else:
         used_prop_names[prop_name] = 1
-      getter = f'GetPlayerController("{fname}")'
+      getter = f'Accessor.GetPlayerController("{fname}")'
       lines.append("")
       if fdef.comment:
         lines.append(f"  // {fdef.comment.strip()}")
@@ -417,36 +415,36 @@ def render_class(event: GameEventDef) -> str:
     key_literal = fname
 
     if accessor == "String":
-      getter = f'GetString("{key_literal}")'
-      setter = f'SetString("{key_literal}", value)'
+      getter = f'Accessor.GetString("{key_literal}")'
+      setter = f'Accessor.SetString("{key_literal}", value)'
     elif accessor == "Bool":
-      getter = f'GetBool("{key_literal}")'
-      setter = f'SetBool("{key_literal}", value)'
+      getter = f'Accessor.GetBool("{key_literal}")'
+      setter = f'Accessor.SetBool("{key_literal}", value)'
     elif accessor == "Int":
       if cast_kind == "byte":
-        getter = f'(byte)GetInt("{key_literal}")'
-        setter = f'SetInt("{key_literal}", value)'
+        getter = f'(byte)Accessor.GetInt32("{key_literal}")'
+        setter = f'Accessor.SetInt32("{key_literal}", value)'
       elif cast_kind == "short":
-        getter = f'(short)GetInt("{key_literal}")'
-        setter = f'SetInt("{key_literal}", value)'
+        getter = f'(short)Accessor.GetInt32("{key_literal}")'
+        setter = f'Accessor.SetInt32("{key_literal}", value)'
       else:
-        getter = f'GetInt("{key_literal}")'
-        setter = f'SetInt("{key_literal}", value)'
+        getter = f'Accessor.GetInt32("{key_literal}")'
+        setter = f'Accessor.SetInt32("{key_literal}", value)'
     elif accessor == "Uint64":
-      getter = f'GetUint64("{key_literal}")'
-      setter = f'SetUint64("{key_literal}", value)'
+      getter = f'Accessor.GetUInt64("{key_literal}")'
+      setter = f'Accessor.SetUInt64("{key_literal}", value)'
     elif accessor == "Float":
-      getter = f'GetFloat("{key_literal}")'
-      setter = f'SetFloat("{key_literal}", value)'
+      getter = f'Accessor.GetFloat("{key_literal}")'
+      setter = f'Accessor.SetFloat("{key_literal}", value)'
     elif accessor == "PlayerSlot":
-      getter = f'GetPlayerSlot("{key_literal}")'
-      setter = f'SetPlayerSlot("{key_literal}", value)'
+      getter = f'Accessor.GetPlayerSlot("{key_literal}")'
+      setter = f'Accessor.SetPlayerSlot("{key_literal}", value)'
     elif accessor == "PawnEntityIndex":
-      getter = f'GetPawnEntityIndex("{key_literal}")'
+      getter = f'Accessor.GetPawnEntityIndex("{key_literal}")'
       setter = None
     elif accessor == "Ptr":
-      getter = f'GetPtr("{key_literal}")'
-      setter = f'SetPtr("{key_literal}", value)'
+      getter = f'Accessor.GetPtr("{key_literal}")'
+      setter = f'Accessor.SetPtr("{key_literal}", value)'
     else:
       continue
 

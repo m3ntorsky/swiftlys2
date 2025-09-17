@@ -9,14 +9,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hostage_call_for_help"
 /// </summary>
-internal class EventHostageCallForHelpImpl : GameEvent<EventHostageCallForHelp>, EventHostageCallForHelp
+internal class EventHostageCallForHelpImpl : TypedGameEvent<EventHostageCallForHelp>, EventHostageCallForHelp
 {
 
-  public EventHostageCallForHelpImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHostageCallForHelpImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // hostage entity index
   public short Hostage
-  { get => (short)GetInt("hostage"); set => SetInt("hostage", value); }
+  { get => (short)Accessor.GetInt32("hostage"); set => Accessor.SetInt32("hostage", value); }
 }

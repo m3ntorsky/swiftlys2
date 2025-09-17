@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "clientside_reload_custom_econ"
 /// </summary>
-internal class EventClientsideReloadCustomEconImpl : GameEvent<EventClientsideReloadCustomEcon>, EventClientsideReloadCustomEcon
+internal class EventClientsideReloadCustomEconImpl : TypedGameEvent<EventClientsideReloadCustomEcon>, EventClientsideReloadCustomEcon
 {
 
-  public EventClientsideReloadCustomEconImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventClientsideReloadCustomEconImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public string SteamID
-  { get => GetString("steamid"); set => SetString("steamid", value); }
+  { get => Accessor.GetString("steamid"); set => Accessor.SetString("steamid", value); }
 }

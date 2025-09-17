@@ -9,25 +9,25 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "decoy_detonate"
 /// </summary>
-internal class EventDecoyDetonateImpl : GameEvent<EventDecoyDetonate>, EventDecoyDetonate
+internal class EventDecoyDetonateImpl : TypedGameEvent<EventDecoyDetonate>, EventDecoyDetonate
 {
 
-  public EventDecoyDetonateImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventDecoyDetonateImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public short EntityID
-  { get => (short)GetInt("entityid"); set => SetInt("entityid", value); }
+  { get => (short)Accessor.GetInt32("entityid"); set => Accessor.SetInt32("entityid", value); }
 
   public float X
-  { get => GetFloat("x"); set => SetFloat("x", value); }
+  { get => Accessor.GetFloat("x"); set => Accessor.SetFloat("x", value); }
 
   public float Y
-  { get => GetFloat("y"); set => SetFloat("y", value); }
+  { get => Accessor.GetFloat("y"); set => Accessor.SetFloat("y", value); }
 
   public float Z
-  { get => GetFloat("z"); set => SetFloat("z", value); }
+  { get => Accessor.GetFloat("z"); set => Accessor.SetFloat("z", value); }
 }

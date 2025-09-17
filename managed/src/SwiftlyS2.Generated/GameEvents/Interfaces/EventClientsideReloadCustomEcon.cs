@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "clientside_reload_custom_econ"
 /// </summary>
-public interface EventClientsideReloadCustomEcon : IGameEvent<EventClientsideReloadCustomEcon> {
+public interface EventClientsideReloadCustomEcon : ITypedGameEvent<EventClientsideReloadCustomEcon> {
 
-  static EventClientsideReloadCustomEcon IGameEvent<EventClientsideReloadCustomEcon>.FromAllocated(nint ptr) => new EventClientsideReloadCustomEconImpl(ptr, true);
+  static EventClientsideReloadCustomEcon ITypedGameEvent<EventClientsideReloadCustomEcon>.Wrap(IGameEvent accessor) => new EventClientsideReloadCustomEconImpl(accessor);
 
-  static EventClientsideReloadCustomEcon IGameEvent<EventClientsideReloadCustomEcon>.FromExternal(nint ptr) => new EventClientsideReloadCustomEconImpl(ptr, false);
+  static string ITypedGameEvent<EventClientsideReloadCustomEcon>.GetName() => "clientside_reload_custom_econ";
 
-  static string IGameEvent<EventClientsideReloadCustomEcon>.GetName() => "clientside_reload_custom_econ";
-
-  static uint IGameEvent<EventClientsideReloadCustomEcon>.GetHash() => 0x22B74A75u;
+  static uint ITypedGameEvent<EventClientsideReloadCustomEcon>.GetHash() => 0x22B74A75u;
   /// <summary>
   /// type: string
   /// </summary>

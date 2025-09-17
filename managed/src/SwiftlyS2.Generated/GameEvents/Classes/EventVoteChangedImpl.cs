@@ -9,19 +9,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "vote_changed"
 /// </summary>
-internal class EventVoteChangedImpl : GameEvent<EventVoteChanged>, EventVoteChanged
+internal class EventVoteChangedImpl : TypedGameEvent<EventVoteChanged>, EventVoteChanged
 {
 
-  public EventVoteChangedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventVoteChangedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public byte YesVotes
-  { get => (byte)GetInt("yesVotes"); set => SetInt("yesVotes", value); }
+  { get => (byte)Accessor.GetInt32("yesVotes"); set => Accessor.SetInt32("yesVotes", value); }
 
   public byte NoVotes
-  { get => (byte)GetInt("noVotes"); set => SetInt("noVotes", value); }
+  { get => (byte)Accessor.GetInt32("noVotes"); set => Accessor.SetInt32("noVotes", value); }
 
   public byte PotentialVotes
-  { get => (byte)GetInt("potentialVotes"); set => SetInt("potentialVotes", value); }
+  { get => (byte)Accessor.GetInt32("potentialVotes"); set => Accessor.SetInt32("potentialVotes", value); }
 }

@@ -8,6 +8,7 @@ using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Natives.NativeObjects;
 using SwiftlyS2.Core.SchemaDefinitions;
 using SwiftlyS2.Shared;
+using SwiftlyS2.Shared.GameEventDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.SchemaDefinitions;
 
@@ -69,6 +70,12 @@ internal class TestService {
 
           Console.WriteLine(ent.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin);
           Console.WriteLine(ent.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin);
+
+          EventPlayerDeath death = null!;
+
+          death.Distance = 1f;
+
+          death.Accessor.SetFloat("distance", 1f);
           
 
           

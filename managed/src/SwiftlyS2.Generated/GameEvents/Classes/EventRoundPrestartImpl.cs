@@ -10,10 +10,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "round_prestart"
 /// sent before all other round restart actions
 /// </summary>
-internal class EventRoundPrestartImpl : GameEvent<EventRoundPrestart>, EventRoundPrestart
+internal class EventRoundPrestartImpl : TypedGameEvent<EventRoundPrestart>, EventRoundPrestart
 {
 
-  public EventRoundPrestartImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventRoundPrestartImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

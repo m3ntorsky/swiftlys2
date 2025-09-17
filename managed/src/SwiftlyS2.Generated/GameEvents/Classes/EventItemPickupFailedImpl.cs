@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "item_pickup_failed"
 /// </summary>
-internal class EventItemPickupFailedImpl : GameEvent<EventItemPickupFailed>, EventItemPickupFailed
+internal class EventItemPickupFailedImpl : TypedGameEvent<EventItemPickupFailed>, EventItemPickupFailed
 {
 
-  public EventItemPickupFailedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventItemPickupFailedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public string Item
-  { get => GetString("item"); set => SetString("item", value); }
+  { get => Accessor.GetString("item"); set => Accessor.SetString("item", value); }
 
   public short Reason
-  { get => (short)GetInt("reason"); set => SetInt("reason", value); }
+  { get => (short)Accessor.GetInt32("reason"); set => Accessor.SetInt32("reason", value); }
 
   public short Limit
-  { get => (short)GetInt("limit"); set => SetInt("limit", value); }
+  { get => (short)Accessor.GetInt32("limit"); set => Accessor.SetInt32("limit", value); }
 }

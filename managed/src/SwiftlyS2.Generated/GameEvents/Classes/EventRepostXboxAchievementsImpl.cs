@@ -9,14 +9,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "repost_xbox_achievements"
 /// </summary>
-internal class EventRepostXboxAchievementsImpl : GameEvent<EventRepostXboxAchievements>, EventRepostXboxAchievements
+internal class EventRepostXboxAchievementsImpl : TypedGameEvent<EventRepostXboxAchievements>, EventRepostXboxAchievements
 {
 
-  public EventRepostXboxAchievementsImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventRepostXboxAchievementsImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // splitscreen ID
   public short SplitScreenPlayer
-  { get => (short)GetInt("splitscreenplayer"); set => SetInt("splitscreenplayer", value); }
+  { get => (short)Accessor.GetInt32("splitscreenplayer"); set => Accessor.SetInt32("splitscreenplayer", value); }
 }

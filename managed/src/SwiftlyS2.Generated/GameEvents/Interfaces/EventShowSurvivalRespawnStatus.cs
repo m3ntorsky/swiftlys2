@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "show_survival_respawn_status"
 /// </summary>
-public interface EventShowSurvivalRespawnStatus : IGameEvent<EventShowSurvivalRespawnStatus> {
+public interface EventShowSurvivalRespawnStatus : ITypedGameEvent<EventShowSurvivalRespawnStatus> {
 
-  static EventShowSurvivalRespawnStatus IGameEvent<EventShowSurvivalRespawnStatus>.FromAllocated(nint ptr) => new EventShowSurvivalRespawnStatusImpl(ptr, true);
+  static EventShowSurvivalRespawnStatus ITypedGameEvent<EventShowSurvivalRespawnStatus>.Wrap(IGameEvent accessor) => new EventShowSurvivalRespawnStatusImpl(accessor);
 
-  static EventShowSurvivalRespawnStatus IGameEvent<EventShowSurvivalRespawnStatus>.FromExternal(nint ptr) => new EventShowSurvivalRespawnStatusImpl(ptr, false);
+  static string ITypedGameEvent<EventShowSurvivalRespawnStatus>.GetName() => "show_survival_respawn_status";
 
-  static string IGameEvent<EventShowSurvivalRespawnStatus>.GetName() => "show_survival_respawn_status";
-
-  static uint IGameEvent<EventShowSurvivalRespawnStatus>.GetHash() => 0xAF60FAAFu;
+  static uint ITypedGameEvent<EventShowSurvivalRespawnStatus>.GetHash() => 0xAF60FAAFu;
   /// <summary>
   /// type: string
   /// </summary>

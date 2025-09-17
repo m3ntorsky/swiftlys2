@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "store_pricesheet_updated"
 /// </summary>
-public interface EventStorePricesheetUpdated : IGameEvent<EventStorePricesheetUpdated> {
+public interface EventStorePricesheetUpdated : ITypedGameEvent<EventStorePricesheetUpdated> {
 
-  static EventStorePricesheetUpdated IGameEvent<EventStorePricesheetUpdated>.FromAllocated(nint ptr) => new EventStorePricesheetUpdatedImpl(ptr, true);
+  static EventStorePricesheetUpdated ITypedGameEvent<EventStorePricesheetUpdated>.Wrap(IGameEvent accessor) => new EventStorePricesheetUpdatedImpl(accessor);
 
-  static EventStorePricesheetUpdated IGameEvent<EventStorePricesheetUpdated>.FromExternal(nint ptr) => new EventStorePricesheetUpdatedImpl(ptr, false);
+  static string ITypedGameEvent<EventStorePricesheetUpdated>.GetName() => "store_pricesheet_updated";
 
-  static string IGameEvent<EventStorePricesheetUpdated>.GetName() => "store_pricesheet_updated";
-
-  static uint IGameEvent<EventStorePricesheetUpdated>.GetHash() => 0xE425C0FFu;
+  static uint ITypedGameEvent<EventStorePricesheetUpdated>.GetHash() => 0xE425C0FFu;
 }

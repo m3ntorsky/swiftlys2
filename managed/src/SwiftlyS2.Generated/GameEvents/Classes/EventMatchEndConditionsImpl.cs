@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "match_end_conditions"
 /// </summary>
-internal class EventMatchEndConditionsImpl : GameEvent<EventMatchEndConditions>, EventMatchEndConditions
+internal class EventMatchEndConditionsImpl : TypedGameEvent<EventMatchEndConditions>, EventMatchEndConditions
 {
 
-  public EventMatchEndConditionsImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventMatchEndConditionsImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public int FragS
-  { get => GetInt("frags"); set => SetInt("frags", value); }
+  { get => Accessor.GetInt32("frags"); set => Accessor.SetInt32("frags", value); }
 
   public int MaxRounds
-  { get => GetInt("max_rounds"); set => SetInt("max_rounds", value); }
+  { get => Accessor.GetInt32("max_rounds"); set => Accessor.SetInt32("max_rounds", value); }
 
   public int WinRounds
-  { get => GetInt("win_rounds"); set => SetInt("win_rounds", value); }
+  { get => Accessor.GetInt32("win_rounds"); set => Accessor.SetInt32("win_rounds", value); }
 
   public int Time
-  { get => GetInt("time"); set => SetInt("time", value); }
+  { get => Accessor.GetInt32("time"); set => Accessor.SetInt32("time", value); }
 }

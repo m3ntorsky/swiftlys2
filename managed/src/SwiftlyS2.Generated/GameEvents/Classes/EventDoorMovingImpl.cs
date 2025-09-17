@@ -9,16 +9,16 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "door_moving"
 /// </summary>
-internal class EventDoorMovingImpl : GameEvent<EventDoorMoving>, EventDoorMoving
+internal class EventDoorMovingImpl : TypedGameEvent<EventDoorMoving>, EventDoorMoving
 {
 
-  public EventDoorMovingImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventDoorMovingImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public int EntIndex
-  { get => GetInt("entindex"); set => SetInt("entindex", value); }
+  { get => Accessor.GetInt32("entindex"); set => Accessor.SetInt32("entindex", value); }
 }

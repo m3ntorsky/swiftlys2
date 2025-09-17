@@ -9,23 +9,23 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "item_pickup"
 /// </summary>
-internal class EventItemPickupImpl : GameEvent<EventItemPickup>, EventItemPickup
+internal class EventItemPickupImpl : TypedGameEvent<EventItemPickup>, EventItemPickup
 {
 
-  public EventItemPickupImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventItemPickupImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // either a weapon such as 'tmp' or 'hegrenade', or an item such as 'nvgs'
   public string Item
-  { get => GetString("item"); set => SetString("item", value); }
+  { get => Accessor.GetString("item"); set => Accessor.SetString("item", value); }
 
   public bool Silent
-  { get => GetBool("silent"); set => SetBool("silent", value); }
+  { get => Accessor.GetBool("silent"); set => Accessor.SetBool("silent", value); }
 
   public int DefIndex
-  { get => GetInt("defindex"); set => SetInt("defindex", value); }
+  { get => Accessor.GetInt32("defindex"); set => Accessor.SetInt32("defindex", value); }
 }

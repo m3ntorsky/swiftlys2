@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_stats_updated"
 /// </summary>
-internal class EventPlayerStatsUpdatedImpl : GameEvent<EventPlayerStatsUpdated>, EventPlayerStatsUpdated
+internal class EventPlayerStatsUpdatedImpl : TypedGameEvent<EventPlayerStatsUpdated>, EventPlayerStatsUpdated
 {
 
-  public EventPlayerStatsUpdatedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerStatsUpdatedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public bool ForceUpload
-  { get => GetBool("forceupload"); set => SetBool("forceupload", value); }
+  { get => Accessor.GetBool("forceupload"); set => Accessor.SetBool("forceupload", value); }
 }

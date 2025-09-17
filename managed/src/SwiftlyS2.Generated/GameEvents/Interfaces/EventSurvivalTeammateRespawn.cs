@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "survival_teammate_respawn"
 /// </summary>
-public interface EventSurvivalTeammateRespawn : IGameEvent<EventSurvivalTeammateRespawn> {
+public interface EventSurvivalTeammateRespawn : ITypedGameEvent<EventSurvivalTeammateRespawn> {
 
-  static EventSurvivalTeammateRespawn IGameEvent<EventSurvivalTeammateRespawn>.FromAllocated(nint ptr) => new EventSurvivalTeammateRespawnImpl(ptr, true);
+  static EventSurvivalTeammateRespawn ITypedGameEvent<EventSurvivalTeammateRespawn>.Wrap(IGameEvent accessor) => new EventSurvivalTeammateRespawnImpl(accessor);
 
-  static EventSurvivalTeammateRespawn IGameEvent<EventSurvivalTeammateRespawn>.FromExternal(nint ptr) => new EventSurvivalTeammateRespawnImpl(ptr, false);
+  static string ITypedGameEvent<EventSurvivalTeammateRespawn>.GetName() => "survival_teammate_respawn";
 
-  static string IGameEvent<EventSurvivalTeammateRespawn>.GetName() => "survival_teammate_respawn";
-
-  static uint IGameEvent<EventSurvivalTeammateRespawn>.GetHash() => 0x558ADEEBu;
+  static uint ITypedGameEvent<EventSurvivalTeammateRespawn>.GetHash() => 0x558ADEEBu;
   /// <summary>
   /// <br/>
   /// type: player_controller

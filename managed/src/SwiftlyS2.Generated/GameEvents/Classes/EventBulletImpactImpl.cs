@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "bullet_impact"
 /// </summary>
-internal class EventBulletImpactImpl : GameEvent<EventBulletImpact>, EventBulletImpact
+internal class EventBulletImpactImpl : TypedGameEvent<EventBulletImpact>, EventBulletImpact
 {
 
-  public EventBulletImpactImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventBulletImpactImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public float X
-  { get => GetFloat("x"); set => SetFloat("x", value); }
+  { get => Accessor.GetFloat("x"); set => Accessor.SetFloat("x", value); }
 
   public float Y
-  { get => GetFloat("y"); set => SetFloat("y", value); }
+  { get => Accessor.GetFloat("y"); set => Accessor.SetFloat("y", value); }
 
   public float Z
-  { get => GetFloat("z"); set => SetFloat("z", value); }
+  { get => Accessor.GetFloat("z"); set => Accessor.SetFloat("z", value); }
 }

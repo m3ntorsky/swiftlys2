@@ -10,19 +10,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "nextlevel_changed"
 /// a game event, name may be 32 characters long
 /// </summary>
-internal class EventNextlevelChangedImpl : GameEvent<EventNextlevelChanged>, EventNextlevelChanged
+internal class EventNextlevelChangedImpl : TypedGameEvent<EventNextlevelChanged>, EventNextlevelChanged
 {
 
-  public EventNextlevelChangedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventNextlevelChangedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public string NextLevel
-  { get => GetString("nextlevel"); set => SetString("nextlevel", value); }
+  { get => Accessor.GetString("nextlevel"); set => Accessor.SetString("nextlevel", value); }
 
   public string MapGroup
-  { get => GetString("mapgroup"); set => SetString("mapgroup", value); }
+  { get => Accessor.GetString("mapgroup"); set => Accessor.SetString("mapgroup", value); }
 
   public string SkirmishMode
-  { get => GetString("skirmishmode"); set => SetString("skirmishmode", value); }
+  { get => Accessor.GetString("skirmishmode"); set => Accessor.SetString("skirmishmode", value); }
 }

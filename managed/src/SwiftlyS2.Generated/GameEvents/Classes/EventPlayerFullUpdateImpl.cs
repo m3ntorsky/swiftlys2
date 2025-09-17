@@ -9,18 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_full_update"
 /// </summary>
-internal class EventPlayerFullUpdateImpl : GameEvent<EventPlayerFullUpdate>, EventPlayerFullUpdate
+internal class EventPlayerFullUpdateImpl : TypedGameEvent<EventPlayerFullUpdate>, EventPlayerFullUpdate
 {
 
-  public EventPlayerFullUpdateImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerFullUpdateImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // user ID on server
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // Number of this full update
   public short Count
-  { get => (short)GetInt("count"); set => SetInt("count", value); }
+  { get => (short)Accessor.GetInt32("count"); set => Accessor.SetInt32("count", value); }
 }

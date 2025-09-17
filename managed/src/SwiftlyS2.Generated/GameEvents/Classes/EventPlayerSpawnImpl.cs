@@ -10,13 +10,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "player_spawn"
 /// player spawned in game
 /// </summary>
-internal class EventPlayerSpawnImpl : GameEvent<EventPlayerSpawn>, EventPlayerSpawn
+internal class EventPlayerSpawnImpl : TypedGameEvent<EventPlayerSpawn>, EventPlayerSpawn
 {
 
-  public EventPlayerSpawnImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerSpawnImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

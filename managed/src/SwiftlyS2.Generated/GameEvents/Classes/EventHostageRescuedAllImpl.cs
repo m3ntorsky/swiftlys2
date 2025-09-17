@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hostage_rescued_all"
 /// </summary>
-internal class EventHostageRescuedAllImpl : GameEvent<EventHostageRescuedAll>, EventHostageRescuedAll
+internal class EventHostageRescuedAllImpl : TypedGameEvent<EventHostageRescuedAll>, EventHostageRescuedAll
 {
 
-  public EventHostageRescuedAllImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHostageRescuedAllImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

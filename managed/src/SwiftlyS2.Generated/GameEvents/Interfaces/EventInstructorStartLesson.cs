@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "instructor_start_lesson"
 /// </summary>
-public interface EventInstructorStartLesson : IGameEvent<EventInstructorStartLesson> {
+public interface EventInstructorStartLesson : ITypedGameEvent<EventInstructorStartLesson> {
 
-  static EventInstructorStartLesson IGameEvent<EventInstructorStartLesson>.FromAllocated(nint ptr) => new EventInstructorStartLessonImpl(ptr, true);
+  static EventInstructorStartLesson ITypedGameEvent<EventInstructorStartLesson>.Wrap(IGameEvent accessor) => new EventInstructorStartLessonImpl(accessor);
 
-  static EventInstructorStartLesson IGameEvent<EventInstructorStartLesson>.FromExternal(nint ptr) => new EventInstructorStartLessonImpl(ptr, false);
+  static string ITypedGameEvent<EventInstructorStartLesson>.GetName() => "instructor_start_lesson";
 
-  static string IGameEvent<EventInstructorStartLesson>.GetName() => "instructor_start_lesson";
-
-  static uint IGameEvent<EventInstructorStartLesson>.GetHash() => 0x03846AA2u;
+  static uint ITypedGameEvent<EventInstructorStartLesson>.GetHash() => 0x03846AA2u;
   /// <summary>
   /// The player who this lesson is intended for
   /// <br/>

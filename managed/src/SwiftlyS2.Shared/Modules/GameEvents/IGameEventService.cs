@@ -13,7 +13,7 @@ public interface IGameEventService {
   /// <typeparam name="T">The event type.</typeparam>
   /// <param name="callback">The callback to hook.</param>
   /// <returns>A GUID representing the hook. You can use this to unhook the callback later.</returns>
-  Guid HookPre<T>(Func<T, HookResult> callback) where T : IGameEvent<T>;
+  Guid HookPre<T>(Func<T, HookResult> callback) where T : ITypedGameEvent<T>;
 
   /// <summary>
   /// Hooks a post-event callback.
@@ -21,7 +21,7 @@ public interface IGameEventService {
   /// <typeparam name="T">The event type.</typeparam>
   /// <param name="callback">The callback to hook.</param>
   /// <returns>A GUID representing the hook. You can use this to unhook the callback later.</returns>
-  Guid HookPost<T>(Func<T, HookResult> callback) where T : IGameEvent<T>;
+  Guid HookPost<T>(Func<T, HookResult> callback) where T : ITypedGameEvent<T>;
 
   /// <summary>
   /// Unhooks a callback.
@@ -33,18 +33,18 @@ public interface IGameEventService {
   /// Unhooks all pre-event callbacks.
   /// </summary>
   /// <typeparam name="T">The event type.</typeparam>
-  void UnhookPre<T>() where T : IGameEvent<T>;
+  void UnhookPre<T>() where T : ITypedGameEvent<T>;
 
   /// <summary>
   /// Unhooks all post-event callbacks.
   /// </summary>
   /// <typeparam name="T">The event type.</typeparam>
-  void UnhookPost<T>() where T : IGameEvent<T>;
+  void UnhookPost<T>() where T : ITypedGameEvent<T>;
 
   /// <summary>
   /// Creates a new game event.
   /// </summary>
   /// <typeparam name="T">The event type.</typeparam>
   /// <returns>A new game event.</returns>
-  T Create<T>() where T : IGameEvent<T>;
+  T Create<T>() where T : ITypedGameEvent<T>;
 }

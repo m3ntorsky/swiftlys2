@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "hltv_replay_status"
 /// </summary>
-public interface EventHltvReplayStatus : IGameEvent<EventHltvReplayStatus> {
+public interface EventHltvReplayStatus : ITypedGameEvent<EventHltvReplayStatus> {
 
-  static EventHltvReplayStatus IGameEvent<EventHltvReplayStatus>.FromAllocated(nint ptr) => new EventHltvReplayStatusImpl(ptr, true);
+  static EventHltvReplayStatus ITypedGameEvent<EventHltvReplayStatus>.Wrap(IGameEvent accessor) => new EventHltvReplayStatusImpl(accessor);
 
-  static EventHltvReplayStatus IGameEvent<EventHltvReplayStatus>.FromExternal(nint ptr) => new EventHltvReplayStatusImpl(ptr, false);
+  static string ITypedGameEvent<EventHltvReplayStatus>.GetName() => "hltv_replay_status";
 
-  static string IGameEvent<EventHltvReplayStatus>.GetName() => "hltv_replay_status";
-
-  static uint IGameEvent<EventHltvReplayStatus>.GetHash() => 0x262D2D46u;
+  static uint ITypedGameEvent<EventHltvReplayStatus>.GetHash() => 0x262D2D46u;
   /// <summary>
   /// reason for hltv replay status change ()
   /// <br/>

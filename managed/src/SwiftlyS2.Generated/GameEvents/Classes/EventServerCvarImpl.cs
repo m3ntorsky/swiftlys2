@@ -10,18 +10,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "server_cvar"
 /// a server console var has changed
 /// </summary>
-internal class EventServerCvarImpl : GameEvent<EventServerCvar>, EventServerCvar
+internal class EventServerCvarImpl : TypedGameEvent<EventServerCvar>, EventServerCvar
 {
 
-  public EventServerCvarImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventServerCvarImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // cvar name, eg "mp_roundtime"
   public string CVarName
-  { get => GetString("cvarname"); set => SetString("cvarname", value); }
+  { get => Accessor.GetString("cvarname"); set => Accessor.SetString("cvarname", value); }
 
   // new cvar value
   public string CVarValue
-  { get => GetString("cvarvalue"); set => SetString("cvarvalue", value); }
+  { get => Accessor.GetString("cvarvalue"); set => Accessor.SetString("cvarvalue", value); }
 }

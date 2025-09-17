@@ -10,33 +10,33 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "player_disconnect"
 /// a client was disconnected
 /// </summary>
-internal class EventPlayerDisconnectImpl : GameEvent<EventPlayerDisconnect>, EventPlayerDisconnect
+internal class EventPlayerDisconnectImpl : TypedGameEvent<EventPlayerDisconnect>, EventPlayerDisconnect
 {
 
-  public EventPlayerDisconnectImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerDisconnectImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // user ID on server
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // see networkdisconnect enum protobuf
   public short Reason
-  { get => (short)GetInt("reason"); set => SetInt("reason", value); }
+  { get => (short)Accessor.GetInt32("reason"); set => Accessor.SetInt32("reason", value); }
 
   // player name
   public string Name
-  { get => GetString("name"); set => SetString("name", value); }
+  { get => Accessor.GetString("name"); set => Accessor.SetString("name", value); }
 
   // player network (i.e steam) id
   public string NetworkID
-  { get => GetString("networkid"); set => SetString("networkid", value); }
+  { get => Accessor.GetString("networkid"); set => Accessor.SetString("networkid", value); }
 
   // steam id
   public ulong XuID
-  { get => GetUint64("xuid"); set => SetUint64("xuid", value); }
+  { get => Accessor.GetUInt64("xuid"); set => Accessor.SetUInt64("xuid", value); }
 
   public short PlayerID
-  { get => (short)GetInt("PlayerID"); set => SetInt("PlayerID", value); }
+  { get => (short)Accessor.GetInt32("PlayerID"); set => Accessor.SetInt32("PlayerID", value); }
 }

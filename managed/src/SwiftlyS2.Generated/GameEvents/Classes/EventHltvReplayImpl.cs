@@ -9,18 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hltv_replay"
 /// </summary>
-internal class EventHltvReplayImpl : GameEvent<EventHltvReplay>, EventHltvReplay
+internal class EventHltvReplayImpl : TypedGameEvent<EventHltvReplay>, EventHltvReplay
 {
 
-  public EventHltvReplayImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHltvReplayImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // number of seconds in killer replay delay
   public int Delay
-  { get => GetInt("delay"); set => SetInt("delay", value); }
+  { get => Accessor.GetInt32("delay"); set => Accessor.SetInt32("delay", value); }
 
   // reason for replay	(ReplayEventType_t)
   public int Reason
-  { get => GetInt("reason"); set => SetInt("reason", value); }
+  { get => Accessor.GetInt32("reason"); set => Accessor.SetInt32("reason", value); }
 }

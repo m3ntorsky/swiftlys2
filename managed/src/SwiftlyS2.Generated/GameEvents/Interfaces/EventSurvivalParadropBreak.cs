@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "survival_paradrop_break"
 /// </summary>
-public interface EventSurvivalParadropBreak : IGameEvent<EventSurvivalParadropBreak> {
+public interface EventSurvivalParadropBreak : ITypedGameEvent<EventSurvivalParadropBreak> {
 
-  static EventSurvivalParadropBreak IGameEvent<EventSurvivalParadropBreak>.FromAllocated(nint ptr) => new EventSurvivalParadropBreakImpl(ptr, true);
+  static EventSurvivalParadropBreak ITypedGameEvent<EventSurvivalParadropBreak>.Wrap(IGameEvent accessor) => new EventSurvivalParadropBreakImpl(accessor);
 
-  static EventSurvivalParadropBreak IGameEvent<EventSurvivalParadropBreak>.FromExternal(nint ptr) => new EventSurvivalParadropBreakImpl(ptr, false);
+  static string ITypedGameEvent<EventSurvivalParadropBreak>.GetName() => "survival_paradrop_break";
 
-  static string IGameEvent<EventSurvivalParadropBreak>.GetName() => "survival_paradrop_break";
-
-  static uint IGameEvent<EventSurvivalParadropBreak>.GetHash() => 0xEBA7AD7Bu;
+  static uint ITypedGameEvent<EventSurvivalParadropBreak>.GetHash() => 0xEBA7AD7Bu;
   /// <summary>
   /// type: short
   /// </summary>

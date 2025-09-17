@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "break_prop"
 /// </summary>
-public interface EventBreakProp : IGameEvent<EventBreakProp> {
+public interface EventBreakProp : ITypedGameEvent<EventBreakProp> {
 
-  static EventBreakProp IGameEvent<EventBreakProp>.FromAllocated(nint ptr) => new EventBreakPropImpl(ptr, true);
+  static EventBreakProp ITypedGameEvent<EventBreakProp>.Wrap(IGameEvent accessor) => new EventBreakPropImpl(accessor);
 
-  static EventBreakProp IGameEvent<EventBreakProp>.FromExternal(nint ptr) => new EventBreakPropImpl(ptr, false);
+  static string ITypedGameEvent<EventBreakProp>.GetName() => "break_prop";
 
-  static string IGameEvent<EventBreakProp>.GetName() => "break_prop";
-
-  static uint IGameEvent<EventBreakProp>.GetHash() => 0x20D10398u;
+  static uint ITypedGameEvent<EventBreakProp>.GetHash() => 0x20D10398u;
   /// <summary>
   /// type: long
   /// </summary>

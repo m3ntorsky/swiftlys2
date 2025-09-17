@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bullet_impact"
 /// </summary>
-public interface EventBulletImpact : IGameEvent<EventBulletImpact> {
+public interface EventBulletImpact : ITypedGameEvent<EventBulletImpact> {
 
-  static EventBulletImpact IGameEvent<EventBulletImpact>.FromAllocated(nint ptr) => new EventBulletImpactImpl(ptr, true);
+  static EventBulletImpact ITypedGameEvent<EventBulletImpact>.Wrap(IGameEvent accessor) => new EventBulletImpactImpl(accessor);
 
-  static EventBulletImpact IGameEvent<EventBulletImpact>.FromExternal(nint ptr) => new EventBulletImpactImpl(ptr, false);
+  static string ITypedGameEvent<EventBulletImpact>.GetName() => "bullet_impact";
 
-  static string IGameEvent<EventBulletImpact>.GetName() => "bullet_impact";
-
-  static uint IGameEvent<EventBulletImpact>.GetHash() => 0x8B8FCCE8u;
+  static uint ITypedGameEvent<EventBulletImpact>.GetHash() => 0x8B8FCCE8u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn

@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "demo_stop"
 /// </summary>
-public interface EventDemoStop : IGameEvent<EventDemoStop> {
+public interface EventDemoStop : ITypedGameEvent<EventDemoStop> {
 
-  static EventDemoStop IGameEvent<EventDemoStop>.FromAllocated(nint ptr) => new EventDemoStopImpl(ptr, true);
+  static EventDemoStop ITypedGameEvent<EventDemoStop>.Wrap(IGameEvent accessor) => new EventDemoStopImpl(accessor);
 
-  static EventDemoStop IGameEvent<EventDemoStop>.FromExternal(nint ptr) => new EventDemoStopImpl(ptr, false);
+  static string ITypedGameEvent<EventDemoStop>.GetName() => "demo_stop";
 
-  static string IGameEvent<EventDemoStop>.GetName() => "demo_stop";
-
-  static uint IGameEvent<EventDemoStop>.GetHash() => 0xDF8418C3u;
+  static uint ITypedGameEvent<EventDemoStop>.GetHash() => 0xDF8418C3u;
 }

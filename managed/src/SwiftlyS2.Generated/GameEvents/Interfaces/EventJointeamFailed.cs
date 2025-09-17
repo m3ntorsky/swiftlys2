@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "jointeam_failed"
 /// </summary>
-public interface EventJointeamFailed : IGameEvent<EventJointeamFailed> {
+public interface EventJointeamFailed : ITypedGameEvent<EventJointeamFailed> {
 
-  static EventJointeamFailed IGameEvent<EventJointeamFailed>.FromAllocated(nint ptr) => new EventJointeamFailedImpl(ptr, true);
+  static EventJointeamFailed ITypedGameEvent<EventJointeamFailed>.Wrap(IGameEvent accessor) => new EventJointeamFailedImpl(accessor);
 
-  static EventJointeamFailed IGameEvent<EventJointeamFailed>.FromExternal(nint ptr) => new EventJointeamFailedImpl(ptr, false);
+  static string ITypedGameEvent<EventJointeamFailed>.GetName() => "jointeam_failed";
 
-  static string IGameEvent<EventJointeamFailed>.GetName() => "jointeam_failed";
-
-  static uint IGameEvent<EventJointeamFailed>.GetHash() => 0xCAAD4F84u;
+  static uint ITypedGameEvent<EventJointeamFailed>.GetHash() => 0xCAAD4F84u;
   /// <summary>
   /// <br/>
   /// type: player_controller

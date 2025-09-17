@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "item_schema_initialized"
 /// </summary>
-public interface EventItemSchemaInitialized : IGameEvent<EventItemSchemaInitialized> {
+public interface EventItemSchemaInitialized : ITypedGameEvent<EventItemSchemaInitialized> {
 
-  static EventItemSchemaInitialized IGameEvent<EventItemSchemaInitialized>.FromAllocated(nint ptr) => new EventItemSchemaInitializedImpl(ptr, true);
+  static EventItemSchemaInitialized ITypedGameEvent<EventItemSchemaInitialized>.Wrap(IGameEvent accessor) => new EventItemSchemaInitializedImpl(accessor);
 
-  static EventItemSchemaInitialized IGameEvent<EventItemSchemaInitialized>.FromExternal(nint ptr) => new EventItemSchemaInitializedImpl(ptr, false);
+  static string ITypedGameEvent<EventItemSchemaInitialized>.GetName() => "item_schema_initialized";
 
-  static string IGameEvent<EventItemSchemaInitialized>.GetName() => "item_schema_initialized";
-
-  static uint IGameEvent<EventItemSchemaInitialized>.GetHash() => 0x8046CAA1u;
+  static uint ITypedGameEvent<EventItemSchemaInitialized>.GetHash() => 0x8046CAA1u;
 }

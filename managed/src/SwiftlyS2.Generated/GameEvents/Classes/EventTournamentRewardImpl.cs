@@ -9,19 +9,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "tournament_reward"
 /// </summary>
-internal class EventTournamentRewardImpl : GameEvent<EventTournamentReward>, EventTournamentReward
+internal class EventTournamentRewardImpl : TypedGameEvent<EventTournamentReward>, EventTournamentReward
 {
 
-  public EventTournamentRewardImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventTournamentRewardImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public int DefIndex
-  { get => GetInt("defindex"); set => SetInt("defindex", value); }
+  { get => Accessor.GetInt32("defindex"); set => Accessor.SetInt32("defindex", value); }
 
   public int TotalRewards
-  { get => GetInt("totalrewards"); set => SetInt("totalrewards", value); }
+  { get => Accessor.GetInt32("totalrewards"); set => Accessor.SetInt32("totalrewards", value); }
 
   public int AccountID
-  { get => GetInt("accountid"); set => SetInt("accountid", value); }
+  { get => Accessor.GetInt32("accountid"); set => Accessor.SetInt32("accountid", value); }
 }

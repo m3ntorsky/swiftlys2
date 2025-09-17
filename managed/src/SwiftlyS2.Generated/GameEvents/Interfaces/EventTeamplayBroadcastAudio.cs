@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "teamplay_broadcast_audio"
 /// emits a sound to everyone on a team
 /// </summary>
-public interface EventTeamplayBroadcastAudio : IGameEvent<EventTeamplayBroadcastAudio> {
+public interface EventTeamplayBroadcastAudio : ITypedGameEvent<EventTeamplayBroadcastAudio> {
 
-  static EventTeamplayBroadcastAudio IGameEvent<EventTeamplayBroadcastAudio>.FromAllocated(nint ptr) => new EventTeamplayBroadcastAudioImpl(ptr, true);
+  static EventTeamplayBroadcastAudio ITypedGameEvent<EventTeamplayBroadcastAudio>.Wrap(IGameEvent accessor) => new EventTeamplayBroadcastAudioImpl(accessor);
 
-  static EventTeamplayBroadcastAudio IGameEvent<EventTeamplayBroadcastAudio>.FromExternal(nint ptr) => new EventTeamplayBroadcastAudioImpl(ptr, false);
+  static string ITypedGameEvent<EventTeamplayBroadcastAudio>.GetName() => "teamplay_broadcast_audio";
 
-  static string IGameEvent<EventTeamplayBroadcastAudio>.GetName() => "teamplay_broadcast_audio";
-
-  static uint IGameEvent<EventTeamplayBroadcastAudio>.GetHash() => 0xB81F833Bu;
+  static uint ITypedGameEvent<EventTeamplayBroadcastAudio>.GetHash() => 0xB81F833Bu;
   /// <summary>
   /// unique team id
   /// <br/>

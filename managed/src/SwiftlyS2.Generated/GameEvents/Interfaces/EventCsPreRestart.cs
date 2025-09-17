@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_pre_restart"
 /// </summary>
-public interface EventCsPreRestart : IGameEvent<EventCsPreRestart> {
+public interface EventCsPreRestart : ITypedGameEvent<EventCsPreRestart> {
 
-  static EventCsPreRestart IGameEvent<EventCsPreRestart>.FromAllocated(nint ptr) => new EventCsPreRestartImpl(ptr, true);
+  static EventCsPreRestart ITypedGameEvent<EventCsPreRestart>.Wrap(IGameEvent accessor) => new EventCsPreRestartImpl(accessor);
 
-  static EventCsPreRestart IGameEvent<EventCsPreRestart>.FromExternal(nint ptr) => new EventCsPreRestartImpl(ptr, false);
+  static string ITypedGameEvent<EventCsPreRestart>.GetName() => "cs_pre_restart";
 
-  static string IGameEvent<EventCsPreRestart>.GetName() => "cs_pre_restart";
-
-  static uint IGameEvent<EventCsPreRestart>.GetHash() => 0xE870A219u;
+  static uint ITypedGameEvent<EventCsPreRestart>.GetHash() => 0xE870A219u;
 }

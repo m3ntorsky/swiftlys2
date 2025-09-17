@@ -9,42 +9,42 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_hurt"
 /// </summary>
-internal class EventPlayerHurtImpl : GameEvent<EventPlayerHurt>, EventPlayerHurt
+internal class EventPlayerHurtImpl : TypedGameEvent<EventPlayerHurt>, EventPlayerHurt
 {
 
-  public EventPlayerHurtImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerHurtImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // player who was hurt
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // player who attacked
   public int Attacker
-  { get => GetPlayerSlot("attacker"); set => SetPlayerSlot("attacker", value); }
+  { get => Accessor.GetPlayerSlot("attacker"); set => Accessor.SetPlayerSlot("attacker", value); }
 
   // remaining health points
   public byte Health
-  { get => (byte)GetInt("health"); set => SetInt("health", value); }
+  { get => (byte)Accessor.GetInt32("health"); set => Accessor.SetInt32("health", value); }
 
   // remaining armor points
   public byte Armor
-  { get => (byte)GetInt("armor"); set => SetInt("armor", value); }
+  { get => (byte)Accessor.GetInt32("armor"); set => Accessor.SetInt32("armor", value); }
 
   // weapon name attacker used, if not the world
   public string Weapon
-  { get => GetString("weapon"); set => SetString("weapon", value); }
+  { get => Accessor.GetString("weapon"); set => Accessor.SetString("weapon", value); }
 
   // damage done to health
   public short DmgHealth
-  { get => (short)GetInt("dmg_health"); set => SetInt("dmg_health", value); }
+  { get => (short)Accessor.GetInt32("dmg_health"); set => Accessor.SetInt32("dmg_health", value); }
 
   // damage done to armor
   public byte DmgArmor
-  { get => (byte)GetInt("dmg_armor"); set => SetInt("dmg_armor", value); }
+  { get => (byte)Accessor.GetInt32("dmg_armor"); set => Accessor.SetInt32("dmg_armor", value); }
 
   // hitgroup that was damaged
   public byte HitGroup
-  { get => (byte)GetInt("hitgroup"); set => SetInt("hitgroup", value); }
+  { get => (byte)Accessor.GetInt32("hitgroup"); set => Accessor.SetInt32("hitgroup", value); }
 }

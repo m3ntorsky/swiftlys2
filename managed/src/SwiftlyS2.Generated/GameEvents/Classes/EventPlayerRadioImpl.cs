@@ -9,16 +9,16 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_radio"
 /// </summary>
-internal class EventPlayerRadioImpl : GameEvent<EventPlayerRadio>, EventPlayerRadio
+internal class EventPlayerRadioImpl : TypedGameEvent<EventPlayerRadio>, EventPlayerRadio
 {
 
-  public EventPlayerRadioImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerRadioImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public short Slot
-  { get => (short)GetInt("slot"); set => SetInt("slot", value); }
+  { get => (short)Accessor.GetInt32("slot"); set => Accessor.SetInt32("slot", value); }
 }

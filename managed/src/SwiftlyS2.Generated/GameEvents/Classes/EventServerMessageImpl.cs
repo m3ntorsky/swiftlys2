@@ -10,14 +10,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "server_message"
 /// a generic server message
 /// </summary>
-internal class EventServerMessageImpl : GameEvent<EventServerMessage>, EventServerMessage
+internal class EventServerMessageImpl : TypedGameEvent<EventServerMessage>, EventServerMessage
 {
 
-  public EventServerMessageImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventServerMessageImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // the message text
   public string Text
-  { get => GetString("text"); set => SetString("text", value); }
+  { get => Accessor.GetString("text"); set => Accessor.SetString("text", value); }
 }

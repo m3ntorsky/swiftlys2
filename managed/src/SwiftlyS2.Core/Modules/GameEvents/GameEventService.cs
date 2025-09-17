@@ -20,7 +20,7 @@ internal class GameEventService : IGameEventService, IDisposable {
   private readonly List<GameEventCallback> _callbacks = new();
   private object _lock = new();
 
-  public Guid HookPre<T>(Func<T, HookResult> callback) where T : IGameEvent<T> {
+  public Guid HookPre<T>(Func<T, HookResult> callback) where T : ITypedGameEvent<T> {
     GameEventCallback<T> cb = new(callback, true, _LoggerFactory, _Context);
     lock (_lock) {
       _callbacks.Add(cb);
@@ -28,7 +28,7 @@ internal class GameEventService : IGameEventService, IDisposable {
     return cb.Guid;
   }
 
-  public Guid HookPost<T>(Func<T, HookResult> callback) where T : IGameEvent<T> {
+  public Guid HookPost<T>(Func<T, HookResult> callback) where T : ITypedGameEvent<T> {
     GameEventCallback<T> cb = new(callback, false, _LoggerFactory, _Context);
     lock (_lock) {
       _callbacks.Add(cb);
@@ -50,7 +50,7 @@ internal class GameEventService : IGameEventService, IDisposable {
   }
 
 
-  public void UnhookPre<T>() where T : IGameEvent<T> {
+  public void UnhookPre<T>() where T : ITypedGameEvent<T> {
     lock (_lock) {
       for (int i = 0; i < _callbacks.Count; i++) {
         var callback = _callbacks[i];
@@ -62,7 +62,7 @@ internal class GameEventService : IGameEventService, IDisposable {
     }
   }
 
-  public void UnhookPost<T>() where T : IGameEvent<T> {
+  public void UnhookPost<T>() where T : ITypedGameEvent<T> {
     lock (_lock) {
       for (int i = 0; i < _callbacks.Count; i++) {
         var callback = _callbacks[i];
@@ -74,9 +74,10 @@ internal class GameEventService : IGameEventService, IDisposable {
     }
   }
 
-  public T Create<T>() where T : IGameEvent<T> {
+  public T Create<T>() where T : ITypedGameEvent<T> {
     unsafe {
-      return T.FromAllocated((nint)NativeGameEvents.CreateEvent(T.GetName()));
+      var accessor = new GameEvent((nint)NativeGameEvents.CreateEvent(T.GetName()), true);
+      return T.Wrap(accessor);
     }
   }
 

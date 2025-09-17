@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_full_update"
 /// </summary>
-public interface EventPlayerFullUpdate : IGameEvent<EventPlayerFullUpdate> {
+public interface EventPlayerFullUpdate : ITypedGameEvent<EventPlayerFullUpdate> {
 
-  static EventPlayerFullUpdate IGameEvent<EventPlayerFullUpdate>.FromAllocated(nint ptr) => new EventPlayerFullUpdateImpl(ptr, true);
+  static EventPlayerFullUpdate ITypedGameEvent<EventPlayerFullUpdate>.Wrap(IGameEvent accessor) => new EventPlayerFullUpdateImpl(accessor);
 
-  static EventPlayerFullUpdate IGameEvent<EventPlayerFullUpdate>.FromExternal(nint ptr) => new EventPlayerFullUpdateImpl(ptr, false);
+  static string ITypedGameEvent<EventPlayerFullUpdate>.GetName() => "player_full_update";
 
-  static string IGameEvent<EventPlayerFullUpdate>.GetName() => "player_full_update";
-
-  static uint IGameEvent<EventPlayerFullUpdate>.GetHash() => 0xC12FF460u;
+  static uint ITypedGameEvent<EventPlayerFullUpdate>.GetHash() => 0xC12FF460u;
   /// <summary>
   /// user ID on server
   /// <br/>

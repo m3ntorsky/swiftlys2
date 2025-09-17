@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "molotov_detonate"
 /// </summary>
-internal class EventMolotovDetonateImpl : GameEvent<EventMolotovDetonate>, EventMolotovDetonate
+internal class EventMolotovDetonateImpl : TypedGameEvent<EventMolotovDetonate>, EventMolotovDetonate
 {
 
-  public EventMolotovDetonateImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventMolotovDetonateImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public float X
-  { get => GetFloat("x"); set => SetFloat("x", value); }
+  { get => Accessor.GetFloat("x"); set => Accessor.SetFloat("x", value); }
 
   public float Y
-  { get => GetFloat("y"); set => SetFloat("y", value); }
+  { get => Accessor.GetFloat("y"); set => Accessor.SetFloat("y", value); }
 
   public float Z
-  { get => GetFloat("z"); set => SetFloat("z", value); }
+  { get => Accessor.GetFloat("z"); set => Accessor.SetFloat("z", value); }
 }

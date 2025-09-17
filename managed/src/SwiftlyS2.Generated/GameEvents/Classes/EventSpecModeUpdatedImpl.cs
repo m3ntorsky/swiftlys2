@@ -9,14 +9,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "spec_mode_updated"
 /// </summary>
-internal class EventSpecModeUpdatedImpl : GameEvent<EventSpecModeUpdated>, EventSpecModeUpdated
+internal class EventSpecModeUpdatedImpl : TypedGameEvent<EventSpecModeUpdated>, EventSpecModeUpdated
 {
 
-  public EventSpecModeUpdatedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventSpecModeUpdatedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // spectating player
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

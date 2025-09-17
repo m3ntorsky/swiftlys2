@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "round_start"
 /// </summary>
-internal class EventRoundStartImpl : GameEvent<EventRoundStart>, EventRoundStart
+internal class EventRoundStartImpl : TypedGameEvent<EventRoundStart>, EventRoundStart
 {
 
-  public EventRoundStartImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventRoundStartImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // round time limit in seconds
   public int TimeLimit
-  { get => GetInt("timelimit"); set => SetInt("timelimit", value); }
+  { get => Accessor.GetInt32("timelimit"); set => Accessor.SetInt32("timelimit", value); }
 
   // frag limit in seconds
   public int FragLimit
-  { get => GetInt("fraglimit"); set => SetInt("fraglimit", value); }
+  { get => Accessor.GetInt32("fraglimit"); set => Accessor.SetInt32("fraglimit", value); }
 
   // round objective
   public string Objective
-  { get => GetString("objective"); set => SetString("objective", value); }
+  { get => Accessor.GetString("objective"); set => Accessor.SetString("objective", value); }
 }

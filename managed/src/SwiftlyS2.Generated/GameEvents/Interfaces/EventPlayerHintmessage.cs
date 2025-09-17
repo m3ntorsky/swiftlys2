@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_hintmessage"
 /// </summary>
-public interface EventPlayerHintmessage : IGameEvent<EventPlayerHintmessage> {
+public interface EventPlayerHintmessage : ITypedGameEvent<EventPlayerHintmessage> {
 
-  static EventPlayerHintmessage IGameEvent<EventPlayerHintmessage>.FromAllocated(nint ptr) => new EventPlayerHintmessageImpl(ptr, true);
+  static EventPlayerHintmessage ITypedGameEvent<EventPlayerHintmessage>.Wrap(IGameEvent accessor) => new EventPlayerHintmessageImpl(accessor);
 
-  static EventPlayerHintmessage IGameEvent<EventPlayerHintmessage>.FromExternal(nint ptr) => new EventPlayerHintmessageImpl(ptr, false);
+  static string ITypedGameEvent<EventPlayerHintmessage>.GetName() => "player_hintmessage";
 
-  static string IGameEvent<EventPlayerHintmessage>.GetName() => "player_hintmessage";
-
-  static uint IGameEvent<EventPlayerHintmessage>.GetHash() => 0xD756F227u;
+  static uint ITypedGameEvent<EventPlayerHintmessage>.GetHash() => 0xD756F227u;
   /// <summary>
   /// localizable string of a hint
   /// <br/>

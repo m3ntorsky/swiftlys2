@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "event_ticket_modified"
 /// </summary>
-public interface EventEventTicketModified : IGameEvent<EventEventTicketModified> {
+public interface EventEventTicketModified : ITypedGameEvent<EventEventTicketModified> {
 
-  static EventEventTicketModified IGameEvent<EventEventTicketModified>.FromAllocated(nint ptr) => new EventEventTicketModifiedImpl(ptr, true);
+  static EventEventTicketModified ITypedGameEvent<EventEventTicketModified>.Wrap(IGameEvent accessor) => new EventEventTicketModifiedImpl(accessor);
 
-  static EventEventTicketModified IGameEvent<EventEventTicketModified>.FromExternal(nint ptr) => new EventEventTicketModifiedImpl(ptr, false);
+  static string ITypedGameEvent<EventEventTicketModified>.GetName() => "event_ticket_modified";
 
-  static string IGameEvent<EventEventTicketModified>.GetName() => "event_ticket_modified";
-
-  static uint IGameEvent<EventEventTicketModified>.GetHash() => 0xAD893DFEu;
+  static uint ITypedGameEvent<EventEventTicketModified>.GetHash() => 0xAD893DFEu;
 }

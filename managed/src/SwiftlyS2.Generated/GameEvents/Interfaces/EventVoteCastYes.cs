@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "vote_cast_yes"
 /// </summary>
-public interface EventVoteCastYes : IGameEvent<EventVoteCastYes> {
+public interface EventVoteCastYes : ITypedGameEvent<EventVoteCastYes> {
 
-  static EventVoteCastYes IGameEvent<EventVoteCastYes>.FromAllocated(nint ptr) => new EventVoteCastYesImpl(ptr, true);
+  static EventVoteCastYes ITypedGameEvent<EventVoteCastYes>.Wrap(IGameEvent accessor) => new EventVoteCastYesImpl(accessor);
 
-  static EventVoteCastYes IGameEvent<EventVoteCastYes>.FromExternal(nint ptr) => new EventVoteCastYesImpl(ptr, false);
+  static string ITypedGameEvent<EventVoteCastYes>.GetName() => "vote_cast_yes";
 
-  static string IGameEvent<EventVoteCastYes>.GetName() => "vote_cast_yes";
-
-  static uint IGameEvent<EventVoteCastYes>.GetHash() => 0xC6314219u;
+  static uint ITypedGameEvent<EventVoteCastYes>.GetHash() => 0xC6314219u;
   /// <summary>
   /// type: byte
   /// </summary>

@@ -9,31 +9,31 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "instructor_start_lesson"
 /// </summary>
-internal class EventInstructorStartLessonImpl : GameEvent<EventInstructorStartLesson>, EventInstructorStartLesson
+internal class EventInstructorStartLessonImpl : TypedGameEvent<EventInstructorStartLesson>, EventInstructorStartLesson
 {
 
-  public EventInstructorStartLessonImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventInstructorStartLessonImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // The player who this lesson is intended for
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // Name of the lesson to start.  Must match instructor_lesson.txt
   public string HintName
-  { get => GetString("hint_name"); set => SetString("hint_name", value); }
+  { get => Accessor.GetString("hint_name"); set => Accessor.SetString("hint_name", value); }
 
   // entity id that the hint should display at. Leave empty if controller target
   public int HintTarget
-  { get => GetInt("hint_target"); set => SetInt("hint_target", value); }
+  { get => Accessor.GetInt32("hint_target"); set => Accessor.SetInt32("hint_target", value); }
 
   public byte VrMovementType
-  { get => (byte)GetInt("vr_movement_type"); set => SetInt("vr_movement_type", value); }
+  { get => (byte)Accessor.GetInt32("vr_movement_type"); set => Accessor.SetInt32("vr_movement_type", value); }
 
   public bool VrSingleController
-  { get => GetBool("vr_single_controller"); set => SetBool("vr_single_controller", value); }
+  { get => Accessor.GetBool("vr_single_controller"); set => Accessor.SetBool("vr_single_controller", value); }
 
   public byte VrControllerType
-  { get => (byte)GetInt("vr_controller_type"); set => SetInt("vr_controller_type", value); }
+  { get => (byte)Accessor.GetInt32("vr_controller_type"); set => Accessor.SetInt32("vr_controller_type", value); }
 }

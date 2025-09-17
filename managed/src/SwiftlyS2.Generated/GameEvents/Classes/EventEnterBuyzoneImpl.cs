@@ -9,16 +9,16 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "enter_buyzone"
 /// </summary>
-internal class EventEnterBuyzoneImpl : GameEvent<EventEnterBuyzone>, EventEnterBuyzone
+internal class EventEnterBuyzoneImpl : TypedGameEvent<EventEnterBuyzone>, EventEnterBuyzone
 {
 
-  public EventEnterBuyzoneImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventEnterBuyzoneImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public bool CanBuy
-  { get => GetBool("canbuy"); set => SetBool("canbuy", value); }
+  { get => Accessor.GetBool("canbuy"); set => Accessor.SetBool("canbuy", value); }
 }

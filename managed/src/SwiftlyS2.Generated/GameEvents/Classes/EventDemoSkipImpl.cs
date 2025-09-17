@@ -9,18 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "demo_skip"
 /// </summary>
-internal class EventDemoSkipImpl : GameEvent<EventDemoSkip>, EventDemoSkip
+internal class EventDemoSkipImpl : TypedGameEvent<EventDemoSkip>, EventDemoSkip
 {
 
-  public EventDemoSkipImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventDemoSkipImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // current playback tick
   public int PlaybackTick
-  { get => GetInt("playback_tick"); set => SetInt("playback_tick", value); }
+  { get => Accessor.GetInt32("playback_tick"); set => Accessor.SetInt32("playback_tick", value); }
 
   // tick we're going to
   public int SkiptoTick
-  { get => GetInt("skipto_tick"); set => SetInt("skipto_tick", value); }
+  { get => Accessor.GetInt32("skipto_tick"); set => Accessor.SetInt32("skipto_tick", value); }
 }

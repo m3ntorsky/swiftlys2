@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "player_chat"
 /// a public player chat
 /// </summary>
-public interface EventPlayerChat : IGameEvent<EventPlayerChat> {
+public interface EventPlayerChat : ITypedGameEvent<EventPlayerChat> {
 
-  static EventPlayerChat IGameEvent<EventPlayerChat>.FromAllocated(nint ptr) => new EventPlayerChatImpl(ptr, true);
+  static EventPlayerChat ITypedGameEvent<EventPlayerChat>.Wrap(IGameEvent accessor) => new EventPlayerChatImpl(accessor);
 
-  static EventPlayerChat IGameEvent<EventPlayerChat>.FromExternal(nint ptr) => new EventPlayerChatImpl(ptr, false);
+  static string ITypedGameEvent<EventPlayerChat>.GetName() => "player_chat";
 
-  static string IGameEvent<EventPlayerChat>.GetName() => "player_chat";
-
-  static uint IGameEvent<EventPlayerChat>.GetHash() => 0xA2C21BE3u;
+  static uint ITypedGameEvent<EventPlayerChat>.GetHash() => 0xA2C21BE3u;
   /// <summary>
   /// true if team only chat
   /// <br/>

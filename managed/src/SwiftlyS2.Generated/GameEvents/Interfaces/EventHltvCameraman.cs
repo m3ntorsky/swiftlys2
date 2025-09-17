@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "hltv_cameraman"
 /// a spectator/player is a cameraman
 /// </summary>
-public interface EventHltvCameraman : IGameEvent<EventHltvCameraman> {
+public interface EventHltvCameraman : ITypedGameEvent<EventHltvCameraman> {
 
-  static EventHltvCameraman IGameEvent<EventHltvCameraman>.FromAllocated(nint ptr) => new EventHltvCameramanImpl(ptr, true);
+  static EventHltvCameraman ITypedGameEvent<EventHltvCameraman>.Wrap(IGameEvent accessor) => new EventHltvCameramanImpl(accessor);
 
-  static EventHltvCameraman IGameEvent<EventHltvCameraman>.FromExternal(nint ptr) => new EventHltvCameramanImpl(ptr, false);
+  static string ITypedGameEvent<EventHltvCameraman>.GetName() => "hltv_cameraman";
 
-  static string IGameEvent<EventHltvCameraman>.GetName() => "hltv_cameraman";
-
-  static uint IGameEvent<EventHltvCameraman>.GetHash() => 0xD54932D5u;
+  static uint ITypedGameEvent<EventHltvCameraman>.GetHash() => 0xD54932D5u;
   /// <summary>
   /// camera man entity index
   /// <br/>

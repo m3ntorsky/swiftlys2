@@ -9,19 +9,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "sfuievent"
 /// </summary>
-internal class EventSfuieventImpl : GameEvent<EventSfuievent>, EventSfuievent
+internal class EventSfuieventImpl : TypedGameEvent<EventSfuievent>, EventSfuievent
 {
 
-  public EventSfuieventImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventSfuieventImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public string Action
-  { get => GetString("action"); set => SetString("action", value); }
+  { get => Accessor.GetString("action"); set => Accessor.SetString("action", value); }
 
   public string Data
-  { get => GetString("data"); set => SetString("data", value); }
+  { get => Accessor.GetString("data"); set => Accessor.SetString("data", value); }
 
   public byte Slot
-  { get => (byte)GetInt("slot"); set => SetInt("slot", value); }
+  { get => (byte)Accessor.GetInt32("slot"); set => Accessor.SetInt32("slot", value); }
 }

@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_activate"
 /// </summary>
-public interface EventPlayerActivate : IGameEvent<EventPlayerActivate> {
+public interface EventPlayerActivate : ITypedGameEvent<EventPlayerActivate> {
 
-  static EventPlayerActivate IGameEvent<EventPlayerActivate>.FromAllocated(nint ptr) => new EventPlayerActivateImpl(ptr, true);
+  static EventPlayerActivate ITypedGameEvent<EventPlayerActivate>.Wrap(IGameEvent accessor) => new EventPlayerActivateImpl(accessor);
 
-  static EventPlayerActivate IGameEvent<EventPlayerActivate>.FromExternal(nint ptr) => new EventPlayerActivateImpl(ptr, false);
+  static string ITypedGameEvent<EventPlayerActivate>.GetName() => "player_activate";
 
-  static string IGameEvent<EventPlayerActivate>.GetName() => "player_activate";
-
-  static uint IGameEvent<EventPlayerActivate>.GetHash() => 0x5C0DF448u;
+  static uint ITypedGameEvent<EventPlayerActivate>.GetHash() => 0x5C0DF448u;
   /// <summary>
   /// user ID on server
   /// <br/>

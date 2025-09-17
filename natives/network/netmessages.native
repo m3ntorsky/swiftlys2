@@ -72,5 +72,7 @@ void AddBytes = ptr netmsg, string fieldName, bytes value
 ptr GetNestedMessage = ptr netmsg, string fieldName
 ptr GetRepeatedNestedMessage = ptr netmsg, string fieldName, int32 index
 ptr AddNestedMessage = ptr netmsg, string fieldName
+int32 GetRepeatedFieldSize = ptr netmsg, string fieldName
+void ClearRepeatedField = ptr netmsg, string fieldName
 void SendMessage = ptr netmsg, int32 msgid, int32 playerid
 void SendMessageToPlayers = ptr netmsg, int32 msgid, uint64 playermask // each bit in player_mask represents a playerid

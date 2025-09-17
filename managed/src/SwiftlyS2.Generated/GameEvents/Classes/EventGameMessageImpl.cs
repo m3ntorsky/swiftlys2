@@ -10,18 +10,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "game_message"
 /// a message send by game logic to everyone
 /// </summary>
-internal class EventGameMessageImpl : GameEvent<EventGameMessage>, EventGameMessage
+internal class EventGameMessageImpl : TypedGameEvent<EventGameMessage>, EventGameMessage
 {
 
-  public EventGameMessageImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventGameMessageImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // 0 = console, 1 = HUD
   public byte Target
-  { get => (byte)GetInt("target"); set => SetInt("target", value); }
+  { get => (byte)Accessor.GetInt32("target"); set => Accessor.SetInt32("target", value); }
 
   // the message text
   public string Text
-  { get => GetString("text"); set => SetString("text", value); }
+  { get => Accessor.GetString("text"); set => Accessor.SetString("text", value); }
 }

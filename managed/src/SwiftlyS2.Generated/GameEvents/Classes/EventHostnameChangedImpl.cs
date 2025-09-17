@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hostname_changed"
 /// </summary>
-internal class EventHostnameChangedImpl : GameEvent<EventHostnameChanged>, EventHostnameChanged
+internal class EventHostnameChangedImpl : TypedGameEvent<EventHostnameChanged>, EventHostnameChanged
 {
 
-  public EventHostnameChangedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHostnameChangedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public string Hostname
-  { get => GetString("hostname"); set => SetString("hostname", value); }
+  { get => Accessor.GetString("hostname"); set => Accessor.SetString("hostname", value); }
 }

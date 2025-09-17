@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "player_death"
 /// a game event, name may be 32 charaters long
 /// </summary>
-public interface EventPlayerDeath : IGameEvent<EventPlayerDeath> {
+public interface EventPlayerDeath : ITypedGameEvent<EventPlayerDeath> {
 
-  static EventPlayerDeath IGameEvent<EventPlayerDeath>.FromAllocated(nint ptr) => new EventPlayerDeathImpl(ptr, true);
+  static EventPlayerDeath ITypedGameEvent<EventPlayerDeath>.Wrap(IGameEvent accessor) => new EventPlayerDeathImpl(accessor);
 
-  static EventPlayerDeath IGameEvent<EventPlayerDeath>.FromExternal(nint ptr) => new EventPlayerDeathImpl(ptr, false);
+  static string ITypedGameEvent<EventPlayerDeath>.GetName() => "player_death";
 
-  static string IGameEvent<EventPlayerDeath>.GetName() => "player_death";
-
-  static uint IGameEvent<EventPlayerDeath>.GetHash() => 0xA6ABE875u;
+  static uint ITypedGameEvent<EventPlayerDeath>.GetHash() => 0xA6ABE875u;
   /// <summary>
   /// user ID who died
   /// <br/>

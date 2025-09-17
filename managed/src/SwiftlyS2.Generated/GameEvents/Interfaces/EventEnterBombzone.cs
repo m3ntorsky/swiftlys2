@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "enter_bombzone"
 /// </summary>
-public interface EventEnterBombzone : IGameEvent<EventEnterBombzone> {
+public interface EventEnterBombzone : ITypedGameEvent<EventEnterBombzone> {
 
-  static EventEnterBombzone IGameEvent<EventEnterBombzone>.FromAllocated(nint ptr) => new EventEnterBombzoneImpl(ptr, true);
+  static EventEnterBombzone ITypedGameEvent<EventEnterBombzone>.Wrap(IGameEvent accessor) => new EventEnterBombzoneImpl(accessor);
 
-  static EventEnterBombzone IGameEvent<EventEnterBombzone>.FromExternal(nint ptr) => new EventEnterBombzoneImpl(ptr, false);
+  static string ITypedGameEvent<EventEnterBombzone>.GetName() => "enter_bombzone";
 
-  static string IGameEvent<EventEnterBombzone>.GetName() => "enter_bombzone";
-
-  static uint IGameEvent<EventEnterBombzone>.GetHash() => 0x9175DF94u;
+  static uint ITypedGameEvent<EventEnterBombzone>.GetHash() => 0x9175DF94u;
   /// <summary>
   /// <br/>
   /// type: player_controller

@@ -9,18 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "spec_target_updated"
 /// </summary>
-internal class EventSpecTargetUpdatedImpl : GameEvent<EventSpecTargetUpdated>, EventSpecTargetUpdated
+internal class EventSpecTargetUpdatedImpl : TypedGameEvent<EventSpecTargetUpdated>, EventSpecTargetUpdated
 {
 
-  public EventSpecTargetUpdatedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventSpecTargetUpdatedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // spectating player
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // ehandle of the target
   public nint Target
-  { get => GetPtr("target"); set => SetPtr("target", value); }
+  { get => Accessor.GetPtr("target"); set => Accessor.SetPtr("target", value); }
 }

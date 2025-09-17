@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "parachute_deploy"
 /// </summary>
-internal class EventParachuteDeployImpl : GameEvent<EventParachuteDeploy>, EventParachuteDeploy
+internal class EventParachuteDeployImpl : TypedGameEvent<EventParachuteDeploy>, EventParachuteDeploy
 {
 
-  public EventParachuteDeployImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventParachuteDeployImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

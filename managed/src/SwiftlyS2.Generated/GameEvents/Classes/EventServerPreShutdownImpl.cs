@@ -10,14 +10,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "server_pre_shutdown"
 /// server is about to be shut down
 /// </summary>
-internal class EventServerPreShutdownImpl : GameEvent<EventServerPreShutdown>, EventServerPreShutdown
+internal class EventServerPreShutdownImpl : TypedGameEvent<EventServerPreShutdown>, EventServerPreShutdown
 {
 
-  public EventServerPreShutdownImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventServerPreShutdownImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // reason why server is about to be shut down
   public string Reason
-  { get => GetString("reason"); set => SetString("reason", value); }
+  { get => Accessor.GetString("reason"); set => Accessor.SetString("reason", value); }
 }

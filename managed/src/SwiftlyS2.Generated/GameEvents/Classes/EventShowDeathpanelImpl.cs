@@ -9,33 +9,33 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "show_deathpanel"
 /// </summary>
-internal class EventShowDeathpanelImpl : GameEvent<EventShowDeathpanel>, EventShowDeathpanel
+internal class EventShowDeathpanelImpl : TypedGameEvent<EventShowDeathpanel>, EventShowDeathpanel
 {
 
-  public EventShowDeathpanelImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventShowDeathpanelImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // endindex of the one who was killed
   public int Victim
-  { get => GetPlayerSlot("victim"); set => SetPlayerSlot("victim", value); }
+  { get => Accessor.GetPlayerSlot("victim"); set => Accessor.SetPlayerSlot("victim", value); }
 
   // entindex of the killer entity
   public nint Killer
-  { get => GetPtr("killer"); set => SetPtr("killer", value); }
+  { get => Accessor.GetPtr("killer"); set => Accessor.SetPtr("killer", value); }
 
   public int KillerController
-  { get => GetPlayerSlot("killer_controller"); set => SetPlayerSlot("killer_controller", value); }
+  { get => Accessor.GetPlayerSlot("killer_controller"); set => Accessor.SetPlayerSlot("killer_controller", value); }
 
   public short HitsTaken
-  { get => (short)GetInt("hits_taken"); set => SetInt("hits_taken", value); }
+  { get => (short)Accessor.GetInt32("hits_taken"); set => Accessor.SetInt32("hits_taken", value); }
 
   public short DamageTaken
-  { get => (short)GetInt("damage_taken"); set => SetInt("damage_taken", value); }
+  { get => (short)Accessor.GetInt32("damage_taken"); set => Accessor.SetInt32("damage_taken", value); }
 
   public short HitsGiven
-  { get => (short)GetInt("hits_given"); set => SetInt("hits_given", value); }
+  { get => (short)Accessor.GetInt32("hits_given"); set => Accessor.SetInt32("hits_given", value); }
 
   public short DamageGiven
-  { get => (short)GetInt("damage_given"); set => SetInt("damage_given", value); }
+  { get => (short)Accessor.GetInt32("damage_given"); set => Accessor.SetInt32("damage_given", value); }
 }

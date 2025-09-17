@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "survival_no_respawns_final"
 /// </summary>
-internal class EventSurvivalNoRespawnsFinalImpl : GameEvent<EventSurvivalNoRespawnsFinal>, EventSurvivalNoRespawnsFinal
+internal class EventSurvivalNoRespawnsFinalImpl : TypedGameEvent<EventSurvivalNoRespawnsFinal>, EventSurvivalNoRespawnsFinal
 {
 
-  public EventSurvivalNoRespawnsFinalImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventSurvivalNoRespawnsFinalImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

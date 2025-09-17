@@ -9,17 +9,17 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "vote_cast_no"
 /// </summary>
-internal class EventVoteCastNoImpl : GameEvent<EventVoteCastNo>, EventVoteCastNo
+internal class EventVoteCastNoImpl : TypedGameEvent<EventVoteCastNo>, EventVoteCastNo
 {
 
-  public EventVoteCastNoImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventVoteCastNoImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public byte Team
-  { get => (byte)GetInt("team"); set => SetInt("team", value); }
+  { get => (byte)Accessor.GetInt32("team"); set => Accessor.SetInt32("team", value); }
 
   // entity id of the voter
   public int EntityID
-  { get => GetInt("entityid"); set => SetInt("entityid", value); }
+  { get => Accessor.GetInt32("entityid"); set => Accessor.SetInt32("entityid", value); }
 }

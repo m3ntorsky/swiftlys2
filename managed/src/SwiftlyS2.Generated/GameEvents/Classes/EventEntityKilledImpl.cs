@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "entity_killed"
 /// </summary>
-internal class EventEntityKilledImpl : GameEvent<EventEntityKilled>, EventEntityKilled
+internal class EventEntityKilledImpl : TypedGameEvent<EventEntityKilled>, EventEntityKilled
 {
 
-  public EventEntityKilledImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventEntityKilledImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public int EntindexKilled
-  { get => GetInt("entindex_killed"); set => SetInt("entindex_killed", value); }
+  { get => Accessor.GetInt32("entindex_killed"); set => Accessor.SetInt32("entindex_killed", value); }
 
   public int EntindexAttacker
-  { get => GetInt("entindex_attacker"); set => SetInt("entindex_attacker", value); }
+  { get => Accessor.GetInt32("entindex_attacker"); set => Accessor.SetInt32("entindex_attacker", value); }
 
   public int EntindexInflictor
-  { get => GetInt("entindex_inflictor"); set => SetInt("entindex_inflictor", value); }
+  { get => Accessor.GetInt32("entindex_inflictor"); set => Accessor.SetInt32("entindex_inflictor", value); }
 
   public int DamageBits
-  { get => GetInt("damagebits"); set => SetInt("damagebits", value); }
+  { get => Accessor.GetInt32("damagebits"); set => Accessor.SetInt32("damagebits", value); }
 }

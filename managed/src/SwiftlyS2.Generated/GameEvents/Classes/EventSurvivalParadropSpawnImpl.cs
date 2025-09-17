@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "survival_paradrop_spawn"
 /// </summary>
-internal class EventSurvivalParadropSpawnImpl : GameEvent<EventSurvivalParadropSpawn>, EventSurvivalParadropSpawn
+internal class EventSurvivalParadropSpawnImpl : TypedGameEvent<EventSurvivalParadropSpawn>, EventSurvivalParadropSpawn
 {
 
-  public EventSurvivalParadropSpawnImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventSurvivalParadropSpawnImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public short EntityID
-  { get => (short)GetInt("entityid"); set => SetInt("entityid", value); }
+  { get => (short)Accessor.GetInt32("entityid"); set => Accessor.SetInt32("entityid", value); }
 }

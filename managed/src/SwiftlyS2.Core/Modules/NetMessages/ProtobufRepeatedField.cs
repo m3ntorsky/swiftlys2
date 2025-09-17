@@ -1,0 +1,89 @@
+using System.Collections;
+using SwiftlyS2.Core.Natives.NativeObjects;
+using SwiftlyS2.Shared.NetMessages;
+
+namespace SwiftlyS2.Core.NetMessages;
+
+public class ProtobufRepeatedFieldValueType<T> : IProtobufRepeatedFieldValueType<T> where T : unmanaged
+{
+  private IProtobuf _Protobuf { get; init; }
+  private string _FieldName { get; init; }
+  public ProtobufRepeatedFieldValueType(IProtobuf protobuf, string fieldName)
+  {
+    _Protobuf = protobuf;
+    _FieldName = fieldName;
+  }
+
+  public T this[int index] { 
+    get => _Protobuf.GetRepeated<T>(_FieldName, index);
+    set => _Protobuf.SetRepeated<T>(_FieldName, index, value);
+  }
+
+  public int Count => _Protobuf.GetRepeatedFieldSize(_FieldName);
+
+  public bool IsReadOnly => false;
+
+  public void Add(T item)
+  {
+    _Protobuf.Add<T>(_FieldName, item);
+  }
+
+  public void Clear()
+  {
+    _Protobuf.ClearRepeatedField(_FieldName);
+  }
+
+  public bool Contains(T item)
+  {
+    for (int i = 0; i < Count; i++) {
+      if (this[i].Equals(item)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public void CopyTo(T[] array, int arrayIndex)
+  {
+    for (int i = 0; i < Count; i++) {
+      array[arrayIndex + i] = this[i];
+    }
+  }
+
+  public IEnumerator<T> GetEnumerator()
+  {
+    foreach (var item in this) {
+      yield return item;
+    }
+  }
+
+  public int IndexOf(T item)
+  {
+    for (int i = 0; i < Count; i++) {
+      if (this[i].Equals(item)) {
+        return i;
+      }
+    }
+    return -1;
+  }
+
+  public void Insert(int index, T item)
+  {
+    _Protobuf.Add<T>(_FieldName, item);
+  }
+
+  public bool Remove(T item)
+  {
+    throw new NotSupportedException("Protobuf repeated field does not support removing element.");
+  }
+
+  public void RemoveAt(int index)
+  {
+    throw new NotSupportedException("Protobuf repeated field does not support removing element.");
+  }
+
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+      return GetEnumerator();
+  }
+}

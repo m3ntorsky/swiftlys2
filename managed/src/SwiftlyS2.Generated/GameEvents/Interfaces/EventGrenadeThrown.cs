@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "grenade_thrown"
 /// </summary>
-public interface EventGrenadeThrown : IGameEvent<EventGrenadeThrown> {
+public interface EventGrenadeThrown : ITypedGameEvent<EventGrenadeThrown> {
 
-  static EventGrenadeThrown IGameEvent<EventGrenadeThrown>.FromAllocated(nint ptr) => new EventGrenadeThrownImpl(ptr, true);
+  static EventGrenadeThrown ITypedGameEvent<EventGrenadeThrown>.Wrap(IGameEvent accessor) => new EventGrenadeThrownImpl(accessor);
 
-  static EventGrenadeThrown IGameEvent<EventGrenadeThrown>.FromExternal(nint ptr) => new EventGrenadeThrownImpl(ptr, false);
+  static string ITypedGameEvent<EventGrenadeThrown>.GetName() => "grenade_thrown";
 
-  static string IGameEvent<EventGrenadeThrown>.GetName() => "grenade_thrown";
-
-  static uint IGameEvent<EventGrenadeThrown>.GetHash() => 0x0F018978u;
+  static uint ITypedGameEvent<EventGrenadeThrown>.GetHash() => 0x0F018978u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn

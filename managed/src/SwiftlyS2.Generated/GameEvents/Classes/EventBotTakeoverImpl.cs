@@ -9,25 +9,25 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "bot_takeover"
 /// </summary>
-internal class EventBotTakeoverImpl : GameEvent<EventBotTakeover>, EventBotTakeover
+internal class EventBotTakeoverImpl : TypedGameEvent<EventBotTakeover>, EventBotTakeover
 {
 
-  public EventBotTakeoverImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventBotTakeoverImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public int BotID
-  { get => GetPlayerSlot("botid"); set => SetPlayerSlot("botid", value); }
+  { get => Accessor.GetPlayerSlot("botid"); set => Accessor.SetPlayerSlot("botid", value); }
 
   public float P
-  { get => GetFloat("p"); set => SetFloat("p", value); }
+  { get => Accessor.GetFloat("p"); set => Accessor.SetFloat("p", value); }
 
   public float Y
-  { get => GetFloat("y"); set => SetFloat("y", value); }
+  { get => Accessor.GetFloat("y"); set => Accessor.SetFloat("y", value); }
 
   public float R
-  { get => GetFloat("r"); set => SetFloat("r", value); }
+  { get => Accessor.GetFloat("r"); set => Accessor.SetFloat("r", value); }
 }

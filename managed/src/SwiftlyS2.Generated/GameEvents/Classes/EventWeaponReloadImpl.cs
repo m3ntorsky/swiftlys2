@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "weapon_reload"
 /// </summary>
-internal class EventWeaponReloadImpl : GameEvent<EventWeaponReload>, EventWeaponReload
+internal class EventWeaponReloadImpl : TypedGameEvent<EventWeaponReload>, EventWeaponReload
 {
 
-  public EventWeaponReloadImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventWeaponReloadImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

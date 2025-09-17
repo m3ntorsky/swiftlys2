@@ -9,17 +9,17 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "grenade_thrown"
 /// </summary>
-internal class EventGrenadeThrownImpl : GameEvent<EventGrenadeThrown>, EventGrenadeThrown
+internal class EventGrenadeThrownImpl : TypedGameEvent<EventGrenadeThrown>, EventGrenadeThrown
 {
 
-  public EventGrenadeThrownImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventGrenadeThrownImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // weapon name used
   public string Weapon
-  { get => GetString("weapon"); set => SetString("weapon", value); }
+  { get => Accessor.GetString("weapon"); set => Accessor.SetString("weapon", value); }
 }

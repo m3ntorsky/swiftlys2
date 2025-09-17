@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "hltv_replay"
 /// </summary>
-public interface EventHltvReplay : IGameEvent<EventHltvReplay> {
+public interface EventHltvReplay : ITypedGameEvent<EventHltvReplay> {
 
-  static EventHltvReplay IGameEvent<EventHltvReplay>.FromAllocated(nint ptr) => new EventHltvReplayImpl(ptr, true);
+  static EventHltvReplay ITypedGameEvent<EventHltvReplay>.Wrap(IGameEvent accessor) => new EventHltvReplayImpl(accessor);
 
-  static EventHltvReplay IGameEvent<EventHltvReplay>.FromExternal(nint ptr) => new EventHltvReplayImpl(ptr, false);
+  static string ITypedGameEvent<EventHltvReplay>.GetName() => "hltv_replay";
 
-  static string IGameEvent<EventHltvReplay>.GetName() => "hltv_replay";
-
-  static uint IGameEvent<EventHltvReplay>.GetHash() => 0xC117A4EBu;
+  static uint ITypedGameEvent<EventHltvReplay>.GetHash() => 0xC117A4EBu;
   /// <summary>
   /// number of seconds in killer replay delay
   /// <br/>

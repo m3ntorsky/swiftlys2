@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "player_connect"
 /// a new client connected
 /// </summary>
-public interface EventPlayerConnect : IGameEvent<EventPlayerConnect> {
+public interface EventPlayerConnect : ITypedGameEvent<EventPlayerConnect> {
 
-  static EventPlayerConnect IGameEvent<EventPlayerConnect>.FromAllocated(nint ptr) => new EventPlayerConnectImpl(ptr, true);
+  static EventPlayerConnect ITypedGameEvent<EventPlayerConnect>.Wrap(IGameEvent accessor) => new EventPlayerConnectImpl(accessor);
 
-  static EventPlayerConnect IGameEvent<EventPlayerConnect>.FromExternal(nint ptr) => new EventPlayerConnectImpl(ptr, false);
+  static string ITypedGameEvent<EventPlayerConnect>.GetName() => "player_connect";
 
-  static string IGameEvent<EventPlayerConnect>.GetName() => "player_connect";
-
-  static uint IGameEvent<EventPlayerConnect>.GetHash() => 0x721B9701u;
+  static uint ITypedGameEvent<EventPlayerConnect>.GetHash() => 0x721B9701u;
   /// <summary>
   /// player name
   /// <br/>

@@ -10,29 +10,29 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "player_connect"
 /// a new client connected
 /// </summary>
-internal class EventPlayerConnectImpl : GameEvent<EventPlayerConnect>, EventPlayerConnect
+internal class EventPlayerConnectImpl : TypedGameEvent<EventPlayerConnect>, EventPlayerConnect
 {
 
-  public EventPlayerConnectImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerConnectImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // player name
   public string Name
-  { get => GetString("name"); set => SetString("name", value); }
+  { get => Accessor.GetString("name"); set => Accessor.SetString("name", value); }
 
   // user ID on server (unique on server)
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // player network (i.e steam) id
   public string NetworkID
-  { get => GetString("networkid"); set => SetString("networkid", value); }
+  { get => Accessor.GetString("networkid"); set => Accessor.SetString("networkid", value); }
 
   // steam id
   public ulong XuID
-  { get => GetUint64("xuid"); set => SetUint64("xuid", value); }
+  { get => Accessor.GetUInt64("xuid"); set => Accessor.SetUInt64("xuid", value); }
 
   public bool Bot
-  { get => GetBool("bot"); set => SetBool("bot", value); }
+  { get => Accessor.GetBool("bot"); set => Accessor.SetBool("bot", value); }
 }

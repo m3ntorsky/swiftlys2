@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "gc_connected"
 /// </summary>
-internal class EventGcConnectedImpl : GameEvent<EventGcConnected>, EventGcConnected
+internal class EventGcConnectedImpl : TypedGameEvent<EventGcConnected>, EventGcConnected
 {
 
-  public EventGcConnectedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventGcConnectedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

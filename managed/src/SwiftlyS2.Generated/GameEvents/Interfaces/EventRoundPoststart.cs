@@ -8,13 +8,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "round_poststart"
 /// sent after all other round restart actions
 /// </summary>
-public interface EventRoundPoststart : IGameEvent<EventRoundPoststart> {
+public interface EventRoundPoststart : ITypedGameEvent<EventRoundPoststart> {
 
-  static EventRoundPoststart IGameEvent<EventRoundPoststart>.FromAllocated(nint ptr) => new EventRoundPoststartImpl(ptr, true);
+  static EventRoundPoststart ITypedGameEvent<EventRoundPoststart>.Wrap(IGameEvent accessor) => new EventRoundPoststartImpl(accessor);
 
-  static EventRoundPoststart IGameEvent<EventRoundPoststart>.FromExternal(nint ptr) => new EventRoundPoststartImpl(ptr, false);
+  static string ITypedGameEvent<EventRoundPoststart>.GetName() => "round_poststart";
 
-  static string IGameEvent<EventRoundPoststart>.GetName() => "round_poststart";
-
-  static uint IGameEvent<EventRoundPoststart>.GetHash() => 0x0BE43746u;
+  static uint ITypedGameEvent<EventRoundPoststart>.GetHash() => 0x0BE43746u;
 }

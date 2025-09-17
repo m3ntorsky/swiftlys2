@@ -9,16 +9,16 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "ammo_refill"
 /// </summary>
-internal class EventAmmoRefillImpl : GameEvent<EventAmmoRefill>, EventAmmoRefill
+internal class EventAmmoRefillImpl : TypedGameEvent<EventAmmoRefill>, EventAmmoRefill
 {
 
-  public EventAmmoRefillImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventAmmoRefillImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public bool Success
-  { get => GetBool("success"); set => SetBool("success", value); }
+  { get => Accessor.GetBool("success"); set => Accessor.SetBool("success", value); }
 }

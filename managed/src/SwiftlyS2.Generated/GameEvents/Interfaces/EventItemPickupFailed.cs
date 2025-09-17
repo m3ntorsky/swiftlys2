@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "item_pickup_failed"
 /// </summary>
-public interface EventItemPickupFailed : IGameEvent<EventItemPickupFailed> {
+public interface EventItemPickupFailed : ITypedGameEvent<EventItemPickupFailed> {
 
-  static EventItemPickupFailed IGameEvent<EventItemPickupFailed>.FromAllocated(nint ptr) => new EventItemPickupFailedImpl(ptr, true);
+  static EventItemPickupFailed ITypedGameEvent<EventItemPickupFailed>.Wrap(IGameEvent accessor) => new EventItemPickupFailedImpl(accessor);
 
-  static EventItemPickupFailed IGameEvent<EventItemPickupFailed>.FromExternal(nint ptr) => new EventItemPickupFailedImpl(ptr, false);
+  static string ITypedGameEvent<EventItemPickupFailed>.GetName() => "item_pickup_failed";
 
-  static string IGameEvent<EventItemPickupFailed>.GetName() => "item_pickup_failed";
-
-  static uint IGameEvent<EventItemPickupFailed>.GetHash() => 0x0F6D19A9u;
+  static uint ITypedGameEvent<EventItemPickupFailed>.GetHash() => 0x0F6D19A9u;
   /// <summary>
   /// <br/>
   /// type: player_controller

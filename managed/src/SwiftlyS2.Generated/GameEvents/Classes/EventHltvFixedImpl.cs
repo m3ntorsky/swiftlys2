@@ -10,37 +10,37 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "hltv_fixed"
 /// show from fixed view
 /// </summary>
-internal class EventHltvFixedImpl : GameEvent<EventHltvFixed>, EventHltvFixed
+internal class EventHltvFixedImpl : TypedGameEvent<EventHltvFixed>, EventHltvFixed
 {
 
-  public EventHltvFixedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHltvFixedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // camera position in world
   public int PosX
-  { get => GetInt("posx"); set => SetInt("posx", value); }
+  { get => Accessor.GetInt32("posx"); set => Accessor.SetInt32("posx", value); }
 
   public int Posy
-  { get => GetInt("posy"); set => SetInt("posy", value); }
+  { get => Accessor.GetInt32("posy"); set => Accessor.SetInt32("posy", value); }
 
   public int PosZ
-  { get => GetInt("posz"); set => SetInt("posz", value); }
+  { get => Accessor.GetInt32("posz"); set => Accessor.SetInt32("posz", value); }
 
   // camera angles
   public short Theta
-  { get => (short)GetInt("theta"); set => SetInt("theta", value); }
+  { get => (short)Accessor.GetInt32("theta"); set => Accessor.SetInt32("theta", value); }
 
   public short Phi
-  { get => (short)GetInt("phi"); set => SetInt("phi", value); }
+  { get => (short)Accessor.GetInt32("phi"); set => Accessor.SetInt32("phi", value); }
 
   public short Offset
-  { get => (short)GetInt("offset"); set => SetInt("offset", value); }
+  { get => (short)Accessor.GetInt32("offset"); set => Accessor.SetInt32("offset", value); }
 
   public float FOv
-  { get => GetFloat("fov"); set => SetFloat("fov", value); }
+  { get => Accessor.GetFloat("fov"); set => Accessor.SetFloat("fov", value); }
 
   // follow this player
   public int Target
-  { get => GetPlayerSlot("target"); set => SetPlayerSlot("target", value); }
+  { get => Accessor.GetPlayerSlot("target"); set => Accessor.SetPlayerSlot("target", value); }
 }

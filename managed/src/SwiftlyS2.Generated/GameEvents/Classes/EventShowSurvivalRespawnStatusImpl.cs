@@ -9,19 +9,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "show_survival_respawn_status"
 /// </summary>
-internal class EventShowSurvivalRespawnStatusImpl : GameEvent<EventShowSurvivalRespawnStatus>, EventShowSurvivalRespawnStatus
+internal class EventShowSurvivalRespawnStatusImpl : TypedGameEvent<EventShowSurvivalRespawnStatus>, EventShowSurvivalRespawnStatus
 {
 
-  public EventShowSurvivalRespawnStatusImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventShowSurvivalRespawnStatusImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public string LocToken
-  { get => GetString("loc_token"); set => SetString("loc_token", value); }
+  { get => Accessor.GetString("loc_token"); set => Accessor.SetString("loc_token", value); }
 
   public int Duration
-  { get => GetInt("duration"); set => SetInt("duration", value); }
+  { get => Accessor.GetInt32("duration"); set => Accessor.SetInt32("duration", value); }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "weapon_reload"
 /// </summary>
-public interface EventWeaponReload : IGameEvent<EventWeaponReload> {
+public interface EventWeaponReload : ITypedGameEvent<EventWeaponReload> {
 
-  static EventWeaponReload IGameEvent<EventWeaponReload>.FromAllocated(nint ptr) => new EventWeaponReloadImpl(ptr, true);
+  static EventWeaponReload ITypedGameEvent<EventWeaponReload>.Wrap(IGameEvent accessor) => new EventWeaponReloadImpl(accessor);
 
-  static EventWeaponReload IGameEvent<EventWeaponReload>.FromExternal(nint ptr) => new EventWeaponReloadImpl(ptr, false);
+  static string ITypedGameEvent<EventWeaponReload>.GetName() => "weapon_reload";
 
-  static string IGameEvent<EventWeaponReload>.GetName() => "weapon_reload";
-
-  static uint IGameEvent<EventWeaponReload>.GetHash() => 0x387E603Fu;
+  static uint ITypedGameEvent<EventWeaponReload>.GetHash() => 0x387E603Fu;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn

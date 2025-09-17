@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hltv_title"
 /// </summary>
-internal class EventHltvTitleImpl : GameEvent<EventHltvTitle>, EventHltvTitle
+internal class EventHltvTitleImpl : TypedGameEvent<EventHltvTitle>, EventHltvTitle
 {
 
-  public EventHltvTitleImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHltvTitleImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public string Text
-  { get => GetString("text"); set => SetString("text", value); }
+  { get => Accessor.GetString("text"); set => Accessor.SetString("text", value); }
 }

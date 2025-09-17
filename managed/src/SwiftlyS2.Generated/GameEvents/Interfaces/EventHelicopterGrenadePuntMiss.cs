@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "helicopter_grenade_punt_miss"
 /// </summary>
-public interface EventHelicopterGrenadePuntMiss : IGameEvent<EventHelicopterGrenadePuntMiss> {
+public interface EventHelicopterGrenadePuntMiss : ITypedGameEvent<EventHelicopterGrenadePuntMiss> {
 
-  static EventHelicopterGrenadePuntMiss IGameEvent<EventHelicopterGrenadePuntMiss>.FromAllocated(nint ptr) => new EventHelicopterGrenadePuntMissImpl(ptr, true);
+  static EventHelicopterGrenadePuntMiss ITypedGameEvent<EventHelicopterGrenadePuntMiss>.Wrap(IGameEvent accessor) => new EventHelicopterGrenadePuntMissImpl(accessor);
 
-  static EventHelicopterGrenadePuntMiss IGameEvent<EventHelicopterGrenadePuntMiss>.FromExternal(nint ptr) => new EventHelicopterGrenadePuntMissImpl(ptr, false);
+  static string ITypedGameEvent<EventHelicopterGrenadePuntMiss>.GetName() => "helicopter_grenade_punt_miss";
 
-  static string IGameEvent<EventHelicopterGrenadePuntMiss>.GetName() => "helicopter_grenade_punt_miss";
-
-  static uint IGameEvent<EventHelicopterGrenadePuntMiss>.GetHash() => 0xB6DF8460u;
+  static uint ITypedGameEvent<EventHelicopterGrenadePuntMiss>.GetHash() => 0xB6DF8460u;
 }

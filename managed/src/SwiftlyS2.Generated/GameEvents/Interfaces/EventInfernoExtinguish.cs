@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "inferno_extinguish"
 /// </summary>
-public interface EventInfernoExtinguish : IGameEvent<EventInfernoExtinguish> {
+public interface EventInfernoExtinguish : ITypedGameEvent<EventInfernoExtinguish> {
 
-  static EventInfernoExtinguish IGameEvent<EventInfernoExtinguish>.FromAllocated(nint ptr) => new EventInfernoExtinguishImpl(ptr, true);
+  static EventInfernoExtinguish ITypedGameEvent<EventInfernoExtinguish>.Wrap(IGameEvent accessor) => new EventInfernoExtinguishImpl(accessor);
 
-  static EventInfernoExtinguish IGameEvent<EventInfernoExtinguish>.FromExternal(nint ptr) => new EventInfernoExtinguishImpl(ptr, false);
+  static string ITypedGameEvent<EventInfernoExtinguish>.GetName() => "inferno_extinguish";
 
-  static string IGameEvent<EventInfernoExtinguish>.GetName() => "inferno_extinguish";
-
-  static uint IGameEvent<EventInfernoExtinguish>.GetHash() => 0x9A4147B1u;
+  static uint ITypedGameEvent<EventInfernoExtinguish>.GetHash() => 0x9A4147B1u;
   /// <summary>
   /// type: short
   /// </summary>

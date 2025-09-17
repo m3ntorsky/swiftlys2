@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_sound"
 /// </summary>
-internal class EventPlayerSoundImpl : GameEvent<EventPlayerSound>, EventPlayerSound
+internal class EventPlayerSoundImpl : TypedGameEvent<EventPlayerSound>, EventPlayerSound
 {
 
-  public EventPlayerSoundImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerSoundImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public int Radius
-  { get => GetInt("radius"); set => SetInt("radius", value); }
+  { get => Accessor.GetInt32("radius"); set => Accessor.SetInt32("radius", value); }
 
   public float Duration
-  { get => GetFloat("duration"); set => SetFloat("duration", value); }
+  { get => Accessor.GetFloat("duration"); set => Accessor.SetFloat("duration", value); }
 
   public bool Step
-  { get => GetBool("step"); set => SetBool("step", value); }
+  { get => Accessor.GetBool("step"); set => Accessor.SetBool("step", value); }
 }

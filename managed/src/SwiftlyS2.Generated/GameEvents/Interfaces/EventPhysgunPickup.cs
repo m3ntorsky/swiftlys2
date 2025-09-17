@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "physgun_pickup"
 /// </summary>
-public interface EventPhysgunPickup : IGameEvent<EventPhysgunPickup> {
+public interface EventPhysgunPickup : ITypedGameEvent<EventPhysgunPickup> {
 
-  static EventPhysgunPickup IGameEvent<EventPhysgunPickup>.FromAllocated(nint ptr) => new EventPhysgunPickupImpl(ptr, true);
+  static EventPhysgunPickup ITypedGameEvent<EventPhysgunPickup>.Wrap(IGameEvent accessor) => new EventPhysgunPickupImpl(accessor);
 
-  static EventPhysgunPickup IGameEvent<EventPhysgunPickup>.FromExternal(nint ptr) => new EventPhysgunPickupImpl(ptr, false);
+  static string ITypedGameEvent<EventPhysgunPickup>.GetName() => "physgun_pickup";
 
-  static string IGameEvent<EventPhysgunPickup>.GetName() => "physgun_pickup";
-
-  static uint IGameEvent<EventPhysgunPickup>.GetHash() => 0x5E27B9FAu;
+  static uint ITypedGameEvent<EventPhysgunPickup>.GetHash() => 0x5E27B9FAu;
   /// <summary>
   /// entity picked up
   /// <br/>

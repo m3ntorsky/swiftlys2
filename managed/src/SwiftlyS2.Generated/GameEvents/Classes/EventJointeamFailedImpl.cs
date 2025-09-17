@@ -9,17 +9,17 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "jointeam_failed"
 /// </summary>
-internal class EventJointeamFailedImpl : GameEvent<EventJointeamFailed>, EventJointeamFailed
+internal class EventJointeamFailedImpl : TypedGameEvent<EventJointeamFailed>, EventJointeamFailed
 {
 
-  public EventJointeamFailedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventJointeamFailedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // 0 = team_full
   public byte Reason
-  { get => (byte)GetInt("reason"); set => SetInt("reason", value); }
+  { get => (byte)Accessor.GetInt32("reason"); set => Accessor.SetInt32("reason", value); }
 }

@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "door_moving"
 /// </summary>
-public interface EventDoorMoving : IGameEvent<EventDoorMoving> {
+public interface EventDoorMoving : ITypedGameEvent<EventDoorMoving> {
 
-  static EventDoorMoving IGameEvent<EventDoorMoving>.FromAllocated(nint ptr) => new EventDoorMovingImpl(ptr, true);
+  static EventDoorMoving ITypedGameEvent<EventDoorMoving>.Wrap(IGameEvent accessor) => new EventDoorMovingImpl(accessor);
 
-  static EventDoorMoving IGameEvent<EventDoorMoving>.FromExternal(nint ptr) => new EventDoorMovingImpl(ptr, false);
+  static string ITypedGameEvent<EventDoorMoving>.GetName() => "door_moving";
 
-  static string IGameEvent<EventDoorMoving>.GetName() => "door_moving";
-
-  static uint IGameEvent<EventDoorMoving>.GetHash() => 0x253FA168u;
+  static uint ITypedGameEvent<EventDoorMoving>.GetHash() => 0x253FA168u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn

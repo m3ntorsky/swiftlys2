@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "item_schema_initialized"
 /// </summary>
-internal class EventItemSchemaInitializedImpl : GameEvent<EventItemSchemaInitialized>, EventItemSchemaInitialized
+internal class EventItemSchemaInitializedImpl : TypedGameEvent<EventItemSchemaInitialized>, EventItemSchemaInitialized
 {
 
-  public EventItemSchemaInitializedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventItemSchemaInitializedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

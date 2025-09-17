@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "inferno_startburn"
 /// </summary>
-internal class EventInfernoStartburnImpl : GameEvent<EventInfernoStartburn>, EventInfernoStartburn
+internal class EventInfernoStartburnImpl : TypedGameEvent<EventInfernoStartburn>, EventInfernoStartburn
 {
 
-  public EventInfernoStartburnImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventInfernoStartburnImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public short EntityID
-  { get => (short)GetInt("entityid"); set => SetInt("entityid", value); }
+  { get => (short)Accessor.GetInt32("entityid"); set => Accessor.SetInt32("entityid", value); }
 
   public float X
-  { get => GetFloat("x"); set => SetFloat("x", value); }
+  { get => Accessor.GetFloat("x"); set => Accessor.SetFloat("x", value); }
 
   public float Y
-  { get => GetFloat("y"); set => SetFloat("y", value); }
+  { get => Accessor.GetFloat("y"); set => Accessor.SetFloat("y", value); }
 
   public float Z
-  { get => GetFloat("z"); set => SetFloat("z", value); }
+  { get => Accessor.GetFloat("z"); set => Accessor.SetFloat("z", value); }
 }

@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "loot_crate_opened"
 /// </summary>
-public interface EventLootCrateOpened : IGameEvent<EventLootCrateOpened> {
+public interface EventLootCrateOpened : ITypedGameEvent<EventLootCrateOpened> {
 
-  static EventLootCrateOpened IGameEvent<EventLootCrateOpened>.FromAllocated(nint ptr) => new EventLootCrateOpenedImpl(ptr, true);
+  static EventLootCrateOpened ITypedGameEvent<EventLootCrateOpened>.Wrap(IGameEvent accessor) => new EventLootCrateOpenedImpl(accessor);
 
-  static EventLootCrateOpened IGameEvent<EventLootCrateOpened>.FromExternal(nint ptr) => new EventLootCrateOpenedImpl(ptr, false);
+  static string ITypedGameEvent<EventLootCrateOpened>.GetName() => "loot_crate_opened";
 
-  static string IGameEvent<EventLootCrateOpened>.GetName() => "loot_crate_opened";
-
-  static uint IGameEvent<EventLootCrateOpened>.GetHash() => 0x18E203D5u;
+  static uint ITypedGameEvent<EventLootCrateOpened>.GetHash() => 0x18E203D5u;
   /// <summary>
   /// player entindex
   /// <br/>

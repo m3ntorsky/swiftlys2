@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_ping_stop"
 /// </summary>
-internal class EventPlayerPingStopImpl : GameEvent<EventPlayerPingStop>, EventPlayerPingStop
+internal class EventPlayerPingStopImpl : TypedGameEvent<EventPlayerPingStop>, EventPlayerPingStop
 {
 
-  public EventPlayerPingStopImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerPingStopImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public short EntityID
-  { get => (short)GetInt("entityid"); set => SetInt("entityid", value); }
+  { get => (short)Accessor.GetInt32("entityid"); set => Accessor.SetInt32("entityid", value); }
 }

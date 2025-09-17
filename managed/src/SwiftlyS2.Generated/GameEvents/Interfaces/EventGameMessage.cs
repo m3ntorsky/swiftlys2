@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "game_message"
 /// a message send by game logic to everyone
 /// </summary>
-public interface EventGameMessage : IGameEvent<EventGameMessage> {
+public interface EventGameMessage : ITypedGameEvent<EventGameMessage> {
 
-  static EventGameMessage IGameEvent<EventGameMessage>.FromAllocated(nint ptr) => new EventGameMessageImpl(ptr, true);
+  static EventGameMessage ITypedGameEvent<EventGameMessage>.Wrap(IGameEvent accessor) => new EventGameMessageImpl(accessor);
 
-  static EventGameMessage IGameEvent<EventGameMessage>.FromExternal(nint ptr) => new EventGameMessageImpl(ptr, false);
+  static string ITypedGameEvent<EventGameMessage>.GetName() => "game_message";
 
-  static string IGameEvent<EventGameMessage>.GetName() => "game_message";
-
-  static uint IGameEvent<EventGameMessage>.GetHash() => 0xEA7638FFu;
+  static uint ITypedGameEvent<EventGameMessage>.GetHash() => 0xEA7638FFu;
   /// <summary>
   /// 0 = console, 1 = HUD
   /// <br/>
