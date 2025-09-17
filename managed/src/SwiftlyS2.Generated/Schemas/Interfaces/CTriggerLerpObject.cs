@@ -41,6 +41,8 @@ public partial interface CTriggerLerpObject : CBaseTrigger, ISchemaClass<CTrigge
   public CEntityIOOutput OnLerpStarted { get; }
   
   public CEntityIOOutput OnLerpFinished { get; }
+  
+  public CEntityIOOutput OnDetached { get; }
 
 
 }

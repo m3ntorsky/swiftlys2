@@ -39,6 +39,9 @@ internal partial class CParticleFloatInputImpl : CParticleInputImpl, CParticleFl
   public ref int VectorComponent {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4330CD324F08EE1D));
   }
+  public ref bool ReverseOrder {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4330CD3212C75F97));
+  }
   public ref float RandomMin {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4330CD32C45AD7FC));
   }

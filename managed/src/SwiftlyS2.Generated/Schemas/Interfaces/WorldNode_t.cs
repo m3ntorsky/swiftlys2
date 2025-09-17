@@ -16,9 +16,6 @@ public partial interface WorldNode_t : ISchemaClass<WorldNode_t> {
   // CUtlVector< SceneObject_t >
   public ref CUtlVector SceneObjects { get; }
   
-  // CUtlVector< InfoOverlayData_t >
-  public ref CUtlVector InfoOverlays { get; }
-  
   public ref CUtlVector<ushort> VisClusterMembership { get; }
   
   // CUtlVector< AggregateSceneObject_t >
@@ -45,8 +42,6 @@ public partial interface WorldNode_t : ISchemaClass<WorldNode_t> {
   public ref CUtlVector<CUtlString> LayerNames { get; }
   
   public ref CUtlVector<byte> SceneObjectLayerIndices { get; }
-  
-  public ref CUtlVector<byte> OverlayLayerIndices { get; }
   
   public ref CUtlString GrassFileName { get; }
   

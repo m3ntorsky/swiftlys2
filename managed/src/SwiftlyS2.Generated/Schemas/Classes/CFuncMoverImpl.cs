@@ -21,6 +21,9 @@ internal partial class CFuncMoverImpl : CBaseModelEntityImpl, CFuncMover {
   public ref CHandle<CPathMover> PathMover {
     get => ref _Handle.AsRef<CHandle<CPathMover>>(Schema.GetOffset(0x320E8B69AFA877CD));
   }
+  public ref CHandle<CPathMover> PrevPathMover {
+    get => ref _Handle.AsRef<CHandle<CPathMover>>(Schema.GetOffset(0x320E8B69FB9DE3C6));
+  }
   public ref CUtlSymbolLarge PathNodeStart {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B691B0A1252));
   }

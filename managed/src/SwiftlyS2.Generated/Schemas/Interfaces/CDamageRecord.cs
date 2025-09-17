@@ -29,11 +29,11 @@ public partial interface CDamageRecord : ISchemaClass<CDamageRecord> {
   
   public ref ulong RecipientXuid { get; }
   
-  public ref int BulletsDamage { get; }
+  public ref float BulletsDamage { get; }
   
-  public ref int Damage { get; }
+  public ref float Damage { get; }
   
-  public ref int ActualHealthRemoved { get; }
+  public ref float ActualHealthRemoved { get; }
   
   public ref int NumHits { get; }
   

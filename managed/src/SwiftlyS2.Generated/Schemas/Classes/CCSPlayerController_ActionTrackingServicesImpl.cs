@@ -27,8 +27,8 @@ internal partial class CCSPlayerController_ActionTrackingServicesImpl : CPlayerC
   public ref int NumRoundKillsHeadshots {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x96DF63C196C53F70));
   }
-  public ref uint TotalRoundDamageDealt {
-    get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x96DF63C12D1B8071));
+  public ref float TotalRoundDamageDealt {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x96DF63C19CF13FA6));
   }
 
   public void PerRoundStatsUpdated() {
@@ -44,6 +44,6 @@ internal partial class CCSPlayerController_ActionTrackingServicesImpl : CPlayerC
     Schema.Update(_Handle, 0x96DF63C196C53F70);
   }
   public void TotalRoundDamageDealtUpdated() {
-    Schema.Update(_Handle, 0x96DF63C12D1B8071);
+    Schema.Update(_Handle, 0x96DF63C19CF13FA6);
   }
 }

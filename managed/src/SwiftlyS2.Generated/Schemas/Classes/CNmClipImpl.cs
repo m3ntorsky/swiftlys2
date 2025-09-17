@@ -33,6 +33,18 @@ internal partial class CNmClipImpl : SchemaClass, CNmClip {
   public ref CUtlVector<uint> CompressedPoseOffsets {
     get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0x3FC883BD4B1ECAF7));
   }
+  public ref CUtlVector<CGlobalSymbol> FloatCurveIDs {
+    get => ref _Handle.AsRef<CUtlVector<CGlobalSymbol>>(Schema.GetOffset(0x3FC883BD11EF489E));
+  }
+  public ref CUtlVector FloatCurveDefs {
+    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3FC883BDE3CCFA68));
+  }
+  public ref CUtlVector<ushort> CompressedFloatCurveData {
+    get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0x3FC883BD42C154B9));
+  }
+  public ref CUtlVector<uint> CompressedFloatCurveOffsets {
+    get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0x3FC883BD24AF623F));
+  }
   public SchemaUntypedField SecondaryAnimations {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x3FC883BD9A6B439E));
   }

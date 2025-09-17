@@ -18,6 +18,14 @@ public partial interface C_INIT_DistanceToNeighborCull : CParticleFunctionInitia
   public ref bool IncludeRadii { get; }
   
   public CPerParticleFloatInput LifespanOverlap { get; }
+  
+  public ParticleAttributeIndex_t FieldModify { get; }
+  
+  public CPerParticleFloatInput Modify { get; }
+  
+  public ref ParticleSetMethod_t SetMethod { get; }
+  
+  public ref bool UseNeighbor { get; }
 
 
 }

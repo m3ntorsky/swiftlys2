@@ -1,11 +1,12 @@
 using System.Runtime.InteropServices;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.Schemas;
 
 namespace SwiftlyS2.Shared.Natives;
 
 [StructLayout(LayoutKind.Sequential, Size = 4)]
-public struct CHandle<T> where T : class, CEntityInstance {
+public struct CHandle<T> where T : class, ISchemaClass<T> {
   private uint _index;
 
   public uint Raw { 

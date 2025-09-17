@@ -57,6 +57,9 @@ internal partial class CTriggerLerpObjectImpl : CBaseTriggerImpl, CTriggerLerpOb
   public CEntityIOOutput OnLerpFinished {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0x42FE8EA4FBCC57F7));
   }
+  public CEntityIOOutput OnDetached {
+    get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0x42FE8EA465BAE906));
+  }
 
 
 }

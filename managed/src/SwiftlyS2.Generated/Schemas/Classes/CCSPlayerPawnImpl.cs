@@ -114,8 +114,8 @@ public ISchemaFixedString LastPlaceName {
   public ref QAngle AimPunchAngleVel {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xC7614AABB30DE0EC));
   }
-  public ref int AimPunchTickBase {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AABB9C874A2));
+  public GameTick_t AimPunchTickBase {
+    get => new GameTick_tImpl(_Handle + Schema.GetOffset(0xC7614AABB9C874A2));
   }
   public ref float AimPunchTickFraction {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC7614AAB90BE3E69));

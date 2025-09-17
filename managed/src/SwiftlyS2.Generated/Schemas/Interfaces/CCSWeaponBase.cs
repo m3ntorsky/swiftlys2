@@ -15,14 +15,6 @@ public partial interface CCSWeaponBase : CBasePlayerWeapon, ISchemaClass<CCSWeap
   
   public ref bool Removeable { get; }
   
-  // CUtlVector< HSequence >
-  public ref CUtlVector ThirdPersonFireSequences { get; }
-  
-  public HSequence CurrentThirdPersonSequence { get; }
-  
-  // HSequence
-  public SchemaUntypedField ThirdPersonSequences { get; }
-  
   public ref bool PlayerAmmoStockOnPickup { get; }
   
   public ref bool RequireUseToTouch { get; }
@@ -118,6 +110,8 @@ public partial interface CCSWeaponBase : CBasePlayerWeapon, ISchemaClass<CCSWeap
   public GameTime_t LastLOSTraceFailureTime { get; }
   
   public ref float WatTickOffset { get; }
+  
+  public GameTime_t LastShakeTime { get; }
 
   public void WeaponGameplayAnimStateUpdated();
   public void WeaponGameplayAnimStateTimestampUpdated();
@@ -146,4 +140,5 @@ public partial interface CCSWeaponBase : CBasePlayerWeapon, ISchemaClass<CCSWeap
   public void LastShotTimeUpdated();
   public void IronSightModeUpdated();
   public void WatTickOffsetUpdated();
+  public void LastShakeTimeUpdated();
 }

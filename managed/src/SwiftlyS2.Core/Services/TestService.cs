@@ -64,14 +64,12 @@ internal class TestService {
             continue;
           }
 
-          CBaseEntity ent = new CBaseEntityImpl(pRules);
+
+          CCSPlayerController ent = new CCSPlayerControllerImpl(pRules);
+
+          Console.WriteLine(ent.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin);
+          Console.WriteLine(ent.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin);
           
-          Stopwatch sw = Stopwatch.StartNew();
-          for (int i = 0; i < 100000; i++) {
-            CCSPlayerController player = ent.As<CCSPlayerController>();
-          }
-          sw.Stop();
-          _Logger.LogInformation("Time taken: " + sw.ElapsedMilliseconds + "ms");
 
           
 

@@ -37,7 +37,7 @@ public partial interface CBaseModelEntity : CBaseEntity, ISchemaClass<CBaseModel
   
   public ref int DestructiblePartInitialStateDestructed4_PartIndex { get; }
   
-  public CDestructiblePartsSystemComponent? DestructiblePartsSystemComponent { get; }
+  public CDestructiblePartsComponent? DestructiblePartsSystemComponent { get; }
   
   public ref HitGroup_t LastHitGroup { get; }
   
@@ -97,6 +97,8 @@ public partial interface CBaseModelEntity : CBaseEntity, ISchemaClass<CBaseModel
   public ref CUtlVector<CHandle<CBaseModelEntity>> ConfigEntitiesToPropagateMaterialDecalsTo { get; }
   
   public CNetworkViewOffsetVector ViewOffset { get; }
+  
+  public ISchemaFixedArray<uint> DisabledHitGroups { get; }
 
   public void CRenderComponentUpdated();
   public void CHitboxComponentUpdated();
@@ -124,4 +126,5 @@ public partial interface CBaseModelEntity : CBaseEntity, ISchemaClass<CBaseModel
   public void RequiredDecalModeUpdated();
   public void ConfigEntitiesToPropagateMaterialDecalsToUpdated();
   public void ViewOffsetUpdated();
+  public void DisabledHitGroupsUpdated();
 }

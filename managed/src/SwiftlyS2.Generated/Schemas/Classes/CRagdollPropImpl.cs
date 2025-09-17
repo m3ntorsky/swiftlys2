@@ -78,9 +78,6 @@ internal partial class CRagdollPropImpl : CBaseAnimGraphImpl, CRagdollProp {
   public ref bool HasBeenPhysgunned {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9505BA785058D154));
   }
-  public ref bool ShouldTeleportPhysics {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9505BA7828013FEA));
-  }
   public ref bool AllowStretch {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9505BA78F6CDF40F));
   }
@@ -98,9 +95,6 @@ internal partial class CRagdollPropImpl : CBaseAnimGraphImpl, CRagdollProp {
   }
   public ref bool ShouldDeleteActivationRecord {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9505BA7838134064));
-  }
-  public ref bool ValidatePoweredRagdollPose {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9505BA787CE03CDD));
   }
 
   public void RagEnabledUpdated() {

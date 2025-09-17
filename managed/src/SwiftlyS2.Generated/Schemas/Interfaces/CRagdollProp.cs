@@ -55,8 +55,6 @@ public partial interface CRagdollProp : CBaseAnimGraph, ISchemaClass<CRagdollPro
   
   public ref bool HasBeenPhysgunned { get; }
   
-  public ref bool ShouldTeleportPhysics { get; }
-  
   public ref bool AllowStretch { get; }
   
   public ref float BlendWeight { get; }
@@ -68,8 +66,6 @@ public partial interface CRagdollProp : CBaseAnimGraph, ISchemaClass<CRagdollPro
   public ref CUtlVector<Vector> RagdollMaxs { get; }
   
   public ref bool ShouldDeleteActivationRecord { get; }
-  
-  public ref bool ValidatePoweredRagdollPose { get; }
 
   public void RagEnabledUpdated();
   public void RagPosUpdated();

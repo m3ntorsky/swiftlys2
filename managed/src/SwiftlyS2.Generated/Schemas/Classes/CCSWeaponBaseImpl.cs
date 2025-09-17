@@ -18,15 +18,6 @@ internal partial class CCSWeaponBaseImpl : CBasePlayerWeaponImpl, CCSWeaponBase 
   public ref bool Removeable {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA512A9A0EFD));
   }
-  public ref CUtlVector ThirdPersonFireSequences {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x8102BA5146E89B3F));
-  }
-  public HSequence CurrentThirdPersonSequence {
-    get => new HSequenceImpl(_Handle + Schema.GetOffset(0x8102BA517E5CCF19));
-  }
-  public SchemaUntypedField ThirdPersonSequences {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x8102BA51B96AAFB3));
-  }
   public ref bool PlayerAmmoStockOnPickup {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8102BA51D64BCF69));
   }
@@ -171,6 +162,9 @@ internal partial class CCSWeaponBaseImpl : CBasePlayerWeaponImpl, CCSWeaponBase 
   public ref float WatTickOffset {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8102BA519F5B6237));
   }
+  public GameTime_t LastShakeTime {
+    get => new GameTime_tImpl(_Handle + Schema.GetOffset(0x8102BA517BD64C62));
+  }
 
   public void WeaponGameplayAnimStateUpdated() {
     Schema.Update(_Handle, 0x8102BA514CFB8FEA);
@@ -252,5 +246,8 @@ internal partial class CCSWeaponBaseImpl : CBasePlayerWeaponImpl, CCSWeaponBase 
   }
   public void WatTickOffsetUpdated() {
     Schema.Update(_Handle, 0x8102BA519F5B6237);
+  }
+  public void LastShakeTimeUpdated() {
+    Schema.Update(_Handle, 0x8102BA517BD64C62);
   }
 }

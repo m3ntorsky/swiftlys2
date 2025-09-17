@@ -23,6 +23,10 @@ public partial interface CNmParticleEvent : CNmEvent, ISchemaClass<CNmParticleEv
   
   public ref bool StopImmediately { get; }
   
+  public ref bool DetachFromOwner { get; }
+  
+  public ref bool PlayEndCap { get; }
+  
   public ref CUtlString AttachmentPoint0 { get; }
   
   public ref ParticleAttachment_t AttachmentType0 { get; }
@@ -34,10 +38,6 @@ public partial interface CNmParticleEvent : CNmEvent, ISchemaClass<CNmParticleEv
   public ref CUtlString Config { get; }
   
   public ref CUtlString EffectForConfig { get; }
-  
-  public ref bool DetachFromOwner { get; }
-  
-  public ref bool PlayEndCap { get; }
 
 
 }

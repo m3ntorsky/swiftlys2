@@ -54,10 +54,10 @@ internal partial class CBaseModelEntityImpl : CBaseEntityImpl, CBaseModelEntity 
   public ref int DestructiblePartInitialStateDestructed4_PartIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x517849F76D7C6A3C));
   }
-  public CDestructiblePartsSystemComponent? DestructiblePartsSystemComponent {
+  public CDestructiblePartsComponent? DestructiblePartsSystemComponent {
     get {
       var ptr = _Handle.Read<nint>(Schema.GetOffset(0x517849F77992C14B));
-      return ptr.IsValidPtr() ? new CDestructiblePartsSystemComponentImpl(ptr) : null;
+      return ptr.IsValidPtr() ? new CDestructiblePartsComponentImpl(ptr) : null;
     }
   }
   public ref HitGroup_t LastHitGroup {
@@ -147,6 +147,9 @@ internal partial class CBaseModelEntityImpl : CBaseEntityImpl, CBaseModelEntity 
   public CNetworkViewOffsetVector ViewOffset {
     get => new CNetworkViewOffsetVectorImpl(_Handle + Schema.GetOffset(0x517849F739DB834B));
   }
+public ISchemaFixedArray<uint> DisabledHitGroups {
+    get => new SchemaFixedArray<uint>(_Handle, 0x517849F7DDB01736, 1, 4, 4);
+  }
 
   public void CRenderComponentUpdated() {
     Schema.Update(_Handle, 0x517849F7E8F59505);
@@ -225,5 +228,8 @@ internal partial class CBaseModelEntityImpl : CBaseEntityImpl, CBaseModelEntity 
   }
   public void ViewOffsetUpdated() {
     Schema.Update(_Handle, 0x517849F739DB834B);
+  }
+  public void DisabledHitGroupsUpdated() {
+    Schema.Update(_Handle, 0x517849F7DDB01736);
   }
 }

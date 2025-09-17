@@ -93,9 +93,6 @@ internal partial class CCSPlayerControllerImpl : CBasePlayerControllerImpl, CCSP
   public ref CUtlSymbolLarge Clan {
     get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x28ECD7A10A2F1774));
   }
-public ISchemaFixedString ClanName {
-    get => new SchemaFixedString(_Handle, 0x28ECD7A1B9D2364F, 32, 1, 1);
-  }
   public ref int CoachingTeam {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1B80B18EB));
   }

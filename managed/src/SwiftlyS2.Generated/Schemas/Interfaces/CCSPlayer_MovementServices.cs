@@ -49,8 +49,6 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
   
   public ref bool SpeedCropped { get; }
   
-  public ref float GroundMoveEfficiency { get; }
-  
   public ref int OldWaterLevel { get; }
   
   public ref float WaterEntryTime { get; }

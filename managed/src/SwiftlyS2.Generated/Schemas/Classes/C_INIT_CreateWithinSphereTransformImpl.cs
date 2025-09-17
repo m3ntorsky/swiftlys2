@@ -42,9 +42,6 @@ internal partial class C_INIT_CreateWithinSphereTransformImpl : CParticleFunctio
   public ref bool LocalCoords {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x97F9AC3430E716DE));
   }
-  public ref float EndCPGrowthTime {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x97F9AC34C156B981));
-  }
   public CPerParticleVecInput LocalCoordinateSystemSpeedMin {
     get => new CPerParticleVecInputImpl(_Handle + Schema.GetOffset(0x97F9AC34A4A0F1AE));
   }

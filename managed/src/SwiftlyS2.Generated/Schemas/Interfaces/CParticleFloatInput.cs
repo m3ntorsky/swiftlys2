@@ -30,6 +30,8 @@ public partial interface CParticleFloatInput : CParticleInput, ISchemaClass<CPar
   
   public ref int VectorComponent { get; }
   
+  public ref bool ReverseOrder { get; }
+  
   public ref float RandomMin { get; }
   
   public ref float RandomMax { get; }

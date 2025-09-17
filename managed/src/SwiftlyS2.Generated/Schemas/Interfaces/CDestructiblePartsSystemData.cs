@@ -13,7 +13,7 @@ public partial interface CDestructiblePartsSystemData : ISchemaClass<CDestructib
   static CDestructiblePartsSystemData ISchemaClass<CDestructiblePartsSystemData>.From(nint handle) => new CDestructiblePartsSystemDataImpl(handle);
 
   
-  // CUtlOrderedMap< HitGroup_t, CDestructiblePartsSystemData_HitGroupInfoAndDamageLevels >
+  // CUtlOrderedMap< HitGroup_t, CDestructiblePart >
   public SchemaUntypedField PartsDataByHitGroup { get; }
   
   public CRangeInt MinMaxNumberHitGroupsToDestroyWhenGibbing { get; }

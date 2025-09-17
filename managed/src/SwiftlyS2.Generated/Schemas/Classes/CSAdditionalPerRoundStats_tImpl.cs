@@ -24,11 +24,11 @@ internal partial class CSAdditionalPerRoundStats_tImpl : SchemaClass, CSAddition
   public ref int BombCarrierkills {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x719C617913457A30));
   }
-  public ref int BurnDamageInflicted {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x719C61798974E9B6));
+  public ref float BurnDamageInflicted {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x719C6179ADDF061F));
   }
-  public ref int BlastDamageInflicted {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x719C617936AD5C8F));
+  public ref float BlastDamageInflicted {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x719C6179FDBAB060));
   }
   public ref int Dinks {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x719C617910BCE83D));

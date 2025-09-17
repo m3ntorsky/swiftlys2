@@ -31,8 +31,6 @@ public partial interface C_INIT_CreateWithinSphereTransform : CParticleFunctionI
   
   public ref bool LocalCoords { get; }
   
-  public ref float EndCPGrowthTime { get; }
-  
   public CPerParticleVecInput LocalCoordinateSystemSpeedMin { get; }
   
   public CPerParticleVecInput LocalCoordinateSystemSpeedMax { get; }

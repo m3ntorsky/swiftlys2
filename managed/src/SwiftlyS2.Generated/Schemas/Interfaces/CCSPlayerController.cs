@@ -57,8 +57,6 @@ public partial interface CCSPlayerController : CBasePlayerController, ISchemaCla
   
   public ref CUtlSymbolLarge Clan { get; }
   
-  public ISchemaFixedString ClanName { get; }
-  
   public ref int CoachingTeam { get; }
   
   public ref ulong PlayerDominated { get; }

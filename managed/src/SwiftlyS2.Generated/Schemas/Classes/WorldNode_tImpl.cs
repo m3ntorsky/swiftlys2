@@ -18,9 +18,6 @@ internal partial class WorldNode_tImpl : SchemaClass, WorldNode_t {
   public ref CUtlVector SceneObjects {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xFC310480332235A1));
   }
-  public ref CUtlVector InfoOverlays {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xFC310480A7491B10));
-  }
   public ref CUtlVector<ushort> VisClusterMembership {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0xFC310480F2C828CD));
   }
@@ -50,9 +47,6 @@ internal partial class WorldNode_tImpl : SchemaClass, WorldNode_t {
   }
   public ref CUtlVector<byte> SceneObjectLayerIndices {
     get => ref _Handle.AsRef<CUtlVector<byte>>(Schema.GetOffset(0xFC310480F769C8CA));
-  }
-  public ref CUtlVector<byte> OverlayLayerIndices {
-    get => ref _Handle.AsRef<CUtlVector<byte>>(Schema.GetOffset(0xFC31048006D1D7C9));
   }
   public ref CUtlString GrassFileName {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xFC310480FDDFCFE0));

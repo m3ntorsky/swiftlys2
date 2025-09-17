@@ -15,6 +15,8 @@ public partial interface CNmChainSolverTask : CNmPoseTask, ISchemaClass<CNmChain
   
   public ref int EffectorBoneIdx { get; }
   
+  public ref int EffectorTargetBoneIdx { get; }
+  
   public ref CTransform TargetTransform { get; }
   
   public ref int NumBonesInChain { get; }

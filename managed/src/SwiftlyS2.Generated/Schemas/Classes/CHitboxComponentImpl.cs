@@ -15,11 +15,9 @@ internal partial class CHitboxComponentImpl : CEntityComponentImpl, CHitboxCompo
   public CHitboxComponentImpl(nint handle) : base(handle) {
   }
 
-public ISchemaFixedArray<uint> DisabledHitGroups {
-    get => new SchemaFixedArray<uint>(_Handle, 0x8148DEC3DDB01736, 1, 4, 4);
+  public ref float BoundsExpandRadius {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8148DEC366FA148C));
   }
 
-  public void DisabledHitGroupsUpdated() {
-    Schema.Update(_Handle, 0x8148DEC3DDB01736);
-  }
+
 }

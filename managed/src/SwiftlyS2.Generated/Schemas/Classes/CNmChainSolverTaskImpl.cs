@@ -18,6 +18,9 @@ internal partial class CNmChainSolverTaskImpl : CNmPoseTaskImpl, CNmChainSolverT
   public ref int EffectorBoneIdx {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5D675A12A9C233BE));
   }
+  public ref int EffectorTargetBoneIdx {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5D675A123A19E0D9));
+  }
   public ref CTransform TargetTransform {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0x5D675A12B1497974));
   }

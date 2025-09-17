@@ -48,8 +48,8 @@ internal partial class CSAdditionalMatchStats_tImpl : CSAdditionalPerRoundStats_
   public ref int NumTeamKills {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x22CBC115033A4DAE));
   }
-  public ref int TeamDamage {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x22CBC11516B91240));
+  public ref float TeamDamage {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x22CBC11530150C1B));
   }
 
 

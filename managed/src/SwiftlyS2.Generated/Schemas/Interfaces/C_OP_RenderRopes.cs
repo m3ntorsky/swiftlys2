@@ -65,6 +65,10 @@ public partial interface C_OP_RenderRopes : CBaseRendererSource2, ISchemaClass<C
   
   public ref bool ClosedLoop { get; }
   
+  public ParticleAttributeIndex_t SplitField { get; }
+  
+  public ref bool SortBySegmentID { get; }
+  
   public ref ParticleOrientationChoiceList_t OrientationType { get; }
   
   public ParticleAttributeIndex_t VectorFieldForOrientation { get; }
