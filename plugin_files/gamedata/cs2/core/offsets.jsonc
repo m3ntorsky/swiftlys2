@@ -4,8 +4,8 @@
         "linux": 80
     },
     "CBasePlayerPawn::CommitSuicide": {
-        "windows": 404,
-        "linux": 404
+        "windows": 408,
+        "linux": 408
     },
     "CCSPlayerController::ChangeTeam": {
         "windows": 106,
