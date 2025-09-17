@@ -50,6 +50,11 @@ public:
 
     virtual void SetConvarValue(std::string cvar_name, ConvarValue value) = 0;
     virtual void SetClientConvar(int playerid, std::string cvar_name, ConvarValue value) = 0;
+
+    virtual void AddFlags(std::string cvar_name, uint64_t flags) = 0;
+    virtual void RemoveFlags(std::string cvar_name, uint64_t flags) = 0;
+    virtual void ClearFlags(std::string cvar_name) = 0;
+    virtual uint64_t GetFlags(std::string cvar_name) = 0;
 };
 
 #endif

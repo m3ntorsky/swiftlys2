@@ -413,3 +413,43 @@ void CConvarManager::SetClientConvar(int playerid, std::string cvar_name, Convar
     */
     delete msg;
 }
+
+/*
+
+it feels so good to not make "#define private public" stuff
+
+some people don't even want to look through all the fields and just go to the shortest way
+
+*/
+
+void CConvarManager::AddFlags(std::string cvar_name, uint64_t flags)
+{
+    ConVarRefAbstract cvar(cvar_name.c_str());
+    if (!cvar.IsConVarDataValid()) return;
+
+    cvar.AddFlags(flags);
+}
+
+void CConvarManager::RemoveFlags(std::string cvar_name, uint64_t flags)
+{
+    ConVarRefAbstract cvar(cvar_name.c_str());
+    if (!cvar.IsConVarDataValid()) return;
+
+    cvar.RemoveFlags(flags);
+}
+
+void CConvarManager::ClearFlags(std::string cvar_name)
+{
+    ConVarRefAbstract cvar(cvar_name.c_str());
+    if (!cvar.IsConVarDataValid()) return;
+
+    cvar.RemoveFlags(cvar.GetFlags());
+}
+
+uint64_t CConvarManager::GetFlags(std::string cvar_name)
+{
+    ConVarRefAbstract cvar(cvar_name.c_str());
+    if (!cvar.IsConVarDataValid()) return 0;
+
+    return cvar.GetFlags();
+}
