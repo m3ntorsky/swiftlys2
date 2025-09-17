@@ -37,6 +37,7 @@
 
 #include <network/sounds/soundevents.h>
 #include <network/database/manager.h>
+#include <network/netmessages/netmessages.h>
 
 #include <scripting/scripting.h>
 
@@ -69,6 +70,7 @@ CSoundEventManager g_SoundEventManager;
 CDatabaseManager g_DatabaseManager;
 CTranslations g_Translations;
 CServerCommands g_ServerCommands;
+CNetMessages g_NetMessages;
 
 static const std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
@@ -91,6 +93,7 @@ static const std::map<std::string, void*> g_Interfaces = {
     {DATABASEMANAGER_INTERFACE_VERSION, &g_DatabaseManager},
     {TRANSLATIONS_INTERFACE_VERSION, &g_Translations},
     {SERVERCOMMANDS_INTERFACE_VERSION, &g_ServerCommands},
+    {NETMESSAGES_INTERFACE_VERSION, &g_NetMessages},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)

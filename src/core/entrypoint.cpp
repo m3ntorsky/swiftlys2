@@ -102,6 +102,9 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     auto translations = g_ifaceService.FetchInterface<ITranslations>(TRANSLATIONS_INTERFACE_VERSION);
     translations->Initialize();
 
+    auto netmessages = g_ifaceService.FetchInterface<INetMessages>(NETMESSAGES_INTERFACE_VERSION);
+    netmessages->Initialize();
+
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
     extManager->Load();
 
@@ -129,6 +132,9 @@ bool SwiftlyCore::Unload()
 
     auto evmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
     evmanager->Shutdown();
+
+    auto netmessages = g_ifaceService.FetchInterface<INetMessages>(NETMESSAGES_INTERFACE_VERSION);
+    netmessages->Shutdown();
 
     ShutdownGameSystem();
 
