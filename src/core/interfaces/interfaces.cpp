@@ -42,6 +42,7 @@
 
 #include <sdk/schema.h>
 
+#include <server/commands/manager.h>
 #include <server/configuration/configuration.h>
 #include <server/players/manager.h>
 #include <server/translations/translations.h>
@@ -67,8 +68,9 @@ CVoiceManager g_VoiceManager;
 CSoundEventManager g_SoundEventManager;
 CDatabaseManager g_DatabaseManager;
 CTranslations g_Translations;
+CServerCommands g_ServerCommands;
 
-static std::map<std::string, void*> g_Interfaces = {
+static const std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
     {LOGGER_INTERFACE_VERSION, &g_Logger},
     {RESOURCE_MONITOR_INTERFACE_VERSION, &g_ResourceMonitor},
@@ -88,6 +90,7 @@ static std::map<std::string, void*> g_Interfaces = {
     {SOUNDEVENTMANAGER_INTERFACE_VERSION, &g_SoundEventManager},
     {DATABASEMANAGER_INTERFACE_VERSION, &g_DatabaseManager},
     {TRANSLATIONS_INTERFACE_VERSION, &g_Translations},
+    {SERVERCOMMANDS_INTERFACE_VERSION, &g_ServerCommands},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)

@@ -70,5 +70,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define SOUNDEVENTMANAGER_INTERFACE_VERSION                 "SoundEventManagerAPI"
 #define DATABASEMANAGER_INTERFACE_VERSION                   "DatabaseManagerAPI"
 #define TRANSLATIONS_INTERFACE_VERSION                      "TranslationsAPI"
+#define SERVERCOMMANDS_INTERFACE_VERSION                    "ServerCommandsAPI"
 
 #endif
