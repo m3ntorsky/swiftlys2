@@ -170,7 +170,7 @@ void CEventManager::OnStartupServer(const GameSessionConfiguration_t& config, IS
 
 void CEventManager::RegisterGameEventsListeners(bool shouldRegister)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     if (!g_gameEventManager) return;
 
     if (shouldRegister && !g_bEventsLoaded) {
@@ -185,7 +185,7 @@ void CEventManager::RegisterGameEventsListeners(bool shouldRegister)
 
 void CEventManager::RegisterGameEventListener(std::string event_name)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     if (!g_bEventsLoaded) {
         g_sEnqueueListenEvents.insert(event_name);
     }
@@ -202,7 +202,7 @@ void CEventManager::RegisterGameEventListener(std::string event_name)
 
 uint64_t CEventManager::AddGameEventFireListener(std::function<bool(std::string, IGameEvent*, bool&)> callback)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     static uint64_t s_uiListenerID = 0;
     g_mEventListeners[++s_uiListenerID] = callback;
     return s_uiListenerID;
@@ -210,7 +210,7 @@ uint64_t CEventManager::AddGameEventFireListener(std::function<bool(std::string,
 
 uint64_t CEventManager::AddPostGameEventFireListener(std::function<bool(std::string, IGameEvent*, bool&)> callback)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     static uint64_t s_uiListenerID = 0;
     g_mPostEventListeners[++s_uiListenerID] = callback;
     return s_uiListenerID;
@@ -218,7 +218,7 @@ uint64_t CEventManager::AddPostGameEventFireListener(std::function<bool(std::str
 
 void CEventManager::RemoveGameEventFireListener(uint64_t listener_id)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     auto it = g_mEventListeners.find(listener_id);
     if (it != g_mEventListeners.end())
     {
@@ -228,7 +228,7 @@ void CEventManager::RemoveGameEventFireListener(uint64_t listener_id)
 
 void CEventManager::RemovePostGameEventFireListener(uint64_t listener_id)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     auto it = g_mPostEventListeners.find(listener_id);
     if (it != g_mPostEventListeners.end())
     {

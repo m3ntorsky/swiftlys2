@@ -21,7 +21,7 @@
 
 #include <api/monitor/resmon/monitor.h>
 
-#include <mutex>
+#include <api/utils/mutex.h>
 
 struct RecordInfo
 {
@@ -52,7 +52,7 @@ private:
 
     std::vector<RecordInfo> m_vProfilerEvents;
 
-    std::mutex m_mtxLock;
+    QueueMutex m_mtxLock;
 
     void ClearData();
 };

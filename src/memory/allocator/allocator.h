@@ -21,7 +21,7 @@
 
 #include <api/memory/allocator/allocator.h>
 
-#include <mutex>
+#include <api/utils/mutex.h>
 
 class MemoryAllocator : public IMemoryAllocator
 {
@@ -51,7 +51,7 @@ private:
     std::map<std::string, std::vector<std::pair<std::string, void*>>> trackedAllocations;
     uint64_t totalAllocated = 0;
 
-    std::mutex m_mtxLock;
+    QueueMutex m_mtxLock;
 
     bool m_bCompact = false;
 };

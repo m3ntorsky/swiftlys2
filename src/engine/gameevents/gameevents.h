@@ -21,7 +21,7 @@
 
 #include <api/engine/gameevents/gameevents.h>
 
-#include <mutex>
+#include <api/utils/mutex.h>
 
  // WHY THE ACTUAL FUCK YOU NEED THIS TO COMPILE ?????????????
 #include <public/entity2/entitysystem.h>
@@ -50,7 +50,7 @@ public:
     bool OnFireEvent(IGameEvent* pEvent, bool bDontBroadcast);
     bool OnFireEventPost(IGameEvent* pEvent, bool bDontBroadcast);
 private:
-    std::mutex m_mtxLock;
+    QueueMutex m_mtxLock;
 };
 
 #endif

@@ -96,7 +96,7 @@ uint32_t CSoundEvent::Emit()
 
 void CSoundEvent::SetName(const std::string& name)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     m_sName = name;
 }
 
@@ -107,7 +107,7 @@ std::string& CSoundEvent::GetName()
 
 void CSoundEvent::SetSourceEntityIndex(int index)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     m_iSourceEntityIndex = index;
 }
 
@@ -123,25 +123,25 @@ void CSoundEvent::SetRecipientFilter(CRecipientFilter filter)
 
 void CSoundEvent::AddClient(int playerid)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     m_fClients.AddRecipient(CPlayerSlot(playerid));
 }
 
 void CSoundEvent::RemoveClient(int playerid)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     m_fClients.RemoveRecipient(CPlayerSlot(playerid));
 }
 
 void CSoundEvent::ClearClients()
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     m_fClients.RemoveAllPlayers();
 }
 
 void CSoundEvent::AddAllClients()
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     m_fClients.AddAllPlayers();
 }
 
@@ -166,7 +166,7 @@ SosField* CSoundEvent::GetField(std::string pszFieldName)
 
 void CSoundEvent::AddOrReplaceField(std::string pszFieldName, const SosField field)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     m_mParameters[pszFieldName] = field;
 }
 
@@ -177,7 +177,7 @@ bool CSoundEvent::HasField(const std::string& name)
 
 void CSoundEvent::SetBool(const std::string& name, bool value)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     SET_FIELD(SE_Bool, value);
 }
 
@@ -190,7 +190,7 @@ bool CSoundEvent::GetBool(const std::string& name)
 
 void CSoundEvent::SetInt32(const std::string& name, int32_t value)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     SET_FIELD(SE_Int, value);
 }
 
@@ -203,7 +203,7 @@ int32_t CSoundEvent::GetInt32(const std::string& name)
 
 void CSoundEvent::SetUInt32(const std::string& name, uint32_t value)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     SET_FIELD(SE_UInt32, value);
 }
 
@@ -216,7 +216,7 @@ uint32_t CSoundEvent::GetUInt32(const std::string& name)
 
 void CSoundEvent::SetUInt64(const std::string& name, uint64_t value)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     SET_FIELD(SE_UInt64, value);
 }
 
@@ -229,7 +229,7 @@ uint64_t CSoundEvent::GetUInt64(const std::string& name)
 
 void CSoundEvent::SetFloat(const std::string& name, float value)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     SET_FIELD(SE_Float, value);
 }
 
@@ -242,7 +242,7 @@ float CSoundEvent::GetFloat(const std::string& name)
 
 void CSoundEvent::SetFloat3(const std::string& name, Vector value)
 {
-    std::lock_guard<std::mutex> lock(m_mtxLock);
+    QueueLockGuard lock(m_mtxLock);
     SET_FIELD(SE_Float3, value);
 }
 

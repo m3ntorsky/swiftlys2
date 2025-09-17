@@ -23,7 +23,7 @@
 #include <api/sdk/recipientfilter.h>
 
 #include <map>
-#include <mutex>
+#include <api/utils/mutex.h>
 
 class CSoundEvent : public ISoundEvent
 {
@@ -68,7 +68,7 @@ private:
     int m_iSourceEntityIndex;
     std::map<std::string, SosField> m_mParameters;
     CRecipientFilter m_fClients;
-    std::mutex m_mtxLock;
+    QueueMutex m_mtxLock;
 
     SosField* GetField(std::string pszFieldName);
     void AddOrReplaceField(std::string pszFieldName, const SosField field);
