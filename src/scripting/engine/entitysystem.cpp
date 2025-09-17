@@ -19,6 +19,8 @@
 #include <api/interfaces/manager.h>
 #include <scripting/scripting.h>
 
+#include <entityhandle.h>
+
 void Bridge_EntitySystem_Spawn(void* pEntity, void* pKeyValues)
 {
     auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
@@ -151,6 +153,23 @@ void* Bridge_EntitySystem_GetEntitySystem()
     return entsystem->GetEntitySystem();
 }
 
+bool Bridge_EntitySystem_EntityHandleIsValid(uint32 ihandle)
+{
+    CEntityHandle handle(ihandle);
+    return handle.IsValid() && handle.Get() != nullptr;
+}
+
+void* Bridge_EntitySystem_EntityHandleGet(uint32 ihandle)
+{
+    CEntityHandle handle(ihandle);
+    return handle.Get();
+}
+
+int Bridge_EntitySystem_GetEntityHandleFromEntity(CEntityInstance* pEntity)
+{
+    return pEntity->GetRefEHandle().ToInt();
+}
+
 DEFINE_NATIVE("EntitySystem.Spawn", Bridge_EntitySystem_Spawn);
 DEFINE_NATIVE("EntitySystem.Despawn", Bridge_EntitySystem_Despawn);
 DEFINE_NATIVE("EntitySystem.CreateEntityByName", Bridge_EntitySystem_CreateEntityByName);
@@ -173,3 +192,6 @@ DEFINE_NATIVE("EntitySystem.AddEntityIOEventString", Bridge_EntitySystem_AddEnti
 DEFINE_NATIVE("EntitySystem.IsValidEntity", Bridge_EntitySystem_IsValidEntity);
 DEFINE_NATIVE("EntitySystem.GetGameRules", Bridge_EntitySystem_GetGameRules);
 DEFINE_NATIVE("EntitySystem.GetEntitySystem", Bridge_EntitySystem_GetEntitySystem);
+DEFINE_NATIVE("EntitySystem.EntityHandleIsValid", Bridge_EntitySystem_EntityHandleIsValid);
+DEFINE_NATIVE("EntitySystem.EntityHandleGet", Bridge_EntitySystem_EntityHandleGet);
+DEFINE_NATIVE("EntitySystem.GetEntityHandleFromEntity", Bridge_EntitySystem_GetEntityHandleFromEntity);

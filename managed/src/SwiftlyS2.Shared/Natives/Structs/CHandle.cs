@@ -20,9 +20,7 @@ public struct CHandle<T> where T : class, ISchemaClass<T> {
         if (!IsValid) {
           return null;
         }
-        fixed(void* ptr = &this) {
-          return (T?)T.From((nint)NativeEntity.HandleGet((nint)ptr));
-        }
+        return (T?)T.From(NativeEntitySystem.EntityHandleGet(_index));
       }
     }
   }
@@ -31,15 +29,7 @@ public struct CHandle<T> where T : class, ISchemaClass<T> {
 
   public readonly uint SerialNumber => (_index >> 15) & 0x1FFFF;
 
-  public readonly bool IsValid {
-    get {
-      unsafe {
-        fixed(void* ptr = &this) {
-          return NativeEntity.HandleIsValid((nint)ptr);
-        }
-      }
-    }
-  }
+  public readonly bool IsValid => NativeEntitySystem.EntityHandleIsValid(_index);
 
 
   public static implicit operator T(CHandle<T> handle) => handle.Value;

@@ -1,4 +1,0 @@
-class Entity
-
-bool HandleIsValid = ptr handle
-ptr HandleGet = ptr handle
