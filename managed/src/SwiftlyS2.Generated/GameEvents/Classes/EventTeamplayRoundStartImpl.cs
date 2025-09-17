@@ -10,14 +10,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "teamplay_round_start"
 /// round restart
 /// </summary>
-internal class EventTeamplayRoundStartImpl : GameEvent<EventTeamplayRoundStart>, EventTeamplayRoundStart
+internal class EventTeamplayRoundStartImpl : TypedGameEvent<EventTeamplayRoundStart>, EventTeamplayRoundStart
 {
 
-  public EventTeamplayRoundStartImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventTeamplayRoundStartImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // is this a full reset of the map
   public bool FullReset
-  { get => GetBool("full_reset"); set => SetBool("full_reset", value); }
+  { get => Accessor.GetBool("full_reset"); set => Accessor.SetBool("full_reset", value); }
 }

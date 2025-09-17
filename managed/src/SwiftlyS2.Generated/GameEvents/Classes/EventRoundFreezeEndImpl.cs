@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "round_freeze_end"
 /// </summary>
-internal class EventRoundFreezeEndImpl : GameEvent<EventRoundFreezeEnd>, EventRoundFreezeEnd
+internal class EventRoundFreezeEndImpl : TypedGameEvent<EventRoundFreezeEnd>, EventRoundFreezeEnd
 {
 
-  public EventRoundFreezeEndImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventRoundFreezeEndImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

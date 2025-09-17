@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "open_crate_instr"
 /// </summary>
-internal class EventOpenCrateInstrImpl : GameEvent<EventOpenCrateInstr>, EventOpenCrateInstr
+internal class EventOpenCrateInstrImpl : TypedGameEvent<EventOpenCrateInstr>, EventOpenCrateInstr
 {
 
-  public EventOpenCrateInstrImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventOpenCrateInstrImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // player entindex
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // crate entindex
   public short Subject
-  { get => (short)GetInt("subject"); set => SetInt("subject", value); }
+  { get => (short)Accessor.GetInt32("subject"); set => Accessor.SetInt32("subject", value); }
 
   // type of crate (metal, wood, or paradrop)
   public string Type
-  { get => GetString("type"); set => SetString("type", value); }
+  { get => Accessor.GetString("type"); set => Accessor.SetString("type", value); }
 }

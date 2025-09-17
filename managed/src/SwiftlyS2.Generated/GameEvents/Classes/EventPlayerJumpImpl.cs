@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_jump"
 /// </summary>
-internal class EventPlayerJumpImpl : GameEvent<EventPlayerJump>, EventPlayerJump
+internal class EventPlayerJumpImpl : TypedGameEvent<EventPlayerJump>, EventPlayerJump
 {
 
-  public EventPlayerJumpImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerJumpImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

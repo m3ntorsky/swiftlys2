@@ -9,18 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hostage_follows"
 /// </summary>
-internal class EventHostageFollowsImpl : GameEvent<EventHostageFollows>, EventHostageFollows
+internal class EventHostageFollowsImpl : TypedGameEvent<EventHostageFollows>, EventHostageFollows
 {
 
-  public EventHostageFollowsImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHostageFollowsImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // player who touched the hostage
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // hostage entity index
   public short Hostage
-  { get => (short)GetInt("hostage"); set => SetInt("hostage", value); }
+  { get => (short)Accessor.GetInt32("hostage"); set => Accessor.SetInt32("hostage", value); }
 }

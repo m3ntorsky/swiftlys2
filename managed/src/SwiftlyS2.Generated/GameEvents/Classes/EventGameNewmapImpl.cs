@@ -10,18 +10,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "game_newmap"
 /// send when new map is completely loaded
 /// </summary>
-internal class EventGameNewmapImpl : GameEvent<EventGameNewmap>, EventGameNewmap
+internal class EventGameNewmapImpl : TypedGameEvent<EventGameNewmap>, EventGameNewmap
 {
 
-  public EventGameNewmapImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventGameNewmapImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // map name
   public string MapName
-  { get => GetString("mapname"); set => SetString("mapname", value); }
+  { get => Accessor.GetString("mapname"); set => Accessor.SetString("mapname", value); }
 
   // true if this is a transition from one map to another
   public bool Transition
-  { get => GetBool("transition"); set => SetBool("transition", value); }
+  { get => Accessor.GetBool("transition"); set => Accessor.SetBool("transition", value); }
 }

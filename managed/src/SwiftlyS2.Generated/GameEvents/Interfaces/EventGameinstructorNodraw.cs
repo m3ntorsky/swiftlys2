@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "gameinstructor_nodraw"
 /// </summary>
-public interface EventGameinstructorNodraw : IGameEvent<EventGameinstructorNodraw> {
+public interface EventGameinstructorNodraw : ITypedGameEvent<EventGameinstructorNodraw> {
 
-  static EventGameinstructorNodraw IGameEvent<EventGameinstructorNodraw>.FromAllocated(nint ptr) => new EventGameinstructorNodrawImpl(ptr, true);
+  static EventGameinstructorNodraw ITypedGameEvent<EventGameinstructorNodraw>.Wrap(IGameEvent accessor) => new EventGameinstructorNodrawImpl(accessor);
 
-  static EventGameinstructorNodraw IGameEvent<EventGameinstructorNodraw>.FromExternal(nint ptr) => new EventGameinstructorNodrawImpl(ptr, false);
+  static string ITypedGameEvent<EventGameinstructorNodraw>.GetName() => "gameinstructor_nodraw";
 
-  static string IGameEvent<EventGameinstructorNodraw>.GetName() => "gameinstructor_nodraw";
-
-  static uint IGameEvent<EventGameinstructorNodraw>.GetHash() => 0x067F31A8u;
+  static uint ITypedGameEvent<EventGameinstructorNodraw>.GetHash() => 0x067F31A8u;
 }

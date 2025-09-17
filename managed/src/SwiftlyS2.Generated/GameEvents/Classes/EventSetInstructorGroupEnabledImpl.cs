@@ -9,16 +9,16 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "set_instructor_group_enabled"
 /// </summary>
-internal class EventSetInstructorGroupEnabledImpl : GameEvent<EventSetInstructorGroupEnabled>, EventSetInstructorGroupEnabled
+internal class EventSetInstructorGroupEnabledImpl : TypedGameEvent<EventSetInstructorGroupEnabled>, EventSetInstructorGroupEnabled
 {
 
-  public EventSetInstructorGroupEnabledImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventSetInstructorGroupEnabledImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public string Group
-  { get => GetString("group"); set => SetString("group", value); }
+  { get => Accessor.GetString("group"); set => Accessor.SetString("group", value); }
 
   public short Enabled
-  { get => (short)GetInt("enabled"); set => SetInt("enabled", value); }
+  { get => (short)Accessor.GetInt32("enabled"); set => Accessor.SetInt32("enabled", value); }
 }

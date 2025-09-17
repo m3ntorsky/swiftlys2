@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "gameui_hidden"
 /// </summary>
-public interface EventGameuiHidden : IGameEvent<EventGameuiHidden> {
+public interface EventGameuiHidden : ITypedGameEvent<EventGameuiHidden> {
 
-  static EventGameuiHidden IGameEvent<EventGameuiHidden>.FromAllocated(nint ptr) => new EventGameuiHiddenImpl(ptr, true);
+  static EventGameuiHidden ITypedGameEvent<EventGameuiHidden>.Wrap(IGameEvent accessor) => new EventGameuiHiddenImpl(accessor);
 
-  static EventGameuiHidden IGameEvent<EventGameuiHidden>.FromExternal(nint ptr) => new EventGameuiHiddenImpl(ptr, false);
+  static string ITypedGameEvent<EventGameuiHidden>.GetName() => "gameui_hidden";
 
-  static string IGameEvent<EventGameuiHidden>.GetName() => "gameui_hidden";
-
-  static uint IGameEvent<EventGameuiHidden>.GetHash() => 0xB938FB5Eu;
+  static uint ITypedGameEvent<EventGameuiHidden>.GetHash() => 0xB938FB5Eu;
   /// <summary>
   /// player
   /// <br/>

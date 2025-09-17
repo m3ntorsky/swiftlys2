@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "update_matchmaking_stats"
 /// </summary>
-public interface EventUpdateMatchmakingStats : IGameEvent<EventUpdateMatchmakingStats> {
+public interface EventUpdateMatchmakingStats : ITypedGameEvent<EventUpdateMatchmakingStats> {
 
-  static EventUpdateMatchmakingStats IGameEvent<EventUpdateMatchmakingStats>.FromAllocated(nint ptr) => new EventUpdateMatchmakingStatsImpl(ptr, true);
+  static EventUpdateMatchmakingStats ITypedGameEvent<EventUpdateMatchmakingStats>.Wrap(IGameEvent accessor) => new EventUpdateMatchmakingStatsImpl(accessor);
 
-  static EventUpdateMatchmakingStats IGameEvent<EventUpdateMatchmakingStats>.FromExternal(nint ptr) => new EventUpdateMatchmakingStatsImpl(ptr, false);
+  static string ITypedGameEvent<EventUpdateMatchmakingStats>.GetName() => "update_matchmaking_stats";
 
-  static string IGameEvent<EventUpdateMatchmakingStats>.GetName() => "update_matchmaking_stats";
-
-  static uint IGameEvent<EventUpdateMatchmakingStats>.GetHash() => 0xFB94AEE7u;
+  static uint ITypedGameEvent<EventUpdateMatchmakingStats>.GetHash() => 0xFB94AEE7u;
 }

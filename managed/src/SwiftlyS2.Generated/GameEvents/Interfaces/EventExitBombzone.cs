@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "exit_bombzone"
 /// </summary>
-public interface EventExitBombzone : IGameEvent<EventExitBombzone> {
+public interface EventExitBombzone : ITypedGameEvent<EventExitBombzone> {
 
-  static EventExitBombzone IGameEvent<EventExitBombzone>.FromAllocated(nint ptr) => new EventExitBombzoneImpl(ptr, true);
+  static EventExitBombzone ITypedGameEvent<EventExitBombzone>.Wrap(IGameEvent accessor) => new EventExitBombzoneImpl(accessor);
 
-  static EventExitBombzone IGameEvent<EventExitBombzone>.FromExternal(nint ptr) => new EventExitBombzoneImpl(ptr, false);
+  static string ITypedGameEvent<EventExitBombzone>.GetName() => "exit_bombzone";
 
-  static string IGameEvent<EventExitBombzone>.GetName() => "exit_bombzone";
-
-  static uint IGameEvent<EventExitBombzone>.GetHash() => 0xF5ADEBDCu;
+  static uint ITypedGameEvent<EventExitBombzone>.GetHash() => 0xF5ADEBDCu;
   /// <summary>
   /// <br/>
   /// type: player_controller

@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "ammo_refill"
 /// </summary>
-public interface EventAmmoRefill : IGameEvent<EventAmmoRefill> {
+public interface EventAmmoRefill : ITypedGameEvent<EventAmmoRefill> {
 
-  static EventAmmoRefill IGameEvent<EventAmmoRefill>.FromAllocated(nint ptr) => new EventAmmoRefillImpl(ptr, true);
+  static EventAmmoRefill ITypedGameEvent<EventAmmoRefill>.Wrap(IGameEvent accessor) => new EventAmmoRefillImpl(accessor);
 
-  static EventAmmoRefill IGameEvent<EventAmmoRefill>.FromExternal(nint ptr) => new EventAmmoRefillImpl(ptr, false);
+  static string ITypedGameEvent<EventAmmoRefill>.GetName() => "ammo_refill";
 
-  static string IGameEvent<EventAmmoRefill>.GetName() => "ammo_refill";
-
-  static uint IGameEvent<EventAmmoRefill>.GetHash() => 0x65179124u;
+  static uint ITypedGameEvent<EventAmmoRefill>.GetHash() => 0x65179124u;
   /// <summary>
   /// <br/>
   /// type: player_controller

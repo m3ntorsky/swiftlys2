@@ -10,18 +10,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "teamplay_broadcast_audio"
 /// emits a sound to everyone on a team
 /// </summary>
-internal class EventTeamplayBroadcastAudioImpl : GameEvent<EventTeamplayBroadcastAudio>, EventTeamplayBroadcastAudio
+internal class EventTeamplayBroadcastAudioImpl : TypedGameEvent<EventTeamplayBroadcastAudio>, EventTeamplayBroadcastAudio
 {
 
-  public EventTeamplayBroadcastAudioImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventTeamplayBroadcastAudioImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // unique team id
   public byte Team
-  { get => (byte)GetInt("team"); set => SetInt("team", value); }
+  { get => (byte)Accessor.GetInt32("team"); set => Accessor.SetInt32("team", value); }
 
   // name of the sound to emit
   public string Sound
-  { get => GetString("sound"); set => SetString("sound", value); }
+  { get => Accessor.GetString("sound"); set => Accessor.SetString("sound", value); }
 }

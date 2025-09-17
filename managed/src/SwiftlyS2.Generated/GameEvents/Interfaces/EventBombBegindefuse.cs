@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_begindefuse"
 /// </summary>
-public interface EventBombBegindefuse : IGameEvent<EventBombBegindefuse> {
+public interface EventBombBegindefuse : ITypedGameEvent<EventBombBegindefuse> {
 
-  static EventBombBegindefuse IGameEvent<EventBombBegindefuse>.FromAllocated(nint ptr) => new EventBombBegindefuseImpl(ptr, true);
+  static EventBombBegindefuse ITypedGameEvent<EventBombBegindefuse>.Wrap(IGameEvent accessor) => new EventBombBegindefuseImpl(accessor);
 
-  static EventBombBegindefuse IGameEvent<EventBombBegindefuse>.FromExternal(nint ptr) => new EventBombBegindefuseImpl(ptr, false);
+  static string ITypedGameEvent<EventBombBegindefuse>.GetName() => "bomb_begindefuse";
 
-  static string IGameEvent<EventBombBegindefuse>.GetName() => "bomb_begindefuse";
-
-  static uint IGameEvent<EventBombBegindefuse>.GetHash() => 0xC3C7D299u;
+  static uint ITypedGameEvent<EventBombBegindefuse>.GetHash() => 0xC3C7D299u;
   /// <summary>
   /// player who is defusing
   /// <br/>

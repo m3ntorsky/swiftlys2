@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_falldamage"
 /// </summary>
-public interface EventPlayerFalldamage : IGameEvent<EventPlayerFalldamage> {
+public interface EventPlayerFalldamage : ITypedGameEvent<EventPlayerFalldamage> {
 
-  static EventPlayerFalldamage IGameEvent<EventPlayerFalldamage>.FromAllocated(nint ptr) => new EventPlayerFalldamageImpl(ptr, true);
+  static EventPlayerFalldamage ITypedGameEvent<EventPlayerFalldamage>.Wrap(IGameEvent accessor) => new EventPlayerFalldamageImpl(accessor);
 
-  static EventPlayerFalldamage IGameEvent<EventPlayerFalldamage>.FromExternal(nint ptr) => new EventPlayerFalldamageImpl(ptr, false);
+  static string ITypedGameEvent<EventPlayerFalldamage>.GetName() => "player_falldamage";
 
-  static string IGameEvent<EventPlayerFalldamage>.GetName() => "player_falldamage";
-
-  static uint IGameEvent<EventPlayerFalldamage>.GetHash() => 0x594A7109u;
+  static uint ITypedGameEvent<EventPlayerFalldamage>.GetHash() => 0x594A7109u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn

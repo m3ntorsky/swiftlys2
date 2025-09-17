@@ -9,19 +9,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "item_pickup_slerp"
 /// </summary>
-internal class EventItemPickupSlerpImpl : GameEvent<EventItemPickupSlerp>, EventItemPickupSlerp
+internal class EventItemPickupSlerpImpl : TypedGameEvent<EventItemPickupSlerp>, EventItemPickupSlerp
 {
 
-  public EventItemPickupSlerpImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventItemPickupSlerpImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public short Index
-  { get => (short)GetInt("index"); set => SetInt("index", value); }
+  { get => (short)Accessor.GetInt32("index"); set => Accessor.SetInt32("index", value); }
 
   public short Behavior
-  { get => (short)GetInt("behavior"); set => SetInt("behavior", value); }
+  { get => (short)Accessor.GetInt32("behavior"); set => Accessor.SetInt32("behavior", value); }
 }

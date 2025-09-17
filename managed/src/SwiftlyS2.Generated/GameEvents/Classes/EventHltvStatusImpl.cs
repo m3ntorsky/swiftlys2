@@ -10,26 +10,26 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "hltv_status"
 /// general HLTV status
 /// </summary>
-internal class EventHltvStatusImpl : GameEvent<EventHltvStatus>, EventHltvStatus
+internal class EventHltvStatusImpl : TypedGameEvent<EventHltvStatus>, EventHltvStatus
 {
 
-  public EventHltvStatusImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHltvStatusImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // number of HLTV spectators
   public int Clients
-  { get => GetInt("clients"); set => SetInt("clients", value); }
+  { get => Accessor.GetInt32("clients"); set => Accessor.SetInt32("clients", value); }
 
   // number of HLTV slots
   public int Slots
-  { get => GetInt("slots"); set => SetInt("slots", value); }
+  { get => Accessor.GetInt32("slots"); set => Accessor.SetInt32("slots", value); }
 
   // number of HLTV proxies
   public short Proxies
-  { get => (short)GetInt("proxies"); set => SetInt("proxies", value); }
+  { get => (short)Accessor.GetInt32("proxies"); set => Accessor.SetInt32("proxies", value); }
 
   // disptach master IP:port
   public string Master
-  { get => GetString("master"); set => SetString("master", value); }
+  { get => Accessor.GetString("master"); set => Accessor.SetString("master", value); }
 }

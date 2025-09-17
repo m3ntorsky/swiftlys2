@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "achievement_info_loaded"
 /// </summary>
-internal class EventAchievementInfoLoadedImpl : GameEvent<EventAchievementInfoLoaded>, EventAchievementInfoLoaded
+internal class EventAchievementInfoLoadedImpl : TypedGameEvent<EventAchievementInfoLoaded>, EventAchievementInfoLoaded
 {
 
-  public EventAchievementInfoLoadedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventAchievementInfoLoadedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

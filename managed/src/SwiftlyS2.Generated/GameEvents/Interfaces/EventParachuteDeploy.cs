@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "parachute_deploy"
 /// </summary>
-public interface EventParachuteDeploy : IGameEvent<EventParachuteDeploy> {
+public interface EventParachuteDeploy : ITypedGameEvent<EventParachuteDeploy> {
 
-  static EventParachuteDeploy IGameEvent<EventParachuteDeploy>.FromAllocated(nint ptr) => new EventParachuteDeployImpl(ptr, true);
+  static EventParachuteDeploy ITypedGameEvent<EventParachuteDeploy>.Wrap(IGameEvent accessor) => new EventParachuteDeployImpl(accessor);
 
-  static EventParachuteDeploy IGameEvent<EventParachuteDeploy>.FromExternal(nint ptr) => new EventParachuteDeployImpl(ptr, false);
+  static string ITypedGameEvent<EventParachuteDeploy>.GetName() => "parachute_deploy";
 
-  static string IGameEvent<EventParachuteDeploy>.GetName() => "parachute_deploy";
-
-  static uint IGameEvent<EventParachuteDeploy>.GetHash() => 0xE34D70F2u;
+  static uint ITypedGameEvent<EventParachuteDeploy>.GetHash() => 0xE34D70F2u;
   /// <summary>
   /// <br/>
   /// type: player_controller

@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "finale_start"
 /// </summary>
-public interface EventFinaleStart : IGameEvent<EventFinaleStart> {
+public interface EventFinaleStart : ITypedGameEvent<EventFinaleStart> {
 
-  static EventFinaleStart IGameEvent<EventFinaleStart>.FromAllocated(nint ptr) => new EventFinaleStartImpl(ptr, true);
+  static EventFinaleStart ITypedGameEvent<EventFinaleStart>.Wrap(IGameEvent accessor) => new EventFinaleStartImpl(accessor);
 
-  static EventFinaleStart IGameEvent<EventFinaleStart>.FromExternal(nint ptr) => new EventFinaleStartImpl(ptr, false);
+  static string ITypedGameEvent<EventFinaleStart>.GetName() => "finale_start";
 
-  static string IGameEvent<EventFinaleStart>.GetName() => "finale_start";
-
-  static uint IGameEvent<EventFinaleStart>.GetHash() => 0xA8BF9A49u;
+  static uint ITypedGameEvent<EventFinaleStart>.GetHash() => 0xA8BF9A49u;
   /// <summary>
   /// type: short
   /// </summary>

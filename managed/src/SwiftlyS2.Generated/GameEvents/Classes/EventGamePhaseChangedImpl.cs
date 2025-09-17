@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "game_phase_changed"
 /// </summary>
-internal class EventGamePhaseChangedImpl : GameEvent<EventGamePhaseChanged>, EventGamePhaseChanged
+internal class EventGamePhaseChangedImpl : TypedGameEvent<EventGamePhaseChanged>, EventGamePhaseChanged
 {
 
-  public EventGamePhaseChangedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventGamePhaseChangedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public short NewPhase
-  { get => (short)GetInt("new_phase"); set => SetInt("new_phase", value); }
+  { get => (short)Accessor.GetInt32("new_phase"); set => Accessor.SetInt32("new_phase", value); }
 }

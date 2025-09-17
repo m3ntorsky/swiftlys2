@@ -10,17 +10,17 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "hltv_chat"
 /// a HLTV chat msg sent by spectators
 /// </summary>
-internal class EventHltvChatImpl : GameEvent<EventHltvChat>, EventHltvChat
+internal class EventHltvChatImpl : TypedGameEvent<EventHltvChat>, EventHltvChat
 {
 
-  public EventHltvChatImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHltvChatImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public string Text
-  { get => GetString("text"); set => SetString("text", value); }
+  { get => Accessor.GetString("text"); set => Accessor.SetString("text", value); }
 
   // steam id
   public ulong SteamID
-  { get => GetUint64("steamID"); set => SetUint64("steamID", value); }
+  { get => Accessor.GetUInt64("steamID"); set => Accessor.SetUInt64("steamID", value); }
 }

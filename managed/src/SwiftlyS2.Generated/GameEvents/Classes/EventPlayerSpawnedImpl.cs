@@ -9,17 +9,17 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_spawned"
 /// </summary>
-internal class EventPlayerSpawnedImpl : GameEvent<EventPlayerSpawned>, EventPlayerSpawned
+internal class EventPlayerSpawnedImpl : TypedGameEvent<EventPlayerSpawned>, EventPlayerSpawned
 {
 
-  public EventPlayerSpawnedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerSpawnedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // true if restart is pending
   public bool InRestart
-  { get => GetBool("inrestart"); set => SetBool("inrestart", value); }
+  { get => Accessor.GetBool("inrestart"); set => Accessor.SetBool("inrestart", value); }
 }

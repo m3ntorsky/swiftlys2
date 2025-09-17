@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "inspect_weapon"
 /// </summary>
-internal class EventInspectWeaponImpl : GameEvent<EventInspectWeapon>, EventInspectWeapon
+internal class EventInspectWeaponImpl : TypedGameEvent<EventInspectWeapon>, EventInspectWeapon
 {
 
-  public EventInspectWeaponImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventInspectWeaponImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

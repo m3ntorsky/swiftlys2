@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "buytime_ended"
 /// </summary>
-internal class EventBuytimeEndedImpl : GameEvent<EventBuytimeEnded>, EventBuytimeEnded
+internal class EventBuytimeEndedImpl : TypedGameEvent<EventBuytimeEnded>, EventBuytimeEnded
 {
 
-  public EventBuytimeEndedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventBuytimeEndedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

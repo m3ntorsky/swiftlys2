@@ -9,14 +9,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "defuser_dropped"
 /// </summary>
-internal class EventDefuserDroppedImpl : GameEvent<EventDefuserDropped>, EventDefuserDropped
+internal class EventDefuserDroppedImpl : TypedGameEvent<EventDefuserDropped>, EventDefuserDropped
 {
 
-  public EventDefuserDroppedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventDefuserDroppedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // defuser's entity ID
   public int EntityID
-  { get => GetInt("entityid"); set => SetInt("entityid", value); }
+  { get => Accessor.GetInt32("entityid"); set => Accessor.SetInt32("entityid", value); }
 }

@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "hltv_message"
 /// a HLTV message send by moderators
 /// </summary>
-public interface EventHltvMessage : IGameEvent<EventHltvMessage> {
+public interface EventHltvMessage : ITypedGameEvent<EventHltvMessage> {
 
-  static EventHltvMessage IGameEvent<EventHltvMessage>.FromAllocated(nint ptr) => new EventHltvMessageImpl(ptr, true);
+  static EventHltvMessage ITypedGameEvent<EventHltvMessage>.Wrap(IGameEvent accessor) => new EventHltvMessageImpl(accessor);
 
-  static EventHltvMessage IGameEvent<EventHltvMessage>.FromExternal(nint ptr) => new EventHltvMessageImpl(ptr, false);
+  static string ITypedGameEvent<EventHltvMessage>.GetName() => "hltv_message";
 
-  static string IGameEvent<EventHltvMessage>.GetName() => "hltv_message";
-
-  static uint IGameEvent<EventHltvMessage>.GetHash() => 0x0E93862Bu;
+  static uint ITypedGameEvent<EventHltvMessage>.GetHash() => 0x0E93862Bu;
   /// <summary>
   /// type: string
   /// </summary>

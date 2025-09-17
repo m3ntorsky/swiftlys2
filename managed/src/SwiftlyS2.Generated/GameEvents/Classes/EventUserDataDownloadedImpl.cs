@@ -10,10 +10,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "user_data_downloaded"
 /// fired when achievements/stats are downloaded from Steam or XBox Live
 /// </summary>
-internal class EventUserDataDownloadedImpl : GameEvent<EventUserDataDownloaded>, EventUserDataDownloaded
+internal class EventUserDataDownloadedImpl : TypedGameEvent<EventUserDataDownloaded>, EventUserDataDownloaded
 {
 
-  public EventUserDataDownloadedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventUserDataDownloadedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

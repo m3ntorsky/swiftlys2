@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_abortplant"
 /// </summary>
-public interface EventBombAbortplant : IGameEvent<EventBombAbortplant> {
+public interface EventBombAbortplant : ITypedGameEvent<EventBombAbortplant> {
 
-  static EventBombAbortplant IGameEvent<EventBombAbortplant>.FromAllocated(nint ptr) => new EventBombAbortplantImpl(ptr, true);
+  static EventBombAbortplant ITypedGameEvent<EventBombAbortplant>.Wrap(IGameEvent accessor) => new EventBombAbortplantImpl(accessor);
 
-  static EventBombAbortplant IGameEvent<EventBombAbortplant>.FromExternal(nint ptr) => new EventBombAbortplantImpl(ptr, false);
+  static string ITypedGameEvent<EventBombAbortplant>.GetName() => "bomb_abortplant";
 
-  static string IGameEvent<EventBombAbortplant>.GetName() => "bomb_abortplant";
-
-  static uint IGameEvent<EventBombAbortplant>.GetHash() => 0x7F1DB601u;
+  static uint ITypedGameEvent<EventBombAbortplant>.GetHash() => 0x7F1DB601u;
   /// <summary>
   /// player who is planting the bomb
   /// <br/>

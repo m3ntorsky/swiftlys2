@@ -9,20 +9,20 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "break_breakable"
 /// </summary>
-internal class EventBreakBreakableImpl : GameEvent<EventBreakBreakable>, EventBreakBreakable
+internal class EventBreakBreakableImpl : TypedGameEvent<EventBreakBreakable>, EventBreakBreakable
 {
 
-  public EventBreakBreakableImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventBreakBreakableImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public int EntIndex
-  { get => GetInt("entindex"); set => SetInt("entindex", value); }
+  { get => Accessor.GetInt32("entindex"); set => Accessor.SetInt32("entindex", value); }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // BREAK_GLASS, BREAK_WOOD, etc
   public byte Material
-  { get => (byte)GetInt("material"); set => SetInt("material", value); }
+  { get => (byte)Accessor.GetInt32("material"); set => Accessor.SetInt32("material", value); }
 }

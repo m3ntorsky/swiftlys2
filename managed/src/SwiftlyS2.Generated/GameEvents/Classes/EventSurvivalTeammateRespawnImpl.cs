@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "survival_teammate_respawn"
 /// </summary>
-internal class EventSurvivalTeammateRespawnImpl : GameEvent<EventSurvivalTeammateRespawn>, EventSurvivalTeammateRespawn
+internal class EventSurvivalTeammateRespawnImpl : TypedGameEvent<EventSurvivalTeammateRespawn>, EventSurvivalTeammateRespawn
 {
 
-  public EventSurvivalTeammateRespawnImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventSurvivalTeammateRespawnImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

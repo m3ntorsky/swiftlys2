@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "achievement_earned"
 /// </summary>
-public interface EventAchievementEarned : IGameEvent<EventAchievementEarned> {
+public interface EventAchievementEarned : ITypedGameEvent<EventAchievementEarned> {
 
-  static EventAchievementEarned IGameEvent<EventAchievementEarned>.FromAllocated(nint ptr) => new EventAchievementEarnedImpl(ptr, true);
+  static EventAchievementEarned ITypedGameEvent<EventAchievementEarned>.Wrap(IGameEvent accessor) => new EventAchievementEarnedImpl(accessor);
 
-  static EventAchievementEarned IGameEvent<EventAchievementEarned>.FromExternal(nint ptr) => new EventAchievementEarnedImpl(ptr, false);
+  static string ITypedGameEvent<EventAchievementEarned>.GetName() => "achievement_earned";
 
-  static string IGameEvent<EventAchievementEarned>.GetName() => "achievement_earned";
-
-  static uint IGameEvent<EventAchievementEarned>.GetHash() => 0xDA3B5BA6u;
+  static uint ITypedGameEvent<EventAchievementEarned>.GetHash() => 0xDA3B5BA6u;
   /// <summary>
   /// entindex of the player
   /// <br/>

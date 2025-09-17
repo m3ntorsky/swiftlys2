@@ -10,22 +10,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "hltv_rank_entity"
 /// an entity ranking
 /// </summary>
-internal class EventHltvRankEntityImpl : GameEvent<EventHltvRankEntity>, EventHltvRankEntity
+internal class EventHltvRankEntityImpl : TypedGameEvent<EventHltvRankEntity>, EventHltvRankEntity
 {
 
-  public EventHltvRankEntityImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHltvRankEntityImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // player slot
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // ranking, how interesting is this entity to view
   public float Rank
-  { get => GetFloat("rank"); set => SetFloat("rank", value); }
+  { get => Accessor.GetFloat("rank"); set => Accessor.SetFloat("rank", value); }
 
   // best/closest target entity
   public int Target
-  { get => GetPlayerSlot("target"); set => SetPlayerSlot("target", value); }
+  { get => Accessor.GetPlayerSlot("target"); set => Accessor.SetPlayerSlot("target", value); }
 }

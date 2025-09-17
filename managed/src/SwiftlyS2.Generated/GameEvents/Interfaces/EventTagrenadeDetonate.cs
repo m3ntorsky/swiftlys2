@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "tagrenade_detonate"
 /// </summary>
-public interface EventTagrenadeDetonate : IGameEvent<EventTagrenadeDetonate> {
+public interface EventTagrenadeDetonate : ITypedGameEvent<EventTagrenadeDetonate> {
 
-  static EventTagrenadeDetonate IGameEvent<EventTagrenadeDetonate>.FromAllocated(nint ptr) => new EventTagrenadeDetonateImpl(ptr, true);
+  static EventTagrenadeDetonate ITypedGameEvent<EventTagrenadeDetonate>.Wrap(IGameEvent accessor) => new EventTagrenadeDetonateImpl(accessor);
 
-  static EventTagrenadeDetonate IGameEvent<EventTagrenadeDetonate>.FromExternal(nint ptr) => new EventTagrenadeDetonateImpl(ptr, false);
+  static string ITypedGameEvent<EventTagrenadeDetonate>.GetName() => "tagrenade_detonate";
 
-  static string IGameEvent<EventTagrenadeDetonate>.GetName() => "tagrenade_detonate";
-
-  static uint IGameEvent<EventTagrenadeDetonate>.GetHash() => 0x727702BDu;
+  static uint ITypedGameEvent<EventTagrenadeDetonate>.GetHash() => 0x727702BDu;
   /// <summary>
   /// <br/>
   /// type: player_controller

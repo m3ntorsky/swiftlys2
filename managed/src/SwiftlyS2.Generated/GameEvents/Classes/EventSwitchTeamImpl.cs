@@ -9,28 +9,28 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "switch_team"
 /// </summary>
-internal class EventSwitchTeamImpl : GameEvent<EventSwitchTeam>, EventSwitchTeam
+internal class EventSwitchTeamImpl : TypedGameEvent<EventSwitchTeam>, EventSwitchTeam
 {
 
-  public EventSwitchTeamImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventSwitchTeamImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // number of active players on both T and CT
   public short NumPlayers
-  { get => (short)GetInt("numPlayers"); set => SetInt("numPlayers", value); }
+  { get => (short)Accessor.GetInt32("numPlayers"); set => Accessor.SetInt32("numPlayers", value); }
 
   // number of spectators
   public short NumSpectators
-  { get => (short)GetInt("numSpectators"); set => SetInt("numSpectators", value); }
+  { get => (short)Accessor.GetInt32("numSpectators"); set => Accessor.SetInt32("numSpectators", value); }
 
   // average rank of human players
   public short AvgRank
-  { get => (short)GetInt("avg_rank"); set => SetInt("avg_rank", value); }
+  { get => (short)Accessor.GetInt32("avg_rank"); set => Accessor.SetInt32("avg_rank", value); }
 
   public short NumTSlotsFree
-  { get => (short)GetInt("numTSlotsFree"); set => SetInt("numTSlotsFree", value); }
+  { get => (short)Accessor.GetInt32("numTSlotsFree"); set => Accessor.SetInt32("numTSlotsFree", value); }
 
   public short NumCTSlotsFree
-  { get => (short)GetInt("numCTSlotsFree"); set => SetInt("numCTSlotsFree", value); }
+  { get => (short)Accessor.GetInt32("numCTSlotsFree"); set => Accessor.SetInt32("numCTSlotsFree", value); }
 }

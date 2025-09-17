@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "achievement_event"
 /// </summary>
-internal class EventAchievementEventImpl : GameEvent<EventAchievementEvent>, EventAchievementEvent
+internal class EventAchievementEventImpl : TypedGameEvent<EventAchievementEvent>, EventAchievementEvent
 {
 
-  public EventAchievementEventImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventAchievementEventImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // non-localized name of achievement
   public string AchievementName
-  { get => GetString("achievement_name"); set => SetString("achievement_name", value); }
+  { get => Accessor.GetString("achievement_name"); set => Accessor.SetString("achievement_name", value); }
 
   // # of steps toward achievement
   public short CurVal
-  { get => (short)GetInt("cur_val"); set => SetInt("cur_val", value); }
+  { get => (short)Accessor.GetInt32("cur_val"); set => Accessor.SetInt32("cur_val", value); }
 
   // total # of steps in achievement
   public short MaxVal
-  { get => (short)GetInt("max_val"); set => SetInt("max_val", value); }
+  { get => (short)Accessor.GetInt32("max_val"); set => Accessor.SetInt32("max_val", value); }
 }

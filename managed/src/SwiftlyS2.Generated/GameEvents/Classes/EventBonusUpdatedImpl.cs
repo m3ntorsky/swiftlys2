@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "bonus_updated"
 /// </summary>
-internal class EventBonusUpdatedImpl : GameEvent<EventBonusUpdated>, EventBonusUpdated
+internal class EventBonusUpdatedImpl : TypedGameEvent<EventBonusUpdated>, EventBonusUpdated
 {
 
-  public EventBonusUpdatedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventBonusUpdatedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public short NumAdvanced
-  { get => (short)GetInt("numadvanced"); set => SetInt("numadvanced", value); }
+  { get => (short)Accessor.GetInt32("numadvanced"); set => Accessor.SetInt32("numadvanced", value); }
 
   public short NumBronze
-  { get => (short)GetInt("numbronze"); set => SetInt("numbronze", value); }
+  { get => (short)Accessor.GetInt32("numbronze"); set => Accessor.SetInt32("numbronze", value); }
 
   public short NumSilver
-  { get => (short)GetInt("numsilver"); set => SetInt("numsilver", value); }
+  { get => (short)Accessor.GetInt32("numsilver"); set => Accessor.SetInt32("numsilver", value); }
 
   public short NumGold
-  { get => (short)GetInt("numgold"); set => SetInt("numgold", value); }
+  { get => (short)Accessor.GetInt32("numgold"); set => Accessor.SetInt32("numgold", value); }
 }

@@ -9,19 +9,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "start_vote"
 /// </summary>
-internal class EventStartVoteImpl : GameEvent<EventStartVote>, EventStartVote
+internal class EventStartVoteImpl : TypedGameEvent<EventStartVote>, EventStartVote
 {
 
-  public EventStartVoteImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventStartVoteImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public byte Type
-  { get => (byte)GetInt("type"); set => SetInt("type", value); }
+  { get => (byte)Accessor.GetInt32("type"); set => Accessor.SetInt32("type", value); }
 
   public short VoteParameter
-  { get => (short)GetInt("vote_parameter"); set => SetInt("vote_parameter", value); }
+  { get => (short)Accessor.GetInt32("vote_parameter"); set => Accessor.SetInt32("vote_parameter", value); }
 }

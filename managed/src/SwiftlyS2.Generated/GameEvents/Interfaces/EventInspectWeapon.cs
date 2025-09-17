@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "inspect_weapon"
 /// </summary>
-public interface EventInspectWeapon : IGameEvent<EventInspectWeapon> {
+public interface EventInspectWeapon : ITypedGameEvent<EventInspectWeapon> {
 
-  static EventInspectWeapon IGameEvent<EventInspectWeapon>.FromAllocated(nint ptr) => new EventInspectWeaponImpl(ptr, true);
+  static EventInspectWeapon ITypedGameEvent<EventInspectWeapon>.Wrap(IGameEvent accessor) => new EventInspectWeaponImpl(accessor);
 
-  static EventInspectWeapon IGameEvent<EventInspectWeapon>.FromExternal(nint ptr) => new EventInspectWeaponImpl(ptr, false);
+  static string ITypedGameEvent<EventInspectWeapon>.GetName() => "inspect_weapon";
 
-  static string IGameEvent<EventInspectWeapon>.GetName() => "inspect_weapon";
-
-  static uint IGameEvent<EventInspectWeapon>.GetHash() => 0x211A0C2Cu;
+  static uint ITypedGameEvent<EventInspectWeapon>.GetHash() => 0x211A0C2Cu;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn

@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "hide_deathpanel"
 /// </summary>
-public interface EventHideDeathpanel : IGameEvent<EventHideDeathpanel> {
+public interface EventHideDeathpanel : ITypedGameEvent<EventHideDeathpanel> {
 
-  static EventHideDeathpanel IGameEvent<EventHideDeathpanel>.FromAllocated(nint ptr) => new EventHideDeathpanelImpl(ptr, true);
+  static EventHideDeathpanel ITypedGameEvent<EventHideDeathpanel>.Wrap(IGameEvent accessor) => new EventHideDeathpanelImpl(accessor);
 
-  static EventHideDeathpanel IGameEvent<EventHideDeathpanel>.FromExternal(nint ptr) => new EventHideDeathpanelImpl(ptr, false);
+  static string ITypedGameEvent<EventHideDeathpanel>.GetName() => "hide_deathpanel";
 
-  static string IGameEvent<EventHideDeathpanel>.GetName() => "hide_deathpanel";
-
-  static uint IGameEvent<EventHideDeathpanel>.GetHash() => 0x3B386392u;
+  static uint ITypedGameEvent<EventHideDeathpanel>.GetHash() => 0x3B386392u;
 }

@@ -10,14 +10,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "player_connect_full"
 /// player has sent final message in the connection sequence
 /// </summary>
-internal class EventPlayerConnectFullImpl : GameEvent<EventPlayerConnectFull>, EventPlayerConnectFull
+internal class EventPlayerConnectFullImpl : TypedGameEvent<EventPlayerConnectFull>, EventPlayerConnectFull
 {
 
-  public EventPlayerConnectFullImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerConnectFullImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // user ID on server (unique on server)
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

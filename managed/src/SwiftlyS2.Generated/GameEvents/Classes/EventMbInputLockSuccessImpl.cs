@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "mb_input_lock_success"
 /// </summary>
-internal class EventMbInputLockSuccessImpl : GameEvent<EventMbInputLockSuccess>, EventMbInputLockSuccess
+internal class EventMbInputLockSuccessImpl : TypedGameEvent<EventMbInputLockSuccess>, EventMbInputLockSuccess
 {
 
-  public EventMbInputLockSuccessImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventMbInputLockSuccessImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

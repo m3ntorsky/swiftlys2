@@ -9,16 +9,16 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "inventory_updated"
 /// </summary>
-internal class EventInventoryUpdatedImpl : GameEvent<EventInventoryUpdated>, EventInventoryUpdated
+internal class EventInventoryUpdatedImpl : TypedGameEvent<EventInventoryUpdated>, EventInventoryUpdated
 {
 
-  public EventInventoryUpdatedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventInventoryUpdatedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public short ItemDef
-  { get => (short)GetInt("itemdef"); set => SetInt("itemdef", value); }
+  { get => (short)Accessor.GetInt32("itemdef"); set => Accessor.SetInt32("itemdef", value); }
 
   public int Itemid
-  { get => GetInt("itemid"); set => SetInt("itemid", value); }
+  { get => Accessor.GetInt32("itemid"); set => Accessor.SetInt32("itemid", value); }
 }

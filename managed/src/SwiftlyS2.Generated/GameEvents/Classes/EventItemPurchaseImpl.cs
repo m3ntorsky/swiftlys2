@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "item_purchase"
 /// </summary>
-internal class EventItemPurchaseImpl : GameEvent<EventItemPurchase>, EventItemPurchase
+internal class EventItemPurchaseImpl : TypedGameEvent<EventItemPurchase>, EventItemPurchase
 {
 
-  public EventItemPurchaseImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventItemPurchaseImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public short Team
-  { get => (short)GetInt("team"); set => SetInt("team", value); }
+  { get => (short)Accessor.GetInt32("team"); set => Accessor.SetInt32("team", value); }
 
   public short LoadOut
-  { get => (short)GetInt("loadout"); set => SetInt("loadout", value); }
+  { get => (short)Accessor.GetInt32("loadout"); set => Accessor.SetInt32("loadout", value); }
 
   public string Weapon
-  { get => GetString("weapon"); set => SetString("weapon", value); }
+  { get => Accessor.GetString("weapon"); set => Accessor.SetString("weapon", value); }
 }

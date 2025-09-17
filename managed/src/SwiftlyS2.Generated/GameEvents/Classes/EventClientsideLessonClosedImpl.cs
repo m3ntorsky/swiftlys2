@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "clientside_lesson_closed"
 /// </summary>
-internal class EventClientsideLessonClosedImpl : GameEvent<EventClientsideLessonClosed>, EventClientsideLessonClosed
+internal class EventClientsideLessonClosedImpl : TypedGameEvent<EventClientsideLessonClosed>, EventClientsideLessonClosed
 {
 
-  public EventClientsideLessonClosedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventClientsideLessonClosedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public string LessonName
-  { get => GetString("lesson_name"); set => SetString("lesson_name", value); }
+  { get => Accessor.GetString("lesson_name"); set => Accessor.SetString("lesson_name", value); }
 }

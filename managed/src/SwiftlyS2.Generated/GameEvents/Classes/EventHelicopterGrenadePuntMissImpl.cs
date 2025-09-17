@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "helicopter_grenade_punt_miss"
 /// </summary>
-internal class EventHelicopterGrenadePuntMissImpl : GameEvent<EventHelicopterGrenadePuntMiss>, EventHelicopterGrenadePuntMiss
+internal class EventHelicopterGrenadePuntMissImpl : TypedGameEvent<EventHelicopterGrenadePuntMiss>, EventHelicopterGrenadePuntMiss
 {
 
-  public EventHelicopterGrenadePuntMissImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHelicopterGrenadePuntMissImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_planted"
 /// </summary>
-public interface EventBombPlanted : IGameEvent<EventBombPlanted> {
+public interface EventBombPlanted : ITypedGameEvent<EventBombPlanted> {
 
-  static EventBombPlanted IGameEvent<EventBombPlanted>.FromAllocated(nint ptr) => new EventBombPlantedImpl(ptr, true);
+  static EventBombPlanted ITypedGameEvent<EventBombPlanted>.Wrap(IGameEvent accessor) => new EventBombPlantedImpl(accessor);
 
-  static EventBombPlanted IGameEvent<EventBombPlanted>.FromExternal(nint ptr) => new EventBombPlantedImpl(ptr, false);
+  static string ITypedGameEvent<EventBombPlanted>.GetName() => "bomb_planted";
 
-  static string IGameEvent<EventBombPlanted>.GetName() => "bomb_planted";
-
-  static uint IGameEvent<EventBombPlanted>.GetHash() => 0x4E704C3Eu;
+  static uint ITypedGameEvent<EventBombPlanted>.GetHash() => 0x4E704C3Eu;
   /// <summary>
   /// player who planted the bomb
   /// <br/>

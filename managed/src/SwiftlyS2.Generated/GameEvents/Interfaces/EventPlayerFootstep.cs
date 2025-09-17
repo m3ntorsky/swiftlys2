@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_footstep"
 /// </summary>
-public interface EventPlayerFootstep : IGameEvent<EventPlayerFootstep> {
+public interface EventPlayerFootstep : ITypedGameEvent<EventPlayerFootstep> {
 
-  static EventPlayerFootstep IGameEvent<EventPlayerFootstep>.FromAllocated(nint ptr) => new EventPlayerFootstepImpl(ptr, true);
+  static EventPlayerFootstep ITypedGameEvent<EventPlayerFootstep>.Wrap(IGameEvent accessor) => new EventPlayerFootstepImpl(accessor);
 
-  static EventPlayerFootstep IGameEvent<EventPlayerFootstep>.FromExternal(nint ptr) => new EventPlayerFootstepImpl(ptr, false);
+  static string ITypedGameEvent<EventPlayerFootstep>.GetName() => "player_footstep";
 
-  static string IGameEvent<EventPlayerFootstep>.GetName() => "player_footstep";
-
-  static uint IGameEvent<EventPlayerFootstep>.GetHash() => 0x5EA9530Bu;
+  static uint ITypedGameEvent<EventPlayerFootstep>.GetHash() => 0x5EA9530Bu;
   /// <summary>
   /// <br/>
   /// type: player_pawn

@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bullet_damage"
 /// </summary>
-public interface EventBulletDamage : IGameEvent<EventBulletDamage> {
+public interface EventBulletDamage : ITypedGameEvent<EventBulletDamage> {
 
-  static EventBulletDamage IGameEvent<EventBulletDamage>.FromAllocated(nint ptr) => new EventBulletDamageImpl(ptr, true);
+  static EventBulletDamage ITypedGameEvent<EventBulletDamage>.Wrap(IGameEvent accessor) => new EventBulletDamageImpl(accessor);
 
-  static EventBulletDamage IGameEvent<EventBulletDamage>.FromExternal(nint ptr) => new EventBulletDamageImpl(ptr, false);
+  static string ITypedGameEvent<EventBulletDamage>.GetName() => "bullet_damage";
 
-  static string IGameEvent<EventBulletDamage>.GetName() => "bullet_damage";
-
-  static uint IGameEvent<EventBulletDamage>.GetHash() => 0xAB7EA51Fu;
+  static uint ITypedGameEvent<EventBulletDamage>.GetHash() => 0xAB7EA51Fu;
   /// <summary>
   /// player index who was hurt
   /// <br/>

@@ -9,30 +9,30 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "gg_killed_enemy"
 /// </summary>
-internal class EventGgKilledEnemyImpl : GameEvent<EventGgKilledEnemy>, EventGgKilledEnemy
+internal class EventGgKilledEnemyImpl : TypedGameEvent<EventGgKilledEnemy>, EventGgKilledEnemy
 {
 
-  public EventGgKilledEnemyImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventGgKilledEnemyImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // user ID who died
   public int VictimID
-  { get => GetPlayerSlot("victimid"); set => SetPlayerSlot("victimid", value); }
+  { get => Accessor.GetPlayerSlot("victimid"); set => Accessor.SetPlayerSlot("victimid", value); }
 
   // user ID who killed
   public int AttackerID
-  { get => GetPlayerSlot("attackerid"); set => SetPlayerSlot("attackerid", value); }
+  { get => Accessor.GetPlayerSlot("attackerid"); set => Accessor.SetPlayerSlot("attackerid", value); }
 
   // did killer dominate victim with this kill
   public short Dominated
-  { get => (short)GetInt("dominated"); set => SetInt("dominated", value); }
+  { get => (short)Accessor.GetInt32("dominated"); set => Accessor.SetInt32("dominated", value); }
 
   // did killer get revenge on victim with this kill
   public short Revenge
-  { get => (short)GetInt("revenge"); set => SetInt("revenge", value); }
+  { get => (short)Accessor.GetInt32("revenge"); set => Accessor.SetInt32("revenge", value); }
 
   // did killer kill with a bonus weapon?
   public bool Bonus
-  { get => GetBool("bonus"); set => SetBool("bonus", value); }
+  { get => Accessor.GetBool("bonus"); set => Accessor.SetBool("bonus", value); }
 }

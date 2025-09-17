@@ -10,18 +10,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "team_score"
 /// team score changed
 /// </summary>
-internal class EventTeamScoreImpl : GameEvent<EventTeamScore>, EventTeamScore
+internal class EventTeamScoreImpl : TypedGameEvent<EventTeamScore>, EventTeamScore
 {
 
-  public EventTeamScoreImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventTeamScoreImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // team id
   public byte TeamID
-  { get => (byte)GetInt("teamid"); set => SetInt("teamid", value); }
+  { get => (byte)Accessor.GetInt32("teamid"); set => Accessor.SetInt32("teamid", value); }
 
   // total team score
   public short Score
-  { get => (short)GetInt("score"); set => SetInt("score", value); }
+  { get => (short)Accessor.GetInt32("score"); set => Accessor.SetInt32("score", value); }
 }

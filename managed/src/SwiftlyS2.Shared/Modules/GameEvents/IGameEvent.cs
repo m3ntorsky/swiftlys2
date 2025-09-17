@@ -6,35 +6,8 @@ namespace SwiftlyS2.Shared.GameEvents;
 /// <summary>
 /// Represents a strongly-typed game event with helpers to set/get payload fields and fire the event.
 /// </summary>
-/// <typeparam name="T">Concrete event type implementing <see cref="IGameEvent{T}"/>.</typeparam>
-public interface IGameEvent<T> : INativeHandle where T : IGameEvent<T>
+public interface IGameEvent : INativeHandle
 {
-  /// <summary>
-  /// Creates an event wrapper for a pointer allocated by the engine.
-  /// </summary>
-  /// <param name="ptr">Native pointer to the underlying game event.</param>
-  /// <returns>The typed event instance.</returns>
-  internal static abstract T FromAllocated(nint ptr);
-
-  /// <summary>
-  /// Creates an event wrapper for a pointer owned externally.
-  /// </summary>
-  /// <param name="ptr">Native pointer to the underlying game event.</param>
-  /// <returns>The typed event instance.</returns>
-  internal static abstract T FromExternal(nint ptr);
-  
-  /// <summary>
-  /// Gets the engine event name used to identify this event.
-  /// </summary>
-  /// <returns>Event name.</returns>
-  internal static abstract string GetName();
-
-  /// <summary>
-  /// Gets the engine event hash used to identify this event.
-  /// </summary>
-  /// <returns>Event hash.</returns>
-  internal static abstract uint GetHash();
-
   /// <summary>
   /// When true, the event will not be broadcast to clients.
   /// </summary>
@@ -70,21 +43,28 @@ public interface IGameEvent<T> : INativeHandle where T : IGameEvent<T>
   /// </summary>
   /// <param name="key">Field name.</param>
   /// <param name="value">Integer value.</param>
-  public void SetInt(string key, int value);
+  public void SetInt32(string key, int value);
 
   /// <summary>
   /// Gets an integer field from the event payload.
   /// </summary>
   /// <param name="key">Field name.</param>
   /// <returns>Integer value.</returns>
-  public int GetInt(string key);
+  public int GetInt32(string key);
 
   /// <summary>
   /// Sets an unsigned 64-bit integer field on the event payload.
   /// </summary>
   /// <param name="key">Field name.</param>
   /// <param name="value">Unsigned 64-bit value.</param>
-  public void SetUint64(string key, ulong value);
+  public void SetUInt64(string key, ulong value);
+
+  /// <summary>
+  /// Gets an unsigned 64-bit integer field from the event payload.
+  /// </summary>
+  /// <param name="key">Field name.</param>
+  /// <returns>Unsigned 64-bit value.</returns>
+  public ulong GetUInt64(string key);
 
   /// <summary>
   /// Sets a floating-point field on the event payload.
@@ -92,6 +72,13 @@ public interface IGameEvent<T> : INativeHandle where T : IGameEvent<T>
   /// <param name="key">Field name.</param>
   /// <param name="value">Float value.</param>
   public void SetFloat(string key, float value);
+
+  /// <summary>
+  /// Gets a floating-point field from the event payload.
+  /// </summary>
+  /// <param name="key">Field name.</param>
+  /// <returns>Float value.</returns>
+  public float GetFloat(string key);
 
   /// <summary>
   /// Sets a string field on the event payload.

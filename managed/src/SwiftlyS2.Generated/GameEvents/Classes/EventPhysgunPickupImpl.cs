@@ -9,14 +9,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "physgun_pickup"
 /// </summary>
-internal class EventPhysgunPickupImpl : GameEvent<EventPhysgunPickup>, EventPhysgunPickup
+internal class EventPhysgunPickupImpl : TypedGameEvent<EventPhysgunPickup>, EventPhysgunPickup
 {
 
-  public EventPhysgunPickupImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPhysgunPickupImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // entity picked up
   public nint Target
-  { get => GetPtr("target"); set => SetPtr("target", value); }
+  { get => Accessor.GetPtr("target"); set => Accessor.SetPtr("target", value); }
 }

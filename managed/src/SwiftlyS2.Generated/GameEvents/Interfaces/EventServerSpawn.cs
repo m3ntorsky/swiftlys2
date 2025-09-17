@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "server_spawn"
 /// send once a server starts
 /// </summary>
-public interface EventServerSpawn : IGameEvent<EventServerSpawn> {
+public interface EventServerSpawn : ITypedGameEvent<EventServerSpawn> {
 
-  static EventServerSpawn IGameEvent<EventServerSpawn>.FromAllocated(nint ptr) => new EventServerSpawnImpl(ptr, true);
+  static EventServerSpawn ITypedGameEvent<EventServerSpawn>.Wrap(IGameEvent accessor) => new EventServerSpawnImpl(accessor);
 
-  static EventServerSpawn IGameEvent<EventServerSpawn>.FromExternal(nint ptr) => new EventServerSpawnImpl(ptr, false);
+  static string ITypedGameEvent<EventServerSpawn>.GetName() => "server_spawn";
 
-  static string IGameEvent<EventServerSpawn>.GetName() => "server_spawn";
-
-  static uint IGameEvent<EventServerSpawn>.GetHash() => 0x7039CD72u;
+  static uint ITypedGameEvent<EventServerSpawn>.GetHash() => 0x7039CD72u;
   /// <summary>
   /// public host name
   /// <br/>

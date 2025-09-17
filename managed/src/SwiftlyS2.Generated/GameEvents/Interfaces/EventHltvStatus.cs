@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "hltv_status"
 /// general HLTV status
 /// </summary>
-public interface EventHltvStatus : IGameEvent<EventHltvStatus> {
+public interface EventHltvStatus : ITypedGameEvent<EventHltvStatus> {
 
-  static EventHltvStatus IGameEvent<EventHltvStatus>.FromAllocated(nint ptr) => new EventHltvStatusImpl(ptr, true);
+  static EventHltvStatus ITypedGameEvent<EventHltvStatus>.Wrap(IGameEvent accessor) => new EventHltvStatusImpl(accessor);
 
-  static EventHltvStatus IGameEvent<EventHltvStatus>.FromExternal(nint ptr) => new EventHltvStatusImpl(ptr, false);
+  static string ITypedGameEvent<EventHltvStatus>.GetName() => "hltv_status";
 
-  static string IGameEvent<EventHltvStatus>.GetName() => "hltv_status";
-
-  static uint IGameEvent<EventHltvStatus>.GetHash() => 0x81C8CF76u;
+  static uint ITypedGameEvent<EventHltvStatus>.GetHash() => 0x81C8CF76u;
   /// <summary>
   /// number of HLTV spectators
   /// <br/>

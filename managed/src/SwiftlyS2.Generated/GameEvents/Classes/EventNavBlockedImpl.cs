@@ -9,16 +9,16 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "nav_blocked"
 /// </summary>
-internal class EventNavBlockedImpl : GameEvent<EventNavBlocked>, EventNavBlocked
+internal class EventNavBlockedImpl : TypedGameEvent<EventNavBlocked>, EventNavBlocked
 {
 
-  public EventNavBlockedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventNavBlockedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public int Area
-  { get => GetInt("area"); set => SetInt("area", value); }
+  { get => Accessor.GetInt32("area"); set => Accessor.SetInt32("area", value); }
 
   public bool Blocked
-  { get => GetBool("blocked"); set => SetBool("blocked", value); }
+  { get => Accessor.GetBool("blocked"); set => Accessor.SetBool("blocked", value); }
 }

@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "hltv_changed_mode"
 /// </summary>
-public interface EventHltvChangedMode : IGameEvent<EventHltvChangedMode> {
+public interface EventHltvChangedMode : ITypedGameEvent<EventHltvChangedMode> {
 
-  static EventHltvChangedMode IGameEvent<EventHltvChangedMode>.FromAllocated(nint ptr) => new EventHltvChangedModeImpl(ptr, true);
+  static EventHltvChangedMode ITypedGameEvent<EventHltvChangedMode>.Wrap(IGameEvent accessor) => new EventHltvChangedModeImpl(accessor);
 
-  static EventHltvChangedMode IGameEvent<EventHltvChangedMode>.FromExternal(nint ptr) => new EventHltvChangedModeImpl(ptr, false);
+  static string ITypedGameEvent<EventHltvChangedMode>.GetName() => "hltv_changed_mode";
 
-  static string IGameEvent<EventHltvChangedMode>.GetName() => "hltv_changed_mode";
-
-  static uint IGameEvent<EventHltvChangedMode>.GetHash() => 0x11795622u;
+  static uint ITypedGameEvent<EventHltvChangedMode>.GetHash() => 0x11795622u;
   /// <summary>
   /// type: long
   /// </summary>

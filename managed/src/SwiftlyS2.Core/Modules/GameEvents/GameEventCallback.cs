@@ -49,12 +49,11 @@ internal abstract class GameEventCallback : IEquatable<GameEventCallback>, IDisp
   }
 }
 
-internal class GameEventCallback<T> : GameEventCallback, IDisposable where T : IGameEvent<T>
+internal class GameEventCallback<T> : GameEventCallback, IDisposable where T : ITypedGameEvent<T>
 {
   private Func<T, HookResult> _callback { get; init; }
   private ILogger<GameEventCallback<T>> _logger { get; init; }
   private CoreContext _Context { get; init; }
-
   private UnmanagedEventCallback _unmanagedCallback;
 
   public GameEventCallback(Func<T, HookResult> callback, bool pre, ILoggerFactory loggerFactory, CoreContext context) {
@@ -69,9 +68,10 @@ internal class GameEventCallback<T> : GameEventCallback, IDisposable where T : I
     _unmanagedCallback = (hash, pEvent, pDontBroadcast) => {
       try {
         if (hash != T.GetHash()) return HookResult.Continue;
-        var @event = T.FromExternal(pEvent);
+        var accessor = new GameEvent(pEvent, false);
+        var @event = T.Wrap(accessor);
         var result = _callback(@event);
-        pDontBroadcast.Write(@event.DontBroadcast);
+        pDontBroadcast.Write(@event.Accessor.DontBroadcast);
         return result;
       } catch (Exception e) {
         _logger.LogError(e, "Error in event {EventName} callback from context {ContextName}", EventName, _Context.Name);

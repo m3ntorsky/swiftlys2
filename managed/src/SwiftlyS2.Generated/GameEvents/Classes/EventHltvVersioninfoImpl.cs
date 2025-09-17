@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hltv_versioninfo"
 /// </summary>
-internal class EventHltvVersioninfoImpl : GameEvent<EventHltvVersioninfo>, EventHltvVersioninfo
+internal class EventHltvVersioninfoImpl : TypedGameEvent<EventHltvVersioninfo>, EventHltvVersioninfo
 {
 
-  public EventHltvVersioninfoImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventHltvVersioninfoImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public int Version
-  { get => GetInt("version"); set => SetInt("version", value); }
+  { get => Accessor.GetInt32("version"); set => Accessor.SetInt32("version", value); }
 }

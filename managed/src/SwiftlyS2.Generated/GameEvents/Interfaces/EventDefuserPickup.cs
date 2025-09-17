@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "defuser_pickup"
 /// </summary>
-public interface EventDefuserPickup : IGameEvent<EventDefuserPickup> {
+public interface EventDefuserPickup : ITypedGameEvent<EventDefuserPickup> {
 
-  static EventDefuserPickup IGameEvent<EventDefuserPickup>.FromAllocated(nint ptr) => new EventDefuserPickupImpl(ptr, true);
+  static EventDefuserPickup ITypedGameEvent<EventDefuserPickup>.Wrap(IGameEvent accessor) => new EventDefuserPickupImpl(accessor);
 
-  static EventDefuserPickup IGameEvent<EventDefuserPickup>.FromExternal(nint ptr) => new EventDefuserPickupImpl(ptr, false);
+  static string ITypedGameEvent<EventDefuserPickup>.GetName() => "defuser_pickup";
 
-  static string IGameEvent<EventDefuserPickup>.GetName() => "defuser_pickup";
-
-  static uint IGameEvent<EventDefuserPickup>.GetHash() => 0xA9099A0Cu;
+  static uint ITypedGameEvent<EventDefuserPickup>.GetHash() => 0xA9099A0Cu;
   /// <summary>
   /// defuser's entity ID
   /// <br/>

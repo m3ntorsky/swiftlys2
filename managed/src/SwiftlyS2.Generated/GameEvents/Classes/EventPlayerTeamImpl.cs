@@ -9,34 +9,34 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_team"
 /// </summary>
-internal class EventPlayerTeamImpl : GameEvent<EventPlayerTeam>, EventPlayerTeam
+internal class EventPlayerTeamImpl : TypedGameEvent<EventPlayerTeam>, EventPlayerTeam
 {
 
-  public EventPlayerTeamImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerTeamImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // team id
   public byte Team
-  { get => (byte)GetInt("team"); set => SetInt("team", value); }
+  { get => (byte)Accessor.GetInt32("team"); set => Accessor.SetInt32("team", value); }
 
   // old team id
   public byte OldTeam
-  { get => (byte)GetInt("oldteam"); set => SetInt("oldteam", value); }
+  { get => (byte)Accessor.GetInt32("oldteam"); set => Accessor.SetInt32("oldteam", value); }
 
   // team change because player disconnects
   public bool Disconnect
-  { get => GetBool("disconnect"); set => SetBool("disconnect", value); }
+  { get => Accessor.GetBool("disconnect"); set => Accessor.SetBool("disconnect", value); }
 
   public bool Silent
-  { get => GetBool("silent"); set => SetBool("silent", value); }
+  { get => Accessor.GetBool("silent"); set => Accessor.SetBool("silent", value); }
 
   public string Name
-  { get => GetString("name"); set => SetString("name", value); }
+  { get => Accessor.GetString("name"); set => Accessor.SetString("name", value); }
 
   public bool IsBot
-  { get => GetBool("isbot"); set => SetBool("isbot", value); }
+  { get => Accessor.GetBool("isbot"); set => Accessor.SetBool("isbot", value); }
 }

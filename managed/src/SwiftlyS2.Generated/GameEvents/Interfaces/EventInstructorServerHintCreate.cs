@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "instructor_server_hint_create"
 /// create a hint using data supplied entirely by the server/map. Intended for hints to smooth playtests before content is ready to make the hint unneccessary. NOT INTENDED AS A SHIPPABLE CRUTCH
 /// </summary>
-public interface EventInstructorServerHintCreate : IGameEvent<EventInstructorServerHintCreate> {
+public interface EventInstructorServerHintCreate : ITypedGameEvent<EventInstructorServerHintCreate> {
 
-  static EventInstructorServerHintCreate IGameEvent<EventInstructorServerHintCreate>.FromAllocated(nint ptr) => new EventInstructorServerHintCreateImpl(ptr, true);
+  static EventInstructorServerHintCreate ITypedGameEvent<EventInstructorServerHintCreate>.Wrap(IGameEvent accessor) => new EventInstructorServerHintCreateImpl(accessor);
 
-  static EventInstructorServerHintCreate IGameEvent<EventInstructorServerHintCreate>.FromExternal(nint ptr) => new EventInstructorServerHintCreateImpl(ptr, false);
+  static string ITypedGameEvent<EventInstructorServerHintCreate>.GetName() => "instructor_server_hint_create";
 
-  static string IGameEvent<EventInstructorServerHintCreate>.GetName() => "instructor_server_hint_create";
-
-  static uint IGameEvent<EventInstructorServerHintCreate>.GetHash() => 0xB6A33F21u;
+  static uint ITypedGameEvent<EventInstructorServerHintCreate>.GetHash() => 0xB6A33F21u;
   /// <summary>
   /// user ID of the player that triggered the hint
   /// <br/>

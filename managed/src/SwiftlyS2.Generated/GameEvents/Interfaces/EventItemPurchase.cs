@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "item_purchase"
 /// </summary>
-public interface EventItemPurchase : IGameEvent<EventItemPurchase> {
+public interface EventItemPurchase : ITypedGameEvent<EventItemPurchase> {
 
-  static EventItemPurchase IGameEvent<EventItemPurchase>.FromAllocated(nint ptr) => new EventItemPurchaseImpl(ptr, true);
+  static EventItemPurchase ITypedGameEvent<EventItemPurchase>.Wrap(IGameEvent accessor) => new EventItemPurchaseImpl(accessor);
 
-  static EventItemPurchase IGameEvent<EventItemPurchase>.FromExternal(nint ptr) => new EventItemPurchaseImpl(ptr, false);
+  static string ITypedGameEvent<EventItemPurchase>.GetName() => "item_purchase";
 
-  static string IGameEvent<EventItemPurchase>.GetName() => "item_purchase";
-
-  static uint IGameEvent<EventItemPurchase>.GetHash() => 0x4400FB1Cu;
+  static uint ITypedGameEvent<EventItemPurchase>.GetHash() => 0x4400FB1Cu;
   /// <summary>
   /// <br/>
   /// type: player_controller

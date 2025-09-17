@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "repost_xbox_achievements"
 /// </summary>
-public interface EventRepostXboxAchievements : IGameEvent<EventRepostXboxAchievements> {
+public interface EventRepostXboxAchievements : ITypedGameEvent<EventRepostXboxAchievements> {
 
-  static EventRepostXboxAchievements IGameEvent<EventRepostXboxAchievements>.FromAllocated(nint ptr) => new EventRepostXboxAchievementsImpl(ptr, true);
+  static EventRepostXboxAchievements ITypedGameEvent<EventRepostXboxAchievements>.Wrap(IGameEvent accessor) => new EventRepostXboxAchievementsImpl(accessor);
 
-  static EventRepostXboxAchievements IGameEvent<EventRepostXboxAchievements>.FromExternal(nint ptr) => new EventRepostXboxAchievementsImpl(ptr, false);
+  static string ITypedGameEvent<EventRepostXboxAchievements>.GetName() => "repost_xbox_achievements";
 
-  static string IGameEvent<EventRepostXboxAchievements>.GetName() => "repost_xbox_achievements";
-
-  static uint IGameEvent<EventRepostXboxAchievements>.GetHash() => 0x7D188D23u;
+  static uint ITypedGameEvent<EventRepostXboxAchievements>.GetHash() => 0x7D188D23u;
   /// <summary>
   /// splitscreen ID
   /// <br/>

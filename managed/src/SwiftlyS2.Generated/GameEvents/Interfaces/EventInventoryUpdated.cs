@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "inventory_updated"
 /// </summary>
-public interface EventInventoryUpdated : IGameEvent<EventInventoryUpdated> {
+public interface EventInventoryUpdated : ITypedGameEvent<EventInventoryUpdated> {
 
-  static EventInventoryUpdated IGameEvent<EventInventoryUpdated>.FromAllocated(nint ptr) => new EventInventoryUpdatedImpl(ptr, true);
+  static EventInventoryUpdated ITypedGameEvent<EventInventoryUpdated>.Wrap(IGameEvent accessor) => new EventInventoryUpdatedImpl(accessor);
 
-  static EventInventoryUpdated IGameEvent<EventInventoryUpdated>.FromExternal(nint ptr) => new EventInventoryUpdatedImpl(ptr, false);
+  static string ITypedGameEvent<EventInventoryUpdated>.GetName() => "inventory_updated";
 
-  static string IGameEvent<EventInventoryUpdated>.GetName() => "inventory_updated";
-
-  static uint IGameEvent<EventInventoryUpdated>.GetHash() => 0x1EA652FFu;
+  static uint ITypedGameEvent<EventInventoryUpdated>.GetHash() => 0x1EA652FFu;
   /// <summary>
   /// type: short
   /// </summary>

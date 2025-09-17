@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bot_takeover"
 /// </summary>
-public interface EventBotTakeover : IGameEvent<EventBotTakeover> {
+public interface EventBotTakeover : ITypedGameEvent<EventBotTakeover> {
 
-  static EventBotTakeover IGameEvent<EventBotTakeover>.FromAllocated(nint ptr) => new EventBotTakeoverImpl(ptr, true);
+  static EventBotTakeover ITypedGameEvent<EventBotTakeover>.Wrap(IGameEvent accessor) => new EventBotTakeoverImpl(accessor);
 
-  static EventBotTakeover IGameEvent<EventBotTakeover>.FromExternal(nint ptr) => new EventBotTakeoverImpl(ptr, false);
+  static string ITypedGameEvent<EventBotTakeover>.GetName() => "bot_takeover";
 
-  static string IGameEvent<EventBotTakeover>.GetName() => "bot_takeover";
-
-  static uint IGameEvent<EventBotTakeover>.GetHash() => 0x6F5C9FCAu;
+  static uint ITypedGameEvent<EventBotTakeover>.GetHash() => 0x6F5C9FCAu;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn

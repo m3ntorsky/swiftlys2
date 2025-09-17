@@ -9,14 +9,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_beep"
 /// </summary>
-internal class EventBombBeepImpl : GameEvent<EventBombBeep>, EventBombBeep
+internal class EventBombBeepImpl : TypedGameEvent<EventBombBeep>, EventBombBeep
 {
 
-  public EventBombBeepImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventBombBeepImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // c4 entity
   public int EntIndex
-  { get => GetInt("entindex"); set => SetInt("entindex", value); }
+  { get => Accessor.GetInt32("entindex"); set => Accessor.SetInt32("entindex", value); }
 }

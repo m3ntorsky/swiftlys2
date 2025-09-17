@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "map_transition"
 /// </summary>
-public interface EventMapTransition : IGameEvent<EventMapTransition> {
+public interface EventMapTransition : ITypedGameEvent<EventMapTransition> {
 
-  static EventMapTransition IGameEvent<EventMapTransition>.FromAllocated(nint ptr) => new EventMapTransitionImpl(ptr, true);
+  static EventMapTransition ITypedGameEvent<EventMapTransition>.Wrap(IGameEvent accessor) => new EventMapTransitionImpl(accessor);
 
-  static EventMapTransition IGameEvent<EventMapTransition>.FromExternal(nint ptr) => new EventMapTransitionImpl(ptr, false);
+  static string ITypedGameEvent<EventMapTransition>.GetName() => "map_transition";
 
-  static string IGameEvent<EventMapTransition>.GetName() => "map_transition";
-
-  static uint IGameEvent<EventMapTransition>.GetHash() => 0x75B82729u;
+  static uint ITypedGameEvent<EventMapTransition>.GetHash() => 0x75B82729u;
 }

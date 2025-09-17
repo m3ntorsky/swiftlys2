@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "teamchange_pending"
 /// </summary>
-public interface EventTeamchangePending : IGameEvent<EventTeamchangePending> {
+public interface EventTeamchangePending : ITypedGameEvent<EventTeamchangePending> {
 
-  static EventTeamchangePending IGameEvent<EventTeamchangePending>.FromAllocated(nint ptr) => new EventTeamchangePendingImpl(ptr, true);
+  static EventTeamchangePending ITypedGameEvent<EventTeamchangePending>.Wrap(IGameEvent accessor) => new EventTeamchangePendingImpl(accessor);
 
-  static EventTeamchangePending IGameEvent<EventTeamchangePending>.FromExternal(nint ptr) => new EventTeamchangePendingImpl(ptr, false);
+  static string ITypedGameEvent<EventTeamchangePending>.GetName() => "teamchange_pending";
 
-  static string IGameEvent<EventTeamchangePending>.GetName() => "teamchange_pending";
-
-  static uint IGameEvent<EventTeamchangePending>.GetHash() => 0x53F97450u;
+  static uint ITypedGameEvent<EventTeamchangePending>.GetHash() => 0x53F97450u;
   /// <summary>
   /// <br/>
   /// type: player_controller

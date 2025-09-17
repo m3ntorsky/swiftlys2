@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "defuser_dropped"
 /// </summary>
-public interface EventDefuserDropped : IGameEvent<EventDefuserDropped> {
+public interface EventDefuserDropped : ITypedGameEvent<EventDefuserDropped> {
 
-  static EventDefuserDropped IGameEvent<EventDefuserDropped>.FromAllocated(nint ptr) => new EventDefuserDroppedImpl(ptr, true);
+  static EventDefuserDropped ITypedGameEvent<EventDefuserDropped>.Wrap(IGameEvent accessor) => new EventDefuserDroppedImpl(accessor);
 
-  static EventDefuserDropped IGameEvent<EventDefuserDropped>.FromExternal(nint ptr) => new EventDefuserDroppedImpl(ptr, false);
+  static string ITypedGameEvent<EventDefuserDropped>.GetName() => "defuser_dropped";
 
-  static string IGameEvent<EventDefuserDropped>.GetName() => "defuser_dropped";
-
-  static uint IGameEvent<EventDefuserDropped>.GetHash() => 0xA5E094F6u;
+  static uint ITypedGameEvent<EventDefuserDropped>.GetHash() => 0xA5E094F6u;
   /// <summary>
   /// defuser's entity ID
   /// <br/>

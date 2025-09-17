@@ -10,26 +10,26 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "player_info"
 /// a player changed his name
 /// </summary>
-internal class EventPlayerInfoImpl : GameEvent<EventPlayerInfo>, EventPlayerInfo
+internal class EventPlayerInfoImpl : TypedGameEvent<EventPlayerInfo>, EventPlayerInfo
 {
 
-  public EventPlayerInfoImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerInfoImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // player name
   public string Name
-  { get => GetString("name"); set => SetString("name", value); }
+  { get => Accessor.GetString("name"); set => Accessor.SetString("name", value); }
 
   // user ID on server (unique on server)
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // player network (i.e steam) id
   public ulong SteamID
-  { get => GetUint64("steamid"); set => SetUint64("steamid", value); }
+  { get => Accessor.GetUInt64("steamid"); set => Accessor.SetUInt64("steamid", value); }
 
   // true if player is a AI bot
   public bool Bot
-  { get => GetBool("bot"); set => SetBool("bot", value); }
+  { get => Accessor.GetBool("bot"); set => Accessor.SetBool("bot", value); }
 }

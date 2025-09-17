@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_pre_restart"
 /// </summary>
-internal class EventCsPreRestartImpl : GameEvent<EventCsPreRestart>, EventCsPreRestart
+internal class EventCsPreRestartImpl : TypedGameEvent<EventCsPreRestart>, EventCsPreRestart
 {
 
-  public EventCsPreRestartImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventCsPreRestartImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "write_profile_data"
 /// </summary>
-public interface EventWriteProfileData : IGameEvent<EventWriteProfileData> {
+public interface EventWriteProfileData : ITypedGameEvent<EventWriteProfileData> {
 
-  static EventWriteProfileData IGameEvent<EventWriteProfileData>.FromAllocated(nint ptr) => new EventWriteProfileDataImpl(ptr, true);
+  static EventWriteProfileData ITypedGameEvent<EventWriteProfileData>.Wrap(IGameEvent accessor) => new EventWriteProfileDataImpl(accessor);
 
-  static EventWriteProfileData IGameEvent<EventWriteProfileData>.FromExternal(nint ptr) => new EventWriteProfileDataImpl(ptr, false);
+  static string ITypedGameEvent<EventWriteProfileData>.GetName() => "write_profile_data";
 
-  static string IGameEvent<EventWriteProfileData>.GetName() => "write_profile_data";
-
-  static uint IGameEvent<EventWriteProfileData>.GetHash() => 0x56158E97u;
+  static uint ITypedGameEvent<EventWriteProfileData>.GetHash() => 0x56158E97u;
 }

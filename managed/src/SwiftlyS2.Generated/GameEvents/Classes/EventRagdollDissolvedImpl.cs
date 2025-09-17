@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "ragdoll_dissolved"
 /// </summary>
-internal class EventRagdollDissolvedImpl : GameEvent<EventRagdollDissolved>, EventRagdollDissolved
+internal class EventRagdollDissolvedImpl : TypedGameEvent<EventRagdollDissolved>, EventRagdollDissolved
 {
 
-  public EventRagdollDissolvedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventRagdollDissolvedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public int EntIndex
-  { get => GetInt("entindex"); set => SetInt("entindex", value); }
+  { get => Accessor.GetInt32("entindex"); set => Accessor.SetInt32("entindex", value); }
 }

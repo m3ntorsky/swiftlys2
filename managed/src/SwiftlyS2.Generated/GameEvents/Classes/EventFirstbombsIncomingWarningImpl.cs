@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "firstbombs_incoming_warning"
 /// </summary>
-internal class EventFirstbombsIncomingWarningImpl : GameEvent<EventFirstbombsIncomingWarning>, EventFirstbombsIncomingWarning
+internal class EventFirstbombsIncomingWarningImpl : TypedGameEvent<EventFirstbombsIncomingWarning>, EventFirstbombsIncomingWarning
 {
 
-  public EventFirstbombsIncomingWarningImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventFirstbombsIncomingWarningImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public bool Global
-  { get => GetBool("global"); set => SetBool("global", value); }
+  { get => Accessor.GetBool("global"); set => Accessor.SetBool("global", value); }
 }

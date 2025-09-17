@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_blind"
 /// </summary>
-public interface EventPlayerBlind : IGameEvent<EventPlayerBlind> {
+public interface EventPlayerBlind : ITypedGameEvent<EventPlayerBlind> {
 
-  static EventPlayerBlind IGameEvent<EventPlayerBlind>.FromAllocated(nint ptr) => new EventPlayerBlindImpl(ptr, true);
+  static EventPlayerBlind ITypedGameEvent<EventPlayerBlind>.Wrap(IGameEvent accessor) => new EventPlayerBlindImpl(accessor);
 
-  static EventPlayerBlind IGameEvent<EventPlayerBlind>.FromExternal(nint ptr) => new EventPlayerBlindImpl(ptr, false);
+  static string ITypedGameEvent<EventPlayerBlind>.GetName() => "player_blind";
 
-  static string IGameEvent<EventPlayerBlind>.GetName() => "player_blind";
-
-  static uint IGameEvent<EventPlayerBlind>.GetHash() => 0x4D79D81Cu;
+  static uint ITypedGameEvent<EventPlayerBlind>.GetHash() => 0x4D79D81Cu;
   /// <summary>
   /// <br/>
   /// type: player_controller

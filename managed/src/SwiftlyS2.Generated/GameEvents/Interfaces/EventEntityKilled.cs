@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "entity_killed"
 /// </summary>
-public interface EventEntityKilled : IGameEvent<EventEntityKilled> {
+public interface EventEntityKilled : ITypedGameEvent<EventEntityKilled> {
 
-  static EventEntityKilled IGameEvent<EventEntityKilled>.FromAllocated(nint ptr) => new EventEntityKilledImpl(ptr, true);
+  static EventEntityKilled ITypedGameEvent<EventEntityKilled>.Wrap(IGameEvent accessor) => new EventEntityKilledImpl(accessor);
 
-  static EventEntityKilled IGameEvent<EventEntityKilled>.FromExternal(nint ptr) => new EventEntityKilledImpl(ptr, false);
+  static string ITypedGameEvent<EventEntityKilled>.GetName() => "entity_killed";
 
-  static string IGameEvent<EventEntityKilled>.GetName() => "entity_killed";
-
-  static uint IGameEvent<EventEntityKilled>.GetHash() => 0x6B63D08Eu;
+  static uint ITypedGameEvent<EventEntityKilled>.GetHash() => 0x6B63D08Eu;
   /// <summary>
   /// type: long
   /// </summary>

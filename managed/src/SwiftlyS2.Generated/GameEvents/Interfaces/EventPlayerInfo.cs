@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "player_info"
 /// a player changed his name
 /// </summary>
-public interface EventPlayerInfo : IGameEvent<EventPlayerInfo> {
+public interface EventPlayerInfo : ITypedGameEvent<EventPlayerInfo> {
 
-  static EventPlayerInfo IGameEvent<EventPlayerInfo>.FromAllocated(nint ptr) => new EventPlayerInfoImpl(ptr, true);
+  static EventPlayerInfo ITypedGameEvent<EventPlayerInfo>.Wrap(IGameEvent accessor) => new EventPlayerInfoImpl(accessor);
 
-  static EventPlayerInfo IGameEvent<EventPlayerInfo>.FromExternal(nint ptr) => new EventPlayerInfoImpl(ptr, false);
+  static string ITypedGameEvent<EventPlayerInfo>.GetName() => "player_info";
 
-  static string IGameEvent<EventPlayerInfo>.GetName() => "player_info";
-
-  static uint IGameEvent<EventPlayerInfo>.GetHash() => 0x0A0BAFFDu;
+  static uint ITypedGameEvent<EventPlayerInfo>.GetHash() => 0x0A0BAFFDu;
   /// <summary>
   /// player name
   /// <br/>

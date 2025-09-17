@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "dz_item_interaction"
 /// </summary>
-public interface EventDzItemInteraction : IGameEvent<EventDzItemInteraction> {
+public interface EventDzItemInteraction : ITypedGameEvent<EventDzItemInteraction> {
 
-  static EventDzItemInteraction IGameEvent<EventDzItemInteraction>.FromAllocated(nint ptr) => new EventDzItemInteractionImpl(ptr, true);
+  static EventDzItemInteraction ITypedGameEvent<EventDzItemInteraction>.Wrap(IGameEvent accessor) => new EventDzItemInteractionImpl(accessor);
 
-  static EventDzItemInteraction IGameEvent<EventDzItemInteraction>.FromExternal(nint ptr) => new EventDzItemInteractionImpl(ptr, false);
+  static string ITypedGameEvent<EventDzItemInteraction>.GetName() => "dz_item_interaction";
 
-  static string IGameEvent<EventDzItemInteraction>.GetName() => "dz_item_interaction";
-
-  static uint IGameEvent<EventDzItemInteraction>.GetHash() => 0x4C0C7044u;
+  static uint ITypedGameEvent<EventDzItemInteraction>.GetHash() => 0x4C0C7044u;
   /// <summary>
   /// player entindex
   /// <br/>

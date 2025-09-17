@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "enter_rescue_zone"
 /// </summary>
-public interface EventEnterRescueZone : IGameEvent<EventEnterRescueZone> {
+public interface EventEnterRescueZone : ITypedGameEvent<EventEnterRescueZone> {
 
-  static EventEnterRescueZone IGameEvent<EventEnterRescueZone>.FromAllocated(nint ptr) => new EventEnterRescueZoneImpl(ptr, true);
+  static EventEnterRescueZone ITypedGameEvent<EventEnterRescueZone>.Wrap(IGameEvent accessor) => new EventEnterRescueZoneImpl(accessor);
 
-  static EventEnterRescueZone IGameEvent<EventEnterRescueZone>.FromExternal(nint ptr) => new EventEnterRescueZoneImpl(ptr, false);
+  static string ITypedGameEvent<EventEnterRescueZone>.GetName() => "enter_rescue_zone";
 
-  static string IGameEvent<EventEnterRescueZone>.GetName() => "enter_rescue_zone";
-
-  static uint IGameEvent<EventEnterRescueZone>.GetHash() => 0xA10C79CAu;
+  static uint ITypedGameEvent<EventEnterRescueZone>.GetHash() => 0xA10C79CAu;
   /// <summary>
   /// <br/>
   /// type: player_controller

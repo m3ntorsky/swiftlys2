@@ -9,18 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "achievement_earned"
 /// </summary>
-internal class EventAchievementEarnedImpl : GameEvent<EventAchievementEarned>, EventAchievementEarned
+internal class EventAchievementEarnedImpl : TypedGameEvent<EventAchievementEarned>, EventAchievementEarned
 {
 
-  public EventAchievementEarnedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventAchievementEarnedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // entindex of the player
   public int Player
-  { get => GetPlayerSlot("player"); set => SetPlayerSlot("player", value); }
+  { get => Accessor.GetPlayerSlot("player"); set => Accessor.SetPlayerSlot("player", value); }
 
   // achievement ID
   public short Achievement
-  { get => (short)GetInt("achievement"); set => SetInt("achievement", value); }
+  { get => (short)Accessor.GetInt32("achievement"); set => Accessor.SetInt32("achievement", value); }
 }

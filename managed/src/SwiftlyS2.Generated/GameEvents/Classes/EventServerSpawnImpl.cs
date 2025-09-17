@@ -10,50 +10,50 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "server_spawn"
 /// send once a server starts
 /// </summary>
-internal class EventServerSpawnImpl : GameEvent<EventServerSpawn>, EventServerSpawn
+internal class EventServerSpawnImpl : TypedGameEvent<EventServerSpawn>, EventServerSpawn
 {
 
-  public EventServerSpawnImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventServerSpawnImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // public host name
   public string Hostname
-  { get => GetString("hostname"); set => SetString("hostname", value); }
+  { get => Accessor.GetString("hostname"); set => Accessor.SetString("hostname", value); }
 
   // hostame, IP or DNS name
   public string Address
-  { get => GetString("address"); set => SetString("address", value); }
+  { get => Accessor.GetString("address"); set => Accessor.SetString("address", value); }
 
   // server port
   public short Port
-  { get => (short)GetInt("port"); set => SetInt("port", value); }
+  { get => (short)Accessor.GetInt32("port"); set => Accessor.SetInt32("port", value); }
 
   // game dir
   public string Game
-  { get => GetString("game"); set => SetString("game", value); }
+  { get => Accessor.GetString("game"); set => Accessor.SetString("game", value); }
 
   // map name
   public string MapName
-  { get => GetString("mapname"); set => SetString("mapname", value); }
+  { get => Accessor.GetString("mapname"); set => Accessor.SetString("mapname", value); }
 
   // addon name
   public string AddonName
-  { get => GetString("addonname"); set => SetString("addonname", value); }
+  { get => Accessor.GetString("addonname"); set => Accessor.SetString("addonname", value); }
 
   // max players
   public int MaxPlayers
-  { get => GetInt("maxplayers"); set => SetInt("maxplayers", value); }
+  { get => Accessor.GetInt32("maxplayers"); set => Accessor.SetInt32("maxplayers", value); }
 
   // WIN32, LINUX
   public string Os
-  { get => GetString("os"); set => SetString("os", value); }
+  { get => Accessor.GetString("os"); set => Accessor.SetString("os", value); }
 
   // true if dedicated server
   public bool Dedicated
-  { get => GetBool("dedicated"); set => SetBool("dedicated", value); }
+  { get => Accessor.GetBool("dedicated"); set => Accessor.SetBool("dedicated", value); }
 
   // true if password protected
   public bool Password
-  { get => GetBool("password"); set => SetBool("password", value); }
+  { get => Accessor.GetBool("password"); set => Accessor.SetBool("password", value); }
 }

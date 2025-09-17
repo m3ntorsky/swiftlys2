@@ -9,16 +9,16 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_reset_vote"
 /// </summary>
-internal class EventPlayerResetVoteImpl : GameEvent<EventPlayerResetVote>, EventPlayerResetVote
+internal class EventPlayerResetVoteImpl : TypedGameEvent<EventPlayerResetVote>, EventPlayerResetVote
 {
 
-  public EventPlayerResetVoteImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerResetVoteImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public bool Vote
-  { get => GetBool("vote"); set => SetBool("vote", value); }
+  { get => Accessor.GetBool("vote"); set => Accessor.SetBool("vote", value); }
 }

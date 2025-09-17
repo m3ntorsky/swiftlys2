@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "achievement_earned_local"
 /// </summary>
-public interface EventAchievementEarnedLocal : IGameEvent<EventAchievementEarnedLocal> {
+public interface EventAchievementEarnedLocal : ITypedGameEvent<EventAchievementEarnedLocal> {
 
-  static EventAchievementEarnedLocal IGameEvent<EventAchievementEarnedLocal>.FromAllocated(nint ptr) => new EventAchievementEarnedLocalImpl(ptr, true);
+  static EventAchievementEarnedLocal ITypedGameEvent<EventAchievementEarnedLocal>.Wrap(IGameEvent accessor) => new EventAchievementEarnedLocalImpl(accessor);
 
-  static EventAchievementEarnedLocal IGameEvent<EventAchievementEarnedLocal>.FromExternal(nint ptr) => new EventAchievementEarnedLocalImpl(ptr, false);
+  static string ITypedGameEvent<EventAchievementEarnedLocal>.GetName() => "achievement_earned_local";
 
-  static string IGameEvent<EventAchievementEarnedLocal>.GetName() => "achievement_earned_local";
-
-  static uint IGameEvent<EventAchievementEarnedLocal>.GetHash() => 0x106FCE0Au;
+  static uint ITypedGameEvent<EventAchievementEarnedLocal>.GetHash() => 0x106FCE0Au;
   /// <summary>
   /// achievement ID
   /// <br/>

@@ -1027,6 +1027,33 @@ internal static class NativeNetMessages {
     return ret;
   }
   }
+  private unsafe static delegate* unmanaged<nint, byte*, int> _GetRepeatedFieldSize;
+  public unsafe static int GetRepeatedFieldSize(nint netmsg, string fieldName) {
+    var pool = ArrayPool<byte>.Shared;
+    var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
+    var fieldNameBuffer = pool.Rent(fieldNameLength + 1);
+    Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
+    fieldNameBuffer[fieldNameLength] = 0;
+    fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
+    var ret = _GetRepeatedFieldSize(netmsg, fieldNameBufferPtr);
+    pool.Return(fieldNameBuffer);
+
+    return ret;
+  }
+  }
+  private unsafe static delegate* unmanaged<nint, byte*, void> _ClearRepeatedField;
+  public unsafe static void ClearRepeatedField(nint netmsg, string fieldName) {
+    var pool = ArrayPool<byte>.Shared;
+    var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
+    var fieldNameBuffer = pool.Rent(fieldNameLength + 1);
+    Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
+    fieldNameBuffer[fieldNameLength] = 0;
+    fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
+    _ClearRepeatedField(netmsg, fieldNameBufferPtr);
+    pool.Return(fieldNameBuffer);
+
+  }
+  }
   private unsafe static delegate* unmanaged<nint, int, int, void> _SendMessage;
   public unsafe static void SendMessage(nint netmsg, int msgid, int playerid) {
     _SendMessage(netmsg, msgid, playerid);

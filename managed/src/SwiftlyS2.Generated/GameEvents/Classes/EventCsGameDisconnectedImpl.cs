@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_game_disconnected"
 /// </summary>
-internal class EventCsGameDisconnectedImpl : GameEvent<EventCsGameDisconnected>, EventCsGameDisconnected
+internal class EventCsGameDisconnectedImpl : TypedGameEvent<EventCsGameDisconnected>, EventCsGameDisconnected
 {
 
-  public EventCsGameDisconnectedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventCsGameDisconnectedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

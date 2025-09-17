@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "gameinstructor_nodraw"
 /// </summary>
-internal class EventGameinstructorNodrawImpl : GameEvent<EventGameinstructorNodraw>, EventGameinstructorNodraw
+internal class EventGameinstructorNodrawImpl : TypedGameEvent<EventGameinstructorNodraw>, EventGameinstructorNodraw
 {
 
-  public EventGameinstructorNodrawImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventGameinstructorNodrawImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

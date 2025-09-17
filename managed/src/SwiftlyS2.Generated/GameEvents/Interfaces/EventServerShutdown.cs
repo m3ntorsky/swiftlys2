@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "server_shutdown"
 /// server shut down
 /// </summary>
-public interface EventServerShutdown : IGameEvent<EventServerShutdown> {
+public interface EventServerShutdown : ITypedGameEvent<EventServerShutdown> {
 
-  static EventServerShutdown IGameEvent<EventServerShutdown>.FromAllocated(nint ptr) => new EventServerShutdownImpl(ptr, true);
+  static EventServerShutdown ITypedGameEvent<EventServerShutdown>.Wrap(IGameEvent accessor) => new EventServerShutdownImpl(accessor);
 
-  static EventServerShutdown IGameEvent<EventServerShutdown>.FromExternal(nint ptr) => new EventServerShutdownImpl(ptr, false);
+  static string ITypedGameEvent<EventServerShutdown>.GetName() => "server_shutdown";
 
-  static string IGameEvent<EventServerShutdown>.GetName() => "server_shutdown";
-
-  static uint IGameEvent<EventServerShutdown>.GetHash() => 0x840A8CCDu;
+  static uint ITypedGameEvent<EventServerShutdown>.GetHash() => 0x840A8CCDu;
   /// <summary>
   /// reason why server was shut down
   /// <br/>

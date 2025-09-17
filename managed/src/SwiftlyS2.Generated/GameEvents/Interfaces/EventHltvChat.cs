@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "hltv_chat"
 /// a HLTV chat msg sent by spectators
 /// </summary>
-public interface EventHltvChat : IGameEvent<EventHltvChat> {
+public interface EventHltvChat : ITypedGameEvent<EventHltvChat> {
 
-  static EventHltvChat IGameEvent<EventHltvChat>.FromAllocated(nint ptr) => new EventHltvChatImpl(ptr, true);
+  static EventHltvChat ITypedGameEvent<EventHltvChat>.Wrap(IGameEvent accessor) => new EventHltvChatImpl(accessor);
 
-  static EventHltvChat IGameEvent<EventHltvChat>.FromExternal(nint ptr) => new EventHltvChatImpl(ptr, false);
+  static string ITypedGameEvent<EventHltvChat>.GetName() => "hltv_chat";
 
-  static string IGameEvent<EventHltvChat>.GetName() => "hltv_chat";
-
-  static uint IGameEvent<EventHltvChat>.GetHash() => 0x91E5A35Au;
+  static uint ITypedGameEvent<EventHltvChat>.GetHash() => 0x91E5A35Au;
   /// <summary>
   /// type: string
   /// </summary>

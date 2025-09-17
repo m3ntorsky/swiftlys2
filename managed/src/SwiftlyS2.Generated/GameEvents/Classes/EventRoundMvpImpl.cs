@@ -9,28 +9,28 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "round_mvp"
 /// </summary>
-internal class EventRoundMvpImpl : GameEvent<EventRoundMvp>, EventRoundMvp
+internal class EventRoundMvpImpl : TypedGameEvent<EventRoundMvp>, EventRoundMvp
 {
 
-  public EventRoundMvpImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventRoundMvpImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public short Reason
-  { get => (short)GetInt("reason"); set => SetInt("reason", value); }
+  { get => (short)Accessor.GetInt32("reason"); set => Accessor.SetInt32("reason", value); }
 
   public int Value
-  { get => GetInt("value"); set => SetInt("value", value); }
+  { get => Accessor.GetInt32("value"); set => Accessor.SetInt32("value", value); }
 
   public int MusickItMvps
-  { get => GetInt("musickitmvps"); set => SetInt("musickitmvps", value); }
+  { get => Accessor.GetInt32("musickitmvps"); set => Accessor.SetInt32("musickitmvps", value); }
 
   public byte NoMusic
-  { get => (byte)GetInt("nomusic"); set => SetInt("nomusic", value); }
+  { get => (byte)Accessor.GetInt32("nomusic"); set => Accessor.SetInt32("nomusic", value); }
 
   public int MusickItID
-  { get => GetInt("musickitid"); set => SetInt("musickitid", value); }
+  { get => Accessor.GetInt32("musickitid"); set => Accessor.SetInt32("musickitid", value); }
 }

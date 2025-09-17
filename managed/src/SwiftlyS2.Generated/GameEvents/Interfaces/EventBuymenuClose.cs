@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "buymenu_close"
 /// </summary>
-public interface EventBuymenuClose : IGameEvent<EventBuymenuClose> {
+public interface EventBuymenuClose : ITypedGameEvent<EventBuymenuClose> {
 
-  static EventBuymenuClose IGameEvent<EventBuymenuClose>.FromAllocated(nint ptr) => new EventBuymenuCloseImpl(ptr, true);
+  static EventBuymenuClose ITypedGameEvent<EventBuymenuClose>.Wrap(IGameEvent accessor) => new EventBuymenuCloseImpl(accessor);
 
-  static EventBuymenuClose IGameEvent<EventBuymenuClose>.FromExternal(nint ptr) => new EventBuymenuCloseImpl(ptr, false);
+  static string ITypedGameEvent<EventBuymenuClose>.GetName() => "buymenu_close";
 
-  static string IGameEvent<EventBuymenuClose>.GetName() => "buymenu_close";
-
-  static uint IGameEvent<EventBuymenuClose>.GetHash() => 0xFFC1EF17u;
+  static uint ITypedGameEvent<EventBuymenuClose>.GetHash() => 0xFFC1EF17u;
   /// <summary>
   /// <br/>
   /// type: player_controller

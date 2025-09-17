@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "material_default_complete"
 /// </summary>
-internal class EventMaterialDefaultCompleteImpl : GameEvent<EventMaterialDefaultComplete>, EventMaterialDefaultComplete
+internal class EventMaterialDefaultCompleteImpl : TypedGameEvent<EventMaterialDefaultComplete>, EventMaterialDefaultComplete
 {
 
-  public EventMaterialDefaultCompleteImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventMaterialDefaultCompleteImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

@@ -9,26 +9,26 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "entity_visible"
 /// </summary>
-internal class EventEntityVisibleImpl : GameEvent<EventEntityVisible>, EventEntityVisible
+internal class EventEntityVisibleImpl : TypedGameEvent<EventEntityVisible>, EventEntityVisible
 {
 
-  public EventEntityVisibleImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventEntityVisibleImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // The player who sees the entity
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // Entindex of the entity they see
   public int Subject
-  { get => GetInt("subject"); set => SetInt("subject", value); }
+  { get => Accessor.GetInt32("subject"); set => Accessor.SetInt32("subject", value); }
 
   // Classname of the entity they see
   public string ClassName
-  { get => GetString("classname"); set => SetString("classname", value); }
+  { get => Accessor.GetString("classname"); set => Accessor.SetString("classname", value); }
 
   // name of the entity they see
   public string EntityName
-  { get => GetString("entityname"); set => SetString("entityname", value); }
+  { get => Accessor.GetString("entityname"); set => Accessor.SetString("entityname", value); }
 }

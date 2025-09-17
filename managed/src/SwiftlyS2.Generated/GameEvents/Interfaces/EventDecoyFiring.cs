@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "decoy_firing"
 /// </summary>
-public interface EventDecoyFiring : IGameEvent<EventDecoyFiring> {
+public interface EventDecoyFiring : ITypedGameEvent<EventDecoyFiring> {
 
-  static EventDecoyFiring IGameEvent<EventDecoyFiring>.FromAllocated(nint ptr) => new EventDecoyFiringImpl(ptr, true);
+  static EventDecoyFiring ITypedGameEvent<EventDecoyFiring>.Wrap(IGameEvent accessor) => new EventDecoyFiringImpl(accessor);
 
-  static EventDecoyFiring IGameEvent<EventDecoyFiring>.FromExternal(nint ptr) => new EventDecoyFiringImpl(ptr, false);
+  static string ITypedGameEvent<EventDecoyFiring>.GetName() => "decoy_firing";
 
-  static string IGameEvent<EventDecoyFiring>.GetName() => "decoy_firing";
-
-  static uint IGameEvent<EventDecoyFiring>.GetHash() => 0xA0DD941Fu;
+  static uint ITypedGameEvent<EventDecoyFiring>.GetHash() => 0xA0DD941Fu;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn

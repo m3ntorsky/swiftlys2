@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_prev_next_spectator"
 /// </summary>
-internal class EventCsPrevNextSpectatorImpl : GameEvent<EventCsPrevNextSpectator>, EventCsPrevNextSpectator
+internal class EventCsPrevNextSpectatorImpl : TypedGameEvent<EventCsPrevNextSpectator>, EventCsPrevNextSpectator
 {
 
-  public EventCsPrevNextSpectatorImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventCsPrevNextSpectatorImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public bool Next
-  { get => GetBool("next"); set => SetBool("next", value); }
+  { get => Accessor.GetBool("next"); set => Accessor.SetBool("next", value); }
 }

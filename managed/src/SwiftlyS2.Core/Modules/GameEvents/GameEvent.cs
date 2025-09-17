@@ -6,7 +6,7 @@ using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Core.GameEvents;
 
-internal abstract class GameEvent<T> : AllocableNativeHandle where T : IGameEvent<T> {
+internal class GameEvent : AllocableNativeHandle, IGameEvent {
 
   public bool DontBroadcast { get; set; }
 
@@ -47,22 +47,22 @@ internal abstract class GameEvent<T> : AllocableNativeHandle where T : IGameEven
     return NativeGameEvents.GetBool(GetHandle(), key);
   }
 
-  public void SetInt(string key, int value) {
+  public void SetInt32(string key, int value) {
     CheckIsValid();
     NativeGameEvents.SetInt(GetHandle(), key, value);
   }
 
-  public int GetInt(string key) {
+  public int GetInt32(string key) {
     CheckIsValid();
     return NativeGameEvents.GetInt(GetHandle(), key);
   }
 
-  public void SetUint64(string key, ulong value) {
+  public void SetUInt64(string key, ulong value) {
     CheckIsValid();
     NativeGameEvents.SetUint64(GetHandle(), key, value);
   }
 
-  public ulong GetUint64(string key) {
+  public ulong GetUInt64(string key) {
     CheckIsValid();
     return NativeGameEvents.GetUint64(GetHandle(), key);
   }

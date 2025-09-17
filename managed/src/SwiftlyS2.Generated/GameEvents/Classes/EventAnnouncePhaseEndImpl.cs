@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "announce_phase_end"
 /// </summary>
-internal class EventAnnouncePhaseEndImpl : GameEvent<EventAnnouncePhaseEnd>, EventAnnouncePhaseEnd
+internal class EventAnnouncePhaseEndImpl : TypedGameEvent<EventAnnouncePhaseEnd>, EventAnnouncePhaseEnd
 {
 
-  public EventAnnouncePhaseEndImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventAnnouncePhaseEndImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

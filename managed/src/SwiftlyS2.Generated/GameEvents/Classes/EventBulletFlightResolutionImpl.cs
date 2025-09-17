@@ -9,40 +9,40 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "bullet_flight_resolution"
 /// </summary>
-internal class EventBulletFlightResolutionImpl : GameEvent<EventBulletFlightResolution>, EventBulletFlightResolution
+internal class EventBulletFlightResolutionImpl : TypedGameEvent<EventBulletFlightResolution>, EventBulletFlightResolution
 {
 
-  public EventBulletFlightResolutionImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventBulletFlightResolutionImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public short PosX
-  { get => (short)GetInt("pos_x"); set => SetInt("pos_x", value); }
+  { get => (short)Accessor.GetInt32("pos_x"); set => Accessor.SetInt32("pos_x", value); }
 
   public short PosY
-  { get => (short)GetInt("pos_y"); set => SetInt("pos_y", value); }
+  { get => (short)Accessor.GetInt32("pos_y"); set => Accessor.SetInt32("pos_y", value); }
 
   public short PosZ
-  { get => (short)GetInt("pos_z"); set => SetInt("pos_z", value); }
+  { get => (short)Accessor.GetInt32("pos_z"); set => Accessor.SetInt32("pos_z", value); }
 
   public short AngX
-  { get => (short)GetInt("ang_x"); set => SetInt("ang_x", value); }
+  { get => (short)Accessor.GetInt32("ang_x"); set => Accessor.SetInt32("ang_x", value); }
 
   public short AngY
-  { get => (short)GetInt("ang_y"); set => SetInt("ang_y", value); }
+  { get => (short)Accessor.GetInt32("ang_y"); set => Accessor.SetInt32("ang_y", value); }
 
   public short AngZ
-  { get => (short)GetInt("ang_z"); set => SetInt("ang_z", value); }
+  { get => (short)Accessor.GetInt32("ang_z"); set => Accessor.SetInt32("ang_z", value); }
 
   public short StartX
-  { get => (short)GetInt("start_x"); set => SetInt("start_x", value); }
+  { get => (short)Accessor.GetInt32("start_x"); set => Accessor.SetInt32("start_x", value); }
 
   public short StartY
-  { get => (short)GetInt("start_y"); set => SetInt("start_y", value); }
+  { get => (short)Accessor.GetInt32("start_y"); set => Accessor.SetInt32("start_y", value); }
 
   public short StartZ
-  { get => (short)GetInt("start_z"); set => SetInt("start_z", value); }
+  { get => (short)Accessor.GetInt32("start_z"); set => Accessor.SetInt32("start_z", value); }
 }

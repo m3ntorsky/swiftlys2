@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "door_close"
 /// </summary>
-public interface EventDoorClose : IGameEvent<EventDoorClose> {
+public interface EventDoorClose : ITypedGameEvent<EventDoorClose> {
 
-  static EventDoorClose IGameEvent<EventDoorClose>.FromAllocated(nint ptr) => new EventDoorCloseImpl(ptr, true);
+  static EventDoorClose ITypedGameEvent<EventDoorClose>.Wrap(IGameEvent accessor) => new EventDoorCloseImpl(accessor);
 
-  static EventDoorClose IGameEvent<EventDoorClose>.FromExternal(nint ptr) => new EventDoorCloseImpl(ptr, false);
+  static string ITypedGameEvent<EventDoorClose>.GetName() => "door_close";
 
-  static string IGameEvent<EventDoorClose>.GetName() => "door_close";
-
-  static uint IGameEvent<EventDoorClose>.GetHash() => 0xC96E7A7Eu;
+  static uint ITypedGameEvent<EventDoorClose>.GetHash() => 0xC96E7A7Eu;
   /// <summary>
   /// Who closed the door
   /// <br/>

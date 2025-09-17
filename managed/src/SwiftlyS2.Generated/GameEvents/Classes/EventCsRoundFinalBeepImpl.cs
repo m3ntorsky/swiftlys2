@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_round_final_beep"
 /// </summary>
-internal class EventCsRoundFinalBeepImpl : GameEvent<EventCsRoundFinalBeep>, EventCsRoundFinalBeep
+internal class EventCsRoundFinalBeepImpl : TypedGameEvent<EventCsRoundFinalBeep>, EventCsRoundFinalBeep
 {
 
-  public EventCsRoundFinalBeepImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventCsRoundFinalBeepImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

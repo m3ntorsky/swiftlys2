@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "server_cvar"
 /// a server console var has changed
 /// </summary>
-public interface EventServerCvar : IGameEvent<EventServerCvar> {
+public interface EventServerCvar : ITypedGameEvent<EventServerCvar> {
 
-  static EventServerCvar IGameEvent<EventServerCvar>.FromAllocated(nint ptr) => new EventServerCvarImpl(ptr, true);
+  static EventServerCvar ITypedGameEvent<EventServerCvar>.Wrap(IGameEvent accessor) => new EventServerCvarImpl(accessor);
 
-  static EventServerCvar IGameEvent<EventServerCvar>.FromExternal(nint ptr) => new EventServerCvarImpl(ptr, false);
+  static string ITypedGameEvent<EventServerCvar>.GetName() => "server_cvar";
 
-  static string IGameEvent<EventServerCvar>.GetName() => "server_cvar";
-
-  static uint IGameEvent<EventServerCvar>.GetHash() => 0x11BA3D6Du;
+  static uint ITypedGameEvent<EventServerCvar>.GetHash() => 0x11BA3D6Du;
   /// <summary>
   /// cvar name, eg "mp_roundtime"
   /// <br/>

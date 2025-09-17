@@ -9,14 +9,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_activate"
 /// </summary>
-internal class EventPlayerActivateImpl : GameEvent<EventPlayerActivate>, EventPlayerActivate
+internal class EventPlayerActivateImpl : TypedGameEvent<EventPlayerActivate>, EventPlayerActivate
 {
 
-  public EventPlayerActivateImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventPlayerActivateImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // user ID on server
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

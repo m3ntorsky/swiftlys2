@@ -834,6 +834,25 @@ void* Bridge_NetMessages_AddNestedMessage(void* pmsg, const char* fieldName)
     return (void*)msg->GetReflection()->AddMessage(msg, field);
 }
 
+int Bridge_NetMessages_GetRepeatedFieldSize(void* pmsg, const char* fieldName)
+{
+    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+
+    GETCHECK_FIELD(0);
+    CHECK_FIELD_REPEATED(0);
+    return msg->GetReflection()->FieldSize(*msg, field);
+}
+
+
+void Bridge_NetMessages_ClearRepeatedField(void* pmsg, const char* fieldName)
+{
+    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+
+    GETCHECK_FIELD_VOID();
+    CHECK_FIELD_REPEATED_VOID();
+    msg->GetReflection()->ClearField(msg, field);
+}
+
 void Bridge_NetMessages_SendMessage(void* pmsg, int msgid, int playerid)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
@@ -938,5 +957,7 @@ DEFINE_NATIVE("NetMessages.AddBytes", Bridge_NetMessages_AddBytes);
 DEFINE_NATIVE("NetMessages.GetNestedMessage", Bridge_NetMessages_GetNestedMessage);
 DEFINE_NATIVE("NetMessages.GetRepeatedNestedMessage", Bridge_NetMessages_GetRepeatedNestedMessage);
 DEFINE_NATIVE("NetMessages.AddNestedMessage", Bridge_NetMessages_AddNestedMessage);
+DEFINE_NATIVE("NetMessages.GetRepeatedFieldSize", Bridge_NetMessages_GetRepeatedFieldSize);
+DEFINE_NATIVE("NetMessages.ClearRepeatedField", Bridge_NetMessages_ClearRepeatedField);
 DEFINE_NATIVE("NetMessages.SendMessage", Bridge_NetMessages_SendMessage);
 DEFINE_NATIVE("NetMessages.SendMessageToPlayers", Bridge_NetMessages_SendMessageToPlayers);

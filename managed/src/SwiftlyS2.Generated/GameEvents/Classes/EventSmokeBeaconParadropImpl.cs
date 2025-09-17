@@ -9,16 +9,16 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "smoke_beacon_paradrop"
 /// </summary>
-internal class EventSmokeBeaconParadropImpl : GameEvent<EventSmokeBeaconParadrop>, EventSmokeBeaconParadrop
+internal class EventSmokeBeaconParadropImpl : TypedGameEvent<EventSmokeBeaconParadrop>, EventSmokeBeaconParadrop
 {
 
-  public EventSmokeBeaconParadropImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventSmokeBeaconParadropImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public short ParaDrop
-  { get => (short)GetInt("paradrop"); set => SetInt("paradrop", value); }
+  { get => (short)Accessor.GetInt32("paradrop"); set => Accessor.SetInt32("paradrop", value); }
 }

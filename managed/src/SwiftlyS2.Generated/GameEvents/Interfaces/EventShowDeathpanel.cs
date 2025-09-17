@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "show_deathpanel"
 /// </summary>
-public interface EventShowDeathpanel : IGameEvent<EventShowDeathpanel> {
+public interface EventShowDeathpanel : ITypedGameEvent<EventShowDeathpanel> {
 
-  static EventShowDeathpanel IGameEvent<EventShowDeathpanel>.FromAllocated(nint ptr) => new EventShowDeathpanelImpl(ptr, true);
+  static EventShowDeathpanel ITypedGameEvent<EventShowDeathpanel>.Wrap(IGameEvent accessor) => new EventShowDeathpanelImpl(accessor);
 
-  static EventShowDeathpanel IGameEvent<EventShowDeathpanel>.FromExternal(nint ptr) => new EventShowDeathpanelImpl(ptr, false);
+  static string ITypedGameEvent<EventShowDeathpanel>.GetName() => "show_deathpanel";
 
-  static string IGameEvent<EventShowDeathpanel>.GetName() => "show_deathpanel";
-
-  static uint IGameEvent<EventShowDeathpanel>.GetHash() => 0x2AB9F7A1u;
+  static uint ITypedGameEvent<EventShowDeathpanel>.GetHash() => 0x2AB9F7A1u;
   /// <summary>
   /// endindex of the one who was killed
   /// <br/>

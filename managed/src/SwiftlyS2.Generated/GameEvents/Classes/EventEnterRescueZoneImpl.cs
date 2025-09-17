@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "enter_rescue_zone"
 /// </summary>
-internal class EventEnterRescueZoneImpl : GameEvent<EventEnterRescueZone>, EventEnterRescueZone
+internal class EventEnterRescueZoneImpl : TypedGameEvent<EventEnterRescueZone>, EventEnterRescueZone
 {
 
-  public EventEnterRescueZoneImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventEnterRescueZoneImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

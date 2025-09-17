@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "instructor_close_lesson"
 /// </summary>
-public interface EventInstructorCloseLesson : IGameEvent<EventInstructorCloseLesson> {
+public interface EventInstructorCloseLesson : ITypedGameEvent<EventInstructorCloseLesson> {
 
-  static EventInstructorCloseLesson IGameEvent<EventInstructorCloseLesson>.FromAllocated(nint ptr) => new EventInstructorCloseLessonImpl(ptr, true);
+  static EventInstructorCloseLesson ITypedGameEvent<EventInstructorCloseLesson>.Wrap(IGameEvent accessor) => new EventInstructorCloseLessonImpl(accessor);
 
-  static EventInstructorCloseLesson IGameEvent<EventInstructorCloseLesson>.FromExternal(nint ptr) => new EventInstructorCloseLessonImpl(ptr, false);
+  static string ITypedGameEvent<EventInstructorCloseLesson>.GetName() => "instructor_close_lesson";
 
-  static string IGameEvent<EventInstructorCloseLesson>.GetName() => "instructor_close_lesson";
-
-  static uint IGameEvent<EventInstructorCloseLesson>.GetHash() => 0x2C472152u;
+  static uint ITypedGameEvent<EventInstructorCloseLesson>.GetHash() => 0x2C472152u;
   /// <summary>
   /// The player who this lesson is intended for
   /// <br/>

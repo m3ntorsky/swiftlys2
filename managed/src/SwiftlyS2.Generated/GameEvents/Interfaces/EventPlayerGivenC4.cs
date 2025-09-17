@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_given_c4"
 /// </summary>
-public interface EventPlayerGivenC4 : IGameEvent<EventPlayerGivenC4> {
+public interface EventPlayerGivenC4 : ITypedGameEvent<EventPlayerGivenC4> {
 
-  static EventPlayerGivenC4 IGameEvent<EventPlayerGivenC4>.FromAllocated(nint ptr) => new EventPlayerGivenC4Impl(ptr, true);
+  static EventPlayerGivenC4 ITypedGameEvent<EventPlayerGivenC4>.Wrap(IGameEvent accessor) => new EventPlayerGivenC4Impl(accessor);
 
-  static EventPlayerGivenC4 IGameEvent<EventPlayerGivenC4>.FromExternal(nint ptr) => new EventPlayerGivenC4Impl(ptr, false);
+  static string ITypedGameEvent<EventPlayerGivenC4>.GetName() => "player_given_c4";
 
-  static string IGameEvent<EventPlayerGivenC4>.GetName() => "player_given_c4";
-
-  static uint IGameEvent<EventPlayerGivenC4>.GetHash() => 0x0491CF9Cu;
+  static uint ITypedGameEvent<EventPlayerGivenC4>.GetHash() => 0x0491CF9Cu;
   /// <summary>
   /// user ID who received the c4
   /// <br/>

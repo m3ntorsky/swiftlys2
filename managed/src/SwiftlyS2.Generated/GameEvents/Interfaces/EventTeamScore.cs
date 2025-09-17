@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "team_score"
 /// team score changed
 /// </summary>
-public interface EventTeamScore : IGameEvent<EventTeamScore> {
+public interface EventTeamScore : ITypedGameEvent<EventTeamScore> {
 
-  static EventTeamScore IGameEvent<EventTeamScore>.FromAllocated(nint ptr) => new EventTeamScoreImpl(ptr, true);
+  static EventTeamScore ITypedGameEvent<EventTeamScore>.Wrap(IGameEvent accessor) => new EventTeamScoreImpl(accessor);
 
-  static EventTeamScore IGameEvent<EventTeamScore>.FromExternal(nint ptr) => new EventTeamScoreImpl(ptr, false);
+  static string ITypedGameEvent<EventTeamScore>.GetName() => "team_score";
 
-  static string IGameEvent<EventTeamScore>.GetName() => "team_score";
-
-  static uint IGameEvent<EventTeamScore>.GetHash() => 0x0E418BF1u;
+  static uint ITypedGameEvent<EventTeamScore>.GetHash() => 0x0E418BF1u;
   /// <summary>
   /// team id
   /// <br/>

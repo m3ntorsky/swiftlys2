@@ -9,19 +9,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "drone_dispatched"
 /// </summary>
-internal class EventDroneDispatchedImpl : GameEvent<EventDroneDispatched>, EventDroneDispatched
+internal class EventDroneDispatchedImpl : TypedGameEvent<EventDroneDispatched>, EventDroneDispatched
 {
 
-  public EventDroneDispatchedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventDroneDispatchedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public short Priority
-  { get => (short)GetInt("priority"); set => SetInt("priority", value); }
+  { get => (short)Accessor.GetInt32("priority"); set => Accessor.SetInt32("priority", value); }
 
   public short DroneDispatched
-  { get => (short)GetInt("drone_dispatched"); set => SetInt("drone_dispatched", value); }
+  { get => (short)Accessor.GetInt32("drone_dispatched"); set => Accessor.SetInt32("drone_dispatched", value); }
 }

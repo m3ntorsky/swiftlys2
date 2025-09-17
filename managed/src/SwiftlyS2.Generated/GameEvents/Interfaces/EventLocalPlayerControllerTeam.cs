@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "local_player_controller_team"
 /// </summary>
-public interface EventLocalPlayerControllerTeam : IGameEvent<EventLocalPlayerControllerTeam> {
+public interface EventLocalPlayerControllerTeam : ITypedGameEvent<EventLocalPlayerControllerTeam> {
 
-  static EventLocalPlayerControllerTeam IGameEvent<EventLocalPlayerControllerTeam>.FromAllocated(nint ptr) => new EventLocalPlayerControllerTeamImpl(ptr, true);
+  static EventLocalPlayerControllerTeam ITypedGameEvent<EventLocalPlayerControllerTeam>.Wrap(IGameEvent accessor) => new EventLocalPlayerControllerTeamImpl(accessor);
 
-  static EventLocalPlayerControllerTeam IGameEvent<EventLocalPlayerControllerTeam>.FromExternal(nint ptr) => new EventLocalPlayerControllerTeamImpl(ptr, false);
+  static string ITypedGameEvent<EventLocalPlayerControllerTeam>.GetName() => "local_player_controller_team";
 
-  static string IGameEvent<EventLocalPlayerControllerTeam>.GetName() => "local_player_controller_team";
-
-  static uint IGameEvent<EventLocalPlayerControllerTeam>.GetHash() => 0x06A77413u;
+  static uint ITypedGameEvent<EventLocalPlayerControllerTeam>.GetHash() => 0x06A77413u;
 }

@@ -9,14 +9,14 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_abortdefuse"
 /// </summary>
-internal class EventBombAbortdefuseImpl : GameEvent<EventBombAbortdefuse>, EventBombAbortdefuse
+internal class EventBombAbortdefuseImpl : TypedGameEvent<EventBombAbortdefuse>, EventBombAbortdefuse
 {
 
-  public EventBombAbortdefuseImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventBombAbortdefuseImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // player who was defusing
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 }

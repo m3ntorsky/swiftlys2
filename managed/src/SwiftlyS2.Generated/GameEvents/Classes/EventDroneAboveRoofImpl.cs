@@ -9,16 +9,16 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "drone_above_roof"
 /// </summary>
-internal class EventDroneAboveRoofImpl : GameEvent<EventDroneAboveRoof>, EventDroneAboveRoof
+internal class EventDroneAboveRoofImpl : TypedGameEvent<EventDroneAboveRoof>, EventDroneAboveRoof
 {
 
-  public EventDroneAboveRoofImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventDroneAboveRoofImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public short Cargo
-  { get => (short)GetInt("cargo"); set => SetInt("cargo", value); }
+  { get => (short)Accessor.GetInt32("cargo"); set => Accessor.SetInt32("cargo", value); }
 }

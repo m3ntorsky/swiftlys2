@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "smokegrenade_expired"
 /// </summary>
-public interface EventSmokegrenadeExpired : IGameEvent<EventSmokegrenadeExpired> {
+public interface EventSmokegrenadeExpired : ITypedGameEvent<EventSmokegrenadeExpired> {
 
-  static EventSmokegrenadeExpired IGameEvent<EventSmokegrenadeExpired>.FromAllocated(nint ptr) => new EventSmokegrenadeExpiredImpl(ptr, true);
+  static EventSmokegrenadeExpired ITypedGameEvent<EventSmokegrenadeExpired>.Wrap(IGameEvent accessor) => new EventSmokegrenadeExpiredImpl(accessor);
 
-  static EventSmokegrenadeExpired IGameEvent<EventSmokegrenadeExpired>.FromExternal(nint ptr) => new EventSmokegrenadeExpiredImpl(ptr, false);
+  static string ITypedGameEvent<EventSmokegrenadeExpired>.GetName() => "smokegrenade_expired";
 
-  static string IGameEvent<EventSmokegrenadeExpired>.GetName() => "smokegrenade_expired";
-
-  static uint IGameEvent<EventSmokegrenadeExpired>.GetHash() => 0x45406DF6u;
+  static uint ITypedGameEvent<EventSmokegrenadeExpired>.GetHash() => 0x45406DF6u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn

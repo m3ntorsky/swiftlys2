@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "demo_start"
 /// </summary>
-internal class EventDemoStartImpl : GameEvent<EventDemoStart>, EventDemoStart
+internal class EventDemoStartImpl : TypedGameEvent<EventDemoStart>, EventDemoStart
 {
 
-  public EventDemoStartImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventDemoStartImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

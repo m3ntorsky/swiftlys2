@@ -9,38 +9,38 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_win_panel_round"
 /// </summary>
-internal class EventCsWinPanelRoundImpl : GameEvent<EventCsWinPanelRound>, EventCsWinPanelRound
+internal class EventCsWinPanelRoundImpl : TypedGameEvent<EventCsWinPanelRound>, EventCsWinPanelRound
 {
 
-  public EventCsWinPanelRoundImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventCsWinPanelRoundImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public bool ShowTimerDefend
-  { get => GetBool("show_timer_defend"); set => SetBool("show_timer_defend", value); }
+  { get => Accessor.GetBool("show_timer_defend"); set => Accessor.SetBool("show_timer_defend", value); }
 
   public bool ShowTimerAttack
-  { get => GetBool("show_timer_attack"); set => SetBool("show_timer_attack", value); }
+  { get => Accessor.GetBool("show_timer_attack"); set => Accessor.SetBool("show_timer_attack", value); }
 
   public short TimerTime
-  { get => (short)GetInt("timer_time"); set => SetInt("timer_time", value); }
+  { get => (short)Accessor.GetInt32("timer_time"); set => Accessor.SetInt32("timer_time", value); }
 
   // define in cs_gamerules.h
   public byte FinalEvent
-  { get => (byte)GetInt("final_event"); set => SetInt("final_event", value); }
+  { get => (byte)Accessor.GetInt32("final_event"); set => Accessor.SetInt32("final_event", value); }
 
   public string FunfactToken
-  { get => GetString("funfact_token"); set => SetString("funfact_token", value); }
+  { get => Accessor.GetString("funfact_token"); set => Accessor.SetString("funfact_token", value); }
 
   public int FunfactPlayer
-  { get => GetPlayerSlot("funfact_player"); set => SetPlayerSlot("funfact_player", value); }
+  { get => Accessor.GetPlayerSlot("funfact_player"); set => Accessor.SetPlayerSlot("funfact_player", value); }
 
   public int FunfactData1
-  { get => GetInt("funfact_data1"); set => SetInt("funfact_data1", value); }
+  { get => Accessor.GetInt32("funfact_data1"); set => Accessor.SetInt32("funfact_data1", value); }
 
   public int FunfactData2
-  { get => GetInt("funfact_data2"); set => SetInt("funfact_data2", value); }
+  { get => Accessor.GetInt32("funfact_data2"); set => Accessor.SetInt32("funfact_data2", value); }
 
   public int FunfactData3
-  { get => GetInt("funfact_data3"); set => SetInt("funfact_data3", value); }
+  { get => Accessor.GetInt32("funfact_data3"); set => Accessor.SetInt32("funfact_data3", value); }
 }

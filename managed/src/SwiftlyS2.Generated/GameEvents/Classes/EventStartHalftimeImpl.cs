@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "start_halftime"
 /// </summary>
-internal class EventStartHalftimeImpl : GameEvent<EventStartHalftime>, EventStartHalftime
+internal class EventStartHalftimeImpl : TypedGameEvent<EventStartHalftime>, EventStartHalftime
 {
 
-  public EventStartHalftimeImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventStartHalftimeImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

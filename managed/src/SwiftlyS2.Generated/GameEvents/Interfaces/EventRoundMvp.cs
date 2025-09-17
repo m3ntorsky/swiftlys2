@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "round_mvp"
 /// </summary>
-public interface EventRoundMvp : IGameEvent<EventRoundMvp> {
+public interface EventRoundMvp : ITypedGameEvent<EventRoundMvp> {
 
-  static EventRoundMvp IGameEvent<EventRoundMvp>.FromAllocated(nint ptr) => new EventRoundMvpImpl(ptr, true);
+  static EventRoundMvp ITypedGameEvent<EventRoundMvp>.Wrap(IGameEvent accessor) => new EventRoundMvpImpl(accessor);
 
-  static EventRoundMvp IGameEvent<EventRoundMvp>.FromExternal(nint ptr) => new EventRoundMvpImpl(ptr, false);
+  static string ITypedGameEvent<EventRoundMvp>.GetName() => "round_mvp";
 
-  static string IGameEvent<EventRoundMvp>.GetName() => "round_mvp";
-
-  static uint IGameEvent<EventRoundMvp>.GetHash() => 0xC80E399Du;
+  static uint ITypedGameEvent<EventRoundMvp>.GetHash() => 0xC80E399Du;
   /// <summary>
   /// <br/>
   /// type: player_controller

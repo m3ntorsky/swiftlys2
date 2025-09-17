@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_win_panel_match"
 /// </summary>
-internal class EventCsWinPanelMatchImpl : GameEvent<EventCsWinPanelMatch>, EventCsWinPanelMatch
+internal class EventCsWinPanelMatchImpl : TypedGameEvent<EventCsWinPanelMatch>, EventCsWinPanelMatch
 {
 
-  public EventCsWinPanelMatchImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventCsWinPanelMatchImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

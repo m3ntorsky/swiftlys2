@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_pickup"
 /// </summary>
-public interface EventBombPickup : IGameEvent<EventBombPickup> {
+public interface EventBombPickup : ITypedGameEvent<EventBombPickup> {
 
-  static EventBombPickup IGameEvent<EventBombPickup>.FromAllocated(nint ptr) => new EventBombPickupImpl(ptr, true);
+  static EventBombPickup ITypedGameEvent<EventBombPickup>.Wrap(IGameEvent accessor) => new EventBombPickupImpl(accessor);
 
-  static EventBombPickup IGameEvent<EventBombPickup>.FromExternal(nint ptr) => new EventBombPickupImpl(ptr, false);
+  static string ITypedGameEvent<EventBombPickup>.GetName() => "bomb_pickup";
 
-  static string IGameEvent<EventBombPickup>.GetName() => "bomb_pickup";
-
-  static uint IGameEvent<EventBombPickup>.GetHash() => 0x97693BEEu;
+  static uint ITypedGameEvent<EventBombPickup>.GetHash() => 0x97693BEEu;
   /// <summary>
   /// player pawn who picked up the bomb
   /// <br/>

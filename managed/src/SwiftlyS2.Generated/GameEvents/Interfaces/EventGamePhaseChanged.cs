@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "game_phase_changed"
 /// </summary>
-public interface EventGamePhaseChanged : IGameEvent<EventGamePhaseChanged> {
+public interface EventGamePhaseChanged : ITypedGameEvent<EventGamePhaseChanged> {
 
-  static EventGamePhaseChanged IGameEvent<EventGamePhaseChanged>.FromAllocated(nint ptr) => new EventGamePhaseChangedImpl(ptr, true);
+  static EventGamePhaseChanged ITypedGameEvent<EventGamePhaseChanged>.Wrap(IGameEvent accessor) => new EventGamePhaseChangedImpl(accessor);
 
-  static EventGamePhaseChanged IGameEvent<EventGamePhaseChanged>.FromExternal(nint ptr) => new EventGamePhaseChangedImpl(ptr, false);
+  static string ITypedGameEvent<EventGamePhaseChanged>.GetName() => "game_phase_changed";
 
-  static string IGameEvent<EventGamePhaseChanged>.GetName() => "game_phase_changed";
-
-  static uint IGameEvent<EventGamePhaseChanged>.GetHash() => 0x9FBE9554u;
+  static uint ITypedGameEvent<EventGamePhaseChanged>.GetHash() => 0x9FBE9554u;
   /// <summary>
   /// type: short
   /// </summary>

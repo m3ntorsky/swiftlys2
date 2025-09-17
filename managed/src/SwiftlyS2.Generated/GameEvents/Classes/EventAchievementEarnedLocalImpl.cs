@@ -9,18 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "achievement_earned_local"
 /// </summary>
-internal class EventAchievementEarnedLocalImpl : GameEvent<EventAchievementEarnedLocal>, EventAchievementEarnedLocal
+internal class EventAchievementEarnedLocalImpl : TypedGameEvent<EventAchievementEarnedLocal>, EventAchievementEarnedLocal
 {
 
-  public EventAchievementEarnedLocalImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventAchievementEarnedLocalImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // achievement ID
   public short Achievement
-  { get => (short)GetInt("achievement"); set => SetInt("achievement", value); }
+  { get => (short)Accessor.GetInt32("achievement"); set => Accessor.SetInt32("achievement", value); }
 
   // splitscreen ID
   public short SplitScreenPlayer
-  { get => (short)GetInt("splitscreenplayer"); set => SetInt("splitscreenplayer", value); }
+  { get => (short)Accessor.GetInt32("splitscreenplayer"); set => Accessor.SetInt32("splitscreenplayer", value); }
 }

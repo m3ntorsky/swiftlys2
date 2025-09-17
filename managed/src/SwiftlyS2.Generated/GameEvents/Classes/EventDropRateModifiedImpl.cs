@@ -9,10 +9,10 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "drop_rate_modified"
 /// </summary>
-internal class EventDropRateModifiedImpl : GameEvent<EventDropRateModified>, EventDropRateModified
+internal class EventDropRateModifiedImpl : TypedGameEvent<EventDropRateModified>, EventDropRateModified
 {
 
-  public EventDropRateModifiedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventDropRateModifiedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 }

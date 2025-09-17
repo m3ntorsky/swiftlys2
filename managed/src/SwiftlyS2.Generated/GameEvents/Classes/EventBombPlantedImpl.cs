@@ -9,18 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_planted"
 /// </summary>
-internal class EventBombPlantedImpl : GameEvent<EventBombPlanted>, EventBombPlanted
+internal class EventBombPlantedImpl : TypedGameEvent<EventBombPlanted>, EventBombPlanted
 {
 
-  public EventBombPlantedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventBombPlantedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // player who planted the bomb
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // bombsite index
   public short Site
-  { get => (short)GetInt("site"); set => SetInt("site", value); }
+  { get => (short)Accessor.GetInt32("site"); set => Accessor.SetInt32("site", value); }
 }

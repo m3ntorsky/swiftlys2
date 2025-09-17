@@ -10,18 +10,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "team_info"
 /// info about team
 /// </summary>
-internal class EventTeamInfoImpl : GameEvent<EventTeamInfo>, EventTeamInfo
+internal class EventTeamInfoImpl : TypedGameEvent<EventTeamInfo>, EventTeamInfo
 {
 
-  public EventTeamInfoImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventTeamInfoImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // unique team id
   public byte TeamID
-  { get => (byte)GetInt("teamid"); set => SetInt("teamid", value); }
+  { get => (byte)Accessor.GetInt32("teamid"); set => Accessor.SetInt32("teamid", value); }
 
   // team name eg "Team Blue"
   public string Teamname
-  { get => GetString("teamname"); set => SetString("teamname", value); }
+  { get => Accessor.GetString("teamname"); set => Accessor.SetString("teamname", value); }
 }

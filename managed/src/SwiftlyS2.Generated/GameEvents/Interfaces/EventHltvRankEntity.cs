@@ -8,15 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "hltv_rank_entity"
 /// an entity ranking
 /// </summary>
-public interface EventHltvRankEntity : IGameEvent<EventHltvRankEntity> {
+public interface EventHltvRankEntity : ITypedGameEvent<EventHltvRankEntity> {
 
-  static EventHltvRankEntity IGameEvent<EventHltvRankEntity>.FromAllocated(nint ptr) => new EventHltvRankEntityImpl(ptr, true);
+  static EventHltvRankEntity ITypedGameEvent<EventHltvRankEntity>.Wrap(IGameEvent accessor) => new EventHltvRankEntityImpl(accessor);
 
-  static EventHltvRankEntity IGameEvent<EventHltvRankEntity>.FromExternal(nint ptr) => new EventHltvRankEntityImpl(ptr, false);
+  static string ITypedGameEvent<EventHltvRankEntity>.GetName() => "hltv_rank_entity";
 
-  static string IGameEvent<EventHltvRankEntity>.GetName() => "hltv_rank_entity";
-
-  static uint IGameEvent<EventHltvRankEntity>.GetHash() => 0xC49644C0u;
+  static uint ITypedGameEvent<EventHltvRankEntity>.GetHash() => 0xC49644C0u;
   /// <summary>
   /// player slot
   /// <br/>

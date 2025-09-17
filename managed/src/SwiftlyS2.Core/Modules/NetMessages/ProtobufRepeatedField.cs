@@ -15,57 +15,71 @@ public class ProtobufRepeatedFieldValueType<T> : IProtobufRepeatedFieldValueType
   }
 
   public T this[int index] { 
-    get => throw new NotImplementedException(); 
-    set => throw new NotImplementedException(); 
+    get => _Protobuf.GetRepeated<T>(_FieldName, index);
+    set => _Protobuf.SetRepeated<T>(_FieldName, index, value);
   }
 
-  public int Count => throw new NotImplementedException();
+  public int Count => _Protobuf.GetRepeatedFieldSize(_FieldName);
 
-  public bool IsReadOnly => throw new NotImplementedException();
+  public bool IsReadOnly => false;
 
   public void Add(T item)
   {
-      throw new NotImplementedException();
+    _Protobuf.Add<T>(_FieldName, item);
   }
 
   public void Clear()
   {
-      throw new NotImplementedException();
+    _Protobuf.ClearRepeatedField(_FieldName);
   }
 
   public bool Contains(T item)
   {
-      throw new NotImplementedException();
+    for (int i = 0; i < Count; i++) {
+      if (this[i].Equals(item)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   public void CopyTo(T[] array, int arrayIndex)
   {
-      throw new NotImplementedException();
+    for (int i = 0; i < Count; i++) {
+      array[arrayIndex + i] = this[i];
+    }
   }
 
   public IEnumerator<T> GetEnumerator()
   {
-      throw new NotImplementedException();
+    foreach (var item in this) {
+      yield return item;
+    }
   }
 
   public int IndexOf(T item)
   {
-      throw new NotImplementedException();
+    for (int i = 0; i < Count; i++) {
+      if (this[i].Equals(item)) {
+        return i;
+      }
+    }
+    return -1;
   }
 
   public void Insert(int index, T item)
   {
-      throw new NotImplementedException();
+    _Protobuf.Add<T>(_FieldName, item);
   }
 
   public bool Remove(T item)
   {
-      throw new NotImplementedException();
+    throw new NotSupportedException("Protobuf repeated field does not support removing element.");
   }
 
   public void RemoveAt(int index)
   {
-      throw new NotImplementedException();
+    throw new NotSupportedException("Protobuf repeated field does not support removing element.");
   }
 
   IEnumerator IEnumerable.GetEnumerator()

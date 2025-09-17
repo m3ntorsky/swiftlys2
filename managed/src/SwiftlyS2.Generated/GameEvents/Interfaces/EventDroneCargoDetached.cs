@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "drone_cargo_detached"
 /// </summary>
-public interface EventDroneCargoDetached : IGameEvent<EventDroneCargoDetached> {
+public interface EventDroneCargoDetached : ITypedGameEvent<EventDroneCargoDetached> {
 
-  static EventDroneCargoDetached IGameEvent<EventDroneCargoDetached>.FromAllocated(nint ptr) => new EventDroneCargoDetachedImpl(ptr, true);
+  static EventDroneCargoDetached ITypedGameEvent<EventDroneCargoDetached>.Wrap(IGameEvent accessor) => new EventDroneCargoDetachedImpl(accessor);
 
-  static EventDroneCargoDetached IGameEvent<EventDroneCargoDetached>.FromExternal(nint ptr) => new EventDroneCargoDetachedImpl(ptr, false);
+  static string ITypedGameEvent<EventDroneCargoDetached>.GetName() => "drone_cargo_detached";
 
-  static string IGameEvent<EventDroneCargoDetached>.GetName() => "drone_cargo_detached";
-
-  static uint IGameEvent<EventDroneCargoDetached>.GetHash() => 0x958BD369u;
+  static uint ITypedGameEvent<EventDroneCargoDetached>.GetHash() => 0x958BD369u;
   /// <summary>
   /// <br/>
   /// type: player_controller

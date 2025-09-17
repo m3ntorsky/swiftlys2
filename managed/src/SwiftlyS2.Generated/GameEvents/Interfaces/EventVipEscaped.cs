@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "vip_escaped"
 /// </summary>
-public interface EventVipEscaped : IGameEvent<EventVipEscaped> {
+public interface EventVipEscaped : ITypedGameEvent<EventVipEscaped> {
 
-  static EventVipEscaped IGameEvent<EventVipEscaped>.FromAllocated(nint ptr) => new EventVipEscapedImpl(ptr, true);
+  static EventVipEscaped ITypedGameEvent<EventVipEscaped>.Wrap(IGameEvent accessor) => new EventVipEscapedImpl(accessor);
 
-  static EventVipEscaped IGameEvent<EventVipEscaped>.FromExternal(nint ptr) => new EventVipEscapedImpl(ptr, false);
+  static string ITypedGameEvent<EventVipEscaped>.GetName() => "vip_escaped";
 
-  static string IGameEvent<EventVipEscaped>.GetName() => "vip_escaped";
-
-  static uint IGameEvent<EventVipEscaped>.GetHash() => 0x30143B6Eu;
+  static uint ITypedGameEvent<EventVipEscaped>.GetHash() => 0x30143B6Eu;
   /// <summary>
   /// player who was the VIP
   /// <br/>

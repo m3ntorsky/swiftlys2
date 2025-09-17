@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "open_crate_instr"
 /// </summary>
-public interface EventOpenCrateInstr : IGameEvent<EventOpenCrateInstr> {
+public interface EventOpenCrateInstr : ITypedGameEvent<EventOpenCrateInstr> {
 
-  static EventOpenCrateInstr IGameEvent<EventOpenCrateInstr>.FromAllocated(nint ptr) => new EventOpenCrateInstrImpl(ptr, true);
+  static EventOpenCrateInstr ITypedGameEvent<EventOpenCrateInstr>.Wrap(IGameEvent accessor) => new EventOpenCrateInstrImpl(accessor);
 
-  static EventOpenCrateInstr IGameEvent<EventOpenCrateInstr>.FromExternal(nint ptr) => new EventOpenCrateInstrImpl(ptr, false);
+  static string ITypedGameEvent<EventOpenCrateInstr>.GetName() => "open_crate_instr";
 
-  static string IGameEvent<EventOpenCrateInstr>.GetName() => "open_crate_instr";
-
-  static uint IGameEvent<EventOpenCrateInstr>.GetHash() => 0x76409C38u;
+  static uint ITypedGameEvent<EventOpenCrateInstr>.GetHash() => 0x76409C38u;
   /// <summary>
   /// player entindex
   /// <br/>

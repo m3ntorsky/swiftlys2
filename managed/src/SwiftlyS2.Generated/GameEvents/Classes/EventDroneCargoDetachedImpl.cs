@@ -9,19 +9,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "drone_cargo_detached"
 /// </summary>
-internal class EventDroneCargoDetachedImpl : GameEvent<EventDroneCargoDetached>, EventDroneCargoDetached
+internal class EventDroneCargoDetachedImpl : TypedGameEvent<EventDroneCargoDetached>, EventDroneCargoDetached
 {
 
-  public EventDroneCargoDetachedImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventDroneCargoDetachedImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   public short Cargo
-  { get => (short)GetInt("cargo"); set => SetInt("cargo", value); }
+  { get => (short)Accessor.GetInt32("cargo"); set => Accessor.SetInt32("cargo", value); }
 
   public bool Delivered
-  { get => GetBool("delivered"); set => SetBool("delivered", value); }
+  { get => Accessor.GetBool("delivered"); set => Accessor.SetBool("delivered", value); }
 }

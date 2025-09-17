@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "choppers_incoming_warning"
 /// </summary>
-public interface EventChoppersIncomingWarning : IGameEvent<EventChoppersIncomingWarning> {
+public interface EventChoppersIncomingWarning : ITypedGameEvent<EventChoppersIncomingWarning> {
 
-  static EventChoppersIncomingWarning IGameEvent<EventChoppersIncomingWarning>.FromAllocated(nint ptr) => new EventChoppersIncomingWarningImpl(ptr, true);
+  static EventChoppersIncomingWarning ITypedGameEvent<EventChoppersIncomingWarning>.Wrap(IGameEvent accessor) => new EventChoppersIncomingWarningImpl(accessor);
 
-  static EventChoppersIncomingWarning IGameEvent<EventChoppersIncomingWarning>.FromExternal(nint ptr) => new EventChoppersIncomingWarningImpl(ptr, false);
+  static string ITypedGameEvent<EventChoppersIncomingWarning>.GetName() => "choppers_incoming_warning";
 
-  static string IGameEvent<EventChoppersIncomingWarning>.GetName() => "choppers_incoming_warning";
-
-  static uint IGameEvent<EventChoppersIncomingWarning>.GetHash() => 0x68E589D1u;
+  static uint ITypedGameEvent<EventChoppersIncomingWarning>.GetHash() => 0x68E589D1u;
   /// <summary>
   /// type: bool
   /// </summary>

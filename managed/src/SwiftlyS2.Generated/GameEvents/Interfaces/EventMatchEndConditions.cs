@@ -7,15 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "match_end_conditions"
 /// </summary>
-public interface EventMatchEndConditions : IGameEvent<EventMatchEndConditions> {
+public interface EventMatchEndConditions : ITypedGameEvent<EventMatchEndConditions> {
 
-  static EventMatchEndConditions IGameEvent<EventMatchEndConditions>.FromAllocated(nint ptr) => new EventMatchEndConditionsImpl(ptr, true);
+  static EventMatchEndConditions ITypedGameEvent<EventMatchEndConditions>.Wrap(IGameEvent accessor) => new EventMatchEndConditionsImpl(accessor);
 
-  static EventMatchEndConditions IGameEvent<EventMatchEndConditions>.FromExternal(nint ptr) => new EventMatchEndConditionsImpl(ptr, false);
+  static string ITypedGameEvent<EventMatchEndConditions>.GetName() => "match_end_conditions";
 
-  static string IGameEvent<EventMatchEndConditions>.GetName() => "match_end_conditions";
-
-  static uint IGameEvent<EventMatchEndConditions>.GetHash() => 0x036AAC37u;
+  static uint ITypedGameEvent<EventMatchEndConditions>.GetHash() => 0x036AAC37u;
   /// <summary>
   /// type: long
   /// </summary>

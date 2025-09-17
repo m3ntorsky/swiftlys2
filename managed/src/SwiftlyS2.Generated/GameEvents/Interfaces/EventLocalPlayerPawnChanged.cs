@@ -7,13 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "local_player_pawn_changed"
 /// </summary>
-public interface EventLocalPlayerPawnChanged : IGameEvent<EventLocalPlayerPawnChanged> {
+public interface EventLocalPlayerPawnChanged : ITypedGameEvent<EventLocalPlayerPawnChanged> {
 
-  static EventLocalPlayerPawnChanged IGameEvent<EventLocalPlayerPawnChanged>.FromAllocated(nint ptr) => new EventLocalPlayerPawnChangedImpl(ptr, true);
+  static EventLocalPlayerPawnChanged ITypedGameEvent<EventLocalPlayerPawnChanged>.Wrap(IGameEvent accessor) => new EventLocalPlayerPawnChangedImpl(accessor);
 
-  static EventLocalPlayerPawnChanged IGameEvent<EventLocalPlayerPawnChanged>.FromExternal(nint ptr) => new EventLocalPlayerPawnChangedImpl(ptr, false);
+  static string ITypedGameEvent<EventLocalPlayerPawnChanged>.GetName() => "local_player_pawn_changed";
 
-  static string IGameEvent<EventLocalPlayerPawnChanged>.GetName() => "local_player_pawn_changed";
-
-  static uint IGameEvent<EventLocalPlayerPawnChanged>.GetHash() => 0x4703D4F0u;
+  static uint ITypedGameEvent<EventLocalPlayerPawnChanged>.GetHash() => 0x4703D4F0u;
 }

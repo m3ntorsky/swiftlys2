@@ -9,22 +9,22 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "dz_item_interaction"
 /// </summary>
-internal class EventDzItemInteractionImpl : GameEvent<EventDzItemInteraction>, EventDzItemInteraction
+internal class EventDzItemInteractionImpl : TypedGameEvent<EventDzItemInteraction>, EventDzItemInteraction
 {
 
-  public EventDzItemInteractionImpl(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated)
+  public EventDzItemInteractionImpl(IGameEvent accessor) : base(accessor)
   {
   }
 
   // player entindex
   public CCSPlayerController UserId
-  { get => GetPlayerController("userid"); }
+  { get => Accessor.GetPlayerController("userid"); }
 
   // crate entindex
   public short Subject
-  { get => (short)GetInt("subject"); set => SetInt("subject", value); }
+  { get => (short)Accessor.GetInt32("subject"); set => Accessor.SetInt32("subject", value); }
 
   // type of crate (metal, wood, or paradrop)
   public string Type
-  { get => GetString("type"); set => SetString("type", value); }
+  { get => Accessor.GetString("type"); set => Accessor.SetString("type", value); }
 }
