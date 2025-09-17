@@ -1,4 +1,4 @@
-class UserMessages
+class NetMessages
 
 ptr AllocateNetMessageByID = int32 msgid
 ptr AllocateNetMessageByPartialName = string name
