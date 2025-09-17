@@ -885,6 +885,36 @@ void Bridge_NetMessages_SendMessageToPlayers(void* pmsg, int msgid, uint64_t pla
     gameEventSystem->PostEventAbstract(-1, false, &filter, netmsg, msg, 0);
 }
 
+uint64_t Bridge_NetMessages_AddNetMessageServerHook(void* callback_ptr)
+{
+    auto netmessages = g_ifaceService.FetchInterface<INetMessages>(NETMESSAGES_INTERFACE_VERSION);
+
+    return netmessages->AddServerMessageSendCallback([callback_ptr](uint64_t* clients, int messageid, void* msg) {
+        return ((bool(*)(uint64_t*, int, void*))callback_ptr)(clients, messageid, msg);
+    });
+}
+
+void Bridge_NetMessages_RemoveNetMessageServerHook(uint64_t callbackID)
+{
+    auto netmessages = g_ifaceService.FetchInterface<INetMessages>(NETMESSAGES_INTERFACE_VERSION);
+    netmessages->RemoveServerMessageSendCallback(callbackID);
+}
+
+uint64_t Bridge_NetMessages_AddNetMessageClientHook(void* callback_ptr)
+{
+    auto netmessages = g_ifaceService.FetchInterface<INetMessages>(NETMESSAGES_INTERFACE_VERSION);
+
+    return netmessages->AddClientMessageSendCallback([callback_ptr](int playerid, int messageid, void* msg) {
+        return ((bool(*)(int, int, void*))callback_ptr)(playerid, messageid, msg);
+    });
+}
+
+void Bridge_NetMessages_RemoveNetMessageClientHook(uint64_t callbackID)
+{
+    auto netmessages = g_ifaceService.FetchInterface<INetMessages>(NETMESSAGES_INTERFACE_VERSION);
+    netmessages->RemoveClientMessageSendCallback(callbackID);
+}
+
 DEFINE_NATIVE("NetMessages.AllocateNetMessageByID", Bridge_NetMessages_AllocateNetMessageByID);
 DEFINE_NATIVE("NetMessages.AllocateNetMessageByPartialName", Bridge_NetMessages_AllocateNetMessageByPartialName);
 DEFINE_NATIVE("NetMessages.DeallocateNetMessage", Bridge_NetMessages_DeallocateNetMessage);
@@ -961,3 +991,7 @@ DEFINE_NATIVE("NetMessages.GetRepeatedFieldSize", Bridge_NetMessages_GetRepeated
 DEFINE_NATIVE("NetMessages.ClearRepeatedField", Bridge_NetMessages_ClearRepeatedField);
 DEFINE_NATIVE("NetMessages.SendMessage", Bridge_NetMessages_SendMessage);
 DEFINE_NATIVE("NetMessages.SendMessageToPlayers", Bridge_NetMessages_SendMessageToPlayers);
+DEFINE_NATIVE("NetMessages.AddNetMessageServerHook", Bridge_NetMessages_AddNetMessageServerHook);
+DEFINE_NATIVE("NetMessages.RemoveNetMessageServerHook", Bridge_NetMessages_RemoveNetMessageServerHook);
+DEFINE_NATIVE("NetMessages.AddNetMessageClientHook", Bridge_NetMessages_AddNetMessageClientHook);
+DEFINE_NATIVE("NetMessages.RemoveNetMessageClientHook", Bridge_NetMessages_RemoveNetMessageClientHook);

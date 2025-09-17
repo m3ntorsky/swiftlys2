@@ -42,6 +42,7 @@
 
 #include <api/network/sounds/soundevents.h>
 #include <api/network/database/manager.h>
+#include <api/network/netmessages/netmessages.h>
 
 #include <api/sdk/schema.h>
 
@@ -71,5 +72,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define DATABASEMANAGER_INTERFACE_VERSION                   "DatabaseManagerAPI"
 #define TRANSLATIONS_INTERFACE_VERSION                      "TranslationsAPI"
 #define SERVERCOMMANDS_INTERFACE_VERSION                    "ServerCommandsAPI"
+#define NETMESSAGES_INTERFACE_VERSION                       "NetMessagesAPI"
 
 #endif

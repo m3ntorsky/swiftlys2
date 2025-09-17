@@ -1065,4 +1065,28 @@ internal static class NativeNetMessages {
   public unsafe static void SendMessageToPlayers(nint netmsg, int msgid, ulong playermask) {
     _SendMessageToPlayers(netmsg, msgid, playermask);
   }
+  private unsafe static delegate* unmanaged<nint, ulong> _AddNetMessageServerHook;
+  /// <summary>
+  /// the callback should receive the following: uint64* playermask_ptr, int netmessage_id, void* netmsg, return bool (true -> ignored, false -> supercede)
+  /// </summary>
+  public unsafe static ulong AddNetMessageServerHook(nint callback) {
+    var ret = _AddNetMessageServerHook(callback);
+    return ret;
+  }
+  private unsafe static delegate* unmanaged<ulong, void> _RemoveNetMessageServerHook;
+  public unsafe static void RemoveNetMessageServerHook(ulong callbackID) {
+    _RemoveNetMessageServerHook(callbackID);
+  }
+  private unsafe static delegate* unmanaged<nint, ulong> _AddNetMessageClientHook;
+  /// <summary>
+  /// the callback should receive the following: int32 playerid, int netmessage_id, void* netmsg, return bool (true -> ignored, false -> supercede)
+  /// </summary>
+  public unsafe static ulong AddNetMessageClientHook(nint callback) {
+    var ret = _AddNetMessageClientHook(callback);
+    return ret;
+  }
+  private unsafe static delegate* unmanaged<ulong, void> _RemoveNetMessageClientHook;
+  public unsafe static void RemoveNetMessageClientHook(ulong callbackID) {
+    _RemoveNetMessageClientHook(callbackID);
+  }
 }
