@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventMolotovDetonateImpl : TypedGameEvent<EventMolotovDetonate>, EventMolotovDetonate
 {
 
-  public EventMolotovDetonateImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

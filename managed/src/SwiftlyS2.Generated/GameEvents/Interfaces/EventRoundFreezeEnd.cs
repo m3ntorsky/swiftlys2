@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventRoundFreezeEnd : ITypedGameEvent<EventRoundFreezeEnd> {
 
-  static EventRoundFreezeEnd ITypedGameEvent<EventRoundFreezeEnd>.Wrap(IGameEvent accessor) => new EventRoundFreezeEndImpl(accessor);
+  static EventRoundFreezeEnd ITypedGameEvent<EventRoundFreezeEnd>.Create() => new EventRoundFreezeEndImpl();
 
   static string ITypedGameEvent<EventRoundFreezeEnd>.GetName() => "round_freeze_end";
 

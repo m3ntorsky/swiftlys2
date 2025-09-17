@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventLocalPlayerPawnChanged : ITypedGameEvent<EventLocalPlayerPawnChanged> {
 
-  static EventLocalPlayerPawnChanged ITypedGameEvent<EventLocalPlayerPawnChanged>.Wrap(IGameEvent accessor) => new EventLocalPlayerPawnChangedImpl(accessor);
+  static EventLocalPlayerPawnChanged ITypedGameEvent<EventLocalPlayerPawnChanged>.Create() => new EventLocalPlayerPawnChangedImpl();
 
   static string ITypedGameEvent<EventLocalPlayerPawnChanged>.GetName() => "local_player_pawn_changed";
 

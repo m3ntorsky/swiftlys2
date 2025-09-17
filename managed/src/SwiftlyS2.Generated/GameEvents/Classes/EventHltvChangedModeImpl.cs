@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHltvChangedModeImpl : TypedGameEvent<EventHltvChangedMode>, EventHltvChangedMode
 {
 
-  public EventHltvChangedModeImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public int OldMode
   { get => Accessor.GetInt32("oldmode"); set => Accessor.SetInt32("oldmode", value); }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventSetInstructorGroupEnabled : ITypedGameEvent<EventSetInstructorGroupEnabled> {
 
-  static EventSetInstructorGroupEnabled ITypedGameEvent<EventSetInstructorGroupEnabled>.Wrap(IGameEvent accessor) => new EventSetInstructorGroupEnabledImpl(accessor);
+  static EventSetInstructorGroupEnabled ITypedGameEvent<EventSetInstructorGroupEnabled>.Create() => new EventSetInstructorGroupEnabledImpl();
 
   static string ITypedGameEvent<EventSetInstructorGroupEnabled>.GetName() => "set_instructor_group_enabled";
 

@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventVipKilledImpl : TypedGameEvent<EventVipKilled>, EventVipKilled
 {
 
-  public EventVipKilledImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // player who was the VIP
   public CCSPlayerController UserId

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventNavBlocked : ITypedGameEvent<EventNavBlocked> {
 
-  static EventNavBlocked ITypedGameEvent<EventNavBlocked>.Wrap(IGameEvent accessor) => new EventNavBlockedImpl(accessor);
+  static EventNavBlocked ITypedGameEvent<EventNavBlocked>.Create() => new EventNavBlockedImpl();
 
   static string ITypedGameEvent<EventNavBlocked>.GetName() => "nav_blocked";
 

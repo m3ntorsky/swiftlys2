@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventOpenCrateInstrImpl : TypedGameEvent<EventOpenCrateInstr>, EventOpenCrateInstr
 {
 
-  public EventOpenCrateInstrImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // player entindex
   public CCSPlayerController UserId

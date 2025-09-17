@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventVoteCastYesImpl : TypedGameEvent<EventVoteCastYes>, EventVoteCastYes
 {
 
-  public EventVoteCastYesImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public byte Team
   { get => (byte)Accessor.GetInt32("team"); set => Accessor.SetInt32("team", value); }

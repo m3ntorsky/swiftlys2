@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventCartUpdatedImpl : TypedGameEvent<EventCartUpdated>, EventCartUpdated
 {
 
-  public EventCartUpdatedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventSpecTargetUpdatedImpl : TypedGameEvent<EventSpecTargetUpdated>, EventSpecTargetUpdated
 {
 
-  public EventSpecTargetUpdatedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // spectating player
   public CCSPlayerController UserId

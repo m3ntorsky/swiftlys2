@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDroneCargoDetachedImpl : TypedGameEvent<EventDroneCargoDetached>, EventDroneCargoDetached
 {
 
-  public EventDroneCargoDetachedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

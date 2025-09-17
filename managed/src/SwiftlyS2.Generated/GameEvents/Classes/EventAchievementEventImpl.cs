@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventAchievementEventImpl : TypedGameEvent<EventAchievementEvent>, EventAchievementEvent
 {
 
-  public EventAchievementEventImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // non-localized name of achievement
   public string AchievementName

@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHltvCameramanImpl : TypedGameEvent<EventHltvCameraman>, EventHltvCameraman
 {
 
-  public EventHltvCameramanImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // camera man entity index
   public CCSPlayerController UserId

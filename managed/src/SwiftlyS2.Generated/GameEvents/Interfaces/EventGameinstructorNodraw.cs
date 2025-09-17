@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventGameinstructorNodraw : ITypedGameEvent<EventGameinstructorNodraw> {
 
-  static EventGameinstructorNodraw ITypedGameEvent<EventGameinstructorNodraw>.Wrap(IGameEvent accessor) => new EventGameinstructorNodrawImpl(accessor);
+  static EventGameinstructorNodraw ITypedGameEvent<EventGameinstructorNodraw>.Create() => new EventGameinstructorNodrawImpl();
 
   static string ITypedGameEvent<EventGameinstructorNodraw>.GetName() => "gameinstructor_nodraw";
 

@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventInstructorServerHintCreateImpl : TypedGameEvent<EventInstructorServerHintCreate>, EventInstructorServerHintCreate
 {
 
-  public EventInstructorServerHintCreateImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // user ID of the player that triggered the hint
   public CCSPlayerController UserId

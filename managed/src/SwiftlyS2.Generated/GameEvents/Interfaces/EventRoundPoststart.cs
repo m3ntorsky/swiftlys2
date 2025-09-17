@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventRoundPoststart : ITypedGameEvent<EventRoundPoststart> {
 
-  static EventRoundPoststart ITypedGameEvent<EventRoundPoststart>.Wrap(IGameEvent accessor) => new EventRoundPoststartImpl(accessor);
+  static EventRoundPoststart ITypedGameEvent<EventRoundPoststart>.Create() => new EventRoundPoststartImpl();
 
   static string ITypedGameEvent<EventRoundPoststart>.GetName() => "round_poststart";
 

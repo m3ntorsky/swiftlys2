@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDynamicShadowLightChangedImpl : TypedGameEvent<EventDynamicShadowLightChanged>, EventDynamicShadowLightChanged
 {
 
-  public EventDynamicShadowLightChangedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

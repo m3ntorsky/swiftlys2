@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventCsRoundFinalBeepImpl : TypedGameEvent<EventCsRoundFinalBeep>, EventCsRoundFinalBeep
 {
 
-  public EventCsRoundFinalBeepImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

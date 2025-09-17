@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerHintmessageImpl : TypedGameEvent<EventPlayerHintmessage>, EventPlayerHintmessage
 {
 
-  public EventPlayerHintmessageImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // localizable string of a hint
   public string HintMessage

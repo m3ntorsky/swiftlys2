@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventTeamchangePendingImpl : TypedGameEvent<EventTeamchangePending>, EventTeamchangePending
 {
 
-  public EventTeamchangePendingImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

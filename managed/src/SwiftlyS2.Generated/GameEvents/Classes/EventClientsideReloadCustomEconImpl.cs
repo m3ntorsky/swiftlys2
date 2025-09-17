@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventClientsideReloadCustomEconImpl : TypedGameEvent<EventClientsideReloadCustomEcon>, EventClientsideReloadCustomEcon
 {
 
-  public EventClientsideReloadCustomEconImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public string SteamID
   { get => Accessor.GetString("steamid"); set => Accessor.SetString("steamid", value); }

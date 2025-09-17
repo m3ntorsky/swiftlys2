@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventNavGenerate : ITypedGameEvent<EventNavGenerate> {
 
-  static EventNavGenerate ITypedGameEvent<EventNavGenerate>.Wrap(IGameEvent accessor) => new EventNavGenerateImpl(accessor);
+  static EventNavGenerate ITypedGameEvent<EventNavGenerate>.Create() => new EventNavGenerateImpl();
 
   static string ITypedGameEvent<EventNavGenerate>.GetName() => "nav_generate";
 

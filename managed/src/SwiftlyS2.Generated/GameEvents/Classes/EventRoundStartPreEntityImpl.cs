@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventRoundStartPreEntityImpl : TypedGameEvent<EventRoundStartPreEntity>, EventRoundStartPreEntity
 {
 
-  public EventRoundStartPreEntityImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

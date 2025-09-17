@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventEntityVisible : ITypedGameEvent<EventEntityVisible> {
 
-  static EventEntityVisible ITypedGameEvent<EventEntityVisible>.Wrap(IGameEvent accessor) => new EventEntityVisibleImpl(accessor);
+  static EventEntityVisible ITypedGameEvent<EventEntityVisible>.Create() => new EventEntityVisibleImpl();
 
   static string ITypedGameEvent<EventEntityVisible>.GetName() => "entity_visible";
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHltvVersioninfo : ITypedGameEvent<EventHltvVersioninfo> {
 
-  static EventHltvVersioninfo ITypedGameEvent<EventHltvVersioninfo>.Wrap(IGameEvent accessor) => new EventHltvVersioninfoImpl(accessor);
+  static EventHltvVersioninfo ITypedGameEvent<EventHltvVersioninfo>.Create() => new EventHltvVersioninfoImpl();
 
   static string ITypedGameEvent<EventHltvVersioninfo>.GetName() => "hltv_versioninfo";
 

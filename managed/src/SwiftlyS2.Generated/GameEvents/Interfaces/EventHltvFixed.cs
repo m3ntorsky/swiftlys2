@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHltvFixed : ITypedGameEvent<EventHltvFixed> {
 
-  static EventHltvFixed ITypedGameEvent<EventHltvFixed>.Wrap(IGameEvent accessor) => new EventHltvFixedImpl(accessor);
+  static EventHltvFixed ITypedGameEvent<EventHltvFixed>.Create() => new EventHltvFixedImpl();
 
   static string ITypedGameEvent<EventHltvFixed>.GetName() => "hltv_fixed";
 

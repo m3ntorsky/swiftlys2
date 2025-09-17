@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventParachutePickupImpl : TypedGameEvent<EventParachutePickup>, EventParachutePickup
 {
 
-  public EventParachutePickupImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

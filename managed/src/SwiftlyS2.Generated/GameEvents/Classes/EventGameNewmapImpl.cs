@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventGameNewmapImpl : TypedGameEvent<EventGameNewmap>, EventGameNewmap
 {
 
-  public EventGameNewmapImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // map name
   public string MapName

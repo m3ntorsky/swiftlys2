@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventExitBombzoneImpl : TypedGameEvent<EventExitBombzone>, EventExitBombzone
 {
 
-  public EventExitBombzoneImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

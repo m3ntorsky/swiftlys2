@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventInstructorServerHintStopImpl : TypedGameEvent<EventInstructorServerHintStop>, EventInstructorServerHintStop
 {
 
-  public EventInstructorServerHintStopImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // The hint to stop. Will stop ALL hints with this name
   public string HintName

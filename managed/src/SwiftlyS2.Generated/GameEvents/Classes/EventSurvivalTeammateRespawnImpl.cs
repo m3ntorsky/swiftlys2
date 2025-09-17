@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventSurvivalTeammateRespawnImpl : TypedGameEvent<EventSurvivalTeammateRespawn>, EventSurvivalTeammateRespawn
 {
 
-  public EventSurvivalTeammateRespawnImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

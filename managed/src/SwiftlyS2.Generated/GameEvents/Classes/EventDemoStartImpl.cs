@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDemoStartImpl : TypedGameEvent<EventDemoStart>, EventDemoStart
 {
 
-  public EventDemoStartImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

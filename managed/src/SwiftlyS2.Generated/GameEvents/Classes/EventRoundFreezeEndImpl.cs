@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventRoundFreezeEndImpl : TypedGameEvent<EventRoundFreezeEnd>, EventRoundFreezeEnd
 {
 
-  public EventRoundFreezeEndImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

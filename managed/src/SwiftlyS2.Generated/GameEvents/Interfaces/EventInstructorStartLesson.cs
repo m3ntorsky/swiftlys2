@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventInstructorStartLesson : ITypedGameEvent<EventInstructorStartLesson> {
 
-  static EventInstructorStartLesson ITypedGameEvent<EventInstructorStartLesson>.Wrap(IGameEvent accessor) => new EventInstructorStartLessonImpl(accessor);
+  static EventInstructorStartLesson ITypedGameEvent<EventInstructorStartLesson>.Create() => new EventInstructorStartLessonImpl();
 
   static string ITypedGameEvent<EventInstructorStartLesson>.GetName() => "instructor_start_lesson";
 

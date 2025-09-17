@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBombDroppedImpl : TypedGameEvent<EventBombDropped>, EventBombDropped
 {
 
-  public EventBombDroppedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // player who dropped the bomb
   public CCSPlayerController UserId

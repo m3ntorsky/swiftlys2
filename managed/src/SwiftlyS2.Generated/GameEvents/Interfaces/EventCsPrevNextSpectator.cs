@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventCsPrevNextSpectator : ITypedGameEvent<EventCsPrevNextSpectator> {
 
-  static EventCsPrevNextSpectator ITypedGameEvent<EventCsPrevNextSpectator>.Wrap(IGameEvent accessor) => new EventCsPrevNextSpectatorImpl(accessor);
+  static EventCsPrevNextSpectator ITypedGameEvent<EventCsPrevNextSpectator>.Create() => new EventCsPrevNextSpectatorImpl();
 
   static string ITypedGameEvent<EventCsPrevNextSpectator>.GetName() => "cs_prev_next_spectator";
 

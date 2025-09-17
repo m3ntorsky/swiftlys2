@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBulletFlightResolutionImpl : TypedGameEvent<EventBulletFlightResolution>, EventBulletFlightResolution
 {
 
-  public EventBulletFlightResolutionImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

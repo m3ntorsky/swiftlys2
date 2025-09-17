@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventGuardianWaveRestart : ITypedGameEvent<EventGuardianWaveRestart> {
 
-  static EventGuardianWaveRestart ITypedGameEvent<EventGuardianWaveRestart>.Wrap(IGameEvent accessor) => new EventGuardianWaveRestartImpl(accessor);
+  static EventGuardianWaveRestart ITypedGameEvent<EventGuardianWaveRestart>.Create() => new EventGuardianWaveRestartImpl();
 
   static string ITypedGameEvent<EventGuardianWaveRestart>.GetName() => "guardian_wave_restart";
 

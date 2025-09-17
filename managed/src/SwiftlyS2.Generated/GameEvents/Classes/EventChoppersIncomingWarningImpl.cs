@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventChoppersIncomingWarningImpl : TypedGameEvent<EventChoppersIncomingWarning>, EventChoppersIncomingWarning
 {
 
-  public EventChoppersIncomingWarningImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public bool Global
   { get => Accessor.GetBool("global"); set => Accessor.SetBool("global", value); }

@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventItemPurchaseImpl : TypedGameEvent<EventItemPurchase>, EventItemPurchase
 {
 
-  public EventItemPurchaseImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

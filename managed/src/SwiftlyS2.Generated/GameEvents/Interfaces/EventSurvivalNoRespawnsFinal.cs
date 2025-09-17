@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventSurvivalNoRespawnsFinal : ITypedGameEvent<EventSurvivalNoRespawnsFinal> {
 
-  static EventSurvivalNoRespawnsFinal ITypedGameEvent<EventSurvivalNoRespawnsFinal>.Wrap(IGameEvent accessor) => new EventSurvivalNoRespawnsFinalImpl(accessor);
+  static EventSurvivalNoRespawnsFinal ITypedGameEvent<EventSurvivalNoRespawnsFinal>.Create() => new EventSurvivalNoRespawnsFinalImpl();
 
   static string ITypedGameEvent<EventSurvivalNoRespawnsFinal>.GetName() => "survival_no_respawns_final";
 

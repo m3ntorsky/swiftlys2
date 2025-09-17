@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventInstructorStartLessonImpl : TypedGameEvent<EventInstructorStartLesson>, EventInstructorStartLesson
 {
 
-  public EventInstructorStartLessonImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // The player who this lesson is intended for
   public CCSPlayerController UserId

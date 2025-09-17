@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHltvChangedMode : ITypedGameEvent<EventHltvChangedMode> {
 
-  static EventHltvChangedMode ITypedGameEvent<EventHltvChangedMode>.Wrap(IGameEvent accessor) => new EventHltvChangedModeImpl(accessor);
+  static EventHltvChangedMode ITypedGameEvent<EventHltvChangedMode>.Create() => new EventHltvChangedModeImpl();
 
   static string ITypedGameEvent<EventHltvChangedMode>.GetName() => "hltv_changed_mode";
 

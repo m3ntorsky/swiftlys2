@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventMaterialDefaultCompleteImpl : TypedGameEvent<EventMaterialDefaultComplete>, EventMaterialDefaultComplete
 {
 
-  public EventMaterialDefaultCompleteImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

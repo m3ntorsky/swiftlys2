@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHltvReplay : ITypedGameEvent<EventHltvReplay> {
 
-  static EventHltvReplay ITypedGameEvent<EventHltvReplay>.Wrap(IGameEvent accessor) => new EventHltvReplayImpl(accessor);
+  static EventHltvReplay ITypedGameEvent<EventHltvReplay>.Create() => new EventHltvReplayImpl();
 
   static string ITypedGameEvent<EventHltvReplay>.GetName() => "hltv_replay";
 

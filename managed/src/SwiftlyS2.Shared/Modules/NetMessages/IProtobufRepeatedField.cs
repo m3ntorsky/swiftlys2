@@ -9,7 +9,7 @@ public interface IProtobufRepeatedFieldValueType<T> : IRepeatedField, IList<T> w
 
 }
 
-public interface IProtobufRepeatedFieldSubMessageType<T> : IRepeatedField, IList<T> where T : IProtobuf<T>
-{
+// public interface IProtobufRepeatedFieldSubMessageType<T> : IRepeatedField, IList<T> where T : IProtobuf<T>
+// {
 
-}
+// }

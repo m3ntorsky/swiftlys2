@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHostageFollowsImpl : TypedGameEvent<EventHostageFollows>, EventHostageFollows
 {
 
-  public EventHostageFollowsImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // player who touched the hostage
   public CCSPlayerController UserId

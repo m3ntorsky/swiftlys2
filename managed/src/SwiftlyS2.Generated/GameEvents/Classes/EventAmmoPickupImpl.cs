@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventAmmoPickupImpl : TypedGameEvent<EventAmmoPickup>, EventAmmoPickup
 {
 
-  public EventAmmoPickupImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

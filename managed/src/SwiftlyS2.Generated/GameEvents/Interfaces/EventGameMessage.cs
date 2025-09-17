@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventGameMessage : ITypedGameEvent<EventGameMessage> {
 
-  static EventGameMessage ITypedGameEvent<EventGameMessage>.Wrap(IGameEvent accessor) => new EventGameMessageImpl(accessor);
+  static EventGameMessage ITypedGameEvent<EventGameMessage>.Create() => new EventGameMessageImpl();
 
   static string ITypedGameEvent<EventGameMessage>.GetName() => "game_message";
 

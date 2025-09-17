@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventVotePassedImpl : TypedGameEvent<EventVotePassed>, EventVotePassed
 {
 
-  public EventVotePassedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public string Details
   { get => Accessor.GetString("details"); set => Accessor.SetString("details", value); }

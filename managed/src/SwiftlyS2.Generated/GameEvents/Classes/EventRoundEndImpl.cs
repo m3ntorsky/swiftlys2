@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventRoundEndImpl : TypedGameEvent<EventRoundEnd>, EventRoundEnd
 {
 
-  public EventRoundEndImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // winner team/user i
   public byte Winner

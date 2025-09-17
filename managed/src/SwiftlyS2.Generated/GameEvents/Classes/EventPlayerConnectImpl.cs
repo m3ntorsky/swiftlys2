@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerConnectImpl : TypedGameEvent<EventPlayerConnect>, EventPlayerConnect
 {
 
-  public EventPlayerConnectImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // player name
   public string Name

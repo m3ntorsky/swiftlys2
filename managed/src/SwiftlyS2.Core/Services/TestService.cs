@@ -10,6 +10,7 @@ using SwiftlyS2.Core.SchemaDefinitions;
 using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.GameEventDefinitions;
 using SwiftlyS2.Shared.GameEvents;
+using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Core.Services;
@@ -47,6 +48,12 @@ internal class TestService {
     //   _Logger.LogError(e, "");
     // }
 
+    _Core.GameEvent.HookPre<EventPlayerTeam>((eventObj) =>
+    {
+      Console.WriteLine(eventObj.GetHashCode());
+      Console.WriteLine("EventPlayerJump " + eventObj.UserId.PlayerName.Value);
+      return HookResult.Continue;
+    });
     Task.Run(async () =>
     {
       while (true)
@@ -69,14 +76,13 @@ internal class TestService {
           CCSPlayerController ent = new CCSPlayerControllerImpl(pRules);
 
           Console.WriteLine(ent.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin);
-          Console.WriteLine(ent.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin);
+          ent.Clan.Value = "testtt";
+          ent.ClanUpdated();
 
-          EventPlayerDeath death = null!;
-
-          death.Distance = 1f;
-
-          death.Accessor.SetFloat("distance", 1f);
-          
+          _Core.GameEvent.FireToPlayer<EventShowSurvivalRespawnStatus>(0, eventObj => {
+            eventObj.Duration = 10;
+            eventObj.LocToken = "testtt";
+          });
 
           
 

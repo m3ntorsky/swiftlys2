@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHltvMessageImpl : TypedGameEvent<EventHltvMessage>, EventHltvMessage
 {
 
-  public EventHltvMessageImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public string Text
   { get => Accessor.GetString("text"); set => Accessor.SetString("text", value); }

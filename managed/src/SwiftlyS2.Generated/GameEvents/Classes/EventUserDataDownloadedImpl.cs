@@ -13,7 +13,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventUserDataDownloadedImpl : TypedGameEvent<EventUserDataDownloaded>, EventUserDataDownloaded
 {
 
-  public EventUserDataDownloadedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

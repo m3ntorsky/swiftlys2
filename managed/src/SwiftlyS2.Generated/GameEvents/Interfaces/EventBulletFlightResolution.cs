@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventBulletFlightResolution : ITypedGameEvent<EventBulletFlightResolution> {
 
-  static EventBulletFlightResolution ITypedGameEvent<EventBulletFlightResolution>.Wrap(IGameEvent accessor) => new EventBulletFlightResolutionImpl(accessor);
+  static EventBulletFlightResolution ITypedGameEvent<EventBulletFlightResolution>.Create() => new EventBulletFlightResolutionImpl();
 
   static string ITypedGameEvent<EventBulletFlightResolution>.GetName() => "bullet_flight_resolution";
 

@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHltvReplayStatusImpl : TypedGameEvent<EventHltvReplayStatus>, EventHltvReplayStatus
 {
 
-  public EventHltvReplayStatusImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // reason for hltv replay status change ()
   public int Reason

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventTournamentReward : ITypedGameEvent<EventTournamentReward> {
 
-  static EventTournamentReward ITypedGameEvent<EventTournamentReward>.Wrap(IGameEvent accessor) => new EventTournamentRewardImpl(accessor);
+  static EventTournamentReward ITypedGameEvent<EventTournamentReward>.Create() => new EventTournamentRewardImpl();
 
   static string ITypedGameEvent<EventTournamentReward>.GetName() => "tournament_reward";
 

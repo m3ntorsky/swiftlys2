@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDemoStopImpl : TypedGameEvent<EventDemoStop>, EventDemoStop
 {
 
-  public EventDemoStopImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

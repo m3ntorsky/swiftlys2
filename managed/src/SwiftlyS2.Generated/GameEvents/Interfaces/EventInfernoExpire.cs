@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventInfernoExpire : ITypedGameEvent<EventInfernoExpire> {
 
-  static EventInfernoExpire ITypedGameEvent<EventInfernoExpire>.Wrap(IGameEvent accessor) => new EventInfernoExpireImpl(accessor);
+  static EventInfernoExpire ITypedGameEvent<EventInfernoExpire>.Create() => new EventInfernoExpireImpl();
 
   static string ITypedGameEvent<EventInfernoExpire>.GetName() => "inferno_expire";
 

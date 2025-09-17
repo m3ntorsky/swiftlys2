@@ -68,10 +68,10 @@ internal class GameEventCallback<T> : GameEventCallback, IDisposable where T : I
     _unmanagedCallback = (hash, pEvent, pDontBroadcast) => {
       try {
         if (hash != T.GetHash()) return HookResult.Continue;
-        var accessor = new GameEvent(pEvent, false);
-        var @event = T.Wrap(accessor);
-        var result = _callback(@event);
-        pDontBroadcast.Write(@event.Accessor.DontBroadcast);
+        var eventObj = GameEventSingletonWrapper<T>.Borrow(pEvent);
+        var result = _callback(eventObj);
+        pDontBroadcast.Write(eventObj.DontBroadcast);
+        GameEventSingletonWrapper<T>.Return();
         return result;
       } catch (Exception e) {
         _logger.LogError(e, "Error in event {EventName} callback from context {ContextName}", EventName, _Context.Name);

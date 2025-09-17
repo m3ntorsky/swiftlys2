@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventMatchEndConditionsImpl : TypedGameEvent<EventMatchEndConditions>, EventMatchEndConditions
 {
 
-  public EventMatchEndConditionsImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public int FragS
   { get => Accessor.GetInt32("frags"); set => Accessor.SetInt32("frags", value); }

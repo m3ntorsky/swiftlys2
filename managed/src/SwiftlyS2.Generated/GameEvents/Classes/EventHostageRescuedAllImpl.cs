@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHostageRescuedAllImpl : TypedGameEvent<EventHostageRescuedAll>, EventHostageRescuedAll
 {
 
-  public EventHostageRescuedAllImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

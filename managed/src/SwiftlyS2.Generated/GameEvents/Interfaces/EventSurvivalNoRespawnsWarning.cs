@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventSurvivalNoRespawnsWarning : ITypedGameEvent<EventSurvivalNoRespawnsWarning> {
 
-  static EventSurvivalNoRespawnsWarning ITypedGameEvent<EventSurvivalNoRespawnsWarning>.Wrap(IGameEvent accessor) => new EventSurvivalNoRespawnsWarningImpl(accessor);
+  static EventSurvivalNoRespawnsWarning ITypedGameEvent<EventSurvivalNoRespawnsWarning>.Create() => new EventSurvivalNoRespawnsWarningImpl();
 
   static string ITypedGameEvent<EventSurvivalNoRespawnsWarning>.GetName() => "survival_no_respawns_warning";
 

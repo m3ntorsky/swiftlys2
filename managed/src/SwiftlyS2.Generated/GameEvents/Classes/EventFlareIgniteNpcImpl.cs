@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventFlareIgniteNpcImpl : TypedGameEvent<EventFlareIgniteNpc>, EventFlareIgniteNpc
 {
 
-  public EventFlareIgniteNpcImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // entity ignited
   public int EntIndex

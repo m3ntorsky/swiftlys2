@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventShowSurvivalRespawnStatusImpl : TypedGameEvent<EventShowSurvivalRespawnStatus>, EventShowSurvivalRespawnStatus
 {
 
-  public EventShowSurvivalRespawnStatusImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public string LocToken
   { get => Accessor.GetString("loc_token"); set => Accessor.SetString("loc_token", value); }

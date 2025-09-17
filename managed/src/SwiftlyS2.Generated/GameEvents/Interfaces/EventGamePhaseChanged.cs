@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventGamePhaseChanged : ITypedGameEvent<EventGamePhaseChanged> {
 
-  static EventGamePhaseChanged ITypedGameEvent<EventGamePhaseChanged>.Wrap(IGameEvent accessor) => new EventGamePhaseChangedImpl(accessor);
+  static EventGamePhaseChanged ITypedGameEvent<EventGamePhaseChanged>.Create() => new EventGamePhaseChangedImpl();
 
   static string ITypedGameEvent<EventGamePhaseChanged>.GetName() => "game_phase_changed";
 

@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventGameuiHiddenImpl : TypedGameEvent<EventGameuiHidden>, EventGameuiHidden
 {
 
-  public EventGameuiHiddenImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // player
   public CCSPlayerController UserId

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventDefuserPickup : ITypedGameEvent<EventDefuserPickup> {
 
-  static EventDefuserPickup ITypedGameEvent<EventDefuserPickup>.Wrap(IGameEvent accessor) => new EventDefuserPickupImpl(accessor);
+  static EventDefuserPickup ITypedGameEvent<EventDefuserPickup>.Create() => new EventDefuserPickupImpl();
 
   static string ITypedGameEvent<EventDefuserPickup>.GetName() => "defuser_pickup";
 

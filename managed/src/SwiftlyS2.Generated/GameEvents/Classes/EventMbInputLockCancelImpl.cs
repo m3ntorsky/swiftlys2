@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventMbInputLockCancelImpl : TypedGameEvent<EventMbInputLockCancel>, EventMbInputLockCancel
 {
 
-  public EventMbInputLockCancelImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

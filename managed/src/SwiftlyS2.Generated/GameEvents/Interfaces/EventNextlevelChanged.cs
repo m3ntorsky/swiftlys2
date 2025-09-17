@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventNextlevelChanged : ITypedGameEvent<EventNextlevelChanged> {
 
-  static EventNextlevelChanged ITypedGameEvent<EventNextlevelChanged>.Wrap(IGameEvent accessor) => new EventNextlevelChangedImpl(accessor);
+  static EventNextlevelChanged ITypedGameEvent<EventNextlevelChanged>.Create() => new EventNextlevelChangedImpl();
 
   static string ITypedGameEvent<EventNextlevelChanged>.GetName() => "nextlevel_changed";
 

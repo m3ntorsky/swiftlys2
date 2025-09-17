@@ -14,17 +14,6 @@ public interface IGameEvent : INativeHandle
   public bool DontBroadcast { get; set; }
 
   /// <summary>
-  /// Fires the event.
-  /// </summary>
-  public void Fire();
-
-  /// <summary>
-  /// Fires the event to a specific client.
-  /// </summary>
-  /// <param name="clientId">Target client slot/id.</param>
-  public void FireToClient(int clientId);
-
-  /// <summary>
   /// Sets a boolean field on the event payload.
   /// </summary>
   /// <param name="key">Field name.</param>
@@ -185,5 +174,5 @@ public interface IGameEvent : INativeHandle
   /// <returns>True if local.</returns>
   public bool IsLocal();
   
-  
+  internal void InternalSet(nint handle);
 }

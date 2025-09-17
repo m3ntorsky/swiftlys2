@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventStorePricesheetUpdatedImpl : TypedGameEvent<EventStorePricesheetUpdated>, EventStorePricesheetUpdated
 {
 
-  public EventStorePricesheetUpdatedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

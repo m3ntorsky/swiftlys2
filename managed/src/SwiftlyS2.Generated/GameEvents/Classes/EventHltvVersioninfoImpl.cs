@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHltvVersioninfoImpl : TypedGameEvent<EventHltvVersioninfo>, EventHltvVersioninfo
 {
 
-  public EventHltvVersioninfoImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public int Version
   { get => Accessor.GetInt32("version"); set => Accessor.SetInt32("version", value); }

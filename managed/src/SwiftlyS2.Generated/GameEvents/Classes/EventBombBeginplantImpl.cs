@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBombBeginplantImpl : TypedGameEvent<EventBombBeginplant>, EventBombBeginplant
 {
 
-  public EventBombBeginplantImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // player who is planting the bomb
   public CCSPlayerController UserId

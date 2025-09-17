@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventTeamScoreImpl : TypedGameEvent<EventTeamScore>, EventTeamScore
 {
 
-  public EventTeamScoreImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // team id
   public byte TeamID

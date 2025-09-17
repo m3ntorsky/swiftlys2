@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventTeamplayBroadcastAudio : ITypedGameEvent<EventTeamplayBroadcastAudio> {
 
-  static EventTeamplayBroadcastAudio ITypedGameEvent<EventTeamplayBroadcastAudio>.Wrap(IGameEvent accessor) => new EventTeamplayBroadcastAudioImpl(accessor);
+  static EventTeamplayBroadcastAudio ITypedGameEvent<EventTeamplayBroadcastAudio>.Create() => new EventTeamplayBroadcastAudioImpl();
 
   static string ITypedGameEvent<EventTeamplayBroadcastAudio>.GetName() => "teamplay_broadcast_audio";
 

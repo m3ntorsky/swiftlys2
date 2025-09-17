@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerGivenC4 : ITypedGameEvent<EventPlayerGivenC4> {
 
-  static EventPlayerGivenC4 ITypedGameEvent<EventPlayerGivenC4>.Wrap(IGameEvent accessor) => new EventPlayerGivenC4Impl(accessor);
+  static EventPlayerGivenC4 ITypedGameEvent<EventPlayerGivenC4>.Create() => new EventPlayerGivenC4Impl();
 
   static string ITypedGameEvent<EventPlayerGivenC4>.GetName() => "player_given_c4";
 

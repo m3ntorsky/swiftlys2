@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventSurvivalNoRespawnsFinalImpl : TypedGameEvent<EventSurvivalNoRespawnsFinal>, EventSurvivalNoRespawnsFinal
 {
 
-  public EventSurvivalNoRespawnsFinalImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

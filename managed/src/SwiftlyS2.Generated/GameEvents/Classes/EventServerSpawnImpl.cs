@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventServerSpawnImpl : TypedGameEvent<EventServerSpawn>, EventServerSpawn
 {
 
-  public EventServerSpawnImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // public host name
   public string Hostname

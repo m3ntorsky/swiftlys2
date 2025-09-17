@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventVoteFailed : ITypedGameEvent<EventVoteFailed> {
 
-  static EventVoteFailed ITypedGameEvent<EventVoteFailed>.Wrap(IGameEvent accessor) => new EventVoteFailedImpl(accessor);
+  static EventVoteFailed ITypedGameEvent<EventVoteFailed>.Create() => new EventVoteFailedImpl();
 
   static string ITypedGameEvent<EventVoteFailed>.GetName() => "vote_failed";
 

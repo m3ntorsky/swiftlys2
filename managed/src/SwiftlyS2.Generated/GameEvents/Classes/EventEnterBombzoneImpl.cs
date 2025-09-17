@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventEnterBombzoneImpl : TypedGameEvent<EventEnterBombzone>, EventEnterBombzone
 {
 
-  public EventEnterBombzoneImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

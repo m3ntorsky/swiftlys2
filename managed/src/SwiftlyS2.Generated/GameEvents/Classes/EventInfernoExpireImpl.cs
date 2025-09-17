@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventInfernoExpireImpl : TypedGameEvent<EventInfernoExpire>, EventInfernoExpire
 {
 
-  public EventInfernoExpireImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public short EntityID
   { get => (short)Accessor.GetInt32("entityid"); set => Accessor.SetInt32("entityid", value); }

@@ -1,11 +1,15 @@
+using SwiftlyS2.Shared.Natives;
+
 namespace SwiftlyS2.Shared.NetMessages;
 
-public interface INetMessage : IProtobuf {
+public interface INetMessage<T> : IAllocableNativeHandle where T : INetMessage<T>, ITypedProtobuf<T> {
 
-}
+  internal static abstract T Wrap(nint handle);
 
-public interface INetMessage<T> : INetMessage where T : INetMessage<T> {
+  public static abstract int MessageId { get; }
 
-  internal abstract static T From(nint handle);
+  // TODO: revisit this later, to properly handle player mask
+  public void SendMessage();
+
 
 }

@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHltvRankCamera : ITypedGameEvent<EventHltvRankCamera> {
 
-  static EventHltvRankCamera ITypedGameEvent<EventHltvRankCamera>.Wrap(IGameEvent accessor) => new EventHltvRankCameraImpl(accessor);
+  static EventHltvRankCamera ITypedGameEvent<EventHltvRankCamera>.Create() => new EventHltvRankCameraImpl();
 
   static string ITypedGameEvent<EventHltvRankCamera>.GetName() => "hltv_rank_camera";
 

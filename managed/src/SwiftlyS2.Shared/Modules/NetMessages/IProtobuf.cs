@@ -2,7 +2,7 @@ using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Shared.NetMessages;
 
-public interface IProtobuf : INativeHandle {
+public interface IProtobuf {
 
   public void SetBool(string fieldName, bool value);
   public void AddBool(string fieldName, bool value);
@@ -94,10 +94,4 @@ public interface IProtobuf : INativeHandle {
   public void SetRepeated<T>(string fieldName, int index, T value);
   public T GetRepeated<T>(string fieldName, int index);
   public T Get<T>(string fieldName);
-}
-
-public interface IProtobuf<T> : IProtobuf where T : IProtobuf<T> {
-
-  internal abstract static T From(nint handle);
-
 }

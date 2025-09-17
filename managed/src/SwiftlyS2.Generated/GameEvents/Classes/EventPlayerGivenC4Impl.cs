@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerGivenC4Impl : TypedGameEvent<EventPlayerGivenC4>, EventPlayerGivenC4
 {
 
-  public EventPlayerGivenC4Impl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // user ID who received the c4
   public CCSPlayerController UserId

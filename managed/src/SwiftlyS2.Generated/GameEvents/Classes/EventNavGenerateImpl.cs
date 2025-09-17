@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventNavGenerateImpl : TypedGameEvent<EventNavGenerate>, EventNavGenerate
 {
 
-  public EventNavGenerateImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

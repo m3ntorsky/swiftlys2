@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventSilencerOnImpl : TypedGameEvent<EventSilencerOn>, EventSilencerOn
 {
 
-  public EventSilencerOnImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

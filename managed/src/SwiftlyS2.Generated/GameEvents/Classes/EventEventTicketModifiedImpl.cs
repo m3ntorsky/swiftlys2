@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventEventTicketModifiedImpl : TypedGameEvent<EventEventTicketModified>, EventEventTicketModified
 {
 
-  public EventEventTicketModifiedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

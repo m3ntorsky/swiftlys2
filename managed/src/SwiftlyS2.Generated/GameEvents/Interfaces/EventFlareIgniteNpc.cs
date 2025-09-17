@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventFlareIgniteNpc : ITypedGameEvent<EventFlareIgniteNpc> {
 
-  static EventFlareIgniteNpc ITypedGameEvent<EventFlareIgniteNpc>.Wrap(IGameEvent accessor) => new EventFlareIgniteNpcImpl(accessor);
+  static EventFlareIgniteNpc ITypedGameEvent<EventFlareIgniteNpc>.Create() => new EventFlareIgniteNpcImpl();
 
   static string ITypedGameEvent<EventFlareIgniteNpc>.GetName() => "flare_ignite_npc";
 
