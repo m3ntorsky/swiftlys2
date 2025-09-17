@@ -67,7 +67,7 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
   
   public ref QAngle AimPunchAngleVel { get; }
   
-  public ref int AimPunchTickBase { get; }
+  public GameTick_t AimPunchTickBase { get; }
   
   public ref float AimPunchTickFraction { get; }
   

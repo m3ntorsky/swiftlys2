@@ -93,6 +93,12 @@ internal partial class C_OP_RenderRopesImpl : CBaseRendererSource2Impl, C_OP_Ren
   public ref bool ClosedLoop {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9BCDD8B27C20D1AB));
   }
+  public ParticleAttributeIndex_t SplitField {
+    get => new ParticleAttributeIndex_tImpl(_Handle + Schema.GetOffset(0x9BCDD8B205F58FA9));
+  }
+  public ref bool SortBySegmentID {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9BCDD8B246C71BC4));
+  }
   public ref ParticleOrientationChoiceList_t OrientationType {
     get => ref _Handle.AsRef<ParticleOrientationChoiceList_t>(Schema.GetOffset(0x9BCDD8B2931FA045));
   }

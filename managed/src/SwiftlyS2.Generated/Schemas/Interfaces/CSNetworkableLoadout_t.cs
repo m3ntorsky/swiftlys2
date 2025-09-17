@@ -13,13 +13,13 @@ public partial interface CSNetworkableLoadout_t : ISchemaClass<CSNetworkableLoad
   static CSNetworkableLoadout_t ISchemaClass<CSNetworkableLoadout_t>.From(nint handle) => new CSNetworkableLoadout_tImpl(handle);
 
   
-  public CEconItemView Item { get; }
+  public CAttributeContainer ItemAttributeContainer { get; }
   
   public ref ushort Team { get; }
   
   public ref ushort Slot { get; }
 
-  public void ItemUpdated();
+  public void ItemAttributeContainerUpdated();
   public void TeamUpdated();
   public void SlotUpdated();
 }

@@ -39,14 +39,14 @@ internal partial class CDamageRecordImpl : SchemaClass, CDamageRecord {
   public ref ulong RecipientXuid {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x1492831684A232C2));
   }
-  public ref int BulletsDamage {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x14928316EEAE71A8));
+  public ref float BulletsDamage {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x149283163641E11D));
   }
-  public ref int Damage {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x149283160DEE4DB5));
+  public ref float Damage {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x14928316DC60E53E));
   }
-  public ref int ActualHealthRemoved {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x14928316E7BBB38C));
+  public ref float ActualHealthRemoved {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x14928316F8DC2935));
   }
   public ref int NumHits {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x149283162EC9980E));
@@ -86,10 +86,10 @@ internal partial class CDamageRecordImpl : SchemaClass, CDamageRecord {
     Schema.Update(_Handle, 0x1492831684A232C2);
   }
   public void DamageUpdated() {
-    Schema.Update(_Handle, 0x149283160DEE4DB5);
+    Schema.Update(_Handle, 0x14928316DC60E53E);
   }
   public void ActualHealthRemovedUpdated() {
-    Schema.Update(_Handle, 0x14928316E7BBB38C);
+    Schema.Update(_Handle, 0x14928316F8DC2935);
   }
   public void NumHitsUpdated() {
     Schema.Update(_Handle, 0x149283162EC9980E);

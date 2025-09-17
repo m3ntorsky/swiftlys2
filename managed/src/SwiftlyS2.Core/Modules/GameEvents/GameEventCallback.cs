@@ -78,6 +78,7 @@ internal class GameEventCallback<T> : GameEventCallback, IDisposable where T : I
         return HookResult.Continue;
       } 
     };
+    Console.WriteLine(EventName);
     UnmanagedWrapperPtr = Marshal.GetFunctionPointerForDelegate(_unmanagedCallback);
     NativeGameEvents.RegisterListener(EventName);
     ListenerId = IsPreHook ? NativeGameEvents.AddListenerPreCallback(UnmanagedWrapperPtr) : NativeGameEvents.AddListenerPostCallback(UnmanagedWrapperPtr);

@@ -17,6 +17,8 @@ public partial interface CFuncMover : CBaseModelEntity, ISchemaClass<CFuncMover>
   
   public ref CHandle<CPathMover> PathMover { get; }
   
+  public ref CHandle<CPathMover> PrevPathMover { get; }
+  
   public ref CUtlSymbolLarge PathNodeStart { get; }
   
   public ref CUtlSymbolLarge PathNodeEnd { get; }

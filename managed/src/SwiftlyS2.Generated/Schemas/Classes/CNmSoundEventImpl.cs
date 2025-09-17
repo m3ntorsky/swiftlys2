@@ -18,9 +18,6 @@ internal partial class CNmSoundEventImpl : CNmEventImpl, CNmSoundEvent {
   public ref CNmEventRelevance_t Relevance {
     get => ref _Handle.AsRef<CNmEventRelevance_t>(Schema.GetOffset(0xDC15E5261E3F4008));
   }
-  public ref CNmSoundEvent__Type_t Type {
-    get => ref _Handle.AsRef<CNmSoundEvent__Type_t>(Schema.GetOffset(0xDC15E5260F04B4ED));
-  }
   public ref CUtlString Name {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC15E5264D8F5786));
   }
@@ -32,9 +29,6 @@ internal partial class CNmSoundEventImpl : CNmEventImpl, CNmSoundEvent {
   }
   public ref CUtlString Tags {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC15E526B46C8540));
-  }
-  public ref bool IsServerOnly {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDC15E526301E1C64));
   }
   public ref bool ContinuePlayingSoundAtDurationEnd {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDC15E5262CB53E61));

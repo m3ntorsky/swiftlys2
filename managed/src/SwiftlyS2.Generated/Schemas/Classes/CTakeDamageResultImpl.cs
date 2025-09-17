@@ -24,8 +24,8 @@ internal partial class CTakeDamageResultImpl : SchemaClass, CTakeDamageResult {
   public ref int HealthLost {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD4A7564D8F4D7431));
   }
-  public ref int DamageTaken {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD4A7564DBADF2233));
+  public ref int DamageDealt {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD4A7564D9782F13A));
   }
   public ref float PreModifiedDamage {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD4A7564D30D13E56));

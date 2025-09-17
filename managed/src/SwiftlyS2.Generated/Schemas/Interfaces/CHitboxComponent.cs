@@ -13,7 +13,7 @@ public partial interface CHitboxComponent : CEntityComponent, ISchemaClass<CHitb
   static CHitboxComponent ISchemaClass<CHitboxComponent>.From(nint handle) => new CHitboxComponentImpl(handle);
 
   
-  public ISchemaFixedArray<uint> DisabledHitGroups { get; }
+  public ref float BoundsExpandRadius { get; }
 
-  public void DisabledHitGroupsUpdated();
+
 }

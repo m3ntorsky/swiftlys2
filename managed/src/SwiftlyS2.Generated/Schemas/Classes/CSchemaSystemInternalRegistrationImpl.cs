@@ -21,6 +21,9 @@ internal partial class CSchemaSystemInternalRegistrationImpl : SchemaClass, CSch
   public ref Vector Vector {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xDDD6CA30FE2AA082));
   }
+  public ref Vector VectorWS {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xDDD6CA303CCB2914));
+  }
   public ref Vector VectorAligned {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xDDD6CA3076A2F792));
   }

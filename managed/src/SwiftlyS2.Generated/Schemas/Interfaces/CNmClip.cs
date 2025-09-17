@@ -26,6 +26,15 @@ public partial interface CNmClip : ISchemaClass<CNmClip> {
   
   public ref CUtlVector<uint> CompressedPoseOffsets { get; }
   
+  public ref CUtlVector<CGlobalSymbol> FloatCurveIDs { get; }
+  
+  // CUtlVector< NmFloatCurveCompressionSettings_t >
+  public ref CUtlVector FloatCurveDefs { get; }
+  
+  public ref CUtlVector<ushort> CompressedFloatCurveData { get; }
+  
+  public ref CUtlVector<uint> CompressedFloatCurveOffsets { get; }
+  
   // CUtlVectorFixedGrowable< CNmClip*, 1 >
   public SchemaUntypedField SecondaryAnimations { get; }
   

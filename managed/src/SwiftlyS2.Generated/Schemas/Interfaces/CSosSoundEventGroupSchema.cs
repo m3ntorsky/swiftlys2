@@ -13,24 +13,37 @@ public partial interface CSosSoundEventGroupSchema : ISchemaClass<CSosSoundEvent
   static CSosSoundEventGroupSchema ISchemaClass<CSosSoundEventGroupSchema>.From(nint handle) => new CSosSoundEventGroupSchemaImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public ref SosGroupType_t GroupType { get; }
   
-  public ref SosGroupType_t Type { get; }
-  
-  public ref bool IsBlocking { get; }
+  public ref bool BlocksEvents { get; }
   
   public ref int BlockMaxCount { get; }
   
+  public ref float MemberLifespanTime { get; }
+  
   public ref bool InvertMatch { get; }
   
-  public CSosGroupMatchPattern MatchPattern { get; }
+  public ref SosGroupFieldBehavior_t Behavior_EventName { get; }
   
-  public CSosGroupBranchPattern BranchPattern { get; }
+  public ref CUtlString MatchSoundEventName { get; }
   
-  public ref float LifeSpanTime { get; }
+  public ref bool MatchEventSubString { get; }
   
-  // CSosGroupActionSchema
-  public SchemaUntypedField Actions { get; }
+  public ref CUtlString MatchSoundEventSubString { get; }
+  
+  public ref SosGroupFieldBehavior_t Behavior_EntIndex { get; }
+  
+  public ref float EntIndex { get; }
+  
+  public ref SosGroupFieldBehavior_t Behavior_Opvar { get; }
+  
+  public ref float Opvar { get; }
+  
+  public ref SosGroupFieldBehavior_t Behavior_String { get; }
+  
+  public ref CUtlString OpvarString { get; }
+  
+  public ref CUtlVector<PointerTo<CSosGroupActionSchema>> Actions { get; }
 
 
 }

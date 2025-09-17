@@ -30,6 +30,9 @@ internal partial class C_INIT_CreateFromParentParticlesImpl : CParticleFunctionI
   public ref bool SubFrame {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4AEA47CD1BAEEAF6));
   }
+  public ref bool SetRopeSegmentID {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4AEA47CDAEFC2399));
+  }
 
 
 }

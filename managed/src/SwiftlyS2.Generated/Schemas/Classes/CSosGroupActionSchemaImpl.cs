@@ -15,15 +15,7 @@ internal partial class CSosGroupActionSchemaImpl : SchemaClass, CSosGroupActionS
   public CSosGroupActionSchemaImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x771FE4F94D8F5786));
-  }
-  public ref ActionType_t ActionType {
-    get => ref _Handle.AsRef<ActionType_t>(Schema.GetOffset(0x771FE4F9EF21DE07));
-  }
-  public ref ActionType_t ActionInstanceType {
-    get => ref _Handle.AsRef<ActionType_t>(Schema.GetOffset(0x771FE4F936EAD9F4));
-  }
+
 
 
 }

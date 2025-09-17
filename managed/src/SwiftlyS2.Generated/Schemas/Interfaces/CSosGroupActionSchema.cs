@@ -12,12 +12,7 @@ public partial interface CSosGroupActionSchema : ISchemaClass<CSosGroupActionSch
 
   static CSosGroupActionSchema ISchemaClass<CSosGroupActionSchema>.From(nint handle) => new CSosGroupActionSchemaImpl(handle);
 
-  
-  public ref CUtlString Name { get; }
-  
-  public ref ActionType_t ActionType { get; }
-  
-  public ref ActionType_t ActionInstanceType { get; }
+
 
 
 }

@@ -15,8 +15,8 @@ internal partial class CSNetworkableLoadout_tImpl : SchemaClass, CSNetworkableLo
   public CSNetworkableLoadout_tImpl(nint handle) : base(handle) {
   }
 
-  public CEconItemView Item {
-    get => new CEconItemViewImpl(_Handle + Schema.GetOffset(0xCE5E84FADCE71866));
+  public CAttributeContainer ItemAttributeContainer {
+    get => new CAttributeContainerImpl(_Handle + Schema.GetOffset(0xCE5E84FABA232291));
   }
   public ref ushort Team {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xCE5E84FA7922011B));
@@ -25,8 +25,8 @@ internal partial class CSNetworkableLoadout_tImpl : SchemaClass, CSNetworkableLo
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0xCE5E84FAA99E43BE));
   }
 
-  public void ItemUpdated() {
-    Schema.Update(_Handle, 0xCE5E84FADCE71866);
+  public void ItemAttributeContainerUpdated() {
+    Schema.Update(_Handle, 0xCE5E84FABA232291);
   }
   public void TeamUpdated() {
     Schema.Update(_Handle, 0xCE5E84FA7922011B);

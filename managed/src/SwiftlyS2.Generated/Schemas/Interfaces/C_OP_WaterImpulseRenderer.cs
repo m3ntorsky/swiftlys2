@@ -21,6 +21,12 @@ public partial interface C_OP_WaterImpulseRenderer : CParticleFunctionRenderer, 
   
   public CPerParticleFloatInput Shape { get; }
   
+  public CPerParticleFloatInput WindSpeed { get; }
+  
+  public CPerParticleFloatInput Wobble { get; }
+  
+  public ref bool IsRadialWind { get; }
+  
   public ref EventTypeSelection_t EventType { get; }
 
 

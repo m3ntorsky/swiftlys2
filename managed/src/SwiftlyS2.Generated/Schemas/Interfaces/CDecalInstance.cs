@@ -49,8 +49,6 @@ public partial interface CDecalInstance : ISchemaClass<CDecalInstance> {
   
   public ref float LightingOriginOffset { get; }
   
-  public ref int VBSlot { get; }
-  
   public ref float BoundingRadiusSqr { get; }
   
   public ref short SequenceIndex { get; }

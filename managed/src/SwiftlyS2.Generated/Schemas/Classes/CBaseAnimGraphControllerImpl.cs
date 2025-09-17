@@ -69,6 +69,9 @@ internal partial class CBaseAnimGraphControllerImpl : CSkeletonAnimationControll
   public ref int SerializePoseRecipeSizeAG2 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFA1FB81E0121F373));
   }
+  public ref int SerializePoseRecipeVersionAG2 {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFA1FB81EC099725C));
+  }
   public ref byte GraphCreationFlagsAG2 {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xFA1FB81EA3781101));
   }
@@ -105,6 +108,9 @@ internal partial class CBaseAnimGraphControllerImpl : CSkeletonAnimationControll
   }
   public void SerializePoseRecipeSizeAG2Updated() {
     Schema.Update(_Handle, 0xFA1FB81E0121F373);
+  }
+  public void SerializePoseRecipeVersionAG2Updated() {
+    Schema.Update(_Handle, 0xFA1FB81EC099725C);
   }
   public void GraphCreationFlagsAG2Updated() {
     Schema.Update(_Handle, 0xFA1FB81EA3781101);

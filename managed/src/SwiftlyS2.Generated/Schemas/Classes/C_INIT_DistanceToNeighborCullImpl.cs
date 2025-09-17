@@ -24,6 +24,18 @@ internal partial class C_INIT_DistanceToNeighborCullImpl : CParticleFunctionInit
   public CPerParticleFloatInput LifespanOverlap {
     get => new CPerParticleFloatInputImpl(_Handle + Schema.GetOffset(0x9ADFD8BAB495428C));
   }
+  public ParticleAttributeIndex_t FieldModify {
+    get => new ParticleAttributeIndex_tImpl(_Handle + Schema.GetOffset(0x9ADFD8BA7EAE1A51));
+  }
+  public CPerParticleFloatInput Modify {
+    get => new CPerParticleFloatInputImpl(_Handle + Schema.GetOffset(0x9ADFD8BA5C62D8D5));
+  }
+  public ref ParticleSetMethod_t SetMethod {
+    get => ref _Handle.AsRef<ParticleSetMethod_t>(Schema.GetOffset(0x9ADFD8BAFB53C31E));
+  }
+  public ref bool UseNeighbor {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9ADFD8BAFBEB6DCE));
+  }
 
 
 }

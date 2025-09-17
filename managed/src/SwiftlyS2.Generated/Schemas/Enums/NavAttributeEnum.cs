@@ -4,7 +4,7 @@ using SwiftlyS2.Shared.Schemas;
 
 namespace SwiftlyS2.Shared.SchemaDefinitions;
 
-public enum NavAttributeEnum : uint {
+public enum NavAttributeEnum : ulong {
 
  NAV_MESH_AVOID = 128,
 
@@ -21,8 +21,6 @@ public enum NavAttributeEnum : uint {
  NAV_MESH_CROUCH = 65536,
 
  NAV_MESH_JUMP = 2,
-
- NAV_MESH_PRECISE = 4,
 
  NAV_MESH_NO_JUMP = 8,
 
@@ -46,5 +44,5 @@ public enum NavAttributeEnum : uint {
 
  NAV_ATTR_FIRST_GAME_INDEX = 19,
 
- NAV_ATTR_LAST_INDEX = 31,
+ NAV_ATTR_LAST_INDEX = 63,
 }

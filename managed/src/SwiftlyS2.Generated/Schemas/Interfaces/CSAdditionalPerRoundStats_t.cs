@@ -19,9 +19,9 @@ public partial interface CSAdditionalPerRoundStats_t : ISchemaClass<CSAdditional
   
   public ref int BombCarrierkills { get; }
   
-  public ref int BurnDamageInflicted { get; }
+  public ref float BurnDamageInflicted { get; }
   
-  public ref int BlastDamageInflicted { get; }
+  public ref float BlastDamageInflicted { get; }
   
   public ref int Dinks { get; }
 

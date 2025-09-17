@@ -69,9 +69,6 @@ internal partial class CCSPlayer_MovementServicesImpl : CPlayer_MovementServices
   public ref bool SpeedCropped {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD20D9A03E1DFE49B));
   }
-  public ref float GroundMoveEfficiency {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD20D9A03D5AC3780));
-  }
   public ref int OldWaterLevel {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD20D9A03B1357405));
   }

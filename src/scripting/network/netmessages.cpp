@@ -110,7 +110,7 @@
         return return_value;                                                              \
     }
 
-void* Bridge_UserMessages_AllocateNetMessageByID(int msgid)
+void* Bridge_NetMessages_AllocateNetMessageByID(int msgid)
 {
     auto networkMessages = g_ifaceService.FetchInterface<INetworkMessages>(NETWORKMESSAGES_INTERFACE_VERSION);
     auto netmsg = networkMessages->FindNetworkMessageById(msgid);
@@ -119,7 +119,7 @@ void* Bridge_UserMessages_AllocateNetMessageByID(int msgid)
     return netmsg->AllocateMessage()->ToPB<google::protobuf::Message>();
 }
 
-void* Bridge_UserMessages_AllocateNetMessageByPartialName(const char* name)
+void* Bridge_NetMessages_AllocateNetMessageByPartialName(const char* name)
 {
     auto networkMessages = g_ifaceService.FetchInterface<INetworkMessages>(NETWORKMESSAGES_INTERFACE_VERSION);
     auto netmsg = networkMessages->FindNetworkMessagePartial(name);
@@ -128,13 +128,13 @@ void* Bridge_UserMessages_AllocateNetMessageByPartialName(const char* name)
     return netmsg->AllocateMessage()->ToPB<google::protobuf::Message>();
 }
 
-void Bridge_UserMessages_DeallocateNetMessage(void* msg)
+void Bridge_NetMessages_DeallocateNetMessage(void* msg)
 {
     if (!msg) return;
     delete (CNetMessagePB<google::protobuf::Message>*)msg;
 }
 
-bool Bridge_UserMessages_HasField(void* pmsg, const char* fieldName)
+bool Bridge_NetMessages_HasField(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(false);
@@ -142,7 +142,7 @@ bool Bridge_UserMessages_HasField(void* pmsg, const char* fieldName)
     return msg->GetReflection()->HasField(*msg, field);
 }
 
-int Bridge_UserMessages_GetInt32(void* pmsg, const char* fieldName)
+int Bridge_NetMessages_GetInt32(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0);
@@ -150,7 +150,7 @@ int Bridge_UserMessages_GetInt32(void* pmsg, const char* fieldName)
     return msg->GetReflection()->GetInt32(*msg, field);
 }
 
-int Bridge_UserMessages_GetRepeatedInt32(void* pmsg, const char* fieldName, int index)
+int Bridge_NetMessages_GetRepeatedInt32(void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0);
@@ -159,7 +159,7 @@ int Bridge_UserMessages_GetRepeatedInt32(void* pmsg, const char* fieldName, int 
     return msg->GetReflection()->GetRepeatedInt32(*msg, field, index);
 }
 
-void Bridge_UserMessages_SetInt32(void* pmsg, const char* fieldName, int value)
+void Bridge_NetMessages_SetInt32(void* pmsg, const char* fieldName, int value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -167,7 +167,7 @@ void Bridge_UserMessages_SetInt32(void* pmsg, const char* fieldName, int value)
     msg->GetReflection()->SetInt32(msg, field, value);
 }
 
-void Bridge_UserMessages_SetRepeatedInt32(void* pmsg, const char* fieldName, int index, int value)
+void Bridge_NetMessages_SetRepeatedInt32(void* pmsg, const char* fieldName, int index, int value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -176,7 +176,7 @@ void Bridge_UserMessages_SetRepeatedInt32(void* pmsg, const char* fieldName, int
     msg->GetReflection()->SetRepeatedInt32(msg, field, index, value);
 }
 
-void Bridge_UserMessages_AddInt32(void* pmsg, const char* fieldName, int value)
+void Bridge_NetMessages_AddInt32(void* pmsg, const char* fieldName, int value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -184,7 +184,7 @@ void Bridge_UserMessages_AddInt32(void* pmsg, const char* fieldName, int value)
     msg->GetReflection()->AddInt32(msg, field, value);
 }
 
-int64_t Bridge_UserMessages_GetInt64(void* pmsg, const char* fieldName)
+int64_t Bridge_NetMessages_GetInt64(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0);
@@ -192,7 +192,7 @@ int64_t Bridge_UserMessages_GetInt64(void* pmsg, const char* fieldName)
     return msg->GetReflection()->GetInt64(*msg, field);
 }
 
-int64_t Bridge_UserMessages_GetRepeatedInt64(void* pmsg, const char* fieldName, int index)
+int64_t Bridge_NetMessages_GetRepeatedInt64(void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0);
@@ -201,7 +201,7 @@ int64_t Bridge_UserMessages_GetRepeatedInt64(void* pmsg, const char* fieldName, 
     return msg->GetReflection()->GetRepeatedInt64(*msg, field, index);
 }
 
-void Bridge_UserMessages_SetInt64(void* pmsg, const char* fieldName, int64_t value)
+void Bridge_NetMessages_SetInt64(void* pmsg, const char* fieldName, int64_t value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -209,7 +209,7 @@ void Bridge_UserMessages_SetInt64(void* pmsg, const char* fieldName, int64_t val
     msg->GetReflection()->SetInt64(msg, field, value);
 }
 
-void Bridge_UserMessages_SetRepeatedInt64(void* pmsg, const char* fieldName, int index, int64_t value)
+void Bridge_NetMessages_SetRepeatedInt64(void* pmsg, const char* fieldName, int index, int64_t value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -218,7 +218,7 @@ void Bridge_UserMessages_SetRepeatedInt64(void* pmsg, const char* fieldName, int
     msg->GetReflection()->SetRepeatedInt64(msg, field, index, value);
 }
 
-void Bridge_UserMessages_AddInt64(void* pmsg, const char* fieldName, int64_t value)
+void Bridge_NetMessages_AddInt64(void* pmsg, const char* fieldName, int64_t value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -226,7 +226,7 @@ void Bridge_UserMessages_AddInt64(void* pmsg, const char* fieldName, int64_t val
     msg->GetReflection()->AddInt64(msg, field, value);
 }
 
-uint32_t Bridge_UserMessages_GetUInt32(void* pmsg, const char* fieldName)
+uint32_t Bridge_NetMessages_GetUInt32(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0);
@@ -234,7 +234,7 @@ uint32_t Bridge_UserMessages_GetUInt32(void* pmsg, const char* fieldName)
     return msg->GetReflection()->GetUInt32(*msg, field);
 }
 
-uint32_t Bridge_UserMessages_GetRepeatedUInt32(void* pmsg, const char* fieldName, int index)
+uint32_t Bridge_NetMessages_GetRepeatedUInt32(void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0);
@@ -243,7 +243,7 @@ uint32_t Bridge_UserMessages_GetRepeatedUInt32(void* pmsg, const char* fieldName
     return msg->GetReflection()->GetRepeatedUInt32(*msg, field, index);
 }
 
-void Bridge_UserMessages_SetUInt32(void* pmsg, const char* fieldName, uint32_t value)
+void Bridge_NetMessages_SetUInt32(void* pmsg, const char* fieldName, uint32_t value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -251,7 +251,7 @@ void Bridge_UserMessages_SetUInt32(void* pmsg, const char* fieldName, uint32_t v
     msg->GetReflection()->SetUInt32(msg, field, value);
 }
 
-void Bridge_UserMessages_SetRepeatedUInt32(void* pmsg, const char* fieldName, int index, uint32_t value)
+void Bridge_NetMessages_SetRepeatedUInt32(void* pmsg, const char* fieldName, int index, uint32_t value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -260,7 +260,7 @@ void Bridge_UserMessages_SetRepeatedUInt32(void* pmsg, const char* fieldName, in
     msg->GetReflection()->SetRepeatedUInt32(msg, field, index, value);
 }
 
-void Bridge_UserMessages_AddUInt32(void* pmsg, const char* fieldName, uint32_t value)
+void Bridge_NetMessages_AddUInt32(void* pmsg, const char* fieldName, uint32_t value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -268,7 +268,7 @@ void Bridge_UserMessages_AddUInt32(void* pmsg, const char* fieldName, uint32_t v
     msg->GetReflection()->AddUInt32(msg, field, value);
 }
 
-uint64_t Bridge_UserMessages_GetUInt64(void* pmsg, const char* fieldName)
+uint64_t Bridge_NetMessages_GetUInt64(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0);
@@ -276,7 +276,7 @@ uint64_t Bridge_UserMessages_GetUInt64(void* pmsg, const char* fieldName)
     return msg->GetReflection()->GetUInt64(*msg, field);
 }
 
-uint64_t Bridge_UserMessages_GetRepeatedUInt64(void* pmsg, const char* fieldName, int index)
+uint64_t Bridge_NetMessages_GetRepeatedUInt64(void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0);
@@ -285,7 +285,7 @@ uint64_t Bridge_UserMessages_GetRepeatedUInt64(void* pmsg, const char* fieldName
     return msg->GetReflection()->GetRepeatedUInt64(*msg, field, index);
 }
 
-void Bridge_UserMessages_SetUInt64(void* pmsg, const char* fieldName, uint64_t value)
+void Bridge_NetMessages_SetUInt64(void* pmsg, const char* fieldName, uint64_t value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -293,7 +293,7 @@ void Bridge_UserMessages_SetUInt64(void* pmsg, const char* fieldName, uint64_t v
     msg->GetReflection()->SetUInt64(msg, field, value);
 }
 
-void Bridge_UserMessages_SetRepeatedUInt64(void* pmsg, const char* fieldName, int index, uint64_t value)
+void Bridge_NetMessages_SetRepeatedUInt64(void* pmsg, const char* fieldName, int index, uint64_t value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -302,7 +302,7 @@ void Bridge_UserMessages_SetRepeatedUInt64(void* pmsg, const char* fieldName, in
     msg->GetReflection()->SetRepeatedUInt64(msg, field, index, value);
 }
 
-void Bridge_UserMessages_AddUInt64(void* pmsg, const char* fieldName, uint64_t value)
+void Bridge_NetMessages_AddUInt64(void* pmsg, const char* fieldName, uint64_t value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -310,7 +310,7 @@ void Bridge_UserMessages_AddUInt64(void* pmsg, const char* fieldName, uint64_t v
     msg->GetReflection()->AddUInt64(msg, field, value);
 }
 
-bool Bridge_UserMessages_GetBool(void* pmsg, const char* fieldName)
+bool Bridge_NetMessages_GetBool(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(false);
@@ -318,7 +318,7 @@ bool Bridge_UserMessages_GetBool(void* pmsg, const char* fieldName)
     return msg->GetReflection()->GetBool(*msg, field);
 }
 
-bool Bridge_UserMessages_GetRepeatedBool(void* pmsg, const char* fieldName, int index)
+bool Bridge_NetMessages_GetRepeatedBool(void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(false);
@@ -327,7 +327,7 @@ bool Bridge_UserMessages_GetRepeatedBool(void* pmsg, const char* fieldName, int 
     return msg->GetReflection()->GetRepeatedBool(*msg, field, index);
 }
 
-void Bridge_UserMessages_SetBool(void* pmsg, const char* fieldName, bool value)
+void Bridge_NetMessages_SetBool(void* pmsg, const char* fieldName, bool value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -335,7 +335,7 @@ void Bridge_UserMessages_SetBool(void* pmsg, const char* fieldName, bool value)
     msg->GetReflection()->SetBool(msg, field, value);
 }
 
-void Bridge_UserMessages_SetRepeatedBool(void* pmsg, const char* fieldName, int index, bool value)
+void Bridge_NetMessages_SetRepeatedBool(void* pmsg, const char* fieldName, int index, bool value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -344,7 +344,7 @@ void Bridge_UserMessages_SetRepeatedBool(void* pmsg, const char* fieldName, int 
     msg->GetReflection()->SetRepeatedBool(msg, field, index, value);
 }
 
-void Bridge_UserMessages_AddBool(void* pmsg, const char* fieldName, bool value)
+void Bridge_NetMessages_AddBool(void* pmsg, const char* fieldName, bool value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -352,7 +352,7 @@ void Bridge_UserMessages_AddBool(void* pmsg, const char* fieldName, bool value)
     msg->GetReflection()->AddBool(msg, field, value);
 }
 
-float Bridge_UserMessages_GetFloat(void* pmsg, const char* fieldName)
+float Bridge_NetMessages_GetFloat(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0.0f);
@@ -360,7 +360,7 @@ float Bridge_UserMessages_GetFloat(void* pmsg, const char* fieldName)
     return msg->GetReflection()->GetFloat(*msg, field);
 }
 
-float Bridge_UserMessages_GetRepeatedFloat(void* pmsg, const char* fieldName, int index)
+float Bridge_NetMessages_GetRepeatedFloat(void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0.0f);
@@ -369,7 +369,7 @@ float Bridge_UserMessages_GetRepeatedFloat(void* pmsg, const char* fieldName, in
     return msg->GetReflection()->GetRepeatedFloat(*msg, field, index);
 }
 
-void Bridge_UserMessages_SetFloat(void* pmsg, const char* fieldName, float value)
+void Bridge_NetMessages_SetFloat(void* pmsg, const char* fieldName, float value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -377,7 +377,7 @@ void Bridge_UserMessages_SetFloat(void* pmsg, const char* fieldName, float value
     msg->GetReflection()->SetFloat(msg, field, value);
 }
 
-void Bridge_UserMessages_SetRepeatedFloat(void* pmsg, const char* fieldName, int index, float value)
+void Bridge_NetMessages_SetRepeatedFloat(void* pmsg, const char* fieldName, int index, float value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -386,7 +386,7 @@ void Bridge_UserMessages_SetRepeatedFloat(void* pmsg, const char* fieldName, int
     msg->GetReflection()->SetRepeatedFloat(msg, field, index, value);
 }
 
-void Bridge_UserMessages_AddFloat(void* pmsg, const char* fieldName, float value)
+void Bridge_NetMessages_AddFloat(void* pmsg, const char* fieldName, float value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -394,7 +394,7 @@ void Bridge_UserMessages_AddFloat(void* pmsg, const char* fieldName, float value
     msg->GetReflection()->AddFloat(msg, field, value);
 }
 
-double Bridge_UserMessages_GetDouble(void* pmsg, const char* fieldName)
+double Bridge_NetMessages_GetDouble(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0.0);
@@ -402,7 +402,7 @@ double Bridge_UserMessages_GetDouble(void* pmsg, const char* fieldName)
     return msg->GetReflection()->GetDouble(*msg, field);
 }
 
-double Bridge_UserMessages_GetRepeatedDouble(void* pmsg, const char* fieldName, int index)
+double Bridge_NetMessages_GetRepeatedDouble(void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0.0);
@@ -411,7 +411,7 @@ double Bridge_UserMessages_GetRepeatedDouble(void* pmsg, const char* fieldName, 
     return msg->GetReflection()->GetRepeatedDouble(*msg, field, index);
 }
 
-void Bridge_UserMessages_SetDouble(void* pmsg, const char* fieldName, double value)
+void Bridge_NetMessages_SetDouble(void* pmsg, const char* fieldName, double value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -419,7 +419,7 @@ void Bridge_UserMessages_SetDouble(void* pmsg, const char* fieldName, double val
     msg->GetReflection()->SetDouble(msg, field, value);
 }
 
-void Bridge_UserMessages_SetRepeatedDouble(void* pmsg, const char* fieldName, int index, double value)
+void Bridge_NetMessages_SetRepeatedDouble(void* pmsg, const char* fieldName, int index, double value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -428,7 +428,7 @@ void Bridge_UserMessages_SetRepeatedDouble(void* pmsg, const char* fieldName, in
     msg->GetReflection()->SetRepeatedDouble(msg, field, index, value);
 }
 
-void Bridge_UserMessages_AddDouble(void* pmsg, const char* fieldName, double value)
+void Bridge_NetMessages_AddDouble(void* pmsg, const char* fieldName, double value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -436,7 +436,7 @@ void Bridge_UserMessages_AddDouble(void* pmsg, const char* fieldName, double val
     msg->GetReflection()->AddDouble(msg, field, value);
 }
 
-int Bridge_UserMessages_GetString(char* out, void* pmsg, const char* fieldName)
+int Bridge_NetMessages_GetString(char* out, void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0);
@@ -450,7 +450,7 @@ int Bridge_UserMessages_GetString(char* out, void* pmsg, const char* fieldName)
     return s.size();
 }
 
-int Bridge_UserMessages_GetRepeatedString(char* out, void* pmsg, const char* fieldName, int index)
+int Bridge_NetMessages_GetRepeatedString(char* out, void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0);
@@ -465,7 +465,7 @@ int Bridge_UserMessages_GetRepeatedString(char* out, void* pmsg, const char* fie
     return s.size();
 }
 
-void Bridge_UserMessages_SetString(void* pmsg, const char* fieldName, const char* value)
+void Bridge_NetMessages_SetString(void* pmsg, const char* fieldName, const char* value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -473,7 +473,7 @@ void Bridge_UserMessages_SetString(void* pmsg, const char* fieldName, const char
     msg->GetReflection()->SetString(msg, field, value);
 }
 
-void Bridge_UserMessages_SetRepeatedString(void* pmsg, const char* fieldName, int index, const char* value)
+void Bridge_NetMessages_SetRepeatedString(void* pmsg, const char* fieldName, int index, const char* value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -482,7 +482,7 @@ void Bridge_UserMessages_SetRepeatedString(void* pmsg, const char* fieldName, in
     msg->GetReflection()->SetRepeatedString(msg, field, index, value);
 }
 
-void Bridge_UserMessages_AddString(void* pmsg, const char* fieldName, const char* value)
+void Bridge_NetMessages_AddString(void* pmsg, const char* fieldName, const char* value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -490,7 +490,7 @@ void Bridge_UserMessages_AddString(void* pmsg, const char* fieldName, const char
     msg->GetReflection()->AddString(msg, field, value);
 }
 
-Vector2D Bridge_UserMessages_GetVector2D(void* pmsg, const char* fieldName)
+Vector2D Bridge_NetMessages_GetVector2D(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     Vector2D vec{ 0.0f, 0.0f };
@@ -503,7 +503,7 @@ Vector2D Bridge_UserMessages_GetVector2D(void* pmsg, const char* fieldName)
     return vec;
 }
 
-Vector2D Bridge_UserMessages_GetRepeatedVector2D(void* pmsg, const char* fieldName, int index)
+Vector2D Bridge_NetMessages_GetRepeatedVector2D(void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
 
@@ -518,7 +518,7 @@ Vector2D Bridge_UserMessages_GetRepeatedVector2D(void* pmsg, const char* fieldNa
     return vec;
 }
 
-void Bridge_UserMessages_SetVector2D(void* pmsg, const char* fieldName, Vector2D value)
+void Bridge_NetMessages_SetVector2D(void* pmsg, const char* fieldName, Vector2D value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -529,7 +529,7 @@ void Bridge_UserMessages_SetVector2D(void* pmsg, const char* fieldName, Vector2D
     msgVec2d->set_y(value.y);
 }
 
-void Bridge_UserMessages_SetRepeatedVector2D(void* pmsg, const char* fieldName, int index, Vector2D value)
+void Bridge_NetMessages_SetRepeatedVector2D(void* pmsg, const char* fieldName, int index, Vector2D value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -541,7 +541,7 @@ void Bridge_UserMessages_SetRepeatedVector2D(void* pmsg, const char* fieldName, 
     msgVec2d->set_y(value.y);
 }
 
-void Bridge_UserMessages_AddVector2D(void* pmsg, const char* fieldName, Vector2D value)
+void Bridge_NetMessages_AddVector2D(void* pmsg, const char* fieldName, Vector2D value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -552,7 +552,7 @@ void Bridge_UserMessages_AddVector2D(void* pmsg, const char* fieldName, Vector2D
     msgVec2d->set_y(value.y);
 }
 
-Vector Bridge_UserMessages_GetVector(void* pmsg, const char* fieldName)
+Vector Bridge_NetMessages_GetVector(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     Vector vec{ 0.0f, 0.0f, 0.0f };
@@ -566,7 +566,7 @@ Vector Bridge_UserMessages_GetVector(void* pmsg, const char* fieldName)
     return vec;
 }
 
-Vector Bridge_UserMessages_GetRepeatedVector(void* pmsg, const char* fieldName, int index)
+Vector Bridge_NetMessages_GetRepeatedVector(void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
 
@@ -582,7 +582,7 @@ Vector Bridge_UserMessages_GetRepeatedVector(void* pmsg, const char* fieldName, 
     return vec;
 }
 
-void Bridge_UserMessages_SetVector(void* pmsg, const char* fieldName, Vector value)
+void Bridge_NetMessages_SetVector(void* pmsg, const char* fieldName, Vector value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -594,7 +594,7 @@ void Bridge_UserMessages_SetVector(void* pmsg, const char* fieldName, Vector val
     msgVec->set_z(value.z);
 }
 
-void Bridge_UserMessages_SetRepeatedVector(void* pmsg, const char* fieldName, int index, Vector value)
+void Bridge_NetMessages_SetRepeatedVector(void* pmsg, const char* fieldName, int index, Vector value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -607,7 +607,7 @@ void Bridge_UserMessages_SetRepeatedVector(void* pmsg, const char* fieldName, in
     msgVec->set_z(value.z);
 }
 
-void Bridge_UserMessages_AddVector(void* pmsg, const char* fieldName, Vector value)
+void Bridge_NetMessages_AddVector(void* pmsg, const char* fieldName, Vector value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -619,7 +619,7 @@ void Bridge_UserMessages_AddVector(void* pmsg, const char* fieldName, Vector val
     msgVec->set_z(value.z);
 }
 
-Color Bridge_UserMessages_GetColor(void* pmsg, const char* fieldName)
+Color Bridge_NetMessages_GetColor(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     Color color{ 255,255,255,255 };
@@ -631,7 +631,7 @@ Color Bridge_UserMessages_GetColor(void* pmsg, const char* fieldName)
     return color;
 }
 
-Color Bridge_UserMessages_GetRepeatedColor(void* pmsg, const char* fieldName, int index)
+Color Bridge_NetMessages_GetRepeatedColor(void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
 
@@ -645,7 +645,7 @@ Color Bridge_UserMessages_GetRepeatedColor(void* pmsg, const char* fieldName, in
     return color;
 }
 
-void Bridge_UserMessages_SetColor(void* pmsg, const char* fieldName, Color value)
+void Bridge_NetMessages_SetColor(void* pmsg, const char* fieldName, Color value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -658,7 +658,7 @@ void Bridge_UserMessages_SetColor(void* pmsg, const char* fieldName, Color value
     msgColor->set_a(value.a());
 }
 
-void Bridge_UserMessages_SetRepeatedColor(void* pmsg, const char* fieldName, int index, Color value)
+void Bridge_NetMessages_SetRepeatedColor(void* pmsg, const char* fieldName, int index, Color value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -672,7 +672,7 @@ void Bridge_UserMessages_SetRepeatedColor(void* pmsg, const char* fieldName, int
     msgColor->set_a(value.a());
 }
 
-void Bridge_UserMessages_AddColor(void* pmsg, const char* fieldName, Color value)
+void Bridge_NetMessages_AddColor(void* pmsg, const char* fieldName, Color value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -685,7 +685,7 @@ void Bridge_UserMessages_AddColor(void* pmsg, const char* fieldName, Color value
     msgColor->set_a(value.a());
 }
 
-QAngle Bridge_UserMessages_GetQAngle(void* pmsg, const char* fieldName)
+QAngle Bridge_NetMessages_GetQAngle(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     QAngle angle{ 0.0f,0.0f,0.0f };
@@ -699,7 +699,7 @@ QAngle Bridge_UserMessages_GetQAngle(void* pmsg, const char* fieldName)
     return angle;
 }
 
-QAngle Bridge_UserMessages_GetRepeatedQAngle(void* pmsg, const char* fieldName, int index)
+QAngle Bridge_NetMessages_GetRepeatedQAngle(void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
 
@@ -715,7 +715,7 @@ QAngle Bridge_UserMessages_GetRepeatedQAngle(void* pmsg, const char* fieldName, 
     return angle;
 }
 
-void Bridge_UserMessages_SetQAngle(void* pmsg, const char* fieldName, QAngle value)
+void Bridge_NetMessages_SetQAngle(void* pmsg, const char* fieldName, QAngle value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -727,7 +727,7 @@ void Bridge_UserMessages_SetQAngle(void* pmsg, const char* fieldName, QAngle val
     msgAngle->set_z(value.z);
 }
 
-void Bridge_UserMessages_SetRepeatedQAngle(void* pmsg, const char* fieldName, int index, QAngle value)
+void Bridge_NetMessages_SetRepeatedQAngle(void* pmsg, const char* fieldName, int index, QAngle value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -740,7 +740,7 @@ void Bridge_UserMessages_SetRepeatedQAngle(void* pmsg, const char* fieldName, in
     msgAngle->set_z(value.z);
 }
 
-void Bridge_UserMessages_AddQAngle(void* pmsg, const char* fieldName, QAngle value)
+void Bridge_NetMessages_AddQAngle(void* pmsg, const char* fieldName, QAngle value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -752,7 +752,7 @@ void Bridge_UserMessages_AddQAngle(void* pmsg, const char* fieldName, QAngle val
     msgAngle->set_z(value.z);
 }
 
-int Bridge_UserMessages_GetBytes(uint8_t* out, void* pmsg, const char* fieldName)
+int Bridge_NetMessages_GetBytes(uint8_t* out, void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0);
@@ -766,7 +766,7 @@ int Bridge_UserMessages_GetBytes(uint8_t* out, void* pmsg, const char* fieldName
     return s.size();
 }
 
-int Bridge_UserMessages_GetRepeatedBytes(uint8_t* out, void* pmsg, const char* fieldName, int index)
+int Bridge_NetMessages_GetRepeatedBytes(uint8_t* out, void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(0);
@@ -781,7 +781,7 @@ int Bridge_UserMessages_GetRepeatedBytes(uint8_t* out, void* pmsg, const char* f
     return s.size();
 }
 
-void Bridge_UserMessages_SetBytes(void* pmsg, const char* fieldName, uint8_t* value)
+void Bridge_NetMessages_SetBytes(void* pmsg, const char* fieldName, uint8_t* value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -789,7 +789,7 @@ void Bridge_UserMessages_SetBytes(void* pmsg, const char* fieldName, uint8_t* va
     msg->GetReflection()->SetString(msg, field, (char*)value);
 }
 
-void Bridge_UserMessages_SetRepeatedBytes(void* pmsg, const char* fieldName, int index, uint8_t* value)
+void Bridge_NetMessages_SetRepeatedBytes(void* pmsg, const char* fieldName, int index, uint8_t* value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -798,7 +798,7 @@ void Bridge_UserMessages_SetRepeatedBytes(void* pmsg, const char* fieldName, int
     msg->GetReflection()->SetRepeatedString(msg, field, index, (char*)value);
 }
 
-void Bridge_UserMessages_AddBytes(void* pmsg, const char* fieldName, uint8_t* value)
+void Bridge_NetMessages_AddBytes(void* pmsg, const char* fieldName, uint8_t* value)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD_VOID();
@@ -806,7 +806,7 @@ void Bridge_UserMessages_AddBytes(void* pmsg, const char* fieldName, uint8_t* va
     msg->GetReflection()->AddString(msg, field, (char*)value);
 }
 
-void* Bridge_UserMessages_GetNestedMessage(void* pmsg, const char* fieldName)
+void* Bridge_NetMessages_GetNestedMessage(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(nullptr);
@@ -814,7 +814,7 @@ void* Bridge_UserMessages_GetNestedMessage(void* pmsg, const char* fieldName)
     return (void*)(&msg->GetReflection()->GetMessage(*msg, field));
 }
 
-void* Bridge_UserMessages_GetRepeatedNestedMessage(void* pmsg, const char* fieldName, int index)
+void* Bridge_NetMessages_GetRepeatedNestedMessage(void* pmsg, const char* fieldName, int index)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
 
@@ -825,7 +825,7 @@ void* Bridge_UserMessages_GetRepeatedNestedMessage(void* pmsg, const char* field
     return (void*)&msg->GetReflection()->GetRepeatedMessage(*msg, field, index);
 }
 
-void* Bridge_UserMessages_AddNestedMessage(void* pmsg, const char* fieldName)
+void* Bridge_NetMessages_AddNestedMessage(void* pmsg, const char* fieldName)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
     GETCHECK_FIELD(nullptr);
@@ -834,7 +834,7 @@ void* Bridge_UserMessages_AddNestedMessage(void* pmsg, const char* fieldName)
     return (void*)msg->GetReflection()->AddMessage(msg, field);
 }
 
-void Bridge_UserMessages_SendMessage(void* pmsg, int msgid, int playerid)
+void Bridge_NetMessages_SendMessage(void* pmsg, int msgid, int playerid)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
 
@@ -848,7 +848,7 @@ void Bridge_UserMessages_SendMessage(void* pmsg, int msgid, int playerid)
     gameEventSystem->PostEventAbstract(-1, false, &filter, netmsg, msg, 0);
 }
 
-void Bridge_UserMessages_SendMessageToPlayers(void* pmsg, int msgid, uint64_t playermask)
+void Bridge_NetMessages_SendMessageToPlayers(void* pmsg, int msgid, uint64_t playermask)
 {
     CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
 
@@ -866,77 +866,77 @@ void Bridge_UserMessages_SendMessageToPlayers(void* pmsg, int msgid, uint64_t pl
     gameEventSystem->PostEventAbstract(-1, false, &filter, netmsg, msg, 0);
 }
 
-DEFINE_NATIVE("UserMessages.AllocateNetMessageByID", Bridge_UserMessages_AllocateNetMessageByID);
-DEFINE_NATIVE("UserMessages.AllocateNetMessageByPartialName", Bridge_UserMessages_AllocateNetMessageByPartialName);
-DEFINE_NATIVE("UserMessages.DeallocateNetMessage", Bridge_UserMessages_DeallocateNetMessage);
-DEFINE_NATIVE("UserMessages.HasField", Bridge_UserMessages_HasField);
-DEFINE_NATIVE("UserMessages.GetInt32", Bridge_UserMessages_GetInt32);
-DEFINE_NATIVE("UserMessages.GetRepeatedInt32", Bridge_UserMessages_GetRepeatedInt32);
-DEFINE_NATIVE("UserMessages.SetInt32", Bridge_UserMessages_SetInt32);
-DEFINE_NATIVE("UserMessages.SetRepeatedInt32", Bridge_UserMessages_SetRepeatedInt32);
-DEFINE_NATIVE("UserMessages.AddInt32", Bridge_UserMessages_AddInt32);
-DEFINE_NATIVE("UserMessages.GetInt64", Bridge_UserMessages_GetInt64);
-DEFINE_NATIVE("UserMessages.GetRepeatedInt64", Bridge_UserMessages_GetRepeatedInt64);
-DEFINE_NATIVE("UserMessages.SetInt64", Bridge_UserMessages_SetInt64);
-DEFINE_NATIVE("UserMessages.SetRepeatedInt64", Bridge_UserMessages_SetRepeatedInt64);
-DEFINE_NATIVE("UserMessages.AddInt64", Bridge_UserMessages_AddInt64);
-DEFINE_NATIVE("UserMessages.GetUInt32", Bridge_UserMessages_GetUInt32);
-DEFINE_NATIVE("UserMessages.GetRepeatedUInt32", Bridge_UserMessages_GetRepeatedUInt32);
-DEFINE_NATIVE("UserMessages.SetUInt32", Bridge_UserMessages_SetUInt32);
-DEFINE_NATIVE("UserMessages.SetRepeatedUInt32", Bridge_UserMessages_SetRepeatedUInt32);
-DEFINE_NATIVE("UserMessages.AddUInt32", Bridge_UserMessages_AddUInt32);
-DEFINE_NATIVE("UserMessages.GetUInt64", Bridge_UserMessages_GetUInt64);
-DEFINE_NATIVE("UserMessages.GetRepeatedUInt64", Bridge_UserMessages_GetRepeatedUInt64);
-DEFINE_NATIVE("UserMessages.SetUInt64", Bridge_UserMessages_SetUInt64);
-DEFINE_NATIVE("UserMessages.SetRepeatedUInt64", Bridge_UserMessages_SetRepeatedUInt64);
-DEFINE_NATIVE("UserMessages.AddUInt64", Bridge_UserMessages_AddUInt64);
-DEFINE_NATIVE("UserMessages.GetBool", Bridge_UserMessages_GetBool);
-DEFINE_NATIVE("UserMessages.GetRepeatedBool", Bridge_UserMessages_GetRepeatedBool);
-DEFINE_NATIVE("UserMessages.SetBool", Bridge_UserMessages_SetBool);
-DEFINE_NATIVE("UserMessages.SetRepeatedBool", Bridge_UserMessages_SetRepeatedBool);
-DEFINE_NATIVE("UserMessages.AddBool", Bridge_UserMessages_AddBool);
-DEFINE_NATIVE("UserMessages.GetFloat", Bridge_UserMessages_GetFloat);
-DEFINE_NATIVE("UserMessages.GetRepeatedFloat", Bridge_UserMessages_GetRepeatedFloat);
-DEFINE_NATIVE("UserMessages.SetFloat", Bridge_UserMessages_SetFloat);
-DEFINE_NATIVE("UserMessages.SetRepeatedFloat", Bridge_UserMessages_SetRepeatedFloat);
-DEFINE_NATIVE("UserMessages.AddFloat", Bridge_UserMessages_AddFloat);
-DEFINE_NATIVE("UserMessages.GetDouble", Bridge_UserMessages_GetDouble);
-DEFINE_NATIVE("UserMessages.GetRepeatedDouble", Bridge_UserMessages_GetRepeatedDouble);
-DEFINE_NATIVE("UserMessages.SetDouble", Bridge_UserMessages_SetDouble);
-DEFINE_NATIVE("UserMessages.SetRepeatedDouble", Bridge_UserMessages_SetRepeatedDouble);
-DEFINE_NATIVE("UserMessages.AddDouble", Bridge_UserMessages_AddDouble);
-DEFINE_NATIVE("UserMessages.GetString", Bridge_UserMessages_GetString);
-DEFINE_NATIVE("UserMessages.GetRepeatedString", Bridge_UserMessages_GetRepeatedString);
-DEFINE_NATIVE("UserMessages.SetString", Bridge_UserMessages_SetString);
-DEFINE_NATIVE("UserMessages.SetRepeatedString", Bridge_UserMessages_SetRepeatedString);
-DEFINE_NATIVE("UserMessages.AddString", Bridge_UserMessages_AddString);
-DEFINE_NATIVE("UserMessages.GetVector2D", Bridge_UserMessages_GetVector2D);
-DEFINE_NATIVE("UserMessages.GetRepeatedVector2D", Bridge_UserMessages_GetRepeatedVector2D);
-DEFINE_NATIVE("UserMessages.SetVector2D", Bridge_UserMessages_SetVector2D);
-DEFINE_NATIVE("UserMessages.SetRepeatedVector2D", Bridge_UserMessages_SetRepeatedVector2D);
-DEFINE_NATIVE("UserMessages.AddVector2D", Bridge_UserMessages_AddVector2D);
-DEFINE_NATIVE("UserMessages.GetVector", Bridge_UserMessages_GetVector);
-DEFINE_NATIVE("UserMessages.GetRepeatedVector", Bridge_UserMessages_GetRepeatedVector);
-DEFINE_NATIVE("UserMessages.SetVector", Bridge_UserMessages_SetVector);
-DEFINE_NATIVE("UserMessages.SetRepeatedVector", Bridge_UserMessages_SetRepeatedVector);
-DEFINE_NATIVE("UserMessages.AddVector", Bridge_UserMessages_AddVector);
-DEFINE_NATIVE("UserMessages.GetColor", Bridge_UserMessages_GetColor);
-DEFINE_NATIVE("UserMessages.GetRepeatedColor", Bridge_UserMessages_GetRepeatedColor);
-DEFINE_NATIVE("UserMessages.SetColor", Bridge_UserMessages_SetColor);
-DEFINE_NATIVE("UserMessages.SetRepeatedColor", Bridge_UserMessages_SetRepeatedColor);
-DEFINE_NATIVE("UserMessages.AddColor", Bridge_UserMessages_AddColor);
-DEFINE_NATIVE("UserMessages.GetQAngle", Bridge_UserMessages_GetQAngle);
-DEFINE_NATIVE("UserMessages.GetRepeatedQAngle", Bridge_UserMessages_GetRepeatedQAngle);
-DEFINE_NATIVE("UserMessages.SetQAngle", Bridge_UserMessages_SetQAngle);
-DEFINE_NATIVE("UserMessages.SetRepeatedQAngle", Bridge_UserMessages_SetRepeatedQAngle);
-DEFINE_NATIVE("UserMessages.AddQAngle", Bridge_UserMessages_AddQAngle);
-DEFINE_NATIVE("UserMessages.GetBytes", Bridge_UserMessages_GetBytes);
-DEFINE_NATIVE("UserMessages.GetRepeatedBytes", Bridge_UserMessages_GetRepeatedBytes);
-DEFINE_NATIVE("UserMessages.SetBytes", Bridge_UserMessages_SetBytes);
-DEFINE_NATIVE("UserMessages.SetRepeatedBytes", Bridge_UserMessages_SetRepeatedBytes);
-DEFINE_NATIVE("UserMessages.AddBytes", Bridge_UserMessages_AddBytes);
-DEFINE_NATIVE("UserMessages.GetNestedMessage", Bridge_UserMessages_GetNestedMessage);
-DEFINE_NATIVE("UserMessages.GetRepeatedNestedMessage", Bridge_UserMessages_GetRepeatedNestedMessage);
-DEFINE_NATIVE("UserMessages.AddNestedMessage", Bridge_UserMessages_AddNestedMessage);
-DEFINE_NATIVE("UserMessages.SendMessage", Bridge_UserMessages_SendMessage);
-DEFINE_NATIVE("UserMessages.SendMessageToPlayers", Bridge_UserMessages_SendMessageToPlayers);
+DEFINE_NATIVE("NetMessages.AllocateNetMessageByID", Bridge_NetMessages_AllocateNetMessageByID);
+DEFINE_NATIVE("NetMessages.AllocateNetMessageByPartialName", Bridge_NetMessages_AllocateNetMessageByPartialName);
+DEFINE_NATIVE("NetMessages.DeallocateNetMessage", Bridge_NetMessages_DeallocateNetMessage);
+DEFINE_NATIVE("NetMessages.HasField", Bridge_NetMessages_HasField);
+DEFINE_NATIVE("NetMessages.GetInt32", Bridge_NetMessages_GetInt32);
+DEFINE_NATIVE("NetMessages.GetRepeatedInt32", Bridge_NetMessages_GetRepeatedInt32);
+DEFINE_NATIVE("NetMessages.SetInt32", Bridge_NetMessages_SetInt32);
+DEFINE_NATIVE("NetMessages.SetRepeatedInt32", Bridge_NetMessages_SetRepeatedInt32);
+DEFINE_NATIVE("NetMessages.AddInt32", Bridge_NetMessages_AddInt32);
+DEFINE_NATIVE("NetMessages.GetInt64", Bridge_NetMessages_GetInt64);
+DEFINE_NATIVE("NetMessages.GetRepeatedInt64", Bridge_NetMessages_GetRepeatedInt64);
+DEFINE_NATIVE("NetMessages.SetInt64", Bridge_NetMessages_SetInt64);
+DEFINE_NATIVE("NetMessages.SetRepeatedInt64", Bridge_NetMessages_SetRepeatedInt64);
+DEFINE_NATIVE("NetMessages.AddInt64", Bridge_NetMessages_AddInt64);
+DEFINE_NATIVE("NetMessages.GetUInt32", Bridge_NetMessages_GetUInt32);
+DEFINE_NATIVE("NetMessages.GetRepeatedUInt32", Bridge_NetMessages_GetRepeatedUInt32);
+DEFINE_NATIVE("NetMessages.SetUInt32", Bridge_NetMessages_SetUInt32);
+DEFINE_NATIVE("NetMessages.SetRepeatedUInt32", Bridge_NetMessages_SetRepeatedUInt32);
+DEFINE_NATIVE("NetMessages.AddUInt32", Bridge_NetMessages_AddUInt32);
+DEFINE_NATIVE("NetMessages.GetUInt64", Bridge_NetMessages_GetUInt64);
+DEFINE_NATIVE("NetMessages.GetRepeatedUInt64", Bridge_NetMessages_GetRepeatedUInt64);
+DEFINE_NATIVE("NetMessages.SetUInt64", Bridge_NetMessages_SetUInt64);
+DEFINE_NATIVE("NetMessages.SetRepeatedUInt64", Bridge_NetMessages_SetRepeatedUInt64);
+DEFINE_NATIVE("NetMessages.AddUInt64", Bridge_NetMessages_AddUInt64);
+DEFINE_NATIVE("NetMessages.GetBool", Bridge_NetMessages_GetBool);
+DEFINE_NATIVE("NetMessages.GetRepeatedBool", Bridge_NetMessages_GetRepeatedBool);
+DEFINE_NATIVE("NetMessages.SetBool", Bridge_NetMessages_SetBool);
+DEFINE_NATIVE("NetMessages.SetRepeatedBool", Bridge_NetMessages_SetRepeatedBool);
+DEFINE_NATIVE("NetMessages.AddBool", Bridge_NetMessages_AddBool);
+DEFINE_NATIVE("NetMessages.GetFloat", Bridge_NetMessages_GetFloat);
+DEFINE_NATIVE("NetMessages.GetRepeatedFloat", Bridge_NetMessages_GetRepeatedFloat);
+DEFINE_NATIVE("NetMessages.SetFloat", Bridge_NetMessages_SetFloat);
+DEFINE_NATIVE("NetMessages.SetRepeatedFloat", Bridge_NetMessages_SetRepeatedFloat);
+DEFINE_NATIVE("NetMessages.AddFloat", Bridge_NetMessages_AddFloat);
+DEFINE_NATIVE("NetMessages.GetDouble", Bridge_NetMessages_GetDouble);
+DEFINE_NATIVE("NetMessages.GetRepeatedDouble", Bridge_NetMessages_GetRepeatedDouble);
+DEFINE_NATIVE("NetMessages.SetDouble", Bridge_NetMessages_SetDouble);
+DEFINE_NATIVE("NetMessages.SetRepeatedDouble", Bridge_NetMessages_SetRepeatedDouble);
+DEFINE_NATIVE("NetMessages.AddDouble", Bridge_NetMessages_AddDouble);
+DEFINE_NATIVE("NetMessages.GetString", Bridge_NetMessages_GetString);
+DEFINE_NATIVE("NetMessages.GetRepeatedString", Bridge_NetMessages_GetRepeatedString);
+DEFINE_NATIVE("NetMessages.SetString", Bridge_NetMessages_SetString);
+DEFINE_NATIVE("NetMessages.SetRepeatedString", Bridge_NetMessages_SetRepeatedString);
+DEFINE_NATIVE("NetMessages.AddString", Bridge_NetMessages_AddString);
+DEFINE_NATIVE("NetMessages.GetVector2D", Bridge_NetMessages_GetVector2D);
+DEFINE_NATIVE("NetMessages.GetRepeatedVector2D", Bridge_NetMessages_GetRepeatedVector2D);
+DEFINE_NATIVE("NetMessages.SetVector2D", Bridge_NetMessages_SetVector2D);
+DEFINE_NATIVE("NetMessages.SetRepeatedVector2D", Bridge_NetMessages_SetRepeatedVector2D);
+DEFINE_NATIVE("NetMessages.AddVector2D", Bridge_NetMessages_AddVector2D);
+DEFINE_NATIVE("NetMessages.GetVector", Bridge_NetMessages_GetVector);
+DEFINE_NATIVE("NetMessages.GetRepeatedVector", Bridge_NetMessages_GetRepeatedVector);
+DEFINE_NATIVE("NetMessages.SetVector", Bridge_NetMessages_SetVector);
+DEFINE_NATIVE("NetMessages.SetRepeatedVector", Bridge_NetMessages_SetRepeatedVector);
+DEFINE_NATIVE("NetMessages.AddVector", Bridge_NetMessages_AddVector);
+DEFINE_NATIVE("NetMessages.GetColor", Bridge_NetMessages_GetColor);
+DEFINE_NATIVE("NetMessages.GetRepeatedColor", Bridge_NetMessages_GetRepeatedColor);
+DEFINE_NATIVE("NetMessages.SetColor", Bridge_NetMessages_SetColor);
+DEFINE_NATIVE("NetMessages.SetRepeatedColor", Bridge_NetMessages_SetRepeatedColor);
+DEFINE_NATIVE("NetMessages.AddColor", Bridge_NetMessages_AddColor);
+DEFINE_NATIVE("NetMessages.GetQAngle", Bridge_NetMessages_GetQAngle);
+DEFINE_NATIVE("NetMessages.GetRepeatedQAngle", Bridge_NetMessages_GetRepeatedQAngle);
+DEFINE_NATIVE("NetMessages.SetQAngle", Bridge_NetMessages_SetQAngle);
+DEFINE_NATIVE("NetMessages.SetRepeatedQAngle", Bridge_NetMessages_SetRepeatedQAngle);
+DEFINE_NATIVE("NetMessages.AddQAngle", Bridge_NetMessages_AddQAngle);
+DEFINE_NATIVE("NetMessages.GetBytes", Bridge_NetMessages_GetBytes);
+DEFINE_NATIVE("NetMessages.GetRepeatedBytes", Bridge_NetMessages_GetRepeatedBytes);
+DEFINE_NATIVE("NetMessages.SetBytes", Bridge_NetMessages_SetBytes);
+DEFINE_NATIVE("NetMessages.SetRepeatedBytes", Bridge_NetMessages_SetRepeatedBytes);
+DEFINE_NATIVE("NetMessages.AddBytes", Bridge_NetMessages_AddBytes);
+DEFINE_NATIVE("NetMessages.GetNestedMessage", Bridge_NetMessages_GetNestedMessage);
+DEFINE_NATIVE("NetMessages.GetRepeatedNestedMessage", Bridge_NetMessages_GetRepeatedNestedMessage);
+DEFINE_NATIVE("NetMessages.AddNestedMessage", Bridge_NetMessages_AddNestedMessage);
+DEFINE_NATIVE("NetMessages.SendMessage", Bridge_NetMessages_SendMessage);
+DEFINE_NATIVE("NetMessages.SendMessageToPlayers", Bridge_NetMessages_SendMessageToPlayers);

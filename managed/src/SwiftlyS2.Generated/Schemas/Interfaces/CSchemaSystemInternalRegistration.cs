@@ -17,6 +17,8 @@ public partial interface CSchemaSystemInternalRegistration : ISchemaClass<CSchem
   
   public ref Vector Vector { get; }
   
+  public ref Vector VectorWS { get; }
+  
   public ref Vector VectorAligned { get; }
   
   public ref Quaternion Quaternion { get; }

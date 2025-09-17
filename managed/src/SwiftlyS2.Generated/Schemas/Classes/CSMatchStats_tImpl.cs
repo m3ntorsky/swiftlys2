@@ -48,11 +48,11 @@ internal partial class CSMatchStats_tImpl : CSPerRoundStats_tImpl, CSMatchStats_
   public ref int Flash_Successes {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x68F1494C278EEC8E));
   }
-  public ref int HealthPointsRemovedTotal {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x68F1494C78EDB40E));
+  public ref float HealthPointsRemovedTotal {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x68F1494CE7E19AE8));
   }
-  public ref int HealthPointsDealtTotal {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x68F1494CE60E5880));
+  public ref float HealthPointsDealtTotal {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x68F1494C7A86EE3E));
   }
   public ref int ShotsFiredTotal {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x68F1494C791909D4));

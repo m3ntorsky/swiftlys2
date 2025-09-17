@@ -35,7 +35,7 @@ public partial interface CSAdditionalMatchStats_t : CSAdditionalPerRoundStats_t,
   
   public ref int NumTeamKills { get; }
   
-  public ref int TeamDamage { get; }
+  public ref float TeamDamage { get; }
 
 
 }

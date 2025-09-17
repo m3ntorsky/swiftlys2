@@ -69,9 +69,6 @@ internal partial class CDecalInstanceImpl : SchemaClass, CDecalInstance {
   public ref float LightingOriginOffset {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x88CA447CBB88AF36));
   }
-  public ref int VBSlot {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x88CA447CFD484D91));
-  }
   public ref float BoundingRadiusSqr {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x88CA447CEA90D145));
   }

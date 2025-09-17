@@ -22,7 +22,7 @@ public partial interface CCSPlayerController_ActionTrackingServices : CPlayerCon
   
   public ref int NumRoundKillsHeadshots { get; }
   
-  public ref uint TotalRoundDamageDealt { get; }
+  public ref float TotalRoundDamageDealt { get; }
 
   public void PerRoundStatsUpdated();
   public void MatchStatsUpdated();

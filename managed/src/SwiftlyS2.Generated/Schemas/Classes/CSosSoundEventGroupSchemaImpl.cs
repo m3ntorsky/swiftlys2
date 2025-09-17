@@ -15,32 +15,53 @@ internal partial class CSosSoundEventGroupSchemaImpl : SchemaClass, CSosSoundEve
   public CSosSoundEventGroupSchemaImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x25BA87004D8F5786));
+  public ref SosGroupType_t GroupType {
+    get => ref _Handle.AsRef<SosGroupType_t>(Schema.GetOffset(0x25BA87001A8E5A00));
   }
-  public ref SosGroupType_t Type {
-    get => ref _Handle.AsRef<SosGroupType_t>(Schema.GetOffset(0x25BA870018853D59));
-  }
-  public ref bool IsBlocking {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x25BA87001C9AB88E));
+  public ref bool BlocksEvents {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x25BA8700E3632026));
   }
   public ref int BlockMaxCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x25BA8700282E91F7));
   }
+  public ref float MemberLifespanTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x25BA8700C47B4DBA));
+  }
   public ref bool InvertMatch {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x25BA87003C3CF99A));
   }
-  public CSosGroupMatchPattern MatchPattern {
-    get => new CSosGroupMatchPatternImpl(_Handle + Schema.GetOffset(0x25BA8700E065AB84));
+  public ref SosGroupFieldBehavior_t Behavior_EventName {
+    get => ref _Handle.AsRef<SosGroupFieldBehavior_t>(Schema.GetOffset(0x25BA870029F15E53));
   }
-  public CSosGroupBranchPattern BranchPattern {
-    get => new CSosGroupBranchPatternImpl(_Handle + Schema.GetOffset(0x25BA870017E92C29));
+  public ref CUtlString MatchSoundEventName {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x25BA87005E75165C));
   }
-  public ref float LifeSpanTime {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x25BA870068189B78));
+  public ref bool MatchEventSubString {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x25BA87001C020689));
   }
-  public SchemaUntypedField Actions {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x25BA8700D36B7908));
+  public ref CUtlString MatchSoundEventSubString {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x25BA87002FBB6296));
+  }
+  public ref SosGroupFieldBehavior_t Behavior_EntIndex {
+    get => ref _Handle.AsRef<SosGroupFieldBehavior_t>(Schema.GetOffset(0x25BA8700139C6983));
+  }
+  public ref float EntIndex {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x25BA8700CD8F80C8));
+  }
+  public ref SosGroupFieldBehavior_t Behavior_Opvar {
+    get => ref _Handle.AsRef<SosGroupFieldBehavior_t>(Schema.GetOffset(0x25BA8700C2EFBF94));
+  }
+  public ref float Opvar {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x25BA870054283361));
+  }
+  public ref SosGroupFieldBehavior_t Behavior_String {
+    get => ref _Handle.AsRef<SosGroupFieldBehavior_t>(Schema.GetOffset(0x25BA87001D20B9B1));
+  }
+  public ref CUtlString OpvarString {
+    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x25BA8700528828B2));
+  }
+  public ref CUtlVector<PointerTo<CSosGroupActionSchema>> Actions {
+    get => ref _Handle.AsRef<CUtlVector<PointerTo<CSosGroupActionSchema>>>(Schema.GetOffset(0x25BA8700D36B7908));
   }
 
 

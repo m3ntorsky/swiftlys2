@@ -15,8 +15,6 @@ public partial interface CNmSoundEvent : CNmEvent, ISchemaClass<CNmSoundEvent> {
   
   public ref CNmEventRelevance_t Relevance { get; }
   
-  public ref CNmSoundEvent__Type_t Type { get; }
-  
   public ref CUtlString Name { get; }
   
   public ref CNmSoundEvent__Position_t Position { get; }
@@ -24,8 +22,6 @@ public partial interface CNmSoundEvent : CNmEvent, ISchemaClass<CNmSoundEvent> {
   public ref CUtlString AttachmentName { get; }
   
   public ref CUtlString Tags { get; }
-  
-  public ref bool IsServerOnly { get; }
   
   public ref bool ContinuePlayingSoundAtDurationEnd { get; }
   

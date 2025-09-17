@@ -30,6 +30,12 @@ internal partial class CNmParticleEventImpl : CNmEventImpl, CNmParticleEvent {
   public ref bool StopImmediately {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x441D270FB16078E1));
   }
+  public ref bool DetachFromOwner {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x441D270F357F7C69));
+  }
+  public ref bool PlayEndCap {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x441D270FA7AB4A38));
+  }
   public ref CUtlString AttachmentPoint0 {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x441D270FBFDCDF8A));
   }
@@ -47,12 +53,6 @@ internal partial class CNmParticleEventImpl : CNmEventImpl, CNmParticleEvent {
   }
   public ref CUtlString EffectForConfig {
     get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x441D270FA68959D9));
-  }
-  public ref bool DetachFromOwner {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x441D270F357F7C69));
-  }
-  public ref bool PlayEndCap {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x441D270FA7AB4A38));
   }
 
 

@@ -27,6 +27,15 @@ internal partial class C_OP_WaterImpulseRendererImpl : CParticleFunctionRenderer
   public CPerParticleFloatInput Shape {
     get => new CPerParticleFloatInputImpl(_Handle + Schema.GetOffset(0x7CC87C0C5DCE07D8));
   }
+  public CPerParticleFloatInput WindSpeed {
+    get => new CPerParticleFloatInputImpl(_Handle + Schema.GetOffset(0x7CC87C0CADDA5C24));
+  }
+  public CPerParticleFloatInput Wobble {
+    get => new CPerParticleFloatInputImpl(_Handle + Schema.GetOffset(0x7CC87C0CF8575B0A));
+  }
+  public ref bool IsRadialWind {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x7CC87C0C64147034));
+  }
   public ref EventTypeSelection_t EventType {
     get => ref _Handle.AsRef<EventTypeSelection_t>(Schema.GetOffset(0x7CC87C0CE1F9AA93));
   }

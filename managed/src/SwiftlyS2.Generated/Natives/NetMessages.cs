@@ -6,7 +6,7 @@ using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Core.Natives;
 
-internal static class NativeUserMessages {
+internal static class NativeNetMessages {
   private unsafe static delegate* unmanaged<int, nint> _AllocateNetMessageByID;
   public unsafe static nint AllocateNetMessageByID(int msgid) {
     var ret = _AllocateNetMessageByID(msgid);

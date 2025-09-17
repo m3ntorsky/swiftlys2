@@ -35,9 +35,9 @@ public partial interface CSMatchStats_t : CSPerRoundStats_t, ISchemaClass<CSMatc
   
   public ref int Flash_Successes { get; }
   
-  public ref int HealthPointsRemovedTotal { get; }
+  public ref float HealthPointsRemovedTotal { get; }
   
-  public ref int HealthPointsDealtTotal { get; }
+  public ref float HealthPointsDealtTotal { get; }
   
   public ref int ShotsFiredTotal { get; }
   
