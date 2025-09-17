@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventAnnouncePhaseEnd : ITypedGameEvent<EventAnnouncePhaseEnd> {
 
-  static EventAnnouncePhaseEnd ITypedGameEvent<EventAnnouncePhaseEnd>.Wrap(IGameEvent accessor) => new EventAnnouncePhaseEndImpl(accessor);
+  static EventAnnouncePhaseEnd ITypedGameEvent<EventAnnouncePhaseEnd>.Create() => new EventAnnouncePhaseEndImpl();
 
   static string ITypedGameEvent<EventAnnouncePhaseEnd>.GetName() => "announce_phase_end";
 

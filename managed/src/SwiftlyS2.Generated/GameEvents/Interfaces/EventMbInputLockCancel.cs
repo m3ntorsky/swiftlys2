@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventMbInputLockCancel : ITypedGameEvent<EventMbInputLockCancel> {
 
-  static EventMbInputLockCancel ITypedGameEvent<EventMbInputLockCancel>.Wrap(IGameEvent accessor) => new EventMbInputLockCancelImpl(accessor);
+  static EventMbInputLockCancel ITypedGameEvent<EventMbInputLockCancel>.Create() => new EventMbInputLockCancelImpl();
 
   static string ITypedGameEvent<EventMbInputLockCancel>.GetName() => "mb_input_lock_cancel";
 

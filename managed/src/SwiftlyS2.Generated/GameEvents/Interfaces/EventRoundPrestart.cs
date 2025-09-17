@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventRoundPrestart : ITypedGameEvent<EventRoundPrestart> {
 
-  static EventRoundPrestart ITypedGameEvent<EventRoundPrestart>.Wrap(IGameEvent accessor) => new EventRoundPrestartImpl(accessor);
+  static EventRoundPrestart ITypedGameEvent<EventRoundPrestart>.Create() => new EventRoundPrestartImpl();
 
   static string ITypedGameEvent<EventRoundPrestart>.GetName() => "round_prestart";
 

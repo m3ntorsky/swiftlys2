@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerDisconnectImpl : TypedGameEvent<EventPlayerDisconnect>, EventPlayerDisconnect
 {
 
-  public EventPlayerDisconnectImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // user ID on server
   public CCSPlayerController UserId

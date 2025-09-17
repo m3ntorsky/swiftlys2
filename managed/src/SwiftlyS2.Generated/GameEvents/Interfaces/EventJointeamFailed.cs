@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventJointeamFailed : ITypedGameEvent<EventJointeamFailed> {
 
-  static EventJointeamFailed ITypedGameEvent<EventJointeamFailed>.Wrap(IGameEvent accessor) => new EventJointeamFailedImpl(accessor);
+  static EventJointeamFailed ITypedGameEvent<EventJointeamFailed>.Create() => new EventJointeamFailedImpl();
 
   static string ITypedGameEvent<EventJointeamFailed>.GetName() => "jointeam_failed";
 

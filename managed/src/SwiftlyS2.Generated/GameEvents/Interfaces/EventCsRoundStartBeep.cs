@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventCsRoundStartBeep : ITypedGameEvent<EventCsRoundStartBeep> {
 
-  static EventCsRoundStartBeep ITypedGameEvent<EventCsRoundStartBeep>.Wrap(IGameEvent accessor) => new EventCsRoundStartBeepImpl(accessor);
+  static EventCsRoundStartBeep ITypedGameEvent<EventCsRoundStartBeep>.Create() => new EventCsRoundStartBeepImpl();
 
   static string ITypedGameEvent<EventCsRoundStartBeep>.GetName() => "cs_round_start_beep";
 

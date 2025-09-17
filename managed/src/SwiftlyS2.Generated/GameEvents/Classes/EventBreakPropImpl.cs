@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBreakPropImpl : TypedGameEvent<EventBreakProp>, EventBreakProp
 {
 
-  public EventBreakPropImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public int EntIndex
   { get => Accessor.GetInt32("entindex"); set => Accessor.SetInt32("entindex", value); }

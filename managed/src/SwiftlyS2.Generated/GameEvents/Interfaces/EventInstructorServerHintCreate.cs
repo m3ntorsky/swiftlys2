@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventInstructorServerHintCreate : ITypedGameEvent<EventInstructorServerHintCreate> {
 
-  static EventInstructorServerHintCreate ITypedGameEvent<EventInstructorServerHintCreate>.Wrap(IGameEvent accessor) => new EventInstructorServerHintCreateImpl(accessor);
+  static EventInstructorServerHintCreate ITypedGameEvent<EventInstructorServerHintCreate>.Create() => new EventInstructorServerHintCreateImpl();
 
   static string ITypedGameEvent<EventInstructorServerHintCreate>.GetName() => "instructor_server_hint_create";
 

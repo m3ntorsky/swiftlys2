@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventSpecModeUpdated : ITypedGameEvent<EventSpecModeUpdated> {
 
-  static EventSpecModeUpdated ITypedGameEvent<EventSpecModeUpdated>.Wrap(IGameEvent accessor) => new EventSpecModeUpdatedImpl(accessor);
+  static EventSpecModeUpdated ITypedGameEvent<EventSpecModeUpdated>.Create() => new EventSpecModeUpdatedImpl();
 
   static string ITypedGameEvent<EventSpecModeUpdated>.GetName() => "spec_mode_updated";
 

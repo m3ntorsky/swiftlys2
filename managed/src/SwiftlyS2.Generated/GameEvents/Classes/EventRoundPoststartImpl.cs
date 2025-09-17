@@ -13,7 +13,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventRoundPoststartImpl : TypedGameEvent<EventRoundPoststart>, EventRoundPoststart
 {
 
-  public EventRoundPoststartImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

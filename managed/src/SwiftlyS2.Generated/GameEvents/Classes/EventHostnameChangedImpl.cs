@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHostnameChangedImpl : TypedGameEvent<EventHostnameChanged>, EventHostnameChanged
 {
 
-  public EventHostnameChangedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public string Hostname
   { get => Accessor.GetString("hostname"); set => Accessor.SetString("hostname", value); }

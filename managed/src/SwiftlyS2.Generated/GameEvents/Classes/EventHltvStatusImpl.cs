@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHltvStatusImpl : TypedGameEvent<EventHltvStatus>, EventHltvStatus
 {
 
-  public EventHltvStatusImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // number of HLTV spectators
   public int Clients

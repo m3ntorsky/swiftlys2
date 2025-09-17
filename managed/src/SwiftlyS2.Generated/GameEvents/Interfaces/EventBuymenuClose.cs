@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventBuymenuClose : ITypedGameEvent<EventBuymenuClose> {
 
-  static EventBuymenuClose ITypedGameEvent<EventBuymenuClose>.Wrap(IGameEvent accessor) => new EventBuymenuCloseImpl(accessor);
+  static EventBuymenuClose ITypedGameEvent<EventBuymenuClose>.Create() => new EventBuymenuCloseImpl();
 
   static string ITypedGameEvent<EventBuymenuClose>.GetName() => "buymenu_close";
 

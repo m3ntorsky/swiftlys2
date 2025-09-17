@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBulletDamageImpl : TypedGameEvent<EventBulletDamage>, EventBulletDamage
 {
 
-  public EventBulletDamageImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // player index who was hurt
   public int Victim

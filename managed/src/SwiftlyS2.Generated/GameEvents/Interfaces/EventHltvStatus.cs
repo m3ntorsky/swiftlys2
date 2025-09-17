@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHltvStatus : ITypedGameEvent<EventHltvStatus> {
 
-  static EventHltvStatus ITypedGameEvent<EventHltvStatus>.Wrap(IGameEvent accessor) => new EventHltvStatusImpl(accessor);
+  static EventHltvStatus ITypedGameEvent<EventHltvStatus>.Create() => new EventHltvStatusImpl();
 
   static string ITypedGameEvent<EventHltvStatus>.GetName() => "hltv_status";
 

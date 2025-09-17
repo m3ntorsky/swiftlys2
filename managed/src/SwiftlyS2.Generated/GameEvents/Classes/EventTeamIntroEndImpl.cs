@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventTeamIntroEndImpl : TypedGameEvent<EventTeamIntroEnd>, EventTeamIntroEnd
 {
 
-  public EventTeamIntroEndImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

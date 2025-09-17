@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventMaterialDefaultComplete : ITypedGameEvent<EventMaterialDefaultComplete> {
 
-  static EventMaterialDefaultComplete ITypedGameEvent<EventMaterialDefaultComplete>.Wrap(IGameEvent accessor) => new EventMaterialDefaultCompleteImpl(accessor);
+  static EventMaterialDefaultComplete ITypedGameEvent<EventMaterialDefaultComplete>.Create() => new EventMaterialDefaultCompleteImpl();
 
   static string ITypedGameEvent<EventMaterialDefaultComplete>.GetName() => "material_default_complete";
 

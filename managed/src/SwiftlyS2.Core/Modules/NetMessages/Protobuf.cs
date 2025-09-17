@@ -5,16 +5,25 @@ using SwiftlyS2.Shared.NetMessages;
 
 namespace SwiftlyS2.Core.NetMessages;
 
-internal class Protobuf : AllocableNativeHandle, IProtobuf {
+internal class Protobuf : IProtobuf {
 
-  public Protobuf(nint handle) : base(handle, false) {
+  private INativeHandle _Handle { get; set; }
+  public bool IsInvalid { get; set; } = false;
+  public unsafe nint GetHandle() {
+    if (IsInvalid) {
+      throw new InvalidOperationException("Accessing a invalid protobuf accessor");
+    }
+    return _Handle.GetHandle();
   }
 
-  protected override bool Free() {
-    return true;
-    // NativeNetMessages.Free(GetHandle());
+  public Protobuf(INativeHandle handle) {
+    _Handle = handle;
   }
 
+  internal void MarkAsInvalid()
+  {
+    IsInvalid = true;
+  }
 
   public bool GetBool(string fieldName)
   {
@@ -389,13 +398,6 @@ internal class Protobuf : AllocableNativeHandle, IProtobuf {
     }
     else if (typeof(T) == typeof(QAngle)) {
       return (T)(object)GetQAngle(fieldName);
-    }
-    else if (typeof(T) == typeof(IProtobuf))
-    {
-      return (T)(object)GetNestedMessage(fieldName);
-    }
-    else if (typeof(T) == typeof(IProtobuf<>)) {
-      return (T)(object)GetNestedMessage(fieldName);
     }
     throw new InvalidOperationException($"Invalid type: {typeof(T)}");
   }

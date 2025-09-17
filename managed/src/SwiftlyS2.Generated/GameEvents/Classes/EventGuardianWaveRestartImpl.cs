@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventGuardianWaveRestartImpl : TypedGameEvent<EventGuardianWaveRestart>, EventGuardianWaveRestart
 {
 
-  public EventGuardianWaveRestartImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventSurvivalParadropBreak : ITypedGameEvent<EventSurvivalParadropBreak> {
 
-  static EventSurvivalParadropBreak ITypedGameEvent<EventSurvivalParadropBreak>.Wrap(IGameEvent accessor) => new EventSurvivalParadropBreakImpl(accessor);
+  static EventSurvivalParadropBreak ITypedGameEvent<EventSurvivalParadropBreak>.Create() => new EventSurvivalParadropBreakImpl();
 
   static string ITypedGameEvent<EventSurvivalParadropBreak>.GetName() => "survival_paradrop_break";
 

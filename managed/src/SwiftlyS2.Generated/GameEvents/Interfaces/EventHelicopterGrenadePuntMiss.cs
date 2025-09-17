@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHelicopterGrenadePuntMiss : ITypedGameEvent<EventHelicopterGrenadePuntMiss> {
 
-  static EventHelicopterGrenadePuntMiss ITypedGameEvent<EventHelicopterGrenadePuntMiss>.Wrap(IGameEvent accessor) => new EventHelicopterGrenadePuntMissImpl(accessor);
+  static EventHelicopterGrenadePuntMiss ITypedGameEvent<EventHelicopterGrenadePuntMiss>.Create() => new EventHelicopterGrenadePuntMissImpl();
 
   static string ITypedGameEvent<EventHelicopterGrenadePuntMiss>.GetName() => "helicopter_grenade_punt_miss";
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventBotTakeover : ITypedGameEvent<EventBotTakeover> {
 
-  static EventBotTakeover ITypedGameEvent<EventBotTakeover>.Wrap(IGameEvent accessor) => new EventBotTakeoverImpl(accessor);
+  static EventBotTakeover ITypedGameEvent<EventBotTakeover>.Create() => new EventBotTakeoverImpl();
 
   static string ITypedGameEvent<EventBotTakeover>.GetName() => "bot_takeover";
 

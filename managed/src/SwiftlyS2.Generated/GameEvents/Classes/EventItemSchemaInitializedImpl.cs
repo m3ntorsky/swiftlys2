@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventItemSchemaInitializedImpl : TypedGameEvent<EventItemSchemaInitialized>, EventItemSchemaInitialized
 {
 
-  public EventItemSchemaInitializedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

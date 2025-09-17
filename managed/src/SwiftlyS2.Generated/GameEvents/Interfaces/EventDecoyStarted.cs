@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventDecoyStarted : ITypedGameEvent<EventDecoyStarted> {
 
-  static EventDecoyStarted ITypedGameEvent<EventDecoyStarted>.Wrap(IGameEvent accessor) => new EventDecoyStartedImpl(accessor);
+  static EventDecoyStarted ITypedGameEvent<EventDecoyStarted>.Create() => new EventDecoyStartedImpl();
 
   static string ITypedGameEvent<EventDecoyStarted>.GetName() => "decoy_started";
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventGameinstructorDraw : ITypedGameEvent<EventGameinstructorDraw> {
 
-  static EventGameinstructorDraw ITypedGameEvent<EventGameinstructorDraw>.Wrap(IGameEvent accessor) => new EventGameinstructorDrawImpl(accessor);
+  static EventGameinstructorDraw ITypedGameEvent<EventGameinstructorDraw>.Create() => new EventGameinstructorDrawImpl();
 
   static string ITypedGameEvent<EventGameinstructorDraw>.GetName() => "gameinstructor_draw";
 

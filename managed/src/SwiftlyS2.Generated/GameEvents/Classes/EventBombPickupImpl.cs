@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBombPickupImpl : TypedGameEvent<EventBombPickup>, EventBombPickup
 {
 
-  public EventBombPickupImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // player pawn who picked up the bomb
   public CCSPlayerController UserId

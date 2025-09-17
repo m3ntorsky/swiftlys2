@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventLocalPlayerTeamImpl : TypedGameEvent<EventLocalPlayerTeam>, EventLocalPlayerTeam
 {
 
-  public EventLocalPlayerTeamImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

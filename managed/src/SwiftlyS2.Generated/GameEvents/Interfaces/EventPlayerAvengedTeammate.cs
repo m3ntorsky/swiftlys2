@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerAvengedTeammate : ITypedGameEvent<EventPlayerAvengedTeammate> {
 
-  static EventPlayerAvengedTeammate ITypedGameEvent<EventPlayerAvengedTeammate>.Wrap(IGameEvent accessor) => new EventPlayerAvengedTeammateImpl(accessor);
+  static EventPlayerAvengedTeammate ITypedGameEvent<EventPlayerAvengedTeammate>.Create() => new EventPlayerAvengedTeammateImpl();
 
   static string ITypedGameEvent<EventPlayerAvengedTeammate>.GetName() => "player_avenged_teammate";
 

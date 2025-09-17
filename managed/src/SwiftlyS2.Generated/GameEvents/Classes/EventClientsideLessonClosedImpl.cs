@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventClientsideLessonClosedImpl : TypedGameEvent<EventClientsideLessonClosed>, EventClientsideLessonClosed
 {
 
-  public EventClientsideLessonClosedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public string LessonName
   { get => Accessor.GetString("lesson_name"); set => Accessor.SetString("lesson_name", value); }

@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventFinaleStartImpl : TypedGameEvent<EventFinaleStart>, EventFinaleStart
 {
 
-  public EventFinaleStartImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public short Rushes
   { get => (short)Accessor.GetInt32("rushes"); set => Accessor.SetInt32("rushes", value); }

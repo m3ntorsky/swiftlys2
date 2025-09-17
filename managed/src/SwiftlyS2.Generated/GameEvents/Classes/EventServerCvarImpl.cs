@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventServerCvarImpl : TypedGameEvent<EventServerCvar>, EventServerCvar
 {
 
-  public EventServerCvarImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // cvar name, eg "mp_roundtime"
   public string CVarName

@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHltvMessage : ITypedGameEvent<EventHltvMessage> {
 
-  static EventHltvMessage ITypedGameEvent<EventHltvMessage>.Wrap(IGameEvent accessor) => new EventHltvMessageImpl(accessor);
+  static EventHltvMessage ITypedGameEvent<EventHltvMessage>.Create() => new EventHltvMessageImpl();
 
   static string ITypedGameEvent<EventHltvMessage>.GetName() => "hltv_message";
 

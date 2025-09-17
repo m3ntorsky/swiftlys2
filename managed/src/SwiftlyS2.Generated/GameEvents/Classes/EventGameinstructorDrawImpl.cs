@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventGameinstructorDrawImpl : TypedGameEvent<EventGameinstructorDraw>, EventGameinstructorDraw
 {
 
-  public EventGameinstructorDrawImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

@@ -2,6 +2,7 @@ using System.Reflection;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Services;
+using SwiftlyS2.Shared.GameEventDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.Misc;
 
@@ -74,11 +75,40 @@ internal class GameEventService : IGameEventService, IDisposable {
     }
   }
 
-  public T Create<T>() where T : ITypedGameEvent<T> {
-    unsafe {
-      var accessor = new GameEvent((nint)NativeGameEvents.CreateEvent(T.GetName()), true);
-      return T.Wrap(accessor);
-    }
+  public void Fire<T>() where T : ITypedGameEvent<T> {
+    // TODO: implement with all players
+  }
+
+  public void Fire<T>(Action<T> configureEvent) where T : ITypedGameEvent<T> {
+    // TODO: implement with all players
+  }
+
+  public void FireToPlayer<T>(int slot) where T : ITypedGameEvent<T> {
+    var handle = NativeGameEvents.CreateEvent(T.GetName());
+    NativeGameEvents.FireEventToClient(handle, slot);
+    NativeGameEvents.FreeEvent(handle);
+  }
+
+  public void FireToPlayer<T>(int slot, Action<T> configureEvent) where T : ITypedGameEvent<T> {
+    var handle = NativeGameEvents.CreateEvent(T.GetName());
+    var eventObj = GameEventSingletonWrapper<T>.Borrow(handle);
+    configureEvent(eventObj);
+    NativeGameEvents.FireEventToClient(handle, slot);
+    GameEventSingletonWrapper<T>.Return();
+    NativeGameEvents.FreeEvent(handle);
+  }
+
+  public void FireToServer<T>() where T : ITypedGameEvent<T> {
+    var handle = NativeGameEvents.CreateEvent(T.GetName());
+    NativeGameEvents.FireEvent(handle, true);
+  }
+
+  public void FireToServer<T>(Action<T> configureEvent) where T : ITypedGameEvent<T> {
+    var handle = NativeGameEvents.CreateEvent(T.GetName());
+    var eventObj = GameEventSingletonWrapper<T>.Borrow(handle);
+    configureEvent(eventObj);
+    NativeGameEvents.FireEvent(handle, true);
+    GameEventSingletonWrapper<T>.Return();
   }
 
   public void Dispose() {

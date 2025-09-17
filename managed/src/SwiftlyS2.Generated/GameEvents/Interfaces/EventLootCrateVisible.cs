@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventLootCrateVisible : ITypedGameEvent<EventLootCrateVisible> {
 
-  static EventLootCrateVisible ITypedGameEvent<EventLootCrateVisible>.Wrap(IGameEvent accessor) => new EventLootCrateVisibleImpl(accessor);
+  static EventLootCrateVisible ITypedGameEvent<EventLootCrateVisible>.Create() => new EventLootCrateVisibleImpl();
 
   static string ITypedGameEvent<EventLootCrateVisible>.GetName() => "loot_crate_visible";
 

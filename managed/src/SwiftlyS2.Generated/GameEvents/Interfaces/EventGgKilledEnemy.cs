@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventGgKilledEnemy : ITypedGameEvent<EventGgKilledEnemy> {
 
-  static EventGgKilledEnemy ITypedGameEvent<EventGgKilledEnemy>.Wrap(IGameEvent accessor) => new EventGgKilledEnemyImpl(accessor);
+  static EventGgKilledEnemy ITypedGameEvent<EventGgKilledEnemy>.Create() => new EventGgKilledEnemyImpl();
 
   static string ITypedGameEvent<EventGgKilledEnemy>.GetName() => "gg_killed_enemy";
 

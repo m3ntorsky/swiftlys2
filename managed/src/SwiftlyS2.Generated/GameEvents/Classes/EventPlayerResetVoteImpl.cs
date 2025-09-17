@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerResetVoteImpl : TypedGameEvent<EventPlayerResetVote>, EventPlayerResetVote
 {
 
-  public EventPlayerResetVoteImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

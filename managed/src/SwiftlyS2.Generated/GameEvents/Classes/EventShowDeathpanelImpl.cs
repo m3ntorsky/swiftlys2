@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventShowDeathpanelImpl : TypedGameEvent<EventShowDeathpanel>, EventShowDeathpanel
 {
 
-  public EventShowDeathpanelImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // endindex of the one who was killed
   public int Victim

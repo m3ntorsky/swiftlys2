@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerConnectFullImpl : TypedGameEvent<EventPlayerConnectFull>, EventPlayerConnectFull
 {
 
-  public EventPlayerConnectFullImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // user ID on server (unique on server)
   public CCSPlayerController UserId

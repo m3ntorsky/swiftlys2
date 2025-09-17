@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventServerSpawn : ITypedGameEvent<EventServerSpawn> {
 
-  static EventServerSpawn ITypedGameEvent<EventServerSpawn>.Wrap(IGameEvent accessor) => new EventServerSpawnImpl(accessor);
+  static EventServerSpawn ITypedGameEvent<EventServerSpawn>.Create() => new EventServerSpawnImpl();
 
   static string ITypedGameEvent<EventServerSpawn>.GetName() => "server_spawn";
 

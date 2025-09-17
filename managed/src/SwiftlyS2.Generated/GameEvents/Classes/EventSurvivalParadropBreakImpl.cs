@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventSurvivalParadropBreakImpl : TypedGameEvent<EventSurvivalParadropBreak>, EventSurvivalParadropBreak
 {
 
-  public EventSurvivalParadropBreakImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public short EntityID
   { get => (short)Accessor.GetInt32("entityid"); set => Accessor.SetInt32("entityid", value); }

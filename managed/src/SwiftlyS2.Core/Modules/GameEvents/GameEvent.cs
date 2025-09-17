@@ -1,4 +1,5 @@
 using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Core.Natives.NativeObjects;
 using SwiftlyS2.Core.SchemaDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.Natives;
@@ -6,35 +7,19 @@ using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Core.GameEvents;
 
-internal class GameEvent : AllocableNativeHandle, IGameEvent {
+internal class GameEvent : NativeHandle, IGameEvent {
 
   public bool DontBroadcast { get; set; }
 
-  private bool _IsFired { get; set; } = false;
+  internal GameEvent() : base(0) {
+  }
+
+  public void InternalSet(nint handle) {
+    _Handle = handle;
+  }
 
   private void CheckIsValid() {
-    if (_IsFired) throw new InvalidOperationException("Re-using a fired event is not allowed.");
-  }
-
-  internal GameEvent(nint handle, bool isManuallyAllocated) : base(handle, isManuallyAllocated) {
-  }
-
-  public void Fire() {
-    CheckIsValid();
-    NativeGameEvents.FireEvent(GetHandle(), DontBroadcast);
-    _IsFired = true;
-  }
-
-  public void FireToClient(int clientId) {
-    CheckIsValid();
-    NativeGameEvents.FireEventToClient(GetHandle(), clientId);
-    // _IsFired = true;
-  }
-
-  protected override bool Free() {
-    if (_IsFired) return true;;
-    NativeGameEvents.FreeEvent(GetHandle());
-    return true;
+    if (_Handle == 0) throw new InvalidOperationException("The event is not initialized.");
   }
 
   public void SetBool(string key, bool value) {

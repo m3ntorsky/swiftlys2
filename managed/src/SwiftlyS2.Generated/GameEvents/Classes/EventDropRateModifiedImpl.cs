@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDropRateModifiedImpl : TypedGameEvent<EventDropRateModified>, EventDropRateModified
 {
 
-  public EventDropRateModifiedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

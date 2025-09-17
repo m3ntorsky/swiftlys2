@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventSeasoncoinLevelup : ITypedGameEvent<EventSeasoncoinLevelup> {
 
-  static EventSeasoncoinLevelup ITypedGameEvent<EventSeasoncoinLevelup>.Wrap(IGameEvent accessor) => new EventSeasoncoinLevelupImpl(accessor);
+  static EventSeasoncoinLevelup ITypedGameEvent<EventSeasoncoinLevelup>.Create() => new EventSeasoncoinLevelupImpl();
 
   static string ITypedGameEvent<EventSeasoncoinLevelup>.GetName() => "seasoncoin_levelup";
 

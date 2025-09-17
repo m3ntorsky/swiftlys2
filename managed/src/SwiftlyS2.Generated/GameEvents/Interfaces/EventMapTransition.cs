@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventMapTransition : ITypedGameEvent<EventMapTransition> {
 
-  static EventMapTransition ITypedGameEvent<EventMapTransition>.Wrap(IGameEvent accessor) => new EventMapTransitionImpl(accessor);
+  static EventMapTransition ITypedGameEvent<EventMapTransition>.Create() => new EventMapTransitionImpl();
 
   static string ITypedGameEvent<EventMapTransition>.GetName() => "map_transition";
 

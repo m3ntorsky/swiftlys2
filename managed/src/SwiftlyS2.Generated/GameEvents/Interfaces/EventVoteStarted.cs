@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventVoteStarted : ITypedGameEvent<EventVoteStarted> {
 
-  static EventVoteStarted ITypedGameEvent<EventVoteStarted>.Wrap(IGameEvent accessor) => new EventVoteStartedImpl(accessor);
+  static EventVoteStarted ITypedGameEvent<EventVoteStarted>.Create() => new EventVoteStartedImpl();
 
   static string ITypedGameEvent<EventVoteStarted>.GetName() => "vote_started";
 

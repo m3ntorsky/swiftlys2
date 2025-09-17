@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerBlind : ITypedGameEvent<EventPlayerBlind> {
 
-  static EventPlayerBlind ITypedGameEvent<EventPlayerBlind>.Wrap(IGameEvent accessor) => new EventPlayerBlindImpl(accessor);
+  static EventPlayerBlind ITypedGameEvent<EventPlayerBlind>.Create() => new EventPlayerBlindImpl();
 
   static string ITypedGameEvent<EventPlayerBlind>.GetName() => "player_blind";
 

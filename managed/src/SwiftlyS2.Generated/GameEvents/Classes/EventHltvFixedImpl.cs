@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHltvFixedImpl : TypedGameEvent<EventHltvFixed>, EventHltvFixed
 {
 
-  public EventHltvFixedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // camera position in world
   public int PosX

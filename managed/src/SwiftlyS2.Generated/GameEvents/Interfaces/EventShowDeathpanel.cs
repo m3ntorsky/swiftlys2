@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventShowDeathpanel : ITypedGameEvent<EventShowDeathpanel> {
 
-  static EventShowDeathpanel ITypedGameEvent<EventShowDeathpanel>.Wrap(IGameEvent accessor) => new EventShowDeathpanelImpl(accessor);
+  static EventShowDeathpanel ITypedGameEvent<EventShowDeathpanel>.Create() => new EventShowDeathpanelImpl();
 
   static string ITypedGameEvent<EventShowDeathpanel>.GetName() => "show_deathpanel";
 

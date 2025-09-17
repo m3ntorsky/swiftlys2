@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHltvRankEntityImpl : TypedGameEvent<EventHltvRankEntity>, EventHltvRankEntity
 {
 
-  public EventHltvRankEntityImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // player slot
   public CCSPlayerController UserId

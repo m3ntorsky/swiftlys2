@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventCsWinPanelMatchImpl : TypedGameEvent<EventCsWinPanelMatch>, EventCsWinPanelMatch
 {
 
-  public EventCsWinPanelMatchImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

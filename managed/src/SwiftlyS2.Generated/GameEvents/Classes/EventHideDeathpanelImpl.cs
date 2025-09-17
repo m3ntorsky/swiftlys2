@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHideDeathpanelImpl : TypedGameEvent<EventHideDeathpanel>, EventHideDeathpanel
 {
 
-  public EventHideDeathpanelImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

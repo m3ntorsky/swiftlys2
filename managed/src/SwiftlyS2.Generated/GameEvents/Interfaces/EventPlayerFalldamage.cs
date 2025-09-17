@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerFalldamage : ITypedGameEvent<EventPlayerFalldamage> {
 
-  static EventPlayerFalldamage ITypedGameEvent<EventPlayerFalldamage>.Wrap(IGameEvent accessor) => new EventPlayerFalldamageImpl(accessor);
+  static EventPlayerFalldamage ITypedGameEvent<EventPlayerFalldamage>.Create() => new EventPlayerFalldamageImpl();
 
   static string ITypedGameEvent<EventPlayerFalldamage>.GetName() => "player_falldamage";
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventGameuiHidden : ITypedGameEvent<EventGameuiHidden> {
 
-  static EventGameuiHidden ITypedGameEvent<EventGameuiHidden>.Wrap(IGameEvent accessor) => new EventGameuiHiddenImpl(accessor);
+  static EventGameuiHidden ITypedGameEvent<EventGameuiHidden>.Create() => new EventGameuiHiddenImpl();
 
   static string ITypedGameEvent<EventGameuiHidden>.GetName() => "gameui_hidden";
 

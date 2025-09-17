@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerFootstepImpl : TypedGameEvent<EventPlayerFootstep>, EventPlayerFootstep
 {
 
-  public EventPlayerFootstepImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

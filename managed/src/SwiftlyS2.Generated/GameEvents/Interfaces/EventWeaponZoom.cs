@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventWeaponZoom : ITypedGameEvent<EventWeaponZoom> {
 
-  static EventWeaponZoom ITypedGameEvent<EventWeaponZoom>.Wrap(IGameEvent accessor) => new EventWeaponZoomImpl(accessor);
+  static EventWeaponZoom ITypedGameEvent<EventWeaponZoom>.Create() => new EventWeaponZoomImpl();
 
   static string ITypedGameEvent<EventWeaponZoom>.GetName() => "weapon_zoom";
 

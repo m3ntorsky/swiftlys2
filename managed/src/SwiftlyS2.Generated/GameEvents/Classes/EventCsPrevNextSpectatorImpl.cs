@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventCsPrevNextSpectatorImpl : TypedGameEvent<EventCsPrevNextSpectator>, EventCsPrevNextSpectator
 {
 
-  public EventCsPrevNextSpectatorImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public bool Next
   { get => Accessor.GetBool("next"); set => Accessor.SetBool("next", value); }

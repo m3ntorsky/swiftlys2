@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventAchievementInfoLoaded : ITypedGameEvent<EventAchievementInfoLoaded> {
 
-  static EventAchievementInfoLoaded ITypedGameEvent<EventAchievementInfoLoaded>.Wrap(IGameEvent accessor) => new EventAchievementInfoLoadedImpl(accessor);
+  static EventAchievementInfoLoaded ITypedGameEvent<EventAchievementInfoLoaded>.Create() => new EventAchievementInfoLoadedImpl();
 
   static string ITypedGameEvent<EventAchievementInfoLoaded>.GetName() => "achievement_info_loaded";
 

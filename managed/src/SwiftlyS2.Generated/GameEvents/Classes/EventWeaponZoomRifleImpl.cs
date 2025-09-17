@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventWeaponZoomRifleImpl : TypedGameEvent<EventWeaponZoomRifle>, EventWeaponZoomRifle
 {
 
-  public EventWeaponZoomRifleImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

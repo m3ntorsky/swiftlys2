@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventChoppersIncomingWarning : ITypedGameEvent<EventChoppersIncomingWarning> {
 
-  static EventChoppersIncomingWarning ITypedGameEvent<EventChoppersIncomingWarning>.Wrap(IGameEvent accessor) => new EventChoppersIncomingWarningImpl(accessor);
+  static EventChoppersIncomingWarning ITypedGameEvent<EventChoppersIncomingWarning>.Create() => new EventChoppersIncomingWarningImpl();
 
   static string ITypedGameEvent<EventChoppersIncomingWarning>.GetName() => "choppers_incoming_warning";
 

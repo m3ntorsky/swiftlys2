@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventWeaponReloadImpl : TypedGameEvent<EventWeaponReload>, EventWeaponReload
 {
 
-  public EventWeaponReloadImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

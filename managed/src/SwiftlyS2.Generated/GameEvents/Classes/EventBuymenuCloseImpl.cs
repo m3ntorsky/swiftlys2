@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBuymenuCloseImpl : TypedGameEvent<EventBuymenuClose>, EventBuymenuClose
 {
 
-  public EventBuymenuCloseImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

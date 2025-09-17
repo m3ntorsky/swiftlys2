@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventDifficultyChanged : ITypedGameEvent<EventDifficultyChanged> {
 
-  static EventDifficultyChanged ITypedGameEvent<EventDifficultyChanged>.Wrap(IGameEvent accessor) => new EventDifficultyChangedImpl(accessor);
+  static EventDifficultyChanged ITypedGameEvent<EventDifficultyChanged>.Create() => new EventDifficultyChangedImpl();
 
   static string ITypedGameEvent<EventDifficultyChanged>.GetName() => "difficulty_changed";
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventRoundMvp : ITypedGameEvent<EventRoundMvp> {
 
-  static EventRoundMvp ITypedGameEvent<EventRoundMvp>.Wrap(IGameEvent accessor) => new EventRoundMvpImpl(accessor);
+  static EventRoundMvp ITypedGameEvent<EventRoundMvp>.Create() => new EventRoundMvpImpl();
 
   static string ITypedGameEvent<EventRoundMvp>.GetName() => "round_mvp";
 

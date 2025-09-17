@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventWeaponReload : ITypedGameEvent<EventWeaponReload> {
 
-  static EventWeaponReload ITypedGameEvent<EventWeaponReload>.Wrap(IGameEvent accessor) => new EventWeaponReloadImpl(accessor);
+  static EventWeaponReload ITypedGameEvent<EventWeaponReload>.Create() => new EventWeaponReloadImpl();
 
   static string ITypedGameEvent<EventWeaponReload>.GetName() => "weapon_reload";
 

@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHostageRescuedImpl : TypedGameEvent<EventHostageRescued>, EventHostageRescued
 {
 
-  public EventHostageRescuedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // player who rescued the hostage
   public CCSPlayerController UserId

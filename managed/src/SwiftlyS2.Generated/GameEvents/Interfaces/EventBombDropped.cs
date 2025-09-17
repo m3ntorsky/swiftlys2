@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventBombDropped : ITypedGameEvent<EventBombDropped> {
 
-  static EventBombDropped ITypedGameEvent<EventBombDropped>.Wrap(IGameEvent accessor) => new EventBombDroppedImpl(accessor);
+  static EventBombDropped ITypedGameEvent<EventBombDropped>.Create() => new EventBombDroppedImpl();
 
   static string ITypedGameEvent<EventBombDropped>.GetName() => "bomb_dropped";
 

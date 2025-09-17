@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHostageHurt : ITypedGameEvent<EventHostageHurt> {
 
-  static EventHostageHurt ITypedGameEvent<EventHostageHurt>.Wrap(IGameEvent accessor) => new EventHostageHurtImpl(accessor);
+  static EventHostageHurt ITypedGameEvent<EventHostageHurt>.Create() => new EventHostageHurtImpl();
 
   static string ITypedGameEvent<EventHostageHurt>.GetName() => "hostage_hurt";
 

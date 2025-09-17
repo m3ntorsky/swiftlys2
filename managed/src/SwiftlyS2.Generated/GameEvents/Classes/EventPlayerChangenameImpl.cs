@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerChangenameImpl : TypedGameEvent<EventPlayerChangename>, EventPlayerChangename
 {
 
-  public EventPlayerChangenameImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // user ID on server
   public CCSPlayerController UserId

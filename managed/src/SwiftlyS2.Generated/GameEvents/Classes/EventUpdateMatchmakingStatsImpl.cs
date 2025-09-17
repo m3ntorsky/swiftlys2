@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventUpdateMatchmakingStatsImpl : TypedGameEvent<EventUpdateMatchmakingStats>, EventUpdateMatchmakingStats
 {
 
-  public EventUpdateMatchmakingStatsImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

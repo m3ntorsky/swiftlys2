@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventFirstbombsIncomingWarning : ITypedGameEvent<EventFirstbombsIncomingWarning> {
 
-  static EventFirstbombsIncomingWarning ITypedGameEvent<EventFirstbombsIncomingWarning>.Wrap(IGameEvent accessor) => new EventFirstbombsIncomingWarningImpl(accessor);
+  static EventFirstbombsIncomingWarning ITypedGameEvent<EventFirstbombsIncomingWarning>.Create() => new EventFirstbombsIncomingWarningImpl();
 
   static string ITypedGameEvent<EventFirstbombsIncomingWarning>.GetName() => "firstbombs_incoming_warning";
 

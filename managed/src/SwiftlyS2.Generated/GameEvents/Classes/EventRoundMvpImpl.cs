@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventRoundMvpImpl : TypedGameEvent<EventRoundMvp>, EventRoundMvp
 {
 
-  public EventRoundMvpImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

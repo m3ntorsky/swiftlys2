@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerPing : ITypedGameEvent<EventPlayerPing> {
 
-  static EventPlayerPing ITypedGameEvent<EventPlayerPing>.Wrap(IGameEvent accessor) => new EventPlayerPingImpl(accessor);
+  static EventPlayerPing ITypedGameEvent<EventPlayerPing>.Create() => new EventPlayerPingImpl();
 
   static string ITypedGameEvent<EventPlayerPing>.GetName() => "player_ping";
 

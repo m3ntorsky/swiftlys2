@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBonusUpdatedImpl : TypedGameEvent<EventBonusUpdated>, EventBonusUpdated
 {
 
-  public EventBonusUpdatedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public short NumAdvanced
   { get => (short)Accessor.GetInt32("numadvanced"); set => Accessor.SetInt32("numadvanced", value); }

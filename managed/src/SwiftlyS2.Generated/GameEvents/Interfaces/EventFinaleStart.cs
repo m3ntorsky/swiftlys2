@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventFinaleStart : ITypedGameEvent<EventFinaleStart> {
 
-  static EventFinaleStart ITypedGameEvent<EventFinaleStart>.Wrap(IGameEvent accessor) => new EventFinaleStartImpl(accessor);
+  static EventFinaleStart ITypedGameEvent<EventFinaleStart>.Create() => new EventFinaleStartImpl();
 
   static string ITypedGameEvent<EventFinaleStart>.GetName() => "finale_start";
 

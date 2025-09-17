@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBuytimeEndedImpl : TypedGameEvent<EventBuytimeEnded>, EventBuytimeEnded
 {
 
-  public EventBuytimeEndedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventItemPickupFailedImpl : TypedGameEvent<EventItemPickupFailed>, EventItemPickupFailed
 {
 
-  public EventItemPickupFailedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

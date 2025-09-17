@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerFullUpdateImpl : TypedGameEvent<EventPlayerFullUpdate>, EventPlayerFullUpdate
 {
 
-  public EventPlayerFullUpdateImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // user ID on server
   public CCSPlayerController UserId

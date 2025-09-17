@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHostageCallForHelpImpl : TypedGameEvent<EventHostageCallForHelp>, EventHostageCallForHelp
 {
 
-  public EventHostageCallForHelpImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // hostage entity index
   public short Hostage

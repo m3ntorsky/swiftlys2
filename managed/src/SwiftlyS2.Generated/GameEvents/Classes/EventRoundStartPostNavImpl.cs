@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventRoundStartPostNavImpl : TypedGameEvent<EventRoundStartPostNav>, EventRoundStartPostNav
 {
 
-  public EventRoundStartPostNavImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventSilencerOn : ITypedGameEvent<EventSilencerOn> {
 
-  static EventSilencerOn ITypedGameEvent<EventSilencerOn>.Wrap(IGameEvent accessor) => new EventSilencerOnImpl(accessor);
+  static EventSilencerOn ITypedGameEvent<EventSilencerOn>.Create() => new EventSilencerOnImpl();
 
   static string ITypedGameEvent<EventSilencerOn>.GetName() => "silencer_on";
 

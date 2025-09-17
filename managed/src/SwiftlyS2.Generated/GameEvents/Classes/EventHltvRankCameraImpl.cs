@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHltvRankCameraImpl : TypedGameEvent<EventHltvRankCamera>, EventHltvRankCamera
 {
 
-  public EventHltvRankCameraImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // fixed camera index
   public byte Index

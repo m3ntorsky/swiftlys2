@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventInspectWeapon : ITypedGameEvent<EventInspectWeapon> {
 
-  static EventInspectWeapon ITypedGameEvent<EventInspectWeapon>.Wrap(IGameEvent accessor) => new EventInspectWeaponImpl(accessor);
+  static EventInspectWeapon ITypedGameEvent<EventInspectWeapon>.Create() => new EventInspectWeaponImpl();
 
   static string ITypedGameEvent<EventInspectWeapon>.GetName() => "inspect_weapon";
 

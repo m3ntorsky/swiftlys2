@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerHintmessage : ITypedGameEvent<EventPlayerHintmessage> {
 
-  static EventPlayerHintmessage ITypedGameEvent<EventPlayerHintmessage>.Wrap(IGameEvent accessor) => new EventPlayerHintmessageImpl(accessor);
+  static EventPlayerHintmessage ITypedGameEvent<EventPlayerHintmessage>.Create() => new EventPlayerHintmessageImpl();
 
   static string ITypedGameEvent<EventPlayerHintmessage>.GetName() => "player_hintmessage";
 

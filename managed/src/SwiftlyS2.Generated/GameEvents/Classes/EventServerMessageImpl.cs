@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventServerMessageImpl : TypedGameEvent<EventServerMessage>, EventServerMessage
 {
 
-  public EventServerMessageImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // the message text
   public string Text

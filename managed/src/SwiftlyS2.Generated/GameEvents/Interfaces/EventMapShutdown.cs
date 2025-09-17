@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventMapShutdown : ITypedGameEvent<EventMapShutdown> {
 
-  static EventMapShutdown ITypedGameEvent<EventMapShutdown>.Wrap(IGameEvent accessor) => new EventMapShutdownImpl(accessor);
+  static EventMapShutdown ITypedGameEvent<EventMapShutdown>.Create() => new EventMapShutdownImpl();
 
   static string ITypedGameEvent<EventMapShutdown>.GetName() => "map_shutdown";
 

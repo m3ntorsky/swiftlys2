@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventAchievementEarnedLocalImpl : TypedGameEvent<EventAchievementEarnedLocal>, EventAchievementEarnedLocal
 {
 
-  public EventAchievementEarnedLocalImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // achievement ID
   public short Achievement

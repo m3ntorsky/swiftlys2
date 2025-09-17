@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventGamePhaseChangedImpl : TypedGameEvent<EventGamePhaseChanged>, EventGamePhaseChanged
 {
 
-  public EventGamePhaseChangedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public short NewPhase
   { get => (short)Accessor.GetInt32("new_phase"); set => Accessor.SetInt32("new_phase", value); }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventEnterRescueZone : ITypedGameEvent<EventEnterRescueZone> {
 
-  static EventEnterRescueZone ITypedGameEvent<EventEnterRescueZone>.Wrap(IGameEvent accessor) => new EventEnterRescueZoneImpl(accessor);
+  static EventEnterRescueZone ITypedGameEvent<EventEnterRescueZone>.Create() => new EventEnterRescueZoneImpl();
 
   static string ITypedGameEvent<EventEnterRescueZone>.GetName() => "enter_rescue_zone";
 

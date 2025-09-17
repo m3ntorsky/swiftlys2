@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDroneAboveRoofImpl : TypedGameEvent<EventDroneAboveRoof>, EventDroneAboveRoof
 {
 
-  public EventDroneAboveRoofImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

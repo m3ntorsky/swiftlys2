@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventVoteCastYes : ITypedGameEvent<EventVoteCastYes> {
 
-  static EventVoteCastYes ITypedGameEvent<EventVoteCastYes>.Wrap(IGameEvent accessor) => new EventVoteCastYesImpl(accessor);
+  static EventVoteCastYes ITypedGameEvent<EventVoteCastYes>.Create() => new EventVoteCastYesImpl();
 
   static string ITypedGameEvent<EventVoteCastYes>.GetName() => "vote_cast_yes";
 

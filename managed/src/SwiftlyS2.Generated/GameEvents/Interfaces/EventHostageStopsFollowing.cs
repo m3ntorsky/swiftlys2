@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHostageStopsFollowing : ITypedGameEvent<EventHostageStopsFollowing> {
 
-  static EventHostageStopsFollowing ITypedGameEvent<EventHostageStopsFollowing>.Wrap(IGameEvent accessor) => new EventHostageStopsFollowingImpl(accessor);
+  static EventHostageStopsFollowing ITypedGameEvent<EventHostageStopsFollowing>.Create() => new EventHostageStopsFollowingImpl();
 
   static string ITypedGameEvent<EventHostageStopsFollowing>.GetName() => "hostage_stops_following";
 

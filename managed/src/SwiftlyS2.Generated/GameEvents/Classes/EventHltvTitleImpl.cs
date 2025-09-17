@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHltvTitleImpl : TypedGameEvent<EventHltvTitle>, EventHltvTitle
 {
 
-  public EventHltvTitleImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public string Text
   { get => Accessor.GetString("text"); set => Accessor.SetString("text", value); }

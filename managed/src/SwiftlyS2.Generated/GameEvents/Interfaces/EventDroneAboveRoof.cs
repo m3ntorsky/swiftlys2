@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventDroneAboveRoof : ITypedGameEvent<EventDroneAboveRoof> {
 
-  static EventDroneAboveRoof ITypedGameEvent<EventDroneAboveRoof>.Wrap(IGameEvent accessor) => new EventDroneAboveRoofImpl(accessor);
+  static EventDroneAboveRoof ITypedGameEvent<EventDroneAboveRoof>.Create() => new EventDroneAboveRoofImpl();
 
   static string ITypedGameEvent<EventDroneAboveRoof>.GetName() => "drone_above_roof";
 

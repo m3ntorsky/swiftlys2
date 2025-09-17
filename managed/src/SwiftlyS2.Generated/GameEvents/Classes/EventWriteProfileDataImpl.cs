@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventWriteProfileDataImpl : TypedGameEvent<EventWriteProfileData>, EventWriteProfileData
 {
 
-  public EventWriteProfileDataImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventItemRemove : ITypedGameEvent<EventItemRemove> {
 
-  static EventItemRemove ITypedGameEvent<EventItemRemove>.Wrap(IGameEvent accessor) => new EventItemRemoveImpl(accessor);
+  static EventItemRemove ITypedGameEvent<EventItemRemove>.Create() => new EventItemRemoveImpl();
 
   static string ITypedGameEvent<EventItemRemove>.GetName() => "item_remove";
 

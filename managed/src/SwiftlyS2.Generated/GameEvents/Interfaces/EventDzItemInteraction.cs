@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventDzItemInteraction : ITypedGameEvent<EventDzItemInteraction> {
 
-  static EventDzItemInteraction ITypedGameEvent<EventDzItemInteraction>.Wrap(IGameEvent accessor) => new EventDzItemInteractionImpl(accessor);
+  static EventDzItemInteraction ITypedGameEvent<EventDzItemInteraction>.Create() => new EventDzItemInteractionImpl();
 
   static string ITypedGameEvent<EventDzItemInteraction>.GetName() => "dz_item_interaction";
 

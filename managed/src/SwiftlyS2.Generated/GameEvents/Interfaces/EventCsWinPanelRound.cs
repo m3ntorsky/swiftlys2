@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventCsWinPanelRound : ITypedGameEvent<EventCsWinPanelRound> {
 
-  static EventCsWinPanelRound ITypedGameEvent<EventCsWinPanelRound>.Wrap(IGameEvent accessor) => new EventCsWinPanelRoundImpl(accessor);
+  static EventCsWinPanelRound ITypedGameEvent<EventCsWinPanelRound>.Create() => new EventCsWinPanelRoundImpl();
 
   static string ITypedGameEvent<EventCsWinPanelRound>.GetName() => "cs_win_panel_round";
 

@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBombDefusedImpl : TypedGameEvent<EventBombDefused>, EventBombDefused
 {
 
-  public EventBombDefusedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // player who defused the bomb
   public CCSPlayerController UserId

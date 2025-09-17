@@ -12,7 +12,4 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventAchievementWriteFailedImpl : TypedGameEvent<EventAchievementWriteFailed>, EventAchievementWriteFailed
 {
 
-  public EventAchievementWriteFailedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 }

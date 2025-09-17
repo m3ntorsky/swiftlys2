@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventGameNewmap : ITypedGameEvent<EventGameNewmap> {
 
-  static EventGameNewmap ITypedGameEvent<EventGameNewmap>.Wrap(IGameEvent accessor) => new EventGameNewmapImpl(accessor);
+  static EventGameNewmap ITypedGameEvent<EventGameNewmap>.Create() => new EventGameNewmapImpl();
 
   static string ITypedGameEvent<EventGameNewmap>.GetName() => "game_newmap";
 

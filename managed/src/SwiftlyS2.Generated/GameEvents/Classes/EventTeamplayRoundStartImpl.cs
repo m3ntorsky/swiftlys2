@@ -13,9 +13,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventTeamplayRoundStartImpl : TypedGameEvent<EventTeamplayRoundStart>, EventTeamplayRoundStart
 {
 
-  public EventTeamplayRoundStartImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // is this a full reset of the map
   public bool FullReset

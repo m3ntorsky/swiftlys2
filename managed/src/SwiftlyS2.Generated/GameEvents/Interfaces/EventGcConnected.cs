@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventGcConnected : ITypedGameEvent<EventGcConnected> {
 
-  static EventGcConnected ITypedGameEvent<EventGcConnected>.Wrap(IGameEvent accessor) => new EventGcConnectedImpl(accessor);
+  static EventGcConnected ITypedGameEvent<EventGcConnected>.Create() => new EventGcConnectedImpl();
 
   static string ITypedGameEvent<EventGcConnected>.GetName() => "gc_connected";
 

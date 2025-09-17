@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventSmokegrenadeExpiredImpl : TypedGameEvent<EventSmokegrenadeExpired>, EventSmokegrenadeExpired
 {
 
-  public EventSmokegrenadeExpiredImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   public CCSPlayerController UserId
   { get => Accessor.GetPlayerController("userid"); }

@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventRoundStartImpl : TypedGameEvent<EventRoundStart>, EventRoundStart
 {
 
-  public EventRoundStartImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // round time limit in seconds
   public int TimeLimit

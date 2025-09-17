@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventServerPreShutdown : ITypedGameEvent<EventServerPreShutdown> {
 
-  static EventServerPreShutdown ITypedGameEvent<EventServerPreShutdown>.Wrap(IGameEvent accessor) => new EventServerPreShutdownImpl(accessor);
+  static EventServerPreShutdown ITypedGameEvent<EventServerPreShutdown>.Create() => new EventServerPreShutdownImpl();
 
   static string ITypedGameEvent<EventServerPreShutdown>.GetName() => "server_pre_shutdown";
 

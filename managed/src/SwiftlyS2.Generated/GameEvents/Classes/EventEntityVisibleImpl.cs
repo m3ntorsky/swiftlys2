@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventEntityVisibleImpl : TypedGameEvent<EventEntityVisible>, EventEntityVisible
 {
 
-  public EventEntityVisibleImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // The player who sees the entity
   public CCSPlayerController UserId

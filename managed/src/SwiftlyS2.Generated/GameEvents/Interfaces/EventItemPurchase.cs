@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventItemPurchase : ITypedGameEvent<EventItemPurchase> {
 
-  static EventItemPurchase ITypedGameEvent<EventItemPurchase>.Wrap(IGameEvent accessor) => new EventItemPurchaseImpl(accessor);
+  static EventItemPurchase ITypedGameEvent<EventItemPurchase>.Create() => new EventItemPurchaseImpl();
 
   static string ITypedGameEvent<EventItemPurchase>.GetName() => "item_purchase";
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerRadio : ITypedGameEvent<EventPlayerRadio> {
 
-  static EventPlayerRadio ITypedGameEvent<EventPlayerRadio>.Wrap(IGameEvent accessor) => new EventPlayerRadioImpl(accessor);
+  static EventPlayerRadio ITypedGameEvent<EventPlayerRadio>.Create() => new EventPlayerRadioImpl();
 
   static string ITypedGameEvent<EventPlayerRadio>.GetName() => "player_radio";
 

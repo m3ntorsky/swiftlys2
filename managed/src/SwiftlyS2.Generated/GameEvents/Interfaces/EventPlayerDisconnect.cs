@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerDisconnect : ITypedGameEvent<EventPlayerDisconnect> {
 
-  static EventPlayerDisconnect ITypedGameEvent<EventPlayerDisconnect>.Wrap(IGameEvent accessor) => new EventPlayerDisconnectImpl(accessor);
+  static EventPlayerDisconnect ITypedGameEvent<EventPlayerDisconnect>.Create() => new EventPlayerDisconnectImpl();
 
   static string ITypedGameEvent<EventPlayerDisconnect>.GetName() => "player_disconnect";
 

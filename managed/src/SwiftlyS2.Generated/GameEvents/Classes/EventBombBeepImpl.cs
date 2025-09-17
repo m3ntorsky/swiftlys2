@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBombBeepImpl : TypedGameEvent<EventBombBeep>, EventBombBeep
 {
 
-  public EventBombBeepImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // c4 entity
   public int EntIndex

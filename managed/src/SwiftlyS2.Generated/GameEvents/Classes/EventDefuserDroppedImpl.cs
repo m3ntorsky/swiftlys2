@@ -12,9 +12,6 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDefuserDroppedImpl : TypedGameEvent<EventDefuserDropped>, EventDefuserDropped
 {
 
-  public EventDefuserDroppedImpl(IGameEvent accessor) : base(accessor)
-  {
-  }
 
   // defuser's entity ID
   public int EntityID
