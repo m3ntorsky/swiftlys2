@@ -19,6 +19,9 @@
 #include "manager.h"
 
 #include <api/interfaces/manager.h>
+
+#include <api/shared/string.h>
+
 #include <core/bridge/metamod.h>
 
 #include <public/icvar.h>
@@ -26,7 +29,29 @@
 std::map<std::string, ConCommand*> conCommandCreated;
 std::map<uint64_t, std::string> conCommandMapping;
 
+std::map<std::string, std::function<void(int, std::vector<std::string>, std::string, std::string, bool)>> g_mCommandHandlers;
+
+std::map<uint64_t, std::function<bool(int, const std::string&)>> g_mClientCommandListeners;
+std::map<uint64_t, std::function<bool(int, const std::string&, bool)>> g_mClientChatListeners;
+
+std::set<std::string> commandPrefixes;
+std::set<std::string> silentCommandPrefixes;
+
 SH_DECL_EXTERN3_void(ICvar, DispatchConCommand, SH_NOATTRIB, 0, ConCommandRef, const CCommandContext&, const CCommand&);
+
+static void commandsCallback(const CCommandContext& context, const CCommand& args)
+{
+    CCommand tokenizedArgs;
+    tokenizedArgs.Tokenize(args.GetCommandString());
+
+    std::string commandName = tokenizedArgs[0];
+    if (!g_mCommandHandlers.contains(commandName)) return;
+
+    std::vector<std::string> argsplit = TokenizeCommand(args.GetCommandString());
+    argsplit.erase(argsplit.begin());
+
+    g_mCommandHandlers[commandName](context.GetPlayerSlot().Get(), argsplit, commandName, "sw_", true);
+}
 
 void CServerCommands::Initialize()
 {
@@ -46,46 +71,166 @@ void CServerCommands::Shutdown()
 // @returns 0 - is not command
 int CServerCommands::HandleCommand(int playerid, const std::string& text)
 {
-    return 0;
+    if (text == "" || text.size() == 0)
+        return -1;
+
+    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    auto configuration = g_ifaceService.FetchInterface<IConfiguration>(CONFIGURATION_INTERFACE_VERSION);
+
+    IPlayer* player = playermanager->GetPlayer(playerid);
+    if (player == nullptr)
+        return -1;
+
+    if (commandPrefixes.size() == 0) commandPrefixes = explodeToSet(std::get<std::string>(configuration->GetValue("core.CommandPrefixes")), " ");
+    if (silentCommandPrefixes.size() == 0) silentCommandPrefixes = explodeToSet(std::get<std::string>(configuration->GetValue("core.CommandSilentPrefixes")), " ");
+
+    bool isCommand = false;
+    bool isSilentCommand = false;
+    std::string selectedPrefix = "";
+
+    if (commandPrefixes.size() > 0) {
+        for (auto it = commandPrefixes.begin(); it != commandPrefixes.end(); ++it) {
+            std::string prefix = *it;
+            auto strPrefix = text.substr(0, prefix.size());
+
+            if (prefix == strPrefix) {
+                isCommand = true;
+                selectedPrefix = prefix;
+                break;
+            }
+        }
+    }
+
+    if (!isCommand && silentCommandPrefixes.size() > 0) {
+        for (auto it = silentCommandPrefixes.begin(); it != silentCommandPrefixes.end(); ++it) {
+            std::string prefix = *it;
+            auto strPrefix = text.substr(0, prefix.size());
+
+            if (prefix == strPrefix) {
+                isSilentCommand = true;
+                selectedPrefix = prefix;
+                break;
+            }
+        }
+    }
+
+    if (isCommand || isSilentCommand)
+    {
+        CCommand tokenizedArgs;
+        tokenizedArgs.Tokenize(text.c_str());
+
+        std::vector<std::string> cmdString = TokenizeCommand(text);
+        cmdString.erase(cmdString.begin());
+
+        if (tokenizedArgs.ArgC() < 1)
+            return 0;
+
+        std::string commandName = tokenizedArgs[0];
+        if (commandName.size() < 1)
+            return 0;
+
+        commandName.erase(0, selectedPrefix.size());
+
+        std::string originalCommandName = commandName;
+        if (!g_mCommandHandlers.contains(commandName)) commandName = "sw_" + commandName;
+        if (!g_mCommandHandlers.contains(commandName)) return 0;
+
+        g_mCommandHandlers[commandName](playerid, cmdString, originalCommandName, selectedPrefix, isSilentCommand);
+    }
+
+    if (isCommand)
+        return 1;
+    else if (isSilentCommand)
+        return 2;
+    else
+        return 0;
 }
 
 bool CServerCommands::HandleClientCommand(int playerid, const std::string& text)
 {
-    return false;
+    for (const auto& [id, listener] : g_mClientCommandListeners)
+        if (!listener(playerid, text)) return false;
+
+    return true;
 }
 
 bool CServerCommands::HandleClientChat(int playerid, const std::string& text, bool teamonly)
 {
-    return false;
+    for (const auto& [id, listener] : g_mClientChatListeners)
+        if (!listener(playerid, text, teamonly)) return false;
+
+    return true;
 }
 
-uint64_t CServerCommands::RegisterCommand(std::string command_name, std::function<void(int, std::vector<std::string>, std::string, std::string, bool)> handler)
+uint64_t CServerCommands::RegisterCommand(std::string command_name, std::function<void(int, std::vector<std::string>, std::string, std::string, bool)> handler, bool registerRaw)
 {
-    return 0;
+    if (!registerRaw)
+    {
+        if (conCommandCreated.contains(command_name))
+            return 0;
+
+        command_name = "sw_" + command_name;
+    }
+
+    static uint64_t command_id = 0;
+    if (!conCommandCreated.contains(command_name)) {
+        conCommandCreated[command_name] = new ConCommand(command_name.c_str(), commandsCallback, "SwiftlyS2 registered command", (1 << 25) | (1 << 0) | (1 << 24));
+        conCommandMapping[command_id++] = command_name;
+        g_mCommandHandlers[command_name] = handler;
+    }
+    return command_id;
 }
 
 void CServerCommands::UnregisterCommand(uint64_t command_id)
 {
+    auto it = conCommandMapping.find(command_id);
+    if (it == conCommandMapping.end()) return;
+
+    std::string command_name = it->second;
+    auto it2 = conCommandCreated.find(command_name);
+    if (it2 == conCommandCreated.end()) return;
+
+    delete it2->second;
+
+    conCommandCreated.erase(it2);
+    conCommandMapping.erase(it);
+
+    auto it3 = g_mCommandHandlers.find(command_name);
+    if (it3 != g_mCommandHandlers.end()) g_mCommandHandlers.erase(it3);
+}
+
+uint64_t CServerCommands::RegisterAlias(std::string alias_command, std::string command_name, bool registerRaw)
+{
+    return RegisterCommand(alias_command, g_mCommandHandlers[registerRaw ? command_name : "sw_" + command_name], registerRaw);
+}
+
+void CServerCommands::UnregisterAlias(uint64_t alias_id)
+{
+    return UnregisterCommand(alias_id);
 }
 
 uint64_t CServerCommands::RegisterClientCommandsListener(std::function<bool(int, const std::string&)> listener)
 {
-    return 0;
+    static uint64_t listener_id = 0;
+    g_mClientCommandListeners[listener_id++] = listener;
+    return listener_id - 1;
 }
 
 void CServerCommands::UnregisterClientCommandsListener(uint64_t listener_id)
 {
-
+    g_mClientCommandListeners.erase(listener_id);
 }
 
 uint64_t CServerCommands::RegisterClientChatListener(std::function<bool(int, const std::string&, bool)> listener)
 {
-    return 0;
+    static uint64_t listener_id = 0;
+    g_mClientChatListeners[listener_id++] = listener;
+    return listener_id - 1;
 }
 
 void CServerCommands::UnregisterClientChatListener(uint64_t listener_id)
 {
-
+    g_mClientChatListeners.erase(listener_id);
 }
 
 void CServerCommands::DispatchConCommand(ConCommandRef cmd, const CCommandContext& ctx, const CCommand& args)

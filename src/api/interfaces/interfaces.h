@@ -46,6 +46,7 @@
 
 #include <api/sdk/schema.h>
 
+#include <api/server/commands/manager.h>
 #include <api/server/configuration/configuration.h>
 #include <api/server/players/manager.h>
 #include <api/server/translations/translations.h>
