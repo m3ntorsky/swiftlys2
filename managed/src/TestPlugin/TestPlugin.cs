@@ -5,6 +5,7 @@ using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.GameEventDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.Misc;
+using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.Plugins;
 using SwiftlyS2.Shared.SchemaDefinitions;
 
@@ -52,11 +53,8 @@ public class TestPlugin : BasePlugin {
     logger.LogInformation("TestPlugin jump loaded");
 
 
-    core.GameEvent.HookPre<EventPlayerJump>(e => {
-      Console.WriteLine("TestPlugin jump pre");
-      return HookResult.Continue;
-    });
-
+        CUtlStringToken token = new("hello");
+        Console.WriteLine($"Hash: {token.HashCode}");
   }
 
   public override void Unload() {
