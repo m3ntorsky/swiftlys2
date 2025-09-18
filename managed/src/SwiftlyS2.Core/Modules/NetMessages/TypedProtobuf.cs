@@ -10,9 +10,9 @@ internal class TypedProtobuf<T> : INativeHandle where T : ITypedProtobuf<T>
 
   public IProtobufAccessor Accessor { get; private init; }
 
-  public TypedProtobuf()
+  public TypedProtobuf(nint handle)
   {
-    Accessor = new ProtobufAccessor();
+    Accessor = new ProtobufAccessor(handle);
   }
 
   public nint GetHandle()

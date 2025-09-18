@@ -4,7 +4,7 @@ using SwiftlyS2.Shared.NetMessages;
 
 namespace SwiftlyS2.Core.NetMessages;
 
-public class ProtobufRepeatedFieldValueType<T> : IProtobufRepeatedFieldValueType<T> where T : unmanaged
+public class ProtobufRepeatedFieldValueType<T> : IProtobufRepeatedFieldValueType<T>
 {
   private IProtobufAccessor _Protobuf { get; init; }
   private string _FieldName { get; init; }
@@ -85,5 +85,29 @@ public class ProtobufRepeatedFieldValueType<T> : IProtobufRepeatedFieldValueType
   IEnumerator IEnumerable.GetEnumerator()
   {
       return GetEnumerator();
+  }
+}
+
+
+internal class ProtobufRepeatedFieldSubMessageType<T> : IProtobufRepeatedFieldSubMessageType<T> where T : ITypedProtobuf<T>
+{
+  private IProtobufAccessor _Protobuf { get; init; }
+  private string _FieldName { get; init; }
+
+  public int Count => _Protobuf.GetRepeatedFieldSize(_FieldName);
+
+  public ProtobufRepeatedFieldSubMessageType(IProtobufAccessor protobuf, string fieldName)
+  {
+    _Protobuf = protobuf;
+    _FieldName = fieldName;
+  }
+
+  public T Get(int index)
+  {
+    return T.Wrap(_Protobuf.GetRepeatedNestedMessage(_FieldName, index));
+  }
+  public T Add()
+  {
+    return T.Wrap(_Protobuf.AddNestedMessage(_FieldName));
   }
 }

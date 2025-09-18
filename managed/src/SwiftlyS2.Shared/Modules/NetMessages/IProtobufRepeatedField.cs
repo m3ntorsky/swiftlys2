@@ -3,13 +3,19 @@ namespace SwiftlyS2.Shared.NetMessages;
 public interface IRepeatedField {
 }
 
-public interface IProtobufRepeatedFieldValueType<T> : IRepeatedField, IList<T> where T :  unmanaged {
+public interface IProtobufRepeatedFieldValueType<T> : IRepeatedField, IList<T> {
 
 
 
 }
 
-// public interface IProtobufRepeatedFieldSubMessageType<T> : IRepeatedField, IList<T> where T : IProtobuf<T>
-// {
+public interface IProtobufRepeatedFieldSubMessageType<T> : IRepeatedField where T : ITypedProtobuf<T>
+{
 
-// }
+  public int Count { get; }
+
+  T Get(int index);
+
+  T Add();
+
+}

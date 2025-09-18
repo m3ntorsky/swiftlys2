@@ -49,7 +49,7 @@ internal abstract class GameEventCallback : IEquatable<GameEventCallback>, IDisp
   }
 }
 
-internal class GameEventCallback<T> : GameEventCallback, IDisposable where T : ITypedGameEvent<T>
+internal class GameEventCallback<T> : GameEventCallback, IDisposable where T : IGameEvent<T>
 {
   private Func<T, HookResult> _callback { get; init; }
   private ILogger<GameEventCallback<T>> _logger { get; init; }
