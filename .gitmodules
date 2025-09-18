@@ -5,12 +5,6 @@
 [submodule "vendor/metamod"]
 	path = vendor/metamod
 	url = https://github.com/alliedmodders/metamod-source
-[submodule "vendor/asmjit"]
-	path = vendor/asmjit
-	url = https://github.com/asmjit/asmjit
-[submodule "vendor/asmtk"]
-	path = vendor/asmtk
-	url = https://github.com/asmjit/asmtk
 [submodule "vendor/dynlibutils"]
 	path = vendor/dynlibutils
 	url = https://github.com/komashchenko/DynLibUtils
