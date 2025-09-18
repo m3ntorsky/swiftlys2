@@ -7,17 +7,29 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "inspect_weapon"
 /// </summary>
-public interface EventInspectWeapon : ITypedGameEvent<EventInspectWeapon> {
+public interface EventInspectWeapon : IGameEvent<EventInspectWeapon> {
 
-  static EventInspectWeapon ITypedGameEvent<EventInspectWeapon>.Create() => new EventInspectWeaponImpl();
+  static EventInspectWeapon IGameEvent<EventInspectWeapon>.Create() => new EventInspectWeaponImpl();
 
-  static string ITypedGameEvent<EventInspectWeapon>.GetName() => "inspect_weapon";
+  static string IGameEvent<EventInspectWeapon>.GetName() => "inspect_weapon";
 
-  static uint ITypedGameEvent<EventInspectWeapon>.GetHash() => 0x211A0C2Cu;
+  static uint IGameEvent<EventInspectWeapon>.GetHash() => 0x211A0C2Cu;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
 }

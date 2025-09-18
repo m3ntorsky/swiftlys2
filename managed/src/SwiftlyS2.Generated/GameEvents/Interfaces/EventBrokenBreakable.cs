@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "broken_breakable"
 /// </summary>
-public interface EventBrokenBreakable : ITypedGameEvent<EventBrokenBreakable> {
+public interface EventBrokenBreakable : IGameEvent<EventBrokenBreakable> {
 
-  static EventBrokenBreakable ITypedGameEvent<EventBrokenBreakable>.Create() => new EventBrokenBreakableImpl();
+  static EventBrokenBreakable IGameEvent<EventBrokenBreakable>.Create() => new EventBrokenBreakableImpl();
 
-  static string ITypedGameEvent<EventBrokenBreakable>.GetName() => "broken_breakable";
+  static string IGameEvent<EventBrokenBreakable>.GetName() => "broken_breakable";
 
-  static uint ITypedGameEvent<EventBrokenBreakable>.GetHash() => 0x3EBE8AE8u;
+  static uint IGameEvent<EventBrokenBreakable>.GetHash() => 0x3EBE8AE8u;
   /// <summary>
   /// type: long
   /// </summary>
@@ -23,7 +23,19 @@ public interface EventBrokenBreakable : ITypedGameEvent<EventBrokenBreakable> {
   /// <br/>
   /// type: player_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// BREAK_GLASS, BREAK_WOOD, etc

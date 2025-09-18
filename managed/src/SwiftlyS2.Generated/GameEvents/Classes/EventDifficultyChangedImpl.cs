@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "difficulty_changed"
 /// </summary>
-internal class EventDifficultyChangedImpl : TypedGameEvent<EventDifficultyChanged>, EventDifficultyChanged
+internal class EventDifficultyChangedImpl : GameEvent<EventDifficultyChanged>, EventDifficultyChanged
 {
 
 

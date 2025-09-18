@@ -7,17 +7,29 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "survival_no_respawns_warning"
 /// </summary>
-public interface EventSurvivalNoRespawnsWarning : ITypedGameEvent<EventSurvivalNoRespawnsWarning> {
+public interface EventSurvivalNoRespawnsWarning : IGameEvent<EventSurvivalNoRespawnsWarning> {
 
-  static EventSurvivalNoRespawnsWarning ITypedGameEvent<EventSurvivalNoRespawnsWarning>.Create() => new EventSurvivalNoRespawnsWarningImpl();
+  static EventSurvivalNoRespawnsWarning IGameEvent<EventSurvivalNoRespawnsWarning>.Create() => new EventSurvivalNoRespawnsWarningImpl();
 
-  static string ITypedGameEvent<EventSurvivalNoRespawnsWarning>.GetName() => "survival_no_respawns_warning";
+  static string IGameEvent<EventSurvivalNoRespawnsWarning>.GetName() => "survival_no_respawns_warning";
 
-  static uint ITypedGameEvent<EventSurvivalNoRespawnsWarning>.GetHash() => 0xE1C858A2u;
+  static uint IGameEvent<EventSurvivalNoRespawnsWarning>.GetHash() => 0xE1C858A2u;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
 }

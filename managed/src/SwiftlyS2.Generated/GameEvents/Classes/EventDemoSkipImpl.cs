@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "demo_skip"
 /// </summary>
-internal class EventDemoSkipImpl : TypedGameEvent<EventDemoSkip>, EventDemoSkip
+internal class EventDemoSkipImpl : GameEvent<EventDemoSkip>, EventDemoSkip
 {
 
 

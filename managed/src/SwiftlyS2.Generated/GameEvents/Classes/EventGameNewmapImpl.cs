@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "game_newmap"
 /// send when new map is completely loaded
 /// </summary>
-internal class EventGameNewmapImpl : TypedGameEvent<EventGameNewmap>, EventGameNewmap
+internal class EventGameNewmapImpl : GameEvent<EventGameNewmap>, EventGameNewmap
 {
 
 

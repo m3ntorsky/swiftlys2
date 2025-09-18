@@ -9,12 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "item_equip"
 /// </summary>
-internal class EventItemEquipImpl : TypedGameEvent<EventItemEquip>, EventItemEquip
+internal class EventItemEquipImpl : GameEvent<EventItemEquip>, EventItemEquip
 {
 
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // either a weapon such as 'tmp' or 'hegrenade', or an item such as 'nvgs'
   public string Item

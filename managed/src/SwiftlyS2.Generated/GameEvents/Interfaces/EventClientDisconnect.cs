@@ -7,11 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "client_disconnect"
 /// </summary>
-public interface EventClientDisconnect : ITypedGameEvent<EventClientDisconnect> {
+public interface EventClientDisconnect : IGameEvent<EventClientDisconnect> {
 
-  static EventClientDisconnect ITypedGameEvent<EventClientDisconnect>.Create() => new EventClientDisconnectImpl();
+  static EventClientDisconnect IGameEvent<EventClientDisconnect>.Create() => new EventClientDisconnectImpl();
 
-  static string ITypedGameEvent<EventClientDisconnect>.GetName() => "client_disconnect";
+  static string IGameEvent<EventClientDisconnect>.GetName() => "client_disconnect";
 
-  static uint ITypedGameEvent<EventClientDisconnect>.GetHash() => 0xC714BB79u;
+  static uint IGameEvent<EventClientDisconnect>.GetHash() => 0xC714BB79u;
 }

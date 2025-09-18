@@ -7,11 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "announce_phase_end"
 /// </summary>
-public interface EventAnnouncePhaseEnd : ITypedGameEvent<EventAnnouncePhaseEnd> {
+public interface EventAnnouncePhaseEnd : IGameEvent<EventAnnouncePhaseEnd> {
 
-  static EventAnnouncePhaseEnd ITypedGameEvent<EventAnnouncePhaseEnd>.Create() => new EventAnnouncePhaseEndImpl();
+  static EventAnnouncePhaseEnd IGameEvent<EventAnnouncePhaseEnd>.Create() => new EventAnnouncePhaseEndImpl();
 
-  static string ITypedGameEvent<EventAnnouncePhaseEnd>.GetName() => "announce_phase_end";
+  static string IGameEvent<EventAnnouncePhaseEnd>.GetName() => "announce_phase_end";
 
-  static uint ITypedGameEvent<EventAnnouncePhaseEnd>.GetHash() => 0x5063C41Cu;
+  static uint IGameEvent<EventAnnouncePhaseEnd>.GetHash() => 0x5063C41Cu;
 }

@@ -9,12 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "item_pickup"
 /// </summary>
-internal class EventItemPickupImpl : TypedGameEvent<EventItemPickup>, EventItemPickup
+internal class EventItemPickupImpl : GameEvent<EventItemPickup>, EventItemPickup
 {
 
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // either a weapon such as 'tmp' or 'hegrenade', or an item such as 'nvgs'
   public string Item

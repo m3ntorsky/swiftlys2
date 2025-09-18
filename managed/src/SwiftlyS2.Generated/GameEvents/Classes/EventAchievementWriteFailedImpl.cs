@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "achievement_write_failed"
 /// </summary>
-internal class EventAchievementWriteFailedImpl : TypedGameEvent<EventAchievementWriteFailed>, EventAchievementWriteFailed
+internal class EventAchievementWriteFailedImpl : GameEvent<EventAchievementWriteFailed>, EventAchievementWriteFailed
 {
 
 }

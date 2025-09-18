@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "write_profile_data"
 /// </summary>
-internal class EventWriteProfileDataImpl : TypedGameEvent<EventWriteProfileData>, EventWriteProfileData
+internal class EventWriteProfileDataImpl : GameEvent<EventWriteProfileData>, EventWriteProfileData
 {
 
 }

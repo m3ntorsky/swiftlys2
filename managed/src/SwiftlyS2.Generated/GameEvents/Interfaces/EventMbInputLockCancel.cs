@@ -7,11 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "mb_input_lock_cancel"
 /// </summary>
-public interface EventMbInputLockCancel : ITypedGameEvent<EventMbInputLockCancel> {
+public interface EventMbInputLockCancel : IGameEvent<EventMbInputLockCancel> {
 
-  static EventMbInputLockCancel ITypedGameEvent<EventMbInputLockCancel>.Create() => new EventMbInputLockCancelImpl();
+  static EventMbInputLockCancel IGameEvent<EventMbInputLockCancel>.Create() => new EventMbInputLockCancelImpl();
 
-  static string ITypedGameEvent<EventMbInputLockCancel>.GetName() => "mb_input_lock_cancel";
+  static string IGameEvent<EventMbInputLockCancel>.GetName() => "mb_input_lock_cancel";
 
-  static uint ITypedGameEvent<EventMbInputLockCancel>.GetHash() => 0x79A46A94u;
+  static uint IGameEvent<EventMbInputLockCancel>.GetHash() => 0x79A46A94u;
 }

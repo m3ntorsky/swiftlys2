@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "firstbombs_incoming_warning"
 /// </summary>
-public interface EventFirstbombsIncomingWarning : ITypedGameEvent<EventFirstbombsIncomingWarning> {
+public interface EventFirstbombsIncomingWarning : IGameEvent<EventFirstbombsIncomingWarning> {
 
-  static EventFirstbombsIncomingWarning ITypedGameEvent<EventFirstbombsIncomingWarning>.Create() => new EventFirstbombsIncomingWarningImpl();
+  static EventFirstbombsIncomingWarning IGameEvent<EventFirstbombsIncomingWarning>.Create() => new EventFirstbombsIncomingWarningImpl();
 
-  static string ITypedGameEvent<EventFirstbombsIncomingWarning>.GetName() => "firstbombs_incoming_warning";
+  static string IGameEvent<EventFirstbombsIncomingWarning>.GetName() => "firstbombs_incoming_warning";
 
-  static uint ITypedGameEvent<EventFirstbombsIncomingWarning>.GetHash() => 0xEE565444u;
+  static uint IGameEvent<EventFirstbombsIncomingWarning>.GetHash() => 0xEE565444u;
   /// <summary>
   /// type: bool
   /// </summary>

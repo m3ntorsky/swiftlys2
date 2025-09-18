@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_team"
 /// </summary>
-public interface EventPlayerTeam : ITypedGameEvent<EventPlayerTeam> {
+public interface EventPlayerTeam : IGameEvent<EventPlayerTeam> {
 
-  static EventPlayerTeam ITypedGameEvent<EventPlayerTeam>.Create() => new EventPlayerTeamImpl();
+  static EventPlayerTeam IGameEvent<EventPlayerTeam>.Create() => new EventPlayerTeamImpl();
 
-  static string ITypedGameEvent<EventPlayerTeam>.GetName() => "player_team";
+  static string IGameEvent<EventPlayerTeam>.GetName() => "player_team";
 
-  static uint ITypedGameEvent<EventPlayerTeam>.GetHash() => 0xD57549C4u;
+  static uint IGameEvent<EventPlayerTeam>.GetHash() => 0xD57549C4u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// team id

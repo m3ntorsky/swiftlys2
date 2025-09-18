@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "bullet_damage"
 /// </summary>
-internal class EventBulletDamageImpl : TypedGameEvent<EventBulletDamage>, EventBulletDamage
+internal class EventBulletDamageImpl : GameEvent<EventBulletDamage>, EventBulletDamage
 {
 
 

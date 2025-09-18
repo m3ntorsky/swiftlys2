@@ -6,9 +6,9 @@ namespace SwiftlyS2.Core.NetMessages;
 
 public class ProtobufRepeatedFieldValueType<T> : IProtobufRepeatedFieldValueType<T> where T : unmanaged
 {
-  private IProtobuf _Protobuf { get; init; }
+  private IProtobufAccessor _Protobuf { get; init; }
   private string _FieldName { get; init; }
-  public ProtobufRepeatedFieldValueType(IProtobuf protobuf, string fieldName)
+  public ProtobufRepeatedFieldValueType(IProtobufAccessor protobuf, string fieldName)
   {
     _Protobuf = protobuf;
     _FieldName = fieldName;
@@ -74,12 +74,12 @@ public class ProtobufRepeatedFieldValueType<T> : IProtobufRepeatedFieldValueType
 
   public bool Remove(T item)
   {
-    throw new NotSupportedException("Protobuf repeated field does not support removing element.");
+    throw new NotSupportedException("Removing element from a protobuf repeated field is not supported.");
   }
 
   public void RemoveAt(int index)
   {
-    throw new NotSupportedException("Protobuf repeated field does not support removing element.");
+    throw new NotSupportedException("Removing element from a protobuf repeated field is not supported.");
   }
 
   IEnumerator IEnumerable.GetEnumerator()

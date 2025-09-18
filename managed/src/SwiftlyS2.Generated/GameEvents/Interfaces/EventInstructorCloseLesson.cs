@@ -7,19 +7,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "instructor_close_lesson"
 /// </summary>
-public interface EventInstructorCloseLesson : ITypedGameEvent<EventInstructorCloseLesson> {
+public interface EventInstructorCloseLesson : IGameEvent<EventInstructorCloseLesson> {
 
-  static EventInstructorCloseLesson ITypedGameEvent<EventInstructorCloseLesson>.Create() => new EventInstructorCloseLessonImpl();
+  static EventInstructorCloseLesson IGameEvent<EventInstructorCloseLesson>.Create() => new EventInstructorCloseLessonImpl();
 
-  static string ITypedGameEvent<EventInstructorCloseLesson>.GetName() => "instructor_close_lesson";
+  static string IGameEvent<EventInstructorCloseLesson>.GetName() => "instructor_close_lesson";
 
-  static uint ITypedGameEvent<EventInstructorCloseLesson>.GetHash() => 0x2C472152u;
+  static uint IGameEvent<EventInstructorCloseLesson>.GetHash() => 0x2C472152u;
   /// <summary>
   /// The player who this lesson is intended for
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// The player who this lesson is intended for
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// The player who this lesson is intended for
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// Name of the lesson to start.  Must match instructor_lesson.txt

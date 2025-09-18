@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "map_shutdown"
 /// </summary>
-internal class EventMapShutdownImpl : TypedGameEvent<EventMapShutdown>, EventMapShutdown
+internal class EventMapShutdownImpl : GameEvent<EventMapShutdown>, EventMapShutdown
 {
 
 }

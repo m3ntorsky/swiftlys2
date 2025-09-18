@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "choppers_incoming_warning"
 /// </summary>
-internal class EventChoppersIncomingWarningImpl : TypedGameEvent<EventChoppersIncomingWarning>, EventChoppersIncomingWarning
+internal class EventChoppersIncomingWarningImpl : GameEvent<EventChoppersIncomingWarning>, EventChoppersIncomingWarning
 {
 
 

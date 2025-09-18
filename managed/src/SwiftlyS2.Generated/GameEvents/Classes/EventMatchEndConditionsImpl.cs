@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "match_end_conditions"
 /// </summary>
-internal class EventMatchEndConditionsImpl : TypedGameEvent<EventMatchEndConditions>, EventMatchEndConditions
+internal class EventMatchEndConditionsImpl : GameEvent<EventMatchEndConditions>, EventMatchEndConditions
 {
 
 

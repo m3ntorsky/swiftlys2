@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "game_phase_changed"
 /// </summary>
-internal class EventGamePhaseChangedImpl : TypedGameEvent<EventGamePhaseChanged>, EventGamePhaseChanged
+internal class EventGamePhaseChangedImpl : GameEvent<EventGamePhaseChanged>, EventGamePhaseChanged
 {
 
 

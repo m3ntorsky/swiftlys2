@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "tournament_reward"
 /// </summary>
-public interface EventTournamentReward : ITypedGameEvent<EventTournamentReward> {
+public interface EventTournamentReward : IGameEvent<EventTournamentReward> {
 
-  static EventTournamentReward ITypedGameEvent<EventTournamentReward>.Create() => new EventTournamentRewardImpl();
+  static EventTournamentReward IGameEvent<EventTournamentReward>.Create() => new EventTournamentRewardImpl();
 
-  static string ITypedGameEvent<EventTournamentReward>.GetName() => "tournament_reward";
+  static string IGameEvent<EventTournamentReward>.GetName() => "tournament_reward";
 
-  static uint ITypedGameEvent<EventTournamentReward>.GetHash() => 0x1FF0AA30u;
+  static uint IGameEvent<EventTournamentReward>.GetHash() => 0x1FF0AA30u;
   /// <summary>
   /// type: long
   /// </summary>

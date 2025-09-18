@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "hltv_chat"
 /// a HLTV chat msg sent by spectators
 /// </summary>
-internal class EventHltvChatImpl : TypedGameEvent<EventHltvChat>, EventHltvChat
+internal class EventHltvChatImpl : GameEvent<EventHltvChat>, EventHltvChat
 {
 
 

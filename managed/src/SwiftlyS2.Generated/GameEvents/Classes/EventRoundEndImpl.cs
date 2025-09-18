@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "round_end"
 /// </summary>
-internal class EventRoundEndImpl : TypedGameEvent<EventRoundEnd>, EventRoundEnd
+internal class EventRoundEndImpl : GameEvent<EventRoundEnd>, EventRoundEnd
 {
 
 

@@ -10,13 +10,21 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "instructor_server_hint_create"
 /// create a hint using data supplied entirely by the server/map. Intended for hints to smooth playtests before content is ready to make the hint unneccessary. NOT INTENDED AS A SHIPPABLE CRUTCH
 /// </summary>
-internal class EventInstructorServerHintCreateImpl : TypedGameEvent<EventInstructorServerHintCreate>, EventInstructorServerHintCreate
+internal class EventInstructorServerHintCreateImpl : GameEvent<EventInstructorServerHintCreate>, EventInstructorServerHintCreate
 {
 
 
   // user ID of the player that triggered the hint
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // user ID of the player that triggered the hint
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // user ID of the player that triggered the hint
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // entity id of the env_instructor_hint that fired the event
   public int HintEntindex

@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "seasoncoin_levelup"
 /// </summary>
-public interface EventSeasoncoinLevelup : ITypedGameEvent<EventSeasoncoinLevelup> {
+public interface EventSeasoncoinLevelup : IGameEvent<EventSeasoncoinLevelup> {
 
-  static EventSeasoncoinLevelup ITypedGameEvent<EventSeasoncoinLevelup>.Create() => new EventSeasoncoinLevelupImpl();
+  static EventSeasoncoinLevelup IGameEvent<EventSeasoncoinLevelup>.Create() => new EventSeasoncoinLevelupImpl();
 
-  static string ITypedGameEvent<EventSeasoncoinLevelup>.GetName() => "seasoncoin_levelup";
+  static string IGameEvent<EventSeasoncoinLevelup>.GetName() => "seasoncoin_levelup";
 
-  static uint ITypedGameEvent<EventSeasoncoinLevelup>.GetHash() => 0xF0EAD821u;
+  static uint IGameEvent<EventSeasoncoinLevelup>.GetHash() => 0xF0EAD821u;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: short

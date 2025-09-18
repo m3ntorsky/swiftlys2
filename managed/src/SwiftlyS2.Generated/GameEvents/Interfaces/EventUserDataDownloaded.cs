@@ -8,11 +8,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "user_data_downloaded"
 /// fired when achievements/stats are downloaded from Steam or XBox Live
 /// </summary>
-public interface EventUserDataDownloaded : ITypedGameEvent<EventUserDataDownloaded> {
+public interface EventUserDataDownloaded : IGameEvent<EventUserDataDownloaded> {
 
-  static EventUserDataDownloaded ITypedGameEvent<EventUserDataDownloaded>.Create() => new EventUserDataDownloadedImpl();
+  static EventUserDataDownloaded IGameEvent<EventUserDataDownloaded>.Create() => new EventUserDataDownloadedImpl();
 
-  static string ITypedGameEvent<EventUserDataDownloaded>.GetName() => "user_data_downloaded";
+  static string IGameEvent<EventUserDataDownloaded>.GetName() => "user_data_downloaded";
 
-  static uint ITypedGameEvent<EventUserDataDownloaded>.GetHash() => 0xA7AE5F51u;
+  static uint IGameEvent<EventUserDataDownloaded>.GetHash() => 0xA7AE5F51u;
 }

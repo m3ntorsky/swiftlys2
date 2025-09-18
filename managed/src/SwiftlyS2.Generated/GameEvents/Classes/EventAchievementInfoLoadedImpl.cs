@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "achievement_info_loaded"
 /// </summary>
-internal class EventAchievementInfoLoadedImpl : TypedGameEvent<EventAchievementInfoLoaded>, EventAchievementInfoLoaded
+internal class EventAchievementInfoLoadedImpl : GameEvent<EventAchievementInfoLoaded>, EventAchievementInfoLoaded
 {
 
 }

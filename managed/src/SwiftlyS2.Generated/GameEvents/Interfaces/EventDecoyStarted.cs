@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "decoy_started"
 /// </summary>
-public interface EventDecoyStarted : ITypedGameEvent<EventDecoyStarted> {
+public interface EventDecoyStarted : IGameEvent<EventDecoyStarted> {
 
-  static EventDecoyStarted ITypedGameEvent<EventDecoyStarted>.Create() => new EventDecoyStartedImpl();
+  static EventDecoyStarted IGameEvent<EventDecoyStarted>.Create() => new EventDecoyStartedImpl();
 
-  static string ITypedGameEvent<EventDecoyStarted>.GetName() => "decoy_started";
+  static string IGameEvent<EventDecoyStarted>.GetName() => "decoy_started";
 
-  static uint ITypedGameEvent<EventDecoyStarted>.GetHash() => 0xD1159B75u;
+  static uint IGameEvent<EventDecoyStarted>.GetHash() => 0xD1159B75u;
   /// <summary>
   /// <br/>
   /// type: player_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: short

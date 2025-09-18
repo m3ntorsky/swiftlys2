@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "buytime_ended"
 /// </summary>
-internal class EventBuytimeEndedImpl : TypedGameEvent<EventBuytimeEnded>, EventBuytimeEnded
+internal class EventBuytimeEndedImpl : GameEvent<EventBuytimeEnded>, EventBuytimeEnded
 {
 
 }

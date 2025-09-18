@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "round_start"
 /// </summary>
-public interface EventRoundStart : ITypedGameEvent<EventRoundStart> {
+public interface EventRoundStart : IGameEvent<EventRoundStart> {
 
-  static EventRoundStart ITypedGameEvent<EventRoundStart>.Create() => new EventRoundStartImpl();
+  static EventRoundStart IGameEvent<EventRoundStart>.Create() => new EventRoundStartImpl();
 
-  static string ITypedGameEvent<EventRoundStart>.GetName() => "round_start";
+  static string IGameEvent<EventRoundStart>.GetName() => "round_start";
 
-  static uint ITypedGameEvent<EventRoundStart>.GetHash() => 0xAFCD8F60u;
+  static uint IGameEvent<EventRoundStart>.GetHash() => 0xAFCD8F60u;
   /// <summary>
   /// round time limit in seconds
   /// <br/>

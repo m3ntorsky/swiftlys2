@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "sfuievent"
 /// </summary>
-public interface EventSfuievent : ITypedGameEvent<EventSfuievent> {
+public interface EventSfuievent : IGameEvent<EventSfuievent> {
 
-  static EventSfuievent ITypedGameEvent<EventSfuievent>.Create() => new EventSfuieventImpl();
+  static EventSfuievent IGameEvent<EventSfuievent>.Create() => new EventSfuieventImpl();
 
-  static string ITypedGameEvent<EventSfuievent>.GetName() => "sfuievent";
+  static string IGameEvent<EventSfuievent>.GetName() => "sfuievent";
 
-  static uint ITypedGameEvent<EventSfuievent>.GetHash() => 0xA20ACD22u;
+  static uint IGameEvent<EventSfuievent>.GetHash() => 0xA20ACD22u;
   /// <summary>
   /// type: string
   /// </summary>

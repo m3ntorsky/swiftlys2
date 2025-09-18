@@ -7,17 +7,29 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "grenade_bounce"
 /// </summary>
-public interface EventGrenadeBounce : ITypedGameEvent<EventGrenadeBounce> {
+public interface EventGrenadeBounce : IGameEvent<EventGrenadeBounce> {
 
-  static EventGrenadeBounce ITypedGameEvent<EventGrenadeBounce>.Create() => new EventGrenadeBounceImpl();
+  static EventGrenadeBounce IGameEvent<EventGrenadeBounce>.Create() => new EventGrenadeBounceImpl();
 
-  static string ITypedGameEvent<EventGrenadeBounce>.GetName() => "grenade_bounce";
+  static string IGameEvent<EventGrenadeBounce>.GetName() => "grenade_bounce";
 
-  static uint ITypedGameEvent<EventGrenadeBounce>.GetHash() => 0xF75C5166u;
+  static uint IGameEvent<EventGrenadeBounce>.GetHash() => 0xF75C5166u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
 }

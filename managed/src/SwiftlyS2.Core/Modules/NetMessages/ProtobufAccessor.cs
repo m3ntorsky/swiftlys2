@@ -4,25 +4,15 @@ using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.NetMessages;
 
 namespace SwiftlyS2.Core.NetMessages;
+  
+internal class ProtobufAccessor : NativeHandle, IProtobufAccessor {
 
-internal class Protobuf : IProtobuf {
 
-  private INativeHandle _Handle { get; set; }
-  public bool IsInvalid { get; set; } = false;
-  public unsafe nint GetHandle() {
-    if (IsInvalid) {
-      throw new InvalidOperationException("Accessing a invalid protobuf accessor");
-    }
-    return _Handle.GetHandle();
+  public ProtobufAccessor() : base(0) {
   }
 
-  public Protobuf(INativeHandle handle) {
+  public void InternalSet(nint handle) {
     _Handle = handle;
-  }
-
-  internal void MarkAsInvalid()
-  {
-    IsInvalid = true;
   }
 
   public bool GetBool(string fieldName)

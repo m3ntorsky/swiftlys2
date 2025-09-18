@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "physgun_pickup"
 /// </summary>
-internal class EventPhysgunPickupImpl : TypedGameEvent<EventPhysgunPickup>, EventPhysgunPickup
+internal class EventPhysgunPickupImpl : GameEvent<EventPhysgunPickup>, EventPhysgunPickup
 {
 
 

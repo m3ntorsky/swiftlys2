@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "achievement_event"
 /// </summary>
-public interface EventAchievementEvent : ITypedGameEvent<EventAchievementEvent> {
+public interface EventAchievementEvent : IGameEvent<EventAchievementEvent> {
 
-  static EventAchievementEvent ITypedGameEvent<EventAchievementEvent>.Create() => new EventAchievementEventImpl();
+  static EventAchievementEvent IGameEvent<EventAchievementEvent>.Create() => new EventAchievementEventImpl();
 
-  static string ITypedGameEvent<EventAchievementEvent>.GetName() => "achievement_event";
+  static string IGameEvent<EventAchievementEvent>.GetName() => "achievement_event";
 
-  static uint ITypedGameEvent<EventAchievementEvent>.GetHash() => 0x00F01BDFu;
+  static uint IGameEvent<EventAchievementEvent>.GetHash() => 0x00F01BDFu;
   /// <summary>
   /// non-localized name of achievement
   /// <br/>

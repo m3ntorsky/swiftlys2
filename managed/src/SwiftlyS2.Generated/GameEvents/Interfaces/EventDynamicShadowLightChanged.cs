@@ -7,11 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "dynamic_shadow_light_changed"
 /// </summary>
-public interface EventDynamicShadowLightChanged : ITypedGameEvent<EventDynamicShadowLightChanged> {
+public interface EventDynamicShadowLightChanged : IGameEvent<EventDynamicShadowLightChanged> {
 
-  static EventDynamicShadowLightChanged ITypedGameEvent<EventDynamicShadowLightChanged>.Create() => new EventDynamicShadowLightChangedImpl();
+  static EventDynamicShadowLightChanged IGameEvent<EventDynamicShadowLightChanged>.Create() => new EventDynamicShadowLightChangedImpl();
 
-  static string ITypedGameEvent<EventDynamicShadowLightChanged>.GetName() => "dynamic_shadow_light_changed";
+  static string IGameEvent<EventDynamicShadowLightChanged>.GetName() => "dynamic_shadow_light_changed";
 
-  static uint ITypedGameEvent<EventDynamicShadowLightChanged>.GetHash() => 0x3FC4330Bu;
+  static uint IGameEvent<EventDynamicShadowLightChanged>.GetHash() => 0x3FC4330Bu;
 }

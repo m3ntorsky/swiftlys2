@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_beep"
 /// </summary>
-public interface EventBombBeep : ITypedGameEvent<EventBombBeep> {
+public interface EventBombBeep : IGameEvent<EventBombBeep> {
 
-  static EventBombBeep ITypedGameEvent<EventBombBeep>.Create() => new EventBombBeepImpl();
+  static EventBombBeep IGameEvent<EventBombBeep>.Create() => new EventBombBeepImpl();
 
-  static string ITypedGameEvent<EventBombBeep>.GetName() => "bomb_beep";
+  static string IGameEvent<EventBombBeep>.GetName() => "bomb_beep";
 
-  static uint ITypedGameEvent<EventBombBeep>.GetHash() => 0x056A0D22u;
+  static uint IGameEvent<EventBombBeep>.GetHash() => 0x056A0D22u;
   /// <summary>
   /// c4 entity
   /// <br/>

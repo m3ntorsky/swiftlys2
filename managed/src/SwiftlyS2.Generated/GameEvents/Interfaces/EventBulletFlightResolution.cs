@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bullet_flight_resolution"
 /// </summary>
-public interface EventBulletFlightResolution : ITypedGameEvent<EventBulletFlightResolution> {
+public interface EventBulletFlightResolution : IGameEvent<EventBulletFlightResolution> {
 
-  static EventBulletFlightResolution ITypedGameEvent<EventBulletFlightResolution>.Create() => new EventBulletFlightResolutionImpl();
+  static EventBulletFlightResolution IGameEvent<EventBulletFlightResolution>.Create() => new EventBulletFlightResolutionImpl();
 
-  static string ITypedGameEvent<EventBulletFlightResolution>.GetName() => "bullet_flight_resolution";
+  static string IGameEvent<EventBulletFlightResolution>.GetName() => "bullet_flight_resolution";
 
-  static uint ITypedGameEvent<EventBulletFlightResolution>.GetHash() => 0xB39BC4E7u;
+  static uint IGameEvent<EventBulletFlightResolution>.GetHash() => 0xB39BC4E7u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: short

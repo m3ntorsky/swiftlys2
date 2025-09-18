@@ -9,13 +9,21 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "dz_item_interaction"
 /// </summary>
-internal class EventDzItemInteractionImpl : TypedGameEvent<EventDzItemInteraction>, EventDzItemInteraction
+internal class EventDzItemInteractionImpl : GameEvent<EventDzItemInteraction>, EventDzItemInteraction
 {
 
 
   // player entindex
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // player entindex
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // player entindex
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // crate entindex
   public short Subject

@@ -7,19 +7,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_hurt"
 /// </summary>
-public interface EventPlayerHurt : ITypedGameEvent<EventPlayerHurt> {
+public interface EventPlayerHurt : IGameEvent<EventPlayerHurt> {
 
-  static EventPlayerHurt ITypedGameEvent<EventPlayerHurt>.Create() => new EventPlayerHurtImpl();
+  static EventPlayerHurt IGameEvent<EventPlayerHurt>.Create() => new EventPlayerHurtImpl();
 
-  static string ITypedGameEvent<EventPlayerHurt>.GetName() => "player_hurt";
+  static string IGameEvent<EventPlayerHurt>.GetName() => "player_hurt";
 
-  static uint ITypedGameEvent<EventPlayerHurt>.GetHash() => 0x1B30DDF0u;
+  static uint IGameEvent<EventPlayerHurt>.GetHash() => 0x1B30DDF0u;
   /// <summary>
   /// player who was hurt
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// player who was hurt
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// player who was hurt
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// player who attacked

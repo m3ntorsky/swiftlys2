@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "other_death"
 /// </summary>
-public interface EventOtherDeath : ITypedGameEvent<EventOtherDeath> {
+public interface EventOtherDeath : IGameEvent<EventOtherDeath> {
 
-  static EventOtherDeath ITypedGameEvent<EventOtherDeath>.Create() => new EventOtherDeathImpl();
+  static EventOtherDeath IGameEvent<EventOtherDeath>.Create() => new EventOtherDeathImpl();
 
-  static string ITypedGameEvent<EventOtherDeath>.GetName() => "other_death";
+  static string IGameEvent<EventOtherDeath>.GetName() => "other_death";
 
-  static uint ITypedGameEvent<EventOtherDeath>.GetHash() => 0x8638AEECu;
+  static uint IGameEvent<EventOtherDeath>.GetHash() => 0x8638AEECu;
   /// <summary>
   /// other entity ID who died
   /// <br/>

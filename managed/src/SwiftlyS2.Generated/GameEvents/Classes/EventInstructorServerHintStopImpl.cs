@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "instructor_server_hint_stop"
 /// destroys a server/map created hint
 /// </summary>
-internal class EventInstructorServerHintStopImpl : TypedGameEvent<EventInstructorServerHintStop>, EventInstructorServerHintStop
+internal class EventInstructorServerHintStopImpl : GameEvent<EventInstructorServerHintStop>, EventInstructorServerHintStop
 {
 
 

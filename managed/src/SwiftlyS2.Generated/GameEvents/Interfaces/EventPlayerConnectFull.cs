@@ -8,18 +8,32 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "player_connect_full"
 /// player has sent final message in the connection sequence
 /// </summary>
-public interface EventPlayerConnectFull : ITypedGameEvent<EventPlayerConnectFull> {
+public interface EventPlayerConnectFull : IGameEvent<EventPlayerConnectFull> {
 
-  static EventPlayerConnectFull ITypedGameEvent<EventPlayerConnectFull>.Create() => new EventPlayerConnectFullImpl();
+  static EventPlayerConnectFull IGameEvent<EventPlayerConnectFull>.Create() => new EventPlayerConnectFullImpl();
 
-  static string ITypedGameEvent<EventPlayerConnectFull>.GetName() => "player_connect_full";
+  static string IGameEvent<EventPlayerConnectFull>.GetName() => "player_connect_full";
 
-  static uint ITypedGameEvent<EventPlayerConnectFull>.GetHash() => 0x5BE3B233u;
+  static uint IGameEvent<EventPlayerConnectFull>.GetHash() => 0x5BE3B233u;
   /// <summary>
   /// user ID on server (unique on server)
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// user ID on server (unique on server)
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// user ID on server (unique on server)
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
 }

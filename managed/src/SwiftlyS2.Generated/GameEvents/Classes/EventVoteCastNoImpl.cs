@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "vote_cast_no"
 /// </summary>
-internal class EventVoteCastNoImpl : TypedGameEvent<EventVoteCastNo>, EventVoteCastNo
+internal class EventVoteCastNoImpl : GameEvent<EventVoteCastNo>, EventVoteCastNo
 {
 
 

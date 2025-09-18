@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hltv_replay_status"
 /// </summary>
-internal class EventHltvReplayStatusImpl : TypedGameEvent<EventHltvReplayStatus>, EventHltvReplayStatus
+internal class EventHltvReplayStatusImpl : GameEvent<EventHltvReplayStatus>, EventHltvReplayStatus
 {
 
 

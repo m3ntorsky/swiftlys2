@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "team_score"
 /// team score changed
 /// </summary>
-internal class EventTeamScoreImpl : TypedGameEvent<EventTeamScore>, EventTeamScore
+internal class EventTeamScoreImpl : GameEvent<EventTeamScore>, EventTeamScore
 {
 
 

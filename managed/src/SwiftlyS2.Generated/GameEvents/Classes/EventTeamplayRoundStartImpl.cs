@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "teamplay_round_start"
 /// round restart
 /// </summary>
-internal class EventTeamplayRoundStartImpl : TypedGameEvent<EventTeamplayRoundStart>, EventTeamplayRoundStart
+internal class EventTeamplayRoundStartImpl : GameEvent<EventTeamplayRoundStart>, EventTeamplayRoundStart
 {
 
 

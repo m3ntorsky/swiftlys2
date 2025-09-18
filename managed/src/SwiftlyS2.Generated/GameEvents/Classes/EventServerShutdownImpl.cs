@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "server_shutdown"
 /// server shut down
 /// </summary>
-internal class EventServerShutdownImpl : TypedGameEvent<EventServerShutdown>, EventServerShutdown
+internal class EventServerShutdownImpl : GameEvent<EventServerShutdown>, EventServerShutdown
 {
 
 

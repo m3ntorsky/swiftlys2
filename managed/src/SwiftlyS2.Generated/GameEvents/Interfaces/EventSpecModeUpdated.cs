@@ -7,18 +7,32 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "spec_mode_updated"
 /// </summary>
-public interface EventSpecModeUpdated : ITypedGameEvent<EventSpecModeUpdated> {
+public interface EventSpecModeUpdated : IGameEvent<EventSpecModeUpdated> {
 
-  static EventSpecModeUpdated ITypedGameEvent<EventSpecModeUpdated>.Create() => new EventSpecModeUpdatedImpl();
+  static EventSpecModeUpdated IGameEvent<EventSpecModeUpdated>.Create() => new EventSpecModeUpdatedImpl();
 
-  static string ITypedGameEvent<EventSpecModeUpdated>.GetName() => "spec_mode_updated";
+  static string IGameEvent<EventSpecModeUpdated>.GetName() => "spec_mode_updated";
 
-  static uint ITypedGameEvent<EventSpecModeUpdated>.GetHash() => 0x25E84B54u;
+  static uint IGameEvent<EventSpecModeUpdated>.GetHash() => 0x25E84B54u;
   /// <summary>
   /// spectating player
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// spectating player
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// spectating player
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
 }

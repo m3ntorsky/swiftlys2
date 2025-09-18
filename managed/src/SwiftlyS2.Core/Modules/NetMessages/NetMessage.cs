@@ -1,24 +1,10 @@
 using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Core.Natives.NativeObjects;
+using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.NetMessages;
 
 namespace SwiftlyS2.Core.NetMessages;
 
-internal class NetMessage<T> : AllocableNativeHandle {
+internal class NetMessage<T> : TypedProtobuf<T> where T : ITypedProtobuf<T>, INetMessage<T> {
 
-  public Protobuf Accessor { get; set; }
-
-  public NetMessage(nint handle) : base(handle, true) {
-    Handle = handle;
-    Accessor = new Protobuf(this);
-  }
-  public nint Handle { get; private set; }
-    protected override bool Free() {
-    Accessor.MarkAsInvalid();
-    return true;
-  }
-
-  public void SendMessage()
-  {
-      throw new NotImplementedException();
-  }
 }

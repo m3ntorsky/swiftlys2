@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "helicopter_grenade_punt_miss"
 /// </summary>
-internal class EventHelicopterGrenadePuntMissImpl : TypedGameEvent<EventHelicopterGrenadePuntMiss>, EventHelicopterGrenadePuntMiss
+internal class EventHelicopterGrenadePuntMissImpl : GameEvent<EventHelicopterGrenadePuntMiss>, EventHelicopterGrenadePuntMiss
 {
 
 }

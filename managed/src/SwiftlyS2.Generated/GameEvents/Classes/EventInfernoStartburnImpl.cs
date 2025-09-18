@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "inferno_startburn"
 /// </summary>
-internal class EventInfernoStartburnImpl : TypedGameEvent<EventInfernoStartburn>, EventInfernoStartburn
+internal class EventInfernoStartburnImpl : GameEvent<EventInfernoStartburn>, EventInfernoStartburn
 {
 
 

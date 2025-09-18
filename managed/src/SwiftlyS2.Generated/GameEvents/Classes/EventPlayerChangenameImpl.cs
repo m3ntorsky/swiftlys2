@@ -9,13 +9,21 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_changename"
 /// </summary>
-internal class EventPlayerChangenameImpl : TypedGameEvent<EventPlayerChangename>, EventPlayerChangename
+internal class EventPlayerChangenameImpl : GameEvent<EventPlayerChangename>, EventPlayerChangename
 {
 
 
   // user ID on server
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // user ID on server
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // user ID on server
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // players old (current) name
   public string OldName

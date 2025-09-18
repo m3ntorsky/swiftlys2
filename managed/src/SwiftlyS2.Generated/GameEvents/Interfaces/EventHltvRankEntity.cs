@@ -8,19 +8,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "hltv_rank_entity"
 /// an entity ranking
 /// </summary>
-public interface EventHltvRankEntity : ITypedGameEvent<EventHltvRankEntity> {
+public interface EventHltvRankEntity : IGameEvent<EventHltvRankEntity> {
 
-  static EventHltvRankEntity ITypedGameEvent<EventHltvRankEntity>.Create() => new EventHltvRankEntityImpl();
+  static EventHltvRankEntity IGameEvent<EventHltvRankEntity>.Create() => new EventHltvRankEntityImpl();
 
-  static string ITypedGameEvent<EventHltvRankEntity>.GetName() => "hltv_rank_entity";
+  static string IGameEvent<EventHltvRankEntity>.GetName() => "hltv_rank_entity";
 
-  static uint ITypedGameEvent<EventHltvRankEntity>.GetHash() => 0xC49644C0u;
+  static uint IGameEvent<EventHltvRankEntity>.GetHash() => 0xC49644C0u;
   /// <summary>
   /// player slot
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// player slot
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// player slot
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// ranking, how interesting is this entity to view

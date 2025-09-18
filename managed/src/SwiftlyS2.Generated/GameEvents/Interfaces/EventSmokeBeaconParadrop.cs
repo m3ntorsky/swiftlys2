@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "smoke_beacon_paradrop"
 /// </summary>
-public interface EventSmokeBeaconParadrop : ITypedGameEvent<EventSmokeBeaconParadrop> {
+public interface EventSmokeBeaconParadrop : IGameEvent<EventSmokeBeaconParadrop> {
 
-  static EventSmokeBeaconParadrop ITypedGameEvent<EventSmokeBeaconParadrop>.Create() => new EventSmokeBeaconParadropImpl();
+  static EventSmokeBeaconParadrop IGameEvent<EventSmokeBeaconParadrop>.Create() => new EventSmokeBeaconParadropImpl();
 
-  static string ITypedGameEvent<EventSmokeBeaconParadrop>.GetName() => "smoke_beacon_paradrop";
+  static string IGameEvent<EventSmokeBeaconParadrop>.GetName() => "smoke_beacon_paradrop";
 
-  static uint ITypedGameEvent<EventSmokeBeaconParadrop>.GetHash() => 0xA68BF79Bu;
+  static uint IGameEvent<EventSmokeBeaconParadrop>.GetHash() => 0xA68BF79Bu;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: short

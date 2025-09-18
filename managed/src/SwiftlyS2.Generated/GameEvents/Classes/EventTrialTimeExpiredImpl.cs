@@ -9,11 +9,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "trial_time_expired"
 /// </summary>
-internal class EventTrialTimeExpiredImpl : TypedGameEvent<EventTrialTimeExpired>, EventTrialTimeExpired
+internal class EventTrialTimeExpiredImpl : GameEvent<EventTrialTimeExpired>, EventTrialTimeExpired
 {
 
 
   // player whose time has expired
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // player whose time has expired
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // player whose time has expired
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 }

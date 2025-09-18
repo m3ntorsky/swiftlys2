@@ -9,12 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "exit_bombzone"
 /// </summary>
-internal class EventExitBombzoneImpl : TypedGameEvent<EventExitBombzone>, EventExitBombzone
+internal class EventExitBombzoneImpl : GameEvent<EventExitBombzone>, EventExitBombzone
 {
 
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   public bool HasBomb
   { get => Accessor.GetBool("hasbomb"); set => Accessor.SetBool("hasbomb", value); }

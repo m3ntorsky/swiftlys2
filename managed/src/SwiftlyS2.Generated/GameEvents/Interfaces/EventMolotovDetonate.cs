@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "molotov_detonate"
 /// </summary>
-public interface EventMolotovDetonate : ITypedGameEvent<EventMolotovDetonate> {
+public interface EventMolotovDetonate : IGameEvent<EventMolotovDetonate> {
 
-  static EventMolotovDetonate ITypedGameEvent<EventMolotovDetonate>.Create() => new EventMolotovDetonateImpl();
+  static EventMolotovDetonate IGameEvent<EventMolotovDetonate>.Create() => new EventMolotovDetonateImpl();
 
-  static string ITypedGameEvent<EventMolotovDetonate>.GetName() => "molotov_detonate";
+  static string IGameEvent<EventMolotovDetonate>.GetName() => "molotov_detonate";
 
-  static uint ITypedGameEvent<EventMolotovDetonate>.GetHash() => 0xD541EE9Au;
+  static uint IGameEvent<EventMolotovDetonate>.GetHash() => 0xD541EE9Au;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: float

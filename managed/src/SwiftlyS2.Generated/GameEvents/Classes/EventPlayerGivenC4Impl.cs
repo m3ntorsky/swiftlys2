@@ -9,11 +9,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_given_c4"
 /// </summary>
-internal class EventPlayerGivenC4Impl : TypedGameEvent<EventPlayerGivenC4>, EventPlayerGivenC4
+internal class EventPlayerGivenC4Impl : GameEvent<EventPlayerGivenC4>, EventPlayerGivenC4
 {
 
 
   // user ID who received the c4
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // user ID who received the c4
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // user ID who received the c4
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 }

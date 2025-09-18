@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "hltv_message"
 /// a HLTV message send by moderators
 /// </summary>
-internal class EventHltvMessageImpl : TypedGameEvent<EventHltvMessage>, EventHltvMessage
+internal class EventHltvMessageImpl : GameEvent<EventHltvMessage>, EventHltvMessage
 {
 
 

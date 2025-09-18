@@ -9,13 +9,21 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "door_close"
 /// </summary>
-internal class EventDoorCloseImpl : TypedGameEvent<EventDoorClose>, EventDoorClose
+internal class EventDoorCloseImpl : GameEvent<EventDoorClose>, EventDoorClose
 {
 
 
   // Who closed the door
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // Who closed the door
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // Who closed the door
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // Is the door a checkpoint door
   public bool Checkpoint

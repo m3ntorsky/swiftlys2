@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hltv_changed_mode"
 /// </summary>
-internal class EventHltvChangedModeImpl : TypedGameEvent<EventHltvChangedMode>, EventHltvChangedMode
+internal class EventHltvChangedModeImpl : GameEvent<EventHltvChangedMode>, EventHltvChangedMode
 {
 
 

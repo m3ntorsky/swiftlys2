@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "sfuievent"
 /// </summary>
-internal class EventSfuieventImpl : TypedGameEvent<EventSfuievent>, EventSfuievent
+internal class EventSfuieventImpl : GameEvent<EventSfuievent>, EventSfuievent
 {
 
 

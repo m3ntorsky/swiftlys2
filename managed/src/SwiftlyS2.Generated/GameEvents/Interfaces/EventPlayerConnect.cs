@@ -8,13 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "player_connect"
 /// a new client connected
 /// </summary>
-public interface EventPlayerConnect : ITypedGameEvent<EventPlayerConnect> {
+public interface EventPlayerConnect : IGameEvent<EventPlayerConnect> {
 
-  static EventPlayerConnect ITypedGameEvent<EventPlayerConnect>.Create() => new EventPlayerConnectImpl();
+  static EventPlayerConnect IGameEvent<EventPlayerConnect>.Create() => new EventPlayerConnectImpl();
 
-  static string ITypedGameEvent<EventPlayerConnect>.GetName() => "player_connect";
+  static string IGameEvent<EventPlayerConnect>.GetName() => "player_connect";
 
-  static uint ITypedGameEvent<EventPlayerConnect>.GetHash() => 0x721B9701u;
+  static uint IGameEvent<EventPlayerConnect>.GetHash() => 0x721B9701u;
   /// <summary>
   /// player name
   /// <br/>
@@ -27,7 +27,21 @@ public interface EventPlayerConnect : ITypedGameEvent<EventPlayerConnect> {
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// user ID on server (unique on server)
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// user ID on server (unique on server)
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// player network (i.e steam) id

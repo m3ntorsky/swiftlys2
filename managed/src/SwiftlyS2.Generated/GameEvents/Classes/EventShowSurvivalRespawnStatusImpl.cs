@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "show_survival_respawn_status"
 /// </summary>
-internal class EventShowSurvivalRespawnStatusImpl : TypedGameEvent<EventShowSurvivalRespawnStatus>, EventShowSurvivalRespawnStatus
+internal class EventShowSurvivalRespawnStatusImpl : GameEvent<EventShowSurvivalRespawnStatus>, EventShowSurvivalRespawnStatus
 {
 
 
@@ -19,6 +19,12 @@ internal class EventShowSurvivalRespawnStatusImpl : TypedGameEvent<EventShowSurv
   public int Duration
   { get => Accessor.GetInt32("duration"); set => Accessor.SetInt32("duration", value); }
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 }

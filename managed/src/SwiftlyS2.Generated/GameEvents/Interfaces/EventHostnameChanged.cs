@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "hostname_changed"
 /// </summary>
-public interface EventHostnameChanged : ITypedGameEvent<EventHostnameChanged> {
+public interface EventHostnameChanged : IGameEvent<EventHostnameChanged> {
 
-  static EventHostnameChanged ITypedGameEvent<EventHostnameChanged>.Create() => new EventHostnameChangedImpl();
+  static EventHostnameChanged IGameEvent<EventHostnameChanged>.Create() => new EventHostnameChangedImpl();
 
-  static string ITypedGameEvent<EventHostnameChanged>.GetName() => "hostname_changed";
+  static string IGameEvent<EventHostnameChanged>.GetName() => "hostname_changed";
 
-  static uint ITypedGameEvent<EventHostnameChanged>.GetHash() => 0x81496EB7u;
+  static uint IGameEvent<EventHostnameChanged>.GetHash() => 0x81496EB7u;
   /// <summary>
   /// type: string
   /// </summary>

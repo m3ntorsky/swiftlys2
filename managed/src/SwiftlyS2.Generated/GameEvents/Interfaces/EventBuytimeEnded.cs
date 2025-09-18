@@ -7,11 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "buytime_ended"
 /// </summary>
-public interface EventBuytimeEnded : ITypedGameEvent<EventBuytimeEnded> {
+public interface EventBuytimeEnded : IGameEvent<EventBuytimeEnded> {
 
-  static EventBuytimeEnded ITypedGameEvent<EventBuytimeEnded>.Create() => new EventBuytimeEndedImpl();
+  static EventBuytimeEnded IGameEvent<EventBuytimeEnded>.Create() => new EventBuytimeEndedImpl();
 
-  static string ITypedGameEvent<EventBuytimeEnded>.GetName() => "buytime_ended";
+  static string IGameEvent<EventBuytimeEnded>.GetName() => "buytime_ended";
 
-  static uint ITypedGameEvent<EventBuytimeEnded>.GetHash() => 0x95E836E5u;
+  static uint IGameEvent<EventBuytimeEnded>.GetHash() => 0x95E836E5u;
 }

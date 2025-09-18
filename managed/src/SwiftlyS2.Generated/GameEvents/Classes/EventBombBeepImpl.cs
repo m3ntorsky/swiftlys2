@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_beep"
 /// </summary>
-internal class EventBombBeepImpl : TypedGameEvent<EventBombBeep>, EventBombBeep
+internal class EventBombBeepImpl : GameEvent<EventBombBeep>, EventBombBeep
 {
 
 

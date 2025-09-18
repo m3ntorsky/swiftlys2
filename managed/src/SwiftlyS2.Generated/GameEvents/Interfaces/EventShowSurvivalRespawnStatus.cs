@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "show_survival_respawn_status"
 /// </summary>
-public interface EventShowSurvivalRespawnStatus : ITypedGameEvent<EventShowSurvivalRespawnStatus> {
+public interface EventShowSurvivalRespawnStatus : IGameEvent<EventShowSurvivalRespawnStatus> {
 
-  static EventShowSurvivalRespawnStatus ITypedGameEvent<EventShowSurvivalRespawnStatus>.Create() => new EventShowSurvivalRespawnStatusImpl();
+  static EventShowSurvivalRespawnStatus IGameEvent<EventShowSurvivalRespawnStatus>.Create() => new EventShowSurvivalRespawnStatusImpl();
 
-  static string ITypedGameEvent<EventShowSurvivalRespawnStatus>.GetName() => "show_survival_respawn_status";
+  static string IGameEvent<EventShowSurvivalRespawnStatus>.GetName() => "show_survival_respawn_status";
 
-  static uint ITypedGameEvent<EventShowSurvivalRespawnStatus>.GetHash() => 0xAF60FAAFu;
+  static uint IGameEvent<EventShowSurvivalRespawnStatus>.GetHash() => 0xAF60FAAFu;
   /// <summary>
   /// type: string
   /// </summary>
@@ -28,6 +28,18 @@ public interface EventShowSurvivalRespawnStatus : ITypedGameEvent<EventShowSurvi
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
 }

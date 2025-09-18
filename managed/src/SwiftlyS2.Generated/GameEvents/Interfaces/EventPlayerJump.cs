@@ -7,17 +7,29 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_jump"
 /// </summary>
-public interface EventPlayerJump : ITypedGameEvent<EventPlayerJump> {
+public interface EventPlayerJump : IGameEvent<EventPlayerJump> {
 
-  static EventPlayerJump ITypedGameEvent<EventPlayerJump>.Create() => new EventPlayerJumpImpl();
+  static EventPlayerJump IGameEvent<EventPlayerJump>.Create() => new EventPlayerJumpImpl();
 
-  static string ITypedGameEvent<EventPlayerJump>.GetName() => "player_jump";
+  static string IGameEvent<EventPlayerJump>.GetName() => "player_jump";
 
-  static uint ITypedGameEvent<EventPlayerJump>.GetHash() => 0xA8C90F75u;
+  static uint IGameEvent<EventPlayerJump>.GetHash() => 0xA8C90F75u;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
 }

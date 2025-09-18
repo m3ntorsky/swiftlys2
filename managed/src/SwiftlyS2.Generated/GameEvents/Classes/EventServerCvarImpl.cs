@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "server_cvar"
 /// a server console var has changed
 /// </summary>
-internal class EventServerCvarImpl : TypedGameEvent<EventServerCvar>, EventServerCvar
+internal class EventServerCvarImpl : GameEvent<EventServerCvar>, EventServerCvar
 {
 
 

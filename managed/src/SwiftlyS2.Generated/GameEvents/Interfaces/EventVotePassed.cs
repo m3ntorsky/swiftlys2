@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "vote_passed"
 /// </summary>
-public interface EventVotePassed : ITypedGameEvent<EventVotePassed> {
+public interface EventVotePassed : IGameEvent<EventVotePassed> {
 
-  static EventVotePassed ITypedGameEvent<EventVotePassed>.Create() => new EventVotePassedImpl();
+  static EventVotePassed IGameEvent<EventVotePassed>.Create() => new EventVotePassedImpl();
 
-  static string ITypedGameEvent<EventVotePassed>.GetName() => "vote_passed";
+  static string IGameEvent<EventVotePassed>.GetName() => "vote_passed";
 
-  static uint ITypedGameEvent<EventVotePassed>.GetHash() => 0x9B90008Eu;
+  static uint IGameEvent<EventVotePassed>.GetHash() => 0x9B90008Eu;
   /// <summary>
   /// type: string
   /// </summary>

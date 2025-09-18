@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "start_vote"
 /// </summary>
-public interface EventStartVote : ITypedGameEvent<EventStartVote> {
+public interface EventStartVote : IGameEvent<EventStartVote> {
 
-  static EventStartVote ITypedGameEvent<EventStartVote>.Create() => new EventStartVoteImpl();
+  static EventStartVote IGameEvent<EventStartVote>.Create() => new EventStartVoteImpl();
 
-  static string ITypedGameEvent<EventStartVote>.GetName() => "start_vote";
+  static string IGameEvent<EventStartVote>.GetName() => "start_vote";
 
-  static uint ITypedGameEvent<EventStartVote>.GetHash() => 0x637C08B4u;
+  static uint IGameEvent<EventStartVote>.GetHash() => 0x637C08B4u;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: byte

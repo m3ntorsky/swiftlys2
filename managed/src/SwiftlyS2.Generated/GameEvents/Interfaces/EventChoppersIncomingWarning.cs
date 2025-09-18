@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "choppers_incoming_warning"
 /// </summary>
-public interface EventChoppersIncomingWarning : ITypedGameEvent<EventChoppersIncomingWarning> {
+public interface EventChoppersIncomingWarning : IGameEvent<EventChoppersIncomingWarning> {
 
-  static EventChoppersIncomingWarning ITypedGameEvent<EventChoppersIncomingWarning>.Create() => new EventChoppersIncomingWarningImpl();
+  static EventChoppersIncomingWarning IGameEvent<EventChoppersIncomingWarning>.Create() => new EventChoppersIncomingWarningImpl();
 
-  static string ITypedGameEvent<EventChoppersIncomingWarning>.GetName() => "choppers_incoming_warning";
+  static string IGameEvent<EventChoppersIncomingWarning>.GetName() => "choppers_incoming_warning";
 
-  static uint ITypedGameEvent<EventChoppersIncomingWarning>.GetHash() => 0x68E589D1u;
+  static uint IGameEvent<EventChoppersIncomingWarning>.GetHash() => 0x68E589D1u;
   /// <summary>
   /// type: bool
   /// </summary>

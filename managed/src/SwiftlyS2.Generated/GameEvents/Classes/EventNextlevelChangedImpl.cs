@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "nextlevel_changed"
 /// a game event, name may be 32 characters long
 /// </summary>
-internal class EventNextlevelChangedImpl : TypedGameEvent<EventNextlevelChanged>, EventNextlevelChanged
+internal class EventNextlevelChangedImpl : GameEvent<EventNextlevelChanged>, EventNextlevelChanged
 {
 
 

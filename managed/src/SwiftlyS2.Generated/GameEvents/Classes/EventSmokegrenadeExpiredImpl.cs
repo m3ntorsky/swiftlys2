@@ -9,12 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "smokegrenade_expired"
 /// </summary>
-internal class EventSmokegrenadeExpiredImpl : TypedGameEvent<EventSmokegrenadeExpired>, EventSmokegrenadeExpired
+internal class EventSmokegrenadeExpiredImpl : GameEvent<EventSmokegrenadeExpired>, EventSmokegrenadeExpired
 {
 
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   public short EntityID
   { get => (short)Accessor.GetInt32("entityid"); set => Accessor.SetInt32("entityid", value); }

@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "defuser_pickup"
 /// </summary>
-public interface EventDefuserPickup : ITypedGameEvent<EventDefuserPickup> {
+public interface EventDefuserPickup : IGameEvent<EventDefuserPickup> {
 
-  static EventDefuserPickup ITypedGameEvent<EventDefuserPickup>.Create() => new EventDefuserPickupImpl();
+  static EventDefuserPickup IGameEvent<EventDefuserPickup>.Create() => new EventDefuserPickupImpl();
 
-  static string ITypedGameEvent<EventDefuserPickup>.GetName() => "defuser_pickup";
+  static string IGameEvent<EventDefuserPickup>.GetName() => "defuser_pickup";
 
-  static uint ITypedGameEvent<EventDefuserPickup>.GetHash() => 0xA9099A0Cu;
+  static uint IGameEvent<EventDefuserPickup>.GetHash() => 0xA9099A0Cu;
   /// <summary>
   /// defuser's entity ID
   /// <br/>
@@ -26,6 +26,20 @@ public interface EventDefuserPickup : ITypedGameEvent<EventDefuserPickup> {
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// player who picked up the defuser
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// player who picked up the defuser
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
 }

@@ -9,12 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "seasoncoin_levelup"
 /// </summary>
-internal class EventSeasoncoinLevelupImpl : TypedGameEvent<EventSeasoncoinLevelup>, EventSeasoncoinLevelup
+internal class EventSeasoncoinLevelupImpl : GameEvent<EventSeasoncoinLevelup>, EventSeasoncoinLevelup
 {
 
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   public short Category
   { get => (short)Accessor.GetInt32("category"); set => Accessor.SetInt32("category", value); }

@@ -9,13 +9,21 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "instructor_close_lesson"
 /// </summary>
-internal class EventInstructorCloseLessonImpl : TypedGameEvent<EventInstructorCloseLesson>, EventInstructorCloseLesson
+internal class EventInstructorCloseLessonImpl : GameEvent<EventInstructorCloseLesson>, EventInstructorCloseLesson
 {
 
 
   // The player who this lesson is intended for
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // The player who this lesson is intended for
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // The player who this lesson is intended for
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // Name of the lesson to start.  Must match instructor_lesson.txt
   public string HintName

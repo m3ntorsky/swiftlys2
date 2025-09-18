@@ -9,12 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "round_mvp"
 /// </summary>
-internal class EventRoundMvpImpl : TypedGameEvent<EventRoundMvp>, EventRoundMvp
+internal class EventRoundMvpImpl : GameEvent<EventRoundMvp>, EventRoundMvp
 {
 
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   public short Reason
   { get => (short)Accessor.GetInt32("reason"); set => Accessor.SetInt32("reason", value); }

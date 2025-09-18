@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hltv_title"
 /// </summary>
-internal class EventHltvTitleImpl : TypedGameEvent<EventHltvTitle>, EventHltvTitle
+internal class EventHltvTitleImpl : GameEvent<EventHltvTitle>, EventHltvTitle
 {
 
 

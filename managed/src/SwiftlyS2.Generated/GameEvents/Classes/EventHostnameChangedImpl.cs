@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hostname_changed"
 /// </summary>
-internal class EventHostnameChangedImpl : TypedGameEvent<EventHostnameChanged>, EventHostnameChanged
+internal class EventHostnameChangedImpl : GameEvent<EventHostnameChanged>, EventHostnameChanged
 {
 
 

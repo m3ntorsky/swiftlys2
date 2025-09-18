@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "inventory_updated"
 /// </summary>
-internal class EventInventoryUpdatedImpl : TypedGameEvent<EventInventoryUpdated>, EventInventoryUpdated
+internal class EventInventoryUpdatedImpl : GameEvent<EventInventoryUpdated>, EventInventoryUpdated
 {
 
 

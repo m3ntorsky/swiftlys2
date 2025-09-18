@@ -7,19 +7,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "open_crate_instr"
 /// </summary>
-public interface EventOpenCrateInstr : ITypedGameEvent<EventOpenCrateInstr> {
+public interface EventOpenCrateInstr : IGameEvent<EventOpenCrateInstr> {
 
-  static EventOpenCrateInstr ITypedGameEvent<EventOpenCrateInstr>.Create() => new EventOpenCrateInstrImpl();
+  static EventOpenCrateInstr IGameEvent<EventOpenCrateInstr>.Create() => new EventOpenCrateInstrImpl();
 
-  static string ITypedGameEvent<EventOpenCrateInstr>.GetName() => "open_crate_instr";
+  static string IGameEvent<EventOpenCrateInstr>.GetName() => "open_crate_instr";
 
-  static uint ITypedGameEvent<EventOpenCrateInstr>.GetHash() => 0x76409C38u;
+  static uint IGameEvent<EventOpenCrateInstr>.GetHash() => 0x76409C38u;
   /// <summary>
   /// player entindex
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// player entindex
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// player entindex
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// crate entindex

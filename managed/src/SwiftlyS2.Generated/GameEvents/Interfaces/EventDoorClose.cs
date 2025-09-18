@@ -7,19 +7,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "door_close"
 /// </summary>
-public interface EventDoorClose : ITypedGameEvent<EventDoorClose> {
+public interface EventDoorClose : IGameEvent<EventDoorClose> {
 
-  static EventDoorClose ITypedGameEvent<EventDoorClose>.Create() => new EventDoorCloseImpl();
+  static EventDoorClose IGameEvent<EventDoorClose>.Create() => new EventDoorCloseImpl();
 
-  static string ITypedGameEvent<EventDoorClose>.GetName() => "door_close";
+  static string IGameEvent<EventDoorClose>.GetName() => "door_close";
 
-  static uint ITypedGameEvent<EventDoorClose>.GetHash() => 0xC96E7A7Eu;
+  static uint IGameEvent<EventDoorClose>.GetHash() => 0xC96E7A7Eu;
   /// <summary>
   /// Who closed the door
   /// <br/>
   /// type: player_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// Who closed the door
+  /// <br/>
+  /// type: player_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// Who closed the door
+  /// <br/>
+  /// type: player_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// Is the door a checkpoint door

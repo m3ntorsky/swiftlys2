@@ -8,13 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "player_info"
 /// a player changed his name
 /// </summary>
-public interface EventPlayerInfo : ITypedGameEvent<EventPlayerInfo> {
+public interface EventPlayerInfo : IGameEvent<EventPlayerInfo> {
 
-  static EventPlayerInfo ITypedGameEvent<EventPlayerInfo>.Create() => new EventPlayerInfoImpl();
+  static EventPlayerInfo IGameEvent<EventPlayerInfo>.Create() => new EventPlayerInfoImpl();
 
-  static string ITypedGameEvent<EventPlayerInfo>.GetName() => "player_info";
+  static string IGameEvent<EventPlayerInfo>.GetName() => "player_info";
 
-  static uint ITypedGameEvent<EventPlayerInfo>.GetHash() => 0x0A0BAFFDu;
+  static uint IGameEvent<EventPlayerInfo>.GetHash() => 0x0A0BAFFDu;
   /// <summary>
   /// player name
   /// <br/>
@@ -27,7 +27,21 @@ public interface EventPlayerInfo : ITypedGameEvent<EventPlayerInfo> {
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// user ID on server (unique on server)
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// user ID on server (unique on server)
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// player network (i.e steam) id

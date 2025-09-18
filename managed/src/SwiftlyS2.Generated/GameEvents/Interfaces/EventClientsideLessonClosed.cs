@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "clientside_lesson_closed"
 /// </summary>
-public interface EventClientsideLessonClosed : ITypedGameEvent<EventClientsideLessonClosed> {
+public interface EventClientsideLessonClosed : IGameEvent<EventClientsideLessonClosed> {
 
-  static EventClientsideLessonClosed ITypedGameEvent<EventClientsideLessonClosed>.Create() => new EventClientsideLessonClosedImpl();
+  static EventClientsideLessonClosed IGameEvent<EventClientsideLessonClosed>.Create() => new EventClientsideLessonClosedImpl();
 
-  static string ITypedGameEvent<EventClientsideLessonClosed>.GetName() => "clientside_lesson_closed";
+  static string IGameEvent<EventClientsideLessonClosed>.GetName() => "clientside_lesson_closed";
 
-  static uint ITypedGameEvent<EventClientsideLessonClosed>.GetHash() => 0x251ECF23u;
+  static uint IGameEvent<EventClientsideLessonClosed>.GetHash() => 0x251ECF23u;
   /// <summary>
   /// type: string
   /// </summary>

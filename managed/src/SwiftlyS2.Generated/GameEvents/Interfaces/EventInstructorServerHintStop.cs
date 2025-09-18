@@ -8,13 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "instructor_server_hint_stop"
 /// destroys a server/map created hint
 /// </summary>
-public interface EventInstructorServerHintStop : ITypedGameEvent<EventInstructorServerHintStop> {
+public interface EventInstructorServerHintStop : IGameEvent<EventInstructorServerHintStop> {
 
-  static EventInstructorServerHintStop ITypedGameEvent<EventInstructorServerHintStop>.Create() => new EventInstructorServerHintStopImpl();
+  static EventInstructorServerHintStop IGameEvent<EventInstructorServerHintStop>.Create() => new EventInstructorServerHintStopImpl();
 
-  static string ITypedGameEvent<EventInstructorServerHintStop>.GetName() => "instructor_server_hint_stop";
+  static string IGameEvent<EventInstructorServerHintStop>.GetName() => "instructor_server_hint_stop";
 
-  static uint ITypedGameEvent<EventInstructorServerHintStop>.GetHash() => 0xEA673171u;
+  static uint IGameEvent<EventInstructorServerHintStop>.GetHash() => 0xEA673171u;
   /// <summary>
   /// The hint to stop. Will stop ALL hints with this name
   /// <br/>

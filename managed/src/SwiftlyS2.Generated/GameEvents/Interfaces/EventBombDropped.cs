@@ -7,19 +7,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_dropped"
 /// </summary>
-public interface EventBombDropped : ITypedGameEvent<EventBombDropped> {
+public interface EventBombDropped : IGameEvent<EventBombDropped> {
 
-  static EventBombDropped ITypedGameEvent<EventBombDropped>.Create() => new EventBombDroppedImpl();
+  static EventBombDropped IGameEvent<EventBombDropped>.Create() => new EventBombDroppedImpl();
 
-  static string ITypedGameEvent<EventBombDropped>.GetName() => "bomb_dropped";
+  static string IGameEvent<EventBombDropped>.GetName() => "bomb_dropped";
 
-  static uint ITypedGameEvent<EventBombDropped>.GetHash() => 0x399275B4u;
+  static uint IGameEvent<EventBombDropped>.GetHash() => 0x399275B4u;
   /// <summary>
   /// player who dropped the bomb
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// player who dropped the bomb
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// player who dropped the bomb
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: long

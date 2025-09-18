@@ -9,11 +9,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_pickup"
 /// </summary>
-internal class EventBombPickupImpl : TypedGameEvent<EventBombPickup>, EventBombPickup
+internal class EventBombPickupImpl : GameEvent<EventBombPickup>, EventBombPickup
 {
 
 
   // player pawn who picked up the bomb
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // player pawn who picked up the bomb
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // player pawn who picked up the bomb
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 }

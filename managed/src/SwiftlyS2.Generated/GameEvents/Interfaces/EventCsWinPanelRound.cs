@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_win_panel_round"
 /// </summary>
-public interface EventCsWinPanelRound : ITypedGameEvent<EventCsWinPanelRound> {
+public interface EventCsWinPanelRound : IGameEvent<EventCsWinPanelRound> {
 
-  static EventCsWinPanelRound ITypedGameEvent<EventCsWinPanelRound>.Create() => new EventCsWinPanelRoundImpl();
+  static EventCsWinPanelRound IGameEvent<EventCsWinPanelRound>.Create() => new EventCsWinPanelRoundImpl();
 
-  static string ITypedGameEvent<EventCsWinPanelRound>.GetName() => "cs_win_panel_round";
+  static string IGameEvent<EventCsWinPanelRound>.GetName() => "cs_win_panel_round";
 
-  static uint ITypedGameEvent<EventCsWinPanelRound>.GetHash() => 0xFF5D5EC0u;
+  static uint IGameEvent<EventCsWinPanelRound>.GetHash() => 0xFF5D5EC0u;
   /// <summary>
   /// type: bool
   /// </summary>

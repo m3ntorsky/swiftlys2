@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_ping_stop"
 /// </summary>
-internal class EventPlayerPingStopImpl : TypedGameEvent<EventPlayerPingStop>, EventPlayerPingStop
+internal class EventPlayerPingStopImpl : GameEvent<EventPlayerPingStop>, EventPlayerPingStop
 {
 
 

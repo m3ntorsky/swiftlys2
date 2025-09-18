@@ -8,13 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "hltv_chase"
 /// shot of a single entity
 /// </summary>
-public interface EventHltvChase : ITypedGameEvent<EventHltvChase> {
+public interface EventHltvChase : IGameEvent<EventHltvChase> {
 
-  static EventHltvChase ITypedGameEvent<EventHltvChase>.Create() => new EventHltvChaseImpl();
+  static EventHltvChase IGameEvent<EventHltvChase>.Create() => new EventHltvChaseImpl();
 
-  static string ITypedGameEvent<EventHltvChase>.GetName() => "hltv_chase";
+  static string IGameEvent<EventHltvChase>.GetName() => "hltv_chase";
 
-  static uint ITypedGameEvent<EventHltvChase>.GetHash() => 0xEB73303Au;
+  static uint IGameEvent<EventHltvChase>.GetHash() => 0xEB73303Au;
   /// <summary>
   /// primary traget index
   /// <br/>

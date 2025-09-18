@@ -9,13 +9,21 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "spec_target_updated"
 /// </summary>
-internal class EventSpecTargetUpdatedImpl : TypedGameEvent<EventSpecTargetUpdated>, EventSpecTargetUpdated
+internal class EventSpecTargetUpdatedImpl : GameEvent<EventSpecTargetUpdated>, EventSpecTargetUpdated
 {
 
 
   // spectating player
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // spectating player
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // spectating player
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // ehandle of the target
   public nint Target

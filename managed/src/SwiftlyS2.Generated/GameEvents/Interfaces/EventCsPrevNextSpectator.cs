@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_prev_next_spectator"
 /// </summary>
-public interface EventCsPrevNextSpectator : ITypedGameEvent<EventCsPrevNextSpectator> {
+public interface EventCsPrevNextSpectator : IGameEvent<EventCsPrevNextSpectator> {
 
-  static EventCsPrevNextSpectator ITypedGameEvent<EventCsPrevNextSpectator>.Create() => new EventCsPrevNextSpectatorImpl();
+  static EventCsPrevNextSpectator IGameEvent<EventCsPrevNextSpectator>.Create() => new EventCsPrevNextSpectatorImpl();
 
-  static string ITypedGameEvent<EventCsPrevNextSpectator>.GetName() => "cs_prev_next_spectator";
+  static string IGameEvent<EventCsPrevNextSpectator>.GetName() => "cs_prev_next_spectator";
 
-  static uint ITypedGameEvent<EventCsPrevNextSpectator>.GetHash() => 0x532CC8E5u;
+  static uint IGameEvent<EventCsPrevNextSpectator>.GetHash() => 0x532CC8E5u;
   /// <summary>
   /// type: bool
   /// </summary>

@@ -8,13 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "hltv_fixed"
 /// show from fixed view
 /// </summary>
-public interface EventHltvFixed : ITypedGameEvent<EventHltvFixed> {
+public interface EventHltvFixed : IGameEvent<EventHltvFixed> {
 
-  static EventHltvFixed ITypedGameEvent<EventHltvFixed>.Create() => new EventHltvFixedImpl();
+  static EventHltvFixed IGameEvent<EventHltvFixed>.Create() => new EventHltvFixedImpl();
 
-  static string ITypedGameEvent<EventHltvFixed>.GetName() => "hltv_fixed";
+  static string IGameEvent<EventHltvFixed>.GetName() => "hltv_fixed";
 
-  static uint ITypedGameEvent<EventHltvFixed>.GetHash() => 0xCA86FB76u;
+  static uint IGameEvent<EventHltvFixed>.GetHash() => 0xCA86FB76u;
   /// <summary>
   /// camera position in world
   /// <br/>

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "set_instructor_group_enabled"
 /// </summary>
-internal class EventSetInstructorGroupEnabledImpl : TypedGameEvent<EventSetInstructorGroupEnabled>, EventSetInstructorGroupEnabled
+internal class EventSetInstructorGroupEnabledImpl : GameEvent<EventSetInstructorGroupEnabled>, EventSetInstructorGroupEnabled
 {
 
 

@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_ping"
 /// </summary>
-public interface EventPlayerPing : ITypedGameEvent<EventPlayerPing> {
+public interface EventPlayerPing : IGameEvent<EventPlayerPing> {
 
-  static EventPlayerPing ITypedGameEvent<EventPlayerPing>.Create() => new EventPlayerPingImpl();
+  static EventPlayerPing IGameEvent<EventPlayerPing>.Create() => new EventPlayerPingImpl();
 
-  static string ITypedGameEvent<EventPlayerPing>.GetName() => "player_ping";
+  static string IGameEvent<EventPlayerPing>.GetName() => "player_ping";
 
-  static uint ITypedGameEvent<EventPlayerPing>.GetHash() => 0xB41F45B1u;
+  static uint IGameEvent<EventPlayerPing>.GetHash() => 0xB41F45B1u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: short

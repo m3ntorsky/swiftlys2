@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "demo_skip"
 /// </summary>
-public interface EventDemoSkip : ITypedGameEvent<EventDemoSkip> {
+public interface EventDemoSkip : IGameEvent<EventDemoSkip> {
 
-  static EventDemoSkip ITypedGameEvent<EventDemoSkip>.Create() => new EventDemoSkipImpl();
+  static EventDemoSkip IGameEvent<EventDemoSkip>.Create() => new EventDemoSkipImpl();
 
-  static string ITypedGameEvent<EventDemoSkip>.GetName() => "demo_skip";
+  static string IGameEvent<EventDemoSkip>.GetName() => "demo_skip";
 
-  static uint ITypedGameEvent<EventDemoSkip>.GetHash() => 0x3A36ECC0u;
+  static uint IGameEvent<EventDemoSkip>.GetHash() => 0x3A36ECC0u;
   /// <summary>
   /// current playback tick
   /// <br/>

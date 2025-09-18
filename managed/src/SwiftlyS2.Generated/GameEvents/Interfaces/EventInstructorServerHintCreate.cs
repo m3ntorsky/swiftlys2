@@ -8,19 +8,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "instructor_server_hint_create"
 /// create a hint using data supplied entirely by the server/map. Intended for hints to smooth playtests before content is ready to make the hint unneccessary. NOT INTENDED AS A SHIPPABLE CRUTCH
 /// </summary>
-public interface EventInstructorServerHintCreate : ITypedGameEvent<EventInstructorServerHintCreate> {
+public interface EventInstructorServerHintCreate : IGameEvent<EventInstructorServerHintCreate> {
 
-  static EventInstructorServerHintCreate ITypedGameEvent<EventInstructorServerHintCreate>.Create() => new EventInstructorServerHintCreateImpl();
+  static EventInstructorServerHintCreate IGameEvent<EventInstructorServerHintCreate>.Create() => new EventInstructorServerHintCreateImpl();
 
-  static string ITypedGameEvent<EventInstructorServerHintCreate>.GetName() => "instructor_server_hint_create";
+  static string IGameEvent<EventInstructorServerHintCreate>.GetName() => "instructor_server_hint_create";
 
-  static uint ITypedGameEvent<EventInstructorServerHintCreate>.GetHash() => 0xB6A33F21u;
+  static uint IGameEvent<EventInstructorServerHintCreate>.GetHash() => 0xB6A33F21u;
   /// <summary>
   /// user ID of the player that triggered the hint
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// user ID of the player that triggered the hint
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// user ID of the player that triggered the hint
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// entity id of the env_instructor_hint that fired the event

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hltv_versioninfo"
 /// </summary>
-internal class EventHltvVersioninfoImpl : TypedGameEvent<EventHltvVersioninfo>, EventHltvVersioninfo
+internal class EventHltvVersioninfoImpl : GameEvent<EventHltvVersioninfo>, EventHltvVersioninfo
 {
 
 

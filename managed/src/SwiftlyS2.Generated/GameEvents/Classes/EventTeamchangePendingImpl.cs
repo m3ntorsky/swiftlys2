@@ -9,12 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "teamchange_pending"
 /// </summary>
-internal class EventTeamchangePendingImpl : TypedGameEvent<EventTeamchangePending>, EventTeamchangePending
+internal class EventTeamchangePendingImpl : GameEvent<EventTeamchangePending>, EventTeamchangePending
 {
 
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   public byte ToTeam
   { get => (byte)Accessor.GetInt32("toteam"); set => Accessor.SetInt32("toteam", value); }
