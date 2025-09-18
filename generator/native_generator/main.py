@@ -23,6 +23,7 @@ PARAM_TYPE_MAP = {
     "qangle": "QAngle",
     "color": "Color",
     "bytes": "byte[]",
+    "cutlstringtoken": "CUtlStringToken"
 }
 
 DELEGATE_PARAM_TYPE_MAP = {
