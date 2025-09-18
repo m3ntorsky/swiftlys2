@@ -4,6 +4,8 @@ from pathlib import Path
 INDENT = "  "
 
 PARAM_TYPE_MAP = {
+    "int16": "short",
+    "uint16": "ushort",
     "int32": "int",
     "float": "float",
     "double": "double",

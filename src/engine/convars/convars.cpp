@@ -238,6 +238,13 @@ bool CConvarManager::ExistsConvar(std::string cvar_name)
     return cvar.IsValidRef() && cvar.IsConVarDataValid();
 }
 
+EConVarType CConvarManager::GetConvarType(std::string cvar_name)
+{
+    ConVarRefAbstract cvar(cvar_name.c_str());
+    if (!cvar.IsConVarDataValid()) return EConVarType::EConVarType_Invalid;
+    return cvar.GetType();
+}
+
 void* CConvarManager::GetConvarDataAddress(std::string cvar_name)
 {
     ConVarRefAbstract cvar(cvar_name.c_str());

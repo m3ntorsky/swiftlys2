@@ -35,6 +35,7 @@ public:
     virtual void CreateConvar(std::string cvar_name, EConVarType type, uint64_t flags, const char* help_message, ConvarValue defaultValue) override;
     virtual void DeleteConvar(std::string cvar_name) override;
     virtual bool ExistsConvar(std::string cvar_name) override;
+    virtual EConVarType GetConvarType(std::string cvar_name) override;
 
     virtual void* GetConvarDataAddress(std::string cvar_name) override;
     virtual ConvarValue GetConvarValue(std::string cvar_name) override;
