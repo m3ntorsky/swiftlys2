@@ -136,15 +136,16 @@ void Bridge_NetMessages_DeallocateNetMessage(void* msg)
 
 bool Bridge_NetMessages_HasField(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(false);
     CHECK_FIELD_NOT_REPEATED(false);
+    
     return msg->GetReflection()->HasField(*msg, field);
 }
 
 int Bridge_NetMessages_GetInt32(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0);
     CHECK_FIELD_NOT_REPEATED(0);
     return msg->GetReflection()->GetInt32(*msg, field);
@@ -152,7 +153,7 @@ int Bridge_NetMessages_GetInt32(void* pmsg, const char* fieldName)
 
 int Bridge_NetMessages_GetRepeatedInt32(void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0);
     CHECK_FIELD_REPEATED(0);
     CHECK_REPEATED_ELEMENT(index, 0);
@@ -161,7 +162,7 @@ int Bridge_NetMessages_GetRepeatedInt32(void* pmsg, const char* fieldName, int i
 
 void Bridge_NetMessages_SetInt32(void* pmsg, const char* fieldName, int value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
     msg->GetReflection()->SetInt32(msg, field, value);
@@ -169,7 +170,7 @@ void Bridge_NetMessages_SetInt32(void* pmsg, const char* fieldName, int value)
 
 void Bridge_NetMessages_SetRepeatedInt32(void* pmsg, const char* fieldName, int index, int value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
@@ -178,7 +179,7 @@ void Bridge_NetMessages_SetRepeatedInt32(void* pmsg, const char* fieldName, int 
 
 void Bridge_NetMessages_AddInt32(void* pmsg, const char* fieldName, int value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     msg->GetReflection()->AddInt32(msg, field, value);
@@ -186,7 +187,7 @@ void Bridge_NetMessages_AddInt32(void* pmsg, const char* fieldName, int value)
 
 int64_t Bridge_NetMessages_GetInt64(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0);
     CHECK_FIELD_NOT_REPEATED(0);
     return msg->GetReflection()->GetInt64(*msg, field);
@@ -194,7 +195,7 @@ int64_t Bridge_NetMessages_GetInt64(void* pmsg, const char* fieldName)
 
 int64_t Bridge_NetMessages_GetRepeatedInt64(void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0);
     CHECK_FIELD_REPEATED(0);
     CHECK_REPEATED_ELEMENT(index, 0);
@@ -203,7 +204,7 @@ int64_t Bridge_NetMessages_GetRepeatedInt64(void* pmsg, const char* fieldName, i
 
 void Bridge_NetMessages_SetInt64(void* pmsg, const char* fieldName, int64_t value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
     msg->GetReflection()->SetInt64(msg, field, value);
@@ -211,7 +212,7 @@ void Bridge_NetMessages_SetInt64(void* pmsg, const char* fieldName, int64_t valu
 
 void Bridge_NetMessages_SetRepeatedInt64(void* pmsg, const char* fieldName, int index, int64_t value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
@@ -220,7 +221,7 @@ void Bridge_NetMessages_SetRepeatedInt64(void* pmsg, const char* fieldName, int 
 
 void Bridge_NetMessages_AddInt64(void* pmsg, const char* fieldName, int64_t value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     msg->GetReflection()->AddInt64(msg, field, value);
@@ -228,7 +229,7 @@ void Bridge_NetMessages_AddInt64(void* pmsg, const char* fieldName, int64_t valu
 
 uint32_t Bridge_NetMessages_GetUInt32(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0);
     CHECK_FIELD_NOT_REPEATED(0);
     return msg->GetReflection()->GetUInt32(*msg, field);
@@ -236,7 +237,7 @@ uint32_t Bridge_NetMessages_GetUInt32(void* pmsg, const char* fieldName)
 
 uint32_t Bridge_NetMessages_GetRepeatedUInt32(void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0);
     CHECK_FIELD_REPEATED(0);
     CHECK_REPEATED_ELEMENT(index, 0);
@@ -245,7 +246,7 @@ uint32_t Bridge_NetMessages_GetRepeatedUInt32(void* pmsg, const char* fieldName,
 
 void Bridge_NetMessages_SetUInt32(void* pmsg, const char* fieldName, uint32_t value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
     msg->GetReflection()->SetUInt32(msg, field, value);
@@ -253,7 +254,7 @@ void Bridge_NetMessages_SetUInt32(void* pmsg, const char* fieldName, uint32_t va
 
 void Bridge_NetMessages_SetRepeatedUInt32(void* pmsg, const char* fieldName, int index, uint32_t value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
@@ -262,7 +263,7 @@ void Bridge_NetMessages_SetRepeatedUInt32(void* pmsg, const char* fieldName, int
 
 void Bridge_NetMessages_AddUInt32(void* pmsg, const char* fieldName, uint32_t value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     msg->GetReflection()->AddUInt32(msg, field, value);
@@ -270,7 +271,7 @@ void Bridge_NetMessages_AddUInt32(void* pmsg, const char* fieldName, uint32_t va
 
 uint64_t Bridge_NetMessages_GetUInt64(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0);
     CHECK_FIELD_NOT_REPEATED(0);
     return msg->GetReflection()->GetUInt64(*msg, field);
@@ -278,7 +279,7 @@ uint64_t Bridge_NetMessages_GetUInt64(void* pmsg, const char* fieldName)
 
 uint64_t Bridge_NetMessages_GetRepeatedUInt64(void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0);
     CHECK_FIELD_REPEATED(0);
     CHECK_REPEATED_ELEMENT(index, 0);
@@ -287,7 +288,7 @@ uint64_t Bridge_NetMessages_GetRepeatedUInt64(void* pmsg, const char* fieldName,
 
 void Bridge_NetMessages_SetUInt64(void* pmsg, const char* fieldName, uint64_t value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
     msg->GetReflection()->SetUInt64(msg, field, value);
@@ -295,7 +296,7 @@ void Bridge_NetMessages_SetUInt64(void* pmsg, const char* fieldName, uint64_t va
 
 void Bridge_NetMessages_SetRepeatedUInt64(void* pmsg, const char* fieldName, int index, uint64_t value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
@@ -304,7 +305,7 @@ void Bridge_NetMessages_SetRepeatedUInt64(void* pmsg, const char* fieldName, int
 
 void Bridge_NetMessages_AddUInt64(void* pmsg, const char* fieldName, uint64_t value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     msg->GetReflection()->AddUInt64(msg, field, value);
@@ -312,7 +313,7 @@ void Bridge_NetMessages_AddUInt64(void* pmsg, const char* fieldName, uint64_t va
 
 bool Bridge_NetMessages_GetBool(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(false);
     CHECK_FIELD_NOT_REPEATED(false);
     return msg->GetReflection()->GetBool(*msg, field);
@@ -320,7 +321,7 @@ bool Bridge_NetMessages_GetBool(void* pmsg, const char* fieldName)
 
 bool Bridge_NetMessages_GetRepeatedBool(void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(false);
     CHECK_FIELD_REPEATED(false);
     CHECK_REPEATED_ELEMENT(index, false);
@@ -329,7 +330,7 @@ bool Bridge_NetMessages_GetRepeatedBool(void* pmsg, const char* fieldName, int i
 
 void Bridge_NetMessages_SetBool(void* pmsg, const char* fieldName, bool value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
     msg->GetReflection()->SetBool(msg, field, value);
@@ -337,7 +338,7 @@ void Bridge_NetMessages_SetBool(void* pmsg, const char* fieldName, bool value)
 
 void Bridge_NetMessages_SetRepeatedBool(void* pmsg, const char* fieldName, int index, bool value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
@@ -346,7 +347,7 @@ void Bridge_NetMessages_SetRepeatedBool(void* pmsg, const char* fieldName, int i
 
 void Bridge_NetMessages_AddBool(void* pmsg, const char* fieldName, bool value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     msg->GetReflection()->AddBool(msg, field, value);
@@ -354,7 +355,7 @@ void Bridge_NetMessages_AddBool(void* pmsg, const char* fieldName, bool value)
 
 float Bridge_NetMessages_GetFloat(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0.0f);
     CHECK_FIELD_NOT_REPEATED(0.0f);
     return msg->GetReflection()->GetFloat(*msg, field);
@@ -362,7 +363,7 @@ float Bridge_NetMessages_GetFloat(void* pmsg, const char* fieldName)
 
 float Bridge_NetMessages_GetRepeatedFloat(void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0.0f);
     CHECK_FIELD_REPEATED(0.0f);
     CHECK_REPEATED_ELEMENT(index, 0.0f);
@@ -371,7 +372,7 @@ float Bridge_NetMessages_GetRepeatedFloat(void* pmsg, const char* fieldName, int
 
 void Bridge_NetMessages_SetFloat(void* pmsg, const char* fieldName, float value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
     msg->GetReflection()->SetFloat(msg, field, value);
@@ -379,7 +380,7 @@ void Bridge_NetMessages_SetFloat(void* pmsg, const char* fieldName, float value)
 
 void Bridge_NetMessages_SetRepeatedFloat(void* pmsg, const char* fieldName, int index, float value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
@@ -388,7 +389,7 @@ void Bridge_NetMessages_SetRepeatedFloat(void* pmsg, const char* fieldName, int 
 
 void Bridge_NetMessages_AddFloat(void* pmsg, const char* fieldName, float value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     msg->GetReflection()->AddFloat(msg, field, value);
@@ -396,7 +397,7 @@ void Bridge_NetMessages_AddFloat(void* pmsg, const char* fieldName, float value)
 
 double Bridge_NetMessages_GetDouble(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0.0);
     CHECK_FIELD_NOT_REPEATED(0.0);
     return msg->GetReflection()->GetDouble(*msg, field);
@@ -404,7 +405,7 @@ double Bridge_NetMessages_GetDouble(void* pmsg, const char* fieldName)
 
 double Bridge_NetMessages_GetRepeatedDouble(void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0.0);
     CHECK_FIELD_REPEATED(0.0);
     CHECK_REPEATED_ELEMENT(index, 0.0);
@@ -413,7 +414,7 @@ double Bridge_NetMessages_GetRepeatedDouble(void* pmsg, const char* fieldName, i
 
 void Bridge_NetMessages_SetDouble(void* pmsg, const char* fieldName, double value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
     msg->GetReflection()->SetDouble(msg, field, value);
@@ -421,7 +422,7 @@ void Bridge_NetMessages_SetDouble(void* pmsg, const char* fieldName, double valu
 
 void Bridge_NetMessages_SetRepeatedDouble(void* pmsg, const char* fieldName, int index, double value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
@@ -430,7 +431,7 @@ void Bridge_NetMessages_SetRepeatedDouble(void* pmsg, const char* fieldName, int
 
 void Bridge_NetMessages_AddDouble(void* pmsg, const char* fieldName, double value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     msg->GetReflection()->AddDouble(msg, field, value);
@@ -452,7 +453,7 @@ int Bridge_NetMessages_GetString(char* out, void* pmsg, const char* fieldName)
 
 int Bridge_NetMessages_GetRepeatedString(char* out, void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0);
     CHECK_FIELD_REPEATED(0);
     CHECK_REPEATED_ELEMENT(index, 0);
@@ -467,7 +468,7 @@ int Bridge_NetMessages_GetRepeatedString(char* out, void* pmsg, const char* fiel
 
 void Bridge_NetMessages_SetString(void* pmsg, const char* fieldName, const char* value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
     msg->GetReflection()->SetString(msg, field, value);
@@ -475,7 +476,7 @@ void Bridge_NetMessages_SetString(void* pmsg, const char* fieldName, const char*
 
 void Bridge_NetMessages_SetRepeatedString(void* pmsg, const char* fieldName, int index, const char* value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
@@ -484,7 +485,7 @@ void Bridge_NetMessages_SetRepeatedString(void* pmsg, const char* fieldName, int
 
 void Bridge_NetMessages_AddString(void* pmsg, const char* fieldName, const char* value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     msg->GetReflection()->AddString(msg, field, value);
@@ -492,7 +493,7 @@ void Bridge_NetMessages_AddString(void* pmsg, const char* fieldName, const char*
 
 Vector2D Bridge_NetMessages_GetVector2D(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     Vector2D vec{ 0.0f, 0.0f };
     GETCHECK_FIELD(vec);
     CHECK_FIELD_NOT_REPEATED(vec);
@@ -505,7 +506,7 @@ Vector2D Bridge_NetMessages_GetVector2D(void* pmsg, const char* fieldName)
 
 Vector2D Bridge_NetMessages_GetRepeatedVector2D(void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
 
     Vector2D vec{ 0.0f, 0.0f };
     GETCHECK_FIELD(vec);
@@ -520,7 +521,7 @@ Vector2D Bridge_NetMessages_GetRepeatedVector2D(void* pmsg, const char* fieldNam
 
 void Bridge_NetMessages_SetVector2D(void* pmsg, const char* fieldName, Vector2D value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
 
@@ -531,7 +532,7 @@ void Bridge_NetMessages_SetVector2D(void* pmsg, const char* fieldName, Vector2D 
 
 void Bridge_NetMessages_SetRepeatedVector2D(void* pmsg, const char* fieldName, int index, Vector2D value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
@@ -543,7 +544,7 @@ void Bridge_NetMessages_SetRepeatedVector2D(void* pmsg, const char* fieldName, i
 
 void Bridge_NetMessages_AddVector2D(void* pmsg, const char* fieldName, Vector2D value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
 
@@ -554,7 +555,7 @@ void Bridge_NetMessages_AddVector2D(void* pmsg, const char* fieldName, Vector2D 
 
 Vector Bridge_NetMessages_GetVector(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     Vector vec{ 0.0f, 0.0f, 0.0f };
     GETCHECK_FIELD(vec);
     CHECK_FIELD_NOT_REPEATED(vec);
@@ -568,7 +569,7 @@ Vector Bridge_NetMessages_GetVector(void* pmsg, const char* fieldName)
 
 Vector Bridge_NetMessages_GetRepeatedVector(void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
 
     Vector vec{ 0.0f, 0.0f, 0.0f };
     GETCHECK_FIELD(vec);
@@ -584,7 +585,7 @@ Vector Bridge_NetMessages_GetRepeatedVector(void* pmsg, const char* fieldName, i
 
 void Bridge_NetMessages_SetVector(void* pmsg, const char* fieldName, Vector value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
 
@@ -596,7 +597,7 @@ void Bridge_NetMessages_SetVector(void* pmsg, const char* fieldName, Vector valu
 
 void Bridge_NetMessages_SetRepeatedVector(void* pmsg, const char* fieldName, int index, Vector value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
@@ -609,7 +610,7 @@ void Bridge_NetMessages_SetRepeatedVector(void* pmsg, const char* fieldName, int
 
 void Bridge_NetMessages_AddVector(void* pmsg, const char* fieldName, Vector value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
 
@@ -621,7 +622,7 @@ void Bridge_NetMessages_AddVector(void* pmsg, const char* fieldName, Vector valu
 
 Color Bridge_NetMessages_GetColor(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     Color color{ 255,255,255,255 };
     GETCHECK_FIELD(color);
     CHECK_FIELD_NOT_REPEATED(color);
@@ -633,7 +634,7 @@ Color Bridge_NetMessages_GetColor(void* pmsg, const char* fieldName)
 
 Color Bridge_NetMessages_GetRepeatedColor(void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
 
     Color color{ 255,255,255,255 };
     GETCHECK_FIELD(color);
@@ -647,7 +648,7 @@ Color Bridge_NetMessages_GetRepeatedColor(void* pmsg, const char* fieldName, int
 
 void Bridge_NetMessages_SetColor(void* pmsg, const char* fieldName, Color value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
 
@@ -660,7 +661,7 @@ void Bridge_NetMessages_SetColor(void* pmsg, const char* fieldName, Color value)
 
 void Bridge_NetMessages_SetRepeatedColor(void* pmsg, const char* fieldName, int index, Color value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
@@ -674,7 +675,7 @@ void Bridge_NetMessages_SetRepeatedColor(void* pmsg, const char* fieldName, int 
 
 void Bridge_NetMessages_AddColor(void* pmsg, const char* fieldName, Color value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
 
@@ -687,7 +688,7 @@ void Bridge_NetMessages_AddColor(void* pmsg, const char* fieldName, Color value)
 
 QAngle Bridge_NetMessages_GetQAngle(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     QAngle angle{ 0.0f,0.0f,0.0f };
     GETCHECK_FIELD(angle);
     CHECK_FIELD_NOT_REPEATED(angle);
@@ -701,7 +702,7 @@ QAngle Bridge_NetMessages_GetQAngle(void* pmsg, const char* fieldName)
 
 QAngle Bridge_NetMessages_GetRepeatedQAngle(void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
 
     QAngle angle{ 0.0f,0.0f,0.0f };
     GETCHECK_FIELD(angle);
@@ -717,7 +718,7 @@ QAngle Bridge_NetMessages_GetRepeatedQAngle(void* pmsg, const char* fieldName, i
 
 void Bridge_NetMessages_SetQAngle(void* pmsg, const char* fieldName, QAngle value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
 
@@ -729,7 +730,7 @@ void Bridge_NetMessages_SetQAngle(void* pmsg, const char* fieldName, QAngle valu
 
 void Bridge_NetMessages_SetRepeatedQAngle(void* pmsg, const char* fieldName, int index, QAngle value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
@@ -742,7 +743,7 @@ void Bridge_NetMessages_SetRepeatedQAngle(void* pmsg, const char* fieldName, int
 
 void Bridge_NetMessages_AddQAngle(void* pmsg, const char* fieldName, QAngle value)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
 
@@ -808,26 +809,26 @@ void Bridge_NetMessages_AddBytes(void* pmsg, const char* fieldName, uint8_t* val
 
 void* Bridge_NetMessages_GetNestedMessage(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(nullptr);
     CHECK_FIELD_NOT_REPEATED(nullptr);
-    return (void*)(&msg->GetReflection()->GetMessage(*msg, field));
+    return (void*)msg->GetReflection()->MutableMessage(msg, field);
 }
 
 void* Bridge_NetMessages_GetRepeatedNestedMessage(void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
 
     GETCHECK_FIELD(nullptr);
     CHECK_FIELD_REPEATED(nullptr);
     CHECK_REPEATED_ELEMENT(index, nullptr);
 
-    return (void*)&msg->GetReflection()->GetRepeatedMessage(*msg, field, index);
+    return (void*)msg->GetReflection()->MutableRepeatedMessage(msg, field, index);
 }
 
 void* Bridge_NetMessages_AddNestedMessage(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(nullptr);
     CHECK_FIELD_REPEATED(nullptr);
 
@@ -836,7 +837,7 @@ void* Bridge_NetMessages_AddNestedMessage(void* pmsg, const char* fieldName)
 
 int Bridge_NetMessages_GetRepeatedFieldSize(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
 
     GETCHECK_FIELD(0);
     CHECK_FIELD_REPEATED(0);
@@ -846,7 +847,7 @@ int Bridge_NetMessages_GetRepeatedFieldSize(void* pmsg, const char* fieldName)
 
 void Bridge_NetMessages_ClearRepeatedField(void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
 
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();

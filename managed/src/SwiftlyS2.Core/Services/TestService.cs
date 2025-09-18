@@ -6,11 +6,14 @@ using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.GameEvents;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Natives.NativeObjects;
+using SwiftlyS2.Core.NetMessages;
+using SwiftlyS2.Core.ProtobufDefinitions;
 using SwiftlyS2.Core.SchemaDefinitions;
 using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.GameEventDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.Misc;
+using SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Core.Services;
@@ -51,9 +54,10 @@ internal class TestService {
     _Core.GameEvent.HookPre<EventPlayerTeam>((eventObj) =>
     {
       Console.WriteLine(eventObj.GetHashCode());
-      Console.WriteLine("EventPlayerJump " + eventObj.UserId.PlayerName.Value);
+      Console.WriteLine("EventPlayerJump " + eventObj.UserIdController.PlayerPawn.Value);
       return HookResult.Continue;
     });
+    NetMessageService service = new();
     Task.Run(async () =>
     {
       while (true)
@@ -79,12 +83,20 @@ internal class TestService {
           ent.Clan.Value = "testtt";
           ent.ClanUpdated();
 
-          _Core.GameEvent.FireToPlayer<EventShowSurvivalRespawnStatus>(0, eventObj => {
-            eventObj.Duration = 10;
-            eventObj.LocToken = "testtt";
+            // _Core.GameEvent.FireToPlayer<EventShowSurvivalRespawnStatus>(0, eventObj => {
+            //   eventObj.Duration = 10;
+            //   eventObj.LocToken = "testtt";
+            // });
+
+          service.Send<CNETMsg_SetConVar>(msg =>
+          {
+            var cvar = msg.Convars.Cvars.Add();
+            cvar.Name = "sv_autobunnyhopping";
+            cvar.Value = "true";
           });
 
-          
+
+
 
           unsafe {
 

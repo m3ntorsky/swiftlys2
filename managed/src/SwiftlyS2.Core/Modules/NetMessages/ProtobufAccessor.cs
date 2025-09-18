@@ -8,11 +8,12 @@ namespace SwiftlyS2.Core.NetMessages;
 internal class ProtobufAccessor : NativeHandle, IProtobufAccessor {
 
 
-  public ProtobufAccessor() : base(0) {
+  public ProtobufAccessor(nint handle) : base(handle) {
   }
-
-  public void InternalSet(nint handle) {
-    _Handle = handle;
+  
+  public bool HasField(string fieldName)
+  {
+    return NativeNetMessages.HasField(GetHandle(), fieldName);
   }
 
   public bool GetBool(string fieldName)

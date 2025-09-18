@@ -2,7 +2,7 @@ using SwiftlyS2.Shared.GameEvents;
 
 namespace SwiftlyS2.Core.GameEvents;
 
-internal static class GameEventSingletonWrapper<T> where T : ITypedGameEvent<T> {
+internal static class GameEventSingletonWrapper<T> where T : IGameEvent<T> {
 
   [ThreadStatic] private static T? _Instance;
   [ThreadStatic] private static bool _Borrowed;

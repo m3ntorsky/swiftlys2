@@ -13,7 +13,7 @@ public interface IGameEventService {
   /// <typeparam name="T">The event type.</typeparam>
   /// <param name="callback">The callback to hook.</param>
   /// <returns>A GUID representing the hook. You can use this to unhook the callback later.</returns>
-  Guid HookPre<T>(Func<T, HookResult> callback) where T : ITypedGameEvent<T>;
+  Guid HookPre<T>(Func<T, HookResult> callback) where T : IGameEvent<T>;
 
   /// <summary>
   /// Hooks a post-event callback.
@@ -21,7 +21,7 @@ public interface IGameEventService {
   /// <typeparam name="T">The event type.</typeparam>
   /// <param name="callback">The callback to hook.</param>
   /// <returns>A GUID representing the hook. You can use this to unhook the callback later.</returns>
-  Guid HookPost<T>(Func<T, HookResult> callback) where T : ITypedGameEvent<T>;
+  Guid HookPost<T>(Func<T, HookResult> callback) where T : IGameEvent<T>;
 
   /// <summary>
   /// Unhooks a callback.
@@ -33,34 +33,34 @@ public interface IGameEventService {
   /// Unhooks all pre-event callbacks.
   /// </summary>
   /// <typeparam name="T">The event type.</typeparam>
-  void UnhookPre<T>() where T : ITypedGameEvent<T>;
+  void UnhookPre<T>() where T : IGameEvent<T>;
 
   /// <summary>
   /// Unhooks all post-event callbacks.
   /// </summary>
   /// <typeparam name="T">The event type.</typeparam>
-  void UnhookPost<T>() where T : ITypedGameEvent<T>;
+  void UnhookPost<T>() where T : IGameEvent<T>;
 
 
   /// <summary>
   /// Fires an event to all players.
   /// </summary>
   /// <typeparam name="T">The event type.</typeparam>
-  void Fire<T>() where T : ITypedGameEvent<T>;
+  void Fire<T>() where T : IGameEvent<T>;
 
   /// <summary>
   /// Fires an event to all players with a configured event.
   /// <param name="configureEvent">The action to configure the event.</param>
   /// </summary>
   /// <typeparam name="T">The event type.</typeparam>
-  void Fire<T>(Action<T> configureEvent) where T : ITypedGameEvent<T>;
+  void Fire<T>(Action<T> configureEvent) where T : IGameEvent<T>;
 
   /// <summary>
   /// Fires an event to a player.
   /// </summary>
   /// <typeparam name="T">The event type.</typeparam>
   /// <param name="slot">The player slot.</param>
-  void FireToPlayer<T>(int slot) where T : ITypedGameEvent<T>;
+  void FireToPlayer<T>(int slot) where T : IGameEvent<T>;
 
   /// <summary>
   /// Fires an event to a player with a configured event.
@@ -68,18 +68,18 @@ public interface IGameEventService {
   /// <typeparam name="T">The event type.</typeparam>
   /// <param name="slot">The player slot.</param>
   /// <param name="configureEvent">The action to configure the event.</param>
-  void FireToPlayer<T>(int slot, Action<T> configureEvent) where T : ITypedGameEvent<T>;
+  void FireToPlayer<T>(int slot, Action<T> configureEvent) where T : IGameEvent<T>;
 
   /// <summary>
   /// Fires an event to the server.
   /// </summary>
   /// <typeparam name="T"></typeparam>
-  void FireToServer<T>() where T : ITypedGameEvent<T>;
+  void FireToServer<T>() where T : IGameEvent<T>;
 
   /// <summary>
   /// Fires an event to the server with a configured event.
   /// </summary>
   /// <typeparam name="T">The event type.</typeparam>
   /// <param name="configureEvent">The action to configure the event.</param>
-  void FireToServer<T>(Action<T> configureEvent) where T : ITypedGameEvent<T>;
+  void FireToServer<T>(Action<T> configureEvent) where T : IGameEvent<T>;
 }

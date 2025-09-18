@@ -21,7 +21,7 @@ internal class GameEventService : IGameEventService, IDisposable {
   private readonly List<GameEventCallback> _callbacks = new();
   private object _lock = new();
 
-  public Guid HookPre<T>(Func<T, HookResult> callback) where T : ITypedGameEvent<T> {
+  public Guid HookPre<T>(Func<T, HookResult> callback) where T : IGameEvent<T> {
     GameEventCallback<T> cb = new(callback, true, _LoggerFactory, _Context);
     lock (_lock) {
       _callbacks.Add(cb);
@@ -29,7 +29,7 @@ internal class GameEventService : IGameEventService, IDisposable {
     return cb.Guid;
   }
 
-  public Guid HookPost<T>(Func<T, HookResult> callback) where T : ITypedGameEvent<T> {
+  public Guid HookPost<T>(Func<T, HookResult> callback) where T : IGameEvent<T> {
     GameEventCallback<T> cb = new(callback, false, _LoggerFactory, _Context);
     lock (_lock) {
       _callbacks.Add(cb);
@@ -51,7 +51,7 @@ internal class GameEventService : IGameEventService, IDisposable {
   }
 
 
-  public void UnhookPre<T>() where T : ITypedGameEvent<T> {
+  public void UnhookPre<T>() where T : IGameEvent<T> {
     lock (_lock) {
       for (int i = 0; i < _callbacks.Count; i++) {
         var callback = _callbacks[i];
@@ -63,7 +63,7 @@ internal class GameEventService : IGameEventService, IDisposable {
     }
   }
 
-  public void UnhookPost<T>() where T : ITypedGameEvent<T> {
+  public void UnhookPost<T>() where T : IGameEvent<T> {
     lock (_lock) {
       for (int i = 0; i < _callbacks.Count; i++) {
         var callback = _callbacks[i];
@@ -75,21 +75,21 @@ internal class GameEventService : IGameEventService, IDisposable {
     }
   }
 
-  public void Fire<T>() where T : ITypedGameEvent<T> {
+  public void Fire<T>() where T : IGameEvent<T> {
     // TODO: implement with all players
   }
 
-  public void Fire<T>(Action<T> configureEvent) where T : ITypedGameEvent<T> {
+  public void Fire<T>(Action<T> configureEvent) where T : IGameEvent<T> {
     // TODO: implement with all players
   }
 
-  public void FireToPlayer<T>(int slot) where T : ITypedGameEvent<T> {
+  public void FireToPlayer<T>(int slot) where T : IGameEvent<T> {
     var handle = NativeGameEvents.CreateEvent(T.GetName());
     NativeGameEvents.FireEventToClient(handle, slot);
     NativeGameEvents.FreeEvent(handle);
   }
 
-  public void FireToPlayer<T>(int slot, Action<T> configureEvent) where T : ITypedGameEvent<T> {
+  public void FireToPlayer<T>(int slot, Action<T> configureEvent) where T : IGameEvent<T> {
     var handle = NativeGameEvents.CreateEvent(T.GetName());
     var eventObj = GameEventSingletonWrapper<T>.Borrow(handle);
     configureEvent(eventObj);
@@ -98,12 +98,12 @@ internal class GameEventService : IGameEventService, IDisposable {
     NativeGameEvents.FreeEvent(handle);
   }
 
-  public void FireToServer<T>() where T : ITypedGameEvent<T> {
+  public void FireToServer<T>() where T : IGameEvent<T> {
     var handle = NativeGameEvents.CreateEvent(T.GetName());
     NativeGameEvents.FireEvent(handle, true);
   }
 
-  public void FireToServer<T>(Action<T> configureEvent) where T : ITypedGameEvent<T> {
+  public void FireToServer<T>(Action<T> configureEvent) where T : IGameEvent<T> {
     var handle = NativeGameEvents.CreateEvent(T.GetName());
     var eventObj = GameEventSingletonWrapper<T>.Borrow(handle);
     configureEvent(eventObj);
