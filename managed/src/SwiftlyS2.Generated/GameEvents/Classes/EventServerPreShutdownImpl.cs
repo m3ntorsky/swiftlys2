@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "server_pre_shutdown"
 /// server is about to be shut down
 /// </summary>
-internal class EventServerPreShutdownImpl : TypedGameEvent<EventServerPreShutdown>, EventServerPreShutdown
+internal class EventServerPreShutdownImpl : GameEvent<EventServerPreShutdown>, EventServerPreShutdown
 {
 
 

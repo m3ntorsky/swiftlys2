@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_radio"
 /// </summary>
-public interface EventPlayerRadio : ITypedGameEvent<EventPlayerRadio> {
+public interface EventPlayerRadio : IGameEvent<EventPlayerRadio> {
 
-  static EventPlayerRadio ITypedGameEvent<EventPlayerRadio>.Create() => new EventPlayerRadioImpl();
+  static EventPlayerRadio IGameEvent<EventPlayerRadio>.Create() => new EventPlayerRadioImpl();
 
-  static string ITypedGameEvent<EventPlayerRadio>.GetName() => "player_radio";
+  static string IGameEvent<EventPlayerRadio>.GetName() => "player_radio";
 
-  static uint ITypedGameEvent<EventPlayerRadio>.GetHash() => 0x133AAE2Cu;
+  static uint IGameEvent<EventPlayerRadio>.GetHash() => 0x133AAE2Cu;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: short

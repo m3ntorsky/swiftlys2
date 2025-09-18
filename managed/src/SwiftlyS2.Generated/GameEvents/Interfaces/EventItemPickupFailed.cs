@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "item_pickup_failed"
 /// </summary>
-public interface EventItemPickupFailed : ITypedGameEvent<EventItemPickupFailed> {
+public interface EventItemPickupFailed : IGameEvent<EventItemPickupFailed> {
 
-  static EventItemPickupFailed ITypedGameEvent<EventItemPickupFailed>.Create() => new EventItemPickupFailedImpl();
+  static EventItemPickupFailed IGameEvent<EventItemPickupFailed>.Create() => new EventItemPickupFailedImpl();
 
-  static string ITypedGameEvent<EventItemPickupFailed>.GetName() => "item_pickup_failed";
+  static string IGameEvent<EventItemPickupFailed>.GetName() => "item_pickup_failed";
 
-  static uint ITypedGameEvent<EventItemPickupFailed>.GetHash() => 0x0F6D19A9u;
+  static uint IGameEvent<EventItemPickupFailed>.GetHash() => 0x0F6D19A9u;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: string

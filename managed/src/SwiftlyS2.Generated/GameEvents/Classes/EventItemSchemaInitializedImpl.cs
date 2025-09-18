@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "item_schema_initialized"
 /// </summary>
-internal class EventItemSchemaInitializedImpl : TypedGameEvent<EventItemSchemaInitialized>, EventItemSchemaInitialized
+internal class EventItemSchemaInitializedImpl : GameEvent<EventItemSchemaInitialized>, EventItemSchemaInitialized
 {
 
 }

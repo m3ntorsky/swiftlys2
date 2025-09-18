@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_win_panel_round"
 /// </summary>
-internal class EventCsWinPanelRoundImpl : TypedGameEvent<EventCsWinPanelRound>, EventCsWinPanelRound
+internal class EventCsWinPanelRoundImpl : GameEvent<EventCsWinPanelRound>, EventCsWinPanelRound
 {
 
 

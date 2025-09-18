@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "nav_generate"
 /// </summary>
-internal class EventNavGenerateImpl : TypedGameEvent<EventNavGenerate>, EventNavGenerate
+internal class EventNavGenerateImpl : GameEvent<EventNavGenerate>, EventNavGenerate
 {
 
 }

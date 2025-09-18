@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_hintmessage"
 /// </summary>
-internal class EventPlayerHintmessageImpl : TypedGameEvent<EventPlayerHintmessage>, EventPlayerHintmessage
+internal class EventPlayerHintmessageImpl : GameEvent<EventPlayerHintmessage>, EventPlayerHintmessage
 {
 
 

@@ -9,15 +9,21 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "break_breakable"
 /// </summary>
-internal class EventBreakBreakableImpl : TypedGameEvent<EventBreakBreakable>, EventBreakBreakable
+internal class EventBreakBreakableImpl : GameEvent<EventBreakBreakable>, EventBreakBreakable
 {
 
 
   public int EntIndex
   { get => Accessor.GetInt32("entindex"); set => Accessor.SetInt32("entindex", value); }
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // BREAK_GLASS, BREAK_WOOD, etc
   public byte Material

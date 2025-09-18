@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "nav_blocked"
 /// </summary>
-internal class EventNavBlockedImpl : TypedGameEvent<EventNavBlocked>, EventNavBlocked
+internal class EventNavBlockedImpl : GameEvent<EventNavBlocked>, EventNavBlocked
 {
 
 

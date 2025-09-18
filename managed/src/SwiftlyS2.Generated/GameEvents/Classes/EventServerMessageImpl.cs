@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "server_message"
 /// a generic server message
 /// </summary>
-internal class EventServerMessageImpl : TypedGameEvent<EventServerMessage>, EventServerMessage
+internal class EventServerMessageImpl : GameEvent<EventServerMessage>, EventServerMessage
 {
 
 

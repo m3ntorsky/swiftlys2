@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "server_spawn"
 /// send once a server starts
 /// </summary>
-internal class EventServerSpawnImpl : TypedGameEvent<EventServerSpawn>, EventServerSpawn
+internal class EventServerSpawnImpl : GameEvent<EventServerSpawn>, EventServerSpawn
 {
 
 

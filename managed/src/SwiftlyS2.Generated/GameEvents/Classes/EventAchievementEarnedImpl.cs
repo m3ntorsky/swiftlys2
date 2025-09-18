@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "achievement_earned"
 /// </summary>
-internal class EventAchievementEarnedImpl : TypedGameEvent<EventAchievementEarned>, EventAchievementEarned
+internal class EventAchievementEarnedImpl : GameEvent<EventAchievementEarned>, EventAchievementEarned
 {
 
 

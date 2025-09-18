@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "event_ticket_modified"
 /// </summary>
-internal class EventEventTicketModifiedImpl : TypedGameEvent<EventEventTicketModified>, EventEventTicketModified
+internal class EventEventTicketModifiedImpl : GameEvent<EventEventTicketModified>, EventEventTicketModified
 {
 
 }

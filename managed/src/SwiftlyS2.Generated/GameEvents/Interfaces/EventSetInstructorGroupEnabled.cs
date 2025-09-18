@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "set_instructor_group_enabled"
 /// </summary>
-public interface EventSetInstructorGroupEnabled : ITypedGameEvent<EventSetInstructorGroupEnabled> {
+public interface EventSetInstructorGroupEnabled : IGameEvent<EventSetInstructorGroupEnabled> {
 
-  static EventSetInstructorGroupEnabled ITypedGameEvent<EventSetInstructorGroupEnabled>.Create() => new EventSetInstructorGroupEnabledImpl();
+  static EventSetInstructorGroupEnabled IGameEvent<EventSetInstructorGroupEnabled>.Create() => new EventSetInstructorGroupEnabledImpl();
 
-  static string ITypedGameEvent<EventSetInstructorGroupEnabled>.GetName() => "set_instructor_group_enabled";
+  static string IGameEvent<EventSetInstructorGroupEnabled>.GetName() => "set_instructor_group_enabled";
 
-  static uint ITypedGameEvent<EventSetInstructorGroupEnabled>.GetHash() => 0x87A9E425u;
+  static uint IGameEvent<EventSetInstructorGroupEnabled>.GetHash() => 0x87A9E425u;
   /// <summary>
   /// type: string
   /// </summary>

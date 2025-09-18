@@ -9,10 +9,16 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "silencer_detach"
 /// </summary>
-internal class EventSilencerDetachImpl : TypedGameEvent<EventSilencerDetach>, EventSilencerDetach
+internal class EventSilencerDetachImpl : GameEvent<EventSilencerDetach>, EventSilencerDetach
 {
 
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 }

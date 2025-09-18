@@ -7,19 +7,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_begindefuse"
 /// </summary>
-public interface EventBombBegindefuse : ITypedGameEvent<EventBombBegindefuse> {
+public interface EventBombBegindefuse : IGameEvent<EventBombBegindefuse> {
 
-  static EventBombBegindefuse ITypedGameEvent<EventBombBegindefuse>.Create() => new EventBombBegindefuseImpl();
+  static EventBombBegindefuse IGameEvent<EventBombBegindefuse>.Create() => new EventBombBegindefuseImpl();
 
-  static string ITypedGameEvent<EventBombBegindefuse>.GetName() => "bomb_begindefuse";
+  static string IGameEvent<EventBombBegindefuse>.GetName() => "bomb_begindefuse";
 
-  static uint ITypedGameEvent<EventBombBegindefuse>.GetHash() => 0xC3C7D299u;
+  static uint IGameEvent<EventBombBegindefuse>.GetHash() => 0xC3C7D299u;
   /// <summary>
   /// player who is defusing
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// player who is defusing
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// player who is defusing
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: bool

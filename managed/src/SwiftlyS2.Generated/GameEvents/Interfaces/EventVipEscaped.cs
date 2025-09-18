@@ -7,18 +7,32 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "vip_escaped"
 /// </summary>
-public interface EventVipEscaped : ITypedGameEvent<EventVipEscaped> {
+public interface EventVipEscaped : IGameEvent<EventVipEscaped> {
 
-  static EventVipEscaped ITypedGameEvent<EventVipEscaped>.Create() => new EventVipEscapedImpl();
+  static EventVipEscaped IGameEvent<EventVipEscaped>.Create() => new EventVipEscapedImpl();
 
-  static string ITypedGameEvent<EventVipEscaped>.GetName() => "vip_escaped";
+  static string IGameEvent<EventVipEscaped>.GetName() => "vip_escaped";
 
-  static uint ITypedGameEvent<EventVipEscaped>.GetHash() => 0x30143B6Eu;
+  static uint IGameEvent<EventVipEscaped>.GetHash() => 0x30143B6Eu;
   /// <summary>
   /// player who was the VIP
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// player who was the VIP
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// player who was the VIP
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
 }

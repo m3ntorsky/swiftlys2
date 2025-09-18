@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "game_message"
 /// a message send by game logic to everyone
 /// </summary>
-internal class EventGameMessageImpl : TypedGameEvent<EventGameMessage>, EventGameMessage
+internal class EventGameMessageImpl : GameEvent<EventGameMessage>, EventGameMessage
 {
 
 

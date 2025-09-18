@@ -8,13 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "game_newmap"
 /// send when new map is completely loaded
 /// </summary>
-public interface EventGameNewmap : ITypedGameEvent<EventGameNewmap> {
+public interface EventGameNewmap : IGameEvent<EventGameNewmap> {
 
-  static EventGameNewmap ITypedGameEvent<EventGameNewmap>.Create() => new EventGameNewmapImpl();
+  static EventGameNewmap IGameEvent<EventGameNewmap>.Create() => new EventGameNewmapImpl();
 
-  static string ITypedGameEvent<EventGameNewmap>.GetName() => "game_newmap";
+  static string IGameEvent<EventGameNewmap>.GetName() => "game_newmap";
 
-  static uint ITypedGameEvent<EventGameNewmap>.GetHash() => 0xF0D60440u;
+  static uint IGameEvent<EventGameNewmap>.GetHash() => 0xF0D60440u;
   /// <summary>
   /// map name
   /// <br/>

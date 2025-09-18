@@ -7,17 +7,29 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "survival_no_respawns_final"
 /// </summary>
-public interface EventSurvivalNoRespawnsFinal : ITypedGameEvent<EventSurvivalNoRespawnsFinal> {
+public interface EventSurvivalNoRespawnsFinal : IGameEvent<EventSurvivalNoRespawnsFinal> {
 
-  static EventSurvivalNoRespawnsFinal ITypedGameEvent<EventSurvivalNoRespawnsFinal>.Create() => new EventSurvivalNoRespawnsFinalImpl();
+  static EventSurvivalNoRespawnsFinal IGameEvent<EventSurvivalNoRespawnsFinal>.Create() => new EventSurvivalNoRespawnsFinalImpl();
 
-  static string ITypedGameEvent<EventSurvivalNoRespawnsFinal>.GetName() => "survival_no_respawns_final";
+  static string IGameEvent<EventSurvivalNoRespawnsFinal>.GetName() => "survival_no_respawns_final";
 
-  static uint ITypedGameEvent<EventSurvivalNoRespawnsFinal>.GetHash() => 0xE88046CAu;
+  static uint IGameEvent<EventSurvivalNoRespawnsFinal>.GetHash() => 0xE88046CAu;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
 }

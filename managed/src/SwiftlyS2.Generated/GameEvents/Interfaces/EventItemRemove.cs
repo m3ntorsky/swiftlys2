@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "item_remove"
 /// </summary>
-public interface EventItemRemove : ITypedGameEvent<EventItemRemove> {
+public interface EventItemRemove : IGameEvent<EventItemRemove> {
 
-  static EventItemRemove ITypedGameEvent<EventItemRemove>.Create() => new EventItemRemoveImpl();
+  static EventItemRemove IGameEvent<EventItemRemove>.Create() => new EventItemRemoveImpl();
 
-  static string ITypedGameEvent<EventItemRemove>.GetName() => "item_remove";
+  static string IGameEvent<EventItemRemove>.GetName() => "item_remove";
 
-  static uint ITypedGameEvent<EventItemRemove>.GetHash() => 0x4853B5C7u;
+  static uint IGameEvent<EventItemRemove>.GetHash() => 0x4853B5C7u;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// either a weapon such as 'tmp' or 'hegrenade', or an item such as 'nvgs'

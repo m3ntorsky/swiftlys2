@@ -297,31 +297,32 @@ def render_interface(event: GameEventDef) -> str:
   lines.append("namespace SwiftlyS2.Shared.GameEventDefinitions;")
   lines.append("")
   lines.extend(render_header_comment(event))
-  lines.append(f"public interface {type_name} : ITypedGameEvent<{type_name}> {{")
+  lines.append(f"public interface {type_name} : IGameEvent<{type_name}> {{")
   lines.append("")
   # static abstract implementations required by IGameEvent<T>
-  lines.append(f"  static {type_name} ITypedGameEvent<{type_name}>.Create() => new {type_name}Impl();")
+  lines.append(f"  static {type_name} IGameEvent<{type_name}>.Create() => new {type_name}Impl();")
   lines.append("")
-  lines.append(f"  static string ITypedGameEvent<{type_name}>.GetName() => \"{original_name}\";")
+  lines.append(f"  static string IGameEvent<{type_name}>.GetName() => \"{original_name}\";")
   lines.append("")
   hash_value = fnv1a32(original_name)
   if hash_value in HASHES:
     print("WARNING: Hash collision detected for event: ", original_name)
   HASHES.append(hash_value)
-  lines.append(f"  static uint ITypedGameEvent<{type_name}>.GetHash() => 0x{hash_value:08X}u;")
+  lines.append(f"  static uint IGameEvent<{type_name}>.GetHash() => 0x{hash_value:08X}u;")
   # fields as properties
   used_prop_names: Dict[str, int] = {}
   for fname, fdef in event.fields.items():
     ftype = fdef.type_name
-    # userid override: readonly CCSPlayerController via GetPlayerController
+    # userid override: three properties
     if fname.lower() == 'userid':
-      cs_type = 'CCSPlayerController'
-      prop_name = to_property_name(fname)
-      if prop_name in used_prop_names:
-        used_prop_names[prop_name] += 1
-        prop_name = f"{prop_name}{used_prop_names[prop_name]}"
+      base_prop = to_property_name(fname)  # UserId
+      # Controller (readonly)
+      prop_name_ctrl = f"{base_prop}Controller"
+      if prop_name_ctrl in used_prop_names:
+        used_prop_names[prop_name_ctrl] += 1
+        prop_name_ctrl = f"{prop_name_ctrl}{used_prop_names[prop_name_ctrl]}"
       else:
-        used_prop_names[prop_name] = 1
+        used_prop_names[prop_name_ctrl] = 1
       comment_lines: List[str] = ["  /// <summary>"]
       if fdef.comment:
         comment_lines.append(f"  /// {fdef.comment.strip()}")
@@ -329,7 +330,39 @@ def render_interface(event: GameEventDef) -> str:
       comment_lines.append(f"  /// type: {ftype}")
       comment_lines.append("  /// </summary>")
       lines.extend(comment_lines)
-      lines.append(f"  {cs_type} {prop_name} {{ get; }}")
+      lines.append(f"  CCSPlayerController {prop_name_ctrl} {{ get; }}")
+      lines.append("")
+      # Pawn (readonly)
+      prop_name_pawn = f"{base_prop}Pawn"
+      if prop_name_pawn in used_prop_names:
+        used_prop_names[prop_name_pawn] += 1
+        prop_name_pawn = f"{prop_name_pawn}{used_prop_names[prop_name_pawn]}"
+      else:
+        used_prop_names[prop_name_pawn] = 1
+      comment_lines = ["  /// <summary>"]
+      if fdef.comment:
+        comment_lines.append(f"  /// {fdef.comment.strip()}")
+      comment_lines.append(f"  /// <br/>")
+      comment_lines.append(f"  /// type: {ftype}")
+      comment_lines.append("  /// </summary>")
+      lines.extend(comment_lines)
+      lines.append(f"  CCSPlayerPawn {prop_name_pawn} {{ get; }}")
+      lines.append("")
+      # Raw int (read/write)
+      prop_name_raw = base_prop
+      if prop_name_raw in used_prop_names:
+        used_prop_names[prop_name_raw] += 1
+        prop_name_raw = f"{prop_name_raw}{used_prop_names[prop_name_raw]}"
+      else:
+        used_prop_names[prop_name_raw] = 1
+      comment_lines = ["  /// <summary>"]
+      if fdef.comment:
+        comment_lines.append(f"  /// {fdef.comment.strip()}")
+      comment_lines.append(f"  /// <br/>")
+      comment_lines.append(f"  /// type: {ftype}")
+      comment_lines.append("  /// </summary>")
+      lines.extend(comment_lines)
+      lines.append(f"  int {prop_name_raw} {{ get; set; }}")
       lines.append("")
       continue
 
@@ -374,7 +407,7 @@ def render_class(event: GameEventDef) -> str:
   lines.append("")
   lines.append("// generated")
   lines.extend(render_header_comment(event))
-  lines.append(f"internal class {type_name}Impl : TypedGameEvent<{type_name}>, {type_name}")
+  lines.append(f"internal class {type_name}Impl : GameEvent<{type_name}>, {type_name}")
   lines.append("{")
   lines.append("")
   # lines.append(f"  public {type_name}Impl() : base()")
@@ -385,21 +418,49 @@ def render_class(event: GameEventDef) -> str:
   for fname, fdef in event.fields.items():
     ftype = fdef.type_name
 
-    # userid override: CCSPlayerController, getter only
+    # userid override: expand to controller, pawn (readonly) and raw int (readwrite)
     if fname.lower() == 'userid':
-      cs_type = 'CCSPlayerController'
-      prop_name = to_property_name(fname)
-      if prop_name in used_prop_names:
-        used_prop_names[prop_name] += 1
-        prop_name = f"{prop_name}{used_prop_names[prop_name]}"
+      base_prop = to_property_name(fname)  # UserId
+      # Controller
+      prop_name_ctrl = f"{base_prop}Controller"
+      if prop_name_ctrl in used_prop_names:
+        used_prop_names[prop_name_ctrl] += 1
+        prop_name_ctrl = f"{prop_name_ctrl}{used_prop_names[prop_name_ctrl]}"
       else:
-        used_prop_names[prop_name] = 1
-      getter = f'Accessor.GetPlayerController("{fname}")'
+        used_prop_names[prop_name_ctrl] = 1
+      getter_ctrl = f'Accessor.GetPlayerController("{fname}")'
       lines.append("")
       if fdef.comment:
         lines.append(f"  // {fdef.comment.strip()}")
-      lines.append(f"  public {cs_type} {prop_name}")
-      lines.append(f"  {{ get => {getter}; }}")
+      lines.append(f"  public CCSPlayerController {prop_name_ctrl}")
+      lines.append(f"  {{ get => {getter_ctrl}; }}")
+      # Pawn
+      prop_name_pawn = f"{base_prop}Pawn"
+      if prop_name_pawn in used_prop_names:
+        used_prop_names[prop_name_pawn] += 1
+        prop_name_pawn = f"{prop_name_pawn}{used_prop_names[prop_name_pawn]}"
+      else:
+        used_prop_names[prop_name_pawn] = 1
+      getter_pawn = f'Accessor.GetPlayerPawn("{fname}")'
+      lines.append("")
+      if fdef.comment:
+        lines.append(f"  // {fdef.comment.strip()}")
+      lines.append(f"  public CCSPlayerPawn {prop_name_pawn}")
+      lines.append(f"  {{ get => {getter_pawn}; }}")
+      # Raw int
+      prop_name_raw = base_prop
+      if prop_name_raw in used_prop_names:
+        used_prop_names[prop_name_raw] += 1
+        prop_name_raw = f"{prop_name_raw}{used_prop_names[prop_name_raw]}"
+      else:
+        used_prop_names[prop_name_raw] = 1
+      getter_raw = f'Accessor.GetInt32("{fname}")'
+      setter_raw = f'Accessor.SetInt32("{fname}", value)'
+      lines.append("")
+      if fdef.comment:
+        lines.append(f"  // {fdef.comment.strip()}")
+      lines.append(f"  public int {prop_name_raw}")
+      lines.append(f"  {{ get => {getter_raw}; set => {setter_raw}; }}")
       continue
 
     if ftype not in TYPE_MAP:

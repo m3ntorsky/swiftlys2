@@ -7,19 +7,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_beginplant"
 /// </summary>
-public interface EventBombBeginplant : ITypedGameEvent<EventBombBeginplant> {
+public interface EventBombBeginplant : IGameEvent<EventBombBeginplant> {
 
-  static EventBombBeginplant ITypedGameEvent<EventBombBeginplant>.Create() => new EventBombBeginplantImpl();
+  static EventBombBeginplant IGameEvent<EventBombBeginplant>.Create() => new EventBombBeginplantImpl();
 
-  static string ITypedGameEvent<EventBombBeginplant>.GetName() => "bomb_beginplant";
+  static string IGameEvent<EventBombBeginplant>.GetName() => "bomb_beginplant";
 
-  static uint ITypedGameEvent<EventBombBeginplant>.GetHash() => 0x7DD410C4u;
+  static uint IGameEvent<EventBombBeginplant>.GetHash() => 0x7DD410C4u;
   /// <summary>
   /// player who is planting the bomb
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// player who is planting the bomb
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// player who is planting the bomb
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// bombsite index

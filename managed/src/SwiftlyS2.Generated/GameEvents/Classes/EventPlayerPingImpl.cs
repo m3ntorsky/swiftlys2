@@ -9,12 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_ping"
 /// </summary>
-internal class EventPlayerPingImpl : TypedGameEvent<EventPlayerPing>, EventPlayerPing
+internal class EventPlayerPingImpl : GameEvent<EventPlayerPing>, EventPlayerPing
 {
 
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   public short EntityID
   { get => (short)Accessor.GetInt32("entityid"); set => Accessor.SetInt32("entityid", value); }

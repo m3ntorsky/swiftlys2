@@ -7,19 +7,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "instructor_start_lesson"
 /// </summary>
-public interface EventInstructorStartLesson : ITypedGameEvent<EventInstructorStartLesson> {
+public interface EventInstructorStartLesson : IGameEvent<EventInstructorStartLesson> {
 
-  static EventInstructorStartLesson ITypedGameEvent<EventInstructorStartLesson>.Create() => new EventInstructorStartLessonImpl();
+  static EventInstructorStartLesson IGameEvent<EventInstructorStartLesson>.Create() => new EventInstructorStartLessonImpl();
 
-  static string ITypedGameEvent<EventInstructorStartLesson>.GetName() => "instructor_start_lesson";
+  static string IGameEvent<EventInstructorStartLesson>.GetName() => "instructor_start_lesson";
 
-  static uint ITypedGameEvent<EventInstructorStartLesson>.GetHash() => 0x03846AA2u;
+  static uint IGameEvent<EventInstructorStartLesson>.GetHash() => 0x03846AA2u;
   /// <summary>
   /// The player who this lesson is intended for
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// The player who this lesson is intended for
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// The player who this lesson is intended for
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// Name of the lesson to start.  Must match instructor_lesson.txt

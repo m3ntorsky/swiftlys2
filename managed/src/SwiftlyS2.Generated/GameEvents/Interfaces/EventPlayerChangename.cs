@@ -7,19 +7,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_changename"
 /// </summary>
-public interface EventPlayerChangename : ITypedGameEvent<EventPlayerChangename> {
+public interface EventPlayerChangename : IGameEvent<EventPlayerChangename> {
 
-  static EventPlayerChangename ITypedGameEvent<EventPlayerChangename>.Create() => new EventPlayerChangenameImpl();
+  static EventPlayerChangename IGameEvent<EventPlayerChangename>.Create() => new EventPlayerChangenameImpl();
 
-  static string ITypedGameEvent<EventPlayerChangename>.GetName() => "player_changename";
+  static string IGameEvent<EventPlayerChangename>.GetName() => "player_changename";
 
-  static uint ITypedGameEvent<EventPlayerChangename>.GetHash() => 0xD955F966u;
+  static uint IGameEvent<EventPlayerChangename>.GetHash() => 0xD955F966u;
   /// <summary>
   /// user ID on server
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// user ID on server
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// user ID on server
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// players old (current) name

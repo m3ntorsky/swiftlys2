@@ -7,11 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_match_end_restart"
 /// </summary>
-public interface EventCsMatchEndRestart : ITypedGameEvent<EventCsMatchEndRestart> {
+public interface EventCsMatchEndRestart : IGameEvent<EventCsMatchEndRestart> {
 
-  static EventCsMatchEndRestart ITypedGameEvent<EventCsMatchEndRestart>.Create() => new EventCsMatchEndRestartImpl();
+  static EventCsMatchEndRestart IGameEvent<EventCsMatchEndRestart>.Create() => new EventCsMatchEndRestartImpl();
 
-  static string ITypedGameEvent<EventCsMatchEndRestart>.GetName() => "cs_match_end_restart";
+  static string IGameEvent<EventCsMatchEndRestart>.GetName() => "cs_match_end_restart";
 
-  static uint ITypedGameEvent<EventCsMatchEndRestart>.GetHash() => 0xFB2BFA6Fu;
+  static uint IGameEvent<EventCsMatchEndRestart>.GetHash() => 0xFB2BFA6Fu;
 }

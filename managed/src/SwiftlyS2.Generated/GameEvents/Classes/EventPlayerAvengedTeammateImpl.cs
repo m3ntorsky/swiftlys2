@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "player_avenged_teammate"
 /// </summary>
-internal class EventPlayerAvengedTeammateImpl : TypedGameEvent<EventPlayerAvengedTeammate>, EventPlayerAvengedTeammate
+internal class EventPlayerAvengedTeammateImpl : GameEvent<EventPlayerAvengedTeammate>, EventPlayerAvengedTeammate
 {
 
 

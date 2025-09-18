@@ -8,19 +8,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "player_disconnect"
 /// a client was disconnected
 /// </summary>
-public interface EventPlayerDisconnect : ITypedGameEvent<EventPlayerDisconnect> {
+public interface EventPlayerDisconnect : IGameEvent<EventPlayerDisconnect> {
 
-  static EventPlayerDisconnect ITypedGameEvent<EventPlayerDisconnect>.Create() => new EventPlayerDisconnectImpl();
+  static EventPlayerDisconnect IGameEvent<EventPlayerDisconnect>.Create() => new EventPlayerDisconnectImpl();
 
-  static string ITypedGameEvent<EventPlayerDisconnect>.GetName() => "player_disconnect";
+  static string IGameEvent<EventPlayerDisconnect>.GetName() => "player_disconnect";
 
-  static uint ITypedGameEvent<EventPlayerDisconnect>.GetHash() => 0x4FE1E633u;
+  static uint IGameEvent<EventPlayerDisconnect>.GetHash() => 0x4FE1E633u;
   /// <summary>
   /// user ID on server
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// user ID on server
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// user ID on server
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// see networkdisconnect enum protobuf

@@ -5,9 +5,9 @@ namespace SwiftlyS2.Shared.NetMessages;
 
 public interface ITypedProtobuf<T> : INativeHandle where T : ITypedProtobuf<T> {
 
-  public IProtobuf Accessor { get; }
+  public IProtobufAccessor Accessor { get; }
 
-  internal abstract static T Wrap(nint handle);
+  internal abstract static T Create();
 
 }
 

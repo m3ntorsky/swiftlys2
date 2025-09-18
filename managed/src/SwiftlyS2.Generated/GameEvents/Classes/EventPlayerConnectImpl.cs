@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "player_connect"
 /// a new client connected
 /// </summary>
-internal class EventPlayerConnectImpl : TypedGameEvent<EventPlayerConnect>, EventPlayerConnect
+internal class EventPlayerConnectImpl : GameEvent<EventPlayerConnect>, EventPlayerConnect
 {
 
 
@@ -19,8 +19,16 @@ internal class EventPlayerConnectImpl : TypedGameEvent<EventPlayerConnect>, Even
   { get => Accessor.GetString("name"); set => Accessor.SetString("name", value); }
 
   // user ID on server (unique on server)
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // user ID on server (unique on server)
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // user ID on server (unique on server)
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // player network (i.e steam) id
   public string NetworkID

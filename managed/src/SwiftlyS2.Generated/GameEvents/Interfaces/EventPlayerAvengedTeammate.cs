@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_avenged_teammate"
 /// </summary>
-public interface EventPlayerAvengedTeammate : ITypedGameEvent<EventPlayerAvengedTeammate> {
+public interface EventPlayerAvengedTeammate : IGameEvent<EventPlayerAvengedTeammate> {
 
-  static EventPlayerAvengedTeammate ITypedGameEvent<EventPlayerAvengedTeammate>.Create() => new EventPlayerAvengedTeammateImpl();
+  static EventPlayerAvengedTeammate IGameEvent<EventPlayerAvengedTeammate>.Create() => new EventPlayerAvengedTeammateImpl();
 
-  static string ITypedGameEvent<EventPlayerAvengedTeammate>.GetName() => "player_avenged_teammate";
+  static string IGameEvent<EventPlayerAvengedTeammate>.GetName() => "player_avenged_teammate";
 
-  static uint ITypedGameEvent<EventPlayerAvengedTeammate>.GetHash() => 0x8E286DACu;
+  static uint IGameEvent<EventPlayerAvengedTeammate>.GetHash() => 0x8E286DACu;
   /// <summary>
   /// type: player_controller
   /// </summary>

@@ -7,19 +7,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "hostage_stops_following"
 /// </summary>
-public interface EventHostageStopsFollowing : ITypedGameEvent<EventHostageStopsFollowing> {
+public interface EventHostageStopsFollowing : IGameEvent<EventHostageStopsFollowing> {
 
-  static EventHostageStopsFollowing ITypedGameEvent<EventHostageStopsFollowing>.Create() => new EventHostageStopsFollowingImpl();
+  static EventHostageStopsFollowing IGameEvent<EventHostageStopsFollowing>.Create() => new EventHostageStopsFollowingImpl();
 
-  static string ITypedGameEvent<EventHostageStopsFollowing>.GetName() => "hostage_stops_following";
+  static string IGameEvent<EventHostageStopsFollowing>.GetName() => "hostage_stops_following";
 
-  static uint ITypedGameEvent<EventHostageStopsFollowing>.GetHash() => 0x63B81600u;
+  static uint IGameEvent<EventHostageStopsFollowing>.GetHash() => 0x63B81600u;
   /// <summary>
   /// player who rescued the hostage
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// player who rescued the hostage
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// player who rescued the hostage
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// hostage entity index

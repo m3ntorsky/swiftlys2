@@ -7,19 +7,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "loot_crate_opened"
 /// </summary>
-public interface EventLootCrateOpened : ITypedGameEvent<EventLootCrateOpened> {
+public interface EventLootCrateOpened : IGameEvent<EventLootCrateOpened> {
 
-  static EventLootCrateOpened ITypedGameEvent<EventLootCrateOpened>.Create() => new EventLootCrateOpenedImpl();
+  static EventLootCrateOpened IGameEvent<EventLootCrateOpened>.Create() => new EventLootCrateOpenedImpl();
 
-  static string ITypedGameEvent<EventLootCrateOpened>.GetName() => "loot_crate_opened";
+  static string IGameEvent<EventLootCrateOpened>.GetName() => "loot_crate_opened";
 
-  static uint ITypedGameEvent<EventLootCrateOpened>.GetHash() => 0x18E203D5u;
+  static uint IGameEvent<EventLootCrateOpened>.GetHash() => 0x18E203D5u;
   /// <summary>
   /// player entindex
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// player entindex
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// player entindex
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type of crate (metal, wood, or paradrop)

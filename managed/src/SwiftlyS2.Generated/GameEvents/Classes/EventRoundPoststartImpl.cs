@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "round_poststart"
 /// sent after all other round restart actions
 /// </summary>
-internal class EventRoundPoststartImpl : TypedGameEvent<EventRoundPoststart>, EventRoundPoststart
+internal class EventRoundPoststartImpl : GameEvent<EventRoundPoststart>, EventRoundPoststart
 {
 
 }

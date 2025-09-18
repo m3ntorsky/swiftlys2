@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "hltv_chase"
 /// shot of a single entity
 /// </summary>
-internal class EventHltvChaseImpl : TypedGameEvent<EventHltvChase>, EventHltvChase
+internal class EventHltvChaseImpl : GameEvent<EventHltvChase>, EventHltvChase
 {
 
 

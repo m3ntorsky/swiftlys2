@@ -8,13 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "hltv_rank_camera"
 /// a camera ranking
 /// </summary>
-public interface EventHltvRankCamera : ITypedGameEvent<EventHltvRankCamera> {
+public interface EventHltvRankCamera : IGameEvent<EventHltvRankCamera> {
 
-  static EventHltvRankCamera ITypedGameEvent<EventHltvRankCamera>.Create() => new EventHltvRankCameraImpl();
+  static EventHltvRankCamera IGameEvent<EventHltvRankCamera>.Create() => new EventHltvRankCameraImpl();
 
-  static string ITypedGameEvent<EventHltvRankCamera>.GetName() => "hltv_rank_camera";
+  static string IGameEvent<EventHltvRankCamera>.GetName() => "hltv_rank_camera";
 
-  static uint ITypedGameEvent<EventHltvRankCamera>.GetHash() => 0x493E49E8u;
+  static uint IGameEvent<EventHltvRankCamera>.GetHash() => 0x493E49E8u;
   /// <summary>
   /// fixed camera index
   /// <br/>

@@ -7,19 +7,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "hostage_rescued"
 /// </summary>
-public interface EventHostageRescued : ITypedGameEvent<EventHostageRescued> {
+public interface EventHostageRescued : IGameEvent<EventHostageRescued> {
 
-  static EventHostageRescued ITypedGameEvent<EventHostageRescued>.Create() => new EventHostageRescuedImpl();
+  static EventHostageRescued IGameEvent<EventHostageRescued>.Create() => new EventHostageRescuedImpl();
 
-  static string ITypedGameEvent<EventHostageRescued>.GetName() => "hostage_rescued";
+  static string IGameEvent<EventHostageRescued>.GetName() => "hostage_rescued";
 
-  static uint ITypedGameEvent<EventHostageRescued>.GetHash() => 0x46CA33D6u;
+  static uint IGameEvent<EventHostageRescued>.GetHash() => 0x46CA33D6u;
   /// <summary>
   /// player who rescued the hostage
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// player who rescued the hostage
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// player who rescued the hostage
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// hostage entity index

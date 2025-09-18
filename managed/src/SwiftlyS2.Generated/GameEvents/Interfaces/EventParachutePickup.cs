@@ -7,17 +7,29 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "parachute_pickup"
 /// </summary>
-public interface EventParachutePickup : ITypedGameEvent<EventParachutePickup> {
+public interface EventParachutePickup : IGameEvent<EventParachutePickup> {
 
-  static EventParachutePickup ITypedGameEvent<EventParachutePickup>.Create() => new EventParachutePickupImpl();
+  static EventParachutePickup IGameEvent<EventParachutePickup>.Create() => new EventParachutePickupImpl();
 
-  static string ITypedGameEvent<EventParachutePickup>.GetName() => "parachute_pickup";
+  static string IGameEvent<EventParachutePickup>.GetName() => "parachute_pickup";
 
-  static uint ITypedGameEvent<EventParachutePickup>.GetHash() => 0x9A331261u;
+  static uint IGameEvent<EventParachutePickup>.GetHash() => 0x9A331261u;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
 }

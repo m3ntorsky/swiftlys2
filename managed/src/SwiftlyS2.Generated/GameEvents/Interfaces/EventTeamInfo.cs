@@ -8,13 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "team_info"
 /// info about team
 /// </summary>
-public interface EventTeamInfo : ITypedGameEvent<EventTeamInfo> {
+public interface EventTeamInfo : IGameEvent<EventTeamInfo> {
 
-  static EventTeamInfo ITypedGameEvent<EventTeamInfo>.Create() => new EventTeamInfoImpl();
+  static EventTeamInfo IGameEvent<EventTeamInfo>.Create() => new EventTeamInfoImpl();
 
-  static string ITypedGameEvent<EventTeamInfo>.GetName() => "team_info";
+  static string IGameEvent<EventTeamInfo>.GetName() => "team_info";
 
-  static uint ITypedGameEvent<EventTeamInfo>.GetHash() => 0x61D50BD1u;
+  static uint IGameEvent<EventTeamInfo>.GetHash() => 0x61D50BD1u;
   /// <summary>
   /// unique team id
   /// <br/>

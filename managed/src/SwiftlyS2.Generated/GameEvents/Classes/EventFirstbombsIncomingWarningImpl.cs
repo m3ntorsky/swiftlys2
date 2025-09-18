@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "firstbombs_incoming_warning"
 /// </summary>
-internal class EventFirstbombsIncomingWarningImpl : TypedGameEvent<EventFirstbombsIncomingWarning>, EventFirstbombsIncomingWarning
+internal class EventFirstbombsIncomingWarningImpl : GameEvent<EventFirstbombsIncomingWarning>, EventFirstbombsIncomingWarning
 {
 
 

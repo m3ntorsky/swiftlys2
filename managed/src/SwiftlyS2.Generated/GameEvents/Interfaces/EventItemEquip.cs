@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "item_equip"
 /// </summary>
-public interface EventItemEquip : ITypedGameEvent<EventItemEquip> {
+public interface EventItemEquip : IGameEvent<EventItemEquip> {
 
-  static EventItemEquip ITypedGameEvent<EventItemEquip>.Create() => new EventItemEquipImpl();
+  static EventItemEquip IGameEvent<EventItemEquip>.Create() => new EventItemEquipImpl();
 
-  static string ITypedGameEvent<EventItemEquip>.GetName() => "item_equip";
+  static string IGameEvent<EventItemEquip>.GetName() => "item_equip";
 
-  static uint ITypedGameEvent<EventItemEquip>.GetHash() => 0x3D5F333Du;
+  static uint IGameEvent<EventItemEquip>.GetHash() => 0x3D5F333Du;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// either a weapon such as 'tmp' or 'hegrenade', or an item such as 'nvgs'

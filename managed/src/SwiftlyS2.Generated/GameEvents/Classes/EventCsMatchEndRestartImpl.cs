@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_match_end_restart"
 /// </summary>
-internal class EventCsMatchEndRestartImpl : TypedGameEvent<EventCsMatchEndRestart>, EventCsMatchEndRestart
+internal class EventCsMatchEndRestartImpl : GameEvent<EventCsMatchEndRestart>, EventCsMatchEndRestart
 {
 
 }

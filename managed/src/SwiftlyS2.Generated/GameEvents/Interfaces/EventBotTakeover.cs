@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "bot_takeover"
 /// </summary>
-public interface EventBotTakeover : ITypedGameEvent<EventBotTakeover> {
+public interface EventBotTakeover : IGameEvent<EventBotTakeover> {
 
-  static EventBotTakeover ITypedGameEvent<EventBotTakeover>.Create() => new EventBotTakeoverImpl();
+  static EventBotTakeover IGameEvent<EventBotTakeover>.Create() => new EventBotTakeoverImpl();
 
-  static string ITypedGameEvent<EventBotTakeover>.GetName() => "bot_takeover";
+  static string IGameEvent<EventBotTakeover>.GetName() => "bot_takeover";
 
-  static uint ITypedGameEvent<EventBotTakeover>.GetHash() => 0x6F5C9FCAu;
+  static uint IGameEvent<EventBotTakeover>.GetHash() => 0x6F5C9FCAu;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: player_controller

@@ -9,13 +9,21 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "gameui_hidden"
 /// </summary>
-internal class EventGameuiHiddenImpl : TypedGameEvent<EventGameuiHidden>, EventGameuiHidden
+internal class EventGameuiHiddenImpl : GameEvent<EventGameuiHidden>, EventGameuiHidden
 {
 
 
   // player
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // player
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // player
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // team id
   public byte Team

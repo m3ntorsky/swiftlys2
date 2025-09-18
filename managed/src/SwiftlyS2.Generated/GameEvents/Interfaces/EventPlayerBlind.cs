@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_blind"
 /// </summary>
-public interface EventPlayerBlind : ITypedGameEvent<EventPlayerBlind> {
+public interface EventPlayerBlind : IGameEvent<EventPlayerBlind> {
 
-  static EventPlayerBlind ITypedGameEvent<EventPlayerBlind>.Create() => new EventPlayerBlindImpl();
+  static EventPlayerBlind IGameEvent<EventPlayerBlind>.Create() => new EventPlayerBlindImpl();
 
-  static string ITypedGameEvent<EventPlayerBlind>.GetName() => "player_blind";
+  static string IGameEvent<EventPlayerBlind>.GetName() => "player_blind";
 
-  static uint ITypedGameEvent<EventPlayerBlind>.GetHash() => 0x4D79D81Cu;
+  static uint IGameEvent<EventPlayerBlind>.GetHash() => 0x4D79D81Cu;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// user ID who threw the flash

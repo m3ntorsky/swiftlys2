@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "ammo_refill"
 /// </summary>
-public interface EventAmmoRefill : ITypedGameEvent<EventAmmoRefill> {
+public interface EventAmmoRefill : IGameEvent<EventAmmoRefill> {
 
-  static EventAmmoRefill ITypedGameEvent<EventAmmoRefill>.Create() => new EventAmmoRefillImpl();
+  static EventAmmoRefill IGameEvent<EventAmmoRefill>.Create() => new EventAmmoRefillImpl();
 
-  static string ITypedGameEvent<EventAmmoRefill>.GetName() => "ammo_refill";
+  static string IGameEvent<EventAmmoRefill>.GetName() => "ammo_refill";
 
-  static uint ITypedGameEvent<EventAmmoRefill>.GetHash() => 0x65179124u;
+  static uint IGameEvent<EventAmmoRefill>.GetHash() => 0x65179124u;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: bool

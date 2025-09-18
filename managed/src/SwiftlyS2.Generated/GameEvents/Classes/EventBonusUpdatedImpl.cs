@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "bonus_updated"
 /// </summary>
-internal class EventBonusUpdatedImpl : TypedGameEvent<EventBonusUpdated>, EventBonusUpdated
+internal class EventBonusUpdatedImpl : GameEvent<EventBonusUpdated>, EventBonusUpdated
 {
 
 

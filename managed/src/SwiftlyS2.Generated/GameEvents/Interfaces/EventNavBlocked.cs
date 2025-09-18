@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "nav_blocked"
 /// </summary>
-public interface EventNavBlocked : ITypedGameEvent<EventNavBlocked> {
+public interface EventNavBlocked : IGameEvent<EventNavBlocked> {
 
-  static EventNavBlocked ITypedGameEvent<EventNavBlocked>.Create() => new EventNavBlockedImpl();
+  static EventNavBlocked IGameEvent<EventNavBlocked>.Create() => new EventNavBlockedImpl();
 
-  static string ITypedGameEvent<EventNavBlocked>.GetName() => "nav_blocked";
+  static string IGameEvent<EventNavBlocked>.GetName() => "nav_blocked";
 
-  static uint ITypedGameEvent<EventNavBlocked>.GetHash() => 0x1DE3B769u;
+  static uint IGameEvent<EventNavBlocked>.GetHash() => 0x1DE3B769u;
   /// <summary>
   /// type: long
   /// </summary>

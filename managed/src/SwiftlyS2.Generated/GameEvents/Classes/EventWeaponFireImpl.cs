@@ -9,12 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "weapon_fire"
 /// </summary>
-internal class EventWeaponFireImpl : TypedGameEvent<EventWeaponFire>, EventWeaponFire
+internal class EventWeaponFireImpl : GameEvent<EventWeaponFire>, EventWeaponFire
 {
 
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // weapon name used
   public string Weapon

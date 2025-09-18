@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "drop_rate_modified"
 /// </summary>
-internal class EventDropRateModifiedImpl : TypedGameEvent<EventDropRateModified>, EventDropRateModified
+internal class EventDropRateModifiedImpl : GameEvent<EventDropRateModified>, EventDropRateModified
 {
 
 }

@@ -10,11 +10,19 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "hltv_cameraman"
 /// a spectator/player is a cameraman
 /// </summary>
-internal class EventHltvCameramanImpl : TypedGameEvent<EventHltvCameraman>, EventHltvCameraman
+internal class EventHltvCameramanImpl : GameEvent<EventHltvCameraman>, EventHltvCameraman
 {
 
 
   // camera man entity index
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // camera man entity index
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // camera man entity index
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 }

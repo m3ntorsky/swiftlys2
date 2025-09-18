@@ -10,13 +10,21 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "player_death"
 /// a game event, name may be 32 charaters long
 /// </summary>
-internal class EventPlayerDeathImpl : TypedGameEvent<EventPlayerDeath>, EventPlayerDeath
+internal class EventPlayerDeathImpl : GameEvent<EventPlayerDeath>, EventPlayerDeath
 {
 
 
   // user ID who died
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // user ID who died
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // user ID who died
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // user ID who killed
   public int Attacker

@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "teamchange_pending"
 /// </summary>
-public interface EventTeamchangePending : ITypedGameEvent<EventTeamchangePending> {
+public interface EventTeamchangePending : IGameEvent<EventTeamchangePending> {
 
-  static EventTeamchangePending ITypedGameEvent<EventTeamchangePending>.Create() => new EventTeamchangePendingImpl();
+  static EventTeamchangePending IGameEvent<EventTeamchangePending>.Create() => new EventTeamchangePendingImpl();
 
-  static string ITypedGameEvent<EventTeamchangePending>.GetName() => "teamchange_pending";
+  static string IGameEvent<EventTeamchangePending>.GetName() => "teamchange_pending";
 
-  static uint ITypedGameEvent<EventTeamchangePending>.GetHash() => 0x53F97450u;
+  static uint IGameEvent<EventTeamchangePending>.GetHash() => 0x53F97450u;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: byte

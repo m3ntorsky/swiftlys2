@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "team_intro_start"
 /// </summary>
-internal class EventTeamIntroStartImpl : TypedGameEvent<EventTeamIntroStart>, EventTeamIntroStart
+internal class EventTeamIntroStartImpl : GameEvent<EventTeamIntroStart>, EventTeamIntroStart
 {
 
 }

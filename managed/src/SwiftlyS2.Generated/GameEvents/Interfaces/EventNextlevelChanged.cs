@@ -8,13 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "nextlevel_changed"
 /// a game event, name may be 32 characters long
 /// </summary>
-public interface EventNextlevelChanged : ITypedGameEvent<EventNextlevelChanged> {
+public interface EventNextlevelChanged : IGameEvent<EventNextlevelChanged> {
 
-  static EventNextlevelChanged ITypedGameEvent<EventNextlevelChanged>.Create() => new EventNextlevelChangedImpl();
+  static EventNextlevelChanged IGameEvent<EventNextlevelChanged>.Create() => new EventNextlevelChangedImpl();
 
-  static string ITypedGameEvent<EventNextlevelChanged>.GetName() => "nextlevel_changed";
+  static string IGameEvent<EventNextlevelChanged>.GetName() => "nextlevel_changed";
 
-  static uint ITypedGameEvent<EventNextlevelChanged>.GetHash() => 0xAD2E0EA9u;
+  static uint IGameEvent<EventNextlevelChanged>.GetHash() => 0xAD2E0EA9u;
   /// <summary>
   /// type: string
   /// </summary>

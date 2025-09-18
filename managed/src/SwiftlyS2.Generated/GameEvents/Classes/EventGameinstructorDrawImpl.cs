@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "gameinstructor_draw"
 /// </summary>
-internal class EventGameinstructorDrawImpl : TypedGameEvent<EventGameinstructorDraw>, EventGameinstructorDraw
+internal class EventGameinstructorDrawImpl : GameEvent<EventGameinstructorDraw>, EventGameinstructorDraw
 {
 
 }

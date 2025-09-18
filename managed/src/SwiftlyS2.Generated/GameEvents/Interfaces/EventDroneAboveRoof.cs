@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "drone_above_roof"
 /// </summary>
-public interface EventDroneAboveRoof : ITypedGameEvent<EventDroneAboveRoof> {
+public interface EventDroneAboveRoof : IGameEvent<EventDroneAboveRoof> {
 
-  static EventDroneAboveRoof ITypedGameEvent<EventDroneAboveRoof>.Create() => new EventDroneAboveRoofImpl();
+  static EventDroneAboveRoof IGameEvent<EventDroneAboveRoof>.Create() => new EventDroneAboveRoofImpl();
 
-  static string ITypedGameEvent<EventDroneAboveRoof>.GetName() => "drone_above_roof";
+  static string IGameEvent<EventDroneAboveRoof>.GetName() => "drone_above_roof";
 
-  static uint ITypedGameEvent<EventDroneAboveRoof>.GetHash() => 0x647D7762u;
+  static uint IGameEvent<EventDroneAboveRoof>.GetHash() => 0x647D7762u;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: short

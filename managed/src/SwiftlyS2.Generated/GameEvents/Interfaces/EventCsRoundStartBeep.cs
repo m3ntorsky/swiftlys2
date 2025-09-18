@@ -7,11 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "cs_round_start_beep"
 /// </summary>
-public interface EventCsRoundStartBeep : ITypedGameEvent<EventCsRoundStartBeep> {
+public interface EventCsRoundStartBeep : IGameEvent<EventCsRoundStartBeep> {
 
-  static EventCsRoundStartBeep ITypedGameEvent<EventCsRoundStartBeep>.Create() => new EventCsRoundStartBeepImpl();
+  static EventCsRoundStartBeep IGameEvent<EventCsRoundStartBeep>.Create() => new EventCsRoundStartBeepImpl();
 
-  static string ITypedGameEvent<EventCsRoundStartBeep>.GetName() => "cs_round_start_beep";
+  static string IGameEvent<EventCsRoundStartBeep>.GetName() => "cs_round_start_beep";
 
-  static uint ITypedGameEvent<EventCsRoundStartBeep>.GetHash() => 0x4DB83630u;
+  static uint IGameEvent<EventCsRoundStartBeep>.GetHash() => 0x4DB83630u;
 }

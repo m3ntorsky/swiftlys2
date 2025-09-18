@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "player_chat"
 /// a public player chat
 /// </summary>
-internal class EventPlayerChatImpl : TypedGameEvent<EventPlayerChat>, EventPlayerChat
+internal class EventPlayerChatImpl : GameEvent<EventPlayerChat>, EventPlayerChat
 {
 
 
@@ -19,8 +19,16 @@ internal class EventPlayerChatImpl : TypedGameEvent<EventPlayerChat>, EventPlaye
   { get => Accessor.GetBool("teamonly"); set => Accessor.SetBool("teamonly", value); }
 
   // chatting player
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // chatting player
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // chatting player
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // chatting player ID
   public short Playerid

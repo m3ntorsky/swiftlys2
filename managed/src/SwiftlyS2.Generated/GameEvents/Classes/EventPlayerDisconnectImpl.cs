@@ -10,13 +10,21 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "player_disconnect"
 /// a client was disconnected
 /// </summary>
-internal class EventPlayerDisconnectImpl : TypedGameEvent<EventPlayerDisconnect>, EventPlayerDisconnect
+internal class EventPlayerDisconnectImpl : GameEvent<EventPlayerDisconnect>, EventPlayerDisconnect
 {
 
 
   // user ID on server
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // user ID on server
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // user ID on server
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   // see networkdisconnect enum protobuf
   public short Reason

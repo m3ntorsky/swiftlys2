@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "enable_restart_voting"
 /// </summary>
-public interface EventEnableRestartVoting : ITypedGameEvent<EventEnableRestartVoting> {
+public interface EventEnableRestartVoting : IGameEvent<EventEnableRestartVoting> {
 
-  static EventEnableRestartVoting ITypedGameEvent<EventEnableRestartVoting>.Create() => new EventEnableRestartVotingImpl();
+  static EventEnableRestartVoting IGameEvent<EventEnableRestartVoting>.Create() => new EventEnableRestartVotingImpl();
 
-  static string ITypedGameEvent<EventEnableRestartVoting>.GetName() => "enable_restart_voting";
+  static string IGameEvent<EventEnableRestartVoting>.GetName() => "enable_restart_voting";
 
-  static uint ITypedGameEvent<EventEnableRestartVoting>.GetHash() => 0x786801D0u;
+  static uint IGameEvent<EventEnableRestartVoting>.GetHash() => 0x786801D0u;
   /// <summary>
   /// type: bool
   /// </summary>

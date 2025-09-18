@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "weapon_fire_on_empty"
 /// </summary>
-public interface EventWeaponFireOnEmpty : ITypedGameEvent<EventWeaponFireOnEmpty> {
+public interface EventWeaponFireOnEmpty : IGameEvent<EventWeaponFireOnEmpty> {
 
-  static EventWeaponFireOnEmpty ITypedGameEvent<EventWeaponFireOnEmpty>.Create() => new EventWeaponFireOnEmptyImpl();
+  static EventWeaponFireOnEmpty IGameEvent<EventWeaponFireOnEmpty>.Create() => new EventWeaponFireOnEmptyImpl();
 
-  static string ITypedGameEvent<EventWeaponFireOnEmpty>.GetName() => "weapon_fire_on_empty";
+  static string IGameEvent<EventWeaponFireOnEmpty>.GetName() => "weapon_fire_on_empty";
 
-  static uint ITypedGameEvent<EventWeaponFireOnEmpty>.GetHash() => 0xB2954170u;
+  static uint IGameEvent<EventWeaponFireOnEmpty>.GetHash() => 0xB2954170u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// weapon name used

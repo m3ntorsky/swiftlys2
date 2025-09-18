@@ -9,13 +9,21 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "bomb_begindefuse"
 /// </summary>
-internal class EventBombBegindefuseImpl : TypedGameEvent<EventBombBegindefuse>, EventBombBegindefuse
+internal class EventBombBegindefuseImpl : GameEvent<EventBombBegindefuse>, EventBombBegindefuse
 {
 
 
   // player who is defusing
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  // player who is defusing
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  // player who is defusing
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   public bool HasKit
   { get => Accessor.GetBool("haskit"); set => Accessor.SetBool("haskit", value); }

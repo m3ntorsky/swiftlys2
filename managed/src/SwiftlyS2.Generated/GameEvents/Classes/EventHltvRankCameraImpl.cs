@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "hltv_rank_camera"
 /// a camera ranking
 /// </summary>
-internal class EventHltvRankCameraImpl : TypedGameEvent<EventHltvRankCamera>, EventHltvRankCamera
+internal class EventHltvRankCameraImpl : GameEvent<EventHltvRankCamera>, EventHltvRankCamera
 {
 
 

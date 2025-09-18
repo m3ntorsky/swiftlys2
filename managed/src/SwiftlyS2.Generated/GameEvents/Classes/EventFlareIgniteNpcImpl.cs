@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "flare_ignite_npc"
 /// </summary>
-internal class EventFlareIgniteNpcImpl : TypedGameEvent<EventFlareIgniteNpc>, EventFlareIgniteNpc
+internal class EventFlareIgniteNpcImpl : GameEvent<EventFlareIgniteNpc>, EventFlareIgniteNpc
 {
 
 

@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "flare_ignite_npc"
 /// </summary>
-public interface EventFlareIgniteNpc : ITypedGameEvent<EventFlareIgniteNpc> {
+public interface EventFlareIgniteNpc : IGameEvent<EventFlareIgniteNpc> {
 
-  static EventFlareIgniteNpc ITypedGameEvent<EventFlareIgniteNpc>.Create() => new EventFlareIgniteNpcImpl();
+  static EventFlareIgniteNpc IGameEvent<EventFlareIgniteNpc>.Create() => new EventFlareIgniteNpcImpl();
 
-  static string ITypedGameEvent<EventFlareIgniteNpc>.GetName() => "flare_ignite_npc";
+  static string IGameEvent<EventFlareIgniteNpc>.GetName() => "flare_ignite_npc";
 
-  static uint ITypedGameEvent<EventFlareIgniteNpc>.GetHash() => 0xDB89EE8Eu;
+  static uint IGameEvent<EventFlareIgniteNpc>.GetHash() => 0xDB89EE8Eu;
   /// <summary>
   /// entity ignited
   /// <br/>

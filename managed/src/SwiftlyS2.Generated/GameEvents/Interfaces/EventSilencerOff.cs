@@ -7,17 +7,29 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "silencer_off"
 /// </summary>
-public interface EventSilencerOff : ITypedGameEvent<EventSilencerOff> {
+public interface EventSilencerOff : IGameEvent<EventSilencerOff> {
 
-  static EventSilencerOff ITypedGameEvent<EventSilencerOff>.Create() => new EventSilencerOffImpl();
+  static EventSilencerOff IGameEvent<EventSilencerOff>.Create() => new EventSilencerOffImpl();
 
-  static string ITypedGameEvent<EventSilencerOff>.GetName() => "silencer_off";
+  static string IGameEvent<EventSilencerOff>.GetName() => "silencer_off";
 
-  static uint ITypedGameEvent<EventSilencerOff>.GetHash() => 0x572861ACu;
+  static uint IGameEvent<EventSilencerOff>.GetHash() => 0x572861ACu;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
 }

@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_spawned"
 /// </summary>
-public interface EventPlayerSpawned : ITypedGameEvent<EventPlayerSpawned> {
+public interface EventPlayerSpawned : IGameEvent<EventPlayerSpawned> {
 
-  static EventPlayerSpawned ITypedGameEvent<EventPlayerSpawned>.Create() => new EventPlayerSpawnedImpl();
+  static EventPlayerSpawned IGameEvent<EventPlayerSpawned>.Create() => new EventPlayerSpawnedImpl();
 
-  static string ITypedGameEvent<EventPlayerSpawned>.GetName() => "player_spawned";
+  static string IGameEvent<EventPlayerSpawned>.GetName() => "player_spawned";
 
-  static uint ITypedGameEvent<EventPlayerSpawned>.GetHash() => 0x7DC35E81u;
+  static uint IGameEvent<EventPlayerSpawned>.GetHash() => 0x7DC35E81u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// true if restart is pending

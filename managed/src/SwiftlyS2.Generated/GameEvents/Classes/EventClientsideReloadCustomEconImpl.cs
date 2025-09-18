@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "clientside_reload_custom_econ"
 /// </summary>
-internal class EventClientsideReloadCustomEconImpl : TypedGameEvent<EventClientsideReloadCustomEcon>, EventClientsideReloadCustomEcon
+internal class EventClientsideReloadCustomEconImpl : GameEvent<EventClientsideReloadCustomEcon>, EventClientsideReloadCustomEcon
 {
 
 

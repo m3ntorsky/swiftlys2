@@ -7,11 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "start_halftime"
 /// </summary>
-public interface EventStartHalftime : ITypedGameEvent<EventStartHalftime> {
+public interface EventStartHalftime : IGameEvent<EventStartHalftime> {
 
-  static EventStartHalftime ITypedGameEvent<EventStartHalftime>.Create() => new EventStartHalftimeImpl();
+  static EventStartHalftime IGameEvent<EventStartHalftime>.Create() => new EventStartHalftimeImpl();
 
-  static string ITypedGameEvent<EventStartHalftime>.GetName() => "start_halftime";
+  static string IGameEvent<EventStartHalftime>.GetName() => "start_halftime";
 
-  static uint ITypedGameEvent<EventStartHalftime>.GetHash() => 0xC0794EE0u;
+  static uint IGameEvent<EventStartHalftime>.GetHash() => 0xC0794EE0u;
 }

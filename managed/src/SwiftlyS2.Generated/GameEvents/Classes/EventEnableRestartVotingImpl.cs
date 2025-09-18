@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "enable_restart_voting"
 /// </summary>
-internal class EventEnableRestartVotingImpl : TypedGameEvent<EventEnableRestartVoting>, EventEnableRestartVoting
+internal class EventEnableRestartVotingImpl : GameEvent<EventEnableRestartVoting>, EventEnableRestartVoting
 {
 
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "entity_killed"
 /// </summary>
-internal class EventEntityKilledImpl : TypedGameEvent<EventEntityKilled>, EventEntityKilled
+internal class EventEntityKilledImpl : GameEvent<EventEntityKilled>, EventEntityKilled
 {
 
 

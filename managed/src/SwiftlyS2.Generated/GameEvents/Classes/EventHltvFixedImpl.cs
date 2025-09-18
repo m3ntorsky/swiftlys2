@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "hltv_fixed"
 /// show from fixed view
 /// </summary>
-internal class EventHltvFixedImpl : TypedGameEvent<EventHltvFixed>, EventHltvFixed
+internal class EventHltvFixedImpl : GameEvent<EventHltvFixed>, EventHltvFixed
 {
 
 

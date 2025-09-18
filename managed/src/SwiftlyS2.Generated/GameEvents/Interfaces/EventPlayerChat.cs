@@ -8,13 +8,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// Event "player_chat"
 /// a public player chat
 /// </summary>
-public interface EventPlayerChat : ITypedGameEvent<EventPlayerChat> {
+public interface EventPlayerChat : IGameEvent<EventPlayerChat> {
 
-  static EventPlayerChat ITypedGameEvent<EventPlayerChat>.Create() => new EventPlayerChatImpl();
+  static EventPlayerChat IGameEvent<EventPlayerChat>.Create() => new EventPlayerChatImpl();
 
-  static string ITypedGameEvent<EventPlayerChat>.GetName() => "player_chat";
+  static string IGameEvent<EventPlayerChat>.GetName() => "player_chat";
 
-  static uint ITypedGameEvent<EventPlayerChat>.GetHash() => 0xA2C21BE3u;
+  static uint IGameEvent<EventPlayerChat>.GetHash() => 0xA2C21BE3u;
   /// <summary>
   /// true if team only chat
   /// <br/>
@@ -27,7 +27,21 @@ public interface EventPlayerChat : ITypedGameEvent<EventPlayerChat> {
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// chatting player
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// chatting player
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// chatting player ID

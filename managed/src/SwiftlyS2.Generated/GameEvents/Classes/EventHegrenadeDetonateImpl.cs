@@ -9,12 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "hegrenade_detonate"
 /// </summary>
-internal class EventHegrenadeDetonateImpl : TypedGameEvent<EventHegrenadeDetonate>, EventHegrenadeDetonate
+internal class EventHegrenadeDetonateImpl : GameEvent<EventHegrenadeDetonate>, EventHegrenadeDetonate
 {
 
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   public short EntityID
   { get => (short)Accessor.GetInt32("entityid"); set => Accessor.SetInt32("entityid", value); }

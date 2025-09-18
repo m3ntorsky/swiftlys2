@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "break_prop"
 /// </summary>
-public interface EventBreakProp : ITypedGameEvent<EventBreakProp> {
+public interface EventBreakProp : IGameEvent<EventBreakProp> {
 
-  static EventBreakProp ITypedGameEvent<EventBreakProp>.Create() => new EventBreakPropImpl();
+  static EventBreakProp IGameEvent<EventBreakProp>.Create() => new EventBreakPropImpl();
 
-  static string ITypedGameEvent<EventBreakProp>.GetName() => "break_prop";
+  static string IGameEvent<EventBreakProp>.GetName() => "break_prop";
 
-  static uint ITypedGameEvent<EventBreakProp>.GetHash() => 0x20D10398u;
+  static uint IGameEvent<EventBreakProp>.GetHash() => 0x20D10398u;
   /// <summary>
   /// type: long
   /// </summary>
@@ -23,7 +23,19 @@ public interface EventBreakProp : ITypedGameEvent<EventBreakProp> {
   /// <br/>
   /// type: player_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: bool

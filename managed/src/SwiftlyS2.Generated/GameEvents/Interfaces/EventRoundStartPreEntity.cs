@@ -7,11 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "round_start_pre_entity"
 /// </summary>
-public interface EventRoundStartPreEntity : ITypedGameEvent<EventRoundStartPreEntity> {
+public interface EventRoundStartPreEntity : IGameEvent<EventRoundStartPreEntity> {
 
-  static EventRoundStartPreEntity ITypedGameEvent<EventRoundStartPreEntity>.Create() => new EventRoundStartPreEntityImpl();
+  static EventRoundStartPreEntity IGameEvent<EventRoundStartPreEntity>.Create() => new EventRoundStartPreEntityImpl();
 
-  static string ITypedGameEvent<EventRoundStartPreEntity>.GetName() => "round_start_pre_entity";
+  static string IGameEvent<EventRoundStartPreEntity>.GetName() => "round_start_pre_entity";
 
-  static uint ITypedGameEvent<EventRoundStartPreEntity>.GetHash() => 0x703715ECu;
+  static uint IGameEvent<EventRoundStartPreEntity>.GetHash() => 0x703715ECu;
 }

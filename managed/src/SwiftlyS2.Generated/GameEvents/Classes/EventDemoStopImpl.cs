@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "demo_stop"
 /// </summary>
-internal class EventDemoStopImpl : TypedGameEvent<EventDemoStop>, EventDemoStop
+internal class EventDemoStopImpl : GameEvent<EventDemoStop>, EventDemoStop
 {
 
 }

@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_stats_updated"
 /// </summary>
-public interface EventPlayerStatsUpdated : ITypedGameEvent<EventPlayerStatsUpdated> {
+public interface EventPlayerStatsUpdated : IGameEvent<EventPlayerStatsUpdated> {
 
-  static EventPlayerStatsUpdated ITypedGameEvent<EventPlayerStatsUpdated>.Create() => new EventPlayerStatsUpdatedImpl();
+  static EventPlayerStatsUpdated IGameEvent<EventPlayerStatsUpdated>.Create() => new EventPlayerStatsUpdatedImpl();
 
-  static string ITypedGameEvent<EventPlayerStatsUpdated>.GetName() => "player_stats_updated";
+  static string IGameEvent<EventPlayerStatsUpdated>.GetName() => "player_stats_updated";
 
-  static uint ITypedGameEvent<EventPlayerStatsUpdated>.GetHash() => 0x9F0E110Cu;
+  static uint IGameEvent<EventPlayerStatsUpdated>.GetHash() => 0x9F0E110Cu;
   /// <summary>
   /// type: bool
   /// </summary>

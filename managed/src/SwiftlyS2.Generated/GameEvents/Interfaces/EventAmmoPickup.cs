@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "ammo_pickup"
 /// </summary>
-public interface EventAmmoPickup : ITypedGameEvent<EventAmmoPickup> {
+public interface EventAmmoPickup : IGameEvent<EventAmmoPickup> {
 
-  static EventAmmoPickup ITypedGameEvent<EventAmmoPickup>.Create() => new EventAmmoPickupImpl();
+  static EventAmmoPickup IGameEvent<EventAmmoPickup>.Create() => new EventAmmoPickupImpl();
 
-  static string ITypedGameEvent<EventAmmoPickup>.GetName() => "ammo_pickup";
+  static string IGameEvent<EventAmmoPickup>.GetName() => "ammo_pickup";
 
-  static uint ITypedGameEvent<EventAmmoPickup>.GetHash() => 0x374B5BCCu;
+  static uint IGameEvent<EventAmmoPickup>.GetHash() => 0x374B5BCCu;
   /// <summary>
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// either a weapon such as 'tmp' or 'hegrenade', or an item such as 'nvgs'

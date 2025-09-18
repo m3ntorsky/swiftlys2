@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "hostage_call_for_help"
 /// </summary>
-public interface EventHostageCallForHelp : ITypedGameEvent<EventHostageCallForHelp> {
+public interface EventHostageCallForHelp : IGameEvent<EventHostageCallForHelp> {
 
-  static EventHostageCallForHelp ITypedGameEvent<EventHostageCallForHelp>.Create() => new EventHostageCallForHelpImpl();
+  static EventHostageCallForHelp IGameEvent<EventHostageCallForHelp>.Create() => new EventHostageCallForHelpImpl();
 
-  static string ITypedGameEvent<EventHostageCallForHelp>.GetName() => "hostage_call_for_help";
+  static string IGameEvent<EventHostageCallForHelp>.GetName() => "hostage_call_for_help";
 
-  static uint ITypedGameEvent<EventHostageCallForHelp>.GetHash() => 0xADE57017u;
+  static uint IGameEvent<EventHostageCallForHelp>.GetHash() => 0xADE57017u;
   /// <summary>
   /// hostage entity index
   /// <br/>

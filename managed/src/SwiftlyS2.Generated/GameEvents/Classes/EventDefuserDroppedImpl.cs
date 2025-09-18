@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "defuser_dropped"
 /// </summary>
-internal class EventDefuserDroppedImpl : TypedGameEvent<EventDefuserDropped>, EventDefuserDropped
+internal class EventDefuserDroppedImpl : GameEvent<EventDefuserDropped>, EventDefuserDropped
 {
 
 

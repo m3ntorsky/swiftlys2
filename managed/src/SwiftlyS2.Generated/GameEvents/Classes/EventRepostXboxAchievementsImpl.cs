@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "repost_xbox_achievements"
 /// </summary>
-internal class EventRepostXboxAchievementsImpl : TypedGameEvent<EventRepostXboxAchievements>, EventRepostXboxAchievements
+internal class EventRepostXboxAchievementsImpl : GameEvent<EventRepostXboxAchievements>, EventRepostXboxAchievements
 {
 
 

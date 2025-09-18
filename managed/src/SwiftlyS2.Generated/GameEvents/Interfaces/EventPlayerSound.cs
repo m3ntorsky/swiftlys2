@@ -7,18 +7,30 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "player_sound"
 /// </summary>
-public interface EventPlayerSound : ITypedGameEvent<EventPlayerSound> {
+public interface EventPlayerSound : IGameEvent<EventPlayerSound> {
 
-  static EventPlayerSound ITypedGameEvent<EventPlayerSound>.Create() => new EventPlayerSoundImpl();
+  static EventPlayerSound IGameEvent<EventPlayerSound>.Create() => new EventPlayerSoundImpl();
 
-  static string ITypedGameEvent<EventPlayerSound>.GetName() => "player_sound";
+  static string IGameEvent<EventPlayerSound>.GetName() => "player_sound";
 
-  static uint ITypedGameEvent<EventPlayerSound>.GetHash() => 0xE562BC6Cu;
+  static uint IGameEvent<EventPlayerSound>.GetHash() => 0xE562BC6Cu;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// type: int

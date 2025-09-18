@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "difficulty_changed"
 /// </summary>
-public interface EventDifficultyChanged : ITypedGameEvent<EventDifficultyChanged> {
+public interface EventDifficultyChanged : IGameEvent<EventDifficultyChanged> {
 
-  static EventDifficultyChanged ITypedGameEvent<EventDifficultyChanged>.Create() => new EventDifficultyChangedImpl();
+  static EventDifficultyChanged IGameEvent<EventDifficultyChanged>.Create() => new EventDifficultyChangedImpl();
 
-  static string ITypedGameEvent<EventDifficultyChanged>.GetName() => "difficulty_changed";
+  static string IGameEvent<EventDifficultyChanged>.GetName() => "difficulty_changed";
 
-  static uint ITypedGameEvent<EventDifficultyChanged>.GetHash() => 0xB261D803u;
+  static uint IGameEvent<EventDifficultyChanged>.GetHash() => 0xB261D803u;
   /// <summary>
   /// type: short
   /// </summary>

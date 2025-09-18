@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "ragdoll_dissolved"
 /// </summary>
-internal class EventRagdollDissolvedImpl : TypedGameEvent<EventRagdollDissolved>, EventRagdollDissolved
+internal class EventRagdollDissolvedImpl : GameEvent<EventRagdollDissolved>, EventRagdollDissolved
 {
 
 

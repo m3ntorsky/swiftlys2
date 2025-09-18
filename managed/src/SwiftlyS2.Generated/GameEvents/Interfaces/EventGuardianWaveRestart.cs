@@ -7,11 +7,11 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "guardian_wave_restart"
 /// </summary>
-public interface EventGuardianWaveRestart : ITypedGameEvent<EventGuardianWaveRestart> {
+public interface EventGuardianWaveRestart : IGameEvent<EventGuardianWaveRestart> {
 
-  static EventGuardianWaveRestart ITypedGameEvent<EventGuardianWaveRestart>.Create() => new EventGuardianWaveRestartImpl();
+  static EventGuardianWaveRestart IGameEvent<EventGuardianWaveRestart>.Create() => new EventGuardianWaveRestartImpl();
 
-  static string ITypedGameEvent<EventGuardianWaveRestart>.GetName() => "guardian_wave_restart";
+  static string IGameEvent<EventGuardianWaveRestart>.GetName() => "guardian_wave_restart";
 
-  static uint ITypedGameEvent<EventGuardianWaveRestart>.GetHash() => 0xA7FB81A6u;
+  static uint IGameEvent<EventGuardianWaveRestart>.GetHash() => 0xA7FB81A6u;
 }

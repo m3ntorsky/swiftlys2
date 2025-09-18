@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "switch_team"
 /// </summary>
-internal class EventSwitchTeamImpl : TypedGameEvent<EventSwitchTeam>, EventSwitchTeam
+internal class EventSwitchTeamImpl : GameEvent<EventSwitchTeam>, EventSwitchTeam
 {
 
 

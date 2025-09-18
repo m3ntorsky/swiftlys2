@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "survival_paradrop_spawn"
 /// </summary>
-internal class EventSurvivalParadropSpawnImpl : TypedGameEvent<EventSurvivalParadropSpawn>, EventSurvivalParadropSpawn
+internal class EventSurvivalParadropSpawnImpl : GameEvent<EventSurvivalParadropSpawn>, EventSurvivalParadropSpawn
 {
 
 

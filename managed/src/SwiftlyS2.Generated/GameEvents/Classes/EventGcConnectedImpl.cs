@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "gc_connected"
 /// </summary>
-internal class EventGcConnectedImpl : TypedGameEvent<EventGcConnected>, EventGcConnected
+internal class EventGcConnectedImpl : GameEvent<EventGcConnected>, EventGcConnected
 {
 
 }

@@ -7,19 +7,33 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "entity_visible"
 /// </summary>
-public interface EventEntityVisible : ITypedGameEvent<EventEntityVisible> {
+public interface EventEntityVisible : IGameEvent<EventEntityVisible> {
 
-  static EventEntityVisible ITypedGameEvent<EventEntityVisible>.Create() => new EventEntityVisibleImpl();
+  static EventEntityVisible IGameEvent<EventEntityVisible>.Create() => new EventEntityVisibleImpl();
 
-  static string ITypedGameEvent<EventEntityVisible>.GetName() => "entity_visible";
+  static string IGameEvent<EventEntityVisible>.GetName() => "entity_visible";
 
-  static uint ITypedGameEvent<EventEntityVisible>.GetHash() => 0xC4D03823u;
+  static uint IGameEvent<EventEntityVisible>.GetHash() => 0xC4D03823u;
   /// <summary>
   /// The player who sees the entity
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// The player who sees the entity
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// The player who sees the entity
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
   /// <summary>
   /// Entindex of the entity they see

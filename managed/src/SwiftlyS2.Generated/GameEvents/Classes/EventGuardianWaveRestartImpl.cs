@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "guardian_wave_restart"
 /// </summary>
-internal class EventGuardianWaveRestartImpl : TypedGameEvent<EventGuardianWaveRestart>, EventGuardianWaveRestart
+internal class EventGuardianWaveRestartImpl : GameEvent<EventGuardianWaveRestart>, EventGuardianWaveRestart
 {
 
 }

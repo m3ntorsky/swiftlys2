@@ -7,17 +7,29 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "weapon_zoom_rifle"
 /// </summary>
-public interface EventWeaponZoomRifle : ITypedGameEvent<EventWeaponZoomRifle> {
+public interface EventWeaponZoomRifle : IGameEvent<EventWeaponZoomRifle> {
 
-  static EventWeaponZoomRifle ITypedGameEvent<EventWeaponZoomRifle>.Create() => new EventWeaponZoomRifleImpl();
+  static EventWeaponZoomRifle IGameEvent<EventWeaponZoomRifle>.Create() => new EventWeaponZoomRifleImpl();
 
-  static string ITypedGameEvent<EventWeaponZoomRifle>.GetName() => "weapon_zoom_rifle";
+  static string IGameEvent<EventWeaponZoomRifle>.GetName() => "weapon_zoom_rifle";
 
-  static uint ITypedGameEvent<EventWeaponZoomRifle>.GetHash() => 0x4B7652E4u;
+  static uint IGameEvent<EventWeaponZoomRifle>.GetHash() => 0x4B7652E4u;
   /// <summary>
   /// <br/>
   /// type: player_controller_and_pawn
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// <br/>
+  /// type: player_controller_and_pawn
+  /// </summary>
+  int UserId { get; set; }
 
 }

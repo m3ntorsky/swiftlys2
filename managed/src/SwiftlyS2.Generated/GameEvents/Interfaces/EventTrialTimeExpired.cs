@@ -7,18 +7,32 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// <summary> 
 /// Event "trial_time_expired"
 /// </summary>
-public interface EventTrialTimeExpired : ITypedGameEvent<EventTrialTimeExpired> {
+public interface EventTrialTimeExpired : IGameEvent<EventTrialTimeExpired> {
 
-  static EventTrialTimeExpired ITypedGameEvent<EventTrialTimeExpired>.Create() => new EventTrialTimeExpiredImpl();
+  static EventTrialTimeExpired IGameEvent<EventTrialTimeExpired>.Create() => new EventTrialTimeExpiredImpl();
 
-  static string ITypedGameEvent<EventTrialTimeExpired>.GetName() => "trial_time_expired";
+  static string IGameEvent<EventTrialTimeExpired>.GetName() => "trial_time_expired";
 
-  static uint ITypedGameEvent<EventTrialTimeExpired>.GetHash() => 0xA80BA2FFu;
+  static uint IGameEvent<EventTrialTimeExpired>.GetHash() => 0xA80BA2FFu;
   /// <summary>
   /// player whose time has expired
   /// <br/>
   /// type: player_controller
   /// </summary>
-  CCSPlayerController UserId { get; }
+  CCSPlayerController UserIdController { get; }
+
+  /// <summary>
+  /// player whose time has expired
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  CCSPlayerPawn UserIdPawn { get; }
+
+  /// <summary>
+  /// player whose time has expired
+  /// <br/>
+  /// type: player_controller
+  /// </summary>
+  int UserId { get; set; }
 
 }

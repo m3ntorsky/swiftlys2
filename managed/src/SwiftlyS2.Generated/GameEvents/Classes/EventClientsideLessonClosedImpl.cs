@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "clientside_lesson_closed"
 /// </summary>
-internal class EventClientsideLessonClosedImpl : TypedGameEvent<EventClientsideLessonClosed>, EventClientsideLessonClosed
+internal class EventClientsideLessonClosedImpl : GameEvent<EventClientsideLessonClosed>, EventClientsideLessonClosed
 {
 
 

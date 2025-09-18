@@ -9,12 +9,18 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "bullet_flight_resolution"
 /// </summary>
-internal class EventBulletFlightResolutionImpl : TypedGameEvent<EventBulletFlightResolution>, EventBulletFlightResolution
+internal class EventBulletFlightResolutionImpl : GameEvent<EventBulletFlightResolution>, EventBulletFlightResolution
 {
 
 
-  public CCSPlayerController UserId
+  public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
+
+  public CCSPlayerPawn UserIdPawn
+  { get => Accessor.GetPlayerPawn("userid"); }
+
+  public int UserId
+  { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
   public short PosX
   { get => (short)Accessor.GetInt32("pos_x"); set => Accessor.SetInt32("pos_x", value); }

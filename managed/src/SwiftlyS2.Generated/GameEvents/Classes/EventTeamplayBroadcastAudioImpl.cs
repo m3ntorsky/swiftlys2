@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// Event "teamplay_broadcast_audio"
 /// emits a sound to everyone on a team
 /// </summary>
-internal class EventTeamplayBroadcastAudioImpl : TypedGameEvent<EventTeamplayBroadcastAudio>, EventTeamplayBroadcastAudio
+internal class EventTeamplayBroadcastAudioImpl : GameEvent<EventTeamplayBroadcastAudio>, EventTeamplayBroadcastAudio
 {
 
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 /// <summary> 
 /// Event "show_deathpanel"
 /// </summary>
-internal class EventShowDeathpanelImpl : TypedGameEvent<EventShowDeathpanel>, EventShowDeathpanel
+internal class EventShowDeathpanelImpl : GameEvent<EventShowDeathpanel>, EventShowDeathpanel
 {
 
 
