@@ -65,7 +65,7 @@ bool SwiftlyMMBridge::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxle
 
     DynLibUtils::CModule eng = DetermineModuleByLibrary("engine2");
     void* serverSideClientVTable = eng.GetVirtualTableByName("CServerSideClient");
-    // OnConVarQueryID = SH_ADD_DVPHOOK(CServerSideClientBase, ProcessRespondCvarValue, (CServerSideClientBase*)serverSideClientVTable, SH_MEMBER(this, &SwiftlyMMBridge::OnConvarQuery), false);
+    OnConVarQueryID = SH_ADD_DVPHOOK(CServerSideClientBase, ProcessRespondCvarValue, (CServerSideClientBase*)serverSideClientVTable, SH_MEMBER(this, &SwiftlyMMBridge::OnConvarQuery), false);
 
     auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
 
@@ -89,6 +89,8 @@ bool SwiftlyMMBridge::Unload(char* error, size_t maxlen)
     auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
     SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameServerSteamAPIActivated, server, this, &SwiftlyMMBridge::Hook_GameServerSteamAPIActivated, false);
     SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameServerSteamAPIDeactivated, server, this, &SwiftlyMMBridge::Hook_GameServerSteamAPIDeactivated, false);
+
+    SH_REMOVE_HOOK_ID(OnConVarQueryID);
 
     return g_SwiftlyCore.Unload();
 }
