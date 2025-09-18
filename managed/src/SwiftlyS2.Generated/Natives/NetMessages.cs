@@ -1,12 +1,15 @@
 #pragma warning disable CS0649
+#pragma warning disable CS0169
 
 using System.Buffers;
 using System.Text;
+using System.Threading;
 using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeNetMessages {
+  private static int _MainThreadID;
   private unsafe static delegate* unmanaged<int, nint> _AllocateNetMessageByID;
   public unsafe static nint AllocateNetMessageByID(int msgid) {
     var ret = _AllocateNetMessageByID(msgid);

@@ -2,7 +2,7 @@ class Sounds
 
 ptr CreateSoundEvent = void
 void DestroySoundEvent = ptr soundEvent
-uint32 Emit = ptr soundEvent
+sync uint32 Emit = ptr soundEvent
 void SetName = ptr soundEvent, string name
 string GetName = ptr soundEvent
 void SetSourceEntityIndex = ptr soundEvent, int32 index

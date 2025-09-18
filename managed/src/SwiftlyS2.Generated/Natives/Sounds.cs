@@ -1,12 +1,15 @@
 #pragma warning disable CS0649
+#pragma warning disable CS0169
 
 using System.Buffers;
 using System.Text;
+using System.Threading;
 using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeSounds {
+  private static int _MainThreadID;
   private unsafe static delegate* unmanaged<nint> _CreateSoundEvent;
   public unsafe static nint CreateSoundEvent() {
     var ret = _CreateSoundEvent();
@@ -18,6 +21,9 @@ internal static class NativeSounds {
   }
   private unsafe static delegate* unmanaged<nint, uint> _Emit;
   public unsafe static uint Emit(nint soundEvent) {
+    if (Thread.CurrentThread.ManagedThreadId != _MainThreadID) {
+      throw new InvalidOperationException("This method can only be called from the main thread.");
+    }
     var ret = _Emit(soundEvent);
     return ret;
   }

@@ -1,12 +1,15 @@
 #pragma warning disable CS0649
+#pragma warning disable CS0169
 
 using System.Buffers;
 using System.Text;
+using System.Threading;
 using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeResmon {
+  private static int _MainThreadID;
   private unsafe static delegate* unmanaged<bool> _IsEnabled;
   public unsafe static bool IsEnabled() {
     var ret = _IsEnabled();

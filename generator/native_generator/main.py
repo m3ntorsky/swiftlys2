@@ -145,19 +145,28 @@ def parse_native(lines: list[str]):
 
     chunks: list[str] = []
     emit(chunks, "#pragma warning disable CS0649")
+    emit(chunks, "#pragma warning disable CS0169")
     emit(chunks)
     emit(chunks, "using System.Buffers;")
     emit(chunks, "using System.Text;")
+    emit(chunks, "using System.Threading;")
     emit(chunks, "using SwiftlyS2.Shared.Natives;")
     emit(chunks)
     emit(chunks, f"namespace SwiftlyS2.Core.Natives;")
     emit(chunks)
     emit(chunks, f"internal static class Native{class_name} {{")
+    emit(chunks, f"{INDENT}private static int _MainThreadID;")
 
     for raw_line in native_lines:
         if raw_line.strip() == "":
             continue
         left, right = raw_line.split("=", 1)
+
+        isMarkedSync = False
+        if "sync " in left:
+            isMarkedSync = True
+            left = left.replace("sync ", "")
+
         return_type, function_name = left.split(" ", 1)
         function_name = function_name.strip()
         params_and_comment = right.split("//", 1)
@@ -183,6 +192,10 @@ def parse_native(lines: list[str]):
 
         method_signature = ", ".join([f"{t} {n}" for t, n in param_signatures])
         emit(chunks, f"{INDENT}public unsafe static {RETURN_TYPE_MAP[return_type]} {function_name}({method_signature}) {{")
+        if isMarkedSync == True:
+            emit(chunks, f"{INDENT}{INDENT}if (Thread.CurrentThread.ManagedThreadId != _MainThreadID) {{")
+            emit(chunks, f"{INDENT}{INDENT}{INDENT}throw new InvalidOperationException(\"This method can only be called from the main thread.\");")
+            emit(chunks, f"{INDENT}{INDENT}}}")
 
         marshals: list[tuple[str, str]] = []
         renamed_param: dict[str, str] = {}

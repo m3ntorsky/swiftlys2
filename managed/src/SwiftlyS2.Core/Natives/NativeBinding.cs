@@ -12,6 +12,7 @@ internal class NativeBinding
       try {
         var pNativeTables = (NativeFunction*)nativeTable;
 
+
         for (int i = 0; i < nativeTableSize; i++)
         {
           var name = Marshal.PtrToStringUTF8(pNativeTables[i].Name)!;
@@ -28,6 +29,8 @@ internal class NativeBinding
           var nativeClass = Type.GetType(nativeNameSpace)!;
           var nativeStaticField = nativeClass.GetField("_"+funcName, BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
           nativeStaticField!.SetValue(null, pNativeTables[i].Function);
+          var mainThreadIDStaticField = nativeClass.GetField("_MainThreadID", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
+          mainThreadIDStaticField!.SetValue(null, Thread.CurrentThread.ManagedThreadId);
         }
       } catch (Exception e)
       {

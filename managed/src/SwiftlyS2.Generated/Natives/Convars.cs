@@ -1,12 +1,15 @@
 #pragma warning disable CS0649
+#pragma warning disable CS0169
 
 using System.Buffers;
 using System.Text;
+using System.Threading;
 using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeConvars {
+  private static int _MainThreadID;
   private unsafe static delegate* unmanaged<int, byte*, void> _QueryClientConvar;
   public unsafe static void QueryClientConvar(int playerid, string cvarName) {
     var pool = ArrayPool<byte>.Shared;

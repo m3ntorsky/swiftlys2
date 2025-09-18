@@ -1,12 +1,15 @@
 #pragma warning disable CS0649
+#pragma warning disable CS0169
 
 using System.Buffers;
 using System.Text;
+using System.Threading;
 using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeLogger {
+  private static int _MainThreadID;
   private unsafe static delegate* unmanaged<int, byte*, void> _Log;
   public unsafe static void Log(int logType, string message) {
     var pool = ArrayPool<byte>.Shared;

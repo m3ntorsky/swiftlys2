@@ -1,12 +1,15 @@
 #pragma warning disable CS0649
+#pragma warning disable CS0169
 
 using System.Buffers;
 using System.Text;
+using System.Threading;
 using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeEngineHelpers {
+  private static int _MainThreadID;
   private unsafe static delegate* unmanaged<byte*, int> _GetServerIP;
   public unsafe static string GetServerIP() {
     var ret = _GetServerIP(null);

@@ -1,12 +1,15 @@
 #pragma warning disable CS0649
+#pragma warning disable CS0169
 
 using System.Buffers;
 using System.Text;
+using System.Threading;
 using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeGameEvents {
+  private static int _MainThreadID;
   private unsafe static delegate* unmanaged<nint, byte*, bool> _GetBool;
   public unsafe static bool GetBool(nint _event, string key) {
     var pool = ArrayPool<byte>.Shared;
