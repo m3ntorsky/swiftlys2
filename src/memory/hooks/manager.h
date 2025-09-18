@@ -28,15 +28,11 @@
 class HooksManager : public IHooksManager
 {
 public:
-    virtual void Initialize() override;
-    virtual void Shutdown() override;
-
     virtual IFunctionHook* CreateFunctionHook() override;
     virtual IVFunctionHook* CreateVFunctionHook() override;
-private:
-    std::vector<IFunctionHook*> m_vFunchookQueue;
-    std::vector<IVFunctionHook*> m_vVFunchookQueue;
-    bool m_bInitialized = false;
+
+    virtual void DestroyFunctionHook(IFunctionHook* hook) override;
+    virtual void DestroyVFunctionHook(IVFunctionHook* hook) override;
 };
 
 #endif

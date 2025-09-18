@@ -20,43 +20,13 @@
 #define src_api_memory_hooks_function_h
 
 #include <cstdint>
-
-#include "dynohook/core.h"
-#include "dynohook/os.h"
-#include "dynohook/ihook.h"
-#include "dynohook/imanager.h"
-
-#if DYNO_PLATFORM_WINDOWS
-#include "dynohook/conventions/x64_windows_call.h"
-#define DEFAULT_CALLCONV dyno::x64WindowsCall
-#else
-#include "dynohook/conventions/x64_systemV_call.h"
-#define DEFAULT_CALLCONV dyno::x64SystemVcall
-#endif
-
- /*
-     Args List Convention
-         - p -> Pointer / any
-         - b -> Boolean
-         - f -> Float
-         - d -> Double
-         - i -> Integer 32-bit
-         - u -> Unsigned Integer 32-bit
-         - s -> const char*
-         - I -> Integer 64-bit
-         - U -> Unsigned Integer 64-bit
-         - v -> Void
- */
+#include <string>
 
 class IFunctionHook
 {
 public:
-    virtual int SetCallback(dyno::CallbackType callbackType, dyno::CallbackHandler callback) = 0;
-    virtual void RemoveCallback(dyno::CallbackType callbackType, int cb_idx) = 0;
-    virtual void RemoveCallback(dyno::CallbackType callbackType) = 0;
-
-    virtual void SetHookFunction(const std::string& functionSignature, const std::string& args, const char return_value) = 0;
-    virtual void SetHookFunction(void* functionAddress, const std::string& args, const char return_value) = 0;
+    virtual void SetHookFunction(const std::string& functionSignature, void* callback) = 0;
+    virtual void SetHookFunction(void* functionAddress, void* callback) = 0;
 
     virtual void Enable() = 0;
     virtual void Disable() = 0;

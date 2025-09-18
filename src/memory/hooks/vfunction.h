@@ -20,21 +20,13 @@
 #define src_memory_hooks_vfunction_h
 
 #include <api/memory/hooks/vfunction.h>
-
-#include <vector>
-
-dyno::DataObject GetDataObject(char arg);
-std::vector<dyno::DataObject> GetDataObjectList(std::string args);
+#include <safetyhook/safetyhook.hpp>
 
 class VFunctionHook : public IVFunctionHook
 {
 public:
-    virtual int SetCallback(dyno::CallbackType callbackType, dyno::CallbackHandler callback) override;
-    virtual void RemoveCallback(dyno::CallbackType callbackType, int cb_idx) override;
-    virtual void RemoveCallback(dyno::CallbackType callbackType) override;
-
-    virtual void SetHookFunction(const std::string& interface, int index, const std::string& args, const char return_value) override;
-    virtual void SetHookFunction(void* instance, int index, const std::string& args, const char return_value, bool is_vtable) override;
+    virtual void SetHookFunction(const std::string& interface, int index, void* callback) override;
+    virtual void SetHookFunction(void* instance, int index, void* callback, bool is_vtable) override;
 
     virtual void Enable() override;
     virtual void Disable() override;
@@ -42,10 +34,7 @@ public:
     virtual void* GetOriginal() override;
     virtual bool IsEnabled() override;
 private:
-    dyno::IHook* m_pHook = nullptr;
-
-    std::vector<dyno::CallbackHandler> m_vCallbacks[2];
-    bool m_bEnabled = false;
+    SafetyHookInline m_oHook;
 };
 
 #endif

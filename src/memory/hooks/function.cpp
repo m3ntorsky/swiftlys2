@@ -20,102 +20,42 @@
 
 #include <api/interfaces/manager.h>
 
-int FunctionHook::SetCallback(dyno::CallbackType callbackType, dyno::CallbackHandler callback)
-{
-    if (callbackType < dyno::CallbackType::Pre || callbackType > dyno::CallbackType::Post)
-        return -1;
-
-    if (m_bEnabled) m_pHook->addCallback(callbackType, callback);
-
-    m_vCallbacks[static_cast<int>(callbackType)].push_back(callback);
-    return m_vCallbacks[static_cast<int>(callbackType)].size() - 1;
-}
-
-void FunctionHook::RemoveCallback(dyno::CallbackType callbackType, int cb_idx)
-{
-    if (callbackType < dyno::CallbackType::Pre || callbackType > dyno::CallbackType::Post)
-        return;
-
-    int cbtype = static_cast<int>(callbackType);
-    if (cb_idx < 0 || cb_idx >= m_vCallbacks[cbtype].size())
-        return;
-
-    auto& cb = m_vCallbacks[cbtype][cb_idx];
-    if (m_bEnabled) m_pHook->removeCallback(callbackType, cb);
-
-    m_vCallbacks[cbtype].erase(m_vCallbacks[cbtype].begin() + cb_idx);
-}
-
-void FunctionHook::RemoveCallback(dyno::CallbackType callbackType)
-{
-    if (callbackType < dyno::CallbackType::Pre || callbackType > dyno::CallbackType::Post)
-        return;
-
-    if (m_bEnabled) {
-        for (auto& callback : m_vCallbacks[static_cast<int>(callbackType)]) {
-            m_pHook->removeCallback(callbackType, callback);
-        }
-    }
-    m_vCallbacks[static_cast<int>(callbackType)].clear();
-}
-
 void FunctionHook::Enable()
 {
-    if (!m_pHook)
-        return;
+    if (IsEnabled()) return;
 
-    for (auto& callback : m_vCallbacks[0])
-        m_pHook->addCallback(dyno::CallbackType::Pre, callback);
-
-    for (auto& callback : m_vCallbacks[1])
-        m_pHook->addCallback(dyno::CallbackType::Post, callback);
-
-    m_bEnabled = true;
+    m_oHook.enable();
 }
 
 void FunctionHook::Disable()
 {
-    if (!m_pHook)
-        return;
+    if (!IsEnabled()) return;
 
-    for (auto& callback : m_vCallbacks[0])
-        m_pHook->removeCallback(dyno::CallbackType::Pre, callback);
-
-    for (auto& callback : m_vCallbacks[1])
-        m_pHook->removeCallback(dyno::CallbackType::Post, callback);
-
-    m_bEnabled = false;
+    m_oHook.disable();
 }
 
 void* FunctionHook::GetOriginal()
 {
-    if (!m_pHook)
-        return nullptr;
-
-    return (void*)m_pHook->getTarget();
+    return (void*)(m_oHook.trampoline().address());
 }
 
 bool FunctionHook::IsEnabled()
 {
-    if (!m_pHook) return false;
-    return m_pHook->isHooked();
+    return m_oHook.enabled();
 }
 
-void FunctionHook::SetHookFunction(const std::string& functionSignature, const std::string& args, const char return_value)
+void FunctionHook::SetHookFunction(const std::string& functionSignature, void* callback)
 {
     auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     void* functionAddress = gamedata->GetSignatures()->Fetch(functionSignature);
-
     if (!functionAddress) return;
 
-    dyno::IHookManager& manager = dyno::IHookManager::Get();
-    m_pHook = manager.hookDetour(functionAddress, [args, return_value] { return new DEFAULT_CALLCONV(GetDataObjectList(args), GetDataObject(return_value)); }).get();
+    m_oHook = safetyhook::create_inline(functionAddress, callback, safetyhook::InlineHook::Flags::StartDisabled);
 }
 
-void FunctionHook::SetHookFunction(void* functionAddress, const std::string& args, const char return_value)
+void FunctionHook::SetHookFunction(void* functionAddress, void* callback)
 {
     if (!functionAddress) return;
 
-    dyno::IHookManager& manager = dyno::IHookManager::Get();
-    m_pHook = manager.hookDetour(functionAddress, [args, return_value] { return new DEFAULT_CALLCONV(GetDataObjectList(args), GetDataObject(return_value)); }).get();
+    m_oHook = safetyhook::create_inline(functionAddress, callback, safetyhook::InlineHook::Flags::StartDisabled);
 }

@@ -27,11 +27,11 @@
 class IHooksManager
 {
 public:
-    virtual void Initialize() = 0;
-    virtual void Shutdown() = 0;
-
     virtual IFunctionHook* CreateFunctionHook() = 0;
     virtual IVFunctionHook* CreateVFunctionHook() = 0;
+
+    virtual void DestroyFunctionHook(IFunctionHook* hook) = 0;
+    virtual void DestroyVFunctionHook(IVFunctionHook* hook) = 0;
 };
 
 template<typename T, typename RetType, typename... Args>

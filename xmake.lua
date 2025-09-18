@@ -258,6 +258,10 @@ target("swiftlys2")
     --[[ -------------------------------- Vendor Section -------------------------------- ]]
 
     add_files("vendor/dynlibutils/module.cpp")
+    add_files({
+        "vendor/safetyhook/safetyhook.cpp",
+        "vendor/safetyhook/Zydis.c"
+    })
 
     --[[ -------------------------------- Protobuf Section -------------------------------- ]]
 
