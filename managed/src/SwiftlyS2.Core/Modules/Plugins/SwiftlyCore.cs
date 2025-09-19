@@ -31,9 +31,10 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public ILoggerFactory LoggerFactory { get; init; }
   public CommandService CommandService { get; init; }
   public IEntitySystemService EntitySystemService { get; init; }
+  public IGameDataService GameDataService { get; init; }
+  public ILogger Logger { get; init; }
 
-
-  public SwiftlyCore(string contextId, string contextBaseDirectory, IServiceProvider coreProvider) {
+  public SwiftlyCore(string contextId, string contextBaseDirectory, Type contextType, IServiceProvider coreProvider) {
 
     CoreContext id = new(contextId, contextBaseDirectory);
 
@@ -44,6 +45,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton(this)
       .AddSingleton(coreProvider.GetRequiredService<ProfileService>())
       .AddSingleton(coreProvider.GetRequiredService<ConfigurationService>())
+      .AddSingleton(coreProvider.GetRequiredService<GameDataService>())
 
       .AddSingleton<EventSubscriber>()
       .AddSingleton<PluginConfigurationService>()
@@ -68,6 +70,9 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     NetMessageService = _ServiceProvider.GetRequiredService<NetMessageService>();
     CommandService = _ServiceProvider.GetRequiredService<CommandService>();
     EntitySystemService = _ServiceProvider.GetRequiredService<EntitySystemService>();
+    GameDataService = _ServiceProvider.GetRequiredService<GameDataService>();
+
+    Logger = LoggerFactory.CreateLogger(contextType);
   }
 
   public void Initialize(object instance, Type type)
@@ -88,5 +93,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   INetMessageService ISwiftlyCore.NetMessage => NetMessageService;
   ICommandService ISwiftlyCore.Command => CommandService;
   IEntitySystemService ISwiftlyCore.EntitySystem => EntitySystemService;
+  IGameDataService ISwiftlyCore.GameData => GameDataService;
+  ILogger ISwiftlyCore.Logger => Logger;
 
 }

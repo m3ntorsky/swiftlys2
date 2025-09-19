@@ -75,6 +75,10 @@ public class TestPlugin : BasePlugin {
     kv = new();
     kv.SetString("test", "SAFE");
 
+    _Core.Logger.LogInformation("!@#");
+
+    _Core.Logger.LogInformation(_Core.GameData.GetSignature("CEntityInstance::AcceptInput").ToString());
+
     entity = _Core.EntitySystem.CreateEntityByDesignerName<CPointWorldText>("point_worldtext");
     entity.DispatchSpawn(kv);
     Console.WriteLine("Spawned entity with keyvalues");

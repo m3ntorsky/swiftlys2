@@ -21,17 +21,19 @@ internal static class Bootstrap {
     AnsiConsole.Write(new FigletText("SwiftlyS2").LeftJustified().Color(Spectre.Console.Color.LightSteelBlue1));
 
     ServiceCollection services = new ServiceCollection();
-    
+
     services.AddProfileService();
     services.AddConfigurationService();
     services.AddTestService();
     services.AddRootDirService();
+    services.AddGameDataService();
     services.AddPluginManager();
     services.AddLogger();
 
     services.AddSingleton<ISwiftlyCore, SwiftlyCore>((provider) => new SwiftlyCore(
       "SwiftlyS2",
       AppContext.BaseDirectory,
+      typeof(SwiftlyCore),
       provider
     ));
 

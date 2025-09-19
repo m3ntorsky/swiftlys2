@@ -45,7 +45,17 @@ public interface ISwiftlyCore {
   public IPluginConfigurationService Configuration { get; }
 
   /// <summary>
+  /// Game data service.
+  /// </summary>
+  public IGameDataService GameData { get; }
+
+  /// <summary>
   /// Logger factory.
   /// </summary>
   public ILoggerFactory LoggerFactory { get; }
+
+  /// <summary>
+  /// Default logger.
+  /// </summary>
+  public ILogger Logger { get; }
 }
