@@ -59,7 +59,6 @@ void CNetMessages::Shutdown()
 
 bool CNetMessages::FilterMessage(CNetMessage* cMsg, INetChannel* netchan)
 {
-    printf("Called FilterMessage\n");
     auto client = META_IFACEPTR(INetworkMessageProcessingPreFilterCustom);
     if (!client) RETURN_META_VALUE(MRES_IGNORED, true);
     if (!cMsg) RETURN_META_VALUE(MRES_IGNORED, true);
