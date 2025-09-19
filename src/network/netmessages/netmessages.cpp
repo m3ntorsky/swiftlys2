@@ -23,10 +23,12 @@
 #include <api/sdk/serversideclient.h>
 #include <memory/gamedata/manager.h>
 
+#include <api/shared/plat.h>
+
 #include <map>
 
 SH_DECL_EXTERN8_void(IGameEventSystem, PostEventAbstract, SH_NOATTRIB, 0, CSplitScreenSlot, bool, int, const uint64*, INetworkMessageInternal*, const CNetMessage*, unsigned long, NetChannelBufType_t)
-SH_DECL_EXTERN2(CServerSideClientBase, FilterMessage, SH_NOATTRIB, 0, bool, const CNetMessage*, INetChannel*);
+SH_DECL_MANUALHOOK2(FilterMessage, 0, 0, 0, bool, CNetMessage*, INetChannel*);
 
 std::map<uint64_t, std::function<bool(uint64_t*, int, void*)>> g_mServerMessageSendCallbacks;
 std::map<uint64_t, std::function<bool(int, int, void*)>> g_mClientMessageSendCallbacks;
@@ -40,9 +42,9 @@ void CNetMessages::Initialize()
     SH_ADD_HOOK_MEMFUNC(IGameEventSystem, PostEventAbstract, gameeventsystem, this, &CNetMessages::PostEvent, false);
 
     DynLibUtils::CModule eng = DetermineModuleByLibrary("engine2");
-    void* serverSideClientVTable = eng.GetVirtualTableByName("CServerSideClient");
+    void* prefilterVTable = FindVirtTable(&eng, "CServerSideClient", WIN_LINUX(8, -64));
 
-    g_ihookID = SH_ADD_DVPHOOK(CServerSideClientBase, FilterMessage, (CServerSideClientBase*)serverSideClientVTable, SH_MEMBER(this, &CNetMessages::FilterMessage), false);
+    g_ihookID = SH_ADD_MANUALDVPHOOK(FilterMessage, (INetworkMessageProcessingPreFilterCustom*)prefilterVTable, SH_MEMBER(this, &CNetMessages::FilterMessage), false);
 }
 
 void CNetMessages::Shutdown()
@@ -55,18 +57,18 @@ void CNetMessages::Shutdown()
     g_ihookID = -1;
 }
 
-bool CNetMessages::FilterMessage(const CNetMessage* cMsg, INetChannel* netchan)
+bool CNetMessages::FilterMessage(CNetMessage* cMsg, INetChannel* netchan)
 {
-    auto client = META_IFACEPTR(CServerSideClientBase);
+    printf("Called FilterMessage\n");
+    auto client = META_IFACEPTR(INetworkMessageProcessingPreFilterCustom);
     if (!client) RETURN_META_VALUE(MRES_IGNORED, true);
     if (!cMsg) RETURN_META_VALUE(MRES_IGNORED, true);
 
     auto playerid = client->GetPlayerSlot().Get();
     int msgid = cMsg->GetNetMessage()->GetNetMessageInfo()->m_MessageId;
-    CNetMessage* msg = const_cast<CNetMessage*>(cMsg);
 
     for (const auto& [id, callback] : g_mClientMessageSendCallbacks)
-        if (!callback(playerid, msgid, msg))
+        if (!callback(playerid, msgid, cMsg))
             RETURN_META_VALUE(MRES_SUPERCEDE, true);
 
     RETURN_META_VALUE(MRES_IGNORED, true);

@@ -59,20 +59,6 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     auto sdkclass = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
     sdkclass->Load();
 
-    if (auto pb = std::get_if<bool>(&configuration->GetValue("Logger.SaveCoreMessagesToFile"))) {
-        logger->ShouldOutputToFile(LogType::INFO, *pb);
-        logger->ShouldOutputToFile(LogType::WARNING, *pb);
-        logger->ShouldOutputToFile(LogType::ERR, *pb);
-        logger->ShouldOutputToFile(LogType::DEBUG, *pb);
-
-        if (*pb) {
-            logger->SetLogFile(LogType::INFO, "addons/swiftly/logs/core/info.log");
-            logger->SetLogFile(LogType::WARNING, "addons/swiftly/logs/core/warning.log");
-            logger->SetLogFile(LogType::ERR, "addons/swiftly/logs/core/error.log");
-            logger->SetLogFile(LogType::DEBUG, "addons/swiftly/logs/core/debug.log");
-        }
-    }
-
     auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
     gamedata->GetOffsets()->Load(GetCurrentGame());

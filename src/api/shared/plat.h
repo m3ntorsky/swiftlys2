@@ -20,6 +20,7 @@
 #define src_utils_macros_plat_h
 
 #include <cstdint>
+#include <dynlibutils/module.h>
 
 #ifdef _WIN32
 #define WIN_LINUX(win,linux) win
@@ -28,5 +29,6 @@
 #endif
 
 void Plat_WriteMemory(void* pPatchAddress, uint8_t* pPatch, int iPatchSize);
+DynLibUtils::CMemory FindVirtTable(DynLibUtils::CModule* _this, const std::string_view svTableName, int32_t offset = 0, bool bDecorated = false);
 
 #endif

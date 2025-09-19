@@ -21,7 +21,7 @@
 
 #include <api/network/netmessages/netmessages.h>
 
-// ofc you need to stay here
+ // ofc you need to stay here
 #include <public/engine/igameeventsystem.h>
 
 class CNetMessages : public INetMessages
@@ -37,7 +37,7 @@ public:
     virtual void RemoveClientMessageSendCallback(uint64_t callbackID) override;
 
     void PostEvent(CSplitScreenSlot nSlot, bool bLocalOnly, int nClientCount, const uint64* clients, INetworkMessageInternal* pEvent, const CNetMessage* pData, unsigned long nSize, NetChannelBufType_t bufType);
-    bool FilterMessage(const CNetMessage* cMsg, INetChannel* netchan);
+    bool FilterMessage(CNetMessage* cMsg, INetChannel* netchan);
 };
 
 #endif
