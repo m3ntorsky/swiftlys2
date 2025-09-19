@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CBidirMsg_RebroadcastGameEvent : ITypedProtobuf<CBidirMsg_RebroadcastGameEvent>
 {
-  static CBidirMsg_RebroadcastGameEvent ITypedProtobuf<CBidirMsg_RebroadcastGameEvent>.Wrap(nint handle) => new CBidirMsg_RebroadcastGameEventImpl(handle);
+  static CBidirMsg_RebroadcastGameEvent ITypedProtobuf<CBidirMsg_RebroadcastGameEvent>.Wrap(nint handle, bool isManuallyAllocated) => new CBidirMsg_RebroadcastGameEventImpl(handle, isManuallyAllocated);
 
 
   public bool Posttoserver { get; set; }

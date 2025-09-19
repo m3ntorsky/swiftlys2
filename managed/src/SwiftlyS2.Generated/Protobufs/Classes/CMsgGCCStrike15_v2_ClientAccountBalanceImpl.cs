@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientAccountBalanceImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientAccountBalance>, CMsgGCCStrike15_v2_ClientAccountBalance
 {
-  public CMsgGCCStrike15_v2_ClientAccountBalanceImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientAccountBalanceImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

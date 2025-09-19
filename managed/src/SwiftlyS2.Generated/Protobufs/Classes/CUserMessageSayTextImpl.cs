@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageSayTextImpl : NetMessage<CUserMessageSayText>, CUserMessageSayText
 {
-  public CUserMessageSayTextImpl(nint handle): base(handle)
+  public CUserMessageSayTextImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

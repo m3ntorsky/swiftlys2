@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgInviteToPartyImpl : TypedProtobuf<CMsgInviteToParty>, CMsgInviteToParty
 {
-  public CMsgInviteToPartyImpl(nint handle): base(handle)
+  public CMsgInviteToPartyImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

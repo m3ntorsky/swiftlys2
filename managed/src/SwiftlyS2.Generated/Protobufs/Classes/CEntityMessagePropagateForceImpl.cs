@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CEntityMessagePropagateForceImpl : TypedProtobuf<CEntityMessagePropagateForce>, CEntityMessagePropagateForce
 {
-  public CEntityMessagePropagateForceImpl(nint handle): base(handle)
+  public CEntityMessagePropagateForceImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,6 +19,6 @@ internal class CEntityMessagePropagateForceImpl : TypedProtobuf<CEntityMessagePr
 
 
   public CEntityMsg EntityMsg
-  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "entity_msg")); }
+  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "entity_msg"), false); }
 
 }

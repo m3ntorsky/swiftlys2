@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessage_DllStatus_CVDiagnosticImpl : TypedProtobuf<CUserMessage_DllStatus_CVDiagnostic>, CUserMessage_DllStatus_CVDiagnostic
 {
-  public CUserMessage_DllStatus_CVDiagnosticImpl(nint handle): base(handle)
+  public CUserMessage_DllStatus_CVDiagnosticImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

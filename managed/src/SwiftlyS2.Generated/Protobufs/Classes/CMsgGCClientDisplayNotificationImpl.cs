@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCClientDisplayNotificationImpl : TypedProtobuf<CMsgGCClientDisplayNotification>, CMsgGCClientDisplayNotification
 {
-  public CMsgGCClientDisplayNotificationImpl(nint handle): base(handle)
+  public CMsgGCClientDisplayNotificationImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

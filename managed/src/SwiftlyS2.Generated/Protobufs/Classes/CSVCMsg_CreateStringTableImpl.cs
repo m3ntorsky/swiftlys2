@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_CreateStringTableImpl : NetMessage<CSVCMsg_CreateStringTable>, CSVCMsg_CreateStringTable
 {
-  public CSVCMsg_CreateStringTableImpl(nint handle): base(handle)
+  public CSVCMsg_CreateStringTableImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

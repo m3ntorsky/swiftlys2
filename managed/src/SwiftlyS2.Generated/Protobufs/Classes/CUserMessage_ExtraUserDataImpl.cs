@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessage_ExtraUserDataImpl : NetMessage<CUserMessage_ExtraUserData>, CUserMessage_ExtraUserData
 {
-  public CUserMessage_ExtraUserDataImpl(nint handle): base(handle)
+  public CUserMessage_ExtraUserDataImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

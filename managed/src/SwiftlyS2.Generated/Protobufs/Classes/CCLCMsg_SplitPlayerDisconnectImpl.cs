@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCLCMsg_SplitPlayerDisconnectImpl : NetMessage<CCLCMsg_SplitPlayerDisconnect>, CCLCMsg_SplitPlayerDisconnect
 {
-  public CCLCMsg_SplitPlayerDisconnectImpl(nint handle): base(handle)
+  public CCLCMsg_SplitPlayerDisconnectImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

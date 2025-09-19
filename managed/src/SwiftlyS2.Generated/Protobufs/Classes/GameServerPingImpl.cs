@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class GameServerPingImpl : TypedProtobuf<GameServerPing>, GameServerPing
 {
-  public GameServerPingImpl(nint handle): base(handle)
+  public GameServerPingImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

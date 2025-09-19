@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_PlayerOverwatchCaseStatusImpl : TypedProtobuf<CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus>, CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus
 {
-  public CMsgGCCStrike15_v2_PlayerOverwatchCaseStatusImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_PlayerOverwatchCaseStatusImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

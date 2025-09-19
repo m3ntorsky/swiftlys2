@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgPlayerInfo : ITypedProtobuf<CMsgPlayerInfo>
 {
-  static CMsgPlayerInfo ITypedProtobuf<CMsgPlayerInfo>.Wrap(nint handle) => new CMsgPlayerInfoImpl(handle);
+  static CMsgPlayerInfo ITypedProtobuf<CMsgPlayerInfo>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgPlayerInfoImpl(handle, isManuallyAllocated);
 
 
   public string Name { get; set; }

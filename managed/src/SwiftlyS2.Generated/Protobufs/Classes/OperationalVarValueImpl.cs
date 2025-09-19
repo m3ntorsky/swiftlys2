@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class OperationalVarValueImpl : TypedProtobuf<OperationalVarValue>, OperationalVarValue
 {
-  public OperationalVarValueImpl(nint handle): base(handle)
+  public OperationalVarValueImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

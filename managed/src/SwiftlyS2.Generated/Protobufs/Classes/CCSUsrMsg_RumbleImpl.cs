@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_RumbleImpl : NetMessage<CCSUsrMsg_Rumble>, CCSUsrMsg_Rumble
 {
-  public CCSUsrMsg_RumbleImpl(nint handle): base(handle)
+  public CCSUsrMsg_RumbleImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

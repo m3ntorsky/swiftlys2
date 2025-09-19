@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOEconDefaultEquippedDefinitionInstanceClient : ITypedProtobuf<CSOEconDefaultEquippedDefinitionInstanceClient>
 {
-  static CSOEconDefaultEquippedDefinitionInstanceClient ITypedProtobuf<CSOEconDefaultEquippedDefinitionInstanceClient>.Wrap(nint handle) => new CSOEconDefaultEquippedDefinitionInstanceClientImpl(handle);
+  static CSOEconDefaultEquippedDefinitionInstanceClient ITypedProtobuf<CSOEconDefaultEquippedDefinitionInstanceClient>.Wrap(nint handle, bool isManuallyAllocated) => new CSOEconDefaultEquippedDefinitionInstanceClientImpl(handle, isManuallyAllocated);
 
 
   public uint AccountId { get; set; }

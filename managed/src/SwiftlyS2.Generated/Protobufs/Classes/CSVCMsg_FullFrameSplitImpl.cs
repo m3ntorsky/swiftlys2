@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_FullFrameSplitImpl : NetMessage<CSVCMsg_FullFrameSplit>, CSVCMsg_FullFrameSplit
 {
-  public CSVCMsg_FullFrameSplitImpl(nint handle): base(handle)
+  public CSVCMsg_FullFrameSplitImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CGCToGCMsgMasterStartupCompleteImpl : TypedProtobuf<CGCToGCMsgMasterStartupComplete>, CGCToGCMsgMasterStartupComplete
 {
-  public CGCToGCMsgMasterStartupCompleteImpl(nint handle): base(handle)
+  public CGCToGCMsgMasterStartupCompleteImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

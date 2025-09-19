@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCSUsrMsg_ServerRankUpdate_RankUpdate : ITypedProtobuf<CCSUsrMsg_ServerRankUpdate_RankUpdate>
 {
-  static CCSUsrMsg_ServerRankUpdate_RankUpdate ITypedProtobuf<CCSUsrMsg_ServerRankUpdate_RankUpdate>.Wrap(nint handle) => new CCSUsrMsg_ServerRankUpdate_RankUpdateImpl(handle);
+  static CCSUsrMsg_ServerRankUpdate_RankUpdate ITypedProtobuf<CCSUsrMsg_ServerRankUpdate_RankUpdate>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_ServerRankUpdate_RankUpdateImpl(handle, isManuallyAllocated);
 
 
   public int AccountId { get; set; }

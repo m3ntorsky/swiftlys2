@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSGOInputHistoryEntryPB : ITypedProtobuf<CSGOInputHistoryEntryPB>
 {
-  static CSGOInputHistoryEntryPB ITypedProtobuf<CSGOInputHistoryEntryPB>.Wrap(nint handle) => new CSGOInputHistoryEntryPBImpl(handle);
+  static CSGOInputHistoryEntryPB ITypedProtobuf<CSGOInputHistoryEntryPB>.Wrap(nint handle, bool isManuallyAllocated) => new CSGOInputHistoryEntryPBImpl(handle, isManuallyAllocated);
 
 
   public QAngle ViewAngles { get; set; }

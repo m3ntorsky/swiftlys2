@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CInButtonStatePBImpl : TypedProtobuf<CInButtonStatePB>, CInButtonStatePB
 {
-  public CInButtonStatePBImpl(nint handle): base(handle)
+  public CInButtonStatePBImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

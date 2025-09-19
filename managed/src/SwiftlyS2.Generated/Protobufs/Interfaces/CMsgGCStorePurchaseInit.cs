@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCStorePurchaseInit : ITypedProtobuf<CMsgGCStorePurchaseInit>
 {
-  static CMsgGCStorePurchaseInit ITypedProtobuf<CMsgGCStorePurchaseInit>.Wrap(nint handle) => new CMsgGCStorePurchaseInitImpl(handle);
+  static CMsgGCStorePurchaseInit ITypedProtobuf<CMsgGCStorePurchaseInit>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCStorePurchaseInitImpl(handle, isManuallyAllocated);
 
 
   public string Country { get; set; }

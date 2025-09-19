@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCClientDisplayNotification : ITypedProtobuf<CMsgGCClientDisplayNotification>
 {
-  static CMsgGCClientDisplayNotification ITypedProtobuf<CMsgGCClientDisplayNotification>.Wrap(nint handle) => new CMsgGCClientDisplayNotificationImpl(handle);
+  static CMsgGCClientDisplayNotification ITypedProtobuf<CMsgGCClientDisplayNotification>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCClientDisplayNotificationImpl(handle, isManuallyAllocated);
 
 
   public string NotificationTitleLocalizationKey { get; set; }

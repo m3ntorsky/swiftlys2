@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_ReloadEffectImpl : NetMessage<CCSUsrMsg_ReloadEffect>, CCSUsrMsg_ReloadEffect
 {
-  public CCSUsrMsg_ReloadEffectImpl(nint handle): base(handle)
+  public CCSUsrMsg_ReloadEffectImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

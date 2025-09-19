@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageShakeDirImpl : NetMessage<CUserMessageShakeDir>, CUserMessageShakeDir
 {
-  public CUserMessageShakeDirImpl(nint handle): base(handle)
+  public CUserMessageShakeDirImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
   public CUserMessageShake Shake
-  { get => new CUserMessageShakeImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "shake")); }
+  { get => new CUserMessageShakeImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "shake"), false); }
 
 
   public Vector Direction

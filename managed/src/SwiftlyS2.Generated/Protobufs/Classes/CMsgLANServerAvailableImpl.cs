@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgLANServerAvailableImpl : TypedProtobuf<CMsgLANServerAvailable>, CMsgLANServerAvailable
 {
-  public CMsgLANServerAvailableImpl(nint handle): base(handle)
+  public CMsgLANServerAvailableImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

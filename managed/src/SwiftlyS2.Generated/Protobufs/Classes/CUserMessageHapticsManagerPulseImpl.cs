@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageHapticsManagerPulseImpl : NetMessage<CUserMessageHapticsManagerPulse>, CUserMessageHapticsManagerPulse
 {
-  public CUserMessageHapticsManagerPulseImpl(nint handle): base(handle)
+  public CUserMessageHapticsManagerPulseImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

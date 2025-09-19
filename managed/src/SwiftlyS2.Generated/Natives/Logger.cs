@@ -18,7 +18,7 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _Log(logType, messageBufferPtr);
+        _Log(logType, messageBufferPtr);
     pool.Return(messageBuffer);
 
   }
@@ -31,13 +31,13 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(category, categoryBuffer);
     categoryBuffer[categoryLength] = 0;
     fixed (byte* categoryBufferPtr = categoryBuffer) {
-
+    
     var messageLength = Encoding.UTF8.GetByteCount(message);
     var messageBuffer = pool.Rent(messageLength + 1);
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _LogCategory(logType, categoryBufferPtr, messageBufferPtr);
+        _LogCategory(logType, categoryBufferPtr, messageBufferPtr);
     pool.Return(categoryBuffer);
 
     pool.Return(messageBuffer);
@@ -53,7 +53,7 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _Info(messageBufferPtr);
+        _Info(messageBufferPtr);
     pool.Return(messageBuffer);
 
   }
@@ -66,7 +66,7 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _Warning(messageBufferPtr);
+        _Warning(messageBufferPtr);
     pool.Return(messageBuffer);
 
   }
@@ -79,7 +79,7 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _Error(messageBufferPtr);
+        _Error(messageBufferPtr);
     pool.Return(messageBuffer);
 
   }
@@ -92,7 +92,7 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _Debug(messageBufferPtr);
+        _Debug(messageBufferPtr);
     pool.Return(messageBuffer);
 
   }
@@ -105,13 +105,13 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(category, categoryBuffer);
     categoryBuffer[categoryLength] = 0;
     fixed (byte* categoryBufferPtr = categoryBuffer) {
-
+    
     var messageLength = Encoding.UTF8.GetByteCount(message);
     var messageBuffer = pool.Rent(messageLength + 1);
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _InfoCategory(categoryBufferPtr, messageBufferPtr);
+        _InfoCategory(categoryBufferPtr, messageBufferPtr);
     pool.Return(categoryBuffer);
 
     pool.Return(messageBuffer);
@@ -127,13 +127,13 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(category, categoryBuffer);
     categoryBuffer[categoryLength] = 0;
     fixed (byte* categoryBufferPtr = categoryBuffer) {
-
+    
     var messageLength = Encoding.UTF8.GetByteCount(message);
     var messageBuffer = pool.Rent(messageLength + 1);
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _WarningCategory(categoryBufferPtr, messageBufferPtr);
+        _WarningCategory(categoryBufferPtr, messageBufferPtr);
     pool.Return(categoryBuffer);
 
     pool.Return(messageBuffer);
@@ -149,13 +149,13 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(category, categoryBuffer);
     categoryBuffer[categoryLength] = 0;
     fixed (byte* categoryBufferPtr = categoryBuffer) {
-
+    
     var messageLength = Encoding.UTF8.GetByteCount(message);
     var messageBuffer = pool.Rent(messageLength + 1);
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _ErrorCategory(categoryBufferPtr, messageBufferPtr);
+        _ErrorCategory(categoryBufferPtr, messageBufferPtr);
     pool.Return(categoryBuffer);
 
     pool.Return(messageBuffer);
@@ -171,13 +171,13 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(category, categoryBuffer);
     categoryBuffer[categoryLength] = 0;
     fixed (byte* categoryBufferPtr = categoryBuffer) {
-
+    
     var messageLength = Encoding.UTF8.GetByteCount(message);
     var messageBuffer = pool.Rent(messageLength + 1);
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _DebugCategory(categoryBufferPtr, messageBufferPtr);
+        _DebugCategory(categoryBufferPtr, messageBufferPtr);
     pool.Return(categoryBuffer);
 
     pool.Return(messageBuffer);
@@ -193,7 +193,7 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(path, pathBuffer);
     pathBuffer[pathLength] = 0;
     fixed (byte* pathBufferPtr = pathBuffer) {
-    _SetLogFile(logType, pathBufferPtr);
+        _SetLogFile(logType, pathBufferPtr);
     pool.Return(pathBuffer);
 
   }
@@ -210,7 +210,7 @@ internal static class NativeLogger {
     Encoding.UTF8.GetBytes(category, categoryBuffer);
     categoryBuffer[categoryLength] = 0;
     fixed (byte* categoryBufferPtr = categoryBuffer) {
-    _ShouldColorCategoryInConsole(categoryBufferPtr, enabled);
+        _ShouldColorCategoryInConsole(categoryBufferPtr, enabled);
     pool.Return(categoryBuffer);
 
   }

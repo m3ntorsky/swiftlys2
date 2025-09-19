@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchmakingServerReservationResponseImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchmakingServerReservationResponse>, CMsgGCCStrike15_v2_MatchmakingServerReservationResponse
 {
-  public CMsgGCCStrike15_v2_MatchmakingServerReservationResponseImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchmakingServerReservationResponseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,7 +19,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingServerReservationResponseImpl : Typ
 
 
   public CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve Reservation
-  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "reservation")); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "reservation"), false); }
 
 
   public string Map
@@ -35,7 +35,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingServerReservationResponseImpl : Typ
 
 
   public ServerHltvInfo TvInfo
-  { get => new ServerHltvInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tv_info")); }
+  { get => new ServerHltvInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tv_info"), false); }
 
 
   public IProtobufRepeatedFieldValueType<uint> RewardPlayerAccounts
@@ -74,8 +74,8 @@ internal class CMsgGCCStrike15_v2_MatchmakingServerReservationResponseImpl : Typ
   { get => Accessor.GetUInt32("steamdatagram_routing"); set => Accessor.SetUInt32("steamdatagram_routing", value); }
 
 
-  public int TestToken
-  { get => Accessor.GetInt32("test_token"); set => Accessor.SetInt32("test_token", value); }
+  public uint TestToken
+  { get => Accessor.GetUInt32("test_token"); set => Accessor.SetUInt32("test_token", value); }
 
 
   public uint Flags

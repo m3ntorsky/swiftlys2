@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CEntityMessageFixAngle : ITypedProtobuf<CEntityMessageFixAngle>
 {
-  static CEntityMessageFixAngle ITypedProtobuf<CEntityMessageFixAngle>.Wrap(nint handle) => new CEntityMessageFixAngleImpl(handle);
+  static CEntityMessageFixAngle ITypedProtobuf<CEntityMessageFixAngle>.Wrap(nint handle, bool isManuallyAllocated) => new CEntityMessageFixAngleImpl(handle, isManuallyAllocated);
 
 
   public bool Relative { get; set; }

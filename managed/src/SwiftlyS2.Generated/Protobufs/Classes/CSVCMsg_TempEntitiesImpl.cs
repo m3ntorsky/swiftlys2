@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_TempEntitiesImpl : TypedProtobuf<CSVCMsg_TempEntities>, CSVCMsg_TempEntities
 {
-  public CSVCMsg_TempEntitiesImpl(nint handle): base(handle)
+  public CSVCMsg_TempEntitiesImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

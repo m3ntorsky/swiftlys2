@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageAnimStateGraphStateImpl : TypedProtobuf<CUserMessageAnimStateGraphState>, CUserMessageAnimStateGraphState
 {
-  public CUserMessageAnimStateGraphStateImpl(nint handle): base(handle)
+  public CUserMessageAnimStateGraphStateImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

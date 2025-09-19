@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgApplyEggEssenceImpl : TypedProtobuf<CMsgApplyEggEssence>, CMsgApplyEggEssence
 {
-  public CMsgApplyEggEssenceImpl(nint handle): base(handle)
+  public CMsgApplyEggEssenceImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

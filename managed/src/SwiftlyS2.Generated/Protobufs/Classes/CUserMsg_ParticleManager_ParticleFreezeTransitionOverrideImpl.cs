@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_ParticleFreezeTransitionOverrideImpl : TypedProtobuf<CUserMsg_ParticleManager_ParticleFreezeTransitionOverride>, CUserMsg_ParticleManager_ParticleFreezeTransitionOverride
 {
-  public CUserMsg_ParticleManager_ParticleFreezeTransitionOverrideImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_ParticleFreezeTransitionOverrideImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

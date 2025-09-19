@@ -9,12 +9,12 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCRequestSessionIPResponseImpl : TypedProtobuf<CMsgGCRequestSessionIPResponse>, CMsgGCRequestSessionIPResponse
 {
-  public CMsgGCRequestSessionIPResponseImpl(nint handle): base(handle)
+  public CMsgGCRequestSessionIPResponseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
-  public int Ip
-  { get => Accessor.GetInt32("ip"); set => Accessor.SetInt32("ip", value); }
+  public uint Ip
+  { get => Accessor.GetUInt32("ip"); set => Accessor.SetUInt32("ip", value); }
 
 }

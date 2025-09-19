@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoSyncTickImpl : TypedProtobuf<CDemoSyncTick>, CDemoSyncTick
 {
-  public CDemoSyncTickImpl(nint handle): base(handle)
+  public CDemoSyncTickImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

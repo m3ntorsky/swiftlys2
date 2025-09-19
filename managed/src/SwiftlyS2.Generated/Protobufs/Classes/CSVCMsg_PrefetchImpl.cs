@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_PrefetchImpl : NetMessage<CSVCMsg_Prefetch>, CSVCMsg_Prefetch
 {
-  public CSVCMsg_PrefetchImpl(nint handle): base(handle)
+  public CSVCMsg_PrefetchImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

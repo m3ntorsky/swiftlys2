@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_ClassInfo_class_tImpl : TypedProtobuf<CSVCMsg_ClassInfo_class_t>, CSVCMsg_ClassInfo_class_t
 {
-  public CSVCMsg_ClassInfo_class_tImpl(nint handle): base(handle)
+  public CSVCMsg_ClassInfo_class_tImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

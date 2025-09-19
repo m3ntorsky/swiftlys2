@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CDataGCCStrike15_v2_MatchInfo : ITypedProtobuf<CDataGCCStrike15_v2_MatchInfo>
 {
-  static CDataGCCStrike15_v2_MatchInfo ITypedProtobuf<CDataGCCStrike15_v2_MatchInfo>.Wrap(nint handle) => new CDataGCCStrike15_v2_MatchInfoImpl(handle);
+  static CDataGCCStrike15_v2_MatchInfo ITypedProtobuf<CDataGCCStrike15_v2_MatchInfo>.Wrap(nint handle, bool isManuallyAllocated) => new CDataGCCStrike15_v2_MatchInfoImpl(handle, isManuallyAllocated);
 
 
   public ulong Matchid { get; set; }

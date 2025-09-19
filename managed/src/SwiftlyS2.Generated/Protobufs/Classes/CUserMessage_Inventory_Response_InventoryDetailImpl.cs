@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessage_Inventory_Response_InventoryDetailImpl : TypedProtobuf<CUserMessage_Inventory_Response_InventoryDetail>, CUserMessage_Inventory_Response_InventoryDetail
 {
-  public CUserMessage_Inventory_Response_InventoryDetailImpl(nint handle): base(handle)
+  public CUserMessage_Inventory_Response_InventoryDetailImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

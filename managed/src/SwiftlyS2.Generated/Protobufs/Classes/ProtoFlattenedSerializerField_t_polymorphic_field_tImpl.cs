@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class ProtoFlattenedSerializerField_t_polymorphic_field_tImpl : TypedProtobuf<ProtoFlattenedSerializerField_t_polymorphic_field_t>, ProtoFlattenedSerializerField_t_polymorphic_field_t
 {
-  public ProtoFlattenedSerializerField_t_polymorphic_field_tImpl(nint handle): base(handle)
+  public ProtoFlattenedSerializerField_t_polymorphic_field_tImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

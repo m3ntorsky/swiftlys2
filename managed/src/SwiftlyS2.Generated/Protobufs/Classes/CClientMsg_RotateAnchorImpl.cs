@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CClientMsg_RotateAnchorImpl : TypedProtobuf<CClientMsg_RotateAnchor>, CClientMsg_RotateAnchor
 {
-  public CClientMsg_RotateAnchorImpl(nint handle): base(handle)
+  public CClientMsg_RotateAnchorImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

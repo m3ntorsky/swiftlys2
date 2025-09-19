@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CClientMsg_ListenForResponseFoundImpl : TypedProtobuf<CClientMsg_ListenForResponseFound>, CClientMsg_ListenForResponseFound
 {
-  public CClientMsg_ListenForResponseFoundImpl(nint handle): base(handle)
+  public CClientMsg_ListenForResponseFoundImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -22,7 +22,7 @@ internal static class NativeSchema {
     Encoding.UTF8.GetBytes(className, classNameBuffer);
     classNameBuffer[classNameLength] = 0;
     fixed (byte* classNameBufferPtr = classNameBuffer) {
-    var ret = _FindChainOffset(classNameBufferPtr);
+        var ret = _FindChainOffset(classNameBufferPtr);
     pool.Return(classNameBuffer);
 
     return ret;
@@ -41,7 +41,7 @@ internal static class NativeSchema {
     Encoding.UTF8.GetBytes(className, classNameBuffer);
     classNameBuffer[classNameLength] = 0;
     fixed (byte* classNameBufferPtr = classNameBuffer) {
-    var ret = _IsStruct(classNameBufferPtr);
+        var ret = _IsStruct(classNameBufferPtr);
     pool.Return(classNameBuffer);
 
     return ret;
@@ -55,7 +55,7 @@ internal static class NativeSchema {
     Encoding.UTF8.GetBytes(className, classNameBuffer);
     classNameBuffer[classNameLength] = 0;
     fixed (byte* classNameBufferPtr = classNameBuffer) {
-    var ret = _IsClassLoaded(classNameBufferPtr);
+        var ret = _IsClassLoaded(classNameBufferPtr);
     pool.Return(classNameBuffer);
 
     return ret;

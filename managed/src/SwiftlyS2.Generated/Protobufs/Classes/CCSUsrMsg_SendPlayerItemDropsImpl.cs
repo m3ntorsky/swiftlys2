@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_SendPlayerItemDropsImpl : NetMessage<CCSUsrMsg_SendPlayerItemDrops>, CCSUsrMsg_SendPlayerItemDrops
 {
-  public CCSUsrMsg_SendPlayerItemDropsImpl(nint handle): base(handle)
+  public CCSUsrMsg_SendPlayerItemDropsImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

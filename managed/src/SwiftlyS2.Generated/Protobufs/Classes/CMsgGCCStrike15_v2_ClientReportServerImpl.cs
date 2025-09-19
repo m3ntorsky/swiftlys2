@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientReportServerImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientReportServer>, CMsgGCCStrike15_v2_ClientReportServer
 {
-  public CMsgGCCStrike15_v2_ClientReportServerImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientReportServerImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

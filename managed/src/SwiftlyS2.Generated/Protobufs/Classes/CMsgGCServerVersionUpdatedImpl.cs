@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCServerVersionUpdatedImpl : TypedProtobuf<CMsgGCServerVersionUpdated>, CMsgGCServerVersionUpdated
 {
-  public CMsgGCServerVersionUpdatedImpl(nint handle): base(handle)
+  public CMsgGCServerVersionUpdatedImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

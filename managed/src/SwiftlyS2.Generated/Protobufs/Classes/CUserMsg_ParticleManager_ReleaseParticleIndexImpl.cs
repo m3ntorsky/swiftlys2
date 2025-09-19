@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_ReleaseParticleIndexImpl : TypedProtobuf<CUserMsg_ParticleManager_ReleaseParticleIndex>, CUserMsg_ParticleManager_ReleaseParticleIndex
 {
-  public CUserMsg_ParticleManager_ReleaseParticleIndexImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_ReleaseParticleIndexImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

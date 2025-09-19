@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequestImpl : TypedProtobuf<CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest>, CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest
 {
-  public CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequestImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequestImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

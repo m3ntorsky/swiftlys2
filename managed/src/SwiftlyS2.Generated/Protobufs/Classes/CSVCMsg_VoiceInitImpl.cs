@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_VoiceInitImpl : NetMessage<CSVCMsg_VoiceInit>, CSVCMsg_VoiceInit
 {
-  public CSVCMsg_VoiceInitImpl(nint handle): base(handle)
+  public CSVCMsg_VoiceInitImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSource2Metrics_MatchPerfSummary_NotificationImpl : TypedProtobuf<CSource2Metrics_MatchPerfSummary_Notification>, CSource2Metrics_MatchPerfSummary_Notification
 {
-  public CSource2Metrics_MatchPerfSummary_NotificationImpl(nint handle): base(handle)
+  public CSource2Metrics_MatchPerfSummary_NotificationImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -27,7 +27,7 @@ internal class CSource2Metrics_MatchPerfSummary_NotificationImpl : TypedProtobuf
 
 
   public CMsgSource2VProfLiteReport ServerProfile
-  { get => new CMsgSource2VProfLiteReportImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "server_profile")); }
+  { get => new CMsgSource2VProfLiteReportImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "server_profile"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CSource2Metrics_MatchPerfSummary_Notification_Client> Clients

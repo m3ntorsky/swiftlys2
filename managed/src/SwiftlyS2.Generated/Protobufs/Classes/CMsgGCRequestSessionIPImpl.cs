@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCRequestSessionIPImpl : TypedProtobuf<CMsgGCRequestSessionIP>, CMsgGCRequestSessionIP
 {
-  public CMsgGCRequestSessionIPImpl(nint handle): base(handle)
+  public CMsgGCRequestSessionIPImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

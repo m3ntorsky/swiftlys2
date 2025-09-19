@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoPacketImpl : TypedProtobuf<CDemoPacket>, CDemoPacket
 {
-  public CDemoPacketImpl(nint handle): base(handle)
+  public CDemoPacketImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

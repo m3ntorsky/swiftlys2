@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSVCMsg_GameEvent : ITypedProtobuf<CSVCMsg_GameEvent>
 {
-  static CSVCMsg_GameEvent ITypedProtobuf<CSVCMsg_GameEvent>.Wrap(nint handle) => new CSVCMsg_GameEventImpl(handle);
+  static CSVCMsg_GameEvent ITypedProtobuf<CSVCMsg_GameEvent>.Wrap(nint handle, bool isManuallyAllocated) => new CSVCMsg_GameEventImpl(handle, isManuallyAllocated);
 
 
   public string EventName { get; set; }

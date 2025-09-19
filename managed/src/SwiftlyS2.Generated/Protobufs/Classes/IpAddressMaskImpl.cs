@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class IpAddressMaskImpl : TypedProtobuf<IpAddressMask>, IpAddressMask
 {
-  public IpAddressMaskImpl(nint handle): base(handle)
+  public IpAddressMaskImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

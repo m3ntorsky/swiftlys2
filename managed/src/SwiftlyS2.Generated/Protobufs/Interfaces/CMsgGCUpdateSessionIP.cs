@@ -7,12 +7,12 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCUpdateSessionIP : ITypedProtobuf<CMsgGCUpdateSessionIP>
 {
-  static CMsgGCUpdateSessionIP ITypedProtobuf<CMsgGCUpdateSessionIP>.Wrap(nint handle) => new CMsgGCUpdateSessionIPImpl(handle);
+  static CMsgGCUpdateSessionIP ITypedProtobuf<CMsgGCUpdateSessionIP>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCUpdateSessionIPImpl(handle, isManuallyAllocated);
 
 
   public ulong Steamid { get; set; }
 
 
-  public int Ip { get; set; }
+  public uint Ip { get; set; }
 
 }

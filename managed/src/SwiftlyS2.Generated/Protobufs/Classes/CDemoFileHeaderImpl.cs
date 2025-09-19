@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoFileHeaderImpl : TypedProtobuf<CDemoFileHeader>, CDemoFileHeader
 {
-  public CDemoFileHeaderImpl(nint handle): base(handle)
+  public CDemoFileHeaderImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

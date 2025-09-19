@@ -9,12 +9,12 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_GotvSyncPacketImpl : TypedProtobuf<CMsgGCCStrike15_GotvSyncPacket>, CMsgGCCStrike15_GotvSyncPacket
 {
-  public CMsgGCCStrike15_GotvSyncPacketImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_GotvSyncPacketImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CEngineGotvSyncPacket Data
-  { get => new CEngineGotvSyncPacketImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "data")); }
+  { get => new CEngineGotvSyncPacketImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "data"), false); }
 
 }

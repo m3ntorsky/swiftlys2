@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSource1LegacyGameEventList_descriptor_tImpl : TypedProtobuf<CMsgSource1LegacyGameEventList_descriptor_t>, CMsgSource1LegacyGameEventList_descriptor_t
 {
-  public CMsgSource1LegacyGameEventList_descriptor_tImpl(nint handle): base(handle)
+  public CMsgSource1LegacyGameEventList_descriptor_tImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

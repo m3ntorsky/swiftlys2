@@ -18,7 +18,7 @@ internal static class NativeSignatures {
     Encoding.UTF8.GetBytes(signatureName, signatureNameBuffer);
     signatureNameBuffer[signatureNameLength] = 0;
     fixed (byte* signatureNameBufferPtr = signatureNameBuffer) {
-    var ret = _Exists(signatureNameBufferPtr);
+        var ret = _Exists(signatureNameBufferPtr);
     pool.Return(signatureNameBuffer);
 
     return ret;
@@ -32,7 +32,7 @@ internal static class NativeSignatures {
     Encoding.UTF8.GetBytes(signatureName, signatureNameBuffer);
     signatureNameBuffer[signatureNameLength] = 0;
     fixed (byte* signatureNameBufferPtr = signatureNameBuffer) {
-    var ret = _Fetch(signatureNameBufferPtr);
+        var ret = _Fetch(signatureNameBufferPtr);
     pool.Return(signatureNameBuffer);
 
     return ret;

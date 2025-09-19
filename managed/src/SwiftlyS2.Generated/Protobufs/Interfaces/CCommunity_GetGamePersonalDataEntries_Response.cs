@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCommunity_GetGamePersonalDataEntries_Response : ITypedProtobuf<CCommunity_GetGamePersonalDataEntries_Response>
 {
-  static CCommunity_GetGamePersonalDataEntries_Response ITypedProtobuf<CCommunity_GetGamePersonalDataEntries_Response>.Wrap(nint handle) => new CCommunity_GetGamePersonalDataEntries_ResponseImpl(handle);
+  static CCommunity_GetGamePersonalDataEntries_Response ITypedProtobuf<CCommunity_GetGamePersonalDataEntries_Response>.Wrap(nint handle, bool isManuallyAllocated) => new CCommunity_GetGamePersonalDataEntries_ResponseImpl(handle, isManuallyAllocated);
 
 
   public uint Gceresult { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CPreMatchInfoDataImpl : TypedProtobuf<CPreMatchInfoData>, CPreMatchInfoData
 {
-  public CPreMatchInfoDataImpl(nint handle): base(handle)
+  public CPreMatchInfoDataImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,7 +19,7 @@ internal class CPreMatchInfoDataImpl : TypedProtobuf<CPreMatchInfoData>, CPreMat
 
 
   public CDataGCCStrike15_v2_TournamentMatchDraft Draft
-  { get => new CDataGCCStrike15_v2_TournamentMatchDraftImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "draft")); }
+  { get => new CDataGCCStrike15_v2_TournamentMatchDraftImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "draft"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CPreMatchInfoData_TeamStats> Stats

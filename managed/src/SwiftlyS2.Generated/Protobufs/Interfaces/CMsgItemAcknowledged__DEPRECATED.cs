@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgItemAcknowledged__DEPRECATED : ITypedProtobuf<CMsgItemAcknowledged__DEPRECATED>
 {
-  static CMsgItemAcknowledged__DEPRECATED ITypedProtobuf<CMsgItemAcknowledged__DEPRECATED>.Wrap(nint handle) => new CMsgItemAcknowledged__DEPRECATEDImpl(handle);
+  static CMsgItemAcknowledged__DEPRECATED ITypedProtobuf<CMsgItemAcknowledged__DEPRECATED>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgItemAcknowledged__DEPRECATEDImpl(handle, isManuallyAllocated);
 
 
   public uint AccountId { get; set; }

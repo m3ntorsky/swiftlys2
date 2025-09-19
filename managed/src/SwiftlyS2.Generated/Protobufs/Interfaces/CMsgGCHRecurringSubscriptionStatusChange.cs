@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCHRecurringSubscriptionStatusChange : ITypedProtobuf<CMsgGCHRecurringSubscriptionStatusChange>
 {
-  static CMsgGCHRecurringSubscriptionStatusChange ITypedProtobuf<CMsgGCHRecurringSubscriptionStatusChange>.Wrap(nint handle) => new CMsgGCHRecurringSubscriptionStatusChangeImpl(handle);
+  static CMsgGCHRecurringSubscriptionStatusChange ITypedProtobuf<CMsgGCHRecurringSubscriptionStatusChange>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCHRecurringSubscriptionStatusChangeImpl(handle, isManuallyAllocated);
 
 
   public ulong Steamid { get; set; }

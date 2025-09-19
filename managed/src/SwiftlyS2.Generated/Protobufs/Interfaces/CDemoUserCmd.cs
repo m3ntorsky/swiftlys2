@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CDemoUserCmd : ITypedProtobuf<CDemoUserCmd>
 {
-  static CDemoUserCmd ITypedProtobuf<CDemoUserCmd>.Wrap(nint handle) => new CDemoUserCmdImpl(handle);
+  static CDemoUserCmd ITypedProtobuf<CDemoUserCmd>.Wrap(nint handle, bool isManuallyAllocated) => new CDemoUserCmdImpl(handle, isManuallyAllocated);
 
 
   public int CmdNumber { get; set; }

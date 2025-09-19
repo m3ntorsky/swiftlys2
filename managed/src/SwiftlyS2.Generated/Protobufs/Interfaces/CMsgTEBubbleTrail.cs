@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CMsgTEBubbleTrail : ITypedProtobuf<CMsgTEBubbleTrail>, INetMessage<CMsgTEBubbleTrail>
+public interface CMsgTEBubbleTrail : ITypedProtobuf<CMsgTEBubbleTrail>, INetMessage<CMsgTEBubbleTrail>, IDisposable
 {
   static int INetMessage<CMsgTEBubbleTrail>.MessageId => 409;
   
   static string INetMessage<CMsgTEBubbleTrail>.MessageName => "CMsgTEBubbleTrail";
 
-  static CMsgTEBubbleTrail ITypedProtobuf<CMsgTEBubbleTrail>.Wrap(nint handle) => new CMsgTEBubbleTrailImpl(handle);
+  static CMsgTEBubbleTrail ITypedProtobuf<CMsgTEBubbleTrail>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgTEBubbleTrailImpl(handle, isManuallyAllocated);
 
 
   public Vector Mins { get; set; }

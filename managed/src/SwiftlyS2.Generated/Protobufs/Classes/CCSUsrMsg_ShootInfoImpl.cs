@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_ShootInfoImpl : NetMessage<CCSUsrMsg_ShootInfo>, CCSUsrMsg_ShootInfo
 {
-  public CCSUsrMsg_ShootInfoImpl(nint handle): base(handle)
+  public CCSUsrMsg_ShootInfoImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

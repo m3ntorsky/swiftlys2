@@ -18,7 +18,7 @@ internal static class NativeOffsets {
     Encoding.UTF8.GetBytes(name, nameBuffer);
     nameBuffer[nameLength] = 0;
     fixed (byte* nameBufferPtr = nameBuffer) {
-    var ret = _Exists(nameBufferPtr);
+        var ret = _Exists(nameBufferPtr);
     pool.Return(nameBuffer);
 
     return ret;
@@ -32,7 +32,7 @@ internal static class NativeOffsets {
     Encoding.UTF8.GetBytes(name, nameBuffer);
     nameBuffer[nameLength] = 0;
     fixed (byte* nameBufferPtr = nameBuffer) {
-    var ret = _Fetch(nameBufferPtr);
+        var ret = _Fetch(nameBufferPtr);
     pool.Return(nameBuffer);
 
     return ret;

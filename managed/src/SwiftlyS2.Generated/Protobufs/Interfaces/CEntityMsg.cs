@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CEntityMsg : ITypedProtobuf<CEntityMsg>
 {
-  static CEntityMsg ITypedProtobuf<CEntityMsg>.Wrap(nint handle) => new CEntityMsgImpl(handle);
+  static CEntityMsg ITypedProtobuf<CEntityMsg>.Wrap(nint handle, bool isManuallyAllocated) => new CEntityMsgImpl(handle, isManuallyAllocated);
 
 
   public uint TargetEntity { get; set; }

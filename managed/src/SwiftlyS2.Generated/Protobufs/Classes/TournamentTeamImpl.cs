@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class TournamentTeamImpl : TypedProtobuf<TournamentTeam>, TournamentTeam
 {
-  public TournamentTeamImpl(nint handle): base(handle)
+  public TournamentTeamImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

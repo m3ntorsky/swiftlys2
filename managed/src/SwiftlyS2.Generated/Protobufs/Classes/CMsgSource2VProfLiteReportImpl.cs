@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSource2VProfLiteReportImpl : TypedProtobuf<CMsgSource2VProfLiteReport>, CMsgSource2VProfLiteReport
 {
-  public CMsgSource2VProfLiteReportImpl(nint handle): base(handle)
+  public CMsgSource2VProfLiteReportImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CMsgSource2VProfLiteReportItem Total
-  { get => new CMsgSource2VProfLiteReportItemImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "total")); }
+  { get => new CMsgSource2VProfLiteReportItemImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "total"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgSource2VProfLiteReportItem> Items

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCToGCUpdateSQLKeyValueImpl : TypedProtobuf<CMsgGCToGCUpdateSQLKeyValue>, CMsgGCToGCUpdateSQLKeyValue
 {
-  public CMsgGCToGCUpdateSQLKeyValueImpl(nint handle): base(handle)
+  public CMsgGCToGCUpdateSQLKeyValueImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

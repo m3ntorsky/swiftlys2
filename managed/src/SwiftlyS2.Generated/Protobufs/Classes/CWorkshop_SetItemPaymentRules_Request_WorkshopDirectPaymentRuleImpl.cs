@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRuleImpl : TypedProtobuf<CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRule>, CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRule
 {
-  public CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRuleImpl(nint handle): base(handle)
+  public CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRuleImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

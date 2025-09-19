@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientPartyJoinRelayImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientPartyJoinRelay>, CMsgGCCStrike15_v2_ClientPartyJoinRelay
 {
-  public CMsgGCCStrike15_v2_ClientPartyJoinRelayImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientPartyJoinRelayImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

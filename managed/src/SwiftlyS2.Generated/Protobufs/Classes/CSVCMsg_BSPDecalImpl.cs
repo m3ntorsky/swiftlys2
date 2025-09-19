@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_BSPDecalImpl : NetMessage<CSVCMsg_BSPDecal>, CSVCMsg_BSPDecal
 {
-  public CSVCMsg_BSPDecalImpl(nint handle): base(handle)
+  public CSVCMsg_BSPDecalImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

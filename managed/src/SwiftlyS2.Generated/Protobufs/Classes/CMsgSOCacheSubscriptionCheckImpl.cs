@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSOCacheSubscriptionCheckImpl : TypedProtobuf<CMsgSOCacheSubscriptionCheck>, CMsgSOCacheSubscriptionCheck
 {
-  public CMsgSOCacheSubscriptionCheckImpl(nint handle): base(handle)
+  public CMsgSOCacheSubscriptionCheckImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,6 +19,6 @@ internal class CMsgSOCacheSubscriptionCheckImpl : TypedProtobuf<CMsgSOCacheSubsc
 
 
   public CMsgSOIDOwner OwnerSoid
-  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "owner_soid")); }
+  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "owner_soid"), false); }
 
 }

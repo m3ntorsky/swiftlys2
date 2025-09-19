@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CDemoAnimationHeader : ITypedProtobuf<CDemoAnimationHeader>
 {
-  static CDemoAnimationHeader ITypedProtobuf<CDemoAnimationHeader>.Wrap(nint handle) => new CDemoAnimationHeaderImpl(handle);
+  static CDemoAnimationHeader ITypedProtobuf<CDemoAnimationHeader>.Wrap(nint handle, bool isManuallyAllocated) => new CDemoAnimationHeaderImpl(handle, isManuallyAllocated);
 
 
   public int EntityId { get; set; }

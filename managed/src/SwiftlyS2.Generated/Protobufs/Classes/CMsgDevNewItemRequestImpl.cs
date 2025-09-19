@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgDevNewItemRequestImpl : TypedProtobuf<CMsgDevNewItemRequest>, CMsgDevNewItemRequest
 {
-  public CMsgDevNewItemRequestImpl(nint handle): base(handle)
+  public CMsgDevNewItemRequestImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,6 +19,6 @@ internal class CMsgDevNewItemRequestImpl : TypedProtobuf<CMsgDevNewItemRequest>,
 
 
   public CSOItemCriteria Criteria
-  { get => new CSOItemCriteriaImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "criteria")); }
+  { get => new CSOItemCriteriaImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "criteria"), false); }
 
 }

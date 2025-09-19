@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoSaveGameImpl : TypedProtobuf<CDemoSaveGame>, CDemoSaveGame
 {
-  public CDemoSaveGameImpl(nint handle): base(handle)
+  public CDemoSaveGameImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

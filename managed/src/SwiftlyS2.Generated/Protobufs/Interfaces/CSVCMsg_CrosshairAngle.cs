@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSVCMsg_CrosshairAngle : ITypedProtobuf<CSVCMsg_CrosshairAngle>
 {
-  static CSVCMsg_CrosshairAngle ITypedProtobuf<CSVCMsg_CrosshairAngle>.Wrap(nint handle) => new CSVCMsg_CrosshairAngleImpl(handle);
+  static CSVCMsg_CrosshairAngle ITypedProtobuf<CSVCMsg_CrosshairAngle>.Wrap(nint handle, bool isManuallyAllocated) => new CSVCMsg_CrosshairAngleImpl(handle, isManuallyAllocated);
 
 
   public QAngle Angle { get; set; }

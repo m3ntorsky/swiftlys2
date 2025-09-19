@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgApplyStatTrakSwapImpl : TypedProtobuf<CMsgApplyStatTrakSwap>, CMsgApplyStatTrakSwap
 {
-  public CMsgApplyStatTrakSwapImpl(nint handle): base(handle)
+  public CMsgApplyStatTrakSwapImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

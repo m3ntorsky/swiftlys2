@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_AdjustMoneyImpl : NetMessage<CCSUsrMsg_AdjustMoney>, CCSUsrMsg_AdjustMoney
 {
-  public CCSUsrMsg_AdjustMoneyImpl(nint handle): base(handle)
+  public CCSUsrMsg_AdjustMoneyImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

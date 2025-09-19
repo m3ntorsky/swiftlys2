@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_PremierSeasonSummaryImpl : TypedProtobuf<CMsgGCCStrike15_v2_PremierSeasonSummary>, CMsgGCCStrike15_v2_PremierSeasonSummary
 {
-  public CMsgGCCStrike15_v2_PremierSeasonSummaryImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_PremierSeasonSummaryImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

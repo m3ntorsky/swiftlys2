@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoClassInfoImpl : TypedProtobuf<CDemoClassInfo>, CDemoClassInfo
 {
-  public CDemoClassInfoImpl(nint handle): base(handle)
+  public CDemoClassInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_WatchInfoUsersImpl : TypedProtobuf<CMsgGCCStrike15_v2_WatchInfoUsers>, CMsgGCCStrike15_v2_WatchInfoUsers
 {
-  public CMsgGCCStrike15_v2_WatchInfoUsersImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_WatchInfoUsersImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

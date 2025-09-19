@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_PacketEntitiesImpl : NetMessage<CSVCMsg_PacketEntities>, CSVCMsg_PacketEntities
 {
-  public CSVCMsg_PacketEntitiesImpl(nint handle): base(handle)
+  public CSVCMsg_PacketEntitiesImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -83,7 +83,7 @@ internal class CSVCMsg_PacketEntitiesImpl : NetMessage<CSVCMsg_PacketEntities>, 
 
 
   public CSVCMsg_PacketEntities_non_transmitted_entities_t NonTransmittedEntities
-  { get => new CSVCMsg_PacketEntities_non_transmitted_entities_tImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "non_transmitted_entities")); }
+  { get => new CSVCMsg_PacketEntities_non_transmitted_entities_tImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "non_transmitted_entities"), false); }
 
 
   public uint CqStarvedCommandTicks
@@ -95,7 +95,7 @@ internal class CSVCMsg_PacketEntitiesImpl : NetMessage<CSVCMsg_PacketEntities>, 
 
 
   public CSVCMsg_PacketEntities_outofpvs_entity_updates_t OutofpvsEntityUpdates
-  { get => new CSVCMsg_PacketEntities_outofpvs_entity_updates_tImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "outofpvs_entity_updates")); }
+  { get => new CSVCMsg_PacketEntities_outofpvs_entity_updates_tImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "outofpvs_entity_updates"), false); }
 
 
   public byte[] DevPadding

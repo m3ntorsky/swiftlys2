@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CPredictionEvent_DiagnosticImpl : TypedProtobuf<CPredictionEvent_Diagnostic>, CPredictionEvent_Diagnostic
 {
-  public CPredictionEvent_DiagnosticImpl(nint handle): base(handle)
+  public CPredictionEvent_DiagnosticImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

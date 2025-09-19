@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgRecurringMissionSchemaImpl : TypedProtobuf<CMsgRecurringMissionSchema>, CMsgRecurringMissionSchema
 {
-  public CMsgRecurringMissionSchemaImpl(nint handle): base(handle)
+  public CMsgRecurringMissionSchemaImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

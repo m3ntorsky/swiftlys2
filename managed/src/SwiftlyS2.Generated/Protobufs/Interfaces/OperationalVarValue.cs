@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface OperationalVarValue : ITypedProtobuf<OperationalVarValue>
 {
-  static OperationalVarValue ITypedProtobuf<OperationalVarValue>.Wrap(nint handle) => new OperationalVarValueImpl(handle);
+  static OperationalVarValue ITypedProtobuf<OperationalVarValue>.Wrap(nint handle, bool isManuallyAllocated) => new OperationalVarValueImpl(handle, isManuallyAllocated);
 
 
   public string Name { get; set; }

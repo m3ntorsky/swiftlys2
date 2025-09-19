@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSerializedSOCache_TypeCacheImpl : TypedProtobuf<CMsgSerializedSOCache_TypeCache>, CMsgSerializedSOCache_TypeCache
 {
-  public CMsgSerializedSOCache_TypeCacheImpl(nint handle): base(handle)
+  public CMsgSerializedSOCache_TypeCacheImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

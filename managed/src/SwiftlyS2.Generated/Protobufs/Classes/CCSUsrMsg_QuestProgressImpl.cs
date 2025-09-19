@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_QuestProgressImpl : NetMessage<CCSUsrMsg_QuestProgress>, CCSUsrMsg_QuestProgress
 {
-  public CCSUsrMsg_QuestProgressImpl(nint handle): base(handle)
+  public CCSUsrMsg_QuestProgressImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

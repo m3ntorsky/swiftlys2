@@ -5,7 +5,7 @@ from proto_schema_parser import ast, Parser
 from typing import List
 
 ROOT = Path(__file__).parent
-INPUT_DIR = ROOT / "protos"
+INPUT_DIR = ROOT.parent.parent / "protobufs" / "cs2"
 OUT_INTERFACES = ROOT.parent.parent / "managed" / "src" / "SwiftlyS2.Generated" / "Protobufs" / "Interfaces"
 OUT_CLASSES = ROOT.parent.parent / "managed" / "src" / "SwiftlyS2.Generated" / "Protobufs" / "Classes"
 OUT_ENUMS = ROOT.parent.parent / "managed" / "src" / "SwiftlyS2.Generated" / "Protobufs" / "Enums"
@@ -29,7 +29,7 @@ BASE_TYPES = {
   "bool": ("Bool", "bool"),
   "int32": ("Int32", "int"),
   "sint32": ("Int32", "int"),
-  "fixed32": ("Int32", "int"),
+  "fixed32": ("UInt32", "uint"),
   "int64": ("Int64", "long"),
   "fixed64": ("UInt64", "ulong"),
   "sint64": ("Int64", "long"),
@@ -60,7 +60,7 @@ ENUM_FIELD_TEMPLATE = """
 
 NESTED_FIELD_TEMPLATE = """
   public $TYPE$ $CSNAME$
-  { get => new $TYPE$Impl(NativeNetMessages.GetNestedMessage(GetHandle(), "$NAME$")); }
+  { get => new $TYPE$Impl(NativeNetMessages.GetNestedMessage(GetHandle(), "$NAME$"), false); }
 """
 
 REPEATED_FIELD_TEMPLATE = """
@@ -87,7 +87,26 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class $NAME$ : $BASE_CLASS$<$INTERFACE$>, $INTERFACE$
 {
-  public $NAME$(nint handle): base(handle)
+  public $NAME$(nint handle, bool isManuallyAllocated): base(handle)
+  {
+  }
+
+$FIELDS$
+}
+"""
+
+NETMESSAGE_IMPL_CLASS_TEMPLATE = """
+using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Core.NetMessages;
+using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Shared.NetMessages;
+using SwiftlyS2.Shared.ProtobufDefinitions;
+
+namespace SwiftlyS2.Core.ProtobufDefinitions;
+
+internal class $NAME$ : $BASE_CLASS$<$INTERFACE$>, $INTERFACE$
+{
+  public $NAME$(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -103,13 +122,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface $NAME$ : ITypedProtobuf<$NAME$>, INetMessage<$NAME$>
+public interface $NAME$ : ITypedProtobuf<$NAME$>, INetMessage<$NAME$>, IDisposable
 {
   static int INetMessage<$NAME$>.MessageId => $MESSAGE_ID$;
   
   static string INetMessage<$NAME$>.MessageName => "$MESSAGE_NAME$";
 
-  static $NAME$ ITypedProtobuf<$NAME$>.Wrap(nint handle) => new $NAME$Impl(handle);
+  static $NAME$ ITypedProtobuf<$NAME$>.Wrap(nint handle, bool isManuallyAllocated) => new $NAME$Impl(handle, isManuallyAllocated);
 
 $FIELDS$
 }
@@ -124,7 +143,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface $NAME$ : ITypedProtobuf<$NAME$>
 {
-  static $NAME$ ITypedProtobuf<$NAME$>.Wrap(nint handle) => new $NAME$Impl(handle);
+  static $NAME$ ITypedProtobuf<$NAME$>.Wrap(nint handle, bool isManuallyAllocated) => new $NAME$Impl(handle, isManuallyAllocated);
 
 $FIELDS$
 }
@@ -224,7 +243,10 @@ def write_netmessage(proto_message: ast.Message, net_message_id: int = -1, prefi
     "$FIELDS$": "\n".join(fields),
   }
   with open(OUT_CLASSES / (prefix+proto_message.name+"Impl.cs"), "w") as f:
-    f.write(format_template(IMPL_CLASS_TEMPLATE, params))
+    if net_message_id != -1:
+      f.write(format_template(NETMESSAGE_IMPL_CLASS_TEMPLATE, params))
+    else:
+      f.write(format_template(IMPL_CLASS_TEMPLATE, params))
 
   interface_params = {
     "$NAME$": prefix + proto_message.name,
@@ -265,16 +287,16 @@ def read_protos():
 
   parser = Parser()
   
-  for file in os.listdir("protos"):
-    with open(os.path.join("protos", file), "r") as f:
+  for file in os.listdir(INPUT_DIR):
+    with open(os.path.join(INPUT_DIR, file), "r") as f:
       result = parser.parse(f.read())
       process_enums(result)
 
   all_enum_names = [enum.replace(".", "_") for enum in all_enum_names]
 
-  for file in os.listdir("protos"):
+  for file in os.listdir(INPUT_DIR):
     if True:
-      with open(os.path.join("protos", file), "r") as f:
+      with open(os.path.join(INPUT_DIR, file), "r") as f:
         result = parser.parse(f.read())
 
         messages: List[ast.Message] = []

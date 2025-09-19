@@ -18,7 +18,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _QueryClientConvar(playerid, cvarNameBufferPtr);
+        _QueryClientConvar(playerid, cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
   }
@@ -43,13 +43,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarInt16(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarInt16(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -65,13 +65,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarUInt16(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarUInt16(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -87,13 +87,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarInt32(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarInt32(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -109,13 +109,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarUInt32(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarUInt32(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -131,13 +131,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarInt64(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarInt64(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -153,13 +153,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarUInt64(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarUInt64(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -175,13 +175,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarBool(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarBool(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -197,13 +197,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarFloat(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarFloat(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -219,13 +219,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarDouble(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarDouble(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -241,13 +241,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarColor(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarColor(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -263,13 +263,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarVector2D(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarVector2D(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -285,13 +285,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarVector(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarVector(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -307,13 +307,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarVector4D(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarVector4D(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -329,13 +329,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-    _CreateConvarQAngle(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarQAngle(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -351,19 +351,19 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var helpMessageLength = Encoding.UTF8.GetByteCount(helpMessage);
     var helpMessageBuffer = pool.Rent(helpMessageLength + 1);
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-
+    
     var defaultValueLength = Encoding.UTF8.GetByteCount(defaultValue);
     var defaultValueBuffer = pool.Rent(defaultValueLength + 1);
     Encoding.UTF8.GetBytes(defaultValue, defaultValueBuffer);
     defaultValueBuffer[defaultValueLength] = 0;
     fixed (byte* defaultValueBufferPtr = defaultValueBuffer) {
-    _CreateConvarString(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValueBufferPtr);
+        _CreateConvarString(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValueBufferPtr);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -382,7 +382,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _DeleteConvar(cvarNameBufferPtr);
+        _DeleteConvar(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
   }
@@ -395,7 +395,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _ExistsConvar(cvarNameBufferPtr);
+        var ret = _ExistsConvar(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -409,7 +409,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarType(cvarNameBufferPtr);
+        var ret = _GetConvarType(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -423,7 +423,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarDataAddress(cvarNameBufferPtr);
+        var ret = _GetConvarDataAddress(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -437,7 +437,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueInt16(cvarNameBufferPtr);
+        var ret = _GetConvarValueInt16(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -451,7 +451,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueUInt16(cvarNameBufferPtr);
+        var ret = _GetConvarValueUInt16(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -465,7 +465,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueInt32(cvarNameBufferPtr);
+        var ret = _GetConvarValueInt32(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -479,7 +479,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueUInt32(cvarNameBufferPtr);
+        var ret = _GetConvarValueUInt32(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -493,7 +493,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueInt64(cvarNameBufferPtr);
+        var ret = _GetConvarValueInt64(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -507,7 +507,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueUInt64(cvarNameBufferPtr);
+        var ret = _GetConvarValueUInt64(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -521,7 +521,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueBool(cvarNameBufferPtr);
+        var ret = _GetConvarValueBool(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -535,7 +535,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueFloat(cvarNameBufferPtr);
+        var ret = _GetConvarValueFloat(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -549,7 +549,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueDouble(cvarNameBufferPtr);
+        var ret = _GetConvarValueDouble(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -563,7 +563,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueColor(cvarNameBufferPtr);
+        var ret = _GetConvarValueColor(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -577,7 +577,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueVector2D(cvarNameBufferPtr);
+        var ret = _GetConvarValueVector2D(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -591,7 +591,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueVector(cvarNameBufferPtr);
+        var ret = _GetConvarValueVector(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -605,7 +605,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueVector4D(cvarNameBufferPtr);
+        var ret = _GetConvarValueVector4D(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -619,7 +619,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueQAngle(cvarNameBufferPtr);
+        var ret = _GetConvarValueQAngle(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;
@@ -633,11 +633,11 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetConvarValueString(null, cvarNameBufferPtr);
+        var ret = _GetConvarValueString(null, cvarNameBufferPtr);
 
     var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetConvarValueString(retBufferPtr, cvarNameBufferPtr);
+        ret = _GetConvarValueString(retBufferPtr, cvarNameBufferPtr);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
     pool.Return(retBuffer);
 
@@ -655,7 +655,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueInt16(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueInt16(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -668,7 +668,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueUInt16(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueUInt16(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -681,7 +681,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueInt32(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueInt32(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -694,7 +694,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueUInt32(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueUInt32(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -707,7 +707,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueInt64(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueInt64(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -720,7 +720,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueUInt64(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueUInt64(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -733,7 +733,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueBool(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueBool(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -746,7 +746,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueFloat(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueFloat(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -759,7 +759,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueDouble(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueDouble(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -772,7 +772,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueColor(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueColor(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -785,7 +785,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueVector2D(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueVector2D(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -798,7 +798,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueVector(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueVector(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -811,7 +811,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueVector4D(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueVector4D(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -824,7 +824,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetConvarValueQAngle(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueQAngle(cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -837,13 +837,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var defaultValueLength = Encoding.UTF8.GetByteCount(defaultValue);
     var defaultValueBuffer = pool.Rent(defaultValueLength + 1);
     Encoding.UTF8.GetBytes(defaultValue, defaultValueBuffer);
     defaultValueBuffer[defaultValueLength] = 0;
     fixed (byte* defaultValueBufferPtr = defaultValueBuffer) {
-    _SetConvarValueString(cvarNameBufferPtr, defaultValueBufferPtr);
+        _SetConvarValueString(cvarNameBufferPtr, defaultValueBufferPtr);
     pool.Return(cvarNameBuffer);
 
     pool.Return(defaultValueBuffer);
@@ -859,7 +859,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueInt16(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueInt16(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -872,7 +872,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueUInt16(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueUInt16(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -885,7 +885,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueInt32(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueInt32(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -898,7 +898,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueUInt32(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueUInt32(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -911,7 +911,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueInt64(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueInt64(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -924,7 +924,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueUInt64(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueUInt64(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -937,7 +937,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueBool(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueBool(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -950,7 +950,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueFloat(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueFloat(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -963,7 +963,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueDouble(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueDouble(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -976,7 +976,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueColor(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueColor(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -989,7 +989,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueVector2D(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueVector2D(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -1002,7 +1002,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueVector(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueVector(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -1015,7 +1015,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueVector4D(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueVector4D(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -1028,7 +1028,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _SetClientConvarValueQAngle(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueQAngle(playerid, cvarNameBufferPtr, defaultValue);
     pool.Return(cvarNameBuffer);
 
   }
@@ -1041,13 +1041,13 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-
+    
     var defaultValueLength = Encoding.UTF8.GetByteCount(defaultValue);
     var defaultValueBuffer = pool.Rent(defaultValueLength + 1);
     Encoding.UTF8.GetBytes(defaultValue, defaultValueBuffer);
     defaultValueBuffer[defaultValueLength] = 0;
     fixed (byte* defaultValueBufferPtr = defaultValueBuffer) {
-    _SetClientConvarValueString(playerid, cvarNameBufferPtr, defaultValueBufferPtr);
+        _SetClientConvarValueString(playerid, cvarNameBufferPtr, defaultValueBufferPtr);
     pool.Return(cvarNameBuffer);
 
     pool.Return(defaultValueBuffer);
@@ -1063,7 +1063,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _AddFlags(cvarNameBufferPtr, flags);
+        _AddFlags(cvarNameBufferPtr, flags);
     pool.Return(cvarNameBuffer);
 
   }
@@ -1076,7 +1076,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _RemoveFlags(cvarNameBufferPtr, flags);
+        _RemoveFlags(cvarNameBufferPtr, flags);
     pool.Return(cvarNameBuffer);
 
   }
@@ -1089,7 +1089,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    _ClearFlags(cvarNameBufferPtr);
+        _ClearFlags(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
   }
@@ -1102,7 +1102,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-    var ret = _GetFlags(cvarNameBufferPtr);
+        var ret = _GetFlags(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
     return ret;

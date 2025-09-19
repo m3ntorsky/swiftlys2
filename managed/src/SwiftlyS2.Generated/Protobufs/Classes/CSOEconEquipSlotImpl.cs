@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOEconEquipSlotImpl : TypedProtobuf<CSOEconEquipSlot>, CSOEconEquipSlot
 {
-  public CSOEconEquipSlotImpl(nint handle): base(handle)
+  public CSOEconEquipSlotImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

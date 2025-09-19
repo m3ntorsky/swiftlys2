@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSVCMsg_SendTable : ITypedProtobuf<CSVCMsg_SendTable>
 {
-  static CSVCMsg_SendTable ITypedProtobuf<CSVCMsg_SendTable>.Wrap(nint handle) => new CSVCMsg_SendTableImpl(handle);
+  static CSVCMsg_SendTable ITypedProtobuf<CSVCMsg_SendTable>.Wrap(nint handle, bool isManuallyAllocated) => new CSVCMsg_SendTableImpl(handle, isManuallyAllocated);
 
 
   public bool IsEnd { get; set; }

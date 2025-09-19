@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_AcknowledgePenalty : ITypedProtobuf<CMsgGCCStrike15_v2_AcknowledgePenalty>
 {
-  static CMsgGCCStrike15_v2_AcknowledgePenalty ITypedProtobuf<CMsgGCCStrike15_v2_AcknowledgePenalty>.Wrap(nint handle) => new CMsgGCCStrike15_v2_AcknowledgePenaltyImpl(handle);
+  static CMsgGCCStrike15_v2_AcknowledgePenalty ITypedProtobuf<CMsgGCCStrike15_v2_AcknowledgePenalty>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_AcknowledgePenaltyImpl(handle, isManuallyAllocated);
 
 
   public int Acknowledged { get; set; }

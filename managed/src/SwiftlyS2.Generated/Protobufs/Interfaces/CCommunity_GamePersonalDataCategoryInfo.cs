@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCommunity_GamePersonalDataCategoryInfo : ITypedProtobuf<CCommunity_GamePersonalDataCategoryInfo>
 {
-  static CCommunity_GamePersonalDataCategoryInfo ITypedProtobuf<CCommunity_GamePersonalDataCategoryInfo>.Wrap(nint handle) => new CCommunity_GamePersonalDataCategoryInfoImpl(handle);
+  static CCommunity_GamePersonalDataCategoryInfo ITypedProtobuf<CCommunity_GamePersonalDataCategoryInfo>.Wrap(nint handle, bool isManuallyAllocated) => new CCommunity_GamePersonalDataCategoryInfoImpl(handle, isManuallyAllocated);
 
 
   public string Type { get; set; }

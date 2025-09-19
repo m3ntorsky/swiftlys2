@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CGameInfo_CDotaGameInfo_CPlayerInfoImpl : TypedProtobuf<CGameInfo_CDotaGameInfo_CPlayerInfo>, CGameInfo_CDotaGameInfo_CPlayerInfo
 {
-  public CGameInfo_CDotaGameInfo_CPlayerInfoImpl(nint handle): base(handle)
+  public CGameInfo_CDotaGameInfo_CPlayerInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

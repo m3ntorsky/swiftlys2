@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgLegacySource1ClientWelcomeImpl : TypedProtobuf<CMsgLegacySource1ClientWelcome>, CMsgLegacySource1ClientWelcome
 {
-  public CMsgLegacySource1ClientWelcomeImpl(nint handle): base(handle)
+  public CMsgLegacySource1ClientWelcomeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -31,7 +31,7 @@ internal class CMsgLegacySource1ClientWelcomeImpl : TypedProtobuf<CMsgLegacySour
 
 
   public CMsgLegacySource1ClientWelcome_Location Location
-  { get => new CMsgLegacySource1ClientWelcome_LocationImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "location")); }
+  { get => new CMsgLegacySource1ClientWelcome_LocationImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "location"), false); }
 
 
   public byte[] GameData2

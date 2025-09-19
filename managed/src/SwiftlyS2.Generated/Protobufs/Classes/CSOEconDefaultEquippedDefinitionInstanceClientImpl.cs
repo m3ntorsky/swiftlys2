@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOEconDefaultEquippedDefinitionInstanceClientImpl : TypedProtobuf<CSOEconDefaultEquippedDefinitionInstanceClient>, CSOEconDefaultEquippedDefinitionInstanceClient
 {
-  public CSOEconDefaultEquippedDefinitionInstanceClientImpl(nint handle): base(handle)
+  public CSOEconDefaultEquippedDefinitionInstanceClientImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

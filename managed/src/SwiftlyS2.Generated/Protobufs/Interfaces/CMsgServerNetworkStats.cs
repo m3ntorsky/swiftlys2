@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgServerNetworkStats : ITypedProtobuf<CMsgServerNetworkStats>
 {
-  static CMsgServerNetworkStats ITypedProtobuf<CMsgServerNetworkStats>.Wrap(nint handle) => new CMsgServerNetworkStatsImpl(handle);
+  static CMsgServerNetworkStats ITypedProtobuf<CMsgServerNetworkStats>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgServerNetworkStatsImpl(handle, isManuallyAllocated);
 
 
   public bool Dedicated { get; set; }

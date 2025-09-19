@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgVoiceAudioImpl : TypedProtobuf<CMsgVoiceAudio>, CMsgVoiceAudio
 {
-  public CMsgVoiceAudioImpl(nint handle): base(handle)
+  public CMsgVoiceAudioImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

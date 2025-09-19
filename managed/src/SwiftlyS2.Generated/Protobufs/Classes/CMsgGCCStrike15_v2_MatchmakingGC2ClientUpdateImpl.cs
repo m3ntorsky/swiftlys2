@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdateImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate>, CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate
 {
-  public CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdateImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdateImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -31,7 +31,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdateImpl : TypedProtobuf
 
 
   public GlobalStatistics GlobalStats
-  { get => new GlobalStatisticsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "global_stats")); }
+  { get => new GlobalStatisticsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "global_stats"), false); }
 
 
   public IProtobufRepeatedFieldValueType<uint> FailpingAccountIdSessions
@@ -51,7 +51,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdateImpl : TypedProtobuf
 
 
   public IpAddressMask ServerIpaddressMask
-  { get => new IpAddressMaskImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "server_ipaddress_mask")); }
+  { get => new IpAddressMaskImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "server_ipaddress_mask"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note> Notes

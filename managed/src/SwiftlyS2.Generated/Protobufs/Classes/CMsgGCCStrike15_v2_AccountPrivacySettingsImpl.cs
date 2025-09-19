@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_AccountPrivacySettingsImpl : TypedProtobuf<CMsgGCCStrike15_v2_AccountPrivacySettings>, CMsgGCCStrike15_v2_AccountPrivacySettings
 {
-  public CMsgGCCStrike15_v2_AccountPrivacySettingsImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_AccountPrivacySettingsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

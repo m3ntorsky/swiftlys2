@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgConnectionStatusImpl : TypedProtobuf<CMsgConnectionStatus>, CMsgConnectionStatus
 {
-  public CMsgConnectionStatusImpl(nint handle): base(handle)
+  public CMsgConnectionStatusImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

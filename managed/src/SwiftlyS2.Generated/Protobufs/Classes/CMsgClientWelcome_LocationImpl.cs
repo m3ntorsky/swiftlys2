@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgClientWelcome_LocationImpl : TypedProtobuf<CMsgClientWelcome_Location>, CMsgClientWelcome_Location
 {
-  public CMsgClientWelcome_LocationImpl(nint handle): base(handle)
+  public CMsgClientWelcome_LocationImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

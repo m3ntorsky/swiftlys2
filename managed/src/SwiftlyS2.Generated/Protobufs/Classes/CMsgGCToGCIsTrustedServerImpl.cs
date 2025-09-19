@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCToGCIsTrustedServerImpl : TypedProtobuf<CMsgGCToGCIsTrustedServer>, CMsgGCToGCIsTrustedServer
 {
-  public CMsgGCToGCIsTrustedServerImpl(nint handle): base(handle)
+  public CMsgGCToGCIsTrustedServerImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

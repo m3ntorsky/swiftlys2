@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_ChangeControlPointAttachmentImpl : TypedProtobuf<CUserMsg_ParticleManager_ChangeControlPointAttachment>, CUserMsg_ParticleManager_ChangeControlPointAttachment
 {
-  public CUserMsg_ParticleManager_ChangeControlPointAttachmentImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_ChangeControlPointAttachmentImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

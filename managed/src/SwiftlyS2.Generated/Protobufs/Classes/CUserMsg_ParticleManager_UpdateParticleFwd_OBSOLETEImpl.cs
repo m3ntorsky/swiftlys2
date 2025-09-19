@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_UpdateParticleFwd_OBSOLETEImpl : TypedProtobuf<CUserMsg_ParticleManager_UpdateParticleFwd_OBSOLETE>, CUserMsg_ParticleManager_UpdateParticleFwd_OBSOLETE
 {
-  public CUserMsg_ParticleManager_UpdateParticleFwd_OBSOLETEImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_UpdateParticleFwd_OBSOLETEImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

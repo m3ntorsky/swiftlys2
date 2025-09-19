@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageDesiredTimescaleImpl : NetMessage<CUserMessageDesiredTimescale>, CUserMessageDesiredTimescale
 {
-  public CUserMessageDesiredTimescaleImpl(nint handle): base(handle)
+  public CUserMessageDesiredTimescaleImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

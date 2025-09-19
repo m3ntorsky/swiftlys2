@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_ClientPerfReport : ITypedProtobuf<CMsgGCCStrike15_v2_ClientPerfReport>
 {
-  static CMsgGCCStrike15_v2_ClientPerfReport ITypedProtobuf<CMsgGCCStrike15_v2_ClientPerfReport>.Wrap(nint handle) => new CMsgGCCStrike15_v2_ClientPerfReportImpl(handle);
+  static CMsgGCCStrike15_v2_ClientPerfReport ITypedProtobuf<CMsgGCCStrike15_v2_ClientPerfReport>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_ClientPerfReportImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgGCCStrike15_v2_ClientPerfReport_Entry> Entries { get; }

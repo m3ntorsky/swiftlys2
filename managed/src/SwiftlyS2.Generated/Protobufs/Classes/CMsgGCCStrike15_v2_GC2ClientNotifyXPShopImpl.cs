@@ -9,17 +9,17 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_GC2ClientNotifyXPShopImpl : TypedProtobuf<CMsgGCCStrike15_v2_GC2ClientNotifyXPShop>, CMsgGCCStrike15_v2_GC2ClientNotifyXPShop
 {
-  public CMsgGCCStrike15_v2_GC2ClientNotifyXPShopImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_GC2ClientNotifyXPShopImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CSOAccountXpShop Prematch
-  { get => new CSOAccountXpShopImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "prematch")); }
+  { get => new CSOAccountXpShopImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "prematch"), false); }
 
 
   public CSOAccountXpShop Postmatch
-  { get => new CSOAccountXpShopImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "postmatch")); }
+  { get => new CSOAccountXpShopImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "postmatch"), false); }
 
 
   public uint CurrentXp

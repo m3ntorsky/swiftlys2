@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CDemoFileHeader : ITypedProtobuf<CDemoFileHeader>
 {
-  static CDemoFileHeader ITypedProtobuf<CDemoFileHeader>.Wrap(nint handle) => new CDemoFileHeaderImpl(handle);
+  static CDemoFileHeader ITypedProtobuf<CDemoFileHeader>.Wrap(nint handle, bool isManuallyAllocated) => new CDemoFileHeaderImpl(handle, isManuallyAllocated);
 
 
   public string DemoFileStamp { get; set; }

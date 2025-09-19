@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class ScoreLeaderboardDataImpl : TypedProtobuf<ScoreLeaderboardData>, ScoreLeaderboardData
 {
-  public ScoreLeaderboardDataImpl(nint handle): base(handle)
+  public ScoreLeaderboardDataImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

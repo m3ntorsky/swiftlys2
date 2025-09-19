@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_CrosshairAngleImpl : TypedProtobuf<CSVCMsg_CrosshairAngle>, CSVCMsg_CrosshairAngle
 {
-  public CSVCMsg_CrosshairAngleImpl(nint handle): base(handle)
+  public CSVCMsg_CrosshairAngleImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

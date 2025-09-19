@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_SetEventFavorite : ITypedProtobuf<CMsgGCCStrike15_v2_SetEventFavorite>
 {
-  static CMsgGCCStrike15_v2_SetEventFavorite ITypedProtobuf<CMsgGCCStrike15_v2_SetEventFavorite>.Wrap(nint handle) => new CMsgGCCStrike15_v2_SetEventFavoriteImpl(handle);
+  static CMsgGCCStrike15_v2_SetEventFavorite ITypedProtobuf<CMsgGCCStrike15_v2_SetEventFavorite>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_SetEventFavoriteImpl(handle, isManuallyAllocated);
 
 
   public ulong Eventid { get; set; }

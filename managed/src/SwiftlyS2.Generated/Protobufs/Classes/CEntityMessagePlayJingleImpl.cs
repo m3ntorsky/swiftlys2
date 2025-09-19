@@ -9,12 +9,12 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CEntityMessagePlayJingleImpl : TypedProtobuf<CEntityMessagePlayJingle>, CEntityMessagePlayJingle
 {
-  public CEntityMessagePlayJingleImpl(nint handle): base(handle)
+  public CEntityMessagePlayJingleImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CEntityMsg EntityMsg
-  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "entity_msg")); }
+  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "entity_msg"), false); }
 
 }

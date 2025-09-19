@@ -23,7 +23,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(name, nameBuffer);
     nameBuffer[nameLength] = 0;
     fixed (byte* nameBufferPtr = nameBuffer) {
-    var ret = _AllocateNetMessageByPartialName(nameBufferPtr);
+        var ret = _AllocateNetMessageByPartialName(nameBufferPtr);
     pool.Return(nameBuffer);
 
     return ret;
@@ -41,7 +41,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _HasField(netmsg, fieldNameBufferPtr);
+        var ret = _HasField(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -55,7 +55,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetInt32(netmsg, fieldNameBufferPtr);
+        var ret = _GetInt32(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -69,7 +69,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedInt32(netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedInt32(netmsg, fieldNameBufferPtr, index);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -83,7 +83,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetInt32(netmsg, fieldNameBufferPtr, value);
+        _SetInt32(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -96,7 +96,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetRepeatedInt32(netmsg, fieldNameBufferPtr, index, value);
+        _SetRepeatedInt32(netmsg, fieldNameBufferPtr, index, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -109,7 +109,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _AddInt32(netmsg, fieldNameBufferPtr, value);
+        _AddInt32(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -122,7 +122,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetInt64(netmsg, fieldNameBufferPtr);
+        var ret = _GetInt64(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -136,7 +136,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedInt64(netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedInt64(netmsg, fieldNameBufferPtr, index);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -150,7 +150,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetInt64(netmsg, fieldNameBufferPtr, value);
+        _SetInt64(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -163,7 +163,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetRepeatedInt64(netmsg, fieldNameBufferPtr, index, value);
+        _SetRepeatedInt64(netmsg, fieldNameBufferPtr, index, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -176,7 +176,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _AddInt64(netmsg, fieldNameBufferPtr, value);
+        _AddInt64(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -189,7 +189,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetUInt32(netmsg, fieldNameBufferPtr);
+        var ret = _GetUInt32(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -203,7 +203,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedUInt32(netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedUInt32(netmsg, fieldNameBufferPtr, index);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -217,7 +217,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetUInt32(netmsg, fieldNameBufferPtr, value);
+        _SetUInt32(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -230,7 +230,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetRepeatedUInt32(netmsg, fieldNameBufferPtr, index, value);
+        _SetRepeatedUInt32(netmsg, fieldNameBufferPtr, index, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -243,7 +243,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _AddUInt32(netmsg, fieldNameBufferPtr, value);
+        _AddUInt32(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -256,7 +256,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetUInt64(netmsg, fieldNameBufferPtr);
+        var ret = _GetUInt64(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -270,7 +270,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedUInt64(netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedUInt64(netmsg, fieldNameBufferPtr, index);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -284,7 +284,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetUInt64(netmsg, fieldNameBufferPtr, value);
+        _SetUInt64(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -297,7 +297,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetRepeatedUInt64(netmsg, fieldNameBufferPtr, index, value);
+        _SetRepeatedUInt64(netmsg, fieldNameBufferPtr, index, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -310,7 +310,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _AddUInt64(netmsg, fieldNameBufferPtr, value);
+        _AddUInt64(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -323,7 +323,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetBool(netmsg, fieldNameBufferPtr);
+        var ret = _GetBool(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -337,7 +337,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedBool(netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedBool(netmsg, fieldNameBufferPtr, index);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -351,7 +351,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetBool(netmsg, fieldNameBufferPtr, value);
+        _SetBool(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -364,7 +364,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetRepeatedBool(netmsg, fieldNameBufferPtr, index, value);
+        _SetRepeatedBool(netmsg, fieldNameBufferPtr, index, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -377,7 +377,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _AddBool(netmsg, fieldNameBufferPtr, value);
+        _AddBool(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -390,7 +390,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetFloat(netmsg, fieldNameBufferPtr);
+        var ret = _GetFloat(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -404,7 +404,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedFloat(netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedFloat(netmsg, fieldNameBufferPtr, index);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -418,7 +418,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetFloat(netmsg, fieldNameBufferPtr, value);
+        _SetFloat(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -431,7 +431,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetRepeatedFloat(netmsg, fieldNameBufferPtr, index, value);
+        _SetRepeatedFloat(netmsg, fieldNameBufferPtr, index, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -444,7 +444,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _AddFloat(netmsg, fieldNameBufferPtr, value);
+        _AddFloat(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -457,7 +457,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetDouble(netmsg, fieldNameBufferPtr);
+        var ret = _GetDouble(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -471,7 +471,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedDouble(netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedDouble(netmsg, fieldNameBufferPtr, index);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -485,7 +485,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetDouble(netmsg, fieldNameBufferPtr, value);
+        _SetDouble(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -498,7 +498,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetRepeatedDouble(netmsg, fieldNameBufferPtr, index, value);
+        _SetRepeatedDouble(netmsg, fieldNameBufferPtr, index, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -511,7 +511,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _AddDouble(netmsg, fieldNameBufferPtr, value);
+        _AddDouble(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -524,11 +524,11 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetString(null, netmsg, fieldNameBufferPtr);
+        var ret = _GetString(null, netmsg, fieldNameBufferPtr);
 
     var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetString(retBufferPtr, netmsg, fieldNameBufferPtr);
+        ret = _GetString(retBufferPtr, netmsg, fieldNameBufferPtr);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
     pool.Return(retBuffer);
 
@@ -546,11 +546,11 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedString(null, netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedString(null, netmsg, fieldNameBufferPtr, index);
 
     var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetRepeatedString(retBufferPtr, netmsg, fieldNameBufferPtr, index);
+        ret = _GetRepeatedString(retBufferPtr, netmsg, fieldNameBufferPtr, index);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
     pool.Return(retBuffer);
 
@@ -568,13 +568,13 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-
+    
     var valueLength = Encoding.UTF8.GetByteCount(value);
     var valueBuffer = pool.Rent(valueLength + 1);
     Encoding.UTF8.GetBytes(value, valueBuffer);
     valueBuffer[valueLength] = 0;
     fixed (byte* valueBufferPtr = valueBuffer) {
-    _SetString(netmsg, fieldNameBufferPtr, valueBufferPtr);
+        _SetString(netmsg, fieldNameBufferPtr, valueBufferPtr);
     pool.Return(fieldNameBuffer);
 
     pool.Return(valueBuffer);
@@ -590,13 +590,13 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-
+    
     var valueLength = Encoding.UTF8.GetByteCount(value);
     var valueBuffer = pool.Rent(valueLength + 1);
     Encoding.UTF8.GetBytes(value, valueBuffer);
     valueBuffer[valueLength] = 0;
     fixed (byte* valueBufferPtr = valueBuffer) {
-    _SetRepeatedString(netmsg, fieldNameBufferPtr, index, valueBufferPtr);
+        _SetRepeatedString(netmsg, fieldNameBufferPtr, index, valueBufferPtr);
     pool.Return(fieldNameBuffer);
 
     pool.Return(valueBuffer);
@@ -612,13 +612,13 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-
+    
     var valueLength = Encoding.UTF8.GetByteCount(value);
     var valueBuffer = pool.Rent(valueLength + 1);
     Encoding.UTF8.GetBytes(value, valueBuffer);
     valueBuffer[valueLength] = 0;
     fixed (byte* valueBufferPtr = valueBuffer) {
-    _AddString(netmsg, fieldNameBufferPtr, valueBufferPtr);
+        _AddString(netmsg, fieldNameBufferPtr, valueBufferPtr);
     pool.Return(fieldNameBuffer);
 
     pool.Return(valueBuffer);
@@ -634,7 +634,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetVector2D(netmsg, fieldNameBufferPtr);
+        var ret = _GetVector2D(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -648,7 +648,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedVector2D(netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedVector2D(netmsg, fieldNameBufferPtr, index);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -662,7 +662,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetVector2D(netmsg, fieldNameBufferPtr, value);
+        _SetVector2D(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -675,7 +675,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetRepeatedVector2D(netmsg, fieldNameBufferPtr, index, value);
+        _SetRepeatedVector2D(netmsg, fieldNameBufferPtr, index, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -688,7 +688,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _AddVector2D(netmsg, fieldNameBufferPtr, value);
+        _AddVector2D(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -701,7 +701,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetVector(netmsg, fieldNameBufferPtr);
+        var ret = _GetVector(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -715,7 +715,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedVector(netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedVector(netmsg, fieldNameBufferPtr, index);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -729,7 +729,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetVector(netmsg, fieldNameBufferPtr, value);
+        _SetVector(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -742,7 +742,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetRepeatedVector(netmsg, fieldNameBufferPtr, index, value);
+        _SetRepeatedVector(netmsg, fieldNameBufferPtr, index, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -755,7 +755,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _AddVector(netmsg, fieldNameBufferPtr, value);
+        _AddVector(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -768,7 +768,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetColor(netmsg, fieldNameBufferPtr);
+        var ret = _GetColor(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -782,7 +782,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedColor(netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedColor(netmsg, fieldNameBufferPtr, index);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -796,7 +796,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetColor(netmsg, fieldNameBufferPtr, value);
+        _SetColor(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -809,7 +809,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetRepeatedColor(netmsg, fieldNameBufferPtr, index, value);
+        _SetRepeatedColor(netmsg, fieldNameBufferPtr, index, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -822,7 +822,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _AddColor(netmsg, fieldNameBufferPtr, value);
+        _AddColor(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -835,7 +835,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetQAngle(netmsg, fieldNameBufferPtr);
+        var ret = _GetQAngle(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -849,7 +849,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedQAngle(netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedQAngle(netmsg, fieldNameBufferPtr, index);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -863,7 +863,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetQAngle(netmsg, fieldNameBufferPtr, value);
+        _SetQAngle(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -876,7 +876,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetRepeatedQAngle(netmsg, fieldNameBufferPtr, index, value);
+        _SetRepeatedQAngle(netmsg, fieldNameBufferPtr, index, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -889,7 +889,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _AddQAngle(netmsg, fieldNameBufferPtr, value);
+        _AddQAngle(netmsg, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -902,11 +902,11 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetBytes(null, netmsg, fieldNameBufferPtr);
+        var ret = _GetBytes(null, netmsg, fieldNameBufferPtr);
 
     var retBuffer = pool.Rent(ret);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetBytes(retBufferPtr, netmsg, fieldNameBufferPtr);
+        ret = _GetBytes(retBufferPtr, netmsg, fieldNameBufferPtr);
     var retBytes = new byte[ret];
     for(int i = 0; i < ret; i++) retBytes[i] = retBufferPtr[i];
     pool.Return(retBuffer);
@@ -925,11 +925,11 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedBytes(null, netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedBytes(null, netmsg, fieldNameBufferPtr, index);
 
     var retBuffer = pool.Rent(ret);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetRepeatedBytes(retBufferPtr, netmsg, fieldNameBufferPtr, index);
+        ret = _GetRepeatedBytes(retBufferPtr, netmsg, fieldNameBufferPtr, index);
     var retBytes = new byte[ret];
     for(int i = 0; i < ret; i++) retBytes[i] = retBufferPtr[i];
     pool.Return(retBuffer);
@@ -940,7 +940,7 @@ internal static class NativeNetMessages {
   }
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, byte*, void> _SetBytes;
+  private unsafe static delegate* unmanaged<nint, byte*, byte*, int, void> _SetBytes;
   public unsafe static void SetBytes(nint netmsg, string fieldName, byte[] value) {
     var pool = ArrayPool<byte>.Shared;
     var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
@@ -948,15 +948,16 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-
+    
+    var valueLength = value.Length;
     fixed (byte* valueBufferPtr = value) {
-    _SetBytes(netmsg, fieldNameBufferPtr, valueBufferPtr);
+        _SetBytes(netmsg, fieldNameBufferPtr, valueBufferPtr, valueLength);
     pool.Return(fieldNameBuffer);
 
-      }
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, int, byte*, void> _SetRepeatedBytes;
+  }
+  private unsafe static delegate* unmanaged<nint, byte*, int, byte*, int, void> _SetRepeatedBytes;
   public unsafe static void SetRepeatedBytes(nint netmsg, string fieldName, int index, byte[] value) {
     var pool = ArrayPool<byte>.Shared;
     var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
@@ -964,15 +965,16 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-
+    
+    var valueLength = value.Length;
     fixed (byte* valueBufferPtr = value) {
-    _SetRepeatedBytes(netmsg, fieldNameBufferPtr, index, valueBufferPtr);
+        _SetRepeatedBytes(netmsg, fieldNameBufferPtr, index, valueBufferPtr, valueLength);
     pool.Return(fieldNameBuffer);
 
-      }
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, byte*, void> _AddBytes;
+  }
+  private unsafe static delegate* unmanaged<nint, byte*, byte*, int, void> _AddBytes;
   public unsafe static void AddBytes(nint netmsg, string fieldName, byte[] value) {
     var pool = ArrayPool<byte>.Shared;
     var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
@@ -980,12 +982,13 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-
+    
+    var valueLength = value.Length;
     fixed (byte* valueBufferPtr = value) {
-    _AddBytes(netmsg, fieldNameBufferPtr, valueBufferPtr);
+        _AddBytes(netmsg, fieldNameBufferPtr, valueBufferPtr, valueLength);
     pool.Return(fieldNameBuffer);
 
-      }
+  }
   }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint> _GetNestedMessage;
@@ -996,7 +999,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetNestedMessage(netmsg, fieldNameBufferPtr);
+        var ret = _GetNestedMessage(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -1010,7 +1013,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedNestedMessage(netmsg, fieldNameBufferPtr, index);
+        var ret = _GetRepeatedNestedMessage(netmsg, fieldNameBufferPtr, index);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -1024,7 +1027,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _AddNestedMessage(netmsg, fieldNameBufferPtr);
+        var ret = _AddNestedMessage(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -1038,7 +1041,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetRepeatedFieldSize(netmsg, fieldNameBufferPtr);
+        var ret = _GetRepeatedFieldSize(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -1052,7 +1055,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _ClearRepeatedField(netmsg, fieldNameBufferPtr);
+        _ClearRepeatedField(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
   }

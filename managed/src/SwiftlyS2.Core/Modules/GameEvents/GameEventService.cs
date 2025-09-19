@@ -55,7 +55,7 @@ internal class GameEventService : IGameEventService, IDisposable {
     lock (_lock) {
       for (int i = 0; i < _callbacks.Count; i++) {
         var callback = _callbacks[i];
-        if (callback.IsPreHook) {
+        if (callback.IsPreHook && callback is GameEventCallback<T>) {
           callback.Dispose();
           _callbacks.RemoveAt(i);
         }
@@ -67,7 +67,7 @@ internal class GameEventService : IGameEventService, IDisposable {
     lock (_lock) {
       for (int i = 0; i < _callbacks.Count; i++) {
         var callback = _callbacks[i];
-        if (!callback.IsPreHook) {
+        if (!callback.IsPreHook && callback is GameEventCallback<T>) {
           callback.Dispose();
           _callbacks.RemoveAt(i);
         }

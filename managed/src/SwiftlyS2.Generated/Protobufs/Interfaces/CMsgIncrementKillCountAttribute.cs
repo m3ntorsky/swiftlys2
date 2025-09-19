@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgIncrementKillCountAttribute : ITypedProtobuf<CMsgIncrementKillCountAttribute>
 {
-  static CMsgIncrementKillCountAttribute ITypedProtobuf<CMsgIncrementKillCountAttribute>.Wrap(nint handle) => new CMsgIncrementKillCountAttributeImpl(handle);
+  static CMsgIncrementKillCountAttribute ITypedProtobuf<CMsgIncrementKillCountAttribute>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgIncrementKillCountAttributeImpl(handle, isManuallyAllocated);
 
 
-  public int KillerAccountId { get; set; }
+  public uint KillerAccountId { get; set; }
 
 
-  public int VictimAccountId { get; set; }
+  public uint VictimAccountId { get; set; }
 
 
   public ulong ItemId { get; set; }

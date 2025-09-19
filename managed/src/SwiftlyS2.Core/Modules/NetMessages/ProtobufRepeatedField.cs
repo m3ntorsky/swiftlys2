@@ -104,10 +104,10 @@ internal class ProtobufRepeatedFieldSubMessageType<T> : IProtobufRepeatedFieldSu
 
   public T Get(int index)
   {
-    return T.Wrap(_Protobuf.GetRepeatedNestedMessage(_FieldName, index));
+    return T.Wrap(_Protobuf.GetRepeatedNestedMessage(_FieldName, index), false);
   }
   public T Add()
   {
-    return T.Wrap(_Protobuf.AddNestedMessage(_FieldName));
+    return T.Wrap(_Protobuf.AddNestedMessage(_FieldName), false);
   }
 }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgRecurringMissionSchema_MissionTemplateList : ITypedProtobuf<CMsgRecurringMissionSchema_MissionTemplateList>
 {
-  static CMsgRecurringMissionSchema_MissionTemplateList ITypedProtobuf<CMsgRecurringMissionSchema_MissionTemplateList>.Wrap(nint handle) => new CMsgRecurringMissionSchema_MissionTemplateListImpl(handle);
+  static CMsgRecurringMissionSchema_MissionTemplateList ITypedProtobuf<CMsgRecurringMissionSchema_MissionTemplateList>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgRecurringMissionSchema_MissionTemplateListImpl(handle, isManuallyAllocated);
 
 
   public uint Period { get; set; }

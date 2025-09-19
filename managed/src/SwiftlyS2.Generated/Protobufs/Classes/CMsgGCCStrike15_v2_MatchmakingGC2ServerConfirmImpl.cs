@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirmImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm>, CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm
 {
-  public CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirmImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirmImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

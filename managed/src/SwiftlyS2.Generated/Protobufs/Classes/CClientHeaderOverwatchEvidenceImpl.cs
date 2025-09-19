@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CClientHeaderOverwatchEvidenceImpl : TypedProtobuf<CClientHeaderOverwatchEvidence>, CClientHeaderOverwatchEvidence
 {
-  public CClientHeaderOverwatchEvidenceImpl(nint handle): base(handle)
+  public CClientHeaderOverwatchEvidenceImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

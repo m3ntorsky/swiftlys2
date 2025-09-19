@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class MLWeaponStateImpl : TypedProtobuf<MLWeaponState>, MLWeaponState
 {
-  public MLWeaponStateImpl(nint handle): base(handle)
+  public MLWeaponStateImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

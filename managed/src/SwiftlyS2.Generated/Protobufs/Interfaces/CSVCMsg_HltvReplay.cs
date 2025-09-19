@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSVCMsg_HltvReplay : ITypedProtobuf<CSVCMsg_HltvReplay>
 {
-  static CSVCMsg_HltvReplay ITypedProtobuf<CSVCMsg_HltvReplay>.Wrap(nint handle) => new CSVCMsg_HltvReplayImpl(handle);
+  static CSVCMsg_HltvReplay ITypedProtobuf<CSVCMsg_HltvReplay>.Wrap(nint handle, bool isManuallyAllocated) => new CSVCMsg_HltvReplayImpl(handle, isManuallyAllocated);
 
 
   public int Delay { get; set; }

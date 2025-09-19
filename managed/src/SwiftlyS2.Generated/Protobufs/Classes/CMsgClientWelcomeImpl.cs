@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgClientWelcomeImpl : TypedProtobuf<CMsgClientWelcome>, CMsgClientWelcome
 {
-  public CMsgClientWelcomeImpl(nint handle): base(handle)
+  public CMsgClientWelcomeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -31,7 +31,7 @@ internal class CMsgClientWelcomeImpl : TypedProtobuf<CMsgClientWelcome>, CMsgCli
 
 
   public CMsgClientWelcome_Location Location
-  { get => new CMsgClientWelcome_LocationImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "location")); }
+  { get => new CMsgClientWelcome_LocationImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "location"), false); }
 
 
   public byte[] GameData2

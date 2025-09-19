@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CGameInfo_CDotaGameInfo_CHeroSelectEventImpl : TypedProtobuf<CGameInfo_CDotaGameInfo_CHeroSelectEvent>, CGameInfo_CDotaGameInfo_CHeroSelectEvent
 {
-  public CGameInfo_CDotaGameInfo_CHeroSelectEventImpl(nint handle): base(handle)
+  public CGameInfo_CDotaGameInfo_CHeroSelectEventImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CProductInfo_SetRichPresenceLocalization_Request_LanguageSection : ITypedProtobuf<CProductInfo_SetRichPresenceLocalization_Request_LanguageSection>
 {
-  static CProductInfo_SetRichPresenceLocalization_Request_LanguageSection ITypedProtobuf<CProductInfo_SetRichPresenceLocalization_Request_LanguageSection>.Wrap(nint handle) => new CProductInfo_SetRichPresenceLocalization_Request_LanguageSectionImpl(handle);
+  static CProductInfo_SetRichPresenceLocalization_Request_LanguageSection ITypedProtobuf<CProductInfo_SetRichPresenceLocalization_Request_LanguageSection>.Wrap(nint handle, bool isManuallyAllocated) => new CProductInfo_SetRichPresenceLocalization_Request_LanguageSectionImpl(handle, isManuallyAllocated);
 
 
   public string Language { get; set; }

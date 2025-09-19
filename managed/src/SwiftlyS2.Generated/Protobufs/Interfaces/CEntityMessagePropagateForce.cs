@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CEntityMessagePropagateForce : ITypedProtobuf<CEntityMessagePropagateForce>
 {
-  static CEntityMessagePropagateForce ITypedProtobuf<CEntityMessagePropagateForce>.Wrap(nint handle) => new CEntityMessagePropagateForceImpl(handle);
+  static CEntityMessagePropagateForce ITypedProtobuf<CEntityMessagePropagateForce>.Wrap(nint handle, bool isManuallyAllocated) => new CEntityMessagePropagateForceImpl(handle, isManuallyAllocated);
 
 
   public Vector Impulse { get; set; }

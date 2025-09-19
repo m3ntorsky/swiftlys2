@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOEconItem : ITypedProtobuf<CSOEconItem>
 {
-  static CSOEconItem ITypedProtobuf<CSOEconItem>.Wrap(nint handle) => new CSOEconItemImpl(handle);
+  static CSOEconItem ITypedProtobuf<CSOEconItem>.Wrap(nint handle, bool isManuallyAllocated) => new CSOEconItemImpl(handle, isManuallyAllocated);
 
 
   public ulong Id { get; set; }

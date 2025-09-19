@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageCameraTransition_Transition_DataDrivenImpl : TypedProtobuf<CUserMessageCameraTransition_Transition_DataDriven>, CUserMessageCameraTransition_Transition_DataDriven
 {
-  public CUserMessageCameraTransition_Transition_DataDrivenImpl(nint handle): base(handle)
+  public CUserMessageCameraTransition_Transition_DataDrivenImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

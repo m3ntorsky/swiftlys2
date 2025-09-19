@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOQuestProgressImpl : TypedProtobuf<CSOQuestProgress>, CSOQuestProgress
 {
-  public CSOQuestProgressImpl(nint handle): base(handle)
+  public CSOQuestProgressImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_VGUIMenu_KeysImpl : TypedProtobuf<CCSUsrMsg_VGUIMenu_Keys>, CCSUsrMsg_VGUIMenu_Keys
 {
-  public CCSUsrMsg_VGUIMenu_KeysImpl(nint handle): base(handle)
+  public CCSUsrMsg_VGUIMenu_KeysImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

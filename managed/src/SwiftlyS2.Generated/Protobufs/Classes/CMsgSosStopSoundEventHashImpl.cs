@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSosStopSoundEventHashImpl : NetMessage<CMsgSosStopSoundEventHash>, CMsgSosStopSoundEventHash
 {
-  public CMsgSosStopSoundEventHashImpl(nint handle): base(handle)
+  public CMsgSosStopSoundEventHashImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
-  public int SoundeventHash
-  { get => Accessor.GetInt32("soundevent_hash"); set => Accessor.SetInt32("soundevent_hash", value); }
+  public uint SoundeventHash
+  { get => Accessor.GetUInt32("soundevent_hash"); set => Accessor.SetUInt32("soundevent_hash", value); }
 
 
   public int SourceEntityIndex

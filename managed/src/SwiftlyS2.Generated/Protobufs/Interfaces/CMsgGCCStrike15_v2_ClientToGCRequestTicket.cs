@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_ClientToGCRequestTicket : ITypedProtobuf<CMsgGCCStrike15_v2_ClientToGCRequestTicket>
 {
-  static CMsgGCCStrike15_v2_ClientToGCRequestTicket ITypedProtobuf<CMsgGCCStrike15_v2_ClientToGCRequestTicket>.Wrap(nint handle) => new CMsgGCCStrike15_v2_ClientToGCRequestTicketImpl(handle);
+  static CMsgGCCStrike15_v2_ClientToGCRequestTicket ITypedProtobuf<CMsgGCCStrike15_v2_ClientToGCRequestTicket>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_ClientToGCRequestTicketImpl(handle, isManuallyAllocated);
 
 
   public ulong AuthorizedSteamId { get; set; }
 
 
-  public int AuthorizedPublicIp { get; set; }
+  public uint AuthorizedPublicIp { get; set; }
 
 
   public ulong GameserverSteamId { get; set; }

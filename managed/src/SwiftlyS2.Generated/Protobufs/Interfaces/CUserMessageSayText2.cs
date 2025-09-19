@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CUserMessageSayText2 : ITypedProtobuf<CUserMessageSayText2>, INetMessage<CUserMessageSayText2>
+public interface CUserMessageSayText2 : ITypedProtobuf<CUserMessageSayText2>, INetMessage<CUserMessageSayText2>, IDisposable
 {
   static int INetMessage<CUserMessageSayText2>.MessageId => 118;
   
   static string INetMessage<CUserMessageSayText2>.MessageName => "CUserMessageSayText2";
 
-  static CUserMessageSayText2 ITypedProtobuf<CUserMessageSayText2>.Wrap(nint handle) => new CUserMessageSayText2Impl(handle);
+  static CUserMessageSayText2 ITypedProtobuf<CUserMessageSayText2>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessageSayText2Impl(handle, isManuallyAllocated);
 
 
   public int Entityindex { get; set; }

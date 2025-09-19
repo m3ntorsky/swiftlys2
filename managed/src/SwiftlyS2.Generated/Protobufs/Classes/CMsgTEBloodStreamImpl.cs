@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEBloodStreamImpl : NetMessage<CMsgTEBloodStream>, CMsgTEBloodStream
 {
-  public CMsgTEBloodStreamImpl(nint handle): base(handle)
+  public CMsgTEBloodStreamImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -22,8 +22,8 @@ internal class CMsgTEBloodStreamImpl : NetMessage<CMsgTEBloodStream>, CMsgTEBloo
   { get => Accessor.GetVector("direction"); set => Accessor.SetVector("direction", value); }
 
 
-  public int Color
-  { get => Accessor.GetInt32("color"); set => Accessor.SetInt32("color", value); }
+  public uint Color
+  { get => Accessor.GetUInt32("color"); set => Accessor.SetUInt32("color", value); }
 
 
   public uint Amount

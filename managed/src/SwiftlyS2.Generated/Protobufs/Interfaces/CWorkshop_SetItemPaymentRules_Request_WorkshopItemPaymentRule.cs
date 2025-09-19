@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRule : ITypedProtobuf<CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRule>
 {
-  static CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRule ITypedProtobuf<CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRule>.Wrap(nint handle) => new CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRuleImpl(handle);
+  static CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRule ITypedProtobuf<CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRule>.Wrap(nint handle, bool isManuallyAllocated) => new CWorkshop_SetItemPaymentRules_Request_WorkshopItemPaymentRuleImpl(handle, isManuallyAllocated);
 
 
   public ulong WorkshopFileId { get; set; }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface PlayerQuestData : ITypedProtobuf<PlayerQuestData>
 {
-  static PlayerQuestData ITypedProtobuf<PlayerQuestData>.Wrap(nint handle) => new PlayerQuestDataImpl(handle);
+  static PlayerQuestData ITypedProtobuf<PlayerQuestData>.Wrap(nint handle, bool isManuallyAllocated) => new PlayerQuestDataImpl(handle, isManuallyAllocated);
 
 
   public uint QuesterAccountId { get; set; }

@@ -27,7 +27,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetBool(keyvalues, keyBufferPtr);
+        var ret = _GetBool(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -41,7 +41,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetInt(keyvalues, keyBufferPtr);
+        var ret = _GetInt(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -55,7 +55,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetUint(keyvalues, keyBufferPtr);
+        var ret = _GetUint(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -69,7 +69,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetInt64(keyvalues, keyBufferPtr);
+        var ret = _GetInt64(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -83,7 +83,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetUint64(keyvalues, keyBufferPtr);
+        var ret = _GetUint64(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -97,7 +97,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetFloat(keyvalues, keyBufferPtr);
+        var ret = _GetFloat(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -111,7 +111,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetDouble(keyvalues, keyBufferPtr);
+        var ret = _GetDouble(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -125,11 +125,11 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetString(null, keyvalues, keyBufferPtr);
+        var ret = _GetString(null, keyvalues, keyBufferPtr);
 
     var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetString(retBufferPtr, keyvalues, keyBufferPtr);
+        ret = _GetString(retBufferPtr, keyvalues, keyBufferPtr);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
     pool.Return(retBuffer);
 
@@ -147,7 +147,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetPtr(keyvalues, keyBufferPtr);
+        var ret = _GetPtr(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -161,7 +161,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetStringToken(keyvalues, keyBufferPtr);
+        var ret = _GetStringToken(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -175,7 +175,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetColor(keyvalues, keyBufferPtr);
+        var ret = _GetColor(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -189,7 +189,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetVector(keyvalues, keyBufferPtr);
+        var ret = _GetVector(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -203,7 +203,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetVector2D(keyvalues, keyBufferPtr);
+        var ret = _GetVector2D(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -217,7 +217,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetVector4D(keyvalues, keyBufferPtr);
+        var ret = _GetVector4D(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -231,7 +231,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetQAngle(keyvalues, keyBufferPtr);
+        var ret = _GetQAngle(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -245,7 +245,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetBool(keyvalues, keyBufferPtr, value);
+        _SetBool(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -258,7 +258,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetInt(keyvalues, keyBufferPtr, value);
+        _SetInt(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -271,7 +271,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetUint(keyvalues, keyBufferPtr, value);
+        _SetUint(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -284,7 +284,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetInt64(keyvalues, keyBufferPtr, value);
+        _SetInt64(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -297,7 +297,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetUint64(keyvalues, keyBufferPtr, value);
+        _SetUint64(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -310,7 +310,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetFloat(keyvalues, keyBufferPtr, value);
+        _SetFloat(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -323,7 +323,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetDouble(keyvalues, keyBufferPtr, value);
+        _SetDouble(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -336,13 +336,13 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-
+    
     var valueLength = Encoding.UTF8.GetByteCount(value);
     var valueBuffer = pool.Rent(valueLength + 1);
     Encoding.UTF8.GetBytes(value, valueBuffer);
     valueBuffer[valueLength] = 0;
     fixed (byte* valueBufferPtr = valueBuffer) {
-    _SetString(keyvalues, keyBufferPtr, valueBufferPtr);
+        _SetString(keyvalues, keyBufferPtr, valueBufferPtr);
     pool.Return(keyBuffer);
 
     pool.Return(valueBuffer);
@@ -358,7 +358,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetPtr(keyvalues, keyBufferPtr, value);
+        _SetPtr(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -371,7 +371,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetStringToken(keyvalues, keyBufferPtr, value);
+        _SetStringToken(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -384,7 +384,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetColor(keyvalues, keyBufferPtr, value);
+        _SetColor(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -397,7 +397,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetVector(keyvalues, keyBufferPtr, value);
+        _SetVector(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -410,7 +410,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetVector2D(keyvalues, keyBufferPtr, value);
+        _SetVector2D(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -423,7 +423,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetVector4D(keyvalues, keyBufferPtr, value);
+        _SetVector4D(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -436,7 +436,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetQAngle(keyvalues, keyBufferPtr, value);
+        _SetQAngle(keyvalues, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }

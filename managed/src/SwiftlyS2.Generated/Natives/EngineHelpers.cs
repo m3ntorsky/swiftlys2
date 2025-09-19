@@ -16,7 +16,7 @@ internal static class NativeEngineHelpers {
     var pool = ArrayPool<byte>.Shared;
     var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetServerIP(retBufferPtr);
+        ret = _GetServerIP(retBufferPtr);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
     pool.Return(retBuffer);
 
@@ -29,7 +29,7 @@ internal static class NativeEngineHelpers {
     var pool = ArrayPool<byte>.Shared;
     var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetMap(retBufferPtr);
+        ret = _GetMap(retBufferPtr);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
     pool.Return(retBuffer);
 
@@ -47,7 +47,7 @@ internal static class NativeEngineHelpers {
     Encoding.UTF8.GetBytes(map_name, map_nameBuffer);
     map_nameBuffer[map_nameLength] = 0;
     fixed (byte* map_nameBufferPtr = map_nameBuffer) {
-    var ret = _IsMapValid(map_nameBufferPtr);
+        var ret = _IsMapValid(map_nameBufferPtr);
     pool.Return(map_nameBuffer);
 
     return ret;
@@ -66,7 +66,7 @@ internal static class NativeEngineHelpers {
     Encoding.UTF8.GetBytes(command, commandBuffer);
     commandBuffer[commandLength] = 0;
     fixed (byte* commandBufferPtr = commandBuffer) {
-    _ExecuteCommand(commandBufferPtr);
+        _ExecuteCommand(commandBufferPtr);
     pool.Return(commandBuffer);
 
   }
@@ -92,7 +92,7 @@ internal static class NativeEngineHelpers {
     Encoding.UTF8.GetBytes(name, nameBuffer);
     nameBuffer[nameLength] = 0;
     fixed (byte* nameBufferPtr = nameBuffer) {
-    var ret = _FindGameSystemByName(nameBufferPtr);
+        var ret = _FindGameSystemByName(nameBufferPtr);
     pool.Return(nameBuffer);
 
     return ret;

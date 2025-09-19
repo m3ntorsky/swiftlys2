@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMsg_ParticleManager_SetParticleClusterGrowth : ITypedProtobuf<CUserMsg_ParticleManager_SetParticleClusterGrowth>
 {
-  static CUserMsg_ParticleManager_SetParticleClusterGrowth ITypedProtobuf<CUserMsg_ParticleManager_SetParticleClusterGrowth>.Wrap(nint handle) => new CUserMsg_ParticleManager_SetParticleClusterGrowthImpl(handle);
+  static CUserMsg_ParticleManager_SetParticleClusterGrowth ITypedProtobuf<CUserMsg_ParticleManager_SetParticleClusterGrowth>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMsg_ParticleManager_SetParticleClusterGrowthImpl(handle, isManuallyAllocated);
 
 
   public float Duration { get; set; }

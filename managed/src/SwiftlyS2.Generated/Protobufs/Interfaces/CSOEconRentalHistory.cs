@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOEconRentalHistory : ITypedProtobuf<CSOEconRentalHistory>
 {
-  static CSOEconRentalHistory ITypedProtobuf<CSOEconRentalHistory>.Wrap(nint handle) => new CSOEconRentalHistoryImpl(handle);
+  static CSOEconRentalHistory ITypedProtobuf<CSOEconRentalHistory>.Wrap(nint handle, bool isManuallyAllocated) => new CSOEconRentalHistoryImpl(handle, isManuallyAllocated);
 
 
   public uint AccountId { get; set; }

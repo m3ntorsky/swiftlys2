@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_UpdateParticleFallbackImpl : TypedProtobuf<CUserMsg_ParticleManager_UpdateParticleFallback>, CUserMsg_ParticleManager_UpdateParticleFallback
 {
-  public CUserMsg_ParticleManager_UpdateParticleFallbackImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_UpdateParticleFallbackImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

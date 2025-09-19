@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_VGUIMenuImpl : NetMessage<CCSUsrMsg_VGUIMenu>, CCSUsrMsg_VGUIMenu
 {
-  public CCSUsrMsg_VGUIMenuImpl(nint handle): base(handle)
+  public CCSUsrMsg_VGUIMenuImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

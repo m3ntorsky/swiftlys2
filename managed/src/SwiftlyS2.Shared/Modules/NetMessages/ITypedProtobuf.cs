@@ -7,7 +7,7 @@ public interface ITypedProtobuf<T> : INativeHandle where T : ITypedProtobuf<T> {
 
   public IProtobufAccessor Accessor { get; }
 
-  internal abstract static T Wrap(nint handle);
+  internal abstract static T Wrap(nint handle, bool isManuallyAllocated);
 
 }
 

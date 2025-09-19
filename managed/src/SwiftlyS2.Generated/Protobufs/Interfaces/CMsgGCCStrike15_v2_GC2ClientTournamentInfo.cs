@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_GC2ClientTournamentInfo : ITypedProtobuf<CMsgGCCStrike15_v2_GC2ClientTournamentInfo>
 {
-  static CMsgGCCStrike15_v2_GC2ClientTournamentInfo ITypedProtobuf<CMsgGCCStrike15_v2_GC2ClientTournamentInfo>.Wrap(nint handle) => new CMsgGCCStrike15_v2_GC2ClientTournamentInfoImpl(handle);
+  static CMsgGCCStrike15_v2_GC2ClientTournamentInfo ITypedProtobuf<CMsgGCCStrike15_v2_GC2ClientTournamentInfo>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_GC2ClientTournamentInfoImpl(handle, isManuallyAllocated);
 
 
   public uint Eventid { get; set; }

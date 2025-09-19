@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdateImpl : TypedProtobuf<CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdate>, CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdate
 {
-  public CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdateImpl(nint handle): base(handle)
+  public CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdateImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

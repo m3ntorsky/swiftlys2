@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOEconItemAttribute : ITypedProtobuf<CSOEconItemAttribute>
 {
-  static CSOEconItemAttribute ITypedProtobuf<CSOEconItemAttribute>.Wrap(nint handle) => new CSOEconItemAttributeImpl(handle);
+  static CSOEconItemAttribute ITypedProtobuf<CSOEconItemAttribute>.Wrap(nint handle, bool isManuallyAllocated) => new CSOEconItemAttributeImpl(handle, isManuallyAllocated);
 
 
   public uint DefIndex { get; set; }

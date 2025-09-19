@@ -6,16 +6,16 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CMsgTEPlayerAnimEvent : ITypedProtobuf<CMsgTEPlayerAnimEvent>, INetMessage<CMsgTEPlayerAnimEvent>
+public interface CMsgTEPlayerAnimEvent : ITypedProtobuf<CMsgTEPlayerAnimEvent>, INetMessage<CMsgTEPlayerAnimEvent>, IDisposable
 {
   static int INetMessage<CMsgTEPlayerAnimEvent>.MessageId => 450;
   
   static string INetMessage<CMsgTEPlayerAnimEvent>.MessageName => "CMsgTEPlayerAnimEvent";
 
-  static CMsgTEPlayerAnimEvent ITypedProtobuf<CMsgTEPlayerAnimEvent>.Wrap(nint handle) => new CMsgTEPlayerAnimEventImpl(handle);
+  static CMsgTEPlayerAnimEvent ITypedProtobuf<CMsgTEPlayerAnimEvent>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgTEPlayerAnimEventImpl(handle, isManuallyAllocated);
 
 
-  public int Player { get; set; }
+  public uint Player { get; set; }
 
 
   public uint Event { get; set; }

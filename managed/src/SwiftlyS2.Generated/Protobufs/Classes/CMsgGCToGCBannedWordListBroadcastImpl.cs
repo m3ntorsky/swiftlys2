@@ -9,12 +9,12 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCToGCBannedWordListBroadcastImpl : TypedProtobuf<CMsgGCToGCBannedWordListBroadcast>, CMsgGCToGCBannedWordListBroadcast
 {
-  public CMsgGCToGCBannedWordListBroadcastImpl(nint handle): base(handle)
+  public CMsgGCToGCBannedWordListBroadcastImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CMsgGCBannedWordListResponse Broadcast
-  { get => new CMsgGCBannedWordListResponseImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "broadcast")); }
+  { get => new CMsgGCBannedWordListResponseImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "broadcast"), false); }
 
 }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEWorldDecalImpl : NetMessage<CMsgTEWorldDecal>, CMsgTEWorldDecal
 {
-  public CMsgTEWorldDecalImpl(nint handle): base(handle)
+  public CMsgTEWorldDecalImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

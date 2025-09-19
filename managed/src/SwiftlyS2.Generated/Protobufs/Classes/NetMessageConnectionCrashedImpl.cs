@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class NetMessageConnectionCrashedImpl : TypedProtobuf<NetMessageConnectionCrashed>, NetMessageConnectionCrashed
 {
-  public NetMessageConnectionCrashedImpl(nint handle): base(handle)
+  public NetMessageConnectionCrashedImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCSUsrMsg_VoiceMask_PlayerMask : ITypedProtobuf<CCSUsrMsg_VoiceMask_PlayerMask>
 {
-  static CCSUsrMsg_VoiceMask_PlayerMask ITypedProtobuf<CCSUsrMsg_VoiceMask_PlayerMask>.Wrap(nint handle) => new CCSUsrMsg_VoiceMask_PlayerMaskImpl(handle);
+  static CCSUsrMsg_VoiceMask_PlayerMask ITypedProtobuf<CCSUsrMsg_VoiceMask_PlayerMask>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_VoiceMask_PlayerMaskImpl(handle, isManuallyAllocated);
 
 
   public int GameRulesMask { get; set; }

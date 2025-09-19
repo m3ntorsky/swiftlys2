@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCLCMsg_BaselineAckImpl : NetMessage<CCLCMsg_BaselineAck>, CCLCMsg_BaselineAck
 {
-  public CCLCMsg_BaselineAckImpl(nint handle): base(handle)
+  public CCLCMsg_BaselineAckImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

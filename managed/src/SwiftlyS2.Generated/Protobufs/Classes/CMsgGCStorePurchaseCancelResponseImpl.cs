@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCStorePurchaseCancelResponseImpl : TypedProtobuf<CMsgGCStorePurchaseCancelResponse>, CMsgGCStorePurchaseCancelResponse
 {
-  public CMsgGCStorePurchaseCancelResponseImpl(nint handle): base(handle)
+  public CMsgGCStorePurchaseCancelResponseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

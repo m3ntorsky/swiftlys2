@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageWaterShakeImpl : NetMessage<CUserMessageWaterShake>, CUserMessageWaterShake
 {
-  public CUserMessageWaterShakeImpl(nint handle): base(handle)
+  public CUserMessageWaterShakeImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_MatchmakingServerReservationResponse : ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingServerReservationResponse>
 {
-  static CMsgGCCStrike15_v2_MatchmakingServerReservationResponse ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingServerReservationResponse>.Wrap(nint handle) => new CMsgGCCStrike15_v2_MatchmakingServerReservationResponseImpl(handle);
+  static CMsgGCCStrike15_v2_MatchmakingServerReservationResponse ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingServerReservationResponse>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_MatchmakingServerReservationResponseImpl(handle, isManuallyAllocated);
 
 
   public ulong Reservationid { get; set; }
@@ -55,7 +55,7 @@ public interface CMsgGCCStrike15_v2_MatchmakingServerReservationResponse : IType
   public uint SteamdatagramRouting { get; set; }
 
 
-  public int TestToken { get; set; }
+  public uint TestToken { get; set; }
 
 
   public uint Flags { get; set; }

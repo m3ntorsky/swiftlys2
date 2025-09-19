@@ -7,7 +7,7 @@ public static class MurmurHash2
     /// <summary>
     /// Compute MurmurHash2 (32-bit) of a byte array with an optional seed.
     /// </summary>
-    public static uint Hash(byte[] data, uint seed = 0xc58f1a7b)
+    public static uint Hash(byte[] data, uint seed = 0x31415926)
     {
         const uint m = 0x5bd1e995;
         const int r = 24;
@@ -55,8 +55,16 @@ public static class MurmurHash2
     /// <summary>
     /// Convenience method for strings (UTF8).
     /// </summary>
-    public static uint HashString(string text, uint seed = 0xc58f1a7b)
+    public static uint HashString(string text, uint seed = 0x31415926)
     {
         return Hash(Encoding.UTF8.GetBytes(text), seed);
+    }
+
+    /// <summary>
+    /// Convert a string to lowercase and then hash it.
+    /// </summary>
+    public static uint HashStringLowercase(string text, uint seed = 0x31415926)
+    {
+        return Hash(Encoding.UTF8.GetBytes(text.ToLower()), seed);
     }
 }

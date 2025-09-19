@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCSUsrMsgPreMatchSayText : ITypedProtobuf<CCSUsrMsgPreMatchSayText>
 {
-  static CCSUsrMsgPreMatchSayText ITypedProtobuf<CCSUsrMsgPreMatchSayText>.Wrap(nint handle) => new CCSUsrMsgPreMatchSayTextImpl(handle);
+  static CCSUsrMsgPreMatchSayText ITypedProtobuf<CCSUsrMsgPreMatchSayText>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsgPreMatchSayTextImpl(handle, isManuallyAllocated);
 
 
   public uint AccountId { get; set; }

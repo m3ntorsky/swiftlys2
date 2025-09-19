@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class DeepPlayerStatsEntryImpl : TypedProtobuf<DeepPlayerStatsEntry>, DeepPlayerStatsEntry
 {
-  public DeepPlayerStatsEntryImpl(nint handle): base(handle)
+  public DeepPlayerStatsEntryImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

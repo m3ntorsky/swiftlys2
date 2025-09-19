@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgAdjustItemEquippedState : ITypedProtobuf<CMsgAdjustItemEquippedState>
 {
-  static CMsgAdjustItemEquippedState ITypedProtobuf<CMsgAdjustItemEquippedState>.Wrap(nint handle) => new CMsgAdjustItemEquippedStateImpl(handle);
+  static CMsgAdjustItemEquippedState ITypedProtobuf<CMsgAdjustItemEquippedState>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgAdjustItemEquippedStateImpl(handle, isManuallyAllocated);
 
 
   public ulong ItemId { get; set; }

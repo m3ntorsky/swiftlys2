@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CMsgPlaceDecalEvent : ITypedProtobuf<CMsgPlaceDecalEvent>, INetMessage<CMsgPlaceDecalEvent>
+public interface CMsgPlaceDecalEvent : ITypedProtobuf<CMsgPlaceDecalEvent>, INetMessage<CMsgPlaceDecalEvent>, IDisposable
 {
   static int INetMessage<CMsgPlaceDecalEvent>.MessageId => 201;
   
   static string INetMessage<CMsgPlaceDecalEvent>.MessageName => "CMsgPlaceDecalEvent";
 
-  static CMsgPlaceDecalEvent ITypedProtobuf<CMsgPlaceDecalEvent>.Wrap(nint handle) => new CMsgPlaceDecalEventImpl(handle);
+  static CMsgPlaceDecalEvent ITypedProtobuf<CMsgPlaceDecalEvent>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgPlaceDecalEventImpl(handle, isManuallyAllocated);
 
 
   public Vector Position { get; set; }
@@ -30,7 +30,7 @@ public interface CMsgPlaceDecalEvent : ITypedProtobuf<CMsgPlaceDecalEvent>, INet
   public uint Flags { get; set; }
 
 
-  public int Color { get; set; }
+  public uint Color { get; set; }
 
 
   public int RandomSeed { get; set; }

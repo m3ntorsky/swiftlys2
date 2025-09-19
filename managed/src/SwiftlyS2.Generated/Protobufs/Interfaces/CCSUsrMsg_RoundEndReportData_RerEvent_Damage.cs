@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCSUsrMsg_RoundEndReportData_RerEvent_Damage : ITypedProtobuf<CCSUsrMsg_RoundEndReportData_RerEvent_Damage>
 {
-  static CCSUsrMsg_RoundEndReportData_RerEvent_Damage ITypedProtobuf<CCSUsrMsg_RoundEndReportData_RerEvent_Damage>.Wrap(nint handle) => new CCSUsrMsg_RoundEndReportData_RerEvent_DamageImpl(handle);
+  static CCSUsrMsg_RoundEndReportData_RerEvent_Damage ITypedProtobuf<CCSUsrMsg_RoundEndReportData_RerEvent_Damage>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_RoundEndReportData_RerEvent_DamageImpl(handle, isManuallyAllocated);
 
 
   public int OtherPlayerslot { get; set; }

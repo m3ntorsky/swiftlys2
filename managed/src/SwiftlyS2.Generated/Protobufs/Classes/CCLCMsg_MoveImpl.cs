@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCLCMsg_MoveImpl : NetMessage<CCLCMsg_Move>, CCLCMsg_Move
 {
-  public CCLCMsg_MoveImpl(nint handle): base(handle)
+  public CCLCMsg_MoveImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

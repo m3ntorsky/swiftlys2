@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgApplyStatTrakSwap : ITypedProtobuf<CMsgApplyStatTrakSwap>
 {
-  static CMsgApplyStatTrakSwap ITypedProtobuf<CMsgApplyStatTrakSwap>.Wrap(nint handle) => new CMsgApplyStatTrakSwapImpl(handle);
+  static CMsgApplyStatTrakSwap ITypedProtobuf<CMsgApplyStatTrakSwap>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgApplyStatTrakSwapImpl(handle, isManuallyAllocated);
 
 
   public ulong ToolItemId { get; set; }

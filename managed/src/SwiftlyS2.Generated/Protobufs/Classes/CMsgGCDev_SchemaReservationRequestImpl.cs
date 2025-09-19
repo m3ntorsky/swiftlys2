@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCDev_SchemaReservationRequestImpl : TypedProtobuf<CMsgGCDev_SchemaReservationRequest>, CMsgGCDev_SchemaReservationRequest
 {
-  public CMsgGCDev_SchemaReservationRequestImpl(nint handle): base(handle)
+  public CMsgGCDev_SchemaReservationRequestImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

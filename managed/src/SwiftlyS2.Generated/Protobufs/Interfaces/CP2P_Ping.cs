@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CP2P_Ping : ITypedProtobuf<CP2P_Ping>
 {
-  static CP2P_Ping ITypedProtobuf<CP2P_Ping>.Wrap(nint handle) => new CP2P_PingImpl(handle);
+  static CP2P_Ping ITypedProtobuf<CP2P_Ping>.Wrap(nint handle, bool isManuallyAllocated) => new CP2P_PingImpl(handle, isManuallyAllocated);
 
 
   public ulong SendTime { get; set; }

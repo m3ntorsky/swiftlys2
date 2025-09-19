@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCLCMsg_HltvFixupOperatorTick : ITypedProtobuf<CCLCMsg_HltvFixupOperatorTick>
 {
-  static CCLCMsg_HltvFixupOperatorTick ITypedProtobuf<CCLCMsg_HltvFixupOperatorTick>.Wrap(nint handle) => new CCLCMsg_HltvFixupOperatorTickImpl(handle);
+  static CCLCMsg_HltvFixupOperatorTick ITypedProtobuf<CCLCMsg_HltvFixupOperatorTick>.Wrap(nint handle, bool isManuallyAllocated) => new CCLCMsg_HltvFixupOperatorTickImpl(handle, isManuallyAllocated);
 
 
   public int Tick { get; set; }

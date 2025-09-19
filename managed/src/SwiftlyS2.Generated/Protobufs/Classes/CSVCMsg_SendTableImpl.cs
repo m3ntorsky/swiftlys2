@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_SendTableImpl : TypedProtobuf<CSVCMsg_SendTable>, CSVCMsg_SendTable
 {
-  public CSVCMsg_SendTableImpl(nint handle): base(handle)
+  public CSVCMsg_SendTableImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

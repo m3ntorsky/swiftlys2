@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CSVCMsg_PacketEntities : ITypedProtobuf<CSVCMsg_PacketEntities>, INetMessage<CSVCMsg_PacketEntities>
+public interface CSVCMsg_PacketEntities : ITypedProtobuf<CSVCMsg_PacketEntities>, INetMessage<CSVCMsg_PacketEntities>, IDisposable
 {
   static int INetMessage<CSVCMsg_PacketEntities>.MessageId => 55;
   
   static string INetMessage<CSVCMsg_PacketEntities>.MessageName => "CSVCMsg_PacketEntities";
 
-  static CSVCMsg_PacketEntities ITypedProtobuf<CSVCMsg_PacketEntities>.Wrap(nint handle) => new CSVCMsg_PacketEntitiesImpl(handle);
+  static CSVCMsg_PacketEntities ITypedProtobuf<CSVCMsg_PacketEntities>.Wrap(nint handle, bool isManuallyAllocated) => new CSVCMsg_PacketEntitiesImpl(handle, isManuallyAllocated);
 
 
   public int MaxEntries { get; set; }

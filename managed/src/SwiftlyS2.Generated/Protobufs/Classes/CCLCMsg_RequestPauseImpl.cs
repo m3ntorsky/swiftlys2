@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCLCMsg_RequestPauseImpl : NetMessage<CCLCMsg_RequestPause>, CCLCMsg_RequestPause
 {
-  public CCLCMsg_RequestPauseImpl(nint handle): base(handle)
+  public CCLCMsg_RequestPauseImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

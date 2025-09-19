@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CWorkshop_PopulateItemDescriptions_RequestImpl : TypedProtobuf<CWorkshop_PopulateItemDescriptions_Request>, CWorkshop_PopulateItemDescriptions_Request
 {
-  public CWorkshop_PopulateItemDescriptions_RequestImpl(nint handle): base(handle)
+  public CWorkshop_PopulateItemDescriptions_RequestImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

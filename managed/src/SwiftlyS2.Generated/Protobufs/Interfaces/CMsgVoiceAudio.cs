@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgVoiceAudio : ITypedProtobuf<CMsgVoiceAudio>
 {
-  static CMsgVoiceAudio ITypedProtobuf<CMsgVoiceAudio>.Wrap(nint handle) => new CMsgVoiceAudioImpl(handle);
+  static CMsgVoiceAudio ITypedProtobuf<CMsgVoiceAudio>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgVoiceAudioImpl(handle, isManuallyAllocated);
 
 
   public VoiceDataFormat_t Format { get; set; }

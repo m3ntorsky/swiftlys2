@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoSendTablesImpl : TypedProtobuf<CDemoSendTables>, CDemoSendTables
 {
-  public CDemoSendTablesImpl(nint handle): base(handle)
+  public CDemoSendTablesImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

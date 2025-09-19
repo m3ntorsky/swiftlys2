@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoSpawnGroupsImpl : TypedProtobuf<CDemoSpawnGroups>, CDemoSpawnGroups
 {
-  public CDemoSpawnGroupsImpl(nint handle): base(handle)
+  public CDemoSpawnGroupsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

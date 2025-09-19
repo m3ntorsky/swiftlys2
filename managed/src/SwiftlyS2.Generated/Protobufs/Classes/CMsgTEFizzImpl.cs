@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEFizzImpl : NetMessage<CMsgTEFizz>, CMsgTEFizz
 {
-  public CMsgTEFizzImpl(nint handle): base(handle)
+  public CMsgTEFizzImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

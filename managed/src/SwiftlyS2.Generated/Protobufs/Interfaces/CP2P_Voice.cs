@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CP2P_Voice : ITypedProtobuf<CP2P_Voice>
 {
-  static CP2P_Voice ITypedProtobuf<CP2P_Voice>.Wrap(nint handle) => new CP2P_VoiceImpl(handle);
+  static CP2P_Voice ITypedProtobuf<CP2P_Voice>.Wrap(nint handle, bool isManuallyAllocated) => new CP2P_VoiceImpl(handle, isManuallyAllocated);
 
 
   public CMsgVoiceAudio Audio { get; }

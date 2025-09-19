@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMessage_DllStatus_CVDiagnostic : ITypedProtobuf<CUserMessage_DllStatus_CVDiagnostic>
 {
-  static CUserMessage_DllStatus_CVDiagnostic ITypedProtobuf<CUserMessage_DllStatus_CVDiagnostic>.Wrap(nint handle) => new CUserMessage_DllStatus_CVDiagnosticImpl(handle);
+  static CUserMessage_DllStatus_CVDiagnostic ITypedProtobuf<CUserMessage_DllStatus_CVDiagnostic>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessage_DllStatus_CVDiagnosticImpl(handle, isManuallyAllocated);
 
 
   public uint Id { get; set; }

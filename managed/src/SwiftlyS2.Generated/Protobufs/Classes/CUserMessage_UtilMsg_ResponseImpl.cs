@@ -9,21 +9,21 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessage_UtilMsg_ResponseImpl : TypedProtobuf<CUserMessage_UtilMsg_Response>, CUserMessage_UtilMsg_Response
 {
-  public CUserMessage_UtilMsg_ResponseImpl(nint handle): base(handle)
+  public CUserMessage_UtilMsg_ResponseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
-  public int Crc
-  { get => Accessor.GetInt32("crc"); set => Accessor.SetInt32("crc", value); }
+  public uint Crc
+  { get => Accessor.GetUInt32("crc"); set => Accessor.SetUInt32("crc", value); }
 
 
   public int ItemCount
   { get => Accessor.GetInt32("item_count"); set => Accessor.SetInt32("item_count", value); }
 
 
-  public int Crc2
-  { get => Accessor.GetInt32("crc2"); set => Accessor.SetInt32("crc2", value); }
+  public uint Crc2
+  { get => Accessor.GetUInt32("crc2"); set => Accessor.SetUInt32("crc2", value); }
 
 
   public int ItemCount2

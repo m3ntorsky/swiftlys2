@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOItemCriteriaCondition : ITypedProtobuf<CSOItemCriteriaCondition>
 {
-  static CSOItemCriteriaCondition ITypedProtobuf<CSOItemCriteriaCondition>.Wrap(nint handle) => new CSOItemCriteriaConditionImpl(handle);
+  static CSOItemCriteriaCondition ITypedProtobuf<CSOItemCriteriaCondition>.Wrap(nint handle, bool isManuallyAllocated) => new CSOItemCriteriaConditionImpl(handle, isManuallyAllocated);
 
 
   public int Op { get; set; }

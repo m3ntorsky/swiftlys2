@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CAttribute_StringImpl : TypedProtobuf<CAttribute_String>, CAttribute_String
 {
-  public CAttribute_StringImpl(nint handle): base(handle)
+  public CAttribute_StringImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

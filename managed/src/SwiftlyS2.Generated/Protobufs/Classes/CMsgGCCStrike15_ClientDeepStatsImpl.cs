@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_ClientDeepStatsImpl : TypedProtobuf<CMsgGCCStrike15_ClientDeepStats>, CMsgGCCStrike15_ClientDeepStats
 {
-  public CMsgGCCStrike15_ClientDeepStatsImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_ClientDeepStatsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,7 +19,7 @@ internal class CMsgGCCStrike15_ClientDeepStatsImpl : TypedProtobuf<CMsgGCCStrike
 
 
   public CMsgGCCStrike15_ClientDeepStats_DeepStatsRange Range
-  { get => new CMsgGCCStrike15_ClientDeepStats_DeepStatsRangeImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "range")); }
+  { get => new CMsgGCCStrike15_ClientDeepStats_DeepStatsRangeImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "range"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgGCCStrike15_ClientDeepStats_DeepStatsMatch> Matches

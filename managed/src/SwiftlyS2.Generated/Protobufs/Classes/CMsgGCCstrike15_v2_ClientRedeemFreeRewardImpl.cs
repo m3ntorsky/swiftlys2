@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCstrike15_v2_ClientRedeemFreeRewardImpl : TypedProtobuf<CMsgGCCstrike15_v2_ClientRedeemFreeReward>, CMsgGCCstrike15_v2_ClientRedeemFreeReward
 {
-  public CMsgGCCstrike15_v2_ClientRedeemFreeRewardImpl(nint handle): base(handle)
+  public CMsgGCCstrike15_v2_ClientRedeemFreeRewardImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

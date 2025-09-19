@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CQuest_PublisherAddCommunityItemsToPlayer_Request_Attribute : ITypedProtobuf<CQuest_PublisherAddCommunityItemsToPlayer_Request_Attribute>
 {
-  static CQuest_PublisherAddCommunityItemsToPlayer_Request_Attribute ITypedProtobuf<CQuest_PublisherAddCommunityItemsToPlayer_Request_Attribute>.Wrap(nint handle) => new CQuest_PublisherAddCommunityItemsToPlayer_Request_AttributeImpl(handle);
+  static CQuest_PublisherAddCommunityItemsToPlayer_Request_Attribute ITypedProtobuf<CQuest_PublisherAddCommunityItemsToPlayer_Request_Attribute>.Wrap(nint handle, bool isManuallyAllocated) => new CQuest_PublisherAddCommunityItemsToPlayer_Request_AttributeImpl(handle, isManuallyAllocated);
 
 
   public uint Attribute { get; set; }

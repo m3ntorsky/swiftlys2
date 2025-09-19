@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class PlayerRankingInfoImpl : TypedProtobuf<PlayerRankingInfo>, PlayerRankingInfo
 {
-  public PlayerRankingInfoImpl(nint handle): base(handle)
+  public PlayerRankingInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

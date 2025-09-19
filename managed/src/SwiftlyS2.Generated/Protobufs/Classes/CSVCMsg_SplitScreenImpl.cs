@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_SplitScreenImpl : NetMessage<CSVCMsg_SplitScreen>, CSVCMsg_SplitScreen
 {
-  public CSVCMsg_SplitScreenImpl(nint handle): base(handle)
+  public CSVCMsg_SplitScreenImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

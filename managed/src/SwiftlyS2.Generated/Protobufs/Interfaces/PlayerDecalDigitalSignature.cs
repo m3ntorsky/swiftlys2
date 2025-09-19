@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface PlayerDecalDigitalSignature : ITypedProtobuf<PlayerDecalDigitalSignature>
 {
-  static PlayerDecalDigitalSignature ITypedProtobuf<PlayerDecalDigitalSignature>.Wrap(nint handle) => new PlayerDecalDigitalSignatureImpl(handle);
+  static PlayerDecalDigitalSignature ITypedProtobuf<PlayerDecalDigitalSignature>.Wrap(nint handle, bool isManuallyAllocated) => new PlayerDecalDigitalSignatureImpl(handle, isManuallyAllocated);
 
 
   public byte[] Signature { get; set; }

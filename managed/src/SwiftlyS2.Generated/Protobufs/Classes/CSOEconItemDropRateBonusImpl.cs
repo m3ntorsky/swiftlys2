@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOEconItemDropRateBonusImpl : TypedProtobuf<CSOEconItemDropRateBonus>, CSOEconItemDropRateBonus
 {
-  public CSOEconItemDropRateBonusImpl(nint handle): base(handle)
+  public CSOEconItemDropRateBonusImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -18,8 +18,8 @@ internal class CSOEconItemDropRateBonusImpl : TypedProtobuf<CSOEconItemDropRateB
   { get => Accessor.GetUInt32("account_id"); set => Accessor.SetUInt32("account_id", value); }
 
 
-  public int ExpirationDate
-  { get => Accessor.GetInt32("expiration_date"); set => Accessor.SetInt32("expiration_date", value); }
+  public uint ExpirationDate
+  { get => Accessor.GetUInt32("expiration_date"); set => Accessor.SetUInt32("expiration_date", value); }
 
 
   public float Bonus

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCHRecurringSubscriptionStatusChangeImpl : TypedProtobuf<CMsgGCHRecurringSubscriptionStatusChange>, CMsgGCHRecurringSubscriptionStatusChange
 {
-  public CMsgGCHRecurringSubscriptionStatusChangeImpl(nint handle): base(handle)
+  public CMsgGCHRecurringSubscriptionStatusChangeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

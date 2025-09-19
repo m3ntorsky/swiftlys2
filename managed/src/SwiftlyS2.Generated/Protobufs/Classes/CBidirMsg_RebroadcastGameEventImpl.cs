@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CBidirMsg_RebroadcastGameEventImpl : TypedProtobuf<CBidirMsg_RebroadcastGameEvent>, CBidirMsg_RebroadcastGameEvent
 {
-  public CBidirMsg_RebroadcastGameEventImpl(nint handle): base(handle)
+  public CBidirMsg_RebroadcastGameEventImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

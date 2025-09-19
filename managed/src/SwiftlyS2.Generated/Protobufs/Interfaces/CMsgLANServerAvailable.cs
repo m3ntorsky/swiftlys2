@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgLANServerAvailable : ITypedProtobuf<CMsgLANServerAvailable>
 {
-  static CMsgLANServerAvailable ITypedProtobuf<CMsgLANServerAvailable>.Wrap(nint handle) => new CMsgLANServerAvailableImpl(handle);
+  static CMsgLANServerAvailable ITypedProtobuf<CMsgLANServerAvailable>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgLANServerAvailableImpl(handle, isManuallyAllocated);
 
 
   public ulong LobbyId { get; set; }

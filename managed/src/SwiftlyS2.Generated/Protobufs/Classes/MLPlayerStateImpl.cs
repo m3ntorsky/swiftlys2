@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class MLPlayerStateImpl : TypedProtobuf<MLPlayerState>, MLPlayerState
 {
-  public MLPlayerStateImpl(nint handle): base(handle)
+  public MLPlayerStateImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

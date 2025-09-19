@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface C2S_CONNECT_Message : ITypedProtobuf<C2S_CONNECT_Message>
 {
-  static C2S_CONNECT_Message ITypedProtobuf<C2S_CONNECT_Message>.Wrap(nint handle) => new C2S_CONNECT_MessageImpl(handle);
+  static C2S_CONNECT_Message ITypedProtobuf<C2S_CONNECT_Message>.Wrap(nint handle, bool isManuallyAllocated) => new C2S_CONNECT_MessageImpl(handle, isManuallyAllocated);
 
 
   public uint HostVersion { get; set; }

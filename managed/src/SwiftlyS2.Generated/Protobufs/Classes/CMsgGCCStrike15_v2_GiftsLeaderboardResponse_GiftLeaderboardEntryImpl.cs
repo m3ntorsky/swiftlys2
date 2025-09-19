@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_GiftsLeaderboardResponse_GiftLeaderboardEntryImpl : TypedProtobuf<CMsgGCCStrike15_v2_GiftsLeaderboardResponse_GiftLeaderboardEntry>, CMsgGCCStrike15_v2_GiftsLeaderboardResponse_GiftLeaderboardEntry
 {
-  public CMsgGCCStrike15_v2_GiftsLeaderboardResponse_GiftLeaderboardEntryImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_GiftsLeaderboardResponse_GiftLeaderboardEntryImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

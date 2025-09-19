@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_SetViewImpl : NetMessage<CSVCMsg_SetView>, CSVCMsg_SetView
 {
-  public CSVCMsg_SetViewImpl(nint handle): base(handle)
+  public CSVCMsg_SetViewImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

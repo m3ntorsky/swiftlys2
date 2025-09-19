@@ -33,7 +33,7 @@ internal static class NativePlayerManager {
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _SendMessage(kind, messageBufferPtr);
+        _SendMessage(kind, messageBufferPtr);
     pool.Return(messageBuffer);
 
   }

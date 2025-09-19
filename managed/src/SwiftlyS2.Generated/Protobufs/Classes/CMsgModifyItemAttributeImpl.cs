@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgModifyItemAttributeImpl : TypedProtobuf<CMsgModifyItemAttribute>, CMsgModifyItemAttribute
 {
-  public CMsgModifyItemAttributeImpl(nint handle): base(handle)
+  public CMsgModifyItemAttributeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

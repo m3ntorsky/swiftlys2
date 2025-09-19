@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMsg_ParticleManager_UpdateParticleFwd_OBSOLETE : ITypedProtobuf<CUserMsg_ParticleManager_UpdateParticleFwd_OBSOLETE>
 {
-  static CUserMsg_ParticleManager_UpdateParticleFwd_OBSOLETE ITypedProtobuf<CUserMsg_ParticleManager_UpdateParticleFwd_OBSOLETE>.Wrap(nint handle) => new CUserMsg_ParticleManager_UpdateParticleFwd_OBSOLETEImpl(handle);
+  static CUserMsg_ParticleManager_UpdateParticleFwd_OBSOLETE ITypedProtobuf<CUserMsg_ParticleManager_UpdateParticleFwd_OBSOLETE>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMsg_ParticleManager_UpdateParticleFwd_OBSOLETEImpl(handle, isManuallyAllocated);
 
 
   public int ControlPoint { get; set; }

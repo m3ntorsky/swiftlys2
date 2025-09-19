@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface GameServerPing : ITypedProtobuf<GameServerPing>
 {
-  static GameServerPing ITypedProtobuf<GameServerPing>.Wrap(nint handle) => new GameServerPingImpl(handle);
+  static GameServerPing ITypedProtobuf<GameServerPing>.Wrap(nint handle, bool isManuallyAllocated) => new GameServerPingImpl(handle, isManuallyAllocated);
 
 
   public int Ping { get; set; }

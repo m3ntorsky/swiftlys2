@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class PlayerCommendationInfoImpl : TypedProtobuf<PlayerCommendationInfo>, PlayerCommendationInfo
 {
-  public PlayerCommendationInfoImpl(nint handle): base(handle)
+  public PlayerCommendationInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

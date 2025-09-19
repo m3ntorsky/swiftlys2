@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface IpAddressMask : ITypedProtobuf<IpAddressMask>
 {
-  static IpAddressMask ITypedProtobuf<IpAddressMask>.Wrap(nint handle) => new IpAddressMaskImpl(handle);
+  static IpAddressMask ITypedProtobuf<IpAddressMask>.Wrap(nint handle, bool isManuallyAllocated) => new IpAddressMaskImpl(handle, isManuallyAllocated);
 
 
   public uint A { get; set; }

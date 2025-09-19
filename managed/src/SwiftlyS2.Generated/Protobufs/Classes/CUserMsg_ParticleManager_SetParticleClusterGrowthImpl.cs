@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_SetParticleClusterGrowthImpl : TypedProtobuf<CUserMsg_ParticleManager_SetParticleClusterGrowth>, CUserMsg_ParticleManager_SetParticleClusterGrowth
 {
-  public CUserMsg_ParticleManager_SetParticleClusterGrowthImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_SetParticleClusterGrowthImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

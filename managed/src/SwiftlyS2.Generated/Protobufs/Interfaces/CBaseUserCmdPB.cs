@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CBaseUserCmdPB : ITypedProtobuf<CBaseUserCmdPB>
 {
-  static CBaseUserCmdPB ITypedProtobuf<CBaseUserCmdPB>.Wrap(nint handle) => new CBaseUserCmdPBImpl(handle);
+  static CBaseUserCmdPB ITypedProtobuf<CBaseUserCmdPB>.Wrap(nint handle, bool isManuallyAllocated) => new CBaseUserCmdPBImpl(handle, isManuallyAllocated);
 
 
   public int LegacyCommandNumber { get; set; }

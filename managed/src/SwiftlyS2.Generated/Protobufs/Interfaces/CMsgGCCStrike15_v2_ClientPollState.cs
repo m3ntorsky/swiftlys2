@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_ClientPollState : ITypedProtobuf<CMsgGCCStrike15_v2_ClientPollState>
 {
-  static CMsgGCCStrike15_v2_ClientPollState ITypedProtobuf<CMsgGCCStrike15_v2_ClientPollState>.Wrap(nint handle) => new CMsgGCCStrike15_v2_ClientPollStateImpl(handle);
+  static CMsgGCCStrike15_v2_ClientPollState ITypedProtobuf<CMsgGCCStrike15_v2_ClientPollState>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_ClientPollStateImpl(handle, isManuallyAllocated);
 
 
   public uint Pollid { get; set; }

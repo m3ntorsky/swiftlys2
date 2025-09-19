@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_PostRoundDamageReportImpl : NetMessage<CCSUsrMsg_PostRoundDamageReport>, CCSUsrMsg_PostRoundDamageReport
 {
-  public CCSUsrMsg_PostRoundDamageReportImpl(nint handle): base(handle)
+  public CCSUsrMsg_PostRoundDamageReportImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

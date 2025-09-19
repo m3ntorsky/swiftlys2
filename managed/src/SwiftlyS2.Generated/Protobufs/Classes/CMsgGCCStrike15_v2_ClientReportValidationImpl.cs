@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientReportValidationImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientReportValidation>, CMsgGCCStrike15_v2_ClientReportValidation
 {
-  public CMsgGCCStrike15_v2_ClientReportValidationImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientReportValidationImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

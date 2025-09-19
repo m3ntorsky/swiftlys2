@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface VacNetShot : ITypedProtobuf<VacNetShot>
 {
-  static VacNetShot ITypedProtobuf<VacNetShot>.Wrap(nint handle) => new VacNetShotImpl(handle);
+  static VacNetShot ITypedProtobuf<VacNetShot>.Wrap(nint handle, bool isManuallyAllocated) => new VacNetShotImpl(handle, isManuallyAllocated);
 
 
   public ulong SteamidPlayer { get; set; }

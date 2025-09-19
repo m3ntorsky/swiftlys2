@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class VacNetShotImpl : TypedProtobuf<VacNetShot>, VacNetShot
 {
-  public VacNetShotImpl(nint handle): base(handle)
+  public VacNetShotImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

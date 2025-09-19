@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOAccountItemPersonalStoreImpl : TypedProtobuf<CSOAccountItemPersonalStore>, CSOAccountItemPersonalStore
 {
-  public CSOAccountItemPersonalStoreImpl(nint handle): base(handle)
+  public CSOAccountItemPersonalStoreImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

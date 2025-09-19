@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class C2S_CONNECT_SameProcessCheckImpl : TypedProtobuf<C2S_CONNECT_SameProcessCheck>, C2S_CONNECT_SameProcessCheck
 {
-  public C2S_CONNECT_SameProcessCheckImpl(nint handle): base(handle)
+  public C2S_CONNECT_SameProcessCheckImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

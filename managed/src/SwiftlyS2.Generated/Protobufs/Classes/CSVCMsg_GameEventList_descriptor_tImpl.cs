@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_GameEventList_descriptor_tImpl : TypedProtobuf<CSVCMsg_GameEventList_descriptor_t>, CSVCMsg_GameEventList_descriptor_t
 {
-  public CSVCMsg_GameEventList_descriptor_tImpl(nint handle): base(handle)
+  public CSVCMsg_GameEventList_descriptor_tImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

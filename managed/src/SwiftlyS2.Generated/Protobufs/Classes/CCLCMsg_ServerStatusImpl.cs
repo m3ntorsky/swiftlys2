@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCLCMsg_ServerStatusImpl : NetMessage<CCLCMsg_ServerStatus>, CCLCMsg_ServerStatus
 {
-  public CCLCMsg_ServerStatusImpl(nint handle): base(handle)
+  public CCLCMsg_ServerStatusImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

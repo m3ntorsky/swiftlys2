@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCStorePurchaseFinalizeImpl : TypedProtobuf<CMsgGCStorePurchaseFinalize>, CMsgGCStorePurchaseFinalize
 {
-  public CMsgGCStorePurchaseFinalizeImpl(nint handle): base(handle)
+  public CMsgGCStorePurchaseFinalizeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

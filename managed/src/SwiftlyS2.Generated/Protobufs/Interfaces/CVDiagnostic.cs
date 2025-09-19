@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CVDiagnostic : ITypedProtobuf<CVDiagnostic>
 {
-  static CVDiagnostic ITypedProtobuf<CVDiagnostic>.Wrap(nint handle) => new CVDiagnosticImpl(handle);
+  static CVDiagnostic ITypedProtobuf<CVDiagnostic>.Wrap(nint handle, bool isManuallyAllocated) => new CVDiagnosticImpl(handle, isManuallyAllocated);
 
 
   public uint Id { get; set; }

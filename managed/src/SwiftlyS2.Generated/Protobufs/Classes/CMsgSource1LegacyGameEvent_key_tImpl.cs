@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSource1LegacyGameEvent_key_tImpl : TypedProtobuf<CMsgSource1LegacyGameEvent_key_t>, CMsgSource1LegacyGameEvent_key_t
 {
-  public CMsgSource1LegacyGameEvent_key_tImpl(nint handle): base(handle)
+  public CMsgSource1LegacyGameEvent_key_tImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

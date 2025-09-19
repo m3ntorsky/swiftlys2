@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientPollStateImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientPollState>, CMsgGCCStrike15_v2_ClientPollState
 {
-  public CMsgGCCStrike15_v2_ClientPollStateImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientPollStateImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

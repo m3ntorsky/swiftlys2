@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOEconEquipSlot : ITypedProtobuf<CSOEconEquipSlot>
 {
-  static CSOEconEquipSlot ITypedProtobuf<CSOEconEquipSlot>.Wrap(nint handle) => new CSOEconEquipSlotImpl(handle);
+  static CSOEconEquipSlot ITypedProtobuf<CSOEconEquipSlot>.Wrap(nint handle, bool isManuallyAllocated) => new CSOEconEquipSlotImpl(handle, isManuallyAllocated);
 
 
   public uint AccountId { get; set; }

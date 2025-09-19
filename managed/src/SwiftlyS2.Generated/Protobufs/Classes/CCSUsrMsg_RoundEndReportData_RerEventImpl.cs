@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_RoundEndReportData_RerEventImpl : TypedProtobuf<CCSUsrMsg_RoundEndReportData_RerEvent>, CCSUsrMsg_RoundEndReportData_RerEvent
 {
-  public CCSUsrMsg_RoundEndReportData_RerEventImpl(nint handle): base(handle)
+  public CCSUsrMsg_RoundEndReportData_RerEventImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -31,11 +31,11 @@ internal class CCSUsrMsg_RoundEndReportData_RerEventImpl : TypedProtobuf<CCSUsrM
 
 
   public CCSUsrMsg_RoundEndReportData_RerEvent_Victim VictimData
-  { get => new CCSUsrMsg_RoundEndReportData_RerEvent_VictimImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "victim_data")); }
+  { get => new CCSUsrMsg_RoundEndReportData_RerEvent_VictimImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "victim_data"), false); }
 
 
   public CCSUsrMsg_RoundEndReportData_RerEvent_Objective ObjectiveData
-  { get => new CCSUsrMsg_RoundEndReportData_RerEvent_ObjectiveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "objective_data")); }
+  { get => new CCSUsrMsg_RoundEndReportData_RerEvent_ObjectiveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "objective_data"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CCSUsrMsg_RoundEndReportData_RerEvent_Damage> AllDamageData

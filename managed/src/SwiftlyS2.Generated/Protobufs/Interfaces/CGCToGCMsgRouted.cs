@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CGCToGCMsgRouted : ITypedProtobuf<CGCToGCMsgRouted>
 {
-  static CGCToGCMsgRouted ITypedProtobuf<CGCToGCMsgRouted>.Wrap(nint handle) => new CGCToGCMsgRoutedImpl(handle);
+  static CGCToGCMsgRouted ITypedProtobuf<CGCToGCMsgRouted>.Wrap(nint handle, bool isManuallyAllocated) => new CGCToGCMsgRoutedImpl(handle, isManuallyAllocated);
 
 
   public uint MsgType { get; set; }

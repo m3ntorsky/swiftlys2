@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSGOInterpolationInfoPBImpl : TypedProtobuf<CSGOInterpolationInfoPB>, CSGOInterpolationInfoPB
 {
-  public CSGOInterpolationInfoPBImpl(nint handle): base(handle)
+  public CSGOInterpolationInfoPBImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

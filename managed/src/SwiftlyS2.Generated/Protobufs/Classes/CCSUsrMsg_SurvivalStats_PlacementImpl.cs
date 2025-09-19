@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_SurvivalStats_PlacementImpl : TypedProtobuf<CCSUsrMsg_SurvivalStats_Placement>, CCSUsrMsg_SurvivalStats_Placement
 {
-  public CCSUsrMsg_SurvivalStats_PlacementImpl(nint handle): base(handle)
+  public CCSUsrMsg_SurvivalStats_PlacementImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

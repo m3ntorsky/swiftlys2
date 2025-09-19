@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CGameServers_AggregationQuery_RequestImpl : TypedProtobuf<CGameServers_AggregationQuery_Request>, CGameServers_AggregationQuery_Request
 {
-  public CGameServers_AggregationQuery_RequestImpl(nint handle): base(handle)
+  public CGameServers_AggregationQuery_RequestImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

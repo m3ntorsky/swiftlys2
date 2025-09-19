@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CEntityMessageRemoveAllDecalsImpl : TypedProtobuf<CEntityMessageRemoveAllDecals>, CEntityMessageRemoveAllDecals
 {
-  public CEntityMessageRemoveAllDecalsImpl(nint handle): base(handle)
+  public CEntityMessageRemoveAllDecalsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,6 +19,6 @@ internal class CEntityMessageRemoveAllDecalsImpl : TypedProtobuf<CEntityMessageR
 
 
   public CEntityMsg EntityMsg
-  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "entity_msg")); }
+  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "entity_msg"), false); }
 
 }

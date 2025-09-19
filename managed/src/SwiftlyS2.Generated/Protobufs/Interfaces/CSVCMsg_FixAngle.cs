@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSVCMsg_FixAngle : ITypedProtobuf<CSVCMsg_FixAngle>
 {
-  static CSVCMsg_FixAngle ITypedProtobuf<CSVCMsg_FixAngle>.Wrap(nint handle) => new CSVCMsg_FixAngleImpl(handle);
+  static CSVCMsg_FixAngle ITypedProtobuf<CSVCMsg_FixAngle>.Wrap(nint handle, bool isManuallyAllocated) => new CSVCMsg_FixAngleImpl(handle, isManuallyAllocated);
 
 
   public bool Relative { get; set; }

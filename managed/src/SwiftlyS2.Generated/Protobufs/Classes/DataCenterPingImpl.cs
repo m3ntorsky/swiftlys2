@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class DataCenterPingImpl : TypedProtobuf<DataCenterPing>, DataCenterPing
 {
-  public DataCenterPingImpl(nint handle): base(handle)
+  public DataCenterPingImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
-  public int DataCenterId
-  { get => Accessor.GetInt32("data_center_id"); set => Accessor.SetInt32("data_center_id", value); }
+  public uint DataCenterId
+  { get => Accessor.GetUInt32("data_center_id"); set => Accessor.SetUInt32("data_center_id", value); }
 
 
   public int Ping

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_PremierSeasonSummary : ITypedProtobuf<CMsgGCCStrike15_v2_PremierSeasonSummary>
 {
-  static CMsgGCCStrike15_v2_PremierSeasonSummary ITypedProtobuf<CMsgGCCStrike15_v2_PremierSeasonSummary>.Wrap(nint handle) => new CMsgGCCStrike15_v2_PremierSeasonSummaryImpl(handle);
+  static CMsgGCCStrike15_v2_PremierSeasonSummary ITypedProtobuf<CMsgGCCStrike15_v2_PremierSeasonSummary>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_PremierSeasonSummaryImpl(handle, isManuallyAllocated);
 
 
   public uint AccountId { get; set; }

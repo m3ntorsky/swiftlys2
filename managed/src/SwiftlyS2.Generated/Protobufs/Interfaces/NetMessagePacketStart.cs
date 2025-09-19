@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface NetMessagePacketStart : ITypedProtobuf<NetMessagePacketStart>
 {
-  static NetMessagePacketStart ITypedProtobuf<NetMessagePacketStart>.Wrap(nint handle) => new NetMessagePacketStartImpl(handle);
+  static NetMessagePacketStart ITypedProtobuf<NetMessagePacketStart>.Wrap(nint handle, bool isManuallyAllocated) => new NetMessagePacketStartImpl(handle, isManuallyAllocated);
 
 
 }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSVCMsg_TempEntities : ITypedProtobuf<CSVCMsg_TempEntities>
 {
-  static CSVCMsg_TempEntities ITypedProtobuf<CSVCMsg_TempEntities>.Wrap(nint handle) => new CSVCMsg_TempEntitiesImpl(handle);
+  static CSVCMsg_TempEntities ITypedProtobuf<CSVCMsg_TempEntities>.Wrap(nint handle, bool isManuallyAllocated) => new CSVCMsg_TempEntitiesImpl(handle, isManuallyAllocated);
 
 
   public bool Reliable { get; set; }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_ClientPartyWarning_Entry : ITypedProtobuf<CMsgGCCStrike15_v2_ClientPartyWarning_Entry>
 {
-  static CMsgGCCStrike15_v2_ClientPartyWarning_Entry ITypedProtobuf<CMsgGCCStrike15_v2_ClientPartyWarning_Entry>.Wrap(nint handle) => new CMsgGCCStrike15_v2_ClientPartyWarning_EntryImpl(handle);
+  static CMsgGCCStrike15_v2_ClientPartyWarning_Entry ITypedProtobuf<CMsgGCCStrike15_v2_ClientPartyWarning_Entry>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_ClientPartyWarning_EntryImpl(handle, isManuallyAllocated);
 
 
   public uint Accountid { get; set; }

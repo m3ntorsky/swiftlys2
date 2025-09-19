@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgReplayUploadedToYouTube : ITypedProtobuf<CMsgReplayUploadedToYouTube>
 {
-  static CMsgReplayUploadedToYouTube ITypedProtobuf<CMsgReplayUploadedToYouTube>.Wrap(nint handle) => new CMsgReplayUploadedToYouTubeImpl(handle);
+  static CMsgReplayUploadedToYouTube ITypedProtobuf<CMsgReplayUploadedToYouTube>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgReplayUploadedToYouTubeImpl(handle, isManuallyAllocated);
 
 
   public string YoutubeUrl { get; set; }

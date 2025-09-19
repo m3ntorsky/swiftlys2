@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CP2P_VRAvatarPosition_COrientation : ITypedProtobuf<CP2P_VRAvatarPosition_COrientation>
 {
-  static CP2P_VRAvatarPosition_COrientation ITypedProtobuf<CP2P_VRAvatarPosition_COrientation>.Wrap(nint handle) => new CP2P_VRAvatarPosition_COrientationImpl(handle);
+  static CP2P_VRAvatarPosition_COrientation ITypedProtobuf<CP2P_VRAvatarPosition_COrientation>.Wrap(nint handle, bool isManuallyAllocated) => new CP2P_VRAvatarPosition_COrientationImpl(handle, isManuallyAllocated);
 
 
   public Vector Pos { get; set; }

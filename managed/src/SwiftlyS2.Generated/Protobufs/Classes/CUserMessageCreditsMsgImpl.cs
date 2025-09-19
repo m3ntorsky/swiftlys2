@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageCreditsMsgImpl : NetMessage<CUserMessageCreditsMsg>, CUserMessageCreditsMsg
 {
-  public CUserMessageCreditsMsgImpl(nint handle): base(handle)
+  public CUserMessageCreditsMsgImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

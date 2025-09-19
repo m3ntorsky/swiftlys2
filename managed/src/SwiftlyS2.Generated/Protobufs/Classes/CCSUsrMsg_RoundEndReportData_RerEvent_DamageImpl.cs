@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_RoundEndReportData_RerEvent_DamageImpl : TypedProtobuf<CCSUsrMsg_RoundEndReportData_RerEvent_Damage>, CCSUsrMsg_RoundEndReportData_RerEvent_Damage
 {
-  public CCSUsrMsg_RoundEndReportData_RerEvent_DamageImpl(nint handle): base(handle)
+  public CCSUsrMsg_RoundEndReportData_RerEvent_DamageImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

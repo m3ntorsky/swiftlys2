@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CEntityMessageDoSparkImpl : TypedProtobuf<CEntityMessageDoSpark>, CEntityMessageDoSpark
 {
-  public CEntityMessageDoSparkImpl(nint handle): base(handle)
+  public CEntityMessageDoSparkImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -26,8 +26,8 @@ internal class CEntityMessageDoSparkImpl : TypedProtobuf<CEntityMessageDoSpark>,
   { get => Accessor.GetFloat("radius"); set => Accessor.SetFloat("radius", value); }
 
 
-  public int Color
-  { get => Accessor.GetInt32("color"); set => Accessor.SetInt32("color", value); }
+  public uint Color
+  { get => Accessor.GetUInt32("color"); set => Accessor.SetUInt32("color", value); }
 
 
   public uint Beams
@@ -43,6 +43,6 @@ internal class CEntityMessageDoSparkImpl : TypedProtobuf<CEntityMessageDoSpark>,
 
 
   public CEntityMsg EntityMsg
-  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "entity_msg")); }
+  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "entity_msg"), false); }
 
 }

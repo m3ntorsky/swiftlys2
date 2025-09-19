@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientToGCRequestTicketImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientToGCRequestTicket>, CMsgGCCStrike15_v2_ClientToGCRequestTicket
 {
-  public CMsgGCCStrike15_v2_ClientToGCRequestTicketImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientToGCRequestTicketImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -18,8 +18,8 @@ internal class CMsgGCCStrike15_v2_ClientToGCRequestTicketImpl : TypedProtobuf<CM
   { get => Accessor.GetUInt64("authorized_steam_id"); set => Accessor.SetUInt64("authorized_steam_id", value); }
 
 
-  public int AuthorizedPublicIp
-  { get => Accessor.GetInt32("authorized_public_ip"); set => Accessor.SetInt32("authorized_public_ip", value); }
+  public uint AuthorizedPublicIp
+  { get => Accessor.GetUInt32("authorized_public_ip"); set => Accessor.SetUInt32("authorized_public_ip", value); }
 
 
   public ulong GameserverSteamId

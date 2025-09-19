@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_EndOfMatchAllPlayersData_AccoladeImpl : TypedProtobuf<CCSUsrMsg_EndOfMatchAllPlayersData_Accolade>, CCSUsrMsg_EndOfMatchAllPlayersData_Accolade
 {
-  public CCSUsrMsg_EndOfMatchAllPlayersData_AccoladeImpl(nint handle): base(handle)
+  public CCSUsrMsg_EndOfMatchAllPlayersData_AccoladeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

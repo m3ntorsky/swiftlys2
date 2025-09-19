@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCErrorImpl : TypedProtobuf<CMsgGCError>, CMsgGCError
 {
-  public CMsgGCErrorImpl(nint handle): base(handle)
+  public CMsgGCErrorImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

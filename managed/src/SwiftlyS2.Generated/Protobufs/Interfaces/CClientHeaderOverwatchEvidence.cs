@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CClientHeaderOverwatchEvidence : ITypedProtobuf<CClientHeaderOverwatchEvidence>
 {
-  static CClientHeaderOverwatchEvidence ITypedProtobuf<CClientHeaderOverwatchEvidence>.Wrap(nint handle) => new CClientHeaderOverwatchEvidenceImpl(handle);
+  static CClientHeaderOverwatchEvidence ITypedProtobuf<CClientHeaderOverwatchEvidence>.Wrap(nint handle, bool isManuallyAllocated) => new CClientHeaderOverwatchEvidenceImpl(handle, isManuallyAllocated);
 
 
   public uint Accountid { get; set; }

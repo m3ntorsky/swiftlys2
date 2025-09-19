@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_ServerSteamIDImpl : NetMessage<CSVCMsg_ServerSteamID>, CSVCMsg_ServerSteamID
 {
-  public CSVCMsg_ServerSteamIDImpl(nint handle): base(handle)
+  public CSVCMsg_ServerSteamIDImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

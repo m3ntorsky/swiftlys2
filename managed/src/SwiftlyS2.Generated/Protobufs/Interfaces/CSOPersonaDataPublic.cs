@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOPersonaDataPublic : ITypedProtobuf<CSOPersonaDataPublic>
 {
-  static CSOPersonaDataPublic ITypedProtobuf<CSOPersonaDataPublic>.Wrap(nint handle) => new CSOPersonaDataPublicImpl(handle);
+  static CSOPersonaDataPublic ITypedProtobuf<CSOPersonaDataPublic>.Wrap(nint handle, bool isManuallyAllocated) => new CSOPersonaDataPublicImpl(handle, isManuallyAllocated);
 
 
   public int PlayerLevel { get; set; }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCMultiplexMessage : ITypedProtobuf<CMsgGCMultiplexMessage>
 {
-  static CMsgGCMultiplexMessage ITypedProtobuf<CMsgGCMultiplexMessage>.Wrap(nint handle) => new CMsgGCMultiplexMessageImpl(handle);
+  static CMsgGCMultiplexMessage ITypedProtobuf<CMsgGCMultiplexMessage>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCMultiplexMessageImpl(handle, isManuallyAllocated);
 
 
   public uint Msgtype { get; set; }

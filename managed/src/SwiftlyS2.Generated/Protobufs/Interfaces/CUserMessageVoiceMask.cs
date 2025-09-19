@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CUserMessageVoiceMask : ITypedProtobuf<CUserMessageVoiceMask>, INetMessage<CUserMessageVoiceMask>
+public interface CUserMessageVoiceMask : ITypedProtobuf<CUserMessageVoiceMask>, INetMessage<CUserMessageVoiceMask>, IDisposable
 {
   static int INetMessage<CUserMessageVoiceMask>.MessageId => 128;
   
   static string INetMessage<CUserMessageVoiceMask>.MessageName => "CUserMessageVoiceMask";
 
-  static CUserMessageVoiceMask ITypedProtobuf<CUserMessageVoiceMask>.Wrap(nint handle) => new CUserMessageVoiceMaskImpl(handle);
+  static CUserMessageVoiceMask ITypedProtobuf<CUserMessageVoiceMask>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessageVoiceMaskImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldValueType<uint> GamerulesMasks { get; }

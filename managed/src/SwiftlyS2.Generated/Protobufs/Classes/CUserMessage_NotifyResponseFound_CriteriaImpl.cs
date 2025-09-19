@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessage_NotifyResponseFound_CriteriaImpl : TypedProtobuf<CUserMessage_NotifyResponseFound_Criteria>, CUserMessage_NotifyResponseFound_Criteria
 {
-  public CUserMessage_NotifyResponseFound_CriteriaImpl(nint handle): base(handle)
+  public CUserMessage_NotifyResponseFound_CriteriaImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

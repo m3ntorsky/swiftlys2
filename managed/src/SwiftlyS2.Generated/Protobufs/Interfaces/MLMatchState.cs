@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface MLMatchState : ITypedProtobuf<MLMatchState>
 {
-  static MLMatchState ITypedProtobuf<MLMatchState>.Wrap(nint handle) => new MLMatchStateImpl(handle);
+  static MLMatchState ITypedProtobuf<MLMatchState>.Wrap(nint handle, bool isManuallyAllocated) => new MLMatchStateImpl(handle, isManuallyAllocated);
 
 
   public string GameMode { get; set; }

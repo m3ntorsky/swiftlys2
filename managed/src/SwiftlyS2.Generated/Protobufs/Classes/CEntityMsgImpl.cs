@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CEntityMsgImpl : TypedProtobuf<CEntityMsg>, CEntityMsg
 {
-  public CEntityMsgImpl(nint handle): base(handle)
+  public CEntityMsgImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

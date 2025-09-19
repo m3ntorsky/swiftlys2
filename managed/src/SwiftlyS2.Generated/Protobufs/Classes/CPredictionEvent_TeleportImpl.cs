@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CPredictionEvent_TeleportImpl : TypedProtobuf<CPredictionEvent_Teleport>, CPredictionEvent_Teleport
 {
-  public CPredictionEvent_TeleportImpl(nint handle): base(handle)
+  public CPredictionEvent_TeleportImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

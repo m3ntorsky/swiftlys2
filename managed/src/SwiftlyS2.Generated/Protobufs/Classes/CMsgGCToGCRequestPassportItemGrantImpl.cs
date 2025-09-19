@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCToGCRequestPassportItemGrantImpl : TypedProtobuf<CMsgGCToGCRequestPassportItemGrant>, CMsgGCToGCRequestPassportItemGrant
 {
-  public CMsgGCToGCRequestPassportItemGrantImpl(nint handle): base(handle)
+  public CMsgGCToGCRequestPassportItemGrantImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

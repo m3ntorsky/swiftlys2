@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_VoteSetupImpl : NetMessage<CCSUsrMsg_VoteSetup>, CCSUsrMsg_VoteSetup
 {
-  public CCSUsrMsg_VoteSetupImpl(nint handle): base(handle)
+  public CCSUsrMsg_VoteSetupImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

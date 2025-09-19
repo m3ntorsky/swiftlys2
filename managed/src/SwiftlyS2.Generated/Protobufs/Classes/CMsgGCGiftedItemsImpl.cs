@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCGiftedItemsImpl : TypedProtobuf<CMsgGCGiftedItems>, CMsgGCGiftedItems
 {
-  public CMsgGCGiftedItemsImpl(nint handle): base(handle)
+  public CMsgGCGiftedItemsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

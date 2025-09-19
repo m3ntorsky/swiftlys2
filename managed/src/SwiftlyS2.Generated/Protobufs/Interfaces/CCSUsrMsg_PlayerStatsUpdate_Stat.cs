@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCSUsrMsg_PlayerStatsUpdate_Stat : ITypedProtobuf<CCSUsrMsg_PlayerStatsUpdate_Stat>
 {
-  static CCSUsrMsg_PlayerStatsUpdate_Stat ITypedProtobuf<CCSUsrMsg_PlayerStatsUpdate_Stat>.Wrap(nint handle) => new CCSUsrMsg_PlayerStatsUpdate_StatImpl(handle);
+  static CCSUsrMsg_PlayerStatsUpdate_Stat ITypedProtobuf<CCSUsrMsg_PlayerStatsUpdate_Stat>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_PlayerStatsUpdate_StatImpl(handle, isManuallyAllocated);
 
 
   public int Idx { get; set; }

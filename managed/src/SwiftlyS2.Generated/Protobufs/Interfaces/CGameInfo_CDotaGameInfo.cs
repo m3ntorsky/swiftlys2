@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CGameInfo_CDotaGameInfo : ITypedProtobuf<CGameInfo_CDotaGameInfo>
 {
-  static CGameInfo_CDotaGameInfo ITypedProtobuf<CGameInfo_CDotaGameInfo>.Wrap(nint handle) => new CGameInfo_CDotaGameInfoImpl(handle);
+  static CGameInfo_CDotaGameInfo ITypedProtobuf<CGameInfo_CDotaGameInfo>.Wrap(nint handle, bool isManuallyAllocated) => new CGameInfo_CDotaGameInfoImpl(handle, isManuallyAllocated);
 
 
   public ulong MatchId { get; set; }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCSUsrMsg_EndOfMatchAllPlayersData_Accolade : ITypedProtobuf<CCSUsrMsg_EndOfMatchAllPlayersData_Accolade>
 {
-  static CCSUsrMsg_EndOfMatchAllPlayersData_Accolade ITypedProtobuf<CCSUsrMsg_EndOfMatchAllPlayersData_Accolade>.Wrap(nint handle) => new CCSUsrMsg_EndOfMatchAllPlayersData_AccoladeImpl(handle);
+  static CCSUsrMsg_EndOfMatchAllPlayersData_Accolade ITypedProtobuf<CCSUsrMsg_EndOfMatchAllPlayersData_Accolade>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_EndOfMatchAllPlayersData_AccoladeImpl(handle, isManuallyAllocated);
 
 
   public int Eaccolade { get; set; }

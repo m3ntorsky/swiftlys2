@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_SetEventFavoriteImpl : TypedProtobuf<CMsgGCCStrike15_v2_SetEventFavorite>, CMsgGCCStrike15_v2_SetEventFavorite
 {
-  public CMsgGCCStrike15_v2_SetEventFavoriteImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_SetEventFavoriteImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

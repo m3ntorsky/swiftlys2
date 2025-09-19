@@ -1,13 +1,54 @@
+using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.NetMessages;
 
 namespace SwiftlyS2.Core.NetMessages;
 
 
-internal class NetMessageService : IDisposable {
+internal class NetMessageService : INetMessageService, IDisposable {
+
+  private List<NetMessageHookCallback> _callbacks = new();
+  private ILoggerFactory _loggerFactory;
+  private object _lock = new();
 
 
-  public NetMessageService() {
+  public NetMessageService(ILoggerFactory loggerFactory) {
+    _loggerFactory = loggerFactory;
+  }
+
+  public Guid HookClientMessage<T>(INetMessageService.ClientNetMessageHandler<T> callback) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
+    var hook = new NetMessageClientHookCallback<T>(callback, _loggerFactory);
+    lock (_lock) {
+      _callbacks.Add(hook);
+    }
+    return hook.Guid;
+  }
+
+  public Guid HookServerMessage<T>(INetMessageService.ServerNetMessageHandler<T> callback) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
+    var hook = new NetMessageServerHookCallback<T>(callback, _loggerFactory);
+    lock (_lock) {
+      _callbacks.Add(hook);
+    }
+    return hook.Guid;
+  }
+
+  public void Unhook(Guid guid) {
+    lock (_lock) {
+      _callbacks.RemoveAll(callback => callback.Guid == guid);
+    }
+  }
+
+  public void UnhookClientMessage<T>() where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
+    lock (_lock) {
+      _callbacks.RemoveAll(callback => callback is NetMessageClientHookCallback<T>);
+    }
+  }
+  
+  public void UnhookServerMessage<T>() where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
+    lock (_lock) {
+      _callbacks.RemoveAll(callback => callback is NetMessageServerHookCallback<T>);
+    }
   }
 
   private nint AllocateNetMessage(int msgId) {
@@ -16,16 +57,44 @@ internal class NetMessageService : IDisposable {
     return handle;
   }
 
-  public T Create<T>() where T : ITypedProtobuf<T>, INetMessage<T> {
+  public T Create<T>() where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
     var handle = AllocateNetMessage(T.MessageId);
-    var message = T.Wrap(handle);
+    var message = T.Wrap(handle, true);
     return message;
   }
 
-  public void Send<T>(Action<T> configureMessage) where T : ITypedProtobuf<T>, INetMessage<T> {
+  public void Send<T>(Action<T> configureMessage) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
     var handle = AllocateNetMessage(T.MessageId);
-    var message = T.Wrap(handle);
+    var message = T.Wrap(handle, true);
     configureMessage(message);
-    NativeNetMessages.SendMessage(handle, T.MessageId, 0);
+    CRecipientFilter filter = new();
+    filter.AddAllPlayers();
+    NativeNetMessages.SendMessageToPlayers(handle, T.MessageId, filter.ToMask());
+  }
+
+  public void Send<T>(Action<T, CRecipientFilter> configureMessage) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
+    var handle = AllocateNetMessage(T.MessageId);
+    var message = T.Wrap(handle, true);
+    CRecipientFilter filter = new();
+    configureMessage(message, filter);
+    NativeNetMessages.SendMessageToPlayers(handle, T.MessageId, filter.ToMask());
+  }
+
+  public void SendToPlayer<T>(int playerId, Action<T> configureMessage) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
+    var handle = AllocateNetMessage(T.MessageId);
+    var message = T.Wrap(handle, true);
+    configureMessage(message);
+    CRecipientFilter filter = new();
+    filter.AddRecipient(playerId);
+    NativeNetMessages.SendMessageToPlayers(handle, T.MessageId, filter.ToMask());
+  }
+
+  public void Dispose() {
+    lock (_lock) {
+      foreach (var callback in _callbacks) {
+        callback.Dispose();
+      }
+      _callbacks.Clear();
+    }
   }
 }

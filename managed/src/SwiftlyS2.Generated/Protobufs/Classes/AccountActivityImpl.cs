@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class AccountActivityImpl : TypedProtobuf<AccountActivity>, AccountActivity
 {
-  public AccountActivityImpl(nint handle): base(handle)
+  public AccountActivityImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

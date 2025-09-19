@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_Party_Search : ITypedProtobuf<CMsgGCCStrike15_v2_Party_Search>
 {
-  static CMsgGCCStrike15_v2_Party_Search ITypedProtobuf<CMsgGCCStrike15_v2_Party_Search>.Wrap(nint handle) => new CMsgGCCStrike15_v2_Party_SearchImpl(handle);
+  static CMsgGCCStrike15_v2_Party_Search ITypedProtobuf<CMsgGCCStrike15_v2_Party_Search>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_Party_SearchImpl(handle, isManuallyAllocated);
 
 
   public uint Ver { get; set; }

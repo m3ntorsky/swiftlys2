@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMsg_ParticleManager_UpdateFan : ITypedProtobuf<CUserMsg_ParticleManager_UpdateFan>
 {
-  static CUserMsg_ParticleManager_UpdateFan ITypedProtobuf<CUserMsg_ParticleManager_UpdateFan>.Wrap(nint handle) => new CUserMsg_ParticleManager_UpdateFanImpl(handle);
+  static CUserMsg_ParticleManager_UpdateFan ITypedProtobuf<CUserMsg_ParticleManager_UpdateFan>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMsg_ParticleManager_UpdateFanImpl(handle, isManuallyAllocated);
 
 
   public bool Active { get; set; }

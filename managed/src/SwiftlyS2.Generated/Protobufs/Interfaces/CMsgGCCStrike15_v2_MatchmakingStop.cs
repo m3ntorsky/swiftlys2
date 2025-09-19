@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_MatchmakingStop : ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingStop>
 {
-  static CMsgGCCStrike15_v2_MatchmakingStop ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingStop>.Wrap(nint handle) => new CMsgGCCStrike15_v2_MatchmakingStopImpl(handle);
+  static CMsgGCCStrike15_v2_MatchmakingStop ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingStop>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_MatchmakingStopImpl(handle, isManuallyAllocated);
 
 
   public int Abandon { get; set; }

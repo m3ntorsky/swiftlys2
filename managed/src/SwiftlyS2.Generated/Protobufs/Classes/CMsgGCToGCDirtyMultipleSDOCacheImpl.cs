@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCToGCDirtyMultipleSDOCacheImpl : TypedProtobuf<CMsgGCToGCDirtyMultipleSDOCache>, CMsgGCToGCDirtyMultipleSDOCache
 {
-  public CMsgGCToGCDirtyMultipleSDOCacheImpl(nint handle): base(handle)
+  public CMsgGCToGCDirtyMultipleSDOCacheImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

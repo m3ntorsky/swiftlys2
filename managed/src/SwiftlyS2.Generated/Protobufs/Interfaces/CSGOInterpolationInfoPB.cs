@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSGOInterpolationInfoPB : ITypedProtobuf<CSGOInterpolationInfoPB>
 {
-  static CSGOInterpolationInfoPB ITypedProtobuf<CSGOInterpolationInfoPB>.Wrap(nint handle) => new CSGOInterpolationInfoPBImpl(handle);
+  static CSGOInterpolationInfoPB ITypedProtobuf<CSGOInterpolationInfoPB>.Wrap(nint handle, bool isManuallyAllocated) => new CSGOInterpolationInfoPBImpl(handle, isManuallyAllocated);
 
 
   public int SrcTick { get; set; }

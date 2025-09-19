@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class PlayerMedalsInfoImpl : TypedProtobuf<PlayerMedalsInfo>, PlayerMedalsInfo
 {
-  public PlayerMedalsInfoImpl(nint handle): base(handle)
+  public PlayerMedalsInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

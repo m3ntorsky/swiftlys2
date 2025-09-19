@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCLCMsg_HltvReplayImpl : NetMessage<CCLCMsg_HltvReplay>, CCLCMsg_HltvReplay
 {
-  public CCLCMsg_HltvReplayImpl(nint handle): base(handle)
+  public CCLCMsg_HltvReplayImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

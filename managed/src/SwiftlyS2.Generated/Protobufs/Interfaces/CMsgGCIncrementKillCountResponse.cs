@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCIncrementKillCountResponse : ITypedProtobuf<CMsgGCIncrementKillCountResponse>
 {
-  static CMsgGCIncrementKillCountResponse ITypedProtobuf<CMsgGCIncrementKillCountResponse>.Wrap(nint handle) => new CMsgGCIncrementKillCountResponseImpl(handle);
+  static CMsgGCIncrementKillCountResponse ITypedProtobuf<CMsgGCIncrementKillCountResponse>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCIncrementKillCountResponseImpl(handle, isManuallyAllocated);
 
 
   public uint KillerAccountId { get; set; }

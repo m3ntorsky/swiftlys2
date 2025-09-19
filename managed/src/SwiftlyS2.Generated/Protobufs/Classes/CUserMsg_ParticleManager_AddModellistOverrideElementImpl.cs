@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_AddModellistOverrideElementImpl : TypedProtobuf<CUserMsg_ParticleManager_AddModellistOverrideElement>, CUserMsg_ParticleManager_AddModellistOverrideElement
 {
-  public CUserMsg_ParticleManager_AddModellistOverrideElementImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_AddModellistOverrideElementImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CSVCMsg_VoiceData : ITypedProtobuf<CSVCMsg_VoiceData>, INetMessage<CSVCMsg_VoiceData>
+public interface CSVCMsg_VoiceData : ITypedProtobuf<CSVCMsg_VoiceData>, INetMessage<CSVCMsg_VoiceData>, IDisposable
 {
   static int INetMessage<CSVCMsg_VoiceData>.MessageId => 47;
   
   static string INetMessage<CSVCMsg_VoiceData>.MessageName => "CSVCMsg_VoiceData";
 
-  static CSVCMsg_VoiceData ITypedProtobuf<CSVCMsg_VoiceData>.Wrap(nint handle) => new CSVCMsg_VoiceDataImpl(handle);
+  static CSVCMsg_VoiceData ITypedProtobuf<CSVCMsg_VoiceData>.Wrap(nint handle, bool isManuallyAllocated) => new CSVCMsg_VoiceDataImpl(handle, isManuallyAllocated);
 
 
   public CMsgVoiceAudio Audio { get; }

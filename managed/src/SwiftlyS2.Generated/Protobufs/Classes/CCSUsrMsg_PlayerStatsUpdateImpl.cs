@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_PlayerStatsUpdateImpl : NetMessage<CCSUsrMsg_PlayerStatsUpdate>, CCSUsrMsg_PlayerStatsUpdate
 {
-  public CCSUsrMsg_PlayerStatsUpdateImpl(nint handle): base(handle)
+  public CCSUsrMsg_PlayerStatsUpdateImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface ProtoFlattenedSerializerField_t : ITypedProtobuf<ProtoFlattenedSerializerField_t>
 {
-  static ProtoFlattenedSerializerField_t ITypedProtobuf<ProtoFlattenedSerializerField_t>.Wrap(nint handle) => new ProtoFlattenedSerializerField_tImpl(handle);
+  static ProtoFlattenedSerializerField_t ITypedProtobuf<ProtoFlattenedSerializerField_t>.Wrap(nint handle, bool isManuallyAllocated) => new ProtoFlattenedSerializerField_tImpl(handle, isManuallyAllocated);
 
 
   public int VarTypeSym { get; set; }

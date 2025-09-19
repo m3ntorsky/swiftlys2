@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CEngineGotvSyncPacket : ITypedProtobuf<CEngineGotvSyncPacket>
 {
-  static CEngineGotvSyncPacket ITypedProtobuf<CEngineGotvSyncPacket>.Wrap(nint handle) => new CEngineGotvSyncPacketImpl(handle);
+  static CEngineGotvSyncPacket ITypedProtobuf<CEngineGotvSyncPacket>.Wrap(nint handle, bool isManuallyAllocated) => new CEngineGotvSyncPacketImpl(handle, isManuallyAllocated);
 
 
   public ulong MatchId { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCLCMsg_RespondCvarValueImpl : NetMessage<CCLCMsg_RespondCvarValue>, CCLCMsg_RespondCvarValue
 {
-  public CCLCMsg_RespondCvarValueImpl(nint handle): base(handle)
+  public CCLCMsg_RespondCvarValueImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

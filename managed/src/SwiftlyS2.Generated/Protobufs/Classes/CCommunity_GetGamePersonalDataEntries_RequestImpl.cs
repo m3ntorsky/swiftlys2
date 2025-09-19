@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCommunity_GetGamePersonalDataEntries_RequestImpl : TypedProtobuf<CCommunity_GetGamePersonalDataEntries_Request>, CCommunity_GetGamePersonalDataEntries_Request
 {
-  public CCommunity_GetGamePersonalDataEntries_RequestImpl(nint handle): base(handle)
+  public CCommunity_GetGamePersonalDataEntries_RequestImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

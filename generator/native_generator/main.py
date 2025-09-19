@@ -64,8 +64,7 @@ def is_bytes_buffer_return(return_type: str) -> bool:
     return return_type == "bytes"
 
 def make_string_marshal(param_name: str, state: dict):
-    pre_lines = [
-        f"{param_name}BufferPtr",
+    pre_code = (
         (
             ""
             if state.get("pool")
@@ -76,27 +75,31 @@ def make_string_marshal(param_name: str, state: dict):
         f"{INDENT}{INDENT}var {param_name}Buffer = pool.Rent({param_name}Length + 1);{EOL}"
         f"{INDENT}{INDENT}Encoding.UTF8.GetBytes({param_name}, {param_name}Buffer);{EOL}"
         f"{INDENT}{INDENT}{param_name}Buffer[{param_name}Length] = 0;{EOL}"
-        f"{INDENT}{INDENT}fixed (byte* {param_name}BufferPtr = {param_name}Buffer) {{{EOL}",
-        f"{INDENT}{INDENT}pool.Return({param_name}Buffer);{EOL}{EOL}",
-    ]
+        f"{INDENT}{INDENT}fixed (byte* {param_name}BufferPtr = {param_name}Buffer) {{{EOL}"
+        f"{INDENT}{INDENT}"
+    )
+    post_code = (
+        f"{INDENT}{INDENT}pool.Return({param_name}Buffer);{EOL}{EOL}"
+    )
     state["pool"] = True
     state["closing_bracket"] = state.get("closing_bracket", 0) + 1
-    return pre_lines
+    return f"{param_name}BufferPtr", pre_code, post_code
+
 
 def make_bytes_marshal(param_name: str, state: dict):
-    pre_lines = [
-        f"{param_name}BufferPtr",
+    pre_code = (
         f"{EOL}"
-        f"{INDENT}{INDENT}fixed (byte* {param_name}BufferPtr = {param_name}) {{{EOL}",
-        f"{INDENT}{INDENT}",
-    ]
+        f"{INDENT}{INDENT}var {param_name}Length = {param_name}.Length;{EOL}"
+        f"{INDENT}{INDENT}fixed (byte* {param_name}BufferPtr = {param_name}) {{{EOL}"
+        f"{INDENT}{INDENT}"
+    )
     state["pool"] = False
     state["closing_bracket"] = state.get("closing_bracket", 0) + 1
-    return pre_lines
+    return f"{param_name}BufferPtr", pre_code, ""
+
 
 def make_string_return_marshal(state: dict):
-    pre_lines = [
-        "retString",
+    pre_code = (
         (
             ""
             if state.get("pool")
@@ -104,17 +107,20 @@ def make_string_return_marshal(state: dict):
         )
         + f"{EOL}"
         f"{INDENT}{INDENT}var retBuffer = pool.Rent(ret+1);{EOL}"
-        f"{INDENT}{INDENT}fixed (byte* retBufferPtr = retBuffer) {{{EOL}",
+        f"{INDENT}{INDENT}fixed (byte* retBufferPtr = retBuffer) {{{EOL}"
+        f"{INDENT}{INDENT}"
+    )
+    post_code = (
         f"{INDENT}{INDENT}var retString = Encoding.UTF8.GetString(retBufferPtr, ret);{EOL}"
-        f"{INDENT}{INDENT}pool.Return(retBuffer);{EOL}{EOL}",
-    ]
+        f"{INDENT}{INDENT}pool.Return(retBuffer);{EOL}{EOL}"
+    )
     state["pool"] = True
     state["closing_bracket"] = state.get("closing_bracket", 0) + 1
-    return pre_lines
+    return "retString", pre_code, post_code
+
 
 def make_bytes_return_marshal(state: dict):
-    pre_lines = [
-        "retBytes",
+    pre_code = (
         (
             ""
             if state.get("pool")
@@ -122,17 +128,22 @@ def make_bytes_return_marshal(state: dict):
         )
         + f"{EOL}"
         f"{INDENT}{INDENT}var retBuffer = pool.Rent(ret);{EOL}"
-        f"{INDENT}{INDENT}fixed (byte* retBufferPtr = retBuffer) {{{EOL}",
+        f"{INDENT}{INDENT}fixed (byte* retBufferPtr = retBuffer) {{{EOL}"
+        f"{INDENT}{INDENT}"
+    )
+    post_code = (
         f"{INDENT}{INDENT}var retBytes = new byte[ret];{EOL}"
         f"{INDENT}{INDENT}for(int i = 0; i < ret; i++) retBytes[i] = retBufferPtr[i];{EOL}"
-        f"{INDENT}{INDENT}pool.Return(retBuffer);{EOL}{EOL}",
-    ]
+        f"{INDENT}{INDENT}pool.Return(retBuffer);{EOL}{EOL}"
+    )
     state["pool"] = True
     state["closing_bracket"] = state.get("closing_bracket", 0) + 1
-    return pre_lines
+    return "retBytes", pre_code, post_code
+
 
 def emit(chunks: list[str], text: str = ""):
     chunks.append(text + EOL)
+
 
 
 def parse_native(lines: list[str]):
@@ -176,7 +187,14 @@ def parse_native(lines: list[str]):
         trimmed_params = native_params_raw.strip()
         native_params_list = [] if trimmed_params in ("", "void") else [p for p in trimmed_params.split(",")]
 
-        native_param_types = [DELEGATE_PARAM_TYPE_MAP[p.strip().split(" ", 1)[0]] for p in native_params_list]
+        # Build native delegate param types, expanding 'bytes' into pointer and length
+        native_param_types: list[str] = []
+        for p in native_params_list:
+            t = p.strip().split(" ", 1)[0]
+            if t == "bytes":
+                native_param_types.extend([DELEGATE_PARAM_TYPE_MAP[t], "int"])
+            else:
+                native_param_types.append(DELEGATE_PARAM_TYPE_MAP[t])
         param_signatures = []
         for p in native_params_list:
             t, n = p.strip().split(" ", 1)
@@ -229,7 +247,12 @@ def parse_native(lines: list[str]):
             chunks.append(pre_code)
 
         if is_buffer_return(return_type):
-            param_args = [renamed_param[n] for _, n in param_signatures]
+            param_args: list[str] = []
+            for t, n in param_signatures:
+                if t == "byte[]":
+                    param_args.extend([renamed_param[n], f"{n}Length"])
+                else:
+                    param_args.append(renamed_param[n])
             args_first = ", ".join(["null", *param_args])
             emit(chunks, f"{INDENT}{INDENT}var ret = _{function_name}({args_first});")
             ret_pre_code, _ = ret_marshal  # type: ignore
@@ -237,10 +260,22 @@ def parse_native(lines: list[str]):
             args_second = ", ".join(["retBufferPtr", *param_args])
             emit(chunks, f"{INDENT}{INDENT}ret = _{function_name}({args_second});")
         elif return_type == "void":
-            call_args = ", ".join([renamed_param[n] for _, n in param_signatures])
+            call_args_list: list[str] = []
+            for t, n in param_signatures:
+                if t == "byte[]":
+                    call_args_list.extend([renamed_param[n], f"{n}Length"])
+                else:
+                    call_args_list.append(renamed_param[n])
+            call_args = ", ".join(call_args_list)
             emit(chunks, f"{INDENT}{INDENT}_{function_name}({call_args});")
         else:
-            call_args = ", ".join([renamed_param[n] for _, n in param_signatures])
+            call_args_list: list[str] = []
+            for t, n in param_signatures:
+                if t == "byte[]":
+                    call_args_list.extend([renamed_param[n], f"{n}Length"])
+                else:
+                    call_args_list.append(renamed_param[n])
+            call_args = ", ".join(call_args_list)
             emit(chunks, f"{INDENT}{INDENT}var ret = _{function_name}({call_args});")
 
         if is_buffer_return(return_type) and ret_marshal:

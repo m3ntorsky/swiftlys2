@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientToGCChatImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientToGCChat>, CMsgGCCStrike15_v2_ClientToGCChat
 {
-  public CMsgGCCStrike15_v2_ClientToGCChatImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientToGCChatImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

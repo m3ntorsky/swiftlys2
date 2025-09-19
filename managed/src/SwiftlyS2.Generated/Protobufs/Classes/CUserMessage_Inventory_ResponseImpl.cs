@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessage_Inventory_ResponseImpl : TypedProtobuf<CUserMessage_Inventory_Response>, CUserMessage_Inventory_Response
 {
-  public CUserMessage_Inventory_ResponseImpl(nint handle): base(handle)
+  public CUserMessage_Inventory_ResponseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
-  public int Crc
-  { get => Accessor.GetInt32("crc"); set => Accessor.SetInt32("crc", value); }
+  public uint Crc
+  { get => Accessor.GetUInt32("crc"); set => Accessor.SetUInt32("crc", value); }
 
 
   public int ItemCount

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGC_ServerQuestUpdateDataImpl : TypedProtobuf<CMsgGC_ServerQuestUpdateData>, CMsgGC_ServerQuestUpdateData
 {
-  public CMsgGC_ServerQuestUpdateDataImpl(nint handle): base(handle)
+  public CMsgGC_ServerQuestUpdateDataImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -27,7 +27,7 @@ internal class CMsgGC_ServerQuestUpdateDataImpl : TypedProtobuf<CMsgGC_ServerQue
 
 
   public ScoreLeaderboardData Missionlbsdata
-  { get => new ScoreLeaderboardDataImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "missionlbsdata")); }
+  { get => new ScoreLeaderboardDataImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "missionlbsdata"), false); }
 
 
   public uint Flags

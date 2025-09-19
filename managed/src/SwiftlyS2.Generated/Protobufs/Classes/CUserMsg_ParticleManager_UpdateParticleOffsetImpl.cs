@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_UpdateParticleOffsetImpl : TypedProtobuf<CUserMsg_ParticleManager_UpdateParticleOffset>, CUserMsg_ParticleManager_UpdateParticleOffset
 {
-  public CUserMsg_ParticleManager_UpdateParticleOffsetImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_UpdateParticleOffsetImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

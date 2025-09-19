@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSGOUserCmdPBImpl : TypedProtobuf<CSGOUserCmdPB>, CSGOUserCmdPB
 {
-  public CSGOUserCmdPBImpl(nint handle): base(handle)
+  public CSGOUserCmdPBImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CBaseUserCmdPB Base
-  { get => new CBaseUserCmdPBImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "base")); }
+  { get => new CBaseUserCmdPBImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "base"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CSGOInputHistoryEntryPB> InputHistory

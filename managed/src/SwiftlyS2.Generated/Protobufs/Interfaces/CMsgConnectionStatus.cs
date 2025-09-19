@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgConnectionStatus : ITypedProtobuf<CMsgConnectionStatus>
 {
-  static CMsgConnectionStatus ITypedProtobuf<CMsgConnectionStatus>.Wrap(nint handle) => new CMsgConnectionStatusImpl(handle);
+  static CMsgConnectionStatus ITypedProtobuf<CMsgConnectionStatus>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgConnectionStatusImpl(handle, isManuallyAllocated);
 
 
   public GCConnectionStatus Status { get; set; }

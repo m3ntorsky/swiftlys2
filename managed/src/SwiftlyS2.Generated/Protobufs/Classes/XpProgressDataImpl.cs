@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class XpProgressDataImpl : TypedProtobuf<XpProgressData>, XpProgressData
 {
-  public XpProgressDataImpl(nint handle): base(handle)
+  public XpProgressDataImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_GC2ClientRefuseSecureModeImpl : TypedProtobuf<CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode>, CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode
 {
-  public CMsgGCCStrike15_v2_GC2ClientRefuseSecureModeImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_GC2ClientRefuseSecureModeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

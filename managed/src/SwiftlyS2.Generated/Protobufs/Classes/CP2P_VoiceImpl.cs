@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CP2P_VoiceImpl : TypedProtobuf<CP2P_Voice>, CP2P_Voice
 {
-  public CP2P_VoiceImpl(nint handle): base(handle)
+  public CP2P_VoiceImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CMsgVoiceAudio Audio
-  { get => new CMsgVoiceAudioImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "audio")); }
+  { get => new CMsgVoiceAudioImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "audio"), false); }
 
 
   public uint BroadcastGroup

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_ParticleCanFreezeImpl : TypedProtobuf<CUserMsg_ParticleManager_ParticleCanFreeze>, CUserMsg_ParticleManager_ParticleCanFreeze
 {
-  public CUserMsg_ParticleManager_ParticleCanFreezeImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_ParticleCanFreezeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

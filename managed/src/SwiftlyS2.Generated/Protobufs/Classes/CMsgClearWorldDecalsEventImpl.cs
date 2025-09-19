@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgClearWorldDecalsEventImpl : NetMessage<CMsgClearWorldDecalsEvent>, CMsgClearWorldDecalsEvent
 {
-  public CMsgClearWorldDecalsEventImpl(nint handle): base(handle)
+  public CMsgClearWorldDecalsEventImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

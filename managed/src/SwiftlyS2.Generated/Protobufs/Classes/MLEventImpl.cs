@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class MLEventImpl : TypedProtobuf<MLEvent>, MLEvent
 {
-  public MLEventImpl(nint handle): base(handle)
+  public MLEventImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

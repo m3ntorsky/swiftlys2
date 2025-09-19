@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_ParticleSkipToTimeImpl : TypedProtobuf<CUserMsg_ParticleManager_ParticleSkipToTime>, CUserMsg_ParticleManager_ParticleSkipToTime
 {
-  public CUserMsg_ParticleManager_ParticleSkipToTimeImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_ParticleSkipToTimeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

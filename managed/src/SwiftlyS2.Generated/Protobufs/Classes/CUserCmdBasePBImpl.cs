@@ -9,12 +9,12 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserCmdBasePBImpl : TypedProtobuf<CUserCmdBasePB>, CUserCmdBasePB
 {
-  public CUserCmdBasePBImpl(nint handle): base(handle)
+  public CUserCmdBasePBImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CBaseUserCmdPB Base
-  { get => new CBaseUserCmdPBImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "base")); }
+  { get => new CBaseUserCmdPBImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "base"), false); }
 
 }

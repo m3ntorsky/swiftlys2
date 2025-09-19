@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgIPCAddress : ITypedProtobuf<CMsgIPCAddress>
 {
-  static CMsgIPCAddress ITypedProtobuf<CMsgIPCAddress>.Wrap(nint handle) => new CMsgIPCAddressImpl(handle);
+  static CMsgIPCAddress ITypedProtobuf<CMsgIPCAddress>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgIPCAddressImpl(handle, isManuallyAllocated);
 
 
   public ulong ComputerGuid { get; set; }

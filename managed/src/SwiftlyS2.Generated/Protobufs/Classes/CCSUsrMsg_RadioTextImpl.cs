@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_RadioTextImpl : NetMessage<CCSUsrMsg_RadioText>, CCSUsrMsg_RadioText
 {
-  public CCSUsrMsg_RadioTextImpl(nint handle): base(handle)
+  public CCSUsrMsg_RadioTextImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

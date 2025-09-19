@@ -9,17 +9,17 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class MLGameStateImpl : TypedProtobuf<MLGameState>, MLGameState
 {
-  public MLGameStateImpl(nint handle): base(handle)
+  public MLGameStateImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public MLMatchState Match
-  { get => new MLMatchStateImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "match")); }
+  { get => new MLMatchStateImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "match"), false); }
 
 
   public MLRoundState Round
-  { get => new MLRoundStateImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "round")); }
+  { get => new MLRoundStateImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "round"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<MLPlayerState> Players

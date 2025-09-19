@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface DeepPlayerStatsEntry : ITypedProtobuf<DeepPlayerStatsEntry>
 {
-  static DeepPlayerStatsEntry ITypedProtobuf<DeepPlayerStatsEntry>.Wrap(nint handle) => new DeepPlayerStatsEntryImpl(handle);
+  static DeepPlayerStatsEntry ITypedProtobuf<DeepPlayerStatsEntry>.Wrap(nint handle, bool isManuallyAllocated) => new DeepPlayerStatsEntryImpl(handle, isManuallyAllocated);
 
 
   public uint Accountid { get; set; }

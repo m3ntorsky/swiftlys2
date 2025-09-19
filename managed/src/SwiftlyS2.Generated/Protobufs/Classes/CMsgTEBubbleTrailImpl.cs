@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEBubbleTrailImpl : NetMessage<CMsgTEBubbleTrail>, CMsgTEBubbleTrail
 {
-  public CMsgTEBubbleTrailImpl(nint handle): base(handle)
+  public CMsgTEBubbleTrailImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

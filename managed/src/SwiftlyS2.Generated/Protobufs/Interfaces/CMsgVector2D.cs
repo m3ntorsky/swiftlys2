@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgVector2D : ITypedProtobuf<CMsgVector2D>
 {
-  static CMsgVector2D ITypedProtobuf<CMsgVector2D>.Wrap(nint handle) => new CMsgVector2DImpl(handle);
+  static CMsgVector2D ITypedProtobuf<CMsgVector2D>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgVector2DImpl(handle, isManuallyAllocated);
 
 
   public float X { get; set; }

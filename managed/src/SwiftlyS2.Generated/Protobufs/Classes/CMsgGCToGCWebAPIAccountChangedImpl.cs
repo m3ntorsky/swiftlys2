@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCToGCWebAPIAccountChangedImpl : TypedProtobuf<CMsgGCToGCWebAPIAccountChanged>, CMsgGCToGCWebAPIAccountChanged
 {
-  public CMsgGCToGCWebAPIAccountChangedImpl(nint handle): base(handle)
+  public CMsgGCToGCWebAPIAccountChangedImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

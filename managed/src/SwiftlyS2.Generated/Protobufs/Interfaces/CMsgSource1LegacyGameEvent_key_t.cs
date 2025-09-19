@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSource1LegacyGameEvent_key_t : ITypedProtobuf<CMsgSource1LegacyGameEvent_key_t>
 {
-  static CMsgSource1LegacyGameEvent_key_t ITypedProtobuf<CMsgSource1LegacyGameEvent_key_t>.Wrap(nint handle) => new CMsgSource1LegacyGameEvent_key_tImpl(handle);
+  static CMsgSource1LegacyGameEvent_key_t ITypedProtobuf<CMsgSource1LegacyGameEvent_key_t>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSource1LegacyGameEvent_key_tImpl(handle, isManuallyAllocated);
 
 
   public int Type { get; set; }

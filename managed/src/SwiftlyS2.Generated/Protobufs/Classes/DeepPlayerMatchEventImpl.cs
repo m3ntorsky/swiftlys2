@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class DeepPlayerMatchEventImpl : TypedProtobuf<DeepPlayerMatchEvent>, DeepPlayerMatchEvent
 {
-  public DeepPlayerMatchEventImpl(nint handle): base(handle)
+  public DeepPlayerMatchEventImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

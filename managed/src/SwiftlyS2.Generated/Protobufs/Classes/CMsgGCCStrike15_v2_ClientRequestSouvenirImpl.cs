@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientRequestSouvenirImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientRequestSouvenir>, CMsgGCCStrike15_v2_ClientRequestSouvenir
 {
-  public CMsgGCCStrike15_v2_ClientRequestSouvenirImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientRequestSouvenirImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

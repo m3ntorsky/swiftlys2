@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_CreatePhysicsSimImpl : TypedProtobuf<CUserMsg_ParticleManager_CreatePhysicsSim>, CUserMsg_ParticleManager_CreatePhysicsSim
 {
-  public CUserMsg_ParticleManager_CreatePhysicsSimImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_CreatePhysicsSimImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

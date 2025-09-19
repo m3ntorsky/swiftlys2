@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CEconItemPreviewDataBlock : ITypedProtobuf<CEconItemPreviewDataBlock>
 {
-  static CEconItemPreviewDataBlock ITypedProtobuf<CEconItemPreviewDataBlock>.Wrap(nint handle) => new CEconItemPreviewDataBlockImpl(handle);
+  static CEconItemPreviewDataBlock ITypedProtobuf<CEconItemPreviewDataBlock>.Wrap(nint handle, bool isManuallyAllocated) => new CEconItemPreviewDataBlockImpl(handle, isManuallyAllocated);
 
 
   public uint Accountid { get; set; }

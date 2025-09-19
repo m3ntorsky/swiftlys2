@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSource2SystemSpecsImpl : TypedProtobuf<CMsgSource2SystemSpecs>, CMsgSource2SystemSpecs
 {
-  public CMsgSource2SystemSpecsImpl(nint handle): base(handle)
+  public CMsgSource2SystemSpecsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

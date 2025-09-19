@@ -9,12 +9,12 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponseImpl : TypedProtobuf<CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse>, CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponse
 {
-  public CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponseImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockResponseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CEconItemPreviewDataBlock Iteminfo
-  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "iteminfo")); }
+  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "iteminfo"), false); }
 
 }

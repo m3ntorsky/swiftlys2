@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class MLTickImpl : TypedProtobuf<MLTick>, MLTick
 {
-  public MLTickImpl(nint handle): base(handle)
+  public MLTickImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,7 +19,7 @@ internal class MLTickImpl : TypedProtobuf<MLTick>, MLTick
 
 
   public MLGameState State
-  { get => new MLGameStateImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "state")); }
+  { get => new MLGameStateImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "state"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<MLEvent> Events

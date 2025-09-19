@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve>, CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve
 {
-  public CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -59,7 +59,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl : TypedProtobu
 
 
   public TournamentEvent TournamentEvent
-  { get => new TournamentEventImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tournament_event")); }
+  { get => new TournamentEventImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tournament_event"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<TournamentTeam> TournamentTeams
@@ -75,7 +75,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl : TypedProtobu
 
 
   public CPreMatchInfoData PreMatchData
-  { get => new CPreMatchInfoDataImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "pre_match_data")); }
+  { get => new CPreMatchInfoDataImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "pre_match_data"), false); }
 
 
   public uint TvControl

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCGiftedItems : ITypedProtobuf<CMsgGCGiftedItems>
 {
-  static CMsgGCGiftedItems ITypedProtobuf<CMsgGCGiftedItems>.Wrap(nint handle) => new CMsgGCGiftedItemsImpl(handle);
+  static CMsgGCGiftedItems ITypedProtobuf<CMsgGCGiftedItems>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCGiftedItemsImpl(handle, isManuallyAllocated);
 
 
   public uint Accountid { get; set; }

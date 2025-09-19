@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoAnimationDataImpl : TypedProtobuf<CDemoAnimationData>, CDemoAnimationData
 {
-  public CDemoAnimationDataImpl(nint handle): base(handle)
+  public CDemoAnimationDataImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

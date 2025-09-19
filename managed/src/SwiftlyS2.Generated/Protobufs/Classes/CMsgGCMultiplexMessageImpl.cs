@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCMultiplexMessageImpl : TypedProtobuf<CMsgGCMultiplexMessage>, CMsgGCMultiplexMessage
 {
-  public CMsgGCMultiplexMessageImpl(nint handle): base(handle)
+  public CMsgGCMultiplexMessageImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

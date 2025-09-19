@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOEconItemDropRateBonus : ITypedProtobuf<CSOEconItemDropRateBonus>
 {
-  static CSOEconItemDropRateBonus ITypedProtobuf<CSOEconItemDropRateBonus>.Wrap(nint handle) => new CSOEconItemDropRateBonusImpl(handle);
+  static CSOEconItemDropRateBonus ITypedProtobuf<CSOEconItemDropRateBonus>.Wrap(nint handle, bool isManuallyAllocated) => new CSOEconItemDropRateBonusImpl(handle, isManuallyAllocated);
 
 
   public uint AccountId { get; set; }
 
 
-  public int ExpirationDate { get; set; }
+  public uint ExpirationDate { get; set; }
 
 
   public float Bonus { get; set; }

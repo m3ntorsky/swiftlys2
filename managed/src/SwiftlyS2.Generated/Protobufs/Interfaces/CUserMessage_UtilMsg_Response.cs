@@ -7,16 +7,16 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMessage_UtilMsg_Response : ITypedProtobuf<CUserMessage_UtilMsg_Response>
 {
-  static CUserMessage_UtilMsg_Response ITypedProtobuf<CUserMessage_UtilMsg_Response>.Wrap(nint handle) => new CUserMessage_UtilMsg_ResponseImpl(handle);
+  static CUserMessage_UtilMsg_Response ITypedProtobuf<CUserMessage_UtilMsg_Response>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessage_UtilMsg_ResponseImpl(handle, isManuallyAllocated);
 
 
-  public int Crc { get; set; }
+  public uint Crc { get; set; }
 
 
   public int ItemCount { get; set; }
 
 
-  public int Crc2 { get; set; }
+  public uint Crc2 { get; set; }
 
 
   public int ItemCount2 { get; set; }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCReportAbuseResponse : ITypedProtobuf<CMsgGCReportAbuseResponse>
 {
-  static CMsgGCReportAbuseResponse ITypedProtobuf<CMsgGCReportAbuseResponse>.Wrap(nint handle) => new CMsgGCReportAbuseResponseImpl(handle);
+  static CMsgGCReportAbuseResponse ITypedProtobuf<CMsgGCReportAbuseResponse>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCReportAbuseResponseImpl(handle, isManuallyAllocated);
 
 
   public ulong TargetSteamId { get; set; }

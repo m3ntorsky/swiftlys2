@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessage_NotifyResponseFoundImpl : NetMessage<CUserMessage_NotifyResponseFound>, CUserMessage_NotifyResponseFound
 {
-  public CUserMessage_NotifyResponseFoundImpl(nint handle): base(handle)
+  public CUserMessage_NotifyResponseFoundImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

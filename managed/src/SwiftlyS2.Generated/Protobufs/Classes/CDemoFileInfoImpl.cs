@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoFileInfoImpl : TypedProtobuf<CDemoFileInfo>, CDemoFileInfo
 {
-  public CDemoFileInfoImpl(nint handle): base(handle)
+  public CDemoFileInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -27,6 +27,6 @@ internal class CDemoFileInfoImpl : TypedProtobuf<CDemoFileInfo>, CDemoFileInfo
 
 
   public CGameInfo GameInfo
-  { get => new CGameInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "game_info")); }
+  { get => new CGameInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "game_info"), false); }
 
 }

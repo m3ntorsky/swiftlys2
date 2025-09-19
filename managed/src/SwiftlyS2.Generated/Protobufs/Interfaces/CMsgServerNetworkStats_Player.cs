@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgServerNetworkStats_Player : ITypedProtobuf<CMsgServerNetworkStats_Player>
 {
-  static CMsgServerNetworkStats_Player ITypedProtobuf<CMsgServerNetworkStats_Player>.Wrap(nint handle) => new CMsgServerNetworkStats_PlayerImpl(handle);
+  static CMsgServerNetworkStats_Player ITypedProtobuf<CMsgServerNetworkStats_Player>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgServerNetworkStats_PlayerImpl(handle, isManuallyAllocated);
 
 
   public ulong Steamid { get; set; }

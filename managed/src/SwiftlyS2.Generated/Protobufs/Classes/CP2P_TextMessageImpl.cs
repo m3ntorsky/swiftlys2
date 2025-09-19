@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CP2P_TextMessageImpl : TypedProtobuf<CP2P_TextMessage>, CP2P_TextMessage
 {
-  public CP2P_TextMessageImpl(nint handle): base(handle)
+  public CP2P_TextMessageImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchmakingServerRoundStatsImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchmakingServerRoundStats>, CMsgGCCStrike15_v2_MatchmakingServerRoundStats
 {
-  public CMsgGCCStrike15_v2_MatchmakingServerRoundStatsImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchmakingServerRoundStatsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,7 +19,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingServerRoundStatsImpl : TypedProtobu
 
 
   public CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve Reservation
-  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "reservation")); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "reservation"), false); }
 
 
   public string Map
@@ -63,7 +63,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingServerRoundStatsImpl : TypedProtobu
 
 
   public CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirm Confirm
-  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirmImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "confirm")); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ServerConfirmImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "confirm"), false); }
 
 
   public int ReservationStage
@@ -115,7 +115,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingServerRoundStatsImpl : TypedProtobu
 
 
   public CMsgGCCStrike15_v2_MatchmakingServerRoundStats_DropInfo DropInfo
-  { get => new CMsgGCCStrike15_v2_MatchmakingServerRoundStats_DropInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "drop_info")); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingServerRoundStats_DropInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "drop_info"), false); }
 
 
   public bool BSwitchedTeams

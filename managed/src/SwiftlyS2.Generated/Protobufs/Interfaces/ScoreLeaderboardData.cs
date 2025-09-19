@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface ScoreLeaderboardData : ITypedProtobuf<ScoreLeaderboardData>
 {
-  static ScoreLeaderboardData ITypedProtobuf<ScoreLeaderboardData>.Wrap(nint handle) => new ScoreLeaderboardDataImpl(handle);
+  static ScoreLeaderboardData ITypedProtobuf<ScoreLeaderboardData>.Wrap(nint handle, bool isManuallyAllocated) => new ScoreLeaderboardDataImpl(handle, isManuallyAllocated);
 
 
   public ulong QuestId { get; set; }

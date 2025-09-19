@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_FlattenedSerializerImpl : NetMessage<CSVCMsg_FlattenedSerializer>, CSVCMsg_FlattenedSerializer
 {
-  public CSVCMsg_FlattenedSerializerImpl(nint handle): base(handle)
+  public CSVCMsg_FlattenedSerializerImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

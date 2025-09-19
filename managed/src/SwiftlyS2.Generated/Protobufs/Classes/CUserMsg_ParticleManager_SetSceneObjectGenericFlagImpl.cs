@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_SetSceneObjectGenericFlagImpl : TypedProtobuf<CUserMsg_ParticleManager_SetSceneObjectGenericFlag>, CUserMsg_ParticleManager_SetSceneObjectGenericFlag
 {
-  public CUserMsg_ParticleManager_SetSceneObjectGenericFlagImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_SetSceneObjectGenericFlagImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

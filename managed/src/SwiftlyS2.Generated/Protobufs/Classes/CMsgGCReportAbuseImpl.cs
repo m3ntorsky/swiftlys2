@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCReportAbuseImpl : TypedProtobuf<CMsgGCReportAbuse>, CMsgGCReportAbuse
 {
-  public CMsgGCReportAbuseImpl(nint handle): base(handle)
+  public CMsgGCReportAbuseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -34,8 +34,8 @@ internal class CMsgGCReportAbuseImpl : TypedProtobuf<CMsgGCReportAbuse>, CMsgGCR
   { get => Accessor.GetUInt32("content_type"); set => Accessor.SetUInt32("content_type", value); }
 
 
-  public int TargetGameServerIp
-  { get => Accessor.GetInt32("target_game_server_ip"); set => Accessor.SetInt32("target_game_server_ip", value); }
+  public uint TargetGameServerIp
+  { get => Accessor.GetUInt32("target_game_server_ip"); set => Accessor.SetUInt32("target_game_server_ip", value); }
 
 
   public uint TargetGameServerPort

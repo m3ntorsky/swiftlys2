@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgRecurringMissionSchema : ITypedProtobuf<CMsgRecurringMissionSchema>
 {
-  static CMsgRecurringMissionSchema ITypedProtobuf<CMsgRecurringMissionSchema>.Wrap(nint handle) => new CMsgRecurringMissionSchemaImpl(handle);
+  static CMsgRecurringMissionSchema ITypedProtobuf<CMsgRecurringMissionSchema>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgRecurringMissionSchemaImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgRecurringMissionSchema_MissionTemplateList> Missions { get; }

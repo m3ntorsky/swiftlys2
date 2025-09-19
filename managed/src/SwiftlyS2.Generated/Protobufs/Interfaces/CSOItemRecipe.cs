@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOItemRecipe : ITypedProtobuf<CSOItemRecipe>
 {
-  static CSOItemRecipe ITypedProtobuf<CSOItemRecipe>.Wrap(nint handle) => new CSOItemRecipeImpl(handle);
+  static CSOItemRecipe ITypedProtobuf<CSOItemRecipe>.Wrap(nint handle, bool isManuallyAllocated) => new CSOItemRecipeImpl(handle, isManuallyAllocated);
 
 
   public uint DefIndex { get; set; }

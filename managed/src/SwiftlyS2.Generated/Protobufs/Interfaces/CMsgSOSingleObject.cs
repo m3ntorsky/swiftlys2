@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSOSingleObject : ITypedProtobuf<CMsgSOSingleObject>
 {
-  static CMsgSOSingleObject ITypedProtobuf<CMsgSOSingleObject>.Wrap(nint handle) => new CMsgSOSingleObjectImpl(handle);
+  static CMsgSOSingleObject ITypedProtobuf<CMsgSOSingleObject>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSOSingleObjectImpl(handle, isManuallyAllocated);
 
 
   public int TypeId { get; set; }

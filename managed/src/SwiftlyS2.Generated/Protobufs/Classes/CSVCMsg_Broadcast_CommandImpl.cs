@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_Broadcast_CommandImpl : NetMessage<CSVCMsg_Broadcast_Command>, CSVCMsg_Broadcast_Command
 {
-  public CSVCMsg_Broadcast_CommandImpl(nint handle): base(handle)
+  public CSVCMsg_Broadcast_CommandImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

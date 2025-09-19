@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CGCToGCMsgMasterAck_ResponseImpl : TypedProtobuf<CGCToGCMsgMasterAck_Response>, CGCToGCMsgMasterAck_Response
 {
-  public CGCToGCMsgMasterAck_ResponseImpl(nint handle): base(handle)
+  public CGCToGCMsgMasterAck_ResponseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

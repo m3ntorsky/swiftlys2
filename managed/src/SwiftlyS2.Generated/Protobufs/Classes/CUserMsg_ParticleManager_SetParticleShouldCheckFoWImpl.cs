@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_SetParticleShouldCheckFoWImpl : TypedProtobuf<CUserMsg_ParticleManager_SetParticleShouldCheckFoW>, CUserMsg_ParticleManager_SetParticleShouldCheckFoW
 {
-  public CUserMsg_ParticleManager_SetParticleShouldCheckFoWImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_SetParticleShouldCheckFoWImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

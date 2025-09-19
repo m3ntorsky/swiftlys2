@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSource2NetworkFlowQualityImpl : TypedProtobuf<CMsgSource2NetworkFlowQuality>, CMsgSource2NetworkFlowQuality
 {
-  public CMsgSource2NetworkFlowQualityImpl(nint handle): base(handle)
+  public CMsgSource2NetworkFlowQualityImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CCSUsrMsg_PostRoundDamageReport : ITypedProtobuf<CCSUsrMsg_PostRoundDamageReport>, INetMessage<CCSUsrMsg_PostRoundDamageReport>
+public interface CCSUsrMsg_PostRoundDamageReport : ITypedProtobuf<CCSUsrMsg_PostRoundDamageReport>, INetMessage<CCSUsrMsg_PostRoundDamageReport>, IDisposable
 {
   static int INetMessage<CCSUsrMsg_PostRoundDamageReport>.MessageId => 376;
   
   static string INetMessage<CCSUsrMsg_PostRoundDamageReport>.MessageName => "CCSUsrMsg_PostRoundDamageReport";
 
-  static CCSUsrMsg_PostRoundDamageReport ITypedProtobuf<CCSUsrMsg_PostRoundDamageReport>.Wrap(nint handle) => new CCSUsrMsg_PostRoundDamageReportImpl(handle);
+  static CCSUsrMsg_PostRoundDamageReport ITypedProtobuf<CCSUsrMsg_PostRoundDamageReport>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_PostRoundDamageReportImpl(handle, isManuallyAllocated);
 
 
   public ulong OtherXuid { get; set; }

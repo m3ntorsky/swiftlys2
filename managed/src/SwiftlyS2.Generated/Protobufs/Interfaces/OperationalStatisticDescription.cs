@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface OperationalStatisticDescription : ITypedProtobuf<OperationalStatisticDescription>
 {
-  static OperationalStatisticDescription ITypedProtobuf<OperationalStatisticDescription>.Wrap(nint handle) => new OperationalStatisticDescriptionImpl(handle);
+  static OperationalStatisticDescription ITypedProtobuf<OperationalStatisticDescription>.Wrap(nint handle, bool isManuallyAllocated) => new OperationalStatisticDescriptionImpl(handle, isManuallyAllocated);
 
 
   public string Name { get; set; }

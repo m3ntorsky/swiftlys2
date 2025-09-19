@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class PlayerQuestDataImpl : TypedProtobuf<PlayerQuestData>, PlayerQuestData
 {
-  public PlayerQuestDataImpl(nint handle): base(handle)
+  public PlayerQuestDataImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

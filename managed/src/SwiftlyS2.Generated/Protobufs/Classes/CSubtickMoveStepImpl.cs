@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSubtickMoveStepImpl : TypedProtobuf<CSubtickMoveStep>, CSubtickMoveStep
 {
-  public CSubtickMoveStepImpl(nint handle): base(handle)
+  public CSubtickMoveStepImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

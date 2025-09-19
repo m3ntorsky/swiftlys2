@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CBaseUserCmdPBImpl : TypedProtobuf<CBaseUserCmdPB>, CBaseUserCmdPB
 {
-  public CBaseUserCmdPBImpl(nint handle): base(handle)
+  public CBaseUserCmdPBImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -27,7 +27,7 @@ internal class CBaseUserCmdPBImpl : TypedProtobuf<CBaseUserCmdPB>, CBaseUserCmdP
 
 
   public CInButtonStatePB ButtonsPb
-  { get => new CInButtonStatePBImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "buttons_pb")); }
+  { get => new CInButtonStatePBImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "buttons_pb"), false); }
 
 
   public QAngle Viewangles

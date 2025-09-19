@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_MatchmakingClient2ServerPing : ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingClient2ServerPing>
 {
-  static CMsgGCCStrike15_v2_MatchmakingClient2ServerPing ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingClient2ServerPing>.Wrap(nint handle) => new CMsgGCCStrike15_v2_MatchmakingClient2ServerPingImpl(handle);
+  static CMsgGCCStrike15_v2_MatchmakingClient2ServerPing ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingClient2ServerPing>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_MatchmakingClient2ServerPingImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldSubMessageType<GameServerPing> Gameserverpings { get; }
@@ -25,7 +25,7 @@ public interface CMsgGCCStrike15_v2_MatchmakingClient2ServerPing : ITypedProtobu
   public uint MaxPing { get; set; }
 
 
-  public int TestToken { get; set; }
+  public uint TestToken { get; set; }
 
 
   public byte[] SearchKey { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgKickFromPartyImpl : TypedProtobuf<CMsgKickFromParty>, CMsgKickFromParty
 {
-  public CMsgKickFromPartyImpl(nint handle): base(handle)
+  public CMsgKickFromPartyImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

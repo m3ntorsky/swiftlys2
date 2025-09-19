@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_Party_SearchResultsImpl : TypedProtobuf<CMsgGCCStrike15_v2_Party_SearchResults>, CMsgGCCStrike15_v2_Party_SearchResults
 {
-  public CMsgGCCStrike15_v2_Party_SearchResultsImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_Party_SearchResultsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

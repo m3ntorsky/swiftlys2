@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCRequestAnnouncementsResponseImpl : TypedProtobuf<CMsgGCRequestAnnouncementsResponse>, CMsgGCRequestAnnouncementsResponse
 {
-  public CMsgGCRequestAnnouncementsResponseImpl(nint handle): base(handle)
+  public CMsgGCRequestAnnouncementsResponseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

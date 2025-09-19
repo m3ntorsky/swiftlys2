@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCItemCustomizationNotification : ITypedProtobuf<CMsgGCItemCustomizationNotification>
 {
-  static CMsgGCItemCustomizationNotification ITypedProtobuf<CMsgGCItemCustomizationNotification>.Wrap(nint handle) => new CMsgGCItemCustomizationNotificationImpl(handle);
+  static CMsgGCItemCustomizationNotification ITypedProtobuf<CMsgGCItemCustomizationNotification>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCItemCustomizationNotificationImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldValueType<ulong> ItemId { get; }

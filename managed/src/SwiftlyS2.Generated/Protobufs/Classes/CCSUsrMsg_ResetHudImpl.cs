@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_ResetHudImpl : NetMessage<CCSUsrMsg_ResetHud>, CCSUsrMsg_ResetHud
 {
-  public CCSUsrMsg_ResetHudImpl(nint handle): base(handle)
+  public CCSUsrMsg_ResetHudImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgConVarValueImpl : TypedProtobuf<CMsgConVarValue>, CMsgConVarValue
 {
-  public CMsgConVarValueImpl(nint handle): base(handle)
+  public CMsgConVarValueImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

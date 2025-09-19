@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_DamagePredictionImpl : NetMessage<CCSUsrMsg_DamagePrediction>, CCSUsrMsg_DamagePrediction
 {
-  public CCSUsrMsg_DamagePredictionImpl(nint handle): base(handle)
+  public CCSUsrMsg_DamagePredictionImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

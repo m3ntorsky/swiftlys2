@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_MatchmakingGC2ClientHello : ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingGC2ClientHello>
 {
-  static CMsgGCCStrike15_v2_MatchmakingGC2ClientHello ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingGC2ClientHello>.Wrap(nint handle) => new CMsgGCCStrike15_v2_MatchmakingGC2ClientHelloImpl(handle);
+  static CMsgGCCStrike15_v2_MatchmakingGC2ClientHello ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingGC2ClientHello>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_MatchmakingGC2ClientHelloImpl(handle, isManuallyAllocated);
 
 
   public uint AccountId { get; set; }

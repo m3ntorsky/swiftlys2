@@ -9,17 +9,17 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgIncrementKillCountAttributeImpl : TypedProtobuf<CMsgIncrementKillCountAttribute>, CMsgIncrementKillCountAttribute
 {
-  public CMsgIncrementKillCountAttributeImpl(nint handle): base(handle)
+  public CMsgIncrementKillCountAttributeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
-  public int KillerAccountId
-  { get => Accessor.GetInt32("killer_account_id"); set => Accessor.SetInt32("killer_account_id", value); }
+  public uint KillerAccountId
+  { get => Accessor.GetUInt32("killer_account_id"); set => Accessor.SetUInt32("killer_account_id", value); }
 
 
-  public int VictimAccountId
-  { get => Accessor.GetInt32("victim_account_id"); set => Accessor.SetInt32("victim_account_id", value); }
+  public uint VictimAccountId
+  { get => Accessor.GetUInt32("victim_account_id"); set => Accessor.SetUInt32("victim_account_id", value); }
 
 
   public ulong ItemId

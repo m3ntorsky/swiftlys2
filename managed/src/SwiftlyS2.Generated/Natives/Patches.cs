@@ -18,7 +18,7 @@ internal static class NativePatches {
     Encoding.UTF8.GetBytes(patchName, patchNameBuffer);
     patchNameBuffer[patchNameLength] = 0;
     fixed (byte* patchNameBufferPtr = patchNameBuffer) {
-    _Apply(patchNameBufferPtr);
+        _Apply(patchNameBufferPtr);
     pool.Return(patchNameBuffer);
 
   }
@@ -31,7 +31,7 @@ internal static class NativePatches {
     Encoding.UTF8.GetBytes(patchName, patchNameBuffer);
     patchNameBuffer[patchNameLength] = 0;
     fixed (byte* patchNameBufferPtr = patchNameBuffer) {
-    _Revert(patchNameBufferPtr);
+        _Revert(patchNameBufferPtr);
     pool.Return(patchNameBuffer);
 
   }
@@ -44,7 +44,7 @@ internal static class NativePatches {
     Encoding.UTF8.GetBytes(patchName, patchNameBuffer);
     patchNameBuffer[patchNameLength] = 0;
     fixed (byte* patchNameBufferPtr = patchNameBuffer) {
-    var ret = _Exists(patchNameBufferPtr);
+        var ret = _Exists(patchNameBufferPtr);
     pool.Return(patchNameBuffer);
 
     return ret;

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgRGBAImpl : TypedProtobuf<CMsgRGBA>, CMsgRGBA
 {
-  public CMsgRGBAImpl(nint handle): base(handle)
+  public CMsgRGBAImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

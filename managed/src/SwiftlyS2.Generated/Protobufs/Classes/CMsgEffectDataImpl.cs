@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgEffectDataImpl : TypedProtobuf<CMsgEffectData>, CMsgEffectData
 {
-  public CMsgEffectDataImpl(nint handle): base(handle)
+  public CMsgEffectDataImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -30,12 +30,12 @@ internal class CMsgEffectDataImpl : TypedProtobuf<CMsgEffectData>, CMsgEffectDat
   { get => Accessor.GetQAngle("angles"); set => Accessor.SetQAngle("angles", value); }
 
 
-  public int Entity
-  { get => Accessor.GetInt32("entity"); set => Accessor.SetInt32("entity", value); }
+  public uint Entity
+  { get => Accessor.GetUInt32("entity"); set => Accessor.SetUInt32("entity", value); }
 
 
-  public int Otherentity
-  { get => Accessor.GetInt32("otherentity"); set => Accessor.SetInt32("otherentity", value); }
+  public uint Otherentity
+  { get => Accessor.GetUInt32("otherentity"); set => Accessor.SetUInt32("otherentity", value); }
 
 
   public float Scale
@@ -50,8 +50,8 @@ internal class CMsgEffectDataImpl : TypedProtobuf<CMsgEffectData>, CMsgEffectDat
   { get => Accessor.GetFloat("radius"); set => Accessor.SetFloat("radius", value); }
 
 
-  public int Surfaceprop
-  { get => Accessor.GetInt32("surfaceprop"); set => Accessor.SetInt32("surfaceprop", value); }
+  public uint Surfaceprop
+  { get => Accessor.GetUInt32("surfaceprop"); set => Accessor.SetUInt32("surfaceprop", value); }
 
 
   public ulong Effectindex

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCSUsrMsg_RoundEndReportData_RerEvent : ITypedProtobuf<CCSUsrMsg_RoundEndReportData_RerEvent>
 {
-  static CCSUsrMsg_RoundEndReportData_RerEvent ITypedProtobuf<CCSUsrMsg_RoundEndReportData_RerEvent>.Wrap(nint handle) => new CCSUsrMsg_RoundEndReportData_RerEventImpl(handle);
+  static CCSUsrMsg_RoundEndReportData_RerEvent ITypedProtobuf<CCSUsrMsg_RoundEndReportData_RerEvent>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_RoundEndReportData_RerEventImpl(handle, isManuallyAllocated);
 
 
   public float Timestamp { get; set; }

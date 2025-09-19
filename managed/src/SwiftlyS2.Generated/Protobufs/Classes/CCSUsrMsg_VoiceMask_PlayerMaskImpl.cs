@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_VoiceMask_PlayerMaskImpl : TypedProtobuf<CCSUsrMsg_VoiceMask_PlayerMask>, CCSUsrMsg_VoiceMask_PlayerMask
 {
-  public CCSUsrMsg_VoiceMask_PlayerMaskImpl(nint handle): base(handle)
+  public CCSUsrMsg_VoiceMask_PlayerMaskImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

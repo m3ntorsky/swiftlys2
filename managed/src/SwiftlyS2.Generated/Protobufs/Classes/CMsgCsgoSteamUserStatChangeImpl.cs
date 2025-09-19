@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgCsgoSteamUserStatChangeImpl : TypedProtobuf<CMsgCsgoSteamUserStatChange>, CMsgCsgoSteamUserStatChange
 {
-  public CMsgCsgoSteamUserStatChangeImpl(nint handle): base(handle)
+  public CMsgCsgoSteamUserStatChangeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

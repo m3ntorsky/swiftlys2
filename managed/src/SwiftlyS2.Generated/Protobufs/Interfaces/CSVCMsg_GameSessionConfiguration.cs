@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSVCMsg_GameSessionConfiguration : ITypedProtobuf<CSVCMsg_GameSessionConfiguration>
 {
-  static CSVCMsg_GameSessionConfiguration ITypedProtobuf<CSVCMsg_GameSessionConfiguration>.Wrap(nint handle) => new CSVCMsg_GameSessionConfigurationImpl(handle);
+  static CSVCMsg_GameSessionConfiguration ITypedProtobuf<CSVCMsg_GameSessionConfiguration>.Wrap(nint handle, bool isManuallyAllocated) => new CSVCMsg_GameSessionConfigurationImpl(handle, isManuallyAllocated);
 
 
   public bool IsMultiplayer { get; set; }
@@ -31,7 +31,7 @@ public interface CSVCMsg_GameSessionConfiguration : ITypedProtobuf<CSVCMsg_GameS
   public uint MaxClients { get; set; }
 
 
-  public int TickInterval { get; set; }
+  public uint TickInterval { get; set; }
 
 
   public string Hostname { get; set; }

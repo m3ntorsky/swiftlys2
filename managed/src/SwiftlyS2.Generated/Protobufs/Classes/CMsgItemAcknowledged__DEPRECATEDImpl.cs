@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgItemAcknowledged__DEPRECATEDImpl : TypedProtobuf<CMsgItemAcknowledged__DEPRECATED>, CMsgItemAcknowledged__DEPRECATED
 {
-  public CMsgItemAcknowledged__DEPRECATEDImpl(nint handle): base(handle)
+  public CMsgItemAcknowledged__DEPRECATEDImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

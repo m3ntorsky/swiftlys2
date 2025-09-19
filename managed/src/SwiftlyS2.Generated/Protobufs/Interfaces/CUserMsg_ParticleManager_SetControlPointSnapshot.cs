@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMsg_ParticleManager_SetControlPointSnapshot : ITypedProtobuf<CUserMsg_ParticleManager_SetControlPointSnapshot>
 {
-  static CUserMsg_ParticleManager_SetControlPointSnapshot ITypedProtobuf<CUserMsg_ParticleManager_SetControlPointSnapshot>.Wrap(nint handle) => new CUserMsg_ParticleManager_SetControlPointSnapshotImpl(handle);
+  static CUserMsg_ParticleManager_SetControlPointSnapshot ITypedProtobuf<CUserMsg_ParticleManager_SetControlPointSnapshot>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMsg_ParticleManager_SetControlPointSnapshotImpl(handle, isManuallyAllocated);
 
 
   public int ControlPoint { get; set; }

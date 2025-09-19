@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessage_UtilMsg_Response_ItemDetailImpl : TypedProtobuf<CUserMessage_UtilMsg_Response_ItemDetail>, CUserMessage_UtilMsg_Response_ItemDetail
 {
-  public CUserMessage_UtilMsg_Response_ItemDetailImpl(nint handle): base(handle)
+  public CUserMessage_UtilMsg_Response_ItemDetailImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

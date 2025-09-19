@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientCommendPlayerImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientCommendPlayer>, CMsgGCCStrike15_v2_ClientCommendPlayer
 {
-  public CMsgGCCStrike15_v2_ClientCommendPlayerImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientCommendPlayerImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -23,7 +23,7 @@ internal class CMsgGCCStrike15_v2_ClientCommendPlayerImpl : TypedProtobuf<CMsgGC
 
 
   public PlayerCommendationInfo Commendation
-  { get => new PlayerCommendationInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "commendation")); }
+  { get => new PlayerCommendationInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "commendation"), false); }
 
 
   public uint Tokens

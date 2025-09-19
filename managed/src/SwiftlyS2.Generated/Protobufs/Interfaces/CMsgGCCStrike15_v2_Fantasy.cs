@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_Fantasy : ITypedProtobuf<CMsgGCCStrike15_v2_Fantasy>
 {
-  static CMsgGCCStrike15_v2_Fantasy ITypedProtobuf<CMsgGCCStrike15_v2_Fantasy>.Wrap(nint handle) => new CMsgGCCStrike15_v2_FantasyImpl(handle);
+  static CMsgGCCStrike15_v2_Fantasy ITypedProtobuf<CMsgGCCStrike15_v2_Fantasy>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_FantasyImpl(handle, isManuallyAllocated);
 
 
   public uint EventId { get; set; }

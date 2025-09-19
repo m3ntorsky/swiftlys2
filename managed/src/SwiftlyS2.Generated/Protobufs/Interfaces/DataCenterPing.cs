@@ -7,10 +7,10 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface DataCenterPing : ITypedProtobuf<DataCenterPing>
 {
-  static DataCenterPing ITypedProtobuf<DataCenterPing>.Wrap(nint handle) => new DataCenterPingImpl(handle);
+  static DataCenterPing ITypedProtobuf<DataCenterPing>.Wrap(nint handle, bool isManuallyAllocated) => new DataCenterPingImpl(handle, isManuallyAllocated);
 
 
-  public int DataCenterId { get; set; }
+  public uint DataCenterId { get; set; }
 
 
   public int Ping { get; set; }

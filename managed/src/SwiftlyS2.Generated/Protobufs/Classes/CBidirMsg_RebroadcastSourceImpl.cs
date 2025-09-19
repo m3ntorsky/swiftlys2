@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CBidirMsg_RebroadcastSourceImpl : TypedProtobuf<CBidirMsg_RebroadcastSource>, CBidirMsg_RebroadcastSource
 {
-  public CBidirMsg_RebroadcastSourceImpl(nint handle): base(handle)
+  public CBidirMsg_RebroadcastSourceImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

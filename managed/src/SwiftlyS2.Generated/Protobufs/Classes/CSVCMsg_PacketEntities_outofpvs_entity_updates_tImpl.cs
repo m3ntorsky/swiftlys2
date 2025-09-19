@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_PacketEntities_outofpvs_entity_updates_tImpl : TypedProtobuf<CSVCMsg_PacketEntities_outofpvs_entity_updates_t>, CSVCMsg_PacketEntities_outofpvs_entity_updates_t
 {
-  public CSVCMsg_PacketEntities_outofpvs_entity_updates_tImpl(nint handle): base(handle)
+  public CSVCMsg_PacketEntities_outofpvs_entity_updates_tImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

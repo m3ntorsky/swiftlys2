@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCToGCDirtyMultipleSDOCache : ITypedProtobuf<CMsgGCToGCDirtyMultipleSDOCache>
 {
-  static CMsgGCToGCDirtyMultipleSDOCache ITypedProtobuf<CMsgGCToGCDirtyMultipleSDOCache>.Wrap(nint handle) => new CMsgGCToGCDirtyMultipleSDOCacheImpl(handle);
+  static CMsgGCToGCDirtyMultipleSDOCache ITypedProtobuf<CMsgGCToGCDirtyMultipleSDOCache>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCToGCDirtyMultipleSDOCacheImpl(handle, isManuallyAllocated);
 
 
   public uint SdoType { get; set; }

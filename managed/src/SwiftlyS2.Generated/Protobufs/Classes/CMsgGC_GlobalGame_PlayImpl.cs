@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGC_GlobalGame_PlayImpl : TypedProtobuf<CMsgGC_GlobalGame_Play>, CMsgGC_GlobalGame_Play
 {
-  public CMsgGC_GlobalGame_PlayImpl(nint handle): base(handle)
+  public CMsgGC_GlobalGame_PlayImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

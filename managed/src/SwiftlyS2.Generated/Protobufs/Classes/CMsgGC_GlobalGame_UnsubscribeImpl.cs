@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGC_GlobalGame_UnsubscribeImpl : TypedProtobuf<CMsgGC_GlobalGame_Unsubscribe>, CMsgGC_GlobalGame_Unsubscribe
 {
-  public CMsgGC_GlobalGame_UnsubscribeImpl(nint handle): base(handle)
+  public CMsgGC_GlobalGame_UnsubscribeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

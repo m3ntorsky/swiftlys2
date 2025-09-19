@@ -16,7 +16,7 @@ internal static class NativeDatabase {
     var pool = ArrayPool<byte>.Shared;
     var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetDefaultConnection(retBufferPtr);
+        ret = _GetDefaultConnection(retBufferPtr);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
     pool.Return(retBuffer);
 
@@ -29,7 +29,7 @@ internal static class NativeDatabase {
     var pool = ArrayPool<byte>.Shared;
     var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetDefaultConnectionCredentials(retBufferPtr);
+        ret = _GetDefaultConnectionCredentials(retBufferPtr);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
     pool.Return(retBuffer);
 
@@ -44,11 +44,11 @@ internal static class NativeDatabase {
     Encoding.UTF8.GetBytes(connectionName, connectionNameBuffer);
     connectionNameBuffer[connectionNameLength] = 0;
     fixed (byte* connectionNameBufferPtr = connectionNameBuffer) {
-    var ret = _GetCredentials(null, connectionNameBufferPtr);
+        var ret = _GetCredentials(null, connectionNameBufferPtr);
 
     var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetCredentials(retBufferPtr, connectionNameBufferPtr);
+        ret = _GetCredentials(retBufferPtr, connectionNameBufferPtr);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
     pool.Return(retBuffer);
 
@@ -66,7 +66,7 @@ internal static class NativeDatabase {
     Encoding.UTF8.GetBytes(connectionName, connectionNameBuffer);
     connectionNameBuffer[connectionNameLength] = 0;
     fixed (byte* connectionNameBufferPtr = connectionNameBuffer) {
-    var ret = _ConnectionExists(connectionNameBufferPtr);
+        var ret = _ConnectionExists(connectionNameBufferPtr);
     pool.Return(connectionNameBuffer);
 
     return ret;

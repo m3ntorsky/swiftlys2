@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_SetMaterialOverrideImpl : TypedProtobuf<CUserMsg_ParticleManager_SetMaterialOverride>, CUserMsg_ParticleManager_SetMaterialOverride
 {
-  public CUserMsg_ParticleManager_SetMaterialOverrideImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_SetMaterialOverrideImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgServerNetworkStats_PortImpl : TypedProtobuf<CMsgServerNetworkStats_Port>, CMsgServerNetworkStats_Port
 {
-  public CMsgServerNetworkStats_PortImpl(nint handle): base(handle)
+  public CMsgServerNetworkStats_PortImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

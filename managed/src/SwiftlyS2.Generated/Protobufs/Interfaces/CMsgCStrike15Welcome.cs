@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgCStrike15Welcome : ITypedProtobuf<CMsgCStrike15Welcome>
 {
-  static CMsgCStrike15Welcome ITypedProtobuf<CMsgCStrike15Welcome>.Wrap(nint handle) => new CMsgCStrike15WelcomeImpl(handle);
+  static CMsgCStrike15Welcome ITypedProtobuf<CMsgCStrike15Welcome>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgCStrike15WelcomeImpl(handle, isManuallyAllocated);
 
 
   public uint StoreItemHash { get; set; }

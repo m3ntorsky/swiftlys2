@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_Sounds_sounddata_tImpl : TypedProtobuf<CSVCMsg_Sounds_sounddata_t>, CSVCMsg_Sounds_sounddata_t
 {
-  public CSVCMsg_Sounds_sounddata_tImpl(nint handle): base(handle)
+  public CSVCMsg_Sounds_sounddata_tImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -58,8 +58,8 @@ internal class CSVCMsg_Sounds_sounddata_tImpl : TypedProtobuf<CSVCMsg_Sounds_sou
   { get => Accessor.GetUInt32("sound_num"); set => Accessor.SetUInt32("sound_num", value); }
 
 
-  public int SoundNumHandle
-  { get => Accessor.GetInt32("sound_num_handle"); set => Accessor.SetInt32("sound_num_handle", value); }
+  public uint SoundNumHandle
+  { get => Accessor.GetUInt32("sound_num_handle"); set => Accessor.SetUInt32("sound_num_handle", value); }
 
 
   public int SpeakerEntity

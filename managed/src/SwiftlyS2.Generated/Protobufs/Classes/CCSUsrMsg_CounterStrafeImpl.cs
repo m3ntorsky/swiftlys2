@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_CounterStrafeImpl : NetMessage<CCSUsrMsg_CounterStrafe>, CCSUsrMsg_CounterStrafe
 {
-  public CCSUsrMsg_CounterStrafeImpl(nint handle): base(handle)
+  public CCSUsrMsg_CounterStrafeImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

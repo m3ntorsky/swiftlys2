@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_UpdateScreenHealthBarImpl : NetMessage<CCSUsrMsg_UpdateScreenHealthBar>, CCSUsrMsg_UpdateScreenHealthBar
 {
-  public CCSUsrMsg_UpdateScreenHealthBarImpl(nint handle): base(handle)
+  public CCSUsrMsg_UpdateScreenHealthBarImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_ClientRequestSouvenir : ITypedProtobuf<CMsgGCCStrike15_v2_ClientRequestSouvenir>
 {
-  static CMsgGCCStrike15_v2_ClientRequestSouvenir ITypedProtobuf<CMsgGCCStrike15_v2_ClientRequestSouvenir>.Wrap(nint handle) => new CMsgGCCStrike15_v2_ClientRequestSouvenirImpl(handle);
+  static CMsgGCCStrike15_v2_ClientRequestSouvenir ITypedProtobuf<CMsgGCCStrike15_v2_ClientRequestSouvenir>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_ClientRequestSouvenirImpl(handle, isManuallyAllocated);
 
 
   public ulong Itemid { get; set; }

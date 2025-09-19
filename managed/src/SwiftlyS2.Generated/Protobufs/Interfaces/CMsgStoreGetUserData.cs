@@ -7,10 +7,10 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgStoreGetUserData : ITypedProtobuf<CMsgStoreGetUserData>
 {
-  static CMsgStoreGetUserData ITypedProtobuf<CMsgStoreGetUserData>.Wrap(nint handle) => new CMsgStoreGetUserDataImpl(handle);
+  static CMsgStoreGetUserData ITypedProtobuf<CMsgStoreGetUserData>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgStoreGetUserDataImpl(handle, isManuallyAllocated);
 
 
-  public int PriceSheetVersion { get; set; }
+  public uint PriceSheetVersion { get; set; }
 
 
   public int Currency { get; set; }

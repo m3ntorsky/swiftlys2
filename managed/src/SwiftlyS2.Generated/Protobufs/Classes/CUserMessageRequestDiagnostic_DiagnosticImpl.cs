@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageRequestDiagnostic_DiagnosticImpl : TypedProtobuf<CUserMessageRequestDiagnostic_Diagnostic>, CUserMessageRequestDiagnostic_Diagnostic
 {
-  public CUserMessageRequestDiagnostic_DiagnosticImpl(nint handle): base(handle)
+  public CUserMessageRequestDiagnostic_DiagnosticImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CWorkshop_PopulateItemDescriptions_Request_SingleItemDescriptionImpl : TypedProtobuf<CWorkshop_PopulateItemDescriptions_Request_SingleItemDescription>, CWorkshop_PopulateItemDescriptions_Request_SingleItemDescription
 {
-  public CWorkshop_PopulateItemDescriptions_Request_SingleItemDescriptionImpl(nint handle): base(handle)
+  public CWorkshop_PopulateItemDescriptions_Request_SingleItemDescriptionImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

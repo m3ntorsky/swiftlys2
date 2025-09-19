@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOItemCriteriaConditionImpl : TypedProtobuf<CSOItemCriteriaCondition>, CSOItemCriteriaCondition
 {
-  public CSOItemCriteriaConditionImpl(nint handle): base(handle)
+  public CSOItemCriteriaConditionImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

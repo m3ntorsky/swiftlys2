@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientRequestJoinFriendDataImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientRequestJoinFriendData>, CMsgGCCStrike15_v2_ClientRequestJoinFriendData
 {
-  public CMsgGCCStrike15_v2_ClientRequestJoinFriendDataImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientRequestJoinFriendDataImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -31,7 +31,7 @@ internal class CMsgGCCStrike15_v2_ClientRequestJoinFriendDataImpl : TypedProtobu
 
 
   public CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve Res
-  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "res")); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "res"), false); }
 
 
   public string Errormsg

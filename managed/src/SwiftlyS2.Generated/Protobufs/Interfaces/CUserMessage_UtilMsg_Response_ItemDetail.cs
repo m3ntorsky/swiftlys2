@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMessage_UtilMsg_Response_ItemDetail : ITypedProtobuf<CUserMessage_UtilMsg_Response_ItemDetail>
 {
-  static CUserMessage_UtilMsg_Response_ItemDetail ITypedProtobuf<CUserMessage_UtilMsg_Response_ItemDetail>.Wrap(nint handle) => new CUserMessage_UtilMsg_Response_ItemDetailImpl(handle);
+  static CUserMessage_UtilMsg_Response_ItemDetail ITypedProtobuf<CUserMessage_UtilMsg_Response_ItemDetail>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessage_UtilMsg_Response_ItemDetailImpl(handle, isManuallyAllocated);
 
 
   public int Index { get; set; }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgStoreGetUserDataResponse : ITypedProtobuf<CMsgStoreGetUserDataResponse>
 {
-  static CMsgStoreGetUserDataResponse ITypedProtobuf<CMsgStoreGetUserDataResponse>.Wrap(nint handle) => new CMsgStoreGetUserDataResponseImpl(handle);
+  static CMsgStoreGetUserDataResponse ITypedProtobuf<CMsgStoreGetUserDataResponse>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgStoreGetUserDataResponseImpl(handle, isManuallyAllocated);
 
 
   public int Result { get; set; }
@@ -19,7 +19,7 @@ public interface CMsgStoreGetUserDataResponse : ITypedProtobuf<CMsgStoreGetUserD
   public string CountryDeprecated { get; set; }
 
 
-  public int PriceSheetVersion { get; set; }
+  public uint PriceSheetVersion { get; set; }
 
 
   public byte[] PriceSheet { get; set; }

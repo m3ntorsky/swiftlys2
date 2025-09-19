@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CP2P_WatchSynchronizationImpl : TypedProtobuf<CP2P_WatchSynchronization>, CP2P_WatchSynchronization
 {
-  public CP2P_WatchSynchronizationImpl(nint handle): base(handle)
+  public CP2P_WatchSynchronizationImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

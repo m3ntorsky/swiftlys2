@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientLogonFatalErrorImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientLogonFatalError>, CMsgGCCStrike15_v2_ClientLogonFatalError
 {
-  public CMsgGCCStrike15_v2_ClientLogonFatalErrorImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientLogonFatalErrorImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

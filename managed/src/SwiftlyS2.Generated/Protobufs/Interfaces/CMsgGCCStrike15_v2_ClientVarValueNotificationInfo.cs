@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_ClientVarValueNotificationInfo : ITypedProtobuf<CMsgGCCStrike15_v2_ClientVarValueNotificationInfo>
 {
-  static CMsgGCCStrike15_v2_ClientVarValueNotificationInfo ITypedProtobuf<CMsgGCCStrike15_v2_ClientVarValueNotificationInfo>.Wrap(nint handle) => new CMsgGCCStrike15_v2_ClientVarValueNotificationInfoImpl(handle);
+  static CMsgGCCStrike15_v2_ClientVarValueNotificationInfo ITypedProtobuf<CMsgGCCStrike15_v2_ClientVarValueNotificationInfo>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_ClientVarValueNotificationInfoImpl(handle, isManuallyAllocated);
 
 
   public string ValueName { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchListRequestLiveGameForUserImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser>, CMsgGCCStrike15_v2_MatchListRequestLiveGameForUser
 {
-  public CMsgGCCStrike15_v2_MatchListRequestLiveGameForUserImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchListRequestLiveGameForUserImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

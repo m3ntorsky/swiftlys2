@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOItemRecipeImpl : TypedProtobuf<CSOItemRecipe>, CSOItemRecipe
 {
-  public CSOItemRecipeImpl(nint handle): base(handle)
+  public CSOItemRecipeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

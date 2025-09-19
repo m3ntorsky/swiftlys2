@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CNETMsg_SpawnGroup_Load : ITypedProtobuf<CNETMsg_SpawnGroup_Load>, INetMessage<CNETMsg_SpawnGroup_Load>
+public interface CNETMsg_SpawnGroup_Load : ITypedProtobuf<CNETMsg_SpawnGroup_Load>, INetMessage<CNETMsg_SpawnGroup_Load>, IDisposable
 {
   static int INetMessage<CNETMsg_SpawnGroup_Load>.MessageId => 8;
   
   static string INetMessage<CNETMsg_SpawnGroup_Load>.MessageName => "CNETMsg_SpawnGroup_Load";
 
-  static CNETMsg_SpawnGroup_Load ITypedProtobuf<CNETMsg_SpawnGroup_Load>.Wrap(nint handle) => new CNETMsg_SpawnGroup_LoadImpl(handle);
+  static CNETMsg_SpawnGroup_Load ITypedProtobuf<CNETMsg_SpawnGroup_Load>.Wrap(nint handle, bool isManuallyAllocated) => new CNETMsg_SpawnGroup_LoadImpl(handle, isManuallyAllocated);
 
 
   public string Worldname { get; set; }

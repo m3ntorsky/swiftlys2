@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsgPreMatchSayTextImpl : TypedProtobuf<CCSUsrMsgPreMatchSayText>, CCSUsrMsgPreMatchSayText
 {
-  public CCSUsrMsgPreMatchSayTextImpl(nint handle): base(handle)
+  public CCSUsrMsgPreMatchSayTextImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

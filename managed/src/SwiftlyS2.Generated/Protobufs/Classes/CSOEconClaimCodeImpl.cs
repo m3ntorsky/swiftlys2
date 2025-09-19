@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOEconClaimCodeImpl : TypedProtobuf<CSOEconClaimCode>, CSOEconClaimCode
 {
-  public CSOEconClaimCodeImpl(nint handle): base(handle)
+  public CSOEconClaimCodeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

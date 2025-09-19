@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSetItemPositions_ItemPosition : ITypedProtobuf<CMsgSetItemPositions_ItemPosition>
 {
-  static CMsgSetItemPositions_ItemPosition ITypedProtobuf<CMsgSetItemPositions_ItemPosition>.Wrap(nint handle) => new CMsgSetItemPositions_ItemPositionImpl(handle);
+  static CMsgSetItemPositions_ItemPosition ITypedProtobuf<CMsgSetItemPositions_ItemPosition>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSetItemPositions_ItemPositionImpl(handle, isManuallyAllocated);
 
 
   public uint LegacyItemId { get; set; }

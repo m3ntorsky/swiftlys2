@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgStoreGetUserDataResponseImpl : TypedProtobuf<CMsgStoreGetUserDataResponse>, CMsgStoreGetUserDataResponse
 {
-  public CMsgStoreGetUserDataResponseImpl(nint handle): base(handle)
+  public CMsgStoreGetUserDataResponseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -26,8 +26,8 @@ internal class CMsgStoreGetUserDataResponseImpl : TypedProtobuf<CMsgStoreGetUser
   { get => Accessor.GetString("country_deprecated"); set => Accessor.SetString("country_deprecated", value); }
 
 
-  public int PriceSheetVersion
-  { get => Accessor.GetInt32("price_sheet_version"); set => Accessor.SetInt32("price_sheet_version", value); }
+  public uint PriceSheetVersion
+  { get => Accessor.GetUInt32("price_sheet_version"); set => Accessor.SetUInt32("price_sheet_version", value); }
 
 
   public byte[] PriceSheet

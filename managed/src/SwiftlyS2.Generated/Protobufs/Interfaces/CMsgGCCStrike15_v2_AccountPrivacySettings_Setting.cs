@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_AccountPrivacySettings_Setting : ITypedProtobuf<CMsgGCCStrike15_v2_AccountPrivacySettings_Setting>
 {
-  static CMsgGCCStrike15_v2_AccountPrivacySettings_Setting ITypedProtobuf<CMsgGCCStrike15_v2_AccountPrivacySettings_Setting>.Wrap(nint handle) => new CMsgGCCStrike15_v2_AccountPrivacySettings_SettingImpl(handle);
+  static CMsgGCCStrike15_v2_AccountPrivacySettings_Setting ITypedProtobuf<CMsgGCCStrike15_v2_AccountPrivacySettings_Setting>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_AccountPrivacySettings_SettingImpl(handle, isManuallyAllocated);
 
 
   public uint SettingType { get; set; }

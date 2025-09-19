@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CWorkshop_AddSpecialPayment_Request : ITypedProtobuf<CWorkshop_AddSpecialPayment_Request>
 {
-  static CWorkshop_AddSpecialPayment_Request ITypedProtobuf<CWorkshop_AddSpecialPayment_Request>.Wrap(nint handle) => new CWorkshop_AddSpecialPayment_RequestImpl(handle);
+  static CWorkshop_AddSpecialPayment_Request ITypedProtobuf<CWorkshop_AddSpecialPayment_Request>.Wrap(nint handle, bool isManuallyAllocated) => new CWorkshop_AddSpecialPayment_RequestImpl(handle, isManuallyAllocated);
 
 
   public uint Appid { get; set; }

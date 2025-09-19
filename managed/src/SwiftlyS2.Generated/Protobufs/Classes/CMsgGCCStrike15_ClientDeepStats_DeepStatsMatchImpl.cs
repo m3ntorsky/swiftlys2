@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_ClientDeepStats_DeepStatsMatchImpl : TypedProtobuf<CMsgGCCStrike15_ClientDeepStats_DeepStatsMatch>, CMsgGCCStrike15_ClientDeepStats_DeepStatsMatch
 {
-  public CMsgGCCStrike15_ClientDeepStats_DeepStatsMatchImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_ClientDeepStats_DeepStatsMatchImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public DeepPlayerStatsEntry Player
-  { get => new DeepPlayerStatsEntryImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "player")); }
+  { get => new DeepPlayerStatsEntryImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "player"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<DeepPlayerMatchEvent> Events

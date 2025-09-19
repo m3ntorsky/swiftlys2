@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CWorkshop_GetContributors_Request : ITypedProtobuf<CWorkshop_GetContributors_Request>
 {
-  static CWorkshop_GetContributors_Request ITypedProtobuf<CWorkshop_GetContributors_Request>.Wrap(nint handle) => new CWorkshop_GetContributors_RequestImpl(handle);
+  static CWorkshop_GetContributors_Request ITypedProtobuf<CWorkshop_GetContributors_Request>.Wrap(nint handle, bool isManuallyAllocated) => new CWorkshop_GetContributors_RequestImpl(handle, isManuallyAllocated);
 
 
   public uint Appid { get; set; }

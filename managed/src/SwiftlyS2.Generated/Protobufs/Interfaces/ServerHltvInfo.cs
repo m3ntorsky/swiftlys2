@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface ServerHltvInfo : ITypedProtobuf<ServerHltvInfo>
 {
-  static ServerHltvInfo ITypedProtobuf<ServerHltvInfo>.Wrap(nint handle) => new ServerHltvInfoImpl(handle);
+  static ServerHltvInfo ITypedProtobuf<ServerHltvInfo>.Wrap(nint handle, bool isManuallyAllocated) => new ServerHltvInfoImpl(handle, isManuallyAllocated);
 
 
   public uint TvUdpPort { get; set; }

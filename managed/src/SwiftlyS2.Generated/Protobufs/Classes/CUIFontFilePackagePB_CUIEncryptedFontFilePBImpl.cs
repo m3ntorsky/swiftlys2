@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUIFontFilePackagePB_CUIEncryptedFontFilePBImpl : TypedProtobuf<CUIFontFilePackagePB_CUIEncryptedFontFilePB>, CUIFontFilePackagePB_CUIEncryptedFontFilePB
 {
-  public CUIFontFilePackagePB_CUIEncryptedFontFilePBImpl(nint handle): base(handle)
+  public CUIFontFilePackagePB_CUIEncryptedFontFilePBImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

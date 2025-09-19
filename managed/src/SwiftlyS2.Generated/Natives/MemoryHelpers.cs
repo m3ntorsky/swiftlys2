@@ -21,7 +21,7 @@ internal static class NativeMemoryHelpers {
     Encoding.UTF8.GetBytes(ifaceName, ifaceNameBuffer);
     ifaceNameBuffer[ifaceNameLength] = 0;
     fixed (byte* ifaceNameBufferPtr = ifaceNameBuffer) {
-    var ret = _FetchInterfaceByName(ifaceNameBufferPtr);
+        var ret = _FetchInterfaceByName(ifaceNameBufferPtr);
     pool.Return(ifaceNameBuffer);
 
     return ret;
@@ -35,13 +35,13 @@ internal static class NativeMemoryHelpers {
     Encoding.UTF8.GetBytes(library, libraryBuffer);
     libraryBuffer[libraryLength] = 0;
     fixed (byte* libraryBufferPtr = libraryBuffer) {
-
+    
     var vtableNameLength = Encoding.UTF8.GetByteCount(vtableName);
     var vtableNameBuffer = pool.Rent(vtableNameLength + 1);
     Encoding.UTF8.GetBytes(vtableName, vtableNameBuffer);
     vtableNameBuffer[vtableNameLength] = 0;
     fixed (byte* vtableNameBufferPtr = vtableNameBuffer) {
-    var ret = _GetVirtualTableAddress(libraryBufferPtr, vtableNameBufferPtr);
+        var ret = _GetVirtualTableAddress(libraryBufferPtr, vtableNameBufferPtr);
     pool.Return(libraryBuffer);
 
     pool.Return(vtableNameBuffer);

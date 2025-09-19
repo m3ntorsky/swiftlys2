@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class GlobalStatisticsImpl : TypedProtobuf<GlobalStatistics>, GlobalStatistics
 {
-  public GlobalStatisticsImpl(nint handle): base(handle)
+  public GlobalStatisticsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOEconClaimCode : ITypedProtobuf<CSOEconClaimCode>
 {
-  static CSOEconClaimCode ITypedProtobuf<CSOEconClaimCode>.Wrap(nint handle) => new CSOEconClaimCodeImpl(handle);
+  static CSOEconClaimCode ITypedProtobuf<CSOEconClaimCode>.Wrap(nint handle, bool isManuallyAllocated) => new CSOEconClaimCodeImpl(handle, isManuallyAllocated);
 
 
   public uint AccountId { get; set; }

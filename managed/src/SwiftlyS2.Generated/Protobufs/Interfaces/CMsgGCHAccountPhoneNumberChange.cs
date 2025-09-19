@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCHAccountPhoneNumberChange : ITypedProtobuf<CMsgGCHAccountPhoneNumberChange>
 {
-  static CMsgGCHAccountPhoneNumberChange ITypedProtobuf<CMsgGCHAccountPhoneNumberChange>.Wrap(nint handle) => new CMsgGCHAccountPhoneNumberChangeImpl(handle);
+  static CMsgGCHAccountPhoneNumberChange ITypedProtobuf<CMsgGCHAccountPhoneNumberChange>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCHAccountPhoneNumberChangeImpl(handle, isManuallyAllocated);
 
 
   public ulong Steamid { get; set; }

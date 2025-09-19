@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgInvitationCreated : ITypedProtobuf<CMsgInvitationCreated>
 {
-  static CMsgInvitationCreated ITypedProtobuf<CMsgInvitationCreated>.Wrap(nint handle) => new CMsgInvitationCreatedImpl(handle);
+  static CMsgInvitationCreated ITypedProtobuf<CMsgInvitationCreated>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgInvitationCreatedImpl(handle, isManuallyAllocated);
 
 
   public ulong GroupId { get; set; }

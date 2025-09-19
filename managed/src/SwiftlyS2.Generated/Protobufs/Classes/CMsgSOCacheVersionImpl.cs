@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSOCacheVersionImpl : TypedProtobuf<CMsgSOCacheVersion>, CMsgSOCacheVersion
 {
-  public CMsgSOCacheVersionImpl(nint handle): base(handle)
+  public CMsgSOCacheVersionImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

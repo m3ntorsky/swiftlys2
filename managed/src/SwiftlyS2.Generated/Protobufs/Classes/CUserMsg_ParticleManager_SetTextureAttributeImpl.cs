@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_SetTextureAttributeImpl : TypedProtobuf<CUserMsg_ParticleManager_SetTextureAttribute>, CUserMsg_ParticleManager_SetTextureAttribute
 {
-  public CUserMsg_ParticleManager_SetTextureAttributeImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_SetTextureAttributeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

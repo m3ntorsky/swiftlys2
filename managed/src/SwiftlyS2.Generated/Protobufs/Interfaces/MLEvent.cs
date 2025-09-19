@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface MLEvent : ITypedProtobuf<MLEvent>
 {
-  static MLEvent ITypedProtobuf<MLEvent>.Wrap(nint handle) => new MLEventImpl(handle);
+  static MLEvent ITypedProtobuf<MLEvent>.Wrap(nint handle, bool isManuallyAllocated) => new MLEventImpl(handle, isManuallyAllocated);
 
 
   public string EventName { get; set; }

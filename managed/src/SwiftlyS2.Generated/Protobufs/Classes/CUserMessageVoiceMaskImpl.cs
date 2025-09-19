@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageVoiceMaskImpl : NetMessage<CUserMessageVoiceMask>, CUserMessageVoiceMask
 {
-  public CUserMessageVoiceMaskImpl(nint handle): base(handle)
+  public CUserMessageVoiceMaskImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

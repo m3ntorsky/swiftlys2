@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOItemCriteria : ITypedProtobuf<CSOItemCriteria>
 {
-  static CSOItemCriteria ITypedProtobuf<CSOItemCriteria>.Wrap(nint handle) => new CSOItemCriteriaImpl(handle);
+  static CSOItemCriteria ITypedProtobuf<CSOItemCriteria>.Wrap(nint handle, bool isManuallyAllocated) => new CSOItemCriteriaImpl(handle, isManuallyAllocated);
 
 
   public uint ItemLevel { get; set; }

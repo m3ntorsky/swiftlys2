@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface GlobalStatistics : ITypedProtobuf<GlobalStatistics>
 {
-  static GlobalStatistics ITypedProtobuf<GlobalStatistics>.Wrap(nint handle) => new GlobalStatisticsImpl(handle);
+  static GlobalStatistics ITypedProtobuf<GlobalStatistics>.Wrap(nint handle, bool isManuallyAllocated) => new GlobalStatisticsImpl(handle, isManuallyAllocated);
 
 
   public uint PlayersOnline { get; set; }

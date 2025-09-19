@@ -13,17 +13,45 @@ public enum NetChannelBufType_t: sbyte
 [StructLayout(LayoutKind.Sequential)]
 public struct CRecipientFilter
 {
-    public nint pVTable;
+    private nint _pVTable;
+    public ulong RecipientsMask;
     public NetChannelBufType_t BufferType;
     public bool InitMessage;
-    public CBitVec64 RecipientFilters;
 
     public CRecipientFilter(NetChannelBufType_t BufType = NetChannelBufType_t.BUF_RELIABLE, bool bInitMessage = false)
     {
-        pVTable = CRecipientFilterVtable.pCRecipientFilterVTable;
-        RecipientFilters = new();
+        _pVTable = CRecipientFilterVtable.pCRecipientFilterVTable;
+        RecipientsMask = 0;
         InitMessage = bInitMessage;
         BufferType = BufType;
+    }
+
+    public static CRecipientFilter FromMask(ulong playerMask)
+    {
+        CRecipientFilter filter = new();
+        filter.RecipientsMask = playerMask;
+        return filter;
+    }
+
+    public static CRecipientFilter FromPlayers(params int[] players)
+    {
+        CRecipientFilter filter = new();
+        foreach (int player in players) {
+            filter.AddRecipient(player);
+        }
+        return filter;
+    }
+
+    public static CRecipientFilter FromSingle(int player)
+    {
+        CRecipientFilter filter = new();
+        filter.AddRecipient(player);
+        return filter;
+    }
+
+    public ulong ToMask()
+    {
+        return RecipientsMask;
     }
 
     public void AddAllPlayers()
@@ -33,26 +61,32 @@ public struct CRecipientFilter
 
     public void RemoveAllPlayers()
     {
-        RecipientFilters.ClearAll();
+        RecipientsMask = 0;
     }
 
     public void AddRecipient(int playerid)
     {
         if (playerid < 0 || playerid > 63) throw new IndexOutOfRangeException("PlayerID out of range (0-63).");
 
-        RecipientFilters.Set(playerid);
+        RecipientsMask |= 1UL << playerid;
     }
 
     public void RemoveRecipient(int playerid)
     {
         if (playerid < 0 || playerid > 63) throw new IndexOutOfRangeException("PlayerID out of range (0-63).");
 
-        RecipientFilters.Clear(playerid);
+        RecipientsMask &= ~(1UL << playerid);
     }
 
     public int GetRecipientCount()
     {
-        return RecipientFilters.Count();
+        int count = 0;
+        for (int i = 0; i < 64; i++) {
+            if ((RecipientsMask & (1UL << i)) != 0) {
+                count++;
+            }
+        }
+        return count;
     }
 }
 
@@ -76,8 +110,8 @@ internal static class CRecipientFilterVtable {
     }
 
     [UnmanagedCallersOnly]
-    public unsafe static CBitVec64* GetRecipients(CRecipientFilter* filter) {
-        return &filter->RecipientFilters;
+    public unsafe static ulong* GetRecipients(CRecipientFilter* filter) {
+        return &filter->RecipientsMask;
     }
 
     static unsafe CRecipientFilterVtable() {
@@ -86,6 +120,6 @@ internal static class CRecipientFilterVtable {
         vtable[0] = (nint)(delegate* unmanaged<CRecipientFilter*, void>)(&Destructor);
         vtable[1] = (nint)(delegate* unmanaged<CRecipientFilter*, NetChannelBufType_t>)(&GetNetworkBufType);
         vtable[2] = (nint)(delegate* unmanaged<CRecipientFilter*, bool>)(&IsInitMessage);
-        vtable[3] = (nint)(delegate* unmanaged<CRecipientFilter*, CBitVec64*>)(&GetRecipients);
+        vtable[3] = (nint)(delegate* unmanaged<CRecipientFilter*, ulong*>)(&GetRecipients);
     }
 }

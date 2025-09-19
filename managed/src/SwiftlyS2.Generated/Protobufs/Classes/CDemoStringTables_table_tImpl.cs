@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoStringTables_table_tImpl : TypedProtobuf<CDemoStringTables_table_t>, CDemoStringTables_table_t
 {
-  public CDemoStringTables_table_tImpl(nint handle): base(handle)
+  public CDemoStringTables_table_tImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

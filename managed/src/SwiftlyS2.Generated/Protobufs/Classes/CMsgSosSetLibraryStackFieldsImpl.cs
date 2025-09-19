@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSosSetLibraryStackFieldsImpl : NetMessage<CMsgSosSetLibraryStackFields>, CMsgSosSetLibraryStackFields
 {
-  public CMsgSosSetLibraryStackFieldsImpl(nint handle): base(handle)
+  public CMsgSosSetLibraryStackFieldsImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
-  public int StackHash
-  { get => Accessor.GetInt32("stack_hash"); set => Accessor.SetInt32("stack_hash", value); }
+  public uint StackHash
+  { get => Accessor.GetUInt32("stack_hash"); set => Accessor.SetUInt32("stack_hash", value); }
 
 
   public byte[] PackedFields

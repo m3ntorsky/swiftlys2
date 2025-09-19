@@ -18,7 +18,7 @@ internal static class NativePrecacher {
     Encoding.UTF8.GetBytes(itemPath, itemPathBuffer);
     itemPathBuffer[itemPathLength] = 0;
     fixed (byte* itemPathBufferPtr = itemPathBuffer) {
-    _AddItem(itemPathBufferPtr);
+        _AddItem(itemPathBufferPtr);
     pool.Return(itemPathBuffer);
 
   }
@@ -34,7 +34,7 @@ internal static class NativePrecacher {
     Encoding.UTF8.GetBytes(itemPath, itemPathBuffer);
     itemPathBuffer[itemPathLength] = 0;
     fixed (byte* itemPathBufferPtr = itemPathBuffer) {
-    var ret = _HasItemInList(itemPathBufferPtr);
+        var ret = _HasItemInList(itemPathBufferPtr);
     pool.Return(itemPathBuffer);
 
     return ret;
@@ -48,7 +48,7 @@ internal static class NativePrecacher {
     Encoding.UTF8.GetBytes(itemPath, itemPathBuffer);
     itemPathBuffer[itemPathLength] = 0;
     fixed (byte* itemPathBufferPtr = itemPathBuffer) {
-    var ret = _IsItemCached(itemPathBufferPtr);
+        var ret = _IsItemCached(itemPathBufferPtr);
     pool.Return(itemPathBuffer);
 
     return ret;
@@ -62,7 +62,7 @@ internal static class NativePrecacher {
     Encoding.UTF8.GetBytes(itemPath, itemPathBuffer);
     itemPathBuffer[itemPathLength] = 0;
     fixed (byte* itemPathBufferPtr = itemPathBuffer) {
-    _RemoveItem(itemPathBufferPtr);
+        _RemoveItem(itemPathBufferPtr);
     pool.Return(itemPathBuffer);
 
   }

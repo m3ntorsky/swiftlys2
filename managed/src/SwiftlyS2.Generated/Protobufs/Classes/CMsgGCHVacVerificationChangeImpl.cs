@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCHVacVerificationChangeImpl : TypedProtobuf<CMsgGCHVacVerificationChange>, CMsgGCHVacVerificationChange
 {
-  public CMsgGCHVacVerificationChangeImpl(nint handle): base(handle)
+  public CMsgGCHVacVerificationChangeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

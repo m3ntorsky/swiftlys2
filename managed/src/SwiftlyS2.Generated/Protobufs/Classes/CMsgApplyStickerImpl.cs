@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgApplyStickerImpl : TypedProtobuf<CMsgApplySticker>, CMsgApplySticker
 {
-  public CMsgApplyStickerImpl(nint handle): base(handle)
+  public CMsgApplyStickerImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

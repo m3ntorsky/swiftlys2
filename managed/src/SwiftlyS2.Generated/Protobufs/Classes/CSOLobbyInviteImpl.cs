@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOLobbyInviteImpl : TypedProtobuf<CSOLobbyInvite>, CSOLobbyInvite
 {
-  public CSOLobbyInviteImpl(nint handle): base(handle)
+  public CSOLobbyInviteImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

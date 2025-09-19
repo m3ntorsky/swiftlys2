@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgServerNetworkStats_PlayerImpl : TypedProtobuf<CMsgServerNetworkStats_Player>, CMsgServerNetworkStats_Player
 {
-  public CMsgServerNetworkStats_PlayerImpl(nint handle): base(handle)
+  public CMsgServerNetworkStats_PlayerImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

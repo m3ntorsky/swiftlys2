@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_MarkAchievementImpl : NetMessage<CCSUsrMsg_MarkAchievement>, CCSUsrMsg_MarkAchievement
 {
-  public CCSUsrMsg_MarkAchievementImpl(nint handle): base(handle)
+  public CCSUsrMsg_MarkAchievementImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCSUsrMsg_SurvivalStats_Fact : ITypedProtobuf<CCSUsrMsg_SurvivalStats_Fact>
 {
-  static CCSUsrMsg_SurvivalStats_Fact ITypedProtobuf<CCSUsrMsg_SurvivalStats_Fact>.Wrap(nint handle) => new CCSUsrMsg_SurvivalStats_FactImpl(handle);
+  static CCSUsrMsg_SurvivalStats_Fact ITypedProtobuf<CCSUsrMsg_SurvivalStats_Fact>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_SurvivalStats_FactImpl(handle, isManuallyAllocated);
 
 
   public int Type { get; set; }

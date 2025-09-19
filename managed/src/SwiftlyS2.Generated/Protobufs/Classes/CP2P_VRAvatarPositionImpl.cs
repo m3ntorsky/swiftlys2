@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CP2P_VRAvatarPositionImpl : TypedProtobuf<CP2P_VRAvatarPosition>, CP2P_VRAvatarPosition
 {
-  public CP2P_VRAvatarPositionImpl(nint handle): base(handle)
+  public CP2P_VRAvatarPositionImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

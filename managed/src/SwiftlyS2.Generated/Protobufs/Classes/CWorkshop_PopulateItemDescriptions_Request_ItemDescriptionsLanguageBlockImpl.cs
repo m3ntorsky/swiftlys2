@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlockImpl : TypedProtobuf<CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlock>, CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlock
 {
-  public CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlockImpl(nint handle): base(handle)
+  public CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlockImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

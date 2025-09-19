@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface MatchEndItemUpdates : ITypedProtobuf<MatchEndItemUpdates>
 {
-  static MatchEndItemUpdates ITypedProtobuf<MatchEndItemUpdates>.Wrap(nint handle) => new MatchEndItemUpdatesImpl(handle);
+  static MatchEndItemUpdates ITypedProtobuf<MatchEndItemUpdates>.Wrap(nint handle, bool isManuallyAllocated) => new MatchEndItemUpdatesImpl(handle, isManuallyAllocated);
 
 
   public ulong ItemId { get; set; }

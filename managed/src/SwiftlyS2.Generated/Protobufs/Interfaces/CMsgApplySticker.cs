@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgApplySticker : ITypedProtobuf<CMsgApplySticker>
 {
-  static CMsgApplySticker ITypedProtobuf<CMsgApplySticker>.Wrap(nint handle) => new CMsgApplyStickerImpl(handle);
+  static CMsgApplySticker ITypedProtobuf<CMsgApplySticker>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgApplyStickerImpl(handle, isManuallyAllocated);
 
 
   public ulong StickerItemId { get; set; }

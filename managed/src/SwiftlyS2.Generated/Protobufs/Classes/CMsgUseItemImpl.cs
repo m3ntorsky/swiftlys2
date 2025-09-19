@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgUseItemImpl : TypedProtobuf<CMsgUseItem>, CMsgUseItem
 {
-  public CMsgUseItemImpl(nint handle): base(handle)
+  public CMsgUseItemImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

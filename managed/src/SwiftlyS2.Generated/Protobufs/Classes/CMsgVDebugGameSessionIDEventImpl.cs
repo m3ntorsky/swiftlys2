@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgVDebugGameSessionIDEventImpl : NetMessage<CMsgVDebugGameSessionIDEvent>, CMsgVDebugGameSessionIDEvent
 {
-  public CMsgVDebugGameSessionIDEventImpl(nint handle): base(handle)
+  public CMsgVDebugGameSessionIDEventImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

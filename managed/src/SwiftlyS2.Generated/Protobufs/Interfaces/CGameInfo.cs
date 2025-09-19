@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CGameInfo : ITypedProtobuf<CGameInfo>
 {
-  static CGameInfo ITypedProtobuf<CGameInfo>.Wrap(nint handle) => new CGameInfoImpl(handle);
+  static CGameInfo ITypedProtobuf<CGameInfo>.Wrap(nint handle, bool isManuallyAllocated) => new CGameInfoImpl(handle, isManuallyAllocated);
 
 
   public CGameInfo_CDotaGameInfo Dota { get; }

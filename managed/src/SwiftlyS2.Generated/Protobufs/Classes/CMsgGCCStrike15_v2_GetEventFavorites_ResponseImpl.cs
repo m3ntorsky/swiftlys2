@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_GetEventFavorites_ResponseImpl : TypedProtobuf<CMsgGCCStrike15_v2_GetEventFavorites_Response>, CMsgGCCStrike15_v2_GetEventFavorites_Response
 {
-  public CMsgGCCStrike15_v2_GetEventFavorites_ResponseImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_GetEventFavorites_ResponseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

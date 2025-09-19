@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCToGCBannedWordListUpdatedImpl : TypedProtobuf<CMsgGCToGCBannedWordListUpdated>, CMsgGCToGCBannedWordListUpdated
 {
-  public CMsgGCToGCBannedWordListUpdatedImpl(nint handle): base(handle)
+  public CMsgGCToGCBannedWordListUpdatedImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

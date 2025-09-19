@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface OperationalStatisticsPacket : ITypedProtobuf<OperationalStatisticsPacket>
 {
-  static OperationalStatisticsPacket ITypedProtobuf<OperationalStatisticsPacket>.Wrap(nint handle) => new OperationalStatisticsPacketImpl(handle);
+  static OperationalStatisticsPacket ITypedProtobuf<OperationalStatisticsPacket>.Wrap(nint handle, bool isManuallyAllocated) => new OperationalStatisticsPacketImpl(handle, isManuallyAllocated);
 
 
   public int Packetid { get; set; }

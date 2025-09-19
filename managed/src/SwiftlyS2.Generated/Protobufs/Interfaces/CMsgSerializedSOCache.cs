@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSerializedSOCache : ITypedProtobuf<CMsgSerializedSOCache>
 {
-  static CMsgSerializedSOCache ITypedProtobuf<CMsgSerializedSOCache>.Wrap(nint handle) => new CMsgSerializedSOCacheImpl(handle);
+  static CMsgSerializedSOCache ITypedProtobuf<CMsgSerializedSOCache>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSerializedSOCacheImpl(handle, isManuallyAllocated);
 
 
   public uint FileVersion { get; set; }

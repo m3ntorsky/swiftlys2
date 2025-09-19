@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CEconItemPreviewDataBlock_Sticker : ITypedProtobuf<CEconItemPreviewDataBlock_Sticker>
 {
-  static CEconItemPreviewDataBlock_Sticker ITypedProtobuf<CEconItemPreviewDataBlock_Sticker>.Wrap(nint handle) => new CEconItemPreviewDataBlock_StickerImpl(handle);
+  static CEconItemPreviewDataBlock_Sticker ITypedProtobuf<CEconItemPreviewDataBlock_Sticker>.Wrap(nint handle, bool isManuallyAllocated) => new CEconItemPreviewDataBlock_StickerImpl(handle, isManuallyAllocated);
 
 
   public uint Slot { get; set; }

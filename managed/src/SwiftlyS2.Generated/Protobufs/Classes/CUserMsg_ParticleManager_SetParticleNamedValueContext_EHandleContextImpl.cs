@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_SetParticleNamedValueContext_EHandleContextImpl : TypedProtobuf<CUserMsg_ParticleManager_SetParticleNamedValueContext_EHandleContext>, CUserMsg_ParticleManager_SetParticleNamedValueContext_EHandleContext
 {
-  public CUserMsg_ParticleManager_SetParticleNamedValueContext_EHandleContextImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_SetParticleNamedValueContext_EHandleContextImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

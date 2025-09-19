@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CDemoFileInfo : ITypedProtobuf<CDemoFileInfo>
 {
-  static CDemoFileInfo ITypedProtobuf<CDemoFileInfo>.Wrap(nint handle) => new CDemoFileInfoImpl(handle);
+  static CDemoFileInfo ITypedProtobuf<CDemoFileInfo>.Wrap(nint handle, bool isManuallyAllocated) => new CDemoFileInfoImpl(handle, isManuallyAllocated);
 
 
   public float PlaybackTime { get; set; }

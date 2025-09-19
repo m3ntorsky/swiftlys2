@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CDataGCCStrike15_v2_TournamentGroup : ITypedProtobuf<CDataGCCStrike15_v2_TournamentGroup>
 {
-  static CDataGCCStrike15_v2_TournamentGroup ITypedProtobuf<CDataGCCStrike15_v2_TournamentGroup>.Wrap(nint handle) => new CDataGCCStrike15_v2_TournamentGroupImpl(handle);
+  static CDataGCCStrike15_v2_TournamentGroup ITypedProtobuf<CDataGCCStrike15_v2_TournamentGroup>.Wrap(nint handle, bool isManuallyAllocated) => new CDataGCCStrike15_v2_TournamentGroupImpl(handle, isManuallyAllocated);
 
 
   public uint Groupid { get; set; }

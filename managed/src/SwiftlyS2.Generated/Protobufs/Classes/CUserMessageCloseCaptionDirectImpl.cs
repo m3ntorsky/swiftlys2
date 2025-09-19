@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageCloseCaptionDirectImpl : NetMessage<CUserMessageCloseCaptionDirect>, CUserMessageCloseCaptionDirect
 {
-  public CUserMessageCloseCaptionDirectImpl(nint handle): base(handle)
+  public CUserMessageCloseCaptionDirectImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
-  public int Hash
-  { get => Accessor.GetInt32("hash"); set => Accessor.SetInt32("hash", value); }
+  public uint Hash
+  { get => Accessor.GetUInt32("hash"); set => Accessor.SetUInt32("hash", value); }
 
 
   public float Duration

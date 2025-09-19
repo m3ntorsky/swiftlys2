@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMsg_ParticleManager_SetParticleText : ITypedProtobuf<CUserMsg_ParticleManager_SetParticleText>
 {
-  static CUserMsg_ParticleManager_SetParticleText ITypedProtobuf<CUserMsg_ParticleManager_SetParticleText>.Wrap(nint handle) => new CUserMsg_ParticleManager_SetParticleTextImpl(handle);
+  static CUserMsg_ParticleManager_SetParticleText ITypedProtobuf<CUserMsg_ParticleManager_SetParticleText>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMsg_ParticleManager_SetParticleTextImpl(handle, isManuallyAllocated);
 
 
   public string Text { get; set; }

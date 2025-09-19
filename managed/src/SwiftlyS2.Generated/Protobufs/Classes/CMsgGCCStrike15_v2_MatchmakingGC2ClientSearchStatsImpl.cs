@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientSearchStatsImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchmakingGC2ClientSearchStats>, CMsgGCCStrike15_v2_MatchmakingGC2ClientSearchStats
 {
-  public CMsgGCCStrike15_v2_MatchmakingGC2ClientSearchStatsImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchmakingGC2ClientSearchStatsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

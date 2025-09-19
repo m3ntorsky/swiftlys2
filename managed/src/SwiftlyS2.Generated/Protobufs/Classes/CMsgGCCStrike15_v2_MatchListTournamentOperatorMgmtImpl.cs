@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmtImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt>, CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmt
 {
-  public CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmtImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchListTournamentOperatorMgmtImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

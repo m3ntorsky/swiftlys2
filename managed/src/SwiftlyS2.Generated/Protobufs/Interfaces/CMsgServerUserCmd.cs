@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgServerUserCmd : ITypedProtobuf<CMsgServerUserCmd>
 {
-  static CMsgServerUserCmd ITypedProtobuf<CMsgServerUserCmd>.Wrap(nint handle) => new CMsgServerUserCmdImpl(handle);
+  static CMsgServerUserCmd ITypedProtobuf<CMsgServerUserCmd>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgServerUserCmdImpl(handle, isManuallyAllocated);
 
 
   public byte[] Data { get; set; }

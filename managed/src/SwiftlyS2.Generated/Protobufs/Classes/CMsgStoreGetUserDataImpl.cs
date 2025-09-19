@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgStoreGetUserDataImpl : TypedProtobuf<CMsgStoreGetUserData>, CMsgStoreGetUserData
 {
-  public CMsgStoreGetUserDataImpl(nint handle): base(handle)
+  public CMsgStoreGetUserDataImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
-  public int PriceSheetVersion
-  { get => Accessor.GetInt32("price_sheet_version"); set => Accessor.SetInt32("price_sheet_version", value); }
+  public uint PriceSheetVersion
+  { get => Accessor.GetUInt32("price_sheet_version"); set => Accessor.SetUInt32("price_sheet_version", value); }
 
 
   public int Currency

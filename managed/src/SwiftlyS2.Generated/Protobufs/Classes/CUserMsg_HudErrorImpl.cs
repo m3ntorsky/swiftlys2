@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_HudErrorImpl : TypedProtobuf<CUserMsg_HudError>, CUserMsg_HudError
 {
-  public CUserMsg_HudErrorImpl(nint handle): base(handle)
+  public CUserMsg_HudErrorImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

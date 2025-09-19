@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgAcknowledgeRentalExpirationImpl : TypedProtobuf<CMsgAcknowledgeRentalExpiration>, CMsgAcknowledgeRentalExpiration
 {
-  public CMsgAcknowledgeRentalExpirationImpl(nint handle): base(handle)
+  public CMsgAcknowledgeRentalExpirationImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

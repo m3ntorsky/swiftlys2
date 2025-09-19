@@ -9,12 +9,12 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_DeepStatsImpl : NetMessage<CCSUsrMsg_DeepStats>, CCSUsrMsg_DeepStats
 {
-  public CCSUsrMsg_DeepStatsImpl(nint handle): base(handle)
+  public CCSUsrMsg_DeepStatsImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
   public CMsgGCCStrike15_ClientDeepStats Stats
-  { get => new CMsgGCCStrike15_ClientDeepStatsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "stats")); }
+  { get => new CMsgGCCStrike15_ClientDeepStatsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "stats"), false); }
 
 }

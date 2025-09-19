@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_PlayerStatsUpdate_StatImpl : TypedProtobuf<CCSUsrMsg_PlayerStatsUpdate_Stat>, CCSUsrMsg_PlayerStatsUpdate_Stat
 {
-  public CCSUsrMsg_PlayerStatsUpdate_StatImpl(nint handle): base(handle)
+  public CCSUsrMsg_PlayerStatsUpdate_StatImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

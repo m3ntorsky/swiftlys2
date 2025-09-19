@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEBubblesImpl : NetMessage<CMsgTEBubbles>, CMsgTEBubbles
 {
-  public CMsgTEBubblesImpl(nint handle): base(handle)
+  public CMsgTEBubblesImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
