@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using Microsoft.Win32.SafeHandles;
 using SwiftlyS2.Shared.Natives;
 
-internal abstract class AllocableNativeHandle : SafeHandleZeroOrMinusOneIsInvalid, INativeHandle {
+public abstract class AllocableNativeHandle : SafeHandleZeroOrMinusOneIsInvalid, INativeHandle {
 
   public bool IsValid { get => !IsInvalid; }
 

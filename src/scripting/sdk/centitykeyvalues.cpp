@@ -24,12 +24,14 @@
 
 void* Bridge_CEntityKeyValues_Allocate()
 {
-    return new CEntityKeyValues();
+    CEntityKeyValues* kv = new CEntityKeyValues();
+    kv->AddRef();
+    return kv;
 }
 
 void Bridge_CEntityKeyValues_Deallocate(void* ptr)
 {
-    delete static_cast<CEntityKeyValues*>(ptr);
+    ((CEntityKeyValues*)ptr)->Release();
 }
 
 bool Bridge_CEntityKeyValues_GetBool(void* keyvalues, const char* keyName)

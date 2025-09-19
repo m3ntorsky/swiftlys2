@@ -55,9 +55,15 @@ public class TestPlugin : BasePlugin {
 
     logger.LogInformation("TestPlugin jump loaded");
 
+    using CEntityKeyValues kv = new();
 
-        CUtlStringToken token = new("hello");
-        Console.WriteLine($"Hash: {token.HashCode}");
+    kv.SetBool("test", true);
+
+    Console.WriteLine(kv.Get<bool>("test2"));
+
+
+    CUtlStringToken token = new("hello");
+    Console.WriteLine($"Hash: {token.HashCode}");
   }
 
   [Command("testplugin")]

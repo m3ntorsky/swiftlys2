@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Runtime.InteropServices;
+using Spectre.Console;
 using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Core.Natives;
@@ -32,7 +33,7 @@ internal class NativeBinding
         }
       } catch (Exception e)
       {
-        Console.WriteLine(e);
+        AnsiConsole.WriteException(e);
       } 
     }
   }
