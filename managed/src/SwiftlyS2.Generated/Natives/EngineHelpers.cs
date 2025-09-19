@@ -103,4 +103,17 @@ internal static class NativeEngineHelpers {
     var ret = _FirstActiveEntity();
     return ret;
   }
+  private unsafe static delegate* unmanaged<byte*, void> _SendMessageToConsole;
+  public unsafe static void SendMessageToConsole(string msg) {
+    var pool = ArrayPool<byte>.Shared;
+    var msgLength = Encoding.UTF8.GetByteCount(msg);
+    var msgBuffer = pool.Rent(msgLength + 1);
+    Encoding.UTF8.GetBytes(msg, msgBuffer);
+    msgBuffer[msgLength] = 0;
+    fixed (byte* msgBufferPtr = msgBuffer) {
+        _SendMessageToConsole(msgBufferPtr);
+    pool.Return(msgBuffer);
+
+  }
+  }
 }

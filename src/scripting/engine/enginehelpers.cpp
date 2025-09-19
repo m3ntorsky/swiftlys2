@@ -19,6 +19,7 @@
 #include <api/interfaces/manager.h>
 #include <api/shared/files.h>
 
+#include <core/entrypoint.h>
 #include <scripting/scripting.h>
 
 #include <public/filesystem.h>
@@ -124,6 +125,11 @@ void* Bridge_EngineHelpers_FirstActiveEntity()
     return entsystem->GetEntitySystem()->m_EntityList.m_pFirstActiveEntity;
 }
 
+void Bridge_EngineHelpers_SendMessageToConsole(const char* message)
+{
+    g_SwiftlyCore.SendConsoleMessage(message);
+}
+
 DEFINE_NATIVE("EngineHelpers.GetServerIP", Bridge_EngineHelpers_GetServerIP);
 DEFINE_NATIVE("EngineHelpers.GetMap", Bridge_EngineHelpers_GetMap);
 DEFINE_NATIVE("EngineHelpers.IsMapValid", Bridge_EngineHelpers_IsMapValid);
@@ -133,3 +139,4 @@ DEFINE_NATIVE("EngineHelpers.GetServerCurrentTime", Bridge_EngineHelpers_GetServ
 DEFINE_NATIVE("EngineHelpers.GetServerTickCount", Bridge_EngineHelpers_GetServerTickCount);
 DEFINE_NATIVE("EngineHelpers.FindGameSystemByName", Bridge_EngineHelpers_FindGameSystemByName);
 DEFINE_NATIVE("EngineHelpers.FirstActiveEntity", Bridge_EngineHelpers_FirstActiveEntity);
+DEFINE_NATIVE("EngineHelpers.SendMessageToConsole", Bridge_EngineHelpers_SendMessageToConsole);
