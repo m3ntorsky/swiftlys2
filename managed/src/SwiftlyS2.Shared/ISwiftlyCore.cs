@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.GameEvents;
+using SwiftlyS2.Shared.Modules.Commands;
 using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.Services;
 
@@ -26,6 +27,11 @@ public interface ISwiftlyCore {
   /// Net message service.
   /// </summary>
   public INetMessageService NetMessage { get; }
+
+  /// <summary>
+  /// Command service.
+  /// </summary>
+  public ICommandService Command { get; }
 
   /// <summary>
   /// Configuration service.

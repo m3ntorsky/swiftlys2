@@ -35,19 +35,37 @@ internal class NetMessageService : INetMessageService, IDisposable {
 
   public void Unhook(Guid guid) {
     lock (_lock) {
-      _callbacks.RemoveAll(callback => callback.Guid == guid);
+      _callbacks.RemoveAll(callback => {
+        if (callback.Guid == guid) {
+          callback.Dispose();
+          return true;
+        }
+        return false;
+      });
     }
   }
 
   public void UnhookClientMessage<T>() where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
     lock (_lock) {
-      _callbacks.RemoveAll(callback => callback is NetMessageClientHookCallback<T>);
+      _callbacks.RemoveAll(callback => {
+        if (callback is NetMessageClientHookCallback<T> clientHook) {
+          clientHook.Dispose();
+          return true;
+        }
+        return false;
+      });
     }
   }
   
   public void UnhookServerMessage<T>() where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
     lock (_lock) {
-      _callbacks.RemoveAll(callback => callback is NetMessageServerHookCallback<T>);
+      _callbacks.RemoveAll(callback => {
+        if (callback is NetMessageServerHookCallback<T> serverHook) {
+          serverHook.Dispose();
+          return true;
+        }
+        return false;
+      });
     }
   }
 

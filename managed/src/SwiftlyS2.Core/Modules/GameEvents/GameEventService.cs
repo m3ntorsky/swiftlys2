@@ -39,39 +39,38 @@ internal class GameEventService : IGameEventService, IDisposable {
 
   public void Unhook(Guid guid) {
     lock (_lock) {
-      for (int i = 0; i < _callbacks.Count; i++) {
-        var callback = _callbacks[i];
+      _callbacks.RemoveAll(callback => {
         if (callback.Guid == guid) {
           callback.Dispose();
-          _callbacks.RemoveAt(i);
-          break;
+          return true;
         }
-      }
+        return false;
+      });
     }
   }
 
 
   public void UnhookPre<T>() where T : IGameEvent<T> {
     lock (_lock) {
-      for (int i = 0; i < _callbacks.Count; i++) {
-        var callback = _callbacks[i];
+      _callbacks.RemoveAll(callback => {
         if (callback.IsPreHook && callback is GameEventCallback<T>) {
           callback.Dispose();
-          _callbacks.RemoveAt(i);
+          return true;
         }
-      }
+        return false;
+      });
     }
   }
 
   public void UnhookPost<T>() where T : IGameEvent<T> {
     lock (_lock) {
-      for (int i = 0; i < _callbacks.Count; i++) {
-        var callback = _callbacks[i];
+      _callbacks.RemoveAll(callback => {
         if (!callback.IsPreHook && callback is GameEventCallback<T>) {
           callback.Dispose();
-          _callbacks.RemoveAt(i);
+          return true;
         }
-      }
+        return false;
+      });
     }
   }
 

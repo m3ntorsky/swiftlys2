@@ -76,6 +76,8 @@ internal class PluginManager {
     var plugin = (BasePlugin)Activator.CreateInstance(pluginType)!;
 
     var core = new SwiftlyCore(plugin.PluginId, Path.GetDirectoryName(dllPath)!, _Provider);
+
+    core.Initialize(plugin, pluginType);
     
     try {
       plugin.Load(core);

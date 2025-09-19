@@ -36,8 +36,9 @@ internal static class Bootstrap {
     ));
 
     var provider = services.BuildServiceProvider();
-    
+
     provider.UsePluginManager();
     provider.UseTestService();
+
   }
 }

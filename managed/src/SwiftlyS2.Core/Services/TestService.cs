@@ -58,26 +58,49 @@ internal class TestService {
       return HookResult.Continue;
     });
 
-    _Core.NetMessage.HookServerMessage<CMsgSosStartSoundEvent>((msg, filter) =>
+    _Core.Command.RegisterCommand("test", (context) =>
     {
-      msg.PackedParams = new byte[0];
-      Console.WriteLine("CMsgSosStartSoundEvent " + msg.PackedParams.Length);
-      Console.WriteLine("CMsgSosStartSoundEvent " + msg.SoundeventHash);
-      Console.WriteLine("CMsgSosStartSoundEvent " + msg.SourceEntityIndex);
-      Console.WriteLine("CMsgSosStartSoundEvent " + msg.Seed);
-      Console.WriteLine("CMsgSosStartSoundEvent " + msg.StartTime);
-      using var shake = _Core.NetMessage.Create<CUserMessageShake>();
-      shake.Duration = 10;
-      shake.Amplitude = 10;
-      shake.Frequency = 10;
-      shake.Command = 0;
+      Console.WriteLine(context.Prefix);
+      Console.WriteLine("test");
+    });
 
-      // GC.Collect();
+    _Core.Command.RegisterCommandAlias("sw_test", "test2");
 
-      // shake.SendToPlayer(0);
-      
+    _Core.Command.HookClientCommand((playerId, commandLine) =>
+    {
+      Console.WriteLine("ClientCommandHook " + playerId);
+      Console.WriteLine("ClientCommandHook " + commandLine);
       return HookResult.Continue;
     });
+
+    _Core.Command.HookClientChat((playerId, text, teamonly) =>
+    {
+      Console.WriteLine("ClientChatHook " + playerId);
+      Console.WriteLine("ClientChatHook " + text);
+      Console.WriteLine("ClientChatHook " + teamonly);
+      return HookResult.Continue;
+    });
+
+    // _Core.NetMessage.HookServerMessage<CMsgSosStartSoundEvent>((msg, filter) =>
+    // {
+    //   msg.PackedParams = new byte[0];
+    //   Console.WriteLine("CMsgSosStartSoundEvent " + msg.PackedParams.Length);
+    //   Console.WriteLine("CMsgSosStartSoundEvent " + msg.SoundeventHash);
+    //   Console.WriteLine("CMsgSosStartSoundEvent " + msg.SourceEntityIndex);
+    //   Console.WriteLine("CMsgSosStartSoundEvent " + msg.Seed);
+    //   Console.WriteLine("CMsgSosStartSoundEvent " + msg.StartTime);
+    //   using var shake = _Core.NetMessage.Create<CUserMessageShake>();
+    //   shake.Duration = 10;
+    //   shake.Amplitude = 10;
+    //   shake.Frequency = 10;
+    //   shake.Command = 0;
+
+    //   // GC.Collect();
+
+    //   // shake.SendToPlayer(0);
+      
+    //   return HookResult.Continue;
+    // });
 
     Task.Run(async () =>
     {

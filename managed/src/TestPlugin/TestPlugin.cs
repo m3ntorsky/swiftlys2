@@ -2,6 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Shared;
+using SwiftlyS2.Shared.Commands;
 using SwiftlyS2.Shared.GameEventDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.Misc;
@@ -55,6 +56,12 @@ public class TestPlugin : BasePlugin {
 
         CUtlStringToken token = new("hello");
         Console.WriteLine($"Hash: {token.HashCode}");
+  }
+
+  [Command("testplugin")]
+  [CommandAlias("testplugin2")]
+  public void TestCommand(ICommandContext context) {
+    Console.WriteLine("TestPlugin Command");
   }
 
   public override void Unload() {

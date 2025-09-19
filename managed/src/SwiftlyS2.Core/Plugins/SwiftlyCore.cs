@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SwiftlyS2.Core.Commands;
 using SwiftlyS2.Core.Events;
 using SwiftlyS2.Core.GameEvents;
 using SwiftlyS2.Core.Misc;
@@ -8,8 +9,11 @@ using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.GameEvents;
+using SwiftlyS2.Shared.Modules.Commands;
 using SwiftlyS2.Shared.NetMessages;
+using SwiftlyS2.Shared.Plugins;
 using SwiftlyS2.Shared.Services;
+using SwiftlyS2.Core.AttributeParsers;
 
 namespace SwiftlyS2.Core.Services;
 
@@ -23,6 +27,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public NetMessageService NetMessageService { get; init; }
   public PluginConfigurationService Configuration { get; init; }
   public ILoggerFactory LoggerFactory { get; init; }
+  public CommandService CommandService { get; init; }
 
 
   public SwiftlyCore(string contextId, string contextBaseDirectory, IServiceProvider coreProvider) {
@@ -41,6 +46,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<PluginConfigurationService>()
       .AddSingleton<GameEventService>()
       .AddSingleton<NetMessageService>()
+      .AddSingleton<CommandService>()
 
       .AddLogging(
         builder => {
@@ -56,6 +62,12 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     GameEventService = _ServiceProvider.GetRequiredService<GameEventService>();
     LoggerFactory = _ServiceProvider.GetRequiredService<ILoggerFactory>();
     NetMessageService = _ServiceProvider.GetRequiredService<NetMessageService>();
+    CommandService = _ServiceProvider.GetRequiredService<CommandService>();
+  }
+
+  public void Initialize(object instance, Type type)
+  {
+    CommandService.ParseFromObject(instance);
   }
 
   public void Dispose() {
@@ -67,5 +79,6 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   ILoggerFactory ISwiftlyCore.LoggerFactory => LoggerFactory;
   IGameEventService ISwiftlyCore.GameEvent => GameEventService;
   INetMessageService ISwiftlyCore.NetMessage => NetMessageService;
+  ICommandService ISwiftlyCore.Command => CommandService;
 
 }
