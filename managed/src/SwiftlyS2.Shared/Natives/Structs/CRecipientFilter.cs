@@ -15,11 +15,11 @@ public class CRecipientFilter
 {
     public NetChannelBufType_t BufferType;
     public bool InitMessage;
-    public CBitVec RecipientFilters;
+    public CBitVec64 RecipientFilters;
 
     public CRecipientFilter(NetChannelBufType_t BufType = NetChannelBufType_t.BUF_RELIABLE, bool bInitMessage = false)
     {
-        RecipientFilters = new(64);
+        RecipientFilters = new();
         InitMessage = bInitMessage;
         BufferType = BufType;
     }
@@ -28,7 +28,7 @@ public class CRecipientFilter
 
     public virtual NetChannelBufType_t GetNetworkBufferType() => BufferType;
     public virtual bool IsInitMessage() => InitMessage;
-    public virtual ref CBitVec GetRecipients() => ref RecipientFilters;
+    public virtual ref CBitVec64 GetRecipients() => ref RecipientFilters;
 
     public void AddAllPlayers()
     {

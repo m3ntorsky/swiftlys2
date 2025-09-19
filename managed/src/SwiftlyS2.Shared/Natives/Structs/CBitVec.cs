@@ -2,114 +2,79 @@
 
 namespace SwiftlyS2.Shared.Natives;
 
-[StructLayout(LayoutKind.Sequential)]
-public struct CBitVec
+public interface ICBitVec
 {
-    public uint[] Ints;
+    bool IsFixedSize();
+    uint NumDWords();
+    uint GetNumBits();
+    void ClearAll();
+    void SetAll();
+    void Set(uint index);
+    void Set(int index);
+    void Clear(uint index);
+    void Clear(int index);
+    bool IsSet(uint index);
+    bool IsSet(int index);
+    int Count();
+    bool IsAllClear();
+}
 
-    public CBitVec(uint bits)
+public static unsafe class CBitVecOperations
+{
+    public static void ClearAll(uint* buffer, int intCount)
     {
-        Ints = new uint[(bits + (32 - 1)) / 32];
+        for (int i = 0; i < intCount; i++)
+            buffer[i] = 0;
     }
 
-    public bool IsFixedSize() => true;
-    public uint NumDWords() => (uint)Ints.Length;
-    public uint GetNumBits() => (uint)(Ints.Length * 32 - 31);
-
-    public void ClearAll()
+    public static void SetAll(uint* buffer, int intCount)
     {
-        for (int i = 0; i < Ints.Length; i++) Ints[i] = 0;
+        for (int i = 0; i < intCount; i++)
+            buffer[i] = uint.MaxValue;
     }
 
-    public void SetAll()
+    public static void Set(uint* buffer, uint index, uint maxBits)
     {
-        for (int i = 0; i < Ints.Length; i++) Ints[i] = uint.MaxValue;
+        if (index >= maxBits) throw new IndexOutOfRangeException($"The index {index} is out of range. Maximum allowed index is {maxBits - 1}");
+        buffer[index >> 5] |= (uint)(1 << ((int)index & 31));
     }
 
-    public void Set(uint index)
+    public static void Set(uint* buffer, int index, uint maxBits)
     {
-        if ((index >> 5) > Ints.Length) throw new IndexOutOfRangeException($"The index provided is out of range, it goes to Ints[{index >> 5}], but the limit is {Ints.Length}");
-
-        unsafe
-        {
-            fixed (uint* ptr = Ints)
-            {
-                Ints[index >> 5] |= (uint)(1 << ((int) index & 31));
-            }
-        }
+        if (index < 0 || index >= maxBits) throw new IndexOutOfRangeException($"The index {index} is out of range. Valid range is 0 to {maxBits - 1}");
+        buffer[index >> 5] |= (uint)(1 << (index & 31));
     }
 
-    public void Set(int index)
+    public static void Clear(uint* buffer, uint index, uint maxBits)
     {
-        if ((index >> 5) > Ints.Length) throw new IndexOutOfRangeException($"The index provided is out of range, it goes to Ints[{index >> 5}], but the limit is {Ints.Length}");
-
-        unsafe
-        {
-            fixed (uint* ptr = Ints)
-            {
-                Ints[index >> 5] |= (uint)(1 << (index & 31));
-            }
-        }
+        if (index >= maxBits) throw new IndexOutOfRangeException($"The index {index} is out of range. Maximum allowed index is {maxBits - 1}");
+        buffer[index >> 5] &= ~(uint)(1 << ((int)index & 31));
     }
 
-    public void Clear(uint index)
+    public static void Clear(uint* buffer, int index, uint maxBits)
     {
-        if ((index >> 5) > Ints.Length) throw new IndexOutOfRangeException($"The index provided is out of range, it goes to Ints[{index >> 5}], but the limit is {Ints.Length}");
-
-        unsafe
-        {
-            fixed (uint* ptr = Ints)
-            {
-                Ints[index >> 5] &= ~(uint)(1 << ((int)index & 31));
-            }
-        }
+        if (index < 0 || index >= maxBits) throw new IndexOutOfRangeException($"The index {index} is out of range. Valid range is 0 to {maxBits - 1}");
+        buffer[index >> 5] &= ~(uint)(1 << (index & 31));
     }
 
-    public void Clear(int index)
+    public static bool IsSet(uint* buffer, uint index, uint maxBits)
     {
-        if ((index >> 5) > Ints.Length) throw new IndexOutOfRangeException($"The index provided is out of range, it goes to Ints[{index >> 5}], but the limit is {Ints.Length}");
-
-        unsafe
-        {
-            fixed (uint* ptr = Ints)
-            {
-                Ints[index >> 5] &= ~(uint)(1 << (index & 31));
-            }
-        }
+        if (index >= maxBits) throw new IndexOutOfRangeException($"The index {index} is out of range. Maximum allowed index is {maxBits - 1}");
+        return (buffer[index >> 5] & ((uint)(1 << ((int)index & 31)))) != 0;
     }
 
-    public bool IsSet(uint index)
+    public static bool IsSet(uint* buffer, int index, uint maxBits)
     {
-        if ((index >> 5) > Ints.Length) throw new IndexOutOfRangeException($"The index provided is out of range, it goes to Ints[{index >> 5}], but the limit is {Ints.Length}");
-
-        unsafe
-        {
-            fixed (uint* ptr = Ints)
-            {
-                return (Ints[index >> 5] & ((uint)(1 << ((int)index & 31)))) != 0;
-            }
-        }
+        if (index < 0 || index >= maxBits) throw new IndexOutOfRangeException($"The index {index} is out of range. Valid range is 0 to {maxBits - 1}");
+        return (buffer[index >> 5] & ((uint)(1 << (index & 31)))) != 0;
     }
 
-    public bool IsSet(int index)
-    {
-        if ((index >> 5) > Ints.Length) throw new IndexOutOfRangeException($"The index provided is out of range, it goes to Ints[{index >> 5}], but the limit is {Ints.Length}");
-
-        unsafe
-        {
-            fixed (uint* ptr = Ints)
-            {
-                return (Ints[index >> 5] & ((uint)(1 << (index & 31)))) != 0;
-            }
-        }
-    }
-
-    public int Count()
+    public static int Count(uint* buffer, int intCount)
     {
         int count = 0;
-        for (int i = 0; i < Ints.Length; i++)
+        for (int i = 0; i < intCount; i++)
         {
-            uint v = Ints[i];
+            uint v = buffer[i];
             while (v != 0)
             {
                 v &= v - 1;
@@ -119,8 +84,198 @@ public struct CBitVec
         return count;
     }
 
+    public static bool IsAllClear(uint* buffer, int intCount)
+    {
+        return Count(buffer, intCount) == 0;
+    }
+}
+
+[StructLayout(LayoutKind.Sequential)]
+public unsafe struct CBitVec64 : ICBitVec
+{
+    public fixed uint _buffer[2];
+
+    public CBitVec64()
+    {
+        ClearAll();
+    }
+
+    public bool IsFixedSize() => true;
+    public uint NumDWords() => 2;
+    public uint GetNumBits() => 64;
+
+    public void ClearAll()
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            CBitVecOperations.ClearAll(ptr, 2);
+        }
+    }
+
+    public void SetAll()
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            CBitVecOperations.SetAll(ptr, 2);
+        }
+    }
+
+    public void Set(uint index)
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            CBitVecOperations.Set(ptr, index, 64);
+        }
+    }
+
+    public void Set(int index)
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            CBitVecOperations.Set(ptr, index, 64);
+        }
+    }
+
+    public void Clear(uint index)
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            CBitVecOperations.Clear(ptr, index, 64);
+        }
+    }
+
+    public void Clear(int index)
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            CBitVecOperations.Clear(ptr, index, 64);
+        }
+    }
+
+    public bool IsSet(uint index)
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            return CBitVecOperations.IsSet(ptr, index, 64);
+        }
+    }
+
+    public bool IsSet(int index)
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            return CBitVecOperations.IsSet(ptr, index, 64);
+        }
+    }
+
+    public int Count()
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            return CBitVecOperations.Count(ptr, 2);
+        }
+    }
+
     public bool IsAllClear()
     {
-        return Count() == 0;
+        fixed (uint* ptr = _buffer)
+        {
+            return CBitVecOperations.IsAllClear(ptr, 2);
+        }
     }
-};
+}
+
+[StructLayout(LayoutKind.Sequential)]
+public unsafe struct CBitVec16384 : ICBitVec
+{
+    public fixed uint _buffer[512];
+
+    public CBitVec16384()
+    {
+        ClearAll();
+    }
+
+    public bool IsFixedSize() => true;
+    public uint NumDWords() => 512;
+    public uint GetNumBits() => 16384;
+
+    public void ClearAll()
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            CBitVecOperations.ClearAll(ptr, 512);
+        }
+    }
+
+    public void SetAll()
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            CBitVecOperations.SetAll(ptr, 512);
+        }
+    }
+
+    public void Set(uint index)
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            CBitVecOperations.Set(ptr, index, 16384);
+        }
+    }
+
+    public void Set(int index)
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            CBitVecOperations.Set(ptr, index, 16384);
+        }
+    }
+
+    public void Clear(uint index)
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            CBitVecOperations.Clear(ptr, index, 16384);
+        }
+    }
+
+    public void Clear(int index)
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            CBitVecOperations.Clear(ptr, index, 16384);
+        }
+    }
+
+    public bool IsSet(uint index)
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            return CBitVecOperations.IsSet(ptr, index, 16384);
+        }
+    }
+
+    public bool IsSet(int index)
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            return CBitVecOperations.IsSet(ptr, index, 16384);
+        }
+    }
+
+    public int Count()
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            return CBitVecOperations.Count(ptr, 512);
+        }
+    }
+
+    public bool IsAllClear()
+    {
+        fixed (uint* ptr = _buffer)
+        {
+            return CBitVecOperations.IsAllClear(ptr, 512);
+        }
+    }
+}
