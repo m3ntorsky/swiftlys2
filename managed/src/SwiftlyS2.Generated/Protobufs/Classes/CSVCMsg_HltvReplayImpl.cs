@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_HltvReplayImpl : TypedProtobuf<CSVCMsg_HltvReplay>, CSVCMsg_HltvReplay
 {
-  public CSVCMsg_HltvReplayImpl(nint handle): base(handle)
+  public CSVCMsg_HltvReplayImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

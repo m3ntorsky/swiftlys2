@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CNETMsg_SignonStateImpl : NetMessage<CNETMsg_SignonState>, CNETMsg_SignonState
 {
-  public CNETMsg_SignonStateImpl(nint handle): base(handle)
+  public CNETMsg_SignonStateImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

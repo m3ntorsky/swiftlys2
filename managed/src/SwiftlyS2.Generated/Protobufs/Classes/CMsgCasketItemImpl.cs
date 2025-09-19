@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgCasketItemImpl : TypedProtobuf<CMsgCasketItem>, CMsgCasketItem
 {
-  public CMsgCasketItemImpl(nint handle): base(handle)
+  public CMsgCasketItemImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

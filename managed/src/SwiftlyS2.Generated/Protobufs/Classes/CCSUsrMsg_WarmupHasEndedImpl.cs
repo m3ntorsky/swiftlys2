@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_WarmupHasEndedImpl : NetMessage<CCSUsrMsg_WarmupHasEnded>, CCSUsrMsg_WarmupHasEnded
 {
-  public CCSUsrMsg_WarmupHasEndedImpl(nint handle): base(handle)
+  public CCSUsrMsg_WarmupHasEndedImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

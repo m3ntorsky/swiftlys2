@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMsg_HudError : ITypedProtobuf<CUserMsg_HudError>
 {
-  static CUserMsg_HudError ITypedProtobuf<CUserMsg_HudError>.Wrap(nint handle) => new CUserMsg_HudErrorImpl(handle);
+  static CUserMsg_HudError ITypedProtobuf<CUserMsg_HudError>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMsg_HudErrorImpl(handle, isManuallyAllocated);
 
 
   public int OrderId { get; set; }

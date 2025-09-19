@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_CallVoteFailedImpl : NetMessage<CCSUsrMsg_CallVoteFailed>, CCSUsrMsg_CallVoteFailed
 {
-  public CCSUsrMsg_CallVoteFailedImpl(nint handle): base(handle)
+  public CCSUsrMsg_CallVoteFailedImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

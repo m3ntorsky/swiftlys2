@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgLeaveParty : ITypedProtobuf<CMsgLeaveParty>
 {
-  static CMsgLeaveParty ITypedProtobuf<CMsgLeaveParty>.Wrap(nint handle) => new CMsgLeavePartyImpl(handle);
+  static CMsgLeaveParty ITypedProtobuf<CMsgLeaveParty>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgLeavePartyImpl(handle, isManuallyAllocated);
 
 
 }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_FadeImpl : NetMessage<CCSUsrMsg_Fade>, CCSUsrMsg_Fade
 {
-  public CCSUsrMsg_FadeImpl(nint handle): base(handle)
+  public CCSUsrMsg_FadeImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

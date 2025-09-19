@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoRecoveryImpl : TypedProtobuf<CDemoRecovery>, CDemoRecovery
 {
-  public CDemoRecoveryImpl(nint handle): base(handle)
+  public CDemoRecoveryImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CDemoRecovery_DemoInitialSpawnGroupEntry InitialSpawnGroup
-  { get => new CDemoRecovery_DemoInitialSpawnGroupEntryImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "initial_spawn_group")); }
+  { get => new CDemoRecovery_DemoInitialSpawnGroupEntryImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "initial_spawn_group"), false); }
 
 
   public byte[] SpawnGroupMessage

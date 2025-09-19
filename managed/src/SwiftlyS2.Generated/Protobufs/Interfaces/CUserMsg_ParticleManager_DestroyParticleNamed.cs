@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMsg_ParticleManager_DestroyParticleNamed : ITypedProtobuf<CUserMsg_ParticleManager_DestroyParticleNamed>
 {
-  static CUserMsg_ParticleManager_DestroyParticleNamed ITypedProtobuf<CUserMsg_ParticleManager_DestroyParticleNamed>.Wrap(nint handle) => new CUserMsg_ParticleManager_DestroyParticleNamedImpl(handle);
+  static CUserMsg_ParticleManager_DestroyParticleNamed ITypedProtobuf<CUserMsg_ParticleManager_DestroyParticleNamed>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMsg_ParticleManager_DestroyParticleNamedImpl(handle, isManuallyAllocated);
 
 
   public ulong ParticleNameIndex { get; set; }

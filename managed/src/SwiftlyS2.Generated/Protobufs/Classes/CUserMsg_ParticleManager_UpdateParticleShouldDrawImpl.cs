@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_UpdateParticleShouldDrawImpl : TypedProtobuf<CUserMsg_ParticleManager_UpdateParticleShouldDraw>, CUserMsg_ParticleManager_UpdateParticleShouldDraw
 {
-  public CUserMsg_ParticleManager_UpdateParticleShouldDrawImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_UpdateParticleShouldDrawImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

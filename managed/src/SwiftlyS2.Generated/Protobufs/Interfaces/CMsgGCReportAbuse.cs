@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCReportAbuse : ITypedProtobuf<CMsgGCReportAbuse>
 {
-  static CMsgGCReportAbuse ITypedProtobuf<CMsgGCReportAbuse>.Wrap(nint handle) => new CMsgGCReportAbuseImpl(handle);
+  static CMsgGCReportAbuse ITypedProtobuf<CMsgGCReportAbuse>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCReportAbuseImpl(handle, isManuallyAllocated);
 
 
   public ulong TargetSteamId { get; set; }
@@ -25,7 +25,7 @@ public interface CMsgGCReportAbuse : ITypedProtobuf<CMsgGCReportAbuse>
   public uint ContentType { get; set; }
 
 
-  public int TargetGameServerIp { get; set; }
+  public uint TargetGameServerIp { get; set; }
 
 
   public uint TargetGameServerPort { get; set; }

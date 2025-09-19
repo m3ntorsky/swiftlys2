@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CCSUsrMsg_RawAudio : ITypedProtobuf<CCSUsrMsg_RawAudio>, INetMessage<CCSUsrMsg_RawAudio>
+public interface CCSUsrMsg_RawAudio : ITypedProtobuf<CCSUsrMsg_RawAudio>, INetMessage<CCSUsrMsg_RawAudio>, IDisposable
 {
   static int INetMessage<CCSUsrMsg_RawAudio>.MessageId => 318;
   
   static string INetMessage<CCSUsrMsg_RawAudio>.MessageName => "CCSUsrMsg_RawAudio";
 
-  static CCSUsrMsg_RawAudio ITypedProtobuf<CCSUsrMsg_RawAudio>.Wrap(nint handle) => new CCSUsrMsg_RawAudioImpl(handle);
+  static CCSUsrMsg_RawAudio ITypedProtobuf<CCSUsrMsg_RawAudio>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_RawAudioImpl(handle, isManuallyAllocated);
 
 
   public int Pitch { get; set; }

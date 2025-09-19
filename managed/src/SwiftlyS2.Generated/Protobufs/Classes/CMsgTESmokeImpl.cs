@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTESmokeImpl : NetMessage<CMsgTESmoke>, CMsgTESmoke
 {
-  public CMsgTESmokeImpl(nint handle): base(handle)
+  public CMsgTESmokeImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

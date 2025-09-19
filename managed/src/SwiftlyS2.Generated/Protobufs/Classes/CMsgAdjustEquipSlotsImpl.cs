@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgAdjustEquipSlotsImpl : TypedProtobuf<CMsgAdjustEquipSlots>, CMsgAdjustEquipSlots
 {
-  public CMsgAdjustEquipSlotsImpl(nint handle): base(handle)
+  public CMsgAdjustEquipSlotsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

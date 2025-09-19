@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CProductInfo_SetRichPresenceLocalization_ResponseImpl : TypedProtobuf<CProductInfo_SetRichPresenceLocalization_Response>, CProductInfo_SetRichPresenceLocalization_Response
 {
-  public CProductInfo_SetRichPresenceLocalization_ResponseImpl(nint handle): base(handle)
+  public CProductInfo_SetRichPresenceLocalization_ResponseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

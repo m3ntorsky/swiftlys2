@@ -18,11 +18,11 @@ internal static class NativeTranslations {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _Fetch(null, keyBufferPtr, playerid);
+        var ret = _Fetch(null, keyBufferPtr, playerid);
 
     var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _Fetch(retBufferPtr, keyBufferPtr, playerid);
+        ret = _Fetch(retBufferPtr, keyBufferPtr, playerid);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
     pool.Return(retBuffer);
 

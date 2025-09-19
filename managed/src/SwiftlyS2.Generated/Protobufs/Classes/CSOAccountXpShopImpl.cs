@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOAccountXpShopImpl : TypedProtobuf<CSOAccountXpShop>, CSOAccountXpShop
 {
-  public CSOAccountXpShopImpl(nint handle): base(handle)
+  public CSOAccountXpShopImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageScreenTiltImpl : NetMessage<CUserMessageScreenTilt>, CUserMessageScreenTilt
 {
-  public CUserMessageScreenTiltImpl(nint handle): base(handle)
+  public CUserMessageScreenTiltImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

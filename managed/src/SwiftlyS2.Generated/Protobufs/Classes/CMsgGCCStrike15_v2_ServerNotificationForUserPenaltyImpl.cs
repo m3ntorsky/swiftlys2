@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ServerNotificationForUserPenaltyImpl : TypedProtobuf<CMsgGCCStrike15_v2_ServerNotificationForUserPenalty>, CMsgGCCStrike15_v2_ServerNotificationForUserPenalty
 {
-  public CMsgGCCStrike15_v2_ServerNotificationForUserPenaltyImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ServerNotificationForUserPenaltyImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

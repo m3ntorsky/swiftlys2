@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class NetMessageSplitscreenUserChangedImpl : TypedProtobuf<NetMessageSplitscreenUserChanged>, NetMessageSplitscreenUserChanged
 {
-  public NetMessageSplitscreenUserChangedImpl(nint handle): base(handle)
+  public NetMessageSplitscreenUserChangedImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

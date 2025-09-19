@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgApplyPennantUpgradeImpl : TypedProtobuf<CMsgApplyPennantUpgrade>, CMsgApplyPennantUpgrade
 {
-  public CMsgApplyPennantUpgradeImpl(nint handle): base(handle)
+  public CMsgApplyPennantUpgradeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

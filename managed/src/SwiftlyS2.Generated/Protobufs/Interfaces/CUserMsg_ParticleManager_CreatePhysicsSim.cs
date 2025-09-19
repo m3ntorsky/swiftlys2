@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMsg_ParticleManager_CreatePhysicsSim : ITypedProtobuf<CUserMsg_ParticleManager_CreatePhysicsSim>
 {
-  static CUserMsg_ParticleManager_CreatePhysicsSim ITypedProtobuf<CUserMsg_ParticleManager_CreatePhysicsSim>.Wrap(nint handle) => new CUserMsg_ParticleManager_CreatePhysicsSimImpl(handle);
+  static CUserMsg_ParticleManager_CreatePhysicsSim ITypedProtobuf<CUserMsg_ParticleManager_CreatePhysicsSim>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMsg_ParticleManager_CreatePhysicsSimImpl(handle, isManuallyAllocated);
 
 
   public string PropGroupName { get; set; }

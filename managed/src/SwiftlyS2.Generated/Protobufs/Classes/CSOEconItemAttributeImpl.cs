@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOEconItemAttributeImpl : TypedProtobuf<CSOEconItemAttribute>, CSOEconItemAttribute
 {
-  public CSOEconItemAttributeImpl(nint handle): base(handle)
+  public CSOEconItemAttributeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

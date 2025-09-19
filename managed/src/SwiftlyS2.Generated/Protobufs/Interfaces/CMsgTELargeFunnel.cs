@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CMsgTELargeFunnel : ITypedProtobuf<CMsgTELargeFunnel>, INetMessage<CMsgTELargeFunnel>
+public interface CMsgTELargeFunnel : ITypedProtobuf<CMsgTELargeFunnel>, INetMessage<CMsgTELargeFunnel>, IDisposable
 {
   static int INetMessage<CMsgTELargeFunnel>.MessageId => 421;
   
   static string INetMessage<CMsgTELargeFunnel>.MessageName => "CMsgTELargeFunnel";
 
-  static CMsgTELargeFunnel ITypedProtobuf<CMsgTELargeFunnel>.Wrap(nint handle) => new CMsgTELargeFunnelImpl(handle);
+  static CMsgTELargeFunnel ITypedProtobuf<CMsgTELargeFunnel>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgTELargeFunnelImpl(handle, isManuallyAllocated);
 
 
   public Vector Origin { get; set; }

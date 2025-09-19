@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoinImpl : TypedProtobuf<CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin>, CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoin
 {
-  public CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoinImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_Client2GCRequestPrestigeCoinImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

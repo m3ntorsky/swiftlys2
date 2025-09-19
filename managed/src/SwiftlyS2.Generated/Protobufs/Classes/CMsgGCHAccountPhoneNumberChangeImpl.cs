@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCHAccountPhoneNumberChangeImpl : TypedProtobuf<CMsgGCHAccountPhoneNumberChange>, CMsgGCHAccountPhoneNumberChange
 {
-  public CMsgGCHAccountPhoneNumberChangeImpl(nint handle): base(handle)
+  public CMsgGCHAccountPhoneNumberChangeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

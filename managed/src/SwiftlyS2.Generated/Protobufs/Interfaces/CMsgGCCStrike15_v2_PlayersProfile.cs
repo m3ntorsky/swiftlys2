@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_PlayersProfile : ITypedProtobuf<CMsgGCCStrike15_v2_PlayersProfile>
 {
-  static CMsgGCCStrike15_v2_PlayersProfile ITypedProtobuf<CMsgGCCStrike15_v2_PlayersProfile>.Wrap(nint handle) => new CMsgGCCStrike15_v2_PlayersProfileImpl(handle);
+  static CMsgGCCStrike15_v2_PlayersProfile ITypedProtobuf<CMsgGCCStrike15_v2_PlayersProfile>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_PlayersProfileImpl(handle, isManuallyAllocated);
 
 
   public uint RequestId { get; set; }

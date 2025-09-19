@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_ReportHitImpl : NetMessage<CCSUsrMsg_ReportHit>, CCSUsrMsg_ReportHit
 {
-  public CCSUsrMsg_ReportHitImpl(nint handle): base(handle)
+  public CCSUsrMsg_ReportHitImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

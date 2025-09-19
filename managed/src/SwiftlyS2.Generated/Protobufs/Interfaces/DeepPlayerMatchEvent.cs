@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface DeepPlayerMatchEvent : ITypedProtobuf<DeepPlayerMatchEvent>
 {
-  static DeepPlayerMatchEvent ITypedProtobuf<DeepPlayerMatchEvent>.Wrap(nint handle) => new DeepPlayerMatchEventImpl(handle);
+  static DeepPlayerMatchEvent ITypedProtobuf<DeepPlayerMatchEvent>.Wrap(nint handle, bool isManuallyAllocated) => new DeepPlayerMatchEventImpl(handle, isManuallyAllocated);
 
 
   public uint Accountid { get; set; }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSource2VProfLiteReportItem : ITypedProtobuf<CMsgSource2VProfLiteReportItem>
 {
-  static CMsgSource2VProfLiteReportItem ITypedProtobuf<CMsgSource2VProfLiteReportItem>.Wrap(nint handle) => new CMsgSource2VProfLiteReportItemImpl(handle);
+  static CMsgSource2VProfLiteReportItem ITypedProtobuf<CMsgSource2VProfLiteReportItem>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSource2VProfLiteReportItemImpl(handle, isManuallyAllocated);
 
 
   public string Name { get; set; }

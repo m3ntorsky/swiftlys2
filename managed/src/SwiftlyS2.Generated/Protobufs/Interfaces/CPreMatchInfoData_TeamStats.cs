@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CPreMatchInfoData_TeamStats : ITypedProtobuf<CPreMatchInfoData_TeamStats>
 {
-  static CPreMatchInfoData_TeamStats ITypedProtobuf<CPreMatchInfoData_TeamStats>.Wrap(nint handle) => new CPreMatchInfoData_TeamStatsImpl(handle);
+  static CPreMatchInfoData_TeamStats ITypedProtobuf<CPreMatchInfoData_TeamStats>.Wrap(nint handle, bool isManuallyAllocated) => new CPreMatchInfoData_TeamStatsImpl(handle, isManuallyAllocated);
 
 
   public int MatchInfoIdxtxt { get; set; }

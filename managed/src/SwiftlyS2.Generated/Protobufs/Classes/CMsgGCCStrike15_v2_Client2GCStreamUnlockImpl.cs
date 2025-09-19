@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_Client2GCStreamUnlockImpl : TypedProtobuf<CMsgGCCStrike15_v2_Client2GCStreamUnlock>, CMsgGCCStrike15_v2_Client2GCStreamUnlock
 {
-  public CMsgGCCStrike15_v2_Client2GCStreamUnlockImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_Client2GCStreamUnlockImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

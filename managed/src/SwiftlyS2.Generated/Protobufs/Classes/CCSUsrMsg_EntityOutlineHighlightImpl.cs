@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_EntityOutlineHighlightImpl : NetMessage<CCSUsrMsg_EntityOutlineHighlight>, CCSUsrMsg_EntityOutlineHighlight
 {
-  public CCSUsrMsg_EntityOutlineHighlightImpl(nint handle): base(handle)
+  public CCSUsrMsg_EntityOutlineHighlightImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

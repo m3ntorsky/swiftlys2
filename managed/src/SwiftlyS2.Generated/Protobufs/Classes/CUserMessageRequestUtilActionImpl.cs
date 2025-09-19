@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageRequestUtilActionImpl : NetMessage<CUserMessageRequestUtilAction>, CUserMessageRequestUtilAction
 {
-  public CUserMessageRequestUtilActionImpl(nint handle): base(handle)
+  public CUserMessageRequestUtilActionImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

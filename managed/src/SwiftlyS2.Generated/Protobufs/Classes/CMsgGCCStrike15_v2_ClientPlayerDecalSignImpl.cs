@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientPlayerDecalSignImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientPlayerDecalSign>, CMsgGCCStrike15_v2_ClientPlayerDecalSign
 {
-  public CMsgGCCStrike15_v2_ClientPlayerDecalSignImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientPlayerDecalSignImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public PlayerDecalDigitalSignature Data
-  { get => new PlayerDecalDigitalSignatureImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "data")); }
+  { get => new PlayerDecalDigitalSignatureImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "data"), false); }
 
 
   public ulong Itemid

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTransformImpl : TypedProtobuf<CMsgTransform>, CMsgTransform
 {
-  public CMsgTransformImpl(nint handle): base(handle)
+  public CMsgTransformImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -23,6 +23,6 @@ internal class CMsgTransformImpl : TypedProtobuf<CMsgTransform>, CMsgTransform
 
 
   public CMsgQuaternion Orientation
-  { get => new CMsgQuaternionImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "orientation")); }
+  { get => new CMsgQuaternionImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "orientation"), false); }
 
 }

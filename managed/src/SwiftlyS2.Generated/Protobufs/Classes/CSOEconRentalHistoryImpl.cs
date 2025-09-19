@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOEconRentalHistoryImpl : TypedProtobuf<CSOEconRentalHistory>, CSOEconRentalHistory
 {
-  public CSOEconRentalHistoryImpl(nint handle): base(handle)
+  public CSOEconRentalHistoryImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

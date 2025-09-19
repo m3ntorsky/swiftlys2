@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgTransform : ITypedProtobuf<CMsgTransform>
 {
-  static CMsgTransform ITypedProtobuf<CMsgTransform>.Wrap(nint handle) => new CMsgTransformImpl(handle);
+  static CMsgTransform ITypedProtobuf<CMsgTransform>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgTransformImpl(handle, isManuallyAllocated);
 
 
   public Vector Position { get; set; }

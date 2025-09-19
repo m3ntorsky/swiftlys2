@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode : ITypedProtobuf<CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode>
 {
-  static CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode ITypedProtobuf<CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode>.Wrap(nint handle) => new CMsgGCCStrike15_v2_GC2ClientRefuseSecureModeImpl(handle);
+  static CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode ITypedProtobuf<CMsgGCCStrike15_v2_GC2ClientRefuseSecureMode>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_GC2ClientRefuseSecureModeImpl(handle, isManuallyAllocated);
 
 
   public string FileReport { get; set; }

@@ -755,21 +755,21 @@ void Bridge_NetMessages_AddQAngle(void* pmsg, const char* fieldName, QAngle valu
 
 int Bridge_NetMessages_GetBytes(uint8_t* out, void* pmsg, const char* fieldName)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0);
     CHECK_FIELD_NOT_REPEATED(0);
 
     static std::string s;
     s = msg->GetReflection()->GetString(*msg, field);
 
-    if (out != nullptr) strcpy((char*)out, s.c_str());
+    if (out != nullptr) std::memcpy(out, s.data(), s.size());
 
     return s.size();
 }
 
 int Bridge_NetMessages_GetRepeatedBytes(uint8_t* out, void* pmsg, const char* fieldName, int index)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0);
     CHECK_FIELD_REPEATED(0);
     CHECK_REPEATED_ELEMENT(index, 0);
@@ -777,34 +777,40 @@ int Bridge_NetMessages_GetRepeatedBytes(uint8_t* out, void* pmsg, const char* fi
     static std::string s;
     s = msg->GetReflection()->GetRepeatedString(*msg, field, index);
 
-    if (out != nullptr) strcpy((char*)out, s.c_str());
+    if (out != nullptr) std::memcpy(out, s.data(), s.size());
 
     return s.size();
 }
 
-void Bridge_NetMessages_SetBytes(void* pmsg, const char* fieldName, uint8_t* value)
+void Bridge_NetMessages_SetBytes(void* pmsg, const char* fieldName, char* value, int valueLength)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
-    msg->GetReflection()->SetString(msg, field, (char*)value);
+
+    std::string s(value, (size_t)valueLength);
+    msg->GetReflection()->SetString(msg, field, s);
 }
 
-void Bridge_NetMessages_SetRepeatedBytes(void* pmsg, const char* fieldName, int index, uint8_t* value)
+void Bridge_NetMessages_SetRepeatedBytes(void* pmsg, const char* fieldName, int index, char* value, int valueLength)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
-    msg->GetReflection()->SetRepeatedString(msg, field, index, (char*)value);
+
+    std::string s(value, (size_t)valueLength);
+    msg->GetReflection()->SetRepeatedString(msg, field, index, s);
 }
 
-void Bridge_NetMessages_AddBytes(void* pmsg, const char* fieldName, uint8_t* value)
+void Bridge_NetMessages_AddBytes(void* pmsg, const char* fieldName, char* value, int valueLength)
 {
-    CNetMessagePB<google::protobuf::Message>* msg = (CNetMessagePB<google::protobuf::Message>*)pmsg;
+    google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
-    msg->GetReflection()->AddString(msg, field, (char*)value);
+
+    std::string s(value, (size_t)valueLength);
+    msg->GetReflection()->AddString(msg, field, s);
 }
 
 void* Bridge_NetMessages_GetNestedMessage(void* pmsg, const char* fieldName)

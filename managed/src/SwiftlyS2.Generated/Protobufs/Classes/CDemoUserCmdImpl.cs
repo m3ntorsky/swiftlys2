@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoUserCmdImpl : TypedProtobuf<CDemoUserCmd>, CDemoUserCmd
 {
-  public CDemoUserCmdImpl(nint handle): base(handle)
+  public CDemoUserCmdImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

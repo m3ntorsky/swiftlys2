@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_SetParticleNamedValueContext_TransformContextValueImpl : TypedProtobuf<CUserMsg_ParticleManager_SetParticleNamedValueContext_TransformContextValue>, CUserMsg_ParticleManager_SetParticleNamedValueContext_TransformContextValue
 {
-  public CUserMsg_ParticleManager_SetParticleNamedValueContext_TransformContextValueImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_SetParticleNamedValueContext_TransformContextValueImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

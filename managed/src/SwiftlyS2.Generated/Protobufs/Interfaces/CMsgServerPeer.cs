@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgServerPeer : ITypedProtobuf<CMsgServerPeer>
 {
-  static CMsgServerPeer ITypedProtobuf<CMsgServerPeer>.Wrap(nint handle) => new CMsgServerPeerImpl(handle);
+  static CMsgServerPeer ITypedProtobuf<CMsgServerPeer>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgServerPeerImpl(handle, isManuallyAllocated);
 
 
   public int PlayerSlot { get; set; }

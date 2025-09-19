@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CDemoStop : ITypedProtobuf<CDemoStop>
 {
-  static CDemoStop ITypedProtobuf<CDemoStop>.Wrap(nint handle) => new CDemoStopImpl(handle);
+  static CDemoStop ITypedProtobuf<CDemoStop>.Wrap(nint handle, bool isManuallyAllocated) => new CDemoStopImpl(handle, isManuallyAllocated);
 
 
 }

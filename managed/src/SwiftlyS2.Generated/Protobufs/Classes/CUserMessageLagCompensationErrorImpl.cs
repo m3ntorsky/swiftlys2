@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageLagCompensationErrorImpl : NetMessage<CUserMessageLagCompensationError>, CUserMessageLagCompensationError
 {
-  public CUserMessageLagCompensationErrorImpl(nint handle): base(handle)
+  public CUserMessageLagCompensationErrorImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

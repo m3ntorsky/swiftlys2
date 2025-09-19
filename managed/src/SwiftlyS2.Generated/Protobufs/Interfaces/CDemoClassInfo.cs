@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CDemoClassInfo : ITypedProtobuf<CDemoClassInfo>
 {
-  static CDemoClassInfo ITypedProtobuf<CDemoClassInfo>.Wrap(nint handle) => new CDemoClassInfoImpl(handle);
+  static CDemoClassInfo ITypedProtobuf<CDemoClassInfo>.Wrap(nint handle, bool isManuallyAllocated) => new CDemoClassInfoImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldSubMessageType<CDemoClassInfo_class_t> Classes { get; }

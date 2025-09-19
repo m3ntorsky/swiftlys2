@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CEntityMessageDoSpark : ITypedProtobuf<CEntityMessageDoSpark>
 {
-  static CEntityMessageDoSpark ITypedProtobuf<CEntityMessageDoSpark>.Wrap(nint handle) => new CEntityMessageDoSparkImpl(handle);
+  static CEntityMessageDoSpark ITypedProtobuf<CEntityMessageDoSpark>.Wrap(nint handle, bool isManuallyAllocated) => new CEntityMessageDoSparkImpl(handle, isManuallyAllocated);
 
 
   public Vector Origin { get; set; }
@@ -19,7 +19,7 @@ public interface CEntityMessageDoSpark : ITypedProtobuf<CEntityMessageDoSpark>
   public float Radius { get; set; }
 
 
-  public int Color { get; set; }
+  public uint Color { get; set; }
 
 
   public uint Beams { get; set; }

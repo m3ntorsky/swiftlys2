@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCToGCIsTrustedServerResponse : ITypedProtobuf<CMsgGCToGCIsTrustedServerResponse>
 {
-  static CMsgGCToGCIsTrustedServerResponse ITypedProtobuf<CMsgGCToGCIsTrustedServerResponse>.Wrap(nint handle) => new CMsgGCToGCIsTrustedServerResponseImpl(handle);
+  static CMsgGCToGCIsTrustedServerResponse ITypedProtobuf<CMsgGCToGCIsTrustedServerResponse>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCToGCIsTrustedServerResponseImpl(handle, isManuallyAllocated);
 
 
   public bool IsTrusted { get; set; }

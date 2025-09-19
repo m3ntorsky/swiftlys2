@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOAccountRecurringSubscription : ITypedProtobuf<CSOAccountRecurringSubscription>
 {
-  static CSOAccountRecurringSubscription ITypedProtobuf<CSOAccountRecurringSubscription>.Wrap(nint handle) => new CSOAccountRecurringSubscriptionImpl(handle);
+  static CSOAccountRecurringSubscription ITypedProtobuf<CSOAccountRecurringSubscription>.Wrap(nint handle, bool isManuallyAllocated) => new CSOAccountRecurringSubscriptionImpl(handle, isManuallyAllocated);
 
 
   public uint TimeNextCycle { get; set; }

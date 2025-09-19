@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageFadeImpl : NetMessage<CUserMessageFade>, CUserMessageFade
 {
-  public CUserMessageFadeImpl(nint handle): base(handle)
+  public CUserMessageFadeImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -26,7 +26,7 @@ internal class CUserMessageFadeImpl : NetMessage<CUserMessageFade>, CUserMessage
   { get => Accessor.GetUInt32("flags"); set => Accessor.SetUInt32("flags", value); }
 
 
-  public int Color
-  { get => Accessor.GetInt32("color"); set => Accessor.SetInt32("color", value); }
+  public uint Color
+  { get => Accessor.GetUInt32("color"); set => Accessor.SetUInt32("color", value); }
 
 }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEExplosionImpl : NetMessage<CMsgTEExplosion>, CMsgTEExplosion
 {
-  public CMsgTEExplosionImpl(nint handle): base(handle)
+  public CMsgTEExplosionImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -54,7 +54,7 @@ internal class CMsgTEExplosionImpl : NetMessage<CMsgTEExplosion>, CMsgTEExplosio
   { get => Accessor.GetVector("debris_origin"); set => Accessor.SetVector("debris_origin", value); }
 
 
-  public int DebrisSurfaceprop
-  { get => Accessor.GetInt32("debris_surfaceprop"); set => Accessor.SetInt32("debris_surfaceprop", value); }
+  public uint DebrisSurfaceprop
+  { get => Accessor.GetUInt32("debris_surfaceprop"); set => Accessor.SetUInt32("debris_surfaceprop", value); }
 
 }

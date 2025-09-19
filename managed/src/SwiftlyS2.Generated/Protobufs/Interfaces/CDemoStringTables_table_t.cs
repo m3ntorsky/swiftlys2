@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CDemoStringTables_table_t : ITypedProtobuf<CDemoStringTables_table_t>
 {
-  static CDemoStringTables_table_t ITypedProtobuf<CDemoStringTables_table_t>.Wrap(nint handle) => new CDemoStringTables_table_tImpl(handle);
+  static CDemoStringTables_table_t ITypedProtobuf<CDemoStringTables_table_t>.Wrap(nint handle, bool isManuallyAllocated) => new CDemoStringTables_table_tImpl(handle, isManuallyAllocated);
 
 
   public string TableName { get; set; }

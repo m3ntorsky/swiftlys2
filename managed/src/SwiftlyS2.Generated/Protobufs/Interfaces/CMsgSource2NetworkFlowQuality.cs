@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSource2NetworkFlowQuality : ITypedProtobuf<CMsgSource2NetworkFlowQuality>
 {
-  static CMsgSource2NetworkFlowQuality ITypedProtobuf<CMsgSource2NetworkFlowQuality>.Wrap(nint handle) => new CMsgSource2NetworkFlowQualityImpl(handle);
+  static CMsgSource2NetworkFlowQuality ITypedProtobuf<CMsgSource2NetworkFlowQuality>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSource2NetworkFlowQualityImpl(handle, isManuallyAllocated);
 
 
   public uint Duration { get; set; }

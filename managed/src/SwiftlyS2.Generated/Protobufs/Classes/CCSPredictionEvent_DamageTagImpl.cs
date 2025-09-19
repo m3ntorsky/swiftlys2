@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSPredictionEvent_DamageTagImpl : TypedProtobuf<CCSPredictionEvent_DamageTag>, CCSPredictionEvent_DamageTag
 {
-  public CCSPredictionEvent_DamageTagImpl(nint handle): base(handle)
+  public CCSPredictionEvent_DamageTagImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

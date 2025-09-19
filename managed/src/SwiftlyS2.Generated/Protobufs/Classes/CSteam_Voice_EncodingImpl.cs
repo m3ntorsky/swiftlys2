@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSteam_Voice_EncodingImpl : TypedProtobuf<CSteam_Voice_Encoding>, CSteam_Voice_Encoding
 {
-  public CSteam_Voice_EncodingImpl(nint handle): base(handle)
+  public CSteam_Voice_EncodingImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

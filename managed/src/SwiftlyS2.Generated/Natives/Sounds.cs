@@ -35,7 +35,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(name, nameBuffer);
     nameBuffer[nameLength] = 0;
     fixed (byte* nameBufferPtr = nameBuffer) {
-    _SetName(soundEvent, nameBufferPtr);
+        _SetName(soundEvent, nameBufferPtr);
     pool.Return(nameBuffer);
 
   }
@@ -46,7 +46,7 @@ internal static class NativeSounds {
     var pool = ArrayPool<byte>.Shared;
     var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetName(retBufferPtr, soundEvent);
+        ret = _GetName(retBufferPtr, soundEvent);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
     pool.Return(retBuffer);
 
@@ -86,7 +86,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _HasField(soundEvent, fieldNameBufferPtr);
+        var ret = _HasField(soundEvent, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -100,7 +100,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetBool(soundEvent, fieldNameBufferPtr, value);
+        _SetBool(soundEvent, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -113,7 +113,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetBool(soundEvent, fieldNameBufferPtr);
+        var ret = _GetBool(soundEvent, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -127,7 +127,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetInt32(soundEvent, fieldNameBufferPtr, value);
+        _SetInt32(soundEvent, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -140,7 +140,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetInt32(soundEvent, fieldNameBufferPtr);
+        var ret = _GetInt32(soundEvent, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -154,7 +154,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetUInt32(soundEvent, fieldNameBufferPtr, value);
+        _SetUInt32(soundEvent, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -167,7 +167,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetUInt32(soundEvent, fieldNameBufferPtr);
+        var ret = _GetUInt32(soundEvent, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -181,7 +181,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetUInt64(soundEvent, fieldNameBufferPtr, value);
+        _SetUInt64(soundEvent, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -194,7 +194,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetUInt64(soundEvent, fieldNameBufferPtr);
+        var ret = _GetUInt64(soundEvent, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -208,7 +208,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetFloat(soundEvent, fieldNameBufferPtr, value);
+        _SetFloat(soundEvent, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -221,7 +221,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetFloat(soundEvent, fieldNameBufferPtr);
+        var ret = _GetFloat(soundEvent, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;
@@ -235,7 +235,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    _SetFloat3(soundEvent, fieldNameBufferPtr, value);
+        _SetFloat3(soundEvent, fieldNameBufferPtr, value);
     pool.Return(fieldNameBuffer);
 
   }
@@ -248,7 +248,7 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-    var ret = _GetFloat3(soundEvent, fieldNameBufferPtr);
+        var ret = _GetFloat3(soundEvent, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
     return ret;

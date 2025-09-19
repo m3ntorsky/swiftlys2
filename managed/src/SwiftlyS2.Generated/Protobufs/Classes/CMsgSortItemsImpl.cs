@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSortItemsImpl : TypedProtobuf<CMsgSortItems>, CMsgSortItems
 {
-  public CMsgSortItemsImpl(nint handle): base(handle)
+  public CMsgSortItemsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

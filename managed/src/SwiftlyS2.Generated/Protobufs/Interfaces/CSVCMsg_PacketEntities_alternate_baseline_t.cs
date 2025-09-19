@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSVCMsg_PacketEntities_alternate_baseline_t : ITypedProtobuf<CSVCMsg_PacketEntities_alternate_baseline_t>
 {
-  static CSVCMsg_PacketEntities_alternate_baseline_t ITypedProtobuf<CSVCMsg_PacketEntities_alternate_baseline_t>.Wrap(nint handle) => new CSVCMsg_PacketEntities_alternate_baseline_tImpl(handle);
+  static CSVCMsg_PacketEntities_alternate_baseline_t ITypedProtobuf<CSVCMsg_PacketEntities_alternate_baseline_t>.Wrap(nint handle, bool isManuallyAllocated) => new CSVCMsg_PacketEntities_alternate_baseline_tImpl(handle, isManuallyAllocated);
 
 
   public int EntityIndex { get; set; }

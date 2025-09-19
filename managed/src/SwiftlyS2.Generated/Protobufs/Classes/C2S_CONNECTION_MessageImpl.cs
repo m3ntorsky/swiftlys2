@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class C2S_CONNECTION_MessageImpl : TypedProtobuf<C2S_CONNECTION_Message>, C2S_CONNECTION_Message
 {
-  public C2S_CONNECTION_MessageImpl(nint handle): base(handle)
+  public C2S_CONNECTION_MessageImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,6 +19,6 @@ internal class C2S_CONNECTION_MessageImpl : TypedProtobuf<C2S_CONNECTION_Message
 
 
   public C2S_CONNECT_SameProcessCheck LocalhostSameProcessCheck
-  { get => new C2S_CONNECT_SameProcessCheckImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "localhost_same_process_check")); }
+  { get => new C2S_CONNECT_SameProcessCheckImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "localhost_same_process_check"), false); }
 
 }

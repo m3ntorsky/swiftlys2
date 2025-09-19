@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CGCToGCMsgMasterAck : ITypedProtobuf<CGCToGCMsgMasterAck>
 {
-  static CGCToGCMsgMasterAck ITypedProtobuf<CGCToGCMsgMasterAck>.Wrap(nint handle) => new CGCToGCMsgMasterAckImpl(handle);
+  static CGCToGCMsgMasterAck ITypedProtobuf<CGCToGCMsgMasterAck>.Wrap(nint handle, bool isManuallyAllocated) => new CGCToGCMsgMasterAckImpl(handle, isManuallyAllocated);
 
 
   public uint DirIndex { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class OperationalStatisticElementImpl : TypedProtobuf<OperationalStatisticElement>, OperationalStatisticElement
 {
-  public OperationalStatisticElementImpl(nint handle): base(handle)
+  public OperationalStatisticElementImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

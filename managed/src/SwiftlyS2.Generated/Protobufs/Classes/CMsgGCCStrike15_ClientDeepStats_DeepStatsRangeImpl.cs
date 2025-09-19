@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_ClientDeepStats_DeepStatsRangeImpl : TypedProtobuf<CMsgGCCStrike15_ClientDeepStats_DeepStatsRange>, CMsgGCCStrike15_ClientDeepStats_DeepStatsRange
 {
-  public CMsgGCCStrike15_ClientDeepStats_DeepStatsRangeImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_ClientDeepStats_DeepStatsRangeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

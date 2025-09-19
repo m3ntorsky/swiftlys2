@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CQuest_PublisherAddCommunityItemsToPlayer_RequestImpl : TypedProtobuf<CQuest_PublisherAddCommunityItemsToPlayer_Request>, CQuest_PublisherAddCommunityItemsToPlayer_Request
 {
-  public CQuest_PublisherAddCommunityItemsToPlayer_RequestImpl(nint handle): base(handle)
+  public CQuest_PublisherAddCommunityItemsToPlayer_RequestImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

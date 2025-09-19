@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgServerAvailable : ITypedProtobuf<CMsgServerAvailable>
 {
-  static CMsgServerAvailable ITypedProtobuf<CMsgServerAvailable>.Wrap(nint handle) => new CMsgServerAvailableImpl(handle);
+  static CMsgServerAvailable ITypedProtobuf<CMsgServerAvailable>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgServerAvailableImpl(handle, isManuallyAllocated);
 
 
 }

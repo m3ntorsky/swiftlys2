@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class MLDictImpl : TypedProtobuf<MLDict>, MLDict
 {
-  public MLDictImpl(nint handle): base(handle)
+  public MLDictImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

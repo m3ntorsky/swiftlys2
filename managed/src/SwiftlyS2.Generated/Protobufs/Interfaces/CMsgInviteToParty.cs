@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgInviteToParty : ITypedProtobuf<CMsgInviteToParty>
 {
-  static CMsgInviteToParty ITypedProtobuf<CMsgInviteToParty>.Wrap(nint handle) => new CMsgInviteToPartyImpl(handle);
+  static CMsgInviteToParty ITypedProtobuf<CMsgInviteToParty>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgInviteToPartyImpl(handle, isManuallyAllocated);
 
 
   public ulong SteamId { get; set; }

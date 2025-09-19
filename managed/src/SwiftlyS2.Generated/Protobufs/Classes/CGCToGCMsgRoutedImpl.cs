@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CGCToGCMsgRoutedImpl : TypedProtobuf<CGCToGCMsgRouted>, CGCToGCMsgRouted
 {
-  public CGCToGCMsgRoutedImpl(nint handle): base(handle)
+  public CGCToGCMsgRoutedImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

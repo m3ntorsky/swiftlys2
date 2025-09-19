@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgConVarValue : ITypedProtobuf<CMsgConVarValue>
 {
-  static CMsgConVarValue ITypedProtobuf<CMsgConVarValue>.Wrap(nint handle) => new CMsgConVarValueImpl(handle);
+  static CMsgConVarValue ITypedProtobuf<CMsgConVarValue>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgConVarValueImpl(handle, isManuallyAllocated);
 
 
   public string Name { get; set; }

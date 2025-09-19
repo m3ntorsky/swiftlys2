@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_GameSessionConfigurationImpl : TypedProtobuf<CSVCMsg_GameSessionConfiguration>, CSVCMsg_GameSessionConfiguration
 {
-  public CSVCMsg_GameSessionConfigurationImpl(nint handle): base(handle)
+  public CSVCMsg_GameSessionConfigurationImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -42,8 +42,8 @@ internal class CSVCMsg_GameSessionConfigurationImpl : TypedProtobuf<CSVCMsg_Game
   { get => Accessor.GetUInt32("max_clients"); set => Accessor.SetUInt32("max_clients", value); }
 
 
-  public int TickInterval
-  { get => Accessor.GetInt32("tick_interval"); set => Accessor.SetInt32("tick_interval", value); }
+  public uint TickInterval
+  { get => Accessor.GetUInt32("tick_interval"); set => Accessor.SetUInt32("tick_interval", value); }
 
 
   public string Hostname

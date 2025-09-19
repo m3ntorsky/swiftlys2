@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CPreMatchInfoData : ITypedProtobuf<CPreMatchInfoData>
 {
-  static CPreMatchInfoData ITypedProtobuf<CPreMatchInfoData>.Wrap(nint handle) => new CPreMatchInfoDataImpl(handle);
+  static CPreMatchInfoData ITypedProtobuf<CPreMatchInfoData>.Wrap(nint handle, bool isManuallyAllocated) => new CPreMatchInfoDataImpl(handle, isManuallyAllocated);
 
 
   public int PredictionsPct { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCToGCBroadcastConsoleCommandImpl : TypedProtobuf<CMsgGCToGCBroadcastConsoleCommand>, CMsgGCToGCBroadcastConsoleCommand
 {
-  public CMsgGCToGCBroadcastConsoleCommandImpl(nint handle): base(handle)
+  public CMsgGCToGCBroadcastConsoleCommandImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

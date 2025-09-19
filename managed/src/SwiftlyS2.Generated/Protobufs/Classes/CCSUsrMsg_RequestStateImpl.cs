@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_RequestStateImpl : NetMessage<CCSUsrMsg_RequestState>, CCSUsrMsg_RequestState
 {
-  public CCSUsrMsg_RequestStateImpl(nint handle): base(handle)
+  public CCSUsrMsg_RequestStateImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

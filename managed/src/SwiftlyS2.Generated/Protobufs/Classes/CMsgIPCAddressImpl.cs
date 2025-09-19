@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgIPCAddressImpl : TypedProtobuf<CMsgIPCAddress>, CMsgIPCAddress
 {
-  public CMsgIPCAddressImpl(nint handle): base(handle)
+  public CMsgIPCAddressImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

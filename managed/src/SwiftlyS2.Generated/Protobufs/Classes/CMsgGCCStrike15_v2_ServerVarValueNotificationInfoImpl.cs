@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ServerVarValueNotificationInfoImpl : TypedProtobuf<CMsgGCCStrike15_v2_ServerVarValueNotificationInfo>, CMsgGCCStrike15_v2_ServerVarValueNotificationInfo
 {
-  public CMsgGCCStrike15_v2_ServerVarValueNotificationInfoImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ServerVarValueNotificationInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

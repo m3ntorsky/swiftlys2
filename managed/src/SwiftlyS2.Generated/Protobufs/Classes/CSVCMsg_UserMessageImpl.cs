@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_UserMessageImpl : NetMessage<CSVCMsg_UserMessage>, CSVCMsg_UserMessage
 {
-  public CSVCMsg_UserMessageImpl(nint handle): base(handle)
+  public CSVCMsg_UserMessageImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class OperationalStatisticsPacketImpl : TypedProtobuf<OperationalStatisticsPacket>, OperationalStatisticsPacket
 {
-  public OperationalStatisticsPacketImpl(nint handle): base(handle)
+  public OperationalStatisticsPacketImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSOSingleObjectImpl : TypedProtobuf<CMsgSOSingleObject>, CMsgSOSingleObject
 {
-  public CMsgSOSingleObjectImpl(nint handle): base(handle)
+  public CMsgSOSingleObjectImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -27,6 +27,6 @@ internal class CMsgSOSingleObjectImpl : TypedProtobuf<CMsgSOSingleObject>, CMsgS
 
 
   public CMsgSOIDOwner OwnerSoid
-  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "owner_soid")); }
+  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "owner_soid"), false); }
 
 }

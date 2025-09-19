@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_DestroyParticleInvolvingImpl : TypedProtobuf<CUserMsg_ParticleManager_DestroyParticleInvolving>, CUserMsg_ParticleManager_DestroyParticleInvolving
 {
-  public CUserMsg_ParticleManager_DestroyParticleInvolvingImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_DestroyParticleInvolvingImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

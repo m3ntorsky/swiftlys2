@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageAudioParameterImpl : NetMessage<CUserMessageAudioParameter>, CUserMessageAudioParameter
 {
-  public CUserMessageAudioParameterImpl(nint handle): base(handle)
+  public CUserMessageAudioParameterImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCLCMsg_FileCRCCheckImpl : NetMessage<CCLCMsg_FileCRCCheck>, CCLCMsg_FileCRCCheck
 {
-  public CCLCMsg_FileCRCCheckImpl(nint handle): base(handle)
+  public CCLCMsg_FileCRCCheckImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -30,7 +30,7 @@ internal class CCLCMsg_FileCRCCheckImpl : NetMessage<CCLCMsg_FileCRCCheck>, CCLC
   { get => Accessor.GetString("filename"); set => Accessor.SetString("filename", value); }
 
 
-  public int Crc
-  { get => Accessor.GetInt32("crc"); set => Accessor.SetInt32("crc", value); }
+  public uint Crc
+  { get => Accessor.GetUInt32("crc"); set => Accessor.SetUInt32("crc", value); }
 
 }

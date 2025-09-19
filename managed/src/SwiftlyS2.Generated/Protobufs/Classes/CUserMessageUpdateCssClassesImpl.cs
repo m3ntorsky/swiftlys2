@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageUpdateCssClassesImpl : NetMessage<CUserMessageUpdateCssClasses>, CUserMessageUpdateCssClasses
 {
-  public CUserMessageUpdateCssClassesImpl(nint handle): base(handle)
+  public CUserMessageUpdateCssClassesImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

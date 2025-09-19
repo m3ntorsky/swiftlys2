@@ -6,16 +6,16 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CUserMessageCloseCaption : ITypedProtobuf<CUserMessageCloseCaption>, INetMessage<CUserMessageCloseCaption>
+public interface CUserMessageCloseCaption : ITypedProtobuf<CUserMessageCloseCaption>, INetMessage<CUserMessageCloseCaption>, IDisposable
 {
   static int INetMessage<CUserMessageCloseCaption>.MessageId => 102;
   
   static string INetMessage<CUserMessageCloseCaption>.MessageName => "CUserMessageCloseCaption";
 
-  static CUserMessageCloseCaption ITypedProtobuf<CUserMessageCloseCaption>.Wrap(nint handle) => new CUserMessageCloseCaptionImpl(handle);
+  static CUserMessageCloseCaption ITypedProtobuf<CUserMessageCloseCaption>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessageCloseCaptionImpl(handle, isManuallyAllocated);
 
 
-  public int Hash { get; set; }
+  public uint Hash { get; set; }
 
 
   public float Duration { get; set; }

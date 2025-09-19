@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CGameServers_AggregationQuery_Request : ITypedProtobuf<CGameServers_AggregationQuery_Request>
 {
-  static CGameServers_AggregationQuery_Request ITypedProtobuf<CGameServers_AggregationQuery_Request>.Wrap(nint handle) => new CGameServers_AggregationQuery_RequestImpl(handle);
+  static CGameServers_AggregationQuery_Request ITypedProtobuf<CGameServers_AggregationQuery_Request>.Wrap(nint handle, bool isManuallyAllocated) => new CGameServers_AggregationQuery_RequestImpl(handle, isManuallyAllocated);
 
 
   public string Filter { get; set; }

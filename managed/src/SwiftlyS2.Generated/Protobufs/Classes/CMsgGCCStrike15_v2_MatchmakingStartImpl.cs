@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchmakingStartImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchmakingStart>, CMsgGCCStrike15_v2_MatchmakingStart
 {
-  public CMsgGCCStrike15_v2_MatchmakingStartImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchmakingStartImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -31,7 +31,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingStartImpl : TypedProtobuf<CMsgGCCSt
 
 
   public TournamentMatchSetup TournamentMatch
-  { get => new TournamentMatchSetupImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tournament_match")); }
+  { get => new TournamentMatchSetupImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tournament_match"), false); }
 
 
   public bool PrimeOnly

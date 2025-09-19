@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CCSUsrMsg_UpdateScreenHealthBar : ITypedProtobuf<CCSUsrMsg_UpdateScreenHealthBar>, INetMessage<CCSUsrMsg_UpdateScreenHealthBar>
+public interface CCSUsrMsg_UpdateScreenHealthBar : ITypedProtobuf<CCSUsrMsg_UpdateScreenHealthBar>, INetMessage<CCSUsrMsg_UpdateScreenHealthBar>, IDisposable
 {
   static int INetMessage<CCSUsrMsg_UpdateScreenHealthBar>.MessageId => 370;
   
   static string INetMessage<CCSUsrMsg_UpdateScreenHealthBar>.MessageName => "CCSUsrMsg_UpdateScreenHealthBar";
 
-  static CCSUsrMsg_UpdateScreenHealthBar ITypedProtobuf<CCSUsrMsg_UpdateScreenHealthBar>.Wrap(nint handle) => new CCSUsrMsg_UpdateScreenHealthBarImpl(handle);
+  static CCSUsrMsg_UpdateScreenHealthBar ITypedProtobuf<CCSUsrMsg_UpdateScreenHealthBar>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_UpdateScreenHealthBarImpl(handle, isManuallyAllocated);
 
 
   public int Entidx { get; set; }

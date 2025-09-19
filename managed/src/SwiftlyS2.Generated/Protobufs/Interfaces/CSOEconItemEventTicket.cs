@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOEconItemEventTicket : ITypedProtobuf<CSOEconItemEventTicket>
 {
-  static CSOEconItemEventTicket ITypedProtobuf<CSOEconItemEventTicket>.Wrap(nint handle) => new CSOEconItemEventTicketImpl(handle);
+  static CSOEconItemEventTicket ITypedProtobuf<CSOEconItemEventTicket>.Wrap(nint handle, bool isManuallyAllocated) => new CSOEconItemEventTicketImpl(handle, isManuallyAllocated);
 
 
   public uint AccountId { get; set; }

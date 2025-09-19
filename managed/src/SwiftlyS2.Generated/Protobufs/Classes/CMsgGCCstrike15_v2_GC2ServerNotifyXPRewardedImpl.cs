@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCstrike15_v2_GC2ServerNotifyXPRewardedImpl : TypedProtobuf<CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded>, CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded
 {
-  public CMsgGCCstrike15_v2_GC2ServerNotifyXPRewardedImpl(nint handle): base(handle)
+  public CMsgGCCstrike15_v2_GC2ServerNotifyXPRewardedImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientPartyWarning_EntryImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientPartyWarning_Entry>, CMsgGCCStrike15_v2_ClientPartyWarning_Entry
 {
-  public CMsgGCCStrike15_v2_ClientPartyWarning_EntryImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientPartyWarning_EntryImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -57,7 +57,28 @@ internal class TestService {
       Console.WriteLine("EventPlayerJump " + eventObj.UserIdController.PlayerPawn.Value);
       return HookResult.Continue;
     });
-    NetMessageService service = new();
+
+    _Core.NetMessage.HookServerMessage<CMsgSosStartSoundEvent>((msg, filter) =>
+    {
+      msg.PackedParams = new byte[0];
+      Console.WriteLine("CMsgSosStartSoundEvent " + msg.PackedParams.Length);
+      Console.WriteLine("CMsgSosStartSoundEvent " + msg.SoundeventHash);
+      Console.WriteLine("CMsgSosStartSoundEvent " + msg.SourceEntityIndex);
+      Console.WriteLine("CMsgSosStartSoundEvent " + msg.Seed);
+      Console.WriteLine("CMsgSosStartSoundEvent " + msg.StartTime);
+      using var shake = _Core.NetMessage.Create<CUserMessageShake>();
+      shake.Duration = 10;
+      shake.Amplitude = 10;
+      shake.Frequency = 10;
+      shake.Command = 0;
+
+      // GC.Collect();
+
+      // shake.SendToPlayer(0);
+      
+      return HookResult.Continue;
+    });
+
     Task.Run(async () =>
     {
       while (true)
@@ -88,12 +109,10 @@ internal class TestService {
             //   eventObj.LocToken = "testtt";
             // });
 
-          service.Send<CNETMsg_SetConVar>(msg =>
-          {
-            var cvar = msg.Convars.Cvars.Add();
-            cvar.Name = "sv_autobunnyhopping";
-            cvar.Value = "true";
-          });
+
+
+
+
 
 
 

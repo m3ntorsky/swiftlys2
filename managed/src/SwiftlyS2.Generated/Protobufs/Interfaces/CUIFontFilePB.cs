@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUIFontFilePB : ITypedProtobuf<CUIFontFilePB>
 {
-  static CUIFontFilePB ITypedProtobuf<CUIFontFilePB>.Wrap(nint handle) => new CUIFontFilePBImpl(handle);
+  static CUIFontFilePB ITypedProtobuf<CUIFontFilePB>.Wrap(nint handle, bool isManuallyAllocated) => new CUIFontFilePBImpl(handle, isManuallyAllocated);
 
 
   public string FontFileName { get; set; }

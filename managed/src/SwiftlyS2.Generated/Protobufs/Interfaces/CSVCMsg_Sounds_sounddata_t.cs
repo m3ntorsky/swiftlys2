@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSVCMsg_Sounds_sounddata_t : ITypedProtobuf<CSVCMsg_Sounds_sounddata_t>
 {
-  static CSVCMsg_Sounds_sounddata_t ITypedProtobuf<CSVCMsg_Sounds_sounddata_t>.Wrap(nint handle) => new CSVCMsg_Sounds_sounddata_tImpl(handle);
+  static CSVCMsg_Sounds_sounddata_t ITypedProtobuf<CSVCMsg_Sounds_sounddata_t>.Wrap(nint handle, bool isManuallyAllocated) => new CSVCMsg_Sounds_sounddata_tImpl(handle, isManuallyAllocated);
 
 
   public int OriginX { get; set; }
@@ -43,7 +43,7 @@ public interface CSVCMsg_Sounds_sounddata_t : ITypedProtobuf<CSVCMsg_Sounds_soun
   public uint SoundNum { get; set; }
 
 
-  public int SoundNumHandle { get; set; }
+  public uint SoundNumHandle { get; set; }
 
 
   public int SpeakerEntity { get; set; }

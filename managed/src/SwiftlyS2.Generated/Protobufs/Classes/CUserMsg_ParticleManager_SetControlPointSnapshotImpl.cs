@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_SetControlPointSnapshotImpl : TypedProtobuf<CUserMsg_ParticleManager_SetControlPointSnapshot>, CUserMsg_ParticleManager_SetControlPointSnapshot
 {
-  public CUserMsg_ParticleManager_SetControlPointSnapshotImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_SetControlPointSnapshotImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

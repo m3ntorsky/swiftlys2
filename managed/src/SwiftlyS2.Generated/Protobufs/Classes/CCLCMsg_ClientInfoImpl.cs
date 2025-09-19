@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCLCMsg_ClientInfoImpl : NetMessage<CCLCMsg_ClientInfo>, CCLCMsg_ClientInfo
 {
-  public CCLCMsg_ClientInfoImpl(nint handle): base(handle)
+  public CCLCMsg_ClientInfoImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
-  public int SendTableCrc
-  { get => Accessor.GetInt32("send_table_crc"); set => Accessor.SetInt32("send_table_crc", value); }
+  public uint SendTableCrc
+  { get => Accessor.GetUInt32("send_table_crc"); set => Accessor.SetUInt32("send_table_crc", value); }
 
 
   public uint ServerCount

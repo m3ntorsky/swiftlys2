@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSosStopSoundEventImpl : NetMessage<CMsgSosStopSoundEvent>, CMsgSosStopSoundEvent
 {
-  public CMsgSosStopSoundEventImpl(nint handle): base(handle)
+  public CMsgSosStopSoundEventImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

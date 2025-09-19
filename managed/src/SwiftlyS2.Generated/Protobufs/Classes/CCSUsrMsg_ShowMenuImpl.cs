@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_ShowMenuImpl : NetMessage<CCSUsrMsg_ShowMenu>, CCSUsrMsg_ShowMenu
 {
-  public CCSUsrMsg_ShowMenuImpl(nint handle): base(handle)
+  public CCSUsrMsg_ShowMenuImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

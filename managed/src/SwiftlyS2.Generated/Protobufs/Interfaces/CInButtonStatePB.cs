@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CInButtonStatePB : ITypedProtobuf<CInButtonStatePB>
 {
-  static CInButtonStatePB ITypedProtobuf<CInButtonStatePB>.Wrap(nint handle) => new CInButtonStatePBImpl(handle);
+  static CInButtonStatePB ITypedProtobuf<CInButtonStatePB>.Wrap(nint handle, bool isManuallyAllocated) => new CInButtonStatePBImpl(handle, isManuallyAllocated);
 
 
   public ulong Buttonstate1 { get; set; }

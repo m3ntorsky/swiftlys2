@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCToGCRequestPassportItemGrant : ITypedProtobuf<CMsgGCToGCRequestPassportItemGrant>
 {
-  static CMsgGCToGCRequestPassportItemGrant ITypedProtobuf<CMsgGCToGCRequestPassportItemGrant>.Wrap(nint handle) => new CMsgGCToGCRequestPassportItemGrantImpl(handle);
+  static CMsgGCToGCRequestPassportItemGrant ITypedProtobuf<CMsgGCToGCRequestPassportItemGrant>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCToGCRequestPassportItemGrantImpl(handle, isManuallyAllocated);
 
 
   public ulong SteamId { get; set; }

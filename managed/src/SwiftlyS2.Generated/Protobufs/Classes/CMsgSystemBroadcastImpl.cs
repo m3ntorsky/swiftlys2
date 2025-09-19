@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSystemBroadcastImpl : TypedProtobuf<CMsgSystemBroadcast>, CMsgSystemBroadcast
 {
-  public CMsgSystemBroadcastImpl(nint handle): base(handle)
+  public CMsgSystemBroadcastImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_GC2ClientRequestValidationImpl : TypedProtobuf<CMsgGCCStrike15_v2_GC2ClientRequestValidation>, CMsgGCCStrike15_v2_GC2ClientRequestValidation
 {
-  public CMsgGCCStrike15_v2_GC2ClientRequestValidationImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_GC2ClientRequestValidationImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

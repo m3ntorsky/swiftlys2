@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface TournamentEvent : ITypedProtobuf<TournamentEvent>
 {
-  static TournamentEvent ITypedProtobuf<TournamentEvent>.Wrap(nint handle) => new TournamentEventImpl(handle);
+  static TournamentEvent ITypedProtobuf<TournamentEvent>.Wrap(nint handle, bool isManuallyAllocated) => new TournamentEventImpl(handle, isManuallyAllocated);
 
 
   public int EventId { get; set; }

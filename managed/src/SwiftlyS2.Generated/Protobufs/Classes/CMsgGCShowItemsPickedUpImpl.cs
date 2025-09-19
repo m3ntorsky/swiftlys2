@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCShowItemsPickedUpImpl : TypedProtobuf<CMsgGCShowItemsPickedUp>, CMsgGCShowItemsPickedUp
 {
-  public CMsgGCShowItemsPickedUpImpl(nint handle): base(handle)
+  public CMsgGCShowItemsPickedUpImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

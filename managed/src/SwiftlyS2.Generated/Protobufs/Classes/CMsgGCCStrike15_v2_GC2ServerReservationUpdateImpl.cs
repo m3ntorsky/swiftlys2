@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_GC2ServerReservationUpdateImpl : TypedProtobuf<CMsgGCCStrike15_v2_GC2ServerReservationUpdate>, CMsgGCCStrike15_v2_GC2ServerReservationUpdate
 {
-  public CMsgGCCStrike15_v2_GC2ServerReservationUpdateImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_GC2ServerReservationUpdateImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

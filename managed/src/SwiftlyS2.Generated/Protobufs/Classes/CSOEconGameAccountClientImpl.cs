@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOEconGameAccountClientImpl : TypedProtobuf<CSOEconGameAccountClient>, CSOEconGameAccountClient
 {
-  public CSOEconGameAccountClientImpl(nint handle): base(handle)
+  public CSOEconGameAccountClientImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -18,8 +18,8 @@ internal class CSOEconGameAccountClientImpl : TypedProtobuf<CSOEconGameAccountCl
   { get => Accessor.GetUInt32("additional_backpack_slots"); set => Accessor.SetUInt32("additional_backpack_slots", value); }
 
 
-  public int BonusXpTimestampRefresh
-  { get => Accessor.GetInt32("bonus_xp_timestamp_refresh"); set => Accessor.SetInt32("bonus_xp_timestamp_refresh", value); }
+  public uint BonusXpTimestampRefresh
+  { get => Accessor.GetUInt32("bonus_xp_timestamp_refresh"); set => Accessor.SetUInt32("bonus_xp_timestamp_refresh", value); }
 
 
   public uint BonusXpUsedflags

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_ClientReportResponse : ITypedProtobuf<CMsgGCCStrike15_v2_ClientReportResponse>
 {
-  static CMsgGCCStrike15_v2_ClientReportResponse ITypedProtobuf<CMsgGCCStrike15_v2_ClientReportResponse>.Wrap(nint handle) => new CMsgGCCStrike15_v2_ClientReportResponseImpl(handle);
+  static CMsgGCCStrike15_v2_ClientReportResponse ITypedProtobuf<CMsgGCCStrike15_v2_ClientReportResponse>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_ClientReportResponseImpl(handle, isManuallyAllocated);
 
 
   public ulong ConfirmationId { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class DetailedSearchStatisticImpl : TypedProtobuf<DetailedSearchStatistic>, DetailedSearchStatistic
 {
-  public DetailedSearchStatisticImpl(nint handle): base(handle)
+  public DetailedSearchStatisticImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

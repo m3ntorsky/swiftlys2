@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_GameEvent_key_tImpl : TypedProtobuf<CSVCMsg_GameEvent_key_t>, CSVCMsg_GameEvent_key_t
 {
-  public CSVCMsg_GameEvent_key_tImpl(nint handle): base(handle)
+  public CSVCMsg_GameEvent_key_tImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

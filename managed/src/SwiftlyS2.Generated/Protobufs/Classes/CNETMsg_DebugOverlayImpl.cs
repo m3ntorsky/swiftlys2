@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CNETMsg_DebugOverlayImpl : NetMessage<CNETMsg_DebugOverlay>, CNETMsg_DebugOverlay
 {
-  public CNETMsg_DebugOverlayImpl(nint handle): base(handle)
+  public CNETMsg_DebugOverlayImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

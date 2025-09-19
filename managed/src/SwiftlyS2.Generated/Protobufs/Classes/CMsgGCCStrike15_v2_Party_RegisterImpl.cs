@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_Party_RegisterImpl : TypedProtobuf<CMsgGCCStrike15_v2_Party_Register>, CMsgGCCStrike15_v2_Party_Register
 {
-  public CMsgGCCStrike15_v2_Party_RegisterImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_Party_RegisterImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

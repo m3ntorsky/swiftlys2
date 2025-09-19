@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSosSetSoundEventParamsImpl : NetMessage<CMsgSosSetSoundEventParams>, CMsgSosSetSoundEventParams
 {
-  public CMsgSosSetSoundEventParamsImpl(nint handle): base(handle)
+  public CMsgSosSetSoundEventParamsImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDataGCCStrike15_v2_TournamentInfoImpl : TypedProtobuf<CDataGCCStrike15_v2_TournamentInfo>, CDataGCCStrike15_v2_TournamentInfo
 {
-  public CDataGCCStrike15_v2_TournamentInfoImpl(nint handle): base(handle)
+  public CDataGCCStrike15_v2_TournamentInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,7 +19,7 @@ internal class CDataGCCStrike15_v2_TournamentInfoImpl : TypedProtobuf<CDataGCCSt
 
 
   public TournamentEvent TournamentEvent
-  { get => new TournamentEventImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tournament_event")); }
+  { get => new TournamentEventImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tournament_event"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<TournamentTeam> TournamentTeams

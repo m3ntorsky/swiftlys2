@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCToClientSteamDatagramTicketImpl : TypedProtobuf<CMsgGCToClientSteamDatagramTicket>, CMsgGCToClientSteamDatagramTicket
 {
-  public CMsgGCToClientSteamDatagramTicketImpl(nint handle): base(handle)
+  public CMsgGCToClientSteamDatagramTicketImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

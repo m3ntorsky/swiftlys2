@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCRequestSessionIP : ITypedProtobuf<CMsgGCRequestSessionIP>
 {
-  static CMsgGCRequestSessionIP ITypedProtobuf<CMsgGCRequestSessionIP>.Wrap(nint handle) => new CMsgGCRequestSessionIPImpl(handle);
+  static CMsgGCRequestSessionIP ITypedProtobuf<CMsgGCRequestSessionIP>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCRequestSessionIPImpl(handle, isManuallyAllocated);
 
 
   public ulong Steamid { get; set; }

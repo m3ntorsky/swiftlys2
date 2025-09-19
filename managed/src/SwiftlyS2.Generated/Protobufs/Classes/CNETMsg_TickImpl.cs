@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CNETMsg_TickImpl : NetMessage<CNETMsg_Tick>, CNETMsg_Tick
 {
-  public CNETMsg_TickImpl(nint handle): base(handle)
+  public CNETMsg_TickImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

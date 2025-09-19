@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsg_CVars_CVarImpl : TypedProtobuf<CMsg_CVars_CVar>, CMsg_CVars_CVar
 {
-  public CMsg_CVars_CVarImpl(nint handle): base(handle)
+  public CMsg_CVars_CVarImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

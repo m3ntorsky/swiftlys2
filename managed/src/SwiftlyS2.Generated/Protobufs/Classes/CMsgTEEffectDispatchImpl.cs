@@ -9,12 +9,12 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEEffectDispatchImpl : NetMessage<CMsgTEEffectDispatch>, CMsgTEEffectDispatch
 {
-  public CMsgTEEffectDispatchImpl(nint handle): base(handle)
+  public CMsgTEEffectDispatchImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
   public CMsgEffectData Effectdata
-  { get => new CMsgEffectDataImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "effectdata")); }
+  { get => new CMsgEffectDataImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "effectdata"), false); }
 
 }

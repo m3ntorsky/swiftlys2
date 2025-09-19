@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_ServerRankRevealAllImpl : NetMessage<CCSUsrMsg_ServerRankRevealAll>, CCSUsrMsg_ServerRankRevealAll
 {
-  public CCSUsrMsg_ServerRankRevealAllImpl(nint handle): base(handle)
+  public CCSUsrMsg_ServerRankRevealAllImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -19,6 +19,6 @@ internal class CCSUsrMsg_ServerRankRevealAllImpl : NetMessage<CCSUsrMsg_ServerRa
 
 
   public CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve Reservation
-  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "reservation")); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "reservation"), false); }
 
 }

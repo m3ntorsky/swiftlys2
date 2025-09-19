@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CUserMessageHapticsManagerPulse : ITypedProtobuf<CUserMessageHapticsManagerPulse>, INetMessage<CUserMessageHapticsManagerPulse>
+public interface CUserMessageHapticsManagerPulse : ITypedProtobuf<CUserMessageHapticsManagerPulse>, INetMessage<CUserMessageHapticsManagerPulse>, IDisposable
 {
   static int INetMessage<CUserMessageHapticsManagerPulse>.MessageId => 150;
   
   static string INetMessage<CUserMessageHapticsManagerPulse>.MessageName => "CUserMessageHapticsManagerPulse";
 
-  static CUserMessageHapticsManagerPulse ITypedProtobuf<CUserMessageHapticsManagerPulse>.Wrap(nint handle) => new CUserMessageHapticsManagerPulseImpl(handle);
+  static CUserMessageHapticsManagerPulse ITypedProtobuf<CUserMessageHapticsManagerPulse>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessageHapticsManagerPulseImpl(handle, isManuallyAllocated);
 
 
   public int HandId { get; set; }

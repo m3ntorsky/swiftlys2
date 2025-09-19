@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_AmmoDeniedImpl : NetMessage<CCSUsrMsg_AmmoDenied>, CCSUsrMsg_AmmoDenied
 {
-  public CCSUsrMsg_AmmoDeniedImpl(nint handle): base(handle)
+  public CCSUsrMsg_AmmoDeniedImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

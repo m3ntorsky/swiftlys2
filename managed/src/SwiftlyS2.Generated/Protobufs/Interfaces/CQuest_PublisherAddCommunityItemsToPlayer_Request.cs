@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CQuest_PublisherAddCommunityItemsToPlayer_Request : ITypedProtobuf<CQuest_PublisherAddCommunityItemsToPlayer_Request>
 {
-  static CQuest_PublisherAddCommunityItemsToPlayer_Request ITypedProtobuf<CQuest_PublisherAddCommunityItemsToPlayer_Request>.Wrap(nint handle) => new CQuest_PublisherAddCommunityItemsToPlayer_RequestImpl(handle);
+  static CQuest_PublisherAddCommunityItemsToPlayer_Request ITypedProtobuf<CQuest_PublisherAddCommunityItemsToPlayer_Request>.Wrap(nint handle, bool isManuallyAllocated) => new CQuest_PublisherAddCommunityItemsToPlayer_RequestImpl(handle, isManuallyAllocated);
 
 
   public ulong Steamid { get; set; }

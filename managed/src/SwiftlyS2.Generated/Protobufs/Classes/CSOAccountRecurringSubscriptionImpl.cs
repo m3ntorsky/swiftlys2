@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOAccountRecurringSubscriptionImpl : TypedProtobuf<CSOAccountRecurringSubscription>, CSOAccountRecurringSubscription
 {
-  public CSOAccountRecurringSubscriptionImpl(nint handle): base(handle)
+  public CSOAccountRecurringSubscriptionImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

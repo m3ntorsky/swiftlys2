@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CClientMsg_WorldUIControllerHasPanelChangedEventImpl : TypedProtobuf<CClientMsg_WorldUIControllerHasPanelChangedEvent>, CClientMsg_WorldUIControllerHasPanelChangedEvent
 {
-  public CClientMsg_WorldUIControllerHasPanelChangedEventImpl(nint handle): base(handle)
+  public CClientMsg_WorldUIControllerHasPanelChangedEventImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

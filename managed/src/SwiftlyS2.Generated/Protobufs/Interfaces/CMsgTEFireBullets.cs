@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CMsgTEFireBullets : ITypedProtobuf<CMsgTEFireBullets>, INetMessage<CMsgTEFireBullets>
+public interface CMsgTEFireBullets : ITypedProtobuf<CMsgTEFireBullets>, INetMessage<CMsgTEFireBullets>, IDisposable
 {
   static int INetMessage<CMsgTEFireBullets>.MessageId => 452;
   
   static string INetMessage<CMsgTEFireBullets>.MessageName => "CMsgTEFireBullets";
 
-  static CMsgTEFireBullets ITypedProtobuf<CMsgTEFireBullets>.Wrap(nint handle) => new CMsgTEFireBulletsImpl(handle);
+  static CMsgTEFireBullets ITypedProtobuf<CMsgTEFireBullets>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgTEFireBulletsImpl(handle, isManuallyAllocated);
 
 
   public Vector Origin { get; set; }
@@ -30,7 +30,7 @@ public interface CMsgTEFireBullets : ITypedProtobuf<CMsgTEFireBullets>, INetMess
   public uint Seed { get; set; }
 
 
-  public int Player { get; set; }
+  public uint Player { get; set; }
 
 
   public float Inaccuracy { get; set; }
@@ -48,7 +48,7 @@ public interface CMsgTEFireBullets : ITypedProtobuf<CMsgTEFireBullets>, INetMess
   public uint ItemDefIndex { get; set; }
 
 
-  public int SoundDspEffect { get; set; }
+  public uint SoundDspEffect { get; set; }
 
 
   public Vector EntOrigin { get; set; }

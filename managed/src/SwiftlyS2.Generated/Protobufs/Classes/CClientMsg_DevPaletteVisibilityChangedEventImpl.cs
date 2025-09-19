@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CClientMsg_DevPaletteVisibilityChangedEventImpl : TypedProtobuf<CClientMsg_DevPaletteVisibilityChangedEvent>, CClientMsg_DevPaletteVisibilityChangedEvent
 {
-  public CClientMsg_DevPaletteVisibilityChangedEventImpl(nint handle): base(handle)
+  public CClientMsg_DevPaletteVisibilityChangedEventImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

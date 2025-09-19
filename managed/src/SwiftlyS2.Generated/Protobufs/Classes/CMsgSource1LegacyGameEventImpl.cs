@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSource1LegacyGameEventImpl : NetMessage<CMsgSource1LegacyGameEvent>, CMsgSource1LegacyGameEvent
 {
-  public CMsgSource1LegacyGameEventImpl(nint handle): base(handle)
+  public CMsgSource1LegacyGameEventImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

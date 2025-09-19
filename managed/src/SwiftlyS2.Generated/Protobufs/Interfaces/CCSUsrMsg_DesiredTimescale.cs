@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CCSUsrMsg_DesiredTimescale : ITypedProtobuf<CCSUsrMsg_DesiredTimescale>, INetMessage<CCSUsrMsg_DesiredTimescale>
+public interface CCSUsrMsg_DesiredTimescale : ITypedProtobuf<CCSUsrMsg_DesiredTimescale>, INetMessage<CCSUsrMsg_DesiredTimescale>, IDisposable
 {
   static int INetMessage<CCSUsrMsg_DesiredTimescale>.MessageId => 331;
   
   static string INetMessage<CCSUsrMsg_DesiredTimescale>.MessageName => "CCSUsrMsg_DesiredTimescale";
 
-  static CCSUsrMsg_DesiredTimescale ITypedProtobuf<CCSUsrMsg_DesiredTimescale>.Wrap(nint handle) => new CCSUsrMsg_DesiredTimescaleImpl(handle);
+  static CCSUsrMsg_DesiredTimescale ITypedProtobuf<CCSUsrMsg_DesiredTimescale>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_DesiredTimescaleImpl(handle, isManuallyAllocated);
 
 
   public float DesiredTimescale { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageHudTextImpl : NetMessage<CUserMessageHudText>, CUserMessageHudText
 {
-  public CUserMessageHudTextImpl(nint handle): base(handle)
+  public CUserMessageHudTextImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

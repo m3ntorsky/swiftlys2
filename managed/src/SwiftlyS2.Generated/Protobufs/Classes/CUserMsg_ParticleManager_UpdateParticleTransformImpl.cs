@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_UpdateParticleTransformImpl : TypedProtobuf<CUserMsg_ParticleManager_UpdateParticleTransform>, CUserMsg_ParticleManager_UpdateParticleTransform
 {
-  public CUserMsg_ParticleManager_UpdateParticleTransformImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_UpdateParticleTransformImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -23,7 +23,7 @@ internal class CUserMsg_ParticleManager_UpdateParticleTransformImpl : TypedProto
 
 
   public CMsgQuaternion Orientation
-  { get => new CMsgQuaternionImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "orientation")); }
+  { get => new CMsgQuaternionImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "orientation"), false); }
 
 
   public float InterpolationInterval

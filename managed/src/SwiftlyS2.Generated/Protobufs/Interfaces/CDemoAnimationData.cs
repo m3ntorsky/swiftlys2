@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CDemoAnimationData : ITypedProtobuf<CDemoAnimationData>
 {
-  static CDemoAnimationData ITypedProtobuf<CDemoAnimationData>.Wrap(nint handle) => new CDemoAnimationDataImpl(handle);
+  static CDemoAnimationData ITypedProtobuf<CDemoAnimationData>.Wrap(nint handle, bool isManuallyAllocated) => new CDemoAnimationDataImpl(handle, isManuallyAllocated);
 
 
   public int EntityId { get; set; }

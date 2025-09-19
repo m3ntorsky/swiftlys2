@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CCSUsrMsg_WeaponSound : ITypedProtobuf<CCSUsrMsg_WeaponSound>, INetMessage<CCSUsrMsg_WeaponSound>
+public interface CCSUsrMsg_WeaponSound : ITypedProtobuf<CCSUsrMsg_WeaponSound>, INetMessage<CCSUsrMsg_WeaponSound>, IDisposable
 {
   static int INetMessage<CCSUsrMsg_WeaponSound>.MessageId => 369;
   
   static string INetMessage<CCSUsrMsg_WeaponSound>.MessageName => "CCSUsrMsg_WeaponSound";
 
-  static CCSUsrMsg_WeaponSound ITypedProtobuf<CCSUsrMsg_WeaponSound>.Wrap(nint handle) => new CCSUsrMsg_WeaponSoundImpl(handle);
+  static CCSUsrMsg_WeaponSound ITypedProtobuf<CCSUsrMsg_WeaponSound>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_WeaponSoundImpl(handle, isManuallyAllocated);
 
 
   public int Entidx { get; set; }
@@ -33,6 +33,6 @@ public interface CCSUsrMsg_WeaponSound : ITypedProtobuf<CCSUsrMsg_WeaponSound>, 
   public float GameTimestamp { get; set; }
 
 
-  public int SourceSoundscapeid { get; set; }
+  public uint SourceSoundscapeid { get; set; }
 
 }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CDemoSaveGame : ITypedProtobuf<CDemoSaveGame>
 {
-  static CDemoSaveGame ITypedProtobuf<CDemoSaveGame>.Wrap(nint handle) => new CDemoSaveGameImpl(handle);
+  static CDemoSaveGame ITypedProtobuf<CDemoSaveGame>.Wrap(nint handle, bool isManuallyAllocated) => new CDemoSaveGameImpl(handle, isManuallyAllocated);
 
 
   public byte[] Data { get; set; }

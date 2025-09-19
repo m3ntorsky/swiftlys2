@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_PacketReliableImpl : NetMessage<CSVCMsg_PacketReliable>, CSVCMsg_PacketReliable
 {
-  public CSVCMsg_PacketReliableImpl(nint handle): base(handle)
+  public CSVCMsg_PacketReliableImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

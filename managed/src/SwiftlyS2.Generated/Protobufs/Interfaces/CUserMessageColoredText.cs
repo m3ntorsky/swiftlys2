@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CUserMessageColoredText : ITypedProtobuf<CUserMessageColoredText>, INetMessage<CUserMessageColoredText>
+public interface CUserMessageColoredText : ITypedProtobuf<CUserMessageColoredText>, INetMessage<CUserMessageColoredText>, IDisposable
 {
   static int INetMessage<CUserMessageColoredText>.MessageId => 113;
   
   static string INetMessage<CUserMessageColoredText>.MessageName => "CUserMessageColoredText";
 
-  static CUserMessageColoredText ITypedProtobuf<CUserMessageColoredText>.Wrap(nint handle) => new CUserMessageColoredTextImpl(handle);
+  static CUserMessageColoredText ITypedProtobuf<CUserMessageColoredText>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessageColoredTextImpl(handle, isManuallyAllocated);
 
 
   public uint Color { get; set; }

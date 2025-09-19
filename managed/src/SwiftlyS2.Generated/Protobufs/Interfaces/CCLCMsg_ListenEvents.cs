@@ -7,9 +7,9 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCLCMsg_ListenEvents : ITypedProtobuf<CCLCMsg_ListenEvents>
 {
-  static CCLCMsg_ListenEvents ITypedProtobuf<CCLCMsg_ListenEvents>.Wrap(nint handle) => new CCLCMsg_ListenEventsImpl(handle);
+  static CCLCMsg_ListenEvents ITypedProtobuf<CCLCMsg_ListenEvents>.Wrap(nint handle, bool isManuallyAllocated) => new CCLCMsg_ListenEventsImpl(handle, isManuallyAllocated);
 
 
-  public IProtobufRepeatedFieldValueType<int> EventMask { get; }
+  public IProtobufRepeatedFieldValueType<uint> EventMask { get; }
 
 }

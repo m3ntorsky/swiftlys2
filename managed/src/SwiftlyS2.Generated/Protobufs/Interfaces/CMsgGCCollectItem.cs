@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCollectItem : ITypedProtobuf<CMsgGCCollectItem>
 {
-  static CMsgGCCollectItem ITypedProtobuf<CMsgGCCollectItem>.Wrap(nint handle) => new CMsgGCCollectItemImpl(handle);
+  static CMsgGCCollectItem ITypedProtobuf<CMsgGCCollectItem>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCollectItemImpl(handle, isManuallyAllocated);
 
 
   public ulong CollectionItemId { get; set; }

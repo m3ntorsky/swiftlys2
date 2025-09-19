@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEMuzzleFlashImpl : NetMessage<CMsgTEMuzzleFlash>, CMsgTEMuzzleFlash
 {
-  public CMsgTEMuzzleFlashImpl(nint handle): base(handle)
+  public CMsgTEMuzzleFlashImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

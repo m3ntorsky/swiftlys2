@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_SetSceneObjectTintAndDesatImpl : TypedProtobuf<CUserMsg_ParticleManager_SetSceneObjectTintAndDesat>, CUserMsg_ParticleManager_SetSceneObjectTintAndDesat
 {
-  public CUserMsg_ParticleManager_SetSceneObjectTintAndDesatImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_SetSceneObjectTintAndDesatImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
-  public int Tint
-  { get => Accessor.GetInt32("tint"); set => Accessor.SetInt32("tint", value); }
+  public uint Tint
+  { get => Accessor.GetUInt32("tint"); set => Accessor.SetUInt32("tint", value); }
 
 
   public float Desat

@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_VoiceDataImpl : NetMessage<CSVCMsg_VoiceData>, CSVCMsg_VoiceData
 {
-  public CSVCMsg_VoiceDataImpl(nint handle): base(handle)
+  public CSVCMsg_VoiceDataImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
   public CMsgVoiceAudio Audio
-  { get => new CMsgVoiceAudioImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "audio")); }
+  { get => new CMsgVoiceAudioImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "audio"), false); }
 
 
   public int Client

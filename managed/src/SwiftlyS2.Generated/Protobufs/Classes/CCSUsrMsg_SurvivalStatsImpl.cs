@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_SurvivalStatsImpl : NetMessage<CCSUsrMsg_SurvivalStats>, CCSUsrMsg_SurvivalStats
 {
-  public CCSUsrMsg_SurvivalStatsImpl(nint handle): base(handle)
+  public CCSUsrMsg_SurvivalStatsImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

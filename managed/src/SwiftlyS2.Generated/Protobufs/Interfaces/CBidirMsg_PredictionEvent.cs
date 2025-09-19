@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CBidirMsg_PredictionEvent : ITypedProtobuf<CBidirMsg_PredictionEvent>
 {
-  static CBidirMsg_PredictionEvent ITypedProtobuf<CBidirMsg_PredictionEvent>.Wrap(nint handle) => new CBidirMsg_PredictionEventImpl(handle);
+  static CBidirMsg_PredictionEvent ITypedProtobuf<CBidirMsg_PredictionEvent>.Wrap(nint handle, bool isManuallyAllocated) => new CBidirMsg_PredictionEventImpl(handle, isManuallyAllocated);
 
 
   public uint EventId { get; set; }

@@ -7,13 +7,13 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGameServerInfo : ITypedProtobuf<CMsgGameServerInfo>
 {
-  static CMsgGameServerInfo ITypedProtobuf<CMsgGameServerInfo>.Wrap(nint handle) => new CMsgGameServerInfoImpl(handle);
+  static CMsgGameServerInfo ITypedProtobuf<CMsgGameServerInfo>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGameServerInfoImpl(handle, isManuallyAllocated);
 
 
-  public int ServerPublicIpAddr { get; set; }
+  public uint ServerPublicIpAddr { get; set; }
 
 
-  public int ServerPrivateIpAddr { get; set; }
+  public uint ServerPrivateIpAddr { get; set; }
 
 
   public uint ServerPort { get; set; }

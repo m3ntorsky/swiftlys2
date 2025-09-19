@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_ClearModellistOverrideImpl : TypedProtobuf<CUserMsg_ParticleManager_ClearModellistOverride>, CUserMsg_ParticleManager_ClearModellistOverride
 {
-  public CUserMsg_ParticleManager_ClearModellistOverrideImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_ClearModellistOverrideImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

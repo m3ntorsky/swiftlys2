@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CPredictionEvent_Diagnostic : ITypedProtobuf<CPredictionEvent_Diagnostic>
 {
-  static CPredictionEvent_Diagnostic ITypedProtobuf<CPredictionEvent_Diagnostic>.Wrap(nint handle) => new CPredictionEvent_DiagnosticImpl(handle);
+  static CPredictionEvent_Diagnostic ITypedProtobuf<CPredictionEvent_Diagnostic>.Wrap(nint handle, bool isManuallyAllocated) => new CPredictionEvent_DiagnosticImpl(handle, isManuallyAllocated);
 
 
   public uint Id { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_PacketEntities_alternate_baseline_tImpl : TypedProtobuf<CSVCMsg_PacketEntities_alternate_baseline_t>, CSVCMsg_PacketEntities_alternate_baseline_t
 {
-  public CSVCMsg_PacketEntities_alternate_baseline_tImpl(nint handle): base(handle)
+  public CSVCMsg_PacketEntities_alternate_baseline_tImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

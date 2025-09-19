@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsgList_GameEvents_event_tImpl : TypedProtobuf<CSVCMsgList_GameEvents_event_t>, CSVCMsgList_GameEvents_event_t
 {
-  public CSVCMsgList_GameEvents_event_tImpl(nint handle): base(handle)
+  public CSVCMsgList_GameEvents_event_tImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,6 +19,6 @@ internal class CSVCMsgList_GameEvents_event_tImpl : TypedProtobuf<CSVCMsgList_Ga
 
 
   public CSVCMsg_GameEvent Event
-  { get => new CSVCMsg_GameEventImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "event")); }
+  { get => new CSVCMsg_GameEventImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "event"), false); }
 
 }

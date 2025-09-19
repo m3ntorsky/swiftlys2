@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSOIDOwnerImpl : TypedProtobuf<CMsgSOIDOwner>, CMsgSOIDOwner
 {
-  public CMsgSOIDOwnerImpl(nint handle): base(handle)
+  public CMsgSOIDOwnerImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

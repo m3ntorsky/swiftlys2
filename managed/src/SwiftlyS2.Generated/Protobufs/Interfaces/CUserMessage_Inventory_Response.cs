@@ -7,10 +7,10 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMessage_Inventory_Response : ITypedProtobuf<CUserMessage_Inventory_Response>
 {
-  static CUserMessage_Inventory_Response ITypedProtobuf<CUserMessage_Inventory_Response>.Wrap(nint handle) => new CUserMessage_Inventory_ResponseImpl(handle);
+  static CUserMessage_Inventory_Response ITypedProtobuf<CUserMessage_Inventory_Response>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessage_Inventory_ResponseImpl(handle, isManuallyAllocated);
 
 
-  public int Crc { get; set; }
+  public uint Crc { get; set; }
 
 
   public int ItemCount { get; set; }

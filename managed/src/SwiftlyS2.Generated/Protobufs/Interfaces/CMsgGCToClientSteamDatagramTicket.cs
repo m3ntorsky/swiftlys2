@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCToClientSteamDatagramTicket : ITypedProtobuf<CMsgGCToClientSteamDatagramTicket>
 {
-  static CMsgGCToClientSteamDatagramTicket ITypedProtobuf<CMsgGCToClientSteamDatagramTicket>.Wrap(nint handle) => new CMsgGCToClientSteamDatagramTicketImpl(handle);
+  static CMsgGCToClientSteamDatagramTicket ITypedProtobuf<CMsgGCToClientSteamDatagramTicket>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCToClientSteamDatagramTicketImpl(handle, isManuallyAllocated);
 
 
   public byte[] SerializedTicket { get; set; }

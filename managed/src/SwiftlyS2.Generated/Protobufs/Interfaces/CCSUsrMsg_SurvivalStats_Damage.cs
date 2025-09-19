@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCSUsrMsg_SurvivalStats_Damage : ITypedProtobuf<CCSUsrMsg_SurvivalStats_Damage>
 {
-  static CCSUsrMsg_SurvivalStats_Damage ITypedProtobuf<CCSUsrMsg_SurvivalStats_Damage>.Wrap(nint handle) => new CCSUsrMsg_SurvivalStats_DamageImpl(handle);
+  static CCSUsrMsg_SurvivalStats_Damage ITypedProtobuf<CCSUsrMsg_SurvivalStats_Damage>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_SurvivalStats_DamageImpl(handle, isManuallyAllocated);
 
 
   public ulong Xuid { get; set; }

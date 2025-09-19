@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEFireBulletsImpl : NetMessage<CMsgTEFireBullets>, CMsgTEFireBullets
 {
-  public CMsgTEFireBulletsImpl(nint handle): base(handle)
+  public CMsgTEFireBulletsImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -34,8 +34,8 @@ internal class CMsgTEFireBulletsImpl : NetMessage<CMsgTEFireBullets>, CMsgTEFire
   { get => Accessor.GetUInt32("seed"); set => Accessor.SetUInt32("seed", value); }
 
 
-  public int Player
-  { get => Accessor.GetInt32("player"); set => Accessor.SetInt32("player", value); }
+  public uint Player
+  { get => Accessor.GetUInt32("player"); set => Accessor.SetUInt32("player", value); }
 
 
   public float Inaccuracy
@@ -58,8 +58,8 @@ internal class CMsgTEFireBulletsImpl : NetMessage<CMsgTEFireBullets>, CMsgTEFire
   { get => Accessor.GetUInt32("item_def_index"); set => Accessor.SetUInt32("item_def_index", value); }
 
 
-  public int SoundDspEffect
-  { get => Accessor.GetInt32("sound_dsp_effect"); set => Accessor.SetInt32("sound_dsp_effect", value); }
+  public uint SoundDspEffect
+  { get => Accessor.GetUInt32("sound_dsp_effect"); set => Accessor.SetUInt32("sound_dsp_effect", value); }
 
 
   public Vector EntOrigin

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CProductInfo_SetRichPresenceLocalization_Request_TokenImpl : TypedProtobuf<CProductInfo_SetRichPresenceLocalization_Request_Token>, CProductInfo_SetRichPresenceLocalization_Request_Token
 {
-  public CProductInfo_SetRichPresenceLocalization_Request_TokenImpl(nint handle): base(handle)
+  public CProductInfo_SetRichPresenceLocalization_Request_TokenImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

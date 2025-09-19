@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCNameItemNotificationImpl : TypedProtobuf<CMsgGCNameItemNotification>, CMsgGCNameItemNotification
 {
-  public CMsgGCNameItemNotificationImpl(nint handle): base(handle)
+  public CMsgGCNameItemNotificationImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

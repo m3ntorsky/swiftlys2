@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSDONoMemcached : ITypedProtobuf<CMsgSDONoMemcached>
 {
-  static CMsgSDONoMemcached ITypedProtobuf<CMsgSDONoMemcached>.Wrap(nint handle) => new CMsgSDONoMemcachedImpl(handle);
+  static CMsgSDONoMemcached ITypedProtobuf<CMsgSDONoMemcached>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSDONoMemcachedImpl(handle, isManuallyAllocated);
 
 
 }

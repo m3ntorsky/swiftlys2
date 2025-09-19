@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgAdjustItemEquippedStateImpl : TypedProtobuf<CMsgAdjustItemEquippedState>, CMsgAdjustItemEquippedState
 {
-  public CMsgAdjustItemEquippedStateImpl(nint handle): base(handle)
+  public CMsgAdjustItemEquippedStateImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

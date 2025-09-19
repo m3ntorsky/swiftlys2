@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTESparksImpl : NetMessage<CMsgTESparks>, CMsgTESparks
 {
-  public CMsgTESparksImpl(nint handle): base(handle)
+  public CMsgTESparksImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

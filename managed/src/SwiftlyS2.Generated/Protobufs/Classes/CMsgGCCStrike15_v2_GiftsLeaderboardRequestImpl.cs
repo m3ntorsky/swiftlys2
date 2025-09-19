@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_GiftsLeaderboardRequestImpl : TypedProtobuf<CMsgGCCStrike15_v2_GiftsLeaderboardRequest>, CMsgGCCStrike15_v2_GiftsLeaderboardRequest
 {
-  public CMsgGCCStrike15_v2_GiftsLeaderboardRequestImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_GiftsLeaderboardRequestImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_DisconnectToLobbyImpl : NetMessage<CCSUsrMsg_DisconnectToLobby>, CCSUsrMsg_DisconnectToLobby
 {
-  public CCSUsrMsg_DisconnectToLobbyImpl(nint handle): base(handle)
+  public CCSUsrMsg_DisconnectToLobbyImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

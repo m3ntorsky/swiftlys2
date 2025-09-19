@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CClientMsg_ClientUIEvent : ITypedProtobuf<CClientMsg_ClientUIEvent>
 {
-  static CClientMsg_ClientUIEvent ITypedProtobuf<CClientMsg_ClientUIEvent>.Wrap(nint handle) => new CClientMsg_ClientUIEventImpl(handle);
+  static CClientMsg_ClientUIEvent ITypedProtobuf<CClientMsg_ClientUIEvent>.Wrap(nint handle, bool isManuallyAllocated) => new CClientMsg_ClientUIEventImpl(handle, isManuallyAllocated);
 
 
   public EClientUIEvent Event { get; set; }

@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CMsgTEEnergySplash : ITypedProtobuf<CMsgTEEnergySplash>, INetMessage<CMsgTEEnergySplash>
+public interface CMsgTEEnergySplash : ITypedProtobuf<CMsgTEEnergySplash>, INetMessage<CMsgTEEnergySplash>, IDisposable
 {
   static int INetMessage<CMsgTEEnergySplash>.MessageId => 412;
   
   static string INetMessage<CMsgTEEnergySplash>.MessageName => "CMsgTEEnergySplash";
 
-  static CMsgTEEnergySplash ITypedProtobuf<CMsgTEEnergySplash>.Wrap(nint handle) => new CMsgTEEnergySplashImpl(handle);
+  static CMsgTEEnergySplash ITypedProtobuf<CMsgTEEnergySplash>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgTEEnergySplashImpl(handle, isManuallyAllocated);
 
 
   public Vector Pos { get; set; }

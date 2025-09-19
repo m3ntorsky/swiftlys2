@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface TournamentPlayer : ITypedProtobuf<TournamentPlayer>
 {
-  static TournamentPlayer ITypedProtobuf<TournamentPlayer>.Wrap(nint handle) => new TournamentPlayerImpl(handle);
+  static TournamentPlayer ITypedProtobuf<TournamentPlayer>.Wrap(nint handle, bool isManuallyAllocated) => new TournamentPlayerImpl(handle, isManuallyAllocated);
 
 
   public uint AccountId { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class NetMessageConnectionClosedImpl : TypedProtobuf<NetMessageConnectionClosed>, NetMessageConnectionClosed
 {
-  public NetMessageConnectionClosedImpl(nint handle): base(handle)
+  public NetMessageConnectionClosedImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

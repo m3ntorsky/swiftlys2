@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOAccountKeychainRemoveToolChargesImpl : TypedProtobuf<CSOAccountKeychainRemoveToolCharges>, CSOAccountKeychainRemoveToolCharges
 {
-  public CSOAccountKeychainRemoveToolChargesImpl(nint handle): base(handle)
+  public CSOAccountKeychainRemoveToolChargesImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

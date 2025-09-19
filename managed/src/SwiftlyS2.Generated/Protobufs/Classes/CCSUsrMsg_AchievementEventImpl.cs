@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_AchievementEventImpl : NetMessage<CCSUsrMsg_AchievementEvent>, CCSUsrMsg_AchievementEvent
 {
-  public CCSUsrMsg_AchievementEventImpl(nint handle): base(handle)
+  public CCSUsrMsg_AchievementEventImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

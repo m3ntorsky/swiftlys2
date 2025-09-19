@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSOMultipleObjects_SingleObjectImpl : TypedProtobuf<CMsgSOMultipleObjects_SingleObject>, CMsgSOMultipleObjects_SingleObject
 {
-  public CMsgSOMultipleObjects_SingleObjectImpl(nint handle): base(handle)
+  public CMsgSOMultipleObjects_SingleObjectImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

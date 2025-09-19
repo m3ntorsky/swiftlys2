@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSetItemPositionsImpl : TypedProtobuf<CMsgSetItemPositions>, CMsgSetItemPositions
 {
-  public CMsgSetItemPositionsImpl(nint handle): base(handle)
+  public CMsgSetItemPositionsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

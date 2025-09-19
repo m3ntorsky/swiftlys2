@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSOCacheHaveVersion : ITypedProtobuf<CMsgSOCacheHaveVersion>
 {
-  static CMsgSOCacheHaveVersion ITypedProtobuf<CMsgSOCacheHaveVersion>.Wrap(nint handle) => new CMsgSOCacheHaveVersionImpl(handle);
+  static CMsgSOCacheHaveVersion ITypedProtobuf<CMsgSOCacheHaveVersion>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSOCacheHaveVersionImpl(handle, isManuallyAllocated);
 
 
   public CMsgSOIDOwner Soid { get; }

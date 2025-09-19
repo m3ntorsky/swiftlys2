@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface WatchableMatchInfo : ITypedProtobuf<WatchableMatchInfo>
 {
-  static WatchableMatchInfo ITypedProtobuf<WatchableMatchInfo>.Wrap(nint handle) => new WatchableMatchInfoImpl(handle);
+  static WatchableMatchInfo ITypedProtobuf<WatchableMatchInfo>.Wrap(nint handle, bool isManuallyAllocated) => new WatchableMatchInfoImpl(handle, isManuallyAllocated);
 
 
   public uint ServerIp { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CVDiagnosticImpl : TypedProtobuf<CVDiagnostic>, CVDiagnostic
 {
-  public CVDiagnosticImpl(nint handle): base(handle)
+  public CVDiagnosticImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

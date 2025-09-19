@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOEconItemEventTicketImpl : TypedProtobuf<CSOEconItemEventTicket>, CSOEconItemEventTicket
 {
-  public CSOEconItemEventTicketImpl(nint handle): base(handle)
+  public CSOEconItemEventTicketImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

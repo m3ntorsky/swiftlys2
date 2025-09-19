@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCIncrementKillCountResponseImpl : TypedProtobuf<CMsgGCIncrementKillCountResponse>, CMsgGCIncrementKillCountResponse
 {
-  public CMsgGCIncrementKillCountResponseImpl(nint handle): base(handle)
+  public CMsgGCIncrementKillCountResponseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

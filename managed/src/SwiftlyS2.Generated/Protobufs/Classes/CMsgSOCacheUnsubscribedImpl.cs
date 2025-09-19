@@ -9,12 +9,12 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSOCacheUnsubscribedImpl : TypedProtobuf<CMsgSOCacheUnsubscribed>, CMsgSOCacheUnsubscribed
 {
-  public CMsgSOCacheUnsubscribedImpl(nint handle): base(handle)
+  public CMsgSOCacheUnsubscribedImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CMsgSOIDOwner OwnerSoid
-  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "owner_soid")); }
+  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "owner_soid"), false); }
 
 }

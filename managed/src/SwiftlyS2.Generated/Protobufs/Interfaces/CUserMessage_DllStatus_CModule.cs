@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMessage_DllStatus_CModule : ITypedProtobuf<CUserMessage_DllStatus_CModule>
 {
-  static CUserMessage_DllStatus_CModule ITypedProtobuf<CUserMessage_DllStatus_CModule>.Wrap(nint handle) => new CUserMessage_DllStatus_CModuleImpl(handle);
+  static CUserMessage_DllStatus_CModule ITypedProtobuf<CUserMessage_DllStatus_CModule>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessage_DllStatus_CModuleImpl(handle, isManuallyAllocated);
 
 
   public ulong BaseAddr { get; set; }

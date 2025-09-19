@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageHudMsgImpl : NetMessage<CUserMessageHudMsg>, CUserMessageHudMsg
 {
-  public CUserMessageHudMsgImpl(nint handle): base(handle)
+  public CUserMessageHudMsgImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -26,12 +26,12 @@ internal class CUserMessageHudMsgImpl : NetMessage<CUserMessageHudMsg>, CUserMes
   { get => Accessor.GetFloat("y"); set => Accessor.SetFloat("y", value); }
 
 
-  public int Color1
-  { get => Accessor.GetInt32("color1"); set => Accessor.SetInt32("color1", value); }
+  public uint Color1
+  { get => Accessor.GetUInt32("color1"); set => Accessor.SetUInt32("color1", value); }
 
 
-  public int Color2
-  { get => Accessor.GetInt32("color2"); set => Accessor.SetInt32("color2", value); }
+  public uint Color2
+  { get => Accessor.GetUInt32("color2"); set => Accessor.SetUInt32("color2", value); }
 
 
   public uint Effect

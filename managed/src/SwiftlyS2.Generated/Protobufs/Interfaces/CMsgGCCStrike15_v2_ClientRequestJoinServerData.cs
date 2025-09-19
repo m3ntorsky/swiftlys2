@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_ClientRequestJoinServerData : ITypedProtobuf<CMsgGCCStrike15_v2_ClientRequestJoinServerData>
 {
-  static CMsgGCCStrike15_v2_ClientRequestJoinServerData ITypedProtobuf<CMsgGCCStrike15_v2_ClientRequestJoinServerData>.Wrap(nint handle) => new CMsgGCCStrike15_v2_ClientRequestJoinServerDataImpl(handle);
+  static CMsgGCCStrike15_v2_ClientRequestJoinServerData ITypedProtobuf<CMsgGCCStrike15_v2_ClientRequestJoinServerData>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_ClientRequestJoinServerDataImpl(handle, isManuallyAllocated);
 
 
   public uint Version { get; set; }

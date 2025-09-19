@@ -18,7 +18,7 @@ internal static class NativePlayer {
     Encoding.UTF8.GetBytes(message, messageBuffer);
     messageBuffer[messageLength] = 0;
     fixed (byte* messageBufferPtr = messageBuffer) {
-    _SendMessage(playerid, kind, messageBufferPtr);
+        _SendMessage(playerid, kind, messageBufferPtr);
     pool.Return(messageBuffer);
 
   }
@@ -76,7 +76,7 @@ internal static class NativePlayer {
     Encoding.UTF8.GetBytes(command, commandBuffer);
     commandBuffer[commandLength] = 0;
     fixed (byte* commandBufferPtr = commandBuffer) {
-    _PerformCommand(playerid, commandBufferPtr);
+        _PerformCommand(playerid, commandBufferPtr);
     pool.Return(commandBuffer);
 
   }
@@ -87,7 +87,7 @@ internal static class NativePlayer {
     var pool = ArrayPool<byte>.Shared;
     var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetIPAddress(retBufferPtr, playerid);
+        ret = _GetIPAddress(retBufferPtr, playerid);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
     pool.Return(retBuffer);
 
@@ -102,7 +102,7 @@ internal static class NativePlayer {
     Encoding.UTF8.GetBytes(reason, reasonBuffer);
     reasonBuffer[reasonLength] = 0;
     fixed (byte* reasonBufferPtr = reasonBuffer) {
-    _Kick(reasonBufferPtr, gamereason);
+        _Kick(reasonBufferPtr, gamereason);
     pool.Return(reasonBuffer);
 
   }

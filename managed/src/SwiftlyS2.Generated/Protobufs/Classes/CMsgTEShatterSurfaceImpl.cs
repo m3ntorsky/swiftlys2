@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEShatterSurfaceImpl : NetMessage<CMsgTEShatterSurface>, CMsgTEShatterSurface
 {
-  public CMsgTEShatterSurfaceImpl(nint handle): base(handle)
+  public CMsgTEShatterSurfaceImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -46,11 +46,11 @@ internal class CMsgTEShatterSurfaceImpl : NetMessage<CMsgTEShatterSurface>, CMsg
   { get => Accessor.GetUInt32("surfacetype"); set => Accessor.SetUInt32("surfacetype", value); }
 
 
-  public int Frontcolor
-  { get => Accessor.GetInt32("frontcolor"); set => Accessor.SetInt32("frontcolor", value); }
+  public uint Frontcolor
+  { get => Accessor.GetUInt32("frontcolor"); set => Accessor.SetUInt32("frontcolor", value); }
 
 
-  public int Backcolor
-  { get => Accessor.GetInt32("backcolor"); set => Accessor.SetInt32("backcolor", value); }
+  public uint Backcolor
+  { get => Accessor.GetUInt32("backcolor"); set => Accessor.SetUInt32("backcolor", value); }
 
 }

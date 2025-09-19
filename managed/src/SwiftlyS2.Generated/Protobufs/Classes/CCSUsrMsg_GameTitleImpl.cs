@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_GameTitleImpl : NetMessage<CCSUsrMsg_GameTitle>, CCSUsrMsg_GameTitle
 {
-  public CCSUsrMsg_GameTitleImpl(nint handle): base(handle)
+  public CCSUsrMsg_GameTitleImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

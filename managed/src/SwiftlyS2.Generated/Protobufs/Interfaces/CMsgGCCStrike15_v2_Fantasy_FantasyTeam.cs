@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_Fantasy_FantasyTeam : ITypedProtobuf<CMsgGCCStrike15_v2_Fantasy_FantasyTeam>
 {
-  static CMsgGCCStrike15_v2_Fantasy_FantasyTeam ITypedProtobuf<CMsgGCCStrike15_v2_Fantasy_FantasyTeam>.Wrap(nint handle) => new CMsgGCCStrike15_v2_Fantasy_FantasyTeamImpl(handle);
+  static CMsgGCCStrike15_v2_Fantasy_FantasyTeam ITypedProtobuf<CMsgGCCStrike15_v2_Fantasy_FantasyTeam>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_Fantasy_FantasyTeamImpl(handle, isManuallyAllocated);
 
 
   public int Sectionid { get; set; }

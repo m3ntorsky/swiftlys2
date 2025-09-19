@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_XRankGetImpl : NetMessage<CCSUsrMsg_XRankGet>, CCSUsrMsg_XRankGet
 {
-  public CCSUsrMsg_XRankGetImpl(nint handle): base(handle)
+  public CCSUsrMsg_XRankGetImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

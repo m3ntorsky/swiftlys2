@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgEffectData : ITypedProtobuf<CMsgEffectData>
 {
-  static CMsgEffectData ITypedProtobuf<CMsgEffectData>.Wrap(nint handle) => new CMsgEffectDataImpl(handle);
+  static CMsgEffectData ITypedProtobuf<CMsgEffectData>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgEffectDataImpl(handle, isManuallyAllocated);
 
 
   public Vector Origin { get; set; }
@@ -22,10 +22,10 @@ public interface CMsgEffectData : ITypedProtobuf<CMsgEffectData>
   public QAngle Angles { get; set; }
 
 
-  public int Entity { get; set; }
+  public uint Entity { get; set; }
 
 
-  public int Otherentity { get; set; }
+  public uint Otherentity { get; set; }
 
 
   public float Scale { get; set; }
@@ -37,7 +37,7 @@ public interface CMsgEffectData : ITypedProtobuf<CMsgEffectData>
   public float Radius { get; set; }
 
 
-  public int Surfaceprop { get; set; }
+  public uint Surfaceprop { get; set; }
 
 
   public ulong Effectindex { get; set; }

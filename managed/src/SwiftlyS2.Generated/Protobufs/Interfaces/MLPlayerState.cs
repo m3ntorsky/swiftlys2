@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface MLPlayerState : ITypedProtobuf<MLPlayerState>
 {
-  static MLPlayerState ITypedProtobuf<MLPlayerState>.Wrap(nint handle) => new MLPlayerStateImpl(handle);
+  static MLPlayerState ITypedProtobuf<MLPlayerState>.Wrap(nint handle, bool isManuallyAllocated) => new MLPlayerStateImpl(handle, isManuallyAllocated);
 
 
   public int AccountId { get; set; }

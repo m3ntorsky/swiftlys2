@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientRequestWatchInfoFriendsImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends>, CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends
 {
-  public CMsgGCCStrike15_v2_ClientRequestWatchInfoFriendsImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientRequestWatchInfoFriendsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

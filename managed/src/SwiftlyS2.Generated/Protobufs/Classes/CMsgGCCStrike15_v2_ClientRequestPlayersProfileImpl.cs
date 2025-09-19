@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientRequestPlayersProfileImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientRequestPlayersProfile>, CMsgGCCStrike15_v2_ClientRequestPlayersProfile
 {
-  public CMsgGCCStrike15_v2_ClientRequestPlayersProfileImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientRequestPlayersProfileImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

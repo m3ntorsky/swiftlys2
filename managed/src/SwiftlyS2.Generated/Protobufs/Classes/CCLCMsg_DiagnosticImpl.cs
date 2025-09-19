@@ -9,24 +9,24 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCLCMsg_DiagnosticImpl : NetMessage<CCLCMsg_Diagnostic>, CCLCMsg_Diagnostic
 {
-  public CCLCMsg_DiagnosticImpl(nint handle): base(handle)
+  public CCLCMsg_DiagnosticImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
   public CMsgSource2SystemSpecs SystemSpecs
-  { get => new CMsgSource2SystemSpecsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "system_specs")); }
+  { get => new CMsgSource2SystemSpecsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "system_specs"), false); }
 
 
   public CMsgSource2VProfLiteReport VprofReport
-  { get => new CMsgSource2VProfLiteReportImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "vprof_report")); }
+  { get => new CMsgSource2VProfLiteReportImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "vprof_report"), false); }
 
 
   public CMsgSource2NetworkFlowQuality DownstreamFlow
-  { get => new CMsgSource2NetworkFlowQualityImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "downstream_flow")); }
+  { get => new CMsgSource2NetworkFlowQualityImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "downstream_flow"), false); }
 
 
   public CMsgSource2NetworkFlowQuality UpstreamFlow
-  { get => new CMsgSource2NetworkFlowQualityImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "upstream_flow")); }
+  { get => new CMsgSource2NetworkFlowQualityImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "upstream_flow"), false); }
 
 }

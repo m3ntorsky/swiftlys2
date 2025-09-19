@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_MatchEndConditionsImpl : NetMessage<CCSUsrMsg_MatchEndConditions>, CCSUsrMsg_MatchEndConditions
 {
-  public CCSUsrMsg_MatchEndConditionsImpl(nint handle): base(handle)
+  public CCSUsrMsg_MatchEndConditionsImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

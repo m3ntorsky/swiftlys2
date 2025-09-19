@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEEnergySplashImpl : NetMessage<CMsgTEEnergySplash>, CMsgTEEnergySplash
 {
-  public CMsgTEEnergySplashImpl(nint handle): base(handle)
+  public CMsgTEEnergySplashImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

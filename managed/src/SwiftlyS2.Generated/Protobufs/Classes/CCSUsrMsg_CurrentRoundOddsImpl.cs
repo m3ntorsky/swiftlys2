@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_CurrentRoundOddsImpl : NetMessage<CCSUsrMsg_CurrentRoundOdds>, CCSUsrMsg_CurrentRoundOdds
 {
-  public CCSUsrMsg_CurrentRoundOddsImpl(nint handle): base(handle)
+  public CCSUsrMsg_CurrentRoundOddsImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

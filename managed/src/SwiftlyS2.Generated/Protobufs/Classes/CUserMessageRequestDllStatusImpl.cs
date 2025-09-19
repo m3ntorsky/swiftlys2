@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageRequestDllStatusImpl : NetMessage<CUserMessageRequestDllStatus>, CUserMessageRequestDllStatus
 {
-  public CUserMessageRequestDllStatusImpl(nint handle): base(handle)
+  public CUserMessageRequestDllStatusImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

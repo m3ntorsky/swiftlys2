@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.GameEvents;
+using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.Services;
 
 namespace SwiftlyS2.Shared;
@@ -22,6 +23,11 @@ public interface ISwiftlyCore {
   public IGameEventService GameEvent { get; }
 
   /// <summary>
+  /// Net message service.
+  /// </summary>
+  public INetMessageService NetMessage { get; }
+
+  /// <summary>
   /// Configuration service.
   /// </summary>
   public IPluginConfigurationService Configuration { get; }
@@ -30,6 +36,4 @@ public interface ISwiftlyCore {
   /// Logger factory.
   /// </summary>
   public ILoggerFactory LoggerFactory { get; }
-  
-
 }

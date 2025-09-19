@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTELargeFunnelImpl : NetMessage<CMsgTELargeFunnel>, CMsgTELargeFunnel
 {
-  public CMsgTELargeFunnelImpl(nint handle): base(handle)
+  public CMsgTELargeFunnelImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

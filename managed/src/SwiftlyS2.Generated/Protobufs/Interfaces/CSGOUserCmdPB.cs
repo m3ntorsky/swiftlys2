@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSGOUserCmdPB : ITypedProtobuf<CSGOUserCmdPB>
 {
-  static CSGOUserCmdPB ITypedProtobuf<CSGOUserCmdPB>.Wrap(nint handle) => new CSGOUserCmdPBImpl(handle);
+  static CSGOUserCmdPB ITypedProtobuf<CSGOUserCmdPB>.Wrap(nint handle, bool isManuallyAllocated) => new CSGOUserCmdPBImpl(handle, isManuallyAllocated);
 
 
   public CBaseUserCmdPB Base { get; }

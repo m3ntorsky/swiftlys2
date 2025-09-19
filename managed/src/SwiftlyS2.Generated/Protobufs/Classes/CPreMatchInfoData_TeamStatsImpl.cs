@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CPreMatchInfoData_TeamStatsImpl : TypedProtobuf<CPreMatchInfoData_TeamStats>, CPreMatchInfoData_TeamStats
 {
-  public CPreMatchInfoData_TeamStatsImpl(nint handle): base(handle)
+  public CPreMatchInfoData_TeamStatsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

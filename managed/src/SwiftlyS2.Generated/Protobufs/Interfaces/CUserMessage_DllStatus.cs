@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMessage_DllStatus : ITypedProtobuf<CUserMessage_DllStatus>
 {
-  static CUserMessage_DllStatus ITypedProtobuf<CUserMessage_DllStatus>.Wrap(nint handle) => new CUserMessage_DllStatusImpl(handle);
+  static CUserMessage_DllStatus ITypedProtobuf<CUserMessage_DllStatus>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessage_DllStatusImpl(handle, isManuallyAllocated);
 
 
   public string FileReport { get; set; }

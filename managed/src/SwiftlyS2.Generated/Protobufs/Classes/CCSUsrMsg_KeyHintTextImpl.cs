@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_KeyHintTextImpl : NetMessage<CCSUsrMsg_KeyHintText>, CCSUsrMsg_KeyHintText
 {
-  public CCSUsrMsg_KeyHintTextImpl(nint handle): base(handle)
+  public CCSUsrMsg_KeyHintTextImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

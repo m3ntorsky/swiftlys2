@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMsg_ParticleManager : ITypedProtobuf<CUserMsg_ParticleManager>
 {
-  static CUserMsg_ParticleManager ITypedProtobuf<CUserMsg_ParticleManager>.Wrap(nint handle) => new CUserMsg_ParticleManagerImpl(handle);
+  static CUserMsg_ParticleManager ITypedProtobuf<CUserMsg_ParticleManager>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMsg_ParticleManagerImpl(handle, isManuallyAllocated);
 
 
   public PARTICLE_MESSAGE Type { get; set; }

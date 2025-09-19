@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessage_DllStatus_CModuleImpl : TypedProtobuf<CUserMessage_DllStatus_CModule>, CUserMessage_DllStatus_CModule
 {
-  public CUserMessage_DllStatus_CModuleImpl(nint handle): base(handle)
+  public CUserMessage_DllStatus_CModuleImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

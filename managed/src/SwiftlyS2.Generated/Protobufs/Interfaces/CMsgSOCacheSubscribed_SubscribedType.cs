@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSOCacheSubscribed_SubscribedType : ITypedProtobuf<CMsgSOCacheSubscribed_SubscribedType>
 {
-  static CMsgSOCacheSubscribed_SubscribedType ITypedProtobuf<CMsgSOCacheSubscribed_SubscribedType>.Wrap(nint handle) => new CMsgSOCacheSubscribed_SubscribedTypeImpl(handle);
+  static CMsgSOCacheSubscribed_SubscribedType ITypedProtobuf<CMsgSOCacheSubscribed_SubscribedType>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSOCacheSubscribed_SubscribedTypeImpl(handle, isManuallyAllocated);
 
 
   public int TypeId { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgClientHelloImpl : TypedProtobuf<CMsgClientHello>, CMsgClientHello
 {
-  public CMsgClientHelloImpl(nint handle): base(handle)
+  public CMsgClientHelloImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_Account_RequestCoPlays_Player : ITypedProtobuf<CMsgGCCStrike15_v2_Account_RequestCoPlays_Player>
 {
-  static CMsgGCCStrike15_v2_Account_RequestCoPlays_Player ITypedProtobuf<CMsgGCCStrike15_v2_Account_RequestCoPlays_Player>.Wrap(nint handle) => new CMsgGCCStrike15_v2_Account_RequestCoPlays_PlayerImpl(handle);
+  static CMsgGCCStrike15_v2_Account_RequestCoPlays_Player ITypedProtobuf<CMsgGCCStrike15_v2_Account_RequestCoPlays_Player>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_Account_RequestCoPlays_PlayerImpl(handle, isManuallyAllocated);
 
 
   public uint Accountid { get; set; }

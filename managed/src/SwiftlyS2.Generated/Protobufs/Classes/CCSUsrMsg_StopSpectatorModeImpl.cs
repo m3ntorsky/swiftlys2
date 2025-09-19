@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_StopSpectatorModeImpl : NetMessage<CCSUsrMsg_StopSpectatorMode>, CCSUsrMsg_StopSpectatorMode
 {
-  public CCSUsrMsg_StopSpectatorModeImpl(nint handle): base(handle)
+  public CCSUsrMsg_StopSpectatorModeImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

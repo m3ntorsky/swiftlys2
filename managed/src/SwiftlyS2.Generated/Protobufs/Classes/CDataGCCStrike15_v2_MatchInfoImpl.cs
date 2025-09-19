@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDataGCCStrike15_v2_MatchInfoImpl : TypedProtobuf<CDataGCCStrike15_v2_MatchInfo>, CDataGCCStrike15_v2_MatchInfo
 {
-  public CDataGCCStrike15_v2_MatchInfoImpl(nint handle): base(handle)
+  public CDataGCCStrike15_v2_MatchInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -23,11 +23,11 @@ internal class CDataGCCStrike15_v2_MatchInfoImpl : TypedProtobuf<CDataGCCStrike1
 
 
   public WatchableMatchInfo Watchablematchinfo
-  { get => new WatchableMatchInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "watchablematchinfo")); }
+  { get => new WatchableMatchInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "watchablematchinfo"), false); }
 
 
   public CMsgGCCStrike15_v2_MatchmakingServerRoundStats RoundstatsLegacy
-  { get => new CMsgGCCStrike15_v2_MatchmakingServerRoundStatsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "roundstats_legacy")); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingServerRoundStatsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "roundstats_legacy"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgGCCStrike15_v2_MatchmakingServerRoundStats> Roundstatsall

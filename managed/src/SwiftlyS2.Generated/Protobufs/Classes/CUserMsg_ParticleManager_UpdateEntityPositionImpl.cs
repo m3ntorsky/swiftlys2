@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_UpdateEntityPositionImpl : TypedProtobuf<CUserMsg_ParticleManager_UpdateEntityPosition>, CUserMsg_ParticleManager_UpdateEntityPosition
 {
-  public CUserMsg_ParticleManager_UpdateEntityPositionImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_UpdateEntityPositionImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

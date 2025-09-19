@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgItemAcknowledged : ITypedProtobuf<CMsgItemAcknowledged>
 {
-  static CMsgItemAcknowledged ITypedProtobuf<CMsgItemAcknowledged>.Wrap(nint handle) => new CMsgItemAcknowledgedImpl(handle);
+  static CMsgItemAcknowledged ITypedProtobuf<CMsgItemAcknowledged>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgItemAcknowledgedImpl(handle, isManuallyAllocated);
 
 
   public CEconItemPreviewDataBlock Iteminfo { get; }

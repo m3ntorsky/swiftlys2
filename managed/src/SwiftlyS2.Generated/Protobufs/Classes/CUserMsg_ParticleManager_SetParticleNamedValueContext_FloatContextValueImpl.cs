@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_SetParticleNamedValueContext_FloatContextValueImpl : TypedProtobuf<CUserMsg_ParticleManager_SetParticleNamedValueContext_FloatContextValue>, CUserMsg_ParticleManager_SetParticleNamedValueContext_FloatContextValue
 {
-  public CUserMsg_ParticleManager_SetParticleNamedValueContext_FloatContextValueImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_SetParticleNamedValueContext_FloatContextValueImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CEconItemPreviewDataBlock_StickerImpl : TypedProtobuf<CEconItemPreviewDataBlock_Sticker>, CEconItemPreviewDataBlock_Sticker
 {
-  public CEconItemPreviewDataBlock_StickerImpl(nint handle): base(handle)
+  public CEconItemPreviewDataBlock_StickerImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

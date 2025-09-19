@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CProductInfo_SetRichPresenceLocalization_Request : ITypedProtobuf<CProductInfo_SetRichPresenceLocalization_Request>
 {
-  static CProductInfo_SetRichPresenceLocalization_Request ITypedProtobuf<CProductInfo_SetRichPresenceLocalization_Request>.Wrap(nint handle) => new CProductInfo_SetRichPresenceLocalization_RequestImpl(handle);
+  static CProductInfo_SetRichPresenceLocalization_Request ITypedProtobuf<CProductInfo_SetRichPresenceLocalization_Request>.Wrap(nint handle, bool isManuallyAllocated) => new CProductInfo_SetRichPresenceLocalization_RequestImpl(handle, isManuallyAllocated);
 
 
   public uint Appid { get; set; }

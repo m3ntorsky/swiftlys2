@@ -18,7 +18,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetBool(_event, keyBufferPtr);
+        var ret = _GetBool(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -32,7 +32,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetInt(_event, keyBufferPtr);
+        var ret = _GetInt(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -46,7 +46,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetUint64(_event, keyBufferPtr);
+        var ret = _GetUint64(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -60,7 +60,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetFloat(_event, keyBufferPtr);
+        var ret = _GetFloat(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -74,11 +74,11 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetString(null, _event, keyBufferPtr);
+        var ret = _GetString(null, _event, keyBufferPtr);
 
     var retBuffer = pool.Rent(ret+1);
     fixed (byte* retBufferPtr = retBuffer) {
-    ret = _GetString(retBufferPtr, _event, keyBufferPtr);
+        ret = _GetString(retBufferPtr, _event, keyBufferPtr);
     var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
     pool.Return(retBuffer);
 
@@ -96,7 +96,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetPtr(_event, keyBufferPtr);
+        var ret = _GetPtr(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -113,7 +113,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetEHandle(_event, keyBufferPtr);
+        var ret = _GetEHandle(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -127,7 +127,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetEntity(_event, keyBufferPtr);
+        var ret = _GetEntity(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -141,7 +141,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetEntityIndex(_event, keyBufferPtr);
+        var ret = _GetEntityIndex(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -155,7 +155,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetPlayerSlot(_event, keyBufferPtr);
+        var ret = _GetPlayerSlot(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -169,7 +169,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetPlayerController(_event, keyBufferPtr);
+        var ret = _GetPlayerController(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -183,7 +183,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetPlayerPawn(_event, keyBufferPtr);
+        var ret = _GetPlayerPawn(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -200,7 +200,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetPawnEHandle(_event, keyBufferPtr);
+        var ret = _GetPawnEHandle(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -214,7 +214,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _GetPawnEntityIndex(_event, keyBufferPtr);
+        var ret = _GetPawnEntityIndex(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -228,7 +228,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetBool(_event, keyBufferPtr, value);
+        _SetBool(_event, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -241,7 +241,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetInt(_event, keyBufferPtr, value);
+        _SetInt(_event, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -254,7 +254,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetUint64(_event, keyBufferPtr, value);
+        _SetUint64(_event, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -267,7 +267,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetFloat(_event, keyBufferPtr, value);
+        _SetFloat(_event, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -280,13 +280,13 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-
+    
     var valueLength = Encoding.UTF8.GetByteCount(value);
     var valueBuffer = pool.Rent(valueLength + 1);
     Encoding.UTF8.GetBytes(value, valueBuffer);
     valueBuffer[valueLength] = 0;
     fixed (byte* valueBufferPtr = valueBuffer) {
-    _SetString(_event, keyBufferPtr, valueBufferPtr);
+        _SetString(_event, keyBufferPtr, valueBufferPtr);
     pool.Return(keyBuffer);
 
     pool.Return(valueBuffer);
@@ -302,7 +302,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetPtr(_event, keyBufferPtr, value);
+        _SetPtr(_event, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -315,7 +315,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetEntity(_event, keyBufferPtr, value);
+        _SetEntity(_event, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -328,7 +328,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetEntityIndex(_event, keyBufferPtr, value);
+        _SetEntityIndex(_event, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -341,7 +341,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    _SetPlayerSlot(_event, keyBufferPtr, value);
+        _SetPlayerSlot(_event, keyBufferPtr, value);
     pool.Return(keyBuffer);
 
   }
@@ -354,7 +354,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-    var ret = _HasKey(_event, keyBufferPtr);
+        var ret = _HasKey(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
     return ret;
@@ -378,7 +378,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(eventName, eventNameBuffer);
     eventNameBuffer[eventNameLength] = 0;
     fixed (byte* eventNameBufferPtr = eventNameBuffer) {
-    _RegisterListener(eventNameBufferPtr);
+        _RegisterListener(eventNameBufferPtr);
     pool.Return(eventNameBuffer);
 
   }
@@ -415,7 +415,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(eventName, eventNameBuffer);
     eventNameBuffer[eventNameLength] = 0;
     fixed (byte* eventNameBufferPtr = eventNameBuffer) {
-    var ret = _CreateEvent(eventNameBufferPtr);
+        var ret = _CreateEvent(eventNameBufferPtr);
     pool.Return(eventNameBuffer);
 
     return ret;
@@ -441,7 +441,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(eventName, eventNameBuffer);
     eventNameBuffer[eventNameLength] = 0;
     fixed (byte* eventNameBufferPtr = eventNameBuffer) {
-    var ret = _IsPlayerListeningToEventName(playerid, eventNameBufferPtr);
+        var ret = _IsPlayerListeningToEventName(playerid, eventNameBufferPtr);
     pool.Return(eventNameBuffer);
 
     return ret;

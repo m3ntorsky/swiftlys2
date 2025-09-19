@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoAnimationHeaderImpl : TypedProtobuf<CDemoAnimationHeader>, CDemoAnimationHeader
 {
-  public CDemoAnimationHeaderImpl(nint handle): base(handle)
+  public CDemoAnimationHeaderImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

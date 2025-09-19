@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgServerNetworkStatsImpl : TypedProtobuf<CMsgServerNetworkStats>, CMsgServerNetworkStats
 {
-  public CMsgServerNetworkStatsImpl(nint handle): base(handle)
+  public CMsgServerNetworkStatsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

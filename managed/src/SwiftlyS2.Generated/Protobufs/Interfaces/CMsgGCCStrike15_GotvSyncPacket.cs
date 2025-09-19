@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_GotvSyncPacket : ITypedProtobuf<CMsgGCCStrike15_GotvSyncPacket>
 {
-  static CMsgGCCStrike15_GotvSyncPacket ITypedProtobuf<CMsgGCCStrike15_GotvSyncPacket>.Wrap(nint handle) => new CMsgGCCStrike15_GotvSyncPacketImpl(handle);
+  static CMsgGCCStrike15_GotvSyncPacket ITypedProtobuf<CMsgGCCStrike15_GotvSyncPacket>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_GotvSyncPacketImpl(handle, isManuallyAllocated);
 
 
   public CEngineGotvSyncPacket Data { get; }

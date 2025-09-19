@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEPlayerAnimEventImpl : NetMessage<CMsgTEPlayerAnimEvent>, CMsgTEPlayerAnimEvent
 {
-  public CMsgTEPlayerAnimEventImpl(nint handle): base(handle)
+  public CMsgTEPlayerAnimEventImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
-  public int Player
-  { get => Accessor.GetInt32("player"); set => Accessor.SetInt32("player", value); }
+  public uint Player
+  { get => Accessor.GetUInt32("player"); set => Accessor.SetUInt32("player", value); }
 
 
   public uint Event

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageColoredTextImpl : NetMessage<CUserMessageColoredText>, CUserMessageColoredText
 {
-  public CUserMessageColoredTextImpl(nint handle): base(handle)
+  public CUserMessageColoredTextImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

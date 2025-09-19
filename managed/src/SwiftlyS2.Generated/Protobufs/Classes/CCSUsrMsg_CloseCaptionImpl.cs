@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_CloseCaptionImpl : NetMessage<CCSUsrMsg_CloseCaption>, CCSUsrMsg_CloseCaption
 {
-  public CCSUsrMsg_CloseCaptionImpl(nint handle): base(handle)
+  public CCSUsrMsg_CloseCaptionImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

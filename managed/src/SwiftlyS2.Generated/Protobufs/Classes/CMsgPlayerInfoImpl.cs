@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgPlayerInfoImpl : TypedProtobuf<CMsgPlayerInfo>, CMsgPlayerInfo
 {
-  public CMsgPlayerInfoImpl(nint handle): base(handle)
+  public CMsgPlayerInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

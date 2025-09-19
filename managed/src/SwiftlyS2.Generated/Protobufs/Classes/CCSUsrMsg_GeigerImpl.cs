@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_GeigerImpl : NetMessage<CCSUsrMsg_Geiger>, CCSUsrMsg_Geiger
 {
-  public CCSUsrMsg_GeigerImpl(nint handle): base(handle)
+  public CCSUsrMsg_GeigerImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

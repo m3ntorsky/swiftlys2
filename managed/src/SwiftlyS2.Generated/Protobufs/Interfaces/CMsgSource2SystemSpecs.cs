@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSource2SystemSpecs : ITypedProtobuf<CMsgSource2SystemSpecs>
 {
-  static CMsgSource2SystemSpecs ITypedProtobuf<CMsgSource2SystemSpecs>.Wrap(nint handle) => new CMsgSource2SystemSpecsImpl(handle);
+  static CMsgSource2SystemSpecs ITypedProtobuf<CMsgSource2SystemSpecs>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSource2SystemSpecsImpl(handle, isManuallyAllocated);
 
 
   public string CpuId { get; set; }

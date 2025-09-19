@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CUserMessageRequestUtilAction : ITypedProtobuf<CUserMessageRequestUtilAction>, INetMessage<CUserMessageRequestUtilAction>
+public interface CUserMessageRequestUtilAction : ITypedProtobuf<CUserMessageRequestUtilAction>, INetMessage<CUserMessageRequestUtilAction>, IDisposable
 {
   static int INetMessage<CUserMessageRequestUtilAction>.MessageId => 157;
   
   static string INetMessage<CUserMessageRequestUtilAction>.MessageName => "CUserMessageRequestUtilAction";
 
-  static CUserMessageRequestUtilAction ITypedProtobuf<CUserMessageRequestUtilAction>.Wrap(nint handle) => new CUserMessageRequestUtilActionImpl(handle);
+  static CUserMessageRequestUtilAction ITypedProtobuf<CUserMessageRequestUtilAction>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessageRequestUtilActionImpl(handle, isManuallyAllocated);
 
 
   public int Util1 { get; set; }

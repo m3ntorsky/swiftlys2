@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoConsoleCmdImpl : TypedProtobuf<CDemoConsoleCmd>, CDemoConsoleCmd
 {
-  public CDemoConsoleCmdImpl(nint handle): base(handle)
+  public CDemoConsoleCmdImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_GetCvarValueImpl : NetMessage<CSVCMsg_GetCvarValue>, CSVCMsg_GetCvarValue
 {
-  public CSVCMsg_GetCvarValueImpl(nint handle): base(handle)
+  public CSVCMsg_GetCvarValueImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

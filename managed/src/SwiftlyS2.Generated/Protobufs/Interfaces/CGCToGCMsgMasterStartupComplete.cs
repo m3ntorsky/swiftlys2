@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CGCToGCMsgMasterStartupComplete : ITypedProtobuf<CGCToGCMsgMasterStartupComplete>
 {
-  static CGCToGCMsgMasterStartupComplete ITypedProtobuf<CGCToGCMsgMasterStartupComplete>.Wrap(nint handle) => new CGCToGCMsgMasterStartupCompleteImpl(handle);
+  static CGCToGCMsgMasterStartupComplete ITypedProtobuf<CGCToGCMsgMasterStartupComplete>.Wrap(nint handle, bool isManuallyAllocated) => new CGCToGCMsgMasterStartupCompleteImpl(handle, isManuallyAllocated);
 
 
 }

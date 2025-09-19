@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_RconServerDetailsImpl : NetMessage<CSVCMsg_RconServerDetails>, CSVCMsg_RconServerDetails
 {
-  public CSVCMsg_RconServerDetailsImpl(nint handle): base(handle)
+  public CSVCMsg_RconServerDetailsImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

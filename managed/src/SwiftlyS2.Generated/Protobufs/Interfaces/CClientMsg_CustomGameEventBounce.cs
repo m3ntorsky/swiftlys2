@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CClientMsg_CustomGameEventBounce : ITypedProtobuf<CClientMsg_CustomGameEventBounce>
 {
-  static CClientMsg_CustomGameEventBounce ITypedProtobuf<CClientMsg_CustomGameEventBounce>.Wrap(nint handle) => new CClientMsg_CustomGameEventBounceImpl(handle);
+  static CClientMsg_CustomGameEventBounce ITypedProtobuf<CClientMsg_CustomGameEventBounce>.Wrap(nint handle, bool isManuallyAllocated) => new CClientMsg_CustomGameEventBounceImpl(handle, isManuallyAllocated);
 
 
   public string EventName { get; set; }

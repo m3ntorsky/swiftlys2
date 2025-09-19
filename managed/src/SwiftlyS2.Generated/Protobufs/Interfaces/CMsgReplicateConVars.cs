@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgReplicateConVars : ITypedProtobuf<CMsgReplicateConVars>
 {
-  static CMsgReplicateConVars ITypedProtobuf<CMsgReplicateConVars>.Wrap(nint handle) => new CMsgReplicateConVarsImpl(handle);
+  static CMsgReplicateConVars ITypedProtobuf<CMsgReplicateConVars>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgReplicateConVarsImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgConVarValue> Convars { get; }

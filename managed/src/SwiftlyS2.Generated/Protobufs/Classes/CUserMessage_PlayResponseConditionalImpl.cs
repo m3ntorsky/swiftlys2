@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessage_PlayResponseConditionalImpl : NetMessage<CUserMessage_PlayResponseConditional>, CUserMessage_PlayResponseConditional
 {
-  public CUserMessage_PlayResponseConditionalImpl(nint handle): base(handle)
+  public CUserMessage_PlayResponseConditionalImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

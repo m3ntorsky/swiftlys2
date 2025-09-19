@@ -9,12 +9,12 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchEndRewardDropsNotificationImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchEndRewardDropsNotification>, CMsgGCCStrike15_v2_MatchEndRewardDropsNotification
 {
-  public CMsgGCCStrike15_v2_MatchEndRewardDropsNotificationImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchEndRewardDropsNotificationImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CEconItemPreviewDataBlock Iteminfo
-  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "iteminfo")); }
+  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "iteminfo"), false); }
 
 }

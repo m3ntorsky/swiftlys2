@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends : ITypedProtobuf<CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends>
 {
-  static CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends ITypedProtobuf<CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends>.Wrap(nint handle) => new CMsgGCCStrike15_v2_ClientRequestWatchInfoFriendsImpl(handle);
+  static CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends ITypedProtobuf<CMsgGCCStrike15_v2_ClientRequestWatchInfoFriends>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_ClientRequestWatchInfoFriendsImpl(handle, isManuallyAllocated);
 
 
   public uint RequestId { get; set; }

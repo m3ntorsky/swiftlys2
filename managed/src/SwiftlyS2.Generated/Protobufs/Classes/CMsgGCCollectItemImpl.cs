@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCollectItemImpl : TypedProtobuf<CMsgGCCollectItem>, CMsgGCCollectItem
 {
-  public CMsgGCCollectItemImpl(nint handle): base(handle)
+  public CMsgGCCollectItemImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

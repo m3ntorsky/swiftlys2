@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgAdjustItemEquippedStateMulti : ITypedProtobuf<CMsgAdjustItemEquippedStateMulti>
 {
-  static CMsgAdjustItemEquippedStateMulti ITypedProtobuf<CMsgAdjustItemEquippedStateMulti>.Wrap(nint handle) => new CMsgAdjustItemEquippedStateMultiImpl(handle);
+  static CMsgAdjustItemEquippedStateMulti ITypedProtobuf<CMsgAdjustItemEquippedStateMulti>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgAdjustItemEquippedStateMultiImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldValueType<ulong> TEquips { get; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCUpdateSessionIPImpl : TypedProtobuf<CMsgGCUpdateSessionIP>, CMsgGCUpdateSessionIP
 {
-  public CMsgGCUpdateSessionIPImpl(nint handle): base(handle)
+  public CMsgGCUpdateSessionIPImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -18,7 +18,7 @@ internal class CMsgGCUpdateSessionIPImpl : TypedProtobuf<CMsgGCUpdateSessionIP>,
   { get => Accessor.GetUInt64("steamid"); set => Accessor.SetUInt64("steamid", value); }
 
 
-  public int Ip
-  { get => Accessor.GetInt32("ip"); set => Accessor.SetInt32("ip", value); }
+  public uint Ip
+  { get => Accessor.GetUInt32("ip"); set => Accessor.SetUInt32("ip", value); }
 
 }

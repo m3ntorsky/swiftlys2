@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientHelloImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchmakingGC2ClientHello>, CMsgGCCStrike15_v2_MatchmakingGC2ClientHello
 {
-  public CMsgGCCStrike15_v2_MatchmakingGC2ClientHelloImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchmakingGC2ClientHelloImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,11 +19,11 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientHelloImpl : TypedProtobuf<
 
 
   public CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve Ongoingmatch
-  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "ongoingmatch")); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "ongoingmatch"), false); }
 
 
   public GlobalStatistics GlobalStats
-  { get => new GlobalStatisticsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "global_stats")); }
+  { get => new GlobalStatisticsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "global_stats"), false); }
 
 
   public uint PenaltySeconds
@@ -39,19 +39,19 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientHelloImpl : TypedProtobuf<
 
 
   public PlayerRankingInfo Ranking
-  { get => new PlayerRankingInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "ranking")); }
+  { get => new PlayerRankingInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "ranking"), false); }
 
 
   public PlayerCommendationInfo Commendation
-  { get => new PlayerCommendationInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "commendation")); }
+  { get => new PlayerCommendationInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "commendation"), false); }
 
 
   public PlayerMedalsInfo Medals
-  { get => new PlayerMedalsInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "medals")); }
+  { get => new PlayerMedalsInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "medals"), false); }
 
 
   public TournamentEvent MyCurrentEvent
-  { get => new TournamentEventImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "my_current_event")); }
+  { get => new TournamentEventImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "my_current_event"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<TournamentTeam> MyCurrentEventTeams
@@ -59,7 +59,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientHelloImpl : TypedProtobuf<
 
 
   public TournamentTeam MyCurrentTeam
-  { get => new TournamentTeamImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "my_current_team")); }
+  { get => new TournamentTeamImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "my_current_team"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<TournamentEvent> MyCurrentEventStages
@@ -71,7 +71,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientHelloImpl : TypedProtobuf<
 
 
   public AccountActivity Activity
-  { get => new AccountActivityImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "activity")); }
+  { get => new AccountActivityImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "activity"), false); }
 
 
   public int PlayerLevel

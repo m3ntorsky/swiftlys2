@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgModifyItemAttribute : ITypedProtobuf<CMsgModifyItemAttribute>
 {
-  static CMsgModifyItemAttribute ITypedProtobuf<CMsgModifyItemAttribute>.Wrap(nint handle) => new CMsgModifyItemAttributeImpl(handle);
+  static CMsgModifyItemAttribute ITypedProtobuf<CMsgModifyItemAttribute>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgModifyItemAttributeImpl(handle, isManuallyAllocated);
 
 
   public ulong ItemId { get; set; }

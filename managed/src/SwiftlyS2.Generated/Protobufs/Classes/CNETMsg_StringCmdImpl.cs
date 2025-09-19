@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CNETMsg_StringCmdImpl : NetMessage<CNETMsg_StringCmd>, CNETMsg_StringCmd
 {
-  public CNETMsg_StringCmdImpl(nint handle): base(handle)
+  public CNETMsg_StringCmdImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

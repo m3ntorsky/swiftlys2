@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_UpdateStringTableImpl : NetMessage<CSVCMsg_UpdateStringTable>, CSVCMsg_UpdateStringTable
 {
-  public CSVCMsg_UpdateStringTableImpl(nint handle): base(handle)
+  public CSVCMsg_UpdateStringTableImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -26,7 +26,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(name, nameBuffer);
     nameBuffer[nameLength] = 0;
     fixed (byte* nameBufferPtr = nameBuffer) {
-    var ret = _CreateEntityByName(nameBufferPtr);
+        var ret = _CreateEntityByName(nameBufferPtr);
     pool.Return(nameBuffer);
 
     return ret;
@@ -40,7 +40,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AcceptInputInt32(entity, inputBufferPtr, activator, caller, value, outputID);
+        _AcceptInputInt32(entity, inputBufferPtr, activator, caller, value, outputID);
     pool.Return(inputBuffer);
 
   }
@@ -53,7 +53,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AcceptInputUInt32(entity, inputBufferPtr, activator, caller, value, outputID);
+        _AcceptInputUInt32(entity, inputBufferPtr, activator, caller, value, outputID);
     pool.Return(inputBuffer);
 
   }
@@ -66,7 +66,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AcceptInputInt64(entity, inputBufferPtr, activator, caller, value, outputID);
+        _AcceptInputInt64(entity, inputBufferPtr, activator, caller, value, outputID);
     pool.Return(inputBuffer);
 
   }
@@ -79,7 +79,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AcceptInputUInt64(entity, inputBufferPtr, activator, caller, value, outputID);
+        _AcceptInputUInt64(entity, inputBufferPtr, activator, caller, value, outputID);
     pool.Return(inputBuffer);
 
   }
@@ -92,7 +92,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AcceptInputFloat(entity, inputBufferPtr, activator, caller, value, outputID);
+        _AcceptInputFloat(entity, inputBufferPtr, activator, caller, value, outputID);
     pool.Return(inputBuffer);
 
   }
@@ -105,7 +105,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AcceptInputDouble(entity, inputBufferPtr, activator, caller, value, outputID);
+        _AcceptInputDouble(entity, inputBufferPtr, activator, caller, value, outputID);
     pool.Return(inputBuffer);
 
   }
@@ -118,7 +118,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AcceptInputBool(entity, inputBufferPtr, activator, caller, value, outputID);
+        _AcceptInputBool(entity, inputBufferPtr, activator, caller, value, outputID);
     pool.Return(inputBuffer);
 
   }
@@ -131,13 +131,13 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-
+    
     var valueLength = Encoding.UTF8.GetByteCount(value);
     var valueBuffer = pool.Rent(valueLength + 1);
     Encoding.UTF8.GetBytes(value, valueBuffer);
     valueBuffer[valueLength] = 0;
     fixed (byte* valueBufferPtr = valueBuffer) {
-    _AcceptInputString(entity, inputBufferPtr, activator, caller, valueBufferPtr, outputID);
+        _AcceptInputString(entity, inputBufferPtr, activator, caller, valueBufferPtr, outputID);
     pool.Return(inputBuffer);
 
     pool.Return(valueBuffer);
@@ -153,7 +153,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AddEntityIOEventInt32(entity, inputBufferPtr, activator, caller, value, delay);
+        _AddEntityIOEventInt32(entity, inputBufferPtr, activator, caller, value, delay);
     pool.Return(inputBuffer);
 
   }
@@ -166,7 +166,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AddEntityIOEventUInt32(entity, inputBufferPtr, activator, caller, value, delay);
+        _AddEntityIOEventUInt32(entity, inputBufferPtr, activator, caller, value, delay);
     pool.Return(inputBuffer);
 
   }
@@ -179,7 +179,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AddEntityIOEventInt64(entity, inputBufferPtr, activator, caller, value, delay);
+        _AddEntityIOEventInt64(entity, inputBufferPtr, activator, caller, value, delay);
     pool.Return(inputBuffer);
 
   }
@@ -192,7 +192,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AddEntityIOEventUInt64(entity, inputBufferPtr, activator, caller, value, delay);
+        _AddEntityIOEventUInt64(entity, inputBufferPtr, activator, caller, value, delay);
     pool.Return(inputBuffer);
 
   }
@@ -205,7 +205,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AddEntityIOEventFloat(entity, inputBufferPtr, activator, caller, value, delay);
+        _AddEntityIOEventFloat(entity, inputBufferPtr, activator, caller, value, delay);
     pool.Return(inputBuffer);
 
   }
@@ -218,7 +218,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AddEntityIOEventDouble(entity, inputBufferPtr, activator, caller, value, delay);
+        _AddEntityIOEventDouble(entity, inputBufferPtr, activator, caller, value, delay);
     pool.Return(inputBuffer);
 
   }
@@ -231,7 +231,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-    _AddEntityIOEventBool(entity, inputBufferPtr, activator, caller, value, delay);
+        _AddEntityIOEventBool(entity, inputBufferPtr, activator, caller, value, delay);
     pool.Return(inputBuffer);
 
   }
@@ -244,13 +244,13 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-
+    
     var valueLength = Encoding.UTF8.GetByteCount(value);
     var valueBuffer = pool.Rent(valueLength + 1);
     Encoding.UTF8.GetBytes(value, valueBuffer);
     valueBuffer[valueLength] = 0;
     fixed (byte* valueBufferPtr = valueBuffer) {
-    _AddEntityIOEventString(entity, inputBufferPtr, activator, caller, valueBufferPtr, delay);
+        _AddEntityIOEventString(entity, inputBufferPtr, activator, caller, valueBufferPtr, delay);
     pool.Return(inputBuffer);
 
     pool.Return(valueBuffer);

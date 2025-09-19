@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_EndOfMatchAllPlayersData_PlayerDataImpl : TypedProtobuf<CCSUsrMsg_EndOfMatchAllPlayersData_PlayerData>, CCSUsrMsg_EndOfMatchAllPlayersData_PlayerData
 {
-  public CCSUsrMsg_EndOfMatchAllPlayersData_PlayerDataImpl(nint handle): base(handle)
+  public CCSUsrMsg_EndOfMatchAllPlayersData_PlayerDataImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -31,7 +31,7 @@ internal class CCSUsrMsg_EndOfMatchAllPlayersData_PlayerDataImpl : TypedProtobuf
 
 
   public CCSUsrMsg_EndOfMatchAllPlayersData_Accolade Nomination
-  { get => new CCSUsrMsg_EndOfMatchAllPlayersData_AccoladeImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "nomination")); }
+  { get => new CCSUsrMsg_EndOfMatchAllPlayersData_AccoladeImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "nomination"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CEconItemPreviewDataBlock> Items

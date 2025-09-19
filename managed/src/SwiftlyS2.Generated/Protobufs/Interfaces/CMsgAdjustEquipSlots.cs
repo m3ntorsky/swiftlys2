@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgAdjustEquipSlots : ITypedProtobuf<CMsgAdjustEquipSlots>
 {
-  static CMsgAdjustEquipSlots ITypedProtobuf<CMsgAdjustEquipSlots>.Wrap(nint handle) => new CMsgAdjustEquipSlotsImpl(handle);
+  static CMsgAdjustEquipSlots ITypedProtobuf<CMsgAdjustEquipSlots>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgAdjustEquipSlotsImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgAdjustEquipSlot> Slots { get; }

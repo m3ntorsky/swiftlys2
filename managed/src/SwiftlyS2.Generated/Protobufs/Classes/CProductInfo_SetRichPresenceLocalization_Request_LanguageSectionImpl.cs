@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CProductInfo_SetRichPresenceLocalization_Request_LanguageSectionImpl : TypedProtobuf<CProductInfo_SetRichPresenceLocalization_Request_LanguageSection>, CProductInfo_SetRichPresenceLocalization_Request_LanguageSection
 {
-  public CProductInfo_SetRichPresenceLocalization_Request_LanguageSectionImpl(nint handle): base(handle)
+  public CProductInfo_SetRichPresenceLocalization_Request_LanguageSectionImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

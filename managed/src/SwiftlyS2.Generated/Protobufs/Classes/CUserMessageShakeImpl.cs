@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageShakeImpl : NetMessage<CUserMessageShake>, CUserMessageShake
 {
-  public CUserMessageShakeImpl(nint handle): base(handle)
+  public CUserMessageShakeImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

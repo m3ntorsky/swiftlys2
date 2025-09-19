@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_RoundBackupFilenamesImpl : NetMessage<CCSUsrMsg_RoundBackupFilenames>, CCSUsrMsg_RoundBackupFilenames
 {
-  public CCSUsrMsg_RoundBackupFilenamesImpl(nint handle): base(handle)
+  public CCSUsrMsg_RoundBackupFilenamesImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

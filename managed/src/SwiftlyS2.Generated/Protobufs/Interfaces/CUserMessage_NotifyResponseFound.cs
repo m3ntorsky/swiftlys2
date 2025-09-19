@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CUserMessage_NotifyResponseFound : ITypedProtobuf<CUserMessage_NotifyResponseFound>, INetMessage<CUserMessage_NotifyResponseFound>
+public interface CUserMessage_NotifyResponseFound : ITypedProtobuf<CUserMessage_NotifyResponseFound>, INetMessage<CUserMessage_NotifyResponseFound>, IDisposable
 {
   static int INetMessage<CUserMessage_NotifyResponseFound>.MessageId => 165;
   
   static string INetMessage<CUserMessage_NotifyResponseFound>.MessageName => "CUserMessage_NotifyResponseFound";
 
-  static CUserMessage_NotifyResponseFound ITypedProtobuf<CUserMessage_NotifyResponseFound>.Wrap(nint handle) => new CUserMessage_NotifyResponseFoundImpl(handle);
+  static CUserMessage_NotifyResponseFound ITypedProtobuf<CUserMessage_NotifyResponseFound>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessage_NotifyResponseFoundImpl(handle, isManuallyAllocated);
 
 
   public int EntIndex { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCLCMsg_CmdKeyValuesImpl : NetMessage<CCLCMsg_CmdKeyValues>, CCLCMsg_CmdKeyValues
 {
-  public CCLCMsg_CmdKeyValuesImpl(nint handle): base(handle)
+  public CCLCMsg_CmdKeyValuesImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

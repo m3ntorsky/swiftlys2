@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSOMultipleObjectsImpl : TypedProtobuf<CMsgSOMultipleObjects>, CMsgSOMultipleObjects
 {
-  public CMsgSOMultipleObjectsImpl(nint handle): base(handle)
+  public CMsgSOMultipleObjectsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -23,6 +23,6 @@ internal class CMsgSOMultipleObjectsImpl : TypedProtobuf<CMsgSOMultipleObjects>,
 
 
   public CMsgSOIDOwner OwnerSoid
-  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "owner_soid")); }
+  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "owner_soid"), false); }
 
 }

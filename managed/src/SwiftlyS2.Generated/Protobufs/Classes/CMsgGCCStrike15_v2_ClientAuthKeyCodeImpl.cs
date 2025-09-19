@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_ClientAuthKeyCodeImpl : TypedProtobuf<CMsgGCCStrike15_v2_ClientAuthKeyCode>, CMsgGCCStrike15_v2_ClientAuthKeyCode
 {
-  public CMsgGCCStrike15_v2_ClientAuthKeyCodeImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_ClientAuthKeyCodeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

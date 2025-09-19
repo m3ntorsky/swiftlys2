@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CClientMsg_ListenForResponseFound : ITypedProtobuf<CClientMsg_ListenForResponseFound>
 {
-  static CClientMsg_ListenForResponseFound ITypedProtobuf<CClientMsg_ListenForResponseFound>.Wrap(nint handle) => new CClientMsg_ListenForResponseFoundImpl(handle);
+  static CClientMsg_ListenForResponseFound ITypedProtobuf<CClientMsg_ListenForResponseFound>.Wrap(nint handle, bool isManuallyAllocated) => new CClientMsg_ListenForResponseFoundImpl(handle, isManuallyAllocated);
 
 
   public int PlayerSlot { get; set; }

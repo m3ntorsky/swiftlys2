@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_GC2ClientInitSystemImpl : TypedProtobuf<CMsgGCCStrike15_v2_GC2ClientInitSystem>, CMsgGCCStrike15_v2_GC2ClientInitSystem
 {
-  public CMsgGCCStrike15_v2_GC2ClientInitSystemImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_GC2ClientInitSystemImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

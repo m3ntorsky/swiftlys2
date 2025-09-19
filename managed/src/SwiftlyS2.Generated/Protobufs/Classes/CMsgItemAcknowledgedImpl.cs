@@ -9,12 +9,12 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgItemAcknowledgedImpl : TypedProtobuf<CMsgItemAcknowledged>, CMsgItemAcknowledged
 {
-  public CMsgItemAcknowledgedImpl(nint handle): base(handle)
+  public CMsgItemAcknowledgedImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CEconItemPreviewDataBlock Iteminfo
-  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "iteminfo")); }
+  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "iteminfo"), false); }
 
 }

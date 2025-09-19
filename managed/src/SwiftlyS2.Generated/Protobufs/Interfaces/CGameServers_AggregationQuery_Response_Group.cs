@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CGameServers_AggregationQuery_Response_Group : ITypedProtobuf<CGameServers_AggregationQuery_Response_Group>
 {
-  static CGameServers_AggregationQuery_Response_Group ITypedProtobuf<CGameServers_AggregationQuery_Response_Group>.Wrap(nint handle) => new CGameServers_AggregationQuery_Response_GroupImpl(handle);
+  static CGameServers_AggregationQuery_Response_Group ITypedProtobuf<CGameServers_AggregationQuery_Response_Group>.Wrap(nint handle, bool isManuallyAllocated) => new CGameServers_AggregationQuery_Response_GroupImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldValueType<string> GroupValues { get; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageServerFrameTimeImpl : NetMessage<CUserMessageServerFrameTime>, CUserMessageServerFrameTime
 {
-  public CUserMessageServerFrameTimeImpl(nint handle): base(handle)
+  public CUserMessageServerFrameTimeImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

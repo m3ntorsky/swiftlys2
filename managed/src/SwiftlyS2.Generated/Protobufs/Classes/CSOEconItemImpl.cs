@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOEconItemImpl : TypedProtobuf<CSOEconItem>, CSOEconItem
 {
-  public CSOEconItemImpl(nint handle): base(handle)
+  public CSOEconItemImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -63,7 +63,7 @@ internal class CSOEconItemImpl : TypedProtobuf<CSOEconItem>, CSOEconItem
 
 
   public CSOEconItem InteriorItem
-  { get => new CSOEconItemImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "interior_item")); }
+  { get => new CSOEconItemImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "interior_item"), false); }
 
 
   public bool InUse

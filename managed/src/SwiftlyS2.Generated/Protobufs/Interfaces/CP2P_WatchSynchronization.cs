@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CP2P_WatchSynchronization : ITypedProtobuf<CP2P_WatchSynchronization>
 {
-  static CP2P_WatchSynchronization ITypedProtobuf<CP2P_WatchSynchronization>.Wrap(nint handle) => new CP2P_WatchSynchronizationImpl(handle);
+  static CP2P_WatchSynchronization ITypedProtobuf<CP2P_WatchSynchronization>.Wrap(nint handle, bool isManuallyAllocated) => new CP2P_WatchSynchronizationImpl(handle, isManuallyAllocated);
 
 
   public int DemoTick { get; set; }

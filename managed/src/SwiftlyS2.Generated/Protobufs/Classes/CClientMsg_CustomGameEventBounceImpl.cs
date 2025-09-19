@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CClientMsg_CustomGameEventBounceImpl : TypedProtobuf<CClientMsg_CustomGameEventBounce>, CClientMsg_CustomGameEventBounce
 {
-  public CClientMsg_CustomGameEventBounceImpl(nint handle): base(handle)
+  public CClientMsg_CustomGameEventBounceImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class ProtoFlattenedSerializer_tImpl : TypedProtobuf<ProtoFlattenedSerializer_t>, ProtoFlattenedSerializer_t
 {
-  public ProtoFlattenedSerializer_tImpl(nint handle): base(handle)
+  public ProtoFlattenedSerializer_tImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

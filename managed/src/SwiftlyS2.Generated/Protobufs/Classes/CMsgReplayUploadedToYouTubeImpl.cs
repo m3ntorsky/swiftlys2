@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgReplayUploadedToYouTubeImpl : TypedProtobuf<CMsgReplayUploadedToYouTube>, CMsgReplayUploadedToYouTube
 {
-  public CMsgReplayUploadedToYouTubeImpl(nint handle): base(handle)
+  public CMsgReplayUploadedToYouTubeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

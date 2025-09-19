@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CEngineGotvSyncPacketImpl : TypedProtobuf<CEngineGotvSyncPacket>, CEngineGotvSyncPacket
 {
-  public CEngineGotvSyncPacketImpl(nint handle): base(handle)
+  public CEngineGotvSyncPacketImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

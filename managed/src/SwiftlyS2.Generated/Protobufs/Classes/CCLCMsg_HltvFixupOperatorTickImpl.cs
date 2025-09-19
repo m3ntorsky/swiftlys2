@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCLCMsg_HltvFixupOperatorTickImpl : TypedProtobuf<CCLCMsg_HltvFixupOperatorTick>, CCLCMsg_HltvFixupOperatorTick
 {
-  public CCLCMsg_HltvFixupOperatorTickImpl(nint handle): base(handle)
+  public CCLCMsg_HltvFixupOperatorTickImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

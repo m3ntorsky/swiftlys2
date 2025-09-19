@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOPartyInviteImpl : TypedProtobuf<CSOPartyInvite>, CSOPartyInvite
 {
-  public CSOPartyInviteImpl(nint handle): base(handle)
+  public CSOPartyInviteImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

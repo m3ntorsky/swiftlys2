@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCRequestAnnouncementsResponse : ITypedProtobuf<CMsgGCRequestAnnouncementsResponse>
 {
-  static CMsgGCRequestAnnouncementsResponse ITypedProtobuf<CMsgGCRequestAnnouncementsResponse>.Wrap(nint handle) => new CMsgGCRequestAnnouncementsResponseImpl(handle);
+  static CMsgGCRequestAnnouncementsResponse ITypedProtobuf<CMsgGCRequestAnnouncementsResponse>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCRequestAnnouncementsResponseImpl(handle, isManuallyAllocated);
 
 
   public string AnnouncementTitle { get; set; }

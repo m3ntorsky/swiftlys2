@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest : ITypedProtobuf<CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest>
 {
-  static CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest ITypedProtobuf<CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest>.Wrap(nint handle) => new CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequestImpl(handle);
+  static CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest ITypedProtobuf<CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequest>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_Client2GCEconPreviewDataBlockRequestImpl(handle, isManuallyAllocated);
 
 
   public ulong ParamS { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchmakingClient2ServerPingImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchmakingClient2ServerPing>, CMsgGCCStrike15_v2_MatchmakingClient2ServerPing
 {
-  public CMsgGCCStrike15_v2_MatchmakingClient2ServerPingImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchmakingClient2ServerPingImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -34,8 +34,8 @@ internal class CMsgGCCStrike15_v2_MatchmakingClient2ServerPingImpl : TypedProtob
   { get => Accessor.GetUInt32("max_ping"); set => Accessor.SetUInt32("max_ping", value); }
 
 
-  public int TestToken
-  { get => Accessor.GetInt32("test_token"); set => Accessor.SetInt32("test_token", value); }
+  public uint TestToken
+  { get => Accessor.GetUInt32("test_token"); set => Accessor.SetUInt32("test_token", value); }
 
 
   public byte[] SearchKey

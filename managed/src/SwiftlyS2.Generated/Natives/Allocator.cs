@@ -23,13 +23,13 @@ internal static class NativeAllocator {
     Encoding.UTF8.GetBytes(identifier, identifierBuffer);
     identifierBuffer[identifierLength] = 0;
     fixed (byte* identifierBufferPtr = identifierBuffer) {
-
+    
     var detailsLength = Encoding.UTF8.GetByteCount(details);
     var detailsBuffer = pool.Rent(detailsLength + 1);
     Encoding.UTF8.GetBytes(details, detailsBuffer);
     detailsBuffer[detailsLength] = 0;
     fixed (byte* detailsBufferPtr = detailsBuffer) {
-    var ret = _TrackedAlloc(size, identifierBufferPtr, detailsBufferPtr);
+        var ret = _TrackedAlloc(size, identifierBufferPtr, detailsBufferPtr);
     pool.Return(identifierBuffer);
 
     pool.Return(detailsBuffer);
@@ -68,7 +68,7 @@ internal static class NativeAllocator {
     Encoding.UTF8.GetBytes(identifier, identifierBuffer);
     identifierBuffer[identifierLength] = 0;
     fixed (byte* identifierBufferPtr = identifierBuffer) {
-    var ret = _GetAllocatedByTrackedIdentifier(identifierBufferPtr);
+        var ret = _GetAllocatedByTrackedIdentifier(identifierBufferPtr);
     pool.Return(identifierBuffer);
 
     return ret;

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgAccountDetails : ITypedProtobuf<CMsgAccountDetails>
 {
-  static CMsgAccountDetails ITypedProtobuf<CMsgAccountDetails>.Wrap(nint handle) => new CMsgAccountDetailsImpl(handle);
+  static CMsgAccountDetails ITypedProtobuf<CMsgAccountDetails>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgAccountDetailsImpl(handle, isManuallyAllocated);
 
 
   public bool Valid { get; set; }
@@ -49,7 +49,7 @@ public interface CMsgAccountDetails : ITypedProtobuf<CMsgAccountDetails>
   public uint Package { get; set; }
 
 
-  public int TimeCached { get; set; }
+  public uint TimeCached { get; set; }
 
 
   public bool AccountLocked { get; set; }

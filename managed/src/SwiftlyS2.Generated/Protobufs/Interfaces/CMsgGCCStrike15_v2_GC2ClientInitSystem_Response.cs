@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_GC2ClientInitSystem_Response : ITypedProtobuf<CMsgGCCStrike15_v2_GC2ClientInitSystem_Response>
 {
-  static CMsgGCCStrike15_v2_GC2ClientInitSystem_Response ITypedProtobuf<CMsgGCCStrike15_v2_GC2ClientInitSystem_Response>.Wrap(nint handle) => new CMsgGCCStrike15_v2_GC2ClientInitSystem_ResponseImpl(handle);
+  static CMsgGCCStrike15_v2_GC2ClientInitSystem_Response ITypedProtobuf<CMsgGCCStrike15_v2_GC2ClientInitSystem_Response>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_GC2ClientInitSystem_ResponseImpl(handle, isManuallyAllocated);
 
 
   public bool Success { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class WatchableMatchInfoImpl : TypedProtobuf<WatchableMatchInfo>, WatchableMatchInfo
 {
-  public WatchableMatchInfoImpl(nint handle): base(handle)
+  public WatchableMatchInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class PlayerDecalDigitalSignatureImpl : TypedProtobuf<PlayerDecalDigitalSignature>, PlayerDecalDigitalSignature
 {
-  public PlayerDecalDigitalSignatureImpl(nint handle): base(handle)
+  public PlayerDecalDigitalSignatureImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

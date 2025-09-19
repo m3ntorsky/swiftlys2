@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface NetMessageConnectionClosed : ITypedProtobuf<NetMessageConnectionClosed>
 {
-  static NetMessageConnectionClosed ITypedProtobuf<NetMessageConnectionClosed>.Wrap(nint handle) => new NetMessageConnectionClosedImpl(handle);
+  static NetMessageConnectionClosed ITypedProtobuf<NetMessageConnectionClosed>.Wrap(nint handle, bool isManuallyAllocated) => new NetMessageConnectionClosedImpl(handle, isManuallyAllocated);
 
 
   public uint Reason { get; set; }

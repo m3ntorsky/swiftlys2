@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEPhysicsPropImpl : NetMessage<CMsgTEPhysicsProp>, CMsgTEPhysicsProp
 {
-  public CMsgTEPhysicsPropImpl(nint handle): base(handle)
+  public CMsgTEPhysicsPropImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -26,8 +26,8 @@ internal class CMsgTEPhysicsPropImpl : NetMessage<CMsgTEPhysicsProp>, CMsgTEPhys
   { get => Accessor.GetQAngle("angles"); set => Accessor.SetQAngle("angles", value); }
 
 
-  public int Skin
-  { get => Accessor.GetInt32("skin"); set => Accessor.SetInt32("skin", value); }
+  public uint Skin
+  { get => Accessor.GetUInt32("skin"); set => Accessor.SetUInt32("skin", value); }
 
 
   public uint Flags
@@ -38,8 +38,8 @@ internal class CMsgTEPhysicsPropImpl : NetMessage<CMsgTEPhysicsProp>, CMsgTEPhys
   { get => Accessor.GetUInt32("effects"); set => Accessor.SetUInt32("effects", value); }
 
 
-  public int Color
-  { get => Accessor.GetInt32("color"); set => Accessor.SetInt32("color", value); }
+  public uint Color
+  { get => Accessor.GetUInt32("color"); set => Accessor.SetUInt32("color", value); }
 
 
   public ulong Modelindex

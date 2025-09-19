@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSubtickMoveStep : ITypedProtobuf<CSubtickMoveStep>
 {
-  static CSubtickMoveStep ITypedProtobuf<CSubtickMoveStep>.Wrap(nint handle) => new CSubtickMoveStepImpl(handle);
+  static CSubtickMoveStep ITypedProtobuf<CSubtickMoveStep>.Wrap(nint handle, bool isManuallyAllocated) => new CSubtickMoveStepImpl(handle, isManuallyAllocated);
 
 
   public ulong Button { get; set; }

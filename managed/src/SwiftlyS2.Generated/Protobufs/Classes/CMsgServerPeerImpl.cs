@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgServerPeerImpl : TypedProtobuf<CMsgServerPeer>, CMsgServerPeer
 {
-  public CMsgServerPeerImpl(nint handle): base(handle)
+  public CMsgServerPeerImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -23,7 +23,7 @@ internal class CMsgServerPeerImpl : TypedProtobuf<CMsgServerPeer>, CMsgServerPee
 
 
   public CMsgIPCAddress Ipc
-  { get => new CMsgIPCAddressImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "ipc")); }
+  { get => new CMsgIPCAddressImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "ipc"), false); }
 
 
   public bool TheyHearYou

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSPredictionEvent_AddAimPunchImpl : TypedProtobuf<CCSPredictionEvent_AddAimPunch>, CCSPredictionEvent_AddAimPunch
 {
-  public CCSPredictionEvent_AddAimPunchImpl(nint handle): base(handle)
+  public CCSPredictionEvent_AddAimPunchImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

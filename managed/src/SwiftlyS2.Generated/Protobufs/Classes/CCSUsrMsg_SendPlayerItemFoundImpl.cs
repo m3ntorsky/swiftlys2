@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_SendPlayerItemFoundImpl : NetMessage<CCSUsrMsg_SendPlayerItemFound>, CCSUsrMsg_SendPlayerItemFound
 {
-  public CCSUsrMsg_SendPlayerItemFoundImpl(nint handle): base(handle)
+  public CCSUsrMsg_SendPlayerItemFoundImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
   public CEconItemPreviewDataBlock Iteminfo
-  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "iteminfo")); }
+  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "iteminfo"), false); }
 
 
   public int Playerslot

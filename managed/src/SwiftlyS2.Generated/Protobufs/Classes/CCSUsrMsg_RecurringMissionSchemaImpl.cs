@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_RecurringMissionSchemaImpl : NetMessage<CCSUsrMsg_RecurringMissionSchema>, CCSUsrMsg_RecurringMissionSchema
 {
-  public CCSUsrMsg_RecurringMissionSchemaImpl(nint handle): base(handle)
+  public CCSUsrMsg_RecurringMissionSchemaImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

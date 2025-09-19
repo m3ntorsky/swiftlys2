@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class MLMatchStateImpl : TypedProtobuf<MLMatchState>, MLMatchState
 {
-  public MLMatchStateImpl(nint handle): base(handle)
+  public MLMatchStateImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

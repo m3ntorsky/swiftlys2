@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CEntityMessageScreenOverlayImpl : TypedProtobuf<CEntityMessageScreenOverlay>, CEntityMessageScreenOverlay
 {
-  public CEntityMessageScreenOverlayImpl(nint handle): base(handle)
+  public CEntityMessageScreenOverlayImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,6 +19,6 @@ internal class CEntityMessageScreenOverlayImpl : TypedProtobuf<CEntityMessageScr
 
 
   public CEntityMsg EntityMsg
-  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "entity_msg")); }
+  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "entity_msg"), false); }
 
 }

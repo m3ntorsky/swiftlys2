@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus : ITypedProtobuf<CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus>
 {
-  static CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus ITypedProtobuf<CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus>.Wrap(nint handle) => new CMsgGCCStrike15_v2_PlayerOverwatchCaseStatusImpl(handle);
+  static CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus ITypedProtobuf<CMsgGCCStrike15_v2_PlayerOverwatchCaseStatus>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_PlayerOverwatchCaseStatusImpl(handle, isManuallyAllocated);
 
 
   public ulong Caseid { get; set; }

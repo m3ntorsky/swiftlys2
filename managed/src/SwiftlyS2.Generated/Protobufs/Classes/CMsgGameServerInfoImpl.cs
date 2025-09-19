@@ -9,17 +9,17 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGameServerInfoImpl : TypedProtobuf<CMsgGameServerInfo>, CMsgGameServerInfo
 {
-  public CMsgGameServerInfoImpl(nint handle): base(handle)
+  public CMsgGameServerInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
-  public int ServerPublicIpAddr
-  { get => Accessor.GetInt32("server_public_ip_addr"); set => Accessor.SetInt32("server_public_ip_addr", value); }
+  public uint ServerPublicIpAddr
+  { get => Accessor.GetUInt32("server_public_ip_addr"); set => Accessor.SetUInt32("server_public_ip_addr", value); }
 
 
-  public int ServerPrivateIpAddr
-  { get => Accessor.GetInt32("server_private_ip_addr"); set => Accessor.SetInt32("server_private_ip_addr", value); }
+  public uint ServerPrivateIpAddr
+  { get => Accessor.GetUInt32("server_private_ip_addr"); set => Accessor.SetUInt32("server_private_ip_addr", value); }
 
 
   public uint ServerPort

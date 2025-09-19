@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCStorePurchaseFinalizeResponse : ITypedProtobuf<CMsgGCStorePurchaseFinalizeResponse>
 {
-  static CMsgGCStorePurchaseFinalizeResponse ITypedProtobuf<CMsgGCStorePurchaseFinalizeResponse>.Wrap(nint handle) => new CMsgGCStorePurchaseFinalizeResponseImpl(handle);
+  static CMsgGCStorePurchaseFinalizeResponse ITypedProtobuf<CMsgGCStorePurchaseFinalizeResponse>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCStorePurchaseFinalizeResponseImpl(handle, isManuallyAllocated);
 
 
   public uint Result { get; set; }

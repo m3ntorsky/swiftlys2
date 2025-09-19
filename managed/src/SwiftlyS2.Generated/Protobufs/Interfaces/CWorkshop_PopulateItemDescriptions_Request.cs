@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CWorkshop_PopulateItemDescriptions_Request : ITypedProtobuf<CWorkshop_PopulateItemDescriptions_Request>
 {
-  static CWorkshop_PopulateItemDescriptions_Request ITypedProtobuf<CWorkshop_PopulateItemDescriptions_Request>.Wrap(nint handle) => new CWorkshop_PopulateItemDescriptions_RequestImpl(handle);
+  static CWorkshop_PopulateItemDescriptions_Request ITypedProtobuf<CWorkshop_PopulateItemDescriptions_Request>.Wrap(nint handle, bool isManuallyAllocated) => new CWorkshop_PopulateItemDescriptions_RequestImpl(handle, isManuallyAllocated);
 
 
   public uint Appid { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoCustomDataImpl : TypedProtobuf<CDemoCustomData>, CDemoCustomData
 {
-  public CDemoCustomDataImpl(nint handle): base(handle)
+  public CDemoCustomDataImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

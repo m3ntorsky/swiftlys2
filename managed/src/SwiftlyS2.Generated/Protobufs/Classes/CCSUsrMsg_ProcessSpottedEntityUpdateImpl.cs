@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_ProcessSpottedEntityUpdateImpl : NetMessage<CCSUsrMsg_ProcessSpottedEntityUpdate>, CCSUsrMsg_ProcessSpottedEntityUpdate
 {
-  public CCSUsrMsg_ProcessSpottedEntityUpdateImpl(nint handle): base(handle)
+  public CCSUsrMsg_ProcessSpottedEntityUpdateImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

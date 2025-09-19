@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_Account_RequestCoPlaysImpl : TypedProtobuf<CMsgGCCStrike15_v2_Account_RequestCoPlays>, CMsgGCCStrike15_v2_Account_RequestCoPlays
 {
-  public CMsgGCCStrike15_v2_Account_RequestCoPlaysImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_Account_RequestCoPlaysImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

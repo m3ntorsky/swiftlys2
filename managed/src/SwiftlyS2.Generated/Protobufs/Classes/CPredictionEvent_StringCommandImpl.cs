@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CPredictionEvent_StringCommandImpl : TypedProtobuf<CPredictionEvent_StringCommand>, CPredictionEvent_StringCommand
 {
-  public CPredictionEvent_StringCommandImpl(nint handle): base(handle)
+  public CPredictionEvent_StringCommandImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

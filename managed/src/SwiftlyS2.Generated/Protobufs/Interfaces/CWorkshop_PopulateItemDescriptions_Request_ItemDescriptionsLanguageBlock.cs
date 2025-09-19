@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlock : ITypedProtobuf<CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlock>
 {
-  static CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlock ITypedProtobuf<CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlock>.Wrap(nint handle) => new CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlockImpl(handle);
+  static CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlock ITypedProtobuf<CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlock>.Wrap(nint handle, bool isManuallyAllocated) => new CWorkshop_PopulateItemDescriptions_Request_ItemDescriptionsLanguageBlockImpl(handle, isManuallyAllocated);
 
 
   public string Language { get; set; }

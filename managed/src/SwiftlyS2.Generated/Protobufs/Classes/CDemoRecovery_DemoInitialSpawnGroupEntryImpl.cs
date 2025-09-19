@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoRecovery_DemoInitialSpawnGroupEntryImpl : TypedProtobuf<CDemoRecovery_DemoInitialSpawnGroupEntry>, CDemoRecovery_DemoInitialSpawnGroupEntry
 {
-  public CDemoRecovery_DemoInitialSpawnGroupEntryImpl(nint handle): base(handle)
+  public CDemoRecovery_DemoInitialSpawnGroupEntryImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

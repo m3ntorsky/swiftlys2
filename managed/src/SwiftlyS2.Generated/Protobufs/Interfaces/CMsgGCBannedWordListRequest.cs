@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCBannedWordListRequest : ITypedProtobuf<CMsgGCBannedWordListRequest>
 {
-  static CMsgGCBannedWordListRequest ITypedProtobuf<CMsgGCBannedWordListRequest>.Wrap(nint handle) => new CMsgGCBannedWordListRequestImpl(handle);
+  static CMsgGCBannedWordListRequest ITypedProtobuf<CMsgGCBannedWordListRequest>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCBannedWordListRequestImpl(handle, isManuallyAllocated);
 
 
   public uint BanListGroupId { get; set; }

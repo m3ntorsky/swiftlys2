@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageRequestInventoryImpl : NetMessage<CUserMessageRequestInventory>, CUserMessageRequestInventory
 {
-  public CUserMessageRequestInventoryImpl(nint handle): base(handle)
+  public CUserMessageRequestInventoryImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

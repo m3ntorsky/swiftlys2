@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEDecalImpl : NetMessage<CMsgTEDecal>, CMsgTEDecal
 {
-  public CMsgTEDecalImpl(nint handle): base(handle)
+  public CMsgTEDecalImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

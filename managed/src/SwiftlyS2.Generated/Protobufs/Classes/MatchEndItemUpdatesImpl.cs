@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class MatchEndItemUpdatesImpl : TypedProtobuf<MatchEndItemUpdates>, MatchEndItemUpdates
 {
-  public MatchEndItemUpdatesImpl(nint handle): base(handle)
+  public MatchEndItemUpdatesImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

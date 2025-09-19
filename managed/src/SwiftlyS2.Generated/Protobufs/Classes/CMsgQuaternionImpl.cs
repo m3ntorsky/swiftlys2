@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgQuaternionImpl : TypedProtobuf<CMsgQuaternion>, CMsgQuaternion
 {
-  public CMsgQuaternionImpl(nint handle): base(handle)
+  public CMsgQuaternionImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

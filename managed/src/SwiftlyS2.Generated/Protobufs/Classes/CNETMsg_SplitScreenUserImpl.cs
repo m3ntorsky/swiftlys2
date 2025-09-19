@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CNETMsg_SplitScreenUserImpl : NetMessage<CNETMsg_SplitScreenUser>, CNETMsg_SplitScreenUser
 {
-  public CNETMsg_SplitScreenUserImpl(nint handle): base(handle)
+  public CNETMsg_SplitScreenUserImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

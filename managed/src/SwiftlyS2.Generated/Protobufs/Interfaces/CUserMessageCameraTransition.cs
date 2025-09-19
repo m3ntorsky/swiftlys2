@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CUserMessageCameraTransition : ITypedProtobuf<CUserMessageCameraTransition>, INetMessage<CUserMessageCameraTransition>
+public interface CUserMessageCameraTransition : ITypedProtobuf<CUserMessageCameraTransition>, INetMessage<CUserMessageCameraTransition>, IDisposable
 {
   static int INetMessage<CUserMessageCameraTransition>.MessageId => 143;
   
   static string INetMessage<CUserMessageCameraTransition>.MessageName => "CUserMessageCameraTransition";
 
-  static CUserMessageCameraTransition ITypedProtobuf<CUserMessageCameraTransition>.Wrap(nint handle) => new CUserMessageCameraTransitionImpl(handle);
+  static CUserMessageCameraTransition ITypedProtobuf<CUserMessageCameraTransition>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessageCameraTransitionImpl(handle, isManuallyAllocated);
 
 
   public uint CameraType { get; set; }

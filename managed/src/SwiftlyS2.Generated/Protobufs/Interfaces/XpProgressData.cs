@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface XpProgressData : ITypedProtobuf<XpProgressData>
 {
-  static XpProgressData ITypedProtobuf<XpProgressData>.Wrap(nint handle) => new XpProgressDataImpl(handle);
+  static XpProgressData ITypedProtobuf<XpProgressData>.Wrap(nint handle, bool isManuallyAllocated) => new XpProgressDataImpl(handle, isManuallyAllocated);
 
 
   public uint XpPoints { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_KillCamImpl : NetMessage<CCSUsrMsg_KillCam>, CCSUsrMsg_KillCam
 {
-  public CCSUsrMsg_KillCamImpl(nint handle): base(handle)
+  public CCSUsrMsg_KillCamImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_PeerListImpl : NetMessage<CSVCMsg_PeerList>, CSVCMsg_PeerList
 {
-  public CSVCMsg_PeerListImpl(nint handle): base(handle)
+  public CSVCMsg_PeerListImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOPartyInvite : ITypedProtobuf<CSOPartyInvite>
 {
-  static CSOPartyInvite ITypedProtobuf<CSOPartyInvite>.Wrap(nint handle) => new CSOPartyInviteImpl(handle);
+  static CSOPartyInvite ITypedProtobuf<CSOPartyInvite>.Wrap(nint handle, bool isManuallyAllocated) => new CSOPartyInviteImpl(handle, isManuallyAllocated);
 
 
   public ulong GroupId { get; set; }

@@ -8,12 +8,20 @@ namespace SwiftlyS2.Shared.GameEvents;
 public interface IGameEventService {
 
   /// <summary>
+  /// The delegate type for game event callbacks.
+  /// </summary>
+  /// <typeparam name="T">The event type.</typeparam>
+  /// <param name="eventObj">The event object.</param>
+  /// <returns>The hook result.</returns>
+  delegate HookResult GameEventHandler<T>(T eventObj) where T : IGameEvent<T>;
+
+  /// <summary>
   /// Hooks a pre-event callback.
   /// </summary>
   /// <typeparam name="T">The event type.</typeparam>
   /// <param name="callback">The callback to hook.</param>
   /// <returns>A GUID representing the hook. You can use this to unhook the callback later.</returns>
-  Guid HookPre<T>(Func<T, HookResult> callback) where T : IGameEvent<T>;
+  Guid HookPre<T>(GameEventHandler<T> callback) where T : IGameEvent<T>;
 
   /// <summary>
   /// Hooks a post-event callback.
@@ -21,7 +29,7 @@ public interface IGameEventService {
   /// <typeparam name="T">The event type.</typeparam>
   /// <param name="callback">The callback to hook.</param>
   /// <returns>A GUID representing the hook. You can use this to unhook the callback later.</returns>
-  Guid HookPost<T>(Func<T, HookResult> callback) where T : IGameEvent<T>;
+  Guid HookPost<T>(GameEventHandler<T> callback) where T : IGameEvent<T>;
 
   /// <summary>
   /// Unhooks a callback.

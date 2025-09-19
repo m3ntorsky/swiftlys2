@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_ServerRankUpdateImpl : NetMessage<CCSUsrMsg_ServerRankUpdate>, CCSUsrMsg_ServerRankUpdate
 {
-  public CCSUsrMsg_ServerRankUpdateImpl(nint handle): base(handle)
+  public CCSUsrMsg_ServerRankUpdateImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_MenuImpl : NetMessage<CSVCMsg_Menu>, CSVCMsg_Menu
 {
-  public CSVCMsg_MenuImpl(nint handle): base(handle)
+  public CSVCMsg_MenuImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

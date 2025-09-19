@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMessage_Diagnostic_Response : ITypedProtobuf<CUserMessage_Diagnostic_Response>
 {
-  static CUserMessage_Diagnostic_Response ITypedProtobuf<CUserMessage_Diagnostic_Response>.Wrap(nint handle) => new CUserMessage_Diagnostic_ResponseImpl(handle);
+  static CUserMessage_Diagnostic_Response ITypedProtobuf<CUserMessage_Diagnostic_Response>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessage_Diagnostic_ResponseImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldSubMessageType<CUserMessage_Diagnostic_Response_Diagnostic> Diagnostics { get; }

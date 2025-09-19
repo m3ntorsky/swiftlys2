@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CClientMsg_ClientUIEventImpl : TypedProtobuf<CClientMsg_ClientUIEvent>, CClientMsg_ClientUIEvent
 {
-  public CClientMsg_ClientUIEventImpl(nint handle): base(handle)
+  public CClientMsg_ClientUIEventImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

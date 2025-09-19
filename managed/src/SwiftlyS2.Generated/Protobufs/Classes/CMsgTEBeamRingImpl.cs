@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEBeamRingImpl : NetMessage<CMsgTEBeamRing>, CMsgTEBeamRing
 {
-  public CMsgTEBeamRingImpl(nint handle): base(handle)
+  public CMsgTEBeamRingImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
   public CMsgTEBaseBeam Base
-  { get => new CMsgTEBaseBeamImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "base")); }
+  { get => new CMsgTEBaseBeamImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "base"), false); }
 
 
   public uint Startentity

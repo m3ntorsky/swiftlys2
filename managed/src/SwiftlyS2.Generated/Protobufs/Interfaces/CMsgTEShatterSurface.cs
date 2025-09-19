@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CMsgTEShatterSurface : ITypedProtobuf<CMsgTEShatterSurface>, INetMessage<CMsgTEShatterSurface>
+public interface CMsgTEShatterSurface : ITypedProtobuf<CMsgTEShatterSurface>, INetMessage<CMsgTEShatterSurface>, IDisposable
 {
   static int INetMessage<CMsgTEShatterSurface>.MessageId => 414;
   
   static string INetMessage<CMsgTEShatterSurface>.MessageName => "CMsgTEShatterSurface";
 
-  static CMsgTEShatterSurface ITypedProtobuf<CMsgTEShatterSurface>.Wrap(nint handle) => new CMsgTEShatterSurfaceImpl(handle);
+  static CMsgTEShatterSurface ITypedProtobuf<CMsgTEShatterSurface>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgTEShatterSurfaceImpl(handle, isManuallyAllocated);
 
 
   public Vector Origin { get; set; }
@@ -39,9 +39,9 @@ public interface CMsgTEShatterSurface : ITypedProtobuf<CMsgTEShatterSurface>, IN
   public uint Surfacetype { get; set; }
 
 
-  public int Frontcolor { get; set; }
+  public uint Frontcolor { get; set; }
 
 
-  public int Backcolor { get; set; }
+  public uint Backcolor { get; set; }
 
 }

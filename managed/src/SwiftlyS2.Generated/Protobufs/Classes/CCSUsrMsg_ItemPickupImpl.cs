@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_ItemPickupImpl : NetMessage<CCSUsrMsg_ItemPickup>, CCSUsrMsg_ItemPickup
 {
-  public CCSUsrMsg_ItemPickupImpl(nint handle): base(handle)
+  public CCSUsrMsg_ItemPickupImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

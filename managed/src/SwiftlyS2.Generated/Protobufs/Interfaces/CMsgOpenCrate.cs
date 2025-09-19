@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgOpenCrate : ITypedProtobuf<CMsgOpenCrate>
 {
-  static CMsgOpenCrate ITypedProtobuf<CMsgOpenCrate>.Wrap(nint handle) => new CMsgOpenCrateImpl(handle);
+  static CMsgOpenCrate ITypedProtobuf<CMsgOpenCrate>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgOpenCrateImpl(handle, isManuallyAllocated);
 
 
   public ulong ToolItemId { get; set; }

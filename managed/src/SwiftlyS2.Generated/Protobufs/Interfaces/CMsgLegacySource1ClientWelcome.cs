@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgLegacySource1ClientWelcome : ITypedProtobuf<CMsgLegacySource1ClientWelcome>
 {
-  static CMsgLegacySource1ClientWelcome ITypedProtobuf<CMsgLegacySource1ClientWelcome>.Wrap(nint handle) => new CMsgLegacySource1ClientWelcomeImpl(handle);
+  static CMsgLegacySource1ClientWelcome ITypedProtobuf<CMsgLegacySource1ClientWelcome>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgLegacySource1ClientWelcomeImpl(handle, isManuallyAllocated);
 
 
   public uint Version { get; set; }

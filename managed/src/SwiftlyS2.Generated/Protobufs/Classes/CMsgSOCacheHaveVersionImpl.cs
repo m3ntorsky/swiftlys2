@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSOCacheHaveVersionImpl : TypedProtobuf<CMsgSOCacheHaveVersion>, CMsgSOCacheHaveVersion
 {
-  public CMsgSOCacheHaveVersionImpl(nint handle): base(handle)
+  public CMsgSOCacheHaveVersionImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
 
   public CMsgSOIDOwner Soid
-  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "soid")); }
+  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "soid"), false); }
 
 
   public ulong Version

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandonImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon>, CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandon
 {
-  public CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandonImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandonImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,7 +19,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandonImpl : TypedProtobu
 
 
   public CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve AbandonedMatch
-  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "abandoned_match")); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "abandoned_match"), false); }
 
 
   public uint PenaltySeconds

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface MLDict : ITypedProtobuf<MLDict>
 {
-  static MLDict ITypedProtobuf<MLDict>.Wrap(nint handle) => new MLDictImpl(handle);
+  static MLDict ITypedProtobuf<MLDict>.Wrap(nint handle, bool isManuallyAllocated) => new MLDictImpl(handle, isManuallyAllocated);
 
 
   public string Key { get; set; }

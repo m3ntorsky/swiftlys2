@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_ClientAccountBalance : ITypedProtobuf<CMsgGCCStrike15_v2_ClientAccountBalance>
 {
-  static CMsgGCCStrike15_v2_ClientAccountBalance ITypedProtobuf<CMsgGCCStrike15_v2_ClientAccountBalance>.Wrap(nint handle) => new CMsgGCCStrike15_v2_ClientAccountBalanceImpl(handle);
+  static CMsgGCCStrike15_v2_ClientAccountBalance ITypedProtobuf<CMsgGCCStrike15_v2_ClientAccountBalance>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_ClientAccountBalanceImpl(handle, isManuallyAllocated);
 
 
   public ulong Amount { get; set; }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CWorkshop_GetContributors_RequestImpl : TypedProtobuf<CWorkshop_GetContributors_Request>, CWorkshop_GetContributors_Request
 {
-  public CWorkshop_GetContributors_RequestImpl(nint handle): base(handle)
+  public CWorkshop_GetContributors_RequestImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

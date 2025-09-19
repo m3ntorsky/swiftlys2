@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOEconItemLeagueViewPass : ITypedProtobuf<CSOEconItemLeagueViewPass>
 {
-  static CSOEconItemLeagueViewPass ITypedProtobuf<CSOEconItemLeagueViewPass>.Wrap(nint handle) => new CSOEconItemLeagueViewPassImpl(handle);
+  static CSOEconItemLeagueViewPass ITypedProtobuf<CSOEconItemLeagueViewPass>.Wrap(nint handle, bool isManuallyAllocated) => new CSOEconItemLeagueViewPassImpl(handle, isManuallyAllocated);
 
 
   public uint AccountId { get; set; }

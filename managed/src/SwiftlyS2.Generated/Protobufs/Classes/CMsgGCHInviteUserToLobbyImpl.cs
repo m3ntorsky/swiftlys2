@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCHInviteUserToLobbyImpl : TypedProtobuf<CMsgGCHInviteUserToLobby>, CMsgGCHInviteUserToLobby
 {
-  public CMsgGCHInviteUserToLobbyImpl(nint handle): base(handle)
+  public CMsgGCHInviteUserToLobbyImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

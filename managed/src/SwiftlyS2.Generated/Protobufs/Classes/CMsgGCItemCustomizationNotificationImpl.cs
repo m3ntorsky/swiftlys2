@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCItemCustomizationNotificationImpl : TypedProtobuf<CMsgGCItemCustomizationNotification>, CMsgGCItemCustomizationNotification
 {
-  public CMsgGCItemCustomizationNotificationImpl(nint handle): base(handle)
+  public CMsgGCItemCustomizationNotificationImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CGCStorePurchaseInit_LineItem : ITypedProtobuf<CGCStorePurchaseInit_LineItem>
 {
-  static CGCStorePurchaseInit_LineItem ITypedProtobuf<CGCStorePurchaseInit_LineItem>.Wrap(nint handle) => new CGCStorePurchaseInit_LineItemImpl(handle);
+  static CGCStorePurchaseInit_LineItem ITypedProtobuf<CGCStorePurchaseInit_LineItem>.Wrap(nint handle, bool isManuallyAllocated) => new CGCStorePurchaseInit_LineItemImpl(handle, isManuallyAllocated);
 
 
   public uint ItemDefId { get; set; }

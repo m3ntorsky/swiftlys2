@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CWorkshop_AddSpecialPayment_RequestImpl : TypedProtobuf<CWorkshop_AddSpecialPayment_Request>, CWorkshop_AddSpecialPayment_Request
 {
-  public CWorkshop_AddSpecialPayment_RequestImpl(nint handle): base(handle)
+  public CWorkshop_AddSpecialPayment_RequestImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

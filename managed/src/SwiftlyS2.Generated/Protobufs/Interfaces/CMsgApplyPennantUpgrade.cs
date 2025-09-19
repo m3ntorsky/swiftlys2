@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgApplyPennantUpgrade : ITypedProtobuf<CMsgApplyPennantUpgrade>
 {
-  static CMsgApplyPennantUpgrade ITypedProtobuf<CMsgApplyPennantUpgrade>.Wrap(nint handle) => new CMsgApplyPennantUpgradeImpl(handle);
+  static CMsgApplyPennantUpgrade ITypedProtobuf<CMsgApplyPennantUpgrade>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgApplyPennantUpgradeImpl(handle, isManuallyAllocated);
 
 
   public ulong UpgradeItemId { get; set; }

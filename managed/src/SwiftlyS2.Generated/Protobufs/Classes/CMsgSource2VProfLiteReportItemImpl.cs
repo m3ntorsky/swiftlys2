@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSource2VProfLiteReportItemImpl : TypedProtobuf<CMsgSource2VProfLiteReportItem>, CMsgSource2VProfLiteReportItem
 {
-  public CMsgSource2VProfLiteReportItemImpl(nint handle): base(handle)
+  public CMsgSource2VProfLiteReportItemImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

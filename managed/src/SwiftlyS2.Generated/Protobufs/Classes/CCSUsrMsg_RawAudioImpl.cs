@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_RawAudioImpl : NetMessage<CCSUsrMsg_RawAudio>, CCSUsrMsg_RawAudio
 {
-  public CCSUsrMsg_RawAudioImpl(nint handle): base(handle)
+  public CCSUsrMsg_RawAudioImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

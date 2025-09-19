@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEBeamPointsImpl : NetMessage<CMsgTEBeamPoints>, CMsgTEBeamPoints
 {
-  public CMsgTEBeamPointsImpl(nint handle): base(handle)
+  public CMsgTEBeamPointsImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
   public CMsgTEBaseBeam Base
-  { get => new CMsgTEBaseBeamImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "base")); }
+  { get => new CMsgTEBaseBeamImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "base"), false); }
 
 
   public Vector Start

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_AddFanImpl : TypedProtobuf<CUserMsg_ParticleManager_AddFan>, CUserMsg_ParticleManager_AddFan
 {
-  public CUserMsg_ParticleManager_AddFanImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_AddFanImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

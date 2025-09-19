@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class MLDemoHeaderImpl : TypedProtobuf<MLDemoHeader>, MLDemoHeader
 {
-  public MLDemoHeaderImpl(nint handle): base(handle)
+  public MLDemoHeaderImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

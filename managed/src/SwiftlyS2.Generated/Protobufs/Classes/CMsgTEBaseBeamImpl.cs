@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEBaseBeamImpl : TypedProtobuf<CMsgTEBaseBeam>, CMsgTEBaseBeam
 {
-  public CMsgTEBaseBeamImpl(nint handle): base(handle)
+  public CMsgTEBaseBeamImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -50,8 +50,8 @@ internal class CMsgTEBaseBeamImpl : TypedProtobuf<CMsgTEBaseBeam>, CMsgTEBaseBea
   { get => Accessor.GetFloat("amplitude"); set => Accessor.SetFloat("amplitude", value); }
 
 
-  public int Color
-  { get => Accessor.GetInt32("color"); set => Accessor.SetInt32("color", value); }
+  public uint Color
+  { get => Accessor.GetUInt32("color"); set => Accessor.SetUInt32("color", value); }
 
 
   public uint Speed

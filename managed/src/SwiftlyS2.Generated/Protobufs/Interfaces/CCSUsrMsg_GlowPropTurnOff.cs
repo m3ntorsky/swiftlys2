@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CCSUsrMsg_GlowPropTurnOff : ITypedProtobuf<CCSUsrMsg_GlowPropTurnOff>, INetMessage<CCSUsrMsg_GlowPropTurnOff>
+public interface CCSUsrMsg_GlowPropTurnOff : ITypedProtobuf<CCSUsrMsg_GlowPropTurnOff>, INetMessage<CCSUsrMsg_GlowPropTurnOff>, IDisposable
 {
   static int INetMessage<CCSUsrMsg_GlowPropTurnOff>.MessageId => 360;
   
   static string INetMessage<CCSUsrMsg_GlowPropTurnOff>.MessageName => "CCSUsrMsg_GlowPropTurnOff";
 
-  static CCSUsrMsg_GlowPropTurnOff ITypedProtobuf<CCSUsrMsg_GlowPropTurnOff>.Wrap(nint handle) => new CCSUsrMsg_GlowPropTurnOffImpl(handle);
+  static CCSUsrMsg_GlowPropTurnOff ITypedProtobuf<CCSUsrMsg_GlowPropTurnOff>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_GlowPropTurnOffImpl(handle, isManuallyAllocated);
 
 
   public int Entidx { get; set; }

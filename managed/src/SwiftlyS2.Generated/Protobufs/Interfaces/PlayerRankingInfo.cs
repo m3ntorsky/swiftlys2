@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface PlayerRankingInfo : ITypedProtobuf<PlayerRankingInfo>
 {
-  static PlayerRankingInfo ITypedProtobuf<PlayerRankingInfo>.Wrap(nint handle) => new PlayerRankingInfoImpl(handle);
+  static PlayerRankingInfo ITypedProtobuf<PlayerRankingInfo>.Wrap(nint handle, bool isManuallyAllocated) => new PlayerRankingInfoImpl(handle, isManuallyAllocated);
 
 
   public uint AccountId { get; set; }

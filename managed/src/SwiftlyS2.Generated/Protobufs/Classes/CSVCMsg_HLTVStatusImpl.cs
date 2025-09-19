@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_HLTVStatusImpl : NetMessage<CSVCMsg_HLTVStatus>, CSVCMsg_HLTVStatus
 {
-  public CSVCMsg_HLTVStatusImpl(nint handle): base(handle)
+  public CSVCMsg_HLTVStatusImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

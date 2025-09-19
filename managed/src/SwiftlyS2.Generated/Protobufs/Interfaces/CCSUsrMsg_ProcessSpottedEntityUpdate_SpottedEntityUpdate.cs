@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdate : ITypedProtobuf<CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdate>
 {
-  static CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdate ITypedProtobuf<CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdate>.Wrap(nint handle) => new CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdateImpl(handle);
+  static CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdate ITypedProtobuf<CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdate>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_ProcessSpottedEntityUpdate_SpottedEntityUpdateImpl(handle, isManuallyAllocated);
 
 
   public int EntityIdx { get; set; }

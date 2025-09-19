@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMsg_ParticleManager_SetMaterialOverride : ITypedProtobuf<CUserMsg_ParticleManager_SetMaterialOverride>
 {
-  static CUserMsg_ParticleManager_SetMaterialOverride ITypedProtobuf<CUserMsg_ParticleManager_SetMaterialOverride>.Wrap(nint handle) => new CUserMsg_ParticleManager_SetMaterialOverrideImpl(handle);
+  static CUserMsg_ParticleManager_SetMaterialOverride ITypedProtobuf<CUserMsg_ParticleManager_SetMaterialOverride>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMsg_ParticleManager_SetMaterialOverrideImpl(handle, isManuallyAllocated);
 
 
   public string MaterialName { get; set; }

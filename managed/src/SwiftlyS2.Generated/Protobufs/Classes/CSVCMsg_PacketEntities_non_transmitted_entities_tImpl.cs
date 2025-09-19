@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_PacketEntities_non_transmitted_entities_tImpl : TypedProtobuf<CSVCMsg_PacketEntities_non_transmitted_entities_t>, CSVCMsg_PacketEntities_non_transmitted_entities_t
 {
-  public CSVCMsg_PacketEntities_non_transmitted_entities_tImpl(nint handle): base(handle)
+  public CSVCMsg_PacketEntities_non_transmitted_entities_tImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOAccountXpShopBids : ITypedProtobuf<CSOAccountXpShopBids>
 {
-  static CSOAccountXpShopBids ITypedProtobuf<CSOAccountXpShopBids>.Wrap(nint handle) => new CSOAccountXpShopBidsImpl(handle);
+  static CSOAccountXpShopBids ITypedProtobuf<CSOAccountXpShopBids>.Wrap(nint handle, bool isManuallyAllocated) => new CSOAccountXpShopBidsImpl(handle, isManuallyAllocated);
 
 
   public uint CampaignId { get; set; }

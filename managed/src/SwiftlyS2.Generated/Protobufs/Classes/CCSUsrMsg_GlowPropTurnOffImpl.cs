@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_GlowPropTurnOffImpl : NetMessage<CCSUsrMsg_GlowPropTurnOff>, CCSUsrMsg_GlowPropTurnOff
 {
-  public CCSUsrMsg_GlowPropTurnOffImpl(nint handle): base(handle)
+  public CCSUsrMsg_GlowPropTurnOffImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

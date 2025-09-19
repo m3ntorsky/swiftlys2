@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgAccountDetailsImpl : TypedProtobuf<CMsgAccountDetails>, CMsgAccountDetails
 {
-  public CMsgAccountDetailsImpl(nint handle): base(handle)
+  public CMsgAccountDetailsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -66,8 +66,8 @@ internal class CMsgAccountDetailsImpl : TypedProtobuf<CMsgAccountDetails>, CMsgA
   { get => Accessor.GetUInt32("package"); set => Accessor.SetUInt32("package", value); }
 
 
-  public int TimeCached
-  { get => Accessor.GetInt32("time_cached"); set => Accessor.SetInt32("time_cached", value); }
+  public uint TimeCached
+  { get => Accessor.GetUInt32("time_cached"); set => Accessor.SetUInt32("time_cached", value); }
 
 
   public bool AccountLocked

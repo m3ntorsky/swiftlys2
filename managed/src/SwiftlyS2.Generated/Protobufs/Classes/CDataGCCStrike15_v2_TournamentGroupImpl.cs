@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDataGCCStrike15_v2_TournamentGroupImpl : TypedProtobuf<CDataGCCStrike15_v2_TournamentGroup>, CDataGCCStrike15_v2_TournamentGroup
 {
-  public CDataGCCStrike15_v2_TournamentGroupImpl(nint handle): base(handle)
+  public CDataGCCStrike15_v2_TournamentGroupImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

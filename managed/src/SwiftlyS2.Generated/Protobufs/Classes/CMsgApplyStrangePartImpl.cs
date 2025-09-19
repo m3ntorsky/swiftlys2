@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgApplyStrangePartImpl : TypedProtobuf<CMsgApplyStrangePart>, CMsgApplyStrangePart
 {
-  public CMsgApplyStrangePartImpl(nint handle): base(handle)
+  public CMsgApplyStrangePartImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

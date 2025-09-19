@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CCSUsrMsg_VoteStart : ITypedProtobuf<CCSUsrMsg_VoteStart>, INetMessage<CCSUsrMsg_VoteStart>
+public interface CCSUsrMsg_VoteStart : ITypedProtobuf<CCSUsrMsg_VoteStart>, INetMessage<CCSUsrMsg_VoteStart>, IDisposable
 {
   static int INetMessage<CCSUsrMsg_VoteStart>.MessageId => 346;
   
   static string INetMessage<CCSUsrMsg_VoteStart>.MessageName => "CCSUsrMsg_VoteStart";
 
-  static CCSUsrMsg_VoteStart ITypedProtobuf<CCSUsrMsg_VoteStart>.Wrap(nint handle) => new CCSUsrMsg_VoteStartImpl(handle);
+  static CCSUsrMsg_VoteStart ITypedProtobuf<CCSUsrMsg_VoteStart>.Wrap(nint handle, bool isManuallyAllocated) => new CCSUsrMsg_VoteStartImpl(handle, isManuallyAllocated);
 
 
   public int Team { get; set; }

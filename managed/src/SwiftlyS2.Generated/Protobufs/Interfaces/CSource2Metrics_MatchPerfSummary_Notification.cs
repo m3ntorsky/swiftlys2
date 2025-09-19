@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSource2Metrics_MatchPerfSummary_Notification : ITypedProtobuf<CSource2Metrics_MatchPerfSummary_Notification>
 {
-  static CSource2Metrics_MatchPerfSummary_Notification ITypedProtobuf<CSource2Metrics_MatchPerfSummary_Notification>.Wrap(nint handle) => new CSource2Metrics_MatchPerfSummary_NotificationImpl(handle);
+  static CSource2Metrics_MatchPerfSummary_Notification ITypedProtobuf<CSource2Metrics_MatchPerfSummary_Notification>.Wrap(nint handle, bool isManuallyAllocated) => new CSource2Metrics_MatchPerfSummary_NotificationImpl(handle, isManuallyAllocated);
 
 
   public uint Appid { get; set; }

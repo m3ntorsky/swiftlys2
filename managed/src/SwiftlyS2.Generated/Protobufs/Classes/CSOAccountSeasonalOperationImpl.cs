@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOAccountSeasonalOperationImpl : TypedProtobuf<CSOAccountSeasonalOperation>, CSOAccountSeasonalOperation
 {
-  public CSOAccountSeasonalOperationImpl(nint handle): base(handle)
+  public CSOAccountSeasonalOperationImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

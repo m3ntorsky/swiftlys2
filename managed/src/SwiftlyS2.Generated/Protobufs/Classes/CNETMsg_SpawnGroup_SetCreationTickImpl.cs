@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CNETMsg_SpawnGroup_SetCreationTickImpl : NetMessage<CNETMsg_SpawnGroup_SetCreationTick>, CNETMsg_SpawnGroup_SetCreationTick
 {
-  public CNETMsg_SpawnGroup_SetCreationTickImpl(nint handle): base(handle)
+  public CNETMsg_SpawnGroup_SetCreationTickImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

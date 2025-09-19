@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMsg_ParticleManager_SetVDataImpl : TypedProtobuf<CUserMsg_ParticleManager_SetVData>, CUserMsg_ParticleManager_SetVData
 {
-  public CUserMsg_ParticleManager_SetVDataImpl(nint handle): base(handle)
+  public CUserMsg_ParticleManager_SetVDataImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

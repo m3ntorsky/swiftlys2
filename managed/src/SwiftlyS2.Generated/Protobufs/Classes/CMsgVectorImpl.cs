@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgVectorImpl : TypedProtobuf<CMsgVector>, CMsgVector
 {
-  public CMsgVectorImpl(nint handle): base(handle)
+  public CMsgVectorImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

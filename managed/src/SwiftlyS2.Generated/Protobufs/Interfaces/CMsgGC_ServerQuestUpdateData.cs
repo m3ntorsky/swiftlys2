@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGC_ServerQuestUpdateData : ITypedProtobuf<CMsgGC_ServerQuestUpdateData>
 {
-  static CMsgGC_ServerQuestUpdateData ITypedProtobuf<CMsgGC_ServerQuestUpdateData>.Wrap(nint handle) => new CMsgGC_ServerQuestUpdateDataImpl(handle);
+  static CMsgGC_ServerQuestUpdateData ITypedProtobuf<CMsgGC_ServerQuestUpdateData>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGC_ServerQuestUpdateDataImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldSubMessageType<PlayerQuestData> PlayerQuestData { get; }

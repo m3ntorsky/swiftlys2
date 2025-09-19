@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOPersonaDataPublicImpl : TypedProtobuf<CSOPersonaDataPublic>, CSOPersonaDataPublic
 {
-  public CSOPersonaDataPublicImpl(nint handle): base(handle)
+  public CSOPersonaDataPublicImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -19,7 +19,7 @@ internal class CSOPersonaDataPublicImpl : TypedProtobuf<CSOPersonaDataPublic>, C
 
 
   public PlayerCommendationInfo Commendation
-  { get => new PlayerCommendationInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "commendation")); }
+  { get => new PlayerCommendationInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "commendation"), false); }
 
 
   public bool ElevatedState

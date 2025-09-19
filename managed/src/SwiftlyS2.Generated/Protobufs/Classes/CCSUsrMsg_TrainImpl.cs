@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_TrainImpl : NetMessage<CCSUsrMsg_Train>, CCSUsrMsg_Train
 {
-  public CCSUsrMsg_TrainImpl(nint handle): base(handle)
+  public CCSUsrMsg_TrainImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

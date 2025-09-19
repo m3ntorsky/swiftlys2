@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgCStrike15WelcomeImpl : TypedProtobuf<CMsgCStrike15Welcome>, CMsgCStrike15Welcome
 {
-  public CMsgCStrike15WelcomeImpl(nint handle): base(handle)
+  public CMsgCStrike15WelcomeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

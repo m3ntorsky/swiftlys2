@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEDustImpl : NetMessage<CMsgTEDust>, CMsgTEDust
 {
-  public CMsgTEDustImpl(nint handle): base(handle)
+  public CMsgTEDustImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

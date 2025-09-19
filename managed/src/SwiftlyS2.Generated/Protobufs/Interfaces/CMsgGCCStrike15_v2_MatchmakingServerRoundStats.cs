@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_MatchmakingServerRoundStats : ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingServerRoundStats>
 {
-  static CMsgGCCStrike15_v2_MatchmakingServerRoundStats ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingServerRoundStats>.Wrap(nint handle) => new CMsgGCCStrike15_v2_MatchmakingServerRoundStatsImpl(handle);
+  static CMsgGCCStrike15_v2_MatchmakingServerRoundStats ITypedProtobuf<CMsgGCCStrike15_v2_MatchmakingServerRoundStats>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_MatchmakingServerRoundStatsImpl(handle, isManuallyAllocated);
 
 
   public ulong Reservationid { get; set; }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSOMultipleObjects : ITypedProtobuf<CMsgSOMultipleObjects>
 {
-  static CMsgSOMultipleObjects ITypedProtobuf<CMsgSOMultipleObjects>.Wrap(nint handle) => new CMsgSOMultipleObjectsImpl(handle);
+  static CMsgSOMultipleObjects ITypedProtobuf<CMsgSOMultipleObjects>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSOMultipleObjectsImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgSOMultipleObjects_SingleObject> ObjectsModified { get; }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCServerVersionUpdated : ITypedProtobuf<CMsgGCServerVersionUpdated>
 {
-  static CMsgGCServerVersionUpdated ITypedProtobuf<CMsgGCServerVersionUpdated>.Wrap(nint handle) => new CMsgGCServerVersionUpdatedImpl(handle);
+  static CMsgGCServerVersionUpdated ITypedProtobuf<CMsgGCServerVersionUpdated>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCServerVersionUpdatedImpl(handle, isManuallyAllocated);
 
 
   public uint ServerVersion { get; set; }

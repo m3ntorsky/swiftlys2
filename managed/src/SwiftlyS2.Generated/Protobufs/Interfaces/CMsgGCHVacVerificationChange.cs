@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCHVacVerificationChange : ITypedProtobuf<CMsgGCHVacVerificationChange>
 {
-  static CMsgGCHVacVerificationChange ITypedProtobuf<CMsgGCHVacVerificationChange>.Wrap(nint handle) => new CMsgGCHVacVerificationChangeImpl(handle);
+  static CMsgGCHVacVerificationChange ITypedProtobuf<CMsgGCHVacVerificationChange>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCHVacVerificationChangeImpl(handle, isManuallyAllocated);
 
 
   public ulong Steamid { get; set; }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CCSPredictionEvent_DamageTag : ITypedProtobuf<CCSPredictionEvent_DamageTag>
 {
-  static CCSPredictionEvent_DamageTag ITypedProtobuf<CCSPredictionEvent_DamageTag>.Wrap(nint handle) => new CCSPredictionEvent_DamageTagImpl(handle);
+  static CCSPredictionEvent_DamageTag ITypedProtobuf<CCSPredictionEvent_DamageTag>.Wrap(nint handle, bool isManuallyAllocated) => new CCSPredictionEvent_DamageTagImpl(handle, isManuallyAllocated);
 
 
   public float FlinchModSmall { get; set; }

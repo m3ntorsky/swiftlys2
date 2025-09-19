@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchmakingServerRoundStats_DropInfoImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchmakingServerRoundStats_DropInfo>, CMsgGCCStrike15_v2_MatchmakingServerRoundStats_DropInfo
 {
-  public CMsgGCCStrike15_v2_MatchmakingServerRoundStats_DropInfoImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchmakingServerRoundStats_DropInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

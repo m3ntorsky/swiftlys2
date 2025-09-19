@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_UserCommandsImpl : TypedProtobuf<CSVCMsg_UserCommands>, CSVCMsg_UserCommands
 {
-  public CSVCMsg_UserCommandsImpl(nint handle): base(handle)
+  public CSVCMsg_UserCommandsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

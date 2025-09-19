@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_MatchListImpl : TypedProtobuf<CMsgGCCStrike15_v2_MatchList>, CMsgGCCStrike15_v2_MatchList
 {
-  public CMsgGCCStrike15_v2_MatchListImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_MatchListImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 
@@ -35,6 +35,6 @@ internal class CMsgGCCStrike15_v2_MatchListImpl : TypedProtobuf<CMsgGCCStrike15_
 
 
   public CDataGCCStrike15_v2_TournamentInfo Tournamentinfo
-  { get => new CDataGCCStrike15_v2_TournamentInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tournamentinfo")); }
+  { get => new CDataGCCStrike15_v2_TournamentInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tournamentinfo"), false); }
 
 }

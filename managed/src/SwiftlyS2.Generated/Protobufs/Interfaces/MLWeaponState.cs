@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface MLWeaponState : ITypedProtobuf<MLWeaponState>
 {
-  static MLWeaponState ITypedProtobuf<MLWeaponState>.Wrap(nint handle) => new MLWeaponStateImpl(handle);
+  static MLWeaponState ITypedProtobuf<MLWeaponState>.Wrap(nint handle, bool isManuallyAllocated) => new MLWeaponStateImpl(handle, isManuallyAllocated);
 
 
   public int Index { get; set; }

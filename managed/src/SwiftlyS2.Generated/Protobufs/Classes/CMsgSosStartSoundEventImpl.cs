@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSosStartSoundEventImpl : NetMessage<CMsgSosStartSoundEvent>, CMsgSosStartSoundEvent
 {
-  public CMsgSosStartSoundEventImpl(nint handle): base(handle)
+  public CMsgSosStartSoundEventImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -18,8 +18,8 @@ internal class CMsgSosStartSoundEventImpl : NetMessage<CMsgSosStartSoundEvent>, 
   { get => Accessor.GetInt32("soundevent_guid"); set => Accessor.SetInt32("soundevent_guid", value); }
 
 
-  public int SoundeventHash
-  { get => Accessor.GetInt32("soundevent_hash"); set => Accessor.SetInt32("soundevent_hash", value); }
+  public uint SoundeventHash
+  { get => Accessor.GetUInt32("soundevent_hash"); set => Accessor.SetUInt32("soundevent_hash", value); }
 
 
   public int SourceEntityIndex

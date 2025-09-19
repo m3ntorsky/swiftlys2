@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSOIDOwner : ITypedProtobuf<CMsgSOIDOwner>
 {
-  static CMsgSOIDOwner ITypedProtobuf<CMsgSOIDOwner>.Wrap(nint handle) => new CMsgSOIDOwnerImpl(handle);
+  static CMsgSOIDOwner ITypedProtobuf<CMsgSOIDOwner>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSOIDOwnerImpl(handle, isManuallyAllocated);
 
 
   public uint Type { get; set; }

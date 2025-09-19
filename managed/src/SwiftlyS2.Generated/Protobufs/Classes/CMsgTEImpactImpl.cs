@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEImpactImpl : NetMessage<CMsgTEImpact>, CMsgTEImpact
 {
-  public CMsgTEImpactImpl(nint handle): base(handle)
+  public CMsgTEImpactImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

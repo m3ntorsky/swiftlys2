@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_EndOfMatchAllPlayersDataImpl : NetMessage<CCSUsrMsg_EndOfMatchAllPlayersData>, CCSUsrMsg_EndOfMatchAllPlayersData
 {
-  public CCSUsrMsg_EndOfMatchAllPlayersDataImpl(nint handle): base(handle)
+  public CCSUsrMsg_EndOfMatchAllPlayersDataImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

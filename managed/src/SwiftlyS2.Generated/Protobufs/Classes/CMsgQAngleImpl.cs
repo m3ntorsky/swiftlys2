@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgQAngleImpl : TypedProtobuf<CMsgQAngle>, CMsgQAngle
 {
-  public CMsgQAngleImpl(nint handle): base(handle)
+  public CMsgQAngleImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

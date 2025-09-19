@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCommunity_GamePersonalDataCategoryInfoImpl : TypedProtobuf<CCommunity_GamePersonalDataCategoryInfo>, CCommunity_GamePersonalDataCategoryInfo
 {
-  public CCommunity_GamePersonalDataCategoryInfoImpl(nint handle): base(handle)
+  public CCommunity_GamePersonalDataCategoryInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_WeaponSoundImpl : NetMessage<CCSUsrMsg_WeaponSound>, CCSUsrMsg_WeaponSound
 {
-  public CCSUsrMsg_WeaponSoundImpl(nint handle): base(handle)
+  public CCSUsrMsg_WeaponSoundImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -38,7 +38,7 @@ internal class CCSUsrMsg_WeaponSoundImpl : NetMessage<CCSUsrMsg_WeaponSound>, CC
   { get => Accessor.GetFloat("game_timestamp"); set => Accessor.SetFloat("game_timestamp", value); }
 
 
-  public int SourceSoundscapeid
-  { get => Accessor.GetInt32("source_soundscapeid"); set => Accessor.SetInt32("source_soundscapeid", value); }
+  public uint SourceSoundscapeid
+  { get => Accessor.GetUInt32("source_soundscapeid"); set => Accessor.SetUInt32("source_soundscapeid", value); }
 
 }

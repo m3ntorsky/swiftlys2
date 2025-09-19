@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CDemoCustomDataCallbacksImpl : TypedProtobuf<CDemoCustomDataCallbacks>, CDemoCustomDataCallbacks
 {
-  public CDemoCustomDataCallbacksImpl(nint handle): base(handle)
+  public CDemoCustomDataCallbacksImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

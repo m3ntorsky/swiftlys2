@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface MLDemoHeader : ITypedProtobuf<MLDemoHeader>
 {
-  static MLDemoHeader ITypedProtobuf<MLDemoHeader>.Wrap(nint handle) => new MLDemoHeaderImpl(handle);
+  static MLDemoHeader ITypedProtobuf<MLDemoHeader>.Wrap(nint handle, bool isManuallyAllocated) => new MLDemoHeaderImpl(handle, isManuallyAllocated);
 
 
   public string MapName { get; set; }

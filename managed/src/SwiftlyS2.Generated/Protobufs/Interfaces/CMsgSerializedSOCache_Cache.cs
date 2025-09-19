@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSerializedSOCache_Cache : ITypedProtobuf<CMsgSerializedSOCache_Cache>
 {
-  static CMsgSerializedSOCache_Cache ITypedProtobuf<CMsgSerializedSOCache_Cache>.Wrap(nint handle) => new CMsgSerializedSOCache_CacheImpl(handle);
+  static CMsgSerializedSOCache_Cache ITypedProtobuf<CMsgSerializedSOCache_Cache>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSerializedSOCache_CacheImpl(handle, isManuallyAllocated);
 
 
   public uint Type { get; set; }

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface ScoreLeaderboardData_AccountEntries : ITypedProtobuf<ScoreLeaderboardData_AccountEntries>
 {
-  static ScoreLeaderboardData_AccountEntries ITypedProtobuf<ScoreLeaderboardData_AccountEntries>.Wrap(nint handle) => new ScoreLeaderboardData_AccountEntriesImpl(handle);
+  static ScoreLeaderboardData_AccountEntries ITypedProtobuf<ScoreLeaderboardData_AccountEntries>.Wrap(nint handle, bool isManuallyAllocated) => new ScoreLeaderboardData_AccountEntriesImpl(handle, isManuallyAllocated);
 
 
   public uint Accountid { get; set; }

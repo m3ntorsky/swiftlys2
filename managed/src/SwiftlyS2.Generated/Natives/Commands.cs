@@ -21,7 +21,7 @@ internal static class NativeCommands {
     Encoding.UTF8.GetBytes(command, commandBuffer);
     commandBuffer[commandLength] = 0;
     fixed (byte* commandBufferPtr = commandBuffer) {
-    var ret = _HandleCommandForPlayer(playerid, commandBufferPtr);
+        var ret = _HandleCommandForPlayer(playerid, commandBufferPtr);
     pool.Return(commandBuffer);
 
     return ret;
@@ -38,7 +38,7 @@ internal static class NativeCommands {
     Encoding.UTF8.GetBytes(commandName, commandNameBuffer);
     commandNameBuffer[commandNameLength] = 0;
     fixed (byte* commandNameBufferPtr = commandNameBuffer) {
-    var ret = _RegisterCommand(commandNameBufferPtr, callback, registerRaw);
+        var ret = _RegisterCommand(commandNameBufferPtr, callback, registerRaw);
     pool.Return(commandNameBuffer);
 
     return ret;
@@ -59,13 +59,13 @@ internal static class NativeCommands {
     Encoding.UTF8.GetBytes(aliasName, aliasNameBuffer);
     aliasNameBuffer[aliasNameLength] = 0;
     fixed (byte* aliasNameBufferPtr = aliasNameBuffer) {
-
+    
     var commandNameLength = Encoding.UTF8.GetByteCount(commandName);
     var commandNameBuffer = pool.Rent(commandNameLength + 1);
     Encoding.UTF8.GetBytes(commandName, commandNameBuffer);
     commandNameBuffer[commandNameLength] = 0;
     fixed (byte* commandNameBufferPtr = commandNameBuffer) {
-    var ret = _RegisterAlias(aliasNameBufferPtr, commandNameBufferPtr, registerRaw);
+        var ret = _RegisterAlias(aliasNameBufferPtr, commandNameBufferPtr, registerRaw);
     pool.Return(aliasNameBuffer);
 
     pool.Return(commandNameBuffer);

@@ -21,7 +21,7 @@ internal class GameEventService : IGameEventService, IDisposable {
   private readonly List<GameEventCallback> _callbacks = new();
   private object _lock = new();
 
-  public Guid HookPre<T>(Func<T, HookResult> callback) where T : IGameEvent<T> {
+  public Guid HookPre<T>(IGameEventService.GameEventHandler<T> callback) where T : IGameEvent<T> {
     GameEventCallback<T> cb = new(callback, true, _LoggerFactory, _Context);
     lock (_lock) {
       _callbacks.Add(cb);
@@ -29,7 +29,7 @@ internal class GameEventService : IGameEventService, IDisposable {
     return cb.Guid;
   }
 
-  public Guid HookPost<T>(Func<T, HookResult> callback) where T : IGameEvent<T> {
+  public Guid HookPost<T>(IGameEventService.GameEventHandler<T> callback) where T : IGameEvent<T> {
     GameEventCallback<T> cb = new(callback, false, _LoggerFactory, _Context);
     lock (_lock) {
       _callbacks.Add(cb);
@@ -55,7 +55,7 @@ internal class GameEventService : IGameEventService, IDisposable {
     lock (_lock) {
       for (int i = 0; i < _callbacks.Count; i++) {
         var callback = _callbacks[i];
-        if (callback.IsPreHook) {
+        if (callback.IsPreHook && callback is GameEventCallback<T>) {
           callback.Dispose();
           _callbacks.RemoveAt(i);
         }
@@ -67,7 +67,7 @@ internal class GameEventService : IGameEventService, IDisposable {
     lock (_lock) {
       for (int i = 0; i < _callbacks.Count; i++) {
         var callback = _callbacks[i];
-        if (!callback.IsPreHook) {
+        if (!callback.IsPreHook && callback is GameEventCallback<T>) {
           callback.Dispose();
           _callbacks.RemoveAt(i);
         }

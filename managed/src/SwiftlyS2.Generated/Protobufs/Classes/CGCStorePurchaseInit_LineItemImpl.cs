@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CGCStorePurchaseInit_LineItemImpl : TypedProtobuf<CGCStorePurchaseInit_LineItem>, CGCStorePurchaseInit_LineItem
 {
-  public CGCStorePurchaseInit_LineItemImpl(nint handle): base(handle)
+  public CGCStorePurchaseInit_LineItemImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

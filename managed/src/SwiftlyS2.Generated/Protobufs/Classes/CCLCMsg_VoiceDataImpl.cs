@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCLCMsg_VoiceDataImpl : NetMessage<CCLCMsg_VoiceData>, CCLCMsg_VoiceData
 {
-  public CCLCMsg_VoiceDataImpl(nint handle): base(handle)
+  public CCLCMsg_VoiceDataImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
   public CMsgVoiceAudio Audio
-  { get => new CMsgVoiceAudioImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "audio")); }
+  { get => new CMsgVoiceAudioImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "audio"), false); }
 
 
   public ulong Xuid

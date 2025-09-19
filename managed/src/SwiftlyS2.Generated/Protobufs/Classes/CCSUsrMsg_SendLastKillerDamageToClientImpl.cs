@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_SendLastKillerDamageToClientImpl : NetMessage<CCSUsrMsg_SendLastKillerDamageToClient>, CCSUsrMsg_SendLastKillerDamageToClient
 {
-  public CCSUsrMsg_SendLastKillerDamageToClientImpl(nint handle): base(handle)
+  public CCSUsrMsg_SendLastKillerDamageToClientImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

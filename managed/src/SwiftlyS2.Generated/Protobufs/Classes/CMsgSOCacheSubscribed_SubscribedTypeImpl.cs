@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgSOCacheSubscribed_SubscribedTypeImpl : TypedProtobuf<CMsgSOCacheSubscribed_SubscribedType>, CMsgSOCacheSubscribed_SubscribedType
 {
-  public CMsgSOCacheSubscribed_SubscribedTypeImpl(nint handle): base(handle)
+  public CMsgSOCacheSubscribed_SubscribedTypeImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

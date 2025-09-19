@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOAccountSeasonalOperation : ITypedProtobuf<CSOAccountSeasonalOperation>
 {
-  static CSOAccountSeasonalOperation ITypedProtobuf<CSOAccountSeasonalOperation>.Wrap(nint handle) => new CSOAccountSeasonalOperationImpl(handle);
+  static CSOAccountSeasonalOperation ITypedProtobuf<CSOAccountSeasonalOperation>.Wrap(nint handle, bool isManuallyAllocated) => new CSOAccountSeasonalOperationImpl(handle, isManuallyAllocated);
 
 
   public uint SeasonValue { get; set; }

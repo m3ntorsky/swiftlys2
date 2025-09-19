@@ -7,9 +7,9 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgTERadioIcon : ITypedProtobuf<CMsgTERadioIcon>
 {
-  static CMsgTERadioIcon ITypedProtobuf<CMsgTERadioIcon>.Wrap(nint handle) => new CMsgTERadioIconImpl(handle);
+  static CMsgTERadioIcon ITypedProtobuf<CMsgTERadioIcon>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgTERadioIconImpl(handle, isManuallyAllocated);
 
 
-  public int Player { get; set; }
+  public uint Player { get; set; }
 
 }

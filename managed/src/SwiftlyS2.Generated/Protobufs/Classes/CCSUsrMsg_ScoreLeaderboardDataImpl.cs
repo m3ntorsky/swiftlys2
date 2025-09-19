@@ -9,12 +9,12 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_ScoreLeaderboardDataImpl : NetMessage<CCSUsrMsg_ScoreLeaderboardData>, CCSUsrMsg_ScoreLeaderboardData
 {
-  public CCSUsrMsg_ScoreLeaderboardDataImpl(nint handle): base(handle)
+  public CCSUsrMsg_ScoreLeaderboardDataImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
   public ScoreLeaderboardData Data
-  { get => new ScoreLeaderboardDataImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "data")); }
+  { get => new ScoreLeaderboardDataImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "data"), false); }
 
 }

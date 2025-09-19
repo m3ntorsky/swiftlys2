@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_RoundEndReportData_InitialConditionsImpl : TypedProtobuf<CCSUsrMsg_RoundEndReportData_InitialConditions>, CCSUsrMsg_RoundEndReportData_InitialConditions
 {
-  public CCSUsrMsg_RoundEndReportData_InitialConditionsImpl(nint handle): base(handle)
+  public CCSUsrMsg_RoundEndReportData_InitialConditionsImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

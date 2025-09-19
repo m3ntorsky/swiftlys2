@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class MLRoundStateImpl : TypedProtobuf<MLRoundState>, MLRoundState
 {
-  public MLRoundStateImpl(nint handle): base(handle)
+  public MLRoundStateImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

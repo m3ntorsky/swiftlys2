@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded : ITypedProtobuf<CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded>
 {
-  static CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded ITypedProtobuf<CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded>.Wrap(nint handle) => new CMsgGCCstrike15_v2_GC2ServerNotifyXPRewardedImpl(handle);
+  static CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded ITypedProtobuf<CMsgGCCstrike15_v2_GC2ServerNotifyXPRewarded>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCstrike15_v2_GC2ServerNotifyXPRewardedImpl(handle, isManuallyAllocated);
 
 
   public IProtobufRepeatedFieldSubMessageType<XpProgressData> XpProgressData { get; }

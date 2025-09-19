@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CP2P_PingImpl : TypedProtobuf<CP2P_Ping>, CP2P_Ping
 {
-  public CP2P_PingImpl(nint handle): base(handle)
+  public CP2P_PingImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

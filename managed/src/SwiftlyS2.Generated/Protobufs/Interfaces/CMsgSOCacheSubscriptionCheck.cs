@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgSOCacheSubscriptionCheck : ITypedProtobuf<CMsgSOCacheSubscriptionCheck>
 {
-  static CMsgSOCacheSubscriptionCheck ITypedProtobuf<CMsgSOCacheSubscriptionCheck>.Wrap(nint handle) => new CMsgSOCacheSubscriptionCheckImpl(handle);
+  static CMsgSOCacheSubscriptionCheck ITypedProtobuf<CMsgSOCacheSubscriptionCheck>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgSOCacheSubscriptionCheckImpl(handle, isManuallyAllocated);
 
 
   public ulong Version { get; set; }

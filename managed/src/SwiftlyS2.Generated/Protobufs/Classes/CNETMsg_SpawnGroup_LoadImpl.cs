@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CNETMsg_SpawnGroup_LoadImpl : NetMessage<CNETMsg_SpawnGroup_Load>, CNETMsg_SpawnGroup_Load
 {
-  public CNETMsg_SpawnGroup_LoadImpl(nint handle): base(handle)
+  public CNETMsg_SpawnGroup_LoadImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

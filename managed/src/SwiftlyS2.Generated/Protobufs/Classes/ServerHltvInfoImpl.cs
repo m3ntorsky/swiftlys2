@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class ServerHltvInfoImpl : TypedProtobuf<ServerHltvInfo>, ServerHltvInfo
 {
-  public ServerHltvInfoImpl(nint handle): base(handle)
+  public ServerHltvInfoImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

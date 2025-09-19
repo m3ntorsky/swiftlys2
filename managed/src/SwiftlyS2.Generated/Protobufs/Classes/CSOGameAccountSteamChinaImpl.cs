@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOGameAccountSteamChinaImpl : TypedProtobuf<CSOGameAccountSteamChina>, CSOGameAccountSteamChina
 {
-  public CSOGameAccountSteamChinaImpl(nint handle): base(handle)
+  public CSOGameAccountSteamChinaImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface TournamentMatchSetup : ITypedProtobuf<TournamentMatchSetup>
 {
-  static TournamentMatchSetup ITypedProtobuf<TournamentMatchSetup>.Wrap(nint handle) => new TournamentMatchSetupImpl(handle);
+  static TournamentMatchSetup ITypedProtobuf<TournamentMatchSetup>.Wrap(nint handle, bool isManuallyAllocated) => new TournamentMatchSetupImpl(handle, isManuallyAllocated);
 
 
   public int EventId { get; set; }

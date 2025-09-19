@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_SurvivalStats_FactImpl : TypedProtobuf<CCSUsrMsg_SurvivalStats_Fact>, CCSUsrMsg_SurvivalStats_Fact
 {
-  public CCSUsrMsg_SurvivalStats_FactImpl(nint handle): base(handle)
+  public CCSUsrMsg_SurvivalStats_FactImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

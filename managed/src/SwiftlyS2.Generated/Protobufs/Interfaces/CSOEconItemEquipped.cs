@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOEconItemEquipped : ITypedProtobuf<CSOEconItemEquipped>
 {
-  static CSOEconItemEquipped ITypedProtobuf<CSOEconItemEquipped>.Wrap(nint handle) => new CSOEconItemEquippedImpl(handle);
+  static CSOEconItemEquipped ITypedProtobuf<CSOEconItemEquipped>.Wrap(nint handle, bool isManuallyAllocated) => new CSOEconItemEquippedImpl(handle, isManuallyAllocated);
 
 
   public uint NewClass { get; set; }

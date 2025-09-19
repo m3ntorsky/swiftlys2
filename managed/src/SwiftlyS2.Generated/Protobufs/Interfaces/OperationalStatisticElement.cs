@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface OperationalStatisticElement : ITypedProtobuf<OperationalStatisticElement>
 {
-  static OperationalStatisticElement ITypedProtobuf<OperationalStatisticElement>.Wrap(nint handle) => new OperationalStatisticElementImpl(handle);
+  static OperationalStatisticElement ITypedProtobuf<OperationalStatisticElement>.Wrap(nint handle, bool isManuallyAllocated) => new OperationalStatisticElementImpl(handle, isManuallyAllocated);
 
 
   public uint Idkey { get; set; }

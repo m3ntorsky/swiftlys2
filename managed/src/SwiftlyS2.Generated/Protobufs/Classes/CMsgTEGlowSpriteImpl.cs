@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEGlowSpriteImpl : NetMessage<CMsgTEGlowSprite>, CMsgTEGlowSprite
 {
-  public CMsgTEGlowSpriteImpl(nint handle): base(handle)
+  public CMsgTEGlowSpriteImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

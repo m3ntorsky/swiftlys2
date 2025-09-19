@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeNameImpl : TypedProtobuf<CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName>, CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeName
 {
-  public CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeNameImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_SetPlayerLeaderboardSafeNameImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

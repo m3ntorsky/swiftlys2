@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_CurrentTimescaleImpl : NetMessage<CCSUsrMsg_CurrentTimescale>, CCSUsrMsg_CurrentTimescale
 {
-  public CCSUsrMsg_CurrentTimescaleImpl(nint handle): base(handle)
+  public CCSUsrMsg_CurrentTimescaleImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

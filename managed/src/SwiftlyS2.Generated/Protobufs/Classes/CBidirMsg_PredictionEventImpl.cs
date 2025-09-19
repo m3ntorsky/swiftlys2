@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CBidirMsg_PredictionEventImpl : TypedProtobuf<CBidirMsg_PredictionEvent>, CBidirMsg_PredictionEvent
 {
-  public CBidirMsg_PredictionEventImpl(nint handle): base(handle)
+  public CBidirMsg_PredictionEventImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

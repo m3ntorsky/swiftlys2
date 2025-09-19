@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMessageRequestDiagnostic_Diagnostic : ITypedProtobuf<CUserMessageRequestDiagnostic_Diagnostic>
 {
-  static CUserMessageRequestDiagnostic_Diagnostic ITypedProtobuf<CUserMessageRequestDiagnostic_Diagnostic>.Wrap(nint handle) => new CUserMessageRequestDiagnostic_DiagnosticImpl(handle);
+  static CUserMessageRequestDiagnostic_Diagnostic ITypedProtobuf<CUserMessageRequestDiagnostic_Diagnostic>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMessageRequestDiagnostic_DiagnosticImpl(handle, isManuallyAllocated);
 
 
   public int Index { get; set; }

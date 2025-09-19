@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_ClearAllStringTablesImpl : NetMessage<CSVCMsg_ClearAllStringTables>, CSVCMsg_ClearAllStringTables
 {
-  public CSVCMsg_ClearAllStringTablesImpl(nint handle): base(handle)
+  public CSVCMsg_ClearAllStringTablesImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

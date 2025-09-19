@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CSOEconCoupon : ITypedProtobuf<CSOEconCoupon>
 {
-  static CSOEconCoupon ITypedProtobuf<CSOEconCoupon>.Wrap(nint handle) => new CSOEconCouponImpl(handle);
+  static CSOEconCoupon ITypedProtobuf<CSOEconCoupon>.Wrap(nint handle, bool isManuallyAllocated) => new CSOEconCouponImpl(handle, isManuallyAllocated);
 
 
   public uint Entryid { get; set; }
@@ -16,6 +16,6 @@ public interface CSOEconCoupon : ITypedProtobuf<CSOEconCoupon>
   public uint Defidx { get; set; }
 
 
-  public int ExpirationDate { get; set; }
+  public uint ExpirationDate { get; set; }
 
 }

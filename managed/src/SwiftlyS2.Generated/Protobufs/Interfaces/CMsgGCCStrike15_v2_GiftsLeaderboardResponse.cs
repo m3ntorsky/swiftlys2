@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CMsgGCCStrike15_v2_GiftsLeaderboardResponse : ITypedProtobuf<CMsgGCCStrike15_v2_GiftsLeaderboardResponse>
 {
-  static CMsgGCCStrike15_v2_GiftsLeaderboardResponse ITypedProtobuf<CMsgGCCStrike15_v2_GiftsLeaderboardResponse>.Wrap(nint handle) => new CMsgGCCStrike15_v2_GiftsLeaderboardResponseImpl(handle);
+  static CMsgGCCStrike15_v2_GiftsLeaderboardResponse ITypedProtobuf<CMsgGCCStrike15_v2_GiftsLeaderboardResponse>.Wrap(nint handle, bool isManuallyAllocated) => new CMsgGCCStrike15_v2_GiftsLeaderboardResponseImpl(handle, isManuallyAllocated);
 
 
   public uint Servertime { get; set; }

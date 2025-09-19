@@ -9,13 +9,13 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_RoundEndReportDataImpl : NetMessage<CCSUsrMsg_RoundEndReportData>, CCSUsrMsg_RoundEndReportData
 {
-  public CCSUsrMsg_RoundEndReportDataImpl(nint handle): base(handle)
+  public CCSUsrMsg_RoundEndReportDataImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
 
   public CCSUsrMsg_RoundEndReportData_InitialConditions InitConditions
-  { get => new CCSUsrMsg_RoundEndReportData_InitialConditionsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "init_conditions")); }
+  { get => new CCSUsrMsg_RoundEndReportData_InitialConditionsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "init_conditions"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CCSUsrMsg_RoundEndReportData_RerEvent> AllRerEventData

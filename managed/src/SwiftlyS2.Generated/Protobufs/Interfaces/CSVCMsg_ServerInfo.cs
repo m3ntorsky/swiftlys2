@@ -6,13 +6,13 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.NetMessages;
 
-public interface CSVCMsg_ServerInfo : ITypedProtobuf<CSVCMsg_ServerInfo>, INetMessage<CSVCMsg_ServerInfo>
+public interface CSVCMsg_ServerInfo : ITypedProtobuf<CSVCMsg_ServerInfo>, INetMessage<CSVCMsg_ServerInfo>, IDisposable
 {
   static int INetMessage<CSVCMsg_ServerInfo>.MessageId => 40;
   
   static string INetMessage<CSVCMsg_ServerInfo>.MessageName => "CSVCMsg_ServerInfo";
 
-  static CSVCMsg_ServerInfo ITypedProtobuf<CSVCMsg_ServerInfo>.Wrap(nint handle) => new CSVCMsg_ServerInfoImpl(handle);
+  static CSVCMsg_ServerInfo ITypedProtobuf<CSVCMsg_ServerInfo>.Wrap(nint handle, bool isManuallyAllocated) => new CSVCMsg_ServerInfoImpl(handle, isManuallyAllocated);
 
 
   public int Protocol { get; set; }

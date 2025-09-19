@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgPlaceDecalEventImpl : NetMessage<CMsgPlaceDecalEvent>, CMsgPlaceDecalEvent
 {
-  public CMsgPlaceDecalEventImpl(nint handle): base(handle)
+  public CMsgPlaceDecalEventImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -34,8 +34,8 @@ internal class CMsgPlaceDecalEventImpl : NetMessage<CMsgPlaceDecalEvent>, CMsgPl
   { get => Accessor.GetUInt32("flags"); set => Accessor.SetUInt32("flags", value); }
 
 
-  public int Color
-  { get => Accessor.GetInt32("color"); set => Accessor.SetInt32("color", value); }
+  public uint Color
+  { get => Accessor.GetUInt32("color"); set => Accessor.SetUInt32("color", value); }
 
 
   public int RandomSeed

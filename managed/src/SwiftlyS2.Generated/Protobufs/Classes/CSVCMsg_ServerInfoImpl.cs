@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_ServerInfoImpl : NetMessage<CSVCMsg_ServerInfo>, CSVCMsg_ServerInfo
 {
-  public CSVCMsg_ServerInfoImpl(nint handle): base(handle)
+  public CSVCMsg_ServerInfoImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -71,7 +71,7 @@ internal class CSVCMsg_ServerInfoImpl : NetMessage<CSVCMsg_ServerInfo>, CSVCMsg_
 
 
   public CSVCMsg_GameSessionConfiguration GameSessionConfig
-  { get => new CSVCMsg_GameSessionConfigurationImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "game_session_config")); }
+  { get => new CSVCMsg_GameSessionConfigurationImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "game_session_config"), false); }
 
 
   public byte[] GameSessionManifest

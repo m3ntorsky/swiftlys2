@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgTEArmorRicochetImpl : NetMessage<CMsgTEArmorRicochet>, CMsgTEArmorRicochet
 {
-  public CMsgTEArmorRicochetImpl(nint handle): base(handle)
+  public CMsgTEArmorRicochetImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

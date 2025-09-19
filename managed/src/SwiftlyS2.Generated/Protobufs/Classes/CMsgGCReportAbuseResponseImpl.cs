@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCReportAbuseResponseImpl : TypedProtobuf<CMsgGCReportAbuseResponse>, CMsgGCReportAbuseResponse
 {
-  public CMsgGCReportAbuseResponseImpl(nint handle): base(handle)
+  public CMsgGCReportAbuseResponseImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

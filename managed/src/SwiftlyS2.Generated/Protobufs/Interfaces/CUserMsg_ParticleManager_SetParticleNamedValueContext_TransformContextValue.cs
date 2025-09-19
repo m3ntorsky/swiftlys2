@@ -7,7 +7,7 @@ namespace SwiftlyS2.Shared.ProtobufDefinitions;
 
 public interface CUserMsg_ParticleManager_SetParticleNamedValueContext_TransformContextValue : ITypedProtobuf<CUserMsg_ParticleManager_SetParticleNamedValueContext_TransformContextValue>
 {
-  static CUserMsg_ParticleManager_SetParticleNamedValueContext_TransformContextValue ITypedProtobuf<CUserMsg_ParticleManager_SetParticleNamedValueContext_TransformContextValue>.Wrap(nint handle) => new CUserMsg_ParticleManager_SetParticleNamedValueContext_TransformContextValueImpl(handle);
+  static CUserMsg_ParticleManager_SetParticleNamedValueContext_TransformContextValue ITypedProtobuf<CUserMsg_ParticleManager_SetParticleNamedValueContext_TransformContextValue>.Wrap(nint handle, bool isManuallyAllocated) => new CUserMsg_ParticleManager_SetParticleNamedValueContext_TransformContextValueImpl(handle, isManuallyAllocated);
 
 
   public uint ValueNameHash { get; set; }

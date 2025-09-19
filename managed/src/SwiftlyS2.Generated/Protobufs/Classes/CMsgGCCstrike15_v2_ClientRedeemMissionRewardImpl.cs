@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCstrike15_v2_ClientRedeemMissionRewardImpl : TypedProtobuf<CMsgGCCstrike15_v2_ClientRedeemMissionReward>, CMsgGCCstrike15_v2_ClientRedeemMissionReward
 {
-  public CMsgGCCstrike15_v2_ClientRedeemMissionRewardImpl(nint handle): base(handle)
+  public CMsgGCCstrike15_v2_ClientRedeemMissionRewardImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

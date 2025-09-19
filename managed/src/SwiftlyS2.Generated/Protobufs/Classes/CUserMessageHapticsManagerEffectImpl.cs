@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageHapticsManagerEffectImpl : NetMessage<CUserMessageHapticsManagerEffect>, CUserMessageHapticsManagerEffect
 {
-  public CUserMessageHapticsManagerEffectImpl(nint handle): base(handle)
+  public CUserMessageHapticsManagerEffectImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

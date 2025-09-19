@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CCSUsrMsg_ClientInfoImpl : NetMessage<CCSUsrMsg_ClientInfo>, CCSUsrMsg_ClientInfo
 {
-  public CCSUsrMsg_ClientInfoImpl(nint handle): base(handle)
+  public CCSUsrMsg_ClientInfoImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSVCMsg_SoundsImpl : NetMessage<CSVCMsg_Sounds>, CSVCMsg_Sounds
 {
-  public CSVCMsg_SoundsImpl(nint handle): base(handle)
+  public CSVCMsg_SoundsImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 

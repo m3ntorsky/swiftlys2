@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgOpenCrateImpl : TypedProtobuf<CMsgOpenCrate>, CMsgOpenCrate
 {
-  public CMsgOpenCrateImpl(nint handle): base(handle)
+  public CMsgOpenCrateImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

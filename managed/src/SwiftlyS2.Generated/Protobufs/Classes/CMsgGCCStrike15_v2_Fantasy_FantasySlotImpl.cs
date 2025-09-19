@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CMsgGCCStrike15_v2_Fantasy_FantasySlotImpl : TypedProtobuf<CMsgGCCStrike15_v2_Fantasy_FantasySlot>, CMsgGCCStrike15_v2_Fantasy_FantasySlot
 {
-  public CMsgGCCStrike15_v2_Fantasy_FantasySlotImpl(nint handle): base(handle)
+  public CMsgGCCStrike15_v2_Fantasy_FantasySlotImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

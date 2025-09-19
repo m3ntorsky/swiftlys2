@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CSOEconItemLeagueViewPassImpl : TypedProtobuf<CSOEconItemLeagueViewPass>, CSOEconItemLeagueViewPass
 {
-  public CSOEconItemLeagueViewPassImpl(nint handle): base(handle)
+  public CSOEconItemLeagueViewPassImpl(nint handle, bool isManuallyAllocated): base(handle)
   {
   }
 

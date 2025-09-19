@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.ProtobufDefinitions;
 
 internal class CUserMessageCameraTransitionImpl : NetMessage<CUserMessageCameraTransition>, CUserMessageCameraTransition
 {
-  public CUserMessageCameraTransitionImpl(nint handle): base(handle)
+  public CUserMessageCameraTransitionImpl(nint handle, bool isManuallyAllocated): base(handle, isManuallyAllocated)
   {
   }
 
@@ -23,6 +23,6 @@ internal class CUserMessageCameraTransitionImpl : NetMessage<CUserMessageCameraT
 
 
   public CUserMessageCameraTransition_Transition_DataDriven ParamsDataDriven
-  { get => new CUserMessageCameraTransition_Transition_DataDrivenImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "params_data_driven")); }
+  { get => new CUserMessageCameraTransition_Transition_DataDrivenImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "params_data_driven"), false); }
 
 }
