@@ -201,7 +201,9 @@ void CServerCommands::UnregisterCommand(uint64_t command_id)
 
 uint64_t CServerCommands::RegisterAlias(std::string alias_command, std::string command_name, bool registerRaw)
 {
-    return RegisterCommand(alias_command, g_mCommandHandlers[registerRaw ? command_name : "sw_" + command_name], registerRaw);
+    if (!g_mCommandHandlers.contains(command_name)) command_name = "sw_" + command_name;
+    auto& handler = g_mCommandHandlers[command_name];
+    return RegisterCommand(alias_command, handler, registerRaw);
 }
 
 void CServerCommands::UnregisterAlias(uint64_t alias_id)
