@@ -5,10 +5,12 @@ using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Commands;
 using SwiftlyS2.Shared.GameEventDefinitions;
 using SwiftlyS2.Shared.GameEvents;
+using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.Plugins;
 using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.ProtobufDefinitions;
 
 namespace TestPlugin;
 
@@ -62,6 +64,18 @@ public class TestPlugin : BasePlugin {
   [CommandAlias("testplugin2")]
   public void TestCommand(ICommandContext context) {
     Console.WriteLine("TestPlugin Command");
+  }
+
+  [GameEventHandler(HookMode.Pre)]
+  public HookResult TestGameEventHandler(EventPlayerJump @e) {
+    Console.WriteLine("TestPlugin GameEventHandler");
+    return HookResult.Continue;
+  }
+
+  [ServerNetMessageHandler]
+  public HookResult TestServerNetMessageHandler(CMsgSosStartSoundEvent msg, CRecipientFilter filter) {
+    Console.WriteLine($"TestPlugin ServerNetMessageHandler: {msg.SoundeventHash}");
+    return HookResult.Continue;
   }
 
   public override void Unload() {
