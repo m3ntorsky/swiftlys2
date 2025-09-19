@@ -11,6 +11,7 @@ using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.Plugins;
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.ProtobufDefinitions;
+using System.Diagnostics.CodeAnalysis;
 
 namespace TestPlugin;
 
@@ -36,7 +37,10 @@ public class TestPlugin : BasePlugin {
     // Use plugin-specific services here if needed
   }
 
+  private ISwiftlyCore _Core { get; set; }
+
   public override void Load(ISwiftlyCore core) {
+    _Core = core;
 
     core.Event.OnTick += () => {
       Console.WriteLine("TestPlugin on tick");
@@ -51,9 +55,6 @@ public class TestPlugin : BasePlugin {
 
     var config = new TestConfig();
 
-    var logger = core.LoggerFactory.CreateLogger<TestPlugin>();
-
-    logger.LogInformation("TestPlugin jump loaded");
 
     using CEntityKeyValues kv = new();
 
@@ -66,23 +67,48 @@ public class TestPlugin : BasePlugin {
     Console.WriteLine($"Hash: {token.HashCode}");
   }
 
-  [Command("testplugin")]
-  [CommandAlias("testplugin2")]
+  CEntityKeyValues kv { get; set; }
+  CEntityInstance entity { get; set; }
+
+  [Command("tt")]
   public void TestCommand(ICommandContext context) {
-    Console.WriteLine("TestPlugin Command");
+    kv = new();
+    kv.SetString("test", "SAFE");
+
+    entity = _Core.EntitySystem.CreateEntityByDesignerName<CPointWorldText>("point_worldtext");
+    entity.DispatchSpawn(kv);
+    Console.WriteLine("Spawned entity with keyvalues");
   }
 
-  [GameEventHandler(HookMode.Pre)]
-  public HookResult TestGameEventHandler(EventPlayerJump @e) {
-    Console.WriteLine("TestPlugin GameEventHandler");
-    return HookResult.Continue;
+  [Command("tt2")]
+  public void TestCommand2(ICommandContext context) {
+    entity.Despawn();
+    Console.WriteLine("Deleted entity");
   }
 
-  [ServerNetMessageHandler]
-  public HookResult TestServerNetMessageHandler(CMsgSosStartSoundEvent msg, CRecipientFilter filter) {
-    Console.WriteLine($"TestPlugin ServerNetMessageHandler: {msg.SoundeventHash}");
-    return HookResult.Continue;
+  [Command("tt3")]
+  public void TestCommand3(ICommandContext context) {
+
+    Console.WriteLine("Accessing keyvalues after entity deleted (This should be fine)");
+    Console.WriteLine(kv.GetString("test"));
+    Console.WriteLine("Releasing keyvalues");
+    kv.Dispose();
+    Console.WriteLine("Releasing successful");
+    Console.WriteLine("Accessing keyvalues after releasing (This should be crashing)");
+    Console.WriteLine(kv.GetString("test"));
   }
+
+  // [GameEventHandler(HookMode.Pre)]
+  // public HookResult TestGameEventHandler(EventPlayerJump @e) {
+  //   Console.WriteLine("TestPlugin GameEventHandler");
+  //   return HookResult.Continue;
+  // }
+
+  // [ServerNetMessageHandler]
+  // public HookResult TestServerNetMessageHandler(CMsgSosStartSoundEvent msg, CRecipientFilter filter) {
+  //   Console.WriteLine($"TestPlugin ServerNetMessageHandler: {msg.SoundeventHash}");
+  //   return HookResult.Continue;
+  // }
 
   public override void Unload() {
     Console.WriteLine("TestPlugin unloaded");

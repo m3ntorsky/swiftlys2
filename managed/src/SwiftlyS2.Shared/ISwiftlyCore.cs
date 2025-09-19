@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging;
+using SwiftlyS2.Shared.EntitySystem;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.Modules.Commands;
@@ -32,6 +33,11 @@ public interface ISwiftlyCore {
   /// Command service.
   /// </summary>
   public ICommandService Command { get; }
+
+  /// <summary>
+  /// Entity system service.
+  /// </summary>
+  public IEntitySystemService EntitySystem { get; }
 
   /// <summary>
   /// Configuration service.

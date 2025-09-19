@@ -14,6 +14,8 @@ using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.Plugins;
 using SwiftlyS2.Shared.Services;
 using SwiftlyS2.Core.AttributeParsers;
+using SwiftlyS2.Core.EntitySystem;
+using SwiftlyS2.Shared.EntitySystem;
 
 namespace SwiftlyS2.Core.Services;
 
@@ -28,6 +30,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public PluginConfigurationService Configuration { get; init; }
   public ILoggerFactory LoggerFactory { get; init; }
   public CommandService CommandService { get; init; }
+  public IEntitySystemService EntitySystemService { get; init; }
 
 
   public SwiftlyCore(string contextId, string contextBaseDirectory, IServiceProvider coreProvider) {
@@ -47,6 +50,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<GameEventService>()
       .AddSingleton<NetMessageService>()
       .AddSingleton<CommandService>()
+      .AddSingleton<EntitySystemService>()
 
       .AddLogging(
         builder => {
@@ -63,6 +67,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     LoggerFactory = _ServiceProvider.GetRequiredService<ILoggerFactory>();
     NetMessageService = _ServiceProvider.GetRequiredService<NetMessageService>();
     CommandService = _ServiceProvider.GetRequiredService<CommandService>();
+    EntitySystemService = _ServiceProvider.GetRequiredService<EntitySystemService>();
   }
 
   public void Initialize(object instance, Type type)
@@ -82,5 +87,6 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   IGameEventService ISwiftlyCore.GameEvent => GameEventService;
   INetMessageService ISwiftlyCore.NetMessage => NetMessageService;
   ICommandService ISwiftlyCore.Command => CommandService;
+  IEntitySystemService ISwiftlyCore.EntitySystem => EntitySystemService;
 
 }
