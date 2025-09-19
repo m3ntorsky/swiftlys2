@@ -11,24 +11,20 @@ public enum NetChannelBufType_t: sbyte
 };
 
 [StructLayout(LayoutKind.Sequential)]
-public class CRecipientFilter
+public struct CRecipientFilter
 {
+    public nint pVTable;
     public NetChannelBufType_t BufferType;
     public bool InitMessage;
     public CBitVec64 RecipientFilters;
 
     public CRecipientFilter(NetChannelBufType_t BufType = NetChannelBufType_t.BUF_RELIABLE, bool bInitMessage = false)
     {
+        pVTable = CRecipientFilterVtable.pCRecipientFilterVTable;
         RecipientFilters = new();
         InitMessage = bInitMessage;
         BufferType = BufType;
     }
-
-    public virtual void NopDestructor() { }
-
-    public virtual NetChannelBufType_t GetNetworkBufferType() => BufferType;
-    public virtual bool IsInitMessage() => InitMessage;
-    public virtual ref CBitVec64 GetRecipients() => ref RecipientFilters;
 
     public void AddAllPlayers()
     {
@@ -62,13 +58,34 @@ public class CRecipientFilter
 
 internal static class CRecipientFilterVtable {
 
+    public static nint pCRecipientFilterVTable;
+
     [UnmanagedCallersOnly]
-    public static void NopDestructor(CRecipientFilter* filter) {
-        filter.NopDestructor();
+    public unsafe static void Destructor(CRecipientFilter* filter) {
+        // do nothing
     }
 
     [UnmanagedCallersOnly]
-    public static NetChannelBufType_t GetNetworkBufferType(CRecipientFilter filter) {
-        return filter.GetNetworkBufferType();
+    public unsafe static NetChannelBufType_t GetNetworkBufType(CRecipientFilter* filter) {
+        return filter->BufferType;
+    }
+
+    [UnmanagedCallersOnly]
+    public unsafe static bool IsInitMessage(CRecipientFilter* filter) {
+        return filter->InitMessage;
+    }
+
+    [UnmanagedCallersOnly]
+    public unsafe static CBitVec64* GetRecipients(CRecipientFilter* filter) {
+        return &filter->RecipientFilters;
+    }
+
+    static unsafe CRecipientFilterVtable() {
+        pCRecipientFilterVTable = Marshal.AllocHGlobal(sizeof(nint) * 4);
+        Span<nint> vtable = new((void*)pCRecipientFilterVTable, 4);
+        vtable[0] = (nint)(delegate* unmanaged<CRecipientFilter*, void>)(&Destructor);
+        vtable[1] = (nint)(delegate* unmanaged<CRecipientFilter*, NetChannelBufType_t>)(&GetNetworkBufType);
+        vtable[2] = (nint)(delegate* unmanaged<CRecipientFilter*, bool>)(&IsInitMessage);
+        vtable[3] = (nint)(delegate* unmanaged<CRecipientFilter*, CBitVec64*>)(&GetRecipients);
     }
 }
