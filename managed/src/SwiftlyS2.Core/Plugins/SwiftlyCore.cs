@@ -68,6 +68,8 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public void Initialize(object instance, Type type)
   {
     CommandService.ParseFromObject(instance);
+    GameEventService.ParseFromObject(instance);
+    NetMessageService.ParseFromObject(instance);
   }
 
   public void Dispose() {
