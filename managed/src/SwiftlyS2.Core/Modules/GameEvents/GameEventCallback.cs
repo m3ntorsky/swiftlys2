@@ -51,12 +51,12 @@ internal abstract class GameEventCallback : IEquatable<GameEventCallback>, IDisp
 
 internal class GameEventCallback<T> : GameEventCallback, IDisposable where T : IGameEvent<T>
 {
-  private Func<T, HookResult> _callback { get; init; }
+  private IGameEventService.GameEventHandler<T> _callback { get; init; }
   private ILogger<GameEventCallback<T>> _logger { get; init; }
   private CoreContext _Context { get; init; }
   private UnmanagedEventCallback _unmanagedCallback;
 
-  public GameEventCallback(Func<T, HookResult> callback, bool pre, ILoggerFactory loggerFactory, CoreContext context) {
+  public GameEventCallback(IGameEventService.GameEventHandler<T> callback, bool pre, ILoggerFactory loggerFactory, CoreContext context) {
     Guid = Guid.NewGuid();
     EventType = typeof(T);
     IsPreHook = pre;

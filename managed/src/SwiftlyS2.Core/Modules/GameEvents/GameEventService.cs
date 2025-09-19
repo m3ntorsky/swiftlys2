@@ -21,7 +21,7 @@ internal class GameEventService : IGameEventService, IDisposable {
   private readonly List<GameEventCallback> _callbacks = new();
   private object _lock = new();
 
-  public Guid HookPre<T>(Func<T, HookResult> callback) where T : IGameEvent<T> {
+  public Guid HookPre<T>(IGameEventService.GameEventHandler<T> callback) where T : IGameEvent<T> {
     GameEventCallback<T> cb = new(callback, true, _LoggerFactory, _Context);
     lock (_lock) {
       _callbacks.Add(cb);
@@ -29,7 +29,7 @@ internal class GameEventService : IGameEventService, IDisposable {
     return cb.Guid;
   }
 
-  public Guid HookPost<T>(Func<T, HookResult> callback) where T : IGameEvent<T> {
+  public Guid HookPost<T>(IGameEventService.GameEventHandler<T> callback) where T : IGameEvent<T> {
     GameEventCallback<T> cb = new(callback, false, _LoggerFactory, _Context);
     lock (_lock) {
       _callbacks.Add(cb);

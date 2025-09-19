@@ -59,3 +59,16 @@ public class CRecipientFilter
         return RecipientFilters.Count();
     }
 }
+
+internal static class CRecipientFilterVtable {
+
+    [UnmanagedCallersOnly]
+    public static void NopDestructor(CRecipientFilter* filter) {
+        filter.NopDestructor();
+    }
+
+    [UnmanagedCallersOnly]
+    public static NetChannelBufType_t GetNetworkBufferType(CRecipientFilter filter) {
+        return filter.GetNetworkBufferType();
+    }
+}
