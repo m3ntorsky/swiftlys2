@@ -5,6 +5,7 @@ using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared.GameEventDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.Misc;
+using SwiftlyS2.Shared.Profiler;
 
 namespace SwiftlyS2.Core.GameEvents;
 
@@ -12,17 +13,23 @@ internal class GameEventService : IGameEventService, IDisposable {
 
   private ILoggerFactory _LoggerFactory { get; init; }
   private CoreContext _Context { get; init; }
+  private IContextedProfilerService _Profiler { get; init; }
 
-  public GameEventService(ILoggerFactory loggerFactory, CoreContext context) {
+  public GameEventService(ILoggerFactory loggerFactory, CoreContext context, IContextedProfilerService profiler) {
     _LoggerFactory = loggerFactory;
     _Context = context;
+    _Profiler = profiler;
   }
 
   private readonly List<GameEventCallback> _callbacks = new();
   private object _lock = new();
 
   public Guid HookPre<T>(IGameEventService.GameEventHandler<T> callback) where T : IGameEvent<T> {
-    GameEventCallback<T> cb = new(callback, true, _LoggerFactory, _Context);
+    GameEventCallback<T> cb = new(callback, true) {
+      LoggerFactory = _LoggerFactory,
+      Context = _Context,
+      Profiler = _Profiler,
+    };
     lock (_lock) {
       _callbacks.Add(cb);
     }
@@ -30,7 +37,11 @@ internal class GameEventService : IGameEventService, IDisposable {
   }
 
   public Guid HookPost<T>(IGameEventService.GameEventHandler<T> callback) where T : IGameEvent<T> {
-    GameEventCallback<T> cb = new(callback, false, _LoggerFactory, _Context);
+    GameEventCallback<T> cb = new(callback, false) {
+      LoggerFactory = _LoggerFactory,
+      Context = _Context,
+      Profiler = _Profiler,
+    };
     lock (_lock) {
       _callbacks.Add(cb);
     }

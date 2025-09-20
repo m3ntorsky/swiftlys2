@@ -2,6 +2,7 @@ using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.NetMessages;
+using SwiftlyS2.Shared.Profiler;
 
 namespace SwiftlyS2.Core.NetMessages;
 
@@ -10,15 +11,20 @@ internal class NetMessageService : INetMessageService, IDisposable {
 
   private List<NetMessageHookCallback> _callbacks = new();
   private ILoggerFactory _loggerFactory;
+  private IContextedProfilerService _profiler;
   private object _lock = new();
 
 
-  public NetMessageService(ILoggerFactory loggerFactory) {
+  public NetMessageService(ILoggerFactory loggerFactory, IContextedProfilerService profiler) {
     _loggerFactory = loggerFactory;
+    _profiler = profiler;
   }
 
   public Guid HookClientMessage<T>(INetMessageService.ClientNetMessageHandler<T> callback) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
-    var hook = new NetMessageClientHookCallback<T>(callback, _loggerFactory);
+    var hook = new NetMessageClientHookCallback<T>(callback) {
+      Profiler = _profiler,
+      LoggerFactory = _loggerFactory,
+    };
     lock (_lock) {
       _callbacks.Add(hook);
     }
@@ -26,7 +32,10 @@ internal class NetMessageService : INetMessageService, IDisposable {
   }
 
   public Guid HookServerMessage<T>(INetMessageService.ServerNetMessageHandler<T> callback) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
-    var hook = new NetMessageServerHookCallback<T>(callback, _loggerFactory);
+    var hook = new NetMessageServerHookCallback<T>(callback) {
+      Profiler = _profiler,
+      LoggerFactory = _loggerFactory,
+    };
     lock (_lock) {
       _callbacks.Add(hook);
     }

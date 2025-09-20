@@ -5,6 +5,8 @@ using SwiftlyS2.Core.Extensions;
 using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.ProtobufDefinitions;
+using SwiftlyS2.Shared.Profiler;
+using System.Diagnostics.CodeAnalysis;
 
 namespace SwiftlyS2.Core.NetMessages;
 
@@ -19,6 +21,10 @@ internal abstract class NetMessageHookCallback : IDisposable {
 
   public Guid Guid { get; init; }
 
+  public required IContextedProfilerService Profiler { get; set; }
+
+  public required ILoggerFactory LoggerFactory { get; set; }
+
   public abstract void Dispose();
 
 }
@@ -32,9 +38,9 @@ internal class NetMessageClientHookCallback<T> : NetMessageHookCallback where T 
   private ILogger<NetMessageClientHookCallback<T>> _logger;
 
 
-  public NetMessageClientHookCallback(INetMessageService.ClientNetMessageHandler<T> callback, ILoggerFactory loggerFactory) {
+  public NetMessageClientHookCallback(INetMessageService.ClientNetMessageHandler<T> callback) {
     Guid = Guid.NewGuid();
-    _logger = loggerFactory.CreateLogger<NetMessageClientHookCallback<T>>();
+    _logger = LoggerFactory!.CreateLogger<NetMessageClientHookCallback<T>>();
 
     _callback = callback;
 
@@ -42,8 +48,11 @@ internal class NetMessageClientHookCallback<T> : NetMessageHookCallback where T 
       try
       {
         if (msgId != T.MessageId) return true;
+        var category = "NetMessageClientHookCallback::" + typeof(T).Name;
+        Profiler!.StartRecording(category);
         var msg = T.Wrap(pMessage, false);
         _callback(msg, playerId);
+        Profiler.StopRecording(category);
         return true;
       } catch (Exception e) {
         _logger.LogError(e, "Error in net message client hook callback for {MessageType}", typeof(T).Name);
@@ -69,9 +78,9 @@ internal class NetMessageServerHookCallback<T> : NetMessageHookCallback where T 
   private ulong _nativeListenerId;
   private ILogger<NetMessageServerHookCallback<T>> _logger;
 
-  public NetMessageServerHookCallback(INetMessageService.ServerNetMessageHandler<T> callback, ILoggerFactory loggerFactory) {
+  public NetMessageServerHookCallback(INetMessageService.ServerNetMessageHandler<T> callback) {
     Guid = Guid.NewGuid();
-    _logger = loggerFactory.CreateLogger<NetMessageServerHookCallback<T>>();
+    _logger = LoggerFactory!.CreateLogger<NetMessageServerHookCallback<T>>();
 
     _callback = callback;
 
@@ -79,11 +88,14 @@ internal class NetMessageServerHookCallback<T> : NetMessageHookCallback where T 
       try
       {
         if (msgId != T.MessageId) return true;
+        var category = "NetMessageServerHookCallback::" + typeof(T).Name;
+        Profiler!.StartRecording(category);
         var msg = T.Wrap(pMessage, false);
         var mask = pPlayerMask.Read<ulong>();
         msg.Recipients.RecipientsMask = mask;
         _callback(msg);
         pPlayerMask.Write(msg.Recipients.ToMask());
+        Profiler.StopRecording(category);
         return true;
       } catch (Exception e) {
         _logger.LogError(e, "Error in net message server hook callback for {MessageType}", typeof(T).Name);

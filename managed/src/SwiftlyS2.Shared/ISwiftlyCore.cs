@@ -7,6 +7,7 @@ using SwiftlyS2.Shared.Commands;
 using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.Services;
 using SwiftlyS2.Shared.Hooks;
+using SwiftlyS2.Shared.Profiler;
 
 namespace SwiftlyS2.Shared;
 
@@ -70,4 +71,9 @@ public interface ISwiftlyCore {
   /// Default logger.
   /// </summary>
   public ILogger Logger { get; }
+
+  /// <summary>
+  /// Profiler service.
+  /// </summary>
+  public IContextedProfilerService Profiler { get; }
 }

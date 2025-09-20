@@ -21,6 +21,7 @@ using SwiftlyS2.Core.Convars;
 using SwiftlyS2.Shared.Convars;
 using SwiftlyS2.Shared.Hooks;
 using SwiftlyS2.Core.Hooks;
+using SwiftlyS2.Shared.Profiler;
 
 namespace SwiftlyS2.Core.Services;
 
@@ -40,6 +41,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public IGameDataService GameDataService { get; init; }
   public ILogger Logger { get; init; }
   public HookService HookService { get; init; }
+  public IContextedProfilerService ProfilerService { get; init; }
 
   public SwiftlyCore(string contextId, string contextBaseDirectory, Type contextType, IServiceProvider coreProvider) {
 
@@ -63,6 +65,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<EntitySystemService>()
       .AddSingleton<ConVarService>()
       .AddSingleton<HookService>()
+      .AddSingleton<IContextedProfilerService>()
 
       .AddLogging(
         builder => {

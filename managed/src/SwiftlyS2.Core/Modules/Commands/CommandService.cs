@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Commands;
 using SwiftlyS2.Shared.Plugins;
+using SwiftlyS2.Shared.Profiler;
 
 namespace SwiftlyS2.Core.Commands;
 
@@ -11,15 +12,21 @@ internal class CommandService : ICommandService, IDisposable {
   private List<CommandCallbackBase> _callbacks = new();
   private ILogger<CommandService> _Logger { get; init; }
   private ILoggerFactory _LoggerFactory { get; init; }
+  private IContextedProfilerService _Profiler { get; init; }
+
   private object _lock = new();
 
-  public CommandService(ILogger<CommandService> logger, ILoggerFactory loggerFactory) {
+  public CommandService(ILogger<CommandService> logger, ILoggerFactory loggerFactory, IContextedProfilerService profiler) {
     _Logger = logger;
     _LoggerFactory = loggerFactory;
+    _Profiler = profiler;
   }
 
   public Guid RegisterCommand(string commandName, ICommandService.CommandListener handler, bool registerRaw = false) {
-    var callback = new CommandCallback(commandName, registerRaw, handler, _LoggerFactory);
+    var callback = new CommandCallback(commandName, registerRaw, handler) {
+      LoggerFactory = _LoggerFactory,
+      Profiler = _Profiler,
+    };
     lock (_lock) {
       _callbacks.Add(callback);
     }
@@ -56,7 +63,10 @@ internal class CommandService : ICommandService, IDisposable {
   }
 
   public void HookClientCommand(ICommandService.ClientCommandHandler handler) {
-    var callback = new ClientCommandListenerCallback(handler, _LoggerFactory);
+    var callback = new ClientCommandListenerCallback(handler) {
+      LoggerFactory = _LoggerFactory,
+      Profiler = _Profiler,
+    };
     lock (_lock) {
       _callbacks.Add(callback);
     }
@@ -75,7 +85,10 @@ internal class CommandService : ICommandService, IDisposable {
   }
 
   public void HookClientChat(ICommandService.ClientChatHandler handler) {
-    var callback = new ClientChatListenerCallback(handler, _LoggerFactory);
+    var callback = new ClientChatListenerCallback(handler) {
+      LoggerFactory = _LoggerFactory,
+      Profiler = _Profiler,
+    };
     lock (_lock) {
       _callbacks.Add(callback);
     }

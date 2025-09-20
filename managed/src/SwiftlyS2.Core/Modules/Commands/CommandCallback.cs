@@ -3,6 +3,7 @@ using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.Commands;
 using Microsoft.Extensions.Logging;
+using SwiftlyS2.Shared.Profiler;
 
 namespace SwiftlyS2.Core.Commands;
 
@@ -15,6 +16,10 @@ internal delegate HookResult ClientChatListenerCallbackDelegate(int playerId, ni
 internal abstract class CommandCallbackBase : IDisposable {
 
   public Guid Guid { get; protected init; }
+
+  public required IContextedProfilerService Profiler { get; set; }
+
+  public required ILoggerFactory LoggerFactory { get; set; }
 
   public abstract void Dispose();
 
@@ -32,9 +37,9 @@ internal class CommandCallback : CommandCallbackBase {
 
   private ILogger<CommandCallback> _logger;
 
-  public CommandCallback(string commandName, bool registerRaw, ICommandService.CommandListener handler, ILoggerFactory loggerFactory)
+  public CommandCallback(string commandName, bool registerRaw, ICommandService.CommandListener handler)
   {
-    _logger = loggerFactory.CreateLogger<CommandCallback>();
+    _logger = LoggerFactory!.CreateLogger<CommandCallback>();
     Guid = Guid.NewGuid();
 
     CommandName = commandName;
@@ -43,6 +48,8 @@ internal class CommandCallback : CommandCallbackBase {
 
     _unmanagedCallback = (playerId, argsPtr, commandNamePtr, prefixPtr, slient) => {
       try {
+        var category = "CommandCallback::" + CommandName;
+        Profiler!.StartRecording(category);
         var argsString = Marshal.PtrToStringUTF8(argsPtr)!;
         var commandNameString = Marshal.PtrToStringUTF8(commandNamePtr)!;
         var prefixString = Marshal.PtrToStringUTF8(prefixPtr)!;
@@ -50,6 +57,7 @@ internal class CommandCallback : CommandCallbackBase {
         var args = argsString.Split('\x01');
         var context = new CommandContext(playerId, args, commandNameString, prefixString, slient);
         _handler(context);
+        Profiler!.StopRecording(category);
       } catch (Exception e) {
         _logger.LogError(e, "Failed to handle command {0}.", commandName);
       } 
@@ -74,17 +82,21 @@ internal class ClientCommandListenerCallback : CommandCallbackBase {
   private ulong _nativeListenerId;
   private ILogger<ClientCommandListenerCallback> _logger;
 
-  public ClientCommandListenerCallback(ICommandService.ClientCommandHandler handler, ILoggerFactory loggerFactory)
+  public ClientCommandListenerCallback(ICommandService.ClientCommandHandler handler)
   {
-    _logger = loggerFactory.CreateLogger<ClientCommandListenerCallback>();
+    _logger = LoggerFactory!.CreateLogger<ClientCommandListenerCallback>();
     Guid = Guid.NewGuid();
 
     _handler = handler;
 
     _unmanagedCallback = (playerId, commandLinePtr) => {
       try {
+        var category = "ClientCommandListenerCallback";
+        Profiler!.StartRecording(category);
         var commandLineString = Marshal.PtrToStringUTF8(commandLinePtr)!;
-        return _handler(playerId, commandLineString);
+        var result = _handler(playerId, commandLineString);
+        Profiler!.StopRecording(category);
+        return result;
       } catch (Exception e) {
         _logger.LogError(e, "Failed to handle client command listener.");
         return HookResult.Continue;
@@ -111,17 +123,21 @@ internal class ClientChatListenerCallback : CommandCallbackBase {
   private ulong _nativeListenerId;
   private ILogger<ClientChatListenerCallback> _logger;
 
-  public ClientChatListenerCallback(ICommandService.ClientChatHandler handler, ILoggerFactory loggerFactory) 
+  public ClientChatListenerCallback(ICommandService.ClientChatHandler handler) 
   {
-    _logger = loggerFactory.CreateLogger<ClientChatListenerCallback>();
+    _logger = LoggerFactory!.CreateLogger<ClientChatListenerCallback>();
     Guid = Guid.NewGuid();
 
     _handler = handler;
 
     _unmanagedCallback = (playerId, textPtr, teamonly) => {
       try {
+        var category = "ClientChatListenerCallback";
+        Profiler!.StartRecording(category);
         var textString = Marshal.PtrToStringUTF8(textPtr)!;
-        return _handler(playerId, textString, teamonly);
+        var result = _handler(playerId, textString, teamonly);
+        Profiler!.StopRecording(category);
+        return result;
       } catch (Exception e) {
         _logger.LogError(e, "Failed to handle client chat listener.");
         return HookResult.Continue;

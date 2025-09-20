@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Shared.Profiler;
 
 namespace SwiftlyS2.Core.GameEvents;
 
@@ -24,6 +25,12 @@ internal abstract class GameEventCallback : IEquatable<GameEventCallback>, IDisp
   public nint UnmanagedWrapperPtr { get; init; }
 
   public ulong ListenerId { get; init; }
+
+  public required IContextedProfilerService Profiler { get; set; }
+
+  public required ILoggerFactory LoggerFactory { get; set; }
+
+  public required CoreContext Context { get; set; }
 
   public void Dispose() {
     if (IsPreHook) {
@@ -52,29 +59,32 @@ internal abstract class GameEventCallback : IEquatable<GameEventCallback>, IDisp
 internal class GameEventCallback<T> : GameEventCallback, IDisposable where T : IGameEvent<T>
 {
   private IGameEventService.GameEventHandler<T> _callback { get; init; }
-  private ILogger<GameEventCallback<T>> _logger { get; init; }
+  private ILogger<GameEventCallback<T>> _Logger { get; init; }
+  private IContextedProfilerService _Profiler { get; init; }
   private CoreContext _Context { get; init; }
   private UnmanagedEventCallback _unmanagedCallback;
 
-  public GameEventCallback(IGameEventService.GameEventHandler<T> callback, bool pre, ILoggerFactory loggerFactory, CoreContext context) {
+  public GameEventCallback(IGameEventService.GameEventHandler<T> callback, bool pre) {
     Guid = Guid.NewGuid();
     EventType = typeof(T);
     IsPreHook = pre;
     EventName = T.GetName();
-    _Context = context;
     _callback = callback;
-    _logger = loggerFactory.CreateLogger<GameEventCallback<T>>();
+    _Logger = LoggerFactory!.CreateLogger<GameEventCallback<T>>();
 
     _unmanagedCallback = (hash, pEvent, pDontBroadcast) => {
       try {
+        var category = "GameEventCallback::" + EventName;
+        _Profiler!.StartRecording(category);
         if (hash != T.GetHash()) return HookResult.Continue;
         var eventObj = GameEventSingletonWrapper<T>.Borrow(pEvent);
         var result = _callback(eventObj);
         pDontBroadcast.Write(eventObj.DontBroadcast);
         GameEventSingletonWrapper<T>.Return();
+        _Profiler.StopRecording(category);
         return result;
       } catch (Exception e) {
-        _logger.LogError(e, "Error in event {EventName} callback from context {ContextName}", EventName, _Context.Name);
+        _Logger.LogError(e, "Error in event {EventName} callback from context {ContextName}", EventName, _Context.Name);
         return HookResult.Continue;
       } 
     };
