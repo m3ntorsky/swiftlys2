@@ -9,17 +9,15 @@ using SwiftlyS2.Core.Extensions;
 
 namespace SwiftlyS2.Core.Hooks;
 
-internal class HookService : IHookService {
+internal class HookService : IHookService, IDisposable {
 
   private HookManager _HookManager { get; init; }
   private ILogger<HookService> _Logger { get; init; }
   private readonly List<Guid> _ownedHooks = new();
-  private int _disposed;
 
   public HookService(HookManager manager, ILogger<HookService> logger) {
     _HookManager = manager;
     _Logger = logger;
-    _disposed = 0;
   }
 
   public Guid Hook<TDelegate>(nint functionAddress, Func<Func<TDelegate>, TDelegate> callbackBuilder) where TDelegate : Delegate {
@@ -64,18 +62,4 @@ internal class HookService : IHookService {
       _Logger.LogError(e, "Failed to dispose hook service.");
     }
   }
-
-  // public void Dispose() {
-  //   if (Interlocked.Exchange(ref _disposed, 1) != 0) return;
-  //   // Remove all owned nodes and rebuild chains accordingly
-  //   _manager.RemoveByOwner(this);
-  //   foreach (var d in _ownedHooks) {
-  //     try { d.Dispose(); } catch { }
-  //   }
-  //   _ownedHooks.Clear();
-  // }
-
-  // private void EnsureNotDisposed() {
-  //   if (_disposed != 0) throw new ObjectDisposedException(nameof(HookService));
-  // }
 } 
