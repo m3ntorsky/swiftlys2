@@ -1,7 +1,6 @@
 using System.Reflection;
 using SwiftlyS2.Core.Commands;
 using SwiftlyS2.Shared.Commands;
-using SwiftlyS2.Shared.Modules.Commands;
 
 namespace SwiftlyS2.Core.AttributeParsers;
 

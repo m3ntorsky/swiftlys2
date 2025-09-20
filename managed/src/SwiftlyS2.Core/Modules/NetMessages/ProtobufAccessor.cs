@@ -460,7 +460,6 @@ internal class ProtobufAccessor : NativeHandle, IProtobufAccessor {
       AddDouble(fieldName, (double)(object)value!);
     }
     else if (typeof(T) == typeof(string)) {
-      Console.WriteLine("!!!" + value);
       AddString(fieldName, (string)(object)value!);
     }
     else if (typeof(T) == typeof(byte[])) {

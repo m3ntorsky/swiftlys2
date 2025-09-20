@@ -86,10 +86,24 @@ internal class TestService {
     //     return 0;
     //   };
     // });
-
     // var callbackAddr = Marshal.GetFunctionPointerForDelegate(callback);
     // NativeHooks.SetHook(hook, addr, callbackAddr);
     // NativeHooks.EnableHook(hook);
+
+
+    
+    // var hook2 = NativeHooks.AllocateHook();
+    // var callback2 = SetCallback<DispatchSpawnHook>(hook2, (originalFuncGetter) =>
+    // {
+    //   return (nint entity, nint kv) =>
+    //   {
+    //     Console.WriteLine("DispatchSpawnHook2 " + entity);
+    //     return originalFuncGetter()(entity, kv);
+    //   };
+    // });
+    // var callbackAddr2 = Marshal.GetFunctionPointerForDelegate(callback2); 
+    // NativeHooks.SetHook(hook2, addr, callbackAddr2);
+    // NativeHooks.EnableHook(hook2);
 
 
 
@@ -124,6 +138,7 @@ internal class TestService {
       Console.WriteLine("ClientChatHook " + teamonly);
       return HookResult.Continue;
     });
+
 
     // _Core.NetMessage.HookServerMessage<CMsgSosStartSoundEvent>((msg, filter) =>
     // {

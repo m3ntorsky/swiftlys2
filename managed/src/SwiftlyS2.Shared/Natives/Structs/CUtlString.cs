@@ -1,11 +1,17 @@
 using System.Runtime.InteropServices;
+using SwiftlyS2.Core.Natives;
 
 namespace SwiftlyS2.Shared.Natives;
 
-[StructLayout(LayoutKind.Sequential)]
+[StructLayout(LayoutKind.Sequential, Size = 8)]
 public struct CUtlString {
 
-  private CUtlBinaryBlock _storage;
+  private nint _ptr;
 
-  // public string Value; // TODO: Implement with natives
+  public string Value {
+
+    get => Marshal.PtrToStringUTF8(_ptr)!;
+    set => _ptr = StringPool.Allocate(value);
+
+  }
 }

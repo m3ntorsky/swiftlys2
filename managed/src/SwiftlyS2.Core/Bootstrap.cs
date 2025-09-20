@@ -28,6 +28,7 @@ internal static class Bootstrap {
     services.AddRootDirService();
     services.AddGameDataService();
     services.AddPluginManager();
+    services.AddHookManager();
     services.AddLogger();
 
     services.AddSingleton<ISwiftlyCore, SwiftlyCore>((provider) => new SwiftlyCore(

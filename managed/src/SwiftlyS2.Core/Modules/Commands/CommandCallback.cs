@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Misc;
-using SwiftlyS2.Shared.Modules.Commands;
+using SwiftlyS2.Shared.Commands;
 
 namespace SwiftlyS2.Core.Commands;
 

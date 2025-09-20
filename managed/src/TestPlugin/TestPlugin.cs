@@ -12,6 +12,7 @@ using SwiftlyS2.Shared.Plugins;
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.ProtobufDefinitions;
 using System.Diagnostics.CodeAnalysis;
+using System.Runtime.InteropServices;
 
 namespace TestPlugin;
 
@@ -67,6 +68,7 @@ public class TestPlugin : BasePlugin {
   CEntityKeyValues kv { get; set; }
   CEntityInstance entity { get; set; }
 
+
   [Command("tt")]
   public void TestCommand(ICommandContext context) {
     // kv = new();
@@ -102,27 +104,58 @@ public class TestPlugin : BasePlugin {
     });
   }
 
-  [Command("tt2")]
+  [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+  delegate nint DispatchSpawnDelegate(nint pEntity, nint pKV);
+  int order = 0;
+
+  [Command("h1")]
   public void TestCommand2(ICommandContext context)
   {
-    _Core.NetMessage.Send<CUserMessageTextMsg>(msg => {
-      msg.Accessor.Add("param", "ABC");
-      msg.Dest = 3;
-      msg.Recipients.AddAllPlayers();
-      
-    }); 
+    var dispatchspawn = _Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
+    _Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) => {
+      return (nint pEntity, nint pKV) => {
+        Console.WriteLine("TestPlugin DispatchSpawn " + order++);
+        return next()(pEntity, pKV);
+      };
+    });
+  }
+
+  Guid _hookId = Guid.Empty;
+
+  [Command("h2")]
+  public void TestCommand3(ICommandContext context)
+  {
+    var dispatchspawn = _Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
+    _hookId = _Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) =>
+    {
+      return (nint pEntity, nint pKV) =>
+      {
+        Console.WriteLine("TestPlugin DispatchSpawn2 " + order++);
+        return next()(pEntity, pKV);
+      };
+    });
+
+    _Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) =>
+    {
+      return (nint pEntity, nint pKV) =>
+      {
+        var original  = next();
+        Console.WriteLine("TestPlugin DispatchSpawn3 " + order++);
+        return original(pEntity, pKV);
+      };
+    });
   }
 
   [Command("tt3")]
-  public void TestCommand3(ICommandContext context) {
+  public void TestCommand33(ICommandContext context) {
 
-    Console.WriteLine("Accessing keyvalues after entity deleted (This should be fine)");
-    Console.WriteLine(kv.GetString("test"));
-    Console.WriteLine("Releasing keyvalues");
-    kv.Dispose();
-    Console.WriteLine("Releasing successful");
-    Console.WriteLine("Accessing keyvalues after releasing (This should be crashing)");
-    Console.WriteLine(kv.GetString("test"));
+    var entity = _Core.EntitySystem.CreateEntity<CPointWorldText>();
+    entity.DispatchSpawn();
+  }
+
+  [Command("tt4")]
+  public void TestCommand4(ICommandContext context) {
+    _Core.Hook.Unhook(_hookId);
   }
 
   // [GameEventHandler(HookMode.Pre)]

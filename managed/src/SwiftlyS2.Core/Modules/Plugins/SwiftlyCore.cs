@@ -6,10 +6,11 @@ using SwiftlyS2.Core.GameEvents;
 using SwiftlyS2.Core.Misc;
 using SwiftlyS2.Core.NetMessages;
 using SwiftlyS2.Core.Services;
+using SwiftlyS2.Core.Managers;
 using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.GameEvents;
-using SwiftlyS2.Shared.Modules.Commands;
+using SwiftlyS2.Shared.Commands;
 using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.Plugins;
 using SwiftlyS2.Shared.Services;
@@ -18,6 +19,8 @@ using SwiftlyS2.Core.EntitySystem;
 using SwiftlyS2.Shared.EntitySystem;
 using SwiftlyS2.Core.Convars;
 using SwiftlyS2.Shared.Convars;
+using SwiftlyS2.Shared.Hooks;
+using SwiftlyS2.Core.Hooks;
 
 namespace SwiftlyS2.Core.Services;
 
@@ -36,6 +39,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public IConVarService ConVarService { get; init; }
   public IGameDataService GameDataService { get; init; }
   public ILogger Logger { get; init; }
+  public HookService HookService { get; init; }
 
   public SwiftlyCore(string contextId, string contextBaseDirectory, Type contextType, IServiceProvider coreProvider) {
 
@@ -49,6 +53,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton(coreProvider.GetRequiredService<ProfileService>())
       .AddSingleton(coreProvider.GetRequiredService<ConfigurationService>())
       .AddSingleton(coreProvider.GetRequiredService<GameDataService>())
+      .AddSingleton(coreProvider.GetRequiredService<HookManager>())
 
       .AddSingleton<EventSubscriber>()
       .AddSingleton<PluginConfigurationService>()
@@ -57,6 +62,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<CommandService>()
       .AddSingleton<EntitySystemService>()
       .AddSingleton<ConVarService>()
+      .AddSingleton<HookService>()
 
       .AddLogging(
         builder => {
@@ -76,6 +82,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     EntitySystemService = _ServiceProvider.GetRequiredService<EntitySystemService>();
     GameDataService = _ServiceProvider.GetRequiredService<GameDataService>();
     ConVarService = _ServiceProvider.GetRequiredService<ConVarService>();
+    HookService = _ServiceProvider.GetRequiredService<HookService>();
 
     Logger = LoggerFactory.CreateLogger(contextType);
   }
@@ -103,6 +110,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   IEntitySystemService ISwiftlyCore.EntitySystem => EntitySystemService;
   IConVarService ISwiftlyCore.ConVar => ConVarService;
   IGameDataService ISwiftlyCore.GameData => GameDataService;
+  IHookService ISwiftlyCore.Hook => HookService;
   ILogger ISwiftlyCore.Logger => Logger;
 
 }

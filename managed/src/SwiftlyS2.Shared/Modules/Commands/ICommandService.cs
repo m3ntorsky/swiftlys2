@@ -1,7 +1,7 @@
 using SwiftlyS2.Shared.Commands;
 using SwiftlyS2.Shared.Misc;
 
-namespace SwiftlyS2.Shared.Modules.Commands;
+namespace SwiftlyS2.Shared.Commands;
 
 public interface ICommandService {
 

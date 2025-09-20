@@ -3,9 +3,10 @@ using SwiftlyS2.Shared.Convars;
 using SwiftlyS2.Shared.EntitySystem;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.GameEvents;
-using SwiftlyS2.Shared.Modules.Commands;
+using SwiftlyS2.Shared.Commands;
 using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.Services;
+using SwiftlyS2.Shared.Hooks;
 
 namespace SwiftlyS2.Shared;
 
@@ -54,6 +55,11 @@ public interface ISwiftlyCore {
   /// Game data service.
   /// </summary>
   public IGameDataService GameData { get; }
+
+  /// <summary>
+  /// Hook service.
+  /// </summary>
+  public IHookService Hook { get; }
 
   /// <summary>
   /// Logger factory.
