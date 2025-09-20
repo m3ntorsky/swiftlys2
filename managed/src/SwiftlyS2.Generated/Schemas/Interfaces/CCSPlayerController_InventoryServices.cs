@@ -29,11 +29,10 @@ public partial interface CCSPlayerController_InventoryServices : CPlayerControll
   
   public ISchemaFixedArray<uint> EquippedPlayerSprayIDs { get; }
   
+  public ref ulong CurrentLoadoutHash { get; }
+  
   // CUtlVectorEmbeddedNetworkVar< ServerAuthoritativeWeaponSlot_t >
   public ref CUtlVector ServerAuthoritativeWeaponSlots { get; }
-  
-  // CUtlVectorEmbeddedNetworkVar< CSNetworkableLoadout_t >
-  public ref CUtlVector NetworkableLoadout { get; }
 
   public void MusicIDUpdated();
   public void RankUpdated();
@@ -43,5 +42,4 @@ public partial interface CCSPlayerController_InventoryServices : CPlayerControll
   public void PersonaDataPublicCommendsFriendlyUpdated();
   public void PersonaDataXpTrailLevelUpdated();
   public void ServerAuthoritativeWeaponSlotsUpdated();
-  public void NetworkableLoadoutUpdated();
 }

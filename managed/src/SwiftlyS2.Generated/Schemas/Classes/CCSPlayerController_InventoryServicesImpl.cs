@@ -39,11 +39,11 @@ public ISchemaFixedArray<MedalRank_t> Rank {
 public ISchemaFixedArray<uint> EquippedPlayerSprayIDs {
     get => new SchemaFixedArray<uint>(_Handle, 0xC1D00782CE970C93, 1, 4, 4);
   }
+  public ref ulong CurrentLoadoutHash {
+    get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xC1D007824F832E99));
+  }
   public ref CUtlVector ServerAuthoritativeWeaponSlots {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC1D007826EED2FF6));
-  }
-  public ref CUtlVector NetworkableLoadout {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC1D0078226705D53));
   }
 
   public void MusicIDUpdated() {
@@ -69,8 +69,5 @@ public ISchemaFixedArray<uint> EquippedPlayerSprayIDs {
   }
   public void ServerAuthoritativeWeaponSlotsUpdated() {
     Schema.Update(_Handle, 0xC1D007826EED2FF6);
-  }
-  public void NetworkableLoadoutUpdated() {
-    Schema.Update(_Handle, 0xC1D0078226705D53);
   }
 }
