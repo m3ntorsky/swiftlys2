@@ -6,6 +6,15 @@ namespace SwiftlyS2.Shared.EntitySystem;
 
 public interface IEntitySystemService {
 
+
+  /// <summary>
+  /// Create an entity by class.
+  /// </summary>
+  /// <typeparam name="T">Entity type.</typeparam>
+  /// <returns>Created entity.</returns>
+  /// <exception cref="ArgumentException">Thrown when failed to create entity by class or class doesn't have a designer name.</exception>
+  public T CreateEntity<T>() where T : class, ISchemaClass<T>;
+
   /// <summary>
   /// Create an entity by designer name.
   /// </summary>

@@ -16,6 +16,8 @@ using SwiftlyS2.Shared.Services;
 using SwiftlyS2.Core.AttributeParsers;
 using SwiftlyS2.Core.EntitySystem;
 using SwiftlyS2.Shared.EntitySystem;
+using SwiftlyS2.Core.Convars;
+using SwiftlyS2.Shared.Convars;
 
 namespace SwiftlyS2.Core.Services;
 
@@ -31,6 +33,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public ILoggerFactory LoggerFactory { get; init; }
   public CommandService CommandService { get; init; }
   public IEntitySystemService EntitySystemService { get; init; }
+  public IConVarService ConVarService { get; init; }
   public IGameDataService GameDataService { get; init; }
   public ILogger Logger { get; init; }
 
@@ -53,6 +56,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<NetMessageService>()
       .AddSingleton<CommandService>()
       .AddSingleton<EntitySystemService>()
+      .AddSingleton<ConVarService>()
 
       .AddLogging(
         builder => {
@@ -71,6 +75,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     CommandService = _ServiceProvider.GetRequiredService<CommandService>();
     EntitySystemService = _ServiceProvider.GetRequiredService<EntitySystemService>();
     GameDataService = _ServiceProvider.GetRequiredService<GameDataService>();
+    ConVarService = _ServiceProvider.GetRequiredService<ConVarService>();
 
     Logger = LoggerFactory.CreateLogger(contextType);
   }
@@ -96,6 +101,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   INetMessageService ISwiftlyCore.NetMessage => NetMessageService;
   ICommandService ISwiftlyCore.Command => CommandService;
   IEntitySystemService ISwiftlyCore.EntitySystem => EntitySystemService;
+  IConVarService ISwiftlyCore.ConVar => ConVarService;
   IGameDataService ISwiftlyCore.GameData => GameDataService;
   ILogger ISwiftlyCore.Logger => Logger;
 
