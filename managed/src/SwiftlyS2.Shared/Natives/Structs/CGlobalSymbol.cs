@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using SwiftlyS2.Core.Extensions;
+using SwiftlyS2.Core.Natives;
 
 namespace SwiftlyS2.Shared.Natives;
 
@@ -18,7 +19,7 @@ public struct CGlobalSymbol
     }
     set
     {
-      // TODO: Implement with native or by managed
+      _pString = StringPool.Allocate(value);
     }
   }
 }

@@ -1,4 +1,5 @@
-﻿using SwiftlyS2.Shared.SchemaDefinitions;
+﻿using SwiftlyS2.Core.SchemaDefinitions;
+using SwiftlyS2.Shared.SchemaDefinitions;
 using System.Runtime.InteropServices;
 
 namespace SwiftlyS2.Shared.Natives;
@@ -16,7 +17,7 @@ public enum RayType_t: byte
 public unsafe struct CGameTrace
 {
     public CPhysSurfacePropertiesTrace* SurfaceProperties;
-    public CEntityInstance* Entity;
+    public void* pEntity;
     public CHitBoxTrace* HitBox;
 
     public void* Body;
@@ -41,4 +42,6 @@ public unsafe struct CGameTrace
 
     public bool StartInSolid;
     public bool ExactHitPoint;
+
+    public CEntityInstance Entity => new CEntityInstanceImpl((nint)pEntity);
 }

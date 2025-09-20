@@ -13,7 +13,7 @@ public struct CHitBoxTrace
     public Vector m_vMaxBounds;
     public float m_flShapeRadius;
     public CUtlStringToken m_nBoneNameHash;
-    public int m_nGroupId;
+    public HitGroup_t m_nGroupId;
     public byte m_nShapeType;
     public bool m_bTranslationOnly;
     public uint m_CRC;

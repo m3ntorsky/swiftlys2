@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Core.Extensions;
 
 namespace SwiftlyS2.Shared.Natives;
 
@@ -10,7 +11,10 @@ public struct CUtlString {
 
   public string Value {
 
-    get => Marshal.PtrToStringUTF8(_ptr)!;
+    get {
+      if (!_ptr.IsValidPtr()) return string.Empty;
+      return Marshal.PtrToStringUTF8(_ptr)!;
+    }
     set => _ptr = StringPool.Allocate(value);
 
   }
