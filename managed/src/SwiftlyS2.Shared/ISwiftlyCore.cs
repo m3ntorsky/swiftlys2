@@ -1,4 +1,5 @@
 using Microsoft.Extensions.Logging;
+using SwiftlyS2.Shared.Convars;
 using SwiftlyS2.Shared.EntitySystem;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.GameEvents;
@@ -38,6 +39,11 @@ public interface ISwiftlyCore {
   /// Entity system service.
   /// </summary>
   public IEntitySystemService EntitySystem { get; }
+
+  /// <summary>
+  /// Convar service.
+  /// </summary>
+  public IConVarService ConVar { get; }
 
   /// <summary>
   /// Configuration service.

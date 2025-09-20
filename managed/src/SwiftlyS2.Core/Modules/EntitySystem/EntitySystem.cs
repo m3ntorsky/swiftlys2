@@ -14,6 +14,14 @@ namespace SwiftlyS2.Core.EntitySystem;
 
 internal class EntitySystemService : IEntitySystemService {
 
+  public T CreateEntity<T>() where T : class, ISchemaClass<T> {
+    var designerName = GetEntityDesignerName<T>();
+    if (designerName == null) {
+      throw new ArgumentException($"Can't create entity with class {typeof(T).Name}, which doesn't have a designer name");
+    }
+    return CreateEntityByDesignerName<T>(designerName);
+  }
+
   public T CreateEntityByDesignerName<T>(string designerName) where T : ISchemaClass<T> {
     var handle = NativeEntitySystem.CreateEntityByName(designerName);
     if (handle == nint.Zero) {
