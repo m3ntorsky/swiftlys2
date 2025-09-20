@@ -2,6 +2,7 @@ using System.Runtime.InteropServices;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.Commands;
+using Microsoft.Extensions.Logging;
 
 namespace SwiftlyS2.Core.Commands;
 
@@ -29,8 +30,11 @@ internal class CommandCallback : CommandCallbackBase {
   private nint _unmanagedCallbackPtr;
   private ulong _nativeListenerId;
 
-  public CommandCallback(string commandName, bool registerRaw, ICommandService.CommandListener handler)
+  private ILogger<CommandCallback> _logger;
+
+  public CommandCallback(string commandName, bool registerRaw, ICommandService.CommandListener handler, ILoggerFactory loggerFactory)
   {
+    _logger = loggerFactory.CreateLogger<CommandCallback>();
     Guid = Guid.NewGuid();
 
     CommandName = commandName;
@@ -38,14 +42,17 @@ internal class CommandCallback : CommandCallbackBase {
     _handler = handler;
 
     _unmanagedCallback = (playerId, argsPtr, commandNamePtr, prefixPtr, slient) => {
+      try {
+        var argsString = Marshal.PtrToStringUTF8(argsPtr)!;
+        var commandNameString = Marshal.PtrToStringUTF8(commandNamePtr)!;
+        var prefixString = Marshal.PtrToStringUTF8(prefixPtr)!;
 
-      var argsString = Marshal.PtrToStringUTF8(argsPtr)!;
-      var commandNameString = Marshal.PtrToStringUTF8(commandNamePtr)!;
-      var prefixString = Marshal.PtrToStringUTF8(prefixPtr)!;
-
-      var args = argsString.Split('\x01');
-      var context = new CommandContext(playerId, args, commandNameString, prefixString, slient);
-      _handler(context);
+        var args = argsString.Split('\x01');
+        var context = new CommandContext(playerId, args, commandNameString, prefixString, slient);
+        _handler(context);
+      } catch (Exception e) {
+        _logger.LogError(e, "Failed to handle command {0}.", commandName);
+      } 
     };
 
     _unmanagedCallbackPtr = Marshal.GetFunctionPointerForDelegate(_unmanagedCallback);
@@ -65,16 +72,23 @@ internal class ClientCommandListenerCallback : CommandCallbackBase {
   private ClientCommandListenerCallbackDelegate _unmanagedCallback;
   private nint _unmanagedCallbackPtr;
   private ulong _nativeListenerId;
+  private ILogger<ClientCommandListenerCallback> _logger;
 
-  public ClientCommandListenerCallback(ICommandService.ClientCommandHandler handler)
+  public ClientCommandListenerCallback(ICommandService.ClientCommandHandler handler, ILoggerFactory loggerFactory)
   {
+    _logger = loggerFactory.CreateLogger<ClientCommandListenerCallback>();
     Guid = Guid.NewGuid();
 
     _handler = handler;
 
     _unmanagedCallback = (playerId, commandLinePtr) => {
-      var commandLineString = Marshal.PtrToStringUTF8(commandLinePtr)!;
-      return _handler(playerId, commandLineString);
+      try {
+        var commandLineString = Marshal.PtrToStringUTF8(commandLinePtr)!;
+        return _handler(playerId, commandLineString);
+      } catch (Exception e) {
+        _logger.LogError(e, "Failed to handle client command listener.");
+        return HookResult.Continue;
+      }
     };
 
     _unmanagedCallbackPtr = Marshal.GetFunctionPointerForDelegate(_unmanagedCallback);
@@ -95,16 +109,23 @@ internal class ClientChatListenerCallback : CommandCallbackBase {
   private ClientChatListenerCallbackDelegate _unmanagedCallback;
   private nint _unmanagedCallbackPtr;
   private ulong _nativeListenerId;
+  private ILogger<ClientChatListenerCallback> _logger;
 
-  public ClientChatListenerCallback(ICommandService.ClientChatHandler handler) 
+  public ClientChatListenerCallback(ICommandService.ClientChatHandler handler, ILoggerFactory loggerFactory) 
   {
+    _logger = loggerFactory.CreateLogger<ClientChatListenerCallback>();
     Guid = Guid.NewGuid();
 
     _handler = handler;
 
     _unmanagedCallback = (playerId, textPtr, teamonly) => {
-      var textString = Marshal.PtrToStringUTF8(textPtr)!;
-      return _handler(playerId, textString, teamonly);
+      try {
+        var textString = Marshal.PtrToStringUTF8(textPtr)!;
+        return _handler(playerId, textString, teamonly);
+      } catch (Exception e) {
+        _logger.LogError(e, "Failed to handle client chat listener.");
+        return HookResult.Continue;
+      }
     };
 
     _unmanagedCallbackPtr = Marshal.GetFunctionPointerForDelegate(_unmanagedCallback);

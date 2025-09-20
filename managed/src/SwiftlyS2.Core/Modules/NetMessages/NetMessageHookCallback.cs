@@ -39,9 +39,9 @@ internal class NetMessageClientHookCallback<T> : NetMessageHookCallback where T 
     _callback = callback;
 
     _unmanagedCallback = (playerId, msgId, pMessage) => {
-      if (msgId != T.MessageId) return true;
       try
       {
+        if (msgId != T.MessageId) return true;
         var msg = T.Wrap(pMessage, false);
         _callback(msg, playerId);
         return true;
@@ -76,9 +76,9 @@ internal class NetMessageServerHookCallback<T> : NetMessageHookCallback where T 
     _callback = callback;
 
     _unmanagedCallback = (pPlayerMask, msgId, pMessage) => {
-      if (msgId != T.MessageId) return true;
       try
       {
+        if (msgId != T.MessageId) return true;
         var msg = T.Wrap(pMessage, false);
         var mask = pPlayerMask.Read<ulong>();
         msg.Recipients.RecipientsMask = mask;

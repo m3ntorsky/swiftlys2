@@ -10,14 +10,16 @@ internal class CommandService : ICommandService, IDisposable {
 
   private List<CommandCallbackBase> _callbacks = new();
   private ILogger<CommandService> _Logger { get; init; }
+  private ILoggerFactory _LoggerFactory { get; init; }
   private object _lock = new();
 
-  public CommandService(ILogger<CommandService> logger) {
+  public CommandService(ILogger<CommandService> logger, ILoggerFactory loggerFactory) {
     _Logger = logger;
+    _LoggerFactory = loggerFactory;
   }
 
   public Guid RegisterCommand(string commandName, ICommandService.CommandListener handler, bool registerRaw = false) {
-    var callback = new CommandCallback(commandName, registerRaw, handler);
+    var callback = new CommandCallback(commandName, registerRaw, handler, _LoggerFactory);
     lock (_lock) {
       _callbacks.Add(callback);
     }
@@ -54,7 +56,7 @@ internal class CommandService : ICommandService, IDisposable {
   }
 
   public void HookClientCommand(ICommandService.ClientCommandHandler handler) {
-    var callback = new ClientCommandListenerCallback(handler);
+    var callback = new ClientCommandListenerCallback(handler, _LoggerFactory);
     lock (_lock) {
       _callbacks.Add(callback);
     }
@@ -73,7 +75,7 @@ internal class CommandService : ICommandService, IDisposable {
   }
 
   public void HookClientChat(ICommandService.ClientChatHandler handler) {
-    var callback = new ClientChatListenerCallback(handler);
+    var callback = new ClientChatListenerCallback(handler, _LoggerFactory);
     lock (_lock) {
       _callbacks.Add(callback);
     }
