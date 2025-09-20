@@ -432,8 +432,9 @@ internal class ProtobufAccessor : NativeHandle, IProtobufAccessor {
     }
     else if (typeof(T) == typeof(QAngle)) {
       SetQAngle(fieldName, (QAngle)(object)value!);
+    } else {
+      throw new InvalidOperationException($"Invalid type: {typeof(T)}");
     }
-    throw new InvalidOperationException($"Invalid type: {typeof(T)}");
   }
 
   public void Add<T>(string fieldName, T value) {
@@ -459,6 +460,7 @@ internal class ProtobufAccessor : NativeHandle, IProtobufAccessor {
       AddDouble(fieldName, (double)(object)value!);
     }
     else if (typeof(T) == typeof(string)) {
+      Console.WriteLine("!!!" + value);
       AddString(fieldName, (string)(object)value!);
     }
     else if (typeof(T) == typeof(byte[])) {
@@ -476,7 +478,13 @@ internal class ProtobufAccessor : NativeHandle, IProtobufAccessor {
     else if (typeof(T) == typeof(QAngle)) {
       AddQAngle(fieldName, (QAngle)(object)value!);
     }
-    throw new InvalidOperationException($"Invalid type: {typeof(T)}");
+    // HOW THE FUCK I FORGOT TO ADD A ELSE HERE
+    // this mf exception throws silently and fuck my stacktrace, my debugger and my life
+    // fuck me
+    // -- @samyyc
+    else {
+      throw new InvalidOperationException($"Invalid type: {typeof(T)}");
+    }
   }
 
   public void SetRepeated<T>(string fieldName, int index, T value) {
@@ -518,8 +526,9 @@ internal class ProtobufAccessor : NativeHandle, IProtobufAccessor {
     }
     else if (typeof(T) == typeof(QAngle)) {
       SetRepeatedQAngle(fieldName, index, (QAngle)(object)value!);
+    } else {
+      throw new InvalidOperationException($"Invalid type: {typeof(T)}");
     }
-    throw new InvalidOperationException($"Invalid type: {typeof(T)}");
   }
 
   public T GetRepeated<T>(string fieldName, int index) {

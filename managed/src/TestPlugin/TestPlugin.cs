@@ -103,9 +103,12 @@ public class TestPlugin : BasePlugin {
   }
 
   [Command("tt2")]
-  public void TestCommand2(ICommandContext context) {
-    entity.Despawn();
-    Console.WriteLine("Deleted entity");
+  public void TestCommand2(ICommandContext context)
+  {
+    _Core.NetMessage.Send<CUserMessageTextMsg>((msg, filter) => {
+      msg.Accessor.Add("param", "ABC");
+      filter.AddRecipient(0);
+    }); 
   }
 
   [Command("tt3")]
