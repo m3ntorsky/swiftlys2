@@ -7,11 +7,11 @@ public interface INetMessage<T> where T : INetMessage<T>, ITypedProtobuf<T>, IDi
   public static abstract int MessageId { get; }
   public static abstract string MessageName { get; }
 
+  public ref CRecipientFilter Recipients { get; }
+
   /// <summary>
-  /// Sends the net message to the specified players.
-  /// </summary>
-  /// <param name="filter">The recipient filter.</param>
-  public void Send(CRecipientFilter filter);
+  /// Sends the net message with current recipient filter.
+  public void Send();
 
   /// <summary>
   /// Sends the net message to all players.

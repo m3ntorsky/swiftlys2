@@ -56,6 +56,7 @@ public struct CRecipientFilter
 
     public void AddAllPlayers()
     {
+        RecipientsMask = 0xFFFFFFFFFFFFFFFF;
         // @todo: When playermanager will be implemeneted, iterate through all the 64 players and if they're online and are authorized, add them here
     }
 

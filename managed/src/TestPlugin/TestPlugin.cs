@@ -105,9 +105,11 @@ public class TestPlugin : BasePlugin {
   [Command("tt2")]
   public void TestCommand2(ICommandContext context)
   {
-    _Core.NetMessage.Send<CUserMessageTextMsg>((msg, filter) => {
+    _Core.NetMessage.Send<CUserMessageTextMsg>(msg => {
       msg.Accessor.Add("param", "ABC");
-      filter.AddRecipient(0);
+      msg.Dest = 3;
+      msg.Recipients.AddAllPlayers();
+      
     }); 
   }
 
@@ -129,11 +131,11 @@ public class TestPlugin : BasePlugin {
   //   return HookResult.Continue;
   // }
 
-  // [ServerNetMessageHandler]
-  // public HookResult TestServerNetMessageHandler(CMsgSosStartSoundEvent msg, CRecipientFilter filter) {
-  //   Console.WriteLine($"TestPlugin ServerNetMessageHandler: {msg.SoundeventHash}");
-  //   return HookResult.Continue;
-  // }
+  [ServerNetMessageHandler]
+  public HookResult TestServerNetMessageHandler(CMsgSosStartSoundEvent msg) {
+    Console.WriteLine($"TestPlugin ServerNetMessageHandler: {msg.SoundeventHash}");
+    return HookResult.Continue;
+  }
 
   public override void Unload() {
     Console.WriteLine("TestPlugin unloaded");

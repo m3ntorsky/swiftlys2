@@ -12,7 +12,7 @@ public interface INetMessageService {
   /// <param name="msg">The net message to handle.</param>
   /// <param name="filter">The recipient filter for the net message.</param>
   /// <returns>The hook result.</returns>
-  delegate HookResult ServerNetMessageHandler<T>(T msg, CRecipientFilter filter) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable;
+  delegate HookResult ServerNetMessageHandler<T>(T msg) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable;
 
   /// <summary>
   /// The handler to handle net messages that are sent from the client to the server.
@@ -65,25 +65,9 @@ public interface INetMessageService {
   public T Create<T>() where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable;
 
   /// <summary>
-  /// Sends a net message to all players.
+  /// Sends a net message to players with configured recipient filter.
   /// </summary>
   /// <typeparam name="T">Net message type.</typeparam>
-  /// <param name="configureMessage">The action to configure the net message.</param>
+  /// <param name="configureMessage">The action to configure the net message and recipient filter.</param>
   public void Send<T>(Action<T> configureMessage) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable;
-
-
-  /// <summary>
-  /// Sends a net message to all players with a specific recipient filter.
-  /// </summary>
-  /// <typeparam name="T">Net message type.</typeparam>
-  /// <param name="configureMessage">The action to configure the net message.</param>
-  public void Send<T>(Action<T, CRecipientFilter> configureMessage) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable;
-
-  /// <summary>
-  /// Sends a net message to a specific player.
-  /// </summary>
-  /// <typeparam name="T">Net message type.</typeparam>
-  /// <param name="playerId">The player ID to send the net message to.</param>
-  /// <param name="configureMessage">The action to configure the net message.</param>
-  public void SendToPlayer<T>(int playerId, Action<T> configureMessage) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable;
 }

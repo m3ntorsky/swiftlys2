@@ -9,6 +9,10 @@ internal class NetMessage<T> : TypedProtobuf<T>, INativeHandle, IDisposable wher
 
   private NetMessageAllocableNativeHandle? _allocatedHandle;
 
+  private CRecipientFilter _filter = new();
+
+  public ref CRecipientFilter Recipients { get => ref _filter; }
+
   /*
 
   Evil hack to convert a CNetMessagePB<>* to google::protobuf::Message*
@@ -37,25 +41,23 @@ internal class NetMessage<T> : TypedProtobuf<T>, INativeHandle, IDisposable wher
     }
   }
 
-  public void Send(CRecipientFilter filter) {
+  public void Send() {
     CheckIsManuallyAllocated();
-    NativeNetMessages.SendMessageToPlayers(_allocatedHandle!.GetHandle(), T.MessageId, filter.ToMask());
+    NativeNetMessages.SendMessageToPlayers(_allocatedHandle!.GetHandle(), T.MessageId, _filter.ToMask());
   }
 
   public void SendToAllPlayers()
   {
     CheckIsManuallyAllocated();
-    CRecipientFilter filter = new();
-    filter.AddAllPlayers();
-    NativeNetMessages.SendMessageToPlayers(_allocatedHandle!.GetHandle(), T.MessageId, filter.ToMask());
+    _filter.AddAllPlayers();
+    NativeNetMessages.SendMessageToPlayers(_allocatedHandle!.GetHandle(), T.MessageId, _filter.ToMask());
   }
 
   public void SendToPlayer(int playerId)
   {
     CheckIsManuallyAllocated();
-    CRecipientFilter filter = new();
-    filter.AddRecipient(playerId);
-    NativeNetMessages.SendMessageToPlayers(_allocatedHandle!.GetHandle(), T.MessageId, filter.ToMask());
+    _filter.AddRecipient(playerId);
+    NativeNetMessages.SendMessageToPlayers(_allocatedHandle!.GetHandle(), T.MessageId, _filter.ToMask());
   }
 
 }

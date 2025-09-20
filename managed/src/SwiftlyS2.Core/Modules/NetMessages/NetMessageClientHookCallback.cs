@@ -4,6 +4,7 @@ using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Extensions;
 using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.NetMessages;
+using SwiftlyS2.Shared.ProtobufDefinitions;
 
 namespace SwiftlyS2.Core.NetMessages;
 
@@ -80,9 +81,9 @@ internal class NetMessageServerHookCallback<T> : NetMessageHookCallback where T 
       {
         var msg = T.Wrap(pMessage, false);
         var mask = pPlayerMask.Read<ulong>();
-        CRecipientFilter filter = CRecipientFilter.FromMask(mask);
-        _callback(msg, filter);
-        pPlayerMask.Write(filter.ToMask());
+        msg.Recipients.RecipientsMask = mask;
+        _callback(msg);
+        pPlayerMask.Write(msg.Recipients.ToMask());
         return true;
       } catch (Exception e) {
         _logger.LogError(e, "Error in net message server hook callback for {MessageType}", typeof(T).Name);

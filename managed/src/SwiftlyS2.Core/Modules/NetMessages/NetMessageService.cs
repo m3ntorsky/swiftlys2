@@ -85,26 +85,8 @@ internal class NetMessageService : INetMessageService, IDisposable {
     var handle = AllocateNetMessage(T.MessageId);
     var message = T.Wrap(handle, true);
     configureMessage(message);
-    CRecipientFilter filter = new();
-    filter.AddAllPlayers();
-    NativeNetMessages.SendMessageToPlayers(handle, T.MessageId, filter.ToMask());
-  }
-
-  public void Send<T>(Action<T, CRecipientFilter> configureMessage) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
-    var handle = AllocateNetMessage(T.MessageId);
-    var message = T.Wrap(handle, true);
-    CRecipientFilter filter = new();
-    configureMessage(message, filter);
-    NativeNetMessages.SendMessageToPlayers(handle, T.MessageId, filter.ToMask());
-  }
-
-  public void SendToPlayer<T>(int playerId, Action<T> configureMessage) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
-    var handle = AllocateNetMessage(T.MessageId);
-    var message = T.Wrap(handle, true);
-    configureMessage(message);
-    CRecipientFilter filter = new();
-    filter.AddRecipient(playerId);
-    NativeNetMessages.SendMessageToPlayers(handle, T.MessageId, filter.ToMask());
+    Console.WriteLine("MASK : "+message.Recipients.ToMask());
+    NativeNetMessages.SendMessageToPlayers(handle, T.MessageId, message.Recipients.ToMask());
   }
 
   public void Dispose() {
