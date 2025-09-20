@@ -95,16 +95,122 @@ public enum CollisionGroup: byte
     MaxAllowed = 64
 }
 
+public enum InteractionLayer: sbyte
+{
+    ContentsSolid = 0,
+    ContentsHitbox,
+    ContentsTrigger,
+    ContentsSky,
+    FirstUser,
+    ContentsPlayerClip = FirstUser,
+    ContentsNpcClip,
+    ContentsBlockLos,
+    ContentsBlockLight,
+    ContentsLadder,
+    ContentsPickup,
+    ContentsBlockSound,
+    ContentsNoDraw,
+    ContentsWindow,
+    ContentsPassBullets,
+    ContentsWorldGeometry,
+    ContentsWater,
+    ContentsSlime,
+    ContentsTouchAll,
+    ContentsPlayer,
+    ContentsNpc,
+    ContentsDebris,
+    ContentsPhysicsProp,
+    ContentsNavIgnore,
+    ContentsNavLocalIgnore,
+    ContentsPostProcessingVolume,
+    ContentsUnusedLayer3,
+    ContentsCarriedObject,
+    ContentsPushaway,
+    ContentsServerEntityOnClient,
+    ContentsCarriedWeapon,
+    ContentsStaticLevel,
+    FirstModSpecific,
+    ContentsCsgoTeam1 = FirstModSpecific,
+    ContentsCsgoTeam2,
+    ContentsCsgoGrenadeClip,
+    ContentsCsgoDroneClip,
+    ContentsCsgoMoveable,
+    ContentsCsgoOpaque,
+    ContentsCsgoMonster,
+    ContentsCsgoUnusedLayer,
+    ContentsCsgoThrownGrenade,
+    NotFound = -1,
+    MaxAllowed = 64,
+}
+
+[Flags]
+public enum MaskTrace: ulong
+{
+    Empty = 0ul,
+    Solid = 1ul << InteractionLayer.ContentsSolid,
+    Hitbox = 1ul << InteractionLayer.ContentsHitbox,
+    Trigger = 1ul << InteractionLayer.ContentsTrigger,
+    Sky = 1ul << InteractionLayer.ContentsSky,
+    PlayerClip = 1ul << InteractionLayer.ContentsPlayerClip,
+    NpcClip = 1ul << InteractionLayer.ContentsNpcClip,
+    BlockLos = 1ul << InteractionLayer.ContentsBlockLos,
+    BlockLight = 1ul << InteractionLayer.ContentsBlockLight,
+    Ladder = 1ul << InteractionLayer.ContentsLadder,
+    Pickup = 1ul << InteractionLayer.ContentsPickup,
+    BlockSound = 1ul << InteractionLayer.ContentsBlockSound,
+    NoDraw = 1ul << InteractionLayer.ContentsNoDraw,
+    Window = 1ul << InteractionLayer.ContentsWindow,
+    PassBullets = 1ul << InteractionLayer.ContentsPassBullets,
+    WorldGeometry = 1ul << InteractionLayer.ContentsWorldGeometry,
+    Water = 1ul << InteractionLayer.ContentsWater,
+    Slime = 1ul << InteractionLayer.ContentsSlime,
+    TouchAll = 1ul << InteractionLayer.ContentsTouchAll,
+    Player = 1ul << InteractionLayer.ContentsPlayer,
+    Npc = 1ul << InteractionLayer.ContentsNpc,
+    Debris = 1ul << InteractionLayer.ContentsDebris,
+    PhysicsProp = 1ul << InteractionLayer.ContentsPhysicsProp,
+    NavIgnore = 1ul << InteractionLayer.ContentsNavIgnore,
+    NavLocalIgnore = 1ul << InteractionLayer.ContentsNavLocalIgnore,
+    PostProcessingVolume = 1ul << InteractionLayer.ContentsPostProcessingVolume,
+    UnusedLayer3 = 1ul << InteractionLayer.ContentsUnusedLayer3,
+    CarriedObject = 1ul << InteractionLayer.ContentsCarriedObject,
+    Pushaway = 1ul << InteractionLayer.ContentsPushaway,
+    ServerEntityOnClient = 1ul << InteractionLayer.ContentsServerEntityOnClient,
+    CarriedWeapon = 1ul << InteractionLayer.ContentsCarriedWeapon,
+    StaticLevel = 1ul << InteractionLayer.ContentsStaticLevel,
+    CsgoTeam1 = 1ul << InteractionLayer.ContentsCsgoTeam1,
+    CsgoTeam2 = 1ul << InteractionLayer.ContentsCsgoTeam2,
+    CsgoGrenadeClip = 1ul << InteractionLayer.ContentsCsgoGrenadeClip,
+    CsgoDroneClip = 1ul << InteractionLayer.ContentsCsgoDroneClip,
+    CsgoMoveable = 1ul << InteractionLayer.ContentsCsgoMoveable,
+    CsgoOpaque = 1ul << InteractionLayer.ContentsCsgoOpaque,
+    CsgoMonster = 1ul << InteractionLayer.ContentsCsgoMonster,
+    CsgoUnusedLayer = 1ul << InteractionLayer.ContentsCsgoUnusedLayer,
+    CsgoThrownGrenade = 1ul << InteractionLayer.ContentsCsgoThrownGrenade
+};
+
+[Flags]
+public enum RnQueryObjectSet: byte
+{
+    Static = 1 << 0,
+    Keyframed = 1 << 1,
+    Dynamic = 1 << 2,
+    Locatable = 1 << 3,
+
+    AllGameEntities = Keyframed | Dynamic | Locatable,
+    All = Static | AllGameEntities,
+};
+
 [StructLayout(LayoutKind.Sequential)]
 public unsafe struct RnQueryShapeAttr_t
 {
-    public ulong InteractsWith;
-    public ulong InteractsExclude;
-    public ulong InteractsAs;
+    public MaskTrace InteractsWith;
+    public MaskTrace InteractsExclude;
+    public MaskTrace InteractsAs;
     public fixed uint EntityIdsToIgnore[2];
     public fixed uint OwnerIdsToIgnore[2];
     public fixed ushort HierarchyIds[2];
-    public byte ObjectSetMask;
+    public RnQueryObjectSet ObjectSetMask;
     public CollisionGroup CollisionGroup;
 
     private byte data;
