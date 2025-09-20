@@ -80,6 +80,9 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     CommandService.ParseFromObject(instance);
     GameEventService.ParseFromObject(instance);
     NetMessageService.ParseFromObject(instance);
+    if (instance is BasePlugin plugin) {
+      this.Parse(plugin);
+    }
   }
 
   public void Dispose() {

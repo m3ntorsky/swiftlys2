@@ -23,6 +23,10 @@ public class TestConfig {
 
 public class TestPlugin : BasePlugin {
 
+  [SwiftlyInject]
+  [NotNull]
+  private static ISwiftlyCore? _Core = null!;
+
   public override string PluginId => "testplugin";
 
   public override string PluginName => "Test Plugin";
@@ -37,16 +41,9 @@ public class TestPlugin : BasePlugin {
     // Use plugin-specific services here if needed
   }
 
-  private ISwiftlyCore _Core { get; set; }
-
   public override void Load(ISwiftlyCore core) {
-    _Core = core;
-
-    core.Event.OnTick += () => {
-      Console.WriteLine("TestPlugin on tick");
-    };
-
-    var root = core.Configuration
+    // _Core = core;
+    var root = _Core.Configuration
       .InitializeJson<TestConfig>("test.jsonc")
       .Configure(builder => {
         builder.AddJsonFile("test.jsonc", optional: false, reloadOnChange: true);
