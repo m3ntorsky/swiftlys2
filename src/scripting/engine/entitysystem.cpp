@@ -153,6 +153,14 @@ void* Bridge_EntitySystem_GetEntitySystem()
     return entsystem->GetEntitySystem();
 }
 
+
+void* Bridge_EntitySystem_GetFirstActiveEntity()
+{
+    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    return entsystem->GetEntitySystem()->m_EntityList.m_pFirstActiveEntity;
+}
+
+
 bool Bridge_EntitySystem_EntityHandleIsValid(uint32 ihandle)
 {
     CEntityHandle handle(ihandle);
@@ -195,3 +203,4 @@ DEFINE_NATIVE("EntitySystem.GetEntitySystem", Bridge_EntitySystem_GetEntitySyste
 DEFINE_NATIVE("EntitySystem.EntityHandleIsValid", Bridge_EntitySystem_EntityHandleIsValid);
 DEFINE_NATIVE("EntitySystem.EntityHandleGet", Bridge_EntitySystem_EntityHandleGet);
 DEFINE_NATIVE("EntitySystem.GetEntityHandleFromEntity", Bridge_EntitySystem_GetEntityHandleFromEntity);
+DEFINE_NATIVE("EntitySystem.GetFirstActiveEntity", Bridge_EntitySystem_GetFirstActiveEntity);

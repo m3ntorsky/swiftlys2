@@ -72,16 +72,22 @@ public class TestPlugin : BasePlugin {
 
   [Command("tt")]
   public void TestCommand(ICommandContext context) {
-    kv = new();
-    kv.SetString("test", "SAFE");
+    // kv = new();
+    // kv.SetString("test", "SAFE");
 
-    _Core.Logger.LogInformation("!@#");
 
-    _Core.Logger.LogInformation(_Core.GameData.GetSignature("CEntityInstance::AcceptInput").ToString());
 
-    entity = _Core.EntitySystem.CreateEntityByDesignerName<CPointWorldText>("point_worldtext");
-    entity.DispatchSpawn(kv);
-    Console.WriteLine("Spawned entity with keyvalues");
+    // _Core.Logger.LogInformation("!@#");
+
+    // _Core.Logger.LogInformation(_Core.GameData.GetSignature("CEntityInstance::AcceptInput").ToString());
+
+    // entity = _Core.EntitySystem.CreateEntityByDesignerName<CPointWorldText>("point_worldtext");
+    // entity.DispatchSpawn(kv);
+    // Console.WriteLine("Spawned entity with keyvalues");
+
+    _Core.EntitySystem.GetAllEntitiesByClass<CVoteController>().ToList().ForEach((entity) => {
+      Console.WriteLine(entity.Entity.DesignerName.Value);
+    });
   }
 
   [Command("tt2")]

@@ -1,5 +1,6 @@
 using System.Buffers;
 using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Microsoft.Extensions.Logging;
@@ -18,6 +19,9 @@ using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Core.Services;
 
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+internal delegate nint DispatchSpawnHook(nint entity, nint kv);
+
 internal class TestService {
 
   private ILogger<TestService> _Logger { get; init; }
@@ -35,7 +39,21 @@ internal class TestService {
     Test();
   }
 
-  
+  private DispatchSpawnHook callback;
+
+  private DispatchSpawnHook callback2;
+
+
+  public T SetCallback<T>(nint hook, Func<Func<T>, T> callbackGetter) where T : Delegate
+  {
+    return callbackGetter(() => {
+      var originalPtr = NativeHooks.GetHookOriginal(hook);
+      var original = Marshal.GetDelegateForFunctionPointer<T>(originalPtr);
+      return original;
+    });
+
+  }
+
 
   public void Test()
   {
@@ -50,6 +68,32 @@ internal class TestService {
     // } catch (Exception e) {
     //   _Logger.LogError(e, "");
     // }
+
+
+
+    // var addr = _Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
+    // _Logger.LogInformation("addr: " + addr);
+    // var hook = NativeHooks.AllocateHook();
+    // List<Delegate> hooks = new();
+
+    // var callback = SetCallback<DispatchSpawnHook>(hook, (originalFuncGetter) =>
+    // {
+    //   return (nint entity, nint kv) =>
+    //   {
+    //     Console.WriteLine("DispatchSpawnHook " + entity);
+    //     var originalFunc = originalFuncGetter();
+    //     originalFunc(entity, kv);
+    //     return 0;
+    //   };
+    // });
+
+    // var callbackAddr = Marshal.GetFunctionPointerForDelegate(callback);
+    // NativeHooks.SetHook(hook, addr, callbackAddr);
+    // NativeHooks.EnableHook(hook);
+
+
+
+
 
     _Core.GameEvent.HookPre<EventPlayerTeam>((eventObj) =>
     {

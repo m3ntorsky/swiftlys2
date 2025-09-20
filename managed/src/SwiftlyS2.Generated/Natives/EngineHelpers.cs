@@ -98,11 +98,6 @@ internal static class NativeEngineHelpers {
     return ret;
   }
   }
-  private unsafe static delegate* unmanaged<nint> _FirstActiveEntity;
-  public unsafe static nint FirstActiveEntity() {
-    var ret = _FirstActiveEntity();
-    return ret;
-  }
   private unsafe static delegate* unmanaged<byte*, void> _SendMessageToConsole;
   public unsafe static void SendMessageToConsole(string msg) {
     var pool = ArrayPool<byte>.Shared;

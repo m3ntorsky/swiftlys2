@@ -117,14 +117,6 @@ void* Bridge_EngineHelpers_FindGameSystemByName(const char* name)
     return CBaseGameSystemFactory::GetGlobalPtrByName(name);
 }
 
-void* Bridge_EngineHelpers_FirstActiveEntity()
-{
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
-    if (!entsystem) return nullptr;
-
-    return entsystem->GetEntitySystem()->m_EntityList.m_pFirstActiveEntity;
-}
-
 void Bridge_EngineHelpers_SendMessageToConsole(const char* message)
 {
     g_SwiftlyCore.SendConsoleMessage(message);
@@ -138,5 +130,4 @@ DEFINE_NATIVE("EngineHelpers.ExecuteCommand", Bridge_EngineHelpers_ExecuteComman
 DEFINE_NATIVE("EngineHelpers.GetServerCurrentTime", Bridge_EngineHelpers_GetServerCurrentTime);
 DEFINE_NATIVE("EngineHelpers.GetServerTickCount", Bridge_EngineHelpers_GetServerTickCount);
 DEFINE_NATIVE("EngineHelpers.FindGameSystemByName", Bridge_EngineHelpers_FindGameSystemByName);
-DEFINE_NATIVE("EngineHelpers.FirstActiveEntity", Bridge_EngineHelpers_FirstActiveEntity);
 DEFINE_NATIVE("EngineHelpers.SendMessageToConsole", Bridge_EngineHelpers_SendMessageToConsole);

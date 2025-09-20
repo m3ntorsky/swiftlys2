@@ -29,4 +29,25 @@ public interface IEntitySystemService {
   /// <returns>Game rules entity. Nullable.</returns>
   public CCSGameRules? GetGameRules();
 
+  /// <summary>
+  /// Get all entities.
+  /// </summary>
+  /// <returns>All entities.</returns>
+  public IEnumerable<CEntityInstance> GetAllEntities();
+
+  /// <summary>
+  /// Get all entities by class.
+  /// </summary>
+  /// <typeparam name="T">Entity type.</typeparam>
+  /// <returns>All entities by class.</returns>
+  public IEnumerable<T> GetAllEntitiesByClass<T>() where T : class, ISchemaClass<T>;
+
+  /// <summary>
+  /// Get all entities by designer name, and cast to type T.
+  /// </summary>
+  /// <typeparam name="T">Entity type.</typeparam>
+  /// <param name="designerName">Designer name.</param>
+  /// <returns>All entities by designer name.</returns>
+  public IEnumerable<T> GetAllEntitiesByDesignerName<T>(string designerName) where T : class, ISchemaClass<T>;
+
 }

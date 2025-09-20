@@ -288,4 +288,9 @@ internal static class NativeEntitySystem {
     var ret = _GetEntityHandleFromEntity(entity);
     return ret;
   }
+  private unsafe static delegate* unmanaged<nint> _GetFirstActiveEntity;
+  public unsafe static nint GetFirstActiveEntity() {
+    var ret = _GetFirstActiveEntity();
+    return ret;
+  }
 }

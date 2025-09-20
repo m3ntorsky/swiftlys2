@@ -8,5 +8,4 @@ void ExecuteCommand = string command
 float GetServerCurrentTime = void
 int32 GetServerTickCount = void // simulation tick
 ptr FindGameSystemByName = string name
-ptr FirstActiveEntity = void
 void SendMessageToConsole = string msg

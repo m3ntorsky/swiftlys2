@@ -8,7 +8,6 @@ internal class NetMessageAllocableNativeHandle : AllocableNativeHandle {
   }
 
   protected override bool Free() {
-    Console.WriteLine("FREE NET MESSAGE");
     NativeNetMessages.DeallocateNetMessage(GetHandle());
     return true;
   }

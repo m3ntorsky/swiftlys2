@@ -25,3 +25,4 @@ ptr GetEntitySystem = void
 bool EntityHandleIsValid = uint32 handle
 ptr EntityHandleGet = uint32 handle
 uint32 GetEntityHandleFromEntity = ptr entity
+ptr GetFirstActiveEntity = void
