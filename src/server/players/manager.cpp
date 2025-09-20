@@ -23,6 +23,7 @@
 #include <core/bridge/metamod.h>
 #include <core/entrypoint.h>
 
+SH_DECL_EXTERN3_void(IServerGameDLL, GameFrame, SH_NOATTRIB, 0, bool, bool, bool);
 SH_DECL_EXTERN6(IServerGameClients, ClientConnect, SH_NOATTRIB, 0, bool, CPlayerSlot, const char*, uint64_t, const char*, bool, CBufferString*);
 SH_DECL_EXTERN6_void(IServerGameClients, OnClientConnected, SH_NOATTRIB, 0, CPlayerSlot, const char*, uint64_t, const char*, const char*, bool);
 SH_DECL_EXTERN5_void(IServerGameClients, ClientDisconnect, SH_NOATTRIB, 0, CPlayerSlot, ENetworkDisconnectionReason, const char*, uint64_t, const char*);
@@ -37,10 +38,12 @@ void CPlayerManager::Initialize()
     }
 
     auto gameclients = g_ifaceService.FetchInterface<IServerGameClients>(INTERFACEVERSION_SERVERGAMECLIENTS);
+    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
 
     SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientConnect, gameclients, this, &CPlayerManager::ClientConnect, false);
     SH_ADD_HOOK_MEMFUNC(IServerGameClients, OnClientConnected, gameclients, this, &CPlayerManager::OnClientConnected, false);
     SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientDisconnect, gameclients, this, &CPlayerManager::ClientDisconnect, true);
+    SH_ADD_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CPlayerManager::GameFrame, true);
 }
 
 void CPlayerManager::Shutdown() {
@@ -52,10 +55,21 @@ void CPlayerManager::Shutdown() {
     delete[] g_Players;
 
     auto gameclients = g_ifaceService.FetchInterface<IServerGameClients>(INTERFACEVERSION_SERVERGAMECLIENTS);
+    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
 
     SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, ClientConnect, gameclients, this, &CPlayerManager::ClientConnect, false);
     SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, OnClientConnected, gameclients, this, &CPlayerManager::OnClientConnected, false);
     SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, ClientDisconnect, gameclients, this, &CPlayerManager::ClientDisconnect, true);
+    SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CPlayerManager::GameFrame, true);
+}
+
+void CPlayerManager::GameFrame(bool simulate, bool first, bool last)
+{
+    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+
+    for (int i = 0; i < 64; i++)
+        if (playerMask & (1ULL << i))
+            playermanager->GetPlayer(i)->Think();
 }
 
 bool CPlayerManager::ClientConnect(CPlayerSlot slot, const char* pszName, uint64_t xuid, const char* pszNetworkID, bool unk1, CBufferString* pRejectReason)

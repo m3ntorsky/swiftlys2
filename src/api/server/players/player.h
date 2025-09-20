@@ -78,6 +78,8 @@ public:
     virtual void PerformCommand(const std::string& command) = 0;
     virtual std::string GetIPAddress() = 0;
     virtual void Kick(const std::string& sReason, ENetworkDisconnectionReason uReason) = 0;
+
+    virtual void Think() = 0;
 };
 
 #endif

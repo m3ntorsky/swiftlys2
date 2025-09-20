@@ -58,6 +58,7 @@ public:
     virtual void PerformCommand(const std::string& command) override;
     virtual std::string GetIPAddress() override;
     virtual void Kick(const std::string& sReason, ENetworkDisconnectionReason uReason) override;
+    virtual void Think() override;
 private:
     int m_iPlayerId;
     bool m_bAuthorized;
