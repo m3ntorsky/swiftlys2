@@ -37,5 +37,4 @@ public partial interface CEntityInstance {
   /// <summary>
   /// Despawn the entity.
   public void Despawn();
-
 }

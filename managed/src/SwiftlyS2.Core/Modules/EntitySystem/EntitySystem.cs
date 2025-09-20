@@ -5,10 +5,7 @@ using SwiftlyS2.Shared.Schemas;
 using SwiftlyS2.Core.Extensions;
 using SwiftlyS2.Core.SchemaDefinitions;
 using SwiftlyS2.Shared.EntitySystem;
-using System;
-using System.Collections.Generic;
 using System.Collections.Frozen;
-using System.Linq;
 
 namespace SwiftlyS2.Core.EntitySystem;
 
