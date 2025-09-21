@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="gamedata/**/*;templates/**/*;localizations/**/*;manifest.json">
+    <Content Include="resources/gamedata/**/*;resources/templates/**/*;resources/translations/**/*;manifest.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
