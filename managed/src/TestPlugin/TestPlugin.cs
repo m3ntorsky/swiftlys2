@@ -36,7 +36,6 @@ public class TestPlugin : BasePlugin {
   }
 
   public override void Load() {
-
     // _Core = core;
     // var root = _Core.Configuration
     //   .InitializeJson<TestConfig>("test.jsonc") // generate addons/swiftly/configs/xxx/test.jsonc by type TestConfig if not exists
@@ -51,19 +50,19 @@ public class TestPlugin : BasePlugin {
 
     // throw new Exception("TestPlugin loaded");
 
-    // var thread = new Thread(() =>
-    //     {
-    //       Thread.Sleep(1000);
-    //       Console.WriteLine("后台线程即将抛出异常");
-    //       throw new Exception("后台线程未捕获异常");
-    //     });
+    var thread = new Thread(() =>
+        {
+          Thread.Sleep(1000);
+          Console.WriteLine("throwing in another thread");
+          throw new Exception();
+        });
 
     Core.Logger.LogInformation("TestPlugin loaded");
 
-    // thread.Start();
+    thread.Start();
 
     Task.Run(async () => {
-      await Task.Delay(1000);
+      await Task.Delay(5000);
       Core.Logger.LogInformation("TestPlugin loaded");
       throw new Exception("TestPlugin loaded");
     });

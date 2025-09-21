@@ -13,17 +13,13 @@ public abstract class BasePlugin : IPlugin {
 
     AppDomain.CurrentDomain.UnhandledException += (sender, e) =>
     {
-      Core.Logger.LogCritical(e.ExceptionObject as Exception, "CRITICAL: Unhandled exception in plugin.");
-    };
-
-    AppDomain.CurrentDomain.FirstChanceException += (sender, e) =>
-    {
-      Core.Logger.LogCritical(e.Exception, "CRITICAL: First chance exception in plugin.");
+      Core.Logger.LogCritical(e.ExceptionObject as Exception, "CRITICAL: Unhandled exception in plugin. Aborting.");
     };
 
     TaskScheduler.UnobservedTaskException += (sender, e) =>
     {
-      Core.Logger.LogCritical(e.Exception, "CRITICAL: Unobserved task exception in plugin.");
+      Core.Logger.LogCritical(e.Exception, "CRITICAL: Unobserved task exception in plugin. Aborting.");
+      e.SetObserved();
     };
   }
 
