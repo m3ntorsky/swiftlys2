@@ -1,5 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
-using SwiftlyS2.Core.Managers;
+using SwiftlyS2.Core.Plugins;
 
 namespace SwiftlyS2.Core.Hosting;
 

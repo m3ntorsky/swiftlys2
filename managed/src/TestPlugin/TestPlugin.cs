@@ -63,7 +63,7 @@ public class TestPlugin : BasePlugin {
 
 
     CUtlStringToken token = new("hello");
-    Console.WriteLine($"Hash: {token.HashCode}");
+    Console.WriteLine($"2");
   }
 
   CEntityKeyValues kv { get; set; }
@@ -166,11 +166,12 @@ public class TestPlugin : BasePlugin {
   // }
 
   [ServerNetMessageHandler]
-  public HookResult TestServerNetMessageHandler(CCSUsrMsg_SendPlayerLoadout msg) {
+  public HookResult TestServerNetMessageHandler(CCSUsrMsg_SendPlayerItemDrops msg) {
+
     Console.WriteLine("FIRED");
-    foreach(var item in msg.Loadout) {
-      Console.WriteLine($"TestPlugin ServerNetMessageHandler: {item.EconItem.Defindex}");
-    }
+    // foreach(var item in msg.Accessor) {
+    //   Console.WriteLine($"TestPlugin ServerNetMessageHandler: {item.EconItem.Defindex}");
+    // }
     return HookResult.Continue;
   }
 

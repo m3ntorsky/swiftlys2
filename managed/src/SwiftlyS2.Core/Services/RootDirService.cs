@@ -11,4 +11,8 @@ internal class RootDirService {
   public string CombineRoot(string path) {
     return Path.Combine(GetRoot(), path);
   }
+
+  public string GetPluginsRoot() {
+    return CombineRoot("plugins");
+  }
 }

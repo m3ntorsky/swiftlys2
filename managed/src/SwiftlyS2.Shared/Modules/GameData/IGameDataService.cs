@@ -31,6 +31,11 @@ public interface IGameDataService {
   /// <returns>Whether the offset exists.</returns>
   bool HasOffset(string offsetName);
 
+  /// <summary>
+  /// Get an offset by name.
+  /// </summary>
+  /// <param name="offsetName">Offset name defined in `offsets.jsonc` file.</param>
+  /// <returns>The offset.</returns>
   nint GetOffset(string offsetName);
 
   /// <summary>
