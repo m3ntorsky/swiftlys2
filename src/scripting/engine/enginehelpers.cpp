@@ -18,6 +18,7 @@
 
 #include <api/interfaces/manager.h>
 #include <api/shared/files.h>
+#include <api/shared/string.h>
 
 #include <core/entrypoint.h>
 #include <scripting/scripting.h>
@@ -119,7 +120,7 @@ void* Bridge_EngineHelpers_FindGameSystemByName(const char* name)
 
 void Bridge_EngineHelpers_SendMessageToConsole(const char* message)
 {
-    g_SwiftlyCore.SendConsoleMessage(message);
+    g_SwiftlyCore.SendConsoleMessage(TerminalProcessColor(message));
 }
 
 DEFINE_NATIVE("EngineHelpers.GetServerIP", Bridge_EngineHelpers_GetServerIP);
