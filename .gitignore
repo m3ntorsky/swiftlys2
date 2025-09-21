@@ -1,5 +1,6 @@
 # Temporary files
 devtool/temp/
+devtool/
 
 # Build outputs
 build/
