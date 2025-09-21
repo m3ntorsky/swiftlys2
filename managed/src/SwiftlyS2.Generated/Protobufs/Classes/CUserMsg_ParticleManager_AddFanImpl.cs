@@ -61,4 +61,28 @@ internal class CUserMsg_ParticleManager_AddFanImpl : TypedProtobuf<CUserMsg_Part
   public float CurveMaxDist
   { get => Accessor.GetFloat("curve_max_dist"); set => Accessor.SetFloat("curve_max_dist", value); }
 
+
+  public uint FanType
+  { get => Accessor.GetUInt32("fan_type"); set => Accessor.SetUInt32("fan_type", value); }
+
+
+  public float ConeStartRadius
+  { get => Accessor.GetFloat("cone_start_radius"); set => Accessor.SetFloat("cone_start_radius", value); }
+
+
+  public float ConeEndRadius
+  { get => Accessor.GetFloat("cone_end_radius"); set => Accessor.SetFloat("cone_end_radius", value); }
+
+
+  public float ConeLength
+  { get => Accessor.GetFloat("cone_length"); set => Accessor.SetFloat("cone_length", value); }
+
+
+  public uint EntityHandle
+  { get => Accessor.GetUInt32("entity_handle"); set => Accessor.SetUInt32("entity_handle", value); }
+
+
+  public string AttachmentName
+  { get => Accessor.GetString("attachment_name"); set => Accessor.SetString("attachment_name", value); }
+
 }

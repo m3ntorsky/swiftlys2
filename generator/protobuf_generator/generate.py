@@ -185,6 +185,7 @@ def get_field_template(field: ast.Field):
     params["$CSTYPE$"] = field.type.removeprefix(".")
     if field.cardinality == ast.FieldCardinality.REPEATED:
       print("WTF")
+      print(field)
       exit(0)
 
     return format_template(ENUM_FIELD_TEMPLATE, params), format_template(INTERFACE_FIELD_TEMPLATE, params)

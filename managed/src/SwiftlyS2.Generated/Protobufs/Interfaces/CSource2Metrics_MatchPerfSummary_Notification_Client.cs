@@ -27,4 +27,7 @@ public interface CSource2Metrics_MatchPerfSummary_Notification_Client : ITypedPr
 
   public ulong Steamid { get; set; }
 
+
+  public IProtobufRepeatedFieldSubMessageType<CMsgSource2PerfIntervalSample> PerfSamples { get; }
+
 }

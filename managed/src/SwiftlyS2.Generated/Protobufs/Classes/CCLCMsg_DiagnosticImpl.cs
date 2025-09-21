@@ -29,4 +29,8 @@ internal class CCLCMsg_DiagnosticImpl : NetMessage<CCLCMsg_Diagnostic>, CCLCMsg_
   public CMsgSource2NetworkFlowQuality UpstreamFlow
   { get => new CMsgSource2NetworkFlowQualityImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "upstream_flow"), false); }
 
+
+  public IProtobufRepeatedFieldSubMessageType<CMsgSource2PerfIntervalSample> PerfSamples
+  { get => new ProtobufRepeatedFieldSubMessageType<CMsgSource2PerfIntervalSample>(Accessor, "perf_samples"); }
+
 }

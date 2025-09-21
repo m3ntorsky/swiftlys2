@@ -45,4 +45,10 @@ public interface CMsgSource2SystemSpecs : ITypedProtobuf<CMsgSource2SystemSpecs>
 
   public uint GpuTextureMemorySizeMb { get; set; }
 
+
+  public uint BackbufferWidth { get; set; }
+
+
+  public uint BackbufferHeight { get; set; }
+
 }

@@ -26,6 +26,10 @@ internal class CSource2Metrics_MatchPerfSummary_NotificationImpl : TypedProtobuf
   { get => Accessor.GetUInt32("server_build_id"); set => Accessor.SetUInt32("server_build_id", value); }
 
 
+  public uint ServerPopid
+  { get => Accessor.GetUInt32("server_popid"); set => Accessor.SetUInt32("server_popid", value); }
+
+
   public CMsgSource2VProfLiteReport ServerProfile
   { get => new CMsgSource2VProfLiteReportImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "server_profile"), false); }
 

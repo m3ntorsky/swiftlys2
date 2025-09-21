@@ -43,6 +43,7 @@ public class TestPlugin : BasePlugin {
   }
 
   public override void Load(ISwiftlyCore core) {
+
     // _Core = core;
     var root = _Core.Configuration
       .InitializeJson<TestConfig>("test.jsonc")

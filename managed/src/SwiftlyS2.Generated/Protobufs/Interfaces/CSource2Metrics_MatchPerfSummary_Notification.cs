@@ -19,6 +19,9 @@ public interface CSource2Metrics_MatchPerfSummary_Notification : ITypedProtobuf<
   public uint ServerBuildId { get; set; }
 
 
+  public uint ServerPopid { get; set; }
+
+
   public CMsgSource2VProfLiteReport ServerProfile { get; }
 
 

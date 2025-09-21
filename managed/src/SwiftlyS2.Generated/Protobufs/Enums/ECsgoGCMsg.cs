@@ -110,4 +110,5 @@ public enum ECsgoGCMsg
   k_EMsgGCCStrike15_v2_PremierSeasonSummary = 9224,
   k_EMsgGCCStrike15_v2_RequestRecurringMissionSchedule = 9225,
   k_EMsgGCCStrike15_v2_RecurringMissionSchema = 9226,
+  k_EMsgGCCStrike15_v2_VolatileItemClaimReward = 9227,
 }

@@ -129,4 +129,7 @@ public interface CUserMsg_ParticleManager : ITypedProtobuf<CUserMsg_ParticleMana
 
   public CUserMsg_ParticleManager_SetParticleClusterGrowth SetParticleClusterGrowth { get; }
 
+
+  public CUserMsg_ParticleManager_RemoveFan RemoveFan { get; }
+
 }

@@ -61,4 +61,12 @@ internal class CMsgSource2SystemSpecsImpl : TypedProtobuf<CMsgSource2SystemSpecs
   public uint GpuTextureMemorySizeMb
   { get => Accessor.GetUInt32("gpu_texture_memory_size_mb"); set => Accessor.SetUInt32("gpu_texture_memory_size_mb", value); }
 
+
+  public uint BackbufferWidth
+  { get => Accessor.GetUInt32("backbuffer_width"); set => Accessor.SetUInt32("backbuffer_width", value); }
+
+
+  public uint BackbufferHeight
+  { get => Accessor.GetUInt32("backbuffer_height"); set => Accessor.SetUInt32("backbuffer_height", value); }
+
 }

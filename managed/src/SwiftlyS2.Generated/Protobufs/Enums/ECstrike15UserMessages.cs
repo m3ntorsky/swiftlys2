@@ -38,7 +38,6 @@ public enum ECstrike15UserMessages
   CS_UM_MatchEndConditions = 334,
   CS_UM_DisconnectToLobby = 335,
   CS_UM_PlayerStatsUpdate = 336,
-  CS_UM_WarmupHasEnded = 338,
   CS_UM_ClientInfo = 339,
   CS_UM_XRankGet = 340,
   CS_UM_XRankUpd = 341,
@@ -57,7 +56,6 @@ public enum ECstrike15UserMessages
   CS_UM_MarkAchievement = 357,
   CS_UM_MatchStatsUpdate = 358,
   CS_UM_ItemDrop = 359,
-  CS_UM_GlowPropTurnOff = 360,
   CS_UM_SendPlayerItemDrops = 361,
   CS_UM_RoundBackupFilenames = 362,
   CS_UM_SendPlayerItemFound = 363,
@@ -81,4 +79,5 @@ public enum ECstrike15UserMessages
   CS_UM_CounterStrafe = 385,
   CS_UM_DamagePrediction = 386,
   CS_UM_RecurringMissionSchema = 387,
+  CS_UM_SendPlayerLoadout = 388,
 }

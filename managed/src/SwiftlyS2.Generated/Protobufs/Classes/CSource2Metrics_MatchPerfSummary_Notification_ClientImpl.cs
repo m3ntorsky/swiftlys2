@@ -37,4 +37,8 @@ internal class CSource2Metrics_MatchPerfSummary_Notification_ClientImpl : TypedP
   public ulong Steamid
   { get => Accessor.GetUInt64("steamid"); set => Accessor.SetUInt64("steamid", value); }
 
+
+  public IProtobufRepeatedFieldSubMessageType<CMsgSource2PerfIntervalSample> PerfSamples
+  { get => new ProtobufRepeatedFieldSubMessageType<CMsgSource2PerfIntervalSample>(Accessor, "perf_samples"); }
+
 }

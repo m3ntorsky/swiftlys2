@@ -45,4 +45,22 @@ public interface CUserMsg_ParticleManager_AddFan : ITypedProtobuf<CUserMsg_Parti
 
   public float CurveMaxDist { get; set; }
 
+
+  public uint FanType { get; set; }
+
+
+  public float ConeStartRadius { get; set; }
+
+
+  public float ConeEndRadius { get; set; }
+
+
+  public float ConeLength { get; set; }
+
+
+  public uint EntityHandle { get; set; }
+
+
+  public string AttachmentName { get; set; }
+
 }

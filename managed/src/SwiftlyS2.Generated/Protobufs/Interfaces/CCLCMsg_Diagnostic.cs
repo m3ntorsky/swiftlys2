@@ -26,4 +26,7 @@ public interface CCLCMsg_Diagnostic : ITypedProtobuf<CCLCMsg_Diagnostic>, INetMe
 
   public CMsgSource2NetworkFlowQuality UpstreamFlow { get; }
 
+
+  public IProtobufRepeatedFieldSubMessageType<CMsgSource2PerfIntervalSample> PerfSamples { get; }
+
 }
