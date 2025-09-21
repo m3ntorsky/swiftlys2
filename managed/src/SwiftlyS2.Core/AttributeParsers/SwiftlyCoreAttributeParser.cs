@@ -6,9 +6,9 @@ using SwiftlyS2.Shared.Plugins;
 namespace SwiftlyS2.Core.AttributeParsers;
 
 internal static class SwiftlyCoreAttributeParser {
-  public static void Parse(this ISwiftlyCore self, BasePlugin plugin) {
+  public static void Parse(this ISwiftlyCore self, Type t) {
 
-    var assembly = plugin.GetType().Assembly;
+    var assembly = t.Assembly;
     var types = assembly.GetTypes();
     foreach (var type in types) {
       var fields = type.GetFields(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);

@@ -24,9 +24,8 @@ public class TestConfig {
 
 public class TestPlugin : BasePlugin {
 
-  [SwiftlyInject]
-  [NotNull]
-  private static ISwiftlyCore? _Core = null!;
+  public TestPlugin(ISwiftlyCore core) : base(core) {
+  }
 
   public override void ConfigureSharedServices(IServiceCollection sharedServices) {
     // Register plugin-specific services here if needed
@@ -36,17 +35,37 @@ public class TestPlugin : BasePlugin {
     // Use plugin-specific services here if needed
   }
 
-  public override void Load(ISwiftlyCore core) {
-
+  public override void Load() {
     // _Core = core;
-    var root = _Core.Configuration
-      .InitializeJson<TestConfig>("test.jsonc")
-      .Configure(builder => {
-        builder.AddJsonFile("test.jsonc", optional: false, reloadOnChange: true);
-      })
-      .Root;
+    // var root = _Core.Configuration
+    //   .InitializeJson<TestConfig>("test.jsonc") // generate addons/swiftly/configs/xxx/test.jsonc by type TestConfig if not exists
+    //   .InitializeByTemplate("test2.jsonc", "test2.template.jsonc") 
+    //   // copy addons/swiftly/plugins/xxx/templates/test2.template.jsonc to addons/swiftly/configs/xxx/test2.jsonc if not exists
+    //   .Configure(builder => {
+    //     builder.AddJsonFile("test.jsonc", optional: false, reloadOnChange: true);
+    //   })
+    //   .Root;
 
-    var config = new TestConfig();
+    // var config = new TestConfig();
+
+    // throw new Exception("TestPlugin loaded");
+
+    var thread = new Thread(() =>
+        {
+          Thread.Sleep(1000);
+          Console.WriteLine("throwing in another thread");
+          throw new Exception();
+        });
+
+    Core.Logger.LogInformation("TestPlugin loaded");
+
+    thread.Start();
+
+    Task.Run(async () => {
+      await Task.Delay(5000);
+      Core.Logger.LogInformation("TestPlugin loaded");
+      throw new Exception("TestPlugin loaded");
+    });
 
 
     using CEntityKeyValues kv = new();
@@ -79,18 +98,18 @@ public class TestPlugin : BasePlugin {
     // entity.DispatchSpawn(kv);
     // Console.WriteLine("Spawned entity with keyvalues");
 
-    var cvar = _Core.ConVar.Find<bool>("sv_cheats")!;
+    var cvar = Core.ConVar.Find<bool>("sv_cheats")!;
     Console.WriteLine(cvar);
     Console.WriteLine(cvar.Value);
-    var cvar2 = _Core.ConVar.Find<bool>("sv_autobunnyhopping")!;
+    var cvar2 = Core.ConVar.Find<bool>("sv_autobunnyhopping")!;
     Console.WriteLine(cvar2);
     Console.WriteLine(cvar2.Value);
 
-    var cvar3 = _Core.ConVar.Create<string>("sw_test_cvar", "Test cvar", "ABCDEFG");
+    var cvar3 = Core.ConVar.Create<string>("sw_test_cvar", "Test cvar", "ABCDEFG");
     Console.WriteLine(cvar3);
     Console.WriteLine(cvar3.Value);
 
-    var cvar4 = _Core.ConVar.Find<bool>("r_drawworld")!;
+    var cvar4 = Core.ConVar.Find<bool>("r_drawworld")!;
 
     cvar2.ReplicateToClient(0, true);
 
@@ -106,8 +125,8 @@ public class TestPlugin : BasePlugin {
   [Command("h1")]
   public void TestCommand2(ICommandContext context)
   {
-    var dispatchspawn = _Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
-    _Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) => {
+    var dispatchspawn = Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
+    Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) => {
       return (nint pEntity, nint pKV) => {
         Console.WriteLine("TestPlugin DispatchSpawn " + order++);
         return next()(pEntity, pKV);
@@ -120,8 +139,8 @@ public class TestPlugin : BasePlugin {
   [Command("h2")]
   public void TestCommand3(ICommandContext context)
   {
-    var dispatchspawn = _Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
-    _hookId = _Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) =>
+    var dispatchspawn = Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
+    _hookId = Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) =>
     {
       return (nint pEntity, nint pKV) =>
       {
@@ -130,7 +149,7 @@ public class TestPlugin : BasePlugin {
       };
     });
 
-    _Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) =>
+    Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) =>
     {
       return (nint pEntity, nint pKV) =>
       {
@@ -144,13 +163,13 @@ public class TestPlugin : BasePlugin {
   [Command("tt3")]
   public void TestCommand33(ICommandContext context) {
 
-    var entity = _Core.EntitySystem.CreateEntity<CPointWorldText>();
+    var entity = Core.EntitySystem.CreateEntity<CPointWorldText>();
     entity.DispatchSpawn();
   }
 
   [Command("tt4")]
   public void TestCommand4(ICommandContext context) {
-    _Core.Hook.Unhook(_hookId);
+    Core.Hook.Unhook(_hookId);
   }
 
   // [GameEventHandler(HookMode.Pre)]

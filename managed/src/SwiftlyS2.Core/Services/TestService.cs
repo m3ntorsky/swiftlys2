@@ -161,6 +161,8 @@ internal class TestService {
     //   return HookResult.Continue;
     // });
 
+    // NativeTest.Test();
+
     Task.Run(async () =>
     {
       while (true)
@@ -172,19 +174,19 @@ internal class TestService {
 
           _ProfileService.StartRecording("TestService");
 
-          var pRules = (nint)NativeTest.Test();
-          _Logger.LogInformation("pPlayer: "+ pRules.ToString());
-          if (pRules == nint.Zero)
-          {
-            continue;
-          }
+          // var pRules = (nint)NativeTest.Test();
+          // _Logger.LogInformation("pPlayer: "+ pRules.ToString());
+          // if (pRules == nint.Zero)
+          // {
+          //   continue;
+          // }
 
 
-          CCSPlayerController ent = new CCSPlayerControllerImpl(pRules);
+          // CCSPlayerController ent = new CCSPlayerControllerImpl(pRules);
 
-          Console.WriteLine(ent.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin);
-          ent.Clan.Value = "testtt";
-          ent.ClanUpdated();
+          // Console.WriteLine(ent.PlayerPawn.Value?.CBodyComponent?.SceneNode?.AbsOrigin);
+          // ent.Clan.Value = "testtt";
+          // ent.ClanUpdated();
 
             // _Core.GameEvent.FireToPlayer<EventShowSurvivalRespawnStatus>(0, eventObj => {
             //   eventObj.Duration = 10;
