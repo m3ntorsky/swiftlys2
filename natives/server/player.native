@@ -15,3 +15,4 @@ string GetIPAddress = int32 playerid
 void Kick = int32 playerid, string reason, int32 gamereason
 void ShouldBlockTransmitEntity = int32 playerid, int32 entityidx, bool shouldBlockTransmit
 bool IsTransmitEntityBlocked = int32 playerid, int32 entityidx
+void ClearTransmitEntityBlocked = int32 playerid

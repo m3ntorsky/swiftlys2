@@ -23,10 +23,26 @@
 #include <core/bridge/metamod.h>
 #include <core/entrypoint.h>
 
+class EntityCheckTransmit
+{
+public:
+    CBitVec<MAX_EDICTS>* m_pTransmitEntity;	// 0
+    CBitVec<MAX_EDICTS>* m_pUnkBitVec;		// 8
+    CBitVec<MAX_EDICTS>* m_pUnkBitVec2;		// 16
+    CBitVec<MAX_EDICTS>* m_pUnkBitVec3;		// 24
+    CBitVec<MAX_EDICTS>* m_pTransmitAlways; // 32
+    CUtlVector<int> m_unk40;				// 40
+    vis_info_t* m_VisInfo;					// 64
+    [[maybe_unused]] byte m_unk72[0x1F8];	// 72
+    CEntityIndex m_nClientEntityIndex;		// 576
+    bool m_bFullUpdate;						// 580
+};
+
 SH_DECL_EXTERN3_void(IServerGameDLL, GameFrame, SH_NOATTRIB, 0, bool, bool, bool);
+SH_DECL_EXTERN5_void(IServerGameClients, ClientDisconnect, SH_NOATTRIB, 0, CPlayerSlot, ENetworkDisconnectionReason, const char*, uint64_t, const char*);
 SH_DECL_EXTERN6(IServerGameClients, ClientConnect, SH_NOATTRIB, 0, bool, CPlayerSlot, const char*, uint64_t, const char*, bool, CBufferString*);
 SH_DECL_EXTERN6_void(IServerGameClients, OnClientConnected, SH_NOATTRIB, 0, CPlayerSlot, const char*, uint64_t, const char*, const char*, bool);
-SH_DECL_EXTERN5_void(IServerGameClients, ClientDisconnect, SH_NOATTRIB, 0, CPlayerSlot, ENetworkDisconnectionReason, const char*, uint64_t, const char*);
+SH_DECL_EXTERN7_void(ISource2GameEntities, CheckTransmit, SH_NOATTRIB, 0, CCheckTransmitInfo**, int, CBitVec<16384>&, CBitVec<16384>&, const Entity2Networkable_t**, const uint16_t*, int);
 
 uint64_t playerMask = 0;
 
@@ -39,11 +55,13 @@ void CPlayerManager::Initialize()
 
     auto gameclients = g_ifaceService.FetchInterface<IServerGameClients>(INTERFACEVERSION_SERVERGAMECLIENTS);
     auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
+    auto gameentities = g_ifaceService.FetchInterface<ISource2GameEntities>(SOURCE2GAMEENTITIES_INTERFACE_VERSION);
 
     SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientConnect, gameclients, this, &CPlayerManager::ClientConnect, false);
     SH_ADD_HOOK_MEMFUNC(IServerGameClients, OnClientConnected, gameclients, this, &CPlayerManager::OnClientConnected, false);
     SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientDisconnect, gameclients, this, &CPlayerManager::ClientDisconnect, true);
     SH_ADD_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CPlayerManager::GameFrame, true);
+    SH_ADD_HOOK_MEMFUNC(ISource2GameEntities, CheckTransmit, gameentities, this, &CPlayerManager::CheckTransmit, true);
 }
 
 void CPlayerManager::Shutdown() {
@@ -56,11 +74,35 @@ void CPlayerManager::Shutdown() {
 
     auto gameclients = g_ifaceService.FetchInterface<IServerGameClients>(INTERFACEVERSION_SERVERGAMECLIENTS);
     auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
+    auto gameentities = g_ifaceService.FetchInterface<ISource2GameEntities>(SOURCE2GAMEENTITIES_INTERFACE_VERSION);
 
     SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, ClientConnect, gameclients, this, &CPlayerManager::ClientConnect, false);
     SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, OnClientConnected, gameclients, this, &CPlayerManager::OnClientConnected, false);
     SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, ClientDisconnect, gameclients, this, &CPlayerManager::ClientDisconnect, true);
     SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CPlayerManager::GameFrame, true);
+    SH_REMOVE_HOOK_MEMFUNC(ISource2GameEntities, CheckTransmit, gameentities, this, &CPlayerManager::CheckTransmit, true);
+}
+
+void CPlayerManager::CheckTransmit(CCheckTransmitInfo** ppInfoList, int infoCount, CBitVec<16384>& unionTransmitEdicts, CBitVec<16384>&, const Entity2Networkable_t** pNetworkables, const uint16_t* pEntityIndicies, int nEntities)
+{
+    static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    for (int i = 0; i < infoCount; i++)
+    {
+        auto& pInfo = (EntityCheckTransmit*&)ppInfoList[i];
+        int playerid = pInfo->m_nClientEntityIndex.Get();
+        if (playerMask & (1ULL << playerid) == 0) continue;
+        auto player = playermanager->GetPlayer(playerid);
+
+        auto& blockedBits = player->GetBlockedTransmittingBits();
+
+        uint32_t* base = pInfo->m_pTransmitEntity->Base();
+        uint32_t* blockedBase = blockedBits.Base();
+
+        for (int i = pInfo->m_pTransmitEntity->GetNumDWords() - 1; i >= 0; i--) {
+            uint32_t& word = base[i];
+            word &= ~blockedBase[i];
+        }
+    }
 }
 
 void CPlayerManager::GameFrame(bool simulate, bool first, bool last)

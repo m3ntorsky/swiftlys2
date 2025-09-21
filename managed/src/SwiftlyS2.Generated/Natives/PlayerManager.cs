@@ -67,4 +67,13 @@ internal static class NativePlayerManager {
       throw;
     }
   }
+  private unsafe static delegate* unmanaged<void> _ClearAllBlockedTransmitEntity;
+  public unsafe static void ClearAllBlockedTransmitEntity() {
+    try {
+    _ClearAllBlockedTransmitEntity();
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
 }
