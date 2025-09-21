@@ -6,6 +6,9 @@
 
 SwiftlyS2 is a powerful scripting framework for Source 2 games, built in C++ with C# plugin support. It provides developers with a comprehensive API to create plugins and extensions for Source 2-based games like Counter-Strike 2.
 
+> [!warning]
+> The framework is still under development.
+
 ## Features
 
 - **C# Plugin Development**: Write plugins in C# with full .NET support
