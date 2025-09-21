@@ -43,7 +43,26 @@ void Bridge_PlayerManager_SendMessage(int kind, const char* message)
     playerManager->SendMsg((MessageType)kind, message);
 }
 
+void Bridge_PlayerManager_ShouldBlockTransmitEntity(int entityidx, bool shouldBlockTransmit)
+{
+    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    for (int i = 0; i < playerManager->GetPlayerCap(); i++) {
+        auto player = playerManager->GetPlayer(i);
+        if (!player) continue;
+
+        if (i + 1 == entityidx) continue;
+
+        auto& bv = player->GetBlockedTransmittingBits();
+
+        if (shouldBlockTransmit)
+            bv.Set(entityidx);
+        else
+            bv.Clear(entityidx);
+    }
+}
+
 DEFINE_NATIVE("PlayerManager.IsPlayerOnline", Bridge_PlayerManager_IsPlayerOnline);
 DEFINE_NATIVE("PlayerManager.GetPlayerCount", Bridge_PlayerManager_GetPlayerCount);
 DEFINE_NATIVE("PlayerManager.GetPlayerCap", Bridge_PlayerManager_GetPlayerCap);
 DEFINE_NATIVE("PlayerManager.SendMessage", Bridge_PlayerManager_SendMessage);
+DEFINE_NATIVE("PlayerManager.ShouldBlockTransmitEntity", Bridge_PlayerManager_ShouldBlockTransmitEntity);

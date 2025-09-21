@@ -58,6 +58,9 @@ public:
     virtual void PerformCommand(const std::string& command) override;
     virtual std::string GetIPAddress() override;
     virtual void Kick(const std::string& sReason, ENetworkDisconnectionReason uReason) override;
+
+    virtual CBitVec<MAX_EDICTS>& GetBlockedTransmittingBits() override;
+
     virtual void Think() override;
 private:
     int m_iPlayerId;
@@ -66,6 +69,8 @@ private:
     ListenOverride m_uListenMap[66] = {};
     VoiceFlagValue m_uVoiceFlags = VoiceFlagValue::Speak_Normal;
     CPlayerBitVec m_bvSelfMutes = {};
+
+    CBitVec<MAX_EDICTS> m_bvBlockedTransmittingEntities = {};
 
     uint64_t m_uPressedButtons = 0;
 

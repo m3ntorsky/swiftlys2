@@ -79,6 +79,9 @@ public:
     virtual std::string GetIPAddress() = 0;
     virtual void Kick(const std::string& sReason, ENetworkDisconnectionReason uReason) = 0;
 
+    /** Transmit Stuff **/
+    virtual CBitVec<MAX_EDICTS>& GetBlockedTransmittingBits() = 0;
+
     virtual void Think() = 0;
 };
 

@@ -154,8 +154,8 @@ internal static class NativePlayer {
       throw;
     }
   }
-  private unsafe static delegate* unmanaged<byte*, int, void> _Kick;
-  public unsafe static void Kick(string reason, int gamereason) {
+  private unsafe static delegate* unmanaged<int, byte*, int, void> _Kick;
+  public unsafe static void Kick(int playerid, string reason, int gamereason) {
     try {
     var pool = ArrayPool<byte>.Shared;
     var reasonLength = Encoding.UTF8.GetByteCount(reason);
@@ -163,10 +163,29 @@ internal static class NativePlayer {
     Encoding.UTF8.GetBytes(reason, reasonBuffer);
     reasonBuffer[reasonLength] = 0;
     fixed (byte* reasonBufferPtr = reasonBuffer) {
-        _Kick(reasonBufferPtr, gamereason);
+        _Kick(playerid, reasonBufferPtr, gamereason);
     pool.Return(reasonBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
+  private unsafe static delegate* unmanaged<int, int, bool, void> _ShouldBlockTransmitEntity;
+  public unsafe static void ShouldBlockTransmitEntity(int playerid, int entityidx, bool shouldBlockTransmit) {
+    try {
+    _ShouldBlockTransmitEntity(playerid, entityidx, shouldBlockTransmit);
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
+  private unsafe static delegate* unmanaged<int, int, bool> _IsTransmitEntityBlocked;
+  public unsafe static bool IsTransmitEntityBlocked(int playerid, int entityidx) {
+    try {
+    var ret = _IsTransmitEntityBlocked(playerid, entityidx);
+    return ret;
      } catch (Exception e) {
       Spectre.Console.AnsiConsole.WriteException(e);
       throw;

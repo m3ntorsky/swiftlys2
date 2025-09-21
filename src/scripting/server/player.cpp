@@ -141,6 +141,34 @@ void Bridge_Player_Kick(int playerid, const char* reason, int gamereason)
     player->Kick(reason, (ENetworkDisconnectionReason)gamereason);
 }
 
+void Bridge_Player_ShouldBlockTransmitEntity(int playerid, int entityidx, bool shouldBlockTransmit)
+{
+    if (playerid + 1 == entityidx) return;
+
+    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    auto player = playerManager->GetPlayer(playerid);
+    if (!player) return;
+
+    auto& bv = player->GetBlockedTransmittingBits();
+
+    if (shouldBlockTransmit)
+        bv.Set(entityidx);
+    else
+        bv.Clear(entityidx);
+}
+
+bool Bridge_Player_IsTransmitEntityBlocked(int playerid, int entityidx)
+{
+    if (playerid + 1 == entityidx) return false;
+
+    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    auto player = playerManager->GetPlayer(playerid);
+    if (!player) return false;
+
+    auto& bv = player->GetBlockedTransmittingBits();
+    return bv.IsBitSet(entityidx);
+}
+
 DEFINE_NATIVE("Player.SendMessage", Bridge_Player_SendMessage);
 DEFINE_NATIVE("Player.IsFakeClient", Bridge_Player_IsFakeClient);
 DEFINE_NATIVE("Player.IsAuthorized", Bridge_Player_IsAuthorized);
@@ -154,3 +182,5 @@ DEFINE_NATIVE("Player.GetPressedButtons", Bridge_Player_GetPressedButtons);
 DEFINE_NATIVE("Player.PerformCommand", Bridge_Player_PerformCommand);
 DEFINE_NATIVE("Player.GetIPAddress", Bridge_Player_GetIPAddress);
 DEFINE_NATIVE("Player.Kick", Bridge_Player_Kick);
+DEFINE_NATIVE("Player.ShouldBlockTransmitEntity", Bridge_Player_ShouldBlockTransmitEntity);
+DEFINE_NATIVE("Player.IsTransmitEntityBlocked", Bridge_Player_IsTransmitEntityBlocked);
