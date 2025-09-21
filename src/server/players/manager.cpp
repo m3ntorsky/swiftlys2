@@ -23,6 +23,9 @@
 #include <core/bridge/metamod.h>
 #include <core/entrypoint.h>
 
+#include "cs_usercmd.pb.h"
+#include "usercmd.pb.h"
+
 class EntityCheckTransmit
 {
 public:
@@ -38,13 +41,28 @@ public:
     bool m_bFullUpdate;						// 580
 };
 
+class CUserCmd
+{
+public:
+    [[maybe_unused]] char pad0[0x10];
+    CSGOUserCmdPB cmd;
+    [[maybe_unused]] char pad1[0x38];
+#ifdef _WIN32
+    [[maybe_unused]] char pad2[0x8];
+#endif
+};
+
 SH_DECL_EXTERN3_void(IServerGameDLL, GameFrame, SH_NOATTRIB, 0, bool, bool, bool);
+SH_DECL_EXTERN4_void(IServerGameClients, ClientPutInServer, SH_NOATTRIB, 0, CPlayerSlot, char const*, int, uint64);
 SH_DECL_EXTERN5_void(IServerGameClients, ClientDisconnect, SH_NOATTRIB, 0, CPlayerSlot, ENetworkDisconnectionReason, const char*, uint64_t, const char*);
 SH_DECL_EXTERN6(IServerGameClients, ClientConnect, SH_NOATTRIB, 0, bool, CPlayerSlot, const char*, uint64_t, const char*, bool, CBufferString*);
 SH_DECL_EXTERN6_void(IServerGameClients, OnClientConnected, SH_NOATTRIB, 0, CPlayerSlot, const char*, uint64_t, const char*, const char*, bool);
 SH_DECL_EXTERN7_void(ISource2GameEntities, CheckTransmit, SH_NOATTRIB, 0, CCheckTransmitInfo**, int, CBitVec<16384>&, CBitVec<16384>&, const Entity2Networkable_t**, const uint16_t*, int);
 
 uint64_t playerMask = 0;
+IFunctionHook* g_pProcessUserCmdsHook = nullptr;
+
+void* ProcessUsercmdsHook(void* pController, CUserCmd* cmds, int numcmds, bool paused, float margin);
 
 void CPlayerManager::Initialize()
 {
@@ -60,8 +78,18 @@ void CPlayerManager::Initialize()
     SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientConnect, gameclients, this, &CPlayerManager::ClientConnect, false);
     SH_ADD_HOOK_MEMFUNC(IServerGameClients, OnClientConnected, gameclients, this, &CPlayerManager::OnClientConnected, false);
     SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientDisconnect, gameclients, this, &CPlayerManager::ClientDisconnect, true);
+    SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientPutInServer, gameclients, this, &CPlayerManager::OnClientPutInServer, true);
     SH_ADD_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CPlayerManager::GameFrame, true);
     SH_ADD_HOOK_MEMFUNC(ISource2GameEntities, CheckTransmit, gameentities, this, &CPlayerManager::CheckTransmit, true);
+
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+
+    auto processusercmds = gamedata->GetSignatures()->Fetch("CCSPlayerController::ProcessUserCmd");
+    g_pProcessUserCmdsHook = hooksmanager->CreateFunctionHook();
+
+    g_pProcessUserCmdsHook->SetHookFunction(processusercmds, reinterpret_cast<void*>(ProcessUsercmdsHook));
+    g_pProcessUserCmdsHook->Enable();
 }
 
 void CPlayerManager::Shutdown() {
@@ -79,8 +107,41 @@ void CPlayerManager::Shutdown() {
     SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, ClientConnect, gameclients, this, &CPlayerManager::ClientConnect, false);
     SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, OnClientConnected, gameclients, this, &CPlayerManager::OnClientConnected, false);
     SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, ClientDisconnect, gameclients, this, &CPlayerManager::ClientDisconnect, true);
+    SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, ClientPutInServer, gameclients, this, &CPlayerManager::OnClientPutInServer, true);
     SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CPlayerManager::GameFrame, true);
     SH_REMOVE_HOOK_MEMFUNC(ISource2GameEntities, CheckTransmit, gameentities, this, &CPlayerManager::CheckTransmit, true);
+
+    g_pProcessUserCmdsHook->Disable();
+    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    hooksmanager->DestroyFunctionHook(g_pProcessUserCmdsHook);
+    g_pProcessUserCmdsHook = nullptr;
+}
+
+extern void* g_pOnClientPutInServerCallback;
+
+void CPlayerManager::OnClientPutInServer(CPlayerSlot slot, char const* pszName, int type, uint64 xuid)
+{
+    if (g_pOnClientPutInServerCallback)
+        reinterpret_cast<void(*)(int, int)>(g_pOnClientPutInServerCallback)(slot.Get(), type);
+}
+
+extern void* g_pOnClientProcessUsercmdsCallback;
+
+void* ProcessUsercmdsHook(void* pController, CUserCmd* cmds, int numcmds, bool paused, float margin)
+{
+    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    auto playerid = ((CEntityInstance*)pController)->m_pEntity->m_EHandle.GetEntryIndex() - 1;
+
+    google::protobuf::Message** pMsg = new google::protobuf::Message * [numcmds];
+    for (int i = 0; i < numcmds; i++)
+        pMsg[i] = (google::protobuf::Message*)&cmds[i].cmd;
+
+    if (g_pOnClientProcessUsercmdsCallback)
+        reinterpret_cast<void(*)(int, void*, int, bool, float)>(g_pOnClientProcessUsercmdsCallback)(playerid, pMsg, numcmds, paused, margin);
+
+    delete[] pMsg;
+
+    return reinterpret_cast<void* (*)(void*, CUserCmd*, int, bool, float)>(g_pProcessUserCmdsHook->GetOriginal())(pController, cmds, numcmds, paused, margin);
 }
 
 void CPlayerManager::CheckTransmit(CCheckTransmitInfo** ppInfoList, int infoCount, CBitVec<16384>& unionTransmitEdicts, CBitVec<16384>&, const Entity2Networkable_t** pNetworkables, const uint16_t* pEntityIndicies, int nEntities)
@@ -105,14 +166,20 @@ void CPlayerManager::CheckTransmit(CCheckTransmitInfo** ppInfoList, int infoCoun
     }
 }
 
+extern void* g_pOnGameTickCallback;
+
 void CPlayerManager::GameFrame(bool simulate, bool first, bool last)
 {
     auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+
+    if (g_pOnGameTickCallback) reinterpret_cast<void(*)(bool, bool, bool)>(g_pOnGameTickCallback)(simulate, first, last);
 
     for (int i = 0; i < 64; i++)
         if (playerMask & (1ULL << i))
             playermanager->GetPlayer(i)->Think();
 }
+
+extern void* g_pOnClientConnectCallback;
 
 bool CPlayerManager::ClientConnect(CPlayerSlot slot, const char* pszName, uint64_t xuid, const char* pszNetworkID, bool unk1, CBufferString* pRejectReason)
 {
@@ -120,6 +187,10 @@ bool CPlayerManager::ClientConnect(CPlayerSlot slot, const char* pszName, uint64
     auto playerid = slot.Get();
     auto player = playermanager->RegisterPlayer(playerid);
     player->Initialize(playerid);
+
+    if (g_pOnClientConnectCallback)
+        if (reinterpret_cast<bool(*)(int)>(g_pOnClientConnectCallback)(playerid) == false)
+            RETURN_META_VALUE(MRES_SUPERCEDE, false);
 
     RETURN_META_VALUE(MRES_IGNORED, true);
 }
@@ -138,10 +209,16 @@ void CPlayerManager::OnClientConnected(CPlayerSlot slot, const char* pszName, ui
     }
 }
 
+extern void* g_pOnClientDisconnectCallback;
+
 void CPlayerManager::ClientDisconnect(CPlayerSlot slot, ENetworkDisconnectionReason reason, const char* pszName, uint64_t xuid, const char* pszNetworkID)
 {
     auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto playerid = slot.Get();
+
+    if (g_pOnClientDisconnectCallback)
+        reinterpret_cast<void(*)(int, int)>(g_pOnClientDisconnectCallback)(playerid, reason);
+
     playermanager->UnregisterPlayer(playerid);
 }
 

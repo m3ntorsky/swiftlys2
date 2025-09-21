@@ -133,14 +133,24 @@ bool SwiftlyCore::Unload()
     return true;
 }
 
+std::string current_map = "";
+extern void* g_pOnMapLoadCallback;
+extern void* g_pOnMapUnloadCallback;
+
 void SwiftlyCore::OnMapLoad(std::string map_name)
 {
+    current_map = map_name;
 
+    if (g_pOnMapLoadCallback)
+        reinterpret_cast<void(*)(const char*)>(g_pOnMapLoadCallback)(map_name.c_str());
 }
 
 void SwiftlyCore::OnMapUnload()
 {
+    if (g_pOnMapUnloadCallback)
+        reinterpret_cast<void(*)(const char*)>(g_pOnMapUnloadCallback)(current_map.c_str());
 
+    current_map = "";
 }
 
 void* SwiftlyCore::GetInterface(const std::string& iface_name)

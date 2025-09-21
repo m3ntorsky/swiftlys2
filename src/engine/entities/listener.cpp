@@ -26,12 +26,21 @@
 
 CEntityListener g_entityListener;
 
+extern void* g_pOnEntityCreatedCallback;
+extern void* g_pOnEntityDeletedCallback;
+extern void* g_pOnEntityParentChangedCallback;
+extern void* g_pOnEntitySpawnedCallback;
+
 void CEntityListener::OnEntitySpawned(CEntityInstance* pEntity)
 {
+    if (g_pOnEntitySpawnedCallback)
+        reinterpret_cast<void(*)(void*)>(g_pOnEntitySpawnedCallback)(pEntity);
 }
 
 void CEntityListener::OnEntityParentChanged(CEntityInstance* pEntity, CEntityInstance* pNewParent)
 {
+    if (g_pOnEntityParentChangedCallback)
+        reinterpret_cast<void(*)(void*, void*)>(g_pOnEntityParentChangedCallback)(pEntity, pNewParent);
 }
 
 void EntityAllowHammerID(CEntityInstance* pEntity)
@@ -49,6 +58,9 @@ void CEntityListener::OnEntityCreated(CEntityInstance* pEntity)
         EntityAllowHammerID(pEntity);
     }
 
+    if (g_pOnEntityCreatedCallback)
+        reinterpret_cast<void(*)(void*)>(g_pOnEntityCreatedCallback)(pEntity);
+
     auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
 
     if (std::string(pEntity->GetClassname()) == "cs_gamerules")
@@ -57,4 +69,6 @@ void CEntityListener::OnEntityCreated(CEntityInstance* pEntity)
 
 void CEntityListener::OnEntityDeleted(CEntityInstance* pEntity)
 {
+    if (g_pOnEntityDeletedCallback)
+        reinterpret_cast<void(*)(void*)>(g_pOnEntityDeletedCallback)(pEntity);
 }
