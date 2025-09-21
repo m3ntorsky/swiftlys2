@@ -35,5 +35,37 @@ void* Bridge_MemoryHelpers_GetVirtualTableAddress(const char* binary, const char
     return vtable.RCast<void*>();
 }
 
+std::string BytesToIdaSignature(const unsigned char* data, int size) {
+    static const char* hex = "0123456789ABCDEF";
+    std::string result;
+    result.reserve(size * 3);
+
+    for (int i = 0; i < size; ++i) {
+        if (data[i] == 0x2A) {
+            result.push_back('?');
+        }
+        else {
+            result.push_back(hex[(data[i] >> 4) & 0xF]);
+            result.push_back(hex[data[i] & 0xF]);
+        }
+
+        if (i + 1 < size) {
+            result.push_back(' ');
+        }
+    }
+
+    return result;
+}
+
+void* Bridge_MemoryHelpers_GetAddressBySignature(const char* binary, const char* signature, int len, bool rawBytes)
+{
+    auto bin = DetermineModuleByLibrary(binary);
+    if (!bin.GetModuleBase()) return nullptr;
+
+    auto pattern = bin.FindPattern(rawBytes ? BytesToIdaSignature(reinterpret_cast<const unsigned char*>(signature), len) : signature);
+    return pattern.RCast<void*>();
+}
+
 DEFINE_NATIVE("MemoryHelpers.FetchInterfaceByName", Bridge_MemoryHelpers_FetchInterfaceByName);
 DEFINE_NATIVE("MemoryHelpers.GetVirtualTableAddress", Bridge_MemoryHelpers_GetVirtualTableAddress);
+DEFINE_NATIVE("MemoryHelpers.GetAddressBySignature", Bridge_MemoryHelpers_GetAddressBySignature);

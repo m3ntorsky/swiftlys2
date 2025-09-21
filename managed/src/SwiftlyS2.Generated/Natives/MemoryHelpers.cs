@@ -60,4 +60,32 @@ internal static class NativeMemoryHelpers {
       throw;
     }
   }
+  private unsafe static delegate* unmanaged<byte*, byte*, int, bool, nint> _GetAddressBySignature;
+  public unsafe static nint GetAddressBySignature(string library, string sig, int len, bool rawBytes) {
+    try {
+    var pool = ArrayPool<byte>.Shared;
+    var libraryLength = Encoding.UTF8.GetByteCount(library);
+    var libraryBuffer = pool.Rent(libraryLength + 1);
+    Encoding.UTF8.GetBytes(library, libraryBuffer);
+    libraryBuffer[libraryLength] = 0;
+    fixed (byte* libraryBufferPtr = libraryBuffer) {
+    
+    var sigLength = Encoding.UTF8.GetByteCount(sig);
+    var sigBuffer = pool.Rent(sigLength + 1);
+    Encoding.UTF8.GetBytes(sig, sigBuffer);
+    sigBuffer[sigLength] = 0;
+    fixed (byte* sigBufferPtr = sigBuffer) {
+        var ret = _GetAddressBySignature(libraryBufferPtr, sigBufferPtr, len, rawBytes);
+    pool.Return(libraryBuffer);
+
+    pool.Return(sigBuffer);
+
+    return ret;
+  }
+  }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
 }
