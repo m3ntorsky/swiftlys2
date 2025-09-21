@@ -159,14 +159,18 @@ internal class PluginManager {
       return null;
     }
 
-    var plugin = (BasePlugin)Activator.CreateInstance(pluginType)!;
 
     var core = new SwiftlyCore(context.Manifest.Id, Path.GetDirectoryName(entrypointDll)!, pluginType, _Provider);
 
-    core.Initialize(plugin, pluginType);
+    core.InitializeType(pluginType);
+
+    var plugin = (BasePlugin)Activator.CreateInstance(pluginType, [ core ])!;
+
+    core.InitializeObject(plugin);
+
     
     try {
-      plugin.Load(core);
+      plugin.Load();
     } catch (Exception e) {
       _Logger.LogWarning(e, $"Error loading plugin {entrypointDll}");
       context.Status = PluginStatus.Error;

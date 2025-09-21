@@ -8,7 +8,7 @@ public interface IPlugin {
 
   public void UseSharedServices(IServiceProvider sharedProvider);
 
-  public void Load(ISwiftlyCore core);
+  public void Load();
 
   public void Unload();
 

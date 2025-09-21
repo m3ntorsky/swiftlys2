@@ -14,7 +14,7 @@ public partial class PluginClassName {
       This is an example that shows how to send a net message.
       The msg will be destroyed immediately after being sent.
     */
-    _Core.NetMessage.Send<CUserMessageShake>(msg => {
+    Core.NetMessage.Send<CUserMessageShake>(msg => {
       // Setting fields of the net message.
       msg.Amplitude = 10;
       msg.Duration = 10;
@@ -28,7 +28,7 @@ public partial class PluginClassName {
       You can also create a persistent net message and send it.
       As long as the message is not recycled by GC, you can send it as many times as you want.
     */
-    var message = _Core.NetMessage.Create<CUserMessageShake>();
+    var message = Core.NetMessage.Create<CUserMessageShake>();
     message.Amplitude = 10;
     message.Duration = 10;
     message.Recipients.AddAllPlayers();

@@ -92,14 +92,15 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     Logger = LoggerFactory.CreateLogger(contextType);
   }
 
-  public void Initialize(object instance, Type type)
+  public void InitializeType(Type type) {
+    this.Parse(type);
+  }
+
+  public void InitializeObject(object instance)
   {
     CommandService.ParseFromObject(instance);
     GameEventService.ParseFromObject(instance);
     NetMessageService.ParseFromObject(instance);
-    if (instance is BasePlugin plugin) {
-      this.Parse(plugin);
-    }
   }
 
   public void Dispose() {
