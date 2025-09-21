@@ -12,14 +12,25 @@ internal static class NativeEntitySystem {
   private static int _MainThreadID;
   private unsafe static delegate* unmanaged<nint, nint, void> _Spawn;
   public unsafe static void Spawn(nint entity, nint keyvalues) {
+    try {
     _Spawn(entity, keyvalues);
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, void> _Despawn;
   public unsafe static void Despawn(nint entity) {
+    try {
     _Despawn(entity);
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, nint> _CreateEntityByName;
   public unsafe static nint CreateEntityByName(string name) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var nameLength = Encoding.UTF8.GetByteCount(name);
     var nameBuffer = pool.Rent(nameLength + 1);
@@ -31,9 +42,14 @@ internal static class NativeEntitySystem {
 
     return ret;
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, int, int, void> _AcceptInputInt32;
   public unsafe static void AcceptInputInt32(nint entity, string input, nint activator, nint caller, int value, int outputID) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -44,9 +60,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, uint, int, void> _AcceptInputUInt32;
   public unsafe static void AcceptInputUInt32(nint entity, string input, nint activator, nint caller, uint value, int outputID) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -57,9 +78,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, long, int, void> _AcceptInputInt64;
   public unsafe static void AcceptInputInt64(nint entity, string input, nint activator, nint caller, long value, int outputID) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -70,9 +96,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, ulong, int, void> _AcceptInputUInt64;
   public unsafe static void AcceptInputUInt64(nint entity, string input, nint activator, nint caller, ulong value, int outputID) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -83,9 +114,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, float, int, void> _AcceptInputFloat;
   public unsafe static void AcceptInputFloat(nint entity, string input, nint activator, nint caller, float value, int outputID) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -96,9 +132,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, double, int, void> _AcceptInputDouble;
   public unsafe static void AcceptInputDouble(nint entity, string input, nint activator, nint caller, double value, int outputID) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -109,9 +150,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, bool, int, void> _AcceptInputBool;
   public unsafe static void AcceptInputBool(nint entity, string input, nint activator, nint caller, bool value, int outputID) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -122,9 +168,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, byte*, int, void> _AcceptInputString;
   public unsafe static void AcceptInputString(nint entity, string input, nint activator, nint caller, string value, int outputID) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -144,9 +195,14 @@ internal static class NativeEntitySystem {
 
   }
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, int, float, void> _AddEntityIOEventInt32;
   public unsafe static void AddEntityIOEventInt32(nint entity, string input, nint activator, nint caller, int value, float delay) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -157,9 +213,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, uint, float, void> _AddEntityIOEventUInt32;
   public unsafe static void AddEntityIOEventUInt32(nint entity, string input, nint activator, nint caller, uint value, float delay) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -170,9 +231,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, long, float, void> _AddEntityIOEventInt64;
   public unsafe static void AddEntityIOEventInt64(nint entity, string input, nint activator, nint caller, long value, float delay) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -183,9 +249,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, ulong, float, void> _AddEntityIOEventUInt64;
   public unsafe static void AddEntityIOEventUInt64(nint entity, string input, nint activator, nint caller, ulong value, float delay) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -196,9 +267,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, float, float, void> _AddEntityIOEventFloat;
   public unsafe static void AddEntityIOEventFloat(nint entity, string input, nint activator, nint caller, float value, float delay) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -209,9 +285,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, double, float, void> _AddEntityIOEventDouble;
   public unsafe static void AddEntityIOEventDouble(nint entity, string input, nint activator, nint caller, double value, float delay) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -222,9 +303,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, bool, float, void> _AddEntityIOEventBool;
   public unsafe static void AddEntityIOEventBool(nint entity, string input, nint activator, nint caller, bool value, float delay) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -235,9 +321,14 @@ internal static class NativeEntitySystem {
     pool.Return(inputBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, byte*, nint, nint, byte*, float, void> _AddEntityIOEventString;
   public unsafe static void AddEntityIOEventString(nint entity, string input, nint activator, nint caller, string value, float delay) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
     var inputBuffer = pool.Rent(inputLength + 1);
@@ -257,40 +348,79 @@ internal static class NativeEntitySystem {
 
   }
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, bool> _IsValidEntity;
   public unsafe static bool IsValidEntity(nint entity) {
+    try {
     var ret = _IsValidEntity(entity);
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint> _GetGameRules;
   public unsafe static nint GetGameRules() {
+    try {
     var ret = _GetGameRules();
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint> _GetEntitySystem;
   public unsafe static nint GetEntitySystem() {
+    try {
     var ret = _GetEntitySystem();
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<uint, bool> _EntityHandleIsValid;
   public unsafe static bool EntityHandleIsValid(uint handle) {
+    try {
     var ret = _EntityHandleIsValid(handle);
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<uint, nint> _EntityHandleGet;
   public unsafe static nint EntityHandleGet(uint handle) {
+    try {
     var ret = _EntityHandleGet(handle);
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint, uint> _GetEntityHandleFromEntity;
   public unsafe static uint GetEntityHandleFromEntity(nint entity) {
+    try {
     var ret = _GetEntityHandleFromEntity(entity);
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<nint> _GetFirstActiveEntity;
   public unsafe static nint GetFirstActiveEntity() {
+    try {
     var ret = _GetFirstActiveEntity();
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
 }

@@ -12,6 +12,7 @@ internal static class NativePrecacher {
   private static int _MainThreadID;
   private unsafe static delegate* unmanaged<byte*, void> _AddItem;
   public unsafe static void AddItem(string itemPath) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var itemPathLength = Encoding.UTF8.GetByteCount(itemPath);
     var itemPathBuffer = pool.Rent(itemPathLength + 1);
@@ -22,12 +23,17 @@ internal static class NativePrecacher {
     pool.Return(itemPathBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, bool> _HasItemInList;
   /// <summary>
   /// if the item is in the list of all the items that need to be precached
   /// </summary>
   public unsafe static bool HasItemInList(string itemPath) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var itemPathLength = Encoding.UTF8.GetByteCount(itemPath);
     var itemPathBuffer = pool.Rent(itemPathLength + 1);
@@ -39,9 +45,14 @@ internal static class NativePrecacher {
 
     return ret;
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, bool> _IsItemCached;
   public unsafe static bool IsItemCached(string itemPath) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var itemPathLength = Encoding.UTF8.GetByteCount(itemPath);
     var itemPathBuffer = pool.Rent(itemPathLength + 1);
@@ -53,9 +64,14 @@ internal static class NativePrecacher {
 
     return ret;
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, void> _RemoveItem;
   public unsafe static void RemoveItem(string itemPath) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var itemPathLength = Encoding.UTF8.GetByteCount(itemPath);
     var itemPathBuffer = pool.Rent(itemPathLength + 1);
@@ -66,5 +82,9 @@ internal static class NativePrecacher {
     pool.Return(itemPathBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
 }

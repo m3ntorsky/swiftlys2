@@ -12,6 +12,7 @@ internal static class NativeLogger {
   private static int _MainThreadID;
   private unsafe static delegate* unmanaged<int, byte*, void> _Log;
   public unsafe static void Log(int logType, string message) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var messageLength = Encoding.UTF8.GetByteCount(message);
     var messageBuffer = pool.Rent(messageLength + 1);
@@ -22,9 +23,14 @@ internal static class NativeLogger {
     pool.Return(messageBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, byte*, byte*, void> _LogCategory;
   public unsafe static void LogCategory(int logType, string category, string message) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var categoryLength = Encoding.UTF8.GetByteCount(category);
     var categoryBuffer = pool.Rent(categoryLength + 1);
@@ -44,9 +50,14 @@ internal static class NativeLogger {
 
   }
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, void> _Info;
   public unsafe static void Info(string message) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var messageLength = Encoding.UTF8.GetByteCount(message);
     var messageBuffer = pool.Rent(messageLength + 1);
@@ -57,9 +68,14 @@ internal static class NativeLogger {
     pool.Return(messageBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, void> _Warning;
   public unsafe static void Warning(string message) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var messageLength = Encoding.UTF8.GetByteCount(message);
     var messageBuffer = pool.Rent(messageLength + 1);
@@ -70,9 +86,14 @@ internal static class NativeLogger {
     pool.Return(messageBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, void> _Error;
   public unsafe static void Error(string message) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var messageLength = Encoding.UTF8.GetByteCount(message);
     var messageBuffer = pool.Rent(messageLength + 1);
@@ -83,9 +104,14 @@ internal static class NativeLogger {
     pool.Return(messageBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, void> _Debug;
   public unsafe static void Debug(string message) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var messageLength = Encoding.UTF8.GetByteCount(message);
     var messageBuffer = pool.Rent(messageLength + 1);
@@ -96,9 +122,14 @@ internal static class NativeLogger {
     pool.Return(messageBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, byte*, void> _InfoCategory;
   public unsafe static void InfoCategory(string category, string message) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var categoryLength = Encoding.UTF8.GetByteCount(category);
     var categoryBuffer = pool.Rent(categoryLength + 1);
@@ -118,9 +149,14 @@ internal static class NativeLogger {
 
   }
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, byte*, void> _WarningCategory;
   public unsafe static void WarningCategory(string category, string message) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var categoryLength = Encoding.UTF8.GetByteCount(category);
     var categoryBuffer = pool.Rent(categoryLength + 1);
@@ -140,9 +176,14 @@ internal static class NativeLogger {
 
   }
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, byte*, void> _ErrorCategory;
   public unsafe static void ErrorCategory(string category, string message) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var categoryLength = Encoding.UTF8.GetByteCount(category);
     var categoryBuffer = pool.Rent(categoryLength + 1);
@@ -162,9 +203,14 @@ internal static class NativeLogger {
 
   }
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, byte*, void> _DebugCategory;
   public unsafe static void DebugCategory(string category, string message) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var categoryLength = Encoding.UTF8.GetByteCount(category);
     var categoryBuffer = pool.Rent(categoryLength + 1);
@@ -184,9 +230,14 @@ internal static class NativeLogger {
 
   }
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, byte*, void> _SetLogFile;
   public unsafe static void SetLogFile(int logType, string path) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var pathLength = Encoding.UTF8.GetByteCount(path);
     var pathBuffer = pool.Rent(pathLength + 1);
@@ -197,13 +248,23 @@ internal static class NativeLogger {
     pool.Return(pathBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, bool, void> _ShouldOutputToFile;
   public unsafe static void ShouldOutputToFile(int logType, bool enabled) {
+    try {
     _ShouldOutputToFile(logType, enabled);
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, bool, void> _ShouldColorCategoryInConsole;
   public unsafe static void ShouldColorCategoryInConsole(string category, bool enabled) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var categoryLength = Encoding.UTF8.GetByteCount(category);
     var categoryBuffer = pool.Rent(categoryLength + 1);
@@ -214,9 +275,18 @@ internal static class NativeLogger {
     pool.Return(categoryBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, bool, void> _ShouldOutputToConsole;
   public unsafe static void ShouldOutputToConsole(int logType, bool enabled) {
+    try {
     _ShouldOutputToConsole(logType, enabled);
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
 }

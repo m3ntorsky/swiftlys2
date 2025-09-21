@@ -12,6 +12,7 @@ internal static class NativeTranslations {
   private static int _MainThreadID;
   private unsafe static delegate* unmanaged<byte*, byte*, int, int> _Fetch;
   public unsafe static string Fetch(string key, int playerid) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var keyLength = Encoding.UTF8.GetByteCount(key);
     var keyBuffer = pool.Rent(keyLength + 1);
@@ -31,5 +32,9 @@ internal static class NativeTranslations {
     return retString;
   }
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
 }

@@ -12,7 +12,12 @@ internal static class NativeTest {
   private static int _MainThreadID;
   private unsafe static delegate* unmanaged<nint> _Test;
   public unsafe static nint Test() {
+    try {
     var ret = _Test();
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
 }

@@ -12,14 +12,20 @@ internal static class NativeResmon {
   private static int _MainThreadID;
   private unsafe static delegate* unmanaged<bool> _IsEnabled;
   public unsafe static bool IsEnabled() {
+    try {
     var ret = _IsEnabled();
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, byte*, double, void> _RecordTime;
   /// <summary>
   /// time is milliseconds as float (0.123 for 123 nanoseconds)
   /// </summary>
   public unsafe static void RecordTime(string pluginName, string key, double time) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var pluginNameLength = Encoding.UTF8.GetByteCount(pluginName);
     var pluginNameBuffer = pool.Rent(pluginNameLength + 1);
@@ -39,9 +45,14 @@ internal static class NativeResmon {
 
   }
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, byte*, void> _StartRecording;
   public unsafe static void StartRecording(string pluginName, string key) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var pluginNameLength = Encoding.UTF8.GetByteCount(pluginName);
     var pluginNameBuffer = pool.Rent(pluginNameLength + 1);
@@ -61,9 +72,14 @@ internal static class NativeResmon {
 
   }
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, byte*, void> _StopRecording;
   public unsafe static void StopRecording(string pluginName, string key) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var pluginNameLength = Encoding.UTF8.GetByteCount(pluginName);
     var pluginNameBuffer = pool.Rent(pluginNameLength + 1);
@@ -83,5 +99,9 @@ internal static class NativeResmon {
 
   }
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
 }

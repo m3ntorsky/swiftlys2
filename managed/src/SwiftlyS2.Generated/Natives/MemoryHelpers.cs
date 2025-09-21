@@ -15,6 +15,7 @@ internal static class NativeMemoryHelpers {
   /// supports both internal interface system, but also valve interface system
   /// </summary>
   public unsafe static nint FetchInterfaceByName(string ifaceName) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var ifaceNameLength = Encoding.UTF8.GetByteCount(ifaceName);
     var ifaceNameBuffer = pool.Rent(ifaceNameLength + 1);
@@ -26,9 +27,14 @@ internal static class NativeMemoryHelpers {
 
     return ret;
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, byte*, nint> _GetVirtualTableAddress;
   public unsafe static nint GetVirtualTableAddress(string library, string vtableName) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var libraryLength = Encoding.UTF8.GetByteCount(library);
     var libraryBuffer = pool.Rent(libraryLength + 1);
@@ -49,5 +55,9 @@ internal static class NativeMemoryHelpers {
     return ret;
   }
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
 }

@@ -12,6 +12,7 @@ internal static class NativePlayer {
   private static int _MainThreadID;
   private unsafe static delegate* unmanaged<int, int, byte*, void> _SendMessage;
   public unsafe static void SendMessage(int playerid, int kind, string message) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var messageLength = Encoding.UTF8.GetByteCount(message);
     var messageBuffer = pool.Rent(messageLength + 1);
@@ -22,54 +23,104 @@ internal static class NativePlayer {
     pool.Return(messageBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, bool> _IsFakeClient;
   public unsafe static bool IsFakeClient(int playerid) {
+    try {
     var ret = _IsFakeClient(playerid);
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, bool> _IsAuthorized;
   public unsafe static bool IsAuthorized(int playerid) {
+    try {
     var ret = _IsAuthorized(playerid);
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, uint> _GetConnectedTime;
   public unsafe static uint GetConnectedTime(int playerid) {
+    try {
     var ret = _GetConnectedTime(playerid);
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, ulong> _GetUnauthorizedSteamID;
   public unsafe static ulong GetUnauthorizedSteamID(int playerid) {
+    try {
     var ret = _GetUnauthorizedSteamID(playerid);
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, ulong> _GetSteamID;
   public unsafe static ulong GetSteamID(int playerid) {
+    try {
     var ret = _GetSteamID(playerid);
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, nint> _GetController;
   public unsafe static nint GetController(int playerid) {
+    try {
     var ret = _GetController(playerid);
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, nint> _GetPawn;
   public unsafe static nint GetPawn(int playerid) {
+    try {
     var ret = _GetPawn(playerid);
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, nint> _GetPlayerPawn;
   public unsafe static nint GetPlayerPawn(int playerid) {
+    try {
     var ret = _GetPlayerPawn(playerid);
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, ulong> _GetPressedButtons;
   public unsafe static ulong GetPressedButtons(int playerid) {
+    try {
     var ret = _GetPressedButtons(playerid);
     return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<int, byte*, void> _PerformCommand;
   public unsafe static void PerformCommand(int playerid, string command) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var commandLength = Encoding.UTF8.GetByteCount(command);
     var commandBuffer = pool.Rent(commandLength + 1);
@@ -80,9 +131,14 @@ internal static class NativePlayer {
     pool.Return(commandBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, int, int> _GetIPAddress;
   public unsafe static string GetIPAddress(int playerid) {
+    try {
     var ret = _GetIPAddress(null, playerid);
     var pool = ArrayPool<byte>.Shared;
     var retBuffer = pool.Rent(ret+1);
@@ -93,9 +149,14 @@ internal static class NativePlayer {
 
     return retString;
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, int, void> _Kick;
   public unsafe static void Kick(string reason, int gamereason) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var reasonLength = Encoding.UTF8.GetByteCount(reason);
     var reasonBuffer = pool.Rent(reasonLength + 1);
@@ -106,5 +167,9 @@ internal static class NativePlayer {
     pool.Return(reasonBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
 }

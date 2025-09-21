@@ -216,6 +216,8 @@ def parse_native(lines: list[str]):
             emit(chunks, f"{INDENT}{INDENT}{INDENT}throw new InvalidOperationException(\"This method can only be called from the main thread.\");")
             emit(chunks, f"{INDENT}{INDENT}}}")
 
+        emit(chunks, f"{INDENT}{INDENT}try {{")
+
         marshals: list[tuple[str, str]] = []
         renamed_param: dict[str, str] = {}
         state: dict = {"closing_bracket": 0}
@@ -289,8 +291,14 @@ def parse_native(lines: list[str]):
             emit(chunks, f"{INDENT}{INDENT}return {renamed_ret};")
 
 
-        for _ in range(state["closing_bracket"] + 1):
+        for _ in range(state["closing_bracket"]):
             emit(chunks, f"{INDENT}{"}"}")
+
+        emit(chunks, f"{INDENT}{INDENT} }} catch (Exception e) {{")
+        emit(chunks, f"{INDENT}{INDENT}{INDENT}Spectre.Console.AnsiConsole.WriteException(e);")
+        emit(chunks, f"{INDENT}{INDENT}{INDENT}throw;")
+        emit(chunks, f"{INDENT}{INDENT}}}")
+        emit(chunks, f"{INDENT}}}")
 
     emit(chunks, "}")
 

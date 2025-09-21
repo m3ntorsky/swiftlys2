@@ -12,6 +12,7 @@ internal static class NativePatches {
   private static int _MainThreadID;
   private unsafe static delegate* unmanaged<byte*, void> _Apply;
   public unsafe static void Apply(string patchName) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var patchNameLength = Encoding.UTF8.GetByteCount(patchName);
     var patchNameBuffer = pool.Rent(patchNameLength + 1);
@@ -22,9 +23,14 @@ internal static class NativePatches {
     pool.Return(patchNameBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, void> _Revert;
   public unsafe static void Revert(string patchName) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var patchNameLength = Encoding.UTF8.GetByteCount(patchName);
     var patchNameBuffer = pool.Rent(patchNameLength + 1);
@@ -35,9 +41,14 @@ internal static class NativePatches {
     pool.Return(patchNameBuffer);
 
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
   private unsafe static delegate* unmanaged<byte*, bool> _Exists;
   public unsafe static bool Exists(string patchName) {
+    try {
     var pool = ArrayPool<byte>.Shared;
     var patchNameLength = Encoding.UTF8.GetByteCount(patchName);
     var patchNameBuffer = pool.Rent(patchNameLength + 1);
@@ -49,5 +60,9 @@ internal static class NativePatches {
 
     return ret;
   }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
   }
 }
