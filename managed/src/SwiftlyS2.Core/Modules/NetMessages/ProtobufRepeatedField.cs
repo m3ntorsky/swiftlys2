@@ -110,4 +110,16 @@ internal class ProtobufRepeatedFieldSubMessageType<T> : IProtobufRepeatedFieldSu
   {
     return T.Wrap(_Protobuf.AddNestedMessage(_FieldName), false);
   }
+
+  public IEnumerator<T> GetEnumerator()
+  {
+    for (int i = 0; i < Count; i++) {
+      yield return Get(i);
+    }
+  }
+
+  IEnumerator IEnumerable.GetEnumerator()
+  {
+      return GetEnumerator();
+  }
 }

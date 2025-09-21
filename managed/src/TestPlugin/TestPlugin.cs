@@ -166,8 +166,11 @@ public class TestPlugin : BasePlugin {
   // }
 
   [ServerNetMessageHandler]
-  public HookResult TestServerNetMessageHandler(CMsgSosStartSoundEvent msg) {
-    Console.WriteLine($"TestPlugin ServerNetMessageHandler: {msg.SoundeventHash}");
+  public HookResult TestServerNetMessageHandler(CCSUsrMsg_SendPlayerLoadout msg) {
+    Console.WriteLine("FIRED");
+    foreach(var item in msg.Loadout) {
+      Console.WriteLine($"TestPlugin ServerNetMessageHandler: {item.EconItem.Defindex}");
+    }
     return HookResult.Continue;
   }
 

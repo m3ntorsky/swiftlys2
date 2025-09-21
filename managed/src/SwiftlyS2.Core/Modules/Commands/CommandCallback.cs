@@ -17,9 +17,15 @@ internal abstract class CommandCallbackBase : IDisposable {
 
   public Guid Guid { get; protected init; }
 
-  public required IContextedProfilerService Profiler { get; set; }
+  public IContextedProfilerService Profiler { get; }
 
-  public required ILoggerFactory LoggerFactory { get; set; }
+  public ILoggerFactory LoggerFactory { get; }
+
+  protected CommandCallbackBase(ILoggerFactory loggerFactory, IContextedProfilerService profiler)
+  {
+    LoggerFactory = loggerFactory;
+    Profiler = profiler;
+  }
 
   public abstract void Dispose();
 
@@ -37,9 +43,10 @@ internal class CommandCallback : CommandCallbackBase {
 
   private ILogger<CommandCallback> _logger;
 
-  public CommandCallback(string commandName, bool registerRaw, ICommandService.CommandListener handler)
+  public CommandCallback(string commandName, bool registerRaw, ICommandService.CommandListener handler, ILoggerFactory loggerFactory, IContextedProfilerService profiler)
+    : base(loggerFactory, profiler)
   {
-    _logger = LoggerFactory!.CreateLogger<CommandCallback>();
+    _logger = LoggerFactory.CreateLogger<CommandCallback>();
     Guid = Guid.NewGuid();
 
     CommandName = commandName;
@@ -49,7 +56,7 @@ internal class CommandCallback : CommandCallbackBase {
     _unmanagedCallback = (playerId, argsPtr, commandNamePtr, prefixPtr, slient) => {
       try {
         var category = "CommandCallback::" + CommandName;
-        Profiler!.StartRecording(category);
+        Profiler.StartRecording(category);
         var argsString = Marshal.PtrToStringUTF8(argsPtr)!;
         var commandNameString = Marshal.PtrToStringUTF8(commandNamePtr)!;
         var prefixString = Marshal.PtrToStringUTF8(prefixPtr)!;
@@ -57,7 +64,7 @@ internal class CommandCallback : CommandCallbackBase {
         var args = argsString.Split('\x01');
         var context = new CommandContext(playerId, args, commandNameString, prefixString, slient);
         _handler(context);
-        Profiler!.StopRecording(category);
+        Profiler.StopRecording(category);
       } catch (Exception e) {
         _logger.LogError(e, "Failed to handle command {0}.", commandName);
       } 
@@ -82,9 +89,10 @@ internal class ClientCommandListenerCallback : CommandCallbackBase {
   private ulong _nativeListenerId;
   private ILogger<ClientCommandListenerCallback> _logger;
 
-  public ClientCommandListenerCallback(ICommandService.ClientCommandHandler handler)
+  public ClientCommandListenerCallback(ICommandService.ClientCommandHandler handler, ILoggerFactory loggerFactory, IContextedProfilerService profiler)
+    : base(loggerFactory, profiler)
   {
-    _logger = LoggerFactory!.CreateLogger<ClientCommandListenerCallback>();
+    _logger = LoggerFactory.CreateLogger<ClientCommandListenerCallback>();
     Guid = Guid.NewGuid();
 
     _handler = handler;
@@ -92,10 +100,10 @@ internal class ClientCommandListenerCallback : CommandCallbackBase {
     _unmanagedCallback = (playerId, commandLinePtr) => {
       try {
         var category = "ClientCommandListenerCallback";
-        Profiler!.StartRecording(category);
+        Profiler.StartRecording(category);
         var commandLineString = Marshal.PtrToStringUTF8(commandLinePtr)!;
         var result = _handler(playerId, commandLineString);
-        Profiler!.StopRecording(category);
+        Profiler.StopRecording(category);
         return result;
       } catch (Exception e) {
         _logger.LogError(e, "Failed to handle client command listener.");
@@ -123,9 +131,10 @@ internal class ClientChatListenerCallback : CommandCallbackBase {
   private ulong _nativeListenerId;
   private ILogger<ClientChatListenerCallback> _logger;
 
-  public ClientChatListenerCallback(ICommandService.ClientChatHandler handler) 
+  public ClientChatListenerCallback(ICommandService.ClientChatHandler handler, ILoggerFactory loggerFactory, IContextedProfilerService profiler) 
+    : base(loggerFactory, profiler)
   {
-    _logger = LoggerFactory!.CreateLogger<ClientChatListenerCallback>();
+    _logger = LoggerFactory.CreateLogger<ClientChatListenerCallback>();
     Guid = Guid.NewGuid();
 
     _handler = handler;
@@ -133,10 +142,10 @@ internal class ClientChatListenerCallback : CommandCallbackBase {
     _unmanagedCallback = (playerId, textPtr, teamonly) => {
       try {
         var category = "ClientChatListenerCallback";
-        Profiler!.StartRecording(category);
+        Profiler.StartRecording(category);
         var textString = Marshal.PtrToStringUTF8(textPtr)!;
         var result = _handler(playerId, textString, teamonly);
-        Profiler!.StopRecording(category);
+        Profiler.StopRecording(category);
         return result;
       } catch (Exception e) {
         _logger.LogError(e, "Failed to handle client chat listener.");

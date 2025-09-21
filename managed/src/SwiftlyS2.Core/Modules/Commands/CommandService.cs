@@ -23,10 +23,7 @@ internal class CommandService : ICommandService, IDisposable {
   }
 
   public Guid RegisterCommand(string commandName, ICommandService.CommandListener handler, bool registerRaw = false) {
-    var callback = new CommandCallback(commandName, registerRaw, handler) {
-      LoggerFactory = _LoggerFactory,
-      Profiler = _Profiler,
-    };
+    var callback = new CommandCallback(commandName, registerRaw, handler, _LoggerFactory, _Profiler);
     lock (_lock) {
       _callbacks.Add(callback);
     }
@@ -63,10 +60,7 @@ internal class CommandService : ICommandService, IDisposable {
   }
 
   public void HookClientCommand(ICommandService.ClientCommandHandler handler) {
-    var callback = new ClientCommandListenerCallback(handler) {
-      LoggerFactory = _LoggerFactory,
-      Profiler = _Profiler,
-    };
+    var callback = new ClientCommandListenerCallback(handler, _LoggerFactory, _Profiler);
     lock (_lock) {
       _callbacks.Add(callback);
     }
@@ -85,10 +79,7 @@ internal class CommandService : ICommandService, IDisposable {
   }
 
   public void HookClientChat(ICommandService.ClientChatHandler handler) {
-    var callback = new ClientChatListenerCallback(handler) {
-      LoggerFactory = _LoggerFactory,
-      Profiler = _Profiler,
-    };
+    var callback = new ClientChatListenerCallback(handler, _LoggerFactory, _Profiler);
     lock (_lock) {
       _callbacks.Add(callback);
     }

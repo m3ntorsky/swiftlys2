@@ -22,6 +22,7 @@ using SwiftlyS2.Shared.Convars;
 using SwiftlyS2.Shared.Hooks;
 using SwiftlyS2.Core.Hooks;
 using SwiftlyS2.Shared.Profiler;
+using SwiftlyS2.Core.Profiler;
 
 namespace SwiftlyS2.Core.Services;
 
@@ -65,7 +66,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<EntitySystemService>()
       .AddSingleton<ConVarService>()
       .AddSingleton<HookService>()
-      .AddSingleton<IContextedProfilerService>()
+      .AddSingleton<IContextedProfilerService, ContextedProfilerService>()
 
       .AddLogging(
         builder => {
@@ -86,6 +87,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     GameDataService = _ServiceProvider.GetRequiredService<GameDataService>();
     ConVarService = _ServiceProvider.GetRequiredService<ConVarService>();
     HookService = _ServiceProvider.GetRequiredService<HookService>();
+    ProfilerService = _ServiceProvider.GetRequiredService<IContextedProfilerService>();
 
     Logger = LoggerFactory.CreateLogger(contextType);
   }
@@ -115,5 +117,6 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   IGameDataService ISwiftlyCore.GameData => GameDataService;
   IHookService ISwiftlyCore.Hook => HookService;
   ILogger ISwiftlyCore.Logger => Logger;
+  IContextedProfilerService ISwiftlyCore.Profiler => ProfilerService;
 
 }

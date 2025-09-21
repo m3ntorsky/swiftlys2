@@ -25,11 +25,7 @@ internal class GameEventService : IGameEventService, IDisposable {
   private object _lock = new();
 
   public Guid HookPre<T>(IGameEventService.GameEventHandler<T> callback) where T : IGameEvent<T> {
-    GameEventCallback<T> cb = new(callback, true) {
-      LoggerFactory = _LoggerFactory,
-      Context = _Context,
-      Profiler = _Profiler,
-    };
+    GameEventCallback<T> cb = new(callback, true, _LoggerFactory, _Profiler, _Context);
     lock (_lock) {
       _callbacks.Add(cb);
     }
@@ -37,11 +33,7 @@ internal class GameEventService : IGameEventService, IDisposable {
   }
 
   public Guid HookPost<T>(IGameEventService.GameEventHandler<T> callback) where T : IGameEvent<T> {
-    GameEventCallback<T> cb = new(callback, false) {
-      LoggerFactory = _LoggerFactory,
-      Context = _Context,
-      Profiler = _Profiler,
-    };
+    GameEventCallback<T> cb = new(callback, false, _LoggerFactory, _Profiler, _Context);
     lock (_lock) {
       _callbacks.Add(cb);
     }

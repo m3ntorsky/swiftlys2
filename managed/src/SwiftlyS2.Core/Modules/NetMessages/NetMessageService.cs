@@ -21,10 +21,7 @@ internal class NetMessageService : INetMessageService, IDisposable {
   }
 
   public Guid HookClientMessage<T>(INetMessageService.ClientNetMessageHandler<T> callback) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
-    var hook = new NetMessageClientHookCallback<T>(callback) {
-      Profiler = _profiler,
-      LoggerFactory = _loggerFactory,
-    };
+    var hook = new NetMessageClientHookCallback<T>(callback, _loggerFactory, _profiler);
     lock (_lock) {
       _callbacks.Add(hook);
     }
@@ -32,10 +29,7 @@ internal class NetMessageService : INetMessageService, IDisposable {
   }
 
   public Guid HookServerMessage<T>(INetMessageService.ServerNetMessageHandler<T> callback) where T : ITypedProtobuf<T>, INetMessage<T>, IDisposable {
-    var hook = new NetMessageServerHookCallback<T>(callback) {
-      Profiler = _profiler,
-      LoggerFactory = _loggerFactory,
-    };
+    var hook = new NetMessageServerHookCallback<T>(callback, _loggerFactory, _profiler);
     lock (_lock) {
       _callbacks.Add(hook);
     }

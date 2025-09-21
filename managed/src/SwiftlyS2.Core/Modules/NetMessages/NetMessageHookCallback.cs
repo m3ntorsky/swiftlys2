@@ -21,9 +21,15 @@ internal abstract class NetMessageHookCallback : IDisposable {
 
   public Guid Guid { get; init; }
 
-  public required IContextedProfilerService Profiler { get; set; }
+  public IContextedProfilerService Profiler { get; }
 
-  public required ILoggerFactory LoggerFactory { get; set; }
+  public ILoggerFactory LoggerFactory { get; }
+
+  protected NetMessageHookCallback(ILoggerFactory loggerFactory, IContextedProfilerService profiler)
+  {
+    LoggerFactory = loggerFactory;
+    Profiler = profiler;
+  }
 
   public abstract void Dispose();
 
@@ -38,9 +44,9 @@ internal class NetMessageClientHookCallback<T> : NetMessageHookCallback where T 
   private ILogger<NetMessageClientHookCallback<T>> _logger;
 
 
-  public NetMessageClientHookCallback(INetMessageService.ClientNetMessageHandler<T> callback) {
+  public NetMessageClientHookCallback(INetMessageService.ClientNetMessageHandler<T> callback, ILoggerFactory loggerFactory, IContextedProfilerService profiler) : base(loggerFactory, profiler) {
     Guid = Guid.NewGuid();
-    _logger = LoggerFactory!.CreateLogger<NetMessageClientHookCallback<T>>();
+    _logger = LoggerFactory.CreateLogger<NetMessageClientHookCallback<T>>();
 
     _callback = callback;
 
@@ -49,7 +55,7 @@ internal class NetMessageClientHookCallback<T> : NetMessageHookCallback where T 
       {
         if (msgId != T.MessageId) return true;
         var category = "NetMessageClientHookCallback::" + typeof(T).Name;
-        Profiler!.StartRecording(category);
+        Profiler.StartRecording(category);
         var msg = T.Wrap(pMessage, false);
         _callback(msg, playerId);
         Profiler.StopRecording(category);
@@ -78,9 +84,9 @@ internal class NetMessageServerHookCallback<T> : NetMessageHookCallback where T 
   private ulong _nativeListenerId;
   private ILogger<NetMessageServerHookCallback<T>> _logger;
 
-  public NetMessageServerHookCallback(INetMessageService.ServerNetMessageHandler<T> callback) {
+  public NetMessageServerHookCallback(INetMessageService.ServerNetMessageHandler<T> callback, ILoggerFactory loggerFactory, IContextedProfilerService profiler) : base(loggerFactory, profiler) {
     Guid = Guid.NewGuid();
-    _logger = LoggerFactory!.CreateLogger<NetMessageServerHookCallback<T>>();
+    _logger = LoggerFactory.CreateLogger<NetMessageServerHookCallback<T>>();
 
     _callback = callback;
 
@@ -89,7 +95,7 @@ internal class NetMessageServerHookCallback<T> : NetMessageHookCallback where T 
       {
         if (msgId != T.MessageId) return true;
         var category = "NetMessageServerHookCallback::" + typeof(T).Name;
-        Profiler!.StartRecording(category);
+        Profiler.StartRecording(category);
         var msg = T.Wrap(pMessage, false);
         var mask = pPlayerMask.Read<ulong>();
         msg.Recipients.RecipientsMask = mask;
