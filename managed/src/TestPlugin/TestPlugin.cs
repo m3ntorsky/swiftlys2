@@ -28,12 +28,6 @@ public class TestPlugin : BasePlugin {
   [NotNull]
   private static ISwiftlyCore? _Core = null!;
 
-  public override string PluginId => "testplugin";
-
-  public override string PluginName => "Test Plugin";
-
-  public override string PluginVersion => "1.0.0";
-
   public override void ConfigureSharedServices(IServiceCollection sharedServices) {
     // Register plugin-specific services here if needed
   }

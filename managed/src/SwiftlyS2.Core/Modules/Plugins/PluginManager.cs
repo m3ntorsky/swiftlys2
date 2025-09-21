@@ -74,7 +74,7 @@ internal class PluginManager {
       try {
         var context = LoadPlugin(pluginDir);
         if (context != null && context.Status == PluginStatus.Loaded) {
-          _Logger.LogInformation("Loaded plugin " + context.Plugin!.PluginId);
+          _Logger.LogInformation("Loaded plugin " + context.Manifest.Id);
         }
       } catch (Exception e) {
         _Logger.LogWarning(e, "Error loading plugin: " + pluginDir);
@@ -161,7 +161,7 @@ internal class PluginManager {
 
     var plugin = (BasePlugin)Activator.CreateInstance(pluginType)!;
 
-    var core = new SwiftlyCore(plugin.PluginId, Path.GetDirectoryName(entrypointDll)!, pluginType, _Provider);
+    var core = new SwiftlyCore(context.Manifest.Id, Path.GetDirectoryName(entrypointDll)!, pluginType, _Provider);
 
     core.Initialize(plugin, pluginType);
     
@@ -184,7 +184,7 @@ internal class PluginManager {
   public void UnloadPlugin(string id) {
     var context = _Plugins
       .Where(p => p.Status == PluginStatus.Loaded)
-      .FirstOrDefault(p => p.Plugin!.PluginId == id);
+      .FirstOrDefault(p => p.Manifest.Id == id);
     if (context == null) {
       _Logger.LogWarning("Plugin not found or not loaded: " + id);
       return;

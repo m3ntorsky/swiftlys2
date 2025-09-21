@@ -7,7 +7,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <AssemblyName>SwiftlyS2.Plugin</AssemblyName>
+    <AssemblyName>PluginClassName</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
