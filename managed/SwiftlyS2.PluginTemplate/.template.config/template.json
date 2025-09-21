@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "SwiftlyS2",
+  "classifications": [ "SwiftlyS2", "Plugin", "Game" ],
+  "identity": "SwiftlyS2.Plugin.Template",
+  "name": "SwiftlyS2 Plugin",
+  "shortName": "swiftlys2-plugin",
+  "sourceName": "SwiftlyS2.Plugin",
+  "preferNameDirectory": true,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "symbols": {
+    "PluginClassName": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "MyPlugin",
+      "replaces": "PluginClassName"
+    },
+    "PluginId": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "myplugin",
+      "replaces": "PluginId"
+    },
+    "PluginName": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "My Plugin",
+      "replaces": "PluginName"
+    },
+    "PluginVersion": {
+      "type": "parameter",
+      "datatype": "text",
+      "defaultValue": "1.0.0",
+      "replaces": "PluginVersion"
+    }
+  },
+  "primaryOutputs": [
+    { "path": "SwiftlyS2.Plugin.csproj" }
+  ]
+} 

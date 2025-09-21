@@ -1,0 +1,9 @@
+{
+  "Id": "PluginId",
+  "Name": "PluginName",
+  "Version": "PluginVersion",
+  "Author": "Swiftly",
+  "Description": "A SwiftlyS2 plugin",
+  "Website": "https://swiftlys2.net",
+  "EntrypointDLL": "SwiftlyS2.Plugin.dll"
+} 
