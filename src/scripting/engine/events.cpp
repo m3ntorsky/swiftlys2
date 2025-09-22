@@ -33,7 +33,7 @@ void* g_pOnEntityParentChangedCallback = nullptr;
 void* g_pOnEntitySpawnedCallback = nullptr;
 void* g_pOnMapLoadCallback = nullptr;
 void* g_pOnMapUnloadCallback = nullptr;
-void* g_pOnPlayerTakeDamageCallback = nullptr;
+void* g_pOnEntityTakeDamageCallback = nullptr;
 
 void Bridge_Events_RegisterOnGameTickCallback(void* callback)
 {
@@ -105,9 +105,9 @@ void Bridge_Events_RegisterOnMapUnloadCallback(void* callback)
     g_pOnMapUnloadCallback = callback;
 }
 
-void Bridge_Events_RegisterOnPlayerTakeDamageCallback(void* callback)
+void Bridge_Events_RegisterOnEntityTakeDamageCallback(void* callback)
 {
-    g_pOnPlayerTakeDamageCallback = callback;
+    g_pOnEntityTakeDamageCallback = callback;
 }
 
 DEFINE_NATIVE("Events.RegisterOnGameTickCallback", Bridge_Events_RegisterOnGameTickCallback);
@@ -124,4 +124,4 @@ DEFINE_NATIVE("Events.RegisterOnEntityParentChangedCallback", Bridge_Events_Regi
 DEFINE_NATIVE("Events.RegisterOnEntitySpawnedCallback", Bridge_Events_RegisterOnEntitySpawnedCallback);
 DEFINE_NATIVE("Events.RegisterOnMapLoadCallback", Bridge_Events_RegisterOnMapLoadCallback);
 DEFINE_NATIVE("Events.RegisterOnMapUnloadCallback", Bridge_Events_RegisterOnMapUnloadCallback);
-DEFINE_NATIVE("Events.RegisterOnPlayerTakeDamageCallback", Bridge_Events_RegisterOnPlayerTakeDamageCallback);
+DEFINE_NATIVE("Events.RegisterOnEntityTakeDamageCallback", Bridge_Events_RegisterOnEntityTakeDamageCallback);

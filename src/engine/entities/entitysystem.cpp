@@ -38,6 +38,8 @@ SH_DECL_EXTERN3_void(INetworkServerService, StartupServer, SH_NOATTRIB, 0, const
 CGameEntitySystem* g_pGameEntitySystem = nullptr;
 
 void* g_pGameRules = nullptr;
+extern void* g_pOnEntityTakeDamageCallback;
+IFunctionHook* g_pOnEntityTakeDamageHook = nullptr;
 
 bool g_bDone = false;
 
@@ -46,11 +48,20 @@ CGameEntitySystem* GameEntitySystem()
     return g_pGameEntitySystem;
 }
 
+int64_t TakeDamageHook(void* baseEntity, void* info);
+
 void CEntSystem::Initialize()
 {
     auto networkserverservice = g_ifaceService.FetchInterface<INetworkServerService>(NETWORKSERVERSERVICE_INTERFACE_VERSION);
 
     SH_ADD_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEntSystem::StartupServer, true);
+
+    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+
+    g_pOnEntityTakeDamageHook = hooksmanager->CreateFunctionHook();
+    g_pOnEntityTakeDamageHook->SetHookFunction(gamedata->GetSignatures()->Fetch("CBaseEntity::TakeDamage"), reinterpret_cast<void*>(TakeDamageHook));
+    g_pOnEntityTakeDamageHook->Enable();
 }
 
 void CEntSystem::Shutdown()
@@ -59,7 +70,21 @@ void CEntSystem::Shutdown()
 
     SH_REMOVE_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEntSystem::StartupServer, true);
 
+    g_pOnEntityTakeDamageHook->Disable();
+    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    hooksmanager->DestroyFunctionHook(g_pOnEntityTakeDamageHook);
+    g_pOnEntityTakeDamageHook = nullptr;
+
     g_pGameEntitySystem->RemoveListenerEntity(&g_entityListener);
+}
+
+int64_t TakeDamageHook(void* baseEntity, void* info)
+{
+    if (g_pOnEntityTakeDamageCallback)
+        if (reinterpret_cast<bool(*)(void*, void*)>(g_pOnEntityTakeDamageCallback)(baseEntity, info) == false)
+            return 0;
+
+    return reinterpret_cast<int64_t(*)(void*, void*)>(g_pOnEntityTakeDamageHook->GetOriginal())(baseEntity, info);
 }
 
 void CEntSystem::StartupServer(const GameSessionConfiguration_t& config, ISource2WorldSession*, const char*)

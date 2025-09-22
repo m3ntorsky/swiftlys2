@@ -153,7 +153,7 @@ int32_t CSDKSchema::GetOffset(uint64_t uHash)
 {
 	auto it = offsets.find(uHash);
 	if (it == offsets.end()) return 0;
-	else return (*it).second.m_uOffset;
+	else return it->second.m_uOffset;
 }
 
 bool CSDKSchema::IsStruct(const char* sClassName)

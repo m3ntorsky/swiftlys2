@@ -178,13 +178,13 @@ internal static class NativeEvents {
       throw;
     }
   }
-  private unsafe static delegate* unmanaged<nint, void> _RegisterOnPlayerTakeDamageCallback;
+  private unsafe static delegate* unmanaged<nint, void> _RegisterOnEntityTakeDamageCallback;
   /// <summary>
-  /// int32 playerid, CTakeDamageInfo* info -> bool (true -> ignored, false -> supercede)
+  /// CBaseEntity* entity, CTakeDamageInfo* info -> bool (true -> ignored, false -> supercede)
   /// </summary>
-  public unsafe static void RegisterOnPlayerTakeDamageCallback(nint callback) {
+  public unsafe static void RegisterOnEntityTakeDamageCallback(nint callback) {
     try {
-    _RegisterOnPlayerTakeDamageCallback(callback);
+    _RegisterOnEntityTakeDamageCallback(callback);
      } catch (Exception e) {
       Spectre.Console.AnsiConsole.WriteException(e);
       throw;
