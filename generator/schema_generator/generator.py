@@ -16,7 +16,8 @@ if not os.path.exists(OUT_DIR):
 
 # no one need them
 blacklisted_classes = [
-  "FeSimdTri_t"
+  "FeSimdTri_t",
+  "CTakeDamageInfo",
 ]
 
 

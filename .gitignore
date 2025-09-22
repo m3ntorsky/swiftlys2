@@ -35,6 +35,7 @@ build/
 
 # Python
 __pycache__/
+.venv/
 
 # vscode
 .vscode/
