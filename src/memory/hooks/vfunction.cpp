@@ -22,7 +22,7 @@
 
 void VFunctionHook::SetHookFunction(const std::string& interface, int index, void* callback)
 {
-    auto iface = g_ifaceService.FetchInterface<void>(interface.c_str());
+    static auto iface = g_ifaceService.FetchInterface<void>(interface.c_str());
     if (!iface) return;
 
     m_oHook = safetyhook::create_inline(((void***)iface)[0][index], callback, safetyhook::InlineHook::Flags::StartDisabled);

@@ -68,7 +68,7 @@ uint32_t CSoundEvent::Emit()
     auto networkmessage = g_ifaceService.FetchInterface<INetworkMessages>(NETWORKMESSAGES_INTERFACE_VERSION);
     auto gameEventSystem = g_ifaceService.FetchInterface<IGameEventSystem>(GAMEEVENTSYSTEM_INTERFACE_VERSION);
     auto soundsystem = g_ifaceService.FetchInterface<ISoundSystem>(SOUNDSYSTEM_INTERFACE_VERSION);
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
     auto soundeventHash = MurmurHash2LowerCase(m_sName.c_str(), SOUNDEVENT_NAME_HASH_SEED);
     INetworkMessageInternal* pNetMsg = networkmessage->FindNetworkMessageById(208);

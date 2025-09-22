@@ -129,7 +129,6 @@ extern void* g_pOnClientProcessUsercmdsCallback;
 
 void* ProcessUsercmdsHook(void* pController, CUserCmd* cmds, int numcmds, bool paused, float margin)
 {
-    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto playerid = ((CEntityInstance*)pController)->m_pEntity->m_EHandle.GetEntryIndex() - 1;
 
     google::protobuf::Message** pMsg = new google::protobuf::Message * [numcmds];
@@ -170,7 +169,7 @@ extern void* g_pOnGameTickCallback;
 
 void CPlayerManager::GameFrame(bool simulate, bool first, bool last)
 {
-    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
 
     if (g_pOnGameTickCallback) reinterpret_cast<void(*)(bool, bool, bool)>(g_pOnGameTickCallback)(simulate, first, last);
 
@@ -183,10 +182,11 @@ extern void* g_pOnClientConnectCallback;
 
 bool CPlayerManager::ClientConnect(CPlayerSlot slot, const char* pszName, uint64_t xuid, const char* pszNetworkID, bool unk1, CBufferString* pRejectReason)
 {
-    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto playerid = slot.Get();
     auto player = playermanager->RegisterPlayer(playerid);
     player->Initialize(playerid);
+    player->SetUnauthorizedSteamID(xuid);
 
     if (g_pOnClientConnectCallback)
         if (reinterpret_cast<bool(*)(int)>(g_pOnClientConnectCallback)(playerid) == false)
@@ -197,7 +197,7 @@ bool CPlayerManager::ClientConnect(CPlayerSlot slot, const char* pszName, uint64
 
 void CPlayerManager::OnClientConnected(CPlayerSlot slot, const char* pszName, uint64_t xuid, const char* pszNetworkID, const char* pszAddress, bool bFakePlayer)
 {
-    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto playerid = slot.Get();
     if (bFakePlayer) {
         auto player = playermanager->RegisterPlayer(playerid);
@@ -213,7 +213,7 @@ extern void* g_pOnClientDisconnectCallback;
 
 void CPlayerManager::ClientDisconnect(CPlayerSlot slot, ENetworkDisconnectionReason reason, const char* pszName, uint64_t xuid, const char* pszNetworkID)
 {
-    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto playerid = slot.Get();
 
     if (g_pOnClientDisconnectCallback)

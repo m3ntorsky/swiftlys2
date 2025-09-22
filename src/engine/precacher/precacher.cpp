@@ -39,8 +39,8 @@ bool CPrecacher::HasItemInList(const std::string& item)
 void CPrecacher::CacheItems(IEntityResourceManifest* pResourceManifest)
 {
     QueueLockGuard lock(m_mtxLock);
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
-    auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
     static int l_iAddResourceOffset = gamedata->GetOffsets()->Fetch("CEntityResourceManifest::AddResource");
 
     for (const auto& item : m_sCacheItems)

@@ -324,7 +324,7 @@ std::vector<std::string> TokenizeCommand(std::string cmd)
 
 void PrintTextTable(LogType type, std::string category, TextTable table)
 {
-    auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
+    static auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
 
     std::vector<std::string> rows = explode(TableToString(table), "\n");
     for (int i = 0; i < rows.size() - 1; i++)

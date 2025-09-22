@@ -80,7 +80,7 @@ bool SwiftlyMMBridge::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxle
     if (late)
     {
         g_SteamAPI.Init();
-        auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+        static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
         playermanager->SteamAPIServerActivated();
     }
 
@@ -142,7 +142,7 @@ void SwiftlyMMBridge::SendConsoleMessage(const std::string& message)
 bool SwiftlyMMBridge::OnConvarQuery(const CNetMessagePB<CCLCMsg_RespondCvarValue>& msg)
 {
     auto client = META_IFACEPTR(CServerSideClientBase);
-    auto cvarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto cvarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
 
     cvarmanager->OnClientQueryCvar(client->GetPlayerSlot().Get(), msg.name(), msg.value());
 
@@ -155,7 +155,7 @@ void SwiftlyMMBridge::Hook_GameServerSteamAPIActivated()
         return;
 
     g_SteamAPI.Init();
-    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     playermanager->SteamAPIServerActivated();
     RETURN_META(MRES_IGNORED);
 }

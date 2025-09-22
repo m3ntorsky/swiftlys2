@@ -322,7 +322,7 @@ ConvarValue CConvarManager::GetConvarValue(std::string cvar_name)
         return cvar.GetAs<QAngle>(server);
     }
     else {
-        auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
+        static auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
         logger->Error("Convars", std::format("Unsupported ConVar type: {}", (int)cvar.GetType()));
         return 0;
     }

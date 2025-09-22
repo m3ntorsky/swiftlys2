@@ -56,7 +56,7 @@ void CrashReporter::Shutdown()
 
 void CrashReporter::ReportPreventionIncident(std::string category, std::string reason)
 {
-    auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
+    static auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
 
     logger->Warning("Crash Prevention", "A crash has been prevented by Swiftly Core and the details will be listed below:\n");
 

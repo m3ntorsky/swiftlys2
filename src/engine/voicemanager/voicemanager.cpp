@@ -48,8 +48,8 @@ void CVoiceManager::Shutdown()
 
 bool CVoiceManager::SetClientListening(CPlayerSlot iReceiver, CPlayerSlot iSender, bool bListen)
 {
-    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
-    auto sdkschema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto sdkschema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
 
     IPlayer* receiver = playermanager->GetPlayer(iReceiver.Get());
     if (!receiver)
@@ -109,7 +109,7 @@ bool CVoiceManager::SetClientListening(CPlayerSlot iReceiver, CPlayerSlot iSende
 
 void CVoiceManager::OnClientCommand(CPlayerSlot slot, const CCommand& args)
 {
-    auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     IPlayer* receiver = playermanager->GetPlayer(slot.Get());
     if (!receiver) RETURN_META(MRES_IGNORED);
 

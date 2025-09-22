@@ -105,28 +105,28 @@ void CEntSystem::StartupServer(const GameSessionConfiguration_t& config, ISource
 
 void CEntSystem::Spawn(void* pEntity, void* pKeyValues)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
     reinterpret_cast<CBaseEntity_DispatchSpawn>(gamedata->GetSignatures()->Fetch("CBaseEntity::DispatchSpawn"))(pEntity, pKeyValues);
 }
 
 void CEntSystem::Despawn(void* pEntity)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
     reinterpret_cast<UTIL_Remove>(gamedata->GetSignatures()->Fetch("UTIL::Remove"))(pEntity);
 }
 
 void* CEntSystem::CreateEntityByName(const char* name)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
     return reinterpret_cast<UTIL_CreateEntityByName>(gamedata->GetSignatures()->Fetch("UTIL::CreateEntityByName"))(name, -1);
 }
 
 void CEntSystem::AcceptInput(void* pEntity, const char* input, void* activator, void* caller, InputType value, int outputID)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
     variant_t var;
     if (std::holds_alternative<int32_t>(value))
@@ -153,7 +153,7 @@ void CEntSystem::AcceptInput(void* pEntity, const char* input, void* activator, 
 
 void CEntSystem::AddEntityIOEvent(void* pEntity, const char* input, void* activator, void* caller, InputType value, float delay)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
     variant_t var;
     if (std::holds_alternative<int32_t>(value))

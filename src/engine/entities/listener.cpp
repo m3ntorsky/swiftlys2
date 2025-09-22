@@ -61,10 +61,10 @@ void CEntityListener::OnEntityCreated(CEntityInstance* pEntity)
     if (g_pOnEntityCreatedCallback)
         reinterpret_cast<void(*)(void*)>(g_pOnEntityCreatedCallback)(pEntity);
 
-    auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
-
-    if (std::string(pEntity->GetClassname()) == "cs_gamerules")
+    if (std::string(pEntity->GetClassname()) == "cs_gamerules") {
+        static auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
         g_pGameRules = *(void**)(schema->GetPropPtr(pEntity, CCSGameRulesProxy_m_pGameRules));
+    }
 }
 
 void CEntityListener::OnEntityDeleted(CEntityInstance* pEntity)

@@ -46,7 +46,7 @@ bool FunctionHook::IsEnabled()
 
 void FunctionHook::SetHookFunction(const std::string& functionSignature, void* callback)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     void* functionAddress = gamedata->GetSignatures()->Fetch(functionSignature);
     if (!functionAddress) return;
 
