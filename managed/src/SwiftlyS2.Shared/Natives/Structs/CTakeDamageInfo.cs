@@ -4,8 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace SwiftlyS2.Shared.Natives;
 
-[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-public unsafe delegate int CTakeDamageInfo_Constructor(CTakeDamageInfo* pThis, nint pInflictor, nint pAttacker, nint pAbility, Vector* vecDamageForce, Vector* vecDamagePosition, float flDamage, int bitsDamageType, int iCustomDamage, void* a10);
 
 [StructLayout(LayoutKind.Sequential)]
 public struct AttackerInfo_t
@@ -48,6 +46,9 @@ public unsafe struct CTakeDamageInfo
     public CGameTrace* Trace;
     public TakeDamageFlags_t DamageFlags;
     public CString DamageSourceName;
+
+    [Obsolete("This field somehow holds garbage value in game. Use ActualHitGroup instead.")]
+    /// <see cref="ActualHitGroup"/>
     public HitGroup_t HitGroupId;
     public int NumObjectsPenetrated;
     public float FriendlyFireDamageReductionRatio;
@@ -62,23 +63,21 @@ public unsafe struct CTakeDamageInfo
 
     public CTakeDamageInfo()
     {
-        var constructor = Marshal.GetDelegateForFunctionPointer<CTakeDamageInfo_Constructor>(NativeSignatures.Fetch("CTakeDamageInfo::Constructor"));
-        Vector vec3_origin = new(0,0,0);
+        Vector vec3_origin = Vector.Zero;
 
         fixed(CTakeDamageInfo* info = &this)
         {
-            constructor(info, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, &vec3_origin, &vec3_origin, 0.0f, 0, 0, null);
+            GameFunctions.CTakeDamageInfoConstructor(info, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, &vec3_origin, &vec3_origin, 0.0f, 0, 0, null);
         }
     }
 
     public CTakeDamageInfo(CBaseEntity inflictor, CBaseEntity attacker, CBaseEntity ability, float flDamage, DamageTypes_t bitsDamageType)
     {
-        var constructor = Marshal.GetDelegateForFunctionPointer<CTakeDamageInfo_Constructor>(NativeSignatures.Fetch("CTakeDamageInfo::Constructor"));
-        Vector vec3_origin = new(0, 0, 0);
+        Vector vec3_origin = Vector.Zero;
 
         fixed (CTakeDamageInfo* info = &this)
         {
-            constructor(info, inflictor.GetHandle(), attacker.GetHandle(), ability.GetHandle(), &vec3_origin, &vec3_origin, flDamage, (int)bitsDamageType, 0, null);
+            GameFunctions.CTakeDamageInfoConstructor(info, inflictor.GetHandle(), attacker.GetHandle(), ability.GetHandle(), &vec3_origin, &vec3_origin, flDamage, (int)bitsDamageType, 0, null);
         }
     }
 

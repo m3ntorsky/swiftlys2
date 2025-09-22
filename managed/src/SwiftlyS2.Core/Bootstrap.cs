@@ -19,6 +19,9 @@ internal static class Bootstrap {
     
     NativeBinding.BindNatives(nativeTable, nativeTableSize);
 
+    EventPublisher.Register();
+    GameFunctions.Initialize();
+
     AnsiConsole.Write(new FigletText("SwiftlyS2").LeftJustified().Color(Spectre.Console.Color.LightSteelBlue1));
 
     ServiceCollection services = new ServiceCollection();
@@ -40,9 +43,6 @@ internal static class Bootstrap {
     ));
 
     var provider = services.BuildServiceProvider();
-
-    // Register native event callbacks
-    EventPublisher.Register();
 
     provider.UsePluginManager();
     provider.UseTestService();
