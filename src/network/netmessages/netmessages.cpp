@@ -30,8 +30,8 @@
 SH_DECL_EXTERN8_void(IGameEventSystem, PostEventAbstract, SH_NOATTRIB, 0, CSplitScreenSlot, bool, int, const uint64*, INetworkMessageInternal*, const CNetMessage*, unsigned long, NetChannelBufType_t)
 SH_DECL_MANUALHOOK2(FilterMessage, 0, 0, 0, bool, CNetMessage*, INetChannel*);
 
-std::map<uint64_t, std::function<bool(uint64_t*, int, void*)>> g_mServerMessageSendCallbacks;
-std::map<uint64_t, std::function<bool(int, int, void*)>> g_mClientMessageSendCallbacks;
+std::map<uint64_t, std::function<int(uint64_t*, int, void*)>> g_mServerMessageSendCallbacks;
+std::map<uint64_t, std::function<int(int, int, void*)>> g_mClientMessageSendCallbacks;
 
 int g_ihookID = -1;
 
@@ -66,9 +66,11 @@ bool CNetMessages::FilterMessage(CNetMessage* cMsg, INetChannel* netchan)
     auto playerid = client->GetPlayerSlot().Get();
     int msgid = cMsg->GetNetMessage()->GetNetMessageInfo()->m_MessageId;
 
-    for (const auto& [id, callback] : g_mClientMessageSendCallbacks)
-        if (!callback(playerid, msgid, cMsg))
-            RETURN_META_VALUE(MRES_SUPERCEDE, true);
+    for (const auto& [id, callback] : g_mClientMessageSendCallbacks) {
+        auto res = callback(playerid, msgid, cMsg);
+        if (res == 1) RETURN_META_VALUE(MRES_SUPERCEDE, true);
+        else if (res == 2) break;
+    }
 
     RETURN_META_VALUE(MRES_IGNORED, true);
 }
@@ -79,14 +81,16 @@ void CNetMessages::PostEvent(CSplitScreenSlot nSlot, bool bLocalOnly, int nClien
     CNetMessage* msg = const_cast<CNetMessage*>(pData);
     uint64_t* playermask = const_cast<uint64_t*>(clients);
 
-    for (const auto& [id, callback] : g_mServerMessageSendCallbacks)
-        if (!callback(playermask, msgid, msg))
-            RETURN_META(MRES_SUPERCEDE);
+    for (const auto& [id, callback] : g_mServerMessageSendCallbacks) {
+        auto res = callback(playermask, msgid, msg);
+        if (res == 1) RETURN_META(MRES_SUPERCEDE);
+        else if (res == 2) break;
+    }
 
     RETURN_META(MRES_IGNORED);
 }
 
-uint64_t CNetMessages::AddServerMessageSendCallback(std::function<bool(uint64_t*, int, void*)> callback)
+uint64_t CNetMessages::AddServerMessageSendCallback(std::function<int(uint64_t*, int, void*)> callback)
 {
     static uint64_t s_CallbackID = 0;
     g_mServerMessageSendCallbacks[s_CallbackID++] = callback;
@@ -98,7 +102,7 @@ void CNetMessages::RemoveServerMessageSendCallback(uint64_t callbackID)
     g_mServerMessageSendCallbacks.erase(callbackID);
 }
 
-uint64_t CNetMessages::AddClientMessageSendCallback(std::function<bool(int, int, void*)> callback)
+uint64_t CNetMessages::AddClientMessageSendCallback(std::function<int(int, int, void*)> callback)
 {
     static uint64_t s_CallbackID = 0;
     g_mClientMessageSendCallbacks[s_CallbackID++] = callback;

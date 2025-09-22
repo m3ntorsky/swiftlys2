@@ -30,10 +30,10 @@ public:
     virtual void Initialize() override;
     virtual void Shutdown() override;
 
-    virtual uint64_t AddServerMessageSendCallback(std::function<bool(uint64_t*, int, void*)> callback) override;
+    virtual uint64_t AddServerMessageSendCallback(std::function<int(uint64_t*, int, void*)> callback) override;
     virtual void RemoveServerMessageSendCallback(uint64_t callbackID) override;
 
-    virtual uint64_t AddClientMessageSendCallback(std::function<bool(int, int, void*)> callback) override;
+    virtual uint64_t AddClientMessageSendCallback(std::function<int(int, int, void*)> callback) override;
     virtual void RemoveClientMessageSendCallback(uint64_t callbackID) override;
 
     void PostEvent(CSplitScreenSlot nSlot, bool bLocalOnly, int nClientCount, const uint64* clients, INetworkMessageInternal* pEvent, const CNetMessage* pData, unsigned long nSize, NetChannelBufType_t bufType);

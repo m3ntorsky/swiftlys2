@@ -31,8 +31,8 @@ std::map<uint64_t, std::string> conCommandMapping;
 
 std::map<std::string, std::function<void(int, std::vector<std::string>, std::string, std::string, bool)>> g_mCommandHandlers;
 
-std::map<uint64_t, std::function<bool(int, const std::string&)>> g_mClientCommandListeners;
-std::map<uint64_t, std::function<bool(int, const std::string&, bool)>> g_mClientChatListeners;
+std::map<uint64_t, std::function<int(int, const std::string&)>> g_mClientCommandListeners;
+std::map<uint64_t, std::function<int(int, const std::string&, bool)>> g_mClientChatListeners;
 
 std::set<std::string> commandPrefixes;
 std::set<std::string> silentCommandPrefixes;
@@ -148,16 +148,22 @@ int CServerCommands::HandleCommand(int playerid, const std::string& text)
 
 bool CServerCommands::HandleClientCommand(int playerid, const std::string& text)
 {
-    for (const auto& [id, listener] : g_mClientCommandListeners)
-        if (!listener(playerid, text)) return false;
+    for (const auto& [id, listener] : g_mClientCommandListeners) {
+        auto res = listener(playerid, text);
+        if (res == 1) return false;
+        else if (res == 2) break;
+    }
 
     return true;
 }
 
 bool CServerCommands::HandleClientChat(int playerid, const std::string& text, bool teamonly)
 {
-    for (const auto& [id, listener] : g_mClientChatListeners)
-        if (!listener(playerid, text, teamonly)) return false;
+    for (const auto& [id, listener] : g_mClientChatListeners) {
+        auto res = listener(playerid, text, teamonly);
+        if (res == 1) return false;
+        else if (res == 2) break;
+    }
 
     return true;
 }
@@ -211,7 +217,7 @@ void CServerCommands::UnregisterAlias(uint64_t alias_id)
     return UnregisterCommand(alias_id);
 }
 
-uint64_t CServerCommands::RegisterClientCommandsListener(std::function<bool(int, const std::string&)> listener)
+uint64_t CServerCommands::RegisterClientCommandsListener(std::function<int(int, const std::string&)> listener)
 {
     static uint64_t listener_id = 0;
     g_mClientCommandListeners[listener_id++] = listener;
@@ -223,7 +229,7 @@ void CServerCommands::UnregisterClientCommandsListener(uint64_t listener_id)
     g_mClientCommandListeners.erase(listener_id);
 }
 
-uint64_t CServerCommands::RegisterClientChatListener(std::function<bool(int, const std::string&, bool)> listener)
+uint64_t CServerCommands::RegisterClientChatListener(std::function<int(int, const std::string&, bool)> listener)
 {
     static uint64_t listener_id = 0;
     g_mClientChatListeners[listener_id++] = listener;

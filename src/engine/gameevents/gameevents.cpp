@@ -42,8 +42,8 @@ SH_DECL_EXTERN2(IGameEventManager2, FireEvent, SH_NOATTRIB, 0, bool, IGameEvent*
 SH_DECL_EXTERN2(IGameEventManager2, LoadEventsFromFile, SH_NOATTRIB, 0, int, const char*, bool);
 SH_DECL_EXTERN3_void(INetworkServerService, StartupServer, SH_NOATTRIB, 0, const GameSessionConfiguration_t&, ISource2WorldSession*, const char*);
 
-std::map<uint64_t, std::function<bool(std::string, IGameEvent*, bool&)>> g_mEventListeners;
-std::map<uint64_t, std::function<bool(std::string, IGameEvent*, bool&)>> g_mPostEventListeners;
+std::map<uint64_t, std::function<int(std::string, IGameEvent*, bool&)>> g_mEventListeners;
+std::map<uint64_t, std::function<int(std::string, IGameEvent*, bool&)>> g_mPostEventListeners;
 
 std::set<std::string> g_sDumpedFiles;
 json dumpedEvents;
@@ -119,12 +119,15 @@ bool CEventManager::OnFireEvent(IGameEvent* pEvent, bool bDontBroadcast)
 
     std::string event_name = pEvent->GetName();
     bool shouldBroadcast = bDontBroadcast;
-    for (const auto& [id, callback] : g_mEventListeners)
-        if (!callback(event_name, pEvent, shouldBroadcast)) {
+    for (const auto& [id, callback] : g_mEventListeners) {
+        auto res = callback(event_name, pEvent, shouldBroadcast);
+        if (res == 1) {
             g_sEventStack.push(g_gameEventManager->DuplicateEvent(pEvent));
             g_gameEventManager->FreeEvent(pEvent);
             RETURN_META_VALUE(MRES_SUPERCEDE, false);
         }
+        else if (res == 2) break;
+    }
 
     g_sEventStack.push(g_gameEventManager->DuplicateEvent(pEvent));
 
@@ -149,12 +152,15 @@ bool CEventManager::OnFireEventPost(IGameEvent* pEvent, bool bDontBroadcast)
     std::string event_name = realGameEvent->GetName();
     bool shouldBroadcast = bDontBroadcast;
 
-    for (const auto& [id, callback] : g_mEventListeners)
-        if (!callback(event_name, realGameEvent, shouldBroadcast)) {
+    for (const auto& [id, callback] : g_mEventListeners) {
+        auto res = callback(event_name, pEvent, shouldBroadcast);
+        if (res == 1) {
             g_gameEventManager->FreeEvent(realGameEvent);
             g_sEventStack.pop();
             RETURN_META_VALUE(MRES_SUPERCEDE, false);
         }
+        else if (res == 2) break;
+    }
 
     g_gameEventManager->FreeEvent(realGameEvent);
     g_sEventStack.pop();
@@ -200,7 +206,7 @@ void CEventManager::RegisterGameEventListener(std::string event_name)
     }
 }
 
-uint64_t CEventManager::AddGameEventFireListener(std::function<bool(std::string, IGameEvent*, bool&)> callback)
+uint64_t CEventManager::AddGameEventFireListener(std::function<int(std::string, IGameEvent*, bool&)> callback)
 {
     QueueLockGuard lock(m_mtxLock);
     static uint64_t s_uiListenerID = 0;
@@ -208,7 +214,7 @@ uint64_t CEventManager::AddGameEventFireListener(std::function<bool(std::string,
     return s_uiListenerID;
 }
 
-uint64_t CEventManager::AddPostGameEventFireListener(std::function<bool(std::string, IGameEvent*, bool&)> callback)
+uint64_t CEventManager::AddPostGameEventFireListener(std::function<int(std::string, IGameEvent*, bool&)> callback)
 {
     QueueLockGuard lock(m_mtxLock);
     static uint64_t s_uiListenerID = 0;

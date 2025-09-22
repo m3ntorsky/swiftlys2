@@ -29,11 +29,11 @@ public:
     virtual void Shutdown() = 0;
 
     // playermask_ptr, netmessageid, pmsg, return true -> ignore, false -> supercede
-    virtual uint64_t AddServerMessageSendCallback(std::function<bool(uint64_t*, int, void*)> callback) = 0;
+    virtual uint64_t AddServerMessageSendCallback(std::function<int(uint64_t*, int, void*)> callback) = 0;
     virtual void RemoveServerMessageSendCallback(uint64_t callbackID) = 0;
 
     // playerid, netmessageid, pmsg, return true -> ignore, false -> supercede
-    virtual uint64_t AddClientMessageSendCallback(std::function<bool(int, int, void*)> callback) = 0;
+    virtual uint64_t AddClientMessageSendCallback(std::function<int(int, int, void*)> callback) = 0;
     virtual void RemoveClientMessageSendCallback(uint64_t callbackID) = 0;
 };
 
