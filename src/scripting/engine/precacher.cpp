@@ -21,25 +21,25 @@
 
 void Bridge_Precacher_AddItem(const char* itemPath)
 {
-    auto precacher = g_ifaceService.FetchInterface<IPrecacher>(PRECACHER_INTERFACE_VERSION);
+    static auto precacher = g_ifaceService.FetchInterface<IPrecacher>(PRECACHER_INTERFACE_VERSION);
     precacher->AddItem(itemPath);
 }
 
 bool Bridge_Precacher_HasItemInList(const char* itemPath)
 {
-    auto precacher = g_ifaceService.FetchInterface<IPrecacher>(PRECACHER_INTERFACE_VERSION);
+    static auto precacher = g_ifaceService.FetchInterface<IPrecacher>(PRECACHER_INTERFACE_VERSION);
     return precacher->HasItemInList(itemPath);
 }
 
 bool Bridge_Precacher_IsItemCached(const char* itemPath)
 {
-    auto precacher = g_ifaceService.FetchInterface<IPrecacher>(PRECACHER_INTERFACE_VERSION);
+    static auto precacher = g_ifaceService.FetchInterface<IPrecacher>(PRECACHER_INTERFACE_VERSION);
     return precacher->IsItemCached(itemPath);
 }
 
 void Bridge_Precacher_RemoveItem(const char* itemPath)
 {
-    auto precacher = g_ifaceService.FetchInterface<IPrecacher>(PRECACHER_INTERFACE_VERSION);
+    static auto precacher = g_ifaceService.FetchInterface<IPrecacher>(PRECACHER_INTERFACE_VERSION);
     precacher->RemoveItem(itemPath);
 }
 

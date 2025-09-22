@@ -21,19 +21,19 @@
 
 void Bridge_GameData_Patches_Apply(const char* name)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     gamedata->GetPatches()->Apply(name);
 }
 
 void Bridge_GameData_Patches_Revert(const char* name)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     gamedata->GetPatches()->Revert(name);
 }
 
 bool Bridge_GameData_Patches_Exists(const char* name)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     return gamedata->GetPatches()->Exists(name);
 }
 

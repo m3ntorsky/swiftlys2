@@ -21,31 +21,31 @@
 
 bool Bridge_PlayerManager_IsPlayerOnline(int playerid)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     return playerManager->IsPlayerOnline(playerid);
 }
 
 int Bridge_PlayerManager_GetPlayerCount()
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     return playerManager->GetPlayerCount();
 }
 
 int Bridge_PlayerManager_GetPlayerCap()
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     return playerManager->GetPlayerCap();
 }
 
 void Bridge_PlayerManager_SendMessage(int kind, const char* message)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     playerManager->SendMsg((MessageType)kind, message);
 }
 
 void Bridge_PlayerManager_ShouldBlockTransmitEntity(int entityidx, bool shouldBlockTransmit)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     for (int i = 0; i < playerManager->GetPlayerCap(); i++) {
         auto player = playerManager->GetPlayer(i);
         if (!player) continue;
@@ -63,7 +63,7 @@ void Bridge_PlayerManager_ShouldBlockTransmitEntity(int entityidx, bool shouldBl
 
 void Bridge_PlayerManager_ClearAllBlockedTransmitEntity()
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     for (int i = 0; i < playerManager->GetPlayerCap(); i++) {
         auto player = playerManager->GetPlayer(i);
         if (!player) continue;

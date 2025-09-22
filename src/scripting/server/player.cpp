@@ -21,7 +21,7 @@
 
 void Bridge_Player_SendMessage(int playerid, int kind, const char* message)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return;
 
@@ -30,7 +30,7 @@ void Bridge_Player_SendMessage(int playerid, int kind, const char* message)
 
 bool Bridge_Player_IsFakeClient(int playerid)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return true;
 
@@ -39,7 +39,7 @@ bool Bridge_Player_IsFakeClient(int playerid)
 
 bool Bridge_Player_IsAuthorized(int playerid)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return false;
 
@@ -48,7 +48,7 @@ bool Bridge_Player_IsAuthorized(int playerid)
 
 uint32_t Bridge_Player_GetConnectedTime(int playerid)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return 0;
 
@@ -57,7 +57,7 @@ uint32_t Bridge_Player_GetConnectedTime(int playerid)
 
 uint64_t Bridge_Player_GetUnauthorizedSteamID(int playerid)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return 0;
 
@@ -66,7 +66,7 @@ uint64_t Bridge_Player_GetUnauthorizedSteamID(int playerid)
 
 uint64_t Bridge_Player_GetSteamID(int playerid)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return 0;
 
@@ -75,7 +75,7 @@ uint64_t Bridge_Player_GetSteamID(int playerid)
 
 void* Bridge_Player_GetController(int playerid)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return nullptr;
 
@@ -84,7 +84,7 @@ void* Bridge_Player_GetController(int playerid)
 
 void* Bridge_Player_GetPawn(int playerid)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return nullptr;
 
@@ -93,7 +93,7 @@ void* Bridge_Player_GetPawn(int playerid)
 
 void* Bridge_Player_GetPlayerPawn(int playerid)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return nullptr;
 
@@ -102,7 +102,7 @@ void* Bridge_Player_GetPlayerPawn(int playerid)
 
 uint64_t Bridge_Player_GetPressedButtons(int playerid)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return 0;
 
@@ -111,7 +111,7 @@ uint64_t Bridge_Player_GetPressedButtons(int playerid)
 
 void Bridge_Player_PerformCommand(int playerid, const char* command)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return;
 
@@ -120,7 +120,7 @@ void Bridge_Player_PerformCommand(int playerid, const char* command)
 
 int Bridge_Player_GetIPAddress(char* out, int playerid)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return 0;
 
@@ -134,7 +134,7 @@ int Bridge_Player_GetIPAddress(char* out, int playerid)
 
 void Bridge_Player_Kick(int playerid, const char* reason, int gamereason)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return;
 
@@ -145,7 +145,7 @@ void Bridge_Player_ShouldBlockTransmitEntity(int playerid, int entityidx, bool s
 {
     if (playerid + 1 == entityidx) return;
 
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return;
 
@@ -161,7 +161,7 @@ bool Bridge_Player_IsTransmitEntityBlocked(int playerid, int entityidx)
 {
     if (playerid + 1 == entityidx) return false;
 
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return false;
 
@@ -171,7 +171,7 @@ bool Bridge_Player_IsTransmitEntityBlocked(int playerid, int entityidx)
 
 void Bridge_Player_ClearTransmitEntityBlocked(int playerid)
 {
-    auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto player = playerManager->GetPlayer(playerid);
     if (!player) return;
 

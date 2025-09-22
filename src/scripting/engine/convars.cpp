@@ -21,13 +21,13 @@
 
 void Bridge_Convars_QueryClientConvar(int playerid, const char* cvarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->QueryClientConvar(playerid, cvarName);
 }
 
 int Bridge_Convars_AddQueryClientCvarCallback(void* callback)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return convarmanager->AddQueryClientCvarCallback([callback](int playerid, std::string cvarName, std::string cvarValue) -> void {
         ((void(*)(int, const char*, const char*))callback)(playerid, cvarName.c_str(), cvarValue.c_str());
     });
@@ -35,211 +35,211 @@ int Bridge_Convars_AddQueryClientCvarCallback(void* callback)
 
 void Bridge_Convars_RemoveQueryClientCvarCallback(int callbackId)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->RemoveQueryClientCvarCallback(callbackId);
 }
 
 void Bridge_Convars_CreateConvarInt16(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, int16_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarUInt16(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, uint16_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarInt32(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, int32_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarUInt32(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, uint32_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarInt64(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, int64_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarUInt64(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, uint64_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarBool(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, bool value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarFloat(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, float value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarDouble(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, double value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarColor(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, Color value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarVector2D(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, Vector2D value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarVector(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, Vector value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarVector4D(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, Vector4D value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarQAngle(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, QAngle value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, value);
 }
 
 void Bridge_Convars_CreateConvarString(const char* convarName, int cvarType, uint64_t cvarFlags, const char* helpMessage, const char* value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->CreateConvar(convarName, (EConVarType)cvarType, cvarFlags, helpMessage, std::string(value));
 }
 
 void Bridge_Convars_DeleteConvar(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->DeleteConvar(convarName);
 }
 
 bool Bridge_Convars_ExistsConvar(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return convarmanager->ExistsConvar(convarName);
 }
 
 int Bridge_Convars_GetConvarType(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return (int)(convarmanager->GetConvarType(convarName));
 }
 
 void* Bridge_Convars_GetConvarDataAddress(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return convarmanager->GetConvarDataAddress(convarName);
 }
 
 int16_t Bridge_Convars_GetConvarValueInt16(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<int16_t>(convarmanager->GetConvarValue(convarName));
 }
 
 uint16_t Bridge_Convars_GetConvarValueUInt16(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<uint16_t>(convarmanager->GetConvarValue(convarName));
 }
 
 int32_t Bridge_Convars_GetConvarValueInt32(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<int32_t>(convarmanager->GetConvarValue(convarName));
 }
 
 uint32_t Bridge_Convars_GetConvarValueUInt32(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<uint32_t>(convarmanager->GetConvarValue(convarName));
 }
 
 int64_t Bridge_Convars_GetConvarValueInt64(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<int64_t>(convarmanager->GetConvarValue(convarName));
 }
 
 uint64_t Bridge_Convars_GetConvarValueUInt64(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<uint64_t>(convarmanager->GetConvarValue(convarName));
 }
 
 bool Bridge_Convars_GetConvarValueBool(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<bool>(convarmanager->GetConvarValue(convarName));
 }
 
 float Bridge_Convars_GetConvarValueFloat(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<float>(convarmanager->GetConvarValue(convarName));
 }
 
 double Bridge_Convars_GetConvarValueDouble(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<double>(convarmanager->GetConvarValue(convarName));
 }
 
 Color Bridge_Convars_GetConvarValueColor(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<Color>(convarmanager->GetConvarValue(convarName));
 }
 
 Vector2D Bridge_Convars_GetConvarValueVector2D(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<Vector2D>(convarmanager->GetConvarValue(convarName));
 }
 
 Vector Bridge_Convars_GetConvarValueVector(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<Vector>(convarmanager->GetConvarValue(convarName));
 }
 
 Vector4D Bridge_Convars_GetConvarValueVector4D(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<Vector4D>(convarmanager->GetConvarValue(convarName));
 }
 
 QAngle Bridge_Convars_GetConvarValueQAngle(const char* convarName)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     return std::get<QAngle>(convarmanager->GetConvarValue(convarName));
 }
 
 int Bridge_Convars_GetConvarValueString(char* out, const char* convarName, const char* value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     static std::string s;
     s = std::get<std::string>(convarmanager->GetConvarValue(convarName));
 
@@ -250,181 +250,181 @@ int Bridge_Convars_GetConvarValueString(char* out, const char* convarName, const
 
 void Bridge_Convars_SetConvarValueInt16(const char* convarName, int16_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueUInt16(const char* convarName, uint16_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueInt32(const char* convarName, int32_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueUInt32(const char* convarName, uint32_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueInt64(const char* convarName, int64_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueUInt64(const char* convarName, uint64_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueBool(const char* convarName, bool value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueFloat(const char* convarName, float value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueDouble(const char* convarName, double value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueColor(const char* convarName, Color value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueVector2D(const char* convarName, Vector2D value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueVector(const char* convarName, Vector value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueVector4D(const char* convarName, Vector4D value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueQAngle(const char* convarName, QAngle value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, value);
 }
 
 void Bridge_Convars_SetConvarValueString(const char* convarName, const char* value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetConvarValue(convarName, std::string(value));
 }
 
 void Bridge_Convars_SetClientConvarValueInt16(int playerid, const char* convarName, int16_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueUInt16(int playerid, const char* convarName, uint16_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueInt32(int playerid, const char* convarName, int32_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueUInt32(int playerid, const char* convarName, uint32_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueInt64(int playerid, const char* convarName, int64_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueUInt64(int playerid, const char* convarName, uint64_t value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueBool(int playerid, const char* convarName, bool value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueFloat(int playerid, const char* convarName, float value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueDouble(int playerid, const char* convarName, double value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueColor(int playerid, const char* convarName, Color value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueVector2D(int playerid, const char* convarName, Vector2D value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueVector(int playerid, const char* convarName, Vector value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueVector4D(int playerid, const char* convarName, Vector4D value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueQAngle(int playerid, const char* convarName, QAngle value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, value);
 }
 
 void Bridge_Convars_SetClientConvarValueString(int playerid, const char* convarName, const char* value)
 {
-    auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+    static auto convarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
     convarmanager->SetClientConvar(playerid, convarName, std::string(value));
 }
 

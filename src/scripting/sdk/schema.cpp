@@ -21,37 +21,37 @@
 
 void Bridge_SDK_Schema_SetStateChanged(void* pEntity, uint64_t uHash)
 {
-    auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    static auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
     schema->SetStateChanged(pEntity, uHash);
 }
 
 uint32_t Bridge_SDK_Schema_FindChainOffset(const char* sClassName)
 {
-    auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    static auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
     return schema->FindChainOffset(sClassName);
 }
 
 int32_t Bridge_SDK_Schema_GetOffset(uint64_t uHash)
 {
-    auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    static auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
     return schema->GetOffset(uHash);
 }
 
 bool Bridge_SDK_Schema_IsStruct(const char* sClassName)
 {
-    auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    static auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
     return schema->IsStruct(sClassName);
 }
 
 bool Bridge_SDK_Schema_IsClassLoaded(const char* sClassName)
 {
-    auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    static auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
     return schema->IsClassLoaded(sClassName);
 }
 
 void* Bridge_SDK_Schema_GetPropPtr(void* pEntity, uint64_t uHash)
 {
-    auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    static auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
     if (!schema)
         return nullptr;
 
@@ -60,13 +60,13 @@ void* Bridge_SDK_Schema_GetPropPtr(void* pEntity, uint64_t uHash)
 
 void Bridge_SDK_Schema_WritePropPtr(void* pEntity, uint64_t uHash, void* pValue, uint32_t size)
 {
-    auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    static auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
     schema->WritePropPtr(pEntity, uHash, pValue, size);
 }
 
 void* Bridge_SDK_Schema_GetVData(void* pEntity)
 {
-    auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    static auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
     return schema->GetVData(pEntity);
 }
 

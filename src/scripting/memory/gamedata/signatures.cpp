@@ -21,13 +21,13 @@
 
 bool Bridge_GameData_Signatures_Exists(const char* name)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     return gamedata->GetSignatures()->Exists(name);
 }
 
 void* Bridge_GameData_Signatures_Fetch(const char* name)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     return gamedata->GetSignatures()->Fetch(name);
 }
 

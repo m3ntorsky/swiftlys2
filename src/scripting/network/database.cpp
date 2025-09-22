@@ -21,7 +21,7 @@
 
 int Bridge_Database_GetDefaultConnection(char* out)
 {
-    auto db = g_ifaceService.FetchInterface<IDatabaseManager>(DATABASEMANAGER_INTERFACE_VERSION);
+    static auto db = g_ifaceService.FetchInterface<IDatabaseManager>(DATABASEMANAGER_INTERFACE_VERSION);
     static std::string o;
     o = db->GetDefaultConnection();
 
@@ -34,7 +34,7 @@ int Bridge_Database_GetDefaultConnection(char* out)
 
 int Bridge_Database_GetDefaultConnectionCredentials(char* out)
 {
-    auto db = g_ifaceService.FetchInterface<IDatabaseManager>(DATABASEMANAGER_INTERFACE_VERSION);
+    static auto db = g_ifaceService.FetchInterface<IDatabaseManager>(DATABASEMANAGER_INTERFACE_VERSION);
     static std::string o;
     o = db->GetDefaultConnectionCredentials();
 
@@ -47,7 +47,7 @@ int Bridge_Database_GetDefaultConnectionCredentials(char* out)
 
 int Bridge_Database_GetCredentials(char* out, const char* connectionName)
 {
-    auto db = g_ifaceService.FetchInterface<IDatabaseManager>(DATABASEMANAGER_INTERFACE_VERSION);
+    static auto db = g_ifaceService.FetchInterface<IDatabaseManager>(DATABASEMANAGER_INTERFACE_VERSION);
     static std::string o;
     o = db->GetCredentials(connectionName);
 
@@ -60,7 +60,7 @@ int Bridge_Database_GetCredentials(char* out, const char* connectionName)
 
 bool Bridge_Database_ConnectionExists(const char* connectionName)
 {
-    auto db = g_ifaceService.FetchInterface<IDatabaseManager>(DATABASEMANAGER_INTERFACE_VERSION);
+    static auto db = g_ifaceService.FetchInterface<IDatabaseManager>(DATABASEMANAGER_INTERFACE_VERSION);
     return db->ConnectionExists(connectionName);
 }
 

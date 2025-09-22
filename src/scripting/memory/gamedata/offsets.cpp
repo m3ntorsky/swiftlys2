@@ -21,13 +21,13 @@
 
 bool Bridge_GameData_Offsets_Exists(const char* name)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     return gamedata->GetOffsets()->Exists(name);
 }
 
 int Bridge_GameData_Offsets_Fetch(const char* name)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     return gamedata->GetOffsets()->Fetch(name);
 }
 

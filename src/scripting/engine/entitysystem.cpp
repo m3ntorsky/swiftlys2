@@ -23,140 +23,140 @@
 
 void Bridge_EntitySystem_Spawn(void* pEntity, void* pKeyValues)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->Spawn(pEntity, pKeyValues);
 }
 
 void Bridge_EntitySystem_Despawn(void* pEntity)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->Despawn(pEntity);
 }
 
 void* Bridge_EntitySystem_CreateEntityByName(const char* name)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     return entsystem->CreateEntityByName(name);
 }
 
 void Bridge_EntitySystem_AcceptInputInt32(void* pEntity, const char* input, void* pActivator, void* pCaller, int32_t value, int32_t outputID)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AcceptInput(pEntity, input, pActivator, pCaller, value, outputID);
 }
 
 void Bridge_EntitySystem_AcceptInputUInt32(void* pEntity, const char* input, void* pActivator, void* pCaller, uint32_t value, int32_t outputID)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AcceptInput(pEntity, input, pActivator, pCaller, value, outputID);
 }
 
 void Bridge_EntitySystem_AcceptInputInt64(void* pEntity, const char* input, void* pActivator, void* pCaller, int64_t value, int32_t outputID)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AcceptInput(pEntity, input, pActivator, pCaller, value, outputID);
 }
 
 void Bridge_EntitySystem_AcceptInputUInt64(void* pEntity, const char* input, void* pActivator, void* pCaller, uint64_t value, int32_t outputID)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AcceptInput(pEntity, input, pActivator, pCaller, value, outputID);
 }
 
 void Bridge_EntitySystem_AcceptInputFloat(void* pEntity, const char* input, void* pActivator, void* pCaller, float value, int32_t outputID)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AcceptInput(pEntity, input, pActivator, pCaller, value, outputID);
 }
 
 void Bridge_EntitySystem_AcceptInputDouble(void* pEntity, const char* input, void* pActivator, void* pCaller, double value, int32_t outputID)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AcceptInput(pEntity, input, pActivator, pCaller, value, outputID);
 }
 
 void Bridge_EntitySystem_AcceptInputBool(void* pEntity, const char* input, void* pActivator, void* pCaller, bool value, int32_t outputID)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AcceptInput(pEntity, input, pActivator, pCaller, value, outputID);
 }
 
 void Bridge_EntitySystem_AcceptInputString(void* pEntity, const char* input, void* pActivator, void* pCaller, const char* value, int32_t outputID)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AcceptInput(pEntity, input, pActivator, pCaller, value, outputID);
 }
 
 void Bridge_EntitySystem_AddEntityIOEventInt32(void* pEntity, const char* input, void* pActivator, void* pCaller, int32_t value, float delay)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AddEntityIOEvent(pEntity, input, pActivator, pCaller, value, delay);
 }
 
 void Bridge_EntitySystem_AddEntityIOEventUInt32(void* pEntity, const char* input, void* pActivator, void* pCaller, uint32_t value, float delay)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AddEntityIOEvent(pEntity, input, pActivator, pCaller, value, delay);
 }
 
 void Bridge_EntitySystem_AddEntityIOEventInt64(void* pEntity, const char* input, void* pActivator, void* pCaller, int64_t value, float delay)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AddEntityIOEvent(pEntity, input, pActivator, pCaller, value, delay);
 }
 
 void Bridge_EntitySystem_AddEntityIOEventUInt64(void* pEntity, const char* input, void* pActivator, void* pCaller, uint64_t value, float delay)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AddEntityIOEvent(pEntity, input, pActivator, pCaller, value, delay);
 }
 
 void Bridge_EntitySystem_AddEntityIOEventFloat(void* pEntity, const char* input, void* pActivator, void* pCaller, float value, float delay)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AddEntityIOEvent(pEntity, input, pActivator, pCaller, value, delay);
 }
 
 void Bridge_EntitySystem_AddEntityIOEventDouble(void* pEntity, const char* input, void* pActivator, void* pCaller, double value, float delay)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AddEntityIOEvent(pEntity, input, pActivator, pCaller, value, delay);
 }
 
 void Bridge_EntitySystem_AddEntityIOEventBool(void* pEntity, const char* input, void* pActivator, void* pCaller, bool value, float delay)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AddEntityIOEvent(pEntity, input, pActivator, pCaller, value, delay);
 }
 
 void Bridge_EntitySystem_AddEntityIOEventString(void* pEntity, const char* input, void* pActivator, void* pCaller, const char* value, float delay)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->AddEntityIOEvent(pEntity, input, pActivator, pCaller, value, delay);
 }
 
 bool Bridge_EntitySystem_IsValidEntity(void* pEntity)
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     return entsystem->IsValidEntity(pEntity);
 }
 
 void* Bridge_EntitySystem_GetGameRules()
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     return entsystem->GetGameRules();
 }
 
 void* Bridge_EntitySystem_GetEntitySystem()
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     return entsystem->GetEntitySystem();
 }
 
 
 void* Bridge_EntitySystem_GetFirstActiveEntity()
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     return entsystem->GetEntitySystem()->m_EntityList.m_pFirstActiveEntity;
 }
 

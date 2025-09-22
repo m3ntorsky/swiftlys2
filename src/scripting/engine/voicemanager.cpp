@@ -21,25 +21,25 @@
 
 void Bridge_VoiceManager_SetClientListenOverride(int playerid, int targetid, int override)
 {
-    auto voicemanager = g_ifaceService.FetchInterface<IVoiceManager>(VOICEMANAGER_INTERFACE_VERSION);
+    static auto voicemanager = g_ifaceService.FetchInterface<IVoiceManager>(VOICEMANAGER_INTERFACE_VERSION);
     voicemanager->SetClientListenOverride(playerid, targetid, (ListenOverride)override);
 }
 
 int Bridge_VoiceManager_GetClientListenOverride(int playerid, int targetid)
 {
-    auto voicemanager = g_ifaceService.FetchInterface<IVoiceManager>(VOICEMANAGER_INTERFACE_VERSION);
+    static auto voicemanager = g_ifaceService.FetchInterface<IVoiceManager>(VOICEMANAGER_INTERFACE_VERSION);
     return static_cast<int>(voicemanager->GetClientListenOverride(playerid, targetid));
 }
 
 void Bridge_VoiceManager_SetClientVoiceFlags(int playerid, int flags)
 {
-    auto voicemanager = g_ifaceService.FetchInterface<IVoiceManager>(VOICEMANAGER_INTERFACE_VERSION);
+    static auto voicemanager = g_ifaceService.FetchInterface<IVoiceManager>(VOICEMANAGER_INTERFACE_VERSION);
     voicemanager->SetClientVoiceFlags(playerid, (VoiceFlagValue)flags);
 }
 
 int Bridge_VoiceManager_GetClientVoiceFlags(int playerid)
 {
-    auto voicemanager = g_ifaceService.FetchInterface<IVoiceManager>(VOICEMANAGER_INTERFACE_VERSION);
+    static auto voicemanager = g_ifaceService.FetchInterface<IVoiceManager>(VOICEMANAGER_INTERFACE_VERSION);
     return static_cast<int>(voicemanager->GetClientVoiceFlags(playerid));
 }
 

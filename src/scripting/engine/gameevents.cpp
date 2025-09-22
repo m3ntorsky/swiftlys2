@@ -161,13 +161,13 @@ bool Bridge_GameEvents_IsLocal(void* event)
 
 void Bridge_GameEvents_RegisterListener(const char* eventName)
 {
-    auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
     eventmanager->RegisterGameEventListener(eventName);
 }
 
 uint64_t Bridge_GameEvents_AddListenerPreCallback(void* callback)
 {
-    auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
     return eventmanager->AddGameEventFireListener([callback](std::string event_name, IGameEvent* event, bool& dont_broadcast) -> int
     {
         auto hash = hash_32_fnv1a_const(event_name.c_str());
@@ -179,7 +179,7 @@ uint64_t Bridge_GameEvents_AddListenerPreCallback(void* callback)
 
 uint64_t Bridge_GameEvents_AddListenerPostCallback(void* callback)
 {
-    auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
     return eventmanager->AddPostGameEventFireListener([callback](std::string event_name, IGameEvent* event, bool& dont_broadcast) -> int
     {
         auto hash = hash_32_fnv1a_const(event_name.c_str());
@@ -191,39 +191,39 @@ uint64_t Bridge_GameEvents_AddListenerPostCallback(void* callback)
 
 void Bridge_GameEvents_RemoveListenerPreCallback(uint64_t listener_id)
 {
-    auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
     eventmanager->RemoveGameEventFireListener(listener_id);
 }
 
 void Bridge_GameEvents_RemoveListenerPostCallback(uint64_t listener_id)
 {
-    auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
     eventmanager->RemovePostGameEventFireListener(listener_id);
 }
 
 void* Bridge_GameEvents_CreateEvent(const char* eventName)
 {
-    auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
     return eventmanager->GetGameEventManager()->CreateEvent(eventName);
 }
 
 void Bridge_GameEvents_FreeEvent(void* event)
 {
-    auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
     eventmanager->GetGameEventManager()->FreeEvent((IGameEvent*)event);
 }
 
 void Bridge_GameEvents_FireEvent(void* event, bool dontBroadcast)
 {
-    auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
     eventmanager->GetGameEventManager()->FireEvent((IGameEvent*)event, dontBroadcast);
 }
 
 void Bridge_GameEvents_FireEventToClient(void* event, int playerid)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
-    auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
-    auto crashreporter = g_ifaceService.FetchInterface<ICrashReporter>(CRASHREPORTER_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    static auto crashreporter = g_ifaceService.FetchInterface<ICrashReporter>(CRASHREPORTER_INTERFACE_VERSION);
 
     auto pListenerSig = gamedata->GetSignatures()->Fetch("LegacyGameEventListener");
     if (!pListenerSig) return;
@@ -241,8 +241,8 @@ void Bridge_GameEvents_FireEventToClient(void* event, int playerid)
 
 bool Bridge_GameEvents_IsPlayerListeningToEventName(int playerid, const char* eventName)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
-    auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
 
     auto pListenerSig = gamedata->GetSignatures()->Fetch("LegacyGameEventListener");
     if (!pListenerSig) return false;
@@ -255,8 +255,8 @@ bool Bridge_GameEvents_IsPlayerListeningToEventName(int playerid, const char* ev
 
 bool Bridge_GameEvents_IsPlayerListeningToEvent(int playerid, void* event)
 {
-    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
-    auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
 
     auto pListenerSig = gamedata->GetSignatures()->Fetch("LegacyGameEventListener");
     if (!pListenerSig) return false;
