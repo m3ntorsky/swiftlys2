@@ -11,7 +11,6 @@ using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.Commands;
 using SwiftlyS2.Shared.NetMessages;
-using SwiftlyS2.Shared.Plugins;
 using SwiftlyS2.Shared.Services;
 using SwiftlyS2.Core.AttributeParsers;
 using SwiftlyS2.Core.EntitySystem;
@@ -39,6 +38,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public IEntitySystemService EntitySystemService { get; init; }
   public IConVarService ConVarService { get; init; }
   public IGameDataService GameDataService { get; init; }
+  public IPlayerManagerService PlayerManagerService { get; init; }
   public ILogger Logger { get; init; }
   public HookService HookService { get; init; }
   public IContextedProfilerService ProfilerService { get; init; }
@@ -56,6 +56,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton(coreProvider.GetRequiredService<ConfigurationService>())
       .AddSingleton(coreProvider.GetRequiredService<GameDataService>())
       .AddSingleton(coreProvider.GetRequiredService<HookManager>())
+      .AddSingleton(coreProvider.GetRequiredService<PlayerManagerService>())
 
       .AddSingleton<EventSubscriber>()
       .AddSingleton<PluginConfigurationService>()
@@ -84,6 +85,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     CommandService = _ServiceProvider.GetRequiredService<CommandService>();
     EntitySystemService = _ServiceProvider.GetRequiredService<EntitySystemService>();
     GameDataService = _ServiceProvider.GetRequiredService<GameDataService>();
+    PlayerManagerService = _ServiceProvider.GetRequiredService<PlayerManagerService>();
     ConVarService = _ServiceProvider.GetRequiredService<ConVarService>();
     HookService = _ServiceProvider.GetRequiredService<HookService>();
     ProfilerService = _ServiceProvider.GetRequiredService<IContextedProfilerService>();
@@ -115,8 +117,8 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   IEntitySystemService ISwiftlyCore.EntitySystem => EntitySystemService;
   IConVarService ISwiftlyCore.ConVar => ConVarService;
   IGameDataService ISwiftlyCore.GameData => GameDataService;
+  IPlayerManagerService ISwiftlyCore.PlayerManager => PlayerManagerService;
   IHookService ISwiftlyCore.Hook => HookService;
   ILogger ISwiftlyCore.Logger => Logger;
   IContextedProfilerService ISwiftlyCore.Profiler => ProfilerService;
-
 }

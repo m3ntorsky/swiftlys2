@@ -58,6 +58,11 @@ public interface ISwiftlyCore {
   public IGameDataService GameData { get; }
 
   /// <summary>
+  /// Player manager service.
+  /// </summary>
+  public IPlayerManagerService PlayerManager { get; }
+
+  /// <summary>
   /// Hook service.
   /// </summary>
   public IHookService Hook { get; }
