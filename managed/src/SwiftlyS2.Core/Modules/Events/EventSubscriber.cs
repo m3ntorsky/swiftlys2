@@ -2,7 +2,6 @@ using System.Diagnostics;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Services;
-using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.Profiler;
 
@@ -59,10 +58,11 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
-  public void InvokeOnClientConnected(OnClientConnectedEvent ev) {
+  public void InvokeOnClientConnected(OnClientConnectedEvent @event) {
     try {
+      if (OnClientConnected == null) return;
       _Profiler.StartRecording("Event::OnClientConnected");
-      OnClientConnected?.Invoke(ev);
+      OnClientConnected?.Invoke(@event);
     } catch (Exception e) {
       _Logger.LogError(e, "Error invoking OnClientConnected.");
     } finally {
@@ -70,10 +70,11 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
-  public void InvokeOnClientDisconnected(OnClientDisconnectedEvent ev) {
+  public void InvokeOnClientDisconnected(OnClientDisconnectedEvent @event) {
     try {
+      if (OnClientDisconnected == null) return;
       _Profiler.StartRecording("Event::OnClientDisconnected");
-      OnClientDisconnected?.Invoke(ev);
+      OnClientDisconnected?.Invoke(@event);
     } catch (Exception e) {
       _Logger.LogError(e, "Error invoking OnClientDisconnected.");
     } finally {
@@ -81,10 +82,11 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
-  public void InvokeOnClientKeyStateChanged(OnClientKeyStateChangedEvent ev) {
+  public void InvokeOnClientKeyStateChanged(OnClientKeyStateChangedEvent @event) {
     try {
+      if (OnClientKeyStateChanged == null) return;
       _Profiler.StartRecording("Event::OnClientKeyStateChanged");
-      OnClientKeyStateChanged?.Invoke(ev);
+      OnClientKeyStateChanged?.Invoke(@event);
     } catch (Exception e) {
       _Logger.LogError(e, "Error invoking OnClientKeyStateChanged.");
     } finally {
@@ -92,10 +94,11 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
-  public void InvokeOnClientPutInServer(OnClientPutInServerEvent ev) {
+  public void InvokeOnClientPutInServer(OnClientPutInServerEvent @event) {
     try {
+      if (OnClientPutInServer == null) return;
       _Profiler.StartRecording("Event::OnClientPutInServer");
-      OnClientPutInServer?.Invoke(ev);
+      OnClientPutInServer?.Invoke(@event);
     } catch (Exception e) {
       _Logger.LogError(e, "Error invoking OnClientPutInServer.");
     } finally {
@@ -103,10 +106,11 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
-  public void InvokeOnClientSteamAuthorize(OnClientSteamAuthorizeEvent ev) {
+  public void InvokeOnClientSteamAuthorize(OnClientSteamAuthorizeEvent @event) {
     try {
+      if (OnClientSteamAuthorize == null) return;
       _Profiler.StartRecording("Event::OnClientSteamAuthorize");
-      OnClientSteamAuthorize?.Invoke(ev);
+      OnClientSteamAuthorize?.Invoke(@event);
     } catch (Exception e) {
       _Logger.LogError(e, "Error invoking OnClientSteamAuthorize.");
     } finally {
@@ -114,10 +118,11 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
-  public void InvokeOnClientSteamAuthorizeFail(OnClientSteamAuthorizeFailEvent ev) {
+  public void InvokeOnClientSteamAuthorizeFail(OnClientSteamAuthorizeFailEvent @event) {
     try {
+      if (OnClientSteamAuthorizeFail == null) return;
       _Profiler.StartRecording("Event::OnClientSteamAuthorizeFail");
-      OnClientSteamAuthorizeFail?.Invoke(ev);
+      OnClientSteamAuthorizeFail?.Invoke(@event);
     } catch (Exception e) {
       _Logger.LogError(e, "Error invoking OnClientSteamAuthorizeFail.");
     } finally {
@@ -125,10 +130,11 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
-  public void InvokeOnEntityCreated(OnEntityCreatedEvent ev) {
+  public void InvokeOnEntityCreated(OnEntityCreatedEvent @event) {
     try {
+      if (OnEntityCreated == null) return;
       _Profiler.StartRecording("Event::OnEntityCreated");
-      OnEntityCreated?.Invoke(ev);
+      OnEntityCreated?.Invoke(@event);
     } catch (Exception e) {
       _Logger.LogError(e, "Error invoking OnEntityCreated.");
     } finally {
@@ -136,10 +142,11 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
-  public void InvokeOnEntityDeleted(OnEntityDeletedEvent ev) {
+  public void InvokeOnEntityDeleted(OnEntityDeletedEvent @event) {
     try {
+      if (OnEntityDeleted == null) return;
       _Profiler.StartRecording("Event::OnEntityDeleted");
-      OnEntityDeleted?.Invoke(ev);
+      OnEntityDeleted?.Invoke(@event);
     } catch (Exception e) {
       _Logger.LogError(e, "Error invoking OnEntityDeleted.");
     } finally {
@@ -147,10 +154,11 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
-  public void InvokeOnEntityParentChanged(OnEntityParentChangedEvent ev) {
+  public void InvokeOnEntityParentChanged(OnEntityParentChangedEvent @event) {
     try {
+      if (OnEntityParentChanged == null) return;
       _Profiler.StartRecording("Event::OnEntityParentChanged");
-      OnEntityParentChanged?.Invoke(ev);
+      OnEntityParentChanged?.Invoke(@event);
     } catch (Exception e) {
       _Logger.LogError(e, "Error invoking OnEntityParentChanged.");
     } finally {
@@ -158,10 +166,11 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
-  public void InvokeOnEntitySpawned(OnEntitySpawnedEvent ev) {
+  public void InvokeOnEntitySpawned(OnEntitySpawnedEvent @event) {
     try {
+      if (OnEntitySpawned == null) return;
       _Profiler.StartRecording("Event::OnEntitySpawned");
-      OnEntitySpawned?.Invoke(ev);
+      OnEntitySpawned?.Invoke(@event);
     } catch (Exception e) {
       _Logger.LogError(e, "Error invoking OnEntitySpawned.");
     } finally {
@@ -169,10 +178,11 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
-  public void InvokeOnMapLoad(OnMapLoadEvent ev) {
+  public void InvokeOnMapLoad(OnMapLoadEvent @event) {
     try {
+      if (OnMapLoad == null) return;
       _Profiler.StartRecording("Event::OnMapLoad");
-      OnMapLoad?.Invoke(ev);
+      OnMapLoad?.Invoke(@event);
     } catch (Exception e) {
       _Logger.LogError(e, "Error invoking OnMapLoad.");
     } finally {
@@ -180,10 +190,11 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
-  public void InvokeOnMapUnload(OnMapUnloadEvent ev) {
+  public void InvokeOnMapUnload(OnMapUnloadEvent @event) {
     try {
+      if (OnMapUnload == null) return;
       _Profiler.StartRecording("Event::OnMapUnload");
-      OnMapUnload?.Invoke(ev);
+      OnMapUnload?.Invoke(@event);
     } catch (Exception e) {
       _Logger.LogError(e, "Error invoking OnMapUnload.");
     } finally {
@@ -191,10 +202,11 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
-  public void InvokeOnClientProcessUsercmds(OnClientProcessUsercmdsEvent ev) {
+  public void InvokeOnClientProcessUsercmds(OnClientProcessUsercmdsEvent @event) {
     try {
+      if (OnClientProcessUsercmds == null) return;
       _Profiler.StartRecording("Event::OnClientProcessUsercmds");
-      OnClientProcessUsercmds?.Invoke(ev);
+      OnClientProcessUsercmds?.Invoke(@event);
     } catch (Exception e) {
       _Logger.LogError(e, "Error invoking OnClientProcessUsercmds.");
     } finally {
@@ -204,6 +216,7 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
 
   public void InvokeOnEntityTakeDamage(OnEntityTakeDamageEvent @event) {
     try {
+      if (OnEntityTakeDamage == null) return;
       _Profiler.StartRecording("Event::OnEntityTakeDamage");
       OnEntityTakeDamage?.Invoke(@event);
     } catch (Exception e) {
