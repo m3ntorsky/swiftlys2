@@ -55,6 +55,8 @@ public class TestPlugin : BasePlugin {
 
     Core.Logger.LogInformation("TestPlugin loaded");
 
+    Entrypoint
+
     Core.Event.OnTick += () => {
       Console.WriteLine("TestPlugin OnTick ");
     };

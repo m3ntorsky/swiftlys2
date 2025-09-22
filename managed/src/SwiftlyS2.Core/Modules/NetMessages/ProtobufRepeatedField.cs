@@ -4,7 +4,7 @@ using SwiftlyS2.Shared.NetMessages;
 
 namespace SwiftlyS2.Core.NetMessages;
 
-public class ProtobufRepeatedFieldValueType<T> : IProtobufRepeatedFieldValueType<T>
+internal class ProtobufRepeatedFieldValueType<T> : IProtobufRepeatedFieldValueType<T>
 {
   private IProtobufAccessor _Protobuf { get; init; }
   private string _FieldName { get; init; }

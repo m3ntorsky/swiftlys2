@@ -6,7 +6,6 @@ using SwiftlyS2.Core.GameEvents;
 using SwiftlyS2.Core.Misc;
 using SwiftlyS2.Core.NetMessages;
 using SwiftlyS2.Core.Services;
-using SwiftlyS2.Core.Managers;
 using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.GameEvents;

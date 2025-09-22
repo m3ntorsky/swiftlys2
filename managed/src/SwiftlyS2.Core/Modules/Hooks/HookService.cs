@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Threading;
 using Microsoft.Extensions.Logging;
-using SwiftlyS2.Core.Managers;
 using SwiftlyS2.Shared.Hooks;
 using SwiftlyS2.Core.Extensions;
 
