@@ -26,58 +26,27 @@ internal static class EventPublisher {
 
   public static void Register() {
     unsafe {
-      NativeEvents.RegisterOnGameTickCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnTick));
-      NativeEvents.RegisterOnClientConnectCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnClientConnected));
-      NativeEvents.RegisterOnClientDisconnectCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnClientDisconnected));
-      NativeEvents.RegisterOnClientKeyStateChangedCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnClientKeyStateChanged));
-      NativeEvents.RegisterOnClientPutInServerCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnClientPutInServer));
-      NativeEvents.RegisterOnClientSteamAuthorizeCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnClientSteamAuthorize));
-      NativeEvents.RegisterOnClientSteamAuthorizeFailCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnClientSteamAuthorizeFail));
-      NativeEvents.RegisterOnEntityCreatedCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnEntityCreated));
-      NativeEvents.RegisterOnEntityDeletedCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnEntityDeleted));
-      NativeEvents.RegisterOnEntityParentChangedCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnEntityParentChanged));
-      NativeEvents.RegisterOnEntitySpawnedCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnEntitySpawned));
-      NativeEvents.RegisterOnMapLoadCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnMapLoad));
-      NativeEvents.RegisterOnMapUnloadCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnMapUnload));
-      NativeEvents.RegisterOnClientProcessUsercmdsCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnClientProcessUsercmds));
-      NativeEvents.RegisterOnEntityTakeDamageCallback(Marshal.GetFunctionPointerForDelegate(_unmanagedOnEntityTakeDamage));
+      NativeEvents.RegisterOnGameTickCallback((nint)(delegate* unmanaged<byte, byte, byte, void>)&OnTick);
+      NativeEvents.RegisterOnClientConnectCallback((nint)(delegate* unmanaged<int, byte>)&OnClientConnected);
+      NativeEvents.RegisterOnClientDisconnectCallback((nint)(delegate* unmanaged<int, int, void>)&OnClientDisconnected);
+      NativeEvents.RegisterOnClientKeyStateChangedCallback((nint)(delegate* unmanaged<int, GameButtons, byte, void>)&OnClientKeyStateChanged);
+      NativeEvents.RegisterOnClientPutInServerCallback((nint)(delegate* unmanaged<int, int, void>)&OnClientPutInServer);
+      NativeEvents.RegisterOnClientSteamAuthorizeCallback((nint)(delegate* unmanaged<int, void>)&OnClientSteamAuthorize);
+      NativeEvents.RegisterOnClientSteamAuthorizeFailCallback((nint)(delegate* unmanaged<int, void>)&OnClientSteamAuthorizeFail);
+      NativeEvents.RegisterOnEntityCreatedCallback((nint)(delegate* unmanaged<nint, void>)&OnEntityCreated);
+      NativeEvents.RegisterOnEntityDeletedCallback((nint)(delegate* unmanaged<nint, void>)&OnEntityDeleted);
+      NativeEvents.RegisterOnEntityParentChangedCallback((nint)(delegate* unmanaged<nint, nint, void>)&OnEntityParentChanged);
+      NativeEvents.RegisterOnEntitySpawnedCallback((nint)(delegate* unmanaged<nint, void>)&OnEntitySpawned);
+      NativeEvents.RegisterOnMapLoadCallback((nint)(delegate* unmanaged<nint, void>)&OnMapLoad);
+      NativeEvents.RegisterOnMapUnloadCallback((nint)(delegate* unmanaged<nint, void>)&OnMapUnload);
+      NativeEvents.RegisterOnClientProcessUsercmdsCallback((nint)(delegate* unmanaged<int, nint, int, byte, float, void>)&OnClientProcessUsercmds);
+      NativeEvents.RegisterOnEntityTakeDamageCallback((nint)(delegate* unmanaged<nint, nint, byte>)&OnEntityTakeDamage);
     }
   }
 
 
-  delegate void OnTickDelegate(bool simulating, bool first, bool last);
-  private static OnTickDelegate _unmanagedOnTick = OnTick;
-
-  delegate bool OnClientConnectedDelegate(int playerId);
-  private static OnClientConnectedDelegate _unmanagedOnClientConnected = OnClientConnected;
-  delegate void OnClientDisconnectedDelegate(int playerId, int reason);
-  private static OnClientDisconnectedDelegate _unmanagedOnClientDisconnected = OnClientDisconnected;
-  delegate void OnClientKeyStateChangedDelegate(int playerId, GameButtons key, bool pressed);
-  private static OnClientKeyStateChangedDelegate _unmanagedOnClientKeyStateChanged = OnClientKeyStateChanged;
-  delegate void OnClientPutInServerDelegate(int playerId, int clientKind);
-  private static OnClientPutInServerDelegate _unmanagedOnClientPutInServer = OnClientPutInServer;
-  delegate void OnClientSteamAuthorizeDelegate(int playerId);
-  private static OnClientSteamAuthorizeDelegate _unmanagedOnClientSteamAuthorize = OnClientSteamAuthorize;
-  delegate void OnClientSteamAuthorizeFailDelegate(int playerId);
-  private static OnClientSteamAuthorizeFailDelegate _unmanagedOnClientSteamAuthorizeFail = OnClientSteamAuthorizeFail;
-  delegate void OnEntityCreatedDelegate(nint entityPtr);
-  private static OnEntityCreatedDelegate _unmanagedOnEntityCreated = OnEntityCreated;
-  delegate void OnEntityDeletedDelegate(nint entityPtr);
-  private static OnEntityDeletedDelegate _unmanagedOnEntityDeleted = OnEntityDeleted;
-  delegate void OnEntityParentChangedDelegate(nint entityPtr, nint newParentPtr);
-  private static OnEntityParentChangedDelegate _unmanagedOnEntityParentChanged = OnEntityParentChanged;
-  delegate void OnEntitySpawnedDelegate(nint entityPtr);
-  private static OnEntitySpawnedDelegate _unmanagedOnEntitySpawned = OnEntitySpawned;
-  delegate void OnMapLoadDelegate(nint mapNamePtr);
-  private static OnMapLoadDelegate _unmanagedOnMapLoad = OnMapLoad;
-  delegate void OnMapUnloadDelegate(nint mapNamePtr);
-  private static OnMapUnloadDelegate _unmanagedOnMapUnload = OnMapUnload;
-  delegate void OnClientProcessUsercmdsDelegate(int playerId, nint usercmdsPtr, int numcmds, bool paused, float margin);
-  private static OnClientProcessUsercmdsDelegate _unmanagedOnClientProcessUsercmds = OnClientProcessUsercmds;
-  delegate bool OnEntityTakeDamageDelegate(nint entityPtr, nint takeDamageInfoPtr);
-  private static OnEntityTakeDamageDelegate _unmanagedOnEntityTakeDamage = OnEntityTakeDamage;
-
-  public static void OnTick(bool simulating, bool first, bool last)
+  [UnmanagedCallersOnly]
+  public static void OnTick(byte simulating, byte first, byte last)
   {
     if (_subscribers.Count == 0) return;
     try {
@@ -87,9 +56,10 @@ internal static class EventPublisher {
     }
   }
 
-  public static bool OnClientConnected(int playerId)
+  [UnmanagedCallersOnly]
+  public static byte OnClientConnected(int playerId)
   {
-    if (_subscribers.Count == 0) return true;
+    if (_subscribers.Count == 0) return 1;
     try { 
     OnClientConnectedEvent @event = new() {
       PlayerId = playerId
@@ -100,22 +70,23 @@ internal static class EventPublisher {
 
       if (@event.Result == HookResult.Handled)
       {
-        return true;
+        return 1;
       }
 
       if (@event.Result == HookResult.Stop)
       {
-        return false;
+        return 0;
       }
       }
 
-      return true;
+      return 1;
     } catch (Exception e) {
       AnsiConsole.WriteException(e);
-      return true;
+      return 1;
     }
   }
 
+  [UnmanagedCallersOnly]
   public static void OnClientDisconnected(int playerId, int reason)
   {
     if (_subscribers.Count == 0) return;
@@ -134,14 +105,15 @@ internal static class EventPublisher {
     }
   }
 
-  public static void OnClientKeyStateChanged(int playerId, GameButtons key, bool pressed)
+  [UnmanagedCallersOnly]
+  public static void OnClientKeyStateChanged(int playerId, GameButtons key, byte pressed)
   {
     if (_subscribers.Count == 0) return;
     try {
     OnClientKeyStateChangedEvent @event = new() {
       PlayerId = playerId,
       Key = key.ToKeyKind(),
-      Pressed = pressed
+      Pressed = pressed != 0
     };
     foreach (var subscriber in _subscribers)
     {
@@ -152,6 +124,7 @@ internal static class EventPublisher {
     }
   }
 
+  [UnmanagedCallersOnly]
   public static void OnClientPutInServer(int playerId, int clientKind)
   {
     if (_subscribers.Count == 0) return;
@@ -169,6 +142,7 @@ internal static class EventPublisher {
     }
   }
 
+  [UnmanagedCallersOnly]
   public static void OnClientSteamAuthorize(int playerId)
   {
     if (_subscribers.Count == 0) return;
@@ -185,6 +159,7 @@ internal static class EventPublisher {
     }
   }
 
+  [UnmanagedCallersOnly]
   public static void OnClientSteamAuthorizeFail(int playerId)
   {
     if (_subscribers.Count == 0) return;
@@ -201,6 +176,7 @@ internal static class EventPublisher {
     }
   }
 
+  [UnmanagedCallersOnly]
   public static void OnEntityCreated(nint entityPtr)
   {
     if (_subscribers.Count == 0) return;
@@ -218,6 +194,7 @@ internal static class EventPublisher {
     }
   }
 
+  [UnmanagedCallersOnly]
   public static void OnEntityDeleted(nint entityPtr)
   {
     if (_subscribers.Count == 0) return;
@@ -235,6 +212,7 @@ internal static class EventPublisher {
     }
   }
 
+  [UnmanagedCallersOnly]
   public static void OnEntityParentChanged(nint entityPtr, nint newParentPtr)
   {
     if (_subscribers.Count == 0) return;
@@ -254,6 +232,7 @@ internal static class EventPublisher {
     }
   }
 
+  [UnmanagedCallersOnly]
   public static void OnEntitySpawned(nint entityPtr)
   { 
     if (_subscribers.Count == 0) return;
@@ -271,6 +250,7 @@ internal static class EventPublisher {
     }
   }
 
+  [UnmanagedCallersOnly]
   public static void OnMapLoad(nint mapNamePtr)
   {
     if (_subscribers.Count == 0) return;
@@ -288,6 +268,7 @@ internal static class EventPublisher {
     }
   }
 
+  [UnmanagedCallersOnly]
   public static void OnMapUnload(nint mapNamePtr)
   {
     if (_subscribers.Count == 0) return;
@@ -305,7 +286,8 @@ internal static class EventPublisher {
     }
   }
 
-  public static void OnClientProcessUsercmds(int playerId, nint usercmdsPtr, int numcmds, bool paused, float margin) {
+  [UnmanagedCallersOnly]
+  public static void OnClientProcessUsercmds(int playerId, nint usercmdsPtr, int numcmds, byte paused, float margin) {
     if (_subscribers.Count == 0) return;
     try {
       unsafe {
@@ -319,7 +301,7 @@ internal static class EventPublisher {
         OnClientProcessUsercmdsEvent @event = new() {
           PlayerId = playerId,
           Usercmds = usercmds,
-          Paused = paused,
+          Paused = paused != 0,
           Margin = margin
         };
         foreach (var subscriber in _subscribers) {
@@ -331,8 +313,9 @@ internal static class EventPublisher {
     }
   }
 
-  public static bool OnEntityTakeDamage(nint entityPtr, nint takeDamageInfoPtr) {
-    if (_subscribers.Count == 0) return true;
+  [UnmanagedCallersOnly]
+  public static byte OnEntityTakeDamage(nint entityPtr, nint takeDamageInfoPtr) {
+    if (_subscribers.Count == 0) return 1;
     try {
       unsafe {
         var entity = new CEntityInstanceImpl(entityPtr);
@@ -344,18 +327,18 @@ internal static class EventPublisher {
           subscriber.InvokeOnEntityTakeDamage(@event);
 
           if (@event.Result == HookResult.Handled) {
-            return true;
+            return 1;
           }
 
           if (@event.Result == HookResult.Stop) {
-            return false;
+            return 0;
           }
         }
-        return true;
+        return 1;
       }
     } catch (Exception e) {
       AnsiConsole.WriteException(e);
-      return true;
+      return 1;
     }
   }
 }

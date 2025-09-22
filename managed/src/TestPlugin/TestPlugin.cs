@@ -55,6 +55,10 @@ public class TestPlugin : BasePlugin {
 
     Core.Logger.LogInformation("TestPlugin loaded");
 
+    Core.Event.OnTick += () => {
+      Console.WriteLine("TestPlugin OnTick ");
+    };
+
     Core.Event.OnClientConnected += (@event) => {
       Console.WriteLine("TestPlugin OnClientConnected " + @event.PlayerId);
     };
@@ -75,11 +79,11 @@ public class TestPlugin : BasePlugin {
       }
     };
 
-    // Core.NetMessage.HookClientMessage<CCLCMsg_Move>((msg, id) => {
-    //   Console.WriteLine("TestPlugin OnClientMove ");
-    //   Console.WriteLine(BitConverter.ToString(msg.Data));
-    //   return HookResult.Continue;
-    // });
+    Core.NetMessage.HookClientMessage<CCLCMsg_Move>((msg, id) => {
+      Console.WriteLine("TestPlugin OnClientMove ");
+      Console.WriteLine(BitConverter.ToString(msg.Data));
+      return HookResult.Continue;
+    });
 
     // Core.Event.OnEntityTakeDamage += (@event) => {
     //   Console.WriteLine("TestPlugin OnEntityTakeDamage " + @event.Entity.Entity?.DesignerName + " " + @event.Info.HitGroupId);
