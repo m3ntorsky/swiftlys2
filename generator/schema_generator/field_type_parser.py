@@ -46,6 +46,7 @@ unmanaged_type_maps = {
   "RadianEuler": "RadianEuler",
   "CNetworkUtlVectorBase": "CUtlVector",
   "CEntityHandle": "CHandle<CEntityInstance>",
+  "CTakeDamageInfo": "CTakeDamageInfo",
 }
 
 blacklisted_types = [

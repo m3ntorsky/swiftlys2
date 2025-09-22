@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using SwiftlyS2.Core.Extensions;
+using SwiftlyS2.Core.Natives;
 
 namespace SwiftlyS2.Shared.Natives;
 
@@ -16,5 +17,12 @@ public struct CUtlSymbolLarge {
     set {
       // TODO: Implement with AllocPooledString
     }
+  }
+
+  public static implicit operator string(CUtlSymbolLarge symbol) => symbol.Value;
+
+  public static implicit operator CUtlSymbolLarge(string value)
+  {
+    return new CUtlSymbolLarge { _pString = StringPool.Allocate(value) };
   }
 }

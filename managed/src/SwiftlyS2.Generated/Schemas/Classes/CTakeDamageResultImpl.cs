@@ -15,11 +15,8 @@ internal partial class CTakeDamageResultImpl : SchemaClass, CTakeDamageResult {
   public CTakeDamageResultImpl(nint handle) : base(handle) {
   }
 
-  public CTakeDamageInfo? OriginatingInfo {
-    get {
-      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD4A7564D5B166E20));
-      return ptr.IsValidPtr() ? new CTakeDamageInfoImpl(ptr) : null;
-    }
+  public ref CTakeDamageInfo OriginatingInfo {
+    get => ref _Handle.Deref<CTakeDamageInfo>(Schema.GetOffset(0xD4A7564D5B166E20));
   }
   public ref int HealthLost {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD4A7564D8F4D7431));

@@ -13,7 +13,7 @@ public partial interface CTakeDamageResult : ISchemaClass<CTakeDamageResult> {
   static CTakeDamageResult ISchemaClass<CTakeDamageResult>.From(nint handle) => new CTakeDamageResultImpl(handle);
 
   
-  public CTakeDamageInfo? OriginatingInfo { get; }
+  public ref CTakeDamageInfo OriginatingInfo { get; }
   
   public ref int HealthLost { get; }
   

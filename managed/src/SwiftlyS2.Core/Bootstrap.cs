@@ -11,6 +11,7 @@ using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Core.Extensions;
 using SwiftlyS2.Core.GameEvents;
 using SwiftlyS2.Shared;
+using SwiftlyS2.Core.Events;
 namespace SwiftlyS2.Core;
 
 internal static class Bootstrap {
@@ -39,6 +40,9 @@ internal static class Bootstrap {
     ));
 
     var provider = services.BuildServiceProvider();
+
+    // Register native event callbacks
+    EventPublisher.Register();
 
     provider.UsePluginManager();
     provider.UseTestService();

@@ -1,84 +1,84 @@
 namespace SwiftlyS2.Shared.Events;
 
 /// <summary>
-/// Custom event subscriber interface.
+/// Event delegates.
 /// </summary>
-public interface IEventSubscriber {
+public class EventDelegates {
 
   /// <summary>
   /// Called when game has processed a tick. Won't be called if the server is in hibernation.
   /// This callback is a hot path, be careful with it and don't do anything expensive.
   /// </summary>
-  public event EventDelegates.OnTick? OnTick;
+  public delegate void OnTick();
 
   /// <summary>
   /// Called when a client connects to the server.
   /// </summary>
-  public event EventDelegates.OnClientConnected? OnClientConnected;
+  public delegate void OnClientConnected(IOnClientConnectedEvent @event);
 
   /// <summary>
   /// Called when a client disconnects from the server.
   /// </summary>
-  public event EventDelegates.OnClientDisconnected? OnClientDisconnected;
+  public delegate void OnClientDisconnected(IOnClientDisconnectedEvent @event);
 
   /// <summary>
   /// Called when a client's key state changes.
   /// </summary>
-  public event EventDelegates.OnClientKeyStateChanged? OnClientKeyStateChanged;
+  public delegate void OnClientKeyStateChanged(IOnClientKeyStateChangedEvent @event);
 
   /// <summary>
   /// Called when a client is fully put in server.
   /// </summary>
-  public event EventDelegates.OnClientPutInServer? OnClientPutInServer;
+  public delegate void OnClientPutInServer(IOnClientPutInServerEvent @event);
 
   /// <summary>
   /// Called when a client is authorized by Steam.
   /// </summary>
-  public event EventDelegates.OnClientSteamAuthorize? OnClientSteamAuthorize;
+  public delegate void OnClientSteamAuthorize(IOnClientSteamAuthorizeEvent @event);
 
   /// <summary>
   /// Called when a client's Steam authorization fails.
   /// </summary>
-  public event EventDelegates.OnClientSteamAuthorizeFail? OnClientSteamAuthorizeFail;
+  public delegate void OnClientSteamAuthorizeFail(IOnClientSteamAuthorizeFailEvent @event);
 
   /// <summary>
   /// Called when an entity is created.
   /// </summary>
-  public event EventDelegates.OnEntityCreated? OnEntityCreated;
+  public delegate void OnEntityCreated(IOnEntityCreatedEvent @event);
 
   /// <summary>
   /// Called when an entity is deleted.
   /// </summary>
-  public event EventDelegates.OnEntityDeleted? OnEntityDeleted;
+  public delegate void OnEntityDeleted(IOnEntityDeletedEvent @event);
 
   /// <summary>
   /// Called when an entity's parent changes.
   /// </summary>
-  public event EventDelegates.OnEntityParentChanged? OnEntityParentChanged;
+  public delegate void OnEntityParentChanged(IOnEntityParentChangedEvent @event);
 
   /// <summary>
   /// Called when an entity is spawned.
   /// </summary>
-  public event EventDelegates.OnEntitySpawned? OnEntitySpawned;
+  public delegate void OnEntitySpawned(IOnEntitySpawnedEvent @event);
 
   /// <summary>
   /// Called when a map is loaded.
   /// </summary>
-  public event EventDelegates.OnMapLoad? OnMapLoad;
+  public delegate void OnMapLoad(IOnMapLoadEvent @event);
 
   /// <summary>
   /// Called when a map is unloaded.
   /// </summary>
-  public event EventDelegates.OnMapUnload? OnMapUnload;
+  public delegate void OnMapUnload(IOnMapUnloadEvent @event);
 
   /// <summary>
-  /// Called when the game process user's input.
+  /// Called when a client processes user commands.
   /// This callback is a hot path, be careful with it and don't do anything expensive.
   /// </summary>
-  public event EventDelegates.OnClientProcessUsercmds? OnClientProcessUsercmds;
+  public delegate void OnClientProcessUsercmds(IOnClientProcessUsercmdsEvent @event);
 
   /// <summary>
   /// Called when an entity takes damage.
   /// </summary>
-  public event EventDelegates.OnEntityTakeDamage? OnEntityTakeDamage;
+  public delegate void OnEntityTakeDamage(IOnEntityTakeDamageEvent @event);
 }

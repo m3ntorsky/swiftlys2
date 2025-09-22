@@ -50,22 +50,40 @@ public class TestPlugin : BasePlugin {
 
     // throw new Exception("TestPlugin loaded");
 
-    var thread = new Thread(() =>
-        {
-          Thread.Sleep(1000);
-          Console.WriteLine("throwing in another thread");
-          throw new Exception();
-        });
+
 
     Core.Logger.LogInformation("TestPlugin loaded");
 
-    thread.Start();
+    Core.Event.OnClientConnected += (@event) => {
+      Console.WriteLine("TestPlugin OnClientConnected " + @event.PlayerId);
+    };
 
-    Task.Run(async () => {
-      await Task.Delay(5000);
-      Core.Logger.LogInformation("TestPlugin loaded");
-      throw new Exception("TestPlugin loaded");
-    });
+    Core.Event.OnClientPutInServer += (@event) => {
+      Console.WriteLine("TestPlugin OnClientPutInServer " + @event.PlayerId);
+    };
+
+    Core.Event.OnClientDisconnected += (@event) => {
+      Console.WriteLine("TestPlugin OnClientDisconnected " + @event.PlayerId);
+    };
+
+    Core.Event.OnClientKeyStateChanged += (@event) => {
+      Console.WriteLine("TestPlugin OnClientKeyStateChanged " + @event.Key.ToString());
+    };
+
+    Core.Event.OnEntityTakeDamage += (@event) => {
+      Console.WriteLine("TestPlugin OnEntityTakeDamage " + @event.Entity.Entity?.DesignerName);
+    };
+
+    // Core.Event.OnTick += () => {
+
+    //   Console.WriteLine("TestPlugin OnTick");
+    // };
+
+    // Core.Event.OnEntityCreated += (ev) => {
+    //   var entity = ev.Entity;
+    //   entity.Entity.DesignerName = "a";
+    //   Console.WriteLine("TestPlugin OnEntityCreated " + ev.Entity.Entity?.DesignerName);
+    // };
 
 
     using CEntityKeyValues kv = new();

@@ -15,7 +15,7 @@ public partial interface SummaryTakeDamageInfo_t : ISchemaClass<SummaryTakeDamag
   
   public ref int SummarisedCount { get; }
   
-  public CTakeDamageInfo Info { get; }
+  public ref CTakeDamageInfo Info { get; }
   
   public CTakeDamageResult Result { get; }
   

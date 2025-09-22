@@ -345,11 +345,11 @@ void CPlayer::Think()
                     {
                         if ((m_uPressedButtons & (1ULL << i)) == 0 && (newButtons & (1ULL << i)) != 0) {
                             if (g_pOnClientKeyStateChangedCallback)
-                                reinterpret_cast<void(*)(int, const char*, bool)>(g_pOnClientKeyStateChangedCallback)(m_iPlayerId, g_vButtons[i].c_str(), true);
+                                reinterpret_cast<void(*)(int, uint32_t, bool)>(g_pOnClientKeyStateChangedCallback)(m_iPlayerId, i, true);
                         }
                         else if ((m_uPressedButtons & (1ULL << i)) != 0 && (newButtons & (1ULL << i)) == 0) {
                             if (g_pOnClientKeyStateChangedCallback)
-                                reinterpret_cast<void(*)(int, const char*, bool)>(g_pOnClientKeyStateChangedCallback)(m_iPlayerId, g_vButtons[i].c_str(), false);
+                                reinterpret_cast<void(*)(int, uint32_t, bool)>(g_pOnClientKeyStateChangedCallback)(m_iPlayerId, i, false);
                         }
                     }
 
