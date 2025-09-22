@@ -23,6 +23,11 @@ public interface ISwiftlyCore {
   public IEventSubscriber Event { get; }
 
   /// <summary>
+  /// Gets the engine service used to perform core engine operations.
+  /// </summary>
+  public IEngineService Engine { get; }
+
+  /// <summary>
   /// Game event service.
   /// </summary>
   public IGameEventService GameEvent { get; }
