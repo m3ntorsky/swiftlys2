@@ -1,6 +1,6 @@
 namespace SwiftlyS2.Shared.Events;
 
-internal enum GameKeyKind : int
+public enum GameButtons : int
 {
 
   Mouse1 = 0,
@@ -133,29 +133,29 @@ internal enum GameKeyKind : int
 }
 
 internal static class GameKeyKindExtensions {
-  public static KeyKind ToKeyKind(this GameKeyKind keyKind) {
+  public static KeyKind ToKeyKind(this GameButtons keyKind) {
     return keyKind switch {
-      GameKeyKind.Mouse1 => KeyKind.Mouse1,
-      GameKeyKind.Mouse2 => KeyKind.Mouse2,
-      GameKeyKind.Space => KeyKind.Space,
-      GameKeyKind.Ctrl => KeyKind.Ctrl,
-      GameKeyKind.W => KeyKind.W,
-      GameKeyKind.S => KeyKind.S,
-      GameKeyKind.E => KeyKind.E,
-      GameKeyKind.Esc => KeyKind.Esc,
-      GameKeyKind.A => KeyKind.A,
-      GameKeyKind.A2 => KeyKind.A,
-      GameKeyKind.D => KeyKind.D,
-      GameKeyKind.D2 => KeyKind.D,
-      GameKeyKind.R => KeyKind.R,
-      GameKeyKind.Alt => KeyKind.Alt,
-      GameKeyKind.Shift => KeyKind.Shift,
-      GameKeyKind.UnknownKeyWeapon1 => KeyKind.Weapon1,
-      GameKeyKind.UnknownKeyWeapon2 => KeyKind.Weapon2,
-      GameKeyKind.UnknownKeyGrenade1 => KeyKind.Grenade1,
-      GameKeyKind.UnknownKeyGrenade2 => KeyKind.Grenade2,
-      GameKeyKind.Tab => KeyKind.Tab,
-      GameKeyKind.F => KeyKind.F,
+      GameButtons.Mouse1 => KeyKind.Mouse1,
+      GameButtons.Mouse2 => KeyKind.Mouse2,
+      GameButtons.Space => KeyKind.Space,
+      GameButtons.Ctrl => KeyKind.Ctrl,
+      GameButtons.W => KeyKind.W,
+      GameButtons.S => KeyKind.S,
+      GameButtons.E => KeyKind.E,
+      GameButtons.Esc => KeyKind.Esc,
+      GameButtons.A => KeyKind.A,
+      GameButtons.A2 => KeyKind.A,
+      GameButtons.D => KeyKind.D,
+      GameButtons.D2 => KeyKind.D,
+      GameButtons.R => KeyKind.R,
+      GameButtons.Alt => KeyKind.Alt,
+      GameButtons.Shift => KeyKind.Shift,
+      GameButtons.UnknownKeyWeapon1 => KeyKind.Weapon1,
+      GameButtons.UnknownKeyWeapon2 => KeyKind.Weapon2,
+      GameButtons.UnknownKeyGrenade1 => KeyKind.Grenade1,
+      GameButtons.UnknownKeyGrenade2 => KeyKind.Grenade2,
+      GameButtons.Tab => KeyKind.Tab,
+      GameButtons.F => KeyKind.F,
       _ => throw new ArgumentException($"Unknown key kind: {keyKind}. Please report this to the SwiftlyS2 team.")
     };
   }

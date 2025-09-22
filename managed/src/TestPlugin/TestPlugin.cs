@@ -13,6 +13,7 @@ using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.ProtobufDefinitions;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using SwiftlyS2.Shared.Events;
 
 namespace TestPlugin;
 
@@ -66,13 +67,23 @@ public class TestPlugin : BasePlugin {
       Console.WriteLine("TestPlugin OnClientDisconnected " + @event.PlayerId);
     };
 
-    Core.Event.OnClientKeyStateChanged += (@event) => {
-      Console.WriteLine("TestPlugin OnClientKeyStateChanged " + @event.Key.ToString());
+    Core.Event.OnClientProcessUsercmds += (@event) => {
+      foreach(var usercmd in @event.Usercmds) {
+        usercmd.Base.ButtonsPb.Buttonstate1 &= 1UL << (int)GameButtons.Ctrl;
+        usercmd.Base.ButtonsPb.Buttonstate2 &= 1UL << (int)GameButtons.Ctrl;
+        usercmd.Base.ButtonsPb.Buttonstate3 &= 1UL << (int)GameButtons.Ctrl;
+      }
     };
 
-    Core.Event.OnEntityTakeDamage += (@event) => {
-      Console.WriteLine("TestPlugin OnEntityTakeDamage " + @event.Entity.Entity?.DesignerName);
-    };
+    // Core.NetMessage.HookClientMessage<CCLCMsg_Move>((msg, id) => {
+    //   Console.WriteLine("TestPlugin OnClientMove ");
+    //   Console.WriteLine(BitConverter.ToString(msg.Data));
+    //   return HookResult.Continue;
+    // });
+
+    // Core.Event.OnEntityTakeDamage += (@event) => {
+    //   Console.WriteLine("TestPlugin OnEntityTakeDamage " + @event.Entity.Entity?.DesignerName + " " + @event.Info.HitGroupId);
+    // };
 
     // Core.Event.OnTick += () => {
 

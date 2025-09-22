@@ -52,7 +52,7 @@ internal static class EventPublisher {
   private static OnClientConnectedDelegate _unmanagedOnClientConnected = OnClientConnected;
   delegate void OnClientDisconnectedDelegate(int playerId, int reason);
   private static OnClientDisconnectedDelegate _unmanagedOnClientDisconnected = OnClientDisconnected;
-  delegate void OnClientKeyStateChangedDelegate(int playerId, GameKeyKind key, bool pressed);
+  delegate void OnClientKeyStateChangedDelegate(int playerId, GameButtons key, bool pressed);
   private static OnClientKeyStateChangedDelegate _unmanagedOnClientKeyStateChanged = OnClientKeyStateChanged;
   delegate void OnClientPutInServerDelegate(int playerId, int clientKind);
   private static OnClientPutInServerDelegate _unmanagedOnClientPutInServer = OnClientPutInServer;
@@ -134,7 +134,7 @@ internal static class EventPublisher {
     }
   }
 
-  public static void OnClientKeyStateChanged(int playerId, GameKeyKind key, bool pressed)
+  public static void OnClientKeyStateChanged(int playerId, GameButtons key, bool pressed)
   {
     if (_subscribers.Count == 0) return;
     try {
