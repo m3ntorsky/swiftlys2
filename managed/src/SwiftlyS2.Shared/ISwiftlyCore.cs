@@ -1,13 +1,14 @@
 using Microsoft.Extensions.Logging;
+using SwiftlyS2.Core.Services;
+using SwiftlyS2.Shared.Commands;
 using SwiftlyS2.Shared.Convars;
 using SwiftlyS2.Shared.EntitySystem;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.GameEvents;
-using SwiftlyS2.Shared.Commands;
-using SwiftlyS2.Shared.NetMessages;
-using SwiftlyS2.Shared.Services;
 using SwiftlyS2.Shared.Hooks;
+using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.Profiler;
+using SwiftlyS2.Shared.Services;
 
 namespace SwiftlyS2.Shared;
 
@@ -86,4 +87,9 @@ public interface ISwiftlyCore {
   /// Profiler service.
   /// </summary>
   public IContextedProfilerService Profiler { get; }
+
+  /// <summary>
+  /// Gets the trace manager used to control and configure tracing operations within the game.
+  /// </summary>
+  public ITraceManager Trace { get; }
 }

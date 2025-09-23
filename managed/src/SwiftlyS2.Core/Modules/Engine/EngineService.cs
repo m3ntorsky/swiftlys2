@@ -15,8 +15,6 @@ internal class EngineService : IEngineService
 
     public int TickCount => NativeEngineHelpers.GetServerTickCount();
 
-    public ITraceManager TraceManager => new TraceManager();
-
     public void ExecuteCommand(string command)
     {
         NativeEngineHelpers.ExecuteCommand(command);

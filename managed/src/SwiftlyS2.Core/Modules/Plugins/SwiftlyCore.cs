@@ -41,6 +41,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public IPlayerManagerService PlayerManagerService { get; init; }
   public ILogger Logger { get; init; }
   public IEngineService Engine { get; init; }
+  public ITraceManager Trace { get; init; }
   public HookService HookService { get; init; }
   public IContextedProfilerService ProfilerService { get; init; }
 
@@ -59,6 +60,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton(coreProvider.GetRequiredService<HookManager>())
       .AddSingleton(coreProvider.GetRequiredService<PlayerManagerService>())
       .AddSingleton(coreProvider.GetRequiredService<EngineService>())
+      .AddSingleton(coreProvider.GetRequiredService<TraceManager>())
 
       .AddSingleton<EventSubscriber>()
       .AddSingleton<PluginConfigurationService>()
@@ -91,6 +93,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     ConVarService = _ServiceProvider.GetRequiredService<ConVarService>();
     HookService = _ServiceProvider.GetRequiredService<HookService>();
     Engine = _ServiceProvider.GetRequiredService<EngineService>();
+    Trace = _ServiceProvider.GetRequiredService<TraceManager>();
     ProfilerService = _ServiceProvider.GetRequiredService<IContextedProfilerService>();
 
     Logger = LoggerFactory.CreateLogger(contextType);
@@ -125,4 +128,5 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   ILogger ISwiftlyCore.Logger => Logger;
   IContextedProfilerService ISwiftlyCore.Profiler => ProfilerService;
   IEngineService ISwiftlyCore.Engine => Engine;
+  ITraceManager ISwiftlyCore.Trace => Trace;
 }
