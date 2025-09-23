@@ -25,6 +25,8 @@ internal class Player : IPlayer
 
     public uint ConnectedTime => NativePlayer.GetConnectedTime(_pid);
 
+    public Language PlayerLanguage => new(NativePlayer.GetLanguage(_pid));
+
     public ulong SteamID => NativePlayer.GetSteamID(_pid);
 
     public ulong UnauthorizedSteamID => NativePlayer.GetUnauthorizedSteamID(_pid);
