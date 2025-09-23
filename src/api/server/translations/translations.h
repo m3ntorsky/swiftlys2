@@ -25,10 +25,6 @@ class ITranslations
 {
 public:
     virtual void Initialize() = 0;
-    virtual void ClearTranslations() = 0;
-    virtual void LoadTranslations() = 0;
-    virtual void LoadTranslationFile(const std::string& file) = 0;
-    virtual std::string FetchTranslation(const std::string& key, int playerid) = 0;
 };
 
 #endif

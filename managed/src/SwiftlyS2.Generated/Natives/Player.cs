@@ -236,4 +236,22 @@ internal static class NativePlayer {
       throw;
     }
   }
+  private unsafe static delegate* unmanaged<byte*, int, int> _GetLanguage;
+  public unsafe static string GetLanguage(int playerid) {
+    try {
+    var ret = _GetLanguage(null, playerid);
+    var pool = ArrayPool<byte>.Shared;
+    var retBuffer = pool.Rent(ret+1);
+    fixed (byte* retBufferPtr = retBuffer) {
+        ret = _GetLanguage(retBufferPtr, playerid);
+    var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
+    pool.Return(retBuffer);
+
+    return retString;
+  }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
 }

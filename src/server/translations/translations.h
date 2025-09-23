@@ -27,12 +27,6 @@ class CTranslations : public ITranslations
 {
 public:
     virtual void Initialize() override;
-    virtual void ClearTranslations() override;
-    virtual void LoadTranslations() override;
-    virtual void LoadTranslationFile(const std::string& file) override;
-    virtual std::string FetchTranslation(const std::string& key, int playerid) override;
-private:
-    std::map<std::string, std::map<std::string, std::string>> m_mTranslations;
 };
 
 #endif

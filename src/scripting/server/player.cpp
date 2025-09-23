@@ -224,6 +224,20 @@ void Bridge_Player_Teleport(int playerid, Vector pos, QAngle angle, Vector vel)
     CALL_VIRTUAL(void, gamedata->GetOffsets()->Fetch("CBaseEntity::Teleport"), player->GetPawn(), &pos, &angle, &vel);
 }
 
+int Bridge_Player_GetLanguage(char* out, int playerid)
+{
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    auto player = playerManager->GetPlayer(playerid);
+    if (!player) return 0;
+
+    static std::string s;
+    s = player->GetLanguage();
+
+    if (out != nullptr) strcpy(out, s.c_str());
+
+    return s.size();
+}
+
 DEFINE_NATIVE("Player.SendMessage", Bridge_Player_SendMessage);
 DEFINE_NATIVE("Player.IsFakeClient", Bridge_Player_IsFakeClient);
 DEFINE_NATIVE("Player.IsAuthorized", Bridge_Player_IsAuthorized);
@@ -244,3 +258,4 @@ DEFINE_NATIVE("Player.ChangeTeam", Bridge_Player_ChangeTeam);
 DEFINE_NATIVE("Player.SwitchTeam", Bridge_Player_SwitchTeam);
 DEFINE_NATIVE("Player.TakeDamage", Bridge_Player_TakeDamage);
 DEFINE_NATIVE("Player.Teleport", Bridge_Player_Teleport);
+DEFINE_NATIVE("Player.GetLanguage", Bridge_Player_GetLanguage);
