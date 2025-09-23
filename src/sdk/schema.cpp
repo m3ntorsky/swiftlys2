@@ -21,6 +21,8 @@
 #include <format>
 #include <map>
 
+#include <core/entrypoint.h>
+
 #include <api/interfaces/manager.h>
 #include <api/shared/files.h>
 #include <api/shared/jsonc.h>
@@ -102,7 +104,7 @@ void CSDKSchema::Load()
 
 	logger->Info("SDK", std::format("Finished loading {} SDK enums.\n", enums_count));
 
-	WriteJSON("addons/swiftly/gamedata/cs2/sdk.json", sdkJson);
+	WriteJSON(g_SwiftlyCore.GetCorePath() + "gamedata/cs2/sdk.json", sdkJson);
 }
 
 void CSDKSchema::SetStateChanged(void* pEntity, const char* sClassName, const char* sMemberName)

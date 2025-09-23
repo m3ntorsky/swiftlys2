@@ -23,11 +23,13 @@
 #include <api/shared/plat.h>
 #include <api/shared/string.h>
 
+#include <core/entrypoint.h>
+
 bool all_loaded = false;
 
 void ExtensionManager::Load()
 {
-    std::string baseDir = std::string("addons/swiftly/extensions/") + WIN_LINUX("win64", "linuxsteamrt64");
+    std::string baseDir = g_SwiftlyCore.GetCorePath() + "extensions/" + WIN_LINUX("win64", "linuxsteamrt64");
     if (!Files::ExistsPath(baseDir))
         Files::CreateDir(baseDir);
 

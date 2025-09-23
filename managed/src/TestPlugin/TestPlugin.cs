@@ -177,12 +177,12 @@ public class TestPlugin : BasePlugin {
   public void TestCommand2(ICommandContext context)
   {
     var dispatchspawn = Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
-    Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) => {
+    /*Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) => {
       return (nint pEntity, nint pKV) => {
         Console.WriteLine("TestPlugin DispatchSpawn " + order++);
         return next()(pEntity, pKV);
       };
-    });
+    });*/
   }
 
   Guid _hookId = Guid.Empty;
@@ -190,7 +190,7 @@ public class TestPlugin : BasePlugin {
   [Command("h2")]
   public void TestCommand3(ICommandContext context)
   {
-    var dispatchspawn = Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
+    /*var dispatchspawn = Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
     _hookId = Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) =>
     {
       return (nint pEntity, nint pKV) =>
@@ -208,7 +208,7 @@ public class TestPlugin : BasePlugin {
         Console.WriteLine("TestPlugin DispatchSpawn3 " + order++);
         return original(pEntity, pKV);
       };
-    });
+    });*/
   }
 
   [Command("tt3")]
@@ -220,7 +220,7 @@ public class TestPlugin : BasePlugin {
 
   [Command("tt4")]
   public void TestCommand4(ICommandContext context) {
-    Core.Hook.Unhook(_hookId);
+    //Core.Hook.Unhook(_hookId);
   }
 
   // [GameEventHandler(HookMode.Pre)]

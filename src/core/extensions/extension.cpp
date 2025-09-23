@@ -23,6 +23,8 @@
 #include <api/shared/plat.h>
 #include <api/shared/string.h>
 
+#include <core/entrypoint.h>
+
 std::string& Extension::GetName()
 {
     return m_sName;
@@ -55,7 +57,7 @@ bool Extension::Load()
     if (m_bLoaded)
         return true;
 
-    m_sPath = std::string("addons/swiftly/extensions/") + WIN_LINUX("win64", "linuxsteamrt64") + WIN_LINUX("\\", "/") + m_sName + WIN_LINUX(".dll", ".so");
+    m_sPath = g_SwiftlyCore.GetCorePath() + "extensions/" + WIN_LINUX("win64", "linuxsteamrt64") + WIN_LINUX("\\", "/") + m_sName + WIN_LINUX(".dll", ".so");
     if (!Files::ExistsPath(m_sPath))
     {
         m_sError = "The extension file does not exist!";

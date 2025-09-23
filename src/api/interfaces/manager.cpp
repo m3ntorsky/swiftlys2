@@ -20,6 +20,11 @@
 #include <api/shared/plat.h>
 #include <api/dll/functions.h>
 
+#include <public/tier0/icommandline.h>
+#include <public/tier1/utlstringtoken.h>
+
+#include <api/shared/string.h>
+
 typedef void* (*GetInterfaceFn)(const char*);
 
 void* InterfacesManager::GetPureInterface(const std::string& interface_name)
@@ -27,7 +32,10 @@ void* InterfacesManager::GetPureInterface(const std::string& interface_name)
 #ifdef BUILDING_CORE
     return ::GetPureInterface(interface_name.c_str());
 #else
-    void* getiface_func = GetBinaryFunction(WIN_LINUX("addons\\swiftly\\bin\\win64\\swiftly.dll", "addons/swiftly/bin/linuxsteamrt64/swiftly.so"), "GetPureInterface");
+    static std::string m_sCorePath = CommandLine()->ParmValue(CUtlStringToken("-sw_path"), "addons/swiftlys2");
+    if (!ends_with(m_sCorePath, WIN_LINUX("\\", "/"))) m_sCorePath += WIN_LINUX("\\", "/");
+
+    void* getiface_func = GetBinaryFunction(m_sCorePath + "bin/" + WIN_LINUX("win64/swiftly.dll", "linuxsteamrt64/swiftly.so"), "GetPureInterface");
     if (!getiface_func) return nullptr;
 
     GetInterfaceFn GetInterface = reinterpret_cast<GetInterfaceFn>(getiface_func);

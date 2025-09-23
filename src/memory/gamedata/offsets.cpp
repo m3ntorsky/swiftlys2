@@ -27,6 +27,8 @@
 
 #include <format>
 
+#include <core/entrypoint.h>
+
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
@@ -35,7 +37,7 @@ void GameDataOffsets::Load(const std::string& game)
 {
     auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
 
-    auto files = Files::FetchFileNames("addons/swiftly/gamedata/" + game);
+    auto files = Files::FetchFileNames(g_SwiftlyCore.GetCorePath() + "gamedata/" + game);
     for (auto file : files) {
         if (!ends_with(file, "offsets.jsonc")) continue;
 

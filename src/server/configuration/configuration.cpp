@@ -34,7 +34,7 @@ using json = nlohmann::json;
 
 void Configuration::InitializeExamples()
 {
-    auto files = Files::FetchFileNames("addons/swiftly/configs");
+    auto files = Files::FetchFileNames(g_SwiftlyCore.GetCorePath() + "configs");
     for (auto file : files) {
         const std::string config_name = replace(file, ".example", "");
         if (ends_with(file, ".example.jsonc") && !Files::ExistsPath(config_name)) {
@@ -454,7 +454,7 @@ bool Configuration::Load()
     auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
 
     try {
-        json config_json = parseJsonc(Files::Read("addons/swiftly/configs/core.jsonc"));
+        json config_json = parseJsonc(Files::Read(g_SwiftlyCore.GetCorePath() + "configs/core.jsonc"));
 
         bool wasEdited = false;
 
@@ -516,11 +516,11 @@ bool Configuration::Load()
         RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "SteamAuth.AvailableModes", { "flexible", "strict" }, true, " ");
 
         if (wasEdited) {
-            WriteJSONFile("addons/swiftly/configs/core.jsonc", config_json);
+            WriteJSONFile(g_SwiftlyCore.GetCorePath() + "configs/core.jsonc", config_json);
         }
     }
     catch (json::parse_error& e) {
-        logger->Error("Configuration", std::format("Failed to parse the core configuration ('addons/swiftly/configs/core.jsonc').\nError: {}.\n", e.what()));
+        logger->Error("Configuration", std::format("Failed to parse the core configuration ('{}configs/core.jsonc').\nError: {}.\n", g_SwiftlyCore.GetCorePath(), e.what()));
     }
 
     m_bLoaded = true;

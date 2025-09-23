@@ -9,10 +9,10 @@ internal class Entrypoint
 {
     [UnmanagedCallersOnly]
     [SecurityCritical]
-    public unsafe static void Start(IntPtr nativeTable, int nativeTableSize)
+    public unsafe static void Start(IntPtr nativeTable, int nativeTableSize, IntPtr basePath)
     {   
         try {
-            Bootstrap.Start(nativeTable, nativeTableSize);
+            Bootstrap.Start(nativeTable, nativeTableSize, Marshal.PtrToStringUTF8(basePath) ?? "");
         } catch (Exception e) {
             AnsiConsole.WriteException(e);
         }

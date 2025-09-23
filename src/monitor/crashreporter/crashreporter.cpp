@@ -25,23 +25,25 @@
 
 #include <public/eiface.h>
 
+#include <core/entrypoint.h>
+
 #include <format>
 
 void CrashReporter::Init()
 {
     auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-    if (!Files::ExistsPath("addons/swiftly/dumps"))
+    if (!Files::ExistsPath(g_SwiftlyCore.GetCorePath() + "dumps"))
     {
-        if (!Files::CreateDir("addons/swiftly/dumps"))
+        if (!Files::CreateDir(g_SwiftlyCore.GetCorePath() + "dumps"))
         {
             logger->Error("Crash Listener", "Couldn't create dumps folder.\n");
             return;
         }
     }
 
-    if (!Files::ExistsPath("addons/swiftly/dumps/prevention"))
+    if (!Files::ExistsPath(g_SwiftlyCore.GetCorePath() + "dumps/prevention"))
     {
-        if (!Files::CreateDir("addons/swiftly/dumps/prevention"))
+        if (!Files::CreateDir(g_SwiftlyCore.GetCorePath() + "dumps/prevention"))
         {
             logger->Error("Crash Listener", "Couldn't create dumps prevention folder.\n");
             return;
@@ -72,7 +74,7 @@ void CrashReporter::ReportPreventionIncident(std::string category, std::string r
 
     PrintTextTable(LogType::WARNING, "Crash Prevention", backtraceTable);
 
-    std::string file_path = std::format("addons/swiftly/dumps/prevention/incident.%s.log", get_uuid());
+    std::string file_path = std::format("{}dumps/prevention/incident.{}.log", g_SwiftlyCore.GetCorePath(), get_uuid());
     if (Files::ExistsPath(file_path)) Files::Delete(file_path);
 
     Files::Append(file_path, std::format("================================\nCategory: {}\nDetails: {}", category, reason), false);

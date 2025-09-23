@@ -29,6 +29,12 @@
 #include <engine/entities/entitysystem.h>
 #include <engine/gamesystem/gamesystem.h>
 
+#include <public/tier0/icommandline.h>
+#include <public/tier1/utlstringtoken.h>
+
+#include <api/shared/plat.h>
+#include <api/shared/string.h>
+
 SwiftlyCore g_SwiftlyCore;
 InterfacesManager g_ifaceService;
 
@@ -47,6 +53,9 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
 
         return false;
     }
+
+    m_sCorePath = CommandLine()->ParmValue(CUtlStringToken("-sw_path"), WIN_LINUX("addons\\swiftlys2", "addons/swiftlys2"));
+    if (!ends_with(m_sCorePath, WIN_LINUX("\\", "/"))) m_sCorePath += WIN_LINUX("\\", "/");
 
     auto configuration = g_ifaceService.FetchInterface<IConfiguration>(CONFIGURATION_INTERFACE_VERSION);
     configuration->InitializeExamples();
@@ -99,7 +108,7 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
 
     auto scripting = g_ifaceService.FetchInterface<IScriptingAPI>(SCRIPTING_INTERFACE_VERSION);
 
-    InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/");
+    InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/" + m_sCorePath);
     InitializeDotNetAPI(scripting->GetNativeFunctions(), scripting->GetNativeFunctionsCount());
 
     return true;
@@ -184,4 +193,9 @@ int SwiftlyCore::GetMaxGameClients()
     case 730: return 64;
     default: return 0;
     }
+}
+
+std::string& SwiftlyCore::GetCorePath()
+{
+    return m_sCorePath;
 }

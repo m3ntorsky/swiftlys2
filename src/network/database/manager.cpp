@@ -23,19 +23,21 @@
 
 #include <api/interfaces/manager.h>
 
+#include <core/entrypoint.h>
+
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
 
 void CDatabaseManager::Initialize()
 {
-    std::string file_path = "addons/swiftly/configs/database.jsonc";
+    std::string file_path = g_SwiftlyCore.GetCorePath() + "configs/database.jsonc";
     json j = parseJsonc(Files::Read(file_path));
 
     if (j.empty() || !j.contains("default_connection") || !j.contains("connections"))
     {
         auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-        logger->Error("Database Manager", "Failed to load database credentials. The 'addons/swiftly/configs/database.jsonc' file is missing or invalid.\n");
+        logger->Error("Database Manager", std::format("Failed to load database credentials. The '{}' file is missing or invalid.\n", file_path));
         return;
     }
 

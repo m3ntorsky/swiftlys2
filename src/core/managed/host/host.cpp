@@ -44,14 +44,18 @@ std::wstring widenedOriginPath;
 std::string widenedOriginPath;
 #endif
 
+std::string original_path;
+
 bool InitializeHostFXR(std::string origin_path) {
+  original_path = origin_path;
+
 #ifdef _WIN32
   widenedOriginPath = StringWide(origin_path);
 #else
   widenedOriginPath = origin_path;
 #endif
 
-  hostfxr_lib = load_library((WIN_LIN(widenedOriginPath + L"addons\\swiftly\\bin\\win64\\" + L"hostfxr.dll", widenedOriginPath + "addons/swiftly/bin/linuxsteamrt64/" + "libhostfxr.so")).c_str());
+  hostfxr_lib = load_library((WIN_LIN(widenedOriginPath + L"bin\\win64\\" + L"hostfxr.dll", widenedOriginPath + "bin/linuxsteamrt64/" + "libhostfxr.so")).c_str());
   if (!hostfxr_lib) return false;
 
   _initialize_for_runtime_config = (hostfxr_initialize_for_runtime_config_fn)get_export(hostfxr_lib, "hostfxr_initialize_for_runtime_config");
@@ -69,16 +73,16 @@ bool InitializeHostFXR(std::string origin_path) {
   hostfxr_initialize_parameters params;
   params.size = sizeof(hostfxr_initialize_parameters);
 #ifdef _WIN32
-  std::wstring path = widenedOriginPath + L"addons\\swiftly\\bin\\managed\\dotnet";
+  std::wstring path = widenedOriginPath + L"bin\\managed\\dotnet";
 #else
-  std::string path = widenedOriginPath + "addons/swiftly/bin/managed/dotnet";
+  std::string path = widenedOriginPath + "bin/managed/dotnet";
 #endif
 
   memcpy(dotnet_path, path.c_str(), path.size() * sizeof(char_t) >= 1024 ? 1023 : path.size() * sizeof(char_t));
 
   params.dotnet_root = dotnet_path;
 
-  int returnCode = _initialize_for_runtime_config((widenedOriginPath + WIN_LIN(L"addons\\swiftly\\bin\\managed\\SwiftlyS2.runtimeconfig.json", "addons/swiftly/bin/managed/SwiftlyS2.runtimeconfig.json")).c_str(), &params, &fxrcxt);
+  int returnCode = _initialize_for_runtime_config((widenedOriginPath + WIN_LIN(L"bin\\managed\\SwiftlyS2.runtimeconfig.json", "bin/managed/SwiftlyS2.runtimeconfig.json")).c_str(), &params, &fxrcxt);
   if (returnCode != 0) {
     _close(fxrcxt);
     return false;
@@ -96,12 +100,14 @@ bool InitializeHostFXR(std::string origin_path) {
 }
 
 bool InitializeDotNetAPI(void* scripting_table, int scripting_table_size) {
-  typedef void(CORECLR_DELEGATE_CALLTYPE* custom_loader_fn)(void*, int);
+  typedef void(CORECLR_DELEGATE_CALLTYPE* custom_loader_fn)(void*, int, const char*);
   static custom_loader_fn custom_loader = nullptr;
+
+  printf("%s\n", original_path.c_str());
 
   if (custom_loader == nullptr) {
     int returnCode = _load_assembly_and_get_function_pointer(
-        (widenedOriginPath + WIN_LIN(L"addons\\swiftly\\bin\\managed\\SwiftlyS2.dll", "addons/swiftly/bin/managed/SwiftlyS2.dll")).c_str(),
+        (widenedOriginPath + WIN_LIN(L"bin\\managed\\SwiftlyS2.dll", "bin/managed/SwiftlyS2.dll")).c_str(),
         STR("SwiftlyS2.Entrypoint, SwiftlyS2"), STR("Start"), UNMANAGEDCALLERSONLY_METHOD, nullptr, (void**)&custom_loader
     );
 
@@ -109,7 +115,7 @@ bool InitializeDotNetAPI(void* scripting_table, int scripting_table_size) {
       return false;
     }
 
-    custom_loader(scripting_table, scripting_table_size);
+    custom_loader(scripting_table, scripting_table_size, original_path.c_str());
   }
 
   return true;

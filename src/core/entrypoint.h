@@ -30,6 +30,7 @@ class SwiftlyCore
 {
 private:
     BridgeKind_t m_iKind;
+    std::string m_sCorePath;
 
 public:
     bool Load(BridgeKind_t kind);
@@ -43,6 +44,8 @@ public:
 
     std::string GetCurrentGame();
     int GetMaxGameClients();
+
+    std::string& GetCorePath();
 };
 
 extern SwiftlyCore g_SwiftlyCore;

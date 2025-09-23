@@ -322,13 +322,13 @@ target("swiftlys2")
         end
         
         os.mkdir('build/package/addons/metamod')
-        os.cp("plugin_files/", 'build/package/addons/swiftly')
-        os.mkdir('build/package/addons/swiftly/bin/'..GetDistDirName())
-        os.cp(target:targetfile(), 'build/package/addons/swiftly/bin/'..GetDistDirName().."/swiftly."..(is_plat("windows") and "dll" or "so"))
+        os.cp("plugin_files/", 'build/package/addons/swiftlys2')
+        os.mkdir('build/package/addons/swiftlys2/bin/'..GetDistDirName())
+        os.cp(target:targetfile(), 'build/package/addons/swiftlys2/bin/'..GetDistDirName().."/swiftly."..(is_plat("windows") and "dll" or "so"))
         io.writefile("build/package/addons/metamod/swiftly.vdf", [["Metamod Plugin"
 {
     "alias"	"swiftly"
-    "file"	"addons/swiftly/bin/]]..GetDistDirName()..[[/swiftly"
+    "file"	"addons/swiftlys2/bin/]]..GetDistDirName()..[[/swiftly"
 }
 ]])
     end)
