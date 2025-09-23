@@ -16,3 +16,7 @@ void Kick = int32 playerid, string reason, int32 gamereason
 void ShouldBlockTransmitEntity = int32 playerid, int32 entityidx, bool shouldBlockTransmit
 bool IsTransmitEntityBlocked = int32 playerid, int32 entityidx
 void ClearTransmitEntityBlocked = int32 playerid
+void ChangeTeam = int32 playerid, int32 newteam
+void SwitchTeam = int32 playerid, int32 newteam
+void TakeDamage = int32 playerid, ptr dmginfo
+void Teleport = int32 playerid, vector pos, qangle angle, vector velocity

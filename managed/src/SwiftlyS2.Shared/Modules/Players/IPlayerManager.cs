@@ -34,4 +34,12 @@ public interface IPlayerManagerService
     /// Removes all entity transmission blocks, allowing all previously blocked entities to be transmitted to clients again.
     /// </summary>
     void ClearAllBlockedTransmitEntities();
+
+    /// <summary>
+    /// Retrieves the player associated with the specified player ID.
+    /// </summary>
+    /// <param name="playerid">The unique identifier of the player to retrieve. Must be a valid player ID.</param>
+    /// <returns>An <see cref="IPlayer"/> instance representing the player with the specified ID, or <c>null</c> if no such
+    /// player exists.</returns>
+    IPlayer GetPlayer(int playerid);
 }

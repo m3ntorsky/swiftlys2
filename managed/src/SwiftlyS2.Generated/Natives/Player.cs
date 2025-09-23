@@ -200,4 +200,40 @@ internal static class NativePlayer {
       throw;
     }
   }
+  private unsafe static delegate* unmanaged<int, int, void> _ChangeTeam;
+  public unsafe static void ChangeTeam(int playerid, int newteam) {
+    try {
+    _ChangeTeam(playerid, newteam);
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
+  private unsafe static delegate* unmanaged<int, int, void> _SwitchTeam;
+  public unsafe static void SwitchTeam(int playerid, int newteam) {
+    try {
+    _SwitchTeam(playerid, newteam);
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
+  private unsafe static delegate* unmanaged<int, nint, void> _TakeDamage;
+  public unsafe static void TakeDamage(int playerid, nint dmginfo) {
+    try {
+    _TakeDamage(playerid, dmginfo);
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
+  private unsafe static delegate* unmanaged<int, Vector, QAngle, Vector, void> _Teleport;
+  public unsafe static void Teleport(int playerid, Vector pos, QAngle angle, Vector velocity) {
+    try {
+    _Teleport(playerid, pos, angle, velocity);
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
 }

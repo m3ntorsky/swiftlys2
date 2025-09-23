@@ -8,5 +8,5 @@ public enum MessageType: byte
     Center,
     ChatEOT,
     Alert,
-    CenterHTML
+    CenterHTML = 100
 };

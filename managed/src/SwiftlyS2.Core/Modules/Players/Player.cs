@@ -1,0 +1,101 @@
+﻿using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Core.SchemaDefinitions;
+using SwiftlyS2.Shared.Events;
+using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Shared.ProtobufDefinitions;
+using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.Services;
+
+namespace SwiftlyS2.Core.Services;
+
+internal class Player : IPlayer
+{
+    private int _pid;
+
+    public Player(int pid)
+    {
+        _pid = pid;
+    }
+
+    public int PlayerID => _pid;
+
+    public bool FakeClient => NativePlayer.IsFakeClient(_pid);
+
+    public bool IsAuthorized => NativePlayer.IsAuthorized(_pid);
+
+    public uint ConnectedTime => NativePlayer.GetConnectedTime(_pid);
+
+    public ulong SteamID => NativePlayer.GetSteamID(_pid);
+
+    public ulong UnauthorizedSteamID => NativePlayer.GetUnauthorizedSteamID(_pid);
+
+    public CCSPlayerController Controller => new CCSPlayerControllerImpl(NativePlayer.GetController(_pid));
+
+    public CBasePlayerPawn Pawn => new CBasePlayerPawnImpl(NativePlayer.GetPawn(_pid));
+
+    public CCSPlayerPawn PlayerPawn => new CCSPlayerPawnImpl(NativePlayer.GetPlayerPawn(_pid));
+
+    public GameButtonFlags PressedButtons => (GameButtonFlags)NativePlayer.GetPressedButtons(_pid);
+
+    public string IPAddress => NativePlayer.GetIPAddress(_pid);
+
+    public VoiceFlagValue VoiceFlags { get => (VoiceFlagValue)NativeVoiceManager.GetClientVoiceFlags(_pid); set => NativeVoiceManager.SetClientVoiceFlags(_pid, (int)value); }
+
+    public unsafe void ChangeTeam(Team team)
+    {
+        NativePlayer.ChangeTeam(_pid, (byte)team);
+    }
+
+    public void ClearTransmitEntityBlocks()
+    {
+        NativePlayer.ClearTransmitEntityBlocked(_pid);
+    }
+
+    public ListenOverride GetListenOverride(int player)
+    {
+        return (ListenOverride)NativeVoiceManager.GetClientListenOverride(_pid, player);
+    }
+
+    public bool IsTransmitEntityBlocked(int entityid)
+    {
+        return NativePlayer.IsTransmitEntityBlocked(_pid, entityid);
+    }
+
+    public void Kick(string reason, ENetworkDisconnectionReason gameReason)
+    {
+        NativePlayer.Kick(_pid, reason, (int)gameReason);
+    }
+
+    public void SendMessage(MessageType kind, string message)
+    {
+        NativePlayer.SendMessage(_pid, (int)kind, message);
+    }
+
+    public void SetListenOverride(int player, ListenOverride listenOverride)
+    {
+        NativeVoiceManager.SetClientListenOverride(_pid, player, (int)listenOverride);
+    }
+
+    public void ShouldBlockTransmitEntity(int entityid, bool shouldBlockTransmit)
+    {
+        NativePlayer.ShouldBlockTransmitEntity(_pid, entityid, shouldBlockTransmit);
+    }
+
+    public void SwitchTeam(Team team)
+    {
+        NativePlayer.SwitchTeam(_pid, (byte)team);
+    }
+
+    public void TakeDamage(CTakeDamageInfo damageInfo)
+    {
+        unsafe
+        {
+            NativePlayer.TakeDamage(_pid, (nint)(&damageInfo));
+        }
+    }
+
+    public void Teleport(Vector pos, QAngle angle, Vector velocity)
+    {
+        NativePlayer.Teleport(_pid, pos, angle, velocity);
+    }
+}
