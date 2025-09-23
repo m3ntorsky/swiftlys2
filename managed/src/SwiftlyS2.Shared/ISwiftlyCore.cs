@@ -5,7 +5,7 @@ using SwiftlyS2.Shared.Convars;
 using SwiftlyS2.Shared.EntitySystem;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.GameEvents;
-using SwiftlyS2.Shared.Hooks;
+using SwiftlyS2.Shared.Memory;
 using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.Profiler;
 using SwiftlyS2.Shared.Services;
@@ -68,10 +68,11 @@ public interface ISwiftlyCore {
   /// </summary>
   public IPlayerManagerService PlayerManager { get; }
 
+
   /// <summary>
-  /// Hook service.
+  /// Memory service.
   /// </summary>
-  public IHookService Hook { get; }
+  public IMemoryService Memory { get; }
 
   /// <summary>
   /// Logger factory.

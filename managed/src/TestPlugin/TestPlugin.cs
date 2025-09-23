@@ -36,6 +36,8 @@ public class TestPlugin : BasePlugin {
     // Use plugin-specific services here if needed
   }
 
+  delegate void Test(int a, int b);
+
   public override void Load() {
     // _Core = core;
     // var root = _Core.Configuration
@@ -54,6 +56,20 @@ public class TestPlugin : BasePlugin {
 
 
     Core.Logger.LogInformation("TestPlugin loaded");
+
+    var func = Core.Memory.GetUnmanagedFunctionByAddress<Test>(Core.Memory.GetAddressBySignature("server", "AAAAA")!.Value);
+    
+    func.CallOriginal(1, 2);
+
+    func.Call(1, 2);
+
+    func.AddHook((next) => {
+      return (a, b) => {
+        Console.WriteLine("TestPlugin Hook " + a + " " + b);
+        next()(a, b);
+      };
+    });
+
 
     // Entrypoint
 
