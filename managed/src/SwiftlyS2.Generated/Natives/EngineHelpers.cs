@@ -156,4 +156,14 @@ internal static class NativeEngineHelpers {
       throw;
     }
   }
+  private unsafe static delegate* unmanaged<nint> _GetTraceManager;
+  public unsafe static nint GetTraceManager() {
+    try {
+    var ret = _GetTraceManager();
+    return ret;
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
 }

@@ -123,6 +123,13 @@ void Bridge_EngineHelpers_SendMessageToConsole(const char* message)
     g_SwiftlyCore.SendConsoleMessage(TerminalProcessColor(message));
 }
 
+void* g_pTraceManager = nullptr;
+
+void* Bridge_EngineHelpers_GetTraceManager()
+{
+    return g_pTraceManager;
+}
+
 DEFINE_NATIVE("EngineHelpers.GetServerIP", Bridge_EngineHelpers_GetServerIP);
 DEFINE_NATIVE("EngineHelpers.GetMap", Bridge_EngineHelpers_GetMap);
 DEFINE_NATIVE("EngineHelpers.IsMapValid", Bridge_EngineHelpers_IsMapValid);
@@ -132,3 +139,4 @@ DEFINE_NATIVE("EngineHelpers.GetServerCurrentTime", Bridge_EngineHelpers_GetServ
 DEFINE_NATIVE("EngineHelpers.GetServerTickCount", Bridge_EngineHelpers_GetServerTickCount);
 DEFINE_NATIVE("EngineHelpers.FindGameSystemByName", Bridge_EngineHelpers_FindGameSystemByName);
 DEFINE_NATIVE("EngineHelpers.SendMessageToConsole", Bridge_EngineHelpers_SendMessageToConsole);
+DEFINE_NATIVE("EngineHelpers.GetTraceManager", Bridge_EngineHelpers_GetTraceManager);

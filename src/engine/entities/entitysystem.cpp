@@ -23,6 +23,8 @@
 #include <public/entity2/entitykeyvalues.h>
 #include <public/entity2/entitysystem.h>
 #include <public/iserver.h>
+#include <public/gametrace.h>
+
 #include "listener.h"
 
 #include <api/interfaces/manager.h>
@@ -38,8 +40,12 @@ SH_DECL_EXTERN3_void(INetworkServerService, StartupServer, SH_NOATTRIB, 0, const
 CGameEntitySystem* g_pGameEntitySystem = nullptr;
 
 void* g_pGameRules = nullptr;
+
 extern void* g_pOnEntityTakeDamageCallback;
+extern void* g_pTraceManager;
+
 IFunctionHook* g_pOnEntityTakeDamageHook = nullptr;
+IFunctionHook* g_pTraceShapeHook = nullptr;
 
 bool g_bDone = false;
 
@@ -49,6 +55,7 @@ CGameEntitySystem* GameEntitySystem()
 }
 
 int64_t TakeDamageHook(void* baseEntity, void* info);
+void TraceShapeHook(void* _this, Ray_t& ray, Vector& start, Vector& end, CTraceFilter* filter, trace_t* trace);
 
 void CEntSystem::Initialize()
 {
@@ -62,6 +69,10 @@ void CEntSystem::Initialize()
     g_pOnEntityTakeDamageHook = hooksmanager->CreateFunctionHook();
     g_pOnEntityTakeDamageHook->SetHookFunction(gamedata->GetSignatures()->Fetch("CBaseEntity::TakeDamage"), reinterpret_cast<void*>(TakeDamageHook));
     g_pOnEntityTakeDamageHook->Enable();
+
+    g_pTraceShapeHook = hooksmanager->CreateFunctionHook();
+    g_pTraceShapeHook->SetHookFunction(gamedata->GetSignatures()->Fetch("TraceShape"), reinterpret_cast<void*>(TraceShapeHook));
+    g_pTraceShapeHook->Enable();
 }
 
 void CEntSystem::Shutdown()
@@ -70,12 +81,27 @@ void CEntSystem::Shutdown()
 
     SH_REMOVE_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEntSystem::StartupServer, true);
 
-    g_pOnEntityTakeDamageHook->Disable();
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+
+    g_pOnEntityTakeDamageHook->Disable();
     hooksmanager->DestroyFunctionHook(g_pOnEntityTakeDamageHook);
     g_pOnEntityTakeDamageHook = nullptr;
 
+    g_pTraceShapeHook->Disable();
+    hooksmanager->DestroyFunctionHook(g_pTraceShapeHook);
+    g_pTraceShapeHook = nullptr;
+
     g_pGameEntitySystem->RemoveListenerEntity(&g_entityListener);
+}
+
+void TraceShapeHook(void* _this, Ray_t& ray, Vector& start, Vector& end, CTraceFilter* filter, trace_t* trace)
+{
+    if (g_pTraceManager == nullptr)
+    {
+        g_pTraceManager = _this;
+    }
+
+    reinterpret_cast<void(*)(void*, Ray_t&, Vector&, Vector&, CTraceFilter*, trace_t*)>(g_pTraceShapeHook->GetOriginal())(_this, ray, start, end, filter, trace);
 }
 
 int64_t TakeDamageHook(void* baseEntity, void* info)

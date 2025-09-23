@@ -39,4 +39,9 @@ public interface IEngineService
     /// The number of simulation ticks that have occurred since the server started.
     /// </summary>
     int TickCount { get; }
+
+    /// <summary>
+    /// Gets the trace manager used to control and configure tracing operations within the game.
+    /// </summary>
+    ITraceManager TraceManager { get; }
 }
