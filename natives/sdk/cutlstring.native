@@ -1,5 +1,0 @@
-class CUtlString
-
-void Set = ptr utlstring, string str
-void Purge = ptr utlstring
-void SetDirect = ptr utlstring, string str, int32 len

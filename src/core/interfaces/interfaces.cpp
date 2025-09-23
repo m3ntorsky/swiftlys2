@@ -32,7 +32,6 @@
 #include <memory/gamedata/manager.h>
 
 #include <monitor/logger/logger.h>
-#include <monitor/resmon/monitor.h>
 #include <monitor/crashreporter/crashreporter.h>
 
 #include <network/sounds/soundevents.h>
@@ -52,7 +51,6 @@
 
 ExtensionManager g_ExtensionsManager;
 Logger g_Logger;
-ResourceMonitor g_ResourceMonitor;
 MemoryAllocator g_MemoryAllocator;
 CrashReporter g_CrashReporter;
 HooksManager g_HooksManager;
@@ -75,7 +73,6 @@ CNetMessages g_NetMessages;
 static const std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
     {LOGGER_INTERFACE_VERSION, &g_Logger},
-    {RESOURCE_MONITOR_INTERFACE_VERSION, &g_ResourceMonitor},
     {MEMORYALLOCATOR_INTERFACE_VERSION, &g_MemoryAllocator},
     {CRASHREPORTER_INTERFACE_VERSION, &g_CrashReporter},
     {HOOKSMANAGER_INTERFACE_VERSION, &g_HooksManager},
