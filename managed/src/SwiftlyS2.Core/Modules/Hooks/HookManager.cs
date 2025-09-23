@@ -24,11 +24,26 @@ internal class HookManager {
     public bool Hooked { get; set; } = false;
     public required nint FunctionAddress { get; set; }
     public nint HookHandle { get; set; }
+    public nint OriginalFunctionAddress { get; set; }
     public List<HookNode> Nodes { get; } = new();
   }
 
   private readonly object _sync = new();
   private readonly Dictionary<nint, HookChain> _chains = new();
+
+
+  public bool IsHooked(nint functionAddress) {
+    lock (_sync) {
+      return _chains.TryGetValue(functionAddress, out var chain) && chain.Hooked;
+    }
+  }
+
+  public nint GetOriginal(nint functionAddress) {
+    lock (_sync) {
+      return _chains.TryGetValue(functionAddress, out var chain) && chain.Hooked ? chain.OriginalFunctionAddress : nint.Zero;
+    }
+  }
+
 
   public Guid AddHook(nint functionAddress, Func<Func<nint>, Delegate> callbackBuilder) {
     HookChain chain;
@@ -63,11 +78,6 @@ internal class HookManager {
   private void RebuildChain(HookChain chain) {
     try {
       // Rebuild delegates from first to last, wiring each to previous pointer (or original for first)
-      foreach (var node in chain.Nodes) {
-        node.BuiltDelegate = null;
-        node.BuiltPointer = nint.Zero;
-      }
-
       if (chain.Hooked) {
         for (int i = 0; i < chain.Nodes.Count; i++) {
           chain.Nodes[i].BuiltDelegate = null;
@@ -77,6 +87,7 @@ internal class HookManager {
             chain.Nodes[i].HookHandle = 0;
           }
         }
+        chain.OriginalFunctionAddress = 0;
         NativeHooks.DeallocateHook(chain.HookHandle);
         chain.HookHandle = 0;
         chain.Hooked = false;
@@ -93,6 +104,7 @@ internal class HookManager {
         {
           NativeHooks.SetHook(chain.HookHandle, chain.FunctionAddress, node.BuiltPointer);
           node.OriginalFuncPtr = NativeHooks.GetHookOriginal(chain.HookHandle);
+          chain.OriginalFunctionAddress = node.OriginalFuncPtr;
           NativeHooks.EnableHook(chain.HookHandle);
           chain.Hooked = true;
         } else {
