@@ -25,6 +25,7 @@
 #include <engine/entities/entitysystem.h>
 #include <engine/gameevents/gameevents.h>
 #include <engine/precacher/precacher.h>
+#include <engine/vgui/vgui.h>
 #include <engine/voicemanager/voicemanager.h>
 
 #include <memory/allocator/allocator.h>
@@ -69,6 +70,7 @@ CDatabaseManager g_DatabaseManager;
 CTranslations g_Translations;
 CServerCommands g_ServerCommands;
 CNetMessages g_NetMessages;
+CVGUI g_VGUI;
 
 static const std::map<std::string, void*> g_Interfaces = {
     {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
@@ -91,6 +93,7 @@ static const std::map<std::string, void*> g_Interfaces = {
     {TRANSLATIONS_INTERFACE_VERSION, &g_Translations},
     {SERVERCOMMANDS_INTERFACE_VERSION, &g_ServerCommands},
     {NETMESSAGES_INTERFACE_VERSION, &g_NetMessages},
+    {VGUI_INTERFACE_VERSION, &g_VGUI},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)

@@ -26,6 +26,7 @@
 #include <api/engine/entities/entitysystem.h>
 #include <api/engine/gameevents/gameevents.h>
 #include <api/engine/precacher/precacher.h>
+#include <api/engine/vgui/vgui.h>
 #include <api/engine/voicemanager/voicemanager.h>
 
 #include <api/extensions/extension.h>
@@ -72,5 +73,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define TRANSLATIONS_INTERFACE_VERSION                      "TranslationsAPI"
 #define SERVERCOMMANDS_INTERFACE_VERSION                    "ServerCommandsAPI"
 #define NETMESSAGES_INTERFACE_VERSION                       "NetMessagesAPI"
+#define VGUI_INTERFACE_VERSION                              "VGUIAPI"
 
 #endif

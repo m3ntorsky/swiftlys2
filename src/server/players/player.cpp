@@ -247,14 +247,14 @@ std::string& CPlayer::GetLanguage()
 
 void* CPlayer::GetController()
 {
-    auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     CEntityInstance* controller = entsystem->GetEntitySystem()->GetEntityInstance(CEntityIndex(m_iPlayerId + 1));
     return controller;
 }
 
 void* CPlayer::GetPawn()
 {
-    auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    static auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
     auto controller = GetController();
     if (!controller) return nullptr;
 
@@ -267,11 +267,11 @@ void* CPlayer::GetPawn()
 
 void* CPlayer::GetPlayerPawn()
 {
-    auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
-    auto pawn = GetPawn();
-    if (!pawn) return nullptr;
+    static auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    auto controller = GetController();
+    if (!controller) return nullptr;
 
-    auto playerPawn = schema->GetPropPtr(pawn, CCSPlayerController_m_hPlayerPawn);
+    auto playerPawn = schema->GetPropPtr(controller, CCSPlayerController_m_hPlayerPawn);
     if (!playerPawn) return nullptr;
 
     CHandle<CEntityInstance>& playerPawnHandle = *(CHandle<CEntityInstance>*)playerPawn;
@@ -328,7 +328,10 @@ extern void* g_pOnClientKeyStateChangedCallback;
 void CPlayer::Think()
 {
     auto pawn = GetPawn();
+
     static auto sdkschema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+    static auto vgui = g_ifaceService.FetchInterface<IVGUI>(VGUI_INTERFACE_VERSION);
+
     if (pawn)
     {
         auto movementServices = *(void**)sdkschema->GetPropPtr(pawn, CBasePlayerPawn_m_pMovementServices);
@@ -357,5 +360,12 @@ void CPlayer::Think()
                 }
             }
         }
+
+        auto observerServices = *(void**)sdkschema->GetPropPtr(pawn, "CBasePlayerPawn", "m_pObserverServices");
+        if (observerServices) {
+            CHandle<CEntityInstance> observerTarget = *(CHandle<CEntityInstance>*)sdkschema->GetPropPtr(observerServices, "CPlayer_ObserverServices", "m_hObserverTarget");
+            vgui->CheckRenderForPlayer(this, observerTarget);
+        }
     }
+
 }
