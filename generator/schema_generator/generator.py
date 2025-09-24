@@ -18,6 +18,7 @@ if not os.path.exists(OUT_DIR):
 blacklisted_classes = [
   "FeSimdTri_t",
   "CTakeDamageInfo",
+  "CNetworkVarChainer"
 ]
 
 

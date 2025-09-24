@@ -1,0 +1,14 @@
+﻿using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.Schemas;
+
+namespace SwiftlyS2.Core.SchemaDefinitions;
+
+internal partial class CCSGameRulesImpl : CCSGameRules
+{
+    public T? FindPickerEntity<T>(CBasePlayerController controller) where T : ISchemaClass<T>
+    {
+        CBaseEntity ent = new CBaseEntityImpl(GameFunctions.FindPickerEntity(GetHandle(), controller.GetHandle()));
+        return ent.As<T>();
+    }
+}

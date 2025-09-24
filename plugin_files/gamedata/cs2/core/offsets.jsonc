@@ -42,5 +42,9 @@
     "CSoundSystem::TakeGuid": {
         "windows": 72,
         "linux": 71
+    },
+    "CGameRules::FindPickerEntity": {
+        "windows": 25,
+        "linux": 26
     }
 }
