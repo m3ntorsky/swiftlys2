@@ -13,7 +13,7 @@ public partial interface CPlayerControllerComponent : ISchemaClass<CPlayerContro
   static CPlayerControllerComponent ISchemaClass<CPlayerControllerComponent>.From(nint handle) => new CPlayerControllerComponentImpl(handle);
 
   
-  public CNetworkVarChainer __m_pChainEntity { get; }
+  public ref CNetworkVarChainer __m_pChainEntity { get; }
 
 
 }

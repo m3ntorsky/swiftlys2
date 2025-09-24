@@ -10,11 +10,11 @@ namespace SwiftlyS2.Core.Services;
 internal class PluginConfigurationService : IPluginConfigurationService {
 
   private ConfigurationService _ConfigurationService { get; init; }
-  private Services.CoreContext _Id { get; init; }
+  private CoreContext _Id { get; init; }
   private IConfigurationBuilder? _Builder { get; set; }
   private IConfigurationRoot? _Root { get; set; }
 
-  public PluginConfigurationService(Services.CoreContext id, ConfigurationService configurationService) {
+  public PluginConfigurationService(CoreContext id, ConfigurationService configurationService) {
     _Id = id;
     _ConfigurationService = configurationService;
   }

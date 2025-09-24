@@ -47,6 +47,8 @@ unmanaged_type_maps = {
   "CNetworkUtlVectorBase": "CUtlVector",
   "CEntityHandle": "CHandle<CEntityInstance>",
   "CTakeDamageInfo": "CTakeDamageInfo",
+  "ChangeAccessorFieldPathIndex_t": "ChangeAccessorFieldPathIndex_t",
+  "CNetworkVarChainer": "CNetworkVarChainer"
 }
 
 blacklisted_types = [
@@ -93,7 +95,7 @@ blacklisted_types = [
   "CAttachmentNameSymbolWithStorage",
   "std::pair",
   "CCompressor",
-  "CUtlVectorSIMDPaddedVector"
+  "CUtlVectorSIMDPaddedVector",
 ]
 
 def convert_handle_type(type, interface=False):

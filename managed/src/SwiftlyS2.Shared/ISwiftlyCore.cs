@@ -8,6 +8,7 @@ using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.Memory;
 using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.Profiler;
+using SwiftlyS2.Shared.Scheduler;
 using SwiftlyS2.Shared.Services;
 
 namespace SwiftlyS2.Shared;
@@ -93,4 +94,9 @@ public interface ISwiftlyCore {
   /// Gets the trace manager used to control and configure tracing operations within the game.
   /// </summary>
   public ITraceManager Trace { get; }
+
+  /// <summary>
+  /// Scheduler service.
+  /// </summary>
+  public ISchedulerService Scheduler { get; }
 }

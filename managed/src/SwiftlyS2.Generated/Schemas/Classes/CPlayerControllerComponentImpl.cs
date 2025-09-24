@@ -15,8 +15,8 @@ internal partial class CPlayerControllerComponentImpl : SchemaClass, CPlayerCont
   public CPlayerControllerComponentImpl(nint handle) : base(handle) {
   }
 
-  public CNetworkVarChainer __m_pChainEntity {
-    get => new CNetworkVarChainerImpl(_Handle + Schema.GetOffset(0xC96CF122F63F0E7D));
+  public ref CNetworkVarChainer __m_pChainEntity {
+    get => ref _Handle.AsRef<CNetworkVarChainer>(Schema.GetOffset(0xC96CF122F63F0E7D));
   }
 
 

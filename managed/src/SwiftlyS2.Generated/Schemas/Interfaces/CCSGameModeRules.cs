@@ -13,7 +13,7 @@ public partial interface CCSGameModeRules : ISchemaClass<CCSGameModeRules> {
   static CCSGameModeRules ISchemaClass<CCSGameModeRules>.From(nint handle) => new CCSGameModeRulesImpl(handle);
 
   
-  public CNetworkVarChainer __m_pChainEntity { get; }
+  public ref CNetworkVarChainer __m_pChainEntity { get; }
 
 
 }

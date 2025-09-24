@@ -33,8 +33,8 @@ internal partial class CEntityIdentityImpl : SchemaClass, CEntityIdentity {
   public ref uint DataObjectTypes {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xAE42345F6C7E475F));
   }
-  public ChangeAccessorFieldPathIndex_t PathIndex {
-    get => new ChangeAccessorFieldPathIndex_tImpl(_Handle + Schema.GetOffset(0xAE42345F2DA3F47A));
+  public ref ChangeAccessorFieldPathIndex_t PathIndex {
+    get => ref _Handle.AsRef<ChangeAccessorFieldPathIndex_t>(Schema.GetOffset(0xAE42345F2DA3F47A));
   }
   public CEntityIdentity? Prev {
     get {

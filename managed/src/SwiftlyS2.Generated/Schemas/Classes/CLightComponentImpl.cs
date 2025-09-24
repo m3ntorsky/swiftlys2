@@ -15,8 +15,8 @@ internal partial class CLightComponentImpl : CEntityComponentImpl, CLightCompone
   public CLightComponentImpl(nint handle) : base(handle) {
   }
 
-  public CNetworkVarChainer __m_pChainEntity {
-    get => new CNetworkVarChainerImpl(_Handle + Schema.GetOffset(0x15B1C6A5F63F0E7D));
+  public ref CNetworkVarChainer __m_pChainEntity {
+    get => ref _Handle.AsRef<CNetworkVarChainer>(Schema.GetOffset(0x15B1C6A5F63F0E7D));
   }
   public ref Color Color {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x15B1C6A5D7D017D8));

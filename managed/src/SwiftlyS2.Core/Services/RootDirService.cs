@@ -15,4 +15,8 @@ internal class RootDirService {
   public string GetPluginsRoot() {
     return CombineRoot("plugins");
   }
+
+  public string GetConfigRoot() {
+    return CombineRoot("configs");
+  }
 }

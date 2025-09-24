@@ -109,18 +109,18 @@ internal class TestService {
 
 
 
-    _Core.GameEvent.HookPre<EventPlayerTeam>((eventObj) =>
-    {
-      Console.WriteLine(eventObj.GetHashCode());
-      Console.WriteLine("EventPlayerJump " + eventObj.UserIdController.PlayerPawn.Value);
-      return HookResult.Continue;
-    });
+    // _Core.GameEvent.HookPre<EventPlayerTeam>((eventObj) =>
+    // {
+    //   Console.WriteLine(eventObj.GetHashCode());
+    //   Console.WriteLine("EventPlayerJump " + eventObj.UserId);
+    //   return HookResult.Continue;
+    // });
 
-    _Core.Command.RegisterCommand("test", (context) =>
-    {
-      Console.WriteLine(context.Prefix);
-      Console.WriteLine("test");
-    });
+    // _Core.Command.RegisterCommand("test", (context) =>
+    // {
+    //   Console.WriteLine(context.Prefix);
+    //   Console.WriteLine("test");
+    // });
 
     _Core.Command.RegisterCommandAlias("sw_test", "test2");
 

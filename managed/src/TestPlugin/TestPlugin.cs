@@ -14,6 +14,8 @@ using SwiftlyS2.Shared.ProtobufDefinitions;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using SwiftlyS2.Shared.Events;
+using SwiftlyS2.Shared.Memory;
+using YamlDotNet.Core.Tokens;
 
 namespace TestPlugin;
 
@@ -36,6 +38,8 @@ public class TestPlugin : BasePlugin {
     // Use plugin-specific services here if needed
   }
 
+  CancellationTokenSource? token2 = null;
+
   delegate void Test(int a, int b);
 
   public override void Load() {
@@ -53,55 +57,61 @@ public class TestPlugin : BasePlugin {
 
     // throw new Exception("TestPlugin loaded");
 
+    token2 = Core.Scheduler.AddTimer(10, () => {
+      Console.WriteLine("TestPlugin Timer");
+    });
+
+    Core.Logger.LogInformation(Core.GameData.GetSignature("Test").ToString());
+
 
 
     Core.Logger.LogInformation("TestPlugin loaded");
 
-    var func = Core.Memory.GetUnmanagedFunctionByAddress<Test>(Core.Memory.GetAddressBySignature("server", "AAAAA")!.Value);
+    // var func = Core.Memory.GetUnmanagedFunctionByAddress<Test>(Core.Memory.GetAddressBySignature(Library.Server, "AAAAA")!.Value);
     
-    func.CallOriginal(1, 2);
+    // func.CallOriginal(1, 2);
 
-    func.Call(1, 2);
+    // func.Call(1, 2);
 
-    func.AddHook((next) => {
-      return (a, b) => {
-        Console.WriteLine("TestPlugin Hook " + a + " " + b);
-        next()(a, b);
-      };
-    });
+    // func.AddHook((next) => {
+    //   return (a, b) => {
+    //     Console.WriteLine("TestPlugin Hook " + a + " " + b);
+    //     next()(a, b);
+    //   };
+    // });
 
 
     // Entrypoint
 
-    Core.Event.OnTick += () => {
-      Console.WriteLine("TestPlugin OnTick ");
-    };
+    // Core.Event.OnTick += () => {
+    //   Console.WriteLine("TestPlugin OnTick ");
+    // };
 
-    Core.Event.OnClientConnected += (@event) => {
-      Console.WriteLine("TestPlugin OnClientConnected " + @event.PlayerId);
-    };
+    // Core.Event.OnClientConnected += (@event) => {
+    //   Console.WriteLine("TestPlugin OnClientConnected " + @event.PlayerId);
+    // };
 
-    Core.Event.OnClientPutInServer += (@event) => {
-      Console.WriteLine("TestPlugin OnClientPutInServer " + @event.PlayerId);
-    };
+    // Core.Event.OnClientPutInServer += (@event) => {
+    //   Console.WriteLine("TestPlugin OnClientPutInServer " + @event.PlayerId);
+    // };
 
     Core.Event.OnClientDisconnected += (@event) => {
       Console.WriteLine("TestPlugin OnClientDisconnected " + @event.PlayerId);
     };
 
-    Core.Event.OnClientProcessUsercmds += (@event) => {
-      foreach(var usercmd in @event.Usercmds) {
-        usercmd.Base.ButtonsPb.Buttonstate1 &= 1UL << (int)GameButtons.Ctrl;
-        usercmd.Base.ButtonsPb.Buttonstate2 &= 1UL << (int)GameButtons.Ctrl;
-        usercmd.Base.ButtonsPb.Buttonstate3 &= 1UL << (int)GameButtons.Ctrl;
-      }
-    };
+    // Core.Event.OnClientProcessUsercmds += (@event) => {
+    //   foreach(var usercmd in @event.Usercmds) {
+    //     usercmd.Base.ButtonsPb.Buttonstate1 &= 1UL << (int)GameButtons.Ctrl;
+    //     usercmd.Base.ButtonsPb.Buttonstate2 &= 1UL << (int)GameButtons.Ctrl;
+    //     usercmd.Base.ButtonsPb.Buttonstate3 &= 1UL << (int)GameButtons.Ctrl;
+    //   }
+    // };
 
-    Core.NetMessage.HookClientMessage<CCLCMsg_Move>((msg, id) => {
-      Console.WriteLine("TestPlugin OnClientMove ");
-      Console.WriteLine(BitConverter.ToString(msg.Data));
-      return HookResult.Continue;
-    });
+    // Core.NetMessage.HookClientMessage<CCLCMsg_Move>((msg, id) => {
+    //   Console.WriteLine("TestPlugin OnClientMove ");
+    //   Console.WriteLine(BitConverter.ToString(msg.Data));
+    //   return HookResult.Continue;
+    // });
 
     // Core.Event.OnEntityTakeDamage += (@event) => {
     //   Console.WriteLine("TestPlugin OnEntityTakeDamage " + @event.Entity.Entity?.DesignerName + " " + @event.Info.HitGroupId);
@@ -136,6 +146,7 @@ public class TestPlugin : BasePlugin {
 
   [Command("tt")]
   public void TestCommand(ICommandContext context) {
+    token2?.Cancel();
     // kv = new();
     // kv.SetString("test", "SAFE");
 

@@ -15,8 +15,8 @@ internal partial class CCSGameModeRulesImpl : SchemaClass, CCSGameModeRules {
   public CCSGameModeRulesImpl(nint handle) : base(handle) {
   }
 
-  public CNetworkVarChainer __m_pChainEntity {
-    get => new CNetworkVarChainerImpl(_Handle + Schema.GetOffset(0x5093D6A4F63F0E7D));
+  public ref CNetworkVarChainer __m_pChainEntity {
+    get => ref _Handle.AsRef<CNetworkVarChainer>(Schema.GetOffset(0x5093D6A4F63F0E7D));
   }
 
 

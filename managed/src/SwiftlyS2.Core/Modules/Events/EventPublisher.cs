@@ -10,6 +10,7 @@ using Spectre.Console;
 using System.Runtime.CompilerServices;
 using SwiftlyS2.Core.ProtobufDefinitions;
 using SwiftlyS2.Core.Extensions;
+using SwiftlyS2.Core.Scheduler;
 
 namespace SwiftlyS2.Core.Events;
 
@@ -48,6 +49,7 @@ internal static class EventPublisher {
   [UnmanagedCallersOnly]
   public static void OnTick(byte simulating, byte first, byte last)
   {
+    SchedulerManager.OnTick();
     if (_subscribers.Count == 0) return;
     try {
       _subscribers.ForEach(subscriber => subscriber.InvokeOnTick());

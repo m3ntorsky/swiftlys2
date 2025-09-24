@@ -13,7 +13,7 @@ public partial interface CLightComponent : CEntityComponent, ISchemaClass<CLight
   static CLightComponent ISchemaClass<CLightComponent>.From(nint handle) => new CLightComponentImpl(handle);
 
   
-  public CNetworkVarChainer __m_pChainEntity { get; }
+  public ref CNetworkVarChainer __m_pChainEntity { get; }
   
   public ref Color Color { get; }
   

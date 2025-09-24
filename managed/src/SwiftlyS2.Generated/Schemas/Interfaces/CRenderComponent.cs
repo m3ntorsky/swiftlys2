@@ -13,7 +13,7 @@ public partial interface CRenderComponent : CEntityComponent, ISchemaClass<CRend
   static CRenderComponent ISchemaClass<CRenderComponent>.From(nint handle) => new CRenderComponentImpl(handle);
 
   
-  public CNetworkVarChainer __m_pChainEntity { get; }
+  public ref CNetworkVarChainer __m_pChainEntity { get; }
   
   public ref bool IsRenderingWithViewModels { get; }
   

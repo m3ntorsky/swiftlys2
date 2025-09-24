@@ -32,10 +32,10 @@ void* InterfacesManager::GetPureInterface(const std::string& interface_name)
 #ifdef BUILDING_CORE
     return ::GetPureInterface(interface_name.c_str());
 #else
-    static std::string m_sCorePath = CommandLine()->ParmValue(CUtlStringToken("-sw_path"), "addons/swiftlys2");
+    static std::string m_sCorePath = CommandLine()->ParmValue(CUtlStringToken("-sw_path"), "addons" + WIN_LINUX("\\", "/") + "swiftlys2");
     if (!ends_with(m_sCorePath, WIN_LINUX("\\", "/"))) m_sCorePath += WIN_LINUX("\\", "/");
 
-    void* getiface_func = GetBinaryFunction(m_sCorePath + "bin/" + WIN_LINUX("win64/swiftly.dll", "linuxsteamrt64/swiftly.so"), "GetPureInterface");
+    void* getiface_func = GetBinaryFunction(m_sCorePath + "bin" + WIN_LINUX("\\", "/") + WIN_LINUX("win64", "linuxsteamrt64") + WIN_LINUX("\\", "/") + "swiftly.dll", "GetPureInterface");
     if (!getiface_func) return nullptr;
 
     GetInterfaceFn GetInterface = reinterpret_cast<GetInterfaceFn>(getiface_func);
