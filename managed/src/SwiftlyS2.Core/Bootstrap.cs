@@ -24,7 +24,6 @@ internal static class Bootstrap {
     services.AddConfigurationService();
     services.AddTestService();
     services.AddRootDirService();
-    services.AddGameDataService();
     services.AddPlayerManagerService();
     services.AddPluginManager();
     services.AddHookManager();

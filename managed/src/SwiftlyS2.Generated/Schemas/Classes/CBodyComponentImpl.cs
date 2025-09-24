@@ -21,8 +21,8 @@ internal partial class CBodyComponentImpl : CEntityComponentImpl, CBodyComponent
       return ptr.IsValidPtr() ? new CGameSceneNodeImpl(ptr) : null;
     }
   }
-  public CNetworkVarChainer __m_pChainEntity {
-    get => new CNetworkVarChainerImpl(_Handle + Schema.GetOffset(0x4EF2C865F63F0E7D));
+  public ref CNetworkVarChainer __m_pChainEntity {
+    get => ref _Handle.AsRef<CNetworkVarChainer>(Schema.GetOffset(0x4EF2C865F63F0E7D));
   }
 
 

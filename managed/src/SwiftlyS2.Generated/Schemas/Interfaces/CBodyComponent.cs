@@ -15,7 +15,7 @@ public partial interface CBodyComponent : CEntityComponent, ISchemaClass<CBodyCo
   
   public CGameSceneNode? SceneNode { get; }
   
-  public CNetworkVarChainer __m_pChainEntity { get; }
+  public ref CNetworkVarChainer __m_pChainEntity { get; }
 
 
 }

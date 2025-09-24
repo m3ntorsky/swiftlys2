@@ -13,7 +13,7 @@ public partial interface CGameRules : ISchemaClass<CGameRules> {
   static CGameRules ISchemaClass<CGameRules>.From(nint handle) => new CGameRulesImpl(handle);
 
   
-  public CNetworkVarChainer __m_pChainEntity { get; }
+  public ref CNetworkVarChainer __m_pChainEntity { get; }
   
   public ISchemaFixedString QuestName { get; }
   

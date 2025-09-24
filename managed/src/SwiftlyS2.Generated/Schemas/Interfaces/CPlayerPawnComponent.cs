@@ -13,7 +13,7 @@ public partial interface CPlayerPawnComponent : ISchemaClass<CPlayerPawnComponen
   static CPlayerPawnComponent ISchemaClass<CPlayerPawnComponent>.From(nint handle) => new CPlayerPawnComponentImpl(handle);
 
   
-  public CNetworkVarChainer __m_pChainEntity { get; }
+  public ref CNetworkVarChainer __m_pChainEntity { get; }
 
 
 }

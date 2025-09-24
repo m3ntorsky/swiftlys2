@@ -18,7 +18,8 @@ if not os.path.exists(OUT_DIR):
 blacklisted_classes = [
   "FeSimdTri_t",
   "CTakeDamageInfo",
-  "CNetworkVarChainer"
+  "CNetworkVarChainer",
+  "ChangeAccessorFieldPathIndex_t"
 ]
 
 
@@ -193,6 +194,8 @@ with open("sdk.json", "r") as f:
   all_enum_names = [enum_def["name"] for enum_def in data["enums"]]
 
   for class_def in tqdm(data["classes"], desc="Classes"):
+
+
     if class_def["name"] in blacklisted_classes:
       continue
 

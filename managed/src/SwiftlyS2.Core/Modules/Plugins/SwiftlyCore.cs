@@ -22,6 +22,8 @@ using SwiftlyS2.Shared.Profiler;
 using SwiftlyS2.Core.Profiler;
 using SwiftlyS2.Shared.Memory;
 using SwiftlyS2.Core.Memory;
+using SwiftlyS2.Shared.Scheduler;
+using SwiftlyS2.Core.Scheduler;
 
 namespace SwiftlyS2.Core.Services;
 
@@ -45,6 +47,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public ITraceManager Trace { get; init; }
   public IContextedProfilerService ProfilerService { get; init; }
   public IMemoryService MemoryService { get; init; }
+  public ISchedulerService SchedulerService { get; init; }
 
   public SwiftlyCore(string contextId, string contextBaseDirectory, Type contextType, IServiceProvider coreProvider) {
 
@@ -57,7 +60,6 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton(this)
       .AddSingleton(coreProvider.GetRequiredService<ProfileService>())
       .AddSingleton(coreProvider.GetRequiredService<ConfigurationService>())
-      .AddSingleton(coreProvider.GetRequiredService<GameDataService>())
       .AddSingleton(coreProvider.GetRequiredService<HookManager>())
       .AddSingleton(coreProvider.GetRequiredService<PlayerManagerService>())
       .AddSingleton(coreProvider.GetRequiredService<EngineService>())
@@ -71,7 +73,9 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<EntitySystemService>()
       .AddSingleton<ConVarService>()
       .AddSingleton<MemoryService>()
+      .AddSingleton<GameDataService>()
       .AddSingleton<IContextedProfilerService, ContextedProfilerService>()
+      .AddSingleton<SchedulerService>()
 
       .AddLogging(
         builder => {
@@ -96,6 +100,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     Engine = _ServiceProvider.GetRequiredService<EngineService>();
     Trace = _ServiceProvider.GetRequiredService<TraceManager>();
     ProfilerService = _ServiceProvider.GetRequiredService<IContextedProfilerService>();
+    SchedulerService = _ServiceProvider.GetRequiredService<SchedulerService>();
 
     Logger = LoggerFactory.CreateLogger(contextType);
   }
@@ -130,4 +135,5 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   IContextedProfilerService ISwiftlyCore.Profiler => ProfilerService;
   IEngineService ISwiftlyCore.Engine => Engine;
   ITraceManager ISwiftlyCore.Trace => Trace;
+  ISchedulerService ISwiftlyCore.Scheduler => SchedulerService;
 }

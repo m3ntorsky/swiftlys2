@@ -10,7 +10,7 @@ internal class ConfigurationService {
   }
 
   public string GetConfigRoot() {
-    return _rootDirService.CombineRoot("configs");
+    return _rootDirService.GetConfigRoot();
   }
 
   public string CombineConfigPath(string configPath) {

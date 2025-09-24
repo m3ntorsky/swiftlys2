@@ -22,4 +22,8 @@
     <ProjectReference Include="..\..\managed.csproj" ExcludeAssets="all" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="manifest.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
 </Project> 

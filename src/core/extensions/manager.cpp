@@ -29,7 +29,8 @@ bool all_loaded = false;
 
 void ExtensionManager::Load()
 {
-    std::string baseDir = g_SwiftlyCore.GetCorePath() + "extensions/" + WIN_LINUX("win64", "linuxsteamrt64");
+    std::string baseDir = g_SwiftlyCore.GetCorePath() + "extensions" + WIN_LINUX("\\", "/") + WIN_LINUX("win64", "linuxsteamrt64");
+
     if (!Files::ExistsPath(baseDir))
         Files::CreateDir(baseDir);
 

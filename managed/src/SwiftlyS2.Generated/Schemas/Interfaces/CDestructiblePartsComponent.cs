@@ -13,7 +13,7 @@ public partial interface CDestructiblePartsComponent : ISchemaClass<CDestructibl
   static CDestructiblePartsComponent ISchemaClass<CDestructiblePartsComponent>.From(nint handle) => new CDestructiblePartsComponentImpl(handle);
 
   
-  public CNetworkVarChainer __m_pChainEntity { get; }
+  public ref CNetworkVarChainer __m_pChainEntity { get; }
   
   public ref CUtlVector<ushort> DamageTakenByHitGroup { get; }
   

@@ -15,8 +15,8 @@ internal partial class CDestructiblePartsComponentImpl : SchemaClass, CDestructi
   public CDestructiblePartsComponentImpl(nint handle) : base(handle) {
   }
 
-  public CNetworkVarChainer __m_pChainEntity {
-    get => new CNetworkVarChainerImpl(_Handle + Schema.GetOffset(0xE69A9E51F63F0E7D));
+  public ref CNetworkVarChainer __m_pChainEntity {
+    get => ref _Handle.AsRef<CNetworkVarChainer>(Schema.GetOffset(0xE69A9E51F63F0E7D));
   }
   public ref CUtlVector<ushort> DamageTakenByHitGroup {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0xE69A9E51F137427A));

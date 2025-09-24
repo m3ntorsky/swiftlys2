@@ -15,8 +15,8 @@ internal partial class CRenderComponentImpl : CEntityComponentImpl, CRenderCompo
   public CRenderComponentImpl(nint handle) : base(handle) {
   }
 
-  public CNetworkVarChainer __m_pChainEntity {
-    get => new CNetworkVarChainerImpl(_Handle + Schema.GetOffset(0x8830FA5F63F0E7D));
+  public ref CNetworkVarChainer __m_pChainEntity {
+    get => ref _Handle.AsRef<CNetworkVarChainer>(Schema.GetOffset(0x8830FA5F63F0E7D));
   }
   public ref bool IsRenderingWithViewModels {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8830FA5700AA428));

@@ -1,6 +1,8 @@
 ﻿using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.Schemas;
 
+namespace SwiftlyS2.Shared.SchemaDefinitions;
+
 public partial interface CCSGameRules
 {
     /// <summary>
