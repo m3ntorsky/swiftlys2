@@ -160,7 +160,7 @@ internal class PluginManager {
     }
 
 
-    var core = new SwiftlyCore(context.Manifest.Id, Path.GetDirectoryName(entrypointDll)!, pluginType, _Provider);
+    var core = new SwiftlyCore(context.Manifest.Id, Path.GetDirectoryName(entrypointDll)!, context.Manifest, pluginType, _Provider);
 
     core.InitializeType(pluginType);
 

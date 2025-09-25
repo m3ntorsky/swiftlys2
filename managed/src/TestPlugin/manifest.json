@@ -5,5 +5,8 @@
   "Author": "SwiftlyS2",
   "Description": "TestPlugin",
   "Website": "https://swiftlys2.net",
-  "EntrypointDLL": "SwiftlyS2.TestPlugin.dll"
+  "EntrypointDLL": "SwiftlyS2.TestPlugin.dll",
+  "DatabaseConnections": [
+    "testplugin"
+  ]
 }

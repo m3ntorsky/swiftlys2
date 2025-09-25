@@ -34,6 +34,7 @@ internal static class Bootstrap {
     services.AddSingleton<ISwiftlyCore, SwiftlyCore>((provider) => new SwiftlyCore(
       "SwiftlyS2",
       basePath,
+      null,
       typeof(SwiftlyCore),
       provider
     ));

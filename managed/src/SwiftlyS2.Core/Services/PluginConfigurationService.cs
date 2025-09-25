@@ -2,6 +2,7 @@ using System.Data.Common;
 using System.Reflection;
 using System.Text.Json;
 using Microsoft.Extensions.Configuration;
+using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared.Services;
 
@@ -88,6 +89,13 @@ internal class PluginConfigurationService : IPluginConfigurationService {
     configureBuilder(_Builder);
     _Root = _Builder.Build();
     return this;
+  }
+
+  public string GetDatabaseCredentials(string connectionName) {
+    if(NativeDatabase.ConnectionExists(connectionName)) {
+      return NativeDatabase.GetCredentials(connectionName);
+    }
+    return NativeDatabase.GetDefaultConnectionCredentials();
   }
 
   public IConfigurationRoot Root {

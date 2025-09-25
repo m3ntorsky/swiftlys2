@@ -24,6 +24,9 @@ using SwiftlyS2.Shared.Memory;
 using SwiftlyS2.Core.Memory;
 using SwiftlyS2.Shared.Scheduler;
 using SwiftlyS2.Core.Scheduler;
+using SwiftlyS2.Core.Plugins;
+using SwiftlyS2.Core.Database;
+using SwiftlyS2.Shared.Database;
 
 namespace SwiftlyS2.Core.Services;
 
@@ -48,10 +51,11 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public ContextedProfilerService ProfilerService { get; init; }
   public MemoryService MemoryService { get; init; }
   public SchedulerService SchedulerService { get; init; }
+  public DatabaseService DatabaseService { get; init; }
 
-  public SwiftlyCore(string contextId, string contextBaseDirectory, Type contextType, IServiceProvider coreProvider) {
+  public SwiftlyCore(string contextId, string contextBaseDirectory, PluginManifest? pluginManifest, Type contextType, IServiceProvider coreProvider) {
 
-    CoreContext id = new(contextId, contextBaseDirectory);
+    CoreContext id = new(contextId, contextBaseDirectory, pluginManifest);
 
     ServiceCollection services = new();
 
@@ -76,6 +80,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<GameDataService>()
       .AddSingleton<ContextedProfilerService>()
       .AddSingleton<SchedulerService>()
+      .AddSingleton<DatabaseService>()
 
       .AddSingleton<IEventSubscriber>(provider => provider.GetRequiredService<EventSubscriber>())
       .AddSingleton<IGameEventService>(provider => provider.GetRequiredService<GameEventService>())
@@ -91,6 +96,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<ISchedulerService>(provider => provider.GetRequiredService<SchedulerService>())
       .AddSingleton<IEngineService>(provider => provider.GetRequiredService<EngineService>())
       .AddSingleton<ITraceManager>(provider => provider.GetRequiredService<TraceManager>())
+      .AddSingleton<IDatabaseService>(provider => provider.GetRequiredService<DatabaseService>())
       
 
       .AddLogging(
@@ -117,6 +123,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     Trace = _ServiceProvider.GetRequiredService<TraceManager>();
     ProfilerService = _ServiceProvider.GetRequiredService<ContextedProfilerService>();
     SchedulerService = _ServiceProvider.GetRequiredService<SchedulerService>();
+    DatabaseService = _ServiceProvider.GetRequiredService<DatabaseService>();
 
     Logger = LoggerFactory.CreateLogger(contextType);
   }
@@ -152,4 +159,5 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   IEngineService ISwiftlyCore.Engine => Engine;
   ITraceManager ISwiftlyCore.Trace => Trace;
   ISchedulerService ISwiftlyCore.Scheduler => SchedulerService;
+  IDatabaseService ISwiftlyCore.Database => DatabaseService;
 }

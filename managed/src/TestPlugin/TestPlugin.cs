@@ -16,6 +16,7 @@ using System.Runtime.InteropServices;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.Memory;
 using YamlDotNet.Core.Tokens;
+using Dapper;
 
 namespace TestPlugin;
 
@@ -57,6 +58,14 @@ public class TestPlugin : BasePlugin {
 
     // throw new Exception("TestPlugin loaded");
 
+    using var conn = Core.Database.GetConnection("testplugin");
+    Console.WriteLine(conn.ConnectionString);
+    conn.Open();
+    var result = conn.Query<string>("SELECT * FROM playermodelchanger");
+    foreach(var item in result) {
+      Console.WriteLine(item);
+    }
+
     int i = 0;
 
     var token2 = Core.Scheduler.Repeat(10, () => {
@@ -65,8 +74,6 @@ public class TestPlugin : BasePlugin {
     });
 
     Core.Logger.LogInformation(Core.GameData.GetSignature("Test").ToString());
-
-    // Core.Scheduler.DelayBySeconds
 
     Core.Logger.LogInformation("TestPlugin loaded");
 

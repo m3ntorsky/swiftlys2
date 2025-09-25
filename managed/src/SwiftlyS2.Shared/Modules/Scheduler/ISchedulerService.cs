@@ -38,7 +38,7 @@ public interface ISchedulerService {
   /// <summary>
   /// Add a delayed task to the scheduler.
   /// 
-  /// The timing is based on game tick, which means it becomes inaccurate for intervals approach 1 tick (approximately 15ms).
+  /// The timing is based on game tick, which means it becomes inaccurate when intervals approachs 1 tick (approximately 15ms).
   /// </summary>
   /// <param name="delaySeconds">The delay of the timer in seconds.</param>
   /// <param name="task">The task to execute.</param>
@@ -49,7 +49,7 @@ public interface ISchedulerService {
   /// Add a repeated task to the scheduler.
   /// This will be executed once immediately, and then every periodSeconds seconds.
   /// 
-  /// The timing is based on game tick, which means it becomes inaccurate for intervals approach 1 tick (approximately 15ms).
+  /// The timing is based on game tick, which means it becomes inaccurate when intervals approachs 1 tick (approximately 15ms).
   /// </summary>
   /// <param name="periodSeconds">The period of the timer in seconds.</param>
   /// <param name="task">The task to execute.</param>
@@ -59,7 +59,7 @@ public interface ISchedulerService {
   /// <summary>
   /// Add a delayed and repeated task to the scheduler.
   /// 
-  /// The timing is based on game tick, which means it becomes inaccurate for intervals approach 1 tick (approximately 15ms).
+  /// The timing is based on game tick, which means it becomes inaccurate when intervals approachs 1 tick (approximately 15ms).
   /// </summary>
   /// <param name="delaySeconds">The delay of the timer in seconds.</param>
   /// <param name="periodSeconds">The period of the timer in seconds.</param>
