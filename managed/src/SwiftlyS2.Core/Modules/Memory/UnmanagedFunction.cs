@@ -23,7 +23,10 @@ internal class UnmanagedFunction<TDelegate> : UnmanagedFunction, IUnmanagedFunct
   public TDelegate CallOriginal {
     get {
       if (_HookManager.IsHooked(Address)) {
-        return Marshal.GetDelegateForFunctionPointer<TDelegate>(_HookManager.GetOriginal(Address));
+        var original = _HookManager.GetOriginal(Address);
+        if (original != nint.Zero) {
+          return Marshal.GetDelegateForFunctionPointer<TDelegate>(original);
+        }
       }
       return Call;
     }

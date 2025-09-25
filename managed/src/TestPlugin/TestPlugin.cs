@@ -193,17 +193,29 @@ public class TestPlugin : BasePlugin {
   [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
   delegate nint DispatchSpawnDelegate(nint pEntity, nint pKV);
   int order = 0;
+  
+  IUnmanagedFunction<DispatchSpawnDelegate>? _dispatchspawn;
 
   [Command("h1")]
   public void TestCommand2(ICommandContext context)
   {
     var dispatchspawn = Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
-    /*Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) => {
-      return (nint pEntity, nint pKV) => {
+    _dispatchspawn = Core.Memory.GetUnmanagedFunctionByAddress<DispatchSpawnDelegate>(dispatchspawn);
+
+    _dispatchspawn.AddHook((next) => {
+      return (pEntity, pKV) => {
         Console.WriteLine("TestPlugin DispatchSpawn " + order++);
         return next()(pEntity, pKV);
       };
-    });*/
+    });
+
+    _dispatchspawn.AddHook((next) => {
+      return (pEntity, pKV) => {
+        Console.WriteLine("TestPlugin DispatchSpawn2 " + order++);
+        return next()(pEntity, pKV);
+      };
+    });
+    
   }
 
   Guid _hookId = Guid.Empty;
@@ -211,13 +223,15 @@ public class TestPlugin : BasePlugin {
   [Command("h2")]
   public void TestCommand3(ICommandContext context)
   {
-    context.Sender?.PlayerPawn?.ItemServices?.GiveItem<CAK47>();
+    var ent = Core.EntitySystem.CreateEntity<CPointWorldText>();
+    ent.DispatchSpawn();
   }
 
   [Command("tt3")]
-  public void TestCommand33(ICommandContext context) {
-
-    context.Sender?.PlayerPawn?.WeaponServices?.SelectWeaponByClass<CAK47>();
+  public void TestCommand33(ICommandContext context)
+  {
+    var ent = Core.EntitySystem.CreateEntity<CPointWorldText>();
+    _dispatchspawn.CallOriginal(ent.GetHandle(), 0);
   }
 
   [Command("tt4")]

@@ -40,7 +40,16 @@ internal class HookManager {
 
   public nint GetOriginal(nint functionAddress) {
     lock (_sync) {
-      return _chains.TryGetValue(functionAddress, out var chain) && chain.Hooked ? chain.OriginalFunctionAddress : nint.Zero;
+      if (_chains.TryGetValue(functionAddress, out var chain)) {
+        if (!chain.Hooked) {
+          return functionAddress;
+        }
+        if (chain.Nodes.Count == 0) {
+          return chain.OriginalFunctionAddress;
+        }
+        return chain.Nodes[^1].OriginalFuncPtr;
+      }
+      return nint.Zero;
     }
   }
 
