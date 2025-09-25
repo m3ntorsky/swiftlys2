@@ -37,6 +37,8 @@ public:
 
     virtual void CheckRenderForPlayer(IPlayer* player, CHandle<CEntityInstance> specView) = 0;
     virtual void UnregisterForPlayer(IPlayer* player) = 0;
+
+    virtual void Update() = 0;
 };
 
 #endif

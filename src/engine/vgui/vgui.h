@@ -33,6 +33,8 @@ public:
 
     virtual void CheckRenderForPlayer(IPlayer* player, CHandle<CEntityInstance> specView) override;
     virtual void UnregisterForPlayer(IPlayer* player) override;
+
+    virtual void Update() override;
 private:
     uint64_t internalScreenTextID = 0;
     std::map<uint64_t, IScreenText*> screenTexts;

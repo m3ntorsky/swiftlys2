@@ -178,12 +178,15 @@ extern void* g_pOnGameTickCallback;
 void CPlayerManager::GameFrame(bool simulate, bool first, bool last)
 {
     static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    static auto vgui = g_ifaceService.FetchInterface<IVGUI>(VGUI_INTERFACE_VERSION);
 
     if (g_pOnGameTickCallback) reinterpret_cast<void(*)(bool, bool, bool)>(g_pOnGameTickCallback)(simulate, first, last);
 
     for (int i = 0; i < 64; i++)
         if (playerMask & (1ULL << i))
             playermanager->GetPlayer(i)->Think();
+
+    vgui->Update();
 }
 
 extern void* g_pOnClientConnectCallback;

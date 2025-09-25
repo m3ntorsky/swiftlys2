@@ -85,8 +85,9 @@ void CVGUI::CheckRenderForPlayer(IPlayer* player, CHandle<CEntityInstance> specV
         shouldRegenerate = true;
     }
 
+    auto end = screenTexts.end();
     if (shouldRegenerate) {
-        for (auto it = screenTexts.begin(); it != screenTexts.end(); ++it) {
+        for (auto it = screenTexts.begin(); it != end; ++it) {
             if (it->second->GetPlayer() == player) {
                 it->second->RegenerateText(false);
                 it->second->SetRenderingTo(specView.Get());
@@ -94,11 +95,19 @@ void CVGUI::CheckRenderForPlayer(IPlayer* player, CHandle<CEntityInstance> specV
         }
     }
     else {
-        for (auto it = screenTexts.begin(); it != screenTexts.end(); ++it) {
+        for (auto it = screenTexts.begin(); it != end; ++it) {
             if (it->second->GetPlayer() == player && !it->second->IsRenderingTo(specView)) {
                 it->second->RegenerateText(false);
                 it->second->SetRenderingTo(specView.Get());
             }
         }
+    }
+}
+
+void CVGUI::Update()
+{
+    auto end = screenTexts.end();
+    for (auto it = screenTexts.begin(); it != end; ++it) {
+        it->second->UpdatePosition();
     }
 }

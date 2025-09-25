@@ -24,6 +24,11 @@
 
 #include <public/entity2/entitykeyvalues.h>
 
+#define BOTTOM -4.8
+#define TOP_FROM_BOTTOM 10.13
+#define LEFT -9.28
+#define RIGHT_FROM_LEFT 18.5
+
 class CNetworkedQuantizedFloat
 {
 public:
@@ -138,26 +143,35 @@ void CScreenText::UpdatePosition()
 
     Vector eyePos(0.0, 0.0, 0.0);
     eyePos += fwd * 7;
-    eyePos += right * (-9.28 + (m_posX * 18.5));
-    eyePos += up * (-4.8 + (m_posY * 10.13));
+    eyePos += right * (LEFT + (m_posX * RIGHT_FROM_LEFT));
+    eyePos += up * (BOTTOM + (m_posY * TOP_FROM_BOTTOM));
 
     QAngle ang(0, eyeAngles.y + 270, 90 - eyeAngles.x);
 
-    void* bodyComponent = *(void**)schema->GetPropPtr(pawn, "CBaseEntity", "m_CBodyComponent");
+    void*& bodyComponent = *(void**)schema->GetPropPtr(pawn, "CBaseEntity", "m_CBodyComponent");
     if (!bodyComponent) return;
 
-    void* sceneNode = *(void**)schema->GetPropPtr(bodyComponent, "CBodyComponent", "m_pSceneNode");
+    void*& sceneNode = *(void**)schema->GetPropPtr(bodyComponent, "CBodyComponent", "m_pSceneNode");
     if (!sceneNode) return;
 
     void* viewOffset = schema->GetPropPtr(pawn, "CBaseModelEntity", "m_vecViewOffset");
     if (!viewOffset) return;
 
-    CNetworkedQuantizedFloat viewOffsetZ = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(viewOffset, "CNetworkViewOffsetVector", "m_vecZ");
+    CNetworkedQuantizedFloat& viewOffsetZ = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(viewOffset, "CNetworkViewOffsetVector", "m_vecZ");
+
+    void* velocity = schema->GetPropPtr(pawn, "CBaseEntity", "m_vecVelocity");
+    if (!velocity) return;
+
+    CNetworkedQuantizedFloat& velocityX = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(velocity, "CNetworkVelocityVector", "m_vecX");
+    CNetworkedQuantizedFloat& velocityY = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(velocity, "CNetworkVelocityVector", "m_vecY");
+    CNetworkedQuantizedFloat& velocityZ = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(velocity, "CNetworkVelocityVector", "m_vecZ");
 
     eyePos += *(Vector*)schema->GetPropPtr(sceneNode, "CGameSceneNode", "m_vecAbsOrigin") + Vector(0, 0, viewOffsetZ.m_Value);
 
+    Vector vel(velocityX.m_Value, velocityY.m_Value, velocityZ.m_Value);
+
     static int iTeleportOffset = gamedata->GetOffsets()->Fetch("CBaseEntity::Teleport");
-    CALL_VIRTUAL(void, iTeleportOffset, pScreenEntity.Get(), &eyePos, &ang, nullptr);
+    CALL_VIRTUAL(void, iTeleportOffset, pScreenEntity.Get(), &eyePos, &ang, &vel);
 }
 
 void CScreenText::SetPlayer(IPlayer* player)
