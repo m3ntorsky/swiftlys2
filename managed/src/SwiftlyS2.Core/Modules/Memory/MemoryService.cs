@@ -4,6 +4,7 @@ using SwiftlyS2.Core.Hooks;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Extensions;
 using SwiftlyS2.Shared.Memory;
+using SwiftlyS2.Shared.Schemas;
 
 namespace SwiftlyS2.Core.Memory;
 
@@ -77,6 +78,10 @@ internal class MemoryService : IMemoryService, IDisposable {
   public nint ResolveXrefAddress(nint xrefAddress) {
     var offset = (xrefAddress + 3).Read<uint>();
     return xrefAddress + 7 + (nint)offset;
+  }
+
+  public T ToSchemaClass<T>(nint address) where T : class, ISchemaClass<T> {
+    return T.From(address);
   }
 
   public void Dispose() {

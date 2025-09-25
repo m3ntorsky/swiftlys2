@@ -21,18 +21,22 @@ public interface ISchedulerService {
   /// Add a timer to the scheduler.
   /// </summary>
   /// <param name="periodTick">The period of the timer in ticks.</param>
-  /// <param name="stopOnMapChange">Whether to stop the timer when the map changes.</param>
   /// <param name="task">The task to execute.</param>
   /// <returns>A CancellationTokenSource that can be used to cancel the timer.</returns>
-  CancellationTokenSource Repeat(int periodTick, bool stopOnMapChange, Action task);
+  CancellationTokenSource Repeat(int periodTick, Action task);
 
   /// <summary>
   /// Add a timer to the scheduler.
   /// </summary>
   /// <param name="delayTick">The delay of the timer in ticks.</param>
   /// <param name="periodTick">The period of the timer in ticks.</param>
-  /// <param name="stopOnMapChange">Whether to stop the timer when the map changes.</param>
   /// <param name="task">The task to execute.</param>
   /// <returns>A CancellationTokenSource that can be used to cancel the timer.</returns>
-  CancellationTokenSource DelayAndRepeat(int delayTick, int periodTick, bool stopOnMapChange, Action task);
+  CancellationTokenSource DelayAndRepeat(int delayTick, int periodTick, Action task);
+
+  /// <summary>
+  /// Stop a timer when the map changes.
+  /// </summary>
+  /// <param name="cts">The CancellationTokenSource to stop.</param>
+  void StopOnMapChange(CancellationTokenSource cts);
 }

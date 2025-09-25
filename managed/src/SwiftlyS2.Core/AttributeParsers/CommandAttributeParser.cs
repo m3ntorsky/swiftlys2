@@ -5,7 +5,7 @@ using SwiftlyS2.Shared.Commands;
 namespace SwiftlyS2.Core.AttributeParsers;
 
 internal static class CommandAttributeParser {
-  public static void ParseFromObject(this CommandService self, object instance) {
+  public static void ParseFromObject(this ICommandService self, object instance) {
     var type = instance.GetType();
     var methods = type.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
     foreach (var method in methods)

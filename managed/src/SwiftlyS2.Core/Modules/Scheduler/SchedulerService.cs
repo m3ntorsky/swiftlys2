@@ -36,28 +36,24 @@ internal class SchedulerService : ISchedulerService, IDisposable {
     return cts;
   }
 
-  public CancellationTokenSource Repeat(int periodTick, bool stopOnMapChange, Action task) {
+  public CancellationTokenSource Repeat(int periodTick, Action task) {
     var cts = SchedulerManager.AddTimer(0, periodTick, task, _lifecycleCts.Token);
     lock (_lock) {
-      if (stopOnMapChange)
-      {
-        _mapChangeCts.Token.Register(cts.Cancel);
-      }
       _timers.Add(cts);
     }
     return cts;
   }
 
-  public CancellationTokenSource DelayAndRepeat(int delayTick, int periodTick, bool stopOnMapChange, Action task) {
+  public CancellationTokenSource DelayAndRepeat(int delayTick, int periodTick, Action task) {
     var cts = SchedulerManager.AddTimer(delayTick, periodTick, task, _lifecycleCts.Token);
     lock (_lock) {
-      if (stopOnMapChange)
-      {
-        _mapChangeCts.Token.Register(cts.Cancel);
-      }
       _timers.Add(cts);
     }
     return cts;
+  }
+
+  public void StopOnMapChange(CancellationTokenSource cts) {
+    _mapChangeCts.Token.Register(cts.Cancel);
   }
 
   private void CleanFinishedTimers() {

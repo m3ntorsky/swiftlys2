@@ -5,7 +5,7 @@ using SwiftlyS2.Shared.NetMessages;
 namespace SwiftlyS2.Core.AttributeParsers;
 
 internal static class NetMessageAttributeParser {
-  public static void ParseFromObject(this NetMessageService self, object instance) {
+  public static void ParseFromObject(this INetMessageService self, object instance) {
     var type = instance.GetType();
     var methods = type.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 

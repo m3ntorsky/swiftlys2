@@ -6,7 +6,7 @@ using SwiftlyS2.Shared.Misc;
 namespace SwiftlyS2.Core.AttributeParsers;
 
 internal static class GameEventAttributeParser {
-  public static void ParseFromObject(this GameEventService self, object instance) {
+  public static void ParseFromObject(this IGameEventService self, object instance) {
     var type = instance.GetType();
     var methods = type.GetMethods(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
     foreach (var method in methods)

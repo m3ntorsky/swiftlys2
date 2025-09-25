@@ -38,16 +38,16 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public PluginConfigurationService Configuration { get; init; }
   public ILoggerFactory LoggerFactory { get; init; }
   public CommandService CommandService { get; init; }
-  public IEntitySystemService EntitySystemService { get; init; }
-  public IConVarService ConVarService { get; init; }
-  public IGameDataService GameDataService { get; init; }
-  public IPlayerManagerService PlayerManagerService { get; init; }
+  public EntitySystemService EntitySystemService { get; init; }
+  public ConVarService ConVarService { get; init; }
+  public GameDataService GameDataService { get; init; }
+  public PlayerManagerService PlayerManagerService { get; init; }
   public ILogger Logger { get; init; }
-  public IEngineService Engine { get; init; }
-  public ITraceManager Trace { get; init; }
-  public IContextedProfilerService ProfilerService { get; init; }
-  public IMemoryService MemoryService { get; init; }
-  public ISchedulerService SchedulerService { get; init; }
+  public EngineService Engine { get; init; }
+  public TraceManager Trace { get; init; }
+  public ContextedProfilerService ProfilerService { get; init; }
+  public MemoryService MemoryService { get; init; }
+  public SchedulerService SchedulerService { get; init; }
 
   public SwiftlyCore(string contextId, string contextBaseDirectory, Type contextType, IServiceProvider coreProvider) {
 
@@ -74,8 +74,24 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<ConVarService>()
       .AddSingleton<MemoryService>()
       .AddSingleton<GameDataService>()
-      .AddSingleton<IContextedProfilerService, ContextedProfilerService>()
+      .AddSingleton<ContextedProfilerService>()
       .AddSingleton<SchedulerService>()
+
+      .AddSingleton<IEventSubscriber>(provider => provider.GetRequiredService<EventSubscriber>())
+      .AddSingleton<IGameEventService>(provider => provider.GetRequiredService<GameEventService>())
+      .AddSingleton<INetMessageService>(provider => provider.GetRequiredService<NetMessageService>())
+      .AddSingleton<IPluginConfigurationService>(provider => provider.GetRequiredService<PluginConfigurationService>())
+      .AddSingleton<ICommandService>(provider => provider.GetRequiredService<CommandService>())
+      .AddSingleton<IEntitySystemService>(provider => provider.GetRequiredService<EntitySystemService>())
+      .AddSingleton<IConVarService>(provider => provider.GetRequiredService<ConVarService>())
+      .AddSingleton<IGameDataService>(provider => provider.GetRequiredService<GameDataService>())
+      .AddSingleton<IPlayerManagerService>(provider => provider.GetRequiredService<PlayerManagerService>())
+      .AddSingleton<IMemoryService>(provider => provider.GetRequiredService<MemoryService>())
+      .AddSingleton<IContextedProfilerService>(provider => provider.GetRequiredService<ContextedProfilerService>())
+      .AddSingleton<ISchedulerService>(provider => provider.GetRequiredService<SchedulerService>())
+      .AddSingleton<IEngineService>(provider => provider.GetRequiredService<EngineService>())
+      .AddSingleton<ITraceManager>(provider => provider.GetRequiredService<TraceManager>())
+      
 
       .AddLogging(
         builder => {
@@ -99,7 +115,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     MemoryService = _ServiceProvider.GetRequiredService<MemoryService>();
     Engine = _ServiceProvider.GetRequiredService<EngineService>();
     Trace = _ServiceProvider.GetRequiredService<TraceManager>();
-    ProfilerService = _ServiceProvider.GetRequiredService<IContextedProfilerService>();
+    ProfilerService = _ServiceProvider.GetRequiredService<ContextedProfilerService>();
     SchedulerService = _ServiceProvider.GetRequiredService<SchedulerService>();
 
     Logger = LoggerFactory.CreateLogger(contextType);
