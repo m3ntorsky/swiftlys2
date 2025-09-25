@@ -24,6 +24,14 @@
 
 #include <public/entity2/entitykeyvalues.h>
 
+class CNetworkedQuantizedFloat
+{
+public:
+    float m_Value;
+    uint16_t m_nEncoder;
+    bool m_bUnflattened;
+};
+
 void CScreenText::Create(Color color, const std::string& font, int size, bool drawBackground, bool isMenu)
 {
     m_col = color;
@@ -40,7 +48,7 @@ void CScreenText::Create(Color color, const std::string& font, int size, bool dr
     CEntityKeyValues* pMenuKV = new CEntityKeyValues();
 
     pMenuKV->SetBool("enabled", true);
-    pMenuKV->SetFloat("world_units_per_pixel", (0.25 / 1050) * size);
+    pMenuKV->SetFloat("world_units_per_pixel", (0.25f / 1050) * size);
     pMenuKV->SetInt("justify_horizontal", 0);
     pMenuKV->SetInt("justify_vertical", 2);
     pMenuKV->SetInt("reorient_mode", 0);
@@ -69,21 +77,6 @@ void CScreenText::Create(Color color, const std::string& font, int size, bool dr
     entitysystem->Spawn(pScreenEntity.Get(), pMenuKV);
 }
 
-void CScreenText::SetupViewForPlayer(IPlayer* player)
-{
-    m_player = player;
-
-    if (!pScreenEntity.IsValid()) return;
-    if (!pScreenEntity) return;
-
-    if (!player) return;
-    if (player->IsFakeClient()) return;
-
-    static auto entitysystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
-    entitysystem->AcceptInput(pScreenEntity.Get(), "SetParent", player->GetPawn(), nullptr, "!activator", 0);
-    entitysystem->AcceptInput(pScreenEntity.Get(), "SetParentAttachmentMaintainOffset", nullptr, nullptr, "axis_of_intent", 0);
-}
-
 void CScreenText::SetText(const std::string& text)
 {
     m_text = text;
@@ -101,6 +94,11 @@ void CScreenText::SetPosition(float posX, float posY)
     m_posX = posX;
     m_posY = posY;
 
+    UpdatePosition();
+}
+
+void CScreenText::UpdatePosition()
+{
     if (!m_player) return;
     if (m_player->IsFakeClient()) return;
     if (!pScreenEntity.IsValid()) return;
@@ -132,7 +130,18 @@ void CScreenText::SetPosition(float posX, float posY)
 
     if (!pawn) return;
 
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+
     QAngle eyeAngles = *(QAngle*)schema->GetPropPtr(pawn, "CCSPlayerPawn", "m_angEyeAngles");
+    Vector fwd, right, up;
+    AngleVectors(eyeAngles, &fwd, &right, &up);
+
+    Vector eyePos(0.0, 0.0, 0.0);
+    eyePos += fwd * 7;
+    eyePos += right * (-9.28 + (m_posX * 18.5));
+    eyePos += up * (-4.8 + (m_posY * 10.13));
+
+    QAngle ang(0, eyeAngles.y + 270, 90 - eyeAngles.x);
 
     void* bodyComponent = *(void**)schema->GetPropPtr(pawn, "CBaseEntity", "m_CBodyComponent");
     if (!bodyComponent) return;
@@ -140,26 +149,20 @@ void CScreenText::SetPosition(float posX, float posY)
     void* sceneNode = *(void**)schema->GetPropPtr(bodyComponent, "CBodyComponent", "m_pSceneNode");
     if (!sceneNode) return;
 
-    void* camServices = *(void**)schema->GetPropPtr(pawn, "CBasePlayerPawn", "m_pCameraServices");
-    if (!camServices) return;
+    void* viewOffset = schema->GetPropPtr(pawn, "CBaseModelEntity", "m_vecViewOffset");
+    if (!viewOffset) return;
 
-    float oldZ = *(float*)schema->GetPropPtr(camServices, "CPlayer_CameraServices", "m_flOldPlayerViewOffsetZ");
+    CNetworkedQuantizedFloat viewOffsetZ = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(viewOffset, "CNetworkViewOffsetVector", "m_vecZ");
 
-    Vector fwd, right, up;
-    AngleVectors(eyeAngles, &fwd, &right, &up);
+    eyePos += *(Vector*)schema->GetPropPtr(sceneNode, "CGameSceneNode", "m_vecAbsOrigin") + Vector(0, 0, viewOffsetZ.m_Value);
 
-    Vector eyePos(0.0, 0.0, 0.0);
-    eyePos += fwd * 54;
-    eyePos += right * (-9.2);
-    eyePos += up * (-4.9);
+    static int iTeleportOffset = gamedata->GetOffsets()->Fetch("CBaseEntity::Teleport");
+    CALL_VIRTUAL(void, iTeleportOffset, pScreenEntity.Get(), &eyePos, &ang, nullptr);
+}
 
-    QAngle ang(0, eyeAngles.y + 270, 90 - eyeAngles.x);
-
-    Vector origin = *(Vector*)schema->GetPropPtr(sceneNode, "CGameSceneNode", "m_vecAbsOrigin");
-    eyePos += origin + Vector(0, 0, oldZ);
-
-    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
-    CALL_VIRTUAL(void, gamedata->GetOffsets()->Fetch("CBaseEntity::Teleport"), pScreenEntity.Get(), &eyePos, &ang, nullptr);
+void CScreenText::SetPlayer(IPlayer* player)
+{
+    m_player = player;
 }
 
 void CScreenText::SetColor(Color color)
@@ -186,12 +189,10 @@ void CScreenText::RegenerateText(bool recreate)
         if (pScreenEntity.IsValid()) entitysystem->Despawn(pScreenEntity.Get());
 
         Create(m_col, m_font, m_size, m_drawBackground, m_isMenu);
-        SetupViewForPlayer(m_player);
         SetText(m_text);
         SetPosition(m_posX, m_posY);
     }
     else {
-        SetupViewForPlayer(m_player);
         SetPosition(m_posX, m_posY);
     }
 }

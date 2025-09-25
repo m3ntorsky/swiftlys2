@@ -25,13 +25,14 @@ class CScreenText : public IScreenText
 {
 public:
     virtual void Create(Color color, const std::string& font, int size, bool drawBackground, bool isMenu) override;
-    virtual void SetupViewForPlayer(IPlayer* player) override;
     virtual void SetText(const std::string& text) override;
     virtual void SetColor(Color color) override;
     virtual void SetPosition(float posX = 0.0, float posY = 0.0) override;
     virtual void SetRenderingTo(CEntityInstance* ent) override;
+    virtual void SetPlayer(IPlayer* player) override;
     virtual void RegenerateText(bool recreate = true) override;
     virtual void ResetSpawnState() override;
+    virtual void UpdatePosition() override;
 
     virtual bool IsValidEntity() override;
     virtual IPlayer* GetPlayer() override;

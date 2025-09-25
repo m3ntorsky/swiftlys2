@@ -29,13 +29,14 @@ class IScreenText
 {
 public:
     virtual void Create(Color color, const std::string& font, int size, bool drawBackground, bool isMenu) = 0;
-    virtual void SetupViewForPlayer(IPlayer* player) = 0;
     virtual void SetText(const std::string& text) = 0;
     virtual void SetColor(Color color) = 0;
     virtual void SetPosition(float posX, float posY) = 0;
     virtual void SetRenderingTo(CEntityInstance* ent) = 0;
+    virtual void SetPlayer(IPlayer* player) = 0;
     virtual void RegenerateText(bool recreate = true) = 0;
     virtual void ResetSpawnState() = 0;
+    virtual void UpdatePosition() = 0;
 
     virtual bool IsValidEntity() = 0;
     virtual IPlayer* GetPlayer() = 0;

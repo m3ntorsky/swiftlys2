@@ -108,8 +108,40 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
 
     auto scripting = g_ifaceService.FetchInterface<IScriptingAPI>(SCRIPTING_INTERFACE_VERSION);
 
-    InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/" + m_sCorePath);
-    InitializeDotNetAPI(scripting->GetNativeFunctions(), scripting->GetNativeFunctionsCount());
+    servercommands->RegisterCommand("test", [](int playerid, std::vector<std::string> args, std::string command_name, std::string prefix, bool silent) {
+        auto vgui = g_ifaceService.FetchInterface<IVGUI>(VGUI_INTERFACE_VERSION);
+        auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+
+        Color color(255, 255, 255, 255);
+
+        std::string text = "hello world";
+
+        float x = 0.0;
+        float y = 1.0;
+
+        if (x < 0.0) x = 0.0;
+        if (x > 1.0) x = 1.0;
+
+        if (y < 0.0) y = 0.0;
+        if (y > 1.0) y = 1.0;
+
+        std::string font_name = "Sans Serif";
+        bool background = true;
+
+        IPlayer* player = playermanager->GetPlayer(playerid);
+        if (!player) return;
+
+        uint64_t textID = vgui->RegisterScreenText();
+        IScreenText* txt = vgui->GetScreenText(textID);
+
+        txt->Create(color, font_name, 35, background, false);
+        txt->SetText(text);
+        txt->SetPlayer(player);
+        txt->SetPosition(x, y);
+    }, false);
+
+    // InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/" + m_sCorePath);
+    // InitializeDotNetAPI(scripting->GetNativeFunctions(), scripting->GetNativeFunctionsCount());
 
     return true;
 }
