@@ -19,6 +19,8 @@ internal static class GameFunctions {
   public static int RemoveWeaponsOffset => NativeOffsets.Fetch("CCSPlayer_ItemServices::RemoveWeapons");
   public static int GiveNamedItemOffset => NativeOffsets.Fetch("CCSPlayer_ItemServices::GiveNamedItem");
   public static int DropActiveItemOffset => NativeOffsets.Fetch("CCSPlayer_ItemServices::DropActiveItem");
+  public static int DropWeaponOffset => NativeOffsets.Fetch("CCSPlayer_WeaponServices::DropWeapon");
+  public static int SelectWeaponOffset => NativeOffsets.Fetch("CCSPlayer_WeaponServices::SelectWeapon");
 
   public static void Initialize() {
     unsafe {
@@ -225,6 +227,30 @@ internal static class GameFunctions {
         void*** ppVTable = (void***)pThis;
         var pDropActiveItem = (delegate* unmanaged<nint, Vector*, void>)ppVTable[0][DropActiveItemOffset];
         pDropActiveItem(pThis, &momentum);
+      }
+    } catch (Exception e) {
+      AnsiConsole.WriteException(e);
+    } 
+  }
+
+  public unsafe static void CCSPlayer_WeaponServices_DropWeapon(nint pThis, nint pWeapon) {
+    try {
+      unsafe {
+        void*** ppVTable = (void***)pThis;
+        var pDropWeapon = (delegate* unmanaged<nint, nint, void>)ppVTable[0][DropWeaponOffset];
+        pDropWeapon(pThis, pWeapon);
+      }
+    } catch (Exception e) {
+      AnsiConsole.WriteException(e);
+    }
+  }
+
+  public unsafe static void CCSPlayer_WeaponServices_SelectWeapon(nint pThis, nint pWeapon) {
+    try {
+      unsafe {
+        void*** ppVTable = (void***)pThis;
+        var pSelectWeapon = (delegate* unmanaged<nint, nint, void>)ppVTable[0][SelectWeaponOffset];
+        pSelectWeapon(pThis, pWeapon);
       }
     } catch (Exception e) {
       AnsiConsole.WriteException(e);

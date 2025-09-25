@@ -58,5 +58,13 @@
     "CCSPlayer_ItemServices::GiveNamedItem": {
         "windows": 18,
         "linux": 19
+    },
+    "CCSPlayer_WeaponServices_DropWeapon": {
+        "windows": 23,
+        "linux": 24
+    },
+    "CCSPlayer_WeaponServices::SelectWeapon": {
+        "windows": 25,
+        "linux": 26
     }
 }

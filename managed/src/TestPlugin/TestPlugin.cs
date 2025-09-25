@@ -212,15 +212,12 @@ public class TestPlugin : BasePlugin {
   public void TestCommand3(ICommandContext context)
   {
     context.Sender?.PlayerPawn?.ItemServices?.GiveItem<CAK47>();
-    context.Sender?.PlayerPawn?.ItemServices?.DropActiveItem();
-    context.Sender?.PlayerPawn?.ItemServices?.RemoveItems();
   }
 
   [Command("tt3")]
   public void TestCommand33(ICommandContext context) {
 
-    var entity = Core.EntitySystem.CreateEntity<CItem_Healthshot>();
-    entity.DispatchSpawn();
+    context.Sender?.PlayerPawn?.WeaponServices?.SelectWeaponByClass<CAK47>();
   }
 
   [Command("tt4")]
