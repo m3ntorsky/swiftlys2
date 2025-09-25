@@ -46,5 +46,17 @@
     "CGameRules::FindPickerEntity": {
         "windows": 25,
         "linux": 26
+    },
+    "CCSPlayer_ItemServices::DropActiveItem": {
+        "windows": 21,
+        "linux": 22
+    },
+    "CCSPlayer_ItemServices::RemoveWeapons": {
+        "windows": 22,
+        "linux": 23
+    },
+    "CCSPlayer_ItemServices::GiveNamedItem": {
+        "windows": 18,
+        "linux": 19
     }
 }
