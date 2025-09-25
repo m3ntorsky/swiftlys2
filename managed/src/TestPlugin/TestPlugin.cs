@@ -57,13 +57,16 @@ public class TestPlugin : BasePlugin {
 
     // throw new Exception("TestPlugin loaded");
 
-    token2 = Core.Scheduler.AddTimer(10, () => {
+    int i = 0;
+
+    var token2 = Core.Scheduler.Repeat(10, () => {
+      Console.WriteLine(Core.Engine.TickCount);
       Console.WriteLine("TestPlugin Timer");
     });
 
     Core.Logger.LogInformation(Core.GameData.GetSignature("Test").ToString());
 
-
+    // Core.Scheduler.DelayBySeconds
 
     Core.Logger.LogInformation("TestPlugin loaded");
 

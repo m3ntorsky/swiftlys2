@@ -1,3 +1,5 @@
+using SwiftlyS2.Shared.Schemas;
+
 namespace SwiftlyS2.Shared.Memory;
 
 public interface IMemoryService {
@@ -49,5 +51,14 @@ public interface IMemoryService {
   /// <param name="xrefAddress">The address of the xref.</param>
   /// <returns>The resolved address.</returns>
   nint ResolveXrefAddress(nint xrefAddress);
+
+
+  /// <summary>
+  /// Convert an address to a schema class.
+  /// </summary>
+  /// <typeparam name="T">The schema class type.</typeparam>
+  /// <param name="address">The address of the schema class.</param>
+  /// <returns>The schema class.</returns>
+  T ToSchemaClass<T>(nint address) where T : class, ISchemaClass<T>;
 
 }

@@ -33,4 +33,11 @@ internal class PlayerManagerService : IPlayerManagerService
     {
         NativePlayerManager.ShouldBlockTransmitEntity(entityid, shouldBlockTransmit);
     }
+
+    public IEnumerable<IPlayer> GetAllPlayers()
+    {
+        return Enumerable.Range(0, PlayerCap)
+            .Where(IsPlayerOnline)
+            .Select(GetPlayer);
+    }
 }

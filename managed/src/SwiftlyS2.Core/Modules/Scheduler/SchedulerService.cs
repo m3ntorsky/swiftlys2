@@ -10,6 +10,8 @@ internal class SchedulerService : ISchedulerService, IDisposable {
   private readonly CancellationTokenSource _lifecycleCts = new();
   private CancellationTokenSource _mapChangeCts = new();
 
+  private static int tickPerSecond = 64;
+
   public SchedulerService(IEventSubscriber eventSubscriber) {
     eventSubscriber.OnMapUnload += (@event) => {
       lock (_lock) {
@@ -36,28 +38,36 @@ internal class SchedulerService : ISchedulerService, IDisposable {
     return cts;
   }
 
-  public CancellationTokenSource Repeat(int periodTick, bool stopOnMapChange, Action task) {
+  public CancellationTokenSource Repeat(int periodTick, Action task) {
     var cts = SchedulerManager.AddTimer(0, periodTick, task, _lifecycleCts.Token);
     lock (_lock) {
-      if (stopOnMapChange)
-      {
-        _mapChangeCts.Token.Register(cts.Cancel);
-      }
       _timers.Add(cts);
     }
     return cts;
   }
 
-  public CancellationTokenSource DelayAndRepeat(int delayTick, int periodTick, bool stopOnMapChange, Action task) {
+  public CancellationTokenSource DelayAndRepeat(int delayTick, int periodTick, Action task) {
     var cts = SchedulerManager.AddTimer(delayTick, periodTick, task, _lifecycleCts.Token);
     lock (_lock) {
-      if (stopOnMapChange)
-      {
-        _mapChangeCts.Token.Register(cts.Cancel);
-      }
       _timers.Add(cts);
     }
     return cts;
+  }
+
+  public CancellationTokenSource DelayBySeconds(float delaySeconds, Action task) {
+    return Delay((int)(delaySeconds * tickPerSecond), task);
+  }
+
+  public CancellationTokenSource RepeatBySeconds(float periodSeconds, Action task) {
+    return Repeat((int)(periodSeconds * tickPerSecond), task);
+  }
+
+  public CancellationTokenSource DelayAndRepeatBySeconds(float delaySeconds, float periodSeconds, Action task) {
+    return DelayAndRepeat((int)(delaySeconds * tickPerSecond), (int)(periodSeconds * tickPerSecond), task);
+  }
+
+  public void StopOnMapChange(CancellationTokenSource cts) {
+    _mapChangeCts.Token.Register(cts.Cancel);
   }
 
   private void CleanFinishedTimers() {

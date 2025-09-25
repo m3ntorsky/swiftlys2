@@ -86,7 +86,7 @@ internal static class SchedulerManager {
         }
 
         // Reschedule
-        timer.DueTick += timer.PeriodTick;
+        timer.DueTick = Interlocked.Read(ref _currentTick) + timer.PeriodTick;
         lock (_lock) {
           _timerQueue.Enqueue(timer, timer.DueTick);
         }
