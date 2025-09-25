@@ -1,3 +1,5 @@
+using System.Buffers;
+using System.Text;
 using Spectre.Console;
 using SwiftlyS2.Shared.Natives;
 
@@ -8,17 +10,15 @@ internal static class GameFunctions {
   public static unsafe delegate* unmanaged<CTakeDamageInfo*, nint, nint, nint, Vector*, Vector*, float, int, int, void*, void> pCTakeDamageInfo_Constructor;
   public static unsafe delegate* unmanaged<nint, Ray_t, Vector, Vector, CTraceFilter*, CGameTrace*, void> pTraceShape;
   public static unsafe delegate* unmanaged<Vector, Vector, BBox_t, CTraceFilter*, CGameTrace*, void> pTracePlayerBBox;
-  public static unsafe delegate* unmanaged<nint, Vector*, QAngle*, Vector*, void> pTeleport;
   public static unsafe delegate* unmanaged<nint, IntPtr, void> pSetModel;
   public static unsafe delegate* unmanaged<nint, nint, bool, bool, bool, bool, void> pSetPlayerControllerPawn;
-  public static unsafe delegate* unmanaged<nint, bool, bool, void> pCommitSuicide;
-  public static unsafe delegate* unmanaged<nint, nint> pSkeletonInstance;
-  public static unsafe delegate* unmanaged<nint, nint, nint, nint> pFindPickerEntity;
-
   public static int TeleportOffset => NativeOffsets.Fetch("CBaseEntity::Teleport");
   public static int CommitSuicideOffset => NativeOffsets.Fetch("CBasePlayerPawn::CommitSuicide");
   public static int GetSkeletonInstanceOffset => NativeOffsets.Fetch("CGameSceneNode::GetSkeletonInstance");
   public static int FindPickerEntityOffset => NativeOffsets.Fetch("CGameRules::FindPickerEntity");
+  public static int RemoveWeaponsOffset => NativeOffsets.Fetch("CCSPlayer_ItemServices::RemoveWeapons");
+  public static int GiveNamedItemOffset => NativeOffsets.Fetch("CCSPlayer_ItemServices::GiveNamedItem");
+  public static int DropActiveItemOffset => NativeOffsets.Fetch("CCSPlayer_ItemServices::DropActiveItem");
 
   public static void Initialize() {
     unsafe {
@@ -36,12 +36,8 @@ internal static class GameFunctions {
     {
       unsafe
       {
-        if (pFindPickerEntity == null)
-        {
-          void*** ppVTable = (void***)handle;
-          pFindPickerEntity = (delegate* unmanaged<nint, nint, nint, nint>)ppVTable[0][FindPickerEntityOffset];
-        }
-
+        void*** ppVTable = (void***)handle;
+        var pFindPickerEntity = (delegate* unmanaged<nint, nint, nint, nint>)ppVTable[0][FindPickerEntityOffset];
         return pFindPickerEntity(handle, controller, IntPtr.Zero);
       }
     }
@@ -58,12 +54,8 @@ internal static class GameFunctions {
     {
       unsafe
       {
-        if (pSkeletonInstance == null)
-        {
-          void*** ppVTable = (void***)handle;
-          pSkeletonInstance = (delegate* unmanaged<nint, nint>)ppVTable[0][GetSkeletonInstanceOffset];
-        }
-
+        void*** ppVTable = (void***)handle;
+        var pSkeletonInstance = (delegate* unmanaged<nint, nint>)ppVTable[0][GetSkeletonInstanceOffset];
         return pSkeletonInstance(handle);
       }
     }
@@ -80,12 +72,8 @@ internal static class GameFunctions {
     {
       unsafe
       {
-        if (pCommitSuicide == null)
-        {
-          void*** ppVTable = (void***)pPawn;
-          pCommitSuicide = (delegate* unmanaged<nint, bool, bool, void>)ppVTable[0][CommitSuicideOffset];
-        }
-
+        void*** ppVTable = (void***)pPawn;
+        var pCommitSuicide = (delegate* unmanaged<nint, bool, bool, void>)ppVTable[0][CommitSuicideOffset];
         pCommitSuicide(pPawn, bExplode, bForce);
       }
     } catch (Exception e)
@@ -109,10 +97,14 @@ internal static class GameFunctions {
   {
     try {
       unsafe {
-        fixed (char* pModel = model)
-        {
-          IntPtr ptrModel = (IntPtr)pModel;
-          pSetModel(pEntity, ptrModel);
+        var pool = ArrayPool<byte>.Shared;
+        var modelLength = Encoding.UTF8.GetByteCount(model);
+        var modelBuffer = pool.Rent(modelLength + 1);
+        Encoding.UTF8.GetBytes(model, modelBuffer);
+        modelBuffer[modelLength] = 0;
+        fixed (byte* pModel = modelBuffer) {
+          pSetModel(pEntity, (IntPtr)pModel);
+          pool.Return(modelBuffer);
         }
       }
     } catch (Exception e) {
@@ -129,11 +121,8 @@ internal static class GameFunctions {
   {
     try {
       unsafe {
-        if(pTeleport == null)
-        {
-          void*** ppVTable = (void***)pEntity;
-          pTeleport = (delegate* unmanaged<nint, Vector*, QAngle*, Vector*, void>)ppVTable[0][TeleportOffset];
-        }
+        void*** ppVTable = (void***)pEntity;
+        var pTeleport = (delegate* unmanaged<nint, Vector*, QAngle*, Vector*, void>)ppVTable[0][TeleportOffset];
         pTeleport(pEntity, vecPosition, vecAngle, vecVelocity);
       }
     } catch (Exception e) {
@@ -196,5 +185,49 @@ internal static class GameFunctions {
     } catch (Exception e) {
       AnsiConsole.WriteException(e);
     }
+  }
+
+  public unsafe static void CCSPlayer_ItemServices_RemoveWeapons(nint pThis) {
+    try {
+      unsafe {
+        void*** ppVTable = (void***)pThis;
+        var pRemoveWeapons = (delegate* unmanaged<nint, void>)ppVTable[0][RemoveWeaponsOffset];
+        pRemoveWeapons(pThis);
+      }
+    } catch (Exception e) {
+      AnsiConsole.WriteException(e);
+    }
+  }
+
+  public unsafe static nint CCSPlayer_ItemServices_GiveNamedItem(nint pThis, string name) {
+    try {
+      unsafe {
+        void*** ppVTable = (void***)pThis;
+        var pGiveNamedItem = (delegate* unmanaged<nint, nint, nint>)ppVTable[0][GiveNamedItemOffset];
+        var pool = ArrayPool<byte>.Shared;
+        var nameLength = Encoding.UTF8.GetByteCount(name);
+        var nameBuffer = pool.Rent(nameLength + 1);
+        Encoding.UTF8.GetBytes(name, nameBuffer);
+        nameBuffer[nameLength] = 0;
+        fixed (byte* pName = nameBuffer) {
+          return pGiveNamedItem(pThis, (IntPtr)pName);
+        }
+      }
+    } catch (Exception e) {
+      AnsiConsole.WriteException(e);
+      return 0;
+    }
+  }
+
+  public unsafe static void CCSPlayer_ItemServices_DropActiveItem(nint pThis, Vector momentum) {
+    try {
+      unsafe {
+        void*** ppVTable = (void***)pThis;
+        var pDropActiveItem = (delegate* unmanaged<nint, Vector*, void>)ppVTable[0][DropActiveItemOffset];
+        pDropActiveItem(pThis, &momentum);
+      }
+    } catch (Exception e) {
+      AnsiConsole.WriteException(e);
+    } 
   }
 }

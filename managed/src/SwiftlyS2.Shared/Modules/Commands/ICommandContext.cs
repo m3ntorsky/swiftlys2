@@ -1,4 +1,5 @@
 using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.Services;
 
 namespace SwiftlyS2.Shared.Commands;
 
@@ -6,7 +7,7 @@ public interface ICommandContext {
 
   public bool IsSentByPlayer { get; }
 
-  public int? SenderId { get; }
+  public IPlayer? Sender { get; }
 
   public string Prefix { get; }
 

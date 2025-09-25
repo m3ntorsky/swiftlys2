@@ -61,7 +61,7 @@ internal class EntitySystemService : IEntitySystemService {
       .Select(entity => T.From(entity.GetHandle()));
   }
 
-  private static readonly FrozenDictionary<Type, string> TypeToDesignerName = new Dictionary<Type, string>() {
+  public static readonly FrozenDictionary<Type, string> TypeToDesignerName = new Dictionary<Type, string>() {
     { typeof(CCSPlayerController), "cs_player_controller" },
     { typeof(CCSPlayerPawn), "player" },
     { typeof(CCSObserverPawn), "observer" },

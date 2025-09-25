@@ -211,31 +211,15 @@ public class TestPlugin : BasePlugin {
   [Command("h2")]
   public void TestCommand3(ICommandContext context)
   {
-    /*var dispatchspawn = Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
-    _hookId = Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) =>
-    {
-      return (nint pEntity, nint pKV) =>
-      {
-        Console.WriteLine("TestPlugin DispatchSpawn2 " + order++);
-        return next()(pEntity, pKV);
-      };
-    });
-
-    Core.Hook.Hook<DispatchSpawnDelegate>(dispatchspawn, (next) =>
-    {
-      return (nint pEntity, nint pKV) =>
-      {
-        var original  = next();
-        Console.WriteLine("TestPlugin DispatchSpawn3 " + order++);
-        return original(pEntity, pKV);
-      };
-    });*/
+    context.Sender?.PlayerPawn?.ItemServices?.GiveItem<CAK47>();
+    context.Sender?.PlayerPawn?.ItemServices?.DropActiveItem();
+    context.Sender?.PlayerPawn?.ItemServices?.RemoveItems();
   }
 
   [Command("tt3")]
   public void TestCommand33(ICommandContext context) {
 
-    var entity = Core.EntitySystem.CreateEntity<CPointWorldText>();
+    var entity = Core.EntitySystem.CreateEntity<CItem_Healthshot>();
     entity.DispatchSpawn();
   }
 

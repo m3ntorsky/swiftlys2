@@ -33,9 +33,9 @@ internal class Player : IPlayer
 
     public CCSPlayerController Controller => new CCSPlayerControllerImpl(NativePlayer.GetController(_pid));
 
-    public CBasePlayerPawn Pawn => new CBasePlayerPawnImpl(NativePlayer.GetPawn(_pid));
+    public CBasePlayerPawn? Pawn => Controller.Pawn.Value;
 
-    public CCSPlayerPawn PlayerPawn => new CCSPlayerPawnImpl(NativePlayer.GetPlayerPawn(_pid));
+    public CCSPlayerPawn? PlayerPawn => Controller.PlayerPawn.Value;
 
     public GameButtonFlags PressedButtons => (GameButtonFlags)NativePlayer.GetPressedButtons(_pid);
 

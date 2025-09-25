@@ -115,11 +115,11 @@ public interface IPlayer
     /// <summary>
     /// Gets the pawn associated with the player.
     /// </summary>
-    public CBasePlayerPawn Pawn { get; }
+    public CBasePlayerPawn? Pawn { get; }
     /// <summary>
     /// Gets the player pawn associated with the player.
     /// </summary>
-    public CCSPlayerPawn PlayerPawn { get; }
+    public CCSPlayerPawn? PlayerPawn { get; }
     /// <summary>
     /// Gets the set of game buttons that are currently pressed.
     /// </summary>
