@@ -140,8 +140,8 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
         txt->SetPosition(x, y);
     }, false);
 
-    // InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/" + m_sCorePath);
-    // InitializeDotNetAPI(scripting->GetNativeFunctions(), scripting->GetNativeFunctionsCount());
+    InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/" + m_sCorePath);
+    InitializeDotNetAPI(scripting->GetNativeFunctions(), scripting->GetNativeFunctionsCount());
 
     return true;
 }

@@ -68,10 +68,10 @@ public class TestPlugin : BasePlugin {
 
     int i = 0;
 
-    var token2 = Core.Scheduler.Repeat(10, () => {
-      Console.WriteLine(Core.Engine.TickCount);
-      Console.WriteLine("TestPlugin Timer");
-    });
+    // var token2 = Core.Scheduler.Repeat(10, () => {
+    //   Console.WriteLine(Core.Engine.TickCount);
+    //   Console.WriteLine("TestPlugin Timer");
+    // });
 
     Core.Logger.LogInformation(Core.GameData.GetSignature("Test").ToString());
 
@@ -225,11 +225,11 @@ public class TestPlugin : BasePlugin {
     //Core.Hook.Unhook(_hookId);
   }
 
-  // [GameEventHandler(HookMode.Pre)]
-  // public HookResult TestGameEventHandler(EventPlayerJump @e) {
-  //   Console.WriteLine("TestPlugin GameEventHandler");
-  //   return HookResult.Continue;
-  // }
+  [GameEventHandler(HookMode.Pre)]
+  public HookResult TestGameEventHandler(EventPlayerJump @e) {
+    Console.WriteLine(@e.UserIdController.PlayerName.Value);
+    return HookResult.Continue;
+  }
 
   [ServerNetMessageHandler]
   public HookResult TestServerNetMessageHandler(CCSUsrMsg_SendPlayerItemDrops msg) {

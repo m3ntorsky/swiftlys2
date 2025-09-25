@@ -152,8 +152,8 @@ bool CEventManager::OnFireEventPost(IGameEvent* pEvent, bool bDontBroadcast)
     std::string event_name = realGameEvent->GetName();
     bool shouldBroadcast = bDontBroadcast;
 
-    for (const auto& [id, callback] : g_mEventListeners) {
-        auto res = callback(event_name, pEvent, shouldBroadcast);
+    for (const auto& [id, callback] : g_mPostEventListeners) {
+        auto res = callback(event_name, realGameEvent, shouldBroadcast);
         if (res == 1) {
             g_gameEventManager->FreeEvent(realGameEvent);
             g_sEventStack.pop();

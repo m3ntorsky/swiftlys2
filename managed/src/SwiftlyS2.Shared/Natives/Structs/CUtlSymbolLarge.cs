@@ -21,8 +21,6 @@ public struct CUtlSymbolLarge {
 
   public static implicit operator string(CUtlSymbolLarge symbol) => symbol.Value;
 
-  public static implicit operator CUtlSymbolLarge(string value)
-  {
-    return new CUtlSymbolLarge { _pString = StringPool.Allocate(value) };
-  }
+  public static implicit operator CUtlSymbolLarge(string value) => new CUtlSymbolLarge { _pString = StringPool.Allocate(value) };
+
 }
