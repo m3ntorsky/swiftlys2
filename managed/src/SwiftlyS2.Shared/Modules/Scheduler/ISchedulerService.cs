@@ -9,16 +9,16 @@ public interface ISchedulerService {
   void NextTick(Action task);
 
   /// <summary>
-  /// Add a timer to the scheduler.
+  /// Add a delayed task to the scheduler.
   /// </summary>
-  /// <param name="periodTick">The period of the timer in ticks.</param>
+  /// <param name="delayTick">The delay of the timer in ticks.</param>
   /// <param name="task">The task to execute.</param>
-  /// <param name="stopOnMapChange">Whether to stop the timer when the map changes.</param>
   /// <returns>A CancellationTokenSource that can be used to cancel the timer.</returns>
   CancellationTokenSource Delay(int delayTick, Action task);
 
   /// <summary>
-  /// Add a timer to the scheduler.
+  /// Add a repeated task to the scheduler.
+  /// This will be executed once immediately, and then every periodTick ticks.
   /// </summary>
   /// <param name="periodTick">The period of the timer in ticks.</param>
   /// <param name="task">The task to execute.</param>
@@ -26,13 +26,40 @@ public interface ISchedulerService {
   CancellationTokenSource Repeat(int periodTick, Action task);
 
   /// <summary>
-  /// Add a timer to the scheduler.
+  /// Add a delayed and repeated task to the scheduler.
   /// </summary>
   /// <param name="delayTick">The delay of the timer in ticks.</param>
   /// <param name="periodTick">The period of the timer in ticks.</param>
   /// <param name="task">The task to execute.</param>
   /// <returns>A CancellationTokenSource that can be used to cancel the timer.</returns>
   CancellationTokenSource DelayAndRepeat(int delayTick, int periodTick, Action task);
+
+
+  /// <summary>
+  /// Add a delayed task to the scheduler.
+  /// </summary>
+  /// <param name="delaySeconds">The delay of the timer in seconds.</param>
+  /// <param name="task">The task to execute.</param>
+  /// <returns>A CancellationTokenSource that can be used to cancel the timer.</returns>
+  CancellationTokenSource DelayBySeconds(float delaySeconds, Action task);
+
+  /// <summary>
+  /// Add a repeated task to the scheduler.
+  /// This will be executed once immediately, and then every periodSeconds seconds.
+  /// </summary>
+  /// <param name="periodSeconds">The period of the timer in seconds.</param>
+  /// <param name="task">The task to execute.</param>
+  /// <returns>A CancellationTokenSource that can be used to cancel the timer.</returns>
+  CancellationTokenSource RepeatBySeconds(float periodSeconds, Action task);
+
+  /// <summary>
+  /// Add a delayed and repeated task to the scheduler.
+  /// </summary>
+  /// <param name="delaySeconds">The delay of the timer in seconds.</param>
+  /// <param name="periodSeconds">The period of the timer in seconds.</param>
+  /// <param name="task">The task to execute.</param>
+  /// <returns>A CancellationTokenSource that can be used to cancel the timer.</returns>
+  CancellationTokenSource DelayAndRepeatBySeconds(float delaySeconds, float periodSeconds, Action task);
 
   /// <summary>
   /// Stop a timer when the map changes.

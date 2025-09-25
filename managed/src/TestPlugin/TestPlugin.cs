@@ -59,12 +59,10 @@ public class TestPlugin : BasePlugin {
 
     int i = 0;
 
-    token2 = Core.Scheduler.Repeat(10, () => {
+    var token2 = Core.Scheduler.Repeat(10, () => {
       Console.WriteLine(Core.Engine.TickCount);
       Console.WriteLine("TestPlugin Timer");
     });
-
-    Core.Scheduler.StopOnMapChange(token2);
 
     Core.Logger.LogInformation(Core.GameData.GetSignature("Test").ToString());
 

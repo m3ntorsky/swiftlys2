@@ -10,6 +10,8 @@ internal class SchedulerService : ISchedulerService, IDisposable {
   private readonly CancellationTokenSource _lifecycleCts = new();
   private CancellationTokenSource _mapChangeCts = new();
 
+  private static int tickPerSecond = 64;
+
   public SchedulerService(IEventSubscriber eventSubscriber) {
     eventSubscriber.OnMapUnload += (@event) => {
       lock (_lock) {
@@ -50,6 +52,18 @@ internal class SchedulerService : ISchedulerService, IDisposable {
       _timers.Add(cts);
     }
     return cts;
+  }
+
+  public CancellationTokenSource DelayBySeconds(float delaySeconds, Action task) {
+    return Delay((int)(delaySeconds * tickPerSecond), task);
+  }
+
+  public CancellationTokenSource RepeatBySeconds(float periodSeconds, Action task) {
+    return Repeat((int)(periodSeconds * tickPerSecond), task);
+  }
+
+  public CancellationTokenSource DelayAndRepeatBySeconds(float delaySeconds, float periodSeconds, Action task) {
+    return DelayAndRepeat((int)(delaySeconds * tickPerSecond), (int)(periodSeconds * tickPerSecond), task);
   }
 
   public void StopOnMapChange(CancellationTokenSource cts) {
