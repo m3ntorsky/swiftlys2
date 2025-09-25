@@ -66,7 +66,7 @@ public class TestPlugin : BasePlugin {
 
     Core.Logger.LogInformation(Core.GameData.GetSignature("Test").ToString());
 
-
+    // Core.Scheduler.DelayBySeconds
 
     Core.Logger.LogInformation("TestPlugin loaded");
 

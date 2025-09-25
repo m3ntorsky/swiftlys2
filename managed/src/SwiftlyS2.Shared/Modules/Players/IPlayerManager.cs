@@ -42,4 +42,10 @@ public interface IPlayerManagerService
     /// <returns>An <see cref="IPlayer"/> instance representing the player with the specified ID, or <c>null</c> if no such
     /// player exists.</returns>
     IPlayer GetPlayer(int playerid);
+
+    /// <summary>
+    /// Retrieves all players currently online.
+    /// </summary>
+    /// <returns>An enumerable collection of <see cref="IPlayer"/> instances representing all online players.</returns>
+    IEnumerable<IPlayer> GetAllPlayers();
 }
