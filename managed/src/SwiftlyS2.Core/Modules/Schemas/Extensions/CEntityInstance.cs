@@ -6,6 +6,17 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public partial interface CEntityInstance {
 
+
+  /// <summary>
+  /// The index of the entity.
+  /// </summary>
+  public uint Index { get; }
+
+  /// <summary>
+  /// The designer name of the entity.
+  /// </summary>
+  public string DesignerName { get; }
+
   /// <summary>
   /// Fire an input to the entity.
   /// </summary>

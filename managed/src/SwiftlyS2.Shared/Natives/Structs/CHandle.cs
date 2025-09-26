@@ -14,6 +14,10 @@ public struct CHandle<T> where T : class, ISchemaClass<T> {
     set => _index = value;
   }
 
+  public CHandle(uint raw) {
+    _index = raw;
+  }
+
   public readonly T? Value {
     get {
       unsafe {

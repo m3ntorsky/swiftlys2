@@ -8,6 +8,10 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 internal partial class CEntityInstanceImpl : CEntityInstance {
 
+  public uint Index => Entity?.EntityHandle.EntityIndex ?? uint.MaxValue;
+
+  public string DesignerName => Entity?.DesignerName ?? string.Empty;
+
   public void AcceptInput<T>(string input, T value, CEntityInstance? activator = null, CEntityInstance? caller = null, int outputID = 0) {
     switch (value) {
       case bool boolValue:
