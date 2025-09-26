@@ -1,16 +1,17 @@
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
+using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared.Services;
 
 namespace SwiftlyS2.Core.Translations;
 
-internal class TranslationService
+internal class TranslationService : ITranslationService
 {
 
   private ILogger<TranslationService> _Logger { get; init; }  
   private CoreContext _Context { get; init; }
-  private TranslationResource _TranslationResource { get; set; }
+  private TranslationResource _TranslationResource { get; set; } = new();
 
   public TranslationService(ILogger<TranslationService> logger, CoreContext context)
   {
@@ -18,22 +19,38 @@ internal class TranslationService
     _Context = context;
 
     var translationDir = Path.Combine(_Context.BaseDirectory, "translations");
+    Console.WriteLine(translationDir);
 
     if (!Directory.Exists(translationDir)) {
+      return;
+    }
+
+    if (!File.Exists(Path.Combine(translationDir, "en.jsonc"))) {
       return;
     }
 
     _TranslationResource = TranslationFactory.Create(translationDir)!;
   }
 
-  public Localizer GetLocalizer() {
-    // TODO: Get server language
-    var language = Language.English;
-    return TranslationFactory.CreateLocalizer(_TranslationResource, language);
+  public Language GetServerLanguage() {
+    return new Language(NativeServerHelpers.GetServerLanguage());
   }
 
-  public Localizer GetPlayerLocalizer(IPlayer player)
+  public Localizer GetLocalizer() {
+    if (_TranslationResource.Resources.Count == 0) {
+      return new Localizer(new Dictionary<string, string>(), new Dictionary<string, string>());
+    }
+
+    return TranslationFactory.CreateLocalizer(_TranslationResource, GetServerLanguage());
+  }
+
+  public ILocalizer GetPlayerLocalizer(IPlayer player)
   {
-    return TranslationFactory.CreateLocalizer(_TranslationResource, player.PlayerLanguage);
+    if (_TranslationResource.Resources.Count == 0) {
+      return new Localizer(new Dictionary<string, string>(), new Dictionary<string, string>());
+    }
+
+    var language = NativeServerHelpers.UsePlayerLanguage() ? player.PlayerLanguage : GetServerLanguage();
+    return TranslationFactory.CreateLocalizer(_TranslationResource, language);
   }
 }

@@ -68,6 +68,8 @@ public class TestPlugin : BasePlugin {
       Console.WriteLine(item);
     }
 
+    Console.WriteLine(Core.Localizer["test"]);
+
     int i = 0;
 
     // var token2 = Core.Scheduler.Repeat(10, () => {

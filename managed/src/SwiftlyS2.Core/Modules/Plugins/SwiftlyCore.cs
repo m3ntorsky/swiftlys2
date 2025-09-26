@@ -53,7 +53,8 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public MemoryService MemoryService { get; init; }
   public SchedulerService SchedulerService { get; init; }
   public DatabaseService DatabaseService { get; init; }
-
+  public TranslationService TranslationService { get; init; }
+  public Localizer Localizer { get; init; }
   public SwiftlyCore(string contextId, string contextBaseDirectory, PluginManifest? pluginManifest, Type contextType, IServiceProvider coreProvider) {
 
     CoreContext id = new(contextId, contextBaseDirectory, pluginManifest);
@@ -100,6 +101,8 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<IEngineService>(provider => provider.GetRequiredService<EngineService>())
       .AddSingleton<ITraceManager>(provider => provider.GetRequiredService<TraceManager>())
       .AddSingleton<IDatabaseService>(provider => provider.GetRequiredService<DatabaseService>())
+      .AddSingleton<ITranslationService>(provider => provider.GetRequiredService<TranslationService>())
+      .AddSingleton<ILocalizer>(provider => provider.GetRequiredService<TranslationService>().GetLocalizer())
       
 
       .AddLogging(
@@ -127,6 +130,8 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     ProfilerService = _ServiceProvider.GetRequiredService<ContextedProfilerService>();
     SchedulerService = _ServiceProvider.GetRequiredService<SchedulerService>();
     DatabaseService = _ServiceProvider.GetRequiredService<DatabaseService>();
+    TranslationService = _ServiceProvider.GetRequiredService<TranslationService>();
+    Localizer = _ServiceProvider.GetRequiredService<Localizer>();
 
     Logger = LoggerFactory.CreateLogger(contextType);
   }
@@ -164,4 +169,6 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   ITraceManager ISwiftlyCore.Trace => Trace;
   ISchedulerService ISwiftlyCore.Scheduler => SchedulerService;
   IDatabaseService ISwiftlyCore.Database => DatabaseService;
+  ITranslationService ISwiftlyCore.Translation => TranslationService;
+  ILocalizer ISwiftlyCore.Localizer => Localizer;
 }

@@ -105,4 +105,14 @@ public interface ISwiftlyCore {
   /// Database service.
   /// </summary>
   public IDatabaseService Database { get; }
+
+  /// <summary>
+  /// Translation service.
+  /// </summary>
+  public ITranslationService Translation { get; }
+
+  /// <summary>
+  /// Localizer.
+  /// </summary>
+  public ILocalizer Localizer { get; }
 }

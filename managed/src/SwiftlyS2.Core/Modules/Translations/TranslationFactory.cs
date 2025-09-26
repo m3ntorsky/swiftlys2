@@ -29,7 +29,12 @@ internal class TranslationFactory
         throw new Exception($"Invalid language: {language}");
       }
 
-      var translation = JsonSerializer.Deserialize<Dictionary<string, string>>(File.ReadAllText(translationFile))!;
+      var options = new JsonSerializerOptions() {
+        AllowTrailingCommas = true,
+        ReadCommentHandling = JsonCommentHandling.Skip,
+      };
+
+      var translation = JsonSerializer.Deserialize<Dictionary<string, string>>(File.ReadAllText(translationFile), options) ?? new();
       resource.Resources[new Language(language)] = translation;
     }
 
@@ -45,10 +50,13 @@ internal class TranslationFactory
   }
 
   public static Localizer CreateLocalizer(TranslationResource resource, Language language) {
+
+    var defaultResource = resource.Resources[Language.English];
+
     if (!resource.Resources.ContainsKey(language)) {
-      return new Localizer(resource.Resources[Language.English]);
+      return new Localizer(defaultResource, defaultResource);
     }
 
-    return new Localizer(resource.Resources[language]);
+    return new Localizer(resource.Resources[language], defaultResource);
   }
 }
