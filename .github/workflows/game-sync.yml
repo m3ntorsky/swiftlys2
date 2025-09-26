@@ -1,0 +1,53 @@
+name: Sync Update
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+
+jobs:
+  check-updates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout GameTracking-CS2
+        uses: actions/checkout@v3
+        with:
+          repository: SteamDatabase/GameTracking-CS2
+      - name: Checkout SwiftlyS2
+        uses: actions/checkout@v3
+        with:
+          repository: swiftly-solution/swiftlys2
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+      - name: Install dependencies
+        run: pip install proto_schema_parser tqdm
+      - name: Sync Protobufs
+        run: |
+          mkdir -p swiftlys2/protobufs/cs2
+          for file in $(find swiftlys2/protobufs/cs2 -name "*.proto"); do
+            filename=$(basename "$file")
+            found_file=$(find GameTracking-CS2/Protobufs -name "$filename" | head -n 1)
+            if [ -n "$found_file" ]; then
+              cp "$found_file" "swiftlys2/protobufs/cs2/$filename"
+              echo "Copied $filename"
+            else
+              echo "File $filename not found in GameTracking-CS2"
+            fi
+          done
+      - name: Run Protobuf Generator
+        run: cd swiftlys2/generator/protobuf_generator && python generate.py
+      - name: Run Game Events Generator
+        run: cd swiftlys2/generator/game_events_generator && python generate.py
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Syncing changes automatically to SwiftlyS2 for today's CS2 Update."
+          branch: update/cs2-sync
+          title: "[CS2] Sync Update - ${{ github.event.head_commit.timestamp }}"
+          body: This PR syncs the changes for the latest CS2 update. Please review the changes and merge if everything looks good.
+          labels: update, automation
+          draft: false
