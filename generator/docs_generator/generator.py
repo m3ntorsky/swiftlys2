@@ -55,13 +55,21 @@ def generate_markdown(yaml_data):
                                 if url.endswith('.html'):
                                     url = "/docs/api/" + convert_to_path(url)
                                 parts.append(f"({url})")
+                            else:
+                                parts.append(str(t))
+
                     if param_description != '':
                         parts.append(f" - {param_description}")
                     param_type = ''.join(parts)
                 md += f"- **{param_name}**: {param_type}\n" if param_name else f"- {param_type}\n"
             md += "\n"
         if 'api3' in item:
-            md += f"**{item['api3']}**\n\n"
+            src = item.get('src', '')
+            md += f"**{item['api3']}**"
+            if src != '':
+                md += f" - [Source Code]({src})\n\n"
+            else:
+                md += "\n\n"
     return md
 
 def convert_yaml_file(src_path, dest_path):
