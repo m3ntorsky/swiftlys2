@@ -16,7 +16,7 @@ public class CEntityKeyValues : IDisposable
     _handle.Dispose();
   }
 
-  private nint GetHandle() {
+  internal nint GetHandle() {
     return _handle.GetHandle();
   }
 

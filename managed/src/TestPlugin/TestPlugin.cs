@@ -18,6 +18,7 @@ using SwiftlyS2.Shared.Memory;
 using YamlDotNet.Core.Tokens;
 using Dapper;
 using SwiftlyS2.Shared.Sounds;
+using SwiftlyS2.Shared.EntitySystem;
 
 namespace TestPlugin;
 

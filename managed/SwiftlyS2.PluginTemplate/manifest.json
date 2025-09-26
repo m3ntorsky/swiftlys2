@@ -5,5 +5,8 @@
   "Author": "PluginAuthor",
   "Description": "PluginDescription",
   "Website": "https://swiftlys2.net",
-  "EntrypointDLL": "PluginClassName.dll"
+  "EntrypointDLL": "PluginClassName.dll",
+  "DatabaseConnections": [
+    "PluginId:main"
+  ]
 } 
