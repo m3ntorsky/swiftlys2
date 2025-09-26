@@ -8,6 +8,8 @@ out/
 bin/
 obj/
 .vs/
+api/
+docs/
 
 # Dependencies
 external/*
