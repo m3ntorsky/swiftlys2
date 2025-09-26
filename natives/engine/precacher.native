@@ -1,6 +1,0 @@
-class Precacher
-
-void AddItem = string itemPath
-bool HasItemInList = string itemPath // if the item is in the list of all the items that need to be precached
-bool IsItemCached = string itemPath
-void RemoveItem = string itemPath

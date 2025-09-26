@@ -24,7 +24,6 @@
 #include <engine/convars/convars.h>
 #include <engine/entities/entitysystem.h>
 #include <engine/gameevents/gameevents.h>
-#include <engine/precacher/precacher.h>
 #include <engine/vgui/vgui.h>
 #include <engine/voicemanager/voicemanager.h>
 
@@ -61,7 +60,6 @@ CEntSystem g_EntSystem;
 CSDKSchema g_SDKSchema;
 CConvarManager g_ConvarManager;
 CEventManager g_GameEventManager;
-CPrecacher g_Precacher;
 CScriptingAPI g_ScriptingAPI;
 CPlayerManager g_PlayerManager;
 CVoiceManager g_VoiceManager;
@@ -84,7 +82,6 @@ static const std::map<std::string, void*> g_Interfaces = {
     {SDKSCHEMA_INTERFACE_VERSION, &g_SDKSchema},
     {CONVARMANAGER_INTERFACE_VERSION, &g_ConvarManager},
     {GAMEEVENTMANAGER_INTERFACE_VERSION, &g_GameEventManager},
-    {PRECACHER_INTERFACE_VERSION, &g_Precacher},
     {SCRIPTING_INTERFACE_VERSION, &g_ScriptingAPI},
     {PLAYERMANAGER_INTERFACE_VERSION, &g_PlayerManager},
     {VOICEMANAGER_INTERFACE_VERSION, &g_VoiceManager},

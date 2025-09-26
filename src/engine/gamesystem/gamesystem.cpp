@@ -137,7 +137,10 @@ bool ShutdownGameSystem()
     return true;
 }
 
+extern void* g_pOnPrecacheResourceCallback;
+
 GS_EVENT_MEMBER(CGameSystem, BuildGameSessionManifest)
 {
     IEntityResourceManifest* pResourceManifest = msg->m_pResourceManifest;
+    if (g_pOnPrecacheResourceCallback) reinterpret_cast<void(*)(void*)>(g_pOnPrecacheResourceCallback)(pResourceManifest);
 }
