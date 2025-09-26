@@ -27,6 +27,7 @@ using SwiftlyS2.Core.Scheduler;
 using SwiftlyS2.Core.Plugins;
 using SwiftlyS2.Core.Database;
 using SwiftlyS2.Shared.Database;
+using SwiftlyS2.Core.Translations;
 
 namespace SwiftlyS2.Core.Services;
 
@@ -81,6 +82,8 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<ContextedProfilerService>()
       .AddSingleton<SchedulerService>()
       .AddSingleton<DatabaseService>()
+      .AddSingleton<TranslationService>()
+      .AddSingleton<Localizer>(provider => provider.GetRequiredService<TranslationService>().GetLocalizer())
 
       .AddSingleton<IEventSubscriber>(provider => provider.GetRequiredService<EventSubscriber>())
       .AddSingleton<IGameEventService>(provider => provider.GetRequiredService<GameEventService>())
