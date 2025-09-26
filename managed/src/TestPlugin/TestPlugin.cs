@@ -17,6 +17,7 @@ using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.Memory;
 using YamlDotNet.Core.Tokens;
 using Dapper;
+using SwiftlyS2.Shared.Sounds;
 
 namespace TestPlugin;
 
@@ -76,6 +77,8 @@ public class TestPlugin : BasePlugin {
     Core.Logger.LogInformation(Core.GameData.GetSignature("Test").ToString());
 
     Core.Logger.LogInformation("TestPlugin loaded");
+
+    using var se = new SoundEvent();
 
     // var func = Core.Memory.GetUnmanagedFunctionByAddress<Test>(Core.Memory.GetAddressBySignature(Library.Server, "AAAAA")!.Value);
     

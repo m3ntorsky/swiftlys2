@@ -1,19 +1,23 @@
 using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Shared.Natives;
 
-namespace SwiftlyS2.Shared.Natives;
+namespace SwiftlyS2.Shared.EntitySystem;
 
-public class CEntityKeyValues : AllocableNativeHandle, IDisposable
+public class CEntityKeyValues : IDisposable
 {
 
-  private CEntityKeyValues(nint handle, bool ownshandle) : base(handle, ownshandle) {
+  private CEntityKeyValuesSafeHandle _handle;
+
+  public CEntityKeyValues() {
+    _handle = new CEntityKeyValuesSafeHandle(NativeCEntityKeyValues.Allocate());
   }
 
-  public CEntityKeyValues() : this(NativeCEntityKeyValues.Allocate(), true) {
+  public void Dispose() {
+    _handle.Dispose();
   }
 
-  public static CEntityKeyValues Create() {
-    var handle = NativeCEntityKeyValues.Allocate();
-    return new CEntityKeyValues(handle, true);
+  private nint GetHandle() {
+    return _handle.GetHandle();
   }
 
   public void SetBool(string key, bool value) {
@@ -236,10 +240,5 @@ public class CEntityKeyValues : AllocableNativeHandle, IDisposable
     else {
       throw new InvalidOperationException($"Unsupported type: {typeof(T).Name}");
     }
-  }
-
-  protected override bool Free() {
-    NativeCEntityKeyValues.Deallocate(GetHandle());
-    return true;
   }
 }

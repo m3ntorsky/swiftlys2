@@ -4,7 +4,9 @@ using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.Sounds;
 
-public class SoundEvent : AllocableNativeHandle, IDisposable {
+public class SoundEvent : IDisposable {
+
+  private SoundEventSafeHandle _handle;
 
 
   /// <summary>
@@ -49,17 +51,23 @@ public class SoundEvent : AllocableNativeHandle, IDisposable {
   /// </summary>
   public CRecipientFilter Recipients { get; set; } = new();
 
-  public SoundEvent(): base(NativeSounds.CreateSoundEvent(), ownsHandle: true) {
+  public SoundEvent() {
+    _handle = new SoundEventSafeHandle(NativeSounds.CreateSoundEvent());
     Volume = 1.0f;
     Pitch = 1.0f;
   }
 
 
-  public SoundEvent(string name, float volume = 1.0f, float pitch = 1.0f) : base(NativeSounds.CreateSoundEvent(), ownsHandle: true)
+  public SoundEvent(string name, float volume = 1.0f, float pitch = 1.0f)
   {
+    _handle = new SoundEventSafeHandle(NativeSounds.CreateSoundEvent());
     Name = name;
     Volume = volume;
     Pitch = pitch;
+  }
+
+  private nint GetHandle() {
+    return _handle.GetHandle();
   }
 
   public void SetSourceEntity(CEntityInstance entity)
@@ -132,8 +140,7 @@ public class SoundEvent : AllocableNativeHandle, IDisposable {
     NativeSounds.Emit(GetHandle());
   }
 
-  protected override bool Free() {
-    NativeSounds.DestroySoundEvent(GetHandle());
-    return true;
+  public void Dispose() {
+    _handle.Dispose();
   }
 }
