@@ -29,12 +29,12 @@ int Bridge_Commands_HandleCommandForPlayer(int playerid, const char* command)
     return servercommands->HandleCommand(playerid, command);
 }
 
-void Bridge_Commands_RegisterCommand(const char* commandName, void* callback, bool registerRaw)
+uint64_t Bridge_Commands_RegisterCommand(const char* commandName, void* callback, bool registerRaw)
 {
     auto servercommands = g_ifaceService.FetchInterface<IServerCommands>(SERVERCOMMANDS_INTERFACE_VERSION);
-    if (!servercommands) return;
+    if (!servercommands) return 0;
 
-    servercommands->RegisterCommand(commandName, [callback](int playerid, std::vector<std::string> args, std::string originalCommandName, std::string selectedPrefix, bool isSilentCommand) -> bool {
+    return servercommands->RegisterCommand(commandName, [callback](int playerid, std::vector<std::string> args, std::string originalCommandName, std::string selectedPrefix, bool isSilentCommand) -> bool {
         std::string imploded_args = implode(args, "\x01");
         reinterpret_cast<void(*)(int, const char*, const char*, const char*, bool)>(callback)(playerid, imploded_args.c_str(), originalCommandName.c_str(), selectedPrefix.c_str(), isSilentCommand);
     }, registerRaw);

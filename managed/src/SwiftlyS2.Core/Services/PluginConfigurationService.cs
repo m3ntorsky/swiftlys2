@@ -21,7 +21,11 @@ internal class PluginConfigurationService : IPluginConfigurationService {
   }
 
   public string GetRoot() {
-    return Path.Combine(_ConfigurationService.GetConfigRoot(), "plugins", _Id.Name);
+    var dir = Path.Combine(_ConfigurationService.GetConfigRoot(), "plugins", _Id.Name);
+    if (!Directory.Exists(dir)) {
+      Directory.CreateDirectory(dir);
+    }
+    return dir;
   }
 
   public string GetConfigPath(string name) {

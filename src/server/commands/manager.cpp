@@ -181,7 +181,7 @@ uint64_t CServerCommands::RegisterCommand(std::string command_name, std::functio
     static uint64_t command_id = 0;
     if (!conCommandCreated.contains(command_name)) {
         conCommandCreated[command_name] = new ConCommand(command_name.c_str(), commandsCallback, "SwiftlyS2 registered command", (1 << 25) | (1 << 0) | (1 << 24));
-        conCommandMapping[command_id++] = command_name;
+        conCommandMapping[++command_id] = command_name;
         g_mCommandHandlers[command_name] = handler;
     }
     return command_id;
@@ -220,8 +220,8 @@ void CServerCommands::UnregisterAlias(uint64_t alias_id)
 uint64_t CServerCommands::RegisterClientCommandsListener(std::function<int(int, const std::string&)> listener)
 {
     static uint64_t listener_id = 0;
-    g_mClientCommandListeners[listener_id++] = listener;
-    return listener_id - 1;
+    g_mClientCommandListeners[++listener_id] = listener;
+    return listener_id;
 }
 
 void CServerCommands::UnregisterClientCommandsListener(uint64_t listener_id)
@@ -232,8 +232,8 @@ void CServerCommands::UnregisterClientCommandsListener(uint64_t listener_id)
 uint64_t CServerCommands::RegisterClientChatListener(std::function<int(int, const std::string&, bool)> listener)
 {
     static uint64_t listener_id = 0;
-    g_mClientChatListeners[listener_id++] = listener;
-    return listener_id - 1;
+    g_mClientChatListeners[++listener_id] = listener;
+    return listener_id;
 }
 
 void CServerCommands::UnregisterClientChatListener(uint64_t listener_id)

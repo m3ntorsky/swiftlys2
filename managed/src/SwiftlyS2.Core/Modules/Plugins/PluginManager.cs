@@ -84,7 +84,11 @@ internal class PluginManager {
     }
 
     RebuildSharedServices();
-  }  
+  }
+
+  public List<PluginContext> GetPlugins() {
+    return _Plugins;
+  }
 
   private void RebuildSharedServices() {
 
