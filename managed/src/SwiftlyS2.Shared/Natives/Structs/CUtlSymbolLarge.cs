@@ -15,7 +15,7 @@ public struct CUtlSymbolLarge {
       return Marshal.PtrToStringUTF8(_pString)!;
     }
     set {
-      // TODO: Implement with AllocPooledString
+      _pString = StringPool.Allocate(value);
     }
   }
 

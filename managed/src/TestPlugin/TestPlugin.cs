@@ -114,6 +114,10 @@ public class TestPlugin : BasePlugin {
     Core.Event.OnClientDisconnected += (@event) => {
       Console.WriteLine("TestPlugin OnClientDisconnected " + @event.PlayerId);
     };
+    Core.Event.OnTick += () =>
+    {
+      int i  = 0;
+    };
 
     // Core.Event.OnClientProcessUsercmds += (@event) => {
     //   foreach(var usercmd in @event.Usercmds) {
@@ -175,6 +179,8 @@ public class TestPlugin : BasePlugin {
     // entity = _Core.EntitySystem.CreateEntityByDesignerName<CPointWorldText>("point_worldtext");
     // entity.DispatchSpawn(kv);
     // Console.WriteLine("Spawned entity with keyvalues");
+
+    int j = 0;
 
     var cvar = Core.ConVar.Find<bool>("sv_cheats")!;
     Console.WriteLine(cvar);

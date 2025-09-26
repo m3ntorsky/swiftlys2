@@ -11,12 +11,13 @@ internal class CoreCommandService {
 
   private ICommandService _CommandService { get; init; }
   private PluginManager _PluginManager { get; init; }
+  private ProfileService _ProfileService { get; init; }
 
-  public CoreCommandService(ILogger<CoreCommandService> logger, ISwiftlyCore core, PluginManager pluginManager) {
+  public CoreCommandService(ILogger<CoreCommandService> logger, ISwiftlyCore core, PluginManager pluginManager, ProfileService profileService) {
     _Logger = logger;
     _CommandService = core.Command;
     _PluginManager = pluginManager;
-
+    _ProfileService = profileService;
     _CommandService.RegisterCommand("sw", OnCommand, true);
   }
 
@@ -32,6 +33,9 @@ internal class CoreCommandService {
       case "plugins":
         OnPluginsCommand(context);
         break;
+      case "profile":
+        OnProfileCommand(context);
+        break;
       default:
         context.Reply("Unknown command");
         break;
@@ -39,6 +43,11 @@ internal class CoreCommandService {
     } catch (Exception e) {
       _Logger.LogError(e, "Error executing command");
     }
+  }
+
+  private void OnProfileCommand(ICommandContext context) {
+    File.WriteAllText("profile.json", _ProfileService.GenerateJSONPerformance(""));
+    context.Reply("Profile saved to profile.json");
   }
 
   private void OnPluginsCommand(ICommandContext context) {

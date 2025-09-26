@@ -44,7 +44,7 @@ internal static class Bootstrap {
 
     provider.UseCoreCommandService();
     provider.UsePluginManager();
-    provider.UseTestService();
+    // provider.UseTestService();
 
   }
 }

@@ -80,8 +80,8 @@ internal class GameEventCallback<T> : GameEventCallback, IDisposable where T : I
     _unmanagedCallback = (hash, pEvent, pDontBroadcast) => {
       try {
         var category = "GameEventCallback::" + EventName;
-        Profiler.StartRecording(category);
         if (hash != T.GetHash()) return HookResult.Continue;
+        Profiler.StartRecording(category);
         var eventObj = GameEventSingletonWrapper<T>.Borrow(pEvent);
         var result = _callback(eventObj);
         pDontBroadcast.Write(eventObj.DontBroadcast);

@@ -22,7 +22,6 @@ internal class NativeBinding
           var className = names[0];
           var funcName = names[1];
 
-          // TODO: might need nested namespace support.
           var nativeNameSpace = "SwiftlyS2.Core.Natives.Native" + className;
 
           var nativeClass = Type.GetType(nativeNameSpace)!;

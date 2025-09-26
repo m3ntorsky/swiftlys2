@@ -18,10 +18,14 @@ internal class ContextedProfilerService : IContextedProfilerService {
   }
 
   public void StopRecording(string name) {
-    _ProfileService.StartRecordingWithIdentifier(_Name,  name);
+    _ProfileService.StopRecordingWithIdentifier(_Name, name);
   }
 
   public void RecordTime(string name, double duration) {
     _ProfileService.RecordTimeWithIdentifier(_Name, name, duration);
+  }
+
+  public string GeneratePerformanceTraceJson() {
+    return _ProfileService.GenerateJSONPerformance(_Name);
   }
 }

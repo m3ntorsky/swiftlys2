@@ -65,7 +65,6 @@ internal class PluginManager {
 
   public void LoadPlugins()
   {
-    // TODO: test only, needs optimize
     var pluginDirs = Directory.GetDirectories(_RootDirService.GetPluginsRoot());
 
     foreach (var pluginDir in pluginDirs) {
