@@ -47,7 +47,7 @@ public class SoundEvent : AllocableNativeHandle, IDisposable {
   /// <summary>
   /// The recipients of the sound event.
   /// </summary>
-  public CRecipientFilter Recipients { get; set; }
+  public CRecipientFilter Recipients { get; set; } = new();
 
   public SoundEvent(): base(NativeSounds.CreateSoundEvent(), ownsHandle: true) {
     Volume = 1.0f;

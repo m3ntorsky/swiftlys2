@@ -77,12 +77,29 @@ internal class GameEventService : IGameEventService, IDisposable {
     }
   }
 
-  public void Fire<T>() where T : IGameEvent<T> {
-    // TODO: implement with all players
+  public void Fire<T>() where T : IGameEvent<T>
+  {
+    var handle = NativeGameEvents.CreateEvent(T.GetName());
+    for (int i = 0; i < NativePlayerManager.GetPlayerCap(); i++) {
+      if (NativeGameEvents.IsPlayerListeningToEventName(i, T.GetName()) && NativePlayerManager.IsPlayerOnline(i))
+      {
+        NativeGameEvents.FireEventToClient(handle, i);
+      }
+    }
+    NativeGameEvents.FreeEvent(handle);
   }
 
   public void Fire<T>(Action<T> configureEvent) where T : IGameEvent<T> {
-    // TODO: implement with all players
+    var handle = NativeGameEvents.CreateEvent(T.GetName());
+    var eventObj = GameEventSingletonWrapper<T>.Borrow(handle);
+    configureEvent(eventObj);
+    for (int i = 0; i < NativePlayerManager.GetPlayerCap(); i++) {
+      if (NativeGameEvents.IsPlayerListeningToEventName(i, T.GetName()) && NativePlayerManager.IsPlayerOnline(i))
+      {
+        NativeGameEvents.FireEventToClient(handle, i);
+      }
+    }
+    NativeGameEvents.FreeEvent(handle);
   }
 
   public void FireToPlayer<T>(int slot) where T : IGameEvent<T> {
