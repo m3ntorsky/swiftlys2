@@ -1,4 +1,5 @@
 {
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/refs/heads/main/schemas/docfx.schema.json",
   "metadata": [
     {
       "src": [
@@ -8,8 +9,8 @@
           ]
         }
       ],
-      "dest": "api",
-      "outputFormat": "markdown"
+      "output": "api",
+      "outputFormat": "apiPage"
     }
   ],
   "build": {
@@ -25,6 +26,9 @@
         ]
       }
     ],
-    "dest": "_site"
+    "output": "_site",
+    "template": [
+      "default"
+    ]
   }
 }
