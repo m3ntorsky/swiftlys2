@@ -45,10 +45,19 @@ jobs:
         run: cd swiftlys2/generator/protobuf_generator && python generate.py
       - name: Run Game Events Generator
         run: cd swiftlys2/generator/gameevent_generator && python generate.py
+      - name: Check for changes
+        id: git-check
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
       - name: Create Pull Request
+        if: steps.git-check.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GIT_PAT }}
           commit-message: "Syncing changes automatically to SwiftlyS2 for today's CS2 Update."
           branch: update/cs2-sync
           author: ${{ github.actor }} <${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com>
