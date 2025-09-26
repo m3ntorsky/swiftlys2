@@ -1,5 +1,6 @@
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Schemas;
+using SwiftlyS2.Shared.EntitySystem;
 using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.Schemas;

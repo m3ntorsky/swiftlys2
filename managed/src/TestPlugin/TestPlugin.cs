@@ -222,6 +222,11 @@ public class TestPlugin : BasePlugin {
     
   }
 
+  [EventListener<EventDelegates.OnEntityCreated>]
+  public void OnEntityCreated(IOnEntityCreatedEvent @event) {
+    Console.WriteLine("TestPlugin OnEntityCreated222 " + @event.Entity.Entity?.DesignerName);
+  }
+
   Guid _hookId = Guid.Empty;
 
   [Command("h2")]
