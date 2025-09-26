@@ -1,0 +1,30 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "managed/managed.csproj"
+          ]
+        }
+      ],
+      "dest": "api",
+      "outputFormat": "markdown"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "api/**.md"
+        ]
+      },
+      {
+        "files": [
+          "articles/**.md"
+        ]
+      }
+    ],
+    "dest": "_site"
+  }
+}
