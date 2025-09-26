@@ -28,7 +28,7 @@ public partial class PluginClassName {
       You can also create a persistent net message and send it.
       As long as the message is not recycled by GC, you can send it as many times as you want.
     */
-    var message = Core.NetMessage.Create<CUserMessageShake>();
+    using var message = Core.NetMessage.Create<CUserMessageShake>();
     message.Amplitude = 10;
     message.Duration = 10;
     message.Recipients.AddAllPlayers();
