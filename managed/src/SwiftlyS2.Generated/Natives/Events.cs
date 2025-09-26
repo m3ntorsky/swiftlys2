@@ -190,4 +190,16 @@ internal static class NativeEvents {
       throw;
     }
   }
+  private unsafe static delegate* unmanaged<nint, void> _RegisterOnPrecacheResourceCallback;
+  /// <summary>
+  /// IEntityResourceManifest* pResourceManifest
+  /// </summary>
+  public unsafe static void RegisterOnPrecacheResourceCallback(nint callback) {
+    try {
+    _RegisterOnPrecacheResourceCallback(callback);
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
 }

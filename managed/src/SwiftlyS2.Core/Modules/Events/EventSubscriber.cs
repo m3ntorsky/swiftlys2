@@ -40,6 +40,7 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
   public event EventDelegates.OnMapUnload? OnMapUnload;
   public event EventDelegates.OnClientProcessUsercmds? OnClientProcessUsercmds;
   public event EventDelegates.OnEntityTakeDamage? OnEntityTakeDamage;
+  public event EventDelegates.OnPrecacheResource? OnPrecacheResource;
 
   public void Dispose() {
     EventPublisher.Unsubscribe(this);
@@ -226,4 +227,15 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
     }
   }
 
+  public void InvokeOnPrecacheResource(OnPrecacheResourceEvent @event) {
+    try {
+      if (OnPrecacheResource == null) return;
+      _Profiler.StartRecording("Event::OnPrecacheResource");
+      OnPrecacheResource?.Invoke(@event);
+    } catch (Exception e) {
+      _Logger.LogError(e, "Error invoking OnPrecacheResource.");
+    } finally {
+      _Profiler.StopRecording("Event::OnPrecacheResource");
+    }
+  }
 }

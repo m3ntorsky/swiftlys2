@@ -42,6 +42,7 @@ internal static class EventPublisher {
       NativeEvents.RegisterOnMapUnloadCallback((nint)(delegate* unmanaged<nint, void>)&OnMapUnload);
       NativeEvents.RegisterOnClientProcessUsercmdsCallback((nint)(delegate* unmanaged<int, nint, int, byte, float, void>)&OnClientProcessUsercmds);
       NativeEvents.RegisterOnEntityTakeDamageCallback((nint)(delegate* unmanaged<nint, nint, byte>)&OnEntityTakeDamage);
+      NativeEvents.RegisterOnPrecacheResourceCallback((nint)(delegate* unmanaged<nint, void>)&OnPrecacheResource);
     }
   }
 
@@ -341,6 +342,22 @@ internal static class EventPublisher {
     } catch (Exception e) {
       AnsiConsole.WriteException(e);
       return 1;
+    }
+  }
+
+  [UnmanagedCallersOnly]
+  public static void OnPrecacheResource(nint pResourceManifest)
+  {
+    if (_subscribers.Count == 0) return;
+    try {
+      OnPrecacheResourceEvent @event = new() {
+        pResourceManifest = pResourceManifest
+      };
+      foreach (var subscriber in _subscribers) {
+        subscriber.InvokeOnPrecacheResource(@event);
+      }
+    } catch (Exception e) {
+      AnsiConsole.WriteException(e);
     }
   }
 }

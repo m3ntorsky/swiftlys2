@@ -15,3 +15,4 @@ void RegisterOnEntitySpawnedCallback = ptr callback // CEntityInstance* entity
 void RegisterOnMapLoadCallback = ptr callback // string mapname
 void RegisterOnMapUnloadCallback = ptr callback // string mapname
 void RegisterOnEntityTakeDamageCallback = ptr callback // CBaseEntity* entity, CTakeDamageInfo* info -> bool (true -> ignored, false -> supercede)
+void RegisterOnPrecacheResourceCallback = ptr callback // IEntityResourceManifest* pResourceManifest

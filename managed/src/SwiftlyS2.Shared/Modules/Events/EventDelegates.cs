@@ -81,4 +81,9 @@ public class EventDelegates {
   /// Called when an entity takes damage.
   /// </summary>
   public delegate void OnEntityTakeDamage(IOnEntityTakeDamageEvent @event);
+
+  /// <summary>
+  /// Called when the game is precaching resources.
+  /// </summary>
+  public delegate void OnPrecacheResource(IOnPrecacheResourceEvent @event);
 }

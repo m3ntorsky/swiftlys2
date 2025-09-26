@@ -21,6 +21,7 @@ internal static class GameFunctions {
   public static int DropActiveItemOffset => NativeOffsets.Fetch("CCSPlayer_ItemServices::DropActiveItem");
   public static int DropWeaponOffset => NativeOffsets.Fetch("CCSPlayer_WeaponServices::DropWeapon");
   public static int SelectWeaponOffset => NativeOffsets.Fetch("CCSPlayer_WeaponServices::SelectWeapon");
+  public static int AddResourceOffset => NativeOffsets.Fetch("CEntityResourceManifest::AddResource");
 
   public static void Initialize() {
     unsafe {
@@ -255,5 +256,25 @@ internal static class GameFunctions {
     } catch (Exception e) {
       AnsiConsole.WriteException(e);
     } 
+  }
+
+  public unsafe static void CEntityResourceManifest_AddResource(nint pThis, string path) {
+    try {
+      unsafe {
+        var pool = ArrayPool<byte>.Shared;
+        var pathLength = Encoding.UTF8.GetByteCount(path);
+        var pathBuffer = pool.Rent(pathLength + 1);
+        Encoding.UTF8.GetBytes(path, pathBuffer);
+        pathBuffer[pathLength] = 0;
+        void*** ppVTable = (void***)pThis;
+        var pAddResource = (delegate* unmanaged<nint, nint, void>)ppVTable[0][AddResourceOffset];
+        fixed (byte* pPath = pathBuffer) {
+          pAddResource(pThis, (IntPtr)pPath);
+          pool.Return(pathBuffer);
+        }
+      }
+    } catch (Exception e) {
+      AnsiConsole.WriteException(e);
+    }
   }
 }

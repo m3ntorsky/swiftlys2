@@ -34,6 +34,7 @@ void* g_pOnEntitySpawnedCallback = nullptr;
 void* g_pOnMapLoadCallback = nullptr;
 void* g_pOnMapUnloadCallback = nullptr;
 void* g_pOnEntityTakeDamageCallback = nullptr;
+void* g_pOnPrecacheResourceCallback = nullptr;
 
 void Bridge_Events_RegisterOnGameTickCallback(void* callback)
 {
@@ -110,6 +111,11 @@ void Bridge_Events_RegisterOnEntityTakeDamageCallback(void* callback)
     g_pOnEntityTakeDamageCallback = callback;
 }
 
+void Bridge_Events_RegisterOnPrecacheResourceCallback(void* callback)
+{
+    g_pOnPrecacheResourceCallback = callback;
+}
+
 DEFINE_NATIVE("Events.RegisterOnGameTickCallback", Bridge_Events_RegisterOnGameTickCallback);
 DEFINE_NATIVE("Events.RegisterOnClientConnectCallback", Bridge_Events_RegisterOnClientConnectCallback);
 DEFINE_NATIVE("Events.RegisterOnClientDisconnectCallback", Bridge_Events_RegisterOnClientDisconnectCallback);
@@ -125,3 +131,4 @@ DEFINE_NATIVE("Events.RegisterOnEntitySpawnedCallback", Bridge_Events_RegisterOn
 DEFINE_NATIVE("Events.RegisterOnMapLoadCallback", Bridge_Events_RegisterOnMapLoadCallback);
 DEFINE_NATIVE("Events.RegisterOnMapUnloadCallback", Bridge_Events_RegisterOnMapUnloadCallback);
 DEFINE_NATIVE("Events.RegisterOnEntityTakeDamageCallback", Bridge_Events_RegisterOnEntityTakeDamageCallback);
+DEFINE_NATIVE("Events.RegisterOnPrecacheResourceCallback", Bridge_Events_RegisterOnPrecacheResourceCallback);

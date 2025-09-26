@@ -81,4 +81,9 @@ public interface IEventSubscriber {
   /// Called when an entity takes damage.
   /// </summary>
   public event EventDelegates.OnEntityTakeDamage? OnEntityTakeDamage;
+
+  /// <summary>
+  /// Called when the game is precaching resources.
+  /// </summary>
+  public event EventDelegates.OnPrecacheResource? OnPrecacheResource;
 }
