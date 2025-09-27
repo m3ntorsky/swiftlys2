@@ -1,4 +1,5 @@
 import os
+import re
 import yaml
 
 SOURCE_DIR = "../../api"
@@ -6,16 +7,21 @@ DEST_DIR = "../../docs"
 
 os.makedirs(DEST_DIR, exist_ok=True)
 
-def extract_metadata(yaml_data):
+def extract_metadata(yaml_data, is_index=False):
     """Extract front-matter metadata from DocFX ApiPage YAML."""
     title = yaml_data.get('title', '')
-    words = title.split()
-    if not words:
+    if not title:
         return {}
-    metadata = {
-        'title': words[-1],
-    }
-    return metadata
+
+    if is_index:
+        # Only keep the last part after the last dot
+        clean_title = title.split(".")[-1]
+    else:
+        # Default behavior: last word
+        words = title.split()
+        clean_title = words[-1] if words else ''
+
+    return {'title': clean_title}
 
 def convert_to_path(s):
     if s.lower().endswith(".html"):
@@ -23,6 +29,18 @@ def convert_to_path(s):
         s = s[:-5]
     path = "/".join(s.split(".")).lower()
     return path
+
+def transform_filename(base_name):
+    """
+    If filename ends with -NUMBER, replace with NUMBER times 'T'.
+    Example: class-3 -> classTTT
+    """
+    match = re.match(r"^(.*?)-(\d+)$", base_name)
+    if match:
+        name, num = match.groups()
+        num = int(num)
+        return name + ("T" * num)
+    return base_name
 
 def generate_markdown(yaml_data):
     """Generate Markdown content from DocFX ApiPage YAML."""
@@ -37,10 +55,11 @@ def generate_markdown(yaml_data):
         if 'parameters' in item:
             for param in item['parameters']:
                 param_name = param.get('name', '')
+                param_default = param.get('default', '')
                 param_type = ''
+                param_description = param.get('description', '')
+                parts = []
                 if 'type' in param:
-                    param_description = param.get('description', '')
-                    parts = []
                     for t in param['type']:
                         if isinstance(t, dict):
                             url = t.get('url', '')
@@ -58,9 +77,11 @@ def generate_markdown(yaml_data):
                             else:
                                 parts.append(str(t))
 
-                    if param_description != '':
-                        parts.append(f" - {param_description}")
-                    param_type = ''.join(parts)
+                if param_default != '':
+                    parts.append(f"{param_default}")
+                if param_description != '':
+                    parts.append(f" - {param_description}")
+                param_type = ''.join(parts)
                 md += f"- **{param_name}**: {param_type}\n" if param_name else f"- {param_type}\n"
             md += "\n"
         if 'api3' in item:
@@ -79,7 +100,14 @@ def convert_yaml_file(src_path, dest_path):
     if isinstance(yaml_data, list):
         yaml_data = yaml_data[0]
 
-    metadata = extract_metadata(yaml_data)
+    # Detect if it's an index.md (folder-style)
+    folder_path, file_name = os.path.split(dest_path)
+    base_name, ext = os.path.splitext(file_name)
+    is_index = (
+        os.path.isdir(dest_path) or os.path.exists(os.path.join(folder_path, base_name))
+    )
+
+    metadata = extract_metadata(yaml_data, is_index=is_index)
     if metadata == {}:
         return
     
@@ -88,11 +116,10 @@ def convert_yaml_file(src_path, dest_path):
     md_content += "---\n\n"
     md_content += generate_markdown(yaml_data)
 
-    folder_path, file_name = os.path.split(dest_path)
-    base_name, ext = os.path.splitext(file_name)
-    final_path = dest_path
+    base_name = transform_filename(base_name)
+    final_path = os.path.join(folder_path, base_name + ".md")
 
-    if os.path.isdir(dest_path) or os.path.exists(os.path.join(folder_path, base_name)):
+    if is_index:
         final_folder = os.path.join(folder_path, base_name)
         os.makedirs(final_folder, exist_ok=True)
         final_path = os.path.join(final_folder, "index.md")
@@ -107,7 +134,9 @@ for root, dirs, files in os.walk(SOURCE_DIR):
         if file.endswith(".yml") or file.endswith(".yaml"):
             rel_path = os.path.relpath(root, SOURCE_DIR)
             dest_folder = os.path.join(DEST_DIR, rel_path)
-            dest_file = os.path.join(dest_folder, convert_to_path(os.path.splitext(file)[0]) + ".md")
+            raw_base = os.path.splitext(file)[0]
+            new_base = transform_filename(raw_base)
+            dest_file = os.path.join(dest_folder, convert_to_path(new_base) + ".md")
             convert_yaml_file(os.path.join(root, file), dest_file)
 
 print("Markdown generation complete!")
