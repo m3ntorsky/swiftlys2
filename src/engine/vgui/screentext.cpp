@@ -71,8 +71,10 @@ void CScreenText::Create(Color color, const std::string& font, int size, bool dr
         }
         else {
             static auto config = g_ifaceService.FetchInterface<IConfiguration>(CONFIGURATION_INTERFACE_VERSION);
-            pMenuKV->SetFloat("background_border_width", 0.1f);
-            pMenuKV->SetFloat("background_border_height", 0.1f);
+            if (float* width = std::get_if<float>(&config->GetValue("core.VGUI.TextBackground.PaddingX")))
+                pMenuKV->SetFloat("background_border_width", *width);
+            if (float* height = std::get_if<float>(&config->GetValue("core.VGUI.TextBackground.PaddingY")))
+                pMenuKV->SetFloat("background_border_height", *height);
         }
 
         pMenuKV->SetFloat("background_away_units", 0.04);
