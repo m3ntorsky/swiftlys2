@@ -43,6 +43,10 @@ internal class Player : IPlayer
 
     public VoiceFlagValue VoiceFlags { get => (VoiceFlagValue)NativeVoiceManager.GetClientVoiceFlags(_pid); set => NativeVoiceManager.SetClientVoiceFlags(_pid, (int)value); }
 
+    public bool IsValid
+    {
+        get => Controller != null && Controller.IsValid && !Controller.IsHLTV && Controller.Connected == PlayerConnectedState.PlayerConnected && Pawn != null && Pawn.IsValid;
+    }
     public unsafe void ChangeTeam(Team team)
     {
         NativePlayer.ChangeTeam(_pid, (byte)team);

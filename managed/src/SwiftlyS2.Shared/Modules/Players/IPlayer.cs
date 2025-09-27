@@ -92,6 +92,10 @@ public interface IPlayer
     /// </summary>
     public Language PlayerLanguage { get; }
     /// <summary>
+    /// Checks if the player is valid (has controller, is not HLTV, is connected and has pawn).
+    /// </summary>
+    public bool IsValid { get; }
+    /// <summary>
     /// Disconnects the user from the network session, providing a specified reason and disconnection type.
     /// </summary>
     /// <param name="reason">The message describing the reason for the disconnection. This message may be displayed to the user. Cannot be
