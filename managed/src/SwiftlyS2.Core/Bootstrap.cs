@@ -31,6 +31,7 @@ internal static class Bootstrap {
     services.AddTraceManagerService();
     services.AddLogger();
     services.AddCoreCommandService();
+    services.AddPermissionManager();
 
     services.AddSingleton<ISwiftlyCore, SwiftlyCore>((provider) => new SwiftlyCore(
       "SwiftlyS2",
@@ -42,6 +43,7 @@ internal static class Bootstrap {
 
     var provider = services.BuildServiceProvider();
 
+    provider.UsePermissionManager();
     provider.UseCoreCommandService();
     provider.UsePluginManager();
     // provider.UseTestService();
