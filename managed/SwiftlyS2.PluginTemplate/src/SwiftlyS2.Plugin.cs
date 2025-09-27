@@ -15,7 +15,7 @@ public partial class PluginClassName : BasePlugin {
   public override void UseSharedServices(IServiceProvider sharedProvider) {
   }
 
-  public override void Load() {
+  public override void Load(bool hotReload) {
     
   }
 
