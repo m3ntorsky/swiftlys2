@@ -114,21 +114,21 @@ void CScreenText::UpdatePosition()
 
     static auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
 
-    if (*(uint32_t*)schema->GetPropPtr(pawn, "CBaseEntity", "m_lifeState") == 2) {
+    if (*(uint32_t*)schema->GetPropPtr(pawn, 11368356186166639856) == 2) { // CBaseEntity::m_lifeState
         auto controller = m_player->GetController();
         if (!controller) return;
-        if (*(bool*)schema->GetPropPtr(controller, "CCSPlayerController", "m_bControllingBot")) return;
+        if (*(bool*)schema->GetPropPtr(controller, 2948968942928542819)) return; // CCSPlayerController::m_bControllingBot
 
-        auto observerServices = *(void**)schema->GetPropPtr(pawn, "CBasePlayerPawn", "m_pObserverServices");
+        auto& observerServices = *(void**)schema->GetPropPtr(pawn, 14568842447348147577); // CBasePlayerPawn::m_pObserverServices
         if (!observerServices) return;
 
-        CHandle<CEntityInstance> observerTarget = *(CHandle<CEntityInstance>*)schema->GetPropPtr(observerServices, "CPlayer_ObserverServices", "m_hObserverTarget");
+        CHandle<CEntityInstance>& observerTarget = *(CHandle<CEntityInstance>*)schema->GetPropPtr(observerServices, 1590106406667131980); // CPlayer_ObserverServices::m_hObserverTarget
         if (!observerTarget) return;
 
-        auto observerController = *(CHandle<CEntityInstance>*)schema->GetPropPtr(observerTarget.Get(), "CCSPlayerPawnBase", "m_hOriginalController");
+        auto& observerController = *(CHandle<CEntityInstance>*)schema->GetPropPtr(observerTarget.Get(), 15634397247676853836); // CCSPlayerPawnBase::m_hOriginalController
         if (!observerController) return;
 
-        CHandle<CEntityInstance> pawnHandle = *(CHandle<CEntityInstance>*)schema->GetPropPtr(observerController, "CCSPlayerController", "m_hPlayerPawn");
+        CHandle<CEntityInstance>& pawnHandle = *(CHandle<CEntityInstance>*)schema->GetPropPtr(observerController, 2948968946114051708); // CCSPlayerController::m_hPlayerPawn
         if (!pawnHandle) return;
         pawn = (void*)(pawnHandle.Get());
     }
@@ -137,36 +137,41 @@ void CScreenText::UpdatePosition()
 
     static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
-    QAngle eyeAngles = *(QAngle*)schema->GetPropPtr(pawn, "CCSPlayerPawn", "m_angEyeAngles");
+    QAngle& eyeAngles = *(QAngle*)schema->GetPropPtr(pawn, 14366846385912177324); // CCSPlayerPawn::m_angEyeAngles
     Vector fwd, right, up;
     AngleVectors(eyeAngles, &fwd, &right, &up);
 
     Vector eyePos(0.0, 0.0, 0.0);
-    eyePos += fwd * 7;
-    eyePos += right * (LEFT + (m_posX * RIGHT_FROM_LEFT));
-    eyePos += up * (BOTTOM + (m_posY * TOP_FROM_BOTTOM));
+
+    float fwdOffset = 7;
+    float rightOffset = (LEFT + (m_posX * RIGHT_FROM_LEFT));
+    float upOffset = (BOTTOM + (m_posY * TOP_FROM_BOTTOM));
+
+    eyePos += fwd * fwdOffset;
+    eyePos += right * rightOffset;
+    eyePos += up * upOffset;
 
     QAngle ang(0, eyeAngles.y + 270, 90 - eyeAngles.x);
 
-    void*& bodyComponent = *(void**)schema->GetPropPtr(pawn, "CBaseEntity", "m_CBodyComponent");
+    void*& bodyComponent = *(void**)schema->GetPropPtr(pawn, 11368356189195133893); // CBaseEntity::m_CBodyComponent
     if (!bodyComponent) return;
 
-    void*& sceneNode = *(void**)schema->GetPropPtr(bodyComponent, "CBodyComponent", "m_pSceneNode");
+    void*& sceneNode = *(void**)schema->GetPropPtr(bodyComponent, 5688829619060421781); // CBodyComponent::m_pSceneNode
     if (!sceneNode) return;
 
-    void* viewOffset = schema->GetPropPtr(pawn, "CBaseModelEntity", "m_vecViewOffset");
+    void* viewOffset = schema->GetPropPtr(pawn, 5870523440453878603); // CBaseModelEntity::m_vecViewOffset
     if (!viewOffset) return;
 
-    CNetworkedQuantizedFloat& viewOffsetZ = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(viewOffset, "CNetworkViewOffsetVector", "m_vecZ");
+    CNetworkedQuantizedFloat& viewOffsetZ = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(viewOffset, 1697243212355959693); // CNetworkViewOffsetVector::m_vecZ
 
-    void* velocity = schema->GetPropPtr(pawn, "CBaseEntity", "m_vecVelocity");
+    void* velocity = schema->GetPropPtr(pawn, 11368356187783788690); // CBaseEntity::m_vecVelocity
     if (!velocity) return;
 
-    CNetworkedQuantizedFloat& velocityX = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(velocity, "CNetworkVelocityVector", "m_vecX");
-    CNetworkedQuantizedFloat& velocityY = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(velocity, "CNetworkVelocityVector", "m_vecY");
-    CNetworkedQuantizedFloat& velocityZ = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(velocity, "CNetworkVelocityVector", "m_vecZ");
+    CNetworkedQuantizedFloat& velocityX = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(velocity, 7191597421563705447); // CNetworkedQuantizedFloat::m_vecX
+    CNetworkedQuantizedFloat& velocityY = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(velocity, 7191597421546927828); // CNetworkedQuantizedFloat::m_vecY
+    CNetworkedQuantizedFloat& velocityZ = *(CNetworkedQuantizedFloat*)schema->GetPropPtr(velocity, 7191597421597260685); // CNetworkedQuantizedFloat::m_vecZ
 
-    eyePos += *(Vector*)schema->GetPropPtr(sceneNode, "CGameSceneNode", "m_vecAbsOrigin") + Vector(0, 0, viewOffsetZ.m_Value);
+    eyePos += *(Vector*)schema->GetPropPtr(sceneNode, 15655952205019933413) + Vector(0, 0, viewOffsetZ.m_Value);
 
     Vector vel(velocityX.m_Value, velocityY.m_Value, velocityZ.m_Value);
 

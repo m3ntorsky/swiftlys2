@@ -252,6 +252,10 @@ void CPlayerManager::UnregisterPlayer(int playerid)
     if (playerid < 0 || playerid >= g_SwiftlyCore.GetMaxGameClients()) return;
     if (g_Players[playerid] == nullptr) return;
 
+    static auto vgui = g_ifaceService.FetchInterface<IVGUI>(VGUI_INTERFACE_VERSION);
+
+    vgui->UnregisterForPlayer(g_Players[playerid]);
+
     g_Players[playerid]->Shutdown();
     delete g_Players[playerid];
     g_Players[playerid] = nullptr;
