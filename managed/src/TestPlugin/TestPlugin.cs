@@ -118,7 +118,6 @@ public class TestPlugin : BasePlugin {
       int i  = 0;
     };
 
-    using var conn = Core.Database.GetConnection("testplugin");
 
     // Core.Event.OnClientProcessUsercmds += (@event) => {
     //   foreach(var usercmd in @event.Usercmds) {
