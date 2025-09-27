@@ -278,7 +278,7 @@ void CServerCommands::DispatchConCommand(ConCommandRef cmd, const CCommandContex
                 }
             }
 
-            int handleCommandReturn = servercommands->HandleCommand(slot.Get(), args.GetCommandString());
+            int handleCommandReturn = servercommands->HandleCommand(slot.Get(), text);
             if (handleCommandReturn == 2 || !servercommands->HandleClientChat(slot.Get(), text, teamonly)) RETURN_META(MRES_SUPERCEDE);
         }
     }
