@@ -122,6 +122,9 @@ internal class PermissionManager : IPermissionManager {
         subPermissions = [subPermission];
         _subPermissions[permission] = subPermissions;
       }
+      else if(!subPermissions.Contains(subPermission)) {
+        subPermissions.Add(subPermission);
+      } 
     }
     _queryCache = _queryCache.Clear();
   }
