@@ -8,7 +8,7 @@ public interface IPlugin {
 
   public void UseSharedServices(IServiceProvider sharedProvider);
 
-  public void Load();
+  public void Load(bool hotReload);
 
   public void Unload();
 
