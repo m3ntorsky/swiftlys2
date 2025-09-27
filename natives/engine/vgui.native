@@ -1,7 +1,7 @@
 class VGUI
 
 uint64 RegisterScreenText = void
-void UnregisterScreenText = void
+void UnregisterScreenText = uint64 textid
 void ScreenTextCreate = uint64 textid, color col, int32 fontsize, bool drawBackground, bool isMenu
 void ScreenTextSetText = uint64 textid, string text
 void ScreenTextSetColor = uint64 textid, color col

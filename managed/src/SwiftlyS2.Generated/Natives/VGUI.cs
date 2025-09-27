@@ -20,10 +20,10 @@ internal static class NativeVGUI {
       throw;
     }
   }
-  private unsafe static delegate* unmanaged<void> _UnregisterScreenText;
-  public unsafe static void UnregisterScreenText() {
+  private unsafe static delegate* unmanaged<ulong, void> _UnregisterScreenText;
+  public unsafe static void UnregisterScreenText(ulong textid) {
     try {
-    _UnregisterScreenText();
+    _UnregisterScreenText(textid);
      } catch (Exception e) {
       Spectre.Console.AnsiConsole.WriteException(e);
       throw;
