@@ -27,7 +27,7 @@ public abstract class BasePlugin : IPlugin {
 
   public virtual void UseSharedServices(IServiceProvider sharedProvider) {}
 
-  public abstract void Load();
+  public abstract void Load(bool hotReload);
 
   public abstract void Unload();
 }

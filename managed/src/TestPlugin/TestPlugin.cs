@@ -45,7 +45,7 @@ public class TestPlugin : BasePlugin {
 
   delegate void Test(int a, int b);
 
-  public override void Load() {
+  public override void Load(bool hotReload) {
     // _Core = core;
     // var root = _Core.Configuration
     //   .InitializeJson<TestConfig>("test.jsonc") // generate addons/swiftly/configs/xxx/test.jsonc by type TestConfig if not exists
@@ -61,7 +61,6 @@ public class TestPlugin : BasePlugin {
     // throw new Exception("TestPlugin loaded");
 
     using var conn = Core.Database.GetConnection("testplugin");
-    Console.WriteLine(conn.ConnectionString);
     conn.Open();
     var result = conn.Query<string>("SELECT * FROM playermodelchanger");
     foreach(var item in result) {
@@ -118,6 +117,7 @@ public class TestPlugin : BasePlugin {
     {
       int i  = 0;
     };
+
 
     // Core.Event.OnClientProcessUsercmds += (@event) => {
     //   foreach(var usercmd in @event.Usercmds) {
@@ -258,7 +258,7 @@ public class TestPlugin : BasePlugin {
 
   [GameEventHandler(HookMode.Pre)]
   public HookResult TestGameEventHandler(EventPlayerJump @e) {
-    Console.WriteLine(@e.UserIdController.PlayerName.Value);
+    Console.WriteLine(@e.UserIdController.PlayerName);
     return HookResult.Continue;
   }
 

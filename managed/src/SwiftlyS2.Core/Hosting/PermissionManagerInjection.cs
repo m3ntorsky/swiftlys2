@@ -6,10 +6,10 @@ namespace SwiftlyS2.Core.Hosting;
 
 public static class PermissionManagerInjection {
   public static void AddPermissionManager(this IServiceCollection self) {
-    self.AddSingleton<IPermissionManager, PermissionManager>();
+    self.AddSingleton<PermissionManager>();
   }
 
   public static void UsePermissionManager(this IServiceProvider self) {
-    self.GetRequiredService<IPermissionManager>();
+    self.GetRequiredService<PermissionManager>();
   }
 }

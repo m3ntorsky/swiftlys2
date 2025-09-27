@@ -8,6 +8,7 @@ using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.Memory;
 using SwiftlyS2.Shared.NetMessages;
+using SwiftlyS2.Shared.Permissions;
 using SwiftlyS2.Shared.Profiler;
 using SwiftlyS2.Shared.Scheduler;
 using SwiftlyS2.Shared.Services;
@@ -115,4 +116,9 @@ public interface ISwiftlyCore {
   /// Localizer.
   /// </summary>
   public ILocalizer Localizer { get; }
+
+  /// <summary>
+  /// Permission manager.
+  /// </summary>
+  public IPermissionManager Permission { get; }
 }

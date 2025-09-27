@@ -71,7 +71,7 @@ internal class PluginManager {
 
 
       try {
-        var context = LoadPlugin(pluginDir);
+        var context = LoadPlugin(pluginDir, false);
         if (context != null && context.Status == PluginStatus.Loaded) {
           _Logger.LogInformation("Loaded plugin " + context.Manifest.Id);
         }
@@ -111,7 +111,7 @@ internal class PluginManager {
   }
 
 
-  public PluginContext? LoadPlugin(string dir)
+  public PluginContext? LoadPlugin(string dir, bool hotReload)
   {
     if (!File.Exists(Path.Combine(dir, "manifest.json")))
     {
@@ -173,7 +173,7 @@ internal class PluginManager {
 
     
     try {
-      plugin.Load();
+      plugin.Load(hotReload);
     } catch (Exception e) {
       _Logger.LogWarning(e, $"Error loading plugin {entrypointDll}");
       context.Status = PluginStatus.Error;
@@ -213,7 +213,7 @@ internal class PluginManager {
         if (File.Exists(Path.Combine(pluginDir, "manifest.json"))) {
           var manifest = JsonSerializer.Deserialize<PluginManifest>(File.ReadAllText(Path.Combine(pluginDir, "manifest.json")));
           if (manifest != null && manifest.Id == id) {
-            context = LoadPlugin(pluginDir);
+            context = LoadPlugin(pluginDir, false);
             break;
           }
         }
@@ -225,7 +225,7 @@ internal class PluginManager {
     } else {
       var directory = context.PluginDirectory!;
       _Plugins.Remove(context);
-      LoadPlugin(directory);
+      LoadPlugin(directory, true);
     }
 
     RebuildSharedServices();

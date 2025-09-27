@@ -28,6 +28,8 @@ using SwiftlyS2.Core.Plugins;
 using SwiftlyS2.Core.Database;
 using SwiftlyS2.Shared.Database;
 using SwiftlyS2.Core.Translations;
+using SwiftlyS2.Core.Permissions;
+using SwiftlyS2.Shared.Permissions;
 
 namespace SwiftlyS2.Core.Services;
 
@@ -55,6 +57,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public DatabaseService DatabaseService { get; init; }
   public TranslationService TranslationService { get; init; }
   public Localizer Localizer { get; init; }
+  public PermissionManager PermissionManager { get; init; }
   public SwiftlyCore(string contextId, string contextBaseDirectory, PluginManifest? pluginManifest, Type contextType, IServiceProvider coreProvider) {
 
     CoreContext id = new(contextId, contextBaseDirectory, pluginManifest);
@@ -70,6 +73,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton(coreProvider.GetRequiredService<PlayerManagerService>())
       .AddSingleton(coreProvider.GetRequiredService<EngineService>())
       .AddSingleton(coreProvider.GetRequiredService<TraceManager>())
+      .AddSingleton(coreProvider.GetRequiredService<PermissionManager>())
 
       .AddSingleton<EventSubscriber>()
       .AddSingleton<PluginConfigurationService>()
@@ -85,6 +89,8 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<DatabaseService>()
       .AddSingleton<TranslationService>()
       .AddSingleton<Localizer>(provider => provider.GetRequiredService<TranslationService>().GetLocalizer())
+
+      .AddSingleton<IPermissionManager>(provider => provider.GetRequiredService<PermissionManager>())
 
       .AddSingleton<IEventSubscriber>(provider => provider.GetRequiredService<EventSubscriber>())
       .AddSingleton<IGameEventService>(provider => provider.GetRequiredService<GameEventService>())
@@ -132,6 +138,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     DatabaseService = _ServiceProvider.GetRequiredService<DatabaseService>();
     TranslationService = _ServiceProvider.GetRequiredService<TranslationService>();
     Localizer = _ServiceProvider.GetRequiredService<Localizer>();
+    PermissionManager = _ServiceProvider.GetRequiredService<PermissionManager>();
 
     Logger = LoggerFactory.CreateLogger(contextType);
   }
@@ -171,4 +178,5 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   IDatabaseService ISwiftlyCore.Database => DatabaseService;
   ITranslationService ISwiftlyCore.Translation => TranslationService;
   ILocalizer ISwiftlyCore.Localizer => Localizer;
+  IPermissionManager ISwiftlyCore.Permission => PermissionManager;
 }
