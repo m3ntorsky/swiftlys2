@@ -4,7 +4,7 @@ using SwiftlyS2.Shared.Schemas;
 
 namespace SwiftlyS2.Core.Schemas;
 
-internal class SchemaFixedString : SchemaFixedArray<byte>, ISchemaFixedString {
+internal class SchemaFixedString : SchemaFixedArray<byte>, ISchemaFixedString, IFormattable {
 
   public SchemaFixedString(nint handle, ulong hash, int elementCount, int elementSize, int elementAlignment) : base(handle, hash, elementCount, elementSize, elementAlignment) {
   }
@@ -24,5 +24,10 @@ internal class SchemaFixedString : SchemaFixedArray<byte>, ISchemaFixedString {
         }
       }
     }
+  }
+
+  public string ToString(string? format, IFormatProvider? formatProvider)
+  {
+    return Value;
   }
 }

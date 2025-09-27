@@ -258,7 +258,7 @@ public class TestPlugin : BasePlugin {
 
   [GameEventHandler(HookMode.Pre)]
   public HookResult TestGameEventHandler(EventPlayerJump @e) {
-    Console.WriteLine(@e.UserIdController.PlayerName.Value);
+    Console.WriteLine(@e.UserIdController.PlayerName);
     return HookResult.Continue;
   }
 
