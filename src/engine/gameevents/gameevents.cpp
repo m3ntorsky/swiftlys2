@@ -40,10 +40,15 @@ using json = nlohmann::json;
 
 SH_DECL_EXTERN2(IGameEventManager2, FireEvent, SH_NOATTRIB, 0, bool, IGameEvent*, bool);
 SH_DECL_EXTERN2(IGameEventManager2, LoadEventsFromFile, SH_NOATTRIB, 0, int, const char*, bool);
+SH_DECL_EXTERN3_void(IServerGameDLL, GameFrame, SH_NOATTRIB, 0, bool, bool, bool);
 SH_DECL_EXTERN3_void(INetworkServerService, StartupServer, SH_NOATTRIB, 0, const GameSessionConfiguration_t&, ISource2WorldSession*, const char*);
 
 std::map<uint64_t, std::function<int(std::string, IGameEvent*, bool&)>> g_mEventListeners;
 std::map<uint64_t, std::function<int(std::string, IGameEvent*, bool&)>> g_mPostEventListeners;
+
+std::list<std::list<std::pair<int64_t, std::function<void()>>>::iterator> queueRemoveTimeouts;
+std::list<std::pair<int64_t, std::function<void()>>> timeoutsArray;
+bool processingTimeouts = false;
 
 std::set<std::string> g_sDumpedFiles;
 json dumpedEvents;
@@ -66,16 +71,58 @@ void CEventManager::Initialize(std::string game_name)
     SH_ADD_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEventManager::OnStartupServer, true);
 
     g_uLoadEventFromFileHookID = SH_ADD_DVPHOOK(IGameEventManager2, LoadEventsFromFile, (IGameEventManager2*)(void*)CGameEventManagerVTable, SH_MEMBER(this, &CEventManager::LoadEventsFromFile), false);
+
+    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
+
+    SH_ADD_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CEventManager::GameFrame, true);
+
+    RegisterGameEventListener("round_start");
+    AddGameEventFireListener([](std::string event_name, IGameEvent* event, bool& dont_broadcast) -> int {
+        if (event_name == "round_start") {
+            static auto vgui = g_ifaceService.FetchInterface<IVGUI>(VGUI_INTERFACE_VERSION);
+
+            vgui->ResetStateOfScreenTexts();
+
+            timeoutsArray.push_back({ GetTime() + 100, []() -> void {
+                vgui->RegenerateScreenTexts();
+            } });
+
+            processingTimeouts = true;
+        }
+        return 0;
+    });
 }
 
 void CEventManager::Shutdown()
 {
     auto networkserverservice = g_ifaceService.FetchInterface<INetworkServerService>(NETWORKSERVERSERVICE_INTERFACE_VERSION);
+    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
 
     SH_REMOVE_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEvent, false);
     SH_REMOVE_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEventPost, true);
     SH_REMOVE_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEventManager::OnStartupServer, true);
+    SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CEventManager::GameFrame, true);
     SH_REMOVE_HOOK_ID(g_uLoadEventFromFileHookID);
+}
+
+void CEventManager::GameFrame(bool simulate, bool first, bool last)
+{
+    if (processingTimeouts)
+    {
+        int64_t t = GetTime();
+        for (auto it = timeoutsArray.begin(); it != timeoutsArray.end(); ++it) {
+            if (it->first <= t) {
+                queueRemoveTimeouts.push_back(it);
+                it->second();
+            }
+        }
+
+        for (auto it = queueRemoveTimeouts.rbegin(); it != queueRemoveTimeouts.rend(); ++it)
+            timeoutsArray.erase(*it);
+
+        queueRemoveTimeouts.clear();
+        processingTimeouts = (timeoutsArray.size() > 0);
+    }
 }
 
 int CEventManager::LoadEventsFromFile(const char* filePath, bool searchAll)
