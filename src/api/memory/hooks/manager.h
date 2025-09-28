@@ -27,11 +27,18 @@
 class IHooksManager
 {
 public:
+    virtual void Initialize() = 0;
+    virtual void Shutdown() = 0;
+
     virtual IFunctionHook* CreateFunctionHook() = 0;
     virtual IVFunctionHook* CreateVFunctionHook() = 0;
 
     virtual void DestroyFunctionHook(IFunctionHook* hook) = 0;
     virtual void DestroyVFunctionHook(IVFunctionHook* hook) = 0;
+
+    // ptr CEntityIOOutput, string outputName, ptr activator, ptr caller, float delay -> int (HookResult)
+    virtual uint64_t CreateEntityHookOutput(const std::string& className, const std::string& outputName, void* callback) = 0;
+    virtual void DestroyEntityHookOutput(uint64_t id) = 0;
 };
 
 template<typename T, typename RetType, typename... Args>
@@ -48,7 +55,7 @@ int GetVirtualFunctionId(RetType(T::* func)(Args...)) {
     int vmt_idx;
     auto details = (MemFuncPtr*)&func;
     if (details->vmt_idx_odd & 1) {
-        vmt_idx = (details->vmt_idx_odd - 1) / sizeof(void*);
+        vmt_idx = (details->vmt_idx_odd - 1) / PTR_SIZE;
     }
     else {
         vmt_idx = -1;
