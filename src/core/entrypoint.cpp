@@ -74,6 +74,19 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     gamedata->GetSignatures()->Load(GetCurrentGame());
     gamedata->GetPatches()->Load(GetCurrentGame());
 
+    if (std::string* s = std::get_if<std::string>(&configuration->GetValue("core.PatchesToPerform"))) {
+        auto patches = explodeToSet(*s, " ");
+        for (const auto& patch : patches) {
+            if (gamedata->GetPatches()->Exists(patch)) {
+                gamedata->GetPatches()->Apply(patch);
+                logger->Info("Patching", std::format("Applied patch: {}", patch));
+            }
+            else {
+                logger->Warning("Patching", std::format("Couldn't find patch: {}", patch));
+            }
+        }
+    }
+
     auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->Initialize();
 
