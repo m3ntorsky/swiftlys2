@@ -69,6 +69,13 @@ void CEntityListener::OnEntityCreated(CEntityInstance* pEntity)
 
 void CEntityListener::OnEntityDeleted(CEntityInstance* pEntity)
 {
+    static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    for (int i = 0; i < 64; i++)
+        if (playermanager->IsPlayerOnline(i)) {
+            auto& transmittingBits = playermanager->GetPlayer(i)->GetBlockedTransmittingBits();
+            transmittingBits.Clear(pEntity->m_pEntity->m_EHandle.GetEntryIndex());
+        }
+
     if (g_pOnEntityDeletedCallback)
         reinterpret_cast<void(*)(void*)>(g_pOnEntityDeletedCallback)(pEntity);
 }
