@@ -178,6 +178,18 @@ int Bridge_EntitySystem_GetEntityHandleFromEntity(CEntityInstance* pEntity)
     return pEntity->GetRefEHandle().ToInt();
 }
 
+uint64_t Bridge_EntitySystem_HookEntityOutput(const char* className, const char* outputName, void* callback)
+{
+    static auto hooksystem = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    return hooksystem->CreateEntityHookOutput(className, outputName, callback);
+}
+
+void Bridge_EntitySystem_UnhookEntityOutput(uint64_t hookid)
+{
+    static auto hooksystem = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    hooksystem->DestroyEntityHookOutput(hookid);
+}
+
 DEFINE_NATIVE("EntitySystem.Spawn", Bridge_EntitySystem_Spawn);
 DEFINE_NATIVE("EntitySystem.Despawn", Bridge_EntitySystem_Despawn);
 DEFINE_NATIVE("EntitySystem.CreateEntityByName", Bridge_EntitySystem_CreateEntityByName);
@@ -204,3 +216,5 @@ DEFINE_NATIVE("EntitySystem.EntityHandleIsValid", Bridge_EntitySystem_EntityHand
 DEFINE_NATIVE("EntitySystem.EntityHandleGet", Bridge_EntitySystem_EntityHandleGet);
 DEFINE_NATIVE("EntitySystem.GetEntityHandleFromEntity", Bridge_EntitySystem_GetEntityHandleFromEntity);
 DEFINE_NATIVE("EntitySystem.GetFirstActiveEntity", Bridge_EntitySystem_GetFirstActiveEntity);
+DEFINE_NATIVE("EntitySystem.HookEntityOutput", Bridge_EntitySystem_HookEntityOutput);
+DEFINE_NATIVE("EntitySystem.UnhookEntityOutput", Bridge_EntitySystem_UnhookEntityOutput);

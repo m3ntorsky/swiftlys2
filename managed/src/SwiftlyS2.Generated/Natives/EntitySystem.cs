@@ -423,4 +423,44 @@ internal static class NativeEntitySystem {
       throw;
     }
   }
+  private unsafe static delegate* unmanaged<byte*, byte*, nint, ulong> _HookEntityOutput;
+  /// <summary>
+  /// CEntityIOOutput*, string outputName, CEntityInstance* activator, CEntityInstance* caller, float delay -> int (HookResult)
+  /// </summary>
+  public unsafe static ulong HookEntityOutput(string className, string outputName, nint callback) {
+    try {
+    var pool = ArrayPool<byte>.Shared;
+    var classNameLength = Encoding.UTF8.GetByteCount(className);
+    var classNameBuffer = pool.Rent(classNameLength + 1);
+    Encoding.UTF8.GetBytes(className, classNameBuffer);
+    classNameBuffer[classNameLength] = 0;
+    fixed (byte* classNameBufferPtr = classNameBuffer) {
+    
+    var outputNameLength = Encoding.UTF8.GetByteCount(outputName);
+    var outputNameBuffer = pool.Rent(outputNameLength + 1);
+    Encoding.UTF8.GetBytes(outputName, outputNameBuffer);
+    outputNameBuffer[outputNameLength] = 0;
+    fixed (byte* outputNameBufferPtr = outputNameBuffer) {
+        var ret = _HookEntityOutput(classNameBufferPtr, outputNameBufferPtr, callback);
+    pool.Return(classNameBuffer);
+
+    pool.Return(outputNameBuffer);
+
+    return ret;
+  }
+  }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
+  private unsafe static delegate* unmanaged<ulong, void> _UnhookEntityOutput;
+  public unsafe static void UnhookEntityOutput(ulong hookid) {
+    try {
+    _UnhookEntityOutput(hookid);
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
 }
