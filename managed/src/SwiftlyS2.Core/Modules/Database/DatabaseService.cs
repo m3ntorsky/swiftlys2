@@ -24,9 +24,6 @@ internal class DatabaseService : IDatabaseService {
   }
 
   public string GetConnectionString(string connectionName) {
-    if (_Context.PluginManifest != null && _Context.PluginManifest.DatabaseConnections.Contains(connectionName)) {
-      return NativeDatabase.GetCredentials(connectionName);
-    }
     if (NativeDatabase.ConnectionExists(connectionName)) {
       return NativeDatabase.GetCredentials(connectionName);
     }

@@ -14,7 +14,7 @@ internal class EntitySystemService : IEntitySystemService {
   public T CreateEntity<T>() where T : class, ISchemaClass<T> {
     var designerName = GetEntityDesignerName<T>();
     if (designerName == null) {
-      throw new ArgumentException($"Can't create entity with class {typeof(T).Name}, which doesn't have a designer name");
+      throw new ArgumentException($"Can't create entity with class {typeof(T).Name}, which doesn't have a designer name.");
     }
     return CreateEntityByDesignerName<T>(designerName);
   }
@@ -22,7 +22,7 @@ internal class EntitySystemService : IEntitySystemService {
   public T CreateEntityByDesignerName<T>(string designerName) where T : ISchemaClass<T> {
     var handle = NativeEntitySystem.CreateEntityByName(designerName);
     if (handle == nint.Zero) {
-      throw new ArgumentException($"Failed to create entity by designer name: {designerName}, probably invalid designer name");
+      throw new ArgumentException($"Failed to create entity by designer name: {designerName}, probably invalid designer name.");
     }
     return T.From(handle);
   }

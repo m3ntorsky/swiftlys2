@@ -25,7 +25,8 @@ public interface IPluginConfigurationService {
   /// </summary>
   /// <typeparam name="T">The type of the configuration model.</typeparam>
   /// <param name="name">The name of the configuration file.</param>
-  public IPluginConfigurationService InitializeJson<T>(string name) where T : class, new();
+  /// <param name="sectionName">The name of the section in the configuration file.</param>
+  public IPluginConfigurationService InitializeJson<T>(string name, string sectionName) where T : class, new();
 
   /// <summary>
   /// Create a configuration builder.
