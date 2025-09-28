@@ -156,12 +156,16 @@ void CPlayerManager::CheckTransmit(CCheckTransmitInfo** ppInfoList, int infoCoun
         auto& blockedBits = player->GetBlockedTransmittingBits();
 
         uint32_t* base = pInfo->m_pTransmitEntity->Base();
+        uint32_t* baseAlways = pInfo->m_pTransmitAlways->Base();
         uint32_t* blockedBase = blockedBits.Base();
 
         // 512 ops = 16k bits -> 64 players -> 32k ops
         for (int i = pInfo->m_pTransmitEntity->GetNumDWords() - 1; i >= 0; i--) {
             uint32_t& word = base[i];
+            uint32_t& wordAlways = baseAlways[i];
+
             word &= ~blockedBase[i];
+            wordAlways &= ~blockedBase[i];
         }
 
         //16k ops = 16k bits -> 64 players -> 1M ops
