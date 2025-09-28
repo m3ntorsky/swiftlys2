@@ -15,7 +15,7 @@ public partial interface CPathSimple : CBaseEntity, ISchemaClass<CPathSimple> {
   
   public CPathQueryComponent CPathQueryComponent { get; }
   
-  public ref CUtlString PathString { get; }
+  public string PathString { get; set; }
   
   public ref bool ClosedLoop { get; }
 

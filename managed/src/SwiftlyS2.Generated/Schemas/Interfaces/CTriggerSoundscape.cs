@@ -15,7 +15,7 @@ public partial interface CTriggerSoundscape : CBaseTrigger, ISchemaClass<CTrigge
   
   public ref CHandle<CEnvSoundscapeTriggerable> Soundscape { get; }
   
-  public ref CUtlSymbolLarge SoundscapeName { get; }
+  public string SoundscapeName { get; set; }
   
   public ref CUtlVector<CHandle<CBasePlayerPawn>> Spectators { get; }
 

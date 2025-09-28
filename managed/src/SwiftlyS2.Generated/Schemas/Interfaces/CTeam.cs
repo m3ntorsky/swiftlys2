@@ -19,7 +19,7 @@ public partial interface CTeam : CBaseEntity, ISchemaClass<CTeam> {
   
   public ref int Score { get; }
   
-  public ISchemaFixedString Teamname { get; }
+  public string Teamname { get; set; }
 
   public void PlayerControllersUpdated();
   public void PlayersUpdated();

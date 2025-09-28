@@ -13,7 +13,7 @@ public partial interface ModelEmbeddedMesh_t : ISchemaClass<ModelEmbeddedMesh_t>
   static ModelEmbeddedMesh_t ISchemaClass<ModelEmbeddedMesh_t>.From(nint handle) => new ModelEmbeddedMesh_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref int MeshIndex { get; }
   

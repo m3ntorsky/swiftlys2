@@ -13,7 +13,7 @@ public partial interface PermModelDataAnimatedMaterialAttribute_t : ISchemaClass
   static PermModelDataAnimatedMaterialAttribute_t ISchemaClass<PermModelDataAnimatedMaterialAttribute_t>.From(nint handle) => new PermModelDataAnimatedMaterialAttribute_tImpl(handle);
 
   
-  public ref CUtlString AttributeName { get; }
+  public string AttributeName { get; set; }
   
   public ref int NumChannels { get; }
 

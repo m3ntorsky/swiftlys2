@@ -15,13 +15,13 @@ public partial interface PulseScriptedSequenceData_t : ISchemaClass<PulseScripte
   
   public ref int ActorID { get; }
   
-  public ref CUtlString PreIdleSequence { get; }
+  public string PreIdleSequence { get; set; }
   
-  public ref CUtlString EntrySequence { get; }
+  public string EntrySequence { get; set; }
   
-  public ref CUtlString Sequence { get; }
+  public string Sequence { get; set; }
   
-  public ref CUtlString ExitSequence { get; }
+  public string ExitSequence { get; set; }
   
   public ref ScriptedMoveTo_t MoveTo { get; }
   

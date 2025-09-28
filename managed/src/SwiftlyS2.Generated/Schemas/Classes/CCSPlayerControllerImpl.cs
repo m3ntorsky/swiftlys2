@@ -48,9 +48,13 @@ internal partial class CCSPlayerControllerImpl : CBasePlayerControllerImpl, CCSP
   public ref uint UiCommunicationMuteFlags {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x28ECD7A1DD210AC7));
   }
-  public ref CUtlSymbolLarge CrosshairCodes {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x28ECD7A10FF7211E));
-  }
+  public string CrosshairCodes {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x28ECD7A10FF7211E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x28ECD7A10FF7211E, value);
+  } 
   public ref byte PendingTeamNum {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x28ECD7A1F6CB4D26));
   }
@@ -90,9 +94,13 @@ internal partial class CCSPlayerControllerImpl : CBasePlayerControllerImpl, CCSP
   public GameTime_t LastJoinTeamTime {
     get => new GameTime_tImpl(_Handle + Schema.GetOffset(0x28ECD7A1B2DAFB07));
   }
-  public ref CUtlSymbolLarge Clan {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x28ECD7A10A2F1774));
-  }
+  public string Clan {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x28ECD7A10A2F1774));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x28ECD7A10A2F1774, value);
+  } 
   public ref int CoachingTeam {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x28ECD7A1B80B18EB));
   }

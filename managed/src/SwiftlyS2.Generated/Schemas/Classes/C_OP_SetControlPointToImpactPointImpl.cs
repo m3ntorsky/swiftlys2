@@ -36,9 +36,13 @@ internal partial class C_OP_SetControlPointToImpactPointImpl : CParticleFunction
   public ref Vector TraceDir {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x5ED2C481B3F09745));
   }
-public ISchemaFixedString CollisionGroupName {
-    get => new SchemaFixedString(_Handle, 0x5ED2C481D58A3195, 128, 1, 1);
-  }
+public string CollisionGroupName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x5ED2C481D58A3195);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x5ED2C481D58A3195, value, 128);
+  } 
   public ref ParticleTraceSet_t TraceSet {
     get => ref _Handle.AsRef<ParticleTraceSet_t>(Schema.GetOffset(0x5ED2C481BD26C5B2));
   }

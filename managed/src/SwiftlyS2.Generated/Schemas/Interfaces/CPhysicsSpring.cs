@@ -19,9 +19,9 @@ public partial interface CPhysicsSpring : CBaseEntity, ISchemaClass<CPhysicsSpri
   
   public ref float RestLength { get; }
   
-  public ref CUtlSymbolLarge NameAttachStart { get; }
+  public string NameAttachStart { get; set; }
   
-  public ref CUtlSymbolLarge NameAttachEnd { get; }
+  public string NameAttachEnd { get; set; }
   
   public ref Vector Start { get; }
   

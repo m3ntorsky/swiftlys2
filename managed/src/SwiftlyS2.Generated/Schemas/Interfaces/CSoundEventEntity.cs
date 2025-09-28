@@ -25,9 +25,9 @@ public partial interface CSoundEventEntity : CBaseEntity, ISchemaClass<CSoundEve
   
   public ref float SavedElapsedTime { get; }
   
-  public ref CUtlSymbolLarge SourceEntityName { get; }
+  public string SourceEntityName { get; set; }
   
-  public ref CUtlSymbolLarge AttachmentName { get; }
+  public string AttachmentName { get; set; }
   
   // CEntityOutputTemplate< uint64 >
   public SchemaUntypedField OnGUIDChanged { get; }
@@ -36,7 +36,7 @@ public partial interface CSoundEventEntity : CBaseEntity, ISchemaClass<CSoundEve
   
   public ref float ClientCullRadius { get; }
   
-  public ref CUtlSymbolLarge SoundName { get; }
+  public string SoundName { get; set; }
   
   public ref CHandle<CEntityInstance> Source { get; }
   

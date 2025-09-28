@@ -13,7 +13,7 @@ public partial interface ModelBoneFlexDriver_t : ISchemaClass<ModelBoneFlexDrive
   static ModelBoneFlexDriver_t ISchemaClass<ModelBoneFlexDriver_t>.From(nint handle) => new ModelBoneFlexDriver_tImpl(handle);
 
   
-  public ref CUtlString BoneName { get; }
+  public string BoneName { get; set; }
   
   public ref uint BoneNameToken { get; }
   

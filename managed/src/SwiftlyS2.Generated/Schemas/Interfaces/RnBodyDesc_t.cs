@@ -13,7 +13,7 @@ public partial interface RnBodyDesc_t : ISchemaClass<RnBodyDesc_t> {
   static RnBodyDesc_t ISchemaClass<RnBodyDesc_t>.From(nint handle) => new RnBodyDesc_tImpl(handle);
 
   
-  public ref CUtlString DebugName { get; }
+  public string DebugName { get; set; }
   
   public ref Vector Position { get; }
   

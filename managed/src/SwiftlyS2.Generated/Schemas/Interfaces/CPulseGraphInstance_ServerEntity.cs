@@ -17,13 +17,13 @@ public partial interface CPulseGraphInstance_ServerEntity : CBasePulseGraphInsta
   
   public ref bool Activated { get; }
   
-  public ref CUtlSymbolLarge NameFixupStaticPrefix { get; }
+  public string NameFixupStaticPrefix { get; set; }
   
-  public ref CUtlSymbolLarge NameFixupParent { get; }
+  public string NameFixupParent { get; set; }
   
-  public ref CUtlSymbolLarge NameFixupLocal { get; }
+  public string NameFixupLocal { get; set; }
   
-  public ref CUtlSymbolLarge ProceduralWorldNameForRelays { get; }
+  public string ProceduralWorldNameForRelays { get; set; }
 
 
 }

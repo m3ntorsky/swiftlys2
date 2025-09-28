@@ -31,9 +31,9 @@ public partial interface CBasePlayerController : CBaseEntity, ISchemaClass<CBase
   
   public ref PlayerConnectedState Connected { get; }
   
-  public ISchemaFixedString PlayerName { get; }
+  public string PlayerName { get; set; }
   
-  public ref CUtlString NetworkIDString { get; }
+  public string NetworkIDString { get; set; }
   
   public ref float LerpTime { get; }
   

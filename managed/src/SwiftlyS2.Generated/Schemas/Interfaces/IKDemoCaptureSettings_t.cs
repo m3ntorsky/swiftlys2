@@ -13,15 +13,15 @@ public partial interface IKDemoCaptureSettings_t : ISchemaClass<IKDemoCaptureSet
   static IKDemoCaptureSettings_t ISchemaClass<IKDemoCaptureSettings_t>.From(nint handle) => new IKDemoCaptureSettings_tImpl(handle);
 
   
-  public ref CUtlString ParentBoneName { get; }
+  public string ParentBoneName { get; set; }
   
   public ref IKChannelMode Mode { get; }
   
-  public ref CUtlString IkChainName { get; }
+  public string IkChainName { get; set; }
   
-  public ref CUtlString OneBoneStart { get; }
+  public string OneBoneStart { get; set; }
   
-  public ref CUtlString OneBoneEnd { get; }
+  public string OneBoneEnd { get; set; }
 
 
 }

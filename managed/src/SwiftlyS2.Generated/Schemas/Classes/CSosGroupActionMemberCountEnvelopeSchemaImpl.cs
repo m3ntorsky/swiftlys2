@@ -33,9 +33,13 @@ internal partial class CSosGroupActionMemberCountEnvelopeSchemaImpl : CSosGroupA
   public ref float Decay {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5C85206CE24ABC67));
   }
-  public ref CUtlString ResultVarName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x5C85206CF566E926));
-  }
+  public string ResultVarName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x5C85206CF566E926));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x5C85206CF566E926, value);
+  } 
   public ref bool SaveToGroup {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5C85206C6ED720F8));
   }

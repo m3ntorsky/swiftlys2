@@ -18,9 +18,13 @@ internal partial class C_OP_SetControlPointPositionToTimeOfDayValueImpl : CParti
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x976831CB3F31A6BD));
   }
-public ISchemaFixedString TimeOfDayParameter {
-    get => new SchemaFixedString(_Handle, 0x976831CB5B5E9DD3, 128, 1, 1);
-  }
+public string TimeOfDayParameter {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x976831CB5B5E9DD3);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x976831CB5B5E9DD3, value, 128);
+  } 
   public ref Vector DefaultValue {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x976831CB0A18BFDF));
   }

@@ -36,9 +36,13 @@ internal partial class C_OP_InstantaneousEmitterImpl : CParticleFunctionEmitterI
   public ref int SnapshotControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x39132039192638EC));
   }
-  public ref CUtlString StrSnapshotSubset {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x39132039BD8A8E5E));
-  }
+  public string StrSnapshotSubset {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x39132039BD8A8E5E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x39132039BD8A8E5E, value);
+  } 
 
 
 }

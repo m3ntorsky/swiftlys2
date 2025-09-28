@@ -13,7 +13,7 @@ public partial interface CMorphConstraint : CBaseConstraint, ISchemaClass<CMorph
   static CMorphConstraint ISchemaClass<CMorphConstraint>.From(nint handle) => new CMorphConstraintImpl(handle);
 
   
-  public ref CUtlString TargetMorph { get; }
+  public string TargetMorph { get; set; }
   
   public ref int SlaveChannel { get; }
   

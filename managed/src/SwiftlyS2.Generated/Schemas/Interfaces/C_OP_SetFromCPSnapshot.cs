@@ -15,7 +15,7 @@ public partial interface C_OP_SetFromCPSnapshot : CParticleFunctionOperator, ISc
   
   public ref int ControlPointNumber { get; }
   
-  public ref CUtlString StrSnapshotSubset { get; }
+  public string StrSnapshotSubset { get; set; }
   
   public ParticleAttributeIndex_t AttributeToRead { get; }
   

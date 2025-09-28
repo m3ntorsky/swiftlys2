@@ -13,23 +13,23 @@ public partial interface CEnvInstructorHint : CPointEntity, ISchemaClass<CEnvIns
   static CEnvInstructorHint ISchemaClass<CEnvInstructorHint>.From(nint handle) => new CEnvInstructorHintImpl(handle);
 
   
-  public ref CUtlSymbolLarge Name { get; }
+  public string Name { get; set; }
   
-  public ref CUtlSymbolLarge Replace_Key { get; }
+  public string Replace_Key { get; set; }
   
-  public ref CUtlSymbolLarge HintTargetEntity { get; }
+  public string HintTargetEntity { get; set; }
   
   public ref int Timeout { get; }
   
   public ref int DisplayLimit { get; }
   
-  public ref CUtlSymbolLarge Icon_Onscreen { get; }
+  public string Icon_Onscreen { get; set; }
   
-  public ref CUtlSymbolLarge Icon_Offscreen { get; }
+  public string Icon_Offscreen { get; set; }
   
-  public ref CUtlSymbolLarge Caption { get; }
+  public string Caption { get; set; }
   
-  public ref CUtlSymbolLarge ActivatorCaption { get; }
+  public string ActivatorCaption { get; set; }
   
   public ref Color Color { get; }
   
@@ -53,7 +53,7 @@ public partial interface CEnvInstructorHint : CPointEntity, ISchemaClass<CEnvIns
   
   public ref bool SuppressRest { get; }
   
-  public ref CUtlSymbolLarge Binding { get; }
+  public string Binding { get; set; }
   
   public ref bool AllowNoDrawTarget { get; }
   

@@ -52,7 +52,7 @@ public partial interface CParticleSystemDefinition : IParticleSystemDefinition, 
   
   public ref bool EnableNamedValues { get; }
   
-  public ref CUtlString NamedValueDomain { get; }
+  public string NamedValueDomain { get; set; }
   
   public ref CUtlVector<PointerTo<ParticleNamedValueSource_t>> NamedValueLocals { get; }
   
@@ -134,7 +134,7 @@ public partial interface CParticleSystemDefinition : IParticleSystemDefinition, 
   
   public ref bool ScreenSpaceEffect { get; }
   
-  public ref CUtlSymbolLarge TargetLayerID { get; }
+  public string TargetLayerID { get; set; }
   
   public ref int SkipRenderControlPoint { get; }
   

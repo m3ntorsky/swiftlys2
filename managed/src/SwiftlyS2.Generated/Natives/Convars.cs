@@ -12,7 +12,6 @@ internal static class NativeConvars {
   private static int _MainThreadID;
   private unsafe static delegate* unmanaged<int, byte*, void> _QueryClientConvar;
   public unsafe static void QueryClientConvar(int playerid, string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -23,36 +22,21 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<nint, int> _AddQueryClientCvarCallback;
   /// <summary>
   /// the callback should receive the following: int32 playerid, string cvarName, string cvarValue
   /// </summary>
   public unsafe static int AddQueryClientCvarCallback(nint callback) {
-    try {
     var ret = _AddQueryClientCvarCallback(callback);
     return ret;
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, void> _RemoveQueryClientCvarCallback;
   public unsafe static void RemoveQueryClientCvarCallback(int callbackID) {
-    try {
     _RemoveQueryClientCvarCallback(callbackID);
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, short, void> _CreateConvarInt16;
   public unsafe static void CreateConvarInt16(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, short defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -72,14 +56,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, ushort, void> _CreateConvarUInt16;
   public unsafe static void CreateConvarUInt16(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, ushort defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -99,14 +78,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, int, void> _CreateConvarInt32;
   public unsafe static void CreateConvarInt32(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, int defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -126,14 +100,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, uint, void> _CreateConvarUInt32;
   public unsafe static void CreateConvarUInt32(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, uint defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -153,14 +122,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, long, void> _CreateConvarInt64;
   public unsafe static void CreateConvarInt64(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, long defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -180,14 +144,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, ulong, void> _CreateConvarUInt64;
   public unsafe static void CreateConvarUInt64(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, ulong defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -207,14 +166,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, bool, void> _CreateConvarBool;
   public unsafe static void CreateConvarBool(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, bool defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -234,14 +188,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, float, void> _CreateConvarFloat;
   public unsafe static void CreateConvarFloat(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, float defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -261,14 +210,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, double, void> _CreateConvarDouble;
   public unsafe static void CreateConvarDouble(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, double defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -288,14 +232,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, Color, void> _CreateConvarColor;
   public unsafe static void CreateConvarColor(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, Color defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -315,14 +254,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, Vector2D, void> _CreateConvarVector2D;
   public unsafe static void CreateConvarVector2D(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, Vector2D defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -342,14 +276,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, Vector, void> _CreateConvarVector;
   public unsafe static void CreateConvarVector(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, Vector defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -369,14 +298,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, Vector4D, void> _CreateConvarVector4D;
   public unsafe static void CreateConvarVector4D(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, Vector4D defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -396,14 +320,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, QAngle, void> _CreateConvarQAngle;
   public unsafe static void CreateConvarQAngle(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, QAngle defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -423,14 +342,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, byte*, void> _CreateConvarString;
   public unsafe static void CreateConvarString(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, string defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -459,14 +373,9 @@ internal static class NativeConvars {
   }
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, void> _DeleteConvar;
   public unsafe static void DeleteConvar(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -477,14 +386,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, bool> _ExistsConvar;
   public unsafe static bool ExistsConvar(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -496,14 +400,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int> _GetConvarType;
   public unsafe static int GetConvarType(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -515,14 +414,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, nint> _GetConvarDataAddress;
   public unsafe static nint GetConvarDataAddress(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -534,14 +428,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, short> _GetConvarValueInt16;
   public unsafe static short GetConvarValueInt16(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -553,14 +442,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, ushort> _GetConvarValueUInt16;
   public unsafe static ushort GetConvarValueUInt16(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -572,14 +456,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int> _GetConvarValueInt32;
   public unsafe static int GetConvarValueInt32(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -591,14 +470,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, uint> _GetConvarValueUInt32;
   public unsafe static uint GetConvarValueUInt32(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -610,14 +484,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, long> _GetConvarValueInt64;
   public unsafe static long GetConvarValueInt64(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -629,14 +498,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, ulong> _GetConvarValueUInt64;
   public unsafe static ulong GetConvarValueUInt64(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -648,14 +512,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, bool> _GetConvarValueBool;
   public unsafe static bool GetConvarValueBool(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -667,14 +526,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, float> _GetConvarValueFloat;
   public unsafe static float GetConvarValueFloat(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -686,14 +540,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, double> _GetConvarValueDouble;
   public unsafe static double GetConvarValueDouble(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -705,14 +554,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, Color> _GetConvarValueColor;
   public unsafe static Color GetConvarValueColor(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -724,14 +568,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, Vector2D> _GetConvarValueVector2D;
   public unsafe static Vector2D GetConvarValueVector2D(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -743,14 +582,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, Vector> _GetConvarValueVector;
   public unsafe static Vector GetConvarValueVector(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -762,14 +596,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, Vector4D> _GetConvarValueVector4D;
   public unsafe static Vector4D GetConvarValueVector4D(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -781,14 +610,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, QAngle> _GetConvarValueQAngle;
   public unsafe static QAngle GetConvarValueQAngle(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -800,14 +624,9 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, byte*, int> _GetConvarValueString;
   public unsafe static string GetConvarValueString(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -827,14 +646,9 @@ internal static class NativeConvars {
     return retString;
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, short, void> _SetConvarValueInt16;
   public unsafe static void SetConvarValueInt16(string cvarName, short defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -845,14 +659,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, ushort, void> _SetConvarValueUInt16;
   public unsafe static void SetConvarValueUInt16(string cvarName, ushort defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -863,14 +672,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int, void> _SetConvarValueInt32;
   public unsafe static void SetConvarValueInt32(string cvarName, int defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -881,14 +685,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, uint, void> _SetConvarValueUInt32;
   public unsafe static void SetConvarValueUInt32(string cvarName, uint defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -899,14 +698,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, long, void> _SetConvarValueInt64;
   public unsafe static void SetConvarValueInt64(string cvarName, long defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -917,14 +711,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, ulong, void> _SetConvarValueUInt64;
   public unsafe static void SetConvarValueUInt64(string cvarName, ulong defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -935,14 +724,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, bool, void> _SetConvarValueBool;
   public unsafe static void SetConvarValueBool(string cvarName, bool defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -953,14 +737,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, float, void> _SetConvarValueFloat;
   public unsafe static void SetConvarValueFloat(string cvarName, float defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -971,14 +750,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, double, void> _SetConvarValueDouble;
   public unsafe static void SetConvarValueDouble(string cvarName, double defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -989,14 +763,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, Color, void> _SetConvarValueColor;
   public unsafe static void SetConvarValueColor(string cvarName, Color defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1007,14 +776,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, Vector2D, void> _SetConvarValueVector2D;
   public unsafe static void SetConvarValueVector2D(string cvarName, Vector2D defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1025,14 +789,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, Vector, void> _SetConvarValueVector;
   public unsafe static void SetConvarValueVector(string cvarName, Vector defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1043,14 +802,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, Vector4D, void> _SetConvarValueVector4D;
   public unsafe static void SetConvarValueVector4D(string cvarName, Vector4D defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1061,14 +815,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, QAngle, void> _SetConvarValueQAngle;
   public unsafe static void SetConvarValueQAngle(string cvarName, QAngle defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1079,14 +828,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, byte*, void> _SetConvarValueString;
   public unsafe static void SetConvarValueString(string cvarName, string defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1106,14 +850,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, short, void> _SetClientConvarValueInt16;
   public unsafe static void SetClientConvarValueInt16(int playerid, string cvarName, short defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1124,14 +863,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, ushort, void> _SetClientConvarValueUInt16;
   public unsafe static void SetClientConvarValueUInt16(int playerid, string cvarName, ushort defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1142,14 +876,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, int, void> _SetClientConvarValueInt32;
   public unsafe static void SetClientConvarValueInt32(int playerid, string cvarName, int defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1160,14 +889,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, uint, void> _SetClientConvarValueUInt32;
   public unsafe static void SetClientConvarValueUInt32(int playerid, string cvarName, uint defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1178,14 +902,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, long, void> _SetClientConvarValueInt64;
   public unsafe static void SetClientConvarValueInt64(int playerid, string cvarName, long defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1196,14 +915,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, ulong, void> _SetClientConvarValueUInt64;
   public unsafe static void SetClientConvarValueUInt64(int playerid, string cvarName, ulong defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1214,14 +928,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, bool, void> _SetClientConvarValueBool;
   public unsafe static void SetClientConvarValueBool(int playerid, string cvarName, bool defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1232,14 +941,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, float, void> _SetClientConvarValueFloat;
   public unsafe static void SetClientConvarValueFloat(int playerid, string cvarName, float defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1250,14 +954,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, double, void> _SetClientConvarValueDouble;
   public unsafe static void SetClientConvarValueDouble(int playerid, string cvarName, double defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1268,14 +967,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, Color, void> _SetClientConvarValueColor;
   public unsafe static void SetClientConvarValueColor(int playerid, string cvarName, Color defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1286,14 +980,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, Vector2D, void> _SetClientConvarValueVector2D;
   public unsafe static void SetClientConvarValueVector2D(int playerid, string cvarName, Vector2D defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1304,14 +993,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, Vector, void> _SetClientConvarValueVector;
   public unsafe static void SetClientConvarValueVector(int playerid, string cvarName, Vector defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1322,14 +1006,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, Vector4D, void> _SetClientConvarValueVector4D;
   public unsafe static void SetClientConvarValueVector4D(int playerid, string cvarName, Vector4D defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1340,14 +1019,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, QAngle, void> _SetClientConvarValueQAngle;
   public unsafe static void SetClientConvarValueQAngle(int playerid, string cvarName, QAngle defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1358,14 +1032,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<int, byte*, byte*, void> _SetClientConvarValueString;
   public unsafe static void SetClientConvarValueString(int playerid, string cvarName, string defaultValue) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1385,14 +1054,9 @@ internal static class NativeConvars {
 
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, ulong, void> _AddFlags;
   public unsafe static void AddFlags(string cvarName, ulong flags) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1403,14 +1067,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, ulong, void> _RemoveFlags;
   public unsafe static void RemoveFlags(string cvarName, ulong flags) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1421,14 +1080,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, void> _ClearFlags;
   public unsafe static void ClearFlags(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1439,14 +1093,9 @@ internal static class NativeConvars {
     pool.Return(cvarNameBuffer);
 
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, ulong> _GetFlags;
   public unsafe static ulong GetFlags(string cvarName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -1458,9 +1107,5 @@ internal static class NativeConvars {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
 }

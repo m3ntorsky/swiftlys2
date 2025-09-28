@@ -13,9 +13,9 @@ public partial interface CAttachment : ISchemaClass<CAttachment> {
   static CAttachment ISchemaClass<CAttachment>.From(nint handle) => new CAttachmentImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
-  public ISchemaFixedArray<CUtlString> InfluenceNames { get; }
+  public string InfluenceNames { get; set; }
   
   public ISchemaFixedArray<Quaternion> InfluenceRotations { get; }
   

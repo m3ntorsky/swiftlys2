@@ -15,7 +15,7 @@ public partial interface CFilterMultiple : CBaseFilter, ISchemaClass<CFilterMult
   
   public ref filter_t FilterType { get; }
   
-  public ISchemaFixedArray<CUtlSymbolLarge> FilterName { get; }
+  public string FilterName { get; set; }
   
   public ISchemaFixedArray<CHandle<CBaseEntity>> Filter { get; }
 

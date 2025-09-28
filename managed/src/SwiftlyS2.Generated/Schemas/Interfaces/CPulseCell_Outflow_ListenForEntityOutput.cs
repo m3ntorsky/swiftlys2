@@ -19,7 +19,7 @@ public partial interface CPulseCell_Outflow_ListenForEntityOutput : CPulseCell_B
   
   public ref CGlobalSymbol StrEntityOutput { get; }
   
-  public ref CUtlString StrEntityOutputParam { get; }
+  public string StrEntityOutputParam { get; set; }
   
   public ref bool ListenUntilCanceled { get; }
 

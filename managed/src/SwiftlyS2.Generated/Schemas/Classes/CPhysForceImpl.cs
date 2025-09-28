@@ -15,9 +15,13 @@ internal partial class CPhysForceImpl : CPointEntityImpl, CPhysForce {
   public CPhysForceImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge NameAttach {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x29E850D5BECAEF3F));
-  }
+  public string NameAttach {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x29E850D5BECAEF3F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x29E850D5BECAEF3F, value);
+  } 
   public ref float Force {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x29E850D5B9B6AFA4));
   }

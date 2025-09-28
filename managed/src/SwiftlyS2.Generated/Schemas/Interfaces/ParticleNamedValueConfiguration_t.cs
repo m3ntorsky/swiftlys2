@@ -13,18 +13,18 @@ public partial interface ParticleNamedValueConfiguration_t : ISchemaClass<Partic
   static ParticleNamedValueConfiguration_t ISchemaClass<ParticleNamedValueConfiguration_t>.From(nint handle) => new ParticleNamedValueConfiguration_tImpl(handle);
 
   
-  public ref CUtlString ConfigName { get; }
+  public string ConfigName { get; set; }
   
   // KeyValues3
   public SchemaUntypedField ConfigValue { get; }
   
   public ref ParticleAttachment_t AttachType { get; }
   
-  public ref CUtlString BoundEntityPath { get; }
+  public string BoundEntityPath { get; set; }
   
-  public ref CUtlString StrEntityScope { get; }
+  public string StrEntityScope { get; set; }
   
-  public ref CUtlString StrAttachmentName { get; }
+  public string StrAttachmentName { get; set; }
 
 
 }

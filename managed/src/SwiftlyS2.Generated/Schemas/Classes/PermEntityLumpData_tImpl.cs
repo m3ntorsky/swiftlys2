@@ -15,9 +15,13 @@ internal partial class PermEntityLumpData_tImpl : SchemaClass, PermEntityLumpDat
   public PermEntityLumpData_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x47DA25F14D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x47DA25F14D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x47DA25F14D8F5786, value);
+  } 
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCEntityLump>> ChildLumps {
     get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCEntityLump>>>(Schema.GetOffset(0x47DA25F1AFDAF56C));
   }

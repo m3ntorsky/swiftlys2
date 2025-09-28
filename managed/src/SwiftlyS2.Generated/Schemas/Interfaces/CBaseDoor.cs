@@ -33,15 +33,15 @@ public partial interface CBaseDoor : CBaseToggle, ISchemaClass<CBaseDoor> {
   
   public ref float BlockDamage { get; }
   
-  public ref CUtlSymbolLarge NoiseMoving { get; }
+  public string NoiseMoving { get; set; }
   
-  public ref CUtlSymbolLarge NoiseArrived { get; }
+  public string NoiseArrived { get; set; }
   
-  public ref CUtlSymbolLarge NoiseMovingClosed { get; }
+  public string NoiseMovingClosed { get; set; }
   
-  public ref CUtlSymbolLarge NoiseArrivedClosed { get; }
+  public string NoiseArrivedClosed { get; set; }
   
-  public ref CUtlSymbolLarge ChainTarget { get; }
+  public string ChainTarget { get; set; }
   
   public CEntityIOOutput OnBlockedClosing { get; }
   

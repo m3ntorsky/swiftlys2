@@ -13,7 +13,7 @@ public partial interface CPulseCell_Outflow_PlayVCD : CPulseCell_Outflow_PlaySce
   static CPulseCell_Outflow_PlayVCD ISchemaClass<CPulseCell_Outflow_PlayVCD>.From(nint handle) => new CPulseCell_Outflow_PlayVCDImpl(handle);
 
   
-  public ref CUtlString VcdFilename { get; }
+  public string VcdFilename { get; set; }
 
 
 }

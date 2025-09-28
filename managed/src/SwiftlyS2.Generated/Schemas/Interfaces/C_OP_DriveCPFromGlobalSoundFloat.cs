@@ -25,11 +25,11 @@ public partial interface C_OP_DriveCPFromGlobalSoundFloat : CParticleFunctionPre
   
   public ref float OutputMax { get; }
   
-  public ref CUtlString StackName { get; }
+  public string StackName { get; set; }
   
-  public ref CUtlString OperatorName { get; }
+  public string OperatorName { get; set; }
   
-  public ref CUtlString FieldName { get; }
+  public string FieldName { get; set; }
 
 
 }

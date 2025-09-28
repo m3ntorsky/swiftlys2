@@ -13,9 +13,9 @@ public partial interface CBtActionCombatPositioning : CBtNode, ISchemaClass<CBtA
   static CBtActionCombatPositioning ISchemaClass<CBtActionCombatPositioning>.From(nint handle) => new CBtActionCombatPositioningImpl(handle);
 
   
-  public ref CUtlString SensorInputKey { get; }
+  public string SensorInputKey { get; set; }
   
-  public ref CUtlString IsAttackingKey { get; }
+  public string IsAttackingKey { get; set; }
   
   public CountdownTimer ActionTimer { get; }
   

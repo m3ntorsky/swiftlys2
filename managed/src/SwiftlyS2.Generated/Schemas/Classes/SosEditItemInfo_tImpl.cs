@@ -18,15 +18,27 @@ internal partial class SosEditItemInfo_tImpl : SchemaClass, SosEditItemInfo_t {
   public ref SosEditItemType_t ItemType {
     get => ref _Handle.AsRef<SosEditItemType_t>(Schema.GetOffset(0x8E29E1C0C91C9136));
   }
-  public ref CUtlString ItemName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x8E29E1C0575A2B25));
-  }
-  public ref CUtlString ItemTypeName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x8E29E1C0B2F8CB75));
-  }
-  public ref CUtlString ItemKVString {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x8E29E1C0A0151DD6));
-  }
+  public string ItemName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8E29E1C0575A2B25));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8E29E1C0575A2B25, value);
+  } 
+  public string ItemTypeName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8E29E1C0B2F8CB75));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8E29E1C0B2F8CB75, value);
+  } 
+  public string ItemKVString {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8E29E1C0A0151DD6));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8E29E1C0A0151DD6, value);
+  } 
   public ref Vector2D ItemPos {
     get => ref _Handle.AsRef<Vector2D>(Schema.GetOffset(0x8E29E1C0AB2D0B6C));
   }

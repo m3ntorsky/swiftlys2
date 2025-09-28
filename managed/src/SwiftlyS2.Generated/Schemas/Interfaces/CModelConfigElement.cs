@@ -13,7 +13,7 @@ public partial interface CModelConfigElement : ISchemaClass<CModelConfigElement>
   static CModelConfigElement ISchemaClass<CModelConfigElement>.From(nint handle) => new CModelConfigElementImpl(handle);
 
   
-  public ref CUtlString ElementName { get; }
+  public string ElementName { get; set; }
   
   public ref CUtlVector<PointerTo<CModelConfigElement>> NestedElements { get; }
 

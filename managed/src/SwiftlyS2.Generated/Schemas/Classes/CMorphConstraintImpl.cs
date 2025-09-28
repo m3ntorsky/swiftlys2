@@ -15,9 +15,13 @@ internal partial class CMorphConstraintImpl : CBaseConstraintImpl, CMorphConstra
   public CMorphConstraintImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString TargetMorph {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xC24859C39FF7D337));
-  }
+  public string TargetMorph {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC24859C39FF7D337));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC24859C39FF7D337, value);
+  } 
   public ref int SlaveChannel {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC24859C3A439DE4F));
   }

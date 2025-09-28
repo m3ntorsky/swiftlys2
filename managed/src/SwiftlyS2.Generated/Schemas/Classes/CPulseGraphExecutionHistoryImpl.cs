@@ -18,9 +18,13 @@ internal partial class CPulseGraphExecutionHistoryImpl : SchemaClass, CPulseGrap
   public PulseGraphInstanceID_t InstanceID {
     get => new PulseGraphInstanceID_tImpl(_Handle + Schema.GetOffset(0x2DC54ABB24192813));
   }
-  public ref CUtlString StrFileName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x2DC54ABB51B717E5));
-  }
+  public string StrFileName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x2DC54ABB51B717E5));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x2DC54ABB51B717E5, value);
+  } 
   public ref CUtlVector<PointerTo<PulseGraphExecutionHistoryEntry_t>> History {
     get => ref _Handle.AsRef<CUtlVector<PointerTo<PulseGraphExecutionHistoryEntry_t>>>(Schema.GetOffset(0x2DC54ABBCFBC2CBF));
   }

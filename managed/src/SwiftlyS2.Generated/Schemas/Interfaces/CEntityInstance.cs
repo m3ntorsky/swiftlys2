@@ -13,7 +13,7 @@ public partial interface CEntityInstance : ISchemaClass<CEntityInstance> {
   static CEntityInstance ISchemaClass<CEntityInstance>.From(nint handle) => new CEntityInstanceImpl(handle);
 
   
-  public ref CUtlSymbolLarge PrivateVScripts { get; }
+  public string PrivateVScripts { get; set; }
   
   public CEntityIdentity? Entity { get; }
   

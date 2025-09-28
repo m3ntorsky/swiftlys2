@@ -13,15 +13,15 @@ public partial interface CFuncMover : CBaseModelEntity, ISchemaClass<CFuncMover>
   static CFuncMover ISchemaClass<CFuncMover>.From(nint handle) => new CFuncMoverImpl(handle);
 
   
-  public ref CUtlSymbolLarge PathName { get; }
+  public string PathName { get; set; }
   
   public ref CHandle<CPathMover> PathMover { get; }
   
   public ref CHandle<CPathMover> PrevPathMover { get; }
   
-  public ref CUtlSymbolLarge PathNodeStart { get; }
+  public string PathNodeStart { get; set; }
   
-  public ref CUtlSymbolLarge PathNodeEnd { get; }
+  public string PathNodeEnd { get; set; }
   
   public ref CFuncMover__Move_t MoveType { get; }
   
@@ -59,19 +59,19 @@ public partial interface CFuncMover : CBaseModelEntity, ISchemaClass<CFuncMover>
   
   public ref float PathLocationToBeginStop { get; }
   
-  public ref CUtlSymbolLarge StartForwardSound { get; }
+  public string StartForwardSound { get; set; }
   
-  public ref CUtlSymbolLarge LoopForwardSound { get; }
+  public string LoopForwardSound { get; set; }
   
-  public ref CUtlSymbolLarge StopForwardSound { get; }
+  public string StopForwardSound { get; set; }
   
-  public ref CUtlSymbolLarge StartReverseSound { get; }
+  public string StartReverseSound { get; set; }
   
-  public ref CUtlSymbolLarge LoopReverseSound { get; }
+  public string LoopReverseSound { get; set; }
   
-  public ref CUtlSymbolLarge StopReverseSound { get; }
+  public string StopReverseSound { get; set; }
   
-  public ref CUtlSymbolLarge ArriveAtDestinationSound { get; }
+  public string ArriveAtDestinationSound { get; set; }
   
   public CEntityIOOutput OnMovementEnd { get; }
   
@@ -95,7 +95,7 @@ public partial interface CFuncMover : CBaseModelEntity, ISchemaClass<CFuncMover>
   
   public CEntityIOOutput OnNodePassed { get; }
   
-  public ref CUtlSymbolLarge OrientationMatchEntityName { get; }
+  public string OrientationMatchEntityName { get; set; }
   
   public ref CHandle<CBaseEntity> OrientationMatchEntity { get; }
   
@@ -129,7 +129,7 @@ public partial interface CFuncMover : CBaseModelEntity, ISchemaClass<CFuncMover>
   
   public ref float CurFollowSpeed { get; }
   
-  public ref CUtlSymbolLarge StrOrientationFaceEntityName { get; }
+  public string StrOrientationFaceEntityName { get; set; }
   
   public ref CHandle<CBaseEntity> OrientationFaceEntity { get; }
   

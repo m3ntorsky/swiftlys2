@@ -13,7 +13,7 @@ public partial interface CGameText : CRulePointEntity, ISchemaClass<CGameText> {
   static CGameText ISchemaClass<CGameText>.From(nint handle) => new CGameTextImpl(handle);
 
   
-  public ref CUtlSymbolLarge Message { get; }
+  public string Message { get; set; }
   
   public hudtextparms_t TextParms { get; }
 

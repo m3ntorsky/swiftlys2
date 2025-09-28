@@ -15,18 +15,34 @@ internal partial class EntComponentInfo_tImpl : SchemaClass, EntComponentInfo_t 
   public EntComponentInfo_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CString Name {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0xDEAD526A5B47C92C));
-  }
-  public ref CString CPPClassname {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0xDEAD526A65BE3EC7));
-  }
-  public ref CString NetworkDataReferencedDescription {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0xDEAD526AB84E3342));
-  }
-  public ref CString NetworkDataReferencedPtrPropDescription {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0xDEAD526AFDC5489F));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDEAD526A5B47C92C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDEAD526A5B47C92C, value);
+  } 
+  public string CPPClassname {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDEAD526A65BE3EC7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDEAD526A65BE3EC7, value);
+  } 
+  public string NetworkDataReferencedDescription {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDEAD526AB84E3342));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDEAD526AB84E3342, value);
+  } 
+  public string NetworkDataReferencedPtrPropDescription {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDEAD526AFDC5489F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDEAD526AFDC5489F, value);
+  } 
   public ref int RuntimeIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDEAD526AB53184BD));
   }

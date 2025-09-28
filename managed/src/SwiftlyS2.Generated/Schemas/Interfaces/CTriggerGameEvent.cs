@@ -13,11 +13,11 @@ public partial interface CTriggerGameEvent : CBaseTrigger, ISchemaClass<CTrigger
   static CTriggerGameEvent ISchemaClass<CTriggerGameEvent>.From(nint handle) => new CTriggerGameEventImpl(handle);
 
   
-  public ref CUtlString StrStartTouchEventName { get; }
+  public string StrStartTouchEventName { get; set; }
   
-  public ref CUtlString StrEndTouchEventName { get; }
+  public string StrEndTouchEventName { get; set; }
   
-  public ref CUtlString StrTriggerID { get; }
+  public string StrTriggerID { get; set; }
 
   public void StrStartTouchEventNameUpdated();
   public void StrEndTouchEventNameUpdated();

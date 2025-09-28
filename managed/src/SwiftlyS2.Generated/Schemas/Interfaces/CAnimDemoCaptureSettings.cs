@@ -33,7 +33,7 @@ public partial interface CAnimDemoCaptureSettings : ISchemaClass<CAnimDemoCaptur
   
   public ref float IkTranslation_MaxQuantizationError { get; }
   
-  public ref CUtlString BaseSequence { get; }
+  public string BaseSequence { get; set; }
   
   public ref int BaseSequenceFrame { get; }
   

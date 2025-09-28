@@ -27,9 +27,13 @@ internal partial class CTriggerPushImpl : CBaseTriggerImpl, CTriggerPush {
   public ref bool UsePathSimple {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x92E0F2F21BFD6EF1));
   }
-  public ref CUtlSymbolLarge PathSimpleName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x92E0F2F2AB7E7D7F));
-  }
+  public string PathSimpleName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x92E0F2F2AB7E7D7F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x92E0F2F2AB7E7D7F, value);
+  } 
   public CPathSimple? PathSimple {
     get {
       var ptr = _Handle.Read<nint>(Schema.GetOffset(0x92E0F2F2FA868DCC));

@@ -42,9 +42,13 @@ internal partial class CMomentaryRotButtonImpl : CRotButtonImpl, CMomentaryRotBu
   public ref float IdealYaw {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x85A553CD48C477F5));
   }
-  public ref CUtlSymbolLarge Noise {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x85A553CD1F22B8CC));
-  }
+  public string Noise {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x85A553CD1F22B8CC));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x85A553CD1F22B8CC, value);
+  } 
   public ref bool UpdateTarget {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x85A553CDBE14BF5D));
   }

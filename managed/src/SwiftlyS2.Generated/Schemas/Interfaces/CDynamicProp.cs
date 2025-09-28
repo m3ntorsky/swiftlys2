@@ -31,7 +31,7 @@ public partial interface CDynamicProp : CBreakableProp, ISchemaClass<CDynamicPro
   
   public CEntityIOOutput OnAnimReachedEnd { get; }
   
-  public ref CUtlSymbolLarge IdleAnim { get; }
+  public string IdleAnim { get; set; }
   
   public ref AnimLoopMode_t IdleAnimLoopMode { get; }
   

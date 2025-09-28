@@ -18,9 +18,13 @@ internal partial class AnimationSnapshot_tImpl : AnimationSnapshotBase_tImpl, An
   public ref int EntIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xAC640D3E5558C54A));
   }
-  public ref CUtlString ModelName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xAC640D3E5D35B6E1));
-  }
+  public string ModelName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xAC640D3E5D35B6E1));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xAC640D3E5D35B6E1, value);
+  } 
 
 
 }

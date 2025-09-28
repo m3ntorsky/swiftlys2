@@ -15,9 +15,13 @@ internal partial class FunctionInfo_tImpl : SchemaClass, FunctionInfo_t {
   public FunctionInfo_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xFCE0933A4D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xFCE0933A4D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xFCE0933A4D8F5786, value);
+  } 
   public ref CUtlStringToken NameToken {
     get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0xFCE0933A9293FEF3));
   }

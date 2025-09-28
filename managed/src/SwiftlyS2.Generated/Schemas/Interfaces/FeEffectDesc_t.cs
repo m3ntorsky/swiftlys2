@@ -13,7 +13,7 @@ public partial interface FeEffectDesc_t : ISchemaClass<FeEffectDesc_t> {
   static FeEffectDesc_t ISchemaClass<FeEffectDesc_t>.From(nint handle) => new FeEffectDesc_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref uint NameHash { get; }
   

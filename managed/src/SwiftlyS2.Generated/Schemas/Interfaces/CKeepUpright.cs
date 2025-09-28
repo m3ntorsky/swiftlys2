@@ -17,7 +17,7 @@ public partial interface CKeepUpright : CPointEntity, ISchemaClass<CKeepUpright>
   
   public ref Vector LocalTestAxis { get; }
   
-  public ref CUtlSymbolLarge NameAttach { get; }
+  public string NameAttach { get; set; }
   
   public ref CHandle<CBaseEntity> AttachedObject { get; }
   

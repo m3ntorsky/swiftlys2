@@ -18,9 +18,13 @@ internal partial class CSoundAreaEntityBaseImpl : CBaseEntityImpl, CSoundAreaEnt
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x15C90E163A7C5965));
   }
-  public ref CUtlSymbolLarge SoundAreaType {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x15C90E16227612E5));
-  }
+  public string SoundAreaType {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x15C90E16227612E5));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x15C90E16227612E5, value);
+  } 
   public ref Vector Pos {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x15C90E16DE9CFC5D));
   }

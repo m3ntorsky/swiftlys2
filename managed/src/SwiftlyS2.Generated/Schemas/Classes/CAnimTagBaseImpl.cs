@@ -18,9 +18,13 @@ internal partial class CAnimTagBaseImpl : SchemaClass, CAnimTagBase {
   public ref CGlobalSymbol Name {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x8F7709C44D8F5786));
   }
-  public ref CUtlString Comment {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x8F7709C488A0B4DF));
-  }
+  public string Comment {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8F7709C488A0B4DF));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8F7709C488A0B4DF, value);
+  } 
   public ref CGlobalSymbol Group {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x8F7709C49FC645AC));
   }

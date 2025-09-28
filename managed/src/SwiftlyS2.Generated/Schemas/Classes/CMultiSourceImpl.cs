@@ -27,9 +27,13 @@ public ISchemaFixedArray<int> RgTriggered {
   public ref int Total {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x87DC5C667223ED06));
   }
-  public ref CUtlSymbolLarge Globalstate {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x87DC5C6677A86653));
-  }
+  public string Globalstate {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x87DC5C6677A86653));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x87DC5C6677A86653, value);
+  } 
 
 
 }

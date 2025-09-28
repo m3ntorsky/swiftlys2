@@ -13,7 +13,7 @@ public partial interface CInfoGameEventProxy : CPointEntity, ISchemaClass<CInfoG
   static CInfoGameEventProxy ISchemaClass<CInfoGameEventProxy>.From(nint handle) => new CInfoGameEventProxyImpl(handle);
 
   
-  public ref CUtlSymbolLarge EventName { get; }
+  public string EventName { get; set; }
   
   public ref float Range { get; }
 

@@ -13,9 +13,9 @@ public partial interface CWorldCompositionChunkReferenceElement_t : ISchemaClass
   static CWorldCompositionChunkReferenceElement_t ISchemaClass<CWorldCompositionChunkReferenceElement_t>.From(nint handle) => new CWorldCompositionChunkReferenceElement_tImpl(handle);
 
   
-  public ref CUtlString StrMapToLoad { get; }
+  public string StrMapToLoad { get; set; }
   
-  public ref CUtlString StrLandmarkName { get; }
+  public string StrLandmarkName { get; set; }
 
 
 }

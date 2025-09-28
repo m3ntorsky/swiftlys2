@@ -19,7 +19,7 @@ public partial interface CNewParticleEffect : IParticleEffect, ISchemaClass<CNew
   
   public IParticleCollection? Particles { get; }
   
-  public ref CString DebugName { get; }
+  public string DebugName { get; set; }
   
   // bitfield
   public SchemaUntypedField DontRemove { get; }

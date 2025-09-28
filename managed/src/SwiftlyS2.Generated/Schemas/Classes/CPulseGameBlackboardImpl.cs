@@ -15,12 +15,20 @@ internal partial class CPulseGameBlackboardImpl : CBaseEntityImpl, CPulseGameBla
   public CPulseGameBlackboardImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString StrGraphName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF9A17A20C99E48AF));
-  }
-  public ref CUtlString StrStateBlob {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF9A17A2046708C2A));
-  }
+  public string StrGraphName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF9A17A20C99E48AF));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF9A17A20C99E48AF, value);
+  } 
+  public string StrStateBlob {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF9A17A2046708C2A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF9A17A2046708C2A, value);
+  } 
 
   public void StrGraphNameUpdated() {
     Schema.Update(_Handle, 0xF9A17A20C99E48AF);

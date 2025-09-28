@@ -15,9 +15,13 @@ internal partial class CSequenceFinishedAnimTagImpl : CAnimTagBaseImpl, CSequenc
   public CSequenceFinishedAnimTagImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString SequenceName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x1B46C5202B4A24CB));
-  }
+  public string SequenceName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1B46C5202B4A24CB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1B46C5202B4A24CB, value);
+  } 
 
 
 }

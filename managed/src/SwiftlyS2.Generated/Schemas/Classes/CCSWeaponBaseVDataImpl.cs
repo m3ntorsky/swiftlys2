@@ -165,9 +165,13 @@ internal partial class CCSWeaponBaseVDataImpl : CBasePlayerWeaponVDataImpl, CCSW
   public ref float InaccuracyAltSoundThreshold {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x62FB7705973D88CA));
   }
-  public ref CUtlString UseRadioSubtitle {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x62FB77052060E88A));
-  }
+  public string UseRadioSubtitle {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x62FB77052060E88A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x62FB77052060E88A, value);
+  } 
   public ref bool UnzoomsAfterShot {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x62FB770525A040FC));
   }

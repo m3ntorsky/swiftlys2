@@ -29,9 +29,9 @@ public partial interface CEnvExplosion : CModelPointEntity, ISchemaClass<CEnvExp
   
   public ref bool CreateDebris { get; }
   
-  public ref CUtlSymbolLarge CustomEffectName { get; }
+  public string CustomEffectName { get; set; }
   
-  public ref CUtlSymbolLarge CustomSoundName { get; }
+  public string CustomSoundName { get; set; }
   
   public ref bool SuppressParticleImpulse { get; }
   
@@ -39,7 +39,7 @@ public partial interface CEnvExplosion : CModelPointEntity, ISchemaClass<CEnvExp
   
   public ref Class_T ClassIgnore2 { get; }
   
-  public ref CUtlSymbolLarge EntityIgnoreName { get; }
+  public string EntityIgnoreName { get; set; }
   
   public ref CHandle<CBaseEntity> EntityIgnore { get; }
 

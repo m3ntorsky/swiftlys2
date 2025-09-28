@@ -41,7 +41,7 @@ public partial interface C_OP_RenderStandardLight : CParticleFunctionRenderer, I
   
   public ref bool RenderSpecular { get; }
   
-  public ref CUtlString LightCookie { get; }
+  public string LightCookie { get; set; }
   
   public ref int Priority { get; }
   

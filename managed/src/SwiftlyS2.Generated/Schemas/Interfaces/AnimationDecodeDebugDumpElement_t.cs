@@ -15,7 +15,7 @@ public partial interface AnimationDecodeDebugDumpElement_t : ISchemaClass<Animat
   
   public ref int EntityIndex { get; }
   
-  public ref CUtlString ModelName { get; }
+  public string ModelName { get; set; }
   
   public ref CUtlVector<CUtlString> PoseParams { get; }
   

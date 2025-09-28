@@ -31,9 +31,9 @@ public partial interface CBaseGrenade : CBaseFlex, ISchemaClass<CBaseGrenade> {
   
   public ref float Damage { get; }
   
-  public ref CUtlSymbolLarge BounceSound { get; }
+  public string BounceSound { get; set; }
   
-  public ref CUtlString ExplosionSound { get; }
+  public string ExplosionSound { get; set; }
   
   public ref CHandle<CCSPlayerPawn> Thrower { get; }
   

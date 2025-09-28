@@ -13,11 +13,11 @@ public partial interface CPointTemplate : CLogicalEntity, ISchemaClass<CPointTem
   static CPointTemplate ISchemaClass<CPointTemplate>.From(nint handle) => new CPointTemplateImpl(handle);
 
   
-  public ref CUtlSymbolLarge WorldName { get; }
+  public string WorldName { get; set; }
   
-  public ref CUtlSymbolLarge Source2EntityLumpName { get; }
+  public string Source2EntityLumpName { get; set; }
   
-  public ref CUtlSymbolLarge EntityFilterName { get; }
+  public string EntityFilterName { get; set; }
   
   public ref float TimeoutInterval { get; }
   

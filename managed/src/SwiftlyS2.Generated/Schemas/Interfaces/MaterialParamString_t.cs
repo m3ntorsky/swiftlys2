@@ -13,7 +13,7 @@ public partial interface MaterialParamString_t : MaterialParam_t, ISchemaClass<M
   static MaterialParamString_t ISchemaClass<MaterialParamString_t>.From(nint handle) => new MaterialParamString_tImpl(handle);
 
   
-  public ref CUtlString Value { get; }
+  public string Value { get; set; }
 
 
 }

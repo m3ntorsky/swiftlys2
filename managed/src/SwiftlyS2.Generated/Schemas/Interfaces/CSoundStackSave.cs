@@ -13,7 +13,7 @@ public partial interface CSoundStackSave : CLogicalEntity, ISchemaClass<CSoundSt
   static CSoundStackSave ISchemaClass<CSoundStackSave>.From(nint handle) => new CSoundStackSaveImpl(handle);
 
   
-  public ref CUtlSymbolLarge StackName { get; }
+  public string StackName { get; set; }
 
 
 }

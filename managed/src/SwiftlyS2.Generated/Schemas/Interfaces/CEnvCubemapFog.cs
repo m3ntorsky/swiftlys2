@@ -41,7 +41,7 @@ public partial interface CEnvCubemapFog : CBaseEntity, ISchemaClass<CEnvCubemapF
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> SkyMaterial { get; }
   
-  public ref CUtlSymbolLarge SkyEntity { get; }
+  public string SkyEntity { get; set; }
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> FogCubemapTexture { get; }
   

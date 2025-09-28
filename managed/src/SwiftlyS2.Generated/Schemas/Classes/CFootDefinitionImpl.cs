@@ -15,15 +15,27 @@ internal partial class CFootDefinitionImpl : SchemaClass, CFootDefinition {
   public CFootDefinitionImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xAA3BA2A34D8F5786));
-  }
-  public ref CUtlString AnkleBoneName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xAA3BA2A3A8A2DEF9));
-  }
-  public ref CUtlString ToeBoneName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xAA3BA2A39C96209A));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xAA3BA2A34D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xAA3BA2A34D8F5786, value);
+  } 
+  public string AnkleBoneName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xAA3BA2A3A8A2DEF9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xAA3BA2A3A8A2DEF9, value);
+  } 
+  public string ToeBoneName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xAA3BA2A39C96209A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xAA3BA2A39C96209A, value);
+  } 
   public ref Vector BallOffset {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xAA3BA2A3E3376F1B));
   }

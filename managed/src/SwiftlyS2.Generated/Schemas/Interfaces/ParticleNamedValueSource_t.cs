@@ -13,7 +13,7 @@ public partial interface ParticleNamedValueSource_t : ISchemaClass<ParticleNamed
   static ParticleNamedValueSource_t ISchemaClass<ParticleNamedValueSource_t>.From(nint handle) => new ParticleNamedValueSource_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref bool IsPublic { get; }
   

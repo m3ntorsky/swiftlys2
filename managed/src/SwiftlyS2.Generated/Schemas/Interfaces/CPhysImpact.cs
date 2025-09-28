@@ -17,7 +17,7 @@ public partial interface CPhysImpact : CPointEntity, ISchemaClass<CPhysImpact> {
   
   public ref float Distance { get; }
   
-  public ref CUtlSymbolLarge DirectionEntityName { get; }
+  public string DirectionEntityName { get; set; }
 
 
 }

@@ -53,6 +53,8 @@ class Writer():
     self.class_value_field_template = open("templates/class_value_field_template.cs", "r").read()
     self.class_fixed_array_field_template = open("templates/class_fixed_array_field_template.cs", "r").read()
     self.class_ptr_field_template = open("templates/class_ptr_field_template.cs", "r").read()
+    self.class_string_field_template = open("templates/class_string_field_template.cs", "r").read()
+    self.class_fixed_string_field_template = open("templates/class_fixed_string_field_template.cs", "r").read()
 
     self.interface_field_template = open("templates/interface_field_template.cs", "r").read()
     self.class_template = open("templates/class_template.cs", "r").read()
@@ -89,6 +91,14 @@ class Writer():
 
         if field_info["IS_NETWORKED"] == "true":
           updators.append(render_template(self.class_updator_template, field_info))
+
+        # Special string cases
+        if field_info["IS_FIXED_CHAR_STRING"]:
+          fields.append(render_template(self.class_fixed_string_field_template, field_info))
+          continue
+        if field_info["IS_CHAR_PTR_STRING"] or field_info["IS_STRING_HANDLE"]:
+          fields.append(render_template(self.class_string_field_template, field_info))
+          continue
 
         if field_info["KIND"] == "fixed_array" and field_info["IMPL_TYPE"] != "SchemaUntypedField":
           fields.append(render_template(self.class_fixed_array_field_template, field_info))
@@ -138,10 +148,19 @@ class Writer():
           field_info["NAME"] = f"{field_info['NAME']}{duplicated_counter}"
         else:
           names.append(field_info["NAME"])
+        field_info["SETTER"] = ""
 
-        field_info["REF"] = "ref " if field_info["IS_VALUE_TYPE"] else ""
+        # Interface type overrides for special string cases
+        if field_info["IS_FIXED_CHAR_STRING"] or field_info["IS_CHAR_PTR_STRING"] or field_info["IS_STRING_HANDLE"]:
+          field_info["REF"] = ""
+          field_info["INTERFACE_TYPE"] = "string"
+          field_info["NULLABLE"] = ""
+          field_info["SETTER"] = " set;"
+        else:
+          field_info["REF"] = "ref " if field_info["IS_VALUE_TYPE"] else ""
+          field_info["NULLABLE"] = "?" if field_info["KIND"] == "ptr" and not field_info["IS_VALUE_TYPE"] and field_info["IMPL_TYPE"] != "SchemaUntypedField" else ""
+
         field_info["COMMENT"] = ""
-        field_info["NULLABLE"] = "?" if field_info["KIND"] == "ptr" and not field_info["IS_VALUE_TYPE"] and field_info["IMPL_TYPE"] != "SchemaUntypedField" else ""
 
         if field_info["IMPL_TYPE"] in erased_generics or field_info["IMPL_TYPE"] == "SchemaUntypedField":
           if "templated" in field:

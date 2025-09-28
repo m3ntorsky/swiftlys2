@@ -18,9 +18,13 @@ internal partial class CMessageEntityImpl : CPointEntityImpl, CMessageEntity {
   public ref int Radius {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x893EADCEA921CA53));
   }
-  public ref CUtlSymbolLarge MessageText {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x893EADCEBA6E5D73));
-  }
+  public string MessageText {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x893EADCEBA6E5D73));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x893EADCEBA6E5D73, value);
+  } 
   public ref bool DrawText {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x893EADCE598871D4));
   }

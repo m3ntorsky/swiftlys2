@@ -15,13 +15,13 @@ public partial interface CNmSoundEvent : CNmEvent, ISchemaClass<CNmSoundEvent> {
   
   public ref CNmEventRelevance_t Relevance { get; }
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref CNmSoundEvent__Position_t Position { get; }
   
-  public ref CUtlString AttachmentName { get; }
+  public string AttachmentName { get; set; }
   
-  public ref CUtlString Tags { get; }
+  public string Tags { get; set; }
   
   public ref bool ContinuePlayingSoundAtDurationEnd { get; }
   

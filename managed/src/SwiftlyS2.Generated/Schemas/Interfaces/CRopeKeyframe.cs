@@ -15,7 +15,7 @@ public partial interface CRopeKeyframe : CBaseModelEntity, ISchemaClass<CRopeKey
   
   public ref ushort RopeFlags { get; }
   
-  public ref CUtlSymbolLarge NextLinkName { get; }
+  public string NextLinkName { get; set; }
   
   public ref short Slack { get; }
   
@@ -27,7 +27,7 @@ public partial interface CRopeKeyframe : CBaseModelEntity, ISchemaClass<CRopeKey
   
   public ref bool ConstrainBetweenEndpoints { get; }
   
-  public ref CUtlSymbolLarge StrRopeMaterialModel { get; }
+  public string StrRopeMaterialModel { get; set; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> RopeMaterialModelIndex { get; }
   

@@ -21,9 +21,13 @@ internal partial class CAnimationGraphVisualizerTextImpl : CAnimationGraphVisual
   public ref Color Color {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x123E08CFD7D017D8));
   }
-  public ref CUtlString Text {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x123E08CFFB9532BE));
-  }
+  public string Text {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x123E08CFFB9532BE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x123E08CFFB9532BE, value);
+  } 
 
 
 }

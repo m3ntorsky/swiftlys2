@@ -15,7 +15,7 @@ public partial interface CGameRules : ISchemaClass<CGameRules> {
   
   public ref CNetworkVarChainer __m_pChainEntity { get; }
   
-  public ISchemaFixedString QuestName { get; }
+  public string QuestName { get; set; }
   
   public ref int QuestPhase { get; }
   

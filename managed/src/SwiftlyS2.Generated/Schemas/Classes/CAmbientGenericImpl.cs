@@ -33,12 +33,20 @@ internal partial class CAmbientGenericImpl : CPointEntityImpl, CAmbientGeneric {
   public ref bool Looping {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD45BE96F4FEBC8C1));
   }
-  public ref CUtlSymbolLarge Sound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD45BE96F5FF1867C));
-  }
-  public ref CUtlSymbolLarge SourceEntName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD45BE96F2FABBF97));
-  }
+  public string Sound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD45BE96F5FF1867C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD45BE96F5FF1867C, value);
+  } 
+  public string SourceEntName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD45BE96F2FABBF97));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD45BE96F2FABBF97, value);
+  } 
   public ref CHandle<CBaseEntity> SoundSource {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xD45BE96FA2036C43));
   }

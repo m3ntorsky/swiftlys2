@@ -13,9 +13,9 @@ public partial interface CMultiLightProxy : CLogicalEntity, ISchemaClass<CMultiL
   static CMultiLightProxy ISchemaClass<CMultiLightProxy>.From(nint handle) => new CMultiLightProxyImpl(handle);
 
   
-  public ref CUtlSymbolLarge LightNameFilter { get; }
+  public string LightNameFilter { get; set; }
   
-  public ref CUtlSymbolLarge LightClassFilter { get; }
+  public string LightClassFilter { get; set; }
   
   public ref float LightRadiusFilter { get; }
   

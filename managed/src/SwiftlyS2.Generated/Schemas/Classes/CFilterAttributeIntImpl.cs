@@ -15,9 +15,13 @@ internal partial class CFilterAttributeIntImpl : CBaseFilterImpl, CFilterAttribu
   public CFilterAttributeIntImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge AttributeName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x7CC26955E63BC84D));
-  }
+  public string AttributeName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7CC26955E63BC84D));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7CC26955E63BC84D, value);
+  } 
 
 
 }

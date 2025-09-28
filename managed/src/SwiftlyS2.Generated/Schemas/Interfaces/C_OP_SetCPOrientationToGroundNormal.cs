@@ -21,7 +21,7 @@ public partial interface C_OP_SetCPOrientationToGroundNormal : CParticleFunction
   
   public ref float TraceOffset { get; }
   
-  public ISchemaFixedString CollisionGroupName { get; }
+  public string CollisionGroupName { get; set; }
   
   public ref ParticleTraceSet_t TraceSet { get; }
   

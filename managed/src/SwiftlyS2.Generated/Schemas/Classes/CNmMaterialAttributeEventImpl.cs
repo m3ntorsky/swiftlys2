@@ -15,9 +15,13 @@ internal partial class CNmMaterialAttributeEventImpl : CNmEventImpl, CNmMaterial
   public CNmMaterialAttributeEventImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString AttributeName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xFC131DA9168F02C));
-  }
+  public string AttributeName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xFC131DA9168F02C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xFC131DA9168F02C, value);
+  } 
   public ref CUtlStringToken AttributeNameToken {
     get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0xFC131DA4C1F86C9));
   }

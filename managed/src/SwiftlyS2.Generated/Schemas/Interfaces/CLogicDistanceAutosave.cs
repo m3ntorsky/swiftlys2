@@ -13,7 +13,7 @@ public partial interface CLogicDistanceAutosave : CLogicalEntity, ISchemaClass<C
   static CLogicDistanceAutosave ISchemaClass<CLogicDistanceAutosave>.From(nint handle) => new CLogicDistanceAutosaveImpl(handle);
 
   
-  public ref CUtlSymbolLarge TargetEntity { get; }
+  public string TargetEntity { get; set; }
   
   public ref float DistanceToPlayer { get; }
   

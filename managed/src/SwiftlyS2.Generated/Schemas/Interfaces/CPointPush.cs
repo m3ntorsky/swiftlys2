@@ -23,7 +23,7 @@ public partial interface CPointPush : CPointEntity, ISchemaClass<CPointPush> {
   
   public ref float ConeOfInfluence { get; }
   
-  public ref CUtlSymbolLarge FilterName { get; }
+  public string FilterName { get; set; }
   
   public ref CHandle<CBaseFilter> Filter { get; }
 

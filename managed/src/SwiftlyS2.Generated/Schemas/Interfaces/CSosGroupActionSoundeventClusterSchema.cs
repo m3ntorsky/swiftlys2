@@ -17,15 +17,15 @@ public partial interface CSosGroupActionSoundeventClusterSchema : CSosGroupActio
   
   public ref float ClusterEpsilon { get; }
   
-  public ref CUtlString ShouldPlayOpvar { get; }
+  public string ShouldPlayOpvar { get; set; }
   
-  public ref CUtlString ShouldPlayClusterChild { get; }
+  public string ShouldPlayClusterChild { get; set; }
   
-  public ref CUtlString ClusterSizeOpvar { get; }
+  public string ClusterSizeOpvar { get; set; }
   
-  public ref CUtlString GroupBoundingBoxMinsOpvar { get; }
+  public string GroupBoundingBoxMinsOpvar { get; set; }
   
-  public ref CUtlString GroupBoundingBoxMaxsOpvar { get; }
+  public string GroupBoundingBoxMaxsOpvar { get; set; }
 
 
 }

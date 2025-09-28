@@ -33,12 +33,20 @@ internal partial class CSoundEventEntityImpl : CBaseEntityImpl, CSoundEventEntit
   public ref float SavedElapsedTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x85BC270C581DEF93));
   }
-  public ref CUtlSymbolLarge SourceEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x85BC270C6C1387C0));
-  }
-  public ref CUtlSymbolLarge AttachmentName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x85BC270C667A37F3));
-  }
+  public string SourceEntityName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x85BC270C6C1387C0));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x85BC270C6C1387C0, value);
+  } 
+  public string AttachmentName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x85BC270C667A37F3));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x85BC270C667A37F3, value);
+  } 
   public SchemaUntypedField OnGUIDChanged {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x85BC270C2173B7A3));
   }
@@ -48,9 +56,13 @@ internal partial class CSoundEventEntityImpl : CBaseEntityImpl, CSoundEventEntit
   public ref float ClientCullRadius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x85BC270CEC099542));
   }
-  public ref CUtlSymbolLarge SoundName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x85BC270CB17EB157));
-  }
+  public string SoundName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x85BC270CB17EB157));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x85BC270CB17EB157, value);
+  } 
   public ref CHandle<CEntityInstance> Source {
     get => ref _Handle.AsRef<CHandle<CEntityInstance>>(Schema.GetOffset(0x85BC270C33D3CD82));
   }

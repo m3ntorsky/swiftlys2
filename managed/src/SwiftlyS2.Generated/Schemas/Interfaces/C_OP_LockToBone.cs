@@ -25,7 +25,7 @@ public partial interface C_OP_LockToBone : CParticleFunctionOperator, ISchemaCla
   
   public ref float PrevPosScale { get; }
   
-  public ISchemaFixedString HitboxSetName { get; }
+  public string HitboxSetName { get; set; }
   
   public ref bool Rigid { get; }
   

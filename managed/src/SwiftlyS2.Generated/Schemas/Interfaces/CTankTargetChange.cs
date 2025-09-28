@@ -16,7 +16,7 @@ public partial interface CTankTargetChange : CPointEntity, ISchemaClass<CTankTar
   // CVariantBase< CVariantDefaultAllocator >
   public SchemaUntypedField NewTarget { get; }
   
-  public ref CUtlSymbolLarge NewTargetName { get; }
+  public string NewTargetName { get; set; }
 
 
 }

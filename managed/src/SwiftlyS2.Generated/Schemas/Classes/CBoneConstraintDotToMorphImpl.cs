@@ -15,15 +15,27 @@ internal partial class CBoneConstraintDotToMorphImpl : CBoneConstraintBaseImpl, 
   public CBoneConstraintDotToMorphImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString BoneName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x75939F077559AC1F));
-  }
-  public ref CUtlString TargetBoneName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x75939F07CBA1BE4A));
-  }
-  public ref CUtlString MorphChannelName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x75939F0777272AE4));
-  }
+  public string BoneName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x75939F077559AC1F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x75939F077559AC1F, value);
+  } 
+  public string TargetBoneName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x75939F07CBA1BE4A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x75939F07CBA1BE4A, value);
+  } 
+  public string MorphChannelName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x75939F0777272AE4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x75939F0777272AE4, value);
+  } 
 public ISchemaFixedArray<float> Remap {
     get => new SchemaFixedArray<float>(_Handle, 0x75939F07BE3DB1A0, 4, 4, 4);
   }

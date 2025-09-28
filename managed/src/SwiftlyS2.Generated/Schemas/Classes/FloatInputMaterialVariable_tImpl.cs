@@ -15,9 +15,13 @@ internal partial class FloatInputMaterialVariable_tImpl : SchemaClass, FloatInpu
   public FloatInputMaterialVariable_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString StrVariable {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xEFEA50FDA52C3390));
-  }
+  public string StrVariable {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xEFEA50FDA52C3390));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xEFEA50FDA52C3390, value);
+  } 
   public CParticleCollectionFloatInput Input {
     get => new CParticleCollectionFloatInputImpl(_Handle + Schema.GetOffset(0xEFEA50FD1D4B7FFD));
   }

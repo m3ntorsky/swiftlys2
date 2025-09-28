@@ -15,9 +15,13 @@ internal partial class CFuncMonitorImpl : CFuncBrushImpl, CFuncMonitor {
   public CFuncMonitorImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString TargetCamera {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x17F9564ADE5A6027));
-  }
+  public string TargetCamera {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x17F9564ADE5A6027));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x17F9564ADE5A6027, value);
+  } 
   public ref int ResolutionEnum {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x17F9564A7A397BAA));
   }
@@ -27,9 +31,13 @@ internal partial class CFuncMonitorImpl : CFuncBrushImpl, CFuncMonitor {
   public ref bool UseUniqueColorTarget {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x17F9564A53B28E5B));
   }
-  public ref CUtlString BrushModelName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x17F9564A85323213));
-  }
+  public string BrushModelName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x17F9564A85323213));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x17F9564A85323213, value);
+  } 
   public ref CHandle<CBaseEntity> TargetCamera1 {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x17F9564ACC7D5969));
   }

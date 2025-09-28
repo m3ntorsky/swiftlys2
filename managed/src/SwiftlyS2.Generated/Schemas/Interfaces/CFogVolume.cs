@@ -13,11 +13,11 @@ public partial interface CFogVolume : CServerOnlyModelEntity, ISchemaClass<CFogV
   static CFogVolume ISchemaClass<CFogVolume>.From(nint handle) => new CFogVolumeImpl(handle);
 
   
-  public ref CUtlSymbolLarge FogName { get; }
+  public string FogName { get; set; }
   
-  public ref CUtlSymbolLarge PostProcessName { get; }
+  public string PostProcessName { get; set; }
   
-  public ref CUtlSymbolLarge ColorCorrectionName { get; }
+  public string ColorCorrectionName { get; set; }
   
   public ref bool Disabled { get; }
   

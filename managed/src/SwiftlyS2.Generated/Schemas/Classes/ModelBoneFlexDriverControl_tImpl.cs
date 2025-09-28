@@ -18,9 +18,13 @@ internal partial class ModelBoneFlexDriverControl_tImpl : SchemaClass, ModelBone
   public ref ModelBoneFlexComponent_t BoneComponent {
     get => ref _Handle.AsRef<ModelBoneFlexComponent_t>(Schema.GetOffset(0x7DDCB3413C2E9E9E));
   }
-  public ref CUtlString FlexController {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x7DDCB341EDF88AAA));
-  }
+  public string FlexController {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7DDCB341EDF88AAA));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7DDCB341EDF88AAA, value);
+  } 
   public ref uint FlexControllerToken {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x7DDCB341996814FF));
   }

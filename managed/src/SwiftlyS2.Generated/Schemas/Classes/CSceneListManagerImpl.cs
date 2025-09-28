@@ -18,9 +18,13 @@ internal partial class CSceneListManagerImpl : CLogicalEntityImpl, CSceneListMan
   public ref CUtlVector<CHandle<CSceneListManager>> ListManagers {
     get => ref _Handle.AsRef<CUtlVector<CHandle<CSceneListManager>>>(Schema.GetOffset(0x6DF51C6DAD7882DF));
   }
-public ISchemaFixedArray<CUtlSymbolLarge> Scenes {
-    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0x6DF51C6D967363E8, 16, 8, 8);
-  }
+  public string Scenes {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6DF51C6D967363E8));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6DF51C6D967363E8, value);
+  } 
 public ISchemaFixedArray<CHandle<CBaseEntity>> Scenes1 {
     get => new SchemaFixedArray<CHandle<CBaseEntity>>(_Handle, 0x6DF51C6D2B7EE872, 16, 4, 4);
   }

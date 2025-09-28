@@ -13,7 +13,7 @@ public partial interface PermModelData_t : ISchemaClass<PermModelData_t> {
   static PermModelData_t ISchemaClass<PermModelData_t>.From(nint handle) => new PermModelData_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public PermModelInfo_t ModelInfo { get; }
   

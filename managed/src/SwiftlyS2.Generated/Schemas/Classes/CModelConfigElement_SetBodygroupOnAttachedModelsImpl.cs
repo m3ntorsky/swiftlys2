@@ -15,9 +15,13 @@ internal partial class CModelConfigElement_SetBodygroupOnAttachedModelsImpl : CM
   public CModelConfigElement_SetBodygroupOnAttachedModelsImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString GroupName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xCC9BDB84E0A55E67));
-  }
+  public string GroupName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xCC9BDB84E0A55E67));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xCC9BDB84E0A55E67, value);
+  } 
   public ref int Choice {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xCC9BDB847CC11192));
   }

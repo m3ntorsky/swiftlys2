@@ -19,9 +19,9 @@ public partial interface SkeletonAnimCapture_t : ISchemaClass<SkeletonAnimCaptur
   
   public ref CUtlVector<uint> ImportedCollision { get; }
   
-  public ref CUtlString ModelName { get; }
+  public string ModelName { get; set; }
   
-  public ref CUtlString CaptureName { get; }
+  public string CaptureName { get; set; }
   
   // CUtlVector< SkeletonAnimCapture_t::Bone_t >
   public ref CUtlVector ModelBindPose { get; }

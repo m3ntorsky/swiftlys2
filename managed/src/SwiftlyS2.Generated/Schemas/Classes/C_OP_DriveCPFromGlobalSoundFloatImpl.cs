@@ -33,15 +33,27 @@ internal partial class C_OP_DriveCPFromGlobalSoundFloatImpl : CParticleFunctionP
   public ref float OutputMax {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1E3FE63051A0E8C4));
   }
-  public ref CUtlString StackName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x1E3FE6308C81C05C));
-  }
-  public ref CUtlString OperatorName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x1E3FE63091CAF75E));
-  }
-  public ref CUtlString FieldName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x1E3FE6300A25F4C4));
-  }
+  public string StackName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1E3FE6308C81C05C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1E3FE6308C81C05C, value);
+  } 
+  public string OperatorName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1E3FE63091CAF75E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1E3FE63091CAF75E, value);
+  } 
+  public string FieldName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1E3FE6300A25F4C4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1E3FE6300A25F4C4, value);
+  } 
 
 
 }

@@ -15,12 +15,20 @@ internal partial class CWorldCompositionChunkReferenceElement_tImpl : SchemaClas
   public CWorldCompositionChunkReferenceElement_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString StrMapToLoad {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x9B80004DE87F0C1B));
-  }
-  public ref CUtlString StrLandmarkName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x9B80004DE0BB30D3));
-  }
+  public string StrMapToLoad {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9B80004DE87F0C1B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9B80004DE87F0C1B, value);
+  } 
+  public string StrLandmarkName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9B80004DE0BB30D3));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9B80004DE0BB30D3, value);
+  } 
 
 
 }

@@ -15,9 +15,13 @@ internal partial class CFilterEnemyImpl : CBaseFilterImpl, CFilterEnemy {
   public CFilterEnemyImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge EnemyName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x23F92540C9E922A8));
-  }
+  public string EnemyName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x23F92540C9E922A8));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x23F92540C9E922A8, value);
+  } 
   public ref float Radius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x23F925405ACFC08D));
   }
@@ -27,9 +31,13 @@ internal partial class CFilterEnemyImpl : CBaseFilterImpl, CFilterEnemy {
   public ref int MaxSquadmatesPerEnemy {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x23F925407AA226A0));
   }
-  public ref CUtlSymbolLarge PlayerName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x23F92540DE61DD3B));
-  }
+  public string PlayerName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x23F92540DE61DD3B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x23F92540DE61DD3B, value);
+  } 
 
 
 }

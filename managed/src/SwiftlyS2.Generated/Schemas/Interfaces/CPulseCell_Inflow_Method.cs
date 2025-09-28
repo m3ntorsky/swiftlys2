@@ -16,7 +16,7 @@ public partial interface CPulseCell_Inflow_Method : CPulseCell_Inflow_BaseEntryp
   // PulseSymbol_t
   public SchemaUntypedField MethodName { get; }
   
-  public ref CUtlString Description { get; }
+  public string Description { get; set; }
   
   public ref bool IsPublic { get; }
   

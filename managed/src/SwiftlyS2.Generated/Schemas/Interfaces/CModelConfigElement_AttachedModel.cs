@@ -13,9 +13,9 @@ public partial interface CModelConfigElement_AttachedModel : CModelConfigElement
   static CModelConfigElement_AttachedModel ISchemaClass<CModelConfigElement_AttachedModel>.From(nint handle) => new CModelConfigElement_AttachedModelImpl(handle);
 
   
-  public ref CUtlString InstanceName { get; }
+  public string InstanceName { get; set; }
   
-  public ref CUtlString EntityClass { get; }
+  public string EntityClass { get; set; }
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }
   
@@ -23,9 +23,9 @@ public partial interface CModelConfigElement_AttachedModel : CModelConfigElement
   
   public ref QAngle AngOffset { get; }
   
-  public ref CUtlString AttachmentName { get; }
+  public string AttachmentName { get; set; }
   
-  public ref CUtlString LocalAttachmentOffsetName { get; }
+  public string LocalAttachmentOffsetName { get; set; }
   
   public ref ModelConfigAttachmentType_t AttachmentType { get; }
   
@@ -37,9 +37,9 @@ public partial interface CModelConfigElement_AttachedModel : CModelConfigElement
   
   public ref bool AcceptParentMaterialDrivenDecals { get; }
   
-  public ref CUtlString BodygroupOnOtherModels { get; }
+  public string BodygroupOnOtherModels { get; set; }
   
-  public ref CUtlString MaterialGroupOnOtherModels { get; }
+  public string MaterialGroupOnOtherModels { get; set; }
 
 
 }

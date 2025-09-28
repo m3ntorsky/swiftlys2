@@ -24,9 +24,13 @@ internal partial class CInfoFanImpl : CPointEntityImpl, CInfoFan {
   public ref float CurveDistRange {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1372EEA3EE91456F));
   }
-  public ref CUtlSymbolLarge FanForceCurveString {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1372EEA3CC493A61));
-  }
+  public string FanForceCurveString {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1372EEA3CC493A61));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1372EEA3CC493A61, value);
+  } 
 
   public void FanForceMaxRadiusUpdated() {
     Schema.Update(_Handle, 0x1372EEA33EA45A67);

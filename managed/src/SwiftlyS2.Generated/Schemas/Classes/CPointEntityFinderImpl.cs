@@ -18,15 +18,23 @@ internal partial class CPointEntityFinderImpl : CBaseEntityImpl, CPointEntityFin
   public ref CHandle<CBaseEntity> Entity {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xC59CB1336EBADCB0));
   }
-  public ref CUtlSymbolLarge FilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC59CB13309C86445));
-  }
+  public string FilterName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC59CB13309C86445));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC59CB13309C86445, value);
+  } 
   public ref CHandle<CBaseFilter> Filter {
     get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0xC59CB13345D9E0B1));
   }
-  public ref CUtlSymbolLarge RefName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC59CB1339640D172));
-  }
+  public string RefName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC59CB1339640D172));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC59CB1339640D172, value);
+  } 
   public ref CHandle<CBaseEntity> Reference {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xC59CB1338100A1A4));
   }

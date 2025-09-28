@@ -24,9 +24,13 @@ internal partial class CColorCorrectionVolumeImpl : CBaseTriggerImpl, CColorCorr
   public ref float Weight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x78A9E01BBF415739));
   }
-public ISchemaFixedString LookupFilename {
-    get => new SchemaFixedString(_Handle, 0x78A9E01B2611A2C6, 512, 1, 1);
-  }
+public string LookupFilename {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x78A9E01B2611A2C6);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x78A9E01B2611A2C6, value, 512);
+  } 
   public ref float LastEnterWeight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x78A9E01B2F53D64D));
   }

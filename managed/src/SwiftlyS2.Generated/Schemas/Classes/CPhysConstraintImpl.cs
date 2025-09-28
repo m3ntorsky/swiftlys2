@@ -15,27 +15,47 @@ internal partial class CPhysConstraintImpl : CLogicalEntityImpl, CPhysConstraint
   public CPhysConstraintImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge NameAttach1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB17225456776530A));
-  }
-  public ref CUtlSymbolLarge NameAttach2 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB172254566765177));
-  }
+  public string NameAttach1 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB17225456776530A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB17225456776530A, value);
+  } 
+  public string NameAttach2 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB172254566765177));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB172254566765177, value);
+  } 
   public ref CHandle<CBaseEntity> Attach1 {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xB1722545384EDC59));
   }
   public ref CHandle<CBaseEntity> Attach2 {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xB1722545354ED7A0));
   }
-  public ref CUtlSymbolLarge NameAttachment1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB172254517A81C36));
-  }
-  public ref CUtlSymbolLarge NameAttachment2 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB172254516A81AA3));
-  }
-  public ref CUtlSymbolLarge BreakSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB17225456CFE49F7));
-  }
+  public string NameAttachment1 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB172254517A81C36));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB172254517A81C36, value);
+  } 
+  public string NameAttachment2 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB172254516A81AA3));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB172254516A81AA3, value);
+  } 
+  public string BreakSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB17225456CFE49F7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB17225456CFE49F7, value);
+  } 
   public ref float ForceLimit {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB1722545BA45B8F7));
   }

@@ -15,9 +15,13 @@ internal partial class CParticleSystemImpl : CBaseModelEntityImpl, CParticleSyst
   public CParticleSystemImpl(nint handle) : base(handle) {
   }
 
-public ISchemaFixedString SnapshotFileName {
-    get => new SchemaFixedString(_Handle, 0x8F6D2B258D2636C1, 512, 1, 1);
-  }
+public string SnapshotFileName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x8F6D2B258D2636C1);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x8F6D2B258D2636C1, value, 512);
+  } 
   public ref bool Active {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8F6D2B258334208F));
   }
@@ -63,12 +67,20 @@ public ISchemaFixedArray<CHandle<CBaseEntity>> ControlPointEnts {
   public ref bool StartActive {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8F6D2B25953CBC21));
   }
-  public ref CUtlSymbolLarge EffectName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8F6D2B2582D2BFC7));
-  }
-public ISchemaFixedArray<CUtlSymbolLarge> ControlPointNames {
-    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0x8F6D2B258DBFEC78, 64, 8, 8);
-  }
+  public string EffectName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8F6D2B2582D2BFC7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8F6D2B2582D2BFC7, value);
+  } 
+  public string ControlPointNames {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8F6D2B258DBFEC78));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8F6D2B258DBFEC78, value);
+  } 
   public ref int DataCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8F6D2B258DC46F82));
   }

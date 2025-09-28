@@ -18,9 +18,13 @@ internal partial class CCSBotImpl : CBotImpl, CCSBot {
   public ref Vector EyePosition {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x1CFE165D847A3605));
   }
-public ISchemaFixedString Name {
-    get => new SchemaFixedString(_Handle, 0x1CFE165D4D8F5786, 64, 1, 1);
-  }
+public string Name {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x1CFE165D4D8F5786);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x1CFE165D4D8F5786, value, 64);
+  } 
   public ref float CombatRange {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1CFE165D7FF44CAE));
   }
@@ -222,9 +226,13 @@ public ISchemaFixedArray<float> PlayerTravelDistance {
   public ref bool LookAtSpotAttack {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1CFE165D89782103));
   }
-  public ref CString LookAtDesc {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0x1CFE165D1BCD290E));
-  }
+  public string LookAtDesc {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1CFE165D1BCD290E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1CFE165D1BCD290E, value);
+  } 
   public ref float PeripheralTimestamp {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1CFE165DEABBC23F));
   }

@@ -13,7 +13,7 @@ public partial interface C_INIT_InitialRepulsionVelocity : CParticleFunctionInit
   static C_INIT_InitialRepulsionVelocity ISchemaClass<C_INIT_InitialRepulsionVelocity>.From(nint handle) => new C_INIT_InitialRepulsionVelocityImpl(handle);
 
   
-  public ISchemaFixedString CollisionGroupName { get; }
+  public string CollisionGroupName { get; set; }
   
   public ref ParticleTraceSet_t TraceSet { get; }
   

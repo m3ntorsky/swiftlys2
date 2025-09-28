@@ -17,7 +17,7 @@ public partial interface RnShapeDesc_t : ISchemaClass<RnShapeDesc_t> {
   
   public ref uint SurfacePropertyIndex { get; }
   
-  public ref CUtlString UserFriendlyName { get; }
+  public string UserFriendlyName { get; set; }
   
   public ref bool UserFriendlyNameSealed { get; }
   

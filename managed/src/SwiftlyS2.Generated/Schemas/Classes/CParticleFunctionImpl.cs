@@ -60,9 +60,13 @@ internal partial class CParticleFunctionImpl : SchemaClass, CParticleFunction {
   public ref bool DisableOperator {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4E0CACB49F141CC3));
   }
-  public ref CUtlString Notes {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x4E0CACB41DD3144A));
-  }
+  public string Notes {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x4E0CACB41DD3144A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x4E0CACB41DD3144A, value);
+  } 
 
 
 }

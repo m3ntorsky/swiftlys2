@@ -13,7 +13,7 @@ public partial interface CPulseCell_PlaySequence : CPulseCell_BaseYieldingInflow
   static CPulseCell_PlaySequence ISchemaClass<CPulseCell_PlaySequence>.From(nint handle) => new CPulseCell_PlaySequenceImpl(handle);
 
   
-  public ref CUtlString SequenceName { get; }
+  public string SequenceName { get; set; }
   
   public PulseNodeDynamicOutflows_t PulseAnimEvents { get; }
   

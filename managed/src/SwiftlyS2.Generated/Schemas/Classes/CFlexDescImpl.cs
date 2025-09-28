@@ -15,9 +15,13 @@ internal partial class CFlexDescImpl : SchemaClass, CFlexDesc {
   public CFlexDescImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Facs {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF8B9C4900514A8FF));
-  }
+  public string Facs {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF8B9C4900514A8FF));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF8B9C4900514A8FF, value);
+  } 
 
 
 }

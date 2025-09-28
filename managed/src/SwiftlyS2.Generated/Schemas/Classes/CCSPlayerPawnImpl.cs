@@ -57,12 +57,20 @@ internal partial class CCSPlayerPawnImpl : CCSPlayerPawnBaseImpl, CCSPlayerPawn 
   public ref bool HasFemaleVoice {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB7E7752FF));
   }
-  public ref CUtlString StrVOPrefix {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xC7614AAB86FA355B));
-  }
-public ISchemaFixedString LastPlaceName {
-    get => new SchemaFixedString(_Handle, 0xC7614AAB4C28E3A0, 18, 1, 1);
-  }
+  public string StrVOPrefix {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC7614AAB86FA355B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC7614AAB86FA355B, value);
+  } 
+public string LastPlaceName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xC7614AAB4C28E3A0);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xC7614AAB4C28E3A0, value, 18);
+  } 
   public ref bool InHostageResetZone {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB5C3C71CC));
   }
@@ -159,9 +167,13 @@ public ISchemaFixedString LastPlaceName {
   public ref Vector RagdollDamagePosition {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC7614AAB29671362));
   }
-public ISchemaFixedString RagdollDamageWeaponName {
-    get => new SchemaFixedString(_Handle, 0xC7614AABDAAFA519, 64, 1, 1);
-  }
+public string RagdollDamageWeaponName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xC7614AABDAAFA519);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xC7614AABDAAFA519, value, 64);
+  } 
   public ref bool RagdollDamageHeadshot {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB324979E7));
   }

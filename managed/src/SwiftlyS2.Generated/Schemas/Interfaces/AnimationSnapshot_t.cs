@@ -15,7 +15,7 @@ public partial interface AnimationSnapshot_t : AnimationSnapshotBase_t, ISchemaC
   
   public ref int EntIndex { get; }
   
-  public ref CUtlString ModelName { get; }
+  public string ModelName { get; set; }
 
 
 }

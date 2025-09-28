@@ -17,7 +17,7 @@ public partial interface CSoundOpvarSetPathCornerEntity : CSoundOpvarSetPointEnt
   
   public ref float DistMaxSqr { get; }
   
-  public ref CUtlSymbolLarge PathCornerEntityName { get; }
+  public string PathCornerEntityName { get; set; }
 
 
 }

@@ -19,7 +19,7 @@ public partial interface CClothSettingsAnimTag : CAnimTagBase, ISchemaClass<CClo
   
   public ref float EaseOut { get; }
   
-  public ref CUtlString VertexSet { get; }
+  public string VertexSet { get; set; }
 
 
 }

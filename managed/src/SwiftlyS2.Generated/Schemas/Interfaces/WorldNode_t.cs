@@ -43,7 +43,7 @@ public partial interface WorldNode_t : ISchemaClass<WorldNode_t> {
   
   public ref CUtlVector<byte> SceneObjectLayerIndices { get; }
   
-  public ref CUtlString GrassFileName { get; }
+  public string GrassFileName { get; set; }
   
   public BakedLightingInfo_t NodeLightingInfo { get; }
   

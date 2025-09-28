@@ -16,7 +16,7 @@ public partial interface CPulse_PublicOutput : ISchemaClass<CPulse_PublicOutput>
   // PulseSymbol_t
   public SchemaUntypedField Name { get; }
   
-  public ref CUtlString Description { get; }
+  public string Description { get; set; }
   
   // CUtlLeanVector< CPulseRuntimeMethodArg >
   public SchemaUntypedField Args { get; }

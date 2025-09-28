@@ -114,9 +114,13 @@ internal partial class CPhysicsPropImpl : CBreakablePropImpl, CPhysicsProp {
   public ref CPhysicsProp__CrateType_t CrateType {
     get => ref _Handle.AsRef<CPhysicsProp__CrateType_t>(Schema.GetOffset(0xC3FD37FE5B05CA48));
   }
-public ISchemaFixedArray<CUtlSymbolLarge> StrItemClass {
-    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0xC3FD37FE35D963A1, 4, 8, 8);
-  }
+  public string StrItemClass {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC3FD37FE35D963A1));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC3FD37FE35D963A1, value);
+  } 
 public ISchemaFixedArray<int> ItemCount {
     get => new SchemaFixedArray<int>(_Handle, 0xC3FD37FEA5886501, 4, 4, 4);
   }

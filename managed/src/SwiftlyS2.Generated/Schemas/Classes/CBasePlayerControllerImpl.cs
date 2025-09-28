@@ -42,12 +42,20 @@ internal partial class CBasePlayerControllerImpl : CBaseEntityImpl, CBasePlayerC
   public ref PlayerConnectedState Connected {
     get => ref _Handle.AsRef<PlayerConnectedState>(Schema.GetOffset(0x3979FF6E97963D8B));
   }
-public ISchemaFixedString PlayerName {
-    get => new SchemaFixedString(_Handle, 0x3979FF6EDE61DD3B, 128, 1, 1);
-  }
-  public ref CUtlString NetworkIDString {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3979FF6E0EA4B3D6));
-  }
+public string PlayerName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x3979FF6EDE61DD3B);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x3979FF6EDE61DD3B, value, 128);
+  } 
+  public string NetworkIDString {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x3979FF6E0EA4B3D6));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x3979FF6E0EA4B3D6, value);
+  } 
   public ref float LerpTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x3979FF6E9FF4229D));
   }

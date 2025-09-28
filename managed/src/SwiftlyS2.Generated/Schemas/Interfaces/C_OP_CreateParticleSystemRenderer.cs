@@ -20,7 +20,7 @@ public partial interface C_OP_CreateParticleSystemRenderer : CParticleFunctionRe
   // CUtlLeanVector< CPAssignment_t >
   public SchemaUntypedField CPs { get; }
   
-  public ref CUtlString ParticleConfig { get; }
+  public string ParticleConfig { get; set; }
   
   public CPerParticleVecInput AggregationPos { get; }
 

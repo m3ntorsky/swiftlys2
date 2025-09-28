@@ -23,19 +23,19 @@ public partial interface CTriggerSndSosOpvar : CBaseTrigger, ISchemaClass<CTrigg
   
   public ref float MaxVal { get; }
   
-  public ref CUtlSymbolLarge OpvarName { get; }
+  public string OpvarName { get; set; }
   
-  public ref CUtlSymbolLarge StackName { get; }
+  public string StackName { get; set; }
   
-  public ref CUtlSymbolLarge OperatorName { get; }
+  public string OperatorName { get; set; }
   
   public ref bool VolIs2D { get; }
   
-  public ISchemaFixedString OpvarNameChar { get; }
+  public string OpvarNameChar { get; set; }
   
-  public ISchemaFixedString StackNameChar { get; }
+  public string StackNameChar { get; set; }
   
-  public ISchemaFixedString OperatorNameChar { get; }
+  public string OperatorNameChar { get; set; }
   
   public ref Vector VecNormPos { get; }
   

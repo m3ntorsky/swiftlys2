@@ -15,9 +15,13 @@ internal partial class CAnimGraphDebugReplayImpl : SchemaClass, CAnimGraphDebugR
   public CAnimGraphDebugReplayImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString AnimGraphFileName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x31D5349314D2CC69));
-  }
+  public string AnimGraphFileName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x31D5349314D2CC69));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x31D5349314D2CC69, value);
+  } 
   public ref CUtlVector FrameList {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x31D5349393EB99F2));
   }

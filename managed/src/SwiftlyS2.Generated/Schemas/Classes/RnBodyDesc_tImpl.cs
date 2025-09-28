@@ -15,9 +15,13 @@ internal partial class RnBodyDesc_tImpl : SchemaClass, RnBodyDesc_t {
   public RnBodyDesc_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString DebugName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB8BC96379D265F86));
-  }
+  public string DebugName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB8BC96379D265F86));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB8BC96379D265F86, value);
+  } 
   public ref Vector Position {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xB8BC9637BD6A6C9E));
   }

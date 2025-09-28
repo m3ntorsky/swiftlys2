@@ -23,7 +23,7 @@ public partial interface SceneObject_t : ISchemaClass<SceneObject_t> {
   
   public ref Vector4D TintColor { get; }
   
-  public ref CUtlString Skin { get; }
+  public string Skin { get; set; }
   
   public ref ObjectTypeFlags_t ObjectTypeFlags { get; }
   

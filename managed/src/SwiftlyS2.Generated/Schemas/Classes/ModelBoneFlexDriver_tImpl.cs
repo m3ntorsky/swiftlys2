@@ -15,9 +15,13 @@ internal partial class ModelBoneFlexDriver_tImpl : SchemaClass, ModelBoneFlexDri
   public ModelBoneFlexDriver_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString BoneName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xBCBDE5AAFDEE0E0C));
-  }
+  public string BoneName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBCBDE5AAFDEE0E0C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBCBDE5AAFDEE0E0C, value);
+  } 
   public ref uint BoneNameToken {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xBCBDE5AA44D1E369));
   }

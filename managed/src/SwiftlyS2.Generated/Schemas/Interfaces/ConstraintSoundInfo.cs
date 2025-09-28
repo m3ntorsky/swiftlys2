@@ -19,11 +19,11 @@ public partial interface ConstraintSoundInfo : ISchemaClass<ConstraintSoundInfo>
   
   public ref Vector ForwardAxis { get; }
   
-  public ref CUtlSymbolLarge TravelSoundFwd { get; }
+  public string TravelSoundFwd { get; set; }
   
-  public ref CUtlSymbolLarge TravelSoundBack { get; }
+  public string TravelSoundBack { get; set; }
   
-  public ISchemaFixedArray<CUtlSymbolLarge> ReversalSounds { get; }
+  public string ReversalSounds { get; set; }
   
   public ref bool PlayTravelSound { get; }
   

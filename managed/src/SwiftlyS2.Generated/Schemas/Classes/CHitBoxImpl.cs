@@ -15,15 +15,27 @@ internal partial class CHitBoxImpl : SchemaClass, CHitBox {
   public CHitBoxImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x97E3DD244D8F5786));
-  }
-  public ref CUtlString SurfaceProperty {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x97E3DD241A25534C));
-  }
-  public ref CUtlString BoneName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x97E3DD247559AC1F));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x97E3DD244D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x97E3DD244D8F5786, value);
+  } 
+  public string SurfaceProperty {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x97E3DD241A25534C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x97E3DD241A25534C, value);
+  } 
+  public string BoneName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x97E3DD247559AC1F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x97E3DD247559AC1F, value);
+  } 
   public ref Vector MinBounds {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x97E3DD24114799FE));
   }

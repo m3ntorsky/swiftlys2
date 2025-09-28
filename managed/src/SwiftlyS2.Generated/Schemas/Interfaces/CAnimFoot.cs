@@ -13,7 +13,7 @@ public partial interface CAnimFoot : ISchemaClass<CAnimFoot> {
   static CAnimFoot ISchemaClass<CAnimFoot>.From(nint handle) => new CAnimFootImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref Vector BallOffset { get; }
   

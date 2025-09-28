@@ -15,18 +15,26 @@ internal partial class CEnvLaserImpl : CBeamImpl, CEnvLaser {
   public CEnvLaserImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge LaserTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x83A2D3C8C257F4D));
-  }
+  public string LaserTarget {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x83A2D3C8C257F4D));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x83A2D3C8C257F4D, value);
+  } 
   public CSprite? Sprite {
     get {
       var ptr = _Handle.Read<nint>(Schema.GetOffset(0x83A2D3CEFBFA166));
       return ptr.IsValidPtr() ? new CSpriteImpl(ptr) : null;
     }
   }
-  public ref CUtlSymbolLarge SpriteName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x83A2D3C096530FF));
-  }
+  public string SpriteName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x83A2D3C096530FF));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x83A2D3C096530FF, value);
+  } 
   public ref Vector FirePosition {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x83A2D3C2A7C404E));
   }

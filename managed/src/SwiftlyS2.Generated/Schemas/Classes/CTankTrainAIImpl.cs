@@ -24,18 +24,34 @@ internal partial class CTankTrainAIImpl : CPointEntityImpl, CTankTrainAI {
   public ref int SoundPlaying {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x2582082658CF60D2));
   }
-  public ref CUtlSymbolLarge StartSoundName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x258208263F1AB605));
-  }
-  public ref CUtlSymbolLarge EngineSoundName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2582082627E36CD1));
-  }
-  public ref CUtlSymbolLarge MovementSoundName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x25820826F2195774));
-  }
-  public ref CUtlSymbolLarge TargetEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x25820826F88EC878));
-  }
+  public string StartSoundName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x258208263F1AB605));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x258208263F1AB605, value);
+  } 
+  public string EngineSoundName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x2582082627E36CD1));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x2582082627E36CD1, value);
+  } 
+  public string MovementSoundName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x25820826F2195774));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x25820826F2195774, value);
+  } 
+  public string TargetEntityName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x25820826F88EC878));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x25820826F88EC878, value);
+  } 
 
 
 }

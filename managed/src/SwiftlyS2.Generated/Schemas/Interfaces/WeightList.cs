@@ -13,7 +13,7 @@ public partial interface WeightList : ISchemaClass<WeightList> {
   static WeightList ISchemaClass<WeightList>.From(nint handle) => new WeightListImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref CUtlVector<float> Weights { get; }
 

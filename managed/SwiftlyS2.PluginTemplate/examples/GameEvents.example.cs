@@ -15,7 +15,7 @@ public partial class PluginClassName
     /// The method must take a single parameter that is the game event type, and return a HookResult.
 
     Core.GameEvent.HookPre<EventPlayerJump>((@event) => {
-      Console.WriteLine($"Player {@event.UserIdController.PlayerName.Value}jumped");
+      Console.WriteLine($"Player {@event.UserIdController.PlayerName} jumped");
       return HookResult.Continue;
     });
 

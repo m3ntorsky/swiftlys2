@@ -21,7 +21,7 @@ public partial interface C_OP_ModelDampenMovement : CParticleFunctionOperator, I
   
   public ref bool UseBones { get; }
   
-  public ISchemaFixedString HitboxSetName { get; }
+  public string HitboxSetName { get; set; }
   
   public CPerParticleVecInput PosOffset { get; }
   

@@ -18,18 +18,30 @@ internal partial class CSSDSMsg_LayerBaseImpl : SchemaClass, CSSDSMsg_LayerBase 
   public SceneViewId_t ViewId {
     get => new SceneViewId_tImpl(_Handle + Schema.GetOffset(0x9F18C5E5E976CB25));
   }
-  public ref CUtlString ViewName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x9F18C5E5BA5BBDBB));
-  }
+  public string ViewName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9F18C5E5BA5BBDBB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9F18C5E5BA5BBDBB, value);
+  } 
   public ref ulong LayerId {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x9F18C5E531A19D87));
   }
-  public ref CUtlString LayerName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x9F18C5E55A7163B5));
-  }
-  public ref CUtlString DisplayText {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x9F18C5E5F59D71EE));
-  }
+  public string LayerName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9F18C5E55A7163B5));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9F18C5E55A7163B5, value);
+  } 
+  public string DisplayText {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9F18C5E5F59D71EE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9F18C5E5F59D71EE, value);
+  } 
 
 
 }

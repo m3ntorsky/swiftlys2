@@ -15,7 +15,7 @@ public partial interface ActiveModelConfig_t : ISchemaClass<ActiveModelConfig_t>
   
   public ModelConfigHandle_t Handle { get; }
   
-  public ref CUtlSymbolLarge Name { get; }
+  public string Name { get; set; }
   
   public ref CUtlVector<CHandle<CBaseModelEntity>> AssociatedEntities { get; }
   

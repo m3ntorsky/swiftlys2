@@ -13,9 +13,9 @@ public partial interface CChangeLevel : CBaseTrigger, ISchemaClass<CChangeLevel>
   static CChangeLevel ISchemaClass<CChangeLevel>.From(nint handle) => new CChangeLevelImpl(handle);
 
   
-  public ref CUtlString MapName { get; }
+  public string MapName { get; set; }
   
-  public ref CUtlString LandmarkName { get; }
+  public string LandmarkName { get; set; }
   
   public CEntityIOOutput OnChangeLevel { get; }
   

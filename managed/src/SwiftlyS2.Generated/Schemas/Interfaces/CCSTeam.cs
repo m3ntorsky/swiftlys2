@@ -19,7 +19,7 @@ public partial interface CCSTeam : CTeam, ISchemaClass<CCSTeam> {
   
   public ref bool Surrendered { get; }
   
-  public ISchemaFixedString TeamMatchStat { get; }
+  public string TeamMatchStat { get; set; }
   
   public ref int NumMapVictories { get; }
   
@@ -29,13 +29,13 @@ public partial interface CCSTeam : CTeam, ISchemaClass<CCSTeam> {
   
   public ref int ScoreOvertime { get; }
   
-  public ISchemaFixedString ClanTeamname { get; }
+  public string ClanTeamname { get; set; }
   
   public ref uint ClanID { get; }
   
-  public ISchemaFixedString TeamFlagImage { get; }
+  public string TeamFlagImage { get; set; }
   
-  public ISchemaFixedString TeamLogoImage { get; }
+  public string TeamLogoImage { get; set; }
   
   public ref float NextResourceTime { get; }
   

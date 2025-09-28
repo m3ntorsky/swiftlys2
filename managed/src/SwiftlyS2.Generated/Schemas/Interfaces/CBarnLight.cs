@@ -39,7 +39,7 @@ public partial interface CBarnLight : CBaseModelEntity, ISchemaClass<CBarnLight>
   
   public ref float LuminaireAnisotropy { get; }
   
-  public ref CUtlString LightStyleString { get; }
+  public string LightStyleString { get; set; }
   
   public GameTime_t LightStyleStartTime { get; }
   

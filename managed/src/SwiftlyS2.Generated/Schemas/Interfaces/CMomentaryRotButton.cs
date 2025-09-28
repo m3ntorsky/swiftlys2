@@ -32,7 +32,7 @@ public partial interface CMomentaryRotButton : CRotButton, ISchemaClass<CMomenta
   
   public ref float IdealYaw { get; }
   
-  public ref CUtlSymbolLarge Noise { get; }
+  public string Noise { get; set; }
   
   public ref bool UpdateTarget { get; }
   

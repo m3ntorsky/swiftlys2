@@ -13,7 +13,7 @@ public partial interface IKBoneNameAndIndex_t : ISchemaClass<IKBoneNameAndIndex_
   static IKBoneNameAndIndex_t ISchemaClass<IKBoneNameAndIndex_t>.From(nint handle) => new IKBoneNameAndIndex_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
 
 
 }

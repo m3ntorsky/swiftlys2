@@ -15,9 +15,13 @@ internal partial class CPointGamestatsCounterImpl : CPointEntityImpl, CPointGame
   public CPointGamestatsCounterImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge StrStatisticName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDB27C27354212AB1));
-  }
+  public string StrStatisticName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDB27C27354212AB1));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDB27C27354212AB1, value);
+  } 
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDB27C2733A7C5965));
   }

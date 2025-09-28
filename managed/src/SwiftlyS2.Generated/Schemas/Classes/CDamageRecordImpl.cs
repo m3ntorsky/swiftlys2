@@ -27,12 +27,20 @@ internal partial class CDamageRecordImpl : SchemaClass, CDamageRecord {
   public ref CHandle<CCSPlayerController> PlayerControllerRecipient {
     get => ref _Handle.AsRef<CHandle<CCSPlayerController>>(Schema.GetOffset(0x14928316033B0B25));
   }
-  public ref CUtlString PlayerDamagerName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x149283165AB278AD));
-  }
-  public ref CUtlString PlayerRecipientName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x14928316E6015313));
-  }
+  public string PlayerDamagerName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x149283165AB278AD));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x149283165AB278AD, value);
+  } 
+  public string PlayerRecipientName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x14928316E6015313));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x14928316E6015313, value);
+  } 
   public ref ulong DamagerXuid {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x14928316DAD4D818));
   }

@@ -39,36 +39,64 @@ internal partial class CItemGenericImpl : CItemImpl, CItemGeneric {
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> SpawnParticleEffect {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xE5C051B6576146D5));
   }
-  public ref CUtlSymbolLarge AmbientSoundEffect {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B65DD78861));
-  }
+  public string AmbientSoundEffect {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE5C051B65DD78861));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE5C051B65DD78861, value);
+  } 
   public ref bool AutoStartAmbientSound {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE5C051B678660D41));
   }
-  public ref CUtlSymbolLarge SpawnScriptFunction {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B6BC2C9805));
-  }
+  public string SpawnScriptFunction {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE5C051B6BC2C9805));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE5C051B6BC2C9805, value);
+  } 
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> PickupParticleEffect {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xE5C051B6A61E7280));
   }
-  public ref CUtlSymbolLarge PickupSoundEffect {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B6ECB75E7B));
-  }
-  public ref CUtlSymbolLarge PickupScriptFunction {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B64242F490));
-  }
+  public string PickupSoundEffect {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE5C051B6ECB75E7B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE5C051B6ECB75E7B, value);
+  } 
+  public string PickupScriptFunction {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE5C051B64242F490));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE5C051B64242F490, value);
+  } 
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> TimeoutParticleEffect {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0xE5C051B6FE95C38D));
   }
-  public ref CUtlSymbolLarge TimeoutSoundEffect {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B6F5AD0260));
-  }
-  public ref CUtlSymbolLarge TimeoutScriptFunction {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B6E8BF2F2D));
-  }
-  public ref CUtlSymbolLarge PickupFilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B613C0B032));
-  }
+  public string TimeoutSoundEffect {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE5C051B6F5AD0260));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE5C051B6F5AD0260, value);
+  } 
+  public string TimeoutScriptFunction {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE5C051B6E8BF2F2D));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE5C051B6E8BF2F2D, value);
+  } 
+  public string PickupFilterName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE5C051B613C0B032));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE5C051B613C0B032, value);
+  } 
   public ref CHandle<CBaseFilter> PickupFilter {
     get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0xE5C051B605240E41));
   }
@@ -87,18 +115,26 @@ internal partial class CItemGenericImpl : CItemImpl, CItemGeneric {
   public CEntityIOOutput OnTriggerEndTouch {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0xE5C051B63DA3CB84));
   }
-  public ref CUtlSymbolLarge AllowPickupScriptFunction {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B6DC2DF75F));
-  }
+  public string AllowPickupScriptFunction {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE5C051B6DC2DF75F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE5C051B6DC2DF75F, value);
+  } 
   public ref float PickupRadius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE5C051B64EED9A9D));
   }
   public ref float TriggerRadius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE5C051B6051F7F0F));
   }
-  public ref CUtlSymbolLarge TriggerSoundEffect {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE5C051B67E4EA459));
-  }
+  public string TriggerSoundEffect {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE5C051B67E4EA459));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE5C051B67E4EA459, value);
+  } 
   public ref bool GlowWhenInTrigger {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE5C051B6FCAD755D));
   }

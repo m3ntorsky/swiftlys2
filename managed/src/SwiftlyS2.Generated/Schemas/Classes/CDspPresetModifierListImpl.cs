@@ -15,9 +15,13 @@ internal partial class CDspPresetModifierListImpl : SchemaClass, CDspPresetModif
   public CDspPresetModifierListImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString DspName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x68EE16FD7E9A0D3));
-  }
+  public string DspName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x68EE16FD7E9A0D3));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x68EE16FD7E9A0D3, value);
+  } 
   public ref CUtlVector Modifiers {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x68EE16F541F1439));
   }

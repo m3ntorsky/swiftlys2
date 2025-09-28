@@ -13,7 +13,7 @@ public partial interface ScriptInfo_t : ISchemaClass<ScriptInfo_t> {
   static ScriptInfo_t ISchemaClass<ScriptInfo_t>.From(nint handle) => new ScriptInfo_tImpl(handle);
 
   
-  public ref CUtlString Code { get; }
+  public string Code { get; set; }
   
   // CUtlVector< CAnimParamHandle >
   public ref CUtlVector ParamsModified { get; }

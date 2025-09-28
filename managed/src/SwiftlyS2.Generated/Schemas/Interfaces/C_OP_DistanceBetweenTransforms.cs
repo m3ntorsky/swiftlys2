@@ -31,7 +31,7 @@ public partial interface C_OP_DistanceBetweenTransforms : CParticleFunctionOpera
   
   public ref float LOSScale { get; }
   
-  public ISchemaFixedString CollisionGroupName { get; }
+  public string CollisionGroupName { get; set; }
   
   public ref ParticleTraceSet_t TraceSet { get; }
   

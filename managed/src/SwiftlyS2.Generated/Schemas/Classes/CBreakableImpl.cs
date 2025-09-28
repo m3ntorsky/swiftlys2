@@ -27,18 +27,26 @@ internal partial class CBreakableImpl : CBaseModelEntityImpl, CBreakable {
   public ref Explosions Explosion {
     get => ref _Handle.AsRef<Explosions>(Schema.GetOffset(0xC5CDE3298FD2AD60));
   }
-  public ref CUtlSymbolLarge SpawnObject {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC5CDE329D32D7547));
-  }
+  public string SpawnObject {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC5CDE329D32D7547));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC5CDE329D32D7547, value);
+  } 
   public ref float PressureDelay {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC5CDE3294852270B));
   }
   public ref int MinHealthDmg {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC5CDE32991F14A4A));
   }
-  public ref CUtlSymbolLarge PropData {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC5CDE32958671088));
-  }
+  public string PropData {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC5CDE32958671088));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC5CDE32958671088, value);
+  } 
   public ref float ImpactEnergyScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC5CDE329C66BAC1B));
   }

@@ -45,9 +45,13 @@ internal partial class CAnimDemoCaptureSettingsImpl : SchemaClass, CAnimDemoCapt
   public ref float IkTranslation_MaxQuantizationError {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD4FC7197BF5570E8));
   }
-  public ref CUtlString BaseSequence {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD4FC719704AABA45));
-  }
+  public string BaseSequence {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD4FC719704AABA45));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD4FC719704AABA45, value);
+  } 
   public ref int BaseSequenceFrame {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD4FC71972BAAA932));
   }

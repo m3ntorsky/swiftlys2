@@ -13,7 +13,7 @@ public partial interface CHintMessage : ISchemaClass<CHintMessage> {
   static CHintMessage ISchemaClass<CHintMessage>.From(nint handle) => new CHintMessageImpl(handle);
 
   
-  public ref CString HintString { get; }
+  public string HintString { get; set; }
   
   public ref CUtlVector<CString> Args { get; }
   

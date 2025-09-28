@@ -15,9 +15,13 @@ internal partial class CPointClientUIWorldTextPanelImpl : CPointClientUIWorldPan
   public CPointClientUIWorldTextPanelImpl(nint handle) : base(handle) {
   }
 
-public ISchemaFixedString MessageText {
-    get => new SchemaFixedString(_Handle, 0x9F10465EBA6E5D73, 512, 1, 1);
-  }
+public string MessageText {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x9F10465EBA6E5D73);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x9F10465EBA6E5D73, value, 512);
+  } 
 
   public void MessageTextUpdated() {
     Schema.Update(_Handle, 0x9F10465EBA6E5D73);

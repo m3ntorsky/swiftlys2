@@ -15,9 +15,13 @@ internal partial class CPhysicsBodyGameMarkupImpl : SchemaClass, CPhysicsBodyGam
   public CPhysicsBodyGameMarkupImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString TargetBody {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xA5257571F2C6B554));
-  }
+  public string TargetBody {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA5257571F2C6B554));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA5257571F2C6B554, value);
+  } 
   public ref CGlobalSymbol Tag {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xA5257571218D8313));
   }

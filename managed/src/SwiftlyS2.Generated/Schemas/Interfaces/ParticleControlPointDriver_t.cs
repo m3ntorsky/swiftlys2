@@ -17,13 +17,13 @@ public partial interface ParticleControlPointDriver_t : ISchemaClass<ParticleCon
   
   public ref ParticleAttachment_t AttachType { get; }
   
-  public ref CUtlString AttachmentName { get; }
+  public string AttachmentName { get; set; }
   
   public ref Vector Offset { get; }
   
   public ref QAngle Offset1 { get; }
   
-  public ref CUtlString EntityName { get; }
+  public string EntityName { get; set; }
 
 
 }

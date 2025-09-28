@@ -27,9 +27,13 @@ internal partial class CConstraintSlaveImpl : SchemaClass, CConstraintSlave {
   public ref float Weight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE0E093BC7B81E7AB));
   }
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xE0E093BC63D22D49));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE0E093BC63D22D49));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE0E093BC63D22D49, value);
+  } 
 
 
 }

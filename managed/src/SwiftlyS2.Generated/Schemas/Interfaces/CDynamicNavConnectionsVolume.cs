@@ -13,7 +13,7 @@ public partial interface CDynamicNavConnectionsVolume : CTriggerMultiple, ISchem
   static CDynamicNavConnectionsVolume ISchemaClass<CDynamicNavConnectionsVolume>.From(nint handle) => new CDynamicNavConnectionsVolumeImpl(handle);
 
   
-  public ref CUtlSymbolLarge ConnectionTarget { get; }
+  public string ConnectionTarget { get; set; }
   
   // CUtlVector< DynamicVolumeDef_t >
   public ref CUtlVector Connections { get; }

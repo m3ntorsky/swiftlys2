@@ -15,9 +15,13 @@ internal partial class ScriptInfo_tImpl : SchemaClass, ScriptInfo_t {
   public ScriptInfo_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Code {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDB402399B70C9D94));
-  }
+  public string Code {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDB402399B70C9D94));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDB402399B70C9D94, value);
+  } 
   public ref CUtlVector ParamsModified {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xDB402399E9EAFC30));
   }

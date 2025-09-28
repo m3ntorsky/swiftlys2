@@ -15,33 +15,61 @@ internal partial class CEnvInstructorHintImpl : CPointEntityImpl, CEnvInstructor
   public CEnvInstructorHintImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB2774FF65FE));
-  }
-  public ref CUtlSymbolLarge Replace_Key {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB27CAC8205B));
-  }
-  public ref CUtlSymbolLarge HintTargetEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB270024C1BE));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9C18AB2774FF65FE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9C18AB2774FF65FE, value);
+  } 
+  public string Replace_Key {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9C18AB27CAC8205B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9C18AB27CAC8205B, value);
+  } 
+  public string HintTargetEntity {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9C18AB270024C1BE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9C18AB270024C1BE, value);
+  } 
   public ref int Timeout {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9C18AB272EC6CDDF));
   }
   public ref int DisplayLimit {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9C18AB27271D9139));
   }
-  public ref CUtlSymbolLarge Icon_Onscreen {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB27548D6DF4));
-  }
-  public ref CUtlSymbolLarge Icon_Offscreen {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB274628C556));
-  }
-  public ref CUtlSymbolLarge Caption {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB27BE8E34DD));
-  }
-  public ref CUtlSymbolLarge ActivatorCaption {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB271D0AA53E));
-  }
+  public string Icon_Onscreen {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9C18AB27548D6DF4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9C18AB27548D6DF4, value);
+  } 
+  public string Icon_Offscreen {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9C18AB274628C556));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9C18AB274628C556, value);
+  } 
+  public string Caption {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9C18AB27BE8E34DD));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9C18AB27BE8E34DD, value);
+  } 
+  public string ActivatorCaption {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9C18AB271D0AA53E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9C18AB271D0AA53E, value);
+  } 
   public ref Color Color {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x9C18AB27D7D017D8));
   }
@@ -75,9 +103,13 @@ internal partial class CEnvInstructorHintImpl : CPointEntityImpl, CEnvInstructor
   public ref bool SuppressRest {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9C18AB27A146CD34));
   }
-  public ref CUtlSymbolLarge Binding {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9C18AB2705585C6A));
-  }
+  public string Binding {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9C18AB2705585C6A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9C18AB2705585C6A, value);
+  } 
   public ref bool AllowNoDrawTarget {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9C18AB275B687C32));
   }

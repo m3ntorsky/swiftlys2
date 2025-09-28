@@ -15,11 +15,11 @@ public partial interface CPointEntityFinder : CBaseEntity, ISchemaClass<CPointEn
   
   public ref CHandle<CBaseEntity> Entity { get; }
   
-  public ref CUtlSymbolLarge FilterName { get; }
+  public string FilterName { get; set; }
   
   public ref CHandle<CBaseFilter> Filter { get; }
   
-  public ref CUtlSymbolLarge RefName { get; }
+  public string RefName { get; set; }
   
   public ref CHandle<CBaseEntity> Reference { get; }
   

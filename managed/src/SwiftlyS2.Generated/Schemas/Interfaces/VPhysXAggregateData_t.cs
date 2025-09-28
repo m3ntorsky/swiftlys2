@@ -50,7 +50,7 @@ public partial interface VPhysXAggregateData_t : ISchemaClass<VPhysXAggregateDat
   
   public ref CUtlVector<CUtlString> DebugPartNames { get; }
   
-  public ref CUtlString EmbeddedKeyvalues { get; }
+  public string EmbeddedKeyvalues { get; set; }
 
 
 }

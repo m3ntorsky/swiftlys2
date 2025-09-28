@@ -13,9 +13,9 @@ public partial interface MaterialResourceData_t : ISchemaClass<MaterialResourceD
   static MaterialResourceData_t ISchemaClass<MaterialResourceData_t>.From(nint handle) => new MaterialResourceData_tImpl(handle);
 
   
-  public ref CUtlString MaterialName { get; }
+  public string MaterialName { get; set; }
   
-  public ref CUtlString ShaderName { get; }
+  public string ShaderName { get; set; }
   
   // CUtlVector< MaterialParamInt_t >
   public ref CUtlVector IntParams { get; }

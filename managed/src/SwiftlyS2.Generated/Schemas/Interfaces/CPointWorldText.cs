@@ -13,11 +13,11 @@ public partial interface CPointWorldText : CModelPointEntity, ISchemaClass<CPoin
   static CPointWorldText ISchemaClass<CPointWorldText>.From(nint handle) => new CPointWorldTextImpl(handle);
 
   
-  public ISchemaFixedString MessageText { get; }
+  public string MessageText { get; set; }
   
-  public ISchemaFixedString FontName { get; }
+  public string FontName { get; set; }
   
-  public ISchemaFixedString BackgroundMaterialName { get; }
+  public string BackgroundMaterialName { get; set; }
   
   public ref bool Enabled { get; }
   

@@ -24,9 +24,13 @@ internal partial class C_OP_CreateParticleSystemRendererImpl : CParticleFunction
   public SchemaUntypedField CPs {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xB86C827DE280356F));
   }
-  public ref CUtlString ParticleConfig {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB86C827D467A5C4C));
-  }
+  public string ParticleConfig {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB86C827D467A5C4C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB86C827D467A5C4C, value);
+  } 
   public CPerParticleVecInput AggregationPos {
     get => new CPerParticleVecInputImpl(_Handle + Schema.GetOffset(0xB86C827D49456289));
   }

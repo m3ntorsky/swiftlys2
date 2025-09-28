@@ -15,9 +15,13 @@ internal partial class VecInputMaterialVariable_tImpl : SchemaClass, VecInputMat
   public VecInputMaterialVariable_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString StrVariable {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3A84C75DA52C3390));
-  }
+  public string StrVariable {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x3A84C75DA52C3390));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x3A84C75DA52C3390, value);
+  } 
   public CParticleCollectionVecInput Input {
     get => new CParticleCollectionVecInputImpl(_Handle + Schema.GetOffset(0x3A84C75D1EA0ED5B));
   }

@@ -48,9 +48,13 @@ internal partial class C_INIT_CreateOnModelAtHeightImpl : CParticleFunctionIniti
   public ref bool PreferMovingBoxes {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBB8B79F68F1573EE));
   }
-public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle, 0xBB8B79F66A21BB0E, 128, 1, 1);
-  }
+public string HitboxSetName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xBB8B79F66A21BB0E);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xBB8B79F66A21BB0E, value, 128);
+  } 
   public CParticleCollectionFloatInput HitboxVelocityScale {
     get => new CParticleCollectionFloatInputImpl(_Handle + Schema.GetOffset(0xBB8B79F65BE2EDCC));
   }

@@ -17,7 +17,7 @@ public partial interface CEnvSoundscape : CBaseEntity, ISchemaClass<CEnvSoundsca
   
   public ref float Radius { get; }
   
-  public ref CUtlSymbolLarge SoundEventName { get; }
+  public string SoundEventName { get; set; }
   
   public ref bool OverrideWithEvent { get; }
   
@@ -25,13 +25,13 @@ public partial interface CEnvSoundscape : CBaseEntity, ISchemaClass<CEnvSoundsca
   
   public ref int SoundscapeEntityListId { get; }
   
-  public ISchemaFixedArray<CUtlSymbolLarge> PositionNames { get; }
+  public string PositionNames { get; set; }
   
   public ref CHandle<CEnvSoundscape> ProxySoundscape { get; }
   
   public ref bool Disabled { get; }
   
-  public ref CUtlSymbolLarge SoundscapeName { get; }
+  public string SoundscapeName { get; set; }
   
   public ref uint SoundEventHash { get; }
 

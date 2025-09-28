@@ -13,9 +13,9 @@ public partial interface CPhysMotor : CLogicalEntity, ISchemaClass<CPhysMotor> {
   static CPhysMotor ISchemaClass<CPhysMotor>.From(nint handle) => new CPhysMotorImpl(handle);
 
   
-  public ref CUtlSymbolLarge NameAttach { get; }
+  public string NameAttach { get; set; }
   
-  public ref CUtlSymbolLarge NameAnchor { get; }
+  public string NameAnchor { get; set; }
   
   public ref CHandle<CBaseEntity> AttachedObject { get; }
   

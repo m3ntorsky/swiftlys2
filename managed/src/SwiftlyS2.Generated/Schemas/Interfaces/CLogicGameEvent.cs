@@ -13,7 +13,7 @@ public partial interface CLogicGameEvent : CLogicalEntity, ISchemaClass<CLogicGa
   static CLogicGameEvent ISchemaClass<CLogicGameEvent>.From(nint handle) => new CLogicGameEventImpl(handle);
 
   
-  public ref CUtlSymbolLarge EventName { get; }
+  public string EventName { get; set; }
 
 
 }

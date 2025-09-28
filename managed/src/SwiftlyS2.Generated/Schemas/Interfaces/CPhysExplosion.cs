@@ -21,7 +21,7 @@ public partial interface CPhysExplosion : CPointEntity, ISchemaClass<CPhysExplos
   
   public ref float Radius { get; }
   
-  public ref CUtlSymbolLarge TargetEntityName { get; }
+  public string TargetEntityName { get; set; }
   
   public ref float InnerRadius { get; }
   

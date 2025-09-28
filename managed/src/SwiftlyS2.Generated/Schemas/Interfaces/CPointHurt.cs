@@ -21,7 +21,7 @@ public partial interface CPointHurt : CPointEntity, ISchemaClass<CPointHurt> {
   
   public ref float Delay { get; }
   
-  public ref CUtlSymbolLarge StrTarget { get; }
+  public string StrTarget { get; set; }
   
   public ref CHandle<CBaseEntity> Activator { get; }
 

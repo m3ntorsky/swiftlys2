@@ -15,12 +15,20 @@ internal partial class CAudioAnimTagImpl : CAnimTagBaseImpl, CAudioAnimTag {
   public CAudioAnimTagImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString ClipName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x785914777D84420));
-  }
-  public ref CUtlString AttachmentName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x7859147295DA9CB));
-  }
+  public string ClipName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x785914777D84420));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x785914777D84420, value);
+  } 
+  public string AttachmentName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7859147295DA9CB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7859147295DA9CB, value);
+  } 
   public ref float Volume {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x78591477647E0C9));
   }

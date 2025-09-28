@@ -13,7 +13,7 @@ public partial interface CAnimGraphDebugReplay : ISchemaClass<CAnimGraphDebugRep
   static CAnimGraphDebugReplay ISchemaClass<CAnimGraphDebugReplay>.From(nint handle) => new CAnimGraphDebugReplayImpl(handle);
 
   
-  public ref CUtlString AnimGraphFileName { get; }
+  public string AnimGraphFileName { get; set; }
   
   // CUtlVector< CSmartPtr< CAnimReplayFrame > >
   public ref CUtlVector FrameList { get; }

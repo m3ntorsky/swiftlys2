@@ -13,7 +13,7 @@ public partial interface CMorphData : ISchemaClass<CMorphData> {
   static CMorphData ISchemaClass<CMorphData>.From(nint handle) => new CMorphDataImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   // CUtlVector< CMorphRectData >
   public ref CUtlVector MorphRectDatas { get; }

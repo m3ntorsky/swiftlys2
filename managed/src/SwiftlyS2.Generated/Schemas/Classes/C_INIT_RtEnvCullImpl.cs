@@ -30,9 +30,13 @@ internal partial class C_INIT_RtEnvCullImpl : CParticleFunctionInitializerImpl, 
   public ref bool LifeAdjust {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xEA96DD4FA38568F0));
   }
-public ISchemaFixedString RtEnvName {
-    get => new SchemaFixedString(_Handle, 0xEA96DD4FC32A9775, 128, 1, 1);
-  }
+public string RtEnvName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xEA96DD4FC32A9775);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xEA96DD4FC32A9775, value, 128);
+  } 
   public ref int RTEnvCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xEA96DD4F01881731));
   }

@@ -36,9 +36,13 @@ internal partial class C_OP_DistanceToTransformImpl : CParticleFunctionOperatorI
   public ref bool LOS {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4E4425499C25C2ED));
   }
-public ISchemaFixedString CollisionGroupName {
-    get => new SchemaFixedString(_Handle, 0x4E442549D58A3195, 128, 1, 1);
-  }
+public string CollisionGroupName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x4E442549D58A3195);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x4E442549D58A3195, value, 128);
+  } 
   public ref ParticleTraceSet_t TraceSet {
     get => ref _Handle.AsRef<ParticleTraceSet_t>(Schema.GetOffset(0x4E442549BD26C5B2));
   }

@@ -15,9 +15,13 @@ internal partial class CEntityInstanceImpl : SchemaClass, CEntityInstance {
   public CEntityInstanceImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge PrivateVScripts {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB6DD442EB087F3B2));
-  }
+  public string PrivateVScripts {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB6DD442EB087F3B2));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB6DD442EB087F3B2, value);
+  } 
   public CEntityIdentity? Entity {
     get {
       var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB6DD442EA8A45978));

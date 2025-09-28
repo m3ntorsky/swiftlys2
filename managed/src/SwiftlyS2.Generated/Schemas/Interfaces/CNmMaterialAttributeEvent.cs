@@ -13,7 +13,7 @@ public partial interface CNmMaterialAttributeEvent : CNmEvent, ISchemaClass<CNmM
   static CNmMaterialAttributeEvent ISchemaClass<CNmMaterialAttributeEvent>.From(nint handle) => new CNmMaterialAttributeEventImpl(handle);
 
   
-  public ref CUtlString AttributeName { get; }
+  public string AttributeName { get; set; }
   
   public ref CUtlStringToken AttributeNameToken { get; }
   

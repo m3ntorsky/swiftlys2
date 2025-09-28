@@ -19,7 +19,7 @@ public partial interface CConstraintTarget : ISchemaClass<CConstraintTarget> {
   
   public ref uint BoneHash { get; }
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref float Weight { get; }
   

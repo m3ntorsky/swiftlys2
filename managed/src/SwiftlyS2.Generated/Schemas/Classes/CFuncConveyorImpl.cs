@@ -15,9 +15,13 @@ internal partial class CFuncConveyorImpl : CBaseModelEntityImpl, CFuncConveyor {
   public CFuncConveyorImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge ConveyorModels {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6E29EBA973AE4DBB));
-  }
+  public string ConveyorModels {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6E29EBA973AE4DBB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6E29EBA973AE4DBB, value);
+  } 
   public ref float TransitionDurationSeconds {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6E29EBA9D5E92B1D));
   }

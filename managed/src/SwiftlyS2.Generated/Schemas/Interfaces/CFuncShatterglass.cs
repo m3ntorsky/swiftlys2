@@ -45,13 +45,13 @@ public partial interface CFuncShatterglass : CBaseModelEntity, ISchemaClass<CFun
   
   public ref byte InitialDamageType { get; }
   
-  public ref CUtlSymbolLarge DamagePositioningEntityName01 { get; }
+  public string DamagePositioningEntityName01 { get; set; }
   
-  public ref CUtlSymbolLarge DamagePositioningEntityName02 { get; }
+  public string DamagePositioningEntityName02 { get; set; }
   
-  public ref CUtlSymbolLarge DamagePositioningEntityName03 { get; }
+  public string DamagePositioningEntityName03 { get; set; }
   
-  public ref CUtlSymbolLarge DamagePositioningEntityName04 { get; }
+  public string DamagePositioningEntityName04 { get; set; }
   
   public ref CUtlVector<Vector> InitialDamagePositions { get; }
   

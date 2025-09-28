@@ -25,7 +25,7 @@ public partial interface NodeData_t : ISchemaClass<NodeData_t> {
   
   public ref CUtlVector<int> ChildNodeIndices { get; }
   
-  public ref CUtlString WorldNodePrefix { get; }
+  public string WorldNodePrefix { get; set; }
 
 
 }

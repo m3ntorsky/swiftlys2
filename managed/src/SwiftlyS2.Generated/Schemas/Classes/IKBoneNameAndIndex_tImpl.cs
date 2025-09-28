@@ -15,9 +15,13 @@ internal partial class IKBoneNameAndIndex_tImpl : SchemaClass, IKBoneNameAndInde
   public IKBoneNameAndIndex_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xEDEB678CAE8A266));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xEDEB678CAE8A266));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xEDEB678CAE8A266, value);
+  } 
 
 
 }

@@ -15,9 +15,13 @@ internal partial class MaterialGroup_tImpl : SchemaClass, MaterialGroup_t {
   public MaterialGroup_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x702431604D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x702431604D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x702431604D8F5786, value);
+  } 
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeIMaterial2>> Materials {
     get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeIMaterial2>>>(Schema.GetOffset(0x7024316060E46909));
   }

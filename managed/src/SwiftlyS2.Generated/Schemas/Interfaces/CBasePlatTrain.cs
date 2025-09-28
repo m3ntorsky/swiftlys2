@@ -13,9 +13,9 @@ public partial interface CBasePlatTrain : CBaseToggle, ISchemaClass<CBasePlatTra
   static CBasePlatTrain ISchemaClass<CBasePlatTrain>.From(nint handle) => new CBasePlatTrainImpl(handle);
 
   
-  public ref CUtlSymbolLarge NoiseMoving { get; }
+  public string NoiseMoving { get; set; }
   
-  public ref CUtlSymbolLarge NoiseArrived { get; }
+  public string NoiseArrived { get; set; }
   
   public ref float Volume { get; }
   

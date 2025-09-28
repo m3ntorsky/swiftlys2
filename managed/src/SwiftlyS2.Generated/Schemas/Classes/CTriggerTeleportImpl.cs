@@ -15,9 +15,13 @@ internal partial class CTriggerTeleportImpl : CBaseTriggerImpl, CTriggerTeleport
   public CTriggerTeleportImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Landmark {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA6381755DF022EC4));
-  }
+  public string Landmark {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA6381755DF022EC4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA6381755DF022EC4, value);
+  } 
   public ref bool UseLandmarkAngles {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA638175528C3B2F4));
   }

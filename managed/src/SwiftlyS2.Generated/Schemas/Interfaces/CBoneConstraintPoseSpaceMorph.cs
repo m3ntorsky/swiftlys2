@@ -13,9 +13,9 @@ public partial interface CBoneConstraintPoseSpaceMorph : CBoneConstraintBase, IS
   static CBoneConstraintPoseSpaceMorph ISchemaClass<CBoneConstraintPoseSpaceMorph>.From(nint handle) => new CBoneConstraintPoseSpaceMorphImpl(handle);
 
   
-  public ref CUtlString BoneName { get; }
+  public string BoneName { get; set; }
   
-  public ref CUtlString AttachmentName { get; }
+  public string AttachmentName { get; set; }
   
   public ref CUtlVector<CUtlString> OutputMorph { get; }
   

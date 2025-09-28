@@ -43,29 +43,29 @@ public partial interface CBasePropDoor : CDynamicProp, ISchemaClass<CBasePropDoo
   
   public ref CHandle<CBaseEntity> Activator { get; }
   
-  public ref CUtlSymbolLarge SoundMoving { get; }
+  public string SoundMoving { get; set; }
   
-  public ref CUtlSymbolLarge SoundOpen { get; }
+  public string SoundOpen { get; set; }
   
-  public ref CUtlSymbolLarge SoundClose { get; }
+  public string SoundClose { get; set; }
   
-  public ref CUtlSymbolLarge SoundLock { get; }
+  public string SoundLock { get; set; }
   
-  public ref CUtlSymbolLarge SoundUnlock { get; }
+  public string SoundUnlock { get; set; }
   
-  public ref CUtlSymbolLarge SoundLatch { get; }
+  public string SoundLatch { get; set; }
   
-  public ref CUtlSymbolLarge SoundPound { get; }
+  public string SoundPound { get; set; }
   
-  public ref CUtlSymbolLarge SoundJiggle { get; }
+  public string SoundJiggle { get; set; }
   
-  public ref CUtlSymbolLarge SoundLockedAnim { get; }
+  public string SoundLockedAnim { get; set; }
   
   public ref int NumCloseAttempts { get; }
   
   public ref CUtlStringToken PhysicsMaterial { get; }
   
-  public ref CUtlSymbolLarge SlaveName { get; }
+  public string SlaveName { get; set; }
   
   public ref CHandle<CBasePropDoor> Master { get; }
   

@@ -43,9 +43,9 @@ public partial interface CColorCorrection : CBaseEntity, ISchemaClass<CColorCorr
   
   public ref float CurWeight { get; }
   
-  public ISchemaFixedString NetlookupFilename { get; }
+  public string NetlookupFilename { get; set; }
   
-  public ref CUtlSymbolLarge LookupFilename { get; }
+  public string LookupFilename { get; set; }
 
   public void FadeInDurationUpdated();
   public void FadeOutDurationUpdated();

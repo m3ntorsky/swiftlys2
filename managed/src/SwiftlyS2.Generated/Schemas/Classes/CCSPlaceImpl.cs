@@ -15,9 +15,13 @@ internal partial class CCSPlaceImpl : CServerOnlyModelEntityImpl, CCSPlace {
   public CCSPlaceImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x7AF35BE34D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7AF35BE34D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7AF35BE34D8F5786, value);
+  } 
 
 
 }

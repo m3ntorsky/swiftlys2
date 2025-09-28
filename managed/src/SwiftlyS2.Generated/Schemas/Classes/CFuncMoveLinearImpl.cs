@@ -24,15 +24,27 @@ internal partial class CFuncMoveLinearImpl : CBaseToggleImpl, CFuncMoveLinear {
   public ref Vector MoveDirParentSpace {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xDC0EE894EC2120EF));
   }
-  public ref CUtlSymbolLarge SoundStart {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDC0EE894E2756078));
-  }
-  public ref CUtlSymbolLarge SoundStop {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDC0EE894E9EADD9C));
-  }
-  public ref CUtlSymbolLarge CurrentSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDC0EE894C4F1FE51));
-  }
+  public string SoundStart {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDC0EE894E2756078));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDC0EE894E2756078, value);
+  } 
+  public string SoundStop {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDC0EE894E9EADD9C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDC0EE894E9EADD9C, value);
+  } 
+  public string CurrentSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDC0EE894C4F1FE51));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDC0EE894C4F1FE51, value);
+  } 
   public ref float BlockDamage {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDC0EE894A5348091));
   }

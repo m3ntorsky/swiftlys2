@@ -43,7 +43,7 @@ public partial interface CParticleFunction : ISchemaClass<CParticleFunction> {
   
   public ref bool DisableOperator { get; }
   
-  public ref CUtlString Notes { get; }
+  public string Notes { get; set; }
 
 
 }

@@ -15,15 +15,27 @@ internal partial class CPointWorldTextImpl : CModelPointEntityImpl, CPointWorldT
   public CPointWorldTextImpl(nint handle) : base(handle) {
   }
 
-public ISchemaFixedString MessageText {
-    get => new SchemaFixedString(_Handle, 0x5BF88697BA6E5D73, 512, 1, 1);
-  }
-public ISchemaFixedString FontName {
-    get => new SchemaFixedString(_Handle, 0x5BF88697C241C2B3, 64, 1, 1);
-  }
-public ISchemaFixedString BackgroundMaterialName {
-    get => new SchemaFixedString(_Handle, 0x5BF88697ECF8A7AB, 64, 1, 1);
-  }
+public string MessageText {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x5BF88697BA6E5D73);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x5BF88697BA6E5D73, value, 512);
+  } 
+public string FontName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x5BF88697C241C2B3);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x5BF88697C241C2B3, value, 64);
+  } 
+public string BackgroundMaterialName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x5BF88697ECF8A7AB);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x5BF88697ECF8A7AB, value, 64);
+  } 
   public ref bool Enabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5BF886976154EB7E));
   }

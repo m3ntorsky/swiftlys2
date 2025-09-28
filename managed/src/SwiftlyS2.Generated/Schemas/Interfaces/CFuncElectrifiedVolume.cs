@@ -13,13 +13,13 @@ public partial interface CFuncElectrifiedVolume : CFuncBrush, ISchemaClass<CFunc
   static CFuncElectrifiedVolume ISchemaClass<CFuncElectrifiedVolume>.From(nint handle) => new CFuncElectrifiedVolumeImpl(handle);
 
   
-  public ref CUtlSymbolLarge EffectName { get; }
+  public string EffectName { get; set; }
   
-  public ref CUtlSymbolLarge EffectInterpenetrateName { get; }
+  public string EffectInterpenetrateName { get; set; }
   
-  public ref CUtlSymbolLarge EffectZapName { get; }
+  public string EffectZapName { get; set; }
   
-  public ref CUtlSymbolLarge EffectSource { get; }
+  public string EffectSource { get; set; }
 
   public void EffectNameUpdated();
 }

@@ -15,9 +15,13 @@ internal partial class FeProxyVertexMap_tImpl : SchemaClass, FeProxyVertexMap_t 
   public FeProxyVertexMap_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xBBEA9D17CAE8A266));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBBEA9D17CAE8A266));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBBEA9D17CAE8A266, value);
+  } 
   public ref float Weight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBBEA9D177B81E7AB));
   }

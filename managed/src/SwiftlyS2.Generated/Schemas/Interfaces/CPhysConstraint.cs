@@ -13,19 +13,19 @@ public partial interface CPhysConstraint : CLogicalEntity, ISchemaClass<CPhysCon
   static CPhysConstraint ISchemaClass<CPhysConstraint>.From(nint handle) => new CPhysConstraintImpl(handle);
 
   
-  public ref CUtlSymbolLarge NameAttach1 { get; }
+  public string NameAttach1 { get; set; }
   
-  public ref CUtlSymbolLarge NameAttach2 { get; }
+  public string NameAttach2 { get; set; }
   
   public ref CHandle<CBaseEntity> Attach1 { get; }
   
   public ref CHandle<CBaseEntity> Attach2 { get; }
   
-  public ref CUtlSymbolLarge NameAttachment1 { get; }
+  public string NameAttachment1 { get; set; }
   
-  public ref CUtlSymbolLarge NameAttachment2 { get; }
+  public string NameAttachment2 { get; set; }
   
-  public ref CUtlSymbolLarge BreakSound { get; }
+  public string BreakSound { get; set; }
   
   public ref float ForceLimit { get; }
   

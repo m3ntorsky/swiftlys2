@@ -15,27 +15,47 @@ internal partial class CEnvInstructorVRHintImpl : CPointEntityImpl, CEnvInstruct
   public CEnvInstructorVRHintImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x75F3B61F74FF65FE));
-  }
-  public ref CUtlSymbolLarge HintTargetEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x75F3B61F0024C1BE));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x75F3B61F74FF65FE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x75F3B61F74FF65FE, value);
+  } 
+  public string HintTargetEntity {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x75F3B61F0024C1BE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x75F3B61F0024C1BE, value);
+  } 
   public ref int Timeout {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x75F3B61F2EC6CDDF));
   }
-  public ref CUtlSymbolLarge Caption {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x75F3B61FBE8E34DD));
-  }
-  public ref CUtlSymbolLarge StartSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x75F3B61FF9B2297E));
-  }
+  public string Caption {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x75F3B61FBE8E34DD));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x75F3B61FBE8E34DD, value);
+  } 
+  public string StartSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x75F3B61FF9B2297E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x75F3B61FF9B2297E, value);
+  } 
   public ref int LayoutFileType {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x75F3B61FAB45B364));
   }
-  public ref CUtlSymbolLarge CustomLayoutFile {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x75F3B61F60A92CB6));
-  }
+  public string CustomLayoutFile {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x75F3B61F60A92CB6));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x75F3B61F60A92CB6, value);
+  } 
   public ref int AttachType {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x75F3B61F432E8381));
   }

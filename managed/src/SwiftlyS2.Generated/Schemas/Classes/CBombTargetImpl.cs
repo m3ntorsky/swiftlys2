@@ -33,9 +33,13 @@ internal partial class CBombTargetImpl : CBaseTriggerImpl, CBombTarget {
   public ref bool BombPlantedHere {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1FEE3C37E2D52CF9));
   }
-  public ref CUtlSymbolLarge MountTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1FEE3C375F784258));
-  }
+  public string MountTarget {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1FEE3C375F784258));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1FEE3C375F784258, value);
+  } 
   public ref CHandle<CBaseEntity> InstructorHint {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1FEE3C37D6C2F245));
   }

@@ -33,12 +33,20 @@ internal partial class CPhysFixedImpl : CPhysConstraintImpl, CPhysFixed {
   public ref bool EnableAngularConstraint {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x8E8A3838F98A5C8B));
   }
-  public ref CUtlSymbolLarge BoneName1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8E8A3838EA2A0C6A));
-  }
-  public ref CUtlSymbolLarge BoneName2 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8E8A3838E92A0AD7));
-  }
+  public string BoneName1 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8E8A3838EA2A0C6A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8E8A3838EA2A0C6A, value);
+  } 
+  public string BoneName2 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8E8A3838E92A0AD7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8E8A3838E92A0AD7, value);
+  } 
 
 
 }

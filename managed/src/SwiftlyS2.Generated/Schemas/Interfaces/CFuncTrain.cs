@@ -23,7 +23,7 @@ public partial interface CFuncTrain : CBasePlatTrain, ISchemaClass<CFuncTrain> {
   
   public GameTime_t NextBlockTime { get; }
   
-  public ref CUtlSymbolLarge LastTarget { get; }
+  public string LastTarget { get; set; }
 
 
 }

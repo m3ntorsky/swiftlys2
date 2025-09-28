@@ -15,9 +15,13 @@ internal partial class CSSDSMsg_ViewTargetImpl : SchemaClass, CSSDSMsg_ViewTarge
   public CSSDSMsg_ViewTargetImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x4F31099BCAE8A266));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x4F31099BCAE8A266));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x4F31099BCAE8A266, value);
+  } 
   public ref ulong TextureId {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x4F31099B67AB25D9));
   }

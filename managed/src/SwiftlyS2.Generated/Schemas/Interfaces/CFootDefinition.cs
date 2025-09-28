@@ -13,11 +13,11 @@ public partial interface CFootDefinition : ISchemaClass<CFootDefinition> {
   static CFootDefinition ISchemaClass<CFootDefinition>.From(nint handle) => new CFootDefinitionImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
-  public ref CUtlString AnkleBoneName { get; }
+  public string AnkleBoneName { get; set; }
   
-  public ref CUtlString ToeBoneName { get; }
+  public string ToeBoneName { get; set; }
   
   public ref Vector BallOffset { get; }
   

@@ -15,9 +15,13 @@ internal partial class PermModelData_tImpl : SchemaClass, PermModelData_t {
   public PermModelData_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3E367D0B4D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x3E367D0B4D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x3E367D0B4D8F5786, value);
+  } 
   public PermModelInfo_t ModelInfo {
     get => new PermModelInfo_tImpl(_Handle + Schema.GetOffset(0x3E367D0B506D8FE2));
   }

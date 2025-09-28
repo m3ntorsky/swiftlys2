@@ -15,15 +15,27 @@ internal partial class CPointTemplateImpl : CLogicalEntityImpl, CPointTemplate {
   public CPointTemplateImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge WorldName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x7085DB4EB1FC5B40));
-  }
-  public ref CUtlSymbolLarge Source2EntityLumpName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x7085DB4EC0B648BC));
-  }
-  public ref CUtlSymbolLarge EntityFilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x7085DB4E3BCB3E97));
-  }
+  public string WorldName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7085DB4EB1FC5B40));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7085DB4EB1FC5B40, value);
+  } 
+  public string Source2EntityLumpName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7085DB4EC0B648BC));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7085DB4EC0B648BC, value);
+  } 
+  public string EntityFilterName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7085DB4E3BCB3E97));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7085DB4E3BCB3E97, value);
+  } 
   public ref float TimeoutInterval {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x7085DB4E354D6687));
   }

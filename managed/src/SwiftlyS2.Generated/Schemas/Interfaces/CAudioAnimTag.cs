@@ -13,9 +13,9 @@ public partial interface CAudioAnimTag : CAnimTagBase, ISchemaClass<CAudioAnimTa
   static CAudioAnimTag ISchemaClass<CAudioAnimTag>.From(nint handle) => new CAudioAnimTagImpl(handle);
 
   
-  public ref CUtlString ClipName { get; }
+  public string ClipName { get; set; }
   
-  public ref CUtlString AttachmentName { get; }
+  public string AttachmentName { get; set; }
   
   public ref float Volume { get; }
   

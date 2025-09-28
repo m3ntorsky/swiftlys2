@@ -60,9 +60,13 @@ internal partial class CBaseToggleImpl : CBaseModelEntityImpl, CBaseToggle {
   public ref int MovementType {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC466ACE37CE1B710));
   }
-  public ref CUtlSymbolLarge Master {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC466ACE389DC0AE0));
-  }
+  public string Master {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC466ACE389DC0AE0));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC466ACE389DC0AE0, value);
+  } 
 
 
 }

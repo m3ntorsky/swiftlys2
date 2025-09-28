@@ -15,11 +15,11 @@ public partial interface CFootstepLandedAnimTag : CAnimTagBase, ISchemaClass<CFo
   
   public ref FootstepLandedFootSoundType_t FootstepType { get; }
   
-  public ref CUtlString OverrideSoundName { get; }
+  public string OverrideSoundName { get; set; }
   
-  public ref CUtlString DebugAnimSourceString { get; }
+  public string DebugAnimSourceString { get; set; }
   
-  public ref CUtlString BoneName { get; }
+  public string BoneName { get; set; }
 
 
 }

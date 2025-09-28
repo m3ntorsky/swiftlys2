@@ -13,7 +13,7 @@ public partial interface CPhysForce : CPointEntity, ISchemaClass<CPhysForce> {
   static CPhysForce ISchemaClass<CPhysForce>.From(nint handle) => new CPhysForceImpl(handle);
 
   
-  public ref CUtlSymbolLarge NameAttach { get; }
+  public string NameAttach { get; set; }
   
   public ref float Force { get; }
   

@@ -13,7 +13,7 @@ public partial interface FeProxyVertexMap_t : ISchemaClass<FeProxyVertexMap_t> {
   static FeProxyVertexMap_t ISchemaClass<FeProxyVertexMap_t>.From(nint handle) => new FeProxyVertexMap_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref float Weight { get; }
 

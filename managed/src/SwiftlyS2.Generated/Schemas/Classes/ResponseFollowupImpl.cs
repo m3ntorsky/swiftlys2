@@ -15,24 +15,44 @@ internal partial class ResponseFollowupImpl : SchemaClass, ResponseFollowup {
   public ResponseFollowupImpl(nint handle) : base(handle) {
   }
 
-  public ref CString Followup_concept {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0x6C93EDBE24539C9E));
-  }
-  public ref CString Followup_contexts {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0x6C93EDBE5C4196A6));
-  }
+  public string Followup_concept {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6C93EDBE24539C9E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6C93EDBE24539C9E, value);
+  } 
+  public string Followup_contexts {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6C93EDBE5C4196A6));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6C93EDBE5C4196A6, value);
+  } 
   public ref float Followup_delay {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6C93EDBEC5E3BE49));
   }
-  public ref CString Followup_target {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0x6C93EDBEAD89F8D7));
-  }
-  public ref CString Followup_entityiotarget {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0x6C93EDBEFF990A74));
-  }
-  public ref CString Followup_entityioinput {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0x6C93EDBEAB6AD4B7));
-  }
+  public string Followup_target {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6C93EDBEAD89F8D7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6C93EDBEAD89F8D7, value);
+  } 
+  public string Followup_entityiotarget {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6C93EDBEFF990A74));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6C93EDBEFF990A74, value);
+  } 
+  public string Followup_entityioinput {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6C93EDBEAB6AD4B7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6C93EDBEAB6AD4B7, value);
+  } 
   public ref float Followup_entityiodelay {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6C93EDBE37A3C494));
   }

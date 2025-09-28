@@ -21,7 +21,7 @@ public partial interface C_INIT_ModelCull : CParticleFunctionInitializer, ISchem
   
   public ref bool UseBones { get; }
   
-  public ISchemaFixedString HitboxSetName { get; }
+  public string HitboxSetName { get; set; }
 
 
 }

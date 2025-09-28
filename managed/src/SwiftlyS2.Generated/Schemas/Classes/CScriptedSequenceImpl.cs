@@ -15,30 +15,62 @@ internal partial class CScriptedSequenceImpl : CBaseEntityImpl, CScriptedSequenc
   public CScriptedSequenceImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Entry {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45EDE900465B));
-  }
-  public ref CUtlSymbolLarge PreIdle {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45EDF21548B8));
-  }
-  public ref CUtlSymbolLarge Play {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45ED387C901B));
-  }
-  public ref CUtlSymbolLarge PostIdle {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45EDD456723D));
-  }
-  public ref CUtlSymbolLarge ModifierToAddOnPlay {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45ED4B56AE97));
-  }
-  public ref CUtlSymbolLarge NextScript {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45ED484B7743));
-  }
-  public ref CUtlSymbolLarge Entity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45ED71B7E842));
-  }
-  public ref CUtlSymbolLarge SyncGroup {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBB0C45ED943A51A5));
-  }
+  public string Entry {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBB0C45EDE900465B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBB0C45EDE900465B, value);
+  } 
+  public string PreIdle {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBB0C45EDF21548B8));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBB0C45EDF21548B8, value);
+  } 
+  public string Play {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBB0C45ED387C901B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBB0C45ED387C901B, value);
+  } 
+  public string PostIdle {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBB0C45EDD456723D));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBB0C45EDD456723D, value);
+  } 
+  public string ModifierToAddOnPlay {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBB0C45ED4B56AE97));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBB0C45ED4B56AE97, value);
+  } 
+  public string NextScript {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBB0C45ED484B7743));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBB0C45ED484B7743, value);
+  } 
+  public string Entity {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBB0C45ED71B7E842));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBB0C45ED71B7E842, value);
+  } 
+  public string SyncGroup {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBB0C45ED943A51A5));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBB0C45ED943A51A5, value);
+  } 
   public ref ScriptedMoveTo_t MoveTo {
     get => ref _Handle.AsRef<ScriptedMoveTo_t>(Schema.GetOffset(0xBB0C45EDA9282EB9));
   }

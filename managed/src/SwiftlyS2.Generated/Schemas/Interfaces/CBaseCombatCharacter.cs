@@ -28,7 +28,7 @@ public partial interface CBaseCombatCharacter : CBaseFlex, ISchemaClass<CBaseCom
   // CUtlVector< RelationshipOverride_t >
   public ref CUtlVector VecRelationships { get; }
   
-  public ref CUtlSymbolLarge StrRelationships { get; }
+  public string StrRelationships { get; set; }
   
   public ref Hull_t Hull { get; }
   

@@ -15,9 +15,13 @@ internal partial class CPointOrientImpl : CBaseEntityImpl, CPointOrient {
   public CPointOrientImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge SpawnTargetName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x31E4EBC561780472));
-  }
+  public string SpawnTargetName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x31E4EBC561780472));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x31E4EBC561780472, value);
+  } 
   public ref CHandle<CBaseEntity> Target {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x31E4EBC5CE35901A));
   }

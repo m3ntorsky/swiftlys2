@@ -18,18 +18,30 @@ internal partial class CNmSoundEventImpl : CNmEventImpl, CNmSoundEvent {
   public ref CNmEventRelevance_t Relevance {
     get => ref _Handle.AsRef<CNmEventRelevance_t>(Schema.GetOffset(0xDC15E5261E3F4008));
   }
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC15E5264D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDC15E5264D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDC15E5264D8F5786, value);
+  } 
   public ref CNmSoundEvent__Position_t Position {
     get => ref _Handle.AsRef<CNmSoundEvent__Position_t>(Schema.GetOffset(0xDC15E5264B57E0AA));
   }
-  public ref CUtlString AttachmentName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC15E526295DA9CB));
-  }
-  public ref CUtlString Tags {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC15E526B46C8540));
-  }
+  public string AttachmentName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDC15E526295DA9CB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDC15E526295DA9CB, value);
+  } 
+  public string Tags {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDC15E526B46C8540));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDC15E526B46C8540, value);
+  } 
   public ref bool ContinuePlayingSoundAtDurationEnd {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDC15E5262CB53E61));
   }

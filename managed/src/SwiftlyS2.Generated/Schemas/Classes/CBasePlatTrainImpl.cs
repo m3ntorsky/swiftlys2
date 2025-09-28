@@ -15,12 +15,20 @@ internal partial class CBasePlatTrainImpl : CBaseToggleImpl, CBasePlatTrain {
   public CBasePlatTrainImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge NoiseMoving {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x78773ABC415AB84B));
-  }
-  public ref CUtlSymbolLarge NoiseArrived {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x78773ABCD2CDE47A));
-  }
+  public string NoiseMoving {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x78773ABC415AB84B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x78773ABC415AB84B, value);
+  } 
+  public string NoiseArrived {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x78773ABCD2CDE47A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x78773ABCD2CDE47A, value);
+  } 
   public ref float Volume {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x78773ABCE3962F2F));
   }

@@ -15,9 +15,13 @@ internal partial class C_OP_ClientPhysicsImpl : CParticleFunctionRendererImpl, C
   public C_OP_ClientPhysicsImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString StrPhysicsType {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD58F5C47820348D9));
-  }
+  public string StrPhysicsType {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD58F5C47820348D9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD58F5C47820348D9, value);
+  } 
   public ref bool StartAsleep {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD58F5C4789BA22DD));
   }

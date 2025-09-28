@@ -16,7 +16,7 @@ public partial interface CLogicLineToEntity : CLogicalEntity, ISchemaClass<CLogi
   // CEntityOutputTemplate< Vector >
   public SchemaUntypedField Line { get; }
   
-  public ref CUtlSymbolLarge SourceName { get; }
+  public string SourceName { get; set; }
   
   public ref CHandle<CBaseEntity> StartEntity { get; }
   

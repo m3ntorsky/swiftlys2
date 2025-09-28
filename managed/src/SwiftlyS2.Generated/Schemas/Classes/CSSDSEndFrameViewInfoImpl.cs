@@ -18,9 +18,13 @@ internal partial class CSSDSEndFrameViewInfoImpl : SchemaClass, CSSDSEndFrameVie
   public ref ulong ViewId {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xE2792496AE3CB1A1));
   }
-  public ref CUtlString ViewName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xE2792496BA5BBDBB));
-  }
+  public string ViewName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE2792496BA5BBDBB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE2792496BA5BBDBB, value);
+  } 
 
 
 }

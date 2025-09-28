@@ -15,7 +15,7 @@ public partial interface CSSDSMsg_ViewTargetList : ISchemaClass<CSSDSMsg_ViewTar
   
   public SceneViewId_t ViewId { get; }
   
-  public ref CUtlString ViewName { get; }
+  public string ViewName { get; set; }
   
   // CUtlVector< CSSDSMsg_ViewTarget >
   public ref CUtlVector Targets { get; }

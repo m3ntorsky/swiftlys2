@@ -13,11 +13,11 @@ public partial interface sndopvarlatchdata_t : ISchemaClass<sndopvarlatchdata_t>
   static sndopvarlatchdata_t ISchemaClass<sndopvarlatchdata_t>.From(nint handle) => new sndopvarlatchdata_tImpl(handle);
 
   
-  public ref CUtlSymbolLarge Stack { get; }
+  public string Stack { get; set; }
   
-  public ref CUtlSymbolLarge Operator { get; }
+  public string Operator { get; set; }
   
-  public ref CUtlSymbolLarge Opvar { get; }
+  public string Opvar { get; set; }
   
   public ref float Val { get; }
   

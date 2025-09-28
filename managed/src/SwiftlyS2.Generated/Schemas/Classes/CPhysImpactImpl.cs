@@ -21,9 +21,13 @@ internal partial class CPhysImpactImpl : CPointEntityImpl, CPhysImpact {
   public ref float Distance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x2C5E7E543CB20D02));
   }
-  public ref CUtlSymbolLarge DirectionEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2C5E7E54329C8132));
-  }
+  public string DirectionEntityName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x2C5E7E54329C8132));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x2C5E7E54329C8132, value);
+  } 
 
 
 }

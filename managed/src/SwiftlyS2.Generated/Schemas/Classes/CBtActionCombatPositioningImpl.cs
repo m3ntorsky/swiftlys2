@@ -15,12 +15,20 @@ internal partial class CBtActionCombatPositioningImpl : CBtNodeImpl, CBtActionCo
   public CBtActionCombatPositioningImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString SensorInputKey {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3FB29123D2B0D4C1));
-  }
-  public ref CUtlString IsAttackingKey {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3FB29123BFC6462B));
-  }
+  public string SensorInputKey {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x3FB29123D2B0D4C1));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x3FB29123D2B0D4C1, value);
+  } 
+  public string IsAttackingKey {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x3FB29123BFC6462B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x3FB29123BFC6462B, value);
+  } 
   public CountdownTimer ActionTimer {
     get => new CountdownTimerImpl(_Handle + Schema.GetOffset(0x3FB291238777F414));
   }

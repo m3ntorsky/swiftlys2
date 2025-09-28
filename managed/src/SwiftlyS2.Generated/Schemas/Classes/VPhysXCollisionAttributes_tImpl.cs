@@ -27,9 +27,13 @@ internal partial class VPhysXCollisionAttributes_tImpl : SchemaClass, VPhysXColl
   public ref CUtlVector<uint> InteractExclude {
     get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0xBD3263AFC5ECE843));
   }
-  public ref CUtlString CollisionGroupString {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xBD3263AFCF0517E7));
-  }
+  public string CollisionGroupString {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBD3263AFCF0517E7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBD3263AFCF0517E7, value);
+  } 
   public ref CUtlVector<CUtlString> InteractAsStrings {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xBD3263AF7A4D07B7));
   }

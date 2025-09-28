@@ -13,21 +13,21 @@ public partial interface CScriptedSequence : CBaseEntity, ISchemaClass<CScripted
   static CScriptedSequence ISchemaClass<CScriptedSequence>.From(nint handle) => new CScriptedSequenceImpl(handle);
 
   
-  public ref CUtlSymbolLarge Entry { get; }
+  public string Entry { get; set; }
   
-  public ref CUtlSymbolLarge PreIdle { get; }
+  public string PreIdle { get; set; }
   
-  public ref CUtlSymbolLarge Play { get; }
+  public string Play { get; set; }
   
-  public ref CUtlSymbolLarge PostIdle { get; }
+  public string PostIdle { get; set; }
   
-  public ref CUtlSymbolLarge ModifierToAddOnPlay { get; }
+  public string ModifierToAddOnPlay { get; set; }
   
-  public ref CUtlSymbolLarge NextScript { get; }
+  public string NextScript { get; set; }
   
-  public ref CUtlSymbolLarge Entity { get; }
+  public string Entity { get; set; }
   
-  public ref CUtlSymbolLarge SyncGroup { get; }
+  public string SyncGroup { get; set; }
   
   public ref ScriptedMoveTo_t MoveTo { get; }
   

@@ -13,7 +13,7 @@ public partial interface ParticleControlPointConfiguration_t : ISchemaClass<Part
   static ParticleControlPointConfiguration_t ISchemaClass<ParticleControlPointConfiguration_t>.From(nint handle) => new ParticleControlPointConfiguration_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   // CUtlVector< ParticleControlPointDriver_t >
   public ref CUtlVector Drivers { get; }

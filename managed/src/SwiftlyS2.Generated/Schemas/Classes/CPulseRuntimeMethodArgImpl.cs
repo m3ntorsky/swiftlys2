@@ -18,9 +18,13 @@ internal partial class CPulseRuntimeMethodArgImpl : SchemaClass, CPulseRuntimeMe
   public SchemaUntypedField Name {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8B175BCCAE8A266));
   }
-  public ref CUtlString Description {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xA8B175BC678744E9));
-  }
+  public string Description {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8B175BC678744E9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8B175BC678744E9, value);
+  } 
   public SchemaUntypedField Type {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8B175BC8ED6D5CD));
   }

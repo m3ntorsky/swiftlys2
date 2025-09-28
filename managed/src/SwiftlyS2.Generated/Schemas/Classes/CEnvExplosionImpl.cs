@@ -39,12 +39,20 @@ internal partial class CEnvExplosionImpl : CModelPointEntityImpl, CEnvExplosion 
   public ref bool CreateDebris {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x27411F08F0AE362));
   }
-  public ref CUtlSymbolLarge CustomEffectName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x27411F0455090C0));
-  }
-  public ref CUtlSymbolLarge CustomSoundName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x27411F0876FC976));
-  }
+  public string CustomEffectName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x27411F0455090C0));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x27411F0455090C0, value);
+  } 
+  public string CustomSoundName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x27411F0876FC976));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x27411F0876FC976, value);
+  } 
   public ref bool SuppressParticleImpulse {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x27411F02C7847BB));
   }
@@ -54,9 +62,13 @@ internal partial class CEnvExplosionImpl : CModelPointEntityImpl, CEnvExplosion 
   public ref Class_T ClassIgnore2 {
     get => ref _Handle.AsRef<Class_T>(Schema.GetOffset(0x27411F00CA27D84));
   }
-  public ref CUtlSymbolLarge EntityIgnoreName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x27411F0A786C06F));
-  }
+  public string EntityIgnoreName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x27411F0A786C06F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x27411F0A786C06F, value);
+  } 
   public ref CHandle<CBaseEntity> EntityIgnore {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x27411F08F1E5202));
   }

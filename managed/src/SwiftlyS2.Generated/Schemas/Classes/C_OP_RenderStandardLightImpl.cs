@@ -57,9 +57,13 @@ internal partial class C_OP_RenderStandardLightImpl : CParticleFunctionRendererI
   public ref bool RenderSpecular {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x40395A84AF965178));
   }
-  public ref CUtlString LightCookie {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x40395A84E1B0CA41));
-  }
+  public string LightCookie {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x40395A84E1B0CA41));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x40395A84E1B0CA41, value);
+  } 
   public ref int Priority {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x40395A84E7EFB335));
   }

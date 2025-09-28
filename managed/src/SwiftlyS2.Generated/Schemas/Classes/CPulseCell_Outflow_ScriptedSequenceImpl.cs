@@ -15,9 +15,13 @@ internal partial class CPulseCell_Outflow_ScriptedSequenceImpl : CPulseCell_Base
   public CPulseCell_Outflow_ScriptedSequenceImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString SyncGroup {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x462EA7DEF9E8183A));
-  }
+  public string SyncGroup {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x462EA7DEF9E8183A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x462EA7DEF9E8183A, value);
+  } 
   public ref int ExpectedNumSequencesInSyncGroup {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x462EA7DE0C6AAD7A));
   }

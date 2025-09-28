@@ -15,9 +15,13 @@ internal partial class ParticleControlPointConfiguration_tImpl : SchemaClass, Pa
   public ParticleControlPointConfiguration_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xC54E49C74D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC54E49C74D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC54E49C74D8F5786, value);
+  } 
   public ref CUtlVector Drivers {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC54E49C7C63563E4));
   }

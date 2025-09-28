@@ -13,7 +13,7 @@ public partial interface BoneDemoCaptureSettings_t : ISchemaClass<BoneDemoCaptur
   static BoneDemoCaptureSettings_t ISchemaClass<BoneDemoCaptureSettings_t>.From(nint handle) => new BoneDemoCaptureSettings_tImpl(handle);
 
   
-  public ref CUtlString BoneName { get; }
+  public string BoneName { get; set; }
   
   public ref float ErrorSplineRotationMax { get; }
   

@@ -15,27 +15,43 @@ internal partial class ParticlePreviewState_tImpl : SchemaClass, ParticlePreview
   public ParticlePreviewState_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString PreviewModel {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x31FB1901BC4FDC14));
-  }
+  public string PreviewModel {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x31FB1901BC4FDC14));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x31FB1901BC4FDC14, value);
+  } 
   public ref uint ModSpecificData {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x31FB19011580A6CB));
   }
   public ref PetGroundType_t GroundType {
     get => ref _Handle.AsRef<PetGroundType_t>(Schema.GetOffset(0x31FB190132DE357E));
   }
-  public ref CUtlString SequenceName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x31FB19012B4A24CB));
-  }
+  public string SequenceName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x31FB19012B4A24CB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x31FB19012B4A24CB, value);
+  } 
   public ref int FireParticleOnSequenceFrame {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x31FB19014432CB48));
   }
-  public ref CUtlString HitboxSetName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x31FB19011ACA1CAE));
-  }
-  public ref CUtlString MaterialGroupName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x31FB1901A6930C68));
-  }
+  public string HitboxSetName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x31FB19011ACA1CAE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x31FB19011ACA1CAE, value);
+  } 
+  public string MaterialGroupName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x31FB1901A6930C68));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x31FB1901A6930C68, value);
+  } 
   public ref CUtlVector BodyGroups {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x31FB1901893FA01D));
   }

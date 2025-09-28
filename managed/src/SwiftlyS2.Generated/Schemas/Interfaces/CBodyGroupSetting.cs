@@ -13,7 +13,7 @@ public partial interface CBodyGroupSetting : ISchemaClass<CBodyGroupSetting> {
   static CBodyGroupSetting ISchemaClass<CBodyGroupSetting>.From(nint handle) => new CBodyGroupSettingImpl(handle);
 
   
-  public ref CUtlString BodyGroupName { get; }
+  public string BodyGroupName { get; set; }
   
   public ref int BodyGroupOption { get; }
 

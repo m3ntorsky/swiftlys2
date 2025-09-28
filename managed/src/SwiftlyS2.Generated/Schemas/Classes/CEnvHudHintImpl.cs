@@ -15,9 +15,13 @@ internal partial class CEnvHudHintImpl : CPointEntityImpl, CEnvHudHint {
   public CEnvHudHintImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Message {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD3D49C23CC5243DC));
-  }
+  public string Message {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD3D49C23CC5243DC));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD3D49C23CC5243DC, value);
+  } 
 
 
 }

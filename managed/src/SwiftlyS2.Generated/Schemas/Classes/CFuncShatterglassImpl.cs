@@ -63,18 +63,34 @@ internal partial class CFuncShatterglassImpl : CBaseModelEntityImpl, CFuncShatte
   public ref byte InitialDamageType {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0xB755F0FBED01D1E1));
   }
-  public ref CUtlSymbolLarge DamagePositioningEntityName01 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB755F0FBADF2770D));
-  }
-  public ref CUtlSymbolLarge DamagePositioningEntityName02 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB755F0FBAAF27254));
-  }
-  public ref CUtlSymbolLarge DamagePositioningEntityName03 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB755F0FBABF273E7));
-  }
-  public ref CUtlSymbolLarge DamagePositioningEntityName04 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB755F0FBA8F26F2E));
-  }
+  public string DamagePositioningEntityName01 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB755F0FBADF2770D));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB755F0FBADF2770D, value);
+  } 
+  public string DamagePositioningEntityName02 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB755F0FBAAF27254));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB755F0FBAAF27254, value);
+  } 
+  public string DamagePositioningEntityName03 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB755F0FBABF273E7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB755F0FBABF273E7, value);
+  } 
+  public string DamagePositioningEntityName04 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB755F0FBA8F26F2E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB755F0FBA8F26F2E, value);
+  } 
   public ref CUtlVector<Vector> InitialDamagePositions {
     get => ref _Handle.AsRef<CUtlVector<Vector>>(Schema.GetOffset(0xB755F0FB6D8C7F56));
   }

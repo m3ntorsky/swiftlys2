@@ -21,9 +21,9 @@ public partial interface CDamageRecord : ISchemaClass<CDamageRecord> {
   
   public ref CHandle<CCSPlayerController> PlayerControllerRecipient { get; }
   
-  public ref CUtlString PlayerDamagerName { get; }
+  public string PlayerDamagerName { get; set; }
   
-  public ref CUtlString PlayerRecipientName { get; }
+  public string PlayerRecipientName { get; set; }
   
   public ref ulong DamagerXuid { get; }
   

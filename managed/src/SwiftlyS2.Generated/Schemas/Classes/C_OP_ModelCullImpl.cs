@@ -27,9 +27,13 @@ internal partial class C_OP_ModelCullImpl : CParticleFunctionOperatorImpl, C_OP_
   public ref bool UseBones {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xED02878A10D1938B));
   }
-public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle, 0xED02878A6A21BB0E, 128, 1, 1);
-  }
+public string HitboxSetName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xED02878A6A21BB0E);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xED02878A6A21BB0E, value, 128);
+  } 
 
 
 }

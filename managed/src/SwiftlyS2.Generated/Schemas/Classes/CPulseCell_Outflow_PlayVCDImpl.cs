@@ -15,9 +15,13 @@ internal partial class CPulseCell_Outflow_PlayVCDImpl : CPulseCell_Outflow_PlayS
   public CPulseCell_Outflow_PlayVCDImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString VcdFilename {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB095B414240AE32B));
-  }
+  public string VcdFilename {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB095B414240AE32B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB095B414240AE32B, value);
+  } 
 
 
 }

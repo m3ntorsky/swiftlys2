@@ -13,9 +13,9 @@ public partial interface C_OP_SetControlPointsToModelParticles : CParticleFuncti
   static C_OP_SetControlPointsToModelParticles ISchemaClass<C_OP_SetControlPointsToModelParticles>.From(nint handle) => new C_OP_SetControlPointsToModelParticlesImpl(handle);
 
   
-  public ISchemaFixedString HitboxSetName { get; }
+  public string HitboxSetName { get; set; }
   
-  public ISchemaFixedString AttachmentName { get; }
+  public string AttachmentName { get; set; }
   
   public ref int FirstControlPoint { get; }
   

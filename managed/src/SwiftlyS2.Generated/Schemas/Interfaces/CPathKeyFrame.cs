@@ -19,7 +19,7 @@ public partial interface CPathKeyFrame : CLogicalEntity, ISchemaClass<CPathKeyFr
   
   public ref Quaternion Angle { get; }
   
-  public ref CUtlSymbolLarge NextKey { get; }
+  public string NextKey { get; set; }
   
   public ref float NextTime { get; }
   

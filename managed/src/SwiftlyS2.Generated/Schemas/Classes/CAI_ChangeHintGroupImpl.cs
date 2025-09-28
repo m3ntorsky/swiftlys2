@@ -18,12 +18,20 @@ internal partial class CAI_ChangeHintGroupImpl : CBaseEntityImpl, CAI_ChangeHint
   public ref int SearchType {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE2F9617B09088830));
   }
-  public ref CUtlSymbolLarge StrSearchName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE2F9617B8A77B967));
-  }
-  public ref CUtlSymbolLarge StrNewHintGroup {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE2F9617BD4585F62));
-  }
+  public string StrSearchName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE2F9617B8A77B967));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE2F9617B8A77B967, value);
+  } 
+  public string StrNewHintGroup {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE2F9617BD4585F62));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE2F9617BD4585F62, value);
+  } 
   public ref float Radius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE2F9617B5ACFC08D));
   }

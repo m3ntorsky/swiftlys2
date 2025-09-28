@@ -13,7 +13,7 @@ public partial interface CModelConfigElement_Command : CModelConfigElement, ISch
   static CModelConfigElement_Command ISchemaClass<CModelConfigElement_Command>.From(nint handle) => new CModelConfigElement_CommandImpl(handle);
 
   
-  public ref CUtlString Command { get; }
+  public string Command { get; set; }
   
   // KeyValues3
   public SchemaUntypedField Args { get; }

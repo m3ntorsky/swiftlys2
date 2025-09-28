@@ -66,13 +66,13 @@ public partial interface C_OP_RenderModels : CParticleFunctionRenderer, ISchemaC
   
   public ParticleAttributeIndex_t ManualFrameField { get; }
   
-  public ISchemaFixedString ActivityName { get; }
+  public string ActivityName { get; set; }
   
-  public ISchemaFixedString SequenceName { get; }
+  public string SequenceName { get; set; }
   
   public ref bool EnableClothSimulation { get; }
   
-  public ISchemaFixedString ClothEffectName { get; }
+  public string ClothEffectName { get; set; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> OverrideMaterial { get; }
   
@@ -91,7 +91,7 @@ public partial interface C_OP_RenderModels : CParticleFunctionRenderer, ISchemaC
   
   public ref int LOD { get; }
   
-  public ISchemaFixedString EconSlotName { get; }
+  public string EconSlotName { get; set; }
   
   public ref bool OriginalModel { get; }
   
@@ -111,7 +111,7 @@ public partial interface C_OP_RenderModels : CParticleFunctionRenderer, ISchemaC
   
   public ref bool AllowApproximateTransforms { get; }
   
-  public ISchemaFixedString RenderAttribute { get; }
+  public string RenderAttribute { get; set; }
   
   public CParticleCollectionFloatInput RadiusScale { get; }
   

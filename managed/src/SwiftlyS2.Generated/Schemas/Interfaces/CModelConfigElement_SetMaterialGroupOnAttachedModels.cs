@@ -13,7 +13,7 @@ public partial interface CModelConfigElement_SetMaterialGroupOnAttachedModels : 
   static CModelConfigElement_SetMaterialGroupOnAttachedModels ISchemaClass<CModelConfigElement_SetMaterialGroupOnAttachedModels>.From(nint handle) => new CModelConfigElement_SetMaterialGroupOnAttachedModelsImpl(handle);
 
   
-  public ref CUtlString MaterialGroupName { get; }
+  public string MaterialGroupName { get; set; }
 
 
 }

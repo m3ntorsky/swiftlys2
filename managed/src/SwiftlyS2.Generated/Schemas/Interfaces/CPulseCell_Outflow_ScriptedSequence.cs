@@ -13,7 +13,7 @@ public partial interface CPulseCell_Outflow_ScriptedSequence : CPulseCell_BaseYi
   static CPulseCell_Outflow_ScriptedSequence ISchemaClass<CPulseCell_Outflow_ScriptedSequence>.From(nint handle) => new CPulseCell_Outflow_ScriptedSequenceImpl(handle);
 
   
-  public ref CUtlString SyncGroup { get; }
+  public string SyncGroup { get; set; }
   
   public ref int ExpectedNumSequencesInSyncGroup { get; }
   

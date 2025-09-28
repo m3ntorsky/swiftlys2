@@ -15,9 +15,13 @@ internal partial class MaterialVariable_tImpl : SchemaClass, MaterialVariable_t 
   public MaterialVariable_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString StrVariable {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xCACB71DBA52C3390));
-  }
+  public string StrVariable {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xCACB71DBA52C3390));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xCACB71DBA52C3390, value);
+  } 
   public ParticleAttributeIndex_t VariableField {
     get => new ParticleAttributeIndex_tImpl(_Handle + Schema.GetOffset(0xCACB71DBF868E9B3));
   }

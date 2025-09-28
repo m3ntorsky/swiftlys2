@@ -18,9 +18,13 @@ internal partial class CLogicAchievementImpl : CLogicalEntityImpl, CLogicAchieve
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE8C4579F3A7C5965));
   }
-  public ref CUtlSymbolLarge AchievementEventID {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE8C4579F12AB7E15));
-  }
+  public string AchievementEventID {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE8C4579F12AB7E15));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE8C4579F12AB7E15, value);
+  } 
   public CEntityIOOutput OnFired {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0xE8C4579F84825730));
   }

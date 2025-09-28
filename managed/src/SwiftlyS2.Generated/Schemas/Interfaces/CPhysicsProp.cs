@@ -79,7 +79,7 @@ public partial interface CPhysicsProp : CBreakableProp, ISchemaClass<CPhysicsPro
   
   public ref CPhysicsProp__CrateType_t CrateType { get; }
   
-  public ISchemaFixedArray<CUtlSymbolLarge> StrItemClass { get; }
+  public string StrItemClass { get; set; }
   
   public ISchemaFixedArray<int> ItemCount { get; }
   

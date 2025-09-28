@@ -18,9 +18,13 @@ internal partial class CSosGroupActionSoundeventCountSchemaImpl : CSosGroupActio
   public ref bool ExcludeStoppedSounds {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6A0D82691BDF6FB6));
   }
-  public ref CUtlString StrCountKeyName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6A0D8269463A7AA5));
-  }
+  public string StrCountKeyName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6A0D8269463A7AA5));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6A0D8269463A7AA5, value);
+  } 
 
 
 }

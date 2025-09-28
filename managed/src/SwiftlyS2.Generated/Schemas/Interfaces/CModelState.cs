@@ -15,7 +15,7 @@ public partial interface CModelState : ISchemaClass<CModelState> {
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }
   
-  public ref CUtlSymbolLarge ModelName { get; }
+  public string ModelName { get; set; }
   
   public ref bool ClientClothCreationSuppressed { get; }
   

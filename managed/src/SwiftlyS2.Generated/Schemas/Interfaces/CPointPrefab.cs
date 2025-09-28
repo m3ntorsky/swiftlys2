@@ -13,11 +13,11 @@ public partial interface CPointPrefab : CServerOnlyPointEntity, ISchemaClass<CPo
   static CPointPrefab ISchemaClass<CPointPrefab>.From(nint handle) => new CPointPrefabImpl(handle);
 
   
-  public ref CUtlSymbolLarge TargetMapName { get; }
+  public string TargetMapName { get; set; }
   
-  public ref CUtlSymbolLarge ForceWorldGroupID { get; }
+  public string ForceWorldGroupID { get; set; }
   
-  public ref CUtlSymbolLarge AssociatedRelayTargetName { get; }
+  public string AssociatedRelayTargetName { get; set; }
   
   public ref bool FixupNames { get; }
   

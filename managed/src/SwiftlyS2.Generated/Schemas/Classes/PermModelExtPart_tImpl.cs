@@ -18,9 +18,13 @@ internal partial class PermModelExtPart_tImpl : SchemaClass, PermModelExtPart_t 
   public ref CTransform Transform {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xCA30851D6EC5209B));
   }
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xCA30851DCAE8A266));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xCA30851DCAE8A266));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xCA30851DCAE8A266, value);
+  } 
   public ref int Parent {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xCA30851D0AABB9D1));
   }

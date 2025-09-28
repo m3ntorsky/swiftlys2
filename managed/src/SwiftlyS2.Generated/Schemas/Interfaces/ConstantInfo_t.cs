@@ -13,7 +13,7 @@ public partial interface ConstantInfo_t : ISchemaClass<ConstantInfo_t> {
   static ConstantInfo_t ISchemaClass<ConstantInfo_t>.From(nint handle) => new ConstantInfo_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref CUtlStringToken NameToken { get; }
   

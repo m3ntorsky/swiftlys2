@@ -21,21 +21,41 @@ internal partial class CSosGroupActionSoundeventClusterSchemaImpl : CSosGroupAct
   public ref float ClusterEpsilon {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x7B0FC368D85674F7));
   }
-  public ref CUtlString ShouldPlayOpvar {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x7B0FC368FFE71768));
-  }
-  public ref CUtlString ShouldPlayClusterChild {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x7B0FC368F2A1690C));
-  }
-  public ref CUtlString ClusterSizeOpvar {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x7B0FC368153B8D78));
-  }
-  public ref CUtlString GroupBoundingBoxMinsOpvar {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x7B0FC3686A214FB0));
-  }
-  public ref CUtlString GroupBoundingBoxMaxsOpvar {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x7B0FC368B8AC7D92));
-  }
+  public string ShouldPlayOpvar {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7B0FC368FFE71768));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7B0FC368FFE71768, value);
+  } 
+  public string ShouldPlayClusterChild {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7B0FC368F2A1690C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7B0FC368F2A1690C, value);
+  } 
+  public string ClusterSizeOpvar {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7B0FC368153B8D78));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7B0FC368153B8D78, value);
+  } 
+  public string GroupBoundingBoxMinsOpvar {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7B0FC3686A214FB0));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7B0FC3686A214FB0, value);
+  } 
+  public string GroupBoundingBoxMaxsOpvar {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7B0FC368B8AC7D92));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7B0FC368B8AC7D92, value);
+  } 
 
 
 }

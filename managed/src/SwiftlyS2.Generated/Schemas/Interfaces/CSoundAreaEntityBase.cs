@@ -15,7 +15,7 @@ public partial interface CSoundAreaEntityBase : CBaseEntity, ISchemaClass<CSound
   
   public ref bool Disabled { get; }
   
-  public ref CUtlSymbolLarge SoundAreaType { get; }
+  public string SoundAreaType { get; set; }
   
   public ref Vector Pos { get; }
 

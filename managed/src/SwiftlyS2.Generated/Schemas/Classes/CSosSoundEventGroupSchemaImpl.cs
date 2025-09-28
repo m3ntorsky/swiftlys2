@@ -33,15 +33,23 @@ internal partial class CSosSoundEventGroupSchemaImpl : SchemaClass, CSosSoundEve
   public ref SosGroupFieldBehavior_t Behavior_EventName {
     get => ref _Handle.AsRef<SosGroupFieldBehavior_t>(Schema.GetOffset(0x25BA870029F15E53));
   }
-  public ref CUtlString MatchSoundEventName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x25BA87005E75165C));
-  }
+  public string MatchSoundEventName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x25BA87005E75165C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x25BA87005E75165C, value);
+  } 
   public ref bool MatchEventSubString {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x25BA87001C020689));
   }
-  public ref CUtlString MatchSoundEventSubString {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x25BA87002FBB6296));
-  }
+  public string MatchSoundEventSubString {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x25BA87002FBB6296));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x25BA87002FBB6296, value);
+  } 
   public ref SosGroupFieldBehavior_t Behavior_EntIndex {
     get => ref _Handle.AsRef<SosGroupFieldBehavior_t>(Schema.GetOffset(0x25BA8700139C6983));
   }
@@ -57,9 +65,13 @@ internal partial class CSosSoundEventGroupSchemaImpl : SchemaClass, CSosSoundEve
   public ref SosGroupFieldBehavior_t Behavior_String {
     get => ref _Handle.AsRef<SosGroupFieldBehavior_t>(Schema.GetOffset(0x25BA87001D20B9B1));
   }
-  public ref CUtlString OpvarString {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x25BA8700528828B2));
-  }
+  public string OpvarString {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x25BA8700528828B2));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x25BA8700528828B2, value);
+  } 
   public ref CUtlVector<PointerTo<CSosGroupActionSchema>> Actions {
     get => ref _Handle.AsRef<CUtlVector<PointerTo<CSosGroupActionSchema>>>(Schema.GetOffset(0x25BA8700D36B7908));
   }

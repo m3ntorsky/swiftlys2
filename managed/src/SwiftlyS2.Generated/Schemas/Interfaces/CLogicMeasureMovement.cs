@@ -13,11 +13,11 @@ public partial interface CLogicMeasureMovement : CLogicalEntity, ISchemaClass<CL
   static CLogicMeasureMovement ISchemaClass<CLogicMeasureMovement>.From(nint handle) => new CLogicMeasureMovementImpl(handle);
 
   
-  public ref CUtlSymbolLarge StrMeasureTarget { get; }
+  public string StrMeasureTarget { get; set; }
   
-  public ref CUtlSymbolLarge StrMeasureReference { get; }
+  public string StrMeasureReference { get; set; }
   
-  public ref CUtlSymbolLarge StrTargetReference { get; }
+  public string StrTargetReference { get; set; }
   
   public ref CHandle<CBaseEntity> MeasureTarget { get; }
   

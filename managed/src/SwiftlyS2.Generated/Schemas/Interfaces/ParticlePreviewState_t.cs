@@ -13,19 +13,19 @@ public partial interface ParticlePreviewState_t : ISchemaClass<ParticlePreviewSt
   static ParticlePreviewState_t ISchemaClass<ParticlePreviewState_t>.From(nint handle) => new ParticlePreviewState_tImpl(handle);
 
   
-  public ref CUtlString PreviewModel { get; }
+  public string PreviewModel { get; set; }
   
   public ref uint ModSpecificData { get; }
   
   public ref PetGroundType_t GroundType { get; }
   
-  public ref CUtlString SequenceName { get; }
+  public string SequenceName { get; set; }
   
   public ref int FireParticleOnSequenceFrame { get; }
   
-  public ref CUtlString HitboxSetName { get; }
+  public string HitboxSetName { get; set; }
   
-  public ref CUtlString MaterialGroupName { get; }
+  public string MaterialGroupName { get; set; }
   
   // CUtlVector< ParticlePreviewBodyGroup_t >
   public ref CUtlVector BodyGroups { get; }

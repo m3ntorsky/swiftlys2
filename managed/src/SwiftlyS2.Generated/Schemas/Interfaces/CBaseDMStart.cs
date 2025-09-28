@@ -13,7 +13,7 @@ public partial interface CBaseDMStart : CPointEntity, ISchemaClass<CBaseDMStart>
   static CBaseDMStart ISchemaClass<CBaseDMStart>.From(nint handle) => new CBaseDMStartImpl(handle);
 
   
-  public ref CUtlSymbolLarge Master { get; }
+  public string Master { get; set; }
 
 
 }

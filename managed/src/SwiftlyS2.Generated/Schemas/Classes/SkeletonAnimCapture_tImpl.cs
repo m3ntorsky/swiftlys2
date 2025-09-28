@@ -24,12 +24,20 @@ internal partial class SkeletonAnimCapture_tImpl : SchemaClass, SkeletonAnimCapt
   public ref CUtlVector<uint> ImportedCollision {
     get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0x79FB6D7C5A900B2F));
   }
-  public ref CUtlString ModelName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x79FB6D7CD7A1D881));
-  }
-  public ref CUtlString CaptureName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x79FB6D7CB508C2DA));
-  }
+  public string ModelName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x79FB6D7CD7A1D881));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x79FB6D7CD7A1D881, value);
+  } 
+  public string CaptureName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x79FB6D7CB508C2DA));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x79FB6D7CB508C2DA, value);
+  } 
   public ref CUtlVector ModelBindPose {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x79FB6D7C9960EBF8));
   }

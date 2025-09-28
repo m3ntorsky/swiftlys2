@@ -13,7 +13,7 @@ public partial interface CPhysicsBodyGameMarkup : ISchemaClass<CPhysicsBodyGameM
   static CPhysicsBodyGameMarkup ISchemaClass<CPhysicsBodyGameMarkup>.From(nint handle) => new CPhysicsBodyGameMarkupImpl(handle);
 
   
-  public ref CUtlString TargetBody { get; }
+  public string TargetBody { get; set; }
   
   public ref CGlobalSymbol Tag { get; }
 

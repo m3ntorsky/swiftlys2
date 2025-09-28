@@ -33,9 +33,13 @@ internal partial class NodeData_tImpl : SchemaClass, NodeData_t {
   public ref CUtlVector<int> ChildNodeIndices {
     get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xB09FAAA63648C692));
   }
-  public ref CUtlString WorldNodePrefix {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB09FAAA662126457));
-  }
+  public string WorldNodePrefix {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB09FAAA662126457));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB09FAAA662126457, value);
+  } 
 
 
 }

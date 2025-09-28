@@ -15,12 +15,20 @@ internal partial class CInstructorEventEntityImpl : CPointEntityImpl, CInstructo
   public CInstructorEventEntityImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6DE6628874FF65FE));
-  }
-  public ref CUtlSymbolLarge HintTargetEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6DE662880024C1BE));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6DE6628874FF65FE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6DE6628874FF65FE, value);
+  } 
+  public string HintTargetEntity {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6DE662880024C1BE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6DE662880024C1BE, value);
+  } 
   public ref CHandle<CBasePlayerPawn> TargetPlayer {
     get => ref _Handle.AsRef<CHandle<CBasePlayerPawn>>(Schema.GetOffset(0x6DE66288BA425153));
   }

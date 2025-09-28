@@ -35,7 +35,7 @@ public partial interface C_INIT_CreateOnModel : CParticleFunctionInitializer, IS
   
   public CParticleCollectionVecInput DirectionBias { get; }
   
-  public ISchemaFixedString HitboxSetName { get; }
+  public string HitboxSetName { get; set; }
   
   public ref bool LocalCoords { get; }
   

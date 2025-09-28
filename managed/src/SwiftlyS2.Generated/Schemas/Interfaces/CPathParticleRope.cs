@@ -17,7 +17,7 @@ public partial interface CPathParticleRope : CBaseEntity, ISchemaClass<CPathPart
   
   public ref float MaxSimulationTime { get; }
   
-  public ref CUtlSymbolLarge EffectName { get; }
+  public string EffectName { get; set; }
   
   public ref CUtlVector<CUtlSymbolLarge> PathNodes_Name { get; }
   

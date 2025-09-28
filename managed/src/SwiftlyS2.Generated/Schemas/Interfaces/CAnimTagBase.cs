@@ -15,7 +15,7 @@ public partial interface CAnimTagBase : ISchemaClass<CAnimTagBase> {
   
   public ref CGlobalSymbol Name { get; }
   
-  public ref CUtlString Comment { get; }
+  public string Comment { get; set; }
   
   public ref CGlobalSymbol Group { get; }
   

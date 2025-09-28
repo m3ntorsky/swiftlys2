@@ -17,9 +17,9 @@ public partial interface CEnvBeam : CBeam, ISchemaClass<CEnvBeam> {
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> SpriteTexture { get; }
   
-  public ref CUtlSymbolLarge StartEntity { get; }
+  public string StartEntity { get; set; }
   
-  public ref CUtlSymbolLarge EndEntity { get; }
+  public string EndEntity { get; set; }
   
   public ref float Life { get; }
   
@@ -31,7 +31,7 @@ public partial interface CEnvBeam : CBeam, ISchemaClass<CEnvBeam> {
   
   public ref float Restrike { get; }
   
-  public ref CUtlSymbolLarge SpriteName { get; }
+  public string SpriteName { get; set; }
   
   public ref int FrameStart { get; }
   
@@ -43,11 +43,11 @@ public partial interface CEnvBeam : CBeam, ISchemaClass<CEnvBeam> {
   
   public ref Touch_t TouchType { get; }
   
-  public ref CUtlSymbolLarge FilterName { get; }
+  public string FilterName { get; set; }
   
   public ref CHandle<CBaseEntity> Filter { get; }
   
-  public ref CUtlSymbolLarge Decal { get; }
+  public string Decal { get; set; }
   
   public CEntityIOOutput OnTouchedByEntity { get; }
 

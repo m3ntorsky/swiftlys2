@@ -60,12 +60,20 @@ internal partial class CColorCorrectionImpl : CBaseEntityImpl, CColorCorrection 
   public ref float CurWeight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x86645E112EA7ED7F));
   }
-public ISchemaFixedString NetlookupFilename {
-    get => new SchemaFixedString(_Handle, 0x86645E11543AB1EB, 512, 1, 1);
-  }
-  public ref CUtlSymbolLarge LookupFilename {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x86645E112611A2C6));
-  }
+public string NetlookupFilename {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x86645E11543AB1EB);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x86645E11543AB1EB, value, 512);
+  } 
+  public string LookupFilename {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x86645E112611A2C6));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x86645E112611A2C6, value);
+  } 
 
   public void FadeInDurationUpdated() {
     Schema.Update(_Handle, 0x86645E1101B5EB8E);

@@ -21,7 +21,7 @@ public partial interface CMultiSource : CLogicalEntity, ISchemaClass<CMultiSourc
   
   public ref int Total { get; }
   
-  public ref CUtlSymbolLarge Globalstate { get; }
+  public string Globalstate { get; set; }
 
 
 }

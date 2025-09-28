@@ -13,9 +13,9 @@ public partial interface CBaseIssue : ISchemaClass<CBaseIssue> {
   static CBaseIssue ISchemaClass<CBaseIssue>.From(nint handle) => new CBaseIssueImpl(handle);
 
   
-  public ISchemaFixedString TypeString { get; }
+  public string TypeString { get; set; }
   
-  public ISchemaFixedString DetailsString { get; }
+  public string DetailsString { get; set; }
   
   public ref int NumYesVotes { get; }
   

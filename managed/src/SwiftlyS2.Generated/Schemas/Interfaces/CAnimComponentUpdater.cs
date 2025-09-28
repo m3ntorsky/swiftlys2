@@ -13,7 +13,7 @@ public partial interface CAnimComponentUpdater : ISchemaClass<CAnimComponentUpda
   static CAnimComponentUpdater ISchemaClass<CAnimComponentUpdater>.From(nint handle) => new CAnimComponentUpdaterImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public AnimComponentID Id { get; }
   

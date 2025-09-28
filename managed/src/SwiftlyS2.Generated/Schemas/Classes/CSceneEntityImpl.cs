@@ -15,36 +15,76 @@ internal partial class CSceneEntityImpl : CPointEntityImpl, CSceneEntity {
   public CSceneEntityImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge SceneFile {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B7011ED89EC5));
-  }
-  public ref CUtlSymbolLarge ResumeSceneFile {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701B722F1C4));
-  }
-  public ref CUtlSymbolLarge Target1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701FC55D183));
-  }
-  public ref CUtlSymbolLarge Target2 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701FD55D316));
-  }
-  public ref CUtlSymbolLarge Target3 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701FE55D4A9));
-  }
-  public ref CUtlSymbolLarge Target4 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701FF55D63C));
-  }
-  public ref CUtlSymbolLarge Target5 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B7010055D7CF));
-  }
-  public ref CUtlSymbolLarge Target6 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B7010155D962));
-  }
-  public ref CUtlSymbolLarge Target7 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B7010255DAF5));
-  }
-  public ref CUtlSymbolLarge Target8 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B7010355DC88));
-  }
+  public string SceneFile {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1099B7011ED89EC5));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1099B7011ED89EC5, value);
+  } 
+  public string ResumeSceneFile {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1099B701B722F1C4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1099B701B722F1C4, value);
+  } 
+  public string Target1 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1099B701FC55D183));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1099B701FC55D183, value);
+  } 
+  public string Target2 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1099B701FD55D316));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1099B701FD55D316, value);
+  } 
+  public string Target3 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1099B701FE55D4A9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1099B701FE55D4A9, value);
+  } 
+  public string Target4 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1099B701FF55D63C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1099B701FF55D63C, value);
+  } 
+  public string Target5 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1099B7010055D7CF));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1099B7010055D7CF, value);
+  } 
+  public string Target6 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1099B7010155D962));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1099B7010155D962, value);
+  } 
+  public string Target7 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1099B7010255DAF5));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1099B7010255DAF5, value);
+  } 
+  public string Target8 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1099B7010355DC88));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1099B7010355DC88, value);
+  } 
   public ref CHandle<CBaseEntity> Target11 {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B701C951F3B1));
   }
@@ -69,9 +109,13 @@ internal partial class CSceneEntityImpl : CPointEntityImpl, CSceneEntity {
   public ref CHandle<CBaseEntity> Target88 {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1099B701C051E586));
   }
-  public ref CUtlSymbolLarge TargetAttachment {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701FCD6246E));
-  }
+  public string TargetAttachment {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1099B701FCD6246E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1099B701FCD6246E, value);
+  } 
   public ref bool IsPlayingBack {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1099B70133D9EB62));
   }
@@ -198,12 +242,20 @@ internal partial class CSceneEntityImpl : CPointEntityImpl, CSceneEntity {
   public ref CUtlVector<CHandle<CSceneListManager>> ListManagers {
     get => ref _Handle.AsRef<CUtlVector<CHandle<CSceneListManager>>>(Schema.GetOffset(0x1099B701AD7882DF));
   }
-  public ref CUtlSymbolLarge SoundName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701B17EB157));
-  }
-  public ref CUtlSymbolLarge SequenceName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1099B701A55BC593));
-  }
+  public string SoundName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1099B701B17EB157));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1099B701B17EB157, value);
+  } 
+  public string SequenceName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1099B701A55BC593));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1099B701A55BC593, value);
+  } 
   public ref CHandle<CBaseFlex> Actor {
     get => ref _Handle.AsRef<CHandle<CBaseFlex>>(Schema.GetOffset(0x1099B701C0FFC404));
   }

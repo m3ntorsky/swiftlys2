@@ -13,9 +13,9 @@ public partial interface CSosGroupActionSoundeventMinMaxValuesSchema : CSosGroup
   static CSosGroupActionSoundeventMinMaxValuesSchema ISchemaClass<CSosGroupActionSoundeventMinMaxValuesSchema>.From(nint handle) => new CSosGroupActionSoundeventMinMaxValuesSchemaImpl(handle);
 
   
-  public ref CUtlString StrQueryPublicFieldName { get; }
+  public string StrQueryPublicFieldName { get; set; }
   
-  public ref CUtlString StrDelayPublicFieldName { get; }
+  public string StrDelayPublicFieldName { get; set; }
   
   public ref bool ExcludeStoppedSounds { get; }
   
@@ -29,9 +29,9 @@ public partial interface CSosGroupActionSoundeventMinMaxValuesSchema : CSosGroup
   
   public ref float ExcludeSoundsMaxThresholdValue { get; }
   
-  public ref CUtlString StrMinValueName { get; }
+  public string StrMinValueName { get; set; }
   
-  public ref CUtlString StrMaxValueName { get; }
+  public string StrMaxValueName { get; set; }
 
 
 }

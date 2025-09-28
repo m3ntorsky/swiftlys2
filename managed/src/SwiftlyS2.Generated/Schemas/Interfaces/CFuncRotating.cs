@@ -34,7 +34,7 @@ public partial interface CFuncRotating : CBaseModelEntity, ISchemaClass<CFuncRot
   
   public ref float BlockDamage { get; }
   
-  public ref CUtlSymbolLarge NoiseRunning { get; }
+  public string NoiseRunning { get; set; }
   
   public ref bool Reversed { get; }
   

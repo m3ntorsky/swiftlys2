@@ -69,9 +69,13 @@ internal partial class CSoundOpvarSetPointEntityImpl : CSoundOpvarSetPointBaseIm
   public ref CHandle<CEntityInstance> DynamicEntity {
     get => ref _Handle.AsRef<CHandle<CEntityInstance>>(Schema.GetOffset(0x20C7B9D235753447));
   }
-  public ref CUtlSymbolLarge DynamicEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x20C7B9D28FB78B06));
-  }
+  public string DynamicEntityName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x20C7B9D28FB78B06));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x20C7B9D28FB78B06, value);
+  } 
   public ref float PathingDistanceNormFactor {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x20C7B9D25735CE5A));
   }

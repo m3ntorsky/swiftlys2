@@ -15,9 +15,13 @@ internal partial class CScriptComponentImpl : CEntityComponentImpl, CScriptCompo
   public CScriptComponentImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge ScriptClassName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC922CE544F9B6681));
-  }
+  public string ScriptClassName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC922CE544F9B6681));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC922CE544F9B6681, value);
+  } 
 
 
 }

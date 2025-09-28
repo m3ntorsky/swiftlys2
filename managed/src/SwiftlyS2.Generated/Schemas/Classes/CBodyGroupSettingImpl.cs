@@ -15,9 +15,13 @@ internal partial class CBodyGroupSettingImpl : SchemaClass, CBodyGroupSetting {
   public CBodyGroupSettingImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString BodyGroupName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xC078388F0E290077));
-  }
+  public string BodyGroupName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC078388F0E290077));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC078388F0E290077, value);
+  } 
   public ref int BodyGroupOption {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC078388F09FA2D31));
   }

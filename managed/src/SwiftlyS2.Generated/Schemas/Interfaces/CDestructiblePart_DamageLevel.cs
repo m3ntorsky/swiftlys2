@@ -13,7 +13,7 @@ public partial interface CDestructiblePart_DamageLevel : ISchemaClass<CDestructi
   static CDestructiblePart_DamageLevel ISchemaClass<CDestructiblePart_DamageLevel>.From(nint handle) => new CDestructiblePart_DamageLevelImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref CGlobalSymbol BreakablePieceName { get; }
   

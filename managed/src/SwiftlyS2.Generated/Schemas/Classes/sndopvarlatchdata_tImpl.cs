@@ -15,15 +15,27 @@ internal partial class sndopvarlatchdata_tImpl : SchemaClass, sndopvarlatchdata_
   public sndopvarlatchdata_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Stack {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8347C0D511ACB037));
-  }
-  public ref CUtlSymbolLarge Operator {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8347C0D55D107B55));
-  }
-  public ref CUtlSymbolLarge Opvar {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8347C0D508A9F41F));
-  }
+  public string Stack {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8347C0D511ACB037));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8347C0D511ACB037, value);
+  } 
+  public string Operator {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8347C0D55D107B55));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8347C0D55D107B55, value);
+  } 
+  public string Opvar {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8347C0D508A9F41F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8347C0D508A9F41F, value);
+  } 
   public ref float Val {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8347C0D5E31D0C86));
   }

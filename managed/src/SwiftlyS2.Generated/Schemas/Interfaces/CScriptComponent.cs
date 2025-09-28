@@ -13,7 +13,7 @@ public partial interface CScriptComponent : CEntityComponent, ISchemaClass<CScri
   static CScriptComponent ISchemaClass<CScriptComponent>.From(nint handle) => new CScriptComponentImpl(handle);
 
   
-  public ref CUtlSymbolLarge ScriptClassName { get; }
+  public string ScriptClassName { get; set; }
 
 
 }

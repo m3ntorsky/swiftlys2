@@ -33,7 +33,7 @@ public partial interface CLogicAuto : CBaseEntity, ISchemaClass<CLogicAuto> {
   
   public CEntityIOOutput OnVRNotEnabled { get; }
   
-  public ref CUtlSymbolLarge Globalstate { get; }
+  public string Globalstate { get; set; }
 
 
 }

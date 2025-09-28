@@ -24,9 +24,13 @@ internal partial class CCSTeamImpl : CTeamImpl, CCSTeam {
   public ref bool Surrendered {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1CE326C9CFFCED54));
   }
-public ISchemaFixedString TeamMatchStat {
-    get => new SchemaFixedString(_Handle, 0x1CE326C9D2C89DC0, 512, 1, 1);
-  }
+public string TeamMatchStat {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x1CE326C9D2C89DC0);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x1CE326C9D2C89DC0, value, 512);
+  } 
   public ref int NumMapVictories {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1CE326C92BC4DE0F));
   }
@@ -39,18 +43,30 @@ public ISchemaFixedString TeamMatchStat {
   public ref int ScoreOvertime {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1CE326C9A22D3CEE));
   }
-public ISchemaFixedString ClanTeamname {
-    get => new SchemaFixedString(_Handle, 0x1CE326C946453F76, 129, 1, 1);
-  }
+public string ClanTeamname {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x1CE326C946453F76);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x1CE326C946453F76, value, 129);
+  } 
   public ref uint ClanID {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x1CE326C90A807BAD));
   }
-public ISchemaFixedString TeamFlagImage {
-    get => new SchemaFixedString(_Handle, 0x1CE326C9F7FF31D0, 8, 1, 1);
-  }
-public ISchemaFixedString TeamLogoImage {
-    get => new SchemaFixedString(_Handle, 0x1CE326C981DF092B, 8, 1, 1);
-  }
+public string TeamFlagImage {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x1CE326C9F7FF31D0);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x1CE326C9F7FF31D0, value, 8);
+  } 
+public string TeamLogoImage {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x1CE326C981DF092B);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x1CE326C981DF092B, value, 8);
+  } 
   public ref float NextResourceTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1CE326C97E7CA6AF));
   }

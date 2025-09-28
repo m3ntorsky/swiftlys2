@@ -13,7 +13,7 @@ public partial interface FeMorphLayerDepr_t : ISchemaClass<FeMorphLayerDepr_t> {
   static FeMorphLayerDepr_t ISchemaClass<FeMorphLayerDepr_t>.From(nint handle) => new FeMorphLayerDepr_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref uint NameHash { get; }
   

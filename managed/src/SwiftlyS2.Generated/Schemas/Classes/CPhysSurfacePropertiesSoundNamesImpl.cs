@@ -15,42 +15,90 @@ internal partial class CPhysSurfacePropertiesSoundNamesImpl : SchemaClass, CPhys
   public CPhysSurfacePropertiesSoundNamesImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString ImpactSoft {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF2658A3949E7237B));
-  }
-  public ref CUtlString ImpactHard {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF2658A3934A77BB2));
-  }
-  public ref CUtlString ScrapeSmooth {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF2658A3902EA935F));
-  }
-  public ref CUtlString ScrapeRough {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF2658A39CE764A7E));
-  }
-  public ref CUtlString BulletImpact {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF2658A3943E056BB));
-  }
-  public ref CUtlString Rolling {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF2658A39E0171912));
-  }
-  public ref CUtlString Break {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF2658A39382B2298));
-  }
-  public ref CUtlString Strain {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF2658A397EDA2E10));
-  }
-  public ref CUtlString MeleeImpact {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF2658A3976A52491));
-  }
-  public ref CUtlString PushOff {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF2658A39C825B1A2));
-  }
-  public ref CUtlString SkidStop {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF2658A3976C778AE));
-  }
-  public ref CUtlString Resonant {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF2658A396BA8FAF5));
-  }
+  public string ImpactSoft {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2658A3949E7237B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2658A3949E7237B, value);
+  } 
+  public string ImpactHard {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2658A3934A77BB2));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2658A3934A77BB2, value);
+  } 
+  public string ScrapeSmooth {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2658A3902EA935F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2658A3902EA935F, value);
+  } 
+  public string ScrapeRough {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2658A39CE764A7E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2658A39CE764A7E, value);
+  } 
+  public string BulletImpact {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2658A3943E056BB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2658A3943E056BB, value);
+  } 
+  public string Rolling {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2658A39E0171912));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2658A39E0171912, value);
+  } 
+  public string Break {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2658A39382B2298));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2658A39382B2298, value);
+  } 
+  public string Strain {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2658A397EDA2E10));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2658A397EDA2E10, value);
+  } 
+  public string MeleeImpact {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2658A3976A52491));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2658A3976A52491, value);
+  } 
+  public string PushOff {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2658A39C825B1A2));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2658A39C825B1A2, value);
+  } 
+  public string SkidStop {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2658A3976C778AE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2658A3976C778AE, value);
+  } 
+  public string Resonant {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2658A396BA8FAF5));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2658A396BA8FAF5, value);
+  } 
 
 
 }

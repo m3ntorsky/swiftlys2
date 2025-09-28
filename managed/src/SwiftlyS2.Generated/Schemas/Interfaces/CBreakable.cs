@@ -21,13 +21,13 @@ public partial interface CBreakable : CBaseModelEntity, ISchemaClass<CBreakable>
   
   public ref Explosions Explosion { get; }
   
-  public ref CUtlSymbolLarge SpawnObject { get; }
+  public string SpawnObject { get; set; }
   
   public ref float PressureDelay { get; }
   
   public ref int MinHealthDmg { get; }
   
-  public ref CUtlSymbolLarge PropData { get; }
+  public string PropData { get; set; }
   
   public ref float ImpactEnergyScale { get; }
   

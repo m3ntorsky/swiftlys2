@@ -18,18 +18,30 @@ internal partial class CAnimParameterBaseImpl : SchemaClass, CAnimParameterBase 
   public ref CGlobalSymbol Name {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x9E097C8F4D8F5786));
   }
-  public ref CUtlString Comment {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x9E097C8F88A0B4DF));
-  }
-  public ref CUtlString Group {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x9E097C8F9FC645AC));
-  }
+  public string Comment {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9E097C8F88A0B4DF));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9E097C8F88A0B4DF, value);
+  } 
+  public string Group {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9E097C8F9FC645AC));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9E097C8F9FC645AC, value);
+  } 
   public AnimParamID Id {
     get => new AnimParamIDImpl(_Handle + Schema.GetOffset(0x9E097C8FB4B6E980));
   }
-  public ref CUtlString ComponentName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x9E097C8F7CAC3EA3));
-  }
+  public string ComponentName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9E097C8F7CAC3EA3));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9E097C8F7CAC3EA3, value);
+  } 
   public ref bool NetworkingRequested {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9E097C8FE57548D5));
   }

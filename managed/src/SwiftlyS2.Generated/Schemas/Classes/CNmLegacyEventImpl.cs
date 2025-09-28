@@ -15,9 +15,13 @@ internal partial class CNmLegacyEventImpl : CNmEventImpl, CNmLegacyEvent {
   public CNmLegacyEventImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString AnimEventClassName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x78C36574C276DA33));
-  }
+  public string AnimEventClassName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x78C36574C276DA33));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x78C36574C276DA33, value);
+  } 
   public SchemaUntypedField KV {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x78C36574F70B8074));
   }

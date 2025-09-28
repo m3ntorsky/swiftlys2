@@ -26,6 +26,8 @@ internal class SchemaFixedString : SchemaFixedArray<byte>, ISchemaFixedString, I
     }
   }
 
+  public static implicit operator string(SchemaFixedString str) => str.Value;
+
   public string ToString(string? format, IFormatProvider? formatProvider)
   {
     return Value;

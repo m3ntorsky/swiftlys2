@@ -13,7 +13,7 @@ public partial interface CPointOrient : CBaseEntity, ISchemaClass<CPointOrient> 
   static CPointOrient ISchemaClass<CPointOrient>.From(nint handle) => new CPointOrientImpl(handle);
 
   
-  public ref CUtlSymbolLarge SpawnTargetName { get; }
+  public string SpawnTargetName { get; set; }
   
   public ref CHandle<CBaseEntity> Target { get; }
   

@@ -21,18 +21,34 @@ internal partial class CPulseGraphInstance_ServerEntityImpl : CBasePulseGraphIns
   public ref bool Activated {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x6DFF458BF8E37A5C));
   }
-  public ref CUtlSymbolLarge NameFixupStaticPrefix {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6DFF458BFFD2D6AB));
-  }
-  public ref CUtlSymbolLarge NameFixupParent {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6DFF458B7B08ECF1));
-  }
-  public ref CUtlSymbolLarge NameFixupLocal {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6DFF458B508F29A4));
-  }
-  public ref CUtlSymbolLarge ProceduralWorldNameForRelays {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6DFF458B05373F31));
-  }
+  public string NameFixupStaticPrefix {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6DFF458BFFD2D6AB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6DFF458BFFD2D6AB, value);
+  } 
+  public string NameFixupParent {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6DFF458B7B08ECF1));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6DFF458B7B08ECF1, value);
+  } 
+  public string NameFixupLocal {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6DFF458B508F29A4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6DFF458B508F29A4, value);
+  } 
+  public string ProceduralWorldNameForRelays {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6DFF458B05373F31));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6DFF458B05373F31, value);
+  } 
 
 
 }

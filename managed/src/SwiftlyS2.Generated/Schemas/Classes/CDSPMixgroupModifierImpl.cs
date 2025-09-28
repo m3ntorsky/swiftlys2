@@ -15,9 +15,13 @@ internal partial class CDSPMixgroupModifierImpl : SchemaClass, CDSPMixgroupModif
   public CDSPMixgroupModifierImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Mixgroup {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDF83C91D89577218));
-  }
+  public string Mixgroup {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDF83C91D89577218));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDF83C91D89577218, value);
+  } 
   public ref float Modifier {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDF83C91D55620FB6));
   }

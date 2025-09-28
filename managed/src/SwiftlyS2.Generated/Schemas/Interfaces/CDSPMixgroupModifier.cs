@@ -13,7 +13,7 @@ public partial interface CDSPMixgroupModifier : ISchemaClass<CDSPMixgroupModifie
   static CDSPMixgroupModifier ISchemaClass<CDSPMixgroupModifier>.From(nint handle) => new CDSPMixgroupModifierImpl(handle);
 
   
-  public ref CUtlString Mixgroup { get; }
+  public string Mixgroup { get; set; }
   
   public ref float Modifier { get; }
   

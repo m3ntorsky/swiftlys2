@@ -15,12 +15,20 @@ internal partial class CPhysMotorImpl : CLogicalEntityImpl, CPhysMotor {
   public CPhysMotorImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge NameAttach {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x88C095BFBECAEF3F));
-  }
-  public ref CUtlSymbolLarge NameAnchor {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x88C095BFAD43DD27));
-  }
+  public string NameAttach {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x88C095BFBECAEF3F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x88C095BFBECAEF3F, value);
+  } 
+  public string NameAnchor {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x88C095BFAD43DD27));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x88C095BFAD43DD27, value);
+  } 
   public ref CHandle<CBaseEntity> AttachedObject {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x88C095BF5B0EDB58));
   }

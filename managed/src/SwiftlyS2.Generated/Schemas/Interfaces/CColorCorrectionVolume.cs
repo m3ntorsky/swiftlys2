@@ -19,7 +19,7 @@ public partial interface CColorCorrectionVolume : CBaseTrigger, ISchemaClass<CCo
   
   public ref float Weight { get; }
   
-  public ISchemaFixedString LookupFilename { get; }
+  public string LookupFilename { get; set; }
   
   public ref float LastEnterWeight { get; }
   

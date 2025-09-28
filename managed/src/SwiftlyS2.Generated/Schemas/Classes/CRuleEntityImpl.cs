@@ -15,9 +15,13 @@ internal partial class CRuleEntityImpl : CBaseModelEntityImpl, CRuleEntity {
   public CRuleEntityImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Master {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5C9BFE2FAC57FE5B));
-  }
+  public string Master {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x5C9BFE2FAC57FE5B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x5C9BFE2FAC57FE5B, value);
+  } 
 
 
 }

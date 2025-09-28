@@ -15,9 +15,13 @@ internal partial class CLogicEventListenerImpl : CLogicalEntityImpl, CLogicEvent
   public CLogicEventListenerImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString StrEventName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD797C990BC41C13B));
-  }
+  public string StrEventName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD797C990BC41C13B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD797C990BC41C13B, value);
+  } 
   public ref bool IsEnabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD797C9905360D70E));
   }

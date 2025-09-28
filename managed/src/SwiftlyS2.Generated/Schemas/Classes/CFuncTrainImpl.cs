@@ -30,9 +30,13 @@ internal partial class CFuncTrainImpl : CBasePlatTrainImpl, CFuncTrain {
   public GameTime_t NextBlockTime {
     get => new GameTime_tImpl(_Handle + Schema.GetOffset(0xAAD8EE8E82BC1902));
   }
-  public ref CUtlSymbolLarge LastTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xAAD8EE8ECF22FD34));
-  }
+  public string LastTarget {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xAAD8EE8ECF22FD34));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xAAD8EE8ECF22FD34, value);
+  } 
 
 
 }

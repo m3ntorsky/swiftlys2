@@ -13,7 +13,7 @@ public partial interface CFilterModel : CBaseFilter, ISchemaClass<CFilterModel> 
   static CFilterModel ISchemaClass<CFilterModel>.From(nint handle) => new CFilterModelImpl(handle);
 
   
-  public ref CUtlSymbolLarge FilterModel { get; }
+  public string FilterModel { get; set; }
 
 
 }

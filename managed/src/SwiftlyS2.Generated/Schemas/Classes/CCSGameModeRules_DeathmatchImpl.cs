@@ -21,9 +21,13 @@ internal partial class CCSGameModeRules_DeathmatchImpl : CCSGameModeRulesImpl, C
   public ref float DMBonusTimeLength {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x77BC0D42C4F13CC6));
   }
-  public ref CUtlString DMBonusWeapon {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x77BC0D42A33FC260));
-  }
+  public string DMBonusWeapon {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x77BC0D42A33FC260));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x77BC0D42A33FC260, value);
+  } 
 
   public void DMBonusStartTimeUpdated() {
     Schema.Update(_Handle, 0x77BC0D42870B2CD0);

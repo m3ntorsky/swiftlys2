@@ -13,7 +13,7 @@ public partial interface MaterialVariable_t : ISchemaClass<MaterialVariable_t> {
   static MaterialVariable_t ISchemaClass<MaterialVariable_t>.From(nint handle) => new MaterialVariable_tImpl(handle);
 
   
-  public ref CUtlString StrVariable { get; }
+  public string StrVariable { get; set; }
   
   public ParticleAttributeIndex_t VariableField { get; }
   

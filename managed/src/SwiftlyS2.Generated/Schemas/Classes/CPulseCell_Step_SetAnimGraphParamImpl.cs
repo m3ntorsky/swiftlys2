@@ -15,9 +15,13 @@ internal partial class CPulseCell_Step_SetAnimGraphParamImpl : CPulseCell_BaseFl
   public CPulseCell_Step_SetAnimGraphParamImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString ParamName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x7727698D230FDA59));
-  }
+  public string ParamName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7727698D230FDA59));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7727698D230FDA59, value);
+  } 
 
 
 }

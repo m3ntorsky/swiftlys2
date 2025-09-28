@@ -13,7 +13,7 @@ public partial interface CPointClientUIWorldTextPanel : CPointClientUIWorldPanel
   static CPointClientUIWorldTextPanel ISchemaClass<CPointClientUIWorldTextPanel>.From(nint handle) => new CPointClientUIWorldTextPanelImpl(handle);
 
   
-  public ISchemaFixedString MessageText { get; }
+  public string MessageText { get; set; }
 
   public void MessageTextUpdated();
 }

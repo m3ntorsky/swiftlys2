@@ -13,7 +13,7 @@ public partial interface CPointGamestatsCounter : CPointEntity, ISchemaClass<CPo
   static CPointGamestatsCounter ISchemaClass<CPointGamestatsCounter>.From(nint handle) => new CPointGamestatsCounterImpl(handle);
 
   
-  public ref CUtlSymbolLarge StrStatisticName { get; }
+  public string StrStatisticName { get; set; }
   
   public ref bool Disabled { get; }
 

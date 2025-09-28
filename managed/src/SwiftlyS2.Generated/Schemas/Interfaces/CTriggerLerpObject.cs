@@ -13,11 +13,11 @@ public partial interface CTriggerLerpObject : CBaseTrigger, ISchemaClass<CTrigge
   static CTriggerLerpObject ISchemaClass<CTriggerLerpObject>.From(nint handle) => new CTriggerLerpObjectImpl(handle);
 
   
-  public ref CUtlSymbolLarge LerpTarget { get; }
+  public string LerpTarget { get; set; }
   
   public ref CHandle<CBaseEntity> LerpTarget1 { get; }
   
-  public ref CUtlSymbolLarge LerpTargetAttachment { get; }
+  public string LerpTargetAttachment { get; set; }
   
   public AttachmentHandle_t LerpTargetAttachment2 { get; }
   
@@ -30,9 +30,9 @@ public partial interface CTriggerLerpObject : CBaseTrigger, ISchemaClass<CTrigge
   // CUtlVector< lerpdata_t >
   public ref CUtlVector LerpingObjects { get; }
   
-  public ref CUtlSymbolLarge LerpEffect { get; }
+  public string LerpEffect { get; set; }
   
-  public ref CUtlSymbolLarge LerpSound { get; }
+  public string LerpSound { get; set; }
   
   public ref bool AttachTouchingObject { get; }
   

@@ -13,7 +13,7 @@ public partial interface CFilterContext : CBaseFilter, ISchemaClass<CFilterConte
   static CFilterContext ISchemaClass<CFilterContext>.From(nint handle) => new CFilterContextImpl(handle);
 
   
-  public ref CUtlSymbolLarge FilterContext { get; }
+  public string FilterContext { get; set; }
 
 
 }

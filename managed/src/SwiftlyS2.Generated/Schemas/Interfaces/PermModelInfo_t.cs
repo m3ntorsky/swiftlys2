@@ -29,9 +29,9 @@ public partial interface PermModelInfo_t : ISchemaClass<PermModelInfo_t> {
   
   public ref float MaxEyeDeflection { get; }
   
-  public ref CUtlString SurfaceProperty { get; }
+  public string SurfaceProperty { get; set; }
   
-  public ref CUtlString KeyValueText { get; }
+  public string KeyValueText { get; set; }
 
 
 }

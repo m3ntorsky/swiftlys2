@@ -19,7 +19,7 @@ public partial interface C_INIT_SetHitboxToClosest : CParticleFunctionInitialize
   
   public CParticleCollectionVecInput HitBoxScale { get; }
   
-  public ISchemaFixedString HitboxSetName { get; }
+  public string HitboxSetName { get; set; }
   
   public ref bool UseBones { get; }
   

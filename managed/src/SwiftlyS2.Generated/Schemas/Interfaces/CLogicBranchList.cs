@@ -13,7 +13,7 @@ public partial interface CLogicBranchList : CLogicalEntity, ISchemaClass<CLogicB
   static CLogicBranchList ISchemaClass<CLogicBranchList>.From(nint handle) => new CLogicBranchListImpl(handle);
 
   
-  public ISchemaFixedArray<CUtlSymbolLarge> LogicBranchNames { get; }
+  public string LogicBranchNames { get; set; }
   
   public ref CUtlVector<CHandle<CBaseEntity>> LogicBranchList { get; }
   

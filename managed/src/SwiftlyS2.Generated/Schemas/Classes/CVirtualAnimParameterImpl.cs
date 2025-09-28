@@ -15,9 +15,13 @@ internal partial class CVirtualAnimParameterImpl : CAnimParameterBaseImpl, CVirt
   public CVirtualAnimParameterImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString ExpressionString {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3D45915B3039426E));
-  }
+  public string ExpressionString {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x3D45915B3039426E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x3D45915B3039426E, value);
+  } 
   public ref AnimParamType_t ParamType {
     get => ref _Handle.AsRef<AnimParamType_t>(Schema.GetOffset(0x3D45915BF05DFDD9));
   }

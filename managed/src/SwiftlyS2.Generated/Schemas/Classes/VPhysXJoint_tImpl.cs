@@ -102,9 +102,13 @@ internal partial class VPhysXJoint_tImpl : SchemaClass, VPhysXJoint_t {
   public ref float Plasticity {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x336EF6EE5843D1D7));
   }
-  public ref CUtlString Tag {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x336EF6EE218D8313));
-  }
+  public string Tag {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x336EF6EE218D8313));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x336EF6EE218D8313, value);
+  } 
 
 
 }

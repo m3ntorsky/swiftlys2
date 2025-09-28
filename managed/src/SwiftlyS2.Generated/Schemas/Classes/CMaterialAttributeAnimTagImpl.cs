@@ -15,9 +15,13 @@ internal partial class CMaterialAttributeAnimTagImpl : CAnimTagBaseImpl, CMateri
   public CMaterialAttributeAnimTagImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString AttributeName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x509D90A81408864C));
-  }
+  public string AttributeName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x509D90A81408864C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x509D90A81408864C, value);
+  } 
   public ref MatterialAttributeTagType_t AttributeType {
     get => ref _Handle.AsRef<MatterialAttributeTagType_t>(Schema.GetOffset(0x509D90A84243CC37));
   }

@@ -15,9 +15,13 @@ internal partial class CFuncPlatImpl : CBasePlatTrainImpl, CFuncPlat {
   public CFuncPlatImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Noise {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x57400D651F22B8CC));
-  }
+  public string Noise {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x57400D651F22B8CC));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x57400D651F22B8CC, value);
+  } 
 
 
 }

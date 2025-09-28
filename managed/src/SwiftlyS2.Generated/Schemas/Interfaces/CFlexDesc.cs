@@ -13,7 +13,7 @@ public partial interface CFlexDesc : ISchemaClass<CFlexDesc> {
   static CFlexDesc ISchemaClass<CFlexDesc>.From(nint handle) => new CFlexDescImpl(handle);
 
   
-  public ref CUtlString Facs { get; }
+  public string Facs { get; set; }
 
 
 }

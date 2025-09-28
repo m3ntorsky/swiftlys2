@@ -18,12 +18,20 @@ internal partial class CInfoWorldLayerImpl : CBaseEntityImpl, CInfoWorldLayer {
   public CEntityIOOutput OutputOnEntitiesSpawned {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0x74C9C61B31420D1E));
   }
-  public ref CUtlSymbolLarge WorldName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x74C9C61B29890DD8));
-  }
-  public ref CUtlSymbolLarge LayerName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x74C9C61BEABDA295));
-  }
+  public string WorldName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x74C9C61B29890DD8));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x74C9C61B29890DD8, value);
+  } 
+  public string LayerName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x74C9C61BEABDA295));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x74C9C61BEABDA295, value);
+  } 
   public ref bool WorldLayerVisible {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x74C9C61BA9B3715E));
   }

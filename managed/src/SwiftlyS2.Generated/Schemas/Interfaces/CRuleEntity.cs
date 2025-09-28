@@ -13,7 +13,7 @@ public partial interface CRuleEntity : CBaseModelEntity, ISchemaClass<CRuleEntit
   static CRuleEntity ISchemaClass<CRuleEntity>.From(nint handle) => new CRuleEntityImpl(handle);
 
   
-  public ref CUtlSymbolLarge Master { get; }
+  public string Master { get; set; }
 
 
 }

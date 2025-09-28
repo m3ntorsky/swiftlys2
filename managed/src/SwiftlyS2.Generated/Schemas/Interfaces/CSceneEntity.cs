@@ -13,25 +13,25 @@ public partial interface CSceneEntity : CPointEntity, ISchemaClass<CSceneEntity>
   static CSceneEntity ISchemaClass<CSceneEntity>.From(nint handle) => new CSceneEntityImpl(handle);
 
   
-  public ref CUtlSymbolLarge SceneFile { get; }
+  public string SceneFile { get; set; }
   
-  public ref CUtlSymbolLarge ResumeSceneFile { get; }
+  public string ResumeSceneFile { get; set; }
   
-  public ref CUtlSymbolLarge Target1 { get; }
+  public string Target1 { get; set; }
   
-  public ref CUtlSymbolLarge Target2 { get; }
+  public string Target2 { get; set; }
   
-  public ref CUtlSymbolLarge Target3 { get; }
+  public string Target3 { get; set; }
   
-  public ref CUtlSymbolLarge Target4 { get; }
+  public string Target4 { get; set; }
   
-  public ref CUtlSymbolLarge Target5 { get; }
+  public string Target5 { get; set; }
   
-  public ref CUtlSymbolLarge Target6 { get; }
+  public string Target6 { get; set; }
   
-  public ref CUtlSymbolLarge Target7 { get; }
+  public string Target7 { get; set; }
   
-  public ref CUtlSymbolLarge Target8 { get; }
+  public string Target8 { get; set; }
   
   public ref CHandle<CBaseEntity> Target11 { get; }
   
@@ -49,7 +49,7 @@ public partial interface CSceneEntity : CPointEntity, ISchemaClass<CSceneEntity>
   
   public ref CHandle<CBaseEntity> Target88 { get; }
   
-  public ref CUtlSymbolLarge TargetAttachment { get; }
+  public string TargetAttachment { get; set; }
   
   public ref bool IsPlayingBack { get; }
   
@@ -136,9 +136,9 @@ public partial interface CSceneEntity : CPointEntity, ISchemaClass<CSceneEntity>
   
   public ref CUtlVector<CHandle<CSceneListManager>> ListManagers { get; }
   
-  public ref CUtlSymbolLarge SoundName { get; }
+  public string SoundName { get; set; }
   
-  public ref CUtlSymbolLarge SequenceName { get; }
+  public string SequenceName { get; set; }
   
   public ref CHandle<CBaseFlex> Actor { get; }
   

@@ -42,12 +42,20 @@ internal partial class CBaseGrenadeImpl : CBaseFlexImpl, CBaseGrenade {
   public ref float Damage {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB6ACD98FDC60E53E));
   }
-  public ref CUtlSymbolLarge BounceSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB6ACD98F060D1544));
-  }
-  public ref CUtlString ExplosionSound {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB6ACD98FEA1C20EF));
-  }
+  public string BounceSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB6ACD98F060D1544));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB6ACD98F060D1544, value);
+  } 
+  public string ExplosionSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB6ACD98FEA1C20EF));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB6ACD98FEA1C20EF, value);
+  } 
   public ref CHandle<CCSPlayerPawn> Thrower {
     get => ref _Handle.AsRef<CHandle<CCSPlayerPawn>>(Schema.GetOffset(0xB6ACD98FC9CF8702));
   }

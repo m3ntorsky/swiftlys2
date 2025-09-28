@@ -19,15 +19,15 @@ public partial interface CNavLinkAreaEntity : CPointEntity, ISchemaClass<CNavLin
   
   public ref QAngle LocatorAnglesOffset { get; }
   
-  public ref CUtlSymbolLarge StrMovementForward { get; }
+  public string StrMovementForward { get; set; }
   
-  public ref CUtlSymbolLarge StrMovementReverse { get; }
+  public string StrMovementReverse { get; set; }
   
   public ref bool Enabled { get; }
   
   public ref bool AllowCrossMovableConnections { get; }
   
-  public ref CUtlSymbolLarge StrFilterName { get; }
+  public string StrFilterName { get; set; }
   
   public ref CHandle<CBaseFilter> Filter { get; }
   

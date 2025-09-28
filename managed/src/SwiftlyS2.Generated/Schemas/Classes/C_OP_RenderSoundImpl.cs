@@ -45,9 +45,13 @@ internal partial class C_OP_RenderSoundImpl : CParticleFunctionRendererImpl, C_O
   public ref int CPReference {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xBDBBFDFC1349FFE7));
   }
-public ISchemaFixedString SoundName {
-    get => new SchemaFixedString(_Handle, 0xBDBBFDFC26D82A1A, 256, 1, 1);
-  }
+public string SoundName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xBDBBFDFC26D82A1A);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xBDBBFDFC26D82A1A, value, 256);
+  } 
   public ref bool SuppressStopSoundEvent {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBDBBFDFC76AD7797));
   }

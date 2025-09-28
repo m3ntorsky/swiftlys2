@@ -13,7 +13,7 @@ public partial interface CPulseCell_Step_SetAnimGraphParam : CPulseCell_BaseFlow
   static CPulseCell_Step_SetAnimGraphParam ISchemaClass<CPulseCell_Step_SetAnimGraphParam>.From(nint handle) => new CPulseCell_Step_SetAnimGraphParamImpl(handle);
 
   
-  public ref CUtlString ParamName { get; }
+  public string ParamName { get; set; }
 
 
 }

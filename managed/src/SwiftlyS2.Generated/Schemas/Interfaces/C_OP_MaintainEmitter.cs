@@ -23,7 +23,7 @@ public partial interface C_OP_MaintainEmitter : CParticleFunctionEmitter, ISchem
   
   public ref int SnapshotControlPoint { get; }
   
-  public ref CUtlString StrSnapshotSubset { get; }
+  public string StrSnapshotSubset { get; set; }
   
   public ref bool EmitInstantaneously { get; }
   

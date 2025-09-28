@@ -12,7 +12,6 @@ internal static class NativeDatabase {
   private static int _MainThreadID;
   private unsafe static delegate* unmanaged<byte*, int> _GetDefaultConnection;
   public unsafe static string GetDefaultConnection() {
-    try {
     var ret = _GetDefaultConnection(null);
     var pool = ArrayPool<byte>.Shared;
     var retBuffer = pool.Rent(ret+1);
@@ -23,14 +22,9 @@ internal static class NativeDatabase {
 
     return retString;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int> _GetDefaultConnectionCredentials;
   public unsafe static string GetDefaultConnectionCredentials() {
-    try {
     var ret = _GetDefaultConnectionCredentials(null);
     var pool = ArrayPool<byte>.Shared;
     var retBuffer = pool.Rent(ret+1);
@@ -41,14 +35,9 @@ internal static class NativeDatabase {
 
     return retString;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, byte*, int> _GetCredentials;
   public unsafe static string GetCredentials(string connectionName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var connectionNameLength = Encoding.UTF8.GetByteCount(connectionName);
     var connectionNameBuffer = pool.Rent(connectionNameLength + 1);
@@ -68,14 +57,9 @@ internal static class NativeDatabase {
     return retString;
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, bool> _ConnectionExists;
   public unsafe static bool ConnectionExists(string connectionName) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var connectionNameLength = Encoding.UTF8.GetByteCount(connectionName);
     var connectionNameBuffer = pool.Rent(connectionNameLength + 1);
@@ -87,9 +71,5 @@ internal static class NativeDatabase {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
 }

@@ -15,9 +15,13 @@ internal partial class FeEffectDesc_tImpl : SchemaClass, FeEffectDesc_t {
   public FeEffectDesc_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3462F54326980769));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x3462F54326980769));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x3462F54326980769, value);
+  } 
   public ref uint NameHash {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x3462F543BA4B2BDE));
   }

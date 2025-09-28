@@ -61,7 +61,7 @@ public partial interface CLightComponent : CEntityComponent, ISchemaClass<CLight
   
   public ref int Style { get; }
   
-  public ref CUtlString Pattern { get; }
+  public string Pattern { get; set; }
   
   public ref int CascadeRenderStaticObjects { get; }
   

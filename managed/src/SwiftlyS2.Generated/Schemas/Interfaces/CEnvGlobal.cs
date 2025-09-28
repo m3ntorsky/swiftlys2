@@ -16,7 +16,7 @@ public partial interface CEnvGlobal : CLogicalEntity, ISchemaClass<CEnvGlobal> {
   // CEntityOutputTemplate< int32 >
   public SchemaUntypedField OutCounter { get; }
   
-  public ref CUtlSymbolLarge Globalstate { get; }
+  public string Globalstate { get; set; }
   
   public ref int Triggermode { get; }
   

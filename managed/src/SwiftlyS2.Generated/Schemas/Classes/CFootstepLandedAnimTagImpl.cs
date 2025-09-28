@@ -18,15 +18,27 @@ internal partial class CFootstepLandedAnimTagImpl : CAnimTagBaseImpl, CFootstepL
   public ref FootstepLandedFootSoundType_t FootstepType {
     get => ref _Handle.AsRef<FootstepLandedFootSoundType_t>(Schema.GetOffset(0xD5058C6793F974DB));
   }
-  public ref CUtlString OverrideSoundName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD5058C67FEE552B7));
-  }
-  public ref CUtlString DebugAnimSourceString {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD5058C676912A1B9));
-  }
-  public ref CUtlString BoneName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD5058C6707D0902C));
-  }
+  public string OverrideSoundName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD5058C67FEE552B7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD5058C67FEE552B7, value);
+  } 
+  public string DebugAnimSourceString {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD5058C676912A1B9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD5058C676912A1B9, value);
+  } 
+  public string BoneName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD5058C6707D0902C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD5058C6707D0902C, value);
+  } 
 
 
 }

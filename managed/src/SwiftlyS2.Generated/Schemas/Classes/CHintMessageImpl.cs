@@ -15,9 +15,13 @@ internal partial class CHintMessageImpl : SchemaClass, CHintMessage {
   public CHintMessageImpl(nint handle) : base(handle) {
   }
 
-  public ref CString HintString {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0x7663729E433E2101));
-  }
+  public string HintString {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7663729E433E2101));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7663729E433E2101, value);
+  } 
   public ref CUtlVector<CString> Args {
     get => ref _Handle.AsRef<CUtlVector<CString>>(Schema.GetOffset(0x7663729E5D6040DC));
   }

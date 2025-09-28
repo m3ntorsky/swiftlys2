@@ -15,9 +15,9 @@ public partial interface C_INIT_RemapParticleCountToNamedModelElementScalar : C_
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }
   
-  public ref CUtlString OutputMinName { get; }
+  public string OutputMinName { get; set; }
   
-  public ref CUtlString OutputMaxName { get; }
+  public string OutputMaxName { get; set; }
   
   public ref bool ModelFromRenderer { get; }
 

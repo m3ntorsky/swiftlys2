@@ -30,9 +30,13 @@ internal partial class CPointPushImpl : CPointEntityImpl, CPointPush {
   public ref float ConeOfInfluence {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x282695C02EA47D9C));
   }
-  public ref CUtlSymbolLarge FilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x282695C042E1968C));
-  }
+  public string FilterName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x282695C042E1968C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x282695C042E1968C, value);
+  } 
   public ref CHandle<CBaseFilter> Filter {
     get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0x282695C045D9E0B1));
   }

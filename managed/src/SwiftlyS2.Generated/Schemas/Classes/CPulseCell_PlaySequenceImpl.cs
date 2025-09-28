@@ -15,9 +15,13 @@ internal partial class CPulseCell_PlaySequenceImpl : CPulseCell_BaseYieldingInfl
   public CPulseCell_PlaySequenceImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString SequenceName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xE313765BA270F66B));
-  }
+  public string SequenceName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE313765BA270F66B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE313765BA270F66B, value);
+  } 
   public PulseNodeDynamicOutflows_t PulseAnimEvents {
     get => new PulseNodeDynamicOutflows_tImpl(_Handle + Schema.GetOffset(0xE313765B10F0A082));
   }

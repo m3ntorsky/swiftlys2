@@ -27,18 +27,34 @@ internal partial class CBaseButtonImpl : CBaseToggleImpl, CBaseButton {
   public locksound_t Ls {
     get => new locksound_tImpl(_Handle + Schema.GetOffset(0x1911FA7FD3B05E88));
   }
-  public ref CUtlSymbolLarge UseSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1911FA7FCCC8AC24));
-  }
-  public ref CUtlSymbolLarge LockedSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1911FA7FB3FCB84B));
-  }
-  public ref CUtlSymbolLarge UnlockedSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1911FA7FDC697A96));
-  }
-  public ref CUtlSymbolLarge OverrideAnticipationName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1911FA7FDBCCC724));
-  }
+  public string UseSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1911FA7FCCC8AC24));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1911FA7FCCC8AC24, value);
+  } 
+  public string LockedSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1911FA7FB3FCB84B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1911FA7FB3FCB84B, value);
+  } 
+  public string UnlockedSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1911FA7FDC697A96));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1911FA7FDC697A96, value);
+  } 
+  public string OverrideAnticipationName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1911FA7FDBCCC724));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1911FA7FDBCCC724, value);
+  } 
   public ref bool Locked {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1911FA7FD08E97F3));
   }
@@ -78,18 +94,26 @@ internal partial class CBaseButtonImpl : CBaseToggleImpl, CBaseButton {
   public ref bool ForceNpcExclude {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1911FA7F4194963F));
   }
-  public ref CUtlSymbolLarge GlowEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1911FA7F8B25D228));
-  }
+  public string GlowEntity {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1911FA7F8B25D228));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1911FA7F8B25D228, value);
+  } 
   public ref CHandle<CBaseModelEntity> GlowEntity1 {
     get => ref _Handle.AsRef<CHandle<CBaseModelEntity>>(Schema.GetOffset(0x1911FA7F35C883E7));
   }
   public ref bool Usable {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1911FA7F44B8E369));
   }
-  public ref CUtlSymbolLarge DisplayText {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1911FA7FDE5320C5));
-  }
+  public string DisplayText {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1911FA7FDE5320C5));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1911FA7FDE5320C5, value);
+  } 
 
   public void GlowEntity1Updated() {
     Schema.Update(_Handle, 0x1911FA7F35C883E7);

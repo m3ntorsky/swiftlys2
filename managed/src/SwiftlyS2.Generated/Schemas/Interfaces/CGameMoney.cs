@@ -19,7 +19,7 @@ public partial interface CGameMoney : CRulePointEntity, ISchemaClass<CGameMoney>
   
   public ref int Money { get; }
   
-  public ref CUtlString StrAwardText { get; }
+  public string StrAwardText { get; set; }
 
 
 }

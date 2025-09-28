@@ -13,17 +13,17 @@ public partial interface ResponseFollowup : ISchemaClass<ResponseFollowup> {
   static ResponseFollowup ISchemaClass<ResponseFollowup>.From(nint handle) => new ResponseFollowupImpl(handle);
 
   
-  public ref CString Followup_concept { get; }
+  public string Followup_concept { get; set; }
   
-  public ref CString Followup_contexts { get; }
+  public string Followup_contexts { get; set; }
   
   public ref float Followup_delay { get; }
   
-  public ref CString Followup_target { get; }
+  public string Followup_target { get; set; }
   
-  public ref CString Followup_entityiotarget { get; }
+  public string Followup_entityiotarget { get; set; }
   
-  public ref CString Followup_entityioinput { get; }
+  public string Followup_entityioinput { get; set; }
   
   public ref float Followup_entityiodelay { get; }
   

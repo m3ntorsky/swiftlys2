@@ -18,12 +18,20 @@ internal partial class CRR_ResponseImpl : SchemaClass, CRR_Response {
   public ref byte Type {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x7B8008788ED6D5CD));
   }
-public ISchemaFixedString ResponseName {
-    get => new SchemaFixedString(_Handle, 0x7B800878C2716964, 192, 1, 1);
-  }
-public ISchemaFixedString MatchingRule {
-    get => new SchemaFixedString(_Handle, 0x7B80087820850239, 128, 1, 1);
-  }
+public string ResponseName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x7B800878C2716964);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x7B800878C2716964, value, 192);
+  } 
+public string MatchingRule {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x7B80087820850239);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x7B80087820850239, value, 128);
+  } 
   public ResponseParams Params {
     get => new ResponseParamsImpl(_Handle + Schema.GetOffset(0x7B800878900020D3));
   }
@@ -33,12 +41,20 @@ public ISchemaFixedString MatchingRule {
   public ref bool AnyMatchingRulesInCooldown {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x7B800878579F1BE7));
   }
-  public ref CString SpeakerContext {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0x7B80087877C70A38));
-  }
-  public ref CString WorldContext {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0x7B8008781DC998DF));
-  }
+  public string SpeakerContext {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7B80087877C70A38));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7B80087877C70A38, value);
+  } 
+  public string WorldContext {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7B8008781DC998DF));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7B8008781DC998DF, value);
+  } 
   public ResponseFollowup Followup {
     get => new ResponseFollowupImpl(_Handle + Schema.GetOffset(0x7B800878B1F72BFD));
   }

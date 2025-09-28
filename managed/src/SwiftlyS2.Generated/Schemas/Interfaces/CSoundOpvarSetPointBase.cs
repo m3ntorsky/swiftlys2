@@ -17,15 +17,15 @@ public partial interface CSoundOpvarSetPointBase : CBaseEntity, ISchemaClass<CSo
   
   public ref CHandle<CEntityInstance> Source { get; }
   
-  public ref CUtlSymbolLarge SourceEntityName { get; }
+  public string SourceEntityName { get; set; }
   
   public ref Vector LastPosition { get; }
   
-  public ref CUtlSymbolLarge StackName { get; }
+  public string StackName { get; set; }
   
-  public ref CUtlSymbolLarge OperatorName { get; }
+  public string OperatorName { get; set; }
   
-  public ref CUtlSymbolLarge OpvarName { get; }
+  public string OpvarName { get; set; }
   
   public ref int OpvarIndex { get; }
   

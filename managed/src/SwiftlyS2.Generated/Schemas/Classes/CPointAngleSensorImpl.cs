@@ -18,9 +18,13 @@ internal partial class CPointAngleSensorImpl : CPointEntityImpl, CPointAngleSens
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1E4356013A7C5965));
   }
-  public ref CUtlSymbolLarge LookAtName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1E435601A28C338C));
-  }
+  public string LookAtName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1E435601A28C338C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1E435601A28C338C, value);
+  } 
   public ref CHandle<CBaseEntity> TargetEntity {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x1E43560125D042A9));
   }

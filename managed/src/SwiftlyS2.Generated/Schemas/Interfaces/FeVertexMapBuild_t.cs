@@ -13,7 +13,7 @@ public partial interface FeVertexMapBuild_t : ISchemaClass<FeVertexMapBuild_t> {
   static FeVertexMapBuild_t ISchemaClass<FeVertexMapBuild_t>.From(nint handle) => new FeVertexMapBuild_tImpl(handle);
 
   
-  public ref CUtlString VertexMapName { get; }
+  public string VertexMapName { get; set; }
   
   public ref uint NameHash { get; }
   

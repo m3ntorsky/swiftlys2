@@ -232,6 +232,7 @@ public class TestPlugin : BasePlugin {
 
   [EventListener<EventDelegates.OnEntityCreated>]
   public void OnEntityCreated(IOnEntityCreatedEvent @event) {
+    @event.Entity.Entity.DesignerName = "abc";
     Console.WriteLine("TestPlugin OnEntityCreated222 " + @event.Entity.Entity?.DesignerName);
   }
 

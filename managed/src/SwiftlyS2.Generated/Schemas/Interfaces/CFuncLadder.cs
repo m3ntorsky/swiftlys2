@@ -31,7 +31,7 @@ public partial interface CFuncLadder : CBaseModelEntity, ISchemaClass<CFuncLadde
   
   public ref bool HasSlack { get; }
   
-  public ref CUtlSymbolLarge SurfacePropName { get; }
+  public string SurfacePropName { get; set; }
   
   public CEntityIOOutput OnPlayerGotOnLadder { get; }
   
