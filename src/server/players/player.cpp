@@ -334,7 +334,7 @@ void CPlayer::Think()
 
     if (pawn)
     {
-        auto movementServices = *(void**)sdkschema->GetPropPtr(pawn, CBasePlayerPawn_m_pMovementServices);
+        auto& movementServices = *(void**)sdkschema->GetPropPtr(pawn, CBasePlayerPawn_m_pMovementServices);
         if (movementServices)
         {
             void* buttons = sdkschema->GetPropPtr(movementServices, CPlayer_MovementServices_m_nButtons);
@@ -361,9 +361,9 @@ void CPlayer::Think()
             }
         }
 
-        auto observerServices = *(void**)sdkschema->GetPropPtr(pawn, "CBasePlayerPawn", "m_pObserverServices");
+        auto& observerServices = *(void**)sdkschema->GetPropPtr(pawn, 14568842447348147577); // CBasePlayerPawn::m_pObserverServices
         if (observerServices) {
-            CHandle<CEntityInstance> observerTarget = *(CHandle<CEntityInstance>*)sdkschema->GetPropPtr(observerServices, "CPlayer_ObserverServices", "m_hObserverTarget");
+            CHandle<CEntityInstance>& observerTarget = *(CHandle<CEntityInstance>*)sdkschema->GetPropPtr(observerServices, 1590106406667131980); // CPlayer_ObserverServices::m_hObserverTarget
             vgui->CheckRenderForPlayer(this, observerTarget);
         }
     }

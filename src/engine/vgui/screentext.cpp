@@ -24,6 +24,11 @@
 
 #include <public/entity2/entitykeyvalues.h>
 
+ /**
+  * @todo: implement block transmit for other players using player manager & object
+  * @todo: try to find a better impl because this one is fine, but the text looks like you have 20fps and still counting on my fingers
+  */
+
 #define BOTTOM -4.8
 #define TOP_FROM_BOTTOM 10.13
 #define LEFT -9.28
