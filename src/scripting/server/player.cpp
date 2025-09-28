@@ -153,10 +153,16 @@ void Bridge_Player_ShouldBlockTransmitEntity(int playerid, int entityidx, bool s
 
     auto& bv = player->GetBlockedTransmittingBits();
 
-    if (shouldBlockTransmit)
-        bv.Set(entityidx);
-    else
-        bv.Clear(entityidx);
+    auto dword = entityidx / 32;
+    if (shouldBlockTransmit) {
+        bool wasEmpty = (bv.blockedMask[dword] == 0);
+        bv.blockedMask[dword] |= (1 << (entityidx % 32));
+        if (wasEmpty) bv.activeMasks.push_back(dword);
+    }
+    else {
+        bv.blockedMask[dword] &= ~(1 << (entityidx % 32));
+        if (bv.blockedMask[dword] == 0) bv.activeMasks.erase(std::find(bv.activeMasks.begin(), bv.activeMasks.end(), dword));
+    }
 }
 
 bool Bridge_Player_IsTransmitEntityBlocked(int playerid, int entityidx)
@@ -168,7 +174,7 @@ bool Bridge_Player_IsTransmitEntityBlocked(int playerid, int entityidx)
     if (!player) return false;
 
     auto& bv = player->GetBlockedTransmittingBits();
-    return bv.IsBitSet(entityidx);
+    return (bv.blockedMask[entityidx / 32] & (1 << (entityidx % 32))) != 0;
 }
 
 void Bridge_Player_ClearTransmitEntityBlocked(int playerid)
@@ -178,7 +184,8 @@ void Bridge_Player_ClearTransmitEntityBlocked(int playerid)
     if (!player) return;
 
     auto& bv = player->GetBlockedTransmittingBits();
-    bv.ClearAll();
+    for (int i = 0; i < 512; i++) bv.blockedMask[i] = 0;
+    bv.activeMasks.clear();
 }
 
 void Bridge_Player_ChangeTeam(int playerid, int newteam)

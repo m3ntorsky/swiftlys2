@@ -46,6 +46,7 @@ void Bridge_PlayerManager_SendMessage(int kind, const char* message)
 void Bridge_PlayerManager_ShouldBlockTransmitEntity(int entityidx, bool shouldBlockTransmit)
 {
     static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    auto dword = entityidx / 32;
     for (int i = 0; i < playerManager->GetPlayerCap(); i++) {
         auto player = playerManager->GetPlayer(i);
         if (!player) continue;
@@ -54,10 +55,15 @@ void Bridge_PlayerManager_ShouldBlockTransmitEntity(int entityidx, bool shouldBl
 
         auto& bv = player->GetBlockedTransmittingBits();
 
-        if (shouldBlockTransmit)
-            bv.Set(entityidx);
-        else
-            bv.Clear(entityidx);
+        if (shouldBlockTransmit) {
+            bool wasEmpty = (bv.blockedMask[dword] == 0);
+            bv.blockedMask[dword] |= (1 << (entityidx % 32));
+            if (wasEmpty) bv.activeMasks.push_back(dword);
+        }
+        else {
+            bv.blockedMask[dword] &= ~(1 << (entityidx % 32));
+            if (bv.blockedMask[dword] == 0) bv.activeMasks.erase(std::find(bv.activeMasks.begin(), bv.activeMasks.end(), dword));
+        }
     }
 }
 
@@ -69,7 +75,8 @@ void Bridge_PlayerManager_ClearAllBlockedTransmitEntity()
         if (!player) continue;
 
         auto& bv = player->GetBlockedTransmittingBits();
-        bv.ClearAll();
+        bv.activeMasks.clear();
+        for (int j = 0; j < 512; j++) bv.blockedMask[j] = 0;
     }
 }
 

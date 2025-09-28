@@ -61,7 +61,7 @@ public:
     virtual std::string GetIPAddress() override;
     virtual void Kick(const std::string& sReason, ENetworkDisconnectionReason uReason) override;
 
-    virtual CBitVec<MAX_EDICTS>& GetBlockedTransmittingBits() override;
+    virtual BlockedTransmitInfo& GetBlockedTransmittingBits() override;
 
     virtual void Think() override;
 private:
@@ -72,7 +72,7 @@ private:
     VoiceFlagValue m_uVoiceFlags = VoiceFlagValue::Speak_Normal;
     CPlayerBitVec m_bvSelfMutes = {};
 
-    CBitVec<MAX_EDICTS> m_bvBlockedTransmittingEntities = {};
+    BlockedTransmitInfo m_bvBlockedTransmittingEntities = {};
 
     uint64_t m_uPressedButtons = 0;
 

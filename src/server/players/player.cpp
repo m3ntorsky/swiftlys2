@@ -328,7 +328,7 @@ void CPlayer::Kick(const std::string& sReason, ENetworkDisconnectionReason uReas
     engine->DisconnectClient(m_iPlayerId, uReason, sReason.c_str());
 }
 
-CBitVec<MAX_EDICTS>& CPlayer::GetBlockedTransmittingBits()
+BlockedTransmitInfo& CPlayer::GetBlockedTransmittingBits()
 {
     return m_bvBlockedTransmittingEntities;
 }

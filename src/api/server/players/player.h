@@ -40,6 +40,12 @@ enum MessageType : uint8_t
     CenterHTML = 100,
 };
 
+struct BlockedTransmitInfo
+{
+    uint32_t blockedMask[MAX_EDICTS / 32] = { 0 };
+    std::vector<uint16_t> activeMasks;
+};
+
 class IPlayer
 {
 public:
@@ -80,7 +86,7 @@ public:
     virtual void Kick(const std::string& sReason, ENetworkDisconnectionReason uReason) = 0;
 
     /** Transmit Stuff **/
-    virtual CBitVec<MAX_EDICTS>& GetBlockedTransmittingBits() = 0;
+    virtual BlockedTransmitInfo& GetBlockedTransmittingBits() = 0;
 
     virtual void Think() = 0;
 };
