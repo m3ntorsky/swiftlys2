@@ -7,6 +7,5 @@ internal record PluginManifest(
   string Author,
   string Description,
   string Website,
-  string EntrypointDLL,
-  List<string> DatabaseConnections
+  string EntrypointDLL
 );

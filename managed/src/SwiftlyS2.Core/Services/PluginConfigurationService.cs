@@ -56,7 +56,7 @@ internal class PluginConfigurationService : IPluginConfigurationService {
     return this;
   }
 
-  public IPluginConfigurationService InitializeJson<T>(string name) where T : class, new() {
+  public IPluginConfigurationService InitializeJson<T>(string name, string sectionName) where T : class, new() {
     
     var configPath = GetConfigPath(name);
 
@@ -72,12 +72,17 @@ internal class PluginConfigurationService : IPluginConfigurationService {
 
     var config = new T();
 
+    var wrapped = new Dictionary<string, object?>
+    {
+      [sectionName] = config
+    };
+
     var options = new JsonSerializerOptions {
       WriteIndented = true,
       PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
     };
 
-    var configJson = JsonSerializer.Serialize(config, options);
+    var configJson = JsonSerializer.Serialize(wrapped, options);
     File.WriteAllText(configPath, configJson);
 
     return this;

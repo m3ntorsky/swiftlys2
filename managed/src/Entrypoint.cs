@@ -12,7 +12,7 @@ internal class Entrypoint
     public unsafe static void Start(IntPtr nativeTable, int nativeTableSize, IntPtr basePath)
     {   
         try {
-            Bootstrap.Start(nativeTable, nativeTableSize, Marshal.PtrToStringUTF8(basePath) ?? "");
+            Bootstrap.Start(nativeTable, nativeTableSize, Marshal.PtrToStringUTF8(basePath)!);
         } catch (Exception e) {
             AnsiConsole.WriteException(e);
         }

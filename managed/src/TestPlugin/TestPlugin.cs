@@ -19,6 +19,7 @@ using YamlDotNet.Core.Tokens;
 using Dapper;
 using SwiftlyS2.Shared.Sounds;
 using SwiftlyS2.Shared.EntitySystem;
+using Microsoft.Extensions.Options;
 
 namespace TestPlugin;
 
@@ -45,27 +46,34 @@ public class TestPlugin : BasePlugin {
 
   delegate void Test(int a, int b);
 
+  IOptionsMonitor<TestConfig> _config;
+
   public override void Load(bool hotReload) {
-    // _Core = core;
-    // var root = _Core.Configuration
-    //   .InitializeJson<TestConfig>("test.jsonc") // generate addons/swiftly/configs/xxx/test.jsonc by type TestConfig if not exists
-    //   .InitializeByTemplate("test2.jsonc", "test2.template.jsonc") 
-    //   // copy addons/swiftly/plugins/xxx/templates/test2.template.jsonc to addons/swiftly/configs/xxx/test2.jsonc if not exists
-    //   .Configure(builder => {
-    //     builder.AddJsonFile("test.jsonc", optional: false, reloadOnChange: true);
-    //   })
-    //   .Root;
+    var root = Core.Configuration
+      // Initialize test.jsonc with TestConfig if not exists
+      .InitializeJson<TestConfig>("test.jsonc", "Main")
+
+      // Load the actual config
+      .Configure(builder => {
+        builder.AddJsonFile("test.jsonc", optional: false, reloadOnChange: true);
+      })
+      .Root;
+
+    // Simulate dependency injection
+    ServiceCollection services = new();
+    services.Configure<TestConfig>(root.GetSection("Main"));
+    var provider = services.BuildServiceProvider();
+    var config = provider.GetRequiredService<IOptionsMonitor<TestConfig>>();
+
+    // This can be used everywhere and the value will be updated when the config is changed
+    Console.WriteLine(config.CurrentValue.Age);
+
 
     // var config = new TestConfig();
 
     // throw new Exception("TestPlugin loaded");
 
-    using var conn = Core.Database.GetConnection("testplugin");
-    conn.Open();
-    var result = conn.Query<string>("SELECT * FROM playermodelchanger");
-    foreach(var item in result) {
-      Console.WriteLine(item);
-    }
+    // Core.
 
     Console.WriteLine(Core.Localizer["test"]);
 
@@ -254,7 +262,7 @@ public class TestPlugin : BasePlugin {
 
   [Command("tt4")]
   public void TestCommand4(ICommandContext context) {
-    //Core.Hook.Unhook(_hookId);
+    Console.WriteLine(_config.CurrentValue.Age);
   }
 
   [GameEventHandler(HookMode.Pre)]

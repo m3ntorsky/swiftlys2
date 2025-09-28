@@ -54,7 +54,7 @@ public interface IMemoryService {
 
 
   /// <summary>
-  /// Convert an address to a schema class.
+  /// Convert a raw address to a schema class.
   /// </summary>
   /// <typeparam name="T">The schema class type.</typeparam>
   /// <param name="address">The address of the schema class.</param>
