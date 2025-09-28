@@ -46,6 +46,7 @@ public:
     int GetMaxGameClients();
 
     std::string& GetCorePath();
+    std::string GetVersion();
 };
 
 extern SwiftlyCore g_SwiftlyCore;

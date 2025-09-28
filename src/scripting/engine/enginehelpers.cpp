@@ -130,6 +130,24 @@ void* Bridge_EngineHelpers_GetTraceManager()
     return g_pTraceManager;
 }
 
+int Bridge_EngineHelpers_GetCurrentGame(char* out)
+{
+    static std::string s;
+    s = g_SwiftlyCore.GetCurrentGame();
+
+    if (out != nullptr) strcpy(out, s.c_str());
+    return s.size();
+}
+
+int Bridge_EngineHelpers_GetNativeVersion(char* out)
+{
+    static std::string s;
+    s = g_SwiftlyCore.GetVersion();
+
+    if (out != nullptr) strcpy(out, s.c_str());
+    return s.size();
+}
+
 DEFINE_NATIVE("EngineHelpers.GetServerIP", Bridge_EngineHelpers_GetServerIP);
 DEFINE_NATIVE("EngineHelpers.GetMap", Bridge_EngineHelpers_GetMap);
 DEFINE_NATIVE("EngineHelpers.IsMapValid", Bridge_EngineHelpers_IsMapValid);
@@ -140,3 +158,5 @@ DEFINE_NATIVE("EngineHelpers.GetServerTickCount", Bridge_EngineHelpers_GetServer
 DEFINE_NATIVE("EngineHelpers.FindGameSystemByName", Bridge_EngineHelpers_FindGameSystemByName);
 DEFINE_NATIVE("EngineHelpers.SendMessageToConsole", Bridge_EngineHelpers_SendMessageToConsole);
 DEFINE_NATIVE("EngineHelpers.GetTraceManager", Bridge_EngineHelpers_GetTraceManager);
+DEFINE_NATIVE("EngineHelpers.GetCurrentGame", Bridge_EngineHelpers_GetCurrentGame);
+DEFINE_NATIVE("EngineHelpers.GetNativeVersion", Bridge_EngineHelpers_GetNativeVersion);

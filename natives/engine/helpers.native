@@ -10,3 +10,5 @@ int32 GetServerTickCount = void // simulation tick
 ptr FindGameSystemByName = string name
 void SendMessageToConsole = string msg
 ptr GetTraceManager = void
+string GetCurrentGame = void
+string GetNativeVersion = void

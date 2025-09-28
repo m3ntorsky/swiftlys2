@@ -218,3 +218,12 @@ std::string& SwiftlyCore::GetCorePath()
 {
     return m_sCorePath;
 }
+
+std::string SwiftlyCore::GetVersion()
+{
+#ifndef SWIFTLY_VERSION
+    return "Local";
+#else
+    return SWIFTLY_VERSION;
+#endif
+}

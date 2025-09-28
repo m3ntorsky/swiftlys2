@@ -166,4 +166,40 @@ internal static class NativeEngineHelpers {
       throw;
     }
   }
+  private unsafe static delegate* unmanaged<byte*, int> _GetCurrentGame;
+  public unsafe static string GetCurrentGame() {
+    try {
+    var ret = _GetCurrentGame(null);
+    var pool = ArrayPool<byte>.Shared;
+    var retBuffer = pool.Rent(ret+1);
+    fixed (byte* retBufferPtr = retBuffer) {
+        ret = _GetCurrentGame(retBufferPtr);
+    var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
+    pool.Return(retBuffer);
+
+    return retString;
+  }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
+  private unsafe static delegate* unmanaged<byte*, int> _GetNativeVersion;
+  public unsafe static string GetNativeVersion() {
+    try {
+    var ret = _GetNativeVersion(null);
+    var pool = ArrayPool<byte>.Shared;
+    var retBuffer = pool.Rent(ret+1);
+    fixed (byte* retBufferPtr = retBuffer) {
+        ret = _GetNativeVersion(retBufferPtr);
+    var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
+    pool.Return(retBuffer);
+
+    return retString;
+  }
+     } catch (Exception e) {
+      Spectre.Console.AnsiConsole.WriteException(e);
+      throw;
+    }
+  }
 }
