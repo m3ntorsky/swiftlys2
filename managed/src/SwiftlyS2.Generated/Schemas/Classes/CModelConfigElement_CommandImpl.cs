@@ -15,9 +15,13 @@ internal partial class CModelConfigElement_CommandImpl : CModelConfigElementImpl
   public CModelConfigElement_CommandImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Command {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x89334ED93A5BBC32));
-  }
+  public string Command {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x89334ED93A5BBC32));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x89334ED93A5BBC32, value);
+  } 
   public SchemaUntypedField Args {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x89334ED9DAB98BBC));
   }

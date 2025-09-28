@@ -13,9 +13,9 @@ public partial interface CLogicDistanceCheck : CLogicalEntity, ISchemaClass<CLog
   static CLogicDistanceCheck ISchemaClass<CLogicDistanceCheck>.From(nint handle) => new CLogicDistanceCheckImpl(handle);
 
   
-  public ref CUtlSymbolLarge EntityA { get; }
+  public string EntityA { get; set; }
   
-  public ref CUtlSymbolLarge EntityB { get; }
+  public string EntityB { get; set; }
   
   public ref float Zone1Distance { get; }
   

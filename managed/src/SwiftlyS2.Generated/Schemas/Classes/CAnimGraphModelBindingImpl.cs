@@ -15,9 +15,13 @@ internal partial class CAnimGraphModelBindingImpl : SchemaClass, CAnimGraphModel
   public CAnimGraphModelBindingImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString ModelName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xC0F296335D35B6E1));
-  }
+  public string ModelName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC0F296335D35B6E1));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC0F296335D35B6E1, value);
+  } 
   public SchemaUntypedField SharedData {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC0F29633D0085FE6));
   }

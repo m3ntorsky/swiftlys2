@@ -13,7 +13,7 @@ public partial interface FloatInputMaterialVariable_t : ISchemaClass<FloatInputM
   static FloatInputMaterialVariable_t ISchemaClass<FloatInputMaterialVariable_t>.From(nint handle) => new FloatInputMaterialVariable_tImpl(handle);
 
   
-  public ref CUtlString StrVariable { get; }
+  public string StrVariable { get; set; }
   
   public CParticleCollectionFloatInput Input { get; }
 

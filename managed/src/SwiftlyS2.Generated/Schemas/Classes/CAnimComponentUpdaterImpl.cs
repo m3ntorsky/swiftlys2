@@ -15,9 +15,13 @@ internal partial class CAnimComponentUpdaterImpl : SchemaClass, CAnimComponentUp
   public CAnimComponentUpdaterImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3E0F51C74D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x3E0F51C74D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x3E0F51C74D8F5786, value);
+  } 
   public AnimComponentID Id {
     get => new AnimComponentIDImpl(_Handle + Schema.GetOffset(0x3E0F51C7B4B6E980));
   }

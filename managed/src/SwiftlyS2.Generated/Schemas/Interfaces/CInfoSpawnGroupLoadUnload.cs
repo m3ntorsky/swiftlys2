@@ -21,13 +21,13 @@ public partial interface CInfoSpawnGroupLoadUnload : CLogicalEntity, ISchemaClas
   
   public CEntityIOOutput OnSpawnGroupUnloadFinished { get; }
   
-  public ref CUtlSymbolLarge SpawnGroupName { get; }
+  public string SpawnGroupName { get; set; }
   
-  public ref CUtlSymbolLarge SpawnGroupFilterName { get; }
+  public string SpawnGroupFilterName { get; set; }
   
-  public ref CUtlSymbolLarge LandmarkName { get; }
+  public string LandmarkName { get; set; }
   
-  public ref CUtlString FixedSpawnGroupName { get; }
+  public string FixedSpawnGroupName { get; set; }
   
   public ref float TimeoutInterval { get; }
   

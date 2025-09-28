@@ -15,9 +15,13 @@ internal partial class CPulseCell_Outflow_PlaySequenceImpl : CPulseCell_Outflow_
   public CPulseCell_Outflow_PlaySequenceImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString ParamSequenceName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x9E1D42661D9365E0));
-  }
+  public string ParamSequenceName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9E1D42661D9365E0));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9E1D42661D9365E0, value);
+  } 
 
 
 }

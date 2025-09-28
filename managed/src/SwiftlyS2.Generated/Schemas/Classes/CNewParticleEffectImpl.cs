@@ -33,9 +33,13 @@ internal partial class CNewParticleEffectImpl : IParticleEffectImpl, CNewParticl
       return ptr.IsValidPtr() ? new IParticleCollectionImpl(ptr) : null;
     }
   }
-  public ref CString DebugName {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0x80246F23831E1E2D));
-  }
+  public string DebugName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x80246F23831E1E2D));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x80246F23831E1E2D, value);
+  } 
   public SchemaUntypedField DontRemove {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x80246F2318B469AA));
   }

@@ -15,15 +15,23 @@ internal partial class CTriggerLerpObjectImpl : CBaseTriggerImpl, CTriggerLerpOb
   public CTriggerLerpObjectImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge LerpTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x42FE8EA4853F2479));
-  }
+  public string LerpTarget {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x42FE8EA4853F2479));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x42FE8EA4853F2479, value);
+  } 
   public ref CHandle<CBaseEntity> LerpTarget1 {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x42FE8EA4BAB18AEF));
   }
-  public ref CUtlSymbolLarge LerpTargetAttachment {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x42FE8EA4C1E312BC));
-  }
+  public string LerpTargetAttachment {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x42FE8EA4C1E312BC));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x42FE8EA4C1E312BC, value);
+  } 
   public AttachmentHandle_t LerpTargetAttachment2 {
     get => new AttachmentHandle_tImpl(_Handle + Schema.GetOffset(0x42FE8EA4FC3162AA));
   }
@@ -39,12 +47,20 @@ internal partial class CTriggerLerpObjectImpl : CBaseTriggerImpl, CTriggerLerpOb
   public ref CUtlVector LerpingObjects {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x42FE8EA40128714C));
   }
-  public ref CUtlSymbolLarge LerpEffect {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x42FE8EA4EEECF881));
-  }
-  public ref CUtlSymbolLarge LerpSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x42FE8EA46CA9EE5F));
-  }
+  public string LerpEffect {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x42FE8EA4EEECF881));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x42FE8EA4EEECF881, value);
+  } 
+  public string LerpSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x42FE8EA46CA9EE5F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x42FE8EA46CA9EE5F, value);
+  } 
   public ref bool AttachTouchingObject {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x42FE8EA4569C11D2));
   }

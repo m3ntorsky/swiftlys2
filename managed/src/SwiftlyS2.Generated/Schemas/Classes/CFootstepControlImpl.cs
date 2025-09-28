@@ -15,12 +15,20 @@ internal partial class CFootstepControlImpl : CBaseTriggerImpl, CFootstepControl
   public CFootstepControlImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Source {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x85B34315D0835C78));
-  }
-  public ref CUtlSymbolLarge Destination {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x85B343156E5C12DF));
-  }
+  public string Source {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x85B34315D0835C78));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x85B34315D0835C78, value);
+  } 
+  public string Destination {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x85B343156E5C12DF));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x85B343156E5C12DF, value);
+  } 
 
   public void SourceUpdated() {
     Schema.Update(_Handle, 0x85B34315D0835C78);

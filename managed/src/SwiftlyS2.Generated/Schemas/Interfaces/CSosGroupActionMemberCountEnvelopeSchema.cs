@@ -25,7 +25,7 @@ public partial interface CSosGroupActionMemberCountEnvelopeSchema : CSosGroupAct
   
   public ref float Decay { get; }
   
-  public ref CUtlString ResultVarName { get; }
+  public string ResultVarName { get; set; }
   
   public ref bool SaveToGroup { get; }
 

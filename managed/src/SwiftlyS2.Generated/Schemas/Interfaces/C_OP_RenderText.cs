@@ -15,7 +15,7 @@ public partial interface C_OP_RenderText : CParticleFunctionRenderer, ISchemaCla
   
   public ref Color OutlineColor { get; }
   
-  public ref CUtlString DefaultText { get; }
+  public string DefaultText { get; set; }
 
 
 }

@@ -15,15 +15,27 @@ internal partial class VsInputSignatureElement_tImpl : SchemaClass, VsInputSigna
   public VsInputSignatureElement_tImpl(nint handle) : base(handle) {
   }
 
-public ISchemaFixedString Name {
-    get => new SchemaFixedString(_Handle, 0xFD3BBE5B5B47C92C, 64, 1, 1);
-  }
-public ISchemaFixedString Semantic {
-    get => new SchemaFixedString(_Handle, 0xFD3BBE5B14684E6F, 64, 1, 1);
-  }
-public ISchemaFixedString D3DSemanticName {
-    get => new SchemaFixedString(_Handle, 0xFD3BBE5B66524995, 64, 1, 1);
-  }
+public string Name {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xFD3BBE5B5B47C92C);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xFD3BBE5B5B47C92C, value, 64);
+  } 
+public string Semantic {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xFD3BBE5B14684E6F);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xFD3BBE5B14684E6F, value, 64);
+  } 
+public string D3DSemanticName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xFD3BBE5B66524995);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xFD3BBE5B66524995, value, 64);
+  } 
   public ref int D3DSemanticIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFD3BBE5B67F2BA80));
   }

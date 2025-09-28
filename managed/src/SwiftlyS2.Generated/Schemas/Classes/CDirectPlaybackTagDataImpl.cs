@@ -15,9 +15,13 @@ internal partial class CDirectPlaybackTagDataImpl : SchemaClass, CDirectPlayback
   public CDirectPlaybackTagDataImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString SequenceName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xAADCE162B4A24CB));
-  }
+  public string SequenceName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xAADCE162B4A24CB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xAADCE162B4A24CB, value);
+  } 
   public ref CUtlVector Tags {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xAADCE16B46C8540));
   }

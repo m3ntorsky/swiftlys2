@@ -18,9 +18,13 @@ internal partial class CPulseCell_Inflow_MethodImpl : CPulseCell_Inflow_BaseEntr
   public SchemaUntypedField MethodName {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xFB5926557D863B13));
   }
-  public ref CUtlString Description {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xFB592655678744E9));
-  }
+  public string Description {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xFB592655678744E9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xFB592655678744E9, value);
+  } 
   public ref bool IsPublic {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xFB592655BAE30B50));
   }

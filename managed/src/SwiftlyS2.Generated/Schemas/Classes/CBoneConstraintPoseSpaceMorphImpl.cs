@@ -15,12 +15,20 @@ internal partial class CBoneConstraintPoseSpaceMorphImpl : CBoneConstraintBaseIm
   public CBoneConstraintPoseSpaceMorphImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString BoneName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6ECAD65A7559AC1F));
-  }
-  public ref CUtlString AttachmentName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6ECAD65A7B86DB7C));
-  }
+  public string BoneName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6ECAD65A7559AC1F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6ECAD65A7559AC1F, value);
+  } 
+  public string AttachmentName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6ECAD65A7B86DB7C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6ECAD65A7B86DB7C, value);
+  } 
   public ref CUtlVector<CUtlString> OutputMorph {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x6ECAD65ADC9A8262));
   }

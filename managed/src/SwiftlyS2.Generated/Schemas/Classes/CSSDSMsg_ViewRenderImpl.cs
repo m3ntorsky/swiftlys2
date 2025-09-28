@@ -18,9 +18,13 @@ internal partial class CSSDSMsg_ViewRenderImpl : SchemaClass, CSSDSMsg_ViewRende
   public SceneViewId_t ViewId {
     get => new SceneViewId_tImpl(_Handle + Schema.GetOffset(0x2CD48EEEE976CB25));
   }
-  public ref CUtlString ViewName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x2CD48EEEBA5BBDBB));
-  }
+  public string ViewName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x2CD48EEEBA5BBDBB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x2CD48EEEBA5BBDBB, value);
+  } 
 
 
 }

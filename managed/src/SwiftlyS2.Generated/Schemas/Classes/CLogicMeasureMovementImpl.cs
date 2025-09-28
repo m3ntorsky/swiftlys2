@@ -15,15 +15,27 @@ internal partial class CLogicMeasureMovementImpl : CLogicalEntityImpl, CLogicMea
   public CLogicMeasureMovementImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge StrMeasureTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x11EA274585646A89));
-  }
-  public ref CUtlSymbolLarge StrMeasureReference {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x11EA2745CF4AF1BD));
-  }
-  public ref CUtlSymbolLarge StrTargetReference {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x11EA27453E928D56));
-  }
+  public string StrMeasureTarget {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x11EA274585646A89));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x11EA274585646A89, value);
+  } 
+  public string StrMeasureReference {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x11EA2745CF4AF1BD));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x11EA2745CF4AF1BD, value);
+  } 
+  public string StrTargetReference {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x11EA27453E928D56));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x11EA27453E928D56, value);
+  } 
   public ref CHandle<CBaseEntity> MeasureTarget {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x11EA2745F81BC1A8));
   }

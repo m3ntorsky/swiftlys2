@@ -21,7 +21,7 @@ public partial interface CTriggerPush : CBaseTrigger, ISchemaClass<CTriggerPush>
   
   public ref bool UsePathSimple { get; }
   
-  public ref CUtlSymbolLarge PathSimpleName { get; }
+  public string PathSimpleName { get; set; }
   
   public CPathSimple? PathSimple { get; }
   

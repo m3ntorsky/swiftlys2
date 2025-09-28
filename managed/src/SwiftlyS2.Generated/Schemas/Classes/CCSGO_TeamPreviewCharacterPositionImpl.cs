@@ -24,9 +24,13 @@ internal partial class CCSGO_TeamPreviewCharacterPositionImpl : CBaseEntityImpl,
   public ref int Ordinal {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x58B5CA364ABADF96));
   }
-  public ref CUtlString WeaponName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x58B5CA3652FE8889));
-  }
+  public string WeaponName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x58B5CA3652FE8889));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x58B5CA3652FE8889, value);
+  } 
   public ref ulong Xuid {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x58B5CA36C61EB42B));
   }

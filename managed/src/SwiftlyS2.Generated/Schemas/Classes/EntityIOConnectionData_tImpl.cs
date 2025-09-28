@@ -15,21 +15,37 @@ internal partial class EntityIOConnectionData_tImpl : SchemaClass, EntityIOConne
   public EntityIOConnectionData_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString OutputName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDEBEBB4D5BFC85BF));
-  }
+  public string OutputName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDEBEBB4D5BFC85BF));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDEBEBB4D5BFC85BF, value);
+  } 
   public ref uint TargetType {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xDEBEBB4D13C167A0));
   }
-  public ref CUtlString TargetName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDEBEBB4DC58FE46B));
-  }
-  public ref CUtlString InputName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDEBEBB4D61478B20));
-  }
-  public ref CUtlString OverrideParam {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDEBEBB4DB454EE6A));
-  }
+  public string TargetName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDEBEBB4DC58FE46B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDEBEBB4DC58FE46B, value);
+  } 
+  public string InputName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDEBEBB4D61478B20));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDEBEBB4D61478B20, value);
+  } 
+  public string OverrideParam {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDEBEBB4DB454EE6A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDEBEBB4DB454EE6A, value);
+  } 
   public ref float Delay {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDEBEBB4D7D68FD6E));
   }

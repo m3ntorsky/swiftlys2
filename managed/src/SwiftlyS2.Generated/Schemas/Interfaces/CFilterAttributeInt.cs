@@ -13,7 +13,7 @@ public partial interface CFilterAttributeInt : CBaseFilter, ISchemaClass<CFilter
   static CFilterAttributeInt ISchemaClass<CFilterAttributeInt>.From(nint handle) => new CFilterAttributeIntImpl(handle);
 
   
-  public ref CUtlSymbolLarge AttributeName { get; }
+  public string AttributeName { get; set; }
 
 
 }

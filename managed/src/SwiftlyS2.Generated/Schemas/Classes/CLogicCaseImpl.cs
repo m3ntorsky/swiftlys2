@@ -15,9 +15,13 @@ internal partial class CLogicCaseImpl : CLogicalEntityImpl, CLogicCase {
   public CLogicCaseImpl(nint handle) : base(handle) {
   }
 
-public ISchemaFixedArray<CUtlSymbolLarge> Case {
-    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0x4B6BB20CBD726255, 32, 8, 8);
-  }
+  public string Case {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x4B6BB20CBD726255));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x4B6BB20CBD726255, value);
+  } 
   public ref int ShuffleCases {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4B6BB20C3441354F));
   }

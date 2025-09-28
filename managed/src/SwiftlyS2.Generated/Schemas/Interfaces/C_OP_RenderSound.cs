@@ -33,7 +33,7 @@ public partial interface C_OP_RenderSound : CParticleFunctionRenderer, ISchemaCl
   
   public ref int CPReference { get; }
   
-  public ISchemaFixedString SoundName { get; }
+  public string SoundName { get; set; }
   
   public ref bool SuppressStopSoundEvent { get; }
 

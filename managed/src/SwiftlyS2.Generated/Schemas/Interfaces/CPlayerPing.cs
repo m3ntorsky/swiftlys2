@@ -21,7 +21,7 @@ public partial interface CPlayerPing : CBaseEntity, ISchemaClass<CPlayerPing> {
   
   public ref bool Urgent { get; }
   
-  public ISchemaFixedString PlaceName { get; }
+  public string PlaceName { get; set; }
 
   public void PlayerUpdated();
   public void PingedEntityUpdated();

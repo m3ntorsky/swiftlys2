@@ -13,7 +13,7 @@ public partial interface CMapSharedEnvironment : CLogicalEntity, ISchemaClass<CM
   static CMapSharedEnvironment ISchemaClass<CMapSharedEnvironment>.From(nint handle) => new CMapSharedEnvironmentImpl(handle);
 
   
-  public ref CUtlSymbolLarge TargetMapName { get; }
+  public string TargetMapName { get; set; }
 
 
 }

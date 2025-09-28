@@ -13,9 +13,9 @@ public partial interface CLogicCollisionPair : CLogicalEntity, ISchemaClass<CLog
   static CLogicCollisionPair ISchemaClass<CLogicCollisionPair>.From(nint handle) => new CLogicCollisionPairImpl(handle);
 
   
-  public ref CUtlSymbolLarge NameAttach1 { get; }
+  public string NameAttach1 { get; set; }
   
-  public ref CUtlSymbolLarge NameAttach2 { get; }
+  public string NameAttach2 { get; set; }
   
   public ref bool SupportMultipleEntitiesWithSameName { get; }
   

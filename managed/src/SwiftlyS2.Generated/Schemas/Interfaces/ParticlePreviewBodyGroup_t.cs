@@ -13,7 +13,7 @@ public partial interface ParticlePreviewBodyGroup_t : ISchemaClass<ParticlePrevi
   static ParticlePreviewBodyGroup_t ISchemaClass<ParticlePreviewBodyGroup_t>.From(nint handle) => new ParticlePreviewBodyGroup_tImpl(handle);
 
   
-  public ref CUtlString BodyGroupName { get; }
+  public string BodyGroupName { get; set; }
   
   public ref int Value { get; }
 

@@ -15,7 +15,6 @@ internal static class NativeCommands {
   /// 1 -> not silent, 2 -> silent, -1 -> invalid player, 0 -> no command
   /// </summary>
   public unsafe static int HandleCommandForPlayer(int playerid, string command) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var commandLength = Encoding.UTF8.GetByteCount(command);
     var commandBuffer = pool.Rent(commandLength + 1);
@@ -27,17 +26,12 @@ internal static class NativeCommands {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, nint, bool, ulong> _RegisterCommand;
   /// <summary>
   /// callback should receive (int32 playerid, string arguments_list (separated by \x01), string commandName, string prefix, bool silent), if registerRaw is false, it will not put "sw_" before the command name
   /// </summary>
   public unsafe static ulong RegisterCommand(string commandName, nint callback, bool registerRaw) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var commandNameLength = Encoding.UTF8.GetByteCount(commandName);
     var commandNameBuffer = pool.Rent(commandNameLength + 1);
@@ -49,26 +43,16 @@ internal static class NativeCommands {
 
     return ret;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<ulong, void> _UnregisterCommand;
   public unsafe static void UnregisterCommand(ulong callbackID) {
-    try {
     _UnregisterCommand(callbackID);
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, byte*, bool, ulong> _RegisterAlias;
   /// <summary>
   /// registerRaw behaves the same as on RegisterCommand, for commandName you need to also put the "sw_" prefix if the command is registered without raw mode
   /// </summary>
   public unsafe static ulong RegisterAlias(string aliasName, string commandName, bool registerRaw) {
-    try {
     var pool = ArrayPool<byte>.Shared;
     var aliasNameLength = Encoding.UTF8.GetByteCount(aliasName);
     var aliasNameBuffer = pool.Rent(aliasNameLength + 1);
@@ -89,62 +73,33 @@ internal static class NativeCommands {
     return ret;
   }
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<ulong, void> _UnregisterAlias;
   public unsafe static void UnregisterAlias(ulong callbackID) {
-    try {
     _UnregisterAlias(callbackID);
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<nint, ulong> _RegisterClientCommandsListener;
   /// <summary>
   /// callback should receive: int32 playerid, string commandline, return true -> ignored, return false -> supercede
   /// </summary>
   public unsafe static ulong RegisterClientCommandsListener(nint callback) {
-    try {
     var ret = _RegisterClientCommandsListener(callback);
     return ret;
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<ulong, void> _UnregisterClientCommandsListener;
   public unsafe static void UnregisterClientCommandsListener(ulong callbackID) {
-    try {
     _UnregisterClientCommandsListener(callbackID);
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<nint, ulong> _RegisterClientChatListener;
   /// <summary>
   /// callback should receive: int32 playerid, string text, bool teamonly, return true -> ignored, return false -> supercede, when superceded it's not gonna send the message
   /// </summary>
   public unsafe static ulong RegisterClientChatListener(nint callback) {
-    try {
     var ret = _RegisterClientChatListener(callback);
     return ret;
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<ulong, void> _UnregisterClientChatListener;
   public unsafe static void UnregisterClientChatListener(ulong callbackID) {
-    try {
     _UnregisterClientChatListener(callbackID);
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
 }

@@ -15,12 +15,20 @@ internal partial class CFlexControllerImpl : SchemaClass, CFlexController {
   public CFlexControllerImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x5265FDF16750BACB));
-  }
-  public ref CUtlString Type {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x5265FDF1B580AB00));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x5265FDF16750BACB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x5265FDF16750BACB, value);
+  } 
+  public string Type {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x5265FDF1B580AB00));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x5265FDF1B580AB00, value);
+  } 
   public ref float Min {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5265FDF1C98F4557));
   }

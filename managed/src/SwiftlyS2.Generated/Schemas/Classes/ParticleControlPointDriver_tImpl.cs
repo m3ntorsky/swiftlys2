@@ -21,18 +21,26 @@ internal partial class ParticleControlPointDriver_tImpl : SchemaClass, ParticleC
   public ref ParticleAttachment_t AttachType {
     get => ref _Handle.AsRef<ParticleAttachment_t>(Schema.GetOffset(0xB7C66843432E8381));
   }
-  public ref CUtlString AttachmentName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB7C66843295DA9CB));
-  }
+  public string AttachmentName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB7C66843295DA9CB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB7C66843295DA9CB, value);
+  } 
   public ref Vector Offset {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xB7C66843BD25CC2A));
   }
   public ref QAngle Offset1 {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xB7C6684346F6B3C0));
   }
-  public ref CUtlString EntityName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB7C6684380D1D3E1));
-  }
+  public string EntityName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB7C6684380D1D3E1));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB7C6684380D1D3E1, value);
+  } 
 
 
 }

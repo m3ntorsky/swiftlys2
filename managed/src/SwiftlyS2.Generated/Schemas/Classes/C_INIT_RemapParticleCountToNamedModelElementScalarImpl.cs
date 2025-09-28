@@ -18,12 +18,20 @@ internal partial class C_INIT_RemapParticleCountToNamedModelElementScalarImpl : 
   public ref CStrongHandle<InfoForResourceTypeCModel> Model {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0xB011C761E100C814));
   }
-  public ref CUtlString OutputMinName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB011C761CF5C20FB));
-  }
-  public ref CUtlString OutputMaxName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB011C761553184F9));
-  }
+  public string OutputMinName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB011C761CF5C20FB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB011C761CF5C20FB, value);
+  } 
+  public string OutputMaxName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB011C761553184F9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB011C761553184F9, value);
+  } 
   public ref bool ModelFromRenderer {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB011C761AEBA1F25));
   }

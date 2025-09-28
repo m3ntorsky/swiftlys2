@@ -55,7 +55,7 @@ public partial interface CLogicNPCCounter : CBaseEntity, ISchemaClass<CLogicNPCC
   
   public ref CHandle<CEntityInstance> Source { get; }
   
-  public ref CUtlSymbolLarge SourceEntityName { get; }
+  public string SourceEntityName { get; set; }
   
   public ref float DistanceMax { get; }
   
@@ -69,7 +69,7 @@ public partial interface CLogicNPCCounter : CBaseEntity, ISchemaClass<CLogicNPCC
   
   public ref int MaxFactorAll { get; }
   
-  public ref CUtlSymbolLarge NPCClassname_1 { get; }
+  public string NPCClassname_1 { get; set; }
   
   public ref int NPCState_1 { get; }
   
@@ -85,7 +85,7 @@ public partial interface CLogicNPCCounter : CBaseEntity, ISchemaClass<CLogicNPCC
   
   public ref float DefaultDist_1 { get; }
   
-  public ref CUtlSymbolLarge NPCClassname_2 { get; }
+  public string NPCClassname_2 { get; set; }
   
   public ref int NPCState_2 { get; }
   
@@ -101,7 +101,7 @@ public partial interface CLogicNPCCounter : CBaseEntity, ISchemaClass<CLogicNPCC
   
   public ref float DefaultDist_2 { get; }
   
-  public ref CUtlSymbolLarge NPCClassname_3 { get; }
+  public string NPCClassname_3 { get; set; }
   
   public ref int NPCState_3 { get; }
   

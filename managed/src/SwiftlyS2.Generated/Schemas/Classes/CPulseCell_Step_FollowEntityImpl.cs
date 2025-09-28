@@ -15,12 +15,20 @@ internal partial class CPulseCell_Step_FollowEntityImpl : CPulseCell_BaseFlowImp
   public CPulseCell_Step_FollowEntityImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString ParamBoneOrAttachName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x75FAF4A9B89867BB));
-  }
-  public ref CUtlString ParamBoneOrAttachNameChild {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x75FAF4A902011093));
-  }
+  public string ParamBoneOrAttachName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x75FAF4A9B89867BB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x75FAF4A9B89867BB, value);
+  } 
+  public string ParamBoneOrAttachNameChild {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x75FAF4A902011093));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x75FAF4A902011093, value);
+  } 
 
 
 }

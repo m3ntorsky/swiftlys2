@@ -21,9 +21,9 @@ public partial interface CPropDataComponent : CEntityComponent, ISchemaClass<CPr
   
   public ref float DmgModFire { get; }
   
-  public ref CUtlSymbolLarge PhysicsDamageTableName { get; }
+  public string PhysicsDamageTableName { get; set; }
   
-  public ref CUtlSymbolLarge BasePropData { get; }
+  public string BasePropData { get; set; }
   
   public ref int Interactions { get; }
   

@@ -24,9 +24,13 @@ internal partial class CGameMoneyImpl : CRulePointEntityImpl, CGameMoney {
   public ref int Money {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xED17C6845BE25D03));
   }
-  public ref CUtlString StrAwardText {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xED17C684B48AB662));
-  }
+  public string StrAwardText {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xED17C684B48AB662));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xED17C684B48AB662, value);
+  } 
 
 
 }

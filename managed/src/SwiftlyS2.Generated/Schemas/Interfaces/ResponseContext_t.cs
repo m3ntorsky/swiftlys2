@@ -13,9 +13,9 @@ public partial interface ResponseContext_t : ISchemaClass<ResponseContext_t> {
   static ResponseContext_t ISchemaClass<ResponseContext_t>.From(nint handle) => new ResponseContext_tImpl(handle);
 
   
-  public ref CUtlSymbolLarge Name { get; }
+  public string Name { get; set; }
   
-  public ref CUtlSymbolLarge Value { get; }
+  public string Value { get; set; }
   
   public GameTime_t ExpirationTime { get; }
 

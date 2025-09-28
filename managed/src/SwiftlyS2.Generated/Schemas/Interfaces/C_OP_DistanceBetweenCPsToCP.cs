@@ -37,7 +37,7 @@ public partial interface C_OP_DistanceBetweenCPsToCP : CParticleFunctionPreEmiss
   
   public ref bool LOS { get; }
   
-  public ISchemaFixedString CollisionGroupName { get; }
+  public string CollisionGroupName { get; set; }
   
   public ref ParticleTraceSet_t TraceSet { get; }
   

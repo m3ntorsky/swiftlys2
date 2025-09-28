@@ -18,9 +18,13 @@ internal partial class CPathSimpleImpl : CBaseEntityImpl, CPathSimple {
   public CPathQueryComponent CPathQueryComponent {
     get => new CPathQueryComponentImpl(_Handle + Schema.GetOffset(0x10936CB34513F542));
   }
-  public ref CUtlString PathString {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x10936CB36EC51AA7));
-  }
+  public string PathString {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x10936CB36EC51AA7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x10936CB36EC51AA7, value);
+  } 
   public ref bool ClosedLoop {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x10936CB37C20D1AB));
   }

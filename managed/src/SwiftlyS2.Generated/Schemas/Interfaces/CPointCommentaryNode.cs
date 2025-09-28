@@ -13,19 +13,19 @@ public partial interface CPointCommentaryNode : CBaseAnimGraph, ISchemaClass<CPo
   static CPointCommentaryNode ISchemaClass<CPointCommentaryNode>.From(nint handle) => new CPointCommentaryNodeImpl(handle);
 
   
-  public ref CUtlSymbolLarge PreCommands { get; }
+  public string PreCommands { get; set; }
   
-  public ref CUtlSymbolLarge PostCommands { get; }
+  public string PostCommands { get; set; }
   
-  public ref CUtlSymbolLarge CommentaryFile { get; }
+  public string CommentaryFile { get; set; }
   
-  public ref CUtlSymbolLarge ViewTarget { get; }
+  public string ViewTarget { get; set; }
   
   public ref CHandle<CBaseEntity> ViewTarget1 { get; }
   
   public ref CHandle<CBaseEntity> ViewTargetAngles { get; }
   
-  public ref CUtlSymbolLarge ViewPosition { get; }
+  public string ViewPosition { get; set; }
   
   public ref CHandle<CBaseEntity> ViewPosition2 { get; }
   
@@ -63,9 +63,9 @@ public partial interface CPointCommentaryNode : CBaseAnimGraph, ISchemaClass<CPo
   
   public ref float StartTimeInCommentary { get; }
   
-  public ref CUtlSymbolLarge Title { get; }
+  public string Title { get; set; }
   
-  public ref CUtlSymbolLarge Speakers { get; }
+  public string Speakers { get; set; }
   
   public ref int NodeNumber { get; }
   

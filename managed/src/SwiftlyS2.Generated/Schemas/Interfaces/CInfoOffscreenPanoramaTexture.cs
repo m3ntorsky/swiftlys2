@@ -19,9 +19,9 @@ public partial interface CInfoOffscreenPanoramaTexture : CPointEntity, ISchemaCl
   
   public ref int ResolutionY { get; }
   
-  public ref CUtlSymbolLarge LayoutFileName { get; }
+  public string LayoutFileName { get; set; }
   
-  public ref CUtlSymbolLarge RenderAttrName { get; }
+  public string RenderAttrName { get; set; }
   
   public ref CUtlVector<CHandle<CBaseModelEntity>> TargetEntities { get; }
   
@@ -29,7 +29,7 @@ public partial interface CInfoOffscreenPanoramaTexture : CPointEntity, ISchemaCl
   
   public ref CUtlVector<CUtlSymbolLarge> CSSClasses { get; }
   
-  public ref CUtlSymbolLarge TargetsName { get; }
+  public string TargetsName { get; set; }
   
   public ref CUtlVector<CHandle<CBaseModelEntity>> AdditionalTargetEntities { get; }
 

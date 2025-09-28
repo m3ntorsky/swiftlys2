@@ -33,15 +33,27 @@ internal partial class CFuncTrackChangeImpl : CFuncPlatRotImpl, CFuncTrackChange
       return ptr.IsValidPtr() ? new CFuncTrackTrainImpl(ptr) : null;
     }
   }
-  public ref CUtlSymbolLarge TrackTopName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x25A8A26FF9BD489C));
-  }
-  public ref CUtlSymbolLarge TrackBottomName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x25A8A26F7F34C2D4));
-  }
-  public ref CUtlSymbolLarge TrainName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x25A8A26FA3DC4C82));
-  }
+  public string TrackTopName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x25A8A26FF9BD489C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x25A8A26FF9BD489C, value);
+  } 
+  public string TrackBottomName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x25A8A26F7F34C2D4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x25A8A26F7F34C2D4, value);
+  } 
+  public string TrainName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x25A8A26FA3DC4C82));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x25A8A26FA3DC4C82, value);
+  } 
   public ref TRAIN_CODE Code {
     get => ref _Handle.AsRef<TRAIN_CODE>(Schema.GetOffset(0x25A8A26FB70C9D94));
   }

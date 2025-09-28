@@ -13,7 +13,7 @@ public partial interface CModelConfigElement_SetBodygroupOnAttachedModels : CMod
   static CModelConfigElement_SetBodygroupOnAttachedModels ISchemaClass<CModelConfigElement_SetBodygroupOnAttachedModels>.From(nint handle) => new CModelConfigElement_SetBodygroupOnAttachedModelsImpl(handle);
 
   
-  public ref CUtlString GroupName { get; }
+  public string GroupName { get; set; }
   
   public ref int Choice { get; }
 

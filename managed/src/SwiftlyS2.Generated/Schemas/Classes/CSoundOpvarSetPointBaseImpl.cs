@@ -21,21 +21,37 @@ internal partial class CSoundOpvarSetPointBaseImpl : CBaseEntityImpl, CSoundOpva
   public ref CHandle<CEntityInstance> Source {
     get => ref _Handle.AsRef<CHandle<CEntityInstance>>(Schema.GetOffset(0x6C95A3E033D3CD82));
   }
-  public ref CUtlSymbolLarge SourceEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6C95A3E06C1387C0));
-  }
+  public string SourceEntityName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6C95A3E06C1387C0));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6C95A3E06C1387C0, value);
+  } 
   public ref Vector LastPosition {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6C95A3E0A5B68002));
   }
-  public ref CUtlSymbolLarge StackName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6C95A3E03B3E9CD4));
-  }
-  public ref CUtlSymbolLarge OperatorName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6C95A3E0F6140996));
-  }
-  public ref CUtlSymbolLarge OpvarName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6C95A3E02CAEFF3C));
-  }
+  public string StackName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6C95A3E03B3E9CD4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6C95A3E03B3E9CD4, value);
+  } 
+  public string OperatorName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6C95A3E0F6140996));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6C95A3E0F6140996, value);
+  } 
+  public string OpvarName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6C95A3E02CAEFF3C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6C95A3E02CAEFF3C, value);
+  } 
   public ref int OpvarIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6C95A3E0BC170C34));
   }

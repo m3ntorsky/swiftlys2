@@ -15,9 +15,13 @@ internal partial class FeMorphLayerDepr_tImpl : SchemaClass, FeMorphLayerDepr_t 
   public FeMorphLayerDepr_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x5895C19CAE8A266));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x5895C19CAE8A266));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x5895C19CAE8A266, value);
+  } 
   public ref uint NameHash {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x5895C19DE15EEFE));
   }

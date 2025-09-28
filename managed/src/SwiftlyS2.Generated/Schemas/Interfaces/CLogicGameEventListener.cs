@@ -15,9 +15,9 @@ public partial interface CLogicGameEventListener : CLogicalEntity, ISchemaClass<
   
   public CEntityIOOutput OnEventFired { get; }
   
-  public ref CUtlSymbolLarge GameEventName { get; }
+  public string GameEventName { get; set; }
   
-  public ref CUtlSymbolLarge GameEventItem { get; }
+  public string GameEventItem { get; set; }
   
   public ref bool Enabled { get; }
   

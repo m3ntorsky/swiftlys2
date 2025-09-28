@@ -13,13 +13,13 @@ public partial interface EntComponentInfo_t : ISchemaClass<EntComponentInfo_t> {
   static EntComponentInfo_t ISchemaClass<EntComponentInfo_t>.From(nint handle) => new EntComponentInfo_tImpl(handle);
 
   
-  public ref CString Name { get; }
+  public string Name { get; set; }
   
-  public ref CString CPPClassname { get; }
+  public string CPPClassname { get; set; }
   
-  public ref CString NetworkDataReferencedDescription { get; }
+  public string NetworkDataReferencedDescription { get; set; }
   
-  public ref CString NetworkDataReferencedPtrPropDescription { get; }
+  public string NetworkDataReferencedPtrPropDescription { get; set; }
   
   public ref int RuntimeIndex { get; }
   

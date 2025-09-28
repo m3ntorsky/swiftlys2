@@ -13,9 +13,9 @@ public partial interface C_INIT_RandomModelSequence : CParticleFunctionInitializ
   static C_INIT_RandomModelSequence ISchemaClass<C_INIT_RandomModelSequence>.From(nint handle) => new C_INIT_RandomModelSequenceImpl(handle);
 
   
-  public ISchemaFixedString ActivityName { get; }
+  public string ActivityName { get; set; }
   
-  public ISchemaFixedString SequenceName { get; }
+  public string SequenceName { get; set; }
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }
 

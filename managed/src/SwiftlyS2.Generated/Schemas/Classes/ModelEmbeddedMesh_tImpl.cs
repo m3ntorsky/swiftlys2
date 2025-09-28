@@ -15,9 +15,13 @@ internal partial class ModelEmbeddedMesh_tImpl : SchemaClass, ModelEmbeddedMesh_
   public ModelEmbeddedMesh_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x9EB0DD6ECAE8A266));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9EB0DD6ECAE8A266));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9EB0DD6ECAE8A266, value);
+  } 
   public ref int MeshIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9EB0DD6E07C0EC64));
   }

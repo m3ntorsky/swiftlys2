@@ -18,12 +18,20 @@ internal partial class CParticleAnimTagImpl : CAnimTagBaseImpl, CParticleAnimTag
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ParticleSystem {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0x80C76F77C9C33AF8));
   }
-  public ref CUtlString ParticleSystemName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x80C76F775B35985D));
-  }
-  public ref CUtlString ConfigName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x80C76F7791DC0E44));
-  }
+  public string ParticleSystemName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x80C76F775B35985D));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x80C76F775B35985D, value);
+  } 
+  public string ConfigName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x80C76F7791DC0E44));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x80C76F7791DC0E44, value);
+  } 
   public ref bool DetachFromOwner {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x80C76F77357F7C69));
   }
@@ -36,15 +44,23 @@ internal partial class CParticleAnimTagImpl : CAnimTagBaseImpl, CParticleAnimTag
   public ref bool TagEndStopIsInstant {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x80C76F7749C6A809));
   }
-  public ref CUtlString AttachmentName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x80C76F77295DA9CB));
-  }
+  public string AttachmentName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x80C76F77295DA9CB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x80C76F77295DA9CB, value);
+  } 
   public ref ParticleAttachment_t AttachmentType {
     get => ref _Handle.AsRef<ParticleAttachment_t>(Schema.GetOffset(0x80C76F77778D9A00));
   }
-  public ref CUtlString AttachmentCP1Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x80C76F77420E59C5));
-  }
+  public string AttachmentCP1Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x80C76F77420E59C5));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x80C76F77420E59C5, value);
+  } 
   public ref ParticleAttachment_t AttachmentCP1Type {
     get => ref _Handle.AsRef<ParticleAttachment_t>(Schema.GetOffset(0x80C76F77CD1D74D6));
   }

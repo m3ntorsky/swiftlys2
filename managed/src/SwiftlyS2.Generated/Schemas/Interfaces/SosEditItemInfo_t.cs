@@ -15,11 +15,11 @@ public partial interface SosEditItemInfo_t : ISchemaClass<SosEditItemInfo_t> {
   
   public ref SosEditItemType_t ItemType { get; }
   
-  public ref CUtlString ItemName { get; }
+  public string ItemName { get; set; }
   
-  public ref CUtlString ItemTypeName { get; }
+  public string ItemTypeName { get; set; }
   
-  public ref CUtlString ItemKVString { get; }
+  public string ItemKVString { get; set; }
   
   public ref Vector2D ItemPos { get; }
 

@@ -13,9 +13,9 @@ public partial interface CFootstepControl : CBaseTrigger, ISchemaClass<CFootstep
   static CFootstepControl ISchemaClass<CFootstepControl>.From(nint handle) => new CFootstepControlImpl(handle);
 
   
-  public ref CUtlSymbolLarge Source { get; }
+  public string Source { get; set; }
   
-  public ref CUtlSymbolLarge Destination { get; }
+  public string Destination { get; set; }
 
   public void SourceUpdated();
   public void DestinationUpdated();

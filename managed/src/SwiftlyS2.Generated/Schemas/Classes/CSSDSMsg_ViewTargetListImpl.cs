@@ -18,9 +18,13 @@ internal partial class CSSDSMsg_ViewTargetListImpl : SchemaClass, CSSDSMsg_ViewT
   public SceneViewId_t ViewId {
     get => new SceneViewId_tImpl(_Handle + Schema.GetOffset(0xD53B3083E976CB25));
   }
-  public ref CUtlString ViewName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD53B3083BA5BBDBB));
-  }
+  public string ViewName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD53B3083BA5BBDBB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD53B3083BA5BBDBB, value);
+  } 
   public ref CUtlVector Targets {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD53B30832FF8E661));
   }

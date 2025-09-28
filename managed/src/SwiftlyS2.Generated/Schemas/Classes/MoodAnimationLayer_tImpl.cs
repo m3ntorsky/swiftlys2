@@ -15,9 +15,13 @@ internal partial class MoodAnimationLayer_tImpl : SchemaClass, MoodAnimationLaye
   public MoodAnimationLayer_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3663914263D22D49));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x3663914263D22D49));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x3663914263D22D49, value);
+  } 
   public ref bool ActiveListening {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x36639142122973A0));
   }

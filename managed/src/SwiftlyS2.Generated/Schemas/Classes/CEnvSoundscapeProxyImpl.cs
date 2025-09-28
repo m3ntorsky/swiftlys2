@@ -15,9 +15,13 @@ internal partial class CEnvSoundscapeProxyImpl : CEnvSoundscapeImpl, CEnvSoundsc
   public CEnvSoundscapeProxyImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge MainSoundscapeName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x58127BA672404420));
-  }
+  public string MainSoundscapeName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x58127BA672404420));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x58127BA672404420, value);
+  } 
 
 
 }

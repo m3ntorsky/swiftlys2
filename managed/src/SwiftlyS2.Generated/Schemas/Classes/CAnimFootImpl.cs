@@ -15,9 +15,13 @@ internal partial class CAnimFootImpl : SchemaClass, CAnimFoot {
   public CAnimFootImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x583A05E34D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x583A05E34D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x583A05E34D8F5786, value);
+  } 
   public ref Vector BallOffset {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x583A05E3E3376F1B));
   }

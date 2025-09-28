@@ -13,9 +13,9 @@ public partial interface RenderSkeletonBone_t : ISchemaClass<RenderSkeletonBone_
   static RenderSkeletonBone_t ISchemaClass<RenderSkeletonBone_t>.From(nint handle) => new RenderSkeletonBone_tImpl(handle);
 
   
-  public ref CUtlString BoneName { get; }
+  public string BoneName { get; set; }
   
-  public ref CUtlString ParentName { get; }
+  public string ParentName { get; set; }
   
   public ref matrix3x4_t InvBindPose { get; }
   

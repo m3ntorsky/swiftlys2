@@ -13,11 +13,11 @@ public partial interface CHitBox : ISchemaClass<CHitBox> {
   static CHitBox ISchemaClass<CHitBox>.From(nint handle) => new CHitBoxImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
-  public ref CUtlString SurfaceProperty { get; }
+  public string SurfaceProperty { get; set; }
   
-  public ref CUtlString BoneName { get; }
+  public string BoneName { get; set; }
   
   public ref Vector MinBounds { get; }
   

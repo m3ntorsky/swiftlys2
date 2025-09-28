@@ -18,9 +18,13 @@ internal partial class CPulse_PublicOutputImpl : SchemaClass, CPulse_PublicOutpu
   public SchemaUntypedField Name {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x74B3BCA4CAE8A266));
   }
-  public ref CUtlString Description {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x74B3BCA4678744E9));
-  }
+  public string Description {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x74B3BCA4678744E9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x74B3BCA4678744E9, value);
+  } 
   public SchemaUntypedField Args {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x74B3BCA4DAB98BBC));
   }

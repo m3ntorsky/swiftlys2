@@ -24,12 +24,20 @@ internal partial class CPointValueRemapperImpl : CBaseEntityImpl, CPointValueRem
   public ref ValueRemapperInputType_t InputType {
     get => ref _Handle.AsRef<ValueRemapperInputType_t>(Schema.GetOffset(0xA8CB433DBFD8A33F));
   }
-  public ref CUtlSymbolLarge RemapLineStartName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433DD35A8A1B));
-  }
-  public ref CUtlSymbolLarge RemapLineEndName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D104A9202));
-  }
+  public string RemapLineStartName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8CB433DD35A8A1B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8CB433DD35A8A1B, value);
+  } 
+  public string RemapLineEndName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8CB433D104A9202));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8CB433D104A9202, value);
+  } 
   public ref CHandle<CBaseEntity> RemapLineStart {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xA8CB433D5B4CD88A));
   }
@@ -51,18 +59,34 @@ internal partial class CPointValueRemapperImpl : CBaseEntityImpl, CPointValueRem
   public ref ValueRemapperOutputType_t OutputType {
     get => ref _Handle.AsRef<ValueRemapperOutputType_t>(Schema.GetOffset(0xA8CB433DA9E2FFB0));
   }
-  public ref CUtlSymbolLarge OutputEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D0F9F4D94));
-  }
-  public ref CUtlSymbolLarge OutputEntity2Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D8D3AC53C));
-  }
-  public ref CUtlSymbolLarge OutputEntity3Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D8F43AAE7));
-  }
-  public ref CUtlSymbolLarge OutputEntity4Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433DCCF46672));
-  }
+  public string OutputEntityName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8CB433D0F9F4D94));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8CB433D0F9F4D94, value);
+  } 
+  public string OutputEntity2Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8CB433D8D3AC53C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8CB433D8D3AC53C, value);
+  } 
+  public string OutputEntity3Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8CB433D8F43AAE7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8CB433D8F43AAE7, value);
+  } 
+  public string OutputEntity4Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8CB433DCCF46672));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8CB433DCCF46672, value);
+  } 
   public ref CUtlVector<CHandle<CBaseEntity>> OutputEntities {
     get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(Schema.GetOffset(0xA8CB433D7E483685));
   }
@@ -111,21 +135,41 @@ internal partial class CPointValueRemapperImpl : CBaseEntityImpl, CPointValueRem
   public ref float CustomOutputValue {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA8CB433D952E20FE));
   }
-  public ref CUtlSymbolLarge SoundEngage {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433DA8AF4343));
-  }
-  public ref CUtlSymbolLarge SoundDisengage {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433DC289956F));
-  }
-  public ref CUtlSymbolLarge SoundReachedValueZero {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D1C304389));
-  }
-  public ref CUtlSymbolLarge SoundReachedValueOne {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D685D5F85));
-  }
-  public ref CUtlSymbolLarge SoundMovingLoop {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xA8CB433D990A15C8));
-  }
+  public string SoundEngage {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8CB433DA8AF4343));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8CB433DA8AF4343, value);
+  } 
+  public string SoundDisengage {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8CB433DC289956F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8CB433DC289956F, value);
+  } 
+  public string SoundReachedValueZero {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8CB433D1C304389));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8CB433D1C304389, value);
+  } 
+  public string SoundReachedValueOne {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8CB433D685D5F85));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8CB433D685D5F85, value);
+  } 
+  public string SoundMovingLoop {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8CB433D990A15C8));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8CB433D990A15C8, value);
+  } 
   public SchemaUntypedField Position {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA8CB433DFC27FA8A));
   }

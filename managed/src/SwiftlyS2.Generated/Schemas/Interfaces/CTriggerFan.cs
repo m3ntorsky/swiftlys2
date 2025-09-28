@@ -37,7 +37,7 @@ public partial interface CTriggerFan : CBaseTrigger, ISchemaClass<CTriggerFan> {
   
   public CountdownTimer RampTimer { get; }
   
-  public ref CUtlSymbolLarge InfoFan1 { get; }
+  public string InfoFan1 { get; set; }
   
   public ref float RopeForceScale { get; }
   

@@ -13,7 +13,7 @@ public partial interface CNmLegacyEvent : CNmEvent, ISchemaClass<CNmLegacyEvent>
   static CNmLegacyEvent ISchemaClass<CNmLegacyEvent>.From(nint handle) => new CNmLegacyEventImpl(handle);
 
   
-  public ref CUtlString AnimEventClassName { get; }
+  public string AnimEventClassName { get; set; }
   
   // KeyValues3
   public SchemaUntypedField KV { get; }

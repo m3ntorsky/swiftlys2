@@ -45,9 +45,13 @@ internal partial class CLogicAutoImpl : CBaseEntityImpl, CLogicAuto {
   public CEntityIOOutput OnVRNotEnabled {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0x1FA33DC745E8A1DA));
   }
-  public ref CUtlSymbolLarge Globalstate {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1FA33DC777A86653));
-  }
+  public string Globalstate {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1FA33DC777A86653));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1FA33DC777A86653, value);
+  } 
 
 
 }

@@ -15,15 +15,27 @@ internal partial class CPointPrefabImpl : CServerOnlyPointEntityImpl, CPointPref
   public CPointPrefabImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge TargetMapName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2C6EB7C6129742FD));
-  }
-  public ref CUtlSymbolLarge ForceWorldGroupID {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2C6EB7C61F55F68E));
-  }
-  public ref CUtlSymbolLarge AssociatedRelayTargetName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2C6EB7C6A6960E7A));
-  }
+  public string TargetMapName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x2C6EB7C6129742FD));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x2C6EB7C6129742FD, value);
+  } 
+  public string ForceWorldGroupID {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x2C6EB7C61F55F68E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x2C6EB7C61F55F68E, value);
+  } 
+  public string AssociatedRelayTargetName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x2C6EB7C6A6960E7A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x2C6EB7C6A6960E7A, value);
+  } 
   public ref bool FixupNames {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x2C6EB7C6821D8FCF));
   }

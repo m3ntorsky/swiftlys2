@@ -15,9 +15,13 @@ internal partial class CGameTextImpl : CRulePointEntityImpl, CGameText {
   public CGameTextImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Message {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8AF55797CC5243DC));
-  }
+  public string Message {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8AF55797CC5243DC));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8AF55797CC5243DC, value);
+  } 
   public hudtextparms_t TextParms {
     get => new hudtextparms_tImpl(_Handle + Schema.GetOffset(0x8AF5579715FCA35D));
   }

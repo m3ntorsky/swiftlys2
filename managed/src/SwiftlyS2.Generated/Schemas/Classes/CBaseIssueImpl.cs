@@ -15,12 +15,20 @@ internal partial class CBaseIssueImpl : SchemaClass, CBaseIssue {
   public CBaseIssueImpl(nint handle) : base(handle) {
   }
 
-public ISchemaFixedString TypeString {
-    get => new SchemaFixedString(_Handle, 0xE0727D1E2E3EE7A9, 64, 1, 1);
-  }
-public ISchemaFixedString DetailsString {
-    get => new SchemaFixedString(_Handle, 0xE0727D1ECCE4C9BF, 260, 1, 1);
-  }
+public string TypeString {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xE0727D1E2E3EE7A9);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xE0727D1E2E3EE7A9, value, 64);
+  } 
+public string DetailsString {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xE0727D1ECCE4C9BF);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xE0727D1ECCE4C9BF, value, 260);
+  } 
   public ref int NumYesVotes {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE0727D1E7ED4202C));
   }

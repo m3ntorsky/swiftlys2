@@ -27,9 +27,13 @@ internal partial class C_OP_ModelDampenMovementImpl : CParticleFunctionOperatorI
   public ref bool UseBones {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x74BD8BB610D1938B));
   }
-public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle, 0x74BD8BB66A21BB0E, 128, 1, 1);
-  }
+public string HitboxSetName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x74BD8BB66A21BB0E);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x74BD8BB66A21BB0E, value, 128);
+  } 
   public CPerParticleVecInput PosOffset {
     get => new CPerParticleVecInputImpl(_Handle + Schema.GetOffset(0x74BD8BB655D114B6));
   }

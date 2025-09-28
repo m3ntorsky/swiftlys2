@@ -42,9 +42,13 @@ internal partial class CDynamicPropImpl : CBreakablePropImpl, CDynamicProp {
   public CEntityIOOutput OnAnimReachedEnd {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0x6A5171A2E4470C0E));
   }
-  public ref CUtlSymbolLarge IdleAnim {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6A5171A22885C0E2));
-  }
+  public string IdleAnim {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6A5171A22885C0E2));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6A5171A22885C0E2, value);
+  } 
   public ref AnimLoopMode_t IdleAnimLoopMode {
     get => ref _Handle.AsRef<AnimLoopMode_t>(Schema.GetOffset(0x6A5171A2D07822E7));
   }

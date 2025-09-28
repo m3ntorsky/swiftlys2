@@ -15,9 +15,13 @@ internal partial class CStateUpdateDataImpl : SchemaClass, CStateUpdateData {
   public CStateUpdateDataImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD984C8C64D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD984C8C64D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD984C8C64D8F5786, value);
+  } 
   public AnimScriptHandle Script {
     get => new AnimScriptHandleImpl(_Handle + Schema.GetOffset(0xD984C8C629D70FB0));
   }

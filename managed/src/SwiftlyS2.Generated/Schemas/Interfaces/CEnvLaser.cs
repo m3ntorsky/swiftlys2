@@ -13,11 +13,11 @@ public partial interface CEnvLaser : CBeam, ISchemaClass<CEnvLaser> {
   static CEnvLaser ISchemaClass<CEnvLaser>.From(nint handle) => new CEnvLaserImpl(handle);
 
   
-  public ref CUtlSymbolLarge LaserTarget { get; }
+  public string LaserTarget { get; set; }
   
   public CSprite? Sprite { get; }
   
-  public ref CUtlSymbolLarge SpriteName { get; }
+  public string SpriteName { get; set; }
   
   public ref Vector FirePosition { get; }
   

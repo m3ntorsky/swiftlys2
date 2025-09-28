@@ -15,9 +15,13 @@ internal partial class ParticlePreviewBodyGroup_tImpl : SchemaClass, ParticlePre
   public ParticlePreviewBodyGroup_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString BodyGroupName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB53436EB1E953217));
-  }
+  public string BodyGroupName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB53436EB1E953217));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB53436EB1E953217, value);
+  } 
   public ref int Value {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xB53436EB077D337E));
   }

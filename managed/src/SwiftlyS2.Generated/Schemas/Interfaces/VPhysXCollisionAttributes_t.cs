@@ -21,7 +21,7 @@ public partial interface VPhysXCollisionAttributes_t : ISchemaClass<VPhysXCollis
   
   public ref CUtlVector<uint> InteractExclude { get; }
   
-  public ref CUtlString CollisionGroupString { get; }
+  public string CollisionGroupString { get; set; }
   
   public ref CUtlVector<CUtlString> InteractAsStrings { get; }
   

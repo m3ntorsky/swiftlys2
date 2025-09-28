@@ -18,9 +18,13 @@ internal partial class AnimationDecodeDebugDumpElement_tImpl : SchemaClass, Anim
   public ref int EntityIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4CAFE8F7BDB9BC5A));
   }
-  public ref CUtlString ModelName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x4CAFE8F75D35B6E1));
-  }
+  public string ModelName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x4CAFE8F75D35B6E1));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x4CAFE8F75D35B6E1, value);
+  } 
   public ref CUtlVector<CUtlString> PoseParams {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x4CAFE8F7B4A27762));
   }

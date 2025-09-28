@@ -15,12 +15,20 @@ internal partial class CSosGroupActionSoundeventMinMaxValuesSchemaImpl : CSosGro
   public CSosGroupActionSoundeventMinMaxValuesSchemaImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString StrQueryPublicFieldName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC3C5E1C40839714));
-  }
-  public ref CUtlString StrDelayPublicFieldName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC3C5E1CC2E1170D));
-  }
+  public string StrQueryPublicFieldName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDC3C5E1C40839714));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDC3C5E1C40839714, value);
+  } 
+  public string StrDelayPublicFieldName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDC3C5E1CC2E1170D));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDC3C5E1CC2E1170D, value);
+  } 
   public ref bool ExcludeStoppedSounds {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDC3C5E1C1BDF6FB6));
   }
@@ -39,12 +47,20 @@ internal partial class CSosGroupActionSoundeventMinMaxValuesSchemaImpl : CSosGro
   public ref float ExcludeSoundsMaxThresholdValue {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xDC3C5E1C67D717C7));
   }
-  public ref CUtlString StrMinValueName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC3C5E1CCF654B06));
-  }
-  public ref CUtlString StrMaxValueName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDC3C5E1CEF3A2D5C));
-  }
+  public string StrMinValueName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDC3C5E1CCF654B06));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDC3C5E1CCF654B06, value);
+  } 
+  public string StrMaxValueName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDC3C5E1CEF3A2D5C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDC3C5E1CEF3A2D5C, value);
+  } 
 
 
 }

@@ -31,7 +31,7 @@ public partial interface CEnvEntityMaker : CPointEntity, ISchemaClass<CEnvEntity
   
   public ref bool PostSpawnUseAngles { get; }
   
-  public ref CUtlSymbolLarge Template { get; }
+  public string Template { get; set; }
   
   public CEntityIOOutput OutputOnSpawned { get; }
   

@@ -13,7 +13,7 @@ public partial interface SkeletonAnimCapture_t__Bone_t : ISchemaClass<SkeletonAn
   static SkeletonAnimCapture_t__Bone_t ISchemaClass<SkeletonAnimCapture_t__Bone_t>.From(nint handle) => new SkeletonAnimCapture_t__Bone_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref CTransform BindPose { get; }
   

@@ -13,7 +13,7 @@ public partial interface RenderInputLayoutField_t : ISchemaClass<RenderInputLayo
   static RenderInputLayoutField_t ISchemaClass<RenderInputLayoutField_t>.From(nint handle) => new RenderInputLayoutField_tImpl(handle);
 
   
-  public ISchemaFixedString SemanticName { get; }
+  public string SemanticName { get; set; }
   
   public ref byte SemanticIndex { get; }
   
@@ -23,7 +23,7 @@ public partial interface RenderInputLayoutField_t : ISchemaClass<RenderInputLayo
   
   public ref RenderSlotType_t SlotType { get; }
   
-  public ISchemaFixedString ShaderSemantic { get; }
+  public string ShaderSemantic { get; set; }
 
 
 }

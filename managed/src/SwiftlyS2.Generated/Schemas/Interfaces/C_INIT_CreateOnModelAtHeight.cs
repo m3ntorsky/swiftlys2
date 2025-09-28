@@ -35,7 +35,7 @@ public partial interface C_INIT_CreateOnModelAtHeight : CParticleFunctionInitial
   
   public ref bool PreferMovingBoxes { get; }
   
-  public ISchemaFixedString HitboxSetName { get; }
+  public string HitboxSetName { get; set; }
   
   public CParticleCollectionFloatInput HitboxVelocityScale { get; }
   

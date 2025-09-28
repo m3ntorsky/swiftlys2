@@ -15,9 +15,13 @@ internal partial class COrnamentPropImpl : CDynamicPropImpl, COrnamentProp {
   public COrnamentPropImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge InitialOwner {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x1B8675B7BAA055D6));
-  }
+  public string InitialOwner {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1B8675B7BAA055D6));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1B8675B7BAA055D6, value);
+  } 
 
 
 }

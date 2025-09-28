@@ -24,9 +24,13 @@ internal partial class CNmParticleEventImpl : CNmEventImpl, CNmParticleEvent {
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ParticleSystem {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIParticleSystemDefinition>>(Schema.GetOffset(0x441D270FC9C33AF8));
   }
-  public ref CUtlString Tags {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x441D270FB46C8540));
-  }
+  public string Tags {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x441D270FB46C8540));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x441D270FB46C8540, value);
+  } 
   public ref bool StopImmediately {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x441D270FB16078E1));
   }
@@ -36,24 +40,40 @@ internal partial class CNmParticleEventImpl : CNmEventImpl, CNmParticleEvent {
   public ref bool PlayEndCap {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x441D270FA7AB4A38));
   }
-  public ref CUtlString AttachmentPoint0 {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x441D270FBFDCDF8A));
-  }
+  public string AttachmentPoint0 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x441D270FBFDCDF8A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x441D270FBFDCDF8A, value);
+  } 
   public ref ParticleAttachment_t AttachmentType0 {
     get => ref _Handle.AsRef<ParticleAttachment_t>(Schema.GetOffset(0x441D270F63E9B990));
   }
-  public ref CUtlString AttachmentPoint1 {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x441D270FC0DCE11D));
-  }
+  public string AttachmentPoint1 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x441D270FC0DCE11D));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x441D270FC0DCE11D, value);
+  } 
   public ref ParticleAttachment_t AttachmentType1 {
     get => ref _Handle.AsRef<ParticleAttachment_t>(Schema.GetOffset(0x441D270F64E9BB23));
   }
-  public ref CUtlString Config {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x441D270FD8B39967));
-  }
-  public ref CUtlString EffectForConfig {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x441D270FA68959D9));
-  }
+  public string Config {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x441D270FD8B39967));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x441D270FD8B39967, value);
+  } 
+  public string EffectForConfig {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x441D270FA68959D9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x441D270FA68959D9, value);
+  } 
 
 
 }

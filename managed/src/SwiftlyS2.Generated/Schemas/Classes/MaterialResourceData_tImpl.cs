@@ -15,12 +15,20 @@ internal partial class MaterialResourceData_tImpl : SchemaClass, MaterialResourc
   public MaterialResourceData_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString MaterialName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xA8F70097AF8795A3));
-  }
-  public ref CUtlString ShaderName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xA8F70097F8B3D7CB));
-  }
+  public string MaterialName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8F70097AF8795A3));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8F70097AF8795A3, value);
+  } 
+  public string ShaderName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA8F70097F8B3D7CB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA8F70097F8B3D7CB, value);
+  } 
   public ref CUtlVector IntParams {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA8F7009783517144));
   }

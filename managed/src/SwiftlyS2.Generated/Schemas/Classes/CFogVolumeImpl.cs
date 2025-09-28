@@ -15,15 +15,27 @@ internal partial class CFogVolumeImpl : CServerOnlyModelEntityImpl, CFogVolume {
   public CFogVolumeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge FogName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x670FE9BC72E45F7C));
-  }
-  public ref CUtlSymbolLarge PostProcessName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x670FE9BCAA94630F));
-  }
-  public ref CUtlSymbolLarge ColorCorrectionName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x670FE9BC0E26708B));
-  }
+  public string FogName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x670FE9BC72E45F7C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x670FE9BC72E45F7C, value);
+  } 
+  public string PostProcessName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x670FE9BCAA94630F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x670FE9BCAA94630F, value);
+  } 
+  public string ColorCorrectionName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x670FE9BC0E26708B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x670FE9BC0E26708B, value);
+  } 
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x670FE9BC3A7C5965));
   }

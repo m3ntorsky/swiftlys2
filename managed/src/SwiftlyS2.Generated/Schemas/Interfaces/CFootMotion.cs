@@ -16,7 +16,7 @@ public partial interface CFootMotion : ISchemaClass<CFootMotion> {
   // CUtlVector< CFootStride >
   public ref CUtlVector Strides { get; }
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref bool Additive { get; }
 

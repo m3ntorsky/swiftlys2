@@ -13,7 +13,7 @@ public partial interface CFilterEnemy : CBaseFilter, ISchemaClass<CFilterEnemy> 
   static CFilterEnemy ISchemaClass<CFilterEnemy>.From(nint handle) => new CFilterEnemyImpl(handle);
 
   
-  public ref CUtlSymbolLarge EnemyName { get; }
+  public string EnemyName { get; set; }
   
   public ref float Radius { get; }
   
@@ -21,7 +21,7 @@ public partial interface CFilterEnemy : CBaseFilter, ISchemaClass<CFilterEnemy> 
   
   public ref int MaxSquadmatesPerEnemy { get; }
   
-  public ref CUtlSymbolLarge PlayerName { get; }
+  public string PlayerName { get; set; }
 
 
 }

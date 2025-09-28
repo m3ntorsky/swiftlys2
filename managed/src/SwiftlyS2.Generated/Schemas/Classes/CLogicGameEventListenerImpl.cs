@@ -18,12 +18,20 @@ internal partial class CLogicGameEventListenerImpl : CLogicalEntityImpl, CLogicG
   public CEntityIOOutput OnEventFired {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0xB18EF22E84EA158));
   }
-  public ref CUtlSymbolLarge GameEventName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB18EF22C6581BAE));
-  }
-  public ref CUtlSymbolLarge GameEventItem {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB18EF22ACB669EE));
-  }
+  public string GameEventName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB18EF22C6581BAE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB18EF22C6581BAE, value);
+  } 
+  public string GameEventItem {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB18EF22ACB669EE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB18EF22ACB669EE, value);
+  } 
   public ref bool Enabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB18EF226154EB7E));
   }

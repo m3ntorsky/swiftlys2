@@ -15,18 +15,34 @@ internal partial class CFuncElectrifiedVolumeImpl : CFuncBrushImpl, CFuncElectri
   public CFuncElectrifiedVolumeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge EffectName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A0E59866CD81EF));
-  }
-  public ref CUtlSymbolLarge EffectInterpenetrateName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A0E5987691FB19));
-  }
-  public ref CUtlSymbolLarge EffectZapName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A0E598BE142B78));
-  }
-  public ref CUtlSymbolLarge EffectSource {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A0E598300F4ED9));
-  }
+  public string EffectName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x51A0E59866CD81EF));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x51A0E59866CD81EF, value);
+  } 
+  public string EffectInterpenetrateName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x51A0E5987691FB19));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x51A0E5987691FB19, value);
+  } 
+  public string EffectZapName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x51A0E598BE142B78));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x51A0E598BE142B78, value);
+  } 
+  public string EffectSource {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x51A0E598300F4ED9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x51A0E598300F4ED9, value);
+  } 
 
   public void EffectNameUpdated() {
     Schema.Update(_Handle, 0x51A0E59866CD81EF);

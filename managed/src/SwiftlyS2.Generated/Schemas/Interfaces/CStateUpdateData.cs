@@ -13,7 +13,7 @@ public partial interface CStateUpdateData : ISchemaClass<CStateUpdateData> {
   static CStateUpdateData ISchemaClass<CStateUpdateData>.From(nint handle) => new CStateUpdateDataImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public AnimScriptHandle Script { get; }
   

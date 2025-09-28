@@ -15,9 +15,13 @@ internal partial class CPulseCell_Step_TestDomainEntFireImpl : CPulseCell_BaseFl
   public CPulseCell_Step_TestDomainEntFireImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Input {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x22A0E258942A24FB));
-  }
+  public string Input {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x22A0E258942A24FB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x22A0E258942A24FB, value);
+  } 
 
 
 }

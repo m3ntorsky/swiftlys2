@@ -66,9 +66,13 @@ internal partial class VPhysXAggregateData_tImpl : SchemaClass, VPhysXAggregateD
   public ref CUtlVector<CUtlString> DebugPartNames {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xB689D5A174B4FFC7));
   }
-  public ref CUtlString EmbeddedKeyvalues {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB689D5A1C004AF5C));
-  }
+  public string EmbeddedKeyvalues {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB689D5A1C004AF5C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB689D5A1C004AF5C, value);
+  } 
 
 
 }

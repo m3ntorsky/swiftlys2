@@ -66,9 +66,13 @@ internal partial class CLogicNPCCounterImpl : CBaseEntityImpl, CLogicNPCCounter 
   public ref CHandle<CEntityInstance> Source {
     get => ref _Handle.AsRef<CHandle<CEntityInstance>>(Schema.GetOffset(0x485D887933D3CD82));
   }
-  public ref CUtlSymbolLarge SourceEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x485D88796C1387C0));
-  }
+  public string SourceEntityName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x485D88796C1387C0));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x485D88796C1387C0, value);
+  } 
   public ref float DistanceMax {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x485D8879FDEBADA6));
   }
@@ -87,9 +91,13 @@ internal partial class CLogicNPCCounterImpl : CBaseEntityImpl, CLogicNPCCounter 
   public ref int MaxFactorAll {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x485D88793E95FEF5));
   }
-  public ref CUtlSymbolLarge NPCClassname_1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x485D8879DF49E85F));
-  }
+  public string NPCClassname_1 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x485D8879DF49E85F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x485D8879DF49E85F, value);
+  } 
   public ref int NPCState_1 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x485D887959CDEB41));
   }
@@ -111,9 +119,13 @@ internal partial class CLogicNPCCounterImpl : CBaseEntityImpl, CLogicNPCCounter 
   public ref float DefaultDist_1 {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x485D88793E54B91C));
   }
-  public ref CUtlSymbolLarge NPCClassname_2 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x485D8879E049E9F2));
-  }
+  public string NPCClassname_2 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x485D8879E049E9F2));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x485D8879E049E9F2, value);
+  } 
   public ref int NPCState_2 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x485D887956CDE688));
   }
@@ -135,9 +147,13 @@ internal partial class CLogicNPCCounterImpl : CBaseEntityImpl, CLogicNPCCounter 
   public ref float DefaultDist_2 {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x485D88794154BDD5));
   }
-  public ref CUtlSymbolLarge NPCClassname_3 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x485D8879E149EB85));
-  }
+  public string NPCClassname_3 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x485D8879E149EB85));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x485D8879E149EB85, value);
+  } 
   public ref int NPCState_3 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x485D887957CDE81B));
   }

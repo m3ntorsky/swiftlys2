@@ -13,7 +13,7 @@ public partial interface VecInputMaterialVariable_t : ISchemaClass<VecInputMater
   static VecInputMaterialVariable_t ISchemaClass<VecInputMaterialVariable_t>.From(nint handle) => new VecInputMaterialVariable_tImpl(handle);
 
   
-  public ref CUtlString StrVariable { get; }
+  public string StrVariable { get; set; }
   
   public CParticleCollectionVecInput Input { get; }
 

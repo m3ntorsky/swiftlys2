@@ -13,7 +13,7 @@ public partial interface CSequenceFinishedAnimTag : CAnimTagBase, ISchemaClass<C
   static CSequenceFinishedAnimTag ISchemaClass<CSequenceFinishedAnimTag>.From(nint handle) => new CSequenceFinishedAnimTagImpl(handle);
 
   
-  public ref CUtlString SequenceName { get; }
+  public string SequenceName { get; set; }
 
 
 }

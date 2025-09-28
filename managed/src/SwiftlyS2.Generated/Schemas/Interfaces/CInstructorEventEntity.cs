@@ -13,9 +13,9 @@ public partial interface CInstructorEventEntity : CPointEntity, ISchemaClass<CIn
   static CInstructorEventEntity ISchemaClass<CInstructorEventEntity>.From(nint handle) => new CInstructorEventEntityImpl(handle);
 
   
-  public ref CUtlSymbolLarge Name { get; }
+  public string Name { get; set; }
   
-  public ref CUtlSymbolLarge HintTargetEntity { get; }
+  public string HintTargetEntity { get; set; }
   
   public ref CHandle<CBasePlayerPawn> TargetPlayer { get; }
 

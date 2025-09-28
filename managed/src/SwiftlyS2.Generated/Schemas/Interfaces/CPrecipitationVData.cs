@@ -26,7 +26,7 @@ public partial interface CPrecipitationVData : CEntitySubclassVDataBase, ISchema
   
   public ref int RTEnvCPComponent { get; }
   
-  public ref CUtlString Modifier { get; }
+  public string Modifier { get; set; }
 
 
 }

@@ -48,9 +48,13 @@ internal partial class WorldNode_tImpl : SchemaClass, WorldNode_t {
   public ref CUtlVector<byte> SceneObjectLayerIndices {
     get => ref _Handle.AsRef<CUtlVector<byte>>(Schema.GetOffset(0xFC310480F769C8CA));
   }
-  public ref CUtlString GrassFileName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xFC310480FDDFCFE0));
-  }
+  public string GrassFileName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xFC310480FDDFCFE0));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xFC310480FDDFCFE0, value);
+  } 
   public BakedLightingInfo_t NodeLightingInfo {
     get => new BakedLightingInfo_tImpl(_Handle + Schema.GetOffset(0xFC3104800E25D839));
   }

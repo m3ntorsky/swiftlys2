@@ -21,9 +21,13 @@ internal partial class CKeepUprightImpl : CPointEntityImpl, CKeepUpright {
   public ref Vector LocalTestAxis {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xB65A0D30B678975D));
   }
-  public ref CUtlSymbolLarge NameAttach {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xB65A0D30BECAEF3F));
-  }
+  public string NameAttach {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB65A0D30BECAEF3F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB65A0D30BECAEF3F, value);
+  } 
   public ref CHandle<CBaseEntity> AttachedObject {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xB65A0D301AE8F30A));
   }

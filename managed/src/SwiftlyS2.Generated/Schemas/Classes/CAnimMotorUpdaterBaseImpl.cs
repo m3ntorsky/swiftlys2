@@ -15,9 +15,13 @@ internal partial class CAnimMotorUpdaterBaseImpl : SchemaClass, CAnimMotorUpdate
   public CAnimMotorUpdaterBaseImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x3FB6E1144D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x3FB6E1144D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x3FB6E1144D8F5786, value);
+  } 
   public ref bool Default {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3FB6E11485F067BE));
   }

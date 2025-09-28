@@ -13,7 +13,7 @@ public partial interface CMotionNode : ISchemaClass<CMotionNode> {
   static CMotionNode ISchemaClass<CMotionNode>.From(nint handle) => new CMotionNodeImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public AnimNodeID Id { get; }
 

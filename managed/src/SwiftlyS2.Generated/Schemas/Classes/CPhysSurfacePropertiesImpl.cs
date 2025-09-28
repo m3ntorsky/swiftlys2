@@ -15,9 +15,13 @@ internal partial class CPhysSurfacePropertiesImpl : SchemaClass, CPhysSurfacePro
   public CPhysSurfacePropertiesImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x682A31344D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x682A31344D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x682A31344D8F5786, value);
+  } 
   public ref uint NameHash {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x682A313474C2670A));
   }
@@ -27,9 +31,13 @@ internal partial class CPhysSurfacePropertiesImpl : SchemaClass, CPhysSurfacePro
   public ref bool Hidden {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x682A313457D2DC99));
   }
-  public ref CUtlString Description {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x682A313499F68389));
-  }
+  public string Description {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x682A313499F68389));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x682A313499F68389, value);
+  } 
   public CPhysSurfacePropertiesPhysics Physics {
     get => new CPhysSurfacePropertiesPhysicsImpl(_Handle + Schema.GetOffset(0x682A3134B4C7F5C2));
   }

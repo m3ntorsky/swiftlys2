@@ -13,7 +13,7 @@ public partial interface CSoundEventPathCornerEntity : CSoundEventEntity, ISchem
   static CSoundEventPathCornerEntity ISchemaClass<CSoundEventPathCornerEntity>.From(nint handle) => new CSoundEventPathCornerEntityImpl(handle);
 
   
-  public ref CUtlSymbolLarge PathCorner { get; }
+  public string PathCorner { get; set; }
   
   public ref int CountMax { get; }
   

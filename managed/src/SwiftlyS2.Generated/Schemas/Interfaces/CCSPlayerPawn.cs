@@ -29,9 +29,9 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
   
   public ref bool HasFemaleVoice { get; }
   
-  public ref CUtlString StrVOPrefix { get; }
+  public string StrVOPrefix { get; set; }
   
-  public ISchemaFixedString LastPlaceName { get; }
+  public string LastPlaceName { get; set; }
   
   public ref bool InHostageResetZone { get; }
   
@@ -97,7 +97,7 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
   
   public ref Vector RagdollDamagePosition { get; }
   
-  public ISchemaFixedString RagdollDamageWeaponName { get; }
+  public string RagdollDamageWeaponName { get; set; }
   
   public ref bool RagdollDamageHeadshot { get; }
   

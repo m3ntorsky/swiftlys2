@@ -13,7 +13,7 @@ public partial interface CCSPlace : CServerOnlyModelEntity, ISchemaClass<CCSPlac
   static CCSPlace ISchemaClass<CCSPlace>.From(nint handle) => new CCSPlaceImpl(handle);
 
   
-  public ref CUtlSymbolLarge Name { get; }
+  public string Name { get; set; }
 
 
 }

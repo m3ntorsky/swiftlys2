@@ -72,9 +72,13 @@ internal partial class CParticleSystemDefinitionImpl : IParticleSystemDefinition
   public ref bool EnableNamedValues {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDA4320E050DBA721));
   }
-  public ref CUtlString NamedValueDomain {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDA4320E0D00B8FCB));
-  }
+  public string NamedValueDomain {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDA4320E0D00B8FCB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDA4320E0D00B8FCB, value);
+  } 
   public ref CUtlVector<PointerTo<ParticleNamedValueSource_t>> NamedValueLocals {
     get => ref _Handle.AsRef<CUtlVector<PointerTo<ParticleNamedValueSource_t>>>(Schema.GetOffset(0xDA4320E02F97EB6F));
   }
@@ -195,9 +199,13 @@ internal partial class CParticleSystemDefinitionImpl : IParticleSystemDefinition
   public ref bool ScreenSpaceEffect {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDA4320E0175D9268));
   }
-  public ref CUtlSymbolLarge TargetLayerID {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDA4320E0FD7195C9));
-  }
+  public string TargetLayerID {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDA4320E0FD7195C9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDA4320E0FD7195C9, value);
+  } 
   public ref int SkipRenderControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDA4320E091966FFF));
   }

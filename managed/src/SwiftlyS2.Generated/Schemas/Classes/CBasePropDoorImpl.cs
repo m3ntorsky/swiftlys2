@@ -60,42 +60,82 @@ internal partial class CBasePropDoorImpl : CDynamicPropImpl, CBasePropDoor {
   public ref CHandle<CBaseEntity> Activator {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x140EA8BEAB093BB2));
   }
-  public ref CUtlSymbolLarge SoundMoving {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE096B0232));
-  }
-  public ref CUtlSymbolLarge SoundOpen {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE736F2FD4));
-  }
-  public ref CUtlSymbolLarge SoundClose {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE25C06648));
-  }
-  public ref CUtlSymbolLarge SoundLock {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE79ED369B));
-  }
-  public ref CUtlSymbolLarge SoundUnlock {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE784A9850));
-  }
-  public ref CUtlSymbolLarge SoundLatch {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE1128D286));
-  }
-  public ref CUtlSymbolLarge SoundPound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BE100E3D8E));
-  }
-  public ref CUtlSymbolLarge SoundJiggle {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BEA6C5140C));
-  }
-  public ref CUtlSymbolLarge SoundLockedAnim {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BEF4D24043));
-  }
+  public string SoundMoving {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x140EA8BE096B0232));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x140EA8BE096B0232, value);
+  } 
+  public string SoundOpen {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x140EA8BE736F2FD4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x140EA8BE736F2FD4, value);
+  } 
+  public string SoundClose {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x140EA8BE25C06648));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x140EA8BE25C06648, value);
+  } 
+  public string SoundLock {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x140EA8BE79ED369B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x140EA8BE79ED369B, value);
+  } 
+  public string SoundUnlock {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x140EA8BE784A9850));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x140EA8BE784A9850, value);
+  } 
+  public string SoundLatch {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x140EA8BE1128D286));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x140EA8BE1128D286, value);
+  } 
+  public string SoundPound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x140EA8BE100E3D8E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x140EA8BE100E3D8E, value);
+  } 
+  public string SoundJiggle {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x140EA8BEA6C5140C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x140EA8BEA6C5140C, value);
+  } 
+  public string SoundLockedAnim {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x140EA8BEF4D24043));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x140EA8BEF4D24043, value);
+  } 
   public ref int NumCloseAttempts {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x140EA8BEEE2FAC03));
   }
   public ref CUtlStringToken PhysicsMaterial {
     get => ref _Handle.AsRef<CUtlStringToken>(Schema.GetOffset(0x140EA8BEF6A7286B));
   }
-  public ref CUtlSymbolLarge SlaveName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x140EA8BEAA484A63));
-  }
+  public string SlaveName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x140EA8BEAA484A63));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x140EA8BEAA484A63, value);
+  } 
   public ref CHandle<CBasePropDoor> Master {
     get => ref _Handle.AsRef<CHandle<CBasePropDoor>>(Schema.GetOffset(0x140EA8BEB8DA1B0D));
   }

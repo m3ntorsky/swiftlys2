@@ -15,11 +15,11 @@ public partial interface CBaseClientUIEntity : CBaseModelEntity, ISchemaClass<CB
   
   public ref bool Enabled { get; }
   
-  public ref CUtlSymbolLarge DialogXMLName { get; }
+  public string DialogXMLName { get; set; }
   
-  public ref CUtlSymbolLarge PanelClassName { get; }
+  public string PanelClassName { get; set; }
   
-  public ref CUtlSymbolLarge PanelID { get; }
+  public string PanelID { get; set; }
   
   public CEntityIOOutput CustomOutput0 { get; }
   

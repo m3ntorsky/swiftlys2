@@ -15,9 +15,13 @@ internal partial class CEnvShakeImpl : CPointEntityImpl, CEnvShake {
   public CEnvShakeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge LimitToEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x10FEA945E1C029E2));
-  }
+  public string LimitToEntity {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x10FEA945E1C029E2));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x10FEA945E1C029E2, value);
+  } 
   public ref float Amplitude {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x10FEA945A38BF822));
   }

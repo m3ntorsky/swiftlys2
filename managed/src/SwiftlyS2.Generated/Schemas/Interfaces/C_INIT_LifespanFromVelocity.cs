@@ -23,7 +23,7 @@ public partial interface C_INIT_LifespanFromVelocity : CParticleFunctionInitiali
   
   public ref int MaxPlanes { get; }
   
-  public ISchemaFixedString CollisionGroupName { get; }
+  public string CollisionGroupName { get; set; }
   
   public ref ParticleTraceSet_t TraceSet { get; }
   

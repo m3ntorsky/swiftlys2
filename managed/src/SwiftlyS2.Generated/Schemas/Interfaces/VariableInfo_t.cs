@@ -13,7 +13,7 @@ public partial interface VariableInfo_t : ISchemaClass<VariableInfo_t> {
   static VariableInfo_t ISchemaClass<VariableInfo_t>.From(nint handle) => new VariableInfo_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref CUtlStringToken NameToken { get; }
   

@@ -13,7 +13,7 @@ public partial interface CFuncConveyor : CBaseModelEntity, ISchemaClass<CFuncCon
   static CFuncConveyor ISchemaClass<CFuncConveyor>.From(nint handle) => new CFuncConveyorImpl(handle);
 
   
-  public ref CUtlSymbolLarge ConveyorModels { get; }
+  public string ConveyorModels { get; set; }
   
   public ref float TransitionDurationSeconds { get; }
   

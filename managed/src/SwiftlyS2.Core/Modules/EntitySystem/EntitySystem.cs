@@ -52,12 +52,12 @@ internal class EntitySystemService : IEntitySystemService {
     if (designerName == null) {
       throw new ArgumentException($"Can't get entities with class {typeof(T).Name}, which doesn't have a designer name");
     }
-    return GetAllEntities().Where((entity) => entity.Entity?.DesignerName.Value == designerName).Select((entity) => T.From(entity.GetHandle()));
+    return GetAllEntities().Where((entity) => entity.Entity?.DesignerName == designerName).Select((entity) => T.From(entity.GetHandle()));
   }
 
   public IEnumerable<T> GetAllEntitiesByDesignerName<T>(string designerName) where T : class, ISchemaClass<T> {
     return GetAllEntities()
-      .Where(entity => entity.Entity?.DesignerName.Value == designerName)
+      .Where(entity => entity.Entity?.DesignerName == designerName)
       .Select(entity => T.From(entity.GetHandle()));
   }
 

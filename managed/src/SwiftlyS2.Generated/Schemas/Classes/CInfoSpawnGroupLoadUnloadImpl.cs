@@ -27,18 +27,34 @@ internal partial class CInfoSpawnGroupLoadUnloadImpl : CLogicalEntityImpl, CInfo
   public CEntityIOOutput OnSpawnGroupUnloadFinished {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0x2537640F1268C477));
   }
-  public ref CUtlSymbolLarge SpawnGroupName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2537640FBEEECC58));
-  }
-  public ref CUtlSymbolLarge SpawnGroupFilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2537640FE9A4A47E));
-  }
-  public ref CUtlSymbolLarge LandmarkName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x2537640F3207F70E));
-  }
-  public ref CUtlString FixedSpawnGroupName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x2537640FB094CD41));
-  }
+  public string SpawnGroupName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x2537640FBEEECC58));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x2537640FBEEECC58, value);
+  } 
+  public string SpawnGroupFilterName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x2537640FE9A4A47E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x2537640FE9A4A47E, value);
+  } 
+  public string LandmarkName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x2537640F3207F70E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x2537640F3207F70E, value);
+  } 
+  public string FixedSpawnGroupName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x2537640FB094CD41));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x2537640FB094CD41, value);
+  } 
   public ref float TimeoutInterval {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x2537640F354D6687));
   }

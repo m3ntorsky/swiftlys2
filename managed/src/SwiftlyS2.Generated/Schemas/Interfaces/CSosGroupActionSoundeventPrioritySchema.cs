@@ -13,13 +13,13 @@ public partial interface CSosGroupActionSoundeventPrioritySchema : CSosGroupActi
   static CSosGroupActionSoundeventPrioritySchema ISchemaClass<CSosGroupActionSoundeventPrioritySchema>.From(nint handle) => new CSosGroupActionSoundeventPrioritySchemaImpl(handle);
 
   
-  public ref CUtlString PriorityValue { get; }
+  public string PriorityValue { get; set; }
   
-  public ref CUtlString PriorityVolumeScalar { get; }
+  public string PriorityVolumeScalar { get; set; }
   
-  public ref CUtlString PriorityContributeButDontRead { get; }
+  public string PriorityContributeButDontRead { get; set; }
   
-  public ref CUtlString PriorityReadButDontContribute { get; }
+  public string PriorityReadButDontContribute { get; set; }
 
 
 }

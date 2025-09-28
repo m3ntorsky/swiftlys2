@@ -18,9 +18,13 @@ internal partial class CTankTargetChangeImpl : CPointEntityImpl, CTankTargetChan
   public SchemaUntypedField NewTarget {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC9633A4FC35D87C4));
   }
-  public ref CUtlSymbolLarge NewTargetName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC9633A4FFCD3FD1F));
-  }
+  public string NewTargetName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC9633A4FFCD3FD1F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC9633A4FFCD3FD1F, value);
+  } 
 
 
 }

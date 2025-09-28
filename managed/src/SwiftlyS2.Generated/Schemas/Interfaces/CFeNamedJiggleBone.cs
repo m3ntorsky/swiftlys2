@@ -13,7 +13,7 @@ public partial interface CFeNamedJiggleBone : ISchemaClass<CFeNamedJiggleBone> {
   static CFeNamedJiggleBone ISchemaClass<CFeNamedJiggleBone>.From(nint handle) => new CFeNamedJiggleBoneImpl(handle);
 
   
-  public ref CUtlString StrParentBone { get; }
+  public string StrParentBone { get; set; }
   
   public ref CTransform Transform { get; }
   

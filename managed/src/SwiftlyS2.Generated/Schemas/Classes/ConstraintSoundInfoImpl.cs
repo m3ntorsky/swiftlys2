@@ -24,15 +24,27 @@ internal partial class ConstraintSoundInfoImpl : SchemaClass, ConstraintSoundInf
   public ref Vector ForwardAxis {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x79068C49DC95B25F));
   }
-  public ref CUtlSymbolLarge TravelSoundFwd {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x79068C497A65F069));
-  }
-  public ref CUtlSymbolLarge TravelSoundBack {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x79068C49506B73E3));
-  }
-public ISchemaFixedArray<CUtlSymbolLarge> ReversalSounds {
-    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0x79068C49F5164187, 3, 8, 8);
-  }
+  public string TravelSoundFwd {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x79068C497A65F069));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x79068C497A65F069, value);
+  } 
+  public string TravelSoundBack {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x79068C49506B73E3));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x79068C49506B73E3, value);
+  } 
+  public string ReversalSounds {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x79068C49F5164187));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x79068C49F5164187, value);
+  } 
   public ref bool PlayTravelSound {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x79068C49FF3432DE));
   }

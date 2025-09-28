@@ -13,7 +13,7 @@ public partial interface ManifestTestResource_t : ISchemaClass<ManifestTestResou
   static ManifestTestResource_t ISchemaClass<ManifestTestResource_t>.From(nint handle) => new ManifestTestResource_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref CStrongHandle<InfoForResourceTypeManifestTestResource_t> Child { get; }
 

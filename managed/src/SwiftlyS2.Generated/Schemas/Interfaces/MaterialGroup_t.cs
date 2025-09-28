@@ -13,7 +13,7 @@ public partial interface MaterialGroup_t : ISchemaClass<MaterialGroup_t> {
   static MaterialGroup_t ISchemaClass<MaterialGroup_t>.From(nint handle) => new MaterialGroup_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeIMaterial2>> Materials { get; }
 

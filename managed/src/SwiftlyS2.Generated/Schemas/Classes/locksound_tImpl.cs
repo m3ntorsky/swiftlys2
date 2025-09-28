@@ -15,12 +15,20 @@ internal partial class locksound_tImpl : SchemaClass, locksound_t {
   public locksound_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge LockedSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDAD0AE229881D7AB));
-  }
-  public ref CUtlSymbolLarge UnlockedSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDAD0AE227EE88276));
-  }
+  public string LockedSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDAD0AE229881D7AB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDAD0AE229881D7AB, value);
+  } 
+  public string UnlockedSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDAD0AE227EE88276));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDAD0AE227EE88276, value);
+  } 
   public GameTime_t FlwaitSound {
     get => new GameTime_tImpl(_Handle + Schema.GetOffset(0xDAD0AE2297A4A845));
   }

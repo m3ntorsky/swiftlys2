@@ -13,11 +13,11 @@ public partial interface CBoneConstraintDotToMorph : CBoneConstraintBase, ISchem
   static CBoneConstraintDotToMorph ISchemaClass<CBoneConstraintDotToMorph>.From(nint handle) => new CBoneConstraintDotToMorphImpl(handle);
 
   
-  public ref CUtlString BoneName { get; }
+  public string BoneName { get; set; }
   
-  public ref CUtlString TargetBoneName { get; }
+  public string TargetBoneName { get; set; }
   
-  public ref CUtlString MorphChannelName { get; }
+  public string MorphChannelName { get; set; }
   
   public ISchemaFixedArray<float> Remap { get; }
 

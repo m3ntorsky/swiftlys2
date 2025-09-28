@@ -15,15 +15,27 @@ internal partial class CCitadelSoundOpvarSetOBBImpl : CBaseEntityImpl, CCitadelS
   public CCitadelSoundOpvarSetOBBImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge StackName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD3F8645E3B3E9CD4));
-  }
-  public ref CUtlSymbolLarge OperatorName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD3F8645EF6140996));
-  }
-  public ref CUtlSymbolLarge OpvarName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD3F8645E2CAEFF3C));
-  }
+  public string StackName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD3F8645E3B3E9CD4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD3F8645E3B3E9CD4, value);
+  } 
+  public string OperatorName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD3F8645EF6140996));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD3F8645EF6140996, value);
+  } 
+  public string OpvarName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD3F8645E2CAEFF3C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD3F8645E2CAEFF3C, value);
+  } 
   public ref Vector DistanceInnerMins {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD3F8645EC7540883));
   }

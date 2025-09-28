@@ -49,7 +49,7 @@ public partial interface CSoundOpvarSetPointEntity : CSoundOpvarSetPointBase, IS
   
   public ref CHandle<CEntityInstance> DynamicEntity { get; }
   
-  public ref CUtlSymbolLarge DynamicEntityName { get; }
+  public string DynamicEntityName { get; set; }
   
   public ref float PathingDistanceNormFactor { get; }
   

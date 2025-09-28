@@ -54,9 +54,13 @@ internal partial class CBarnLightImpl : CBaseModelEntityImpl, CBarnLight {
   public ref float LuminaireAnisotropy {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB5E331D1A50CAFAF));
   }
-  public ref CUtlString LightStyleString {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB5E331D135505939));
-  }
+  public string LightStyleString {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB5E331D135505939));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB5E331D135505939, value);
+  } 
   public GameTime_t LightStyleStartTime {
     get => new GameTime_tImpl(_Handle + Schema.GetOffset(0xB5E331D1A3B159A3));
   }

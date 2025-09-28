@@ -13,7 +13,7 @@ public partial interface CPulseCell_Outflow_PlaySequence : CPulseCell_Outflow_Pl
   static CPulseCell_Outflow_PlaySequence ISchemaClass<CPulseCell_Outflow_PlaySequence>.From(nint handle) => new CPulseCell_Outflow_PlaySequenceImpl(handle);
 
   
-  public ref CUtlString ParamSequenceName { get; }
+  public string ParamSequenceName { get; set; }
 
 
 }

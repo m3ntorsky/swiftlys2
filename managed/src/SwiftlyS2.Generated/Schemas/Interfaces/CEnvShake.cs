@@ -13,7 +13,7 @@ public partial interface CEnvShake : CPointEntity, ISchemaClass<CEnvShake> {
   static CEnvShake ISchemaClass<CEnvShake>.From(nint handle) => new CEnvShakeImpl(handle);
 
   
-  public ref CUtlSymbolLarge LimitToEntity { get; }
+  public string LimitToEntity { get; set; }
   
   public ref float Amplitude { get; }
   

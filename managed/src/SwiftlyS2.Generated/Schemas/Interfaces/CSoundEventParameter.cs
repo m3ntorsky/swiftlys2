@@ -13,7 +13,7 @@ public partial interface CSoundEventParameter : CBaseEntity, ISchemaClass<CSound
   static CSoundEventParameter ISchemaClass<CSoundEventParameter>.From(nint handle) => new CSoundEventParameterImpl(handle);
 
   
-  public ref CUtlSymbolLarge ParamName { get; }
+  public string ParamName { get; set; }
   
   public ref float FloatValue { get; }
 

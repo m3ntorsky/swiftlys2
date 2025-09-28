@@ -60,21 +60,41 @@ internal partial class CFuncTrackTrainImpl : CBaseModelEntityImpl, CFuncTrackTra
   public ref float Dir {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x416637FBD9FF9EB4));
   }
-  public ref CUtlSymbolLarge SoundMove {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x416637FB73E14089));
-  }
-  public ref CUtlSymbolLarge SoundMovePing {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x416637FB68B489FD));
-  }
-  public ref CUtlSymbolLarge SoundStart {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x416637FB7CA15A30));
-  }
-  public ref CUtlSymbolLarge SoundStop {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x416637FB34D8E0B4));
-  }
-  public ref CUtlSymbolLarge StrPathTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x416637FB7AF8129A));
-  }
+  public string SoundMove {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x416637FB73E14089));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x416637FB73E14089, value);
+  } 
+  public string SoundMovePing {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x416637FB68B489FD));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x416637FB68B489FD, value);
+  } 
+  public string SoundStart {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x416637FB7CA15A30));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x416637FB7CA15A30, value);
+  } 
+  public string SoundStop {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x416637FB34D8E0B4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x416637FB34D8E0B4, value);
+  } 
+  public string StrPathTarget {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x416637FB7AF8129A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x416637FB7AF8129A, value);
+  } 
   public ref float MoveSoundMinDuration {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x416637FB00A53693));
   }

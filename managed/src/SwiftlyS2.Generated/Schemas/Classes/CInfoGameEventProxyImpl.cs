@@ -15,9 +15,13 @@ internal partial class CInfoGameEventProxyImpl : CPointEntityImpl, CInfoGameEven
   public CInfoGameEventProxyImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge EventName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x483B3FC078114A54));
-  }
+  public string EventName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x483B3FC078114A54));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x483B3FC078114A54, value);
+  } 
   public ref float Range {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x483B3FC03FC92844));
   }

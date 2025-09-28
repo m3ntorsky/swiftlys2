@@ -13,7 +13,7 @@ public partial interface CParticleSystem : CBaseModelEntity, ISchemaClass<CParti
   static CParticleSystem ISchemaClass<CParticleSystem>.From(nint handle) => new CParticleSystemImpl(handle);
 
   
-  public ISchemaFixedString SnapshotFileName { get; }
+  public string SnapshotFileName { get; set; }
   
   public ref bool Active { get; }
   
@@ -45,9 +45,9 @@ public partial interface CParticleSystem : CBaseModelEntity, ISchemaClass<CParti
   
   public ref bool StartActive { get; }
   
-  public ref CUtlSymbolLarge EffectName { get; }
+  public string EffectName { get; set; }
   
-  public ISchemaFixedArray<CUtlSymbolLarge> ControlPointNames { get; }
+  public string ControlPointNames { get; set; }
   
   public ref int DataCP { get; }
   

@@ -30,9 +30,13 @@ internal partial class C_OP_MoveToHitboxImpl : CParticleFunctionOperatorImpl, C_
   public ref float PrevPosScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4ACEA8FF46CED122));
   }
-public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle, 0x4ACEA8FF6A21BB0E, 128, 1, 1);
-  }
+public string HitboxSetName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x4ACEA8FF6A21BB0E);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x4ACEA8FF6A21BB0E, value, 128);
+  } 
   public ref bool UseBones {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4ACEA8FF10D1938B));
   }

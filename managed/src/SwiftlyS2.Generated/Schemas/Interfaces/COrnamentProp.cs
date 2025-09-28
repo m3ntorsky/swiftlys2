@@ -13,7 +13,7 @@ public partial interface COrnamentProp : CDynamicProp, ISchemaClass<COrnamentPro
   static COrnamentProp ISchemaClass<COrnamentProp>.From(nint handle) => new COrnamentPropImpl(handle);
 
   
-  public ref CUtlSymbolLarge InitialOwner { get; }
+  public string InitialOwner { get; set; }
 
 
 }

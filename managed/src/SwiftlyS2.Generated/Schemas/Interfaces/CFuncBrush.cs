@@ -19,7 +19,7 @@ public partial interface CFuncBrush : CBaseModelEntity, ISchemaClass<CFuncBrush>
   
   public ref bool SolidBsp { get; }
   
-  public ref CUtlSymbolLarge ExcludedClass { get; }
+  public string ExcludedClass { get; set; }
   
   public ref bool InvertExclusion { get; }
   

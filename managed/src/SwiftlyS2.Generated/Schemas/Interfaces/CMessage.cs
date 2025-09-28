@@ -13,7 +13,7 @@ public partial interface CMessage : CPointEntity, ISchemaClass<CMessage> {
   static CMessage ISchemaClass<CMessage>.From(nint handle) => new CMessageImpl(handle);
 
   
-  public ref CUtlSymbolLarge Message { get; }
+  public string Message { get; set; }
   
   public ref float MessageVolume { get; }
   
@@ -21,7 +21,7 @@ public partial interface CMessage : CPointEntity, ISchemaClass<CMessage> {
   
   public ref float Radius { get; }
   
-  public ref CUtlSymbolLarge Noise { get; }
+  public string Noise { get; set; }
   
   public CEntityIOOutput OnShowMessage { get; }
 

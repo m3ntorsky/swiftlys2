@@ -13,7 +13,7 @@ public partial interface CMaterialAttributeAnimTag : CAnimTagBase, ISchemaClass<
   static CMaterialAttributeAnimTag ISchemaClass<CMaterialAttributeAnimTag>.From(nint handle) => new CMaterialAttributeAnimTagImpl(handle);
 
   
-  public ref CUtlString AttributeName { get; }
+  public string AttributeName { get; set; }
   
   public ref MatterialAttributeTagType_t AttributeType { get; }
   

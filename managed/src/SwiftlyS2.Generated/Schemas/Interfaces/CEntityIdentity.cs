@@ -15,9 +15,9 @@ public partial interface CEntityIdentity : ISchemaClass<CEntityIdentity> {
   
   public ref int NameStringableIndex { get; }
   
-  public ref CUtlSymbolLarge Name { get; }
+  public string Name { get; set; }
   
-  public ref CUtlSymbolLarge DesignerName { get; }
+  public string DesignerName { get; set; }
   
   public ref uint Flags { get; }
   

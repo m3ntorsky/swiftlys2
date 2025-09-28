@@ -18,9 +18,13 @@ internal partial class CAttributeManager__cached_attribute_float_tImpl : SchemaC
   public ref float In {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE3C5A1BAD526F734));
   }
-  public ref CUtlSymbolLarge AttribHook {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xE3C5A1BACD388D67));
-  }
+  public string AttribHook {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE3C5A1BACD388D67));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE3C5A1BACD388D67, value);
+  } 
   public ref float Out {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xE3C5A1BA546B7BE1));
   }

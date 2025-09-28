@@ -13,7 +13,7 @@ public partial interface CFuncMonitor : CFuncBrush, ISchemaClass<CFuncMonitor> {
   static CFuncMonitor ISchemaClass<CFuncMonitor>.From(nint handle) => new CFuncMonitorImpl(handle);
 
   
-  public ref CUtlString TargetCamera { get; }
+  public string TargetCamera { get; set; }
   
   public ref int ResolutionEnum { get; }
   
@@ -21,7 +21,7 @@ public partial interface CFuncMonitor : CFuncBrush, ISchemaClass<CFuncMonitor> {
   
   public ref bool UseUniqueColorTarget { get; }
   
-  public ref CUtlString BrushModelName { get; }
+  public string BrushModelName { get; set; }
   
   public ref CHandle<CBaseEntity> TargetCamera1 { get; }
   

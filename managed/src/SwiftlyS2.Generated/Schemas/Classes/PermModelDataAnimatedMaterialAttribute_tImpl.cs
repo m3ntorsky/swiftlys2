@@ -15,9 +15,13 @@ internal partial class PermModelDataAnimatedMaterialAttribute_tImpl : SchemaClas
   public PermModelDataAnimatedMaterialAttribute_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString AttributeName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6489C15F1408864C));
-  }
+  public string AttributeName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6489C15F1408864C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6489C15F1408864C, value);
+  } 
   public ref int NumChannels {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6489C15FEA44FE77));
   }

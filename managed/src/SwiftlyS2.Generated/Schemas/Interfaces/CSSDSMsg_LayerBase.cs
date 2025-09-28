@@ -15,13 +15,13 @@ public partial interface CSSDSMsg_LayerBase : ISchemaClass<CSSDSMsg_LayerBase> {
   
   public SceneViewId_t ViewId { get; }
   
-  public ref CUtlString ViewName { get; }
+  public string ViewName { get; set; }
   
   public ref ulong LayerId { get; }
   
-  public ref CUtlString LayerName { get; }
+  public string LayerName { get; set; }
   
-  public ref CUtlString DisplayText { get; }
+  public string DisplayText { get; set; }
 
 
 }

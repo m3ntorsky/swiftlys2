@@ -24,9 +24,13 @@ internal partial class CClothSettingsAnimTagImpl : CAnimTagBaseImpl, CClothSetti
   public ref float EaseOut {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF6B5868646B49C07));
   }
-  public ref CUtlString VertexSet {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF6B586863EE1A571));
-  }
+  public string VertexSet {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF6B586863EE1A571));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF6B586863EE1A571, value);
+  } 
 
 
 }

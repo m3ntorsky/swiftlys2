@@ -29,7 +29,7 @@ public partial interface C_OP_ContinuousEmitter : CParticleFunctionEmitter, ISch
   
   public ref int SnapshotControlPoint { get; }
   
-  public ref CUtlString StrSnapshotSubset { get; }
+  public string StrSnapshotSubset { get; set; }
   
   public ref int LimitPerUpdate { get; }
   

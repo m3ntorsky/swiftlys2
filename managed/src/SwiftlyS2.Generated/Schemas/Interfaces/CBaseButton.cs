@@ -21,13 +21,13 @@ public partial interface CBaseButton : CBaseToggle, ISchemaClass<CBaseButton> {
   
   public locksound_t Ls { get; }
   
-  public ref CUtlSymbolLarge UseSound { get; }
+  public string UseSound { get; set; }
   
-  public ref CUtlSymbolLarge LockedSound { get; }
+  public string LockedSound { get; set; }
   
-  public ref CUtlSymbolLarge UnlockedSound { get; }
+  public string UnlockedSound { get; set; }
   
-  public ref CUtlSymbolLarge OverrideAnticipationName { get; }
+  public string OverrideAnticipationName { get; set; }
   
   public ref bool Locked { get; }
   
@@ -55,13 +55,13 @@ public partial interface CBaseButton : CBaseToggle, ISchemaClass<CBaseButton> {
   
   public ref bool ForceNpcExclude { get; }
   
-  public ref CUtlSymbolLarge GlowEntity { get; }
+  public string GlowEntity { get; set; }
   
   public ref CHandle<CBaseModelEntity> GlowEntity1 { get; }
   
   public ref bool Usable { get; }
   
-  public ref CUtlSymbolLarge DisplayText { get; }
+  public string DisplayText { get; set; }
 
   public void GlowEntity1Updated();
   public void UsableUpdated();

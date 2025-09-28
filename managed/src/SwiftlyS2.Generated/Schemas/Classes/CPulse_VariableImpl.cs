@@ -18,9 +18,13 @@ internal partial class CPulse_VariableImpl : SchemaClass, CPulse_Variable {
   public SchemaUntypedField Name {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x598DEA5CCAE8A266));
   }
-  public ref CUtlString Description {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x598DEA5C678744E9));
-  }
+  public string Description {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x598DEA5C678744E9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x598DEA5C678744E9, value);
+  } 
   public SchemaUntypedField Type {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x598DEA5C8ED6D5CD));
   }

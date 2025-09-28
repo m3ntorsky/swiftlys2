@@ -25,7 +25,7 @@ public partial interface CBombTarget : CBaseTrigger, ISchemaClass<CBombTarget> {
   
   public ref bool BombPlantedHere { get; }
   
-  public ref CUtlSymbolLarge MountTarget { get; }
+  public string MountTarget { get; set; }
   
   public ref CHandle<CBaseEntity> InstructorHint { get; }
   

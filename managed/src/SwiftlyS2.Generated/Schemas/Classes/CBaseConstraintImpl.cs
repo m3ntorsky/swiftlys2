@@ -15,9 +15,13 @@ internal partial class CBaseConstraintImpl : CBoneConstraintBaseImpl, CBaseConst
   public CBaseConstraintImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xE972C2844D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xE972C2844D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xE972C2844D8F5786, value);
+  } 
   public ref Vector UpVector {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xE972C28487645F1B));
   }

@@ -15,9 +15,13 @@ internal partial class BoneDemoCaptureSettings_tImpl : SchemaClass, BoneDemoCapt
   public BoneDemoCaptureSettings_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString BoneName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x17A5730FDEE0E0C));
-  }
+  public string BoneName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x17A5730FDEE0E0C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x17A5730FDEE0E0C, value);
+  } 
   public ref float ErrorSplineRotationMax {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x17A5730AB5B6CD2));
   }

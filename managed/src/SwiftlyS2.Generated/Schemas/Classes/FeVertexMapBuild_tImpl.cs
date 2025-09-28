@@ -15,9 +15,13 @@ internal partial class FeVertexMapBuild_tImpl : SchemaClass, FeVertexMapBuild_t 
   public FeVertexMapBuild_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString VertexMapName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x35530D470AA2D2C4));
-  }
+  public string VertexMapName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x35530D470AA2D2C4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x35530D470AA2D2C4, value);
+  } 
   public ref uint NameHash {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x35530D47DE15EEFE));
   }

@@ -15,9 +15,9 @@ public partial interface CRR_Response : ISchemaClass<CRR_Response> {
   
   public ref byte Type { get; }
   
-  public ISchemaFixedString ResponseName { get; }
+  public string ResponseName { get; set; }
   
-  public ISchemaFixedString MatchingRule { get; }
+  public string MatchingRule { get; set; }
   
   public ResponseParams Params { get; }
   
@@ -25,9 +25,9 @@ public partial interface CRR_Response : ISchemaClass<CRR_Response> {
   
   public ref bool AnyMatchingRulesInCooldown { get; }
   
-  public ref CString SpeakerContext { get; }
+  public string SpeakerContext { get; set; }
   
-  public ref CString WorldContext { get; }
+  public string WorldContext { get; set; }
   
   public ResponseFollowup Followup { get; }
   

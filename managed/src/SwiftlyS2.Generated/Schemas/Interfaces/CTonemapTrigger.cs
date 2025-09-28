@@ -13,7 +13,7 @@ public partial interface CTonemapTrigger : CBaseTrigger, ISchemaClass<CTonemapTr
   static CTonemapTrigger ISchemaClass<CTonemapTrigger>.From(nint handle) => new CTonemapTriggerImpl(handle);
 
   
-  public ref CUtlSymbolLarge TonemapControllerName { get; }
+  public string TonemapControllerName { get; set; }
   
   public ref CHandle<CEntityInstance> TonemapController { get; }
 

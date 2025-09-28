@@ -29,7 +29,7 @@ public partial interface CBasePlayerWeaponVData : CEntitySubclassVDataBase, ISch
   // CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > >
   public SchemaUntypedField MuzzleFlashParticle { get; }
   
-  public ref CUtlString MuzzleFlashParticleConfig { get; }
+  public string MuzzleFlashParticleConfig { get; set; }
   
   // CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > >
   public SchemaUntypedField BarrelSmokeParticle { get; }

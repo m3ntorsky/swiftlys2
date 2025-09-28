@@ -15,7 +15,7 @@ public partial interface PermModelExtPart_t : ISchemaClass<PermModelExtPart_t> {
   
   public ref CTransform Transform { get; }
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref int Parent { get; }
   

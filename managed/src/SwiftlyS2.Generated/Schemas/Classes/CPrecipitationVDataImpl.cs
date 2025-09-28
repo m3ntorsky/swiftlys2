@@ -33,9 +33,13 @@ internal partial class CPrecipitationVDataImpl : CEntitySubclassVDataBaseImpl, C
   public ref int RTEnvCPComponent {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x4F75C25D968B054C));
   }
-  public ref CUtlString Modifier {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x4F75C25D2742E611));
-  }
+  public string Modifier {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x4F75C25D2742E611));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x4F75C25D2742E611, value);
+  } 
 
 
 }

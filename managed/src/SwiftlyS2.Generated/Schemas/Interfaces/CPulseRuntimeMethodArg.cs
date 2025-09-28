@@ -16,7 +16,7 @@ public partial interface CPulseRuntimeMethodArg : ISchemaClass<CPulseRuntimeMeth
   // CKV3MemberNameWithStorage
   public SchemaUntypedField Name { get; }
   
-  public ref CUtlString Description { get; }
+  public string Description { get; set; }
   
   // CPulseValueFullType
   public SchemaUntypedField Type { get; }

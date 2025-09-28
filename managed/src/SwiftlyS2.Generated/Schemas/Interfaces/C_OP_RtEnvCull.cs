@@ -21,7 +21,7 @@ public partial interface C_OP_RtEnvCull : CParticleFunctionOperator, ISchemaClas
   
   public ref bool StickInsteadOfCull { get; }
   
-  public ISchemaFixedString RtEnvName { get; }
+  public string RtEnvName { get; set; }
   
   public ref int RTEnvCP { get; }
   

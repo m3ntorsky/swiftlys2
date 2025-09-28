@@ -15,9 +15,13 @@ internal partial class C_INIT_InitialRepulsionVelocityImpl : CParticleFunctionIn
   public C_INIT_InitialRepulsionVelocityImpl(nint handle) : base(handle) {
   }
 
-public ISchemaFixedString CollisionGroupName {
-    get => new SchemaFixedString(_Handle, 0x562DB6BED58A3195, 128, 1, 1);
-  }
+public string CollisionGroupName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x562DB6BED58A3195);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x562DB6BED58A3195, value, 128);
+  } 
   public ref ParticleTraceSet_t TraceSet {
     get => ref _Handle.AsRef<ParticleTraceSet_t>(Schema.GetOffset(0x562DB6BEBD26C5B2));
   }

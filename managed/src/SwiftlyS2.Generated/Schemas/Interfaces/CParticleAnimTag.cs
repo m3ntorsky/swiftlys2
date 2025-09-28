@@ -15,9 +15,9 @@ public partial interface CParticleAnimTag : CAnimTagBase, ISchemaClass<CParticle
   
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ParticleSystem { get; }
   
-  public ref CUtlString ParticleSystemName { get; }
+  public string ParticleSystemName { get; set; }
   
-  public ref CUtlString ConfigName { get; }
+  public string ConfigName { get; set; }
   
   public ref bool DetachFromOwner { get; }
   
@@ -27,11 +27,11 @@ public partial interface CParticleAnimTag : CAnimTagBase, ISchemaClass<CParticle
   
   public ref bool TagEndStopIsInstant { get; }
   
-  public ref CUtlString AttachmentName { get; }
+  public string AttachmentName { get; set; }
   
   public ref ParticleAttachment_t AttachmentType { get; }
   
-  public ref CUtlString AttachmentCP1Name { get; }
+  public string AttachmentCP1Name { get; set; }
   
   public ref ParticleAttachment_t AttachmentCP1Type { get; }
 

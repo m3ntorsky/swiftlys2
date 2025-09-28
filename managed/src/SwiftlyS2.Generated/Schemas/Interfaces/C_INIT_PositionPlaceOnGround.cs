@@ -17,7 +17,7 @@ public partial interface C_INIT_PositionPlaceOnGround : CParticleFunctionInitial
   
   public CPerParticleFloatInput MaxTraceLength { get; }
   
-  public ISchemaFixedString CollisionGroupName { get; }
+  public string CollisionGroupName { get; set; }
   
   public ref ParticleTraceSet_t TraceSet { get; }
   

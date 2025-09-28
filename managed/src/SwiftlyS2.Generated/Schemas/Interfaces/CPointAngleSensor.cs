@@ -15,7 +15,7 @@ public partial interface CPointAngleSensor : CPointEntity, ISchemaClass<CPointAn
   
   public ref bool Disabled { get; }
   
-  public ref CUtlSymbolLarge LookAtName { get; }
+  public string LookAtName { get; set; }
   
   public ref CHandle<CBaseEntity> TargetEntity { get; }
   

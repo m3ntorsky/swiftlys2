@@ -17,9 +17,9 @@ public partial interface CMoverPathNode : CPointEntity, ISchemaClass<CMoverPathN
   
   public ref Vector OutTangentLocal { get; }
   
-  public ref CUtlSymbolLarge ParentPathUniqueID { get; }
+  public string ParentPathUniqueID { get; set; }
   
-  public ref CUtlSymbolLarge PathNodeParameter { get; }
+  public string PathNodeParameter { get; set; }
   
   public CEntityIOOutput OnStartFromOrInSegment { get; }
   

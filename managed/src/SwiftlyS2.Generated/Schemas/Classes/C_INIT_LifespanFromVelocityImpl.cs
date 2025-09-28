@@ -30,9 +30,13 @@ internal partial class C_INIT_LifespanFromVelocityImpl : CParticleFunctionInitia
   public ref int MaxPlanes {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x50DB3853ADB06362));
   }
-public ISchemaFixedString CollisionGroupName {
-    get => new SchemaFixedString(_Handle, 0x50DB3853D58A3195, 128, 1, 1);
-  }
+public string CollisionGroupName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x50DB3853D58A3195);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x50DB3853D58A3195, value, 128);
+  } 
   public ref ParticleTraceSet_t TraceSet {
     get => ref _Handle.AsRef<ParticleTraceSet_t>(Schema.GetOffset(0x50DB3853BD26C5B2));
   }

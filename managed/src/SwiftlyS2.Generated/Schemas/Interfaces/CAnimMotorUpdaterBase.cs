@@ -13,7 +13,7 @@ public partial interface CAnimMotorUpdaterBase : ISchemaClass<CAnimMotorUpdaterB
   static CAnimMotorUpdaterBase ISchemaClass<CAnimMotorUpdaterBase>.From(nint handle) => new CAnimMotorUpdaterBaseImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref bool Default { get; }
 

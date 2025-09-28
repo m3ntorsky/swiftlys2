@@ -13,15 +13,15 @@ public partial interface EntityIOConnectionData_t : ISchemaClass<EntityIOConnect
   static EntityIOConnectionData_t ISchemaClass<EntityIOConnectionData_t>.From(nint handle) => new EntityIOConnectionData_tImpl(handle);
 
   
-  public ref CUtlString OutputName { get; }
+  public string OutputName { get; set; }
   
   public ref uint TargetType { get; }
   
-  public ref CUtlString TargetName { get; }
+  public string TargetName { get; set; }
   
-  public ref CUtlString InputName { get; }
+  public string InputName { get; set; }
   
-  public ref CUtlString OverrideParam { get; }
+  public string OverrideParam { get; set; }
   
   public ref float Delay { get; }
   

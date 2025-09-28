@@ -87,13 +87,13 @@ public partial interface CCSGameRules : CTeamplayRules, ISchemaClass<CCSGameRule
   
   public ref int NextMapInMapgroup { get; }
   
-  public ISchemaFixedString TournamentEventName { get; }
+  public string TournamentEventName { get; set; }
   
-  public ISchemaFixedString TournamentEventStage { get; }
+  public string TournamentEventStage { get; set; }
   
-  public ISchemaFixedString MatchStatTxt { get; }
+  public string MatchStatTxt { get; set; }
   
-  public ISchemaFixedString TournamentPredictionsTxt { get; }
+  public string TournamentPredictionsTxt { get; set; }
   
   public ref int TournamentPredictionsPct { get; }
   
@@ -204,7 +204,7 @@ public partial interface CCSGameRules : CTeamplayRules, ISchemaClass<CCSGameRule
   
   public ref float AvgPlayerRank { get; }
   
-  public ref CString QueuedMatchmakingReservationString { get; }
+  public string QueuedMatchmakingReservationString { get; set; }
   
   public ref uint NumTotalTournamentDrops { get; }
   
@@ -367,7 +367,7 @@ public partial interface CCSGameRules : CTeamplayRules, ISchemaClass<CCSGameRule
   
   public ref int RoundEndTimerTime { get; }
   
-  public ref CUtlString RoundEndFunFactToken { get; }
+  public string RoundEndFunFactToken { get; set; }
   
   public ref uint RoundEndFunFactPlayerSlot { get; }
   
@@ -377,7 +377,7 @@ public partial interface CCSGameRules : CTeamplayRules, ISchemaClass<CCSGameRule
   
   public ref int RoundEndFunFactData3 { get; }
   
-  public ref CUtlString RoundEndMessage { get; }
+  public string RoundEndMessage { get; set; }
   
   public ref int RoundEndPlayerCount { get; }
   

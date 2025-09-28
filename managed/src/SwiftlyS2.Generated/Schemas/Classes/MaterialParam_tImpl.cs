@@ -15,9 +15,13 @@ internal partial class MaterialParam_tImpl : SchemaClass, MaterialParam_t {
   public MaterialParam_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x81EE845A4D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x81EE845A4D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x81EE845A4D8F5786, value);
+  } 
 
 
 }

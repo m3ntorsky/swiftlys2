@@ -15,9 +15,13 @@ internal partial class CModelConfigImpl : SchemaClass, CModelConfig {
   public CModelConfigImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString ConfigName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF6401D5DA7B74064));
-  }
+  public string ConfigName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF6401D5DA7B74064));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF6401D5DA7B74064, value);
+  } 
   public ref CUtlVector<PointerTo<CModelConfigElement>> Elements {
     get => ref _Handle.AsRef<CUtlVector<PointerTo<CModelConfigElement>>>(Schema.GetOffset(0xF6401D5DC36D5D4C));
   }

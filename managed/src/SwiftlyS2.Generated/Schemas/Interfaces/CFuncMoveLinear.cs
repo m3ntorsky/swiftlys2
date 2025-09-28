@@ -19,11 +19,11 @@ public partial interface CFuncMoveLinear : CBaseToggle, ISchemaClass<CFuncMoveLi
   
   public ref Vector MoveDirParentSpace { get; }
   
-  public ref CUtlSymbolLarge SoundStart { get; }
+  public string SoundStart { get; set; }
   
-  public ref CUtlSymbolLarge SoundStop { get; }
+  public string SoundStop { get; set; }
   
-  public ref CUtlSymbolLarge CurrentSound { get; }
+  public string CurrentSound { get; set; }
   
   public ref float BlockDamage { get; }
   

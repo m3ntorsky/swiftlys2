@@ -19,7 +19,7 @@ public partial interface C_INIT_InitialVelocityFromHitbox : CParticleFunctionIni
   
   public ref int ControlPointNumber { get; }
   
-  public ISchemaFixedString HitboxSetName { get; }
+  public string HitboxSetName { get; set; }
   
   public ref bool UseBones { get; }
 

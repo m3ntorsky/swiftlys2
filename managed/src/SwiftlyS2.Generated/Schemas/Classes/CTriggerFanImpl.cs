@@ -51,9 +51,13 @@ internal partial class CTriggerFanImpl : CBaseTriggerImpl, CTriggerFan {
   public CountdownTimer RampTimer {
     get => new CountdownTimerImpl(_Handle + Schema.GetOffset(0x6A8B5C2B21725ED6));
   }
-  public ref CUtlSymbolLarge InfoFan1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x6A8B5C2B8E6431BA));
-  }
+  public string InfoFan1 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6A8B5C2B8E6431BA));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6A8B5C2B8E6431BA, value);
+  } 
   public ref float RopeForceScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6A8B5C2B08EB54C8));
   }

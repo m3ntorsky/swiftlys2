@@ -15,18 +15,26 @@ internal partial class CHitBoxSetImpl : SchemaClass, CHitBoxSet {
   public CHitBoxSetImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x742AE9EC4D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x742AE9EC4D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x742AE9EC4D8F5786, value);
+  } 
   public ref uint NameHash {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x742AE9ECDE15EEFE));
   }
   public ref CUtlVector HitBoxes {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x742AE9EC07A4113F));
   }
-  public ref CUtlString SourceFilename {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x742AE9ECD49CE26D));
-  }
+  public string SourceFilename {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x742AE9ECD49CE26D));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x742AE9ECD49CE26D, value);
+  } 
 
 
 }

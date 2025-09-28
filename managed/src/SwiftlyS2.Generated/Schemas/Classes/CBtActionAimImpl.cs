@@ -15,12 +15,20 @@ internal partial class CBtActionAimImpl : CBtNodeImpl, CBtActionAim {
   public CBtActionAimImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString SensorInputKey {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x43587513D2B0D4C1));
-  }
-  public ref CUtlString AimReadyKey {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x435875136718A4C7));
-  }
+  public string SensorInputKey {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x43587513D2B0D4C1));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x43587513D2B0D4C1, value);
+  } 
+  public string AimReadyKey {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x435875136718A4C7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x435875136718A4C7, value);
+  } 
   public ref float ZoomCooldownTimestamp {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x43587513F2898D9F));
   }

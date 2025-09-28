@@ -18,9 +18,13 @@ internal partial class CLogicLineToEntityImpl : CLogicalEntityImpl, CLogicLineTo
   public SchemaUntypedField Line {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x61067DC85589FAA7));
   }
-  public ref CUtlSymbolLarge SourceName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x61067DC82F9BA2DB));
-  }
+  public string SourceName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x61067DC82F9BA2DB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x61067DC82F9BA2DB, value);
+  } 
   public ref CHandle<CBaseEntity> StartEntity {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x61067DC8904F2828));
   }

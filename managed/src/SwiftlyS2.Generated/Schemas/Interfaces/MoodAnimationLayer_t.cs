@@ -13,7 +13,7 @@ public partial interface MoodAnimationLayer_t : ISchemaClass<MoodAnimationLayer_
   static MoodAnimationLayer_t ISchemaClass<MoodAnimationLayer_t>.From(nint handle) => new MoodAnimationLayer_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref bool ActiveListening { get; }
   

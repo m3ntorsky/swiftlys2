@@ -13,19 +13,19 @@ public partial interface CEnvInstructorVRHint : CPointEntity, ISchemaClass<CEnvI
   static CEnvInstructorVRHint ISchemaClass<CEnvInstructorVRHint>.From(nint handle) => new CEnvInstructorVRHintImpl(handle);
 
   
-  public ref CUtlSymbolLarge Name { get; }
+  public string Name { get; set; }
   
-  public ref CUtlSymbolLarge HintTargetEntity { get; }
+  public string HintTargetEntity { get; set; }
   
   public ref int Timeout { get; }
   
-  public ref CUtlSymbolLarge Caption { get; }
+  public string Caption { get; set; }
   
-  public ref CUtlSymbolLarge StartSound { get; }
+  public string StartSound { get; set; }
   
   public ref int LayoutFileType { get; }
   
-  public ref CUtlSymbolLarge CustomLayoutFile { get; }
+  public string CustomLayoutFile { get; set; }
   
   public ref int AttachType { get; }
   

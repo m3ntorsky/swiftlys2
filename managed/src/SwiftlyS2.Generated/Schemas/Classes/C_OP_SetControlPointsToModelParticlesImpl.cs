@@ -15,12 +15,20 @@ internal partial class C_OP_SetControlPointsToModelParticlesImpl : CParticleFunc
   public C_OP_SetControlPointsToModelParticlesImpl(nint handle) : base(handle) {
   }
 
-public ISchemaFixedString HitboxSetName {
-    get => new SchemaFixedString(_Handle, 0x8850EF6A6A21BB0E, 128, 1, 1);
-  }
-public ISchemaFixedString AttachmentName {
-    get => new SchemaFixedString(_Handle, 0x8850EF6A9CFCA76B, 128, 1, 1);
-  }
+public string HitboxSetName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x8850EF6A6A21BB0E);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x8850EF6A6A21BB0E, value, 128);
+  } 
+public string AttachmentName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x8850EF6A9CFCA76B);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x8850EF6A9CFCA76B, value, 128);
+  } 
   public ref int FirstControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8850EF6A72117650));
   }

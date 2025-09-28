@@ -13,7 +13,7 @@ public partial interface CDspPresetModifierList : ISchemaClass<CDspPresetModifie
   static CDspPresetModifierList ISchemaClass<CDspPresetModifierList>.From(nint handle) => new CDspPresetModifierListImpl(handle);
 
   
-  public ref CUtlString DspName { get; }
+  public string DspName { get; set; }
   
   // CUtlVector< CDSPMixgroupModifier >
   public ref CUtlVector Modifiers { get; }

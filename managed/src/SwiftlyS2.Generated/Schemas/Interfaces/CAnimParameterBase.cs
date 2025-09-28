@@ -15,13 +15,13 @@ public partial interface CAnimParameterBase : ISchemaClass<CAnimParameterBase> {
   
   public ref CGlobalSymbol Name { get; }
   
-  public ref CUtlString Comment { get; }
+  public string Comment { get; set; }
   
-  public ref CUtlString Group { get; }
+  public string Group { get; set; }
   
   public AnimParamID Id { get; }
   
-  public ref CUtlString ComponentName { get; }
+  public string ComponentName { get; set; }
   
   public ref bool NetworkingRequested { get; }
   

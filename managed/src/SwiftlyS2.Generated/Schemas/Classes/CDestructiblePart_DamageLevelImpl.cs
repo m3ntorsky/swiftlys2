@@ -15,9 +15,13 @@ internal partial class CDestructiblePart_DamageLevelImpl : SchemaClass, CDestruc
   public CDestructiblePart_DamageLevelImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF69D69CB63D22D49));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF69D69CB63D22D49));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF69D69CB63D22D49, value);
+  } 
   public ref CGlobalSymbol BreakablePieceName {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xF69D69CB88329BEA));
   }

@@ -71,7 +71,7 @@ public partial interface CFuncRotator : CBaseModelEntity, ISchemaClass<CFuncRota
   
   public ref Vector LookAtForcedUp { get; }
   
-  public ref CUtlSymbolLarge StrRotatorTarget { get; }
+  public string StrRotatorTarget { get; set; }
   
   public ref bool RecordHistory { get; }
   

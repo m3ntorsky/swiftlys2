@@ -43,7 +43,7 @@ public partial interface CBaseToggle : CBaseModelEntity, ISchemaClass<CBaseToggl
   
   public ref int MovementType { get; }
   
-  public ref CUtlSymbolLarge Master { get; }
+  public string Master { get; set; }
 
 
 }

@@ -15,12 +15,20 @@ internal partial class CChangeLevelImpl : CBaseTriggerImpl, CChangeLevel {
   public CChangeLevelImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString MapName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x52008134CE11EF47));
-  }
-  public ref CUtlString LandmarkName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x520081342DEE941D));
-  }
+  public string MapName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x52008134CE11EF47));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x52008134CE11EF47, value);
+  } 
+  public string LandmarkName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x520081342DEE941D));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x520081342DEE941D, value);
+  } 
   public CEntityIOOutput OnChangeLevel {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0x52008134EED57EDE));
   }

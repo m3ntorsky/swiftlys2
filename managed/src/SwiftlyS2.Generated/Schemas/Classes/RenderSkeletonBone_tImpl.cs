@@ -15,12 +15,20 @@ internal partial class RenderSkeletonBone_tImpl : SchemaClass, RenderSkeletonBon
   public RenderSkeletonBone_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString BoneName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6A3BCC9BFDEE0E0C));
-  }
-  public ref CUtlString ParentName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6A3BCC9BC45C5BBE));
-  }
+  public string BoneName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6A3BCC9BFDEE0E0C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6A3BCC9BFDEE0E0C, value);
+  } 
+  public string ParentName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6A3BCC9BC45C5BBE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6A3BCC9BC45C5BBE, value);
+  } 
   public ref matrix3x4_t InvBindPose {
     get => ref _Handle.AsRef<matrix3x4_t>(Schema.GetOffset(0x6A3BCC9B265CACBE));
   }

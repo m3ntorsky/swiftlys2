@@ -13,11 +13,11 @@ public partial interface CBtActionMoveTo : CBtNode, ISchemaClass<CBtActionMoveTo
   static CBtActionMoveTo ISchemaClass<CBtActionMoveTo>.From(nint handle) => new CBtActionMoveToImpl(handle);
 
   
-  public ref CUtlString DestinationInputKey { get; }
+  public string DestinationInputKey { get; set; }
   
-  public ref CUtlString HidingSpotInputKey { get; }
+  public string HidingSpotInputKey { get; set; }
   
-  public ref CUtlString ThreatInputKey { get; }
+  public string ThreatInputKey { get; set; }
   
   public ref Vector Destination { get; }
   

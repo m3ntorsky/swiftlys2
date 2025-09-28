@@ -15,7 +15,7 @@ public partial interface CAttributeManager__cached_attribute_float_t : ISchemaCl
   
   public ref float In { get; }
   
-  public ref CUtlSymbolLarge AttribHook { get; }
+  public string AttribHook { get; set; }
   
   public ref float Out { get; }
 

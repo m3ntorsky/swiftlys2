@@ -13,7 +13,7 @@ public partial interface CFuncPlat : CBasePlatTrain, ISchemaClass<CFuncPlat> {
   static CFuncPlat ISchemaClass<CFuncPlat>.From(nint handle) => new CFuncPlatImpl(handle);
 
   
-  public ref CUtlSymbolLarge Noise { get; }
+  public string Noise { get; set; }
 
 
 }

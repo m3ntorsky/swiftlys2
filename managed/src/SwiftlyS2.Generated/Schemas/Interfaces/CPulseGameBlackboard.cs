@@ -13,9 +13,9 @@ public partial interface CPulseGameBlackboard : CBaseEntity, ISchemaClass<CPulse
   static CPulseGameBlackboard ISchemaClass<CPulseGameBlackboard>.From(nint handle) => new CPulseGameBlackboardImpl(handle);
 
   
-  public ref CUtlString StrGraphName { get; }
+  public string StrGraphName { get; set; }
   
-  public ref CUtlString StrStateBlob { get; }
+  public string StrStateBlob { get; set; }
 
   public void StrGraphNameUpdated();
   public void StrStateBlobUpdated();

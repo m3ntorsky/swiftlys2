@@ -21,9 +21,13 @@ internal partial class CAnimUpdateNodeBaseImpl : SchemaClass, CAnimUpdateNodeBas
   public ref AnimNodeNetworkMode NetworkMode {
     get => ref _Handle.AsRef<AnimNodeNetworkMode>(Schema.GetOffset(0xA16B836BE3307112));
   }
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xA16B836B4D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA16B836B4D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA16B836B4D8F5786, value);
+  } 
 
 
 }

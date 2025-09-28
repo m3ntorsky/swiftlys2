@@ -19,11 +19,11 @@ public partial interface CFuncTrackChange : CFuncPlatRot, ISchemaClass<CFuncTrac
   
   public CFuncTrackTrain? Train { get; }
   
-  public ref CUtlSymbolLarge TrackTopName { get; }
+  public string TrackTopName { get; set; }
   
-  public ref CUtlSymbolLarge TrackBottomName { get; }
+  public string TrackBottomName { get; set; }
   
-  public ref CUtlSymbolLarge TrainName { get; }
+  public string TrainName { get; set; }
   
   public ref TRAIN_CODE Code { get; }
   

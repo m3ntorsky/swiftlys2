@@ -15,12 +15,20 @@ internal partial class CModelConfigElement_AttachedModelImpl : CModelConfigEleme
   public CModelConfigElement_AttachedModelImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString InstanceName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x82D04A99643AE8F9));
-  }
-  public ref CUtlString EntityClass {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x82D04A995BEE014A));
-  }
+  public string InstanceName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x82D04A99643AE8F9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x82D04A99643AE8F9, value);
+  } 
+  public string EntityClass {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x82D04A995BEE014A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x82D04A995BEE014A, value);
+  } 
   public ref CStrongHandle<InfoForResourceTypeCModel> Model {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0x82D04A99E100C814));
   }
@@ -30,12 +38,20 @@ internal partial class CModelConfigElement_AttachedModelImpl : CModelConfigEleme
   public ref QAngle AngOffset {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0x82D04A9971C0EE4F));
   }
-  public ref CUtlString AttachmentName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x82D04A999CFCA76B));
-  }
-  public ref CUtlString LocalAttachmentOffsetName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x82D04A9934391DC1));
-  }
+  public string AttachmentName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x82D04A999CFCA76B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x82D04A999CFCA76B, value);
+  } 
+  public string LocalAttachmentOffsetName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x82D04A9934391DC1));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x82D04A9934391DC1, value);
+  } 
   public ref ModelConfigAttachmentType_t AttachmentType {
     get => ref _Handle.AsRef<ModelConfigAttachmentType_t>(Schema.GetOffset(0x82D04A99EB2E2AA0));
   }
@@ -51,12 +67,20 @@ internal partial class CModelConfigElement_AttachedModelImpl : CModelConfigEleme
   public ref bool AcceptParentMaterialDrivenDecals {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x82D04A996A2FFA80));
   }
-  public ref CUtlString BodygroupOnOtherModels {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x82D04A994536DE3B));
-  }
-  public ref CUtlString MaterialGroupOnOtherModels {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x82D04A9959E9920E));
-  }
+  public string BodygroupOnOtherModels {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x82D04A994536DE3B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x82D04A994536DE3B, value);
+  } 
+  public string MaterialGroupOnOtherModels {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x82D04A9959E9920E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x82D04A9959E9920E, value);
+  } 
 
 
 }

@@ -21,9 +21,13 @@ internal partial class RnShapeDesc_tImpl : SchemaClass, RnShapeDesc_t {
   public ref uint SurfacePropertyIndex {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xA24D7D106DED6187));
   }
-  public ref CUtlString UserFriendlyName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xA24D7D1000D4523E));
-  }
+  public string UserFriendlyName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA24D7D1000D4523E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA24D7D1000D4523E, value);
+  } 
   public ref bool UserFriendlyNameSealed {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA24D7D1076DBAE3A));
   }

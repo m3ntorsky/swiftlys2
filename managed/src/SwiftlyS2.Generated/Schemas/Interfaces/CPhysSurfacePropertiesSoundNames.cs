@@ -13,29 +13,29 @@ public partial interface CPhysSurfacePropertiesSoundNames : ISchemaClass<CPhysSu
   static CPhysSurfacePropertiesSoundNames ISchemaClass<CPhysSurfacePropertiesSoundNames>.From(nint handle) => new CPhysSurfacePropertiesSoundNamesImpl(handle);
 
   
-  public ref CUtlString ImpactSoft { get; }
+  public string ImpactSoft { get; set; }
   
-  public ref CUtlString ImpactHard { get; }
+  public string ImpactHard { get; set; }
   
-  public ref CUtlString ScrapeSmooth { get; }
+  public string ScrapeSmooth { get; set; }
   
-  public ref CUtlString ScrapeRough { get; }
+  public string ScrapeRough { get; set; }
   
-  public ref CUtlString BulletImpact { get; }
+  public string BulletImpact { get; set; }
   
-  public ref CUtlString Rolling { get; }
+  public string Rolling { get; set; }
   
-  public ref CUtlString Break { get; }
+  public string Break { get; set; }
   
-  public ref CUtlString Strain { get; }
+  public string Strain { get; set; }
   
-  public ref CUtlString MeleeImpact { get; }
+  public string MeleeImpact { get; set; }
   
-  public ref CUtlString PushOff { get; }
+  public string PushOff { get; set; }
   
-  public ref CUtlString SkidStop { get; }
+  public string SkidStop { get; set; }
   
-  public ref CUtlString Resonant { get; }
+  public string Resonant { get; set; }
 
 
 }

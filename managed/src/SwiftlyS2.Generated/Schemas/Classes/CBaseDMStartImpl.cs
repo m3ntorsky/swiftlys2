@@ -15,9 +15,13 @@ internal partial class CBaseDMStartImpl : CPointEntityImpl, CBaseDMStart {
   public CBaseDMStartImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Master {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x4182FA98392E77B3));
-  }
+  public string Master {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x4182FA98392E77B3));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x4182FA98392E77B3, value);
+  } 
 
 
 }

@@ -23,7 +23,7 @@ public partial interface C_INIT_RtEnvCull : CParticleFunctionInitializer, ISchem
   
   public ref bool LifeAdjust { get; }
   
-  public ISchemaFixedString RtEnvName { get; }
+  public string RtEnvName { get; set; }
   
   public ref int RTEnvCP { get; }
   

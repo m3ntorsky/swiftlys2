@@ -15,9 +15,13 @@ internal partial class CTonemapTriggerImpl : CBaseTriggerImpl, CTonemapTrigger {
   public CTonemapTriggerImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge TonemapControllerName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x82562698C641A282));
-  }
+  public string TonemapControllerName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x82562698C641A282));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x82562698C641A282, value);
+  } 
   public ref CHandle<CEntityInstance> TonemapController {
     get => ref _Handle.AsRef<CHandle<CEntityInstance>>(Schema.GetOffset(0x82562698F5E1A34F));
   }

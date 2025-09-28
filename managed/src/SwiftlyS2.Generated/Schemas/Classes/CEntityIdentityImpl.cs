@@ -18,12 +18,20 @@ internal partial class CEntityIdentityImpl : SchemaClass, CEntityIdentity {
   public ref int NameStringableIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xAE42345F9A4938C9));
   }
-  public ref CUtlSymbolLarge Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xAE42345F4D8F5786));
-  }
-  public ref CUtlSymbolLarge DesignerName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xAE42345FBFC1F33F));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xAE42345F4D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xAE42345F4D8F5786, value);
+  } 
+  public string DesignerName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xAE42345FBFC1F33F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xAE42345FBFC1F33F, value);
+  } 
   public ref uint Flags {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xAE42345FDC74A14C));
   }

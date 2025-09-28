@@ -13,7 +13,7 @@ public partial interface CNmEntityAttributeEventBase : CNmEvent, ISchemaClass<CN
   static CNmEntityAttributeEventBase ISchemaClass<CNmEntityAttributeEventBase>.From(nint handle) => new CNmEntityAttributeEventBaseImpl(handle);
 
   
-  public ref CUtlString AttributeName { get; }
+  public string AttributeName { get; set; }
 
 
 }

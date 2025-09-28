@@ -15,18 +15,34 @@ internal partial class CSosGroupActionSoundeventPrioritySchemaImpl : CSosGroupAc
   public CSosGroupActionSoundeventPrioritySchemaImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString PriorityValue {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x1E84D860257F7BF6));
-  }
-  public ref CUtlString PriorityVolumeScalar {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x1E84D860F21824AF));
-  }
-  public ref CUtlString PriorityContributeButDontRead {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x1E84D8608078C7B6));
-  }
-  public ref CUtlString PriorityReadButDontContribute {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x1E84D860112DDB84));
-  }
+  public string PriorityValue {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1E84D860257F7BF6));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1E84D860257F7BF6, value);
+  } 
+  public string PriorityVolumeScalar {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1E84D860F21824AF));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1E84D860F21824AF, value);
+  } 
+  public string PriorityContributeButDontRead {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1E84D8608078C7B6));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1E84D8608078C7B6, value);
+  } 
+  public string PriorityReadButDontContribute {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1E84D860112DDB84));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1E84D860112DDB84, value);
+  } 
 
 
 }

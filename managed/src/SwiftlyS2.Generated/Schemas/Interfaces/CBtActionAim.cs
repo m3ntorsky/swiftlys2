@@ -13,9 +13,9 @@ public partial interface CBtActionAim : CBtNode, ISchemaClass<CBtActionAim> {
   static CBtActionAim ISchemaClass<CBtActionAim>.From(nint handle) => new CBtActionAimImpl(handle);
 
   
-  public ref CUtlString SensorInputKey { get; }
+  public string SensorInputKey { get; set; }
   
-  public ref CUtlString AimReadyKey { get; }
+  public string AimReadyKey { get; set; }
   
   public ref float ZoomCooldownTimestamp { get; }
   

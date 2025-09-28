@@ -19,7 +19,7 @@ public partial interface CNmParticleEvent : CNmEvent, ISchemaClass<CNmParticleEv
   
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ParticleSystem { get; }
   
-  public ref CUtlString Tags { get; }
+  public string Tags { get; set; }
   
   public ref bool StopImmediately { get; }
   
@@ -27,17 +27,17 @@ public partial interface CNmParticleEvent : CNmEvent, ISchemaClass<CNmParticleEv
   
   public ref bool PlayEndCap { get; }
   
-  public ref CUtlString AttachmentPoint0 { get; }
+  public string AttachmentPoint0 { get; set; }
   
   public ref ParticleAttachment_t AttachmentType0 { get; }
   
-  public ref CUtlString AttachmentPoint1 { get; }
+  public string AttachmentPoint1 { get; set; }
   
   public ref ParticleAttachment_t AttachmentType1 { get; }
   
-  public ref CUtlString Config { get; }
+  public string Config { get; set; }
   
-  public ref CUtlString EffectForConfig { get; }
+  public string EffectForConfig { get; set; }
 
 
 }

@@ -15,9 +15,13 @@ internal partial class SkeletonAnimCapture_t__Bone_tImpl : SchemaClass, Skeleton
   public SkeletonAnimCapture_t__Bone_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x30D396FDCAE8A266));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x30D396FDCAE8A266));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x30D396FDCAE8A266, value);
+  } 
   public ref CTransform BindPose {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0x30D396FDE664FE63));
   }

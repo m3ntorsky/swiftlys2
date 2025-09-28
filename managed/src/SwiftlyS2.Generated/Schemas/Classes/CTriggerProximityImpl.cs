@@ -18,9 +18,13 @@ internal partial class CTriggerProximityImpl : CBaseTriggerImpl, CTriggerProximi
   public ref CHandle<CBaseEntity> MeasureTarget {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x98F0621FF81BC1A8));
   }
-  public ref CUtlSymbolLarge MeasureTarget1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x98F0621F29C47B3A));
-  }
+  public string MeasureTarget1 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x98F0621F29C47B3A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x98F0621F29C47B3A, value);
+  } 
   public ref float Radius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x98F0621F2E1F6E07));
   }

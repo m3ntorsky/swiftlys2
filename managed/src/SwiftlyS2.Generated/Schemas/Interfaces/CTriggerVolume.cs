@@ -13,7 +13,7 @@ public partial interface CTriggerVolume : CBaseModelEntity, ISchemaClass<CTrigge
   static CTriggerVolume ISchemaClass<CTriggerVolume>.From(nint handle) => new CTriggerVolumeImpl(handle);
 
   
-  public ref CUtlSymbolLarge FilterName { get; }
+  public string FilterName { get; set; }
   
   public ref CHandle<CBaseFilter> Filter { get; }
 

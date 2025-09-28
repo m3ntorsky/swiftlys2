@@ -15,9 +15,9 @@ public partial interface CAI_ChangeHintGroup : CBaseEntity, ISchemaClass<CAI_Cha
   
   public ref int SearchType { get; }
   
-  public ref CUtlSymbolLarge StrSearchName { get; }
+  public string StrSearchName { get; set; }
   
-  public ref CUtlSymbolLarge StrNewHintGroup { get; }
+  public string StrNewHintGroup { get; set; }
   
   public ref float Radius { get; }
 

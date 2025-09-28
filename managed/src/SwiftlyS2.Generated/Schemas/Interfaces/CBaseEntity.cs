@@ -34,7 +34,7 @@ public partial interface CBaseEntity : CEntityInstance, ISchemaClass<CBaseEntity
   // CUtlVector< ResponseContext_t >
   public ref CUtlVector ResponseContexts { get; }
   
-  public ref CUtlSymbolLarge ResponseContext { get; }
+  public string ResponseContext { get; set; }
   
   public ref int Health { get; }
   
@@ -62,11 +62,11 @@ public partial interface CBaseEntity : CEntityInstance, ISchemaClass<CBaseEntity
   
   public ref bool RestoreInHierarchy { get; }
   
-  public ref CUtlSymbolLarge Target { get; }
+  public string Target { get; set; }
   
   public ref CHandle<CBaseFilter> DamageFilter { get; }
   
-  public ref CUtlSymbolLarge DamageFilterName { get; }
+  public string DamageFilterName { get; set; }
   
   public ref float MoveDoneTime { get; }
   
@@ -86,13 +86,13 @@ public partial interface CBaseEntity : CEntityInstance, ISchemaClass<CBaseEntity
   
   public ref byte TeamNum { get; }
   
-  public ref CUtlSymbolLarge Globalname { get; }
+  public string Globalname { get; set; }
   
   public ref int SentToClients { get; }
   
   public ref float Speed { get; }
   
-  public ref CUtlString UniqueHammerID { get; }
+  public string UniqueHammerID { get; set; }
   
   public ref uint Spawnflags { get; }
   

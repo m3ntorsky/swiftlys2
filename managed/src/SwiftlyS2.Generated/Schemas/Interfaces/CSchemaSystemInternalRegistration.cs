@@ -51,7 +51,7 @@ public partial interface CSchemaSystemInternalRegistration : ISchemaClass<CSchem
   
   public ref CUtlBinaryBlock CUtlBinaryBlock { get; }
   
-  public ref CUtlString CUtlString { get; }
+  public string CUtlString { get; set; }
   
   // CUtlSymbol
   public SchemaUntypedField CUtlSymbol { get; }

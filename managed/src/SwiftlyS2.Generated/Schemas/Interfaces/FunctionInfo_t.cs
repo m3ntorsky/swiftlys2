@@ -13,7 +13,7 @@ public partial interface FunctionInfo_t : ISchemaClass<FunctionInfo_t> {
   static FunctionInfo_t ISchemaClass<FunctionInfo_t>.From(nint handle) => new FunctionInfo_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref CUtlStringToken NameToken { get; }
   

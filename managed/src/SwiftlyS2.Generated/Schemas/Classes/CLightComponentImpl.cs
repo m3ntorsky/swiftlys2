@@ -87,9 +87,13 @@ internal partial class CLightComponentImpl : CEntityComponentImpl, CLightCompone
   public ref int Style {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A5F6004492));
   }
-  public ref CUtlString Pattern {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x15B1C6A52E3F72A9));
-  }
+  public string Pattern {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x15B1C6A52E3F72A9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x15B1C6A52E3F72A9, value);
+  } 
   public ref int CascadeRenderStaticObjects {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x15B1C6A51197D9D5));
   }

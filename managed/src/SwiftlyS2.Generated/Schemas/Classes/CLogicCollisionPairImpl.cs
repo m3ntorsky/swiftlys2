@@ -15,12 +15,20 @@ internal partial class CLogicCollisionPairImpl : CLogicalEntityImpl, CLogicColli
   public CLogicCollisionPairImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge NameAttach1 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9E0FC6AC6776530A));
-  }
-  public ref CUtlSymbolLarge NameAttach2 {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9E0FC6AC66765177));
-  }
+  public string NameAttach1 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9E0FC6AC6776530A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9E0FC6AC6776530A, value);
+  } 
+  public string NameAttach2 {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9E0FC6AC66765177));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9E0FC6AC66765177, value);
+  } 
   public ref bool SupportMultipleEntitiesWithSameName {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9E0FC6ACD009870A));
   }

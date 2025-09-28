@@ -36,9 +36,13 @@ internal partial class CBaseRendererSource2Impl : CParticleFunctionRendererImpl,
   public ref SpriteCardShaderType_t ShaderType {
     get => ref _Handle.AsRef<SpriteCardShaderType_t>(Schema.GetOffset(0xA732A57512186AAC));
   }
-  public ref CUtlString StrShaderOverride {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xA732A575DB9D2E61));
-  }
+  public string StrShaderOverride {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA732A575DB9D2E61));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA732A575DB9D2E61, value);
+  } 
   public CParticleCollectionRendererFloatInput CenterXOffset {
     get => new CParticleCollectionRendererFloatInputImpl(_Handle + Schema.GetOffset(0xA732A5755E388DB9));
   }
@@ -162,15 +166,23 @@ internal partial class CBaseRendererSource2Impl : CParticleFunctionRendererImpl,
   public ref bool OnlyRenderInEffecsGameOverlay {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA732A5750293C80E));
   }
-public ISchemaFixedString StencilTestID {
-    get => new SchemaFixedString(_Handle, 0xA732A575115C996A, 128, 1, 1);
-  }
+public string StencilTestID {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xA732A575115C996A);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xA732A575115C996A, value, 128);
+  } 
   public ref bool StencilTestExclude {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA732A57584BFB66B));
   }
-public ISchemaFixedString StencilWriteID {
-    get => new SchemaFixedString(_Handle, 0xA732A5758FB6505B, 128, 1, 1);
-  }
+public string StencilWriteID {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xA732A5758FB6505B);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xA732A5758FB6505B, value, 128);
+  } 
   public ref bool WriteStencilOnDepthPass {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA732A575016CB7AF));
   }

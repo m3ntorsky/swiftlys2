@@ -15,21 +15,33 @@ internal partial class CFuncMoverImpl : CBaseModelEntityImpl, CFuncMover {
   public CFuncMoverImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge PathName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B6981A419FD));
-  }
+  public string PathName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x320E8B6981A419FD));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x320E8B6981A419FD, value);
+  } 
   public ref CHandle<CPathMover> PathMover {
     get => ref _Handle.AsRef<CHandle<CPathMover>>(Schema.GetOffset(0x320E8B69AFA877CD));
   }
   public ref CHandle<CPathMover> PrevPathMover {
     get => ref _Handle.AsRef<CHandle<CPathMover>>(Schema.GetOffset(0x320E8B69FB9DE3C6));
   }
-  public ref CUtlSymbolLarge PathNodeStart {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B691B0A1252));
-  }
-  public ref CUtlSymbolLarge PathNodeEnd {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69F1D1AED7));
-  }
+  public string PathNodeStart {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x320E8B691B0A1252));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x320E8B691B0A1252, value);
+  } 
+  public string PathNodeEnd {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x320E8B69F1D1AED7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x320E8B69F1D1AED7, value);
+  } 
   public ref CFuncMover__Move_t MoveType {
     get => ref _Handle.AsRef<CFuncMover__Move_t>(Schema.GetOffset(0x320E8B69E635C185));
   }
@@ -84,27 +96,55 @@ internal partial class CFuncMoverImpl : CBaseModelEntityImpl, CFuncMover {
   public ref float PathLocationToBeginStop {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x320E8B69976C5777));
   }
-  public ref CUtlSymbolLarge StartForwardSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69CBDFD56B));
-  }
-  public ref CUtlSymbolLarge LoopForwardSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69C875F2F7));
-  }
-  public ref CUtlSymbolLarge StopForwardSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69B72A6EC9));
-  }
-  public ref CUtlSymbolLarge StartReverseSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B6927D9C282));
-  }
-  public ref CUtlSymbolLarge LoopReverseSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69FC2C15CE));
-  }
-  public ref CUtlSymbolLarge StopReverseSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69B0EFF4BC));
-  }
-  public ref CUtlSymbolLarge ArriveAtDestinationSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B696350F6A0));
-  }
+  public string StartForwardSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x320E8B69CBDFD56B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x320E8B69CBDFD56B, value);
+  } 
+  public string LoopForwardSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x320E8B69C875F2F7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x320E8B69C875F2F7, value);
+  } 
+  public string StopForwardSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x320E8B69B72A6EC9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x320E8B69B72A6EC9, value);
+  } 
+  public string StartReverseSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x320E8B6927D9C282));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x320E8B6927D9C282, value);
+  } 
+  public string LoopReverseSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x320E8B69FC2C15CE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x320E8B69FC2C15CE, value);
+  } 
+  public string StopReverseSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x320E8B69B0EFF4BC));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x320E8B69B0EFF4BC, value);
+  } 
+  public string ArriveAtDestinationSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x320E8B696350F6A0));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x320E8B696350F6A0, value);
+  } 
   public CEntityIOOutput OnMovementEnd {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0x320E8B699BD1966A));
   }
@@ -138,9 +178,13 @@ internal partial class CFuncMoverImpl : CBaseModelEntityImpl, CFuncMover {
   public CEntityIOOutput OnNodePassed {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0x320E8B69709328FC));
   }
-  public ref CUtlSymbolLarge OrientationMatchEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B69384CF18A));
-  }
+  public string OrientationMatchEntityName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x320E8B69384CF18A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x320E8B69384CF18A, value);
+  } 
   public ref CHandle<CBaseEntity> OrientationMatchEntity {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x320E8B6924A0D317));
   }
@@ -189,9 +233,13 @@ internal partial class CFuncMoverImpl : CBaseModelEntityImpl, CFuncMover {
   public ref float CurFollowSpeed {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x320E8B6958BEEE69));
   }
-  public ref CUtlSymbolLarge StrOrientationFaceEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x320E8B694B008CC7));
-  }
+  public string StrOrientationFaceEntityName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x320E8B694B008CC7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x320E8B694B008CC7, value);
+  } 
   public ref CHandle<CBaseEntity> OrientationFaceEntity {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x320E8B696BA187E1));
   }

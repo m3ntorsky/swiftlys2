@@ -24,12 +24,20 @@ internal partial class CPhysicsSpringImpl : CBaseEntityImpl, CPhysicsSpring {
   public ref float RestLength {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x5222EAA93AC4079));
   }
-  public ref CUtlSymbolLarge NameAttachStart {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5222EAAD19CEDD5));
-  }
-  public ref CUtlSymbolLarge NameAttachEnd {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5222EAACF4DE50C));
-  }
+  public string NameAttachStart {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x5222EAAD19CEDD5));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x5222EAAD19CEDD5, value);
+  } 
+  public string NameAttachEnd {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x5222EAACF4DE50C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x5222EAACF4DE50C, value);
+  } 
   public ref Vector Start {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x5222EAAA539BEFF));
   }

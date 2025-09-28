@@ -15,12 +15,20 @@ internal partial class ResponseContext_tImpl : SchemaClass, ResponseContext_t {
   public ResponseContext_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8F5A90A274FF65FE));
-  }
-  public ref CUtlSymbolLarge Value {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8F5A90A28044B702));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8F5A90A274FF65FE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8F5A90A274FF65FE, value);
+  } 
+  public string Value {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8F5A90A28044B702));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8F5A90A28044B702, value);
+  } 
   public GameTime_t ExpirationTime {
     get => new GameTime_tImpl(_Handle + Schema.GetOffset(0x8F5A90A20389142D));
   }

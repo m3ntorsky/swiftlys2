@@ -29,7 +29,7 @@ public partial interface CBaseTrigger : CBaseToggle, ISchemaClass<CBaseTrigger> 
   
   public ref CUtlVector<CHandle<CBaseEntity>> TouchingEntities { get; }
   
-  public ref CUtlSymbolLarge FilterName { get; }
+  public string FilterName { get; set; }
   
   public ref CHandle<CBaseFilter> Filter { get; }
   

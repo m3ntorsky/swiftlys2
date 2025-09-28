@@ -15,7 +15,7 @@ public partial interface CTriggerActiveWeaponDetect : CBaseTrigger, ISchemaClass
   
   public CEntityIOOutput OnTouchedActiveWeapon { get; }
   
-  public ref CUtlSymbolLarge WeaponClassName { get; }
+  public string WeaponClassName { get; set; }
 
 
 }

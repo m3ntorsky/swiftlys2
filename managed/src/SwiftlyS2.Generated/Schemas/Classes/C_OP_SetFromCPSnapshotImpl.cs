@@ -18,9 +18,13 @@ internal partial class C_OP_SetFromCPSnapshotImpl : CParticleFunctionOperatorImp
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5B4435183F31A6BD));
   }
-  public ref CUtlString StrSnapshotSubset {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x5B443518BD8A8E5E));
-  }
+  public string StrSnapshotSubset {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x5B443518BD8A8E5E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x5B443518BD8A8E5E, value);
+  } 
   public ParticleAttributeIndex_t AttributeToRead {
     get => new ParticleAttributeIndex_tImpl(_Handle + Schema.GetOffset(0x5B443518E0F61F9E));
   }

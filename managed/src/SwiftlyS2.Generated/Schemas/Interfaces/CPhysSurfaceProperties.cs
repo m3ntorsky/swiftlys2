@@ -13,7 +13,7 @@ public partial interface CPhysSurfaceProperties : ISchemaClass<CPhysSurfacePrope
   static CPhysSurfaceProperties ISchemaClass<CPhysSurfaceProperties>.From(nint handle) => new CPhysSurfacePropertiesImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref uint NameHash { get; }
   
@@ -21,7 +21,7 @@ public partial interface CPhysSurfaceProperties : ISchemaClass<CPhysSurfacePrope
   
   public ref bool Hidden { get; }
   
-  public ref CUtlString Description { get; }
+  public string Description { get; set; }
   
   public CPhysSurfacePropertiesPhysics Physics { get; }
   

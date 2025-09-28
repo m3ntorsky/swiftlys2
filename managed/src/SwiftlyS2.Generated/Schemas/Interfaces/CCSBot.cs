@@ -15,7 +15,7 @@ public partial interface CCSBot : CBot, ISchemaClass<CCSBot> {
   
   public ref Vector EyePosition { get; }
   
-  public ISchemaFixedString Name { get; }
+  public string Name { get; set; }
   
   public ref float CombatRange { get; }
   
@@ -149,7 +149,7 @@ public partial interface CCSBot : CBot, ISchemaClass<CCSBot> {
   
   public ref bool LookAtSpotAttack { get; }
   
-  public ref CString LookAtDesc { get; }
+  public string LookAtDesc { get; set; }
   
   public ref float PeripheralTimestamp { get; }
   

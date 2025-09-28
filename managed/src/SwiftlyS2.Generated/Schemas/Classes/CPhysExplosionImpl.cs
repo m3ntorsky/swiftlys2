@@ -27,9 +27,13 @@ internal partial class CPhysExplosionImpl : CPointEntityImpl, CPhysExplosion {
   public ref float Radius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xACEBD741A921CA53));
   }
-  public ref CUtlSymbolLarge TargetEntityName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xACEBD741F88EC878));
-  }
+  public string TargetEntityName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xACEBD741F88EC878));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xACEBD741F88EC878, value);
+  } 
   public ref float InnerRadius {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xACEBD74132121407));
   }

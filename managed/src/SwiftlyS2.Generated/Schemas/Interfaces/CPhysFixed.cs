@@ -25,9 +25,9 @@ public partial interface CPhysFixed : CPhysConstraint, ISchemaClass<CPhysFixed> 
   
   public ref bool EnableAngularConstraint { get; }
   
-  public ref CUtlSymbolLarge BoneName1 { get; }
+  public string BoneName1 { get; set; }
   
-  public ref CUtlSymbolLarge BoneName2 { get; }
+  public string BoneName2 { get; set; }
 
 
 }

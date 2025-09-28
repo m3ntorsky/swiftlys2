@@ -69,9 +69,13 @@ internal partial class CSchemaSystemInternalRegistrationImpl : SchemaClass, CSch
   public ref CUtlBinaryBlock CUtlBinaryBlock {
     get => ref _Handle.AsRef<CUtlBinaryBlock>(Schema.GetOffset(0xDDD6CA307F63D33D));
   }
-  public ref CUtlString CUtlString {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xDDD6CA3041577950));
-  }
+  public string CUtlString {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDDD6CA3041577950));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDDD6CA3041577950, value);
+  } 
   public SchemaUntypedField CUtlSymbol {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xDDD6CA30EA008FA9));
   }

@@ -13,7 +13,7 @@ public partial interface CAnimGraphModelBinding : ISchemaClass<CAnimGraphModelBi
   static CAnimGraphModelBinding ISchemaClass<CAnimGraphModelBinding>.From(nint handle) => new CAnimGraphModelBindingImpl(handle);
 
   
-  public ref CUtlString ModelName { get; }
+  public string ModelName { get; set; }
   
   // CSmartPtr< CAnimUpdateSharedData >
   public SchemaUntypedField SharedData { get; }

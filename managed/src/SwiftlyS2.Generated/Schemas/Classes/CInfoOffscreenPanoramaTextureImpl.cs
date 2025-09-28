@@ -24,12 +24,20 @@ internal partial class CInfoOffscreenPanoramaTextureImpl : CPointEntityImpl, CIn
   public ref int ResolutionY {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x584660AF6B22DABE));
   }
-  public ref CUtlSymbolLarge LayoutFileName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x584660AF5D1172FB));
-  }
-  public ref CUtlSymbolLarge RenderAttrName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x584660AFE624CDC1));
-  }
+  public string LayoutFileName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x584660AF5D1172FB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x584660AF5D1172FB, value);
+  } 
+  public string RenderAttrName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x584660AFE624CDC1));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x584660AFE624CDC1, value);
+  } 
   public ref CUtlVector<CHandle<CBaseModelEntity>> TargetEntities {
     get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseModelEntity>>>(Schema.GetOffset(0x584660AFA0100A93));
   }
@@ -39,9 +47,13 @@ internal partial class CInfoOffscreenPanoramaTextureImpl : CPointEntityImpl, CIn
   public ref CUtlVector<CUtlSymbolLarge> CSSClasses {
     get => ref _Handle.AsRef<CUtlVector<CUtlSymbolLarge>>(Schema.GetOffset(0x584660AFCB74D1DC));
   }
-  public ref CUtlSymbolLarge TargetsName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x584660AF82C9ED45));
-  }
+  public string TargetsName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x584660AF82C9ED45));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x584660AF82C9ED45, value);
+  } 
   public ref CUtlVector<CHandle<CBaseModelEntity>> AdditionalTargetEntities {
     get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseModelEntity>>>(Schema.GetOffset(0x584660AFD38E792A));
   }

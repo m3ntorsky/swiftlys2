@@ -15,7 +15,7 @@ public partial interface CSSDSMsg_ViewRender : ISchemaClass<CSSDSMsg_ViewRender>
   
   public SceneViewId_t ViewId { get; }
   
-  public ref CUtlString ViewName { get; }
+  public string ViewName { get; set; }
 
 
 }

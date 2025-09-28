@@ -13,9 +13,9 @@ public partial interface CFlexController : ISchemaClass<CFlexController> {
   static CFlexController ISchemaClass<CFlexController>.From(nint handle) => new CFlexControllerImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
-  public ref CUtlString Type { get; }
+  public string Type { get; set; }
   
   public ref float Min { get; }
   

@@ -18,9 +18,13 @@ internal partial class ActiveModelConfig_tImpl : SchemaClass, ActiveModelConfig_
   public ModelConfigHandle_t Handle {
     get => new ModelConfigHandle_tImpl(_Handle + Schema.GetOffset(0x554D81919D208453));
   }
-  public ref CUtlSymbolLarge Name {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x554D8191CAE8A266));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x554D8191CAE8A266));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x554D8191CAE8A266, value);
+  } 
   public ref CUtlVector<CHandle<CBaseModelEntity>> AssociatedEntities {
     get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseModelEntity>>>(Schema.GetOffset(0x554D8191D6EB4F18));
   }

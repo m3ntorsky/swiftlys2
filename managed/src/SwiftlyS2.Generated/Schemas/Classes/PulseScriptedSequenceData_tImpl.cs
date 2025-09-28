@@ -18,18 +18,34 @@ internal partial class PulseScriptedSequenceData_tImpl : SchemaClass, PulseScrip
   public ref int ActorID {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x7C7814728383E163));
   }
-  public ref CUtlString PreIdleSequence {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x7C781472672B317E));
-  }
-  public ref CUtlString EntrySequence {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x7C7814722635E511));
-  }
-  public ref CUtlString Sequence {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x7C78147209FFA3B5));
-  }
-  public ref CUtlString ExitSequence {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x7C7814725F482845));
-  }
+  public string PreIdleSequence {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7C781472672B317E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7C781472672B317E, value);
+  } 
+  public string EntrySequence {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7C7814722635E511));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7C7814722635E511, value);
+  } 
+  public string Sequence {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7C78147209FFA3B5));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7C78147209FFA3B5, value);
+  } 
+  public string ExitSequence {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x7C7814725F482845));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x7C7814725F482845, value);
+  } 
   public ref ScriptedMoveTo_t MoveTo {
     get => ref _Handle.AsRef<ScriptedMoveTo_t>(Schema.GetOffset(0x7C781472A9282EB9));
   }

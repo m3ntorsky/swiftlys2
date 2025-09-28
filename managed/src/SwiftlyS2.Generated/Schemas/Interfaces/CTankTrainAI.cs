@@ -19,13 +19,13 @@ public partial interface CTankTrainAI : CPointEntity, ISchemaClass<CTankTrainAI>
   
   public ref int SoundPlaying { get; }
   
-  public ref CUtlSymbolLarge StartSoundName { get; }
+  public string StartSoundName { get; set; }
   
-  public ref CUtlSymbolLarge EngineSoundName { get; }
+  public string EngineSoundName { get; set; }
   
-  public ref CUtlSymbolLarge MovementSoundName { get; }
+  public string MovementSoundName { get; set; }
   
-  public ref CUtlSymbolLarge TargetEntityName { get; }
+  public string TargetEntityName { get; set; }
 
 
 }

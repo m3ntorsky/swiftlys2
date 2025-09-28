@@ -15,12 +15,20 @@ internal partial class C_INIT_RandomModelSequenceImpl : CParticleFunctionInitial
   public C_INIT_RandomModelSequenceImpl(nint handle) : base(handle) {
   }
 
-public ISchemaFixedString ActivityName {
-    get => new SchemaFixedString(_Handle, 0x2F450DC3BF0C5087, 256, 1, 1);
-  }
-public ISchemaFixedString SequenceName {
-    get => new SchemaFixedString(_Handle, 0x2F450DC3A270F66B, 256, 1, 1);
-  }
+public string ActivityName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x2F450DC3BF0C5087);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x2F450DC3BF0C5087, value, 256);
+  } 
+public string SequenceName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x2F450DC3A270F66B);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x2F450DC3A270F66B, value, 256);
+  } 
   public ref CStrongHandle<InfoForResourceTypeCModel> Model {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0x2F450DC3E100C814));
   }

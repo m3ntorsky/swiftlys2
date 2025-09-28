@@ -21,7 +21,7 @@ public partial interface CConstraintSlave : ISchemaClass<CConstraintSlave> {
   
   public ref float Weight { get; }
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
 
 
 }

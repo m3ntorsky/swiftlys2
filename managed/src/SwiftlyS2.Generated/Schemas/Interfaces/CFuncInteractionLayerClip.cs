@@ -15,9 +15,9 @@ public partial interface CFuncInteractionLayerClip : CBaseModelEntity, ISchemaCl
   
   public ref bool Disabled { get; }
   
-  public ref CUtlSymbolLarge InteractsAs { get; }
+  public string InteractsAs { get; set; }
   
-  public ref CUtlSymbolLarge InteractsWith { get; }
+  public string InteractsWith { get; set; }
 
 
 }

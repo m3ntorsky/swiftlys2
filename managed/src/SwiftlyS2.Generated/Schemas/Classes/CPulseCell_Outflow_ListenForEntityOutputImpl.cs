@@ -24,9 +24,13 @@ internal partial class CPulseCell_Outflow_ListenForEntityOutputImpl : CPulseCell
   public ref CGlobalSymbol StrEntityOutput {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xCB351637C8E70456));
   }
-  public ref CUtlString StrEntityOutputParam {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xCB351637BB356637));
-  }
+  public string StrEntityOutputParam {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xCB351637BB356637));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xCB351637BB356637, value);
+  } 
   public ref bool ListenUntilCanceled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xCB351637C798285D));
   }

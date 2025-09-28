@@ -15,7 +15,7 @@ public partial interface CMessageEntity : CPointEntity, ISchemaClass<CMessageEnt
   
   public ref int Radius { get; }
   
-  public ref CUtlSymbolLarge MessageText { get; }
+  public string MessageText { get; set; }
   
   public ref bool DrawText { get; }
   

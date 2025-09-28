@@ -15,9 +15,13 @@ internal partial class CLogicGameEventImpl : CLogicalEntityImpl, CLogicGameEvent
   public CLogicGameEventImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge EventName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBED9751E78114A54));
-  }
+  public string EventName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBED9751E78114A54));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBED9751E78114A54, value);
+  } 
 
 
 }

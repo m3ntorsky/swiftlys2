@@ -39,12 +39,20 @@ internal partial class PermModelInfo_tImpl : SchemaClass, PermModelInfo_t {
   public ref float MaxEyeDeflection {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1B48585F1C6CE157));
   }
-  public ref CUtlString SurfaceProperty {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x1B48585F1A25534C));
-  }
-  public ref CUtlString KeyValueText {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x1B48585F2156929E));
-  }
+  public string SurfaceProperty {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1B48585F1A25534C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1B48585F1A25534C, value);
+  } 
+  public string KeyValueText {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x1B48585F2156929E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x1B48585F2156929E, value);
+  } 
 
 
 }

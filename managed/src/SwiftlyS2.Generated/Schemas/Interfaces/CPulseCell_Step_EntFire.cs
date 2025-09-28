@@ -13,7 +13,7 @@ public partial interface CPulseCell_Step_EntFire : CPulseCell_BaseFlow, ISchemaC
   static CPulseCell_Step_EntFire ISchemaClass<CPulseCell_Step_EntFire>.From(nint handle) => new CPulseCell_Step_EntFireImpl(handle);
 
   
-  public ref CUtlString Input { get; }
+  public string Input { get; set; }
 
 
 }

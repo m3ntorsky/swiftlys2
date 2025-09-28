@@ -13,7 +13,7 @@ public partial interface C_OP_ClientPhysics : CParticleFunctionRenderer, ISchema
   static C_OP_ClientPhysics ISchemaClass<C_OP_ClientPhysics>.From(nint handle) => new C_OP_ClientPhysicsImpl(handle);
 
   
-  public ref CUtlString StrPhysicsType { get; }
+  public string StrPhysicsType { get; set; }
   
   public ref bool StartAsleep { get; }
   

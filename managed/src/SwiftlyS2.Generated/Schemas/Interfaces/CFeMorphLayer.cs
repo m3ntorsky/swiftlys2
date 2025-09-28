@@ -13,7 +13,7 @@ public partial interface CFeMorphLayer : ISchemaClass<CFeMorphLayer> {
   static CFeMorphLayer ISchemaClass<CFeMorphLayer>.From(nint handle) => new CFeMorphLayerImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref uint NameHash { get; }
   

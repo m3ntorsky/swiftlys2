@@ -21,7 +21,7 @@ public partial interface CSoundPatch : ISchemaClass<CSoundPatch> {
   
   public ref float LastTime { get; }
   
-  public ref CUtlSymbolLarge SoundScriptName { get; }
+  public string SoundScriptName { get; set; }
   
   public ref CHandle<CBaseEntity> Ent { get; }
   
@@ -37,7 +37,7 @@ public partial interface CSoundPatch : ISchemaClass<CSoundPatch> {
   
   public ref bool UpdatedSoundOrigin { get; }
   
-  public ref CUtlSymbolLarge ClassName { get; }
+  public string ClassName { get; set; }
 
 
 }

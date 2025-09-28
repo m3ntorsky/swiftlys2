@@ -13,7 +13,7 @@ public partial interface CLogicCase : CLogicalEntity, ISchemaClass<CLogicCase> {
   static CLogicCase ISchemaClass<CLogicCase>.From(nint handle) => new CLogicCaseImpl(handle);
 
   
-  public ISchemaFixedArray<CUtlSymbolLarge> Case { get; }
+  public string Case { get; set; }
   
   public ref int ShuffleCases { get; }
   

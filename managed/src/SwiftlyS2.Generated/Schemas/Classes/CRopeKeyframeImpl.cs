@@ -18,9 +18,13 @@ internal partial class CRopeKeyframeImpl : CBaseModelEntityImpl, CRopeKeyframe {
   public ref ushort RopeFlags {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x76EE758E2EF994F4));
   }
-  public ref CUtlSymbolLarge NextLinkName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x76EE758EFD59AE1A));
-  }
+  public string NextLinkName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x76EE758EFD59AE1A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x76EE758EFD59AE1A, value);
+  } 
   public ref short Slack {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x76EE758E84ECDEA7));
   }
@@ -36,9 +40,13 @@ internal partial class CRopeKeyframeImpl : CBaseModelEntityImpl, CRopeKeyframe {
   public ref bool ConstrainBetweenEndpoints {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x76EE758E05033E3C));
   }
-  public ref CUtlSymbolLarge StrRopeMaterialModel {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x76EE758E7A58C07A));
-  }
+  public string StrRopeMaterialModel {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x76EE758E7A58C07A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x76EE758E7A58C07A, value);
+  } 
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> RopeMaterialModelIndex {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0x76EE758E831DE452));
   }

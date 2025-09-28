@@ -15,7 +15,7 @@ public partial interface ModelBoneFlexDriverControl_t : ISchemaClass<ModelBoneFl
   
   public ref ModelBoneFlexComponent_t BoneComponent { get; }
   
-  public ref CUtlString FlexController { get; }
+  public string FlexController { get; set; }
   
   public ref uint FlexControllerToken { get; }
   

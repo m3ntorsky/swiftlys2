@@ -15,9 +15,13 @@ internal partial class CMotionNodeImpl : SchemaClass, CMotionNode {
   public CMotionNodeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xB29D04644D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB29D04644D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB29D04644D8F5786, value);
+  } 
   public AnimNodeID Id {
     get => new AnimNodeIDImpl(_Handle + Schema.GetOffset(0xB29D0464B4B6E980));
   }

@@ -15,21 +15,37 @@ internal partial class IKDemoCaptureSettings_tImpl : SchemaClass, IKDemoCaptureS
   public IKDemoCaptureSettings_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString ParentBoneName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6D63001A95A4F804));
-  }
+  public string ParentBoneName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6D63001A95A4F804));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6D63001A95A4F804, value);
+  } 
   public ref IKChannelMode Mode {
     get => ref _Handle.AsRef<IKChannelMode>(Schema.GetOffset(0x6D63001A1050A633));
   }
-  public ref CUtlString IkChainName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6D63001A50E152ED));
-  }
-  public ref CUtlString OneBoneStart {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6D63001A95ADD82F));
-  }
-  public ref CUtlString OneBoneEnd {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6D63001AE57D0DBA));
-  }
+  public string IkChainName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6D63001A50E152ED));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6D63001A50E152ED, value);
+  } 
+  public string OneBoneStart {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6D63001A95ADD82F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6D63001A95ADD82F, value);
+  } 
+  public string OneBoneEnd {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6D63001AE57D0DBA));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6D63001AE57D0DBA, value);
+  } 
 
 
 }

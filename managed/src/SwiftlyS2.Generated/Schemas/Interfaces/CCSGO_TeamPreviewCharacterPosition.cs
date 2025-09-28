@@ -19,7 +19,7 @@ public partial interface CCSGO_TeamPreviewCharacterPosition : CBaseEntity, ISche
   
   public ref int Ordinal { get; }
   
-  public ref CUtlString WeaponName { get; }
+  public string WeaponName { get; set; }
   
   public ref ulong Xuid { get; }
   

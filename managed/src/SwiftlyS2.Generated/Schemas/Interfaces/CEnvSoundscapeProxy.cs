@@ -13,7 +13,7 @@ public partial interface CEnvSoundscapeProxy : CEnvSoundscape, ISchemaClass<CEnv
   static CEnvSoundscapeProxy ISchemaClass<CEnvSoundscapeProxy>.From(nint handle) => new CEnvSoundscapeProxyImpl(handle);
 
   
-  public ref CUtlSymbolLarge MainSoundscapeName { get; }
+  public string MainSoundscapeName { get; set; }
 
 
 }

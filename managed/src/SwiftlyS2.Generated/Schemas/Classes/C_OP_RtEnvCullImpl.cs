@@ -27,9 +27,13 @@ internal partial class C_OP_RtEnvCullImpl : CParticleFunctionOperatorImpl, C_OP_
   public ref bool StickInsteadOfCull {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x72531BAE343222A2));
   }
-public ISchemaFixedString RtEnvName {
-    get => new SchemaFixedString(_Handle, 0x72531BAEC32A9775, 128, 1, 1);
-  }
+public string RtEnvName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x72531BAEC32A9775);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x72531BAEC32A9775, value, 128);
+  } 
   public ref int RTEnvCP {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x72531BAE01881731));
   }

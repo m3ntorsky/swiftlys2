@@ -43,15 +43,15 @@ public partial interface CFuncTrackTrain : CBaseModelEntity, ISchemaClass<CFuncT
   
   public ref float Dir { get; }
   
-  public ref CUtlSymbolLarge SoundMove { get; }
+  public string SoundMove { get; set; }
   
-  public ref CUtlSymbolLarge SoundMovePing { get; }
+  public string SoundMovePing { get; set; }
   
-  public ref CUtlSymbolLarge SoundStart { get; }
+  public string SoundStart { get; set; }
   
-  public ref CUtlSymbolLarge SoundStop { get; }
+  public string SoundStop { get; set; }
   
-  public ref CUtlSymbolLarge StrPathTarget { get; }
+  public string StrPathTarget { get; set; }
   
   public ref float MoveSoundMinDuration { get; }
   

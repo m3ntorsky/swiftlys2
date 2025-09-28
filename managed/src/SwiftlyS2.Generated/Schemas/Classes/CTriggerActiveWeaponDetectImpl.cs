@@ -18,9 +18,13 @@ internal partial class CTriggerActiveWeaponDetectImpl : CBaseTriggerImpl, CTrigg
   public CEntityIOOutput OnTouchedActiveWeapon {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0x68F50CC727D5D394));
   }
-  public ref CUtlSymbolLarge WeaponClassName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x68F50CC7BD3D5B08));
-  }
+  public string WeaponClassName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x68F50CC7BD3D5B08));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x68F50CC7BD3D5B08, value);
+  } 
 
 
 }

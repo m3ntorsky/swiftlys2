@@ -15,15 +15,27 @@ internal partial class CBtActionMoveToImpl : CBtNodeImpl, CBtActionMoveTo {
   public CBtActionMoveToImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString DestinationInputKey {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD3E75386EA98FEAB));
-  }
-  public ref CUtlString HidingSpotInputKey {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD3E75386B3449D70));
-  }
-  public ref CUtlString ThreatInputKey {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD3E75386E8FD875B));
-  }
+  public string DestinationInputKey {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD3E75386EA98FEAB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD3E75386EA98FEAB, value);
+  } 
+  public string HidingSpotInputKey {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD3E75386B3449D70));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD3E75386B3449D70, value);
+  } 
+  public string ThreatInputKey {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD3E75386E8FD875B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD3E75386E8FD875B, value);
+  } 
   public ref Vector Destination {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD3E753868964CB9F));
   }

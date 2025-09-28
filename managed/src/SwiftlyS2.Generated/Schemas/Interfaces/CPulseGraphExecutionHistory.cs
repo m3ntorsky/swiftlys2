@@ -15,7 +15,7 @@ public partial interface CPulseGraphExecutionHistory : ISchemaClass<CPulseGraphE
   
   public PulseGraphInstanceID_t InstanceID { get; }
   
-  public ref CUtlString StrFileName { get; }
+  public string StrFileName { get; set; }
   
   public ref CUtlVector<PointerTo<PulseGraphExecutionHistoryEntry_t>> History { get; }
   

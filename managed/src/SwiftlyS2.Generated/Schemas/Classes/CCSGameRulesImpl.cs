@@ -126,18 +126,34 @@ internal partial class CCSGameRulesImpl : CTeamplayRulesImpl, CCSGameRules {
   public ref int NextMapInMapgroup {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65C6613F50));
   }
-public ISchemaFixedString TournamentEventName {
-    get => new SchemaFixedString(_Handle, 0x6295CF65D2FCF8C2, 512, 1, 1);
-  }
-public ISchemaFixedString TournamentEventStage {
-    get => new SchemaFixedString(_Handle, 0x6295CF658177EF71, 512, 1, 1);
-  }
-public ISchemaFixedString MatchStatTxt {
-    get => new SchemaFixedString(_Handle, 0x6295CF65D6472911, 512, 1, 1);
-  }
-public ISchemaFixedString TournamentPredictionsTxt {
-    get => new SchemaFixedString(_Handle, 0x6295CF65A974A2B9, 512, 1, 1);
-  }
+public string TournamentEventName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x6295CF65D2FCF8C2);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x6295CF65D2FCF8C2, value, 512);
+  } 
+public string TournamentEventStage {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x6295CF658177EF71);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x6295CF658177EF71, value, 512);
+  } 
+public string MatchStatTxt {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x6295CF65D6472911);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x6295CF65D6472911, value, 512);
+  } 
+public string TournamentPredictionsTxt {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0x6295CF65A974A2B9);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0x6295CF65A974A2B9, value, 512);
+  } 
   public ref int TournamentPredictionsPct {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF658E233B97));
   }
@@ -300,9 +316,13 @@ public ISchemaFixedArray<int> EndMatchMapGroupVoteOptions {
   public ref float AvgPlayerRank {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x6295CF6549B0B220));
   }
-  public ref CString QueuedMatchmakingReservationString {
-    get => ref _Handle.AsRef<CString>(Schema.GetOffset(0x6295CF6559B26DA9));
-  }
+  public string QueuedMatchmakingReservationString {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6295CF6559B26DA9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6295CF6559B26DA9, value);
+  } 
   public ref uint NumTotalTournamentDrops {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x6295CF65076A6E9A));
   }
@@ -546,9 +566,13 @@ public ISchemaFixedArray<bool> TeamLastKillUsedUniqueWeaponMatch {
   public ref int RoundEndTimerTime {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65ED1EF5CF));
   }
-  public ref CUtlString RoundEndFunFactToken {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6295CF653C86499F));
-  }
+  public string RoundEndFunFactToken {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6295CF653C86499F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6295CF653C86499F, value);
+  } 
   public ref uint RoundEndFunFactPlayerSlot {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x6295CF65FA215C79));
   }
@@ -561,9 +585,13 @@ public ISchemaFixedArray<bool> TeamLastKillUsedUniqueWeaponMatch {
   public ref int RoundEndFunFactData3 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65815518E9));
   }
-  public ref CUtlString RoundEndMessage {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x6295CF65CE64850E));
-  }
+  public string RoundEndMessage {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x6295CF65CE64850E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x6295CF65CE64850E, value);
+  } 
   public ref int RoundEndPlayerCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6295CF65C873652B));
   }

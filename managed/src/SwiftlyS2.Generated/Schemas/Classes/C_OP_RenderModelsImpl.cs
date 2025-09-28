@@ -93,18 +93,30 @@ internal partial class C_OP_RenderModelsImpl : CParticleFunctionRendererImpl, C_
   public ParticleAttributeIndex_t ManualFrameField {
     get => new ParticleAttributeIndex_tImpl(_Handle + Schema.GetOffset(0xC58C7B1352FAE698));
   }
-public ISchemaFixedString ActivityName {
-    get => new SchemaFixedString(_Handle, 0xC58C7B13BF0C5087, 256, 1, 1);
-  }
-public ISchemaFixedString SequenceName {
-    get => new SchemaFixedString(_Handle, 0xC58C7B13A270F66B, 256, 1, 1);
-  }
+public string ActivityName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xC58C7B13BF0C5087);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xC58C7B13BF0C5087, value, 256);
+  } 
+public string SequenceName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xC58C7B13A270F66B);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xC58C7B13A270F66B, value, 256);
+  } 
   public ref bool EnableClothSimulation {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC58C7B13F2B3D0A9));
   }
-public ISchemaFixedString ClothEffectName {
-    get => new SchemaFixedString(_Handle, 0xC58C7B139D0B2FCD, 64, 1, 1);
-  }
+public string ClothEffectName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xC58C7B139D0B2FCD);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xC58C7B139D0B2FCD, value, 64);
+  } 
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> OverrideMaterial {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0xC58C7B132C055CBE));
   }
@@ -129,9 +141,13 @@ public ISchemaFixedString ClothEffectName {
   public ref int LOD {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC58C7B138303A434));
   }
-public ISchemaFixedString EconSlotName {
-    get => new SchemaFixedString(_Handle, 0xC58C7B13F7A43C9B, 256, 1, 1);
-  }
+public string EconSlotName {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xC58C7B13F7A43C9B);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xC58C7B13F7A43C9B, value, 256);
+  } 
   public ref bool OriginalModel {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC58C7B13F52DF2AF));
   }
@@ -159,9 +175,13 @@ public ISchemaFixedString EconSlotName {
   public ref bool AllowApproximateTransforms {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC58C7B136C6ACC65));
   }
-public ISchemaFixedString RenderAttribute {
-    get => new SchemaFixedString(_Handle, 0xC58C7B13A343F648, 260, 1, 1);
-  }
+public string RenderAttribute {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xC58C7B13A343F648);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xC58C7B13A343F648, value, 260);
+  } 
   public CParticleCollectionFloatInput RadiusScale {
     get => new CParticleCollectionFloatInputImpl(_Handle + Schema.GetOffset(0xC58C7B13A7A20159));
   }

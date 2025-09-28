@@ -18,12 +18,20 @@ internal partial class CFuncInteractionLayerClipImpl : CBaseModelEntityImpl, CFu
   public ref bool Disabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5A9288DF3A7C5965));
   }
-  public ref CUtlSymbolLarge InteractsAs {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5A9288DF488FC5DC));
-  }
-  public ref CUtlSymbolLarge InteractsWith {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x5A9288DF84AB4214));
-  }
+  public string InteractsAs {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x5A9288DF488FC5DC));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x5A9288DF488FC5DC, value);
+  } 
+  public string InteractsWith {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x5A9288DF84AB4214));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x5A9288DF84AB4214, value);
+  } 
 
 
 }

@@ -23,7 +23,7 @@ public partial interface CPathTrack : CPointEntity, ISchemaClass<CPathTrack> {
   
   public ref float Length { get; }
   
-  public ref CUtlSymbolLarge AltName { get; }
+  public string AltName { get; set; }
   
   public ref int IterVal { get; }
   

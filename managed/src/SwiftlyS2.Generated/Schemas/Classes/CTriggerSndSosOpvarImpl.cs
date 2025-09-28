@@ -30,27 +30,51 @@ internal partial class CTriggerSndSosOpvarImpl : CBaseTriggerImpl, CTriggerSndSo
   public ref float MaxVal {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD4B7BEBC8CE3891E));
   }
-  public ref CUtlSymbolLarge OpvarName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD4B7BEBC4ECBF7E4));
-  }
-  public ref CUtlSymbolLarge StackName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD4B7BEBCC6D6063C));
-  }
-  public ref CUtlSymbolLarge OperatorName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD4B7BEBCC4AA99BE));
-  }
+  public string OpvarName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD4B7BEBC4ECBF7E4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD4B7BEBC4ECBF7E4, value);
+  } 
+  public string StackName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD4B7BEBCC6D6063C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD4B7BEBCC6D6063C, value);
+  } 
+  public string OperatorName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD4B7BEBCC4AA99BE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD4B7BEBCC4AA99BE, value);
+  } 
   public ref bool VolIs2D {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD4B7BEBC384D3350));
   }
-public ISchemaFixedString OpvarNameChar {
-    get => new SchemaFixedString(_Handle, 0xD4B7BEBC55F3CFF0, 256, 1, 1);
-  }
-public ISchemaFixedString StackNameChar {
-    get => new SchemaFixedString(_Handle, 0xD4B7BEBC87998C38, 256, 1, 1);
-  }
-public ISchemaFixedString OperatorNameChar {
-    get => new SchemaFixedString(_Handle, 0xD4B7BEBC9824CD12, 256, 1, 1);
-  }
+public string OpvarNameChar {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xD4B7BEBC55F3CFF0);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xD4B7BEBC55F3CFF0, value, 256);
+  } 
+public string StackNameChar {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xD4B7BEBC87998C38);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xD4B7BEBC87998C38, value, 256);
+  } 
+public string OperatorNameChar {
+    get {
+      var ptr = _Handle + Schema.GetOffset(0xD4B7BEBC9824CD12);
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetFixedString(_Handle, 0xD4B7BEBC9824CD12, value, 256);
+  } 
   public ref Vector VecNormPos {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD4B7BEBC66F7FECF));
   }

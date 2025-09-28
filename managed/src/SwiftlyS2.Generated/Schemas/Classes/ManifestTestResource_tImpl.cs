@@ -15,9 +15,13 @@ internal partial class ManifestTestResource_tImpl : SchemaClass, ManifestTestRes
   public ManifestTestResource_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xFF18C79F4D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xFF18C79F4D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xFF18C79F4D8F5786, value);
+  } 
   public ref CStrongHandle<InfoForResourceTypeManifestTestResource_t> Child {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeManifestTestResource_t>>(Schema.GetOffset(0xFF18C79F2827B07D));
   }

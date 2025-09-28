@@ -24,9 +24,13 @@ internal partial class CConstraintTargetImpl : SchemaClass, CConstraintTarget {
   public ref uint BoneHash {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x8A562794D4010F03));
   }
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x8A56279463D22D49));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8A56279463D22D49));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8A56279463D22D49, value);
+  } 
   public ref float Weight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8A5627947B81E7AB));
   }

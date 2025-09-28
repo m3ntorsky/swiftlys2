@@ -49,9 +49,9 @@ public partial interface CRagdollProp : CBaseAnimGraph, ISchemaClass<CRagdollPro
   
   public GameTime_t LastOriginChangeTime { get; }
   
-  public ref CUtlSymbolLarge StrOriginClassName { get; }
+  public string StrOriginClassName { get; set; }
   
-  public ref CUtlSymbolLarge StrSourceClassName { get; }
+  public string StrSourceClassName { get; set; }
   
   public ref bool HasBeenPhysgunned { get; }
   

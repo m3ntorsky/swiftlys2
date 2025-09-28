@@ -18,9 +18,13 @@ internal partial class CModelStateImpl : SchemaClass, CModelState {
   public ref CStrongHandle<InfoForResourceTypeCModel> Model {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0xC0A51C0E100C814));
   }
-  public ref CUtlSymbolLarge ModelName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xC0A51C0D7A1D881));
-  }
+  public string ModelName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xC0A51C0D7A1D881));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xC0A51C0D7A1D881, value);
+  } 
   public ref bool ClientClothCreationSuppressed {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC0A51C0953717E1));
   }

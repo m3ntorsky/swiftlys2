@@ -15,12 +15,20 @@ internal partial class CMultiLightProxyImpl : CLogicalEntityImpl, CMultiLightPro
   public CMultiLightProxyImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge LightNameFilter {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xF2B647B3071F3A26));
-  }
-  public ref CUtlSymbolLarge LightClassFilter {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xF2B647B32B566D5B));
-  }
+  public string LightNameFilter {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2B647B3071F3A26));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2B647B3071F3A26, value);
+  } 
+  public string LightClassFilter {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF2B647B32B566D5B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF2B647B32B566D5B, value);
+  } 
   public ref float LightRadiusFilter {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF2B647B3DBC59891));
   }

@@ -15,9 +15,13 @@ internal partial class CFeNamedJiggleBoneImpl : SchemaClass, CFeNamedJiggleBone 
   public CFeNamedJiggleBoneImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString StrParentBone {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x51055B3A22DD827E));
-  }
+  public string StrParentBone {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x51055B3A22DD827E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x51055B3A22DD827E, value);
+  } 
   public ref CTransform Transform {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0x51055B3A3A9A393B));
   }

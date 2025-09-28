@@ -25,11 +25,11 @@ public partial interface CSosSoundEventGroupSchema : ISchemaClass<CSosSoundEvent
   
   public ref SosGroupFieldBehavior_t Behavior_EventName { get; }
   
-  public ref CUtlString MatchSoundEventName { get; }
+  public string MatchSoundEventName { get; set; }
   
   public ref bool MatchEventSubString { get; }
   
-  public ref CUtlString MatchSoundEventSubString { get; }
+  public string MatchSoundEventSubString { get; set; }
   
   public ref SosGroupFieldBehavior_t Behavior_EntIndex { get; }
   
@@ -41,7 +41,7 @@ public partial interface CSosSoundEventGroupSchema : ISchemaClass<CSosSoundEvent
   
   public ref SosGroupFieldBehavior_t Behavior_String { get; }
   
-  public ref CUtlString OpvarString { get; }
+  public string OpvarString { get; set; }
   
   public ref CUtlVector<PointerTo<CSosGroupActionSchema>> Actions { get; }
 

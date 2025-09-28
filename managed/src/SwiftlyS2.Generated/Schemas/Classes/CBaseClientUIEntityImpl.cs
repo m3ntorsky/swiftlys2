@@ -18,15 +18,27 @@ internal partial class CBaseClientUIEntityImpl : CBaseModelEntityImpl, CBaseClie
   public ref bool Enabled {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x51A22D116154EB7E));
   }
-  public ref CUtlSymbolLarge DialogXMLName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A22D11D13858C9));
-  }
-  public ref CUtlSymbolLarge PanelClassName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A22D115C958CBC));
-  }
-  public ref CUtlSymbolLarge PanelID {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x51A22D1107A4EF60));
-  }
+  public string DialogXMLName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x51A22D11D13858C9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x51A22D11D13858C9, value);
+  } 
+  public string PanelClassName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x51A22D115C958CBC));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x51A22D115C958CBC, value);
+  } 
+  public string PanelID {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x51A22D1107A4EF60));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x51A22D1107A4EF60, value);
+  } 
   public CEntityIOOutput CustomOutput0 {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0x51A22D119AA5C775));
   }

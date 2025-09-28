@@ -27,7 +27,7 @@ public partial interface CBaseRendererSource2 : CParticleFunctionRenderer, ISche
   
   public ref SpriteCardShaderType_t ShaderType { get; }
   
-  public ref CUtlString StrShaderOverride { get; }
+  public string StrShaderOverride { get; set; }
   
   public CParticleCollectionRendererFloatInput CenterXOffset { get; }
   
@@ -112,11 +112,11 @@ public partial interface CBaseRendererSource2 : CParticleFunctionRenderer, ISche
   
   public ref bool OnlyRenderInEffecsGameOverlay { get; }
   
-  public ISchemaFixedString StencilTestID { get; }
+  public string StencilTestID { get; set; }
   
   public ref bool StencilTestExclude { get; }
   
-  public ISchemaFixedString StencilWriteID { get; }
+  public string StencilWriteID { get; set; }
   
   public ref bool WriteStencilOnDepthPass { get; }
   

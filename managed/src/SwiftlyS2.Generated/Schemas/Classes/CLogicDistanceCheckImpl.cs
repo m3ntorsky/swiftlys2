@@ -15,12 +15,20 @@ internal partial class CLogicDistanceCheckImpl : CLogicalEntityImpl, CLogicDista
   public CLogicDistanceCheckImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge EntityA {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x523E7E6D07823CB9));
-  }
-  public ref CUtlSymbolLarge EntityB {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x523E7E6D04823800));
-  }
+  public string EntityA {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x523E7E6D07823CB9));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x523E7E6D07823CB9, value);
+  } 
+  public string EntityB {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x523E7E6D04823800));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x523E7E6D04823800, value);
+  } 
   public ref float Zone1Distance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x523E7E6DFF385A8F));
   }

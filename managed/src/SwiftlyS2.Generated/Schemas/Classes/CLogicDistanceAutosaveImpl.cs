@@ -15,9 +15,13 @@ internal partial class CLogicDistanceAutosaveImpl : CLogicalEntityImpl, CLogicDi
   public CLogicDistanceAutosaveImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge TargetEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8E908EDD8951B0FB));
-  }
+  public string TargetEntity {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8E908EDD8951B0FB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8E908EDD8951B0FB, value);
+  } 
   public ref float DistanceToPlayer {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x8E908EDDF04AFE0C));
   }

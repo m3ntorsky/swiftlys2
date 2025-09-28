@@ -30,9 +30,13 @@ public ISchemaFixedArray<Vector4D> Transform {
   public ref Vector4D TintColor {
     get => ref _Handle.AsRef<Vector4D>(Schema.GetOffset(0xD71D999350AFF21F));
   }
-  public ref CUtlString Skin {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD71D9993F1469658));
-  }
+  public string Skin {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD71D9993F1469658));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD71D9993F1469658, value);
+  } 
   public ref ObjectTypeFlags_t ObjectTypeFlags {
     get => ref _Handle.AsRef<ObjectTypeFlags_t>(Schema.GetOffset(0xD71D9993D9506A69));
   }

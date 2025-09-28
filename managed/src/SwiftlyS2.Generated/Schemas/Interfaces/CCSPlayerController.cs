@@ -27,7 +27,7 @@ public partial interface CCSPlayerController : CBasePlayerController, ISchemaCla
   
   public ref uint UiCommunicationMuteFlags { get; }
   
-  public ref CUtlSymbolLarge CrosshairCodes { get; }
+  public string CrosshairCodes { get; set; }
   
   public ref byte PendingTeamNum { get; }
   
@@ -55,7 +55,7 @@ public partial interface CCSPlayerController : CBasePlayerController, ISchemaCla
   
   public GameTime_t LastJoinTeamTime { get; }
   
-  public ref CUtlSymbolLarge Clan { get; }
+  public string Clan { get; set; }
   
   public ref int CoachingTeam { get; }
   

@@ -116,7 +116,7 @@ public partial interface CCSWeaponBaseVData : CBasePlayerWeaponVData, ISchemaCla
   
   public ref float InaccuracyAltSoundThreshold { get; }
   
-  public ref CUtlString UseRadioSubtitle { get; }
+  public string UseRadioSubtitle { get; set; }
   
   public ref bool UnzoomsAfterShot { get; }
   

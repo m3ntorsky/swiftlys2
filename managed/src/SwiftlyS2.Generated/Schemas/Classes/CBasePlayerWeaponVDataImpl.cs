@@ -33,9 +33,13 @@ internal partial class CBasePlayerWeaponVDataImpl : CEntitySubclassVDataBaseImpl
   public SchemaUntypedField MuzzleFlashParticle {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x64E418A0CE0726A3));
   }
-  public ref CUtlString MuzzleFlashParticleConfig {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x64E418A029D7C081));
-  }
+  public string MuzzleFlashParticleConfig {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x64E418A029D7C081));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x64E418A029D7C081, value);
+  } 
   public SchemaUntypedField BarrelSmokeParticle {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x64E418A03406364F));
   }

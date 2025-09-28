@@ -15,9 +15,9 @@ public partial interface CInfoWorldLayer : CBaseEntity, ISchemaClass<CInfoWorldL
   
   public CEntityIOOutput OutputOnEntitiesSpawned { get; }
   
-  public ref CUtlSymbolLarge WorldName { get; }
+  public string WorldName { get; set; }
   
-  public ref CUtlSymbolLarge LayerName { get; }
+  public string LayerName { get; set; }
   
   public ref bool WorldLayerVisible { get; }
   

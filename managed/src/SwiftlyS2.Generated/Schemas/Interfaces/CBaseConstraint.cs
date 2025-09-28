@@ -13,7 +13,7 @@ public partial interface CBaseConstraint : CBoneConstraintBase, ISchemaClass<CBa
   static CBaseConstraint ISchemaClass<CBaseConstraint>.From(nint handle) => new CBaseConstraintImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref Vector UpVector { get; }
   

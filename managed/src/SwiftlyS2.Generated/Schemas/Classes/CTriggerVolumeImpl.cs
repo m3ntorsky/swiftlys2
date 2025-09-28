@@ -15,9 +15,13 @@ internal partial class CTriggerVolumeImpl : CBaseModelEntityImpl, CTriggerVolume
   public CTriggerVolumeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge FilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x8A35845409C86445));
-  }
+  public string FilterName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x8A35845409C86445));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x8A35845409C86445, value);
+  } 
   public ref CHandle<CBaseFilter> Filter {
     get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0x8A35845445D9E0B1));
   }

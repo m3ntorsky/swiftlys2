@@ -18,9 +18,13 @@ internal partial class C_OP_RenderTextImpl : CParticleFunctionRendererImpl, C_OP
   public ref Color OutlineColor {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x376BB2E675B94BB0));
   }
-  public ref CUtlString DefaultText {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x376BB2E67556AF5D));
-  }
+  public string DefaultText {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x376BB2E67556AF5D));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x376BB2E67556AF5D, value);
+  } 
 
 
 }

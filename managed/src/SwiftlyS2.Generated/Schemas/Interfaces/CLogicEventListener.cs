@@ -13,7 +13,7 @@ public partial interface CLogicEventListener : CLogicalEntity, ISchemaClass<CLog
   static CLogicEventListener ISchemaClass<CLogicEventListener>.From(nint handle) => new CLogicEventListenerImpl(handle);
 
   
-  public ref CUtlString StrEventName { get; }
+  public string StrEventName { get; set; }
   
   public ref bool IsEnabled { get; }
   

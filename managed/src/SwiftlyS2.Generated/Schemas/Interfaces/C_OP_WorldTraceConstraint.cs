@@ -23,7 +23,7 @@ public partial interface C_OP_WorldTraceConstraint : CParticleFunctionConstraint
   
   public ref ParticleTraceSet_t TraceSet { get; }
   
-  public ISchemaFixedString CollisionGroupName { get; }
+  public string CollisionGroupName { get; set; }
   
   public ref bool WorldOnly { get; }
   

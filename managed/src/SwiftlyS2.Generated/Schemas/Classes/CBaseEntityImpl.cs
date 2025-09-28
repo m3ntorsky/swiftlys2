@@ -45,9 +45,13 @@ internal partial class CBaseEntityImpl : CEntityInstanceImpl, CBaseEntity {
   public ref CUtlVector ResponseContexts {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x9DC483B85120C9AE));
   }
-  public ref CUtlSymbolLarge ResponseContext {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9DC483B8ECDEFE61));
-  }
+  public string ResponseContext {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9DC483B8ECDEFE61));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9DC483B8ECDEFE61, value);
+  } 
   public ref int Health {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9DC483B8084CDAD2));
   }
@@ -87,15 +91,23 @@ internal partial class CBaseEntityImpl : CEntityInstanceImpl, CBaseEntity {
   public ref bool RestoreInHierarchy {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9DC483B8D3622095));
   }
-  public ref CUtlSymbolLarge Target {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9DC483B8FA08A9E8));
-  }
+  public string Target {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9DC483B8FA08A9E8));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9DC483B8FA08A9E8, value);
+  } 
   public ref CHandle<CBaseFilter> DamageFilter {
     get => ref _Handle.AsRef<CHandle<CBaseFilter>>(Schema.GetOffset(0x9DC483B831E01230));
   }
-  public ref CUtlSymbolLarge DamageFilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9DC483B8F58A21C1));
-  }
+  public string DamageFilterName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9DC483B8F58A21C1));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9DC483B8F58A21C1, value);
+  } 
   public ref float MoveDoneTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9DC483B860639E87));
   }
@@ -123,18 +135,26 @@ internal partial class CBaseEntityImpl : CEntityInstanceImpl, CBaseEntity {
   public ref byte TeamNum {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x9DC483B8A5BFEFB3));
   }
-  public ref CUtlSymbolLarge Globalname {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x9DC483B82F8B8190));
-  }
+  public string Globalname {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9DC483B82F8B8190));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9DC483B82F8B8190, value);
+  } 
   public ref int SentToClients {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9DC483B81C68C809));
   }
   public ref float Speed {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9DC483B8C631B7EA));
   }
-  public ref CUtlString UniqueHammerID {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x9DC483B84A371EB2));
-  }
+  public string UniqueHammerID {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x9DC483B84A371EB2));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x9DC483B84A371EB2, value);
+  } 
   public ref uint Spawnflags {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x9DC483B83A4BBF6B));
   }

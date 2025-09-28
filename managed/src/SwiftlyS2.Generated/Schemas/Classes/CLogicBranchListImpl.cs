@@ -15,9 +15,13 @@ internal partial class CLogicBranchListImpl : CLogicalEntityImpl, CLogicBranchLi
   public CLogicBranchListImpl(nint handle) : base(handle) {
   }
 
-public ISchemaFixedArray<CUtlSymbolLarge> LogicBranchNames {
-    get => new SchemaFixedArray<CUtlSymbolLarge>(_Handle, 0xB21E12B82C1677D7, 16, 8, 8);
-  }
+  public string LogicBranchNames {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xB21E12B82C1677D7));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xB21E12B82C1677D7, value);
+  } 
   public ref CUtlVector<CHandle<CBaseEntity>> LogicBranchList {
     get => ref _Handle.AsRef<CUtlVector<CHandle<CBaseEntity>>>(Schema.GetOffset(0xB21E12B8E4DEC285));
   }

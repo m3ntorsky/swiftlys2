@@ -27,9 +27,13 @@ internal partial class CSoundPatchImpl : SchemaClass, CSoundPatch {
   public ref float LastTime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBE66ED3D2E79549E));
   }
-  public ref CUtlSymbolLarge SoundScriptName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBE66ED3D6486B844));
-  }
+  public string SoundScriptName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBE66ED3D6486B844));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBE66ED3D6486B844, value);
+  } 
   public ref CHandle<CBaseEntity> Ent {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xBE66ED3D8BBDB334));
   }
@@ -51,9 +55,13 @@ internal partial class CSoundPatchImpl : SchemaClass, CSoundPatch {
   public ref bool UpdatedSoundOrigin {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xBE66ED3DACCF22F1));
   }
-  public ref CUtlSymbolLarge ClassName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xBE66ED3D71BB2314));
-  }
+  public string ClassName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xBE66ED3D71BB2314));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xBE66ED3D71BB2314, value);
+  } 
 
 
 }

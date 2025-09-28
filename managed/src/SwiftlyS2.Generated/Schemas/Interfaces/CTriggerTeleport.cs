@@ -13,7 +13,7 @@ public partial interface CTriggerTeleport : CBaseTrigger, ISchemaClass<CTriggerT
   static CTriggerTeleport ISchemaClass<CTriggerTeleport>.From(nint handle) => new CTriggerTeleportImpl(handle);
 
   
-  public ref CUtlSymbolLarge Landmark { get; }
+  public string Landmark { get; set; }
   
   public ref bool UseLandmarkAngles { get; }
   

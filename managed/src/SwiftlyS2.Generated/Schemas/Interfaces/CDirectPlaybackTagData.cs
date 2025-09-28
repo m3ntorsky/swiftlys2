@@ -13,7 +13,7 @@ public partial interface CDirectPlaybackTagData : ISchemaClass<CDirectPlaybackTa
   static CDirectPlaybackTagData ISchemaClass<CDirectPlaybackTagData>.From(nint handle) => new CDirectPlaybackTagDataImpl(handle);
 
   
-  public ref CUtlString SequenceName { get; }
+  public string SequenceName { get; set; }
   
   // CUtlVector< TagSpan_t >
   public ref CUtlVector Tags { get; }

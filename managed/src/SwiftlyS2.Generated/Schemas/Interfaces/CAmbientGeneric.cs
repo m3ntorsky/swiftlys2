@@ -25,9 +25,9 @@ public partial interface CAmbientGeneric : CPointEntity, ISchemaClass<CAmbientGe
   
   public ref bool Looping { get; }
   
-  public ref CUtlSymbolLarge Sound { get; }
+  public string Sound { get; set; }
   
-  public ref CUtlSymbolLarge SourceEntName { get; }
+  public string SourceEntName { get; set; }
   
   public ref CHandle<CBaseEntity> SoundSource { get; }
   

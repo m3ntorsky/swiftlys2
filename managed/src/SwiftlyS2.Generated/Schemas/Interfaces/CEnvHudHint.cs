@@ -13,7 +13,7 @@ public partial interface CEnvHudHint : CPointEntity, ISchemaClass<CEnvHudHint> {
   static CEnvHudHint ISchemaClass<CEnvHudHint>.From(nint handle) => new CEnvHudHintImpl(handle);
 
   
-  public ref CUtlSymbolLarge Message { get; }
+  public string Message { get; set; }
 
 
 }

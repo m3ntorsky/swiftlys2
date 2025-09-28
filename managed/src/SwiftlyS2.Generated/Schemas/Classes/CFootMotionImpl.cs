@@ -18,9 +18,13 @@ internal partial class CFootMotionImpl : SchemaClass, CFootMotion {
   public ref CUtlVector Strides {
     get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA4A598B8AE9C97F1));
   }
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xA4A598B84D8F5786));
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xA4A598B84D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xA4A598B84D8F5786, value);
+  } 
   public ref bool Additive {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA4A598B80FA86105));
   }

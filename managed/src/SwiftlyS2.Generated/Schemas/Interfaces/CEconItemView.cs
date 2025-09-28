@@ -35,9 +35,9 @@ public partial interface CEconItemView : IEconItemInterface, ISchemaClass<CEconI
   
   public CAttributeList NetworkedDynamicAttributes { get; }
   
-  public ISchemaFixedString CustomName { get; }
+  public string CustomName { get; set; }
   
-  public ISchemaFixedString CustomNameOverride { get; }
+  public string CustomNameOverride { get; set; }
 
   public void ItemDefinitionIndexUpdated();
   public void EntityQualityUpdated();

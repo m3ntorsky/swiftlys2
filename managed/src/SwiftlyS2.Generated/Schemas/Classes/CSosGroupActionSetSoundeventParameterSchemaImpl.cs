@@ -24,9 +24,13 @@ internal partial class CSosGroupActionSetSoundeventParameterSchemaImpl : CSosGro
   public ref float MaxValue {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x40D29D89D0A5C87C));
   }
-  public ref CUtlString OpvarName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x40D29D894ECBF7E4));
-  }
+  public string OpvarName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x40D29D894ECBF7E4));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x40D29D894ECBF7E4, value);
+  } 
   public ref SosActionSortType_t SortType {
     get => ref _Handle.AsRef<SosActionSortType_t>(Schema.GetOffset(0x40D29D892E0E44B5));
   }

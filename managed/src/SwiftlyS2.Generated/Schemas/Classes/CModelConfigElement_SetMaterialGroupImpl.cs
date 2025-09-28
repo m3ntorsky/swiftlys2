@@ -15,9 +15,13 @@ internal partial class CModelConfigElement_SetMaterialGroupImpl : CModelConfigEl
   public CModelConfigElement_SetMaterialGroupImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString MaterialGroupName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xFF9AED50C2DD3048));
-  }
+  public string MaterialGroupName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xFF9AED50C2DD3048));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xFF9AED50C2DD3048, value);
+  } 
 
 
 }

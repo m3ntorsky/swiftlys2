@@ -15,7 +15,7 @@ public partial interface CTriggerProximity : CBaseTrigger, ISchemaClass<CTrigger
   
   public ref CHandle<CBaseEntity> MeasureTarget { get; }
   
-  public ref CUtlSymbolLarge MeasureTarget1 { get; }
+  public string MeasureTarget1 { get; set; }
   
   public ref float Radius { get; }
   

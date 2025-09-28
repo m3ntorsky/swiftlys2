@@ -57,9 +57,13 @@ internal partial class CEnvCubemapFogImpl : CBaseEntityImpl, CEnvCubemapFog {
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> SkyMaterial {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0x38A7692EC887319D));
   }
-  public ref CUtlSymbolLarge SkyEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x38A7692E2BD44B1D));
-  }
+  public string SkyEntity {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x38A7692E2BD44B1D));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x38A7692E2BD44B1D, value);
+  } 
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> FogCubemapTexture {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCTextureBase>>(Schema.GetOffset(0x38A7692E3470DA4D));
   }

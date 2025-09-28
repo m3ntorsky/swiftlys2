@@ -13,11 +13,11 @@ public partial interface VsInputSignatureElement_t : ISchemaClass<VsInputSignatu
   static VsInputSignatureElement_t ISchemaClass<VsInputSignatureElement_t>.From(nint handle) => new VsInputSignatureElement_tImpl(handle);
 
   
-  public ISchemaFixedString Name { get; }
+  public string Name { get; set; }
   
-  public ISchemaFixedString Semantic { get; }
+  public string Semantic { get; set; }
   
-  public ISchemaFixedString D3DSemanticName { get; }
+  public string D3DSemanticName { get; set; }
   
   public ref int D3DSemanticIndex { get; }
 

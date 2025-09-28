@@ -13,7 +13,7 @@ public partial interface CVirtualAnimParameter : CAnimParameterBase, ISchemaClas
   static CVirtualAnimParameter ISchemaClass<CVirtualAnimParameter>.From(nint handle) => new CVirtualAnimParameterImpl(handle);
 
   
-  public ref CUtlString ExpressionString { get; }
+  public string ExpressionString { get; set; }
   
   public ref AnimParamType_t ParamType { get; }
 

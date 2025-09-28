@@ -33,7 +33,7 @@ public partial interface C_OP_RemapAverageHitboxSpeedtoCP : CParticleFunctionPre
   
   public CParticleCollectionVecInput ComparisonVelocity { get; }
   
-  public ISchemaFixedString HitboxSetName { get; }
+  public string HitboxSetName { get; set; }
 
 
 }

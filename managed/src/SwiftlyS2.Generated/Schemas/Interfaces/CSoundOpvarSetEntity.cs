@@ -13,11 +13,11 @@ public partial interface CSoundOpvarSetEntity : CBaseEntity, ISchemaClass<CSound
   static CSoundOpvarSetEntity ISchemaClass<CSoundOpvarSetEntity>.From(nint handle) => new CSoundOpvarSetEntityImpl(handle);
 
   
-  public ref CUtlSymbolLarge StackName { get; }
+  public string StackName { get; set; }
   
-  public ref CUtlSymbolLarge OperatorName { get; }
+  public string OperatorName { get; set; }
   
-  public ref CUtlSymbolLarge OpvarName { get; }
+  public string OpvarName { get; set; }
   
   public ref int OpvarType { get; }
   
@@ -25,7 +25,7 @@ public partial interface CSoundOpvarSetEntity : CBaseEntity, ISchemaClass<CSound
   
   public ref float OpvarValue { get; }
   
-  public ref CUtlSymbolLarge OpvarValueString { get; }
+  public string OpvarValueString { get; set; }
   
   public ref bool SetOnSpawn { get; }
 

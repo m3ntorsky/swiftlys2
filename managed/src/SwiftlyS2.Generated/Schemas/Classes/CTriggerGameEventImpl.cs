@@ -15,15 +15,27 @@ internal partial class CTriggerGameEventImpl : CBaseTriggerImpl, CTriggerGameEve
   public CTriggerGameEventImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString StrStartTouchEventName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF8B194884B1EB67A));
-  }
-  public ref CUtlString StrEndTouchEventName {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF8B194886EDE6893));
-  }
-  public ref CUtlString StrTriggerID {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xF8B19488EA731D41));
-  }
+  public string StrStartTouchEventName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF8B194884B1EB67A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF8B194884B1EB67A, value);
+  } 
+  public string StrEndTouchEventName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF8B194886EDE6893));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF8B194886EDE6893, value);
+  } 
+  public string StrTriggerID {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xF8B19488EA731D41));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xF8B19488EA731D41, value);
+  } 
 
   public void StrStartTouchEventNameUpdated() {
     Schema.Update(_Handle, 0xF8B194884B1EB67A);

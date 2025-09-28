@@ -60,12 +60,20 @@ internal partial class CBreakablePropImpl : CBasePropImpl, CBreakableProp {
   public ref BreakableContentsType_t BreakableContentsType {
     get => ref _Handle.AsRef<BreakableContentsType_t>(Schema.GetOffset(0xD9F5AF34C332D3A2));
   }
-  public ref CUtlString StrBreakableContentsPropGroupOverride {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD9F5AF34FEDC11AB));
-  }
-  public ref CUtlString StrBreakableContentsParticleOverride {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0xD9F5AF3461C07367));
-  }
+  public string StrBreakableContentsPropGroupOverride {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD9F5AF34FEDC11AB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD9F5AF34FEDC11AB, value);
+  } 
+  public string StrBreakableContentsParticleOverride {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD9F5AF3461C07367));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD9F5AF3461C07367, value);
+  } 
   public ref bool HasBreakPiecesOrCommands {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD9F5AF348BD56C36));
   }
@@ -78,18 +86,34 @@ internal partial class CBreakablePropImpl : CBasePropImpl, CBreakableProp {
   public ref float ExplosionDelay {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD9F5AF349DB4A86F));
   }
-  public ref CUtlSymbolLarge ExplosionBuildupSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34835ABA6C));
-  }
-  public ref CUtlSymbolLarge ExplosionCustomEffect {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34BC8BEFBE));
-  }
-  public ref CUtlSymbolLarge ExplosionCustomSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34E729842A));
-  }
-  public ref CUtlSymbolLarge ExplosionModifier {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34531D2849));
-  }
+  public string ExplosionBuildupSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD9F5AF34835ABA6C));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD9F5AF34835ABA6C, value);
+  } 
+  public string ExplosionCustomEffect {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD9F5AF34BC8BEFBE));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD9F5AF34BC8BEFBE, value);
+  } 
+  public string ExplosionCustomSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD9F5AF34E729842A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD9F5AF34E729842A, value);
+  } 
+  public string ExplosionModifier {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD9F5AF34531D2849));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD9F5AF34531D2849, value);
+  } 
   public ref CHandle<CBasePlayerPawn> PhysicsAttacker {
     get => ref _Handle.AsRef<CHandle<CBasePlayerPawn>>(Schema.GetOffset(0xD9F5AF347A5EB877));
   }
@@ -102,9 +126,13 @@ internal partial class CBreakablePropImpl : CBasePropImpl, CBreakableProp {
   public ref CHandle<CBaseEntity> LastAttacker {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0xD9F5AF3465CAEF84));
   }
-  public ref CUtlSymbolLarge PuntSound {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xD9F5AF34FB0FC5DB));
-  }
+  public string PuntSound {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xD9F5AF34FB0FC5DB));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xD9F5AF34FB0FC5DB, value);
+  } 
   public ref bool UsePuntSound {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD9F5AF34BA328938));
   }

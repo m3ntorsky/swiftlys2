@@ -13,7 +13,7 @@ public partial interface FeVertexMapDesc_t : ISchemaClass<FeVertexMapDesc_t> {
   static FeVertexMapDesc_t ISchemaClass<FeVertexMapDesc_t>.From(nint handle) => new FeVertexMapDesc_tImpl(handle);
 
   
-  public ref CUtlString Name { get; }
+  public string Name { get; set; }
   
   public ref uint NameHash { get; }
   

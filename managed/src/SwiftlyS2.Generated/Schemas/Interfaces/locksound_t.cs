@@ -13,9 +13,9 @@ public partial interface locksound_t : ISchemaClass<locksound_t> {
   static locksound_t ISchemaClass<locksound_t>.From(nint handle) => new locksound_tImpl(handle);
 
   
-  public ref CUtlSymbolLarge LockedSound { get; }
+  public string LockedSound { get; set; }
   
-  public ref CUtlSymbolLarge UnlockedSound { get; }
+  public string UnlockedSound { get; set; }
   
   public GameTime_t FlwaitSound { get; }
 

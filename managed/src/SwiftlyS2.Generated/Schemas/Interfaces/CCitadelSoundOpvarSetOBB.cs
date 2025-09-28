@@ -13,11 +13,11 @@ public partial interface CCitadelSoundOpvarSetOBB : CBaseEntity, ISchemaClass<CC
   static CCitadelSoundOpvarSetOBB ISchemaClass<CCitadelSoundOpvarSetOBB>.From(nint handle) => new CCitadelSoundOpvarSetOBBImpl(handle);
 
   
-  public ref CUtlSymbolLarge StackName { get; }
+  public string StackName { get; set; }
   
-  public ref CUtlSymbolLarge OperatorName { get; }
+  public string OperatorName { get; set; }
   
-  public ref CUtlSymbolLarge OpvarName { get; }
+  public string OpvarName { get; set; }
   
   public ref Vector DistanceInnerMins { get; }
   

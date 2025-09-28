@@ -21,12 +21,20 @@ internal partial class CEnvBeamImpl : CBeamImpl, CEnvBeam {
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> SpriteTexture {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0x84C6714A095DE4B7));
   }
-  public ref CUtlSymbolLarge StartEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x84C6714AA162CA40));
-  }
-  public ref CUtlSymbolLarge EndEntity {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x84C6714A636BA021));
-  }
+  public string StartEntity {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x84C6714AA162CA40));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x84C6714AA162CA40, value);
+  } 
+  public string EndEntity {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x84C6714A636BA021));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x84C6714A636BA021, value);
+  } 
   public ref float Life {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x84C6714AA5A4067F));
   }
@@ -42,9 +50,13 @@ internal partial class CEnvBeamImpl : CBeamImpl, CEnvBeam {
   public ref float Restrike {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x84C6714A4647E3AA));
   }
-  public ref CUtlSymbolLarge SpriteName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x84C6714A096530FF));
-  }
+  public string SpriteName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x84C6714A096530FF));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x84C6714A096530FF, value);
+  } 
   public ref int FrameStart {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x84C6714ABA4C58E6));
   }
@@ -60,15 +72,23 @@ internal partial class CEnvBeamImpl : CBeamImpl, CEnvBeam {
   public ref Touch_t TouchType {
     get => ref _Handle.AsRef<Touch_t>(Schema.GetOffset(0x84C6714A159DBEB0));
   }
-  public ref CUtlSymbolLarge FilterName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x84C6714A09C86445));
-  }
+  public string FilterName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x84C6714A09C86445));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x84C6714A09C86445, value);
+  } 
   public ref CHandle<CBaseEntity> Filter {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x84C6714A45D9E0B1));
   }
-  public ref CUtlSymbolLarge Decal {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x84C6714AC8536FA6));
-  }
+  public string Decal {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x84C6714AC8536FA6));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x84C6714AC8536FA6, value);
+  } 
   public CEntityIOOutput OnTouchedByEntity {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0x84C6714ACB930C48));
   }

@@ -44,9 +44,9 @@ public partial interface CBreakableProp : CBaseProp, ISchemaClass<CBreakableProp
   
   public ref BreakableContentsType_t BreakableContentsType { get; }
   
-  public ref CUtlString StrBreakableContentsPropGroupOverride { get; }
+  public string StrBreakableContentsPropGroupOverride { get; set; }
   
-  public ref CUtlString StrBreakableContentsParticleOverride { get; }
+  public string StrBreakableContentsParticleOverride { get; set; }
   
   public ref bool HasBreakPiecesOrCommands { get; }
   
@@ -56,13 +56,13 @@ public partial interface CBreakableProp : CBaseProp, ISchemaClass<CBreakableProp
   
   public ref float ExplosionDelay { get; }
   
-  public ref CUtlSymbolLarge ExplosionBuildupSound { get; }
+  public string ExplosionBuildupSound { get; set; }
   
-  public ref CUtlSymbolLarge ExplosionCustomEffect { get; }
+  public string ExplosionCustomEffect { get; set; }
   
-  public ref CUtlSymbolLarge ExplosionCustomSound { get; }
+  public string ExplosionCustomSound { get; set; }
   
-  public ref CUtlSymbolLarge ExplosionModifier { get; }
+  public string ExplosionModifier { get; set; }
   
   public ref CHandle<CBasePlayerPawn> PhysicsAttacker { get; }
   
@@ -72,7 +72,7 @@ public partial interface CBreakableProp : CBaseProp, ISchemaClass<CBreakableProp
   
   public ref CHandle<CBaseEntity> LastAttacker { get; }
   
-  public ref CUtlSymbolLarge PuntSound { get; }
+  public string PuntSound { get; set; }
   
   public ref bool UsePuntSound { get; }
   

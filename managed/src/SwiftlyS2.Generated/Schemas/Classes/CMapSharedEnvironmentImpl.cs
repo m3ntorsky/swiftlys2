@@ -15,9 +15,13 @@ internal partial class CMapSharedEnvironmentImpl : CLogicalEntityImpl, CMapShare
   public CMapSharedEnvironmentImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlSymbolLarge TargetMapName {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0xDA50C2DE129742FD));
-  }
+  public string TargetMapName {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0xDA50C2DE129742FD));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0xDA50C2DE129742FD, value);
+  } 
 
 
 }

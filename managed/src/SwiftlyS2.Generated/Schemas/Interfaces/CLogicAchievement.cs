@@ -15,7 +15,7 @@ public partial interface CLogicAchievement : CLogicalEntity, ISchemaClass<CLogic
   
   public ref bool Disabled { get; }
   
-  public ref CUtlSymbolLarge AchievementEventID { get; }
+  public string AchievementEventID { get; set; }
   
   public CEntityIOOutput OnFired { get; }
 

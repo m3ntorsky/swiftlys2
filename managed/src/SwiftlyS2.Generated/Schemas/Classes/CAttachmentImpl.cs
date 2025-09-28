@@ -15,12 +15,20 @@ internal partial class CAttachmentImpl : SchemaClass, CAttachment {
   public CAttachmentImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlString Name {
-    get => ref _Handle.AsRef<CUtlString>(Schema.GetOffset(0x5F09808F4D8F5786));
-  }
-public ISchemaFixedArray<CUtlString> InfluenceNames {
-    get => new SchemaFixedArray<CUtlString>(_Handle, 0x5F09808FFD9B3CB8, 3, 8, 8);
-  }
+  public string Name {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x5F09808F4D8F5786));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x5F09808F4D8F5786, value);
+  } 
+  public string InfluenceNames {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x5F09808FFD9B3CB8));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x5F09808FFD9B3CB8, value);
+  } 
 public ISchemaFixedArray<Quaternion> InfluenceRotations {
     get => new SchemaFixedArray<Quaternion>(_Handle, 0x5F09808FD277168B, 3, 16, 16);
   }

@@ -45,21 +45,41 @@ internal partial class CBaseDoorImpl : CBaseToggleImpl, CBaseDoor {
   public ref float BlockDamage {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x798B70E7A5348091));
   }
-  public ref CUtlSymbolLarge NoiseMoving {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x798B70E7415AB84B));
-  }
-  public ref CUtlSymbolLarge NoiseArrived {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x798B70E7D2CDE47A));
-  }
-  public ref CUtlSymbolLarge NoiseMovingClosed {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x798B70E7ED56FC0F));
-  }
-  public ref CUtlSymbolLarge NoiseArrivedClosed {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x798B70E78637F9A6));
-  }
-  public ref CUtlSymbolLarge ChainTarget {
-    get => ref _Handle.AsRef<CUtlSymbolLarge>(Schema.GetOffset(0x798B70E762B5A227));
-  }
+  public string NoiseMoving {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x798B70E7415AB84B));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x798B70E7415AB84B, value);
+  } 
+  public string NoiseArrived {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x798B70E7D2CDE47A));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x798B70E7D2CDE47A, value);
+  } 
+  public string NoiseMovingClosed {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x798B70E7ED56FC0F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x798B70E7ED56FC0F, value);
+  } 
+  public string NoiseArrivedClosed {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x798B70E78637F9A6));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x798B70E78637F9A6, value);
+  } 
+  public string ChainTarget {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x798B70E762B5A227));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x798B70E762B5A227, value);
+  } 
   public CEntityIOOutput OnBlockedClosing {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0x798B70E7EC8BC45F));
   }

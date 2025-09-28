@@ -19,7 +19,7 @@ public partial interface CSosGroupActionSetSoundeventParameterSchema : CSosGroup
   
   public ref float MaxValue { get; }
   
-  public ref CUtlString OpvarName { get; }
+  public string OpvarName { get; set; }
   
   public ref SosActionSortType_t SortType { get; }
 
