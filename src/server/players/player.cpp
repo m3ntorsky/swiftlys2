@@ -118,12 +118,22 @@ void CPlayer::Shutdown()
 {
     m_iPlayerId = -1;
     m_bAuthorized = false;
+
+    if (centerMessageEvent) {
+        auto gameEventManager = g_ifaceService.FetchInterface<IGameEventManager2>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+        gameEventManager->FreeEvent(centerMessageEvent);
+        centerMessageEvent = nullptr;
+    }
 }
 
 void CPlayer::SendMsg(MessageType type, const std::string& message)
 {
     if (type == MessageType::CenterHTML) {
-
+        if (message == "") centerMessageEndTime = 0;
+        else {
+            centerMessageEndTime = GetTime() + 5000;
+            centerMessageText = message;
+        }
     }
     else if (type == MessageType::Console) {
         if (message.size() == 0) return;
@@ -324,9 +334,38 @@ CBitVec<MAX_EDICTS>& CPlayer::GetBlockedTransmittingBits()
 }
 
 extern void* g_pOnClientKeyStateChangedCallback;
+typedef IGameEventListener2* (*GetLegacyGameEventListener)(CPlayerSlot slot);
 
 void CPlayer::Think()
 {
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+    static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+
+    static auto pListenerSig = gamedata->GetSignatures()->Fetch("LegacyGameEventListener");
+    if (pListenerSig)
+    {
+        auto listener = reinterpret_cast<GetLegacyGameEventListener>(pListenerSig)(m_iPlayerId);
+        if (listener)
+        {
+            static auto gameEventManager = g_ifaceService.FetchInterface<IGameEventManager2>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+            if (!centerMessageEvent) centerMessageEvent = gameEventManager->CreateEvent("show_survival_respawn_status");
+
+            if (centerMessageEvent)
+            {
+                if (centerMessageEndTime >= GetTime()) {
+                    centerMessageEvent->SetString("loc_token", centerMessageText.c_str());
+                    centerMessageEvent->SetInt("duration", 1);
+                    centerMessageEvent->SetInt("userid", m_iPlayerId);
+
+                    listener->FireGameEvent(centerMessageEvent);
+                }
+                else {
+                    centerMessageEndTime = 0;
+                }
+            }
+        }
+    }
+
     auto pawn = GetPawn();
 
     static auto sdkschema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);

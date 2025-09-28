@@ -150,7 +150,7 @@ void CPlayerManager::CheckTransmit(CCheckTransmitInfo** ppInfoList, int infoCoun
     {
         auto& pInfo = (EntityCheckTransmit*&)ppInfoList[i];
         int playerid = pInfo->m_nClientEntityIndex.Get();
-        if (playerMask & (1ULL << playerid) == 0) continue;
+        if ((playerMask & (1ULL << playerid)) == 0) continue;
         auto player = playermanager->GetPlayer(playerid);
 
         auto& blockedBits = player->GetBlockedTransmittingBits();

@@ -21,6 +21,8 @@
 
 #include <api/server/players/player.h>
 
+#include <public/igameevents.h>
+
 #include <chrono>
 
 class CPlayer : public IPlayer
@@ -79,6 +81,10 @@ private:
     uint64_t m_uUnauthorizedSteamID = 0;
 
     std::string m_sLanguage = "en";
+
+    uint64_t centerMessageEndTime = 0;
+    std::string centerMessageText = "";
+    IGameEvent* centerMessageEvent = nullptr;
 };
 
 #endif
