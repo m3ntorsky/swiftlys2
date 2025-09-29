@@ -12,13 +12,14 @@ internal class PluginConfigurationService : IPluginConfigurationService {
 
   private ConfigurationService _ConfigurationService { get; init; }
   private CoreContext _Id { get; init; }
-  private IConfigurationBuilder? _Builder { get; set; }
-  private IConfigurationRoot? _Root { get; set; }
+  private IConfigurationManager? _Manager { get; set; }
 
   public PluginConfigurationService(CoreContext id, ConfigurationService configurationService) {
     _Id = id;
     _ConfigurationService = configurationService;
   }
+
+  public string BasePath => Path.Combine(_ConfigurationService.GetConfigRoot(), "plugins", _Id.Name);
 
   public string GetRoot() {
     var dir = Path.Combine(_ConfigurationService.GetConfigRoot(), "plugins", _Id.Name);
@@ -32,7 +33,7 @@ internal class PluginConfigurationService : IPluginConfigurationService {
     return Path.Combine(GetRoot(), name);
   }
 
-  public IPluginConfigurationService InitializeByTemplate(string name, string templatePath) {
+  public IPluginConfigurationService InitializeWithTemplate(string name, string templatePath) {
 
     var configPath = GetConfigPath(name);
 
@@ -56,7 +57,7 @@ internal class PluginConfigurationService : IPluginConfigurationService {
     return this;
   }
 
-  public IPluginConfigurationService InitializeJson<T>(string name, string sectionName) where T : class, new() {
+  public IPluginConfigurationService InitializeJsonWithModel<T>(string name, string sectionName) where T : class, new() {
     
     var configPath = GetConfigPath(name);
 
@@ -88,33 +89,18 @@ internal class PluginConfigurationService : IPluginConfigurationService {
     return this;
   }
 
-  public IConfigurationBuilder CreateBuilder() {
-    return new ConfigurationBuilder()
-      .SetBasePath(GetRoot());
-  }
-
-  public IPluginConfigurationService Configure(Action<IConfigurationBuilder> configureBuilder) {
-    _Builder = CreateBuilder();
-    configureBuilder(_Builder);
-    _Root = _Builder.Build();
+  public IPluginConfigurationService Configure(Action<IConfigurationBuilder> configure) {
+    configure(Manager);
     return this;
   }
 
-  public string GetDatabaseCredentials(string connectionName) {
-    if(NativeDatabase.ConnectionExists(connectionName)) {
-      return NativeDatabase.GetCredentials(connectionName);
-    }
-    return NativeDatabase.GetDefaultConnectionCredentials();
-  }
-
-  public IConfigurationRoot Root {
+  public IConfigurationManager Manager {
     get {
-      if (_Root is null) {
-        throw new InvalidOperationException("Configuration is not configured yet!");
+      if (_Manager is null) {
+        _Manager = new ConfigurationManager();
+        _Manager.SetBasePath(BasePath);
       }
-      return _Root;
+      return _Manager;
     }
   }
-
-
 }

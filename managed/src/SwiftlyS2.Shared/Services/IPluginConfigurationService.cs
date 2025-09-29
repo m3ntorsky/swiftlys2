@@ -4,11 +4,17 @@ namespace SwiftlyS2.Shared.Services;
 
 public interface IPluginConfigurationService {  
 
+  /// <summary>
+  /// Get the base path of plugin configuration.
+  /// </summary>
+  /// <returns>The base path of the plugin configuration.</returns>
+  public string BasePath { get; }
+
 
   /// <summary>
   /// Get the path to the configuration file.
   /// </summary>
-  /// <param name="path">The name of the configuration file, including the extension.</param>
+  /// <param name="name">The name of the configuration file, including the extension.</param>
   /// <returns>The path to the configuration file.</returns>
   public string GetConfigPath(string name);
 
@@ -18,7 +24,7 @@ public interface IPluginConfigurationService {
   /// </summary>
   /// <param name="name">The name of the configuration file.</param>
   /// <param name="templateName">The name of the template file.</param>
-  public IPluginConfigurationService InitializeByTemplate(string name, string templateName);
+  public IPluginConfigurationService InitializeWithTemplate(string name, string templateName);
 
   /// <summary>
   /// Initialize the json configuration file with a class as template.
@@ -26,24 +32,19 @@ public interface IPluginConfigurationService {
   /// <typeparam name="T">The type of the configuration model.</typeparam>
   /// <param name="name">The name of the configuration file.</param>
   /// <param name="sectionName">The name of the section in the configuration file.</param>
-  public IPluginConfigurationService InitializeJson<T>(string name, string sectionName) where T : class, new();
-
+  public IPluginConfigurationService InitializeJsonWithModel<T>(string name, string sectionName) where T : class, new();
+  
   /// <summary>
-  /// Create a configuration builder.
+  /// Configure the internal configuration manager.
   /// </summary>
-  /// <returns>The configuration builder.</returns>
-  public IConfigurationBuilder CreateBuilder();
+  /// <param name="configure">The action to configure the configuration manager.</param>
+  /// <returns>The plugin configuration service.</returns>
+  public IPluginConfigurationService Configure(Action<IConfigurationBuilder> configure);
 
-
-  /// <summary>
-  /// Configure the internal configuration builder.
-  /// </summary>
-  /// <param name="configureBuilder">The action to configure the configuration builder.</param>
-  public IPluginConfigurationService Configure(Action<IConfigurationBuilder> configureBuilder);
 
   /// <summary>
   /// Get the configuration root.
   /// </summary>
-  public IConfigurationRoot Root { get; }
+  public IConfigurationManager Manager { get; }
 
 }

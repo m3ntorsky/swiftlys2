@@ -121,4 +121,9 @@ public interface ISwiftlyCore {
   /// Permission manager.
   /// </summary>
   public IPermissionManager Permission { get; }
+
+  /// <summary>
+  /// Registrator service.
+  /// </summary>
+  public IRegistratorService Registrator { get; }
 }

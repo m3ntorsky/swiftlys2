@@ -20,6 +20,7 @@ using Dapper;
 using SwiftlyS2.Shared.Sounds;
 using SwiftlyS2.Shared.EntitySystem;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Hosting;
 
 namespace TestPlugin;
 
@@ -49,24 +50,43 @@ public class TestPlugin : BasePlugin {
   IOptionsMonitor<TestConfig> _config;
 
   public override void Load(bool hotReload) {
-    var root = Core.Configuration
-      // Initialize test.jsonc with TestConfig if not exists
-      .InitializeJson<TestConfig>("test.jsonc", "Main")
 
-      // Load the actual config
-      .Configure(builder => {
+    Core.Configuration
+      .InitializeJsonWithModel<TestConfig>("test.jsonc", "Main")
+      .Configure((builder) => {
         builder.AddJsonFile("test.jsonc", optional: false, reloadOnChange: true);
-      })
-      .Root;
+      });
 
-    // Simulate dependency injection
     ServiceCollection services = new();
-    services.Configure<TestConfig>(root.GetSection("Main"));
+
+    services
+      .AddSwiftly(Core)
+      .AddSingleton<TestService>()
+
+      .AddOptionsWithValidateOnStart<TestConfig>()
+      .BindConfiguration("Main");
+
     var provider = services.BuildServiceProvider();
-    var config = provider.GetRequiredService<IOptionsMonitor<TestConfig>>();
+
+    provider.GetRequiredService<TestService>();
+    
+
+    // Host.CreateDefaultBuilder()
+    //   .ConfigureLogging((context, logging) => {
+    //     logging.AddConsole();
+    //   })
+    //   .ConfigureAppConfiguration((context, config) => {
+    //     config.SetBasePath(Core.Configuration.GetBasePath());
+    //     config.AddJsonFile("test.jsonc", optional: false, reloadOnChange: true);
+    //   })
+    //   .ConfigureServices((context, services) => {
+    //     services.AddOptionsWithValidateOnStart<IOptionsMonitor<TestConfig>>()
+    //       .Bind(context.Configuration.GetSection("Main"));
+    //   })
+    //   .Build();
 
     // This can be used everywhere and the value will be updated when the config is changed
-    Console.WriteLine(config.CurrentValue.Age);
+    // Console.WriteLine(config.CurrentValue.Age);
 
 
     // var config = new TestConfig();

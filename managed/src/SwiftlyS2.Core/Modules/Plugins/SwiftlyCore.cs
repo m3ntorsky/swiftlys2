@@ -58,6 +58,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public TranslationService TranslationService { get; init; }
   public Localizer Localizer { get; init; }
   public PermissionManager PermissionManager { get; init; }
+  public RegistratorService RegistratorService { get; init; }
   public SwiftlyCore(string contextId, string contextBaseDirectory, PluginManifest? pluginManifest, Type contextType, IServiceProvider coreProvider) {
 
     CoreContext id = new(contextId, contextBaseDirectory, pluginManifest);
@@ -89,7 +90,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<DatabaseService>()
       .AddSingleton<TranslationService>()
       .AddSingleton<Localizer>(provider => provider.GetRequiredService<TranslationService>().GetLocalizer())
-
+      .AddSingleton<RegistratorService>()
       .AddSingleton<IPermissionManager>(provider => provider.GetRequiredService<PermissionManager>())
 
       .AddSingleton<IEventSubscriber>(provider => provider.GetRequiredService<EventSubscriber>())
@@ -109,7 +110,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<IDatabaseService>(provider => provider.GetRequiredService<DatabaseService>())
       .AddSingleton<ITranslationService>(provider => provider.GetRequiredService<TranslationService>())
       .AddSingleton<ILocalizer>(provider => provider.GetRequiredService<TranslationService>().GetLocalizer())
-      
+      .AddSingleton<IRegistratorService>(provider => provider.GetRequiredService<RegistratorService>())
 
       .AddLogging(
         builder => {
@@ -139,7 +140,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     TranslationService = _ServiceProvider.GetRequiredService<TranslationService>();
     Localizer = _ServiceProvider.GetRequiredService<Localizer>();
     PermissionManager = _ServiceProvider.GetRequiredService<PermissionManager>();
-
+    RegistratorService = _ServiceProvider.GetRequiredService<RegistratorService>();
     Logger = LoggerFactory.CreateLogger(contextType);
   }
 
@@ -149,10 +150,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
 
   public void InitializeObject(object instance)
   {
-    CommandService.ParseFromObject(instance);
-    GameEventService.ParseFromObject(instance);
-    NetMessageService.ParseFromObject(instance);
-    EventSubscriber.ParseFromObject(instance);
+    RegistratorService.Register(instance);
   }
 
   public void Dispose() {
@@ -179,4 +177,5 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   ITranslationService ISwiftlyCore.Translation => TranslationService;
   ILocalizer ISwiftlyCore.Localizer => Localizer;
   IPermissionManager ISwiftlyCore.Permission => PermissionManager;
+  IRegistratorService ISwiftlyCore.Registrator => RegistratorService;
 }
