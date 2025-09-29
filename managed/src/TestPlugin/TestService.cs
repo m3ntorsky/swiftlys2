@@ -2,6 +2,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Commands;
+using SwiftlyS2.Shared.ProtobufDefinitions;
 
 namespace TestPlugin;
 
@@ -21,6 +22,12 @@ public class TestService {
   [Command("test")]
   public void TestCommand(ICommandContext context)
   {
+    Core.NetMessage.Send<CUserMessageShake>(um => {
+      um.Frequency = 1f;
+
+      
+      um.Recipients.AddAllPlayers();
+    });
     context.Reply("Test command");
   }
 }

@@ -23,6 +23,10 @@ internal class CoreCommandService {
 
   private void OnCommand(ICommandContext context) {
     try {
+    if (context.IsSentByPlayer) {
+      context.Reply("This command can only be used in console.");
+      return;
+    }
     var args = context.Args;
     if (args.Length == 0) {
       context.Reply("Not enough param");
