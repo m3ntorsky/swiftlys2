@@ -1,8 +1,7 @@
 set_project("swiftlys2")
 set_version("1.0.0")
 
-add_requires("fmt", {configs = {shared = false}})
-add_packages("fmt")
+add_requires("fmt", {configs = {header_only = true}})
 
 set_languages("cxx23")
 
@@ -27,6 +26,7 @@ end
 
 target("swiftlys2")
     set_kind("shared")
+    add_packages("fmt")
 
     add_files({
         "src/**/*.cpp",
