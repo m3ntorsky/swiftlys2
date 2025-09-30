@@ -22,7 +22,7 @@
 #include <dlfcn.h>
 #endif
 #include <map>
-#include <format>
+#include <fmt/format.h>
 
 #include "functions.h"
 #include <api/shared/files.h>
@@ -83,7 +83,7 @@ void* GetBinaryFunction(std::string binary_relative_path, const std::string& fun
     void* func = static_cast<void*>(GetProcAddress(static_cast<HMODULE>(handle), function_name.c_str()));
     if (!func)
     {
-        error = std::format("Function '{}' not found in binary", function_name);
+        error = fmt::format("Function '{}' not found in binary", function_name);
         return nullptr;
     }
     loaded_functions[binary_relative_path][function_name] = func;
@@ -107,7 +107,7 @@ void* GetBinaryFunction(std::string binary_relative_path, const std::string& fun
     void* func = dlsym(handle, function_name.c_str());
     if (!func)
     {
-        error = std::format("Function '{}' not found in binary", function_name);
+        error = fmt::format("Function '{}' not found in binary", function_name);
         return nullptr;
     }
     loaded_functions[binary_relative_path][function_name] = func;

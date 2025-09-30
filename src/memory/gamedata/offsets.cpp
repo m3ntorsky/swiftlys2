@@ -25,7 +25,7 @@
 
 #include <api/interfaces/manager.h>
 
-#include <format>
+#include <fmt/format.h>
 
 #include <core/entrypoint.h>
 
@@ -47,36 +47,36 @@ void GameDataOffsets::Load(const std::string& game)
 
             for (auto& [key, value] : offsetsJson.items()) {
                 if (m_mOffsets.contains(key)) {
-                    logger->Warning("GameData", std::format("Offset '{}' is already defined. Skipping...\n", key));
+                    logger->Warning("GameData", fmt::format("Offset '{}' is already defined. Skipping...\n", key));
                     continue;
                 }
 
                 if (!value.contains("windows")) {
-                    logger->Error("GameData", std::format("Failed to parse offset '{}'.\nError: Couldn't find the offset field for Windows. ('{}.windows')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse offset '{}'.\nError: Couldn't find the offset field for Windows. ('{}.windows')\n", key, key));
                     continue;
                 }
 
                 if (!value["windows"].is_number_integer()) {
-                    logger->Error("GameData", std::format("Failed to parse offset '{}'.\nError: Windows offset is not an integer. ('{}.windows')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse offset '{}'.\nError: Windows offset is not an integer. ('{}.windows')\n", key, key));
                     continue;
                 }
 
                 if (!value.contains("linux")) {
-                    logger->Error("GameData", std::format("Failed to parse offset '{}'.\nError: Couldn't find the offset field for Linux. ('{}.linux')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse offset '{}'.\nError: Couldn't find the offset field for Linux. ('{}.linux')\n", key, key));
                     continue;
                 }
 
                 if (!value["linux"].is_number_integer()) {
-                    logger->Error("GameData", std::format("Failed to parse offset '{}'.\nError: Linux offset is not an integer. ('{}.linux')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse offset '{}'.\nError: Linux offset is not an integer. ('{}.linux')\n", key, key));
                     continue;
                 }
 
                 m_mOffsets.insert({ key, value[WIN_LINUX("windows", "linux")].get<int>() });
-                logger->Info("GameData", std::format("Loaded offset '{}' => '{}'.\n", key, value[WIN_LINUX("windows", "linux")].get<int>()));
+                logger->Info("GameData", fmt::format("Loaded offset '{}' => '{}'.\n", key, value[WIN_LINUX("windows", "linux")].get<int>()));
             }
         }
         catch (json::parse_error& e) {
-            logger->Error("GameData", std::format("Failed to parse file '{}'.\nError: {}.\n", file, e.what()));
+            logger->Error("GameData", fmt::format("Failed to parse file '{}'.\nError: {}.\n", file, e.what()));
             continue;
         }
     }

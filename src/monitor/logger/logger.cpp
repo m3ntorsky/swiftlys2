@@ -21,7 +21,7 @@
 #include <api/shared/string.h>
 #include <core/entrypoint.h>
 
-#include <format>
+#include <fmt/format.h>
 #include <api/shared/files.h>
 
 #include <api/interfaces/manager.h>
@@ -47,7 +47,7 @@ std::string GetLogTypeString(LogType type)
 
 void Logger::Log(LogType type, const std::string& message)
 {
-    std::string final_output = std::format("{} [{}{}{}] {}", PREFIX, GetTerminalStringColor(GetLogTypeString(type)), GetLogTypeString(type), "{DEFAULT}", message);
+    std::string final_output = fmt::format("{} [{}{}{}] {}", PREFIX, GetTerminalStringColor(GetLogTypeString(type)), GetLogTypeString(type), "{DEFAULT}", message);
     std::string color_processed = TerminalProcessColor(final_output);
     std::string without_colors = ClearTerminalColors(final_output);
 
@@ -62,9 +62,9 @@ void Logger::Log(LogType type, const std::string& message)
 void Logger::Log(LogType type, const std::string& category, const std::string& message)
 {
     if (m_bShouldOutputToConsole[(int)type] && !m_sNonColoredCategories.contains(category))
-        Log(type, std::format("[{}{}{}] {}", GetTerminalStringColor(category), category, "{DEFAULT}", message));
+        Log(type, fmt::format("[{}{}{}] {}", GetTerminalStringColor(category), category, "{DEFAULT}", message));
     else
-        Log(type, std::format("[{}] {}", category, message));
+        Log(type, fmt::format("[{}] {}", category, message));
 }
 
 void Logger::Info(const std::string& message)

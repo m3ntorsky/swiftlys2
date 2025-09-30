@@ -29,7 +29,7 @@
 
 #include <nlohmann/json.hpp>
 
-#include <format>
+#include <fmt/format.h>
 
 using json = nlohmann::json;
 
@@ -48,49 +48,49 @@ void GameDataPatches::Load(const std::string& game)
 
             for (auto& [key, value] : patchesJson.items()) {
                 if (!value.contains("signature")) {
-                    logger->Error("GameData", std::format("Failed to parse patch '{}'.\nError: Couldn't find the field for Signature. ('{}.signature')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse patch '{}'.\nError: Couldn't find the field for Signature. ('{}.signature')\n", key, key));
                     continue;
                 }
 
                 if (!value["signature"].is_string()) {
-                    logger->Error("GameData", std::format("Failed to parse patch '{}'.\nError: Signature is not a string. ('{}.signature')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse patch '{}'.\nError: Signature is not a string. ('{}.signature')\n", key, key));
                     continue;
                 }
 
                 if (!value.contains("windows")) {
-                    logger->Error("GameData", std::format("Failed to parse patch '{}'.\nError: Couldn't find the patch field for Windows. ('{}.windows')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse patch '{}'.\nError: Couldn't find the patch field for Windows. ('{}.windows')\n", key, key));
                     continue;
                 }
 
                 if (!value["windows"].is_string()) {
-                    logger->Error("GameData", std::format("Failed to parse patch '{}'.\nError: Windows patch is not a string. ('{}.windows')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse patch '{}'.\nError: Windows patch is not a string. ('{}.windows')\n", key, key));
                     continue;
                 }
 
                 if (!value.contains("linux")) {
-                    logger->Error("GameData", std::format("Failed to parse patch '{}'.\nError: Couldn't find the patch field for Linux. ('{}.linux')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse patch '{}'.\nError: Couldn't find the patch field for Linux. ('{}.linux')\n", key, key));
                     continue;
                 }
 
                 if (!value["linux"].is_string()) {
-                    logger->Error("GameData", std::format("Failed to parse patch '{}'.\nError: Linux patch is not a string. ('{}.linux')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse patch '{}'.\nError: Linux patch is not a string. ('{}.linux')\n", key, key));
                     continue;
                 }
 
                 std::string signature = value["signature"].get<std::string>();
                 if (!gamedata->GetSignatures()->Exists(signature))
                 {
-                    logger->Error("GameData", std::format("Failed to parse patch '{}'.\nError: Couldn't find the signature '{}'.\n", key, signature));
+                    logger->Error("GameData", fmt::format("Failed to parse patch '{}'.\nError: Couldn't find the signature '{}'.\n", key, signature));
                     continue;
                 }
 
                 auto patch = value[WIN_LINUX("windows", "linux")].get<std::string>();
                 m_mPatches.insert({ key, {patch, signature} });
-                logger->Info("GameData", std::format("Loaded patch '{}' => '{}' (signature='{}').\n", key, patch, signature));
+                logger->Info("GameData", fmt::format("Loaded patch '{}' => '{}' (signature='{}').\n", key, patch, signature));
             }
         }
         catch (json::parse_error& e) {
-            logger->Error("GameData", std::format("Failed to parse file '{}'.\nError: {}.\n", file, e.what()));
+            logger->Error("GameData", fmt::format("Failed to parse file '{}'.\nError: {}.\n", file, e.what()));
             continue;
         }
     }
@@ -149,7 +149,7 @@ void GameDataPatches::Apply(const std::string& name)
 
     if (!gamedata->GetSignatures()->Exists(signature))
     {
-        logger->Error("GameData", std::format("Failed to apply patch '{}'.\nError: Couldn't find the signature '{}'.\n", name, signature));
+        logger->Error("GameData", fmt::format("Failed to apply patch '{}'.\nError: Couldn't find the signature '{}'.\n", name, signature));
         return;
     }
 
@@ -167,7 +167,7 @@ void GameDataPatches::Apply(const std::string& name)
     }
 
     Plat_WriteMemory(signaturePtr, patchBytes.data(), patchBytes.size());
-    logger->Info("GameData", std::format("Applied patch '{}' (signature='{}', bytes={:02}).\n", name, signature, patchBytes.size()));
+    logger->Info("GameData", fmt::format("Applied patch '{}' (signature='{}', bytes={:02}).\n", name, signature, patchBytes.size()));
 }
 
 void GameDataPatches::Revert(const std::string& name)
@@ -178,7 +178,7 @@ void GameDataPatches::Revert(const std::string& name)
 
     if (m_mOriginalBytes[name].empty())
     {
-        logger->Error("GameData", std::format("Failed to revert patch '{}'.\nError: Patch wasn't applied or doesn't exist.\n", name));
+        logger->Error("GameData", fmt::format("Failed to revert patch '{}'.\nError: Patch wasn't applied or doesn't exist.\n", name));
         return;
     }
 
@@ -186,7 +186,7 @@ void GameDataPatches::Revert(const std::string& name)
 
     if (!gamedata->GetSignatures()->Exists(signature))
     {
-        logger->Error("GameData", std::format("Failed to apply patch '{}'.\nError: Couldn't find the signature '{}'.\n", name, signature));
+        logger->Error("GameData", fmt::format("Failed to apply patch '{}'.\nError: Couldn't find the signature '{}'.\n", name, signature));
         return;
     }
 
@@ -195,5 +195,5 @@ void GameDataPatches::Revert(const std::string& name)
     Plat_WriteMemory(signaturePtr, m_mOriginalBytes[name].data(), m_mOriginalBytes[name].size());
 
     m_mOriginalBytes[name].clear();
-    logger->Info("GameData", std::format("Reverted patch '{}' (signature='{}', bytes={:02}).\n", name, m_mPatches[name].second, m_mOriginalBytes[name].size()));
+    logger->Info("GameData", fmt::format("Reverted patch '{}' (signature='{}', bytes={:02}).\n", name, m_mPatches[name].second, m_mOriginalBytes[name].size()));
 }

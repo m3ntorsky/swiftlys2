@@ -27,7 +27,7 @@
 
 #include <core/entrypoint.h>
 
-#include <format>
+#include <fmt/format.h>
 
 void CrashReporter::Init()
 {
@@ -68,15 +68,15 @@ void CrashReporter::ReportPreventionIncident(std::string category, std::string r
     backtraceTable.add(" Message ");
     backtraceTable.endOfRow();
 
-    backtraceTable.add(std::format(" {} ", category));
-    backtraceTable.add(std::format(" {} ", reason));
+    backtraceTable.add(fmt::format(" {} ", category));
+    backtraceTable.add(fmt::format(" {} ", reason));
     backtraceTable.endOfRow();
 
     PrintTextTable(LogType::WARNING, "Crash Prevention", backtraceTable);
 
-    std::string file_path = std::format("{}dumps/prevention/incident.{}.log", g_SwiftlyCore.GetCorePath(), get_uuid());
+    std::string file_path = fmt::format("{}dumps/prevention/incident.{}.log", g_SwiftlyCore.GetCorePath(), get_uuid());
     if (Files::ExistsPath(file_path)) Files::Delete(file_path);
 
-    Files::Append(file_path, std::format("================================\nCategory: {}\nDetails: {}", category, reason), false);
-    logger->Warning("Crash Prevention", std::format("A log file has been created at: {}\n", file_path));
+    Files::Append(file_path, fmt::format("================================\nCategory: {}\nDetails: {}", category, reason), false);
+    logger->Warning("Crash Prevention", fmt::format("A log file has been created at: {}\n", file_path));
 }

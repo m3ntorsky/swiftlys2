@@ -30,7 +30,7 @@
 
 #include <nlohmann/json.hpp>
 
-#include <format>
+#include <fmt/format.h>
 
 using json = nlohmann::json;
 
@@ -48,39 +48,39 @@ void GameDataSignatures::Load(const std::string& game)
 
             for (auto& [key, value] : signaturesJson.items()) {
                 if (!value.contains("lib")) {
-                    logger->Error("GameData", std::format("Failed to parse signature '{}'.\nError: Couldn't find the field for Library. ('{}.lib')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse signature '{}'.\nError: Couldn't find the field for Library. ('{}.lib')\n", key, key));
                     continue;
                 }
 
                 if (!value["lib"].is_string()) {
-                    logger->Error("GameData", std::format("Failed to parse signature '{}'.\nError: Library is not a string. ('{}.lib')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse signature '{}'.\nError: Library is not a string. ('{}.lib')\n", key, key));
                     continue;
                 }
 
                 if (!value.contains("windows")) {
-                    logger->Error("GameData", std::format("Failed to parse signature '{}'.\nError: Couldn't find the signature field for Windows. ('{}.windows')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse signature '{}'.\nError: Couldn't find the signature field for Windows. ('{}.windows')\n", key, key));
                     continue;
                 }
 
                 if (!value["windows"].is_string()) {
-                    logger->Error("GameData", std::format("Failed to parse signature '{}'.\nError: Windows signature is not a string. ('{}.windows')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse signature '{}'.\nError: Windows signature is not a string. ('{}.windows')\n", key, key));
                     continue;
                 }
 
                 if (!value.contains("linux")) {
-                    logger->Error("GameData", std::format("Failed to parse signature '{}'.\nError: Couldn't find the signature field for Linux. ('{}.linux')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse signature '{}'.\nError: Couldn't find the signature field for Linux. ('{}.linux')\n", key, key));
                     continue;
                 }
 
                 if (!value["linux"].is_string()) {
-                    logger->Error("GameData", std::format("Failed to parse signature '{}'.\nError: Linux signature is not a string. ('{}.linux')\n", key, key));
+                    logger->Error("GameData", fmt::format("Failed to parse signature '{}'.\nError: Linux signature is not a string. ('{}.linux')\n", key, key));
                     continue;
                 }
 
                 auto lib = value["lib"].get<std::string>();
                 auto signature = value[WIN_LINUX("windows", "linux")].get<std::string>();
 
-                logger->Info("GameData", std::format("Searching for signature '{}'...\n", key));
+                logger->Info("GameData", fmt::format("Searching for signature '{}'...\n", key));
 
                 auto module = DetermineModuleByLibrary(lib);
                 void* sig = nullptr;
@@ -89,17 +89,17 @@ void GameDataSignatures::Load(const std::string& game)
 
                 if (!sig)
                 {
-                    logger->Error("GameData", std::format("Couldn't find signature '{}'. (lib='{}')\n", key, lib));
+                    logger->Error("GameData", fmt::format("Couldn't find signature '{}'. (lib='{}')\n", key, lib));
                 }
                 else
                 {
                     m_mSignatures.insert({ key, sig });
-                    logger->Info("GameData", std::format("Loaded signature '{}' => '{}' (lib='{}').\n", key, sig, lib));
+                    logger->Info("GameData", fmt::format("Loaded signature '{}' => '{}' (lib='{}').\n", key, sig, lib));
                 }
             }
         }
         catch (json::parse_error& e) {
-            logger->Error("GameData", std::format("Failed to parse file '{}'.\nError: {}.\n", file, e.what()));
+            logger->Error("GameData", fmt::format("Failed to parse file '{}'.\nError: {}.\n", file, e.what()));
             continue;
         }
     }

@@ -27,7 +27,7 @@
 #include <public/networksystem/inetworkmessages.h>
 #include <public/engine/igameeventsystem.h>
 
-#include <format>
+#include <fmt/format.h>
 
 #include "networkbasetypes.pb.h"
 
@@ -339,7 +339,7 @@ ConvarValue CConvarManager::GetConvarValue(std::string cvar_name)
     }
     else {
         static auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-        logger->Error("Convars", std::format("Unsupported ConVar type: {}", (int)cvar.GetType()));
+        logger->Error("Convars", fmt::format("Unsupported ConVar type: {}", (int)cvar.GetType()));
         return 0;
     }
 }
@@ -348,21 +348,21 @@ std::string ConvertConvarValueToString(ConvarValue& value)
 {
     std::string value_str;
     if (std::holds_alternative<int16_t>(value))
-        value_str = std::format("{}", std::get<int16_t>(value));
+        value_str = fmt::format("{}", std::get<int16_t>(value));
     else if (std::holds_alternative<uint16_t>(value))
-        value_str = std::format("{}", std::get<uint16_t>(value));
+        value_str = fmt::format("{}", std::get<uint16_t>(value));
     else if (std::holds_alternative<int32_t>(value))
-        value_str = std::format("{}", std::get<int32_t>(value));
+        value_str = fmt::format("{}", std::get<int32_t>(value));
     else if (std::holds_alternative<uint32_t>(value))
-        value_str = std::format("{}", std::get<uint32_t>(value));
+        value_str = fmt::format("{}", std::get<uint32_t>(value));
     else if (std::holds_alternative<float>(value))
-        value_str = std::format("{}", std::get<float>(value));
+        value_str = fmt::format("{}", std::get<float>(value));
     else if (std::holds_alternative<double>(value))
-        value_str = std::format("{}", std::get<double>(value));
+        value_str = fmt::format("{}", std::get<double>(value));
     else if (std::holds_alternative<int64_t>(value))
-        value_str = std::format("{}", std::get<int64_t>(value));
+        value_str = fmt::format("{}", std::get<int64_t>(value));
     else if (std::holds_alternative<uint64_t>(value))
-        value_str = std::format("{}", std::get<uint64_t>(value));
+        value_str = fmt::format("{}", std::get<uint64_t>(value));
     else if (std::holds_alternative<std::string>(value))
         value_str = std::get<std::string>(value);
     else if (std::holds_alternative<bool>(value))
@@ -370,27 +370,27 @@ std::string ConvertConvarValueToString(ConvarValue& value)
     else if (std::holds_alternative<Color>(value))
     {
         Color clr = std::get<Color>(value);
-        value_str = std::format("{},{},{},{}", clr.r(), clr.g(), clr.b(), clr.a());
+        value_str = fmt::format("{},{},{},{}", clr.r(), clr.g(), clr.b(), clr.a());
     }
     else if (std::holds_alternative<Vector2D>(value))
     {
         Vector2D vec = std::get<Vector2D>(value);
-        value_str = std::format("{},{}", vec.x, vec.y);
+        value_str = fmt::format("{},{}", vec.x, vec.y);
     }
     else if (std::holds_alternative<Vector>(value))
     {
         Vector vec = std::get<Vector>(value);
-        value_str = std::format("{},{},{}", vec.x, vec.y, vec.z);
+        value_str = fmt::format("{},{},{}", vec.x, vec.y, vec.z);
     }
     else if (std::holds_alternative<Vector4D>(value))
     {
         Vector4D vec = std::get<Vector4D>(value);
-        value_str = std::format("{},{},{},{}", vec.x, vec.y, vec.z, vec.w);
+        value_str = fmt::format("{},{},{},{}", vec.x, vec.y, vec.z, vec.w);
     }
     else if (std::holds_alternative<QAngle>(value))
     {
         QAngle ang = std::get<QAngle>(value);
-        value_str = std::format("{},{},{}", ang.x, ang.y, ang.z);
+        value_str = fmt::format("{},{},{}", ang.x, ang.y, ang.z);
     }
     else value_str = "";
 

@@ -1,6 +1,9 @@
 set_project("swiftlys2")
 set_version("1.0.0")
 
+add_requires("fmt", {configs = {shared = false}})
+add_packages("fmt")
+
 set_languages("cxx23")
 
 add_rules("mode.debug", "mode.release")

@@ -18,7 +18,7 @@
 
 #include "schema.h"
 
-#include <format>
+#include <fmt/format.h>
 #include <map>
 
 #include <core/entrypoint.h>
@@ -79,7 +79,7 @@ void CSDKSchema::Load()
 		}
 	}
 
-	logger->Info("SDK", std::format("Finished loading {} SDK classes ({} fields).\n", classes_count, offsets.size()));
+	logger->Info("SDK", fmt::format("Finished loading {} SDK classes ({} fields).\n", classes_count, offsets.size()));
 
 	logger->Info("SDK", "Loading SDK enums...\n");
 
@@ -102,7 +102,7 @@ void CSDKSchema::Load()
 		}
 	}
 
-	logger->Info("SDK", std::format("Finished loading {} SDK enums.\n", enums_count));
+	logger->Info("SDK", fmt::format("Finished loading {} SDK enums.\n", enums_count));
 
 	WriteJSON(g_SwiftlyCore.GetCorePath() + "gamedata/cs2/sdk.json", sdkJson);
 }
