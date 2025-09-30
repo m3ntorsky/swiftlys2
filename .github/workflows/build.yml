@@ -20,14 +20,14 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.x'
+    
     - name: Setup GitVersion
-      id: gitversion
-      uses: GitTools/actions@v4.1.0
+      uses: gittools/actions/gitversion/setup@v4.1.0
       with:
-        fetch-depth: 0
-        useConfigFile: true
-      env:
-        DOTNET_ROLL_FORWARD: Major
+        versionSpec: '6.3.x'
+    - name: Determine Version
+      id: version_step
+      uses: gittools/actions/gitversion/execute@v4.1.0
     - name: Setup xmake
       uses: xmake-io/github-action-setup-xmake@v1
       with:
