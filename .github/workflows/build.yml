@@ -127,3 +127,60 @@ jobs:
       with:
         name: swiftlys2_windows
         path: build/package/addons
+
+  packaging:
+    needs: [versioning, linux_core, windows_core]
+    runs-on: ubuntu-latest
+    env:
+      LINUX_FOLDER: swiftlys2-linux-${{ needs.versioning.outputs.fullSemVer }}
+      WINDOWS_FOLDER: swiftlys2-windows-${{ needs.versioning.outputs.fullSemVer }}
+    steps:
+    - name: Download artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: swiftlys2_linux
+        path: ./${{ env.LINUX_FOLDER }}
+    - name: Download artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: swiftlys2_windows
+        path: ./${{ env.WINDOWS_FOLDER }}
+    
+    - name: Download artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: swiftlys2_windows
+        path: ./managed
+    - name: Download runtimes
+      run: |
+        mkdir -p ./linux-runtimes
+        cd ./linux-runtimes
+        wget https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.20/dotnet-runtime-8.0.20-linux-x64.tar.gz
+        tar -xzf dotnet-runtime-8.0.20-linux-x64.tar.gz -C content
+        cd ..
+        mkdir -p ./windows-runtimes
+        cd ./windows-runtimes
+        wget https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.20/dotnet-runtime-8.0.20-win-x64.zip
+        unzip dotnet-runtime-8.0.20-win-x64.zip -d content
+        cd ..
+      
+    - name: Create package
+      run: |
+        cp -r managed/SwiftlyS2 ${{ env.LINUX_FOLDER }}/swiftlys2/bin/managed
+        cp -r managed/SwiftlyS2 ${{ env.WINDOWS_FOLDER }}/swiftlys2/bin/managed
+
+        cp -r ${{ env.LINUX_FOLDER }}/ ${{ env.LINUX_FOLDER }}-with-runtimes/
+        cp -r ${{ env.WINDOWS_FOLDER }}/ ${{ env.WINDOWS_FOLDER }}-with-runtimes/
+
+        cp -r linux-runtimes/content/ ${{ env.LINUX_FOLDER }}-with-runtimes/swiftlys2/bin/managed/dotnet
+        cp -r windows-runtimes/content/ ${{ env.WINDOWS_FOLDER }}-with-runtimes/swiftlys2/bin/managed/dotnet
+
+    - name: Upload package
+      uses: actions/upload-artifact@v4
+      with:
+        name: swiftlys2-package-${{ needs.versioning.outputs.fullSemVer }}
+        path: |
+          ${{ env.LINUX_FOLDER }}
+          ${{ env.WINDOWS_FOLDER }}
+          ${{ env.LINUX_FOLDER }}-with-runtimes
+          ${{ env.WINDOWS_FOLDER }}-with-runtimes
