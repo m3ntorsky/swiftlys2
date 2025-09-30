@@ -13,6 +13,8 @@ jobs:
     steps:
     - name: Set default to g++-11
       run: |
+        apt-get update
+        apt-get install -y g++-11
         update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 50
         update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 50
         update-alternatives --set gcc /usr/bin/gcc-11
