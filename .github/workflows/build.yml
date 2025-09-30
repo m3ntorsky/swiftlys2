@@ -2,6 +2,9 @@ name: Build
 
 on: [workflow_dispatch]
 
+env:
+  XMAKE_ROOT: y
+
 jobs:
   build_linux:
     runs-on: ubuntu-latest
