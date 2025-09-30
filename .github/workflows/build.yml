@@ -9,23 +9,35 @@ jobs:
   build_linux:
     runs-on: ubuntu-latest
     container:
-      image: ubuntu:20.04
+      image: registry.gitlab.steamos.cloud/steamrt/sniper/sdk
     steps:
-    - name: Install dependencies
-      run: |
-        apt-get update
-        apt-get install -y build-essential git curl sudo
-    - name: Setup xmake
-      uses: xmake-io/github-action-setup-xmake@v1
-      with:
-        xmake-version: latest
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
       with:
         submodules: recursive
+        fetch-depth: 0
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+    - name: Setup GitVersion
+      id: gitversion
+      uses: GitTools/actions@v4.1.0
+      with:
+        fetch-depth: 0
+        useConfigFile: true
+      env:
+        DOTNET_ROLL_FORWARD: Major
+    - name: Setup xmake
+      uses: xmake-io/github-action-setup-xmake@v1
+      with:
+        xmake-version: latest
     - name: Build
       run: |
         xmake build
+      env:
+        GITHUB_SHA: ${{ steps.gitversion.outputs.sha }}
+        SWIFTLY_VERSION: ${{ steps.gitversion.outputs.fullSemVer }}
     - name: Upload plugin as artifact
       uses: actions/upload-artifact@v4
       with:
