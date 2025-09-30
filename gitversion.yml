@@ -2,16 +2,18 @@ mode: ContinuousDelivery
 branches:
   master:
     regex: ^master$
-    is-mainline: true
+    is-main-branch: true
+    is-release-branch: true
     increment: patch
     label: ''
-    prevent-increment-of-merged-branch-version: true
+    prevent-increment:
+      when-branch-merged: true
   beta:
     regex: ^beta$
     increment: patch
     label: beta
-    label-number-pattern: '[0-9]+'
     is-release-branch: false
+    is-main-branch: false
 ignore:
   sha: []
 merge-message-formats: {}

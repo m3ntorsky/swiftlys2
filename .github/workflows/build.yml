@@ -2,9 +2,6 @@ name: Build
 
 on: [workflow_dispatch]
 
-env:
-  XMAKE_ROOT: y
-
 jobs:
   build_linux:
     runs-on: ubuntu-latest
@@ -20,7 +17,9 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '8.0.x'
-    
+    - name: Fix LibGit2Sharp
+      run: |
+        git config --global --add safe.directory '*'
     - name: Setup GitVersion
       uses: gittools/actions/gitversion/setup@v4.1.0
       with:
