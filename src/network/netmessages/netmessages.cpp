@@ -27,7 +27,7 @@
 
 #include <map>
 
-SH_DECL_EXTERN8_void(IGameEventSystem, PostEventAbstract, SH_NOATTRIB, 0, CSplitScreenSlot, bool, int, const uint64*, INetworkMessageInternal*, const CNetMessage*, unsigned long, NetChannelBufType_t)
+SH_DECL_EXTERN8_void(IGameEventSystem, PostEventAbstract, SH_NOATTRIB, 0, CSplitScreenSlot, bool, int, const uint64_t*, INetworkMessageInternal*, const CNetMessage*, unsigned long, NetChannelBufType_t)
 SH_DECL_MANUALHOOK2(FilterMessage, 0, 0, 0, bool, CNetMessage*, INetChannel*);
 
 std::map<uint64_t, std::function<int(uint64_t*, int, void*)>> g_mServerMessageSendCallbacks;
@@ -75,7 +75,7 @@ bool CNetMessages::FilterMessage(CNetMessage* cMsg, INetChannel* netchan)
     RETURN_META_VALUE(MRES_IGNORED, true);
 }
 
-void CNetMessages::PostEvent(CSplitScreenSlot nSlot, bool bLocalOnly, int nClientCount, const uint64* clients, INetworkMessageInternal* pEvent, const CNetMessage* pData, unsigned long nSize, NetChannelBufType_t bufType)
+void CNetMessages::PostEvent(CSplitScreenSlot nSlot, bool bLocalOnly, int nClientCount, const uint64_t* clients, INetworkMessageInternal* pEvent, const CNetMessage* pData, unsigned long nSize, NetChannelBufType_t bufType)
 {
     int msgid = pEvent->GetNetMessageInfo()->m_MessageId;
     CNetMessage* msg = const_cast<CNetMessage*>(pData);
