@@ -38,13 +38,27 @@ jobs:
       uses: xmake-io/github-action-setup-xmake@v1
       with:
         xmake-version: latest
+    - name: Restore build cache
+      id: restore-cache
+      uses: actions/cache/restore@v4
+      with:
+        path: |
+          build
+        key: ${{ runner.os }}-build
     - name: Build
       run: |
         xmake f --cc=gcc-14 --cxx=g++-14
         xmake build
       env:
-        GITHUB_SHA: ${{ steps.gitversion.outputs.sha }}
-        SWIFTLY_VERSION: ${{ steps.gitversion.outputs.fullSemVer }}
+        GITHUB_SHA: ${{ steps.version_step.outputs.sha }}
+        SWIFTLY_VERSION: ${{ steps.version_step.outputs.fullSemVer }}
+    - name: Save cache
+      id: save-cache
+      uses: actions/cache/save@v4
+      with:
+        path: |
+          build
+        key: ${{ steps.restore-cache.outputs.cache-primary-key }}
     - name: Upload plugin as artifact
       uses: actions/upload-artifact@v4
       with:
