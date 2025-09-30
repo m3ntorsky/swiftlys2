@@ -47,7 +47,7 @@ jobs:
         key: ${{ runner.os }}-build
     - name: Build
       run: |
-        xmake f --cc=gcc-14 --cxx=g++-14
+        xmake f --cc=gcc-14 --cxx=g++-14 -y
         xmake build -y
       env:
         GITHUB_SHA: ${{ steps.version_step.outputs.sha }}
