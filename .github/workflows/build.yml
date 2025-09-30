@@ -6,7 +6,41 @@ env:
   XMAKE_ROOT: y
 
 jobs:
-  build_linux:
+  versioning:
+    runs-on: windows-latest
+    steps:
+    - name: Setup GitVersion
+      uses: gittools/actions/gitversion/setup@v4.1.0
+      with:
+        versionSpec: '6.3.x'
+    - name: Determine Version
+      id: version_step
+      uses: gittools/actions/gitversion/execute@v4.1.0
+    - name: Export
+      run: |
+        echo "fullSemVer=${{ steps.version_step.outputs.fullSemVer }}" >> "$GITHUB_OUTPUT"
+        echo "semVer=${{ steps.version_step.outputs.semVer }}" >> "$GITHUB_OUTPUT"
+        echo "informationalVersion=${{ steps.version_step.outputs.informationalVersion }}" >> "$GITHUB_OUTPUT"
+        echo "nuGetVersionV2=${{ steps.version_step.outputs.nuGetVersionV2 }}" >> "$GITHUB_OUTPUT"
+  managed:
+    needs: versioning
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+    - name: Build managed
+      run: |
+        cd managed
+        dotnet build -c Release -p:Version=${{ needs.versioning.outputs.fullSemVer }} -p:InformationalVersion=${{ needs.versioning.outputs.informationalVersion }} -p:FileVersion=${{ needs.versioning.outputs.semVer }}
+    - name: Upload plugin as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: swiftlys2_managed
+        path: managed/Build/Release
+  linux_core:
+    needs: versioning
     runs-on: ubuntu-latest
     container:
       image: registry.gitlab.steamos.cloud/steamrt/sniper/sdk
@@ -20,10 +54,6 @@ jobs:
       with:
         submodules: recursive
         fetch-depth: 0
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
     - name: Fix LibGit2Sharp
       run: |
         git config --global --add safe.directory '*'
