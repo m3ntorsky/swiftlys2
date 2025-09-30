@@ -27,6 +27,8 @@
 
 #include <regex>
 
+#include <fmt/format.h>
+
 const char* wws = " \t\n\r\f\v";
 
 std::map<std::string, std::string> terminalColors = {
@@ -277,7 +279,7 @@ int32_t genrand()
 
 std::string get_uuid()
 {
-    return std::format(
+    return fmt::format(
         "{:04x}{:04x}-{:04x}-{:04x}-{:04x}-{:04x}{:04x}{:04x}",
         (genrand() & 0xFFFF), (genrand() & 0xFFFF),
         (genrand() & 0xFFFF),

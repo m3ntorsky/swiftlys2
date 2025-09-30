@@ -35,6 +35,8 @@
 #include <api/shared/plat.h>
 #include <api/shared/string.h>
 
+#include <fmt/format.h>
+
 SwiftlyCore g_SwiftlyCore;
 InterfacesManager g_ifaceService;
 
@@ -48,7 +50,7 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     if (GetCurrentGame() == "unknown") {
         auto engine = g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER);
 
-        if (engine) logger->Error("Entrypoint", std::format("Unknown game detected. App ID: {}", engine->GetAppID()));
+        if (engine) logger->Error("Entrypoint", fmt::format("Unknown game detected. App ID: {}", engine->GetAppID()));
         else logger->Error("Entrypoint", "Unknown game detected. No engine interface available.");
 
         return false;
@@ -79,10 +81,10 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
         for (const auto& patch : patches) {
             if (gamedata->GetPatches()->Exists(patch)) {
                 gamedata->GetPatches()->Apply(patch);
-                logger->Info("Patching", std::format("Applied patch: {}", patch));
+                logger->Info("Patching", fmt::format("Applied patch: {}", patch));
             }
             else {
-                logger->Warning("Patching", std::format("Couldn't find patch: {}", patch));
+                logger->Warning("Patching", fmt::format("Couldn't find patch: {}", patch));
             }
         }
     }

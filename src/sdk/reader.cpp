@@ -18,6 +18,8 @@
 
 #include "schema.h"
 
+#include <fmt/format.h>
+
 static bool IsFieldNetworked(SchemaClassFieldData_t& field)
 {
     static auto networkEnabled = hash_32_fnv1a_const("MNetworkEnable");
@@ -100,7 +102,7 @@ std::string ReadFieldType(CSchemaType* field)
     else if (field->IsA<CSchemaType_FixedArray>())
     {
         auto fixed_array = field->ReinterpretAs<CSchemaType_FixedArray>();
-        return std::format("{}[{}]", ReadFieldType(fixed_array->m_pElementType), fixed_array->m_nElementCount);
+        return fmt::format("{}[{}]", ReadFieldType(fixed_array->m_pElementType), fixed_array->m_nElementCount);
     }
     else if (field->IsA<CSchemaType_Atomic>())
     {

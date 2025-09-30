@@ -20,6 +20,8 @@
 
 #include <api/shared/string.h>
 
+#include <fmt/format.h>
+
 #include <scripting/scripting.h>
 
 typedef IGameEventListener2* (*GetLegacyGameEventListener)(CPlayerSlot slot);
@@ -233,7 +235,7 @@ void Bridge_GameEvents_FireEventToClient(void* event, int playerid)
 
     if (!eventmanager->GetGameEventManager()->FindListener(listener, ((IGameEvent*)event)->GetName()))
     {
-        return crashreporter->ReportPreventionIncident("GameEvents", std::format("Tried to fire event '{}' but the client isn't listening to this event.", ((IGameEvent*)event)->GetName()));
+        return crashreporter->ReportPreventionIncident("GameEvents", fmt::format("Tried to fire event '{}' but the client isn't listening to this event.", ((IGameEvent*)event)->GetName()));
     }
 
     listener->FireGameEvent((IGameEvent*)event);

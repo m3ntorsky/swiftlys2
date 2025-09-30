@@ -36,6 +36,8 @@
 #include <list>
 #include <nlohmann/json.hpp>
 
+#include <fmt/format.h>
+
 using json = nlohmann::json;
 
 SH_DECL_EXTERN2(IGameEventManager2, FireEvent, SH_NOATTRIB, 0, bool, IGameEvent*, bool);
@@ -144,13 +146,13 @@ int CEventManager::LoadEventsFromFile(const char* filePath, bool searchAll)
         g_sDumpedFiles.insert(filePath);
 
         auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-        logger->Info("Game Events", std::format("Dumping game events from file: '{}'...\n", filePath));
+        logger->Info("Game Events", fmt::format("Dumping game events from file: '{}'...\n", filePath));
 
         auto filesystem = g_ifaceService.FetchInterface<IFileSystem>(FILESYSTEM_INTERFACE_VERSION);
 
-        filesystem->CopyAFile(filePath, "GAME", GeneratePath(std::format("addons/swiftly/gamedata/cs2/gameevents{}", replace(filePath, Files::getBase(filePath), ""))).c_str(), false);
+        filesystem->CopyAFile(filePath, "GAME", GeneratePath(fmt::format("addons/swiftly/gamedata/cs2/gameevents{}", replace(filePath, Files::getBase(filePath), ""))).c_str(), false);
 
-        logger->Info("Game Events", std::format("Dumped game events from file '{}'.\n", filePath));
+        logger->Info("Game Events", fmt::format("Dumped game events from file '{}'.\n", filePath));
     }
 */
 
@@ -249,7 +251,7 @@ void CEventManager::RegisterGameEventListener(std::string event_name)
             g_gameEventManager->AddListener(this, event_name.c_str(), true);
 
         auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-        logger->Debug("Game Events", std::format("Registered listener for event '{}'.\n", event_name));
+        logger->Debug("Game Events", fmt::format("Registered listener for event '{}'.\n", event_name));
     }
 }
 

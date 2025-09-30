@@ -29,13 +29,15 @@
 
 #include <core/bridge/metamod.h>
 
+#include <fmt/format.h>
+
 int Bridge_EngineHelpers_GetServerIP(char* out)
 {
     static std::string s;
     if (!g_SteamAPI.SteamGameServer()) s = "0.0.0.0";
     else {
         auto ip_addr = g_SteamAPI.SteamGameServer()->GetPublicIP();
-        s = std::format("{}.{}.{}.{}", (ip_addr.m_unIPv4 >> 24) & 0xFF, (ip_addr.m_unIPv4 >> 16) & 0xFF, (ip_addr.m_unIPv4 >> 8) & 0xFF, ip_addr.m_unIPv4 & 0xFF);
+        s = fmt::format("{}.{}.{}.{}", (ip_addr.m_unIPv4 >> 24) & 0xFF, (ip_addr.m_unIPv4 >> 16) & 0xFF, (ip_addr.m_unIPv4 >> 8) & 0xFF, ip_addr.m_unIPv4 & 0xFF);
     }
 
     if (out != nullptr) strcpy(out, s.c_str());
@@ -74,8 +76,8 @@ bool Bridge_EngineHelpers_IsMapValid(const char* map_name)
 
     return (
         engine->IsMapValid(map_name) ||
-        Files::ExistsPath(std::format("{}steamapps/workshop/content/730/{}/{}.vpk", s_sWorkingDir.Get(), map_name, map_name)) ||
-        Files::ExistsPath(std::format("{}steamapps/workshop/content/730/{}/{}_dir.vpk", s_sWorkingDir.Get(), map_name, map_name))
+        Files::ExistsPath(fmt::format("{}steamapps/workshop/content/730/{}/{}.vpk", s_sWorkingDir.Get(), map_name, map_name)) ||
+        Files::ExistsPath(fmt::format("{}steamapps/workshop/content/730/{}/{}_dir.vpk", s_sWorkingDir.Get(), map_name, map_name))
     );
 }
 

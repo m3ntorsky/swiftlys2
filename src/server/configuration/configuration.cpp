@@ -26,6 +26,8 @@
 
 #include <core/entrypoint.h>
 
+#include <fmt>
+
 #include <nlohmann/json.hpp>
 #include <variant>
 #include <type_traits>
@@ -282,7 +284,7 @@ void RegisterConfigurationVector(bool& wasCreated, json& document, std::string c
             if (!jsonDoc[i].is_string())
             {
                 auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-                logger->Error("Configuration", std::format("The field \"{}[{}]\" is not a string in {}.json.", key, i, configFilePath));
+                logger->Error("Configuration", fmt::format("The field \"{}[{}]\" is not a string in {}.json.", key, i, configFilePath));
                 continue;
             }
             result.push_back(jsonDoc[i].get<std::string>());
@@ -292,7 +294,7 @@ void RegisterConfigurationVector(bool& wasCreated, json& document, std::string c
             if (!jsonDoc[i].is_string())
             {
                 auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-                logger->Error("Configuration", std::format("The field \"{}[{}]\" is not a string in {}.json.", key, i, configFilePath));
+                logger->Error("Configuration", fmt::format("The field \"{}[{}]\" is not a string in {}.json.", key, i, configFilePath));
                 continue;
             }
             result.push_back(jsonDoc[i].get<std::string>().c_str());
@@ -302,7 +304,7 @@ void RegisterConfigurationVector(bool& wasCreated, json& document, std::string c
             if (!jsonDoc[i].is_boolean())
             {
                 auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-                logger->Error("Configuration", std::format("The field \"{}[{}]\" is not a boolean in {}.json.", key, i, configFilePath));
+                logger->Error("Configuration", fmt::format("The field \"{}[{}]\" is not a boolean in {}.json.", key, i, configFilePath));
                 continue;
             }
             result.push_back(jsonDoc[i].get<bool>());
@@ -312,7 +314,7 @@ void RegisterConfigurationVector(bool& wasCreated, json& document, std::string c
             if (!jsonDoc[i].is_number_unsigned())
             {
                 auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-                logger->Error("Configuration", std::format("The field \"{}[{}]\" is not an unsigned integer (64-bit) in {}.json.", key, i, configFilePath));
+                logger->Error("Configuration", fmt::format("The field \"{}[{}]\" is not an unsigned integer (64-bit) in {}.json.", key, i, configFilePath));
                 continue;
             }
             result.push_back(jsonDoc[i].get<uint64_t>());
@@ -322,7 +324,7 @@ void RegisterConfigurationVector(bool& wasCreated, json& document, std::string c
             if (!jsonDoc[i].is_number_unsigned())
             {
                 auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-                logger->Error("Configuration", std::format("The field \"{}[{}]\" is not an unsigned integer (32-bit) in {}.json.", key, i, configFilePath));
+                logger->Error("Configuration", fmt::format("The field \"{}[{}]\" is not an unsigned integer (32-bit) in {}.json.", key, i, configFilePath));
                 continue;
             }
             result.push_back(jsonDoc[i].get<uint32_t>());
@@ -332,7 +334,7 @@ void RegisterConfigurationVector(bool& wasCreated, json& document, std::string c
             if (!jsonDoc[i].is_number_unsigned())
             {
                 auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-                logger->Error("Configuration", std::format("The field \"{}[{}]\" is not an unsigned integer (16-bit) in {}.json.", key, i, configFilePath));
+                logger->Error("Configuration", fmt::format("The field \"{}[{}]\" is not an unsigned integer (16-bit) in {}.json.", key, i, configFilePath));
                 continue;
             }
             result.push_back(static_cast<uint16_t>(jsonDoc[i].get<uint32_t>()));
@@ -342,7 +344,7 @@ void RegisterConfigurationVector(bool& wasCreated, json& document, std::string c
             if (!jsonDoc[i].is_number_unsigned())
             {
                 auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-                logger->Error("Configuration", std::format("The field \"{}[{}]\" is not an unsigned integer (8-bit) in {}.json.", key, i, configFilePath));
+                logger->Error("Configuration", fmt::format("The field \"{}[{}]\" is not an unsigned integer (8-bit) in {}.json.", key, i, configFilePath));
                 continue;
             }
             result.push_back(static_cast<uint8_t>(jsonDoc[i].get<uint32_t>()));
@@ -352,7 +354,7 @@ void RegisterConfigurationVector(bool& wasCreated, json& document, std::string c
             if (!jsonDoc[i].is_number_integer())
             {
                 auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-                logger->Error("Configuration", std::format("The field \"{}[{}]\" is not an integer (64-bit) in {}.json.", key, i, configFilePath));
+                logger->Error("Configuration", fmt::format("The field \"{}[{}]\" is not an integer (64-bit) in {}.json.", key, i, configFilePath));
                 continue;
             }
             result.push_back(jsonDoc[i].get<int64_t>());
@@ -362,7 +364,7 @@ void RegisterConfigurationVector(bool& wasCreated, json& document, std::string c
             if (!jsonDoc[i].is_number_integer())
             {
                 auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-                logger->Error("Configuration", std::format("The field \"{}[{}]\" is not an integer (32-bit) in {}.json.", key, i, configFilePath));
+                logger->Error("Configuration", fmt::format("The field \"{}[{}]\" is not an integer (32-bit) in {}.json.", key, i, configFilePath));
                 continue;
             }
             result.push_back(jsonDoc[i].get<int32_t>());
@@ -372,7 +374,7 @@ void RegisterConfigurationVector(bool& wasCreated, json& document, std::string c
             if (!jsonDoc[i].is_number_integer())
             {
                 auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-                logger->Error("Configuration", std::format("The field \"{}[{}]\" is not an integer (16-bit) in {}.json.", key, i, configFilePath));
+                logger->Error("Configuration", fmt::format("The field \"{}[{}]\" is not an integer (16-bit) in {}.json.", key, i, configFilePath));
                 continue;
             }
             result.push_back(static_cast<int16_t>(jsonDoc[i].get<int32_t>()));
@@ -382,7 +384,7 @@ void RegisterConfigurationVector(bool& wasCreated, json& document, std::string c
             if (!jsonDoc[i].is_number_integer())
             {
                 auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-                logger->Error("Configuration", std::format("The field \"{}[{}]\" is not an integer (8-bit) in {}.json.", key, i, configFilePath));
+                logger->Error("Configuration", fmt::format("The field \"{}[{}]\" is not an integer (8-bit) in {}.json.", key, i, configFilePath));
                 continue;
             }
             result.push_back(static_cast<int8_t>(jsonDoc[i].get<int32_t>()));
@@ -392,7 +394,7 @@ void RegisterConfigurationVector(bool& wasCreated, json& document, std::string c
             if (!jsonDoc[i].is_number_float())
             {
                 auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-                logger->Error("Configuration", std::format("The field \"{}[{}]\" is not a float in {}.json.", key, i, configFilePath));
+                logger->Error("Configuration", fmt::format("The field \"{}[{}]\" is not a float in {}.json.", key, i, configFilePath));
                 continue;
             }
             result.push_back(jsonDoc[i].get<float>());
@@ -402,7 +404,7 @@ void RegisterConfigurationVector(bool& wasCreated, json& document, std::string c
             if (!jsonDoc[i].is_number_float())
             {
                 auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-                logger->Error("Configuration", std::format("The field \"{}[{}]\" is not a double in {}.json.", key, i, configFilePath));
+                logger->Error("Configuration", fmt::format("The field \"{}[{}]\" is not a double in {}.json.", key, i, configFilePath));
                 continue;
             }
             result.push_back(jsonDoc[i].get<double>());
@@ -463,7 +465,7 @@ bool Configuration::Load()
         RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "PatchesToPerform", {}, true, " ");
 
         if (g_SwiftlyCore.GetCurrentGame() == "cs2") RegisterConfiguration(wasEdited, config_json, "core", "core", "CS2ServerGuidelines", "https://blog.counter-strike.net/index.php/server_guidelines/");
-        RegisterConfiguration(wasEdited, config_json, "core", "core", std::format("Follow{}ServerGuidelines", str_toupper(g_SwiftlyCore.GetCurrentGame())), true);
+        RegisterConfiguration(wasEdited, config_json, "core", "core", fmt::format("Follow{}ServerGuidelines", str_toupper(g_SwiftlyCore.GetCurrentGame())), true);
 
         RegisterConfiguration(wasEdited, config_json, "core", "core", "Language", "en");
         RegisterConfiguration(wasEdited, config_json, "core", "core", "UsePlayerLanguage", true);
@@ -520,7 +522,7 @@ bool Configuration::Load()
         }
     }
     catch (json::parse_error& e) {
-        logger->Error("Configuration", std::format("Failed to parse the core configuration ('{}configs/core.jsonc').\nError: {}.\n", g_SwiftlyCore.GetCorePath(), e.what()));
+        logger->Error("Configuration", fmt::format("Failed to parse the core configuration ('{}configs/core.jsonc').\nError: {}.\n", g_SwiftlyCore.GetCorePath(), e.what()));
     }
 
     m_bLoaded = true;

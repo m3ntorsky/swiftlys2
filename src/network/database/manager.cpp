@@ -27,6 +27,8 @@
 
 #include <nlohmann/json.hpp>
 
+#include <fmt/format.h>
+
 using json = nlohmann::json;
 
 void CDatabaseManager::Initialize()
@@ -37,7 +39,7 @@ void CDatabaseManager::Initialize()
     if (j.empty() || !j.contains("default_connection") || !j.contains("connections"))
     {
         auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-        logger->Error("Database Manager", std::format("Failed to load database credentials. The '{}' file is missing or invalid.\n", file_path));
+        logger->Error("Database Manager", fmt::format("Failed to load database credentials. The '{}' file is missing or invalid.\n", file_path));
         return;
     }
 
@@ -48,7 +50,7 @@ void CDatabaseManager::Initialize()
     }
 
     auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-    logger->Info("Database Manager", std::format("Loaded {} database credentials. (Default Connection: {})", m_mConnectionCredentials.size(), m_sDefaultConnection));
+    logger->Info("Database Manager", fmt::format("Loaded {} database credentials. (Default Connection: {})", m_mConnectionCredentials.size(), m_sDefaultConnection));
 }
 
 std::string CDatabaseManager::GetDefaultConnection()

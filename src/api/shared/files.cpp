@@ -24,17 +24,17 @@
 #include <time.h>
 #include "string.h"
 
-#include <format>
+#include <fmt/format.h>
 #include <filesystem>
 
 std::string GeneratePath(std::string path)
 {
-    return std::format("{}{}csgo{}{}", Plat_GetGameDirectory(), WIN_LINUX("\\", "/"), WIN_LINUX("\\", "/"), path);
+    return fmt::format("{}{}csgo{}{}", Plat_GetGameDirectory(), WIN_LINUX("\\", "/"), WIN_LINUX("\\", "/"), path);
 }
 
 std::string GetRelativePath(std::string path)
 {
-    std::string str = std::format("{}{}csgo{}", Plat_GetGameDirectory(), WIN_LINUX("\\", "/"), WIN_LINUX("\\", "/"));
+    std::string str = fmt::format("{}{}csgo{}", Plat_GetGameDirectory(), WIN_LINUX("\\", "/"), WIN_LINUX("\\", "/"));
     return replace(path, str, "");
 }
 
