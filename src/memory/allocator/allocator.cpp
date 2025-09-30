@@ -17,6 +17,7 @@
  ************************************************************************************************/
 
 #include "allocator.h"
+#include <cstring>
 
 void* MemoryAllocator::Alloc(uint64_t size)
 {

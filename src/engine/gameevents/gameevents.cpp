@@ -33,7 +33,7 @@
 
 #include <map>
 #include <stack>
-
+#include <list>
 #include <nlohmann/json.hpp>
 
 using json = nlohmann::json;

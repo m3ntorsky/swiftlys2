@@ -162,9 +162,9 @@ void CEntSystem::AcceptInput(void* pEntity, const char* input, void* activator, 
     else if (std::holds_alternative<uint32_t>(value))
         var = std::get<uint32_t>(value);
     else if (std::holds_alternative<int64_t>(value))
-        var = std::get<int64_t>(value);
+        var = (int64)std::get<int64_t>(value);
     else if (std::holds_alternative<uint64_t>(value))
-        var = std::get<uint64_t>(value);
+        var = (uint64)std::get<uint64_t>(value);
     else if (std::holds_alternative<float>(value))
         var = std::get<float>(value);
     else if (std::holds_alternative<double>(value))
@@ -189,9 +189,9 @@ void CEntSystem::AddEntityIOEvent(void* pEntity, const char* input, void* activa
     else if (std::holds_alternative<uint32_t>(value))
         var = std::get<uint32_t>(value);
     else if (std::holds_alternative<int64_t>(value))
-        var = std::get<int64_t>(value);
+        var = (int64)std::get<int64_t>(value);
     else if (std::holds_alternative<uint64_t>(value))
-        var = std::get<uint64_t>(value);
+        var = (uint64)std::get<uint64_t>(value);
     else if (std::holds_alternative<float>(value))
         var = std::get<float>(value);
     else if (std::holds_alternative<double>(value))

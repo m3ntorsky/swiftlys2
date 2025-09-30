@@ -34,6 +34,13 @@
 #define NEW_CVAR(data_type, default_value) \
     cvarptr = (void*)(new CConVar<data_type>(cvar_name.c_str(), flags, help_message, std::get<data_type>(defaultValue)))
 
+#define NEW_CVAR_INT64(default_value) \
+    cvarptr = (void*)(new CConVar<int64>(cvar_name.c_str(), flags, help_message, (int64)std::get<int64_t>(defaultValue)))
+
+#define NEW_CVAR_UINT64(default_value) \
+    cvarptr = (void*)(new CConVar<uint64>(cvar_name.c_str(), flags, help_message, (uint64)std::get<uint64_t>(defaultValue)))
+
+
 #define FREE_CVAR(data_type) \
     delete (CConVar<data_type>*)cvarptr;
 
@@ -93,27 +100,27 @@ void CConvarManager::CreateConvar(std::string cvar_name, EConVarType type, uint6
     void* cvarptr = nullptr;
     if (type == EConVarType_Int16)
     {
-        NEW_CVAR(int16_t, 0);
+        NEW_CVAR(int16, 0);
     }
     else if (type == EConVarType_UInt16)
     {
-        NEW_CVAR(uint16_t, 0);
+        NEW_CVAR(uint16, 0);
     }
     else if (type == EConVarType_UInt32)
     {
-        NEW_CVAR(uint32_t, 0);
+        NEW_CVAR(uint32, 0);
     }
     else if (type == EConVarType_Int32)
     {
-        NEW_CVAR(int32_t, 0);
+        NEW_CVAR(int32, 0);
     }
     else if (type == EConVarType_UInt64)
     {
-        NEW_CVAR(uint64_t, 0);
+        NEW_CVAR_UINT64(0);
     }
     else if (type == EConVarType_Int64)
     {
-        NEW_CVAR(int64_t, 0);
+        NEW_CVAR_INT64(0);
     }
     else if (type == EConVarType_Bool)
     {
@@ -279,11 +286,20 @@ ConvarValue CConvarManager::GetConvarValue(std::string cvar_name)
     }
     else if (cvar.GetType() == EConVarType_UInt64)
     {
-        return cvar.GetAs<uint64_t>(server);
+        /*
+        
+        unsigned long long long long long long long long long long long long long long long long long long
+        fuck you linux fuck you gcc
+
+        * fuck sourcehook too, almost forget about you
+
+
+        */
+        return (uint64_t)cvar.GetAs<uint64>(server);
     }
     else if (cvar.GetType() == EConVarType_Int64)
     {
-        return cvar.GetAs<int64_t>(server);
+        return (int64_t)cvar.GetAs<int64>(server);
     }
     else if (cvar.GetType() == EConVarType_Bool)
     {
