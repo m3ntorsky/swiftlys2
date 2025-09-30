@@ -26,7 +26,7 @@
 
 #include <core/entrypoint.h>
 
-#include <fmt>
+#include <fmt/format.h>
 
 #include <nlohmann/json.hpp>
 #include <variant>
