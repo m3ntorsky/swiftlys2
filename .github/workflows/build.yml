@@ -15,10 +15,6 @@ jobs:
       run: |
         apt-get update
         apt-get install -y g++-11
-        update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 50
-        update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 50
-        update-alternatives --set gcc /usr/bin/gcc-11
-        update-alternatives --set g++ /usr/bin/g++-11
         gcc --version
         g++ --version
     - name: Checkout repository and submodules
@@ -46,6 +42,7 @@ jobs:
         xmake-version: latest
     - name: Build
       run: |
+        xmake f --cc=gcc-11 --cxx=g++-11
         xmake build
       env:
         GITHUB_SHA: ${{ steps.gitversion.outputs.sha }}
