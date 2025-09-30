@@ -99,6 +99,10 @@ jobs:
       with:
         submodules: recursive
         fetch-depth: 0
+    - name: Setup xmake
+      uses: xmake-io/github-action-setup-xmake@v1
+      with:
+        xmake-version: latest
     - name: Restore build cache
       id: restore-cache
       uses: actions/cache/restore@v4
@@ -108,7 +112,6 @@ jobs:
         key: ${{ runner.os }}-build
     - name: Build
       run: |
-        xmake f --cc=gcc-14 --cxx=g++-14 -y
         xmake build -y
       env:
         SWIFTLY_VERSION: ${{ needs.versioning.outputs.fullSemVer }}
