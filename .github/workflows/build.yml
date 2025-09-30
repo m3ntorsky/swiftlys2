@@ -7,7 +7,7 @@ env:
 
 jobs:
   versioning:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     outputs:
       fullSemVer: ${{ steps.version_step.outputs.fullSemVer }}
       semVer: ${{ steps.version_step.outputs.semVer }}
@@ -26,7 +26,7 @@ jobs:
       uses: gittools/actions/gitversion/execute@v4.1.0
   managed:
     needs: versioning
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
@@ -99,4 +99,39 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: swiftlys2_linux
+        path: build/package/addons
+
+  windows_core:
+    needs: versioning
+    runs-on: windows-latest
+    steps:
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+        fetch-depth: 0
+    - name: Restore build cache
+      id: restore-cache
+      uses: actions/cache/restore@v4
+      with:
+        path: |
+          build
+        key: ${{ runner.os }}-build
+    - name: Build
+      run: |
+        xmake f --cc=gcc-14 --cxx=g++-14 -y
+        xmake build -y
+      env:
+        SWIFTLY_VERSION: ${{ needs.versioning.outputs.fullSemVer }}
+    - name: Save cache
+      id: save-cache
+      uses: actions/cache/save@v4
+      with:
+        path: |
+          build
+        key: ${{ steps.restore-cache.outputs.cache-primary-key }}
+    - name: Upload plugin as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: swiftlys2_windows
         path: build/package/addons
