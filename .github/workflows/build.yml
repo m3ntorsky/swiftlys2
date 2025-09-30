@@ -8,6 +8,10 @@ env:
 jobs:
   versioning:
     runs-on: windows-latest
+    outputs:
+      fullSemVer: ${{ steps.version_step.outputs.fullSemVer }}
+      semVer: ${{ steps.version_step.outputs.semVer }}
+      informationalVersion: ${{ steps.version_step.outputs.informationalVersion }}
     steps:
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
@@ -20,12 +24,6 @@ jobs:
     - name: Determine Version
       id: version_step
       uses: gittools/actions/gitversion/execute@v4.1.0
-    - name: Export
-      run: |
-        echo "fullSemVer=${{ steps.version_step.outputs.fullSemVer }}" >> "$GITHUB_OUTPUT"
-        echo "semVer=${{ steps.version_step.outputs.semVer }}" >> "$GITHUB_OUTPUT"
-        echo "informationalVersion=${{ steps.version_step.outputs.informationalVersion }}" >> "$GITHUB_OUTPUT"
-        echo "nuGetVersionV2=${{ steps.version_step.outputs.nuGetVersionV2 }}" >> "$GITHUB_OUTPUT"
   managed:
     needs: versioning
     runs-on: windows-latest
