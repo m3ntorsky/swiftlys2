@@ -11,12 +11,10 @@ jobs:
     container:
       image: registry.gitlab.steamos.cloud/steamrt/sniper/sdk
     steps:
-    - name: Set default to g++-11
+    - name: Update gcc
       run: |
         apt-get update
-        apt-get install -y g++-11
-        gcc --version
-        g++ --version
+        apt-get install -y gcc-14 g++-14
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
       with:
@@ -42,7 +40,7 @@ jobs:
         xmake-version: latest
     - name: Build
       run: |
-        xmake f --cc=gcc-11 --cxx=g++-11
+        xmake f --cc=gcc-14 --cxx=g++-14
         xmake build
       env:
         GITHUB_SHA: ${{ steps.gitversion.outputs.sha }}
