@@ -158,6 +158,7 @@ jobs:
         mkdir -p ./linux-runtimes
         cd ./linux-runtimes
         wget https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.20/dotnet-runtime-8.0.20-linux-x64.tar.gz
+        mkdir -p content
         tar -xzf dotnet-runtime-8.0.20-linux-x64.tar.gz -C content
         cd ..
         mkdir -p ./windows-runtimes
