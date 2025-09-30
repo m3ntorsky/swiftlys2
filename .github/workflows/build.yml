@@ -11,10 +11,10 @@ jobs:
     container:
       image: registry.gitlab.steamos.cloud/steamrt/sniper/sdk
     steps:
-    - name: Update gcc
+    - name: Install dependencies
       run: |
         apt-get update
-        apt-get install -y gcc-14 g++-14
+        apt install libreadline-dev
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
       with:
