@@ -18,6 +18,8 @@
 
 #include "entitysystem.h"
 
+#include <cstdint>
+
 #include <core/bridge/metamod.h>
 
 #include <public/entity2/entitykeyvalues.h>
