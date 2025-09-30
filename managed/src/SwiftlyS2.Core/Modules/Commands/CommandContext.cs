@@ -1,3 +1,4 @@
+using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared.Commands;
 using SwiftlyS2.Shared.Services;
@@ -20,7 +21,7 @@ internal class CommandContext : ICommandContext {
     if (IsSentByPlayer) {
       Sender?.SendMessage(MessageType.Chat, message);
     } else {
-      Console.WriteLine(message);
+      NativeEngineHelpers.SendMessageToConsole(message);
     }
    }
 
