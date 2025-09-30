@@ -114,6 +114,7 @@ jobs:
         key: ${{ runner.os }}-build
     - name: Build
       run: |
+        xmake f --ccache=y
         xmake build -y
       env:
         SWIFTLY_VERSION: ${{ needs.versioning.outputs.fullSemVer }}
@@ -169,6 +170,7 @@ jobs:
       
     - name: Create package
       run: |
+        ls -la ./managed
         cp -r managed/SwiftlyS2 ${{ env.LINUX_FOLDER }}/swiftlys2/bin/managed
         cp -r managed/SwiftlyS2 ${{ env.WINDOWS_FOLDER }}/swiftlys2/bin/managed
 
