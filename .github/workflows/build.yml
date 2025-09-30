@@ -2,15 +2,14 @@ name: Build
 
 on: [workflow_dispatch]
 
-# env:
-#   XMAKE_ROOT: y
+env:
+  XMAKE_ROOT: y
 
 jobs:
   build_linux:
     runs-on: ubuntu-latest
     container:
       image: registry.gitlab.steamos.cloud/steamrt/sniper/sdk
-      options: --user 1001:1001
     steps:
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
