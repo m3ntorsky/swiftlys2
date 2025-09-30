@@ -44,7 +44,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: swiftlys2_managed
-        path: managed/Build/Release
+        path: managed/build/Release
   linux_core:
     needs: versioning
     runs-on: ubuntu-latest
