@@ -48,7 +48,7 @@ jobs:
     - name: Build
       run: |
         xmake f --cc=gcc-14 --cxx=g++-14
-        xmake build
+        xmake build -y
       env:
         GITHUB_SHA: ${{ steps.version_step.outputs.sha }}
         SWIFTLY_VERSION: ${{ steps.version_step.outputs.fullSemVer }}
