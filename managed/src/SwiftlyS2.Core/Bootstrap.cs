@@ -21,6 +21,7 @@ internal static class Bootstrap {
     ServiceCollection services = new ServiceCollection();
 
     services.AddProfileService();
+    services.AddConfiguration();
     services.AddConfigurationService();
     services.AddTestService();
     services.AddRootDirService();

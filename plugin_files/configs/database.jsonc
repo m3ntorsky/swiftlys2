@@ -1,0 +1,6 @@
+{
+    "default_connection": "host",
+    "connections": {
+        "host": "mysql://<username>:<password>@<host>:<port>/<database>"
+    }
+}

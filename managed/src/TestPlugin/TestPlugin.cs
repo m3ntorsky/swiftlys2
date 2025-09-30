@@ -55,6 +55,7 @@ public class TestPlugin : BasePlugin {
       .InitializeJsonWithModel<TestConfig>("test.jsonc", "Main")
       .Configure((builder) => {
         builder.AddJsonFile("test.jsonc", optional: false, reloadOnChange: true);
+        // builder.AddYamlFile("test.yaml", optional: false, reloadOnChange: true);
       });
 
     ServiceCollection services = new();
@@ -282,7 +283,7 @@ public class TestPlugin : BasePlugin {
 
   [Command("tt4")]
   public void TestCommand4(ICommandContext context) {
-    Console.WriteLine(_config.CurrentValue.Age);
+    Console.WriteLine(Core.Permission.PlayerHasPermission(7656, context.Args[0]));
   }
 
   [GameEventHandler(HookMode.Pre)]
