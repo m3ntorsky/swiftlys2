@@ -11,6 +11,14 @@ jobs:
     container:
       image: registry.gitlab.steamos.cloud/steamrt/sniper/sdk
     steps:
+    - name: Set default to g++-11
+      run: |
+        update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 50
+        update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-11 50
+        update-alternatives --set gcc /usr/bin/gcc-11
+        update-alternatives --set g++ /usr/bin/g++-11
+        gcc --version
+        g++ --version
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
       with:

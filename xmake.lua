@@ -1,6 +1,8 @@
 set_project("swiftlys2")
 set_version("1.0.0")
 
+set_languages("c++20")
+
 add_rules("mode.debug", "mode.release")
 
 add_includedirs("include")
