@@ -60,16 +60,6 @@ jobs:
       with:
         submodules: recursive
         fetch-depth: 0
-    - name: Fix LibGit2Sharp
-      run: |
-        git config --global --add safe.directory '*'
-    - name: Setup GitVersion
-      uses: gittools/actions/gitversion/setup@v4.1.0
-      with:
-        versionSpec: '6.3.x'
-    - name: Determine Version
-      id: version_step
-      uses: gittools/actions/gitversion/execute@v4.1.0
     - name: Setup xmake
       uses: xmake-io/github-action-setup-xmake@v1
       with:
@@ -86,8 +76,7 @@ jobs:
         xmake f --cc=gcc-14 --cxx=g++-14 -y
         xmake build -y
       env:
-        GITHUB_SHA: ${{ steps.version_step.outputs.sha }}
-        SWIFTLY_VERSION: ${{ steps.version_step.outputs.fullSemVer }}
+        SWIFTLY_VERSION: ${{ needs.versioning.outputs.fullSemVer }}
     - name: Save cache
       id: save-cache
       uses: actions/cache/save@v4
