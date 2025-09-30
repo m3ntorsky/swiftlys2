@@ -27,8 +27,8 @@ SwiftlyS2 is a powerful scripting framework for Source 2 games, built in C++ wit
 
 ### Prerequisites
 
-- **Windows**: Visual Studio 2026 with C++ and .NET workloads
-- **Linux**: GCC 11+ and .NET 10.0 SDK
+- **Windows**: Visual Studio 2022 with C++ and .NET workloads
+- **Linux**: GCC 11+ and .NET 8.0 SDK
 - **XMake**
 
 ### Building SwiftlyS2
