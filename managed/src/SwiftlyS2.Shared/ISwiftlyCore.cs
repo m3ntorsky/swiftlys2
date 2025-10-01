@@ -126,4 +126,9 @@ public interface ISwiftlyCore {
   /// Registrator service.
   /// </summary>
   public IRegistratorService Registrator { get; }
+
+  /// <summary>
+  /// Gets the file path to the plugin directory.
+  /// </summary>
+  public string PluginPath { get; }
 }

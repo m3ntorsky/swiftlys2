@@ -59,9 +59,11 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public Localizer Localizer { get; init; }
   public PermissionManager PermissionManager { get; init; }
   public RegistratorService RegistratorService { get; init; }
+  public string ContextBasePath { get; init; }
   public SwiftlyCore(string contextId, string contextBaseDirectory, PluginManifest? pluginManifest, Type contextType, IServiceProvider coreProvider) {
 
     CoreContext id = new(contextId, contextBaseDirectory, pluginManifest);
+    ContextBasePath = contextBaseDirectory;
 
     ServiceCollection services = new();
 
@@ -178,4 +180,5 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   ILocalizer ISwiftlyCore.Localizer => Localizer;
   IPermissionManager ISwiftlyCore.Permission => PermissionManager;
   IRegistratorService ISwiftlyCore.Registrator => RegistratorService;
+  string ISwiftlyCore.PluginPath => ContextBasePath;
 }
