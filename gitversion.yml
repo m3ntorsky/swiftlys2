@@ -11,6 +11,7 @@ branches:
     tag: beta
     is-release-branch: false
     is-mainline: false
+    prevent-increment-of-merged-branch: true
     source-branches: [ master ]
 ignore:
   sha: []
