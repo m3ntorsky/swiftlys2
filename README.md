@@ -81,7 +81,7 @@ public partial class PluginClassName : BasePlugin {
 
   public override void Load(bool hotReload)
   {
-    Console.WriteLine("Hello World!!");
+    Console.WriteLine("Hello World!");
     // Check examples folder for more information. Don't forget to delete the folder after reading.
   }
 
