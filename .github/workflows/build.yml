@@ -1,6 +1,6 @@
 name: Build
 
-on: [push, workflow_dispatch]
+on: [push, workflow_dispatch, pull_request]
 
 env:
   XMAKE_ROOT: y
@@ -199,6 +199,7 @@ jobs:
         cp -r windows-runtimes/content/ ${{ env.WINDOWS_FOLDER }}-with-runtimes/swiftlys2/bin/managed/dotnet
 
     - name: Upload package
+      if: ${{ github.event_name == 'push' }}
       uses: actions/upload-artifact@v4
       with:
         name: swiftlys2-package-${{ needs.versioning.outputs.fullSemVer }}
