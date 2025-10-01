@@ -11,7 +11,7 @@ branches:
     tag: beta
     is-release-branch: false
     is-mainline: false
-    source-branches: [ master, beta ]
+    source-branches: [ master ]
 ignore:
   sha: []
 merge-message-formats: {}
