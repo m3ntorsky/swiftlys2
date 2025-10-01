@@ -24,6 +24,8 @@
 
 #include <public/eiface.h>
 #include <api/interfaces/manager.h>
+#include <api/shared/files.h>
+#include <api/shared/plat.h>
 
 IGameDataOffsets* GameDataManager::GetOffsets()
 {
@@ -44,10 +46,8 @@ IGameDataPatches* GameDataManager::GetPatches()
 }
 
 DynLibUtils::CModule DetermineModuleByLibrary(std::string library) {
-    if (library == "server")
-        return DynLibUtils::CModule(g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL));
-    else if (library == "engine2")
-        return DynLibUtils::CModule(g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER));
+    if (library == "server" || library == "client" || library == "matchmaking")
+        return DynLibUtils::CModule(GeneratePath(std::string("bin/") + WIN_LINUX("win64", "linuxsteamrt64") + "/" + library + WIN_LINUX(".dll", ".so")));
     else
-        return DynLibUtils::CModule(library);
+        return DynLibUtils::CModule(GeneratePath(std::string("../bin/") + WIN_LINUX("win64", "linuxsteamrt64") + "/" + library + WIN_LINUX(".dll", ".so")));
 }
