@@ -264,5 +264,5 @@ jobs:
           release/swiftlys2-linux-with-runtimes-${{ needs.versioning.outputs.fullSemVer }}.zip
           release/swiftlys2-windows-with-runtimes-${{ needs.versioning.outputs.fullSemVer }}.zip
         prerelease: ${{ needs.versioning.outputs.preReleaseLabel != '' }}
-        name: Release v${{ needs.versioning.outputs.fullSemVer }}
+        title: Release v${{ needs.versioning.outputs.fullSemVer }}
         body: ${{ needs.versioning.outputs.fullSemVer  }}
