@@ -28,29 +28,6 @@ jobs:
     - name: Determine Version
       id: version_step
       uses: gittools/actions/gitversion/execute@v4.1.0
-  nuget:
-    if: ${{ github.event_name == 'push' && github.repository_owner == 'swiftly-solution' }}
-    needs: versioning
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository and submodules
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
-    - name: Login to NuGet
-      uses: NuGet/login@v1
-      id: login
-      with:
-        user: samyyc
-    - name: Publish to nuget
-      run: |
-        cd managed
-        dotnet pack --include-symbols --output nupkgs -c Release -p:Version=${{ needs.versioning.outputs.fullSemVer }}
-        dotnet nuget push nupkgs/SwiftlyS2.CS2.${{ needs.versioning.outputs.fullSemVer }}.nupkg --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://nuget.org/api/v2/package
   managed:
     needs: versioning
     runs-on: ubuntu-latest
@@ -280,3 +257,26 @@ jobs:
         tag_name: v${{ needs.versioning.outputs.fullSemVer }}
         name: Release v${{ needs.versioning.outputs.fullSemVer }}
         body: ${{ needs.versioning.outputs.fullSemVer  }}
+  nuget:
+    if: ${{ github.event_name == 'push' && github.repository_owner == 'swiftly-solution' }}
+    needs: [versioning, releasing]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'
+    - name: Login to NuGet
+      uses: NuGet/login@v1
+      id: login
+      with:
+        user: samyyc
+    - name: Publish to nuget
+      run: |
+        cd managed
+        dotnet pack --include-symbols --output nupkgs -c Release -p:Version=${{ needs.versioning.outputs.fullSemVer }}
+        dotnet nuget push nupkgs/SwiftlyS2.CS2.${{ needs.versioning.outputs.fullSemVer }}.nupkg --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://nuget.org/api/v2/package
