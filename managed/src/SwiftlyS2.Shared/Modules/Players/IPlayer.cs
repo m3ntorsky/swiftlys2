@@ -44,11 +44,11 @@ public interface IPlayer
     /// <param name="message">The content of the message to send. Cannot be null.</param>
     void SendMessage(MessageType kind, string message);
     /// <summary>
-    /// Gets a value indicating whether the client is a bot.
+    /// Whether the client is a bot.
     /// </summary>
-    public bool FakeClient { get; }
+    public bool IsFakeClient { get; }
     /// <summary>
-    /// Gets a value indicating whether the current user is authorized by Steam.
+    /// Whether the current user is authorized by Steam.
     /// </summary>
     public bool IsAuthorized { get; }
     /// <summary>

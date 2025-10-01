@@ -19,7 +19,7 @@ internal class Player : IPlayer
 
     public int PlayerID => _pid;
 
-    public bool FakeClient => NativePlayer.IsFakeClient(_pid);
+    public bool IsFakeClient => NativePlayer.IsFakeClient(_pid);
 
     public bool IsAuthorized => NativePlayer.IsAuthorized(_pid);
 
