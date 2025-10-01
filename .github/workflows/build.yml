@@ -171,6 +171,16 @@ jobs:
         cp linux-runtimes/content/host/fxr/8.0.20/libhostfxr.so ${{ env.LINUX_FOLDER }}-with-runtimes/swiftlys2/bin/linuxsteamrt64/libhostfxr.so
         cp windows-runtimes/content/host/fxr/8.0.20/hostfxr.dll ${{ env.WINDOWS_FOLDER }}-with-runtimes/swiftlys2/bin/win64/hostfxr.dll
 
+        mkdir -p ${{ env.LINUX_FOLDER }}/addons/
+        mkdir -p ${{ env.WINDOWS_FOLDER }}/addons/
+        mkdir -p ${{ env.LINUX_FOLDER }}-with-runtimes/addons/
+        mkdir -p ${{ env.WINDOWS_FOLDER }}-with-runtimes/addons/
+
+        mv ${{ env.LINUX_FOLDER }}/* ${{ env.LINUX_FOLDER }}/addons/ || true
+        mv ${{ env.WINDOWS_FOLDER }}/* ${{ env.WINDOWS_FOLDER }}/addons/ || true
+        mv ${{ env.LINUX_FOLDER }}-with-runtimes/* ${{ env.LINUX_FOLDER }}-with-runtimes/addons/ || true
+        mv ${{ env.WINDOWS_FOLDER }}-with-runtimes/* ${{ env.WINDOWS_FOLDER }}-with-runtimes/addons/ || true
+
         zip -r ${{ env.LINUX_FOLDER }}-with-runtimes.zip ${{ env.LINUX_FOLDER }}-with-runtimes
         zip -r ${{ env.WINDOWS_FOLDER }}-with-runtimes.zip ${{ env.WINDOWS_FOLDER }}-with-runtimes
         zip -r ${{ env.LINUX_FOLDER }}.zip ${{ env.LINUX_FOLDER }}
