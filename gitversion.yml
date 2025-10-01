@@ -1,19 +1,15 @@
-mode: ContinuousDelivery
+mode: Mainline
 branches:
   master:
     regex: ^master$
     increment: Inherit
-    is-main-branch: true
+    is-mainline: true
     is-release-branch: true
-    label: ''
-    prevent-increment:
-      when-branch-merged: true
   beta:
     regex: ^beta$
     increment: Inherit
-    label: beta
+    tag: beta
     is-release-branch: false
-    is-main-branch: false
     source-branches: [ master ]
 ignore:
   sha: []
