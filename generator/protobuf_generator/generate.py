@@ -60,7 +60,7 @@ ENUM_FIELD_TEMPLATE = """
 
 NESTED_FIELD_TEMPLATE = """
   public $TYPE$ $CSNAME$
-  { get => new $TYPE$Impl(NativeNetMessages.GetNestedMessage(GetHandle(), "$NAME$"), false); }
+  { get => new $TYPE$Impl(NativeNetMessages.GetNestedMessage(Address, "$NAME$"), false); }
 """
 
 REPEATED_FIELD_TEMPLATE = """
