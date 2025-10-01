@@ -5,9 +5,6 @@ on: [push, workflow_dispatch]
 env:
   XMAKE_ROOT: y
 
-permissions:
-  contents: write
-
 jobs:
   versioning:
     runs-on: ubuntu-latest
@@ -15,7 +12,6 @@ jobs:
       fullSemVer: ${{ steps.version_step.outputs.fullSemVer }}
       semVer: ${{ steps.version_step.outputs.semVer }}
       informationalVersion: ${{ steps.version_step.outputs.informationalVersion }}
-      preReleaseLabel: ${{ steps.version_step.outputs.preReleaseLabel }}
     steps:
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
@@ -118,7 +114,7 @@ jobs:
         key: ${{ runner.os }}-build
     - name: Build
       run: |
-        xmake f --ccache=y -y
+        xmake f --ccache=y
         xmake build -y
       env:
         SWIFTLY_VERSION: ${{ needs.versioning.outputs.fullSemVer }}
@@ -189,54 +185,12 @@ jobs:
         cp -r linux-runtimes/content/ ${{ env.LINUX_FOLDER }}-with-runtimes/swiftlys2/bin/managed/dotnet
         cp -r windows-runtimes/content/ ${{ env.WINDOWS_FOLDER }}-with-runtimes/swiftlys2/bin/managed/dotnet
 
-        zip -r ${{ env.LINUX_FOLDER }}-with-runtimes.zip ${{ env.LINUX_FOLDER }}-with-runtimes
-        zip -r ${{ env.WINDOWS_FOLDER }}-with-runtimes.zip ${{ env.WINDOWS_FOLDER }}-with-runtimes
-        zip -r ${{ env.LINUX_FOLDER }}.zip ${{ env.LINUX_FOLDER }}
-        zip -r ${{ env.WINDOWS_FOLDER }}.zip ${{ env.WINDOWS_FOLDER }}
-
     - name: Upload package
       uses: actions/upload-artifact@v4
       with:
         name: swiftlys2-package-${{ needs.versioning.outputs.fullSemVer }}
         path: |
-          ${{ env.LINUX_FOLDER }}.zip
-          ${{ env.WINDOWS_FOLDER }}.zip
-          ${{ env.LINUX_FOLDER }}-with-runtimes.zip
-          ${{ env.WINDOWS_FOLDER }}-with-runtimes.zip
-  
-  releasing:
-    needs: [versioning, packaging]
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository and submodules
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    - name: Create tag
-      run: |
-        TAG_NAME="${{ needs.versioning.outputs.fullSemVer }}"
-        MSG="Release v${{ needs.versioning.outputs.fullSemVer }}"
-        if git rev-parse -q --verify "refs/tags/$TAG_NAME" >/dev/null; then
-          echo "Tag $TAG_NAME already exists"; exit 1
-        fi
-        git tag -a "$TAG_NAME" -m "${MSG}"
-        git push origin "$TAG_NAME"
-    
-    - name: Download artifacts
-      uses: actions/download-artifact@v4
-      with:
-        name: swiftlys2-package-${{ needs.versioning.outputs.fullSemVer }}
-        path: ./release
-
-    - name: Create release
-      uses: softprops/action-gh-release@v2
-      with:
-        generate_release_notes: true
-        files: |
-          release/swiftlys2-linux-${{ needs.versioning.outputs.fullSemVer }}.zip
-          release/swiftlys2-windows-${{ needs.versioning.outputs.fullSemVer }}.zip
-          release/swiftlys2-linux-with-runtimes-${{ needs.versioning.outputs.fullSemVer }}.zip
-          release/swiftlys2-windows-with-runtimes-${{ needs.versioning.outputs.fullSemVer }}.zip
-        prerelease: ${{ needs.versioning.outputs.preReleaseLabel != '' }}
-        title: Release v${{ needs.versioning.outputs.fullSemVer }}
-        body: ${{ needs.versioning.outputs.fullSemVer  }}
+          ${{ env.LINUX_FOLDER }}
+          ${{ env.WINDOWS_FOLDER }}
+          ${{ env.LINUX_FOLDER }}-with-runtimes
+          ${{ env.WINDOWS_FOLDER }}-with-runtimes
