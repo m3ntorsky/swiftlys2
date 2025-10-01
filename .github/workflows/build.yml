@@ -157,7 +157,7 @@ jobs:
     - name: Download artifacts
       uses: actions/download-artifact@v4
       with:
-        name: swiftlys2_windows
+        name: swiftlys2_managed
         path: ./managed
     - name: Download runtimes
       run: |
