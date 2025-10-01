@@ -47,7 +47,7 @@ internal class PluginConfigurationService : IPluginConfigurationService {
     }
     File.Create(configPath).Close();
 
-    var templateAbsPath = Path.Combine(_Id.BaseDirectory, "templates", templatePath);
+    var templateAbsPath = Path.Combine(_Id.BaseDirectory, "resources", "templates", templatePath);
 
     if (!File.Exists(templateAbsPath)) {
       throw new FileNotFoundException($"Template file not found: {templateAbsPath}");

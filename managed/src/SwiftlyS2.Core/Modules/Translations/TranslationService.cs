@@ -18,8 +18,7 @@ internal class TranslationService : ITranslationService
     _Logger = logger;
     _Context = context;
 
-    var translationDir = Path.Combine(_Context.BaseDirectory, "translations");
-    Console.WriteLine(translationDir);
+    var translationDir = Path.Combine(_Context.BaseDirectory, "resources", "translations");
 
     if (!Directory.Exists(translationDir)) {
       return;

@@ -96,17 +96,12 @@ public class TestPlugin : BasePlugin {
 
     // Core.
 
-    Console.WriteLine(Core.Localizer["test"]);
-
     int i = 0;
 
     // var token2 = Core.Scheduler.Repeat(10, () => {
     //   Console.WriteLine(Core.Engine.TickCount);
     //   Console.WriteLine("TestPlugin Timer");
     // });
-
-    Core.Logger.LogInformation(Core.GameData.GetSignature("Test").ToString());
-
     Core.Logger.LogInformation("TestPlugin loaded");
 
     using var se = new SoundEvent();

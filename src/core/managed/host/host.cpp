@@ -82,7 +82,7 @@ bool InitializeHostFXR(std::string origin_path) {
 
   params.dotnet_root = dotnet_path;
 
-  int returnCode = _initialize_for_runtime_config((widenedOriginPath + WIN_LIN(L"bin\\managed\\SwiftlyS2.runtimeconfig.json", "bin/managed/SwiftlyS2.runtimeconfig.json")).c_str(), &params, &fxrcxt);
+  int returnCode = _initialize_for_runtime_config((widenedOriginPath + WIN_LIN(L"bin\\managed\\SwiftlyS2.CS2.runtimeconfig.json", "bin/managed/SwiftlyS2.CS2.runtimeconfig.json")).c_str(), &params, &fxrcxt);
   if (returnCode != 0) {
     _close(fxrcxt);
     return false;
@@ -107,8 +107,8 @@ bool InitializeDotNetAPI(void* scripting_table, int scripting_table_size) {
 
   if (custom_loader == nullptr) {
     int returnCode = _load_assembly_and_get_function_pointer(
-        (widenedOriginPath + WIN_LIN(L"bin\\managed\\SwiftlyS2.dll", "bin/managed/SwiftlyS2.dll")).c_str(),
-        STR("SwiftlyS2.Entrypoint, SwiftlyS2"), STR("Start"), UNMANAGEDCALLERSONLY_METHOD, nullptr, (void**)&custom_loader
+        (widenedOriginPath + WIN_LIN(L"bin\\managed\\SwiftlyS2.CS2.dll", "bin/managed/SwiftlyS2.CS2.dll")).c_str(),
+        STR("SwiftlyS2.Entrypoint, SwiftlyS2.CS2"), STR("Start"), UNMANAGEDCALLERSONLY_METHOD, nullptr, (void**)&custom_loader
     );
 
     if (returnCode != 0 || (void*)custom_loader == nullptr) {
