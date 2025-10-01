@@ -75,10 +75,16 @@ void CEntityListener::OnEntityDeleted(CEntityInstance* pEntity)
             auto& transmittingBits = playermanager->GetPlayer(i)->GetBlockedTransmittingBits();
 
             auto entindex = pEntity->m_pEntity->m_EHandle.GetEntryIndex();
-            auto dword = entindex / 32;
+            auto dword = entindex / 64;
 
-            transmittingBits.blockedMask[dword] &= ~(1 << (entindex % 32));
-            if (transmittingBits.blockedMask[dword] == 0) transmittingBits.activeMasks.erase(std::find(transmittingBits.activeMasks.begin(), transmittingBits.activeMasks.end(), dword));
+            auto result = std::find(transmittingBits.activeMasks.begin(), transmittingBits.activeMasks.end(), dword);
+
+            if (result == transmittingBits.activeMasks.end()) {
+                continue;
+            }
+
+            transmittingBits.blockedMask[dword] &= ~(1 << (entindex % 64));
+            if (transmittingBits.blockedMask[dword] == 0) transmittingBits.activeMasks.erase(result);
         }
 
     if (g_pOnEntityDeletedCallback)

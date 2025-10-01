@@ -153,14 +153,14 @@ void Bridge_Player_ShouldBlockTransmitEntity(int playerid, int entityidx, bool s
 
     auto& bv = player->GetBlockedTransmittingBits();
 
-    auto dword = entityidx / 32;
+    auto dword = entityidx / 64;
     if (shouldBlockTransmit) {
         bool wasEmpty = (bv.blockedMask[dword] == 0);
-        bv.blockedMask[dword] |= (1 << (entityidx % 32));
+        bv.blockedMask[dword] |= (1 << (entityidx % 64));
         if (wasEmpty) bv.activeMasks.push_back(dword);
     }
     else {
-        bv.blockedMask[dword] &= ~(1 << (entityidx % 32));
+        bv.blockedMask[dword] &= ~(1 << (entityidx % 64));
         if (bv.blockedMask[dword] == 0) bv.activeMasks.erase(std::find(bv.activeMasks.begin(), bv.activeMasks.end(), dword));
     }
 }
@@ -174,7 +174,7 @@ bool Bridge_Player_IsTransmitEntityBlocked(int playerid, int entityidx)
     if (!player) return false;
 
     auto& bv = player->GetBlockedTransmittingBits();
-    return (bv.blockedMask[entityidx / 32] & (1 << (entityidx % 32))) != 0;
+    return (bv.blockedMask[entityidx / 64] & (1 << (entityidx % 64))) != 0;
 }
 
 void Bridge_Player_ClearTransmitEntityBlocked(int playerid)
