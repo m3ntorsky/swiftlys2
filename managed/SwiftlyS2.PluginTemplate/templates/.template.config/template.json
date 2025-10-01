@@ -3,7 +3,7 @@
   "author": "SwiftlyS2",
   "classifications": [ "SwiftlyS2", "Plugin", "CS2" ],
   "identity": "SwiftlyS2.Plugin.Template",
-  "name": "SwiftlyS2 Plugin",
+  "name": "SwiftlyS2 CS2 Plugin",
   "shortName": "swplugin",
   "sourceName": "SwiftlyS2.Plugin",
   "preferNameDirectory": true,
