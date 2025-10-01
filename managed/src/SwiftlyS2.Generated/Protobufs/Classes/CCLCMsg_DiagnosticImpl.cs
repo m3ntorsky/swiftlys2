@@ -15,19 +15,19 @@ internal class CCLCMsg_DiagnosticImpl : NetMessage<CCLCMsg_Diagnostic>, CCLCMsg_
 
 
   public CMsgSource2SystemSpecs SystemSpecs
-  { get => new CMsgSource2SystemSpecsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "system_specs"), false); }
+  { get => new CMsgSource2SystemSpecsImpl(NativeNetMessages.GetNestedMessage(Address, "system_specs"), false); }
 
 
   public CMsgSource2VProfLiteReport VprofReport
-  { get => new CMsgSource2VProfLiteReportImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "vprof_report"), false); }
+  { get => new CMsgSource2VProfLiteReportImpl(NativeNetMessages.GetNestedMessage(Address, "vprof_report"), false); }
 
 
   public CMsgSource2NetworkFlowQuality DownstreamFlow
-  { get => new CMsgSource2NetworkFlowQualityImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "downstream_flow"), false); }
+  { get => new CMsgSource2NetworkFlowQualityImpl(NativeNetMessages.GetNestedMessage(Address, "downstream_flow"), false); }
 
 
   public CMsgSource2NetworkFlowQuality UpstreamFlow
-  { get => new CMsgSource2NetworkFlowQualityImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "upstream_flow"), false); }
+  { get => new CMsgSource2NetworkFlowQualityImpl(NativeNetMessages.GetNestedMessage(Address, "upstream_flow"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgSource2PerfIntervalSample> PerfSamples

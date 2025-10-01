@@ -15,6 +15,6 @@ internal class CMsgGCCStrike15_v2_MatchEndRewardDropsNotificationImpl : TypedPro
 
 
   public CEconItemPreviewDataBlock Iteminfo
-  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "iteminfo"), false); }
+  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(Address, "iteminfo"), false); }
 
 }

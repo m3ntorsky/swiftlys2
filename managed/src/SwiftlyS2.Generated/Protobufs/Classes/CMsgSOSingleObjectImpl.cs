@@ -27,6 +27,6 @@ internal class CMsgSOSingleObjectImpl : TypedProtobuf<CMsgSOSingleObject>, CMsgS
 
 
   public CMsgSOIDOwner OwnerSoid
-  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "owner_soid"), false); }
+  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(Address, "owner_soid"), false); }
 
 }

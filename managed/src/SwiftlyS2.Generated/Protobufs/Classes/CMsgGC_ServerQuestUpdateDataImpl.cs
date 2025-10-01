@@ -27,7 +27,7 @@ internal class CMsgGC_ServerQuestUpdateDataImpl : TypedProtobuf<CMsgGC_ServerQue
 
 
   public ScoreLeaderboardData Missionlbsdata
-  { get => new ScoreLeaderboardDataImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "missionlbsdata"), false); }
+  { get => new ScoreLeaderboardDataImpl(NativeNetMessages.GetNestedMessage(Address, "missionlbsdata"), false); }
 
 
   public uint Flags

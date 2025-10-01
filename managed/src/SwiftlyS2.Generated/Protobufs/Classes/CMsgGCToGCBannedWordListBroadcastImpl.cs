@@ -15,6 +15,6 @@ internal class CMsgGCToGCBannedWordListBroadcastImpl : TypedProtobuf<CMsgGCToGCB
 
 
   public CMsgGCBannedWordListResponse Broadcast
-  { get => new CMsgGCBannedWordListResponseImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "broadcast"), false); }
+  { get => new CMsgGCBannedWordListResponseImpl(NativeNetMessages.GetNestedMessage(Address, "broadcast"), false); }
 
 }

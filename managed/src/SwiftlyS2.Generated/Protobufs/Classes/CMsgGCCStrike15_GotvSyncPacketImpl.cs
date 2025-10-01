@@ -15,6 +15,6 @@ internal class CMsgGCCStrike15_GotvSyncPacketImpl : TypedProtobuf<CMsgGCCStrike1
 
 
   public CEngineGotvSyncPacket Data
-  { get => new CEngineGotvSyncPacketImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "data"), false); }
+  { get => new CEngineGotvSyncPacketImpl(NativeNetMessages.GetNestedMessage(Address, "data"), false); }
 
 }

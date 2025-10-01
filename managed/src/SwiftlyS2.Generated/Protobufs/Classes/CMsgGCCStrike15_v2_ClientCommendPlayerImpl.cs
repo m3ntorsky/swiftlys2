@@ -23,7 +23,7 @@ internal class CMsgGCCStrike15_v2_ClientCommendPlayerImpl : TypedProtobuf<CMsgGC
 
 
   public PlayerCommendationInfo Commendation
-  { get => new PlayerCommendationInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "commendation"), false); }
+  { get => new PlayerCommendationInfoImpl(NativeNetMessages.GetNestedMessage(Address, "commendation"), false); }
 
 
   public uint Tokens

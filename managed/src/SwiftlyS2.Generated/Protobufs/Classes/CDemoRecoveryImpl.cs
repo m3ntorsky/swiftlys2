@@ -15,7 +15,7 @@ internal class CDemoRecoveryImpl : TypedProtobuf<CDemoRecovery>, CDemoRecovery
 
 
   public CDemoRecovery_DemoInitialSpawnGroupEntry InitialSpawnGroup
-  { get => new CDemoRecovery_DemoInitialSpawnGroupEntryImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "initial_spawn_group"), false); }
+  { get => new CDemoRecovery_DemoInitialSpawnGroupEntryImpl(NativeNetMessages.GetNestedMessage(Address, "initial_spawn_group"), false); }
 
 
   public byte[] SpawnGroupMessage

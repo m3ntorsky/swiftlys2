@@ -15,6 +15,6 @@ internal class CEntityMessagePlayJingleImpl : TypedProtobuf<CEntityMessagePlayJi
 
 
   public CEntityMsg EntityMsg
-  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "entity_msg"), false); }
+  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(Address, "entity_msg"), false); }
 
 }

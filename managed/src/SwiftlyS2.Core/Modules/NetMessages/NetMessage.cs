@@ -43,21 +43,21 @@ internal class NetMessage<T> : TypedProtobuf<T>, INativeHandle, IDisposable wher
 
   public void Send() {
     CheckIsManuallyAllocated();
-    NativeNetMessages.SendMessageToPlayers(_allocatedHandle!.GetHandle(), T.MessageId, _filter.ToMask());
+    NativeNetMessages.SendMessageToPlayers(_allocatedHandle!.Address, T.MessageId, _filter.ToMask());
   }
 
   public void SendToAllPlayers()
   {
     CheckIsManuallyAllocated();
     _filter.AddAllPlayers();
-    NativeNetMessages.SendMessageToPlayers(_allocatedHandle!.GetHandle(), T.MessageId, _filter.ToMask());
+    NativeNetMessages.SendMessageToPlayers(_allocatedHandle!.Address, T.MessageId, _filter.ToMask());
   }
 
   public void SendToPlayer(int playerId)
   {
     CheckIsManuallyAllocated();
     _filter.AddRecipient(playerId);
-    NativeNetMessages.SendMessageToPlayers(_allocatedHandle!.GetHandle(), T.MessageId, _filter.ToMask());
+    NativeNetMessages.SendMessageToPlayers(_allocatedHandle!.Address, T.MessageId, _filter.ToMask());
   }
 
 }

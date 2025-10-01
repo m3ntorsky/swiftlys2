@@ -9,7 +9,7 @@ internal class NetMessageAllocableNativeHandle : AllocableNativeHandle {
   }
 
   protected override bool Free() {
-    NativeNetMessages.DeallocateNetMessage(GetHandle());
+    NativeNetMessages.DeallocateNetMessage(Address);
     return true;
   }
 

@@ -19,7 +19,7 @@ internal class CSOPersonaDataPublicImpl : TypedProtobuf<CSOPersonaDataPublic>, C
 
 
   public PlayerCommendationInfo Commendation
-  { get => new PlayerCommendationInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "commendation"), false); }
+  { get => new PlayerCommendationInfoImpl(NativeNetMessages.GetNestedMessage(Address, "commendation"), false); }
 
 
   public bool ElevatedState

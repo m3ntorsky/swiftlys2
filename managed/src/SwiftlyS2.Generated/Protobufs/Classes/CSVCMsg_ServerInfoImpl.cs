@@ -71,7 +71,7 @@ internal class CSVCMsg_ServerInfoImpl : NetMessage<CSVCMsg_ServerInfo>, CSVCMsg_
 
 
   public CSVCMsg_GameSessionConfiguration GameSessionConfig
-  { get => new CSVCMsg_GameSessionConfigurationImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "game_session_config"), false); }
+  { get => new CSVCMsg_GameSessionConfigurationImpl(NativeNetMessages.GetNestedMessage(Address, "game_session_config"), false); }
 
 
   public byte[] GameSessionManifest

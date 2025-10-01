@@ -15,7 +15,7 @@ internal class CSVCMsg_VoiceDataImpl : NetMessage<CSVCMsg_VoiceData>, CSVCMsg_Vo
 
 
   public CMsgVoiceAudio Audio
-  { get => new CMsgVoiceAudioImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "audio"), false); }
+  { get => new CMsgVoiceAudioImpl(NativeNetMessages.GetNestedMessage(Address, "audio"), false); }
 
 
   public int Client

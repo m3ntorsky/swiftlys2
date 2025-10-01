@@ -31,7 +31,7 @@ internal class CCSUsrMsg_EndOfMatchAllPlayersData_PlayerDataImpl : TypedProtobuf
 
 
   public CCSUsrMsg_EndOfMatchAllPlayersData_Accolade Nomination
-  { get => new CCSUsrMsg_EndOfMatchAllPlayersData_AccoladeImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "nomination"), false); }
+  { get => new CCSUsrMsg_EndOfMatchAllPlayersData_AccoladeImpl(NativeNetMessages.GetNestedMessage(Address, "nomination"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CEconItemPreviewDataBlock> Items

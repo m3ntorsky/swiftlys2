@@ -19,7 +19,7 @@ internal class CDataGCCStrike15_v2_TournamentInfoImpl : TypedProtobuf<CDataGCCSt
 
 
   public TournamentEvent TournamentEvent
-  { get => new TournamentEventImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tournament_event"), false); }
+  { get => new TournamentEventImpl(NativeNetMessages.GetNestedMessage(Address, "tournament_event"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<TournamentTeam> TournamentTeams

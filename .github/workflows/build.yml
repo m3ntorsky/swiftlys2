@@ -200,6 +200,8 @@ jobs:
     if: ${{ github.event_name == 'push' }}
     needs: [versioning, packaging]
     runs-on: ubuntu-latest
+    env:
+      TAG_NAME: ${{ needs.versioning.outputs.preReleaseLabel != '' && 'pre-v' || 'v' }}${{ needs.versioning.outputs.semVer }}
     steps:
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
@@ -207,7 +209,7 @@ jobs:
         fetch-depth: 0
     - name: Create tag
       run: |
-        TAG_NAME="v${{ needs.versioning.outputs.semVer }}"
+        TAG_NAME="${{ env.TAG_NAME }}"
         MSG="Release v${{ needs.versioning.outputs.semVer }}"
 
         git config --global user.name "github-actions[bot]"
@@ -235,7 +237,7 @@ jobs:
           release/swiftlys2-linux-v${{ needs.versioning.outputs.semVer }}-with-runtimes.zip
           release/swiftlys2-windows-v${{ needs.versioning.outputs.semVer }}-with-runtimes.zip
         prerelease: ${{ needs.versioning.outputs.preReleaseLabel != '' }}
-        tag_name: v${{ needs.versioning.outputs.semVer }}
+        tag_name: ${{ env.TAG_NAME }}
         name: Release v${{ needs.versioning.outputs.semVer }}
         body: ${{ needs.versioning.outputs.semVer  }}
   nuget:

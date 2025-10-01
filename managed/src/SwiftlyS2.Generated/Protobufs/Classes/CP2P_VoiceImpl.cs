@@ -15,7 +15,7 @@ internal class CP2P_VoiceImpl : TypedProtobuf<CP2P_Voice>, CP2P_Voice
 
 
   public CMsgVoiceAudio Audio
-  { get => new CMsgVoiceAudioImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "audio"), false); }
+  { get => new CMsgVoiceAudioImpl(NativeNetMessages.GetNestedMessage(Address, "audio"), false); }
 
 
   public uint BroadcastGroup

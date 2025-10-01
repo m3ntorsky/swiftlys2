@@ -12,11 +12,7 @@ public abstract class AllocableNativeHandle : SafeHandleZeroOrMinusOneIsInvalid,
     SetHandle(handle);
   }
 
-  public nint GetHandle()
-  {
-    if (!IsValid) throw new InvalidOperationException("Trying to get a invalid handle.");
-    return DangerousGetHandle();
-  }
+  public nint Address => DangerousGetHandle();
 
   protected abstract bool Free();
 

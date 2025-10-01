@@ -77,7 +77,7 @@ public unsafe struct CTakeDamageInfo
 
         fixed (CTakeDamageInfo* info = &this)
         {
-            GameFunctions.CTakeDamageInfoConstructor(info, inflictor.GetHandle(), attacker.GetHandle(), ability.GetHandle(), &vec3_origin, &vec3_origin, flDamage, (int)bitsDamageType, 0, null);
+            GameFunctions.CTakeDamageInfoConstructor(info, inflictor.Address, attacker.Address, ability.Address, &vec3_origin, &vec3_origin, flDamage, (int)bitsDamageType, 0, null);
         }
     }
 

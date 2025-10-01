@@ -9,16 +9,16 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 internal partial class CPlayer_WeaponServicesImpl {
 
   public void DropWeapon(CBasePlayerWeapon weapon) {
-    GameFunctions.CCSPlayer_WeaponServices_DropWeapon(GetHandle(), weapon.GetHandle());
+    GameFunctions.CCSPlayer_WeaponServices_DropWeapon(Address, weapon.Address);
   }
 
   public void RemoveWeapon(CBasePlayerWeapon weapon) {
-    GameFunctions.CCSPlayer_WeaponServices_DropWeapon(GetHandle(), weapon.GetHandle());
+    GameFunctions.CCSPlayer_WeaponServices_DropWeapon(Address, weapon.Address);
     weapon.Despawn();
   }
 
   public void SelectWeapon(CBasePlayerWeapon weapon) {
-    GameFunctions.CCSPlayer_WeaponServices_SelectWeapon(GetHandle(), weapon.GetHandle());
+    GameFunctions.CCSPlayer_WeaponServices_SelectWeapon(Address, weapon.Address);
   }
 
   public void DropWeaponByClass<T>() where T : CBasePlayerWeapon {

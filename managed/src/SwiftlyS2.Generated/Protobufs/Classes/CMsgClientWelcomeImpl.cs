@@ -31,7 +31,7 @@ internal class CMsgClientWelcomeImpl : TypedProtobuf<CMsgClientWelcome>, CMsgCli
 
 
   public CMsgClientWelcome_Location Location
-  { get => new CMsgClientWelcome_LocationImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "location"), false); }
+  { get => new CMsgClientWelcome_LocationImpl(NativeNetMessages.GetNestedMessage(Address, "location"), false); }
 
 
   public byte[] GameData2

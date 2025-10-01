@@ -15,6 +15,6 @@ internal class CUserCmdBasePBImpl : TypedProtobuf<CUserCmdBasePB>, CUserCmdBaseP
 
 
   public CBaseUserCmdPB Base
-  { get => new CBaseUserCmdPBImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "base"), false); }
+  { get => new CBaseUserCmdPBImpl(NativeNetMessages.GetNestedMessage(Address, "base"), false); }
 
 }

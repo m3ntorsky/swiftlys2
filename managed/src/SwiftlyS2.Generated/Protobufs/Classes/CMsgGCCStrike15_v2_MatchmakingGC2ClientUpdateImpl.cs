@@ -31,7 +31,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdateImpl : TypedProtobuf
 
 
   public GlobalStatistics GlobalStats
-  { get => new GlobalStatisticsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "global_stats"), false); }
+  { get => new GlobalStatisticsImpl(NativeNetMessages.GetNestedMessage(Address, "global_stats"), false); }
 
 
   public IProtobufRepeatedFieldValueType<uint> FailpingAccountIdSessions
@@ -51,7 +51,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdateImpl : TypedProtobuf
 
 
   public IpAddressMask ServerIpaddressMask
-  { get => new IpAddressMaskImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "server_ipaddress_mask"), false); }
+  { get => new IpAddressMaskImpl(NativeNetMessages.GetNestedMessage(Address, "server_ipaddress_mask"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgGCCStrike15_v2_MatchmakingGC2ClientUpdate_Note> Notes

@@ -15,6 +15,6 @@ internal class CCSUsrMsg_DeepStatsImpl : NetMessage<CCSUsrMsg_DeepStats>, CCSUsr
 
 
   public CMsgGCCStrike15_ClientDeepStats Stats
-  { get => new CMsgGCCStrike15_ClientDeepStatsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "stats"), false); }
+  { get => new CMsgGCCStrike15_ClientDeepStatsImpl(NativeNetMessages.GetNestedMessage(Address, "stats"), false); }
 
 }

@@ -15,6 +15,6 @@ internal class CNETMsg_SetConVarImpl : NetMessage<CNETMsg_SetConVar>, CNETMsg_Se
 
 
   public CMsg_CVars Convars
-  { get => new CMsg_CVarsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "convars"), false); }
+  { get => new CMsg_CVarsImpl(NativeNetMessages.GetNestedMessage(Address, "convars"), false); }
 
 }

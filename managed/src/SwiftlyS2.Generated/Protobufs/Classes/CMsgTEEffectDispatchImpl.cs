@@ -15,6 +15,6 @@ internal class CMsgTEEffectDispatchImpl : NetMessage<CMsgTEEffectDispatch>, CMsg
 
 
   public CMsgEffectData Effectdata
-  { get => new CMsgEffectDataImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "effectdata"), false); }
+  { get => new CMsgEffectDataImpl(NativeNetMessages.GetNestedMessage(Address, "effectdata"), false); }
 
 }

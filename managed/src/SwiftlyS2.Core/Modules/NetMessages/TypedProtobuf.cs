@@ -15,10 +15,7 @@ internal class TypedProtobuf<T> : INativeHandle where T : ITypedProtobuf<T>
     Accessor = new ProtobufAccessor(handle);
   }
 
-  public nint GetHandle()
-  {
-    return Accessor.GetHandle();
-  }
+  public nint Address => Accessor.Address;
 
   public bool IsValid => Accessor.IsValid;
 }

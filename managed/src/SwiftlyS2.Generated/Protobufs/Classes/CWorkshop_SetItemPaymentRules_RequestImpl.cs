@@ -39,6 +39,6 @@ internal class CWorkshop_SetItemPaymentRules_RequestImpl : TypedProtobuf<CWorksh
 
 
   public CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRule AssociatedWorkshopFileForDirectPayments
-  { get => new CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRuleImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "associated_workshop_file_for_direct_payments"), false); }
+  { get => new CWorkshop_SetItemPaymentRules_Request_WorkshopDirectPaymentRuleImpl(NativeNetMessages.GetNestedMessage(Address, "associated_workshop_file_for_direct_payments"), false); }
 
 }

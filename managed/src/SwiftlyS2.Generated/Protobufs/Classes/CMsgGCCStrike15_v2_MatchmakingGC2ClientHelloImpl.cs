@@ -19,11 +19,11 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientHelloImpl : TypedProtobuf<
 
 
   public CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve Ongoingmatch
-  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "ongoingmatch"), false); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl(NativeNetMessages.GetNestedMessage(Address, "ongoingmatch"), false); }
 
 
   public GlobalStatistics GlobalStats
-  { get => new GlobalStatisticsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "global_stats"), false); }
+  { get => new GlobalStatisticsImpl(NativeNetMessages.GetNestedMessage(Address, "global_stats"), false); }
 
 
   public uint PenaltySeconds
@@ -39,19 +39,19 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientHelloImpl : TypedProtobuf<
 
 
   public PlayerRankingInfo Ranking
-  { get => new PlayerRankingInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "ranking"), false); }
+  { get => new PlayerRankingInfoImpl(NativeNetMessages.GetNestedMessage(Address, "ranking"), false); }
 
 
   public PlayerCommendationInfo Commendation
-  { get => new PlayerCommendationInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "commendation"), false); }
+  { get => new PlayerCommendationInfoImpl(NativeNetMessages.GetNestedMessage(Address, "commendation"), false); }
 
 
   public PlayerMedalsInfo Medals
-  { get => new PlayerMedalsInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "medals"), false); }
+  { get => new PlayerMedalsInfoImpl(NativeNetMessages.GetNestedMessage(Address, "medals"), false); }
 
 
   public TournamentEvent MyCurrentEvent
-  { get => new TournamentEventImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "my_current_event"), false); }
+  { get => new TournamentEventImpl(NativeNetMessages.GetNestedMessage(Address, "my_current_event"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<TournamentTeam> MyCurrentEventTeams
@@ -59,7 +59,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientHelloImpl : TypedProtobuf<
 
 
   public TournamentTeam MyCurrentTeam
-  { get => new TournamentTeamImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "my_current_team"), false); }
+  { get => new TournamentTeamImpl(NativeNetMessages.GetNestedMessage(Address, "my_current_team"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<TournamentEvent> MyCurrentEventStages
@@ -71,7 +71,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientHelloImpl : TypedProtobuf<
 
 
   public AccountActivity Activity
-  { get => new AccountActivityImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "activity"), false); }
+  { get => new AccountActivityImpl(NativeNetMessages.GetNestedMessage(Address, "activity"), false); }
 
 
   public int PlayerLevel

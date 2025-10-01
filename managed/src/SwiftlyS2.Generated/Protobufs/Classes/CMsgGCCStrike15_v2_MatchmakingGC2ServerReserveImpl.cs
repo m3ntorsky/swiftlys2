@@ -59,7 +59,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl : TypedProtobu
 
 
   public TournamentEvent TournamentEvent
-  { get => new TournamentEventImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tournament_event"), false); }
+  { get => new TournamentEventImpl(NativeNetMessages.GetNestedMessage(Address, "tournament_event"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<TournamentTeam> TournamentTeams
@@ -75,7 +75,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl : TypedProtobu
 
 
   public CPreMatchInfoData PreMatchData
-  { get => new CPreMatchInfoDataImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "pre_match_data"), false); }
+  { get => new CPreMatchInfoDataImpl(NativeNetMessages.GetNestedMessage(Address, "pre_match_data"), false); }
 
 
   public uint TvControl

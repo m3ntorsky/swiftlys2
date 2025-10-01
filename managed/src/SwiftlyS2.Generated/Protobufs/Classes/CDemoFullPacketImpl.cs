@@ -15,10 +15,10 @@ internal class CDemoFullPacketImpl : TypedProtobuf<CDemoFullPacket>, CDemoFullPa
 
 
   public CDemoStringTables StringTable
-  { get => new CDemoStringTablesImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "string_table"), false); }
+  { get => new CDemoStringTablesImpl(NativeNetMessages.GetNestedMessage(Address, "string_table"), false); }
 
 
   public CDemoPacket Packet
-  { get => new CDemoPacketImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "packet"), false); }
+  { get => new CDemoPacketImpl(NativeNetMessages.GetNestedMessage(Address, "packet"), false); }
 
 }

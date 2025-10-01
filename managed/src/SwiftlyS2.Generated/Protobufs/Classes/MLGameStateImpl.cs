@@ -15,11 +15,11 @@ internal class MLGameStateImpl : TypedProtobuf<MLGameState>, MLGameState
 
 
   public MLMatchState Match
-  { get => new MLMatchStateImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "match"), false); }
+  { get => new MLMatchStateImpl(NativeNetMessages.GetNestedMessage(Address, "match"), false); }
 
 
   public MLRoundState Round
-  { get => new MLRoundStateImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "round"), false); }
+  { get => new MLRoundStateImpl(NativeNetMessages.GetNestedMessage(Address, "round"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<MLPlayerState> Players

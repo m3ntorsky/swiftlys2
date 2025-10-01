@@ -19,7 +19,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingServerReservationResponseImpl : Typ
 
 
   public CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve Reservation
-  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "reservation"), false); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl(NativeNetMessages.GetNestedMessage(Address, "reservation"), false); }
 
 
   public string Map
@@ -35,7 +35,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingServerReservationResponseImpl : Typ
 
 
   public ServerHltvInfo TvInfo
-  { get => new ServerHltvInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tv_info"), false); }
+  { get => new ServerHltvInfoImpl(NativeNetMessages.GetNestedMessage(Address, "tv_info"), false); }
 
 
   public IProtobufRepeatedFieldValueType<uint> RewardPlayerAccounts

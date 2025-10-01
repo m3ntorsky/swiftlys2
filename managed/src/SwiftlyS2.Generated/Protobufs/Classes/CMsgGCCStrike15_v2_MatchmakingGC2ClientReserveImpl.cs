@@ -31,7 +31,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl : TypedProtobu
 
 
   public CMsgGCCStrike15_v2_MatchmakingGC2ServerReserve Reservation
-  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "reservation"), false); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ServerReserveImpl(NativeNetMessages.GetNestedMessage(Address, "reservation"), false); }
 
 
   public string Map
@@ -43,7 +43,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl : TypedProtobu
 
 
   public DataCenterPing GsPing
-  { get => new DataCenterPingImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "gs_ping"), false); }
+  { get => new DataCenterPingImpl(NativeNetMessages.GetNestedMessage(Address, "gs_ping"), false); }
 
 
   public uint GsLocationId

@@ -23,11 +23,11 @@ internal class CDataGCCStrike15_v2_MatchInfoImpl : TypedProtobuf<CDataGCCStrike1
 
 
   public WatchableMatchInfo Watchablematchinfo
-  { get => new WatchableMatchInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "watchablematchinfo"), false); }
+  { get => new WatchableMatchInfoImpl(NativeNetMessages.GetNestedMessage(Address, "watchablematchinfo"), false); }
 
 
   public CMsgGCCStrike15_v2_MatchmakingServerRoundStats RoundstatsLegacy
-  { get => new CMsgGCCStrike15_v2_MatchmakingServerRoundStatsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "roundstats_legacy"), false); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingServerRoundStatsImpl(NativeNetMessages.GetNestedMessage(Address, "roundstats_legacy"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgGCCStrike15_v2_MatchmakingServerRoundStats> Roundstatsall

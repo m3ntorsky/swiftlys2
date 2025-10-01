@@ -15,10 +15,10 @@ internal class CMsgGCCStrike15_v2_MatchEndRunRewardDropsImpl : TypedProtobuf<CMs
 
 
   public CMsgGCCStrike15_v2_MatchmakingServerReservationResponse Serverinfo
-  { get => new CMsgGCCStrike15_v2_MatchmakingServerReservationResponseImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "serverinfo"), false); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingServerReservationResponseImpl(NativeNetMessages.GetNestedMessage(Address, "serverinfo"), false); }
 
 
   public CMsgGC_ServerQuestUpdateData MatchEndQuestData
-  { get => new CMsgGC_ServerQuestUpdateDataImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "match_end_quest_data"), false); }
+  { get => new CMsgGC_ServerQuestUpdateDataImpl(NativeNetMessages.GetNestedMessage(Address, "match_end_quest_data"), false); }
 
 }

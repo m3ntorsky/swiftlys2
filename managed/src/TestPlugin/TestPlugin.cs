@@ -265,6 +265,7 @@ public class TestPlugin : BasePlugin {
   [Command("h2")]
   public void TestCommand3(ICommandContext context)
   {
+    Console.WriteLine(Core.GameData.GetSignature("CBaseEntity::DispatchSpawn"));
     var ent = Core.EntitySystem.CreateEntity<CPointWorldText>();
     ent.DispatchSpawn();
   }
@@ -273,7 +274,7 @@ public class TestPlugin : BasePlugin {
   public void TestCommand33(ICommandContext context)
   {
     var ent = Core.EntitySystem.CreateEntity<CPointWorldText>();
-    _dispatchspawn.CallOriginal(ent.GetHandle(), 0);
+    _dispatchspawn.CallOriginal(ent.Address, 0);
   }
 
   [Command("tt4")]

@@ -7,7 +7,7 @@ internal partial class CBasePlayerControllerImpl : CBasePlayerController
 {
     public void SetPawn(CBasePlayerPawn? pawn)
     {
-        nint? handle = pawn?.GetHandle();
-        GameFunctions.SetPlayerControllerPawn(GetHandle(), handle ?? IntPtr.Zero, true, false, false, false);
+        nint? handle = pawn?.Address;
+        GameFunctions.SetPlayerControllerPawn(Address, handle ?? IntPtr.Zero, true, false, false, false);
     }
 }
