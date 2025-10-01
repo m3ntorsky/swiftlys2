@@ -24,8 +24,9 @@
 
 #include <public/eiface.h>
 #include <api/interfaces/manager.h>
-#include <api/shared/files.h>
+#include <api/shared/string.h>
 #include <api/shared/plat.h>
+#include <api/shared/files.h>
 
 IGameDataOffsets* GameDataManager::GetOffsets()
 {
@@ -46,8 +47,45 @@ IGameDataPatches* GameDataManager::GetPatches()
 }
 
 DynLibUtils::CModule DetermineModuleByLibrary(std::string library) {
-    if (library == "server" || library == "client" || library == "matchmaking")
-        return DynLibUtils::CModule(GeneratePath(std::string("bin/") + WIN_LINUX("win64", "linuxsteamrt64") + "/" + library + WIN_LINUX(".dll", ".so")));
+    if (library == "server")
+        return DynLibUtils::CModule(g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL));
+    else if (library == "engine2")
+        return DynLibUtils::CModule(g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER));
     else
-        return DynLibUtils::CModule(GeneratePath(std::string("../bin/") + WIN_LINUX("win64", "linuxsteamrt64") + "/" + library + WIN_LINUX(".dll", ".so")));
+        return DynLibUtils::CModule(library);
+}
+
+extern std::vector<uint8_t> HexToByte(const char* src, uint64_t& length);
+
+void* FindSignature(std::string library, std::string pattern)
+{
+    std::string binPath = "";
+    if (library == "server" || library == "matchmaking" || library == "client")
+        binPath = std::string("bin/") + WIN_LINUX("win64", "linuxsteamrt64") + WIN_LINUX("/", "/lib") + library + WIN_LINUX(".dll", ".so");
+    else
+        binPath = std::string("../bin/") + WIN_LINUX("win64", "linuxsteamrt64") + WIN_LINUX("/", "/lib") + library + WIN_LINUX(".dll", ".so");
+
+    auto libModule = DetermineModuleByLibrary(library);
+    std::string binContent = Files::Read(binPath);
+    if (binContent == "") return nullptr;
+
+    uint64_t length = 0;
+    auto bytes = HexToByte(pattern.c_str(), length);
+    auto binBytes = explode(binContent, "");
+
+    for (int i = 0; i < binBytes.size() - bytes.size(); i++) {
+        bool found = true;
+        for (int j = 0; j < bytes.size(); j++) {
+            if (bytes[j] != (uint8_t)"\x2A" && (uint8_t)(binBytes[i + j].c_str()[0]) != bytes[j]) {
+                found = false;
+                break;
+            }
+        }
+
+        if (found) {
+            return libModule.GetModuleBase().Offset(i).RCast<void*>();
+        }
+    }
+
+    return nullptr;
 }

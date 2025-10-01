@@ -85,7 +85,7 @@ void GameDataSignatures::Load(const std::string& game)
                 auto module = DetermineModuleByLibrary(lib);
                 void* sig = nullptr;
                 if (signature.at(0) == '@') sig = module.GetFunctionByName(signature.substr(1)).RCast<void*>();
-                else sig = module.FindPattern(signature).RCast<void*>();
+                else sig = FindSignature(lib, signature);
 
                 if (!sig)
                 {
