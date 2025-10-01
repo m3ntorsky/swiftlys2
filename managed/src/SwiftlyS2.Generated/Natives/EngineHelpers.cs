@@ -118,7 +118,6 @@ internal static class NativeEngineHelpers {
   }
   private unsafe static delegate* unmanaged<byte*, int> _GetCurrentGame;
   public unsafe static string GetCurrentGame() {
-    try {
     var ret = _GetCurrentGame(null);
     var pool = ArrayPool<byte>.Shared;
     var retBuffer = pool.Rent(ret+1);
@@ -129,14 +128,9 @@ internal static class NativeEngineHelpers {
 
     return retString;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
   private unsafe static delegate* unmanaged<byte*, int> _GetNativeVersion;
   public unsafe static string GetNativeVersion() {
-    try {
     var ret = _GetNativeVersion(null);
     var pool = ArrayPool<byte>.Shared;
     var retBuffer = pool.Rent(ret+1);
@@ -147,9 +141,5 @@ internal static class NativeEngineHelpers {
 
     return retString;
   }
-     } catch (Exception e) {
-      Spectre.Console.AnsiConsole.WriteException(e);
-      throw;
-    }
   }
 }

@@ -10,6 +10,7 @@ branches:
     increment: Inherit
     tag: beta
     is-release-branch: false
+    is-mainline: false
     source-branches: [ master ]
 ignore:
   sha: []
