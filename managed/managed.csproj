@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <PackageId>SwiftlyS2</PackageId>
+    <PackageId>SwiftlyS2.CS2</PackageId>
     <Authors>SwiftlyS2 Team</Authors>
     <OutputType>Library</OutputType>
     <TargetFramework>net8.0</TargetFramework>
@@ -13,7 +13,7 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <BaseOutputPath>build\</BaseOutputPath>
     <OutputPath>$(BaseOutputPath)Release\SwiftlyS2</OutputPath>
-    <AssemblyName>SwiftlyS2</AssemblyName>
+    <AssemblyName>SwiftlyS2.CS2</AssemblyName>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
 
   </PropertyGroup>
