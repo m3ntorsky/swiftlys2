@@ -15,11 +15,11 @@ internal class CMsgGCCStrike15_v2_GC2ClientNotifyXPShopImpl : TypedProtobuf<CMsg
 
 
   public CSOAccountXpShop Prematch
-  { get => new CSOAccountXpShopImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "prematch"), false); }
+  { get => new CSOAccountXpShopImpl(NativeNetMessages.GetNestedMessage(Address, "prematch"), false); }
 
 
   public CSOAccountXpShop Postmatch
-  { get => new CSOAccountXpShopImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "postmatch"), false); }
+  { get => new CSOAccountXpShopImpl(NativeNetMessages.GetNestedMessage(Address, "postmatch"), false); }
 
 
   public uint CurrentXp

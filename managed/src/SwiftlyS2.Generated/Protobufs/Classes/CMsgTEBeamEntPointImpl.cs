@@ -15,7 +15,7 @@ internal class CMsgTEBeamEntPointImpl : NetMessage<CMsgTEBeamEntPoint>, CMsgTEBe
 
 
   public CMsgTEBaseBeam Base
-  { get => new CMsgTEBaseBeamImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "base"), false); }
+  { get => new CMsgTEBaseBeamImpl(NativeNetMessages.GetNestedMessage(Address, "base"), false); }
 
 
   public uint Startentity

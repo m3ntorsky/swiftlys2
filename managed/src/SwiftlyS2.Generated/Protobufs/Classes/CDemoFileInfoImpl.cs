@@ -27,6 +27,6 @@ internal class CDemoFileInfoImpl : TypedProtobuf<CDemoFileInfo>, CDemoFileInfo
 
 
   public CGameInfo GameInfo
-  { get => new CGameInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "game_info"), false); }
+  { get => new CGameInfoImpl(NativeNetMessages.GetNestedMessage(Address, "game_info"), false); }
 
 }

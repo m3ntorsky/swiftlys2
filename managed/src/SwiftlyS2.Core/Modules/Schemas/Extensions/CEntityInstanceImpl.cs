@@ -16,28 +16,28 @@ internal partial class CEntityInstanceImpl : CEntityInstance {
   public void AcceptInput<T>(string input, T value, CEntityInstance? activator = null, CEntityInstance? caller = null, int outputID = 0) {
     switch (value) {
       case bool boolValue:
-        NativeEntitySystem.AcceptInputBool(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, boolValue, outputID);
+        NativeEntitySystem.AcceptInputBool(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, boolValue, outputID);
         break;
       case int intValue:
-        NativeEntitySystem.AcceptInputInt32(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, intValue, outputID);
+        NativeEntitySystem.AcceptInputInt32(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, intValue, outputID);
         break;
       case uint uintValue:
-        NativeEntitySystem.AcceptInputUInt32(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, uintValue, outputID);
+        NativeEntitySystem.AcceptInputUInt32(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, uintValue, outputID);
         break;
       case long longValue:
-        NativeEntitySystem.AcceptInputInt64(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, longValue, outputID);
+        NativeEntitySystem.AcceptInputInt64(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, longValue, outputID);
         break;
       case ulong ulongValue:
-        NativeEntitySystem.AcceptInputUInt64(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, ulongValue, outputID);
+        NativeEntitySystem.AcceptInputUInt64(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, ulongValue, outputID);
         break;
       case float floatValue:
-        NativeEntitySystem.AcceptInputFloat(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, floatValue, outputID);
+        NativeEntitySystem.AcceptInputFloat(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, floatValue, outputID);
         break;
       case double doubleValue:
-        NativeEntitySystem.AcceptInputDouble(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, doubleValue, outputID);
+        NativeEntitySystem.AcceptInputDouble(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, doubleValue, outputID);
         break;
       case string stringValue:
-        NativeEntitySystem.AcceptInputString(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, stringValue, outputID);
+        NativeEntitySystem.AcceptInputString(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, stringValue, outputID);
         break;
       default:
         throw new InvalidOperationException($"Unsupported type: {typeof(T).Name}");
@@ -47,28 +47,28 @@ internal partial class CEntityInstanceImpl : CEntityInstance {
   public void AddEntityIOEvent<T>(string input, T value, CEntityInstance? activator = null, CEntityInstance? caller = null, float delay = 0f) {
     switch (value) {
       case bool boolValue:
-        NativeEntitySystem.AddEntityIOEventBool(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, boolValue, delay);
+        NativeEntitySystem.AddEntityIOEventBool(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, boolValue, delay);
         break;
       case int intValue:
-        NativeEntitySystem.AddEntityIOEventInt32(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, intValue, delay);
+        NativeEntitySystem.AddEntityIOEventInt32(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, intValue, delay);
         break;
       case uint uintValue:
-        NativeEntitySystem.AddEntityIOEventUInt32(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, uintValue, delay);
+        NativeEntitySystem.AddEntityIOEventUInt32(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, uintValue, delay);
         break;
       case long longValue:
-        NativeEntitySystem.AddEntityIOEventInt64(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, longValue, delay);
+        NativeEntitySystem.AddEntityIOEventInt64(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, longValue, delay);
         break;
       case ulong ulongValue:
-        NativeEntitySystem.AddEntityIOEventUInt64(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, ulongValue, delay);
+        NativeEntitySystem.AddEntityIOEventUInt64(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, ulongValue, delay);
         break;
       case float floatValue:
-        NativeEntitySystem.AddEntityIOEventFloat(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, floatValue, delay);
+        NativeEntitySystem.AddEntityIOEventFloat(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, floatValue, delay);
         break;
       case double doubleValue:
-        NativeEntitySystem.AddEntityIOEventDouble(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, doubleValue, delay);
+        NativeEntitySystem.AddEntityIOEventDouble(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, doubleValue, delay);
         break;
       case string stringValue:
-        NativeEntitySystem.AddEntityIOEventString(GetHandle(), input, activator?.GetHandle() ?? nint.Zero, caller?.GetHandle() ?? nint.Zero, stringValue, delay);
+        NativeEntitySystem.AddEntityIOEventString(Address, input, activator?.Address ?? nint.Zero, caller?.Address ?? nint.Zero, stringValue, delay);
         break;
       default:
         throw new InvalidOperationException($"Unsupported type: {typeof(T).Name}");
@@ -76,10 +76,10 @@ internal partial class CEntityInstanceImpl : CEntityInstance {
   }
 
   public void DispatchSpawn(CEntityKeyValues? entityKV = null) {
-    NativeEntitySystem.Spawn(GetHandle(), entityKV?.GetHandle() ?? nint.Zero);
+    NativeEntitySystem.Spawn(Address, entityKV?.Address ?? nint.Zero);
   }
 
   public void Despawn() {
-    NativeEntitySystem.Despawn(GetHandle());
+    NativeEntitySystem.Despawn(Address);
   }
 }

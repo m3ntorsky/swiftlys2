@@ -19,6 +19,6 @@ internal class CMsgDevNewItemRequestImpl : TypedProtobuf<CMsgDevNewItemRequest>,
 
 
   public CSOItemCriteria Criteria
-  { get => new CSOItemCriteriaImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "criteria"), false); }
+  { get => new CSOItemCriteriaImpl(NativeNetMessages.GetNestedMessage(Address, "criteria"), false); }
 
 }

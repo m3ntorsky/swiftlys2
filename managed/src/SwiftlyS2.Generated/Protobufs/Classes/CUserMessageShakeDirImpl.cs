@@ -15,7 +15,7 @@ internal class CUserMessageShakeDirImpl : NetMessage<CUserMessageShakeDir>, CUse
 
 
   public CUserMessageShake Shake
-  { get => new CUserMessageShakeImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "shake"), false); }
+  { get => new CUserMessageShakeImpl(NativeNetMessages.GetNestedMessage(Address, "shake"), false); }
 
 
   public Vector Direction

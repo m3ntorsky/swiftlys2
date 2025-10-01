@@ -15,6 +15,6 @@ internal class CMsgSOCacheUnsubscribedImpl : TypedProtobuf<CMsgSOCacheUnsubscrib
 
 
   public CMsgSOIDOwner OwnerSoid
-  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "owner_soid"), false); }
+  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(Address, "owner_soid"), false); }
 
 }

@@ -42,7 +42,7 @@ enum MessageType : uint8_t
 
 struct BlockedTransmitInfo
 {
-    uint32_t blockedMask[MAX_EDICTS / 32] = { 0 };
+    uint64_t blockedMask[MAX_EDICTS / 64] = { 0 };
     std::vector<uint16_t> activeMasks;
 };
 

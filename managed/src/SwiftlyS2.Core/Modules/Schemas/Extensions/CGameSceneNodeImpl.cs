@@ -7,6 +7,6 @@ internal partial class CGameSceneNodeImpl : CGameSceneNode
 {
     public CSkeletonInstance GetSkeletonInstance()
     {
-        return new CSkeletonInstanceImpl(GameFunctions.GetSkeletonInstance(GetHandle()));
+        return new CSkeletonInstanceImpl(GameFunctions.GetSkeletonInstance(Address));
     }
 }

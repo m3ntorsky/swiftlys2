@@ -9,7 +9,7 @@ internal class CEntityKeyValuesSafeHandle : AllocableNativeHandle {
   }
 
   protected override bool Free() {
-    NativeCEntityKeyValues.Deallocate(GetHandle());
+    NativeCEntityKeyValues.Deallocate(Address);
     return true;
   }
 }

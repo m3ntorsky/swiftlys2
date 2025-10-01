@@ -13,341 +13,341 @@ internal class ProtobufAccessor : NativeHandle, IProtobufAccessor {
   
   public bool HasField(string fieldName)
   {
-    return NativeNetMessages.HasField(GetHandle(), fieldName);
+    return NativeNetMessages.HasField(Address, fieldName);
   }
 
   public bool GetBool(string fieldName)
   {
-    return NativeNetMessages.GetBool(GetHandle(), fieldName);
+    return NativeNetMessages.GetBool(Address, fieldName);
   }
 
   public void SetBool(string fieldName, bool value)
   {
-    NativeNetMessages.SetBool(GetHandle(), fieldName, value);
+    NativeNetMessages.SetBool(Address, fieldName, value);
   }
 
   public void SetInt32(string fieldName, int value)
   {
-    NativeNetMessages.SetInt32(GetHandle(), fieldName, value);
+    NativeNetMessages.SetInt32(Address, fieldName, value);
   }
 
   public int GetInt32(string fieldName) {
-    return NativeNetMessages.GetInt32(GetHandle(), fieldName);
+    return NativeNetMessages.GetInt32(Address, fieldName);
   }
 
   public void SetUInt32(string fieldName, uint value) {
-    NativeNetMessages.SetUInt32(GetHandle(), fieldName, value);
+    NativeNetMessages.SetUInt32(Address, fieldName, value);
   }
 
   public uint GetUInt32(string fieldName) {
-    return NativeNetMessages.GetUInt32(GetHandle(), fieldName);
+    return NativeNetMessages.GetUInt32(Address, fieldName);
   }
 
 
   public void SetInt64(string fieldName, long value)
   {
-    NativeNetMessages.SetInt64(GetHandle(), fieldName, value);
+    NativeNetMessages.SetInt64(Address, fieldName, value);
   }
 
   public long GetInt64(string fieldName)
   {
-    return NativeNetMessages.GetInt64(GetHandle(), fieldName);
+    return NativeNetMessages.GetInt64(Address, fieldName);
   }
 
   public void SetUInt64(string fieldName, ulong value) {
-    NativeNetMessages.SetUInt64(GetHandle(), fieldName, value);
+    NativeNetMessages.SetUInt64(Address, fieldName, value);
   }
 
   public ulong GetUInt64(string fieldName) {
-    return NativeNetMessages.GetUInt64(GetHandle(), fieldName);
+    return NativeNetMessages.GetUInt64(Address, fieldName);
   }
 
 
   public float GetFloat(string fieldName) {
-    return NativeNetMessages.GetFloat(GetHandle(), fieldName);
+    return NativeNetMessages.GetFloat(Address, fieldName);
   }
 
   public void SetFloat(string fieldName, float value) {
-    NativeNetMessages.SetFloat(GetHandle(), fieldName, value);
+    NativeNetMessages.SetFloat(Address, fieldName, value);
   }
 
   public double GetDouble(string fieldName) {
-    return NativeNetMessages.GetDouble(GetHandle(), fieldName);
+    return NativeNetMessages.GetDouble(Address, fieldName);
   }
 
   public void SetDouble(string fieldName, double value) {
-    NativeNetMessages.SetDouble(GetHandle(), fieldName, value);
+    NativeNetMessages.SetDouble(Address, fieldName, value);
   }
 
   public string GetString(string fieldName) {
-    return NativeNetMessages.GetString(GetHandle(), fieldName);
+    return NativeNetMessages.GetString(Address, fieldName);
   }
 
   public void SetString(string fieldName, string value) {   
-    NativeNetMessages.SetString(GetHandle(), fieldName, value);
+    NativeNetMessages.SetString(Address, fieldName, value);
   }
 
   public void SetBytes(string fieldName, byte[] value) {
-    NativeNetMessages.SetBytes(GetHandle(), fieldName, value);
+    NativeNetMessages.SetBytes(Address, fieldName, value);
   }
 
   public byte[] GetBytes(string fieldName) {
-    return NativeNetMessages.GetBytes(GetHandle(), fieldName);
+    return NativeNetMessages.GetBytes(Address, fieldName);
   }
 
   public void SetVector2D(string fieldName, Vector2D value) {
-    NativeNetMessages.SetVector2D(GetHandle(), fieldName, value);
+    NativeNetMessages.SetVector2D(Address, fieldName, value);
   }
 
   public Vector2D GetVector2D(string fieldName) {
-    return NativeNetMessages.GetVector2D(GetHandle(), fieldName);
+    return NativeNetMessages.GetVector2D(Address, fieldName);
   }
 
   public void SetVector(string fieldName, Vector value) {
-    NativeNetMessages.SetVector(GetHandle(), fieldName, value);
+    NativeNetMessages.SetVector(Address, fieldName, value);
   }
 
   public Vector GetVector(string fieldName) {
-    return NativeNetMessages.GetVector(GetHandle(), fieldName);
+    return NativeNetMessages.GetVector(Address, fieldName);
   }
 
   public void SetColor(string fieldName, Color value) {
-    NativeNetMessages.SetColor(GetHandle(), fieldName, value);
+    NativeNetMessages.SetColor(Address, fieldName, value);
   }
 
   public Color GetColor(string fieldName) {
-    return NativeNetMessages.GetColor(GetHandle(), fieldName);
+    return NativeNetMessages.GetColor(Address, fieldName);
   }
 
   public void SetQAngle(string fieldName, QAngle value) {
-    NativeNetMessages.SetQAngle(GetHandle(), fieldName, value);
+    NativeNetMessages.SetQAngle(Address, fieldName, value);
   }
 
   public QAngle GetQAngle(string fieldName) {
-    return NativeNetMessages.GetQAngle(GetHandle(), fieldName);
+    return NativeNetMessages.GetQAngle(Address, fieldName);
   }
 
 
   public unsafe nint GetNestedMessage(string fieldName)
   {
-    return NativeNetMessages.GetNestedMessage(GetHandle(), fieldName);
+    return NativeNetMessages.GetNestedMessage(Address, fieldName);
   }
 
 
   // Repeated field accessors
   public bool GetRepeatedBool(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedBool(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedBool(Address, fieldName, index);
   }
 
   public void SetRepeatedBool(string fieldName, int index, bool value)
   {
-    NativeNetMessages.SetRepeatedBool(GetHandle(), fieldName, index, value);
+    NativeNetMessages.SetRepeatedBool(Address, fieldName, index, value);
   }
 
   public void AddBool(string fieldName, bool value)
   {
-    NativeNetMessages.AddBool(GetHandle(), fieldName, value);
+    NativeNetMessages.AddBool(Address, fieldName, value);
   }
 
   public int GetRepeatedInt32(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedInt32(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedInt32(Address, fieldName, index);
   }
 
   public void SetRepeatedInt32(string fieldName, int index, int value)
   {
-    NativeNetMessages.SetRepeatedInt32(GetHandle(), fieldName, index, value);
+    NativeNetMessages.SetRepeatedInt32(Address, fieldName, index, value);
   }
 
   public void AddInt32(string fieldName, int value)
   {
-    NativeNetMessages.AddInt32(GetHandle(), fieldName, value);
+    NativeNetMessages.AddInt32(Address, fieldName, value);
   }
 
   public uint GetRepeatedUInt32(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedUInt32(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedUInt32(Address, fieldName, index);
   }
 
   public void SetRepeatedUInt32(string fieldName, int index, uint value)
   {
-    NativeNetMessages.SetRepeatedUInt32(GetHandle(), fieldName, index, value);
+    NativeNetMessages.SetRepeatedUInt32(Address, fieldName, index, value);
   }
 
   public void AddUInt32(string fieldName, uint value)
   {
-    NativeNetMessages.AddUInt32(GetHandle(), fieldName, value);
+    NativeNetMessages.AddUInt32(Address, fieldName, value);
   }
 
   public long GetRepeatedInt64(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedInt64(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedInt64(Address, fieldName, index);
   }
 
   public void SetRepeatedInt64(string fieldName, int index, long value)
   {
-    NativeNetMessages.SetRepeatedInt64(GetHandle(), fieldName, index, value);
+    NativeNetMessages.SetRepeatedInt64(Address, fieldName, index, value);
   }
 
   public void AddInt64(string fieldName, long value)
   {
-    NativeNetMessages.AddInt64(GetHandle(), fieldName, value);
+    NativeNetMessages.AddInt64(Address, fieldName, value);
   }
 
   public ulong GetRepeatedUInt64(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedUInt64(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedUInt64(Address, fieldName, index);
   }
 
   public void SetRepeatedUInt64(string fieldName, int index, ulong value)
   {
-    NativeNetMessages.SetRepeatedUInt64(GetHandle(), fieldName, index, value);
+    NativeNetMessages.SetRepeatedUInt64(Address, fieldName, index, value);
   }
 
   public void AddUInt64(string fieldName, ulong value)
   {
-    NativeNetMessages.AddUInt64(GetHandle(), fieldName, value);
+    NativeNetMessages.AddUInt64(Address, fieldName, value);
   }
 
   public float GetRepeatedFloat(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedFloat(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedFloat(Address, fieldName, index);
   }
 
   public void SetRepeatedFloat(string fieldName, int index, float value)
   {
-    NativeNetMessages.SetRepeatedFloat(GetHandle(), fieldName, index, value);
+    NativeNetMessages.SetRepeatedFloat(Address, fieldName, index, value);
   }
 
   public void AddFloat(string fieldName, float value)
   {
-    NativeNetMessages.AddFloat(GetHandle(), fieldName, value);
+    NativeNetMessages.AddFloat(Address, fieldName, value);
   }
 
   public double GetRepeatedDouble(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedDouble(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedDouble(Address, fieldName, index);
   }
 
   public void SetRepeatedDouble(string fieldName, int index, double value)
   {
-    NativeNetMessages.SetRepeatedDouble(GetHandle(), fieldName, index, value);
+    NativeNetMessages.SetRepeatedDouble(Address, fieldName, index, value);
   }
 
   public void AddDouble(string fieldName, double value)
   {
-    NativeNetMessages.AddDouble(GetHandle(), fieldName, value);
+    NativeNetMessages.AddDouble(Address, fieldName, value);
   }
 
   public string GetRepeatedString(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedString(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedString(Address, fieldName, index);
   }
 
   public void SetRepeatedString(string fieldName, int index, string value)
   {
-    NativeNetMessages.SetRepeatedString(GetHandle(), fieldName, index, value);
+    NativeNetMessages.SetRepeatedString(Address, fieldName, index, value);
   }
 
   public void AddString(string fieldName, string value)
   {
-    NativeNetMessages.AddString(GetHandle(), fieldName, value);
+    NativeNetMessages.AddString(Address, fieldName, value);
   }
 
   public byte[] GetRepeatedBytes(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedBytes(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedBytes(Address, fieldName, index);
   }
 
   public void SetRepeatedBytes(string fieldName, int index, byte[] value)
   {
-    NativeNetMessages.SetRepeatedBytes(GetHandle(), fieldName, index, value);
+    NativeNetMessages.SetRepeatedBytes(Address, fieldName, index, value);
   }
 
   public void AddBytes(string fieldName, byte[] value)
   {
-    NativeNetMessages.AddBytes(GetHandle(), fieldName, value);
+    NativeNetMessages.AddBytes(Address, fieldName, value);
   }
 
   public Vector2D GetRepeatedVector2D(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedVector2D(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedVector2D(Address, fieldName, index);
   }
 
   public void SetRepeatedVector2D(string fieldName, int index, Vector2D value)
   {
-    NativeNetMessages.SetRepeatedVector2D(GetHandle(), fieldName, index, value);
+    NativeNetMessages.SetRepeatedVector2D(Address, fieldName, index, value);
   }
 
   public void AddVector2D(string fieldName, Vector2D value)
   {
-    NativeNetMessages.AddVector2D(GetHandle(), fieldName, value);
+    NativeNetMessages.AddVector2D(Address, fieldName, value);
   }
 
   public Vector GetRepeatedVector(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedVector(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedVector(Address, fieldName, index);
   }
 
   public void SetRepeatedVector(string fieldName, int index, Vector value)
   {
-    NativeNetMessages.SetRepeatedVector(GetHandle(), fieldName, index, value);
+    NativeNetMessages.SetRepeatedVector(Address, fieldName, index, value);
   }
 
   public void AddVector(string fieldName, Vector value)
   {
-    NativeNetMessages.AddVector(GetHandle(), fieldName, value);
+    NativeNetMessages.AddVector(Address, fieldName, value);
   }
 
   public Color GetRepeatedColor(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedColor(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedColor(Address, fieldName, index);
   }
 
   public void SetRepeatedColor(string fieldName, int index, Color value)
   {
-    NativeNetMessages.SetRepeatedColor(GetHandle(), fieldName, index, value);
+    NativeNetMessages.SetRepeatedColor(Address, fieldName, index, value);
   }
 
   public void AddColor(string fieldName, Color value)
   {
-    NativeNetMessages.AddColor(GetHandle(), fieldName, value);
+    NativeNetMessages.AddColor(Address, fieldName, value);
   }
 
   public QAngle GetRepeatedQAngle(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedQAngle(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedQAngle(Address, fieldName, index);
   }
 
   public void SetRepeatedQAngle(string fieldName, int index, QAngle value)
   {
-    NativeNetMessages.SetRepeatedQAngle(GetHandle(), fieldName, index, value);
+    NativeNetMessages.SetRepeatedQAngle(Address, fieldName, index, value);
   }
 
   public void AddQAngle(string fieldName, QAngle value)
   {
-    NativeNetMessages.AddQAngle(GetHandle(), fieldName, value);
+    NativeNetMessages.AddQAngle(Address, fieldName, value);
   }
 
   public unsafe nint GetRepeatedNestedMessage(string fieldName, int index)
   {
-    return NativeNetMessages.GetRepeatedNestedMessage(GetHandle(), fieldName, index);
+    return NativeNetMessages.GetRepeatedNestedMessage(Address, fieldName, index);
   }
 
   public unsafe nint AddNestedMessage(string fieldName)
   {
-    return NativeNetMessages.AddNestedMessage(GetHandle(), fieldName);
+    return NativeNetMessages.AddNestedMessage(Address, fieldName);
   }
 
   public int GetRepeatedFieldSize(string fieldName)
   {
-    return NativeNetMessages.GetRepeatedFieldSize(GetHandle(), fieldName);
+    return NativeNetMessages.GetRepeatedFieldSize(Address, fieldName);
   }
 
   public void ClearRepeatedField(string fieldName)
   {
-    NativeNetMessages.ClearRepeatedField(GetHandle(), fieldName);
+    NativeNetMessages.ClearRepeatedField(Address, fieldName);
   }
 
   public T Get<T>(string fieldName) {

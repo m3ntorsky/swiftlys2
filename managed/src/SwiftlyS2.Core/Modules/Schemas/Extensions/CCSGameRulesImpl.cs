@@ -8,7 +8,7 @@ internal partial class CCSGameRulesImpl : CCSGameRules
 {
     public T? FindPickerEntity<T>(CBasePlayerController controller) where T : ISchemaClass<T>
     {
-        CBaseEntity ent = new CBaseEntityImpl(GameFunctions.FindPickerEntity(GetHandle(), controller.GetHandle()));
+        CBaseEntity ent = new CBaseEntityImpl(GameFunctions.FindPickerEntity(Address, controller.Address));
         return ent.As<T>();
     }
 }

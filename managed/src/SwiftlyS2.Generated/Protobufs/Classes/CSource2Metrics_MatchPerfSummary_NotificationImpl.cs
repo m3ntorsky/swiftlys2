@@ -31,7 +31,7 @@ internal class CSource2Metrics_MatchPerfSummary_NotificationImpl : TypedProtobuf
 
 
   public CMsgSource2VProfLiteReport ServerProfile
-  { get => new CMsgSource2VProfLiteReportImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "server_profile"), false); }
+  { get => new CMsgSource2VProfLiteReportImpl(NativeNetMessages.GetNestedMessage(Address, "server_profile"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CSource2Metrics_MatchPerfSummary_Notification_Client> Clients

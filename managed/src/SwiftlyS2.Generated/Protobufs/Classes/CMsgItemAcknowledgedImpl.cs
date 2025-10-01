@@ -15,6 +15,6 @@ internal class CMsgItemAcknowledgedImpl : TypedProtobuf<CMsgItemAcknowledged>, C
 
 
   public CEconItemPreviewDataBlock Iteminfo
-  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "iteminfo"), false); }
+  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(Address, "iteminfo"), false); }
 
 }

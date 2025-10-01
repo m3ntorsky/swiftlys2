@@ -15,7 +15,7 @@ internal class CMsgSOCacheHaveVersionImpl : TypedProtobuf<CMsgSOCacheHaveVersion
 
 
   public CMsgSOIDOwner Soid
-  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "soid"), false); }
+  { get => new CMsgSOIDOwnerImpl(NativeNetMessages.GetNestedMessage(Address, "soid"), false); }
 
 
   public ulong Version

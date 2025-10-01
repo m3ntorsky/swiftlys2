@@ -19,7 +19,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingGC2ClientAbandonImpl : TypedProtobu
 
 
   public CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve AbandonedMatch
-  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "abandoned_match"), false); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl(NativeNetMessages.GetNestedMessage(Address, "abandoned_match"), false); }
 
 
   public uint PenaltySeconds

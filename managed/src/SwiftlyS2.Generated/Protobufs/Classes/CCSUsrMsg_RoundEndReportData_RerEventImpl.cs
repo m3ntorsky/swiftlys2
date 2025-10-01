@@ -31,11 +31,11 @@ internal class CCSUsrMsg_RoundEndReportData_RerEventImpl : TypedProtobuf<CCSUsrM
 
 
   public CCSUsrMsg_RoundEndReportData_RerEvent_Victim VictimData
-  { get => new CCSUsrMsg_RoundEndReportData_RerEvent_VictimImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "victim_data"), false); }
+  { get => new CCSUsrMsg_RoundEndReportData_RerEvent_VictimImpl(NativeNetMessages.GetNestedMessage(Address, "victim_data"), false); }
 
 
   public CCSUsrMsg_RoundEndReportData_RerEvent_Objective ObjectiveData
-  { get => new CCSUsrMsg_RoundEndReportData_RerEvent_ObjectiveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "objective_data"), false); }
+  { get => new CCSUsrMsg_RoundEndReportData_RerEvent_ObjectiveImpl(NativeNetMessages.GetNestedMessage(Address, "objective_data"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CCSUsrMsg_RoundEndReportData_RerEvent_Damage> AllDamageData

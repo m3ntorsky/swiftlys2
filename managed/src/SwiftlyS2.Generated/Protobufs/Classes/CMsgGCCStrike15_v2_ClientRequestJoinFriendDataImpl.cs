@@ -31,7 +31,7 @@ internal class CMsgGCCStrike15_v2_ClientRequestJoinFriendDataImpl : TypedProtobu
 
 
   public CMsgGCCStrike15_v2_MatchmakingGC2ClientReserve Res
-  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "res"), false); }
+  { get => new CMsgGCCStrike15_v2_MatchmakingGC2ClientReserveImpl(NativeNetMessages.GetNestedMessage(Address, "res"), false); }
 
 
   public string Errormsg

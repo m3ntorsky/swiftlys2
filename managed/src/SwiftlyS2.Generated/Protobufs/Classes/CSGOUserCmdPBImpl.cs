@@ -15,7 +15,7 @@ internal class CSGOUserCmdPBImpl : TypedProtobuf<CSGOUserCmdPB>, CSGOUserCmdPB
 
 
   public CBaseUserCmdPB Base
-  { get => new CBaseUserCmdPBImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "base"), false); }
+  { get => new CBaseUserCmdPBImpl(NativeNetMessages.GetNestedMessage(Address, "base"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CSGOInputHistoryEntryPB> InputHistory

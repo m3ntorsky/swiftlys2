@@ -41,7 +41,7 @@ internal class EntitySystemService : IEntitySystemService, IDisposable {
   }
 
   public CHandle<T> GetRefEHandle<T>(T entity) where T : class, ISchemaClass<T> {
-    var handle = NativeEntitySystem.GetEntityHandleFromEntity(entity.GetHandle());
+    var handle = NativeEntitySystem.GetEntityHandleFromEntity(entity.Address);
     return new CHandle<T> {
       Raw = handle,
     };
@@ -56,7 +56,7 @@ internal class EntitySystemService : IEntitySystemService, IDisposable {
     CEntityIdentity? pFirst = new CEntityIdentityImpl(NativeEntitySystem.GetFirstActiveEntity());
 
     for (; pFirst != null && pFirst.IsValid; pFirst = pFirst.Next) {
-      yield return new CEntityInstanceImpl(pFirst.GetHandle().Read<nint>());
+      yield return new CEntityInstanceImpl(pFirst.Address.Read<nint>());
     }
   }
 
@@ -65,13 +65,13 @@ internal class EntitySystemService : IEntitySystemService, IDisposable {
     if (designerName == null) {
       throw new ArgumentException($"Can't get entities with class {typeof(T).Name}, which doesn't have a designer name");
     }
-    return GetAllEntities().Where((entity) => entity.Entity?.DesignerName == designerName).Select((entity) => T.From(entity.GetHandle()));
+    return GetAllEntities().Where((entity) => entity.Entity?.DesignerName == designerName).Select((entity) => T.From(entity.Address));
   }
 
   public IEnumerable<T> GetAllEntitiesByDesignerName<T>(string designerName) where T : class, ISchemaClass<T> {
     return GetAllEntities()
       .Where(entity => entity.Entity?.DesignerName == designerName)
-      .Select(entity => T.From(entity.GetHandle()));
+      .Select(entity => T.From(entity.Address));
   }
 
   Guid IEntitySystemService.HookEntityOutput<T>(string outputName, IEntitySystemService.EntityOutputHandler callback)

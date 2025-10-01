@@ -7,6 +7,6 @@ internal partial class CBasePlayerPawnImpl : CBasePlayerPawn
 {
     public void CommitSuicide(bool explode, bool force)
     {
-        GameFunctions.PawnCommitSuicide(GetHandle(), explode, force);
+        GameFunctions.PawnCommitSuicide(Address, explode, force);
     }
 }

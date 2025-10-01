@@ -51,6 +51,6 @@ internal class C2S_CONNECT_MessageImpl : TypedProtobuf<C2S_CONNECT_Message>, C2S
 
 
   public C2S_CONNECT_SameProcessCheck LocalhostSameProcessCheck
-  { get => new C2S_CONNECT_SameProcessCheckImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "localhost_same_process_check"), false); }
+  { get => new C2S_CONNECT_SameProcessCheckImpl(NativeNetMessages.GetNestedMessage(Address, "localhost_same_process_check"), false); }
 
 }

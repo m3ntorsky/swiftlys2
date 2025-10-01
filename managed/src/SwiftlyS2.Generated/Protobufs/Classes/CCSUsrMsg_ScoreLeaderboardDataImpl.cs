@@ -15,6 +15,6 @@ internal class CCSUsrMsg_ScoreLeaderboardDataImpl : NetMessage<CCSUsrMsg_ScoreLe
 
 
   public ScoreLeaderboardData Data
-  { get => new ScoreLeaderboardDataImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "data"), false); }
+  { get => new ScoreLeaderboardDataImpl(NativeNetMessages.GetNestedMessage(Address, "data"), false); }
 
 }

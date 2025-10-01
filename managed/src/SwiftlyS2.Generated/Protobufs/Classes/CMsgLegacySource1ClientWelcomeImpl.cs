@@ -31,7 +31,7 @@ internal class CMsgLegacySource1ClientWelcomeImpl : TypedProtobuf<CMsgLegacySour
 
 
   public CMsgLegacySource1ClientWelcome_Location Location
-  { get => new CMsgLegacySource1ClientWelcome_LocationImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "location"), false); }
+  { get => new CMsgLegacySource1ClientWelcome_LocationImpl(NativeNetMessages.GetNestedMessage(Address, "location"), false); }
 
 
   public byte[] GameData2

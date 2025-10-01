@@ -35,19 +35,19 @@ internal class CSGOInputHistoryEntryPBImpl : TypedProtobuf<CSGOInputHistoryEntry
 
 
   public CSGOInterpolationInfoPB_CL ClInterp
-  { get => new CSGOInterpolationInfoPB_CLImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "cl_interp"), false); }
+  { get => new CSGOInterpolationInfoPB_CLImpl(NativeNetMessages.GetNestedMessage(Address, "cl_interp"), false); }
 
 
   public CSGOInterpolationInfoPB SvInterp0
-  { get => new CSGOInterpolationInfoPBImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "sv_interp0"), false); }
+  { get => new CSGOInterpolationInfoPBImpl(NativeNetMessages.GetNestedMessage(Address, "sv_interp0"), false); }
 
 
   public CSGOInterpolationInfoPB SvInterp1
-  { get => new CSGOInterpolationInfoPBImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "sv_interp1"), false); }
+  { get => new CSGOInterpolationInfoPBImpl(NativeNetMessages.GetNestedMessage(Address, "sv_interp1"), false); }
 
 
   public CSGOInterpolationInfoPB PlayerInterp
-  { get => new CSGOInterpolationInfoPBImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "player_interp"), false); }
+  { get => new CSGOInterpolationInfoPBImpl(NativeNetMessages.GetNestedMessage(Address, "player_interp"), false); }
 
 
   public int FrameNumber

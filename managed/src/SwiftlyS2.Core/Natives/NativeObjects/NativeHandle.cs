@@ -13,8 +13,5 @@ internal class NativeHandle : INativeHandle {
     _Handle = handle;
   }
 
-  public nint GetHandle() {
-    if (!IsValid) throw new InvalidOperationException("Trying to get a invalid handle.");
-    return _Handle;
-  } 
+  public nint Address => _Handle;
 }

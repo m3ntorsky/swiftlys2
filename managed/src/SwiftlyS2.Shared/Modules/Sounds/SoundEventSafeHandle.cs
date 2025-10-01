@@ -9,7 +9,7 @@ internal class SoundEventSafeHandle : AllocableNativeHandle {
   }
 
   protected override bool Free() {
-    NativeSounds.DestroySoundEvent(GetHandle());
+    NativeSounds.DestroySoundEvent(Address);
     return true;
   }
 }

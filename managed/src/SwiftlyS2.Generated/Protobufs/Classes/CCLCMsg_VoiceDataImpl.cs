@@ -15,7 +15,7 @@ internal class CCLCMsg_VoiceDataImpl : NetMessage<CCLCMsg_VoiceData>, CCLCMsg_Vo
 
 
   public CMsgVoiceAudio Audio
-  { get => new CMsgVoiceAudioImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "audio"), false); }
+  { get => new CMsgVoiceAudioImpl(NativeNetMessages.GetNestedMessage(Address, "audio"), false); }
 
 
   public ulong Xuid

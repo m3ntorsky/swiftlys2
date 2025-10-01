@@ -43,6 +43,6 @@ internal class CEntityMessageDoSparkImpl : TypedProtobuf<CEntityMessageDoSpark>,
 
 
   public CEntityMsg EntityMsg
-  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "entity_msg"), false); }
+  { get => new CEntityMsgImpl(NativeNetMessages.GetNestedMessage(Address, "entity_msg"), false); }
 
 }

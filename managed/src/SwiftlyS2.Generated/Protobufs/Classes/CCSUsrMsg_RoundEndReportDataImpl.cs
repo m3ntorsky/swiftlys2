@@ -15,7 +15,7 @@ internal class CCSUsrMsg_RoundEndReportDataImpl : NetMessage<CCSUsrMsg_RoundEndR
 
 
   public CCSUsrMsg_RoundEndReportData_InitialConditions InitConditions
-  { get => new CCSUsrMsg_RoundEndReportData_InitialConditionsImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "init_conditions"), false); }
+  { get => new CCSUsrMsg_RoundEndReportData_InitialConditionsImpl(NativeNetMessages.GetNestedMessage(Address, "init_conditions"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CCSUsrMsg_RoundEndReportData_RerEvent> AllRerEventData

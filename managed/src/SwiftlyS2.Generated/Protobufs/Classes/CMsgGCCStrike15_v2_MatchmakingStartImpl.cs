@@ -31,7 +31,7 @@ internal class CMsgGCCStrike15_v2_MatchmakingStartImpl : TypedProtobuf<CMsgGCCSt
 
 
   public TournamentMatchSetup TournamentMatch
-  { get => new TournamentMatchSetupImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tournament_match"), false); }
+  { get => new TournamentMatchSetupImpl(NativeNetMessages.GetNestedMessage(Address, "tournament_match"), false); }
 
 
   public bool PrimeOnly

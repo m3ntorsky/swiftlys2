@@ -15,10 +15,10 @@ internal class CGameInfoImpl : TypedProtobuf<CGameInfo>, CGameInfo
 
 
   public CGameInfo_CDotaGameInfo Dota
-  { get => new CGameInfo_CDotaGameInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "dota"), false); }
+  { get => new CGameInfo_CDotaGameInfoImpl(NativeNetMessages.GetNestedMessage(Address, "dota"), false); }
 
 
   public CGameInfo_CCSGameInfo Cs
-  { get => new CGameInfo_CCSGameInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "cs"), false); }
+  { get => new CGameInfo_CCSGameInfoImpl(NativeNetMessages.GetNestedMessage(Address, "cs"), false); }
 
 }

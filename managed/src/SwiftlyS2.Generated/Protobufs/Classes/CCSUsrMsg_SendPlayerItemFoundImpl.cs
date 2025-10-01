@@ -15,7 +15,7 @@ internal class CCSUsrMsg_SendPlayerItemFoundImpl : NetMessage<CCSUsrMsg_SendPlay
 
 
   public CEconItemPreviewDataBlock Iteminfo
-  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "iteminfo"), false); }
+  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(Address, "iteminfo"), false); }
 
 
   public int Playerslot
