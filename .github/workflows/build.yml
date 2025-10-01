@@ -71,31 +71,12 @@ jobs:
       with:
         xmake-version: latest
         actions-cache-folder: '.xmake-cache'
-        build-cache: true
-        build-cache-key: ${{ runner.os }}-build
-        build-cache-path: 'build/'
-    - name: Restore build cache
-      id: restore-cache
-      uses: actions/cache/restore@v4
-      with:
-        path: |
-          build
-        key: ${{ runner.os }}-build-${{ needs.versioning.outputs.fullSemVer }}
-        restore-keys:
-          ${{ runner.os }}-build-
     - name: Build
       run: |
         xmake f --cc=gcc-14 --cxx=g++-14 -y
         xmake build -y
       env:
         SWIFTLY_VERSION: ${{ needs.versioning.outputs.fullSemVer }}
-    - name: Save cache
-      id: save-cache
-      uses: actions/cache/save@v4
-      with:
-        path: |
-          build
-        key: ${{ steps.restore-cache.outputs.cache-primary-key }}
     - name: Upload plugin as artifact
       uses: actions/upload-artifact@v4
       with:
@@ -115,31 +96,11 @@ jobs:
       uses: xmake-io/github-action-setup-xmake@v1
       with:
         xmake-version: latest
-        build-cache: true
-        build-cache-key: ${{ runner.os }}-build
-        build-cache-path: 'build/'
-    - name: Restore build cache
-      id: restore-cache
-      uses: actions/cache/restore@v4
-      with:
-        path: |
-          build
-        key: ${{ runner.os }}-build-${{ needs.versioning.outputs.fullSemVer }}
-        restore-keys:
-          ${{ runner.os }}-build-
     - name: Build
       run: |
-        xmake f --policies=build.ccache:y -y
         xmake build -y
       env:
         SWIFTLY_VERSION: ${{ needs.versioning.outputs.fullSemVer }}
-    - name: Save cache
-      id: save-cache
-      uses: actions/cache/save@v4
-      with:
-        path: |
-          build
-        key: ${{ steps.restore-cache.outputs.cache-primary-key }}
     - name: Upload plugin as artifact
       uses: actions/upload-artifact@v4
       with:
