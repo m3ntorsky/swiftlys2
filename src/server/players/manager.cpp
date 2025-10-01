@@ -155,8 +155,8 @@ void CPlayerManager::CheckTransmit(CCheckTransmitInfo** ppInfoList, int infoCoun
 
         auto& blockedBits = player->GetBlockedTransmittingBits();
 
-        uint32_t* base = pInfo->m_pTransmitEntity->Base();
-        uint32_t* baseAlways = pInfo->m_pTransmitAlways->Base();
+        uint64_t* base = reinterpret_cast<uint64_t*>(pInfo->m_pTransmitEntity->Base());
+        uint64_t* baseAlways = reinterpret_cast<uint64_t*>(pInfo->m_pTransmitAlways->Base());
         auto& activeMasks = blockedBits.activeMasks;
 
         // NUM_MASKS_ACTIVE ops = NUM_MASKS_ACTIVE*32 bits -> 64 players -> NUM_MASKS_ACTIVE*64 ops
