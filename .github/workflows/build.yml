@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   versioning:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     outputs:
       fullSemVer: ${{ steps.version_step.outputs.fullSemVer }}
       semVer: ${{ steps.version_step.outputs.semVer }}
@@ -28,6 +28,10 @@ jobs:
     - name: Determine Version
       id: version_step
       uses: gittools/actions/gitversion/execute@v3.2.1
+    - name: Diagnose
+      run: |
+        gitversion /diag
+        
   managed:
     needs: versioning
     runs-on: ubuntu-latest
