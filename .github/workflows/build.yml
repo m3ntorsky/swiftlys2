@@ -130,6 +130,11 @@ jobs:
       with:
         name: swiftlys2_windows
         path: build/package/addons
+    - name: Upload PDB as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: swiftlys2_windows_pdb
+        path: build/windows/x64/release/swiftlys2.pdb
 
   packaging:
     needs: [versioning, linux_core, windows_core, managed]
