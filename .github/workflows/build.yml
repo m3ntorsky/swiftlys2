@@ -5,6 +5,9 @@ on: [push, workflow_dispatch, pull_request]
 env:
   XMAKE_ROOT: y
 
+permissions:
+  contents: write
+
 jobs:
   versioning:
     runs-on: ubuntu-latest
@@ -12,6 +15,7 @@ jobs:
       fullSemVer: ${{ steps.version_step.outputs.fullSemVer }}
       semVer: ${{ steps.version_step.outputs.semVer }}
       informationalVersion: ${{ steps.version_step.outputs.informationalVersion }}
+      preReleaseLabel: ${{ steps.version_step.outputs.preReleaseLabel }}
     steps:
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
@@ -77,14 +81,19 @@ jobs:
       uses: xmake-io/github-action-setup-xmake@v1
       with:
         xmake-version: latest
+        actions-cache-folder: '.xmake-cache'
         build-cache: true
+        build-cache-key: ${{ runner.os }}-build
+        build-cache-path: 'build/'
     - name: Restore build cache
       id: restore-cache
       uses: actions/cache/restore@v4
       with:
         path: |
           build
-        key: ${{ runner.os }}-build
+        key: ${{ runner.os }}-build-${{ needs.versioning.outputs.fullSemVer }}
+        restore-keys:
+          ${{ runner.os }}-build-
     - name: Build
       run: |
         xmake f --cc=gcc-14 --cxx=g++-14 -y
@@ -118,16 +127,20 @@ jobs:
       with:
         xmake-version: latest
         build-cache: true
+        build-cache-key: ${{ runner.os }}-build
+        build-cache-path: 'build/'
     - name: Restore build cache
       id: restore-cache
       uses: actions/cache/restore@v4
       with:
         path: |
           build
-        key: ${{ runner.os }}-build
+        key: ${{ runner.os }}-build-${{ needs.versioning.outputs.fullSemVer }}
+        restore-keys:
+          ${{ runner.os }}-build-
     - name: Build
       run: |
-        xmake f --ccache=y
+        xmake f --policies=build.ccache:y -y
         xmake build -y
       env:
         SWIFTLY_VERSION: ${{ needs.versioning.outputs.fullSemVer }}
@@ -153,8 +166,8 @@ jobs:
     needs: [versioning, linux_core, windows_core, managed]
     runs-on: ubuntu-latest
     env:
-      LINUX_FOLDER: swiftlys2-linux-${{ needs.versioning.outputs.fullSemVer }}
-      WINDOWS_FOLDER: swiftlys2-windows-${{ needs.versioning.outputs.fullSemVer }}
+      LINUX_FOLDER: swiftlys2-linux-v${{ needs.versioning.outputs.fullSemVer }}
+      WINDOWS_FOLDER: swiftlys2-windows-v${{ needs.versioning.outputs.fullSemVer }}
     steps:
     - name: Download artifacts
       uses: actions/download-artifact@v4
@@ -170,7 +183,7 @@ jobs:
     - name: Download artifacts
       uses: actions/download-artifact@v4
       with:
-        name: swiftlys2_windows
+        name: swiftlys2_managed
         path: ./managed
     - name: Download runtimes
       run: |
@@ -198,13 +211,60 @@ jobs:
         cp -r linux-runtimes/content/ ${{ env.LINUX_FOLDER }}-with-runtimes/swiftlys2/bin/managed/dotnet
         cp -r windows-runtimes/content/ ${{ env.WINDOWS_FOLDER }}-with-runtimes/swiftlys2/bin/managed/dotnet
 
+        zip -r ${{ env.LINUX_FOLDER }}-with-runtimes.zip ${{ env.LINUX_FOLDER }}-with-runtimes
+        zip -r ${{ env.WINDOWS_FOLDER }}-with-runtimes.zip ${{ env.WINDOWS_FOLDER }}-with-runtimes
+        zip -r ${{ env.LINUX_FOLDER }}.zip ${{ env.LINUX_FOLDER }}
+        zip -r ${{ env.WINDOWS_FOLDER }}.zip ${{ env.WINDOWS_FOLDER }}
+
     - name: Upload package
-      if: ${{ github.event_name == 'push' }}
       uses: actions/upload-artifact@v4
       with:
         name: swiftlys2-package-${{ needs.versioning.outputs.fullSemVer }}
         path: |
-          ${{ env.LINUX_FOLDER }}
-          ${{ env.WINDOWS_FOLDER }}
-          ${{ env.LINUX_FOLDER }}-with-runtimes
-          ${{ env.WINDOWS_FOLDER }}-with-runtimes
+          ${{ env.LINUX_FOLDER }}.zip
+          ${{ env.WINDOWS_FOLDER }}.zip
+          ${{ env.LINUX_FOLDER }}-with-runtimes.zip
+          ${{ env.WINDOWS_FOLDER }}-with-runtimes.zip
+  
+  releasing:
+    if: ${{ github.event_name == 'push' }}
+    needs: [versioning, packaging]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Create tag
+      run: |
+        TAG_NAME="v${{ needs.versioning.outputs.fullSemVer }}"
+        MSG="Release v${{ needs.versioning.outputs.fullSemVer }}"
+
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+        if git rev-parse -q --verify "refs/tags/$TAG_NAME" >/dev/null; then
+          echo "Tag $TAG_NAME already exists"; exit 1
+        fi
+        git tag -a "$TAG_NAME" -m "${MSG}"
+        git push origin "$TAG_NAME"
+    
+    - name: Download artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: swiftlys2-package-${{ needs.versioning.outputs.fullSemVer }}
+        path: ./release
+
+    - name: Create release
+      uses: softprops/action-gh-release@v2
+      with:
+        generate_release_notes: true
+        files: |
+          release/swiftlys2-linux-v${{ needs.versioning.outputs.fullSemVer }}.zip
+          release/swiftlys2-windows-v${{ needs.versioning.outputs.fullSemVer }}.zip
+          release/swiftlys2-linux-v${{ needs.versioning.outputs.fullSemVer }}-with-runtimes.zip
+          release/swiftlys2-windows-v${{ needs.versioning.outputs.fullSemVer }}-with-runtimes.zip
+        prerelease: ${{ needs.versioning.outputs.preReleaseLabel != '' }}
+        tag_name: v${{ needs.versioning.outputs.fullSemVer }}
+        name: Release v${{ needs.versioning.outputs.fullSemVer }}
+        body: ${{ needs.versioning.outputs.fullSemVer  }}
