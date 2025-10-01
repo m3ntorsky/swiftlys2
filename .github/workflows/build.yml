@@ -31,6 +31,8 @@ jobs:
   managed:
     needs: versioning
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
     steps:
     - name: Checkout repository and submodules
       uses: actions/checkout@v4
@@ -44,11 +46,17 @@ jobs:
       run: |
         cd managed
         dotnet build -c Release -p:Version=${{ needs.versioning.outputs.fullSemVer }} -p:InformationalVersion=${{ needs.versioning.outputs.informationalVersion }} -p:FileVersion=${{ needs.versioning.outputs.semVer }}
+          # Get a short-lived NuGet API key
+    - name: Login to NuGet
+      uses: NuGet/login@v1
+      id: login
+      with:
+        user: contoso-bot
     - name: Publish to nuget
       run: |
         cd managed
         dotnet pack --include-symbols --output nupkgs -c Release -p:Version=${{ needs.versioning.outputs.fullSemVer }}
-        dotnet nuget push nupkgs/SwiftlyS2.${{ needs.versioning.outputs.fullSemVer }}.nupkg --source https://nuget.org/api/v2/package
+        dotnet nuget push nupkgs/SwiftlyS2.${{ needs.versioning.outputs.fullSemVer }}.nupkg --api-key ${{steps.login.outputs.NUGET_API_KEY}} --source https://nuget.org/api/v2/package
     - name: Upload plugin as artifact
       uses: actions/upload-artifact@v4
       with:
