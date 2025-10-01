@@ -78,7 +78,8 @@ jobs:
       with:
         path: |
           build
-        key: ${{ runner.os }}-build
+        restore-keys:
+          ${{ runner.os }}-build
     - name: Build
       run: |
         xmake f --cc=gcc-14 --cxx=g++-14 -y
@@ -91,7 +92,7 @@ jobs:
       with:
         path: |
           build
-        key: ${{ steps.restore-cache.outputs.cache-primary-key }}
+        key: ${{ runner.os }}-build-${{ needs.versioning.outputs.fullSemVer }}
     - name: Upload plugin as artifact
       uses: actions/upload-artifact@v4
       with:
@@ -120,7 +121,8 @@ jobs:
       with:
         path: |
           build
-        key: ${{ runner.os }}-build
+        restore-keys:
+          ${{ runner.os }}-build
     - name: Build
       run: |
         xmake f --policies=build.ccache:y -y
@@ -133,7 +135,7 @@ jobs:
       with:
         path: |
           build
-        key: ${{ steps.restore-cache.outputs.cache-primary-key }}
+        key: ${{ runner.os }}-build-${{ needs.versioning.outputs.fullSemVer }}
     - name: Upload plugin as artifact
       uses: actions/upload-artifact@v4
       with:
@@ -221,6 +223,10 @@ jobs:
       run: |
         TAG_NAME="${{ needs.versioning.outputs.fullSemVer }}"
         MSG="Release v${{ needs.versioning.outputs.fullSemVer }}"
+
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
         if git rev-parse -q --verify "refs/tags/$TAG_NAME" >/dev/null; then
           echo "Tag $TAG_NAME already exists"; exit 1
         fi
