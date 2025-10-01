@@ -89,6 +89,10 @@ public:
     virtual BlockedTransmitInfo& GetBlockedTransmittingBits() = 0;
 
     virtual void Think() = 0;
+
+    /** Menus! **/
+    virtual void RenderMenuCenterText(const std::string& text) = 0;
+    virtual void ClearRenderMenuCenterText() = 0;
 };
 
 #endif

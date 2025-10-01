@@ -352,15 +352,24 @@ void CPlayer::Think()
 
             if (centerMessageEvent)
             {
-                if (centerMessageEndTime >= GetTime()) {
-                    centerMessageEvent->SetString("loc_token", centerMessageText.c_str());
+                if (centerMenuText != "") {
+                    centerMessageEvent->SetString("loc_token", centerMenuText.c_str());
                     centerMessageEvent->SetInt("duration", 1);
                     centerMessageEvent->SetInt("userid", m_iPlayerId);
 
                     listener->FireGameEvent(centerMessageEvent);
                 }
                 else {
-                    centerMessageEndTime = 0;
+                    if (centerMessageEndTime >= GetTime()) {
+                        centerMessageEvent->SetString("loc_token", centerMessageText.c_str());
+                        centerMessageEvent->SetInt("duration", 1);
+                        centerMessageEvent->SetInt("userid", m_iPlayerId);
+
+                        listener->FireGameEvent(centerMessageEvent);
+                    }
+                    else {
+                        centerMessageEndTime = 0;
+                    }
                 }
             }
         }
@@ -407,4 +416,14 @@ void CPlayer::Think()
         }
     }
 
+}
+
+void CPlayer::RenderMenuCenterText(const std::string& text)
+{
+    centerMenuText = text;
+}
+
+void CPlayer::ClearRenderMenuCenterText()
+{
+    centerMenuText = "";
 }

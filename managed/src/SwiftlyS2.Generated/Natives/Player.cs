@@ -149,4 +149,21 @@ internal static class NativePlayer {
     return retString;
   }
   }
+  private unsafe static delegate* unmanaged<int, byte*, void> _SetCenterMenuRender;
+  public unsafe static void SetCenterMenuRender(int playerid, string text) {
+    var pool = ArrayPool<byte>.Shared;
+    var textLength = Encoding.UTF8.GetByteCount(text);
+    var textBuffer = pool.Rent(textLength + 1);
+    Encoding.UTF8.GetBytes(text, textBuffer);
+    textBuffer[textLength] = 0;
+    fixed (byte* textBufferPtr = textBuffer) {
+        _SetCenterMenuRender(playerid, textBufferPtr);
+    pool.Return(textBuffer);
+
+  }
+  }
+  private unsafe static delegate* unmanaged<int, void> _ClearCenterMenuRender;
+  public unsafe static void ClearCenterMenuRender(int playerid) {
+    _ClearCenterMenuRender(playerid);
+  }
 }

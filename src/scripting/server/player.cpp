@@ -245,6 +245,24 @@ int Bridge_Player_GetLanguage(char* out, int playerid)
     return s.size();
 }
 
+void Bridge_Player_SetCenterMenuRender(int playerid, const char* text)
+{
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    auto player = playerManager->GetPlayer(playerid);
+    if (!player) return;
+
+    player->RenderMenuCenterText(text);
+}
+
+void Bridge_Player_ClearCenterMenuRender(int playerid)
+{
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    auto player = playerManager->GetPlayer(playerid);
+    if (!player) return;
+
+    player->ClearRenderMenuCenterText();
+}
+
 DEFINE_NATIVE("Player.SendMessage", Bridge_Player_SendMessage);
 DEFINE_NATIVE("Player.IsFakeClient", Bridge_Player_IsFakeClient);
 DEFINE_NATIVE("Player.IsAuthorized", Bridge_Player_IsAuthorized);
@@ -266,3 +284,5 @@ DEFINE_NATIVE("Player.SwitchTeam", Bridge_Player_SwitchTeam);
 DEFINE_NATIVE("Player.TakeDamage", Bridge_Player_TakeDamage);
 DEFINE_NATIVE("Player.Teleport", Bridge_Player_Teleport);
 DEFINE_NATIVE("Player.GetLanguage", Bridge_Player_GetLanguage);
+DEFINE_NATIVE("Player.SetCenterMenuRender", Bridge_Player_SetCenterMenuRender);
+DEFINE_NATIVE("Player.ClearCenterMenuRender", Bridge_Player_ClearCenterMenuRender);

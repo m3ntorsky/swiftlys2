@@ -64,6 +64,10 @@ public:
     virtual BlockedTransmitInfo& GetBlockedTransmittingBits() override;
 
     virtual void Think() override;
+
+    /** Menus! **/
+    virtual void RenderMenuCenterText(const std::string& text) override;
+    virtual void ClearRenderMenuCenterText() override;
 private:
     int m_iPlayerId;
     bool m_bAuthorized;
@@ -85,6 +89,8 @@ private:
     uint64_t centerMessageEndTime = 0;
     std::string centerMessageText = "";
     IGameEvent* centerMessageEvent = nullptr;
+
+    std::string centerMenuText = "";
 };
 
 #endif
