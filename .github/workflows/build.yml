@@ -206,8 +206,10 @@ jobs:
       with:
         fetch-depth: 0
     - name: Create tag
+      env:
+        TAG_PREFIX: ${{ needs.versioning.outputs.preReleaseLabel != '' && 'pre-' || '' }}
       run: |
-        TAG_NAME="v${{ needs.versioning.outputs.semVer }}"
+        TAG_NAME="${{ env.TAG_PREFIX }}v${{ needs.versioning.outputs.semVer }}"
         MSG="Release v${{ needs.versioning.outputs.semVer }}"
 
         git config --global user.name "github-actions[bot]"
