@@ -1,6 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+
+    <PackageId>SwiftlyS2.CS2</PackageId>
+    <Authors>SwiftlyS2 Team</Authors>
+    <PackageIcon>icon.png</PackageIcon>
+    <PackageProjectUrl>https://github.com/swiftly-solution/swiftlys2</PackageProjectUrl>
+    <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+
+
     <OutputType>Library</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -11,7 +19,7 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <BaseOutputPath>build\</BaseOutputPath>
     <OutputPath>$(BaseOutputPath)Release\SwiftlyS2</OutputPath>
-    <AssemblyName>SwiftlyS2</AssemblyName>
+    <AssemblyName>SwiftlyS2.CS2</AssemblyName>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
 
   </PropertyGroup>
@@ -23,6 +31,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DebugType>portable</DebugType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.66" />
