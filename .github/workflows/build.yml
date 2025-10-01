@@ -68,7 +68,10 @@ jobs:
       uses: xmake-io/github-action-setup-xmake@v1
       with:
         xmake-version: latest
+        actions-cache-folder: '.xmake-cache'
         build-cache: true
+        build-cache-key: ${{ runner.os }}-build
+        build-cache-path: 'build/'
     - name: Restore build cache
       id: restore-cache
       uses: actions/cache/restore@v4
@@ -109,6 +112,8 @@ jobs:
       with:
         xmake-version: latest
         build-cache: true
+        build-cache-key: ${{ runner.os }}-build
+        build-cache-path: 'build/'
     - name: Restore build cache
       id: restore-cache
       uses: actions/cache/restore@v4
@@ -118,7 +123,7 @@ jobs:
         key: ${{ runner.os }}-build
     - name: Build
       run: |
-        xmake f --ccache=y -y
+        xmake f --policies=build.ccache:y -y
         xmake build -y
       env:
         SWIFTLY_VERSION: ${{ needs.versioning.outputs.fullSemVer }}
