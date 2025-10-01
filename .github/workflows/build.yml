@@ -80,7 +80,7 @@ jobs:
           build
         key: ${{ runner.os }}-build-${{ needs.versioning.outputs.fullSemVer }}
         restore-keys:
-          ${{ runner.os }}-build
+          ${{ runner.os }}-build-
     - name: Build
       run: |
         xmake f --cc=gcc-14 --cxx=g++-14 -y
@@ -124,7 +124,7 @@ jobs:
           build
         key: ${{ runner.os }}-build-${{ needs.versioning.outputs.fullSemVer }}
         restore-keys:
-          ${{ runner.os }}-build
+          ${{ runner.os }}-build-
     - name: Build
       run: |
         xmake f --policies=build.ccache:y -y
@@ -223,7 +223,7 @@ jobs:
         fetch-depth: 0
     - name: Create tag
       run: |
-        TAG_NAME="${{ needs.versioning.outputs.fullSemVer }}"
+        TAG_NAME="v${{ needs.versioning.outputs.fullSemVer }}"
         MSG="Release v${{ needs.versioning.outputs.fullSemVer }}"
 
         git config --global user.name "github-actions[bot]"
@@ -248,9 +248,9 @@ jobs:
         files: |
           release/swiftlys2-linux-${{ needs.versioning.outputs.fullSemVer }}.zip
           release/swiftlys2-windows-${{ needs.versioning.outputs.fullSemVer }}.zip
-          release/swiftlys2-linux-with-runtimes-${{ needs.versioning.outputs.fullSemVer }}.zip
-          release/swiftlys2-windows-with-runtimes-${{ needs.versioning.outputs.fullSemVer }}.zip
+          release/swiftlys2-linux-${{ needs.versioning.outputs.fullSemVer }}-with-runtimes.zip
+          release/swiftlys2-windows-${{ needs.versioning.outputs.fullSemVer }}-with-runtimes.zip
         prerelease: ${{ needs.versioning.outputs.preReleaseLabel != '' }}
-        tag_name: ${{ needs.versioning.outputs.fullSemVer }}
+        tag_name: v${{ needs.versioning.outputs.fullSemVer }}
         name: Release v${{ needs.versioning.outputs.fullSemVer }}
         body: ${{ needs.versioning.outputs.fullSemVer  }}
