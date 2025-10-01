@@ -25,9 +25,9 @@ internal class GameDataService : IGameDataService {
   public GameDataService(CoreContext context, MemoryService memoryService, ILogger<GameDataService> logger) {
     _Context = context;
 
-    var signaturePath = Path.Combine(_Context.BaseDirectory, "gamedata", "signatures.jsonc");
-    var offsetPath = Path.Combine(_Context.BaseDirectory, "gamedata", "offsets.jsonc");
-    var patchPath = Path.Combine(_Context.BaseDirectory, "gamedata", "patches.jsonc");
+    var signaturePath = Path.Combine(_Context.BaseDirectory, "resources", "gamedata", "signatures.jsonc");
+    var offsetPath = Path.Combine(_Context.BaseDirectory, "resources", "gamedata", "offsets.jsonc");
+    var patchPath = Path.Combine(_Context.BaseDirectory, "resources", "gamedata", "patches.jsonc");
 
     try {
 
