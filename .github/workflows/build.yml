@@ -48,9 +48,8 @@ jobs:
       run: |
         cd managed
         dotnet pack --include-symbols --output nupkgs -c Release -p:Version=${{ needs.versioning.outputs.fullSemVer }}
-        dotnet nuget push build/Release/SwiftlyS2.${{ needs.versioning.outputs.fullSemVer }}.nupkg --source https://nuget.org/api/v2/package
-    
-        - name: Upload plugin as artifact
+        dotnet nuget push nupkgs/SwiftlyS2.${{ needs.versioning.outputs.fullSemVer }}.nupkg --source https://nuget.org/api/v2/package
+    - name: Upload plugin as artifact
       uses: actions/upload-artifact@v4
       with:
         name: swiftlys2_managed
