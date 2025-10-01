@@ -91,7 +91,6 @@ jobs:
       with:
         path: |
           build
-        key: ${{ runner.os }}-build-${{ needs.versioning.outputs.fullSemVer }}
         restore-keys:
           ${{ runner.os }}-build
     - name: Build
@@ -106,7 +105,7 @@ jobs:
       with:
         path: |
           build
-        key: ${{ steps.restore-cache.outputs.cache-primary-key }}
+        key: ${{ runner.os }}-build-${{ needs.versioning.outputs.fullSemVer }}
     - name: Upload plugin as artifact
       uses: actions/upload-artifact@v4
       with:
@@ -135,7 +134,6 @@ jobs:
       with:
         path: |
           build
-        key: ${{ runner.os }}-build-${{ needs.versioning.outputs.fullSemVer }}
         restore-keys:
           ${{ runner.os }}-build
     - name: Build
@@ -150,7 +148,7 @@ jobs:
       with:
         path: |
           build
-        key: ${{ steps.restore-cache.outputs.cache-primary-key }}
+        key: ${{ runner.os }}-build-${{ needs.versioning.outputs.fullSemVer }}
     - name: Upload plugin as artifact
       uses: actions/upload-artifact@v4
       with:
