@@ -1,15 +1,28 @@
-using SwiftlyS2.Core.Natives;
-using SwiftlyS2.Shared.Natives;
-using SwiftlyS2.Shared.SchemaDefinitions;
-using SwiftlyS2.Shared.Schemas;
+using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Extensions;
+using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Core.NetMessages;
 using SwiftlyS2.Core.SchemaDefinitions;
 using SwiftlyS2.Shared.EntitySystem;
+using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Shared.Profiler;
+using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.Schemas;
 using System.Collections.Frozen;
 
 namespace SwiftlyS2.Core.EntitySystem;
 
-internal class EntitySystemService : IEntitySystemService {
+internal class EntitySystemService : IEntitySystemService, IDisposable {
+  private List<EntityOutputHookCallback> _callbacks = new();
+  private object _lock = new();
+  private ILoggerFactory _loggerFactory;
+  private IContextedProfilerService _profiler;
+
+  public EntitySystemService(ILoggerFactory loggerFactory, IContextedProfilerService profiler)
+  {
+    _loggerFactory = loggerFactory;
+    _profiler = profiler;
+  }
 
   public T CreateEntity<T>() where T : class, ISchemaClass<T> {
     var designerName = GetEntityDesignerName<T>();
@@ -59,6 +72,31 @@ internal class EntitySystemService : IEntitySystemService {
     return GetAllEntities()
       .Where(entity => entity.Entity?.DesignerName == designerName)
       .Select(entity => T.From(entity.GetHandle()));
+  }
+
+  Guid IEntitySystemService.HookEntityOutput<T>(string outputName, IEntitySystemService.EntityOutputHandler callback)
+  {
+    var hook = new EntityOutputHookCallback(GetEntityDesignerName<T>() ?? "", outputName, callback, _loggerFactory, _profiler);
+    lock (_lock)
+    {
+      _callbacks.Add(hook);
+    }
+    return hook.Guid;
+  }
+
+  public void UnhookEntityOutput(Guid guid)
+  {
+    lock(_lock)
+    {
+      _callbacks.RemoveAll(callback => {
+        if (callback.Guid == guid)
+        {
+          callback.Dispose();
+          return true;
+        }
+        return false;
+      });
+    }
   }
 
   public static readonly FrozenDictionary<Type, string> TypeToDesignerName = new Dictionary<Type, string>() {
@@ -511,4 +549,15 @@ internal class EntitySystemService : IEntitySystemService {
     return TypeToDesignerName.TryGetValue(typeof(T), out var name) ? name : null;
   }
 
+  public void Dispose()
+  {
+    lock (_lock)
+    {
+      foreach (var callback in _callbacks)
+      {
+        callback.Dispose();
+      }
+      _callbacks.Clear();
+    }
+  }
 }

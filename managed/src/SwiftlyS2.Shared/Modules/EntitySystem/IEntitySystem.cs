@@ -1,3 +1,4 @@
+using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.Schemas;
@@ -59,4 +60,33 @@ public interface IEntitySystemService {
   /// <returns>All entities by designer name.</returns>
   public IEnumerable<T> GetAllEntitiesByDesignerName<T>(string designerName) where T : class, ISchemaClass<T>;
 
+  /// <summary>
+  /// Represents a method that handles an entity output event, allowing custom logic to be executed when an entity
+  /// triggers an output.
+  /// </summary>
+  /// <param name="entityIO">The entity output object that contains information about the triggered output.</param>
+  /// <param name="outputName">The name of the output that was triggered.</param>
+  /// <param name="activator">The entity instance that activated the output.</param>
+  /// <param name="caller">The entity instance that called the output, if applicable.</param>
+  /// <param name="delay">The delay, in seconds, before the output is executed.</param>
+  /// <returns>A <see cref="HookResult"/> value indicating the result of the handler's execution,  such as whether the output
+  /// should proceed or be blocked.</returns>
+  delegate HookResult EntityOutputHandler(CEntityIOOutput entityIO, string outputName, CEntityInstance activator, CEntityInstance caller, float delay);
+
+  /// <summary>
+  /// Hooks an output of the specified entity type to a callback function.
+  /// </summary>
+  /// <remarks>This method allows you to attach a handler to a specific output of an entity. The callback will
+  /// be invoked whenever the output is triggered.</remarks>
+  /// <typeparam name="T">The type of the entity, which must implement <see cref="ISchemaClass{T}"/>.</typeparam>
+  /// <param name="outputName">The name of the output to hook. This value cannot be <see langword="null"/> or empty.</param>
+  /// <param name="callback">The callback function to invoke when the output is triggered. This value cannot be <see langword="null"/>.</param>
+  /// <returns>A <see cref="Guid"/> that uniquely identifies the hook. This identifier can be used to manage or remove the hook.</returns>
+  public Guid HookEntityOutput<T>(string outputName, EntityOutputHandler callback) where T : class, ISchemaClass<T>;
+
+  /// <summary>
+  /// Removes the association between the specified entity output and its handler.
+  /// </summary>
+  /// <param name="guid">The unique identifier of the entity output to unhook.</param>
+  public void UnhookEntityOutput(Guid guid);
 }
