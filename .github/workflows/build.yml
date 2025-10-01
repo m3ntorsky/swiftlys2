@@ -24,14 +24,10 @@ jobs:
     - name: Setup GitVersion
       uses: gittools/actions/gitversion/setup@v3.2.1
       with:
-        versionSpec: '5.12.x'
+        versionSpec: '5.11.x'
     - name: Determine Version
       id: version_step
       uses: gittools/actions/gitversion/execute@v3.2.1
-    - name: Diagnose
-      run: |
-        gitversion /diag
-        
   managed:
     needs: versioning
     runs-on: ubuntu-latest
