@@ -71,6 +71,7 @@ jobs:
       with:
         xmake-version: latest
         actions-cache-folder: '.xmake-cache'
+        actions-cache-key: xmake-${{ runner.os }}
     - name: Build
       run: |
         xmake f --cc=gcc-14 --cxx=g++-14 -y
@@ -96,6 +97,7 @@ jobs:
       uses: xmake-io/github-action-setup-xmake@v1
       with:
         xmake-version: latest
+        actions-cache-key: xmake-${{ runner.os }}
     - name: Build
       run: |
         xmake build -y
