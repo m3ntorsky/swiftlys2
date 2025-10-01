@@ -2,6 +2,7 @@ name: Synchronize master to beta
 
 on:
   pull_request:
+    types: [closed]
     branches:
       - master
 
