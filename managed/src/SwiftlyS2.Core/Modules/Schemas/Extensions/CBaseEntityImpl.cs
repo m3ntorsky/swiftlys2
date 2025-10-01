@@ -42,7 +42,7 @@ internal partial class CBaseEntityImpl : CBaseEntity
                 vel = &ve;
             }
 
-            GameFunctions.Teleport(GetHandle(), pos, ang, vel);
+            GameFunctions.Teleport(Address, pos, ang, vel);
         }
     }
 }

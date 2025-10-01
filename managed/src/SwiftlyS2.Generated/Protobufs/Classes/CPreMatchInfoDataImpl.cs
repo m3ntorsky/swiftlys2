@@ -19,7 +19,7 @@ internal class CPreMatchInfoDataImpl : TypedProtobuf<CPreMatchInfoData>, CPreMat
 
 
   public CDataGCCStrike15_v2_TournamentMatchDraft Draft
-  { get => new CDataGCCStrike15_v2_TournamentMatchDraftImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "draft"), false); }
+  { get => new CDataGCCStrike15_v2_TournamentMatchDraftImpl(NativeNetMessages.GetNestedMessage(Address, "draft"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CPreMatchInfoData_TeamStats> Stats

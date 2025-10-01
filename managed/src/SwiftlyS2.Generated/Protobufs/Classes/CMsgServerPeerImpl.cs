@@ -23,7 +23,7 @@ internal class CMsgServerPeerImpl : TypedProtobuf<CMsgServerPeer>, CMsgServerPee
 
 
   public CMsgIPCAddress Ipc
-  { get => new CMsgIPCAddressImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "ipc"), false); }
+  { get => new CMsgIPCAddressImpl(NativeNetMessages.GetNestedMessage(Address, "ipc"), false); }
 
 
   public bool TheyHearYou

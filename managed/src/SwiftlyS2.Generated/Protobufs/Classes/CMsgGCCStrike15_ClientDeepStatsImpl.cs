@@ -19,7 +19,7 @@ internal class CMsgGCCStrike15_ClientDeepStatsImpl : TypedProtobuf<CMsgGCCStrike
 
 
   public CMsgGCCStrike15_ClientDeepStats_DeepStatsRange Range
-  { get => new CMsgGCCStrike15_ClientDeepStats_DeepStatsRangeImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "range"), false); }
+  { get => new CMsgGCCStrike15_ClientDeepStats_DeepStatsRangeImpl(NativeNetMessages.GetNestedMessage(Address, "range"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgGCCStrike15_ClientDeepStats_DeepStatsMatch> Matches

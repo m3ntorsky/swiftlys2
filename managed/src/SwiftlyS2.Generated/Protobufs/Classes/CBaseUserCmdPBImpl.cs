@@ -27,7 +27,7 @@ internal class CBaseUserCmdPBImpl : TypedProtobuf<CBaseUserCmdPB>, CBaseUserCmdP
 
 
   public CInButtonStatePB ButtonsPb
-  { get => new CInButtonStatePBImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "buttons_pb"), false); }
+  { get => new CInButtonStatePBImpl(NativeNetMessages.GetNestedMessage(Address, "buttons_pb"), false); }
 
 
   public QAngle Viewangles

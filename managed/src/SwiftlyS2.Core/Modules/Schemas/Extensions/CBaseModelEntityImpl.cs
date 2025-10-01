@@ -7,6 +7,6 @@ internal partial class CBaseModelEntityImpl : CBaseModelEntity
 {
     public void SetModel(string model)
     {
-        GameFunctions.SetModel(GetHandle(), model);
+        GameFunctions.SetModel(Address, model);
     }
 }

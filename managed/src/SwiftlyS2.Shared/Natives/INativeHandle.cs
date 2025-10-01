@@ -16,9 +16,9 @@ public interface INativeHandle
   public bool IsValid { get; }
 
   /// <summary>
-  /// Dangerous method to get the raw handle.
+  /// Dangerous method to get the memory address of the object
   /// </summary>
   /// <returns>The raw handle.</returns>
-  public unsafe nint GetHandle();
+  public unsafe IntPtr Address { get; }
 
 }

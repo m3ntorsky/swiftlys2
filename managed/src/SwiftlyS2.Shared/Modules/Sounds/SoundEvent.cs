@@ -14,8 +14,8 @@ public class SoundEvent : IDisposable {
   /// </summary>
   public string Name 
   {
-    get => NativeSounds.GetName(GetHandle());
-    set => NativeSounds.SetName(GetHandle(), value);
+    get => NativeSounds.GetName(Address);
+    set => NativeSounds.SetName(Address, value);
   }
 
   /// <summary>
@@ -24,8 +24,8 @@ public class SoundEvent : IDisposable {
   /// </summary>
   public int SourceEntityIndex
   {
-    get => NativeSounds.GetSourceEntityIndex(GetHandle());
-    set => NativeSounds.SetSourceEntityIndex(GetHandle(), value);
+    get => NativeSounds.GetSourceEntityIndex(Address);
+    set => NativeSounds.SetSourceEntityIndex(Address, value);
   }
 
   /// <summary>
@@ -33,8 +33,8 @@ public class SoundEvent : IDisposable {
   /// </summary>
   public float Volume
   {
-    get => NativeSounds.GetFloat(GetHandle(), "public.volume");
-    set => NativeSounds.SetFloat(GetHandle(), "public.volume", value);
+    get => NativeSounds.GetFloat(Address, "public.volume");
+    set => NativeSounds.SetFloat(Address, "public.volume", value);
   }
 
   /// <summary>
@@ -42,8 +42,8 @@ public class SoundEvent : IDisposable {
   /// </summary>
   public float Pitch
   {
-    get => NativeSounds.GetFloat(GetHandle(), "public.pitch");
-    set => NativeSounds.SetFloat(GetHandle(), "public.pitch", value);
+    get => NativeSounds.GetFloat(Address, "public.pitch");
+    set => NativeSounds.SetFloat(Address, "public.pitch", value);
   }
 
   /// <summary>
@@ -66,9 +66,7 @@ public class SoundEvent : IDisposable {
     Pitch = pitch;
   }
 
-  private nint GetHandle() {
-    return _handle.GetHandle();
-  }
+  private nint Address => _handle.Address;
 
   public void SetSourceEntity(CEntityInstance entity)
   {
@@ -77,58 +75,58 @@ public class SoundEvent : IDisposable {
 
   public void SetBool(string fieldName, bool value)
   {
-    NativeSounds.SetBool(GetHandle(), fieldName, value);
+    NativeSounds.SetBool(Address, fieldName, value);
   }
 
   public bool GetBool(string fieldName)
   {
-    return NativeSounds.GetBool(GetHandle(), fieldName);
+    return NativeSounds.GetBool(Address, fieldName);
   }
 
   public void SetInt32(string fieldName, int value)
   {
-    NativeSounds.SetInt32(GetHandle(), fieldName, value);
+    NativeSounds.SetInt32(Address, fieldName, value);
   }
 
   public int GetInt32(string fieldName)
   {
-    return NativeSounds.GetInt32(GetHandle(), fieldName);
+    return NativeSounds.GetInt32(Address, fieldName);
   }
 
   public void SetUInt32(string fieldName, uint value)
   {
-    NativeSounds.SetUInt32(GetHandle(), fieldName, value);
+    NativeSounds.SetUInt32(Address, fieldName, value);
   }
 
   public uint GetUInt32(string fieldName)
   {
-    return NativeSounds.GetUInt32(GetHandle(), fieldName);
+    return NativeSounds.GetUInt32(Address, fieldName);
   }
 
   public void SetFloat(string fieldName, float value)
   {
-    NativeSounds.SetFloat(GetHandle(), fieldName, value);
+    NativeSounds.SetFloat(Address, fieldName, value);
   }
 
   public float GetFloat(string fieldName)
   {
-    return NativeSounds.GetFloat(GetHandle(), fieldName);
+    return NativeSounds.GetFloat(Address, fieldName);
   }
 
   public void SetFloat3(string fieldName, float x, float y, float z)
   {
     Vector vec = new(x, y, z);
-    NativeSounds.SetFloat3(GetHandle(), fieldName, vec);
+    NativeSounds.SetFloat3(Address, fieldName, vec);
   }
 
   public void SetFloat3(string fieldName, Vector vec)
   {
-    NativeSounds.SetFloat3(GetHandle(), fieldName, vec);
+    NativeSounds.SetFloat3(Address, fieldName, vec);
   }
 
   public Vector GetFloat3(string fieldName)
   {
-    return NativeSounds.GetFloat3(GetHandle(), fieldName);
+    return NativeSounds.GetFloat3(Address, fieldName);
   }
 
   /// <summary>
@@ -136,8 +134,8 @@ public class SoundEvent : IDisposable {
   /// </summary>
   public void Emit()
   {
-    NativeSounds.SetClients(GetHandle(), Recipients.ToMask());
-    NativeSounds.Emit(GetHandle());
+    NativeSounds.SetClients(Address, Recipients.ToMask());
+    NativeSounds.Emit(Address);
   }
 
   public void Dispose() {

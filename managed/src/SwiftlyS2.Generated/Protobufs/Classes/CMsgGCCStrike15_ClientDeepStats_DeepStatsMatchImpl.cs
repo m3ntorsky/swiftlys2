@@ -15,7 +15,7 @@ internal class CMsgGCCStrike15_ClientDeepStats_DeepStatsMatchImpl : TypedProtobu
 
 
   public DeepPlayerStatsEntry Player
-  { get => new DeepPlayerStatsEntryImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "player"), false); }
+  { get => new DeepPlayerStatsEntryImpl(NativeNetMessages.GetNestedMessage(Address, "player"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<DeepPlayerMatchEvent> Events

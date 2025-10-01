@@ -15,6 +15,6 @@ internal class CCSUsrMsg_PlayerDecalDigitalSignatureImpl : NetMessage<CCSUsrMsg_
 
 
   public PlayerDecalDigitalSignature Data
-  { get => new PlayerDecalDigitalSignatureImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "data"), false); }
+  { get => new PlayerDecalDigitalSignatureImpl(NativeNetMessages.GetNestedMessage(Address, "data"), false); }
 
 }

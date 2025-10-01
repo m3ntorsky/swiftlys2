@@ -203,7 +203,7 @@ internal class TestService {
 
           unsafe {
 
-            // NativeEntitySystem.Despawn((void*)player.PlayerPawn.Value.GetHandle(), "SetScale", null, null, true, 0);
+            // NativeEntitySystem.Despawn((void*)player.PlayerPawn.Value.Address, "SetScale", null, null, true, 0);
             // var handle = NativeSounds.CreateSoundEvent();
             // NativeSounds.AddAllClients(handle);
             // NativeSounds.SetName(handle, "Weapon_AK47.Single");

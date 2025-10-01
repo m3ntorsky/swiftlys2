@@ -19,7 +19,7 @@ internal class MLTickImpl : TypedProtobuf<MLTick>, MLTick
 
 
   public MLGameState State
-  { get => new MLGameStateImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "state"), false); }
+  { get => new MLGameStateImpl(NativeNetMessages.GetNestedMessage(Address, "state"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<MLEvent> Events

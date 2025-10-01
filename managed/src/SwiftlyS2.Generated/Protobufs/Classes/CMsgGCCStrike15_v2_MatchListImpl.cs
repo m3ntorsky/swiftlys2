@@ -35,6 +35,6 @@ internal class CMsgGCCStrike15_v2_MatchListImpl : TypedProtobuf<CMsgGCCStrike15_
 
 
   public CDataGCCStrike15_v2_TournamentInfo Tournamentinfo
-  { get => new CDataGCCStrike15_v2_TournamentInfoImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "tournamentinfo"), false); }
+  { get => new CDataGCCStrike15_v2_TournamentInfoImpl(NativeNetMessages.GetNestedMessage(Address, "tournamentinfo"), false); }
 
 }

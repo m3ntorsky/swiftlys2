@@ -23,6 +23,6 @@ internal class CUserMessageCameraTransitionImpl : NetMessage<CUserMessageCameraT
 
 
   public CUserMessageCameraTransition_Transition_DataDriven ParamsDataDriven
-  { get => new CUserMessageCameraTransition_Transition_DataDrivenImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "params_data_driven"), false); }
+  { get => new CUserMessageCameraTransition_Transition_DataDrivenImpl(NativeNetMessages.GetNestedMessage(Address, "params_data_driven"), false); }
 
 }

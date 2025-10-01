@@ -24,117 +24,117 @@ internal class GameEventAccessor : NativeHandle, IGameEventAccessor {
 
   public void SetBool(string key, bool value) {
     CheckIsValid();
-    NativeGameEvents.SetBool(GetHandle(), key, value);
+    NativeGameEvents.SetBool(Address, key, value);
   }
 
   public bool GetBool(string key) {
     CheckIsValid();
-    return NativeGameEvents.GetBool(GetHandle(), key);
+    return NativeGameEvents.GetBool(Address, key);
   }
 
   public void SetInt32(string key, int value) {
     CheckIsValid();
-    NativeGameEvents.SetInt(GetHandle(), key, value);
+    NativeGameEvents.SetInt(Address, key, value);
   }
 
   public int GetInt32(string key) {
     CheckIsValid();
-    return NativeGameEvents.GetInt(GetHandle(), key);
+    return NativeGameEvents.GetInt(Address, key);
   }
 
   public void SetUInt64(string key, ulong value) {
     CheckIsValid();
-    NativeGameEvents.SetUint64(GetHandle(), key, value);
+    NativeGameEvents.SetUint64(Address, key, value);
   }
 
   public ulong GetUInt64(string key) {
     CheckIsValid();
-    return NativeGameEvents.GetUint64(GetHandle(), key);
+    return NativeGameEvents.GetUint64(Address, key);
   }
 
   public void SetFloat(string key, float value) {
     CheckIsValid();
-    NativeGameEvents.SetFloat(GetHandle(), key, value);
+    NativeGameEvents.SetFloat(Address, key, value);
   }
 
   public float GetFloat(string key) {
     CheckIsValid();
-    return NativeGameEvents.GetFloat(GetHandle(), key);
+    return NativeGameEvents.GetFloat(Address, key);
   }
 
   public void SetString(string key, string value) {
     CheckIsValid();
-    NativeGameEvents.SetString(GetHandle(), key, value);
+    NativeGameEvents.SetString(Address, key, value);
   }
 
   public string GetString(string key) {
     CheckIsValid();
-    return NativeGameEvents.GetString(GetHandle(), key);
+    return NativeGameEvents.GetString(Address, key);
   }
 
   public void SetEntity<K>(string key, K value) where K : CEntityInstance {
     CheckIsValid();
-    NativeGameEvents.SetEntity(GetHandle(), key, value.GetHandle());
+    NativeGameEvents.SetEntity(Address, key, value.Address);
   }
 
   public K GetEntity<K>(string key) where K : CEntityInstance {
     CheckIsValid();
-    return (K)K.From(NativeGameEvents.GetEntity(GetHandle(), key));
+    return (K)K.From(NativeGameEvents.GetEntity(Address, key));
   }
 
   public void SetEntityIndex(string key, int value) {
     CheckIsValid();
-    NativeGameEvents.SetEntityIndex(GetHandle(), key, value);
+    NativeGameEvents.SetEntityIndex(Address, key, value);
   }
 
   public int GetEntityIndex(string key) {
     CheckIsValid();
-    return NativeGameEvents.GetEntityIndex(GetHandle(), key);
+    return NativeGameEvents.GetEntityIndex(Address, key);
   }
 
   public void SetPlayerSlot(string key, int value) {
     CheckIsValid();
-    NativeGameEvents.SetPlayerSlot(GetHandle(), key, value);
+    NativeGameEvents.SetPlayerSlot(Address, key, value);
   }
 
   public int GetPlayerSlot(string key) {
     CheckIsValid();
-    return NativeGameEvents.GetPlayerSlot(GetHandle(), key);
+    return NativeGameEvents.GetPlayerSlot(Address, key);
   }
 
   public CCSPlayerController GetPlayerController(string key) {
     CheckIsValid();
-    return new CCSPlayerControllerImpl(NativeGameEvents.GetPlayerController(GetHandle(), key));
+    return new CCSPlayerControllerImpl(NativeGameEvents.GetPlayerController(Address, key));
   }
 
   public CCSPlayerPawn GetPlayerPawn(string key) {
     CheckIsValid();
-    return new CCSPlayerPawnImpl(NativeGameEvents.GetPlayerPawn(GetHandle(), key));
+    return new CCSPlayerPawnImpl(NativeGameEvents.GetPlayerPawn(Address, key));
   }
 
   public void SetPtr(string key, nint value) {
     CheckIsValid();
-    NativeGameEvents.SetPtr(GetHandle(), key, value);
+    NativeGameEvents.SetPtr(Address, key, value);
   }
 
   public nint GetPtr(string key) {
     CheckIsValid();
-    return NativeGameEvents.GetPtr(GetHandle(), key);
+    return NativeGameEvents.GetPtr(Address, key);
   }
 
   public int GetPawnEntityIndex(string key) {
     CheckIsValid();
-    return NativeGameEvents.GetPawnEntityIndex(GetHandle(), key);
+    return NativeGameEvents.GetPawnEntityIndex(Address, key);
   }
 
   public bool IsReliable() {
     CheckIsValid();
-    return NativeGameEvents.IsReliable(GetHandle());
+    return NativeGameEvents.IsReliable(Address);
   }
 
   public bool IsLocal() {
     CheckIsValid();
-    return NativeGameEvents.IsLocal(GetHandle());
+    return NativeGameEvents.IsLocal(Address);
   }
 
   

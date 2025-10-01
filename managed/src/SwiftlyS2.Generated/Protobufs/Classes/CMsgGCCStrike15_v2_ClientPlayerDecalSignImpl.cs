@@ -15,7 +15,7 @@ internal class CMsgGCCStrike15_v2_ClientPlayerDecalSignImpl : TypedProtobuf<CMsg
 
 
   public PlayerDecalDigitalSignature Data
-  { get => new PlayerDecalDigitalSignatureImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "data"), false); }
+  { get => new PlayerDecalDigitalSignatureImpl(NativeNetMessages.GetNestedMessage(Address, "data"), false); }
 
 
   public ulong Itemid

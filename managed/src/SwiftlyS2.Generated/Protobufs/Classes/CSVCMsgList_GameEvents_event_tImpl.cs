@@ -19,6 +19,6 @@ internal class CSVCMsgList_GameEvents_event_tImpl : TypedProtobuf<CSVCMsgList_Ga
 
 
   public CSVCMsg_GameEvent Event
-  { get => new CSVCMsg_GameEventImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "event"), false); }
+  { get => new CSVCMsg_GameEventImpl(NativeNetMessages.GetNestedMessage(Address, "event"), false); }
 
 }

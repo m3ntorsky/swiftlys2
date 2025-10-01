@@ -15,7 +15,7 @@ internal class CMsgSource2VProfLiteReportImpl : TypedProtobuf<CMsgSource2VProfLi
 
 
   public CMsgSource2VProfLiteReportItem Total
-  { get => new CMsgSource2VProfLiteReportItemImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "total"), false); }
+  { get => new CMsgSource2VProfLiteReportItemImpl(NativeNetMessages.GetNestedMessage(Address, "total"), false); }
 
 
   public IProtobufRepeatedFieldSubMessageType<CMsgSource2VProfLiteReportItem> Items

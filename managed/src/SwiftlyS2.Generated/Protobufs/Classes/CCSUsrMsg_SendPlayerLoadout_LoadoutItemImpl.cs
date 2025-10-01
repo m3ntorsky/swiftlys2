@@ -15,7 +15,7 @@ internal class CCSUsrMsg_SendPlayerLoadout_LoadoutItemImpl : TypedProtobuf<CCSUs
 
 
   public CEconItemPreviewDataBlock EconItem
-  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "econ_item"), false); }
+  { get => new CEconItemPreviewDataBlockImpl(NativeNetMessages.GetNestedMessage(Address, "econ_item"), false); }
 
 
   public int Team

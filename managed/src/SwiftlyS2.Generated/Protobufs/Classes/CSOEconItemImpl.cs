@@ -63,7 +63,7 @@ internal class CSOEconItemImpl : TypedProtobuf<CSOEconItem>, CSOEconItem
 
 
   public CSOEconItem InteriorItem
-  { get => new CSOEconItemImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "interior_item"), false); }
+  { get => new CSOEconItemImpl(NativeNetMessages.GetNestedMessage(Address, "interior_item"), false); }
 
 
   public bool InUse

@@ -6,8 +6,8 @@ namespace SwiftlyS2.Core.SchemaDefinitions;
 
 internal partial class CEntityIdentityImpl {
 
-  public CEntityInstance EntityInstance => new CEntityInstanceImpl(GetHandle().Read<nint>());
+  public CEntityInstance EntityInstance => new CEntityInstanceImpl(Address.Read<nint>());
 
-  public CHandle<CEntityInstance> EntityHandle => new CHandle<CEntityInstance>(GetHandle().Read<uint>(0x10));
+  public CHandle<CEntityInstance> EntityHandle => new CHandle<CEntityInstance>(Address.Read<uint>(0x10));
 
 }

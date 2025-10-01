@@ -16,128 +16,126 @@ public class CEntityKeyValues : IDisposable
     _handle.Dispose();
   }
 
-  internal nint GetHandle() {
-    return _handle.GetHandle();
-  }
+  internal nint Address => _handle.Address;
 
   public void SetBool(string key, bool value) {
-    NativeCEntityKeyValues.SetBool(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetBool(Address, key, value);
   }
 
   public void SetInt32(string key, int value) {
-    NativeCEntityKeyValues.SetInt(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetInt(Address, key, value);
   }
 
   public void SetUInt32(string key, uint value) {
-    NativeCEntityKeyValues.SetUint(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetUint(Address, key, value);
   }
 
   public void SetInt64(string key, long value) {
-    NativeCEntityKeyValues.SetInt64(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetInt64(Address, key, value);
   }
 
   public void SetUInt64(string key, ulong value) {
-    NativeCEntityKeyValues.SetUint64(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetUint64(Address, key, value);
   }
 
   public void SetFloat(string key, float value) {
-    NativeCEntityKeyValues.SetFloat(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetFloat(Address, key, value);
   }
 
   public void SetDouble(string key, double value) {
-    NativeCEntityKeyValues.SetDouble(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetDouble(Address, key, value);
   }
 
   public void SetString(string key, string value) {
-    NativeCEntityKeyValues.SetString(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetString(Address, key, value);
   }
 
   public void SetPtr(string key, nint value) {
-    NativeCEntityKeyValues.SetPtr(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetPtr(Address, key, value);
   }
 
   public void SetStringToken(string key, CUtlStringToken value) {
-    NativeCEntityKeyValues.SetStringToken(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetStringToken(Address, key, value);
   }
 
   public void SetColor(string key, Color value) {
-    NativeCEntityKeyValues.SetColor(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetColor(Address, key, value);
   }
 
   public void SetVector(string key, Vector value) {
-    NativeCEntityKeyValues.SetVector(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetVector(Address, key, value);
   }
 
   public void SetVector2D(string key, Vector2D value) {
-    NativeCEntityKeyValues.SetVector2D(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetVector2D(Address, key, value);
   }
 
   public void SetVector4D(string key, Vector4D value) {
-    NativeCEntityKeyValues.SetVector4D(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetVector4D(Address, key, value);
   }
 
   public void SetQAngle(string key, QAngle value) {
-    NativeCEntityKeyValues.SetQAngle(GetHandle(), key, value);
+    NativeCEntityKeyValues.SetQAngle(Address, key, value);
   }
 
   public bool GetBool(string key) {
-    return NativeCEntityKeyValues.GetBool(GetHandle(), key);
+    return NativeCEntityKeyValues.GetBool(Address, key);
   }
 
   public int GetInt32(string key) {
-    return NativeCEntityKeyValues.GetInt(GetHandle(), key);
+    return NativeCEntityKeyValues.GetInt(Address, key);
   }
 
   public uint GetUInt32(string key) {
-    return NativeCEntityKeyValues.GetUint(GetHandle(), key);
+    return NativeCEntityKeyValues.GetUint(Address, key);
   }
 
   public long GetInt64(string key) {
-    return NativeCEntityKeyValues.GetInt64(GetHandle(), key);
+    return NativeCEntityKeyValues.GetInt64(Address, key);
   }
 
   public ulong GetUInt64(string key) {
-    return NativeCEntityKeyValues.GetUint64(GetHandle(), key);
+    return NativeCEntityKeyValues.GetUint64(Address, key);
   }
 
   public float GetFloat(string key) {
-    return NativeCEntityKeyValues.GetFloat(GetHandle(), key);
+    return NativeCEntityKeyValues.GetFloat(Address, key);
   }
 
   public double GetDouble(string key) {
-    return NativeCEntityKeyValues.GetDouble(GetHandle(), key);
+    return NativeCEntityKeyValues.GetDouble(Address, key);
   }
 
   public string GetString(string key) {
-    return NativeCEntityKeyValues.GetString(GetHandle(), key);
+    return NativeCEntityKeyValues.GetString(Address, key);
   }
 
   public nint GetPtr(string key) {
-    return NativeCEntityKeyValues.GetPtr(GetHandle(), key);
+    return NativeCEntityKeyValues.GetPtr(Address, key);
   }
 
   public CUtlStringToken GetStringToken(string key) {
-    return NativeCEntityKeyValues.GetStringToken(GetHandle(), key);
+    return NativeCEntityKeyValues.GetStringToken(Address, key);
   }
 
   public Color GetColor(string key) {
-    return NativeCEntityKeyValues.GetColor(GetHandle(), key);
+    return NativeCEntityKeyValues.GetColor(Address, key);
   }
 
   public Vector GetVector(string key) {
-    return NativeCEntityKeyValues.GetVector(GetHandle(), key);
+    return NativeCEntityKeyValues.GetVector(Address, key);
   }
 
   public Vector2D GetVector2D(string key) {
-    return NativeCEntityKeyValues.GetVector2D(GetHandle(), key);
+    return NativeCEntityKeyValues.GetVector2D(Address, key);
   }
 
   public Vector4D GetVector4D(string key) {
-    return NativeCEntityKeyValues.GetVector4D(GetHandle(), key);
+    return NativeCEntityKeyValues.GetVector4D(Address, key);
   }
 
   public QAngle GetQAngle(string key) {
-    return NativeCEntityKeyValues.GetQAngle(GetHandle(), key);
+    return NativeCEntityKeyValues.GetQAngle(Address, key);
   }
 
   public void Set<T>(string key, T value) {

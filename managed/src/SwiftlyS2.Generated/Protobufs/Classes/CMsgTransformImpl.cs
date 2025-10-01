@@ -23,6 +23,6 @@ internal class CMsgTransformImpl : TypedProtobuf<CMsgTransform>, CMsgTransform
 
 
   public CMsgQuaternion Orientation
-  { get => new CMsgQuaternionImpl(NativeNetMessages.GetNestedMessage(GetHandle(), "orientation"), false); }
+  { get => new CMsgQuaternionImpl(NativeNetMessages.GetNestedMessage(Address, "orientation"), false); }
 
 }
