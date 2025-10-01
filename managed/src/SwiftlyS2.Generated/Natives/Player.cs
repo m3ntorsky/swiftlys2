@@ -166,4 +166,9 @@ internal static class NativePlayer {
   public unsafe static void ClearCenterMenuRender(int playerid) {
     _ClearCenterMenuRender(playerid);
   }
+  private unsafe static delegate* unmanaged<int, bool> _HasMenuShown;
+  public unsafe static bool HasMenuShown(int playerid) {
+    var ret = _HasMenuShown(playerid);
+    return ret;
+  }
 }

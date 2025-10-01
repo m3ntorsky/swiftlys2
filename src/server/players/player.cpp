@@ -427,3 +427,8 @@ void CPlayer::ClearRenderMenuCenterText()
 {
     centerMenuText = "";
 }
+
+bool CPlayer::HasMenuShown()
+{
+    return !centerMenuText.empty();
+}

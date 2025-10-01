@@ -263,6 +263,15 @@ void Bridge_Player_ClearCenterMenuRender(int playerid)
     player->ClearRenderMenuCenterText();
 }
 
+bool Bridge_Player_HasMenuShown(int playerid)
+{
+    static auto playerManager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    auto player = playerManager->GetPlayer(playerid);
+    if (!player) return false;
+
+    return player->HasMenuShown();
+}
+
 DEFINE_NATIVE("Player.SendMessage", Bridge_Player_SendMessage);
 DEFINE_NATIVE("Player.IsFakeClient", Bridge_Player_IsFakeClient);
 DEFINE_NATIVE("Player.IsAuthorized", Bridge_Player_IsAuthorized);
@@ -286,3 +295,4 @@ DEFINE_NATIVE("Player.Teleport", Bridge_Player_Teleport);
 DEFINE_NATIVE("Player.GetLanguage", Bridge_Player_GetLanguage);
 DEFINE_NATIVE("Player.SetCenterMenuRender", Bridge_Player_SetCenterMenuRender);
 DEFINE_NATIVE("Player.ClearCenterMenuRender", Bridge_Player_ClearCenterMenuRender);
+DEFINE_NATIVE("Player.HasMenuShown", Bridge_Player_HasMenuShown);

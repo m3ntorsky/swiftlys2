@@ -93,6 +93,7 @@ public:
     /** Menus! **/
     virtual void RenderMenuCenterText(const std::string& text) = 0;
     virtual void ClearRenderMenuCenterText() = 0;
+    virtual bool HasMenuShown() = 0;
 };
 
 #endif

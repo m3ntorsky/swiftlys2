@@ -23,3 +23,4 @@ void Teleport = int32 playerid, vector pos, qangle angle, vector velocity
 string GetLanguage = int32 playerid
 void SetCenterMenuRender = int32 playerid, string text
 void ClearCenterMenuRender = int32 playerid
+bool HasMenuShown = int32 playerid

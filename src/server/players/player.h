@@ -68,6 +68,7 @@ public:
     /** Menus! **/
     virtual void RenderMenuCenterText(const std::string& text) override;
     virtual void ClearRenderMenuCenterText() override;
+    virtual bool HasMenuShown() override;
 private:
     int m_iPlayerId;
     bool m_bAuthorized;
