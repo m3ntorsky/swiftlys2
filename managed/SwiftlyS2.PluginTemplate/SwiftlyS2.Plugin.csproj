@@ -22,7 +22,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" PrivateAssets="all" />
-    <ProjectReference Include="SwiftlyS2.CS2" PrivateAssets="all" />
+    <PackageReference Include="SwiftlyS2.CS2" Version="0.0.4" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,10 +36,7 @@
       <PublishFiles Include="$(PublishDir)**\*.*" />
     </ItemGroup>
     
-    <ZipDirectory 
-      SourceDirectory="$(PublishDir)" 
-      DestinationFile="$(OutputPath)../$(AssemblyName).zip" 
-      Overwrite="true" />
+    <ZipDirectory SourceDirectory="$(PublishDir)" DestinationFile="$(OutputPath)../$(AssemblyName).zip" Overwrite="true" />
   </Target>
 
 </Project> 

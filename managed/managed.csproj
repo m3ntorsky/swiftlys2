@@ -5,7 +5,6 @@
     <PackageId>SwiftlyS2.CS2</PackageId>
     <Authors>SwiftlyS2 Team</Authors>
     <PackageIcon>icon.png</PackageIcon>
-    <PackageReadmeFile>..\README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/swiftly-solution/swiftlys2</PackageProjectUrl>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
 
@@ -35,7 +34,6 @@
 
   <ItemGroup>
     <None Include="icon.png" Pack="true" PackagePath="\"/>
-    <None Include="..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup>
