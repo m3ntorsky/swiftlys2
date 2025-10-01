@@ -42,7 +42,12 @@ void CNetMessages::Initialize()
     SH_ADD_HOOK_MEMFUNC(IGameEventSystem, PostEventAbstract, gameeventsystem, this, &CNetMessages::PostEvent, false);
 
     DynLibUtils::CModule eng = DetermineModuleByLibrary("engine2");
-    void* prefilterVTable = FindVirtTable(&eng, "CServerSideClient", WIN_LINUX(8, -64));
+    void* prefilterVTable = nullptr;
+#ifdef _WIN32
+    prefilterVTable = FindVirtTable(&eng, "CServerSideClient", WIN_LINUX(8, -64));
+#else
+    prefilterVTable = eng.GetVirtualTableByName("CServerSideClient");
+#endif
 
     g_ihookID = SH_ADD_MANUALDVPHOOK(FilterMessage, (INetworkMessageProcessingPreFilterCustom*)prefilterVTable, SH_MEMBER(this, &CNetMessages::FilterMessage), false);
 }
