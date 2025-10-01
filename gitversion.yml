@@ -2,15 +2,15 @@ mode: ContinuousDelivery
 branches:
   master:
     regex: ^master$
+    increment: Inherit
     is-main-branch: true
     is-release-branch: true
-    increment: patch
     label: ''
     prevent-increment:
       when-branch-merged: true
   beta:
     regex: ^beta$
-    increment: patch
+    increment: Inherit
     label: beta
     is-release-branch: false
     is-main-branch: false
