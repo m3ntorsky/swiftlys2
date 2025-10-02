@@ -76,7 +76,7 @@ void* FindSignature(std::string library, std::string pattern)
     if (m_binaries.find(library) == m_binaries.end()) {
         std::string path;
         if (library == "server" || library == "client" || library == "matchmaking")
-            path = GeneratePath(std::string("bin") + WIN_LINUX("\\", "/") + WIN_LINUX("win64", "linuxsteamrt64") + WIN_LINUX("\\", "/") + library + WIN_LINUX(".dll", ".so"));
+            path = GeneratePath(std::string("bin") + WIN_LINUX("\\", "/") + WIN_LINUX("win64", "linuxsteamrt64") + WIN_LINUX("\\", "/lib") + library + WIN_LINUX(".dll", ".so"));
         else
             path = fmt::format("{}{}{}{}{}{}{}{}", Plat_GetGameDirectory(), WIN_LINUX("\\", "/"), "bin", WIN_LINUX("\\", "/"), WIN_LINUX("win64", "linuxsteamrt64"), WIN_LINUX("\\", "/lib"), library, WIN_LINUX(".dll", ".so"));
         
