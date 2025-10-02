@@ -1,9 +1,0 @@
-{
-  "Id": "myplugin",
-  "Name": "My Plugin",
-  "Version": "1.0.0",
-  "Author": "Anonymous",
-  "Description": "Description",
-  "Website": "https://swiftlys2.net",
-  "EntrypointDLL": "MyPlugin.dll"
-} 
