@@ -33,9 +33,15 @@ internal class Player : IPlayer
 
     public CCSPlayerController Controller => new CCSPlayerControllerImpl(NativePlayer.GetController(_pid));
 
+    public CCSPlayerController RequiredController => Controller is { IsValid: true } controller ? controller : throw new InvalidOperationException("Controller is not valid");
+
     public CBasePlayerPawn? Pawn => Controller.Pawn.Value;
 
+    public CBasePlayerPawn RequiredPawn => Pawn is { IsValid: true } pawn ? pawn : throw new InvalidOperationException("Pawn is not valid");
+
     public CCSPlayerPawn? PlayerPawn => Controller.PlayerPawn.Value;
+
+    public CCSPlayerPawn RequiredPlayerPawn => PlayerPawn is { IsValid: true } pawn ? pawn : throw new InvalidOperationException("PlayerPawn is not valid");
 
     public GameButtonFlags PressedButtons => (GameButtonFlags)NativePlayer.GetPressedButtons(_pid);
 
