@@ -139,7 +139,7 @@ bool Bridge_NetMessages_HasField(void* pmsg, const char* fieldName)
     google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(false);
     CHECK_FIELD_NOT_REPEATED(false);
-    
+
     return msg->GetReflection()->HasField(*msg, field);
 }
 
@@ -897,7 +897,7 @@ uint64_t Bridge_NetMessages_AddNetMessageServerHook(void* callback_ptr)
     auto netmessages = g_ifaceService.FetchInterface<INetMessages>(NETMESSAGES_INTERFACE_VERSION);
 
     return netmessages->AddServerMessageSendCallback([callback_ptr](uint64_t* clients, int messageid, void* msg) {
-        return ((bool(*)(uint64_t*, int, void*))callback_ptr)(clients, messageid, msg);
+        return ((int(*)(uint64_t*, int, void*))callback_ptr)(clients, messageid, msg);
     });
 }
 
@@ -912,7 +912,7 @@ uint64_t Bridge_NetMessages_AddNetMessageClientHook(void* callback_ptr)
     auto netmessages = g_ifaceService.FetchInterface<INetMessages>(NETMESSAGES_INTERFACE_VERSION);
 
     return netmessages->AddClientMessageSendCallback([callback_ptr](int playerid, int messageid, void* msg) {
-        return ((bool(*)(int, int, void*))callback_ptr)(playerid, messageid, msg);
+        return ((int(*)(int, int, void*))callback_ptr)(playerid, messageid, msg);
     });
 }
 

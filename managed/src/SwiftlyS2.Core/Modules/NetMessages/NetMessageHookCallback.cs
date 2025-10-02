@@ -7,15 +7,16 @@ using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.Profiler;
 using System.Diagnostics.CodeAnalysis;
+using SwiftlyS2.Shared.Misc;
 
 namespace SwiftlyS2.Core.NetMessages;
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-internal delegate bool NetMessageClientHookCallbackDelegate(int playerId, int msgId, nint pMessage);
+internal delegate HookResult NetMessageClientHookCallbackDelegate(int playerId, int msgId, nint pMessage);
 
 
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-internal delegate bool NetMessageServerHookCallbackDelegate(nint pPlayerMask, int msgId, nint pMessage);
+internal delegate HookResult NetMessageServerHookCallbackDelegate(nint pPlayerMask, int msgId, nint pMessage);
 
 internal abstract class NetMessageHookCallback : IDisposable {
 
@@ -53,16 +54,16 @@ internal class NetMessageClientHookCallback<T> : NetMessageHookCallback where T 
     _unmanagedCallback = (playerId, msgId, pMessage) => {
       try
       {
-        if (msgId != T.MessageId) return true;
+        if (msgId != T.MessageId) return HookResult.Continue;
         var category = "NetMessageClientHookCallback::" + typeof(T).Name;
         Profiler.StartRecording(category);
         var msg = T.Wrap(pMessage, false);
-        _callback(msg, playerId);
+        var result = _callback(msg, playerId);
         Profiler.StopRecording(category);
-        return true;
+        return result;
       } catch (Exception e) {
         _logger.LogError(e, "Error in net message client hook callback for {MessageType}", typeof(T).Name);
-        return false;
+        return HookResult.Continue;
       }
     };
     _unmanagedCallbackPtr = Marshal.GetFunctionPointerForDelegate(_unmanagedCallback);
@@ -93,19 +94,19 @@ internal class NetMessageServerHookCallback<T> : NetMessageHookCallback where T 
     _unmanagedCallback = (pPlayerMask, msgId, pMessage) => {
       try
       {
-        if (msgId != T.MessageId) return true;
+        if (msgId != T.MessageId) return HookResult.Continue;
         var category = "NetMessageServerHookCallback::" + typeof(T).Name;
         Profiler.StartRecording(category);
         var msg = T.Wrap(pMessage, false);
         var mask = pPlayerMask.Read<ulong>();
         msg.Recipients.RecipientsMask = mask;
-        _callback(msg);
+        var result = _callback(msg);
         pPlayerMask.Write(msg.Recipients.ToMask());
         Profiler.StopRecording(category);
-        return true;
+        return result;
       } catch (Exception e) {
         _logger.LogError(e, "Error in net message server hook callback for {MessageType}", typeof(T).Name);
-        return false;
+        return HookResult.Continue;
       }
     };
     _unmanagedCallbackPtr = Marshal.GetFunctionPointerForDelegate(_unmanagedCallback);

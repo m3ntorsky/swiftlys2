@@ -52,7 +52,7 @@ internal class SwiftlyLogger : ILogger
     var id = $"[{eventId.ToString()}]";
     var color = GetLogLevelColor(logLevel);
 
-    AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]{_contextName}[/] [lightsteelblue]|[/] [grey42]{timestamp}[/] [lightsteelblue]|[/] [{color}]{level}[/] [lightsteelblue]|[/] [lightsteelblue]{_categoryName}{id}[/][default]");
+    AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]{_contextName}[/] [lightsteelblue]|[/] [grey42]{timestamp}[/] [lightsteelblue]|[/] [{color}]{level}[/] [lightsteelblue]|[/] [lightsteelblue]{_categoryName}{id}[/]");
 
     string? message = formatter != null ? formatter(state, exception) : state?.ToString();
     if (!string.IsNullOrEmpty(message))
