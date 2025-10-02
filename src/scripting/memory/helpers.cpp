@@ -59,11 +59,7 @@ std::string BytesToIdaSignature(const unsigned char* data, int size) {
 
 void* Bridge_MemoryHelpers_GetAddressBySignature(const char* binary, const char* signature, int len, bool rawBytes)
 {
-    auto bin = DetermineModuleByLibrary(binary);
-    if (!bin.GetModuleBase()) return nullptr;
-
-    auto pattern = bin.FindPattern(rawBytes ? BytesToIdaSignature(reinterpret_cast<const unsigned char*>(signature), len) : signature);
-    return pattern.RCast<void*>();
+    return FindSignature(binary, rawBytes ? BytesToIdaSignature(reinterpret_cast<const unsigned char*>(signature), len) : signature);
 }
 
 DEFINE_NATIVE("MemoryHelpers.FetchInterfaceByName", Bridge_MemoryHelpers_FetchInterfaceByName);

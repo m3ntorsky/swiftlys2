@@ -36,5 +36,6 @@ private:
 };
 
 DynLibUtils::CModule DetermineModuleByLibrary(std::string library);
+void* FindSignature(std::string library, std::string pattern);
 
 #endif
