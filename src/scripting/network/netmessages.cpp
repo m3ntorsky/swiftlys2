@@ -148,7 +148,13 @@ int Bridge_NetMessages_GetInt32(void* pmsg, const char* fieldName)
     google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD(0);
     CHECK_FIELD_NOT_REPEATED(0);
-    return msg->GetReflection()->GetInt32(*msg, field);
+
+    if (field->cpp_type() == google::protobuf::FieldDescriptor::CPPTYPE_ENUM)
+    {
+        return msg->GetReflection()->GetEnum(*msg, field)->number();
+    } else {
+        return msg->GetReflection()->GetInt32(*msg, field);
+    }
 }
 
 int Bridge_NetMessages_GetRepeatedInt32(void* pmsg, const char* fieldName, int index)
@@ -157,7 +163,13 @@ int Bridge_NetMessages_GetRepeatedInt32(void* pmsg, const char* fieldName, int i
     GETCHECK_FIELD(0);
     CHECK_FIELD_REPEATED(0);
     CHECK_REPEATED_ELEMENT(index, 0);
-    return msg->GetReflection()->GetRepeatedInt32(*msg, field, index);
+
+    if (field->cpp_type() == google::protobuf::FieldDescriptor::CPPTYPE_ENUM)
+    {
+        return msg->GetReflection()->GetRepeatedEnum(*msg, field, index)->number();
+    } else {
+        return msg->GetReflection()->GetRepeatedInt32(*msg, field, index);
+    }
 }
 
 void Bridge_NetMessages_SetInt32(void* pmsg, const char* fieldName, int value)
@@ -165,7 +177,16 @@ void Bridge_NetMessages_SetInt32(void* pmsg, const char* fieldName, int value)
     google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_NOT_REPEATED_VOID();
-    msg->GetReflection()->SetInt32(msg, field, value);
+
+    if (field->cpp_type() == google::protobuf::FieldDescriptor::CPPTYPE_ENUM)
+    {
+        const google::protobuf::EnumValueDescriptor* pEnumValue = field->enum_type()->FindValueByNumber(value);
+        if (!pEnumValue) return;
+        
+        msg->GetReflection()->SetEnum(msg, field, pEnumValue);
+    } else {
+        msg->GetReflection()->SetInt32(msg, field, value);
+    }
 }
 
 void Bridge_NetMessages_SetRepeatedInt32(void* pmsg, const char* fieldName, int index, int value)
@@ -174,7 +195,16 @@ void Bridge_NetMessages_SetRepeatedInt32(void* pmsg, const char* fieldName, int 
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
     CHECK_REPEATED_ELEMENT_VOID(index);
-    msg->GetReflection()->SetRepeatedInt32(msg, field, index, value);
+
+    if (field->cpp_type() == google::protobuf::FieldDescriptor::CPPTYPE_ENUM)
+    {
+        const google::protobuf::EnumValueDescriptor* pEnumValue = field->enum_type()->FindValueByNumber(value);
+        if (!pEnumValue) return;
+
+        msg->GetReflection()->SetRepeatedEnum(msg, field, index, pEnumValue);
+    } else {
+        msg->GetReflection()->SetRepeatedInt32(msg, field, index, value);
+    }
 }
 
 void Bridge_NetMessages_AddInt32(void* pmsg, const char* fieldName, int value)
@@ -182,7 +212,16 @@ void Bridge_NetMessages_AddInt32(void* pmsg, const char* fieldName, int value)
     google::protobuf::Message* msg = (google::protobuf::Message*)pmsg;
     GETCHECK_FIELD_VOID();
     CHECK_FIELD_REPEATED_VOID();
-    msg->GetReflection()->AddInt32(msg, field, value);
+
+    if (field->cpp_type() == google::protobuf::FieldDescriptor::CPPTYPE_ENUM)
+    {
+        const google::protobuf::EnumValueDescriptor* pEnumValue = field->enum_type()->FindValueByNumber(value);
+        if (!pEnumValue) return;
+
+        msg->GetReflection()->AddEnum(msg, field, pEnumValue);
+    } else {
+        msg->GetReflection()->AddInt32(msg, field, value);
+    }
 }
 
 int64_t Bridge_NetMessages_GetInt64(void* pmsg, const char* fieldName)

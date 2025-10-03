@@ -80,7 +80,7 @@ internal class PluginConfigurationService : IPluginConfigurationService {
 
     var options = new JsonSerializerOptions {
       WriteIndented = true,
-      PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+      PropertyNamingPolicy = null
     };
 
     var configJson = JsonSerializer.Serialize(wrapped, options);

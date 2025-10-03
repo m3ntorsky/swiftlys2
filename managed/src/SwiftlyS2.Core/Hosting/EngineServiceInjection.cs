@@ -5,8 +5,9 @@ namespace SwiftlyS2.Core.Hosting;
 
 internal static class EngineServiceInjection
 {
-    public static void AddEngineService(this IServiceCollection self)
+    public static IServiceCollection AddEngineService(this IServiceCollection self)
     {
         self.AddSingleton<EngineService>();
+        return self;
     }
 }

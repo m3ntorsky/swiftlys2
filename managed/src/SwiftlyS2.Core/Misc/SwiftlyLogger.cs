@@ -64,7 +64,7 @@ internal class SwiftlyLogger : ILogger
     {
       AnsiConsole.WriteException(exception);
     }
-    AnsiConsole.ResetColors();
+    AnsiConsole.Reset();
   }
 
   private static string GetLogLevelString(LogLevel logLevel)

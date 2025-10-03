@@ -6,12 +6,14 @@ using SwiftlyS2.Shared.Permissions;
 namespace SwiftlyS2.Core.Hosting;
 
 public static class PermissionManagerInjection {
-  public static void AddPermissionManager(this IServiceCollection self) {
+  public static IServiceCollection AddPermissionManager(this IServiceCollection self) {
     self.AddSingleton<PermissionManager>();
 
     self.AddOptions<PermissionConfig>()
       .BindConfiguration("Permissions")
       .ValidateOnStart();
+
+    return self;
   }
 
   public static void UsePermissionManager(this IServiceProvider self) {

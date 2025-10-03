@@ -5,8 +5,8 @@ namespace SwiftlyS2.Core.Hosting;
 
 internal static class ProfileServiceInjection
 {
-  public static void AddProfileService(this IServiceCollection self)
+  public static IServiceCollection AddProfileService(this IServiceCollection self)
   {
-    self.AddSingleton<ProfileService>();
+    return self.AddSingleton<ProfileService>();
   }
 }

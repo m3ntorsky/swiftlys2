@@ -5,8 +5,8 @@ namespace SwiftlyS2.Core.Hosting;
 
 internal static class PlayerManagerServiceInjection
 {
-    public static void AddPlayerManagerService(this IServiceCollection self)
+    public static IServiceCollection AddPlayerManagerService(this IServiceCollection self)
     {
-        self.AddSingleton<PlayerManagerService>();
+        return self.AddSingleton<PlayerManagerService>();
     }
 }
