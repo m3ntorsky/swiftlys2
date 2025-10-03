@@ -3,7 +3,7 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Build Status](https://img.shields.io/github/actions/workflow/status/swiftly-solution/swiftlys2/build.yml?branch=master)](https://github.com/swiftly-solution/swiftlys2/actions)
 [![Discord](https://img.shields.io/discord/1178027657594687608?color=7289da&logo=discord&logoColor=white)](https://swiftlys2.net/discord)
-[![NuGet](https://img.shields.io/nuget/v/YourPackageName.svg)](https://www.nuget.org/packages/SwiftlyS2.CS2/)
+[![NuGet](https://img.shields.io/nuget/v/SwiftlyS2.CS2.svg)](https://www.nuget.org/packages/SwiftlyS2.CS2/)
 
 SwiftlyS2 is a powerful scripting framework for Source 2 games, built in C++ with C# plugin support. It provides developers with a comprehensive API to create plugins and extensions for Source 2-based games like Counter-Strike 2.
 
