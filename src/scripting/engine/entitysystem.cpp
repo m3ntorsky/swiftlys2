@@ -194,7 +194,7 @@ void Bridge_EntitySystem_UnhookEntityOutput(uint64_t hookid)
 void* Bridge_EntitySystem_GetEntityByIndex(uint32_t index)
 {
     static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
-    return entsystem->GetEntitySystem()->GetEntityInstance(index);
+    return entsystem->GetEntitySystem()->GetEntityInstance(CEntityIndex(index));
 }
 
 DEFINE_NATIVE("EntitySystem.Spawn", Bridge_EntitySystem_Spawn);
