@@ -2,10 +2,11 @@ using Microsoft.Extensions.DependencyInjection;
 using SwiftlyS2.Shared.Plugins;
 using SwiftlyS2.Shared;
 
-namespace SwiftlyS2.Plugin;
+namespace PluginId;
 
-public partial class PluginClassName : BasePlugin {
-  public PluginClassName(ISwiftlyCore core) : base(core)
+[PluginMetadata(Id = "PluginId", Version = "PluginVersion", Name = "PluginName", Author = "PluginAuthor", Description = "PluginDescription")]
+public partial class PluginId : BasePlugin {
+  public PluginId(ISwiftlyCore core) : base(core)
   {
   }
 

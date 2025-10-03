@@ -12,6 +12,12 @@ branches:
     is-release-branch: false
     is-mainline: false
     source-branches: [ master ]
+  other:
+    regex: ^(?!master|beta$).*$
+    increment: Inherit
+    is-release-branch: false
+    is-mainline: false
+    source-branches: [ master ]
 ignore:
   sha: []
 merge-message-formats: {}

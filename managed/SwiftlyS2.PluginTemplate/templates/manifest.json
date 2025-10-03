@@ -1,9 +1,0 @@
-{
-  "Id": "PluginId",
-  "Name": "PluginName",
-  "Version": "PluginVersion",
-  "Author": "PluginAuthor",
-  "Description": "PluginDescription",
-  "Website": "https://swiftlys2.net",
-  "EntrypointDLL": "PluginClassName.dll"
-} 

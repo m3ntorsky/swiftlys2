@@ -60,7 +60,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public PermissionManager PermissionManager { get; init; }
   public RegistratorService RegistratorService { get; init; }
   public string ContextBasePath { get; init; }
-  public SwiftlyCore(string contextId, string contextBaseDirectory, PluginManifest? pluginManifest, Type contextType, IServiceProvider coreProvider) {
+  public SwiftlyCore(string contextId, string contextBaseDirectory, PluginMetadata? pluginManifest, Type contextType, IServiceProvider coreProvider) {
 
     CoreContext id = new(contextId, contextBaseDirectory, pluginManifest);
     ContextBasePath = contextBaseDirectory;

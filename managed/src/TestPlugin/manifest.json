@@ -1,9 +1,0 @@
-{
-  "Id": "TestPlugin",
-  "Name": "TestPlugin",
-  "Version": "1.0.0",
-  "Author": "SwiftlyS2",
-  "Description": "TestPlugin",
-  "Website": "https://swiftlys2.net",
-  "EntrypointDLL": "SwiftlyS2.TestPlugin.dll"
-}

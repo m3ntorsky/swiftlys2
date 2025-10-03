@@ -68,13 +68,28 @@ public interface IPlayer
     /// </summary>
     public CCSPlayerController Controller { get; }
     /// <summary>
+    /// Gets the player controller associated with the player. Requires the controller to be valid.
+    /// <exception cref="InvalidOperationException">Thrown when the controller is not valid.</exception>
+    /// </summary>
+    public CCSPlayerController RequiredController { get; }
+    /// <summary>
     /// Gets the pawn associated with the player.
     /// </summary>
     public CBasePlayerPawn? Pawn { get; }
     /// <summary>
+    /// Gets the pawn associated with the player. Requires the pawn to be valid.
+    /// <exception cref="InvalidOperationException">Thrown when the pawn is not valid.</exception>
+    /// </summary>
+    public CBasePlayerPawn RequiredPawn { get; }
+    /// <summary>
     /// Gets the player pawn associated with the player.
     /// </summary>
     public CCSPlayerPawn? PlayerPawn { get; }
+    /// <summary>
+    /// Gets the player pawn associated with the player. Requires the player pawn to be valid.
+    /// <exception cref="InvalidOperationException">Thrown when the player pawn is not valid.</exception>
+    /// </summary>
+    public CCSPlayerPawn RequiredPlayerPawn { get; }
     /// <summary>
     /// Gets the set of game buttons that are currently pressed.
     /// </summary>

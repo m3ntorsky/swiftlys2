@@ -30,6 +30,7 @@ public class TestConfig {
   public int Age { get; set; }
 }
 
+[PluginMetadata(Id = "testplugin", Version = "1.0.0")]
 public class TestPlugin : BasePlugin {
 
   public TestPlugin(ISwiftlyCore core) : base(core) {

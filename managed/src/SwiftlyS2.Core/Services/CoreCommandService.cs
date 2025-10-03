@@ -65,7 +65,7 @@ internal class CoreCommandService {
       case "list":
         var table = new Table().AddColumn("Name").AddColumn("Status");
         foreach (var plugin in _PluginManager.GetPlugins()) {
-          table.AddRow(plugin.Manifest.Id, plugin.Status?.ToString() ?? "Unknown");
+          table.AddRow(plugin.Metadata?.Id ?? "<UNKNOWN>", plugin.Status?.ToString() ?? "Unknown");
         }
         AnsiConsole.Write(table);
         break;
