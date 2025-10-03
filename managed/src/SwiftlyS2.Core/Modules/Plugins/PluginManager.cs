@@ -55,12 +55,11 @@ internal class PluginManager {
     if (directory == null) {
       return;
     }
-    if (File.Exists(Path.Combine(directory, "manifest.json"))) {
-      var manifest = JsonSerializer.Deserialize<PluginMetadata>(File.ReadAllText(Path.Combine(directory, "manifest.json")));
-      if (manifest != null) {
-        var id = manifest.Id;
-        ReloadPlugin(id);
-        return;
+    
+    foreach(var plugin in _Plugins) {
+      if (plugin.Metadata?.Id == Path.GetFileName(directory)) {
+        ReloadPlugin(plugin.Metadata!.Id);
+        break;
       }
     }
   }
@@ -150,17 +149,17 @@ internal class PluginManager {
       return null;
     }
 
-    var manifest = pluginType.GetCustomAttribute<PluginMetadata>();
-    if (manifest == null) {
-      _Logger.LogWarning("Plugin manifest not found: " + entrypointDll);
+    var metadata = pluginType.GetCustomAttribute<PluginMetadata>();
+    if (metadata == null) {
+      _Logger.LogWarning("Plugin metadata not found: " + entrypointDll);
       context.Status = PluginStatus.Error;
       return null;
     }
 
-    context.Metadata = manifest;
+    context.Metadata = metadata;
 
 
-    var core = new SwiftlyCore(manifest.Id, Path.GetDirectoryName(entrypointDll)!, manifest, pluginType, _Provider);
+    var core = new SwiftlyCore(metadata.Id, Path.GetDirectoryName(entrypointDll)!, metadata, pluginType, _Provider);
 
     core.InitializeType(pluginType);
 
@@ -188,7 +187,7 @@ internal class PluginManager {
   public void UnloadPlugin(string id) {
     var context = _Plugins
       .Where(p => p.Status == PluginStatus.Loaded)
-      .FirstOrDefault(p => p.Metadata.Id == id);
+      .FirstOrDefault(p => p.Metadata?.Id == id);
     if (context == null) {
       _Logger.LogWarning("Plugin not found or not loaded: " + id);
       return;
@@ -207,12 +206,9 @@ internal class PluginManager {
       var root = _RootDirService.GetPluginsRoot();
       var pluginDirs = Directory.GetDirectories(root);
       foreach (var pluginDir in pluginDirs) {
-        if (File.Exists(Path.Combine(pluginDir, "manifest.json"))) {
-          var manifest = JsonSerializer.Deserialize<PluginMetadata>(File.ReadAllText(Path.Combine(pluginDir, "manifest.json")));
-          if (manifest != null && manifest.Id == id) {
-            context = LoadPlugin(pluginDir, false);
-            break;
-          }
+        if (Path.GetFileName(pluginDir) == id) {
+          context = LoadPlugin(pluginDir, false);
+          break;
         }
       }
       if (context == null) {
