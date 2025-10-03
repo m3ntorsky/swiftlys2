@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventAnnouncePhaseEndImpl : GameEvent<EventAnnouncePhaseEnd>, EventAnnouncePhaseEnd
 {
 
+  public EventAnnouncePhaseEndImpl(nint address) : base(address)
+  {
+  }
 }

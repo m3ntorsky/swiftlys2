@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventMatchEndConditions : IGameEvent<EventMatchEndConditions> {
 
-  static EventMatchEndConditions IGameEvent<EventMatchEndConditions>.Create() => new EventMatchEndConditionsImpl();
+  static EventMatchEndConditions IGameEvent<EventMatchEndConditions>.Create(nint address) => new EventMatchEndConditionsImpl(address);
 
   static string IGameEvent<EventMatchEndConditions>.GetName() => "match_end_conditions";
 

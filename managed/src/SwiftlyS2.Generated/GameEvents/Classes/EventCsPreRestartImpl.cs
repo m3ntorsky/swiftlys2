@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventCsPreRestartImpl : GameEvent<EventCsPreRestart>, EventCsPreRestart
 {
 
+  public EventCsPreRestartImpl(nint address) : base(address)
+  {
+  }
 }

@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventEventTicketModifiedImpl : GameEvent<EventEventTicketModified>, EventEventTicketModified
 {
 
+  public EventEventTicketModifiedImpl(nint address) : base(address)
+  {
+  }
 }

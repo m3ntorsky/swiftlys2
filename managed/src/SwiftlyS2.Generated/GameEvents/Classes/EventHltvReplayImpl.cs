@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHltvReplayImpl : GameEvent<EventHltvReplay>, EventHltvReplay
 {
 
+  public EventHltvReplayImpl(nint address) : base(address)
+  {
+  }
 
   // number of seconds in killer replay delay
   public int Delay

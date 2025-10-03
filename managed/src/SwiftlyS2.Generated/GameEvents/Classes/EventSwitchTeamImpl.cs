@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventSwitchTeamImpl : GameEvent<EventSwitchTeam>, EventSwitchTeam
 {
 
+  public EventSwitchTeamImpl(nint address) : base(address)
+  {
+  }
 
   // number of active players on both T and CT
   public short NumPlayers

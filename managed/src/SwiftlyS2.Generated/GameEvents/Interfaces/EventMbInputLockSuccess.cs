@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventMbInputLockSuccess : IGameEvent<EventMbInputLockSuccess> {
 
-  static EventMbInputLockSuccess IGameEvent<EventMbInputLockSuccess>.Create() => new EventMbInputLockSuccessImpl();
+  static EventMbInputLockSuccess IGameEvent<EventMbInputLockSuccess>.Create(nint address) => new EventMbInputLockSuccessImpl(address);
 
   static string IGameEvent<EventMbInputLockSuccess>.GetName() => "mb_input_lock_success";
 

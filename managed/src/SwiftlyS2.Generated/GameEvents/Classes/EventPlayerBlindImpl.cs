@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerBlindImpl : GameEvent<EventPlayerBlind>, EventPlayerBlind
 {
 
+  public EventPlayerBlindImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventNavGenerateImpl : GameEvent<EventNavGenerate>, EventNavGenerate
 {
 
+  public EventNavGenerateImpl(nint address) : base(address)
+  {
+  }
 }

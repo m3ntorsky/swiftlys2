@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventDemoSkip : IGameEvent<EventDemoSkip> {
 
-  static EventDemoSkip IGameEvent<EventDemoSkip>.Create() => new EventDemoSkipImpl();
+  static EventDemoSkip IGameEvent<EventDemoSkip>.Create(nint address) => new EventDemoSkipImpl(address);
 
   static string IGameEvent<EventDemoSkip>.GetName() => "demo_skip";
 

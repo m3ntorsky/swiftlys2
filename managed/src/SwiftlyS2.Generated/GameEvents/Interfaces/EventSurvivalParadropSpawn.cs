@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventSurvivalParadropSpawn : IGameEvent<EventSurvivalParadropSpawn> {
 
-  static EventSurvivalParadropSpawn IGameEvent<EventSurvivalParadropSpawn>.Create() => new EventSurvivalParadropSpawnImpl();
+  static EventSurvivalParadropSpawn IGameEvent<EventSurvivalParadropSpawn>.Create(nint address) => new EventSurvivalParadropSpawnImpl(address);
 
   static string IGameEvent<EventSurvivalParadropSpawn>.GetName() => "survival_paradrop_spawn";
 

@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventGcConnectedImpl : GameEvent<EventGcConnected>, EventGcConnected
 {
 
+  public EventGcConnectedImpl(nint address) : base(address)
+  {
+  }
 }

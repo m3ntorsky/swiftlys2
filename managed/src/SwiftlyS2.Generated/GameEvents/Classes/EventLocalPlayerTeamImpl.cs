@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventLocalPlayerTeamImpl : GameEvent<EventLocalPlayerTeam>, EventLocalPlayerTeam
 {
 
+  public EventLocalPlayerTeamImpl(nint address) : base(address)
+  {
+  }
 }

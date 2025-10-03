@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventInspectWeaponImpl : GameEvent<EventInspectWeapon>, EventInspectWeapon
 {
 
+  public EventInspectWeaponImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

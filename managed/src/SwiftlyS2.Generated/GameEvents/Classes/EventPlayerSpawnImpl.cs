@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerSpawnImpl : GameEvent<EventPlayerSpawn>, EventPlayerSpawn
 {
 
+  public EventPlayerSpawnImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

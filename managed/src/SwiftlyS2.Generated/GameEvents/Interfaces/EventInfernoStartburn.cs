@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventInfernoStartburn : IGameEvent<EventInfernoStartburn> {
 
-  static EventInfernoStartburn IGameEvent<EventInfernoStartburn>.Create() => new EventInfernoStartburnImpl();
+  static EventInfernoStartburn IGameEvent<EventInfernoStartburn>.Create(nint address) => new EventInfernoStartburnImpl(address);
 
   static string IGameEvent<EventInfernoStartburn>.GetName() => "inferno_startburn";
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerHurt : IGameEvent<EventPlayerHurt> {
 
-  static EventPlayerHurt IGameEvent<EventPlayerHurt>.Create() => new EventPlayerHurtImpl();
+  static EventPlayerHurt IGameEvent<EventPlayerHurt>.Create(nint address) => new EventPlayerHurtImpl(address);
 
   static string IGameEvent<EventPlayerHurt>.GetName() => "player_hurt";
 

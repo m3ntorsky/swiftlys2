@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventServerMessageImpl : GameEvent<EventServerMessage>, EventServerMessage
 {
 
+  public EventServerMessageImpl(nint address) : base(address)
+  {
+  }
 
   // the message text
   public string Text

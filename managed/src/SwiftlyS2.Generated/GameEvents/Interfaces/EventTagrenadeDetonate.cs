@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventTagrenadeDetonate : IGameEvent<EventTagrenadeDetonate> {
 
-  static EventTagrenadeDetonate IGameEvent<EventTagrenadeDetonate>.Create() => new EventTagrenadeDetonateImpl();
+  static EventTagrenadeDetonate IGameEvent<EventTagrenadeDetonate>.Create(nint address) => new EventTagrenadeDetonateImpl(address);
 
   static string IGameEvent<EventTagrenadeDetonate>.GetName() => "tagrenade_detonate";
 

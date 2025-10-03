@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventEnterRescueZoneImpl : GameEvent<EventEnterRescueZone>, EventEnterRescueZone
 {
 
+  public EventEnterRescueZoneImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

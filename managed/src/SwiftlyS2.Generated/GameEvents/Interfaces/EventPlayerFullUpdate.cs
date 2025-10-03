@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerFullUpdate : IGameEvent<EventPlayerFullUpdate> {
 
-  static EventPlayerFullUpdate IGameEvent<EventPlayerFullUpdate>.Create() => new EventPlayerFullUpdateImpl();
+  static EventPlayerFullUpdate IGameEvent<EventPlayerFullUpdate>.Create(nint address) => new EventPlayerFullUpdateImpl(address);
 
   static string IGameEvent<EventPlayerFullUpdate>.GetName() => "player_full_update";
 

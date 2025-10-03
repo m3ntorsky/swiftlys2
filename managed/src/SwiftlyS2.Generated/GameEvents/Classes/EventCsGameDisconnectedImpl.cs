@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventCsGameDisconnectedImpl : GameEvent<EventCsGameDisconnected>, EventCsGameDisconnected
 {
 
+  public EventCsGameDisconnectedImpl(nint address) : base(address)
+  {
+  }
 }

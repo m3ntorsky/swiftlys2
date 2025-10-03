@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventItemPurchase : IGameEvent<EventItemPurchase> {
 
-  static EventItemPurchase IGameEvent<EventItemPurchase>.Create() => new EventItemPurchaseImpl();
+  static EventItemPurchase IGameEvent<EventItemPurchase>.Create(nint address) => new EventItemPurchaseImpl(address);
 
   static string IGameEvent<EventItemPurchase>.GetName() => "item_purchase";
 

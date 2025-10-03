@@ -52,6 +52,12 @@ public class TestPlugin : BasePlugin {
 
   public override void Load(bool hotReload) {
 
+
+    Core.GameEvent.HookPre<EventShowSurvivalRespawnStatus>(@event => {
+      @event.LocToken = "test";
+      return HookResult.Continue;
+    });
+
     Core.Configuration
       .InitializeJsonWithModel<TestConfig>("test.jsonc", "Main")
       .Configure((builder) => {

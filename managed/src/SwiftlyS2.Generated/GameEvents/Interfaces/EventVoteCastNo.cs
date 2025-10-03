@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventVoteCastNo : IGameEvent<EventVoteCastNo> {
 
-  static EventVoteCastNo IGameEvent<EventVoteCastNo>.Create() => new EventVoteCastNoImpl();
+  static EventVoteCastNo IGameEvent<EventVoteCastNo>.Create(nint address) => new EventVoteCastNoImpl(address);
 
   static string IGameEvent<EventVoteCastNo>.GetName() => "vote_cast_no";
 

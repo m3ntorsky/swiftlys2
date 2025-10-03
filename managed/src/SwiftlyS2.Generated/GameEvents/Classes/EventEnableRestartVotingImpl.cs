@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventEnableRestartVotingImpl : GameEvent<EventEnableRestartVoting>, EventEnableRestartVoting
 {
 
+  public EventEnableRestartVotingImpl(nint address) : base(address)
+  {
+  }
 
   public bool Enable
   { get => Accessor.GetBool("enable"); set => Accessor.SetBool("enable", value); }

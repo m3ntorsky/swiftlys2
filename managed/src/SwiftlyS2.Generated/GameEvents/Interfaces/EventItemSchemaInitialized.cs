@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventItemSchemaInitialized : IGameEvent<EventItemSchemaInitialized> {
 
-  static EventItemSchemaInitialized IGameEvent<EventItemSchemaInitialized>.Create() => new EventItemSchemaInitializedImpl();
+  static EventItemSchemaInitialized IGameEvent<EventItemSchemaInitialized>.Create(nint address) => new EventItemSchemaInitializedImpl(address);
 
   static string IGameEvent<EventItemSchemaInitialized>.GetName() => "item_schema_initialized";
 

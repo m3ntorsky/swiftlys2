@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventGrenadeThrownImpl : GameEvent<EventGrenadeThrown>, EventGrenadeThrown
 {
 
+  public EventGrenadeThrownImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

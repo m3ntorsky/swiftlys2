@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventTeamchangePending : IGameEvent<EventTeamchangePending> {
 
-  static EventTeamchangePending IGameEvent<EventTeamchangePending>.Create() => new EventTeamchangePendingImpl();
+  static EventTeamchangePending IGameEvent<EventTeamchangePending>.Create(nint address) => new EventTeamchangePendingImpl(address);
 
   static string IGameEvent<EventTeamchangePending>.GetName() => "teamchange_pending";
 

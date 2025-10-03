@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventInventoryUpdatedImpl : GameEvent<EventInventoryUpdated>, EventInventoryUpdated
 {
 
+  public EventInventoryUpdatedImpl(nint address) : base(address)
+  {
+  }
 
   public short ItemDef
   { get => (short)Accessor.GetInt32("itemdef"); set => Accessor.SetInt32("itemdef", value); }

@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventUserDataDownloaded : IGameEvent<EventUserDataDownloaded> {
 
-  static EventUserDataDownloaded IGameEvent<EventUserDataDownloaded>.Create() => new EventUserDataDownloadedImpl();
+  static EventUserDataDownloaded IGameEvent<EventUserDataDownloaded>.Create(nint address) => new EventUserDataDownloadedImpl(address);
 
   static string IGameEvent<EventUserDataDownloaded>.GetName() => "user_data_downloaded";
 

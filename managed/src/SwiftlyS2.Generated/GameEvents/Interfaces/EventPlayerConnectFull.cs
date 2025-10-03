@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerConnectFull : IGameEvent<EventPlayerConnectFull> {
 
-  static EventPlayerConnectFull IGameEvent<EventPlayerConnectFull>.Create() => new EventPlayerConnectFullImpl();
+  static EventPlayerConnectFull IGameEvent<EventPlayerConnectFull>.Create(nint address) => new EventPlayerConnectFullImpl(address);
 
   static string IGameEvent<EventPlayerConnectFull>.GetName() => "player_connect_full";
 

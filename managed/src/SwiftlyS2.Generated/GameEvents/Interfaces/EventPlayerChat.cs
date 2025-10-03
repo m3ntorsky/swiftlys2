@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerChat : IGameEvent<EventPlayerChat> {
 
-  static EventPlayerChat IGameEvent<EventPlayerChat>.Create() => new EventPlayerChatImpl();
+  static EventPlayerChat IGameEvent<EventPlayerChat>.Create(nint address) => new EventPlayerChatImpl(address);
 
   static string IGameEvent<EventPlayerChat>.GetName() => "player_chat";
 

@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventAchievementInfoLoadedImpl : GameEvent<EventAchievementInfoLoaded>, EventAchievementInfoLoaded
 {
 
+  public EventAchievementInfoLoadedImpl(nint address) : base(address)
+  {
+  }
 }

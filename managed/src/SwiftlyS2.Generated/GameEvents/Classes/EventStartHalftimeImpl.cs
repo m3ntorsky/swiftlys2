@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventStartHalftimeImpl : GameEvent<EventStartHalftime>, EventStartHalftime
 {
 
+  public EventStartHalftimeImpl(nint address) : base(address)
+  {
+  }
 }

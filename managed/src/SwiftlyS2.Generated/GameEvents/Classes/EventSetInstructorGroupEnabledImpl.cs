@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventSetInstructorGroupEnabledImpl : GameEvent<EventSetInstructorGroupEnabled>, EventSetInstructorGroupEnabled
 {
 
+  public EventSetInstructorGroupEnabledImpl(nint address) : base(address)
+  {
+  }
 
   public string Group
   { get => Accessor.GetString("group"); set => Accessor.SetString("group", value); }

@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBombDroppedImpl : GameEvent<EventBombDropped>, EventBombDropped
 {
 
+  public EventBombDroppedImpl(nint address) : base(address)
+  {
+  }
 
   // player who dropped the bomb
   public CCSPlayerController UserIdController

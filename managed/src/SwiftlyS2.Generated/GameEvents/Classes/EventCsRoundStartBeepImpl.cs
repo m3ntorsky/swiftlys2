@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventCsRoundStartBeepImpl : GameEvent<EventCsRoundStartBeep>, EventCsRoundStartBeep
 {
 
+  public EventCsRoundStartBeepImpl(nint address) : base(address)
+  {
+  }
 }

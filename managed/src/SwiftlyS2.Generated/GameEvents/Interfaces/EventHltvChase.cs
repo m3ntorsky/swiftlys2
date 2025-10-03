@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHltvChase : IGameEvent<EventHltvChase> {
 
-  static EventHltvChase IGameEvent<EventHltvChase>.Create() => new EventHltvChaseImpl();
+  static EventHltvChase IGameEvent<EventHltvChase>.Create(nint address) => new EventHltvChaseImpl(address);
 
   static string IGameEvent<EventHltvChase>.GetName() => "hltv_chase";
 

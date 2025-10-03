@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventCartUpdatedImpl : GameEvent<EventCartUpdated>, EventCartUpdated
 {
 
+  public EventCartUpdatedImpl(nint address) : base(address)
+  {
+  }
 }

@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDifficultyChangedImpl : GameEvent<EventDifficultyChanged>, EventDifficultyChanged
 {
 
+  public EventDifficultyChangedImpl(nint address) : base(address)
+  {
+  }
 
   public short NewDifficulty
   { get => (short)Accessor.GetInt32("newDifficulty"); set => Accessor.SetInt32("newDifficulty", value); }

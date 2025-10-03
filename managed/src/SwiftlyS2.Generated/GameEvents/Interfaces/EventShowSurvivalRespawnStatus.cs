@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventShowSurvivalRespawnStatus : IGameEvent<EventShowSurvivalRespawnStatus> {
 
-  static EventShowSurvivalRespawnStatus IGameEvent<EventShowSurvivalRespawnStatus>.Create() => new EventShowSurvivalRespawnStatusImpl();
+  static EventShowSurvivalRespawnStatus IGameEvent<EventShowSurvivalRespawnStatus>.Create(nint address) => new EventShowSurvivalRespawnStatusImpl(address);
 
   static string IGameEvent<EventShowSurvivalRespawnStatus>.GetName() => "show_survival_respawn_status";
 

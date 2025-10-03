@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventMapTransitionImpl : GameEvent<EventMapTransition>, EventMapTransition
 {
 
+  public EventMapTransitionImpl(nint address) : base(address)
+  {
+  }
 }

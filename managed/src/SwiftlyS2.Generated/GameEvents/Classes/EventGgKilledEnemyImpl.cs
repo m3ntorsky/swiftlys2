@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventGgKilledEnemyImpl : GameEvent<EventGgKilledEnemy>, EventGgKilledEnemy
 {
 
+  public EventGgKilledEnemyImpl(nint address) : base(address)
+  {
+  }
 
   // user ID who died
   public int VictimID

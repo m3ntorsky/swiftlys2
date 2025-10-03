@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventTeamInfoImpl : GameEvent<EventTeamInfo>, EventTeamInfo
 {
 
+  public EventTeamInfoImpl(nint address) : base(address)
+  {
+  }
 
   // unique team id
   public byte TeamID

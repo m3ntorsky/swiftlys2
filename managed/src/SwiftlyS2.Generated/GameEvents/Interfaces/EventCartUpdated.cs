@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventCartUpdated : IGameEvent<EventCartUpdated> {
 
-  static EventCartUpdated IGameEvent<EventCartUpdated>.Create() => new EventCartUpdatedImpl();
+  static EventCartUpdated IGameEvent<EventCartUpdated>.Create(nint address) => new EventCartUpdatedImpl(address);
 
   static string IGameEvent<EventCartUpdated>.GetName() => "cart_updated";
 

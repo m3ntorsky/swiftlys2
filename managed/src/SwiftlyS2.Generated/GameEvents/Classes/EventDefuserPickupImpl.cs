@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDefuserPickupImpl : GameEvent<EventDefuserPickup>, EventDefuserPickup
 {
 
+  public EventDefuserPickupImpl(nint address) : base(address)
+  {
+  }
 
   // defuser's entity ID
   public int EntityID

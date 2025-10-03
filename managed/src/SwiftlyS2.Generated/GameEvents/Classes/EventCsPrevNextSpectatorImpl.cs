@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventCsPrevNextSpectatorImpl : GameEvent<EventCsPrevNextSpectator>, EventCsPrevNextSpectator
 {
 
+  public EventCsPrevNextSpectatorImpl(nint address) : base(address)
+  {
+  }
 
   public bool Next
   { get => Accessor.GetBool("next"); set => Accessor.SetBool("next", value); }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventBuymenuOpen : IGameEvent<EventBuymenuOpen> {
 
-  static EventBuymenuOpen IGameEvent<EventBuymenuOpen>.Create() => new EventBuymenuOpenImpl();
+  static EventBuymenuOpen IGameEvent<EventBuymenuOpen>.Create(nint address) => new EventBuymenuOpenImpl(address);
 
   static string IGameEvent<EventBuymenuOpen>.GetName() => "buymenu_open";
 

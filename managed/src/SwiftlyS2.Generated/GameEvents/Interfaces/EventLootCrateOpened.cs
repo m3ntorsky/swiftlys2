@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventLootCrateOpened : IGameEvent<EventLootCrateOpened> {
 
-  static EventLootCrateOpened IGameEvent<EventLootCrateOpened>.Create() => new EventLootCrateOpenedImpl();
+  static EventLootCrateOpened IGameEvent<EventLootCrateOpened>.Create(nint address) => new EventLootCrateOpenedImpl(address);
 
   static string IGameEvent<EventLootCrateOpened>.GetName() => "loot_crate_opened";
 

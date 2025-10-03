@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerFootstep : IGameEvent<EventPlayerFootstep> {
 
-  static EventPlayerFootstep IGameEvent<EventPlayerFootstep>.Create() => new EventPlayerFootstepImpl();
+  static EventPlayerFootstep IGameEvent<EventPlayerFootstep>.Create(nint address) => new EventPlayerFootstepImpl(address);
 
   static string IGameEvent<EventPlayerFootstep>.GetName() => "player_footstep";
 

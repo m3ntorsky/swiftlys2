@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventBulletImpact : IGameEvent<EventBulletImpact> {
 
-  static EventBulletImpact IGameEvent<EventBulletImpact>.Create() => new EventBulletImpactImpl();
+  static EventBulletImpact IGameEvent<EventBulletImpact>.Create(nint address) => new EventBulletImpactImpl(address);
 
   static string IGameEvent<EventBulletImpact>.GetName() => "bullet_impact";
 

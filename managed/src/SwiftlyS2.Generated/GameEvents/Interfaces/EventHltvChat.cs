@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHltvChat : IGameEvent<EventHltvChat> {
 
-  static EventHltvChat IGameEvent<EventHltvChat>.Create() => new EventHltvChatImpl();
+  static EventHltvChat IGameEvent<EventHltvChat>.Create(nint address) => new EventHltvChatImpl(address);
 
   static string IGameEvent<EventHltvChat>.GetName() => "hltv_chat";
 

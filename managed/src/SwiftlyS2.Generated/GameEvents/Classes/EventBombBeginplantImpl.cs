@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBombBeginplantImpl : GameEvent<EventBombBeginplant>, EventBombBeginplant
 {
 
+  public EventBombBeginplantImpl(nint address) : base(address)
+  {
+  }
 
   // player who is planting the bomb
   public CCSPlayerController UserIdController

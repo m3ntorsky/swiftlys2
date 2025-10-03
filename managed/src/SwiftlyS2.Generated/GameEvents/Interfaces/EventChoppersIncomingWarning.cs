@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventChoppersIncomingWarning : IGameEvent<EventChoppersIncomingWarning> {
 
-  static EventChoppersIncomingWarning IGameEvent<EventChoppersIncomingWarning>.Create() => new EventChoppersIncomingWarningImpl();
+  static EventChoppersIncomingWarning IGameEvent<EventChoppersIncomingWarning>.Create(nint address) => new EventChoppersIncomingWarningImpl(address);
 
   static string IGameEvent<EventChoppersIncomingWarning>.GetName() => "choppers_incoming_warning";
 

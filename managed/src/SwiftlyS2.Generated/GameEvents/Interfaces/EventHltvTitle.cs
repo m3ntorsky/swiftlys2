@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHltvTitle : IGameEvent<EventHltvTitle> {
 
-  static EventHltvTitle IGameEvent<EventHltvTitle>.Create() => new EventHltvTitleImpl();
+  static EventHltvTitle IGameEvent<EventHltvTitle>.Create(nint address) => new EventHltvTitleImpl(address);
 
   static string IGameEvent<EventHltvTitle>.GetName() => "hltv_title";
 

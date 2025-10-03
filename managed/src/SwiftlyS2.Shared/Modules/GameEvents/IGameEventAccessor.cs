@@ -173,6 +173,4 @@ public interface IGameEventAccessor : INativeHandle
   /// </summary>
   /// <returns>True if local.</returns>
   public bool IsLocal();
-  
-  internal void InternalSet(nint handle);
 }

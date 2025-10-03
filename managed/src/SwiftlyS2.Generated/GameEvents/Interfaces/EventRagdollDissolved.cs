@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventRagdollDissolved : IGameEvent<EventRagdollDissolved> {
 
-  static EventRagdollDissolved IGameEvent<EventRagdollDissolved>.Create() => new EventRagdollDissolvedImpl();
+  static EventRagdollDissolved IGameEvent<EventRagdollDissolved>.Create(nint address) => new EventRagdollDissolvedImpl(address);
 
   static string IGameEvent<EventRagdollDissolved>.GetName() => "ragdoll_dissolved";
 

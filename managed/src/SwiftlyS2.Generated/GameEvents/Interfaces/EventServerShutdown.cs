@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventServerShutdown : IGameEvent<EventServerShutdown> {
 
-  static EventServerShutdown IGameEvent<EventServerShutdown>.Create() => new EventServerShutdownImpl();
+  static EventServerShutdown IGameEvent<EventServerShutdown>.Create(nint address) => new EventServerShutdownImpl(address);
 
   static string IGameEvent<EventServerShutdown>.GetName() => "server_shutdown";
 

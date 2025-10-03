@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventTrialTimeExpired : IGameEvent<EventTrialTimeExpired> {
 
-  static EventTrialTimeExpired IGameEvent<EventTrialTimeExpired>.Create() => new EventTrialTimeExpiredImpl();
+  static EventTrialTimeExpired IGameEvent<EventTrialTimeExpired>.Create(nint address) => new EventTrialTimeExpiredImpl(address);
 
   static string IGameEvent<EventTrialTimeExpired>.GetName() => "trial_time_expired";
 

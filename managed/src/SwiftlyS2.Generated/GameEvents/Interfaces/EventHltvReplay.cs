@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHltvReplay : IGameEvent<EventHltvReplay> {
 
-  static EventHltvReplay IGameEvent<EventHltvReplay>.Create() => new EventHltvReplayImpl();
+  static EventHltvReplay IGameEvent<EventHltvReplay>.Create(nint address) => new EventHltvReplayImpl(address);
 
   static string IGameEvent<EventHltvReplay>.GetName() => "hltv_replay";
 

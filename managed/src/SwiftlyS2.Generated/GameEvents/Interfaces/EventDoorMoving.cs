@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventDoorMoving : IGameEvent<EventDoorMoving> {
 
-  static EventDoorMoving IGameEvent<EventDoorMoving>.Create() => new EventDoorMovingImpl();
+  static EventDoorMoving IGameEvent<EventDoorMoving>.Create(nint address) => new EventDoorMovingImpl(address);
 
   static string IGameEvent<EventDoorMoving>.GetName() => "door_moving";
 

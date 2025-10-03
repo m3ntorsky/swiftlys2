@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventLocalPlayerPawnChangedImpl : GameEvent<EventLocalPlayerPawnChanged>, EventLocalPlayerPawnChanged
 {
 
+  public EventLocalPlayerPawnChangedImpl(nint address) : base(address)
+  {
+  }
 }

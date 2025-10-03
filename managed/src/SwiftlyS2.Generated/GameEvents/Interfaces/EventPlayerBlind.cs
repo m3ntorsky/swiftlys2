@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerBlind : IGameEvent<EventPlayerBlind> {
 
-  static EventPlayerBlind IGameEvent<EventPlayerBlind>.Create() => new EventPlayerBlindImpl();
+  static EventPlayerBlind IGameEvent<EventPlayerBlind>.Create(nint address) => new EventPlayerBlindImpl(address);
 
   static string IGameEvent<EventPlayerBlind>.GetName() => "player_blind";
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventRoundEnd : IGameEvent<EventRoundEnd> {
 
-  static EventRoundEnd IGameEvent<EventRoundEnd>.Create() => new EventRoundEndImpl();
+  static EventRoundEnd IGameEvent<EventRoundEnd>.Create(nint address) => new EventRoundEndImpl(address);
 
   static string IGameEvent<EventRoundEnd>.GetName() => "round_end";
 

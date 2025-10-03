@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerInfoImpl : GameEvent<EventPlayerInfo>, EventPlayerInfo
 {
 
+  public EventPlayerInfoImpl(nint address) : base(address)
+  {
+  }
 
   // player name
   public string Name

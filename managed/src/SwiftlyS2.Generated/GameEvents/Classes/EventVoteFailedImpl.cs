@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventVoteFailedImpl : GameEvent<EventVoteFailed>, EventVoteFailed
 {
 
+  public EventVoteFailedImpl(nint address) : base(address)
+  {
+  }
 
   public byte Team
   { get => (byte)Accessor.GetInt32("team"); set => Accessor.SetInt32("team", value); }

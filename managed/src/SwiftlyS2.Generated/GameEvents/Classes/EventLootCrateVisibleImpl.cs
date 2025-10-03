@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventLootCrateVisibleImpl : GameEvent<EventLootCrateVisible>, EventLootCrateVisible
 {
 
+  public EventLootCrateVisibleImpl(nint address) : base(address)
+  {
+  }
 
   // player entindex
   public CCSPlayerController UserIdController

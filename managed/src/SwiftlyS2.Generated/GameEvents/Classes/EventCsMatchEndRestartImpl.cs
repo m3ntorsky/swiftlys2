@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventCsMatchEndRestartImpl : GameEvent<EventCsMatchEndRestart>, EventCsMatchEndRestart
 {
 
+  public EventCsMatchEndRestartImpl(nint address) : base(address)
+  {
+  }
 }

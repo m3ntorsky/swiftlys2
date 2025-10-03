@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventNavBlockedImpl : GameEvent<EventNavBlocked>, EventNavBlocked
 {
 
+  public EventNavBlockedImpl(nint address) : base(address)
+  {
+  }
 
   public int Area
   { get => Accessor.GetInt32("area"); set => Accessor.SetInt32("area", value); }

@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventOtherDeathImpl : GameEvent<EventOtherDeath>, EventOtherDeath
 {
 
+  public EventOtherDeathImpl(nint address) : base(address)
+  {
+  }
 
   // other entity ID who died
   public short OtherID

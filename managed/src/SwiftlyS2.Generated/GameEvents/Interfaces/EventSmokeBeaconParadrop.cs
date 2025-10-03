@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventSmokeBeaconParadrop : IGameEvent<EventSmokeBeaconParadrop> {
 
-  static EventSmokeBeaconParadrop IGameEvent<EventSmokeBeaconParadrop>.Create() => new EventSmokeBeaconParadropImpl();
+  static EventSmokeBeaconParadrop IGameEvent<EventSmokeBeaconParadrop>.Create(nint address) => new EventSmokeBeaconParadropImpl(address);
 
   static string IGameEvent<EventSmokeBeaconParadrop>.GetName() => "smoke_beacon_paradrop";
 

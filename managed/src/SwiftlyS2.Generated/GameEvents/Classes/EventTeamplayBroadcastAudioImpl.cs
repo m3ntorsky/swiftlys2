@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventTeamplayBroadcastAudioImpl : GameEvent<EventTeamplayBroadcastAudio>, EventTeamplayBroadcastAudio
 {
 
+  public EventTeamplayBroadcastAudioImpl(nint address) : base(address)
+  {
+  }
 
   // unique team id
   public byte Team

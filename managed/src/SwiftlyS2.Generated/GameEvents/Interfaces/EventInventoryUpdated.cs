@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventInventoryUpdated : IGameEvent<EventInventoryUpdated> {
 
-  static EventInventoryUpdated IGameEvent<EventInventoryUpdated>.Create() => new EventInventoryUpdatedImpl();
+  static EventInventoryUpdated IGameEvent<EventInventoryUpdated>.Create(nint address) => new EventInventoryUpdatedImpl(address);
 
   static string IGameEvent<EventInventoryUpdated>.GetName() => "inventory_updated";
 

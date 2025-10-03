@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventWeaponFireOnEmpty : IGameEvent<EventWeaponFireOnEmpty> {
 
-  static EventWeaponFireOnEmpty IGameEvent<EventWeaponFireOnEmpty>.Create() => new EventWeaponFireOnEmptyImpl();
+  static EventWeaponFireOnEmpty IGameEvent<EventWeaponFireOnEmpty>.Create(nint address) => new EventWeaponFireOnEmptyImpl(address);
 
   static string IGameEvent<EventWeaponFireOnEmpty>.GetName() => "weapon_fire_on_empty";
 

@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventSilencerOffImpl : GameEvent<EventSilencerOff>, EventSilencerOff
 {
 
+  public EventSilencerOffImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

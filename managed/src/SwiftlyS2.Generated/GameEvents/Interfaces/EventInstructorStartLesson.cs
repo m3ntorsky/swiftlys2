@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventInstructorStartLesson : IGameEvent<EventInstructorStartLesson> {
 
-  static EventInstructorStartLesson IGameEvent<EventInstructorStartLesson>.Create() => new EventInstructorStartLessonImpl();
+  static EventInstructorStartLesson IGameEvent<EventInstructorStartLesson>.Create(nint address) => new EventInstructorStartLessonImpl(address);
 
   static string IGameEvent<EventInstructorStartLesson>.GetName() => "instructor_start_lesson";
 

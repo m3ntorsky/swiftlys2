@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventVipKilled : IGameEvent<EventVipKilled> {
 
-  static EventVipKilled IGameEvent<EventVipKilled>.Create() => new EventVipKilledImpl();
+  static EventVipKilled IGameEvent<EventVipKilled>.Create(nint address) => new EventVipKilledImpl(address);
 
   static string IGameEvent<EventVipKilled>.GetName() => "vip_killed";
 

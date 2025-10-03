@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventGameNewmapImpl : GameEvent<EventGameNewmap>, EventGameNewmap
 {
 
+  public EventGameNewmapImpl(nint address) : base(address)
+  {
+  }
 
   // map name
   public string MapName

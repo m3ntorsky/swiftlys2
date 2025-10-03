@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerHurtImpl : GameEvent<EventPlayerHurt>, EventPlayerHurt
 {
 
+  public EventPlayerHurtImpl(nint address) : base(address)
+  {
+  }
 
   // player who was hurt
   public CCSPlayerController UserIdController

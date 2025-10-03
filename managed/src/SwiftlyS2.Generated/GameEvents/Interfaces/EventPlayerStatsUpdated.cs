@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerStatsUpdated : IGameEvent<EventPlayerStatsUpdated> {
 
-  static EventPlayerStatsUpdated IGameEvent<EventPlayerStatsUpdated>.Create() => new EventPlayerStatsUpdatedImpl();
+  static EventPlayerStatsUpdated IGameEvent<EventPlayerStatsUpdated>.Create(nint address) => new EventPlayerStatsUpdatedImpl(address);
 
   static string IGameEvent<EventPlayerStatsUpdated>.GetName() => "player_stats_updated";
 

@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventItemSchemaInitializedImpl : GameEvent<EventItemSchemaInitialized>, EventItemSchemaInitialized
 {
 
+  public EventItemSchemaInitializedImpl(nint address) : base(address)
+  {
+  }
 }

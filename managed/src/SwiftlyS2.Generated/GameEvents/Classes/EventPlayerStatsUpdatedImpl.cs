@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerStatsUpdatedImpl : GameEvent<EventPlayerStatsUpdated>, EventPlayerStatsUpdated
 {
 
+  public EventPlayerStatsUpdatedImpl(nint address) : base(address)
+  {
+  }
 
   public bool ForceUpload
   { get => Accessor.GetBool("forceupload"); set => Accessor.SetBool("forceupload", value); }

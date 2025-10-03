@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventGameMessageImpl : GameEvent<EventGameMessage>, EventGameMessage
 {
 
+  public EventGameMessageImpl(nint address) : base(address)
+  {
+  }
 
   // 0 = console, 1 = HUD
   public byte Target

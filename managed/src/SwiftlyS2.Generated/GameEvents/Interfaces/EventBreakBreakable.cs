@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventBreakBreakable : IGameEvent<EventBreakBreakable> {
 
-  static EventBreakBreakable IGameEvent<EventBreakBreakable>.Create() => new EventBreakBreakableImpl();
+  static EventBreakBreakable IGameEvent<EventBreakBreakable>.Create(nint address) => new EventBreakBreakableImpl(address);
 
   static string IGameEvent<EventBreakBreakable>.GetName() => "break_breakable";
 

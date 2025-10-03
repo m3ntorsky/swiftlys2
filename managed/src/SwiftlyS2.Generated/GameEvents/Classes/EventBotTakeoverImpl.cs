@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBotTakeoverImpl : GameEvent<EventBotTakeover>, EventBotTakeover
 {
 
+  public EventBotTakeoverImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

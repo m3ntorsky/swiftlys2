@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerActivate : IGameEvent<EventPlayerActivate> {
 
-  static EventPlayerActivate IGameEvent<EventPlayerActivate>.Create() => new EventPlayerActivateImpl();
+  static EventPlayerActivate IGameEvent<EventPlayerActivate>.Create(nint address) => new EventPlayerActivateImpl(address);
 
   static string IGameEvent<EventPlayerActivate>.GetName() => "player_activate";
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerSound : IGameEvent<EventPlayerSound> {
 
-  static EventPlayerSound IGameEvent<EventPlayerSound>.Create() => new EventPlayerSoundImpl();
+  static EventPlayerSound IGameEvent<EventPlayerSound>.Create(nint address) => new EventPlayerSoundImpl(address);
 
   static string IGameEvent<EventPlayerSound>.GetName() => "player_sound";
 

@@ -13,4 +13,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventUserDataDownloadedImpl : GameEvent<EventUserDataDownloaded>, EventUserDataDownloaded
 {
 
+  public EventUserDataDownloadedImpl(nint address) : base(address)
+  {
+  }
 }

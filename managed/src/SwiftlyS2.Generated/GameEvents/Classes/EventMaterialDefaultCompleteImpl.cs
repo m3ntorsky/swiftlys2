@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventMaterialDefaultCompleteImpl : GameEvent<EventMaterialDefaultComplete>, EventMaterialDefaultComplete
 {
 
+  public EventMaterialDefaultCompleteImpl(nint address) : base(address)
+  {
+  }
 }

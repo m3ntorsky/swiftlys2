@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventGamePhaseChanged : IGameEvent<EventGamePhaseChanged> {
 
-  static EventGamePhaseChanged IGameEvent<EventGamePhaseChanged>.Create() => new EventGamePhaseChangedImpl();
+  static EventGamePhaseChanged IGameEvent<EventGamePhaseChanged>.Create(nint address) => new EventGamePhaseChangedImpl(address);
 
   static string IGameEvent<EventGamePhaseChanged>.GetName() => "game_phase_changed";
 

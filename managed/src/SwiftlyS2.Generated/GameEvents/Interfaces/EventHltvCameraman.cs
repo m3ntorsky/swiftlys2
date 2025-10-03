@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHltvCameraman : IGameEvent<EventHltvCameraman> {
 
-  static EventHltvCameraman IGameEvent<EventHltvCameraman>.Create() => new EventHltvCameramanImpl();
+  static EventHltvCameraman IGameEvent<EventHltvCameraman>.Create(nint address) => new EventHltvCameramanImpl(address);
 
   static string IGameEvent<EventHltvCameraman>.GetName() => "hltv_cameraman";
 

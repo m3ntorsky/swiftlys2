@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventClientsideReloadCustomEcon : IGameEvent<EventClientsideReloadCustomEcon> {
 
-  static EventClientsideReloadCustomEcon IGameEvent<EventClientsideReloadCustomEcon>.Create() => new EventClientsideReloadCustomEconImpl();
+  static EventClientsideReloadCustomEcon IGameEvent<EventClientsideReloadCustomEcon>.Create(nint address) => new EventClientsideReloadCustomEconImpl(address);
 
   static string IGameEvent<EventClientsideReloadCustomEcon>.GetName() => "clientside_reload_custom_econ";
 
