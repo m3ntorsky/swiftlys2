@@ -300,7 +300,7 @@ def render_interface(event: GameEventDef) -> str:
   lines.append(f"public interface {type_name} : IGameEvent<{type_name}> {{")
   lines.append("")
   # static abstract implementations required by IGameEvent<T>
-  lines.append(f"  static {type_name} IGameEvent<{type_name}>.Create() => new {type_name}Impl();")
+  lines.append(f"  static {type_name} IGameEvent<{type_name}>.Create(nint address) => new {type_name}Impl(address);")
   lines.append("")
   lines.append(f"  static string IGameEvent<{type_name}>.GetName() => \"{original_name}\";")
   lines.append("")
@@ -410,9 +410,9 @@ def render_class(event: GameEventDef) -> str:
   lines.append(f"internal class {type_name}Impl : GameEvent<{type_name}>, {type_name}")
   lines.append("{")
   lines.append("")
-  # lines.append(f"  public {type_name}Impl() : base()")
-  # lines.append("  {")
-  # lines.append("  }")
+  lines.append(f"  public {type_name}Impl(nint address) : base(address)")
+  lines.append("  {")
+  lines.append("  }")
 
   used_prop_names: Dict[str, int] = {}
   for fname, fdef in event.fields.items():
