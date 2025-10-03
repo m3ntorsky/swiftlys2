@@ -8,6 +8,9 @@ using SwiftlyS2.Core.Events;
 namespace SwiftlyS2.Core;
 
 internal static class Bootstrap {
+
+  // how tf i forgot services can be collected hahahahahahahhaahhahaa FUCK
+  private static IServiceProvider? _ServiceProvider;
   public static void Start(IntPtr nativeTable, int nativeTableSize, string basePath) {
     Environment.SetEnvironmentVariable("SWIFTLY_MANAGED_ROOT", basePath);
 
@@ -42,11 +45,11 @@ internal static class Bootstrap {
       provider
     ));
 
-    var provider = services.BuildServiceProvider();
+    _ServiceProvider = services.BuildServiceProvider();
 
-    provider.UsePermissionManager();
-    provider.UseCoreCommandService();
-    provider.UsePluginManager();
+    _ServiceProvider.UsePermissionManager();
+    _ServiceProvider.UseCoreCommandService();
+    _ServiceProvider.UsePluginManager();
     // provider.UseTestService();
 
   }

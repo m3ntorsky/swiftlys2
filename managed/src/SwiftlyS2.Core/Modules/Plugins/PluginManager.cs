@@ -45,22 +45,27 @@ internal class PluginManager {
   }
 
   public void HandlePluginChange(object sender, FileSystemEventArgs e) {
-    // why i have to make a debounce here?
-    if (DateTime.Now - lastRead < TimeSpan.FromSeconds(1)) {
-      return;
-    }
-    lastRead = DateTime.Now;
-
-    var directory = Path.GetDirectoryName(e.FullPath);
-    if (directory == null) {
-      return;
-    }
-    
-    foreach(var plugin in _Plugins) {
-      if (plugin.Metadata?.Id == Path.GetFileName(directory)) {
-        ReloadPlugin(plugin.Metadata!.Id);
-        break;
+    try {
+      // why i have to make a debounce here?
+      if (DateTime.Now - lastRead < TimeSpan.FromSeconds(1)) {
+        return;
       }
+
+      var directory = Path.GetDirectoryName(e.FullPath);
+      if (directory == null) {
+        return;
+      }
+
+      foreach(var plugin in _Plugins) {
+        if (plugin.Metadata?.Id == Path.GetFileName(directory))
+        {
+          lastRead = DateTime.Now;
+          ReloadPlugin(plugin.Metadata!.Id);
+          break;
+        }
+      }
+    } catch (Exception ex) {
+      _Logger.LogError(ex, "Error handling plugin change");
     }
   }
 
