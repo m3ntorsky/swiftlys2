@@ -74,6 +74,14 @@ internal class EntitySystemService : IEntitySystemService, IDisposable {
       .Select(entity => T.From(entity.Address));
   }
 
+  public T? GetEntityByIndex<T>(uint index) where T : class, ISchemaClass<T> {
+    var handle = NativeEntitySystem.GetEntityByIndex(index);
+    if (handle == nint.Zero) {
+      return null;
+    }
+    return T.From(handle);
+  }
+
   Guid IEntitySystemService.HookEntityOutput<T>(string outputName, IEntitySystemService.EntityOutputHandler callback)
   {
     var hook = new EntityOutputHookCallback(GetEntityDesignerName<T>() ?? "", outputName, callback, _loggerFactory, _profiler);

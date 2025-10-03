@@ -61,6 +61,14 @@ public interface IEntitySystemService {
   public IEnumerable<T> GetAllEntitiesByDesignerName<T>(string designerName) where T : class, ISchemaClass<T>;
 
   /// <summary>
+  /// Get an entity by index.
+  /// </summary>
+  /// <typeparam name="T">Entity type.</typeparam>
+  /// <param name="index">Entity index.</param>
+  /// <returns>Entity by index. Nullable.</returns>
+  public T? GetEntityByIndex<T>(uint index) where T : class, ISchemaClass<T>;
+  
+  /// <summary>
   /// Represents a method that handles an entity output event, allowing custom logic to be executed when an entity
   /// triggers an output.
   /// </summary>

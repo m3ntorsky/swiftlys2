@@ -62,17 +62,14 @@ public class TestPlugin : BasePlugin {
       .InitializeJsonWithModel<TestConfig>("test.jsonc", "Main")
       .Configure((builder) => {
         builder.AddJsonFile("test.jsonc", optional: false, reloadOnChange: true);
-        // builder.AddYamlFile("test.yaml", optional: false, reloadOnChange: true);
       });
 
     ServiceCollection services = new();
 
     services
       .AddSwiftly(Core)
-      .AddSingleton<TestService>()
+      .AddSingleton<TestService>();
 
-      .AddOptionsWithValidateOnStart<TestConfig>()
-      .BindConfiguration("Main");
 
     var provider = services.BuildServiceProvider();
 
@@ -242,10 +239,16 @@ public class TestPlugin : BasePlugin {
   [Command("h1")]
   public void TestCommand2(ICommandContext context)
   {
-    var dispatchspawn = Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
-    _dispatchspawn = Core.Memory.GetUnmanagedFunctionByAddress<DispatchSpawnDelegate>(dispatchspawn);
+    var token = Core.Scheduler.DelayAndRepeat(500, 1000, () => {
+      
+    });
 
-    _dispatchspawn.AddHook((next) => {
+    Core.Scheduler.StopOnMapChange(token);
+
+    var addres = Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
+    var func = Core.Memory.GetUnmanagedFunctionByAddress<DispatchSpawnDelegate>(addres);
+
+    var guid = func.AddHook((next) => {
       return (pEntity, pKV) => {
         Console.WriteLine("TestPlugin DispatchSpawn " + order++);
         return next()(pEntity, pKV);
@@ -280,8 +283,6 @@ public class TestPlugin : BasePlugin {
   [Command("tt3")]
   public void TestCommand33(ICommandContext context)
   {
-    var ent = Core.EntitySystem.CreateEntity<CPointWorldText>();
-    _dispatchspawn.CallOriginal(ent.Address, 0);
   }
 
   [Command("tt4")]
