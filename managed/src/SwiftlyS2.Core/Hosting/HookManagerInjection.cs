@@ -6,8 +6,9 @@ namespace SwiftlyS2.Core.Hosting;
 
 internal static class HookServiceInjection
 {
-	public static void AddHookManager(this IServiceCollection self)
+	public static IServiceCollection AddHookManager(this IServiceCollection self)
 	{
 		self.AddSingleton<HookManager>();
+		return self;
 	}
 } 

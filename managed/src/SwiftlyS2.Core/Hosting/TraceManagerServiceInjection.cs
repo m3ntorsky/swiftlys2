@@ -5,8 +5,9 @@ namespace SwiftlyS2.Core.Hosting;
 
 internal static class TraceManagerServiceInjection
 {
-    public static void AddTraceManagerService(this IServiceCollection self)
+    public static IServiceCollection AddTraceManagerService(this IServiceCollection self)
     {
         self.AddSingleton<TraceManager>();
+        return self;
     }
 }

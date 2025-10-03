@@ -5,9 +5,9 @@ namespace SwiftlyS2.Core.Hosting;
 
 internal static class PluginManagerInjection
 {
-  public static void AddPluginManager(this IServiceCollection self)
+  public static IServiceCollection AddPluginManager(this IServiceCollection self)
   {
-    self.AddSingleton<PluginManager>();
+    return self.AddSingleton<PluginManager>();
   }
 
   public static void UsePluginManager(this IServiceProvider self)

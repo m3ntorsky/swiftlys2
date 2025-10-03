@@ -5,8 +5,9 @@ namespace SwiftlyS2.Core.Hosting;
 
 internal static class ConfigurationServiceInjection
 {
-  public static void AddConfigurationService(this IServiceCollection self)
+  public static IServiceCollection AddConfigurationService(this IServiceCollection self)
   {
     self.AddSingleton<ConfigurationService>();
+    return self;
   }
 }
