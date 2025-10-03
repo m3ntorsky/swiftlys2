@@ -323,4 +323,9 @@ internal static class NativeEntitySystem {
   public unsafe static void UnhookEntityOutput(ulong hookid) {
     _UnhookEntityOutput(hookid);
   }
+  private unsafe static delegate* unmanaged<uint, nint> _GetEntityByIndex;
+  public unsafe static nint GetEntityByIndex(uint index) {
+    var ret = _GetEntityByIndex(index);
+    return ret;
+  }
 }

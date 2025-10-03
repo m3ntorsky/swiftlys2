@@ -190,6 +190,13 @@ void Bridge_EntitySystem_UnhookEntityOutput(uint64_t hookid)
     hooksystem->DestroyEntityHookOutput(hookid);
 }
 
+
+void* Bridge_EntitySystem_GetEntityByIndex(uint32_t index)
+{
+    static auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
+    return entsystem->GetEntitySystem()->GetEntityInstance(CEntityIndex(index));
+}
+
 DEFINE_NATIVE("EntitySystem.Spawn", Bridge_EntitySystem_Spawn);
 DEFINE_NATIVE("EntitySystem.Despawn", Bridge_EntitySystem_Despawn);
 DEFINE_NATIVE("EntitySystem.CreateEntityByName", Bridge_EntitySystem_CreateEntityByName);
@@ -218,3 +225,4 @@ DEFINE_NATIVE("EntitySystem.GetEntityHandleFromEntity", Bridge_EntitySystem_GetE
 DEFINE_NATIVE("EntitySystem.GetFirstActiveEntity", Bridge_EntitySystem_GetFirstActiveEntity);
 DEFINE_NATIVE("EntitySystem.HookEntityOutput", Bridge_EntitySystem_HookEntityOutput);
 DEFINE_NATIVE("EntitySystem.UnhookEntityOutput", Bridge_EntitySystem_UnhookEntityOutput);
+DEFINE_NATIVE("EntitySystem.GetEntityByIndex", Bridge_EntitySystem_GetEntityByIndex);
