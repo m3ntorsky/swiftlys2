@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventMolotovDetonate : IGameEvent<EventMolotovDetonate> {
 
-  static EventMolotovDetonate IGameEvent<EventMolotovDetonate>.Create() => new EventMolotovDetonateImpl();
+  static EventMolotovDetonate IGameEvent<EventMolotovDetonate>.Create(nint address) => new EventMolotovDetonateImpl(address);
 
   static string IGameEvent<EventMolotovDetonate>.GetName() => "molotov_detonate";
 

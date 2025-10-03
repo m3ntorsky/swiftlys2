@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventAchievementWriteFailed : IGameEvent<EventAchievementWriteFailed> {
 
-  static EventAchievementWriteFailed IGameEvent<EventAchievementWriteFailed>.Create() => new EventAchievementWriteFailedImpl();
+  static EventAchievementWriteFailed IGameEvent<EventAchievementWriteFailed>.Create(nint address) => new EventAchievementWriteFailedImpl(address);
 
   static string IGameEvent<EventAchievementWriteFailed>.GetName() => "achievement_write_failed";
 

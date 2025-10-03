@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBulletDamageImpl : GameEvent<EventBulletDamage>, EventBulletDamage
 {
 
+  public EventBulletDamageImpl(nint address) : base(address)
+  {
+  }
 
   // player index who was hurt
   public int Victim

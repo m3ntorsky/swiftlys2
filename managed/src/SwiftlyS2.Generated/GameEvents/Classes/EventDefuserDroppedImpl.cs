@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDefuserDroppedImpl : GameEvent<EventDefuserDropped>, EventDefuserDropped
 {
 
+  public EventDefuserDroppedImpl(nint address) : base(address)
+  {
+  }
 
   // defuser's entity ID
   public int EntityID

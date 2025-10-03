@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventRoundStart : IGameEvent<EventRoundStart> {
 
-  static EventRoundStart IGameEvent<EventRoundStart>.Create() => new EventRoundStartImpl();
+  static EventRoundStart IGameEvent<EventRoundStart>.Create(nint address) => new EventRoundStartImpl(address);
 
   static string IGameEvent<EventRoundStart>.GetName() => "round_start";
 

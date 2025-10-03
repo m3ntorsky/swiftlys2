@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventAchievementEarnedLocal : IGameEvent<EventAchievementEarnedLocal> {
 
-  static EventAchievementEarnedLocal IGameEvent<EventAchievementEarnedLocal>.Create() => new EventAchievementEarnedLocalImpl();
+  static EventAchievementEarnedLocal IGameEvent<EventAchievementEarnedLocal>.Create(nint address) => new EventAchievementEarnedLocalImpl(address);
 
   static string IGameEvent<EventAchievementEarnedLocal>.GetName() => "achievement_earned_local";
 

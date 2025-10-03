@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHltvChaseImpl : GameEvent<EventHltvChase>, EventHltvChase
 {
 
+  public EventHltvChaseImpl(nint address) : base(address)
+  {
+  }
 
   // primary traget index
   public int Target1

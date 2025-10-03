@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventStartVoteImpl : GameEvent<EventStartVote>, EventStartVote
 {
 
+  public EventStartVoteImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventRepostXboxAchievementsImpl : GameEvent<EventRepostXboxAchievements>, EventRepostXboxAchievements
 {
 
+  public EventRepostXboxAchievementsImpl(nint address) : base(address)
+  {
+  }
 
   // splitscreen ID
   public short SplitScreenPlayer

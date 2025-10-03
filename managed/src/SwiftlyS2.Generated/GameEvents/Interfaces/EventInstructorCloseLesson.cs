@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventInstructorCloseLesson : IGameEvent<EventInstructorCloseLesson> {
 
-  static EventInstructorCloseLesson IGameEvent<EventInstructorCloseLesson>.Create() => new EventInstructorCloseLessonImpl();
+  static EventInstructorCloseLesson IGameEvent<EventInstructorCloseLesson>.Create(nint address) => new EventInstructorCloseLessonImpl(address);
 
   static string IGameEvent<EventInstructorCloseLesson>.GetName() => "instructor_close_lesson";
 

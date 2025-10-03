@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventAchievementEarnedLocalImpl : GameEvent<EventAchievementEarnedLocal>, EventAchievementEarnedLocal
 {
 
+  public EventAchievementEarnedLocalImpl(nint address) : base(address)
+  {
+  }
 
   // achievement ID
   public short Achievement

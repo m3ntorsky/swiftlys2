@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHostageHurtImpl : GameEvent<EventHostageHurt>, EventHostageHurt
 {
 
+  public EventHostageHurtImpl(nint address) : base(address)
+  {
+  }
 
   // player who hurt the hostage
   public CCSPlayerController UserIdController

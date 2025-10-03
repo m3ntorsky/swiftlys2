@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHostageRescuedImpl : GameEvent<EventHostageRescued>, EventHostageRescued
 {
 
+  public EventHostageRescuedImpl(nint address) : base(address)
+  {
+  }
 
   // player who rescued the hostage
   public CCSPlayerController UserIdController

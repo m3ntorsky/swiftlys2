@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventFlashbangDetonateImpl : GameEvent<EventFlashbangDetonate>, EventFlashbangDetonate
 {
 
+  public EventFlashbangDetonateImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

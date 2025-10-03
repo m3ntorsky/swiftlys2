@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBuytimeEndedImpl : GameEvent<EventBuytimeEnded>, EventBuytimeEnded
 {
 
+  public EventBuytimeEndedImpl(nint address) : base(address)
+  {
+  }
 }

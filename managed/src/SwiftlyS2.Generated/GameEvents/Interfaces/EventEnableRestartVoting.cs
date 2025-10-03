@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventEnableRestartVoting : IGameEvent<EventEnableRestartVoting> {
 
-  static EventEnableRestartVoting IGameEvent<EventEnableRestartVoting>.Create() => new EventEnableRestartVotingImpl();
+  static EventEnableRestartVoting IGameEvent<EventEnableRestartVoting>.Create(nint address) => new EventEnableRestartVotingImpl(address);
 
   static string IGameEvent<EventEnableRestartVoting>.GetName() => "enable_restart_voting";
 

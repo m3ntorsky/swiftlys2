@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventFinaleStartImpl : GameEvent<EventFinaleStart>, EventFinaleStart
 {
 
+  public EventFinaleStartImpl(nint address) : base(address)
+  {
+  }
 
   public short Rushes
   { get => (short)Accessor.GetInt32("rushes"); set => Accessor.SetInt32("rushes", value); }

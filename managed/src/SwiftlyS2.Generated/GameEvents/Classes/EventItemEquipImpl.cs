@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventItemEquipImpl : GameEvent<EventItemEquip>, EventItemEquip
 {
 
+  public EventItemEquipImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

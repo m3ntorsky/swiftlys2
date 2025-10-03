@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBombAbortdefuseImpl : GameEvent<EventBombAbortdefuse>, EventBombAbortdefuse
 {
 
+  public EventBombAbortdefuseImpl(nint address) : base(address)
+  {
+  }
 
   // player who was defusing
   public CCSPlayerController UserIdController

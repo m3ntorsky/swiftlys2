@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPhysgunPickupImpl : GameEvent<EventPhysgunPickup>, EventPhysgunPickup
 {
 
+  public EventPhysgunPickupImpl(nint address) : base(address)
+  {
+  }
 
   // entity picked up
   public nint Target

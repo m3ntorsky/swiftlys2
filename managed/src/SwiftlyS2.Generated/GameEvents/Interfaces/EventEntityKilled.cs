@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventEntityKilled : IGameEvent<EventEntityKilled> {
 
-  static EventEntityKilled IGameEvent<EventEntityKilled>.Create() => new EventEntityKilledImpl();
+  static EventEntityKilled IGameEvent<EventEntityKilled>.Create(nint address) => new EventEntityKilledImpl(address);
 
   static string IGameEvent<EventEntityKilled>.GetName() => "entity_killed";
 

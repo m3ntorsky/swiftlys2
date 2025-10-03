@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventServerSpawnImpl : GameEvent<EventServerSpawn>, EventServerSpawn
 {
 
+  public EventServerSpawnImpl(nint address) : base(address)
+  {
+  }
 
   // public host name
   public string Hostname

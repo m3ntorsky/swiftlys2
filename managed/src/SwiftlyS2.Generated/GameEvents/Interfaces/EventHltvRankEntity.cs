@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHltvRankEntity : IGameEvent<EventHltvRankEntity> {
 
-  static EventHltvRankEntity IGameEvent<EventHltvRankEntity>.Create() => new EventHltvRankEntityImpl();
+  static EventHltvRankEntity IGameEvent<EventHltvRankEntity>.Create(nint address) => new EventHltvRankEntityImpl(address);
 
   static string IGameEvent<EventHltvRankEntity>.GetName() => "hltv_rank_entity";
 

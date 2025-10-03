@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHostageCallForHelpImpl : GameEvent<EventHostageCallForHelp>, EventHostageCallForHelp
 {
 
+  public EventHostageCallForHelpImpl(nint address) : base(address)
+  {
+  }
 
   // hostage entity index
   public short Hostage

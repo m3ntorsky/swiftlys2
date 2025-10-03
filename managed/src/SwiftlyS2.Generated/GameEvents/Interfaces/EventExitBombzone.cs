@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventExitBombzone : IGameEvent<EventExitBombzone> {
 
-  static EventExitBombzone IGameEvent<EventExitBombzone>.Create() => new EventExitBombzoneImpl();
+  static EventExitBombzone IGameEvent<EventExitBombzone>.Create(nint address) => new EventExitBombzoneImpl(address);
 
   static string IGameEvent<EventExitBombzone>.GetName() => "exit_bombzone";
 

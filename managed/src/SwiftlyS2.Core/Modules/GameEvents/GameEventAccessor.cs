@@ -7,19 +7,21 @@ using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Core.GameEvents;
 
-internal class GameEventAccessor : NativeHandle, IGameEventAccessor {
-
+internal class GameEventAccessor : NativeHandle, IGameEventAccessor, IDisposable {
+  
   public bool DontBroadcast { get; set; }
+  private bool _IsValid = true;
 
-  internal GameEventAccessor() : base(0) {
+  public GameEventAccessor(nint handle) : base(handle)
+  {
   }
 
-  public void InternalSet(nint handle) {
-    _Handle = handle;
+  public void Dispose() {
+    _IsValid = false;
   }
 
   private void CheckIsValid() {
-    if (_Handle == 0) throw new InvalidOperationException("The event is not initialized.");
+    if (!_IsValid) throw new InvalidOperationException("The event is already disposed.");
   }
 
   public void SetBool(string key, bool value) {

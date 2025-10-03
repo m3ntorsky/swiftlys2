@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventInstructorServerHintStop : IGameEvent<EventInstructorServerHintStop> {
 
-  static EventInstructorServerHintStop IGameEvent<EventInstructorServerHintStop>.Create() => new EventInstructorServerHintStopImpl();
+  static EventInstructorServerHintStop IGameEvent<EventInstructorServerHintStop>.Create(nint address) => new EventInstructorServerHintStopImpl(address);
 
   static string IGameEvent<EventInstructorServerHintStop>.GetName() => "instructor_server_hint_stop";
 

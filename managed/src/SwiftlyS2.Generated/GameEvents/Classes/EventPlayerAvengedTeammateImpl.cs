@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerAvengedTeammateImpl : GameEvent<EventPlayerAvengedTeammate>, EventPlayerAvengedTeammate
 {
 
+  public EventPlayerAvengedTeammateImpl(nint address) : base(address)
+  {
+  }
 
   public int AvengerId
   { get => Accessor.GetPlayerSlot("avenger_id"); set => Accessor.SetPlayerSlot("avenger_id", value); }

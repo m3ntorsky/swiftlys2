@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDoorMovingImpl : GameEvent<EventDoorMoving>, EventDoorMoving
 {
 
+  public EventDoorMovingImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

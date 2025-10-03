@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerConnectImpl : GameEvent<EventPlayerConnect>, EventPlayerConnect
 {
 
+  public EventPlayerConnectImpl(nint address) : base(address)
+  {
+  }
 
   // player name
   public string Name

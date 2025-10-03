@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventFirstbombsIncomingWarningImpl : GameEvent<EventFirstbombsIncomingWarning>, EventFirstbombsIncomingWarning
 {
 
+  public EventFirstbombsIncomingWarningImpl(nint address) : base(address)
+  {
+  }
 
   public bool Global
   { get => Accessor.GetBool("global"); set => Accessor.SetBool("global", value); }

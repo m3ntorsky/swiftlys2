@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventAchievementEventImpl : GameEvent<EventAchievementEvent>, EventAchievementEvent
 {
 
+  public EventAchievementEventImpl(nint address) : base(address)
+  {
+  }
 
   // non-localized name of achievement
   public string AchievementName

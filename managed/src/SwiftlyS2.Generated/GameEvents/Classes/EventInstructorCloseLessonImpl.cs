@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventInstructorCloseLessonImpl : GameEvent<EventInstructorCloseLesson>, EventInstructorCloseLesson
 {
 
+  public EventInstructorCloseLessonImpl(nint address) : base(address)
+  {
+  }
 
   // The player who this lesson is intended for
   public CCSPlayerController UserIdController

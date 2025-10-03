@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventParachuteDeploy : IGameEvent<EventParachuteDeploy> {
 
-  static EventParachuteDeploy IGameEvent<EventParachuteDeploy>.Create() => new EventParachuteDeployImpl();
+  static EventParachuteDeploy IGameEvent<EventParachuteDeploy>.Create(nint address) => new EventParachuteDeployImpl(address);
 
   static string IGameEvent<EventParachuteDeploy>.GetName() => "parachute_deploy";
 

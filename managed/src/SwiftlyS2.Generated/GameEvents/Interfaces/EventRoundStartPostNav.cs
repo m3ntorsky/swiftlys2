@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventRoundStartPostNav : IGameEvent<EventRoundStartPostNav> {
 
-  static EventRoundStartPostNav IGameEvent<EventRoundStartPostNav>.Create() => new EventRoundStartPostNavImpl();
+  static EventRoundStartPostNav IGameEvent<EventRoundStartPostNav>.Create(nint address) => new EventRoundStartPostNavImpl(address);
 
   static string IGameEvent<EventRoundStartPostNav>.GetName() => "round_start_post_nav";
 

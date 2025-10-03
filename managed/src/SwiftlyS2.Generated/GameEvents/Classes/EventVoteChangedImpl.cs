@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventVoteChangedImpl : GameEvent<EventVoteChanged>, EventVoteChanged
 {
 
+  public EventVoteChangedImpl(nint address) : base(address)
+  {
+  }
 
   public byte YesVotes
   { get => (byte)Accessor.GetInt32("yesVotes"); set => Accessor.SetInt32("yesVotes", value); }

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerTeam : IGameEvent<EventPlayerTeam> {
 
-  static EventPlayerTeam IGameEvent<EventPlayerTeam>.Create() => new EventPlayerTeamImpl();
+  static EventPlayerTeam IGameEvent<EventPlayerTeam>.Create(nint address) => new EventPlayerTeamImpl(address);
 
   static string IGameEvent<EventPlayerTeam>.GetName() => "player_team";
 

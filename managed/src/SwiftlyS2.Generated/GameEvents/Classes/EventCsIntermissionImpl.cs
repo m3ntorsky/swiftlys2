@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventCsIntermissionImpl : GameEvent<EventCsIntermission>, EventCsIntermission
 {
 
+  public EventCsIntermissionImpl(nint address) : base(address)
+  {
+  }
 }

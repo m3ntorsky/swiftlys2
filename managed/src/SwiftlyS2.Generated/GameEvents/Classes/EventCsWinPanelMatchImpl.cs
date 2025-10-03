@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventCsWinPanelMatchImpl : GameEvent<EventCsWinPanelMatch>, EventCsWinPanelMatch
 {
 
+  public EventCsWinPanelMatchImpl(nint address) : base(address)
+  {
+  }
 }

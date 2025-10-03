@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerDeathImpl : GameEvent<EventPlayerDeath>, EventPlayerDeath
 {
 
+  public EventPlayerDeathImpl(nint address) : base(address)
+  {
+  }
 
   // user ID who died
   public CCSPlayerController UserIdController

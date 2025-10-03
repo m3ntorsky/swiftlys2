@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventServerPreShutdownImpl : GameEvent<EventServerPreShutdown>, EventServerPreShutdown
 {
 
+  public EventServerPreShutdownImpl(nint address) : base(address)
+  {
+  }
 
   // reason why server is about to be shut down
   public string Reason

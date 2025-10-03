@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventMatchEndConditionsImpl : GameEvent<EventMatchEndConditions>, EventMatchEndConditions
 {
 
+  public EventMatchEndConditionsImpl(nint address) : base(address)
+  {
+  }
 
   public int FragS
   { get => Accessor.GetInt32("frags"); set => Accessor.SetInt32("frags", value); }

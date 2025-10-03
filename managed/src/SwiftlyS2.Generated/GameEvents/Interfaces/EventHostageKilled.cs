@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHostageKilled : IGameEvent<EventHostageKilled> {
 
-  static EventHostageKilled IGameEvent<EventHostageKilled>.Create() => new EventHostageKilledImpl();
+  static EventHostageKilled IGameEvent<EventHostageKilled>.Create(nint address) => new EventHostageKilledImpl(address);
 
   static string IGameEvent<EventHostageKilled>.GetName() => "hostage_killed";
 

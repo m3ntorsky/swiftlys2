@@ -13,4 +13,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventRoundPrestartImpl : GameEvent<EventRoundPrestart>, EventRoundPrestart
 {
 
+  public EventRoundPrestartImpl(nint address) : base(address)
+  {
+  }
 }

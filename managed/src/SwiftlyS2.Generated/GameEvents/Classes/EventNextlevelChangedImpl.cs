@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventNextlevelChangedImpl : GameEvent<EventNextlevelChanged>, EventNextlevelChanged
 {
 
+  public EventNextlevelChangedImpl(nint address) : base(address)
+  {
+  }
 
   public string NextLevel
   { get => Accessor.GetString("nextlevel"); set => Accessor.SetString("nextlevel", value); }

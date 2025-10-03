@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventCsWinPanelRoundImpl : GameEvent<EventCsWinPanelRound>, EventCsWinPanelRound
 {
 
+  public EventCsWinPanelRoundImpl(nint address) : base(address)
+  {
+  }
 
   public bool ShowTimerDefend
   { get => Accessor.GetBool("show_timer_defend"); set => Accessor.SetBool("show_timer_defend", value); }

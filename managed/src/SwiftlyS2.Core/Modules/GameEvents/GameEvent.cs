@@ -4,10 +4,16 @@ namespace SwiftlyS2.Core.GameEvents;
 
 internal class GameEvent<T> where T : IGameEvent<T> {
 
-  public IGameEventAccessor Accessor { get; private init; }
+  private GameEventAccessor _Accessor { get; init; }
 
-  public GameEvent() {
-    Accessor = new GameEventAccessor();
+  public IGameEventAccessor Accessor => _Accessor;
+
+  public GameEvent(nint address) {
+    _Accessor = new GameEventAccessor(address);
+  }
+
+  public void Dispose() {
+    _Accessor.Dispose();
   }
 
   public bool DontBroadcast { 

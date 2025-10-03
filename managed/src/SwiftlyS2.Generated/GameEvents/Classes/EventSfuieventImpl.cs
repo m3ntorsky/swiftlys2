@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventSfuieventImpl : GameEvent<EventSfuievent>, EventSfuievent
 {
 
+  public EventSfuieventImpl(nint address) : base(address)
+  {
+  }
 
   public string Action
   { get => Accessor.GetString("action"); set => Accessor.SetString("action", value); }

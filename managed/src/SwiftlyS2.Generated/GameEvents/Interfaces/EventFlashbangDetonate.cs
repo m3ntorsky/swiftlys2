@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventFlashbangDetonate : IGameEvent<EventFlashbangDetonate> {
 
-  static EventFlashbangDetonate IGameEvent<EventFlashbangDetonate>.Create() => new EventFlashbangDetonateImpl();
+  static EventFlashbangDetonate IGameEvent<EventFlashbangDetonate>.Create(nint address) => new EventFlashbangDetonateImpl(address);
 
   static string IGameEvent<EventFlashbangDetonate>.GetName() => "flashbang_detonate";
 

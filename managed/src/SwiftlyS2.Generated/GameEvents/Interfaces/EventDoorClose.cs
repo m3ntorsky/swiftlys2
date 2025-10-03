@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventDoorClose : IGameEvent<EventDoorClose> {
 
-  static EventDoorClose IGameEvent<EventDoorClose>.Create() => new EventDoorCloseImpl();
+  static EventDoorClose IGameEvent<EventDoorClose>.Create(nint address) => new EventDoorCloseImpl(address);
 
   static string IGameEvent<EventDoorClose>.GetName() => "door_close";
 

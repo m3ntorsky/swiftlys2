@@ -13,6 +13,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerChatImpl : GameEvent<EventPlayerChat>, EventPlayerChat
 {
 
+  public EventPlayerChatImpl(nint address) : base(address)
+  {
+  }
 
   // true if team only chat
   public bool TeamOnly

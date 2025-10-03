@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventItemPickup : IGameEvent<EventItemPickup> {
 
-  static EventItemPickup IGameEvent<EventItemPickup>.Create() => new EventItemPickupImpl();
+  static EventItemPickup IGameEvent<EventItemPickup>.Create(nint address) => new EventItemPickupImpl(address);
 
   static string IGameEvent<EventItemPickup>.GetName() => "item_pickup";
 

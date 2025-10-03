@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventEntityKilledImpl : GameEvent<EventEntityKilled>, EventEntityKilled
 {
 
+  public EventEntityKilledImpl(nint address) : base(address)
+  {
+  }
 
   public int EntindexKilled
   { get => Accessor.GetInt32("entindex_killed"); set => Accessor.SetInt32("entindex_killed", value); }

@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventParachuteDeployImpl : GameEvent<EventParachuteDeploy>, EventParachuteDeploy
 {
 
+  public EventParachuteDeployImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

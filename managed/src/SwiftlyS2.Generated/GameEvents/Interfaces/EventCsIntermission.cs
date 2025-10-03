@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventCsIntermission : IGameEvent<EventCsIntermission> {
 
-  static EventCsIntermission IGameEvent<EventCsIntermission>.Create() => new EventCsIntermissionImpl();
+  static EventCsIntermission IGameEvent<EventCsIntermission>.Create(nint address) => new EventCsIntermissionImpl(address);
 
   static string IGameEvent<EventCsIntermission>.GetName() => "cs_intermission";
 

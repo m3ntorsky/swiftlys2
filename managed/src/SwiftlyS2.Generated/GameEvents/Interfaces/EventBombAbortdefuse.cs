@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventBombAbortdefuse : IGameEvent<EventBombAbortdefuse> {
 
-  static EventBombAbortdefuse IGameEvent<EventBombAbortdefuse>.Create() => new EventBombAbortdefuseImpl();
+  static EventBombAbortdefuse IGameEvent<EventBombAbortdefuse>.Create(nint address) => new EventBombAbortdefuseImpl(address);
 
   static string IGameEvent<EventBombAbortdefuse>.GetName() => "bomb_abortdefuse";
 

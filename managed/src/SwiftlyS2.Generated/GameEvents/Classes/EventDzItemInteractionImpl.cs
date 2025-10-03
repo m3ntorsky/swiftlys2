@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDzItemInteractionImpl : GameEvent<EventDzItemInteraction>, EventDzItemInteraction
 {
 
+  public EventDzItemInteractionImpl(nint address) : base(address)
+  {
+  }
 
   // player entindex
   public CCSPlayerController UserIdController

@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventPlayerActivateImpl : GameEvent<EventPlayerActivate>, EventPlayerActivate
 {
 
+  public EventPlayerActivateImpl(nint address) : base(address)
+  {
+  }
 
   // user ID on server
   public CCSPlayerController UserIdController

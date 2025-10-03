@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHostageRescuedAllImpl : GameEvent<EventHostageRescuedAll>, EventHostageRescuedAll
 {
 
+  public EventHostageRescuedAllImpl(nint address) : base(address)
+  {
+  }
 }

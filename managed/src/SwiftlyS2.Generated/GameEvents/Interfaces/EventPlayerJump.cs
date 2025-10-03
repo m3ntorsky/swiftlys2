@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerJump : IGameEvent<EventPlayerJump> {
 
-  static EventPlayerJump IGameEvent<EventPlayerJump>.Create() => new EventPlayerJumpImpl();
+  static EventPlayerJump IGameEvent<EventPlayerJump>.Create(nint address) => new EventPlayerJumpImpl(address);
 
   static string IGameEvent<EventPlayerJump>.GetName() => "player_jump";
 

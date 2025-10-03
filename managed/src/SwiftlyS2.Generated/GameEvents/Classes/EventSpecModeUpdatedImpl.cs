@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventSpecModeUpdatedImpl : GameEvent<EventSpecModeUpdated>, EventSpecModeUpdated
 {
 
+  public EventSpecModeUpdatedImpl(nint address) : base(address)
+  {
+  }
 
   // spectating player
   public CCSPlayerController UserIdController

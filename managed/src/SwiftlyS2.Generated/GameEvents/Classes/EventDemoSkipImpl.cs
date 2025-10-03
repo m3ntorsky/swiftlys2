@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDemoSkipImpl : GameEvent<EventDemoSkip>, EventDemoSkip
 {
 
+  public EventDemoSkipImpl(nint address) : base(address)
+  {
+  }
 
   // current playback tick
   public int PlaybackTick

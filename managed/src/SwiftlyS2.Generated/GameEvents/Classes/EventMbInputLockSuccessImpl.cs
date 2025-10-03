@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventMbInputLockSuccessImpl : GameEvent<EventMbInputLockSuccess>, EventMbInputLockSuccess
 {
 
+  public EventMbInputLockSuccessImpl(nint address) : base(address)
+  {
+  }
 }

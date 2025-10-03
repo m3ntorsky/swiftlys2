@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventTeamScore : IGameEvent<EventTeamScore> {
 
-  static EventTeamScore IGameEvent<EventTeamScore>.Create() => new EventTeamScoreImpl();
+  static EventTeamScore IGameEvent<EventTeamScore>.Create(nint address) => new EventTeamScoreImpl(address);
 
   static string IGameEvent<EventTeamScore>.GetName() => "team_score";
 

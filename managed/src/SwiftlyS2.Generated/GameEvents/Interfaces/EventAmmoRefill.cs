@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventAmmoRefill : IGameEvent<EventAmmoRefill> {
 
-  static EventAmmoRefill IGameEvent<EventAmmoRefill>.Create() => new EventAmmoRefillImpl();
+  static EventAmmoRefill IGameEvent<EventAmmoRefill>.Create(nint address) => new EventAmmoRefillImpl(address);
 
   static string IGameEvent<EventAmmoRefill>.GetName() => "ammo_refill";
 

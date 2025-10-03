@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventTournamentRewardImpl : GameEvent<EventTournamentReward>, EventTournamentReward
 {
 
+  public EventTournamentRewardImpl(nint address) : base(address)
+  {
+  }
 
   public int DefIndex
   { get => Accessor.GetInt32("defindex"); set => Accessor.SetInt32("defindex", value); }

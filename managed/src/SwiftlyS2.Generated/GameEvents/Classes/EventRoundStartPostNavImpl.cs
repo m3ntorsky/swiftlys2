@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventRoundStartPostNavImpl : GameEvent<EventRoundStartPostNav>, EventRoundStartPostNav
 {
 
+  public EventRoundStartPostNavImpl(nint address) : base(address)
+  {
+  }
 }

@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerDeath : IGameEvent<EventPlayerDeath> {
 
-  static EventPlayerDeath IGameEvent<EventPlayerDeath>.Create() => new EventPlayerDeathImpl();
+  static EventPlayerDeath IGameEvent<EventPlayerDeath>.Create(nint address) => new EventPlayerDeathImpl(address);
 
   static string IGameEvent<EventPlayerDeath>.GetName() => "player_death";
 

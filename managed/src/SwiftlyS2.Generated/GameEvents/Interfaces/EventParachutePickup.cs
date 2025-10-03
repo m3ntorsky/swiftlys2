@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventParachutePickup : IGameEvent<EventParachutePickup> {
 
-  static EventParachutePickup IGameEvent<EventParachutePickup>.Create() => new EventParachutePickupImpl();
+  static EventParachutePickup IGameEvent<EventParachutePickup>.Create(nint address) => new EventParachutePickupImpl(address);
 
   static string IGameEvent<EventParachutePickup>.GetName() => "parachute_pickup";
 

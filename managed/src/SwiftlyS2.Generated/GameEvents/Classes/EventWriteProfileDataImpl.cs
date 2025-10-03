@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventWriteProfileDataImpl : GameEvent<EventWriteProfileData>, EventWriteProfileData
 {
 
+  public EventWriteProfileDataImpl(nint address) : base(address)
+  {
+  }
 }

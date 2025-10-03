@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventSfuievent : IGameEvent<EventSfuievent> {
 
-  static EventSfuievent IGameEvent<EventSfuievent>.Create() => new EventSfuieventImpl();
+  static EventSfuievent IGameEvent<EventSfuievent>.Create(nint address) => new EventSfuieventImpl(address);
 
   static string IGameEvent<EventSfuievent>.GetName() => "sfuievent";
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerChangename : IGameEvent<EventPlayerChangename> {
 
-  static EventPlayerChangename IGameEvent<EventPlayerChangename>.Create() => new EventPlayerChangenameImpl();
+  static EventPlayerChangename IGameEvent<EventPlayerChangename>.Create(nint address) => new EventPlayerChangenameImpl(address);
 
   static string IGameEvent<EventPlayerChangename>.GetName() => "player_changename";
 

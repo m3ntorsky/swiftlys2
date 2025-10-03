@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventDropRateModified : IGameEvent<EventDropRateModified> {
 
-  static EventDropRateModified IGameEvent<EventDropRateModified>.Create() => new EventDropRateModifiedImpl();
+  static EventDropRateModified IGameEvent<EventDropRateModified>.Create(nint address) => new EventDropRateModifiedImpl(address);
 
   static string IGameEvent<EventDropRateModified>.GetName() => "drop_rate_modified";
 

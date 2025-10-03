@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventBuytimeEnded : IGameEvent<EventBuytimeEnded> {
 
-  static EventBuytimeEnded IGameEvent<EventBuytimeEnded>.Create() => new EventBuytimeEndedImpl();
+  static EventBuytimeEnded IGameEvent<EventBuytimeEnded>.Create(nint address) => new EventBuytimeEndedImpl(address);
 
   static string IGameEvent<EventBuytimeEnded>.GetName() => "buytime_ended";
 

@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventAnnouncePhaseEnd : IGameEvent<EventAnnouncePhaseEnd> {
 
-  static EventAnnouncePhaseEnd IGameEvent<EventAnnouncePhaseEnd>.Create() => new EventAnnouncePhaseEndImpl();
+  static EventAnnouncePhaseEnd IGameEvent<EventAnnouncePhaseEnd>.Create(nint address) => new EventAnnouncePhaseEndImpl(address);
 
   static string IGameEvent<EventAnnouncePhaseEnd>.GetName() => "announce_phase_end";
 

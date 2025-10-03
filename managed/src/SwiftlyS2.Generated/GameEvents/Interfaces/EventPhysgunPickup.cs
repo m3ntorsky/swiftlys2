@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPhysgunPickup : IGameEvent<EventPhysgunPickup> {
 
-  static EventPhysgunPickup IGameEvent<EventPhysgunPickup>.Create() => new EventPhysgunPickupImpl();
+  static EventPhysgunPickup IGameEvent<EventPhysgunPickup>.Create(nint address) => new EventPhysgunPickupImpl(address);
 
   static string IGameEvent<EventPhysgunPickup>.GetName() => "physgun_pickup";
 

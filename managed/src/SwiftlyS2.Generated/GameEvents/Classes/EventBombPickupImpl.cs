@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventBombPickupImpl : GameEvent<EventBombPickup>, EventBombPickup
 {
 
+  public EventBombPickupImpl(nint address) : base(address)
+  {
+  }
 
   // player pawn who picked up the bomb
   public CCSPlayerController UserIdController

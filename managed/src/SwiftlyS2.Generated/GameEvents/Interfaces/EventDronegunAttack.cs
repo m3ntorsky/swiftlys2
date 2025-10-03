@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventDronegunAttack : IGameEvent<EventDronegunAttack> {
 
-  static EventDronegunAttack IGameEvent<EventDronegunAttack>.Create() => new EventDronegunAttackImpl();
+  static EventDronegunAttack IGameEvent<EventDronegunAttack>.Create(nint address) => new EventDronegunAttackImpl(address);
 
   static string IGameEvent<EventDronegunAttack>.GetName() => "dronegun_attack";
 

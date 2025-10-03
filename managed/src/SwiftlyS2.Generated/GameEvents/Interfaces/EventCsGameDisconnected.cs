@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventCsGameDisconnected : IGameEvent<EventCsGameDisconnected> {
 
-  static EventCsGameDisconnected IGameEvent<EventCsGameDisconnected>.Create() => new EventCsGameDisconnectedImpl();
+  static EventCsGameDisconnected IGameEvent<EventCsGameDisconnected>.Create(nint address) => new EventCsGameDisconnectedImpl(address);
 
   static string IGameEvent<EventCsGameDisconnected>.GetName() => "cs_game_disconnected";
 

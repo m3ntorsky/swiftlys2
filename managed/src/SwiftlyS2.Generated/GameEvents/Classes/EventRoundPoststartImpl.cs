@@ -13,4 +13,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventRoundPoststartImpl : GameEvent<EventRoundPoststart>, EventRoundPoststart
 {
 
+  public EventRoundPoststartImpl(nint address) : base(address)
+  {
+  }
 }

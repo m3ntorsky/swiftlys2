@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventAmmoRefillImpl : GameEvent<EventAmmoRefill>, EventAmmoRefill
 {
 
+  public EventAmmoRefillImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

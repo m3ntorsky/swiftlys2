@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventAchievementWriteFailedImpl : GameEvent<EventAchievementWriteFailed>, EventAchievementWriteFailed
 {
 
+  public EventAchievementWriteFailedImpl(nint address) : base(address)
+  {
+  }
 }

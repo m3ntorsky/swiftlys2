@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventRepostXboxAchievements : IGameEvent<EventRepostXboxAchievements> {
 
-  static EventRepostXboxAchievements IGameEvent<EventRepostXboxAchievements>.Create() => new EventRepostXboxAchievementsImpl();
+  static EventRepostXboxAchievements IGameEvent<EventRepostXboxAchievements>.Create(nint address) => new EventRepostXboxAchievementsImpl(address);
 
   static string IGameEvent<EventRepostXboxAchievements>.GetName() => "repost_xbox_achievements";
 

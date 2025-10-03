@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventTrialTimeExpiredImpl : GameEvent<EventTrialTimeExpired>, EventTrialTimeExpired
 {
 
+  public EventTrialTimeExpiredImpl(nint address) : base(address)
+  {
+  }
 
   // player whose time has expired
   public CCSPlayerController UserIdController

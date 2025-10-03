@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventWeaponFireOnEmptyImpl : GameEvent<EventWeaponFireOnEmpty>, EventWeaponFireOnEmpty
 {
 
+  public EventWeaponFireOnEmptyImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

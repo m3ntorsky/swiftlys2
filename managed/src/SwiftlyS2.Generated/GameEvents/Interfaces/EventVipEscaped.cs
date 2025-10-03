@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventVipEscaped : IGameEvent<EventVipEscaped> {
 
-  static EventVipEscaped IGameEvent<EventVipEscaped>.Create() => new EventVipEscapedImpl();
+  static EventVipEscaped IGameEvent<EventVipEscaped>.Create(nint address) => new EventVipEscapedImpl(address);
 
   static string IGameEvent<EventVipEscaped>.GetName() => "vip_escaped";
 

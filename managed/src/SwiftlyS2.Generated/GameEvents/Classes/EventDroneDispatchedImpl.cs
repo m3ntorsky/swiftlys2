@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDroneDispatchedImpl : GameEvent<EventDroneDispatched>, EventDroneDispatched
 {
 
+  public EventDroneDispatchedImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

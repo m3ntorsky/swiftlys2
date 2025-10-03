@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDemoStopImpl : GameEvent<EventDemoStop>, EventDemoStop
 {
 
+  public EventDemoStopImpl(nint address) : base(address)
+  {
+  }
 }

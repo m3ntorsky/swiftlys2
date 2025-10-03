@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventHostageFollows : IGameEvent<EventHostageFollows> {
 
-  static EventHostageFollows IGameEvent<EventHostageFollows>.Create() => new EventHostageFollowsImpl();
+  static EventHostageFollows IGameEvent<EventHostageFollows>.Create(nint address) => new EventHostageFollowsImpl(address);
 
   static string IGameEvent<EventHostageFollows>.GetName() => "hostage_follows";
 

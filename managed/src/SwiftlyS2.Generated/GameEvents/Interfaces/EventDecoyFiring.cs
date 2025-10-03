@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventDecoyFiring : IGameEvent<EventDecoyFiring> {
 
-  static EventDecoyFiring IGameEvent<EventDecoyFiring>.Create() => new EventDecoyFiringImpl();
+  static EventDecoyFiring IGameEvent<EventDecoyFiring>.Create(nint address) => new EventDecoyFiringImpl(address);
 
   static string IGameEvent<EventDecoyFiring>.GetName() => "decoy_firing";
 

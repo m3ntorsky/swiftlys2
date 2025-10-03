@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventUpdateMatchmakingStatsImpl : GameEvent<EventUpdateMatchmakingStats>, EventUpdateMatchmakingStats
 {
 
+  public EventUpdateMatchmakingStatsImpl(nint address) : base(address)
+  {
+  }
 }

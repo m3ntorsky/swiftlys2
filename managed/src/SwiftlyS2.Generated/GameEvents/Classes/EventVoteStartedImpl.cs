@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventVoteStartedImpl : GameEvent<EventVoteStarted>, EventVoteStarted
 {
 
+  public EventVoteStartedImpl(nint address) : base(address)
+  {
+  }
 
   public string Issue
   { get => Accessor.GetString("issue"); set => Accessor.SetString("issue", value); }

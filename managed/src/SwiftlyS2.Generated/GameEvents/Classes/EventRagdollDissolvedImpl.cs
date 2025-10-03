@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventRagdollDissolvedImpl : GameEvent<EventRagdollDissolved>, EventRagdollDissolved
 {
 
+  public EventRagdollDissolvedImpl(nint address) : base(address)
+  {
+  }
 
   public int EntIndex
   { get => Accessor.GetInt32("entindex"); set => Accessor.SetInt32("entindex", value); }

@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventSilencerDetachImpl : GameEvent<EventSilencerDetach>, EventSilencerDetach
 {
 
+  public EventSilencerDetachImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

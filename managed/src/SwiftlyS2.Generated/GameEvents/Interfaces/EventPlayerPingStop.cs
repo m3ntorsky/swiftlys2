@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerPingStop : IGameEvent<EventPlayerPingStop> {
 
-  static EventPlayerPingStop IGameEvent<EventPlayerPingStop>.Create() => new EventPlayerPingStopImpl();
+  static EventPlayerPingStop IGameEvent<EventPlayerPingStop>.Create(nint address) => new EventPlayerPingStopImpl(address);
 
   static string IGameEvent<EventPlayerPingStop>.GetName() => "player_ping_stop";
 

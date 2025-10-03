@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventServerCvar : IGameEvent<EventServerCvar> {
 
-  static EventServerCvar IGameEvent<EventServerCvar>.Create() => new EventServerCvarImpl();
+  static EventServerCvar IGameEvent<EventServerCvar>.Create(nint address) => new EventServerCvarImpl(address);
 
   static string IGameEvent<EventServerCvar>.GetName() => "server_cvar";
 

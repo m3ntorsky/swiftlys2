@@ -10,7 +10,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventPlayerSpawn : IGameEvent<EventPlayerSpawn> {
 
-  static EventPlayerSpawn IGameEvent<EventPlayerSpawn>.Create() => new EventPlayerSpawnImpl();
+  static EventPlayerSpawn IGameEvent<EventPlayerSpawn>.Create(nint address) => new EventPlayerSpawnImpl(address);
 
   static string IGameEvent<EventPlayerSpawn>.GetName() => "player_spawn";
 

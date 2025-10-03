@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventSurvivalNoRespawnsWarningImpl : GameEvent<EventSurvivalNoRespawnsWarning>, EventSurvivalNoRespawnsWarning
 {
 
+  public EventSurvivalNoRespawnsWarningImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

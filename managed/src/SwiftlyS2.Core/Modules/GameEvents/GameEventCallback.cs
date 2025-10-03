@@ -82,10 +82,10 @@ internal class GameEventCallback<T> : GameEventCallback, IDisposable where T : I
         var category = "GameEventCallback::" + EventName;
         if (hash != T.GetHash()) return HookResult.Continue;
         Profiler.StartRecording(category);
-        var eventObj = GameEventSingletonWrapper<T>.Borrow(pEvent);
+        var eventObj = T.Create(pEvent);
         var result = _callback(eventObj);
         pDontBroadcast.Write(eventObj.DontBroadcast);
-        GameEventSingletonWrapper<T>.Return();
+        eventObj.Dispose();
         Profiler.StopRecording(category);
         return result;
       } catch (Exception e) {

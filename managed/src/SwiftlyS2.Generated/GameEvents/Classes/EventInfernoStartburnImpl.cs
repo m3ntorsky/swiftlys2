@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventInfernoStartburnImpl : GameEvent<EventInfernoStartburn>, EventInfernoStartburn
 {
 
+  public EventInfernoStartburnImpl(nint address) : base(address)
+  {
+  }
 
   public short EntityID
   { get => (short)Accessor.GetInt32("entityid"); set => Accessor.SetInt32("entityid", value); }

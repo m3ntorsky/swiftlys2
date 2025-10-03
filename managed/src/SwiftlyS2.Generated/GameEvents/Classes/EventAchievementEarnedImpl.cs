@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventAchievementEarnedImpl : GameEvent<EventAchievementEarned>, EventAchievementEarned
 {
 
+  public EventAchievementEarnedImpl(nint address) : base(address)
+  {
+  }
 
   // entindex of the player
   public int Player

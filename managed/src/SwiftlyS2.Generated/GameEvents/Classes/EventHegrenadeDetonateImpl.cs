@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventHegrenadeDetonateImpl : GameEvent<EventHegrenadeDetonate>, EventHegrenadeDetonate
 {
 
+  public EventHegrenadeDetonateImpl(nint address) : base(address)
+  {
+  }
 
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }

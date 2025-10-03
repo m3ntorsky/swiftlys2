@@ -9,7 +9,7 @@ namespace SwiftlyS2.Shared.GameEventDefinitions;
 /// </summary>
 public interface EventVotePassed : IGameEvent<EventVotePassed> {
 
-  static EventVotePassed IGameEvent<EventVotePassed>.Create() => new EventVotePassedImpl();
+  static EventVotePassed IGameEvent<EventVotePassed>.Create(nint address) => new EventVotePassedImpl(address);
 
   static string IGameEvent<EventVotePassed>.GetName() => "vote_passed";
 

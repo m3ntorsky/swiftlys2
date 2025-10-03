@@ -12,6 +12,9 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventDoorCloseImpl : GameEvent<EventDoorClose>, EventDoorClose
 {
 
+  public EventDoorCloseImpl(nint address) : base(address)
+  {
+  }
 
   // Who closed the door
   public CCSPlayerController UserIdController

@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventStorePricesheetUpdatedImpl : GameEvent<EventStorePricesheetUpdated>, EventStorePricesheetUpdated
 {
 
+  public EventStorePricesheetUpdatedImpl(nint address) : base(address)
+  {
+  }
 }

@@ -12,4 +12,7 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 internal class EventTeamIntroEndImpl : GameEvent<EventTeamIntroEnd>, EventTeamIntroEnd
 {
 
+  public EventTeamIntroEndImpl(nint address) : base(address)
+  {
+  }
 }
