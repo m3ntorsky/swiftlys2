@@ -1,4 +1,5 @@
 using SwiftlyS2.Core.Plugins;
+using SwiftlyS2.Shared;
 
 namespace SwiftlyS2.Core.Services;
 
@@ -7,11 +8,11 @@ internal class CoreContext {
 
   public string BaseDirectory { get; init; }
 
-  public PluginManifest? PluginManifest { get; init; }
+  public PluginMetadata? PluginMetadata { get; init; }
 
-  public CoreContext(string name, string baseDirectory, PluginManifest? pluginManifest) {
+  public CoreContext(string name, string baseDirectory, PluginMetadata? pluginManifest) {
     Name = name;
     BaseDirectory = baseDirectory;
-    PluginManifest = pluginManifest;
+    PluginMetadata = pluginManifest;
   }
 }

@@ -2,11 +2,11 @@ using SwiftlyS2.Shared.GameEventDefinitions;
 using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.GameEvents;
 
-namespace SwiftlyS2.Plugin;
+namespace PluginId;
 
 
 /// This is an example that shows various gameevent API.
-public partial class PluginClassName
+public partial class PluginId
 {
 
   public void InitializeGameEvents()

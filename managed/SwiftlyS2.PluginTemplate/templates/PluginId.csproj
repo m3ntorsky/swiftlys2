@@ -7,9 +7,9 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <AssemblyName>PluginClassName</AssemblyName>
+    <AssemblyName>PluginId</AssemblyName>
     <OutputPath>$(MSBuildThisFileDirectory)build/</OutputPath>
-    <PublishDir>$(OutputPath)publish</PublishDir>
+    <PublishDir>$(OutputPath)publish/name</PublishDir>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,11 +18,11 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" ExcludeAssets="runtime" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.0" ExcludeAssets="runtime" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" ExcludeAssets="runtime" PrivateAssets="all" />
-    <PackageReference Include="SwiftlyS2.CS2" Version="0.2.0-beta.12" ExcludeAssets="runtime" PrivateAssets="all" />
+    <PackageReference Include="SwiftlyS2.CS2" Version="0.2.18" ExcludeAssets="runtime" PrivateAssets="all" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="resources/gamedata/**/*;resources/templates/**/*;resources/translations/**/*;manifest.json">
+    <Content Include="resources/gamedata/**/*;resources/templates/**/*;resources/translations/**/*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -32,7 +32,7 @@
       <PublishFiles Include="$(PublishDir)**\*.*" />
     </ItemGroup>
     
-    <ZipDirectory SourceDirectory="$(PublishDir)" DestinationFile="$(OutputPath)../$(AssemblyName).zip" Overwrite="true" />
+    <ZipDirectory SourceDirectory="$(PublishDir)../" DestinationFile="$(OutputPath)../$(AssemblyName).zip" Overwrite="true" />
   </Target>
 
 </Project> 

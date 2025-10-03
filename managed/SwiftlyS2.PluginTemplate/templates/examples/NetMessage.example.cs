@@ -2,11 +2,11 @@ using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.ProtobufDefinitions;
 
-namespace SwiftlyS2.Plugin;
+namespace PluginId;
 
 
 /// This is an example that shows various net message API.
-public partial class PluginClassName {
+public partial class PluginId {
 
   public void InitializeNetMessage() {
 

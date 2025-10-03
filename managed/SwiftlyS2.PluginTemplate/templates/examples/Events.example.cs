@@ -1,11 +1,11 @@
 using SwiftlyS2.Shared.Misc;
 
-namespace SwiftlyS2.Plugin;
+namespace PluginId;
 
 /// <summary>
 /// This is an example that shows how to use events.
 /// </summary>
-public partial class PluginClassName
+public partial class PluginId
 {
   public void InitializeEvents()
   {

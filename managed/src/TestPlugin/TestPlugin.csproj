@@ -9,7 +9,7 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <BaseOutputPath>..\..\build\</BaseOutputPath>
     <OutputPath>$(BaseOutputPath)Release\TestPlugin</OutputPath>
-    <AssemblyName>SwiftlyS2.TestPlugin</AssemblyName>
+    <AssemblyName>TestPlugin</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,10 +24,6 @@
     <PackageReference Include="NetEscapades.Configuration.Yaml" Version="3.1.0" ExcludeAssets="runtime" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" ExcludeAssets="runtime" PrivateAssets="all" />
     <ProjectReference Include="..\..\managed.csproj" ExcludeAssets="runtime" PrivateAssets="all" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="manifest.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project> 

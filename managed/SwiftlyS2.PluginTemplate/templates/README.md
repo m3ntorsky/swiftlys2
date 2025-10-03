@@ -13,9 +13,9 @@
 
 ## Getting Started (delete me)
 
-1. **Edit `manifest.json`**  
-   - Set your plugin's `Id`, `Name`, `Version`, `Author`, `Description`, and `EntrypointDLL` (should match your main class DLL).
-2. **Edit `SwiftlyS2.Plugin.csproj`**  
+1. **Edit `PluginMetadata` Attribute**  
+   - Set your plugin's `Id`, `Name`, `Version`, `Author` and `Description`.
+2. **Edit `PluginId.csproj`**  
    - Set the `<AssemblyName>` property to match your plugin's main class name.
    - Add any additional dependencies as needed.
 3. **Implement your plugin logic** in C#.

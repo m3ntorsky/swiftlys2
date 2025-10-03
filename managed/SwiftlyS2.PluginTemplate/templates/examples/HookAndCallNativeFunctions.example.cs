@@ -2,12 +2,12 @@ using Microsoft.Extensions.Logging;
 using SwiftlyS2.Shared.Memory;
 using SwiftlyS2.Shared.Misc;
 
-namespace SwiftlyS2.Plugin;
+namespace PluginId;
 
 /// <summary>
 /// This is an example that shows how to hook and call native functions.
 /// </summary>
-public partial class PluginClassName
+public partial class PluginId
 {
 
   // Your delegate type of the function.
