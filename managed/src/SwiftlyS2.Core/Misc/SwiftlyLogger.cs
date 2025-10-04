@@ -57,11 +57,13 @@ internal class SwiftlyLogger : ILogger
     string? message = formatter != null ? formatter(state, exception) : state?.ToString();
     if (!string.IsNullOrEmpty(message))
     {
+      FileLogger.Log($"{_contextName} | {timestamp} | {level} | {_categoryName}{id} | {message}");
       AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]{_contextName}[/] [lightsteelblue]|[/] [grey85]{message}[/]");
     }
 
     if (exception != null)
     {
+      FileLogger.LogException(exception, $"{exception.Message}");
       AnsiConsole.WriteException(exception);
     }
     AnsiConsole.Reset();
