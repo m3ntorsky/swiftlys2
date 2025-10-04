@@ -243,8 +243,6 @@ public class TestPlugin : BasePlugin {
       
     });
 
-    Core.Scheduler.StopOnMapChange(token);
-
     var addres = Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
     var func = Core.Memory.GetUnmanagedFunctionByAddress<DispatchSpawnDelegate>(addres);
 

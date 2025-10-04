@@ -26,4 +26,11 @@ public partial interface CBaseEntity
     /// <param name="angle">The target orientation to set for the entity. If null, the entity's orientation is not changed.</param>
     /// <param name="velocity">The velocity to apply to the entity after teleportation. If null, the entity's velocity is not changed.</param>
     public void Teleport(Vector? position, QAngle? angle, Vector? velocity);
+
+
+    /// <summary>
+    /// Notify the game that the collision rules of the entity have changed.
+    /// Call this when you change the Collision of the entity.
+    /// </summary>
+    public void CollisionRulesChanged();
 }
