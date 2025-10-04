@@ -43,7 +43,12 @@ internal class TestService {
 
   public void Test()
   {
-    var cvar = _Core.ConVar.Create<int>("sw_test_cvar", "Test cvar", 100, 5, 100, flags: ConvarFlags.NONE);
+    _Core.Event.OnItemServicesCanAcquireHook += (@event) => {
+      Console.WriteLine(@event.EconItemView.ItemDefinitionIndex);
+
+      @event.SetAcquireResult(AcquireResult.NotAllowedByProhibition);
+    };
+
 
   }
 }

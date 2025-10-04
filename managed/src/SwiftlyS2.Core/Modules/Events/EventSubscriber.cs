@@ -41,6 +41,7 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
   public event EventDelegates.OnClientProcessUsercmds? OnClientProcessUsercmds;
   public event EventDelegates.OnEntityTakeDamage? OnEntityTakeDamage;
   public event EventDelegates.OnPrecacheResource? OnPrecacheResource;
+  public event EventDelegates.OnItemServicesCanAcquireHook? OnItemServicesCanAcquireHook;
 
   public void Dispose() {
     EventPublisher.Unsubscribe(this);
@@ -236,6 +237,18 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
       _Logger.LogError(e, "Error invoking OnPrecacheResource.");
     } finally {
       _Profiler.StopRecording("Event::OnPrecacheResource");
+    }
+  }
+
+  public void InvokeOnItemServicesCanAcquireHook(OnItemServicesCanAcquireHookEvent @event) {
+    try {
+      if (OnItemServicesCanAcquireHook == null) return;
+      _Profiler.StartRecording("Event::OnItemServicesCanAcquireHook");
+      OnItemServicesCanAcquireHook?.Invoke(@event);
+    } catch (Exception e) {
+      _Logger.LogError(e, "Error invoking OnItemServicesCanAcquireHook.");
+    } finally {
+      _Profiler.StopRecording("Event::OnItemServicesCanAcquireHook");
     }
   }
 }
