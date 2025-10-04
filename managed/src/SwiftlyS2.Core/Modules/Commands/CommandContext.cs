@@ -21,7 +21,7 @@ internal class CommandContext : ICommandContext {
     if (IsSentByPlayer) {
       Sender?.SendMessage(MessageType.Chat, message);
     } else {
-      NativeEngineHelpers.SendMessageToConsole(message);
+      NativeEngineHelpers.SendMessageToConsole(message + Environment.NewLine);
     }
    }
 

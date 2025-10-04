@@ -34,6 +34,9 @@ internal class CoreCommandService {
     }
 
     switch (args[0]) {
+      case "gc":
+        context.Reply(GC.GetTotalMemory(false) / 1024.0f / 1024.0f + " MB");
+        break;
       case "plugins":
         OnPluginsCommand(context);
         break;
