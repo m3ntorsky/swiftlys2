@@ -32,119 +32,118 @@
 const char* wws = " \t\n\r\f\v";
 
 std::map<std::string, std::string> terminalColors = {
-    {"{DEFAULT}", WIN_LINUX("\033[38;2;255;255;255m", "\e[39m")},
-    {"{WHITE}", WIN_LINUX("\033[38;2;255;255;255m", "\e[39m")},
-    {"{DARKRED}", WIN_LINUX("\x1B[31m", "\e[31m")},
-    {"{LIGHTPURPLE}", WIN_LINUX("\x1B[95m", "\e[95m")},
-    {"{GREEN}", WIN_LINUX("\x1B[32m", "\e[32m")},
-    {"{OLIVE}", WIN_LINUX("\x1B[33m", "\e[33m")},
-    {"{LIME}", WIN_LINUX("\x1B[92m", "\e[92m")},
-    {"{RED}", WIN_LINUX("\x1B[31m", "\e[31m")},
-    {"{GRAY}", WIN_LINUX("\x1B[37m", "\e[37m")},
-    {"{GREY}", WIN_LINUX("\x1B[37m", "\e[37m")},
-    {"{LIGHTYELLOW}", WIN_LINUX("\x1B[93m", "\e[93m")},
-    {"{YELLOW}", WIN_LINUX("\x1B[93m", "\e[93m")},
-    {"{SILVER}", WIN_LINUX("\x1B[37m", "\e[37m")},
-    {"{BLUEGREY}", WIN_LINUX("\x1B[94m", "\e[94m")},
-    {"{LIGHTBLUE}", WIN_LINUX("\x1B[94m", "\e[94m")},
-    {"{BLUE}", WIN_LINUX("\x1B[34m", "\e[34m")},
-    {"{DARKBLUE}", WIN_LINUX("\x1B[34m", "\e[34m")},
-    {"{PURPLE}", WIN_LINUX("\x1B[35m", "\e[35m")},
-    {"{MAGENTA}", WIN_LINUX("\x1B[35m", "\e[35m")},
-    {"{LIGHTRED}", WIN_LINUX("\x1B[91m", "\e[91m")},
-    {"{GOLD}", WIN_LINUX("\x1B[93m", "\e[93m")},
-    {"{ORANGE}", WIN_LINUX("\x1B[33m", "\e[33m")},
+    {"[default]", WIN_LINUX("\033[38;2;255;255;255m", "\e[39m")},
+    {"[/]", WIN_LINUX("\033[38;2;255;255;255m", "\e[39m")},
+    {"[white]", WIN_LINUX("\033[38;2;255;255;255m", "\e[39m")},
+    {"[darkred]", WIN_LINUX("\x1B[31m", "\e[31m")},
+    {"[lightpurple]", WIN_LINUX("\x1B[95m", "\e[95m")},
+    {"[green]", WIN_LINUX("\x1B[32m", "\e[32m")},
+    {"[olive]", WIN_LINUX("\x1B[33m", "\e[33m")},
+    {"[lime]", WIN_LINUX("\x1B[92m", "\e[92m")},
+    {"[red]", WIN_LINUX("\x1B[31m", "\e[31m")},
+    {"[gray]", WIN_LINUX("\x1B[37m", "\e[37m")},
+    {"[grey]", WIN_LINUX("\x1B[37m", "\e[37m")},
+    {"[lightyellow]", WIN_LINUX("\x1B[93m", "\e[93m")},
+    {"[yellow]", WIN_LINUX("\x1B[93m", "\e[93m")},
+    {"[silver]", WIN_LINUX("\x1B[37m", "\e[37m")},
+    {"[bluegrey]", WIN_LINUX("\x1B[94m", "\e[94m")},
+    {"[lightblue]", WIN_LINUX("\x1B[94m", "\e[94m")},
+    {"[blue]", WIN_LINUX("\x1B[34m", "\e[34m")},
+    {"[darkblue]", WIN_LINUX("\x1B[34m", "\e[34m")},
+    {"[purple]", WIN_LINUX("\x1B[35m", "\e[35m")},
+    {"[magenta]", WIN_LINUX("\x1B[35m", "\e[35m")},
+    {"[lightred]", WIN_LINUX("\x1B[91m", "\e[91m")},
+    {"[gold]", WIN_LINUX("\x1B[93m", "\e[93m")},
+    {"[orange]", WIN_LINUX("\x1B[33m", "\e[33m")},
 
-    {"{BGDEFAULT}", WIN_LINUX("\x1B[40m", "\e[40m")},
-    {"{BGDARKRED}", WIN_LINUX("\x1B[41m", "\e[41m")},
-    {"{BGLIGHTPURPLE}", WIN_LINUX("\x1B[105m", "\e[105m")},
-    {"{BGGREEN}", WIN_LINUX("\x1B[42m", "\e[42m")},
-    {"{BGOLIVE}", WIN_LINUX("\x1B[43m", "\e[43m")},
-    {"{BGLIME}", WIN_LINUX("\x1B[102m", "\e[102m")},
-    {"{BGRED}", WIN_LINUX("\x1B[41m", "\e[41m")},
-    {"{BGGRAY}", WIN_LINUX("\x1B[47m", "\e[47m")},
-    {"{BGGREY}", WIN_LINUX("\x1B[47m", "\e[47m")},
-    {"{BGLIGHTYELLOW}", WIN_LINUX("\x1B[103m", "\e[103m")},
-    {"{BGYELLOW}", WIN_LINUX("\x1B[103m", "\e[103m")},
-    {"{BGSILVER}", WIN_LINUX("\x1B[47m", "\e[47m")},
-    {"{BGBLUEGREY}", WIN_LINUX("\x1B[104m", "\e[104m")},
-    {"{BGLIGHTBLUE}", WIN_LINUX("\x1B[104m", "\e[104m")},
-    {"{BGBLUE}", WIN_LINUX("\x1B[44m", "\e[44m")},
-    {"{BGDARKBLUE}", WIN_LINUX("\x1B[44m", "\e[44m")},
-    {"{BGPURPLE}", WIN_LINUX("\x1B[45m", "\e[45m")},
-    {"{BGMAGENTA}", WIN_LINUX("\x1B[45m", "\e[45m")},
-    {"{BGLIGHTRED}", WIN_LINUX("\x1B[101m", "\e[101m")},
-    {"{BGGOLD}", WIN_LINUX("\x1B[103m", "\e[103m")},
-    {"{BGORANGE}", WIN_LINUX("\x1B[43m", "\e[43m")},
+    {"[bgdefault]", WIN_LINUX("\x1B[40m", "\e[40m")},
+    {"[bgdarkred]", WIN_LINUX("\x1B[41m", "\e[41m")},
+    {"[bglightpurple]", WIN_LINUX("\x1B[105m", "\e[105m")},
+    {"[bggreen]", WIN_LINUX("\x1B[42m", "\e[42m")},
+    {"[bgolive]", WIN_LINUX("\x1B[43m", "\e[43m")},
+    {"[bglime]", WIN_LINUX("\x1B[102m", "\e[102m")},
+    {"[bgred]", WIN_LINUX("\x1B[41m", "\e[41m")},
+    {"[bggray]", WIN_LINUX("\x1B[47m", "\e[47m")},
+    {"[bggrey]", WIN_LINUX("\x1B[47m", "\e[47m")},
+    {"[bglightyellow]", WIN_LINUX("\x1B[103m", "\e[103m")},
+    {"[bgyellow]", WIN_LINUX("\x1B[103m", "\e[103m")},
+    {"[bgsilver]", WIN_LINUX("\x1B[47m", "\e[47m")},
+    {"[bgbluegrey]", WIN_LINUX("\x1B[104m", "\e[104m")},
+    {"[bglightblue]", WIN_LINUX("\x1B[104m", "\e[104m")},
+    {"[bgblue]", WIN_LINUX("\x1B[44m", "\e[44m")},
+    {"[bgdarkblue]", WIN_LINUX("\x1B[44m", "\e[44m")},
+    {"[bgpurple]", WIN_LINUX("\x1B[45m", "\e[45m")},
+    {"[bgmagenta]", WIN_LINUX("\x1B[45m", "\e[45m")},
+    {"[bglightred]", WIN_LINUX("\x1B[101m", "\e[101m")},
+    {"[bggold]", WIN_LINUX("\x1B[103m", "\e[103m")},
+    {"[bgorange]", WIN_LINUX("\x1B[43m", "\e[43m")},
 };
 
 std::vector<std::string> terminalPrefixColors = {
-    "{DEFAULT}",
-    "{WHITE}",
-    "{DARKRED}",
-    "{LIGHTPURPLE}",
-    "{GREEN}",
-    "{OLIVE}",
-    "{LIME}",
-    "{RED}",
-    "{LIGHTYELLOW}",
-    "{YELLOW}",
-    "{BLUEGREY}",
-    "{LIGHTBLUE}",
-    "{BLUE}",
-    "{DARKBLUE}",
-    "{PURPLE}",
-    "{MAGENTA}",
-    "{LIGHTRED}",
-    "{GOLD}",
-    "{ORANGE}",
+    "[default]",
+    "[/]",
+    "[white]",
+    "[darkred]",
+    "[lightpurple]",
+    "[green]",
+    "[olive]",
+    "[lime]",
+    "[red]",
+    "[lightyellow]",
+    "[yellow]",
+    "[bluegrey]",
+    "[lightblue]",
+    "[blue]",
+    "[darkblue]",
+    "[purple]",
+    "[magenta]",
+    "[lightred]",
+    "[gold]",
+    "[orange]",
 };
 
 std::map<std::string, std::string> colors = {
-    {"{DEFAULT}", "\x01"},
-    {"{WHITE}", "\x01"},
-    {"{DARKRED}", "\x02"},
-    {"{LIGHTPURPLE}", "\x03"},
-    {"{GREEN}", "\x04"},
-    {"{OLIVE}", "\x05"},
-    {"{LIME}", "\x06"},
-    {"{RED}", "\x07"},
-    {"{GRAY}", "\x08"},
-    {"{GREY}", "\x08"},
-    {"{LIGHTYELLOW}", "\x09"},
-    {"{YELLOW}", "\x09"},
-    {"{SILVER}", "\x0A"},
-    {"{BLUEGREY}", "\x0A"},
-    {"{LIGHTBLUE}", "\x0B"},
-    {"{BLUE}", "\x0B"},
-    {"{DARKBLUE}", "\x0C"},
-    {"{PURPLE}", "\x0E"},
-    {"{MAGENTA}", "\x0E"},
-    {"{LIGHTRED}", "\x0F"},
-    {"{GOLD}", "\x10"},
-    {"{ORANGE}", "\x10"},
+    {"[default]", "\x01"},
+    {"[/]", "\x01"},
+    {"[white]", "\x01"},
+    {"[darkred]", "\x02"},
+    {"[lightpurple]", "\x03"},
+    {"[green]", "\x04"},
+    {"[olive]", "\x05"},
+    {"[lime]", "\x06"},
+    {"[red]", "\x07"},
+    {"[gray]", "\x08"},
+    {"[grey]", "\x08"},
+    {"[lightyellow]", "\x09"},
+    {"[yellow]", "\x09"},
+    {"[silver]", "\x0A"},
+    {"[bluegrey]", "\x0A"},
+    {"[lightblue]", "\x0B"},
+    {"[blue]", "\x0B"},
+    {"[darkblue]", "\x0C"},
+    {"[purple]", "\x0E"},
+    {"[magenta]", "\x0E"},
+    {"[lightred]", "\x0F"},
+    {"[gold]", "\x10"},
+    {"[orange]", "\x10"},
 };
 
 std::string ProcessColor(std::string str, int team)
 {
-    str = replace(str, "{TEAMCOLOR}", team == 3 ? "{LIGHTBLUE}" : (team == 2 ? "{YELLOW}" : "{LIGHTPURPLE}"));
-    str = replace(str, "{teamcolor}", team == 3 ? "{lightblue}" : (team == 2 ? "{yellow}" : "{lightpurple}"));
+    str = replace(str, "[teamcolor]", team == 3 ? "[lightblue]" : (team == 2 ? "[yellow]" : "[lightpurple]"));
     for (auto it = colors.begin(); it != colors.end(); ++it)
     {
         str = replace(str, it->first, it->second);
-        str = replace(str, str_tolower(it->first), it->second);
     }
     return str;
 }
 
 std::string ClearColors(std::string str)
 {
-    str = replace(str, "{TEAMCOLOR}", "");
-    str = replace(str, "{teamcolor}", "");
+    str = replace(str, "[teamcolor]", "");
     for (auto it = terminalColors.begin(); it != terminalColors.end(); ++it)
     {
         str = replace(str, it->first, "");
-        str = replace(str, str_tolower(it->first), "");
     }
     return str;
 }
@@ -154,7 +153,6 @@ std::string TerminalProcessColor(std::string str)
     for (auto it = terminalColors.begin(); it != terminalColors.end(); ++it)
     {
         str = replace(str, it->first, it->second);
-        str = replace(str, str_tolower(it->first), it->second);
     }
     return str;
 }
@@ -164,7 +162,6 @@ std::string ClearTerminalColors(std::string str)
     for (auto it = terminalColors.begin(); it != terminalColors.end(); ++it)
     {
         str = replace(str, it->first, "");
-        str = replace(str, str_tolower(it->first), "");
     }
     return str;
 }
