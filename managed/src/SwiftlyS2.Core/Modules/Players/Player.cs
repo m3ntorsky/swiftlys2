@@ -110,4 +110,9 @@ internal class Player : IPlayer
     {
         NativePlayer.Teleport(_pid, pos, angle, velocity);
     }
+
+    public void Respawn()
+    {
+        Controller?.Respawn();
+    }
 }
