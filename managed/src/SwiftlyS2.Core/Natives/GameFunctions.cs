@@ -23,6 +23,7 @@ internal static class GameFunctions {
   public static int SelectWeaponOffset => NativeOffsets.Fetch("CCSPlayer_WeaponServices::SelectWeapon");
   public static int AddResourceOffset => NativeOffsets.Fetch("CEntityResourceManifest::AddResource");
   public static int CollisionRulesChangedOffset => NativeOffsets.Fetch("CBaseEntity::CollisionRulesChanged");
+  public static int RespawnOffset => NativeOffsets.Fetch("CCSPlayerController::Respawn");
 
   public static void Initialize() {
     unsafe {
@@ -287,6 +288,19 @@ internal static class GameFunctions {
         pCollisionRulesChanged(pThis);
       }
     } catch (Exception e) {
+      AnsiConsole.WriteException(e);
+    }
+  }
+
+  public unsafe static void CCSPlayerController_Respawn(nint pThis) {
+    try {
+      unsafe {
+        void*** ppVTable = (void***)pThis;
+        var pRespawn = (delegate* unmanaged<nint, void>)ppVTable[0][RespawnOffset];
+        pRespawn(pThis);
+      }
+    }
+    catch (Exception e) {
       AnsiConsole.WriteException(e);
     }
   }
