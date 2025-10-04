@@ -22,6 +22,7 @@ internal static class Bootstrap {
 
     EventPublisher.Register();
     GameFunctions.Initialize();
+    FileLogger.Initialize(basePath);
 
     AnsiConsole.Write(new FigletText("SwiftlyS2").LeftJustified().Color(Spectre.Console.Color.LightSteelBlue1));
 

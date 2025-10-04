@@ -1,7 +1,9 @@
 using System.Collections.Concurrent;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
+using SwiftlyS2.Core.Extensions;
 using SwiftlyS2.Core.Memory;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Services;
@@ -126,7 +128,29 @@ internal class GameDataService : IGameDataService {
   }
 
   public void ApplyPatch(string patchName) {
-    // TODO: support plugin-scoped patch
+    if (_Patches.TryGetValue(patchName, out var patch)) {
+      nint address = GetSignature(patch.signature);
+      if (address == nint.Zero) {
+        throw new Exception($"Failed to apply patch {patchName}, cannot find signature {patch.signature}.");
+      }
+
+      byte[] bytes;
+
+      if (_Platform == OSPlatform.Windows) {
+        bytes = patch.windows
+          .Split(' ', StringSplitOptions.RemoveEmptyEntries)
+          .Select(x => byte.Parse(x, NumberStyles.HexNumber, CultureInfo.InvariantCulture))
+          .ToArray();
+      } else {
+        bytes = patch.linux
+          .Split(' ', StringSplitOptions.RemoveEmptyEntries)
+          .Select(x => byte.Parse(x, NumberStyles.HexNumber, CultureInfo.InvariantCulture))
+          .ToArray();
+      }
+      MemoryPatch.SetMemAccess(address, bytes.Length);
+      address.CopyFrom(bytes);
+      return;
+    }
     NativePatches.Apply(patchName);
   } 
 

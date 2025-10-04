@@ -50,6 +50,16 @@ internal static class PtrExtensions {
   }
 
   [MethodImpl(MethodImplOptions.AggressiveInlining)]
+  public static void CopyFrom(this nint ptr, byte[] source)
+  {
+    unsafe { 
+      fixed (byte* sourcePtr = source) {
+      Unsafe.CopyBlockUnaligned((void*)ptr, sourcePtr, (uint)source.Length); }
+    }
+  }
+
+
+  [MethodImpl(MethodImplOptions.AggressiveInlining)]
   public static void CopyFrom(this nint ptr, nint source, int size) {
     unsafe { Unsafe.CopyBlockUnaligned((void*)ptr, (void*)source, (uint)size); }
   }
