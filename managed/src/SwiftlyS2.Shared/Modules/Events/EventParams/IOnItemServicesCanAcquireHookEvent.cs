@@ -21,9 +21,9 @@ public interface IOnItemServicesCanAcquireHookEvent {
   public AcquireMethod AcquireMethod { get; }
 
   /// <summary>
-  /// The result of the acquire.
+  /// The original result of the CanAcquire call.
   /// </summary>
-  public AcquireResult Result { get; }
+  public AcquireResult OriginalResult { get; }
 
   /// <summary>
   /// Intercept and modify the acquire result.

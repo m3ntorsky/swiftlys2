@@ -361,20 +361,19 @@ internal static class EventPublisher {
     }
   }
 
-  public static bool InvokeOnCanAcquireHook(OnItemServicesCanAcquireHookEvent @event) {
-    if (_subscribers.Count == 0) return false;
+  public static void InvokeOnCanAcquireHook(OnItemServicesCanAcquireHookEvent @event) {
+    if (_subscribers.Count == 0) return;
     try {
       foreach (var subscriber in _subscribers) {
         subscriber.InvokeOnItemServicesCanAcquireHook(@event);
-
           if (@event.Intercepted) {
-            return true;
+            return;
           }
         }
-      return false;
+      return;
     } catch (Exception e) {
       AnsiConsole.WriteException(e);
-      return false;
+      return;
     }
   }
 }

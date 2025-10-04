@@ -9,12 +9,12 @@ internal class OnItemServicesCanAcquireHookEvent : IOnItemServicesCanAcquireHook
   public required CEconItemView EconItemView { get; set; }
   public required AcquireMethod AcquireMethod { get; set; }
 
-  public required AcquireResult Result { get; set; }
+  public required AcquireResult OriginalResult { get; set; }
 
   public bool Intercepted { get; set; } = false;
 
   public void SetAcquireResult(AcquireResult result) {
-    Result = result;
+    OriginalResult = result;
     Intercepted = true;
   }
 }

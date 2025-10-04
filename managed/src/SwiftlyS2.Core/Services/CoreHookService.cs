@@ -32,7 +32,9 @@ internal class CoreHookService : IDisposable {
     _CanAcquire = _Core.Memory.GetUnmanagedFunctionByAddress<CanAcquireDelegate>(address);
     _CanAcquireGuid = _CanAcquire.AddHook(next => {
 
-      return (pItemServices, pEconItemView, acquireMethod, unk1) => {
+      return (pItemServices, pEconItemView, acquireMethod, unk1) =>
+      {
+        var result = next()(pItemServices, pEconItemView, acquireMethod, unk1);
 
         var itemServices = _Core.Memory.ToSchemaClass<CCSPlayer_ItemServices>(pItemServices);
         var econItemView = _Core.Memory.ToSchemaClass<CEconItemView>(pEconItemView);
@@ -41,16 +43,17 @@ internal class CoreHookService : IDisposable {
           ItemServices = itemServices,
           EconItemView = econItemView,
           AcquireMethod = (AcquireMethod)acquireMethod,
-          Result = AcquireResult.Allowed
+          OriginalResult = (AcquireResult)result
         };
 
         EventPublisher.InvokeOnCanAcquireHook(@event);
 
         if (@event.Intercepted) {
-          return (int)@event.Result;
+          // original result is modified here.
+          return (int)@event.OriginalResult;
         }
 
-        return next()(pItemServices, pEconItemView, acquireMethod, unk1);
+        return result;
       };
     });
   }
