@@ -35,8 +35,8 @@ internal static class NativeConvars {
   public unsafe static void RemoveQueryClientCvarCallback(int callbackID) {
     _RemoveQueryClientCvarCallback(callbackID);
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, short, void> _CreateConvarInt16;
-  public unsafe static void CreateConvarInt16(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, short defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, short, nint, nint, void> _CreateConvarInt16;
+  public unsafe static void CreateConvarInt16(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, short defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -49,7 +49,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarInt16(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarInt16(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -57,8 +57,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, ushort, void> _CreateConvarUInt16;
-  public unsafe static void CreateConvarUInt16(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, ushort defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, ushort, nint, nint, void> _CreateConvarUInt16;
+  public unsafe static void CreateConvarUInt16(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, ushort defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -71,7 +71,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarUInt16(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarUInt16(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -79,8 +79,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, int, void> _CreateConvarInt32;
-  public unsafe static void CreateConvarInt32(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, int defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, int, nint, nint, void> _CreateConvarInt32;
+  public unsafe static void CreateConvarInt32(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, int defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -93,7 +93,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarInt32(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarInt32(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -101,8 +101,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, uint, void> _CreateConvarUInt32;
-  public unsafe static void CreateConvarUInt32(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, uint defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, uint, nint, nint, void> _CreateConvarUInt32;
+  public unsafe static void CreateConvarUInt32(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, uint defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -115,7 +115,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarUInt32(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarUInt32(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -123,8 +123,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, long, void> _CreateConvarInt64;
-  public unsafe static void CreateConvarInt64(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, long defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, long, nint, nint, void> _CreateConvarInt64;
+  public unsafe static void CreateConvarInt64(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, long defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -137,7 +137,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarInt64(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarInt64(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -145,8 +145,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, ulong, void> _CreateConvarUInt64;
-  public unsafe static void CreateConvarUInt64(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, ulong defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, ulong, nint, nint, void> _CreateConvarUInt64;
+  public unsafe static void CreateConvarUInt64(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, ulong defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -159,7 +159,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarUInt64(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarUInt64(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -167,8 +167,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, bool, void> _CreateConvarBool;
-  public unsafe static void CreateConvarBool(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, bool defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, bool, nint, nint, void> _CreateConvarBool;
+  public unsafe static void CreateConvarBool(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, bool defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -181,7 +181,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarBool(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarBool(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -189,8 +189,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, float, void> _CreateConvarFloat;
-  public unsafe static void CreateConvarFloat(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, float defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, float, nint, nint, void> _CreateConvarFloat;
+  public unsafe static void CreateConvarFloat(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, float defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -203,7 +203,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarFloat(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarFloat(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -211,8 +211,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, double, void> _CreateConvarDouble;
-  public unsafe static void CreateConvarDouble(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, double defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, double, nint, nint, void> _CreateConvarDouble;
+  public unsafe static void CreateConvarDouble(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, double defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -225,7 +225,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarDouble(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarDouble(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -233,8 +233,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, Color, void> _CreateConvarColor;
-  public unsafe static void CreateConvarColor(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, Color defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, Color, nint, nint, void> _CreateConvarColor;
+  public unsafe static void CreateConvarColor(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, Color defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -247,7 +247,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarColor(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarColor(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -255,8 +255,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, Vector2D, void> _CreateConvarVector2D;
-  public unsafe static void CreateConvarVector2D(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, Vector2D defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, Vector2D, nint, nint, void> _CreateConvarVector2D;
+  public unsafe static void CreateConvarVector2D(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, Vector2D defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -269,7 +269,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarVector2D(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarVector2D(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -277,8 +277,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, Vector, void> _CreateConvarVector;
-  public unsafe static void CreateConvarVector(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, Vector defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, Vector, nint, nint, void> _CreateConvarVector;
+  public unsafe static void CreateConvarVector(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, Vector defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -291,7 +291,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarVector(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarVector(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -299,8 +299,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, Vector4D, void> _CreateConvarVector4D;
-  public unsafe static void CreateConvarVector4D(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, Vector4D defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, Vector4D, nint, nint, void> _CreateConvarVector4D;
+  public unsafe static void CreateConvarVector4D(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, Vector4D defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -313,7 +313,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarVector4D(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarVector4D(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -321,8 +321,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, QAngle, void> _CreateConvarQAngle;
-  public unsafe static void CreateConvarQAngle(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, QAngle defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, QAngle, nint, nint, void> _CreateConvarQAngle;
+  public unsafe static void CreateConvarQAngle(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, QAngle defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -335,7 +335,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarQAngle(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue);
+        _CreateConvarQAngle(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -343,8 +343,8 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, byte*, void> _CreateConvarString;
-  public unsafe static void CreateConvarString(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, string defaultValue) {
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, byte*, nint, nint, void> _CreateConvarString;
+  public unsafe static void CreateConvarString(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, string defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
     var cvarNameBuffer = pool.Rent(cvarNameLength + 1);
@@ -363,7 +363,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(defaultValue, defaultValueBuffer);
     defaultValueBuffer[defaultValueLength] = 0;
     fixed (byte* defaultValueBufferPtr = defaultValueBuffer) {
-        _CreateConvarString(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValueBufferPtr);
+        _CreateConvarString(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValueBufferPtr, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);

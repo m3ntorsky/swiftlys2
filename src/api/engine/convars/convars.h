@@ -22,6 +22,7 @@
 #include <string>
 #include <functional>
 #include <variant>
+#include <optional>
 
 #include <public/tier1/convar.h>
 #include <public/mathlib/vector2d.h>
@@ -41,7 +42,7 @@ public:
     virtual void RemoveQueryClientCvarCallback(int callback_id) = 0;
     virtual void OnClientQueryCvar(int playerid, std::string cvar_name, std::string cvar_value) = 0;
 
-    virtual void CreateConvar(std::string cvar_name, EConVarType type, uint64_t flags, const char* help_message, ConvarValue defaultValue) = 0;
+    virtual void CreateConvar(std::string cvar_name, EConVarType type, uint64_t flags, const char* help_message, ConvarValue defaultValue, std::optional<ConvarValue> minValue = std::nullopt, std::optional<ConvarValue> maxValue = std::nullopt) = 0;
     virtual void DeleteConvar(std::string cvar_name) = 0;
     virtual bool ExistsConvar(std::string cvar_name) = 0;
     virtual EConVarType GetConvarType(std::string cvar_name) = 0;

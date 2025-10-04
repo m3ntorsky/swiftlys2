@@ -20,6 +20,7 @@
 #define src_engine_convars_convars_h
 
 #include <api/engine/convars/convars.h>
+#include <optional>
 
 class CConvarManager : public IConvarManager
 {
@@ -32,7 +33,7 @@ public:
     virtual void RemoveQueryClientCvarCallback(int callback_id) override;
     virtual void OnClientQueryCvar(int playerid, std::string cvar_name, std::string cvar_value) override;
 
-    virtual void CreateConvar(std::string cvar_name, EConVarType type, uint64_t flags, const char* help_message, ConvarValue defaultValue) override;
+    virtual void CreateConvar(std::string cvar_name, EConVarType type, uint64_t flags, const char* help_message, ConvarValue defaultValue, std::optional<ConvarValue> minValue = std::nullopt, std::optional<ConvarValue> maxValue = std::nullopt) override;
     virtual void DeleteConvar(std::string cvar_name) override;
     virtual bool ExistsConvar(std::string cvar_name) override;
     virtual EConVarType GetConvarType(std::string cvar_name) override;

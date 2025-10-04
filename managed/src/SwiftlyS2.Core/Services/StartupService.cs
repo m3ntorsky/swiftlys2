@@ -13,6 +13,7 @@ internal class StartupService : IHostedService {
     provider.UseCoreCommandService();
     provider.UsePermissionManager();
     provider.UsePluginManager();
+    provider.UseTestService();
   }
 
   public Task StartAsync(CancellationToken cancellationToken)
