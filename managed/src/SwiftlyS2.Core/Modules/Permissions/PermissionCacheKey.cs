@@ -1,6 +1,6 @@
 namespace SwiftlyS2.Core.Permissions;
 
-public readonly struct PermissionCacheKey : IEquatable<PermissionCacheKey> {
+internal readonly struct PermissionCacheKey : IEquatable<PermissionCacheKey> {
   public required ulong PlayerId { get; init; }
   public required string Permission { get; init; }
   private static readonly StringComparer StrCmp = StringComparer.OrdinalIgnoreCase;
