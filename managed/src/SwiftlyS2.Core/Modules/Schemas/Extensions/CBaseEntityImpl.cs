@@ -45,4 +45,9 @@ internal partial class CBaseEntityImpl : CBaseEntity
             GameFunctions.Teleport(Address, pos, ang, vel);
         }
     }
+
+    public void CollisionRulesChanged()
+    {
+        GameFunctions.CBaseEntity_CollisionRulesChanged(Address);
+    }
 }

@@ -19,7 +19,7 @@
         "windows": 275,
         "linux": 277
     },
-    "CollisionRulesChanged": {
+    "CBaseEntity::CollisionRulesChanged": {
         "windows": 189,
         "linux": 188
     },

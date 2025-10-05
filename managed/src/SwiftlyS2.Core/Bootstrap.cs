@@ -55,6 +55,7 @@ internal static class Bootstrap {
           .AddTraceManagerService()
           .AddCoreCommandService()
           .AddPermissionManager()
+          .AddCoreHookService()
           .AddSwiftlyCore(basePath);
       })
       .Build();

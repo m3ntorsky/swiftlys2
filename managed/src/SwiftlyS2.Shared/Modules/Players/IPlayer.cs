@@ -169,4 +169,9 @@ public interface IPlayer
     /// </summary>
     /// <param name="team">The team to assign. Cannot be null.</param>
     public void ChangeTeam(Team team);
+
+    /// <summary>
+    /// Respawns the player.
+    /// </summary>
+    public void Respawn();
 }

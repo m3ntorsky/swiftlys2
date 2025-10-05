@@ -103,8 +103,6 @@ bool InitializeDotNetAPI(void* scripting_table, int scripting_table_size) {
   typedef void(CORECLR_DELEGATE_CALLTYPE* custom_loader_fn)(void*, int, const char*);
   static custom_loader_fn custom_loader = nullptr;
 
-  printf("%s\n", original_path.c_str());
-
   if (custom_loader == nullptr) {
     int returnCode = _load_assembly_and_get_function_pointer(
         (widenedOriginPath + WIN_LIN(L"bin\\managed\\SwiftlyS2.CS2.dll", "bin/managed/SwiftlyS2.CS2.dll")).c_str(),

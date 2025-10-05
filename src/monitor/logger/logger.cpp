@@ -47,7 +47,7 @@ std::string GetLogTypeString(LogType type)
 
 void Logger::Log(LogType type, const std::string& message)
 {
-    std::string final_output = fmt::format("{} [{}{}{}] {}", PREFIX, GetTerminalStringColor(GetLogTypeString(type)), GetLogTypeString(type), "{DEFAULT}", message);
+    std::string final_output = fmt::format("{} [{}{}{}] {}", PREFIX, GetTerminalStringColor(GetLogTypeString(type)), GetLogTypeString(type), "[/]", message);
     std::string color_processed = TerminalProcessColor(final_output);
     std::string without_colors = ClearTerminalColors(final_output);
 
@@ -62,7 +62,7 @@ void Logger::Log(LogType type, const std::string& message)
 void Logger::Log(LogType type, const std::string& category, const std::string& message)
 {
     if (m_bShouldOutputToConsole[(int)type] && !m_sNonColoredCategories.contains(category))
-        Log(type, fmt::format("[{}{}{}] {}", GetTerminalStringColor(category), category, "{DEFAULT}", message));
+        Log(type, fmt::format("[{}{}{}] {}", GetTerminalStringColor(category), category, "[/]", message));
     else
         Log(type, fmt::format("[{}] {}", category, message));
 }

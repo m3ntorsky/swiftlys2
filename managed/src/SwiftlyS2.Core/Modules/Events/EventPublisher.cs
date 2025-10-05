@@ -360,4 +360,20 @@ internal static class EventPublisher {
       AnsiConsole.WriteException(e);
     }
   }
+
+  public static void InvokeOnCanAcquireHook(OnItemServicesCanAcquireHookEvent @event) {
+    if (_subscribers.Count == 0) return;
+    try {
+      foreach (var subscriber in _subscribers) {
+        subscriber.InvokeOnItemServicesCanAcquireHook(@event);
+          if (@event.Intercepted) {
+            return;
+          }
+        }
+      return;
+    } catch (Exception e) {
+      AnsiConsole.WriteException(e);
+      return;
+    }
+  }
 }

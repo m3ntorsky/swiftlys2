@@ -86,4 +86,9 @@ public interface IEventSubscriber {
   /// Called when the game is precaching resources.
   /// </summary>
   public event EventDelegates.OnPrecacheResource? OnPrecacheResource;
+
+  /// <summary>
+  /// Called when an item services can acquire hook is triggered.
+  /// </summary>
+  public event EventDelegates.OnItemServicesCanAcquireHook? OnItemServicesCanAcquireHook;
 }

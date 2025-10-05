@@ -22,6 +22,8 @@
 #include <api/sdk/recipientfilter.h>
 #include <api/sdk/serversideclient.h>
 
+#include <optional>
+
 #include <memory/gamedata/manager.h>
 
 #include <public/networksystem/inetworkmessages.h>
@@ -32,13 +34,25 @@
 #include "networkbasetypes.pb.h"
 
 #define NEW_CVAR(data_type, default_value) \
-    cvarptr = (void*)(new CConVar<data_type>(cvar_name.c_str(), flags, help_message, std::get<data_type>(defaultValue)))
+    auto min = minValue.has_value(); \
+    auto minValueOrDefault = min ? std::get<data_type>(minValue.value()) : std::get<data_type>(defaultValue); \
+    auto max = maxValue.has_value(); \
+    auto maxValueOrDefault = max ? std::get<data_type>(maxValue.value()) : std::get<data_type>(defaultValue); \
+    cvarptr = (void*)(new CConVar<data_type>(cvar_name.c_str(), flags, help_message, std::get<data_type>(defaultValue), min, minValueOrDefault, max, maxValueOrDefault))
 
 #define NEW_CVAR_INT64(default_value) \
-    cvarptr = (void*)(new CConVar<int64>(cvar_name.c_str(), flags, help_message, (int64)std::get<int64_t>(defaultValue)))
+    auto min = minValue.has_value(); \
+    auto minValueOrDefault = min ? std::get<int64_t>(minValue.value()) : std::get<int64_t>(defaultValue); \
+    auto max = maxValue.has_value(); \
+    auto maxValueOrDefault = max ? std::get<int64_t>(maxValue.value()) : std::get<int64_t>(defaultValue); \
+    cvarptr = (void*)(new CConVar<int64>(cvar_name.c_str(), flags, help_message, (int64)std::get<int64_t>(defaultValue), min, minValueOrDefault, max, maxValueOrDefault))
 
 #define NEW_CVAR_UINT64(default_value) \
-    cvarptr = (void*)(new CConVar<uint64>(cvar_name.c_str(), flags, help_message, (uint64)std::get<uint64_t>(defaultValue)))
+    auto min = minValue.has_value(); \
+    auto minValueOrDefault = min ? std::get<uint64_t>(minValue.value()) : std::get<uint64_t>(defaultValue); \
+    auto max = maxValue.has_value(); \
+    auto maxValueOrDefault = max ? std::get<uint64_t>(maxValue.value()) : std::get<uint64_t>(defaultValue); \
+    cvarptr = (void*)(new CConVar<uint64>(cvar_name.c_str(), flags, help_message, (uint64)std::get<uint64_t>(defaultValue), min, minValueOrDefault, max, maxValueOrDefault))
 
 
 #define FREE_CVAR(data_type) \
@@ -92,7 +106,7 @@ void CConvarManager::OnClientQueryCvar(int playerid, std::string cvar_name, std:
     }
 }
 
-void CConvarManager::CreateConvar(std::string cvar_name, EConVarType type, uint64_t flags, const char* help_message, ConvarValue defaultValue)
+void CConvarManager::CreateConvar(std::string cvar_name, EConVarType type, uint64_t flags, const char* help_message, ConvarValue defaultValue, std::optional<ConvarValue> minValue, std::optional<ConvarValue> maxValue)
 {
     ConVarRefAbstract cvar(cvar_name.c_str());
     if (cvar.IsValidRef()) return;

@@ -86,4 +86,9 @@ public class EventDelegates {
   /// Called when the game is precaching resources.
   /// </summary>
   public delegate void OnPrecacheResource(IOnPrecacheResourceEvent @event);
+
+  /// <summary>
+  /// Called when an item services can acquire hook is triggered.
+  /// </summary>
+  public delegate void OnItemServicesCanAcquireHook(IOnItemServicesCanAcquireHookEvent @event);
 }
