@@ -73,12 +73,8 @@ std::map<std::string, int> m_binariesSize;
 
 void* FindSignature(std::string library, std::string pattern)
 {
-    uint64_t result;
-    if (s2binlib_pattern_scan(library.c_str(), pattern.c_str(), &result) == 0) {
-        return reinterpret_cast<void*>(result);
-    }
-    else {
-        return nullptr;
-    }
+    void* result;
+    s2binlib_pattern_scan(library.c_str(), pattern.c_str(), &result);
+    return result;
     
 }

@@ -68,7 +68,7 @@ bool SwiftlyMMBridge::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxle
 
     META_CONVAR_REGISTER(FCVAR_RELEASE | FCVAR_SERVER_CAN_EXECUTE | FCVAR_CLIENT_CAN_EXECUTE | FCVAR_GAMEDLL);
 
-    uint64_t serverSideClientVTable;
+    void* serverSideClientVTable;
     s2binlib_find_vtable("server", "CServerSideClient", &serverSideClientVTable);
     OnConVarQueryID = SH_ADD_DVPHOOK(CServerSideClientBase, ProcessRespondCvarValue, (CServerSideClientBase*)serverSideClientVTable, SH_MEMBER(this, &SwiftlyMMBridge::OnConvarQuery), false);
 

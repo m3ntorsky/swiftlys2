@@ -68,10 +68,8 @@ IGameEventManager2* g_gameEventManager = nullptr;
 void CEventManager::Initialize(std::string game_name)
 {
     DynLibUtils::CModule servermodule = DetermineModuleByLibrary("server");
-    uint64_t CGameEventManagerVTable;
+    void* CGameEventManagerVTable;
     s2binlib_find_vtable("server", "CGameEventManager", &CGameEventManagerVTable);
-
-    printf("CGameEventManagerVTable: %llx\n", CGameEventManagerVTable);
 
     auto networkserverservice = g_ifaceService.FetchInterface<INetworkServerService>(NETWORKSERVERSERVICE_INTERFACE_VERSION);
 
@@ -114,6 +112,7 @@ void CEventManager::Shutdown()
 
 void CEventManager::GameFrame(bool simulate, bool first, bool last)
 {
+    // printf("SourceHook GameFrame\n");
     if (processingTimeouts)
     {
         int64_t t = GetTime();

@@ -50,7 +50,7 @@ void CDatabaseManager::Initialize()
     }
 
     auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
-    logger->Info("Database Manager", fmt::format("Loaded {} database credentials. (Default Connection: {})", m_mConnectionCredentials.size(), m_sDefaultConnection));
+    logger->Info("Database Manager", fmt::format("Loaded {} database credentials. (Default Connection: {})\n", m_mConnectionCredentials.size(), m_sDefaultConnection));
 }
 
 std::string CDatabaseManager::GetDefaultConnection()

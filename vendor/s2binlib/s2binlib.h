@@ -45,13 +45,13 @@ int s2binlib_initialize(const char* game_path, const char* game_type);
  *         -5 if internal error
  * 
  * @example
- *     uint64_t address;
+ *     void* address;
  *     int result = s2binlib_pattern_scan("server", "48 89 5C 24 ? 48 89 74", &address);
  *     if (result == 0) {
- *         printf("Found at: 0x%llx\n", address);
+ *         printf("Found at: %p\n", address);
  *     }
  */
-int s2binlib_pattern_scan(const char* binary_name, const char* pattern, uint64_t* result);
+int s2binlib_pattern_scan(const char* binary_name, const char* pattern, void** result);
 
 /**
  * Pattern scan and return the virtual address
@@ -74,13 +74,13 @@ int s2binlib_pattern_scan(const char* binary_name, const char* pattern, uint64_t
  *         -5 if internal error
  * 
  * @example
- *     uint64_t va;
+ *     void* va;
  *     int result = s2binlib_pattern_scan_va("server", "48 89 5C 24 ?", &va);
  *     if (result == 0) {
- *         printf("Pattern found at VA: 0x%llx\n", va);
+ *         printf("Pattern found at VA: %p\n", va);
  *     }
  */
-int s2binlib_pattern_scan_va(const char* binary_name, const char* pattern, uint64_t* result);
+int s2binlib_pattern_scan_va(const char* binary_name, const char* pattern, void** result);
 
 /**
  * Find a vtable by class name in the specified binary
@@ -99,13 +99,13 @@ int s2binlib_pattern_scan_va(const char* binary_name, const char* pattern, uint6
  *         -5 if internal error
  * 
  * @example
- *     uint64_t vtable_addr;
+ *     void* vtable_addr;
  *     int result = s2binlib_find_vtable("server", "CBaseEntity", &vtable_addr);
  *     if (result == 0) {
- *         printf("VTable at: 0x%llx\n", vtable_addr);
+ *         printf("VTable at: %p\n", vtable_addr);
  *     }
  */
-int s2binlib_find_vtable(const char* binary_name, const char* vtable_name, uint64_t* result);
+int s2binlib_find_vtable(const char* binary_name, const char* vtable_name, void** result);
 
 /**
  * Find a vtable by class name and return its virtual address
@@ -124,13 +124,13 @@ int s2binlib_find_vtable(const char* binary_name, const char* vtable_name, uint6
  *         -5 if internal error
  * 
  * @example
- *     uint64_t vtable_va;
+ *     void* vtable_va;
  *     int result = s2binlib_find_vtable_va("server", "CBaseEntity", &vtable_va);
  *     if (result == 0) {
- *         printf("VTable VA: 0x%llx\n", vtable_va);
+ *         printf("VTable VA: %p\n", vtable_va);
  *     }
  */
-int s2binlib_find_vtable_va(const char* binary_name, const char* vtable_name, uint64_t* result);
+int s2binlib_find_vtable_va(const char* binary_name, const char* vtable_name, void** result);
 
 /**
  * Find a symbol by name in the specified binary
@@ -148,13 +148,13 @@ int s2binlib_find_vtable_va(const char* binary_name, const char* vtable_name, ui
  *         -5 if internal error
  * 
  * @example
- *     uint64_t symbol_addr;
+ *     void* symbol_addr;
  *     int result = s2binlib_find_symbol("server", "CreateInterface", &symbol_addr);
  *     if (result == 0) {
- *         printf("Symbol at: 0x%llx\n", symbol_addr);
+ *         printf("Symbol at: %p\n", symbol_addr);
  *     }
  */
-int s2binlib_find_symbol(const char* binary_name, const char* symbol_name, uint64_t* result);
+int s2binlib_find_symbol(const char* binary_name, const char* symbol_name, void** result);
 
 /**
  * Find a symbol by name and return its virtual address
@@ -172,13 +172,13 @@ int s2binlib_find_symbol(const char* binary_name, const char* symbol_name, uint6
  *         -5 if internal error
  * 
  * @example
- *     uint64_t symbol_va;
+ *     void* symbol_va;
  *     int result = s2binlib_find_symbol_va("server", "_Z13CreateInterfacev", &symbol_va);
  *     if (result == 0) {
- *         printf("Symbol VA: 0x%llx\n", symbol_va);
+ *         printf("Symbol VA: %p\n", symbol_va);
  *     }
  */
-int s2binlib_find_symbol_va(const char* binary_name, const char* symbol_name, uint64_t* result);
+int s2binlib_find_symbol_va(const char* binary_name, const char* symbol_name, void** result);
 
 /**
  * Manually set the base address for a module from a pointer
@@ -200,7 +200,7 @@ int s2binlib_find_symbol_va(const char* binary_name, const char* symbol_name, ui
  *         printf("Server base address set successfully\n");
  *     }
  */
-int s2binlib_set_module_base_from_pointer(const char* binary_name, uint64_t pointer);
+int s2binlib_set_module_base_from_pointer(const char* binary_name, void* pointer);
 
 /**
  * Clear manually set base address for a module
@@ -239,13 +239,13 @@ int s2binlib_clear_module_base_address(const char* binary_name);
  *         -5 if internal error
  * 
  * @example
- *     uint64_t base_addr;
+ *     void* base_addr;
  *     int result = s2binlib_get_module_base_address("server", &base_addr);
  *     if (result == 0) {
- *         printf("Module base: 0x%llx\n", base_addr);
+ *         printf("Module base: %p\n", base_addr);
  *     }
  */
-int s2binlib_get_module_base_address(const char* binary_name, uint64_t* result);
+int s2binlib_get_module_base_address(const char* binary_name, void** result);
 
 /**
  * Check if a binary is already loaded
@@ -328,13 +328,13 @@ int s2binlib_get_binary_path(const char* binary_name, char* buffer, size_t buffe
  *         -5 if internal error
  * 
  * @example
- *     uint64_t export_va;
+ *     void* export_va;
  *     int result = s2binlib_find_export_va("server", "CreateInterface", &export_va);
  *     if (result == 0) {
- *         printf("Export VA: 0x%llx\n", export_va);
+ *         printf("Export VA: %p\n", export_va);
  *     }
  */
-int s2binlib_find_export_va(const char* binary_name, const char* export_name, uint64_t* result);
+int s2binlib_find_export_va(const char* binary_name, const char* export_name, void** result);
 
 /**
  * Find an exported symbol by name and return its runtime memory address
@@ -353,13 +353,13 @@ int s2binlib_find_export_va(const char* binary_name, const char* export_name, ui
  *         -5 if internal error
  * 
  * @example
- *     uint64_t export_addr;
+ *     void* export_addr;
  *     int result = s2binlib_find_export("server", "CreateInterface", &export_addr);
  *     if (result == 0) {
- *         printf("Export at: 0x%llx\n", export_addr);
+ *         printf("Export at: %p\n", export_addr);
  *     }
  */
-int s2binlib_find_export(const char* binary_name, const char* export_name, uint64_t* result);
+int s2binlib_find_export(const char* binary_name, const char* export_name, void** result);
 
 /**
  * Read bytes from binary at a file offset
@@ -457,13 +457,13 @@ int s2binlib_read_by_mem_address(const char* binary_name, uint64_t mem_address, 
  *         -5 if internal error
  * 
  * @example
- *     uint64_t vfunc_va;
+ *     void* vfunc_va;
  *     int result = s2binlib_find_vfunc_by_vtbname_va("server", "CBaseEntity", 5, &vfunc_va);
  *     if (result == 0) {
- *         printf("VFunc VA: 0x%llx\n", vfunc_va);
+ *         printf("VFunc VA: %p\n", vfunc_va);
  *     }
  */
-int s2binlib_find_vfunc_by_vtbname_va(const char* binary_name, const char* vtable_name, size_t vfunc_index, uint64_t* result);
+int s2binlib_find_vfunc_by_vtbname_va(const char* binary_name, const char* vtable_name, size_t vfunc_index, void** result);
 
 /**
  * Find a virtual function by vtable name and index, return runtime address
@@ -486,13 +486,13 @@ int s2binlib_find_vfunc_by_vtbname_va(const char* binary_name, const char* vtabl
  *         -5 if internal error
  * 
  * @example
- *     uint64_t vfunc_addr;
+ *     void* vfunc_addr;
  *     int result = s2binlib_find_vfunc_by_vtbname("server", "CBaseEntity", 5, &vfunc_addr);
  *     if (result == 0) {
- *         printf("VFunc at: 0x%llx\n", vfunc_addr);
+ *         printf("VFunc at: %p\n", vfunc_addr);
  *     }
  */
-int s2binlib_find_vfunc_by_vtbname(const char* binary_name, const char* vtable_name, size_t vfunc_index, uint64_t* result);
+int s2binlib_find_vfunc_by_vtbname(const char* binary_name, const char* vtable_name, size_t vfunc_index, void** result);
 
 /**
  * Find a virtual function by vtable pointer and index, return virtual address
@@ -512,13 +512,13 @@ int s2binlib_find_vfunc_by_vtbname(const char* binary_name, const char* vtable_n
  *         -5 if internal error
  * 
  * @example
- *     uint64_t vfunc_va;
+ *     void* vfunc_va;
  *     int result = s2binlib_find_vfunc_by_vtbptr_va(vtable_ptr, 5, &vfunc_va);
  *     if (result == 0) {
- *         printf("VFunc VA: 0x%llx\n", vfunc_va);
+ *         printf("VFunc VA: %p\n", vfunc_va);
  *     }
  */
-int s2binlib_find_vfunc_by_vtbptr_va(uint64_t vtable_ptr, size_t vfunc_index, uint64_t* result);
+int s2binlib_find_vfunc_by_vtbptr_va(void* vtable_ptr, size_t vfunc_index, void** result);
 
 /**
  * Find a virtual function by vtable pointer and index, return runtime address
@@ -538,13 +538,13 @@ int s2binlib_find_vfunc_by_vtbptr_va(uint64_t vtable_ptr, size_t vfunc_index, ui
  *         -5 if internal error
  * 
  * @example
- *     uint64_t vfunc_addr;
+ *     void* vfunc_addr;
  *     int result = s2binlib_find_vfunc_by_vtbptr(vtable_ptr, 5, &vfunc_addr);
  *     if (result == 0) {
- *         printf("VFunc at: 0x%llx\n", vfunc_addr);
+ *         printf("VFunc at: %p\n", vfunc_addr);
  *     }
  */
-int s2binlib_find_vfunc_by_vtbptr(uint64_t vtable_ptr, size_t vfunc_index, uint64_t* result);
+int s2binlib_find_vfunc_by_vtbptr(void* vtable_ptr, size_t vfunc_index, void** result);
 
 /**
  * Find a string in the binary and return its virtual address
@@ -564,13 +564,13 @@ int s2binlib_find_vfunc_by_vtbptr(uint64_t vtable_ptr, size_t vfunc_index, uint6
  *         -5 if internal error
  * 
  * @example
- *     uint64_t string_va;
+ *     void* string_va;
  *     int result = s2binlib_find_string_va("server", "CBaseEntity", &string_va);
  *     if (result == 0) {
- *         printf("String VA: 0x%llx\n", string_va);
+ *         printf("String VA: %p\n", string_va);
  *     }
  */
-int s2binlib_find_string_va(const char* binary_name, const char* string, uint64_t* result);
+int s2binlib_find_string_va(const char* binary_name, const char* string, void** result);
 
 /**
  * Find a string in the binary and return its runtime memory address
@@ -590,13 +590,13 @@ int s2binlib_find_string_va(const char* binary_name, const char* string, uint64_
  *         -5 if internal error
  * 
  * @example
- *     uint64_t string_addr;
+ *     void* string_addr;
  *     int result = s2binlib_find_string("server", "CBaseEntity", &string_addr);
  *     if (result == 0) {
- *         printf("String at: 0x%llx\n", string_addr);
+ *         printf("String at: %p\n", string_addr);
  *     }
  */
-int s2binlib_find_string(const char* binary_name, const char* string, uint64_t* result);
+int s2binlib_find_string(const char* binary_name, const char* string, void** result);
 
 /**
  * Dump and cache all cross-references in a binary
@@ -645,15 +645,15 @@ int s2binlib_dump_xrefs(const char* binary_name);
  *     s2binlib_dump_xrefs("server");
  *     
  *     // Get xref count
- *     int count = s2binlib_get_xrefs_count("server", 0x140001000);
+ *     int count = s2binlib_get_xrefs_count("server", (void*)0x140001000);
  *     if (count > 0) {
- *         uint64_t* xrefs = malloc(count * sizeof(uint64_t));
- *         s2binlib_get_xrefs_cached("server", 0x140001000, xrefs, count);
+ *         void** xrefs = malloc(count * sizeof(void*));
+ *         s2binlib_get_xrefs_cached("server", (void*)0x140001000, xrefs, count);
  *         // Use xrefs
  *         free(xrefs);
  *     }
  */
-int s2binlib_get_xrefs_count(const char* binary_name, uint64_t target_va);
+int s2binlib_get_xrefs_count(const char* binary_name, void* target_va);
 
 /**
  * Get cached cross-references for a target virtual address into a buffer
@@ -680,19 +680,191 @@ int s2binlib_get_xrefs_count(const char* binary_name, uint64_t target_va);
  *     s2binlib_dump_xrefs("server");
  *     
  *     // Get xref count
- *     int count = s2binlib_get_xrefs_count("server", 0x140001000);
+ *     int count = s2binlib_get_xrefs_count("server", (void*)0x140001000);
  *     if (count > 0) {
- *         uint64_t* xrefs = malloc(count * sizeof(uint64_t));
- *         int result = s2binlib_get_xrefs_cached("server", 0x140001000, xrefs, count);
+ *         void** xrefs = malloc(count * sizeof(void*));
+ *         int result = s2binlib_get_xrefs_cached("server", (void*)0x140001000, xrefs, count);
  *         if (result > 0) {
  *             for (int i = 0; i < result; i++) {
- *                 printf("Xref at: 0x%llx\n", xrefs[i]);
+ *                 printf("Xref at: %p\n", xrefs[i]);
  *             }
  *         }
  *         free(xrefs);
  *     }
  */
-int s2binlib_get_xrefs_cached(const char* binary_name, uint64_t target_va, uint64_t* buffer, size_t buffer_size);
+int s2binlib_get_xrefs_cached(const char* binary_name, void* target_va, void** buffer, size_t buffer_size);
+
+/**
+ * Unload a specific binary from memory
+ * 
+ * Removes the specified binary from the internal cache, freeing up memory.
+ * This is useful when you no longer need a particular binary.
+ * 
+ * @param binary_name Name of the binary to unload (e.g., "server", "client")
+ * 
+ * @return 0 on success
+ *         -1 if S2BinLib not initialized
+ *         -2 if invalid parameters
+ *         -5 if internal error (mutex lock failed)
+ * 
+ * @example
+ *     int result = s2binlib_unload_binary("server");
+ *     if (result == 0) {
+ *         printf("Binary unloaded successfully\n");
+ *     }
+ */
+int s2binlib_unload_binary(const char* binary_name);
+
+/**
+ * Unload all binaries from memory
+ * 
+ * Removes all loaded binaries from the internal cache, freeing up memory.
+ * This is useful for cleanup operations or when you need to start fresh.
+ * 
+ * @return 0 on success
+ *         -1 if S2BinLib not initialized
+ *         -5 if internal error (mutex lock failed)
+ * 
+ * @example
+ *     int result = s2binlib_unload_all_binaries();
+ *     if (result == 0) {
+ *         printf("All binaries unloaded successfully\n");
+ *     }
+ */
+int s2binlib_unload_all_binaries(void);
+
+/**
+ * Install a JIT trampoline at a memory address
+ * 
+ * Creates a JIT trampoline that can be used to hook or intercept function calls.
+ * This function reads the original function pointer at the specified memory address,
+ * creates a trampoline, and replaces the original pointer with the trampoline address.
+ * 
+ * If a trampoline is already installed at the same address, this function does nothing
+ * and returns success.
+ * 
+ * @param mem_address Runtime memory address where to install the trampoline
+ * @param trampoline_address_out Pointer to store the resulting trampoline address
+ * 
+ * @return 0 on success
+ *         -1 if S2BinLib not initialized
+ *         -2 if invalid parameters
+ *         -3 if failed to install trampoline
+ *         -5 if internal error
+ * 
+ * @warning This function modifies memory at the specified address and changes
+ *          memory protection flags. The caller must ensure that:
+ *          - The memory address is valid and writable
+ *          - The address points to an 8-byte function pointer
+ *          - No other threads are accessing the memory during the operation
+ * 
+ * @example
+ *     void* vtable_ptr = ...; // Get vtable pointer
+ *     void* trampoline_address;
+ *     int result = s2binlib_install_trampoline(vtable_ptr, &trampoline_address);
+ *     if (result == 0) {
+ *         printf("Trampoline installed successfully\n");
+ *     }
+ */
+int s2binlib_install_trampoline(void* mem_address, void** trampoline_address_out);
+
+/**
+ * @brief Follow cross-reference from memory address to memory address
+ * 
+ * This function reads the instruction at the given memory address,
+ * decodes it using iced-x86, and returns the target address if the
+ * instruction contains a valid cross-reference.
+ * 
+ * Valid xrefs include:
+ * - RIP-relative memory operands (e.g., lea rax, [rip+0x1000])
+ * - Near branches (call, jmp, jcc)
+ * - Absolute memory operands
+ * 
+ * @param mem_address Runtime memory address to analyze
+ * @param target_address_out Pointer to store the target address
+ * 
+ * @return 0 on success (target address written to target_address_out)
+ *         -1 if S2BinLib not initialized
+ *         -2 if invalid parameters
+ *         -3 if no valid xref found or invalid instruction
+ *         -5 if internal error
+ * 
+ * @warning This function reads memory at the specified address.
+ *          The caller must ensure that:
+ *          - The memory address is valid and readable
+ *          - The address points to executable code
+ * 
+ * @example
+ *     void* instruction_addr = ...; // Address of an instruction
+ *     void* target_addr;
+ *     int result = s2binlib_follow_xref_mem_to_mem(instruction_addr, &target_addr);
+ *     if (result == 0) {
+ *         printf("Xref target: %p\n", target_addr);
+ *     }
+ */
+int s2binlib_follow_xref_mem_to_mem(const void* mem_address, void** target_address_out);
+
+/**
+ * @brief Follow cross-reference from virtual address to memory address
+ * 
+ * This function reads the instruction at the given virtual address from the file,
+ * decodes it using iced-x86, and returns the target memory address if the
+ * instruction contains a valid cross-reference.
+ * 
+ * Valid xrefs include:
+ * - RIP-relative memory operands (e.g., lea rax, [rip+0x1000])
+ * - Near branches (call, jmp, jcc)
+ * - Absolute memory operands
+ * 
+ * @param binary_name Name of the binary (e.g., "server", "client")
+ * @param va Virtual address to analyze
+ * @param target_address_out Pointer to store the target memory address
+ * 
+ * @return 0 on success (target address written to target_address_out)
+ *         -1 if S2BinLib not initialized
+ *         -2 if invalid parameters
+ *         -3 if failed to load binary or no valid xref found
+ *         -5 if internal error
+ * 
+ * @example
+ *     void* target_addr;
+ *     int result = s2binlib_follow_xref_va_to_mem("server", 0x140001000, &target_addr);
+ *     if (result == 0) {
+ *         printf("Xref target: %p\n", target_addr);
+ *     }
+ */
+int s2binlib_follow_xref_va_to_mem(const char* binary_name, uint64_t va, void** target_address_out);
+
+/**
+ * @brief Follow cross-reference from virtual address to virtual address
+ * 
+ * This function reads the instruction at the given virtual address from the file,
+ * decodes it using iced-x86, and returns the target virtual address if the
+ * instruction contains a valid cross-reference.
+ * 
+ * Valid xrefs include:
+ * - RIP-relative memory operands (e.g., lea rax, [rip+0x1000])
+ * - Near branches (call, jmp, jcc)
+ * - Absolute memory operands
+ * 
+ * @param binary_name Name of the binary (e.g., "server", "client")
+ * @param va Virtual address to analyze
+ * @param target_va_out Pointer to store the target virtual address
+ * 
+ * @return 0 on success (target VA written to target_va_out)
+ *         -1 if S2BinLib not initialized
+ *         -2 if invalid parameters
+ *         -3 if failed to load binary or no valid xref found
+ *         -5 if internal error
+ * 
+ * @example
+ *     uint64_t target_va;
+ *     int result = s2binlib_follow_xref_va_to_va("server", 0x140001000, &target_va);
+ *     if (result == 0) {
+ *         printf("Xref target VA: 0x%llX\n", target_va);
+ *     }
+ */
+int s2binlib_follow_xref_va_to_va(const char* binary_name, uint64_t va, uint64_t* target_va_out);
 
 #ifdef __cplusplus
 }
