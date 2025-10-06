@@ -7,12 +7,13 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 
 // generated
 /// <summary> 
-/// Event "gameui_hidden"
+/// Event "game_init"
+/// sent when a new game is started
 /// </summary>
-internal class EventGameuiHiddenImpl : GameEvent<EventGameuiHidden>, EventGameuiHidden
+internal class EventGameInitImpl : GameEvent<EventGameInit>, EventGameInit
 {
 
-  public EventGameuiHiddenImpl(nint address) : base(address)
+  public EventGameInitImpl(nint address) : base(address)
   {
   }
 }

@@ -7,12 +7,12 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 
 // generated
 /// <summary> 
-/// Event "gameui_hidden"
+/// Event "client_loadout_changed"
 /// </summary>
-internal class EventGameuiHiddenImpl : GameEvent<EventGameuiHidden>, EventGameuiHidden
+internal class EventClientLoadoutChangedImpl : GameEvent<EventClientLoadoutChanged>, EventClientLoadoutChanged
 {
 
-  public EventGameuiHiddenImpl(nint address) : base(address)
+  public EventClientLoadoutChangedImpl(nint address) : base(address)
   {
   }
 }

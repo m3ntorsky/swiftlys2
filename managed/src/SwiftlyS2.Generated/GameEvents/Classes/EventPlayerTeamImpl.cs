@@ -16,12 +16,15 @@ internal class EventPlayerTeamImpl : GameEvent<EventPlayerTeam>, EventPlayerTeam
   {
   }
 
+  // player
   public CCSPlayerController UserIdController
   { get => Accessor.GetPlayerController("userid"); }
 
+  // player
   public CCSPlayerPawn UserIdPawn
   { get => Accessor.GetPlayerPawn("userid"); }
 
+  // player
   public int UserId
   { get => Accessor.GetInt32("userid"); set => Accessor.SetInt32("userid", value); }
 
@@ -43,6 +46,7 @@ internal class EventPlayerTeamImpl : GameEvent<EventPlayerTeam>, EventPlayerTeam
   public string Name
   { get => Accessor.GetString("name"); set => Accessor.SetString("name", value); }
 
+  // true if player is a bot
   public bool IsBot
   { get => Accessor.GetBool("isbot"); set => Accessor.SetBool("isbot", value); }
 }

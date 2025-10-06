@@ -132,4 +132,8 @@ internal class EventInstructorServerHintCreateImpl : GameEvent<EventInstructorSe
   // offset for attached panels
   public float HintVrOffsetZ
   { get => Accessor.GetFloat("hint_vr_offset_z"); set => Accessor.SetFloat("hint_vr_offset_z", value); }
+
+  // gamepad bindings to use when use_binding is the onscreen icon
+  public string HintGamepadBinding
+  { get => Accessor.GetString("hint_gamepad_binding"); set => Accessor.SetString("hint_gamepad_binding", value); }
 }

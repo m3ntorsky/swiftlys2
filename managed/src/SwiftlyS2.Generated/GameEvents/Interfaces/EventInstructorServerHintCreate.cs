@@ -218,4 +218,11 @@ public interface EventInstructorServerHintCreate : IGameEvent<EventInstructorSer
   /// </summary>
   float HintVrOffsetZ { get; set; }
 
+  /// <summary>
+  /// gamepad bindings to use when use_binding is the onscreen icon
+  /// <br/>
+  /// type: string
+  /// </summary>
+  string HintGamepadBinding { get; set; }
+
 }

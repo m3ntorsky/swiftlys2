@@ -7,12 +7,12 @@ namespace SwiftlyS2.Core.GameEventDefinitions;
 
 // generated
 /// <summary> 
-/// Event "gameui_hidden"
+/// Event "round_announce_final"
 /// </summary>
-internal class EventGameuiHiddenImpl : GameEvent<EventGameuiHidden>, EventGameuiHidden
+internal class EventRoundAnnounceFinalImpl : GameEvent<EventRoundAnnounceFinal>, EventRoundAnnounceFinal
 {
 
-  public EventGameuiHiddenImpl(nint address) : base(address)
+  public EventRoundAnnounceFinalImpl(nint address) : base(address)
   {
   }
 }

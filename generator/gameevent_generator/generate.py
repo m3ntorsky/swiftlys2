@@ -202,11 +202,30 @@ def parse_gameevents_file(path: Path) -> Dict[str, GameEventDef]:
     if m:
       name = m.group(1)
       header_comment = _extract_inline_comment(line_raw)
-      # Look ahead for '{'
+      # Look ahead for '{' or '{}' on same/next line
+      # Check if {} is on the same line
+      if '{}' in line_raw:
+        # Empty event definition on same line like: "event_name" {}
+        ev = events.get(name) or GameEventDef(name)
+        if header_comment and not ev.comment:
+          ev.comment = header_comment
+        events[name] = ev
+        continue
+      
       # Next non-empty, non-comment line should be '{'
       j = i
       while j < len(lines) and (not lines[j].strip() or lines[j].strip().startswith('//')):
         j += 1
+      
+      # Check if next line is just '{}'
+      if j < len(lines) and lines[j].strip() == '{}':
+        ev = events.get(name) or GameEventDef(name)
+        if header_comment and not ev.comment:
+          ev.comment = header_comment
+        events[name] = ev
+        i = j + 1
+        continue
+      
       if j < len(lines) and lines[j].strip().startswith('{'):
         # Parse nested until matching '}'
         i = j + 1
@@ -227,10 +246,29 @@ def parse_gameevents_file(path: Path) -> Dict[str, GameEventDef]:
           if mm:
             ev_name = mm.group(1)
             ev_header_comment = _extract_inline_comment(raw)
+            
+            # Check if {} is on the same line
+            if '{}' in raw:
+              ev = events.get(ev_name) or GameEventDef(ev_name)
+              if ev_header_comment and not ev.comment:
+                ev.comment = ev_header_comment
+              events[ev_name] = ev
+              continue
+            
             # expect '{' next
             k = i
             while k < len(lines) and (not lines[k].strip() or lines[k].strip().startswith('//')):
               k += 1
+            
+            # Check if next line is just '{}'
+            if k < len(lines) and lines[k].strip() == '{}':
+              ev = events.get(ev_name) or GameEventDef(ev_name)
+              if ev_header_comment and not ev.comment:
+                ev.comment = ev_header_comment
+              events[ev_name] = ev
+              i = k + 1
+              continue
+            
             if k < len(lines) and lines[k].strip().startswith('{'):
               i = k + 1
               ev = events.get(ev_name) or GameEventDef(ev_name)
@@ -543,7 +581,6 @@ def main():
         for fname, fdef in ev.fields.items():
           all_events[name].add_field(fdef)
 
-  # Generate files
   for ev in tqdm.tqdm(all_events.values(), desc="Generating gameevents files..."):
     iface_code = render_interface(ev)
     class_code = render_class(ev)

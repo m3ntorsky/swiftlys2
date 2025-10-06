@@ -29,4 +29,29 @@ public interface EventVoteChanged : IGameEvent<EventVoteChanged> {
   /// </summary>
   byte PotentialVotes { get; set; }
 
+  /// <summary>
+  /// type: byte
+  /// </summary>
+  byte VoteOption1 { get; set; }
+
+  /// <summary>
+  /// type: byte
+  /// </summary>
+  byte VoteOption2 { get; set; }
+
+  /// <summary>
+  /// type: byte
+  /// </summary>
+  byte VoteOption3 { get; set; }
+
+  /// <summary>
+  /// type: byte
+  /// </summary>
+  byte VoteOption4 { get; set; }
+
+  /// <summary>
+  /// type: byte
+  /// </summary>
+  byte VoteOption5 { get; set; }
+
 }
