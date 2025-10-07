@@ -27,6 +27,9 @@ internal static class Bootstrap {
     AnsiConsole.Write(new FigletText("SwiftlyS2").LeftJustified().Color(Spectre.Console.Color.LightSteelBlue1));
 
     _host = Host.CreateDefaultBuilder()
+      .UseConsoleLifetime(options => {
+        options.SuppressStatusMessages = true;
+      })
       .ConfigureServices((context, services) =>
       {
         services.AddHostedService<StartupService>();

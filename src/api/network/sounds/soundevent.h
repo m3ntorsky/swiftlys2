@@ -91,6 +91,7 @@ public:
     virtual void RemoveClient(int playerid) = 0;
     virtual void ClearClients() = 0;
     virtual void AddAllClients() = 0;
+    virtual void SetClientMask(uint64_t mask) = 0;
     virtual std::vector<int> GetClients() = 0;
 
     virtual bool HasField(const std::string& name) = 0;

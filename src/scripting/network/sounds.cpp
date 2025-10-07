@@ -161,12 +161,7 @@ uint64_t Bridge_Sounds_GetClients(void* event)
 
 void Bridge_Sounds_SetClients(void* event, uint64_t clients)
 {
-    std::vector<int> vec;
-    for (int i = 0; i < 64; i++)
-    {
-        if (clients & (1ull << i))
-            ((ISoundEvent*)event)->AddClient(i);
-    }
+    ((ISoundEvent*)event)->SetClientMask(clients);
 }
 
 DEFINE_NATIVE("Sounds.CreateSoundEvent", Bridge_Sounds_CreateSoundEvent);
