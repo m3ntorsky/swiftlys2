@@ -305,8 +305,7 @@ internal class ConVar<T> : IConVar<T>{
 
       // var convertedValue = (T)Convert.ChangeType(value, typeof(T))!;
       callback(value);
-      removeSelf();
-
+      if(removeSelf != null) removeSelf();
     };
 
 

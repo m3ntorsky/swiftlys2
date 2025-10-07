@@ -30,11 +30,14 @@ using SwiftlyS2.Shared.Database;
 using SwiftlyS2.Core.Translations;
 using SwiftlyS2.Core.Permissions;
 using SwiftlyS2.Shared.Permissions;
+using SwiftlyS2.Core.Menus;
+using SwiftlyS2.Shared.Menus;
 
 namespace SwiftlyS2.Core.Services;
 
 
-internal class SwiftlyCore : ISwiftlyCore, IDisposable {
+internal class SwiftlyCore : ISwiftlyCore, IDisposable
+{
 
   private ServiceProvider _ServiceProvider { get; init; }
 
@@ -59,8 +62,10 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   public Localizer Localizer { get; init; }
   public PermissionManager PermissionManager { get; init; }
   public RegistratorService RegistratorService { get; init; }
+  public MenuManager MenuManager { get; init; }
   public string ContextBasePath { get; init; }
-  public SwiftlyCore(string contextId, string contextBaseDirectory, PluginMetadata? pluginManifest, Type contextType, IServiceProvider coreProvider) {
+  public SwiftlyCore(string contextId, string contextBaseDirectory, PluginMetadata? pluginManifest, Type contextType, IServiceProvider coreProvider)
+  {
 
     CoreContext id = new(contextId, contextBaseDirectory, pluginManifest);
     ContextBasePath = contextBaseDirectory;
@@ -113,9 +118,11 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
       .AddSingleton<ITranslationService>(provider => provider.GetRequiredService<TranslationService>())
       .AddSingleton<ILocalizer>(provider => provider.GetRequiredService<TranslationService>().GetLocalizer())
       .AddSingleton<IRegistratorService>(provider => provider.GetRequiredService<RegistratorService>())
+      .AddSingleton<IMenuManager>(provider => provider.GetRequiredService<MenuManager>())
 
       .AddLogging(
-        builder => {
+        builder =>
+        {
           builder.AddProvider(new SwiftlyLoggerProvider(id.Name));
         }
       );
@@ -143,10 +150,12 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     Localizer = _ServiceProvider.GetRequiredService<Localizer>();
     PermissionManager = _ServiceProvider.GetRequiredService<PermissionManager>();
     RegistratorService = _ServiceProvider.GetRequiredService<RegistratorService>();
+    MenuManager = _ServiceProvider.GetRequiredService<MenuManager>();
     Logger = LoggerFactory.CreateLogger(contextType);
   }
 
-  public void InitializeType(Type type) {
+  public void InitializeType(Type type)
+  {
     this.Parse(type);
   }
 
@@ -155,7 +164,8 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
     RegistratorService.Register(instance);
   }
 
-  public void Dispose() {
+  public void Dispose()
+  {
     _ServiceProvider.Dispose();
   }
 
@@ -180,5 +190,6 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable {
   ILocalizer ISwiftlyCore.Localizer => Localizer;
   IPermissionManager ISwiftlyCore.Permission => PermissionManager;
   IRegistratorService ISwiftlyCore.Registrator => RegistratorService;
+  IMenuManager ISwiftlyCore.Menus => MenuManager;
   string ISwiftlyCore.PluginPath => ContextBasePath;
 }

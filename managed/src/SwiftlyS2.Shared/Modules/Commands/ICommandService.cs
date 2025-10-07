@@ -3,7 +3,8 @@ using SwiftlyS2.Shared.Misc;
 
 namespace SwiftlyS2.Shared.Commands;
 
-public interface ICommandService {
+public interface ICommandService
+{
 
   /// <summary>
   /// The listener for the command.
@@ -76,7 +77,7 @@ public interface ICommandService {
   /// Hooks client chat, will be fired when a player sends any chat message.
   /// </summary>
   /// <param name="handler">The handler callback for the client chat.</param>
-  void HookClientChat(ClientChatHandler handler);
+  Guid HookClientChat(ClientChatHandler handler);
 
   /// <summary>
   /// Unhooks a client chat.

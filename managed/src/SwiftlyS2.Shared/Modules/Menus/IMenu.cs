@@ -21,6 +21,7 @@ public interface IMenu
     public bool CanExit { get; set; }
     public MenuType Kind { get; set; }
     public Color Color { get; set; }
+    public string? RenderText { get; }
 
     public ref IMenuOption AddOption(string display, Action<IPlayer, IMenuOption, IMenu>? onChoice, bool defaultDisabled = false);
     public ref IMenuOption AddBoolOption(string display, bool defaultValue, Action<IPlayer, IMenuOption, IMenu>? onChoice, bool defaultDisabled = false);

@@ -11,45 +11,19 @@
     "Menu": {
         "AvailableInputModes": [
             "chat",
-            "button"
-        ],
-        "AvailableKinds": [
-            "screen",
-            "center"
+            "button",
+            "wasd"
         ],
         "Buttons": {
-            "Exit": {
-                "Button": "tab",
-                "Option": false
-            },
+            "Exit": "tab",
             "Scroll": "shift",
             "Use": "e"
         },
         "InputMode": "button",
-        "Kind": "screen",
         "KindSettings": {
             "Center": {
                 "ItemsPerPage": 7
             },
-            "Screen": {
-                "DrawBackground": true,
-                "ItemsPerPage": 9,
-                "Mode": "compatibility",
-                "Modes": {
-                    "Compatibility": {
-                        "Font": "Sans Serif",
-                        "FontSize": 35,
-                        "X": 0.14,
-                        "Y": 0.68
-                    },
-                    "Normal": {
-                        "Font": "Sans Serif",
-                        "FontSize": 35,
-                        "X": 0.0,
-                        "Y": 0.68
-                    }
-                }
-            }
         },
         "NavigationPrefix": "➤",
         "Sound": {

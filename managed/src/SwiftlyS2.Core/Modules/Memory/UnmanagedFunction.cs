@@ -18,7 +18,7 @@ internal abstract class UnmanagedFunction : NativeHandle, IDisposable {
 
 internal class UnmanagedFunction<TDelegate> : UnmanagedFunction, IUnmanagedFunction<TDelegate>, IDisposable where TDelegate : Delegate {
 
-  public nint Address { get; private set; }
+  public new nint Address { get; private set; }
 
   public TDelegate CallOriginal {
     get {

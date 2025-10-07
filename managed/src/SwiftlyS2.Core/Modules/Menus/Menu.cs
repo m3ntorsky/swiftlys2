@@ -18,6 +18,8 @@ internal class Menu : IMenu
     public bool CanExit { get; set; } = true;
     public MenuType Kind { get; set; } = MenuType.CenterMenu;
     public Color Color { get; set; }
+    public IMenuManager? Manager { get; set; } = null;
+    public string? RenderText { get; private set; } = null;
 
     public ref IMenuOption AddBoolOption(string display, bool defaultValue, Action<IPlayer, IMenuOption, IMenu>? onChoice, bool defaultDisabled = false)
     {
@@ -31,11 +33,11 @@ internal class Menu : IMenu
             Index = Options.Count,
             OnChoice = defaultDisabled ? null : (IPlayer player, IMenuOption option, IMenu menu) =>
             {
-                if(option.Type == OptionType.Bool)
+                if (option.Type == OptionType.Bool)
                 {
                     bool disabled = option.Value is false;
                     option.Display = $"{(defaultValue ? "[<font color='green'>✔</font>]" : "[<font color='red'>❌</font>]")} {display}";
-                    if(onChoice != null) onChoice(player, option, menu);
+                    if (onChoice != null) onChoice!(player, option, menu);
                 }
             },
         });
@@ -45,19 +47,35 @@ internal class Menu : IMenu
 
     public ref IMenuOption AddInputOption(string display, string placeholder, string? inputRequestMessage, Action<IPlayer, IMenuOption, IMenu, string>? onInput, bool defaultDisabled = false)
     {
-        // @todo: maybe make a chat listener for this one
-        throw new NotImplementedException();
+        Options.Add(new MenuOption
+        {
+            Menu = this,
+            Display = defaultDisabled ? $"<font color='grey'>{display}: {placeholder}</font>" : $"{display}: <font color='grey'>{placeholder}</font>",
+            Type = OptionType.Input,
+            Disabled = defaultDisabled,
+            Index = Options.Count,
+            OnChoice = defaultDisabled ? null : (IPlayer player, IMenuOption option, IMenu menu) =>
+            {
+                if (option.Type == OptionType.Input && onInput != null && Manager != null)
+                {
+                    Manager.SetInputState(player, (p, o, m, s) =>
+                    {
+                        o.Display = $"{display}: {s}";
+                        onInput!(p, o, m, s);
+                    });
+                }
+            },
+        });
+
+        return ref CollectionsMarshal.AsSpan(Options)[^1];
     }
 
     public ref IMenuOption AddOption(string display, Action<IPlayer, IMenuOption, IMenu>? onChoice, bool defaultDisabled = false)
     {
-        // @todo: Disabled Color
-        string color = "gray";
-
         Options.Add(new MenuOption
         {
             Menu = this,
-            Display = defaultDisabled ? $"<font color='{color}'>{display}</font>" : display,
+            Display = defaultDisabled ? $"<font color='grey'>{display}</font>" : display,
             Type = OptionType.Button,
             Disabled = defaultDisabled,
             Index = Options.Count,
@@ -74,7 +92,7 @@ internal class Menu : IMenu
             Options.Add(new MenuOption
             {
                 Menu = this,
-                Display = $"<font color='gray'>{display}: Empty</font>",
+                Display = $"<font color='#afafaf'>{display}: Empty</font>",
                 Type = OptionType.Slider,
                 Disabled = true,
                 Index = Options.Count,
@@ -83,7 +101,7 @@ internal class Menu : IMenu
                 SliderDisplayItems = 0,
                 OnSlide = null,
             });
-        } 
+        }
         else
         {
             if (defaultValue == null && values.Count > 0)
@@ -96,7 +114,7 @@ internal class Menu : IMenu
             Options.Add(new MenuOption
             {
                 Menu = this,
-                Display = defaultDisabled ? $"<font color='gray'>{display}: {defaultValue}</font>" : $"{display}: {defaultValue}",
+                Display = defaultDisabled ? $"<font color='grey'>{display}: {defaultValue}</font>" : $"{display}: {defaultValue}",
                 Type = OptionType.Slider,
                 Disabled = defaultDisabled,
                 Index = Options.Count,
@@ -108,7 +126,7 @@ internal class Menu : IMenu
                     if (option.Type == OptionType.Slider && option.SliderValues != null)
                     {
                         int idx = option.SelectedIndex;
-                        if(onSlide != null) onSlide(player, option, menu, idx, option.SliderValues[idx]);
+                        if (onSlide != null) onSlide!(player, option, menu, idx, option.SliderValues[idx]);
                     }
                 },
             });

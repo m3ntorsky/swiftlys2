@@ -12,3 +12,4 @@ void SendMessageToConsole = string msg
 ptr GetTraceManager = void
 string GetCurrentGame = void
 string GetNativeVersion = void
+string GetMenuSettings = void
