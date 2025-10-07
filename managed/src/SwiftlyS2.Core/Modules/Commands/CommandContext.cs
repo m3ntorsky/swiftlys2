@@ -1,7 +1,7 @@
 using SwiftlyS2.Core.Natives;
-using SwiftlyS2.Core.Services;
+using SwiftlyS2.Core.Players;
 using SwiftlyS2.Shared.Commands;
-using SwiftlyS2.Shared.Services;
+using SwiftlyS2.Shared.Players;
 
 namespace SwiftlyS2.Core.Commands;
 

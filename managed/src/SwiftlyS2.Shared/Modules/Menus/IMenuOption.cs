@@ -1,4 +1,4 @@
-﻿using SwiftlyS2.Shared.Services;
+﻿using SwiftlyS2.Shared.Players;
 
 namespace SwiftlyS2.Shared.Menus;
 

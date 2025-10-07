@@ -2,11 +2,12 @@
 using SwiftlyS2.Core.SchemaDefinitions;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Shared.Players;
 using SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.SchemaDefinitions;
-using SwiftlyS2.Shared.Services;
+using SwiftlyS2.Shared.Translation;
 
-namespace SwiftlyS2.Core.Services;
+namespace SwiftlyS2.Core.Players;
 
 internal class Player : IPlayer
 {
@@ -53,6 +54,9 @@ internal class Player : IPlayer
     {
         get => Controller != null && Controller.IsValid && !Controller.IsHLTV && Controller.Connected == PlayerConnectedState.PlayerConnected && Pawn != null && Pawn.IsValid;
     }
+
+    Language IPlayer.PlayerLanguage => throw new NotImplementedException();
+
     public unsafe void ChangeTeam(Team team)
     {
         NativePlayer.ChangeTeam(_pid, (byte)team);

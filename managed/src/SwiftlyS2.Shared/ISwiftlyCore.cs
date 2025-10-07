@@ -10,9 +10,11 @@ using SwiftlyS2.Shared.Memory;
 using SwiftlyS2.Shared.Menus;
 using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.Permissions;
+using SwiftlyS2.Shared.Players;
 using SwiftlyS2.Shared.Profiler;
 using SwiftlyS2.Shared.Scheduler;
 using SwiftlyS2.Shared.Services;
+using SwiftlyS2.Shared.Translation;
 
 namespace SwiftlyS2.Shared;
 

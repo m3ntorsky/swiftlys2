@@ -2,8 +2,9 @@
 using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.Translation;
 
-namespace SwiftlyS2.Shared.Services;
+namespace SwiftlyS2.Shared.Players;
 
 [Flags]
 public enum VoiceFlagValue: uint

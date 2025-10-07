@@ -1,4 +1,4 @@
-namespace SwiftlyS2.Shared.Services;
+namespace SwiftlyS2.Shared.Translation;
 
 /// <summary>
 /// Represents a localizer that can be used to get translations for a given key.

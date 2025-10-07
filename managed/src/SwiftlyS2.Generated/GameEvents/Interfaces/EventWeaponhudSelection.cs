@@ -1,6 +1,7 @@
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Core.GameEventDefinitions;
+using SwiftlyS2.Shared.Players;
 
 namespace SwiftlyS2.Shared.GameEventDefinitions;
 
@@ -28,6 +29,10 @@ public interface EventWeaponhudSelection : IGameEvent<EventWeaponhudSelection> {
   /// </summary>
   CCSPlayerPawn UserIdPawn { get; }
 
+
+  // Player who this event applies to
+  public IPlayer UserIdPlayer
+  { get => Accessor.GetPlayer("userid"); }
   /// <summary>
   /// Player who this event applies to
   /// <br/>

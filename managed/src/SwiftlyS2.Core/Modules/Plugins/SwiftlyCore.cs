@@ -32,6 +32,9 @@ using SwiftlyS2.Core.Permissions;
 using SwiftlyS2.Shared.Permissions;
 using SwiftlyS2.Core.Menus;
 using SwiftlyS2.Shared.Menus;
+using SwiftlyS2.Shared.Players;
+using SwiftlyS2.Shared.Translation;
+using SwiftlyS2.Core.Players;
 
 namespace SwiftlyS2.Core.Services;
 

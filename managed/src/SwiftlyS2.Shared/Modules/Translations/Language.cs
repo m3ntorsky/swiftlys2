@@ -1,4 +1,4 @@
-namespace SwiftlyS2.Shared.Services;
+namespace SwiftlyS2.Shared.Translation;
 
 
 public sealed class Language : IEquatable<Language>

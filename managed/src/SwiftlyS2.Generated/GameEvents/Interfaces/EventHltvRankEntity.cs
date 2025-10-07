@@ -1,6 +1,7 @@
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Core.GameEventDefinitions;
+using SwiftlyS2.Shared.Players;
 
 namespace SwiftlyS2.Shared.GameEventDefinitions;
 
@@ -29,6 +30,10 @@ public interface EventHltvRankEntity : IGameEvent<EventHltvRankEntity> {
   /// </summary>
   CCSPlayerPawn UserIdPawn { get; }
 
+
+  // player slot
+  public IPlayer UserIdPlayer
+  { get => Accessor.GetPlayer("userid"); }
   /// <summary>
   /// player slot
   /// <br/>

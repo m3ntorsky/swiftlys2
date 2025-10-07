@@ -328,6 +328,7 @@ def render_interface(event: GameEventDef) -> str:
     "using SwiftlyS2.Shared.SchemaDefinitions;",
     "using SwiftlyS2.Shared.GameEvents;",
     "using SwiftlyS2.Core.GameEventDefinitions;",
+    "using SwiftlyS2.Shared.Players;",
   ]
   lines: List[str] = []
   lines.extend(usings)
@@ -386,6 +387,21 @@ def render_interface(event: GameEventDef) -> str:
       lines.extend(comment_lines)
       lines.append(f"  CCSPlayerPawn {prop_name_pawn} {{ get; }}")
       lines.append("")
+
+      # Player
+      prop_name_player = f"{base_prop}Player"
+      if prop_name_player in used_prop_names:
+        used_prop_names[prop_name_player] += 1
+        prop_name_player = f"{prop_name_player}{used_prop_names[prop_name_player]}"
+      else:
+        used_prop_names[prop_name_player] = 1
+      getter_player = f'Accessor.GetPlayer("{fname}")'
+      lines.append("")
+      if fdef.comment:
+        lines.append(f"  // {fdef.comment.strip()}")
+      lines.append(f"  public IPlayer {prop_name_player}")
+      lines.append(f"  {{ get => {getter_player}; }}")
+
       # Raw int (read/write)
       prop_name_raw = base_prop
       if prop_name_raw in used_prop_names:
@@ -440,6 +456,7 @@ def render_class(event: GameEventDef) -> str:
   lines.append("using SwiftlyS2.Shared.GameEvents;")
   lines.append("using SwiftlyS2.Shared.SchemaDefinitions;")
   lines.append("using SwiftlyS2.Shared.GameEventDefinitions;")
+  lines.append("using SwiftlyS2.Shared.Players;")
   lines.append("")
   lines.append("namespace SwiftlyS2.Core.GameEventDefinitions;")
   lines.append("")
@@ -485,6 +502,21 @@ def render_class(event: GameEventDef) -> str:
         lines.append(f"  // {fdef.comment.strip()}")
       lines.append(f"  public CCSPlayerPawn {prop_name_pawn}")
       lines.append(f"  {{ get => {getter_pawn}; }}")
+
+      # Player
+      prop_name_player = f"{base_prop}Player"
+      if prop_name_player in used_prop_names:
+        used_prop_names[prop_name_player] += 1
+        prop_name_player = f"{prop_name_player}{used_prop_names[prop_name_player]}"
+      else:
+        used_prop_names[prop_name_player] = 1
+      getter_player = f'Accessor.GetPlayer("{fname}")'
+      lines.append("")
+      if fdef.comment:
+        lines.append(f"  // {fdef.comment.strip()}")
+      lines.append(f"  public IPlayer {prop_name_player}")
+      lines.append(f"  {{ get => {getter_player}; }}")
+
       # Raw int
       prop_name_raw = base_prop
       if prop_name_raw in used_prop_names:
