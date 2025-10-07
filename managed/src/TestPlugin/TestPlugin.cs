@@ -297,7 +297,7 @@ public class TestPlugin : BasePlugin {
     Console.WriteLine("TestPlugin TestCommand5");
   }
 
-  [Command("tt6", permissions: "tt6")]
+  [Command("tt6", permission: "tt6")]
   public void TestCommand6(ICommandContext context) {
     Console.WriteLine("TestPlugin TestCommand6");
   }

@@ -6,11 +6,11 @@ public class Command : Attribute {
 
   public bool RegisterRaw { get; set; } = false;
 
-  public string Permissions { get; set; } = "";
+  public string Permission { get; set; } = "";
 
-  public Command(string name, bool registerRaw = false, string permissions = "") {
+  public Command(string name, bool registerRaw = false, string permission = "") {
     Name = name;
     RegisterRaw = registerRaw;
-    Permissions = permissions;
+    Permission = permission;
   }
 }

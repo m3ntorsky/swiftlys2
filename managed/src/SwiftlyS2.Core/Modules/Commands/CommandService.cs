@@ -29,8 +29,8 @@ internal class CommandService : ICommandService, IDisposable
     _PermissionManager = permissionManager;
   }
 
-  public Guid RegisterCommand(string commandName, ICommandService.CommandListener handler, bool registerRaw = false, string permissions = "") {
-    var callback = new CommandCallback(commandName, registerRaw, handler, permissions, _PlayerManagerService, _PermissionManager, _LoggerFactory, _Profiler);
+  public Guid RegisterCommand(string commandName, ICommandService.CommandListener handler, bool registerRaw = false, string permission = "") {
+    var callback = new CommandCallback(commandName, registerRaw, handler, permission, _PlayerManagerService, _PermissionManager, _LoggerFactory, _Profiler);
     lock (_lock) {
       _callbacks.Add(callback);
     }

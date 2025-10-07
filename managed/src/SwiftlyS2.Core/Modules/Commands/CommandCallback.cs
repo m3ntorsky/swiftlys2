@@ -50,7 +50,7 @@ internal class CommandCallback : CommandCallbackBase {
   private readonly IPlayerManagerService _playerManagerService;
   private readonly IPermissionManager _permissionManager;
 
-  public CommandCallback(string commandName, bool registerRaw, ICommandService.CommandListener handler, string permissions, IPlayerManagerService playerManagerService, IPermissionManager permissionManager, ILoggerFactory loggerFactory, IContextedProfilerService profiler)
+  public CommandCallback(string commandName, bool registerRaw, ICommandService.CommandListener handler, string permission, IPlayerManagerService playerManagerService, IPermissionManager permissionManager, ILoggerFactory loggerFactory, IContextedProfilerService profiler)
     : base(loggerFactory, profiler)
   {
     _logger = LoggerFactory.CreateLogger<CommandCallback>();
@@ -59,7 +59,7 @@ internal class CommandCallback : CommandCallbackBase {
     Guid = Guid.NewGuid();
 
     CommandName = commandName;
-    _permissions = permissions;
+    _permissions = permission;
     _handler = handler;
 
     _unmanagedCallback = (playerId, argsPtr, commandNamePtr, prefixPtr, slient) => {
