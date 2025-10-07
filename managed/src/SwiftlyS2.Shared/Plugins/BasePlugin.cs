@@ -23,9 +23,9 @@ public abstract class BasePlugin : IPlugin {
     };
   }
 
-  public virtual void ConfigureSharedServices(IServiceCollection sharedServices) {}
+  public virtual void ConfigureSharedInterface(IInterfaceManager interfaceManager) {}
 
-  public virtual void UseSharedServices(IServiceProvider sharedProvider) {}
+  public virtual void UseSharedInterface(IInterfaceManager interfaceManager) {}
 
   public abstract void Load(bool hotReload);
 

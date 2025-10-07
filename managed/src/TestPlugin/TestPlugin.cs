@@ -36,11 +36,11 @@ public class TestPlugin : BasePlugin {
   public TestPlugin(ISwiftlyCore core) : base(core) {
   }
 
-  public override void ConfigureSharedServices(IServiceCollection sharedServices) {
+  public override void ConfigureSharedInterface(IInterfaceManager interfaceManager) {
     // Register plugin-specific services here if needed
   }
 
-  public override void UseSharedServices(IServiceProvider sharedProvider) {
+  public override void UseSharedInterface(IInterfaceManager interfaceManager) {
     // Use plugin-specific services here if needed
   }
 

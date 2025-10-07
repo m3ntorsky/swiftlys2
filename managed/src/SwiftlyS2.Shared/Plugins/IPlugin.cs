@@ -4,9 +4,9 @@ namespace SwiftlyS2.Shared.Plugins;
 
 public interface IPlugin {
 
-  public void ConfigureSharedServices(IServiceCollection sharedServices);
+  public void ConfigureSharedInterface(IInterfaceManager interfaceManager);
 
-  public void UseSharedServices(IServiceProvider sharedProvider);
+  public void UseSharedInterface(IInterfaceManager interfaceManager);
 
   public void Load(bool hotReload);
 

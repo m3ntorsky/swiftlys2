@@ -2,6 +2,7 @@ using System.Reflection;
 using McMaster.NETCore.Plugins;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SwiftlyS2.Core.Modules.Plugins;
 using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Plugins;
@@ -16,7 +17,8 @@ internal class PluginManager
   private ILogger _Logger { get; init; }
   private List<PluginContext> _Plugins { get; } = new();
   private FileSystemWatcher? _Watcher { get; set; }
-  private ServiceProvider? _SharedServiceProvider { get; set; }
+  private InterfaceManager _InterfaceManager { get; set; } = new();
+  private List<Type> _SharedTypes {get; set;} = new();
 
   private DateTime lastRead = DateTime.MinValue;
 
@@ -40,6 +42,13 @@ internal class PluginManager
     _Watcher.Changed += HandlePluginChange;
 
     _Watcher.EnableRaisingEvents = true;
+
+    Initialize();
+  }
+
+  public void Initialize() {
+    LoadContracts();
+    LoadPlugins();
   }
 
   public void HandlePluginChange(object sender, FileSystemEventArgs e)
@@ -74,7 +83,24 @@ internal class PluginManager
     }
   }
 
-  public void LoadPlugins()
+  private void LoadContracts()
+  {
+    var pluginDirs = Directory.GetDirectories(_RootDirService.GetPluginsRoot());
+
+    foreach (var pluginDir in pluginDirs) {
+      var pluginName = Path.GetFileName(pluginDir);
+      var contractPath = Path.Combine(pluginDir, pluginName + ".Contracts.dll");
+      if (File.Exists(contractPath)) {
+        var assembly = Assembly.LoadFrom(Path.Combine(pluginDir, pluginName + ".Contracts.dll"));
+        var contracts = assembly.GetTypes();
+        foreach (var contract in contracts) {
+          _SharedTypes.Add(contract);
+        }
+      }
+    }
+  }
+
+  private void LoadPlugins()
   {
     var pluginDirs = Directory.GetDirectories(_RootDirService.GetPluginsRoot());
 
@@ -107,24 +133,20 @@ internal class PluginManager
   private void RebuildSharedServices()
   {
 
-    if (_SharedServiceProvider != null)
-    {
-      _SharedServiceProvider.Dispose();
-    }
-
-    ServiceCollection sharedServices = new();
-    _Plugins
-      .Where(p => p.Status == PluginStatus.Loaded)
-      .ToList()
-      .ForEach(p => p.Plugin!.ConfigureSharedServices(sharedServices));
-
-
-    _SharedServiceProvider = sharedServices.BuildServiceProvider();
+    _InterfaceManager.Dispose();
 
     _Plugins
       .Where(p => p.Status == PluginStatus.Loaded)
       .ToList()
-      .ForEach(p => p.Plugin!.UseSharedServices(_SharedServiceProvider));
+      .ForEach(p => p.Plugin!.ConfigureSharedInterface(_InterfaceManager));
+
+
+    _InterfaceManager.Build();
+
+    _Plugins
+      .Where(p => p.Status == PluginStatus.Loaded)
+      .ToList()
+      .ForEach(p => p.Plugin!.UseSharedInterface(_InterfaceManager));
   }
 
 
@@ -150,7 +172,7 @@ internal class PluginManager
 
     var loader = PluginLoader.CreateFromAssemblyFile(
       assemblyFile: entrypointDll,
-      sharedTypes: [typeof(BasePlugin)],
+      sharedTypes: [typeof(BasePlugin), .._SharedTypes],
       config =>
       {
         config.IsUnloadable = true;

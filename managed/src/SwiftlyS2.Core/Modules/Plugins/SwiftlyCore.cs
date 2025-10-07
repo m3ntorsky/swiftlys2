@@ -98,6 +98,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable
       .AddSingleton<TranslationService>()
       .AddSingleton<Localizer>(provider => provider.GetRequiredService<TranslationService>().GetLocalizer())
       .AddSingleton<RegistratorService>()
+      .AddSingleton<MenuManager>()
       .AddSingleton<IPermissionManager>(provider => provider.GetRequiredService<PermissionManager>())
 
       .AddSingleton<IEventSubscriber>(provider => provider.GetRequiredService<EventSubscriber>())
@@ -150,7 +151,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable
     Localizer = _ServiceProvider.GetRequiredService<Localizer>();
     PermissionManager = _ServiceProvider.GetRequiredService<PermissionManager>();
     RegistratorService = _ServiceProvider.GetRequiredService<RegistratorService>();
-    MenuManager = _ServiceProvider.GetRequiredService<MenuManager>();
+    // MenuManager = _ServiceProvider.GetRequiredService<MenuManager>();
     Logger = LoggerFactory.CreateLogger(contextType);
   }
 
