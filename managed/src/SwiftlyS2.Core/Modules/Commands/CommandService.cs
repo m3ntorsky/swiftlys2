@@ -4,6 +4,8 @@ using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Commands;
 using SwiftlyS2.Shared.Plugins;
 using SwiftlyS2.Shared.Profiler;
+using SwiftlyS2.Shared.Players;
+using SwiftlyS2.Shared.Permissions;
 
 namespace SwiftlyS2.Core.Commands;
 
@@ -14,21 +16,22 @@ internal class CommandService : ICommandService, IDisposable
   private ILogger<CommandService> _Logger { get; init; }
   private ILoggerFactory _LoggerFactory { get; init; }
   private IContextedProfilerService _Profiler { get; init; }
+  private IPlayerManagerService _PlayerManagerService { get; init; }
+  private IPermissionManager _PermissionManager { get; init; }
 
   private object _lock = new();
 
-  public CommandService(ILogger<CommandService> logger, ILoggerFactory loggerFactory, IContextedProfilerService profiler)
-  {
+  public CommandService(ILogger<CommandService> logger, ILoggerFactory loggerFactory, IContextedProfilerService profiler, IPlayerManagerService playerManagerService, IPermissionManager permissionManager) {
     _Logger = logger;
     _LoggerFactory = loggerFactory;
     _Profiler = profiler;
+    _PlayerManagerService = playerManagerService;
+    _PermissionManager = permissionManager;
   }
 
-  public Guid RegisterCommand(string commandName, ICommandService.CommandListener handler, bool registerRaw = false)
-  {
-    var callback = new CommandCallback(commandName, registerRaw, handler, _LoggerFactory, _Profiler);
-    lock (_lock)
-    {
+  public Guid RegisterCommand(string commandName, ICommandService.CommandListener handler, bool registerRaw = false, string permission = "") {
+    var callback = new CommandCallback(commandName, registerRaw, handler, permission, _PlayerManagerService, _PermissionManager, _LoggerFactory, _Profiler);
+    lock (_lock) {
       _callbacks.Add(callback);
     }
 

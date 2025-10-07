@@ -19,7 +19,8 @@ internal static class CommandAttributeParser {
         var commandName = commandAttribute.Name;
         var commandAlias = commandAliasAttributes.Select(a => a.Alias).ToArray();
         var registerRaw = commandAttribute.RegisterRaw;
-        self.RegisterCommand(commandName, method.CreateDelegate<ICommandService.CommandListener>(instance), registerRaw);
+        var permission = commandAttribute.Permission;
+        self.RegisterCommand(commandName, method.CreateDelegate<ICommandService.CommandListener>(instance), registerRaw, permission);
         foreach (var alias in commandAlias)
         {
           self.RegisterCommandAlias(commandName, alias, registerRaw);
