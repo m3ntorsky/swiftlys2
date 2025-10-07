@@ -4,7 +4,7 @@ using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.Commands;
 using SwiftlyS2.Shared.Permissions;
-using SwiftlyS2.Shared.Services;
+using SwiftlyS2.Shared.Players;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Shared.Profiler;
 using SwiftlyS2.Shared;

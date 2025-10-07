@@ -4,7 +4,7 @@ using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Commands;
 using SwiftlyS2.Shared.Plugins;
 using SwiftlyS2.Shared.Profiler;
-using SwiftlyS2.Shared.Services;
+using SwiftlyS2.Shared.Players;
 using SwiftlyS2.Shared.Permissions;
 
 namespace SwiftlyS2.Core.Commands;
