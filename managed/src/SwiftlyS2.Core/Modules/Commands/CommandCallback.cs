@@ -1,9 +1,13 @@
 using System.Runtime.InteropServices;
 using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.Commands;
+using SwiftlyS2.Shared.Permissions;
+using SwiftlyS2.Shared.Services;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Shared.Profiler;
+using SwiftlyS2.Shared;
 
 namespace SwiftlyS2.Core.Commands;
 
@@ -40,17 +44,22 @@ internal class CommandCallback : CommandCallbackBase {
 
   private nint _unmanagedCallbackPtr;
   private ulong _nativeListenerId;
+  private string _permissions;
 
   private ILogger<CommandCallback> _logger;
+  private readonly IPlayerManagerService _playerManagerService;
+  private readonly IPermissionManager _permissionManager;
 
-  public CommandCallback(string commandName, bool registerRaw, ICommandService.CommandListener handler, ILoggerFactory loggerFactory, IContextedProfilerService profiler)
+  public CommandCallback(string commandName, bool registerRaw, ICommandService.CommandListener handler, string permissions, IPlayerManagerService playerManagerService, IPermissionManager permissionManager, ILoggerFactory loggerFactory, IContextedProfilerService profiler)
     : base(loggerFactory, profiler)
   {
     _logger = LoggerFactory.CreateLogger<CommandCallback>();
+    _playerManagerService = playerManagerService;
+    _permissionManager = permissionManager;
     Guid = Guid.NewGuid();
 
     CommandName = commandName;
-
+    _permissions = permissions;
     _handler = handler;
 
     _unmanagedCallback = (playerId, argsPtr, commandNamePtr, prefixPtr, slient) => {
@@ -63,7 +72,11 @@ internal class CommandCallback : CommandCallbackBase {
 
         var args = argsString.Split('\x01');
         var context = new CommandContext(playerId, args, commandNameString, prefixString, slient);
-        _handler(context);
+        if (string.IsNullOrWhiteSpace(_permissions) || _permissionManager.PlayerHasPermission(_playerManagerService.GetPlayer(playerId).SteamID, _permissions)) {
+          _handler(context);
+        } else {
+          context.Reply("You do not have permission to use this command.");
+        }
         Profiler.StopRecording(category);
       } catch (Exception e) {
         _logger.LogError(e, "Failed to handle command {0}.", commandName);

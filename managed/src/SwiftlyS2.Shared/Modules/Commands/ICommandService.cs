@@ -37,8 +37,9 @@ public interface ICommandService
   /// <param name="commandName">The command name.</param>
   /// <param name="handler">The handler callback for the command.</param>
   /// <param name="registerRaw">If set to false, the command will not starts with a `sw_` prefix.</param>
+  /// <param name="permissions">The permissions required to use the command.</param>
   /// <returns>The guid of the command.</returns>
-  Guid RegisterCommand(string commandName, CommandListener handler, bool registerRaw = false);
+  Guid RegisterCommand(string commandName, CommandListener handler, bool registerRaw = false, string permissions = "");
 
   /// <summary>
   /// Registers a command alias.

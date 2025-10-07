@@ -264,7 +264,7 @@ public class TestPlugin : BasePlugin {
 
   [EventListener<EventDelegates.OnEntityCreated>]
   public void OnEntityCreated(IOnEntityCreatedEvent @event) {
-    @event.Entity.Entity.DesignerName = "abc";
+    // @event.Entity.Entity.DesignerName = "abc";
     Console.WriteLine("TestPlugin OnEntityCreated222 " + @event.Entity.Entity?.DesignerName);
   }
 
@@ -290,6 +290,16 @@ public class TestPlugin : BasePlugin {
   [Command("tt4")]
   public void TestCommand4(ICommandContext context) {
     Console.WriteLine(Core.Permission.PlayerHasPermission(7656, context.Args[0]));
+  }
+
+  [Command("tt5")]
+  public void TestCommand5(ICommandContext context) {
+    Console.WriteLine("TestPlugin TestCommand5");
+  }
+
+  [Command("tt6", permissions: "tt6")]
+  public void TestCommand6(ICommandContext context) {
+    Console.WriteLine("TestPlugin TestCommand6");
   }
 
   [GameEventHandler(HookMode.Pre)]
