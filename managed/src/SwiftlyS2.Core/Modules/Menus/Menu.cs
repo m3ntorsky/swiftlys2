@@ -11,7 +11,6 @@ internal class Menu : IMenu
     public string Title { get; set; } = "";
     public int MaxTitleLength { get; set; } = 32;
     public List<IMenuOption> Options { get; set; } = new();
-    public List<IMenuOption>? PreviousOptions { get; set; } = new();
     public bool? FreezePlayer { get; set; } = null;
     public bool HasSound { get; set; } = true;
     public IMenu? ParentMenu { get; set; } = null;

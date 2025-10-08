@@ -1,6 +1,9 @@
 using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Events;
+using SwiftlyS2.Shared.Menus;
 using SwiftlyS2.Shared.Misc;
+using SwiftlyS2.Shared.Players;
+using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.Sounds;
 
 namespace SwiftlyS2.Core.Menus;
@@ -51,12 +54,43 @@ internal class MenuService
 
         _exitSound.Name = _core.Menus.Settings.SoundExitName;
         _exitSound.Volume = _core.Menus.Settings.SoundExitVolume;
+
+        _core.Menus.OnMenuOpened += OnMenuOpened;
+        _core.Menus.OnMenuClosed += OnMenuClosed;
     }
 
     ~MenuService()
     {
         _core.Event.OnClientKeyStateChanged -= OnClientKeyStateChanged;
         _core.Command.UnhookClientChat(ClientChatHook);
+    }
+
+    private void OnMenuOpened(IPlayer player, IMenu menu)
+    {
+        var pawn = player.Pawn;
+        if (pawn == null) return;
+
+        if (menu.FreezePlayer == true)
+        {
+            pawn.MoveType = MoveType_t.MOVETYPE_INVALID;
+            pawn.MoveTypeUpdated();
+
+            pawn.ActualMoveType = MoveType_t.MOVETYPE_INVALID;
+        }
+    }
+
+    private void OnMenuClosed(IPlayer player, IMenu menu)
+    {
+        var pawn = player.Pawn;
+        if (pawn == null) return;
+
+        if (menu.FreezePlayer == true)
+        {
+            pawn.MoveType = MoveType_t.MOVETYPE_WALK;
+            pawn.MoveTypeUpdated();
+
+            pawn.ActualMoveType = MoveType_t.MOVETYPE_WALK;
+        }
     }
 
     private void OnClientKeyStateChanged(IOnClientKeyStateChangedEvent @event)
@@ -75,17 +109,23 @@ internal class MenuService
             {
                 menu.ChangePosition(1);
 
-                _scrollSound.Recipients.AddRecipient(@event.PlayerId);
-                _scrollSound.Emit();
-                _scrollSound.Recipients.RemoveRecipient(@event.PlayerId);
+                if (menu.HasSound)
+                {
+                    _scrollSound.Recipients.AddRecipient(@event.PlayerId);
+                    _scrollSound.Emit();
+                    _scrollSound.Recipients.RemoveRecipient(@event.PlayerId);
+                }
             }
             else if (@event.Key == exitKey && @event.Pressed && menu.CanExit)
             {
                 _core.Menus.CloseMenu(player);
 
-                _exitSound.Recipients.AddRecipient(@event.PlayerId);
-                _exitSound.Emit();
-                _exitSound.Recipients.RemoveRecipient(@event.PlayerId);
+                if (menu.HasSound)
+                {
+                    _exitSound.Recipients.AddRecipient(@event.PlayerId);
+                    _exitSound.Emit();
+                    _exitSound.Recipients.RemoveRecipient(@event.PlayerId);
+                }
             }
             else if (@event.Key == useKey && @event.Pressed)
             {
@@ -93,9 +133,12 @@ internal class MenuService
                 if (!option.Disabled && option.OnChoice != null)
                 {
                     option.OnChoice(player, option, menu);
-                    _useSound.Recipients.AddRecipient(@event.PlayerId);
-                    _useSound.Emit();
-                    _useSound.Recipients.RemoveRecipient(@event.PlayerId);
+                    if (menu.HasSound)
+                    {
+                        _useSound.Recipients.AddRecipient(@event.PlayerId);
+                        _useSound.Emit();
+                        _useSound.Recipients.RemoveRecipient(@event.PlayerId);
+                    }
                 }
             }
         }
@@ -103,27 +146,36 @@ internal class MenuService
         {
             if (@event.Key == KeyKind.W && @event.Pressed)
             {
-                menu.ChangePosition(1);
+                menu.ChangePosition(-1);
 
-                _scrollSound.Recipients.AddRecipient(@event.PlayerId);
-                _scrollSound.Emit();
-                _scrollSound.Recipients.RemoveRecipient(@event.PlayerId);
+                if (menu.HasSound)
+                {
+                    _scrollSound.Recipients.AddRecipient(@event.PlayerId);
+                    _scrollSound.Emit();
+                    _scrollSound.Recipients.RemoveRecipient(@event.PlayerId);
+                }
             }
             else if (@event.Key == KeyKind.S && @event.Pressed)
             {
-                menu.ChangePosition(-1);
+                menu.ChangePosition(1);
 
-                _scrollSound.Recipients.AddRecipient(@event.PlayerId);
-                _scrollSound.Emit();
-                _scrollSound.Recipients.RemoveRecipient(@event.PlayerId);
+                if (menu.HasSound)
+                {
+                    _scrollSound.Recipients.AddRecipient(@event.PlayerId);
+                    _scrollSound.Emit();
+                    _scrollSound.Recipients.RemoveRecipient(@event.PlayerId);
+                }
             }
             else if (@event.Key == KeyKind.A && @event.Pressed && menu.CanExit)
             {
                 _core.Menus.CloseMenu(player);
 
-                _exitSound.Recipients.AddRecipient(@event.PlayerId);
-                _exitSound.Emit();
-                _exitSound.Recipients.RemoveRecipient(@event.PlayerId);
+                if (menu.HasSound)
+                {
+                    _exitSound.Recipients.AddRecipient(@event.PlayerId);
+                    _exitSound.Emit();
+                    _exitSound.Recipients.RemoveRecipient(@event.PlayerId);
+                }
             }
             else if (@event.Key == KeyKind.D && @event.Pressed)
             {
@@ -131,9 +183,12 @@ internal class MenuService
                 if (!option.Disabled && option.OnChoice != null)
                 {
                     option.OnChoice(player, option, menu);
-                    _useSound.Recipients.AddRecipient(@event.PlayerId);
-                    _useSound.Emit();
-                    _useSound.Recipients.RemoveRecipient(@event.PlayerId);
+                    if (menu.HasSound)
+                    {
+                        _useSound.Recipients.AddRecipient(@event.PlayerId);
+                        _useSound.Emit();
+                        _useSound.Recipients.RemoveRecipient(@event.PlayerId);
+                    }
                 }
             }
         }

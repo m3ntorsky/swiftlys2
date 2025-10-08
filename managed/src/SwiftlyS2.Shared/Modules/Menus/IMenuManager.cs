@@ -22,22 +22,66 @@ public struct MenuSettings
 
 public interface IMenuManager
 {
+    /// <summary>
+    /// Creates a new menu instance.
+    /// </summary>
+    /// <param name="title">The title of the menu.</param>
+    /// <param name="freezePlayer">Whether to freeze the player while the menu is open.</param>
+    /// <param name="hasSound">Whether the menu has sound effects.</param>
+    /// <param name="canExit">Whether the menu can be exited.</param>
+    /// <returns>Menu Object</returns>
     public IMenu CreateMenu(string title, bool freezePlayer, bool hasSound, bool canExit);
+    /// <summary>
+    /// Opens a menu for a player.
+    /// </summary>
     public void OpenMenu(IPlayer player, IMenu menu);
+    /// <summary>
+    /// Closes the current menu for a player.
+    /// </summary>
     public void CloseMenu(IPlayer player);
+    /// <summary>
+    /// Gets the player associated with a menu.
+    /// </summary>
     public IPlayer? GetPlayerFromMenu(IMenu menu);
+    /// <summary>
+    /// Checks if a menu is currently open for a player.
+    /// </summary>
     public bool IsMenuOpen(IPlayer player);
+    /// <summary>
+    /// Gets the current menu for a player, or null if no menu is open.
+    /// </summary>
     public IMenu? GetCurrentMenu(IPlayer player);
+    /// <summary>
+    /// Opens a submenu for a player, closing the current menu.
+    /// </summary>
     public void OpenSubMenu(IPlayer player, IMenu menu);
 
+    /// <summary>
+    /// Sets an input state callback for a player.
+    /// </summary>
     public void SetInputState(IPlayer player, Action<IPlayer, IMenuOption, IMenu, string>? onInput);
+    /// <summary>
+    /// Checks if a player has an input state callback set.
+    /// </summary>
     public bool HasInputState(IPlayer player);
+    /// <summary>
+    /// Gets the input state callback for a player.
+    /// </summary>
     public Action<IPlayer, IMenuOption, IMenu, string>? GetInputState(IPlayer player);
 
     public void RenderForPlayer(IPlayer player);
     public void ClearRenderForPlayer(IPlayer player);
 
+    /// <summary>
+    /// Event triggered when a menu is opened.
+    /// </summary>
     public event Action<IPlayer, IMenu>? OnMenuOpened;
+    /// <summary>
+    /// Event triggered when a menu is closed.
+    /// </summary>
     public event Action<IPlayer, IMenu>? OnMenuClosed;
+    /// <summary>
+    /// Menu settings.
+    /// </summary>
     public MenuSettings Settings { get; }
 }

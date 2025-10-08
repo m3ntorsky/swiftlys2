@@ -132,6 +132,7 @@ internal class MenuManager : IMenuManager
                 MenuHistories[player] = new Stack<IMenu>();
 
             MenuHistories[player].Push(currentMenu);
+            menu.ParentMenu = currentMenu;
         }
 
         OpenMenus[player] = menu;
