@@ -158,14 +158,14 @@ GitHub: https://github.com/swiftly-solution/swiftlys2");
     {
       case "enable":
         _ProfileService.Enable();
-        _Logger.LogInformation("The profiler has been [bold green]enabled[/].");
+        _Logger.LogInformation("The profiler has been enabled.");
         break;
       case "disable":
         _ProfileService.Disable();
-        _Logger.LogInformation("The profiler has been [bold red]disabled[/].");
+        _Logger.LogInformation("The profiler has been disabled.");
         break;
       case "status":
-        _Logger.LogInformation($"Profiler is currently [bold {(_ProfileService.IsEnabled() ? "green" : "red")}]{(_ProfileService.IsEnabled() ? "enabled" : "disabled")}[/].");
+        _Logger.LogInformation($"Profiler is currently {(_ProfileService.IsEnabled() ? "enabled" : "disabled")}.");
         break;
       case "save":
         var pluginId = args.Length >= 3 ? args[2] : "";
@@ -177,7 +177,7 @@ GitHub: https://github.com/swiftly-solution/swiftlys2");
 
         Guid guid = Guid.NewGuid();
         File.WriteAllText(Path.Combine(basePath, "profilers", $"profiler.{guid}.{(pluginId == "" ? "core" : pluginId)}.json"), _ProfileService.GenerateJSONPerformance(pluginId));
-        _Logger.LogInformation($"Profile saved to [bold]{Path.Combine(basePath, "profilers", $"profiler.{guid}.{(pluginId == "" ? "core" : pluginId)}.json")}[/]");
+        _Logger.LogInformation($"Profile saved to {Path.Combine(basePath, "profilers", $"profiler.{guid}.{(pluginId == "" ? "core" : pluginId)}.json")}");
         break;
       default:
         _Logger.LogWarning("Unknown command");
