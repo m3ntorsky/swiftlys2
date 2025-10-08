@@ -10,7 +10,6 @@
     "Language": "en",
     "Menu": {
         "AvailableInputModes": [
-            "chat",
             "button",
             "wasd"
         ],
@@ -22,8 +21,8 @@
         "InputMode": "button",
         "KindSettings": {
             "Center": {
-                "ItemsPerPage": 7
-            },
+                "ItemsPerPage": 4
+            }
         },
         "NavigationPrefix": "➤",
         "Sound": {

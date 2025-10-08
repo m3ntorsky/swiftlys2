@@ -155,22 +155,28 @@ int Bridge_EngineHelpers_GetMenuSettings(char* out)
     static std::string s;
 
     auto configuration = g_ifaceService.FetchInterface<IConfiguration>(CONFIGURATION_INTERFACE_VERSION);
-    std::vector<std::string> settings = {
-        std::get<std::string>(configuration->GetValue("core.Menu.NavigationPrefix")),
-        std::get<std::string>(configuration->GetValue("core.Menu.InputMode")),
-        std::get<std::string>(configuration->GetValue("core.Menu.Buttons.Use")),
-        std::get<std::string>(configuration->GetValue("core.Menu.Buttons.Scroll")),
-        std::get<std::string>(configuration->GetValue("core.Menu.Buttons.Exit")),
-        std::get<std::string>(configuration->GetValue("core.Menu.Sound.Use.Name")),
-        std::to_string(std::get<float>(configuration->GetValue("core.Menu.Sound.Use.Volume"))),
-        std::get<std::string>(configuration->GetValue("core.Menu.Sound.Scroll.Name")),
-        std::to_string(std::get<float>(configuration->GetValue("core.Menu.Sound.Scroll.Volume"))),
-        std::get<std::string>(configuration->GetValue("core.Menu.Sound.Exit.Name")),
-        std::to_string(std::get<float>(configuration->GetValue("core.Menu.Sound.Exit.Volume"))),
-        std::to_string(std::get<int>(configuration->GetValue("core.Menu.KindSettings.Center.ItemsPerPage"))),
-    };
+    try {
+        std::vector<std::string> settings = {
+                std::get<std::string>(configuration->GetValue("core.Menu.NavigationPrefix")),
+                std::get<std::string>(configuration->GetValue("core.Menu.InputMode")),
+                std::get<std::string>(configuration->GetValue("core.Menu.Buttons.Use")),
+                std::get<std::string>(configuration->GetValue("core.Menu.Buttons.Scroll")),
+                std::get<std::string>(configuration->GetValue("core.Menu.Buttons.Exit")),
+                std::get<std::string>(configuration->GetValue("core.Menu.Sound.Use.Name")),
+                std::to_string(std::get<double>(configuration->GetValue("core.Menu.Sound.Use.Volume"))),
+                std::get<std::string>(configuration->GetValue("core.Menu.Sound.Scroll.Name")),
+                std::to_string(std::get<double>(configuration->GetValue("core.Menu.Sound.Scroll.Volume"))),
+                std::get<std::string>(configuration->GetValue("core.Menu.Sound.Exit.Name")),
+                std::to_string(std::get<double>(configuration->GetValue("core.Menu.Sound.Exit.Volume"))),
+                std::to_string(std::get<int>(configuration->GetValue("core.Menu.KindSettings.Center.ItemsPerPage"))),
+        };
 
-    s = implode(settings, "\x01");
+        s = implode(settings, "\x01");
+    }
+    catch (std::exception& e)
+    {
+        printf("Exception: %s\n", e.what());
+    }
 
     if (out != nullptr) strcpy(out, s.c_str());
     return s.size();

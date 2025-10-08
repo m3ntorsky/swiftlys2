@@ -46,12 +46,32 @@ internal class MenuManager : IMenuManager
             if (MenuHistories.TryGetValue(player, out var history) && history.Count > 0)
             {
                 var activeMenu = history.Pop();
-                OpenMenus[player] = activeMenu;
-                OnMenuOpened?.Invoke(player, activeMenu);
+                if (activeMenu != menu)
+                {
+                    OpenMenus[player] = activeMenu;
+                    OnMenuOpened?.Invoke(player, activeMenu);
+                }
+                else
+                {
+                    ClearRenderForPlayer(player);
+                }
+            }
+            else
+            {
+                ClearRenderForPlayer(player);
             }
 
             InputState.Remove(player);
         }
+    }
+
+    public IPlayer? GetPlayerFromMenu(IMenu menu)
+    {
+        foreach (var (player, openMenu) in OpenMenus)
+            if (openMenu == menu)
+                return player;
+
+        return null;
     }
 
     public IMenu CreateMenu(string title, bool freezePlayer, bool hasSound, bool canExit)
@@ -69,7 +89,8 @@ internal class MenuManager : IMenuManager
 
     public IMenu? GetCurrentMenu(IPlayer player)
     {
-        return OpenMenus.TryGetValue(player, out var menu) ? menu : null;
+        if (!IsMenuOpen(player)) return null;
+        return OpenMenus[player];
     }
 
     public bool IsMenuOpen(IPlayer player)
@@ -92,6 +113,8 @@ internal class MenuManager : IMenuManager
         MenuHistories[player].Push(menu);
 
         OnMenuOpened?.Invoke(player, menu);
+
+        RenderForPlayer(player);
     }
 
     public void OpenSubMenu(IPlayer player, IMenu menu)

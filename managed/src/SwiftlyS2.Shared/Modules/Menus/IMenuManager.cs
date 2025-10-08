@@ -25,6 +25,7 @@ public interface IMenuManager
     public IMenu CreateMenu(string title, bool freezePlayer, bool hasSound, bool canExit);
     public void OpenMenu(IPlayer player, IMenu menu);
     public void CloseMenu(IPlayer player);
+    public IPlayer? GetPlayerFromMenu(IMenu menu);
     public bool IsMenuOpen(IPlayer player);
     public IMenu? GetCurrentMenu(IPlayer player);
     public void OpenSubMenu(IPlayer player, IMenu menu);

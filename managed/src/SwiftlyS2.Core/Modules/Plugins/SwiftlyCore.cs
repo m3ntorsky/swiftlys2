@@ -154,7 +154,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable
     Localizer = _ServiceProvider.GetRequiredService<Localizer>();
     PermissionManager = _ServiceProvider.GetRequiredService<PermissionManager>();
     RegistratorService = _ServiceProvider.GetRequiredService<RegistratorService>();
-    // MenuManager = _ServiceProvider.GetRequiredService<MenuManager>();
+    MenuManager = _ServiceProvider.GetRequiredService<MenuManager>();
     Logger = LoggerFactory.CreateLogger(contextType);
   }
 

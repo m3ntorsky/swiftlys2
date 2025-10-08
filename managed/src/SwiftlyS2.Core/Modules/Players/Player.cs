@@ -119,4 +119,31 @@ internal class Player : IPlayer
     {
         Controller?.Respawn();
     }
+
+    public bool Equals(IPlayer? other)
+    {
+        if (other is null) return false;
+        return PlayerID == other.PlayerID;
+    }
+
+    public override bool Equals(object? obj)
+    {
+        return obj is IPlayer player && Equals(player);
+    }
+
+    public override int GetHashCode()
+    {
+        return PlayerID.GetHashCode();
+    }
+
+    public static bool operator ==(Player? left, Player? right)
+    {
+        if (left is null) return right is null;
+        return left.Equals(right);
+    }
+
+    public static bool operator !=(Player? left, Player? right)
+    {
+        return !(left == right);
+    }
 }

@@ -11,11 +11,13 @@ using SwiftlyS2.Core.Misc;
 using Microsoft.Extensions.Configuration;
 namespace SwiftlyS2.Core;
 
-internal static class Bootstrap {
+internal static class Bootstrap
+{
 
   // how tf i forgot services can be collected hahahahahahahhaahhahaa FUCK
   private static IHost? _host;
-  public static void Start(IntPtr nativeTable, int nativeTableSize, string basePath) {
+  public static void Start(IntPtr nativeTable, int nativeTableSize, string basePath)
+  {
     Environment.SetEnvironmentVariable("SWIFTLY_MANAGED_ROOT", basePath);
 
     NativeBinding.BindNatives(nativeTable, nativeTableSize);
@@ -27,7 +29,8 @@ internal static class Bootstrap {
     AnsiConsole.Write(new FigletText("SwiftlyS2").LeftJustified().Color(Spectre.Console.Color.LightSteelBlue1));
 
     _host = Host.CreateDefaultBuilder()
-      .UseConsoleLifetime(options => {
+      .UseConsoleLifetime(options =>
+      {
         options.SuppressStatusMessages = true;
       })
       .ConfigureServices((context, services) =>
@@ -59,13 +62,14 @@ internal static class Bootstrap {
           .AddCoreCommandService()
           .AddPermissionManager()
           .AddCoreHookService()
+          .AddMenuService()
           .AddSwiftlyCore(basePath);
       })
       .Build();
 
     _host.Start();
 
-    
+
 
     // provider.UseTestService();
 

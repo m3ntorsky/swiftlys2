@@ -485,10 +485,10 @@ bool Configuration::Load()
         RegisterConfiguration(wasEdited, config_json, "core", "core", "Menu.Buttons.Scroll", "shift");
         RegisterConfiguration(wasEdited, config_json, "core", "core", "Menu.Buttons.Exit", "tab");
 
-        RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "Menu.AvailableInputModes", { "chat", "button", "wasd" }, true, " ");
+        RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "Menu.AvailableInputModes", { "button", "wasd" }, true, " ");
         RegisterConfiguration(wasEdited, config_json, "core", "core", "Menu.InputMode", "button");
 
-        RegisterConfiguration(wasEdited, config_json, "core", "core", "Menu.KindSettings.Center.ItemsPerPage", 7);
+        RegisterConfiguration(wasEdited, config_json, "core", "core", "Menu.KindSettings.Center.ItemsPerPage", 4);
 
         // RegisterConfiguration(wasEdited, config_json, "core", "core", "Menu.KindSettings.Screen.Mode", "compatibility");
 

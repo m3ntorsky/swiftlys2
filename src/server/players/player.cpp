@@ -120,8 +120,8 @@ void CPlayer::Shutdown()
     m_bAuthorized = false;
 
     if (centerMessageEvent) {
-        auto gameEventManager = g_ifaceService.FetchInterface<IGameEventManager2>(GAMEEVENTMANAGER_INTERFACE_VERSION);
-        gameEventManager->FreeEvent(centerMessageEvent);
+        static auto eventmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
+        eventmanager->GetGameEventManager()->FreeEvent(centerMessageEvent);
         centerMessageEvent = nullptr;
     }
 }
@@ -347,8 +347,7 @@ void CPlayer::Think()
         auto listener = reinterpret_cast<GetLegacyGameEventListener>(pListenerSig)(m_iPlayerId);
         if (listener)
         {
-            static auto gameEventManager = g_ifaceService.FetchInterface<IGameEventManager2>(GAMEEVENTMANAGER_INTERFACE_VERSION);
-            if (!centerMessageEvent) centerMessageEvent = gameEventManager->CreateEvent("show_survival_respawn_status");
+            if (!centerMessageEvent) centerMessageEvent = eventmanager->GetGameEventManager()->CreateEvent("show_survival_respawn_status");
 
             if (centerMessageEvent)
             {

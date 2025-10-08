@@ -21,26 +21,32 @@ using SwiftlyS2.Shared.Sounds;
 using SwiftlyS2.Shared.EntitySystem;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Hosting;
+using SwiftlyS2.Shared.Players;
 
 namespace TestPlugin;
 
 
-public class TestConfig {
+public class TestConfig
+{
   public string Name { get; set; }
   public int Age { get; set; }
 }
 
 [PluginMetadata(Id = "testplugin", Version = "1.0.0")]
-public class TestPlugin : BasePlugin {
+public class TestPlugin : BasePlugin
+{
 
-  public TestPlugin(ISwiftlyCore core) : base(core) {
+  public TestPlugin(ISwiftlyCore core) : base(core)
+  {
   }
 
-  public override void ConfigureSharedInterface(IInterfaceManager interfaceManager) {
+  public override void ConfigureSharedInterface(IInterfaceManager interfaceManager)
+  {
     // Register plugin-specific services here if needed
   }
 
-  public override void UseSharedInterface(IInterfaceManager interfaceManager) {
+  public override void UseSharedInterface(IInterfaceManager interfaceManager)
+  {
     // Use plugin-specific services here if needed
   }
 
@@ -50,31 +56,33 @@ public class TestPlugin : BasePlugin {
 
   IOptionsMonitor<TestConfig> _config;
 
-  public override void Load(bool hotReload) {
+  public override void Load(bool hotReload)
+  {
 
 
-    Core.GameEvent.HookPre<EventShowSurvivalRespawnStatus>(@event => {
+    Core.GameEvent.HookPre<EventShowSurvivalRespawnStatus>(@event =>
+    {
       @event.LocToken = "test";
       return HookResult.Continue;
     });
 
     Core.Configuration
       .InitializeJsonWithModel<TestConfig>("test.jsonc", "Main")
-      .Configure((builder) => {
+      .Configure((builder) =>
+      {
         builder.AddJsonFile("test.jsonc", optional: false, reloadOnChange: true);
       });
 
     ServiceCollection services = new();
 
     services
-      .AddSwiftly(Core)
-      .AddSingleton<TestService>();
+      .AddSwiftly(Core);
 
 
-    var provider = services.BuildServiceProvider();
+    // var provider = services.BuildServiceProvider();
 
-    provider.GetRequiredService<TestService>();
-    
+    // provider.GetRequiredService<TestService>();
+
 
     // Host.CreateDefaultBuilder()
     //   .ConfigureLogging((context, logging) => {
@@ -111,7 +119,7 @@ public class TestPlugin : BasePlugin {
     using var se = new SoundEvent();
 
     // var func = Core.Memory.GetUnmanagedFunctionByAddress<Test>(Core.Memory.GetAddressBySignature(Library.Server, "AAAAA")!.Value);
-    
+
     // func.CallOriginal(1, 2);
 
     // func.Call(1, 2);
@@ -138,12 +146,13 @@ public class TestPlugin : BasePlugin {
     //   Console.WriteLine("TestPlugin OnClientPutInServer " + @event.PlayerId);
     // };
 
-    Core.Event.OnClientDisconnected += (@event) => {
+    Core.Event.OnClientDisconnected += (@event) =>
+    {
       Console.WriteLine("TestPlugin OnClientDisconnected " + @event.PlayerId);
     };
     Core.Event.OnTick += () =>
     {
-      int i  = 0;
+      int i = 0;
     };
 
 
@@ -193,7 +202,8 @@ public class TestPlugin : BasePlugin {
 
 
   [Command("tt")]
-  public void TestCommand(ICommandContext context) {
+  public void TestCommand(ICommandContext context)
+  {
     token2?.Cancel();
     // kv = new();
     // kv.SetString("test", "SAFE");
@@ -225,45 +235,52 @@ public class TestPlugin : BasePlugin {
 
     cvar2.ReplicateToClient(0, true);
 
-    cvar4.QueryClient(0, (value) => {
-      Console.WriteLine("QueryCallback " +value);
+    cvar4.QueryClient(0, (value) =>
+    {
+      Console.WriteLine("QueryCallback " + value);
     });
   }
 
   [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
   delegate nint DispatchSpawnDelegate(nint pEntity, nint pKV);
   int order = 0;
-  
+
   IUnmanagedFunction<DispatchSpawnDelegate>? _dispatchspawn;
 
   [Command("h1")]
   public void TestCommand2(ICommandContext context)
   {
-    var token = Core.Scheduler.DelayAndRepeat(500, 1000, () => {
-      
+    var token = Core.Scheduler.DelayAndRepeat(500, 1000, () =>
+    {
+
     });
 
     var addres = Core.GameData.GetSignature("CBaseEntity::DispatchSpawn");
     var func = Core.Memory.GetUnmanagedFunctionByAddress<DispatchSpawnDelegate>(addres);
 
-    var guid = func.AddHook((next) => {
-      return (pEntity, pKV) => {
+    var guid = func.AddHook((next) =>
+    {
+      return (pEntity, pKV) =>
+      {
         Console.WriteLine("TestPlugin DispatchSpawn " + order++);
         return next()(pEntity, pKV);
       };
     });
 
-    _dispatchspawn.AddHook((next) => {
-      return (pEntity, pKV) => {
+    _dispatchspawn.AddHook((next) =>
+    {
+      return (pEntity, pKV) =>
+      {
         Console.WriteLine("TestPlugin DispatchSpawn2 " + order++);
         return next()(pEntity, pKV);
       };
     });
-    
+
   }
 
   [EventListener<EventDelegates.OnEntityCreated>]
-  public void OnEntityCreated(IOnEntityCreatedEvent @event) {
+  public void OnEntityCreated(IOnEntityCreatedEvent @event)
+  {
     // @event.Entity.Entity.DesignerName = "abc";
     Console.WriteLine("TestPlugin OnEntityCreated222 " + @event.Entity.Entity?.DesignerName);
   }
@@ -273,7 +290,8 @@ public class TestPlugin : BasePlugin {
   [Command("h2")]
   public void TestCommand3(ICommandContext context)
   {
-    Core.Command.HookClientCommand((playerId, commandLine) => {
+    Core.Command.HookClientCommand((playerId, commandLine) =>
+    {
       Console.WriteLine("TestPlugin HookClientCommand " + playerId + " " + commandLine);
       return HookResult.Continue;
     });
@@ -288,28 +306,33 @@ public class TestPlugin : BasePlugin {
   }
 
   [Command("tt4")]
-  public void TestCommand4(ICommandContext context) {
+  public void TestCommand4(ICommandContext context)
+  {
     Console.WriteLine(Core.Permission.PlayerHasPermission(7656, context.Args[0]));
   }
 
   [Command("tt5")]
-  public void TestCommand5(ICommandContext context) {
+  public void TestCommand5(ICommandContext context)
+  {
     Console.WriteLine("TestPlugin TestCommand5");
   }
 
   [Command("tt6", permission: "tt6")]
-  public void TestCommand6(ICommandContext context) {
+  public void TestCommand6(ICommandContext context)
+  {
     Console.WriteLine("TestPlugin TestCommand6");
   }
 
   [GameEventHandler(HookMode.Pre)]
-  public HookResult TestGameEventHandler(EventPlayerJump @e) {
+  public HookResult TestGameEventHandler(EventPlayerJump @e)
+  {
     Console.WriteLine(@e.UserIdController.PlayerName);
     return HookResult.Continue;
   }
 
   [ServerNetMessageHandler]
-  public HookResult TestServerNetMessageHandler(CCSUsrMsg_SendPlayerItemDrops msg) {
+  public HookResult TestServerNetMessageHandler(CCSUsrMsg_SendPlayerItemDrops msg)
+  {
 
     Console.WriteLine("FIRED");
     // foreach(var item in msg.Accessor) {
@@ -318,7 +341,76 @@ public class TestPlugin : BasePlugin {
     return HookResult.Continue;
   }
 
-  public override void Unload() {
+  [Command("menu")]
+  public void MenuCommand(ICommandContext context)
+  {
+    var menu = Core.Menus.CreateMenu("Test Menu", false, true, true);
+
+    menu.Color = new(0, 255, 0);
+
+    menu.AddBoolOption("Test Bool", true, (player, option, menu) =>
+    {
+      player.SendMessage(MessageType.Chat, $"Bool option changed to {option.Value}");
+    });
+
+    menu.AddOption("Test Option", (player, option, menu) =>
+    {
+      player.SendMessage(MessageType.Chat, $"Option pressed, hello!");
+    });
+
+    menu.AddSliderOption("Test Slider", ["One", "Two", "Three", "Four", "Five"], "Three", 3, (player, option, menu, index, value) =>
+    {
+      player.SendMessage(MessageType.Chat, $"Slider changed to {value} at index {index}");
+    });
+
+    menu.AddInputOption("Test Input", "Default Text", "Please add a message mate", (player, option, menu, text) =>
+    {
+      player.SendMessage(MessageType.Chat, $"Input changed to {text}");
+    });
+    menu.AddBoolOption("Test Bool", true, (player, option, menu) =>
+    {
+      player.SendMessage(MessageType.Chat, $"Bool option changed to {option.Value}");
+    });
+
+    menu.AddOption("Test Option", (player, option, menu) =>
+    {
+      player.SendMessage(MessageType.Chat, $"Option pressed, hello!");
+    });
+
+    menu.AddSliderOption("Test Slider", ["One", "Two", "Three", "Four", "Five"], "Three", 3, (player, option, menu, index, value) =>
+    {
+      player.SendMessage(MessageType.Chat, $"Slider changed to {value} at index {index}");
+    });
+
+    menu.AddInputOption("Test Input", "Default Text", "Please add a message mate", (player, option, menu, text) =>
+    {
+      player.SendMessage(MessageType.Chat, $"Input changed to {text}");
+    });
+    menu.AddBoolOption("Test Bool", true, (player, option, menu) =>
+    {
+      player.SendMessage(MessageType.Chat, $"Bool option changed to {option.Value}");
+    });
+
+    menu.AddOption("Test Option", (player, option, menu) =>
+    {
+      player.SendMessage(MessageType.Chat, $"Option pressed, hello!");
+    });
+
+    menu.AddSliderOption("Test Slider", ["One", "Two", "Three", "Four", "Five"], "Three", 3, (player, option, menu, index, value) =>
+    {
+      player.SendMessage(MessageType.Chat, $"Slider changed to {value} at index {index}");
+    });
+
+    menu.AddInputOption("Test Input", "Default Text", "Please add a message mate", (player, option, menu, text) =>
+    {
+      player.SendMessage(MessageType.Chat, $"Input changed to {text}");
+    });
+
+    Core.Menus.OpenMenu(context.Sender!, menu);
+  }
+
+  public override void Unload()
+  {
     Console.WriteLine("TestPlugin unloaded");
   }
 }
