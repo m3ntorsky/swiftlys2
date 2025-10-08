@@ -1,3 +1,4 @@
+using System.Globalization;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Menus;
 using SwiftlyS2.Shared.Players;
@@ -27,11 +28,11 @@ internal class MenuManager : IMenuManager
             ButtonsScroll = parts[3],
             ButtonsExit = parts[4],
             SoundUseName = parts[5],
-            SoundUseVolume = float.Parse(parts[6]),
+            SoundUseVolume = float.Parse(parts[6], CultureInfo.InvariantCulture),
             SoundScrollName = parts[7],
-            SoundScrollVolume = float.Parse(parts[8]),
+            SoundScrollVolume = float.Parse(parts[8], CultureInfo.InvariantCulture),
             SoundExitName = parts[9],
-            SoundExitVolume = float.Parse(parts[10]),
+            SoundExitVolume = float.Parse(parts[10], CultureInfo.InvariantCulture),
             ItemsPerPage = int.Parse(parts[11]),
         };
     }
