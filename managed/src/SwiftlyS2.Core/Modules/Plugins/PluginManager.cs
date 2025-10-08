@@ -47,7 +47,7 @@ internal class PluginManager
   }
 
   public void Initialize() {
-    LoadContracts();
+    LoadExports();
     LoadPlugins();
   }
 
@@ -83,20 +83,76 @@ internal class PluginManager
     }
   }
 
-  private void LoadContracts()
+  private void LoadExports()
   {
     var pluginDirs = Directory.GetDirectories(_RootDirService.GetPluginsRoot());
 
-    foreach (var pluginDir in pluginDirs) {
-      var pluginName = Path.GetFileName(pluginDir);
-      var contractPath = Path.Combine(pluginDir, pluginName + ".Contracts.dll");
-      if (File.Exists(contractPath)) {
-        var assembly = Assembly.LoadFrom(Path.Combine(pluginDir, pluginName + ".Contracts.dll"));
-        var contracts = assembly.GetTypes();
-        foreach (var contract in contracts) {
-          _SharedTypes.Add(contract);
+    var resolver = new DependencyResolver(_Logger);
+    
+    try
+    {
+      resolver.AnalyzeDependencies(pluginDirs);
+
+      _Logger.LogInformation(resolver.GetDependencyGraphVisualization());
+
+      var loadOrder = resolver.GetLoadOrder();
+      
+      _Logger.LogInformation($"Loading {loadOrder.Count} export assemblies in dependency order.");
+      
+      foreach (var exportFile in loadOrder)
+      {
+        try
+        {
+          var assembly = Assembly.LoadFrom(exportFile);
+          var exports = assembly.GetTypes();
+          
+          _Logger.LogDebug($"Loaded {exports.Length} types from {Path.GetFileName(exportFile)}.");
+
+          
+          foreach (var export in exports)
+          {
+            _SharedTypes.Add(export);
+          }
+        }
+        catch (Exception ex)
+        {
+          _Logger.LogWarning(ex, $"Failed to load export assembly: {exportFile}");
         }
       }
+
+      _Logger.LogInformation($"Successfully loaded {_SharedTypes.Count} shared types.");
+    }
+    catch (InvalidOperationException ex) when (ex.Message.Contains("Circular dependency"))
+    {
+      _Logger.LogError(ex, "Circular dependency detected in plugin exports. Loading exports without dependency resolution.");
+      
+      foreach (var pluginDir in pluginDirs)
+      {
+        if (Directory.Exists(Path.Combine(pluginDir, "resources", "exports")))
+        {
+          var exportFiles = Directory.GetFiles(Path.Combine(pluginDir, "resources", "exports"), "*.dll");
+          foreach (var exportFile in exportFiles)
+          {
+            try
+            {
+              var assembly = Assembly.LoadFrom(exportFile);
+              var exports = assembly.GetTypes();
+              foreach (var export in exports)
+              {
+                _SharedTypes.Add(export);
+              }
+            }
+            catch (Exception innerEx)
+            {
+              _Logger.LogWarning(innerEx, $"Failed to load export assembly: {exportFile}");
+            }
+          }
+        }
+      }
+    }
+    catch (Exception ex)
+    {
+      _Logger.LogError(ex, "Unexpected error during export loading");
     }
   }
 
