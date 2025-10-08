@@ -87,13 +87,12 @@ internal class PluginManager
   {
     var pluginDirs = Directory.GetDirectories(_RootDirService.GetPluginsRoot());
 
-    // 使用依赖解析器确定正确的加载顺序
     var resolver = new DependencyResolver(_Logger);
     
     try
     {
       resolver.AnalyzeDependencies(pluginDirs);
-      
+
       _Logger.LogInformation(resolver.GetDependencyGraphVisualization());
 
       var loadOrder = resolver.GetLoadOrder();
