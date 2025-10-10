@@ -74,10 +74,10 @@ internal static class NativeAllocator {
     return ret;
   }
   }
-  private unsafe static delegate* unmanaged<nint, bool> _IsPointerValid;
+  private unsafe static delegate* unmanaged<nint, byte> _IsPointerValid;
   public unsafe static bool IsPointerValid(nint pointer) {
     var ret = _IsPointerValid(pointer);
-    return ret;
+    return ret == 1;
   }
   private unsafe static delegate* unmanaged<nint, nint, ulong, void> _Copy;
   public unsafe static void Copy(nint src, nint dst, ulong size) {

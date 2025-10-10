@@ -11,13 +11,14 @@ using SwiftlyS2.Shared;
 
 namespace SwiftlyS2.Core.Commands;
 
-internal delegate void CommandCallbackDelegate(int playerId, nint args, nint commandName, nint prefix, bool slient);
+internal delegate void CommandCallbackDelegate(int playerId, nint args, nint commandName, nint prefix, byte slient);
 
 internal delegate HookResult ClientCommandListenerCallbackDelegate(int playerId, nint commandLine);
 
-internal delegate HookResult ClientChatListenerCallbackDelegate(int playerId, nint text, bool teamonly);
+internal delegate HookResult ClientChatListenerCallbackDelegate(int playerId, nint text, byte teamonly);
 
-internal abstract class CommandCallbackBase : IDisposable {
+internal abstract class CommandCallbackBase : IDisposable
+{
 
   public Guid Guid { get; protected init; }
 
@@ -35,7 +36,8 @@ internal abstract class CommandCallbackBase : IDisposable {
 
 }
 
-internal class CommandCallback : CommandCallbackBase {
+internal class CommandCallback : CommandCallbackBase
+{
 
   public string CommandName { get; protected init; }
 
@@ -62,8 +64,10 @@ internal class CommandCallback : CommandCallbackBase {
     _permissions = permission;
     _handler = handler;
 
-    _unmanagedCallback = (playerId, argsPtr, commandNamePtr, prefixPtr, slient) => {
-      try {
+    _unmanagedCallback = (playerId, argsPtr, commandNamePtr, prefixPtr, slient) =>
+    {
+      try
+      {
         var category = "CommandCallback::" + CommandName;
         Profiler.StartRecording(category);
         var argsString = Marshal.PtrToStringUTF8(argsPtr)!;
@@ -71,16 +75,21 @@ internal class CommandCallback : CommandCallbackBase {
         var prefixString = Marshal.PtrToStringUTF8(prefixPtr)!;
 
         var args = argsString.Split('\x01');
-        var context = new CommandContext(playerId, args, commandNameString, prefixString, slient);
-        if (string.IsNullOrWhiteSpace(_permissions) || _permissionManager.PlayerHasPermission(_playerManagerService.GetPlayer(playerId).SteamID, _permissions)) {
+        var context = new CommandContext(playerId, args, commandNameString, prefixString, slient == 1);
+        if (string.IsNullOrWhiteSpace(_permissions) || _permissionManager.PlayerHasPermission(_playerManagerService.GetPlayer(playerId).SteamID, _permissions))
+        {
           _handler(context);
-        } else {
+        }
+        else
+        {
           context.Reply("You do not have permission to use this command.");
         }
         Profiler.StopRecording(category);
-      } catch (Exception e) {
+      }
+      catch (Exception e)
+      {
         _logger.LogError(e, "Failed to handle command {0}.", commandName);
-      } 
+      }
     };
 
     _unmanagedCallbackPtr = Marshal.GetFunctionPointerForDelegate(_unmanagedCallback);
@@ -94,7 +103,8 @@ internal class CommandCallback : CommandCallbackBase {
   }
 }
 
-internal class ClientCommandListenerCallback : CommandCallbackBase {
+internal class ClientCommandListenerCallback : CommandCallbackBase
+{
 
   private ICommandService.ClientCommandHandler _handler;
   private ClientCommandListenerCallbackDelegate _unmanagedCallback;
@@ -110,15 +120,19 @@ internal class ClientCommandListenerCallback : CommandCallbackBase {
 
     _handler = handler;
 
-    _unmanagedCallback = (playerId, commandLinePtr) => {
-      try {
+    _unmanagedCallback = (playerId, commandLinePtr) =>
+    {
+      try
+      {
         var category = "ClientCommandListenerCallback";
         Profiler.StartRecording(category);
         var commandLineString = Marshal.PtrToStringUTF8(commandLinePtr)!;
         var result = _handler(playerId, commandLineString);
         Profiler.StopRecording(category);
         return result;
-      } catch (Exception e) {
+      }
+      catch (Exception e)
+      {
         _logger.LogError(e, "Failed to handle client command listener.");
         return HookResult.Continue;
       }
@@ -136,7 +150,8 @@ internal class ClientCommandListenerCallback : CommandCallbackBase {
   }
 }
 
-internal class ClientChatListenerCallback : CommandCallbackBase {
+internal class ClientChatListenerCallback : CommandCallbackBase
+{
 
   private ICommandService.ClientChatHandler _handler;
   private ClientChatListenerCallbackDelegate _unmanagedCallback;
@@ -144,7 +159,7 @@ internal class ClientChatListenerCallback : CommandCallbackBase {
   private ulong _nativeListenerId;
   private ILogger<ClientChatListenerCallback> _logger;
 
-  public ClientChatListenerCallback(ICommandService.ClientChatHandler handler, ILoggerFactory loggerFactory, IContextedProfilerService profiler) 
+  public ClientChatListenerCallback(ICommandService.ClientChatHandler handler, ILoggerFactory loggerFactory, IContextedProfilerService profiler)
     : base(loggerFactory, profiler)
   {
     _logger = LoggerFactory.CreateLogger<ClientChatListenerCallback>();
@@ -152,15 +167,19 @@ internal class ClientChatListenerCallback : CommandCallbackBase {
 
     _handler = handler;
 
-    _unmanagedCallback = (playerId, textPtr, teamonly) => {
-      try {
+    _unmanagedCallback = (playerId, textPtr, teamonly) =>
+    {
+      try
+      {
         var category = "ClientChatListenerCallback";
         Profiler.StartRecording(category);
         var textString = Marshal.PtrToStringUTF8(textPtr)!;
-        var result = _handler(playerId, textString, teamonly);
+        var result = _handler(playerId, textString, teamonly == 1);
         Profiler.StopRecording(category);
         return result;
-      } catch (Exception e) {
+      }
+      catch (Exception e)
+      {
         _logger.LogError(e, "Failed to handle client chat listener.");
         return HookResult.Continue;
       }

@@ -36,7 +36,7 @@ internal static class NativeEngineHelpers {
     return retString;
   }
   }
-  private unsafe static delegate* unmanaged<byte*, bool> _IsMapValid;
+  private unsafe static delegate* unmanaged<byte*, byte> _IsMapValid;
   /// <summary>
   /// it can be map name, or workshop id
   /// </summary>
@@ -50,7 +50,7 @@ internal static class NativeEngineHelpers {
         var ret = _IsMapValid(map_nameBufferPtr);
     pool.Return(map_nameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
   private unsafe static delegate* unmanaged<int> _GetMaxPlayers;

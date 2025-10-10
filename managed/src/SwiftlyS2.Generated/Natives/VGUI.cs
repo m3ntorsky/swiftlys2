@@ -19,9 +19,9 @@ internal static class NativeVGUI {
   public unsafe static void UnregisterScreenText(ulong textid) {
     _UnregisterScreenText(textid);
   }
-  private unsafe static delegate* unmanaged<ulong, Color, int, bool, bool, void> _ScreenTextCreate;
+  private unsafe static delegate* unmanaged<ulong, Color, int, byte, byte, void> _ScreenTextCreate;
   public unsafe static void ScreenTextCreate(ulong textid, Color col, int fontsize, bool drawBackground, bool isMenu) {
-    _ScreenTextCreate(textid, col, fontsize, drawBackground, isMenu);
+    _ScreenTextCreate(textid, col, fontsize, drawBackground ? (byte)1 : (byte)0, isMenu ? (byte)1 : (byte)0);
   }
   private unsafe static delegate* unmanaged<ulong, byte*, void> _ScreenTextSetText;
   public unsafe static void ScreenTextSetText(ulong textid, string text) {

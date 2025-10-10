@@ -33,7 +33,7 @@ internal static class NativeNetMessages {
   public unsafe static void DeallocateNetMessage(nint netmsg) {
     _DeallocateNetMessage(netmsg);
   }
-  private unsafe static delegate* unmanaged<nint, byte*, bool> _HasField;
+  private unsafe static delegate* unmanaged<nint, byte*, byte> _HasField;
   public unsafe static bool HasField(nint netmsg, string fieldName) {
     var pool = ArrayPool<byte>.Shared;
     var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
@@ -44,7 +44,7 @@ internal static class NativeNetMessages {
         var ret = _HasField(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
   private unsafe static delegate* unmanaged<nint, byte*, int> _GetInt32;
@@ -315,7 +315,7 @@ internal static class NativeNetMessages {
 
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, bool> _GetBool;
+  private unsafe static delegate* unmanaged<nint, byte*, byte> _GetBool;
   public unsafe static bool GetBool(nint netmsg, string fieldName) {
     var pool = ArrayPool<byte>.Shared;
     var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
@@ -326,10 +326,10 @@ internal static class NativeNetMessages {
         var ret = _GetBool(netmsg, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, int, bool> _GetRepeatedBool;
+  private unsafe static delegate* unmanaged<nint, byte*, int, byte> _GetRepeatedBool;
   public unsafe static bool GetRepeatedBool(nint netmsg, string fieldName, int index) {
     var pool = ArrayPool<byte>.Shared;
     var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
@@ -340,10 +340,10 @@ internal static class NativeNetMessages {
         var ret = _GetRepeatedBool(netmsg, fieldNameBufferPtr, index);
     pool.Return(fieldNameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, bool, void> _SetBool;
+  private unsafe static delegate* unmanaged<nint, byte*, byte, void> _SetBool;
   public unsafe static void SetBool(nint netmsg, string fieldName, bool value) {
     var pool = ArrayPool<byte>.Shared;
     var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
@@ -351,12 +351,12 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-        _SetBool(netmsg, fieldNameBufferPtr, value);
+        _SetBool(netmsg, fieldNameBufferPtr, value ? (byte)1 : (byte)0);
     pool.Return(fieldNameBuffer);
 
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, int, bool, void> _SetRepeatedBool;
+  private unsafe static delegate* unmanaged<nint, byte*, int, byte, void> _SetRepeatedBool;
   public unsafe static void SetRepeatedBool(nint netmsg, string fieldName, int index, bool value) {
     var pool = ArrayPool<byte>.Shared;
     var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
@@ -364,12 +364,12 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-        _SetRepeatedBool(netmsg, fieldNameBufferPtr, index, value);
+        _SetRepeatedBool(netmsg, fieldNameBufferPtr, index, value ? (byte)1 : (byte)0);
     pool.Return(fieldNameBuffer);
 
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, bool, void> _AddBool;
+  private unsafe static delegate* unmanaged<nint, byte*, byte, void> _AddBool;
   public unsafe static void AddBool(nint netmsg, string fieldName, bool value) {
     var pool = ArrayPool<byte>.Shared;
     var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
@@ -377,7 +377,7 @@ internal static class NativeNetMessages {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-        _AddBool(netmsg, fieldNameBufferPtr, value);
+        _AddBool(netmsg, fieldNameBufferPtr, value ? (byte)1 : (byte)0);
     pool.Return(fieldNameBuffer);
 
   }

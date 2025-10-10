@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeGameEvents {
   private static int _MainThreadID;
-  private unsafe static delegate* unmanaged<nint, byte*, bool> _GetBool;
+  private unsafe static delegate* unmanaged<nint, byte*, byte> _GetBool;
   public unsafe static bool GetBool(nint _event, string key) {
     var pool = ArrayPool<byte>.Shared;
     var keyLength = Encoding.UTF8.GetByteCount(key);
@@ -21,7 +21,7 @@ internal static class NativeGameEvents {
         var ret = _GetBool(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
   private unsafe static delegate* unmanaged<nint, byte*, int> _GetInt;
@@ -220,7 +220,7 @@ internal static class NativeGameEvents {
     return ret;
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, bool, void> _SetBool;
+  private unsafe static delegate* unmanaged<nint, byte*, byte, void> _SetBool;
   public unsafe static void SetBool(nint _event, string key, bool value) {
     var pool = ArrayPool<byte>.Shared;
     var keyLength = Encoding.UTF8.GetByteCount(key);
@@ -228,7 +228,7 @@ internal static class NativeGameEvents {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-        _SetBool(_event, keyBufferPtr, value);
+        _SetBool(_event, keyBufferPtr, value ? (byte)1 : (byte)0);
     pool.Return(keyBuffer);
 
   }
@@ -346,7 +346,7 @@ internal static class NativeGameEvents {
 
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, bool> _HasKey;
+  private unsafe static delegate* unmanaged<nint, byte*, byte> _HasKey;
   public unsafe static bool HasKey(nint _event, string key) {
     var pool = ArrayPool<byte>.Shared;
     var keyLength = Encoding.UTF8.GetByteCount(key);
@@ -357,18 +357,18 @@ internal static class NativeGameEvents {
         var ret = _HasKey(_event, keyBufferPtr);
     pool.Return(keyBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
-  private unsafe static delegate* unmanaged<nint, bool> _IsReliable;
+  private unsafe static delegate* unmanaged<nint, byte> _IsReliable;
   public unsafe static bool IsReliable(nint _event) {
     var ret = _IsReliable(_event);
-    return ret;
+    return ret == 1;
   }
-  private unsafe static delegate* unmanaged<nint, bool> _IsLocal;
+  private unsafe static delegate* unmanaged<nint, byte> _IsLocal;
   public unsafe static bool IsLocal(nint _event) {
     var ret = _IsLocal(_event);
-    return ret;
+    return ret == 1;
   }
   private unsafe static delegate* unmanaged<byte*, void> _RegisterListener;
   public unsafe static void RegisterListener(string eventName) {
@@ -425,15 +425,15 @@ internal static class NativeGameEvents {
   public unsafe static void FreeEvent(nint _event) {
     _FreeEvent(_event);
   }
-  private unsafe static delegate* unmanaged<nint, bool, void> _FireEvent;
+  private unsafe static delegate* unmanaged<nint, byte, void> _FireEvent;
   public unsafe static void FireEvent(nint _event, bool dontBroadcast) {
-    _FireEvent(_event, dontBroadcast);
+    _FireEvent(_event, dontBroadcast ? (byte)1 : (byte)0);
   }
   private unsafe static delegate* unmanaged<nint, int, void> _FireEventToClient;
   public unsafe static void FireEventToClient(nint _event, int playerid) {
     _FireEventToClient(_event, playerid);
   }
-  private unsafe static delegate* unmanaged<int, byte*, bool> _IsPlayerListeningToEventName;
+  private unsafe static delegate* unmanaged<int, byte*, byte> _IsPlayerListeningToEventName;
   public unsafe static bool IsPlayerListeningToEventName(int playerid, string eventName) {
     var pool = ArrayPool<byte>.Shared;
     var eventNameLength = Encoding.UTF8.GetByteCount(eventName);
@@ -444,12 +444,12 @@ internal static class NativeGameEvents {
         var ret = _IsPlayerListeningToEventName(playerid, eventNameBufferPtr);
     pool.Return(eventNameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
-  private unsafe static delegate* unmanaged<int, nint, bool> _IsPlayerListeningToEvent;
+  private unsafe static delegate* unmanaged<int, nint, byte> _IsPlayerListeningToEvent;
   public unsafe static bool IsPlayerListeningToEvent(int playerid, nint _event) {
     var ret = _IsPlayerListeningToEvent(playerid, _event);
-    return ret;
+    return ret == 1;
   }
 }

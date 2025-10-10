@@ -33,7 +33,7 @@ internal static class NativeSchema {
     var ret = _GetOffset(hash);
     return ret;
   }
-  private unsafe static delegate* unmanaged<byte*, bool> _IsStruct;
+  private unsafe static delegate* unmanaged<byte*, byte> _IsStruct;
   public unsafe static bool IsStruct(string className) {
     var pool = ArrayPool<byte>.Shared;
     var classNameLength = Encoding.UTF8.GetByteCount(className);
@@ -44,10 +44,10 @@ internal static class NativeSchema {
         var ret = _IsStruct(classNameBufferPtr);
     pool.Return(classNameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
-  private unsafe static delegate* unmanaged<byte*, bool> _IsClassLoaded;
+  private unsafe static delegate* unmanaged<byte*, byte> _IsClassLoaded;
   public unsafe static bool IsClassLoaded(string className) {
     var pool = ArrayPool<byte>.Shared;
     var classNameLength = Encoding.UTF8.GetByteCount(className);
@@ -58,7 +58,7 @@ internal static class NativeSchema {
         var ret = _IsClassLoaded(classNameBufferPtr);
     pool.Return(classNameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
   private unsafe static delegate* unmanaged<nint, ulong, nint> _GetPropPtr;

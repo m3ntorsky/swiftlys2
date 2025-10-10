@@ -34,9 +34,18 @@ uint64_t Bridge_Commands_RegisterCommand(const char* commandName, void* callback
     auto servercommands = g_ifaceService.FetchInterface<IServerCommands>(SERVERCOMMANDS_INTERFACE_VERSION);
     if (!servercommands) return 0;
 
-    return servercommands->RegisterCommand(commandName, [callback](int playerid, std::vector<std::string> args, std::string originalCommandName, std::string selectedPrefix, bool isSilentCommand) -> bool {
-        std::string imploded_args = implode(args, "\x01");
-        reinterpret_cast<void(*)(int, const char*, const char*, const char*, bool)>(callback)(playerid, imploded_args.c_str(), originalCommandName.c_str(), selectedPrefix.c_str(), isSilentCommand);
+    // i hate cpp compilers, i stood here for an hour and a half because it was `-> bool` instead of `-> void`
+    return servercommands->RegisterCommand(commandName, [callback](int playerid, std::vector<std::string> args, std::string originalCommandName, std::string selectedPrefix, bool isSilentCommand) -> void {
+        static std::string imploded_args;
+        imploded_args = implode(args, "\x01");
+
+        static std::string original_name;
+        original_name = originalCommandName;
+
+        static std::string selected_prefix;
+        selected_prefix = selectedPrefix;
+
+        reinterpret_cast<void(*)(int, const char*, const char*, const char*, uint8_t)>(callback)(playerid, imploded_args.c_str(), original_name.c_str(), selected_prefix.c_str(), isSilentCommand == true ? 1 : 0);
     }, registerRaw);
 }
 
@@ -76,7 +85,7 @@ uint64_t Bridge_Commands_RegisterClientChatListener(void* callback)
 {
     auto servercommands = g_ifaceService.FetchInterface<IServerCommands>(SERVERCOMMANDS_INTERFACE_VERSION);
     return servercommands->RegisterClientChatListener([callback](int playerid, const std::string& text, bool teamonly) -> bool {
-        return reinterpret_cast<bool(*)(int, const char*, bool)>(callback)(playerid, text.c_str(), teamonly);
+        return reinterpret_cast<int(*)(int, const char*, uint8_t)>(callback)(playerid, text.c_str(), teamonly ? 1 : 0);
     });
 }
 

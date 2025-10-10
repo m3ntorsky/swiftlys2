@@ -10,7 +10,7 @@ namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeOffsets {
   private static int _MainThreadID;
-  private unsafe static delegate* unmanaged<byte*, bool> _Exists;
+  private unsafe static delegate* unmanaged<byte*, byte> _Exists;
   public unsafe static bool Exists(string name) {
     var pool = ArrayPool<byte>.Shared;
     var nameLength = Encoding.UTF8.GetByteCount(name);
@@ -21,7 +21,7 @@ internal static class NativeOffsets {
         var ret = _Exists(nameBufferPtr);
     pool.Return(nameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
   private unsafe static delegate* unmanaged<byte*, int> _Fetch;

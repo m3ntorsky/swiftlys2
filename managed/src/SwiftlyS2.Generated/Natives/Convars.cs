@@ -167,7 +167,7 @@ internal static class NativeConvars {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, bool, nint, nint, void> _CreateConvarBool;
+  private unsafe static delegate* unmanaged<byte*, int, ulong, byte*, byte, nint, nint, void> _CreateConvarBool;
   public unsafe static void CreateConvarBool(string cvarName, int cvarType, ulong cvarFlags, string helpMessage, bool defaultValue, nint minValue, nint maxValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
@@ -181,7 +181,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(helpMessage, helpMessageBuffer);
     helpMessageBuffer[helpMessageLength] = 0;
     fixed (byte* helpMessageBufferPtr = helpMessageBuffer) {
-        _CreateConvarBool(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue, minValue, maxValue);
+        _CreateConvarBool(cvarNameBufferPtr, cvarType, cvarFlags, helpMessageBufferPtr, defaultValue ? (byte)1 : (byte)0, minValue, maxValue);
     pool.Return(cvarNameBuffer);
 
     pool.Return(helpMessageBuffer);
@@ -387,7 +387,7 @@ internal static class NativeConvars {
 
   }
   }
-  private unsafe static delegate* unmanaged<byte*, bool> _ExistsConvar;
+  private unsafe static delegate* unmanaged<byte*, byte> _ExistsConvar;
   public unsafe static bool ExistsConvar(string cvarName) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
@@ -398,7 +398,7 @@ internal static class NativeConvars {
         var ret = _ExistsConvar(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
   private unsafe static delegate* unmanaged<byte*, int> _GetConvarType;
@@ -513,7 +513,7 @@ internal static class NativeConvars {
     return ret;
   }
   }
-  private unsafe static delegate* unmanaged<byte*, bool> _GetConvarValueBool;
+  private unsafe static delegate* unmanaged<byte*, byte> _GetConvarValueBool;
   public unsafe static bool GetConvarValueBool(string cvarName) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
@@ -524,7 +524,7 @@ internal static class NativeConvars {
         var ret = _GetConvarValueBool(cvarNameBufferPtr);
     pool.Return(cvarNameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
   private unsafe static delegate* unmanaged<byte*, float> _GetConvarValueFloat;
@@ -725,7 +725,7 @@ internal static class NativeConvars {
 
   }
   }
-  private unsafe static delegate* unmanaged<byte*, bool, void> _SetConvarValueBool;
+  private unsafe static delegate* unmanaged<byte*, byte, void> _SetConvarValueBool;
   public unsafe static void SetConvarValueBool(string cvarName, bool defaultValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
@@ -733,7 +733,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-        _SetConvarValueBool(cvarNameBufferPtr, defaultValue);
+        _SetConvarValueBool(cvarNameBufferPtr, defaultValue ? (byte)1 : (byte)0);
     pool.Return(cvarNameBuffer);
 
   }
@@ -929,7 +929,7 @@ internal static class NativeConvars {
 
   }
   }
-  private unsafe static delegate* unmanaged<int, byte*, bool, void> _SetClientConvarValueBool;
+  private unsafe static delegate* unmanaged<int, byte*, byte, void> _SetClientConvarValueBool;
   public unsafe static void SetClientConvarValueBool(int playerid, string cvarName, bool defaultValue) {
     var pool = ArrayPool<byte>.Shared;
     var cvarNameLength = Encoding.UTF8.GetByteCount(cvarName);
@@ -937,7 +937,7 @@ internal static class NativeConvars {
     Encoding.UTF8.GetBytes(cvarName, cvarNameBuffer);
     cvarNameBuffer[cvarNameLength] = 0;
     fixed (byte* cvarNameBufferPtr = cvarNameBuffer) {
-        _SetClientConvarValueBool(playerid, cvarNameBufferPtr, defaultValue);
+        _SetClientConvarValueBool(playerid, cvarNameBufferPtr, defaultValue ? (byte)1 : (byte)0);
     pool.Return(cvarNameBuffer);
 
   }

@@ -19,7 +19,7 @@ internal static class NativeCEntityKeyValues {
   public unsafe static void Deallocate(nint keyvalues) {
     _Deallocate(keyvalues);
   }
-  private unsafe static delegate* unmanaged<nint, byte*, bool> _GetBool;
+  private unsafe static delegate* unmanaged<nint, byte*, byte> _GetBool;
   public unsafe static bool GetBool(nint keyvalues, string key) {
     var pool = ArrayPool<byte>.Shared;
     var keyLength = Encoding.UTF8.GetByteCount(key);
@@ -30,7 +30,7 @@ internal static class NativeCEntityKeyValues {
         var ret = _GetBool(keyvalues, keyBufferPtr);
     pool.Return(keyBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
   private unsafe static delegate* unmanaged<nint, byte*, int> _GetInt;
@@ -237,7 +237,7 @@ internal static class NativeCEntityKeyValues {
     return ret;
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, bool, void> _SetBool;
+  private unsafe static delegate* unmanaged<nint, byte*, byte, void> _SetBool;
   public unsafe static void SetBool(nint keyvalues, string key, bool value) {
     var pool = ArrayPool<byte>.Shared;
     var keyLength = Encoding.UTF8.GetByteCount(key);
@@ -245,7 +245,7 @@ internal static class NativeCEntityKeyValues {
     Encoding.UTF8.GetBytes(key, keyBuffer);
     keyBuffer[keyLength] = 0;
     fixed (byte* keyBufferPtr = keyBuffer) {
-        _SetBool(keyvalues, keyBufferPtr, value);
+        _SetBool(keyvalues, keyBufferPtr, value ? (byte)1 : (byte)0);
     pool.Return(keyBuffer);
 
   }

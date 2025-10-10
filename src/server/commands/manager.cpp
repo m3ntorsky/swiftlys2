@@ -45,12 +45,15 @@ static void commandsCallback(const CCommandContext& context, const CCommand& arg
     tokenizedArgs.Tokenize(args.GetCommandString());
 
     std::string commandName = tokenizedArgs[0];
+    std::string originalCommandName = commandName;
+    if (!g_mCommandHandlers.contains(commandName)) commandName = "sw_" + commandName;
     if (!g_mCommandHandlers.contains(commandName)) return;
 
     std::vector<std::string> argsplit = TokenizeCommand(args.GetCommandString());
     argsplit.erase(argsplit.begin());
 
-    g_mCommandHandlers[commandName](context.GetPlayerSlot().Get(), argsplit, commandName, "sw_", true);
+    auto& handler = g_mCommandHandlers[commandName];
+    handler(context.GetPlayerSlot().Get(), argsplit, originalCommandName, "sw_", true);
 }
 
 void CServerCommands::Initialize()
