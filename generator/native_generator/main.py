@@ -29,13 +29,15 @@ PARAM_TYPE_MAP = {
 DELEGATE_PARAM_TYPE_MAP = {
     **PARAM_TYPE_MAP,
     "string": "byte*",
-    "bytes": "byte*"
+    "bytes": "byte*",
+    "bool": "byte",
 }
 
 DELEGATE_RETURN_TYPE_MAP = {
     **PARAM_TYPE_MAP,
     "string": "int",
     "bytes": "int",
+    "bool": "byte",
 }
 
 RETURN_TYPE_MAP = {
@@ -251,6 +253,8 @@ def parse_native(lines: list[str]):
             for t, n in param_signatures:
                 if t == "byte[]":
                     param_args.extend([renamed_param[n], f"{n}Length"])
+                elif t == "bool":
+                    call_args_list.append(f"{renamed_param[n]} ? (byte)1 : (byte)0")
                 else:
                     param_args.append(renamed_param[n])
             args_first = ", ".join(["null", *param_args])
@@ -264,6 +268,8 @@ def parse_native(lines: list[str]):
             for t, n in param_signatures:
                 if t == "byte[]":
                     call_args_list.extend([renamed_param[n], f"{n}Length"])
+                elif t == "bool":
+                    call_args_list.append(f"{renamed_param[n]} ? (byte)1 : (byte)0")
                 else:
                     call_args_list.append(renamed_param[n])
             call_args = ", ".join(call_args_list)
@@ -273,6 +279,8 @@ def parse_native(lines: list[str]):
             for t, n in param_signatures:
                 if t == "byte[]":
                     call_args_list.extend([renamed_param[n], f"{n}Length"])
+                elif t == "bool":
+                    call_args_list.append(f"{renamed_param[n]} ? (byte)1 : (byte)0")
                 else:
                     call_args_list.append(renamed_param[n])
             call_args = ", ".join(call_args_list)
@@ -286,7 +294,7 @@ def parse_native(lines: list[str]):
             chunks.append(post_code)
 
         if return_type != "void":
-            emit(chunks, f"{INDENT}{INDENT}return {renamed_ret};")
+            emit(chunks, f"{INDENT}{INDENT}return {f"{renamed_ret} == 1" if return_type == "bool" else renamed_ret};")
 
 
         for _ in range(state["closing_bracket"]):

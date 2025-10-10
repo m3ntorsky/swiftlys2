@@ -26,6 +26,7 @@
 #include <chrono>
 
 #include <regex>
+#include <ranges>
 
 #include <fmt/format.h>
 
@@ -222,16 +223,12 @@ std::set<std::string> explodeToSet(std::string str, std::string delimiter)
     return res;
 }
 
-std::string implode(std::vector<std::string> elements, std::string delimiter)
+std::string implode(std::vector<std::string>& elements, std::string delimiter)
 {
-    std::string s;
-    for (std::vector<std::string>::iterator ii = elements.begin(); ii != elements.end(); ++ii)
-    {
-        s += (*ii);
-        if (ii + 1 != elements.end())
-            s += delimiter;
-    }
-    return s;
+    if (elements.size() == 0) return "";
+
+    auto joined = elements | std::views::join_with(delimiter);
+    return std::string(joined.begin(), joined.end());
 }
 
 bool ends_with(std::string value, std::string ending)

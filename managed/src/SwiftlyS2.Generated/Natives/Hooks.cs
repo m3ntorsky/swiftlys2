@@ -35,12 +35,12 @@ internal static class NativeHooks {
   public unsafe static void SetHook(nint hook, nint func, nint callback) {
     _SetHook(hook, func, callback);
   }
-  private unsafe static delegate* unmanaged<nint, nint, int, nint, bool, void> _SetVHook;
+  private unsafe static delegate* unmanaged<nint, nint, int, nint, byte, void> _SetVHook;
   /// <summary>
   /// the callback should receive the exact arguments as the function has, and to return the same amount of arguments, plus the first argument needs to be the pointer to the original function
   /// </summary>
   public unsafe static void SetVHook(nint hook, nint entityOrVTable, int index, nint callback, bool isVtable) {
-    _SetVHook(hook, entityOrVTable, index, callback, isVtable);
+    _SetVHook(hook, entityOrVTable, index, callback, isVtable ? (byte)1 : (byte)0);
   }
   private unsafe static delegate* unmanaged<nint, void> _EnableHook;
   public unsafe static void EnableHook(nint hook) {
@@ -58,15 +58,15 @@ internal static class NativeHooks {
   public unsafe static void DisableVHook(nint hook) {
     _DisableVHook(hook);
   }
-  private unsafe static delegate* unmanaged<nint, bool> _IsHookEnabled;
+  private unsafe static delegate* unmanaged<nint, byte> _IsHookEnabled;
   public unsafe static bool IsHookEnabled(nint hook) {
     var ret = _IsHookEnabled(hook);
-    return ret;
+    return ret == 1;
   }
-  private unsafe static delegate* unmanaged<nint, bool> _IsVHookEnabled;
+  private unsafe static delegate* unmanaged<nint, byte> _IsVHookEnabled;
   public unsafe static bool IsVHookEnabled(nint hook) {
     var ret = _IsVHookEnabled(hook);
-    return ret;
+    return ret == 1;
   }
   private unsafe static delegate* unmanaged<nint, nint> _GetHookOriginal;
   public unsafe static nint GetHookOriginal(nint hook) {

@@ -78,7 +78,7 @@ internal static class NativeSounds {
   public unsafe static void AddAllClients(nint soundEvent) {
     _AddAllClients(soundEvent);
   }
-  private unsafe static delegate* unmanaged<nint, byte*, bool> _HasField;
+  private unsafe static delegate* unmanaged<nint, byte*, byte> _HasField;
   public unsafe static bool HasField(nint soundEvent, string fieldName) {
     var pool = ArrayPool<byte>.Shared;
     var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
@@ -89,10 +89,10 @@ internal static class NativeSounds {
         var ret = _HasField(soundEvent, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, bool, void> _SetBool;
+  private unsafe static delegate* unmanaged<nint, byte*, byte, void> _SetBool;
   public unsafe static void SetBool(nint soundEvent, string fieldName, bool value) {
     var pool = ArrayPool<byte>.Shared;
     var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
@@ -100,12 +100,12 @@ internal static class NativeSounds {
     Encoding.UTF8.GetBytes(fieldName, fieldNameBuffer);
     fieldNameBuffer[fieldNameLength] = 0;
     fixed (byte* fieldNameBufferPtr = fieldNameBuffer) {
-        _SetBool(soundEvent, fieldNameBufferPtr, value);
+        _SetBool(soundEvent, fieldNameBufferPtr, value ? (byte)1 : (byte)0);
     pool.Return(fieldNameBuffer);
 
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, bool> _GetBool;
+  private unsafe static delegate* unmanaged<nint, byte*, byte> _GetBool;
   public unsafe static bool GetBool(nint soundEvent, string fieldName) {
     var pool = ArrayPool<byte>.Shared;
     var fieldNameLength = Encoding.UTF8.GetByteCount(fieldName);
@@ -116,7 +116,7 @@ internal static class NativeSounds {
         var ret = _GetBool(soundEvent, fieldNameBufferPtr);
     pool.Return(fieldNameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
   private unsafe static delegate* unmanaged<nint, byte*, int, void> _SetInt32;

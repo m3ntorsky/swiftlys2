@@ -36,7 +36,7 @@ internal static class NativePatches {
 
   }
   }
-  private unsafe static delegate* unmanaged<byte*, bool> _Exists;
+  private unsafe static delegate* unmanaged<byte*, byte> _Exists;
   public unsafe static bool Exists(string patchName) {
     var pool = ArrayPool<byte>.Shared;
     var patchNameLength = Encoding.UTF8.GetByteCount(patchName);
@@ -47,7 +47,7 @@ internal static class NativePatches {
         var ret = _Exists(patchNameBufferPtr);
     pool.Return(patchNameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
 }

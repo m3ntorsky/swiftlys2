@@ -23,15 +23,15 @@ internal static class NativePlayer {
 
   }
   }
-  private unsafe static delegate* unmanaged<int, bool> _IsFakeClient;
+  private unsafe static delegate* unmanaged<int, byte> _IsFakeClient;
   public unsafe static bool IsFakeClient(int playerid) {
     var ret = _IsFakeClient(playerid);
-    return ret;
+    return ret == 1;
   }
-  private unsafe static delegate* unmanaged<int, bool> _IsAuthorized;
+  private unsafe static delegate* unmanaged<int, byte> _IsAuthorized;
   public unsafe static bool IsAuthorized(int playerid) {
     var ret = _IsAuthorized(playerid);
-    return ret;
+    return ret == 1;
   }
   private unsafe static delegate* unmanaged<int, uint> _GetConnectedTime;
   public unsafe static uint GetConnectedTime(int playerid) {
@@ -107,14 +107,14 @@ internal static class NativePlayer {
 
   }
   }
-  private unsafe static delegate* unmanaged<int, int, bool, void> _ShouldBlockTransmitEntity;
+  private unsafe static delegate* unmanaged<int, int, byte, void> _ShouldBlockTransmitEntity;
   public unsafe static void ShouldBlockTransmitEntity(int playerid, int entityidx, bool shouldBlockTransmit) {
-    _ShouldBlockTransmitEntity(playerid, entityidx, shouldBlockTransmit);
+    _ShouldBlockTransmitEntity(playerid, entityidx, shouldBlockTransmit ? (byte)1 : (byte)0);
   }
-  private unsafe static delegate* unmanaged<int, int, bool> _IsTransmitEntityBlocked;
+  private unsafe static delegate* unmanaged<int, int, byte> _IsTransmitEntityBlocked;
   public unsafe static bool IsTransmitEntityBlocked(int playerid, int entityidx) {
     var ret = _IsTransmitEntityBlocked(playerid, entityidx);
-    return ret;
+    return ret == 1;
   }
   private unsafe static delegate* unmanaged<int, void> _ClearTransmitEntityBlocked;
   public unsafe static void ClearTransmitEntityBlocked(int playerid) {
@@ -166,9 +166,9 @@ internal static class NativePlayer {
   public unsafe static void ClearCenterMenuRender(int playerid) {
     _ClearCenterMenuRender(playerid);
   }
-  private unsafe static delegate* unmanaged<int, bool> _HasMenuShown;
+  private unsafe static delegate* unmanaged<int, byte> _HasMenuShown;
   public unsafe static bool HasMenuShown(int playerid) {
     var ret = _HasMenuShown(playerid);
-    return ret;
+    return ret == 1;
   }
 }

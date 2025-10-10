@@ -50,7 +50,7 @@ internal static class NativeMemoryHelpers {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, byte*, int, bool, nint> _GetAddressBySignature;
+  private unsafe static delegate* unmanaged<byte*, byte*, int, byte, nint> _GetAddressBySignature;
   public unsafe static nint GetAddressBySignature(string library, string sig, int len, bool rawBytes) {
     var pool = ArrayPool<byte>.Shared;
     var libraryLength = Encoding.UTF8.GetByteCount(library);
@@ -64,7 +64,7 @@ internal static class NativeMemoryHelpers {
     Encoding.UTF8.GetBytes(sig, sigBuffer);
     sigBuffer[sigLength] = 0;
     fixed (byte* sigBufferPtr = sigBuffer) {
-        var ret = _GetAddressBySignature(libraryBufferPtr, sigBufferPtr, len, rawBytes);
+        var ret = _GetAddressBySignature(libraryBufferPtr, sigBufferPtr, len, rawBytes ? (byte)1 : (byte)0);
     pool.Return(libraryBuffer);
 
     pool.Return(sigBuffer);

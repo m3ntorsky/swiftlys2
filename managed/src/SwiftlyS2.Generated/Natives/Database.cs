@@ -58,7 +58,7 @@ internal static class NativeDatabase {
   }
   }
   }
-  private unsafe static delegate* unmanaged<byte*, bool> _ConnectionExists;
+  private unsafe static delegate* unmanaged<byte*, byte> _ConnectionExists;
   public unsafe static bool ConnectionExists(string connectionName) {
     var pool = ArrayPool<byte>.Shared;
     var connectionNameLength = Encoding.UTF8.GetByteCount(connectionName);
@@ -69,7 +69,7 @@ internal static class NativeDatabase {
         var ret = _ConnectionExists(connectionNameBufferPtr);
     pool.Return(connectionNameBuffer);
 
-    return ret;
+    return ret == 1;
   }
   }
 }

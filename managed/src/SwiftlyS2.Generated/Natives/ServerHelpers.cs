@@ -23,14 +23,14 @@ internal static class NativeServerHelpers {
     return retString;
   }
   }
-  private unsafe static delegate* unmanaged<bool> _UsePlayerLanguage;
+  private unsafe static delegate* unmanaged<byte> _UsePlayerLanguage;
   public unsafe static bool UsePlayerLanguage() {
     var ret = _UsePlayerLanguage();
-    return ret;
+    return ret == 1;
   }
-  private unsafe static delegate* unmanaged<bool> _IsFollowingServerGuidelines;
+  private unsafe static delegate* unmanaged<byte> _IsFollowingServerGuidelines;
   public unsafe static bool IsFollowingServerGuidelines() {
     var ret = _IsFollowingServerGuidelines();
-    return ret;
+    return ret == 1;
   }
 }

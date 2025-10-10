@@ -110,7 +110,7 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, bool, int, void> _AcceptInputBool;
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, byte, int, void> _AcceptInputBool;
   public unsafe static void AcceptInputBool(nint entity, string input, nint activator, nint caller, bool value, int outputID) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
@@ -118,7 +118,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-        _AcceptInputBool(entity, inputBufferPtr, activator, caller, value, outputID);
+        _AcceptInputBool(entity, inputBufferPtr, activator, caller, value ? (byte)1 : (byte)0, outputID);
     pool.Return(inputBuffer);
 
   }
@@ -223,7 +223,7 @@ internal static class NativeEntitySystem {
 
   }
   }
-  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, bool, float, void> _AddEntityIOEventBool;
+  private unsafe static delegate* unmanaged<nint, byte*, nint, nint, byte, float, void> _AddEntityIOEventBool;
   public unsafe static void AddEntityIOEventBool(nint entity, string input, nint activator, nint caller, bool value, float delay) {
     var pool = ArrayPool<byte>.Shared;
     var inputLength = Encoding.UTF8.GetByteCount(input);
@@ -231,7 +231,7 @@ internal static class NativeEntitySystem {
     Encoding.UTF8.GetBytes(input, inputBuffer);
     inputBuffer[inputLength] = 0;
     fixed (byte* inputBufferPtr = inputBuffer) {
-        _AddEntityIOEventBool(entity, inputBufferPtr, activator, caller, value, delay);
+        _AddEntityIOEventBool(entity, inputBufferPtr, activator, caller, value ? (byte)1 : (byte)0, delay);
     pool.Return(inputBuffer);
 
   }
@@ -258,10 +258,10 @@ internal static class NativeEntitySystem {
   }
   }
   }
-  private unsafe static delegate* unmanaged<nint, bool> _IsValidEntity;
+  private unsafe static delegate* unmanaged<nint, byte> _IsValidEntity;
   public unsafe static bool IsValidEntity(nint entity) {
     var ret = _IsValidEntity(entity);
-    return ret;
+    return ret == 1;
   }
   private unsafe static delegate* unmanaged<nint> _GetGameRules;
   public unsafe static nint GetGameRules() {
@@ -273,10 +273,10 @@ internal static class NativeEntitySystem {
     var ret = _GetEntitySystem();
     return ret;
   }
-  private unsafe static delegate* unmanaged<uint, bool> _EntityHandleIsValid;
+  private unsafe static delegate* unmanaged<uint, byte> _EntityHandleIsValid;
   public unsafe static bool EntityHandleIsValid(uint handle) {
     var ret = _EntityHandleIsValid(handle);
-    return ret;
+    return ret == 1;
   }
   private unsafe static delegate* unmanaged<uint, nint> _EntityHandleGet;
   public unsafe static nint EntityHandleGet(uint handle) {

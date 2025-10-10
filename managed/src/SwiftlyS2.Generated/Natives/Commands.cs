@@ -27,7 +27,7 @@ internal static class NativeCommands {
     return ret;
   }
   }
-  private unsafe static delegate* unmanaged<byte*, nint, bool, ulong> _RegisterCommand;
+  private unsafe static delegate* unmanaged<byte*, nint, byte, ulong> _RegisterCommand;
   /// <summary>
   /// callback should receive (int32 playerid, string arguments_list (separated by \x01), string commandName, string prefix, bool silent), if registerRaw is false, it will not put "sw_" before the command name
   /// </summary>
@@ -38,7 +38,7 @@ internal static class NativeCommands {
     Encoding.UTF8.GetBytes(commandName, commandNameBuffer);
     commandNameBuffer[commandNameLength] = 0;
     fixed (byte* commandNameBufferPtr = commandNameBuffer) {
-        var ret = _RegisterCommand(commandNameBufferPtr, callback, registerRaw);
+        var ret = _RegisterCommand(commandNameBufferPtr, callback, registerRaw ? (byte)1 : (byte)0);
     pool.Return(commandNameBuffer);
 
     return ret;
@@ -48,7 +48,7 @@ internal static class NativeCommands {
   public unsafe static void UnregisterCommand(ulong callbackID) {
     _UnregisterCommand(callbackID);
   }
-  private unsafe static delegate* unmanaged<byte*, byte*, bool, ulong> _RegisterAlias;
+  private unsafe static delegate* unmanaged<byte*, byte*, byte, ulong> _RegisterAlias;
   /// <summary>
   /// registerRaw behaves the same as on RegisterCommand, for commandName you need to also put the "sw_" prefix if the command is registered without raw mode
   /// </summary>
@@ -65,7 +65,7 @@ internal static class NativeCommands {
     Encoding.UTF8.GetBytes(commandName, commandNameBuffer);
     commandNameBuffer[commandNameLength] = 0;
     fixed (byte* commandNameBufferPtr = commandNameBuffer) {
-        var ret = _RegisterAlias(aliasNameBufferPtr, commandNameBufferPtr, registerRaw);
+        var ret = _RegisterAlias(aliasNameBufferPtr, commandNameBufferPtr, registerRaw ? (byte)1 : (byte)0);
     pool.Return(aliasNameBuffer);
 
     pool.Return(commandNameBuffer);

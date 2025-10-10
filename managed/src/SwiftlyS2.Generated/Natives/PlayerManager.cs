@@ -10,10 +10,10 @@ namespace SwiftlyS2.Core.Natives;
 
 internal static class NativePlayerManager {
   private static int _MainThreadID;
-  private unsafe static delegate* unmanaged<int, bool> _IsPlayerOnline;
+  private unsafe static delegate* unmanaged<int, byte> _IsPlayerOnline;
   public unsafe static bool IsPlayerOnline(int playerid) {
     var ret = _IsPlayerOnline(playerid);
-    return ret;
+    return ret == 1;
   }
   private unsafe static delegate* unmanaged<int> _GetPlayerCount;
   public unsafe static int GetPlayerCount() {
@@ -38,9 +38,9 @@ internal static class NativePlayerManager {
 
   }
   }
-  private unsafe static delegate* unmanaged<int, bool, void> _ShouldBlockTransmitEntity;
+  private unsafe static delegate* unmanaged<int, byte, void> _ShouldBlockTransmitEntity;
   public unsafe static void ShouldBlockTransmitEntity(int entityidx, bool shouldBlockTransmit) {
-    _ShouldBlockTransmitEntity(entityidx, shouldBlockTransmit);
+    _ShouldBlockTransmitEntity(entityidx, shouldBlockTransmit ? (byte)1 : (byte)0);
   }
   private unsafe static delegate* unmanaged<void> _ClearAllBlockedTransmitEntity;
   public unsafe static void ClearAllBlockedTransmitEntity() {
