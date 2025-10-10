@@ -1,6 +1,7 @@
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Core.GameEventDefinitions;
+using SwiftlyS2.Shared.Players;
 
 namespace SwiftlyS2.Shared.GameEventDefinitions;
 
@@ -28,6 +29,10 @@ public interface EventBombDefused : IGameEvent<EventBombDefused> {
   /// </summary>
   CCSPlayerPawn UserIdPawn { get; }
 
+
+  // player who defused the bomb
+  public IPlayer UserIdPlayer
+  { get => Accessor.GetPlayer("userid"); }
   /// <summary>
   /// player who defused the bomb
   /// <br/>

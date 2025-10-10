@@ -33,7 +33,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="icon.png" Pack="true" PackagePath="\"/>
+    <None Include="icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +46,7 @@
     <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="8.0.0" />
+    <PackageReference Include="Mono.Cecil" Version="0.11.6" />
     <PackageReference Include="MySqlConnector" Version="2.4.0" />
     <PackageReference Include="Npgsql" Version="9.0.3" />
     <PackageReference Include="Spectre.Console" Version="0.51.1" />

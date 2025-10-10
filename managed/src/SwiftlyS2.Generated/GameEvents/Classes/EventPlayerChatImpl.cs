@@ -2,6 +2,7 @@ using SwiftlyS2.Core.GameEvents;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.GameEventDefinitions;
+using SwiftlyS2.Shared.Players;
 
 namespace SwiftlyS2.Core.GameEventDefinitions;
 
@@ -28,6 +29,10 @@ internal class EventPlayerChatImpl : GameEvent<EventPlayerChat>, EventPlayerChat
   // chatting player
   public CCSPlayerPawn UserIdPawn
   { get => Accessor.GetPlayerPawn("userid"); }
+
+  // chatting player
+  public IPlayer UserIdPlayer
+  { get => Accessor.GetPlayer("userid"); }
 
   // chatting player
   public int UserId

@@ -93,6 +93,11 @@ uint32_t CSoundEvent::Emit()
 
     return guid;
 }
+void CSoundEvent::SetClientMask(uint64_t mask)
+{
+    QueueLockGuard lock(m_mtxLock);
+    *(reinterpret_cast<uint64_t*>(const_cast<uint32*>(m_fClients.GetRecipients().Base()))) = mask;
+}
 
 void CSoundEvent::SetName(const std::string& name)
 {

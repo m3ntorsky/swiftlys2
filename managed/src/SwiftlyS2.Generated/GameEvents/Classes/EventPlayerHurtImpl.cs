@@ -2,6 +2,7 @@ using SwiftlyS2.Core.GameEvents;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.GameEventDefinitions;
+using SwiftlyS2.Shared.Players;
 
 namespace SwiftlyS2.Core.GameEventDefinitions;
 
@@ -23,6 +24,10 @@ internal class EventPlayerHurtImpl : GameEvent<EventPlayerHurt>, EventPlayerHurt
   // player who was hurt
   public CCSPlayerPawn UserIdPawn
   { get => Accessor.GetPlayerPawn("userid"); }
+
+  // player who was hurt
+  public IPlayer UserIdPlayer
+  { get => Accessor.GetPlayer("userid"); }
 
   // player who was hurt
   public int UserId

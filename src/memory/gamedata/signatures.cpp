@@ -31,6 +31,7 @@
 #include <nlohmann/json.hpp>
 
 #include <fmt/format.h>
+#include <s2binlib/s2binlib.h>
 
 using json = nlohmann::json;
 
@@ -82,9 +83,8 @@ void GameDataSignatures::Load(const std::string& game)
 
                 logger->Info("GameData", fmt::format("Searching for signature '{}'...\n", key));
 
-                auto module = DetermineModuleByLibrary(lib);
                 void* sig = nullptr;
-                if (signature.at(0) == '@') sig = module.GetFunctionByName(signature.substr(1)).RCast<void*>();
+                if (signature.at(0) == '@') s2binlib_find_symbol(lib.c_str(), signature.substr(1).c_str(), &sig);
                 else sig = FindSignature(lib, signature);
 
                 if (!sig)

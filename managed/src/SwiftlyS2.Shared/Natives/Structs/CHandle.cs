@@ -6,26 +6,37 @@ using SwiftlyS2.Shared.Schemas;
 namespace SwiftlyS2.Shared.Natives;
 
 [StructLayout(LayoutKind.Sequential, Size = 4)]
-public struct CHandle<T> where T : class, ISchemaClass<T> {
+public struct CHandle<T> where T : class, ISchemaClass<T>
+{
   private uint _index;
 
-  public uint Raw { 
+  public uint Raw
+  {
     get => _index;
     set => _index = value;
   }
 
-  public CHandle(uint raw) {
+  public CHandle(uint raw)
+  {
     _index = raw;
   }
 
-  public readonly T? Value {
-    get {
-      unsafe {
-        if (!IsValid) {
+  public T? Value
+  {
+    get
+    {
+      unsafe
+      {
+        if (!IsValid)
+        {
           return null;
         }
         return (T?)T.From(NativeEntitySystem.EntityHandleGet(_index));
       }
+    }
+    set
+    {
+      _index = value is null ? 0xFFFFFFFF : NativeEntitySystem.GetEntityHandleFromEntity(value.Address);
     }
   }
 

@@ -4,16 +4,19 @@ using SwiftlyS2.Core.Misc;
 
 namespace SwiftlyS2.Core.Services;
 
-internal class StartupService : IHostedService {
+internal class StartupService : IHostedService
+{
 
   private IServiceProvider _provider;
 
-  public StartupService(IServiceProvider provider) {
+  public StartupService(IServiceProvider provider)
+  {
     _provider = provider;
     provider.UseCoreCommandService();
     provider.UseCoreHookService();
     provider.UsePermissionManager();
     provider.UsePluginManager();
+    provider.UseMenuService();
     // provider.UseTestService();
   }
 
@@ -22,7 +25,8 @@ internal class StartupService : IHostedService {
     return Task.CompletedTask;
   }
 
-  public Task StopAsync(CancellationToken cancellationToken) {
+  public Task StopAsync(CancellationToken cancellationToken)
+  {
     FileLogger.Dispose();
     return Task.CompletedTask;
   }

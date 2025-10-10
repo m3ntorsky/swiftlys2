@@ -61,9 +61,9 @@ public:
 
     int GetRecipientCount()
     {
-        const uint64_t bits = *reinterpret_cast<const uint64_t*>(&GetRecipients());
+        const uint64_t bits = *reinterpret_cast<const uint64_t*>(GetRecipients().Base());
 
-        int count;
+        int count = 0;
         for (int i = 0; i < 64; i++)
             if ((bits & (1ULL << i)))
                 ++count;

@@ -150,6 +150,38 @@ int Bridge_EngineHelpers_GetNativeVersion(char* out)
     return s.size();
 }
 
+int Bridge_EngineHelpers_GetMenuSettings(char* out)
+{
+    static std::string s;
+
+    auto configuration = g_ifaceService.FetchInterface<IConfiguration>(CONFIGURATION_INTERFACE_VERSION);
+    try {
+        std::vector<std::string> settings = {
+                std::get<std::string>(configuration->GetValue("core.Menu.NavigationPrefix")),
+                std::get<std::string>(configuration->GetValue("core.Menu.InputMode")),
+                std::get<std::string>(configuration->GetValue("core.Menu.Buttons.Use")),
+                std::get<std::string>(configuration->GetValue("core.Menu.Buttons.Scroll")),
+                std::get<std::string>(configuration->GetValue("core.Menu.Buttons.Exit")),
+                std::get<std::string>(configuration->GetValue("core.Menu.Sound.Use.Name")),
+                std::to_string(std::get<double>(configuration->GetValue("core.Menu.Sound.Use.Volume"))),
+                std::get<std::string>(configuration->GetValue("core.Menu.Sound.Scroll.Name")),
+                std::to_string(std::get<double>(configuration->GetValue("core.Menu.Sound.Scroll.Volume"))),
+                std::get<std::string>(configuration->GetValue("core.Menu.Sound.Exit.Name")),
+                std::to_string(std::get<double>(configuration->GetValue("core.Menu.Sound.Exit.Volume"))),
+                std::to_string(std::get<int>(configuration->GetValue("core.Menu.KindSettings.Center.ItemsPerPage"))),
+        };
+
+        s = implode(settings, "\x01");
+    }
+    catch (std::exception& e)
+    {
+        printf("Exception: %s\n", e.what());
+    }
+
+    if (out != nullptr) strcpy(out, s.c_str());
+    return s.size();
+}
+
 DEFINE_NATIVE("EngineHelpers.GetServerIP", Bridge_EngineHelpers_GetServerIP);
 DEFINE_NATIVE("EngineHelpers.GetMap", Bridge_EngineHelpers_GetMap);
 DEFINE_NATIVE("EngineHelpers.IsMapValid", Bridge_EngineHelpers_IsMapValid);
@@ -162,3 +194,4 @@ DEFINE_NATIVE("EngineHelpers.SendMessageToConsole", Bridge_EngineHelpers_SendMes
 DEFINE_NATIVE("EngineHelpers.GetTraceManager", Bridge_EngineHelpers_GetTraceManager);
 DEFINE_NATIVE("EngineHelpers.GetCurrentGame", Bridge_EngineHelpers_GetCurrentGame);
 DEFINE_NATIVE("EngineHelpers.GetNativeVersion", Bridge_EngineHelpers_GetNativeVersion);
+DEFINE_NATIVE("EngineHelpers.GetMenuSettings", Bridge_EngineHelpers_GetMenuSettings);

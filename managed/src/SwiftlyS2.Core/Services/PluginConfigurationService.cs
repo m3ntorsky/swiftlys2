@@ -14,6 +14,10 @@ internal class PluginConfigurationService : IPluginConfigurationService {
   private CoreContext _Id { get; init; }
   private IConfigurationManager? _Manager { get; set; }
 
+  public bool BasePathExists { 
+    get => Path.Exists(BasePath);
+  }
+
   public PluginConfigurationService(CoreContext id, ConfigurationService configurationService) {
     _Id = id;
     _ConfigurationService = configurationService;
@@ -42,7 +46,8 @@ internal class PluginConfigurationService : IPluginConfigurationService {
     }
 
     var dir = Path.GetDirectoryName(configPath);
-    if (dir is not null) {
+    if (dir is not null)
+    {
       Directory.CreateDirectory(dir);
     }
     File.Create(configPath).Close();
@@ -66,7 +71,8 @@ internal class PluginConfigurationService : IPluginConfigurationService {
     }
 
     var dir = Path.GetDirectoryName(configPath);
-    if (dir is not null) {
+    if (dir is not null)
+    {
       Directory.CreateDirectory(dir);
     }
     File.Create(configPath).Close();
@@ -96,6 +102,9 @@ internal class PluginConfigurationService : IPluginConfigurationService {
 
   public IConfigurationManager Manager {
     get {
+      if (!BasePathExists) {
+        throw new Exception("Base path does not exist in file system. Please call InitializeWithTemplate or InitializeJsonWithModel before using the Manager.");
+      }
       if (_Manager is null) {
         _Manager = new ConfigurationManager();
         _Manager.SetBasePath(BasePath);

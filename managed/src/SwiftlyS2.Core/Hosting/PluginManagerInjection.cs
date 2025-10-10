@@ -12,6 +12,6 @@ internal static class PluginManagerInjection
 
   public static void UsePluginManager(this IServiceProvider self)
   {
-    self.GetRequiredService<PluginManager>().LoadPlugins();
+    self.GetRequiredService<PluginManager>();
   }
 }

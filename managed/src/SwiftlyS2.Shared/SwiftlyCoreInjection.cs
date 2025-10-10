@@ -35,7 +35,7 @@ public static class SwiftlyCoreInjection {
         .AddSingleton(typeof(ILogger<>), typeof(Logger<>));
     }
 
-    if (addConfiguration) {
+    if (addConfiguration && core.Configuration.BasePathExists) {
       self
         .AddSingleton(core.Configuration)
         .AddSingleton(core.Configuration.Manager)

@@ -2,6 +2,7 @@ using SwiftlyS2.Core.GameEvents;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.GameEventDefinitions;
+using SwiftlyS2.Shared.Players;
 
 namespace SwiftlyS2.Core.GameEventDefinitions;
 
@@ -23,6 +24,10 @@ internal class EventInstructorStartLessonImpl : GameEvent<EventInstructorStartLe
   // The player who this lesson is intended for
   public CCSPlayerPawn UserIdPawn
   { get => Accessor.GetPlayerPawn("userid"); }
+
+  // The player who this lesson is intended for
+  public IPlayer UserIdPlayer
+  { get => Accessor.GetPlayer("userid"); }
 
   // The player who this lesson is intended for
   public int UserId

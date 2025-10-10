@@ -1,4 +1,5 @@
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Shared.Players;
 using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.GameEvents;
@@ -140,6 +141,13 @@ public interface IGameEventAccessor : INativeHandle
   /// <param name="key">Field name.</param>
   /// <returns>Player pawn.</returns>
   public CCSPlayerPawn GetPlayerPawn(string key);
+
+  /// <summary>
+  /// Gets the player referenced by the given field.
+  /// </summary>
+  /// <param name="key">Field name.</param>
+  /// <returns>Player.</returns>
+  public IPlayer GetPlayer(string key);
 
   /// <summary>
   /// Sets a raw pointer value on the event payload.

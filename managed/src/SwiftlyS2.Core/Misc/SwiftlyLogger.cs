@@ -58,7 +58,11 @@ internal class SwiftlyLogger : ILogger
     if (!string.IsNullOrEmpty(message))
     {
       FileLogger.Log($"{_contextName} | {timestamp} | {level} | {_categoryName}{id} | {message}");
-      AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]{_contextName}[/] [lightsteelblue]|[/] [grey85]{message}[/]");
+      var lines = message.Split('\n');
+      foreach (var line in lines)
+      {
+        AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]{_contextName}[/] [lightsteelblue]|[/] [grey85]{line}[/]");
+      }
     }
 
     if (exception != null)
@@ -73,13 +77,13 @@ internal class SwiftlyLogger : ILogger
   {
     return logLevel switch
     {
-      LogLevel.Trace =>           "Trace      ",
-      LogLevel.Debug =>           "Debug      ",
-      LogLevel.Information =>     "Information",
-      LogLevel.Warning =>         "Warning    ",
-      LogLevel.Error =>           "Error      ",
-      LogLevel.Critical =>        "Critical   ",
-      _ =>                        "Unknown    "
+      LogLevel.Trace => "Trace      ",
+      LogLevel.Debug => "Debug      ",
+      LogLevel.Information => "Information",
+      LogLevel.Warning => "Warning    ",
+      LogLevel.Error => "Error      ",
+      LogLevel.Critical => "Critical   ",
+      _ => "Unknown    "
     };
   }
 

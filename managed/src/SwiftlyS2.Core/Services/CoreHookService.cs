@@ -20,7 +20,7 @@ internal class CoreHookService : IDisposable {
   }
 
   private delegate int CanAcquireDelegate(nint pItemServices, nint pEconItemView, nint acquireMethod, nint unk1);
-  private IUnmanagedFunction<CanAcquireDelegate> _CanAcquire;
+  private IUnmanagedFunction<CanAcquireDelegate>? _CanAcquire;
   private Guid _CanAcquireGuid;
 
   private void HookCanAcquire() {
@@ -59,6 +59,6 @@ internal class CoreHookService : IDisposable {
   }
 
   public void Dispose() {
-    _CanAcquire.RemoveHook(_CanAcquireGuid);
+    _CanAcquire!.RemoveHook(_CanAcquireGuid);
   }
 }

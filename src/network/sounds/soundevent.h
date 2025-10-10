@@ -42,6 +42,7 @@ public:
     virtual void RemoveClient(int playerid) override;
     virtual void ClearClients() override;
     virtual void AddAllClients() override;
+    virtual void SetClientMask(uint64_t mask) override;
     virtual std::vector<int> GetClients() override;
 
     virtual bool HasField(const std::string& name) override;

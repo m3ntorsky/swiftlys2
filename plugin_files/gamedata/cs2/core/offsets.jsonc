@@ -39,9 +39,24 @@
         "windows": 2,
         "linux": 0
     },
+    /*
+    find string 'CBaseEntity::EmitSound' inside server.dll to find EmitSoundFilter function,
+    inside it, at the beginning there's a return struct initialization, which contains the guid
+    the initialization looks like this:
+
+    *((_DWORD *)a2 + 1) = -1;
+    *(_DWORD *)a2 = 0;
+    *((_DWORD *)a2 + 2) = 0;
+    *(_QWORD *)((char *)a2 + 12) = 0i64;
+    v6 = a3;
+
+    *a2 = 0 is the initialization of guid.
+    find the modification to a2 on the following code to find the function that acquire a new guid.
+    inside it there should be a virtual call on CSoundSystem.
+    */
     "CSoundSystem::TakeGuid": {
-        "windows": 72,
-        "linux": 71
+        "windows": 77,
+        "linux": 76
     },
     "CGameRules::FindPickerEntity": {
         "windows": 25,

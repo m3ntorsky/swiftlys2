@@ -1,6 +1,8 @@
 using System.Text.Json;
 using Microsoft.Extensions.Logging;
+using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Services;
+using SwiftlyS2.Shared.Translation;
 
 namespace SwiftlyS2.Core.Translations;
 
@@ -36,7 +38,7 @@ internal class TranslationFactory
 
       var translation = JsonSerializer.Deserialize<Dictionary<string, string>>(File.ReadAllText(translationFile), options) ?? new();
       foreach (var translationEntry in translation) {
-        translation[translationEntry.Key] = ReplaceColor(translationEntry.Value);
+        translation[translationEntry.Key] = translationEntry.Value.Colored();
       }
       resource.Resources[new Language(language)] = translation;
     }
@@ -50,40 +52,6 @@ internal class TranslationFactory
     }
 
     return resource;
-  }
-
-  private static readonly Dictionary<string, string> ColorCodes = new()
-  {
-    { "[default]", "\x01" },
-    { "[/]", "\x01" },
-    { "[white]", "\x01" },
-    { "[darkred]", "\x02" },
-    { "[lightpurple]", "\x03" },
-    { "[green]", "\x04" },
-    { "[olive]", "\x05" },
-    { "[lime]", "\x06" },
-    { "[red]", "\x07" },
-    { "[gray]", "\x08" },
-    { "[grey]", "\x08" },
-    { "[lightyellow]", "\x09" },
-    { "[yellow]", "\x09" },
-    { "[silver]", "\x0A" },
-    { "[bluegrey]", "\x0A" },
-    { "[lightblue]", "\x0B" },
-    { "[blue]", "\x0B" },
-    { "[darkblue]", "\x0C" },
-    { "[purple]", "\x0E" },
-    { "[magenta]", "\x0E" },
-    { "[lightred]", "\x0F" },
-    { "[gold]", "\x10" },
-    { "[orange]", "\x10" }
-  };
-
-  private static string ReplaceColor(string original) {
-    foreach (var color in ColorCodes) {
-      original = original.Replace(color.Key, color.Value);
-    }
-    return original;
   }
 
 

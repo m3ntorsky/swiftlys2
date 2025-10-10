@@ -47,4 +47,9 @@ public interface IPluginConfigurationService {
   /// </summary>
   public IConfigurationManager Manager { get; }
 
+  /// <summary>
+  /// Whether the base path exists in the file system.
+  /// </summary>
+  public bool BasePathExists { get; }
+
 }

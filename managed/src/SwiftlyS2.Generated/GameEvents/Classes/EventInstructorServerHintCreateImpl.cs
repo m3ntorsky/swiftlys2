@@ -2,6 +2,7 @@ using SwiftlyS2.Core.GameEvents;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.GameEventDefinitions;
+using SwiftlyS2.Shared.Players;
 
 namespace SwiftlyS2.Core.GameEventDefinitions;
 
@@ -24,6 +25,10 @@ internal class EventInstructorServerHintCreateImpl : GameEvent<EventInstructorSe
   // user ID of the player that triggered the hint
   public CCSPlayerPawn UserIdPawn
   { get => Accessor.GetPlayerPawn("userid"); }
+
+  // user ID of the player that triggered the hint
+  public IPlayer UserIdPlayer
+  { get => Accessor.GetPlayer("userid"); }
 
   // user ID of the player that triggered the hint
   public int UserId
@@ -132,4 +137,8 @@ internal class EventInstructorServerHintCreateImpl : GameEvent<EventInstructorSe
   // offset for attached panels
   public float HintVrOffsetZ
   { get => Accessor.GetFloat("hint_vr_offset_z"); set => Accessor.SetFloat("hint_vr_offset_z", value); }
+
+  // gamepad bindings to use when use_binding is the onscreen icon
+  public string HintGamepadBinding
+  { get => Accessor.GetString("hint_gamepad_binding"); set => Accessor.SetString("hint_gamepad_binding", value); }
 }

@@ -10,10 +10,10 @@ public partial class PluginId : BasePlugin {
   {
   }
 
-  public override void ConfigureSharedServices(IServiceCollection sharedServices) {
+  public override void ConfigureSharedInterface(IInterfaceManager interfaceManager) {
   }
 
-  public override void UseSharedServices(IServiceProvider sharedProvider) {
+  public override void UseSharedInterface(IInterfaceManager interfaceManager) {
   }
 
   public override void Load(bool hotReload) {

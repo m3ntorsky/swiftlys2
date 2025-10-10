@@ -1,7 +1,8 @@
 ﻿using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Shared.Players;
 using SwiftlyS2.Shared.Services;
 
-namespace SwiftlyS2.Core.Services;
+namespace SwiftlyS2.Core.Players;
 
 internal class PlayerManagerService : IPlayerManagerService
 {

@@ -3,7 +3,8 @@ using SwiftlyS2.Shared.Misc;
 
 namespace SwiftlyS2.Shared.Commands;
 
-public interface ICommandService {
+public interface ICommandService
+{
 
   /// <summary>
   /// The listener for the command.
@@ -36,8 +37,9 @@ public interface ICommandService {
   /// <param name="commandName">The command name.</param>
   /// <param name="handler">The handler callback for the command.</param>
   /// <param name="registerRaw">If set to false, the command will not starts with a `sw_` prefix.</param>
+  /// <param name="permission">The permission required to use the command.</param>
   /// <returns>The guid of the command.</returns>
-  Guid RegisterCommand(string commandName, CommandListener handler, bool registerRaw = false);
+  Guid RegisterCommand(string commandName, CommandListener handler, bool registerRaw = false, string permission = "");
 
   /// <summary>
   /// Registers a command alias.
@@ -76,7 +78,7 @@ public interface ICommandService {
   /// Hooks client chat, will be fired when a player sends any chat message.
   /// </summary>
   /// <param name="handler">The handler callback for the client chat.</param>
-  void HookClientChat(ClientChatHandler handler);
+  Guid HookClientChat(ClientChatHandler handler);
 
   /// <summary>
   /// Unhooks a client chat.

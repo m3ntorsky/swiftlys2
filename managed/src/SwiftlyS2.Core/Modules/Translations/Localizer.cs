@@ -1,4 +1,5 @@
 using SwiftlyS2.Shared.Services;
+using SwiftlyS2.Shared.Translation;
 
 namespace SwiftlyS2.Core.Translations;
 

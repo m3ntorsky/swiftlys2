@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SwiftlyS2.Core.Services;
+using SwiftlyS2.Core.Players;
 
 namespace SwiftlyS2.Core.Hosting;
 

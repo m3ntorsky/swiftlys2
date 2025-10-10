@@ -1,6 +1,7 @@
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Core.GameEventDefinitions;
+using SwiftlyS2.Shared.Players;
 
 namespace SwiftlyS2.Shared.GameEventDefinitions;
 
@@ -28,5 +29,30 @@ public interface EventVoteChanged : IGameEvent<EventVoteChanged> {
   /// type: byte
   /// </summary>
   byte PotentialVotes { get; set; }
+
+  /// <summary>
+  /// type: byte
+  /// </summary>
+  byte VoteOption1 { get; set; }
+
+  /// <summary>
+  /// type: byte
+  /// </summary>
+  byte VoteOption2 { get; set; }
+
+  /// <summary>
+  /// type: byte
+  /// </summary>
+  byte VoteOption3 { get; set; }
+
+  /// <summary>
+  /// type: byte
+  /// </summary>
+  byte VoteOption4 { get; set; }
+
+  /// <summary>
+  /// type: byte
+  /// </summary>
+  byte VoteOption5 { get; set; }
 
 }

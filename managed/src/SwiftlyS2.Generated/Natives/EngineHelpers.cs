@@ -142,4 +142,17 @@ internal static class NativeEngineHelpers {
     return retString;
   }
   }
+  private unsafe static delegate* unmanaged<byte*, int> _GetMenuSettings;
+  public unsafe static string GetMenuSettings() {
+    var ret = _GetMenuSettings(null);
+    var pool = ArrayPool<byte>.Shared;
+    var retBuffer = pool.Rent(ret+1);
+    fixed (byte* retBufferPtr = retBuffer) {
+        ret = _GetMenuSettings(retBufferPtr);
+    var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
+    pool.Return(retBuffer);
+
+    return retString;
+  }
+  }
 }

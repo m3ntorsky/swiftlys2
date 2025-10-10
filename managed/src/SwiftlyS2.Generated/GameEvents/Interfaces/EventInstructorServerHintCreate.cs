@@ -1,6 +1,7 @@
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Core.GameEventDefinitions;
+using SwiftlyS2.Shared.Players;
 
 namespace SwiftlyS2.Shared.GameEventDefinitions;
 
@@ -29,6 +30,10 @@ public interface EventInstructorServerHintCreate : IGameEvent<EventInstructorSer
   /// </summary>
   CCSPlayerPawn UserIdPawn { get; }
 
+
+  // user ID of the player that triggered the hint
+  public IPlayer UserIdPlayer
+  { get => Accessor.GetPlayer("userid"); }
   /// <summary>
   /// user ID of the player that triggered the hint
   /// <br/>
@@ -217,5 +222,12 @@ public interface EventInstructorServerHintCreate : IGameEvent<EventInstructorSer
   /// type: float
   /// </summary>
   float HintVrOffsetZ { get; set; }
+
+  /// <summary>
+  /// gamepad bindings to use when use_binding is the onscreen icon
+  /// <br/>
+  /// type: string
+  /// </summary>
+  string HintGamepadBinding { get; set; }
 
 }

@@ -7,18 +7,22 @@ using SwiftlyS2.Shared.EntitySystem;
 using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.Memory;
+using SwiftlyS2.Shared.Menus;
 using SwiftlyS2.Shared.NetMessages;
 using SwiftlyS2.Shared.Permissions;
+using SwiftlyS2.Shared.Players;
 using SwiftlyS2.Shared.Profiler;
 using SwiftlyS2.Shared.Scheduler;
 using SwiftlyS2.Shared.Services;
+using SwiftlyS2.Shared.Translation;
 
 namespace SwiftlyS2.Shared;
 
 /// <summary>
 /// Core interface of SwiftlyS2 framework.
 /// </summary>
-public interface ISwiftlyCore {
+public interface ISwiftlyCore
+{
 
 
   /// <summary>
@@ -131,4 +135,9 @@ public interface ISwiftlyCore {
   /// Gets the file path to the plugin directory.
   /// </summary>
   public string PluginPath { get; }
+
+  /// <summary>
+  /// Menu manager.
+  /// </summary>
+  public IMenuManager Menus { get; }
 }

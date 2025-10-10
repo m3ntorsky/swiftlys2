@@ -46,10 +46,12 @@ public class SoundEvent : IDisposable {
     set => NativeSounds.SetFloat(Address, "public.pitch", value);
   }
 
+  private CRecipientFilter _recipients = new();
+
   /// <summary>
   /// The recipients of the sound event.
   /// </summary>
-  public CRecipientFilter Recipients { get; set; } = new();
+  public ref CRecipientFilter Recipients { get => ref _recipients; }
 
   public SoundEvent() {
     _handle = new SoundEventSafeHandle(NativeSounds.CreateSoundEvent());

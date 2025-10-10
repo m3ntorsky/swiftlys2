@@ -9,7 +9,7 @@ namespace SwiftlyS2.Core.Services;
 internal class ProfileService {
 
   private readonly object _lock = new();
-  private bool _enabled = true;
+  private bool _enabled = false;
 
   private readonly Dictionary<string, Dictionary<string, Stat>> _statsTable = new();
   private readonly Dictionary<string, Dictionary<string, ulong>> _activeStartsUs = new();

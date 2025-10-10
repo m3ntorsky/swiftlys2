@@ -2,11 +2,12 @@
 using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.ProtobufDefinitions;
 using SwiftlyS2.Shared.SchemaDefinitions;
+using SwiftlyS2.Shared.Translation;
 
-namespace SwiftlyS2.Shared.Services;
+namespace SwiftlyS2.Shared.Players;
 
 [Flags]
-public enum VoiceFlagValue: uint
+public enum VoiceFlagValue : uint
 {
     Normal = 0,
     Muted = 1 << 0,
@@ -16,14 +17,14 @@ public enum VoiceFlagValue: uint
     ListenTeam = 1 << 4,
 };
 
-public enum ListenOverride: byte
+public enum ListenOverride : byte
 {
     Default = 0,
     Mute = 1,
     Hear = 2
 };
 
-public enum Team: byte
+public enum Team : byte
 {
     None = 0,
     Spectator = 1,
@@ -31,7 +32,7 @@ public enum Team: byte
     CT = 3
 };
 
-public interface IPlayer
+public interface IPlayer : IEquatable<IPlayer>
 {
     /// <summary>
     /// Gets the unique identifier for the player.

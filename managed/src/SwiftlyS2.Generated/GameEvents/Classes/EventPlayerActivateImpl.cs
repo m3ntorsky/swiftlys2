@@ -2,6 +2,7 @@ using SwiftlyS2.Core.GameEvents;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.SchemaDefinitions;
 using SwiftlyS2.Shared.GameEventDefinitions;
+using SwiftlyS2.Shared.Players;
 
 namespace SwiftlyS2.Core.GameEventDefinitions;
 
@@ -23,6 +24,10 @@ internal class EventPlayerActivateImpl : GameEvent<EventPlayerActivate>, EventPl
   // user ID on server
   public CCSPlayerPawn UserIdPawn
   { get => Accessor.GetPlayerPawn("userid"); }
+
+  // user ID on server
+  public IPlayer UserIdPlayer
+  { get => Accessor.GetPlayer("userid"); }
 
   // user ID on server
   public int UserId

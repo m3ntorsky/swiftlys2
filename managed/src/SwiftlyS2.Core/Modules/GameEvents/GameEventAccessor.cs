@@ -1,8 +1,10 @@
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Natives.NativeObjects;
+using SwiftlyS2.Core.Players;
 using SwiftlyS2.Core.SchemaDefinitions;
 using SwiftlyS2.Shared.GameEvents;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Shared.Players;
 using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Core.GameEvents;
@@ -112,6 +114,11 @@ internal class GameEventAccessor : NativeHandle, IGameEventAccessor, IDisposable
   public CCSPlayerPawn GetPlayerPawn(string key) {
     CheckIsValid();
     return new CCSPlayerPawnImpl(NativeGameEvents.GetPlayerPawn(Address, key));
+  }
+
+  public IPlayer GetPlayer(string key) {
+    CheckIsValid();
+    return new Player(GetInt32(key));
   }
 
   public void SetPtr(string key, nint value) {
