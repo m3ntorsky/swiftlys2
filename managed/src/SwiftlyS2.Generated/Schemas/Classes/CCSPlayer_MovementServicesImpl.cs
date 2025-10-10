@@ -114,9 +114,6 @@ internal partial class CCSPlayer_MovementServicesImpl : CPlayer_MovementServices
   public ref float Stamina {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD20D9A03EE725C8C));
   }
-  public ref Vector InputRotated {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD20D9A03853EE154));
-  }
   public ref float HeightAtJumpStart {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xD20D9A03DDECB4A7));
   }
@@ -137,6 +134,9 @@ internal partial class CCSPlayer_MovementServicesImpl : CPlayer_MovementServices
   }
   public ref bool WasSurfing {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD20D9A03C30201EE));
+  }
+  public ref Vector InputRotated {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD20D9A03853EE154));
   }
 
   public void LadderNormalUpdated() {
@@ -192,9 +192,6 @@ internal partial class CCSPlayer_MovementServicesImpl : CPlayer_MovementServices
   }
   public void StaminaUpdated() {
     Schema.Update(_Handle, 0xD20D9A03EE725C8C);
-  }
-  public void InputRotatedUpdated() {
-    Schema.Update(_Handle, 0xD20D9A03853EE154);
   }
   public void WasSurfingUpdated() {
     Schema.Update(_Handle, 0xD20D9A03C30201EE);
