@@ -21,6 +21,8 @@
 
 #include <memory/gamedata/manager.h>
 
+#include <s2binlib/s2binlib.h>
+
 void* Bridge_MemoryHelpers_FetchInterfaceByName(const char* iface_name)
 {
     return g_ifaceService.FetchInterface<void>(iface_name);
@@ -28,11 +30,9 @@ void* Bridge_MemoryHelpers_FetchInterfaceByName(const char* iface_name)
 
 void* Bridge_MemoryHelpers_GetVirtualTableAddress(const char* binary, const char* vtable_name)
 {
-    auto bin = DetermineModuleByLibrary(binary);
-    if (!bin.GetModuleBase()) return nullptr;
-
-    auto vtable = bin.GetVirtualTableByName(vtable_name);
-    return vtable.RCast<void*>();
+    void* result = nullptr;
+    s2binlib_find_vtable(binary, vtable_name, &result);
+    return result;
 }
 
 std::string BytesToIdaSignature(const unsigned char* data, int size) {

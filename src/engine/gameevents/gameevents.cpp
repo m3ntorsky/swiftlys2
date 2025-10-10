@@ -67,7 +67,6 @@ IGameEventManager2* g_gameEventManager = nullptr;
 
 void CEventManager::Initialize(std::string game_name)
 {
-    DynLibUtils::CModule servermodule = DetermineModuleByLibrary("server");
     void* CGameEventManagerVTable;
     s2binlib_find_vtable("server", "CGameEventManager", &CGameEventManagerVTable);
 

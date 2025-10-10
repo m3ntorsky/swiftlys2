@@ -27,6 +27,7 @@
 
 #include <engine/entities/listener.h>
 #include <engine/entities/entitysystem.h>
+#include <engine/fixes/entrypoint.h>
 #include <engine/gamesystem/gamesystem.h>
 
 #include <public/tier0/icommandline.h>
@@ -129,6 +130,8 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     IExtensionManager* extManager = g_ifaceService.FetchInterface<IExtensionManager>(EXTENSIONMANAGER_INTERFACE_VERSION);
     extManager->Load();
 
+    StartFixes();
+
     auto scripting = g_ifaceService.FetchInterface<IScriptingAPI>(SCRIPTING_INTERFACE_VERSION);
 
     InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/" + m_sCorePath);
@@ -162,6 +165,8 @@ bool SwiftlyCore::Unload()
 
     auto servercommands = g_ifaceService.FetchInterface<IServerCommands>(SERVERCOMMANDS_INTERFACE_VERSION);
     servercommands->Shutdown();
+
+    StopFixes();
 
     ShutdownGameSystem();
 
