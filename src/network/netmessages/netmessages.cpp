@@ -33,7 +33,9 @@ SH_DECL_MANUALHOOK2(FilterMessage, 0, 0, 0, bool, CNetMessage*, INetChannel*);
 std::map<uint64_t, std::function<int(uint64_t*, int, void*)>> g_mServerMessageSendCallbacks;
 std::map<uint64_t, std::function<int(int, int, void*)>> g_mClientMessageSendCallbacks;
 
-int g_ihookID = -1;
+IFunctionHook* g_pFilterMessageHook = nullptr;
+
+bool FilterMessage(INetworkMessageProcessingPreFilterCustom* client, CNetMessage* cMsg, INetChannel* netchan);
 
 void CNetMessages::Initialize()
 {
@@ -41,15 +43,12 @@ void CNetMessages::Initialize()
 
     SH_ADD_HOOK_MEMFUNC(IGameEventSystem, PostEventAbstract, gameeventsystem, this, &CNetMessages::PostEvent, false);
 
-    DynLibUtils::CModule eng = DetermineModuleByLibrary("engine2");
-    void* prefilterVTable = nullptr;
-#ifdef _WIN32
-    prefilterVTable = FindVirtTable(&eng, "CServerSideClient", WIN_LINUX(8, -64));
-#else
-    prefilterVTable = eng.GetVirtualTableByName("CServerSideClient");
-#endif
+    static auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
-    g_ihookID = SH_ADD_MANUALDVPHOOK(FilterMessage, (INetworkMessageProcessingPreFilterCustom*)prefilterVTable, SH_MEMBER(this, &CNetMessages::FilterMessage), false);
+    g_pFilterMessageHook = hooksmanager->CreateFunctionHook();
+    g_pFilterMessageHook->SetHookFunction(gamedata->GetSignatures()->Fetch("INetworkMessageProcessingPreFilter::FilterMessage"), (void*)FilterMessage);
+    g_pFilterMessageHook->Enable();
 }
 
 void CNetMessages::Shutdown()
@@ -58,26 +57,27 @@ void CNetMessages::Shutdown()
 
     SH_REMOVE_HOOK_MEMFUNC(IGameEventSystem, PostEventAbstract, gameeventsystem, this, &CNetMessages::PostEvent, false);
 
-    SH_REMOVE_HOOK_ID(g_ihookID);
-    g_ihookID = -1;
+    g_pFilterMessageHook->Disable();
+
+    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    hooksmanager->DestroyFunctionHook(g_pFilterMessageHook);
 }
 
-bool CNetMessages::FilterMessage(CNetMessage* cMsg, INetChannel* netchan)
+bool FilterMessage(INetworkMessageProcessingPreFilterCustom* client, CNetMessage* cMsg, INetChannel* netchan)
 {
-    auto client = META_IFACEPTR(INetworkMessageProcessingPreFilterCustom);
-    if (!client) RETURN_META_VALUE(MRES_IGNORED, true);
-    if (!cMsg) RETURN_META_VALUE(MRES_IGNORED, true);
+    if (!client) return reinterpret_cast<decltype(&FilterMessage)>(g_pFilterMessageHook->GetOriginal())(client, cMsg, netchan);
+    if (!cMsg) return reinterpret_cast<decltype(&FilterMessage)>(g_pFilterMessageHook->GetOriginal())(client, cMsg, netchan);
 
     auto playerid = client->GetPlayerSlot().Get();
     int msgid = cMsg->GetNetMessage()->GetNetMessageInfo()->m_MessageId;
 
     for (const auto& [id, callback] : g_mClientMessageSendCallbacks) {
         auto res = callback(playerid, msgid, cMsg);
-        if (res == 1) RETURN_META_VALUE(MRES_SUPERCEDE, true);
+        if (res == 1) return true;
         else if (res == 2) break;
     }
 
-    RETURN_META_VALUE(MRES_IGNORED, true);
+    return reinterpret_cast<decltype(&FilterMessage)>(g_pFilterMessageHook->GetOriginal())(client, cMsg, netchan);
 }
 
 void CNetMessages::PostEvent(CSplitScreenSlot nSlot, bool bLocalOnly, int nClientCount, const uint64* clients, INetworkMessageInternal* pEvent, const CNetMessage* pData, unsigned long nSize, NetChannelBufType_t bufType)

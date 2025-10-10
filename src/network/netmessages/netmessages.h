@@ -37,7 +37,6 @@ public:
     virtual void RemoveClientMessageSendCallback(uint64_t callbackID) override;
 
     void PostEvent(CSplitScreenSlot nSlot, bool bLocalOnly, int nClientCount, const uint64* clients, INetworkMessageInternal* pEvent, const CNetMessage* pData, unsigned long nSize, NetChannelBufType_t bufType);
-    bool FilterMessage(CNetMessage* cMsg, INetChannel* netchan);
 };
 
 #endif
