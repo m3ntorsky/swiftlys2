@@ -11,6 +11,7 @@ internal class MenuManager : IMenuManager
     private static readonly Dictionary<IPlayer, IMenu> OpenMenus = new();
     private static readonly Dictionary<IPlayer, Stack<IMenu>> MenuHistories = new();
     private static readonly Dictionary<IPlayer, Action<IPlayer, IMenuOption, IMenu, string>?> InputState = new();
+    private static readonly Dictionary<IPlayer, System.Threading.Timer> AutoCloseTimers = new();
 
     public event Action<IPlayer, IMenu>? OnMenuOpened;
     public event Action<IPlayer, IMenu>? OnMenuClosed;
@@ -39,6 +40,12 @@ internal class MenuManager : IMenuManager
 
     public void CloseMenu(IPlayer player)
     {
+        if (AutoCloseTimers.TryGetValue(player, out var timer))
+        {
+            timer.Dispose();
+            AutoCloseTimers.Remove(player);
+        }
+
         if (OpenMenus.TryGetValue(player, out var menu))
         {
             OpenMenus.Remove(player);
@@ -101,6 +108,11 @@ internal class MenuManager : IMenuManager
 
     public void OpenMenu(IPlayer player, IMenu menu)
     {
+        OpenMenu(player, menu, 0f);
+    }
+
+    public void OpenMenu(IPlayer player, IMenu menu, float autoCloseDelay)
+    {
         if (IsMenuOpen(player))
         {
             MenuHistories.Remove(player);
@@ -116,16 +128,39 @@ internal class MenuManager : IMenuManager
         OnMenuOpened?.Invoke(player, menu);
 
         RenderForPlayer(player);
+
+        if (autoCloseDelay >= 1f / 64f)
+        {
+            var timer = new System.Threading.Timer(state =>
+            {
+                if (state is IPlayer targetPlayer && IsMenuOpen(targetPlayer))
+                {
+                    CloseMenu(targetPlayer);
+                }
+            }, player, TimeSpan.FromSeconds(autoCloseDelay), Timeout.InfiniteTimeSpan);
+
+            AutoCloseTimers[player] = timer;
+        }
     }
 
     public void OpenSubMenu(IPlayer player, IMenu menu)
     {
+        OpenSubMenu(player, menu, 0f);
+    }
+
+    public void OpenSubMenu(IPlayer player, IMenu menu, float autoCloseDelay)
+    {
         if (!IsMenuOpen(player))
         {
-            OpenMenu(player, menu);
+            OpenMenu(player, menu, autoCloseDelay);
             return;
         }
 
+        if (AutoCloseTimers.TryGetValue(player, out var existingTimer))
+        {
+            existingTimer.Dispose();
+            AutoCloseTimers.Remove(player);
+        }
 
         if (OpenMenus.TryGetValue(player, out var currentMenu))
         {
@@ -138,6 +173,19 @@ internal class MenuManager : IMenuManager
 
         OpenMenus[player] = menu;
         OnMenuOpened?.Invoke(player, menu);
+
+        if (autoCloseDelay >= 1f / 64f)
+        {
+            var timer = new System.Threading.Timer(state =>
+            {
+                if (state is IPlayer targetPlayer && IsMenuOpen(targetPlayer))
+                {
+                    CloseMenu(targetPlayer);
+                }
+            }, player, TimeSpan.FromSeconds(autoCloseDelay), Timeout.InfiniteTimeSpan);
+
+            AutoCloseTimers[player] = timer;
+        }
     }
 
     public void SetInputState(IPlayer player, Action<IPlayer, IMenuOption, IMenu, string>? onInput)

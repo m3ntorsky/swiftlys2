@@ -406,7 +406,7 @@ public class TestPlugin : BasePlugin
       player.SendMessage(MessageType.Chat, $"Input changed to {text}");
     });
 
-    Core.Menus.OpenMenu(context.Sender!, menu);
+    Core.Menus.OpenMenu(context.Sender!, menu, 15f);
   }
 
   public override void Unload()
