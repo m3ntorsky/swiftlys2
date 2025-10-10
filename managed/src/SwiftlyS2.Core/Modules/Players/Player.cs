@@ -50,14 +50,13 @@ internal class Player : IPlayer
 
     public VoiceFlagValue VoiceFlags { get => (VoiceFlagValue)NativeVoiceManager.GetClientVoiceFlags(_pid); set => NativeVoiceManager.SetClientVoiceFlags(_pid, (int)value); }
 
-    public bool IsValid
-    {
-        get => Controller != null && Controller.IsValid && !Controller.IsHLTV && Controller.Connected == PlayerConnectedState.PlayerConnected && Pawn != null && Pawn.IsValid;
-    }
+    public bool IsValid => 
+        Controller is { IsValid: true, IsHLTV: false, Connected: PlayerConnectedState.PlayerConnected } && 
+        Pawn is { IsValid: true };
 
-    Language IPlayer.PlayerLanguage => throw new NotImplementedException();
+    Language IPlayer.PlayerLanguage => PlayerLanguage;
 
-    public unsafe void ChangeTeam(Team team)
+    public void ChangeTeam(Team team)
     {
         NativePlayer.ChangeTeam(_pid, (byte)team);
     }
