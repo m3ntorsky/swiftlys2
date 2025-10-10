@@ -41,7 +41,7 @@ void NullificatorFix::Start()
     s2binlib_find_symbol("tier0", "Plat_DebugString_Buffered", &Plat_DebugString_Buffered);
     if (!Plat_DebugString_Buffered) return;
 
-    g_pNullificatorHook->SetHookFunction(Plat_DebugString_Buffered, Hook_Plat_DebugString_Buffered);
+    g_pNullificatorHook->SetHookFunction(Plat_DebugString_Buffered, reinterpret_cast<void*>(Hook_Plat_DebugString_Buffered));
     g_pNullificatorHook->Enable();
 #endif
 }
