@@ -5,7 +5,7 @@
 [![Discord](https://img.shields.io/discord/1178027657594687608?color=7289da&logo=discord&logoColor=white)](https://swiftlys2.net/discord)
 [![NuGet](https://img.shields.io/nuget/v/SwiftlyS2.CS2.svg)](https://www.nuget.org/packages/SwiftlyS2.CS2/)
 
-SwiftlyS2 is a powerful scripting framework for Source 2 games, built in C++ with C# plugin support. It provides developers with a comprehensive API to create plugins and extensions for Source 2-based games like Counter-Strike 2.
+SwiftlyS2 is a powerful scripting framework for Source 2 games, built in C++ with C# plugin support. It provides developers with a comprehensive API to create plugins for Source 2-based games like Counter-Strike 2.
 
 > [!warning]
 > The framework is under a **BETA** release.
@@ -59,37 +59,8 @@ SwiftlyS2 is a powerful scripting framework for Source 2 games, built in C++ wit
 
 ### Your First Plugin
 
-Create a simple "Hello World" plugin:
-
-```csharp
-using Microsoft.Extensions.DependencyInjection;
-using SwiftlyS2.Shared.Plugins;
-using SwiftlyS2.Shared;
-
-namespace SwiftlyS2.Plugin;
-
-public partial class PluginClassName : BasePlugin {
-
-  public PluginClassName(ISwiftlyCore core): base(core) {
-    
-  }
-
-  public override void ConfigureSharedServices(IServiceCollection sharedServices) {
-  }
-
-  public override void UseSharedServices(IServiceProvider sharedProvider) {
-  }
-
-  public override void Load(bool hotReload)
-  {
-    Console.WriteLine("Hello World!!");
-    // Check examples folder for more information. Don't forget to delete the folder after reading.
-  }
-
-  public override void Unload() {
-  }
-} 
-```
+Create your first guide using our comprehensive guide:
+https://swiftlys2.net/docs/development/getting-started/
 
 ## Architecture
 
@@ -106,8 +77,7 @@ SwiftlyS2/
 │   ├── sdk/                     # SDK Dumper
 │   └── server/                  # Server management
 ├── managed/                     # C# managed layer
-│   └── src/                     # C++ core framework
-│       ├── api/                 # C++ API interfaces
+│   └── src/                     # C# managed source code
 │       ├── SwiftlyS2.Core/      # Core C# APIs
 │       ├── SwiftlyS2.Generated/ # Generated bindings
 │       └── SwiftlyS2.Shared/    # Shared utilities
