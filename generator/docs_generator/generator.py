@@ -86,7 +86,7 @@ def generate_markdown(yaml_data):
             md += "\n"
         if 'api3' in item:
             src = item.get('src', '')
-            md += f"**{item['api3']}**"
+            md += f"### **{item['api3']}**"
             if src != '':
                 md += f" - [Source Code]({src})\n\n"
             else:
