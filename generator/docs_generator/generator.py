@@ -49,7 +49,7 @@ def generate_markdown(yaml_data):
         if 'h2' in item:
             md += f"## {item['h2']}\n\n"
         if 'h4' in item:
-            md += f"#### {item['h4']}\n\n"
+            md += f"- {item['h4']}\n\n"
         if 'code' in item:
             md += "```csharp\n" + item['code'] + "\n```\n\n"
         if 'parameters' in item:
