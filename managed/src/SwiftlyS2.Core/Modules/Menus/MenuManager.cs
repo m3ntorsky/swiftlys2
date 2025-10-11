@@ -56,7 +56,7 @@ internal class MenuManager : IMenuManager
             }
         };
 
-        OnMenuClosed = (IPlayer player, IMenu menu) =>
+        OnMenuClosed += (IPlayer player, IMenu menu) =>
         {
             var pawn = player.Pawn;
             if (pawn == null) return;
