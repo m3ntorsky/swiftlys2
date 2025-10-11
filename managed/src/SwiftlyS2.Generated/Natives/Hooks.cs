@@ -25,6 +25,13 @@ internal static class NativeHooks {
     return ret;
   }
 
+  private unsafe static delegate* unmanaged<nint> _AllocateMHook;
+
+  public unsafe static nint AllocateMHook() {
+    var ret = _AllocateMHook();
+    return ret;
+  }
+
   private unsafe static delegate* unmanaged<nint, void> _DeallocateHook;
 
   public unsafe static void DeallocateHook(nint hook) {
@@ -35,6 +42,12 @@ internal static class NativeHooks {
 
   public unsafe static void DeallocateVHook(nint hook) {
     _DeallocateVHook(hook);
+  }
+
+  private unsafe static delegate* unmanaged<nint, void> _DeallocateMHook;
+
+  public unsafe static void DeallocateMHook(nint hook) {
+    _DeallocateMHook(hook);
   }
 
   private unsafe static delegate* unmanaged<nint, nint, nint, void> _SetHook;
@@ -55,6 +68,15 @@ internal static class NativeHooks {
     _SetVHook(hook, entityOrVTable, index, callback, isVtable ? (byte)1 : (byte)0);
   }
 
+  private unsafe static delegate* unmanaged<nint, nint, nint, void> _SetMHook;
+
+  /// <summary>
+  /// the callback should receive `ref Context64`
+  /// </summary>
+  public unsafe static void SetMHook(nint hook, nint addr, nint callback) {
+    _SetMHook(hook, addr, callback);
+  }
+
   private unsafe static delegate* unmanaged<nint, void> _EnableHook;
 
   public unsafe static void EnableHook(nint hook) {
@@ -65,6 +87,12 @@ internal static class NativeHooks {
 
   public unsafe static void EnableVHook(nint hook) {
     _EnableVHook(hook);
+  }
+
+  private unsafe static delegate* unmanaged<nint, void> _EnableMHook;
+
+  public unsafe static void EnableMHook(nint hook) {
+    _EnableMHook(hook);
   }
 
   private unsafe static delegate* unmanaged<nint, void> _DisableHook;
@@ -79,6 +107,12 @@ internal static class NativeHooks {
     _DisableVHook(hook);
   }
 
+  private unsafe static delegate* unmanaged<nint, void> _DisableMHook;
+
+  public unsafe static void DisableMHook(nint hook) {
+    _DisableMHook(hook);
+  }
+
   private unsafe static delegate* unmanaged<nint, byte> _IsHookEnabled;
 
   public unsafe static bool IsHookEnabled(nint hook) {
@@ -90,6 +124,13 @@ internal static class NativeHooks {
 
   public unsafe static bool IsVHookEnabled(nint hook) {
     var ret = _IsVHookEnabled(hook);
+    return ret == 1;
+  }
+
+  private unsafe static delegate* unmanaged<nint, byte> _IsMHookEnabled;
+
+  public unsafe static bool IsMHookEnabled(nint hook) {
+    var ret = _IsMHookEnabled(hook);
     return ret == 1;
   }
 

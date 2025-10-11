@@ -38,6 +38,27 @@ public class TestPlugin : BasePlugin
 
   public TestPlugin(ISwiftlyCore core) : base(core)
   {
+    var memobj = core.Memory.GetUnmanagedMemoryByAddress(core.GameData.GetSignature("CBaseEntity::DispatchSpawn"));
+    memobj.AddHook((ref MidHookContext ctx) =>
+    {
+      Console.WriteLine($"MidHooked DispatchSpawn, RBX: {ctx.RBX}");
+    });
+    memobj.AddHook((ref MidHookContext ctx) =>
+    {
+      Console.WriteLine($"MidHooked2 DispatchSpawn, RBX: {ctx.RBX}");
+    });
+    memobj.AddHook((ref MidHookContext ctx) =>
+    {
+      Console.WriteLine($"MidHooked3 DispatchSpawn, RBX: {ctx.RBX}");
+    });
+    memobj.AddHook((ref MidHookContext ctx) =>
+    {
+      Console.WriteLine($"MidHooked4 DispatchSpawn, RBX: {ctx.RBX}");
+    });
+    memobj.AddHook((ref MidHookContext ctx) =>
+    {
+      Console.WriteLine($"MidHooked5 DispatchSpawn, RBX: {ctx.RBX}");
+    });
   }
 
   public override void ConfigureSharedInterface(IInterfaceManager interfaceManager)

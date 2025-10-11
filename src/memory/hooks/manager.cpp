@@ -33,6 +33,11 @@ IVFunctionHook* HooksManager::CreateVFunctionHook()
     return new VFunctionHook();
 }
 
+IMFunctionHook* HooksManager::CreateMFunctionHook()
+{
+    return new MFunctionHook();
+}
+
 void HooksManager::DestroyFunctionHook(IFunctionHook* hook)
 {
     delete (FunctionHook*)hook;
@@ -41,6 +46,11 @@ void HooksManager::DestroyFunctionHook(IFunctionHook* hook)
 void HooksManager::DestroyVFunctionHook(IVFunctionHook* hook)
 {
     delete (VFunctionHook*)hook;
+}
+
+void HooksManager::DestroyMFunctionHook(IMFunctionHook* hook)
+{
+    delete (MFunctionHook*)hook;
 }
 
 IFunctionHook* g_pFireOutputHook = nullptr;

@@ -10,6 +10,7 @@ obj/
 .vs/
 api/
 docs/
+!src/api/
 
 # Dependencies
 external/*
