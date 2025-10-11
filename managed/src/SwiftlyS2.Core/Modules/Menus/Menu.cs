@@ -16,7 +16,7 @@ internal class Menu : IMenu
     public IMenu? ParentMenu { get; set; } = null;
     public bool CanExit { get; set; } = true;
     public MenuType Kind { get; set; } = MenuType.CenterMenu;
-    public Color Color { get; set; }
+    public Color Color { get; set; } = new(255, 255, 255);
     public IMenuManager? Manager { get; set; } = null;
     public string? RenderText { get; private set; } = null;
     public int CurrentIndex { get; set; } = 0;
