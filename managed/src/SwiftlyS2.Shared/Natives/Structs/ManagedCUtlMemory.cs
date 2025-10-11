@@ -1,14 +1,26 @@
-using System.Runtime.InteropServices;
-
 namespace SwiftlyS2.Shared.Natives;
 
-public class ManagedCUtlMemory<T> where T : unmanaged {
-  private CUtlMemory<T> _memory;
+public class ManagedCUtlMemory<T> : IDisposable where T : unmanaged
+{
+    private CUtlMemory<T> _memory;
 
-  public ManagedCUtlMemory(int growSize, int initSize) {
-    nint ptr = 0; // TODO: call native allocator
-    _memory = new CUtlMemory<T>(ptr, initSize, growSize);
-  }
+    public ManagedCUtlMemory(int growSize, int initSize)
+    {
+        _memory = new CUtlMemory<T>(growSize, initSize);
+    }
 
-  public ref CUtlMemory<T> Value { get => ref _memory; }
+    public ManagedCUtlMemory(nint memory, int numelements, bool readOnly)
+    {
+        _memory = new CUtlMemory<T>(memory, numelements, readOnly);
+    }
+
+    public void Dispose()
+    {
+        _memory.Dispose();
+    }
+
+    public nint Base => _memory.Base;
+    public int Count => _memory.Count;
+
+    public ref T this[int index] => ref _memory[index];
 }
