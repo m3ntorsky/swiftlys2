@@ -47,6 +47,26 @@ internal class PluginManager
   }
 
   public void Initialize() {
+    AppDomain.CurrentDomain.AssemblyResolve += (sender, e) =>
+    {
+      var loadingAssemblyName = new AssemblyName(e.Name).Name ?? "";
+      if (loadingAssemblyName == "") {
+        return null;
+      } 
+      if (loadingAssemblyName == "SwiftlyS2.CS2")
+      {
+        return Assembly.GetExecutingAssembly();
+      }
+
+      var loadedAssembly = AppDomain.CurrentDomain.GetAssemblies()
+        .FirstOrDefault(a => loadingAssemblyName == a.GetName().Name);
+
+      if (loadedAssembly != null)
+      {
+        return loadedAssembly;
+      }
+      return null;
+    };
     LoadExports();
     LoadPlugins();
   }
