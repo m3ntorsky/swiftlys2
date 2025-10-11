@@ -1,4 +1,4 @@
-﻿using SwiftlyS2.Shared.Players;
+using SwiftlyS2.Shared.Players;
 using SwiftlyS2.Shared.Services;
 
 namespace SwiftlyS2.Shared.Menus;
@@ -36,6 +36,13 @@ public interface IMenuManager
     /// </summary>
     public void OpenMenu(IPlayer player, IMenu menu);
     /// <summary>
+    /// Opens a menu for a player with auto-close functionality.
+    /// </summary>
+    /// <param name="player">The player to open the menu for.</param>
+    /// <param name="menu">The menu to open.</param>
+    /// <param name="autoCloseDelay">Time in seconds before auto-close. Values less than 1/64 second disable auto-close.</param>
+    public void OpenMenu(IPlayer player, IMenu menu, float autoCloseDelay);
+    /// <summary>
     /// Closes the current menu for a player.
     /// </summary>
     public void CloseMenu(IPlayer player);
@@ -55,6 +62,13 @@ public interface IMenuManager
     /// Opens a submenu for a player, closing the current menu.
     /// </summary>
     public void OpenSubMenu(IPlayer player, IMenu menu);
+    /// <summary>
+    /// Opens a submenu for a player with auto-close functionality.
+    /// </summary>
+    /// <param name="player">The player to open the submenu for.</param>
+    /// <param name="menu">The submenu to open.</param>
+    /// <param name="autoCloseDelay">Time in seconds before auto-close. Values less than 1/64 second disable auto-close.</param>
+    public void OpenSubMenu(IPlayer player, IMenu menu, float autoCloseDelay);
 
     /// <summary>
     /// Sets an input state callback for a player.

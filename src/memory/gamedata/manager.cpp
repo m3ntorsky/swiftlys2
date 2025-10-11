@@ -56,15 +56,6 @@ IGameDataPatches* GameDataManager::GetPatches()
     return m_pPatches;
 }
 
-DynLibUtils::CModule DetermineModuleByLibrary(std::string library) {
-    if (library == "server")
-        return DynLibUtils::CModule(g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL));
-    else if (library == "engine2")
-        return DynLibUtils::CModule(g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER));
-    else
-        return DynLibUtils::CModule(library);
-}
-
 extern std::vector<uint8_t> HexToByte(const char* src, uint64_t& length);
 
 std::map<std::string, uint8_t*> m_binaries;

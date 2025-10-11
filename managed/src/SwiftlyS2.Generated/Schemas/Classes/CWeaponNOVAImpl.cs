@@ -10,7 +10,7 @@ using SwiftlyS2.Core.Extensions;
 
 namespace SwiftlyS2.Core.SchemaDefinitions;
 
-internal partial class CWeaponNOVAImpl : CCSWeaponBaseImpl, CWeaponNOVA {
+internal partial class CWeaponNOVAImpl : CCSWeaponBaseShotgunImpl, CWeaponNOVA {
 
   public CWeaponNOVAImpl(nint handle) : base(handle) {
   }

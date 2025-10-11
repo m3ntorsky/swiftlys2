@@ -41,8 +41,6 @@ public partial interface CPlayer_MovementServices : CPlayerPawnComponent, ISchem
   
   public ref Vector LastMovementImpulses { get; }
   
-  public ref QAngle LastFinishTickViewAngles { get; }
-  
   public ref QAngle OldViewAngles { get; }
 
   public void ToggleButtonDownMaskUpdated();

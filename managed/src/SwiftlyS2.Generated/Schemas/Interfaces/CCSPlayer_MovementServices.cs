@@ -79,8 +79,6 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
   
   public ref float Stamina { get; }
   
-  public ref Vector InputRotated { get; }
-  
   public ref float HeightAtJumpStart { get; }
   
   public ref float MaxJumpHeightThisJump { get; }
@@ -94,6 +92,8 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
   public ref float TicksSinceLastSurfingDetected { get; }
   
   public ref bool WasSurfing { get; }
+  
+  public ref Vector InputRotated { get; }
 
   public void LadderNormalUpdated();
   public void LadderSurfacePropIndexUpdated();
@@ -113,6 +113,5 @@ public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_H
   public void OffsetTickCompleteTimeUpdated();
   public void OffsetTickStashedSpeedUpdated();
   public void StaminaUpdated();
-  public void InputRotatedUpdated();
   public void WasSurfingUpdated();
 }

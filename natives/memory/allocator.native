@@ -8,4 +8,5 @@ uint64 GetSize = ptr pointer // works only for pointers allocated through Memory
 uint64 GetTotalAllocated = void
 uint64 GetAllocatedByTrackedIdentifier = string identifier
 bool IsPointerValid = ptr pointer
-void Copy = ptr src, ptr dst, uint64 size
+void Copy = ptr dst, ptr src, uint64 size
+void Move = ptr dst, ptr src, uint64 size

@@ -57,9 +57,6 @@ public ISchemaFixedArray<float> ForceSubtickMoveWhen {
   public ref Vector LastMovementImpulses {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xD5BDF2890B87214C));
   }
-  public ref QAngle LastFinishTickViewAngles {
-    get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xD5BDF289DC15491A));
-  }
   public ref QAngle OldViewAngles {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xD5BDF28935A27A27));
   }

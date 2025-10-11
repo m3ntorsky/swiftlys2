@@ -21,8 +21,6 @@
 
 #include <api/memory/gamedata/manager.h>
 
-#include <dynlibutils/module.h>
-
 class GameDataManager : public IGameDataManager
 {
 public:
@@ -35,7 +33,6 @@ private:
     IGameDataPatches* m_pPatches;
 };
 
-DynLibUtils::CModule DetermineModuleByLibrary(std::string library);
 void* FindSignature(std::string library, std::string pattern);
 
 #endif

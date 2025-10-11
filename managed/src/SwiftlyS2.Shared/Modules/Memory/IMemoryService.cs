@@ -2,7 +2,8 @@ using SwiftlyS2.Shared.Schemas;
 
 namespace SwiftlyS2.Shared.Memory;
 
-public interface IMemoryService {
+public interface IMemoryService
+{
 
   /// <summary>
   /// Get an unmanaged function by its address.
@@ -21,6 +22,11 @@ public interface IMemoryService {
   /// <returns>The unmanaged function.</returns>
   IUnmanagedFunction<TDelegate> GetUnmanagedFunctionByVTable<TDelegate>(nint pVTable, int index) where TDelegate : Delegate;
 
+  /// <summary>
+  /// Get an unmanaged memory block by its address.
+  /// </summary>
+  /// <param name="address">The address from which to create the Unmanaged Memory wrapper.</param>
+  IUnmanagedMemory GetUnmanagedMemoryByAddress(nint address);
 
   /// <summary>
   /// Get the address of an valve or swiftly native interface by its name.
