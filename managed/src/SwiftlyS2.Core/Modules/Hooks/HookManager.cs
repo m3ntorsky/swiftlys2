@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.Threading;
 using Spectre.Console;
 using SwiftlyS2.Core.Natives;
-using SwiftlyS2.Core.Natives.NativeObjects;
 using SwiftlyS2.Shared.Memory;
 
 namespace SwiftlyS2.Core.Hooks;
@@ -28,7 +24,6 @@ internal class HookManager
     public required Guid Id { get; init; }
     public nint HookHandle { get; set; }
     public required MidHookDelegate BuiltDelegate { get; init; }
-    public nint BuiltPointer { get; set; }
   }
 
   private class HookChain
@@ -95,7 +90,6 @@ internal class HookManager
     {
       Id = Guid.NewGuid(),
       BuiltDelegate = callback,
-      BuiltPointer = Marshal.GetFunctionPointerForDelegate(callback),
     };
 
     lock (_sync)
@@ -103,10 +97,26 @@ internal class HookManager
       if (!_midChains.TryGetValue(address, out chain))
       {
         chain = new MidHookChain { Address = address };
+        chain.HookHandle = NativeHooks.AllocateMHook();
+        MidHookDelegate _unmanagedCallback = (ref MidHookContext ctx) =>
+        {
+          try
+          {
+            foreach (var n in chain.Nodes)
+            {
+              n.BuiltDelegate(ref ctx);
+            }
+          }
+          catch (Exception e)
+          {
+          }
+        };
+        NativeHooks.SetMHook(chain.HookHandle, address, Marshal.GetFunctionPointerForDelegate(_unmanagedCallback));
+        NativeHooks.EnableMHook(chain.HookHandle);
+        chain.Hooked = true;
         _midChains[address] = chain;
       }
       chain.Nodes.Add(node);
-      RebuildMidChain(chain);
     }
 
     return node.Id;
@@ -144,7 +154,6 @@ internal class HookManager
       foreach (var chain in chains)
       {
         chain.Nodes.RemoveAll(n => nodeIds.Contains(n.Id));
-        RebuildMidChain(chain);
       }
     }
   }
@@ -160,51 +169,6 @@ internal class HookManager
         chain.Nodes.RemoveAll(n => nodeIds.Contains(n.Id));
         RebuildChain(chain);
       }
-    }
-  }
-
-  private void RebuildMidChain(MidHookChain chain)
-  {
-    try
-    {
-      if (chain.Hooked)
-      {
-        for (int i = 0; i < chain.Nodes.Count; i++)
-        {
-          chain.Nodes[i].BuiltPointer = nint.Zero;
-          if (chain.Nodes[i].HookHandle != 0)
-          {
-            NativeHooks.DeallocateMHook(chain.Nodes[i].HookHandle);
-            chain.Nodes[i].HookHandle = 0;
-          }
-        }
-        NativeHooks.DeallocateMHook(chain.HookHandle);
-        chain.HookHandle = 0;
-        chain.Hooked = false;
-      }
-      chain.HookHandle = NativeHooks.AllocateMHook();
-
-      for (int i = 0; i < chain.Nodes.Count; i++)
-      {
-        var node = chain.Nodes[i];
-
-        if (i == 0)
-        {
-          NativeHooks.SetMHook(chain.HookHandle, chain.Address, node.BuiltPointer);
-          NativeHooks.EnableMHook(chain.HookHandle);
-          chain.Hooked = true;
-        }
-        else
-        {
-          node.HookHandle = NativeHooks.AllocateMHook();
-          NativeHooks.SetMHook(node.HookHandle, chain.Nodes[i - 1].BuiltPointer, node.BuiltPointer);
-          NativeHooks.EnableMHook(node.HookHandle);
-        }
-      }
-    }
-    catch (Exception e)
-    {
-      AnsiConsole.WriteException(e);
     }
   }
 
