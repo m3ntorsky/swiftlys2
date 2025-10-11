@@ -16,14 +16,27 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#include "manager.h"
-#include <api/shared/plat.h>
+#ifndef src_engine_consoleoutput_consoleoutput_h
+#define src_engine_consoleoutput_consoleoutput_h
 
-#include <api/shared/string.h>
+#include <api/engine/consoleoutput/consoleoutput.h>
 
-typedef void* (*GetInterfaceFn)(const char*);
+#include <map>
 
-void* InterfacesManager::GetPureInterface(const std::string& interface_name)
+class CConsoleOutput : public IConsoleOutput
 {
-    return ::GetPureInterface(interface_name.c_str());
-}
+public:
+    virtual void Initialize() override;
+    virtual void Shutdown() override;
+
+    virtual void ReloadFilterConfiguration() override;
+    virtual void ToggleFilter() override;
+    virtual bool IsEnabled() override;
+    virtual bool NeedsFiltering(const std::string& text) override;
+    virtual std::string GetCounterText() override;
+
+    virtual uint64_t AddConsoleListener(std::function<void(const std::string&)> callback) override;
+    virtual void RemoveConsoleListener(uint64_t id) override;
+};
+
+#endif

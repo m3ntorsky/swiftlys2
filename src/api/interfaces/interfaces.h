@@ -22,6 +22,7 @@
 #include <string>
 #include <api/dll/extern.h>
 
+#include <api/engine/consoleoutput/consoleoutput.h>
 #include <api/engine/convars/convars.h>
 #include <api/engine/entities/entitysystem.h>
 #include <api/engine/gameevents/gameevents.h>
@@ -68,5 +69,6 @@ SW_API void* GetPureInterface(const char* iface_name);
 #define SERVERCOMMANDS_INTERFACE_VERSION                    "ServerCommandsAPI"
 #define NETMESSAGES_INTERFACE_VERSION                       "NetMessagesAPI"
 #define VGUI_INTERFACE_VERSION                              "VGUIAPI"
+#define CONSOLEOUTPUT_INTERFACE_VERSION                     "ConsoleOutputAPI"
 
 #endif

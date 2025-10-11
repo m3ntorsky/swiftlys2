@@ -16,14 +16,26 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#include "manager.h"
-#include <api/shared/plat.h>
+#ifndef src_api_engine_confilter_confilter_h
+#define src_api_engine_confilter_confilter_h
 
-#include <api/shared/string.h>
+#include <string>
+#include <functional>
 
-typedef void* (*GetInterfaceFn)(const char*);
-
-void* InterfacesManager::GetPureInterface(const std::string& interface_name)
+class IConsoleOutput
 {
-    return ::GetPureInterface(interface_name.c_str());
-}
+public:
+    virtual void Initialize() = 0;
+    virtual void Shutdown() = 0;
+
+    virtual void ReloadFilterConfiguration() = 0;
+    virtual void ToggleFilter() = 0;
+    virtual bool IsEnabled() = 0;
+    virtual bool NeedsFiltering(const std::string& text) = 0;
+    virtual std::string GetCounterText() = 0;
+
+    virtual uint64_t AddConsoleListener(std::function<void(const std::string&)> callback) = 0;
+    virtual void RemoveConsoleListener(uint64_t id) = 0;
+};
+
+#endif

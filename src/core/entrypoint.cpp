@@ -95,6 +95,11 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
         }
     }
 
+    auto consoleoutput = g_ifaceService.FetchInterface<IConsoleOutput>(CONSOLEOUTPUT_INTERFACE_VERSION);
+    consoleoutput->Initialize();
+    if (bool* b = std::get_if<bool>(&configuration->GetValue("core.ConsoleFilter")))
+        if (*b) consoleoutput->ToggleFilter();
+
     auto entsystem = g_ifaceService.FetchInterface<IEntitySystem>(ENTITYSYSTEM_INTERFACE_VERSION);
     entsystem->Initialize();
 
