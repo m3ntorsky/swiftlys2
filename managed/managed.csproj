@@ -17,10 +17,12 @@
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <BaseOutputPath>build\</BaseOutputPath>
     <OutputPath>$(BaseOutputPath)Release\SwiftlyS2</OutputPath>
     <AssemblyName>SwiftlyS2.CS2</AssemblyName>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
 
   </PropertyGroup>
 
