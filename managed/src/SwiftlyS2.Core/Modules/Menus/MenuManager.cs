@@ -3,6 +3,7 @@ using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Menus;
 using SwiftlyS2.Shared.Players;
 using SwiftlyS2.Shared.Services;
+using SwiftlyS2.Shared.Scheduler;
 
 namespace SwiftlyS2.Core.Menus;
 
@@ -11,14 +12,18 @@ internal class MenuManager : IMenuManager
     private static readonly Dictionary<IPlayer, IMenu> OpenMenus = new();
     private static readonly Dictionary<IPlayer, Stack<IMenu>> MenuHistories = new();
     private static readonly Dictionary<IPlayer, Action<IPlayer, IMenuOption, IMenu, string>?> InputState = new();
-    private static readonly Dictionary<IPlayer, System.Threading.Timer> AutoCloseTimers = new();
+    private static readonly Dictionary<IPlayer, CancellationTokenSource> AutoCloseTimers = new();
+
+    private readonly ISchedulerService schedulerService;
 
     public event Action<IPlayer, IMenu>? OnMenuOpened;
     public event Action<IPlayer, IMenu>? OnMenuClosed;
     public MenuSettings Settings { get; private set; }
 
-    public MenuManager()
+    public MenuManager(ISchedulerService schedulerService)
     {
+        this.schedulerService = schedulerService;
+
         var settings = NativeEngineHelpers.GetMenuSettings();
         var parts = settings.Split('\x01');
         Settings = new MenuSettings
@@ -40,9 +45,9 @@ internal class MenuManager : IMenuManager
 
     public void CloseMenu(IPlayer player)
     {
-        if (AutoCloseTimers.TryGetValue(player, out var timer))
+        if (AutoCloseTimers.TryGetValue(player, out var cancellationTokenSource))
         {
-            timer.Dispose();
+            cancellationTokenSource.Cancel();
             AutoCloseTimers.Remove(player);
         }
 
@@ -131,15 +136,15 @@ internal class MenuManager : IMenuManager
 
         if (autoCloseDelay >= 1f / 64f)
         {
-            var timer = new System.Threading.Timer(state =>
+            var cancellationTokenSource = schedulerService.DelayBySeconds(autoCloseDelay, () =>
             {
-                if (state is IPlayer targetPlayer && IsMenuOpen(targetPlayer))
+                if (IsMenuOpen(player))
                 {
-                    CloseMenu(targetPlayer);
+                    CloseMenu(player);
                 }
-            }, player, TimeSpan.FromSeconds(autoCloseDelay), Timeout.InfiniteTimeSpan);
+            });
 
-            AutoCloseTimers[player] = timer;
+            AutoCloseTimers[player] = cancellationTokenSource;
         }
     }
 
@@ -156,9 +161,9 @@ internal class MenuManager : IMenuManager
             return;
         }
 
-        if (AutoCloseTimers.TryGetValue(player, out var existingTimer))
+        if (AutoCloseTimers.TryGetValue(player, out var existingCancellationTokenSource))
         {
-            existingTimer.Dispose();
+            existingCancellationTokenSource.Cancel();
             AutoCloseTimers.Remove(player);
         }
 
@@ -176,15 +181,15 @@ internal class MenuManager : IMenuManager
 
         if (autoCloseDelay >= 1f / 64f)
         {
-            var timer = new System.Threading.Timer(state =>
+            var cancellationTokenSource = schedulerService.DelayBySeconds(autoCloseDelay, () =>
             {
-                if (state is IPlayer targetPlayer && IsMenuOpen(targetPlayer))
+                if (IsMenuOpen(player))
                 {
-                    CloseMenu(targetPlayer);
+                    CloseMenu(player);
                 }
-            }, player, TimeSpan.FromSeconds(autoCloseDelay), Timeout.InfiniteTimeSpan);
+            });
 
-            AutoCloseTimers[player] = timer;
+            AutoCloseTimers[player] = cancellationTokenSource;
         }
     }
 
