@@ -1,9 +1,4 @@
 {
-    "ServerMovementUnlock": {
-        "lib": "server",
-        "windows": "76 ? F3 0F 58 D4 0F 57 C0 F3 0F 58 D3",
-        "linux": "0F 87 ? ? ? ? 49 8B 7C 24 ? 48 85 FF 0F 84 ? ? ? ? E8"
-    },
     "CEntityInstance::AcceptInput": {
         "lib": "server",
         "windows": "48 89 5C 24 ? 48 89 74 24 ? 57 48 83 EC ? 49 8B F0 48 8B D9 48 8B 0D",
