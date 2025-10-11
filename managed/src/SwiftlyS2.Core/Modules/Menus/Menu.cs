@@ -22,114 +22,80 @@ internal class Menu : IMenu
     public int CurrentIndex { get; set; } = 0;
     public void Rerender()
     {
-        if (Kind == MenuType.CenterMenu)
+        if (Kind != MenuType.CenterMenu) return;
+
+        var colHex = $"#{Color.R:X2}{Color.G:X2}{Color.B:X2}";
+        if (Title.Length > MaxTitleLength) Title = Title[..MaxTitleLength];
+
+        var builder = new StringBuilder();
+        builder.Append($"<b><font color='{colHex}' class='fontSize-m'>{Title}</font></b> <font class='fontSize-sm'>[{CurrentIndex + 1}/{Options.Count}]</font><br>");
+
+        var halfPage = Manager!.Settings.ItemsPerPage / 2;
+        var virtualItems = Options.SelectMany((option, i) =>
         {
-            var colHex = $"#{Color.R:X2}{Color.G:X2}{Color.B:X2}";
-            if (Title.Length > MaxTitleLength)
-                Title = Title[..MaxTitleLength];
+            var items = new List<(int, bool, IMenuOption)> { (i, false, option) };
+            if (option.Type == OptionType.Slider && option.SliderValues?.Count > 0)
+            {
+                items.Add((i, true, option));
+            }
+            return items;
+        }).ToList();
+        var currentVirtualIdx = virtualItems.FindIndex(x => x.Item1 == CurrentIndex && !x.Item2);
+        currentVirtualIdx = currentVirtualIdx == -1 ? CurrentIndex : currentVirtualIdx;
+        var startIdx = currentVirtualIdx - halfPage;
+        var displayCount = Math.Min(Manager.Settings.ItemsPerPage, virtualItems.Count);
 
-            var builder = new StringBuilder();
-            builder.Append($"<b><font color='{colHex}' class='fontSize-m'>{Title}</font></b> <font class='fontSize-sm'>[{CurrentIndex + 1}/{Options.Count}]</font>");
+        for (int j = 0; j < displayCount; j++)
+        {
+            var virtualIdx = ((startIdx + j) % virtualItems.Count + virtualItems.Count) % virtualItems.Count;
+            var (originalIdx, isSliderValue, option) = virtualItems[virtualIdx];
+
+            builder.Append(isSliderValue ? RenderSliderValues(option, originalIdx == CurrentIndex, colHex) : RenderMenuItem(option, originalIdx, colHex));
             builder.Append("<br>");
-
-            var itemsPerPage = Manager!.Settings.ItemsPerPage;
-            var halfPage = itemsPerPage / 2;
-            var startIdx = CurrentIndex - halfPage;
-            var displayCount = Math.Min(itemsPerPage, Options.Count);
-
-            for (int j = 0; j < displayCount; j++)
-            {
-                int i = ((startIdx + j) % Options.Count + Options.Count) % Options.Count;
-                var option = Options[i];
-
-                if (option.Disabled)
-                {
-                    builder.Append($"<font color='grey' class='fontSize-m'>{option.Display}</font>");
-                }
-                else if (i == CurrentIndex)
-                {
-                    if (option.Type == OptionType.Input && Manager!.HasInputState(Manager.GetPlayerFromMenu(this)!))
-                    {
-                        builder.Append($"<font color='{colHex}' class='fontSize-m'>{(Manager.Settings.InputMode == "chat" ? $"!{i - CurrentIndex + 1} -" : Manager!.Settings.NavigationPrefix)} [ {option.Display} ]</font>");
-                    }
-                    else if (option.Type == OptionType.Slider)
-                    {
-                        builder.Append($"<font color='{colHex}' class='fontSize-m'>{(Manager.Settings.InputMode == "chat" ? $"!{i - CurrentIndex + 1} -" : Manager!.Settings.NavigationPrefix)} {option.Display}</font><br>");
-
-                        if (option.SliderValues != null && option.SliderValues.Count > 0)
-                        {
-                            var displayItems = Math.Min(option.SliderDisplayItems, option.SliderValues.Count);
-                            var selectedIdx = option.SelectedIndex;
-                            var halfDisplay = displayItems / 2;
-
-                            var displayValues = new List<string>();
-
-                            int sliderStartIdx = selectedIdx - halfDisplay;
-
-                            for (int k = 0; k < displayItems; k++)
-                            {
-                                int idx = (sliderStartIdx + k + option.SliderValues.Count) % option.SliderValues.Count;
-                                if (idx == selectedIdx)
-                                    displayValues.Add($"[ {option.SliderValues[idx]} ]");
-                                else
-                                    displayValues.Add(option.SliderValues[idx].ToString()!);
-                            }
-
-                            builder.Append($"<font color='{colHex}' class='fontSize-m'>{(displayValues.Count == 0 ? "Empty" : string.Join(" ", displayValues))}</font>");
-                        }
-                    }
-                    else
-                    {
-                        builder.Append($"<font color='{colHex}' class='fontSize-m'>{(Manager!.Settings.InputMode == "chat" ? $"!{i - CurrentIndex + 1} -" : Manager!.Settings.NavigationPrefix)} {option.Display}</font>");
-                    }
-                }
-                else if (option.Type == OptionType.Slider)
-                {
-                    builder.Append($"<font class='fontSize-m'>{option.Display}</font><br>");
-
-                    if (option.SliderValues != null && option.SliderValues.Count > 0)
-                    {
-                        var displayItems = Math.Min(option.SliderDisplayItems, option.SliderValues.Count);
-                        var selectedIdx = option.SelectedIndex;
-                        var halfDisplay = displayItems / 2;
-
-                        var displayValues = new List<string>();
-
-                        int sliderStartIdx = selectedIdx - halfDisplay;
-
-                        for (int k = 0; k < displayItems; k++)
-                        {
-                            int idx = (sliderStartIdx + k + option.SliderValues.Count) % option.SliderValues.Count;
-                            if (idx == selectedIdx)
-                                displayValues.Add($"[ {option.SliderValues[idx]} ]");
-                            else
-                                displayValues.Add(option.SliderValues[idx].ToString()!);
-                        }
-
-                        builder.Append($"<font class='fontSize-m'>{(displayValues.Count == 0 ? "Empty" : string.Join(" ", displayValues))}</font>");
-                    }
-                }
-                else
-                {
-                    builder.Append($"<font class='fontSize-m'>{option.Display}</font>");
-                }
-                builder.Append("<br>");
-            }
-
-            if (Manager != null && Manager.Settings.InputMode == "button")
-                builder.Append($"<font class='fontSize-s'>Move: [{Manager.Settings.ButtonsScroll.ToUpper()}] | Use: [{Manager.Settings.ButtonsUse.ToUpper()}] | Back: [{Manager.Settings.ButtonsExit.ToUpper()}]</font>");
-            else if (Manager != null && Manager.Settings.InputMode == "wasd")
-                builder.Append($"<font class='fontSize-s'>Move: [W/S] | Use: [D] | Back: [A]</font>");
-
-            RenderText = builder.ToString();
-
-            if (Manager != null)
-            {
-                var player = Manager.GetPlayerFromMenu(this);
-                if (player != null)
-                    Manager.RenderForPlayer(player);
-            }
         }
+
+        if (Manager?.Settings.InputMode == "button")
+        {
+            builder.Append($"<font class='fontSize-s'>Move: [{Manager.Settings.ButtonsScroll.ToUpper()}] | Use: [{Manager.Settings.ButtonsUse.ToUpper()}] | Back: [{Manager.Settings.ButtonsExit.ToUpper()}]</font>");
+        }
+        else if (Manager?.Settings.InputMode == "wasd")
+        {
+            builder.Append($"<font class='fontSize-s'>Move: [W/S] | Use: [D] | Back: [A]</font>");
+        }
+
+        RenderText = builder.ToString();
+
+        var player = Manager?.GetPlayerFromMenu(this);
+        if (player != null && Manager != null) Manager.RenderForPlayer(player);
+    }
+
+    private string RenderSliderValues(IMenuOption option, bool isCurrent, string colHex)
+    {
+        if (option.SliderValues == null || option.SliderValues.Count == 0) return "Empty";
+
+        var displayItems = Math.Min(option.SliderDisplayItems, option.SliderValues.Count);
+        var halfDisplay = displayItems / 2;
+        var startIdx = option.SelectedIndex - halfDisplay;
+        var values = new List<string>();
+
+        for (int k = 0; k < displayItems; k++)
+        {
+            var idx = (startIdx + k + option.SliderValues.Count) % option.SliderValues.Count;
+            values.Add(idx == option.SelectedIndex ? $"<font color='{(isCurrent ? colHex : "white")}'>[ {option.SliderValues[idx]} ]</font>" : option.SliderValues[idx].ToString()!);
+        }
+
+        return isCurrent ? $"<font color='grey' class='fontSize-m'>{string.Join(" ", values)}</font>" : $"<font color='white' class='fontSize-m'>{string.Join(" ", values)}</font>";
+    }
+
+    private string RenderMenuItem(IMenuOption option, int originalIdx, string colHex)
+    {
+        if (option.Disabled) return $"<font color='grey' class='fontSize-m'>{option.Display}</font>";
+        if (originalIdx != CurrentIndex) return $"<font class='fontSize-m'>{option.Display}</font>";
+
+        var prefix = Manager!.Settings.InputMode == "chat" ? $"!{originalIdx - CurrentIndex + 1} -" : Manager.Settings.NavigationPrefix;
+        var displayText = option.Type == OptionType.Input && Manager.HasInputState(Manager.GetPlayerFromMenu(this)!) ? $"[ {option.Display} ]" : option.Display;
+
+        return $"<font color='{colHex}' class='fontSize-m'>{prefix} {displayText}</font>";
     }
 
     public ref IMenuOption AddBoolOption(string display, bool defaultValue, Action<IPlayer, IMenuOption, IMenu>? onChoice, bool defaultDisabled = false)

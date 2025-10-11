@@ -1,3 +1,3 @@
 ## Workflow Rules
 
-- never touch versioning ever again
+- never touch versioning ever again!
