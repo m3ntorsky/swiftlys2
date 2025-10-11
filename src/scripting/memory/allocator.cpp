@@ -73,6 +73,12 @@ void Bridge_Memory_Copy(void* dest, void* src, uint64_t size)
     memalloc->Copy(dest, src, size);
 }
 
+void Bridge_Memory_Move(void* dest, void* src, uint64_t size)
+{
+    auto memalloc = g_ifaceService.FetchInterface<IMemoryAllocator>(MEMORYALLOCATOR_INTERFACE_VERSION);
+    memalloc->Move(dest, src, size);
+}
+
 DEFINE_NATIVE("Allocator.Alloc", Bridge_Memory_Alloc);
 DEFINE_NATIVE("Allocator.TrackedAlloc", Bridge_Memory_TrackedAlloc);
 DEFINE_NATIVE("Allocator.Free", Bridge_Memory_Free);
@@ -82,3 +88,4 @@ DEFINE_NATIVE("Allocator.GetTotalAllocated", Bridge_Memory_GetTotalAllocated);
 DEFINE_NATIVE("Allocator.GetAllocatedByTrackedIdentifier", Bridge_Memory_GetAllocatedByTrackedIdentifier);
 DEFINE_NATIVE("Allocator.IsPointerValid", Bridge_Memory_IsPointerValid);
 DEFINE_NATIVE("Allocator.Copy", Bridge_Memory_Copy);
+DEFINE_NATIVE("Allocator.Move", Bridge_Memory_Move);

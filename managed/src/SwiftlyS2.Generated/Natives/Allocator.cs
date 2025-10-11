@@ -94,7 +94,13 @@ internal static class NativeAllocator {
 
   private unsafe static delegate* unmanaged<nint, nint, ulong, void> _Copy;
 
-  public unsafe static void Copy(nint src, nint dst, ulong size) {
-    _Copy(src, dst, size);
+  public unsafe static void Copy(nint dst, nint src, ulong size) {
+    _Copy(dst, src, size);
+  }
+
+  private unsafe static delegate* unmanaged<nint, nint, ulong, void> _Move;
+
+  public unsafe static void Move(nint dst, nint src, ulong size) {
+    _Move(dst, src, size);
   }
 }

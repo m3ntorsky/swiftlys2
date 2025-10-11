@@ -143,6 +143,11 @@ void MemoryAllocator::Copy(void* dest, void* src, uint64_t size)
     memcpy(dest, src, size);
 }
 
+void MemoryAllocator::Move(void* dest, void* src, uint64_t size)
+{
+    memmove(dest, src, size);
+}
+
 std::map<void*, uint64_t> MemoryAllocator::GetAllocations()
 {
     return allocations;

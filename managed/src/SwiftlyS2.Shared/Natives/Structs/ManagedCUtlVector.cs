@@ -1,13 +1,26 @@
 namespace SwiftlyS2.Shared.Natives;
 
-public class ManagedCUtlVector<T> where T : unmanaged {
-  private CUtlVector<T> _vector;
+public class ManagedCUtlVector<T> : IDisposable where T : unmanaged
+{
+    private CUtlVector<T> _vector;
 
-  public ManagedCUtlVector() {
-    ManagedCUtlMemory<T> memory = new(0, 0);
-    _vector = new CUtlVector<T>(memory.Value);
-  }
+    public ManagedCUtlVector(int growSize, int initSize)
+    {
+        _vector = new CUtlVector<T>(growSize, initSize);
+    }
 
-  public ref CUtlVector<T> Value { get => ref _vector; }
+    public ManagedCUtlVector(nint memory, int allocationCount, int numElements)
+    {
+        _vector = new CUtlVector<T>(memory, allocationCount, numElements);
+    }
 
+    public void Dispose()
+    {
+        _vector.Dispose();
+    }
+
+    public nint Base => _vector.Base;
+    public int Count => _vector.Count;
+
+    public ref T this[int index] => ref _vector[index];
 }
