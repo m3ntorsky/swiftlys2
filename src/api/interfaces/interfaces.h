@@ -28,10 +28,6 @@
 #include <api/engine/vgui/vgui.h>
 #include <api/engine/voicemanager/voicemanager.h>
 
-#include <api/extensions/extension.h>
-#include <api/extensions/manager.h>
-#include <api/extensions/plugin.h>
-
 #include <api/memory/allocator/allocator.h>
 #include <api/memory/gamedata/manager.h>
 #include <api/memory/hooks/manager.h>
