@@ -54,43 +54,12 @@ internal class MenuService
 
         _exitSound.Name = _core.Menus.Settings.SoundExitName;
         _exitSound.Volume = _core.Menus.Settings.SoundExitVolume;
-
-        _core.Menus.OnMenuOpened += OnMenuOpened;
-        _core.Menus.OnMenuClosed += OnMenuClosed;
     }
 
     ~MenuService()
     {
         _core.Event.OnClientKeyStateChanged -= OnClientKeyStateChanged;
         _core.Command.UnhookClientChat(ClientChatHook);
-    }
-
-    private void OnMenuOpened(IPlayer player, IMenu menu)
-    {
-        var pawn = player.Pawn;
-        if (pawn == null) return;
-
-        if (menu.FreezePlayer == true)
-        {
-            pawn.MoveType = MoveType_t.MOVETYPE_INVALID;
-            pawn.MoveTypeUpdated();
-
-            pawn.ActualMoveType = MoveType_t.MOVETYPE_INVALID;
-        }
-    }
-
-    private void OnMenuClosed(IPlayer player, IMenu menu)
-    {
-        var pawn = player.Pawn;
-        if (pawn == null) return;
-
-        if (menu.FreezePlayer == true)
-        {
-            pawn.MoveType = MoveType_t.MOVETYPE_WALK;
-            pawn.MoveTypeUpdated();
-
-            pawn.ActualMoveType = MoveType_t.MOVETYPE_WALK;
-        }
     }
 
     private void OnClientKeyStateChanged(IOnClientKeyStateChangedEvent @event)

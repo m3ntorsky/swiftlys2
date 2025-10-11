@@ -365,7 +365,7 @@ public class TestPlugin : BasePlugin
   [Command("menu")]
   public void MenuCommand(ICommandContext context)
   {
-    var menu = Core.Menus.CreateMenu("Test Menu", false, true, true);
+    var menu = Core.Menus.CreateMenu("Test Menu", true, true, true);
 
     menu.Color = new(0, 255, 0);
 
