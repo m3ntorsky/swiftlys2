@@ -90,6 +90,7 @@ internal class MenuManager : IMenuManager
                 {
                     OpenMenus[player] = activeMenu;
                     OnMenuOpened?.Invoke(player, activeMenu);
+                    RenderForPlayer(player);
                 }
                 else
                 {
@@ -205,6 +206,7 @@ internal class MenuManager : IMenuManager
 
         OpenMenus[player] = menu;
         OnMenuOpened?.Invoke(player, menu);
+        RenderForPlayer(player);
 
         if (autoCloseDelay >= 1f / 64f)
         {
