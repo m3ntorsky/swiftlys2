@@ -10,7 +10,9 @@ namespace SwiftlyS2.Core.Natives;
 
 internal static class NativeTest {
   private static int _MainThreadID;
+
   private unsafe static delegate* unmanaged<nint> _Test;
+
   public unsafe static nint Test() {
     var ret = _Test();
     return ret;
