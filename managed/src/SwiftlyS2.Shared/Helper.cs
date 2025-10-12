@@ -37,6 +37,9 @@ public static class Helper {
   /// <param name="text">The text to replace the color codes in.</param>
   /// <returns>The text with the color codes replaced.</returns>
   public static string Colored(this string text) {
+    if (text.StartsWith("["))
+      text = " " + text;
+      
     foreach (var color in ColorCodes) {
       text = text.Replace(color.Key, color.Value);
     }
