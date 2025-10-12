@@ -70,6 +70,15 @@ public class TestPlugin : BasePlugin
 
   public override void Load(bool hotReload)
   {
+    // var consoleListenerId = Core.ConsoleOutput.RegisterConsoleOutputListener((message) =>
+    // {
+    //   Core.Logger.LogInformation($"message: {message}");
+    // });
+    Core.Engine.ExecuteCommandWithBuffer("@ping", (buffer) =>
+    {
+      Console.WriteLine($"pong: {buffer}");
+    });
+
     Core.GameEvent.HookPre<EventShowSurvivalRespawnStatus>(@event =>
     {
       @event.LocToken = "test";
@@ -313,7 +322,7 @@ public class TestPlugin : BasePlugin
     Console.WriteLine(Core.GameData.GetSignature("CBaseEntity::DispatchSpawn"));
     var ent = Core.EntitySystem.CreateEntity<CPointWorldText>();
     ent.DispatchSpawn();
-  }
+  } 
 
   [Command("tt3")]
   public void TestCommand33(ICommandContext context)
@@ -336,6 +345,15 @@ public class TestPlugin : BasePlugin
   public void TestCommand6(ICommandContext context)
   {
     Console.WriteLine("TestPlugin TestCommand6");
+  }
+
+  [Command("tt7")]
+  public void TestCommand7(ICommandContext context)
+  {
+    Core.Engine.ExecuteCommandWithBuffer("@ping", (buffer) =>
+    {
+      Console.WriteLine($"pong: {buffer}");
+    });
   }
 
   [GameEventHandler(HookMode.Pre)]
