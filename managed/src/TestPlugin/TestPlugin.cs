@@ -38,7 +38,7 @@ public class TestPlugin : BasePlugin
 
   public TestPlugin(ISwiftlyCore core) : base(core)
   {
-    Console.WriteLine($"hello {core.Localizer["hello"]}");
+    Console.WriteLine("[TestPlugin] TestPlugin constructed successfully!");
   }
 
   public override void ConfigureSharedInterface(IInterfaceManager interfaceManager)
@@ -59,7 +59,10 @@ public class TestPlugin : BasePlugin
 
   public override void Load(bool hotReload)
   {
-
+    var consoleListenerId = Core.ConsoleOutput.RegisterConsoleOutputListener((message) =>
+    {
+      Core.Logger.LogInformation($"message: {message}");
+    });
 
     Core.GameEvent.HookPre<EventShowSurvivalRespawnStatus>(@event =>
     {

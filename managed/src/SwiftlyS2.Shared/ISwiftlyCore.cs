@@ -1,6 +1,7 @@
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared.Commands;
+using SwiftlyS2.Shared.ConsoleOutput;
 using SwiftlyS2.Shared.Convars;
 using SwiftlyS2.Shared.Database;
 using SwiftlyS2.Shared.EntitySystem;
@@ -49,6 +50,11 @@ public interface ISwiftlyCore
   /// Command service.
   /// </summary>
   public ICommandService Command { get; }
+
+  /// <summary>
+  /// Console output service.
+  /// </summary>
+  public IConsoleOutputService ConsoleOutput { get; }
 
   /// <summary>
   /// Entity system service.
