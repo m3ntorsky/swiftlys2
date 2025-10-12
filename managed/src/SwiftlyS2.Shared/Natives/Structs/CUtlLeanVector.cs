@@ -19,6 +19,24 @@ public struct CUtlLeanVector<T, I>
     private uint _pad;
     public nint Elements;
 
+    [StructLayout(LayoutKind.Sequential)]
+    public struct Iterator_t
+    {
+        public I Index;
+
+        public Iterator_t(I i) => Index = i;
+
+        public static bool operator ==(Iterator_t a, Iterator_t b) => a.Index == b.Index;
+        public static bool operator !=(Iterator_t a, Iterator_t b) => a.Index != b.Index;
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is Iterator_t other)
+                return this == other;
+            return false;
+        }
+    }
+
     public int ElementSize => SchemaSize.Get<T>();
 
     private I ExternalBufferMarker => I.One << ((Marshal.SizeOf<I>() * 8) - 1);
