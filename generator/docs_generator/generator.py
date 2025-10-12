@@ -89,7 +89,7 @@ def generate_markdown(yaml_data):
             md += "\n"
         if 'api3' in item:
             src = item.get('src', '')
-            api3_title = item['api3']
+            api3_title = str(item.get('api3', ''))
             api3_title = re.sub(r'<[^>]+>', '', api3_title)
             api3_title = re.sub(r'\[[^\]]+\]', '', api3_title)
             md += f"### {api3_title}\n\n"
