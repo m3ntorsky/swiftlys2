@@ -49,4 +49,10 @@ public interface IConsoleOutputService
     /// </summary>
     /// <returns>The counter text.</returns>
     string GetCounterText();
+
+    /// <summary>
+    /// Writes a message to the server console using the tier0 logging system.
+    /// </summary>
+    /// <param name="message">The message</param>
+    void WriteToServerConsole(string message);
 }

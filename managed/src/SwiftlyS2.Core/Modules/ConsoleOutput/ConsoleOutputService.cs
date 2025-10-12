@@ -73,6 +73,11 @@ internal class ConsoleOutputService : IConsoleOutputService, IDisposable
         return NativeConsoleOutput.GetCounterText();
     }
 
+    public void WriteToServerConsole(string message)
+    {
+        NativeEngineHelpers.SendMessageToConsole(message);
+    }
+
     public void Dispose()
     {
         lock (_lock)
