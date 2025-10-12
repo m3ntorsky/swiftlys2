@@ -17,8 +17,7 @@ public partial interface CRenderMesh : ISchemaClass<CRenderMesh> {
   // CUtlLeanVectorFixedGrowable< CSceneObjectData, 1 >
   public SchemaUntypedField SceneObjects { get; }
   
-  // CUtlLeanVector< CBaseConstraint* >
-  public SchemaUntypedField Constraints { get; }
+  public ref CUtlLeanVector<PointerTo<CBaseConstraint>, int> Constraints { get; }
   
   public CRenderSkeleton Skeleton { get; }
   

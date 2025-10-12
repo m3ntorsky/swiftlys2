@@ -18,14 +18,11 @@ public partial interface CSceneObjectData : ISchemaClass<CSceneObjectData> {
   
   public ref Vector MaxBounds { get; }
   
-  // CUtlLeanVector< CMaterialDrawDescriptor >
-  public SchemaUntypedField DrawCalls { get; }
+  public ref CUtlLeanVector<IntPtr, int> DrawCalls { get; }
   
-  // CUtlLeanVector< AABB_t >
-  public SchemaUntypedField DrawBounds { get; }
+  public ref CUtlLeanVector<IntPtr, int> DrawBounds { get; }
   
-  // CUtlLeanVector< CMeshletDescriptor >
-  public SchemaUntypedField Meshlets { get; }
+  public ref CUtlLeanVector<IntPtr, int> Meshlets { get; }
   
   public ref Vector4D TintColor { get; }
 

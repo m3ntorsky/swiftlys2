@@ -15,14 +15,14 @@ internal partial class CPulse_ChunkImpl : SchemaClass, CPulse_Chunk {
   public CPulse_ChunkImpl(nint handle) : base(handle) {
   }
 
-  public SchemaUntypedField Instructions {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x816932094D358BC4));
+  public ref CUtlLeanVector<IntPtr, int> Instructions {
+    get => ref _Handle.AsRef<CUtlLeanVector<IntPtr, int>>(Schema.GetOffset(0x816932094D358BC4));
   }
-  public SchemaUntypedField Registers {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x81693209BB828A49));
+  public ref CUtlLeanVector<IntPtr, int> Registers {
+    get => ref _Handle.AsRef<CUtlLeanVector<IntPtr, int>>(Schema.GetOffset(0x81693209BB828A49));
   }
-  public SchemaUntypedField InstructionEditorIDs {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x81693209236D8B64));
+  public ref CUtlLeanVector<IntPtr, int> InstructionEditorIDs {
+    get => ref _Handle.AsRef<CUtlLeanVector<IntPtr, int>>(Schema.GetOffset(0x81693209236D8B64));
   }
 
 

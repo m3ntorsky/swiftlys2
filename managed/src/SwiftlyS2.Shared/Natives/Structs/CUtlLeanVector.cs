@@ -16,7 +16,6 @@ public struct CUtlLeanVector<T, I>
 {
     public I Count;
     public I Allocated;
-    private uint _pad;
     public nint Elements;
 
     [StructLayout(LayoutKind.Sequential)]

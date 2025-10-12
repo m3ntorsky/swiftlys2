@@ -19,8 +19,7 @@ public partial interface CPulse_PublicOutput : ISchemaClass<CPulse_PublicOutput>
   
   public string Description { get; set; }
   
-  // CUtlLeanVector< CPulseRuntimeMethodArg >
-  public SchemaUntypedField Args { get; }
+  public ref CUtlLeanVector<IntPtr, int> Args { get; }
 
 
 }

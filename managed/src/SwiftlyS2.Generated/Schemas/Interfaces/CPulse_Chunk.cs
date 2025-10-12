@@ -14,14 +14,11 @@ public partial interface CPulse_Chunk : ISchemaClass<CPulse_Chunk> {
   static int ISchemaClass<CPulse_Chunk>.Size => 88;
 
   
-  // CUtlLeanVector< PGDInstruction_t >
-  public SchemaUntypedField Instructions { get; }
+  public ref CUtlLeanVector<IntPtr, int> Instructions { get; }
   
-  // CUtlLeanVector< CPulse_RegisterInfo >
-  public SchemaUntypedField Registers { get; }
+  public ref CUtlLeanVector<IntPtr, int> Registers { get; }
   
-  // CUtlLeanVector< PulseDocNodeID_t >
-  public SchemaUntypedField InstructionEditorIDs { get; }
+  public ref CUtlLeanVector<IntPtr, int> InstructionEditorIDs { get; }
 
 
 }

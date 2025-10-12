@@ -18,8 +18,7 @@ public partial interface C_OP_CreateParticleSystemRenderer : CParticleFunctionRe
   
   public ref EventTypeSelection_t EventType { get; }
   
-  // CUtlLeanVector< CPAssignment_t >
-  public SchemaUntypedField CPs { get; }
+  public ref CUtlLeanVector<IntPtr, int> CPs { get; }
   
   public string ParticleConfig { get; set; }
   

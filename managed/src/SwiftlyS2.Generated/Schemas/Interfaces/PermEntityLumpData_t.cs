@@ -18,8 +18,7 @@ public partial interface PermEntityLumpData_t : ISchemaClass<PermEntityLumpData_
   
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCEntityLump>> ChildLumps { get; }
   
-  // CUtlLeanVector< EntityKeyValueData_t >
-  public SchemaUntypedField EntityKeyValues { get; }
+  public ref CUtlLeanVector<IntPtr, int> EntityKeyValues { get; }
 
 
 }
