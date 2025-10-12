@@ -112,6 +112,14 @@ GitHub: https://github.com/swiftly-solution/swiftlys2");
           }
           ProfilerCommand(context);
           break;
+        case "confilter":
+          if (context.IsSentByPlayer)
+          {
+            context.Reply("This command can only be executed from the server console.");
+            return;
+          }
+          ConfilterCommand(context);
+          break;
         default:
           ShowHelp(context);
           break;
@@ -132,12 +140,50 @@ GitHub: https://github.com/swiftly-solution/swiftlys2");
     table.AddRow("status", "Show the status of the server");
     if (!context.IsSentByPlayer)
     {
+      table.AddRow("confilter", "Console Filter Menu");
       table.AddRow("plugins", "Plugin Management Menu");
       table.AddRow("gc", "Show garbage collection information on managed");
       table.AddRow("profiler", "Profiler Menu");
     }
     table.AddRow("version", "Display Swiftly version");
     AnsiConsole.Write(table);
+  }
+
+  private void ConfilterCommand(ICommandContext context)
+  {
+    var args = context.Args;
+    if (args.Length == 1)
+    {
+      var table = new Table().AddColumn("Command").AddColumn("Description");
+      table.AddRow("enable", "Enable console filtering");
+      table.AddRow("disable", "Disable console filtering");
+      table.AddRow("status", "Show the status of the console filter");
+      table.AddRow("reload", "Reload console filter configuration");
+      AnsiConsole.Write(table);
+      return;
+    }
+
+    switch (args[1])
+    {
+      case "enable":
+        if (!_Core.ConsoleOutput.IsFilterEnabled()) _Core.ConsoleOutput.ToggleFilter();
+        _Logger.LogInformation("Console filtering has been enabled.");
+        break;
+      case "disable":
+        if (_Core.ConsoleOutput.IsFilterEnabled()) _Core.ConsoleOutput.ToggleFilter();
+        _Logger.LogInformation("Console filtering has been disabled.");
+        break;
+      case "status":
+        _Logger.LogInformation($"Console filtering is currently {(_Core.ConsoleOutput.IsFilterEnabled() ? "enabled" : "disabled")}.\nBelow are some statistics for the filtering process:\n{_Core.ConsoleOutput.GetCounterText()}");
+        break;
+      case "reload":
+        _Core.ConsoleOutput.ReloadFilterConfiguration();
+        _Logger.LogInformation("Console filter configuration reloaded.");
+        break;
+      default:
+        _Logger.LogWarning("Unknown command");
+        break;
+    }
   }
 
   private void ProfilerCommand(ICommandContext context)
