@@ -63,9 +63,9 @@ int Bridge_ConsoleOutput_GetCounterText(char* out)
 {
     thread_local static std::string counterText;
     auto consoleOutput = g_ifaceService.FetchInterface<IConsoleOutput>(CONSOLEOUTPUT_INTERFACE_VERSION);
-    counterText = consoleOutput->GetCounterText();
 
     if (out != nullptr) strcpy(out, counterText.c_str());
+    else counterText = consoleOutput->GetCounterText();
 
     return counterText.size();
 }
