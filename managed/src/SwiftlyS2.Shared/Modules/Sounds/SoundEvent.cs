@@ -4,7 +4,8 @@ using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Shared.Sounds;
 
-public class SoundEvent : IDisposable {
+public class SoundEvent : IDisposable
+{
 
   private SoundEventSafeHandle _handle;
 
@@ -12,7 +13,7 @@ public class SoundEvent : IDisposable {
   /// <summary>
   /// The sound event name.
   /// </summary>
-  public string Name 
+  public string Name
   {
     get => NativeSounds.GetName(Address);
     set => NativeSounds.SetName(Address, value);
@@ -53,10 +54,12 @@ public class SoundEvent : IDisposable {
   /// </summary>
   public ref CRecipientFilter Recipients { get => ref _recipients; }
 
-  public SoundEvent() {
+  public SoundEvent()
+  {
     _handle = new SoundEventSafeHandle(NativeSounds.CreateSoundEvent());
     Volume = 1.0f;
     Pitch = 1.0f;
+    SourceEntityIndex = -1;
   }
 
 
@@ -66,6 +69,7 @@ public class SoundEvent : IDisposable {
     Name = name;
     Volume = volume;
     Pitch = pitch;
+    SourceEntityIndex = -1;
   }
 
   private nint Address => _handle.Address;
@@ -140,7 +144,8 @@ public class SoundEvent : IDisposable {
     NativeSounds.Emit(Address);
   }
 
-  public void Dispose() {
+  public void Dispose()
+  {
     _handle.Dispose();
   }
 }

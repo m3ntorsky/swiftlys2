@@ -57,13 +57,19 @@ public class TestPlugin : BasePlugin
 
   IOptionsMonitor<TestConfig> _config;
 
+  [Command("sound")]
+  public void SoundCommand(ICommandContext context)
+  {
+    using var se = new SoundEvent();
+    se.Name = "MVP_ProtectionCharm";
+    se.Volume = 0.6f;
+    se.SourceEntityIndex = (int)context.Sender!.Pawn!.Index;
+    se.Recipients.AddAllPlayers();
+    se.Emit();
+  }
+
   public override void Load(bool hotReload)
   {
-    var consoleListenerId = Core.ConsoleOutput.RegisterConsoleOutputListener((message) =>
-    {
-      Core.Logger.LogInformation($"message: {message}");
-    });
-
     Core.GameEvent.HookPre<EventShowSurvivalRespawnStatus>(@event =>
     {
       @event.LocToken = "test";
@@ -81,6 +87,11 @@ public class TestPlugin : BasePlugin
 
     services
       .AddSwiftly(Core);
+
+    Core.Event.OnPrecacheResource += (@event) =>
+    {
+      @event.AddItem("soundevents/mvp_anthem.vsndevts");
+    };
 
 
     // var provider = services.BuildServiceProvider();
