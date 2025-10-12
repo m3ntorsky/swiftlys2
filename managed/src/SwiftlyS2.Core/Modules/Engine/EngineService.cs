@@ -34,7 +34,7 @@ internal class EngineService : IEngineService
         try
         {
             var commandTracked = serviceProvider.GetService<CommandTracked>();
-            commandTracked?.EnqueueCommand($"{command}^wb^", bufferCallback);
+            commandTracked?.EnqueueCommand(bufferCallback);
             NativeEngineHelpers.ExecuteCommand($"{command}^wb^");
         }
         catch { }
