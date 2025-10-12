@@ -91,7 +91,7 @@ void CConsoleOutput::ReloadFilterConfiguration()
     g_FilteredMessages.clear();
 
     json filters = json::object();
-    filters = parseJsonc(Files::Read(g_SwiftlyCore.GetCorePath() + "/config/confilter.jsonc"));
+    filters = parseJsonc(Files::Read(g_SwiftlyCore.GetCorePath() + "/configs/confilter.jsonc"));
 
     for (auto& [key, value] : filters.items()) {
         pcre2_code* re;

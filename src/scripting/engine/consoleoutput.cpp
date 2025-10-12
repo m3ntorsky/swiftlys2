@@ -61,7 +61,7 @@ bool Bridge_ConsoleOutput_NeedsFiltering(const char* text)
 
 int Bridge_ConsoleOutput_GetCounterText(char* out)
 {
-    thread_local static std::string counterText;
+    static std::string counterText;
     auto consoleOutput = g_ifaceService.FetchInterface<IConsoleOutput>(CONSOLEOUTPUT_INTERFACE_VERSION);
 
     if (out != nullptr) strcpy(out, counterText.c_str());
