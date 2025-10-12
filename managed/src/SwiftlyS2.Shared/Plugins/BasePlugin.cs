@@ -1,13 +1,16 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SwiftlyS2.Shared.Misc;
 
 namespace SwiftlyS2.Shared.Plugins;
 
-public abstract class BasePlugin : IPlugin {
+public abstract class BasePlugin : IPlugin
+{
 
   protected ISwiftlyCore Core { get; private init; }
 
-  public BasePlugin(ISwiftlyCore core) {
+  public BasePlugin(ISwiftlyCore core)
+  {
 
     Core = core;
 
@@ -21,11 +24,14 @@ public abstract class BasePlugin : IPlugin {
       Core.Logger.LogCritical(e.Exception, "CRITICAL: Unobserved task exception in plugin. Aborting.");
       e.SetObserved();
     };
+
+    Console.SetOut(new ConsoleRedirector());
+    Console.SetError(new ConsoleRedirector());
   }
 
-  public virtual void ConfigureSharedInterface(IInterfaceManager interfaceManager) {}
+  public virtual void ConfigureSharedInterface(IInterfaceManager interfaceManager) { }
 
-  public virtual void UseSharedInterface(IInterfaceManager interfaceManager) {}
+  public virtual void UseSharedInterface(IInterfaceManager interfaceManager) { }
 
   public abstract void Load(bool hotReload);
 
