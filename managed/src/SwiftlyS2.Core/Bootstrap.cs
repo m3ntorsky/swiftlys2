@@ -66,12 +66,10 @@ internal static class Bootstrap
           .AddPermissionManager()
           .AddCoreHookService()
           .AddMenuService()
+          .AddSingleton<CommandTracked>()
           .AddSwiftlyCore(basePath);
       })
       .Build();
-
-    var swiftlyCore = _host.Services.GetRequiredService<ISwiftlyCore>();
-    CommandTracked.Initialize(swiftlyCore.Memory, swiftlyCore.GameData, swiftlyCore.ConsoleOutput);
 
     _host.Start();
 

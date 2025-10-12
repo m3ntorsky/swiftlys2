@@ -8,27 +8,27 @@ using System.Runtime.InteropServices;
 using SwiftlyS2.Shared.Memory;
 using SwiftlyS2.Shared.Services;
 using SwiftlyS2.Shared.ConsoleOutput;
+using SwiftlyS2.Shared;
 
 namespace SwiftlyS2.Core.Modules.Engine;
 
-internal sealed class CommandTracked : IDisposable
+public sealed class CommandTracked : IDisposable
 {
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     private delegate nint ExecuteCommandDelegate(nint a1, int a2, uint a3, nint a4, nint a5);
-
-    private static CommandTracked? instance;
 
     private readonly ConcurrentQueue<CommandCallback> pendingCommands;
     private readonly ConcurrentQueue<string> capturedOutput;
     private readonly IMemoryService memoryService;
     private readonly IConsoleOutputService consoleOutputService;
+    private readonly IGameDataService gameDataService;
     private readonly CancellationTokenSource cancellationTokenSource;
-
     private IUnmanagedFunction<ExecuteCommandDelegate>? executeCommandHook;
     private Guid hookId;
     private Guid outputListenerId;
     private volatile int isCapturing;
     private volatile int shouldProcessCallback;
+    private volatile bool hooksInitialized;
     private volatile bool disposed;
 
     private readonly struct CommandCallback
@@ -47,20 +47,22 @@ internal sealed class CommandTracked : IDisposable
         public bool IsExpired => DateTime.UtcNow - Timestamp > TimeSpan.FromMilliseconds(10000);
     }
 
-    private CommandTracked(IMemoryService memoryService, IGameDataService gameDataService, IConsoleOutputService consoleOutputService)
+    public CommandTracked(ISwiftlyCore swiftlyCore)
     {
-        this.memoryService = memoryService;
-        this.consoleOutputService = consoleOutputService;
+        memoryService = swiftlyCore.Memory;
+        consoleOutputService = swiftlyCore.ConsoleOutput;
+        gameDataService = swiftlyCore.GameData;
         pendingCommands = new ConcurrentQueue<CommandCallback>();
         capturedOutput = new ConcurrentQueue<string>();
         cancellationTokenSource = new CancellationTokenSource();
 
-        InitializeHooks(gameDataService);
         StartCleanupTimer();
     }
 
-    private void InitializeHooks(IGameDataService gameDataService)
+    private void EnsureHooksInitialized()
     {
+        if (hooksInitialized || gameDataService == null) return;
+
         try
         {
             var signature = gameDataService.GetSignature("Cmd_ExecuteCommand");
@@ -79,6 +81,7 @@ internal sealed class CommandTracked : IDisposable
             });
 
             outputListenerId = consoleOutputService.RegisterConsoleOutputListener(OnConsoleOutput);
+            hooksInitialized = true;
         }
         catch { }
     }
@@ -205,21 +208,11 @@ internal sealed class CommandTracked : IDisposable
         }
     }
 
-    public static void Initialize(IMemoryService memoryService, IGameDataService gameDataService, IConsoleOutputService consoleOutputService)
-    {
-        try
-        {
-            var newInstance = new CommandTracked(memoryService, gameDataService, consoleOutputService);
-            Interlocked.Exchange(ref instance, newInstance);
-        }
-        catch { }
-    }
-
-    public static CommandTracked? Instance => instance;
-
     public void EnqueueCommand(string command, Action<string> callback)
     {
         if (disposed || callback == null) return;
+
+        EnsureHooksInitialized();
 
         try
         {
