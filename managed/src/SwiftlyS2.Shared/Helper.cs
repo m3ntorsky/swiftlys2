@@ -32,29 +32,29 @@ public static class Helper
     { "[orange]", "\x10" }
   };
 
-  public enum ChatColors
+  public static class ChatColors
   {
-    Default = "[/]",
-    White = "[white]",
-    DarkRed = "[darkred]",
-    Green = "[green]",
-    LightYellow = "[lightyellow]",
-    LightBlue = "[lightblue]",
-    Olive = "[olive]",
-    Lime = "[lime]",
-    Red = "[red]",
-    LightPurple = "[lightpurple]",
-    Purple = "[purple]",
-    Grey = "[grey]",
-    Yellow = "[yellow]",
-    Gold = "[gold]",
-    Silver = "[silver]",
-    Blue = "[blue]",
-    DarkBlue = "[darkblue]",
-    BlueGrey = "[bluegrey]",
-    Magenta = "[magenta]",
-    LightRed = "[lightred]",
-    Orange = "[orange]",
+    public static string Default = "[/]";
+    public static string White = "[white]";
+    public static string DarkRed = "[darkred]";
+    public static string Green = "[green]";
+    public static string LightYellow = "[lightyellow]";
+    public static string LightBlue = "[lightblue]";
+    public static string Olive = "[olive]";
+    public static string Lime = "[lime]";
+    public static string Red = "[red]";
+    public static string LightPurple = "[lightpurple]";
+    public static string Purple = "[purple]";
+    public static string Grey = "[grey]";
+    public static string Yellow = "[yellow]";
+    public static string Gold = "[gold]";
+    public static string Silver = "[silver]";
+    public static string Blue = "[blue]";
+    public static string DarkBlue = "[darkblue]";
+    public static string BlueGrey = "[bluegrey]";
+    public static string Magenta = "[magenta]";
+    public static string LightRed = "[lightred]";
+    public static string Orange = "[orange]";
   }
 
   /// <summary>
