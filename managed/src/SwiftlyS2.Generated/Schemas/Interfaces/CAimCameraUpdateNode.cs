@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAimCameraUpdateNode : CUnaryUpdateNode, ISchemaClass<CAimCameraUpdateNode> {
 
   static CAimCameraUpdateNode ISchemaClass<CAimCameraUpdateNode>.From(nint handle) => new CAimCameraUpdateNodeImpl(handle);
+  static int ISchemaClass<CAimCameraUpdateNode>.Size => 192;
 
   
   public CAnimParamHandle ParameterPosition { get; }

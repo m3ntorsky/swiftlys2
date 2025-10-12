@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBodyGroupSetting : ISchemaClass<CBodyGroupSetting> {
 
   static CBodyGroupSetting ISchemaClass<CBodyGroupSetting>.From(nint handle) => new CBodyGroupSettingImpl(handle);
+  static int ISchemaClass<CBodyGroupSetting>.Size => 16;
 
   
   public string BodyGroupName { get; set; }

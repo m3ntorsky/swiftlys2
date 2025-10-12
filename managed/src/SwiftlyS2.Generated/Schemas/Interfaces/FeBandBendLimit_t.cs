@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeBandBendLimit_t : ISchemaClass<FeBandBendLimit_t> {
 
   static FeBandBendLimit_t ISchemaClass<FeBandBendLimit_t>.From(nint handle) => new FeBandBendLimit_tImpl(handle);
+  static int ISchemaClass<FeBandBendLimit_t>.Size => 20;
 
   
   public ref float DistMin { get; }

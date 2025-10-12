@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMoodVData : ISchemaClass<CMoodVData> {
 
   static CMoodVData ISchemaClass<CMoodVData>.From(nint handle) => new CMoodVDataImpl(handle);
+  static int ISchemaClass<CMoodVData>.Size => 256;
 
   
   // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >

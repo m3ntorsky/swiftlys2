@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCAnimData : ISchemaClass<InfoForResourceTypeCAnimData> {
 
   static InfoForResourceTypeCAnimData ISchemaClass<InfoForResourceTypeCAnimData>.From(nint handle) => new InfoForResourceTypeCAnimDataImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCAnimData>.Size => 1;
 
 
 

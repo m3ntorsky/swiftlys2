@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCPostProcessingResource : ISchemaClass<InfoForResourceTypeCPostProcessingResource> {
 
   static InfoForResourceTypeCPostProcessingResource ISchemaClass<InfoForResourceTypeCPostProcessingResource>.From(nint handle) => new InfoForResourceTypeCPostProcessingResourceImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCPostProcessingResource>.Size => 1;
 
 
 

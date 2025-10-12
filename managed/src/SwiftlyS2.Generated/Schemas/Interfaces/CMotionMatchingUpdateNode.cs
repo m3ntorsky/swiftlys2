@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionMatchingUpdateNode : CLeafUpdateNode, ISchemaClass<CMotionMatchingUpdateNode> {
 
   static CMotionMatchingUpdateNode ISchemaClass<CMotionMatchingUpdateNode>.From(nint handle) => new CMotionMatchingUpdateNodeImpl(handle);
+  static int ISchemaClass<CMotionMatchingUpdateNode>.Size => 328;
 
   
   public CMotionDataSet DataSet { get; }

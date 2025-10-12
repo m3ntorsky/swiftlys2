@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRandStopwatch : CStopwatchBase, ISchemaClass<CRandStopwatch> {
 
   static CRandStopwatch ISchemaClass<CRandStopwatch>.From(nint handle) => new CRandStopwatchImpl(handle);
+  static int ISchemaClass<CRandStopwatch>.Size => 20;
 
   
   public ref float MinInterval { get; }

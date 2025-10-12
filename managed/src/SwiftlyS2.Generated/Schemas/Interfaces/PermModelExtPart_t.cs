@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PermModelExtPart_t : ISchemaClass<PermModelExtPart_t> {
 
   static PermModelExtPart_t ISchemaClass<PermModelExtPart_t>.From(nint handle) => new PermModelExtPart_tImpl(handle);
+  static int ISchemaClass<PermModelExtPart_t>.Size => 64;
 
   
   public ref CTransform Transform { get; }

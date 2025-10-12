@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CModelConfigElement_RandomPick : CModelConfigElement, ISchemaClass<CModelConfigElement_RandomPick> {
 
   static CModelConfigElement_RandomPick ISchemaClass<CModelConfigElement_RandomPick>.From(nint handle) => new CModelConfigElement_RandomPickImpl(handle);
+  static int ISchemaClass<CModelConfigElement_RandomPick>.Size => 128;
 
   
   public ref CUtlVector<CUtlString> Choices { get; }

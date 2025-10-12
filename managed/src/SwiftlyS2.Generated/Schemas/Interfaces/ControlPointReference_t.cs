@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ControlPointReference_t : ISchemaClass<ControlPointReference_t> {
 
   static ControlPointReference_t ISchemaClass<ControlPointReference_t>.From(nint handle) => new ControlPointReference_tImpl(handle);
+  static int ISchemaClass<ControlPointReference_t>.Size => 20;
 
   
   public ref int ControlPointNameString { get; }

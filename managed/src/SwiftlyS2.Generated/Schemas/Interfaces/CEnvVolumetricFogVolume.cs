@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvVolumetricFogVolume : CBaseEntity, ISchemaClass<CEnvVolumetricFogVolume> {
 
   static CEnvVolumetricFogVolume ISchemaClass<CEnvVolumetricFogVolume>.From(nint handle) => new CEnvVolumetricFogVolumeImpl(handle);
+  static int ISchemaClass<CEnvVolumetricFogVolume>.Size => 1336;
 
   
   public ref bool Active { get; }

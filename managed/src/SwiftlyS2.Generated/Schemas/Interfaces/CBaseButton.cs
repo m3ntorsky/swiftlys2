@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseButton : CBaseToggle, ISchemaClass<CBaseButton> {
 
   static CBaseButton ISchemaClass<CBaseButton>.From(nint handle) => new CBaseButtonImpl(handle);
+  static int ISchemaClass<CBaseButton>.Size => 2496;
 
   
   public ref QAngle MoveEntitySpace { get; }

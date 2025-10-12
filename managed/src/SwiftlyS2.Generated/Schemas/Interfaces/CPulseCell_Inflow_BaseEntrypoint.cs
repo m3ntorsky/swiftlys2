@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Inflow_BaseEntrypoint : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_Inflow_BaseEntrypoint> {
 
   static CPulseCell_Inflow_BaseEntrypoint ISchemaClass<CPulseCell_Inflow_BaseEntrypoint>.From(nint handle) => new CPulseCell_Inflow_BaseEntrypointImpl(handle);
+  static int ISchemaClass<CPulseCell_Inflow_BaseEntrypoint>.Size => 128;
 
   
   public PulseRuntimeChunkIndex_t EntryChunk { get; }

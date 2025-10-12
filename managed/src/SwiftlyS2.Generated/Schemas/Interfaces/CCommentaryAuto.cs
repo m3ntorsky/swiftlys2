@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCommentaryAuto : CBaseEntity, ISchemaClass<CCommentaryAuto> {
 
   static CCommentaryAuto ISchemaClass<CCommentaryAuto>.From(nint handle) => new CCommentaryAutoImpl(handle);
+  static int ISchemaClass<CCommentaryAuto>.Size => 1384;
 
   
   public CEntityIOOutput OnCommentaryNewGame { get; }

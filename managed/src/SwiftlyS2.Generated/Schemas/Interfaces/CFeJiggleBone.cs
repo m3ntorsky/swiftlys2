@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFeJiggleBone : ISchemaClass<CFeJiggleBone> {
 
   static CFeJiggleBone ISchemaClass<CFeJiggleBone>.From(nint handle) => new CFeJiggleBoneImpl(handle);
+  static int ISchemaClass<CFeJiggleBone>.Size => 156;
 
   
   public ref uint Flags { get; }

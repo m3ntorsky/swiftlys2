@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAttributeManager : ISchemaClass<CAttributeManager> {
 
   static CAttributeManager ISchemaClass<CAttributeManager>.From(nint handle) => new CAttributeManagerImpl(handle);
+  static int ISchemaClass<CAttributeManager>.Size => 80;
 
   
   public ref CUtlVector<CHandle<CBaseEntity>> Providers { get; }

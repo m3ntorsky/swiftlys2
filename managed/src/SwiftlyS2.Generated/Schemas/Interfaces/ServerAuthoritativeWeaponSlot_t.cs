@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ServerAuthoritativeWeaponSlot_t : ISchemaClass<ServerAuthoritativeWeaponSlot_t> {
 
   static ServerAuthoritativeWeaponSlot_t ISchemaClass<ServerAuthoritativeWeaponSlot_t>.From(nint handle) => new ServerAuthoritativeWeaponSlot_tImpl(handle);
+  static int ISchemaClass<ServerAuthoritativeWeaponSlot_t>.Size => 56;
 
   
   public ref ushort Class { get; }

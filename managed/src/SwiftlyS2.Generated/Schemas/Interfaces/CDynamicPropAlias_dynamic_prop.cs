@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDynamicPropAlias_dynamic_prop : CDynamicProp, ISchemaClass<CDynamicPropAlias_dynamic_prop> {
 
   static CDynamicPropAlias_dynamic_prop ISchemaClass<CDynamicPropAlias_dynamic_prop>.From(nint handle) => new CDynamicPropAlias_dynamic_propImpl(handle);
+  static int ISchemaClass<CDynamicPropAlias_dynamic_prop>.Size => 3392;
 
 
 

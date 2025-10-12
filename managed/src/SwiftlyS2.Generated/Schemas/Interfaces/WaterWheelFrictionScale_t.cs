@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface WaterWheelFrictionScale_t : ISchemaClass<WaterWheelFrictionScale_t> {
 
   static WaterWheelFrictionScale_t ISchemaClass<WaterWheelFrictionScale_t>.From(nint handle) => new WaterWheelFrictionScale_tImpl(handle);
+  static int ISchemaClass<WaterWheelFrictionScale_t>.Size => 8;
 
   
   public ref float FractionOfWheelSubmerged { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapScalar : CParticleFunctionOperator, ISchemaClass<C_OP_RemapScalar> {
 
   static C_OP_RemapScalar ISchemaClass<C_OP_RemapScalar>.From(nint handle) => new C_OP_RemapScalarImpl(handle);
+  static int ISchemaClass<C_OP_RemapScalar>.Size => 480;
 
   
   public ParticleAttributeIndex_t FieldInput { get; }

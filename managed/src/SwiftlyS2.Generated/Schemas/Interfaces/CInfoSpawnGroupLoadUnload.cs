@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CInfoSpawnGroupLoadUnload : CLogicalEntity, ISchemaClass<CInfoSpawnGroupLoadUnload> {
 
   static CInfoSpawnGroupLoadUnload ISchemaClass<CInfoSpawnGroupLoadUnload>.From(nint handle) => new CInfoSpawnGroupLoadUnloadImpl(handle);
+  static int ISchemaClass<CInfoSpawnGroupLoadUnload>.Size => 1544;
 
   
   public CEntityIOOutput OnSpawnGroupLoadStarted { get; }

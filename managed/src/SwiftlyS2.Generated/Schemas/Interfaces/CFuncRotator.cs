@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFuncRotator : CBaseModelEntity, ISchemaClass<CFuncRotator> {
 
   static CFuncRotator ISchemaClass<CFuncRotator>.From(nint handle) => new CFuncRotatorImpl(handle);
+  static int ISchemaClass<CFuncRotator>.Size => 2592;
 
   
   public ref CHandle<CBaseEntity> RotatorTarget { get; }

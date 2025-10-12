@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_RandomModelSequence : CParticleFunctionInitializer, ISchemaClass<C_INIT_RandomModelSequence> {
 
   static C_INIT_RandomModelSequence ISchemaClass<C_INIT_RandomModelSequence>.From(nint handle) => new C_INIT_RandomModelSequenceImpl(handle);
+  static int ISchemaClass<C_INIT_RandomModelSequence>.Size => 976;
 
   
   public string ActivityName { get; set; }

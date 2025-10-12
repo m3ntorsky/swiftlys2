@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSosGroupActionTimeLimitSchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionTimeLimitSchema> {
 
   static CSosGroupActionTimeLimitSchema ISchemaClass<CSosGroupActionTimeLimitSchema>.From(nint handle) => new CSosGroupActionTimeLimitSchemaImpl(handle);
+  static int ISchemaClass<CSosGroupActionTimeLimitSchema>.Size => 16;
 
   
   public ref float MaxDuration { get; }

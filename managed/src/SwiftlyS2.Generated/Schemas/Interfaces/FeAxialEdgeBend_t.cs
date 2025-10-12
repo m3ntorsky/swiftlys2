@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeAxialEdgeBend_t : ISchemaClass<FeAxialEdgeBend_t> {
 
   static FeAxialEdgeBend_t ISchemaClass<FeAxialEdgeBend_t>.From(nint handle) => new FeAxialEdgeBend_tImpl(handle);
+  static int ISchemaClass<FeAxialEdgeBend_t>.Size => 40;
 
   
   public ref float Te { get; }

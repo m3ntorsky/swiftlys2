@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseServerFuncs : ISchemaClass<CPulseServerFuncs> {
 
   static CPulseServerFuncs ISchemaClass<CPulseServerFuncs>.From(nint handle) => new CPulseServerFuncsImpl(handle);
+  static int ISchemaClass<CPulseServerFuncs>.Size => 1;
 
 
 

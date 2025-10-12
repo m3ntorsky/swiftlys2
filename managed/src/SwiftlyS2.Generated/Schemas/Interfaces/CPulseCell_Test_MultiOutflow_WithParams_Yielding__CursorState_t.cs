@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_t : ISchemaClass<CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_t> {
 
   static CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_t ISchemaClass<CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_t>.From(nint handle) => new CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_tImpl(handle);
+  static int ISchemaClass<CPulseCell_Test_MultiOutflow_WithParams_Yielding__CursorState_t>.Size => 4;
 
   
   public ref int TestStep { get; }

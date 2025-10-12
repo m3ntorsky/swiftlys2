@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimationGraphVisualizerPie : CAnimationGraphVisualizerPrimitiveBase, ISchemaClass<CAnimationGraphVisualizerPie> {
 
   static CAnimationGraphVisualizerPie ISchemaClass<CAnimationGraphVisualizerPie>.From(nint handle) => new CAnimationGraphVisualizerPieImpl(handle);
+  static int ISchemaClass<CAnimationGraphVisualizerPie>.Size => 128;
 
   
   public ref Vector WsCenter { get; }

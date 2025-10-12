@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvSpark : CPointEntity, ISchemaClass<CEnvSpark> {
 
   static CEnvSpark ISchemaClass<CEnvSpark>.From(nint handle) => new CEnvSparkImpl(handle);
+  static int ISchemaClass<CEnvSpark>.Size => 1320;
 
   
   public ref float Delay { get; }

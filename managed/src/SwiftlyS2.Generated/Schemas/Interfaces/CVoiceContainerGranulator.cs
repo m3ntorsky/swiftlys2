@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVoiceContainerGranulator : CVoiceContainerBase, ISchemaClass<CVoiceContainerGranulator> {
 
   static CVoiceContainerGranulator ISchemaClass<CVoiceContainerGranulator>.From(nint handle) => new CVoiceContainerGranulatorImpl(handle);
+  static int ISchemaClass<CVoiceContainerGranulator>.Size => 400;
 
   
   public ref float GrainLength { get; }

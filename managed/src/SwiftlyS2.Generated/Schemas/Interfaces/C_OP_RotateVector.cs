@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RotateVector : CParticleFunctionOperator, ISchemaClass<C_OP_RotateVector> {
 
   static C_OP_RotateVector ISchemaClass<C_OP_RotateVector>.From(nint handle) => new C_OP_RotateVectorImpl(handle);
+  static int ISchemaClass<C_OP_RotateVector>.Size => 840;
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

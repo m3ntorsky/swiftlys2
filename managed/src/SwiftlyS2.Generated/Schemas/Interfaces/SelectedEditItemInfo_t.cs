@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SelectedEditItemInfo_t : ISchemaClass<SelectedEditItemInfo_t> {
 
   static SelectedEditItemInfo_t ISchemaClass<SelectedEditItemInfo_t>.From(nint handle) => new SelectedEditItemInfo_tImpl(handle);
+  static int ISchemaClass<SelectedEditItemInfo_t>.Size => 24;
 
   
   // CUtlVector< SosEditItemInfo_t >

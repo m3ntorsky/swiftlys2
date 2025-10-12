@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SetCPtoVector : CParticleFunctionOperator, ISchemaClass<C_OP_SetCPtoVector> {
 
   static C_OP_SetCPtoVector ISchemaClass<C_OP_SetCPtoVector>.From(nint handle) => new C_OP_SetCPtoVectorImpl(handle);
+  static int ISchemaClass<C_OP_SetCPtoVector>.Size => 456;
 
   
   public ref int CPInput { get; }

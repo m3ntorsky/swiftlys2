@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_AddVectorToVector : CParticleFunctionInitializer, ISchemaClass<C_INIT_AddVectorToVector> {
 
   static C_INIT_AddVectorToVector ISchemaClass<C_INIT_AddVectorToVector>.From(nint handle) => new C_INIT_AddVectorToVectorImpl(handle);
+  static int ISchemaClass<C_INIT_AddVectorToVector>.Size => 512;
 
   
   public ref Vector Scale { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDestructiblePartsSystemData : ISchemaClass<CDestructiblePartsSystemData> {
 
   static CDestructiblePartsSystemData ISchemaClass<CDestructiblePartsSystemData>.From(nint handle) => new CDestructiblePartsSystemDataImpl(handle);
+  static int ISchemaClass<CDestructiblePartsSystemData>.Size => 48;
 
   
   // CUtlOrderedMap< HitGroup_t, CDestructiblePart >

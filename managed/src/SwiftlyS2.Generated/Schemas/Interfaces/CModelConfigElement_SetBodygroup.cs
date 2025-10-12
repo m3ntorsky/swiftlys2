@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CModelConfigElement_SetBodygroup : CModelConfigElement, ISchemaClass<CModelConfigElement_SetBodygroup> {
 
   static CModelConfigElement_SetBodygroup ISchemaClass<CModelConfigElement_SetBodygroup>.From(nint handle) => new CModelConfigElement_SetBodygroupImpl(handle);
+  static int ISchemaClass<CModelConfigElement_SetBodygroup>.Size => 88;
 
   
   public ref CGlobalSymbol GroupName { get; }

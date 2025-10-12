@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDestructiblePartsComponent : ISchemaClass<CDestructiblePartsComponent> {
 
   static CDestructiblePartsComponent ISchemaClass<CDestructiblePartsComponent>.From(nint handle) => new CDestructiblePartsComponentImpl(handle);
+  static int ISchemaClass<CDestructiblePartsComponent>.Size => 104;
 
   
   public ref CNetworkVarChainer __m_pChainEntity { get; }

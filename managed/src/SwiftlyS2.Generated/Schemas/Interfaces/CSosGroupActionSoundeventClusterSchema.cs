@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSosGroupActionSoundeventClusterSchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionSoundeventClusterSchema> {
 
   static CSosGroupActionSoundeventClusterSchema ISchemaClass<CSosGroupActionSoundeventClusterSchema>.From(nint handle) => new CSosGroupActionSoundeventClusterSchemaImpl(handle);
+  static int ISchemaClass<CSosGroupActionSoundeventClusterSchema>.Size => 80;
 
   
   public ref int MinNearby { get; }

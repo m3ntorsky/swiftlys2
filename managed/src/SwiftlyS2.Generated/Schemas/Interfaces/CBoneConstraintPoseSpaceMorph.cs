@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBoneConstraintPoseSpaceMorph : CBoneConstraintBase, ISchemaClass<CBoneConstraintPoseSpaceMorph> {
 
   static CBoneConstraintPoseSpaceMorph ISchemaClass<CBoneConstraintPoseSpaceMorph>.From(nint handle) => new CBoneConstraintPoseSpaceMorphImpl(handle);
+  static int ISchemaClass<CBoneConstraintPoseSpaceMorph>.Size => 160;
 
   
   public string BoneName { get; set; }

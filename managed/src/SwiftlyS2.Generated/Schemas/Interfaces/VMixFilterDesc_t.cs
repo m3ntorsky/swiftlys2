@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixFilterDesc_t : ISchemaClass<VMixFilterDesc_t> {
 
   static VMixFilterDesc_t ISchemaClass<VMixFilterDesc_t>.From(nint handle) => new VMixFilterDesc_tImpl(handle);
+  static int ISchemaClass<VMixFilterDesc_t>.Size => 16;
 
   
   public ref VMixFilterType_t FilterType { get; }

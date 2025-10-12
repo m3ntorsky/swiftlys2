@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRenderGroom : ISchemaClass<CRenderGroom> {
 
   static CRenderGroom ISchemaClass<CRenderGroom>.From(nint handle) => new CRenderGroomImpl(handle);
+  static int ISchemaClass<CRenderGroom>.Size => 160;
 
   
   // CUtlVector< RenderHairStrandInfo_t >

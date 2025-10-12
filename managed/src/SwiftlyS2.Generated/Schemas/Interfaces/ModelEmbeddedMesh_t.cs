@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ModelEmbeddedMesh_t : ISchemaClass<ModelEmbeddedMesh_t> {
 
   static ModelEmbeddedMesh_t ISchemaClass<ModelEmbeddedMesh_t>.From(nint handle) => new ModelEmbeddedMesh_tImpl(handle);
+  static int ISchemaClass<ModelEmbeddedMesh_t>.Size => 112;
 
   
   public string Name { get; set; }

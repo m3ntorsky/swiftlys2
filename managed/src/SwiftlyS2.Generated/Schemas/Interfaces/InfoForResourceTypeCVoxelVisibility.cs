@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCVoxelVisibility : ISchemaClass<InfoForResourceTypeCVoxelVisibility> {
 
   static InfoForResourceTypeCVoxelVisibility ISchemaClass<InfoForResourceTypeCVoxelVisibility>.From(nint handle) => new InfoForResourceTypeCVoxelVisibilityImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCVoxelVisibility>.Size => 1;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventProfileStorageAvailable_t : ISchemaClass<EventProfileStorageAvailable_t> {
 
   static EventProfileStorageAvailable_t ISchemaClass<EventProfileStorageAvailable_t>.From(nint handle) => new EventProfileStorageAvailable_tImpl(handle);
+  static int ISchemaClass<EventProfileStorageAvailable_t>.Size => 4;
 
   
   public ref uint SplitScreenSlot { get; }

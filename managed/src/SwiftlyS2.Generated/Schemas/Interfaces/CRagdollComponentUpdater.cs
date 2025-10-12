@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRagdollComponentUpdater : CAnimComponentUpdater, ISchemaClass<CRagdollComponentUpdater> {
 
   static CRagdollComponentUpdater ISchemaClass<CRagdollComponentUpdater>.From(nint handle) => new CRagdollComponentUpdaterImpl(handle);
+  static int ISchemaClass<CRagdollComponentUpdater>.Size => 216;
 
   
   // CUtlVector< CAnimNodePath >

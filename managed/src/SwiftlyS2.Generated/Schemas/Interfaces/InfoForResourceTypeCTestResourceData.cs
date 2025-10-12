@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCTestResourceData : ISchemaClass<InfoForResourceTypeCTestResourceData> {
 
   static InfoForResourceTypeCTestResourceData ISchemaClass<InfoForResourceTypeCTestResourceData>.From(nint handle) => new InfoForResourceTypeCTestResourceDataImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCTestResourceData>.Size => 1;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimEncodeDifference : ISchemaClass<CAnimEncodeDifference> {
 
   static CAnimEncodeDifference ISchemaClass<CAnimEncodeDifference>.From(nint handle) => new CAnimEncodeDifferenceImpl(handle);
+  static int ISchemaClass<CAnimEncodeDifference>.Size => 168;
 
   
   // CUtlVector< CAnimBoneDifference >

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Outflow_TestRandomYesNo : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_Outflow_TestRandomYesNo> {
 
   static CPulseCell_Outflow_TestRandomYesNo ISchemaClass<CPulseCell_Outflow_TestRandomYesNo>.From(nint handle) => new CPulseCell_Outflow_TestRandomYesNoImpl(handle);
+  static int ISchemaClass<CPulseCell_Outflow_TestRandomYesNo>.Size => 216;
 
   
   public CPulse_OutflowConnection Yes { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmIDSelectorNode__CDefinition : CNmIDValueNode__CDefinition, ISchemaClass<CNmIDSelectorNode__CDefinition> {
 
   static CNmIDSelectorNode__CDefinition ISchemaClass<CNmIDSelectorNode__CDefinition>.From(nint handle) => new CNmIDSelectorNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmIDSelectorNode__CDefinition>.Size => 128;
 
   
   // CUtlVectorFixedGrowable< int16, 5 >

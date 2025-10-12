@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseIssue : ISchemaClass<CBaseIssue> {
 
   static CBaseIssue ISchemaClass<CBaseIssue>.From(nint handle) => new CBaseIssueImpl(handle);
+  static int ISchemaClass<CBaseIssue>.Size => 376;
 
   
   public string TypeString { get; set; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSoundStackSave : CLogicalEntity, ISchemaClass<CSoundStackSave> {
 
   static CSoundStackSave ISchemaClass<CSoundStackSave>.From(nint handle) => new CSoundStackSaveImpl(handle);
+  static int ISchemaClass<CSoundStackSave>.Size => 1272;
 
   
   public string StackName { get; set; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSequenceUpdateNodeBase : CLeafUpdateNode, ISchemaClass<CSequenceUpdateNodeBase> {
 
   static CSequenceUpdateNodeBase ISchemaClass<CSequenceUpdateNodeBase>.From(nint handle) => new CSequenceUpdateNodeBaseImpl(handle);
+  static int ISchemaClass<CSequenceUpdateNodeBase>.Size => 120;
 
   
   public ref float PlaybackSpeed { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixPannerDesc_t : ISchemaClass<VMixPannerDesc_t> {
 
   static VMixPannerDesc_t ISchemaClass<VMixPannerDesc_t>.From(nint handle) => new VMixPannerDesc_tImpl(handle);
+  static int ISchemaClass<VMixPannerDesc_t>.Size => 8;
 
   
   public ref VMixPannerType_t Type { get; }

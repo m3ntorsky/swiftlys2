@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSceneObjectData : ISchemaClass<CSceneObjectData> {
 
   static CSceneObjectData ISchemaClass<CSceneObjectData>.From(nint handle) => new CSceneObjectDataImpl(handle);
+  static int ISchemaClass<CSceneObjectData>.Size => 144;
 
   
   public ref Vector MinBounds { get; }

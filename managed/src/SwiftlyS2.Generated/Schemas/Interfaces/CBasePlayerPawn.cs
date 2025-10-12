@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBasePlayerPawn : CBaseCombatCharacter, ISchemaClass<CBasePlayerPawn> {
 
   static CBasePlayerPawn ISchemaClass<CBasePlayerPawn>.From(nint handle) => new CBasePlayerPawnImpl(handle);
+  static int ISchemaClass<CBasePlayerPawn>.Size => 3464;
 
   
   public CPlayer_WeaponServices? WeaponServices { get; }

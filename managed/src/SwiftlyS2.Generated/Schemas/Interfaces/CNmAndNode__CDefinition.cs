@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmAndNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmAndNode__CDefinition> {
 
   static CNmAndNode__CDefinition ISchemaClass<CNmAndNode__CDefinition>.From(nint handle) => new CNmAndNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmAndNode__CDefinition>.Size => 32;
 
   
   // CUtlLeanVectorFixedGrowable< int16, 4 >

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAudioEmphasisSample : ISchemaClass<CAudioEmphasisSample> {
 
   static CAudioEmphasisSample ISchemaClass<CAudioEmphasisSample>.From(nint handle) => new CAudioEmphasisSampleImpl(handle);
+  static int ISchemaClass<CAudioEmphasisSample>.Size => 8;
 
   
   public ref float Time { get; }

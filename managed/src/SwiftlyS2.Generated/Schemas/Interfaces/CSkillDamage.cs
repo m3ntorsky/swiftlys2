@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSkillDamage : ISchemaClass<CSkillDamage> {
 
   static CSkillDamage ISchemaClass<CSkillDamage>.From(nint handle) => new CSkillDamageImpl(handle);
+  static int ISchemaClass<CSkillDamage>.Size => 24;
 
   
   public CSkillFloat Damage { get; }

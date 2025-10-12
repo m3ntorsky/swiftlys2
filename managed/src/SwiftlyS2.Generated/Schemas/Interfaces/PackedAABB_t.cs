@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PackedAABB_t : ISchemaClass<PackedAABB_t> {
 
   static PackedAABB_t ISchemaClass<PackedAABB_t>.From(nint handle) => new PackedAABB_tImpl(handle);
+  static int ISchemaClass<PackedAABB_t>.Size => 8;
 
   
   public ref uint PackedMin { get; }

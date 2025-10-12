@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmTarget : ISchemaClass<CNmTarget> {
 
   static CNmTarget ISchemaClass<CNmTarget>.From(nint handle) => new CNmTargetImpl(handle);
+  static int ISchemaClass<CNmTarget>.Size => 48;
 
   
   public ref CTransform Transform { get; }

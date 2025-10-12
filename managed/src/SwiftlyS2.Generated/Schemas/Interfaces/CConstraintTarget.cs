@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CConstraintTarget : ISchemaClass<CConstraintTarget> {
 
   static CConstraintTarget ISchemaClass<CConstraintTarget>.From(nint handle) => new CConstraintTargetImpl(handle);
+  static int ISchemaClass<CConstraintTarget>.Size => 96;
 
   
   public ref Quaternion Offset { get; }

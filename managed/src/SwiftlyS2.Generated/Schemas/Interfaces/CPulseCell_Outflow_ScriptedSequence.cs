@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Outflow_ScriptedSequence : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_Outflow_ScriptedSequence> {
 
   static CPulseCell_Outflow_ScriptedSequence ISchemaClass<CPulseCell_Outflow_ScriptedSequence>.From(nint handle) => new CPulseCell_Outflow_ScriptedSequenceImpl(handle);
+  static int ISchemaClass<CPulseCell_Outflow_ScriptedSequence>.Size => 336;
 
   
   public string SyncGroup { get; set; }

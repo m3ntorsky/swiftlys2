@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SetCPOrientationToGroundNormal : CParticleFunctionOperator, ISchemaClass<C_OP_SetCPOrientationToGroundNormal> {
 
   static C_OP_SetCPOrientationToGroundNormal ISchemaClass<C_OP_SetCPOrientationToGroundNormal>.From(nint handle) => new C_OP_SetCPOrientationToGroundNormalImpl(handle);
+  static int ISchemaClass<C_OP_SetCPOrientationToGroundNormal>.Size => 624;
 
   
   public ref float InterpRate { get; }

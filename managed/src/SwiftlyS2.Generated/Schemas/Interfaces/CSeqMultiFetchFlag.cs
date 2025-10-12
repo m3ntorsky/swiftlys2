@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSeqMultiFetchFlag : ISchemaClass<CSeqMultiFetchFlag> {
 
   static CSeqMultiFetchFlag ISchemaClass<CSeqMultiFetchFlag>.From(nint handle) => new CSeqMultiFetchFlagImpl(handle);
+  static int ISchemaClass<CSeqMultiFetchFlag>.Size => 6;
 
   
   public ref bool Realtime { get; }

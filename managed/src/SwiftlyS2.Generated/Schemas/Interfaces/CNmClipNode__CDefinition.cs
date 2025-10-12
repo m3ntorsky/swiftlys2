@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmClipNode__CDefinition : CNmClipReferenceNode__CDefinition, ISchemaClass<CNmClipNode__CDefinition> {
 
   static CNmClipNode__CDefinition ISchemaClass<CNmClipNode__CDefinition>.From(nint handle) => new CNmClipNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmClipNode__CDefinition>.Size => 32;
 
   
   public ref short PlayInReverseValueNodeIdx { get; }

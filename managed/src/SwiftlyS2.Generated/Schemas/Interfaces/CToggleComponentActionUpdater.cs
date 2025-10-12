@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CToggleComponentActionUpdater : CAnimActionUpdater, ISchemaClass<CToggleComponentActionUpdater> {
 
   static CToggleComponentActionUpdater ISchemaClass<CToggleComponentActionUpdater>.From(nint handle) => new CToggleComponentActionUpdaterImpl(handle);
+  static int ISchemaClass<CToggleComponentActionUpdater>.Size => 32;
 
   
   public AnimComponentID ComponentID { get; }

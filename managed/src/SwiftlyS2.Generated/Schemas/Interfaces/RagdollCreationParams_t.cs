@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RagdollCreationParams_t : ISchemaClass<RagdollCreationParams_t> {
 
   static RagdollCreationParams_t ISchemaClass<RagdollCreationParams_t>.From(nint handle) => new RagdollCreationParams_tImpl(handle);
+  static int ISchemaClass<RagdollCreationParams_t>.Size => 24;
 
   
   public ref Vector Force { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointTeleportAPI : ISchemaClass<CPointTeleportAPI> {
 
   static CPointTeleportAPI ISchemaClass<CPointTeleportAPI>.From(nint handle) => new CPointTeleportAPIImpl(handle);
+  static int ISchemaClass<CPointTeleportAPI>.Size => 8;
 
 
 

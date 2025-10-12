@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface constraint_hingeparams_t : ISchemaClass<constraint_hingeparams_t> {
 
   static constraint_hingeparams_t ISchemaClass<constraint_hingeparams_t>.From(nint handle) => new constraint_hingeparams_tImpl(handle);
+  static int ISchemaClass<constraint_hingeparams_t>.Size => 64;
 
   
   public ref Vector WorldPosition { get; }

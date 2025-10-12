@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysicsSpring : CBaseEntity, ISchemaClass<CPhysicsSpring> {
 
   static CPhysicsSpring ISchemaClass<CPhysicsSpring>.From(nint handle) => new CPhysicsSpringImpl(handle);
+  static int ISchemaClass<CPhysicsSpring>.Size => 1336;
 
   
   public ref float Frequency { get; }

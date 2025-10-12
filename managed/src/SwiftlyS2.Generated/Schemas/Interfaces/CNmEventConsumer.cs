@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmEventConsumer : ISchemaClass<CNmEventConsumer> {
 
   static CNmEventConsumer ISchemaClass<CNmEventConsumer>.From(nint handle) => new CNmEventConsumerImpl(handle);
+  static int ISchemaClass<CNmEventConsumer>.Size => 16;
 
 
 

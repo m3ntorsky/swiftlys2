@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_ConnectParentParticleToNearest : CParticleFunctionOperator, ISchemaClass<C_OP_ConnectParentParticleToNearest> {
 
   static C_OP_ConnectParentParticleToNearest ISchemaClass<C_OP_ConnectParentParticleToNearest>.From(nint handle) => new C_OP_ConnectParentParticleToNearestImpl(handle);
+  static int ISchemaClass<C_OP_ConnectParentParticleToNearest>.Size => 1168;
 
   
   public ref int FirstControlPoint { get; }

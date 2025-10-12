@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysThruster : CPhysForce, ISchemaClass<CPhysThruster> {
 
   static CPhysThruster ISchemaClass<CPhysThruster>.From(nint handle) => new CPhysThrusterImpl(handle);
+  static int ISchemaClass<CPhysThruster>.Size => 1376;
 
   
   public ref Vector LocalOrigin { get; }

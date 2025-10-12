@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CGamePlayerZone : CRuleBrushEntity, ISchemaClass<CGamePlayerZone> {
 
   static CGamePlayerZone ISchemaClass<CGamePlayerZone>.From(nint handle) => new CGamePlayerZoneImpl(handle);
+  static int ISchemaClass<CGamePlayerZone>.Size => 2200;
 
   
   public CEntityIOOutput OnPlayerInZone { get; }

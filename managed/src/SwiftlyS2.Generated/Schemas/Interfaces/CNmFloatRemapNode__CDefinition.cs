@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmFloatRemapNode__CDefinition : CNmFloatValueNode__CDefinition, ISchemaClass<CNmFloatRemapNode__CDefinition> {
 
   static CNmFloatRemapNode__CDefinition ISchemaClass<CNmFloatRemapNode__CDefinition>.From(nint handle) => new CNmFloatRemapNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmFloatRemapNode__CDefinition>.Size => 40;
 
   
   public ref short InputValueNodeIdx { get; }

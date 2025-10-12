@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CInfoTargetServerOnly : CServerOnlyPointEntity, ISchemaClass<CInfoTargetServerOnly> {
 
   static CInfoTargetServerOnly ISchemaClass<CInfoTargetServerOnly>.From(nint handle) => new CInfoTargetServerOnlyImpl(handle);
+  static int ISchemaClass<CInfoTargetServerOnly>.Size => 1264;
 
 
 

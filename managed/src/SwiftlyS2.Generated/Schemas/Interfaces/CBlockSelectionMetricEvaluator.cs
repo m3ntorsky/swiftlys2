@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBlockSelectionMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CBlockSelectionMetricEvaluator> {
 
   static CBlockSelectionMetricEvaluator ISchemaClass<CBlockSelectionMetricEvaluator>.From(nint handle) => new CBlockSelectionMetricEvaluatorImpl(handle);
+  static int ISchemaClass<CBlockSelectionMetricEvaluator>.Size => 80;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseConstraint : CBoneConstraintBase, ISchemaClass<CBaseConstraint> {
 
   static CBaseConstraint ISchemaClass<CBaseConstraint>.From(nint handle) => new CBaseConstraintImpl(handle);
+  static int ISchemaClass<CBaseConstraint>.Size => 96;
 
   
   public string Name { get; set; }

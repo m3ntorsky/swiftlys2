@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CModelConfigElement_Command : CModelConfigElement, ISchemaClass<CModelConfigElement_Command> {
 
   static CModelConfigElement_Command ISchemaClass<CModelConfigElement_Command>.From(nint handle) => new CModelConfigElement_CommandImpl(handle);
+  static int ISchemaClass<CModelConfigElement_Command>.Size => 96;
 
   
   public string Command { get; set; }

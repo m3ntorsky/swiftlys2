@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNavHullPresetVData : ISchemaClass<CNavHullPresetVData> {
 
   static CNavHullPresetVData ISchemaClass<CNavHullPresetVData>.From(nint handle) => new CNavHullPresetVDataImpl(handle);
+  static int ISchemaClass<CNavHullPresetVData>.Size => 24;
 
   
   public ref CUtlVector<CUtlString> NavHulls { get; }

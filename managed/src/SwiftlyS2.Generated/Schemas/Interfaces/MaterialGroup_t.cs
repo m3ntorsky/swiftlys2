@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MaterialGroup_t : ISchemaClass<MaterialGroup_t> {
 
   static MaterialGroup_t ISchemaClass<MaterialGroup_t>.From(nint handle) => new MaterialGroup_tImpl(handle);
+  static int ISchemaClass<MaterialGroup_t>.Size => 32;
 
   
   public string Name { get; set; }

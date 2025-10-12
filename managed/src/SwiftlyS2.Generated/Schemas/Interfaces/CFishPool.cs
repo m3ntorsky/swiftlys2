@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFishPool : CBaseEntity, ISchemaClass<CFishPool> {
 
   static CFishPool ISchemaClass<CFishPool>.From(nint handle) => new CFishPoolImpl(handle);
+  static int ISchemaClass<CFishPool>.Size => 1352;
 
   
   public ref int FishCount { get; }

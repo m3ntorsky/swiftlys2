@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapDensityGradientToVectorAttribute : CParticleFunctionOperator, ISchemaClass<C_OP_RemapDensityGradientToVectorAttribute> {
 
   static C_OP_RemapDensityGradientToVectorAttribute ISchemaClass<C_OP_RemapDensityGradientToVectorAttribute>.From(nint handle) => new C_OP_RemapDensityGradientToVectorAttributeImpl(handle);
+  static int ISchemaClass<C_OP_RemapDensityGradientToVectorAttribute>.Size => 456;
 
   
   public ref float RadiusScale { get; }

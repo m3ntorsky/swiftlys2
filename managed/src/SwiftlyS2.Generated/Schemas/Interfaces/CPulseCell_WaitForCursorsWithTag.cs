@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_WaitForCursorsWithTag : CPulseCell_WaitForCursorsWithTagBase, ISchemaClass<CPulseCell_WaitForCursorsWithTag> {
 
   static CPulseCell_WaitForCursorsWithTag ISchemaClass<CPulseCell_WaitForCursorsWithTag>.From(nint handle) => new CPulseCell_WaitForCursorsWithTagImpl(handle);
+  static int ISchemaClass<CPulseCell_WaitForCursorsWithTag>.Size => 160;
 
   
   public ref bool TagSelfWhenComplete { get; }

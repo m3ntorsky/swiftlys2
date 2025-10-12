@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimParamHandle : ISchemaClass<CAnimParamHandle> {
 
   static CAnimParamHandle ISchemaClass<CAnimParamHandle>.From(nint handle) => new CAnimParamHandleImpl(handle);
+  static int ISchemaClass<CAnimParamHandle>.Size => 2;
 
   
   public ref AnimParamType_t Type { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SellbackPurchaseEntry_t : ISchemaClass<SellbackPurchaseEntry_t> {
 
   static SellbackPurchaseEntry_t ISchemaClass<SellbackPurchaseEntry_t>.From(nint handle) => new SellbackPurchaseEntry_tImpl(handle);
+  static int ISchemaClass<SellbackPurchaseEntry_t>.Size => 72;
 
   
   public ref ushort DefIdx { get; }

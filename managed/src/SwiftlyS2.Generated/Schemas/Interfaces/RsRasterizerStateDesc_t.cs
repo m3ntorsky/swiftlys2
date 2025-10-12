@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RsRasterizerStateDesc_t : ISchemaClass<RsRasterizerStateDesc_t> {
 
   static RsRasterizerStateDesc_t ISchemaClass<RsRasterizerStateDesc_t>.From(nint handle) => new RsRasterizerStateDesc_tImpl(handle);
+  static int ISchemaClass<RsRasterizerStateDesc_t>.Size => 16;
 
   
   public ref RsFillMode_t FillMode { get; }

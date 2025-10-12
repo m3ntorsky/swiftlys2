@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSSDSEndFrameViewInfo : ISchemaClass<CSSDSEndFrameViewInfo> {
 
   static CSSDSEndFrameViewInfo ISchemaClass<CSSDSEndFrameViewInfo>.From(nint handle) => new CSSDSEndFrameViewInfoImpl(handle);
+  static int ISchemaClass<CSSDSEndFrameViewInfo>.Size => 16;
 
   
   public ref ulong ViewId { get; }

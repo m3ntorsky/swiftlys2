@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTakeDamageSummaryScopeGuard : ISchemaClass<CTakeDamageSummaryScopeGuard> {
 
   static CTakeDamageSummaryScopeGuard ISchemaClass<CTakeDamageSummaryScopeGuard>.From(nint handle) => new CTakeDamageSummaryScopeGuardImpl(handle);
+  static int ISchemaClass<CTakeDamageSummaryScopeGuard>.Size => 32;
 
   
   public ref CUtlVector<PointerTo<SummaryTakeDamageInfo_t>> Summaries { get; }

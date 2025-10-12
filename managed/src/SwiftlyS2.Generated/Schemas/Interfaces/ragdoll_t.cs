@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ragdoll_t : ISchemaClass<ragdoll_t> {
 
   static ragdoll_t ISchemaClass<ragdoll_t>.From(nint handle) => new ragdoll_tImpl(handle);
+  static int ISchemaClass<ragdoll_t>.Size => 80;
 
   
   // CUtlVector< ragdollelement_t >

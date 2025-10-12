@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmGraphEventConditionNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmGraphEventConditionNode__CDefinition> {
 
   static CNmGraphEventConditionNode__CDefinition ISchemaClass<CNmGraphEventConditionNode__CDefinition>.From(nint handle) => new CNmGraphEventConditionNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmGraphEventConditionNode__CDefinition>.Size => 128;
 
   
   public ref short SourceStateNodeIdx { get; }

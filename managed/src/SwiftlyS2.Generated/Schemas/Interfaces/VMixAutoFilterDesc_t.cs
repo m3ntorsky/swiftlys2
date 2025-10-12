@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixAutoFilterDesc_t : ISchemaClass<VMixAutoFilterDesc_t> {
 
   static VMixAutoFilterDesc_t ISchemaClass<VMixAutoFilterDesc_t>.From(nint handle) => new VMixAutoFilterDesc_tImpl(handle);
+  static int ISchemaClass<VMixAutoFilterDesc_t>.Size => 44;
 
   
   public ref float EnvelopeAmount { get; }

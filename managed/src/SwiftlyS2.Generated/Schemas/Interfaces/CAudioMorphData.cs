@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAudioMorphData : ISchemaClass<CAudioMorphData> {
 
   static CAudioMorphData ISchemaClass<CAudioMorphData>.From(nint handle) => new CAudioMorphDataImpl(handle);
+  static int ISchemaClass<CAudioMorphData>.Size => 104;
 
   
   public ref CUtlVector<float> Times { get; }

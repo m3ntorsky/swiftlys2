@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface shard_model_desc_t : ISchemaClass<shard_model_desc_t> {
 
   static shard_model_desc_t ISchemaClass<shard_model_desc_t>.From(nint handle) => new shard_model_desc_tImpl(handle);
+  static int ISchemaClass<shard_model_desc_t>.Size => 128;
 
   
   public ref int ModelID { get; }

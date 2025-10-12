@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Outflow_ListenForEntityOutput : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_Outflow_ListenForEntityOutput> {
 
   static CPulseCell_Outflow_ListenForEntityOutput ISchemaClass<CPulseCell_Outflow_ListenForEntityOutput>.From(nint handle) => new CPulseCell_Outflow_ListenForEntityOutputImpl(handle);
+  static int ISchemaClass<CPulseCell_Outflow_ListenForEntityOutput>.Size => 240;
 
   
   public SignatureOutflow_Resume OnFired { get; }

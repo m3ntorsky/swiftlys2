@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixBoxverbDesc_t : ISchemaClass<VMixBoxverbDesc_t> {
 
   static VMixBoxverbDesc_t ISchemaClass<VMixBoxverbDesc_t>.From(nint handle) => new VMixBoxverbDesc_tImpl(handle);
+  static int ISchemaClass<VMixBoxverbDesc_t>.Size => 80;
 
   
   public ref float SizeMax { get; }

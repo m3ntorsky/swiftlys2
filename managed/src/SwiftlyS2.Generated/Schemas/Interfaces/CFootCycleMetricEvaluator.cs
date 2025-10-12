@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootCycleMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CFootCycleMetricEvaluator> {
 
   static CFootCycleMetricEvaluator ISchemaClass<CFootCycleMetricEvaluator>.From(nint handle) => new CFootCycleMetricEvaluatorImpl(handle);
+  static int ISchemaClass<CFootCycleMetricEvaluator>.Size => 104;
 
   
   public ref CUtlVector<int> FootIndices { get; }

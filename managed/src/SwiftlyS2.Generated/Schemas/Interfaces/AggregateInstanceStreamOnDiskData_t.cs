@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AggregateInstanceStreamOnDiskData_t : ISchemaClass<AggregateInstanceStreamOnDiskData_t> {
 
   static AggregateInstanceStreamOnDiskData_t ISchemaClass<AggregateInstanceStreamOnDiskData_t>.From(nint handle) => new AggregateInstanceStreamOnDiskData_tImpl(handle);
+  static int ISchemaClass<AggregateInstanceStreamOnDiskData_t>.Size => 24;
 
   
   public ref uint DecodedSize { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_NormalOffset : CParticleFunctionInitializer, ISchemaClass<C_INIT_NormalOffset> {
 
   static C_INIT_NormalOffset ISchemaClass<C_INIT_NormalOffset>.From(nint handle) => new C_INIT_NormalOffsetImpl(handle);
+  static int ISchemaClass<C_INIT_NormalOffset>.Size => 488;
 
   
   public ref Vector OffsetMin { get; }

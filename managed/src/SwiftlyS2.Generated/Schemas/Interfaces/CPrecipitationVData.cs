@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPrecipitationVData : CEntitySubclassVDataBase, ISchemaClass<CPrecipitationVData> {
 
   static CPrecipitationVData ISchemaClass<CPrecipitationVData>.From(nint handle) => new CPrecipitationVDataImpl(handle);
+  static int ISchemaClass<CPrecipitationVData>.Size => 296;
 
   
   // CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > >

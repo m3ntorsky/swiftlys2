@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnBlendVertex_t : ISchemaClass<RnBlendVertex_t> {
 
   static RnBlendVertex_t ISchemaClass<RnBlendVertex_t>.From(nint handle) => new RnBlendVertex_tImpl(handle);
+  static int ISchemaClass<RnBlendVertex_t>.Size => 16;
 
   
   public ref ushort Weight0 { get; }

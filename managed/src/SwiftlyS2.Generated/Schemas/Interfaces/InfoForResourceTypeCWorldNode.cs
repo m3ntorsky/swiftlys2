@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCWorldNode : ISchemaClass<InfoForResourceTypeCWorldNode> {
 
   static InfoForResourceTypeCWorldNode ISchemaClass<InfoForResourceTypeCWorldNode>.From(nint handle) => new InfoForResourceTypeCWorldNodeImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCWorldNode>.Size => 1;
 
 
 

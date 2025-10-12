@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeTreeChildren_t : ISchemaClass<FeTreeChildren_t> {
 
   static FeTreeChildren_t ISchemaClass<FeTreeChildren_t>.From(nint handle) => new FeTreeChildren_tImpl(handle);
+  static int ISchemaClass<FeTreeChildren_t>.Size => 4;
 
   
   public ISchemaFixedArray<ushort> Child { get; }

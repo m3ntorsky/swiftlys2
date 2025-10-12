@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmStateMachineNode__StateDefinition_t : ISchemaClass<CNmStateMachineNode__StateDefinition_t> {
 
   static CNmStateMachineNode__StateDefinition_t ISchemaClass<CNmStateMachineNode__StateDefinition_t>.From(nint handle) => new CNmStateMachineNode__StateDefinition_tImpl(handle);
+  static int ISchemaClass<CNmStateMachineNode__StateDefinition_t>.Size => 56;
 
   
   public ref short StateNodeIdx { get; }

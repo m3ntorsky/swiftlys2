@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixDualCompressorDesc_t : ISchemaClass<VMixDualCompressorDesc_t> {
 
   static VMixDualCompressorDesc_t ISchemaClass<VMixDualCompressorDesc_t>.From(nint handle) => new VMixDualCompressorDesc_tImpl(handle);
+  static int ISchemaClass<VMixDualCompressorDesc_t>.Size => 52;
 
   
   public ref float RMSTimeMS { get; }

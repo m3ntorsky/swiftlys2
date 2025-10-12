@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CModelConfigElement_SetRenderColor : CModelConfigElement, ISchemaClass<CModelConfigElement_SetRenderColor> {
 
   static CModelConfigElement_SetRenderColor ISchemaClass<CModelConfigElement_SetRenderColor>.From(nint handle) => new CModelConfigElement_SetRenderColorImpl(handle);
+  static int ISchemaClass<CModelConfigElement_SetRenderColor>.Size => 80;
 
   
   public ref Color Color { get; }

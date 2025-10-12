@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStanceScaleUpdateNode : CUnaryUpdateNode, ISchemaClass<CStanceScaleUpdateNode> {
 
   static CStanceScaleUpdateNode ISchemaClass<CStanceScaleUpdateNode>.From(nint handle) => new CStanceScaleUpdateNodeImpl(handle);
+  static int ISchemaClass<CStanceScaleUpdateNode>.Size => 120;
 
   
   public CAnimParamHandle Param { get; }

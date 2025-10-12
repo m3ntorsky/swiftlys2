@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixFreeverbDesc_t : ISchemaClass<VMixFreeverbDesc_t> {
 
   static VMixFreeverbDesc_t ISchemaClass<VMixFreeverbDesc_t>.From(nint handle) => new VMixFreeverbDesc_tImpl(handle);
+  static int ISchemaClass<VMixFreeverbDesc_t>.Size => 16;
 
   
   public ref float RoomSize { get; }

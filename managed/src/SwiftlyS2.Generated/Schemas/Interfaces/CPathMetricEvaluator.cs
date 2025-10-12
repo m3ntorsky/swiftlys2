@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPathMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CPathMetricEvaluator> {
 
   static CPathMetricEvaluator ISchemaClass<CPathMetricEvaluator>.From(nint handle) => new CPathMetricEvaluatorImpl(handle);
+  static int ISchemaClass<CPathMetricEvaluator>.Size => 120;
 
   
   public ref CUtlVector<float> PathTimeSamples { get; }

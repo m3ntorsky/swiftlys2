@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ConstraintSoundInfo : ISchemaClass<ConstraintSoundInfo> {
 
   static ConstraintSoundInfo ISchemaClass<ConstraintSoundInfo>.From(nint handle) => new ConstraintSoundInfoImpl(handle);
+  static int ISchemaClass<ConstraintSoundInfo>.Size => 152;
 
   
   public VelocitySampler Sampler { get; }

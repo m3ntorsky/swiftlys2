@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimUpdateSharedData : ISchemaClass<CAnimUpdateSharedData> {
 
   static CAnimUpdateSharedData ISchemaClass<CAnimUpdateSharedData>.From(nint handle) => new CAnimUpdateSharedDataImpl(handle);
+  static int ISchemaClass<CAnimUpdateSharedData>.Size => 256;
 
   
   // CUtlVector< CSmartPtr< CAnimUpdateNodeBase > >

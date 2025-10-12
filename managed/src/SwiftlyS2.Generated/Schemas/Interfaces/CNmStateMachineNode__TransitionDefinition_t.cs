@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmStateMachineNode__TransitionDefinition_t : ISchemaClass<CNmStateMachineNode__TransitionDefinition_t> {
 
   static CNmStateMachineNode__TransitionDefinition_t ISchemaClass<CNmStateMachineNode__TransitionDefinition_t>.From(nint handle) => new CNmStateMachineNode__TransitionDefinition_tImpl(handle);
+  static int ISchemaClass<CNmStateMachineNode__TransitionDefinition_t>.Size => 8;
 
   
   public ref short TargetStateIdx { get; }

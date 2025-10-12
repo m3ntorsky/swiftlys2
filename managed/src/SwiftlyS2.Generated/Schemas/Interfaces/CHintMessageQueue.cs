@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CHintMessageQueue : ISchemaClass<CHintMessageQueue> {
 
   static CHintMessageQueue ISchemaClass<CHintMessageQueue>.From(nint handle) => new CHintMessageQueueImpl(handle);
+  static int ISchemaClass<CHintMessageQueue>.Size => 40;
 
   
   public ref float TmMessageEnd { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFuseSymbolTable : ISchemaClass<CFuseSymbolTable> {
 
   static CFuseSymbolTable ISchemaClass<CFuseSymbolTable>.From(nint handle) => new CFuseSymbolTableImpl(handle);
+  static int ISchemaClass<CFuseSymbolTable>.Size => 176;
 
   
   // CUtlVector< ConstantInfo_t >

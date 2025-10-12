@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_Orient2DRelToCP : CParticleFunctionOperator, ISchemaClass<C_OP_Orient2DRelToCP> {
 
   static C_OP_Orient2DRelToCP ISchemaClass<C_OP_Orient2DRelToCP>.From(nint handle) => new C_OP_Orient2DRelToCPImpl(handle);
+  static int ISchemaClass<C_OP_Orient2DRelToCP>.Size => 464;
 
   
   public ref float RotOffset { get; }

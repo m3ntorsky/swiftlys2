@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventClientPostOutput_t : ISchemaClass<EventClientPostOutput_t> {
 
   static EventClientPostOutput_t ISchemaClass<EventClientPostOutput_t>.From(nint handle) => new EventClientPostOutput_tImpl(handle);
+  static int ISchemaClass<EventClientPostOutput_t>.Size => 64;
 
   
   public EngineLoopState_t LoopState { get; }

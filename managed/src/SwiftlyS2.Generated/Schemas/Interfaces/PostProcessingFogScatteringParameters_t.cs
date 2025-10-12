@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PostProcessingFogScatteringParameters_t : ISchemaClass<PostProcessingFogScatteringParameters_t> {
 
   static PostProcessingFogScatteringParameters_t ISchemaClass<PostProcessingFogScatteringParameters_t>.From(nint handle) => new PostProcessingFogScatteringParameters_tImpl(handle);
+  static int ISchemaClass<PostProcessingFogScatteringParameters_t>.Size => 20;
 
   
   public ref float Radius { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysForce : CPointEntity, ISchemaClass<CPhysForce> {
 
   static CPhysForce ISchemaClass<CPhysForce>.From(nint handle) => new CPhysForceImpl(handle);
+  static int ISchemaClass<CPhysForce>.Size => 1360;
 
   
   public string NameAttach { get; set; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMathCounter : CLogicalEntity, ISchemaClass<CMathCounter> {
 
   static CMathCounter ISchemaClass<CMathCounter>.From(nint handle) => new CMathCounterImpl(handle);
+  static int ISchemaClass<CMathCounter>.Size => 1520;
 
   
   public ref float Min { get; }

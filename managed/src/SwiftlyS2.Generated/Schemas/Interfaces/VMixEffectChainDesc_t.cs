@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixEffectChainDesc_t : ISchemaClass<VMixEffectChainDesc_t> {
 
   static VMixEffectChainDesc_t ISchemaClass<VMixEffectChainDesc_t>.From(nint handle) => new VMixEffectChainDesc_tImpl(handle);
+  static int ISchemaClass<VMixEffectChainDesc_t>.Size => 4;
 
   
   public ref float CrossfadeTime { get; }

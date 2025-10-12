@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmParticleEvent : CNmEvent, ISchemaClass<CNmParticleEvent> {
 
   static CNmParticleEvent ISchemaClass<CNmParticleEvent>.From(nint handle) => new CNmParticleEventImpl(handle);
+  static int ISchemaClass<CNmParticleEvent>.Size => 112;
 
   
   public ref CNmEventRelevance_t Relevance { get; }

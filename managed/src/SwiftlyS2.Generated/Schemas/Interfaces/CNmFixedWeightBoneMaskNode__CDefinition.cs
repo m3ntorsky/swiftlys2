@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmFixedWeightBoneMaskNode__CDefinition : CNmBoneMaskValueNode__CDefinition, ISchemaClass<CNmFixedWeightBoneMaskNode__CDefinition> {
 
   static CNmFixedWeightBoneMaskNode__CDefinition ISchemaClass<CNmFixedWeightBoneMaskNode__CDefinition>.From(nint handle) => new CNmFixedWeightBoneMaskNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmFixedWeightBoneMaskNode__CDefinition>.Size => 24;
 
   
   public ref float BoneWeight { get; }

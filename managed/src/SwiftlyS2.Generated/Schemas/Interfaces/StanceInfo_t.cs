@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface StanceInfo_t : ISchemaClass<StanceInfo_t> {
 
   static StanceInfo_t ISchemaClass<StanceInfo_t>.From(nint handle) => new StanceInfo_tImpl(handle);
+  static int ISchemaClass<StanceInfo_t>.Size => 16;
 
   
   public ref Vector Position { get; }

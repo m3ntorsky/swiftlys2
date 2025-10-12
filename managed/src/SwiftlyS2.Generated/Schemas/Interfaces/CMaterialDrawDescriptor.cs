@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMaterialDrawDescriptor : ISchemaClass<CMaterialDrawDescriptor> {
 
   static CMaterialDrawDescriptor ISchemaClass<CMaterialDrawDescriptor>.From(nint handle) => new CMaterialDrawDescriptorImpl(handle);
+  static int ISchemaClass<CMaterialDrawDescriptor>.Size => 264;
 
   
   public ref float UvDensity { get; }

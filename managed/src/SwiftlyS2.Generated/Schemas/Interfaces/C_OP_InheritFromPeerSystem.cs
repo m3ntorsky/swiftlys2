@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_InheritFromPeerSystem : CParticleFunctionOperator, ISchemaClass<C_OP_InheritFromPeerSystem> {
 
   static C_OP_InheritFromPeerSystem ISchemaClass<C_OP_InheritFromPeerSystem>.From(nint handle) => new C_OP_InheritFromPeerSystemImpl(handle);
+  static int ISchemaClass<C_OP_InheritFromPeerSystem>.Size => 464;
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

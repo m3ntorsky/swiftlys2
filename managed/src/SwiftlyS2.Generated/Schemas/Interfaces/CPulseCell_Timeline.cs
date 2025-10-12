@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Timeline : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_Timeline> {
 
   static CPulseCell_Timeline ISchemaClass<CPulseCell_Timeline>.From(nint handle) => new CPulseCell_TimelineImpl(handle);
+  static int ISchemaClass<CPulseCell_Timeline>.Size => 248;
 
   
   // CUtlVector< CPulseCell_Timeline::TimelineEvent_t >

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_WaterImpulseRenderer : CParticleFunctionRenderer, ISchemaClass<C_OP_WaterImpulseRenderer> {
 
   static C_OP_WaterImpulseRenderer ISchemaClass<C_OP_WaterImpulseRenderer>.From(nint handle) => new C_OP_WaterImpulseRendererImpl(handle);
+  static int ISchemaClass<C_OP_WaterImpulseRenderer>.Size => 3952;
 
   
   public CPerParticleVecInput Pos { get; }

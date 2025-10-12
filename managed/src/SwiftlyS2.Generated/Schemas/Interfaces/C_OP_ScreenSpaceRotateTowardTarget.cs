@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_ScreenSpaceRotateTowardTarget : CParticleFunctionOperator, ISchemaClass<C_OP_ScreenSpaceRotateTowardTarget> {
 
   static C_OP_ScreenSpaceRotateTowardTarget ISchemaClass<C_OP_ScreenSpaceRotateTowardTarget>.From(nint handle) => new C_OP_ScreenSpaceRotateTowardTargetImpl(handle);
+  static int ISchemaClass<C_OP_ScreenSpaceRotateTowardTarget>.Size => 2816;
 
   
   public CPerParticleVecInput TargetPosition { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTurnHelperUpdateNode : CUnaryUpdateNode, ISchemaClass<CTurnHelperUpdateNode> {
 
   static CTurnHelperUpdateNode ISchemaClass<CTurnHelperUpdateNode>.From(nint handle) => new CTurnHelperUpdateNodeImpl(handle);
+  static int ISchemaClass<CTurnHelperUpdateNode>.Size => 144;
 
   
   public ref AnimValueSource FacingTarget { get; }

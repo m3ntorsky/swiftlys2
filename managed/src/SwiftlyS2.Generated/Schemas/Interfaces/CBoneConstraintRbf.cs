@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBoneConstraintRbf : CBoneConstraintBase, ISchemaClass<CBoneConstraintRbf> {
 
   static CBoneConstraintRbf ISchemaClass<CBoneConstraintRbf>.From(nint handle) => new CBoneConstraintRbfImpl(handle);
+  static int ISchemaClass<CBoneConstraintRbf>.Size => 200;
 
   
   // CUtlVector< std::pair< CUtlString, uint32 > >

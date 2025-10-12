@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CHandleTest : CBaseEntity, ISchemaClass<CHandleTest> {
 
   static CHandleTest ISchemaClass<CHandleTest>.From(nint handle) => new CHandleTestImpl(handle);
+  static int ISchemaClass<CHandleTest>.Size => 1272;
 
   
   public ref CHandle<CBaseEntity> Handle { get; }

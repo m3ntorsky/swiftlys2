@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBasePlayerWeapon : CEconEntity, ISchemaClass<CBasePlayerWeapon> {
 
   static CBasePlayerWeapon ISchemaClass<CBasePlayerWeapon>.From(nint handle) => new CBasePlayerWeaponImpl(handle);
+  static int ISchemaClass<CBasePlayerWeapon>.Size => 3712;
 
   
   public GameTick_t NextPrimaryAttackTick { get; }

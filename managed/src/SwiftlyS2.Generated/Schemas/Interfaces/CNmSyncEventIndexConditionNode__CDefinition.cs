@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmSyncEventIndexConditionNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmSyncEventIndexConditionNode__CDefinition> {
 
   static CNmSyncEventIndexConditionNode__CDefinition ISchemaClass<CNmSyncEventIndexConditionNode__CDefinition>.From(nint handle) => new CNmSyncEventIndexConditionNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmSyncEventIndexConditionNode__CDefinition>.Size => 24;
 
   
   public ref short SourceStateNodeIdx { get; }

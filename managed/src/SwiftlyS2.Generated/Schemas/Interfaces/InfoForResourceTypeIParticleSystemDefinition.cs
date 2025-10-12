@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeIParticleSystemDefinition : ISchemaClass<InfoForResourceTypeIParticleSystemDefinition> {
 
   static InfoForResourceTypeIParticleSystemDefinition ISchemaClass<InfoForResourceTypeIParticleSystemDefinition>.From(nint handle) => new InfoForResourceTypeIParticleSystemDefinitionImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeIParticleSystemDefinition>.Size => 1;
 
 
 

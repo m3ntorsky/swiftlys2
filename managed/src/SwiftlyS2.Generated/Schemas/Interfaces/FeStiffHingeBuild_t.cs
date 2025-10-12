@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeStiffHingeBuild_t : ISchemaClass<FeStiffHingeBuild_t> {
 
   static FeStiffHingeBuild_t ISchemaClass<FeStiffHingeBuild_t>.From(nint handle) => new FeStiffHingeBuild_tImpl(handle);
+  static int ISchemaClass<FeStiffHingeBuild_t>.Size => 28;
 
   
   public ref float MaxAngle { get; }

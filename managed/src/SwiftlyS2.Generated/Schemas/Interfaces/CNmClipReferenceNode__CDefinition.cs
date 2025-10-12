@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmClipReferenceNode__CDefinition : CNmPoseNode__CDefinition, ISchemaClass<CNmClipReferenceNode__CDefinition> {
 
   static CNmClipReferenceNode__CDefinition ISchemaClass<CNmClipReferenceNode__CDefinition>.From(nint handle) => new CNmClipReferenceNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmClipReferenceNode__CDefinition>.Size => 16;
 
 
 

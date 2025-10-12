@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PhysicsRagdollPose_t : ISchemaClass<PhysicsRagdollPose_t> {
 
   static PhysicsRagdollPose_t ISchemaClass<PhysicsRagdollPose_t>.From(nint handle) => new PhysicsRagdollPose_tImpl(handle);
+  static int ISchemaClass<PhysicsRagdollPose_t>.Size => 40;
 
   
   public ref CUtlVector<CTransform> Transforms { get; }

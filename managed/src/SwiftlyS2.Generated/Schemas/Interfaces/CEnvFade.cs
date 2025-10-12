@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvFade : CLogicalEntity, ISchemaClass<CEnvFade> {
 
   static CEnvFade ISchemaClass<CEnvFade>.From(nint handle) => new CEnvFadeImpl(handle);
+  static int ISchemaClass<CEnvFade>.Size => 1320;
 
   
   public ref Color FadeColor { get; }

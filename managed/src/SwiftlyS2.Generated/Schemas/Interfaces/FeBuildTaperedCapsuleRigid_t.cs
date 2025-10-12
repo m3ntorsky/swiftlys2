@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeBuildTaperedCapsuleRigid_t : FeTaperedCapsuleRigid_t, ISchemaClass<FeBuildTaperedCapsuleRigid_t> {
 
   static FeBuildTaperedCapsuleRigid_t ISchemaClass<FeBuildTaperedCapsuleRigid_t>.From(nint handle) => new FeBuildTaperedCapsuleRigid_tImpl(handle);
+  static int ISchemaClass<FeBuildTaperedCapsuleRigid_t>.Size => 64;
 
   
   public ref int Priority { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBtNodeCondition : CBtNodeDecorator, ISchemaClass<CBtNodeCondition> {
 
   static CBtNodeCondition ISchemaClass<CBtNodeCondition>.From(nint handle) => new CBtNodeConditionImpl(handle);
+  static int ISchemaClass<CBtNodeCondition>.Size => 96;
 
   
   public ref bool Negated { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEntityComponentHelper : ISchemaClass<CEntityComponentHelper> {
 
   static CEntityComponentHelper ISchemaClass<CEntityComponentHelper>.From(nint handle) => new CEntityComponentHelperImpl(handle);
+  static int ISchemaClass<CEntityComponentHelper>.Size => 40;
 
   
   public ref uint Flags { get; }

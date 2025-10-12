@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeCtrlOsOffset_t : ISchemaClass<FeCtrlOsOffset_t> {
 
   static FeCtrlOsOffset_t ISchemaClass<FeCtrlOsOffset_t>.From(nint handle) => new FeCtrlOsOffset_tImpl(handle);
+  static int ISchemaClass<FeCtrlOsOffset_t>.Size => 4;
 
   
   public ref ushort CtrlParent { get; }

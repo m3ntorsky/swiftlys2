@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStateNodeStateData : ISchemaClass<CStateNodeStateData> {
 
   static CStateNodeStateData ISchemaClass<CStateNodeStateData>.From(nint handle) => new CStateNodeStateDataImpl(handle);
+  static int ISchemaClass<CStateNodeStateData>.Size => 24;
 
   
   public CAnimUpdateNodeRef Child { get; }

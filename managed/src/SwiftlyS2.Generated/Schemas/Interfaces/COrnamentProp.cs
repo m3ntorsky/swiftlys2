@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface COrnamentProp : CDynamicProp, ISchemaClass<COrnamentProp> {
 
   static COrnamentProp ISchemaClass<COrnamentProp>.From(nint handle) => new COrnamentPropImpl(handle);
+  static int ISchemaClass<COrnamentProp>.Size => 3408;
 
   
   public string InitialOwner { get; set; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface BaseSceneObjectOverride_t : ISchemaClass<BaseSceneObjectOverride_t> {
 
   static BaseSceneObjectOverride_t ISchemaClass<BaseSceneObjectOverride_t>.From(nint handle) => new BaseSceneObjectOverride_tImpl(handle);
+  static int ISchemaClass<BaseSceneObjectOverride_t>.Size => 4;
 
   
   public ref uint SceneObjectIndex { get; }

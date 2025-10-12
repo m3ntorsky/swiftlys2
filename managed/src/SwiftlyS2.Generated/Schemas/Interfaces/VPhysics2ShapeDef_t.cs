@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VPhysics2ShapeDef_t : ISchemaClass<VPhysics2ShapeDef_t> {
 
   static VPhysics2ShapeDef_t ISchemaClass<VPhysics2ShapeDef_t>.From(nint handle) => new VPhysics2ShapeDef_tImpl(handle);
+  static int ISchemaClass<VPhysics2ShapeDef_t>.Size => 120;
 
   
   // CUtlVector< RnSphereDesc_t >

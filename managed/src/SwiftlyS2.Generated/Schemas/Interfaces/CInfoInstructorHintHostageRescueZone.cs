@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CInfoInstructorHintHostageRescueZone : CPointEntity, ISchemaClass<CInfoInstructorHintHostageRescueZone> {
 
   static CInfoInstructorHintHostageRescueZone ISchemaClass<CInfoInstructorHintHostageRescueZone>.From(nint handle) => new CInfoInstructorHintHostageRescueZoneImpl(handle);
+  static int ISchemaClass<CInfoInstructorHintHostageRescueZone>.Size => 1264;
 
 
 

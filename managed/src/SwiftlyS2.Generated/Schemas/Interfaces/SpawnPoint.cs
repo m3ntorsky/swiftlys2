@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SpawnPoint : CServerOnlyPointEntity, ISchemaClass<SpawnPoint> {
 
   static SpawnPoint ISchemaClass<SpawnPoint>.From(nint handle) => new SpawnPointImpl(handle);
+  static int ISchemaClass<SpawnPoint>.Size => 1280;
 
   
   public ref int Priority { get; }

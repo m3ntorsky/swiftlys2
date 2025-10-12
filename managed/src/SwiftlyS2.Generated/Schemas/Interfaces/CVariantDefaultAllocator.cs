@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVariantDefaultAllocator : ISchemaClass<CVariantDefaultAllocator> {
 
   static CVariantDefaultAllocator ISchemaClass<CVariantDefaultAllocator>.From(nint handle) => new CVariantDefaultAllocatorImpl(handle);
+  static int ISchemaClass<CVariantDefaultAllocator>.Size => 1;
 
 
 

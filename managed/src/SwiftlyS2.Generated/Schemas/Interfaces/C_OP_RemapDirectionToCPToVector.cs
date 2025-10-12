@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapDirectionToCPToVector : CParticleFunctionOperator, ISchemaClass<C_OP_RemapDirectionToCPToVector> {
 
   static C_OP_RemapDirectionToCPToVector ISchemaClass<C_OP_RemapDirectionToCPToVector>.From(nint handle) => new C_OP_RemapDirectionToCPToVectorImpl(handle);
+  static int ISchemaClass<C_OP_RemapDirectionToCPToVector>.Size => 488;
 
   
   public ref int CP { get; }

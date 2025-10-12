@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RadiusDecay : CParticleFunctionOperator, ISchemaClass<C_OP_RadiusDecay> {
 
   static C_OP_RadiusDecay ISchemaClass<C_OP_RadiusDecay>.From(nint handle) => new C_OP_RadiusDecayImpl(handle);
+  static int ISchemaClass<C_OP_RadiusDecay>.Size => 456;
 
   
   public ref float MinRadius { get; }

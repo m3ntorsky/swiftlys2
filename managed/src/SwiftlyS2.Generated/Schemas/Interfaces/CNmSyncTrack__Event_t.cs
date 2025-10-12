@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmSyncTrack__Event_t : ISchemaClass<CNmSyncTrack__Event_t> {
 
   static CNmSyncTrack__Event_t ISchemaClass<CNmSyncTrack__Event_t>.From(nint handle) => new CNmSyncTrack__Event_tImpl(handle);
+  static int ISchemaClass<CNmSyncTrack__Event_t>.Size => 16;
 
   
   public ref CGlobalSymbol ID { get; }

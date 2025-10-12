@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventClientAdvanceNonRenderedFrame_t : ISchemaClass<EventClientAdvanceNonRenderedFrame_t> {
 
   static EventClientAdvanceNonRenderedFrame_t ISchemaClass<EventClientAdvanceNonRenderedFrame_t>.From(nint handle) => new EventClientAdvanceNonRenderedFrame_tImpl(handle);
+  static int ISchemaClass<EventClientAdvanceNonRenderedFrame_t>.Size => 1;
 
 
 

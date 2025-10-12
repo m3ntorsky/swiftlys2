@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CQuaternionAnimParameter : CConcreteAnimParameter, ISchemaClass<CQuaternionAnimParameter> {
 
   static CQuaternionAnimParameter ISchemaClass<CQuaternionAnimParameter>.From(nint handle) => new CQuaternionAnimParameterImpl(handle);
+  static int ISchemaClass<CQuaternionAnimParameter>.Size => 160;
 
   
   public ref Quaternion DefaultValue { get; }

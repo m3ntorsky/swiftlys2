@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleCollectionBindingInstance : CBasePulseGraphInstance, ISchemaClass<CParticleCollectionBindingInstance> {
 
   static CParticleCollectionBindingInstance ISchemaClass<CParticleCollectionBindingInstance>.From(nint handle) => new CParticleCollectionBindingInstanceImpl(handle);
+  static int ISchemaClass<CParticleCollectionBindingInstance>.Size => 304;
 
 
 

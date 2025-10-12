@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRenderBufferBinding : ISchemaClass<CRenderBufferBinding> {
 
   static CRenderBufferBinding ISchemaClass<CRenderBufferBinding>.From(nint handle) => new CRenderBufferBindingImpl(handle);
+  static int ISchemaClass<CRenderBufferBinding>.Size => 32;
 
   
   public ref ulong Buffer { get; }

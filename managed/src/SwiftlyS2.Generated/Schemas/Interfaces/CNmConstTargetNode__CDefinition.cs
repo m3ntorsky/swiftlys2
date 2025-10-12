@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmConstTargetNode__CDefinition : CNmTargetValueNode__CDefinition, ISchemaClass<CNmConstTargetNode__CDefinition> {
 
   static CNmConstTargetNode__CDefinition ISchemaClass<CNmConstTargetNode__CDefinition>.From(nint handle) => new CNmConstTargetNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmConstTargetNode__CDefinition>.Size => 64;
 
   
   public CNmTarget Value { get; }

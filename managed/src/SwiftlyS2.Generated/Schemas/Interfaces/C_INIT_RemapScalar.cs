@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_RemapScalar : CParticleFunctionInitializer, ISchemaClass<C_INIT_RemapScalar> {
 
   static C_INIT_RemapScalar ISchemaClass<C_INIT_RemapScalar>.From(nint handle) => new C_INIT_RemapScalarImpl(handle);
+  static int ISchemaClass<C_INIT_RemapScalar>.Size => 504;
 
   
   public ParticleAttributeIndex_t FieldInput { get; }

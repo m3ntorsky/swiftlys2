@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSSDSMsg_LayerBase : ISchemaClass<CSSDSMsg_LayerBase> {
 
   static CSSDSMsg_LayerBase ISchemaClass<CSSDSMsg_LayerBase>.From(nint handle) => new CSSDSMsg_LayerBaseImpl(handle);
+  static int ISchemaClass<CSSDSMsg_LayerBase>.Size => 48;
 
   
   public SceneViewId_t ViewId { get; }

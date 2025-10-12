@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlayerInputAnimMotorUpdater : CAnimMotorUpdaterBase, ISchemaClass<CPlayerInputAnimMotorUpdater> {
 
   static CPlayerInputAnimMotorUpdater ISchemaClass<CPlayerInputAnimMotorUpdater>.From(nint handle) => new CPlayerInputAnimMotorUpdaterImpl(handle);
+  static int ISchemaClass<CPlayerInputAnimMotorUpdater>.Size => 80;
 
   
   public ref CUtlVector<float> SampleTimes { get; }

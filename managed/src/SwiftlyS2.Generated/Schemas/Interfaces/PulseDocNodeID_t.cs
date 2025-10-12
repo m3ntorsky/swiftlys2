@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PulseDocNodeID_t : ISchemaClass<PulseDocNodeID_t> {
 
   static PulseDocNodeID_t ISchemaClass<PulseDocNodeID_t>.From(nint handle) => new PulseDocNodeID_tImpl(handle);
+  static int ISchemaClass<PulseDocNodeID_t>.Size => 4;
 
   
   public ref int Value { get; }

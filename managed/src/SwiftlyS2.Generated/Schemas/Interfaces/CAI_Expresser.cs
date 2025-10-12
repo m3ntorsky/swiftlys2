@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAI_Expresser : ISchemaClass<CAI_Expresser> {
 
   static CAI_Expresser ISchemaClass<CAI_Expresser>.From(nint handle) => new CAI_ExpresserImpl(handle);
+  static int ISchemaClass<CAI_Expresser>.Size => 160;
 
   
   public GameTime_t StopTalkTime { get; }

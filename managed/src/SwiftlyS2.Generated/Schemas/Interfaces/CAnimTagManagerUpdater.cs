@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimTagManagerUpdater : ISchemaClass<CAnimTagManagerUpdater> {
 
   static CAnimTagManagerUpdater ISchemaClass<CAnimTagManagerUpdater>.From(nint handle) => new CAnimTagManagerUpdaterImpl(handle);
+  static int ISchemaClass<CAnimTagManagerUpdater>.Size => 120;
 
   
   // CUtlVector< CSmartPtr< CAnimTagBase > >

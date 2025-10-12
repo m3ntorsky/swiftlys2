@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_CycleScalar : CParticleFunctionOperator, ISchemaClass<C_OP_CycleScalar> {
 
   static C_OP_CycleScalar ISchemaClass<C_OP_CycleScalar>.From(nint handle) => new C_OP_CycleScalarImpl(handle);
+  static int ISchemaClass<C_OP_CycleScalar>.Size => 488;
 
   
   public ParticleAttributeIndex_t DestField { get; }

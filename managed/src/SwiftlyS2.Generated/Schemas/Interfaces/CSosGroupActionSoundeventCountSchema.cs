@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSosGroupActionSoundeventCountSchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionSoundeventCountSchema> {
 
   static CSosGroupActionSoundeventCountSchema ISchemaClass<CSosGroupActionSoundeventCountSchema>.From(nint handle) => new CSosGroupActionSoundeventCountSchemaImpl(handle);
+  static int ISchemaClass<CSosGroupActionSoundeventCountSchema>.Size => 24;
 
   
   public ref bool ExcludeStoppedSounds { get; }

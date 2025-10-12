@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysicsProp : CBreakableProp, ISchemaClass<CPhysicsProp> {
 
   static CPhysicsProp ISchemaClass<CPhysicsProp>.From(nint handle) => new CPhysicsPropImpl(handle);
+  static int ISchemaClass<CPhysicsProp>.Size => 3568;
 
   
   public CEntityIOOutput MotionEnabled { get; }

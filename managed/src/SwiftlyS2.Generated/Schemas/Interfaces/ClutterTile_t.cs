@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ClutterTile_t : ISchemaClass<ClutterTile_t> {
 
   static ClutterTile_t ISchemaClass<ClutterTile_t>.From(nint handle) => new ClutterTile_tImpl(handle);
+  static int ISchemaClass<ClutterTile_t>.Size => 32;
 
   
   public ref uint FirstInstance { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmChainSolverTask : CNmPoseTask, ISchemaClass<CNmChainSolverTask> {
 
   static CNmChainSolverTask ISchemaClass<CNmChainSolverTask>.From(nint handle) => new CNmChainSolverTaskImpl(handle);
+  static int ISchemaClass<CNmChainSolverTask>.Size => 304;
 
   
   public ref int EffectorBoneIdx { get; }

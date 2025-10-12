@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ModelSkeletonData_t : ISchemaClass<ModelSkeletonData_t> {
 
   static ModelSkeletonData_t ISchemaClass<ModelSkeletonData_t>.From(nint handle) => new ModelSkeletonData_tImpl(handle);
+  static int ISchemaClass<ModelSkeletonData_t>.Size => 168;
 
   
   public ref CUtlVector<CUtlString> BoneName { get; }

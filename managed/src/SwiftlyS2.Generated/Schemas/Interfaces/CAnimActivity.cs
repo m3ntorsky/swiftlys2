@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimActivity : ISchemaClass<CAnimActivity> {
 
   static CAnimActivity ISchemaClass<CAnimActivity>.From(nint handle) => new CAnimActivityImpl(handle);
+  static int ISchemaClass<CAnimActivity>.Size => 32;
 
   
   public ref CBufferString Name { get; }

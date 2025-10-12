@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SoundeventPathCornerPairNetworked_t : ISchemaClass<SoundeventPathCornerPairNetworked_t> {
 
   static SoundeventPathCornerPairNetworked_t ISchemaClass<SoundeventPathCornerPairNetworked_t>.From(nint handle) => new SoundeventPathCornerPairNetworked_tImpl(handle);
+  static int ISchemaClass<SoundeventPathCornerPairNetworked_t>.Size => 36;
 
   
   public ref Vector P1 { get; }

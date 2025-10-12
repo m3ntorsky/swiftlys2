@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmFloatEaseNode__CDefinition : CNmFloatValueNode__CDefinition, ISchemaClass<CNmFloatEaseNode__CDefinition> {
 
   static CNmFloatEaseNode__CDefinition ISchemaClass<CNmFloatEaseNode__CDefinition>.From(nint handle) => new CNmFloatEaseNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmFloatEaseNode__CDefinition>.Size => 32;
 
   
   public ref float EaseTime { get; }

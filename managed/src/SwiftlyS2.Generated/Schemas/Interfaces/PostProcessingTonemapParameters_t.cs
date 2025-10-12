@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PostProcessingTonemapParameters_t : ISchemaClass<PostProcessingTonemapParameters_t> {
 
   static PostProcessingTonemapParameters_t ISchemaClass<PostProcessingTonemapParameters_t>.From(nint handle) => new PostProcessingTonemapParameters_tImpl(handle);
+  static int ISchemaClass<PostProcessingTonemapParameters_t>.Size => 60;
 
   
   public ref float ExposureBias { get; }

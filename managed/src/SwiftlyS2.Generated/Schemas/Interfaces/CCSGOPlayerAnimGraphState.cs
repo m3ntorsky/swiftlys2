@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSGOPlayerAnimGraphState : ISchemaClass<CCSGOPlayerAnimGraphState> {
 
   static CCSGOPlayerAnimGraphState ISchemaClass<CCSGOPlayerAnimGraphState>.From(nint handle) => new CCSGOPlayerAnimGraphStateImpl(handle);
+  static int ISchemaClass<CCSGOPlayerAnimGraphState>.Size => 1648;
 
 
 

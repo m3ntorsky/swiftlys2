@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSosGroupActionSchema : ISchemaClass<CSosGroupActionSchema> {
 
   static CSosGroupActionSchema ISchemaClass<CSosGroupActionSchema>.From(nint handle) => new CSosGroupActionSchemaImpl(handle);
+  static int ISchemaClass<CSosGroupActionSchema>.Size => 8;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeSoftParent_t : ISchemaClass<FeSoftParent_t> {
 
   static FeSoftParent_t ISchemaClass<FeSoftParent_t>.From(nint handle) => new FeSoftParent_tImpl(handle);
+  static int ISchemaClass<FeSoftParent_t>.Size => 8;
 
   
   public ref int Parent { get; }

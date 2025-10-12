@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SequenceWeightedList_t : ISchemaClass<SequenceWeightedList_t> {
 
   static SequenceWeightedList_t ISchemaClass<SequenceWeightedList_t>.From(nint handle) => new SequenceWeightedList_tImpl(handle);
+  static int ISchemaClass<SequenceWeightedList_t>.Size => 8;
 
   
   public ref int Sequence { get; }

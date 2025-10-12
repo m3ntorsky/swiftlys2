@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCNmSkeleton : ISchemaClass<InfoForResourceTypeCNmSkeleton> {
 
   static InfoForResourceTypeCNmSkeleton ISchemaClass<InfoForResourceTypeCNmSkeleton>.From(nint handle) => new InfoForResourceTypeCNmSkeletonImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCNmSkeleton>.Size => 1;
 
 
 

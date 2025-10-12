@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnHull_t : ISchemaClass<RnHull_t> {
 
   static RnHull_t ISchemaClass<RnHull_t>.From(nint handle) => new RnHull_tImpl(handle);
+  static int ISchemaClass<RnHull_t>.Size => 248;
 
   
   public ref Vector Centroid { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_InlineNodeSkipSelector : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_InlineNodeSkipSelector> {
 
   static CPulseCell_InlineNodeSkipSelector ISchemaClass<CPulseCell_InlineNodeSkipSelector>.From(nint handle) => new CPulseCell_InlineNodeSkipSelectorImpl(handle);
+  static int ISchemaClass<CPulseCell_InlineNodeSkipSelector>.Size => 176;
 
   
   public PulseDocNodeID_t FlowNodeID { get; }

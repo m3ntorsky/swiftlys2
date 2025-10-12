@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCSequenceGroupData : ISchemaClass<InfoForResourceTypeCSequenceGroupData> {
 
   static InfoForResourceTypeCSequenceGroupData ISchemaClass<InfoForResourceTypeCSequenceGroupData>.From(nint handle) => new InfoForResourceTypeCSequenceGroupDataImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCSequenceGroupData>.Size => 1;
 
 
 

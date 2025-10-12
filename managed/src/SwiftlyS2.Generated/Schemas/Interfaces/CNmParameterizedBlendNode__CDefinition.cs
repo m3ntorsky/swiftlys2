@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmParameterizedBlendNode__CDefinition : CNmPoseNode__CDefinition, ISchemaClass<CNmParameterizedBlendNode__CDefinition> {
 
   static CNmParameterizedBlendNode__CDefinition ISchemaClass<CNmParameterizedBlendNode__CDefinition>.From(nint handle) => new CNmParameterizedBlendNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmParameterizedBlendNode__CDefinition>.Size => 64;
 
   
   // CUtlVectorFixedGrowable< int16, 5 >

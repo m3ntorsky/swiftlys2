@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvLightProbeVolume : CBaseEntity, ISchemaClass<CEnvLightProbeVolume> {
 
   static CEnvLightProbeVolume ISchemaClass<CEnvLightProbeVolume>.From(nint handle) => new CEnvLightProbeVolumeImpl(handle);
+  static int ISchemaClass<CEnvLightProbeVolume>.Size => 5504;
 
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hLightProbeTexture_AmbientCube { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_BaseFlow : CPulseCell_Base, ISchemaClass<CPulseCell_BaseFlow> {
 
   static CPulseCell_BaseFlow ISchemaClass<CPulseCell_BaseFlow>.From(nint handle) => new CPulseCell_BaseFlowImpl(handle);
+  static int ISchemaClass<CPulseCell_BaseFlow>.Size => 72;
 
 
 

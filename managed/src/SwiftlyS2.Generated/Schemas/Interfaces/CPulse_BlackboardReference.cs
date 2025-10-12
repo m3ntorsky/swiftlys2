@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulse_BlackboardReference : ISchemaClass<CPulse_BlackboardReference> {
 
   static CPulse_BlackboardReference ISchemaClass<CPulse_BlackboardReference>.From(nint handle) => new CPulse_BlackboardReferenceImpl(handle);
+  static int ISchemaClass<CPulse_BlackboardReference>.Size => 40;
 
   
   public ref CStrongHandle<InfoForResourceTypeIPulseGraphDef> BlackboardResource { get; }

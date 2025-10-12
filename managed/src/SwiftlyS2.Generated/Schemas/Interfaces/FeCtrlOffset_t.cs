@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeCtrlOffset_t : ISchemaClass<FeCtrlOffset_t> {
 
   static FeCtrlOffset_t ISchemaClass<FeCtrlOffset_t>.From(nint handle) => new FeCtrlOffset_tImpl(handle);
+  static int ISchemaClass<FeCtrlOffset_t>.Size => 16;
 
   
   public ref Vector Offset { get; }

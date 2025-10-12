@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface IRagdoll : ISchemaClass<IRagdoll> {
 
   static IRagdoll ISchemaClass<IRagdoll>.From(nint handle) => new IRagdollImpl(handle);
+  static int ISchemaClass<IRagdoll>.Size => 8;
 
 
 

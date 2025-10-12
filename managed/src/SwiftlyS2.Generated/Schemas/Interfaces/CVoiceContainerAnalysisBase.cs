@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVoiceContainerAnalysisBase : ISchemaClass<CVoiceContainerAnalysisBase> {
 
   static CVoiceContainerAnalysisBase ISchemaClass<CVoiceContainerAnalysisBase>.From(nint handle) => new CVoiceContainerAnalysisBaseImpl(handle);
+  static int ISchemaClass<CVoiceContainerAnalysisBase>.Size => 80;
 
   
   public ref bool RegenerateCurveOnCompile { get; }

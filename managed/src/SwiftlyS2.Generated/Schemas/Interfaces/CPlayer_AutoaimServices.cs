@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlayer_AutoaimServices : CPlayerPawnComponent, ISchemaClass<CPlayer_AutoaimServices> {
 
   static CPlayer_AutoaimServices ISchemaClass<CPlayer_AutoaimServices>.From(nint handle) => new CPlayer_AutoaimServicesImpl(handle);
+  static int ISchemaClass<CPlayer_AutoaimServices>.Size => 64;
 
 
 

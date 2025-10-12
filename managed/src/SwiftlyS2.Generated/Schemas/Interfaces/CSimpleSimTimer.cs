@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSimpleSimTimer : ISchemaClass<CSimpleSimTimer> {
 
   static CSimpleSimTimer ISchemaClass<CSimpleSimTimer>.From(nint handle) => new CSimpleSimTimerImpl(handle);
+  static int ISchemaClass<CSimpleSimTimer>.Size => 8;
 
   
   public GameTime_t Next { get; }

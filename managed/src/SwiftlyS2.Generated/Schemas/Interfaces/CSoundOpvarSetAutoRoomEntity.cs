@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSoundOpvarSetAutoRoomEntity : CSoundOpvarSetPointEntity, ISchemaClass<CSoundOpvarSetAutoRoomEntity> {
 
   static CSoundOpvarSetAutoRoomEntity ISchemaClass<CSoundOpvarSetAutoRoomEntity>.From(nint handle) => new CSoundOpvarSetAutoRoomEntityImpl(handle);
+  static int ISchemaClass<CSoundOpvarSetAutoRoomEntity>.Size => 1768;
 
   
   // CUtlVector< SoundOpvarTraceResult_t >

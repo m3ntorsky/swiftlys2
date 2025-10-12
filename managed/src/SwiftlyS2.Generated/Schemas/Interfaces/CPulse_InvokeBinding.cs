@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulse_InvokeBinding : ISchemaClass<CPulse_InvokeBinding> {
 
   static CPulse_InvokeBinding ISchemaClass<CPulse_InvokeBinding>.From(nint handle) => new CPulse_InvokeBindingImpl(handle);
+  static int ISchemaClass<CPulse_InvokeBinding>.Size => 176;
 
   
   public PulseRegisterMap_t RegisterMap { get; }

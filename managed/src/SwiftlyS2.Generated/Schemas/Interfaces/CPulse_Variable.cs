@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulse_Variable : ISchemaClass<CPulse_Variable> {
 
   static CPulse_Variable ISchemaClass<CPulse_Variable>.From(nint handle) => new CPulse_VariableImpl(handle);
+  static int ISchemaClass<CPulse_Variable>.Size => 80;
 
   
   // PulseSymbol_t

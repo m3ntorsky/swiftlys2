@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVoiceContainerSelector : CVoiceContainerBase, ISchemaClass<CVoiceContainerSelector> {
 
   static CVoiceContainerSelector ISchemaClass<CVoiceContainerSelector>.From(nint handle) => new CVoiceContainerSelectorImpl(handle);
+  static int ISchemaClass<CVoiceContainerSelector>.Size => 304;
 
   
   public ref PlayBackMode_t Mode { get; }

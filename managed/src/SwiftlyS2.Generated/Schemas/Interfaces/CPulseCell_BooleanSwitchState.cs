@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_BooleanSwitchState : CPulseCell_BaseState, ISchemaClass<CPulseCell_BooleanSwitchState> {
 
   static CPulseCell_BooleanSwitchState ISchemaClass<CPulseCell_BooleanSwitchState>.From(nint handle) => new CPulseCell_BooleanSwitchStateImpl(handle);
+  static int ISchemaClass<CPulseCell_BooleanSwitchState>.Size => 408;
 
   
   public PulseObservableBoolExpression_t Condition { get; }

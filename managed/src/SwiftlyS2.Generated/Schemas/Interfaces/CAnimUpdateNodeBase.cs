@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimUpdateNodeBase : ISchemaClass<CAnimUpdateNodeBase> {
 
   static CAnimUpdateNodeBase ISchemaClass<CAnimUpdateNodeBase>.From(nint handle) => new CAnimUpdateNodeBaseImpl(handle);
+  static int ISchemaClass<CAnimUpdateNodeBase>.Size => 88;
 
   
   public CAnimNodePath NodePath { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Step_DebugLog : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_Step_DebugLog> {
 
   static CPulseCell_Step_DebugLog ISchemaClass<CPulseCell_Step_DebugLog>.From(nint handle) => new CPulseCell_Step_DebugLogImpl(handle);
+  static int ISchemaClass<CPulseCell_Step_DebugLog>.Size => 72;
 
 
 

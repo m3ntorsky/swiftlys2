@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PostProcessingVignetteParameters_t : ISchemaClass<PostProcessingVignetteParameters_t> {
 
   static PostProcessingVignetteParameters_t ISchemaClass<PostProcessingVignetteParameters_t>.From(nint handle) => new PostProcessingVignetteParameters_tImpl(handle);
+  static int ISchemaClass<PostProcessingVignetteParameters_t>.Size => 36;
 
   
   public ref float VignetteStrength { get; }

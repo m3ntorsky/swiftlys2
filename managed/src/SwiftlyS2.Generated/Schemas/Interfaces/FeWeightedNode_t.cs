@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeWeightedNode_t : ISchemaClass<FeWeightedNode_t> {
 
   static FeWeightedNode_t ISchemaClass<FeWeightedNode_t>.From(nint handle) => new FeWeightedNode_tImpl(handle);
+  static int ISchemaClass<FeWeightedNode_t>.Size => 4;
 
   
   public ref ushort Node { get; }

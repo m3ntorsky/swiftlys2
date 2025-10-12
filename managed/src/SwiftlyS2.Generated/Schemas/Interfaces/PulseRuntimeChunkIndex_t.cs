@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PulseRuntimeChunkIndex_t : ISchemaClass<PulseRuntimeChunkIndex_t> {
 
   static PulseRuntimeChunkIndex_t ISchemaClass<PulseRuntimeChunkIndex_t>.From(nint handle) => new PulseRuntimeChunkIndex_tImpl(handle);
+  static int ISchemaClass<PulseRuntimeChunkIndex_t>.Size => 4;
 
   
   public ref int Value { get; }

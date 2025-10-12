@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ManifestTestResource_t : ISchemaClass<ManifestTestResource_t> {
 
   static ManifestTestResource_t ISchemaClass<ManifestTestResource_t>.From(nint handle) => new ManifestTestResource_tImpl(handle);
+  static int ISchemaClass<ManifestTestResource_t>.Size => 16;
 
   
   public string Name { get; set; }

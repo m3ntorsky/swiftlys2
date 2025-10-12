@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayer_MovementServices : CPlayer_MovementServices_Humanoid, ISchemaClass<CCSPlayer_MovementServices> {
 
   static CCSPlayer_MovementServices ISchemaClass<CCSPlayer_MovementServices>.From(nint handle) => new CCSPlayer_MovementServicesImpl(handle);
+  static int ISchemaClass<CCSPlayer_MovementServices>.Size => 1512;
 
   
   public ref Vector LadderNormal { get; }

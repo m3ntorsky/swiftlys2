@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ParticlePreviewBodyGroup_t : ISchemaClass<ParticlePreviewBodyGroup_t> {
 
   static ParticlePreviewBodyGroup_t ISchemaClass<ParticlePreviewBodyGroup_t>.From(nint handle) => new ParticlePreviewBodyGroup_tImpl(handle);
+  static int ISchemaClass<ParticlePreviewBodyGroup_t>.Size => 16;
 
   
   public string BodyGroupName { get; set; }

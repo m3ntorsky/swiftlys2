@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ResponseFollowup : ISchemaClass<ResponseFollowup> {
 
   static ResponseFollowup ISchemaClass<ResponseFollowup>.From(nint handle) => new ResponseFollowupImpl(handle);
+  static int ISchemaClass<ResponseFollowup>.Size => 49;
 
   
   public string Followup_concept { get; set; }

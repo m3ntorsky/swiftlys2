@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFollowTargetUpdateNode : CUnaryUpdateNode, ISchemaClass<CFollowTargetUpdateNode> {
 
   static CFollowTargetUpdateNode ISchemaClass<CFollowTargetUpdateNode>.From(nint handle) => new CFollowTargetUpdateNodeImpl(handle);
+  static int ISchemaClass<CFollowTargetUpdateNode>.Size => 144;
 
   
   public FollowTargetOpFixedSettings_t OpFixedData { get; }

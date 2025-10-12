@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSGameModeRules_Deathmatch : CCSGameModeRules, ISchemaClass<CCSGameModeRules_Deathmatch> {
 
   static CCSGameModeRules_Deathmatch ISchemaClass<CCSGameModeRules_Deathmatch>.From(nint handle) => new CCSGameModeRules_DeathmatchImpl(handle);
+  static int ISchemaClass<CCSGameModeRules_Deathmatch>.Size => 136;
 
   
   public GameTime_t DMBonusStartTime { get; }

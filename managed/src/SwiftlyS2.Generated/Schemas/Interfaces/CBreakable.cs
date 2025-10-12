@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBreakable : CBaseModelEntity, ISchemaClass<CBreakable> {
 
   static CBreakable ISchemaClass<CBreakable>.From(nint handle) => new CBreakableImpl(handle);
+  static int ISchemaClass<CBreakable>.Size => 2248;
 
   
   public CPropDataComponent CPropDataComponent { get; }

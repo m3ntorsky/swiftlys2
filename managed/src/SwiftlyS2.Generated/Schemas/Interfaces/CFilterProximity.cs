@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFilterProximity : CBaseFilter, ISchemaClass<CFilterProximity> {
 
   static CFilterProximity ISchemaClass<CFilterProximity>.From(nint handle) => new CFilterProximityImpl(handle);
+  static int ISchemaClass<CFilterProximity>.Size => 1360;
 
   
   public ref float Radius { get; }

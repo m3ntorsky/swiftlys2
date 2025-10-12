@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmBitFlags : ISchemaClass<CNmBitFlags> {
 
   static CNmBitFlags ISchemaClass<CNmBitFlags>.From(nint handle) => new CNmBitFlagsImpl(handle);
+  static int ISchemaClass<CNmBitFlags>.Size => 4;
 
   
   public ref uint Flags { get; }

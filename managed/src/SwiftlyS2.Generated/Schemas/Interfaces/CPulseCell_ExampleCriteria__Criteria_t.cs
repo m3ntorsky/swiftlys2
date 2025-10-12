@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_ExampleCriteria__Criteria_t : ISchemaClass<CPulseCell_ExampleCriteria__Criteria_t> {
 
   static CPulseCell_ExampleCriteria__Criteria_t ISchemaClass<CPulseCell_ExampleCriteria__Criteria_t>.From(nint handle) => new CPulseCell_ExampleCriteria__Criteria_tImpl(handle);
+  static int ISchemaClass<CPulseCell_ExampleCriteria__Criteria_t>.Size => 12;
 
   
   public ref float FloatValue1 { get; }

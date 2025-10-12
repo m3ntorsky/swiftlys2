@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCVSoundStackScriptList : ISchemaClass<InfoForResourceTypeCVSoundStackScriptList> {
 
   static InfoForResourceTypeCVSoundStackScriptList ISchemaClass<InfoForResourceTypeCVSoundStackScriptList>.From(nint handle) => new InfoForResourceTypeCVSoundStackScriptListImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCVSoundStackScriptList>.Size => 1;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CJumpHelperUpdateNode : CSequenceUpdateNode, ISchemaClass<CJumpHelperUpdateNode> {
 
   static CJumpHelperUpdateNode ISchemaClass<CJumpHelperUpdateNode>.From(nint handle) => new CJumpHelperUpdateNodeImpl(handle);
+  static int ISchemaClass<CJumpHelperUpdateNode>.Size => 216;
 
   
   public CAnimParamHandle TargetParam { get; }

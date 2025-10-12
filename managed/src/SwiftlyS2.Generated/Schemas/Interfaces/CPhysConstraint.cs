@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysConstraint : CLogicalEntity, ISchemaClass<CPhysConstraint> {
 
   static CPhysConstraint ISchemaClass<CPhysConstraint>.From(nint handle) => new CPhysConstraintImpl(handle);
+  static int ISchemaClass<CPhysConstraint>.Size => 1376;
 
   
   public string NameAttach1 { get; set; }

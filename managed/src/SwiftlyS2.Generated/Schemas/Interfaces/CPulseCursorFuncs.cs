@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCursorFuncs : ISchemaClass<CPulseCursorFuncs> {
 
   static CPulseCursorFuncs ISchemaClass<CPulseCursorFuncs>.From(nint handle) => new CPulseCursorFuncsImpl(handle);
+  static int ISchemaClass<CPulseCursorFuncs>.Size => 1;
 
 
 

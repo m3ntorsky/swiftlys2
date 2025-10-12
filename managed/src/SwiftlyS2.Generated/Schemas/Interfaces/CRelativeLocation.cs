@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRelativeLocation : ISchemaClass<CRelativeLocation> {
 
   static CRelativeLocation ISchemaClass<CRelativeLocation>.From(nint handle) => new CRelativeLocationImpl(handle);
+  static int ISchemaClass<CRelativeLocation>.Size => 56;
 
   
   public ref RelativeLocationType_t Type { get; }

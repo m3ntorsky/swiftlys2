@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNavLinkAreaEntity : CPointEntity, ISchemaClass<CNavLinkAreaEntity> {
 
   static CNavLinkAreaEntity ISchemaClass<CNavLinkAreaEntity>.From(nint handle) => new CNavLinkAreaEntityImpl(handle);
+  static int ISchemaClass<CNavLinkAreaEntity>.Size => 1472;
 
   
   public ref float Width { get; }

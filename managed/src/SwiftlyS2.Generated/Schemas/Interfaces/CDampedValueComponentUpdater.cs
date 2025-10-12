@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDampedValueComponentUpdater : CAnimComponentUpdater, ISchemaClass<CDampedValueComponentUpdater> {
 
   static CDampedValueComponentUpdater ISchemaClass<CDampedValueComponentUpdater>.From(nint handle) => new CDampedValueComponentUpdaterImpl(handle);
+  static int ISchemaClass<CDampedValueComponentUpdater>.Size => 72;
 
   
   // CUtlVector< CDampedValueUpdateItem >

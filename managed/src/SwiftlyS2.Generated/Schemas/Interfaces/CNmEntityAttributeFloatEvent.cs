@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmEntityAttributeFloatEvent : CNmEntityAttributeEventBase, ISchemaClass<CNmEntityAttributeFloatEvent> {
 
   static CNmEntityAttributeFloatEvent ISchemaClass<CNmEntityAttributeFloatEvent>.From(nint handle) => new CNmEntityAttributeFloatEventImpl(handle);
+  static int ISchemaClass<CNmEntityAttributeFloatEvent>.Size => 120;
 
   
   // CPiecewiseCurve

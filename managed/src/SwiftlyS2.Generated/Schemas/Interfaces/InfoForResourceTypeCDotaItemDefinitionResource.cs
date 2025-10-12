@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCDotaItemDefinitionResource : ISchemaClass<InfoForResourceTypeCDotaItemDefinitionResource> {
 
   static InfoForResourceTypeCDotaItemDefinitionResource ISchemaClass<InfoForResourceTypeCDotaItemDefinitionResource>.From(nint handle) => new InfoForResourceTypeCDotaItemDefinitionResourceImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCDotaItemDefinitionResource>.Size => 1;
 
 
 

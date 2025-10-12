@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmMaterialAttributeEvent : CNmEvent, ISchemaClass<CNmMaterialAttributeEvent> {
 
   static CNmMaterialAttributeEvent ISchemaClass<CNmMaterialAttributeEvent>.From(nint handle) => new CNmMaterialAttributeEventImpl(handle);
+  static int ISchemaClass<CNmMaterialAttributeEvent>.Size => 304;
 
   
   public string AttributeName { get; set; }

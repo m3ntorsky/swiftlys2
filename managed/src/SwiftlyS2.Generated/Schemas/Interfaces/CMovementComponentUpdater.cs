@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMovementComponentUpdater : CAnimComponentUpdater, ISchemaClass<CMovementComponentUpdater> {
 
   static CMovementComponentUpdater ISchemaClass<CMovementComponentUpdater>.From(nint handle) => new CMovementComponentUpdaterImpl(handle);
+  static int ISchemaClass<CMovementComponentUpdater>.Size => 184;
 
   
   // CUtlVector< CSmartPtr< CAnimMotorUpdaterBase > >

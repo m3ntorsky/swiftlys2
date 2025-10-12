@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventClientProcessGameInput_t : ISchemaClass<EventClientProcessGameInput_t> {
 
   static EventClientProcessGameInput_t ISchemaClass<EventClientProcessGameInput_t>.From(nint handle) => new EventClientProcessGameInput_tImpl(handle);
+  static int ISchemaClass<EventClientProcessGameInput_t>.Size => 48;
 
   
   public EngineLoopState_t LoopState { get; }

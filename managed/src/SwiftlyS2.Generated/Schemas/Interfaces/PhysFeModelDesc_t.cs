@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PhysFeModelDesc_t : ISchemaClass<PhysFeModelDesc_t> {
 
   static PhysFeModelDesc_t ISchemaClass<PhysFeModelDesc_t>.From(nint handle) => new PhysFeModelDesc_tImpl(handle);
+  static int ISchemaClass<PhysFeModelDesc_t>.Size => 1712;
 
   
   public ref CUtlVector<uint> CtrlHash { get; }

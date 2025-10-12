@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SkeletonBoneBounds_t : ISchemaClass<SkeletonBoneBounds_t> {
 
   static SkeletonBoneBounds_t ISchemaClass<SkeletonBoneBounds_t>.From(nint handle) => new SkeletonBoneBounds_tImpl(handle);
+  static int ISchemaClass<SkeletonBoneBounds_t>.Size => 24;
 
   
   public ref Vector Center { get; }

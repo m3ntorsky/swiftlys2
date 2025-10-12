@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimSequenceParams : ISchemaClass<CAnimSequenceParams> {
 
   static CAnimSequenceParams ISchemaClass<CAnimSequenceParams>.From(nint handle) => new CAnimSequenceParamsImpl(handle);
+  static int ISchemaClass<CAnimSequenceParams>.Size => 8;
 
   
   public ref float FadeInTime { get; }

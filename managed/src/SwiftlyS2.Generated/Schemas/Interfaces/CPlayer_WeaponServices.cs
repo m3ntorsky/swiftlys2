@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlayer_WeaponServices : CPlayerPawnComponent, ISchemaClass<CPlayer_WeaponServices> {
 
   static CPlayer_WeaponServices ISchemaClass<CPlayer_WeaponServices>.From(nint handle) => new CPlayer_WeaponServicesImpl(handle);
+  static int ISchemaClass<CPlayer_WeaponServices>.Size => 168;
 
   
   public ref CUtlVector<CHandle<CBasePlayerWeapon>> MyWeapons { get; }

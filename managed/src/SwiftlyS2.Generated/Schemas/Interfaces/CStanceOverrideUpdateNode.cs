@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStanceOverrideUpdateNode : CUnaryUpdateNode, ISchemaClass<CStanceOverrideUpdateNode> {
 
   static CStanceOverrideUpdateNode ISchemaClass<CStanceOverrideUpdateNode>.From(nint handle) => new CStanceOverrideUpdateNodeImpl(handle);
+  static int ISchemaClass<CStanceOverrideUpdateNode>.Size => 160;
 
   
   // CUtlVector< StanceInfo_t >

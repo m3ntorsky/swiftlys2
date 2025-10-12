@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PermEntityLumpData_t : ISchemaClass<PermEntityLumpData_t> {
 
   static PermEntityLumpData_t ISchemaClass<PermEntityLumpData_t>.From(nint handle) => new PermEntityLumpData_tImpl(handle);
+  static int ISchemaClass<PermEntityLumpData_t>.Size => 56;
 
   
   public string Name { get; set; }

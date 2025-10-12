@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulse_Chunk : ISchemaClass<CPulse_Chunk> {
 
   static CPulse_Chunk ISchemaClass<CPulse_Chunk>.From(nint handle) => new CPulse_ChunkImpl(handle);
+  static int ISchemaClass<CPulse_Chunk>.Size => 88;
 
   
   // CUtlLeanVector< PGDInstruction_t >

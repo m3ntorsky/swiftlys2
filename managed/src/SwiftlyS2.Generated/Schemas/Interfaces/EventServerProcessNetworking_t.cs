@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventServerProcessNetworking_t : EventSimulate_t, ISchemaClass<EventServerProcessNetworking_t> {
 
   static EventServerProcessNetworking_t ISchemaClass<EventServerProcessNetworking_t>.From(nint handle) => new EventServerProcessNetworking_tImpl(handle);
+  static int ISchemaClass<EventServerProcessNetworking_t>.Size => 48;
 
 
 

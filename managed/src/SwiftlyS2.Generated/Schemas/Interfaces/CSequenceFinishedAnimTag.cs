@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSequenceFinishedAnimTag : CAnimTagBase, ISchemaClass<CSequenceFinishedAnimTag> {
 
   static CSequenceFinishedAnimTag ISchemaClass<CSequenceFinishedAnimTag>.From(nint handle) => new CSequenceFinishedAnimTagImpl(handle);
+  static int ISchemaClass<CSequenceFinishedAnimTag>.Size => 96;
 
   
   public string SequenceName { get; set; }

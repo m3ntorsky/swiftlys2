@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventClientFrameSimulate_t : ISchemaClass<EventClientFrameSimulate_t> {
 
   static EventClientFrameSimulate_t ISchemaClass<EventClientFrameSimulate_t>.From(nint handle) => new EventClientFrameSimulate_tImpl(handle);
+  static int ISchemaClass<EventClientFrameSimulate_t>.Size => 56;
 
   
   public EngineLoopState_t LoopState { get; }

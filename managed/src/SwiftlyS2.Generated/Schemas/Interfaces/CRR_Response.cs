@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRR_Response : ISchemaClass<CRR_Response> {
 
   static CRR_Response ISchemaClass<CRR_Response>.From(nint handle) => new CRR_ResponseImpl(handle);
+  static int ISchemaClass<CRR_Response>.Size => 464;
 
   
   public ref byte Type { get; }

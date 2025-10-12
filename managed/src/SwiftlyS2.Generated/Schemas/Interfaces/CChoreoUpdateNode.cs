@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CChoreoUpdateNode : CUnaryUpdateNode, ISchemaClass<CChoreoUpdateNode> {
 
   static CChoreoUpdateNode ISchemaClass<CChoreoUpdateNode>.From(nint handle) => new CChoreoUpdateNodeImpl(handle);
+  static int ISchemaClass<CChoreoUpdateNode>.Size => 120;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimFoot : ISchemaClass<CAnimFoot> {
 
   static CAnimFoot ISchemaClass<CAnimFoot>.From(nint handle) => new CAnimFootImpl(handle);
+  static int ISchemaClass<CAnimFoot>.Size => 40;
 
   
   public string Name { get; set; }

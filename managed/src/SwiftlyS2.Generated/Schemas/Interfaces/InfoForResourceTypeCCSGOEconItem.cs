@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCCSGOEconItem : ISchemaClass<InfoForResourceTypeCCSGOEconItem> {
 
   static InfoForResourceTypeCCSGOEconItem ISchemaClass<InfoForResourceTypeCCSGOEconItem>.From(nint handle) => new InfoForResourceTypeCCSGOEconItemImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCCSGOEconItem>.Size => 1;
 
 
 

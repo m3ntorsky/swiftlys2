@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnVertex_t : ISchemaClass<RnVertex_t> {
 
   static RnVertex_t ISchemaClass<RnVertex_t>.From(nint handle) => new RnVertex_tImpl(handle);
+  static int ISchemaClass<RnVertex_t>.Size => 1;
 
   
   public ref byte Edge { get; }

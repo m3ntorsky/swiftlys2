@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixUtilityDesc_t : ISchemaClass<VMixUtilityDesc_t> {
 
   static VMixUtilityDesc_t ISchemaClass<VMixUtilityDesc_t>.From(nint handle) => new VMixUtilityDesc_tImpl(handle);
+  static int ISchemaClass<VMixUtilityDesc_t>.Size => 24;
 
   
   public ref VMixChannelOperation_t Op { get; }

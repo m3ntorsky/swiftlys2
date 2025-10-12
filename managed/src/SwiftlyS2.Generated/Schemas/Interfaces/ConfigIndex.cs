@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ConfigIndex : ISchemaClass<ConfigIndex> {
 
   static ConfigIndex ISchemaClass<ConfigIndex>.From(nint handle) => new ConfigIndexImpl(handle);
+  static int ISchemaClass<ConfigIndex>.Size => 4;
 
   
   public ref ushort Group { get; }

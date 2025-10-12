@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRagdollUpdateNode : CUnaryUpdateNode, ISchemaClass<CRagdollUpdateNode> {
 
   static CRagdollUpdateNode ISchemaClass<CRagdollUpdateNode>.From(nint handle) => new CRagdollUpdateNodeImpl(handle);
+  static int ISchemaClass<CRagdollUpdateNode>.Size => 120;
 
   
   public ref int WeightListIndex { get; }

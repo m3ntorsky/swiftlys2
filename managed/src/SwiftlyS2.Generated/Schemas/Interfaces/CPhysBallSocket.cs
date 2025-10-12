@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysBallSocket : CPhysConstraint, ISchemaClass<CPhysBallSocket> {
 
   static CPhysBallSocket ISchemaClass<CPhysBallSocket>.From(nint handle) => new CPhysBallSocketImpl(handle);
+  static int ISchemaClass<CPhysBallSocket>.Size => 1400;
 
   
   public ref float JointFriction { get; }

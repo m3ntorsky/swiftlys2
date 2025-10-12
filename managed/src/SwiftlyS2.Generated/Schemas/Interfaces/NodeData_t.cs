@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface NodeData_t : ISchemaClass<NodeData_t> {
 
   static NodeData_t ISchemaClass<NodeData_t>.From(nint handle) => new NodeData_tImpl(handle);
+  static int ISchemaClass<NodeData_t>.Size => 80;
 
   
   public ref int Parent { get; }

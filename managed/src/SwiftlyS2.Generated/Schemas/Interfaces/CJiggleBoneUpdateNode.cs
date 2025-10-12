@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CJiggleBoneUpdateNode : CUnaryUpdateNode, ISchemaClass<CJiggleBoneUpdateNode> {
 
   static CJiggleBoneUpdateNode ISchemaClass<CJiggleBoneUpdateNode>.From(nint handle) => new CJiggleBoneUpdateNodeImpl(handle);
+  static int ISchemaClass<CJiggleBoneUpdateNode>.Size => 144;
 
   
   public JiggleBoneSettingsList_t OpFixedData { get; }

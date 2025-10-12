@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAttributeManager__cached_attribute_float_t : ISchemaClass<CAttributeManager__cached_attribute_float_t> {
 
   static CAttributeManager__cached_attribute_float_t ISchemaClass<CAttributeManager__cached_attribute_float_t>.From(nint handle) => new CAttributeManager__cached_attribute_float_tImpl(handle);
+  static int ISchemaClass<CAttributeManager__cached_attribute_float_t>.Size => 24;
 
   
   public ref float In { get; }

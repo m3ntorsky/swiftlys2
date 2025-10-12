@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootstepLandedAnimTag : CAnimTagBase, ISchemaClass<CFootstepLandedAnimTag> {
 
   static CFootstepLandedAnimTag ISchemaClass<CFootstepLandedAnimTag>.From(nint handle) => new CFootstepLandedAnimTagImpl(handle);
+  static int ISchemaClass<CFootstepLandedAnimTag>.Size => 120;
 
   
   public ref FootstepLandedFootSoundType_t FootstepType { get; }

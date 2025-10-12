@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface IntervalTimer : ISchemaClass<IntervalTimer> {
 
   static IntervalTimer ISchemaClass<IntervalTimer>.From(nint handle) => new IntervalTimerImpl(handle);
+  static int ISchemaClass<IntervalTimer>.Size => 16;
 
   
   public GameTime_t Timestamp { get; }

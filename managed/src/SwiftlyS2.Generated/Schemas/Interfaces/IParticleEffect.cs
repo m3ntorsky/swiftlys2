@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface IParticleEffect : ISchemaClass<IParticleEffect> {
 
   static IParticleEffect ISchemaClass<IParticleEffect>.From(nint handle) => new IParticleEffectImpl(handle);
+  static int ISchemaClass<IParticleEffect>.Size => 8;
 
 
 

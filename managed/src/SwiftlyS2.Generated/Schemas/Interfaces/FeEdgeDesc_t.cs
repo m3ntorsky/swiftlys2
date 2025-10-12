@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeEdgeDesc_t : ISchemaClass<FeEdgeDesc_t> {
 
   static FeEdgeDesc_t ISchemaClass<FeEdgeDesc_t>.From(nint handle) => new FeEdgeDesc_tImpl(handle);
+  static int ISchemaClass<FeEdgeDesc_t>.Size => 16;
 
   
   public ISchemaFixedArray<ushort> Edge { get; }

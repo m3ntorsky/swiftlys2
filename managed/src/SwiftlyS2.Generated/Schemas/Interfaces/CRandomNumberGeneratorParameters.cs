@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRandomNumberGeneratorParameters : ISchemaClass<CRandomNumberGeneratorParameters> {
 
   static CRandomNumberGeneratorParameters ISchemaClass<CRandomNumberGeneratorParameters>.From(nint handle) => new CRandomNumberGeneratorParametersImpl(handle);
+  static int ISchemaClass<CRandomNumberGeneratorParameters>.Size => 8;
 
   
   public ref bool DistributeEvenly { get; }

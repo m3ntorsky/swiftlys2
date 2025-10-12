@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FourCovMatrices3 : ISchemaClass<FourCovMatrices3> {
 
   static FourCovMatrices3 ISchemaClass<FourCovMatrices3>.From(nint handle) => new FourCovMatrices3Impl(handle);
+  static int ISchemaClass<FourCovMatrices3>.Size => 96;
 
   
   public ref FourVectors Diag { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ModelMeshBufferData_t : ISchemaClass<ModelMeshBufferData_t> {
 
   static ModelMeshBufferData_t ISchemaClass<ModelMeshBufferData_t>.From(nint handle) => new ModelMeshBufferData_tImpl(handle);
+  static int ISchemaClass<ModelMeshBufferData_t>.Size => 48;
 
   
   public ref int BlockIndex { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_RemapParticleCountToNamedModelElementScalar : C_INIT_RemapParticleCountToScalar, ISchemaClass<C_INIT_RemapParticleCountToNamedModelElementScalar> {
 
   static C_INIT_RemapParticleCountToNamedModelElementScalar ISchemaClass<C_INIT_RemapParticleCountToNamedModelElementScalar>.From(nint handle) => new C_INIT_RemapParticleCountToNamedModelElementScalarImpl(handle);
+  static int ISchemaClass<C_INIT_RemapParticleCountToNamedModelElementScalar>.Size => 536;
 
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }

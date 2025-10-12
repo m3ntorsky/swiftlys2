@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBreakableStageHelper : ISchemaClass<CBreakableStageHelper> {
 
   static CBreakableStageHelper ISchemaClass<CBreakableStageHelper>.From(nint handle) => new CBreakableStageHelperImpl(handle);
+  static int ISchemaClass<CBreakableStageHelper>.Size => 24;
 
   
   public ref int CurrentStage { get; }

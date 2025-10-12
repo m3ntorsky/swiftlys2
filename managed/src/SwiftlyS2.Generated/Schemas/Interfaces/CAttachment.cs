@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAttachment : ISchemaClass<CAttachment> {
 
   static CAttachment ISchemaClass<CAttachment>.From(nint handle) => new CAttachmentImpl(handle);
+  static int ISchemaClass<CAttachment>.Size => 144;
 
   
   public string Name { get; set; }

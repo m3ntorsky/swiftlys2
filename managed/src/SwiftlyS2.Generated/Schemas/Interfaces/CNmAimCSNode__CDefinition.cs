@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmAimCSNode__CDefinition : CNmPassthroughNode__CDefinition, ISchemaClass<CNmAimCSNode__CDefinition> {
 
   static CNmAimCSNode__CDefinition ISchemaClass<CNmAimCSNode__CDefinition>.From(nint handle) => new CNmAimCSNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmAimCSNode__CDefinition>.Size => 40;
 
   
   public ref short VerticalAngleNodeIdx { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmIKRig : ISchemaClass<CNmIKRig> {
 
   static CNmIKRig ISchemaClass<CNmIKRig>.From(nint handle) => new CNmIKRigImpl(handle);
+  static int ISchemaClass<CNmIKRig>.Size => 56;
 
   
   public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton { get; }

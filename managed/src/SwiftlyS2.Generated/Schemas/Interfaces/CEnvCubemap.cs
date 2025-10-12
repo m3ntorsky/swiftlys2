@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvCubemap : CBaseEntity, ISchemaClass<CEnvCubemap> {
 
   static CEnvCubemap ISchemaClass<CEnvCubemap>.From(nint handle) => new CEnvCubemapImpl(handle);
+  static int ISchemaClass<CEnvCubemap>.Size => 1496;
 
   
   public ref CStrongHandle<InfoForResourceTypeCTextureBase> Entity_hCubemapTexture { get; }

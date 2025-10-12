@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCModel : ISchemaClass<InfoForResourceTypeCModel> {
 
   static InfoForResourceTypeCModel ISchemaClass<InfoForResourceTypeCModel>.From(nint handle) => new InfoForResourceTypeCModelImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCModel>.Size => 1;
 
 
 

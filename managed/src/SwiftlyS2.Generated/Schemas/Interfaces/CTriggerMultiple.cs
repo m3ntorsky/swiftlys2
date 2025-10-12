@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTriggerMultiple : CBaseTrigger, ISchemaClass<CTriggerMultiple> {
 
   static CTriggerMultiple ISchemaClass<CTriggerMultiple>.From(nint handle) => new CTriggerMultipleImpl(handle);
+  static int ISchemaClass<CTriggerMultiple>.Size => 2536;
 
   
   public CEntityIOOutput OnTrigger { get; }

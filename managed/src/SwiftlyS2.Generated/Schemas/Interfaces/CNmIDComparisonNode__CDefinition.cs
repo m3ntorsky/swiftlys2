@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmIDComparisonNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmIDComparisonNode__CDefinition> {
 
   static CNmIDComparisonNode__CDefinition ISchemaClass<CNmIDComparisonNode__CDefinition>.From(nint handle) => new CNmIDComparisonNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmIDComparisonNode__CDefinition>.Size => 64;
 
   
   public ref short InputValueNodeIdx { get; }

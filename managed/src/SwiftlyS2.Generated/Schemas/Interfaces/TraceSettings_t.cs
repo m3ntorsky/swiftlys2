@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface TraceSettings_t : ISchemaClass<TraceSettings_t> {
 
   static TraceSettings_t ISchemaClass<TraceSettings_t>.From(nint handle) => new TraceSettings_tImpl(handle);
+  static int ISchemaClass<TraceSettings_t>.Size => 8;
 
   
   public ref float TraceHeight { get; }

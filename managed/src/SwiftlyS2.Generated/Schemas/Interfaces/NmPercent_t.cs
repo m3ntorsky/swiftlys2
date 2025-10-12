@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface NmPercent_t : ISchemaClass<NmPercent_t> {
 
   static NmPercent_t ISchemaClass<NmPercent_t>.From(nint handle) => new NmPercent_tImpl(handle);
+  static int ISchemaClass<NmPercent_t>.Size => 4;
 
   
   public ref float Value { get; }

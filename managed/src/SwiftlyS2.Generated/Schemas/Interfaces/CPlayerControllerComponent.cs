@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlayerControllerComponent : ISchemaClass<CPlayerControllerComponent> {
 
   static CPlayerControllerComponent ISchemaClass<CPlayerControllerComponent>.From(nint handle) => new CPlayerControllerComponentImpl(handle);
+  static int ISchemaClass<CPlayerControllerComponent>.Size => 64;
 
   
   public ref CNetworkVarChainer __m_pChainEntity { get; }

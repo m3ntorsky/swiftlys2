@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMultiplayer_Expresser : CAI_ExpresserWithFollowup, ISchemaClass<CMultiplayer_Expresser> {
 
   static CMultiplayer_Expresser ISchemaClass<CMultiplayer_Expresser>.From(nint handle) => new CMultiplayer_ExpresserImpl(handle);
+  static int ISchemaClass<CMultiplayer_Expresser>.Size => 168;
 
   
   public ref bool AllowMultipleScenes { get; }

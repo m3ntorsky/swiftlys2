@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CHintMessage : ISchemaClass<CHintMessage> {
 
   static CHintMessage ISchemaClass<CHintMessage>.From(nint handle) => new CHintMessageImpl(handle);
+  static int ISchemaClass<CHintMessage>.Size => 40;
 
   
   public string HintString { get; set; }

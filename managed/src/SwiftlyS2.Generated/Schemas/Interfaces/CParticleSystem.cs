@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleSystem : CBaseModelEntity, ISchemaClass<CParticleSystem> {
 
   static CParticleSystem ISchemaClass<CParticleSystem>.From(nint handle) => new CParticleSystemImpl(handle);
+  static int ISchemaClass<CParticleSystem>.Size => 3432;
 
   
   public string SnapshotFileName { get; set; }

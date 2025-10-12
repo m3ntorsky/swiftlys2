@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_CreateParticleImpulse : CParticleFunctionInitializer, ISchemaClass<C_INIT_CreateParticleImpulse> {
 
   static C_INIT_CreateParticleImpulse ISchemaClass<C_INIT_CreateParticleImpulse>.From(nint handle) => new C_INIT_CreateParticleImpulseImpl(handle);
+  static int ISchemaClass<C_INIT_CreateParticleImpulse>.Size => 1528;
 
   
   public CPerParticleFloatInput InputRadius { get; }

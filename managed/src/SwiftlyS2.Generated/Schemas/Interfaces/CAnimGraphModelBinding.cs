@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimGraphModelBinding : ISchemaClass<CAnimGraphModelBinding> {
 
   static CAnimGraphModelBinding ISchemaClass<CAnimGraphModelBinding>.From(nint handle) => new CAnimGraphModelBindingImpl(handle);
+  static int ISchemaClass<CAnimGraphModelBinding>.Size => 40;
 
   
   public string ModelName { get; set; }

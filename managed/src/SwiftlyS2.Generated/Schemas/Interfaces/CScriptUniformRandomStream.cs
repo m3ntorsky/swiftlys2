@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CScriptUniformRandomStream : ISchemaClass<CScriptUniformRandomStream> {
 
   static CScriptUniformRandomStream ISchemaClass<CScriptUniformRandomStream>.From(nint handle) => new CScriptUniformRandomStreamImpl(handle);
+  static int ISchemaClass<CScriptUniformRandomStream>.Size => 160;
 
   
   // HSCRIPT

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Outflow_CycleOrdered__InstanceState_t : ISchemaClass<CPulseCell_Outflow_CycleOrdered__InstanceState_t> {
 
   static CPulseCell_Outflow_CycleOrdered__InstanceState_t ISchemaClass<CPulseCell_Outflow_CycleOrdered__InstanceState_t>.From(nint handle) => new CPulseCell_Outflow_CycleOrdered__InstanceState_tImpl(handle);
+  static int ISchemaClass<CPulseCell_Outflow_CycleOrdered__InstanceState_t>.Size => 4;
 
   
   public ref int NextIndex { get; }

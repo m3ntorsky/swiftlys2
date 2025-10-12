@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvDecal : CBaseModelEntity, ISchemaClass<CEnvDecal> {
 
   static CEnvDecal ISchemaClass<CEnvDecal>.From(nint handle) => new CEnvDecalImpl(handle);
+  static int ISchemaClass<CEnvDecal>.Size => 2064;
 
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> DecalMaterial { get; }

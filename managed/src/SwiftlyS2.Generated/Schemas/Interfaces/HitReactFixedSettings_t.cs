@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface HitReactFixedSettings_t : ISchemaClass<HitReactFixedSettings_t> {
 
   static HitReactFixedSettings_t ISchemaClass<HitReactFixedSettings_t>.From(nint handle) => new HitReactFixedSettings_tImpl(handle);
+  static int ISchemaClass<HitReactFixedSettings_t>.Size => 68;
 
   
   public ref int WeightListIndex { get; }

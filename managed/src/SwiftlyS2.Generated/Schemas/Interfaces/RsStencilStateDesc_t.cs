@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RsStencilStateDesc_t : ISchemaClass<RsStencilStateDesc_t> {
 
   static RsStencilStateDesc_t ISchemaClass<RsStencilStateDesc_t>.From(nint handle) => new RsStencilStateDesc_tImpl(handle);
+  static int ISchemaClass<RsStencilStateDesc_t>.Size => 6;
 
   
   // bitfield

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStepsRemainingMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CStepsRemainingMetricEvaluator> {
 
   static CStepsRemainingMetricEvaluator ISchemaClass<CStepsRemainingMetricEvaluator>.From(nint handle) => new CStepsRemainingMetricEvaluatorImpl(handle);
+  static int ISchemaClass<CStepsRemainingMetricEvaluator>.Size => 112;
 
   
   public ref CUtlVector<int> FootIndices { get; }

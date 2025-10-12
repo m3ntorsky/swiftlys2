@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayer_BulletServices : CPlayerPawnComponent, ISchemaClass<CCSPlayer_BulletServices> {
 
   static CCSPlayer_BulletServices ISchemaClass<CCSPlayer_BulletServices>.From(nint handle) => new CCSPlayer_BulletServicesImpl(handle);
+  static int ISchemaClass<CCSPlayer_BulletServices>.Size => 72;
 
   
   public ref int TotalHitsOnServer { get; }

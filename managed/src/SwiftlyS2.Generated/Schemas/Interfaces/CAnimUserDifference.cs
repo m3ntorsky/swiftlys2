@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimUserDifference : ISchemaClass<CAnimUserDifference> {
 
   static CAnimUserDifference ISchemaClass<CAnimUserDifference>.From(nint handle) => new CAnimUserDifferenceImpl(handle);
+  static int ISchemaClass<CAnimUserDifference>.Size => 24;
 
   
   public ref CBufferString Name { get; }

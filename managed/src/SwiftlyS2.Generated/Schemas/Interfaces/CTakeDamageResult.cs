@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTakeDamageResult : ISchemaClass<CTakeDamageResult> {
 
   static CTakeDamageResult ISchemaClass<CTakeDamageResult>.From(nint handle) => new CTakeDamageResultImpl(handle);
+  static int ISchemaClass<CTakeDamageResult>.Size => 32;
 
   
   public ref CTakeDamageInfo OriginatingInfo { get; }

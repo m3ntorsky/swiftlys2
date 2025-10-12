@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmTransitionEventConditionNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmTransitionEventConditionNode__CDefinition> {
 
   static CNmTransitionEventConditionNode__CDefinition ISchemaClass<CNmTransitionEventConditionNode__CDefinition>.From(nint handle) => new CNmTransitionEventConditionNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmTransitionEventConditionNode__CDefinition>.Size => 32;
 
   
   public ref CGlobalSymbol RequireRuleID { get; }

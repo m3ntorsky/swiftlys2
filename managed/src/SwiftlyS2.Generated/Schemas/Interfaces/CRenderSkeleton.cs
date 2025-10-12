@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRenderSkeleton : ISchemaClass<CRenderSkeleton> {
 
   static CRenderSkeleton ISchemaClass<CRenderSkeleton>.From(nint handle) => new CRenderSkeletonImpl(handle);
+  static int ISchemaClass<CRenderSkeleton>.Size => 80;
 
   
   // CUtlVector< RenderSkeletonBone_t >

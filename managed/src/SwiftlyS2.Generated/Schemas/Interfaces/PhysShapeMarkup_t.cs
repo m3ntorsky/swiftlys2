@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PhysShapeMarkup_t : ISchemaClass<PhysShapeMarkup_t> {
 
   static PhysShapeMarkup_t ISchemaClass<PhysShapeMarkup_t>.From(nint handle) => new PhysShapeMarkup_tImpl(handle);
+  static int ISchemaClass<PhysShapeMarkup_t>.Size => 16;
 
   
   public ref int BodyInAggregate { get; }

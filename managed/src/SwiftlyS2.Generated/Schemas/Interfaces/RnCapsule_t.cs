@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnCapsule_t : ISchemaClass<RnCapsule_t> {
 
   static RnCapsule_t ISchemaClass<RnCapsule_t>.From(nint handle) => new RnCapsule_tImpl(handle);
+  static int ISchemaClass<RnCapsule_t>.Size => 28;
 
   
   public ISchemaFixedArray<Vector> Center { get; }

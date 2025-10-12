@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CModelConfigElement_AttachedModel : CModelConfigElement, ISchemaClass<CModelConfigElement_AttachedModel> {
 
   static CModelConfigElement_AttachedModel ISchemaClass<CModelConfigElement_AttachedModel>.From(nint handle) => new CModelConfigElement_AttachedModelImpl(handle);
+  static int ISchemaClass<CModelConfigElement_AttachedModel>.Size => 232;
 
   
   public string InstanceName { get; set; }

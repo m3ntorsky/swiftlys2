@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface OutflowWithRequirements_t : ISchemaClass<OutflowWithRequirements_t> {
 
   static OutflowWithRequirements_t ISchemaClass<OutflowWithRequirements_t>.From(nint handle) => new OutflowWithRequirements_tImpl(handle);
+  static int ISchemaClass<OutflowWithRequirements_t>.Size => 128;
 
   
   public CPulse_OutflowConnection Connection { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PointDefinition_t : ISchemaClass<PointDefinition_t> {
 
   static PointDefinition_t ISchemaClass<PointDefinition_t>.From(nint handle) => new PointDefinition_tImpl(handle);
+  static int ISchemaClass<PointDefinition_t>.Size => 20;
 
   
   public ref int ControlPoint { get; }

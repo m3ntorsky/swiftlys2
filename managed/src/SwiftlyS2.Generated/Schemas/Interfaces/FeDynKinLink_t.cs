@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeDynKinLink_t : ISchemaClass<FeDynKinLink_t> {
 
   static FeDynKinLink_t ISchemaClass<FeDynKinLink_t>.From(nint handle) => new FeDynKinLink_tImpl(handle);
+  static int ISchemaClass<FeDynKinLink_t>.Size => 4;
 
   
   public ref ushort Parent { get; }

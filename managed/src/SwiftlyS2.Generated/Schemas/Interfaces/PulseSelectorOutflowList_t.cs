@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PulseSelectorOutflowList_t : ISchemaClass<PulseSelectorOutflowList_t> {
 
   static PulseSelectorOutflowList_t ISchemaClass<PulseSelectorOutflowList_t>.From(nint handle) => new PulseSelectorOutflowList_tImpl(handle);
+  static int ISchemaClass<PulseSelectorOutflowList_t>.Size => 24;
 
   
   // CUtlVector< OutflowWithRequirements_t >

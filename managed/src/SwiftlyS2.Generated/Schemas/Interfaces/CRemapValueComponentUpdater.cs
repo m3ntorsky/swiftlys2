@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRemapValueComponentUpdater : CAnimComponentUpdater, ISchemaClass<CRemapValueComponentUpdater> {
 
   static CRemapValueComponentUpdater ISchemaClass<CRemapValueComponentUpdater>.From(nint handle) => new CRemapValueComponentUpdaterImpl(handle);
+  static int ISchemaClass<CRemapValueComponentUpdater>.Size => 72;
 
   
   // CUtlVector< CRemapValueUpdateItem >

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLookAtUpdateNode : CUnaryUpdateNode, ISchemaClass<CLookAtUpdateNode> {
 
   static CLookAtUpdateNode ISchemaClass<CLookAtUpdateNode>.From(nint handle) => new CLookAtUpdateNodeImpl(handle);
+  static int ISchemaClass<CLookAtUpdateNode>.Size => 352;
 
   
   public LookAtOpFixedSettings_t OpFixedSettings { get; }

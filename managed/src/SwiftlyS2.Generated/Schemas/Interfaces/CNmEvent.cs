@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmEvent : ISchemaClass<CNmEvent> {
 
   static CNmEvent ISchemaClass<CNmEvent>.From(nint handle) => new CNmEventImpl(handle);
+  static int ISchemaClass<CNmEvent>.Size => 32;
 
   
   public ref float StartTimeSeconds { get; }

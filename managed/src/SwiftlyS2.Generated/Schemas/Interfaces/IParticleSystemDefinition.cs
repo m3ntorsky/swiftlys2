@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface IParticleSystemDefinition : ISchemaClass<IParticleSystemDefinition> {
 
   static IParticleSystemDefinition ISchemaClass<IParticleSystemDefinition>.From(nint handle) => new IParticleSystemDefinitionImpl(handle);
+  static int ISchemaClass<IParticleSystemDefinition>.Size => 8;
 
 
 

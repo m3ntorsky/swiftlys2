@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEditableMotionGraph : CMotionGraph, ISchemaClass<CEditableMotionGraph> {
 
   static CEditableMotionGraph ISchemaClass<CEditableMotionGraph>.From(nint handle) => new CEditableMotionGraphImpl(handle);
+  static int ISchemaClass<CEditableMotionGraph>.Size => 88;
 
 
 

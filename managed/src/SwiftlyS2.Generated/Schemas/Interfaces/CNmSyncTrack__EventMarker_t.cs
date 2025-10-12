@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmSyncTrack__EventMarker_t : ISchemaClass<CNmSyncTrack__EventMarker_t> {
 
   static CNmSyncTrack__EventMarker_t ISchemaClass<CNmSyncTrack__EventMarker_t>.From(nint handle) => new CNmSyncTrack__EventMarker_tImpl(handle);
+  static int ISchemaClass<CNmSyncTrack__EventMarker_t>.Size => 16;
 
   
   public NmPercent_t StartTime { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmConstIDNode__CDefinition : CNmIDValueNode__CDefinition, ISchemaClass<CNmConstIDNode__CDefinition> {
 
   static CNmConstIDNode__CDefinition ISchemaClass<CNmConstIDNode__CDefinition>.From(nint handle) => new CNmConstIDNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmConstIDNode__CDefinition>.Size => 24;
 
   
   public ref CGlobalSymbol Value { get; }

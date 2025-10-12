@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysSlideConstraint : CPhysConstraint, ISchemaClass<CPhysSlideConstraint> {
 
   static CPhysSlideConstraint ISchemaClass<CPhysSlideConstraint>.From(nint handle) => new CPhysSlideConstraintImpl(handle);
+  static int ISchemaClass<CPhysSlideConstraint>.Size => 1576;
 
   
   public ref Vector AxisEnd { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FourVectors2D : ISchemaClass<FourVectors2D> {
 
   static FourVectors2D ISchemaClass<FourVectors2D>.From(nint handle) => new FourVectors2DImpl(handle);
+  static int ISchemaClass<FourVectors2D>.Size => 32;
 
   
   public ref fltx4 X { get; }

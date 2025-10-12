@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMorphData : ISchemaClass<CMorphData> {
 
   static CMorphData ISchemaClass<CMorphData>.From(nint handle) => new CMorphDataImpl(handle);
+  static int ISchemaClass<CMorphData>.Size => 32;
 
   
   public string Name { get; set; }

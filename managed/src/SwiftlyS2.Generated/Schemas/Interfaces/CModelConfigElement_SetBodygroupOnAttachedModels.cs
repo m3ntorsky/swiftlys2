@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CModelConfigElement_SetBodygroupOnAttachedModels : CModelConfigElement, ISchemaClass<CModelConfigElement_SetBodygroupOnAttachedModels> {
 
   static CModelConfigElement_SetBodygroupOnAttachedModels ISchemaClass<CModelConfigElement_SetBodygroupOnAttachedModels>.From(nint handle) => new CModelConfigElement_SetBodygroupOnAttachedModelsImpl(handle);
+  static int ISchemaClass<CModelConfigElement_SetBodygroupOnAttachedModels>.Size => 88;
 
   
   public string GroupName { get; set; }

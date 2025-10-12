@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface LookAtOpFixedSettings_t : ISchemaClass<LookAtOpFixedSettings_t> {
 
   static LookAtOpFixedSettings_t ISchemaClass<LookAtOpFixedSettings_t>.From(nint handle) => new LookAtOpFixedSettings_tImpl(handle);
+  static int ISchemaClass<LookAtOpFixedSettings_t>.Size => 208;
 
   
   public CAnimAttachment Attachment { get; }

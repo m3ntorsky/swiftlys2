@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStateMachineComponentUpdater : CAnimComponentUpdater, ISchemaClass<CStateMachineComponentUpdater> {
 
   static CStateMachineComponentUpdater ISchemaClass<CStateMachineComponentUpdater>.From(nint handle) => new CStateMachineComponentUpdaterImpl(handle);
+  static int ISchemaClass<CStateMachineComponentUpdater>.Size => 136;
 
   
   public CAnimStateMachineUpdater StateMachine { get; }

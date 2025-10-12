@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnNode_t : ISchemaClass<RnNode_t> {
 
   static RnNode_t ISchemaClass<RnNode_t>.From(nint handle) => new RnNode_tImpl(handle);
+  static int ISchemaClass<RnNode_t>.Size => 32;
 
   
   public ref Vector Min { get; }

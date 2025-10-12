@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBtActionMoveTo : CBtNode, ISchemaClass<CBtActionMoveTo> {
 
   static CBtActionMoveTo ISchemaClass<CBtActionMoveTo>.From(nint handle) => new CBtActionMoveToImpl(handle);
+  static int ISchemaClass<CBtActionMoveTo>.Size => 232;
 
   
   public string DestinationInputKey { get; set; }

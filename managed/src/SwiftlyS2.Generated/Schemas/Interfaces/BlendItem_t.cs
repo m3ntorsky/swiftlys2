@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface BlendItem_t : ISchemaClass<BlendItem_t> {
 
   static BlendItem_t ISchemaClass<BlendItem_t>.From(nint handle) => new BlendItem_tImpl(handle);
+  static int ISchemaClass<BlendItem_t>.Size => 64;
 
   
   // CUtlVector< TagSpan_t >

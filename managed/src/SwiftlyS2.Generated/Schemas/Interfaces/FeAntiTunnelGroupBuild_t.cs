@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeAntiTunnelGroupBuild_t : ISchemaClass<FeAntiTunnelGroupBuild_t> {
 
   static FeAntiTunnelGroupBuild_t ISchemaClass<FeAntiTunnelGroupBuild_t>.From(nint handle) => new FeAntiTunnelGroupBuild_tImpl(handle);
+  static int ISchemaClass<FeAntiTunnelGroupBuild_t>.Size => 8;
 
   
   public ref uint VertexMapHash { get; }

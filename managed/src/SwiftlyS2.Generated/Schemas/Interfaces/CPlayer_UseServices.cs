@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlayer_UseServices : CPlayerPawnComponent, ISchemaClass<CPlayer_UseServices> {
 
   static CPlayer_UseServices ISchemaClass<CPlayer_UseServices>.From(nint handle) => new CPlayer_UseServicesImpl(handle);
+  static int ISchemaClass<CPlayer_UseServices>.Size => 64;
 
 
 

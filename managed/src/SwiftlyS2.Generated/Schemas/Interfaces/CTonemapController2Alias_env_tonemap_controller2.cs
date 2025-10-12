@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTonemapController2Alias_env_tonemap_controller2 : CTonemapController2, ISchemaClass<CTonemapController2Alias_env_tonemap_controller2> {
 
   static CTonemapController2Alias_env_tonemap_controller2 ISchemaClass<CTonemapController2Alias_env_tonemap_controller2>.From(nint handle) => new CTonemapController2Alias_env_tonemap_controller2Impl(handle);
+  static int ISchemaClass<CTonemapController2Alias_env_tonemap_controller2>.Size => 1288;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CColorCorrection : CBaseEntity, ISchemaClass<CColorCorrection> {
 
   static CColorCorrection ISchemaClass<CColorCorrection>.From(nint handle) => new CColorCorrectionImpl(handle);
+  static int ISchemaClass<CColorCorrection>.Size => 1832;
 
   
   public ref float FadeInDuration { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface OldFeEdge_t : ISchemaClass<OldFeEdge_t> {
 
   static OldFeEdge_t ISchemaClass<OldFeEdge_t>.From(nint handle) => new OldFeEdge_tImpl(handle);
+  static int ISchemaClass<OldFeEdge_t>.Size => 72;
 
   
   public ISchemaFixedArray<float> K { get; }

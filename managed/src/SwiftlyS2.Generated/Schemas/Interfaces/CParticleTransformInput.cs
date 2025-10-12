@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleTransformInput : CParticleInput, ISchemaClass<CParticleTransformInput> {
 
   static CParticleTransformInput ISchemaClass<CParticleTransformInput>.From(nint handle) => new CParticleTransformInputImpl(handle);
+  static int ISchemaClass<CParticleTransformInput>.Size => 104;
 
   
   public ref ParticleTransformType_t Type { get; }

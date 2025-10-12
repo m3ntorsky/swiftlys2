@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CGenericConstraint : CPhysConstraint, ISchemaClass<CGenericConstraint> {
 
   static CGenericConstraint ISchemaClass<CGenericConstraint>.From(nint handle) => new CGenericConstraintImpl(handle);
+  static int ISchemaClass<CGenericConstraint>.Size => 1680;
 
   
   public ref JointMotion_t LinearMotionX { get; }

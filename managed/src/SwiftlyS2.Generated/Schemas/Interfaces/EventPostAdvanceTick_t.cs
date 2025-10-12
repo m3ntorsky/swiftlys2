@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventPostAdvanceTick_t : EventSimulate_t, ISchemaClass<EventPostAdvanceTick_t> {
 
   static EventPostAdvanceTick_t ISchemaClass<EventPostAdvanceTick_t>.From(nint handle) => new EventPostAdvanceTick_tImpl(handle);
+  static int ISchemaClass<EventPostAdvanceTick_t>.Size => 64;
 
   
   public ref int CurrentTick { get; }

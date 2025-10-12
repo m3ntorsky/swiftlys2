@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLogicEventListener : CLogicalEntity, ISchemaClass<CLogicEventListener> {
 
   static CLogicEventListener ISchemaClass<CLogicEventListener>.From(nint handle) => new CLogicEventListenerImpl(handle);
+  static int ISchemaClass<CLogicEventListener>.Size => 1336;
 
   
   public string StrEventName { get; set; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnHullDesc_t : RnShapeDesc_t, ISchemaClass<RnHullDesc_t> {
 
   static RnHullDesc_t ISchemaClass<RnHullDesc_t>.From(nint handle) => new RnHullDesc_tImpl(handle);
+  static int ISchemaClass<RnHullDesc_t>.Size => 272;
 
   
   public RnHull_t Hull { get; }

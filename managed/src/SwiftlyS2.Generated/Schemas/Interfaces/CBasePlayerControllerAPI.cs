@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBasePlayerControllerAPI : ISchemaClass<CBasePlayerControllerAPI> {
 
   static CBasePlayerControllerAPI ISchemaClass<CBasePlayerControllerAPI>.From(nint handle) => new CBasePlayerControllerAPIImpl(handle);
+  static int ISchemaClass<CBasePlayerControllerAPI>.Size => 8;
 
 
 

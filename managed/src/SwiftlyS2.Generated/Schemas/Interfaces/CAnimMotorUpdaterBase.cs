@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimMotorUpdaterBase : ISchemaClass<CAnimMotorUpdaterBase> {
 
   static CAnimMotorUpdaterBase ISchemaClass<CAnimMotorUpdaterBase>.From(nint handle) => new CAnimMotorUpdaterBaseImpl(handle);
+  static int ISchemaClass<CAnimMotorUpdaterBase>.Size => 32;
 
   
   public string Name { get; set; }

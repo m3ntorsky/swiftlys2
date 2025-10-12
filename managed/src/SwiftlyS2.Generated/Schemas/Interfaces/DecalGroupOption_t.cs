@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface DecalGroupOption_t : ISchemaClass<DecalGroupOption_t> {
 
   static DecalGroupOption_t ISchemaClass<DecalGroupOption_t>.From(nint handle) => new DecalGroupOption_tImpl(handle);
+  static int ISchemaClass<DecalGroupOption_t>.Size => 32;
 
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MaterialVariable_t : ISchemaClass<MaterialVariable_t> {
 
   static MaterialVariable_t ISchemaClass<MaterialVariable_t>.From(nint handle) => new MaterialVariable_tImpl(handle);
+  static int ISchemaClass<MaterialVariable_t>.Size => 16;
 
   
   public string StrVariable { get; set; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseAnimGraphController : CSkeletonAnimationController, ISchemaClass<CBaseAnimGraphController> {
 
   static CBaseAnimGraphController ISchemaClass<CBaseAnimGraphController>.From(nint handle) => new CBaseAnimGraphControllerImpl(handle);
+  static int ISchemaClass<CBaseAnimGraphController>.Size => 1536;
 
   
   public CAnimGraphNetworkedVariables AnimGraphNetworkedVars { get; }

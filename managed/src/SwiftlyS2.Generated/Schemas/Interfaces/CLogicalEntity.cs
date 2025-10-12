@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLogicalEntity : CServerOnlyEntity, ISchemaClass<CLogicalEntity> {
 
   static CLogicalEntity ISchemaClass<CLogicalEntity>.From(nint handle) => new CLogicalEntityImpl(handle);
+  static int ISchemaClass<CLogicalEntity>.Size => 1264;
 
 
 

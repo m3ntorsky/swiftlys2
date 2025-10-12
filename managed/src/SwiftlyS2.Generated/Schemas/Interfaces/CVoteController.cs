@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVoteController : CBaseEntity, ISchemaClass<CVoteController> {
 
   static CVoteController ISchemaClass<CVoteController>.From(nint handle) => new CVoteControllerImpl(handle);
+  static int ISchemaClass<CVoteController>.Size => 1696;
 
   
   public ref int ActiveIssueIndex { get; }

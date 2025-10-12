@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AmmoTypeInfo_t : ISchemaClass<AmmoTypeInfo_t> {
 
   static AmmoTypeInfo_t ISchemaClass<AmmoTypeInfo_t>.From(nint handle) => new AmmoTypeInfo_tImpl(handle);
+  static int ISchemaClass<AmmoTypeInfo_t>.Size => 56;
 
   
   public ref int MaxCarry { get; }

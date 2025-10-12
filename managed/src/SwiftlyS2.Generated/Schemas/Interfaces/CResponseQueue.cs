@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CResponseQueue : ISchemaClass<CResponseQueue> {
 
   static CResponseQueue ISchemaClass<CResponseQueue>.From(nint handle) => new CResponseQueueImpl(handle);
+  static int ISchemaClass<CResponseQueue>.Size => 80;
 
   
   public ref CUtlVector<PointerTo<CAI_Expresser>> ExpresserTargets { get; }

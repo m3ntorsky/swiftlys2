@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBoneVelocityMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CBoneVelocityMetricEvaluator> {
 
   static CBoneVelocityMetricEvaluator ISchemaClass<CBoneVelocityMetricEvaluator>.From(nint handle) => new CBoneVelocityMetricEvaluatorImpl(handle);
+  static int ISchemaClass<CBoneVelocityMetricEvaluator>.Size => 88;
 
   
   public ref int BoneIndex { get; }

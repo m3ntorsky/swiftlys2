@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EntityRenderAttribute_t : ISchemaClass<EntityRenderAttribute_t> {
 
   static EntityRenderAttribute_t ISchemaClass<EntityRenderAttribute_t>.From(nint handle) => new EntityRenderAttribute_tImpl(handle);
+  static int ISchemaClass<EntityRenderAttribute_t>.Size => 72;
 
   
   public ref CUtlStringToken ID { get; }

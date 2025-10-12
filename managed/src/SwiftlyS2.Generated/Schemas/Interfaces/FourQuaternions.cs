@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FourQuaternions : ISchemaClass<FourQuaternions> {
 
   static FourQuaternions ISchemaClass<FourQuaternions>.From(nint handle) => new FourQuaternionsImpl(handle);
+  static int ISchemaClass<FourQuaternions>.Size => 64;
 
   
   public ref fltx4 X { get; }

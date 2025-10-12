@@ -2,7 +2,8 @@ using SwiftlyS2.Shared.Natives;
 
 namespace SwiftlyS2.Shared.Schemas;
 
-public interface ISchemaClass : INativeHandle {
+public interface ISchemaClass : INativeHandle
+{
 
   /// <summary>
   /// Convert this handle to another type.
@@ -15,9 +16,10 @@ public interface ISchemaClass : INativeHandle {
   }
 }
 
-public interface ISchemaClass<T> : ISchemaField, ISchemaClass, INativeHandle where T : ISchemaClass<T> {
+public interface ISchemaClass<T> : ISchemaField, ISchemaClass, INativeHandle where T : ISchemaClass<T>
+{
 
   internal static abstract T From(nint handle);
-
+  internal static abstract int Size { get; }
 
 }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SheetSequenceIntegerId_t : ISchemaClass<SheetSequenceIntegerId_t> {
 
   static SheetSequenceIntegerId_t ISchemaClass<SheetSequenceIntegerId_t>.From(nint handle) => new SheetSequenceIntegerId_tImpl(handle);
+  static int ISchemaClass<SheetSequenceIntegerId_t>.Size => 4;
 
   
   public ref uint Value { get; }

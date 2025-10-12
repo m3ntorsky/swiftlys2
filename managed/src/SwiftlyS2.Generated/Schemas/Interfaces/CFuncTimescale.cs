@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFuncTimescale : CBaseEntity, ISchemaClass<CFuncTimescale> {
 
   static CFuncTimescale ISchemaClass<CFuncTimescale>.From(nint handle) => new CFuncTimescaleImpl(handle);
+  static int ISchemaClass<CFuncTimescale>.Size => 1288;
 
   
   public ref float DesiredTimescale { get; }

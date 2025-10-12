@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCachedPose : ISchemaClass<CCachedPose> {
 
   static CCachedPose ISchemaClass<CCachedPose>.From(nint handle) => new CCachedPoseImpl(handle);
+  static int ISchemaClass<CCachedPose>.Size => 64;
 
   
   public ref CUtlVector<CTransform> Transforms { get; }

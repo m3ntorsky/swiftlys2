@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CWorldCompositionChunkReferenceElement_t : ISchemaClass<CWorldCompositionChunkReferenceElement_t> {
 
   static CWorldCompositionChunkReferenceElement_t ISchemaClass<CWorldCompositionChunkReferenceElement_t>.From(nint handle) => new CWorldCompositionChunkReferenceElement_tImpl(handle);
+  static int ISchemaClass<CWorldCompositionChunkReferenceElement_t>.Size => 16;
 
   
   public string StrMapToLoad { get; set; }

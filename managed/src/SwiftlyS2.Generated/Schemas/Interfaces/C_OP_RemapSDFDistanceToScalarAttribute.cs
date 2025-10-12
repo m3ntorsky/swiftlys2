@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapSDFDistanceToScalarAttribute : CParticleFunctionOperator, ISchemaClass<C_OP_RemapSDFDistanceToScalarAttribute> {
 
   static C_OP_RemapSDFDistanceToScalarAttribute ISchemaClass<C_OP_RemapSDFDistanceToScalarAttribute>.From(nint handle) => new C_OP_RemapSDFDistanceToScalarAttributeImpl(handle);
+  static int ISchemaClass<C_OP_RemapSDFDistanceToScalarAttribute>.Size => 2568;
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

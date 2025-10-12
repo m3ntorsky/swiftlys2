@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeSourceEdge_t : ISchemaClass<FeSourceEdge_t> {
 
   static FeSourceEdge_t ISchemaClass<FeSourceEdge_t>.From(nint handle) => new FeSourceEdge_tImpl(handle);
+  static int ISchemaClass<FeSourceEdge_t>.Size => 4;
 
   
   public ISchemaFixedArray<ushort> Node { get; }

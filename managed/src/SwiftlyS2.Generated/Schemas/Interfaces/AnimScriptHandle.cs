@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AnimScriptHandle : ISchemaClass<AnimScriptHandle> {
 
   static AnimScriptHandle ISchemaClass<AnimScriptHandle>.From(nint handle) => new AnimScriptHandleImpl(handle);
+  static int ISchemaClass<AnimScriptHandle>.Size => 4;
 
   
   public ref uint Id { get; }

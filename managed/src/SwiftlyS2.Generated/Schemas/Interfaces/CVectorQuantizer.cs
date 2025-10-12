@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVectorQuantizer : ISchemaClass<CVectorQuantizer> {
 
   static CVectorQuantizer ISchemaClass<CVectorQuantizer>.From(nint handle) => new CVectorQuantizerImpl(handle);
+  static int ISchemaClass<CVectorQuantizer>.Size => 32;
 
   
   public ref CUtlVector<float> CentroidVectors { get; }

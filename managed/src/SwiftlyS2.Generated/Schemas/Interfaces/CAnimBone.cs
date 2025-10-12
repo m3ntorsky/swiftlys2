@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimBone : ISchemaClass<CAnimBone> {
 
   static CAnimBone ISchemaClass<CAnimBone>.From(nint handle) => new CAnimBoneImpl(handle);
+  static int ISchemaClass<CAnimBone>.Size => 72;
 
   
   public ref CBufferString Name { get; }

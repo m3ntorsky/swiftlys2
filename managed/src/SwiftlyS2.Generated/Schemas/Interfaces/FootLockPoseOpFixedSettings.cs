@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FootLockPoseOpFixedSettings : ISchemaClass<FootLockPoseOpFixedSettings> {
 
   static FootLockPoseOpFixedSettings ISchemaClass<FootLockPoseOpFixedSettings>.From(nint handle) => new FootLockPoseOpFixedSettingsImpl(handle);
+  static int ISchemaClass<FootLockPoseOpFixedSettings>.Size => 104;
 
   
   // CUtlVector< FootFixedData_t >

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVoiceContainerShapedNoise : CVoiceContainerBase, ISchemaClass<CVoiceContainerShapedNoise> {
 
   static CVoiceContainerShapedNoise ISchemaClass<CVoiceContainerShapedNoise>.From(nint handle) => new CVoiceContainerShapedNoiseImpl(handle);
+  static int ISchemaClass<CVoiceContainerShapedNoise>.Size => 400;
 
   
   public ref bool UseCurveForFrequency { get; }

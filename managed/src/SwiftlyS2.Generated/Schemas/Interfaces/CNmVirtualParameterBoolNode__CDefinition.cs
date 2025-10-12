@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmVirtualParameterBoolNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmVirtualParameterBoolNode__CDefinition> {
 
   static CNmVirtualParameterBoolNode__CDefinition ISchemaClass<CNmVirtualParameterBoolNode__CDefinition>.From(nint handle) => new CNmVirtualParameterBoolNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmVirtualParameterBoolNode__CDefinition>.Size => 24;
 
   
   public ref short ChildNodeIdx { get; }

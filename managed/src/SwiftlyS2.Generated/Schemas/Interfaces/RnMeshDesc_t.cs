@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnMeshDesc_t : RnShapeDesc_t, ISchemaClass<RnMeshDesc_t> {
 
   static RnMeshDesc_t ISchemaClass<RnMeshDesc_t>.From(nint handle) => new RnMeshDesc_tImpl(handle);
+  static int ISchemaClass<RnMeshDesc_t>.Size => 216;
 
   
   public RnMesh_t Mesh { get; }

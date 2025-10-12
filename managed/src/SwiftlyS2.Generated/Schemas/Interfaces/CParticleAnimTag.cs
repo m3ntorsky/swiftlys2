@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleAnimTag : CAnimTagBase, ISchemaClass<CParticleAnimTag> {
 
   static CParticleAnimTag ISchemaClass<CParticleAnimTag>.From(nint handle) => new CParticleAnimTagImpl(handle);
+  static int ISchemaClass<CParticleAnimTag>.Size => 152;
 
   
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ParticleSystem { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Value_RandomFloat : CPulseCell_BaseValue, ISchemaClass<CPulseCell_Value_RandomFloat> {
 
   static CPulseCell_Value_RandomFloat ISchemaClass<CPulseCell_Value_RandomFloat>.From(nint handle) => new CPulseCell_Value_RandomFloatImpl(handle);
+  static int ISchemaClass<CPulseCell_Value_RandomFloat>.Size => 72;
 
 
 

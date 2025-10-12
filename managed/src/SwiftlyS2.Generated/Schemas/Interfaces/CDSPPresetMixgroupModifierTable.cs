@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDSPPresetMixgroupModifierTable : ISchemaClass<CDSPPresetMixgroupModifierTable> {
 
   static CDSPPresetMixgroupModifierTable ISchemaClass<CDSPPresetMixgroupModifierTable>.From(nint handle) => new CDSPPresetMixgroupModifierTableImpl(handle);
+  static int ISchemaClass<CDSPPresetMixgroupModifierTable>.Size => 24;
 
   
   // CUtlVector< CDspPresetModifierList >

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_LockToBone : CParticleFunctionOperator, ISchemaClass<C_OP_LockToBone> {
 
   static C_OP_LockToBone ISchemaClass<C_OP_LockToBone>.From(nint handle) => new C_OP_LockToBoneImpl(handle);
+  static int ISchemaClass<C_OP_LockToBone>.Size => 2824;
 
   
   public CParticleModelInput ModelInput { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_FadeAndKill : CParticleFunctionOperator, ISchemaClass<C_OP_FadeAndKill> {
 
   static C_OP_FadeAndKill ISchemaClass<C_OP_FadeAndKill>.From(nint handle) => new C_OP_FadeAndKillImpl(handle);
+  static int ISchemaClass<C_OP_FadeAndKill>.Size => 480;
 
   
   public ref float StartFadeInTime { get; }

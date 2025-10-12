@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CInfoDeathmatchSpawn : SpawnPoint, ISchemaClass<CInfoDeathmatchSpawn> {
 
   static CInfoDeathmatchSpawn ISchemaClass<CInfoDeathmatchSpawn>.From(nint handle) => new CInfoDeathmatchSpawnImpl(handle);
+  static int ISchemaClass<CInfoDeathmatchSpawn>.Size => 1280;
 
 
 

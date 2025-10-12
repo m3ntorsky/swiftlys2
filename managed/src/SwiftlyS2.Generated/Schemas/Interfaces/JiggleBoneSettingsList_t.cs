@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface JiggleBoneSettingsList_t : ISchemaClass<JiggleBoneSettingsList_t> {
 
   static JiggleBoneSettingsList_t ISchemaClass<JiggleBoneSettingsList_t>.From(nint handle) => new JiggleBoneSettingsList_tImpl(handle);
+  static int ISchemaClass<JiggleBoneSettingsList_t>.Size => 24;
 
   
   // CUtlVector< JiggleBoneSettings_t >

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EntitySpottedState_t : ISchemaClass<EntitySpottedState_t> {
 
   static EntitySpottedState_t ISchemaClass<EntitySpottedState_t>.From(nint handle) => new EntitySpottedState_tImpl(handle);
+  static int ISchemaClass<EntitySpottedState_t>.Size => 24;
 
   
   public ref bool Spotted { get; }

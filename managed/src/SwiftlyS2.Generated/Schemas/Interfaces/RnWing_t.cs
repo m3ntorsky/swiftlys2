@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnWing_t : ISchemaClass<RnWing_t> {
 
   static RnWing_t ISchemaClass<RnWing_t>.From(nint handle) => new RnWing_tImpl(handle);
+  static int ISchemaClass<RnWing_t>.Size => 12;
 
   
   public ISchemaFixedArray<int> Index { get; }

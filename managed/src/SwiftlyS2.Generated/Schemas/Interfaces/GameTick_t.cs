@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface GameTick_t : ISchemaClass<GameTick_t> {
 
   static GameTick_t ISchemaClass<GameTick_t>.From(nint handle) => new GameTick_tImpl(handle);
+  static int ISchemaClass<GameTick_t>.Size => 4;
 
   
   public ref int Value { get; }

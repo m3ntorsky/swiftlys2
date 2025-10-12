@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvSoundscapeProxy : CEnvSoundscape, ISchemaClass<CEnvSoundscapeProxy> {
 
   static CEnvSoundscapeProxy ISchemaClass<CEnvSoundscapeProxy>.From(nint handle) => new CEnvSoundscapeProxyImpl(handle);
+  static int ISchemaClass<CEnvSoundscapeProxy>.Size => 1432;
 
   
   public string MainSoundscapeName { get; set; }

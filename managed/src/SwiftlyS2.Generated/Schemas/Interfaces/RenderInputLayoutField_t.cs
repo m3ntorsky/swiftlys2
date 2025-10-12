@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RenderInputLayoutField_t : ISchemaClass<RenderInputLayoutField_t> {
 
   static RenderInputLayoutField_t ISchemaClass<RenderInputLayoutField_t>.From(nint handle) => new RenderInputLayoutField_tImpl(handle);
+  static int ISchemaClass<RenderInputLayoutField_t>.Size => 76;
 
   
   public string SemanticName { get; set; }

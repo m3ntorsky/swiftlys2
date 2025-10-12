@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDSPMixgroupModifier : ISchemaClass<CDSPMixgroupModifier> {
 
   static CDSPMixgroupModifier ISchemaClass<CDSPMixgroupModifier>.From(nint handle) => new CDSPMixgroupModifierImpl(handle);
+  static int ISchemaClass<CDSPMixgroupModifier>.Size => 32;
 
   
   public string Mixgroup { get; set; }

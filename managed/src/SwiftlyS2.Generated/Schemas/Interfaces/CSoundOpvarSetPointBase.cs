@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSoundOpvarSetPointBase : CBaseEntity, ISchemaClass<CSoundOpvarSetPointBase> {
 
   static CSoundOpvarSetPointBase ISchemaClass<CSoundOpvarSetPointBase>.From(nint handle) => new CSoundOpvarSetPointBaseImpl(handle);
+  static int ISchemaClass<CSoundOpvarSetPointBase>.Size => 1432;
 
   
   public ref bool Disabled { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCVPhysXSurfacePropertiesList : ISchemaClass<InfoForResourceTypeCVPhysXSurfacePropertiesList> {
 
   static InfoForResourceTypeCVPhysXSurfacePropertiesList ISchemaClass<InfoForResourceTypeCVPhysXSurfacePropertiesList>.From(nint handle) => new InfoForResourceTypeCVPhysXSurfacePropertiesListImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCVPhysXSurfacePropertiesList>.Size => 1;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRagdollManager : CBaseEntity, ISchemaClass<CRagdollManager> {
 
   static CRagdollManager ISchemaClass<CRagdollManager>.From(nint handle) => new CRagdollManagerImpl(handle);
+  static int ISchemaClass<CRagdollManager>.Size => 1280;
 
   
   public ref byte CurrentMaxRagdollCount { get; }

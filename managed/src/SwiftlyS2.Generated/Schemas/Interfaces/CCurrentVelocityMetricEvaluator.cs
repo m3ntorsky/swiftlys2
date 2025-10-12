@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCurrentVelocityMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CCurrentVelocityMetricEvaluator> {
 
   static CCurrentVelocityMetricEvaluator ISchemaClass<CCurrentVelocityMetricEvaluator>.From(nint handle) => new CCurrentVelocityMetricEvaluatorImpl(handle);
+  static int ISchemaClass<CCurrentVelocityMetricEvaluator>.Size => 80;
 
 
 

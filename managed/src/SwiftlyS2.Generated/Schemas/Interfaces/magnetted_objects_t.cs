@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface magnetted_objects_t : ISchemaClass<magnetted_objects_t> {
 
   static magnetted_objects_t ISchemaClass<magnetted_objects_t>.From(nint handle) => new magnetted_objects_tImpl(handle);
+  static int ISchemaClass<magnetted_objects_t>.Size => 16;
 
   
   public ref CHandle<CBaseEntity> Entity { get; }

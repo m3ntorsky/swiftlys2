@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseServerFuncs_Sounds : ISchemaClass<CPulseServerFuncs_Sounds> {
 
   static CPulseServerFuncs_Sounds ISchemaClass<CPulseServerFuncs_Sounds>.From(nint handle) => new CPulseServerFuncs_SoundsImpl(handle);
+  static int ISchemaClass<CPulseServerFuncs_Sounds>.Size => 1;
 
 
 

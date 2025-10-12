@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface WorldNodeOnDiskBufferData_t : ISchemaClass<WorldNodeOnDiskBufferData_t> {
 
   static WorldNodeOnDiskBufferData_t ISchemaClass<WorldNodeOnDiskBufferData_t>.From(nint handle) => new WorldNodeOnDiskBufferData_tImpl(handle);
+  static int ISchemaClass<WorldNodeOnDiskBufferData_t>.Size => 56;
 
   
   public ref int ElementCount { get; }

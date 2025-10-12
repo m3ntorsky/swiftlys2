@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseTestFuncs_LibraryA : ISchemaClass<CPulseTestFuncs_LibraryA> {
 
   static CPulseTestFuncs_LibraryA ISchemaClass<CPulseTestFuncs_LibraryA>.From(nint handle) => new CPulseTestFuncs_LibraryAImpl(handle);
+  static int ISchemaClass<CPulseTestFuncs_LibraryA>.Size => 1;
 
 
 

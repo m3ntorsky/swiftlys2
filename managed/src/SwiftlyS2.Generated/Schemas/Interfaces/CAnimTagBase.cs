@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimTagBase : ISchemaClass<CAnimTagBase> {
 
   static CAnimTagBase ISchemaClass<CAnimTagBase>.From(nint handle) => new CAnimTagBaseImpl(handle);
+  static int ISchemaClass<CAnimTagBase>.Size => 80;
 
   
   public ref CGlobalSymbol Name { get; }
