@@ -462,6 +462,7 @@ bool Configuration::Load()
 
         RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "CommandPrefixes", { "!" }, true, " ");
         RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "CommandSilentPrefixes", { "/" }, true, " ");
+        RegisterConfiguration(wasEdited, config_json, "core", "core", "ConsoleFilter", true);
         RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "PatchesToPerform", {}, true, " ");
 
         if (g_SwiftlyCore.GetCurrentGame() == "cs2") RegisterConfiguration(wasEdited, config_json, "core", "core", "CS2ServerGuidelines", "https://blog.counter-strike.net/index.php/server_guidelines/");

@@ -59,8 +59,10 @@ internal class SwiftlyLogger : ILogger
     {
       FileLogger.Log($"{_contextName} | {timestamp} | {level} | {_categoryName}{id} | {message}");
       var lines = message.Split('\n');
-      foreach (var line in lines)
+      for (int i = 0; i < lines.Length; i++)
       {
+        var line = lines[i];
+        if (i == lines.Length - 1 && line == "") break;
         AnsiConsole.MarkupLineInterpolated($"[lightsteelblue1 bold]{_contextName}[/] [lightsteelblue]|[/] [grey85]{line}[/]");
       }
     }

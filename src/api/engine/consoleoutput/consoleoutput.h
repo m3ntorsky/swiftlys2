@@ -16,30 +16,27 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_api_extensions_plugin_h
-#define src_api_extensions_plugin_h
+#ifndef src_api_engine_confilter_confilter_h
+#define src_api_engine_confilter_confilter_h
 
 #include <string>
-#include <api/dll/extern.h>
+#include <functional>
+#include <cstdint>
 
-class IExtensionPlugin
+class IConsoleOutput
 {
 public:
-    virtual bool Load(std::string& error) = 0;
-    virtual bool Unload(std::string& error) = 0;
-    virtual void AllExtensionsLoaded() = 0;
-    virtual void AllPluginsLoaded() = 0;
+    virtual void Initialize() = 0;
+    virtual void Shutdown() = 0;
 
-    virtual bool OnPluginLoad(std::string pluginName, std::string& error) = 0;
-    virtual bool OnPluginUnload(std::string pluginName, std::string& error) = 0;
+    virtual void ReloadFilterConfiguration() = 0;
+    virtual void ToggleFilter() = 0;
+    virtual bool IsEnabled() = 0;
+    virtual bool NeedsFiltering(const std::string& text) = 0;
+    virtual std::string GetCounterText() = 0;
 
-    virtual const char* GetAuthor() = 0;
-    virtual const char* GetName() = 0;
-    virtual const char* GetVersion() = 0;
-    virtual const char* GetWebsite() = 0;
+    virtual uint64_t AddConsoleListener(std::function<void(const std::string&)> callback) = 0;
+    virtual void RemoveConsoleListener(uint64_t id) = 0;
 };
-
-#define EXT_EXPOSE(var) \
-    SW_API IExtensionPlugin *GetExtensionClass() { return &var; }
 
 #endif

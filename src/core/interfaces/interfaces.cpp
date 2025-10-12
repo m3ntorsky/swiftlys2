@@ -19,8 +19,7 @@
 #include <api/interfaces/interfaces.h>
 #include <core/entrypoint.h>
 
-#include <core/extensions/manager.h>
-
+#include <engine/consoleoutput/consoleoutput.h>
 #include <engine/convars/convars.h>
 #include <engine/entities/entitysystem.h>
 #include <engine/gameevents/gameevents.h>
@@ -49,7 +48,6 @@
 
 #include <map>
 
-ExtensionManager g_ExtensionsManager;
 Logger g_Logger;
 MemoryAllocator g_MemoryAllocator;
 CrashReporter g_CrashReporter;
@@ -69,9 +67,9 @@ CTranslations g_Translations;
 CServerCommands g_ServerCommands;
 CNetMessages g_NetMessages;
 CVGUI g_VGUI;
+CConsoleOutput g_ConsoleOutput;
 
 static const std::map<std::string, void*> g_Interfaces = {
-    {EXTENSIONMANAGER_INTERFACE_VERSION, &g_ExtensionsManager},
     {LOGGER_INTERFACE_VERSION, &g_Logger},
     {MEMORYALLOCATOR_INTERFACE_VERSION, &g_MemoryAllocator},
     {CRASHREPORTER_INTERFACE_VERSION, &g_CrashReporter},
@@ -91,6 +89,7 @@ static const std::map<std::string, void*> g_Interfaces = {
     {SERVERCOMMANDS_INTERFACE_VERSION, &g_ServerCommands},
     {NETMESSAGES_INTERFACE_VERSION, &g_NetMessages},
     {VGUI_INTERFACE_VERSION, &g_VGUI},
+    {CONSOLEOUTPUT_INTERFACE_VERSION, &g_ConsoleOutput},
 };
 
 SW_API void* GetPureInterface(const char* iface_name)

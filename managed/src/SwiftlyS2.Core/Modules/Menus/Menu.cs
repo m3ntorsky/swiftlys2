@@ -16,7 +16,7 @@ internal class Menu : IMenu
     public IMenu? ParentMenu { get; set; } = null;
     public bool CanExit { get; set; } = true;
     public MenuType Kind { get; set; } = MenuType.CenterMenu;
-    public Color Color { get; set; }
+    public Color Color { get; set; } = new(255, 255, 255);
     public IMenuManager? Manager { get; set; } = null;
     public string? RenderText { get; private set; } = null;
     public int CurrentIndex { get; set; } = 0;
@@ -89,10 +89,12 @@ internal class Menu : IMenu
 
     private string RenderMenuItem(IMenuOption option, int originalIdx, string colHex)
     {
+        var prefix = Manager!.Settings.NavigationPrefix;
+
+        if (originalIdx == CurrentIndex && option.Disabled) return $"<font class='fontSize-m'>{prefix} {option.Display}</font>";
         if (option.Disabled) return $"<font color='grey' class='fontSize-m'>{option.Display}</font>";
         if (originalIdx != CurrentIndex) return $"<font class='fontSize-m'>{option.Display}</font>";
 
-        var prefix = Manager!.Settings.InputMode == "chat" ? $"!{originalIdx - CurrentIndex + 1} -" : Manager.Settings.NavigationPrefix;
         var displayText = option.Type == OptionType.Input && Manager.HasInputState(Manager.GetPlayerFromMenu(this)!) ? $"[ {option.Display} ]" : option.Display;
 
         return $"<font color='{colHex}' class='fontSize-m'>{prefix} {displayText}</font>";

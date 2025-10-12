@@ -161,8 +161,6 @@ jobs:
         cp -r managed/SwiftlyS2 ${{ env.LINUX_FOLDER }}/swiftlys2/bin/managed
         cp -r managed/SwiftlyS2 ${{ env.WINDOWS_FOLDER }}/swiftlys2/bin/managed
 
-        mkdir -p ${{ env.LINUX_FOLDER }}/swiftlys2/extensions/linuxsteamrt64
-        mkdir -p ${{ env.WINDOWS_FOLDER }}/swiftlys2/extensions/win64
         mkdir -p ${{ env.LINUX_FOLDER }}/swiftlys2/plugins/
         mkdir -p ${{ env.WINDOWS_FOLDER }}/swiftlys2/plugins/
 

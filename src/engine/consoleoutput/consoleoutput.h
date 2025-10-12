@@ -16,28 +16,27 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef src_api_extensions_extension_h
-#define src_api_extensions_extension_h
+#ifndef src_engine_consoleoutput_consoleoutput_h
+#define src_engine_consoleoutput_consoleoutput_h
 
-#include <string>
+#include <api/engine/consoleoutput/consoleoutput.h>
 
-#include "plugin.h"
+#include <map>
 
-class IExtension
+class CConsoleOutput : public IConsoleOutput
 {
 public:
-    virtual std::string& GetName() = 0;
-    virtual bool IsLoaded() = 0;
+    virtual void Initialize() override;
+    virtual void Shutdown() override;
 
-    virtual void* GetExportedFunction(std::string& name) = 0;
+    virtual void ReloadFilterConfiguration() override;
+    virtual void ToggleFilter() override;
+    virtual bool IsEnabled() override;
+    virtual bool NeedsFiltering(const std::string& text) override;
+    virtual std::string GetCounterText() override;
 
-    virtual std::string& GetError() = 0;
-    virtual bool& HasError() = 0;
-
-    virtual bool Load() = 0;
-    virtual bool Unload() = 0;
-
-    virtual IExtensionPlugin* GetAPI() = 0;
+    virtual uint64_t AddConsoleListener(std::function<void(const std::string&)> callback) override;
+    virtual void RemoveConsoleListener(uint64_t id) override;
 };
 
 #endif

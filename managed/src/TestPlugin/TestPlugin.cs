@@ -38,27 +38,7 @@ public class TestPlugin : BasePlugin
 
   public TestPlugin(ISwiftlyCore core) : base(core)
   {
-    var memobj = core.Memory.GetUnmanagedMemoryByAddress(core.GameData.GetSignature("CBaseEntity::DispatchSpawn"));
-    memobj.AddHook((ref MidHookContext ctx) =>
-    {
-      Console.WriteLine($"MidHooked DispatchSpawn, RBX: {ctx.RBX}");
-    });
-    memobj.AddHook((ref MidHookContext ctx) =>
-    {
-      Console.WriteLine($"MidHooked2 DispatchSpawn, RBX: {ctx.RBX}");
-    });
-    memobj.AddHook((ref MidHookContext ctx) =>
-    {
-      Console.WriteLine($"MidHooked3 DispatchSpawn, RBX: {ctx.RBX}");
-    });
-    memobj.AddHook((ref MidHookContext ctx) =>
-    {
-      Console.WriteLine($"MidHooked4 DispatchSpawn, RBX: {ctx.RBX}");
-    });
-    memobj.AddHook((ref MidHookContext ctx) =>
-    {
-      Console.WriteLine($"MidHooked5 DispatchSpawn, RBX: {ctx.RBX}");
-    });
+    Console.WriteLine("[TestPlugin] TestPlugin constructed successfully!");
   }
 
   public override void ConfigureSharedInterface(IInterfaceManager interfaceManager)
@@ -77,10 +57,19 @@ public class TestPlugin : BasePlugin
 
   IOptionsMonitor<TestConfig> _config;
 
+  [Command("sound")]
+  public void SoundCommand(ICommandContext context)
+  {
+    using var se = new SoundEvent();
+    se.Name = "MVP_ProtectionCharm";
+    se.Volume = 0.6f;
+    se.SourceEntityIndex = (int)context.Sender!.Pawn!.Index;
+    se.Recipients.AddAllPlayers();
+    se.Emit();
+  }
+
   public override void Load(bool hotReload)
   {
-
-
     Core.GameEvent.HookPre<EventShowSurvivalRespawnStatus>(@event =>
     {
       @event.LocToken = "test";
@@ -98,6 +87,11 @@ public class TestPlugin : BasePlugin
 
     services
       .AddSwiftly(Core);
+
+    Core.Event.OnPrecacheResource += (@event) =>
+    {
+      @event.AddItem("soundevents/mvp_anthem.vsndevts");
+    };
 
 
     // var provider = services.BuildServiceProvider();
@@ -365,9 +359,7 @@ public class TestPlugin : BasePlugin
   [Command("menu")]
   public void MenuCommand(ICommandContext context)
   {
-    var menu = Core.Menus.CreateMenu("Test Menu", false, true, true);
-
-    menu.Color = new(0, 255, 0);
+    var menu = Core.Menus.CreateMenu(Core.Localizer["hello"], true, true, true);
 
     menu.AddBoolOption("Test Bool", true, (player, option, menu) =>
     {

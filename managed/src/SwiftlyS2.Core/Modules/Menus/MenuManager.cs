@@ -4,6 +4,7 @@ using SwiftlyS2.Shared.Menus;
 using SwiftlyS2.Shared.Players;
 using SwiftlyS2.Shared.Services;
 using SwiftlyS2.Shared.Scheduler;
+using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Core.Menus;
 
@@ -41,6 +42,32 @@ internal class MenuManager : IMenuManager
             SoundExitVolume = float.Parse(parts[10], CultureInfo.InvariantCulture),
             ItemsPerPage = int.Parse(parts[11]),
         };
+
+        OnMenuOpened += (IPlayer player, IMenu menu) =>
+        {
+            var pawn = player.Pawn;
+            if (pawn == null) return;
+
+            if (menu.FreezePlayer == true)
+            {
+                pawn.MoveType = MoveType_t.MOVETYPE_INVALID;
+                pawn.ActualMoveType = MoveType_t.MOVETYPE_INVALID;
+                pawn.MoveTypeUpdated();
+            }
+        };
+
+        OnMenuClosed += (IPlayer player, IMenu menu) =>
+        {
+            var pawn = player.Pawn;
+            if (pawn == null) return;
+
+            if (menu.FreezePlayer == true)
+            {
+                pawn.MoveType = MoveType_t.MOVETYPE_WALK;
+                pawn.ActualMoveType = MoveType_t.MOVETYPE_WALK;
+                pawn.MoveTypeUpdated();
+            }
+        };
     }
 
     public void CloseMenu(IPlayer player)
@@ -63,6 +90,7 @@ internal class MenuManager : IMenuManager
                 {
                     OpenMenus[player] = activeMenu;
                     OnMenuOpened?.Invoke(player, activeMenu);
+                    RenderForPlayer(player);
                 }
                 else
                 {
@@ -178,6 +206,7 @@ internal class MenuManager : IMenuManager
 
         OpenMenus[player] = menu;
         OnMenuOpened?.Invoke(player, menu);
+        RenderForPlayer(player);
 
         if (autoCloseDelay >= 1f / 64f)
         {
