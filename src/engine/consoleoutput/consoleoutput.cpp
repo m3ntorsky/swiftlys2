@@ -143,6 +143,8 @@ bool CConsoleOutput::NeedsFiltering(const std::string& text)
 
         pcre2_match_data_free(match_data);
     }
+
+    return false;
 }
 
 std::string CConsoleOutput::GetCounterText()
