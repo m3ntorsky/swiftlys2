@@ -32,15 +32,24 @@ internal class Player : IPlayer
 
     public ulong UnauthorizedSteamID => NativePlayer.GetUnauthorizedSteamID(_pid);
 
-    public CCSPlayerController Controller => new CCSPlayerControllerImpl(NativePlayer.GetController(_pid));
+    // "System.NullReferenceException" fuck you c# literally i received that when the controller wasn't nullable
+    // now stay nullable for the rest of your life
+    public CCSPlayerController? Controller
+    {
+        get
+        {
+            nint controllerId = NativePlayer.GetController(_pid);
+            return controllerId != IntPtr.Zero ? new CCSPlayerControllerImpl(controllerId) : null;
+        }
+    }
 
     public CCSPlayerController RequiredController => Controller is { IsValid: true } controller ? controller : throw new InvalidOperationException("Controller is not valid");
 
-    public CBasePlayerPawn? Pawn => Controller.Pawn.Value;
+    public CBasePlayerPawn? Pawn => Controller?.Pawn.Value;
 
     public CBasePlayerPawn RequiredPawn => Pawn is { IsValid: true } pawn ? pawn : throw new InvalidOperationException("Pawn is not valid");
 
-    public CCSPlayerPawn? PlayerPawn => Controller.PlayerPawn.Value;
+    public CCSPlayerPawn? PlayerPawn => Controller?.PlayerPawn.Value;
 
     public CCSPlayerPawn RequiredPlayerPawn => PlayerPawn is { IsValid: true } pawn ? pawn : throw new InvalidOperationException("PlayerPawn is not valid");
 
@@ -50,8 +59,8 @@ internal class Player : IPlayer
 
     public VoiceFlagValue VoiceFlags { get => (VoiceFlagValue)NativeVoiceManager.GetClientVoiceFlags(_pid); set => NativeVoiceManager.SetClientVoiceFlags(_pid, (int)value); }
 
-    public bool IsValid => 
-        Controller is { IsValid: true, IsHLTV: false, Connected: PlayerConnectedState.PlayerConnected } && 
+    public bool IsValid =>
+        Controller is { IsValid: true, IsHLTV: false, Connected: PlayerConnectedState.PlayerConnected } &&
         Pawn is { IsValid: true };
 
     Language IPlayer.PlayerLanguage => PlayerLanguage;

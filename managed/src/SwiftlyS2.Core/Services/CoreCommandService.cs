@@ -57,7 +57,7 @@ GitHub: https://github.com/swiftly-solution/swiftlys2");
           var outString = $"Connected players: {_Core.PlayerManager.PlayerCount}/{_Core.Engine.MaxPlayers}";
           foreach (var player in players)
           {
-            outString += $"\n{player.PlayerID}. {player.Controller.PlayerName}{(player.IsFakeClient ? " (BOT)" : "")} (steamid={player.SteamID})";
+            outString += $"\n{player.PlayerID}. {player.Controller?.PlayerName}{(player.IsFakeClient ? " (BOT)" : "")} (steamid={player.SteamID})";
           }
           _Logger.LogInformation(outString);
           break;
