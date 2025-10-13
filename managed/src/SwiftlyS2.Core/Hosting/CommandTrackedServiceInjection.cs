@@ -1,5 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using SwiftlyS2.Core.Modules.Engine;
+using SwiftlyS2.Shared;
+using SwiftlyS2.Shared.Events;
 
 namespace SwiftlyS2.Core.Hosting;
 
@@ -7,7 +9,11 @@ internal static class CommandTrackedServiceInjection
 {
   public static IServiceCollection AddCommandTrackedService(this IServiceCollection self)
   {
-    return self.AddSingleton<CommandTrackedService>();
+    return self.AddSingleton<CommandTrackedService>(provider =>
+    {
+      var swiftlyCore = provider.GetRequiredService<ISwiftlyCore>();
+      return new CommandTrackedService(swiftlyCore.Event);
+    });
   }
 
   public static void UseCommandTrackedService(this IServiceProvider self)
