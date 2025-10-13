@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Events;
 using SwiftlyS2.Core.Natives;
@@ -17,9 +18,37 @@ internal class CoreHookService : IDisposable {
     _Core = core;
   
     HookCanAcquire();
+    HookCommandExecute();
   }
 
   private delegate int CanAcquireDelegate(nint pItemServices, nint pEconItemView, nint acquireMethod, nint unk1);
+  /*
+    Original function in engine2.dll: __int64 sub_1C0CD0(__int64 a1, int a2, unsigned int a3, ...)
+    This is a variadic function, but we only need the first two variable arguments (v55, v57)
+
+    __int64 sub_1C0CD0(__int64 a1, int a2, unsigned int a3, ...)
+    {
+        ...
+        
+        va_list va; // [rsp+D28h] [rbp+D28h]
+        __int64 v55; // [rsp+E28h] [rbp+D28h] BYREF
+        va_list va1; // [rsp+E28h] [rbp+D28h]
+
+        ...
+
+        va_start(va1, a3);
+        va_start(va, a3);
+        v55 = va_arg(va1, _QWORD);
+        v57 = va_arg(va1, _QWORD);
+
+        ...
+    }
+
+    So we model it as a fixed 5-parameter function for interop purposes
+  */
+  private delegate nint ExecuteCommandDelegate(nint a1, int a2, uint a3, nint a4, nint a5);
+  private IUnmanagedFunction<ExecuteCommandDelegate>? _ExecuteCommand;
+  private Guid _ExecuteCommandGuid;
   private IUnmanagedFunction<CanAcquireDelegate>? _CanAcquire;
   private Guid _CanAcquireGuid;
 
@@ -58,7 +87,42 @@ internal class CoreHookService : IDisposable {
     });
   }
 
+  private void HookCommandExecute() {
+
+    var address = _Core.GameData.GetSignature("Cmd_ExecuteCommand");
+
+    _Logger.LogInformation("Hooking Cmd_ExecuteCommand at {Address}", address);
+    var commandNameOffset = NativeOffsets.Fetch("CommandNameOffset");
+
+    _ExecuteCommand = _Core.Memory.GetUnmanagedFunctionByAddress<ExecuteCommandDelegate>(address);
+    _ExecuteCommandGuid = _ExecuteCommand.AddHook((next) =>
+    {
+      return (a1, a2, a3, a4, a5) =>
+      {
+        var commandName = (a5 != nint.Zero && a5 < nint.MaxValue && commandNameOffset != 0) switch {
+          true when Marshal.ReadIntPtr(new nint(a5 + commandNameOffset)) is var basePtr && basePtr != nint.Zero && basePtr < nint.MaxValue
+            => Marshal.PtrToStringAnsi(Marshal.ReadIntPtr(basePtr)),
+          _ => null
+        } ?? string.Empty;
+
+        var @event = new OnCommandExecuteHookEvent {
+          CommandName = commandName,
+          HookMode = HookMode.Pre
+        };
+        EventPublisher.InvokeOnCommandExecuteHook(@event);
+
+        var result = next()(a1, a2, a3, a4, a5);
+        
+        @event.HookMode = HookMode.Post;
+        EventPublisher.InvokeOnCommandExecuteHook(@event);
+        
+        return result;
+      };
+    });
+  }
+
   public void Dispose() {
     _CanAcquire!.RemoveHook(_CanAcquireGuid);
+    _ExecuteCommand!.RemoveHook(_ExecuteCommandGuid);
   }
 }

@@ -70,14 +70,19 @@ public class TestPlugin : BasePlugin
 
   public override void Load(bool hotReload)
   {
-    // var consoleListenerId = Core.ConsoleOutput.RegisterConsoleOutputListener((message) =>
-    // {
-    //   Core.Logger.LogInformation($"message: {message}");
-    // });
-    Core.Engine.ExecuteCommandWithBuffer("@ping", (buffer) =>
+    Core.Event.OnConsoleOutput += (@event) =>
     {
-      Console.WriteLine($"pong: {buffer}");
-    });
+      Console.WriteLine($"[TestPlugin] ConsoleOutput: {@event.Message}");
+    };
+
+    Core.Event.OnCommandExecuteHook += (@event) =>
+    {
+      Console.WriteLine($"[TestPlugin] CommandExecute({@event.HookMode}): {@event.CommandName}");
+    };
+    // Core.Engine.ExecuteCommandWithBuffer("@ping", (buffer) =>
+    // {
+    //   Console.WriteLine($"pong: {buffer}");
+    // });
 
     Core.GameEvent.HookPre<EventShowSurvivalRespawnStatus>(@event =>
     {

@@ -14,33 +14,6 @@ namespace SwiftlyS2.Core.Modules.Engine;
 
 internal sealed class CommandTracked : IDisposable
 {
-    /*
-    Original function in engine2.dll: __int64 sub_1C0CD0(__int64 a1, int a2, unsigned int a3, ...)
-    This is a variadic function, but we only need the first two variable arguments (v55, v57)
-
-    __int64 sub_1C0CD0(__int64 a1, int a2, unsigned int a3, ...)
-    {
-        ...
-        
-        va_list va; // [rsp+D28h] [rbp+D28h]
-        __int64 v55; // [rsp+E28h] [rbp+D28h] BYREF
-        va_list va1; // [rsp+E28h] [rbp+D28h]
-
-        ...
-
-        va_start(va1, a3);
-        va_start(va, a3);
-        v55 = va_arg(va1, _QWORD);
-        v57 = va_arg(va1, _QWORD);
-
-        ...
-    }
-
-    So we model it as a fixed 5-parameter function for interop purposes
-    */
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    private delegate nint ExecuteCommandDelegate(nint a1, int a2, uint a3, nint a4, nint a5);
-
     private sealed record CommandIdContainer(Guid Value)
     {
         public static readonly CommandIdContainer Empty = new(Guid.Empty);
@@ -61,13 +34,6 @@ internal sealed class CommandTracked : IDisposable
     private readonly IConsoleOutputService consoleOutputService;
     private readonly IGameDataService gameDataService;
     private volatile CommandIdContainer currentCommandContainer;
-    private volatile bool hooksInitialized;
-    private readonly object initializationLock = new();
-    private static readonly object commandNameOffsetLock = new();
-    private Guid hookId;
-    private Guid outputListenerId;
-    private IUnmanagedFunction<ExecuteCommandDelegate>? executeCommandHook;
-    private static int commandNameOffset = 0;
 
     public CommandTracked(ISwiftlyCore swiftlyCore)
     {
@@ -78,87 +44,38 @@ internal sealed class CommandTracked : IDisposable
         activeCommands = new ConcurrentDictionary<Guid, ExecutingCommand>();
         cancellationTokenSource = new CancellationTokenSource();
         currentCommandContainer = CommandIdContainer.Empty;
-        lock (commandNameOffsetLock)
-        {
-            if (commandNameOffset == 0)
-            {
-                commandNameOffset = NativeOffsets.Fetch("CommandNameOffset");
-            }
-        }
 
         StartCleanupTimer();
     }
 
-    private void EnsureHooksInitialized()
-    {
-        if (hooksInitialized || gameDataService == null) return;
-
-        lock (initializationLock)
-        {
-            if (hooksInitialized) return;
-
-
-            var signature = gameDataService.GetSignature("Cmd_ExecuteCommand");
-            if (signature == nint.Zero) return;
-
-            executeCommandHook = memoryService.GetUnmanagedFunctionByAddress<ExecuteCommandDelegate>(signature);
-            hookId = executeCommandHook.AddHook((next) =>
-            {
-                return (a1, a2, a3, a4, a5) =>
-                {
-                    ProcessCommandStart(a5);
-                    var result = next()(a1, a2, a3, a4, a5);
-                    ProcessCommandEnd();
-                    return result;
-                };
-            });
-
-            outputListenerId = consoleOutputService.RegisterConsoleOutputListener((message) =>
-            {
-                if (disposed) return;
-
-                var commandId = currentCommandContainer?.Value ?? Guid.Empty;
-                if (commandId == Guid.Empty) return;
-
-                if (activeCommands.TryGetValue(commandId, out var command) && command.Output.Count < 100)
-                {
-                    command.Output.Enqueue(message);
-                }
-            });
-
-            Thread.MemoryBarrier();
-            hooksInitialized = true;
-        }
-    }
-
     private void ProcessCommandStart(nint a5)
     {
-        var commandNamePtr = GetCommandNamePointer(a5);
-        if (commandNamePtr == nint.Zero) return;
+        // var commandNamePtr = GetCommandNamePointer(a5);
+        // if (commandNamePtr == nint.Zero) return;
 
-        var commandStr = Marshal.PtrToStringAnsi(commandNamePtr);
-        if (string.IsNullOrEmpty(commandStr) || !commandStr.Contains("^wb^"))
-        {
-            Interlocked.Exchange(ref currentCommandContainer, CommandIdContainer.Empty);
-            return;
-        }
+        // var commandStr = Marshal.PtrToStringAnsi(commandNamePtr);
+        // if (string.IsNullOrEmpty(commandStr) || !commandStr.Contains("^wb^"))
+        // {
+        //     Interlocked.Exchange(ref currentCommandContainer, CommandIdContainer.Empty);
+        //     return;
+        // }
 
-        if (pendingCallbacks.TryDequeue(out var callback))
-        {
-            var newCommandId = Guid.NewGuid();
-            var newCommand = new ExecutingCommand(callback);
+        // if (pendingCallbacks.TryDequeue(out var callback))
+        // {
+        //     var newCommandId = Guid.NewGuid();
+        //     var newCommand = new ExecutingCommand(callback);
 
-            if (activeCommands.TryAdd(newCommandId, newCommand))
-            {
-                var newContainer = new CommandIdContainer(newCommandId);
-                Interlocked.Exchange(ref currentCommandContainer, newContainer);
-                CleanCommandName(commandNamePtr, commandStr);
-            }
-        }
-        else
-        {
-            Interlocked.Exchange(ref currentCommandContainer, CommandIdContainer.Empty);
-        }
+        //     if (activeCommands.TryAdd(newCommandId, newCommand))
+        //     {
+        //         var newContainer = new CommandIdContainer(newCommandId);
+        //         Interlocked.Exchange(ref currentCommandContainer, newContainer);
+        //         CleanCommandName(commandNamePtr, commandStr);
+        //     }
+        // }
+        // else
+        // {
+        //     Interlocked.Exchange(ref currentCommandContainer, CommandIdContainer.Empty);
+        // }
     }
 
     private void ProcessCommandEnd()
@@ -180,15 +97,6 @@ internal sealed class CommandTracked : IDisposable
                 command.Callback?.Invoke(output.ToString());
             });
         }
-    }
-
-    private static nint GetCommandNamePointer(nint a5)
-    {
-        if (a5 == nint.Zero || a5 >= nint.MaxValue || commandNameOffset == 0) return nint.Zero;
-        var basePtr = Marshal.ReadIntPtr(new nint(a5 + commandNameOffset));
-
-        if (basePtr == nint.Zero || basePtr >= nint.MaxValue) return nint.Zero;
-        return Marshal.ReadIntPtr(basePtr);
     }
 
     private static void CleanCommandName(nint commandPtr, string commandStr)
@@ -236,8 +144,6 @@ internal sealed class CommandTracked : IDisposable
     {
         if (disposed || callback == null) return;
 
-        EnsureHooksInitialized();
-
         pendingCallbacks.Enqueue(callback);
     }
 
@@ -247,8 +153,8 @@ internal sealed class CommandTracked : IDisposable
         disposed = true;
 
         cancellationTokenSource.Cancel();
-        executeCommandHook?.RemoveHook(hookId);
-        consoleOutputService.UnregisterConsoleOutputListener(outputListenerId);
+        // executeCommandHook?.RemoveHook(hookId);
+        // consoleOutputService.UnregisterConsoleOutputListener(outputListenerId);
 
         while (pendingCallbacks.TryDequeue(out _)) { }
         activeCommands.Clear();

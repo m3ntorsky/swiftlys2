@@ -91,4 +91,14 @@ public class EventDelegates {
   /// Called when an item services can acquire hook is triggered.
   /// </summary>
   public delegate void OnItemServicesCanAcquireHook(IOnItemServicesCanAcquireHookEvent @event);
+
+  /// <summary>
+  /// Called when a console output is received.
+  /// </summary>
+  public delegate void OnConsoleOutput(IOnConsoleOutputEvent @event);
+
+  /// <summary>
+  /// Called when a command is executed.
+  /// </summary>
+  public delegate void OnCommandExecuteHook(IOnCommandExecuteHookEvent @event);
 }
