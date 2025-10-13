@@ -8,18 +8,17 @@ namespace SwiftlyS2.Core.Services;
 internal class StartupService : IHostedService
 {
 
-  private IServiceProvider _provider;
-  private CommandTracked _commandTracked;
+  private readonly IServiceProvider _provider;
 
-  public StartupService(IServiceProvider provider, CommandTracked commandTracked)
+  public StartupService(IServiceProvider provider)
   {
     _provider = provider;
-    _commandTracked = commandTracked;
     provider.UseCoreCommandService();
     provider.UseCoreHookService();
     provider.UsePermissionManager();
     provider.UsePluginManager();
     provider.UseMenuService();
+    provider.UseCommandTrackedService();
     // provider.UseTestService();
   }
 

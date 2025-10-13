@@ -75,15 +75,15 @@ public class TestPlugin : BasePlugin
     //   Console.WriteLine($"[TestPlugin] ConsoleOutput: {@event.Message}");
     // };
 
-    Core.Event.OnCommandExecuteHook += (@event) =>
-    {
-      Console.WriteLine($"[TestPlugin] CommandExecute({@event.HookMode}): {@event.OriginalName}");
-      @event.SetCommandName("test");
-    };
-    // Core.Engine.ExecuteCommandWithBuffer("@ping", (buffer) =>
+    // Core.Event.OnCommandExecuteHook += (@event) =>
     // {
-    //   Console.WriteLine($"pong: {buffer}");
-    // });
+    //   Console.WriteLine($"[TestPlugin] CommandExecute({@event.HookMode}): {@event.OriginalName}");
+    //   @event.SetCommandName("test");
+    // };
+    Core.Engine.ExecuteCommandWithBuffer("@ping", (buffer) =>
+    {
+      Console.WriteLine($"pong: {buffer}");
+    });
 
     Core.GameEvent.HookPre<EventShowSurvivalRespawnStatus>(@event =>
     {
