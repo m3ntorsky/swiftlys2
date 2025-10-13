@@ -81,5 +81,9 @@
     "CCSPlayer_WeaponServices::SelectWeapon": {
         "windows": 25,
         "linux": 26
+    },
+    "CommandNameOffset": {
+        "windows": 1088,
+        "linux": 1088
     }
 }

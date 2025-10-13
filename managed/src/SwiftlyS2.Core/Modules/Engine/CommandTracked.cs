@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Runtime.InteropServices;
 using SwiftlyS2.Shared;
+using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Memory;
 using SwiftlyS2.Shared.Services;
 using SwiftlyS2.Shared.ConsoleOutput;
@@ -57,9 +58,7 @@ internal sealed class CommandTracked : IDisposable
         {
             if (commandNameOffset == 0)
             {
-                var baseAddress = gameDataService.GetSignature("CommandNameOffset");
-                commandNameOffset = baseAddress == nint.Zero ? 0 : (int)(memoryService.ResolveXrefAddress(baseAddress) - baseAddress - 7);
-                commandNameOffset = Math.Max(commandNameOffset, 0);
+                commandNameOffset = NativeOffsets.Fetch("CommandNameOffset");
             }
         }
 
