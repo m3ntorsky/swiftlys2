@@ -67,7 +67,7 @@ public interface IPlayer : IEquatable<IPlayer>
     /// <summary>
     /// Gets the player controller associated with the player.
     /// </summary>
-    public CCSPlayerController? Controller { get; }
+    public CCSPlayerController Controller { get; }
     /// <summary>
     /// Gets the player controller associated with the player. Requires the controller to be valid.
     /// <exception cref="InvalidOperationException">Thrown when the controller is not valid.</exception>

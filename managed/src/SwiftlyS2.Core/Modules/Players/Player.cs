@@ -32,16 +32,7 @@ internal class Player : IPlayer
 
     public ulong UnauthorizedSteamID => NativePlayer.GetUnauthorizedSteamID(_pid);
 
-    // "System.NullReferenceException" fuck you c# literally i received that when the controller wasn't nullable
-    // now stay nullable for the rest of your life
-    public CCSPlayerController? Controller
-    {
-        get
-        {
-            nint controllerId = NativePlayer.GetController(_pid);
-            return controllerId != IntPtr.Zero ? new CCSPlayerControllerImpl(controllerId) : null;
-        }
-    }
+    public CCSPlayerController Controller => new CCSPlayerControllerImpl(NativePlayer.GetController(_pid));
 
     public CCSPlayerController RequiredController => Controller is { IsValid: true } controller ? controller : throw new InvalidOperationException("Controller is not valid");
 
