@@ -1,3 +1,4 @@
+using System.Text;
 using System.Runtime.InteropServices;
 using Microsoft.Extensions.Logging;
 using SwiftlyS2.Core.Events;
@@ -99,22 +100,34 @@ internal class CoreHookService : IDisposable {
     {
       return (a1, a2, a3, a4, a5) =>
       {
-        var commandName = (a5 != nint.Zero && a5 < nint.MaxValue && commandNameOffset != 0) switch {
+        var (commandName, commandPtr) = (a5 != nint.Zero && a5 < nint.MaxValue && commandNameOffset != 0) switch {
           true when Marshal.ReadIntPtr(new nint(a5 + commandNameOffset)) is var basePtr && basePtr != nint.Zero && basePtr < nint.MaxValue
-            => Marshal.PtrToStringAnsi(Marshal.ReadIntPtr(basePtr)),
-          _ => null
-        } ?? string.Empty;
+            => (Marshal.PtrToStringAnsi(Marshal.ReadIntPtr(basePtr)) ?? string.Empty, Marshal.ReadIntPtr(basePtr)),
+          _ => (string.Empty, nint.Zero)
+        };
 
-        var @event = new OnCommandExecuteHookEvent {
-          CommandName = commandName,
+        var preEvent = new OnCommandExecuteHookEvent {
+          OriginalName = commandName,
           HookMode = HookMode.Pre
         };
-        EventPublisher.InvokeOnCommandExecuteHook(@event);
+        EventPublisher.InvokeOnCommandExecuteHook(preEvent);
+
+        if (preEvent.Intercepted && preEvent.CommandName.Length < commandName.Length) {
+          var newCommandName = Encoding.ASCII.GetBytes(preEvent.CommandName + "\0");
+          var maxLength = Encoding.ASCII.GetByteCount(commandName + "\0");
+          
+          if (newCommandName.Length <= maxLength) {
+            Marshal.Copy(newCommandName, 0, commandPtr, newCommandName.Length);
+          }
+        }
 
         var result = next()(a1, a2, a3, a4, a5);
         
-        @event.HookMode = HookMode.Post;
-        EventPublisher.InvokeOnCommandExecuteHook(@event);
+        var postEvent = new OnCommandExecuteHookEvent {
+          OriginalName = commandName,
+          HookMode = HookMode.Post
+        };
+        EventPublisher.InvokeOnCommandExecuteHook(postEvent);
         
         return result;
       };

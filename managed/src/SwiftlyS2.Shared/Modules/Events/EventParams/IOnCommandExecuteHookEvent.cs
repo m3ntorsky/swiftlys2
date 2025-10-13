@@ -8,12 +8,19 @@ namespace SwiftlyS2.Shared.Events;
 public interface IOnCommandExecuteHookEvent {
 
   /// <summary>
-  /// The command name.
+  /// The original command name.
   /// </summary>
-  public string CommandName { get; }
+  public string OriginalName { get; }
 
   /// <summary>
   /// The command arguments.
   /// </summary>
   public HookMode HookMode { get; }
+
+  /// <summary>
+  /// Intercept and modify the command name.
+  /// This will modify the command name and stop the following hooks and original function.
+  /// </summary>
+  /// <param name="name">The name to modify.</param>
+  public void SetCommandName(string name);
 }

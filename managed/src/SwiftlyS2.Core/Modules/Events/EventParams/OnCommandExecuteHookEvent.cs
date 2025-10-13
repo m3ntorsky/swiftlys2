@@ -5,8 +5,16 @@ namespace SwiftlyS2.Core.Events;
 
 internal class OnCommandExecuteHookEvent : IOnCommandExecuteHookEvent
 {
+  public required string OriginalName { get; init; }
+  public string CommandName { get; set; } = string.Empty;
 
-  public required string CommandName { get; set; }
+  public required HookMode HookMode { get; init; }
 
-  public required HookMode HookMode { get; set; }
+  public bool Intercepted { get; set; } = false;
+
+  public void SetCommandName(string name) {
+    if (HookMode == HookMode.Post) return;
+    CommandName = name;
+    Intercepted = true;
+  }
 }
