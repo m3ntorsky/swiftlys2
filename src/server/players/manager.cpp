@@ -192,8 +192,11 @@ void CPlayerManager::GameFrame(bool simulate, bool first, bool last)
     if (g_pOnGameTickCallback) reinterpret_cast<void(*)(bool, bool, bool)>(g_pOnGameTickCallback)(simulate, first, last);
 
     for (int i = 0; i < 64; i++)
-        if (playermanager->IsPlayerOnline(i))
-            playermanager->GetPlayer(i)->Think();
+        if (playermanager->IsPlayerOnline(i)) {
+            auto player = playermanager->GetPlayer(i);
+            if (!player) continue;
+            player->Think();
+        }
 
     vgui->Update();
 }
