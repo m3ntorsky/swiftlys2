@@ -128,6 +128,8 @@ void CPlayer::Shutdown()
 
 void CPlayer::SendMsg(MessageType type, const std::string& message)
 {
+    if (IsFakeClient()) return;
+
     if (type == MessageType::CenterHTML) {
         if (message == "") centerMessageEndTime = 0;
         else {

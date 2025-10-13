@@ -59,7 +59,6 @@ SH_DECL_EXTERN6(IServerGameClients, ClientConnect, SH_NOATTRIB, 0, bool, CPlayer
 SH_DECL_EXTERN6_void(IServerGameClients, OnClientConnected, SH_NOATTRIB, 0, CPlayerSlot, const char*, uint64, const char*, const char*, bool);
 SH_DECL_EXTERN7_void(ISource2GameEntities, CheckTransmit, SH_NOATTRIB, 0, CCheckTransmitInfo**, int, CBitVec<16384>&, CBitVec<16384>&, const Entity2Networkable_t**, const uint16_t*, int);
 
-uint64_t playerMask = 0;
 IFunctionHook* g_pProcessUserCmdsHook = nullptr;
 
 void* ProcessUsercmdsHook(void* pController, CUserCmd* cmds, int numcmds, bool paused, float margin);
@@ -150,7 +149,7 @@ void CPlayerManager::CheckTransmit(CCheckTransmitInfo** ppInfoList, int infoCoun
     {
         auto& pInfo = (EntityCheckTransmit*&)ppInfoList[i];
         int playerid = pInfo->m_nClientEntityIndex.Get();
-        if ((playerMask & (1ULL << playerid)) == 0) continue;
+        if (!playermanager->IsPlayerOnline(playerid)) continue;
         auto player = playermanager->GetPlayer(playerid);
 
         auto& blockedBits = player->GetBlockedTransmittingBits();
@@ -193,7 +192,7 @@ void CPlayerManager::GameFrame(bool simulate, bool first, bool last)
     if (g_pOnGameTickCallback) reinterpret_cast<void(*)(bool, bool, bool)>(g_pOnGameTickCallback)(simulate, first, last);
 
     for (int i = 0; i < 64; i++)
-        if (playerMask & (1ULL << i))
+        if (playermanager->IsPlayerOnline(i))
             playermanager->GetPlayer(i)->Think();
 
     vgui->Update();
@@ -252,8 +251,6 @@ IPlayer* CPlayerManager::RegisterPlayer(int playerid)
     g_Players[playerid] = new CPlayer();
     g_Players[playerid]->Initialize(playerid);
 
-    playerMask |= (1ULL << playerid);
-
     return g_Players[playerid];
 }
 
@@ -269,21 +266,20 @@ void CPlayerManager::UnregisterPlayer(int playerid)
     g_Players[playerid]->Shutdown();
     delete g_Players[playerid];
     g_Players[playerid] = nullptr;
-
-    playerMask &= ~(1ULL << playerid);
 }
 
 IPlayer* CPlayerManager::GetPlayer(int playerid)
 {
     if (playerid < 0 || playerid >= g_SwiftlyCore.GetMaxGameClients()) return nullptr;
-    if (playerMask & (1ULL << playerid)) return g_Players[playerid];
+    if (!IsPlayerOnline(playerid)) return g_Players[playerid];
     return nullptr;
 }
 
 bool CPlayerManager::IsPlayerOnline(int playerid)
 {
     if (playerid < 0 || playerid >= g_SwiftlyCore.GetMaxGameClients()) return false;
-    return (playerMask & (1ULL << playerid)) != 0;
+    static auto engine = g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER);
+    return (engine->GetClientSteamID(playerid) != nullptr);
 }
 
 int CPlayerManager::GetPlayerCount()
