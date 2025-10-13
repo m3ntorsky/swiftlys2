@@ -74,142 +74,112 @@ internal sealed class CommandTracked : IDisposable
         {
             if (hooksInitialized) return;
 
-            try
+
+            var signature = gameDataService.GetSignature("Cmd_ExecuteCommand");
+            if (signature == nint.Zero) return;
+
+            executeCommandHook = memoryService.GetUnmanagedFunctionByAddress<ExecuteCommandDelegate>(signature);
+            hookId = executeCommandHook.AddHook((next) =>
             {
-                var signature = gameDataService.GetSignature("Cmd_ExecuteCommand");
-                if (signature == nint.Zero) return;
-
-                executeCommandHook = memoryService.GetUnmanagedFunctionByAddress<ExecuteCommandDelegate>(signature);
-                hookId = executeCommandHook.AddHook((next) =>
+                return (a1, a2, a3, a4, a5) =>
                 {
-                    return (a1, a2, a3, a4, a5) =>
-                    {
-                        ProcessCommandStart(a5);
-                        var result = next()(a1, a2, a3, a4, a5);
-                        ProcessCommandEnd();
-                        return result;
-                    };
-                });
+                    ProcessCommandStart(a5);
+                    var result = next()(a1, a2, a3, a4, a5);
+                    ProcessCommandEnd();
+                    return result;
+                };
+            });
 
-                outputListenerId = consoleOutputService.RegisterConsoleOutputListener((message) =>
+            outputListenerId = consoleOutputService.RegisterConsoleOutputListener((message) =>
+            {
+                if (disposed) return;
+
+                var commandId = currentCommandContainer?.Value ?? Guid.Empty;
+                if (commandId == Guid.Empty) return;
+
+                if (activeCommands.TryGetValue(commandId, out var command) && command.Output.Count < 100)
                 {
-                    if (disposed) return;
+                    command.Output.Enqueue(message);
+                }
+            });
 
-                    var commandId = currentCommandContainer?.Value ?? Guid.Empty;
-                    if (commandId == Guid.Empty) return;
-
-                    try
-                    {
-                        if (activeCommands.TryGetValue(commandId, out var command) && command.Output.Count < 100)
-                        {
-                            command.Output.Enqueue(message);
-                        }
-                    }
-                    catch { }
-                });
-
-                Thread.MemoryBarrier();
-                hooksInitialized = true;
-            }
-            catch { }
+            Thread.MemoryBarrier();
+            hooksInitialized = true;
         }
     }
 
     private void ProcessCommandStart(nint a5)
     {
-        try
+        var commandNamePtr = GetCommandNamePointer(a5);
+        if (commandNamePtr == nint.Zero) return;
+
+        var commandStr = Marshal.PtrToStringAnsi(commandNamePtr);
+        if (string.IsNullOrEmpty(commandStr) || !commandStr.Contains("^wb^"))
         {
-            var commandNamePtr = GetCommandNamePointer(a5);
-            if (commandNamePtr == nint.Zero) return;
+            Interlocked.Exchange(ref currentCommandContainer, CommandIdContainer.Empty);
+            return;
+        }
 
-            var commandStr = Marshal.PtrToStringAnsi(commandNamePtr);
-            if (string.IsNullOrEmpty(commandStr) || !commandStr.Contains("^wb^"))
-            {
-                Interlocked.Exchange(ref currentCommandContainer, CommandIdContainer.Empty);
-                return;
-            }
+        if (pendingCallbacks.TryDequeue(out var callback))
+        {
+            var newCommandId = Guid.NewGuid();
+            var newCommand = new ExecutingCommand(callback);
 
-            if (pendingCallbacks.TryDequeue(out var callback))
+            if (activeCommands.TryAdd(newCommandId, newCommand))
             {
-                var newCommandId = Guid.NewGuid();
-                var newCommand = new ExecutingCommand(callback);
-
-                if (activeCommands.TryAdd(newCommandId, newCommand))
-                {
-                    var newContainer = new CommandIdContainer(newCommandId);
-                    Interlocked.Exchange(ref currentCommandContainer, newContainer);
-                    CleanCommandName(commandNamePtr, commandStr);
-                }
-            }
-            else
-            {
-                Interlocked.Exchange(ref currentCommandContainer, CommandIdContainer.Empty);
+                var newContainer = new CommandIdContainer(newCommandId);
+                Interlocked.Exchange(ref currentCommandContainer, newContainer);
+                CleanCommandName(commandNamePtr, commandStr);
             }
         }
-        catch { }
+        else
+        {
+            Interlocked.Exchange(ref currentCommandContainer, CommandIdContainer.Empty);
+        }
     }
 
     private void ProcessCommandEnd()
     {
-        try
+        var previousContainer = Interlocked.Exchange(ref currentCommandContainer, CommandIdContainer.Empty);
+        var commandId = previousContainer?.Value ?? Guid.Empty;
+
+        if (commandId != Guid.Empty && activeCommands.TryRemove(commandId, out var command))
         {
-            var previousContainer = Interlocked.Exchange(ref currentCommandContainer, CommandIdContainer.Empty);
-            var commandId = previousContainer?.Value ?? Guid.Empty;
-
-            if (commandId != Guid.Empty && activeCommands.TryRemove(commandId, out var command))
+            var output = new StringBuilder();
+            while (command.Output.TryDequeue(out var line))
             {
-                var output = new StringBuilder();
-                while (command.Output.TryDequeue(out var line))
-                {
-                    if (output.Length > 0) output.AppendLine();
-                    output.Append(line);
-                }
-
-                Task.Run(() =>
-                {
-                    try
-                    {
-                        command.Callback?.Invoke(output.ToString());
-                    }
-                    catch { }
-                });
+                if (output.Length > 0) output.AppendLine();
+                output.Append(line);
             }
+
+            Task.Run(() =>
+            {
+                command.Callback?.Invoke(output.ToString());
+            });
         }
-        catch { }
     }
 
     private static nint GetCommandNamePointer(nint a5)
     {
-        try
-        {
-            if (a5 == nint.Zero || a5 >= nint.MaxValue || commandNameOffset == 0) return nint.Zero;
-            var basePtr = Marshal.ReadIntPtr(new nint(a5 + commandNameOffset));
+        if (a5 == nint.Zero || a5 >= nint.MaxValue || commandNameOffset == 0) return nint.Zero;
+        var basePtr = Marshal.ReadIntPtr(new nint(a5 + commandNameOffset));
 
-            if (basePtr == nint.Zero || basePtr >= nint.MaxValue) return nint.Zero;
-            return Marshal.ReadIntPtr(basePtr);
-        }
-        catch
-        {
-            return nint.Zero;
-        }
+        if (basePtr == nint.Zero || basePtr >= nint.MaxValue) return nint.Zero;
+        return Marshal.ReadIntPtr(basePtr);
     }
 
     private static void CleanCommandName(nint commandPtr, string commandStr)
     {
-        try
+        var cleanedCommand = commandStr.Replace("^wb^", string.Empty);
+        if (cleanedCommand.Length >= commandStr.Length) return;
+
+        var cleanedBytes = Encoding.ASCII.GetBytes(cleanedCommand + "\0");
+        var maxLength = Encoding.ASCII.GetByteCount(commandStr + "\0");
+
+        if (cleanedBytes.Length <= maxLength)
         {
-            var cleanedCommand = commandStr.Replace("^wb^", string.Empty);
-            if (cleanedCommand.Length >= commandStr.Length) return;
-
-            var cleanedBytes = Encoding.ASCII.GetBytes(cleanedCommand + "\0");
-            var maxLength = Encoding.ASCII.GetByteCount(commandStr + "\0");
-
-            if (cleanedBytes.Length <= maxLength)
-            {
-                Marshal.Copy(cleanedBytes, 0, commandPtr, cleanedBytes.Length);
-            }
+            Marshal.Copy(cleanedBytes, 0, commandPtr, cleanedBytes.Length);
         }
-        catch { }
     }
 
     private void StartCleanupTimer()
@@ -230,17 +200,13 @@ internal sealed class CommandTracked : IDisposable
 
     private void CleanupExpiredCommands()
     {
-        try
+        foreach (var kvp in activeCommands.ToArray())
         {
-            foreach (var kvp in activeCommands.ToArray())
+            if (kvp.Value.IsExpired)
             {
-                if (kvp.Value.IsExpired)
-                {
-                    activeCommands.TryRemove(kvp.Key, out _);
-                }
+                activeCommands.TryRemove(kvp.Key, out _);
             }
         }
-        catch { }
     }
 
     public void EnqueueCommand(Action<string> callback)
@@ -249,11 +215,7 @@ internal sealed class CommandTracked : IDisposable
 
         EnsureHooksInitialized();
 
-        try
-        {
-            pendingCallbacks.Enqueue(callback);
-        }
-        catch { }
+        pendingCallbacks.Enqueue(callback);
     }
 
     public void Dispose()
@@ -261,17 +223,13 @@ internal sealed class CommandTracked : IDisposable
         if (disposed) return;
         disposed = true;
 
-        try
-        {
-            cancellationTokenSource.Cancel();
-            executeCommandHook?.RemoveHook(hookId);
-            consoleOutputService.UnregisterConsoleOutputListener(outputListenerId);
+        cancellationTokenSource.Cancel();
+        executeCommandHook?.RemoveHook(hookId);
+        consoleOutputService.UnregisterConsoleOutputListener(outputListenerId);
 
-            while (pendingCallbacks.TryDequeue(out _)) { }
-            activeCommands.Clear();
+        while (pendingCallbacks.TryDequeue(out _)) { }
+        activeCommands.Clear();
 
-            cancellationTokenSource.Dispose();
-        }
-        catch { }
+        cancellationTokenSource.Dispose();
     }
 }
