@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEntityIdentity : ISchemaClass<CEntityIdentity> {
 
   static CEntityIdentity ISchemaClass<CEntityIdentity>.From(nint handle) => new CEntityIdentityImpl(handle);
+  static int ISchemaClass<CEntityIdentity>.Size => 120;
 
   
   public ref int NameStringableIndex { get; }

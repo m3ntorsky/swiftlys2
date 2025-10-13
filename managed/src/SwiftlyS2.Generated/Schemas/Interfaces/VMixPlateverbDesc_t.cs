@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixPlateverbDesc_t : ISchemaClass<VMixPlateverbDesc_t> {
 
   static VMixPlateverbDesc_t ISchemaClass<VMixPlateverbDesc_t>.From(nint handle) => new VMixPlateverbDesc_tImpl(handle);
+  static int ISchemaClass<VMixPlateverbDesc_t>.Size => 28;
 
   
   public ref float Prefilter { get; }

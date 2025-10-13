@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMarkupVolumeTagged : CMarkupVolume, ISchemaClass<CMarkupVolumeTagged> {
 
   static CMarkupVolumeTagged ISchemaClass<CMarkupVolumeTagged>.From(nint handle) => new CMarkupVolumeTaggedImpl(handle);
+  static int ISchemaClass<CMarkupVolumeTagged>.Size => 2096;
 
   
   public ref CUtlVector<CGlobalSymbol> GroupNames { get; }

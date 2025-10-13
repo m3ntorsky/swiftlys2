@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CResponseCriteriaSet : ISchemaClass<CResponseCriteriaSet> {
 
   static CResponseCriteriaSet ISchemaClass<CResponseCriteriaSet>.From(nint handle) => new CResponseCriteriaSetImpl(handle);
+  static int ISchemaClass<CResponseCriteriaSet>.Size => 56;
 
   
   public ref int NumPrefixedContexts { get; }

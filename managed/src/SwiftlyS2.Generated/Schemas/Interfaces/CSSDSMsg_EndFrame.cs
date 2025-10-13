@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSSDSMsg_EndFrame : ISchemaClass<CSSDSMsg_EndFrame> {
 
   static CSSDSMsg_EndFrame ISchemaClass<CSSDSMsg_EndFrame>.From(nint handle) => new CSSDSMsg_EndFrameImpl(handle);
+  static int ISchemaClass<CSSDSMsg_EndFrame>.Size => 24;
 
   
   // CUtlVector< CSSDSEndFrameViewInfo >

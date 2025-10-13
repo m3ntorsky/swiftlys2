@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeAntiTunnelProbeBuild_t : ISchemaClass<FeAntiTunnelProbeBuild_t> {
 
   static FeAntiTunnelProbeBuild_t ISchemaClass<FeAntiTunnelProbeBuild_t>.From(nint handle) => new FeAntiTunnelProbeBuild_tImpl(handle);
+  static int ISchemaClass<FeAntiTunnelProbeBuild_t>.Size => 48;
 
   
   public ref float Weight { get; }

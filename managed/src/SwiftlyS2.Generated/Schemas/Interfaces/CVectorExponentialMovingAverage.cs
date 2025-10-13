@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVectorExponentialMovingAverage : ISchemaClass<CVectorExponentialMovingAverage> {
 
   static CVectorExponentialMovingAverage ISchemaClass<CVectorExponentialMovingAverage>.From(nint handle) => new CVectorExponentialMovingAverageImpl(handle);
+  static int ISchemaClass<CVectorExponentialMovingAverage>.Size => 44;
 
 
 

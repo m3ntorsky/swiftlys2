@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointValueRemapper : CBaseEntity, ISchemaClass<CPointValueRemapper> {
 
   static CPointValueRemapper ISchemaClass<CPointValueRemapper>.From(nint handle) => new CPointValueRemapperImpl(handle);
+  static int ISchemaClass<CPointValueRemapper>.Size => 1784;
 
   
   public ref bool Disabled { get; }

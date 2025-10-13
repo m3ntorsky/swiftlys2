@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSTeam : CTeam, ISchemaClass<CCSTeam> {
 
   static CCSTeam ISchemaClass<CCSTeam>.From(nint handle) => new CCSTeamImpl(handle);
+  static int ISchemaClass<CCSTeam>.Size => 2152;
 
   
   public ref int LastRecievedShorthandedRoundBonus { get; }

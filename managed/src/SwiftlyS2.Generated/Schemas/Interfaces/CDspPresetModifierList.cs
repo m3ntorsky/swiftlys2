@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDspPresetModifierList : ISchemaClass<CDspPresetModifierList> {
 
   static CDspPresetModifierList ISchemaClass<CDspPresetModifierList>.From(nint handle) => new CDspPresetModifierListImpl(handle);
+  static int ISchemaClass<CDspPresetModifierList>.Size => 32;
 
   
   public string DspName { get; set; }

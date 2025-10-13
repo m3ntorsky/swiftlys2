@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCTypeScriptResource : ISchemaClass<InfoForResourceTypeCTypeScriptResource> {
 
   static InfoForResourceTypeCTypeScriptResource ISchemaClass<InfoForResourceTypeCTypeScriptResource>.From(nint handle) => new InfoForResourceTypeCTypeScriptResourceImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCTypeScriptResource>.Size => 1;
 
 
 

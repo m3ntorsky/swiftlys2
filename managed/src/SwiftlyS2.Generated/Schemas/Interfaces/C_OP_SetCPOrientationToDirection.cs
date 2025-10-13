@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SetCPOrientationToDirection : CParticleFunctionOperator, ISchemaClass<C_OP_SetCPOrientationToDirection> {
 
   static C_OP_SetCPOrientationToDirection ISchemaClass<C_OP_SetCPOrientationToDirection>.From(nint handle) => new C_OP_SetCPOrientationToDirectionImpl(handle);
+  static int ISchemaClass<C_OP_SetCPOrientationToDirection>.Size => 456;
 
   
   public ref int InputControlPoint { get; }

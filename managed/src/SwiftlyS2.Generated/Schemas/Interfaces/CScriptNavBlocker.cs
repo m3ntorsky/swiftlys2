@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CScriptNavBlocker : CFuncNavBlocker, ISchemaClass<CScriptNavBlocker> {
 
   static CScriptNavBlocker ISchemaClass<CScriptNavBlocker>.From(nint handle) => new CScriptNavBlockerImpl(handle);
+  static int ISchemaClass<CScriptNavBlocker>.Size => 2072;
 
   
   public ref Vector Extent { get; }

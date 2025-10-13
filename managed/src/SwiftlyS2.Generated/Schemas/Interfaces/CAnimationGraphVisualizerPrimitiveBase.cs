@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimationGraphVisualizerPrimitiveBase : ISchemaClass<CAnimationGraphVisualizerPrimitiveBase> {
 
   static CAnimationGraphVisualizerPrimitiveBase ISchemaClass<CAnimationGraphVisualizerPrimitiveBase>.From(nint handle) => new CAnimationGraphVisualizerPrimitiveBaseImpl(handle);
+  static int ISchemaClass<CAnimationGraphVisualizerPrimitiveBase>.Size => 64;
 
   
   public ref CAnimationGraphVisualizerPrimitiveType Type { get; }

@@ -20,6 +20,7 @@ unmanaged_type_maps = {
   "Vector": "Vector",
   "QAngle": "QAngle",
   "CUtlVector": "CUtlVector",
+  "CUtlLeanVector": "CUtlLeanVector",
   "Quaternion": "Quaternion",
   "Vector2D": "Vector2D",
   "Vector4D": "Vector4D",
@@ -56,12 +57,12 @@ blacklisted_types = [
   "FourVectors2D",
   "CStrongHandleVoid",
   "CUtlVectorFixedGrowable",
+  "CUtlLeanVectorFixedGrowable",
   "QuaternionStorage",
   "CWeakHandle",
   "DegreeEuler",
   "CTypedBitVec",
   "CUtlSymbol",
-  "CUtlLeanVector",
   "CSmartPtr",
   "CUtlHashtable",
   "CUtlOrderedMap",
@@ -124,6 +125,9 @@ def convert_utlvector_type(type, all_class_names, all_enum_names, interface = Fa
   if type.startswith("CUtlVectorFixedGrowable"):
     name = "CUtlVectorFixedGrowable"
     length = len("CUtlVectorFixedGrowable")
+  elif type.startswith("CUtlLeanVector"):
+    name = "CUtlLeanVector"
+    length = len("CUtlLeanVector")
   elif type.startswith("CUtlVectorEmbeddedNetworkVar"):
     name = "CUtlVector"
     length = len("CUtlVectorEmbeddedNetworkVar")
@@ -147,18 +151,32 @@ def convert_utlvector_type(type, all_class_names, all_enum_names, interface = Fa
   
   generic_t1_type, is_value_type = convert_field_type(generic_t1, "ref", all_class_names, all_enum_names, interface)
 
-  if is_ptr and generic_t1_type == "char":
-    return (f"{name}<CString>", True)
-  if is_ptr:
-    # print(f"{name}<PointerTo<{generic_t1_type}>>")
-    return (f"{name}<PointerTo<{generic_t1_type}>>", True)
-  
-  if is_value_type:
-    # print(f"{name}<{generic_t1_type}>")
-    return (f"{name}<{generic_t1_type}>", is_value_type)
+  if name == "CUtlLeanVector":
+    if is_ptr and generic_t1_type == "char":
+      return (f"{name}<CString, int>", True)
+    if is_ptr:
+      # print(f"{name}<PointerTo<{generic_t1_type}>>")
+      return (f"{name}<PointerTo<{generic_t1_type}>, int>", True)
+    
+    if is_value_type:
+      # print(f"{name}<{generic_t1_type}>")
+      return (f"{name}<{generic_t1_type}, int>", is_value_type)
+    else:
+      # print(f"{name}")
+      return (f"{name}<IntPtr, int>", True)
   else:
-    # print(f"{name}")
-    return (name, True)
+    if is_ptr and generic_t1_type == "char":
+      return (f"{name}<CString>", True)
+    if is_ptr:
+      # print(f"{name}<PointerTo<{generic_t1_type}>>")
+      return (f"{name}<PointerTo<{generic_t1_type}>>", True)
+    
+    if is_value_type:
+      # print(f"{name}<{generic_t1_type}>")
+      return (f"{name}<{generic_t1_type}>", is_value_type)
+    else:
+      # print(f"{name}")
+      return (name, True)
 
 def convert_field_type(type, kind, all_class_names, all_enum_names, interface = False):
 
@@ -183,7 +201,7 @@ def convert_field_type(type, kind, all_class_names, all_enum_names, interface = 
           return (f"{prefix}SchemaFixedArray<{name}>", False)
         return (name, is_value_type)
       
-      if type.startswith("CUtlVector") or type.startswith("CNetworkUtlVector"):
+      if type.startswith("CUtlVector") or type.startswith("CNetworkUtlVector") or type.startswith("CUtlLeanVector"):
         name, is_value_type = convert_utlvector_type(type, all_class_names, all_enum_names, True)
         if kind == "fixed_array":
           return (f"{prefix}SchemaFixedArray<{name}>", False)

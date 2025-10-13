@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSkeletonAnimationController : ISkeletonAnimationController, ISchemaClass<CSkeletonAnimationController> {
 
   static CSkeletonAnimationController ISchemaClass<CSkeletonAnimationController>.From(nint handle) => new CSkeletonAnimationControllerImpl(handle);
+  static int ISchemaClass<CSkeletonAnimationController>.Size => 16;
 
   
   public CSkeletonInstance? SkeletonInstance { get; }

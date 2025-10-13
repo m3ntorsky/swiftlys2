@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMoverPathNode : CPointEntity, ISchemaClass<CMoverPathNode> {
 
   static CMoverPathNode ISchemaClass<CMoverPathNode>.From(nint handle) => new CMoverPathNodeImpl(handle);
+  static int ISchemaClass<CMoverPathNode>.Size => 1552;
 
   
   public ref Vector InTangentLocal { get; }

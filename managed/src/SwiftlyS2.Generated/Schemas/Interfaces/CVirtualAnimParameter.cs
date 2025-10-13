@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVirtualAnimParameter : CAnimParameterBase, ISchemaClass<CVirtualAnimParameter> {
 
   static CVirtualAnimParameter ISchemaClass<CVirtualAnimParameter>.From(nint handle) => new CVirtualAnimParameterImpl(handle);
+  static int ISchemaClass<CVirtualAnimParameter>.Size => 128;
 
   
   public string ExpressionString { get; set; }

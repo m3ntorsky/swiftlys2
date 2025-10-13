@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmClip : ISchemaClass<CNmClip> {
 
   static CNmClip ISchemaClass<CNmClip>.From(nint handle) => new CNmClipImpl(handle);
+  static int ISchemaClass<CNmClip>.Size => 576;
 
   
   public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton { get; }

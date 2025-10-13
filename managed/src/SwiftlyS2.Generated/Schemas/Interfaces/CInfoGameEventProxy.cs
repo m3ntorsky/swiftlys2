@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CInfoGameEventProxy : CPointEntity, ISchemaClass<CInfoGameEventProxy> {
 
   static CInfoGameEventProxy ISchemaClass<CInfoGameEventProxy>.From(nint handle) => new CInfoGameEventProxyImpl(handle);
+  static int ISchemaClass<CInfoGameEventProxy>.Size => 1280;
 
   
   public string EventName { get; set; }

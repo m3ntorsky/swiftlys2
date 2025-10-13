@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBasePlayerVData : CEntitySubclassVDataBase, ISchemaClass<CBasePlayerVData> {
 
   static CBasePlayerVData ISchemaClass<CBasePlayerVData>.From(nint handle) => new CBasePlayerVDataImpl(handle);
+  static int ISchemaClass<CBasePlayerVData>.Size => 376;
 
   
   // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >

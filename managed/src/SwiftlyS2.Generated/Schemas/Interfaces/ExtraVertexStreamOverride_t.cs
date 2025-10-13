@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ExtraVertexStreamOverride_t : BaseSceneObjectOverride_t, ISchemaClass<ExtraVertexStreamOverride_t> {
 
   static ExtraVertexStreamOverride_t ISchemaClass<ExtraVertexStreamOverride_t>.From(nint handle) => new ExtraVertexStreamOverride_tImpl(handle);
+  static int ISchemaClass<ExtraVertexStreamOverride_t>.Size => 48;
 
   
   public ref uint SubSceneObject { get; }

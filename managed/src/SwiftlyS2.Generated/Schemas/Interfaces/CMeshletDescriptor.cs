@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMeshletDescriptor : ISchemaClass<CMeshletDescriptor> {
 
   static CMeshletDescriptor ISchemaClass<CMeshletDescriptor>.From(nint handle) => new CMeshletDescriptorImpl(handle);
+  static int ISchemaClass<CMeshletDescriptor>.Size => 24;
 
   
   public PackedAABB_t PackedAABB { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface COrientConstraint : CBaseConstraint, ISchemaClass<COrientConstraint> {
 
   static COrientConstraint ISchemaClass<COrientConstraint>.From(nint handle) => new COrientConstraintImpl(handle);
+  static int ISchemaClass<COrientConstraint>.Size => 96;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_ExampleSelector : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_ExampleSelector> {
 
   static CPulseCell_ExampleSelector ISchemaClass<CPulseCell_ExampleSelector>.From(nint handle) => new CPulseCell_ExampleSelectorImpl(handle);
+  static int ISchemaClass<CPulseCell_ExampleSelector>.Size => 96;
 
   
   public PulseSelectorOutflowList_t OutflowList { get; }

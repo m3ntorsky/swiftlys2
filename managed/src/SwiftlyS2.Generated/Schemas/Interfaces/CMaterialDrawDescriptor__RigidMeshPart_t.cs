@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMaterialDrawDescriptor__RigidMeshPart_t : ISchemaClass<CMaterialDrawDescriptor__RigidMeshPart_t> {
 
   static CMaterialDrawDescriptor__RigidMeshPart_t ISchemaClass<CMaterialDrawDescriptor__RigidMeshPart_t>.From(nint handle) => new CMaterialDrawDescriptor__RigidMeshPart_tImpl(handle);
+  static int ISchemaClass<CMaterialDrawDescriptor__RigidMeshPart_t>.Size => 12;
 
   
   public ref ushort RigidBLASIndex { get; }

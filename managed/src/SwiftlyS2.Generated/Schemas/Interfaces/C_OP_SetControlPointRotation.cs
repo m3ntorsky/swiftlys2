@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SetControlPointRotation : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetControlPointRotation> {
 
   static C_OP_SetControlPointRotation ISchemaClass<C_OP_SetControlPointRotation>.From(nint handle) => new C_OP_SetControlPointRotationImpl(handle);
+  static int ISchemaClass<C_OP_SetControlPointRotation>.Size => 2472;
 
   
   public CParticleCollectionVecInput RotAxis { get; }

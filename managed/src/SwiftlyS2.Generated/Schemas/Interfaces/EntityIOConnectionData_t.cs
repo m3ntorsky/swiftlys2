@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EntityIOConnectionData_t : ISchemaClass<EntityIOConnectionData_t> {
 
   static EntityIOConnectionData_t ISchemaClass<EntityIOConnectionData_t>.From(nint handle) => new EntityIOConnectionData_tImpl(handle);
+  static int ISchemaClass<EntityIOConnectionData_t>.Size => 64;
 
   
   public string OutputName { get; set; }

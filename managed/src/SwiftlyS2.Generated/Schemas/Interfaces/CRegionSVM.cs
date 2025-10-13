@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRegionSVM : ISchemaClass<CRegionSVM> {
 
   static CRegionSVM ISchemaClass<CRegionSVM>.From(nint handle) => new CRegionSVMImpl(handle);
+  static int ISchemaClass<CRegionSVM>.Size => 48;
 
   
   // CUtlVector< RnPlane_t >

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderCables : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderCables> {
 
   static C_OP_RenderCables ISchemaClass<C_OP_RenderCables>.From(nint handle) => new C_OP_RenderCablesImpl(handle);
+  static int ISchemaClass<C_OP_RenderCables>.Size => 5224;
 
   
   public CParticleCollectionFloatInput RadiusScale { get; }
@@ -53,11 +54,9 @@ public partial interface C_OP_RenderCables : CParticleFunctionRenderer, ISchemaC
   
   public CParticleTransformInput LightingTransform { get; }
   
-  // CUtlLeanVector< FloatInputMaterialVariable_t >
-  public SchemaUntypedField MaterialFloatVars { get; }
+  public ref CUtlLeanVector<IntPtr, int> MaterialFloatVars { get; }
   
-  // CUtlLeanVector< VecInputMaterialVariable_t >
-  public SchemaUntypedField MaterialVecVars { get; }
+  public ref CUtlLeanVector<IntPtr, int> MaterialVecVars { get; }
 
 
 }

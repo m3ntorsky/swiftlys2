@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSkillFloat : ISchemaClass<CSkillFloat> {
 
   static CSkillFloat ISchemaClass<CSkillFloat>.From(nint handle) => new CSkillFloatImpl(handle);
+  static int ISchemaClass<CSkillFloat>.Size => 16;
 
   
   public ISchemaFixedArray<float> Value { get; }

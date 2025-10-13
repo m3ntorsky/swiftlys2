@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSequenceGroupData : ISchemaClass<CSequenceGroupData> {
 
   static CSequenceGroupData ISchemaClass<CSequenceGroupData>.From(nint handle) => new CSequenceGroupDataImpl(handle);
+  static int ISchemaClass<CSequenceGroupData>.Size => 312;
 
   
   public ref CBufferString Name { get; }

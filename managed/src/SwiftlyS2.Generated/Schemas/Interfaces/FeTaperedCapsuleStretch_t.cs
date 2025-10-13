@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeTaperedCapsuleStretch_t : ISchemaClass<FeTaperedCapsuleStretch_t> {
 
   static FeTaperedCapsuleStretch_t ISchemaClass<FeTaperedCapsuleStretch_t>.From(nint handle) => new FeTaperedCapsuleStretch_tImpl(handle);
+  static int ISchemaClass<FeTaperedCapsuleStretch_t>.Size => 16;
 
   
   public ISchemaFixedArray<ushort> Node { get; }

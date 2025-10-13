@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AimMatrixOpFixedSettings_t : ISchemaClass<AimMatrixOpFixedSettings_t> {
 
   static AimMatrixOpFixedSettings_t ISchemaClass<AimMatrixOpFixedSettings_t>.From(nint handle) => new AimMatrixOpFixedSettings_tImpl(handle);
+  static int ISchemaClass<AimMatrixOpFixedSettings_t>.Size => 240;
 
   
   public CAnimAttachment Attachment { get; }

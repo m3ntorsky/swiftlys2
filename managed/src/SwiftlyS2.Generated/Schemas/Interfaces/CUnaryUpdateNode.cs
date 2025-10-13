@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CUnaryUpdateNode : CAnimUpdateNodeBase, ISchemaClass<CUnaryUpdateNode> {
 
   static CUnaryUpdateNode ISchemaClass<CUnaryUpdateNode>.From(nint handle) => new CUnaryUpdateNodeImpl(handle);
+  static int ISchemaClass<CUnaryUpdateNode>.Size => 112;
 
   
   public CAnimUpdateNodeRef ChildNode { get; }

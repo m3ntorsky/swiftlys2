@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_IntraParticleForce : CParticleFunctionForce, ISchemaClass<C_OP_IntraParticleForce> {
 
   static C_OP_IntraParticleForce ISchemaClass<C_OP_IntraParticleForce>.From(nint handle) => new C_OP_IntraParticleForceImpl(handle);
+  static int ISchemaClass<C_OP_IntraParticleForce>.Size => 496;
 
   
   public ref float AttractionMinDistance { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CShatterGlassShard : ISchemaClass<CShatterGlassShard> {
 
   static CShatterGlassShard ISchemaClass<CShatterGlassShard>.From(nint handle) => new CShatterGlassShardImpl(handle);
+  static int ISchemaClass<CShatterGlassShard>.Size => 184;
 
   
   public ref uint ShardHandle { get; }

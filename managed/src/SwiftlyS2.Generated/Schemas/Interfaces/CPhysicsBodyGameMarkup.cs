@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysicsBodyGameMarkup : ISchemaClass<CPhysicsBodyGameMarkup> {
 
   static CPhysicsBodyGameMarkup ISchemaClass<CPhysicsBodyGameMarkup>.From(nint handle) => new CPhysicsBodyGameMarkupImpl(handle);
+  static int ISchemaClass<CPhysicsBodyGameMarkup>.Size => 16;
 
   
   public string TargetBody { get; set; }

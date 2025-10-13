@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPathAnimMotorUpdaterBase : CAnimMotorUpdaterBase, ISchemaClass<CPathAnimMotorUpdaterBase> {
 
   static CPathAnimMotorUpdaterBase ISchemaClass<CPathAnimMotorUpdaterBase>.From(nint handle) => new CPathAnimMotorUpdaterBaseImpl(handle);
+  static int ISchemaClass<CPathAnimMotorUpdaterBase>.Size => 40;
 
   
   public ref bool LockToPath { get; }

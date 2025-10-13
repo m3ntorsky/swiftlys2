@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SetControlPointFromObjectScale : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetControlPointFromObjectScale> {
 
   static C_OP_SetControlPointFromObjectScale ISchemaClass<C_OP_SetControlPointFromObjectScale>.From(nint handle) => new C_OP_SetControlPointFromObjectScaleImpl(handle);
+  static int ISchemaClass<C_OP_SetControlPointFromObjectScale>.Size => 464;
 
   
   public ref int CPInput { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointPrefab : CServerOnlyPointEntity, ISchemaClass<CPointPrefab> {
 
   static CPointPrefab ISchemaClass<CPointPrefab>.From(nint handle) => new CPointPrefabImpl(handle);
+  static int ISchemaClass<CPointPrefab>.Size => 1368;
 
   
   public string TargetMapName { get; set; }

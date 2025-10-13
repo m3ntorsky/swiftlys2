@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface TwoBoneIKSettings_t : ISchemaClass<TwoBoneIKSettings_t> {
 
   static TwoBoneIKSettings_t ISchemaClass<TwoBoneIKSettings_t>.From(nint handle) => new TwoBoneIKSettings_tImpl(handle);
+  static int ISchemaClass<TwoBoneIKSettings_t>.Size => 352;
 
   
   public ref IkEndEffectorType EndEffectorType { get; }

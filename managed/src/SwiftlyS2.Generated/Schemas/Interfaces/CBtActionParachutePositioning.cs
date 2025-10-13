@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBtActionParachutePositioning : CBtNode, ISchemaClass<CBtActionParachutePositioning> {
 
   static CBtActionParachutePositioning ISchemaClass<CBtActionParachutePositioning>.From(nint handle) => new CBtActionParachutePositioningImpl(handle);
+  static int ISchemaClass<CBtActionParachutePositioning>.Size => 120;
 
   
   public CountdownTimer ActionTimer { get; }

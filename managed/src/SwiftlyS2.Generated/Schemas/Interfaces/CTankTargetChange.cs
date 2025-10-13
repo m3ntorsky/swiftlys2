@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTankTargetChange : CPointEntity, ISchemaClass<CTankTargetChange> {
 
   static CTankTargetChange ISchemaClass<CTankTargetChange>.From(nint handle) => new CTankTargetChangeImpl(handle);
+  static int ISchemaClass<CTankTargetChange>.Size => 1288;
 
   
   // CVariantBase< CVariantDefaultAllocator >

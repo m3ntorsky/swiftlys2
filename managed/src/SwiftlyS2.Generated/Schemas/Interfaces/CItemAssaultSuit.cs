@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CItemAssaultSuit : CItem, ISchemaClass<CItemAssaultSuit> {
 
   static CItemAssaultSuit ISchemaClass<CItemAssaultSuit>.From(nint handle) => new CItemAssaultSuitImpl(handle);
+  static int ISchemaClass<CItemAssaultSuit>.Size => 2904;
 
 
 

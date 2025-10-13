@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CastSphereSATParams_t : ISchemaClass<CastSphereSATParams_t> {
 
   static CastSphereSATParams_t ISchemaClass<CastSphereSATParams_t>.From(nint handle) => new CastSphereSATParams_tImpl(handle);
+  static int ISchemaClass<CastSphereSATParams_t>.Size => 48;
 
   
   public ref Vector RayStart { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBlendUpdateNode : CAnimUpdateNodeBase, ISchemaClass<CBlendUpdateNode> {
 
   static CBlendUpdateNode ISchemaClass<CBlendUpdateNode>.From(nint handle) => new CBlendUpdateNodeImpl(handle);
+  static int ISchemaClass<CBlendUpdateNode>.Size => 224;
 
   
   // CUtlVector< CAnimUpdateNodeRef >

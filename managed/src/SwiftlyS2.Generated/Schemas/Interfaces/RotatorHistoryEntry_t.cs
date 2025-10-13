@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RotatorHistoryEntry_t : ISchemaClass<RotatorHistoryEntry_t> {
 
   static RotatorHistoryEntry_t ISchemaClass<RotatorHistoryEntry_t>.From(nint handle) => new RotatorHistoryEntry_tImpl(handle);
+  static int ISchemaClass<RotatorHistoryEntry_t>.Size => 32;
 
   
   public ref Quaternion InvChange { get; }

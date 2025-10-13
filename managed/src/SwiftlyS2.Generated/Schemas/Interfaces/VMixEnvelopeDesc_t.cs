@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixEnvelopeDesc_t : ISchemaClass<VMixEnvelopeDesc_t> {
 
   static VMixEnvelopeDesc_t ISchemaClass<VMixEnvelopeDesc_t>.From(nint handle) => new VMixEnvelopeDesc_tImpl(handle);
+  static int ISchemaClass<VMixEnvelopeDesc_t>.Size => 12;
 
   
   public ref float AttackTimeMS { get; }

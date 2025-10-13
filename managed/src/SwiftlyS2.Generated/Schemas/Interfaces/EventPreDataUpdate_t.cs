@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventPreDataUpdate_t : ISchemaClass<EventPreDataUpdate_t> {
 
   static EventPreDataUpdate_t ISchemaClass<EventPreDataUpdate_t>.From(nint handle) => new EventPreDataUpdate_tImpl(handle);
+  static int ISchemaClass<EventPreDataUpdate_t>.Size => 16;
 
   
   public ref int Count { get; }

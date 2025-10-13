@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulse_ResumePoint : CPulse_OutflowConnection, ISchemaClass<CPulse_ResumePoint> {
 
   static CPulse_ResumePoint ISchemaClass<CPulse_ResumePoint>.From(nint handle) => new CPulse_ResumePointImpl(handle);
+  static int ISchemaClass<CPulse_ResumePoint>.Size => 72;
 
 
 

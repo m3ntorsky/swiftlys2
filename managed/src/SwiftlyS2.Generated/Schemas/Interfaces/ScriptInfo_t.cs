@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ScriptInfo_t : ISchemaClass<ScriptInfo_t> {
 
   static ScriptInfo_t ISchemaClass<ScriptInfo_t>.From(nint handle) => new ScriptInfo_tImpl(handle);
+  static int ISchemaClass<ScriptInfo_t>.Size => 88;
 
   
   public string Code { get; set; }

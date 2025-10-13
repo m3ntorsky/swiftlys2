@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface NmBoneMaskSetDefinition_t : ISchemaClass<NmBoneMaskSetDefinition_t> {
 
   static NmBoneMaskSetDefinition_t ISchemaClass<NmBoneMaskSetDefinition_t>.From(nint handle) => new NmBoneMaskSetDefinition_tImpl(handle);
+  static int ISchemaClass<NmBoneMaskSetDefinition_t>.Size => 296;
 
   
   public ref CGlobalSymbol ID { get; }
   
   public CNmBoneWeightList PrimaryWeightList { get; }
   
-  // CUtlLeanVector< CNmBoneWeightList >
-  public SchemaUntypedField SecondaryWeightLists { get; }
+  public ref CUtlLeanVector<IntPtr, int> SecondaryWeightLists { get; }
 
 
 }

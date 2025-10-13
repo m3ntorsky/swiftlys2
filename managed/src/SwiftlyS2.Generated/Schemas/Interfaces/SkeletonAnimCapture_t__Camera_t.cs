@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SkeletonAnimCapture_t__Camera_t : ISchemaClass<SkeletonAnimCapture_t__Camera_t> {
 
   static SkeletonAnimCapture_t__Camera_t ISchemaClass<SkeletonAnimCapture_t__Camera_t>.From(nint handle) => new SkeletonAnimCapture_t__Camera_tImpl(handle);
+  static int ISchemaClass<SkeletonAnimCapture_t__Camera_t>.Size => 48;
 
   
   public ref CTransform TmCamera { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SDFForce : CParticleFunctionForce, ISchemaClass<C_OP_SDFForce> {
 
   static C_OP_SDFForce ISchemaClass<C_OP_SDFForce>.From(nint handle) => new C_OP_SDFForceImpl(handle);
+  static int ISchemaClass<C_OP_SDFForce>.Size => 472;
 
   
   public ref float ForceScale { get; }

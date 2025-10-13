@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FootPinningPoseOpFixedData_t : ISchemaClass<FootPinningPoseOpFixedData_t> {
 
   static FootPinningPoseOpFixedData_t ISchemaClass<FootPinningPoseOpFixedData_t>.From(nint handle) => new FootPinningPoseOpFixedData_tImpl(handle);
+  static int ISchemaClass<FootPinningPoseOpFixedData_t>.Size => 48;
 
   
   // CUtlVector< FootFixedData_t >

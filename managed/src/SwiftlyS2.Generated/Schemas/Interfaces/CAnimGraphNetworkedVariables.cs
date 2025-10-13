@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimGraphNetworkedVariables : ISchemaClass<CAnimGraphNetworkedVariables> {
 
   static CAnimGraphNetworkedVariables ISchemaClass<CAnimGraphNetworkedVariables>.From(nint handle) => new CAnimGraphNetworkedVariablesImpl(handle);
+  static int ISchemaClass<CAnimGraphNetworkedVariables>.Size => 520;
 
   
   public ref CUtlVector<uint> PredNetBoolVariables { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDestructiblePart : ISchemaClass<CDestructiblePart> {
 
   static CDestructiblePart ISchemaClass<CDestructiblePart>.From(nint handle) => new CDestructiblePartImpl(handle);
+  static int ISchemaClass<CDestructiblePart>.Size => 80;
 
   
   public ref CGlobalSymbol DebugName { get; }

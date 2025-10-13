@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFlexRule : ISchemaClass<CFlexRule> {
 
   static CFlexRule ISchemaClass<CFlexRule>.From(nint handle) => new CFlexRuleImpl(handle);
+  static int ISchemaClass<CFlexRule>.Size => 32;
 
   
   public ref int Flex { get; }

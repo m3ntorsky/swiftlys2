@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionGraphGroup : ISchemaClass<CMotionGraphGroup> {
 
   static CMotionGraphGroup ISchemaClass<CMotionGraphGroup>.From(nint handle) => new CMotionGraphGroupImpl(handle);
+  static int ISchemaClass<CMotionGraphGroup>.Size => 264;
 
   
   public CMotionSearchDB SearchDB { get; }

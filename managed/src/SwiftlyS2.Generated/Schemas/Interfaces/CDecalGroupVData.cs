@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDecalGroupVData : ISchemaClass<CDecalGroupVData> {
 
   static CDecalGroupVData ISchemaClass<CDecalGroupVData>.From(nint handle) => new CDecalGroupVDataImpl(handle);
+  static int ISchemaClass<CDecalGroupVData>.Size => 32;
 
   
   // CUtlVector< DecalGroupOption_t >

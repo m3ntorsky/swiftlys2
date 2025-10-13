@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTwistConstraint : CBaseConstraint, ISchemaClass<CTwistConstraint> {
 
   static CTwistConstraint ISchemaClass<CTwistConstraint>.From(nint handle) => new CTwistConstraintImpl(handle);
+  static int ISchemaClass<CTwistConstraint>.Size => 144;
 
   
   public ref bool Inverse { get; }

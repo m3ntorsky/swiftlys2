@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AnimComponentID : ISchemaClass<AnimComponentID> {
 
   static AnimComponentID ISchemaClass<AnimComponentID>.From(nint handle) => new AnimComponentIDImpl(handle);
+  static int ISchemaClass<AnimComponentID>.Size => 4;
 
   
   public ref uint Id { get; }

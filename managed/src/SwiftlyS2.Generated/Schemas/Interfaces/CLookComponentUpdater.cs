@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLookComponentUpdater : CAnimComponentUpdater, ISchemaClass<CLookComponentUpdater> {
 
   static CLookComponentUpdater ISchemaClass<CLookComponentUpdater>.From(nint handle) => new CLookComponentUpdaterImpl(handle);
+  static int ISchemaClass<CLookComponentUpdater>.Size => 72;
 
   
   public CAnimParamHandle LookHeading { get; }

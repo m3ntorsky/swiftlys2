@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionNode : ISchemaClass<CMotionNode> {
 
   static CMotionNode ISchemaClass<CMotionNode>.From(nint handle) => new CMotionNodeImpl(handle);
+  static int ISchemaClass<CMotionNode>.Size => 40;
 
   
   public string Name { get; set; }

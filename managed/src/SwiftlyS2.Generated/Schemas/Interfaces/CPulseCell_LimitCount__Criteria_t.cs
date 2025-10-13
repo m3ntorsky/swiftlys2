@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_LimitCount__Criteria_t : ISchemaClass<CPulseCell_LimitCount__Criteria_t> {
 
   static CPulseCell_LimitCount__Criteria_t ISchemaClass<CPulseCell_LimitCount__Criteria_t>.From(nint handle) => new CPulseCell_LimitCount__Criteria_tImpl(handle);
+  static int ISchemaClass<CPulseCell_LimitCount__Criteria_t>.Size => 1;
 
   
   public ref bool LimitCountPasses { get; }

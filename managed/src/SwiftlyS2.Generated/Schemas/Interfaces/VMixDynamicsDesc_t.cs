@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixDynamicsDesc_t : ISchemaClass<VMixDynamicsDesc_t> {
 
   static VMixDynamicsDesc_t ISchemaClass<VMixDynamicsDesc_t>.From(nint handle) => new VMixDynamicsDesc_tImpl(handle);
+  static int ISchemaClass<VMixDynamicsDesc_t>.Size => 48;
 
   
   public ref float FldbGain { get; }

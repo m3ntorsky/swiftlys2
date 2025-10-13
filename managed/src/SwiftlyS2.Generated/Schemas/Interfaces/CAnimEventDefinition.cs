@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimEventDefinition : ISchemaClass<CAnimEventDefinition> {
 
   static CAnimEventDefinition ISchemaClass<CAnimEventDefinition>.From(nint handle) => new CAnimEventDefinitionImpl(handle);
+  static int ISchemaClass<CAnimEventDefinition>.Size => 64;
 
   
   public ref int Frame { get; }

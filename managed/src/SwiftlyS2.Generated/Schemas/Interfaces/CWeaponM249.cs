@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CWeaponM249 : CCSWeaponBaseGun, ISchemaClass<CWeaponM249> {
 
   static CWeaponM249 ISchemaClass<CWeaponM249>.From(nint handle) => new CWeaponM249Impl(handle);
+  static int ISchemaClass<CWeaponM249>.Size => 4552;
 
 
 

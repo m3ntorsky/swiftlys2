@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MotionDBIndex : ISchemaClass<MotionDBIndex> {
 
   static MotionDBIndex ISchemaClass<MotionDBIndex>.From(nint handle) => new MotionDBIndexImpl(handle);
+  static int ISchemaClass<MotionDBIndex>.Size => 4;
 
   
   public ref uint Index { get; }

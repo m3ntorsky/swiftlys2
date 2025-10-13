@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventClientSceneSystemThreadStateChange_t : ISchemaClass<EventClientSceneSystemThreadStateChange_t> {
 
   static EventClientSceneSystemThreadStateChange_t ISchemaClass<EventClientSceneSystemThreadStateChange_t>.From(nint handle) => new EventClientSceneSystemThreadStateChange_tImpl(handle);
+  static int ISchemaClass<EventClientSceneSystemThreadStateChange_t>.Size => 1;
 
   
   public ref bool ThreadsActive { get; }

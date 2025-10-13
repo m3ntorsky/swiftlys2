@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MaterialParamFloat_t : MaterialParam_t, ISchemaClass<MaterialParamFloat_t> {
 
   static MaterialParamFloat_t ISchemaClass<MaterialParamFloat_t>.From(nint handle) => new MaterialParamFloat_tImpl(handle);
+  static int ISchemaClass<MaterialParamFloat_t>.Size => 16;
 
   
   public ref float Value { get; }

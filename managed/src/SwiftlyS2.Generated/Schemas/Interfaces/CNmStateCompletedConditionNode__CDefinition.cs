@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmStateCompletedConditionNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmStateCompletedConditionNode__CDefinition> {
 
   static CNmStateCompletedConditionNode__CDefinition ISchemaClass<CNmStateCompletedConditionNode__CDefinition>.From(nint handle) => new CNmStateCompletedConditionNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmStateCompletedConditionNode__CDefinition>.Size => 24;
 
   
   public ref short SourceStateNodeIdx { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface NmFloatCurveCompressionSettings_t : ISchemaClass<NmFloatCurveCompressionSettings_t> {
 
   static NmFloatCurveCompressionSettings_t ISchemaClass<NmFloatCurveCompressionSettings_t>.From(nint handle) => new NmFloatCurveCompressionSettings_tImpl(handle);
+  static int ISchemaClass<NmFloatCurveCompressionSettings_t>.Size => 12;
 
   
   public NmCompressionSettings_t__QuantizationRange_t Range { get; }

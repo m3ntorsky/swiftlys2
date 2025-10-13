@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface IKBoneNameAndIndex_t : ISchemaClass<IKBoneNameAndIndex_t> {
 
   static IKBoneNameAndIndex_t ISchemaClass<IKBoneNameAndIndex_t>.From(nint handle) => new IKBoneNameAndIndex_tImpl(handle);
+  static int ISchemaClass<IKBoneNameAndIndex_t>.Size => 16;
 
   
   public string Name { get; set; }

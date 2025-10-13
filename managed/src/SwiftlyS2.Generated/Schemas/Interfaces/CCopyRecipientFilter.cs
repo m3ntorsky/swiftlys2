@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCopyRecipientFilter : ISchemaClass<CCopyRecipientFilter> {
 
   static CCopyRecipientFilter ISchemaClass<CCopyRecipientFilter>.From(nint handle) => new CCopyRecipientFilterImpl(handle);
+  static int ISchemaClass<CCopyRecipientFilter>.Size => 48;
 
   
   public ref int Flags { get; }

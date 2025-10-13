@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseModelEntity : CBaseEntity, ISchemaClass<CBaseModelEntity> {
 
   static CBaseModelEntity ISchemaClass<CBaseModelEntity>.From(nint handle) => new CBaseModelEntityImpl(handle);
+  static int ISchemaClass<CBaseModelEntity>.Size => 2032;
 
   
   public CRenderComponent? CRenderComponent { get; }

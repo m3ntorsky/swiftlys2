@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface sndopvarlatchdata_t : ISchemaClass<sndopvarlatchdata_t> {
 
   static sndopvarlatchdata_t ISchemaClass<sndopvarlatchdata_t>.From(nint handle) => new sndopvarlatchdata_tImpl(handle);
+  static int ISchemaClass<sndopvarlatchdata_t>.Size => 48;
 
   
   public string Stack { get; set; }

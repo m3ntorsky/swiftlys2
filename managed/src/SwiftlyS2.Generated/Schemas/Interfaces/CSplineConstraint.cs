@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSplineConstraint : CPhysConstraint, ISchemaClass<CSplineConstraint> {
 
   static CSplineConstraint ISchemaClass<CSplineConstraint>.From(nint handle) => new CSplineConstraintImpl(handle);
+  static int ISchemaClass<CSplineConstraint>.Size => 1552;
 
   
   public ref Vector AnchorOffsetRestore { get; }

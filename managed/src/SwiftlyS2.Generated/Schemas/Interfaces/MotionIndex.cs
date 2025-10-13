@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MotionIndex : ISchemaClass<MotionIndex> {
 
   static MotionIndex ISchemaClass<MotionIndex>.From(nint handle) => new MotionIndexImpl(handle);
+  static int ISchemaClass<MotionIndex>.Size => 4;
 
   
   public ref ushort Group { get; }

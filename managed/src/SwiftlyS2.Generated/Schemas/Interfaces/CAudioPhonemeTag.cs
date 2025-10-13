@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAudioPhonemeTag : ISchemaClass<CAudioPhonemeTag> {
 
   static CAudioPhonemeTag ISchemaClass<CAudioPhonemeTag>.From(nint handle) => new CAudioPhonemeTagImpl(handle);
+  static int ISchemaClass<CAudioPhonemeTag>.Size => 12;
 
   
   public ref float StartTime { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VoxelVisBlockOffset_t : ISchemaClass<VoxelVisBlockOffset_t> {
 
   static VoxelVisBlockOffset_t ISchemaClass<VoxelVisBlockOffset_t>.From(nint handle) => new VoxelVisBlockOffset_tImpl(handle);
+  static int ISchemaClass<VoxelVisBlockOffset_t>.Size => 8;
 
   
   public ref uint Offset { get; }

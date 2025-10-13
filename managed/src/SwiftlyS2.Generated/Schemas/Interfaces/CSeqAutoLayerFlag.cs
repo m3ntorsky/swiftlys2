@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSeqAutoLayerFlag : ISchemaClass<CSeqAutoLayerFlag> {
 
   static CSeqAutoLayerFlag ISchemaClass<CSeqAutoLayerFlag>.From(nint handle) => new CSeqAutoLayerFlagImpl(handle);
+  static int ISchemaClass<CSeqAutoLayerFlag>.Size => 8;
 
   
   public ref bool Post { get; }

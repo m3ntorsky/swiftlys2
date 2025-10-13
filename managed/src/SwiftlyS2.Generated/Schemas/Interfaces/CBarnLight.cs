@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBarnLight : CBaseModelEntity, ISchemaClass<CBarnLight> {
 
   static CBarnLight ISchemaClass<CBarnLight>.From(nint handle) => new CBarnLightImpl(handle);
+  static int ISchemaClass<CBarnLight>.Size => 2840;
 
   
   public ref bool Enabled { get; }

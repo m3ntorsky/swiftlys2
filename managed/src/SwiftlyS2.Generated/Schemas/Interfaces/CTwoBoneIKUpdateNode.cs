@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTwoBoneIKUpdateNode : CUnaryUpdateNode, ISchemaClass<CTwoBoneIKUpdateNode> {
 
   static CTwoBoneIKUpdateNode ISchemaClass<CTwoBoneIKUpdateNode>.From(nint handle) => new CTwoBoneIKUpdateNodeImpl(handle);
+  static int ISchemaClass<CTwoBoneIKUpdateNode>.Size => 480;
 
   
   public TwoBoneIKSettings_t OpFixedData { get; }

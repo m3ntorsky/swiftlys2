@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PulseObservableBoolExpression_t : ISchemaClass<PulseObservableBoolExpression_t> {
 
   static PulseObservableBoolExpression_t ISchemaClass<PulseObservableBoolExpression_t>.From(nint handle) => new PulseObservableBoolExpression_tImpl(handle);
+  static int ISchemaClass<PulseObservableBoolExpression_t>.Size => 120;
 
   
   public CPulse_OutflowConnection EvaluateConnection { get; }

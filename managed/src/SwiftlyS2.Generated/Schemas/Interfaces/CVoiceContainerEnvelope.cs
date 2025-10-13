@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVoiceContainerEnvelope : CVoiceContainerBase, ISchemaClass<CVoiceContainerEnvelope> {
 
   static CVoiceContainerEnvelope ISchemaClass<CVoiceContainerEnvelope>.From(nint handle) => new CVoiceContainerEnvelopeImpl(handle);
+  static int ISchemaClass<CVoiceContainerEnvelope>.Size => 200;
 
   
   public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> Sound { get; }

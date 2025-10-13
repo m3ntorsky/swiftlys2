@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PulseGraphExecutionHistoryNodeDesc_t : ISchemaClass<PulseGraphExecutionHistoryNodeDesc_t> {
 
   static PulseGraphExecutionHistoryNodeDesc_t ISchemaClass<PulseGraphExecutionHistoryNodeDesc_t>.From(nint handle) => new PulseGraphExecutionHistoryNodeDesc_tImpl(handle);
+  static int ISchemaClass<PulseGraphExecutionHistoryNodeDesc_t>.Size => 32;
 
   
   public ref CBufferString StrCellDesc { get; }

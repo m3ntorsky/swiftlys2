@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeNodeIntegrator_t : ISchemaClass<FeNodeIntegrator_t> {
 
   static FeNodeIntegrator_t ISchemaClass<FeNodeIntegrator_t>.From(nint handle) => new FeNodeIntegrator_tImpl(handle);
+  static int ISchemaClass<FeNodeIntegrator_t>.Size => 16;
 
   
   public ref float PointDamping { get; }

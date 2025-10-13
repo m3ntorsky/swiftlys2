@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface NmCompressionSettings_t : ISchemaClass<NmCompressionSettings_t> {
 
   static NmCompressionSettings_t ISchemaClass<NmCompressionSettings_t>.From(nint handle) => new NmCompressionSettings_tImpl(handle);
+  static int ISchemaClass<NmCompressionSettings_t>.Size => 64;
 
   
   public NmCompressionSettings_t__QuantizationRange_t TranslationRangeX { get; }

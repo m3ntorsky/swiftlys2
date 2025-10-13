@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeRodConstraint_t : ISchemaClass<FeRodConstraint_t> {
 
   static FeRodConstraint_t ISchemaClass<FeRodConstraint_t>.From(nint handle) => new FeRodConstraint_tImpl(handle);
+  static int ISchemaClass<FeRodConstraint_t>.Size => 20;
 
   
   public ISchemaFixedArray<ushort> Node { get; }

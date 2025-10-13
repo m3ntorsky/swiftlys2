@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootPinningUpdateNode : CUnaryUpdateNode, ISchemaClass<CFootPinningUpdateNode> {
 
   static CFootPinningUpdateNode ISchemaClass<CFootPinningUpdateNode>.From(nint handle) => new CFootPinningUpdateNodeImpl(handle);
+  static int ISchemaClass<CFootPinningUpdateNode>.Size => 208;
 
   
   public FootPinningPoseOpFixedData_t PoseOpFixedData { get; }

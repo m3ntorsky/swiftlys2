@@ -25,8 +25,8 @@ internal partial class PermEntityLumpData_tImpl : SchemaClass, PermEntityLumpDat
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCEntityLump>> ChildLumps {
     get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCEntityLump>>>(Schema.GetOffset(0x47DA25F1AFDAF56C));
   }
-  public SchemaUntypedField EntityKeyValues {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x47DA25F1DBD62937));
+  public ref CUtlLeanVector<IntPtr, int> EntityKeyValues {
+    get => ref _Handle.AsRef<CUtlLeanVector<IntPtr, int>>(Schema.GetOffset(0x47DA25F1DBD62937));
   }
 
 

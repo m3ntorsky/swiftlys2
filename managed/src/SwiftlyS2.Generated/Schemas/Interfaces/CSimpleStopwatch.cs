@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSimpleStopwatch : CStopwatchBase, ISchemaClass<CSimpleStopwatch> {
 
   static CSimpleStopwatch ISchemaClass<CSimpleStopwatch>.From(nint handle) => new CSimpleStopwatchImpl(handle);
+  static int ISchemaClass<CSimpleStopwatch>.Size => 12;
 
 
 

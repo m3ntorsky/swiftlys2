@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPoseHandle : ISchemaClass<CPoseHandle> {
 
   static CPoseHandle ISchemaClass<CPoseHandle>.From(nint handle) => new CPoseHandleImpl(handle);
+  static int ISchemaClass<CPoseHandle>.Size => 4;
 
   
   public ref ushort Index { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnHalfEdge_t : ISchemaClass<RnHalfEdge_t> {
 
   static RnHalfEdge_t ISchemaClass<RnHalfEdge_t>.From(nint handle) => new RnHalfEdge_tImpl(handle);
+  static int ISchemaClass<RnHalfEdge_t>.Size => 4;
 
   
   public ref byte Next { get; }

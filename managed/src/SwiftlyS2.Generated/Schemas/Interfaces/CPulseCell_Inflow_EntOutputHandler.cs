@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Inflow_EntOutputHandler : CPulseCell_Inflow_BaseEntrypoint, ISchemaClass<CPulseCell_Inflow_EntOutputHandler> {
 
   static CPulseCell_Inflow_EntOutputHandler ISchemaClass<CPulseCell_Inflow_EntOutputHandler>.From(nint handle) => new CPulseCell_Inflow_EntOutputHandlerImpl(handle);
+  static int ISchemaClass<CPulseCell_Inflow_EntOutputHandler>.Size => 184;
 
   
   // PulseSymbol_t

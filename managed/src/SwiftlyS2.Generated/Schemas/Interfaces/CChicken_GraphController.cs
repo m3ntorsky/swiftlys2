@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CChicken_GraphController : CBaseAnimGraphAnimGraphController, ISchemaClass<CChicken_GraphController> {
 
   static CChicken_GraphController ISchemaClass<CChicken_GraphController>.From(nint handle) => new CChicken_GraphControllerImpl(handle);
+  static int ISchemaClass<CChicken_GraphController>.Size => 744;
 
   
   // CAnimGraphParamRef< char* >

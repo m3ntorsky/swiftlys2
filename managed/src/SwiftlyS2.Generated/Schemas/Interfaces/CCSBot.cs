@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSBot : CBot, ISchemaClass<CCSBot> {
 
   static CCSBot ISchemaClass<CCSBot>.From(nint handle) => new CCSBotImpl(handle);
+  static int ISchemaClass<CCSBot>.Size => 27984;
 
   
   public ref Vector EyePosition { get; }

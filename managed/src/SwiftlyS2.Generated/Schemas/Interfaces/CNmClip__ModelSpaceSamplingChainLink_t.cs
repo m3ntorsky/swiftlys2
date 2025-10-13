@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmClip__ModelSpaceSamplingChainLink_t : ISchemaClass<CNmClip__ModelSpaceSamplingChainLink_t> {
 
   static CNmClip__ModelSpaceSamplingChainLink_t ISchemaClass<CNmClip__ModelSpaceSamplingChainLink_t>.From(nint handle) => new CNmClip__ModelSpaceSamplingChainLink_tImpl(handle);
+  static int ISchemaClass<CNmClip__ModelSpaceSamplingChainLink_t>.Size => 12;
 
   
   public ref int BoneIdx { get; }

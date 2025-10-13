@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CollisionGroupContext_t : ISchemaClass<CollisionGroupContext_t> {
 
   static CollisionGroupContext_t ISchemaClass<CollisionGroupContext_t>.From(nint handle) => new CollisionGroupContext_tImpl(handle);
+  static int ISchemaClass<CollisionGroupContext_t>.Size => 4;
 
   
   public ref int CollisionGroupNumber { get; }

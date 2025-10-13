@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Value_TestValue50 : CPulseCell_BaseValue, ISchemaClass<CPulseCell_Value_TestValue50> {
 
   static CPulseCell_Value_TestValue50 ISchemaClass<CPulseCell_Value_TestValue50>.From(nint handle) => new CPulseCell_Value_TestValue50Impl(handle);
+  static int ISchemaClass<CPulseCell_Value_TestValue50>.Size => 72;
 
 
 

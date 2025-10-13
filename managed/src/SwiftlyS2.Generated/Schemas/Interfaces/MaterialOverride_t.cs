@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MaterialOverride_t : BaseSceneObjectOverride_t, ISchemaClass<MaterialOverride_t> {
 
   static MaterialOverride_t ISchemaClass<MaterialOverride_t>.From(nint handle) => new MaterialOverride_tImpl(handle);
+  static int ISchemaClass<MaterialOverride_t>.Size => 40;
 
   
   public ref uint SubSceneObject { get; }

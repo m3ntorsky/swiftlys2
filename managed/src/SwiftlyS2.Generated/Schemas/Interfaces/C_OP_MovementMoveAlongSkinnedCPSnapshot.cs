@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_MovementMoveAlongSkinnedCPSnapshot : CParticleFunctionOperator, ISchemaClass<C_OP_MovementMoveAlongSkinnedCPSnapshot> {
 
   static C_OP_MovementMoveAlongSkinnedCPSnapshot ISchemaClass<C_OP_MovementMoveAlongSkinnedCPSnapshot>.From(nint handle) => new C_OP_MovementMoveAlongSkinnedCPSnapshotImpl(handle);
+  static int ISchemaClass<C_OP_MovementMoveAlongSkinnedCPSnapshot>.Size => 1168;
 
   
   public ref int ControlPointNumber { get; }

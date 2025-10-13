@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseDMStart : CPointEntity, ISchemaClass<CBaseDMStart> {
 
   static CBaseDMStart ISchemaClass<CBaseDMStart>.From(nint handle) => new CBaseDMStartImpl(handle);
+  static int ISchemaClass<CBaseDMStart>.Size => 1272;
 
   
   public string Master { get; set; }

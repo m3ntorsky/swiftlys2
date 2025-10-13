@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_CheckParticleForWater : CParticleFunctionInitializer, ISchemaClass<C_INIT_CheckParticleForWater> {
 
   static C_INIT_CheckParticleForWater ISchemaClass<C_INIT_CheckParticleForWater>.From(nint handle) => new C_INIT_CheckParticleForWaterImpl(handle);
+  static int ISchemaClass<C_INIT_CheckParticleForWater>.Size => 1176;
 
   
   public CPerParticleFloatInput Radius { get; }

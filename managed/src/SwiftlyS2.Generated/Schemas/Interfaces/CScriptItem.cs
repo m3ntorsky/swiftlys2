@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CScriptItem : CItem, ISchemaClass<CScriptItem> {
 
   static CScriptItem ISchemaClass<CScriptItem>.From(nint handle) => new CScriptItemImpl(handle);
+  static int ISchemaClass<CScriptItem>.Size => 2912;
 
   
   public ref MoveType_t MoveTypeOverride { get; }

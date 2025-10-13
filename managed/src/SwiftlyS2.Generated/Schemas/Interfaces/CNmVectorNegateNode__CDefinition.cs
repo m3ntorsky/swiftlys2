@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmVectorNegateNode__CDefinition : CNmVectorValueNode__CDefinition, ISchemaClass<CNmVectorNegateNode__CDefinition> {
 
   static CNmVectorNegateNode__CDefinition ISchemaClass<CNmVectorNegateNode__CDefinition>.From(nint handle) => new CNmVectorNegateNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmVectorNegateNode__CDefinition>.Size => 24;
 
   
   public ref short InputValueNodeIdx { get; }

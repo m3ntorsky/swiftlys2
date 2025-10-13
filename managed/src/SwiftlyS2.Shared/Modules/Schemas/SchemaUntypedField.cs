@@ -1,19 +1,22 @@
 using SwiftlyS2.Shared.Natives;
-using SwiftlyS2.Shared.Schemas;
 
 namespace SwiftlyS2.Shared.Schemas;
 
-public class SchemaUntypedField : INativeHandle, ISchemaClass<SchemaUntypedField> {
+public class SchemaUntypedField : INativeHandle, ISchemaClass<SchemaUntypedField>
+{
 
   private nint _handle;
 
   public bool IsValid => throw new NotImplementedException();
+  static int ISchemaClass<SchemaUntypedField>.Size => throw new NotImplementedException();
 
-  public SchemaUntypedField(nint handle) {
+  public SchemaUntypedField(nint handle)
+  {
     _handle = handle;
   }
 
-  public static SchemaUntypedField From(nint handle) {
+  public static SchemaUntypedField From(nint handle)
+  {
     return new SchemaUntypedField(handle);
   }
 

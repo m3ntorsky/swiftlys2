@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CInfoFan : CPointEntity, ISchemaClass<CInfoFan> {
 
   static CInfoFan ISchemaClass<CInfoFan>.From(nint handle) => new CInfoFanImpl(handle);
+  static int ISchemaClass<CInfoFan>.Size => 1352;
 
   
   public ref float FanForceMaxRadius { get; }

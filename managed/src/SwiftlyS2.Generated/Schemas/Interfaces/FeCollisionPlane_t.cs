@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeCollisionPlane_t : ISchemaClass<FeCollisionPlane_t> {
 
   static FeCollisionPlane_t ISchemaClass<FeCollisionPlane_t>.From(nint handle) => new FeCollisionPlane_tImpl(handle);
+  static int ISchemaClass<FeCollisionPlane_t>.Size => 24;
 
   
   public ref ushort CtrlParent { get; }

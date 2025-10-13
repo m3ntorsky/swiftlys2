@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDamageRecord : ISchemaClass<CDamageRecord> {
 
   static CDamageRecord ISchemaClass<CDamageRecord>.From(nint handle) => new CDamageRecordImpl(handle);
+  static int ISchemaClass<CDamageRecord>.Size => 120;
 
   
   public ref CHandle<CCSPlayerPawn> PlayerDamager { get; }

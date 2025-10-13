@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvSoundscapeTriggerable : CEnvSoundscape, ISchemaClass<CEnvSoundscapeTriggerable> {
 
   static CEnvSoundscapeTriggerable ISchemaClass<CEnvSoundscapeTriggerable>.From(nint handle) => new CEnvSoundscapeTriggerableImpl(handle);
+  static int ISchemaClass<CEnvSoundscapeTriggerable>.Size => 1424;
 
 
 

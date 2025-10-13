@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFlexDesc : ISchemaClass<CFlexDesc> {
 
   static CFlexDesc ISchemaClass<CFlexDesc>.From(nint handle) => new CFlexDescImpl(handle);
+  static int ISchemaClass<CFlexDesc>.Size => 8;
 
   
   public string Facs { get; set; }

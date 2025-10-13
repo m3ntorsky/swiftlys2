@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PhysSoftbodyDesc_t : ISchemaClass<PhysSoftbodyDesc_t> {
 
   static PhysSoftbodyDesc_t ISchemaClass<PhysSoftbodyDesc_t>.From(nint handle) => new PhysSoftbodyDesc_tImpl(handle);
+  static int ISchemaClass<PhysSoftbodyDesc_t>.Size => 144;
 
   
   public ref CUtlVector<uint> ParticleBoneHash { get; }

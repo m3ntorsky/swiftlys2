@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFogController : CBaseEntity, ISchemaClass<CFogController> {
 
   static CFogController ISchemaClass<CFogController>.From(nint handle) => new CFogControllerImpl(handle);
+  static int ISchemaClass<CFogController>.Size => 1376;
 
   
   public fogparams_t Fog { get; }

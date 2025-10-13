@@ -21,6 +21,9 @@ def extract_metadata(yaml_data, is_index=False):
         words = title.split()
         clean_title = words[-1] if words else ''
 
+    clean_title = re.sub(r'<[^>]+>', '', clean_title)
+    clean_title = re.sub(r'\[[^\]]+\]', '', clean_title)
+
     return {'title': clean_title}
 
 def convert_to_path(s):
@@ -49,7 +52,7 @@ def generate_markdown(yaml_data):
         if 'h2' in item:
             md += f"## {item['h2']}\n\n"
         if 'h4' in item:
-            md += f"- {item['h4']}\n\n"
+            md += f"#### {item['h4']}\n\n"
         if 'code' in item:
             md += "```csharp\n" + item['code'] + "\n```\n\n"
         if 'parameters' in item:
@@ -86,11 +89,12 @@ def generate_markdown(yaml_data):
             md += "\n"
         if 'api3' in item:
             src = item.get('src', '')
-            md += f"### **{item['api3']}**"
+            api3_title = str(item.get('api3', ''))
+            api3_title = re.sub(r'<[^>]+>', '', api3_title)
+            api3_title = re.sub(r'\[[^\]]+\]', '', api3_title)
+            md += f"### {api3_title}\n\n"
             if src != '':
-                md += f" - [Source Code]({src})\n\n"
-            else:
-                md += "\n\n"
+                md += f"[Source Code]({src})\n\n"
     return md
 
 def convert_yaml_file(src_path, dest_path):

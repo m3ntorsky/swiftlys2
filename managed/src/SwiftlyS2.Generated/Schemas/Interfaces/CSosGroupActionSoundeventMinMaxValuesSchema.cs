@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSosGroupActionSoundeventMinMaxValuesSchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionSoundeventMinMaxValuesSchema> {
 
   static CSosGroupActionSoundeventMinMaxValuesSchema ISchemaClass<CSosGroupActionSoundeventMinMaxValuesSchema>.From(nint handle) => new CSosGroupActionSoundeventMinMaxValuesSchemaImpl(handle);
+  static int ISchemaClass<CSosGroupActionSoundeventMinMaxValuesSchema>.Size => 64;
 
   
   public string StrQueryPublicFieldName { get; set; }

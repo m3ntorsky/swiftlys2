@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVoiceContainerStaticAdditiveSynth__CHarmonic : ISchemaClass<CVoiceContainerStaticAdditiveSynth__CHarmonic> {
 
   static CVoiceContainerStaticAdditiveSynth__CHarmonic ISchemaClass<CVoiceContainerStaticAdditiveSynth__CHarmonic>.From(nint handle) => new CVoiceContainerStaticAdditiveSynth__CHarmonicImpl(handle);
+  static int ISchemaClass<CVoiceContainerStaticAdditiveSynth__CHarmonic>.Size => 104;
 
   
   public ref EWaveform Waveform { get; }

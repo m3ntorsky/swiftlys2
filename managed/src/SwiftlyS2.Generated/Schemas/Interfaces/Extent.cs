@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface Extent : ISchemaClass<Extent> {
 
   static Extent ISchemaClass<Extent>.From(nint handle) => new ExtentImpl(handle);
+  static int ISchemaClass<Extent>.Size => 24;
 
   
   public ref Vector Lo { get; }

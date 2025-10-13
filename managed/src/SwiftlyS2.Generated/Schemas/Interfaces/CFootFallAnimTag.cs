@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootFallAnimTag : CAnimTagBase, ISchemaClass<CFootFallAnimTag> {
 
   static CFootFallAnimTag ISchemaClass<CFootFallAnimTag>.From(nint handle) => new CFootFallAnimTagImpl(handle);
+  static int ISchemaClass<CFootFallAnimTag>.Size => 96;
 
   
   public ref FootFallTagFoot_t Foot { get; }

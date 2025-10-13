@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayer_WaterServices : CPlayer_WaterServices, ISchemaClass<CCSPlayer_WaterServices> {
 
   static CCSPlayer_WaterServices ISchemaClass<CCSPlayer_WaterServices>.From(nint handle) => new CCSPlayer_WaterServicesImpl(handle);
+  static int ISchemaClass<CCSPlayer_WaterServices>.Size => 120;
 
   
   public GameTime_t NextDrownDamageTime { get; }

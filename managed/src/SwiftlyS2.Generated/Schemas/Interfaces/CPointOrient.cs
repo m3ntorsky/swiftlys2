@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointOrient : CBaseEntity, ISchemaClass<CPointOrient> {
 
   static CPointOrient ISchemaClass<CPointOrient>.From(nint handle) => new CPointOrientImpl(handle);
+  static int ISchemaClass<CPointOrient>.Size => 1296;
 
   
   public string SpawnTargetName { get; set; }

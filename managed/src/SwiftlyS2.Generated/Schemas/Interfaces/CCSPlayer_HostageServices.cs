@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayer_HostageServices : CPlayerPawnComponent, ISchemaClass<CCSPlayer_HostageServices> {
 
   static CCSPlayer_HostageServices ISchemaClass<CCSPlayer_HostageServices>.From(nint handle) => new CCSPlayer_HostageServicesImpl(handle);
+  static int ISchemaClass<CCSPlayer_HostageServices>.Size => 72;
 
   
   public ref CHandle<CBaseEntity> CarriedHostage { get; }

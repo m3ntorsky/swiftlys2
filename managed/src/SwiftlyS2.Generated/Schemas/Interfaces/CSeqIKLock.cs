@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSeqIKLock : ISchemaClass<CSeqIKLock> {
 
   static CSeqIKLock ISchemaClass<CSeqIKLock>.From(nint handle) => new CSeqIKLockImpl(handle);
+  static int ISchemaClass<CSeqIKLock>.Size => 12;
 
   
   public ref float PosWeight { get; }

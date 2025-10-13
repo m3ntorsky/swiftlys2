@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeTwistConstraint_t : ISchemaClass<FeTwistConstraint_t> {
 
   static FeTwistConstraint_t ISchemaClass<FeTwistConstraint_t>.From(nint handle) => new FeTwistConstraint_tImpl(handle);
+  static int ISchemaClass<FeTwistConstraint_t>.Size => 12;
 
   
   public ref ushort NodeOrient { get; }

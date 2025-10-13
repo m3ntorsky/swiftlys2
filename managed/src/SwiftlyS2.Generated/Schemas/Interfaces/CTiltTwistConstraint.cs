@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTiltTwistConstraint : CBaseConstraint, ISchemaClass<CTiltTwistConstraint> {
 
   static CTiltTwistConstraint ISchemaClass<CTiltTwistConstraint>.From(nint handle) => new CTiltTwistConstraintImpl(handle);
+  static int ISchemaClass<CTiltTwistConstraint>.Size => 144;
 
   
   public ref int TargetAxis { get; }

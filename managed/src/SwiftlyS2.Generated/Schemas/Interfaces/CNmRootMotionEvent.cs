@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmRootMotionEvent : CNmEvent, ISchemaClass<CNmRootMotionEvent> {
 
   static CNmRootMotionEvent ISchemaClass<CNmRootMotionEvent>.From(nint handle) => new CNmRootMotionEventImpl(handle);
+  static int ISchemaClass<CNmRootMotionEvent>.Size => 40;
 
   
   public ref float BlendTimeSeconds { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CConstraintSlave : ISchemaClass<CConstraintSlave> {
 
   static CConstraintSlave ISchemaClass<CConstraintSlave>.From(nint handle) => new CConstraintSlaveImpl(handle);
+  static int ISchemaClass<CConstraintSlave>.Size => 80;
 
   
   public ref Quaternion BaseOrientation { get; }

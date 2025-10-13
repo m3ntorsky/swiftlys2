@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CHitBoxSetList : ISchemaClass<CHitBoxSetList> {
 
   static CHitBoxSetList ISchemaClass<CHitBoxSetList>.From(nint handle) => new CHitBoxSetListImpl(handle);
+  static int ISchemaClass<CHitBoxSetList>.Size => 24;
 
   
   // CUtlVector< CHitBoxSet >

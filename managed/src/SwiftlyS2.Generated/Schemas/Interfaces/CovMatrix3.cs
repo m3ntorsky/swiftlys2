@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CovMatrix3 : ISchemaClass<CovMatrix3> {
 
   static CovMatrix3 ISchemaClass<CovMatrix3>.From(nint handle) => new CovMatrix3Impl(handle);
+  static int ISchemaClass<CovMatrix3>.Size => 24;
 
   
   public ref Vector Diag { get; }

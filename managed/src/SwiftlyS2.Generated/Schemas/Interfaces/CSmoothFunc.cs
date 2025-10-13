@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSmoothFunc : ISchemaClass<CSmoothFunc> {
 
   static CSmoothFunc ISchemaClass<CSmoothFunc>.From(nint handle) => new CSmoothFuncImpl(handle);
+  static int ISchemaClass<CSmoothFunc>.Size => 32;
 
   
   public ref float SmoothAmplitude { get; }

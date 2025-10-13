@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmVirtualParameterBoneMaskNode__CDefinition : CNmBoneMaskValueNode__CDefinition, ISchemaClass<CNmVirtualParameterBoneMaskNode__CDefinition> {
 
   static CNmVirtualParameterBoneMaskNode__CDefinition ISchemaClass<CNmVirtualParameterBoneMaskNode__CDefinition>.From(nint handle) => new CNmVirtualParameterBoneMaskNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmVirtualParameterBoneMaskNode__CDefinition>.Size => 24;
 
   
   public ref short ChildNodeIdx { get; }

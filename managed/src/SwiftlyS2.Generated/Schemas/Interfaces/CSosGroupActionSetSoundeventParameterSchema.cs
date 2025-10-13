@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSosGroupActionSetSoundeventParameterSchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionSetSoundeventParameterSchema> {
 
   static CSosGroupActionSetSoundeventParameterSchema ISchemaClass<CSosGroupActionSetSoundeventParameterSchema>.From(nint handle) => new CSosGroupActionSetSoundeventParameterSchemaImpl(handle);
+  static int ISchemaClass<CSosGroupActionSetSoundeventParameterSchema>.Size => 40;
 
   
   public ref int MaxCount { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSingleFrameUpdateNode : CLeafUpdateNode, ISchemaClass<CSingleFrameUpdateNode> {
 
   static CSingleFrameUpdateNode ISchemaClass<CSingleFrameUpdateNode>.From(nint handle) => new CSingleFrameUpdateNodeImpl(handle);
+  static int ISchemaClass<CSingleFrameUpdateNode>.Size => 128;
 
   
   // CUtlVector< CSmartPtr< CAnimActionUpdater > >

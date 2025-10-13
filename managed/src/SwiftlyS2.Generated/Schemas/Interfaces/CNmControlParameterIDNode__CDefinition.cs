@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmControlParameterIDNode__CDefinition : CNmIDValueNode__CDefinition, ISchemaClass<CNmControlParameterIDNode__CDefinition> {
 
   static CNmControlParameterIDNode__CDefinition ISchemaClass<CNmControlParameterIDNode__CDefinition>.From(nint handle) => new CNmControlParameterIDNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmControlParameterIDNode__CDefinition>.Size => 16;
 
 
 

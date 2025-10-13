@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmRootMotionData : ISchemaClass<CNmRootMotionData> {
 
   static CNmRootMotionData ISchemaClass<CNmRootMotionData>.From(nint handle) => new CNmRootMotionDataImpl(handle);
+  static int ISchemaClass<CNmRootMotionData>.Size => 80;
 
   
   public ref CUtlVector<CTransform> Transforms { get; }

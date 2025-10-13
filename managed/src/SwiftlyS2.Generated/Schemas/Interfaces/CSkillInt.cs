@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSkillInt : ISchemaClass<CSkillInt> {
 
   static CSkillInt ISchemaClass<CSkillInt>.From(nint handle) => new CSkillIntImpl(handle);
+  static int ISchemaClass<CSkillInt>.Size => 16;
 
   
   public ISchemaFixedArray<int> Value { get; }

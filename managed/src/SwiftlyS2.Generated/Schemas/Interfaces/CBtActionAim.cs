@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBtActionAim : CBtNode, ISchemaClass<CBtActionAim> {
 
   static CBtActionAim ISchemaClass<CBtActionAim>.From(nint handle) => new CBtActionAimImpl(handle);
+  static int ISchemaClass<CBtActionAim>.Size => 248;
 
   
   public string SensorInputKey { get; set; }

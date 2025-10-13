@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PulseRuntimeStateOffset_t : ISchemaClass<PulseRuntimeStateOffset_t> {
 
   static PulseRuntimeStateOffset_t ISchemaClass<PulseRuntimeStateOffset_t>.From(nint handle) => new PulseRuntimeStateOffset_tImpl(handle);
+  static int ISchemaClass<PulseRuntimeStateOffset_t>.Size => 2;
 
   
   public ref ushort Value { get; }

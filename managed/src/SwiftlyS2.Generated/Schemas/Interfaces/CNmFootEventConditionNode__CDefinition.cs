@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmFootEventConditionNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmFootEventConditionNode__CDefinition> {
 
   static CNmFootEventConditionNode__CDefinition ISchemaClass<CNmFootEventConditionNode__CDefinition>.From(nint handle) => new CNmFootEventConditionNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmFootEventConditionNode__CDefinition>.Size => 24;
 
   
   public ref short SourceStateNodeIdx { get; }

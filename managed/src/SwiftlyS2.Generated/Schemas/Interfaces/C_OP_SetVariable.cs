@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SetVariable : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetVariable> {
 
   static C_OP_SetVariable ISchemaClass<C_OP_SetVariable>.From(nint handle) => new C_OP_SetVariableImpl(handle);
+  static int ISchemaClass<C_OP_SetVariable>.Size => 2656;
 
   
   public CParticleVariableRef VariableReference { get; }

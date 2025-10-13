@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixShaperDesc_t : ISchemaClass<VMixShaperDesc_t> {
 
   static VMixShaperDesc_t ISchemaClass<VMixShaperDesc_t>.From(nint handle) => new VMixShaperDesc_tImpl(handle);
+  static int ISchemaClass<VMixShaperDesc_t>.Size => 20;
 
   
   public ref int Shape { get; }

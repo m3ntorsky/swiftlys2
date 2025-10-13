@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionDataSet : ISchemaClass<CMotionDataSet> {
 
   static CMotionDataSet ISchemaClass<CMotionDataSet>.From(nint handle) => new CMotionDataSetImpl(handle);
+  static int ISchemaClass<CMotionDataSet>.Size => 32;
 
   
   // CUtlVector< CMotionGraphGroup >

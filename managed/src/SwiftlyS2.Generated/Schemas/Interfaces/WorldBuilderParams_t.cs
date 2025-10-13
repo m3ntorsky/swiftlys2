@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface WorldBuilderParams_t : ISchemaClass<WorldBuilderParams_t> {
 
   static WorldBuilderParams_t ISchemaClass<WorldBuilderParams_t>.From(nint handle) => new WorldBuilderParams_tImpl(handle);
+  static int ISchemaClass<WorldBuilderParams_t>.Size => 96;
 
   
   public ref float MinDrawVolumeSize { get; }

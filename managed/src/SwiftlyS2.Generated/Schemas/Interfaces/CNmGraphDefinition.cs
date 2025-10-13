@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmGraphDefinition : ISchemaClass<CNmGraphDefinition> {
 
   static CNmGraphDefinition ISchemaClass<CNmGraphDefinition>.From(nint handle) => new CNmGraphDefinitionImpl(handle);
+  static int ISchemaClass<CNmGraphDefinition>.Size => 384;
 
   
   public ref CGlobalSymbol VariationID { get; }

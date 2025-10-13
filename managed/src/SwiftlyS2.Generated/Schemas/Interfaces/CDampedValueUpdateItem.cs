@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDampedValueUpdateItem : ISchemaClass<CDampedValueUpdateItem> {
 
   static CDampedValueUpdateItem ISchemaClass<CDampedValueUpdateItem>.From(nint handle) => new CDampedValueUpdateItemImpl(handle);
+  static int ISchemaClass<CDampedValueUpdateItem>.Size => 40;
 
   
   public CAnimInputDamping Damping { get; }

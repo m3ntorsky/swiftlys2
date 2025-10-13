@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointCamera : CBaseEntity, ISchemaClass<CPointCamera> {
 
   static CPointCamera ISchemaClass<CPointCamera>.From(nint handle) => new CPointCameraImpl(handle);
+  static int ISchemaClass<CPointCamera>.Size => 1360;
 
   
   public ref float FOV { get; }

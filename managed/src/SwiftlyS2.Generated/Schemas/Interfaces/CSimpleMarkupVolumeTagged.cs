@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSimpleMarkupVolumeTagged : CMarkupVolumeTagged, ISchemaClass<CSimpleMarkupVolumeTagged> {
 
   static CSimpleMarkupVolumeTagged ISchemaClass<CSimpleMarkupVolumeTagged>.From(nint handle) => new CSimpleMarkupVolumeTaggedImpl(handle);
+  static int ISchemaClass<CSimpleMarkupVolumeTagged>.Size => 2096;
 
 
 

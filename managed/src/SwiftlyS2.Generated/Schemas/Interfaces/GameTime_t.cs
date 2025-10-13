@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface GameTime_t : ISchemaClass<GameTime_t> {
 
   static GameTime_t ISchemaClass<GameTime_t>.From(nint handle) => new GameTime_tImpl(handle);
+  static int ISchemaClass<GameTime_t>.Size => 4;
 
   
   public ref float Value { get; }

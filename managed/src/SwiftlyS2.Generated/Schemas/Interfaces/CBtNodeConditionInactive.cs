@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBtNodeConditionInactive : CBtNodeCondition, ISchemaClass<CBtNodeConditionInactive> {
 
   static CBtNodeConditionInactive ISchemaClass<CBtNodeConditionInactive>.From(nint handle) => new CBtNodeConditionInactiveImpl(handle);
+  static int ISchemaClass<CBtNodeConditionInactive>.Size => 152;
 
   
   public ref float RoundStartThresholdSeconds { get; }

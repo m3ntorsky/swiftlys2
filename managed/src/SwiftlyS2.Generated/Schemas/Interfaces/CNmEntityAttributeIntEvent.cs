@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmEntityAttributeIntEvent : CNmEntityAttributeEventBase, ISchemaClass<CNmEntityAttributeIntEvent> {
 
   static CNmEntityAttributeIntEvent ISchemaClass<CNmEntityAttributeIntEvent>.From(nint handle) => new CNmEntityAttributeIntEventImpl(handle);
+  static int ISchemaClass<CNmEntityAttributeIntEvent>.Size => 64;
 
   
   public ref int IntValue { get; }

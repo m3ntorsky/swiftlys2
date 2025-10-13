@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderModels : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderModels> {
 
   static C_OP_RenderModels ISchemaClass<C_OP_RenderModels>.From(nint handle) => new C_OP_RenderModelsImpl(handle);
+  static int ISchemaClass<C_OP_RenderModels>.Size => 11032;
 
   
   public ref bool OnlyRenderInEffectsBloomPass { get; }

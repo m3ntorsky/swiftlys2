@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_FireCursors : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_FireCursors> {
 
   static CPulseCell_FireCursors ISchemaClass<CPulseCell_FireCursors>.From(nint handle) => new CPulseCell_FireCursorsImpl(handle);
+  static int ISchemaClass<CPulseCell_FireCursors>.Size => 248;
 
   
   // CUtlVector< CPulse_OutflowConnection >

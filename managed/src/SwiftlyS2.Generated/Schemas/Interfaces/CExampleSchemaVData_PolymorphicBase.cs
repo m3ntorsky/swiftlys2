@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CExampleSchemaVData_PolymorphicBase : ISchemaClass<CExampleSchemaVData_PolymorphicBase> {
 
   static CExampleSchemaVData_PolymorphicBase ISchemaClass<CExampleSchemaVData_PolymorphicBase>.From(nint handle) => new CExampleSchemaVData_PolymorphicBaseImpl(handle);
+  static int ISchemaClass<CExampleSchemaVData_PolymorphicBase>.Size => 16;
 
   
   public ref int Base { get; }

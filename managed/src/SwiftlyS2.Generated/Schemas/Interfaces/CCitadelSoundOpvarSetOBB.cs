@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCitadelSoundOpvarSetOBB : CBaseEntity, ISchemaClass<CCitadelSoundOpvarSetOBB> {
 
   static CCitadelSoundOpvarSetOBB ISchemaClass<CCitadelSoundOpvarSetOBB>.From(nint handle) => new CCitadelSoundOpvarSetOBBImpl(handle);
+  static int ISchemaClass<CCitadelSoundOpvarSetOBB>.Size => 1344;
 
   
   public string StackName { get; set; }

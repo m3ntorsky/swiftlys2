@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAudioAnimTag : CAnimTagBase, ISchemaClass<CAudioAnimTag> {
 
   static CAudioAnimTag ISchemaClass<CAudioAnimTag>.From(nint handle) => new CAudioAnimTagImpl(handle);
+  static int ISchemaClass<CAudioAnimTag>.Size => 112;
 
   
   public string ClipName { get; set; }

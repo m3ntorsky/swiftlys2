@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseGraphExecutionHistory : ISchemaClass<CPulseGraphExecutionHistory> {
 
   static CPulseGraphExecutionHistory ISchemaClass<CPulseGraphExecutionHistory>.From(nint handle) => new CPulseGraphExecutionHistoryImpl(handle);
+  static int ISchemaClass<CPulseGraphExecutionHistory>.Size => 120;
 
   
   public PulseGraphInstanceID_t InstanceID { get; }

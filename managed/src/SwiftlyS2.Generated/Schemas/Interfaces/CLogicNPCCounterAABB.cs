@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLogicNPCCounterAABB : CLogicNPCCounter, ISchemaClass<CLogicNPCCounterAABB> {
 
   static CLogicNPCCounterAABB ISchemaClass<CLogicNPCCounterAABB>.From(nint handle) => new CLogicNPCCounterAABBImpl(handle);
+  static int ISchemaClass<CLogicNPCCounterAABB>.Size => 2144;
 
   
   public ref Vector DistanceOuterMins { get; }

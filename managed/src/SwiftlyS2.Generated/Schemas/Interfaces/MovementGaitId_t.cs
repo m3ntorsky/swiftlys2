@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MovementGaitId_t : ISchemaClass<MovementGaitId_t> {
 
   static MovementGaitId_t ISchemaClass<MovementGaitId_t>.From(nint handle) => new MovementGaitId_tImpl(handle);
+  static int ISchemaClass<MovementGaitId_t>.Size => 8;
 
   
   public ref CGlobalSymbol Id { get; }

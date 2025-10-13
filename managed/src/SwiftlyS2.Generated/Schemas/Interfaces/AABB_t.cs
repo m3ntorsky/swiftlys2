@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AABB_t : ISchemaClass<AABB_t> {
 
   static AABB_t ISchemaClass<AABB_t>.From(nint handle) => new AABB_tImpl(handle);
+  static int ISchemaClass<AABB_t>.Size => 24;
 
   
   public ref Vector MinBounds { get; }

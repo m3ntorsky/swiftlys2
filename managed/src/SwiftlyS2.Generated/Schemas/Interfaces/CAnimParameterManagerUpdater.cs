@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimParameterManagerUpdater : ISchemaClass<CAnimParameterManagerUpdater> {
 
   static CAnimParameterManagerUpdater ISchemaClass<CAnimParameterManagerUpdater>.From(nint handle) => new CAnimParameterManagerUpdaterImpl(handle);
+  static int ISchemaClass<CAnimParameterManagerUpdater>.Size => 256;
 
   
   // CUtlVector< CSmartPtr< CAnimParameterBase > >

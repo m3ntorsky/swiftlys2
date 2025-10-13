@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointConstraint : CBaseConstraint, ISchemaClass<CPointConstraint> {
 
   static CPointConstraint ISchemaClass<CPointConstraint>.From(nint handle) => new CPointConstraintImpl(handle);
+  static int ISchemaClass<CPointConstraint>.Size => 96;
 
 
 

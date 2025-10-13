@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimComponentUpdater : ISchemaClass<CAnimComponentUpdater> {
 
   static CAnimComponentUpdater ISchemaClass<CAnimComponentUpdater>.From(nint handle) => new CAnimComponentUpdaterImpl(handle);
+  static int ISchemaClass<CAnimComponentUpdater>.Size => 48;
 
   
   public string Name { get; set; }

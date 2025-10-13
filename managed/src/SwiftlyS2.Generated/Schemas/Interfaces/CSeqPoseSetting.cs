@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSeqPoseSetting : ISchemaClass<CSeqPoseSetting> {
 
   static CSeqPoseSetting ISchemaClass<CSeqPoseSetting>.From(nint handle) => new CSeqPoseSettingImpl(handle);
+  static int ISchemaClass<CSeqPoseSetting>.Size => 64;
 
   
   public ref CBufferString PoseParameter { get; }

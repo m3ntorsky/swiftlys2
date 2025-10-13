@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface hudtextparms_t : ISchemaClass<hudtextparms_t> {
 
   static hudtextparms_t ISchemaClass<hudtextparms_t>.From(nint handle) => new hudtextparms_tImpl(handle);
+  static int ISchemaClass<hudtextparms_t>.Size => 20;
 
   
   public ref Color Color1 { get; }

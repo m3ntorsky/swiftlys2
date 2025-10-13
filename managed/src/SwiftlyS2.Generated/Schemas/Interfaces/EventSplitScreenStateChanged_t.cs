@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventSplitScreenStateChanged_t : ISchemaClass<EventSplitScreenStateChanged_t> {
 
   static EventSplitScreenStateChanged_t ISchemaClass<EventSplitScreenStateChanged_t>.From(nint handle) => new EventSplitScreenStateChanged_tImpl(handle);
+  static int ISchemaClass<EventSplitScreenStateChanged_t>.Size => 1;
 
 
 

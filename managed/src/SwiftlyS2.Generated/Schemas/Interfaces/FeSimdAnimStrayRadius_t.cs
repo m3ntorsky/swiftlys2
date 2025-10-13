@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeSimdAnimStrayRadius_t : ISchemaClass<FeSimdAnimStrayRadius_t> {
 
   static FeSimdAnimStrayRadius_t ISchemaClass<FeSimdAnimStrayRadius_t>.From(nint handle) => new FeSimdAnimStrayRadius_tImpl(handle);
+  static int ISchemaClass<FeSimdAnimStrayRadius_t>.Size => 48;
 
   
   // uint16[4]

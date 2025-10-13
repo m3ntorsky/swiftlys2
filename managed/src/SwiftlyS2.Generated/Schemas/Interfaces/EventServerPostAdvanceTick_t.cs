@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventServerPostAdvanceTick_t : EventPostAdvanceTick_t, ISchemaClass<EventServerPostAdvanceTick_t> {
 
   static EventServerPostAdvanceTick_t ISchemaClass<EventServerPostAdvanceTick_t>.From(nint handle) => new EventServerPostAdvanceTick_tImpl(handle);
+  static int ISchemaClass<EventServerPostAdvanceTick_t>.Size => 64;
 
 
 

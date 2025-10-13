@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventServerPostSimulate_t : EventSimulate_t, ISchemaClass<EventServerPostSimulate_t> {
 
   static EventServerPostSimulate_t ISchemaClass<EventServerPostSimulate_t>.From(nint handle) => new EventServerPostSimulate_tImpl(handle);
+  static int ISchemaClass<EventServerPostSimulate_t>.Size => 48;
 
 
 

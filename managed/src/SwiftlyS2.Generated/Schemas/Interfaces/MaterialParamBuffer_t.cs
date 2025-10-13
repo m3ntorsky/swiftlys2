@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MaterialParamBuffer_t : MaterialParam_t, ISchemaClass<MaterialParamBuffer_t> {
 
   static MaterialParamBuffer_t ISchemaClass<MaterialParamBuffer_t>.From(nint handle) => new MaterialParamBuffer_tImpl(handle);
+  static int ISchemaClass<MaterialParamBuffer_t>.Size => 24;
 
   
   public ref CUtlBinaryBlock Value { get; }

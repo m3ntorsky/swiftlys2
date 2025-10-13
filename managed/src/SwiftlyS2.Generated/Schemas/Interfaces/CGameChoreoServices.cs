@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CGameChoreoServices : IChoreoServices, ISchemaClass<CGameChoreoServices> {
 
   static CGameChoreoServices ISchemaClass<CGameChoreoServices>.From(nint handle) => new CGameChoreoServicesImpl(handle);
+  static int ISchemaClass<CGameChoreoServices>.Size => 32;
 
   
   public ref CHandle<CBaseAnimGraph> Owner { get; }

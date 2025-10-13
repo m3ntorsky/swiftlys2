@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Inflow_GraphHook : CPulseCell_Inflow_BaseEntrypoint, ISchemaClass<CPulseCell_Inflow_GraphHook> {
 
   static CPulseCell_Inflow_GraphHook ISchemaClass<CPulseCell_Inflow_GraphHook>.From(nint handle) => new CPulseCell_Inflow_GraphHookImpl(handle);
+  static int ISchemaClass<CPulseCell_Inflow_GraphHook>.Size => 144;
 
   
   // PulseSymbol_t

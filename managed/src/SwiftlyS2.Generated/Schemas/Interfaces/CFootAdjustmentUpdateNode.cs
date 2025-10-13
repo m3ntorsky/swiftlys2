@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootAdjustmentUpdateNode : CUnaryUpdateNode, ISchemaClass<CFootAdjustmentUpdateNode> {
 
   static CFootAdjustmentUpdateNode ISchemaClass<CFootAdjustmentUpdateNode>.From(nint handle) => new CFootAdjustmentUpdateNodeImpl(handle);
+  static int ISchemaClass<CFootAdjustmentUpdateNode>.Size => 176;
 
   
   // CUtlVector< HSequence >

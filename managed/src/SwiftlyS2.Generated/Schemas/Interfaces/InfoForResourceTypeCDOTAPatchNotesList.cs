@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCDOTAPatchNotesList : ISchemaClass<InfoForResourceTypeCDOTAPatchNotesList> {
 
   static InfoForResourceTypeCDOTAPatchNotesList ISchemaClass<InfoForResourceTypeCDOTAPatchNotesList>.From(nint handle) => new InfoForResourceTypeCDOTAPatchNotesListImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCDOTAPatchNotesList>.Size => 1;
 
 
 

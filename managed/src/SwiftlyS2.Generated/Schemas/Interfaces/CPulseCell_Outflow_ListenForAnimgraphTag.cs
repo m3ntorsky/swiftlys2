@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Outflow_ListenForAnimgraphTag : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_Outflow_ListenForAnimgraphTag> {
 
   static CPulseCell_Outflow_ListenForAnimgraphTag ISchemaClass<CPulseCell_Outflow_ListenForAnimgraphTag>.From(nint handle) => new CPulseCell_Outflow_ListenForAnimgraphTagImpl(handle);
+  static int ISchemaClass<CPulseCell_Outflow_ListenForAnimgraphTag>.Size => 296;
 
   
   public CPulse_ResumePoint OnStart { get; }

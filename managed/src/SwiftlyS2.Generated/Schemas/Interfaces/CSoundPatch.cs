@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSoundPatch : ISchemaClass<CSoundPatch> {
 
   static CSoundPatch ISchemaClass<CSoundPatch>.From(nint handle) => new CSoundPatchImpl(handle);
+  static int ISchemaClass<CSoundPatch>.Size => 168;
 
   
   public CSoundEnvelope Pitch { get; }

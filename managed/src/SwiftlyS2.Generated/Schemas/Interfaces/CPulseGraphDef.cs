@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseGraphDef : ISchemaClass<CPulseGraphDef> {
 
   static CPulseGraphDef ISchemaClass<CPulseGraphDef>.From(nint handle) => new CPulseGraphDefImpl(handle);
+  static int ISchemaClass<CPulseGraphDef>.Size => 408;
 
   
   // PulseSymbol_t

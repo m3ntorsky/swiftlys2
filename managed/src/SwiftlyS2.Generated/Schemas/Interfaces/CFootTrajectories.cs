@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootTrajectories : ISchemaClass<CFootTrajectories> {
 
   static CFootTrajectories ISchemaClass<CFootTrajectories>.From(nint handle) => new CFootTrajectoriesImpl(handle);
+  static int ISchemaClass<CFootTrajectories>.Size => 24;
 
   
   // CUtlVector< CFootTrajectory >

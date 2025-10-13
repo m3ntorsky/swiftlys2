@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SampleCode : ISchemaClass<SampleCode> {
 
   static SampleCode ISchemaClass<SampleCode>.From(nint handle) => new SampleCodeImpl(handle);
+  static int ISchemaClass<SampleCode>.Size => 8;
 
   
   public ISchemaFixedArray<byte> SubCode { get; }

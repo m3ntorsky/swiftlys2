@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSoundEventOBBEntity : CSoundEventEntity, ISchemaClass<CSoundEventOBBEntity> {
 
   static CSoundEventOBBEntity ISchemaClass<CSoundEventOBBEntity>.From(nint handle) => new CSoundEventOBBEntityImpl(handle);
+  static int ISchemaClass<CSoundEventOBBEntity>.Size => 1504;
 
   
   public ref Vector Mins { get; }

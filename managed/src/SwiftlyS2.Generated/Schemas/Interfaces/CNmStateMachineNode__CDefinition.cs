@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmStateMachineNode__CDefinition : CNmPoseNode__CDefinition, ISchemaClass<CNmStateMachineNode__CDefinition> {
 
   static CNmStateMachineNode__CDefinition ISchemaClass<CNmStateMachineNode__CDefinition>.From(nint handle) => new CNmStateMachineNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmStateMachineNode__CDefinition>.Size => 312;
 
   
   // CUtlLeanVectorFixedGrowable< CNmStateMachineNode::StateDefinition_t, 5 >

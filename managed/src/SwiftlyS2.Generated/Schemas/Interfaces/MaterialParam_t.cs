@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MaterialParam_t : ISchemaClass<MaterialParam_t> {
 
   static MaterialParam_t ISchemaClass<MaterialParam_t>.From(nint handle) => new MaterialParam_tImpl(handle);
+  static int ISchemaClass<MaterialParam_t>.Size => 8;
 
   
   public string Name { get; set; }

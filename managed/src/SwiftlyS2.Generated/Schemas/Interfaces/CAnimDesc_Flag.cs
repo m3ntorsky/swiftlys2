@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimDesc_Flag : ISchemaClass<CAnimDesc_Flag> {
 
   static CAnimDesc_Flag ISchemaClass<CAnimDesc_Flag>.From(nint handle) => new CAnimDesc_FlagImpl(handle);
+  static int ISchemaClass<CAnimDesc_Flag>.Size => 8;
 
   
   public ref bool Looping { get; }

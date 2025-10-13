@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ParticlePreviewState_t : ISchemaClass<ParticlePreviewState_t> {
 
   static ParticlePreviewState_t ISchemaClass<ParticlePreviewState_t>.From(nint handle) => new ParticlePreviewState_tImpl(handle);
+  static int ISchemaClass<ParticlePreviewState_t>.Size => 104;
 
   
   public string PreviewModel { get; set; }

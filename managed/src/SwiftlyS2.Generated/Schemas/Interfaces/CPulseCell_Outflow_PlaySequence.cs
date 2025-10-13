@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Outflow_PlaySequence : CPulseCell_Outflow_PlaySceneBase, ISchemaClass<CPulseCell_Outflow_PlaySequence> {
 
   static CPulseCell_Outflow_PlaySequence ISchemaClass<CPulseCell_Outflow_PlaySequence>.From(nint handle) => new CPulseCell_Outflow_PlaySequenceImpl(handle);
+  static int ISchemaClass<CPulseCell_Outflow_PlaySequence>.Size => 248;
 
   
   public string ParamSequenceName { get; set; }

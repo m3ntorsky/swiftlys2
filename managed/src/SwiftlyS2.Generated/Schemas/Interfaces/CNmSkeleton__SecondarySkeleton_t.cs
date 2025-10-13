@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmSkeleton__SecondarySkeleton_t : ISchemaClass<CNmSkeleton__SecondarySkeleton_t> {
 
   static CNmSkeleton__SecondarySkeleton_t ISchemaClass<CNmSkeleton__SecondarySkeleton_t>.From(nint handle) => new CNmSkeleton__SecondarySkeleton_tImpl(handle);
+  static int ISchemaClass<CNmSkeleton__SecondarySkeleton_t>.Size => 16;
 
   
   public ref CGlobalSymbol AttachToBoneID { get; }

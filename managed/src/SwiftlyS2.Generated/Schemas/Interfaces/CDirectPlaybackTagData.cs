@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDirectPlaybackTagData : ISchemaClass<CDirectPlaybackTagData> {
 
   static CDirectPlaybackTagData ISchemaClass<CDirectPlaybackTagData>.From(nint handle) => new CDirectPlaybackTagDataImpl(handle);
+  static int ISchemaClass<CDirectPlaybackTagData>.Size => 32;
 
   
   public string SequenceName { get; set; }

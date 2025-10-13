@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_CalculateVectorAttribute : CParticleFunctionOperator, ISchemaClass<C_OP_CalculateVectorAttribute> {
 
   static C_OP_CalculateVectorAttribute ISchemaClass<C_OP_CalculateVectorAttribute>.From(nint handle) => new C_OP_CalculateVectorAttributeImpl(handle);
+  static int ISchemaClass<C_OP_CalculateVectorAttribute>.Size => 544;
 
   
   public ref Vector StartValue { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmLayerBlendNode__LayerDefinition_t : ISchemaClass<CNmLayerBlendNode__LayerDefinition_t> {
 
   static CNmLayerBlendNode__LayerDefinition_t ISchemaClass<CNmLayerBlendNode__LayerDefinition_t>.From(nint handle) => new CNmLayerBlendNode__LayerDefinition_tImpl(handle);
+  static int ISchemaClass<CNmLayerBlendNode__LayerDefinition_t>.Size => 12;
 
   
   public ref short InputNodeIdx { get; }

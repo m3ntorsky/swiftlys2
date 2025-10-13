@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSequenceTagSpans : ISchemaClass<CSequenceTagSpans> {
 
   static CSequenceTagSpans ISchemaClass<CSequenceTagSpans>.From(nint handle) => new CSequenceTagSpansImpl(handle);
+  static int ISchemaClass<CSequenceTagSpans>.Size => 32;
 
   
   public ref CGlobalSymbol SequenceName { get; }

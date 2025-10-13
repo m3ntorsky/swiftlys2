@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimCycle : CCycleBase, ISchemaClass<CAnimCycle> {
 
   static CAnimCycle ISchemaClass<CAnimCycle>.From(nint handle) => new CAnimCycleImpl(handle);
+  static int ISchemaClass<CAnimCycle>.Size => 4;
 
 
 

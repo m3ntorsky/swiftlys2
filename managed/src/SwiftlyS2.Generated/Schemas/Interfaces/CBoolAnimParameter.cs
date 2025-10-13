@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBoolAnimParameter : CConcreteAnimParameter, ISchemaClass<CBoolAnimParameter> {
 
   static CBoolAnimParameter ISchemaClass<CBoolAnimParameter>.From(nint handle) => new CBoolAnimParameterImpl(handle);
+  static int ISchemaClass<CBoolAnimParameter>.Size => 136;
 
   
   public ref bool DefaultValue { get; }

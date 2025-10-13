@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VPhysXBodyPart_t : ISchemaClass<VPhysXBodyPart_t> {
 
   static VPhysXBodyPart_t ISchemaClass<VPhysXBodyPart_t>.From(nint handle) => new VPhysXBodyPart_tImpl(handle);
+  static int ISchemaClass<VPhysXBodyPart_t>.Size => 168;
 
   
   public ref uint Flags { get; }

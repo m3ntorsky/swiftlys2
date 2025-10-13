@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FollowAttachmentData : ISchemaClass<FollowAttachmentData> {
 
   static FollowAttachmentData ISchemaClass<FollowAttachmentData>.From(nint handle) => new FollowAttachmentDataImpl(handle);
+  static int ISchemaClass<FollowAttachmentData>.Size => 8;
 
   
   public ref int BoneIndex { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCChoreoSceneFileData : ISchemaClass<InfoForResourceTypeCChoreoSceneFileData> {
 
   static InfoForResourceTypeCChoreoSceneFileData ISchemaClass<InfoForResourceTypeCChoreoSceneFileData>.From(nint handle) => new InfoForResourceTypeCChoreoSceneFileDataImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCChoreoSceneFileData>.Size => 1;
 
 
 

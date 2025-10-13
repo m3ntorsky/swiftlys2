@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VPhysXRange_t : ISchemaClass<VPhysXRange_t> {
 
   static VPhysXRange_t ISchemaClass<VPhysXRange_t>.From(nint handle) => new VPhysXRange_tImpl(handle);
+  static int ISchemaClass<VPhysXRange_t>.Size => 8;
 
   
   public ref float Min { get; }

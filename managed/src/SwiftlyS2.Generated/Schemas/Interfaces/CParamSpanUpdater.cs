@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParamSpanUpdater : ISchemaClass<CParamSpanUpdater> {
 
   static CParamSpanUpdater ISchemaClass<CParamSpanUpdater>.From(nint handle) => new CParamSpanUpdaterImpl(handle);
+  static int ISchemaClass<CParamSpanUpdater>.Size => 24;
 
   
   // CUtlVector< ParamSpan_t >

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VPhysXCollisionAttributes_t : ISchemaClass<VPhysXCollisionAttributes_t> {
 
   static VPhysXCollisionAttributes_t ISchemaClass<VPhysXCollisionAttributes_t>.From(nint handle) => new VPhysXCollisionAttributes_tImpl(handle);
+  static int ISchemaClass<VPhysXCollisionAttributes_t>.Size => 160;
 
   
   public ref uint CollisionGroup { get; }

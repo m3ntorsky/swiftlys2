@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RenderHairStrandInfo_t : ISchemaClass<RenderHairStrandInfo_t> {
 
   static RenderHairStrandInfo_t ISchemaClass<RenderHairStrandInfo_t>.From(nint handle) => new RenderHairStrandInfo_tImpl(handle);
+  static int ISchemaClass<RenderHairStrandInfo_t>.Size => 40;
 
   
   public ISchemaFixedArray<uint> GuideHairIndices_nSurfaceTriIndex { get; }

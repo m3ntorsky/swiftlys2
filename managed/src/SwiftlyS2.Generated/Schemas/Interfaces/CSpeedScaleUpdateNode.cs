@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSpeedScaleUpdateNode : CUnaryUpdateNode, ISchemaClass<CSpeedScaleUpdateNode> {
 
   static CSpeedScaleUpdateNode ISchemaClass<CSpeedScaleUpdateNode>.From(nint handle) => new CSpeedScaleUpdateNodeImpl(handle);
+  static int ISchemaClass<CSpeedScaleUpdateNode>.Size => 120;
 
   
   public CAnimParamHandle ParamIndex { get; }

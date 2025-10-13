@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmNotNode__CDefinition : CNmBoolValueNode__CDefinition, ISchemaClass<CNmNotNode__CDefinition> {
 
   static CNmNotNode__CDefinition ISchemaClass<CNmNotNode__CDefinition>.From(nint handle) => new CNmNotNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmNotNode__CDefinition>.Size => 24;
 
   
   public ref short InputValueNodeIdx { get; }

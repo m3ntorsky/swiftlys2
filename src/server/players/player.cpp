@@ -150,7 +150,7 @@ void CPlayer::SendMsg(MessageType type, const std::string& message)
 
             msg += "\x01";
 
-            bool startsWithColor = (msg.at(0) == '{');
+            bool startsWithColor = (msg.at(0) == '[');
             auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
 
             msg = ProcessColor(message, *(int*)(schema->GetPropPtr(GetController(), CBaseEntity_m_iTeamNum)));

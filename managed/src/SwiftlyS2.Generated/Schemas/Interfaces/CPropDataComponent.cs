@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPropDataComponent : CEntityComponent, ISchemaClass<CPropDataComponent> {
 
   static CPropDataComponent ISchemaClass<CPropDataComponent>.From(nint handle) => new CPropDataComponentImpl(handle);
+  static int ISchemaClass<CPropDataComponent>.Size => 64;
 
   
   public ref float DmgModBullet { get; }

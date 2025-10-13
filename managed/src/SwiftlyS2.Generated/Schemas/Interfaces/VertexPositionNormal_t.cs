@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VertexPositionNormal_t : ISchemaClass<VertexPositionNormal_t> {
 
   static VertexPositionNormal_t ISchemaClass<VertexPositionNormal_t>.From(nint handle) => new VertexPositionNormal_tImpl(handle);
+  static int ISchemaClass<VertexPositionNormal_t>.Size => 24;
 
   
   public ref Vector Position { get; }

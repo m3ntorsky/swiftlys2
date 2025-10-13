@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_StatusEffect : CParticleFunctionInitializer, ISchemaClass<C_INIT_StatusEffect> {
 
   static C_INIT_StatusEffect ISchemaClass<C_INIT_StatusEffect>.From(nint handle) => new C_INIT_StatusEffectImpl(handle);
+  static int ISchemaClass<C_INIT_StatusEffect>.Size => 552;
 
   
   public ref Detail2Combo_t Detail2Combo { get; }

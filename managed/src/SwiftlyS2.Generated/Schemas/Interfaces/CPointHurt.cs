@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointHurt : CPointEntity, ISchemaClass<CPointHurt> {
 
   static CPointHurt ISchemaClass<CPointHurt>.From(nint handle) => new CPointHurtImpl(handle);
+  static int ISchemaClass<CPointHurt>.Size => 1296;
 
   
   public ref int Damage { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PulseScriptedSequenceData_t : ISchemaClass<PulseScriptedSequenceData_t> {
 
   static PulseScriptedSequenceData_t ISchemaClass<PulseScriptedSequenceData_t>.From(nint handle) => new PulseScriptedSequenceData_tImpl(handle);
+  static int ISchemaClass<PulseScriptedSequenceData_t>.Size => 56;
 
   
   public ref int ActorID { get; }

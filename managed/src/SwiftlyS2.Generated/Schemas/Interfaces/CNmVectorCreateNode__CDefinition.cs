@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmVectorCreateNode__CDefinition : CNmVectorValueNode__CDefinition, ISchemaClass<CNmVectorCreateNode__CDefinition> {
 
   static CNmVectorCreateNode__CDefinition ISchemaClass<CNmVectorCreateNode__CDefinition>.From(nint handle) => new CNmVectorCreateNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmVectorCreateNode__CDefinition>.Size => 24;
 
   
   public ref short InputVectorValueNodeIdx { get; }

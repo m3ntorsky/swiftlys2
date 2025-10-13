@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFiringModeFloat : ISchemaClass<CFiringModeFloat> {
 
   static CFiringModeFloat ISchemaClass<CFiringModeFloat>.From(nint handle) => new CFiringModeFloatImpl(handle);
+  static int ISchemaClass<CFiringModeFloat>.Size => 8;
 
   
   public ISchemaFixedArray<float> Values { get; }

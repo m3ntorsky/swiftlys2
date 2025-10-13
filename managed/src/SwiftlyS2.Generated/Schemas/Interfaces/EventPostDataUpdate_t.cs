@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventPostDataUpdate_t : ISchemaClass<EventPostDataUpdate_t> {
 
   static EventPostDataUpdate_t ISchemaClass<EventPostDataUpdate_t>.From(nint handle) => new EventPostDataUpdate_tImpl(handle);
+  static int ISchemaClass<EventPostDataUpdate_t>.Size => 16;
 
   
   public ref int Count { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAddUpdateNode : CBinaryUpdateNode, ISchemaClass<CAddUpdateNode> {
 
   static CAddUpdateNode ISchemaClass<CAddUpdateNode>.From(nint handle) => new CAddUpdateNodeImpl(handle);
+  static int ISchemaClass<CAddUpdateNode>.Size => 160;
 
   
   public ref BinaryNodeChildOption FootMotionTiming { get; }

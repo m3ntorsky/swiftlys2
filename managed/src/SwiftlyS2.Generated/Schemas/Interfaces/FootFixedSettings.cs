@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FootFixedSettings : ISchemaClass<FootFixedSettings> {
 
   static FootFixedSettings ISchemaClass<FootFixedSettings>.From(nint handle) => new FootFixedSettingsImpl(handle);
+  static int ISchemaClass<FootFixedSettings>.Size => 64;
 
   
   public TraceSettings_t TraceSettings { get; }

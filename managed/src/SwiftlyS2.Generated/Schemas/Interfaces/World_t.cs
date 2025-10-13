@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface World_t : ISchemaClass<World_t> {
 
   static World_t ISchemaClass<World_t>.From(nint handle) => new World_tImpl(handle);
+  static int ISchemaClass<World_t>.Size => 216;
 
   
   public WorldBuilderParams_t BuilderParams { get; }

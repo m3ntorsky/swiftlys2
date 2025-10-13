@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTonemapTrigger : CBaseTrigger, ISchemaClass<CTonemapTrigger> {
 
   static CTonemapTrigger ISchemaClass<CTonemapTrigger>.From(nint handle) => new CTonemapTriggerImpl(handle);
+  static int ISchemaClass<CTonemapTrigger>.Size => 2512;
 
   
   public string TonemapControllerName { get; set; }

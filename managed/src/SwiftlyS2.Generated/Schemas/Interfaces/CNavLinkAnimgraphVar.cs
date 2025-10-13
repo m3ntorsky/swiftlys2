@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNavLinkAnimgraphVar : ISchemaClass<CNavLinkAnimgraphVar> {
 
   static CNavLinkAnimgraphVar ISchemaClass<CNavLinkAnimgraphVar>.From(nint handle) => new CNavLinkAnimgraphVarImpl(handle);
+  static int ISchemaClass<CNavLinkAnimgraphVar>.Size => 16;
 
   
   public ref CGlobalSymbol AnimGraphNavlinkType { get; }

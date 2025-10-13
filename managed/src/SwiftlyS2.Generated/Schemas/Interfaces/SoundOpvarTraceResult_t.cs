@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SoundOpvarTraceResult_t : ISchemaClass<SoundOpvarTraceResult_t> {
 
   static SoundOpvarTraceResult_t ISchemaClass<SoundOpvarTraceResult_t>.From(nint handle) => new SoundOpvarTraceResult_tImpl(handle);
+  static int ISchemaClass<SoundOpvarTraceResult_t>.Size => 20;
 
   
   public ref Vector Pos { get; }

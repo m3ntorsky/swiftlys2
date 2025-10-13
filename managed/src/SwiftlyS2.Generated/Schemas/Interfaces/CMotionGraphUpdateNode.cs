@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionGraphUpdateNode : CLeafUpdateNode, ISchemaClass<CMotionGraphUpdateNode> {
 
   static CMotionGraphUpdateNode ISchemaClass<CMotionGraphUpdateNode>.From(nint handle) => new CMotionGraphUpdateNodeImpl(handle);
+  static int ISchemaClass<CMotionGraphUpdateNode>.Size => 104;
 
   
   // CSmartPtr< CMotionGraph >

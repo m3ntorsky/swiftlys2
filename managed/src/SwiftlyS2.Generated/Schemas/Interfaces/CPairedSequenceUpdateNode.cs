@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPairedSequenceUpdateNode : CSequenceUpdateNodeBase, ISchemaClass<CPairedSequenceUpdateNode> {
 
   static CPairedSequenceUpdateNode ISchemaClass<CPairedSequenceUpdateNode>.From(nint handle) => new CPairedSequenceUpdateNodeImpl(handle);
+  static int ISchemaClass<CPairedSequenceUpdateNode>.Size => 136;
 
   
   public ref CGlobalSymbol PairedSequenceRole { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRemapValueUpdateItem : ISchemaClass<CRemapValueUpdateItem> {
 
   static CRemapValueUpdateItem ISchemaClass<CRemapValueUpdateItem>.From(nint handle) => new CRemapValueUpdateItemImpl(handle);
+  static int ISchemaClass<CRemapValueUpdateItem>.Size => 20;
 
   
   public CAnimParamHandle ParamIn { get; }

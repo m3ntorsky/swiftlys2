@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSetParameterActionUpdater : CAnimActionUpdater, ISchemaClass<CSetParameterActionUpdater> {
 
   static CSetParameterActionUpdater ISchemaClass<CSetParameterActionUpdater>.From(nint handle) => new CSetParameterActionUpdaterImpl(handle);
+  static int ISchemaClass<CSetParameterActionUpdater>.Size => 48;
 
   
   public CAnimParamHandle Param { get; }

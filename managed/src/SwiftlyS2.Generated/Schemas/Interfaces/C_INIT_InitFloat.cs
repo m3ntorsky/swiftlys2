@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_InitFloat : CParticleFunctionInitializer, ISchemaClass<C_INIT_InitFloat> {
 
   static C_INIT_InitFloat ISchemaClass<C_INIT_InitFloat>.From(nint handle) => new C_INIT_InitFloatImpl(handle);
+  static int ISchemaClass<C_INIT_InitFloat>.Size => 1168;
 
   
   public CPerParticleFloatInput InputValue { get; }

@@ -11,12 +11,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmSkeleton : ISchemaClass<CNmSkeleton> {
 
   static CNmSkeleton ISchemaClass<CNmSkeleton>.From(nint handle) => new CNmSkeletonImpl(handle);
+  static int ISchemaClass<CNmSkeleton>.Size => 160;
 
   
   public ref CGlobalSymbol ID { get; }
   
-  // CUtlLeanVector< CGlobalSymbol >
-  public SchemaUntypedField BoneIDs { get; }
+  public ref CUtlLeanVector<CGlobalSymbol, int> BoneIDs { get; }
   
   public ref CUtlVector<int> ParentIndices { get; }
   
@@ -26,11 +26,9 @@ public partial interface CNmSkeleton : ISchemaClass<CNmSkeleton> {
   
   public ref int NumBonesToSampleAtLowLOD { get; }
   
-  // CUtlLeanVector< NmBoneMaskSetDefinition_t >
-  public SchemaUntypedField MaskDefinitions { get; }
+  public ref CUtlLeanVector<IntPtr, int> MaskDefinitions { get; }
   
-  // CUtlLeanVector< CNmSkeleton::SecondarySkeleton_t >
-  public SchemaUntypedField SecondarySkeletons { get; }
+  public ref CUtlLeanVector<IntPtr, int> SecondarySkeletons { get; }
   
   public ref bool IsPropSkeleton { get; }
 

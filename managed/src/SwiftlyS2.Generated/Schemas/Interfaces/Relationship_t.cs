@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface Relationship_t : ISchemaClass<Relationship_t> {
 
   static Relationship_t ISchemaClass<Relationship_t>.From(nint handle) => new Relationship_tImpl(handle);
+  static int ISchemaClass<Relationship_t>.Size => 8;
 
   
   public ref Disposition_t Disposition { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeNodeWindBase_t : ISchemaClass<FeNodeWindBase_t> {
 
   static FeNodeWindBase_t ISchemaClass<FeNodeWindBase_t>.From(nint handle) => new FeNodeWindBase_tImpl(handle);
+  static int ISchemaClass<FeNodeWindBase_t>.Size => 8;
 
   
   public ref ushort NodeX0 { get; }

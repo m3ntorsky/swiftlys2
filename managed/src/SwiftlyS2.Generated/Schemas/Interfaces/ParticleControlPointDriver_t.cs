@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ParticleControlPointDriver_t : ISchemaClass<ParticleControlPointDriver_t> {
 
   static ParticleControlPointDriver_t ISchemaClass<ParticleControlPointDriver_t>.From(nint handle) => new ParticleControlPointDriver_tImpl(handle);
+  static int ISchemaClass<ParticleControlPointDriver_t>.Size => 48;
 
   
   public ref int ControlPoint { get; }

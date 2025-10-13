@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CWayPointHelperUpdateNode : CUnaryUpdateNode, ISchemaClass<CWayPointHelperUpdateNode> {
 
   static CWayPointHelperUpdateNode ISchemaClass<CWayPointHelperUpdateNode>.From(nint handle) => new CWayPointHelperUpdateNodeImpl(handle);
+  static int ISchemaClass<CWayPointHelperUpdateNode>.Size => 128;
 
   
   public ref float StartCycle { get; }

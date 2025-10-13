@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RelationshipOverride_t : Relationship_t, ISchemaClass<RelationshipOverride_t> {
 
   static RelationshipOverride_t ISchemaClass<RelationshipOverride_t>.From(nint handle) => new RelationshipOverride_tImpl(handle);
+  static int ISchemaClass<RelationshipOverride_t>.Size => 16;
 
   
   public ref CHandle<CBaseEntity> Entity { get; }

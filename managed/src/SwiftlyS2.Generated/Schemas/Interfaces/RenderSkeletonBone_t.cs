@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RenderSkeletonBone_t : ISchemaClass<RenderSkeletonBone_t> {
 
   static RenderSkeletonBone_t ISchemaClass<RenderSkeletonBone_t>.From(nint handle) => new RenderSkeletonBone_tImpl(handle);
+  static int ISchemaClass<RenderSkeletonBone_t>.Size => 96;
 
   
   public string BoneName { get; set; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBoneConstraintPoseSpaceBone : CBaseConstraint, ISchemaClass<CBoneConstraintPoseSpaceBone> {
 
   static CBoneConstraintPoseSpaceBone ISchemaClass<CBoneConstraintPoseSpaceBone>.From(nint handle) => new CBoneConstraintPoseSpaceBoneImpl(handle);
+  static int ISchemaClass<CBoneConstraintPoseSpaceBone>.Size => 136;
 
   
   // CUtlVector< CBoneConstraintPoseSpaceBone::Input_t >

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayerController : CBasePlayerController, ISchemaClass<CCSPlayerController> {
 
   static CCSPlayerController ISchemaClass<CCSPlayerController>.From(nint handle) => new CCSPlayerControllerImpl(handle);
+  static int ISchemaClass<CCSPlayerController>.Size => 2792;
 
   
   public CCSPlayerController_InGameMoneyServices? InGameMoneyServices { get; }

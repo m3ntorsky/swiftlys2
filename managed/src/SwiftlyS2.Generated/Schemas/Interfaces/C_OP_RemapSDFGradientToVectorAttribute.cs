@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapSDFGradientToVectorAttribute : CParticleFunctionOperator, ISchemaClass<C_OP_RemapSDFGradientToVectorAttribute> {
 
   static C_OP_RemapSDFGradientToVectorAttribute ISchemaClass<C_OP_RemapSDFGradientToVectorAttribute>.From(nint handle) => new C_OP_RemapSDFGradientToVectorAttributeImpl(handle);
+  static int ISchemaClass<C_OP_RemapSDFGradientToVectorAttribute>.Size => 456;
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

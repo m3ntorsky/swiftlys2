@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFeMorphLayer : ISchemaClass<CFeMorphLayer> {
 
   static CFeMorphLayer ISchemaClass<CFeMorphLayer>.From(nint handle) => new CFeMorphLayerImpl(handle);
+  static int ISchemaClass<CFeMorphLayer>.Size => 136;
 
   
   public string Name { get; set; }

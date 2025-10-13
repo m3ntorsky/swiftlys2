@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimFrameBlockAnim : ISchemaClass<CAnimFrameBlockAnim> {
 
   static CAnimFrameBlockAnim ISchemaClass<CAnimFrameBlockAnim>.From(nint handle) => new CAnimFrameBlockAnimImpl(handle);
+  static int ISchemaClass<CAnimFrameBlockAnim>.Size => 32;
 
   
   public ref int StartFrame { get; }

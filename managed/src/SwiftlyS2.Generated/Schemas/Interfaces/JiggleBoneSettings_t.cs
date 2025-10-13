@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface JiggleBoneSettings_t : ISchemaClass<JiggleBoneSettings_t> {
 
   static JiggleBoneSettings_t ISchemaClass<JiggleBoneSettings_t>.From(nint handle) => new JiggleBoneSettings_tImpl(handle);
+  static int ISchemaClass<JiggleBoneSettings_t>.Size => 44;
 
   
   public ref int BoneIndex { get; }

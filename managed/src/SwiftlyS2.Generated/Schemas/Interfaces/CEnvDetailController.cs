@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvDetailController : CBaseEntity, ISchemaClass<CEnvDetailController> {
 
   static CEnvDetailController ISchemaClass<CEnvDetailController>.From(nint handle) => new CEnvDetailControllerImpl(handle);
+  static int ISchemaClass<CEnvDetailController>.Size => 1272;
 
   
   public ref float FadeStartDist { get; }

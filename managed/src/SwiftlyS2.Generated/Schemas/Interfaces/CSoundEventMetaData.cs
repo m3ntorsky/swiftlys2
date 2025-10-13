@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSoundEventMetaData : ISchemaClass<CSoundEventMetaData> {
 
   static CSoundEventMetaData ISchemaClass<CSoundEventMetaData>.From(nint handle) => new CSoundEventMetaDataImpl(handle);
+  static int ISchemaClass<CSoundEventMetaData>.Size => 8;
 
   
   public ref CStrongHandle<InfoForResourceTypeCVMixListResource> SoundEventVMix { get; }

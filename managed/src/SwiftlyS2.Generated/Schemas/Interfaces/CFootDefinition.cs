@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootDefinition : ISchemaClass<CFootDefinition> {
 
   static CFootDefinition ISchemaClass<CFootDefinition>.From(nint handle) => new CFootDefinitionImpl(handle);
+  static int ISchemaClass<CFootDefinition>.Size => 64;
 
   
   public string Name { get; set; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNavHullVData : ISchemaClass<CNavHullVData> {
 
   static CNavHullVData ISchemaClass<CNavHullVData>.From(nint handle) => new CNavHullVDataImpl(handle);
+  static int ISchemaClass<CNavHullVData>.Size => 60;
 
   
   public ref bool AgentEnabled { get; }

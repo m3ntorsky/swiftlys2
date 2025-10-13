@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionNodeSequence : CMotionNode, ISchemaClass<CMotionNodeSequence> {
 
   static CMotionNodeSequence ISchemaClass<CMotionNodeSequence>.From(nint handle) => new CMotionNodeSequenceImpl(handle);
+  static int ISchemaClass<CMotionNodeSequence>.Size => 72;
 
   
   // CUtlVector< TagSpan_t >

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VPhysXAggregateData_t : ISchemaClass<VPhysXAggregateData_t> {
 
   static VPhysXAggregateData_t ISchemaClass<VPhysXAggregateData_t>.From(nint handle) => new VPhysXAggregateData_tImpl(handle);
+  static int ISchemaClass<VPhysXAggregateData_t>.Size => 336;
 
   
   public ref ushort Flags { get; }

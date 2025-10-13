@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTimeline : IntervalTimer, ISchemaClass<CTimeline> {
 
   static CTimeline ISchemaClass<CTimeline>.From(nint handle) => new CTimelineImpl(handle);
+  static int ISchemaClass<CTimeline>.Size => 552;
 
   
   public ISchemaFixedArray<float> Values { get; }

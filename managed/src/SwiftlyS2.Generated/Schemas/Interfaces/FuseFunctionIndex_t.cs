@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FuseFunctionIndex_t : ISchemaClass<FuseFunctionIndex_t> {
 
   static FuseFunctionIndex_t ISchemaClass<FuseFunctionIndex_t>.From(nint handle) => new FuseFunctionIndex_tImpl(handle);
+  static int ISchemaClass<FuseFunctionIndex_t>.Size => 2;
 
   
   public ref ushort Value { get; }

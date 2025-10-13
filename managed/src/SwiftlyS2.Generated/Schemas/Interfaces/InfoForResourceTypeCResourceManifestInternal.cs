@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCResourceManifestInternal : ISchemaClass<InfoForResourceTypeCResourceManifestInternal> {
 
   static InfoForResourceTypeCResourceManifestInternal ISchemaClass<InfoForResourceTypeCResourceManifestInternal>.From(nint handle) => new InfoForResourceTypeCResourceManifestInternalImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCResourceManifestInternal>.Size => 1;
 
 
 

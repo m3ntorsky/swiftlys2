@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MoodAnimationLayer_t : ISchemaClass<MoodAnimationLayer_t> {
 
   static MoodAnimationLayer_t ISchemaClass<MoodAnimationLayer_t>.From(nint handle) => new MoodAnimationLayer_tImpl(handle);
+  static int ISchemaClass<MoodAnimationLayer_t>.Size => 96;
 
   
   public string Name { get; set; }

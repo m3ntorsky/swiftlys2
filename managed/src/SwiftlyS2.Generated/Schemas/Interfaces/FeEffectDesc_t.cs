@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeEffectDesc_t : ISchemaClass<FeEffectDesc_t> {
 
   static FeEffectDesc_t ISchemaClass<FeEffectDesc_t>.From(nint handle) => new FeEffectDesc_tImpl(handle);
+  static int ISchemaClass<FeEffectDesc_t>.Size => 32;
 
   
   public string Name { get; set; }

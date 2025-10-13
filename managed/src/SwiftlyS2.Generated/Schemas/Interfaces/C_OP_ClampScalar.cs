@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_ClampScalar : CParticleFunctionOperator, ISchemaClass<C_OP_ClampScalar> {
 
   static C_OP_ClampScalar ISchemaClass<C_OP_ClampScalar>.From(nint handle) => new C_OP_ClampScalarImpl(handle);
+  static int ISchemaClass<C_OP_ClampScalar>.Size => 1160;
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

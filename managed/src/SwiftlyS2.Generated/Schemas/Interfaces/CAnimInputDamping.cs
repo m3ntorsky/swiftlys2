@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimInputDamping : ISchemaClass<CAnimInputDamping> {
 
   static CAnimInputDamping ISchemaClass<CAnimInputDamping>.From(nint handle) => new CAnimInputDampingImpl(handle);
+  static int ISchemaClass<CAnimInputDamping>.Size => 24;
 
   
   public ref DampingSpeedFunction SpeedFunction { get; }

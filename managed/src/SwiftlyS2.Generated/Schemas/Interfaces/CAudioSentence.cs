@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAudioSentence : ISchemaClass<CAudioSentence> {
 
   static CAudioSentence ISchemaClass<CAudioSentence>.From(nint handle) => new CAudioSentenceImpl(handle);
+  static int ISchemaClass<CAudioSentence>.Size => 160;
 
   
   public ref bool ShouldVoiceDuck { get; }

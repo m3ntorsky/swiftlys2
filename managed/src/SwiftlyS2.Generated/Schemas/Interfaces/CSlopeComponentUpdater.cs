@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSlopeComponentUpdater : CAnimComponentUpdater, ISchemaClass<CSlopeComponentUpdater> {
 
   static CSlopeComponentUpdater ISchemaClass<CSlopeComponentUpdater>.From(nint handle) => new CSlopeComponentUpdaterImpl(handle);
+  static int ISchemaClass<CSlopeComponentUpdater>.Size => 72;
 
   
   public ref float TraceDistance { get; }

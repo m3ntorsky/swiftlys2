@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CInfoWorldLayer : CBaseEntity, ISchemaClass<CInfoWorldLayer> {
 
   static CInfoWorldLayer ISchemaClass<CInfoWorldLayer>.From(nint handle) => new CInfoWorldLayerImpl(handle);
+  static int ISchemaClass<CInfoWorldLayer>.Size => 1328;
 
   
   public CEntityIOOutput OutputOnEntitiesSpawned { get; }

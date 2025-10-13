@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ragdollelement_t : ISchemaClass<ragdollelement_t> {
 
   static ragdollelement_t ISchemaClass<ragdollelement_t>.From(nint handle) => new ragdollelement_tImpl(handle);
+  static int ISchemaClass<ragdollelement_t>.Size => 48;
 
   
   public ref Vector OriginParentSpace { get; }

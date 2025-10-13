@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface NmSyncTrackTime_t : ISchemaClass<NmSyncTrackTime_t> {
 
   static NmSyncTrackTime_t ISchemaClass<NmSyncTrackTime_t>.From(nint handle) => new NmSyncTrackTime_tImpl(handle);
+  static int ISchemaClass<NmSyncTrackTime_t>.Size => 8;
 
   
   public ref int EventIdx { get; }

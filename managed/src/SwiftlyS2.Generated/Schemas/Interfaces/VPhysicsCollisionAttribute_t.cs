@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VPhysicsCollisionAttribute_t : ISchemaClass<VPhysicsCollisionAttribute_t> {
 
   static VPhysicsCollisionAttribute_t ISchemaClass<VPhysicsCollisionAttribute_t>.From(nint handle) => new VPhysicsCollisionAttribute_tImpl(handle);
+  static int ISchemaClass<VPhysicsCollisionAttribute_t>.Size => 48;
 
   
   public ref ulong InteractsAs { get; }

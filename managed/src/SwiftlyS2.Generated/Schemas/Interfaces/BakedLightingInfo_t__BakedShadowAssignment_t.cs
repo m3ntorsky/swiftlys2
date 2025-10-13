@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface BakedLightingInfo_t__BakedShadowAssignment_t : ISchemaClass<BakedLightingInfo_t__BakedShadowAssignment_t> {
 
   static BakedLightingInfo_t__BakedShadowAssignment_t ISchemaClass<BakedLightingInfo_t__BakedShadowAssignment_t>.From(nint handle) => new BakedLightingInfo_t__BakedShadowAssignment_tImpl(handle);
+  static int ISchemaClass<BakedLightingInfo_t__BakedShadowAssignment_t>.Size => 12;
 
   
   public ref uint LightHash { get; }

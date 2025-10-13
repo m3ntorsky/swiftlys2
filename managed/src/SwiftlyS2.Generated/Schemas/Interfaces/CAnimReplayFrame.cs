@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimReplayFrame : ISchemaClass<CAnimReplayFrame> {
 
   static CAnimReplayFrame ISchemaClass<CAnimReplayFrame>.From(nint handle) => new CAnimReplayFrameImpl(handle);
+  static int ISchemaClass<CAnimReplayFrame>.Size => 144;
 
   
   public ref CUtlVector<CUtlBinaryBlock> InputDataBlocks { get; }

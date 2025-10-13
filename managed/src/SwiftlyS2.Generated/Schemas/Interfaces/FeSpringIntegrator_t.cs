@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeSpringIntegrator_t : ISchemaClass<FeSpringIntegrator_t> {
 
   static FeSpringIntegrator_t ISchemaClass<FeSpringIntegrator_t>.From(nint handle) => new FeSpringIntegrator_tImpl(handle);
+  static int ISchemaClass<FeSpringIntegrator_t>.Size => 20;
 
   
   public ISchemaFixedArray<ushort> Node { get; }

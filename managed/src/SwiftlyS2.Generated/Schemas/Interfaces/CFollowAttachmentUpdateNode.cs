@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFollowAttachmentUpdateNode : CUnaryUpdateNode, ISchemaClass<CFollowAttachmentUpdateNode> {
 
   static CFollowAttachmentUpdateNode ISchemaClass<CFollowAttachmentUpdateNode>.From(nint handle) => new CFollowAttachmentUpdateNodeImpl(handle);
+  static int ISchemaClass<CFollowAttachmentUpdateNode>.Size => 272;
 
   
   public FollowAttachmentSettings_t OpFixedData { get; }

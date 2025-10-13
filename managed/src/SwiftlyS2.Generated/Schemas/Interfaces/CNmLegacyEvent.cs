@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmLegacyEvent : CNmEvent, ISchemaClass<CNmLegacyEvent> {
 
   static CNmLegacyEvent ISchemaClass<CNmLegacyEvent>.From(nint handle) => new CNmLegacyEventImpl(handle);
+  static int ISchemaClass<CNmLegacyEvent>.Size => 64;
 
   
   public string AnimEventClassName { get; set; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSlowDownOnSlopesUpdateNode : CUnaryUpdateNode, ISchemaClass<CSlowDownOnSlopesUpdateNode> {
 
   static CSlowDownOnSlopesUpdateNode ISchemaClass<CSlowDownOnSlopesUpdateNode>.From(nint handle) => new CSlowDownOnSlopesUpdateNodeImpl(handle);
+  static int ISchemaClass<CSlowDownOnSlopesUpdateNode>.Size => 120;
 
   
   public ref float SlowDownStrength { get; }

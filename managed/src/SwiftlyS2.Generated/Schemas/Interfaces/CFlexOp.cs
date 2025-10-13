@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFlexOp : ISchemaClass<CFlexOp> {
 
   static CFlexOp ISchemaClass<CFlexOp>.From(nint handle) => new CFlexOpImpl(handle);
+  static int ISchemaClass<CFlexOp>.Size => 8;
 
   
   public ref FlexOpCode_t OpCode { get; }

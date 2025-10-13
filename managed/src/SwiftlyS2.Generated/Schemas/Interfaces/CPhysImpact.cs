@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysImpact : CPointEntity, ISchemaClass<CPhysImpact> {
 
   static CPhysImpact ISchemaClass<CPhysImpact>.From(nint handle) => new CPhysImpactImpl(handle);
+  static int ISchemaClass<CPhysImpact>.Size => 1280;
 
   
   public ref float Damage { get; }

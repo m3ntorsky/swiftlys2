@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CScriptTriggerPush : CTriggerPush, ISchemaClass<CScriptTriggerPush> {
 
   static CScriptTriggerPush ISchemaClass<CScriptTriggerPush>.From(nint handle) => new CScriptTriggerPushImpl(handle);
+  static int ISchemaClass<CScriptTriggerPush>.Size => 2568;
 
   
   public ref Vector Extent { get; }

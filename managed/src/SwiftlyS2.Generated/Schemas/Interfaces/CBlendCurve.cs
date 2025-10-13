@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBlendCurve : ISchemaClass<CBlendCurve> {
 
   static CBlendCurve ISchemaClass<CBlendCurve>.From(nint handle) => new CBlendCurveImpl(handle);
+  static int ISchemaClass<CBlendCurve>.Size => 8;
 
   
   public ref float ControlPoint1 { get; }

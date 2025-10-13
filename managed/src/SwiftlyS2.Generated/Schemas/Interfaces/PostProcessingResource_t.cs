@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PostProcessingResource_t : ISchemaClass<PostProcessingResource_t> {
 
   static PostProcessingResource_t ISchemaClass<PostProcessingResource_t>.From(nint handle) => new PostProcessingResource_tImpl(handle);
+  static int ISchemaClass<PostProcessingResource_t>.Size => 312;
 
   
   public ref bool HasTonemapParams { get; }

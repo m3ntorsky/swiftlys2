@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMultiLightProxy : CLogicalEntity, ISchemaClass<CMultiLightProxy> {
 
   static CMultiLightProxy ISchemaClass<CMultiLightProxy>.From(nint handle) => new CMultiLightProxyImpl(handle);
+  static int ISchemaClass<CMultiLightProxy>.Size => 1328;
 
   
   public string LightNameFilter { get; set; }

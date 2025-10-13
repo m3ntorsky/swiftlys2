@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSkyCamera : CBaseEntity, ISchemaClass<CSkyCamera> {
 
   static CSkyCamera ISchemaClass<CSkyCamera>.From(nint handle) => new CSkyCameraImpl(handle);
+  static int ISchemaClass<CSkyCamera>.Size => 1424;
 
   
   public sky3dparams_t SkyboxData { get; }

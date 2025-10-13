@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootMotion : ISchemaClass<CFootMotion> {
 
   static CFootMotion ISchemaClass<CFootMotion>.From(nint handle) => new CFootMotionImpl(handle);
+  static int ISchemaClass<CFootMotion>.Size => 40;
 
   
   // CUtlVector< CFootStride >

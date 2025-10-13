@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VsInputSignatureElement_t : ISchemaClass<VsInputSignatureElement_t> {
 
   static VsInputSignatureElement_t ISchemaClass<VsInputSignatureElement_t>.From(nint handle) => new VsInputSignatureElement_tImpl(handle);
+  static int ISchemaClass<VsInputSignatureElement_t>.Size => 196;
 
   
   public string Name { get; set; }

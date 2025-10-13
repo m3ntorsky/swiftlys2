@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VPhysXConstraint2_t : ISchemaClass<VPhysXConstraint2_t> {
 
   static VPhysXConstraint2_t ISchemaClass<VPhysXConstraint2_t>.From(nint handle) => new VPhysXConstraint2_tImpl(handle);
+  static int ISchemaClass<VPhysXConstraint2_t>.Size => 256;
 
   
   public ref uint Flags { get; }

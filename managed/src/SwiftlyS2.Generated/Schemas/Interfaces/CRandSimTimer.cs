@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRandSimTimer : CSimpleSimTimer, ISchemaClass<CRandSimTimer> {
 
   static CRandSimTimer ISchemaClass<CRandSimTimer>.From(nint handle) => new CRandSimTimerImpl(handle);
+  static int ISchemaClass<CRandSimTimer>.Size => 16;
 
   
   public ref float MinInterval { get; }

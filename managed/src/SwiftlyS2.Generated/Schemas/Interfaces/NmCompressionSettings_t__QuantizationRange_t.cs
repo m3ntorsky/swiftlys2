@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface NmCompressionSettings_t__QuantizationRange_t : ISchemaClass<NmCompressionSettings_t__QuantizationRange_t> {
 
   static NmCompressionSettings_t__QuantizationRange_t ISchemaClass<NmCompressionSettings_t__QuantizationRange_t>.From(nint handle) => new NmCompressionSettings_t__QuantizationRange_tImpl(handle);
+  static int ISchemaClass<NmCompressionSettings_t__QuantizationRange_t>.Size => 8;
 
   
   public ref float RangeStart { get; }

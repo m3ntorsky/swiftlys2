@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimLocalHierarchy : ISchemaClass<CAnimLocalHierarchy> {
 
   static CAnimLocalHierarchy ISchemaClass<CAnimLocalHierarchy>.From(nint handle) => new CAnimLocalHierarchyImpl(handle);
+  static int ISchemaClass<CAnimLocalHierarchy>.Size => 48;
 
   
   public ref CBufferString Bone { get; }

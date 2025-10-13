@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface IParticleCollection : ISchemaClass<IParticleCollection> {
 
   static IParticleCollection ISchemaClass<IParticleCollection>.From(nint handle) => new IParticleCollectionImpl(handle);
+  static int ISchemaClass<IParticleCollection>.Size => 16;
 
 
 

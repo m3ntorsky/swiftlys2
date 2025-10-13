@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CModelConfigElement_UserPick : CModelConfigElement, ISchemaClass<CModelConfigElement_UserPick> {
 
   static CModelConfigElement_UserPick ISchemaClass<CModelConfigElement_UserPick>.From(nint handle) => new CModelConfigElement_UserPickImpl(handle);
+  static int ISchemaClass<CModelConfigElement_UserPick>.Size => 96;
 
   
   public ref CUtlVector<CUtlString> Choices { get; }

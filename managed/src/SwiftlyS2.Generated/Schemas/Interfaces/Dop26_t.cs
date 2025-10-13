@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface Dop26_t : ISchemaClass<Dop26_t> {
 
   static Dop26_t ISchemaClass<Dop26_t>.From(nint handle) => new Dop26_tImpl(handle);
+  static int ISchemaClass<Dop26_t>.Size => 104;
 
   
   public ISchemaFixedArray<float> Support { get; }

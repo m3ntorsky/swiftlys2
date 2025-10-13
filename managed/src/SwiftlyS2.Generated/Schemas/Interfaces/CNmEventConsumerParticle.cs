@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmEventConsumerParticle : CNmEventConsumer, ISchemaClass<CNmEventConsumerParticle> {
 
   static CNmEventConsumerParticle ISchemaClass<CNmEventConsumerParticle>.From(nint handle) => new CNmEventConsumerParticleImpl(handle);
+  static int ISchemaClass<CNmEventConsumerParticle>.Size => 48;
 
 
 

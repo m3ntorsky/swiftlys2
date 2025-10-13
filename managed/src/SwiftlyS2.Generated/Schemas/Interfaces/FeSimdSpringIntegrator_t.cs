@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeSimdSpringIntegrator_t : ISchemaClass<FeSimdSpringIntegrator_t> {
 
   static FeSimdSpringIntegrator_t ISchemaClass<FeSimdSpringIntegrator_t>.From(nint handle) => new FeSimdSpringIntegrator_tImpl(handle);
+  static int ISchemaClass<FeSimdSpringIntegrator_t>.Size => 80;
 
   
   // uint16[4]

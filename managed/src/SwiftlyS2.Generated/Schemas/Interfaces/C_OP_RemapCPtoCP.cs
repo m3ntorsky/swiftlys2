@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapCPtoCP : CParticleFunctionPreEmission, ISchemaClass<C_OP_RemapCPtoCP> {
 
   static C_OP_RemapCPtoCP ISchemaClass<C_OP_RemapCPtoCP>.From(nint handle) => new C_OP_RemapCPtoCPImpl(handle);
+  static int ISchemaClass<C_OP_RemapCPtoCP>.Size => 496;
 
   
   public ref int InputControlPoint { get; }

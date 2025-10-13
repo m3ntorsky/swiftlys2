@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEntitySubclassVDataBase : ISchemaClass<CEntitySubclassVDataBase> {
 
   static CEntitySubclassVDataBase ISchemaClass<CEntitySubclassVDataBase>.From(nint handle) => new CEntitySubclassVDataBaseImpl(handle);
+  static int ISchemaClass<CEntitySubclassVDataBase>.Size => 40;
 
 
 

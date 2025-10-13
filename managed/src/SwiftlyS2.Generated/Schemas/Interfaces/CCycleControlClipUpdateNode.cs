@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCycleControlClipUpdateNode : CLeafUpdateNode, ISchemaClass<CCycleControlClipUpdateNode> {
 
   static CCycleControlClipUpdateNode ISchemaClass<CCycleControlClipUpdateNode>.From(nint handle) => new CCycleControlClipUpdateNodeImpl(handle);
+  static int ISchemaClass<CCycleControlClipUpdateNode>.Size => 144;
 
   
   // CUtlVector< TagSpan_t >

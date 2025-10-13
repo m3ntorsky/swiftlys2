@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEffectData : ISchemaClass<CEffectData> {
 
   static CEffectData ISchemaClass<CEffectData>.From(nint handle) => new CEffectDataImpl(handle);
+  static int ISchemaClass<CEffectData>.Size => 112;
 
   
   public ref Vector Origin { get; }

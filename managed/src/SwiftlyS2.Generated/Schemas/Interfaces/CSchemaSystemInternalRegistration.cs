@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSchemaSystemInternalRegistration : ISchemaClass<CSchemaSystemInternalRegistration> {
 
   static CSchemaSystemInternalRegistration ISchemaClass<CSchemaSystemInternalRegistration>.From(nint handle) => new CSchemaSystemInternalRegistrationImpl(handle);
+  static int ISchemaClass<CSchemaSystemInternalRegistration>.Size => 384;
 
   
   public ref Vector2D Vector2D { get; }

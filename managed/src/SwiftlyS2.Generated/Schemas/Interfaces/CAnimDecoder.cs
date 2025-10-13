@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimDecoder : ISchemaClass<CAnimDecoder> {
 
   static CAnimDecoder ISchemaClass<CAnimDecoder>.From(nint handle) => new CAnimDecoderImpl(handle);
+  static int ISchemaClass<CAnimDecoder>.Size => 24;
 
   
   public ref CBufferString Name { get; }

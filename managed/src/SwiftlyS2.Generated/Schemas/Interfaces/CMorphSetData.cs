@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMorphSetData : ISchemaClass<CMorphSetData> {
 
   static CMorphSetData ISchemaClass<CMorphSetData>.From(nint handle) => new CMorphSetDataImpl(handle);
+  static int ISchemaClass<CMorphSetData>.Size => 152;
 
   
   public ref int Width { get; }

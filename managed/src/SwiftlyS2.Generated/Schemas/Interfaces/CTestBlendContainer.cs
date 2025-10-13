@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTestBlendContainer : CVoiceContainerBase, ISchemaClass<CTestBlendContainer> {
 
   static CTestBlendContainer ISchemaClass<CTestBlendContainer>.From(nint handle) => new CTestBlendContainerImpl(handle);
+  static int ISchemaClass<CTestBlendContainer>.Size => 200;
 
   
   public ref CStrongHandle<InfoForResourceTypeCVoiceContainerBase> FirstSound { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ParamSpanSample_t : ISchemaClass<ParamSpanSample_t> {
 
   static ParamSpanSample_t ISchemaClass<ParamSpanSample_t>.From(nint handle) => new ParamSpanSample_tImpl(handle);
+  static int ISchemaClass<ParamSpanSample_t>.Size => 24;
 
   
   // CAnimVariant

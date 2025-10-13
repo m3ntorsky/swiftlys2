@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRagdollConstraint : CPhysConstraint, ISchemaClass<CRagdollConstraint> {
 
   static CRagdollConstraint ISchemaClass<CRagdollConstraint>.From(nint handle) => new CRagdollConstraintImpl(handle);
+  static int ISchemaClass<CRagdollConstraint>.Size => 1416;
 
   
   public ref float Xmin { get; }

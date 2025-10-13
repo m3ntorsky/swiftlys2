@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_TestWaitWithCursorState__CursorState_t : ISchemaClass<CPulseCell_TestWaitWithCursorState__CursorState_t> {
 
   static CPulseCell_TestWaitWithCursorState__CursorState_t ISchemaClass<CPulseCell_TestWaitWithCursorState__CursorState_t>.From(nint handle) => new CPulseCell_TestWaitWithCursorState__CursorState_tImpl(handle);
+  static int ISchemaClass<CPulseCell_TestWaitWithCursorState__CursorState_t>.Size => 8;
 
   
   public ref float WaitValue { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CInfoVisibilityBox : CBaseEntity, ISchemaClass<CInfoVisibilityBox> {
 
   static CInfoVisibilityBox ISchemaClass<CInfoVisibilityBox>.From(nint handle) => new CInfoVisibilityBoxImpl(handle);
+  static int ISchemaClass<CInfoVisibilityBox>.Size => 1288;
 
   
   public ref int Mode { get; }

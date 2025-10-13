@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDestructiblePart_DamageLevel : ISchemaClass<CDestructiblePart_DamageLevel> {
 
   static CDestructiblePart_DamageLevel ISchemaClass<CDestructiblePart_DamageLevel>.From(nint handle) => new CDestructiblePart_DamageLevelImpl(handle);
+  static int ISchemaClass<CDestructiblePart_DamageLevel>.Size => 72;
 
   
   public string Name { get; set; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlayer_FlashlightServices : CPlayerPawnComponent, ISchemaClass<CPlayer_FlashlightServices> {
 
   static CPlayer_FlashlightServices ISchemaClass<CPlayer_FlashlightServices>.From(nint handle) => new CPlayer_FlashlightServicesImpl(handle);
+  static int ISchemaClass<CPlayer_FlashlightServices>.Size => 64;
 
 
 

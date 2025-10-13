@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSolveIKChainUpdateNode : CUnaryUpdateNode, ISchemaClass<CSolveIKChainUpdateNode> {
 
   static CSolveIKChainUpdateNode ISchemaClass<CSolveIKChainUpdateNode>.From(nint handle) => new CSolveIKChainUpdateNodeImpl(handle);
+  static int ISchemaClass<CSolveIKChainUpdateNode>.Size => 168;
 
   
   // CUtlVector< CSolveIKTargetHandle_t >

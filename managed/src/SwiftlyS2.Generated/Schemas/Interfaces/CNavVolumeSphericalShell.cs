@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNavVolumeSphericalShell : CNavVolumeSphere, ISchemaClass<CNavVolumeSphericalShell> {
 
   static CNavVolumeSphericalShell ISchemaClass<CNavVolumeSphericalShell>.From(nint handle) => new CNavVolumeSphericalShellImpl(handle);
+  static int ISchemaClass<CNavVolumeSphericalShell>.Size => 144;
 
   
   public ref float RadiusInner { get; }

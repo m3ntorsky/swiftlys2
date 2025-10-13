@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SkeletonAnimCapture_t : ISchemaClass<SkeletonAnimCapture_t> {
 
   static SkeletonAnimCapture_t ISchemaClass<SkeletonAnimCapture_t>.From(nint handle) => new SkeletonAnimCapture_tImpl(handle);
+  static int ISchemaClass<SkeletonAnimCapture_t>.Size => 192;
 
   
   public ref uint EntIndex { get; }

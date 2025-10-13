@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface IKDemoCaptureSettings_t : ISchemaClass<IKDemoCaptureSettings_t> {
 
   static IKDemoCaptureSettings_t ISchemaClass<IKDemoCaptureSettings_t>.From(nint handle) => new IKDemoCaptureSettings_tImpl(handle);
+  static int ISchemaClass<IKDemoCaptureSettings_t>.Size => 40;
 
   
   public string ParentBoneName { get; set; }

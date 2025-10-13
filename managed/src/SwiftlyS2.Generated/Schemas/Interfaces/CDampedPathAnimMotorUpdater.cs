@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDampedPathAnimMotorUpdater : CPathAnimMotorUpdaterBase, ISchemaClass<CDampedPathAnimMotorUpdater> {
 
   static CDampedPathAnimMotorUpdater ISchemaClass<CDampedPathAnimMotorUpdater>.From(nint handle) => new CDampedPathAnimMotorUpdaterImpl(handle);
+  static int ISchemaClass<CDampedPathAnimMotorUpdater>.Size => 72;
 
   
   public ref float AnticipationTime { get; }

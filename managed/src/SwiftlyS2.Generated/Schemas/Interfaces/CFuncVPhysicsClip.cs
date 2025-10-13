@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFuncVPhysicsClip : CBaseModelEntity, ISchemaClass<CFuncVPhysicsClip> {
 
   static CFuncVPhysicsClip ISchemaClass<CFuncVPhysicsClip>.From(nint handle) => new CFuncVPhysicsClipImpl(handle);
+  static int ISchemaClass<CFuncVPhysicsClip>.Size => 2040;
 
   
   public ref bool Disabled { get; }

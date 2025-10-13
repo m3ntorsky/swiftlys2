@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeNodeReverseOffset_t : ISchemaClass<FeNodeReverseOffset_t> {
 
   static FeNodeReverseOffset_t ISchemaClass<FeNodeReverseOffset_t>.From(nint handle) => new FeNodeReverseOffset_tImpl(handle);
+  static int ISchemaClass<FeNodeReverseOffset_t>.Size => 16;
 
   
   public ref Vector Offset { get; }

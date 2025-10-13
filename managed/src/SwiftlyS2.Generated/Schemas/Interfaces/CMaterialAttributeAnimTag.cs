@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMaterialAttributeAnimTag : CAnimTagBase, ISchemaClass<CMaterialAttributeAnimTag> {
 
   static CMaterialAttributeAnimTag ISchemaClass<CMaterialAttributeAnimTag>.From(nint handle) => new CMaterialAttributeAnimTagImpl(handle);
+  static int ISchemaClass<CMaterialAttributeAnimTag>.Size => 112;
 
   
   public string AttributeName { get; set; }

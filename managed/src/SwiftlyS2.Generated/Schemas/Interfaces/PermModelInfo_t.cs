@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PermModelInfo_t : ISchemaClass<PermModelInfo_t> {
 
   static PermModelInfo_t ISchemaClass<PermModelInfo_t>.From(nint handle) => new PermModelInfo_tImpl(handle);
+  static int ISchemaClass<PermModelInfo_t>.Size => 88;
 
   
   public ref uint Flags { get; }

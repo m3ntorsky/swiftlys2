@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPathTrack : CPointEntity, ISchemaClass<CPathTrack> {
 
   static CPathTrack ISchemaClass<CPathTrack>.From(nint handle) => new CPathTrackImpl(handle);
+  static int ISchemaClass<CPathTrack>.Size => 1352;
 
   
   public CPathTrack? Pnext { get; }

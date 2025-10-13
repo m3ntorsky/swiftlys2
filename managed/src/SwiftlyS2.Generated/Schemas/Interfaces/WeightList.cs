@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface WeightList : ISchemaClass<WeightList> {
 
   static WeightList ISchemaClass<WeightList>.From(nint handle) => new WeightListImpl(handle);
+  static int ISchemaClass<WeightList>.Size => 32;
 
   
   public string Name { get; set; }

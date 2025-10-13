@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FunctionInfo_t : ISchemaClass<FunctionInfo_t> {
 
   static FunctionInfo_t ISchemaClass<FunctionInfo_t>.From(nint handle) => new FunctionInfo_tImpl(handle);
+  static int ISchemaClass<FunctionInfo_t>.Size => 32;
 
   
   public string Name { get; set; }

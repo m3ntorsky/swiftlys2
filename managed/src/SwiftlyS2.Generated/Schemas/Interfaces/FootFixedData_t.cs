@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FootFixedData_t : ISchemaClass<FootFixedData_t> {
 
   static FootFixedData_t ISchemaClass<FootFixedData_t>.From(nint handle) => new FootFixedData_tImpl(handle);
+  static int ISchemaClass<FootFixedData_t>.Size => 80;
 
   
   public ref Vector ToeOffset { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTeamplayRules : CMultiplayRules, ISchemaClass<CTeamplayRules> {
 
   static CTeamplayRules ISchemaClass<CTeamplayRules>.From(nint handle) => new CTeamplayRulesImpl(handle);
+  static int ISchemaClass<CTeamplayRules>.Size => 192;
 
 
 

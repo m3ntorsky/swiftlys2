@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeMorphLayerDepr_t : ISchemaClass<FeMorphLayerDepr_t> {
 
   static FeMorphLayerDepr_t ISchemaClass<FeMorphLayerDepr_t>.From(nint handle) => new FeMorphLayerDepr_tImpl(handle);
+  static int ISchemaClass<FeMorphLayerDepr_t>.Size => 144;
 
   
   public string Name { get; set; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface locksound_t : ISchemaClass<locksound_t> {
 
   static locksound_t ISchemaClass<locksound_t>.From(nint handle) => new locksound_tImpl(handle);
+  static int ISchemaClass<locksound_t>.Size => 32;
 
   
   public string LockedSound { get; set; }

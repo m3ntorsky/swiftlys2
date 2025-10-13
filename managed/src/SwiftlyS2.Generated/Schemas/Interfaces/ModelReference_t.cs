@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ModelReference_t : ISchemaClass<ModelReference_t> {
 
   static ModelReference_t ISchemaClass<ModelReference_t>.From(nint handle) => new ModelReference_tImpl(handle);
+  static int ISchemaClass<ModelReference_t>.Size => 16;
 
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }

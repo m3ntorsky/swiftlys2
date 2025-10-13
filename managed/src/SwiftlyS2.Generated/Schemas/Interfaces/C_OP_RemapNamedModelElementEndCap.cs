@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapNamedModelElementEndCap : CParticleFunctionOperator, ISchemaClass<C_OP_RemapNamedModelElementEndCap> {
 
   static C_OP_RemapNamedModelElementEndCap ISchemaClass<C_OP_RemapNamedModelElementEndCap>.From(nint handle) => new C_OP_RemapNamedModelElementEndCapImpl(handle);
+  static int ISchemaClass<C_OP_RemapNamedModelElementEndCap>.Size => 544;
 
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }

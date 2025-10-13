@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EntInput_t : ISchemaClass<EntInput_t> {
 
   static EntInput_t ISchemaClass<EntInput_t>.From(nint handle) => new EntInput_tImpl(handle);
+  static int ISchemaClass<EntInput_t>.Size => 48;
 
 
 

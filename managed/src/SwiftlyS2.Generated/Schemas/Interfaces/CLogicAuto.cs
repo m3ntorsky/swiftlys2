@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLogicAuto : CBaseEntity, ISchemaClass<CLogicAuto> {
 
   static CLogicAuto ISchemaClass<CLogicAuto>.From(nint handle) => new CLogicAutoImpl(handle);
+  static int ISchemaClass<CLogicAuto>.Size => 1672;
 
   
   public CEntityIOOutput OnMapSpawn { get; }

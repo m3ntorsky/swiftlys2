@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_IsRequirementValid__Criteria_t : ISchemaClass<CPulseCell_IsRequirementValid__Criteria_t> {
 
   static CPulseCell_IsRequirementValid__Criteria_t ISchemaClass<CPulseCell_IsRequirementValid__Criteria_t>.From(nint handle) => new CPulseCell_IsRequirementValid__Criteria_tImpl(handle);
+  static int ISchemaClass<CPulseCell_IsRequirementValid__Criteria_t>.Size => 1;
 
   
   public ref bool IsValid { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCSurfaceGraph : ISchemaClass<InfoForResourceTypeCSurfaceGraph> {
 
   static InfoForResourceTypeCSurfaceGraph ISchemaClass<InfoForResourceTypeCSurfaceGraph>.From(nint handle) => new InfoForResourceTypeCSurfaceGraphImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCSurfaceGraph>.Size => 1;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PredictedDamageTag_t : ISchemaClass<PredictedDamageTag_t> {
 
   static PredictedDamageTag_t ISchemaClass<PredictedDamageTag_t>.From(nint handle) => new PredictedDamageTag_tImpl(handle);
+  static int ISchemaClass<PredictedDamageTag_t>.Size => 64;
 
   
   public GameTick_t TagTick { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTargetWarpUpdateNode : CUnaryUpdateNode, ISchemaClass<CTargetWarpUpdateNode> {
 
   static CTargetWarpUpdateNode ISchemaClass<CTargetWarpUpdateNode>.From(nint handle) => new CTargetWarpUpdateNodeImpl(handle);
+  static int ISchemaClass<CTargetWarpUpdateNode>.Size => 152;
 
   
   public ref TargetWarpAngleMode_t AngleMode { get; }

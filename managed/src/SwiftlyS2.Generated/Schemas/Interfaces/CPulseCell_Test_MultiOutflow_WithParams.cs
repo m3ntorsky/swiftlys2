@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Test_MultiOutflow_WithParams : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_Test_MultiOutflow_WithParams> {
 
   static CPulseCell_Test_MultiOutflow_WithParams ISchemaClass<CPulseCell_Test_MultiOutflow_WithParams>.From(nint handle) => new CPulseCell_Test_MultiOutflow_WithParamsImpl(handle);
+  static int ISchemaClass<CPulseCell_Test_MultiOutflow_WithParams>.Size => 216;
 
   
   public SignatureOutflow_Continue Out1 { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PermModelDataAnimatedMaterialAttribute_t : ISchemaClass<PermModelDataAnimatedMaterialAttribute_t> {
 
   static PermModelDataAnimatedMaterialAttribute_t ISchemaClass<PermModelDataAnimatedMaterialAttribute_t>.From(nint handle) => new PermModelDataAnimatedMaterialAttribute_tImpl(handle);
+  static int ISchemaClass<PermModelDataAnimatedMaterialAttribute_t>.Size => 16;
 
   
   public string AttributeName { get; set; }

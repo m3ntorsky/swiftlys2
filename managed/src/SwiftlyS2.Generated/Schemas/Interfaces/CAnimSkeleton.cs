@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimSkeleton : ISchemaClass<CAnimSkeleton> {
 
   static CAnimSkeleton ISchemaClass<CAnimSkeleton>.From(nint handle) => new CAnimSkeletonImpl(handle);
+  static int ISchemaClass<CAnimSkeleton>.Size => 208;
 
   
   public ref CUtlVector<CTransform> LocalSpaceTransforms { get; }

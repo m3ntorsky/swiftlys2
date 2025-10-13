@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeBoxRigid_t : ISchemaClass<FeBoxRigid_t> {
 
   static FeBoxRigid_t ISchemaClass<FeBoxRigid_t>.From(nint handle) => new FeBoxRigid_tImpl(handle);
+  static int ISchemaClass<FeBoxRigid_t>.Size => 64;
 
   
   public ref CTransform TmFrame2 { get; }

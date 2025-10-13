@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSeqSeqDescFlag : ISchemaClass<CSeqSeqDescFlag> {
 
   static CSeqSeqDescFlag ISchemaClass<CSeqSeqDescFlag>.From(nint handle) => new CSeqSeqDescFlagImpl(handle);
+  static int ISchemaClass<CSeqSeqDescFlag>.Size => 11;
 
   
   public ref bool Looping { get; }

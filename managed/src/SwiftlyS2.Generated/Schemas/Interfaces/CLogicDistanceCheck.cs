@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLogicDistanceCheck : CLogicalEntity, ISchemaClass<CLogicDistanceCheck> {
 
   static CLogicDistanceCheck ISchemaClass<CLogicDistanceCheck>.From(nint handle) => new CLogicDistanceCheckImpl(handle);
+  static int ISchemaClass<CLogicDistanceCheck>.Size => 1408;
 
   
   public string EntityA { get; set; }

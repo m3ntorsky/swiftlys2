@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVPhysXSurfacePropertiesList : ISchemaClass<CVPhysXSurfacePropertiesList> {
 
   static CVPhysXSurfacePropertiesList ISchemaClass<CVPhysXSurfacePropertiesList>.From(nint handle) => new CVPhysXSurfacePropertiesListImpl(handle);
+  static int ISchemaClass<CVPhysXSurfacePropertiesList>.Size => 24;
 
   
   public ref CUtlVector<PointerTo<CPhysSurfaceProperties>> SurfacePropertiesList { get; }

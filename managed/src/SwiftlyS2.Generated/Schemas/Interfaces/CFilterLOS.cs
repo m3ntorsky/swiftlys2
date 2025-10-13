@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFilterLOS : CBaseFilter, ISchemaClass<CFilterLOS> {
 
   static CFilterLOS ISchemaClass<CFilterLOS>.From(nint handle) => new CFilterLOSImpl(handle);
+  static int ISchemaClass<CFilterLOS>.Size => 1352;
 
 
 

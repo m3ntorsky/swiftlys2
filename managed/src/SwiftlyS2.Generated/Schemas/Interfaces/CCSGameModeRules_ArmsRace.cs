@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSGameModeRules_ArmsRace : CCSGameModeRules, ISchemaClass<CCSGameModeRules_ArmsRace> {
 
   static CCSGameModeRules_ArmsRace ISchemaClass<CCSGameModeRules_ArmsRace>.From(nint handle) => new CCSGameModeRules_ArmsRaceImpl(handle);
+  static int ISchemaClass<CCSGameModeRules_ArmsRace>.Size => 136;
 
   
   public ref CUtlVector<CUtlString> WeaponSequence { get; }

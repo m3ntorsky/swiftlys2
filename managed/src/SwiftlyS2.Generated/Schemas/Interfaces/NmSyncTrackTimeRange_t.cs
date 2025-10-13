@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface NmSyncTrackTimeRange_t : ISchemaClass<NmSyncTrackTimeRange_t> {
 
   static NmSyncTrackTimeRange_t ISchemaClass<NmSyncTrackTimeRange_t>.From(nint handle) => new NmSyncTrackTimeRange_tImpl(handle);
+  static int ISchemaClass<NmSyncTrackTimeRange_t>.Size => 16;
 
   
   public NmSyncTrackTime_t StartTime { get; }

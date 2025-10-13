@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AmmoIndex_t : ISchemaClass<AmmoIndex_t> {
 
   static AmmoIndex_t ISchemaClass<AmmoIndex_t>.From(nint handle) => new AmmoIndex_tImpl(handle);
+  static int ISchemaClass<AmmoIndex_t>.Size => 1;
 
   
   public ref byte Value { get; }

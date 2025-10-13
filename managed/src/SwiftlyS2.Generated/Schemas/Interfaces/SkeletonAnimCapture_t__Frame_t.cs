@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SkeletonAnimCapture_t__Frame_t : ISchemaClass<SkeletonAnimCapture_t__Frame_t> {
 
   static SkeletonAnimCapture_t__Frame_t ISchemaClass<SkeletonAnimCapture_t__Frame_t>.From(nint handle) => new SkeletonAnimCapture_t__Frame_tImpl(handle);
+  static int ISchemaClass<SkeletonAnimCapture_t__Frame_t>.Size => 192;
 
   
   public ref float Time { get; }

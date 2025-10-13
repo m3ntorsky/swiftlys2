@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysSurfaceProperties : ISchemaClass<CPhysSurfaceProperties> {
 
   static CPhysSurfaceProperties ISchemaClass<CPhysSurfaceProperties>.From(nint handle) => new CPhysSurfacePropertiesImpl(handle);
+  static int ISchemaClass<CPhysSurfaceProperties>.Size => 200;
 
   
   public string Name { get; set; }

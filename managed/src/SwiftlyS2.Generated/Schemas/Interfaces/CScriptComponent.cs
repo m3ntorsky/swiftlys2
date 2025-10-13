@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CScriptComponent : CEntityComponent, ISchemaClass<CScriptComponent> {
 
   static CScriptComponent ISchemaClass<CScriptComponent>.From(nint handle) => new CScriptComponentImpl(handle);
+  static int ISchemaClass<CScriptComponent>.Size => 56;
 
   
   public string ScriptClassName { get; set; }

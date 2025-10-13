@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDrawCullingData : ISchemaClass<CDrawCullingData> {
 
   static CDrawCullingData ISchemaClass<CDrawCullingData>.From(nint handle) => new CDrawCullingDataImpl(handle);
+  static int ISchemaClass<CDrawCullingData>.Size => 4;
 
   
   public ISchemaFixedArray<byte> ConeAxis { get; }

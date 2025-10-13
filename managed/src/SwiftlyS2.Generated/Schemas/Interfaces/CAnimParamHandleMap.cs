@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimParamHandleMap : ISchemaClass<CAnimParamHandleMap> {
 
   static CAnimParamHandleMap ISchemaClass<CAnimParamHandleMap>.From(nint handle) => new CAnimParamHandleMapImpl(handle);
+  static int ISchemaClass<CAnimParamHandleMap>.Size => 32;
 
   
   // CUtlHashtable< uint16, int16 >
