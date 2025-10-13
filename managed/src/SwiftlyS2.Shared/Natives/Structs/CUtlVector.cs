@@ -247,11 +247,3 @@ public struct CUtlVector<T> : IDisposable, IEnumerable<T>
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }
-
-/// <summary>
-/// Unsafe untyped cutlvector.
-/// </summary>
-[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 24)]
-public struct CUtlVector
-{
-}
