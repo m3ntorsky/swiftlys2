@@ -271,7 +271,7 @@ void CPlayerManager::UnregisterPlayer(int playerid)
 IPlayer* CPlayerManager::GetPlayer(int playerid)
 {
     if (playerid < 0 || playerid >= g_SwiftlyCore.GetMaxGameClients()) return nullptr;
-    if (!IsPlayerOnline(playerid)) return g_Players[playerid];
+    if (IsPlayerOnline(playerid)) return g_Players[playerid];
     return nullptr;
 }
 
