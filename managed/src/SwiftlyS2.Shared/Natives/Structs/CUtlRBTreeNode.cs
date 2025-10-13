@@ -13,7 +13,6 @@ public struct CUtlRBTreeLinks<TKey> where TKey : unmanaged
 [StructLayout(LayoutKind.Sequential)]
 public struct CUtlRBTreeNode<TKey, TValue>
     where TKey : unmanaged
-    where TValue : unmanaged
 {
     public CUtlRBTreeLinks<TKey> Links;
     public TValue Data;

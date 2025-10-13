@@ -5,8 +5,6 @@ namespace SwiftlyS2.Shared.Natives;
 
 [StructLayout(LayoutKind.Sequential)]
 public struct CUtlMap<TKey, TValue, TIndex> : IDisposable
-    where TKey : unmanaged
-    where TValue : unmanaged
     where TIndex : unmanaged, IBinaryInteger<TIndex>, IMinMaxValue<TIndex>
 {
     public CUtlRBTree<CUtlMapTreeNode<TKey, TValue>, TIndex> Tree;

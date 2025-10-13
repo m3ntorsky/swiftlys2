@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using SwiftlyS2.Core.Extensions;
 using SwiftlyS2.Core.Natives;
@@ -11,7 +12,6 @@ namespace SwiftlyS2.Shared.Natives;
 [StructLayout(LayoutKind.Sequential)]
 public struct CUtlLeanVector<T, I>
     : IDisposable, IEnumerable<T>
-    where T : unmanaged
     where I : unmanaged, IBinaryInteger<I>, IMinMaxValue<I>
 {
     public I Count;
@@ -151,7 +151,6 @@ public struct CUtlLeanVector<T, I>
     public I AddToTail()
     {
         EnsureCapacity(int.CreateChecked(Count + I.One), false);
-        this[Count] = new();
         return Count++;
     }
 
@@ -169,12 +168,7 @@ public struct CUtlLeanVector<T, I>
 
         EnsureCapacity(int.CreateChecked(count), false);
 
-        if (count > Count)
-        {
-            for (I i = Count; i < count; i++)
-                this[i] = new();
-        }
-        else if (Count > count)
+        if (Count > count)
         {
             for (I i = count; i < Count; i++)
                 this[i] = default;
@@ -288,5 +282,14 @@ public struct CUtlLeanVector<T, I>
     public int NumAllocated => (int)((ulong)(object)Allocated & ~(ulong)(object)ExternalBufferMarker);
     public bool ExternallyAllocated => ((ulong)(object)Allocated & (ulong)(object)ExternalBufferMarker) != 0;
     public nint Base => Elements;
-    public ref T this[I index] => ref Elements.AsRef<T>(int.CreateChecked(index * I.CreateChecked(ElementSize)));
+    public ref T this[I index]
+    {
+        get
+        {
+            unsafe
+            {
+                return ref Unsafe.AsRef<T>((byte*)Elements + int.CreateChecked(index * I.CreateChecked(ElementSize)));
+            }
+        }
+    }
 }

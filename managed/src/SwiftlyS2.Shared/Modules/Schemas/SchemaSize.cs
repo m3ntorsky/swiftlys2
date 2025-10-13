@@ -8,7 +8,7 @@ public static class SchemaSize
 {
     private static readonly ConcurrentDictionary<Type, int> _sizeCache = new();
 
-    public static int Get<T>() where T : unmanaged
+    public static int Get<T>()
     {
         return _sizeCache.GetOrAdd(typeof(T), static type =>
         {

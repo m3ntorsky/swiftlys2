@@ -13,7 +13,6 @@ public enum NodeColor_t
 
 [StructLayout(LayoutKind.Sequential)]
 public struct CUtlRBTree<TValue, TKey> : IDisposable
-    where TValue : unmanaged
     where TKey : unmanaged, IBinaryInteger<TKey>, IMinMaxValue<TKey>
 {
     public delegate bool LessFunc(ref TValue lhs, ref TValue rhs);

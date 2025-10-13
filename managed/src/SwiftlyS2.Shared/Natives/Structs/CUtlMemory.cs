@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using SwiftlyS2.Core.Extensions;
 using SwiftlyS2.Core.Natives;
@@ -13,7 +14,7 @@ public enum BufferMarkers
 }
 
 [StructLayout(LayoutKind.Sequential)]
-public struct CUtlMemory<T> : IDisposable where T : unmanaged
+public struct CUtlMemory<T> : IDisposable
 {
     private nint _memory;
     private uint _allocationCount;
@@ -183,7 +184,16 @@ public struct CUtlMemory<T> : IDisposable where T : unmanaged
 
     public bool IsValidIndex(int index) => (uint)index < _allocationCount && index >= 0;
 
-    public ref T this[int index] => ref _memory.AsRef<T>(index * ElementSize);
+    public ref T this[int index]
+    {
+        get
+        {
+            unsafe
+            {
+                return ref Unsafe.AsRef<T>((byte*)_memory + int.CreateChecked(index * ElementSize));
+            }
+        }
+    }
     public bool ExternallyAllocated => (_growSize & (int)(BufferMarkers.ExternalBufferMarker | BufferMarkers.ExternalConstBufferMarker)) != 0;
     public bool IsReadOnly => (_growSize & (int)BufferMarkers.ExternalConstBufferMarker) != 0;
     public nint Base => _memory;

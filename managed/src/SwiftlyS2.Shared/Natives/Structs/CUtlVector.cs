@@ -7,7 +7,7 @@ using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.Schemas;
 
 [StructLayout(LayoutKind.Sequential, Pack = 8, Size = 24)]
-public struct CUtlVector<T> : IDisposable, IEnumerable<T> where T : unmanaged
+public struct CUtlVector<T> : IDisposable, IEnumerable<T>
 {
     private int _size;
     private CUtlMemory<T> _memory;
