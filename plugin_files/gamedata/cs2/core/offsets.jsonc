@@ -82,6 +82,17 @@
         "windows": 25,
         "linux": 26
     },
+    /*
+    find string 'Unknown command '%s'!\n' inside engine2.dll to find Cmd_ExecuteCommand function,
+    inside it, look for the command name access pattern that looks like this:
+
+    if ( *(int *)(v3 + 1080) > 0 )
+        v4 = **(const char ***)(v3 + 1088);
+    return LoggingSystem_Log(LOG_CONSOLE, 3i64, "Unknown command '%s'!\n", v4);
+
+    The command name pointer is accessed via double dereference at offset 1088.
+    This offset (1088) is the CommandNameOffset we need.
+    */
     "CommandNameOffset": {
         "windows": 1088,
         "linux": 1088

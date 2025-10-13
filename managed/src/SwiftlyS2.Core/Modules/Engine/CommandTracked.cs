@@ -14,6 +14,30 @@ namespace SwiftlyS2.Core.Modules.Engine;
 
 internal sealed class CommandTracked : IDisposable
 {
+    /*
+    Original function in engine2.dll: __int64 sub_1C0CD0(__int64 a1, int a2, unsigned int a3, ...)
+    This is a variadic function, but we only need the first two variable arguments (v55, v57)
+
+    __int64 sub_1C0CD0(__int64 a1, int a2, unsigned int a3, ...)
+    {
+        ...
+        
+        va_list va; // [rsp+D28h] [rbp+D28h]
+        __int64 v55; // [rsp+E28h] [rbp+D28h] BYREF
+        va_list va1; // [rsp+E28h] [rbp+D28h]
+
+        ...
+
+        va_start(va1, a3);
+        va_start(va, a3);
+        v55 = va_arg(va1, _QWORD);
+        v57 = va_arg(va1, _QWORD);
+
+        ...
+    }
+
+    So we model it as a fixed 5-parameter function for interop purposes
+    */
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     private delegate nint ExecuteCommandDelegate(nint a1, int a2, uint a3, nint a4, nint a5);
 
