@@ -136,8 +136,18 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
 
     auto scripting = g_ifaceService.FetchInterface<IScriptingAPI>(SCRIPTING_INTERFACE_VERSION);
 
-    InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/" + m_sCorePath);
-    InitializeDotNetAPI(scripting->GetNativeFunctions(), scripting->GetNativeFunctionsCount());
+    if (!InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/" + m_sCorePath))
+    {
+        auto crashreporter = g_ifaceService.FetchInterface<ICrashReporter>(CRASHREPORTER_INTERFACE_VERSION);
+        crashreporter->ReportPreventionIncident("Managed", fmt::format("Couldn't initialize the .NET runtime. Make sure you installed `swiftlys2-{}-{}-with-runtimes.zip`.", WIN_LINUX("windows", "linux"), GetVersion()));
+        return true;
+    }
+    if (!InitializeDotNetAPI(scripting->GetNativeFunctions(), scripting->GetNativeFunctionsCount()))
+    {
+        auto crashreporter = g_ifaceService.FetchInterface<ICrashReporter>(CRASHREPORTER_INTERFACE_VERSION);
+        crashreporter->ReportPreventionIncident("Managed", "Couldn't initialize the .NET scripting API.");
+        return true;
+    }
 
     return true;
 }
