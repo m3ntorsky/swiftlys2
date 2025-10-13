@@ -16,12 +16,9 @@ internal sealed class CommandTracked : IDisposable
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     private delegate nint ExecuteCommandDelegate(nint a1, int a2, uint a3, nint a4, nint a5);
 
-    private sealed class CommandIdContainer
+    private sealed record CommandIdContainer(Guid Value)
     {
         public static readonly CommandIdContainer Empty = new(Guid.Empty);
-
-        public Guid Value;
-        public CommandIdContainer(Guid value) => Value = value;
     }
 
     private readonly record struct ExecutingCommand(Action<string> Callback)
@@ -31,6 +28,7 @@ internal sealed class CommandTracked : IDisposable
         public bool IsExpired => DateTime.UtcNow - Created > TimeSpan.FromMilliseconds(5000);
     }
 
+    private volatile bool disposed;
     private readonly CancellationTokenSource cancellationTokenSource;
     private readonly ConcurrentQueue<Action<string>> pendingCallbacks;
     private readonly ConcurrentDictionary<Guid, ExecutingCommand> activeCommands;
@@ -39,11 +37,12 @@ internal sealed class CommandTracked : IDisposable
     private readonly IGameDataService gameDataService;
     private volatile CommandIdContainer currentCommandContainer;
     private volatile bool hooksInitialized;
-    private volatile bool disposed;
     private readonly object initializationLock = new();
+    private static readonly object commandNameOffsetLock = new();
     private Guid hookId;
     private Guid outputListenerId;
     private IUnmanagedFunction<ExecuteCommandDelegate>? executeCommandHook;
+    private static int commandNameOffset = 0;
 
     public CommandTracked(ISwiftlyCore swiftlyCore)
     {
@@ -54,6 +53,15 @@ internal sealed class CommandTracked : IDisposable
         activeCommands = new ConcurrentDictionary<Guid, ExecutingCommand>();
         cancellationTokenSource = new CancellationTokenSource();
         currentCommandContainer = CommandIdContainer.Empty;
+        lock (commandNameOffsetLock)
+        {
+            if (commandNameOffset == 0)
+            {
+                var baseAddress = gameDataService.GetSignature("CommandNameOffset");
+                commandNameOffset = baseAddress == nint.Zero ? 0 : (int)(memoryService.ResolveXrefAddress(baseAddress) - baseAddress - 7);
+                commandNameOffset = Math.Max(commandNameOffset, 0);
+            }
+        }
 
         StartCleanupTimer();
     }
@@ -174,8 +182,8 @@ internal sealed class CommandTracked : IDisposable
     {
         try
         {
-            if (a5 == nint.Zero || a5 >= nint.MaxValue) return nint.Zero;
-            var basePtr = Marshal.ReadIntPtr(a5 + 0x440);
+            if (a5 == nint.Zero || a5 >= nint.MaxValue || commandNameOffset == 0) return nint.Zero;
+            var basePtr = Marshal.ReadIntPtr(new nint(a5 + commandNameOffset));
 
             if (basePtr == nint.Zero || basePtr >= nint.MaxValue) return nint.Zero;
             return Marshal.ReadIntPtr(basePtr);
