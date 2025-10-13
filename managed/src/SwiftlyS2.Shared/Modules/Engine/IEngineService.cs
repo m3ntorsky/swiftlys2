@@ -1,4 +1,4 @@
-﻿namespace SwiftlyS2.Shared.Services;
+namespace SwiftlyS2.Shared.Services;
 
 public interface IEngineService
 {
@@ -29,6 +29,13 @@ public interface IEngineService
     /// </summary>
     /// <param name="command">The command to execute. Cannot be null or empty.</param>
     void ExecuteCommand(string command);
+
+    /// <summary>
+    /// Executes the specified command string in the current context.
+    /// </summary>
+    /// <param name="command">The command to execute. Cannot be null or empty.</param>
+    /// <param name="bufferCallback">The callback to receive the output of the command.</param>
+    void ExecuteCommandWithBuffer(string command, Action<string> bufferCallback);
 
     /// <summary>
     /// The time since the server started.
