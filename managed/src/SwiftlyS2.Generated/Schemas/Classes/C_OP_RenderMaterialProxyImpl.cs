@@ -21,8 +21,8 @@ internal partial class C_OP_RenderMaterialProxyImpl : CParticleFunctionRendererI
   public ref MaterialProxyType_t ProxyType {
     get => ref _Handle.AsRef<MaterialProxyType_t>(Schema.GetOffset(0xA7258058066A337F));
   }
-  public ref CUtlVector MaterialVars {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA7258058FA861D66));
+  public ref CUtlVector<MaterialVariable_t> MaterialVars {
+    get => ref _Handle.AsRef<CUtlVector<MaterialVariable_t>>(Schema.GetOffset(0xA7258058FA861D66));
   }
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> OverrideMaterial {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeIMaterial2>>(Schema.GetOffset(0xA72580582C055CBE));

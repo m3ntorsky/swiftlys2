@@ -14,8 +14,7 @@ public partial interface ParamSpan_t : ISchemaClass<ParamSpan_t> {
   static int ISchemaClass<ParamSpan_t>.Size => 40;
 
   
-  // CUtlVector< ParamSpanSample_t >
-  public ref CUtlVector Samples { get; }
+  public ref CUtlVector<ParamSpanSample_t> Samples { get; }
   
   public CAnimParamHandle Param { get; }
   

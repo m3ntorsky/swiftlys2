@@ -54,9 +54,9 @@ public partial interface C_OP_RenderCables : CParticleFunctionRenderer, ISchemaC
   
   public CParticleTransformInput LightingTransform { get; }
   
-  public ref CUtlLeanVector<IntPtr, int> MaterialFloatVars { get; }
+  public ref CUtlLeanVector<FloatInputMaterialVariable_t, int> MaterialFloatVars { get; }
   
-  public ref CUtlLeanVector<IntPtr, int> MaterialVecVars { get; }
+  public ref CUtlLeanVector<VecInputMaterialVariable_t, int> MaterialVecVars { get; }
 
 
 }

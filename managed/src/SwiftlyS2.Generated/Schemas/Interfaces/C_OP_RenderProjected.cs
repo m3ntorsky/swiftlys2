@@ -28,8 +28,7 @@ public partial interface C_OP_RenderProjected : CParticleFunctionRenderer, ISche
   
   public ref float MaxProjectionDepth { get; }
   
-  // CUtlVector< RenderProjectedMaterial_t >
-  public ref CUtlVector ProjectedMaterials { get; }
+  public ref CUtlVector<RenderProjectedMaterial_t> ProjectedMaterials { get; }
   
   public CPerParticleFloatInput MaterialSelection { get; }
   
@@ -37,8 +36,7 @@ public partial interface C_OP_RenderProjected : CParticleFunctionRenderer, ISche
   
   public ref bool OrientToNormal { get; }
   
-  // CUtlVector< MaterialVariable_t >
-  public ref CUtlVector MaterialVars { get; }
+  public ref CUtlVector<MaterialVariable_t> MaterialVars { get; }
   
   public CParticleCollectionFloatInput RadiusScale { get; }
   

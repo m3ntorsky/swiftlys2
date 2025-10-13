@@ -18,17 +18,14 @@ public partial interface RnMesh_t : ISchemaClass<RnMesh_t> {
   
   public ref Vector Max { get; }
   
-  // CUtlVector< RnNode_t >
-  public ref CUtlVector Nodes { get; }
+  public ref CUtlVector<RnNode_t> Nodes { get; }
   
   // CUtlVectorSIMDPaddedVector
   public SchemaUntypedField Vertices { get; }
   
-  // CUtlVector< RnTriangle_t >
-  public ref CUtlVector Triangles { get; }
+  public ref CUtlVector<RnTriangle_t> Triangles { get; }
   
-  // CUtlVector< RnWing_t >
-  public ref CUtlVector Wings { get; }
+  public ref CUtlVector<RnWing_t> Wings { get; }
   
   public ref CUtlVector<byte> TriangleEdgeFlags { get; }
   

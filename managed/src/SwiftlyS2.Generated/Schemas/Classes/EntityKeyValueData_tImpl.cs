@@ -15,8 +15,8 @@ internal partial class EntityKeyValueData_tImpl : SchemaClass, EntityKeyValueDat
   public EntityKeyValueData_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Connections {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x66FE4A4558F33FBE));
+  public ref CUtlVector<EntityIOConnectionData_t> Connections {
+    get => ref _Handle.AsRef<CUtlVector<EntityIOConnectionData_t>>(Schema.GetOffset(0x66FE4A4558F33FBE));
   }
   public ref CUtlBinaryBlock KeyValuesData {
     get => ref _Handle.AsRef<CUtlBinaryBlock>(Schema.GetOffset(0x66FE4A451BD58EB2));

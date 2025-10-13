@@ -27,20 +27,20 @@ internal partial class CAnimDescImpl : SchemaClass, CAnimDesc {
   public CAnimEncodedFrames Data {
     get => new CAnimEncodedFramesImpl(_Handle + Schema.GetOffset(0xF48A66661621C725));
   }
-  public ref CUtlVector MovementArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xF48A6666A7A8E615));
+  public ref CUtlVector<CAnimMovement> MovementArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimMovement>>(Schema.GetOffset(0xF48A6666A7A8E615));
   }
   public ref CTransform XInitialOffset {
     get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xF48A6666BAB8D6AA));
   }
-  public ref CUtlVector EventArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xF48A6666B9FB599C));
+  public ref CUtlVector<CAnimEventDefinition> EventArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimEventDefinition>>(Schema.GetOffset(0xF48A6666B9FB599C));
   }
-  public ref CUtlVector ActivityArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xF48A666638F0ACE1));
+  public ref CUtlVector<CAnimActivity> ActivityArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimActivity>>(Schema.GetOffset(0xF48A666638F0ACE1));
   }
-  public ref CUtlVector HierarchyArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xF48A6666A806B925));
+  public ref CUtlVector<CAnimLocalHierarchy> HierarchyArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimLocalHierarchy>>(Schema.GetOffset(0xF48A6666A806B925));
   }
   public ref float Framestalltime {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF48A666641995711));

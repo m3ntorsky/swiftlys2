@@ -15,8 +15,8 @@ internal partial class CBlendUpdateNodeImpl : CAnimUpdateNodeBaseImpl, CBlendUpd
   public CBlendUpdateNodeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Children {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD72498B47415FA72));
+  public ref CUtlVector<CAnimUpdateNodeRef> Children {
+    get => ref _Handle.AsRef<CUtlVector<CAnimUpdateNodeRef>>(Schema.GetOffset(0xD72498B47415FA72));
   }
   public ref CUtlVector<byte> SortedOrder {
     get => ref _Handle.AsRef<CUtlVector<byte>>(Schema.GetOffset(0xD72498B47CE82340));

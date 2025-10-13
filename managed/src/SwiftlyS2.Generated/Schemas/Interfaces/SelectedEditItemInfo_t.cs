@@ -14,8 +14,7 @@ public partial interface SelectedEditItemInfo_t : ISchemaClass<SelectedEditItemI
   static int ISchemaClass<SelectedEditItemInfo_t>.Size => 24;
 
   
-  // CUtlVector< SosEditItemInfo_t >
-  public ref CUtlVector EditItems { get; }
+  public ref CUtlVector<SosEditItemInfo_t> EditItems { get; }
 
 
 }

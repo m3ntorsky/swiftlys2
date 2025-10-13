@@ -15,8 +15,8 @@ internal partial class CAnimScriptManagerImpl : SchemaClass, CAnimScriptManager 
   public CAnimScriptManagerImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector ScriptInfo {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x13962EC3119509F2));
+  public ref CUtlVector<ScriptInfo_t> ScriptInfo {
+    get => ref _Handle.AsRef<CUtlVector<ScriptInfo_t>>(Schema.GetOffset(0x13962EC3119509F2));
   }
 
 

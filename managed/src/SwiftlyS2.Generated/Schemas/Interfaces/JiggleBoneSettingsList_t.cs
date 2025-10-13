@@ -14,8 +14,7 @@ public partial interface JiggleBoneSettingsList_t : ISchemaClass<JiggleBoneSetti
   static int ISchemaClass<JiggleBoneSettingsList_t>.Size => 24;
 
   
-  // CUtlVector< JiggleBoneSettings_t >
-  public ref CUtlVector BoneSettings { get; }
+  public ref CUtlVector<JiggleBoneSettings_t> BoneSettings { get; }
 
 
 }

@@ -21,8 +21,7 @@ public partial interface CNavLinkMovementVData : ISchemaClass<CNavLinkMovementVD
   
   public ref uint RecommendedDistance { get; }
   
-  // CUtlVector< CNavLinkAnimgraphVar >
-  public ref CUtlVector AnimgraphVars { get; }
+  public ref CUtlVector<CNavLinkAnimgraphVar> AnimgraphVars { get; }
 
 
 }

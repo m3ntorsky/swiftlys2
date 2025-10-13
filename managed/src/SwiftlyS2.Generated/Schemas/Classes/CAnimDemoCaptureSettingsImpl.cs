@@ -58,11 +58,11 @@ internal partial class CAnimDemoCaptureSettingsImpl : SchemaClass, CAnimDemoCapt
   public ref EDemoBoneSelectionMode BoneSelectionMode {
     get => ref _Handle.AsRef<EDemoBoneSelectionMode>(Schema.GetOffset(0xD4FC71971C4BEF04));
   }
-  public ref CUtlVector Bones {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD4FC71970FDA60D4));
+  public ref CUtlVector<BoneDemoCaptureSettings_t> Bones {
+    get => ref _Handle.AsRef<CUtlVector<BoneDemoCaptureSettings_t>>(Schema.GetOffset(0xD4FC71970FDA60D4));
   }
-  public ref CUtlVector IkChains {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD4FC7197A467D4E7));
+  public ref CUtlVector<IKDemoCaptureSettings_t> IkChains {
+    get => ref _Handle.AsRef<CUtlVector<IKDemoCaptureSettings_t>>(Schema.GetOffset(0xD4FC7197A467D4E7));
   }
 
 

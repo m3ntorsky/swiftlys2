@@ -34,8 +34,7 @@ public partial interface BakedLightingInfo_t : ISchemaClass<BakedLightingInfo_t>
   
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCTextureBase>> LightMaps { get; }
   
-  // CUtlVector< BakedLightingInfo_t::BakedShadowAssignment_t >
-  public ref CUtlVector BakedShadows { get; }
+  public ref CUtlVector<BakedLightingInfo_t__BakedShadowAssignment_t> BakedShadows { get; }
 
 
 }

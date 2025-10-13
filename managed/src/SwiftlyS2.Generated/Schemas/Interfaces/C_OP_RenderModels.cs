@@ -22,8 +22,7 @@ public partial interface C_OP_RenderModels : CParticleFunctionRenderer, ISchemaC
   
   public ref bool OnlyRenderInEffecsGameOverlay { get; }
   
-  // CUtlVector< ModelReference_t >
-  public ref CUtlVector ModelList { get; }
+  public ref CUtlVector<ModelReference_t> ModelList { get; }
   
   public ParticleAttributeIndex_t BodyGroupField { get; }
   
@@ -81,8 +80,7 @@ public partial interface C_OP_RenderModels : CParticleFunctionRenderer, ISchemaC
   
   public CPerParticleFloatInput Skin { get; }
   
-  // CUtlVector< MaterialVariable_t >
-  public ref CUtlVector MaterialVars { get; }
+  public ref CUtlVector<MaterialVariable_t> MaterialVars { get; }
   
   public CPerParticleFloatInput RenderFilter { get; }
   

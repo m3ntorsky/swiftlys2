@@ -42,8 +42,8 @@ public ISchemaFixedArray<uint> EquippedPlayerSprayIDs {
   public ref ulong CurrentLoadoutHash {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0xC1D007824F832E99));
   }
-  public ref CUtlVector ServerAuthoritativeWeaponSlots {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC1D007826EED2FF6));
+  public ref CUtlVector<ServerAuthoritativeWeaponSlot_t> ServerAuthoritativeWeaponSlots {
+    get => ref _Handle.AsRef<CUtlVector<ServerAuthoritativeWeaponSlot_t>>(Schema.GetOffset(0xC1D007826EED2FF6));
   }
 
   public void MusicIDUpdated() {

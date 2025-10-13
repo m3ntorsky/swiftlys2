@@ -28,16 +28,13 @@ public partial interface CNmGraphDefinition : ISchemaClass<CNmGraphDefinition> {
   
   public ref CUtlVector<short> VirtualParameterNodeIndices { get; }
   
-  // CUtlVector< CNmGraphDefinition::ReferencedGraphSlot_t >
-  public ref CUtlVector ReferencedGraphSlots { get; }
+  public ref CUtlVector<CNmGraphDefinition__ReferencedGraphSlot_t> ReferencedGraphSlots { get; }
   
-  // CUtlVector< CNmGraphDefinition::ExternalGraphSlot_t >
-  public ref CUtlVector ExternalGraphSlots { get; }
+  public ref CUtlVector<CNmGraphDefinition__ExternalGraphSlot_t> ExternalGraphSlots { get; }
   
   public ref CUtlVector<CUtlString> NodePaths { get; }
   
-  // CUtlVector< CStrongHandleVoid >
-  public ref CUtlVector Resources { get; }
+  public ref CUtlVector<SchemaUntypedField> Resources { get; }
 
 
 }

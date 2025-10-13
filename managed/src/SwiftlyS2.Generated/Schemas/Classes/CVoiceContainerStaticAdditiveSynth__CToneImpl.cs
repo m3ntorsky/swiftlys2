@@ -15,8 +15,8 @@ internal partial class CVoiceContainerStaticAdditiveSynth__CToneImpl : SchemaCla
   public CVoiceContainerStaticAdditiveSynth__CToneImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Harmonics {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1501082A3A08CDBF));
+  public ref CUtlVector<CVoiceContainerStaticAdditiveSynth__CHarmonic> Harmonics {
+    get => ref _Handle.AsRef<CUtlVector<CVoiceContainerStaticAdditiveSynth__CHarmonic>>(Schema.GetOffset(0x1501082A3A08CDBF));
   }
   public SchemaUntypedField Curve {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x1501082ABFFA0B34));

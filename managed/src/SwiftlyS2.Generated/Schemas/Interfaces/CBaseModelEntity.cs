@@ -58,8 +58,7 @@ public partial interface CBaseModelEntity : CBaseEntity, ISchemaClass<CBaseModel
   
   public ref Color Render { get; }
   
-  // CUtlVectorEmbeddedNetworkVar< EntityRenderAttribute_t >
-  public ref CUtlVector RenderAttributes { get; }
+  public ref CUtlVector<EntityRenderAttribute_t> RenderAttributes { get; }
   
   public ref bool RenderToCubemaps { get; }
   

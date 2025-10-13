@@ -14,8 +14,7 @@ public partial interface CDampedValueComponentUpdater : CAnimComponentUpdater, I
   static int ISchemaClass<CDampedValueComponentUpdater>.Size => 72;
 
   
-  // CUtlVector< CDampedValueUpdateItem >
-  public ref CUtlVector Items { get; }
+  public ref CUtlVector<CDampedValueUpdateItem> Items { get; }
 
 
 }

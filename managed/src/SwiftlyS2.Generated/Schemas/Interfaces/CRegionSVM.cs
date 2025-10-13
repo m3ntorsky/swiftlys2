@@ -14,8 +14,7 @@ public partial interface CRegionSVM : ISchemaClass<CRegionSVM> {
   static int ISchemaClass<CRegionSVM>.Size => 48;
 
   
-  // CUtlVector< RnPlane_t >
-  public ref CUtlVector Planes { get; }
+  public ref CUtlVector<RnPlane_t> Planes { get; }
   
   public ref CUtlVector<uint> Nodes { get; }
 

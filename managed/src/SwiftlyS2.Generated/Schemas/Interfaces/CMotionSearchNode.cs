@@ -18,7 +18,7 @@ public partial interface CMotionSearchNode : ISchemaClass<CMotionSearchNode> {
   
   public CVectorQuantizer Quantizer { get; }
   
-  public ref CUtlVector<CUtlVector> SampleCodes { get; }
+  public ref CUtlVector<CUtlVector<SampleCode>> SampleCodes { get; }
   
   public ref CUtlVector<CUtlVector<int>> SampleIndices { get; }
   

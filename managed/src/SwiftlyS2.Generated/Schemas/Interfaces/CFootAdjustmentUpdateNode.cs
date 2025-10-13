@@ -14,8 +14,7 @@ public partial interface CFootAdjustmentUpdateNode : CUnaryUpdateNode, ISchemaCl
   static int ISchemaClass<CFootAdjustmentUpdateNode>.Size => 176;
 
   
-  // CUtlVector< HSequence >
-  public ref CUtlVector Clips { get; }
+  public ref CUtlVector<HSequence> Clips { get; }
   
   public CPoseHandle BasePoseCacheHandle { get; }
   

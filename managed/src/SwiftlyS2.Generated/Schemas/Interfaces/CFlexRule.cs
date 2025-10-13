@@ -16,8 +16,7 @@ public partial interface CFlexRule : ISchemaClass<CFlexRule> {
   
   public ref int Flex { get; }
   
-  // CUtlVector< CFlexOp >
-  public ref CUtlVector FlexOps { get; }
+  public ref CUtlVector<CFlexOp> FlexOps { get; }
 
 
 }

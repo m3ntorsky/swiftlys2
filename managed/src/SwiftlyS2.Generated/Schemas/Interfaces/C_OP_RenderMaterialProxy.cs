@@ -18,8 +18,7 @@ public partial interface C_OP_RenderMaterialProxy : CParticleFunctionRenderer, I
   
   public ref MaterialProxyType_t ProxyType { get; }
   
-  // CUtlVector< MaterialVariable_t >
-  public ref CUtlVector MaterialVars { get; }
+  public ref CUtlVector<MaterialVariable_t> MaterialVars { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> OverrideMaterial { get; }
   

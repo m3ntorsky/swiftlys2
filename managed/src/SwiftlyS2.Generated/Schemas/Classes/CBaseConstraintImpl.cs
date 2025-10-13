@@ -25,11 +25,11 @@ internal partial class CBaseConstraintImpl : CBoneConstraintBaseImpl, CBaseConst
   public ref Vector UpVector {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xE972C28487645F1B));
   }
-  public ref CUtlLeanVector<IntPtr, int> Slaves {
-    get => ref _Handle.AsRef<CUtlLeanVector<IntPtr, int>>(Schema.GetOffset(0xE972C284A62BA9E9));
+  public ref CUtlLeanVector<CConstraintSlave, int> Slaves {
+    get => ref _Handle.AsRef<CUtlLeanVector<CConstraintSlave, int>>(Schema.GetOffset(0xE972C284A62BA9E9));
   }
-  public ref CUtlVector Targets {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xE972C28436A2FF01));
+  public ref CUtlVector<CConstraintTarget> Targets {
+    get => ref _Handle.AsRef<CUtlVector<CConstraintTarget>>(Schema.GetOffset(0xE972C28436A2FF01));
   }
 
 

@@ -14,8 +14,7 @@ public partial interface CVoiceContainerStaticAdditiveSynth : CVoiceContainerBas
   static int ISchemaClass<CVoiceContainerStaticAdditiveSynth>.Size => 232;
 
   
-  // CUtlVector< CVoiceContainerStaticAdditiveSynth::CTone >
-  public ref CUtlVector Tones { get; }
+  public ref CUtlVector<CVoiceContainerStaticAdditiveSynth__CTone> Tones { get; }
 
 
 }

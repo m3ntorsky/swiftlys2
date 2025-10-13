@@ -18,11 +18,11 @@ internal partial class CStateMachineUpdateNodeImpl : CAnimUpdateNodeBaseImpl, CS
   public CAnimStateMachineUpdater StateMachine {
     get => new CAnimStateMachineUpdaterImpl(_Handle + Schema.GetOffset(0xE2E7B91DBB7EEF2F));
   }
-  public ref CUtlVector StateData {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xE2E7B91D765EA6D6));
+  public ref CUtlVector<CStateNodeStateData> StateData {
+    get => ref _Handle.AsRef<CUtlVector<CStateNodeStateData>>(Schema.GetOffset(0xE2E7B91D765EA6D6));
   }
-  public ref CUtlVector TransitionData {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xE2E7B91D730EEA72));
+  public ref CUtlVector<CStateNodeTransitionData> TransitionData {
+    get => ref _Handle.AsRef<CUtlVector<CStateNodeTransitionData>>(Schema.GetOffset(0xE2E7B91D730EEA72));
   }
   public ref bool BlockWaningTags {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE2E7B91DB6999F75));

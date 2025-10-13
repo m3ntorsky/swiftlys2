@@ -14,8 +14,7 @@ public partial interface CVoiceContainerStaticAdditiveSynth__CTone : ISchemaClas
   static int ISchemaClass<CVoiceContainerStaticAdditiveSynth__CTone>.Size => 96;
 
   
-  // CUtlVector< CVoiceContainerStaticAdditiveSynth::CHarmonic >
-  public ref CUtlVector Harmonics { get; }
+  public ref CUtlVector<CVoiceContainerStaticAdditiveSynth__CHarmonic> Harmonics { get; }
   
   // CPiecewiseCurve
   public SchemaUntypedField Curve { get; }

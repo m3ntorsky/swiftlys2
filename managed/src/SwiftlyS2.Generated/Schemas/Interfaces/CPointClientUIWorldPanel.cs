@@ -40,7 +40,7 @@ public partial interface CPointClientUIWorldPanel : CBaseClientUIEntity, ISchema
   
   public ref bool AllowInteractionFromAllSceneWorlds { get; }
   
-  public ref CUtlVector<CUtlSymbolLarge> CSSClasses { get; }
+  public ref CUtlVector<SchemaUntypedField> CSSClasses { get; }
   
   public ref bool Opaque { get; }
   

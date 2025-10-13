@@ -14,8 +14,7 @@ public partial interface CFootStepTriggerUpdateNode : CUnaryUpdateNode, ISchemaC
   static int ISchemaClass<CFootStepTriggerUpdateNode>.Size => 144;
 
   
-  // CUtlVector< FootStepTrigger >
-  public ref CUtlVector Triggers { get; }
+  public ref CUtlVector<FootStepTrigger> Triggers { get; }
   
   public ref float Tolerance { get; }
 

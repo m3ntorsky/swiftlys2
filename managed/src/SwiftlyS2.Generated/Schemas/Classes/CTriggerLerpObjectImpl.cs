@@ -44,8 +44,8 @@ internal partial class CTriggerLerpObjectImpl : CBaseTriggerImpl, CTriggerLerpOb
   public ref bool SingleLerpObject {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x42FE8EA4EC72477B));
   }
-  public ref CUtlVector LerpingObjects {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x42FE8EA40128714C));
+  public ref CUtlVector<lerpdata_t> LerpingObjects {
+    get => ref _Handle.AsRef<CUtlVector<lerpdata_t>>(Schema.GetOffset(0x42FE8EA40128714C));
   }
   public string LerpEffect {
     get {

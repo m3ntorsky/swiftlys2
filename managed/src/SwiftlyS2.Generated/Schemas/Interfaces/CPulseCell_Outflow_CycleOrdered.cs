@@ -14,8 +14,7 @@ public partial interface CPulseCell_Outflow_CycleOrdered : CPulseCell_BaseFlow, 
   static int ISchemaClass<CPulseCell_Outflow_CycleOrdered>.Size => 96;
 
   
-  // CUtlVector< CPulse_OutflowConnection >
-  public ref CUtlVector Outputs { get; }
+  public ref CUtlVector<CPulse_OutflowConnection> Outputs { get; }
 
 
 }

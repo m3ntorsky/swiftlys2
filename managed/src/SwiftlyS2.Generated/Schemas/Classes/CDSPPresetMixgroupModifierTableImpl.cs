@@ -15,8 +15,8 @@ internal partial class CDSPPresetMixgroupModifierTableImpl : SchemaClass, CDSPPr
   public CDSPPresetMixgroupModifierTableImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Table {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB4266D22715EA0FF));
+  public ref CUtlVector<CDspPresetModifierList> Table {
+    get => ref _Handle.AsRef<CUtlVector<CDspPresetModifierList>>(Schema.GetOffset(0xB4266D22715EA0FF));
   }
 
 

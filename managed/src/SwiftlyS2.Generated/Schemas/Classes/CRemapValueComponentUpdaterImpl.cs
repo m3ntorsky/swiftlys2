@@ -15,8 +15,8 @@ internal partial class CRemapValueComponentUpdaterImpl : CAnimComponentUpdaterIm
   public CRemapValueComponentUpdaterImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Items {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA80D46C07A87EDAF));
+  public ref CUtlVector<CRemapValueUpdateItem> Items {
+    get => ref _Handle.AsRef<CUtlVector<CRemapValueUpdateItem>>(Schema.GetOffset(0xA80D46C07A87EDAF));
   }
 
 

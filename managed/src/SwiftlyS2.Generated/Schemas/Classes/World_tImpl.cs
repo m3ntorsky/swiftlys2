@@ -18,8 +18,8 @@ internal partial class World_tImpl : SchemaClass, World_t {
   public WorldBuilderParams_t BuilderParams {
     get => new WorldBuilderParams_tImpl(_Handle + Schema.GetOffset(0x4CBF8350CE4EEF26));
   }
-  public ref CUtlVector WorldNodes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x4CBF835064F33530));
+  public ref CUtlVector<NodeData_t> WorldNodes {
+    get => ref _Handle.AsRef<CUtlVector<NodeData_t>>(Schema.GetOffset(0x4CBF835064F33530));
   }
   public BakedLightingInfo_t WorldLightingInfo {
     get => new BakedLightingInfo_tImpl(_Handle + Schema.GetOffset(0x4CBF83508B843A17));

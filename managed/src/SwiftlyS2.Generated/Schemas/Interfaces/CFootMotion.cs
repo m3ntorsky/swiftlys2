@@ -14,8 +14,7 @@ public partial interface CFootMotion : ISchemaClass<CFootMotion> {
   static int ISchemaClass<CFootMotion>.Size => 40;
 
   
-  // CUtlVector< CFootStride >
-  public ref CUtlVector Strides { get; }
+  public ref CUtlVector<CFootStride> Strides { get; }
   
   public string Name { get; set; }
   

@@ -15,32 +15,32 @@ internal partial class WorldNode_tImpl : SchemaClass, WorldNode_t {
   public WorldNode_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector SceneObjects {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xFC310480332235A1));
+  public ref CUtlVector<SceneObject_t> SceneObjects {
+    get => ref _Handle.AsRef<CUtlVector<SceneObject_t>>(Schema.GetOffset(0xFC310480332235A1));
   }
   public ref CUtlVector<ushort> VisClusterMembership {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0xFC310480F2C828CD));
   }
-  public ref CUtlVector AggregateSceneObjects {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xFC31048072C832FC));
+  public ref CUtlVector<AggregateSceneObject_t> AggregateSceneObjects {
+    get => ref _Handle.AsRef<CUtlVector<AggregateSceneObject_t>>(Schema.GetOffset(0xFC31048072C832FC));
   }
-  public ref CUtlVector ClutterSceneObjects {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xFC310480CB15C9CA));
+  public ref CUtlVector<ClutterSceneObject_t> ClutterSceneObjects {
+    get => ref _Handle.AsRef<CUtlVector<ClutterSceneObject_t>>(Schema.GetOffset(0xFC310480CB15C9CA));
   }
-  public ref CUtlVector ExtraVertexStreamOverrides {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xFC310480E2732A38));
+  public ref CUtlVector<ExtraVertexStreamOverride_t> ExtraVertexStreamOverrides {
+    get => ref _Handle.AsRef<CUtlVector<ExtraVertexStreamOverride_t>>(Schema.GetOffset(0xFC310480E2732A38));
   }
-  public ref CUtlVector MaterialOverrides {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xFC3104809D810D99));
+  public ref CUtlVector<MaterialOverride_t> MaterialOverrides {
+    get => ref _Handle.AsRef<CUtlVector<MaterialOverride_t>>(Schema.GetOffset(0xFC3104809D810D99));
   }
-  public ref CUtlVector ExtraVertexStreams {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xFC310480544F1AA0));
+  public ref CUtlVector<WorldNodeOnDiskBufferData_t> ExtraVertexStreams {
+    get => ref _Handle.AsRef<CUtlVector<WorldNodeOnDiskBufferData_t>>(Schema.GetOffset(0xFC310480544F1AA0));
   }
-  public ref CUtlVector AggregateInstanceStreams {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xFC31048038CAE4B8));
+  public ref CUtlVector<AggregateInstanceStreamOnDiskData_t> AggregateInstanceStreams {
+    get => ref _Handle.AsRef<CUtlVector<AggregateInstanceStreamOnDiskData_t>>(Schema.GetOffset(0xFC31048038CAE4B8));
   }
-  public ref CUtlVector VertexAlbedoStreams {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xFC3104803DD793DB));
+  public ref CUtlVector<AggregateVertexAlbedoStreamOnDiskData_t> VertexAlbedoStreams {
+    get => ref _Handle.AsRef<CUtlVector<AggregateVertexAlbedoStreamOnDiskData_t>>(Schema.GetOffset(0xFC3104803DD793DB));
   }
   public ref CUtlVector<CUtlString> LayerNames {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xFC3104806E877012));

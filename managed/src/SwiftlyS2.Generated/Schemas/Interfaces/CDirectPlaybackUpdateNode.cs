@@ -18,8 +18,7 @@ public partial interface CDirectPlaybackUpdateNode : CUnaryUpdateNode, ISchemaCl
   
   public ref bool ResetOnFinish { get; }
   
-  // CUtlVector< CDirectPlaybackTagData >
-  public ref CUtlVector AllTags { get; }
+  public ref CUtlVector<CDirectPlaybackTagData> AllTags { get; }
 
 
 }

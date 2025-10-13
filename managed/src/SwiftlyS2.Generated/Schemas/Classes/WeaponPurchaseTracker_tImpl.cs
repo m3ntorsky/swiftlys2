@@ -15,8 +15,8 @@ internal partial class WeaponPurchaseTracker_tImpl : SchemaClass, WeaponPurchase
   public WeaponPurchaseTracker_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector WeaponPurchases {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD558F475988247C7));
+  public ref CUtlVector<WeaponPurchaseCount_t> WeaponPurchases {
+    get => ref _Handle.AsRef<CUtlVector<WeaponPurchaseCount_t>>(Schema.GetOffset(0xD558F475988247C7));
   }
 
   public void WeaponPurchasesUpdated() {

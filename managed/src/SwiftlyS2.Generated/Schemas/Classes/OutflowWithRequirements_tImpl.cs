@@ -21,8 +21,8 @@ internal partial class OutflowWithRequirements_tImpl : SchemaClass, OutflowWithR
   public PulseDocNodeID_t DestinationFlowNodeID {
     get => new PulseDocNodeID_tImpl(_Handle + Schema.GetOffset(0x5BFC4DD4C986A186));
   }
-  public ref CUtlVector RequirementNodeIDs {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5BFC4DD47DAC9EFE));
+  public ref CUtlVector<PulseDocNodeID_t> RequirementNodeIDs {
+    get => ref _Handle.AsRef<CUtlVector<PulseDocNodeID_t>>(Schema.GetOffset(0x5BFC4DD47DAC9EFE));
   }
   public ref CUtlVector<int> CursorStateBlockIndex {
     get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0x5BFC4DD46CECC07B));

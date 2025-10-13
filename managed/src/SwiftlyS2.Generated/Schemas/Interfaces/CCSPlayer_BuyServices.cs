@@ -14,8 +14,7 @@ public partial interface CCSPlayer_BuyServices : CPlayerPawnComponent, ISchemaCl
   static int ISchemaClass<CCSPlayer_BuyServices>.Size => 336;
 
   
-  // CUtlVectorEmbeddedNetworkVar< SellbackPurchaseEntry_t >
-  public ref CUtlVector SellbackPurchaseEntries { get; }
+  public ref CUtlVector<SellbackPurchaseEntry_t> SellbackPurchaseEntries { get; }
 
   public void SellbackPurchaseEntriesUpdated();
 }

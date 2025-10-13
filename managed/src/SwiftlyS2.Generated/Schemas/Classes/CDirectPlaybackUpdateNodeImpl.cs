@@ -21,8 +21,8 @@ internal partial class CDirectPlaybackUpdateNodeImpl : CUnaryUpdateNodeImpl, CDi
   public ref bool ResetOnFinish {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x4E1CBFEFD5293C96));
   }
-  public ref CUtlVector AllTags {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x4E1CBFEF7A57C5AD));
+  public ref CUtlVector<CDirectPlaybackTagData> AllTags {
+    get => ref _Handle.AsRef<CUtlVector<CDirectPlaybackTagData>>(Schema.GetOffset(0x4E1CBFEF7A57C5AD));
   }
 
 

@@ -15,8 +15,8 @@ internal partial class CSingleFrameUpdateNodeImpl : CLeafUpdateNodeImpl, CSingle
   public CSingleFrameUpdateNodeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Actions {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5A65D6168D622684));
+  public ref CUtlVector<SchemaUntypedField> Actions {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0x5A65D6168D622684));
   }
   public CPoseHandle PoseCacheHandle {
     get => new CPoseHandleImpl(_Handle + Schema.GetOffset(0x5A65D6164719447A));

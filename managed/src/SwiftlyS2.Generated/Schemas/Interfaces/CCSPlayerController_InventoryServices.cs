@@ -32,8 +32,7 @@ public partial interface CCSPlayerController_InventoryServices : CPlayerControll
   
   public ref ulong CurrentLoadoutHash { get; }
   
-  // CUtlVectorEmbeddedNetworkVar< ServerAuthoritativeWeaponSlot_t >
-  public ref CUtlVector ServerAuthoritativeWeaponSlots { get; }
+  public ref CUtlVector<ServerAuthoritativeWeaponSlot_t> ServerAuthoritativeWeaponSlots { get; }
 
   public void MusicIDUpdated();
   public void RankUpdated();

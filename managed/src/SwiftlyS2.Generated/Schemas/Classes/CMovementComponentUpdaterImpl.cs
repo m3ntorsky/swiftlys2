@@ -15,8 +15,8 @@ internal partial class CMovementComponentUpdaterImpl : CAnimComponentUpdaterImpl
   public CMovementComponentUpdaterImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Motors {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xCAAB73FD817BF33));
+  public ref CUtlVector<SchemaUntypedField> Motors {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0xCAAB73FD817BF33));
   }
   public CAnimInputDamping FacingDamping {
     get => new CAnimInputDampingImpl(_Handle + Schema.GetOffset(0xCAAB73F9A430F4B));

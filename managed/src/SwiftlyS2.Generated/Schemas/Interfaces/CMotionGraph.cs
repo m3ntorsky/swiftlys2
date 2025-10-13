@@ -16,8 +16,7 @@ public partial interface CMotionGraph : ISchemaClass<CMotionGraph> {
   
   public CParamSpanUpdater ParamSpans { get; }
   
-  // CUtlVector< TagSpan_t >
-  public ref CUtlVector Tags { get; }
+  public ref CUtlVector<TagSpan_t> Tags { get; }
   
   // CSmartPtr< CMotionNode >
   public SchemaUntypedField RootNode { get; }

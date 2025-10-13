@@ -15,17 +15,17 @@ internal partial class VPhysics2ShapeDef_tImpl : SchemaClass, VPhysics2ShapeDef_
   public VPhysics2ShapeDef_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Spheres {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB5A68CEBBFDA8091));
+  public ref CUtlVector<RnSphereDesc_t> Spheres {
+    get => ref _Handle.AsRef<CUtlVector<RnSphereDesc_t>>(Schema.GetOffset(0xB5A68CEBBFDA8091));
   }
-  public ref CUtlVector Capsules {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB5A68CEBF8737C4D));
+  public ref CUtlVector<RnCapsuleDesc_t> Capsules {
+    get => ref _Handle.AsRef<CUtlVector<RnCapsuleDesc_t>>(Schema.GetOffset(0xB5A68CEBF8737C4D));
   }
-  public ref CUtlVector Hulls {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB5A68CEB31F7453F));
+  public ref CUtlVector<RnHullDesc_t> Hulls {
+    get => ref _Handle.AsRef<CUtlVector<RnHullDesc_t>>(Schema.GetOffset(0xB5A68CEB31F7453F));
   }
-  public ref CUtlVector Meshes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB5A68CEBC0F01FD8));
+  public ref CUtlVector<RnMeshDesc_t> Meshes {
+    get => ref _Handle.AsRef<CUtlVector<RnMeshDesc_t>>(Schema.GetOffset(0xB5A68CEBC0F01FD8));
   }
   public ref CUtlVector<ushort> CollisionAttributeIndices {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0xB5A68CEB86453EB2));

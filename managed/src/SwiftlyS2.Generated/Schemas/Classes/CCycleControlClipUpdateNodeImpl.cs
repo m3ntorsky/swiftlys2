@@ -15,8 +15,8 @@ internal partial class CCycleControlClipUpdateNodeImpl : CLeafUpdateNodeImpl, CC
   public CCycleControlClipUpdateNodeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Tags {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x57FEB5AAB46C8540));
+  public ref CUtlVector<TagSpan_t> Tags {
+    get => ref _Handle.AsRef<CUtlVector<TagSpan_t>>(Schema.GetOffset(0x57FEB5AAB46C8540));
   }
   public HSequence Sequence {
     get => new HSequenceImpl(_Handle + Schema.GetOffset(0x57FEB5AAE0A0598E));

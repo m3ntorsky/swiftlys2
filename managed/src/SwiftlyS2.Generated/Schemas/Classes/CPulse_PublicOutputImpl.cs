@@ -25,8 +25,8 @@ internal partial class CPulse_PublicOutputImpl : SchemaClass, CPulse_PublicOutpu
     }
     set => Schema.SetString(_Handle, 0x74B3BCA4678744E9, value);
   } 
-  public ref CUtlLeanVector<IntPtr, int> Args {
-    get => ref _Handle.AsRef<CUtlLeanVector<IntPtr, int>>(Schema.GetOffset(0x74B3BCA4DAB98BBC));
+  public ref CUtlLeanVector<CPulseRuntimeMethodArg, int> Args {
+    get => ref _Handle.AsRef<CUtlLeanVector<CPulseRuntimeMethodArg, int>>(Schema.GetOffset(0x74B3BCA4DAB98BBC));
   }
 
 

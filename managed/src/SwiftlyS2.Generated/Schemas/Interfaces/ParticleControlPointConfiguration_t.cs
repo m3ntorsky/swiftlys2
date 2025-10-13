@@ -16,8 +16,7 @@ public partial interface ParticleControlPointConfiguration_t : ISchemaClass<Part
   
   public string Name { get; set; }
   
-  // CUtlVector< ParticleControlPointDriver_t >
-  public ref CUtlVector Drivers { get; }
+  public ref CUtlVector<ParticleControlPointDriver_t> Drivers { get; }
   
   public ParticlePreviewState_t PreviewState { get; }
 

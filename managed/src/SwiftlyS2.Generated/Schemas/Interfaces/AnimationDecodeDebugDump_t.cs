@@ -16,8 +16,7 @@ public partial interface AnimationDecodeDebugDump_t : ISchemaClass<AnimationDeco
   
   public ref AnimationProcessingType_t ProcessingType { get; }
   
-  // CUtlVector< AnimationDecodeDebugDumpElement_t >
-  public ref CUtlVector Elems { get; }
+  public ref CUtlVector<AnimationDecodeDebugDumpElement_t> Elems { get; }
 
 
 }

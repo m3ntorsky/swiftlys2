@@ -24,7 +24,7 @@ public partial interface CPulseCell_Inflow_Method : CPulseCell_Inflow_BaseEntryp
   // CPulseValueFullType
   public SchemaUntypedField ReturnType { get; }
   
-  public ref CUtlLeanVector<IntPtr, int> Args { get; }
+  public ref CUtlLeanVector<CPulseRuntimeMethodArg, int> Args { get; }
 
 
 }

@@ -15,11 +15,11 @@ internal partial class CAnimStateMachineUpdaterImpl : SchemaClass, CAnimStateMac
   public CAnimStateMachineUpdaterImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector States {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD25DFB766F284CFF));
+  public ref CUtlVector<CStateUpdateData> States {
+    get => ref _Handle.AsRef<CUtlVector<CStateUpdateData>>(Schema.GetOffset(0xD25DFB766F284CFF));
   }
-  public ref CUtlVector Transitions {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD25DFB76AD108163));
+  public ref CUtlVector<CTransitionUpdateData> Transitions {
+    get => ref _Handle.AsRef<CUtlVector<CTransitionUpdateData>>(Schema.GetOffset(0xD25DFB76AD108163));
   }
   public ref int StartStateIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD25DFB762881C68C));

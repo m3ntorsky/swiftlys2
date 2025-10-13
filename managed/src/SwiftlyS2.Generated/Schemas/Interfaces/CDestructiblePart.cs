@@ -26,8 +26,7 @@ public partial interface CDestructiblePart : ISchemaClass<CDestructiblePart> {
   
   public ref CGlobalSymbol BodyGroupName { get; }
   
-  // CUtlVector< CDestructiblePart_DamageLevel >
-  public ref CUtlVector DamageLevels { get; }
+  public ref CUtlVector<CDestructiblePart_DamageLevel> DamageLevels { get; }
 
 
 }

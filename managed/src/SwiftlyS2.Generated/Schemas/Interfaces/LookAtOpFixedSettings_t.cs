@@ -18,8 +18,7 @@ public partial interface LookAtOpFixedSettings_t : ISchemaClass<LookAtOpFixedSet
   
   public CAnimInputDamping Damping { get; }
   
-  // CUtlVector< LookAtBone_t >
-  public ref CUtlVector Bones { get; }
+  public ref CUtlVector<LookAtBone_t> Bones { get; }
   
   public ref float YawLimit { get; }
   

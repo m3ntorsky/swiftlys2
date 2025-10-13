@@ -16,11 +16,9 @@ public partial interface CMotionGraphGroup : ISchemaClass<CMotionGraphGroup> {
   
   public CMotionSearchDB SearchDB { get; }
   
-  // CUtlVector< CSmartPtr< CMotionGraph > >
-  public ref CUtlVector MotionGraphs { get; }
+  public ref CUtlVector<SchemaUntypedField> MotionGraphs { get; }
   
-  // CUtlVector< CMotionGraphConfig >
-  public ref CUtlVector MotionGraphConfigs { get; }
+  public ref CUtlVector<CMotionGraphConfig> MotionGraphConfigs { get; }
   
   public ref CUtlVector<int> SampleToConfig { get; }
   

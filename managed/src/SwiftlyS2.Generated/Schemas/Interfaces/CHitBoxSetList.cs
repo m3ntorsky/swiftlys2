@@ -14,8 +14,7 @@ public partial interface CHitBoxSetList : ISchemaClass<CHitBoxSetList> {
   static int ISchemaClass<CHitBoxSetList>.Size => 24;
 
   
-  // CUtlVector< CHitBoxSet >
-  public ref CUtlVector HitBoxSets { get; }
+  public ref CUtlVector<CHitBoxSet> HitBoxSets { get; }
 
 
 }

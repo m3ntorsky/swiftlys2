@@ -18,7 +18,7 @@ public partial interface NmBoneMaskSetDefinition_t : ISchemaClass<NmBoneMaskSetD
   
   public CNmBoneWeightList PrimaryWeightList { get; }
   
-  public ref CUtlLeanVector<IntPtr, int> SecondaryWeightLists { get; }
+  public ref CUtlLeanVector<CNmBoneWeightList, int> SecondaryWeightLists { get; }
 
 
 }

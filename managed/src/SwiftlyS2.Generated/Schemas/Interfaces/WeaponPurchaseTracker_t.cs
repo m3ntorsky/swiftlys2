@@ -14,8 +14,7 @@ public partial interface WeaponPurchaseTracker_t : ISchemaClass<WeaponPurchaseTr
   static int ISchemaClass<WeaponPurchaseTracker_t>.Size => 112;
 
   
-  // CUtlVectorEmbeddedNetworkVar< WeaponPurchaseCount_t >
-  public ref CUtlVector WeaponPurchases { get; }
+  public ref CUtlVector<WeaponPurchaseCount_t> WeaponPurchases { get; }
 
   public void WeaponPurchasesUpdated();
 }

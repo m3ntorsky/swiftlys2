@@ -24,18 +24,15 @@ public partial interface SkeletonAnimCapture_t : ISchemaClass<SkeletonAnimCaptur
   
   public string CaptureName { get; set; }
   
-  // CUtlVector< SkeletonAnimCapture_t::Bone_t >
-  public ref CUtlVector ModelBindPose { get; }
+  public ref CUtlVector<SkeletonAnimCapture_t__Bone_t> ModelBindPose { get; }
   
-  // CUtlVector< SkeletonAnimCapture_t::Bone_t >
-  public ref CUtlVector FeModelInitPose { get; }
+  public ref CUtlVector<SkeletonAnimCapture_t__Bone_t> FeModelInitPose { get; }
   
   public ref int FlexControllers { get; }
   
   public ref bool Predicted { get; }
   
-  // CUtlVector< SkeletonAnimCapture_t::Frame_t >
-  public ref CUtlVector Frames { get; }
+  public ref CUtlVector<SkeletonAnimCapture_t__Frame_t> Frames { get; }
 
 
 }

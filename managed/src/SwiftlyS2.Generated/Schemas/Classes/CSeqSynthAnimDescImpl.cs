@@ -30,8 +30,8 @@ internal partial class CSeqSynthAnimDescImpl : SchemaClass, CSeqSynthAnimDesc {
   public ref short LocalBoneMask {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0x7D8317C191EDF3D2));
   }
-  public ref CUtlVector ActivityArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x7D8317C138F0ACE1));
+  public ref CUtlVector<CAnimActivity> ActivityArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimActivity>>(Schema.GetOffset(0x7D8317C138F0ACE1));
   }
 
 

@@ -28,7 +28,7 @@ public partial interface CInfoOffscreenPanoramaTexture : CPointEntity, ISchemaCl
   
   public ref int TargetChangeCount { get; }
   
-  public ref CUtlVector<CUtlSymbolLarge> CSSClasses { get; }
+  public ref CUtlVector<SchemaUntypedField> CSSClasses { get; }
   
   public string TargetsName { get; set; }
   

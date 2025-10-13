@@ -18,8 +18,7 @@ public partial interface CMotionSearchDB : ISchemaClass<CMotionSearchDB> {
   
   public CProductQuantizer ResidualQuantizer { get; }
   
-  // CUtlVector< MotionDBIndex >
-  public ref CUtlVector CodeIndices { get; }
+  public ref CUtlVector<MotionDBIndex> CodeIndices { get; }
 
 
 }

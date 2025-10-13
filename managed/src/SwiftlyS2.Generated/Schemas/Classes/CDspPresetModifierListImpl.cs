@@ -22,8 +22,8 @@ internal partial class CDspPresetModifierListImpl : SchemaClass, CDspPresetModif
     }
     set => Schema.SetString(_Handle, 0x68EE16FD7E9A0D3, value);
   } 
-  public ref CUtlVector Modifiers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x68EE16F541F1439));
+  public ref CUtlVector<CDSPMixgroupModifier> Modifiers {
+    get => ref _Handle.AsRef<CUtlVector<CDSPMixgroupModifier>>(Schema.GetOffset(0x68EE16F541F1439));
   }
 
 

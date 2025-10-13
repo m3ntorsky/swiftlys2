@@ -30,17 +30,13 @@ public partial interface CSeqCmdSeqDesc : ISchemaClass<CSeqCmdSeqDesc> {
   
   public ref short NumLocalResults { get; }
   
-  // CUtlVector< CSeqCmdLayer >
-  public ref CUtlVector CmdLayerArray { get; }
+  public ref CUtlVector<CSeqCmdLayer> CmdLayerArray { get; }
   
-  // CUtlVector< CAnimEventDefinition >
-  public ref CUtlVector EventArray { get; }
+  public ref CUtlVector<CAnimEventDefinition> EventArray { get; }
   
-  // CUtlVector< CAnimActivity >
-  public ref CUtlVector ActivityArray { get; }
+  public ref CUtlVector<CAnimActivity> ActivityArray { get; }
   
-  // CUtlVector< CSeqPoseSetting >
-  public ref CUtlVector PoseSettingArray { get; }
+  public ref CUtlVector<CSeqPoseSetting> PoseSettingArray { get; }
 
 
 }

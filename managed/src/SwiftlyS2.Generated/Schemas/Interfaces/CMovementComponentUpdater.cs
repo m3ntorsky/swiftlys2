@@ -14,8 +14,7 @@ public partial interface CMovementComponentUpdater : CAnimComponentUpdater, ISch
   static int ISchemaClass<CMovementComponentUpdater>.Size => 184;
 
   
-  // CUtlVector< CSmartPtr< CAnimMotorUpdaterBase > >
-  public ref CUtlVector Motors { get; }
+  public ref CUtlVector<SchemaUntypedField> Motors { get; }
   
   public CAnimInputDamping FacingDamping { get; }
   

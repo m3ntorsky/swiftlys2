@@ -22,8 +22,8 @@ internal partial class CDirectPlaybackTagDataImpl : SchemaClass, CDirectPlayback
     }
     set => Schema.SetString(_Handle, 0xAADCE162B4A24CB, value);
   } 
-  public ref CUtlVector Tags {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xAADCE16B46C8540));
+  public ref CUtlVector<TagSpan_t> Tags {
+    get => ref _Handle.AsRef<CUtlVector<TagSpan_t>>(Schema.GetOffset(0xAADCE16B46C8540));
   }
 
 

@@ -15,8 +15,8 @@ internal partial class PulseNodeDynamicOutflows_tImpl : SchemaClass, PulseNodeDy
   public PulseNodeDynamicOutflows_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Outflows {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3F600DF58F0AFDF8));
+  public ref CUtlVector<PulseNodeDynamicOutflows_t__DynamicOutflow_t> Outflows {
+    get => ref _Handle.AsRef<CUtlVector<PulseNodeDynamicOutflows_t__DynamicOutflow_t>>(Schema.GetOffset(0x3F600DF58F0AFDF8));
   }
 
 

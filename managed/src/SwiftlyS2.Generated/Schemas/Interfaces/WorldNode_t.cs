@@ -14,31 +14,23 @@ public partial interface WorldNode_t : ISchemaClass<WorldNode_t> {
   static int ISchemaClass<WorldNode_t>.Size => 352;
 
   
-  // CUtlVector< SceneObject_t >
-  public ref CUtlVector SceneObjects { get; }
+  public ref CUtlVector<SceneObject_t> SceneObjects { get; }
   
   public ref CUtlVector<ushort> VisClusterMembership { get; }
   
-  // CUtlVector< AggregateSceneObject_t >
-  public ref CUtlVector AggregateSceneObjects { get; }
+  public ref CUtlVector<AggregateSceneObject_t> AggregateSceneObjects { get; }
   
-  // CUtlVector< ClutterSceneObject_t >
-  public ref CUtlVector ClutterSceneObjects { get; }
+  public ref CUtlVector<ClutterSceneObject_t> ClutterSceneObjects { get; }
   
-  // CUtlVector< ExtraVertexStreamOverride_t >
-  public ref CUtlVector ExtraVertexStreamOverrides { get; }
+  public ref CUtlVector<ExtraVertexStreamOverride_t> ExtraVertexStreamOverrides { get; }
   
-  // CUtlVector< MaterialOverride_t >
-  public ref CUtlVector MaterialOverrides { get; }
+  public ref CUtlVector<MaterialOverride_t> MaterialOverrides { get; }
   
-  // CUtlVector< WorldNodeOnDiskBufferData_t >
-  public ref CUtlVector ExtraVertexStreams { get; }
+  public ref CUtlVector<WorldNodeOnDiskBufferData_t> ExtraVertexStreams { get; }
   
-  // CUtlVector< AggregateInstanceStreamOnDiskData_t >
-  public ref CUtlVector AggregateInstanceStreams { get; }
+  public ref CUtlVector<AggregateInstanceStreamOnDiskData_t> AggregateInstanceStreams { get; }
   
-  // CUtlVector< AggregateVertexAlbedoStreamOnDiskData_t >
-  public ref CUtlVector VertexAlbedoStreams { get; }
+  public ref CUtlVector<AggregateVertexAlbedoStreamOnDiskData_t> VertexAlbedoStreams { get; }
   
   public ref CUtlVector<CUtlString> LayerNames { get; }
   

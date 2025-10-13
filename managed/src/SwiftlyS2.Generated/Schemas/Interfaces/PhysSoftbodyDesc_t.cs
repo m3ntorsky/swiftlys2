@@ -16,14 +16,11 @@ public partial interface PhysSoftbodyDesc_t : ISchemaClass<PhysSoftbodyDesc_t> {
   
   public ref CUtlVector<uint> ParticleBoneHash { get; }
   
-  // CUtlVector< RnSoftbodyParticle_t >
-  public ref CUtlVector Particles { get; }
+  public ref CUtlVector<RnSoftbodyParticle_t> Particles { get; }
   
-  // CUtlVector< RnSoftbodySpring_t >
-  public ref CUtlVector Springs { get; }
+  public ref CUtlVector<RnSoftbodySpring_t> Springs { get; }
   
-  // CUtlVector< RnSoftbodyCapsule_t >
-  public ref CUtlVector Capsules { get; }
+  public ref CUtlVector<RnSoftbodyCapsule_t> Capsules { get; }
   
   public ref CUtlVector<CTransform> InitPose { get; }
   

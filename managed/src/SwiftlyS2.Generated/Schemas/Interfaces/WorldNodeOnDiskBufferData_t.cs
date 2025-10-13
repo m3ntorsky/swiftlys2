@@ -18,8 +18,7 @@ public partial interface WorldNodeOnDiskBufferData_t : ISchemaClass<WorldNodeOnD
   
   public ref int ElementSizeInBytes { get; }
   
-  // CUtlVector< RenderInputLayoutField_t >
-  public ref CUtlVector InputLayoutFields { get; }
+  public ref CUtlVector<RenderInputLayoutField_t> InputLayoutFields { get; }
   
   public ref CUtlVector<byte> Data { get; }
 

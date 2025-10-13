@@ -14,8 +14,7 @@ public partial interface CProductQuantizer : ISchemaClass<CProductQuantizer> {
   static int ISchemaClass<CProductQuantizer>.Size => 32;
 
   
-  // CUtlVector< CVectorQuantizer >
-  public ref CUtlVector SubQuantizers { get; }
+  public ref CUtlVector<CVectorQuantizer> SubQuantizers { get; }
   
   public ref int Dimensions { get; }
 

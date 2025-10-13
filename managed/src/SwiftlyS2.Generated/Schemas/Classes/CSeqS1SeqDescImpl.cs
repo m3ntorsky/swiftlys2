@@ -27,11 +27,11 @@ internal partial class CSeqS1SeqDescImpl : SchemaClass, CSeqS1SeqDesc {
   public ref int LocalWeightlist {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6EF819356F64F49C));
   }
-  public ref CUtlVector AutoLayerArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x6EF81935834EB170));
+  public ref CUtlVector<CSeqAutoLayer> AutoLayerArray {
+    get => ref _Handle.AsRef<CUtlVector<CSeqAutoLayer>>(Schema.GetOffset(0x6EF81935834EB170));
   }
-  public ref CUtlVector IKLockArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x6EF81935BF1FEC6B));
+  public ref CUtlVector<CSeqIKLock> IKLockArray {
+    get => ref _Handle.AsRef<CUtlVector<CSeqIKLock>>(Schema.GetOffset(0x6EF81935BF1FEC6B));
   }
   public CSeqTransition Transition {
     get => new CSeqTransitionImpl(_Handle + Schema.GetOffset(0x6EF8193582B0A282));
@@ -42,11 +42,11 @@ internal partial class CSeqS1SeqDescImpl : SchemaClass, CSeqS1SeqDesc {
   public ref CBufferString LegacyKeyValueText {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x6EF81935D12D4AC1));
   }
-  public ref CUtlVector ActivityArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x6EF8193538F0ACE1));
+  public ref CUtlVector<CAnimActivity> ActivityArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimActivity>>(Schema.GetOffset(0x6EF8193538F0ACE1));
   }
-  public ref CUtlVector FootMotion {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x6EF8193543CF70A3));
+  public ref CUtlVector<CFootMotion> FootMotion {
+    get => ref _Handle.AsRef<CUtlVector<CFootMotion>>(Schema.GetOffset(0x6EF8193543CF70A3));
   }
 
 

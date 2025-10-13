@@ -36,17 +36,17 @@ internal partial class VPhysXAggregateData_tImpl : SchemaClass, VPhysXAggregateD
   public ref CUtlVector<matrix3x4_t> BindPose {
     get => ref _Handle.AsRef<CUtlVector<matrix3x4_t>>(Schema.GetOffset(0xB689D5A1751196C3));
   }
-  public ref CUtlVector Parts {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB689D5A1C7044545));
+  public ref CUtlVector<VPhysXBodyPart_t> Parts {
+    get => ref _Handle.AsRef<CUtlVector<VPhysXBodyPart_t>>(Schema.GetOffset(0xB689D5A1C7044545));
   }
-  public ref CUtlVector ShapeMarkups {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB689D5A109755123));
+  public ref CUtlVector<PhysShapeMarkup_t> ShapeMarkups {
+    get => ref _Handle.AsRef<CUtlVector<PhysShapeMarkup_t>>(Schema.GetOffset(0xB689D5A109755123));
   }
-  public ref CUtlVector Constraints2 {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB689D5A10539BEDB));
+  public ref CUtlVector<VPhysXConstraint2_t> Constraints2 {
+    get => ref _Handle.AsRef<CUtlVector<VPhysXConstraint2_t>>(Schema.GetOffset(0xB689D5A10539BEDB));
   }
-  public ref CUtlVector Joints {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB689D5A15E6E8FEC));
+  public ref CUtlVector<VPhysXJoint_t> Joints {
+    get => ref _Handle.AsRef<CUtlVector<VPhysXJoint_t>>(Schema.GetOffset(0xB689D5A15E6E8FEC));
   }
   public PhysFeModelDesc_t? FeModel {
     get {
@@ -60,8 +60,8 @@ internal partial class VPhysXAggregateData_tImpl : SchemaClass, VPhysXAggregateD
   public ref CUtlVector<uint> SurfacePropertyHashes {
     get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0xB689D5A16C35E0E5));
   }
-  public ref CUtlVector CollisionAttributes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB689D5A1FA66F6C2));
+  public ref CUtlVector<VPhysXCollisionAttributes_t> CollisionAttributes {
+    get => ref _Handle.AsRef<CUtlVector<VPhysXCollisionAttributes_t>>(Schema.GetOffset(0xB689D5A1FA66F6C2));
   }
   public ref CUtlVector<CUtlString> DebugPartNames {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xB689D5A174B4FFC7));

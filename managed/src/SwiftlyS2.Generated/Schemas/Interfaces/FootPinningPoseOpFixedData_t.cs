@@ -14,8 +14,7 @@ public partial interface FootPinningPoseOpFixedData_t : ISchemaClass<FootPinning
   static int ISchemaClass<FootPinningPoseOpFixedData_t>.Size => 48;
 
   
-  // CUtlVector< FootFixedData_t >
-  public ref CUtlVector FootInfo { get; }
+  public ref CUtlVector<FootFixedData_t> FootInfo { get; }
   
   public ref float BlendTime { get; }
   

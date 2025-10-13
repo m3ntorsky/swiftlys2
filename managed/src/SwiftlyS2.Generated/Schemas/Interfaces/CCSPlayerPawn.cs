@@ -246,8 +246,7 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
   
   public ISchemaFixedArray<Vector> VelocityHistory { get; }
   
-  // CUtlVectorEmbeddedNetworkVar< PredictedDamageTag_t >
-  public ref CUtlVector PredictedDamageTags { get; }
+  public ref CUtlVector<PredictedDamageTag_t> PredictedDamageTags { get; }
   
   public ref int HighestAppliedDamageTagTick { get; }
   

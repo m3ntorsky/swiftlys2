@@ -20,8 +20,7 @@ public partial interface CStateUpdateData : ISchemaClass<CStateUpdateData> {
   
   public ref CUtlVector<int> TransitionIndices { get; }
   
-  // CUtlVector< CStateActionUpdater >
-  public ref CUtlVector Actions { get; }
+  public ref CUtlVector<CStateActionUpdater> Actions { get; }
   
   public AnimStateID StateID { get; }
   

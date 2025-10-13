@@ -20,7 +20,7 @@ public partial interface CPulseCell_Step_CallExternalMethod : CPulseCell_BaseYie
   // PulseSymbol_t
   public SchemaUntypedField GameBlackboard { get; }
   
-  public ref CUtlLeanVector<IntPtr, int> ExpectedArgs { get; }
+  public ref CUtlLeanVector<CPulseRuntimeMethodArg, int> ExpectedArgs { get; }
   
   public ref PulseMethodCallMode_t AsyncCallMode { get; }
   

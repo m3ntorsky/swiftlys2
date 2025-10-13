@@ -30,8 +30,8 @@ internal partial class CAnimSkeletonImpl : SchemaClass, CAnimSkeleton {
   public ref CUtlVector<int> Parents {
     get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0x33309AA470DBC8AA));
   }
-  public ref CUtlVector Feet {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x33309AA47910AFF5));
+  public ref CUtlVector<CAnimFoot> Feet {
+    get => ref _Handle.AsRef<CUtlVector<CAnimFoot>>(Schema.GetOffset(0x33309AA47910AFF5));
   }
   public ref CUtlVector<CUtlString> MorphNames {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x33309AA4E8F4EC4F));

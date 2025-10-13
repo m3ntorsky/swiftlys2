@@ -18,8 +18,7 @@ public partial interface CHitBoxSet : ISchemaClass<CHitBoxSet> {
   
   public ref uint NameHash { get; }
   
-  // CUtlVector< CHitBox >
-  public ref CUtlVector HitBoxes { get; }
+  public ref CUtlVector<CHitBox> HitBoxes { get; }
   
   public string SourceFilename { get; set; }
 

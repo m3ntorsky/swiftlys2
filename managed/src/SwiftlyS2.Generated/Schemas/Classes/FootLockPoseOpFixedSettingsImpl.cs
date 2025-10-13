@@ -15,8 +15,8 @@ internal partial class FootLockPoseOpFixedSettingsImpl : SchemaClass, FootLockPo
   public FootLockPoseOpFixedSettingsImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector FootInfo {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1246AD6B942F50C1));
+  public ref CUtlVector<FootFixedData_t> FootInfo {
+    get => ref _Handle.AsRef<CUtlVector<FootFixedData_t>>(Schema.GetOffset(0x1246AD6B942F50C1));
   }
   public CAnimInputDamping HipDampingSettings {
     get => new CAnimInputDampingImpl(_Handle + Schema.GetOffset(0x1246AD6B3453D635));

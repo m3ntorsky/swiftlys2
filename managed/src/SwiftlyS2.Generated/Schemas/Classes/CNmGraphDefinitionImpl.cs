@@ -36,17 +36,17 @@ internal partial class CNmGraphDefinitionImpl : SchemaClass, CNmGraphDefinition 
   public ref CUtlVector<short> VirtualParameterNodeIndices {
     get => ref _Handle.AsRef<CUtlVector<short>>(Schema.GetOffset(0xE028E08C1A18B610));
   }
-  public ref CUtlVector ReferencedGraphSlots {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xE028E08C6244F6FF));
+  public ref CUtlVector<CNmGraphDefinition__ReferencedGraphSlot_t> ReferencedGraphSlots {
+    get => ref _Handle.AsRef<CUtlVector<CNmGraphDefinition__ReferencedGraphSlot_t>>(Schema.GetOffset(0xE028E08C6244F6FF));
   }
-  public ref CUtlVector ExternalGraphSlots {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xE028E08CECBCD94F));
+  public ref CUtlVector<CNmGraphDefinition__ExternalGraphSlot_t> ExternalGraphSlots {
+    get => ref _Handle.AsRef<CUtlVector<CNmGraphDefinition__ExternalGraphSlot_t>>(Schema.GetOffset(0xE028E08CECBCD94F));
   }
   public ref CUtlVector<CUtlString> NodePaths {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0xE028E08CFF3E5A07));
   }
-  public ref CUtlVector Resources {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xE028E08C227C3612));
+  public ref CUtlVector<SchemaUntypedField> Resources {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0xE028E08C227C3612));
   }
 
 

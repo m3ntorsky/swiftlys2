@@ -14,8 +14,7 @@ public partial interface FootLockPoseOpFixedSettings : ISchemaClass<FootLockPose
   static int ISchemaClass<FootLockPoseOpFixedSettings>.Size => 104;
 
   
-  // CUtlVector< FootFixedData_t >
-  public ref CUtlVector FootInfo { get; }
+  public ref CUtlVector<FootFixedData_t> FootInfo { get; }
   
   public CAnimInputDamping HipDampingSettings { get; }
   

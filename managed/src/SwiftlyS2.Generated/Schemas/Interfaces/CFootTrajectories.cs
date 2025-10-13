@@ -14,8 +14,7 @@ public partial interface CFootTrajectories : ISchemaClass<CFootTrajectories> {
   static int ISchemaClass<CFootTrajectories>.Size => 24;
 
   
-  // CUtlVector< CFootTrajectory >
-  public ref CUtlVector Trajectories { get; }
+  public ref CUtlVector<CFootTrajectory> Trajectories { get; }
 
 
 }

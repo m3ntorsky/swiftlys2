@@ -396,8 +396,8 @@ public ISchemaFixedArray<Vector> ThrowPositionHistory {
 public ISchemaFixedArray<Vector> VelocityHistory {
     get => new SchemaFixedArray<Vector>(_Handle, 0xC7614AAB24AFD9B2, 2, 12, 4);
   }
-  public ref CUtlVector PredictedDamageTags {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC7614AAB2CCF5943));
+  public ref CUtlVector<PredictedDamageTag_t> PredictedDamageTags {
+    get => ref _Handle.AsRef<CUtlVector<PredictedDamageTag_t>>(Schema.GetOffset(0xC7614AAB2CCF5943));
   }
   public ref int HighestAppliedDamageTagTick {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB1703141A));

@@ -21,8 +21,8 @@ internal partial class CMotionSearchNodeImpl : SchemaClass, CMotionSearchNode {
   public CVectorQuantizer Quantizer {
     get => new CVectorQuantizerImpl(_Handle + Schema.GetOffset(0x7CB28AA0C7DE6374));
   }
-  public ref CUtlVector<CUtlVector> SampleCodes {
-    get => ref _Handle.AsRef<CUtlVector<CUtlVector>>(Schema.GetOffset(0x7CB28AA0D703E42F));
+  public ref CUtlVector<CUtlVector<SampleCode>> SampleCodes {
+    get => ref _Handle.AsRef<CUtlVector<CUtlVector<SampleCode>>>(Schema.GetOffset(0x7CB28AA0D703E42F));
   }
   public ref CUtlVector<CUtlVector<int>> SampleIndices {
     get => ref _Handle.AsRef<CUtlVector<CUtlVector<int>>>(Schema.GetOffset(0x7CB28AA02EDA0064));

@@ -16,8 +16,7 @@ public partial interface CFootLockUpdateNode : CUnaryUpdateNode, ISchemaClass<CF
   
   public FootLockPoseOpFixedSettings OpFixedSettings { get; }
   
-  // CUtlVector< FootFixedSettings >
-  public ref CUtlVector FootSettings { get; }
+  public ref CUtlVector<FootFixedSettings> FootSettings { get; }
   
   public CAnimInputDamping HipShiftDamping { get; }
   

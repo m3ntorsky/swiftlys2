@@ -27,8 +27,8 @@ internal partial class CNmClipImpl : SchemaClass, CNmClip {
   public ref CUtlBinaryBlock CompressedPoseData {
     get => ref _Handle.AsRef<CUtlBinaryBlock>(Schema.GetOffset(0x3FC883BDDD916D11));
   }
-  public ref CUtlVector TrackCompressionSettings {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3FC883BD94A50263));
+  public ref CUtlVector<NmCompressionSettings_t> TrackCompressionSettings {
+    get => ref _Handle.AsRef<CUtlVector<NmCompressionSettings_t>>(Schema.GetOffset(0x3FC883BD94A50263));
   }
   public ref CUtlVector<uint> CompressedPoseOffsets {
     get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0x3FC883BD4B1ECAF7));
@@ -36,8 +36,8 @@ internal partial class CNmClipImpl : SchemaClass, CNmClip {
   public ref CUtlVector<CGlobalSymbol> FloatCurveIDs {
     get => ref _Handle.AsRef<CUtlVector<CGlobalSymbol>>(Schema.GetOffset(0x3FC883BD11EF489E));
   }
-  public ref CUtlVector FloatCurveDefs {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3FC883BDE3CCFA68));
+  public ref CUtlVector<NmFloatCurveCompressionSettings_t> FloatCurveDefs {
+    get => ref _Handle.AsRef<CUtlVector<NmFloatCurveCompressionSettings_t>>(Schema.GetOffset(0x3FC883BDE3CCFA68));
   }
   public ref CUtlVector<ushort> CompressedFloatCurveData {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0x3FC883BD42C154B9));
@@ -57,8 +57,8 @@ internal partial class CNmClipImpl : SchemaClass, CNmClip {
   public ref bool IsAdditive {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x3FC883BD4146EEF5));
   }
-  public ref CUtlVector ModelSpaceSamplingChain {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3FC883BD54666BDA));
+  public ref CUtlVector<CNmClip__ModelSpaceSamplingChainLink_t> ModelSpaceSamplingChain {
+    get => ref _Handle.AsRef<CUtlVector<CNmClip__ModelSpaceSamplingChainLink_t>>(Schema.GetOffset(0x3FC883BD54666BDA));
   }
   public ref CUtlVector<int> ModelSpaceBoneSamplingIndices {
     get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0x3FC883BD197B4A28));

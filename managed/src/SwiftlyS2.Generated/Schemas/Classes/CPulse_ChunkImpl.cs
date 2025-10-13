@@ -15,14 +15,14 @@ internal partial class CPulse_ChunkImpl : SchemaClass, CPulse_Chunk {
   public CPulse_ChunkImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlLeanVector<IntPtr, int> Instructions {
-    get => ref _Handle.AsRef<CUtlLeanVector<IntPtr, int>>(Schema.GetOffset(0x816932094D358BC4));
+  public ref CUtlLeanVector<PGDInstruction_t, int> Instructions {
+    get => ref _Handle.AsRef<CUtlLeanVector<PGDInstruction_t, int>>(Schema.GetOffset(0x816932094D358BC4));
   }
-  public ref CUtlLeanVector<IntPtr, int> Registers {
-    get => ref _Handle.AsRef<CUtlLeanVector<IntPtr, int>>(Schema.GetOffset(0x81693209BB828A49));
+  public ref CUtlLeanVector<CPulse_RegisterInfo, int> Registers {
+    get => ref _Handle.AsRef<CUtlLeanVector<CPulse_RegisterInfo, int>>(Schema.GetOffset(0x81693209BB828A49));
   }
-  public ref CUtlLeanVector<IntPtr, int> InstructionEditorIDs {
-    get => ref _Handle.AsRef<CUtlLeanVector<IntPtr, int>>(Schema.GetOffset(0x81693209236D8B64));
+  public ref CUtlLeanVector<PulseDocNodeID_t, int> InstructionEditorIDs {
+    get => ref _Handle.AsRef<CUtlLeanVector<PulseDocNodeID_t, int>>(Schema.GetOffset(0x81693209236D8B64));
   }
 
 

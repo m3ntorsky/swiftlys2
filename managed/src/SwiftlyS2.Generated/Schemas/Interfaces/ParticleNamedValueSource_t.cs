@@ -22,8 +22,7 @@ public partial interface ParticleNamedValueSource_t : ISchemaClass<ParticleNamed
   
   public ParticleNamedValueConfiguration_t DefaultConfig { get; }
   
-  // CUtlVector< ParticleNamedValueConfiguration_t >
-  public ref CUtlVector NamedConfigs { get; }
+  public ref CUtlVector<ParticleNamedValueConfiguration_t> NamedConfigs { get; }
 
 
 }

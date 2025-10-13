@@ -18,8 +18,8 @@ internal partial class CSequenceTagSpansImpl : SchemaClass, CSequenceTagSpans {
   public ref CGlobalSymbol SequenceName {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0x132BFE6A7462AF30));
   }
-  public ref CUtlVector Tags {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x132BFE6AB46C8540));
+  public ref CUtlVector<TagSpan_t> Tags {
+    get => ref _Handle.AsRef<CUtlVector<TagSpan_t>>(Schema.GetOffset(0x132BFE6AB46C8540));
   }
 
 

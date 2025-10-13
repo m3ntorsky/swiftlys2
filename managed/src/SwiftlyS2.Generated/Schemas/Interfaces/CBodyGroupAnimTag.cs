@@ -16,8 +16,7 @@ public partial interface CBodyGroupAnimTag : CAnimTagBase, ISchemaClass<CBodyGro
   
   public ref int Priority { get; }
   
-  // CUtlVector< CBodyGroupSetting >
-  public ref CUtlVector BodyGroupSettings { get; }
+  public ref CUtlVector<CBodyGroupSetting> BodyGroupSettings { get; }
 
 
 }

@@ -16,8 +16,7 @@ public partial interface CCSPlayerController_DamageServices : CPlayerControllerC
   
   public ref int SendUpdate { get; }
   
-  // CUtlVectorEmbeddedNetworkVar< CDamageRecord >
-  public ref CUtlVector DamageList { get; }
+  public ref CUtlVector<CDamageRecord> DamageList { get; }
 
   public void SendUpdateUpdated();
   public void DamageListUpdated();

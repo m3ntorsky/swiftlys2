@@ -20,7 +20,7 @@ public partial interface CPropDoorRotatingBreakable : CPropDoorRotating, ISchema
   
   public ref int CurrentDamageState { get; }
   
-  public ref CUtlVector<CUtlSymbolLarge> DamageStates { get; }
+  public ref CUtlVector<SchemaUntypedField> DamageStates { get; }
 
 
 }

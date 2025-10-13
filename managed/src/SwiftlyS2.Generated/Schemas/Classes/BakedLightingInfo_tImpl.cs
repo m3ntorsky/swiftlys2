@@ -45,8 +45,8 @@ internal partial class BakedLightingInfo_tImpl : SchemaClass, BakedLightingInfo_
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCTextureBase>> LightMaps {
     get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCTextureBase>>>(Schema.GetOffset(0x6909F4EF6F2EFF94));
   }
-  public ref CUtlVector BakedShadows {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x6909F4EFE8C9B481));
+  public ref CUtlVector<BakedLightingInfo_t__BakedShadowAssignment_t> BakedShadows {
+    get => ref _Handle.AsRef<CUtlVector<BakedLightingInfo_t__BakedShadowAssignment_t>>(Schema.GetOffset(0x6909F4EFE8C9B481));
   }
 
 

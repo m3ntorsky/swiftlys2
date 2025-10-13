@@ -14,8 +14,7 @@ public partial interface CRenderSkeleton : ISchemaClass<CRenderSkeleton> {
   static int ISchemaClass<CRenderSkeleton>.Size => 80;
 
   
-  // CUtlVector< RenderSkeletonBone_t >
-  public ref CUtlVector Bones { get; }
+  public ref CUtlVector<RenderSkeletonBone_t> Bones { get; }
   
   public ref CUtlVector<int> BoneParents { get; }
   

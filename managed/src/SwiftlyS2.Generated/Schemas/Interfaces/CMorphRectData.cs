@@ -22,8 +22,7 @@ public partial interface CMorphRectData : ISchemaClass<CMorphRectData> {
   
   public ref float VHeightSrc { get; }
   
-  // CUtlVector< CMorphBundleData >
-  public ref CUtlVector BundleDatas { get; }
+  public ref CUtlVector<CMorphBundleData> BundleDatas { get; }
 
 
 }

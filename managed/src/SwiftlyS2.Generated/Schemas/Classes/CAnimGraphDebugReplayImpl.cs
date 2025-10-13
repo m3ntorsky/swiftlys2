@@ -22,8 +22,8 @@ internal partial class CAnimGraphDebugReplayImpl : SchemaClass, CAnimGraphDebugR
     }
     set => Schema.SetString(_Handle, 0x31D5349314D2CC69, value);
   } 
-  public ref CUtlVector FrameList {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x31D5349393EB99F2));
+  public ref CUtlVector<SchemaUntypedField> FrameList {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0x31D5349393EB99F2));
   }
   public ref int StartIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x31D534939F316D25));

@@ -22,8 +22,8 @@ internal partial class ScriptInfo_tImpl : SchemaClass, ScriptInfo_t {
     }
     set => Schema.SetString(_Handle, 0xDB402399B70C9D94, value);
   } 
-  public ref CUtlVector ParamsModified {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xDB402399E9EAFC30));
+  public ref CUtlVector<CAnimParamHandle> ParamsModified {
+    get => ref _Handle.AsRef<CUtlVector<CAnimParamHandle>>(Schema.GetOffset(0xDB402399E9EAFC30));
   }
   public ref CUtlVector<int> ProxyReadParams {
     get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xDB40239944FCCB9D));

@@ -18,11 +18,11 @@ internal partial class CAnimKeyDataImpl : SchemaClass, CAnimKeyData {
   public ref CBufferString Name {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0x790610E24D8F5786));
   }
-  public ref CUtlVector BoneArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x790610E280273F0C));
+  public ref CUtlVector<CAnimBone> BoneArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimBone>>(Schema.GetOffset(0x790610E280273F0C));
   }
-  public ref CUtlVector UserArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x790610E2FBDB0C13));
+  public ref CUtlVector<CAnimUser> UserArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimUser>>(Schema.GetOffset(0x790610E2FBDB0C13));
   }
   public ref CUtlVector<CBufferString> MorphArray {
     get => ref _Handle.AsRef<CUtlVector<CBufferString>>(Schema.GetOffset(0x790610E28C6827E6));
@@ -30,8 +30,8 @@ internal partial class CAnimKeyDataImpl : SchemaClass, CAnimKeyData {
   public ref int ChannelElements {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x790610E20D1DA989));
   }
-  public ref CUtlVector DataChannelArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x790610E2D1641EB9));
+  public ref CUtlVector<CAnimDataChannelDesc> DataChannelArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimDataChannelDesc>>(Schema.GetOffset(0x790610E2D1641EB9));
   }
 
 

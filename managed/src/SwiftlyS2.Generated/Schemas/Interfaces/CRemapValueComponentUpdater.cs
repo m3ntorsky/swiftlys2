@@ -14,8 +14,7 @@ public partial interface CRemapValueComponentUpdater : CAnimComponentUpdater, IS
   static int ISchemaClass<CRemapValueComponentUpdater>.Size => 72;
 
   
-  // CUtlVector< CRemapValueUpdateItem >
-  public ref CUtlVector Items { get; }
+  public ref CUtlVector<CRemapValueUpdateItem> Items { get; }
 
 
 }

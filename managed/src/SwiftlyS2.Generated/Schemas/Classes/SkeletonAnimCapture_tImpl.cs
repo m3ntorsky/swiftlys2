@@ -38,11 +38,11 @@ internal partial class SkeletonAnimCapture_tImpl : SchemaClass, SkeletonAnimCapt
     }
     set => Schema.SetString(_Handle, 0x79FB6D7CB508C2DA, value);
   } 
-  public ref CUtlVector ModelBindPose {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x79FB6D7C9960EBF8));
+  public ref CUtlVector<SkeletonAnimCapture_t__Bone_t> ModelBindPose {
+    get => ref _Handle.AsRef<CUtlVector<SkeletonAnimCapture_t__Bone_t>>(Schema.GetOffset(0x79FB6D7C9960EBF8));
   }
-  public ref CUtlVector FeModelInitPose {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x79FB6D7C0F3CC12E));
+  public ref CUtlVector<SkeletonAnimCapture_t__Bone_t> FeModelInitPose {
+    get => ref _Handle.AsRef<CUtlVector<SkeletonAnimCapture_t__Bone_t>>(Schema.GetOffset(0x79FB6D7C0F3CC12E));
   }
   public ref int FlexControllers {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x79FB6D7C024CF17F));
@@ -50,8 +50,8 @@ internal partial class SkeletonAnimCapture_tImpl : SchemaClass, SkeletonAnimCapt
   public ref bool Predicted {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x79FB6D7C419B6D9B));
   }
-  public ref CUtlVector Frames {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x79FB6D7CEA11EACF));
+  public ref CUtlVector<SkeletonAnimCapture_t__Frame_t> Frames {
+    get => ref _Handle.AsRef<CUtlVector<SkeletonAnimCapture_t__Frame_t>>(Schema.GetOffset(0x79FB6D7CEA11EACF));
   }
 
 

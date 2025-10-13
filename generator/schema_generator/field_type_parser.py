@@ -55,6 +55,7 @@ unmanaged_type_maps = {
 blacklisted_types = [
   "CUtlStringTokenWithStorage",
   "FourVectors2D",
+  "FeSimdTri_t",
   "CStrongHandleVoid",
   "CUtlVectorFixedGrowable",
   "CUtlLeanVectorFixedGrowable",
@@ -158,12 +159,7 @@ def convert_utlvector_type(type, all_class_names, all_enum_names, interface = Fa
       # print(f"{name}<PointerTo<{generic_t1_type}>>")
       return (f"{name}<PointerTo<{generic_t1_type}>, int>", True)
     
-    if is_value_type:
-      # print(f"{name}<{generic_t1_type}>")
-      return (f"{name}<{generic_t1_type}, int>", is_value_type)
-    else:
-      # print(f"{name}")
-      return (f"{name}<IntPtr, int>", True)
+    return (f"{name}<{generic_t1_type}, int>", True)
   else:
     if is_ptr and generic_t1_type == "char":
       return (f"{name}<CString>", True)
@@ -171,12 +167,11 @@ def convert_utlvector_type(type, all_class_names, all_enum_names, interface = Fa
       # print(f"{name}<PointerTo<{generic_t1_type}>>")
       return (f"{name}<PointerTo<{generic_t1_type}>>", True)
     
-    if is_value_type:
-      # print(f"{name}<{generic_t1_type}>")
-      return (f"{name}<{generic_t1_type}>", is_value_type)
-    else:
-      # print(f"{name}")
-      return (name, True)
+    for blacklisted_type in blacklisted_types:
+      if blacklisted_type in generic_t1_type:
+        return (f"{name}<SchemaUntypedField>", True)
+
+    return (f"{name}<{generic_t1_type}>", True)
 
 def convert_field_type(type, kind, all_class_names, all_enum_names, interface = False):
 

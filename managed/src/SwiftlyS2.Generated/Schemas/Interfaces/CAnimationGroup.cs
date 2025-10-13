@@ -28,8 +28,7 @@ public partial interface CAnimationGroup : ISchemaClass<CAnimationGroup> {
   
   public ref CUtlVector<CBufferString> Scripts { get; }
   
-  // CUtlVector< CStrongHandleVoid >
-  public ref CUtlVector AdditionalExtRefs { get; }
+  public ref CUtlVector<SchemaUntypedField> AdditionalExtRefs { get; }
 
 
 }

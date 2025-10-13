@@ -24,8 +24,8 @@ internal partial class CSequenceUpdateNodeImpl : CSequenceUpdateNodeBaseImpl, CS
   public CParamSpanUpdater ParamSpans {
     get => new CParamSpanUpdaterImpl(_Handle + Schema.GetOffset(0xB5F91396DAC91553));
   }
-  public ref CUtlVector Tags {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB5F91396B46C8540));
+  public ref CUtlVector<TagSpan_t> Tags {
+    get => ref _Handle.AsRef<CUtlVector<TagSpan_t>>(Schema.GetOffset(0xB5F91396B46C8540));
   }
 
 

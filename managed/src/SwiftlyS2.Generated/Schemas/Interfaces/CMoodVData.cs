@@ -19,8 +19,7 @@ public partial interface CMoodVData : ISchemaClass<CMoodVData> {
   
   public ref MoodType_t MoodType { get; }
   
-  // CUtlVector< MoodAnimationLayer_t >
-  public ref CUtlVector AnimationLayers { get; }
+  public ref CUtlVector<MoodAnimationLayer_t> AnimationLayers { get; }
 
 
 }

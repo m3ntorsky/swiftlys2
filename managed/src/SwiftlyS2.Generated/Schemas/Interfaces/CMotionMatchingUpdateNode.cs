@@ -16,8 +16,7 @@ public partial interface CMotionMatchingUpdateNode : CLeafUpdateNode, ISchemaCla
   
   public CMotionDataSet DataSet { get; }
   
-  // CUtlVector< CSmartPtr< CMotionMetricEvaluator > >
-  public ref CUtlVector Metrics { get; }
+  public ref CUtlVector<SchemaUntypedField> Metrics { get; }
   
   public ref CUtlVector<float> Weights { get; }
   

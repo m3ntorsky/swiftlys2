@@ -15,8 +15,8 @@ internal partial class CDecalGroupVDataImpl : SchemaClass, CDecalGroupVData {
   public CDecalGroupVDataImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Options {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x56FC0D98C5C14E85));
+  public ref CUtlVector<DecalGroupOption_t> Options {
+    get => ref _Handle.AsRef<CUtlVector<DecalGroupOption_t>>(Schema.GetOffset(0x56FC0D98C5C14E85));
   }
   public ref float TotalProbability {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x56FC0D98154D3742));

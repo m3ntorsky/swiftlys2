@@ -87,8 +87,8 @@ internal partial class CBaseModelEntityImpl : CBaseEntityImpl, CBaseModelEntity 
   public ref Color Render {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x517849F7470D2A38));
   }
-  public ref CUtlVector RenderAttributes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x517849F7BF74B4AC));
+  public ref CUtlVector<EntityRenderAttribute_t> RenderAttributes {
+    get => ref _Handle.AsRef<CUtlVector<EntityRenderAttribute_t>>(Schema.GetOffset(0x517849F7BF74B4AC));
   }
   public ref bool RenderToCubemaps {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x517849F78A23364A));

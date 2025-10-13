@@ -33,8 +33,8 @@ internal partial class CDestructiblePartImpl : SchemaClass, CDestructiblePart {
   public ref CGlobalSymbol BodyGroupName {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xD9E4C935FFA38852));
   }
-  public ref CUtlVector DamageLevels {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD9E4C9353B88DC4F));
+  public ref CUtlVector<CDestructiblePart_DamageLevel> DamageLevels {
+    get => ref _Handle.AsRef<CUtlVector<CDestructiblePart_DamageLevel>>(Schema.GetOffset(0xD9E4C9353B88DC4F));
   }
 
 

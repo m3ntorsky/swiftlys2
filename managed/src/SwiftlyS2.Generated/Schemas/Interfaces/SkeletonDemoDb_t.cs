@@ -16,8 +16,7 @@ public partial interface SkeletonDemoDb_t : ISchemaClass<SkeletonDemoDb_t> {
   
   public ref CUtlVector<PointerTo<SkeletonAnimCapture_t>> AnimCaptures { get; }
   
-  // CUtlVector< SkeletonAnimCapture_t::Camera_t >
-  public ref CUtlVector CameraTrack { get; }
+  public ref CUtlVector<SkeletonAnimCapture_t__Camera_t> CameraTrack { get; }
   
   public ref float RecordingTime { get; }
 

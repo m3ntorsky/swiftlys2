@@ -25,8 +25,8 @@ internal partial class CSSDSMsg_ViewTargetListImpl : SchemaClass, CSSDSMsg_ViewT
     }
     set => Schema.SetString(_Handle, 0xD53B3083BA5BBDBB, value);
   } 
-  public ref CUtlVector Targets {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD53B30832FF8E661));
+  public ref CUtlVector<CSSDSMsg_ViewTarget> Targets {
+    get => ref _Handle.AsRef<CUtlVector<CSSDSMsg_ViewTarget>>(Schema.GetOffset(0xD53B30832FF8E661));
   }
 
 

@@ -15,8 +15,8 @@ internal partial class CStaticPoseCacheImpl : SchemaClass, CStaticPoseCache {
   public CStaticPoseCacheImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Poses {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x2223EF1DB851C9F5));
+  public ref CUtlVector<CCachedPose> Poses {
+    get => ref _Handle.AsRef<CUtlVector<CCachedPose>>(Schema.GetOffset(0x2223EF1DB851C9F5));
   }
   public ref int BoneCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x2223EF1D71FE39A2));

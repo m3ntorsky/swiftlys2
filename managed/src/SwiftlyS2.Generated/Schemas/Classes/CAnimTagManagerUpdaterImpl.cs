@@ -15,8 +15,8 @@ internal partial class CAnimTagManagerUpdaterImpl : SchemaClass, CAnimTagManager
   public CAnimTagManagerUpdaterImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Tags {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xF09D3FB1B46C8540));
+  public ref CUtlVector<SchemaUntypedField> Tags {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0xF09D3FB1B46C8540));
   }
 
 

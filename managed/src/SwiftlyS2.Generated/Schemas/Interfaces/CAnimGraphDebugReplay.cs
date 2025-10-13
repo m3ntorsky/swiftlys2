@@ -16,8 +16,7 @@ public partial interface CAnimGraphDebugReplay : ISchemaClass<CAnimGraphDebugRep
   
   public string AnimGraphFileName { get; set; }
   
-  // CUtlVector< CSmartPtr< CAnimReplayFrame > >
-  public ref CUtlVector FrameList { get; }
+  public ref CUtlVector<SchemaUntypedField> FrameList { get; }
   
   public ref int StartIndex { get; }
   

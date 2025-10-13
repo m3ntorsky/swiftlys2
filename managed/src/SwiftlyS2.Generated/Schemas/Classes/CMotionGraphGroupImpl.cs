@@ -18,11 +18,11 @@ internal partial class CMotionGraphGroupImpl : SchemaClass, CMotionGraphGroup {
   public CMotionSearchDB SearchDB {
     get => new CMotionSearchDBImpl(_Handle + Schema.GetOffset(0x34D64AAF5662226F));
   }
-  public ref CUtlVector MotionGraphs {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x34D64AAFE9CB46D2));
+  public ref CUtlVector<SchemaUntypedField> MotionGraphs {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0x34D64AAFE9CB46D2));
   }
-  public ref CUtlVector MotionGraphConfigs {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x34D64AAF8D9A544C));
+  public ref CUtlVector<CMotionGraphConfig> MotionGraphConfigs {
+    get => ref _Handle.AsRef<CUtlVector<CMotionGraphConfig>>(Schema.GetOffset(0x34D64AAF8D9A544C));
   }
   public ref CUtlVector<int> SampleToConfig {
     get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0x34D64AAF85EC9B7C));

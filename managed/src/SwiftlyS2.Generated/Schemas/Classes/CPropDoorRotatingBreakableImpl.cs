@@ -24,8 +24,8 @@ internal partial class CPropDoorRotatingBreakableImpl : CPropDoorRotatingImpl, C
   public ref int CurrentDamageState {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xCB925ACA29591458));
   }
-  public ref CUtlVector<CUtlSymbolLarge> DamageStates {
-    get => ref _Handle.AsRef<CUtlVector<CUtlSymbolLarge>>(Schema.GetOffset(0xCB925ACA4FD16F52));
+  public ref CUtlVector<SchemaUntypedField> DamageStates {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0xCB925ACA4FD16F52));
   }
 
 

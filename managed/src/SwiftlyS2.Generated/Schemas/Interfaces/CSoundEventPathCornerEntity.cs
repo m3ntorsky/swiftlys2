@@ -26,8 +26,7 @@ public partial interface CSoundEventPathCornerEntity : CSoundEventEntity, ISchem
   
   public ref bool Playing { get; }
   
-  // CNetworkUtlVectorBase< SoundeventPathCornerPairNetworked_t >
-  public ref CUtlVector CornerPairsNetworked { get; }
+  public ref CUtlVector<SoundeventPathCornerPairNetworked_t> CornerPairsNetworked { get; }
 
   public void CornerPairsNetworkedUpdated();
 }

@@ -28,8 +28,7 @@ public partial interface ParticlePreviewState_t : ISchemaClass<ParticlePreviewSt
   
   public string MaterialGroupName { get; set; }
   
-  // CUtlVector< ParticlePreviewBodyGroup_t >
-  public ref CUtlVector BodyGroups { get; }
+  public ref CUtlVector<ParticlePreviewBodyGroup_t> BodyGroups { get; }
   
   public ref float PlaybackSpeed { get; }
   

@@ -27,8 +27,8 @@ internal partial class CSeqBoneMaskListImpl : SchemaClass, CSeqBoneMaskList {
   public ref float DefaultMorphCtrlWeight {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xCD7B4EF7AA0F3843));
   }
-  public ref CUtlVector MorphCtrlWeightArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xCD7B4EF72C45A089));
+  public ref CUtlVector<SchemaUntypedField> MorphCtrlWeightArray {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0xCD7B4EF72C45A089));
   }
 
 

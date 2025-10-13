@@ -15,8 +15,8 @@ internal partial class CVoiceContainerSetImpl : CVoiceContainerBaseImpl, CVoiceC
   public CVoiceContainerSetImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector SoundsToPlay {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA07D279DCB5F70E));
+  public ref CUtlVector<CVoiceContainerSetElement> SoundsToPlay {
+    get => ref _Handle.AsRef<CUtlVector<CVoiceContainerSetElement>>(Schema.GetOffset(0xA07D279DCB5F70E));
   }
 
 

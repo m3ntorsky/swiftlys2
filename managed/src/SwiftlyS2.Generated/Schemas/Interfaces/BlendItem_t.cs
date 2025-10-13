@@ -14,8 +14,7 @@ public partial interface BlendItem_t : ISchemaClass<BlendItem_t> {
   static int ISchemaClass<BlendItem_t>.Size => 64;
 
   
-  // CUtlVector< TagSpan_t >
-  public ref CUtlVector Tags { get; }
+  public ref CUtlVector<TagSpan_t> Tags { get; }
   
   public CAnimUpdateNodeRef Child { get; }
   

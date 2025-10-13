@@ -15,11 +15,11 @@ internal partial class CBlend2DUpdateNodeImpl : CAnimUpdateNodeBaseImpl, CBlend2
   public CBlend2DUpdateNodeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Items {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xEA40B5A7A87EDAF));
+  public ref CUtlVector<BlendItem_t> Items {
+    get => ref _Handle.AsRef<CUtlVector<BlendItem_t>>(Schema.GetOffset(0xEA40B5A7A87EDAF));
   }
-  public ref CUtlVector Tags {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xEA40B5AB46C8540));
+  public ref CUtlVector<TagSpan_t> Tags {
+    get => ref _Handle.AsRef<CUtlVector<TagSpan_t>>(Schema.GetOffset(0xEA40B5AB46C8540));
   }
   public CParamSpanUpdater ParamSpans {
     get => new CParamSpanUpdaterImpl(_Handle + Schema.GetOffset(0xEA40B5ADAC91553));

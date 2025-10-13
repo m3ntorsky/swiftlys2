@@ -18,8 +18,7 @@ public partial interface CFootPinningUpdateNode : CUnaryUpdateNode, ISchemaClass
   
   public ref FootPinningTimingSource TimingSource { get; }
   
-  // CUtlVector< CAnimParamHandle >
-  public ref CUtlVector Params { get; }
+  public ref CUtlVector<CAnimParamHandle> Params { get; }
   
   public ref bool ResetChild { get; }
 

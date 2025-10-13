@@ -28,8 +28,7 @@ public partial interface CTriggerLerpObject : CBaseTrigger, ISchemaClass<CTrigge
   
   public ref bool SingleLerpObject { get; }
   
-  // CUtlVector< lerpdata_t >
-  public ref CUtlVector LerpingObjects { get; }
+  public ref CUtlVector<lerpdata_t> LerpingObjects { get; }
   
   public string LerpEffect { get; set; }
   

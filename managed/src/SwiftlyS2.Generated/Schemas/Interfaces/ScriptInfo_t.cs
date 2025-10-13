@@ -16,8 +16,7 @@ public partial interface ScriptInfo_t : ISchemaClass<ScriptInfo_t> {
   
   public string Code { get; set; }
   
-  // CUtlVector< CAnimParamHandle >
-  public ref CUtlVector ParamsModified { get; }
+  public ref CUtlVector<CAnimParamHandle> ParamsModified { get; }
   
   public ref CUtlVector<int> ProxyReadParams { get; }
   

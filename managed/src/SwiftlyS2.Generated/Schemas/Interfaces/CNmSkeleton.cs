@@ -26,9 +26,9 @@ public partial interface CNmSkeleton : ISchemaClass<CNmSkeleton> {
   
   public ref int NumBonesToSampleAtLowLOD { get; }
   
-  public ref CUtlLeanVector<IntPtr, int> MaskDefinitions { get; }
+  public ref CUtlLeanVector<NmBoneMaskSetDefinition_t, int> MaskDefinitions { get; }
   
-  public ref CUtlLeanVector<IntPtr, int> SecondarySkeletons { get; }
+  public ref CUtlLeanVector<CNmSkeleton__SecondarySkeleton_t, int> SecondarySkeletons { get; }
   
   public ref bool IsPropSkeleton { get; }
 

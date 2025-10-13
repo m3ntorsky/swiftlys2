@@ -31,14 +31,14 @@ internal partial class ModelEmbeddedMesh_tImpl : SchemaClass, ModelEmbeddedMesh_
   public ref int MorphBlock {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9EB0DD6E73C9235E));
   }
-  public ref CUtlVector VertexBuffers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x9EB0DD6E967BB5EA));
+  public ref CUtlVector<ModelMeshBufferData_t> VertexBuffers {
+    get => ref _Handle.AsRef<CUtlVector<ModelMeshBufferData_t>>(Schema.GetOffset(0x9EB0DD6E967BB5EA));
   }
-  public ref CUtlVector IndexBuffers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x9EB0DD6EF9221876));
+  public ref CUtlVector<ModelMeshBufferData_t> IndexBuffers {
+    get => ref _Handle.AsRef<CUtlVector<ModelMeshBufferData_t>>(Schema.GetOffset(0x9EB0DD6EF9221876));
   }
-  public ref CUtlVector ToolsBuffers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x9EB0DD6ED56473DF));
+  public ref CUtlVector<ModelMeshBufferData_t> ToolsBuffers {
+    get => ref _Handle.AsRef<CUtlVector<ModelMeshBufferData_t>>(Schema.GetOffset(0x9EB0DD6ED56473DF));
   }
   public ref int VBIBBlock {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9EB0DD6EF5E4DCB7));

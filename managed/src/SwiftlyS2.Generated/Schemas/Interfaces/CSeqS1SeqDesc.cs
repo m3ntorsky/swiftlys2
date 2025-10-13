@@ -22,11 +22,9 @@ public partial interface CSeqS1SeqDesc : ISchemaClass<CSeqS1SeqDesc> {
   
   public ref int LocalWeightlist { get; }
   
-  // CUtlVector< CSeqAutoLayer >
-  public ref CUtlVector AutoLayerArray { get; }
+  public ref CUtlVector<CSeqAutoLayer> AutoLayerArray { get; }
   
-  // CUtlVector< CSeqIKLock >
-  public ref CUtlVector IKLockArray { get; }
+  public ref CUtlVector<CSeqIKLock> IKLockArray { get; }
   
   public CSeqTransition Transition { get; }
   
@@ -35,11 +33,9 @@ public partial interface CSeqS1SeqDesc : ISchemaClass<CSeqS1SeqDesc> {
   
   public ref CBufferString LegacyKeyValueText { get; }
   
-  // CUtlVector< CAnimActivity >
-  public ref CUtlVector ActivityArray { get; }
+  public ref CUtlVector<CAnimActivity> ActivityArray { get; }
   
-  // CUtlVector< CFootMotion >
-  public ref CUtlVector FootMotion { get; }
+  public ref CUtlVector<CFootMotion> FootMotion { get; }
 
 
 }

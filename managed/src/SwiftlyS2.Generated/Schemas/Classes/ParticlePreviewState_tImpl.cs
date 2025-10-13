@@ -52,8 +52,8 @@ internal partial class ParticlePreviewState_tImpl : SchemaClass, ParticlePreview
     }
     set => Schema.SetString(_Handle, 0x31FB1901A6930C68, value);
   } 
-  public ref CUtlVector BodyGroups {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x31FB1901893FA01D));
+  public ref CUtlVector<ParticlePreviewBodyGroup_t> BodyGroups {
+    get => ref _Handle.AsRef<CUtlVector<ParticlePreviewBodyGroup_t>>(Schema.GetOffset(0x31FB1901893FA01D));
   }
   public ref float PlaybackSpeed {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x31FB1901FA2B402D));

@@ -16,8 +16,7 @@ public partial interface CDynamicNavConnectionsVolume : CTriggerMultiple, ISchem
   
   public string ConnectionTarget { get; set; }
   
-  // CUtlVector< DynamicVolumeDef_t >
-  public ref CUtlVector Connections { get; }
+  public ref CUtlVector<DynamicVolumeDef_t> Connections { get; }
   
   public ref CGlobalSymbol TransitionType { get; }
   

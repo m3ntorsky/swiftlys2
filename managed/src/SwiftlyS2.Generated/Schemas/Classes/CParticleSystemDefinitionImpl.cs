@@ -39,8 +39,8 @@ internal partial class CParticleSystemDefinitionImpl : IParticleSystemDefinition
   public ref CUtlVector<PointerTo<CParticleFunctionRenderer>> Renderers {
     get => ref _Handle.AsRef<CUtlVector<PointerTo<CParticleFunctionRenderer>>>(Schema.GetOffset(0xDA4320E065610B77));
   }
-  public ref CUtlVector Children {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xDA4320E0D0827652));
+  public ref CUtlVector<ParticleChildrenInfo_t> Children {
+    get => ref _Handle.AsRef<CUtlVector<ParticleChildrenInfo_t>>(Schema.GetOffset(0xDA4320E0D0827652));
   }
   public ref int FirstMultipleOverride_BackwardCompat {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xDA4320E070B95011));
@@ -215,8 +215,8 @@ internal partial class CParticleSystemDefinitionImpl : IParticleSystemDefinition
   public ref bool ShouldSort {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xDA4320E0DCA74CFA));
   }
-  public ref CUtlVector ControlPointConfigurations {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xDA4320E09B7B10E3));
+  public ref CUtlVector<ParticleControlPointConfiguration_t> ControlPointConfigurations {
+    get => ref _Handle.AsRef<CUtlVector<ParticleControlPointConfiguration_t>>(Schema.GetOffset(0xDA4320E09B7B10E3));
   }
 
 

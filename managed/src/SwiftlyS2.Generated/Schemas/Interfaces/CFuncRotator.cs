@@ -76,16 +76,13 @@ public partial interface CFuncRotator : CBaseModelEntity, ISchemaClass<CFuncRota
   
   public ref bool RecordHistory { get; }
   
-  // CUtlVector< RotatorHistoryEntry_t >
-  public ref CUtlVector RotatorHistory { get; }
+  public ref CUtlVector<RotatorHistoryEntry_t> RotatorHistory { get; }
   
   public ref bool ReturningToPreviousOrientation { get; }
   
-  // CUtlVector< RotatorQueueEntry_t >
-  public ref CUtlVector RotatorQueue { get; }
+  public ref CUtlVector<RotatorQueueEntry_t> RotatorQueue { get; }
   
-  // CUtlVector< RotatorHistoryEntry_t >
-  public ref CUtlVector RotatorQueueHistory { get; }
+  public ref CUtlVector<RotatorHistoryEntry_t> RotatorQueueHistory { get; }
 
 
 }

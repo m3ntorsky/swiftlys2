@@ -16,11 +16,9 @@ public partial interface CStateMachineUpdateNode : CAnimUpdateNodeBase, ISchemaC
   
   public CAnimStateMachineUpdater StateMachine { get; }
   
-  // CUtlVector< CStateNodeStateData >
-  public ref CUtlVector StateData { get; }
+  public ref CUtlVector<CStateNodeStateData> StateData { get; }
   
-  // CUtlVector< CStateNodeTransitionData >
-  public ref CUtlVector TransitionData { get; }
+  public ref CUtlVector<CStateNodeTransitionData> TransitionData { get; }
   
   public ref bool BlockWaningTags { get; }
   

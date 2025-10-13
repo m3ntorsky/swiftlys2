@@ -16,11 +16,9 @@ public partial interface CAudioSentence : ISchemaClass<CAudioSentence> {
   
   public ref bool ShouldVoiceDuck { get; }
   
-  // CUtlVector< CAudioPhonemeTag >
-  public ref CUtlVector RunTimePhonemes { get; }
+  public ref CUtlVector<CAudioPhonemeTag> RunTimePhonemes { get; }
   
-  // CUtlVector< CAudioEmphasisSample >
-  public ref CUtlVector EmphasisSamples { get; }
+  public ref CUtlVector<CAudioEmphasisSample> EmphasisSamples { get; }
   
   public CAudioMorphData MorphData { get; }
 

@@ -14,8 +14,7 @@ public partial interface CCSPlayerController_ActionTrackingServices : CPlayerCon
   static int ISchemaClass<CCSPlayerController_ActionTrackingServices>.Size => 624;
 
   
-  // CUtlVectorEmbeddedNetworkVar< CSPerRoundStats_t >
-  public ref CUtlVector PerRoundStats { get; }
+  public ref CUtlVector<CSPerRoundStats_t> PerRoundStats { get; }
   
   public CSMatchStats_t MatchStats { get; }
   

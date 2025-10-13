@@ -28,8 +28,8 @@ internal partial class CStateUpdateDataImpl : SchemaClass, CStateUpdateData {
   public ref CUtlVector<int> TransitionIndices {
     get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xD984C8C689E40507));
   }
-  public ref CUtlVector Actions {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD984C8C68D622684));
+  public ref CUtlVector<CStateActionUpdater> Actions {
+    get => ref _Handle.AsRef<CUtlVector<CStateActionUpdater>>(Schema.GetOffset(0xD984C8C68D622684));
   }
   public AnimStateID StateID {
     get => new AnimStateIDImpl(_Handle + Schema.GetOffset(0xD984C8C65362B56B));

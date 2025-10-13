@@ -15,8 +15,8 @@ internal partial class BlendItem_tImpl : SchemaClass, BlendItem_t {
   public BlendItem_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Tags {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x8FC3054B46C8540));
+  public ref CUtlVector<TagSpan_t> Tags {
+    get => ref _Handle.AsRef<CUtlVector<TagSpan_t>>(Schema.GetOffset(0x8FC3054B46C8540));
   }
   public CAnimUpdateNodeRef Child {
     get => new CAnimUpdateNodeRefImpl(_Handle + Schema.GetOffset(0x8FC30544A0B773F));

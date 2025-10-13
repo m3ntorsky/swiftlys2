@@ -21,8 +21,8 @@ internal partial class LookAtOpFixedSettings_tImpl : SchemaClass, LookAtOpFixedS
   public CAnimInputDamping Damping {
     get => new CAnimInputDampingImpl(_Handle + Schema.GetOffset(0xF114BD6015440FB5));
   }
-  public ref CUtlVector Bones {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xF114BD600FDA60D4));
+  public ref CUtlVector<LookAtBone_t> Bones {
+    get => ref _Handle.AsRef<CUtlVector<LookAtBone_t>>(Schema.GetOffset(0xF114BD600FDA60D4));
   }
   public ref float YawLimit {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF114BD60C8DE6E19));

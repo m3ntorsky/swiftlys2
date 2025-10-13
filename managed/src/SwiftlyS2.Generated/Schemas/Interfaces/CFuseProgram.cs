@@ -16,11 +16,9 @@ public partial interface CFuseProgram : ISchemaClass<CFuseProgram> {
   
   public ref CUtlVector<byte> ProgramBuffer { get; }
   
-  // CUtlVector< FuseVariableIndex_t >
-  public ref CUtlVector VariablesRead { get; }
+  public ref CUtlVector<FuseVariableIndex_t> VariablesRead { get; }
   
-  // CUtlVector< FuseVariableIndex_t >
-  public ref CUtlVector VariablesWritten { get; }
+  public ref CUtlVector<FuseVariableIndex_t> VariablesWritten { get; }
   
   public ref int MaxTempVarsUsed { get; }
 

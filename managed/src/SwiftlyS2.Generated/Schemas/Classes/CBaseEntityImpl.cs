@@ -24,8 +24,8 @@ internal partial class CBaseEntityImpl : CEntityInstanceImpl, CBaseEntity {
   public CNetworkTransmitComponent NetworkTransmitComponent {
     get => new CNetworkTransmitComponentImpl(_Handle + Schema.GetOffset(0x9DC483B8FF010CE4));
   }
-  public ref CUtlVector ThinkFunctions {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x9DC483B8D2C79415));
+  public ref CUtlVector<thinkfunc_t> ThinkFunctions {
+    get => ref _Handle.AsRef<CUtlVector<thinkfunc_t>>(Schema.GetOffset(0x9DC483B8D2C79415));
   }
   public ref int CurrentThinkContext {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x9DC483B8B04F8BF6));
@@ -42,8 +42,8 @@ internal partial class CBaseEntityImpl : CEntityInstanceImpl, CBaseEntity {
   public ref float LastNetworkChange {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x9DC483B80351D699));
   }
-  public ref CUtlVector ResponseContexts {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x9DC483B85120C9AE));
+  public ref CUtlVector<ResponseContext_t> ResponseContexts {
+    get => ref _Handle.AsRef<CUtlVector<ResponseContext_t>>(Schema.GetOffset(0x9DC483B85120C9AE));
   }
   public string ResponseContext {
     get {

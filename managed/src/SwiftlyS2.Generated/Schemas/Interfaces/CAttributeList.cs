@@ -14,8 +14,7 @@ public partial interface CAttributeList : ISchemaClass<CAttributeList> {
   static int ISchemaClass<CAttributeList>.Size => 120;
 
   
-  // CUtlVectorEmbeddedNetworkVar< CEconItemAttribute >
-  public ref CUtlVector Attributes { get; }
+  public ref CUtlVector<CEconItemAttribute> Attributes { get; }
   
   public CAttributeManager? Manager { get; }
 

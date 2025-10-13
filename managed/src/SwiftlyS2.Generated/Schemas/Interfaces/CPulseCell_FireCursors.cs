@@ -14,8 +14,7 @@ public partial interface CPulseCell_FireCursors : CPulseCell_BaseYieldingInflow,
   static int ISchemaClass<CPulseCell_FireCursors>.Size => 248;
 
   
-  // CUtlVector< CPulse_OutflowConnection >
-  public ref CUtlVector Outflows { get; }
+  public ref CUtlVector<CPulse_OutflowConnection> Outflows { get; }
   
   public ref bool WaitForChildOutflows { get; }
   

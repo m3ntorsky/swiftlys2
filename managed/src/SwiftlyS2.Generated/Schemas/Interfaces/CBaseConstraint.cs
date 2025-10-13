@@ -18,10 +18,9 @@ public partial interface CBaseConstraint : CBoneConstraintBase, ISchemaClass<CBa
   
   public ref Vector UpVector { get; }
   
-  public ref CUtlLeanVector<IntPtr, int> Slaves { get; }
+  public ref CUtlLeanVector<CConstraintSlave, int> Slaves { get; }
   
-  // CUtlVector< CConstraintTarget >
-  public ref CUtlVector Targets { get; }
+  public ref CUtlVector<CConstraintTarget> Targets { get; }
 
 
 }

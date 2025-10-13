@@ -15,8 +15,8 @@ internal partial class CRenderSkeletonImpl : SchemaClass, CRenderSkeleton {
   public CRenderSkeletonImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Bones {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xBF0A83950FDA60D4));
+  public ref CUtlVector<RenderSkeletonBone_t> Bones {
+    get => ref _Handle.AsRef<CUtlVector<RenderSkeletonBone_t>>(Schema.GetOffset(0xBF0A83950FDA60D4));
   }
   public ref CUtlVector<int> BoneParents {
     get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xBF0A839571828F04));

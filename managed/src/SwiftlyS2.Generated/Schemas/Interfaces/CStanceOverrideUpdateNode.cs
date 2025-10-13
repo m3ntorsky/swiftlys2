@@ -14,8 +14,7 @@ public partial interface CStanceOverrideUpdateNode : CUnaryUpdateNode, ISchemaCl
   static int ISchemaClass<CStanceOverrideUpdateNode>.Size => 160;
 
   
-  // CUtlVector< StanceInfo_t >
-  public ref CUtlVector FootStanceInfo { get; }
+  public ref CUtlVector<StanceInfo_t> FootStanceInfo { get; }
   
   public CAnimUpdateNodeRef StanceSourceNode { get; }
   

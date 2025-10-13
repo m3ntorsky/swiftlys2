@@ -22,8 +22,7 @@ public partial interface C_OP_ConstrainDistanceToUserSpecifiedPath : CParticleFu
   
   public ref bool LoopedPath { get; }
   
-  // CUtlVector< PointDefinitionWithTimeValues_t >
-  public ref CUtlVector PointList { get; }
+  public ref CUtlVector<PointDefinitionWithTimeValues_t> PointList { get; }
 
 
 }

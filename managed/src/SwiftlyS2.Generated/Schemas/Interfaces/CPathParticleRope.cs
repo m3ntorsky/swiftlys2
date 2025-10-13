@@ -20,7 +20,7 @@ public partial interface CPathParticleRope : CBaseEntity, ISchemaClass<CPathPart
   
   public string EffectName { get; set; }
   
-  public ref CUtlVector<CUtlSymbolLarge> PathNodes_Name { get; }
+  public ref CUtlVector<SchemaUntypedField> PathNodes_Name { get; }
   
   public ref float ParticleSpacing { get; }
   

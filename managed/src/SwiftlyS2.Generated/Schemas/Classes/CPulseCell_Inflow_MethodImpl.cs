@@ -31,8 +31,8 @@ internal partial class CPulseCell_Inflow_MethodImpl : CPulseCell_Inflow_BaseEntr
   public SchemaUntypedField ReturnType {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xFB59265566333D67));
   }
-  public ref CUtlLeanVector<IntPtr, int> Args {
-    get => ref _Handle.AsRef<CUtlLeanVector<IntPtr, int>>(Schema.GetOffset(0xFB592655DAB98BBC));
+  public ref CUtlLeanVector<CPulseRuntimeMethodArg, int> Args {
+    get => ref _Handle.AsRef<CUtlLeanVector<CPulseRuntimeMethodArg, int>>(Schema.GetOffset(0xFB592655DAB98BBC));
   }
 
 

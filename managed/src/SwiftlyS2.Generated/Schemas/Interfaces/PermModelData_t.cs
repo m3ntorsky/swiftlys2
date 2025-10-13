@@ -18,8 +18,7 @@ public partial interface PermModelData_t : ISchemaClass<PermModelData_t> {
   
   public PermModelInfo_t ModelInfo { get; }
   
-  // CUtlVector< PermModelExtPart_t >
-  public ref CUtlVector ExtParts { get; }
+  public ref CUtlVector<PermModelExtPart_t> ExtParts { get; }
   
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCRenderMesh>> RefMeshes { get; }
   
@@ -41,8 +40,7 @@ public partial interface PermModelData_t : ISchemaClass<PermModelData_t> {
   
   public ref CUtlVector<CUtlString> MeshGroups { get; }
   
-  // CUtlVector< MaterialGroup_t >
-  public ref CUtlVector MaterialGroups { get; }
+  public ref CUtlVector<MaterialGroup_t> MaterialGroups { get; }
   
   public ref ulong DefaultMeshGroupMask { get; }
   
@@ -52,8 +50,7 @@ public partial interface PermModelData_t : ISchemaClass<PermModelData_t> {
   
   public ref CUtlVector<ushort> RemappingTableStarts { get; }
   
-  // CUtlVector< ModelBoneFlexDriver_t >
-  public ref CUtlVector BoneFlexDrivers { get; }
+  public ref CUtlVector<ModelBoneFlexDriver_t> BoneFlexDrivers { get; }
   
   public CModelConfigList? ModelConfigList { get; }
   
@@ -61,8 +58,7 @@ public partial interface PermModelData_t : ISchemaClass<PermModelData_t> {
   
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCModel>> RefAnimIncludeModels { get; }
   
-  // CUtlVector< PermModelDataAnimatedMaterialAttribute_t >
-  public ref CUtlVector AnimatedMaterialAttributes { get; }
+  public ref CUtlVector<PermModelDataAnimatedMaterialAttribute_t> AnimatedMaterialAttributes { get; }
 
 
 }

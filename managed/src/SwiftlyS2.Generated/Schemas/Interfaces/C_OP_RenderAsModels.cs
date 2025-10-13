@@ -14,8 +14,7 @@ public partial interface C_OP_RenderAsModels : CParticleFunctionRenderer, ISchem
   static int ISchemaClass<C_OP_RenderAsModels>.Size => 584;
 
   
-  // CUtlVector< ModelReference_t >
-  public ref CUtlVector ModelList { get; }
+  public ref CUtlVector<ModelReference_t> ModelList { get; }
   
   public ref float ModelScale { get; }
   

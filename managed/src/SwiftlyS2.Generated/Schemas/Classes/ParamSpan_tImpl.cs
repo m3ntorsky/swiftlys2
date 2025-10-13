@@ -15,8 +15,8 @@ internal partial class ParamSpan_tImpl : SchemaClass, ParamSpan_t {
   public ParamSpan_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Samples {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5EE209D9364CA9DC));
+  public ref CUtlVector<ParamSpanSample_t> Samples {
+    get => ref _Handle.AsRef<CUtlVector<ParamSpanSample_t>>(Schema.GetOffset(0x5EE209D9364CA9DC));
   }
   public CAnimParamHandle Param {
     get => new CAnimParamHandleImpl(_Handle + Schema.GetOffset(0x5EE209D9679286A4));

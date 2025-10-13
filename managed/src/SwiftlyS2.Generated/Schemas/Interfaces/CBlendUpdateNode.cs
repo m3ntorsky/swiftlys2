@@ -14,8 +14,7 @@ public partial interface CBlendUpdateNode : CAnimUpdateNodeBase, ISchemaClass<CB
   static int ISchemaClass<CBlendUpdateNode>.Size => 224;
 
   
-  // CUtlVector< CAnimUpdateNodeRef >
-  public ref CUtlVector Children { get; }
+  public ref CUtlVector<CAnimUpdateNodeRef> Children { get; }
   
   public ref CUtlVector<byte> SortedOrder { get; }
   

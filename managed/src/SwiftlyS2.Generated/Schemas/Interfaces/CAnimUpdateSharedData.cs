@@ -14,14 +14,12 @@ public partial interface CAnimUpdateSharedData : ISchemaClass<CAnimUpdateSharedD
   static int ISchemaClass<CAnimUpdateSharedData>.Size => 256;
 
   
-  // CUtlVector< CSmartPtr< CAnimUpdateNodeBase > >
-  public ref CUtlVector Nodes { get; }
+  public ref CUtlVector<SchemaUntypedField> Nodes { get; }
   
   // CUtlHashtable< CAnimNodePath, int32 >
   public SchemaUntypedField NodeIndexMap { get; }
   
-  // CUtlVector< CSmartPtr< CAnimComponentUpdater > >
-  public ref CUtlVector Components { get; }
+  public ref CUtlVector<SchemaUntypedField> Components { get; }
   
   // CSmartPtr< CAnimParameterManagerUpdater >
   public SchemaUntypedField ParamListUpdater { get; }

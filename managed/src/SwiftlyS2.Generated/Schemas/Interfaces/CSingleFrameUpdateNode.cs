@@ -14,8 +14,7 @@ public partial interface CSingleFrameUpdateNode : CLeafUpdateNode, ISchemaClass<
   static int ISchemaClass<CSingleFrameUpdateNode>.Size => 128;
 
   
-  // CUtlVector< CSmartPtr< CAnimActionUpdater > >
-  public ref CUtlVector Actions { get; }
+  public ref CUtlVector<SchemaUntypedField> Actions { get; }
   
   public CPoseHandle PoseCacheHandle { get; }
   

@@ -27,8 +27,8 @@ internal partial class CMorphRectDataImpl : SchemaClass, CMorphRectData {
   public ref float VHeightSrc {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB12257C230C84BA2));
   }
-  public ref CUtlVector BundleDatas {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB12257C255A3B6A2));
+  public ref CUtlVector<CMorphBundleData> BundleDatas {
+    get => ref _Handle.AsRef<CUtlVector<CMorphBundleData>>(Schema.GetOffset(0xB12257C255A3B6A2));
   }
 
 

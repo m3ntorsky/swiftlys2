@@ -33,11 +33,11 @@ internal partial class CNmSkeletonImpl : SchemaClass, CNmSkeleton {
   public ref int NumBonesToSampleAtLowLOD {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC9232514813C419D));
   }
-  public ref CUtlLeanVector<IntPtr, int> MaskDefinitions {
-    get => ref _Handle.AsRef<CUtlLeanVector<IntPtr, int>>(Schema.GetOffset(0xC92325147196574D));
+  public ref CUtlLeanVector<NmBoneMaskSetDefinition_t, int> MaskDefinitions {
+    get => ref _Handle.AsRef<CUtlLeanVector<NmBoneMaskSetDefinition_t, int>>(Schema.GetOffset(0xC92325147196574D));
   }
-  public ref CUtlLeanVector<IntPtr, int> SecondarySkeletons {
-    get => ref _Handle.AsRef<CUtlLeanVector<IntPtr, int>>(Schema.GetOffset(0xC9232514782F396B));
+  public ref CUtlLeanVector<CNmSkeleton__SecondarySkeleton_t, int> SecondarySkeletons {
+    get => ref _Handle.AsRef<CUtlLeanVector<CNmSkeleton__SecondarySkeleton_t, int>>(Schema.GetOffset(0xC9232514782F396B));
   }
   public ref bool IsPropSkeleton {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC9232514FD7D351F));

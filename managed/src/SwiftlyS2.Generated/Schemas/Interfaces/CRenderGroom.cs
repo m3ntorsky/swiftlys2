@@ -14,8 +14,7 @@ public partial interface CRenderGroom : ISchemaClass<CRenderGroom> {
   static int ISchemaClass<CRenderGroom>.Size => 160;
 
   
-  // CUtlVector< RenderHairStrandInfo_t >
-  public ref CUtlVector Hairs { get; }
+  public ref CUtlVector<RenderHairStrandInfo_t> Hairs { get; }
   
   public ref CUtlVector<uint> HairPositionOffsets { get; }
   

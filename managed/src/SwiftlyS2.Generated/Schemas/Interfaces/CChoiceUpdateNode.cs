@@ -14,8 +14,7 @@ public partial interface CChoiceUpdateNode : CAnimUpdateNodeBase, ISchemaClass<C
   static int ISchemaClass<CChoiceUpdateNode>.Size => 184;
 
   
-  // CUtlVector< CAnimUpdateNodeRef >
-  public ref CUtlVector Children { get; }
+  public ref CUtlVector<CAnimUpdateNodeRef> Children { get; }
   
   public ref CUtlVector<float> Weights { get; }
   

@@ -18,8 +18,8 @@ internal partial class C_INIT_PointListImpl : CParticleFunctionInitializerImpl, 
   public ParticleAttributeIndex_t FieldOutput {
     get => new ParticleAttributeIndex_tImpl(_Handle + Schema.GetOffset(0x5E193E54E5729606));
   }
-  public ref CUtlVector PointList {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5E193E54976AB4FD));
+  public ref CUtlVector<PointDefinition_t> PointList {
+    get => ref _Handle.AsRef<CUtlVector<PointDefinition_t>>(Schema.GetOffset(0x5E193E54976AB4FD));
   }
   public ref bool PlaceAlongPath {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x5E193E5481CF2E1A));

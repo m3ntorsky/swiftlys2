@@ -16,11 +16,9 @@ public partial interface PulseObservableBoolExpression_t : ISchemaClass<PulseObs
   
   public CPulse_OutflowConnection EvaluateConnection { get; }
   
-  // CUtlVector< PulseRuntimeVarIndex_t >
-  public ref CUtlVector DependentObservableVars { get; }
+  public ref CUtlVector<PulseRuntimeVarIndex_t> DependentObservableVars { get; }
   
-  // CUtlVector< PulseRuntimeBlackboardReferenceIndex_t >
-  public ref CUtlVector DependentObservableBlackboardReferences { get; }
+  public ref CUtlVector<PulseRuntimeBlackboardReferenceIndex_t> DependentObservableBlackboardReferences { get; }
 
 
 }

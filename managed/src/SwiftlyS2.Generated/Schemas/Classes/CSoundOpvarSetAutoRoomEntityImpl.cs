@@ -15,11 +15,11 @@ internal partial class CSoundOpvarSetAutoRoomEntityImpl : CSoundOpvarSetPointEnt
   public CSoundOpvarSetAutoRoomEntityImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector TraceResults {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x13ABD76E24ADC8DC));
+  public ref CUtlVector<SoundOpvarTraceResult_t> TraceResults {
+    get => ref _Handle.AsRef<CUtlVector<SoundOpvarTraceResult_t>>(Schema.GetOffset(0x13ABD76E24ADC8DC));
   }
-  public ref CUtlVector DoorwayPairs {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x13ABD76EFAD6453D));
+  public ref CUtlVector<AutoRoomDoorwayPairs_t> DoorwayPairs {
+    get => ref _Handle.AsRef<CUtlVector<AutoRoomDoorwayPairs_t>>(Schema.GetOffset(0x13ABD76EFAD6453D));
   }
   public ref float Size {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x13ABD76E4CF0EBC6));

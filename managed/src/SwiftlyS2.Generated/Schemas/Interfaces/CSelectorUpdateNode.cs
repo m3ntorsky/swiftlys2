@@ -14,8 +14,7 @@ public partial interface CSelectorUpdateNode : CAnimUpdateNodeBase, ISchemaClass
   static int ISchemaClass<CSelectorUpdateNode>.Size => 184;
 
   
-  // CUtlVector< CAnimUpdateNodeRef >
-  public ref CUtlVector Children { get; }
+  public ref CUtlVector<CAnimUpdateNodeRef> Children { get; }
   
   public ref CUtlVector<byte> Tags { get; }
   

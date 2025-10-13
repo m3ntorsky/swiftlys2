@@ -15,8 +15,8 @@ internal partial class CBoneConstraintPoseSpaceBoneImpl : CBaseConstraintImpl, C
   public CBoneConstraintPoseSpaceBoneImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector InputList {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x496EBC215EB8D83));
+  public ref CUtlVector<CBoneConstraintPoseSpaceBone__Input_t> InputList {
+    get => ref _Handle.AsRef<CUtlVector<CBoneConstraintPoseSpaceBone__Input_t>>(Schema.GetOffset(0x496EBC215EB8D83));
   }
 
 
