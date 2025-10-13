@@ -1,4 +1,4 @@
-﻿using System.Runtime.CompilerServices;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace SwiftlyS2.Shared.Misc;
@@ -16,7 +16,14 @@ class ExternDLL
 
     public static IntPtr LoadLibrary(string dllName)
     {
-        return NativeLibrary.Load(dllName);
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+        {
+            return NativeLibrary.Load("lib" + dllName + ".so");
+        }
+        else
+        {
+            return NativeLibrary.Load(dllName + ".dll");
+        }
     }
 
     public static IntPtr GetAddress(IntPtr libraryHandle, string functionName)
