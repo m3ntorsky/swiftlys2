@@ -3,10 +3,11 @@ using System.Collections.Concurrent;
 using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.Events;
+using SwiftlyS2.Shared.Services;
 
-namespace SwiftlyS2.Core.Modules.Engine;
+namespace SwiftlyS2.Core.Services;
 
-internal sealed class CommandTrackedService : IDisposable
+internal sealed class CommandTrackedService : ICommandTrackedService, IDisposable
 {
     private sealed record CommandIdContainer(Guid Value)
     {
@@ -24,13 +25,13 @@ internal sealed class CommandTrackedService : IDisposable
     private readonly ConcurrentDictionary<Guid, ExecutingCommand> activeCommands;
     private readonly CancellationTokenSource cancellationTokenSource;
     private readonly ConcurrentQueue<Action<string>> pendingCallbacks;
-    private readonly Lazy<IEventSubscriber> lazyEventSubscriber;
+    private readonly IEventSubscriber eventSubscriber;
     private volatile bool disposed;
     private volatile bool eventsSubscribed;
 
-    public CommandTrackedService(Lazy<ISwiftlyCore> lazySwiftlyCore)
+    public CommandTrackedService(IEventSubscriber eventSubscriber)
     {
-        this.lazyEventSubscriber = new Lazy<IEventSubscriber>(() => lazySwiftlyCore.Value.Event);
+        this.eventSubscriber = eventSubscriber;
         pendingCallbacks = new ConcurrentQueue<Action<string>>();
         activeCommands = new ConcurrentDictionary<Guid, ExecutingCommand>();
         cancellationTokenSource = new CancellationTokenSource();
@@ -145,8 +146,8 @@ internal sealed class CommandTrackedService : IDisposable
         {
             if (eventsSubscribed || disposed) return;
 
-            lazyEventSubscriber.Value.OnCommandExecuteHook += ProcessCommand;
-            lazyEventSubscriber.Value.OnConsoleOutput += ProcessOutput;
+            eventSubscriber.OnCommandExecuteHook += ProcessCommand;
+            eventSubscriber.OnConsoleOutput += ProcessOutput;
             eventsSubscribed = true;
         }
     }
@@ -165,11 +166,8 @@ internal sealed class CommandTrackedService : IDisposable
         disposed = true;
 
         cancellationTokenSource.Cancel();
-        if (lazyEventSubscriber.IsValueCreated)
-        {
-            lazyEventSubscriber.Value.OnCommandExecuteHook -= ProcessCommand;
-            lazyEventSubscriber.Value.OnConsoleOutput -= ProcessOutput;
-        }
+        eventSubscriber.OnCommandExecuteHook -= ProcessCommand;
+        eventSubscriber.OnConsoleOutput -= ProcessOutput;
 
         while (pendingCallbacks.TryDequeue(out _)) { }
         activeCommands.Clear();

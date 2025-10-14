@@ -52,6 +52,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable
   public PluginConfigurationService Configuration { get; init; }
   public ILoggerFactory LoggerFactory { get; init; }
   public CommandService CommandService { get; init; }
+  public CommandTrackedService CommandTrackerService { get; init; }
   public ConsoleOutputService ConsoleOutputService { get; init; }
   public EntitySystemService EntitySystemService { get; init; }
   public ConVarService ConVarService { get; init; }
@@ -81,19 +82,21 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable
     services
       .AddSingleton(id)
       .AddSingleton(this)
+      .AddSingleton<ISwiftlyCore>(this)
       .AddSingleton(coreProvider.GetRequiredService<ProfileService>())
       .AddSingleton(coreProvider.GetRequiredService<ConfigurationService>())
       .AddSingleton(coreProvider.GetRequiredService<HookManager>())
       .AddSingleton(coreProvider.GetRequiredService<PlayerManagerService>())
-      .AddSingleton(coreProvider.GetRequiredService<EngineService>())
       .AddSingleton(coreProvider.GetRequiredService<TraceManager>())
       .AddSingleton(coreProvider.GetRequiredService<PermissionManager>())
 
       .AddSingleton<EventSubscriber>()
+      .AddSingleton<EngineService>()
       .AddSingleton<PluginConfigurationService>()
       .AddSingleton<GameEventService>()
       .AddSingleton<NetMessageService>()
       .AddSingleton<CommandService>()
+      .AddSingleton<CommandTrackedService>()
       .AddSingleton<ConsoleOutputService>()
       .AddSingleton<EntitySystemService>()
       .AddSingleton<ConVarService>()
@@ -113,6 +116,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable
       .AddSingleton<INetMessageService>(provider => provider.GetRequiredService<NetMessageService>())
       .AddSingleton<IPluginConfigurationService>(provider => provider.GetRequiredService<PluginConfigurationService>())
       .AddSingleton<ICommandService>(provider => provider.GetRequiredService<CommandService>())
+      .AddSingleton<ICommandTrackedService>(provider => provider.GetRequiredService<CommandTrackedService>())
       .AddSingleton<IConsoleOutputService>(provider => provider.GetRequiredService<ConsoleOutputService>())
       .AddSingleton<IEntitySystemService>(provider => provider.GetRequiredService<EntitySystemService>())
       .AddSingleton<IConVarService>(provider => provider.GetRequiredService<ConVarService>())
@@ -145,6 +149,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable
     LoggerFactory = _ServiceProvider.GetRequiredService<ILoggerFactory>();
     NetMessageService = _ServiceProvider.GetRequiredService<NetMessageService>();
     CommandService = _ServiceProvider.GetRequiredService<CommandService>();
+    CommandTrackerService = _ServiceProvider.GetRequiredService<CommandTrackedService>();
     ConsoleOutputService = _ServiceProvider.GetRequiredService<ConsoleOutputService>();
     EntitySystemService = _ServiceProvider.GetRequiredService<EntitySystemService>();
     GameDataService = _ServiceProvider.GetRequiredService<GameDataService>();
@@ -185,6 +190,7 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable
   IGameEventService ISwiftlyCore.GameEvent => GameEventService;
   INetMessageService ISwiftlyCore.NetMessage => NetMessageService;
   ICommandService ISwiftlyCore.Command => CommandService;
+  ICommandTrackedService ISwiftlyCore.CommandTracked => CommandTrackerService;
   IConsoleOutputService ISwiftlyCore.ConsoleOutput => ConsoleOutputService;
   IEntitySystemService ISwiftlyCore.EntitySystem => EntitySystemService;
   IConVarService ISwiftlyCore.ConVar => ConVarService;

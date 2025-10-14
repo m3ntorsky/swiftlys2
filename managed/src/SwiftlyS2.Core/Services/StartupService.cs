@@ -1,7 +1,6 @@
 using Microsoft.Extensions.Hosting;
 using SwiftlyS2.Core.Hosting;
 using SwiftlyS2.Core.Misc;
-using SwiftlyS2.Core.Modules.Engine;
 
 namespace SwiftlyS2.Core.Services;
 
@@ -13,7 +12,6 @@ internal class StartupService : IHostedService
   public StartupService(IServiceProvider provider)
   {
     _provider = provider;
-    provider.UseCoreCommandService();
     provider.UseCoreHookService();
     provider.UsePermissionManager();
     provider.UsePluginManager();

@@ -24,8 +24,6 @@ namespace SwiftlyS2.Shared;
 /// </summary>
 public interface ISwiftlyCore
 {
-
-
   /// <summary>
   /// Custom event subscriber.
   /// </summary>
@@ -50,6 +48,11 @@ public interface ISwiftlyCore
   /// Command service.
   /// </summary>
   public ICommandService Command { get; }
+
+  /// <summary>
+  /// Command tracked service.
+  /// </summary>
+  public ICommandTrackedService CommandTracked { get; }
 
   /// <summary>
   /// Console output service.

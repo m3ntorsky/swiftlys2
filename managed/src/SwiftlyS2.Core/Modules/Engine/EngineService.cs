@@ -1,14 +1,14 @@
+using SwiftlyS2.Shared;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Services;
-using SwiftlyS2.Core.Modules.Engine;
 
 namespace SwiftlyS2.Core.Services;
 
 internal class EngineService : IEngineService
 {
-    private readonly CommandTrackedService commandTrackedService;
+    private readonly ICommandTrackedService commandTrackedService;
 
-    public EngineService(CommandTrackedService commandTrackedService)
+    public EngineService(ICommandTrackedService commandTrackedService)
     {
         this.commandTrackedService = commandTrackedService;
     }
