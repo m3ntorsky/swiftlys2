@@ -50,6 +50,30 @@ internal class CMsgSource2NetworkFlowQualityImpl : TypedProtobuf<CMsgSource2Netw
   { get => Accessor.GetUInt32("enginemsgs_sec_p99"); set => Accessor.SetUInt32("enginemsgs_sec_p99", value); }
 
 
+  public uint NetframesTotal
+  { get => Accessor.GetUInt32("netframes_total"); set => Accessor.SetUInt32("netframes_total", value); }
+
+
+  public uint NetframesDropped
+  { get => Accessor.GetUInt32("netframes_dropped"); set => Accessor.SetUInt32("netframes_dropped", value); }
+
+
+  public uint NetframesOutoforder
+  { get => Accessor.GetUInt32("netframes_outoforder"); set => Accessor.SetUInt32("netframes_outoforder", value); }
+
+
+  public uint NetframesSizeExceedsMtu
+  { get => Accessor.GetUInt32("netframes_size_exceeds_mtu"); set => Accessor.SetUInt32("netframes_size_exceeds_mtu", value); }
+
+
+  public uint NetframesSizeP95
+  { get => Accessor.GetUInt32("netframes_size_p95"); set => Accessor.SetUInt32("netframes_size_p95", value); }
+
+
+  public uint NetframesSizeP99
+  { get => Accessor.GetUInt32("netframes_size_p99"); set => Accessor.SetUInt32("netframes_size_p99", value); }
+
+
   public uint TicksTotal
   { get => Accessor.GetUInt32("ticks_total"); set => Accessor.SetUInt32("ticks_total", value); }
 
@@ -128,5 +152,41 @@ internal class CMsgSource2NetworkFlowQualityImpl : TypedProtobuf<CMsgSource2Netw
 
   public int RecvmarginP95
   { get => Accessor.GetInt32("recvmargin_p95"); set => Accessor.SetInt32("recvmargin_p95", value); }
+
+
+  public uint NetframeJitterP50
+  { get => Accessor.GetUInt32("netframe_jitter_p50"); set => Accessor.SetUInt32("netframe_jitter_p50", value); }
+
+
+  public uint NetframeJitterP99
+  { get => Accessor.GetUInt32("netframe_jitter_p99"); set => Accessor.SetUInt32("netframe_jitter_p99", value); }
+
+
+  public uint IntervalPeakjitterP50
+  { get => Accessor.GetUInt32("interval_peakjitter_p50"); set => Accessor.SetUInt32("interval_peakjitter_p50", value); }
+
+
+  public uint IntervalPeakjitterP95
+  { get => Accessor.GetUInt32("interval_peakjitter_p95"); set => Accessor.SetUInt32("interval_peakjitter_p95", value); }
+
+
+  public uint PacketMisdeliveryRateP50X4
+  { get => Accessor.GetUInt32("packet_misdelivery_rate_p50_x4"); set => Accessor.SetUInt32("packet_misdelivery_rate_p50_x4", value); }
+
+
+  public uint PacketMisdeliveryRateP95X4
+  { get => Accessor.GetUInt32("packet_misdelivery_rate_p95_x4"); set => Accessor.SetUInt32("packet_misdelivery_rate_p95_x4", value); }
+
+
+  public uint NetPingP5
+  { get => Accessor.GetUInt32("net_ping_p5"); set => Accessor.SetUInt32("net_ping_p5", value); }
+
+
+  public uint NetPingP50
+  { get => Accessor.GetUInt32("net_ping_p50"); set => Accessor.SetUInt32("net_ping_p50", value); }
+
+
+  public uint NetPingP95
+  { get => Accessor.GetUInt32("net_ping_p95"); set => Accessor.SetUInt32("net_ping_p95", value); }
 
 }

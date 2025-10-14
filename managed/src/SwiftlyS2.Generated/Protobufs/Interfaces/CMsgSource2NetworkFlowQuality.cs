@@ -37,6 +37,24 @@ public interface CMsgSource2NetworkFlowQuality : ITypedProtobuf<CMsgSource2Netwo
   public uint EnginemsgsSecP99 { get; set; }
 
 
+  public uint NetframesTotal { get; set; }
+
+
+  public uint NetframesDropped { get; set; }
+
+
+  public uint NetframesOutoforder { get; set; }
+
+
+  public uint NetframesSizeExceedsMtu { get; set; }
+
+
+  public uint NetframesSizeP95 { get; set; }
+
+
+  public uint NetframesSizeP99 { get; set; }
+
+
   public uint TicksTotal { get; set; }
 
 
@@ -95,5 +113,32 @@ public interface CMsgSource2NetworkFlowQuality : ITypedProtobuf<CMsgSource2Netwo
 
 
   public int RecvmarginP95 { get; set; }
+
+
+  public uint NetframeJitterP50 { get; set; }
+
+
+  public uint NetframeJitterP99 { get; set; }
+
+
+  public uint IntervalPeakjitterP50 { get; set; }
+
+
+  public uint IntervalPeakjitterP95 { get; set; }
+
+
+  public uint PacketMisdeliveryRateP50X4 { get; set; }
+
+
+  public uint PacketMisdeliveryRateP95X4 { get; set; }
+
+
+  public uint NetPingP5 { get; set; }
+
+
+  public uint NetPingP50 { get; set; }
+
+
+  public uint NetPingP95 { get; set; }
 
 }
