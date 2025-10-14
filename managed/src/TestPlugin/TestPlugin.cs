@@ -265,6 +265,22 @@ public class TestPlugin : BasePlugin
     });
   }
 
+  [Command("w")]
+  public void TestCommand1(ICommandContext context)
+  {
+    var attacker = context.Sender!;
+    var weapons = attacker.Pawn!.WeaponServices!.MyWeapons;
+    foreach (var weaponHandle in weapons)
+    {
+      var weapon = weaponHandle.Value?.As<CCSWeaponBase>();
+      if (weapon == null)
+        return;
+
+      Console.WriteLine($"Weapon: {weapon.DesignerName}");
+    }
+
+  }
+
   [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
   delegate nint DispatchSpawnDelegate(nint pEntity, nint pKV);
   int order = 0;
@@ -322,7 +338,7 @@ public class TestPlugin : BasePlugin
     Console.WriteLine(Core.GameData.GetSignature("CBaseEntity::DispatchSpawn"));
     var ent = Core.EntitySystem.CreateEntity<CPointWorldText>();
     ent.DispatchSpawn();
-  } 
+  }
 
   [Command("tt3")]
   public void TestCommand33(ICommandContext context)
