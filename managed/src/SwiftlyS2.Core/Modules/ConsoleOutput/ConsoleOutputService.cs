@@ -7,45 +7,8 @@ namespace SwiftlyS2.Core.ConsoleOutput;
 
 internal class ConsoleOutputService : IConsoleOutputService, IDisposable
 {
-    private List<ConsoleOutputCallbackBase> _callbacks = new();
-    private ILogger<ConsoleOutputService> _logger { get; init; }
-    private ILoggerFactory _loggerFactory { get; init; }
-    private IContextedProfilerService _profiler { get; init; }
-
-    private object _lock = new();
-
-    public ConsoleOutputService(ILogger<ConsoleOutputService> logger, ILoggerFactory loggerFactory, IContextedProfilerService profiler)
+    public ConsoleOutputService()
     {
-        _logger = logger;
-        _loggerFactory = loggerFactory;
-        _profiler = profiler;
-    }
-
-    public Guid RegisterConsoleOutputListener(IConsoleOutputService.ConsoleOutputHandler handler)
-    {
-        var callback = new ConsoleOutputListenerCallback(handler, _loggerFactory, _profiler);
-        lock (_lock)
-        {
-            _callbacks.Add(callback);
-        }
-
-        return callback.Guid;
-    }
-
-    public void UnregisterConsoleOutputListener(Guid guid)
-    {
-        lock (_lock)
-        {
-            _callbacks.RemoveAll(callback =>
-            {
-                if (callback.Guid == guid)
-                {
-                    callback.Dispose();
-                    return true;
-                }
-                return false;
-            });
-        }
     }
 
     public bool IsFilterEnabled()
@@ -80,14 +43,6 @@ internal class ConsoleOutputService : IConsoleOutputService, IDisposable
 
     public void Dispose()
     {
-        lock (_lock)
-        {
-            foreach (var callback in _callbacks)
-            {
-                callback.Dispose();
-            }
-            _callbacks.Clear();
-        }
         GC.SuppressFinalize(this);
     }
 }

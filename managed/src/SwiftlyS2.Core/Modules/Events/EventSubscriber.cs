@@ -42,6 +42,8 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
   public event EventDelegates.OnEntityTakeDamage? OnEntityTakeDamage;
   public event EventDelegates.OnPrecacheResource? OnPrecacheResource;
   public event EventDelegates.OnItemServicesCanAcquireHook? OnItemServicesCanAcquireHook;
+  public event EventDelegates.OnConsoleOutput? OnConsoleOutput;
+  public event EventDelegates.OnCommandExecuteHook? OnCommandExecuteHook;
 
   public void Dispose() {
     EventPublisher.Unsubscribe(this);
@@ -249,6 +251,30 @@ internal class EventSubscriber : IEventSubscriber, IDisposable {
       _Logger.LogError(e, "Error invoking OnItemServicesCanAcquireHook.");
     } finally {
       _Profiler.StopRecording("Event::OnItemServicesCanAcquireHook");
+    }
+  }
+
+  public void InvokeOnConsoleOutput(OnConsoleOutputEvent @event) {
+    try {
+      if (OnConsoleOutput == null) return;
+      _Profiler.StartRecording("Event::OnConsoleOutput");
+      OnConsoleOutput?.Invoke(@event);
+    } catch (Exception e) {
+      _Logger.LogError(e, "Error invoking OnConsoleOutput.");
+    } finally {
+      _Profiler.StopRecording("Event::OnConsoleOutput");
+    }
+  }
+
+  public void InvokeOnCommandExecuteHook(OnCommandExecuteHookEvent @event) {
+    try {
+      if (OnCommandExecuteHook == null) return;
+      _Profiler.StartRecording("Event::OnCommandExecuteHook");
+      OnCommandExecuteHook?.Invoke(@event);
+    } catch (Exception e) {
+      _Logger.LogError(e, "Error invoking OnCommandExecuteHook.");
+    } finally {
+      _Profiler.StopRecording("Event::OnCommandExecuteHook");
     }
   }
 }

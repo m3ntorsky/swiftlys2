@@ -2,24 +2,24 @@ namespace SwiftlyS2.Shared.ConsoleOutput;
 
 public interface IConsoleOutputService
 {
-    /// <summary>
-    /// The handler for console output events.
-    /// </summary>
-    /// <param name="message">The console message.</param>
-    delegate void ConsoleOutputHandler(string message);
+    // /// <summary>
+    // /// The handler for console output events.
+    // /// </summary>
+    // /// <param name="message">The console message.</param>
+    // delegate void ConsoleOutputHandler(string message);
 
-    /// <summary>
-    /// Registers a console output listener.
-    /// </summary>
-    /// <param name="handler">The handler to call when console output occurs.</param>
-    /// <returns>A GUID that can be used to unregister the listener.</returns>
-    Guid RegisterConsoleOutputListener(ConsoleOutputHandler handler);
+    // /// <summary>
+    // /// Registers a console output listener.
+    // /// </summary>
+    // /// <param name="handler">The handler to call when console output occurs.</param>
+    // /// <returns>A GUID that can be used to unregister the listener.</returns>
+    // Guid RegisterConsoleOutputListener(ConsoleOutputHandler handler);
 
-    /// <summary>
-    /// Unregisters a console output listener.
-    /// </summary>
-    /// <param name="guid">The GUID returned from RegisterConsoleOutputListener.</param>
-    void UnregisterConsoleOutputListener(Guid guid);
+    // /// <summary>
+    // /// Unregisters a console output listener.
+    // /// </summary>
+    // /// <param name="guid">The GUID returned from RegisterConsoleOutputListener.</param>
+    // void UnregisterConsoleOutputListener(Guid guid);
 
     /// <summary>
     /// Gets whether console filtering is enabled.

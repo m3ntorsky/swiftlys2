@@ -70,10 +70,16 @@ public class TestPlugin : BasePlugin
 
   public override void Load(bool hotReload)
   {
-    // var consoleListenerId = Core.ConsoleOutput.RegisterConsoleOutputListener((message) =>
+    // Core.Event.OnConsoleOutput += (@event) =>
     // {
-    //   Core.Logger.LogInformation($"message: {message}");
-    // });
+    //   Console.WriteLine($"[TestPlugin] ConsoleOutput: {@event.Message}");
+    // };
+
+    // Core.Event.OnCommandExecuteHook += (@event) =>
+    // {
+    //   Console.WriteLine($"[TestPlugin] CommandExecute({@event.HookMode}): {@event.OriginalName}");
+    //   @event.SetCommandName("test");
+    // };
     Core.Engine.ExecuteCommandWithBuffer("@ping", (buffer) =>
     {
       Console.WriteLine($"pong: {buffer}");

@@ -91,4 +91,14 @@ public interface IEventSubscriber {
   /// Called when an item services can acquire hook is triggered.
   /// </summary>
   public event EventDelegates.OnItemServicesCanAcquireHook? OnItemServicesCanAcquireHook;
+
+  /// <summary>
+  /// Called when the game outputs a console message.
+  /// </summary>
+  public event EventDelegates.OnConsoleOutput? OnConsoleOutput;
+
+  /// <summary>
+  /// Called when a command is executed.
+  /// </summary>
+  public event EventDelegates.OnCommandExecuteHook? OnCommandExecuteHook;
 }
