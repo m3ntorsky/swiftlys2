@@ -10,9 +10,4 @@ internal static class CommandTrackedServiceInjection
   {
     return self.AddSingleton<CommandTrackedService>(provider => new CommandTrackedService(new Lazy<ISwiftlyCore>(() => provider.GetRequiredService<ISwiftlyCore>())));
   }
-
-  // public static void UseCommandTrackedService(this IServiceProvider self)
-  // {
-  //   self.GetRequiredService<CommandTrackedService>();
-  // }
 }
