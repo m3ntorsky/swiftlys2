@@ -32,9 +32,9 @@ internal sealed class CommandTrackedService : IDisposable
     private readonly IEventSubscriber eventSubscriber;
     private volatile bool disposed;
 
-    public CommandTrackedService(IEventSubscriber eventSubscriber)
+    public CommandTrackedService(ISwiftlyCore swiftlyCore)
     {
-        this.eventSubscriber = eventSubscriber;
+        this.eventSubscriber = swiftlyCore.Event;
         pendingCallbacks = new ConcurrentQueue<Action<string>>();
         activeCommands = new ConcurrentDictionary<Guid, ExecutingCommand>();
         cancellationTokenSource = new CancellationTokenSource();

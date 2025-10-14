@@ -9,11 +9,7 @@ internal static class CommandTrackedServiceInjection
 {
   public static IServiceCollection AddCommandTrackedService(this IServiceCollection self)
   {
-    return self.AddSingleton<CommandTrackedService>(provider =>
-    {
-      var swiftlyCore = provider.GetRequiredService<ISwiftlyCore>();
-      return new CommandTrackedService(swiftlyCore.Event);
-    });
+    return self.AddSingleton<CommandTrackedService>();
   }
 
   public static void UseCommandTrackedService(this IServiceProvider self)
