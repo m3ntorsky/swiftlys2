@@ -18,7 +18,7 @@ internal class PluginManager
   private List<PluginContext> _Plugins { get; } = new();
   private FileSystemWatcher? _Watcher { get; set; }
   private InterfaceManager _InterfaceManager { get; set; } = new();
-  private List<Type> _SharedTypes {get; set;} = new();
+  private List<Type> _SharedTypes { get; set; } = new();
 
   private DateTime lastRead = DateTime.MinValue;
 
@@ -46,13 +46,15 @@ internal class PluginManager
     Initialize();
   }
 
-  public void Initialize() {
+  public void Initialize()
+  {
     AppDomain.CurrentDomain.AssemblyResolve += (sender, e) =>
     {
       var loadingAssemblyName = new AssemblyName(e.Name).Name ?? "";
-      if (loadingAssemblyName == "") {
+      if (loadingAssemblyName == "")
+      {
         return null;
-      } 
+      }
       if (loadingAssemblyName == "SwiftlyS2.CS2")
       {
         return Assembly.GetExecutingAssembly();
@@ -103,50 +105,15 @@ internal class PluginManager
     }
   }
 
-  private void LoadExports()
+  private void PopulateSharedManually(string startDirectory)
   {
-    var pluginDirs = Directory.GetDirectories(_RootDirService.GetPluginsRoot());
+    var pluginDirs = Directory.GetDirectories(startDirectory);
 
-    var resolver = new DependencyResolver(_Logger);
-    
-    try
+    foreach (var pluginDir in pluginDirs)
     {
-      resolver.AnalyzeDependencies(pluginDirs);
-
-      _Logger.LogInformation(resolver.GetDependencyGraphVisualization());
-
-      var loadOrder = resolver.GetLoadOrder();
-      
-      _Logger.LogInformation($"Loading {loadOrder.Count} export assemblies in dependency order.");
-      
-      foreach (var exportFile in loadOrder)
-      {
-        try
-        {
-          var assembly = Assembly.LoadFrom(exportFile);
-          var exports = assembly.GetTypes();
-          
-          _Logger.LogDebug($"Loaded {exports.Length} types from {Path.GetFileName(exportFile)}.");
-
-          
-          foreach (var export in exports)
-          {
-            _SharedTypes.Add(export);
-          }
-        }
-        catch (Exception ex)
-        {
-          _Logger.LogWarning(ex, $"Failed to load export assembly: {exportFile}");
-        }
-      }
-
-      _Logger.LogInformation($"Successfully loaded {_SharedTypes.Count} shared types.");
-    }
-    catch (InvalidOperationException ex) when (ex.Message.Contains("Circular dependency"))
-    {
-      _Logger.LogError(ex, "Circular dependency detected in plugin exports. Loading exports without dependency resolution.");
-      
-      foreach (var pluginDir in pluginDirs)
+      var dirName = Path.GetFileName(pluginDir);
+      if (dirName.StartsWith("[") && dirName.EndsWith("]")) PopulateSharedManually(pluginDir);
+      else
       {
         if (Directory.Exists(Path.Combine(pluginDir, "resources", "exports")))
         {
@@ -170,33 +137,86 @@ internal class PluginManager
         }
       }
     }
+  }
+
+  private void LoadExports()
+  {
+    var resolver = new DependencyResolver(_Logger);
+
+    try
+    {
+      resolver.AnalyzeDependencies(_RootDirService.GetPluginsRoot());
+
+      _Logger.LogInformation(resolver.GetDependencyGraphVisualization());
+
+      var loadOrder = resolver.GetLoadOrder();
+
+      _Logger.LogInformation($"Loading {loadOrder.Count} export assemblies in dependency order.");
+
+      foreach (var exportFile in loadOrder)
+      {
+        try
+        {
+          var assembly = Assembly.LoadFrom(exportFile);
+          var exports = assembly.GetTypes();
+
+          _Logger.LogDebug($"Loaded {exports.Length} types from {Path.GetFileName(exportFile)}.");
+
+
+          foreach (var export in exports)
+          {
+            _SharedTypes.Add(export);
+          }
+        }
+        catch (Exception ex)
+        {
+          _Logger.LogWarning(ex, $"Failed to load export assembly: {exportFile}");
+        }
+      }
+
+      _Logger.LogInformation($"Successfully loaded {_SharedTypes.Count} shared types.");
+    }
+    catch (InvalidOperationException ex) when (ex.Message.Contains("Circular dependency"))
+    {
+      _Logger.LogError(ex, "Circular dependency detected in plugin exports. Loading exports without dependency resolution.");
+      PopulateSharedManually(_RootDirService.GetPluginsRoot());
+    }
     catch (Exception ex)
     {
       _Logger.LogError(ex, "Unexpected error during export loading");
     }
   }
 
-  private void LoadPlugins()
+  private void LoadPluginsFromFolder(string directory)
   {
-    var pluginDirs = Directory.GetDirectories(_RootDirService.GetPluginsRoot());
+    var pluginDirs = Directory.GetDirectories(directory);
 
     foreach (var pluginDir in pluginDirs)
     {
-      try
+      var dirName = Path.GetFileName(pluginDir);
+      if (dirName.StartsWith("[") && dirName.EndsWith("]")) LoadPluginsFromFolder(pluginDir);
+      else
       {
-        var context = LoadPlugin(pluginDir, false);
-        if (context != null && context.Status == PluginStatus.Loaded)
+        try
         {
-          _Logger.LogInformation("Loaded plugin " + context.Metadata!.Id);
+          var context = LoadPlugin(pluginDir, false);
+          if (context != null && context.Status == PluginStatus.Loaded)
+          {
+            _Logger.LogInformation("Loaded plugin " + context.Metadata!.Id);
+          }
+        }
+        catch (Exception e)
+        {
+          _Logger.LogWarning(e, "Error loading plugin: " + pluginDir);
+          continue;
         }
       }
-      catch (Exception e)
-      {
-        _Logger.LogWarning(e, "Error loading plugin: " + pluginDir);
-        continue;
-      }
-
     }
+  }
+
+  private void LoadPlugins()
+  {
+    LoadPluginsFromFolder(_RootDirService.GetPluginsRoot());
 
     RebuildSharedServices();
   }
@@ -248,7 +268,7 @@ internal class PluginManager
 
     var loader = PluginLoader.CreateFromAssemblyFile(
       assemblyFile: entrypointDll,
-      sharedTypes: [typeof(BasePlugin), .._SharedTypes],
+      sharedTypes: [typeof(BasePlugin), .. _SharedTypes],
       config =>
       {
         config.IsUnloadable = true;
