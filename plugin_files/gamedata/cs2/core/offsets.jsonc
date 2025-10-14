@@ -96,5 +96,12 @@
     "CommandNameOffset": {
         "windows": 1088,
         "linux": 1088
+    },
+    /*
+    From sdk
+    */
+    "ICvar::FindConCommand": {
+        "windows": 17,
+        "linux": 17
     }
 }

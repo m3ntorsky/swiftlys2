@@ -1,5 +1,6 @@
 using System.Text;
 using System.Collections.Concurrent;
+using Spectre.Console;
 using SwiftlyS2.Shared;
 using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.Events;
@@ -7,7 +8,7 @@ using SwiftlyS2.Shared.Services;
 
 namespace SwiftlyS2.Core.Services;
 
-internal sealed class CommandTrackedService : ICommandTrackedService, IDisposable
+internal sealed class CommandTrackerManager : IDisposable
 {
     private sealed record CommandIdContainer(Guid Value)
     {
@@ -21,29 +22,23 @@ internal sealed class CommandTrackedService : ICommandTrackedService, IDisposabl
         public bool IsExpired => DateTime.UtcNow - Created > TimeSpan.FromMilliseconds(5000);
     }
 
-    private volatile CommandIdContainer currentCommandContainer;
-    private readonly ConcurrentDictionary<Guid, ExecutingCommand> activeCommands;
-    private readonly CancellationTokenSource cancellationTokenSource;
-    private readonly ConcurrentQueue<Action<string>> pendingCallbacks;
-    private readonly IEventSubscriber eventSubscriber;
+    private volatile CommandIdContainer currentCommandContainer = CommandIdContainer.Empty;
+    private readonly ConcurrentDictionary<Guid, ExecutingCommand> activeCommands = new();
+    private readonly CancellationTokenSource cancellationTokenSource = new();
+    private readonly ConcurrentQueue<Action<string>> pendingCallbacks = new();
     private volatile bool disposed;
     private volatile bool eventsSubscribed;
 
-    public CommandTrackedService(IEventSubscriber eventSubscriber)
+    public CommandTrackerManager()
     {
-        this.eventSubscriber = eventSubscriber;
-        pendingCallbacks = new ConcurrentQueue<Action<string>>();
-        activeCommands = new ConcurrentDictionary<Guid, ExecutingCommand>();
-        cancellationTokenSource = new CancellationTokenSource();
-        currentCommandContainer = CommandIdContainer.Empty;
         eventsSubscribed = false;
 
         StartCleanupTimer();
     }
 
-    private void ProcessCommand(IOnCommandExecuteHookEvent @event)
+    public void ProcessCommand(IOnCommandExecuteHookEvent @event)
     {
-        if (string.IsNullOrEmpty(@event.OriginalName) || !@event.OriginalName.Contains("^wb^"))
+        if (string.IsNullOrEmpty(@event.OriginalName) || !@event.OriginalName.StartsWith("^wb^"))
         {
             Interlocked.Exchange(ref currentCommandContainer, CommandIdContainer.Empty);
             return;
@@ -59,7 +54,7 @@ internal sealed class CommandTrackedService : ICommandTrackedService, IDisposabl
         }
     }
 
-    private void ProcessOutput(IOnConsoleOutputEvent @event)
+    public void ProcessOutput(IOnConsoleOutputEvent @event)
     {
         if (disposed) return;
 
@@ -72,7 +67,7 @@ internal sealed class CommandTrackedService : ICommandTrackedService, IDisposabl
         }
     }
 
-    private void ProcessCommandStart(IOnCommandExecuteHookEvent @event)
+    public void ProcessCommandStart(IOnCommandExecuteHookEvent @event)
     {
         if (pendingCallbacks.TryDequeue(out var callback))
         {
@@ -92,7 +87,7 @@ internal sealed class CommandTrackedService : ICommandTrackedService, IDisposabl
         }
     }
 
-    private void ProcessCommandEnd(IOnCommandExecuteHookEvent @event)
+    public void ProcessCommandEnd(IOnCommandExecuteHookEvent @event)
     {
         var previousContainer = Interlocked.Exchange(ref currentCommandContainer, CommandIdContainer.Empty);
         var commandId = previousContainer?.Value ?? Guid.Empty;
@@ -108,7 +103,7 @@ internal sealed class CommandTrackedService : ICommandTrackedService, IDisposabl
 
             Task.Run(() =>
             {
-                command.Callback?.Invoke(output.ToString());
+                command.Callback.Invoke(output.ToString());
             });
         }
     }
@@ -124,7 +119,9 @@ internal sealed class CommandTrackedService : ICommandTrackedService, IDisposabl
                     await Task.Delay(TimeSpan.FromMilliseconds(200), cancellationTokenSource.Token);
                     CleanupExpiredCommands();
                 }
-                catch { }
+                catch (Exception ex) { 
+                    AnsiConsole.WriteException(ex);
+                }
             }
         }, cancellationTokenSource.Token);
     }
@@ -140,23 +137,10 @@ internal sealed class CommandTrackedService : ICommandTrackedService, IDisposabl
         }
     }
 
-    private void EnsureEventsSubscribed()
-    {
-        lock (this)
-        {
-            if (eventsSubscribed || disposed) return;
-
-            eventSubscriber.OnCommandExecuteHook += ProcessCommand;
-            eventSubscriber.OnConsoleOutput += ProcessOutput;
-            eventsSubscribed = true;
-        }
-    }
-
     public void EnqueueCommand(Action<string> callback)
     {
-        if (disposed || callback == null) return;
+        if (disposed) return;
 
-        EnsureEventsSubscribed();
         pendingCallbacks.Enqueue(callback);
     }
 
@@ -166,8 +150,6 @@ internal sealed class CommandTrackedService : ICommandTrackedService, IDisposabl
         disposed = true;
 
         cancellationTokenSource.Cancel();
-        eventSubscriber.OnCommandExecuteHook -= ProcessCommand;
-        eventSubscriber.OnConsoleOutput -= ProcessOutput;
 
         while (pendingCallbacks.TryDequeue(out _)) { }
         activeCommands.Clear();

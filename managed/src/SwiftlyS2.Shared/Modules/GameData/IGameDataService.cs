@@ -36,7 +36,7 @@ public interface IGameDataService {
   /// </summary>
   /// <param name="offsetName">Offset name defined in `offsets.jsonc` file.</param>
   /// <returns>The offset.</returns>
-  nint GetOffset(string offsetName);
+  int GetOffset(string offsetName);
 
   /// <summary>
   /// Try to get an offset by name.

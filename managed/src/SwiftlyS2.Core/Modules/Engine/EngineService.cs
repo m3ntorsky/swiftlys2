@@ -6,11 +6,11 @@ namespace SwiftlyS2.Core.Services;
 
 internal class EngineService : IEngineService
 {
-    private readonly ICommandTrackedService commandTrackedService;
+    private readonly CommandTrackerManager _commandTrackedManager;
 
-    public EngineService(ICommandTrackedService commandTrackedService)
+    public EngineService(CommandTrackerManager commandTrackedManager)
     {
-        this.commandTrackedService = commandTrackedService;
+        this._commandTrackedManager = commandTrackedManager;
     }
 
     public string ServerIP => NativeEngineHelpers.GetServerIP();
@@ -30,8 +30,8 @@ internal class EngineService : IEngineService
 
     public void ExecuteCommandWithBuffer(string command, Action<string> bufferCallback)
     {
-        commandTrackedService?.EnqueueCommand(bufferCallback);
-        NativeEngineHelpers.ExecuteCommand($"{command}^wb^");
+        _commandTrackedManager.EnqueueCommand(bufferCallback);
+        NativeEngineHelpers.ExecuteCommand($"^wb^{command}");
     }
 
     public bool IsMapValid(string map)

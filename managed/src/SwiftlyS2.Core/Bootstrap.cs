@@ -63,6 +63,8 @@ internal static class Bootstrap
           .AddPermissionManager()
           .AddCoreHookService()
           .AddMenuService()
+          .AddCommandTrackerManager()
+          .AddCommandTrackerService()
           .AddSwiftlyCore(basePath);
       })
       .Build();

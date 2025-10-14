@@ -50,11 +50,6 @@ public interface ISwiftlyCore
   public ICommandService Command { get; }
 
   /// <summary>
-  /// Command tracked service.
-  /// </summary>
-  public ICommandTrackedService CommandTracked { get; }
-
-  /// <summary>
   /// Console output service.
   /// </summary>
   public IConsoleOutputService ConsoleOutput { get; }
