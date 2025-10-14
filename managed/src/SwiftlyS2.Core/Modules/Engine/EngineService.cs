@@ -1,17 +1,16 @@
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Services;
 using SwiftlyS2.Core.Modules.Engine;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace SwiftlyS2.Core.Services;
 
 internal class EngineService : IEngineService
 {
-    private readonly IServiceProvider serviceProvider;
+    private readonly CommandTrackedService commandTrackedService;
 
-    public EngineService(IServiceProvider serviceProvider)
+    public EngineService(CommandTrackedService commandTrackedService)
     {
-        this.serviceProvider = serviceProvider;
+        this.commandTrackedService = commandTrackedService;
     }
 
     public string ServerIP => NativeEngineHelpers.GetServerIP();
@@ -31,13 +30,8 @@ internal class EngineService : IEngineService
 
     public void ExecuteCommandWithBuffer(string command, Action<string> bufferCallback)
     {
-        try
-        {
-            var commandTracked = serviceProvider.GetService<CommandTrackedService>();
-            commandTracked?.EnqueueCommand(bufferCallback);
-            NativeEngineHelpers.ExecuteCommand($"{command}^wb^");
-        }
-        catch { }
+        commandTrackedService?.EnqueueCommand(bufferCallback);
+        NativeEngineHelpers.ExecuteCommand($"{command}^wb^");
     }
 
     public bool IsMapValid(string map)

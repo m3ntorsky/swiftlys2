@@ -1,13 +1,8 @@
-using System;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Collections.Concurrent;
-using System.Runtime.InteropServices;
 using SwiftlyS2.Shared;
-using SwiftlyS2.Core.Natives;
-using SwiftlyS2.Shared.Events;
 using SwiftlyS2.Shared.Misc;
+using SwiftlyS2.Shared.Events;
 
 namespace SwiftlyS2.Core.Modules.Engine;
 
@@ -29,19 +24,18 @@ internal sealed class CommandTrackedService : IDisposable
     private readonly ConcurrentDictionary<Guid, ExecutingCommand> activeCommands;
     private readonly CancellationTokenSource cancellationTokenSource;
     private readonly ConcurrentQueue<Action<string>> pendingCallbacks;
-    private readonly IEventSubscriber eventSubscriber;
+    private readonly Lazy<IEventSubscriber> lazyEventSubscriber;
     private volatile bool disposed;
+    private volatile bool eventsSubscribed;
 
-    public CommandTrackedService(ISwiftlyCore swiftlyCore)
+    public CommandTrackedService(Lazy<ISwiftlyCore> lazySwiftlyCore)
     {
-        this.eventSubscriber = swiftlyCore.Event;
+        this.lazyEventSubscriber = new Lazy<IEventSubscriber>(() => lazySwiftlyCore.Value.Event);
         pendingCallbacks = new ConcurrentQueue<Action<string>>();
         activeCommands = new ConcurrentDictionary<Guid, ExecutingCommand>();
         cancellationTokenSource = new CancellationTokenSource();
         currentCommandContainer = CommandIdContainer.Empty;
-
-        eventSubscriber.OnCommandExecuteHook += ProcessCommand;
-        eventSubscriber.OnConsoleOutput += ProcessOutput;
+        eventsSubscribed = false;
 
         StartCleanupTimer();
     }
@@ -145,10 +139,23 @@ internal sealed class CommandTrackedService : IDisposable
         }
     }
 
+    private void EnsureEventsSubscribed()
+    {
+        lock (this)
+        {
+            if (eventsSubscribed || disposed) return;
+
+            lazyEventSubscriber.Value.OnCommandExecuteHook += ProcessCommand;
+            lazyEventSubscriber.Value.OnConsoleOutput += ProcessOutput;
+            eventsSubscribed = true;
+        }
+    }
+
     public void EnqueueCommand(Action<string> callback)
     {
         if (disposed || callback == null) return;
 
+        EnsureEventsSubscribed();
         pendingCallbacks.Enqueue(callback);
     }
 
@@ -158,8 +165,11 @@ internal sealed class CommandTrackedService : IDisposable
         disposed = true;
 
         cancellationTokenSource.Cancel();
-        eventSubscriber.OnCommandExecuteHook -= ProcessCommand;
-        eventSubscriber.OnConsoleOutput -= ProcessOutput;
+        if (lazyEventSubscriber.IsValueCreated)
+        {
+            lazyEventSubscriber.Value.OnCommandExecuteHook -= ProcessCommand;
+            lazyEventSubscriber.Value.OnConsoleOutput -= ProcessOutput;
+        }
 
         while (pendingCallbacks.TryDequeue(out _)) { }
         activeCommands.Clear();
