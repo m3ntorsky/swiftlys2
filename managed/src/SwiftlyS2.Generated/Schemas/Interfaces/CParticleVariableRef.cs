@@ -11,13 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleVariableRef : ISchemaClass<CParticleVariableRef> {
 
   static CParticleVariableRef ISchemaClass<CParticleVariableRef>.From(nint handle) => new CParticleVariableRefImpl(handle);
-  static int ISchemaClass<CParticleVariableRef>.Size => 64;
+  static int ISchemaClass<CParticleVariableRef>.Size => 80;
 
   
   // CKV3MemberNameWithStorage
   public SchemaUntypedField VariableName { get; }
   
-  public ref PulseValueType_t VariableType { get; }
+  // CPulseValueFullType
+  public SchemaUntypedField VariableType { get; }
 
 
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFogVolume : CServerOnlyModelEntity, ISchemaClass<CFogVolume> {
 
   static CFogVolume ISchemaClass<CFogVolume>.From(nint handle) => new CFogVolumeImpl(handle);
-  static int ISchemaClass<CFogVolume>.Size => 2072;
+  static int ISchemaClass<CFogVolume>.Size => 2048;
 
   
   public string FogName { get; set; }

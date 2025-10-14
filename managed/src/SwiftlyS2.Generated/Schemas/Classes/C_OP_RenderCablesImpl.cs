@@ -72,6 +72,9 @@ internal partial class C_OP_RenderCablesImpl : CParticleFunctionRendererImpl, C_
   public ref int Roundness {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1649887761078EC0));
   }
+  public ref bool ForceRoundnessFixed {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x16498877D74D29BF));
+  }
   public CParticleTransformInput LightingTransform {
     get => new CParticleTransformInputImpl(_Handle + Schema.GetOffset(0x164988776557F58F));
   }

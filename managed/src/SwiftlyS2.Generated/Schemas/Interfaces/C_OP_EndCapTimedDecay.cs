@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_EndCapTimedDecay : CParticleFunctionOperator, ISchemaClass<C_OP_EndCapTimedDecay> {
 
   static C_OP_EndCapTimedDecay ISchemaClass<C_OP_EndCapTimedDecay>.From(nint handle) => new C_OP_EndCapTimedDecayImpl(handle);
-  static int ISchemaClass<C_OP_EndCapTimedDecay>.Size => 456;
+  static int ISchemaClass<C_OP_EndCapTimedDecay>.Size => 472;
 
   
   public ref float DecayTime { get; }

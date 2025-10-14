@@ -38,6 +38,8 @@ public partial interface CNmStateNode__CDefinition : CNmPoseNode__CDefinition, I
   public ref short LayerBoneMaskNodeIdx { get; }
   
   public ref bool IsOffState { get; }
+  
+  public ref bool UseActualElapsedTimeInStateForTimedEvents { get; }
 
 
 }

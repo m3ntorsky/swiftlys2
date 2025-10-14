@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleFloatInput : CParticleInput, ISchemaClass<CParticleFloatInput> {
 
   static CParticleFloatInput ISchemaClass<CParticleFloatInput>.From(nint handle) => new CParticleFloatInputImpl(handle);
-  static int ISchemaClass<CParticleFloatInput>.Size => 352;
+  static int ISchemaClass<CParticleFloatInput>.Size => 368;
 
   
   public ref ParticleFloatType_t Type { get; }
@@ -42,6 +42,8 @@ public partial interface CParticleFloatInput : CParticleInput, ISchemaClass<CPar
   public ref int RandomSeed { get; }
   
   public ref ParticleFloatRandomMode_t RandomMode { get; }
+  
+  public string StrSnapshotSubset { get; set; }
   
   public ref float LOD0 { get; }
   

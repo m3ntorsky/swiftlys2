@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBeam : CBaseModelEntity, ISchemaClass<CBeam> {
 
   static CBeam ISchemaClass<CBeam>.From(nint handle) => new CBeamImpl(handle);
-  static int ISchemaClass<CBeam>.Size => 2192;
+  static int ISchemaClass<CBeam>.Size => 2168;
 
   
   public ref float FrameRate { get; }

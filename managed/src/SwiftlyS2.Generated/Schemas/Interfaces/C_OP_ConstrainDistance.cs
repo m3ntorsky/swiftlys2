@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_ConstrainDistance : CParticleFunctionConstraint, ISchemaClass<C_OP_ConstrainDistance> {
 
   static C_OP_ConstrainDistance ISchemaClass<C_OP_ConstrainDistance>.From(nint handle) => new C_OP_ConstrainDistanceImpl(handle);
-  static int ISchemaClass<C_OP_ConstrainDistance>.Size => 1176;
+  static int ISchemaClass<C_OP_ConstrainDistance>.Size => 1224;
 
   
   public CParticleCollectionFloatInput MinDistance { get; }

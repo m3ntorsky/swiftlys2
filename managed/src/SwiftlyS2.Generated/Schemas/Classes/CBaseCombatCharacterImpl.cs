@@ -24,9 +24,6 @@ internal partial class CBaseCombatCharacterImpl : CBaseFlexImpl, CBaseCombatChar
   public ref float ImpactEnergyScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB47DE3DEC66BAC1B));
   }
-  public ref int MinVehicleDamageToTempRagdoll {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xB47DE3DE5D22468A));
-  }
   public ref bool ApplyStressDamage {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB47DE3DEC16FF452));
   }

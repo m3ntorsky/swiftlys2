@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_DistanceCull : CParticleFunctionOperator, ISchemaClass<C_OP_DistanceCull> {
 
   static C_OP_DistanceCull ISchemaClass<C_OP_DistanceCull>.From(nint handle) => new C_OP_DistanceCullImpl(handle);
-  static int ISchemaClass<C_OP_DistanceCull>.Size => 480;
+  static int ISchemaClass<C_OP_DistanceCull>.Size => 856;
 
   
   public ref int ControlPoint { get; }
   
   public ref Vector PointOffset { get; }
   
-  public ref float Distance { get; }
+  public CParticleCollectionFloatInput Distance { get; }
   
   public ref bool CullInside { get; }
   

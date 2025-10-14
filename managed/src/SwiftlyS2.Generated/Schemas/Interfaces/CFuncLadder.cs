@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFuncLadder : CBaseModelEntity, ISchemaClass<CFuncLadder> {
 
   static CFuncLadder ISchemaClass<CFuncLadder>.From(nint handle) => new CFuncLadderImpl(handle);
-  static int ISchemaClass<CFuncLadder>.Size => 2208;
+  static int ISchemaClass<CFuncLadder>.Size => 2184;
 
   
   public ref Vector LadderDir { get; }

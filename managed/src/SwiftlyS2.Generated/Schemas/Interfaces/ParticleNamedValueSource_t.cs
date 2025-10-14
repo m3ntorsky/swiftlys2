@@ -18,11 +18,10 @@ public partial interface ParticleNamedValueSource_t : ISchemaClass<ParticleNamed
   
   public ref bool IsPublic { get; }
   
-  public ref PulseValueType_t ValueType { get; }
+  // CPulseValueFullType
+  public SchemaUntypedField ValueType { get; }
   
   public ParticleNamedValueConfiguration_t DefaultConfig { get; }
-  
-  public ref CUtlVector<ParticleNamedValueConfiguration_t> NamedConfigs { get; }
 
 
 }

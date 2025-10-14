@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTriggerSndSosOpvar : CBaseTrigger, ISchemaClass<CTriggerSndSosOpvar> {
 
   static CTriggerSndSosOpvar ISchemaClass<CTriggerSndSosOpvar>.From(nint handle) => new CTriggerSndSosOpvarImpl(handle);
-  static int ISchemaClass<CTriggerSndSosOpvar>.Size => 3360;
+  static int ISchemaClass<CTriggerSndSosOpvar>.Size => 3336;
 
   
   public ref CUtlVector<CHandle<CBaseEntity>> TouchingPlayers { get; }

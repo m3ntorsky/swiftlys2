@@ -6,6 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum PreviewCharacterMode : uint {
 
+ INVALID = uint.MaxValue,
+
  DIORAMA = 0,
 
  MAIN_MENU = 1,

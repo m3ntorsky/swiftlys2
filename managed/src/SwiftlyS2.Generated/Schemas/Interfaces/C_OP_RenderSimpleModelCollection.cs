@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderSimpleModelCollection : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderSimpleModelCollection> {
 
   static C_OP_RenderSimpleModelCollection ISchemaClass<C_OP_RenderSimpleModelCollection>.From(nint handle) => new C_OP_RenderSimpleModelCollectionImpl(handle);
-  static int ISchemaClass<C_OP_RenderSimpleModelCollection>.Size => 1376;
+  static int ISchemaClass<C_OP_RenderSimpleModelCollection>.Size => 1424;
 
   
   public ref bool CenterOffset { get; }

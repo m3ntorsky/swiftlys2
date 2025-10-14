@@ -21,8 +21,8 @@ internal partial class C_OP_DistanceCullImpl : CParticleFunctionOperatorImpl, C_
   public ref Vector PointOffset {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x7252AA52300E046E));
   }
-  public ref float Distance {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x7252AA5200DC4A68));
+  public CParticleCollectionFloatInput Distance {
+    get => new CParticleCollectionFloatInputImpl(_Handle + Schema.GetOffset(0x7252AA5200DC4A68));
   }
   public ref bool CullInside {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x7252AA52293E00AD));

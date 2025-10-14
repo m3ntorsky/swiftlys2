@@ -22,7 +22,7 @@ public partial interface CSosGroupActionSetSoundeventParameterSchema : CSosGroup
   
   public string OpvarName { get; set; }
   
-  public ref SosActionSortType_t SortType { get; }
+  public ref SosActionSetParamSortType_t SortType { get; }
 
 
 }

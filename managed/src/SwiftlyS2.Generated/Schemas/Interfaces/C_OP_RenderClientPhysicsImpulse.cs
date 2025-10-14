@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderClientPhysicsImpulse : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderClientPhysicsImpulse> {
 
   static C_OP_RenderClientPhysicsImpulse ISchemaClass<C_OP_RenderClientPhysicsImpulse>.From(nint handle) => new C_OP_RenderClientPhysicsImpulseImpl(handle);
-  static int ISchemaClass<C_OP_RenderClientPhysicsImpulse>.Size => 1240;
+  static int ISchemaClass<C_OP_RenderClientPhysicsImpulse>.Size => 1288;
 
   
   public CPerParticleFloatInput Radius { get; }

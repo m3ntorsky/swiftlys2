@@ -15,8 +15,17 @@ internal partial class C_INIT_VelocityRadialRandomImpl : CParticleFunctionInitia
   public C_INIT_VelocityRadialRandomImpl(nint handle) : base(handle) {
   }
 
+  public ref bool PerParticleCenter {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x61A3C8D50314399B));
+  }
   public ref int ControlPointNumber {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x61A3C8D53F31A6BD));
+  }
+  public CPerParticleVecInput Position {
+    get => new CPerParticleVecInputImpl(_Handle + Schema.GetOffset(0x61A3C8D5E092EE6A));
+  }
+  public CPerParticleVecInput Fwd {
+    get => new CPerParticleVecInputImpl(_Handle + Schema.GetOffset(0x61A3C8D5974CB62A));
   }
   public CPerParticleFloatInput SpeedMin {
     get => new CPerParticleFloatInputImpl(_Handle + Schema.GetOffset(0x61A3C8D5B989E1F8));

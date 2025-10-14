@@ -56,7 +56,7 @@ CGameEntitySystem* GameEntitySystem()
     return g_pGameEntitySystem;
 }
 
-int64_t TakeDamageHook(void* baseEntity, void* info);
+int64_t TakeDamageHook(void* baseEntity, void* info, void* idk);
 void TraceShapeHook(void* _this, Ray_t& ray, Vector& start, Vector& end, CTraceFilter* filter, trace_t* trace);
 
 void CEntSystem::Initialize()
@@ -106,13 +106,13 @@ void TraceShapeHook(void* _this, Ray_t& ray, Vector& start, Vector& end, CTraceF
     reinterpret_cast<void(*)(void*, Ray_t&, Vector&, Vector&, CTraceFilter*, trace_t*)>(g_pTraceShapeHook->GetOriginal())(_this, ray, start, end, filter, trace);
 }
 
-int64_t TakeDamageHook(void* baseEntity, void* info)
+int64_t TakeDamageHook(void* baseEntity, void* info, void* idk)
 {
     if (g_pOnEntityTakeDamageCallback)
         if (reinterpret_cast<bool(*)(void*, void*)>(g_pOnEntityTakeDamageCallback)(baseEntity, info) == false)
             return 0;
 
-    return reinterpret_cast<int64_t(*)(void*, void*)>(g_pOnEntityTakeDamageHook->GetOriginal())(baseEntity, info);
+    return reinterpret_cast<int64_t(*)(void*, void*, void*)>(g_pOnEntityTakeDamageHook->GetOriginal())(baseEntity, info, idk);
 }
 
 void CEntSystem::StartupServer(const GameSessionConfiguration_t& config, ISource2WorldSession*, const char*)

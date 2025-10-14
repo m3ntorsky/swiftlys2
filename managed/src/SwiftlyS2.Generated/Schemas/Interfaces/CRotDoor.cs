@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRotDoor : CBaseDoor, ISchemaClass<CRotDoor> {
 
   static CRotDoor ISchemaClass<CRotDoor>.From(nint handle) => new CRotDoorImpl(handle);
-  static int ISchemaClass<CRotDoor>.Size => 2696;
+  static int ISchemaClass<CRotDoor>.Size => 2672;
 
   
   public ref bool SolidBsp { get; }

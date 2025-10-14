@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SetControlPointsToParticle : CParticleFunctionOperator, ISchemaClass<C_OP_SetControlPointsToParticle> {
 
   static C_OP_SetControlPointsToParticle ISchemaClass<C_OP_SetControlPointsToParticle>.From(nint handle) => new C_OP_SetControlPointsToParticleImpl(handle);
-  static int ISchemaClass<C_OP_SetControlPointsToParticle>.Size => 480;
+  static int ISchemaClass<C_OP_SetControlPointsToParticle>.Size => 496;
 
   
   public ref int ChildGroupID { get; }
@@ -21,6 +21,8 @@ public partial interface C_OP_SetControlPointsToParticle : CParticleFunctionOper
   public ref int NumControlPoints { get; }
   
   public ref int FirstSourcePoint { get; }
+  
+  public ref bool Reverse { get; }
   
   public ref bool SetOrientation { get; }
   

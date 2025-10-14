@@ -25,16 +25,16 @@ internal partial class ParticleNamedValueConfiguration_tImpl : SchemaClass, Part
   public SchemaUntypedField ConfigValue {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x4C42AD0ECF981D3C));
   }
+  public string BoundValuePath {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x4C42AD0ED4977C9F));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x4C42AD0ED4977C9F, value);
+  } 
   public ref ParticleAttachment_t AttachType {
     get => ref _Handle.AsRef<ParticleAttachment_t>(Schema.GetOffset(0x4C42AD0E432E8381));
   }
-  public string BoundEntityPath {
-    get {
-      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x4C42AD0E45A442E3));
-      return Schema.GetString(ptr);
-    }
-    set => Schema.SetString(_Handle, 0x4C42AD0E45A442E3, value);
-  } 
   public string StrEntityScope {
     get {
       var ptr = _Handle.Read<nint>(Schema.GetOffset(0x4C42AD0ECCAF0621));

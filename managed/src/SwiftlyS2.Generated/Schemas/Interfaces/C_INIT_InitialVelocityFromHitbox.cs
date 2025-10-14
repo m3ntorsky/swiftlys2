@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_InitialVelocityFromHitbox : CParticleFunctionInitializer, ISchemaClass<C_INIT_InitialVelocityFromHitbox> {
 
   static C_INIT_InitialVelocityFromHitbox ISchemaClass<C_INIT_InitialVelocityFromHitbox>.From(nint handle) => new C_INIT_InitialVelocityFromHitboxImpl(handle);
-  static int ISchemaClass<C_INIT_InitialVelocityFromHitbox>.Size => 600;
+  static int ISchemaClass<C_INIT_InitialVelocityFromHitbox>.Size => 616;
 
   
   public ref float VelocityMin { get; }

@@ -150,6 +150,12 @@ internal partial class CCSWeaponBaseVDataImpl : CBasePlayerWeaponVDataImpl, CCSW
   public ref float DisallowAttackAfterReloadStartDuration {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x62FB770588E73223));
   }
+  public ref int BurstShotCount {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x62FB770508DDF2C4));
+  }
+  public ref bool AllowBurstHolster {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x62FB770587F9A99B));
+  }
   public ref int RecoilSeed {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x62FB77055E857C76));
   }

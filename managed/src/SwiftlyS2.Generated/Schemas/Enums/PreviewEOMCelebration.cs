@@ -6,6 +6,8 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum PreviewEOMCelebration : uint {
 
+ INVALID = uint.MaxValue,
+
  WALKUP = 0,
 
  PUNCHING = 1,

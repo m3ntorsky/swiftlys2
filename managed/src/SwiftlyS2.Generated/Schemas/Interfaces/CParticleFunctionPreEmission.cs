@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleFunctionPreEmission : CParticleFunctionOperator, ISchemaClass<CParticleFunctionPreEmission> {
 
   static CParticleFunctionPreEmission ISchemaClass<CParticleFunctionPreEmission>.From(nint handle) => new CParticleFunctionPreEmissionImpl(handle);
-  static int ISchemaClass<CParticleFunctionPreEmission>.Size => 456;
+  static int ISchemaClass<CParticleFunctionPreEmission>.Size => 472;
 
   
   public ref bool RunOnce { get; }

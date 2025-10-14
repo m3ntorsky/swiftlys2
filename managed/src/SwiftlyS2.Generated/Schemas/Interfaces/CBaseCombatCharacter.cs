@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseCombatCharacter : CBaseFlex, ISchemaClass<CBaseCombatCharacter> {
 
   static CBaseCombatCharacter ISchemaClass<CBaseCombatCharacter>.From(nint handle) => new CBaseCombatCharacterImpl(handle);
-  static int ISchemaClass<CBaseCombatCharacter>.Size => 3032;
+  static int ISchemaClass<CBaseCombatCharacter>.Size => 3040;
 
   
   public ref bool ForceServerRagdoll { get; }
@@ -19,8 +19,6 @@ public partial interface CBaseCombatCharacter : CBaseFlex, ISchemaClass<CBaseCom
   public ref CUtlVector<CHandle<CEconWearable>> MyWearables { get; }
   
   public ref float ImpactEnergyScale { get; }
-  
-  public ref int MinVehicleDamageToTempRagdoll { get; }
   
   public ref bool ApplyStressDamage { get; }
   

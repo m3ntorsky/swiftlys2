@@ -22,6 +22,8 @@ public partial interface CDestructiblePart_DamageLevel : ISchemaClass<CDestructi
   
   public CSkillInt Health { get; }
   
+  public ref float CriticalDamagePercent { get; }
+  
   public ref EDestructiblePartDamagePassThroughType DamagePassthroughType { get; }
   
   public ref DestructiblePartDestructionDeathBehavior_t DestructionDeathBehavior { get; }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysicsPropRespawnable : CPhysicsProp, ISchemaClass<CPhysicsPropRespawnable> {
 
   static CPhysicsPropRespawnable ISchemaClass<CPhysicsPropRespawnable>.From(nint handle) => new CPhysicsPropRespawnableImpl(handle);
-  static int ISchemaClass<CPhysicsPropRespawnable>.Size => 3632;
+  static int ISchemaClass<CPhysicsPropRespawnable>.Size => 3648;
 
   
   public ref Vector OriginalSpawnOrigin { get; }

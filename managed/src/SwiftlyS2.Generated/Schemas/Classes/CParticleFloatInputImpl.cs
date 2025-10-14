@@ -57,6 +57,13 @@ internal partial class CParticleFloatInputImpl : CParticleInputImpl, CParticleFl
   public ref ParticleFloatRandomMode_t RandomMode {
     get => ref _Handle.AsRef<ParticleFloatRandomMode_t>(Schema.GetOffset(0x4330CD3247E88035));
   }
+  public string StrSnapshotSubset {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x4330CD32BD8A8E5E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x4330CD32BD8A8E5E, value);
+  } 
   public ref float LOD0 {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x4330CD32B17B2EE6));
   }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CShatterGlassShardPhysics : CPhysicsProp, ISchemaClass<CShatterGlassShardPhysics> {
 
   static CShatterGlassShardPhysics ISchemaClass<CShatterGlassShardPhysics>.From(nint handle) => new CShatterGlassShardPhysicsImpl(handle);
-  static int ISchemaClass<CShatterGlassShardPhysics>.Size => 3712;
+  static int ISchemaClass<CShatterGlassShardPhysics>.Size => 3728;
 
   
   public ref bool Debris { get; }

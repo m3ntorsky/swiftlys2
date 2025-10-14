@@ -36,6 +36,8 @@ public partial interface CPhysConstraint : CLogicalEntity, ISchemaClass<CPhysCon
   
   public ref bool SnapObjectPositions { get; }
   
+  public ref bool TreatEntity1AsInfiniteMass { get; }
+  
   public CEntityIOOutput OnBreak { get; }
 
 

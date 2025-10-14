@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFuncTankTrain : CFuncTrackTrain, ISchemaClass<CFuncTankTrain> {
 
   static CFuncTankTrain ISchemaClass<CFuncTankTrain>.From(nint handle) => new CFuncTankTrainImpl(handle);
-  static int ISchemaClass<CFuncTankTrain>.Size => 2416;
+  static int ISchemaClass<CFuncTankTrain>.Size => 2392;
 
   
   public CEntityIOOutput OnDeath { get; }

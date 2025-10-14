@@ -30,9 +30,6 @@ internal partial class CRagdollPropImpl : CBaseAnimGraphImpl, CRagdollProp {
   public ref CUtlVector<QAngle> RagAngles {
     get => ref _Handle.AsRef<CUtlVector<QAngle>>(Schema.GetOffset(0x9505BA78FD4E530D));
   }
-  public ref CHandle<CBaseEntity> RagdollSource {
-    get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x9505BA7835E0724F));
-  }
   public ref uint LastUpdateTickCount {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x9505BA785A98C204));
   }
@@ -113,9 +110,6 @@ internal partial class CRagdollPropImpl : CBaseAnimGraphImpl, CRagdollProp {
   }
   public void RagAnglesUpdated() {
     Schema.Update(_Handle, 0x9505BA78FD4E530D);
-  }
-  public void RagdollSourceUpdated() {
-    Schema.Update(_Handle, 0x9505BA7835E0724F);
   }
   public void BlendWeightUpdated() {
     Schema.Update(_Handle, 0x9505BA78E5D6B9CE);

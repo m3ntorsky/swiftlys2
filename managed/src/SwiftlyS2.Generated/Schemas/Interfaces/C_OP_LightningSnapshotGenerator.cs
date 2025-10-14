@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_LightningSnapshotGenerator : CParticleFunctionPreEmission, ISchemaClass<C_OP_LightningSnapshotGenerator> {
 
   static C_OP_LightningSnapshotGenerator ISchemaClass<C_OP_LightningSnapshotGenerator>.From(nint handle) => new C_OP_LightningSnapshotGeneratorImpl(handle);
-  static int ISchemaClass<C_OP_LightningSnapshotGenerator>.Size => 4352;
+  static int ISchemaClass<C_OP_LightningSnapshotGenerator>.Size => 4544;
 
   
   public ref int CPSnapshot { get; }

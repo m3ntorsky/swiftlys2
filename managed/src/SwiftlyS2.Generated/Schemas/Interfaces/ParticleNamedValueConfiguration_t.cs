@@ -19,9 +19,9 @@ public partial interface ParticleNamedValueConfiguration_t : ISchemaClass<Partic
   // KeyValues3
   public SchemaUntypedField ConfigValue { get; }
   
-  public ref ParticleAttachment_t AttachType { get; }
+  public string BoundValuePath { get; set; }
   
-  public string BoundEntityPath { get; set; }
+  public ref ParticleAttachment_t AttachType { get; }
   
   public string StrEntityScope { get; set; }
   

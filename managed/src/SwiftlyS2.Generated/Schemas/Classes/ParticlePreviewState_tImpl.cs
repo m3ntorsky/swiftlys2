@@ -76,6 +76,9 @@ internal partial class ParticlePreviewState_tImpl : SchemaClass, ParticlePreview
   public ref bool AnimationNonLooping {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x31FB1901F0071FD6));
   }
+  public ref bool SequenceNameIsAnimClipPath {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x31FB19013BFE81C7));
+  }
   public ref Vector PreviewGravity {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x31FB1901A6B7913F));
   }

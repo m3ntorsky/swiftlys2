@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SetControlPointPositionToRandomActiveCP : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetControlPointPositionToRandomActiveCP> {
 
   static C_OP_SetControlPointPositionToRandomActiveCP ISchemaClass<C_OP_SetControlPointPositionToRandomActiveCP>.From(nint handle) => new C_OP_SetControlPointPositionToRandomActiveCPImpl(handle);
-  static int ISchemaClass<C_OP_SetControlPointPositionToRandomActiveCP>.Size => 824;
+  static int ISchemaClass<C_OP_SetControlPointPositionToRandomActiveCP>.Size => 856;
 
   
   public ref int CP1 { get; }

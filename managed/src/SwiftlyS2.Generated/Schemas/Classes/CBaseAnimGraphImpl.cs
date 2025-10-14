@@ -51,6 +51,9 @@ internal partial class CBaseAnimGraphImpl : CBaseModelEntityImpl, CBaseAnimGraph
   public ref bool RagdollClientSide {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE501DB1EB6A5159C));
   }
+  public ref CTransform XParentedRagdollRootInEntitySpace {
+    get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xE501DB1EFC4C1401));
+  }
 
   public void InitiallyPopulateInterpHistoryUpdated() {
     Schema.Update(_Handle, 0xE501DB1E3087361C);

@@ -11,12 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVectorAnimParameter : CConcreteAnimParameter, ISchemaClass<CVectorAnimParameter> {
 
   static CVectorAnimParameter ISchemaClass<CVectorAnimParameter>.From(nint handle) => new CVectorAnimParameterImpl(handle);
-  static int ISchemaClass<CVectorAnimParameter>.Size => 144;
+  static int ISchemaClass<CVectorAnimParameter>.Size => 152;
 
   
   public ref Vector DefaultValue { get; }
   
   public ref bool Interpolate { get; }
+  
+  public ref AnimParamVectorType_t VectorType { get; }
 
 
 }

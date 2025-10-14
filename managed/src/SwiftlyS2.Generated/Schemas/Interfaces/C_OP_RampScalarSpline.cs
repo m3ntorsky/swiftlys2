@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RampScalarSpline : CParticleFunctionOperator, ISchemaClass<C_OP_RampScalarSpline> {
 
   static C_OP_RampScalarSpline ISchemaClass<C_OP_RampScalarSpline>.From(nint handle) => new C_OP_RampScalarSplineImpl(handle);
-  static int ISchemaClass<C_OP_RampScalarSpline>.Size => 528;
+  static int ISchemaClass<C_OP_RampScalarSpline>.Size => 544;
 
   
   public ref float RateMin { get; }

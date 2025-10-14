@@ -29,6 +29,9 @@ internal partial class CLogicCollisionPairImpl : CLogicalEntityImpl, CLogicColli
     }
     set => Schema.SetString(_Handle, 0x9E0FC6AC66765177, value);
   } 
+  public ref bool IncludeHierarchy {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9E0FC6ACC064916A));
+  }
   public ref bool SupportMultipleEntitiesWithSameName {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9E0FC6ACD009870A));
   }

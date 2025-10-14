@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CScriptTriggerMultiple : CTriggerMultiple, ISchemaClass<CScriptTriggerMultiple> {
 
   static CScriptTriggerMultiple ISchemaClass<CScriptTriggerMultiple>.From(nint handle) => new CScriptTriggerMultipleImpl(handle);
-  static int ISchemaClass<CScriptTriggerMultiple>.Size => 2552;
+  static int ISchemaClass<CScriptTriggerMultiple>.Size => 2528;
 
   
   public ref Vector Extent { get; }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointCommentaryNode : CBaseAnimGraph, ISchemaClass<CPointCommentaryNode> {
 
   static CPointCommentaryNode ISchemaClass<CPointCommentaryNode>.From(nint handle) => new CPointCommentaryNodeImpl(handle);
-  static int ISchemaClass<CPointCommentaryNode>.Size => 2936;
+  static int ISchemaClass<CPointCommentaryNode>.Size => 2960;
 
   
   public string PreCommands { get; set; }

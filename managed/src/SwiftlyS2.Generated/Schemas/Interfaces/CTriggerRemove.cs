@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTriggerRemove : CBaseTrigger, ISchemaClass<CTriggerRemove> {
 
   static CTriggerRemove ISchemaClass<CTriggerRemove>.From(nint handle) => new CTriggerRemoveImpl(handle);
-  static int ISchemaClass<CTriggerRemove>.Size => 2536;
+  static int ISchemaClass<CTriggerRemove>.Size => 2512;
 
   
   public CEntityIOOutput OnRemove { get; }

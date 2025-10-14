@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CServerRagdollTrigger : CBaseTrigger, ISchemaClass<CServerRagdollTrigger> {
 
   static CServerRagdollTrigger ISchemaClass<CServerRagdollTrigger>.From(nint handle) => new CServerRagdollTriggerImpl(handle);
-  static int ISchemaClass<CServerRagdollTrigger>.Size => 2496;
+  static int ISchemaClass<CServerRagdollTrigger>.Size => 2472;
 
 
 

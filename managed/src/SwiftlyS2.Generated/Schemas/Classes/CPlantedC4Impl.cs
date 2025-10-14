@@ -27,6 +27,9 @@ internal partial class CPlantedC4Impl : CBaseAnimGraphImpl, CPlantedC4 {
   public ref int SourceSoundscapeHash {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xE1614C8185EE0527));
   }
+  public ref bool AbortDetonationBecauseWorldIsFrozen {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE1614C812D71EDD6));
+  }
   public CAttributeContainer AttributeManager {
     get => new CAttributeContainerImpl(_Handle + Schema.GetOffset(0xE1614C81537B0586));
   }

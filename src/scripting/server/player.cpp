@@ -218,7 +218,7 @@ void Bridge_Player_TakeDamage(int playerid, void* dmginfo)
     if (!player) return;
 
     static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
-    reinterpret_cast<int64_t(*)(void*, void*)>(gamedata->GetSignatures()->Fetch("CBaseEntity::TakeDamage"))(player->GetPawn(), dmginfo);
+    reinterpret_cast<int64_t(*)(void*, void*, void*)>(gamedata->GetSignatures()->Fetch("CBaseEntity::TakeDamage"))(player->GetPawn(), dmginfo, 0);
 }
 
 void Bridge_Player_Teleport(int playerid, Vector pos, QAngle angle, Vector vel)

@@ -31,6 +31,9 @@ internal partial class CDestructiblePart_DamageLevelImpl : SchemaClass, CDestruc
   public CSkillInt Health {
     get => new CSkillIntImpl(_Handle + Schema.GetOffset(0xF69D69CB6E9C4CC3));
   }
+  public ref float CriticalDamagePercent {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xF69D69CB4488F688));
+  }
   public ref EDestructiblePartDamagePassThroughType DamagePassthroughType {
     get => ref _Handle.AsRef<EDestructiblePartDamagePassThroughType>(Schema.GetOffset(0xF69D69CB3D01100A));
   }

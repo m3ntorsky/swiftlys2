@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysMagnet : CBaseAnimGraph, ISchemaClass<CPhysMagnet> {
 
   static CPhysMagnet ISchemaClass<CPhysMagnet>.From(nint handle) => new CPhysMagnetImpl(handle);
-  static int ISchemaClass<CPhysMagnet>.Size => 2832;
+  static int ISchemaClass<CPhysMagnet>.Size => 2848;
 
   
   public CEntityIOOutput OnMagnetAttach { get; }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseModelEntity : CBaseEntity, ISchemaClass<CBaseModelEntity> {
 
   static CBaseModelEntity ISchemaClass<CBaseModelEntity>.From(nint handle) => new CBaseModelEntityImpl(handle);
-  static int ISchemaClass<CBaseModelEntity>.Size => 2032;
+  static int ISchemaClass<CBaseModelEntity>.Size => 2008;
 
   
   public CRenderComponent? CRenderComponent { get; }
@@ -86,10 +86,6 @@ public partial interface CBaseModelEntity : CBaseEntity, ISchemaClass<CBaseModel
   
   public ref Vector DecalForwardAxis { get; }
   
-  public ref float DecalHealBloodRate { get; }
-  
-  public ref float DecalHealHeightRate { get; }
-  
   public ref DecalMode_t DecalMode { get; }
   
   public ref DecalMode_t RequiredDecalMode { get; }
@@ -120,8 +116,6 @@ public partial interface CBaseModelEntity : CBaseEntity, ISchemaClass<CBaseModel
   public void AddDecalUpdated();
   public void DecalPositionUpdated();
   public void DecalForwardAxisUpdated();
-  public void DecalHealBloodRateUpdated();
-  public void DecalHealHeightRateUpdated();
   public void DecalModeUpdated();
   public void RequiredDecalModeUpdated();
   public void ConfigEntitiesToPropagateMaterialDecalsToUpdated();

@@ -18,7 +18,7 @@ public partial interface CSosGroupActionLimitSchema : CSosGroupActionSchema, ISc
   
   public ref SosActionStopType_t StopType { get; }
   
-  public ref SosActionSortType_t SortType { get; }
+  public ref SosActionLimitSortType_t SortType { get; }
   
   public ref bool StopImmediate { get; }
   

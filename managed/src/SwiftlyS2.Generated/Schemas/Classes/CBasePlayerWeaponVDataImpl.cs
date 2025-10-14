@@ -82,6 +82,9 @@ internal partial class CBasePlayerWeaponVDataImpl : CEntitySubclassVDataBaseImpl
   public ref bool TreatAsSingleClip {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x64E418A01B25858D));
   }
+  public ref bool KeepLoadedAmmo {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x64E418A0C9C228BF));
+  }
   public ref int Weight {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x64E418A054A5EA14));
   }

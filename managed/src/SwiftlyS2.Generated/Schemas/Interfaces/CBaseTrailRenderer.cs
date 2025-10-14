@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseTrailRenderer : CBaseRendererSource2, ISchemaClass<CBaseTrailRenderer> {
 
   static CBaseTrailRenderer ISchemaClass<CBaseTrailRenderer>.From(nint handle) => new CBaseTrailRendererImpl(handle);
-  static int ISchemaClass<CBaseTrailRenderer>.Size => 12016;
+  static int ISchemaClass<CBaseTrailRenderer>.Size => 12512;
 
   
   public ref ParticleOrientationChoiceList_t OrientationType { get; }

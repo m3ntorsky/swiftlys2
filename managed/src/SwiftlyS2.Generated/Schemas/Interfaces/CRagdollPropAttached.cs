@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRagdollPropAttached : CRagdollProp, ISchemaClass<CRagdollPropAttached> {
 
   static CRagdollPropAttached ISchemaClass<CRagdollPropAttached>.From(nint handle) => new CRagdollPropAttachedImpl(handle);
-  static int ISchemaClass<CRagdollPropAttached>.Size => 3088;
+  static int ISchemaClass<CRagdollPropAttached>.Size => 3104;
 
   
   public ref uint BoneIndexAttached { get; }

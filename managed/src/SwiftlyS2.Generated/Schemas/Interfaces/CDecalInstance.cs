@@ -24,6 +24,8 @@ public partial interface CDecalInstance : ISchemaClass<CDecalInstance> {
   
   public ref int BoneIndex { get; }
   
+  public ref int TriangleIndex { get; }
+  
   public ref Vector PositionLS { get; }
   
   public ref Vector NormalLS { get; }
@@ -58,9 +60,7 @@ public partial interface CDecalInstance : ISchemaClass<CDecalInstance> {
   
   public ref bool DoDecalLightmapping { get; }
   
-  public CDecalInstance? Next { get; }
-  
-  public CDecalInstance? Prev { get; }
+  public ref DecalMode_t SkinnedModelMode { get; }
 
 
 }

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderSprites : CBaseRendererSource2, ISchemaClass<C_OP_RenderSprites> {
 
   static C_OP_RenderSprites ISchemaClass<C_OP_RenderSprites>.From(nint handle) => new C_OP_RenderSpritesImpl(handle);
-  static int ISchemaClass<C_OP_RenderSprites>.Size => 18568;
+  static int ISchemaClass<C_OP_RenderSprites>.Size => 21056;
 
   
   public CParticleCollectionRendererFloatInput SequenceOverride { get; }
@@ -61,6 +61,8 @@ public partial interface C_OP_RenderSprites : CBaseRendererSource2, ISchemaClass
   public ref float OutlineEnd1 { get; }
   
   public ref ParticleLightingQuality_t LightingMode { get; }
+  
+  public CParticleCollectionRendererVecInput LightingOverride { get; }
   
   public CParticleCollectionRendererFloatInput LightingTessellation { get; }
   

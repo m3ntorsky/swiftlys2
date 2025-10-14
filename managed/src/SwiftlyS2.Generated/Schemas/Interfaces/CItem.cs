@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CItem : CBaseAnimGraph, ISchemaClass<CItem> {
 
   static CItem ISchemaClass<CItem>.From(nint handle) => new CItemImpl(handle);
-  static int ISchemaClass<CItem>.Size => 2904;
+  static int ISchemaClass<CItem>.Size => 2928;
 
   
   public CEntityIOOutput OnPlayerTouch { get; }

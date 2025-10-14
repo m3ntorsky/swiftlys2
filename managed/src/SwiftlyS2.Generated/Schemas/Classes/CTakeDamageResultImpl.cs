@@ -33,6 +33,9 @@ internal partial class CTakeDamageResultImpl : SchemaClass, CTakeDamageResult {
   public ref int TotalledDamageDealt {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xD4A7564D03ABE12B));
   }
+  public ref bool WasDamageSuppressed {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xD4A7564D21BB02B9));
+  }
 
 
 }

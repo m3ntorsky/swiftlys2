@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlayerSprayDecal : CModelPointEntity, ISchemaClass<CPlayerSprayDecal> {
 
   static CPlayerSprayDecal ISchemaClass<CPlayerSprayDecal>.From(nint handle) => new CPlayerSprayDecalImpl(handle);
-  static int ISchemaClass<CPlayerSprayDecal>.Size => 2248;
+  static int ISchemaClass<CPlayerSprayDecal>.Size => 2224;
 
   
   public ref int UniqueID { get; }

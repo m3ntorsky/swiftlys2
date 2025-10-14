@@ -15,17 +15,8 @@ internal partial class CTriggerFanImpl : CBaseTriggerImpl, CTriggerFan {
   public CTriggerFanImpl(nint handle) : base(handle) {
   }
 
-  public ref Vector FanOrigin {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2B53C49C18));
-  }
   public ref Vector FanOriginOffset {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2BAFB9770B));
-  }
-  public ref Vector FanEnd {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2BA34E3AAB));
-  }
-  public ref Vector NoiseDirectionTarget {
-    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2B59781ABB));
   }
   public ref Vector Direction {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2BDAE41DEE));
@@ -50,6 +41,18 @@ internal partial class CTriggerFanImpl : CBaseTriggerImpl, CTriggerFan {
   }
   public CountdownTimer RampTimer {
     get => new CountdownTimerImpl(_Handle + Schema.GetOffset(0x6A8B5C2B21725ED6));
+  }
+  public ref Vector FanOriginWS {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2BB1BF460A));
+  }
+  public ref Vector FanOriginLS {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2BF1CC76BD));
+  }
+  public ref Vector FanEndLS {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2B53F6BE42));
+  }
+  public ref Vector NoiseDirectionTarget {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x6A8B5C2B59781ABB));
   }
   public string InfoFan1 {
     get {
@@ -92,17 +95,8 @@ internal partial class CTriggerFanImpl : CBaseTriggerImpl, CTriggerFan {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x6A8B5C2B2401CC88));
   }
 
-  public void FanOriginUpdated() {
-    Schema.Update(_Handle, 0x6A8B5C2B53C49C18);
-  }
   public void FanOriginOffsetUpdated() {
     Schema.Update(_Handle, 0x6A8B5C2BAFB9770B);
-  }
-  public void FanEndUpdated() {
-    Schema.Update(_Handle, 0x6A8B5C2BA34E3AAB);
-  }
-  public void NoiseDirectionTargetUpdated() {
-    Schema.Update(_Handle, 0x6A8B5C2B59781ABB);
   }
   public void DirectionUpdated() {
     Schema.Update(_Handle, 0x6A8B5C2BDAE41DEE);

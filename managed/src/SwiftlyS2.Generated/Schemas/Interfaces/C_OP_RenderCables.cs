@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderCables : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderCables> {
 
   static C_OP_RenderCables ISchemaClass<C_OP_RenderCables>.From(nint handle) => new C_OP_RenderCablesImpl(handle);
-  static int ISchemaClass<C_OP_RenderCables>.Size => 5224;
+  static int ISchemaClass<C_OP_RenderCables>.Size => 5432;
 
   
   public CParticleCollectionFloatInput RadiusScale { get; }
@@ -51,6 +51,8 @@ public partial interface C_OP_RenderCables : CParticleFunctionRenderer, ISchemaC
   public ref int MaxTesselation { get; }
   
   public ref int Roundness { get; }
+  
+  public ref bool ForceRoundnessFixed { get; }
   
   public CParticleTransformInput LightingTransform { get; }
   

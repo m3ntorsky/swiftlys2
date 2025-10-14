@@ -45,8 +45,17 @@ internal partial class CSplineConstraintImpl : CPhysConstraintImpl, CSplineConst
   public ref float JointFriction {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC2DC06A05CA9FD47));
   }
+  public ref float TransitionTime {
+    get => ref _Handle.AsRef<float>(Schema.GetOffset(0xC2DC06A08D4BFC39));
+  }
   public ref Vector PreSolveAnchorPos {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC2DC06A0C7C3B9AE));
+  }
+  public GameTime_t StartTransitionTime {
+    get => new GameTime_tImpl(_Handle + Schema.GetOffset(0xC2DC06A0527F6AA9));
+  }
+  public ref Vector TangentSpaceAnchorAtTransitionStart {
+    get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0xC2DC06A0743F2C75));
   }
 
 

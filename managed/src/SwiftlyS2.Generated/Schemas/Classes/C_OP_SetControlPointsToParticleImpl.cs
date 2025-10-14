@@ -27,6 +27,9 @@ internal partial class C_OP_SetControlPointsToParticleImpl : CParticleFunctionOp
   public ref int FirstSourcePoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x119EA3089D7DC18E));
   }
+  public ref bool Reverse {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x119EA308EA4E22E5));
+  }
   public ref bool SetOrientation {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x119EA308E1390E37));
   }

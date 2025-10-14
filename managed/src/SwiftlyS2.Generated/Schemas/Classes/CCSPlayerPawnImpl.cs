@@ -134,12 +134,6 @@ public string LastPlaceName {
   public ref bool IsBuyMenuOpen {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABFBCDD8EC));
   }
-  public ref CTransform XLastHeadBoneTransform {
-    get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xC7614AAB83865E39));
-  }
-  public ref bool LastHeadBoneTransformIsValid {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB41218523));
-  }
   public GameTime_t LastLandTime {
     get => new GameTime_tImpl(_Handle + Schema.GetOffset(0xC7614AAB21F4A3D1));
   }

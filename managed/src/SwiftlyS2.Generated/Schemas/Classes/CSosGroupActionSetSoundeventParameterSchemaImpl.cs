@@ -31,8 +31,8 @@ internal partial class CSosGroupActionSetSoundeventParameterSchemaImpl : CSosGro
     }
     set => Schema.SetString(_Handle, 0x40D29D894ECBF7E4, value);
   } 
-  public ref SosActionSortType_t SortType {
-    get => ref _Handle.AsRef<SosActionSortType_t>(Schema.GetOffset(0x40D29D892E0E44B5));
+  public ref SosActionSetParamSortType_t SortType {
+    get => ref _Handle.AsRef<SosActionSetParamSortType_t>(Schema.GetOffset(0x40D29D892E0E44B5));
   }
 
 

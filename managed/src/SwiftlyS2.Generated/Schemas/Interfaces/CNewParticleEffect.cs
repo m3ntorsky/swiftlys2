@@ -61,6 +61,18 @@ public partial interface CNewParticleEffect : IParticleEffect, ISchemaClass<CNew
   // bitfield
   public SchemaUntypedField ShouldCheckFoW { get; }
   
+  // bitfield
+  public SchemaUntypedField IsAsyncCreate { get; }
+  
+  // bitfield
+  public SchemaUntypedField FreezeTransitionActive { get; }
+  
+  // bitfield
+  public SchemaUntypedField FreezeTargetState { get; }
+  
+  // bitfield
+  public SchemaUntypedField CanFreeze { get; }
+  
   public ref Vector SortOrigin { get; }
   
   public ref float Scale { get; }
@@ -74,12 +86,6 @@ public partial interface CNewParticleEffect : IParticleEffect, ISchemaClass<CNew
   public ref float FreezeTransitionDuration { get; }
   
   public ref float FreezeTransitionOverride { get; }
-  
-  public ref bool FreezeTransitionActive { get; }
-  
-  public ref bool FreezeTargetState { get; }
-  
-  public ref bool CanFreeze { get; }
   
   public ref Vector LastMin { get; }
   

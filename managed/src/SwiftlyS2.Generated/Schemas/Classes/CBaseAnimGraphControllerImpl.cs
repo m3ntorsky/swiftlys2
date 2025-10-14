@@ -78,6 +78,9 @@ internal partial class CBaseAnimGraphControllerImpl : CSkeletonAnimationControll
   public ref int ServerGraphDefReloadCountAG2 {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFA1FB81E6A8D1A13));
   }
+  public ref int ServerSerializationContextIteration {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xFA1FB81ED9F8A6D4));
+  }
 
   public void AnimGraphNetworkedVarsUpdated() {
     Schema.Update(_Handle, 0xFA1FB81EA83A7C39);
@@ -117,5 +120,8 @@ internal partial class CBaseAnimGraphControllerImpl : CSkeletonAnimationControll
   }
   public void ServerGraphDefReloadCountAG2Updated() {
     Schema.Update(_Handle, 0xFA1FB81E6A8D1A13);
+  }
+  public void ServerSerializationContextIterationUpdated() {
+    Schema.Update(_Handle, 0xFA1FB81ED9F8A6D4);
   }
 }

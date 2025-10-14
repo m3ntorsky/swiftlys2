@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseAnimGraph : CBaseModelEntity, ISchemaClass<CBaseAnimGraph> {
 
   static CBaseAnimGraph ISchemaClass<CBaseAnimGraph>.From(nint handle) => new CBaseAnimGraphImpl(handle);
-  static int ISchemaClass<CBaseAnimGraph>.Size => 2688;
+  static int ISchemaClass<CBaseAnimGraph>.Size => 2704;
 
   
   public ref bool InitiallyPopulateInterpHistory { get; }
@@ -35,6 +35,8 @@ public partial interface CBaseAnimGraph : CBaseModelEntity, ISchemaClass<CBaseAn
   public ref bool RagdollEnabled { get; }
   
   public ref bool RagdollClientSide { get; }
+  
+  public ref CTransform XParentedRagdollRootInEntitySpace { get; }
 
   public void InitiallyPopulateInterpHistoryUpdated();
   public void AnimGraphUpdateEnabledUpdated();

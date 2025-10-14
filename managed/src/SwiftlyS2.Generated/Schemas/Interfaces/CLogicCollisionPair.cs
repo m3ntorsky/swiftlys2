@@ -18,6 +18,8 @@ public partial interface CLogicCollisionPair : CLogicalEntity, ISchemaClass<CLog
   
   public string NameAttach2 { get; set; }
   
+  public ref bool IncludeHierarchy { get; }
+  
   public ref bool SupportMultipleEntitiesWithSameName { get; }
   
   public ref bool Disabled { get; }

@@ -45,6 +45,9 @@ internal partial class CNmStateNode__CDefinitionImpl : CNmPoseNode__CDefinitionI
   public ref bool IsOffState {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1C172810291F238F));
   }
+  public ref bool UseActualElapsedTimeInStateForTimedEvents {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x1C1728106B790DFA));
+  }
 
 
 }

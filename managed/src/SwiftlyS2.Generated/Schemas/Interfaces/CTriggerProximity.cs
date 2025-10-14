@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTriggerProximity : CBaseTrigger, ISchemaClass<CTriggerProximity> {
 
   static CTriggerProximity ISchemaClass<CTriggerProximity>.From(nint handle) => new CTriggerProximityImpl(handle);
-  static int ISchemaClass<CTriggerProximity>.Size => 2560;
+  static int ISchemaClass<CTriggerProximity>.Size => 2536;
 
   
   public ref CHandle<CBaseEntity> MeasureTarget { get; }

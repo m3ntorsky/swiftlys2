@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CColorCorrectionVolume : CBaseTrigger, ISchemaClass<CColorCorrectionVolume> {
 
   static CColorCorrectionVolume ISchemaClass<CColorCorrectionVolume>.From(nint handle) => new CColorCorrectionVolumeImpl(handle);
-  static int ISchemaClass<CColorCorrectionVolume>.Size => 3040;
+  static int ISchemaClass<CColorCorrectionVolume>.Size => 3016;
 
   
   public ref float MaxWeight { get; }

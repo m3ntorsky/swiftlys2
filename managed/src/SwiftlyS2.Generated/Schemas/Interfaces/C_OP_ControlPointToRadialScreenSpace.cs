@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_ControlPointToRadialScreenSpace : CParticleFunctionPreEmission, ISchemaClass<C_OP_ControlPointToRadialScreenSpace> {
 
   static C_OP_ControlPointToRadialScreenSpace ISchemaClass<C_OP_ControlPointToRadialScreenSpace>.From(nint handle) => new C_OP_ControlPointToRadialScreenSpaceImpl(handle);
-  static int ISchemaClass<C_OP_ControlPointToRadialScreenSpace>.Size => 488;
+  static int ISchemaClass<C_OP_ControlPointToRadialScreenSpace>.Size => 504;
 
   
   public ref int CPIn { get; }

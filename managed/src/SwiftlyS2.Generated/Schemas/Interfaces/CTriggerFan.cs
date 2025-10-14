@@ -14,13 +14,7 @@ public partial interface CTriggerFan : CBaseTrigger, ISchemaClass<CTriggerFan> {
   static int ISchemaClass<CTriggerFan>.Size => 2672;
 
   
-  public ref Vector FanOrigin { get; }
-  
   public ref Vector FanOriginOffset { get; }
-  
-  public ref Vector FanEnd { get; }
-  
-  public ref Vector NoiseDirectionTarget { get; }
   
   public ref Vector Direction { get; }
   
@@ -37,6 +31,14 @@ public partial interface CTriggerFan : CBaseTrigger, ISchemaClass<CTriggerFan> {
   public ref bool Falloff { get; }
   
   public CountdownTimer RampTimer { get; }
+  
+  public ref Vector FanOriginWS { get; }
+  
+  public ref Vector FanOriginLS { get; }
+  
+  public ref Vector FanEndLS { get; }
+  
+  public ref Vector NoiseDirectionTarget { get; }
   
   public string InfoFan1 { get; set; }
   
@@ -62,10 +64,7 @@ public partial interface CTriggerFan : CBaseTrigger, ISchemaClass<CTriggerFan> {
   
   public ref int ManagerFanIdx { get; }
 
-  public void FanOriginUpdated();
   public void FanOriginOffsetUpdated();
-  public void FanEndUpdated();
-  public void NoiseDirectionTargetUpdated();
   public void DirectionUpdated();
   public void PushTowardsInfoTargetUpdated();
   public void PushAwayFromInfoTargetUpdated();

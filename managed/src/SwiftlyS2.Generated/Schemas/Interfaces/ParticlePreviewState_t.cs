@@ -44,6 +44,8 @@ public partial interface ParticlePreviewState_t : ISchemaClass<ParticlePreviewSt
   
   public ref bool AnimationNonLooping { get; }
   
+  public ref bool SequenceNameIsAnimClipPath { get; }
+  
   public ref Vector PreviewGravity { get; }
 
 

@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_AgeNoise : CParticleFunctionInitializer, ISchemaClass<C_INIT_AgeNoise> {
 
   static C_INIT_AgeNoise ISchemaClass<C_INIT_AgeNoise>.From(nint handle) => new C_INIT_AgeNoiseImpl(handle);
-  static int ISchemaClass<C_INIT_AgeNoise>.Size => 496;
+  static int ISchemaClass<C_INIT_AgeNoise>.Size => 512;
 
   
   public ref bool AbsVal { get; }

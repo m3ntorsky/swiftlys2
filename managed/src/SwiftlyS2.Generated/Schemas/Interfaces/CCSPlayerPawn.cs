@@ -11,7 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlayerPawn> {
 
   static CCSPlayerPawn ISchemaClass<CCSPlayerPawn>.From(nint handle) => new CCSPlayerPawnImpl(handle);
-  static int ISchemaClass<CCSPlayerPawn>.Size => 7312;
+  static int ISchemaClass<CCSPlayerPawn>.Size => 7296;
 
   
   public CCSPlayer_BulletServices? BulletServices { get; }
@@ -75,10 +75,6 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
   public ref CUtlVector<QAngle> AimPunchCache { get; }
   
   public ref bool IsBuyMenuOpen { get; }
-  
-  public ref CTransform XLastHeadBoneTransform { get; }
-  
-  public ref bool LastHeadBoneTransformIsValid { get; }
   
   public GameTime_t LastLandTime { get; }
   
