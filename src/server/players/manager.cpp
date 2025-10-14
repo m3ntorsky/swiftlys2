@@ -52,7 +52,6 @@ public:
 #endif
 };
 
-SH_DECL_EXTERN3_void(IServerGameDLL, GameFrame, SH_NOATTRIB, 0, bool, bool, bool);
 SH_DECL_EXTERN4_void(IServerGameClients, ClientPutInServer, SH_NOATTRIB, 0, CPlayerSlot, char const*, int, uint64);
 SH_DECL_EXTERN5_void(IServerGameClients, ClientDisconnect, SH_NOATTRIB, 0, CPlayerSlot, ENetworkDisconnectionReason, const char*, uint64, const char*);
 SH_DECL_EXTERN6(IServerGameClients, ClientConnect, SH_NOATTRIB, 0, bool, CPlayerSlot, const char*, uint64, const char*, bool, CBufferString*);
@@ -60,8 +59,10 @@ SH_DECL_EXTERN6_void(IServerGameClients, OnClientConnected, SH_NOATTRIB, 0, CPla
 SH_DECL_EXTERN7_void(ISource2GameEntities, CheckTransmit, SH_NOATTRIB, 0, CCheckTransmitInfo**, int, CBitVec<16384>&, CBitVec<16384>&, const Entity2Networkable_t**, const uint16_t*, int);
 
 IFunctionHook* g_pProcessUserCmdsHook = nullptr;
+IVFunctionHook* g_pOnGameFramePlayerHook = nullptr;
 
 void* ProcessUsercmdsHook(void* pController, CUserCmd* cmds, int numcmds, bool paused, float margin);
+void OnGameFramePlayerHook(void* _this, bool simulate, bool first, bool last);
 
 void CPlayerManager::Initialize()
 {
@@ -78,15 +79,18 @@ void CPlayerManager::Initialize()
     SH_ADD_HOOK_MEMFUNC(IServerGameClients, OnClientConnected, gameclients, this, &CPlayerManager::OnClientConnected, false);
     SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientDisconnect, gameclients, this, &CPlayerManager::ClientDisconnect, true);
     SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientPutInServer, gameclients, this, &CPlayerManager::OnClientPutInServer, true);
-    SH_ADD_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CPlayerManager::GameFrame, true);
     SH_ADD_HOOK_MEMFUNC(ISource2GameEntities, CheckTransmit, gameentities, this, &CPlayerManager::CheckTransmit, true);
 
     auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
 
     auto processusercmds = gamedata->GetSignatures()->Fetch("CCSPlayerController::ProcessUserCmd");
-    g_pProcessUserCmdsHook = hooksmanager->CreateFunctionHook();
 
+    g_pOnGameFramePlayerHook = hooksmanager->CreateVFunctionHook();
+    g_pOnGameFramePlayerHook->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameFrame"), reinterpret_cast<void*>(OnGameFramePlayerHook));
+    g_pOnGameFramePlayerHook->Enable();
+
+    g_pProcessUserCmdsHook = hooksmanager->CreateFunctionHook();
     g_pProcessUserCmdsHook->SetHookFunction(processusercmds, reinterpret_cast<void*>(ProcessUsercmdsHook));
     g_pProcessUserCmdsHook->Enable();
 }
@@ -107,13 +111,23 @@ void CPlayerManager::Shutdown() {
     SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, OnClientConnected, gameclients, this, &CPlayerManager::OnClientConnected, false);
     SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, ClientDisconnect, gameclients, this, &CPlayerManager::ClientDisconnect, true);
     SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, ClientPutInServer, gameclients, this, &CPlayerManager::OnClientPutInServer, true);
-    SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CPlayerManager::GameFrame, true);
     SH_REMOVE_HOOK_MEMFUNC(ISource2GameEntities, CheckTransmit, gameentities, this, &CPlayerManager::CheckTransmit, true);
 
-    g_pProcessUserCmdsHook->Disable();
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
-    hooksmanager->DestroyFunctionHook(g_pProcessUserCmdsHook);
-    g_pProcessUserCmdsHook = nullptr;
+
+    if (g_pOnGameFramePlayerHook)
+    {
+        g_pOnGameFramePlayerHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pOnGameFramePlayerHook);
+        g_pOnGameFramePlayerHook = nullptr;
+    }
+
+    if (g_pProcessUserCmdsHook)
+    {
+        g_pProcessUserCmdsHook->Disable();
+        hooksmanager->DestroyFunctionHook(g_pProcessUserCmdsHook);
+        g_pProcessUserCmdsHook = nullptr;
+    }
 }
 
 extern void* g_pOnClientPutInServerCallback;
@@ -158,7 +172,7 @@ void CPlayerManager::CheckTransmit(CCheckTransmitInfo** ppInfoList, int infoCoun
         uint64_t* baseAlways = reinterpret_cast<uint64_t*>(pInfo->m_pTransmitAlways->Base());
         auto& activeMasks = blockedBits.activeMasks;
 
-        // NUM_MASKS_ACTIVE ops = NUM_MASKS_ACTIVE*32 bits -> 64 players -> NUM_MASKS_ACTIVE*64 ops
+        // NUM_MASKS_ACTIVE ops = NUM_MASKS_ACTIVE*64 bits -> 64 players -> NUM_MASKS_ACTIVE*64 ops
         for (auto& dword : activeMasks) {
             base[dword] &= ~blockedBits.blockedMask[dword];
             baseAlways[dword] &= ~blockedBits.blockedMask[dword];
@@ -184,8 +198,10 @@ void CPlayerManager::CheckTransmit(CCheckTransmitInfo** ppInfoList, int infoCoun
 
 extern void* g_pOnGameTickCallback;
 
-void CPlayerManager::GameFrame(bool simulate, bool first, bool last)
+void OnGameFramePlayerHook(void* _this, bool simulate, bool first, bool last)
 {
+    reinterpret_cast<decltype(&OnGameFramePlayerHook)>(g_pOnGameFramePlayerHook->GetOriginal())(_this, simulate, first, last);
+
     static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     static auto vgui = g_ifaceService.FetchInterface<IVGUI>(VGUI_INTERFACE_VERSION);
 

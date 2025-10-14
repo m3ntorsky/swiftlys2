@@ -19,21 +19,27 @@
 #include "vfunction.h"
 
 #include <api/interfaces/manager.h>
+#include <s2binlib/s2binlib.h>
 
 void VFunctionHook::SetHookFunction(const std::string& interface, int index, void* callback)
 {
     static auto iface = g_ifaceService.FetchInterface<void>(interface.c_str());
     if (!iface) return;
 
-    m_oHook = safetyhook::create_inline(((void***)iface)[0][index], callback, safetyhook::InlineHook::Flags::StartDisabled);
+    void* trampoline_addr = nullptr;
+    s2binlib_install_trampoline(((void*)((uintptr_t)(*(void**)iface) + 8 * index)), &trampoline_addr);
+
+    m_oHook = safetyhook::create_inline(trampoline_addr, callback, safetyhook::InlineHook::Flags::StartDisabled);
 }
 
 void VFunctionHook::SetHookFunction(void* instance, int index, void* callback, bool is_vtable)
 {
     if (!instance) return;
 
-    if (is_vtable) m_oHook = safetyhook::create_inline(((void**)instance)[index], callback, safetyhook::InlineHook::Flags::StartDisabled);
-    else m_oHook = safetyhook::create_inline(((void***)instance)[0][index], callback, safetyhook::InlineHook::Flags::StartDisabled);
+    void* trampoline_addr = nullptr;
+    s2binlib_install_trampoline(is_vtable ? (void*)((uintptr_t)instance + 8 * index) : ((void*)((uintptr_t)(*(void**)instance) + 8 * index)), &trampoline_addr);
+
+    m_oHook = safetyhook::create_inline(trampoline_addr, callback, safetyhook::InlineHook::Flags::StartDisabled);
 }
 
 void VFunctionHook::Enable()

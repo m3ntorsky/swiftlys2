@@ -44,7 +44,6 @@ using json = nlohmann::json;
 
 SH_DECL_EXTERN2(IGameEventManager2, FireEvent, SH_NOATTRIB, 0, bool, IGameEvent*, bool);
 SH_DECL_EXTERN2(IGameEventManager2, LoadEventsFromFile, SH_NOATTRIB, 0, int, const char*, bool);
-SH_DECL_EXTERN3_void(IServerGameDLL, GameFrame, SH_NOATTRIB, 0, bool, bool, bool);
 SH_DECL_EXTERN3_void(INetworkServerService, StartupServer, SH_NOATTRIB, 0, const GameSessionConfiguration_t&, ISource2WorldSession*, const char*);
 
 std::map<uint64_t, std::function<int(std::string, IGameEvent*, bool&)>> g_mEventListeners;
@@ -64,6 +63,9 @@ bool g_bEventsLoaded = false;
 int g_uLoadEventFromFileHookID = 0;
 
 IGameEventManager2* g_gameEventManager = nullptr;
+IVFunctionHook* g_GameFrameHookEventManager = nullptr;
+
+void GameFrameEventManager(void* _this, bool simulate, bool first, bool last);
 
 void CEventManager::Initialize(std::string game_name)
 {
@@ -78,7 +80,13 @@ void CEventManager::Initialize(std::string game_name)
 
     auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
 
-    SH_ADD_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CEventManager::GameFrame, true);
+    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+
+    g_GameFrameHookEventManager = hooksmanager->CreateVFunctionHook();
+
+    g_GameFrameHookEventManager->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameFrame"), reinterpret_cast<void*>(GameFrameEventManager));
+    g_GameFrameHookEventManager->Enable();
 
     RegisterGameEventListener("round_start");
     AddGameEventFireListener([](std::string event_name, IGameEvent* event, bool& dont_broadcast) -> int {
@@ -105,13 +113,20 @@ void CEventManager::Shutdown()
     SH_REMOVE_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEvent, false);
     SH_REMOVE_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEventPost, true);
     SH_REMOVE_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEventManager::OnStartupServer, true);
-    SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CEventManager::GameFrame, true);
     SH_REMOVE_HOOK_ID(g_uLoadEventFromFileHookID);
+
+    if (g_GameFrameHookEventManager)
+    {
+        g_GameFrameHookEventManager->Disable();
+        static auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+        hooksmanager->DestroyVFunctionHook(g_GameFrameHookEventManager);
+    }
 }
 
-void CEventManager::GameFrame(bool simulate, bool first, bool last)
+void GameFrameEventManager(void* _this, bool simulate, bool first, bool last)
 {
-    // printf("SourceHook GameFrame\n");
+    reinterpret_cast<decltype(&GameFrameEventManager)>(g_GameFrameHookEventManager->GetOriginal())(_this, simulate, first, last);
+
     if (processingTimeouts)
     {
         int64_t t = GetTime();

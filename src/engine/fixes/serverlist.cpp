@@ -25,35 +25,46 @@
 
 #include "serverlist.h"
 
-SH_DECL_EXTERN3_void(IServerGameDLL, GameFrame, SH_NOATTRIB, 0, bool, bool, bool);
+IVFunctionHook* g_GameFrameHook = nullptr;
+
+void GameFrame(void* _this, bool simulate, bool first, bool last);
 
 void ServerListFix::Start()
 {
-    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
+    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
-    SH_ADD_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &ServerListFix::GameFrame, true);
+    g_GameFrameHook = hooksmanager->CreateVFunctionHook();
+
+    g_GameFrameHook->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameFrame"), reinterpret_cast<void*>(GameFrame));
+    g_GameFrameHook->Enable();
 }
 
 void ServerListFix::Stop()
 {
-    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
-
-    SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &ServerListFix::GameFrame, true);
+    if (g_GameFrameHook)
+    {
+        g_GameFrameHook->Disable();
+        static auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+        hooksmanager->DestroyVFunctionHook(g_GameFrameHook);
+    }
 }
 
-void ServerListFix::GameFrame(bool simulate, bool first, bool last)
+void GameFrame(void* _this, bool simulate, bool first, bool last)
 {
+    reinterpret_cast<decltype(&GameFrame)>(g_GameFrameHook->GetOriginal())(_this, simulate, first, last);
+
     static double l_NextUpdate = 0.0;
 
     if (double curtime = Plat_FloatTime(); curtime >= l_NextUpdate)
     {
         l_NextUpdate = curtime + 5.0;
 
-        auto engine = g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER);
-        auto gameclients = g_ifaceService.FetchInterface<ISource2GameClients>(INTERFACEVERSION_SERVERGAMECLIENTS);
+        static auto engine = g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER);
+        static auto gameclients = g_ifaceService.FetchInterface<ISource2GameClients>(INTERFACEVERSION_SERVERGAMECLIENTS);
 
-        auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
-        auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
+        static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+        static auto schema = g_ifaceService.FetchInterface<ISDKSchema>(SDKSCHEMA_INTERFACE_VERSION);
 
         for (int i = 0; i < playermanager->GetPlayerCap(); i++)
         {

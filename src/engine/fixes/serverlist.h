@@ -24,8 +24,6 @@ class ServerListFix
 public:
     void Start();
     void Stop();
-
-    void GameFrame(bool simulate, bool first, bool last);
 };
 
 #endif

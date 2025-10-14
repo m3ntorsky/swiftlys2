@@ -97,11 +97,14 @@
         "windows": 1088,
         "linux": 1088
     },
-    /*
-    From sdk
-    */
+    /* From sdk */
     "ICvar::FindConCommand": {
         "windows": 17,
         "linux": 17
+    },
+    /* From sdk */
+    "IServerGameDLL::GameFrame": {
+        "windows": 19,
+        "linux": 19
     }
 }

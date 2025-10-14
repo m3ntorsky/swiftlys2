@@ -49,7 +49,6 @@ public:
     int LoadEventsFromFile(const char* filePath, bool searchAll);
     bool OnFireEvent(IGameEvent* pEvent, bool bDontBroadcast);
     bool OnFireEventPost(IGameEvent* pEvent, bool bDontBroadcast);
-    void GameFrame(bool simulate, bool first, bool last);
 private:
     QueueMutex m_mtxLock;
 };
