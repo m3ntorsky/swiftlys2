@@ -48,9 +48,6 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     m_iKind = kind;
     SetupConsoleColors();
 
-
-    // s2binlib_pattern
-
     auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
 
     if (GetCurrentGame() == "unknown") {
@@ -210,7 +207,7 @@ void* SwiftlyCore::GetInterface(const std::string& iface_name)
 
 void SwiftlyCore::SendConsoleMessage(const std::string& message)
 {
-    if (m_iKind == BridgeKind_t::Metamod) g_MMPluginBridge.SendConsoleMessage(message);
+    Msg("%s", message.c_str());
 }
 
 std::string SwiftlyCore::GetCurrentGame()

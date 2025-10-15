@@ -41,9 +41,6 @@ public:
 
     void* GetInterface(const std::string& interface_name);
 
-    void SendConsoleMessage(const std::string& message);
-
-    bool OnConvarQuery(const CNetMessagePB<CCLCMsg_RespondCvarValue>& msg);
     void Hook_GameServerSteamAPIActivated();
     void Hook_GameServerSteamAPIDeactivated();
 

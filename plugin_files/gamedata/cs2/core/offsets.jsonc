@@ -102,9 +102,17 @@
         "windows": 17,
         "linux": 17
     },
+    "ICvar::DispatchConCommand": {
+        "windows": 20,
+        "linux": 20
+    },
     /* From sdk */
     "IServerGameDLL::GameFrame": {
         "windows": 19,
         "linux": 19
+    },
+    "CServerSideClient::ProcessRespondCvarValue": {
+        "windows": 38,
+        "linux": 40
     }
 }

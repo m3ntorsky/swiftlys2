@@ -37,7 +37,8 @@ std::map<uint64_t, std::function<int(int, const std::string&, bool)>> g_mClientC
 std::set<std::string> commandPrefixes;
 std::set<std::string> silentCommandPrefixes;
 
-SH_DECL_EXTERN3_void(ICvar, DispatchConCommand, SH_NOATTRIB, 0, ConCommandRef, const CCommandContext&, const CCommand&);
+void DispatchConCommand(void* _this, ConCommandRef cmd, const CCommandContext& ctx, const CCommand& args);
+IVFunctionHook* g_pDispatchConCommandHook = nullptr;
 
 static void commandsCallback(const CCommandContext& context, const CCommand& args)
 {
@@ -58,14 +59,23 @@ static void commandsCallback(const CCommandContext& context, const CCommand& arg
 
 void CServerCommands::Initialize()
 {
-    auto cvar = g_ifaceService.FetchInterface<ICvar>(CVAR_INTERFACE_VERSION);
-    SH_ADD_HOOK_MEMFUNC(ICvar, DispatchConCommand, cvar, this, &CServerCommands::DispatchConCommand, false);
+    static auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+
+    g_pDispatchConCommandHook = hooksmanager->CreateVFunctionHook();
+    g_pDispatchConCommandHook->SetHookFunction(CVAR_INTERFACE_VERSION, gamedata->GetOffsets()->Fetch("ICvar::DispatchConCommand"), (void*)DispatchConCommand);
+    g_pDispatchConCommandHook->Enable();
 }
 
 void CServerCommands::Shutdown()
 {
-    auto cvar = g_ifaceService.FetchInterface<ICvar>(CVAR_INTERFACE_VERSION);
-    SH_REMOVE_HOOK_MEMFUNC(ICvar, DispatchConCommand, cvar, this, &CServerCommands::DispatchConCommand, false);
+    static auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    if (g_pDispatchConCommandHook)
+    {
+        g_pDispatchConCommandHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pDispatchConCommandHook);
+        g_pDispatchConCommandHook = nullptr;
+    }
 }
 
 // @returns 1 - command is not silent
@@ -244,7 +254,7 @@ void CServerCommands::UnregisterClientChatListener(uint64_t listener_id)
     g_mClientChatListeners.erase(listener_id);
 }
 
-void CServerCommands::DispatchConCommand(ConCommandRef cmd, const CCommandContext& ctx, const CCommand& args)
+void DispatchConCommand(void* _this, ConCommandRef cmd, const CCommandContext& ctx, const CCommand& args)
 {
     CPlayerSlot slot = ctx.GetPlayerSlot();
     static auto servercommands = g_ifaceService.FetchInterface<IServerCommands>(SERVERCOMMANDS_INTERFACE_VERSION);
@@ -253,7 +263,7 @@ void CServerCommands::DispatchConCommand(ConCommandRef cmd, const CCommandContex
 
     if (slot.Get() != -1)
     {
-        if (!servercommands->HandleClientCommand(slot.Get(), args.GetCommandString())) RETURN_META(MRES_SUPERCEDE);
+        if (!servercommands->HandleClientCommand(slot.Get(), args.GetCommandString())) return;
 
         std::string command = args.Arg(0);
         if (command == "say" || command == "say_team")
@@ -265,7 +275,7 @@ void CServerCommands::DispatchConCommand(ConCommandRef cmd, const CCommandContex
             bool teamonly = (command == "say_team");
 
             auto text = args[1];
-            if (strlen(text) == 0) RETURN_META(MRES_SUPERCEDE);
+            if (strlen(text) == 0) return;
 
             if (controller)
             {
@@ -282,7 +292,9 @@ void CServerCommands::DispatchConCommand(ConCommandRef cmd, const CCommandContex
             }
 
             int handleCommandReturn = servercommands->HandleCommand(slot.Get(), text);
-            if (handleCommandReturn == 2 || !servercommands->HandleClientChat(slot.Get(), text, teamonly)) RETURN_META(MRES_SUPERCEDE);
+            if (handleCommandReturn == 2 || !servercommands->HandleClientChat(slot.Get(), text, teamonly)) return;
         }
     }
+
+    return reinterpret_cast<decltype(&DispatchConCommand)>(g_pDispatchConCommandHook->GetOriginal())(_this, cmd, ctx, args);
 }

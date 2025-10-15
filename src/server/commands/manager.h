@@ -46,8 +46,6 @@ public:
     // playerid, text, teamonly
     virtual uint64_t RegisterClientChatListener(std::function<int(int, const std::string&, bool)> listener) override;
     virtual void UnregisterClientChatListener(uint64_t listener_id) override;
-
-    void DispatchConCommand(ConCommandRef cmd, const CCommandContext& ctx, const CCommand& args);
 };
 
 #endif
