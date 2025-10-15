@@ -12,6 +12,7 @@ internal class StartupService : IHostedService
   public StartupService(IServiceProvider provider)
   {
     _provider = provider;
+    provider.UseCoreCommandService();
     provider.UseCoreHookService();
     provider.UsePermissionManager();
     provider.UsePluginManager();

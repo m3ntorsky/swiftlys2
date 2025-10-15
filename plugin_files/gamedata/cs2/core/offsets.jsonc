@@ -121,7 +121,7 @@
     },
     "IGameEventSystem::PostEventAbstract": {
         "windows": 16,
-        "linux": 16
+        "linux": 15
     },
     "INetworkServerService::StartupServer": {
         "windows": 26,
