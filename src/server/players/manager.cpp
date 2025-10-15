@@ -52,17 +52,24 @@ public:
 #endif
 };
 
-SH_DECL_EXTERN4_void(IServerGameClients, ClientPutInServer, SH_NOATTRIB, 0, CPlayerSlot, char const*, int, uint64);
-SH_DECL_EXTERN5_void(IServerGameClients, ClientDisconnect, SH_NOATTRIB, 0, CPlayerSlot, ENetworkDisconnectionReason, const char*, uint64, const char*);
-SH_DECL_EXTERN6(IServerGameClients, ClientConnect, SH_NOATTRIB, 0, bool, CPlayerSlot, const char*, uint64, const char*, bool, CBufferString*);
-SH_DECL_EXTERN6_void(IServerGameClients, OnClientConnected, SH_NOATTRIB, 0, CPlayerSlot, const char*, uint64, const char*, const char*, bool);
-SH_DECL_EXTERN7_void(ISource2GameEntities, CheckTransmit, SH_NOATTRIB, 0, CCheckTransmitInfo**, int, CBitVec<16384>&, CBitVec<16384>&, const Entity2Networkable_t**, const uint16_t*, int);
-
 IFunctionHook* g_pProcessUserCmdsHook = nullptr;
 IVFunctionHook* g_pOnGameFramePlayerHook = nullptr;
 
+IVFunctionHook* g_pClientConnectHook = nullptr;
+IVFunctionHook* g_pOnClientConnectedHook = nullptr;
+IVFunctionHook* g_pClientDisconnectHook = nullptr;
+IVFunctionHook* g_pClientPutInServerHook = nullptr;
+
+IVFunctionHook* g_pCheckTransmitHook = nullptr;
+
 void* ProcessUsercmdsHook(void* pController, CUserCmd* cmds, int numcmds, bool paused, float margin);
 void OnGameFramePlayerHook(void* _this, bool simulate, bool first, bool last);
+
+void OnClientPutInServerHook(void* _this, CPlayerSlot slot, char const* pszName, int type, uint64 xuid);
+bool ClientConnectHook(void* _this, CPlayerSlot slot, const char* pszName, uint64 xuid, const char* pszNetworkID, bool unk1, CBufferString* pRejectReason);
+void OnClientConnectedHook(void* _this, CPlayerSlot slot, const char* pszName, uint64 xuid, const char* pszNetworkID, const char* pszAddress, bool bFakePlayer);
+void ClientDisconnectHook(void* _this, CPlayerSlot slot, ENetworkDisconnectionReason reason, const char* pszName, uint64 xuid, const char* pszNetworkID);
+void CheckTransmitHook(CCheckTransmitInfo** ppInfoList, int infoCount, CBitVec<16384>& unionTransmitEdicts, CBitVec<16384>& unk, const Entity2Networkable_t** pNetworkables, const uint16_t* pEntityIndicies, int nEntities);
 
 void CPlayerManager::Initialize()
 {
@@ -71,18 +78,30 @@ void CPlayerManager::Initialize()
         g_Players[i] = nullptr;
     }
 
-    auto gameclients = g_ifaceService.FetchInterface<IServerGameClients>(INTERFACEVERSION_SERVERGAMECLIENTS);
-    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
-    auto gameentities = g_ifaceService.FetchInterface<ISource2GameEntities>(SOURCE2GAMEENTITIES_INTERFACE_VERSION);
-
-    SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientConnect, gameclients, this, &CPlayerManager::ClientConnect, false);
-    SH_ADD_HOOK_MEMFUNC(IServerGameClients, OnClientConnected, gameclients, this, &CPlayerManager::OnClientConnected, false);
-    SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientDisconnect, gameclients, this, &CPlayerManager::ClientDisconnect, true);
-    SH_ADD_HOOK_MEMFUNC(IServerGameClients, ClientPutInServer, gameclients, this, &CPlayerManager::OnClientPutInServer, true);
-    SH_ADD_HOOK_MEMFUNC(ISource2GameEntities, CheckTransmit, gameentities, this, &CPlayerManager::CheckTransmit, true);
-
     auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+
+    auto gameentities = g_ifaceService.FetchInterface<ISource2GameEntities>(SOURCE2GAMEENTITIES_INTERFACE_VERSION);
+
+    g_pClientConnectHook = hooksmanager->CreateVFunctionHook();
+    g_pClientConnectHook->SetHookFunction(INTERFACEVERSION_SERVERGAMECLIENTS, gamedata->GetOffsets()->Fetch("IServerGameClients::ClientConnect"), reinterpret_cast<void*>(ClientConnectHook));
+    g_pClientConnectHook->Enable();
+
+    g_pOnClientConnectedHook = hooksmanager->CreateVFunctionHook();
+    g_pOnClientConnectedHook->SetHookFunction(INTERFACEVERSION_SERVERGAMECLIENTS, gamedata->GetOffsets()->Fetch("IServerGameClients::OnClientConnected"), reinterpret_cast<void*>(OnClientConnectedHook));
+    g_pOnClientConnectedHook->Enable();
+
+    g_pClientDisconnectHook = hooksmanager->CreateVFunctionHook();
+    g_pClientDisconnectHook->SetHookFunction(INTERFACEVERSION_SERVERGAMECLIENTS, gamedata->GetOffsets()->Fetch("IServerGameClients::ClientDisconnect"), reinterpret_cast<void*>(ClientDisconnectHook));
+    g_pClientDisconnectHook->Enable();
+
+    g_pClientPutInServerHook = hooksmanager->CreateVFunctionHook();
+    g_pClientPutInServerHook->SetHookFunction(INTERFACEVERSION_SERVERGAMECLIENTS, gamedata->GetOffsets()->Fetch("IServerGameClients::ClientPutInServer"), reinterpret_cast<void*>(OnClientPutInServerHook));
+    g_pClientPutInServerHook->Enable();
+
+    g_pCheckTransmitHook = hooksmanager->CreateVFunctionHook();
+    g_pCheckTransmitHook->SetHookFunction(SOURCE2GAMEENTITIES_INTERFACE_VERSION, gamedata->GetOffsets()->Fetch("ISource2GameEntities::CheckTransmit"), reinterpret_cast<void*>(CheckTransmitHook));
+    g_pCheckTransmitHook->Enable();
 
     auto processusercmds = gamedata->GetSignatures()->Fetch("CCSPlayerController::ProcessUserCmd");
 
@@ -103,16 +122,6 @@ void CPlayerManager::Shutdown() {
     }
     delete[] g_Players;
 
-    auto gameclients = g_ifaceService.FetchInterface<IServerGameClients>(INTERFACEVERSION_SERVERGAMECLIENTS);
-    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
-    auto gameentities = g_ifaceService.FetchInterface<ISource2GameEntities>(SOURCE2GAMEENTITIES_INTERFACE_VERSION);
-
-    SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, ClientConnect, gameclients, this, &CPlayerManager::ClientConnect, false);
-    SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, OnClientConnected, gameclients, this, &CPlayerManager::OnClientConnected, false);
-    SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, ClientDisconnect, gameclients, this, &CPlayerManager::ClientDisconnect, true);
-    SH_REMOVE_HOOK_MEMFUNC(IServerGameClients, ClientPutInServer, gameclients, this, &CPlayerManager::OnClientPutInServer, true);
-    SH_REMOVE_HOOK_MEMFUNC(ISource2GameEntities, CheckTransmit, gameentities, this, &CPlayerManager::CheckTransmit, true);
-
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
 
     if (g_pOnGameFramePlayerHook)
@@ -128,12 +137,49 @@ void CPlayerManager::Shutdown() {
         hooksmanager->DestroyFunctionHook(g_pProcessUserCmdsHook);
         g_pProcessUserCmdsHook = nullptr;
     }
+
+    if (g_pClientConnectHook)
+    {
+        g_pClientConnectHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pClientConnectHook);
+        g_pClientConnectHook = nullptr;
+    }
+
+    if (g_pOnClientConnectedHook)
+    {
+        g_pOnClientConnectedHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pOnClientConnectedHook);
+        g_pOnClientConnectedHook = nullptr;
+    }
+
+    if (g_pClientDisconnectHook)
+    {
+        g_pClientDisconnectHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pClientDisconnectHook);
+        g_pClientDisconnectHook = nullptr;
+    }
+
+    if (g_pClientPutInServerHook)
+    {
+        g_pClientPutInServerHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pClientPutInServerHook);
+        g_pClientPutInServerHook = nullptr;
+    }
+
+    if (g_pCheckTransmitHook)
+    {
+        g_pCheckTransmitHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pCheckTransmitHook);
+        g_pCheckTransmitHook = nullptr;
+    }
 }
 
 extern void* g_pOnClientPutInServerCallback;
 
-void CPlayerManager::OnClientPutInServer(CPlayerSlot slot, char const* pszName, int type, uint64 xuid)
+void OnClientPutInServerHook(void* _this, CPlayerSlot slot, char const* pszName, int type, uint64 xuid)
 {
+    reinterpret_cast<decltype(&OnClientPutInServerHook)>(g_pClientPutInServerHook->GetOriginal())(_this, slot, pszName, type, xuid);
+
     if (g_pOnClientPutInServerCallback)
         reinterpret_cast<void(*)(int, int)>(g_pOnClientPutInServerCallback)(slot.Get(), type);
 }
@@ -156,8 +202,10 @@ void* ProcessUsercmdsHook(void* pController, CUserCmd* cmds, int numcmds, bool p
     return reinterpret_cast<void* (*)(void*, CUserCmd*, int, bool, float)>(g_pProcessUserCmdsHook->GetOriginal())(pController, cmds, numcmds, paused, margin);
 }
 
-void CPlayerManager::CheckTransmit(CCheckTransmitInfo** ppInfoList, int infoCount, CBitVec<16384>& unionTransmitEdicts, CBitVec<16384>&, const Entity2Networkable_t** pNetworkables, const uint16_t* pEntityIndicies, int nEntities)
+void CheckTransmitHook(CCheckTransmitInfo** ppInfoList, int infoCount, CBitVec<16384>& unionTransmitEdicts, CBitVec<16384>& unk, const Entity2Networkable_t** pNetworkables, const uint16_t* pEntityIndicies, int nEntities)
 {
+    reinterpret_cast<decltype(&CheckTransmitHook)>(g_pCheckTransmitHook->GetOriginal())(ppInfoList, infoCount, unionTransmitEdicts, unk, pNetworkables, pEntityIndicies, nEntities);
+
     static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     for (int i = 0; i < infoCount; i++)
     {
@@ -219,7 +267,7 @@ void OnGameFramePlayerHook(void* _this, bool simulate, bool first, bool last)
 
 extern void* g_pOnClientConnectCallback;
 
-bool CPlayerManager::ClientConnect(CPlayerSlot slot, const char* pszName, uint64 xuid, const char* pszNetworkID, bool unk1, CBufferString* pRejectReason)
+bool ClientConnectHook(void* _this, CPlayerSlot slot, const char* pszName, uint64 xuid, const char* pszNetworkID, bool unk1, CBufferString* pRejectReason)
 {
     static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto playerid = slot.Get();
@@ -229,12 +277,12 @@ bool CPlayerManager::ClientConnect(CPlayerSlot slot, const char* pszName, uint64
 
     if (g_pOnClientConnectCallback)
         if (reinterpret_cast<bool(*)(int)>(g_pOnClientConnectCallback)(playerid) == false)
-            RETURN_META_VALUE(MRES_SUPERCEDE, false);
+            return false;
 
-    RETURN_META_VALUE(MRES_IGNORED, true);
+    return reinterpret_cast<decltype(&ClientConnectHook)>(g_pClientConnectHook->GetOriginal())(_this, slot, pszName, xuid, pszNetworkID, unk1, pRejectReason);
 }
 
-void CPlayerManager::OnClientConnected(CPlayerSlot slot, const char* pszName, uint64 xuid, const char* pszNetworkID, const char* pszAddress, bool bFakePlayer)
+void OnClientConnectedHook(void* _this, CPlayerSlot slot, const char* pszName, uint64 xuid, const char* pszNetworkID, const char* pszAddress, bool bFakePlayer)
 {
     static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto playerid = slot.Get();
@@ -246,12 +294,16 @@ void CPlayerManager::OnClientConnected(CPlayerSlot slot, const char* pszName, ui
         auto cvarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
         cvarmanager->QueryClientConvar(playerid, "cl_language");
     }
+
+    reinterpret_cast<decltype(&OnClientConnectedHook)>(g_pOnClientConnectedHook->GetOriginal())(_this, slot, pszName, xuid, pszNetworkID, pszAddress, bFakePlayer);
 }
 
 extern void* g_pOnClientDisconnectCallback;
 
-void CPlayerManager::ClientDisconnect(CPlayerSlot slot, ENetworkDisconnectionReason reason, const char* pszName, uint64 xuid, const char* pszNetworkID)
+void ClientDisconnectHook(void* _this, CPlayerSlot slot, ENetworkDisconnectionReason reason, const char* pszName, uint64 xuid, const char* pszNetworkID)
 {
+    reinterpret_cast<decltype(&ClientDisconnectHook)>(g_pClientDisconnectHook->GetOriginal())(_this, slot, reason, pszName, xuid, pszNetworkID);
+
     static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
     auto playerid = slot.Get();
 

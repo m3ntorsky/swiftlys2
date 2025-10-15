@@ -127,6 +127,42 @@
         "windows": 26,
         "linux": 26
     },
+    "IVEngineServer2::SetClientListening": {
+        "windows": 84,
+        "linux": 84
+    },
+    "IServerGameClients::ClientCommand": {
+        "windows": 17,
+        "linux": 17
+    },
+    "IServerGameClients::ClientConnect": {
+        "windows": 12,
+        "linux": 12
+    },
+    "IServerGameClients::OnClientConnected": {
+        "windows": 11,
+        "linux": 11
+    },
+    "IServerGameClients::ClientDisconnect": {
+        "windows": 16,
+        "linux": 16
+    },
+    "IServerGameClients::ClientPutInServer": {
+        "windows": 13,
+        "linux": 13
+    },
+    "ISource2GameEntities::CheckTransmit": {
+        "windows": 12,
+        "linux": 12
+    },
+    "IGameEventManager2::LoadEventsFromFile": {
+        "windows": 2,
+        "linux": 2
+    },
+    "IGameEventManager2::FireEvent": {
+        "windows": 8,
+        "linux": 8
+    },
     "CServerSideClient::ProcessRespondCvarValue": {
         "windows": 38,
         "linux": 40

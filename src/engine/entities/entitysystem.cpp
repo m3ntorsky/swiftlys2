@@ -37,8 +37,6 @@ typedef void* (*UTIL_CreateEntityByName)(const char*, int);
 typedef void (*CEntityInstance_AcceptInput)(void*, const char*, void*, void*, variant_t*, int);
 typedef void (*CEntitySystem_AddEntityIOEvent)(void*, void*, const char*, void*, void*, variant_t*, float, int, void*, void*);
 
-SH_DECL_EXTERN3_void(INetworkServerService, StartupServer, SH_NOATTRIB, 0, const GameSessionConfiguration_t&, ISource2WorldSession*, const char*);
-
 CGameEntitySystem* g_pGameEntitySystem = nullptr;
 
 void* g_pGameRules = nullptr;

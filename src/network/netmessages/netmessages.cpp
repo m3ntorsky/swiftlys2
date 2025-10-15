@@ -17,7 +17,6 @@
  ************************************************************************************************/
 
 #include "netmessages.h"
-#include <core/bridge/metamod.h>
 
 #include <api/interfaces/manager.h>
 #include <api/sdk/serversideclient.h>
@@ -26,8 +25,6 @@
 #include <api/shared/plat.h>
 
 #include <map>
-
-SH_DECL_MANUALHOOK2(FilterMessage, 0, 0, 0, bool, CNetMessage*, INetChannel*);
 
 std::map<uint64_t, std::function<int(uint64_t*, int, void*)>> g_mServerMessageSendCallbacks;
 std::map<uint64_t, std::function<int(int, int, void*)>> g_mClientMessageSendCallbacks;

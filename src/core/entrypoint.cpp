@@ -137,11 +137,11 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     hooksmanager->Initialize();
 
     g_pGameServerSteamAPIActivated = hooksmanager->CreateVFunctionHook();
-    g_pGameServerSteamAPIActivated->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameServerSteamAPIActivated"), GameServerSteamAPIActivatedHook);
+    g_pGameServerSteamAPIActivated->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameServerSteamAPIActivated"), (void*)GameServerSteamAPIActivatedHook);
     g_pGameServerSteamAPIActivated->Enable();
 
     g_pGameServerSteamAPIDeactivated = hooksmanager->CreateVFunctionHook();
-    g_pGameServerSteamAPIDeactivated->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameServerSteamAPIDeactivated"), GameServerSteamAPIDeactivatedHook);
+    g_pGameServerSteamAPIDeactivated->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameServerSteamAPIDeactivated"), (void*)GameServerSteamAPIDeactivatedHook);
     g_pGameServerSteamAPIDeactivated->Enable();
 
     StartFixes();
