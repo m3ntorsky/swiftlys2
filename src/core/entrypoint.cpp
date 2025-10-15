@@ -44,6 +44,7 @@
 #include <fmt/format.h>
 
 #include <s2binlib/s2binlib.h>
+#include <public/engine/igameeventsystem.h>
 
 SwiftlyCore g_SwiftlyCore;
 InterfacesManager g_ifaceService;
@@ -163,20 +164,26 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
     hooksmanager->Initialize();
 
+    void* engineservicemgr = nullptr;
+    s2binlib_find_vtable("engine2", "CEngineServiceMgr", &engineservicemgr);
+
     g_pRegisterLoopModeHook = hooksmanager->CreateVFunctionHook();
-    g_pRegisterLoopModeHook->SetHookFunction(ENGINESERVICEMGR_INTERFACE_VERSION, gamedata->GetOffsets()->Fetch("IEngineServiceMgr::RegisterLoopMode"), (void*)RegisterLoopModeHook);
+    g_pRegisterLoopModeHook->SetHookFunction(engineservicemgr, gamedata->GetOffsets()->Fetch("IEngineServiceMgr::RegisterLoopMode"), (void*)RegisterLoopModeHook, true);
     g_pRegisterLoopModeHook->Enable();
 
     g_pUnregisterLoopModeHook = hooksmanager->CreateVFunctionHook();
-    g_pUnregisterLoopModeHook->SetHookFunction(ENGINESERVICEMGR_INTERFACE_VERSION, gamedata->GetOffsets()->Fetch("IEngineServiceMgr::UnregisterLoopMode"), (void*)UnregisterLoopModeHook);
+    g_pUnregisterLoopModeHook->SetHookFunction(engineservicemgr, gamedata->GetOffsets()->Fetch("IEngineServiceMgr::UnregisterLoopMode"), (void*)UnregisterLoopModeHook, true);
     g_pUnregisterLoopModeHook->Enable();
 
+    void* servervtable = nullptr;
+    s2binlib_find_vtable("server", "CSource2Server", &servervtable);
+
     g_pGameServerSteamAPIActivated = hooksmanager->CreateVFunctionHook();
-    g_pGameServerSteamAPIActivated->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameServerSteamAPIActivated"), (void*)GameServerSteamAPIActivatedHook);
+    g_pGameServerSteamAPIActivated->SetHookFunction(servervtable, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameServerSteamAPIActivated"), (void*)GameServerSteamAPIActivatedHook, true);
     g_pGameServerSteamAPIActivated->Enable();
 
     g_pGameServerSteamAPIDeactivated = hooksmanager->CreateVFunctionHook();
-    g_pGameServerSteamAPIDeactivated->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameServerSteamAPIDeactivated"), (void*)GameServerSteamAPIDeactivatedHook);
+    g_pGameServerSteamAPIDeactivated->SetHookFunction(servervtable, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameServerSteamAPIDeactivated"), (void*)GameServerSteamAPIDeactivatedHook, true);
     g_pGameServerSteamAPIDeactivated->Enable();
 
     StartFixes();
@@ -364,8 +371,6 @@ extern void* g_pOnMapUnloadCallback;
 void SwiftlyCore::OnMapLoad(std::string map_name)
 {
     current_map = map_name;
-
-    printf("New map: %s\n", map_name.c_str());
 
     if (g_pOnMapLoadCallback)
         reinterpret_cast<void(*)(const char*)>(g_pOnMapLoadCallback)(map_name.c_str());

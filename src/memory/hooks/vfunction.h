@@ -35,6 +35,7 @@ public:
     virtual bool IsEnabled() override;
 private:
     SafetyHookInline m_oHook;
+    void* m_pOriginal = nullptr;
 };
 
 #endif

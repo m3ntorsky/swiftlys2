@@ -26,6 +26,8 @@
 #include "cs_usercmd.pb.h"
 #include "usercmd.pb.h"
 
+#include <s2binlib/s2binlib.h>
+
 class EntityCheckTransmit
 {
 public:
@@ -81,32 +83,39 @@ void CPlayerManager::Initialize()
     auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
 
-    auto gameentities = g_ifaceService.FetchInterface<ISource2GameEntities>(SOURCE2GAMEENTITIES_INTERFACE_VERSION);
+    void* gameclientsvtable = nullptr;
+    s2binlib_find_vtable("server", "CSource2GameClients", &gameclientsvtable);
+
+    void* gameentitiesvtable = nullptr;
+    s2binlib_find_vtable("server", "CSource2GameEntities", &gameentitiesvtable);
 
     g_pClientConnectHook = hooksmanager->CreateVFunctionHook();
-    g_pClientConnectHook->SetHookFunction(INTERFACEVERSION_SERVERGAMECLIENTS, gamedata->GetOffsets()->Fetch("IServerGameClients::ClientConnect"), reinterpret_cast<void*>(ClientConnectHook));
+    g_pClientConnectHook->SetHookFunction(gameclientsvtable, gamedata->GetOffsets()->Fetch("IServerGameClients::ClientConnect"), reinterpret_cast<void*>(ClientConnectHook), true);
     g_pClientConnectHook->Enable();
 
     g_pOnClientConnectedHook = hooksmanager->CreateVFunctionHook();
-    g_pOnClientConnectedHook->SetHookFunction(INTERFACEVERSION_SERVERGAMECLIENTS, gamedata->GetOffsets()->Fetch("IServerGameClients::OnClientConnected"), reinterpret_cast<void*>(OnClientConnectedHook));
+    g_pOnClientConnectedHook->SetHookFunction(gameclientsvtable, gamedata->GetOffsets()->Fetch("IServerGameClients::OnClientConnected"), reinterpret_cast<void*>(OnClientConnectedHook), true);
     g_pOnClientConnectedHook->Enable();
 
     g_pClientDisconnectHook = hooksmanager->CreateVFunctionHook();
-    g_pClientDisconnectHook->SetHookFunction(INTERFACEVERSION_SERVERGAMECLIENTS, gamedata->GetOffsets()->Fetch("IServerGameClients::ClientDisconnect"), reinterpret_cast<void*>(ClientDisconnectHook));
+    g_pClientDisconnectHook->SetHookFunction(gameclientsvtable, gamedata->GetOffsets()->Fetch("IServerGameClients::ClientDisconnect"), reinterpret_cast<void*>(ClientDisconnectHook), true);
     g_pClientDisconnectHook->Enable();
 
     g_pClientPutInServerHook = hooksmanager->CreateVFunctionHook();
-    g_pClientPutInServerHook->SetHookFunction(INTERFACEVERSION_SERVERGAMECLIENTS, gamedata->GetOffsets()->Fetch("IServerGameClients::ClientPutInServer"), reinterpret_cast<void*>(OnClientPutInServerHook));
+    g_pClientPutInServerHook->SetHookFunction(gameclientsvtable, gamedata->GetOffsets()->Fetch("IServerGameClients::ClientPutInServer"), reinterpret_cast<void*>(OnClientPutInServerHook), true);
     g_pClientPutInServerHook->Enable();
 
     g_pCheckTransmitHook = hooksmanager->CreateVFunctionHook();
-    g_pCheckTransmitHook->SetHookFunction(SOURCE2GAMEENTITIES_INTERFACE_VERSION, gamedata->GetOffsets()->Fetch("ISource2GameEntities::CheckTransmit"), reinterpret_cast<void*>(CheckTransmitHook));
+    g_pCheckTransmitHook->SetHookFunction(gameentitiesvtable, gamedata->GetOffsets()->Fetch("ISource2GameEntities::CheckTransmit"), reinterpret_cast<void*>(CheckTransmitHook), true);
     g_pCheckTransmitHook->Enable();
 
     auto processusercmds = gamedata->GetSignatures()->Fetch("CCSPlayerController::ProcessUserCmd");
 
+    void* serverGameDLLVTable;
+    s2binlib_find_vtable("server", "CSource2Server", &serverGameDLLVTable);
+
     g_pOnGameFramePlayerHook = hooksmanager->CreateVFunctionHook();
-    g_pOnGameFramePlayerHook->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameFrame"), reinterpret_cast<void*>(OnGameFramePlayerHook));
+    g_pOnGameFramePlayerHook->SetHookFunction(serverGameDLLVTable, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameFrame"), reinterpret_cast<void*>(OnGameFramePlayerHook), true);
     g_pOnGameFramePlayerHook->Enable();
 
     g_pProcessUserCmdsHook = hooksmanager->CreateFunctionHook();

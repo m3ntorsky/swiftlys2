@@ -120,12 +120,12 @@
         "linux": 42
     },
     "IGameEventSystem::PostEventAbstract": {
-        "windows": 15,
-        "linux": 15
+        "windows": 16,
+        "linux": 16
     },
     "INetworkServerService::StartupServer": {
         "windows": 26,
-        "linux": 26
+        "linux": 27
     },
     "IVEngineServer2::SetClientListening": {
         "windows": 84,
@@ -153,19 +153,19 @@
     },
     "ISource2GameEntities::CheckTransmit": {
         "windows": 12,
-        "linux": 12
+        "linux": 13
     },
     "IGameEventManager2::LoadEventsFromFile": {
         "windows": 2,
         "linux": 2
     },
     "IEngineServiceMgr::RegisterLoopMode": {
-        "windows": 15,
-        "linux": 15
+        "windows": 13,
+        "linux": 13
     },
     "IEngineServiceMgr::UnregisterLoopMode": {
-        "windows": 16,
-        "linux": 16
+        "windows": 14,
+        "linux": 14
     },
     "ILoopModeFactory::CreateLoopMode": {
         "windows": 2,

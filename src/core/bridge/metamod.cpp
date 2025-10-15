@@ -71,12 +71,10 @@ void SwiftlyMMBridge::AllPluginsLoaded()
 
 void SwiftlyMMBridge::OnLevelInit(char const* pMapName, char const* pMapEntities, char const* pOldLevel, char const* pLandmarkName, bool loadGame, bool background)
 {
-    // g_SwiftlyCore.OnMapLoad(pMapName);
 }
 
 void SwiftlyMMBridge::OnLevelShutdown()
 {
-    // g_SwiftlyCore.OnMapUnload();
 }
 
 const char* SwiftlyMMBridge::GetAuthor()

@@ -79,18 +79,22 @@ void CEventManager::Initialize(std::string game_name)
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
     auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
+    void* netserverservice = nullptr;
+    s2binlib_find_vtable("server", "CNetworkServerService", &netserverservice);
+
     g_pStartupServerEventHook = hooksmanager->CreateVFunctionHook();
-    g_pStartupServerEventHook->SetHookFunction(NETWORKSERVERSERVICE_INTERFACE_VERSION, gamedata->GetOffsets()->Fetch("INetworkServerService::StartupServer"), reinterpret_cast<void*>(StartupServerEventHook));
+    g_pStartupServerEventHook->SetHookFunction(netserverservice, gamedata->GetOffsets()->Fetch("INetworkServerService::StartupServer"), reinterpret_cast<void*>(StartupServerEventHook), true);
     g_pStartupServerEventHook->Enable();
 
     g_pLoadEventsFromFileHook = hooksmanager->CreateVFunctionHook();
     g_pLoadEventsFromFileHook->SetHookFunction(CGameEventManagerVTable, gamedata->GetOffsets()->Fetch("IGameEventManager2::LoadEventsFromFile"), reinterpret_cast<void*>(LoadEventsFromFileHook), true);
     g_pLoadEventsFromFileHook->Enable();
 
-    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
+    void* servervtable = nullptr;
+    s2binlib_find_vtable("server", "CSource2Server", &servervtable);
 
     g_GameFrameHookEventManager = hooksmanager->CreateVFunctionHook();
-    g_GameFrameHookEventManager->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameFrame"), reinterpret_cast<void*>(GameFrameEventManager));
+    g_GameFrameHookEventManager->SetHookFunction(servervtable, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameFrame"), reinterpret_cast<void*>(GameFrameEventManager), true);
     g_GameFrameHookEventManager->Enable();
 
     RegisterGameEventListener("round_start");

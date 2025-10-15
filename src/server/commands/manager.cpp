@@ -25,6 +25,7 @@
 #include <core/bridge/metamod.h>
 
 #include <public/icvar.h>
+#include <s2binlib/s2binlib.h>
 
 std::map<std::string, ConCommand*> conCommandCreated;
 std::map<uint64_t, std::string> conCommandMapping;
@@ -62,8 +63,11 @@ void CServerCommands::Initialize()
     static auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
     static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
+    void* ccvarVTable;
+    s2binlib_find_vtable("tier0", "CCvar", &ccvarVTable);
+
     g_pDispatchConCommandHook = hooksmanager->CreateVFunctionHook();
-    g_pDispatchConCommandHook->SetHookFunction(CVAR_INTERFACE_VERSION, gamedata->GetOffsets()->Fetch("ICvar::DispatchConCommand"), (void*)DispatchConCommand);
+    g_pDispatchConCommandHook->SetHookFunction(ccvarVTable, gamedata->GetOffsets()->Fetch("ICvar::DispatchConCommand"), (void*)DispatchConCommand, true);
     g_pDispatchConCommandHook->Enable();
 }
 

@@ -21,6 +21,7 @@
 #include <core/bridge/metamod.h>
 
 #include <api/interfaces/manager.h>
+#include <s2binlib/s2binlib.h>
 
 IVFunctionHook* g_pSetClientListeningHook = nullptr;
 IVFunctionHook* g_pClientCommandHook = nullptr;
@@ -39,8 +40,11 @@ void CVoiceManager::Initialize()
     g_pSetClientListeningHook->SetHookFunction(INTERFACEVERSION_VENGINESERVER, gamedata->GetOffsets()->Fetch("IVEngineServer2::SetClientListening"), (void*)SetClientListeningHook);
     g_pSetClientListeningHook->Enable();
 
+    void* gameclientsvtable = nullptr;
+    s2binlib_find_vtable("server", "CSource2GameClients", &gameclientsvtable);
+
     g_pClientCommandHook = hooksmanager->CreateVFunctionHook();
-    g_pClientCommandHook->SetHookFunction(INTERFACEVERSION_SERVERGAMECLIENTS, gamedata->GetOffsets()->Fetch("IServerGameClients::ClientCommand"), (void*)ClientCommandHook);
+    g_pClientCommandHook->SetHookFunction(gameclientsvtable, gamedata->GetOffsets()->Fetch("IServerGameClients::ClientCommand"), (void*)ClientCommandHook, true);
     g_pClientCommandHook->Enable();
 }
 

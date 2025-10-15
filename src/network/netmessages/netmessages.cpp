@@ -23,6 +23,7 @@
 #include <memory/gamedata/manager.h>
 
 #include <api/shared/plat.h>
+#include <s2binlib/s2binlib.h>
 
 #include <map>
 
@@ -45,8 +46,11 @@ void CNetMessages::Initialize()
     g_pFilterMessageHook->SetHookFunction(gamedata->GetSignatures()->Fetch("INetworkMessageProcessingPreFilter::FilterMessage"), (void*)FilterMessage);
     g_pFilterMessageHook->Enable();
 
+    void* gameEventSystem = nullptr;
+    s2binlib_find_vtable("engine2", "CGameEventSystem", &gameEventSystem);
+
     g_pPostEventAbstractHook = hooksmanager->CreateVFunctionHook();
-    g_pPostEventAbstractHook->SetHookFunction(GAMEEVENTSYSTEM_INTERFACE_VERSION, gamedata->GetOffsets()->Fetch("IGameEventSystem::PostEventAbstract"), (void*)PostEventAbstractHook);
+    g_pPostEventAbstractHook->SetHookFunction(gameEventSystem, gamedata->GetOffsets()->Fetch("IGameEventSystem::PostEventAbstract"), (void*)PostEventAbstractHook, true);
     g_pPostEventAbstractHook->Enable();
 }
 

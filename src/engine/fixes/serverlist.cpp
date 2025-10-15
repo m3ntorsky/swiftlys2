@@ -23,6 +23,8 @@
 #include <public/tier0/platform.h>
 #include <public/steam/isteamgameserver.h>
 
+#include <s2binlib/s2binlib.h>
+
 #include "serverlist.h"
 
 IVFunctionHook* g_GameFrameHook = nullptr;
@@ -34,9 +36,12 @@ void ServerListFix::Start()
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
     auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
+    void* servervtable = nullptr;
+    s2binlib_find_vtable("server", "CSource2Server", &servervtable);
+
     g_GameFrameHook = hooksmanager->CreateVFunctionHook();
 
-    g_GameFrameHook->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameFrame"), reinterpret_cast<void*>(GameFrame));
+    g_GameFrameHook->SetHookFunction(servervtable, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameFrame"), reinterpret_cast<void*>(GameFrame), true);
     g_GameFrameHook->Enable();
 }
 
