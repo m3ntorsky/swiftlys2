@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface IKSolverSettings_t : ISchemaClass<IKSolverSettings_t> {
 
   static IKSolverSettings_t ISchemaClass<IKSolverSettings_t>.From(nint handle) => new IKSolverSettings_tImpl(handle);
+  static int ISchemaClass<IKSolverSettings_t>.Size => 12;
 
   
   public ref IKSolverType SolverType { get; }

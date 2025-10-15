@@ -11,17 +11,16 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseConstraint : CBoneConstraintBase, ISchemaClass<CBaseConstraint> {
 
   static CBaseConstraint ISchemaClass<CBaseConstraint>.From(nint handle) => new CBaseConstraintImpl(handle);
+  static int ISchemaClass<CBaseConstraint>.Size => 96;
 
   
   public string Name { get; set; }
   
   public ref Vector UpVector { get; }
   
-  // CUtlLeanVector< CConstraintSlave >
-  public SchemaUntypedField Slaves { get; }
+  public ref CUtlLeanVector<CConstraintSlave, int> Slaves { get; }
   
-  // CUtlVector< CConstraintTarget >
-  public ref CUtlVector Targets { get; }
+  public ref CUtlVector<CConstraintTarget> Targets { get; }
 
 
 }

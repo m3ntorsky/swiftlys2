@@ -43,11 +43,16 @@ internal class TestService {
 
   public void Test()
   {
-    _Core.Event.OnItemServicesCanAcquireHook += (@event) => {
-      Console.WriteLine(@event.EconItemView.ItemDefinitionIndex);
+    _Core.Command.RegisterCommand("rrr", (context) => {
+      _Core.Engine.ExecuteCommandWithBuffer("echo 1", (buffer) => {
+        Console.WriteLine(buffer);
+      });
+    });
+    // _Core.Event.OnItemServicesCanAcquireHook += (@event) => {
+    //   Console.WriteLine(@event.EconItemView.ItemDefinitionIndex);
 
-      @event.SetAcquireResult(AcquireResult.NotAllowedByProhibition);
-    };
+    //   @event.SetAcquireResult(AcquireResult.NotAllowedByProhibition);
+    // };
 
 
   }

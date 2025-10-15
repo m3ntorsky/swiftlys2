@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseCombatCharacter : CBaseFlex, ISchemaClass<CBaseCombatCharacter> {
 
   static CBaseCombatCharacter ISchemaClass<CBaseCombatCharacter>.From(nint handle) => new CBaseCombatCharacterImpl(handle);
+  static int ISchemaClass<CBaseCombatCharacter>.Size => 3040;
 
   
   public ref bool ForceServerRagdoll { get; }
@@ -19,14 +20,11 @@ public partial interface CBaseCombatCharacter : CBaseFlex, ISchemaClass<CBaseCom
   
   public ref float ImpactEnergyScale { get; }
   
-  public ref int MinVehicleDamageToTempRagdoll { get; }
-  
   public ref bool ApplyStressDamage { get; }
   
   public ref bool DeathEventsDispatched { get; }
   
-  // CUtlVector< RelationshipOverride_t >
-  public ref CUtlVector VecRelationships { get; }
+  public ref CUtlVector<RelationshipOverride_t> VecRelationships { get; }
   
   public string StrRelationships { get; set; }
   

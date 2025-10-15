@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_TwistAroundAxis : CParticleFunctionForce, ISchemaClass<C_OP_TwistAroundAxis> {
 
   static C_OP_TwistAroundAxis ISchemaClass<C_OP_TwistAroundAxis>.From(nint handle) => new C_OP_TwistAroundAxisImpl(handle);
+  static int ISchemaClass<C_OP_TwistAroundAxis>.Size => 504;
 
   
   public ref float ForceAmount { get; }

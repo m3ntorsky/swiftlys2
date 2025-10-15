@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseAnimGraphController : CSkeletonAnimationController, ISchemaClass<CBaseAnimGraphController> {
 
   static CBaseAnimGraphController ISchemaClass<CBaseAnimGraphController>.From(nint handle) => new CBaseAnimGraphControllerImpl(handle);
+  static int ISchemaClass<CBaseAnimGraphController>.Size => 1968;
 
   
   public CAnimGraphNetworkedVariables AnimGraphNetworkedVars { get; }
@@ -54,6 +55,8 @@ public partial interface CBaseAnimGraphController : CSkeletonAnimationController
   public ref byte GraphCreationFlagsAG2 { get; }
   
   public ref int ServerGraphDefReloadCountAG2 { get; }
+  
+  public ref int ServerSerializationContextIteration { get; }
 
   public void AnimGraphNetworkedVarsUpdated();
   public void SequenceUpdated();
@@ -68,4 +71,5 @@ public partial interface CBaseAnimGraphController : CSkeletonAnimationController
   public void SerializePoseRecipeVersionAG2Updated();
   public void GraphCreationFlagsAG2Updated();
   public void ServerGraphDefReloadCountAG2Updated();
+  public void ServerSerializationContextIterationUpdated();
 }

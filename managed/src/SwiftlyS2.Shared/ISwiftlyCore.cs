@@ -24,8 +24,6 @@ namespace SwiftlyS2.Shared;
 /// </summary>
 public interface ISwiftlyCore
 {
-
-
   /// <summary>
   /// Custom event subscriber.
   /// </summary>

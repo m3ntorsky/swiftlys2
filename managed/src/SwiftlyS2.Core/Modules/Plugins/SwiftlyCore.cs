@@ -28,6 +28,7 @@ using SwiftlyS2.Shared.Scheduler;
 using SwiftlyS2.Core.Scheduler;
 using SwiftlyS2.Core.Plugins;
 using SwiftlyS2.Core.Database;
+using SwiftlyS2.Core.Engine;
 using SwiftlyS2.Shared.Database;
 using SwiftlyS2.Core.Translations;
 using SwiftlyS2.Core.Permissions;
@@ -81,15 +82,17 @@ internal class SwiftlyCore : ISwiftlyCore, IDisposable
     services
       .AddSingleton(id)
       .AddSingleton(this)
+      .AddSingleton<ISwiftlyCore>(this)
       .AddSingleton(coreProvider.GetRequiredService<ProfileService>())
       .AddSingleton(coreProvider.GetRequiredService<ConfigurationService>())
       .AddSingleton(coreProvider.GetRequiredService<HookManager>())
       .AddSingleton(coreProvider.GetRequiredService<PlayerManagerService>())
-      .AddSingleton(coreProvider.GetRequiredService<EngineService>())
       .AddSingleton(coreProvider.GetRequiredService<TraceManager>())
       .AddSingleton(coreProvider.GetRequiredService<PermissionManager>())
+      .AddSingleton(coreProvider.GetRequiredService<CommandTrackerManager>())
 
       .AddSingleton<EventSubscriber>()
+      .AddSingleton<EngineService>()
       .AddSingleton<PluginConfigurationService>()
       .AddSingleton<GameEventService>()
       .AddSingleton<NetMessageService>()

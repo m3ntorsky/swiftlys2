@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLogicBranchList : CLogicalEntity, ISchemaClass<CLogicBranchList> {
 
   static CLogicBranchList ISchemaClass<CLogicBranchList>.From(nint handle) => new CLogicBranchListImpl(handle);
+  static int ISchemaClass<CLogicBranchList>.Size => 1544;
 
   
   public string LogicBranchNames { get; set; }

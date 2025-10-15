@@ -20,10 +20,13 @@
 #define _core_entrypoint_h
 
 #include <string>
+#include <public/steam/steam_api_common.h>
+#include <public/steam/isteamugc.h>
 
 enum class BridgeKind_t
 {
     Metamod = 0,
+    SwiftlyLoader = 1,
 };
 
 class SwiftlyCore
@@ -50,5 +53,6 @@ public:
 };
 
 extern SwiftlyCore g_SwiftlyCore;
+extern CSteamGameServerAPIContext g_SteamAPI;
 
 #endif

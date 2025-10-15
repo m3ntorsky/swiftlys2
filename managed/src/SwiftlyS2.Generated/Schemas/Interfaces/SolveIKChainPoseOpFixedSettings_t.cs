@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SolveIKChainPoseOpFixedSettings_t : ISchemaClass<SolveIKChainPoseOpFixedSettings_t> {
 
   static SolveIKChainPoseOpFixedSettings_t ISchemaClass<SolveIKChainPoseOpFixedSettings_t>.From(nint handle) => new SolveIKChainPoseOpFixedSettings_tImpl(handle);
+  static int ISchemaClass<SolveIKChainPoseOpFixedSettings_t>.Size => 24;
 
   
-  // CUtlVector< ChainToSolveData_t >
-  public ref CUtlVector ChainsToSolveData { get; }
+  public ref CUtlVector<ChainToSolveData_t> ChainsToSolveData { get; }
 
 
 }

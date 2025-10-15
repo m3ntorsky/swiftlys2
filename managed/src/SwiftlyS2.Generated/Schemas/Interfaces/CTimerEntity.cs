@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTimerEntity : CLogicalEntity, ISchemaClass<CTimerEntity> {
 
   static CTimerEntity ISchemaClass<CTimerEntity>.From(nint handle) => new CTimerEntityImpl(handle);
+  static int ISchemaClass<CTimerEntity>.Size => 1424;
 
   
   public CEntityIOOutput OnTimer { get; }

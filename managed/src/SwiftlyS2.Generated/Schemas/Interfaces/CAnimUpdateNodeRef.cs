@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimUpdateNodeRef : ISchemaClass<CAnimUpdateNodeRef> {
 
   static CAnimUpdateNodeRef ISchemaClass<CAnimUpdateNodeRef>.From(nint handle) => new CAnimUpdateNodeRefImpl(handle);
+  static int ISchemaClass<CAnimUpdateNodeRef>.Size => 16;
 
   
   public ref int NodeIndex { get; }

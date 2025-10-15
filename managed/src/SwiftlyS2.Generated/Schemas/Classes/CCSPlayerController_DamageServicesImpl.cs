@@ -18,8 +18,8 @@ internal partial class CCSPlayerController_DamageServicesImpl : CPlayerControlle
   public ref int SendUpdate {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC354634BBB7D4BC2));
   }
-  public ref CUtlVector DamageList {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC354634B48D4B628));
+  public ref CUtlVector<CDamageRecord> DamageList {
+    get => ref _Handle.AsRef<CUtlVector<CDamageRecord>>(Schema.GetOffset(0xC354634B48D4B628));
   }
 
   public void SendUpdateUpdated() {

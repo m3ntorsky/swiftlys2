@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFuncNavBlocker : CBaseModelEntity, ISchemaClass<CFuncNavBlocker> {
 
   static CFuncNavBlocker ISchemaClass<CFuncNavBlocker>.From(nint handle) => new CFuncNavBlockerImpl(handle);
+  static int ISchemaClass<CFuncNavBlocker>.Size => 2032;
 
   
   public ref bool Disabled { get; }

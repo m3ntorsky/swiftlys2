@@ -11,44 +11,34 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MaterialResourceData_t : ISchemaClass<MaterialResourceData_t> {
 
   static MaterialResourceData_t ISchemaClass<MaterialResourceData_t>.From(nint handle) => new MaterialResourceData_tImpl(handle);
+  static int ISchemaClass<MaterialResourceData_t>.Size => 304;
 
   
   public string MaterialName { get; set; }
   
   public string ShaderName { get; set; }
   
-  // CUtlVector< MaterialParamInt_t >
-  public ref CUtlVector IntParams { get; }
+  public ref CUtlVector<MaterialParamInt_t> IntParams { get; }
   
-  // CUtlVector< MaterialParamFloat_t >
-  public ref CUtlVector FloatParams { get; }
+  public ref CUtlVector<MaterialParamFloat_t> FloatParams { get; }
   
-  // CUtlVector< MaterialParamVector_t >
-  public ref CUtlVector VectorParams { get; }
+  public ref CUtlVector<MaterialParamVector_t> VectorParams { get; }
   
-  // CUtlVector< MaterialParamTexture_t >
-  public ref CUtlVector TextureParams { get; }
+  public ref CUtlVector<MaterialParamTexture_t> TextureParams { get; }
   
-  // CUtlVector< MaterialParamBuffer_t >
-  public ref CUtlVector DynamicParams { get; }
+  public ref CUtlVector<MaterialParamBuffer_t> DynamicParams { get; }
   
-  // CUtlVector< MaterialParamBuffer_t >
-  public ref CUtlVector DynamicTextureParams { get; }
+  public ref CUtlVector<MaterialParamBuffer_t> DynamicTextureParams { get; }
   
-  // CUtlVector< MaterialParamInt_t >
-  public ref CUtlVector IntAttributes { get; }
+  public ref CUtlVector<MaterialParamInt_t> IntAttributes { get; }
   
-  // CUtlVector< MaterialParamFloat_t >
-  public ref CUtlVector FloatAttributes { get; }
+  public ref CUtlVector<MaterialParamFloat_t> FloatAttributes { get; }
   
-  // CUtlVector< MaterialParamVector_t >
-  public ref CUtlVector VectorAttributes { get; }
+  public ref CUtlVector<MaterialParamVector_t> VectorAttributes { get; }
   
-  // CUtlVector< MaterialParamTexture_t >
-  public ref CUtlVector TextureAttributes { get; }
+  public ref CUtlVector<MaterialParamTexture_t> TextureAttributes { get; }
   
-  // CUtlVector< MaterialParamString_t >
-  public ref CUtlVector StringAttributes { get; }
+  public ref CUtlVector<MaterialParamString_t> StringAttributes { get; }
   
   public ref CUtlVector<CUtlString> RenderAttributesUsed { get; }
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CExpressionActionUpdater : CAnimActionUpdater, ISchemaClass<CExpressionActionUpdater> {
 
   static CExpressionActionUpdater ISchemaClass<CExpressionActionUpdater>.From(nint handle) => new CExpressionActionUpdaterImpl(handle);
+  static int ISchemaClass<CExpressionActionUpdater>.Size => 32;
 
   
   public CAnimParamHandle Param { get; }

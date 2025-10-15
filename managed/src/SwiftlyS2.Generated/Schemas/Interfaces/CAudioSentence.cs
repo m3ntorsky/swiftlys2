@@ -11,15 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAudioSentence : ISchemaClass<CAudioSentence> {
 
   static CAudioSentence ISchemaClass<CAudioSentence>.From(nint handle) => new CAudioSentenceImpl(handle);
+  static int ISchemaClass<CAudioSentence>.Size => 160;
 
   
   public ref bool ShouldVoiceDuck { get; }
   
-  // CUtlVector< CAudioPhonemeTag >
-  public ref CUtlVector RunTimePhonemes { get; }
+  public ref CUtlVector<CAudioPhonemeTag> RunTimePhonemes { get; }
   
-  // CUtlVector< CAudioEmphasisSample >
-  public ref CUtlVector EmphasisSamples { get; }
+  public ref CUtlVector<CAudioEmphasisSample> EmphasisSamples { get; }
   
   public CAudioMorphData MorphData { get; }
 

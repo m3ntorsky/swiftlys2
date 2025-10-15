@@ -15,8 +15,8 @@ internal partial class CMotionNodeSequenceImpl : CMotionNodeImpl, CMotionNodeSeq
   public CMotionNodeSequenceImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Tags {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA932DE59B46C8540));
+  public ref CUtlVector<TagSpan_t> Tags {
+    get => ref _Handle.AsRef<CUtlVector<TagSpan_t>>(Schema.GetOffset(0xA932DE59B46C8540));
   }
   public HSequence Sequence {
     get => new HSequenceImpl(_Handle + Schema.GetOffset(0xA932DE59E0A0598E));

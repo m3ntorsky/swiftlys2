@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Step_EntFire : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_Step_EntFire> {
 
   static CPulseCell_Step_EntFire ISchemaClass<CPulseCell_Step_EntFire>.From(nint handle) => new CPulseCell_Step_EntFireImpl(handle);
+  static int ISchemaClass<CPulseCell_Step_EntFire>.Size => 80;
 
   
   public string Input { get; set; }

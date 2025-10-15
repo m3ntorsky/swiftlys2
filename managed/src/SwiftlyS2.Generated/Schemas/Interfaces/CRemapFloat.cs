@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRemapFloat : ISchemaClass<CRemapFloat> {
 
   static CRemapFloat ISchemaClass<CRemapFloat>.From(nint handle) => new CRemapFloatImpl(handle);
+  static int ISchemaClass<CRemapFloat>.Size => 16;
 
   
   public ISchemaFixedArray<float> Value { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimMorphDifference : ISchemaClass<CAnimMorphDifference> {
 
   static CAnimMorphDifference ISchemaClass<CAnimMorphDifference>.From(nint handle) => new CAnimMorphDifferenceImpl(handle);
+  static int ISchemaClass<CAnimMorphDifference>.Size => 16;
 
   
   public ref CBufferString Name { get; }

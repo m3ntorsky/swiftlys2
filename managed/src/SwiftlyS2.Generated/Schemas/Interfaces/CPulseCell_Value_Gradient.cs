@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Value_Gradient : CPulseCell_BaseValue, ISchemaClass<CPulseCell_Value_Gradient> {
 
   static CPulseCell_Value_Gradient ISchemaClass<CPulseCell_Value_Gradient>.From(nint handle) => new CPulseCell_Value_GradientImpl(handle);
+  static int ISchemaClass<CPulseCell_Value_Gradient>.Size => 96;
 
   
   // CColorGradient

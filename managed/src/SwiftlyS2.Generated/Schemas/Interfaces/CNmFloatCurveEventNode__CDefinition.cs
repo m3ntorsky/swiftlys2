@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmFloatCurveEventNode__CDefinition : CNmFloatValueNode__CDefinition, ISchemaClass<CNmFloatCurveEventNode__CDefinition> {
 
   static CNmFloatCurveEventNode__CDefinition ISchemaClass<CNmFloatCurveEventNode__CDefinition>.From(nint handle) => new CNmFloatCurveEventNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmFloatCurveEventNode__CDefinition>.Size => 40;
 
   
   public ref CGlobalSymbol EventID { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMaterialDrawDescriptor : ISchemaClass<CMaterialDrawDescriptor> {
 
   static CMaterialDrawDescriptor ISchemaClass<CMaterialDrawDescriptor>.From(nint handle) => new CMaterialDrawDescriptorImpl(handle);
+  static int ISchemaClass<CMaterialDrawDescriptor>.Size => 264;
 
   
   public ref float UvDensity { get; }
@@ -29,8 +30,7 @@ public partial interface CMaterialDrawDescriptor : ISchemaClass<CMaterialDrawDes
   
   public ref byte MeshletPackedIVBIndex { get; }
   
-  // CUtlLeanVector< CMaterialDrawDescriptor::RigidMeshPart_t >
-  public SchemaUntypedField RigidMeshParts { get; }
+  public ref CUtlLeanVector<CMaterialDrawDescriptor__RigidMeshPart_t, int> RigidMeshParts { get; }
   
   public ref RenderPrimitiveType_t PrimitiveType { get; }
   

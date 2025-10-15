@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_VectorFieldSnapshot : CParticleFunctionOperator, ISchemaClass<C_OP_VectorFieldSnapshot> {
 
   static C_OP_VectorFieldSnapshot ISchemaClass<C_OP_VectorFieldSnapshot>.From(nint handle) => new C_OP_VectorFieldSnapshotImpl(handle);
+  static int ISchemaClass<C_OP_VectorFieldSnapshot>.Size => 2584;
 
   
   public ref int ControlPointNumber { get; }

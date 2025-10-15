@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Step_TestDomainDestroyFakeEntity : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_Step_TestDomainDestroyFakeEntity> {
 
   static CPulseCell_Step_TestDomainDestroyFakeEntity ISchemaClass<CPulseCell_Step_TestDomainDestroyFakeEntity>.From(nint handle) => new CPulseCell_Step_TestDomainDestroyFakeEntityImpl(handle);
+  static int ISchemaClass<CPulseCell_Step_TestDomainDestroyFakeEntity>.Size => 72;
 
 
 

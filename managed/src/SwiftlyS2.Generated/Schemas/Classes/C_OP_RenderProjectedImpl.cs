@@ -36,8 +36,8 @@ internal partial class C_OP_RenderProjectedImpl : CParticleFunctionRendererImpl,
   public ref float MaxProjectionDepth {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xA370F3078C7219DB));
   }
-  public ref CUtlVector ProjectedMaterials {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA370F30718968FAF));
+  public ref CUtlVector<RenderProjectedMaterial_t> ProjectedMaterials {
+    get => ref _Handle.AsRef<CUtlVector<RenderProjectedMaterial_t>>(Schema.GetOffset(0xA370F30718968FAF));
   }
   public CPerParticleFloatInput MaterialSelection {
     get => new CPerParticleFloatInputImpl(_Handle + Schema.GetOffset(0xA370F3075A88A590));
@@ -48,8 +48,8 @@ internal partial class C_OP_RenderProjectedImpl : CParticleFunctionRendererImpl,
   public ref bool OrientToNormal {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA370F307FAC0D30A));
   }
-  public ref CUtlVector MaterialVars {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA370F307FA861D66));
+  public ref CUtlVector<MaterialVariable_t> MaterialVars {
+    get => ref _Handle.AsRef<CUtlVector<MaterialVariable_t>>(Schema.GetOffset(0xA370F307FA861D66));
   }
   public CParticleCollectionFloatInput RadiusScale {
     get => new CParticleCollectionFloatInputImpl(_Handle + Schema.GetOffset(0xA370F307A7A20159));

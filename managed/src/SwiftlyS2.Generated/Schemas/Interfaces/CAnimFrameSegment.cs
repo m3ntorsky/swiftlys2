@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimFrameSegment : ISchemaClass<CAnimFrameSegment> {
 
   static CAnimFrameSegment ISchemaClass<CAnimFrameSegment>.From(nint handle) => new CAnimFrameSegmentImpl(handle);
+  static int ISchemaClass<CAnimFrameSegment>.Size => 32;
 
   
   public ref int UniqueFrameIndex { get; }

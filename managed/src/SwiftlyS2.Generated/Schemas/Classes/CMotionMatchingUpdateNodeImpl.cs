@@ -18,8 +18,8 @@ internal partial class CMotionMatchingUpdateNodeImpl : CLeafUpdateNodeImpl, CMot
   public CMotionDataSet DataSet {
     get => new CMotionDataSetImpl(_Handle + Schema.GetOffset(0x69501C92DA4F8423));
   }
-  public ref CUtlVector Metrics {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x69501C922104DB96));
+  public ref CUtlVector<SchemaUntypedField> Metrics {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0x69501C922104DB96));
   }
   public ref CUtlVector<float> Weights {
     get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x69501C9277B2F91E));

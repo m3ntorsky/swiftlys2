@@ -15,8 +15,8 @@ internal partial class CFootAdjustmentUpdateNodeImpl : CUnaryUpdateNodeImpl, CFo
   public CFootAdjustmentUpdateNodeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Clips {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x667ADE248CB21A38));
+  public ref CUtlVector<HSequence> Clips {
+    get => ref _Handle.AsRef<CUtlVector<HSequence>>(Schema.GetOffset(0x667ADE248CB21A38));
   }
   public CPoseHandle BasePoseCacheHandle {
     get => new CPoseHandleImpl(_Handle + Schema.GetOffset(0x667ADE240690C505));

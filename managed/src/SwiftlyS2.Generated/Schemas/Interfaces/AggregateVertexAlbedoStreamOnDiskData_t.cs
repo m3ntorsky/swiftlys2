@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AggregateVertexAlbedoStreamOnDiskData_t : ISchemaClass<AggregateVertexAlbedoStreamOnDiskData_t> {
 
   static AggregateVertexAlbedoStreamOnDiskData_t ISchemaClass<AggregateVertexAlbedoStreamOnDiskData_t>.From(nint handle) => new AggregateVertexAlbedoStreamOnDiskData_tImpl(handle);
+  static int ISchemaClass<AggregateVertexAlbedoStreamOnDiskData_t>.Size => 16;
 
   
   public ref CUtlBinaryBlock BufferData { get; }

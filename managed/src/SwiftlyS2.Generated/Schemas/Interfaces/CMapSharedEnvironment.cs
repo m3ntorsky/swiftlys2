@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMapSharedEnvironment : CLogicalEntity, ISchemaClass<CMapSharedEnvironment> {
 
   static CMapSharedEnvironment ISchemaClass<CMapSharedEnvironment>.From(nint handle) => new CMapSharedEnvironmentImpl(handle);
+  static int ISchemaClass<CMapSharedEnvironment>.Size => 1280;
 
   
   public string TargetMapName { get; set; }

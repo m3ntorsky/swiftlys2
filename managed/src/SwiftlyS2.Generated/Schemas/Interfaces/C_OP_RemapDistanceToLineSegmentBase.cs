@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapDistanceToLineSegmentBase : CParticleFunctionOperator, ISchemaClass<C_OP_RemapDistanceToLineSegmentBase> {
 
   static C_OP_RemapDistanceToLineSegmentBase ISchemaClass<C_OP_RemapDistanceToLineSegmentBase>.From(nint handle) => new C_OP_RemapDistanceToLineSegmentBaseImpl(handle);
+  static int ISchemaClass<C_OP_RemapDistanceToLineSegmentBase>.Size => 488;
 
   
   public ref int CP0 { get; }

@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVoiceContainerSet : CVoiceContainerBase, ISchemaClass<CVoiceContainerSet> {
 
   static CVoiceContainerSet ISchemaClass<CVoiceContainerSet>.From(nint handle) => new CVoiceContainerSetImpl(handle);
+  static int ISchemaClass<CVoiceContainerSet>.Size => 208;
 
   
-  // CUtlVector< CVoiceContainerSetElement >
-  public ref CUtlVector SoundsToPlay { get; }
+  public ref CUtlVector<CVoiceContainerSetElement> SoundsToPlay { get; }
 
 
 }

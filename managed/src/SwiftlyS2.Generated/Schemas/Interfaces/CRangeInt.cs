@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRangeInt : ISchemaClass<CRangeInt> {
 
   static CRangeInt ISchemaClass<CRangeInt>.From(nint handle) => new CRangeIntImpl(handle);
+  static int ISchemaClass<CRangeInt>.Size => 8;
 
   
   public ISchemaFixedArray<int> Value { get; }

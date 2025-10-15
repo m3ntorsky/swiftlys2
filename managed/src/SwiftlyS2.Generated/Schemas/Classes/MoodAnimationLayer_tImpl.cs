@@ -28,8 +28,8 @@ internal partial class MoodAnimationLayer_tImpl : SchemaClass, MoodAnimationLaye
   public ref bool ActiveTalking {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x366391423033E5C3));
   }
-  public ref CUtlVector LayerAnimations {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3663914250279465));
+  public ref CUtlVector<MoodAnimation_t> LayerAnimations {
+    get => ref _Handle.AsRef<CUtlVector<MoodAnimation_t>>(Schema.GetOffset(0x3663914250279465));
   }
   public CRangeFloat Intensity {
     get => new CRangeFloatImpl(_Handle + Schema.GetOffset(0x3663914267B5578C));

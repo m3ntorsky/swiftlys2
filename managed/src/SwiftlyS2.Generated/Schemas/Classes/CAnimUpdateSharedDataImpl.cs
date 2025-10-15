@@ -15,14 +15,14 @@ internal partial class CAnimUpdateSharedDataImpl : SchemaClass, CAnimUpdateShare
   public CAnimUpdateSharedDataImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Nodes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA294DB47780F027A));
+  public ref CUtlVector<SchemaUntypedField> Nodes {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0xA294DB47780F027A));
   }
   public SchemaUntypedField NodeIndexMap {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA294DB47D3B3E7A3));
   }
-  public ref CUtlVector Components {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA294DB47F87FC409));
+  public ref CUtlVector<SchemaUntypedField> Components {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0xA294DB47F87FC409));
   }
   public SchemaUntypedField ParamListUpdater {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA294DB4784AA7F15));

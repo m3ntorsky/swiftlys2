@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLogicGameEventListener : CLogicalEntity, ISchemaClass<CLogicGameEventListener> {
 
   static CLogicGameEventListener ISchemaClass<CLogicGameEventListener>.From(nint handle) => new CLogicGameEventListenerImpl(handle);
+  static int ISchemaClass<CLogicGameEventListener>.Size => 1344;
 
   
   public CEntityIOOutput OnEventFired { get; }

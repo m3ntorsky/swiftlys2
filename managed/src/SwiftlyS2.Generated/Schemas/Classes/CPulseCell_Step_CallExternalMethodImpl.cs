@@ -21,8 +21,8 @@ internal partial class CPulseCell_Step_CallExternalMethodImpl : CPulseCell_BaseY
   public SchemaUntypedField GameBlackboard {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6A5B3EF536FB1236));
   }
-  public SchemaUntypedField ExpectedArgs {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x6A5B3EF594EB10E8));
+  public ref CUtlLeanVector<CPulseRuntimeMethodArg, int> ExpectedArgs {
+    get => ref _Handle.AsRef<CUtlLeanVector<CPulseRuntimeMethodArg, int>>(Schema.GetOffset(0x6A5B3EF594EB10E8));
   }
   public ref PulseMethodCallMode_t AsyncCallMode {
     get => ref _Handle.AsRef<PulseMethodCallMode_t>(Schema.GetOffset(0x6A5B3EF535F27204));

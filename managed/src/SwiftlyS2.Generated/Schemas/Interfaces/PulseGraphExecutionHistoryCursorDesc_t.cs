@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PulseGraphExecutionHistoryCursorDesc_t : ISchemaClass<PulseGraphExecutionHistoryCursorDesc_t> {
 
   static PulseGraphExecutionHistoryCursorDesc_t ISchemaClass<PulseGraphExecutionHistoryCursorDesc_t>.From(nint handle) => new PulseGraphExecutionHistoryCursorDesc_tImpl(handle);
+  static int ISchemaClass<PulseGraphExecutionHistoryCursorDesc_t>.Size => 40;
 
   
-  // CUtlVector< PulseCursorID_t >
-  public ref CUtlVector AncestorCursorIDs { get; }
+  public ref CUtlVector<PulseCursorID_t> AncestorCursorIDs { get; }
   
   public PulseDocNodeID_t SpawnNodeID { get; }
   

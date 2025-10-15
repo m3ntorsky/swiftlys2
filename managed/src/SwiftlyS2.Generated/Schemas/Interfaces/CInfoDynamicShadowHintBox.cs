@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CInfoDynamicShadowHintBox : CInfoDynamicShadowHint, ISchemaClass<CInfoDynamicShadowHintBox> {
 
   static CInfoDynamicShadowHintBox ISchemaClass<CInfoDynamicShadowHintBox>.From(nint handle) => new CInfoDynamicShadowHintBoxImpl(handle);
+  static int ISchemaClass<CInfoDynamicShadowHintBox>.Size => 1312;
 
   
   public ref Vector BoxMins { get; }

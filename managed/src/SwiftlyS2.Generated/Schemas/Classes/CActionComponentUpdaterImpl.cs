@@ -15,8 +15,8 @@ internal partial class CActionComponentUpdaterImpl : CAnimComponentUpdaterImpl, 
   public CActionComponentUpdaterImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Actions {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA700EA248D622684));
+  public ref CUtlVector<SchemaUntypedField> Actions {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0xA700EA248D622684));
   }
 
 

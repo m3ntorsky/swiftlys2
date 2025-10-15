@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseFuncs_GameParticleManager : ISchemaClass<CPulseFuncs_GameParticleManager> {
 
   static CPulseFuncs_GameParticleManager ISchemaClass<CPulseFuncs_GameParticleManager>.From(nint handle) => new CPulseFuncs_GameParticleManagerImpl(handle);
+  static int ISchemaClass<CPulseFuncs_GameParticleManager>.Size => 1;
 
 
 

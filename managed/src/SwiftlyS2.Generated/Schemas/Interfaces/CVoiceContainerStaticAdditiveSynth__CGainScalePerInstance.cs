@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance : ISchemaClass<CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance> {
 
   static CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance ISchemaClass<CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance>.From(nint handle) => new CVoiceContainerStaticAdditiveSynth__CGainScalePerInstanceImpl(handle);
+  static int ISchemaClass<CVoiceContainerStaticAdditiveSynth__CGainScalePerInstance>.Size => 16;
 
   
   public ref float MinVolume { get; }

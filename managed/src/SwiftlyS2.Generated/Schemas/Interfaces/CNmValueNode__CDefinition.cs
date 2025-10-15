@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmValueNode__CDefinition : CNmGraphNode__CDefinition, ISchemaClass<CNmValueNode__CDefinition> {
 
   static CNmValueNode__CDefinition ISchemaClass<CNmValueNode__CDefinition>.From(nint handle) => new CNmValueNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmValueNode__CDefinition>.Size => 16;
 
 
 

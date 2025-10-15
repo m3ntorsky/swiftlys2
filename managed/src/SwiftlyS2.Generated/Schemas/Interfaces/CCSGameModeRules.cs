@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSGameModeRules : ISchemaClass<CCSGameModeRules> {
 
   static CCSGameModeRules ISchemaClass<CCSGameModeRules>.From(nint handle) => new CCSGameModeRulesImpl(handle);
+  static int ISchemaClass<CCSGameModeRules>.Size => 48;
 
   
   public ref CNetworkVarChainer __m_pChainEntity { get; }

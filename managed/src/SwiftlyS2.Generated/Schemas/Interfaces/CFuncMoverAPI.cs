@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFuncMoverAPI : ISchemaClass<CFuncMoverAPI> {
 
   static CFuncMoverAPI ISchemaClass<CFuncMoverAPI>.From(nint handle) => new CFuncMoverAPIImpl(handle);
+  static int ISchemaClass<CFuncMoverAPI>.Size => 8;
 
 
 

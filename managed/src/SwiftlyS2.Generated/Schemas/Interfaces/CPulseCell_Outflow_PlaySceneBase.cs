@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Outflow_PlaySceneBase : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_Outflow_PlaySceneBase> {
 
   static CPulseCell_Outflow_PlaySceneBase ISchemaClass<CPulseCell_Outflow_PlaySceneBase>.From(nint handle) => new CPulseCell_Outflow_PlaySceneBaseImpl(handle);
+  static int ISchemaClass<CPulseCell_Outflow_PlaySceneBase>.Size => 240;
 
   
   public CPulse_ResumePoint OnFinished { get; }
   
   public CPulse_ResumePoint OnCanceled { get; }
   
-  // CUtlVector< CPulse_OutflowConnection >
-  public ref CUtlVector Triggers { get; }
+  public ref CUtlVector<CPulse_OutflowConnection> Triggers { get; }
 
 
 }

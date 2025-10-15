@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SimpleConstraintSoundProfile : ISchemaClass<SimpleConstraintSoundProfile> {
 
   static SimpleConstraintSoundProfile ISchemaClass<SimpleConstraintSoundProfile>.From(nint handle) => new SimpleConstraintSoundProfileImpl(handle);
+  static int ISchemaClass<SimpleConstraintSoundProfile>.Size => 32;
 
   
   public ref SimpleConstraintSoundProfile__SimpleConstraintsSoundProfileKeypoints_t Keypoints { get; }

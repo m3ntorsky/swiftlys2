@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SequenceHistory_t : ISchemaClass<SequenceHistory_t> {
 
   static SequenceHistory_t ISchemaClass<SequenceHistory_t>.From(nint handle) => new SequenceHistory_tImpl(handle);
+  static int ISchemaClass<SequenceHistory_t>.Size => 24;
 
   
   public HSequence Sequence { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSoundOpvarSetPathCornerEntity : CSoundOpvarSetPointEntity, ISchemaClass<CSoundOpvarSetPathCornerEntity> {
 
   static CSoundOpvarSetPathCornerEntity ISchemaClass<CSoundOpvarSetPathCornerEntity>.From(nint handle) => new CSoundOpvarSetPathCornerEntityImpl(handle);
+  static int ISchemaClass<CSoundOpvarSetPathCornerEntity>.Size => 1744;
 
   
   public ref float DistMinSqr { get; }

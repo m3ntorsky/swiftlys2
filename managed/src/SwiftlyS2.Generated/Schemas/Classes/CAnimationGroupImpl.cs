@@ -36,8 +36,8 @@ internal partial class CAnimationGroupImpl : SchemaClass, CAnimationGroup {
   public ref CUtlVector<CBufferString> Scripts {
     get => ref _Handle.AsRef<CUtlVector<CBufferString>>(Schema.GetOffset(0x338D4483F1FF2218));
   }
-  public ref CUtlVector AdditionalExtRefs {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x338D448349CEFD51));
+  public ref CUtlVector<SchemaUntypedField> AdditionalExtRefs {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0x338D448349CEFD51));
   }
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNetworkedSequenceOperation : ISchemaClass<CNetworkedSequenceOperation> {
 
   static CNetworkedSequenceOperation ISchemaClass<CNetworkedSequenceOperation>.From(nint handle) => new CNetworkedSequenceOperationImpl(handle);
+  static int ISchemaClass<CNetworkedSequenceOperation>.Size => 40;
 
   
   public HSequence Sequence { get; }

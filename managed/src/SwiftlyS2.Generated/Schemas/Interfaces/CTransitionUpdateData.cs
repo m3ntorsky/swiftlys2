@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTransitionUpdateData : ISchemaClass<CTransitionUpdateData> {
 
   static CTransitionUpdateData ISchemaClass<CTransitionUpdateData>.From(nint handle) => new CTransitionUpdateDataImpl(handle);
+  static int ISchemaClass<CTransitionUpdateData>.Size => 3;
 
   
   public ref byte SrcStateIndex { get; }

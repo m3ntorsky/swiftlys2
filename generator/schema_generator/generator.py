@@ -18,6 +18,7 @@ if not os.path.exists(OUT_DIR):
 blacklisted_classes = [
   "FeSimdTri_t",
   "CTakeDamageInfo",
+  "CTakeDamageResult",
   "CNetworkVarChainer",
   "ChangeAccessorFieldPathIndex_t"
 ]
@@ -178,7 +179,8 @@ class Writer():
       "BASE_INTERFACE": f"" if self.base_class == "SchemaClass" else get_interface_name(self.base_class) + ", ",
       "IMPL_TYPE": get_impl_name(self.class_name),
       "FIELDS": "\n".join(fields),
-      "UPDATORS": "\n".join(updators)
+      "UPDATORS": "\n".join(updators),
+      "SIZE": self.size
     }
     self.interface_file_handle.write(render_template(self.interface_template, params))
 

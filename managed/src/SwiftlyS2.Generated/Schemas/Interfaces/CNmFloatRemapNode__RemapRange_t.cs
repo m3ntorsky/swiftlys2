@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmFloatRemapNode__RemapRange_t : ISchemaClass<CNmFloatRemapNode__RemapRange_t> {
 
   static CNmFloatRemapNode__RemapRange_t ISchemaClass<CNmFloatRemapNode__RemapRange_t>.From(nint handle) => new CNmFloatRemapNode__RemapRange_tImpl(handle);
+  static int ISchemaClass<CNmFloatRemapNode__RemapRange_t>.Size => 8;
 
   
   public ref float Begin { get; }

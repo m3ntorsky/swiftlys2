@@ -30,6 +30,7 @@
 #include <public/engine/igameeventsystem.h>
 
 #include <fmt/format.h>
+#include <s2binlib/s2binlib.h>
 
 #include "networkbasetypes.pb.h"
 
@@ -62,12 +63,39 @@ std::map<std::string, void*> g_mCvars;
 uint64_t g_uQueryCallbacks = 0;
 std::map<uint64_t, std::function<void(int, std::string, std::string)>> g_mQueryCallbacks;
 
+IVFunctionHook* g_pProcessRespondCvarValueHook = nullptr;
+
+bool OnConvarQuery(CServerSideClientBase* client, const CNetMessagePB<CCLCMsg_RespondCvarValue>& msg)
+{
+    static auto cvarmanager = g_ifaceService.FetchInterface<IConvarManager>(CONVARMANAGER_INTERFACE_VERSION);
+
+    cvarmanager->OnClientQueryCvar(client->GetPlayerSlot().Get(), msg.name(), msg.value());
+
+    return reinterpret_cast<bool(*)(CServerSideClientBase*, const CNetMessagePB<CCLCMsg_RespondCvarValue>&)>(g_pProcessRespondCvarValueHook->GetOriginal())(client, msg);
+}
+
 void CConvarManager::Initialize()
 {
+    void* serverSideClientVTable;
+    s2binlib_find_vtable("engine2", "CServerSideClient", &serverSideClientVTable);
+
+    static auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+
+    g_pProcessRespondCvarValueHook = hooksmanager->CreateVFunctionHook();
+    g_pProcessRespondCvarValueHook->SetHookFunction(serverSideClientVTable, gamedata->GetOffsets()->Fetch("CServerSideClient::ProcessRespondCvarValue"), reinterpret_cast<void*>(OnConvarQuery), true);
+    g_pProcessRespondCvarValueHook->Enable();
 }
 
 void CConvarManager::Shutdown()
 {
+    if (g_pProcessRespondCvarValueHook)
+    {
+        g_pProcessRespondCvarValueHook->Disable();
+        static auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+        hooksmanager->DestroyVFunctionHook(g_pProcessRespondCvarValueHook);
+        g_pProcessRespondCvarValueHook = nullptr;
+    }
 }
 
 void CConvarManager::QueryClientConvar(int playerid, std::string cvar_name)
@@ -301,7 +329,7 @@ ConvarValue CConvarManager::GetConvarValue(std::string cvar_name)
     else if (cvar.GetType() == EConVarType_UInt64)
     {
         /*
-        
+
         unsigned long long long long long long long long long long long long long long long long long long
         fuck you linux fuck you gcc
 

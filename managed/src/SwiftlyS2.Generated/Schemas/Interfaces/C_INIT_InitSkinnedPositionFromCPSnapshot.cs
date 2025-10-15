@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_InitSkinnedPositionFromCPSnapshot : CParticleFunctionInitializer, ISchemaClass<C_INIT_InitSkinnedPositionFromCPSnapshot> {
 
   static C_INIT_InitSkinnedPositionFromCPSnapshot ISchemaClass<C_INIT_InitSkinnedPositionFromCPSnapshot>.From(nint handle) => new C_INIT_InitSkinnedPositionFromCPSnapshotImpl(handle);
+  static int ISchemaClass<C_INIT_InitSkinnedPositionFromCPSnapshot>.Size => 896;
 
   
   public ref int SnapshotControlPointNumber { get; }

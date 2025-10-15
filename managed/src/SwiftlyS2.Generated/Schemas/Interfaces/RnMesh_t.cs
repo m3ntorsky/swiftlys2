@@ -11,23 +11,21 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnMesh_t : ISchemaClass<RnMesh_t> {
 
   static RnMesh_t ISchemaClass<RnMesh_t>.From(nint handle) => new RnMesh_tImpl(handle);
+  static int ISchemaClass<RnMesh_t>.Size => 192;
 
   
   public ref Vector Min { get; }
   
   public ref Vector Max { get; }
   
-  // CUtlVector< RnNode_t >
-  public ref CUtlVector Nodes { get; }
+  public ref CUtlVector<RnNode_t> Nodes { get; }
   
   // CUtlVectorSIMDPaddedVector
   public SchemaUntypedField Vertices { get; }
   
-  // CUtlVector< RnTriangle_t >
-  public ref CUtlVector Triangles { get; }
+  public ref CUtlVector<RnTriangle_t> Triangles { get; }
   
-  // CUtlVector< RnWing_t >
-  public ref CUtlVector Wings { get; }
+  public ref CUtlVector<RnWing_t> Wings { get; }
   
   public ref CUtlVector<byte> TriangleEdgeFlags { get; }
   

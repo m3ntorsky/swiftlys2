@@ -24,6 +24,13 @@ internal partial class C_OP_DecayMaintainCountImpl : CParticleFunctionOperatorIm
   public ref int SnapshotControlPoint {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x168E27F3192638EC));
   }
+  public string StrSnapshotSubset {
+    get {
+      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x168E27F3BD8A8E5E));
+      return Schema.GetString(ptr);
+    }
+    set => Schema.SetString(_Handle, 0x168E27F3BD8A8E5E, value);
+  } 
   public ref bool LifespanDecay {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x168E27F39642CC6B));
   }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMessageEntity : CPointEntity, ISchemaClass<CMessageEntity> {
 
   static CMessageEntity ISchemaClass<CMessageEntity>.From(nint handle) => new CMessageEntityImpl(handle);
+  static int ISchemaClass<CMessageEntity>.Size => 1288;
 
   
   public ref int Radius { get; }

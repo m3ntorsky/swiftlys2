@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SDFConstraint : CParticleFunctionConstraint, ISchemaClass<C_OP_SDFConstraint> {
 
   static C_OP_SDFConstraint ISchemaClass<C_OP_SDFConstraint>.From(nint handle) => new C_OP_SDFConstraintImpl(handle);
+  static int ISchemaClass<C_OP_SDFConstraint>.Size => 1160;
 
   
   public CParticleCollectionFloatInput MinDist { get; }

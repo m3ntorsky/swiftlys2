@@ -21,14 +21,14 @@ internal partial class CSceneObjectDataImpl : SchemaClass, CSceneObjectData {
   public ref Vector MaxBounds {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x628AC6A9C0B4CE60));
   }
-  public SchemaUntypedField DrawCalls {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x628AC6A9CA953770));
+  public ref CUtlLeanVector<CMaterialDrawDescriptor, int> DrawCalls {
+    get => ref _Handle.AsRef<CUtlLeanVector<CMaterialDrawDescriptor, int>>(Schema.GetOffset(0x628AC6A9CA953770));
   }
-  public SchemaUntypedField DrawBounds {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x628AC6A96CBBD6CE));
+  public ref CUtlLeanVector<AABB_t, int> DrawBounds {
+    get => ref _Handle.AsRef<CUtlLeanVector<AABB_t, int>>(Schema.GetOffset(0x628AC6A96CBBD6CE));
   }
-  public SchemaUntypedField Meshlets {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x628AC6A928865C36));
+  public ref CUtlLeanVector<CMeshletDescriptor, int> Meshlets {
+    get => ref _Handle.AsRef<CUtlLeanVector<CMeshletDescriptor, int>>(Schema.GetOffset(0x628AC6A928865C36));
   }
   public ref Vector4D TintColor {
     get => ref _Handle.AsRef<Vector4D>(Schema.GetOffset(0x628AC6A950AFF21F));

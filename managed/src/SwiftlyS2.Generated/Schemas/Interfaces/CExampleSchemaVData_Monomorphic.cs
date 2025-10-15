@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CExampleSchemaVData_Monomorphic : ISchemaClass<CExampleSchemaVData_Monomorphic> {
 
   static CExampleSchemaVData_Monomorphic ISchemaClass<CExampleSchemaVData_Monomorphic>.From(nint handle) => new CExampleSchemaVData_MonomorphicImpl(handle);
+  static int ISchemaClass<CExampleSchemaVData_Monomorphic>.Size => 8;
 
   
   public ref int Example1 { get; }

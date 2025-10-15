@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNetworkViewOffsetVector : ISchemaClass<CNetworkViewOffsetVector> {
 
   static CNetworkViewOffsetVector ISchemaClass<CNetworkViewOffsetVector>.From(nint handle) => new CNetworkViewOffsetVectorImpl(handle);
+  static int ISchemaClass<CNetworkViewOffsetVector>.Size => 40;
 
   
   public ref CNetworkedQuantizedFloat X { get; }

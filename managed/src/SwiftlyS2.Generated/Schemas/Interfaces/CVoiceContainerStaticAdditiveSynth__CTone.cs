@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVoiceContainerStaticAdditiveSynth__CTone : ISchemaClass<CVoiceContainerStaticAdditiveSynth__CTone> {
 
   static CVoiceContainerStaticAdditiveSynth__CTone ISchemaClass<CVoiceContainerStaticAdditiveSynth__CTone>.From(nint handle) => new CVoiceContainerStaticAdditiveSynth__CToneImpl(handle);
+  static int ISchemaClass<CVoiceContainerStaticAdditiveSynth__CTone>.Size => 96;
 
   
-  // CUtlVector< CVoiceContainerStaticAdditiveSynth::CHarmonic >
-  public ref CUtlVector Harmonics { get; }
+  public ref CUtlVector<CVoiceContainerStaticAdditiveSynth__CHarmonic> Harmonics { get; }
   
   // CPiecewiseCurve
   public SchemaUntypedField Curve { get; }

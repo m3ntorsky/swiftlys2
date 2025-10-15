@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPropDoorRotatingBreakable : CPropDoorRotating, ISchemaClass<CPropDoorRotatingBreakable> {
 
   static CPropDoorRotatingBreakable ISchemaClass<CPropDoorRotatingBreakable>.From(nint handle) => new CPropDoorRotatingBreakableImpl(handle);
+  static int ISchemaClass<CPropDoorRotatingBreakable>.Size => 4272;
 
   
   public ref bool Breakable { get; }
@@ -19,7 +20,7 @@ public partial interface CPropDoorRotatingBreakable : CPropDoorRotating, ISchema
   
   public ref int CurrentDamageState { get; }
   
-  public ref CUtlVector<CUtlSymbolLarge> DamageStates { get; }
+  public ref CUtlVector<SchemaUntypedField> DamageStates { get; }
 
 
 }

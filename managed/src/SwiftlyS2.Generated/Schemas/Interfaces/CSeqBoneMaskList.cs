@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSeqBoneMaskList : ISchemaClass<CSeqBoneMaskList> {
 
   static CSeqBoneMaskList ISchemaClass<CSeqBoneMaskList>.From(nint handle) => new CSeqBoneMaskListImpl(handle);
+  static int ISchemaClass<CSeqBoneMaskList>.Size => 96;
 
   
   public ref CBufferString Name { get; }
@@ -21,8 +22,7 @@ public partial interface CSeqBoneMaskList : ISchemaClass<CSeqBoneMaskList> {
   
   public ref float DefaultMorphCtrlWeight { get; }
   
-  // CUtlVector< std::pair< CBufferString, float32 > >
-  public ref CUtlVector MorphCtrlWeightArray { get; }
+  public ref CUtlVector<SchemaUntypedField> MorphCtrlWeightArray { get; }
 
 
 }

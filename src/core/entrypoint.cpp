@@ -17,13 +17,15 @@
  ************************************************************************************************/
 
 #include "entrypoint.h"
-#include "bridge/metamod.h"
 #include <api/interfaces/manager.h>
 #include <api/interfaces/interfaces.h>
 #include <api/scripting/scripting.h>    
 #include <api/memory/hooks/manager.h>
 #include "console/colors.h"
 #include <core/managed/host/host.h>
+
+#include "managed/host/dynlib.h"
+#include "managed/host/strconv.h"
 
 #include <engine/entities/listener.h>
 #include <engine/entities/entitysystem.h>
@@ -35,21 +37,51 @@
 
 #include <api/shared/plat.h>
 #include <api/shared/string.h>
+#include <api/shared/files.h>
+
+#include <public/tier1/KeyValues.h>
 
 #include <fmt/format.h>
 
 #include <s2binlib/s2binlib.h>
+#include <public/engine/igameeventsystem.h>
 
 SwiftlyCore g_SwiftlyCore;
 InterfacesManager g_ifaceService;
+CSteamGameServerAPIContext g_SteamAPI;
+
+IVFunctionHook* g_pGameServerSteamAPIActivated = nullptr;
+IVFunctionHook* g_pGameServerSteamAPIDeactivated = nullptr;
+
+IVFunctionHook* g_pRegisterLoopModeHook = nullptr;
+IVFunctionHook* g_pUnregisterLoopModeHook = nullptr;
+
+IVFunctionHook* g_pCreateLoopModeHook = nullptr;
+IVFunctionHook* g_pDestroyLoopModeHook = nullptr;
+
+IVFunctionHook* g_pLoopInitHook = nullptr;
+IVFunctionHook* g_pLoopShutdownHook = nullptr;
+
+void GameServerSteamAPIActivatedHook(void* _this);
+void GameServerSteamAPIDeactivatedHook(void* _this);
+
+void RegisterLoopModeHook(void* _this, const char* loopModeName, void* factory, void** ppGlobalPtr);
+void UnregisterLoopModeHook(void* _this, const char* loopModeName, void* factory, void** ppGlobalPtr);
+
+void* CreateLoopModeHook(void* _this);
+void DestroyLoopModeHook(void* _this, void* loopmode);
+
+bool LoopInitHook(void* _this, KeyValues* pKeyValues, void* pRegistry);
+void LoopShutdownHook(void* _this);
 
 bool SwiftlyCore::Load(BridgeKind_t kind)
 {
     m_iKind = kind;
     SetupConsoleColors();
 
-
-    // s2binlib_pattern
+    s2binlib_initialize(Plat_GetGameDirectory(), "csgo");
+    s2binlib_set_module_base_from_pointer("server", g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL));
+    s2binlib_set_module_base_from_pointer("engine2", g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER));
 
     auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
 
@@ -132,12 +164,44 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
     hooksmanager->Initialize();
 
+    void* engineservicemgr = nullptr;
+    s2binlib_find_vtable("engine2", "CEngineServiceMgr", &engineservicemgr);
+
+    g_pRegisterLoopModeHook = hooksmanager->CreateVFunctionHook();
+    g_pRegisterLoopModeHook->SetHookFunction(engineservicemgr, gamedata->GetOffsets()->Fetch("IEngineServiceMgr::RegisterLoopMode"), (void*)RegisterLoopModeHook, true);
+    g_pRegisterLoopModeHook->Enable();
+
+    g_pUnregisterLoopModeHook = hooksmanager->CreateVFunctionHook();
+    g_pUnregisterLoopModeHook->SetHookFunction(engineservicemgr, gamedata->GetOffsets()->Fetch("IEngineServiceMgr::UnregisterLoopMode"), (void*)UnregisterLoopModeHook, true);
+    g_pUnregisterLoopModeHook->Enable();
+
+    void* servervtable = nullptr;
+    s2binlib_find_vtable("server", "CSource2Server", &servervtable);
+
+    g_pGameServerSteamAPIActivated = hooksmanager->CreateVFunctionHook();
+    g_pGameServerSteamAPIActivated->SetHookFunction(servervtable, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameServerSteamAPIActivated"), (void*)GameServerSteamAPIActivatedHook, true);
+    g_pGameServerSteamAPIActivated->Enable();
+
+    g_pGameServerSteamAPIDeactivated = hooksmanager->CreateVFunctionHook();
+    g_pGameServerSteamAPIDeactivated->SetHookFunction(servervtable, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameServerSteamAPIDeactivated"), (void*)GameServerSteamAPIDeactivatedHook, true);
+    g_pGameServerSteamAPIDeactivated->Enable();
+
     StartFixes();
 
     auto scripting = g_ifaceService.FetchInterface<IScriptingAPI>(SCRIPTING_INTERFACE_VERSION);
 
-    InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/" + m_sCorePath);
-    InitializeDotNetAPI(scripting->GetNativeFunctions(), scripting->GetNativeFunctionsCount());
+    if (!InitializeHostFXR(std::string(Plat_GetGameDirectory()) + "/csgo/" + m_sCorePath))
+    {
+        auto crashreporter = g_ifaceService.FetchInterface<ICrashReporter>(CRASHREPORTER_INTERFACE_VERSION);
+        crashreporter->ReportPreventionIncident("Managed", fmt::format("Couldn't initialize the .NET runtime. Make sure you installed `swiftlys2-{}-{}-with-runtimes.zip`.", WIN_LINUX("windows", "linux"), GetVersion()));
+        return true;
+    }
+    if (!InitializeDotNetAPI(scripting->GetNativeFunctions(), scripting->GetNativeFunctionsCount()))
+    {
+        auto crashreporter = g_ifaceService.FetchInterface<ICrashReporter>(CRASHREPORTER_INTERFACE_VERSION);
+        crashreporter->ReportPreventionIncident("Managed", "Couldn't initialize the .NET scripting API.");
+        return true;
+    }
 
     return true;
 }
@@ -165,11 +229,139 @@ bool SwiftlyCore::Unload()
     auto servercommands = g_ifaceService.FetchInterface<IServerCommands>(SERVERCOMMANDS_INTERFACE_VERSION);
     servercommands->Shutdown();
 
+    if (g_pGameServerSteamAPIActivated != nullptr)
+    {
+        g_pGameServerSteamAPIActivated->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pGameServerSteamAPIActivated);
+        g_pGameServerSteamAPIActivated = nullptr;
+    }
+
+    if (g_pGameServerSteamAPIDeactivated != nullptr)
+    {
+        g_pGameServerSteamAPIDeactivated->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pGameServerSteamAPIDeactivated);
+        g_pGameServerSteamAPIDeactivated = nullptr;
+    }
+
     StopFixes();
 
     ShutdownGameSystem();
 
     return true;
+}
+
+void GameServerSteamAPIActivatedHook(void* _this)
+{
+    if (!CommandLine()->HasParm("-dedicated") || g_SteamAPI.SteamUGC())
+        return;
+
+    g_SteamAPI.Init();
+    static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    playermanager->SteamAPIServerActivated();
+
+    return reinterpret_cast<decltype(&GameServerSteamAPIActivatedHook)>(g_pGameServerSteamAPIActivated->GetOriginal())(_this);
+}
+
+void GameServerSteamAPIDeactivatedHook(void* _this)
+{
+    return reinterpret_cast<decltype(&GameServerSteamAPIDeactivatedHook)>(g_pGameServerSteamAPIDeactivated->GetOriginal())(_this);
+}
+
+void RegisterLoopModeHook(void* _this, const char* loopModeName, void* factory, void** ppGlobalPtr)
+{
+    if (std::string(loopModeName) == "game")
+    {
+        auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+        auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+
+        g_pCreateLoopModeHook = hooksmanager->CreateVFunctionHook();
+        g_pCreateLoopModeHook->SetHookFunction(factory, gamedata->GetOffsets()->Fetch("ILoopModeFactory::CreateLoopMode"), (void*)CreateLoopModeHook, false);
+        g_pCreateLoopModeHook->Enable();
+
+        g_pDestroyLoopModeHook = hooksmanager->CreateVFunctionHook();
+        g_pDestroyLoopModeHook->SetHookFunction(factory, gamedata->GetOffsets()->Fetch("ILoopModeFactory::DestroyLoopMode"), (void*)DestroyLoopModeHook, false);
+        g_pDestroyLoopModeHook->Enable();
+    }
+
+    return reinterpret_cast<decltype(&RegisterLoopModeHook)>(g_pRegisterLoopModeHook->GetOriginal())(_this, loopModeName, factory, ppGlobalPtr);
+}
+
+void UnregisterLoopModeHook(void* _this, const char* loopModeName, void* factory, void** ppGlobalPtr)
+{
+    if (std::string(loopModeName) == "game")
+    {
+        auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+        if (g_pCreateLoopModeHook)
+        {
+            g_pCreateLoopModeHook->Disable();
+            hooksmanager->DestroyVFunctionHook(g_pCreateLoopModeHook);
+            g_pCreateLoopModeHook = nullptr;
+        }
+
+        if (g_pDestroyLoopModeHook)
+        {
+            g_pDestroyLoopModeHook->Disable();
+            hooksmanager->DestroyVFunctionHook(g_pDestroyLoopModeHook);
+            g_pDestroyLoopModeHook = nullptr;
+        }
+    }
+
+    return reinterpret_cast<decltype(&UnregisterLoopModeHook)>(g_pUnregisterLoopModeHook->GetOriginal())(_this, loopModeName, factory, ppGlobalPtr);
+}
+
+void* CreateLoopModeHook(void* _this)
+{
+    void* ret = reinterpret_cast<decltype(&CreateLoopModeHook)>(g_pCreateLoopModeHook->GetOriginal())(_this);
+
+    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+
+    g_pLoopInitHook = hooksmanager->CreateVFunctionHook();
+    g_pLoopInitHook->SetHookFunction(ret, gamedata->GetOffsets()->Fetch("ILoopMode::LoopInit"), (void*)LoopInitHook, false);
+    g_pLoopInitHook->Enable();
+
+    g_pLoopShutdownHook = hooksmanager->CreateVFunctionHook();
+    g_pLoopShutdownHook->SetHookFunction(ret, gamedata->GetOffsets()->Fetch("ILoopMode::LoopShutdown"), (void*)LoopShutdownHook, false);
+    g_pLoopShutdownHook->Enable();
+
+    return ret;
+}
+
+void DestroyLoopModeHook(void* _this, void* loopmode)
+{
+    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+
+    if (g_pLoopInitHook)
+    {
+        g_pLoopInitHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pLoopInitHook);
+        g_pLoopInitHook = nullptr;
+    }
+
+    if (g_pLoopShutdownHook)
+    {
+        g_pLoopShutdownHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pLoopShutdownHook);
+        g_pLoopShutdownHook = nullptr;
+    }
+
+    return reinterpret_cast<decltype(&DestroyLoopModeHook)>(g_pDestroyLoopModeHook->GetOriginal())(_this, loopmode);
+}
+
+bool LoopInitHook(void* _this, KeyValues* pKeyValues, void* pRegistry)
+{
+    bool ret = reinterpret_cast<decltype(&LoopInitHook)>(g_pLoopInitHook->GetOriginal())(_this, pKeyValues, pRegistry);
+
+    g_SwiftlyCore.OnMapLoad(pKeyValues->GetString("levelname"));
+
+    return ret;
+}
+
+void LoopShutdownHook(void* _this)
+{
+    reinterpret_cast<decltype(&LoopShutdownHook)>(g_pLoopShutdownHook->GetOriginal())(_this);
+
+    g_SwiftlyCore.OnMapUnload();
 }
 
 std::string current_map = "";
@@ -192,15 +384,70 @@ void SwiftlyCore::OnMapUnload()
     current_map = "";
 }
 
-void* SwiftlyCore::GetInterface(const std::string& iface_name)
+std::map<std::string, void*> g_mInterfacesCache;
+
+void* SwiftlyCore::GetInterface(const std::string& interface_name)
 {
-    if (m_iKind == BridgeKind_t::Metamod) return g_MMPluginBridge.GetInterface(iface_name);
-    else return nullptr;
+    auto it = g_mInterfacesCache.find(interface_name);
+    if (it != g_mInterfacesCache.end())
+        return it->second;
+
+    void* ifaceptr = nullptr;
+    void* ifaceCreate = nullptr;
+    if (INTERFACEVERSION_SERVERGAMEDLL == interface_name || INTERFACEVERSION_SERVERGAMECLIENTS == interface_name || SOURCE2GAMEENTITIES_INTERFACE_VERSION == interface_name) {
+        void* lib = load_library(
+            (const char_t*)WIN_LINUX(
+                StringWide((Plat_GetGameDirectory() + std::string("\\csgo\\bin\\win64\\server.dll"))).c_str(),
+                (Plat_GetGameDirectory() + std::string("/csgo/bin/linuxsteamrt64/libserver.so")).c_str()
+            )
+        );
+        ifaceCreate = get_export(lib, "CreateInterface");
+        unload_library(lib);
+    }
+    else if (SCHEMASYSTEM_INTERFACE_VERSION == interface_name) {
+        void* lib = load_library(
+            (const char_t*)WIN_LINUX(
+                StringWide(Plat_GetGameDirectory() + std::string("\\bin\\win64\\schemasystem.dll")).c_str(),
+                (Plat_GetGameDirectory() + std::string("/bin/linuxsteamrt64/libschemasystem.so")).c_str()
+            )
+        );
+        ifaceCreate = get_export(lib, "CreateInterface");
+        unload_library(lib);
+    }
+    else if (NETWORKMESSAGES_INTERFACE_VERSION == interface_name) {
+        void* lib = load_library(
+            (const char_t*)WIN_LINUX(
+                StringWide(Plat_GetGameDirectory() + std::string("\\bin\\win64\\networksystem.dll")).c_str(),
+                (Plat_GetGameDirectory() + std::string("/bin/linuxsteamrt64/libnetworksystem.so")).c_str()
+            )
+        );
+        ifaceCreate = get_export(lib, "CreateInterface");
+        unload_library(lib);
+    }
+    else {
+        void* lib = load_library(
+            (const char_t*)WIN_LINUX(
+                StringWide(Plat_GetGameDirectory() + std::string("\\bin\\win64\\engine2.dll")).c_str(),
+                (Plat_GetGameDirectory() + std::string("/bin/linuxsteamrt64/libengine2.so")).c_str()
+            )
+        );
+        ifaceCreate = get_export(lib, "CreateInterface");
+        unload_library(lib);
+    }
+
+    if (ifaceCreate != nullptr)
+    {
+        ifaceptr = reinterpret_cast<void* (*)(const char*, int*)>(ifaceCreate)(interface_name.c_str(), nullptr);
+    }
+
+    if (ifaceptr != nullptr) g_mInterfacesCache.insert({ interface_name, ifaceptr });
+
+    return ifaceptr;
 }
 
 void SwiftlyCore::SendConsoleMessage(const std::string& message)
 {
-    if (m_iKind == BridgeKind_t::Metamod) g_MMPluginBridge.SendConsoleMessage(message);
+    Msg("%s", message.c_str());
 }
 
 std::string SwiftlyCore::GetCurrentGame()

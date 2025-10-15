@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlayerPing : CBaseEntity, ISchemaClass<CPlayerPing> {
 
   static CPlayerPing ISchemaClass<CPlayerPing>.From(nint handle) => new CPlayerPingImpl(handle);
+  static int ISchemaClass<CPlayerPing>.Size => 1304;
 
   
   public ref CHandle<CCSPlayerPawn> Player { get; }

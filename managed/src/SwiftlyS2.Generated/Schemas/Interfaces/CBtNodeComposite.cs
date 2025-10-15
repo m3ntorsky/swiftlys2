@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBtNodeComposite : CBtNode, ISchemaClass<CBtNodeComposite> {
 
   static CBtNodeComposite ISchemaClass<CBtNodeComposite>.From(nint handle) => new CBtNodeCompositeImpl(handle);
+  static int ISchemaClass<CBtNodeComposite>.Size => 88;
 
 
 

@@ -15,8 +15,8 @@ internal partial class CFootStepTriggerUpdateNodeImpl : CUnaryUpdateNodeImpl, CF
   public CFootStepTriggerUpdateNodeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Triggers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x799A3B55684C6AF0));
+  public ref CUtlVector<FootStepTrigger> Triggers {
+    get => ref _Handle.AsRef<CUtlVector<FootStepTrigger>>(Schema.GetOffset(0x799A3B55684C6AF0));
   }
   public ref float Tolerance {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x799A3B558C29728E));

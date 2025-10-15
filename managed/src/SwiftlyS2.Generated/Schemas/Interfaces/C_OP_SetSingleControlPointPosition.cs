@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SetSingleControlPointPosition : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetSingleControlPointPosition> {
 
   static C_OP_SetSingleControlPointPosition ISchemaClass<C_OP_SetSingleControlPointPosition>.From(nint handle) => new C_OP_SetSingleControlPointPositionImpl(handle);
+  static int ISchemaClass<C_OP_SetSingleControlPointPosition>.Size => 2304;
 
   
   public ref bool SetOnce { get; }

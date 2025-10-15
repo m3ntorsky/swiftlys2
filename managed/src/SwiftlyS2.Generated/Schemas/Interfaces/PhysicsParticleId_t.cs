@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PhysicsParticleId_t : ISchemaClass<PhysicsParticleId_t> {
 
   static PhysicsParticleId_t ISchemaClass<PhysicsParticleId_t>.From(nint handle) => new PhysicsParticleId_tImpl(handle);
+  static int ISchemaClass<PhysicsParticleId_t>.Size => 4;
 
   
   public ref uint Value { get; }

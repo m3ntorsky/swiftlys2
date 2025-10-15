@@ -15,8 +15,8 @@ internal partial class C_OP_RenderAsModelsImpl : CParticleFunctionRendererImpl, 
   public C_OP_RenderAsModelsImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector ModelList {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x634E6CCB05FC11B6));
+  public ref CUtlVector<ModelReference_t> ModelList {
+    get => ref _Handle.AsRef<CUtlVector<ModelReference_t>>(Schema.GetOffset(0x634E6CCB05FC11B6));
   }
   public ref float ModelScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x634E6CCBD28B2146));

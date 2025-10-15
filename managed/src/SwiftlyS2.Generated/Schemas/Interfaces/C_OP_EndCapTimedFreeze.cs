@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_EndCapTimedFreeze : CParticleFunctionOperator, ISchemaClass<C_OP_EndCapTimedFreeze> {
 
   static C_OP_EndCapTimedFreeze ISchemaClass<C_OP_EndCapTimedFreeze>.From(nint handle) => new C_OP_EndCapTimedFreezeImpl(handle);
+  static int ISchemaClass<C_OP_EndCapTimedFreeze>.Size => 832;
 
   
   public CParticleCollectionFloatInput FreezeTime { get; }

@@ -15,8 +15,8 @@ internal partial class CCSPlayerController_ActionTrackingServicesImpl : CPlayerC
   public CCSPlayerController_ActionTrackingServicesImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector PerRoundStats {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x96DF63C17C8AAE9F));
+  public ref CUtlVector<CSPerRoundStats_t> PerRoundStats {
+    get => ref _Handle.AsRef<CUtlVector<CSPerRoundStats_t>>(Schema.GetOffset(0x96DF63C17C8AAE9F));
   }
   public CSMatchStats_t MatchStats {
     get => new CSMatchStats_tImpl(_Handle + Schema.GetOffset(0x96DF63C11729A24D));

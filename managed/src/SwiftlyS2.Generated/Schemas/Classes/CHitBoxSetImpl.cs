@@ -25,8 +25,8 @@ internal partial class CHitBoxSetImpl : SchemaClass, CHitBoxSet {
   public ref uint NameHash {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x742AE9ECDE15EEFE));
   }
-  public ref CUtlVector HitBoxes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x742AE9EC07A4113F));
+  public ref CUtlVector<CHitBox> HitBoxes {
+    get => ref _Handle.AsRef<CUtlVector<CHitBox>>(Schema.GetOffset(0x742AE9EC07A4113F));
   }
   public string SourceFilename {
     get {

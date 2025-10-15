@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayerController_InGameMoneyServices : CPlayerControllerComponent, ISchemaClass<CCSPlayerController_InGameMoneyServices> {
 
   static CCSPlayerController_InGameMoneyServices ISchemaClass<CCSPlayerController_InGameMoneyServices>.From(nint handle) => new CCSPlayerController_InGameMoneyServicesImpl(handle);
+  static int ISchemaClass<CCSPlayerController_InGameMoneyServices>.Size => 88;
 
   
   public ref bool ReceivesMoneyNextRound { get; }

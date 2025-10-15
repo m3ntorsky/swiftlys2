@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionGraphConfig : ISchemaClass<CMotionGraphConfig> {
 
   static CMotionGraphConfig ISchemaClass<CMotionGraphConfig>.From(nint handle) => new CMotionGraphConfigImpl(handle);
+  static int ISchemaClass<CMotionGraphConfig>.Size => 32;
 
   
   public ISchemaFixedArray<float> ParamValues { get; }

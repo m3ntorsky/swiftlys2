@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ConstantInfo_t : ISchemaClass<ConstantInfo_t> {
 
   static ConstantInfo_t ISchemaClass<ConstantInfo_t>.From(nint handle) => new ConstantInfo_tImpl(handle);
+  static int ISchemaClass<ConstantInfo_t>.Size => 16;
 
   
   public string Name { get; set; }

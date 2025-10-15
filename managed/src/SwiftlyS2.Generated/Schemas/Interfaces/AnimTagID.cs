@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AnimTagID : ISchemaClass<AnimTagID> {
 
   static AnimTagID ISchemaClass<AnimTagID>.From(nint handle) => new AnimTagIDImpl(handle);
+  static int ISchemaClass<AnimTagID>.Size => 4;
 
   
   public ref uint Id { get; }

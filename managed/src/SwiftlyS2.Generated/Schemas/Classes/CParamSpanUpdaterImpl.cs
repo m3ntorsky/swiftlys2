@@ -15,8 +15,8 @@ internal partial class CParamSpanUpdaterImpl : SchemaClass, CParamSpanUpdater {
   public CParamSpanUpdaterImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Spans {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA35886AC66213056));
+  public ref CUtlVector<ParamSpan_t> Spans {
+    get => ref _Handle.AsRef<CUtlVector<ParamSpan_t>>(Schema.GetOffset(0xA35886AC66213056));
   }
 
 

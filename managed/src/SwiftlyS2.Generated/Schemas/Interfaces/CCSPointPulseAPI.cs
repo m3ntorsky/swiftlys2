@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPointPulseAPI : ISchemaClass<CCSPointPulseAPI> {
 
   static CCSPointPulseAPI ISchemaClass<CCSPointPulseAPI>.From(nint handle) => new CCSPointPulseAPIImpl(handle);
+  static int ISchemaClass<CCSPointPulseAPI>.Size => 1;
 
 
 

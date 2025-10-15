@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysSurfacePropertiesPhysics : ISchemaClass<CPhysSurfacePropertiesPhysics> {
 
   static CPhysSurfacePropertiesPhysics ISchemaClass<CPhysSurfacePropertiesPhysics>.From(nint handle) => new CPhysSurfacePropertiesPhysicsImpl(handle);
+  static int ISchemaClass<CPhysSurfacePropertiesPhysics>.Size => 24;
 
   
   public ref float Friction { get; }

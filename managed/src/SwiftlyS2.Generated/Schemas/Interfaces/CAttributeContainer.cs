@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAttributeContainer : CAttributeManager, ISchemaClass<CAttributeContainer> {
 
   static CAttributeContainer ISchemaClass<CAttributeContainer>.From(nint handle) => new CAttributeContainerImpl(handle);
+  static int ISchemaClass<CAttributeContainer>.Size => 760;
 
   
   public CEconItemView Item { get; }

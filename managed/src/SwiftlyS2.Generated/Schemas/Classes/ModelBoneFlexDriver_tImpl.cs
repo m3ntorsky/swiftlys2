@@ -25,8 +25,8 @@ internal partial class ModelBoneFlexDriver_tImpl : SchemaClass, ModelBoneFlexDri
   public ref uint BoneNameToken {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xBCBDE5AA44D1E369));
   }
-  public ref CUtlVector Controls {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xBCBDE5AA5FCAD2B7));
+  public ref CUtlVector<ModelBoneFlexDriverControl_t> Controls {
+    get => ref _Handle.AsRef<CUtlVector<ModelBoneFlexDriverControl_t>>(Schema.GetOffset(0xBCBDE5AA5FCAD2B7));
   }
 
 

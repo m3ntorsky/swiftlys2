@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmBoneWeightList : ISchemaClass<CNmBoneWeightList> {
 
   static CNmBoneWeightList ISchemaClass<CNmBoneWeightList>.From(nint handle) => new CNmBoneWeightListImpl(handle);
+  static int ISchemaClass<CNmBoneWeightList>.Size => 272;
 
   
   // CResourceName

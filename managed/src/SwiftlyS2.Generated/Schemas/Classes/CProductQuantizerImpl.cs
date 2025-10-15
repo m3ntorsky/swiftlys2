@@ -15,8 +15,8 @@ internal partial class CProductQuantizerImpl : SchemaClass, CProductQuantizer {
   public CProductQuantizerImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector SubQuantizers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5B1A8128593CF0B5));
+  public ref CUtlVector<CVectorQuantizer> SubQuantizers {
+    get => ref _Handle.AsRef<CUtlVector<CVectorQuantizer>>(Schema.GetOffset(0x5B1A8128593CF0B5));
   }
   public ref int Dimensions {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x5B1A81282D8795AC));

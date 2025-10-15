@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AnimationSnapshot_t : AnimationSnapshotBase_t, ISchemaClass<AnimationSnapshot_t> {
 
   static AnimationSnapshot_t ISchemaClass<AnimationSnapshot_t>.From(nint handle) => new AnimationSnapshot_tImpl(handle);
+  static int ISchemaClass<AnimationSnapshot_t>.Size => 288;
 
   
   public ref int EntIndex { get; }

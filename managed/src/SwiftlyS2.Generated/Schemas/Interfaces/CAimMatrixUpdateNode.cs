@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAimMatrixUpdateNode : CUnaryUpdateNode, ISchemaClass<CAimMatrixUpdateNode> {
 
   static CAimMatrixUpdateNode ISchemaClass<CAimMatrixUpdateNode>.From(nint handle) => new CAimMatrixUpdateNodeImpl(handle);
+  static int ISchemaClass<CAimMatrixUpdateNode>.Size => 384;
 
   
   public AimMatrixOpFixedSettings_t OpFixedSettings { get; }

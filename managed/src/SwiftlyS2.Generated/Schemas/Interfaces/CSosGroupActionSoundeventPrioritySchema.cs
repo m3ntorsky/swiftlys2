@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSosGroupActionSoundeventPrioritySchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionSoundeventPrioritySchema> {
 
   static CSosGroupActionSoundeventPrioritySchema ISchemaClass<CSosGroupActionSoundeventPrioritySchema>.From(nint handle) => new CSosGroupActionSoundeventPrioritySchemaImpl(handle);
+  static int ISchemaClass<CSosGroupActionSoundeventPrioritySchema>.Size => 56;
 
   
   public string PriorityValue { get; set; }

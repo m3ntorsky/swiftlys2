@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStateActionUpdater : ISchemaClass<CStateActionUpdater> {
 
   static CStateActionUpdater ISchemaClass<CStateActionUpdater>.From(nint handle) => new CStateActionUpdaterImpl(handle);
+  static int ISchemaClass<CStateActionUpdater>.Size => 16;
 
   
   // CSmartPtr< CAnimActionUpdater >

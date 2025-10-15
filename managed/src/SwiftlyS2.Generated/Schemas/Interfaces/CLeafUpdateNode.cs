@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLeafUpdateNode : CAnimUpdateNodeBase, ISchemaClass<CLeafUpdateNode> {
 
   static CLeafUpdateNode ISchemaClass<CLeafUpdateNode>.From(nint handle) => new CLeafUpdateNodeImpl(handle);
+  static int ISchemaClass<CLeafUpdateNode>.Size => 88;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ParticleChildrenInfo_t : ISchemaClass<ParticleChildrenInfo_t> {
 
   static ParticleChildrenInfo_t ISchemaClass<ParticleChildrenInfo_t>.From(nint handle) => new ParticleChildrenInfo_tImpl(handle);
+  static int ISchemaClass<ParticleChildrenInfo_t>.Size => 32;
 
   
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> ChildRef { get; }

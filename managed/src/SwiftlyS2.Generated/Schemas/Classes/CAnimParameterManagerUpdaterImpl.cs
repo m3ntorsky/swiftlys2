@@ -15,8 +15,8 @@ internal partial class CAnimParameterManagerUpdaterImpl : SchemaClass, CAnimPara
   public CAnimParameterManagerUpdaterImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Parameters {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x2289044E99935479));
+  public ref CUtlVector<SchemaUntypedField> Parameters {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0x2289044E99935479));
   }
   public SchemaUntypedField IdToIndexMap {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x2289044E7B873A5F));
@@ -24,11 +24,11 @@ internal partial class CAnimParameterManagerUpdaterImpl : SchemaClass, CAnimPara
   public SchemaUntypedField NameToIndexMap {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x2289044EDA1FC14D));
   }
-  public ref CUtlVector IndexToHandle {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x2289044E3F943600));
+  public ref CUtlVector<CAnimParamHandle> IndexToHandle {
+    get => ref _Handle.AsRef<CUtlVector<CAnimParamHandle>>(Schema.GetOffset(0x2289044E3F943600));
   }
-  public ref CUtlVector AutoResetParams {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x2289044EA74F889F));
+  public ref CUtlVector<SchemaUntypedField> AutoResetParams {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0x2289044EA74F889F));
   }
   public SchemaUntypedField AutoResetMap {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x2289044E024CB2F5));

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSceneEventInfo : ISchemaClass<CSceneEventInfo> {
 
   static CSceneEventInfo ISchemaClass<CSceneEventInfo>.From(nint handle) => new CSceneEventInfoImpl(handle);
+  static int ISchemaClass<CSceneEventInfo>.Size => 80;
 
   
   public ref int Layer { get; }

@@ -11,12 +11,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_PointList : CParticleFunctionInitializer, ISchemaClass<C_INIT_PointList> {
 
   static C_INIT_PointList ISchemaClass<C_INIT_PointList>.From(nint handle) => new C_INIT_PointListImpl(handle);
+  static int ISchemaClass<C_INIT_PointList>.Size => 512;
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }
   
-  // CUtlVector< PointDefinition_t >
-  public ref CUtlVector PointList { get; }
+  public ref CUtlVector<PointDefinition_t> PointList { get; }
   
   public ref bool PlaceAlongPath { get; }
   

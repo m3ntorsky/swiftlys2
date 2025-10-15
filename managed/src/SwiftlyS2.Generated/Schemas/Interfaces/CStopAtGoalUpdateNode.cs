@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStopAtGoalUpdateNode : CUnaryUpdateNode, ISchemaClass<CStopAtGoalUpdateNode> {
 
   static CStopAtGoalUpdateNode ISchemaClass<CStopAtGoalUpdateNode>.From(nint handle) => new CStopAtGoalUpdateNodeImpl(handle);
+  static int ISchemaClass<CStopAtGoalUpdateNode>.Size => 160;
 
   
   public ref float OuterRadius { get; }

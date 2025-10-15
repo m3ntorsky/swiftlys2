@@ -75,80 +75,80 @@ internal partial class PhysFeModelDesc_tImpl : SchemaClass, PhysFeModelDesc_t {
   public ref CUtlVector<ushort> Ropes {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0x1BA43927245D4F7A));
   }
-  public ref CUtlVector NodeBases {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927D78A7829));
+  public ref CUtlVector<FeNodeBase_t> NodeBases {
+    get => ref _Handle.AsRef<CUtlVector<FeNodeBase_t>>(Schema.GetOffset(0x1BA43927D78A7829));
   }
-  public ref CUtlVector SimdNodeBases {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439276CEB34CE));
+  public ref CUtlVector<FeSimdNodeBase_t> SimdNodeBases {
+    get => ref _Handle.AsRef<CUtlVector<FeSimdNodeBase_t>>(Schema.GetOffset(0x1BA439276CEB34CE));
   }
-  public ref CUtlVector Quads {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927F0B96887));
+  public ref CUtlVector<FeQuad_t> Quads {
+    get => ref _Handle.AsRef<CUtlVector<FeQuad_t>>(Schema.GetOffset(0x1BA43927F0B96887));
   }
-  public ref CUtlVector SimdQuads {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439272A528AEC));
+  public ref CUtlVector<FeSimdQuad_t> SimdQuads {
+    get => ref _Handle.AsRef<CUtlVector<FeSimdQuad_t>>(Schema.GetOffset(0x1BA439272A528AEC));
   }
-  public ref CUtlVector SimdTris {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA4392708B7DB8E));
+  public ref CUtlVector<SchemaUntypedField> SimdTris {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0x1BA4392708B7DB8E));
   }
-  public ref CUtlVector SimdRods {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA4392772C6F02A));
+  public ref CUtlVector<FeSimdRodConstraint_t> SimdRods {
+    get => ref _Handle.AsRef<CUtlVector<FeSimdRodConstraint_t>>(Schema.GetOffset(0x1BA4392772C6F02A));
   }
-  public ref CUtlVector SimdRodsAnim {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439272F796453));
+  public ref CUtlVector<FeSimdRodConstraintAnim_t> SimdRodsAnim {
+    get => ref _Handle.AsRef<CUtlVector<FeSimdRodConstraintAnim_t>>(Schema.GetOffset(0x1BA439272F796453));
   }
   public ref CUtlVector<CTransform> InitPose {
     get => ref _Handle.AsRef<CUtlVector<CTransform>>(Schema.GetOffset(0x1BA439275E468732));
   }
-  public ref CUtlVector Rods {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439276FC1D3D7));
+  public ref CUtlVector<FeRodConstraint_t> Rods {
+    get => ref _Handle.AsRef<CUtlVector<FeRodConstraint_t>>(Schema.GetOffset(0x1BA439276FC1D3D7));
   }
-  public ref CUtlVector Twists {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439272079B489));
+  public ref CUtlVector<FeTwistConstraint_t> Twists {
+    get => ref _Handle.AsRef<CUtlVector<FeTwistConstraint_t>>(Schema.GetOffset(0x1BA439272079B489));
   }
-  public ref CUtlVector HingeLimits {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927EDFF16F4));
+  public ref CUtlVector<FeHingeLimit_t> HingeLimits {
+    get => ref _Handle.AsRef<CUtlVector<FeHingeLimit_t>>(Schema.GetOffset(0x1BA43927EDFF16F4));
   }
   public ref CUtlVector<uint> AntiTunnelBytecode {
     get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0x1BA43927FD33DEEC));
   }
-  public ref CUtlVector DynKinLinks {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439271F3CC98B));
+  public ref CUtlVector<FeDynKinLink_t> DynKinLinks {
+    get => ref _Handle.AsRef<CUtlVector<FeDynKinLink_t>>(Schema.GetOffset(0x1BA439271F3CC98B));
   }
-  public ref CUtlVector AntiTunnelProbes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927E34A5328));
+  public ref CUtlVector<FeAntiTunnelProbe_t> AntiTunnelProbes {
+    get => ref _Handle.AsRef<CUtlVector<FeAntiTunnelProbe_t>>(Schema.GetOffset(0x1BA43927E34A5328));
   }
   public ref CUtlVector<ushort> AntiTunnelTargetNodes {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0x1BA439275AB2DCE7));
   }
-  public ref CUtlVector AxialEdges {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927DE90F268));
+  public ref CUtlVector<FeAxialEdgeBend_t> AxialEdges {
+    get => ref _Handle.AsRef<CUtlVector<FeAxialEdgeBend_t>>(Schema.GetOffset(0x1BA43927DE90F268));
   }
   public ref CUtlVector<float> NodeInvMasses {
     get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x1BA439274BC4CE04));
   }
-  public ref CUtlVector CtrlOffsets {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927C1ACD824));
+  public ref CUtlVector<FeCtrlOffset_t> CtrlOffsets {
+    get => ref _Handle.AsRef<CUtlVector<FeCtrlOffset_t>>(Schema.GetOffset(0x1BA43927C1ACD824));
   }
-  public ref CUtlVector CtrlOsOffsets {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927C7290656));
+  public ref CUtlVector<FeCtrlOsOffset_t> CtrlOsOffsets {
+    get => ref _Handle.AsRef<CUtlVector<FeCtrlOsOffset_t>>(Schema.GetOffset(0x1BA43927C7290656));
   }
-  public ref CUtlVector FollowNodes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927ECF0783D));
+  public ref CUtlVector<FeFollowNode_t> FollowNodes {
+    get => ref _Handle.AsRef<CUtlVector<FeFollowNode_t>>(Schema.GetOffset(0x1BA43927ECF0783D));
   }
-  public ref CUtlVector CollisionPlanes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927B367BFCC));
+  public ref CUtlVector<FeCollisionPlane_t> CollisionPlanes {
+    get => ref _Handle.AsRef<CUtlVector<FeCollisionPlane_t>>(Schema.GetOffset(0x1BA43927B367BFCC));
   }
-  public ref CUtlVector NodeIntegrator {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927940C5E1C));
+  public ref CUtlVector<FeNodeIntegrator_t> NodeIntegrator {
+    get => ref _Handle.AsRef<CUtlVector<FeNodeIntegrator_t>>(Schema.GetOffset(0x1BA43927940C5E1C));
   }
-  public ref CUtlVector SpringIntegrator {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA4392725EF8295));
+  public ref CUtlVector<FeSpringIntegrator_t> SpringIntegrator {
+    get => ref _Handle.AsRef<CUtlVector<FeSpringIntegrator_t>>(Schema.GetOffset(0x1BA4392725EF8295));
   }
-  public ref CUtlVector SimdSpringIntegrator {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439273755280C));
+  public ref CUtlVector<FeSimdSpringIntegrator_t> SimdSpringIntegrator {
+    get => ref _Handle.AsRef<CUtlVector<FeSimdSpringIntegrator_t>>(Schema.GetOffset(0x1BA439273755280C));
   }
-  public ref CUtlVector WorldCollisionParams {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927BF45BE03));
+  public ref CUtlVector<FeWorldCollisionParams_t> WorldCollisionParams {
+    get => ref _Handle.AsRef<CUtlVector<FeWorldCollisionParams_t>>(Schema.GetOffset(0x1BA43927BF45BE03));
   }
   public ref CUtlVector<float> LegacyStretchForce {
     get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x1BA43927C7AB43F6));
@@ -165,14 +165,14 @@ internal partial class PhysFeModelDesc_tImpl : SchemaClass, PhysFeModelDesc_t {
   public ref CUtlVector<float> LocalForce2 {
     get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x1BA439275274CF1B));
   }
-  public ref CUtlVector TaperedCapsuleStretches {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439271F019DBC));
+  public ref CUtlVector<FeTaperedCapsuleStretch_t> TaperedCapsuleStretches {
+    get => ref _Handle.AsRef<CUtlVector<FeTaperedCapsuleStretch_t>>(Schema.GetOffset(0x1BA439271F019DBC));
   }
-  public ref CUtlVector TaperedCapsuleRigids {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927F74D1937));
+  public ref CUtlVector<FeTaperedCapsuleRigid_t> TaperedCapsuleRigids {
+    get => ref _Handle.AsRef<CUtlVector<FeTaperedCapsuleRigid_t>>(Schema.GetOffset(0x1BA43927F74D1937));
   }
-  public ref CUtlVector SphereRigids {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927BAF34488));
+  public ref CUtlVector<FeSphereRigid_t> SphereRigids {
+    get => ref _Handle.AsRef<CUtlVector<FeSphereRigid_t>>(Schema.GetOffset(0x1BA43927BAF34488));
   }
   public ref CUtlVector<ushort> WorldCollisionNodes {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0x1BA43927FF7871EA));
@@ -183,35 +183,35 @@ internal partial class PhysFeModelDesc_tImpl : SchemaClass, PhysFeModelDesc_t {
   public ref CUtlVector<ushort> TreeCollisionMasks {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0x1BA43927E89C96B8));
   }
-  public ref CUtlVector TreeChildren {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927FE09F5A2));
+  public ref CUtlVector<FeTreeChildren_t> TreeChildren {
+    get => ref _Handle.AsRef<CUtlVector<FeTreeChildren_t>>(Schema.GetOffset(0x1BA43927FE09F5A2));
   }
   public ref CUtlVector<ushort> FreeNodes {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0x1BA43927DBDC2128));
   }
-  public ref CUtlVector FitMatrices {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439273EA416A0));
+  public ref CUtlVector<FeFitMatrix_t> FitMatrices {
+    get => ref _Handle.AsRef<CUtlVector<FeFitMatrix_t>>(Schema.GetOffset(0x1BA439273EA416A0));
   }
-  public ref CUtlVector FitWeights {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927C7FF749D));
+  public ref CUtlVector<FeFitWeight_t> FitWeights {
+    get => ref _Handle.AsRef<CUtlVector<FeFitWeight_t>>(Schema.GetOffset(0x1BA43927C7FF749D));
   }
-  public ref CUtlVector ReverseOffsets {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439274F76269B));
+  public ref CUtlVector<FeNodeReverseOffset_t> ReverseOffsets {
+    get => ref _Handle.AsRef<CUtlVector<FeNodeReverseOffset_t>>(Schema.GetOffset(0x1BA439274F76269B));
   }
-  public ref CUtlVector AnimStrayRadii {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA4392702505672));
+  public ref CUtlVector<FeAnimStrayRadius_t> AnimStrayRadii {
+    get => ref _Handle.AsRef<CUtlVector<FeAnimStrayRadius_t>>(Schema.GetOffset(0x1BA4392702505672));
   }
-  public ref CUtlVector SimdAnimStrayRadii {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927BD404343));
+  public ref CUtlVector<FeSimdAnimStrayRadius_t> SimdAnimStrayRadii {
+    get => ref _Handle.AsRef<CUtlVector<FeSimdAnimStrayRadius_t>>(Schema.GetOffset(0x1BA43927BD404343));
   }
-  public ref CUtlVector KelagerBends {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439279DE7A8A0));
+  public ref CUtlVector<FeKelagerBend2_t> KelagerBends {
+    get => ref _Handle.AsRef<CUtlVector<FeKelagerBend2_t>>(Schema.GetOffset(0x1BA439279DE7A8A0));
   }
-  public ref CUtlVector CtrlSoftOffsets {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439278C66B564));
+  public ref CUtlVector<FeCtrlSoftOffset_t> CtrlSoftOffsets {
+    get => ref _Handle.AsRef<CUtlVector<FeCtrlSoftOffset_t>>(Schema.GetOffset(0x1BA439278C66B564));
   }
-  public ref CUtlVector JiggleBones {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439274F458BCC));
+  public ref CUtlVector<CFeIndexedJiggleBone> JiggleBones {
+    get => ref _Handle.AsRef<CUtlVector<CFeIndexedJiggleBone>>(Schema.GetOffset(0x1BA439274F458BCC));
   }
   public ref CUtlVector<ushort> SourceElems {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0x1BA43927CF1C9DB0));
@@ -219,8 +219,8 @@ internal partial class PhysFeModelDesc_tImpl : SchemaClass, PhysFeModelDesc_t {
   public ref CUtlVector<uint> GoalDampedSpringIntegrators {
     get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0x1BA4392770492CEE));
   }
-  public ref CUtlVector Tris {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927AD4316D7));
+  public ref CUtlVector<FeTri_t> Tris {
+    get => ref _Handle.AsRef<CUtlVector<FeTri_t>>(Schema.GetOffset(0x1BA43927AD4316D7));
   }
   public ref ushort TriCount1 {
     get => ref _Handle.AsRef<ushort>(Schema.GetOffset(0x1BA43927DA287160));
@@ -240,11 +240,11 @@ internal partial class PhysFeModelDesc_tImpl : SchemaClass, PhysFeModelDesc_t {
   public ref byte ExtraIterations {
     get => ref _Handle.AsRef<byte>(Schema.GetOffset(0x1BA4392737B28905));
   }
-  public ref CUtlVector SDFRigids {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927E4F15C2C));
+  public ref CUtlVector<FeSDFRigid_t> SDFRigids {
+    get => ref _Handle.AsRef<CUtlVector<FeSDFRigid_t>>(Schema.GetOffset(0x1BA43927E4F15C2C));
   }
-  public ref CUtlVector BoxRigids {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439273FF6F3EE));
+  public ref CUtlVector<FeBoxRigid_t> BoxRigids {
+    get => ref _Handle.AsRef<CUtlVector<FeBoxRigid_t>>(Schema.GetOffset(0x1BA439273FF6F3EE));
   }
   public ref CUtlVector<byte> DynNodeVertexSet {
     get => ref _Handle.AsRef<CUtlVector<byte>>(Schema.GetOffset(0x1BA4392710AF881A));
@@ -252,26 +252,26 @@ internal partial class PhysFeModelDesc_tImpl : SchemaClass, PhysFeModelDesc_t {
   public ref CUtlVector<uint> VertexSetNames {
     get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0x1BA439270B557437));
   }
-  public ref CUtlVector RigidColliderPriorities {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927A6818704));
+  public ref CUtlVector<FeRigidColliderIndices_t> RigidColliderPriorities {
+    get => ref _Handle.AsRef<CUtlVector<FeRigidColliderIndices_t>>(Schema.GetOffset(0x1BA43927A6818704));
   }
-  public ref CUtlVector MorphLayers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439279DF389BF));
+  public ref CUtlVector<FeMorphLayerDepr_t> MorphLayers {
+    get => ref _Handle.AsRef<CUtlVector<FeMorphLayerDepr_t>>(Schema.GetOffset(0x1BA439279DF389BF));
   }
   public ref CUtlVector<byte> MorphSetData {
     get => ref _Handle.AsRef<CUtlVector<byte>>(Schema.GetOffset(0x1BA43927DA9B396B));
   }
-  public ref CUtlVector VertexMaps {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA4392727EEF7FC));
+  public ref CUtlVector<FeVertexMapDesc_t> VertexMaps {
+    get => ref _Handle.AsRef<CUtlVector<FeVertexMapDesc_t>>(Schema.GetOffset(0x1BA4392727EEF7FC));
   }
   public ref CUtlVector<byte> VertexMapValues {
     get => ref _Handle.AsRef<CUtlVector<byte>>(Schema.GetOffset(0x1BA43927EAF6DABD));
   }
-  public ref CUtlVector Effects {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927A60AA5E5));
+  public ref CUtlVector<FeEffectDesc_t> Effects {
+    get => ref _Handle.AsRef<CUtlVector<FeEffectDesc_t>>(Schema.GetOffset(0x1BA43927A60AA5E5));
   }
-  public ref CUtlVector LockToParent {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA43927CFC56E77));
+  public ref CUtlVector<FeCtrlOffset_t> LockToParent {
+    get => ref _Handle.AsRef<CUtlVector<FeCtrlOffset_t>>(Schema.GetOffset(0x1BA43927CFC56E77));
   }
   public ref CUtlVector<ushort> LockToGoal {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0x1BA43927EF4703D8));
@@ -279,8 +279,8 @@ internal partial class PhysFeModelDesc_tImpl : SchemaClass, PhysFeModelDesc_t {
   public ref CUtlVector<short> SkelParents {
     get => ref _Handle.AsRef<CUtlVector<short>>(Schema.GetOffset(0x1BA43927D2AAA7FB));
   }
-  public ref CUtlVector DynNodeWindBases {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1BA439271ABAB644));
+  public ref CUtlVector<FeNodeWindBase_t> DynNodeWindBases {
+    get => ref _Handle.AsRef<CUtlVector<FeNodeWindBase_t>>(Schema.GetOffset(0x1BA439271ABAB644));
   }
   public ref float InternalPressure {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x1BA43927B3CC4239));

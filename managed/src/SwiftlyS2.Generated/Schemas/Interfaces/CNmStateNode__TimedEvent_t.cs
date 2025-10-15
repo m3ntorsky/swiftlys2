@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmStateNode__TimedEvent_t : ISchemaClass<CNmStateNode__TimedEvent_t> {
 
   static CNmStateNode__TimedEvent_t ISchemaClass<CNmStateNode__TimedEvent_t>.From(nint handle) => new CNmStateNode__TimedEvent_tImpl(handle);
+  static int ISchemaClass<CNmStateNode__TimedEvent_t>.Size => 16;
 
   
   public ref CGlobalSymbol ID { get; }

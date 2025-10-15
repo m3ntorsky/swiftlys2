@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBoneConstraintDotToMorph : CBoneConstraintBase, ISchemaClass<CBoneConstraintDotToMorph> {
 
   static CBoneConstraintDotToMorph ISchemaClass<CBoneConstraintDotToMorph>.From(nint handle) => new CBoneConstraintDotToMorphImpl(handle);
+  static int ISchemaClass<CBoneConstraintDotToMorph>.Size => 88;
 
   
   public string BoneName { get; set; }

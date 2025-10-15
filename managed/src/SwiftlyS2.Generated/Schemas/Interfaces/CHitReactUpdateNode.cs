@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CHitReactUpdateNode : CUnaryUpdateNode, ISchemaClass<CHitReactUpdateNode> {
 
   static CHitReactUpdateNode ISchemaClass<CHitReactUpdateNode>.From(nint handle) => new CHitReactUpdateNodeImpl(handle);
+  static int ISchemaClass<CHitReactUpdateNode>.Size => 208;
 
   
   public HitReactFixedSettings_t OpFixedSettings { get; }

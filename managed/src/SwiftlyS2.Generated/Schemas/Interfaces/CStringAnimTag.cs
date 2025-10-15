@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStringAnimTag : CAnimTagBase, ISchemaClass<CStringAnimTag> {
 
   static CStringAnimTag ISchemaClass<CStringAnimTag>.From(nint handle) => new CStringAnimTagImpl(handle);
+  static int ISchemaClass<CStringAnimTag>.Size => 80;
 
 
 

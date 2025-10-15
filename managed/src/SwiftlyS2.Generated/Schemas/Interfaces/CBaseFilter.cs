@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseFilter : CLogicalEntity, ISchemaClass<CBaseFilter> {
 
   static CBaseFilter ISchemaClass<CBaseFilter>.From(nint handle) => new CBaseFilterImpl(handle);
+  static int ISchemaClass<CBaseFilter>.Size => 1352;
 
   
   public ref bool Negated { get; }

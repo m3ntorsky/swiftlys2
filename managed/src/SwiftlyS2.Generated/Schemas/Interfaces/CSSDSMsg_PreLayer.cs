@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSSDSMsg_PreLayer : CSSDSMsg_LayerBase, ISchemaClass<CSSDSMsg_PreLayer> {
 
   static CSSDSMsg_PreLayer ISchemaClass<CSSDSMsg_PreLayer>.From(nint handle) => new CSSDSMsg_PreLayerImpl(handle);
+  static int ISchemaClass<CSSDSMsg_PreLayer>.Size => 48;
 
 
 

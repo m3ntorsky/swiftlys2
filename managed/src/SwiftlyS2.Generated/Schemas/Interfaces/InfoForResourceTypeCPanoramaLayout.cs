@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCPanoramaLayout : ISchemaClass<InfoForResourceTypeCPanoramaLayout> {
 
   static InfoForResourceTypeCPanoramaLayout ISchemaClass<InfoForResourceTypeCPanoramaLayout>.From(nint handle) => new InfoForResourceTypeCPanoramaLayoutImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCPanoramaLayout>.Size => 1;
 
 
 

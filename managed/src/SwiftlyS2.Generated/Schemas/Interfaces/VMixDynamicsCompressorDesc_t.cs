@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixDynamicsCompressorDesc_t : ISchemaClass<VMixDynamicsCompressorDesc_t> {
 
   static VMixDynamicsCompressorDesc_t ISchemaClass<VMixDynamicsCompressorDesc_t>.From(nint handle) => new VMixDynamicsCompressorDesc_tImpl(handle);
+  static int ISchemaClass<VMixDynamicsCompressorDesc_t>.Size => 36;
 
   
   public ref float FldbOutputGain { get; }

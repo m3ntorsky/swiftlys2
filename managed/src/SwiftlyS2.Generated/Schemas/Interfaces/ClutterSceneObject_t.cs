@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ClutterSceneObject_t : ISchemaClass<ClutterSceneObject_t> {
 
   static ClutterSceneObject_t ISchemaClass<ClutterSceneObject_t>.From(nint handle) => new ClutterSceneObject_tImpl(handle);
+  static int ISchemaClass<ClutterSceneObject_t>.Size => 176;
 
   
   public AABB_t Bounds { get; }
@@ -25,8 +26,7 @@ public partial interface ClutterSceneObject_t : ISchemaClass<ClutterSceneObject_
   
   public ref CUtlVector<Color> InstanceTintSrgb { get; }
   
-  // CUtlVector< ClutterTile_t >
-  public ref CUtlVector Tiles { get; }
+  public ref CUtlVector<ClutterTile_t> Tiles { get; }
   
   public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel { get; }
   

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PointCameraSettings_t : ISchemaClass<PointCameraSettings_t> {
 
   static PointCameraSettings_t ISchemaClass<PointCameraSettings_t>.From(nint handle) => new PointCameraSettings_tImpl(handle);
+  static int ISchemaClass<PointCameraSettings_t>.Size => 16;
 
   
   public ref float NearBlurryDistance { get; }

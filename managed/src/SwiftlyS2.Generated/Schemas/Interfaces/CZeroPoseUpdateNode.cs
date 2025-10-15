@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CZeroPoseUpdateNode : CLeafUpdateNode, ISchemaClass<CZeroPoseUpdateNode> {
 
   static CZeroPoseUpdateNode ISchemaClass<CZeroPoseUpdateNode>.From(nint handle) => new CZeroPoseUpdateNodeImpl(handle);
+  static int ISchemaClass<CZeroPoseUpdateNode>.Size => 96;
 
 
 

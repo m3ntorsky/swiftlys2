@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixOscDesc_t : ISchemaClass<VMixOscDesc_t> {
 
   static VMixOscDesc_t ISchemaClass<VMixOscDesc_t>.From(nint handle) => new VMixOscDesc_tImpl(handle);
+  static int ISchemaClass<VMixOscDesc_t>.Size => 12;
 
   
   public ref VMixLFOShape_t OscType { get; }

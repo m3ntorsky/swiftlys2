@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeIMaterial2 : ISchemaClass<InfoForResourceTypeIMaterial2> {
 
   static InfoForResourceTypeIMaterial2 ISchemaClass<InfoForResourceTypeIMaterial2>.From(nint handle) => new InfoForResourceTypeIMaterial2Impl(handle);
+  static int ISchemaClass<InfoForResourceTypeIMaterial2>.Size => 1;
 
 
 

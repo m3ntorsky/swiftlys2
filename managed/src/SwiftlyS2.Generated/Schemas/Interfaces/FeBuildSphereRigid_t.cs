@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeBuildSphereRigid_t : FeSphereRigid_t, ISchemaClass<FeBuildSphereRigid_t> {
 
   static FeBuildSphereRigid_t ISchemaClass<FeBuildSphereRigid_t>.From(nint handle) => new FeBuildSphereRigid_tImpl(handle);
+  static int ISchemaClass<FeBuildSphereRigid_t>.Size => 48;
 
   
   public ref int Priority { get; }

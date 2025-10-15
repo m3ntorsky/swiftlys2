@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AggregateSceneObject_t : ISchemaClass<AggregateSceneObject_t> {
 
   static AggregateSceneObject_t ISchemaClass<AggregateSceneObject_t>.From(nint handle) => new AggregateSceneObject_tImpl(handle);
+  static int ISchemaClass<AggregateSceneObject_t>.Size => 120;
 
   
   public ref ObjectTypeFlags_t AllFlags { get; }
@@ -23,11 +24,9 @@ public partial interface AggregateSceneObject_t : ISchemaClass<AggregateSceneObj
   
   public ref short VertexAlbedoStream { get; }
   
-  // CUtlVector< AggregateMeshInfo_t >
-  public ref CUtlVector AggregateMeshes { get; }
+  public ref CUtlVector<AggregateMeshInfo_t> AggregateMeshes { get; }
   
-  // CUtlVector< AggregateLODSetup_t >
-  public ref CUtlVector LodSetups { get; }
+  public ref CUtlVector<AggregateLODSetup_t> LodSetups { get; }
   
   public ref CUtlVector<ushort> VisClusterMembership { get; }
   

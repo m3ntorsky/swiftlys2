@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayer_BuyServices : CPlayerPawnComponent, ISchemaClass<CCSPlayer_BuyServices> {
 
   static CCSPlayer_BuyServices ISchemaClass<CCSPlayer_BuyServices>.From(nint handle) => new CCSPlayer_BuyServicesImpl(handle);
+  static int ISchemaClass<CCSPlayer_BuyServices>.Size => 336;
 
   
-  // CUtlVectorEmbeddedNetworkVar< SellbackPurchaseEntry_t >
-  public ref CUtlVector SellbackPurchaseEntries { get; }
+  public ref CUtlVector<SellbackPurchaseEntry_t> SellbackPurchaseEntries { get; }
 
   public void SellbackPurchaseEntriesUpdated();
 }

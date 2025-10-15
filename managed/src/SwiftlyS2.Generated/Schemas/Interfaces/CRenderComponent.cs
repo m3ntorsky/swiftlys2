@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRenderComponent : CEntityComponent, ISchemaClass<CRenderComponent> {
 
   static CRenderComponent ISchemaClass<CRenderComponent>.From(nint handle) => new CRenderComponentImpl(handle);
+  static int ISchemaClass<CRenderComponent>.Size => 176;
 
   
   public ref CNetworkVarChainer __m_pChainEntity { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCTextureBase : ISchemaClass<InfoForResourceTypeCTextureBase> {
 
   static InfoForResourceTypeCTextureBase ISchemaClass<InfoForResourceTypeCTextureBase>.From(nint handle) => new InfoForResourceTypeCTextureBaseImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCTextureBase>.Size => 1;
 
 
 

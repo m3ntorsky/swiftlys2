@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ChainToSolveData_t : ISchemaClass<ChainToSolveData_t> {
 
   static ChainToSolveData_t ISchemaClass<ChainToSolveData_t>.From(nint handle) => new ChainToSolveData_tImpl(handle);
+  static int ISchemaClass<ChainToSolveData_t>.Size => 80;
 
   
   public ref int ChainIndex { get; }

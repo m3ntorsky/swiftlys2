@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPathParameters : ISchemaClass<CPathParameters> {
 
   static CPathParameters ISchemaClass<CPathParameters>.From(nint handle) => new CPathParametersImpl(handle);
+  static int ISchemaClass<CPathParameters>.Size => 64;
 
   
   public ref int StartControlPointNumber { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysSurfacePropertiesAudio : ISchemaClass<CPhysSurfacePropertiesAudio> {
 
   static CPhysSurfacePropertiesAudio ISchemaClass<CPhysSurfacePropertiesAudio>.From(nint handle) => new CPhysSurfacePropertiesAudioImpl(handle);
+  static int ISchemaClass<CPhysSurfacePropertiesAudio>.Size => 32;
 
   
   public ref float Reflectivity { get; }

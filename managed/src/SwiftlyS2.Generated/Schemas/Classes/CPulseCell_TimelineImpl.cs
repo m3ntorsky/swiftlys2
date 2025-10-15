@@ -15,8 +15,8 @@ internal partial class CPulseCell_TimelineImpl : CPulseCell_BaseYieldingInflowIm
   public CPulseCell_TimelineImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector TimelineEvents {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xF1185F93C91CDDC3));
+  public ref CUtlVector<CPulseCell_Timeline__TimelineEvent_t> TimelineEvents {
+    get => ref _Handle.AsRef<CUtlVector<CPulseCell_Timeline__TimelineEvent_t>>(Schema.GetOffset(0xF1185F93C91CDDC3));
   }
   public ref bool WaitForChildOutflows {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xF1185F933F8E29C6));

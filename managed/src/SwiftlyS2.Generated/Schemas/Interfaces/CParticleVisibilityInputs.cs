@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleVisibilityInputs : ISchemaClass<CParticleVisibilityInputs> {
 
   static CParticleVisibilityInputs ISchemaClass<CParticleVisibilityInputs>.From(nint handle) => new CParticleVisibilityInputsImpl(handle);
+  static int ISchemaClass<CParticleVisibilityInputs>.Size => 72;
 
   
   public ref float CameraBias { get; }

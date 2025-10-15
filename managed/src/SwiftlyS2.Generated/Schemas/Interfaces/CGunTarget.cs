@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CGunTarget : CBaseToggle, ISchemaClass<CGunTarget> {
 
   static CGunTarget ISchemaClass<CGunTarget>.From(nint handle) => new CGunTargetImpl(handle);
+  static int ISchemaClass<CGunTarget>.Size => 2184;
 
   
   public ref bool On { get; }

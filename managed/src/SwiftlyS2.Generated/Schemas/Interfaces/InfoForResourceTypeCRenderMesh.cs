@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCRenderMesh : ISchemaClass<InfoForResourceTypeCRenderMesh> {
 
   static InfoForResourceTypeCRenderMesh ISchemaClass<InfoForResourceTypeCRenderMesh>.From(nint handle) => new InfoForResourceTypeCRenderMeshImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCRenderMesh>.Size => 1;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRagdollProp : CBaseAnimGraph, ISchemaClass<CRagdollProp> {
 
   static CRagdollProp ISchemaClass<CRagdollProp>.From(nint handle) => new CRagdollPropImpl(handle);
+  static int ISchemaClass<CRagdollProp>.Size => 3040;
 
   
   public ragdoll_t Ragdoll { get; }
@@ -22,8 +23,6 @@ public partial interface CRagdollProp : CBaseAnimGraph, ISchemaClass<CRagdollPro
   public ref CUtlVector<Vector> RagPos { get; }
   
   public ref CUtlVector<QAngle> RagAngles { get; }
-  
-  public ref CHandle<CBaseEntity> RagdollSource { get; }
   
   public ref uint LastUpdateTickCount { get; }
   
@@ -70,6 +69,5 @@ public partial interface CRagdollProp : CBaseAnimGraph, ISchemaClass<CRagdollPro
   public void RagEnabledUpdated();
   public void RagPosUpdated();
   public void RagAnglesUpdated();
-  public void RagdollSourceUpdated();
   public void BlendWeightUpdated();
 }

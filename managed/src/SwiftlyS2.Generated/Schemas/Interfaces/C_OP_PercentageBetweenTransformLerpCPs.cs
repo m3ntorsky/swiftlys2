@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_PercentageBetweenTransformLerpCPs : CParticleFunctionOperator, ISchemaClass<C_OP_PercentageBetweenTransformLerpCPs> {
 
   static C_OP_PercentageBetweenTransformLerpCPs ISchemaClass<C_OP_PercentageBetweenTransformLerpCPs>.From(nint handle) => new C_OP_PercentageBetweenTransformLerpCPsImpl(handle);
+  static int ISchemaClass<C_OP_PercentageBetweenTransformLerpCPs>.Size => 712;
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

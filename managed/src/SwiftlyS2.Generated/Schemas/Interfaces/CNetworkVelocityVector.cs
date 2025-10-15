@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNetworkVelocityVector : ISchemaClass<CNetworkVelocityVector> {
 
   static CNetworkVelocityVector ISchemaClass<CNetworkVelocityVector>.From(nint handle) => new CNetworkVelocityVectorImpl(handle);
+  static int ISchemaClass<CNetworkVelocityVector>.Size => 40;
 
   
   public ref CNetworkedQuantizedFloat X { get; }

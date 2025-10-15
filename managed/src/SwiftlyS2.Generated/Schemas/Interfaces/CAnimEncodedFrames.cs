@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimEncodedFrames : ISchemaClass<CAnimEncodedFrames> {
 
   static CAnimEncodedFrames ISchemaClass<CAnimEncodedFrames>.From(nint handle) => new CAnimEncodedFramesImpl(handle);
+  static int ISchemaClass<CAnimEncodedFrames>.Size => 216;
 
   
   public ref CBufferString FileName { get; }
@@ -19,8 +20,7 @@ public partial interface CAnimEncodedFrames : ISchemaClass<CAnimEncodedFrames> {
   
   public ref int FramesPerBlock { get; }
   
-  // CUtlVector< CAnimFrameBlockAnim >
-  public ref CUtlVector FrameblockArray { get; }
+  public ref CUtlVector<CAnimFrameBlockAnim> FrameblockArray { get; }
   
   public CAnimEncodeDifference UsageDifferences { get; }
 

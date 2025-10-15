@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmFloatSwitchNode__CDefinition : CNmFloatValueNode__CDefinition, ISchemaClass<CNmFloatSwitchNode__CDefinition> {
 
   static CNmFloatSwitchNode__CDefinition ISchemaClass<CNmFloatSwitchNode__CDefinition>.From(nint handle) => new CNmFloatSwitchNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmFloatSwitchNode__CDefinition>.Size => 32;
 
   
   public ref short SwitchValueNodeIdx { get; }

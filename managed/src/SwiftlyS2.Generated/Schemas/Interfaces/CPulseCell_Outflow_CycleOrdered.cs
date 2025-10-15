@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Outflow_CycleOrdered : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_Outflow_CycleOrdered> {
 
   static CPulseCell_Outflow_CycleOrdered ISchemaClass<CPulseCell_Outflow_CycleOrdered>.From(nint handle) => new CPulseCell_Outflow_CycleOrderedImpl(handle);
+  static int ISchemaClass<CPulseCell_Outflow_CycleOrdered>.Size => 96;
 
   
-  // CUtlVector< CPulse_OutflowConnection >
-  public ref CUtlVector Outputs { get; }
+  public ref CUtlVector<CPulse_OutflowConnection> Outputs { get; }
 
 
 }

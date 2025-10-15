@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDecalGroupVData : ISchemaClass<CDecalGroupVData> {
 
   static CDecalGroupVData ISchemaClass<CDecalGroupVData>.From(nint handle) => new CDecalGroupVDataImpl(handle);
+  static int ISchemaClass<CDecalGroupVData>.Size => 32;
 
   
-  // CUtlVector< DecalGroupOption_t >
-  public ref CUtlVector Options { get; }
+  public ref CUtlVector<DecalGroupOption_t> Options { get; }
   
   public ref float TotalProbability { get; }
 

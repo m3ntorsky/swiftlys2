@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootStride : ISchemaClass<CFootStride> {
 
   static CFootStride ISchemaClass<CFootStride>.From(nint handle) => new CFootStrideImpl(handle);
+  static int ISchemaClass<CFootStride>.Size => 88;
 
   
   public CFootCycleDefinition Definition { get; }

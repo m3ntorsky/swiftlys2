@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ParticleNode_t : ISchemaClass<ParticleNode_t> {
 
   static ParticleNode_t ISchemaClass<ParticleNode_t>.From(nint handle) => new ParticleNode_tImpl(handle);
+  static int ISchemaClass<ParticleNode_t>.Size => 36;
 
   
   public ref CHandle<CBaseEntity> Entity { get; }

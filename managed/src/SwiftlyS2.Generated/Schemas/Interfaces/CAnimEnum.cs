@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimEnum : ISchemaClass<CAnimEnum> {
 
   static CAnimEnum ISchemaClass<CAnimEnum>.From(nint handle) => new CAnimEnumImpl(handle);
+  static int ISchemaClass<CAnimEnum>.Size => 1;
 
   
   public ref byte Value { get; }

@@ -44,8 +44,8 @@ internal partial class CInfoOffscreenPanoramaTextureImpl : CPointEntityImpl, CIn
   public ref int TargetChangeCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x584660AF309CAEAB));
   }
-  public ref CUtlVector<CUtlSymbolLarge> CSSClasses {
-    get => ref _Handle.AsRef<CUtlVector<CUtlSymbolLarge>>(Schema.GetOffset(0x584660AFCB74D1DC));
+  public ref CUtlVector<SchemaUntypedField> CSSClasses {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0x584660AFCB74D1DC));
   }
   public string TargetsName {
     get {

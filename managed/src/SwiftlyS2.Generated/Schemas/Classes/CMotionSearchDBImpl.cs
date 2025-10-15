@@ -21,8 +21,8 @@ internal partial class CMotionSearchDBImpl : SchemaClass, CMotionSearchDB {
   public CProductQuantizer ResidualQuantizer {
     get => new CProductQuantizerImpl(_Handle + Schema.GetOffset(0x5F49286A3EDA009));
   }
-  public ref CUtlVector CodeIndices {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5F49286767A76B1));
+  public ref CUtlVector<MotionDBIndex> CodeIndices {
+    get => ref _Handle.AsRef<CUtlVector<MotionDBIndex>>(Schema.GetOffset(0x5F49286767A76B1));
   }
 
 

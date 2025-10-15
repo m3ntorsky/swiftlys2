@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixDynamics3BandDesc_t : ISchemaClass<VMixDynamics3BandDesc_t> {
 
   static VMixDynamics3BandDesc_t ISchemaClass<VMixDynamics3BandDesc_t>.From(nint handle) => new VMixDynamics3BandDesc_tImpl(handle);
+  static int ISchemaClass<VMixDynamics3BandDesc_t>.Size => 144;
 
   
   public ref float FldbGainOutput { get; }

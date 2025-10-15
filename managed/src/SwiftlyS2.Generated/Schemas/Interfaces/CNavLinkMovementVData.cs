@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNavLinkMovementVData : ISchemaClass<CNavLinkMovementVData> {
 
   static CNavLinkMovementVData ISchemaClass<CNavLinkMovementVData>.From(nint handle) => new CNavLinkMovementVDataImpl(handle);
+  static int ISchemaClass<CNavLinkMovementVData>.Size => 256;
 
   
   // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >
@@ -20,8 +21,7 @@ public partial interface CNavLinkMovementVData : ISchemaClass<CNavLinkMovementVD
   
   public ref uint RecommendedDistance { get; }
   
-  // CUtlVector< CNavLinkAnimgraphVar >
-  public ref CUtlVector AnimgraphVars { get; }
+  public ref CUtlVector<CNavLinkAnimgraphVar> AnimgraphVars { get; }
 
 
 }

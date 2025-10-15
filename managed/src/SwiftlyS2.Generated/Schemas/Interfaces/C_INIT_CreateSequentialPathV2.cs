@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_CreateSequentialPathV2 : CParticleFunctionInitializer, ISchemaClass<C_INIT_CreateSequentialPathV2> {
 
   static C_INIT_CreateSequentialPathV2 ISchemaClass<C_INIT_CreateSequentialPathV2>.From(nint handle) => new C_INIT_CreateSequentialPathV2Impl(handle);
+  static int ISchemaClass<C_INIT_CreateSequentialPathV2>.Size => 1296;
 
   
   public CPerParticleFloatInput MaxDistance { get; }

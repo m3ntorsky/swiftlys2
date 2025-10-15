@@ -30,6 +30,9 @@ internal partial class CDecalInstanceImpl : SchemaClass, CDecalInstance {
   public ref int BoneIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x88CA447C9F407B79));
   }
+  public ref int TriangleIndex {
+    get => ref _Handle.AsRef<int>(Schema.GetOffset(0x88CA447C4465462F));
+  }
   public ref Vector PositionLS {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x88CA447C9D27001F));
   }
@@ -81,17 +84,8 @@ internal partial class CDecalInstanceImpl : SchemaClass, CDecalInstance {
   public ref bool DoDecalLightmapping {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x88CA447C8A2CC817));
   }
-  public CDecalInstance? Next {
-    get {
-      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x88CA447C32B11E0E));
-      return ptr.IsValidPtr() ? new CDecalInstanceImpl(ptr) : null;
-    }
-  }
-  public CDecalInstance? Prev {
-    get {
-      var ptr = _Handle.Read<nint>(Schema.GetOffset(0x88CA447CD49AD9AA));
-      return ptr.IsValidPtr() ? new CDecalInstanceImpl(ptr) : null;
-    }
+  public ref DecalMode_t SkinnedModelMode {
+    get => ref _Handle.AsRef<DecalMode_t>(Schema.GetOffset(0x88CA447CFB03C3D7));
   }
 
 

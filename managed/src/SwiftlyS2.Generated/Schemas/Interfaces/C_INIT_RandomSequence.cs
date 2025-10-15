@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_RandomSequence : CParticleFunctionInitializer, ISchemaClass<C_INIT_RandomSequence> {
 
   static C_INIT_RandomSequence ISchemaClass<C_INIT_RandomSequence>.From(nint handle) => new C_INIT_RandomSequenceImpl(handle);
+  static int ISchemaClass<C_INIT_RandomSequence>.Size => 520;
 
   
   public ref int SequenceMin { get; }
@@ -21,8 +22,7 @@ public partial interface C_INIT_RandomSequence : CParticleFunctionInitializer, I
   
   public ref bool Linear { get; }
   
-  // CUtlVector< SequenceWeightedList_t >
-  public ref CUtlVector WeightedList { get; }
+  public ref CUtlVector<SequenceWeightedList_t> WeightedList { get; }
 
 
 }

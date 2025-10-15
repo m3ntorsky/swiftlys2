@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMoverUpdateNode : CUnaryUpdateNode, ISchemaClass<CMoverUpdateNode> {
 
   static CMoverUpdateNode ISchemaClass<CMoverUpdateNode>.From(nint handle) => new CMoverUpdateNodeImpl(handle);
+  static int ISchemaClass<CMoverUpdateNode>.Size => 176;
 
   
   public CAnimInputDamping Damping { get; }

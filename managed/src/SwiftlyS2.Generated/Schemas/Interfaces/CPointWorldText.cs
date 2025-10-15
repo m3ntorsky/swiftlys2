@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointWorldText : CModelPointEntity, ISchemaClass<CPointWorldText> {
 
   static CPointWorldText ISchemaClass<CPointWorldText>.From(nint handle) => new CPointWorldTextImpl(handle);
+  static int ISchemaClass<CPointWorldText>.Size => 2696;
 
   
   public string MessageText { get; set; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnBodyDesc_t : ISchemaClass<RnBodyDesc_t> {
 
   static RnBodyDesc_t ISchemaClass<RnBodyDesc_t>.From(nint handle) => new RnBodyDesc_tImpl(handle);
+  static int ISchemaClass<RnBodyDesc_t>.Size => 224;
 
   
   public string DebugName { get; set; }

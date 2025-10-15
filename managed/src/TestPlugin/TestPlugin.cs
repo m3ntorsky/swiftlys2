@@ -70,6 +70,21 @@ public class TestPlugin : BasePlugin
 
   public override void Load(bool hotReload)
   {
+    // Core.Event.OnConsoleOutput += (@event) =>
+    // {
+    //   Console.WriteLine($"[TestPlugin] ConsoleOutput: {@event.Message}");
+    // };
+
+    // Core.Event.OnCommandExecuteHook += (@event) =>
+    // {
+    //   Console.WriteLine($"[TestPlugin] CommandExecute({@event.HookMode}): {@event.OriginalName}");
+    //   @event.SetCommandName("test");
+    // };
+    Core.Engine.ExecuteCommandWithBuffer("@ping", (buffer) =>
+    {
+      Console.WriteLine($"pong: {buffer}");
+    });
+
     Core.GameEvent.HookPre<EventShowSurvivalRespawnStatus>(@event =>
     {
       @event.LocToken = "test";
@@ -256,6 +271,22 @@ public class TestPlugin : BasePlugin
     });
   }
 
+  [Command("w")]
+  public void TestCommand1(ICommandContext context)
+  {
+    var attacker = context.Sender!;
+    var weapons = attacker.Pawn!.WeaponServices!.MyWeapons;
+    foreach (var weaponHandle in weapons)
+    {
+      var weapon = weaponHandle.Value?.As<CCSWeaponBase>();
+      if (weapon == null)
+        return;
+
+      Console.WriteLine($"Weapon: {weapon.DesignerName}");
+    }
+
+  }
+
   [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
   delegate nint DispatchSpawnDelegate(nint pEntity, nint pKV);
   int order = 0;
@@ -336,6 +367,15 @@ public class TestPlugin : BasePlugin
   public void TestCommand6(ICommandContext context)
   {
     Console.WriteLine("TestPlugin TestCommand6");
+  }
+
+  [Command("tt7")]
+  public void TestCommand7(ICommandContext context)
+  {
+    Core.Engine.ExecuteCommandWithBuffer("@ping", (buffer) =>
+    {
+      Console.WriteLine($"pong: {buffer}");
+    });
   }
 
   [GameEventHandler(HookMode.Pre)]

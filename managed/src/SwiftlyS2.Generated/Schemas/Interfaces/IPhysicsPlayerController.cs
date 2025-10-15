@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface IPhysicsPlayerController : ISchemaClass<IPhysicsPlayerController> {
 
   static IPhysicsPlayerController ISchemaClass<IPhysicsPlayerController>.From(nint handle) => new IPhysicsPlayerControllerImpl(handle);
+  static int ISchemaClass<IPhysicsPlayerController>.Size => 8;
 
 
 

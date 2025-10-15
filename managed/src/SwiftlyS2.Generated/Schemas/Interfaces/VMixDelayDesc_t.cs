@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixDelayDesc_t : ISchemaClass<VMixDelayDesc_t> {
 
   static VMixDelayDesc_t ISchemaClass<VMixDelayDesc_t>.From(nint handle) => new VMixDelayDesc_tImpl(handle);
+  static int ISchemaClass<VMixDelayDesc_t>.Size => 40;
 
   
   public VMixFilterDesc_t FeedbackFilter { get; }

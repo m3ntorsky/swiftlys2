@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface COrientationWarpUpdateNode : CUnaryUpdateNode, ISchemaClass<COrientationWarpUpdateNode> {
 
   static COrientationWarpUpdateNode ISchemaClass<COrientationWarpUpdateNode>.From(nint handle) => new COrientationWarpUpdateNodeImpl(handle);
+  static int ISchemaClass<COrientationWarpUpdateNode>.Size => 192;
 
   
   public ref OrientationWarpMode_t Mode { get; }

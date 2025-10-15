@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayer_RadioServices : CPlayerPawnComponent, ISchemaClass<CCSPlayer_RadioServices> {
 
   static CCSPlayer_RadioServices ISchemaClass<CCSPlayer_RadioServices>.From(nint handle) => new CCSPlayer_RadioServicesImpl(handle);
+  static int ISchemaClass<CCSPlayer_RadioServices>.Size => 96;
 
   
   public GameTime_t GotHostageTalkTimer { get; }

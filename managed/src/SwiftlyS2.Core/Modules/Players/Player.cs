@@ -36,11 +36,11 @@ internal class Player : IPlayer
 
     public CCSPlayerController RequiredController => Controller is { IsValid: true } controller ? controller : throw new InvalidOperationException("Controller is not valid");
 
-    public CBasePlayerPawn? Pawn => Controller.Pawn.Value;
+    public CBasePlayerPawn? Pawn => Controller?.Pawn.Value;
 
     public CBasePlayerPawn RequiredPawn => Pawn is { IsValid: true } pawn ? pawn : throw new InvalidOperationException("Pawn is not valid");
 
-    public CCSPlayerPawn? PlayerPawn => Controller.PlayerPawn.Value;
+    public CCSPlayerPawn? PlayerPawn => Controller?.PlayerPawn.Value;
 
     public CCSPlayerPawn RequiredPlayerPawn => PlayerPawn is { IsValid: true } pawn ? pawn : throw new InvalidOperationException("PlayerPawn is not valid");
 
@@ -50,8 +50,8 @@ internal class Player : IPlayer
 
     public VoiceFlagValue VoiceFlags { get => (VoiceFlagValue)NativeVoiceManager.GetClientVoiceFlags(_pid); set => NativeVoiceManager.SetClientVoiceFlags(_pid, (int)value); }
 
-    public bool IsValid => 
-        Controller is { IsValid: true, IsHLTV: false, Connected: PlayerConnectedState.PlayerConnected } && 
+    public bool IsValid =>
+        Controller is { IsValid: true, IsHLTV: false, Connected: PlayerConnectedState.PlayerConnected } &&
         Pawn is { IsValid: true };
 
     Language IPlayer.PlayerLanguage => PlayerLanguage;

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointAngularVelocitySensor : CPointEntity, ISchemaClass<CPointAngularVelocitySensor> {
 
   static CPointAngularVelocitySensor ISchemaClass<CPointAngularVelocitySensor>.From(nint handle) => new CPointAngularVelocitySensorImpl(handle);
+  static int ISchemaClass<CPointAngularVelocitySensor>.Size => 1560;
 
   
   public ref CHandle<CBaseEntity> TargetEntity { get; }

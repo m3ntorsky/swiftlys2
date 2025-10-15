@@ -15,8 +15,8 @@ internal partial class SelectedEditItemInfo_tImpl : SchemaClass, SelectedEditIte
   public SelectedEditItemInfo_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector EditItems {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xDF4D8E78F11EB01B));
+  public ref CUtlVector<SosEditItemInfo_t> EditItems {
+    get => ref _Handle.AsRef<CUtlVector<SosEditItemInfo_t>>(Schema.GetOffset(0xDF4D8E78F11EB01B));
   }
 
 

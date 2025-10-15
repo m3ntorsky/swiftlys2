@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface WeaponPurchaseCount_t : ISchemaClass<WeaponPurchaseCount_t> {
 
   static WeaponPurchaseCount_t ISchemaClass<WeaponPurchaseCount_t>.From(nint handle) => new WeaponPurchaseCount_tImpl(handle);
+  static int ISchemaClass<WeaponPurchaseCount_t>.Size => 56;
 
   
   public ref ushort ItemDefIndex { get; }

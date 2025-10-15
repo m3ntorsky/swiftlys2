@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFollowPathUpdateNode : CUnaryUpdateNode, ISchemaClass<CFollowPathUpdateNode> {
 
   static CFollowPathUpdateNode ISchemaClass<CFollowPathUpdateNode>.From(nint handle) => new CFollowPathUpdateNodeImpl(handle);
+  static int ISchemaClass<CFollowPathUpdateNode>.Size => 184;
 
   
   public ref float BlendOutTime { get; }

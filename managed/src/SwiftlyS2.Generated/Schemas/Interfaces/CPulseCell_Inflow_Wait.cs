@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Inflow_Wait : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_Inflow_Wait> {
 
   static CPulseCell_Inflow_Wait ISchemaClass<CPulseCell_Inflow_Wait>.From(nint handle) => new CPulseCell_Inflow_WaitImpl(handle);
+  static int ISchemaClass<CPulseCell_Inflow_Wait>.Size => 144;
 
   
   public CPulse_ResumePoint WakeResume { get; }

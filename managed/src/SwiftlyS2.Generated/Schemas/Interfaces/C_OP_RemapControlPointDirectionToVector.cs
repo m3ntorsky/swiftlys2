@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapControlPointDirectionToVector : CParticleFunctionOperator, ISchemaClass<C_OP_RemapControlPointDirectionToVector> {
 
   static C_OP_RemapControlPointDirectionToVector ISchemaClass<C_OP_RemapControlPointDirectionToVector>.From(nint handle) => new C_OP_RemapControlPointDirectionToVectorImpl(handle);
+  static int ISchemaClass<C_OP_RemapControlPointDirectionToVector>.Size => 480;
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

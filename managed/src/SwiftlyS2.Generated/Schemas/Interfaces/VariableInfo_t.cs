@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VariableInfo_t : ISchemaClass<VariableInfo_t> {
 
   static VariableInfo_t ISchemaClass<VariableInfo_t>.From(nint handle) => new VariableInfo_tImpl(handle);
+  static int ISchemaClass<VariableInfo_t>.Size => 24;
 
   
   public string Name { get; set; }

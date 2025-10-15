@@ -33,11 +33,11 @@ internal partial class CPulseGraphDefImpl : SchemaClass, CPulseGraphDef {
   public ref CUtlVector<PointerTo<CPulseCell_Base>> Cells {
     get => ref _Handle.AsRef<CUtlVector<PointerTo<CPulseCell_Base>>>(Schema.GetOffset(0x2A792CD8739C8132));
   }
-  public ref CUtlVector Vars {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x2A792CD8845ACC37));
+  public ref CUtlVector<CPulse_Variable> Vars {
+    get => ref _Handle.AsRef<CUtlVector<CPulse_Variable>>(Schema.GetOffset(0x2A792CD8845ACC37));
   }
-  public ref CUtlVector PublicOutputs {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x2A792CD8F0A9E7DA));
+  public ref CUtlVector<CPulse_PublicOutput> PublicOutputs {
+    get => ref _Handle.AsRef<CUtlVector<CPulse_PublicOutput>>(Schema.GetOffset(0x2A792CD8F0A9E7DA));
   }
   public ref CUtlVector<PointerTo<CPulse_InvokeBinding>> InvokeBindings {
     get => ref _Handle.AsRef<CUtlVector<PointerTo<CPulse_InvokeBinding>>>(Schema.GetOffset(0x2A792CD8828E222B));
@@ -45,14 +45,14 @@ internal partial class CPulseGraphDefImpl : SchemaClass, CPulseGraphDef {
   public ref CUtlVector<PointerTo<CPulse_CallInfo>> CallInfos {
     get => ref _Handle.AsRef<CUtlVector<PointerTo<CPulse_CallInfo>>>(Schema.GetOffset(0x2A792CD8EBB65CE6));
   }
-  public ref CUtlVector Constants {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x2A792CD83ACB72E2));
+  public ref CUtlVector<CPulse_Constant> Constants {
+    get => ref _Handle.AsRef<CUtlVector<CPulse_Constant>>(Schema.GetOffset(0x2A792CD83ACB72E2));
   }
-  public ref CUtlVector DomainValues {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x2A792CD8AA783E57));
+  public ref CUtlVector<CPulse_DomainValue> DomainValues {
+    get => ref _Handle.AsRef<CUtlVector<CPulse_DomainValue>>(Schema.GetOffset(0x2A792CD8AA783E57));
   }
-  public ref CUtlVector BlackboardReferences {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x2A792CD8AC9DF456));
+  public ref CUtlVector<CPulse_BlackboardReference> BlackboardReferences {
+    get => ref _Handle.AsRef<CUtlVector<CPulse_BlackboardReference>>(Schema.GetOffset(0x2A792CD8AC9DF456));
   }
   public ref CUtlVector<PointerTo<CPulse_OutputConnection>> OutputConnections {
     get => ref _Handle.AsRef<CUtlVector<PointerTo<CPulse_OutputConnection>>>(Schema.GetOffset(0x2A792CD843CD6C85));

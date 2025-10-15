@@ -15,8 +15,8 @@ internal partial class CChoiceUpdateNodeImpl : CAnimUpdateNodeBaseImpl, CChoiceU
   public CChoiceUpdateNodeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Children {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1CF0A6AC7415FA72));
+  public ref CUtlVector<CAnimUpdateNodeRef> Children {
+    get => ref _Handle.AsRef<CUtlVector<CAnimUpdateNodeRef>>(Schema.GetOffset(0x1CF0A6AC7415FA72));
   }
   public ref CUtlVector<float> Weights {
     get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x1CF0A6AC77B2F91E));

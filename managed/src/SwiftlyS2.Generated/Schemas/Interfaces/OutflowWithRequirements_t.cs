@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface OutflowWithRequirements_t : ISchemaClass<OutflowWithRequirements_t> {
 
   static OutflowWithRequirements_t ISchemaClass<OutflowWithRequirements_t>.From(nint handle) => new OutflowWithRequirements_tImpl(handle);
+  static int ISchemaClass<OutflowWithRequirements_t>.Size => 128;
 
   
   public CPulse_OutflowConnection Connection { get; }
   
   public PulseDocNodeID_t DestinationFlowNodeID { get; }
   
-  // CUtlVector< PulseDocNodeID_t >
-  public ref CUtlVector RequirementNodeIDs { get; }
+  public ref CUtlVector<PulseDocNodeID_t> RequirementNodeIDs { get; }
   
   public ref CUtlVector<int> CursorStateBlockIndex { get; }
 

@@ -18,8 +18,8 @@ internal partial class CRenderMeshImpl : SchemaClass, CRenderMesh {
   public SchemaUntypedField SceneObjects {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x8593C3BF332235A1));
   }
-  public SchemaUntypedField Constraints {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x8593C3BF251CBAAB));
+  public ref CUtlLeanVector<PointerTo<CBaseConstraint>, int> Constraints {
+    get => ref _Handle.AsRef<CUtlLeanVector<PointerTo<CBaseConstraint>, int>>(Schema.GetOffset(0x8593C3BF251CBAAB));
   }
   public CRenderSkeleton Skeleton {
     get => new CRenderSkeletonImpl(_Handle + Schema.GetOffset(0x8593C3BFE77F030E));

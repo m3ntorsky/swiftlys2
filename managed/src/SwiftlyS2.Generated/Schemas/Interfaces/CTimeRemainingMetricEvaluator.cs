@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTimeRemainingMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CTimeRemainingMetricEvaluator> {
 
   static CTimeRemainingMetricEvaluator ISchemaClass<CTimeRemainingMetricEvaluator>.From(nint handle) => new CTimeRemainingMetricEvaluatorImpl(handle);
+  static int ISchemaClass<CTimeRemainingMetricEvaluator>.Size => 96;
 
   
   public ref bool MatchByTimeRemaining { get; }

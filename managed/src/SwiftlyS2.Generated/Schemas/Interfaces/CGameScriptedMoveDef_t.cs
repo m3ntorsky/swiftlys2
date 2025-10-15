@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CGameScriptedMoveDef_t : ISchemaClass<CGameScriptedMoveDef_t> {
 
   static CGameScriptedMoveDef_t ISchemaClass<CGameScriptedMoveDef_t>.From(nint handle) => new CGameScriptedMoveDef_tImpl(handle);
+  static int ISchemaClass<CGameScriptedMoveDef_t>.Size => 48;
 
   
   public ref Vector DestOffset { get; }

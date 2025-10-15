@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AnimationDecodeDebugDumpElement_t : ISchemaClass<AnimationDecodeDebugDumpElement_t> {
 
   static AnimationDecodeDebugDumpElement_t ISchemaClass<AnimationDecodeDebugDumpElement_t>.From(nint handle) => new AnimationDecodeDebugDumpElement_tImpl(handle);
+  static int ISchemaClass<AnimationDecodeDebugDumpElement_t>.Size => 112;
 
   
   public ref int EntityIndex { get; }

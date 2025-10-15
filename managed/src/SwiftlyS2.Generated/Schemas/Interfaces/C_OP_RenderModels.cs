@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderModels : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderModels> {
 
   static C_OP_RenderModels ISchemaClass<C_OP_RenderModels>.From(nint handle) => new C_OP_RenderModelsImpl(handle);
+  static int ISchemaClass<C_OP_RenderModels>.Size => 11424;
 
   
   public ref bool OnlyRenderInEffectsBloomPass { get; }
@@ -21,8 +22,7 @@ public partial interface C_OP_RenderModels : CParticleFunctionRenderer, ISchemaC
   
   public ref bool OnlyRenderInEffecsGameOverlay { get; }
   
-  // CUtlVector< ModelReference_t >
-  public ref CUtlVector ModelList { get; }
+  public ref CUtlVector<ModelReference_t> ModelList { get; }
   
   public ParticleAttributeIndex_t BodyGroupField { get; }
   
@@ -80,8 +80,7 @@ public partial interface C_OP_RenderModels : CParticleFunctionRenderer, ISchemaC
   
   public CPerParticleFloatInput Skin { get; }
   
-  // CUtlVector< MaterialVariable_t >
-  public ref CUtlVector MaterialVars { get; }
+  public ref CUtlVector<MaterialVariable_t> MaterialVars { get; }
   
   public CPerParticleFloatInput RenderFilter { get; }
   

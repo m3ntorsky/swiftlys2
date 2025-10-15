@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_SetAttributeToScalarExpression : CParticleFunctionInitializer, ISchemaClass<C_INIT_SetAttributeToScalarExpression> {
 
   static C_INIT_SetAttributeToScalarExpression ISchemaClass<C_INIT_SetAttributeToScalarExpression>.From(nint handle) => new C_INIT_SetAttributeToScalarExpressionImpl(handle);
+  static int ISchemaClass<C_INIT_SetAttributeToScalarExpression>.Size => 1632;
 
   
   public ref ScalarExpressionType_t Expression { get; }

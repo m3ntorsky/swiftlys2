@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SetControlPointOrientationToCPVelocity : CParticleFunctionPreEmission, ISchemaClass<C_OP_SetControlPointOrientationToCPVelocity> {
 
   static C_OP_SetControlPointOrientationToCPVelocity ISchemaClass<C_OP_SetControlPointOrientationToCPVelocity>.From(nint handle) => new C_OP_SetControlPointOrientationToCPVelocityImpl(handle);
+  static int ISchemaClass<C_OP_SetControlPointOrientationToCPVelocity>.Size => 480;
 
   
   public ref int CPInput { get; }

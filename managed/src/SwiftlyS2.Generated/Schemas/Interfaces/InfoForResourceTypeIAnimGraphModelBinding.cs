@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeIAnimGraphModelBinding : ISchemaClass<InfoForResourceTypeIAnimGraphModelBinding> {
 
   static InfoForResourceTypeIAnimGraphModelBinding ISchemaClass<InfoForResourceTypeIAnimGraphModelBinding>.From(nint handle) => new InfoForResourceTypeIAnimGraphModelBindingImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeIAnimGraphModelBinding>.Size => 1;
 
 
 

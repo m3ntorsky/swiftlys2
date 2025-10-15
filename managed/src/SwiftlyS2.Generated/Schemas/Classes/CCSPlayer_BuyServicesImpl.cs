@@ -15,8 +15,8 @@ internal partial class CCSPlayer_BuyServicesImpl : CPlayerPawnComponentImpl, CCS
   public CCSPlayer_BuyServicesImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector SellbackPurchaseEntries {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xF0C2C12231D8CF7F));
+  public ref CUtlVector<SellbackPurchaseEntry_t> SellbackPurchaseEntries {
+    get => ref _Handle.AsRef<CUtlVector<SellbackPurchaseEntry_t>>(Schema.GetOffset(0xF0C2C12231D8CF7F));
   }
 
   public void SellbackPurchaseEntriesUpdated() {

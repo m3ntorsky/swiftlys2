@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootstepTableHandle : ISchemaClass<CFootstepTableHandle> {
 
   static CFootstepTableHandle ISchemaClass<CFootstepTableHandle>.From(nint handle) => new CFootstepTableHandleImpl(handle);
+  static int ISchemaClass<CFootstepTableHandle>.Size => 8;
 
 
 

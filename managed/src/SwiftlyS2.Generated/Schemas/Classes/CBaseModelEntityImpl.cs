@@ -87,8 +87,8 @@ internal partial class CBaseModelEntityImpl : CBaseEntityImpl, CBaseModelEntity 
   public ref Color Render {
     get => ref _Handle.AsRef<Color>(Schema.GetOffset(0x517849F7470D2A38));
   }
-  public ref CUtlVector RenderAttributes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x517849F7BF74B4AC));
+  public ref CUtlVector<EntityRenderAttribute_t> RenderAttributes {
+    get => ref _Handle.AsRef<CUtlVector<EntityRenderAttribute_t>>(Schema.GetOffset(0x517849F7BF74B4AC));
   }
   public ref bool RenderToCubemaps {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x517849F78A23364A));
@@ -128,12 +128,6 @@ internal partial class CBaseModelEntityImpl : CBaseEntityImpl, CBaseModelEntity 
   }
   public ref Vector DecalForwardAxis {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x517849F78CF4767A));
-  }
-  public ref float DecalHealBloodRate {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x517849F7E19E95D8));
-  }
-  public ref float DecalHealHeightRate {
-    get => ref _Handle.AsRef<float>(Schema.GetOffset(0x517849F7BDF5A793));
   }
   public ref DecalMode_t DecalMode {
     get => ref _Handle.AsRef<DecalMode_t>(Schema.GetOffset(0x517849F7C6AE5101));
@@ -210,12 +204,6 @@ public ISchemaFixedArray<uint> DisabledHitGroups {
   }
   public void DecalForwardAxisUpdated() {
     Schema.Update(_Handle, 0x517849F78CF4767A);
-  }
-  public void DecalHealBloodRateUpdated() {
-    Schema.Update(_Handle, 0x517849F7E19E95D8);
-  }
-  public void DecalHealHeightRateUpdated() {
-    Schema.Update(_Handle, 0x517849F7BDF5A793);
   }
   public void DecalModeUpdated() {
     Schema.Update(_Handle, 0x517849F7C6AE5101);

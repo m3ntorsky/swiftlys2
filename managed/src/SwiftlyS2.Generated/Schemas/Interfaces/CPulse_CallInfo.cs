@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulse_CallInfo : ISchemaClass<CPulse_CallInfo> {
 
   static CPulse_CallInfo ISchemaClass<CPulse_CallInfo>.From(nint handle) => new CPulse_CallInfoImpl(handle);
+  static int ISchemaClass<CPulse_CallInfo>.Size => 88;
 
   
   // PulseSymbol_t

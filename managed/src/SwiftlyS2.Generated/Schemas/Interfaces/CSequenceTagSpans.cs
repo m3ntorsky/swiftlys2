@@ -11,12 +11,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSequenceTagSpans : ISchemaClass<CSequenceTagSpans> {
 
   static CSequenceTagSpans ISchemaClass<CSequenceTagSpans>.From(nint handle) => new CSequenceTagSpansImpl(handle);
+  static int ISchemaClass<CSequenceTagSpans>.Size => 32;
 
   
   public ref CGlobalSymbol SequenceName { get; }
   
-  // CUtlVector< TagSpan_t >
-  public ref CUtlVector Tags { get; }
+  public ref CUtlVector<TagSpan_t> Tags { get; }
 
 
 }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventClientPollNetworking_t : ISchemaClass<EventClientPollNetworking_t> {
 
   static EventClientPollNetworking_t ISchemaClass<EventClientPollNetworking_t>.From(nint handle) => new EventClientPollNetworking_tImpl(handle);
+  static int ISchemaClass<EventClientPollNetworking_t>.Size => 4;
 
   
   public ref int TickCount { get; }

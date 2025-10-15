@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmScaleNode__CDefinition : CNmPassthroughNode__CDefinition, ISchemaClass<CNmScaleNode__CDefinition> {
 
   static CNmScaleNode__CDefinition ISchemaClass<CNmScaleNode__CDefinition>.From(nint handle) => new CNmScaleNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmScaleNode__CDefinition>.Size => 32;
 
   
   public ref short MaskNodeIdx { get; }

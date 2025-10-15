@@ -69,8 +69,8 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
       return ptr.IsValidPtr() ? new CPlayer_MovementServicesImpl(ptr) : null;
     }
   }
-  public ref CUtlVector ServerViewAngleChanges {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xCA2EED049182F3B7));
+  public ref CUtlVector<ViewAngleServerChange_t> ServerViewAngleChanges {
+    get => ref _Handle.AsRef<CUtlVector<ViewAngleServerChange_t>>(Schema.GetOffset(0xCA2EED049182F3B7));
   }
   public ref QAngle V_angle {
     get => ref _Handle.AsRef<QAngle>(Schema.GetOffset(0xCA2EED0413C45A71));
@@ -117,8 +117,8 @@ internal partial class CBasePlayerPawnImpl : CBaseCombatCharacterImpl, CBasePlay
   public ref uint HltvReplayEntity {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xCA2EED04ADF32E26));
   }
-  public ref CUtlVector SndOpvarLatchData {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xCA2EED046B36858E));
+  public ref CUtlVector<sndopvarlatchdata_t> SndOpvarLatchData {
+    get => ref _Handle.AsRef<CUtlVector<sndopvarlatchdata_t>>(Schema.GetOffset(0xCA2EED046B36858E));
   }
 
   public void WeaponServicesUpdated() {

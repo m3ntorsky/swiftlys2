@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeTri_t : ISchemaClass<FeTri_t> {
 
   static FeTri_t ISchemaClass<FeTri_t>.From(nint handle) => new FeTri_tImpl(handle);
+  static int ISchemaClass<FeTri_t>.Size => 28;
 
   
   public ISchemaFixedArray<ushort> Node { get; }

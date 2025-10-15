@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEntityIOOutput : ISchemaClass<CEntityIOOutput> {
 
   static CEntityIOOutput ISchemaClass<CEntityIOOutput>.From(nint handle) => new CEntityIOOutputImpl(handle);
+  static int ISchemaClass<CEntityIOOutput>.Size => 40;
 
   
   // CVariantBase< CVariantDefaultAllocator >

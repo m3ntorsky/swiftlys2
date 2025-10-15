@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CItemDefuser : CItem, ISchemaClass<CItemDefuser> {
 
   static CItemDefuser ISchemaClass<CItemDefuser>.From(nint handle) => new CItemDefuserImpl(handle);
+  static int ISchemaClass<CItemDefuser>.Size => 2960;
 
   
   public EntitySpottedState_t EntitySpottedState { get; }

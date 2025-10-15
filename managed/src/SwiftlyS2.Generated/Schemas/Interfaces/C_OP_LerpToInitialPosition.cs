@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_LerpToInitialPosition : CParticleFunctionOperator, ISchemaClass<C_OP_LerpToInitialPosition> {
 
   static C_OP_LerpToInitialPosition ISchemaClass<C_OP_LerpToInitialPosition>.From(nint handle) => new C_OP_LerpToInitialPositionImpl(handle);
+  static int ISchemaClass<C_OP_LerpToInitialPosition>.Size => 2936;
 
   
   public ref int ControlPointNumber { get; }

@@ -15,8 +15,8 @@ internal partial class CSSDSMsg_EndFrameImpl : SchemaClass, CSSDSMsg_EndFrame {
   public CSSDSMsg_EndFrameImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Views {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x6F265E19E9FEAC51));
+  public ref CUtlVector<CSSDSEndFrameViewInfo> Views {
+    get => ref _Handle.AsRef<CUtlVector<CSSDSEndFrameViewInfo>>(Schema.GetOffset(0x6F265E19E9FEAC51));
   }
 
 

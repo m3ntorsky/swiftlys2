@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapSDFDistanceToVectorAttribute : CParticleFunctionOperator, ISchemaClass<C_OP_RemapSDFDistanceToVectorAttribute> {
 
   static C_OP_RemapSDFDistanceToVectorAttribute ISchemaClass<C_OP_RemapSDFDistanceToVectorAttribute>.From(nint handle) => new C_OP_RemapSDFDistanceToVectorAttributeImpl(handle);
+  static int ISchemaClass<C_OP_RemapSDFDistanceToVectorAttribute>.Size => 1208;
 
   
   public ParticleAttributeIndex_t VectorFieldOutput { get; }

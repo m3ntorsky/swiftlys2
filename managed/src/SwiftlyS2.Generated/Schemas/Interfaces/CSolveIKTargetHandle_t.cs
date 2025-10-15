@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSolveIKTargetHandle_t : ISchemaClass<CSolveIKTargetHandle_t> {
 
   static CSolveIKTargetHandle_t ISchemaClass<CSolveIKTargetHandle_t>.From(nint handle) => new CSolveIKTargetHandle_tImpl(handle);
+  static int ISchemaClass<CSolveIKTargetHandle_t>.Size => 4;
 
   
   public CAnimParamHandle PositionHandle { get; }

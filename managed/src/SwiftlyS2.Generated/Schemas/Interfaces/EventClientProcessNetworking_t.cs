@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventClientProcessNetworking_t : ISchemaClass<EventClientProcessNetworking_t> {
 
   static EventClientProcessNetworking_t ISchemaClass<EventClientProcessNetworking_t>.From(nint handle) => new EventClientProcessNetworking_tImpl(handle);
+  static int ISchemaClass<EventClientProcessNetworking_t>.Size => 4;
 
   
   public ref int TickCount { get; }

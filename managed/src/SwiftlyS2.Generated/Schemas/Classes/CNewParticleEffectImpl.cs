@@ -79,6 +79,18 @@ internal partial class CNewParticleEffectImpl : IParticleEffectImpl, CNewParticl
   public SchemaUntypedField ShouldCheckFoW {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x80246F237B2493C2));
   }
+  public SchemaUntypedField IsAsyncCreate {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x80246F2325222507));
+  }
+  public SchemaUntypedField FreezeTransitionActive {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x80246F23DE61FB43));
+  }
+  public SchemaUntypedField FreezeTargetState {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x80246F235ACCAFF4));
+  }
+  public SchemaUntypedField CanFreeze {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x80246F2314DD4F42));
+  }
   public ref Vector SortOrigin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x80246F23E2F1590F));
   }
@@ -105,15 +117,6 @@ internal partial class CNewParticleEffectImpl : IParticleEffectImpl, CNewParticl
   }
   public ref float FreezeTransitionOverride {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x80246F23A55719DB));
-  }
-  public ref bool FreezeTransitionActive {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x80246F23DE61FB43));
-  }
-  public ref bool FreezeTargetState {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x80246F235ACCAFF4));
-  }
-  public ref bool CanFreeze {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x80246F2314DD4F42));
   }
   public ref Vector LastMin {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x80246F23102539F3));

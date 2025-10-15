@@ -25,8 +25,8 @@ internal partial class PermModelData_tImpl : SchemaClass, PermModelData_t {
   public PermModelInfo_t ModelInfo {
     get => new PermModelInfo_tImpl(_Handle + Schema.GetOffset(0x3E367D0B506D8FE2));
   }
-  public ref CUtlVector ExtParts {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3E367D0B8564C2A6));
+  public ref CUtlVector<PermModelExtPart_t> ExtParts {
+    get => ref _Handle.AsRef<CUtlVector<PermModelExtPart_t>>(Schema.GetOffset(0x3E367D0B8564C2A6));
   }
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCRenderMesh>> RefMeshes {
     get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCRenderMesh>>>(Schema.GetOffset(0x3E367D0B9FB3727B));
@@ -58,8 +58,8 @@ internal partial class PermModelData_tImpl : SchemaClass, PermModelData_t {
   public ref CUtlVector<CUtlString> MeshGroups {
     get => ref _Handle.AsRef<CUtlVector<CUtlString>>(Schema.GetOffset(0x3E367D0B3EF7CCF4));
   }
-  public ref CUtlVector MaterialGroups {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3E367D0BDD36CD50));
+  public ref CUtlVector<MaterialGroup_t> MaterialGroups {
+    get => ref _Handle.AsRef<CUtlVector<MaterialGroup_t>>(Schema.GetOffset(0x3E367D0BDD36CD50));
   }
   public ref ulong DefaultMeshGroupMask {
     get => ref _Handle.AsRef<ulong>(Schema.GetOffset(0x3E367D0B7320202A));
@@ -73,8 +73,8 @@ internal partial class PermModelData_tImpl : SchemaClass, PermModelData_t {
   public ref CUtlVector<ushort> RemappingTableStarts {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0x3E367D0BE4304DFB));
   }
-  public ref CUtlVector BoneFlexDrivers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3E367D0B3670337F));
+  public ref CUtlVector<ModelBoneFlexDriver_t> BoneFlexDrivers {
+    get => ref _Handle.AsRef<CUtlVector<ModelBoneFlexDriver_t>>(Schema.GetOffset(0x3E367D0B3670337F));
   }
   public CModelConfigList? ModelConfigList {
     get {
@@ -88,8 +88,8 @@ internal partial class PermModelData_tImpl : SchemaClass, PermModelData_t {
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCModel>> RefAnimIncludeModels {
     get => ref _Handle.AsRef<CUtlVector<CStrongHandle<InfoForResourceTypeCModel>>>(Schema.GetOffset(0x3E367D0BD99121D7));
   }
-  public ref CUtlVector AnimatedMaterialAttributes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3E367D0BC29D5124));
+  public ref CUtlVector<PermModelDataAnimatedMaterialAttribute_t> AnimatedMaterialAttributes {
+    get => ref _Handle.AsRef<CUtlVector<PermModelDataAnimatedMaterialAttribute_t>>(Schema.GetOffset(0x3E367D0BC29D5124));
   }
 
 

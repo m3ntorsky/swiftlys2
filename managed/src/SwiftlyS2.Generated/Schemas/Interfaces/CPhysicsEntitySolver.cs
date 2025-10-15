@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysicsEntitySolver : CLogicalEntity, ISchemaClass<CPhysicsEntitySolver> {
 
   static CPhysicsEntitySolver ISchemaClass<CPhysicsEntitySolver>.From(nint handle) => new CPhysicsEntitySolverImpl(handle);
+  static int ISchemaClass<CPhysicsEntitySolver>.Size => 1304;
 
   
   public ref CHandle<CBaseEntity> MovingEntity { get; }

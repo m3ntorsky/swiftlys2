@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmBoneMaskValueNode__CDefinition : CNmValueNode__CDefinition, ISchemaClass<CNmBoneMaskValueNode__CDefinition> {
 
   static CNmBoneMaskValueNode__CDefinition ISchemaClass<CNmBoneMaskValueNode__CDefinition>.From(nint handle) => new CNmBoneMaskValueNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmBoneMaskValueNode__CDefinition>.Size => 16;
 
 
 

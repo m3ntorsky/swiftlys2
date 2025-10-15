@@ -21,8 +21,8 @@ internal partial class NmBoneMaskSetDefinition_tImpl : SchemaClass, NmBoneMaskSe
   public CNmBoneWeightList PrimaryWeightList {
     get => new CNmBoneWeightListImpl(_Handle + Schema.GetOffset(0xEA1211603AF7FF49));
   }
-  public SchemaUntypedField SecondaryWeightLists {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xEA12116021DB2776));
+  public ref CUtlLeanVector<CNmBoneWeightList, int> SecondaryWeightLists {
+    get => ref _Handle.AsRef<CUtlLeanVector<CNmBoneWeightList, int>>(Schema.GetOffset(0xEA12116021DB2776));
   }
 
 

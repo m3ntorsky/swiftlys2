@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixPitchShiftDesc_t : ISchemaClass<VMixPitchShiftDesc_t> {
 
   static VMixPitchShiftDesc_t ISchemaClass<VMixPitchShiftDesc_t>.From(nint handle) => new VMixPitchShiftDesc_tImpl(handle);
+  static int ISchemaClass<VMixPitchShiftDesc_t>.Size => 16;
 
   
   public ref int GrainSampleCount { get; }

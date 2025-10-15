@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmBoneMaskBlendNode__CDefinition : CNmBoneMaskValueNode__CDefinition, ISchemaClass<CNmBoneMaskBlendNode__CDefinition> {
 
   static CNmBoneMaskBlendNode__CDefinition ISchemaClass<CNmBoneMaskBlendNode__CDefinition>.From(nint handle) => new CNmBoneMaskBlendNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmBoneMaskBlendNode__CDefinition>.Size => 24;
 
   
   public ref short SourceMaskNodeIdx { get; }

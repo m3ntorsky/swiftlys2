@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RotatorQueueEntry_t : ISchemaClass<RotatorQueueEntry_t> {
 
   static RotatorQueueEntry_t ISchemaClass<RotatorQueueEntry_t>.From(nint handle) => new RotatorQueueEntry_tImpl(handle);
+  static int ISchemaClass<RotatorQueueEntry_t>.Size => 32;
 
   
   public ref Quaternion Target { get; }

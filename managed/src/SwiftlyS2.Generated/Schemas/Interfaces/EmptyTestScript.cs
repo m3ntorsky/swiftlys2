@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EmptyTestScript : CAnimScriptBase, ISchemaClass<EmptyTestScript> {
 
   static EmptyTestScript ISchemaClass<EmptyTestScript>.From(nint handle) => new EmptyTestScriptImpl(handle);
+  static int ISchemaClass<EmptyTestScript>.Size => 32;
 
   
   // CAnimScriptParam< float32 >

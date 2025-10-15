@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSeqTransition : ISchemaClass<CSeqTransition> {
 
   static CSeqTransition ISchemaClass<CSeqTransition>.From(nint handle) => new CSeqTransitionImpl(handle);
+  static int ISchemaClass<CSeqTransition>.Size => 8;
 
   
   public ref float FadeInTime { get; }

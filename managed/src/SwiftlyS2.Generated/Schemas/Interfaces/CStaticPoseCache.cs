@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStaticPoseCache : ISchemaClass<CStaticPoseCache> {
 
   static CStaticPoseCache ISchemaClass<CStaticPoseCache>.From(nint handle) => new CStaticPoseCacheImpl(handle);
+  static int ISchemaClass<CStaticPoseCache>.Size => 48;
 
   
-  // CUtlVector< CCachedPose >
-  public ref CUtlVector Poses { get; }
+  public ref CUtlVector<CCachedPose> Poses { get; }
   
   public ref int BoneCount { get; }
   

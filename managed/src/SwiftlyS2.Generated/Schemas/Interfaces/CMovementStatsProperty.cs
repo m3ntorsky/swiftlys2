@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMovementStatsProperty : ISchemaClass<CMovementStatsProperty> {
 
   static CMovementStatsProperty ISchemaClass<CMovementStatsProperty>.From(nint handle) => new CMovementStatsPropertyImpl(handle);
+  static int ISchemaClass<CMovementStatsProperty>.Size => 64;
 
   
   public ref int UseCounter { get; }

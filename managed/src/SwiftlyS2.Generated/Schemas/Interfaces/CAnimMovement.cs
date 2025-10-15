@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimMovement : ISchemaClass<CAnimMovement> {
 
   static CAnimMovement ISchemaClass<CAnimMovement>.From(nint handle) => new CAnimMovementImpl(handle);
+  static int ISchemaClass<CAnimMovement>.Size => 44;
 
   
   public ref int Endframe { get; }

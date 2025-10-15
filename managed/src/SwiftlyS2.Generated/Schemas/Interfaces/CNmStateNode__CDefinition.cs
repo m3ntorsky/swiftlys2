@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmStateNode__CDefinition : CNmPoseNode__CDefinition, ISchemaClass<CNmStateNode__CDefinition> {
 
   static CNmStateNode__CDefinition ISchemaClass<CNmStateNode__CDefinition>.From(nint handle) => new CNmStateNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmStateNode__CDefinition>.Size => 176;
 
   
   public ref short ChildNodeIdx { get; }
@@ -37,6 +38,8 @@ public partial interface CNmStateNode__CDefinition : CNmPoseNode__CDefinition, I
   public ref short LayerBoneMaskNodeIdx { get; }
   
   public ref bool IsOffState { get; }
+  
+  public ref bool UseActualElapsedTimeInStateForTimedEvents { get; }
 
 
 }

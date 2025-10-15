@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCycleBase : ISchemaClass<CCycleBase> {
 
   static CCycleBase ISchemaClass<CCycleBase>.From(nint handle) => new CCycleBaseImpl(handle);
+  static int ISchemaClass<CCycleBase>.Size => 4;
 
   
   public ref float Cycle { get; }

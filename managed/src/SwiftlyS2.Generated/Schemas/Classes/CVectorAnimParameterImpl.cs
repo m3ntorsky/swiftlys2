@@ -21,6 +21,9 @@ internal partial class CVectorAnimParameterImpl : CConcreteAnimParameterImpl, CV
   public ref bool Interpolate {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x74346C8BF6607650));
   }
+  public ref AnimParamVectorType_t VectorType {
+    get => ref _Handle.AsRef<AnimParamVectorType_t>(Schema.GetOffset(0x74346C8BF251F9D2));
+  }
 
 
 }

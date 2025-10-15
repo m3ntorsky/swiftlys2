@@ -11,12 +11,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTargetSelectorUpdateNode : CAnimUpdateNodeBase, ISchemaClass<CTargetSelectorUpdateNode> {
 
   static CTargetSelectorUpdateNode ISchemaClass<CTargetSelectorUpdateNode>.From(nint handle) => new CTargetSelectorUpdateNodeImpl(handle);
+  static int ISchemaClass<CTargetSelectorUpdateNode>.Size => 160;
 
   
   public ref TargetSelectorAngleMode_t AngleMode { get; }
   
-  // CUtlVector< CAnimUpdateNodeRef >
-  public ref CUtlVector Children { get; }
+  public ref CUtlVector<CAnimUpdateNodeRef> Children { get; }
   
   public CAnimParamHandle TargetPosition { get; }
   

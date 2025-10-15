@@ -16,7 +16,7 @@ public interface CGCStorePurchaseInit_LineItem : ITypedProtobuf<CGCStorePurchase
   public uint Quantity { get; set; }
 
 
-  public uint CostInLocalCurrency { get; set; }
+  public ulong CostInLocalCurrency { get; set; }
 
 
   public uint PurchaseType { get; set; }

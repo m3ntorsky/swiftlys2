@@ -11,12 +11,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AnimationDecodeDebugDump_t : ISchemaClass<AnimationDecodeDebugDump_t> {
 
   static AnimationDecodeDebugDump_t ISchemaClass<AnimationDecodeDebugDump_t>.From(nint handle) => new AnimationDecodeDebugDump_tImpl(handle);
+  static int ISchemaClass<AnimationDecodeDebugDump_t>.Size => 32;
 
   
   public ref AnimationProcessingType_t ProcessingType { get; }
   
-  // CUtlVector< AnimationDecodeDebugDumpElement_t >
-  public ref CUtlVector Elems { get; }
+  public ref CUtlVector<AnimationDecodeDebugDumpElement_t> Elems { get; }
 
 
 }

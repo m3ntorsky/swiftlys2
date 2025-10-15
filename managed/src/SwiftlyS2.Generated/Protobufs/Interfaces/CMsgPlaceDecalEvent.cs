@@ -27,6 +27,9 @@ public interface CMsgPlaceDecalEvent : ITypedProtobuf<CMsgPlaceDecalEvent>, INet
   public int Boneindex { get; set; }
 
 
+  public int Triangleindex { get; set; }
+
+
   public uint Flags { get; set; }
 
 

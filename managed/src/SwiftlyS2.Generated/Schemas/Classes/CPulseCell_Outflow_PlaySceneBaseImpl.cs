@@ -21,8 +21,8 @@ internal partial class CPulseCell_Outflow_PlaySceneBaseImpl : CPulseCell_BaseYie
   public CPulse_ResumePoint OnCanceled {
     get => new CPulse_ResumePointImpl(_Handle + Schema.GetOffset(0x647C41D0F02162DB));
   }
-  public ref CUtlVector Triggers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x647C41D06E7B12D0));
+  public ref CUtlVector<CPulse_OutflowConnection> Triggers {
+    get => ref _Handle.AsRef<CUtlVector<CPulse_OutflowConnection>>(Schema.GetOffset(0x647C41D06E7B12D0));
   }
 
 

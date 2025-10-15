@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBasePlayerPawn : CBaseCombatCharacter, ISchemaClass<CBasePlayerPawn> {
 
   static CBasePlayerPawn ISchemaClass<CBasePlayerPawn>.From(nint handle) => new CBasePlayerPawnImpl(handle);
+  static int ISchemaClass<CBasePlayerPawn>.Size => 3472;
 
   
   public CPlayer_WeaponServices? WeaponServices { get; }
@@ -31,8 +32,7 @@ public partial interface CBasePlayerPawn : CBaseCombatCharacter, ISchemaClass<CB
   
   public CPlayer_MovementServices? MovementServices { get; }
   
-  // CUtlVectorEmbeddedNetworkVar< ViewAngleServerChange_t >
-  public ref CUtlVector ServerViewAngleChanges { get; }
+  public ref CUtlVector<ViewAngleServerChange_t> ServerViewAngleChanges { get; }
   
   public ref QAngle V_angle { get; }
   
@@ -62,8 +62,7 @@ public partial interface CBasePlayerPawn : CBaseCombatCharacter, ISchemaClass<CB
   
   public ref uint HltvReplayEntity { get; }
   
-  // CUtlVector< sndopvarlatchdata_t >
-  public ref CUtlVector SndOpvarLatchData { get; }
+  public ref CUtlVector<sndopvarlatchdata_t> SndOpvarLatchData { get; }
 
   public void WeaponServicesUpdated();
   public void ItemServicesUpdated();

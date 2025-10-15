@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSplineConstraint : CPhysConstraint, ISchemaClass<CSplineConstraint> {
 
   static CSplineConstraint ISchemaClass<CSplineConstraint>.From(nint handle) => new CSplineConstraintImpl(handle);
+  static int ISchemaClass<CSplineConstraint>.Size => 1568;
 
   
   public ref Vector AnchorOffsetRestore { get; }
@@ -33,7 +34,13 @@ public partial interface CSplineConstraint : CPhysConstraint, ISchemaClass<CSpli
   
   public ref float JointFriction { get; }
   
+  public ref float TransitionTime { get; }
+  
   public ref Vector PreSolveAnchorPos { get; }
+  
+  public GameTime_t StartTransitionTime { get; }
+  
+  public ref Vector TangentSpaceAnchorAtTransitionStart { get; }
 
 
 }

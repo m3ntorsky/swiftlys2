@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCEntityLump : ISchemaClass<InfoForResourceTypeCEntityLump> {
 
   static InfoForResourceTypeCEntityLump ISchemaClass<InfoForResourceTypeCEntityLump>.From(nint handle) => new InfoForResourceTypeCEntityLumpImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCEntityLump>.Size => 1;
 
 
 

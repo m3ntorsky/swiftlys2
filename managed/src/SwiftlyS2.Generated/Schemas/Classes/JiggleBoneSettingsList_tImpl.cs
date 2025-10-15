@@ -15,8 +15,8 @@ internal partial class JiggleBoneSettingsList_tImpl : SchemaClass, JiggleBoneSet
   public JiggleBoneSettingsList_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector BoneSettings {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD234E39D689AEBE2));
+  public ref CUtlVector<JiggleBoneSettings_t> BoneSettings {
+    get => ref _Handle.AsRef<CUtlVector<JiggleBoneSettings_t>>(Schema.GetOffset(0xD234E39D689AEBE2));
   }
 
 

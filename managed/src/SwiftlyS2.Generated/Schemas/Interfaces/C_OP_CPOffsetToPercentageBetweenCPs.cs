@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_CPOffsetToPercentageBetweenCPs : CParticleFunctionOperator, ISchemaClass<C_OP_CPOffsetToPercentageBetweenCPs> {
 
   static C_OP_CPOffsetToPercentageBetweenCPs ISchemaClass<C_OP_CPOffsetToPercentageBetweenCPs>.From(nint handle) => new C_OP_CPOffsetToPercentageBetweenCPsImpl(handle);
+  static int ISchemaClass<C_OP_CPOffsetToPercentageBetweenCPs>.Size => 512;
 
   
   public ref float InputMin { get; }

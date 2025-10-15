@@ -33,8 +33,8 @@ internal partial class CVSoundImpl : SchemaClass, CVSound {
   public ref float Duration {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0x478C9873BC5E3BAB));
   }
-  public ref CUtlVector Sentences {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x478C98730FF1D785));
+  public ref CUtlVector<CAudioSentence> Sentences {
+    get => ref _Handle.AsRef<CUtlVector<CAudioSentence>>(Schema.GetOffset(0x478C98730FF1D785));
   }
   public ref uint StreamingSize {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0x478C9873CB44A8AE));

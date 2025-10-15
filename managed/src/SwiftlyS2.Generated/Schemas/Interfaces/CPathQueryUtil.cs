@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPathQueryUtil : ISchemaClass<CPathQueryUtil> {
 
   static CPathQueryUtil ISchemaClass<CPathQueryUtil>.From(nint handle) => new CPathQueryUtilImpl(handle);
+  static int ISchemaClass<CPathQueryUtil>.Size => 128;
 
   
   public ref CTransform PathToEntityTransform { get; }

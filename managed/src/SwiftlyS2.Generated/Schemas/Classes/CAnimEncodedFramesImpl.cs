@@ -24,8 +24,8 @@ internal partial class CAnimEncodedFramesImpl : SchemaClass, CAnimEncodedFrames 
   public ref int FramesPerBlock {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x63992F5DFFC5A547));
   }
-  public ref CUtlVector FrameblockArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x63992F5D2805E598));
+  public ref CUtlVector<CAnimFrameBlockAnim> FrameblockArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimFrameBlockAnim>>(Schema.GetOffset(0x63992F5D2805E598));
   }
   public CAnimEncodeDifference UsageDifferences {
     get => new CAnimEncodeDifferenceImpl(_Handle + Schema.GetOffset(0x63992F5D27B13638));

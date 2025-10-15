@@ -30,8 +30,8 @@ internal partial class ModelSkeletonData_tImpl : SchemaClass, ModelSkeletonData_
   public ref CUtlVector<Vector> BonePosParent {
     get => ref _Handle.AsRef<CUtlVector<Vector>>(Schema.GetOffset(0x8349B622E59E127F));
   }
-  public ref CUtlVector BoneRotParent {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x8349B622A6E3A10C));
+  public ref CUtlVector<SchemaUntypedField> BoneRotParent {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0x8349B622A6E3A10C));
   }
   public ref CUtlVector<float> BoneScaleParent {
     get => ref _Handle.AsRef<CUtlVector<float>>(Schema.GetOffset(0x8349B622FA2ED87F));

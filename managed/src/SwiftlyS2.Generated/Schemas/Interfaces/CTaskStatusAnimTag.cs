@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTaskStatusAnimTag : CAnimTagBase, ISchemaClass<CTaskStatusAnimTag> {
 
   static CTaskStatusAnimTag ISchemaClass<CTaskStatusAnimTag>.From(nint handle) => new CTaskStatusAnimTagImpl(handle);
+  static int ISchemaClass<CTaskStatusAnimTag>.Size => 88;
 
 
 

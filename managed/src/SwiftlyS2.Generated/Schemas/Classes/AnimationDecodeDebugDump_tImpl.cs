@@ -18,8 +18,8 @@ internal partial class AnimationDecodeDebugDump_tImpl : SchemaClass, AnimationDe
   public ref AnimationProcessingType_t ProcessingType {
     get => ref _Handle.AsRef<AnimationProcessingType_t>(Schema.GetOffset(0xA584797F5F059FB6));
   }
-  public ref CUtlVector Elems {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA584797F3F2FC92B));
+  public ref CUtlVector<AnimationDecodeDebugDumpElement_t> Elems {
+    get => ref _Handle.AsRef<CUtlVector<AnimationDecodeDebugDumpElement_t>>(Schema.GetOffset(0xA584797F3F2FC92B));
   }
 
 

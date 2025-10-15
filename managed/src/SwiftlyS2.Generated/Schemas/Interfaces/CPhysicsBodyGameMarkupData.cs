@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysicsBodyGameMarkupData : ISchemaClass<CPhysicsBodyGameMarkupData> {
 
   static CPhysicsBodyGameMarkupData ISchemaClass<CPhysicsBodyGameMarkupData>.From(nint handle) => new CPhysicsBodyGameMarkupDataImpl(handle);
+  static int ISchemaClass<CPhysicsBodyGameMarkupData>.Size => 40;
 
   
   // CUtlOrderedMap< CUtlString, CPhysicsBodyGameMarkup >

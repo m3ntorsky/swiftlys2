@@ -24,8 +24,8 @@ internal partial class CNavLinkMovementVDataImpl : SchemaClass, CNavLinkMovement
   public ref uint RecommendedDistance {
     get => ref _Handle.AsRef<uint>(Schema.GetOffset(0xACA2D248BA1A388E));
   }
-  public ref CUtlVector AnimgraphVars {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xACA2D2480FD1BA32));
+  public ref CUtlVector<CNavLinkAnimgraphVar> AnimgraphVars {
+    get => ref _Handle.AsRef<CUtlVector<CNavLinkAnimgraphVar>>(Schema.GetOffset(0xACA2D2480FD1BA32));
   }
 
 

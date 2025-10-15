@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBindPoseUpdateNode : CLeafUpdateNode, ISchemaClass<CBindPoseUpdateNode> {
 
   static CBindPoseUpdateNode ISchemaClass<CBindPoseUpdateNode>.From(nint handle) => new CBindPoseUpdateNodeImpl(handle);
+  static int ISchemaClass<CBindPoseUpdateNode>.Size => 96;
 
 
 

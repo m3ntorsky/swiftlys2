@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CGamePlayerEquip : CRulePointEntity, ISchemaClass<CGamePlayerEquip> {
 
   static CGamePlayerEquip ISchemaClass<CGamePlayerEquip>.From(nint handle) => new CGamePlayerEquipImpl(handle);
+  static int ISchemaClass<CGamePlayerEquip>.Size => 2048;
 
 
 

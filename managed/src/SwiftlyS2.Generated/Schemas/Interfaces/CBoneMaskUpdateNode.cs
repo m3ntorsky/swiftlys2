@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBoneMaskUpdateNode : CBinaryUpdateNode, ISchemaClass<CBoneMaskUpdateNode> {
 
   static CBoneMaskUpdateNode ISchemaClass<CBoneMaskUpdateNode>.From(nint handle) => new CBoneMaskUpdateNodeImpl(handle);
+  static int ISchemaClass<CBoneMaskUpdateNode>.Size => 176;
 
   
   public ref int WeightListIndex { get; }

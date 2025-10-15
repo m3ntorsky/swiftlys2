@@ -9,6 +9,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Hosting;
 using SwiftlyS2.Core.Misc;
 using Microsoft.Extensions.Configuration;
+using SwiftlyS2.Shared.Memory;
+using SwiftlyS2.Shared.Services;
 namespace SwiftlyS2.Core;
 
 internal static class Bootstrap
@@ -57,19 +59,17 @@ internal static class Bootstrap
           .AddPlayerManagerService()
           .AddPluginManager()
           .AddHookManager()
-          .AddEngineService()
           .AddTraceManagerService()
-          .AddCoreCommandService()
           .AddPermissionManager()
           .AddCoreHookService()
           .AddMenuService()
+          .AddCommandTrackerManager()
+          .AddCommandTrackerService()
           .AddSwiftlyCore(basePath);
       })
       .Build();
 
     _host.Start();
-
-
 
     // provider.UseTestService();
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnSoftbodyCapsule_t : ISchemaClass<RnSoftbodyCapsule_t> {
 
   static RnSoftbodyCapsule_t ISchemaClass<RnSoftbodyCapsule_t>.From(nint handle) => new RnSoftbodyCapsule_tImpl(handle);
+  static int ISchemaClass<RnSoftbodyCapsule_t>.Size => 32;
 
   
   public ISchemaFixedArray<Vector> Center { get; }

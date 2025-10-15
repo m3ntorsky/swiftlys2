@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Timeline__TimelineEvent_t : ISchemaClass<CPulseCell_Timeline__TimelineEvent_t> {
 
   static CPulseCell_Timeline__TimelineEvent_t ISchemaClass<CPulseCell_Timeline__TimelineEvent_t>.From(nint handle) => new CPulseCell_Timeline__TimelineEvent_tImpl(handle);
+  static int ISchemaClass<CPulseCell_Timeline__TimelineEvent_t>.Size => 80;
 
   
   public ref float TimeFromPrevious { get; }

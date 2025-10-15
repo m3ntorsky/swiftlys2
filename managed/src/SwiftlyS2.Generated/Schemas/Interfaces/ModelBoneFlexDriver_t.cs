@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ModelBoneFlexDriver_t : ISchemaClass<ModelBoneFlexDriver_t> {
 
   static ModelBoneFlexDriver_t ISchemaClass<ModelBoneFlexDriver_t>.From(nint handle) => new ModelBoneFlexDriver_tImpl(handle);
+  static int ISchemaClass<ModelBoneFlexDriver_t>.Size => 40;
 
   
   public string BoneName { get; set; }
   
   public ref uint BoneNameToken { get; }
   
-  // CUtlVector< ModelBoneFlexDriverControl_t >
-  public ref CUtlVector Controls { get; }
+  public ref CUtlVector<ModelBoneFlexDriverControl_t> Controls { get; }
 
 
 }

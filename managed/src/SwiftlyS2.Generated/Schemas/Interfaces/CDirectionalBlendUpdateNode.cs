@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDirectionalBlendUpdateNode : CLeafUpdateNode, ISchemaClass<CDirectionalBlendUpdateNode> {
 
   static CDirectionalBlendUpdateNode ISchemaClass<CDirectionalBlendUpdateNode>.From(nint handle) => new CDirectionalBlendUpdateNodeImpl(handle);
+  static int ISchemaClass<CDirectionalBlendUpdateNode>.Size => 176;
 
   
   // HSequence

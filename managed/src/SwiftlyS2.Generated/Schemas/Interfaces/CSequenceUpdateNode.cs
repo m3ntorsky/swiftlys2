@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSequenceUpdateNode : CSequenceUpdateNodeBase, ISchemaClass<CSequenceUpdateNode> {
 
   static CSequenceUpdateNode ISchemaClass<CSequenceUpdateNode>.From(nint handle) => new CSequenceUpdateNodeImpl(handle);
+  static int ISchemaClass<CSequenceUpdateNode>.Size => 176;
 
   
   public HSequence Sequence { get; }
@@ -19,8 +20,7 @@ public partial interface CSequenceUpdateNode : CSequenceUpdateNodeBase, ISchemaC
   
   public CParamSpanUpdater ParamSpans { get; }
   
-  // CUtlVector< TagSpan_t >
-  public ref CUtlVector Tags { get; }
+  public ref CUtlVector<TagSpan_t> Tags { get; }
 
 
 }

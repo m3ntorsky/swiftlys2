@@ -18,8 +18,8 @@ internal partial class CParticleVariableRefImpl : SchemaClass, CParticleVariable
   public SchemaUntypedField VariableName {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x4FB747D9D3D609A6));
   }
-  public ref PulseValueType_t VariableType {
-    get => ref _Handle.AsRef<PulseValueType_t>(Schema.GetOffset(0x4FB747D9954B670D));
+  public SchemaUntypedField VariableType {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x4FB747D9954B670D));
   }
 
 

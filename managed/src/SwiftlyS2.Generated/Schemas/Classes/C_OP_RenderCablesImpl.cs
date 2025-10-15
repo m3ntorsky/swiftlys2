@@ -72,14 +72,17 @@ internal partial class C_OP_RenderCablesImpl : CParticleFunctionRendererImpl, C_
   public ref int Roundness {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x1649887761078EC0));
   }
+  public ref bool ForceRoundnessFixed {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x16498877D74D29BF));
+  }
   public CParticleTransformInput LightingTransform {
     get => new CParticleTransformInputImpl(_Handle + Schema.GetOffset(0x164988776557F58F));
   }
-  public SchemaUntypedField MaterialFloatVars {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x164988777A7B4D6C));
+  public ref CUtlLeanVector<FloatInputMaterialVariable_t, int> MaterialFloatVars {
+    get => ref _Handle.AsRef<CUtlLeanVector<FloatInputMaterialVariable_t, int>>(Schema.GetOffset(0x164988777A7B4D6C));
   }
-  public SchemaUntypedField MaterialVecVars {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x16498877E670B944));
+  public ref CUtlLeanVector<VecInputMaterialVariable_t, int> MaterialVecVars {
+    get => ref _Handle.AsRef<CUtlLeanVector<VecInputMaterialVariable_t, int>>(Schema.GetOffset(0x16498877E670B944));
   }
 
 

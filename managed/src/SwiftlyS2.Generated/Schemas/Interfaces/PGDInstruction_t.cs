@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PGDInstruction_t : ISchemaClass<PGDInstruction_t> {
 
   static PGDInstruction_t ISchemaClass<PGDInstruction_t>.From(nint handle) => new PGDInstruction_tImpl(handle);
+  static int ISchemaClass<PGDInstruction_t>.Size => 56;
 
   
   public ref PulseInstructionCode_t Code { get; }

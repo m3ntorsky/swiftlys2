@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventClientPollInput_t : ISchemaClass<EventClientPollInput_t> {
 
   static EventClientPollInput_t ISchemaClass<EventClientPollInput_t>.From(nint handle) => new EventClientPollInput_tImpl(handle);
+  static int ISchemaClass<EventClientPollInput_t>.Size => 48;
 
   
   public EngineLoopState_t LoopState { get; }

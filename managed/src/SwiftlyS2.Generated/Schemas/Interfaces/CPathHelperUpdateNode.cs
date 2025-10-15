@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPathHelperUpdateNode : CUnaryUpdateNode, ISchemaClass<CPathHelperUpdateNode> {
 
   static CPathHelperUpdateNode ISchemaClass<CPathHelperUpdateNode>.From(nint handle) => new CPathHelperUpdateNodeImpl(handle);
+  static int ISchemaClass<CPathHelperUpdateNode>.Size => 120;
 
   
   public ref float StoppingRadius { get; }

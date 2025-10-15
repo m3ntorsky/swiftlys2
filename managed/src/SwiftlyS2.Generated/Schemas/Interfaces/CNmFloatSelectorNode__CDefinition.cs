@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmFloatSelectorNode__CDefinition : CNmFloatValueNode__CDefinition, ISchemaClass<CNmFloatSelectorNode__CDefinition> {
 
   static CNmFloatSelectorNode__CDefinition ISchemaClass<CNmFloatSelectorNode__CDefinition>.From(nint handle) => new CNmFloatSelectorNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmFloatSelectorNode__CDefinition>.Size => 120;
 
   
   // CUtlVectorFixedGrowable< int16, 5 >

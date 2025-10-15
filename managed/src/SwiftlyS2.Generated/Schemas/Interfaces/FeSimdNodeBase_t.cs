@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeSimdNodeBase_t : ISchemaClass<FeSimdNodeBase_t> {
 
   static FeSimdNodeBase_t ISchemaClass<FeSimdNodeBase_t>.From(nint handle) => new FeSimdNodeBase_tImpl(handle);
+  static int ISchemaClass<FeSimdNodeBase_t>.Size => 112;
 
   
   public ISchemaFixedArray<ushort> Node { get; }

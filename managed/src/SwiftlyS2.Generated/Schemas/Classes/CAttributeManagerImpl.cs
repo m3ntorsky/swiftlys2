@@ -30,8 +30,8 @@ internal partial class CAttributeManagerImpl : SchemaClass, CAttributeManager {
   public ref attributeprovidertypes_t ProviderType {
     get => ref _Handle.AsRef<attributeprovidertypes_t>(Schema.GetOffset(0x7FCB380DD5677CB4));
   }
-  public ref CUtlVector CachedResults {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x7FCB380D3CD4B7CB));
+  public ref CUtlVector<CAttributeManager__cached_attribute_float_t> CachedResults {
+    get => ref _Handle.AsRef<CUtlVector<CAttributeManager__cached_attribute_float_t>>(Schema.GetOffset(0x7FCB380D3CD4B7CB));
   }
 
   public void ReapplyProvisionParityUpdated() {

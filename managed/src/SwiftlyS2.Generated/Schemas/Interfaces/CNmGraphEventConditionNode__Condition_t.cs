@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmGraphEventConditionNode__Condition_t : ISchemaClass<CNmGraphEventConditionNode__Condition_t> {
 
   static CNmGraphEventConditionNode__Condition_t ISchemaClass<CNmGraphEventConditionNode__Condition_t>.From(nint handle) => new CNmGraphEventConditionNode__Condition_tImpl(handle);
+  static int ISchemaClass<CNmGraphEventConditionNode__Condition_t>.Size => 16;
 
   
   public ref CGlobalSymbol EventID { get; }

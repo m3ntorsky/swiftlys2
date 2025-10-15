@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLogicNavigation : CLogicalEntity, ISchemaClass<CLogicNavigation> {
 
   static CLogicNavigation ISchemaClass<CLogicNavigation>.From(nint handle) => new CLogicNavigationImpl(handle);
+  static int ISchemaClass<CLogicNavigation>.Size => 1280;
 
   
   public ref bool IsOn { get; }

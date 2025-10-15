@@ -30,11 +30,11 @@ internal partial class AggregateSceneObject_tImpl : SchemaClass, AggregateSceneO
   public ref short VertexAlbedoStream {
     get => ref _Handle.AsRef<short>(Schema.GetOffset(0xEF81F2D42540B1EA));
   }
-  public ref CUtlVector AggregateMeshes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xEF81F2D402570BA1));
+  public ref CUtlVector<AggregateMeshInfo_t> AggregateMeshes {
+    get => ref _Handle.AsRef<CUtlVector<AggregateMeshInfo_t>>(Schema.GetOffset(0xEF81F2D402570BA1));
   }
-  public ref CUtlVector LodSetups {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xEF81F2D4B0CE61E2));
+  public ref CUtlVector<AggregateLODSetup_t> LodSetups {
+    get => ref _Handle.AsRef<CUtlVector<AggregateLODSetup_t>>(Schema.GetOffset(0xEF81F2D4B0CE61E2));
   }
   public ref CUtlVector<ushort> VisClusterMembership {
     get => ref _Handle.AsRef<CUtlVector<ushort>>(Schema.GetOffset(0xEF81F2D4F2C828CD));

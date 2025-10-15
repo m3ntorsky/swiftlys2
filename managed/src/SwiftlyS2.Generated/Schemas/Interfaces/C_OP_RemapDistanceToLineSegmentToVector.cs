@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapDistanceToLineSegmentToVector : C_OP_RemapDistanceToLineSegmentBase, ISchemaClass<C_OP_RemapDistanceToLineSegmentToVector> {
 
   static C_OP_RemapDistanceToLineSegmentToVector ISchemaClass<C_OP_RemapDistanceToLineSegmentToVector>.From(nint handle) => new C_OP_RemapDistanceToLineSegmentToVectorImpl(handle);
+  static int ISchemaClass<C_OP_RemapDistanceToLineSegmentToVector>.Size => 520;
 
   
   public ParticleAttributeIndex_t FieldOutput { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PostProcessingBloomParameters_t : ISchemaClass<PostProcessingBloomParameters_t> {
 
   static PostProcessingBloomParameters_t ISchemaClass<PostProcessingBloomParameters_t>.From(nint handle) => new PostProcessingBloomParameters_tImpl(handle);
+  static int ISchemaClass<PostProcessingBloomParameters_t>.Size => 136;
 
   
   public ref BloomBlendMode_t BlendMode { get; }

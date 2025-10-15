@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventFrameBoundary_t : ISchemaClass<EventFrameBoundary_t> {
 
   static EventFrameBoundary_t ISchemaClass<EventFrameBoundary_t>.From(nint handle) => new EventFrameBoundary_tImpl(handle);
+  static int ISchemaClass<EventFrameBoundary_t>.Size => 4;
 
   
   public ref float FrameTime { get; }

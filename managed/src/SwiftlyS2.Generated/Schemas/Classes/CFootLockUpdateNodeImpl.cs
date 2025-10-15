@@ -18,8 +18,8 @@ internal partial class CFootLockUpdateNodeImpl : CUnaryUpdateNodeImpl, CFootLock
   public FootLockPoseOpFixedSettings OpFixedSettings {
     get => new FootLockPoseOpFixedSettingsImpl(_Handle + Schema.GetOffset(0xA8F37E8E533AB09));
   }
-  public ref CUtlVector FootSettings {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA8F37E8A7F2ADE4));
+  public ref CUtlVector<FootFixedSettings> FootSettings {
+    get => ref _Handle.AsRef<CUtlVector<FootFixedSettings>>(Schema.GetOffset(0xA8F37E8A7F2ADE4));
   }
   public CAnimInputDamping HipShiftDamping {
     get => new CAnimInputDampingImpl(_Handle + Schema.GetOffset(0xA8F37E80EA57628));

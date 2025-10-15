@@ -21,17 +21,17 @@ internal partial class RnMesh_tImpl : SchemaClass, RnMesh_t {
   public ref Vector Max {
     get => ref _Handle.AsRef<Vector>(Schema.GetOffset(0x5F23FA63EAC4225D));
   }
-  public ref CUtlVector Nodes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5F23FA63EBA045DA));
+  public ref CUtlVector<RnNode_t> Nodes {
+    get => ref _Handle.AsRef<CUtlVector<RnNode_t>>(Schema.GetOffset(0x5F23FA63EBA045DA));
   }
   public SchemaUntypedField Vertices {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x5F23FA63E4F9760E));
   }
-  public ref CUtlVector Triangles {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5F23FA6365BD00C2));
+  public ref CUtlVector<RnTriangle_t> Triangles {
+    get => ref _Handle.AsRef<CUtlVector<RnTriangle_t>>(Schema.GetOffset(0x5F23FA6365BD00C2));
   }
-  public ref CUtlVector Wings {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5F23FA63B34C1A4B));
+  public ref CUtlVector<RnWing_t> Wings {
+    get => ref _Handle.AsRef<CUtlVector<RnWing_t>>(Schema.GetOffset(0x5F23FA63B34C1A4B));
   }
   public ref CUtlVector<byte> TriangleEdgeFlags {
     get => ref _Handle.AsRef<CUtlVector<byte>>(Schema.GetOffset(0x5F23FA6379FF46EF));

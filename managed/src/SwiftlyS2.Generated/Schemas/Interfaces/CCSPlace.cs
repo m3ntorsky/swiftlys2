@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlace : CServerOnlyModelEntity, ISchemaClass<CCSPlace> {
 
   static CCSPlace ISchemaClass<CCSPlace>.From(nint handle) => new CCSPlaceImpl(handle);
+  static int ISchemaClass<CCSPlace>.Size => 2040;
 
   
   public string Name { get; set; }

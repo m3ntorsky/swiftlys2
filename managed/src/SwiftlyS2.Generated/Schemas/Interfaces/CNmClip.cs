@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmClip : ISchemaClass<CNmClip> {
 
   static CNmClip ISchemaClass<CNmClip>.From(nint handle) => new CNmClipImpl(handle);
+  static int ISchemaClass<CNmClip>.Size => 576;
 
   
   public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton { get; }
@@ -21,15 +22,13 @@ public partial interface CNmClip : ISchemaClass<CNmClip> {
   
   public ref CUtlBinaryBlock CompressedPoseData { get; }
   
-  // CUtlVector< NmCompressionSettings_t >
-  public ref CUtlVector TrackCompressionSettings { get; }
+  public ref CUtlVector<NmCompressionSettings_t> TrackCompressionSettings { get; }
   
   public ref CUtlVector<uint> CompressedPoseOffsets { get; }
   
   public ref CUtlVector<CGlobalSymbol> FloatCurveIDs { get; }
   
-  // CUtlVector< NmFloatCurveCompressionSettings_t >
-  public ref CUtlVector FloatCurveDefs { get; }
+  public ref CUtlVector<NmFloatCurveCompressionSettings_t> FloatCurveDefs { get; }
   
   public ref CUtlVector<ushort> CompressedFloatCurveData { get; }
   
@@ -44,8 +43,7 @@ public partial interface CNmClip : ISchemaClass<CNmClip> {
   
   public ref bool IsAdditive { get; }
   
-  // CUtlVector< CNmClip::ModelSpaceSamplingChainLink_t >
-  public ref CUtlVector ModelSpaceSamplingChain { get; }
+  public ref CUtlVector<CNmClip__ModelSpaceSamplingChainLink_t> ModelSpaceSamplingChain { get; }
   
   public ref CUtlVector<int> ModelSpaceBoneSamplingIndices { get; }
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SosEditItemInfo_t : ISchemaClass<SosEditItemInfo_t> {
 
   static SosEditItemInfo_t ISchemaClass<SosEditItemInfo_t>.From(nint handle) => new SosEditItemInfo_tImpl(handle);
+  static int ISchemaClass<SosEditItemInfo_t>.Size => 48;
 
   
   public ref SosEditItemType_t ItemType { get; }

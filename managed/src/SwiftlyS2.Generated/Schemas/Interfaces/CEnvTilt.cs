@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvTilt : CPointEntity, ISchemaClass<CEnvTilt> {
 
   static CEnvTilt ISchemaClass<CEnvTilt>.From(nint handle) => new CEnvTiltImpl(handle);
+  static int ISchemaClass<CEnvTilt>.Size => 1280;
 
   
   public ref float Duration { get; }

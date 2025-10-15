@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface COmniLight : CBarnLight, ISchemaClass<COmniLight> {
 
   static COmniLight ISchemaClass<COmniLight>.From(nint handle) => new COmniLightImpl(handle);
+  static int ISchemaClass<COmniLight>.Size => 2832;
 
   
   public ref float InnerAngle { get; }

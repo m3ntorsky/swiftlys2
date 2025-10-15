@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_INIT_CreateWithinCapsuleTransform : CParticleFunctionInitializer, ISchemaClass<C_INIT_CreateWithinCapsuleTransform> {
 
   static C_INIT_CreateWithinCapsuleTransform ISchemaClass<C_INIT_CreateWithinCapsuleTransform>.From(nint handle) => new C_INIT_CreateWithinCapsuleTransformImpl(handle);
+  static int ISchemaClass<C_INIT_CreateWithinCapsuleTransform>.Size => 5872;
 
   
   public CPerParticleFloatInput RadiusMin { get; }

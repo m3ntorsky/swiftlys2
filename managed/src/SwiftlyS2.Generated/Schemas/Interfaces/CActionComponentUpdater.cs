@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CActionComponentUpdater : CAnimComponentUpdater, ISchemaClass<CActionComponentUpdater> {
 
   static CActionComponentUpdater ISchemaClass<CActionComponentUpdater>.From(nint handle) => new CActionComponentUpdaterImpl(handle);
+  static int ISchemaClass<CActionComponentUpdater>.Size => 72;
 
   
-  // CUtlVector< CSmartPtr< CAnimActionUpdater > >
-  public ref CUtlVector Actions { get; }
+  public ref CUtlVector<SchemaUntypedField> Actions { get; }
 
 
 }

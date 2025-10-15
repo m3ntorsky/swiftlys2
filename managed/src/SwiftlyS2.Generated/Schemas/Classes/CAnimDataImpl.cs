@@ -18,17 +18,17 @@ internal partial class CAnimDataImpl : SchemaClass, CAnimData {
   public ref CBufferString Name {
     get => ref _Handle.AsRef<CBufferString>(Schema.GetOffset(0xA4868F934D8F5786));
   }
-  public ref CUtlVector AnimArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA4868F939FE8AF0D));
+  public ref CUtlVector<CAnimDesc> AnimArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimDesc>>(Schema.GetOffset(0xA4868F939FE8AF0D));
   }
-  public ref CUtlVector DecoderArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA4868F93AB12D6C4));
+  public ref CUtlVector<CAnimDecoder> DecoderArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimDecoder>>(Schema.GetOffset(0xA4868F93AB12D6C4));
   }
   public ref int MaxUniqueFrameIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xA4868F938FB0EA0D));
   }
-  public ref CUtlVector SegmentArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA4868F933714FD2F));
+  public ref CUtlVector<CAnimFrameSegment> SegmentArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimFrameSegment>>(Schema.GetOffset(0xA4868F933714FD2F));
   }
 
 

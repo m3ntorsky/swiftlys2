@@ -15,8 +15,8 @@ internal partial class CFootMotionImpl : SchemaClass, CFootMotion {
   public CFootMotionImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Strides {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA4A598B8AE9C97F1));
+  public ref CUtlVector<CFootStride> Strides {
+    get => ref _Handle.AsRef<CUtlVector<CFootStride>>(Schema.GetOffset(0xA4A598B8AE9C97F1));
   }
   public string Name {
     get {

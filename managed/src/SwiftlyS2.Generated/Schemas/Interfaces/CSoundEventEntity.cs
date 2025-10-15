@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSoundEventEntity : CBaseEntity, ISchemaClass<CSoundEventEntity> {
 
   static CSoundEventEntity ISchemaClass<CSoundEventEntity>.From(nint handle) => new CSoundEventEntityImpl(handle);
+  static int ISchemaClass<CSoundEventEntity>.Size => 1464;
 
   
   public ref bool StartOnSpawn { get; }

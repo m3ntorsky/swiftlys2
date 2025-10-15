@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PermEntityLumpData_t : ISchemaClass<PermEntityLumpData_t> {
 
   static PermEntityLumpData_t ISchemaClass<PermEntityLumpData_t>.From(nint handle) => new PermEntityLumpData_tImpl(handle);
+  static int ISchemaClass<PermEntityLumpData_t>.Size => 56;
 
   
   public string Name { get; set; }
   
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCEntityLump>> ChildLumps { get; }
   
-  // CUtlLeanVector< EntityKeyValueData_t >
-  public SchemaUntypedField EntityKeyValues { get; }
+  public ref CUtlLeanVector<EntityKeyValueData_t, int> EntityKeyValues { get; }
 
 
 }

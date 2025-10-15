@@ -15,8 +15,8 @@ internal partial class CStanceOverrideUpdateNodeImpl : CUnaryUpdateNodeImpl, CSt
   public CStanceOverrideUpdateNodeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector FootStanceInfo {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x322EE1B7D5687289));
+  public ref CUtlVector<StanceInfo_t> FootStanceInfo {
+    get => ref _Handle.AsRef<CUtlVector<StanceInfo_t>>(Schema.GetOffset(0x322EE1B7D5687289));
   }
   public CAnimUpdateNodeRef StanceSourceNode {
     get => new CAnimUpdateNodeRefImpl(_Handle + Schema.GetOffset(0x322EE1B7D25DA07A));

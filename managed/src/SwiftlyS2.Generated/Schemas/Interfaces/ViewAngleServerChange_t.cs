@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ViewAngleServerChange_t : ISchemaClass<ViewAngleServerChange_t> {
 
   static ViewAngleServerChange_t ISchemaClass<ViewAngleServerChange_t>.From(nint handle) => new ViewAngleServerChange_tImpl(handle);
+  static int ISchemaClass<ViewAngleServerChange_t>.Size => 72;
 
   
   public ref FixAngleSet_t Type { get; }

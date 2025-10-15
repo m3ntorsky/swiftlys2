@@ -15,8 +15,8 @@ internal partial class CVoiceContainerSwitchImpl : CVoiceContainerBaseImpl, CVoi
   public CVoiceContainerSwitchImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector SoundsToPlay {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x79EA569BDCB5F70E));
+  public ref CUtlVector<CSoundContainerReference> SoundsToPlay {
+    get => ref _Handle.AsRef<CUtlVector<CSoundContainerReference>>(Schema.GetOffset(0x79EA569BDCB5F70E));
   }
 
 

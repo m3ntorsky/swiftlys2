@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysicsShake : ISchemaClass<CPhysicsShake> {
 
   static CPhysicsShake ISchemaClass<CPhysicsShake>.From(nint handle) => new CPhysicsShakeImpl(handle);
+  static int ISchemaClass<CPhysicsShake>.Size => 24;
 
   
   public ref Vector Force { get; }

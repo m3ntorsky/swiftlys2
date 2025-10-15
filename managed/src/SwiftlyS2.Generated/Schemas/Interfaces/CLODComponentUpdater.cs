@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLODComponentUpdater : CAnimComponentUpdater, ISchemaClass<CLODComponentUpdater> {
 
   static CLODComponentUpdater ISchemaClass<CLODComponentUpdater>.From(nint handle) => new CLODComponentUpdaterImpl(handle);
+  static int ISchemaClass<CLODComponentUpdater>.Size => 56;
 
   
   public ref int ServerLOD { get; }

@@ -15,8 +15,8 @@ internal partial class CMotionNodeBlend1DImpl : CMotionNodeImpl, CMotionNodeBlen
   public CMotionNodeBlend1DImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector BlendItems {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xB34B43D2BCCB1A7C));
+  public ref CUtlVector<MotionBlendItem> BlendItems {
+    get => ref _Handle.AsRef<CUtlVector<MotionBlendItem>>(Schema.GetOffset(0xB34B43D2BCCB1A7C));
   }
   public ref int ParamIndex {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xB34B43D2CA6E6F52));

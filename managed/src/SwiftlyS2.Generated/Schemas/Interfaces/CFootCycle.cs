@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootCycle : CCycleBase, ISchemaClass<CFootCycle> {
 
   static CFootCycle ISchemaClass<CFootCycle>.From(nint handle) => new CFootCycleImpl(handle);
+  static int ISchemaClass<CFootCycle>.Size => 4;
 
 
 

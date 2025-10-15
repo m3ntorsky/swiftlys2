@@ -54,8 +54,8 @@ internal partial class CPointClientUIWorldPanelImpl : CBaseClientUIEntityImpl, C
   public ref bool AllowInteractionFromAllSceneWorlds {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA4834E6FB50077AE));
   }
-  public ref CUtlVector<CUtlSymbolLarge> CSSClasses {
-    get => ref _Handle.AsRef<CUtlVector<CUtlSymbolLarge>>(Schema.GetOffset(0xA4834E6FCB74D1DC));
+  public ref CUtlVector<SchemaUntypedField> CSSClasses {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0xA4834E6FCB74D1DC));
   }
   public ref bool Opaque {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA4834E6F718DB77E));

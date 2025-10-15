@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCPanoramaDynamicImages : ISchemaClass<InfoForResourceTypeCPanoramaDynamicImages> {
 
   static InfoForResourceTypeCPanoramaDynamicImages ISchemaClass<InfoForResourceTypeCPanoramaDynamicImages>.From(nint handle) => new InfoForResourceTypeCPanoramaDynamicImagesImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCPanoramaDynamicImages>.Size => 1;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VelocitySampler : ISchemaClass<VelocitySampler> {
 
   static VelocitySampler ISchemaClass<VelocitySampler>.From(nint handle) => new VelocitySamplerImpl(handle);
+  static int ISchemaClass<VelocitySampler>.Size => 20;
 
   
   public ref Vector PrevSample { get; }

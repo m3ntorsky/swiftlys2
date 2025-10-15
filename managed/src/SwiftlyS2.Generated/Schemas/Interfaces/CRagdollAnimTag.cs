@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRagdollAnimTag : CAnimTagBase, ISchemaClass<CRagdollAnimTag> {
 
   static CRagdollAnimTag ISchemaClass<CRagdollAnimTag>.From(nint handle) => new CRagdollAnimTagImpl(handle);
+  static int ISchemaClass<CRagdollAnimTag>.Size => 96;
 
   
   public ref CGlobalSymbol ProfileName { get; }

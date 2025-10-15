@@ -15,11 +15,11 @@ internal partial class ragdoll_tImpl : SchemaClass, ragdoll_t {
   public ragdoll_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector List {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC7E89F530CFB5881));
+  public ref CUtlVector<ragdollelement_t> List {
+    get => ref _Handle.AsRef<CUtlVector<ragdollelement_t>>(Schema.GetOffset(0xC7E89F530CFB5881));
   }
-  public ref CUtlVector HierarchyJoints {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC7E89F534421F4B5));
+  public ref CUtlVector<ragdollhierarchyjoint_t> HierarchyJoints {
+    get => ref _Handle.AsRef<CUtlVector<ragdollhierarchyjoint_t>>(Schema.GetOffset(0xC7E89F534421F4B5));
   }
   public ref CUtlVector<int> BoneIndex {
     get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xC7E89F534FEF9075));

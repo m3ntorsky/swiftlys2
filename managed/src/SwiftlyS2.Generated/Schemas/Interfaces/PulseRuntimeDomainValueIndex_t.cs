@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PulseRuntimeDomainValueIndex_t : ISchemaClass<PulseRuntimeDomainValueIndex_t> {
 
   static PulseRuntimeDomainValueIndex_t ISchemaClass<PulseRuntimeDomainValueIndex_t>.From(nint handle) => new PulseRuntimeDomainValueIndex_tImpl(handle);
+  static int ISchemaClass<PulseRuntimeDomainValueIndex_t>.Size => 2;
 
   
   public ref short Value { get; }

@@ -15,11 +15,11 @@ internal partial class CBoneConstraintRbfImpl : CBoneConstraintBaseImpl, CBoneCo
   public CBoneConstraintRbfImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector InputBones {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x45CB33BF83336B6E));
+  public ref CUtlVector<SchemaUntypedField> InputBones {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0x45CB33BF83336B6E));
   }
-  public ref CUtlVector OutputBones {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x45CB33BF84D3A41B));
+  public ref CUtlVector<SchemaUntypedField> OutputBones {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0x45CB33BF84D3A41B));
   }
 
 

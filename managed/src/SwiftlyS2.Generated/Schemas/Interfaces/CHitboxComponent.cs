@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CHitboxComponent : CEntityComponent, ISchemaClass<CHitboxComponent> {
 
   static CHitboxComponent ISchemaClass<CHitboxComponent>.From(nint handle) => new CHitboxComponentImpl(handle);
+  static int ISchemaClass<CHitboxComponent>.Size => 24;
 
   
   public ref float BoundsExpandRadius { get; }

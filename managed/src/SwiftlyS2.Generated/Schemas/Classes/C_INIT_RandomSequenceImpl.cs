@@ -27,8 +27,8 @@ internal partial class C_INIT_RandomSequenceImpl : CParticleFunctionInitializerI
   public ref bool Linear {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x78382338B9313720));
   }
-  public ref CUtlVector WeightedList {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x783823385554D8B8));
+  public ref CUtlVector<SequenceWeightedList_t> WeightedList {
+    get => ref _Handle.AsRef<CUtlVector<SequenceWeightedList_t>>(Schema.GetOffset(0x783823385554D8B8));
   }
 
 

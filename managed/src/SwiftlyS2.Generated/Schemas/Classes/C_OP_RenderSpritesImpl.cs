@@ -87,6 +87,9 @@ internal partial class C_OP_RenderSpritesImpl : CBaseRendererSource2Impl, C_OP_R
   public ref ParticleLightingQuality_t LightingMode {
     get => ref _Handle.AsRef<ParticleLightingQuality_t>(Schema.GetOffset(0x35C791359C9B184A));
   }
+  public CParticleCollectionRendererVecInput LightingOverride {
+    get => new CParticleCollectionRendererVecInputImpl(_Handle + Schema.GetOffset(0x35C791354A443819));
+  }
   public CParticleCollectionRendererFloatInput LightingTessellation {
     get => new CParticleCollectionRendererFloatInputImpl(_Handle + Schema.GetOffset(0x35C791354CFEA24E));
   }

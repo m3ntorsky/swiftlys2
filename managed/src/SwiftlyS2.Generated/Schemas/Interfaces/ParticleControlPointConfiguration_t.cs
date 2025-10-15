@@ -11,12 +11,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ParticleControlPointConfiguration_t : ISchemaClass<ParticleControlPointConfiguration_t> {
 
   static ParticleControlPointConfiguration_t ISchemaClass<ParticleControlPointConfiguration_t>.From(nint handle) => new ParticleControlPointConfiguration_tImpl(handle);
+  static int ISchemaClass<ParticleControlPointConfiguration_t>.Size => 136;
 
   
   public string Name { get; set; }
   
-  // CUtlVector< ParticleControlPointDriver_t >
-  public ref CUtlVector Drivers { get; }
+  public ref CUtlVector<ParticleControlPointDriver_t> Drivers { get; }
   
   public ParticlePreviewState_t PreviewState { get; }
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimationGraphVisualizerAxis : CAnimationGraphVisualizerPrimitiveBase, ISchemaClass<CAnimationGraphVisualizerAxis> {
 
   static CAnimationGraphVisualizerAxis ISchemaClass<CAnimationGraphVisualizerAxis>.From(nint handle) => new CAnimationGraphVisualizerAxisImpl(handle);
+  static int ISchemaClass<CAnimationGraphVisualizerAxis>.Size => 112;
 
   
   public ref CTransform XWsTransform { get; }

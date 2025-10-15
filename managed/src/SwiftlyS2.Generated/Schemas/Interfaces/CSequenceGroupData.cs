@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSequenceGroupData : ISchemaClass<CSequenceGroupData> {
 
   static CSequenceGroupData ISchemaClass<CSequenceGroupData>.From(nint handle) => new CSequenceGroupDataImpl(handle);
+  static int ISchemaClass<CSequenceGroupData>.Size => 312;
 
   
   public ref CBufferString Name { get; }
@@ -19,36 +20,28 @@ public partial interface CSequenceGroupData : ISchemaClass<CSequenceGroupData> {
   
   public ref CUtlVector<CBufferString> LocalSequenceNameArray { get; }
   
-  // CUtlVector< CSeqS1SeqDesc >
-  public ref CUtlVector LocalS1SeqDescArray { get; }
+  public ref CUtlVector<CSeqS1SeqDesc> LocalS1SeqDescArray { get; }
   
-  // CUtlVector< CSeqS1SeqDesc >
-  public ref CUtlVector LocalMultiSeqDescArray { get; }
+  public ref CUtlVector<CSeqS1SeqDesc> LocalMultiSeqDescArray { get; }
   
-  // CUtlVector< CSeqSynthAnimDesc >
-  public ref CUtlVector LocalSynthAnimDescArray { get; }
+  public ref CUtlVector<CSeqSynthAnimDesc> LocalSynthAnimDescArray { get; }
   
-  // CUtlVector< CSeqCmdSeqDesc >
-  public ref CUtlVector LocalCmdSeqDescArray { get; }
+  public ref CUtlVector<CSeqCmdSeqDesc> LocalCmdSeqDescArray { get; }
   
-  // CUtlVector< CSeqBoneMaskList >
-  public ref CUtlVector LocalBoneMaskArray { get; }
+  public ref CUtlVector<CSeqBoneMaskList> LocalBoneMaskArray { get; }
   
-  // CUtlVector< CSeqScaleSet >
-  public ref CUtlVector LocalScaleSetArray { get; }
+  public ref CUtlVector<CSeqScaleSet> LocalScaleSetArray { get; }
   
   public ref CUtlVector<CBufferString> LocalBoneNameArray { get; }
   
   public ref CBufferString LocalNodeName { get; }
   
-  // CUtlVector< CSeqPoseParamDesc >
-  public ref CUtlVector LocalPoseParamArray { get; }
+  public ref CUtlVector<CSeqPoseParamDesc> LocalPoseParamArray { get; }
   
   // KeyValues3
   public SchemaUntypedField KeyValues { get; }
   
-  // CUtlVector< CSeqIKLock >
-  public ref CUtlVector LocalIKAutoplayLockArray { get; }
+  public ref CUtlVector<CSeqIKLock> LocalIKAutoplayLockArray { get; }
 
 
 }

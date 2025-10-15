@@ -8,20 +8,20 @@
         "linux": 408
     },
     "CCSPlayerController::ChangeTeam": {
-        "windows": 106,
-        "linux": 105
+        "windows": 109,
+        "linux": 108
     },
     "CBaseEntity::Teleport": {
-        "windows": 165,
-        "linux": 164
+        "windows": 168,
+        "linux": 167
     },
     "CCSPlayerController::Respawn": {
-        "windows": 275,
-        "linux": 277
+        "windows": 277,
+        "linux": 279
     },
     "CBaseEntity::CollisionRulesChanged": {
-        "windows": 189,
-        "linux": 188
+        "windows": 191,
+        "linux": 190
     },
     "CCSPlayer_WeaponServices::DropWeapon": {
         "windows": 23,
@@ -32,8 +32,8 @@
         "linux": 8
     },
     "GetHammerUniqueID": {
-        "windows": 115,
-        "linux": 114
+        "windows": 118,
+        "linux": 117
     },
     "CEntityResourceManifest::AddResource": {
         "windows": 2,
@@ -81,5 +81,114 @@
     "CCSPlayer_WeaponServices::SelectWeapon": {
         "windows": 25,
         "linux": 26
+    },
+    /*
+    find string 'Unknown command '%s'!\n' inside engine2.dll to find Cmd_ExecuteCommand function,
+    inside it, look for the command name access pattern that looks like this:
+
+    if ( *(int *)(v3 + 1080) > 0 )
+        v4 = **(const char ***)(v3 + 1088);
+    return LoggingSystem_Log(LOG_CONSOLE, 3i64, "Unknown command '%s'!\n", v4);
+
+    The command name pointer is accessed via double dereference at offset 1088.
+    This offset (1088) is the CommandNameOffset we need.
+    */
+    "CommandNameOffset": {
+        "windows": 1088,
+        "linux": 1088
+    },
+    /* From sdk */
+    "ICvar::FindConCommand": {
+        "windows": 17,
+        "linux": 17
+    },
+    "ICvar::DispatchConCommand": {
+        "windows": 20,
+        "linux": 20
+    },
+    /* From sdk */
+    "IServerGameDLL::GameFrame": {
+        "windows": 19,
+        "linux": 19
+    },
+    "IServerGameDLL::GameServerSteamAPIActivated": {
+        "windows": 41,
+        "linux": 41
+    },
+    "IServerGameDLL::GameServerSteamAPIDeactivated": {
+        "windows": 42,
+        "linux": 42
+    },
+    "IGameEventSystem::PostEventAbstract": {
+        "windows": 16,
+        "linux": 16
+    },
+    "INetworkServerService::StartupServer": {
+        "windows": 26,
+        "linux": 27
+    },
+    "IVEngineServer2::SetClientListening": {
+        "windows": 84,
+        "linux": 84
+    },
+    "IServerGameClients::ClientCommand": {
+        "windows": 18,
+        "linux": 18
+    },
+    "IServerGameClients::ClientConnect": {
+        "windows": 12,
+        "linux": 12
+    },
+    "IServerGameClients::OnClientConnected": {
+        "windows": 11,
+        "linux": 11
+    },
+    "IServerGameClients::ClientDisconnect": {
+        "windows": 16,
+        "linux": 16
+    },
+    "IServerGameClients::ClientPutInServer": {
+        "windows": 13,
+        "linux": 13
+    },
+    "ISource2GameEntities::CheckTransmit": {
+        "windows": 12,
+        "linux": 13
+    },
+    "IGameEventManager2::LoadEventsFromFile": {
+        "windows": 2,
+        "linux": 2
+    },
+    "IEngineServiceMgr::RegisterLoopMode": {
+        "windows": 13,
+        "linux": 13
+    },
+    "IEngineServiceMgr::UnregisterLoopMode": {
+        "windows": 14,
+        "linux": 14
+    },
+    "ILoopModeFactory::CreateLoopMode": {
+        "windows": 2,
+        "linux": 2
+    },
+    "ILoopModeFactory::DestroyLoopMode": {
+        "windows": 3,
+        "linux": 3
+    },
+    "ILoopMode::LoopInit": {
+        "windows": 0,
+        "linux": 0
+    },
+    "ILoopMode::LoopShutdown": {
+        "windows": 1,
+        "linux": 1
+    },
+    "IGameEventManager2::FireEvent": {
+        "windows": 8,
+        "linux": 8
+    },
+    "CServerSideClient::ProcessRespondCvarValue": {
+        "windows": 38,
+        "linux": 40
     }
 }

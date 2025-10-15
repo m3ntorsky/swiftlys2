@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimParameterManagerUpdater : ISchemaClass<CAnimParameterManagerUpdater> {
 
   static CAnimParameterManagerUpdater ISchemaClass<CAnimParameterManagerUpdater>.From(nint handle) => new CAnimParameterManagerUpdaterImpl(handle);
+  static int ISchemaClass<CAnimParameterManagerUpdater>.Size => 256;
 
   
-  // CUtlVector< CSmartPtr< CAnimParameterBase > >
-  public ref CUtlVector Parameters { get; }
+  public ref CUtlVector<SchemaUntypedField> Parameters { get; }
   
   // CUtlHashtable< AnimParamID, int32 >
   public SchemaUntypedField IdToIndexMap { get; }
@@ -22,11 +22,9 @@ public partial interface CAnimParameterManagerUpdater : ISchemaClass<CAnimParame
   // CUtlHashtable< CUtlString, int32 >
   public SchemaUntypedField NameToIndexMap { get; }
   
-  // CUtlVector< CAnimParamHandle >
-  public ref CUtlVector IndexToHandle { get; }
+  public ref CUtlVector<CAnimParamHandle> IndexToHandle { get; }
   
-  // CUtlVector< std::pair< CAnimParamHandle, CAnimVariant > >
-  public ref CUtlVector AutoResetParams { get; }
+  public ref CUtlVector<SchemaUntypedField> AutoResetParams { get; }
   
   // CUtlHashtable< CAnimParamHandle, int16 >
   public SchemaUntypedField AutoResetMap { get; }

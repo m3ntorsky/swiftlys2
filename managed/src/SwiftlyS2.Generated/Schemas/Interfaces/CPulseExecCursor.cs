@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseExecCursor : ISchemaClass<CPulseExecCursor> {
 
   static CPulseExecCursor ISchemaClass<CPulseExecCursor>.From(nint handle) => new CPulseExecCursorImpl(handle);
+  static int ISchemaClass<CPulseExecCursor>.Size => 208;
 
 
 

@@ -11,20 +11,18 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimData : ISchemaClass<CAnimData> {
 
   static CAnimData ISchemaClass<CAnimData>.From(nint handle) => new CAnimDataImpl(handle);
+  static int ISchemaClass<CAnimData>.Size => 112;
 
   
   public ref CBufferString Name { get; }
   
-  // CUtlVector< CAnimDesc >
-  public ref CUtlVector AnimArray { get; }
+  public ref CUtlVector<CAnimDesc> AnimArray { get; }
   
-  // CUtlVector< CAnimDecoder >
-  public ref CUtlVector DecoderArray { get; }
+  public ref CUtlVector<CAnimDecoder> DecoderArray { get; }
   
   public ref int MaxUniqueFrameIndex { get; }
   
-  // CUtlVector< CAnimFrameSegment >
-  public ref CUtlVector SegmentArray { get; }
+  public ref CUtlVector<CAnimFrameSegment> SegmentArray { get; }
 
 
 }

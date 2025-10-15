@@ -15,8 +15,8 @@ internal partial class CVoiceContainerStaticAdditiveSynthImpl : CVoiceContainerB
   public CVoiceContainerStaticAdditiveSynthImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Tones {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xE9663E55BAE6D716));
+  public ref CUtlVector<CVoiceContainerStaticAdditiveSynth__CTone> Tones {
+    get => ref _Handle.AsRef<CUtlVector<CVoiceContainerStaticAdditiveSynth__CTone>>(Schema.GetOffset(0xE9663E55BAE6D716));
   }
 
 

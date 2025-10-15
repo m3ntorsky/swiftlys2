@@ -17,50 +17,51 @@
  ************************************************************************************************/
 
 #include "netmessages.h"
-#include <core/bridge/metamod.h>
 
 #include <api/interfaces/manager.h>
 #include <api/sdk/serversideclient.h>
 #include <memory/gamedata/manager.h>
 
 #include <api/shared/plat.h>
+#include <s2binlib/s2binlib.h>
 
 #include <map>
-
-SH_DECL_EXTERN8_void(IGameEventSystem, PostEventAbstract, SH_NOATTRIB, 0, CSplitScreenSlot, bool, int, const uint64*, INetworkMessageInternal*, const CNetMessage*, unsigned long, NetChannelBufType_t)
-SH_DECL_MANUALHOOK2(FilterMessage, 0, 0, 0, bool, CNetMessage*, INetChannel*);
 
 std::map<uint64_t, std::function<int(uint64_t*, int, void*)>> g_mServerMessageSendCallbacks;
 std::map<uint64_t, std::function<int(int, int, void*)>> g_mClientMessageSendCallbacks;
 
 IFunctionHook* g_pFilterMessageHook = nullptr;
+IVFunctionHook* g_pPostEventAbstractHook = nullptr;
 
 bool FilterMessage(INetworkMessageProcessingPreFilterCustom* client, CNetMessage* cMsg, INetChannel* netchan);
+void PostEventAbstractHook(void* _this, CSplitScreenSlot nSlot, bool bLocalOnly, int nClientCount, const uint64* clients,
+        INetworkMessageInternal* pEvent, const CNetMessage* pData, unsigned long nSize, NetChannelBufType_t bufType);
 
 void CNetMessages::Initialize()
 {
-    auto gameeventsystem = g_ifaceService.FetchInterface<IGameEventSystem>(GAMEEVENTSYSTEM_INTERFACE_VERSION);
-
-    SH_ADD_HOOK_MEMFUNC(IGameEventSystem, PostEventAbstract, gameeventsystem, this, &CNetMessages::PostEvent, false);
-
     static auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
     static auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
     g_pFilterMessageHook = hooksmanager->CreateFunctionHook();
     g_pFilterMessageHook->SetHookFunction(gamedata->GetSignatures()->Fetch("INetworkMessageProcessingPreFilter::FilterMessage"), (void*)FilterMessage);
     g_pFilterMessageHook->Enable();
+
+    void* gameEventSystem = nullptr;
+    s2binlib_find_vtable("engine2", "CGameEventSystem", &gameEventSystem);
+
+    g_pPostEventAbstractHook = hooksmanager->CreateVFunctionHook();
+    g_pPostEventAbstractHook->SetHookFunction(gameEventSystem, gamedata->GetOffsets()->Fetch("IGameEventSystem::PostEventAbstract"), (void*)PostEventAbstractHook, true);
+    g_pPostEventAbstractHook->Enable();
 }
 
 void CNetMessages::Shutdown()
 {
-    auto gameeventsystem = g_ifaceService.FetchInterface<IGameEventSystem>(GAMEEVENTSYSTEM_INTERFACE_VERSION);
-
-    SH_REMOVE_HOOK_MEMFUNC(IGameEventSystem, PostEventAbstract, gameeventsystem, this, &CNetMessages::PostEvent, false);
-
     g_pFilterMessageHook->Disable();
+    g_pPostEventAbstractHook->Disable();
 
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
     hooksmanager->DestroyFunctionHook(g_pFilterMessageHook);
+    hooksmanager->DestroyVFunctionHook(g_pPostEventAbstractHook);
 }
 
 bool FilterMessage(INetworkMessageProcessingPreFilterCustom* client, CNetMessage* cMsg, INetChannel* netchan)
@@ -80,7 +81,7 @@ bool FilterMessage(INetworkMessageProcessingPreFilterCustom* client, CNetMessage
     return reinterpret_cast<decltype(&FilterMessage)>(g_pFilterMessageHook->GetOriginal())(client, cMsg, netchan);
 }
 
-void CNetMessages::PostEvent(CSplitScreenSlot nSlot, bool bLocalOnly, int nClientCount, const uint64* clients, INetworkMessageInternal* pEvent, const CNetMessage* pData, unsigned long nSize, NetChannelBufType_t bufType)
+void PostEventAbstractHook(void* _this, CSplitScreenSlot nSlot, bool bLocalOnly, int nClientCount, const uint64* clients, INetworkMessageInternal* pEvent, const CNetMessage* pData, unsigned long nSize, NetChannelBufType_t bufType)
 {
     int msgid = pEvent->GetNetMessageInfo()->m_MessageId;
     CNetMessage* msg = const_cast<CNetMessage*>(pData);
@@ -88,11 +89,11 @@ void CNetMessages::PostEvent(CSplitScreenSlot nSlot, bool bLocalOnly, int nClien
 
     for (const auto& [id, callback] : g_mServerMessageSendCallbacks) {
         auto res = callback(playermask, msgid, msg);
-        if (res == 1) RETURN_META(MRES_SUPERCEDE);
+        if (res == 1) return;
         else if (res == 2) break;
     }
 
-    RETURN_META(MRES_IGNORED);
+    reinterpret_cast<decltype(&PostEventAbstractHook)>(g_pPostEventAbstractHook->GetOriginal())(_this, nSlot, bLocalOnly, nClientCount, clients, pEvent, pData, nSize, bufType);
 }
 
 uint64_t CNetMessages::AddServerMessageSendCallback(std::function<int(uint64_t*, int, void*)> callback)

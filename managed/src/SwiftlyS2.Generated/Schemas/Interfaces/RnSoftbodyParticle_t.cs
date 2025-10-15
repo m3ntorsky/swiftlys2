@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnSoftbodyParticle_t : ISchemaClass<RnSoftbodyParticle_t> {
 
   static RnSoftbodyParticle_t ISchemaClass<RnSoftbodyParticle_t>.From(nint handle) => new RnSoftbodyParticle_tImpl(handle);
+  static int ISchemaClass<RnSoftbodyParticle_t>.Size => 4;
 
   
   public ref float MassInv { get; }

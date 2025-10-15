@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_SoundEventStart : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_SoundEventStart> {
 
   static CPulseCell_SoundEventStart ISchemaClass<CPulseCell_SoundEventStart>.From(nint handle) => new CPulseCell_SoundEventStartImpl(handle);
+  static int ISchemaClass<CPulseCell_SoundEventStart>.Size => 80;
 
   
   public ref SoundEventStartType_t Type { get; }

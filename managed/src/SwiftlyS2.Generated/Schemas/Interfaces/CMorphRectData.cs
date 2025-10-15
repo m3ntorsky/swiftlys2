@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMorphRectData : ISchemaClass<CMorphRectData> {
 
   static CMorphRectData ISchemaClass<CMorphRectData>.From(nint handle) => new CMorphRectDataImpl(handle);
+  static int ISchemaClass<CMorphRectData>.Size => 40;
 
   
   public ref short XLeftDst { get; }
@@ -21,8 +22,7 @@ public partial interface CMorphRectData : ISchemaClass<CMorphRectData> {
   
   public ref float VHeightSrc { get; }
   
-  // CUtlVector< CMorphBundleData >
-  public ref CUtlVector BundleDatas { get; }
+  public ref CUtlVector<CMorphBundleData> BundleDatas { get; }
 
 
 }

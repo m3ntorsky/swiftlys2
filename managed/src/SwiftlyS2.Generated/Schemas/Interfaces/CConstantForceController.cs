@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CConstantForceController : ISchemaClass<CConstantForceController> {
 
   static CConstantForceController ISchemaClass<CConstantForceController>.From(nint handle) => new CConstantForceControllerImpl(handle);
+  static int ISchemaClass<CConstantForceController>.Size => 64;
 
   
   public ref Vector Linear { get; }

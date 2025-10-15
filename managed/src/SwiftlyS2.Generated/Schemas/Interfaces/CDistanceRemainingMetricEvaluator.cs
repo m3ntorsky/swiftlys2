@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDistanceRemainingMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CDistanceRemainingMetricEvaluator> {
 
   static CDistanceRemainingMetricEvaluator ISchemaClass<CDistanceRemainingMetricEvaluator>.From(nint handle) => new CDistanceRemainingMetricEvaluatorImpl(handle);
+  static int ISchemaClass<CDistanceRemainingMetricEvaluator>.Size => 104;
 
   
   public ref float MaxDistance { get; }

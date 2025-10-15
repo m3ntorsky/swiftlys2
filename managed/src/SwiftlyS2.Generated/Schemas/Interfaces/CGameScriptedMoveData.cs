@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CGameScriptedMoveData : ISchemaClass<CGameScriptedMoveData> {
 
   static CGameScriptedMoveData ISchemaClass<CGameScriptedMoveData>.From(nint handle) => new CGameScriptedMoveDataImpl(handle);
+  static int ISchemaClass<CGameScriptedMoveData>.Size => 116;
 
   
   public ref Vector AccumulatedRootMotion { get; }

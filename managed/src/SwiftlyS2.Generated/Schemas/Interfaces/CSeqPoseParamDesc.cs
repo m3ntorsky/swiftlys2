@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSeqPoseParamDesc : ISchemaClass<CSeqPoseParamDesc> {
 
   static CSeqPoseParamDesc ISchemaClass<CSeqPoseParamDesc>.From(nint handle) => new CSeqPoseParamDescImpl(handle);
+  static int ISchemaClass<CSeqPoseParamDesc>.Size => 32;
 
   
   public ref CBufferString Name { get; }

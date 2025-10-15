@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CVSound : ISchemaClass<CVSound> {
 
   static CVSound ISchemaClass<CVSound>.From(nint handle) => new CVSoundImpl(handle);
+  static int ISchemaClass<CVSound>.Size => 120;
 
   
   public ref int Rate { get; }
@@ -25,8 +26,7 @@ public partial interface CVSound : ISchemaClass<CVSound> {
   
   public ref float Duration { get; }
   
-  // CUtlVector< CAudioSentence >
-  public ref CUtlVector Sentences { get; }
+  public ref CUtlVector<CAudioSentence> Sentences { get; }
   
   public ref uint StreamingSize { get; }
   

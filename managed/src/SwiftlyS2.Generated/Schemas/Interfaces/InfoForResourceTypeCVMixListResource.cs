@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCVMixListResource : ISchemaClass<InfoForResourceTypeCVMixListResource> {
 
   static InfoForResourceTypeCVMixListResource ISchemaClass<InfoForResourceTypeCVMixListResource>.From(nint handle) => new InfoForResourceTypeCVMixListResourceImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCVMixListResource>.Size => 1;
 
 
 

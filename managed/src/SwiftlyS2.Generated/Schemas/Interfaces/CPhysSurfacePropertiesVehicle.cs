@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysSurfacePropertiesVehicle : ISchemaClass<CPhysSurfacePropertiesVehicle> {
 
   static CPhysSurfacePropertiesVehicle ISchemaClass<CPhysSurfacePropertiesVehicle>.From(nint handle) => new CPhysSurfacePropertiesVehicleImpl(handle);
+  static int ISchemaClass<CPhysSurfacePropertiesVehicle>.Size => 8;
 
   
   public ref float WheelDrag { get; }

@@ -14,42 +14,55 @@ internal class DependencyResolver
         _logger = logger;
     }
 
-    public void AnalyzeDependencies(IEnumerable<string> pluginDirectories)
+    private void ReadDependencies(string pluginDir, ref Dictionary<string, string> exportAssemblies)
+    {
+        var exportDir = Path.Combine(pluginDir, "resources", "exports");
+        if (Directory.Exists(exportDir))
+        {
+            var exportFiles = Directory.GetFiles(exportDir, "*.dll");
+            foreach (var exportFile in exportFiles)
+            {
+                try
+                {
+                    using var assembly = AssemblyDefinition.ReadAssembly(exportFile);
+                    var assemblyName = assembly.Name.Name;
+                    exportAssemblies[assemblyName] = exportFile;
+                    _pluginPaths[assemblyName] = exportFile;
+
+                    if (!_dependencyGraph.ContainsKey(assemblyName))
+                    {
+                        _dependencyGraph[assemblyName] = new List<string>();
+                    }
+
+                    _logger.LogDebug($"Found export assembly: {assemblyName} at {exportFile}");
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogWarning(ex, $"Failed to read assembly {exportFile}");
+                }
+            }
+        }
+    }
+
+    private void PopulateAssemblies(string startDirectory, ref Dictionary<string, string> exportAssemblies)
+    {
+        var pluginDirs = Directory.GetDirectories(startDirectory);
+        foreach (var pluginDir in pluginDirs)
+        {
+            var dirName = Path.GetFileName(pluginDir);
+            if (dirName.StartsWith("[") && dirName.EndsWith("]")) PopulateAssemblies(pluginDir, ref exportAssemblies);
+            else ReadDependencies(pluginDir, ref exportAssemblies);
+        }
+    }
+
+    public void AnalyzeDependencies(string startDirectory)
     {
         _dependencyGraph.Clear();
         _pluginPaths.Clear();
 
         var exportAssemblies = new Dictionary<string, string>(); // assemblyName -> path
 
-        foreach (var pluginDir in pluginDirectories)
-        {
-            var exportDir = Path.Combine(pluginDir, "resources", "exports");
-            if (Directory.Exists(exportDir))
-            {
-                var exportFiles = Directory.GetFiles(exportDir, "*.dll");
-                foreach (var exportFile in exportFiles)
-                {
-                    try
-                    {
-                        using var assembly = AssemblyDefinition.ReadAssembly(exportFile);
-                        var assemblyName = assembly.Name.Name;
-                        exportAssemblies[assemblyName] = exportFile;
-                        _pluginPaths[assemblyName] = exportFile;
-                        
-                        if (!_dependencyGraph.ContainsKey(assemblyName))
-                        {
-                            _dependencyGraph[assemblyName] = new List<string>();
-                        }
-
-                        _logger.LogDebug($"Found export assembly: {assemblyName} at {exportFile}");
-                    }
-                    catch (Exception ex)
-                    {
-                        _logger.LogWarning(ex, $"Failed to read assembly {exportFile}");
-                    }
-                }
-            }
-        }
+        PopulateAssemblies(startDirectory, ref exportAssemblies);
 
         foreach (var (assemblyName, assemblyPath) in exportAssemblies)
         {
@@ -61,7 +74,7 @@ internal class DependencyResolver
                 foreach (var reference in assembly.MainModule.AssemblyReferences)
                 {
                     var refName = reference.Name;
-                    
+
                     if (exportAssemblies.ContainsKey(refName))
                     {
                         dependencies.Add(refName);
@@ -131,7 +144,7 @@ internal class DependencyResolver
     {
         var path = new List<string> { start };
         var current = start;
-        
+
         if (_dependencyGraph.TryGetValue(current, out var deps))
         {
             foreach (var dep in deps)
@@ -150,11 +163,11 @@ internal class DependencyResolver
 
         return string.Join(" -> ", path);
     }
-    
+
     public string GetDependencyGraphVisualization()
     {
         var lines = new List<string> { "Dependency Graph:" };
-        
+
         foreach (var (assembly, dependencies) in _dependencyGraph.OrderBy(x => x.Key))
         {
             if (dependencies.Any())

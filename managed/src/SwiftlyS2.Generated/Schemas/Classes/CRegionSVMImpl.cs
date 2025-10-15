@@ -15,8 +15,8 @@ internal partial class CRegionSVMImpl : SchemaClass, CRegionSVM {
   public CRegionSVMImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Planes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xFC5717CAF831F452));
+  public ref CUtlVector<RnPlane_t> Planes {
+    get => ref _Handle.AsRef<CUtlVector<RnPlane_t>>(Schema.GetOffset(0xFC5717CAF831F452));
   }
   public ref CUtlVector<uint> Nodes {
     get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0xFC5717CAEBA045DA));

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEmptyEntityInstance : ISchemaClass<CEmptyEntityInstance> {
 
   static CEmptyEntityInstance ISchemaClass<CEmptyEntityInstance>.From(nint handle) => new CEmptyEntityInstanceImpl(handle);
+  static int ISchemaClass<CEmptyEntityInstance>.Size => 1;
 
 
 

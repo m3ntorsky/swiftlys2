@@ -42,11 +42,6 @@
 
 using json = nlohmann::json;
 
-SH_DECL_EXTERN2(IGameEventManager2, FireEvent, SH_NOATTRIB, 0, bool, IGameEvent*, bool);
-SH_DECL_EXTERN2(IGameEventManager2, LoadEventsFromFile, SH_NOATTRIB, 0, int, const char*, bool);
-SH_DECL_EXTERN3_void(IServerGameDLL, GameFrame, SH_NOATTRIB, 0, bool, bool, bool);
-SH_DECL_EXTERN3_void(INetworkServerService, StartupServer, SH_NOATTRIB, 0, const GameSessionConfiguration_t&, ISource2WorldSession*, const char*);
-
 std::map<uint64_t, std::function<int(std::string, IGameEvent*, bool&)>> g_mEventListeners;
 std::map<uint64_t, std::function<int(std::string, IGameEvent*, bool&)>> g_mPostEventListeners;
 
@@ -57,28 +52,50 @@ bool processingTimeouts = false;
 std::set<std::string> g_sDumpedFiles;
 json dumpedEvents;
 
-std::stack<IGameEvent*> g_sEventStack;
 std::set<std::string> g_sEnqueueListenEvents;
 bool g_bEventsLoaded = false;
 
 int g_uLoadEventFromFileHookID = 0;
 
 IGameEventManager2* g_gameEventManager = nullptr;
+IVFunctionHook* g_GameFrameHookEventManager = nullptr;
+
+IVFunctionHook* g_pStartupServerEventHook = nullptr;
+void StartupServerEventHook(void* _this, const GameSessionConfiguration_t& config, ISource2WorldSession* a, const char* b);
+
+IVFunctionHook* g_pLoadEventsFromFileHook = nullptr;
+int LoadEventsFromFileHook(IGameEventManager2* _this, const char* filePath, bool searchAll);
+
+IVFunctionHook* g_pFireEventHook = nullptr;
+bool FireEventHook(IGameEventManager2* _this, IGameEvent* event, bool bDontBroadcast);
+
+void GameFrameEventManager(void* _this, bool simulate, bool first, bool last);
 
 void CEventManager::Initialize(std::string game_name)
 {
     void* CGameEventManagerVTable;
     s2binlib_find_vtable("server", "CGameEventManager", &CGameEventManagerVTable);
 
-    auto networkserverservice = g_ifaceService.FetchInterface<INetworkServerService>(NETWORKSERVERSERVICE_INTERFACE_VERSION);
+    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
-    SH_ADD_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEventManager::OnStartupServer, true);
+    void* netserverservice = nullptr;
+    s2binlib_find_vtable("engine2", "CNetworkServerService", &netserverservice);
 
-    g_uLoadEventFromFileHookID = SH_ADD_DVPHOOK(IGameEventManager2, LoadEventsFromFile, (IGameEventManager2*)(void*)CGameEventManagerVTable, SH_MEMBER(this, &CEventManager::LoadEventsFromFile), false);
+    g_pStartupServerEventHook = hooksmanager->CreateVFunctionHook();
+    g_pStartupServerEventHook->SetHookFunction(netserverservice, gamedata->GetOffsets()->Fetch("INetworkServerService::StartupServer"), reinterpret_cast<void*>(StartupServerEventHook), true);
+    g_pStartupServerEventHook->Enable();
 
-    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
+    g_pLoadEventsFromFileHook = hooksmanager->CreateVFunctionHook();
+    g_pLoadEventsFromFileHook->SetHookFunction(CGameEventManagerVTable, gamedata->GetOffsets()->Fetch("IGameEventManager2::LoadEventsFromFile"), reinterpret_cast<void*>(LoadEventsFromFileHook), true);
+    g_pLoadEventsFromFileHook->Enable();
 
-    SH_ADD_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CEventManager::GameFrame, true);
+    void* servervtable = nullptr;
+    s2binlib_find_vtable("server", "CSource2Server", &servervtable);
+
+    g_GameFrameHookEventManager = hooksmanager->CreateVFunctionHook();
+    g_GameFrameHookEventManager->SetHookFunction(servervtable, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameFrame"), reinterpret_cast<void*>(GameFrameEventManager), true);
+    g_GameFrameHookEventManager->Enable();
 
     RegisterGameEventListener("round_start");
     AddGameEventFireListener([](std::string event_name, IGameEvent* event, bool& dont_broadcast) -> int {
@@ -99,19 +116,41 @@ void CEventManager::Initialize(std::string game_name)
 
 void CEventManager::Shutdown()
 {
-    auto networkserverservice = g_ifaceService.FetchInterface<INetworkServerService>(NETWORKSERVERSERVICE_INTERFACE_VERSION);
-    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
+    static auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
 
-    SH_REMOVE_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEvent, false);
-    SH_REMOVE_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEventPost, true);
-    SH_REMOVE_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEventManager::OnStartupServer, true);
-    SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameFrame, server, this, &CEventManager::GameFrame, true);
-    SH_REMOVE_HOOK_ID(g_uLoadEventFromFileHookID);
+    if (g_pLoadEventsFromFileHook)
+    {
+        g_pLoadEventsFromFileHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pLoadEventsFromFileHook);
+        g_pLoadEventsFromFileHook = nullptr;
+    }
+
+    if (g_pStartupServerEventHook)
+    {
+        g_pStartupServerEventHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pStartupServerEventHook);
+        g_pStartupServerEventHook = nullptr;
+    }
+
+    if (g_GameFrameHookEventManager)
+    {
+        g_GameFrameHookEventManager->Disable();
+        hooksmanager->DestroyVFunctionHook(g_GameFrameHookEventManager);
+        g_GameFrameHookEventManager = nullptr;
+    }
+
+    if (g_pFireEventHook)
+    {
+        g_pFireEventHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pFireEventHook);
+        g_pFireEventHook = nullptr;
+    }
 }
 
-void CEventManager::GameFrame(bool simulate, bool first, bool last)
+void GameFrameEventManager(void* _this, bool simulate, bool first, bool last)
 {
-    // printf("SourceHook GameFrame\n");
+    reinterpret_cast<decltype(&GameFrameEventManager)>(g_GameFrameHookEventManager->GetOriginal())(_this, simulate, first, last);
+
     if (processingTimeouts)
     {
         int64_t t = GetTime();
@@ -130,16 +169,20 @@ void CEventManager::GameFrame(bool simulate, bool first, bool last)
     }
 }
 
-int CEventManager::LoadEventsFromFile(const char* filePath, bool searchAll)
+int LoadEventsFromFileHook(IGameEventManager2* _this, const char* filePath, bool searchAll)
 {
     if (!g_gameEventManager) {
-        g_gameEventManager = META_IFACEPTR(IGameEventManager2);
+        g_gameEventManager = _this;
 
         auto evmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
         evmanager->RegisterGameEventsListeners(false);
 
-        SH_ADD_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEvent, false);
-        SH_ADD_HOOK_MEMFUNC(IGameEventManager2, FireEvent, g_gameEventManager, this, &CEventManager::OnFireEventPost, true);
+        auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+        auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+
+        g_pFireEventHook = hooksmanager->CreateVFunctionHook();
+        g_pFireEventHook->SetHookFunction(g_gameEventManager, gamedata->GetOffsets()->Fetch("IGameEventManager2::FireEvent"), reinterpret_cast<void*>(FireEventHook), false);
+        g_pFireEventHook->Enable();
     }
 
     // We don't need you anymore, stay here as it's free and you don't need to pay rent
@@ -159,69 +202,46 @@ int CEventManager::LoadEventsFromFile(const char* filePath, bool searchAll)
     }
 */
 
-    RETURN_META_VALUE(MRES_IGNORED, 0);
+    return reinterpret_cast<decltype(&LoadEventsFromFileHook)>(g_pLoadEventsFromFileHook->GetOriginal())(_this, filePath, searchAll);
 }
 
-bool CEventManager::OnFireEvent(IGameEvent* pEvent, bool bDontBroadcast)
+bool FireEventHook(IGameEventManager2* _this, IGameEvent* event, bool bDontBroadcast)
 {
-    if (!pEvent)
-    {
-        RETURN_META_VALUE(MRES_IGNORED, false);
-    }
+    if (!event) return reinterpret_cast<decltype(&FireEventHook)>(g_pFireEventHook->GetOriginal())(_this, event, bDontBroadcast);
 
-    std::string event_name = pEvent->GetName();
+    std::string event_name = event->GetName();
     bool shouldBroadcast = bDontBroadcast;
     for (const auto& [id, callback] : g_mEventListeners) {
-        auto res = callback(event_name, pEvent, shouldBroadcast);
+        auto res = callback(event_name, event, shouldBroadcast);
         if (res == 1) {
-            g_sEventStack.push(g_gameEventManager->DuplicateEvent(pEvent));
-            g_gameEventManager->FreeEvent(pEvent);
-            RETURN_META_VALUE(MRES_SUPERCEDE, false);
+            g_gameEventManager->FreeEvent(event);
+            return false;
         }
         else if (res == 2) break;
     }
 
-    g_sEventStack.push(g_gameEventManager->DuplicateEvent(pEvent));
+    IGameEvent* dupEvent = g_gameEventManager->DuplicateEvent(event);
 
-    if (shouldBroadcast != bDontBroadcast)
-    {
-        RETURN_META_VALUE_NEWPARAMS(MRES_IGNORED, true, &IGameEventManager2::FireEvent, (pEvent, shouldBroadcast));
-    }
-
-    RETURN_META_VALUE(MRES_IGNORED, true);
-}
-
-bool CEventManager::OnFireEventPost(IGameEvent* pEvent, bool bDontBroadcast)
-{
-    if (!pEvent)
-    {
-        RETURN_META_VALUE(MRES_IGNORED, false);
-    }
-
-    IGameEvent* realGameEvent = g_sEventStack.top();
-    if (!realGameEvent) RETURN_META_VALUE(MRES_IGNORED, true);
-
-    std::string event_name = realGameEvent->GetName();
-    bool shouldBroadcast = bDontBroadcast;
+    bool result = reinterpret_cast<decltype(&FireEventHook)>(g_pFireEventHook->GetOriginal())(_this, event, shouldBroadcast);
 
     for (const auto& [id, callback] : g_mPostEventListeners) {
-        auto res = callback(event_name, realGameEvent, shouldBroadcast);
+        auto res = callback(event_name, dupEvent, shouldBroadcast);
         if (res == 1) {
-            g_gameEventManager->FreeEvent(realGameEvent);
-            g_sEventStack.pop();
-            RETURN_META_VALUE(MRES_SUPERCEDE, false);
+            g_gameEventManager->FreeEvent(dupEvent);
+            return false;
         }
         else if (res == 2) break;
     }
 
-    g_gameEventManager->FreeEvent(realGameEvent);
-    g_sEventStack.pop();
+    g_gameEventManager->FreeEvent(dupEvent);
 
-    RETURN_META_VALUE(MRES_IGNORED, true);
+    return result;
 }
 
-void CEventManager::OnStartupServer(const GameSessionConfiguration_t& config, ISource2WorldSession*, const char*)
+void StartupServerEventHook(void* _this, const GameSessionConfiguration_t& config, ISource2WorldSession* a, const char* b)
 {
+    reinterpret_cast<decltype(&StartupServerEventHook)>(g_pStartupServerEventHook->GetOriginal())(_this, config, a, b);
+
     auto evmanager = g_ifaceService.FetchInterface<IEventManager>(GAMEEVENTMANAGER_INTERFACE_VERSION);
     evmanager->RegisterGameEventsListeners(true);
 }

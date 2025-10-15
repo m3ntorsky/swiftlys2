@@ -112,17 +112,17 @@ internal partial class CFuncRotatorImpl : CBaseModelEntityImpl, CFuncRotator {
   public ref bool RecordHistory {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x73DA1BB9A1A2B6DC));
   }
-  public ref CUtlVector RotatorHistory {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x73DA1BB91907536A));
+  public ref CUtlVector<RotatorHistoryEntry_t> RotatorHistory {
+    get => ref _Handle.AsRef<CUtlVector<RotatorHistoryEntry_t>>(Schema.GetOffset(0x73DA1BB91907536A));
   }
   public ref bool ReturningToPreviousOrientation {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x73DA1BB9540035F9));
   }
-  public ref CUtlVector RotatorQueue {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x73DA1BB941C250ED));
+  public ref CUtlVector<RotatorQueueEntry_t> RotatorQueue {
+    get => ref _Handle.AsRef<CUtlVector<RotatorQueueEntry_t>>(Schema.GetOffset(0x73DA1BB941C250ED));
   }
-  public ref CUtlVector RotatorQueueHistory {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x73DA1BB9671778B7));
+  public ref CUtlVector<RotatorHistoryEntry_t> RotatorQueueHistory {
+    get => ref _Handle.AsRef<CUtlVector<RotatorHistoryEntry_t>>(Schema.GetOffset(0x73DA1BB9671778B7));
   }
 
 

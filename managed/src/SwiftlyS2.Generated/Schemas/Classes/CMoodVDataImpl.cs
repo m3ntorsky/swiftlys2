@@ -21,8 +21,8 @@ internal partial class CMoodVDataImpl : SchemaClass, CMoodVData {
   public ref MoodType_t MoodType {
     get => ref _Handle.AsRef<MoodType_t>(Schema.GetOffset(0x3C9F42019039BEAA));
   }
-  public ref CUtlVector AnimationLayers {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x3C9F420179729D37));
+  public ref CUtlVector<MoodAnimationLayer_t> AnimationLayers {
+    get => ref _Handle.AsRef<CUtlVector<MoodAnimationLayer_t>>(Schema.GetOffset(0x3C9F420179729D37));
   }
 
 

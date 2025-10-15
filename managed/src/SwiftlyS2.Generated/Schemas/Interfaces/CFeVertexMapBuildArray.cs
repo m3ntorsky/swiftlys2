@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFeVertexMapBuildArray : ISchemaClass<CFeVertexMapBuildArray> {
 
   static CFeVertexMapBuildArray ISchemaClass<CFeVertexMapBuildArray>.From(nint handle) => new CFeVertexMapBuildArrayImpl(handle);
+  static int ISchemaClass<CFeVertexMapBuildArray>.Size => 24;
 
   
   public ref CUtlVector<PointerTo<FeVertexMapBuild_t>> Array { get; }

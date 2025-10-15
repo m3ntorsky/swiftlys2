@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CGlowProperty : ISchemaClass<CGlowProperty> {
 
   static CGlowProperty ISchemaClass<CGlowProperty>.From(nint handle) => new CGlowPropertyImpl(handle);
+  static int ISchemaClass<CGlowProperty>.Size => 88;
 
   
   public ref Vector GlowColor { get; }

@@ -25,14 +25,11 @@ internal partial class ParticleNamedValueSource_tImpl : SchemaClass, ParticleNam
   public ref bool IsPublic {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x740B6BEFD2D88EB0));
   }
-  public ref PulseValueType_t ValueType {
-    get => ref _Handle.AsRef<PulseValueType_t>(Schema.GetOffset(0x740B6BEFC2A673CA));
+  public SchemaUntypedField ValueType {
+    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0x740B6BEFC2A673CA));
   }
   public ParticleNamedValueConfiguration_t DefaultConfig {
     get => new ParticleNamedValueConfiguration_tImpl(_Handle + Schema.GetOffset(0x740B6BEF05A58128));
-  }
-  public ref CUtlVector NamedConfigs {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x740B6BEF07A72469));
   }
 
 

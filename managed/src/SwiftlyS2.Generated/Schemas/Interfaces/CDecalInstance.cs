@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDecalInstance : ISchemaClass<CDecalInstance> {
 
   static CDecalInstance ISchemaClass<CDecalInstance>.From(nint handle) => new CDecalInstanceImpl(handle);
+  static int ISchemaClass<CDecalInstance>.Size => 136;
 
   
   public ref CGlobalSymbol DecalGroup { get; }
@@ -22,6 +23,8 @@ public partial interface CDecalInstance : ISchemaClass<CDecalInstance> {
   public ref CHandle<CBaseEntity> Entity { get; }
   
   public ref int BoneIndex { get; }
+  
+  public ref int TriangleIndex { get; }
   
   public ref Vector PositionLS { get; }
   
@@ -57,9 +60,7 @@ public partial interface CDecalInstance : ISchemaClass<CDecalInstance> {
   
   public ref bool DoDecalLightmapping { get; }
   
-  public CDecalInstance? Next { get; }
-  
-  public CDecalInstance? Prev { get; }
+  public ref DecalMode_t SkinnedModelMode { get; }
 
 
 }

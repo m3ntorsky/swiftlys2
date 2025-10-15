@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFloatExponentialMovingAverage : ISchemaClass<CFloatExponentialMovingAverage> {
 
   static CFloatExponentialMovingAverage ISchemaClass<CFloatExponentialMovingAverage>.From(nint handle) => new CFloatExponentialMovingAverageImpl(handle);
+  static int ISchemaClass<CFloatExponentialMovingAverage>.Size => 20;
 
 
 

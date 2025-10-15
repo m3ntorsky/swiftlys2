@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface WeaponPurchaseTracker_t : ISchemaClass<WeaponPurchaseTracker_t> {
 
   static WeaponPurchaseTracker_t ISchemaClass<WeaponPurchaseTracker_t>.From(nint handle) => new WeaponPurchaseTracker_tImpl(handle);
+  static int ISchemaClass<WeaponPurchaseTracker_t>.Size => 112;
 
   
-  // CUtlVectorEmbeddedNetworkVar< WeaponPurchaseCount_t >
-  public ref CUtlVector WeaponPurchases { get; }
+  public ref CUtlVector<WeaponPurchaseCount_t> WeaponPurchases { get; }
 
   public void WeaponPurchasesUpdated();
 }

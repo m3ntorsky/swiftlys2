@@ -11,13 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionSearchNode : ISchemaClass<CMotionSearchNode> {
 
   static CMotionSearchNode ISchemaClass<CMotionSearchNode>.From(nint handle) => new CMotionSearchNodeImpl(handle);
+  static int ISchemaClass<CMotionSearchNode>.Size => 128;
 
   
   public ref CUtlVector<PointerTo<CMotionSearchNode>> Children { get; }
   
   public CVectorQuantizer Quantizer { get; }
   
-  public ref CUtlVector<CUtlVector> SampleCodes { get; }
+  public ref CUtlVector<CUtlVector<SampleCode>> SampleCodes { get; }
   
   public ref CUtlVector<CUtlVector<int>> SampleIndices { get; }
   

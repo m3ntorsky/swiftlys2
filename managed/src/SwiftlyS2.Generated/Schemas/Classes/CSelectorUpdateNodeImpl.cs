@@ -15,8 +15,8 @@ internal partial class CSelectorUpdateNodeImpl : CAnimUpdateNodeBaseImpl, CSelec
   public CSelectorUpdateNodeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Children {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x23CD95F27415FA72));
+  public ref CUtlVector<CAnimUpdateNodeRef> Children {
+    get => ref _Handle.AsRef<CUtlVector<CAnimUpdateNodeRef>>(Schema.GetOffset(0x23CD95F27415FA72));
   }
   public ref CUtlVector<byte> Tags {
     get => ref _Handle.AsRef<CUtlVector<byte>>(Schema.GetOffset(0x23CD95F2B46C8540));

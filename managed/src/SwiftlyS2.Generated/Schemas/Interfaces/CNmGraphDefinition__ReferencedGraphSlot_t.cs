@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmGraphDefinition__ReferencedGraphSlot_t : ISchemaClass<CNmGraphDefinition__ReferencedGraphSlot_t> {
 
   static CNmGraphDefinition__ReferencedGraphSlot_t ISchemaClass<CNmGraphDefinition__ReferencedGraphSlot_t>.From(nint handle) => new CNmGraphDefinition__ReferencedGraphSlot_tImpl(handle);
+  static int ISchemaClass<CNmGraphDefinition__ReferencedGraphSlot_t>.Size => 4;
 
   
   public ref short NodeIdx { get; }

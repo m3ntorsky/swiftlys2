@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapTransformOrientationToRotations : CParticleFunctionOperator, ISchemaClass<C_OP_RemapTransformOrientationToRotations> {
 
   static C_OP_RemapTransformOrientationToRotations ISchemaClass<C_OP_RemapTransformOrientationToRotations>.From(nint handle) => new C_OP_RemapTransformOrientationToRotationsImpl(handle);
+  static int ISchemaClass<C_OP_RemapTransformOrientationToRotations>.Size => 584;
 
   
   public CParticleTransformInput TransformInput { get; }

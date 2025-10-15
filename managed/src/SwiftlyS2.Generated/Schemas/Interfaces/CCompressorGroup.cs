@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCompressorGroup : ISchemaClass<CCompressorGroup> {
 
   static CCompressorGroup ISchemaClass<CCompressorGroup>.From(nint handle) => new CCompressorGroupImpl(handle);
+  static int ISchemaClass<CCompressorGroup>.Size => 416;
 
   
   public ref int TotalElementCount { get; }

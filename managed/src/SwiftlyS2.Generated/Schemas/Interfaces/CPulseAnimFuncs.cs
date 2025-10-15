@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseAnimFuncs : ISchemaClass<CPulseAnimFuncs> {
 
   static CPulseAnimFuncs ISchemaClass<CPulseAnimFuncs>.From(nint handle) => new CPulseAnimFuncsImpl(handle);
+  static int ISchemaClass<CPulseAnimFuncs>.Size => 8;
 
 
 

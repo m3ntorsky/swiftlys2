@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulsePhysicsConstraintsFuncs : ISchemaClass<CPulsePhysicsConstraintsFuncs> {
 
   static CPulsePhysicsConstraintsFuncs ISchemaClass<CPulsePhysicsConstraintsFuncs>.From(nint handle) => new CPulsePhysicsConstraintsFuncsImpl(handle);
+  static int ISchemaClass<CPulsePhysicsConstraintsFuncs>.Size => 1;
 
 
 

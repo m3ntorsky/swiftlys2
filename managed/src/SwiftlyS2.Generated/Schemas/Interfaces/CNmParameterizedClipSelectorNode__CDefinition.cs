@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmParameterizedClipSelectorNode__CDefinition : CNmClipReferenceNode__CDefinition, ISchemaClass<CNmParameterizedClipSelectorNode__CDefinition> {
 
   static CNmParameterizedClipSelectorNode__CDefinition ISchemaClass<CNmParameterizedClipSelectorNode__CDefinition>.From(nint handle) => new CNmParameterizedClipSelectorNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmParameterizedClipSelectorNode__CDefinition>.Size => 64;
 
   
   // CUtlLeanVectorFixedGrowable< int16, 5 >

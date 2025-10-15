@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmIKEffector : ISchemaClass<CNmIKEffector> {
 
   static CNmIKEffector ISchemaClass<CNmIKEffector>.From(nint handle) => new CNmIKEffectorImpl(handle);
+  static int ISchemaClass<CNmIKEffector>.Size => 64;
 
   
   public ref int BodyIndex { get; }

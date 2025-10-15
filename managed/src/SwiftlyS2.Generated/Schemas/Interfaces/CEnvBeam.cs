@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEnvBeam : CBeam, ISchemaClass<CEnvBeam> {
 
   static CEnvBeam ISchemaClass<CEnvBeam>.From(nint handle) => new CEnvBeamImpl(handle);
+  static int ISchemaClass<CEnvBeam>.Size => 2336;
 
   
   public ref int Active { get; }

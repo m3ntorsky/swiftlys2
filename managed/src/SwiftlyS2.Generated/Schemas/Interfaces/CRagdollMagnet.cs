@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRagdollMagnet : CPointEntity, ISchemaClass<CRagdollMagnet> {
 
   static CRagdollMagnet ISchemaClass<CRagdollMagnet>.From(nint handle) => new CRagdollMagnetImpl(handle);
+  static int ISchemaClass<CRagdollMagnet>.Size => 1288;
 
   
   public ref bool Disabled { get; }

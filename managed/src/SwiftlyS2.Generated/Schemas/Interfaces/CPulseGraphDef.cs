@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseGraphDef : ISchemaClass<CPulseGraphDef> {
 
   static CPulseGraphDef ISchemaClass<CPulseGraphDef>.From(nint handle) => new CPulseGraphDefImpl(handle);
+  static int ISchemaClass<CPulseGraphDef>.Size => 408;
 
   
   // PulseSymbol_t
@@ -29,24 +30,19 @@ public partial interface CPulseGraphDef : ISchemaClass<CPulseGraphDef> {
   
   public ref CUtlVector<PointerTo<CPulseCell_Base>> Cells { get; }
   
-  // CUtlVector< CPulse_Variable >
-  public ref CUtlVector Vars { get; }
+  public ref CUtlVector<CPulse_Variable> Vars { get; }
   
-  // CUtlVector< CPulse_PublicOutput >
-  public ref CUtlVector PublicOutputs { get; }
+  public ref CUtlVector<CPulse_PublicOutput> PublicOutputs { get; }
   
   public ref CUtlVector<PointerTo<CPulse_InvokeBinding>> InvokeBindings { get; }
   
   public ref CUtlVector<PointerTo<CPulse_CallInfo>> CallInfos { get; }
   
-  // CUtlVector< CPulse_Constant >
-  public ref CUtlVector Constants { get; }
+  public ref CUtlVector<CPulse_Constant> Constants { get; }
   
-  // CUtlVector< CPulse_DomainValue >
-  public ref CUtlVector DomainValues { get; }
+  public ref CUtlVector<CPulse_DomainValue> DomainValues { get; }
   
-  // CUtlVector< CPulse_BlackboardReference >
-  public ref CUtlVector BlackboardReferences { get; }
+  public ref CUtlVector<CPulse_BlackboardReference> BlackboardReferences { get; }
   
   public ref CUtlVector<PointerTo<CPulse_OutputConnection>> OutputConnections { get; }
 

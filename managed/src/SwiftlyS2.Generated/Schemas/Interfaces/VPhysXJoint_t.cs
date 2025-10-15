@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VPhysXJoint_t : ISchemaClass<VPhysXJoint_t> {
 
   static VPhysXJoint_t ISchemaClass<VPhysXJoint_t>.From(nint handle) => new VPhysXJoint_tImpl(handle);
+  static int ISchemaClass<VPhysXJoint_t>.Size => 208;
 
   
   public ref ushort Type { get; }

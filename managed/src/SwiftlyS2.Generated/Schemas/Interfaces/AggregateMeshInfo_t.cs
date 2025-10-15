@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AggregateMeshInfo_t : ISchemaClass<AggregateMeshInfo_t> {
 
   static AggregateMeshInfo_t ISchemaClass<AggregateMeshInfo_t>.From(nint handle) => new AggregateMeshInfo_tImpl(handle);
+  static int ISchemaClass<AggregateMeshInfo_t>.Size => 36;
 
   
   public ref uint VisClusterMemberOffset { get; }

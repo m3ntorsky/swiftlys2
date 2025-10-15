@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseRuntimeMethodArg : ISchemaClass<CPulseRuntimeMethodArg> {
 
   static CPulseRuntimeMethodArg ISchemaClass<CPulseRuntimeMethodArg>.From(nint handle) => new CPulseRuntimeMethodArgImpl(handle);
+  static int ISchemaClass<CPulseRuntimeMethodArg>.Size => 128;
 
   
   // CKV3MemberNameWithStorage

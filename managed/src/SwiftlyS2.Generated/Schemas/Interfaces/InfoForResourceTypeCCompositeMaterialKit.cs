@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCCompositeMaterialKit : ISchemaClass<InfoForResourceTypeCCompositeMaterialKit> {
 
   static InfoForResourceTypeCCompositeMaterialKit ISchemaClass<InfoForResourceTypeCCompositeMaterialKit>.From(nint handle) => new InfoForResourceTypeCCompositeMaterialKitImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCCompositeMaterialKit>.Size => 1;
 
 
 

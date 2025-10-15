@@ -21,8 +21,8 @@ internal partial class SummaryTakeDamageInfo_tImpl : SchemaClass, SummaryTakeDam
   public ref CTakeDamageInfo Info {
     get => ref _Handle.AsRef<CTakeDamageInfo>(Schema.GetOffset(0x8A8061E20FB40705));
   }
-  public CTakeDamageResult Result {
-    get => new CTakeDamageResultImpl(_Handle + Schema.GetOffset(0x8A8061E20A377624));
+  public ref CTakeDamageResult Result {
+    get => ref _Handle.AsRef<CTakeDamageResult>(Schema.GetOffset(0x8A8061E20A377624));
   }
   public ref CHandle<CBaseEntity> Target {
     get => ref _Handle.AsRef<CHandle<CBaseEntity>>(Schema.GetOffset(0x8A8061E295A3933A));

@@ -18,11 +18,11 @@ internal partial class CAudioSentenceImpl : SchemaClass, CAudioSentence {
   public ref bool ShouldVoiceDuck {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x25F8D719C546CD15));
   }
-  public ref CUtlVector RunTimePhonemes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x25F8D719C0434838));
+  public ref CUtlVector<CAudioPhonemeTag> RunTimePhonemes {
+    get => ref _Handle.AsRef<CUtlVector<CAudioPhonemeTag>>(Schema.GetOffset(0x25F8D719C0434838));
   }
-  public ref CUtlVector EmphasisSamples {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x25F8D7194EBE8F82));
+  public ref CUtlVector<CAudioEmphasisSample> EmphasisSamples {
+    get => ref _Handle.AsRef<CUtlVector<CAudioEmphasisSample>>(Schema.GetOffset(0x25F8D7194EBE8F82));
   }
   public CAudioMorphData MorphData {
     get => new CAudioMorphDataImpl(_Handle + Schema.GetOffset(0x25F8D719A8207F65));

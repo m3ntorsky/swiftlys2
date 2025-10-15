@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface constraint_breakableparams_t : ISchemaClass<constraint_breakableparams_t> {
 
   static constraint_breakableparams_t ISchemaClass<constraint_breakableparams_t>.From(nint handle) => new constraint_breakableparams_tImpl(handle);
+  static int ISchemaClass<constraint_breakableparams_t>.Size => 24;
 
   
   public ref float Strength { get; }

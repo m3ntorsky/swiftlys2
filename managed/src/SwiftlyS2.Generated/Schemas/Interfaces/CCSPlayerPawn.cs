@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlayerPawn> {
 
   static CCSPlayerPawn ISchemaClass<CCSPlayerPawn>.From(nint handle) => new CCSPlayerPawnImpl(handle);
+  static int ISchemaClass<CCSPlayerPawn>.Size => 7296;
 
   
   public CCSPlayer_BulletServices? BulletServices { get; }
@@ -74,10 +75,6 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
   public ref CUtlVector<QAngle> AimPunchCache { get; }
   
   public ref bool IsBuyMenuOpen { get; }
-  
-  public ref CTransform XLastHeadBoneTransform { get; }
-  
-  public ref bool LastHeadBoneTransformIsValid { get; }
   
   public GameTime_t LastLandTime { get; }
   
@@ -245,8 +242,7 @@ public partial interface CCSPlayerPawn : CCSPlayerPawnBase, ISchemaClass<CCSPlay
   
   public ISchemaFixedArray<Vector> VelocityHistory { get; }
   
-  // CUtlVectorEmbeddedNetworkVar< PredictedDamageTag_t >
-  public ref CUtlVector PredictedDamageTags { get; }
+  public ref CUtlVector<PredictedDamageTag_t> PredictedDamageTags { get; }
   
   public ref int HighestAppliedDamageTagTick { get; }
   

@@ -15,8 +15,8 @@ internal partial class CDampedValueComponentUpdaterImpl : CAnimComponentUpdaterI
   public CDampedValueComponentUpdaterImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Items {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x9FFDDC9E7A87EDAF));
+  public ref CUtlVector<CDampedValueUpdateItem> Items {
+    get => ref _Handle.AsRef<CUtlVector<CDampedValueUpdateItem>>(Schema.GetOffset(0x9FFDDC9E7A87EDAF));
   }
 
 

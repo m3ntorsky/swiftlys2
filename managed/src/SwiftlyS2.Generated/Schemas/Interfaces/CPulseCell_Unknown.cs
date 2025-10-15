@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Unknown : CPulseCell_Base, ISchemaClass<CPulseCell_Unknown> {
 
   static CPulseCell_Unknown ISchemaClass<CPulseCell_Unknown>.From(nint handle) => new CPulseCell_UnknownImpl(handle);
+  static int ISchemaClass<CPulseCell_Unknown>.Size => 88;
 
   
   // KeyValues3

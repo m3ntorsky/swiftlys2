@@ -11,12 +11,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBodyGroupAnimTag : CAnimTagBase, ISchemaClass<CBodyGroupAnimTag> {
 
   static CBodyGroupAnimTag ISchemaClass<CBodyGroupAnimTag>.From(nint handle) => new CBodyGroupAnimTagImpl(handle);
+  static int ISchemaClass<CBodyGroupAnimTag>.Size => 120;
 
   
   public ref int Priority { get; }
   
-  // CUtlVector< CBodyGroupSetting >
-  public ref CUtlVector BodyGroupSettings { get; }
+  public ref CUtlVector<CBodyGroupSetting> BodyGroupSettings { get; }
 
 
 }

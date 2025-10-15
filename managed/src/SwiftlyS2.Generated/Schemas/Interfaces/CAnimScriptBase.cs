@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimScriptBase : ISchemaClass<CAnimScriptBase> {
 
   static CAnimScriptBase ISchemaClass<CAnimScriptBase>.From(nint handle) => new CAnimScriptBaseImpl(handle);
+  static int ISchemaClass<CAnimScriptBase>.Size => 16;
 
   
   public ref bool IsValid { get; }

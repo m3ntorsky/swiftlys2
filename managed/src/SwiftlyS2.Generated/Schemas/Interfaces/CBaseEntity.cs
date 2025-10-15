@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseEntity : CEntityInstance, ISchemaClass<CBaseEntity> {
 
   static CBaseEntity ISchemaClass<CBaseEntity>.From(nint handle) => new CBaseEntityImpl(handle);
+  static int ISchemaClass<CBaseEntity>.Size => 1264;
 
   
   public CBodyComponent? CBodyComponent { get; }
   
   public CNetworkTransmitComponent NetworkTransmitComponent { get; }
   
-  // CUtlVector< thinkfunc_t >
-  public ref CUtlVector ThinkFunctions { get; }
+  public ref CUtlVector<thinkfunc_t> ThinkFunctions { get; }
   
   public ref int CurrentThinkContext { get; }
   
@@ -31,8 +31,7 @@ public partial interface CBaseEntity : CEntityInstance, ISchemaClass<CBaseEntity
   
   public ref float LastNetworkChange { get; }
   
-  // CUtlVector< ResponseContext_t >
-  public ref CUtlVector ResponseContexts { get; }
+  public ref CUtlVector<ResponseContext_t> ResponseContexts { get; }
   
   public string ResponseContext { get; set; }
   

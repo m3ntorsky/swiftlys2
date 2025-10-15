@@ -24,17 +24,14 @@ internal partial class CBaseCombatCharacterImpl : CBaseFlexImpl, CBaseCombatChar
   public ref float ImpactEnergyScale {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xB47DE3DEC66BAC1B));
   }
-  public ref int MinVehicleDamageToTempRagdoll {
-    get => ref _Handle.AsRef<int>(Schema.GetOffset(0xB47DE3DE5D22468A));
-  }
   public ref bool ApplyStressDamage {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB47DE3DEC16FF452));
   }
   public ref bool DeathEventsDispatched {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB47DE3DE8F5C8C9F));
   }
-  public ref CUtlVector VecRelationships {
-    get => ref _Handle.Deref<CUtlVector>(Schema.GetOffset(0xB47DE3DE2B978F5E));
+  public ref CUtlVector<RelationshipOverride_t> VecRelationships {
+    get => ref _Handle.Deref<CUtlVector<RelationshipOverride_t>>(Schema.GetOffset(0xB47DE3DE2B978F5E));
   }
   public string StrRelationships {
     get {

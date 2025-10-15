@@ -21,8 +21,8 @@ internal partial class CSosGroupActionLimitSchemaImpl : CSosGroupActionSchemaImp
   public ref SosActionStopType_t StopType {
     get => ref _Handle.AsRef<SosActionStopType_t>(Schema.GetOffset(0xE06D795E13397259));
   }
-  public ref SosActionSortType_t SortType {
-    get => ref _Handle.AsRef<SosActionSortType_t>(Schema.GetOffset(0xE06D795E2E0E44B5));
+  public ref SosActionLimitSortType_t SortType {
+    get => ref _Handle.AsRef<SosActionLimitSortType_t>(Schema.GetOffset(0xE06D795E2E0E44B5));
   }
   public ref bool StopImmediate {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xE06D795E358D6B9A));

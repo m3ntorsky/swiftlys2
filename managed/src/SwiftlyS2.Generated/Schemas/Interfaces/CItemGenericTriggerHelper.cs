@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CItemGenericTriggerHelper : CBaseModelEntity, ISchemaClass<CItemGenericTriggerHelper> {
 
   static CItemGenericTriggerHelper ISchemaClass<CItemGenericTriggerHelper>.From(nint handle) => new CItemGenericTriggerHelperImpl(handle);
+  static int ISchemaClass<CItemGenericTriggerHelper>.Size => 2016;
 
   
   public ref CHandle<CItemGeneric> ParentItem { get; }

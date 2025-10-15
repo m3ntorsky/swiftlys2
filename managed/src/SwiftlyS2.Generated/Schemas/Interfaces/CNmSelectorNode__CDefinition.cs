@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmSelectorNode__CDefinition : CNmPoseNode__CDefinition, ISchemaClass<CNmSelectorNode__CDefinition> {
 
   static CNmSelectorNode__CDefinition ISchemaClass<CNmSelectorNode__CDefinition>.From(nint handle) => new CNmSelectorNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmSelectorNode__CDefinition>.Size => 64;
 
   
   // CUtlLeanVectorFixedGrowable< int16, 5 >

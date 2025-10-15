@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FollowTargetOpFixedSettings_t : ISchemaClass<FollowTargetOpFixedSettings_t> {
 
   static FollowTargetOpFixedSettings_t ISchemaClass<FollowTargetOpFixedSettings_t>.From(nint handle) => new FollowTargetOpFixedSettings_tImpl(handle);
+  static int ISchemaClass<FollowTargetOpFixedSettings_t>.Size => 16;
 
   
   public ref int BoneIndex { get; }

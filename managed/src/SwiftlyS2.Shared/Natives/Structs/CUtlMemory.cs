@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using SwiftlyS2.Core.Extensions;
 using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Shared.Misc;
+using SwiftlyS2.Shared.Schemas;
 
 namespace SwiftlyS2.Shared.Natives;
 
@@ -13,11 +14,13 @@ public enum BufferMarkers
 }
 
 [StructLayout(LayoutKind.Sequential)]
-public struct CUtlMemory<T> : IDisposable where T : unmanaged
+public struct CUtlMemory<T> : IDisposable
 {
     private nint _memory;
     private uint _allocationCount;
     private uint _growSize;
+
+    public int ElementSize => SchemaSize.Get<T>();
 
     public CUtlMemory(int growSize, int initSize)
     {
@@ -47,7 +50,7 @@ public struct CUtlMemory<T> : IDisposable where T : unmanaged
         _growSize = (uint)(growSize & ~(int)(BufferMarkers.ExternalBufferMarker | BufferMarkers.ExternalConstBufferMarker));
         _allocationCount = (uint)initSize;
         if (initSize > 0)
-            _memory = NativeAllocator.Alloc((nuint)(initSize * Marshal.SizeOf<T>()));
+            _memory = NativeAllocator.Alloc((nuint)(initSize * ElementSize));
     }
 
     public void Purge()
@@ -74,7 +77,7 @@ public struct CUtlMemory<T> : IDisposable where T : unmanaged
         if (numElements == _allocationCount) return;
         if (_memory == 0) return;
 
-        _memory = ExternDLL.UtlVectorMemory_Alloc(_memory, !ExternallyAllocated, numElements * Marshal.SizeOf<T>(), (int)(_allocationCount * Marshal.SizeOf<T>()));
+        _memory = ExternDLL.UtlVectorMemory_Alloc(_memory, !ExternallyAllocated, numElements * ElementSize, (int)(_allocationCount * ElementSize));
 
         if (ExternallyAllocated)
             _growSize &= ~(int)(BufferMarkers.ExternalBufferMarker | BufferMarkers.ExternalConstBufferMarker);
@@ -90,7 +93,7 @@ public struct CUtlMemory<T> : IDisposable where T : unmanaged
         _growSize = (uint)(growSize & ~(int)(BufferMarkers.ExternalBufferMarker | BufferMarkers.ExternalConstBufferMarker));
         if (_allocationCount > 0)
         {
-            var numBytes = (int)(_allocationCount * Marshal.SizeOf<T>());
+            var numBytes = (int)(_allocationCount * ElementSize);
             var newmem = NativeAllocator.Alloc((nuint)numBytes);
             NativeAllocator.Copy(newmem, _memory, (ulong)numBytes);
             _memory = newmem;
@@ -140,7 +143,7 @@ public struct CUtlMemory<T> : IDisposable where T : unmanaged
         }
 
         var allocationRequested = _allocationCount + (uint)num;
-        var newAllocationCount = ExternDLL.UtlVectorMemory_CalcNewAllocationCount((int)_allocationCount, (int)(_growSize & ~(int)(BufferMarkers.ExternalBufferMarker | BufferMarkers.ExternalConstBufferMarker)), (int)allocationRequested, Marshal.SizeOf<T>());
+        var newAllocationCount = ExternDLL.UtlVectorMemory_CalcNewAllocationCount((int)_allocationCount, (int)(_growSize & ~(int)(BufferMarkers.ExternalBufferMarker | BufferMarkers.ExternalConstBufferMarker)), (int)allocationRequested, ElementSize);
 
         if (newAllocationCount < allocationRequested)
         {
@@ -155,7 +158,7 @@ public struct CUtlMemory<T> : IDisposable where T : unmanaged
             }
         }
 
-        _memory = ExternDLL.UtlVectorMemory_Alloc(_memory, !ExternallyAllocated, newAllocationCount * Marshal.SizeOf<T>(), (int)(_allocationCount * Marshal.SizeOf<T>()));
+        _memory = ExternDLL.UtlVectorMemory_Alloc(_memory, !ExternallyAllocated, newAllocationCount * ElementSize, (int)(_allocationCount * ElementSize));
 
         if (ExternallyAllocated)
             _growSize &= ~(int)(BufferMarkers.ExternalBufferMarker | BufferMarkers.ExternalConstBufferMarker);
@@ -168,7 +171,7 @@ public struct CUtlMemory<T> : IDisposable where T : unmanaged
         if (_allocationCount >= num) return;
         if (IsReadOnly) return;
 
-        _memory = ExternDLL.UtlVectorMemory_Alloc(_memory, !ExternallyAllocated, num * Marshal.SizeOf<T>(), (int)(_allocationCount * Marshal.SizeOf<T>()));
+        _memory = ExternDLL.UtlVectorMemory_Alloc(_memory, !ExternallyAllocated, num * ElementSize, (int)(_allocationCount * ElementSize));
         _allocationCount = (uint)num;
         if (ExternallyAllocated)
             _growSize &= ~(int)(BufferMarkers.ExternalBufferMarker | BufferMarkers.ExternalConstBufferMarker);
@@ -181,7 +184,16 @@ public struct CUtlMemory<T> : IDisposable where T : unmanaged
 
     public bool IsValidIndex(int index) => (uint)index < _allocationCount && index >= 0;
 
-    public ref T this[int index] => ref _memory.AsRef<T>(index * Unsafe.SizeOf<T>());
+    public ref T this[int index]
+    {
+        get
+        {
+            unsafe
+            {
+                return ref Unsafe.AsRef<T>((byte*)_memory + int.CreateChecked(index * ElementSize));
+            }
+        }
+    }
     public bool ExternallyAllocated => (_growSize & (int)(BufferMarkers.ExternalBufferMarker | BufferMarkers.ExternalConstBufferMarker)) != 0;
     public bool IsReadOnly => (_growSize & (int)BufferMarkers.ExternalConstBufferMarker) != 0;
     public nint Base => _memory;

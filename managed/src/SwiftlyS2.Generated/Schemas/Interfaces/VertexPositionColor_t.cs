@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VertexPositionColor_t : ISchemaClass<VertexPositionColor_t> {
 
   static VertexPositionColor_t ISchemaClass<VertexPositionColor_t>.From(nint handle) => new VertexPositionColor_tImpl(handle);
+  static int ISchemaClass<VertexPositionColor_t>.Size => 16;
 
   
   public ref Vector Position { get; }

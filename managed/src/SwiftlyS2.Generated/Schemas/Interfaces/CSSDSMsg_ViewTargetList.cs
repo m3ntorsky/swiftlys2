@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSSDSMsg_ViewTargetList : ISchemaClass<CSSDSMsg_ViewTargetList> {
 
   static CSSDSMsg_ViewTargetList ISchemaClass<CSSDSMsg_ViewTargetList>.From(nint handle) => new CSSDSMsg_ViewTargetListImpl(handle);
+  static int ISchemaClass<CSSDSMsg_ViewTargetList>.Size => 48;
 
   
   public SceneViewId_t ViewId { get; }
   
   public string ViewName { get; set; }
   
-  // CUtlVector< CSSDSMsg_ViewTarget >
-  public ref CUtlVector Targets { get; }
+  public ref CUtlVector<CSSDSMsg_ViewTarget> Targets { get; }
 
 
 }

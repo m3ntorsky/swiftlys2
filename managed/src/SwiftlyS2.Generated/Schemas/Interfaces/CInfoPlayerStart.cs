@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CInfoPlayerStart : CPointEntity, ISchemaClass<CInfoPlayerStart> {
 
   static CInfoPlayerStart ISchemaClass<CInfoPlayerStart>.From(nint handle) => new CInfoPlayerStartImpl(handle);
+  static int ISchemaClass<CInfoPlayerStart>.Size => 1280;
 
   
   public ref bool Disabled { get; }

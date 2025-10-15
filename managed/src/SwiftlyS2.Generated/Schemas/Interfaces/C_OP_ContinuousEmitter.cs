@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_ContinuousEmitter : CParticleFunctionEmitter, ISchemaClass<C_OP_ContinuousEmitter> {
 
   static C_OP_ContinuousEmitter ISchemaClass<C_OP_ContinuousEmitter>.From(nint handle) => new C_OP_ContinuousEmitterImpl(handle);
+  static int ISchemaClass<C_OP_ContinuousEmitter>.Size => 1624;
 
   
   public CParticleCollectionFloatInput EmissionDuration { get; }

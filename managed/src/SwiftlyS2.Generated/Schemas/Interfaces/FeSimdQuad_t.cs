@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeSimdQuad_t : ISchemaClass<FeSimdQuad_t> {
 
   static FeSimdQuad_t ISchemaClass<FeSimdQuad_t>.From(nint handle) => new FeSimdQuad_tImpl(handle);
+  static int ISchemaClass<FeSimdQuad_t>.Size => 304;
 
   
   // uint16[4]

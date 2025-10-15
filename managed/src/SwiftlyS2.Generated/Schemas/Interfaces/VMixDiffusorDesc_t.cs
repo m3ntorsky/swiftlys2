@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixDiffusorDesc_t : ISchemaClass<VMixDiffusorDesc_t> {
 
   static VMixDiffusorDesc_t ISchemaClass<VMixDiffusorDesc_t>.From(nint handle) => new VMixDiffusorDesc_tImpl(handle);
+  static int ISchemaClass<VMixDiffusorDesc_t>.Size => 16;
 
   
   public ref float Size { get; }

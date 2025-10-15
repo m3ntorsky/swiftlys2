@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCPPScriptComponentUpdater : CAnimComponentUpdater, ISchemaClass<CCPPScriptComponentUpdater> {
 
   static CCPPScriptComponentUpdater ISchemaClass<CCPPScriptComponentUpdater>.From(nint handle) => new CCPPScriptComponentUpdaterImpl(handle);
+  static int ISchemaClass<CCPPScriptComponentUpdater>.Size => 96;
 
   
   public ref CUtlVector<CGlobalSymbol> ScriptsToRun { get; }

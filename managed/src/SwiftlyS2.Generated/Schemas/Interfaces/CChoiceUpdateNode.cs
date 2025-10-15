@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CChoiceUpdateNode : CAnimUpdateNodeBase, ISchemaClass<CChoiceUpdateNode> {
 
   static CChoiceUpdateNode ISchemaClass<CChoiceUpdateNode>.From(nint handle) => new CChoiceUpdateNodeImpl(handle);
+  static int ISchemaClass<CChoiceUpdateNode>.Size => 192;
 
   
-  // CUtlVector< CAnimUpdateNodeRef >
-  public ref CUtlVector Children { get; }
+  public ref CUtlVector<CAnimUpdateNodeRef> Children { get; }
   
   public ref CUtlVector<float> Weights { get; }
   

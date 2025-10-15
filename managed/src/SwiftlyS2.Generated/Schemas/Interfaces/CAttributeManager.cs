@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAttributeManager : ISchemaClass<CAttributeManager> {
 
   static CAttributeManager ISchemaClass<CAttributeManager>.From(nint handle) => new CAttributeManagerImpl(handle);
+  static int ISchemaClass<CAttributeManager>.Size => 80;
 
   
   public ref CUtlVector<CHandle<CBaseEntity>> Providers { get; }
@@ -23,8 +24,7 @@ public partial interface CAttributeManager : ISchemaClass<CAttributeManager> {
   
   public ref attributeprovidertypes_t ProviderType { get; }
   
-  // CUtlVector< CAttributeManager::cached_attribute_float_t >
-  public ref CUtlVector CachedResults { get; }
+  public ref CUtlVector<CAttributeManager__cached_attribute_float_t> CachedResults { get; }
 
   public void ReapplyProvisionParityUpdated();
   public void OuterUpdated();

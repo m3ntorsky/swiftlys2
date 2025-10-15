@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAttributeList : ISchemaClass<CAttributeList> {
 
   static CAttributeList ISchemaClass<CAttributeList>.From(nint handle) => new CAttributeListImpl(handle);
+  static int ISchemaClass<CAttributeList>.Size => 120;
 
   
-  // CUtlVectorEmbeddedNetworkVar< CEconItemAttribute >
-  public ref CUtlVector Attributes { get; }
+  public ref CUtlVector<CEconItemAttribute> Attributes { get; }
   
   public CAttributeManager? Manager { get; }
 

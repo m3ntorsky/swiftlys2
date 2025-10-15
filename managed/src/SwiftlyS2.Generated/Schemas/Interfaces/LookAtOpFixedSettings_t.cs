@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface LookAtOpFixedSettings_t : ISchemaClass<LookAtOpFixedSettings_t> {
 
   static LookAtOpFixedSettings_t ISchemaClass<LookAtOpFixedSettings_t>.From(nint handle) => new LookAtOpFixedSettings_tImpl(handle);
+  static int ISchemaClass<LookAtOpFixedSettings_t>.Size => 208;
 
   
   public CAnimAttachment Attachment { get; }
   
   public CAnimInputDamping Damping { get; }
   
-  // CUtlVector< LookAtBone_t >
-  public ref CUtlVector Bones { get; }
+  public ref CUtlVector<LookAtBone_t> Bones { get; }
   
   public ref float YawLimit { get; }
   

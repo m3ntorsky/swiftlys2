@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimDesc : ISchemaClass<CAnimDesc> {
 
   static CAnimDesc ISchemaClass<CAnimDesc>.From(nint handle) => new CAnimDescImpl(handle);
+  static int ISchemaClass<CAnimDesc>.Size => 464;
 
   
   public ref CBufferString Name { get; }
@@ -21,19 +22,15 @@ public partial interface CAnimDesc : ISchemaClass<CAnimDesc> {
   
   public CAnimEncodedFrames Data { get; }
   
-  // CUtlVector< CAnimMovement >
-  public ref CUtlVector MovementArray { get; }
+  public ref CUtlVector<CAnimMovement> MovementArray { get; }
   
   public ref CTransform XInitialOffset { get; }
   
-  // CUtlVector< CAnimEventDefinition >
-  public ref CUtlVector EventArray { get; }
+  public ref CUtlVector<CAnimEventDefinition> EventArray { get; }
   
-  // CUtlVector< CAnimActivity >
-  public ref CUtlVector ActivityArray { get; }
+  public ref CUtlVector<CAnimActivity> ActivityArray { get; }
   
-  // CUtlVector< CAnimLocalHierarchy >
-  public ref CUtlVector HierarchyArray { get; }
+  public ref CUtlVector<CAnimLocalHierarchy> HierarchyArray { get; }
   
   public ref float Framestalltime { get; }
   

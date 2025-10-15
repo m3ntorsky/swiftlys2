@@ -11,12 +11,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionMatchingUpdateNode : CLeafUpdateNode, ISchemaClass<CMotionMatchingUpdateNode> {
 
   static CMotionMatchingUpdateNode ISchemaClass<CMotionMatchingUpdateNode>.From(nint handle) => new CMotionMatchingUpdateNodeImpl(handle);
+  static int ISchemaClass<CMotionMatchingUpdateNode>.Size => 328;
 
   
   public CMotionDataSet DataSet { get; }
   
-  // CUtlVector< CSmartPtr< CMotionMetricEvaluator > >
-  public ref CUtlVector Metrics { get; }
+  public ref CUtlVector<SchemaUntypedField> Metrics { get; }
   
   public ref CUtlVector<float> Weights { get; }
   

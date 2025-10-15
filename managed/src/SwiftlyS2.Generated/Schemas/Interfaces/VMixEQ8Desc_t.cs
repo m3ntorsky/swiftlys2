@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface VMixEQ8Desc_t : ISchemaClass<VMixEQ8Desc_t> {
 
   static VMixEQ8Desc_t ISchemaClass<VMixEQ8Desc_t>.From(nint handle) => new VMixEQ8Desc_tImpl(handle);
+  static int ISchemaClass<VMixEQ8Desc_t>.Size => 128;
 
   
   // VMixFilterDesc_t

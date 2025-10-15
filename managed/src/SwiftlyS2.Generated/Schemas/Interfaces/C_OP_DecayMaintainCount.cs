@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_DecayMaintainCount : CParticleFunctionOperator, ISchemaClass<C_OP_DecayMaintainCount> {
 
   static C_OP_DecayMaintainCount ISchemaClass<C_OP_DecayMaintainCount>.From(nint handle) => new C_OP_DecayMaintainCountImpl(handle);
+  static int ISchemaClass<C_OP_DecayMaintainCount>.Size => 872;
 
   
   public ref int ParticlesToMaintain { get; }
@@ -18,6 +19,8 @@ public partial interface C_OP_DecayMaintainCount : CParticleFunctionOperator, IS
   public ref float DecayDelay { get; }
   
   public ref int SnapshotControlPoint { get; }
+  
+  public string StrSnapshotSubset { get; set; }
   
   public ref bool LifespanDecay { get; }
   

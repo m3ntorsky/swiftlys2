@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderBlobs : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderBlobs> {
 
   static C_OP_RenderBlobs ISchemaClass<C_OP_RenderBlobs>.From(nint handle) => new C_OP_RenderBlobsImpl(handle);
+  static int ISchemaClass<C_OP_RenderBlobs>.Size => 1720;
 
   
   public CParticleCollectionRendererFloatInput CubeWidth { get; }
@@ -25,8 +26,7 @@ public partial interface C_OP_RenderBlobs : CParticleFunctionRenderer, ISchemaCl
   
   public ref int ScaleCP { get; }
   
-  // CUtlVector< MaterialVariable_t >
-  public ref CUtlVector MaterialVars { get; }
+  public ref CUtlVector<MaterialVariable_t> MaterialVars { get; }
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysicsWire : CBaseEntity, ISchemaClass<CPhysicsWire> {
 
   static CPhysicsWire ISchemaClass<CPhysicsWire>.From(nint handle) => new CPhysicsWireImpl(handle);
+  static int ISchemaClass<CPhysicsWire>.Size => 1272;
 
   
   public ref int Density { get; }

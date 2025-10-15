@@ -11,13 +11,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimStateMachineUpdater : ISchemaClass<CAnimStateMachineUpdater> {
 
   static CAnimStateMachineUpdater ISchemaClass<CAnimStateMachineUpdater>.From(nint handle) => new CAnimStateMachineUpdaterImpl(handle);
+  static int ISchemaClass<CAnimStateMachineUpdater>.Size => 88;
 
   
-  // CUtlVector< CStateUpdateData >
-  public ref CUtlVector States { get; }
+  public ref CUtlVector<CStateUpdateData> States { get; }
   
-  // CUtlVector< CTransitionUpdateData >
-  public ref CUtlVector Transitions { get; }
+  public ref CUtlVector<CTransitionUpdateData> Transitions { get; }
   
   public ref int StartStateIndex { get; }
 

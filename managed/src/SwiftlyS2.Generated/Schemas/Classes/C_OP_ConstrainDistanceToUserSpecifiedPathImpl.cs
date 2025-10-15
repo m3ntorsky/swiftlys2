@@ -27,8 +27,8 @@ internal partial class C_OP_ConstrainDistanceToUserSpecifiedPathImpl : CParticle
   public ref bool LoopedPath {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x42F2CE284D64C459));
   }
-  public ref CUtlVector PointList {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x42F2CE28976AB4FD));
+  public ref CUtlVector<PointDefinitionWithTimeValues_t> PointList {
+    get => ref _Handle.AsRef<CUtlVector<PointDefinitionWithTimeValues_t>>(Schema.GetOffset(0x42F2CE28976AB4FD));
   }
 
 

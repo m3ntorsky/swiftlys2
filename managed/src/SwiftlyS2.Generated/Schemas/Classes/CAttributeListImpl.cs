@@ -15,8 +15,8 @@ internal partial class CAttributeListImpl : SchemaClass, CAttributeList {
   public CAttributeListImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Attributes {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x1028A18A7E139C14));
+  public ref CUtlVector<CEconItemAttribute> Attributes {
+    get => ref _Handle.AsRef<CUtlVector<CEconItemAttribute>>(Schema.GetOffset(0x1028A18A7E139C14));
   }
   public CAttributeManager? Manager {
     get {

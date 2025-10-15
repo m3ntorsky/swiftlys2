@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventServerEndAsyncPostTickWork_t : ISchemaClass<EventServerEndAsyncPostTickWork_t> {
 
   static EventServerEndAsyncPostTickWork_t ISchemaClass<EventServerEndAsyncPostTickWork_t>.From(nint handle) => new EventServerEndAsyncPostTickWork_tImpl(handle);
+  static int ISchemaClass<EventServerEndAsyncPostTickWork_t>.Size => 1;
 
 
 

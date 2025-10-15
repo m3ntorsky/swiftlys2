@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ModelMeshBufferData_t : ISchemaClass<ModelMeshBufferData_t> {
 
   static ModelMeshBufferData_t ISchemaClass<ModelMeshBufferData_t>.From(nint handle) => new ModelMeshBufferData_tImpl(handle);
+  static int ISchemaClass<ModelMeshBufferData_t>.Size => 48;
 
   
   public ref int BlockIndex { get; }
@@ -33,8 +34,7 @@ public partial interface ModelMeshBufferData_t : ISchemaClass<ModelMeshBufferDat
   
   public ref bool CreatePooledBuffer { get; }
   
-  // CUtlVector< RenderInputLayoutField_t >
-  public ref CUtlVector InputLayoutFields { get; }
+  public ref CUtlVector<RenderInputLayoutField_t> InputLayoutFields { get; }
 
 
 }

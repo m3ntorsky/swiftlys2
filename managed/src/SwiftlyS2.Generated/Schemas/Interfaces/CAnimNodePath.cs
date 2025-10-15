@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimNodePath : ISchemaClass<CAnimNodePath> {
 
   static CAnimNodePath ISchemaClass<CAnimNodePath>.From(nint handle) => new CAnimNodePathImpl(handle);
+  static int ISchemaClass<CAnimNodePath>.Size => 48;
 
   
   // AnimNodeID

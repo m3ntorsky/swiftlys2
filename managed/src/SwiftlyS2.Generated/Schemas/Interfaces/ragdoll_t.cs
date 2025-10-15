@@ -11,13 +11,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ragdoll_t : ISchemaClass<ragdoll_t> {
 
   static ragdoll_t ISchemaClass<ragdoll_t>.From(nint handle) => new ragdoll_tImpl(handle);
+  static int ISchemaClass<ragdoll_t>.Size => 80;
 
   
-  // CUtlVector< ragdollelement_t >
-  public ref CUtlVector List { get; }
+  public ref CUtlVector<ragdollelement_t> List { get; }
   
-  // CUtlVector< ragdollhierarchyjoint_t >
-  public ref CUtlVector HierarchyJoints { get; }
+  public ref CUtlVector<ragdollhierarchyjoint_t> HierarchyJoints { get; }
   
   public ref CUtlVector<int> BoneIndex { get; }
   

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PulseRuntimeBlackboardReferenceIndex_t : ISchemaClass<PulseRuntimeBlackboardReferenceIndex_t> {
 
   static PulseRuntimeBlackboardReferenceIndex_t ISchemaClass<PulseRuntimeBlackboardReferenceIndex_t>.From(nint handle) => new PulseRuntimeBlackboardReferenceIndex_tImpl(handle);
+  static int ISchemaClass<PulseRuntimeBlackboardReferenceIndex_t>.Size => 2;
 
   
   public ref short Value { get; }

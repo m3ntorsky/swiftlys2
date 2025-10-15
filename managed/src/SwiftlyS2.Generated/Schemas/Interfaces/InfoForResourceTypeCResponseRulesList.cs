@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCResponseRulesList : ISchemaClass<InfoForResourceTypeCResponseRulesList> {
 
   static InfoForResourceTypeCResponseRulesList ISchemaClass<InfoForResourceTypeCResponseRulesList>.From(nint handle) => new InfoForResourceTypeCResponseRulesListImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCResponseRulesList>.Size => 1;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBasePlayerWeaponVData : CEntitySubclassVDataBase, ISchemaClass<CBasePlayerWeaponVData> {
 
   static CBasePlayerWeaponVData ISchemaClass<CBasePlayerWeaponVData>.From(nint handle) => new CBasePlayerWeaponVDataImpl(handle);
+  static int ISchemaClass<CBasePlayerWeaponVData>.Size => 1088;
 
   
   // CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > >
@@ -59,6 +60,8 @@ public partial interface CBasePlayerWeaponVData : CEntitySubclassVDataBase, ISch
   public ref bool ReserveAmmoAsClips { get; }
   
   public ref bool TreatAsSingleClip { get; }
+  
+  public ref bool KeepLoadedAmmo { get; }
   
   public ref int Weight { get; }
   

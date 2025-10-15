@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface LookAtBone_t : ISchemaClass<LookAtBone_t> {
 
   static LookAtBone_t ISchemaClass<LookAtBone_t>.From(nint handle) => new LookAtBone_tImpl(handle);
+  static int ISchemaClass<LookAtBone_t>.Size => 8;
 
   
   public ref int Index { get; }

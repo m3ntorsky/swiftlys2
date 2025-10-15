@@ -15,8 +15,8 @@ internal partial class CPulseCell_FireCursorsImpl : CPulseCell_BaseYieldingInflo
   public CPulseCell_FireCursorsImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Outflows {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x9BFA034F8F0AFDF8));
+  public ref CUtlVector<CPulse_OutflowConnection> Outflows {
+    get => ref _Handle.AsRef<CUtlVector<CPulse_OutflowConnection>>(Schema.GetOffset(0x9BFA034F8F0AFDF8));
   }
   public ref bool WaitForChildOutflows {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0x9BFA034F3F8E29C6));

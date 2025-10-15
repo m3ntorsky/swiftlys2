@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_OscillateVector : CParticleFunctionOperator, ISchemaClass<C_OP_OscillateVector> {
 
   static C_OP_OscillateVector ISchemaClass<C_OP_OscillateVector>.From(nint handle) => new C_OP_OscillateVectorImpl(handle);
+  static int ISchemaClass<C_OP_OscillateVector>.Size => 1640;
 
   
   public ref Vector RateMin { get; }

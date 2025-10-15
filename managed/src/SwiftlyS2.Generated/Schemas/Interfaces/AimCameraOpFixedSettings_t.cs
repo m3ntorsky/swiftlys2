@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface AimCameraOpFixedSettings_t : ISchemaClass<AimCameraOpFixedSettings_t> {
 
   static AimCameraOpFixedSettings_t ISchemaClass<AimCameraOpFixedSettings_t>.From(nint handle) => new AimCameraOpFixedSettings_tImpl(handle);
+  static int ISchemaClass<AimCameraOpFixedSettings_t>.Size => 48;
 
   
   public ref int ChainIndex { get; }

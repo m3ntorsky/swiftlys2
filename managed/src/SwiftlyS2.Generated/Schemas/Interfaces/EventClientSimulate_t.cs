@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventClientSimulate_t : EventSimulate_t, ISchemaClass<EventClientSimulate_t> {
 
   static EventClientSimulate_t ISchemaClass<EventClientSimulate_t>.From(nint handle) => new EventClientSimulate_tImpl(handle);
+  static int ISchemaClass<EventClientSimulate_t>.Size => 48;
 
 
 

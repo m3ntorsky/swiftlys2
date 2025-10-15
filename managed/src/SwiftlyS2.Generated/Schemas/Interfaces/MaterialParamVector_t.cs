@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface MaterialParamVector_t : MaterialParam_t, ISchemaClass<MaterialParamVector_t> {
 
   static MaterialParamVector_t ISchemaClass<MaterialParamVector_t>.From(nint handle) => new MaterialParamVector_tImpl(handle);
+  static int ISchemaClass<MaterialParamVector_t>.Size => 24;
 
   
   public ref Vector4D Value { get; }

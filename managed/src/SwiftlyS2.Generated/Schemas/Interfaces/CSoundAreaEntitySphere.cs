@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSoundAreaEntitySphere : CSoundAreaEntityBase, ISchemaClass<CSoundAreaEntitySphere> {
 
   static CSoundAreaEntitySphere ISchemaClass<CSoundAreaEntitySphere>.From(nint handle) => new CSoundAreaEntitySphereImpl(handle);
+  static int ISchemaClass<CSoundAreaEntitySphere>.Size => 1304;
 
   
   public ref float Radius { get; }

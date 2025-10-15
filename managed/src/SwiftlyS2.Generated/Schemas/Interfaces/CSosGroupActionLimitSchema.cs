@@ -11,13 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSosGroupActionLimitSchema : CSosGroupActionSchema, ISchemaClass<CSosGroupActionLimitSchema> {
 
   static CSosGroupActionLimitSchema ISchemaClass<CSosGroupActionLimitSchema>.From(nint handle) => new CSosGroupActionLimitSchemaImpl(handle);
+  static int ISchemaClass<CSosGroupActionLimitSchema>.Size => 24;
 
   
   public ref int MaxCount { get; }
   
   public ref SosActionStopType_t StopType { get; }
   
-  public ref SosActionSortType_t SortType { get; }
+  public ref SosActionLimitSortType_t SortType { get; }
   
   public ref bool StopImmediate { get; }
   

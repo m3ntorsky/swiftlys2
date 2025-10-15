@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseMathlib : ISchemaClass<CPulseMathlib> {
 
   static CPulseMathlib ISchemaClass<CPulseMathlib>.From(nint handle) => new CPulseMathlibImpl(handle);
+  static int ISchemaClass<CPulseMathlib>.Size => 1;
 
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBinaryUpdateNode : CAnimUpdateNodeBase, ISchemaClass<CBinaryUpdateNode> {
 
   static CBinaryUpdateNode ISchemaClass<CBinaryUpdateNode>.From(nint handle) => new CBinaryUpdateNodeImpl(handle);
+  static int ISchemaClass<CBinaryUpdateNode>.Size => 144;
 
   
   public CAnimUpdateNodeRef Child1 { get; }

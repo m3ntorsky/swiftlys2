@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPathParticleRope : CBaseEntity, ISchemaClass<CPathParticleRope> {
 
   static CPathParticleRope ISchemaClass<CPathParticleRope>.From(nint handle) => new CPathParticleRopeImpl(handle);
+  static int ISchemaClass<CPathParticleRope>.Size => 1496;
 
   
   public ref bool StartActive { get; }
@@ -19,7 +20,7 @@ public partial interface CPathParticleRope : CBaseEntity, ISchemaClass<CPathPart
   
   public string EffectName { get; set; }
   
-  public ref CUtlVector<CUtlSymbolLarge> PathNodes_Name { get; }
+  public ref CUtlVector<SchemaUntypedField> PathNodes_Name { get; }
   
   public ref float ParticleSpacing { get; }
   

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTouchExpansionComponent : CEntityComponent, ISchemaClass<CTouchExpansionComponent> {
 
   static CTouchExpansionComponent ISchemaClass<CTouchExpansionComponent>.From(nint handle) => new CTouchExpansionComponentImpl(handle);
+  static int ISchemaClass<CTouchExpansionComponent>.Size => 80;
 
 
 

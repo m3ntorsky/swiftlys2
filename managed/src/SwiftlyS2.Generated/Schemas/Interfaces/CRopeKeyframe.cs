@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRopeKeyframe : CBaseModelEntity, ISchemaClass<CRopeKeyframe> {
 
   static CRopeKeyframe ISchemaClass<CRopeKeyframe>.From(nint handle) => new CRopeKeyframeImpl(handle);
+  static int ISchemaClass<CRopeKeyframe>.Size => 2096;
 
   
   public ref ushort RopeFlags { get; }

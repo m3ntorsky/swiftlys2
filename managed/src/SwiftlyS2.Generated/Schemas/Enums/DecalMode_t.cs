@@ -6,11 +6,15 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 
 public enum DecalMode_t : byte {
 
+ kDecalInvalid = 255,
+
  kDecalBlood = 0,
 
  kDecalCloak = 1,
 
- kDecalMax = 2,
+ kDecalCloakDamage = 2,
+
+ kDecalMax = 3,
 
  kDecalDefault = 0,
 }

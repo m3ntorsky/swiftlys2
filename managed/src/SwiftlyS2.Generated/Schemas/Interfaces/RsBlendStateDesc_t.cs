@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RsBlendStateDesc_t : ISchemaClass<RsBlendStateDesc_t> {
 
   static RsBlendStateDesc_t ISchemaClass<RsBlendStateDesc_t>.From(nint handle) => new RsBlendStateDesc_tImpl(handle);
+  static int ISchemaClass<RsBlendStateDesc_t>.Size => 32;
 
   
   public ref uint SrcBlendBits { get; }

@@ -27,8 +27,8 @@ internal partial class C_OP_RenderModelsImpl : CParticleFunctionRendererImpl, C_
   public ref bool OnlyRenderInEffecsGameOverlay {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC58C7B130293C80E));
   }
-  public ref CUtlVector ModelList {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC58C7B1305FC11B6));
+  public ref CUtlVector<ModelReference_t> ModelList {
+    get => ref _Handle.AsRef<CUtlVector<ModelReference_t>>(Schema.GetOffset(0xC58C7B1305FC11B6));
   }
   public ParticleAttributeIndex_t BodyGroupField {
     get => new ParticleAttributeIndex_tImpl(_Handle + Schema.GetOffset(0xC58C7B13556DEFD4));
@@ -126,8 +126,8 @@ public string ClothEffectName {
   public CPerParticleFloatInput Skin {
     get => new CPerParticleFloatInputImpl(_Handle + Schema.GetOffset(0xC58C7B13E65A22FC));
   }
-  public ref CUtlVector MaterialVars {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC58C7B13FA861D66));
+  public ref CUtlVector<MaterialVariable_t> MaterialVars {
+    get => ref _Handle.AsRef<CUtlVector<MaterialVariable_t>>(Schema.GetOffset(0xC58C7B13FA861D66));
   }
   public CPerParticleFloatInput RenderFilter {
     get => new CPerParticleFloatInputImpl(_Handle + Schema.GetOffset(0xC58C7B13EDE7010D));

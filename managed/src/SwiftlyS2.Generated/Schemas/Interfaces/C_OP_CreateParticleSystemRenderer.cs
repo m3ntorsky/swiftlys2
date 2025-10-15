@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_CreateParticleSystemRenderer : CParticleFunctionRenderer, ISchemaClass<C_OP_CreateParticleSystemRenderer> {
 
   static C_OP_CreateParticleSystemRenderer ISchemaClass<C_OP_CreateParticleSystemRenderer>.From(nint handle) => new C_OP_CreateParticleSystemRendererImpl(handle);
+  static int ISchemaClass<C_OP_CreateParticleSystemRenderer>.Size => 2304;
 
   
   public ref CStrongHandle<InfoForResourceTypeIParticleSystemDefinition> Effect { get; }
   
   public ref EventTypeSelection_t EventType { get; }
   
-  // CUtlLeanVector< CPAssignment_t >
-  public SchemaUntypedField CPs { get; }
+  public ref CUtlLeanVector<CPAssignment_t, int> CPs { get; }
   
   public string ParticleConfig { get; set; }
   

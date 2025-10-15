@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmSyncTrack : ISchemaClass<CNmSyncTrack> {
 
   static CNmSyncTrack ISchemaClass<CNmSyncTrack>.From(nint handle) => new CNmSyncTrackImpl(handle);
+  static int ISchemaClass<CNmSyncTrack>.Size => 176;
 
   
   // CUtlLeanVectorFixedGrowable< CNmSyncTrack::Event_t, 10 >

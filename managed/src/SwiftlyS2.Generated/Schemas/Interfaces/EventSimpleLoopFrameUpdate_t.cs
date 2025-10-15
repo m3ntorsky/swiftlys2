@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EventSimpleLoopFrameUpdate_t : ISchemaClass<EventSimpleLoopFrameUpdate_t> {
 
   static EventSimpleLoopFrameUpdate_t ISchemaClass<EventSimpleLoopFrameUpdate_t>.From(nint handle) => new EventSimpleLoopFrameUpdate_tImpl(handle);
+  static int ISchemaClass<EventSimpleLoopFrameUpdate_t>.Size => 48;
 
   
   public EngineLoopState_t LoopState { get; }

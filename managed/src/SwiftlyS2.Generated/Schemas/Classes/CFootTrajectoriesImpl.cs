@@ -15,8 +15,8 @@ internal partial class CFootTrajectoriesImpl : SchemaClass, CFootTrajectories {
   public CFootTrajectoriesImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Trajectories {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x5D019D277964C78C));
+  public ref CUtlVector<CFootTrajectory> Trajectories {
+    get => ref _Handle.AsRef<CUtlVector<CFootTrajectory>>(Schema.GetOffset(0x5D019D277964C78C));
   }
 
 

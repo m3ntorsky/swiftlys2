@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EngineLoopState_t : ISchemaClass<EngineLoopState_t> {
 
   static EngineLoopState_t ISchemaClass<EngineLoopState_t>.From(nint handle) => new EngineLoopState_tImpl(handle);
+  static int ISchemaClass<EngineLoopState_t>.Size => 40;
 
   
   public ref int PlatWindowWidth { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSosSoundEventGroupSchema : ISchemaClass<CSosSoundEventGroupSchema> {
 
   static CSosSoundEventGroupSchema ISchemaClass<CSosSoundEventGroupSchema>.From(nint handle) => new CSosSoundEventGroupSchemaImpl(handle);
+  static int ISchemaClass<CSosSoundEventGroupSchema>.Size => 112;
 
   
   public ref SosGroupType_t GroupType { get; }

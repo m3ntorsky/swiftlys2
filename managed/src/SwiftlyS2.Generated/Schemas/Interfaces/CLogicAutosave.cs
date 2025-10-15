@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLogicAutosave : CLogicalEntity, ISchemaClass<CLogicAutosave> {
 
   static CLogicAutosave ISchemaClass<CLogicAutosave>.From(nint handle) => new CLogicAutosaveImpl(handle);
+  static int ISchemaClass<CLogicAutosave>.Size => 1280;
 
   
   public ref bool ForceNewLevelUnit { get; }

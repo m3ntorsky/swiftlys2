@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStateNodeTransitionData : ISchemaClass<CStateNodeTransitionData> {
 
   static CStateNodeTransitionData ISchemaClass<CStateNodeTransitionData>.From(nint handle) => new CStateNodeTransitionDataImpl(handle);
+  static int ISchemaClass<CStateNodeTransitionData>.Size => 28;
 
   
   public CBlendCurve Curve { get; }

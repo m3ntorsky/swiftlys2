@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ModelEmbeddedMesh_t : ISchemaClass<ModelEmbeddedMesh_t> {
 
   static ModelEmbeddedMesh_t ISchemaClass<ModelEmbeddedMesh_t>.From(nint handle) => new ModelEmbeddedMesh_tImpl(handle);
+  static int ISchemaClass<ModelEmbeddedMesh_t>.Size => 112;
 
   
   public string Name { get; set; }
@@ -21,14 +22,11 @@ public partial interface ModelEmbeddedMesh_t : ISchemaClass<ModelEmbeddedMesh_t>
   
   public ref int MorphBlock { get; }
   
-  // CUtlVector< ModelMeshBufferData_t >
-  public ref CUtlVector VertexBuffers { get; }
+  public ref CUtlVector<ModelMeshBufferData_t> VertexBuffers { get; }
   
-  // CUtlVector< ModelMeshBufferData_t >
-  public ref CUtlVector IndexBuffers { get; }
+  public ref CUtlVector<ModelMeshBufferData_t> IndexBuffers { get; }
   
-  // CUtlVector< ModelMeshBufferData_t >
-  public ref CUtlVector ToolsBuffers { get; }
+  public ref CUtlVector<ModelMeshBufferData_t> ToolsBuffers { get; }
   
   public ref int VBIBBlock { get; }
   

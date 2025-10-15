@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface EngineCountdownTimer : ISchemaClass<EngineCountdownTimer> {
 
   static EngineCountdownTimer ISchemaClass<EngineCountdownTimer>.From(nint handle) => new EngineCountdownTimerImpl(handle);
+  static int ISchemaClass<EngineCountdownTimer>.Size => 24;
 
   
   public ref float Duration { get; }

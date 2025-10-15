@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_SDFLighting : CParticleFunctionOperator, ISchemaClass<C_OP_SDFLighting> {
 
   static C_OP_SDFLighting ISchemaClass<C_OP_SDFLighting>.From(nint handle) => new C_OP_SDFLightingImpl(handle);
+  static int ISchemaClass<C_OP_SDFLighting>.Size => 488;
 
   
   public ref Vector LightingDir { get; }

@@ -11,15 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFuseProgram : ISchemaClass<CFuseProgram> {
 
   static CFuseProgram ISchemaClass<CFuseProgram>.From(nint handle) => new CFuseProgramImpl(handle);
+  static int ISchemaClass<CFuseProgram>.Size => 80;
 
   
   public ref CUtlVector<byte> ProgramBuffer { get; }
   
-  // CUtlVector< FuseVariableIndex_t >
-  public ref CUtlVector VariablesRead { get; }
+  public ref CUtlVector<FuseVariableIndex_t> VariablesRead { get; }
   
-  // CUtlVector< FuseVariableIndex_t >
-  public ref CUtlVector VariablesWritten { get; }
+  public ref CUtlVector<FuseVariableIndex_t> VariablesWritten { get; }
   
   public ref int MaxTempVarsUsed { get; }
 

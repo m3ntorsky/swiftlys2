@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSMatchStats_t : CSPerRoundStats_t, ISchemaClass<CSMatchStats_t> {
 
   static CSMatchStats_t ISchemaClass<CSMatchStats_t>.From(nint handle) => new CSMatchStats_tImpl(handle);
+  static int ISchemaClass<CSMatchStats_t>.Size => 192;
 
   
   public ref int Enemy5Ks { get; }

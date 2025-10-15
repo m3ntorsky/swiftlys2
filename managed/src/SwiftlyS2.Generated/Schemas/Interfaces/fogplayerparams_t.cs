@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface fogplayerparams_t : ISchemaClass<fogplayerparams_t> {
 
   static fogplayerparams_t ISchemaClass<fogplayerparams_t>.From(nint handle) => new fogplayerparams_tImpl(handle);
+  static int ISchemaClass<fogplayerparams_t>.Size => 64;
 
   
   public ref CHandle<CFogController> Ctrl { get; }

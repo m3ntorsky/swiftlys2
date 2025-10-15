@@ -15,8 +15,8 @@ internal partial class CRenderGroomImpl : SchemaClass, CRenderGroom {
   public CRenderGroomImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Hairs {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC3F698B4E7C4901E));
+  public ref CUtlVector<RenderHairStrandInfo_t> Hairs {
+    get => ref _Handle.AsRef<CUtlVector<RenderHairStrandInfo_t>>(Schema.GetOffset(0xC3F698B4E7C4901E));
   }
   public ref CUtlVector<uint> HairPositionOffsets {
     get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0xC3F698B40BA9FF3E));

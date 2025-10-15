@@ -15,8 +15,8 @@ internal partial class CPulseCell_Outflow_CycleShuffledImpl : CPulseCell_BaseFlo
   public CPulseCell_Outflow_CycleShuffledImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Outputs {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA7823F26A38A89D5));
+  public ref CUtlVector<CPulse_OutflowConnection> Outputs {
+    get => ref _Handle.AsRef<CUtlVector<CPulse_OutflowConnection>>(Schema.GetOffset(0xA7823F26A38A89D5));
   }
 
 

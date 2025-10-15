@@ -18,14 +18,14 @@ internal partial class PhysSoftbodyDesc_tImpl : SchemaClass, PhysSoftbodyDesc_t 
   public ref CUtlVector<uint> ParticleBoneHash {
     get => ref _Handle.AsRef<CUtlVector<uint>>(Schema.GetOffset(0xD390C8BBCC44F471));
   }
-  public ref CUtlVector Particles {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD390C8BB6C0747A4));
+  public ref CUtlVector<RnSoftbodyParticle_t> Particles {
+    get => ref _Handle.AsRef<CUtlVector<RnSoftbodyParticle_t>>(Schema.GetOffset(0xD390C8BB6C0747A4));
   }
-  public ref CUtlVector Springs {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD390C8BB1AB5EB4D));
+  public ref CUtlVector<RnSoftbodySpring_t> Springs {
+    get => ref _Handle.AsRef<CUtlVector<RnSoftbodySpring_t>>(Schema.GetOffset(0xD390C8BB1AB5EB4D));
   }
-  public ref CUtlVector Capsules {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xD390C8BBFC27BB2D));
+  public ref CUtlVector<RnSoftbodyCapsule_t> Capsules {
+    get => ref _Handle.AsRef<CUtlVector<RnSoftbodyCapsule_t>>(Schema.GetOffset(0xD390C8BBFC27BB2D));
   }
   public ref CUtlVector<CTransform> InitPose {
     get => ref _Handle.AsRef<CUtlVector<CTransform>>(Schema.GetOffset(0xD390C8BB5E468732));

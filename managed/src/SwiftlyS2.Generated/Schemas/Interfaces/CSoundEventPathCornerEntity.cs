@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSoundEventPathCornerEntity : CSoundEventEntity, ISchemaClass<CSoundEventPathCornerEntity> {
 
   static CSoundEventPathCornerEntity ISchemaClass<CSoundEventPathCornerEntity>.From(nint handle) => new CSoundEventPathCornerEntityImpl(handle);
+  static int ISchemaClass<CSoundEventPathCornerEntity>.Size => 1624;
 
   
   public string PathCorner { get; set; }
@@ -25,8 +26,7 @@ public partial interface CSoundEventPathCornerEntity : CSoundEventEntity, ISchem
   
   public ref bool Playing { get; }
   
-  // CNetworkUtlVectorBase< SoundeventPathCornerPairNetworked_t >
-  public ref CUtlVector CornerPairsNetworked { get; }
+  public ref CUtlVector<SoundeventPathCornerPairNetworked_t> CornerPairsNetworked { get; }
 
   public void CornerPairsNetworkedUpdated();
 }

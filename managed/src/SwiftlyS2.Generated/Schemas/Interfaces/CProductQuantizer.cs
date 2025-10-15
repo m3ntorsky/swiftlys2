@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CProductQuantizer : ISchemaClass<CProductQuantizer> {
 
   static CProductQuantizer ISchemaClass<CProductQuantizer>.From(nint handle) => new CProductQuantizerImpl(handle);
+  static int ISchemaClass<CProductQuantizer>.Size => 32;
 
   
-  // CUtlVector< CVectorQuantizer >
-  public ref CUtlVector SubQuantizers { get; }
+  public ref CUtlVector<CVectorQuantizer> SubQuantizers { get; }
   
   public ref int Dimensions { get; }
 

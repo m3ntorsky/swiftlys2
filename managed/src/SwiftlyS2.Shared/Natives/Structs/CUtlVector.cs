@@ -1,15 +1,18 @@
 
 using System.Collections;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using SwiftlyS2.Core.Natives;
+using SwiftlyS2.Shared.Misc;
 using SwiftlyS2.Shared.Natives;
+using SwiftlyS2.Shared.Schemas;
 
 [StructLayout(LayoutKind.Sequential, Pack = 8, Size = 24)]
-public struct CUtlVector<T> : IDisposable, IEnumerable<T> where T : unmanaged
+public struct CUtlVector<T> : IDisposable, IEnumerable<T>
 {
     private int _size;
     private CUtlMemory<T> _memory;
+
+    public int ElementSize => SchemaSize.Get<T>();
 
     public CUtlVector(int growSize, int initSize)
     {
@@ -72,28 +75,10 @@ public struct CUtlVector<T> : IDisposable, IEnumerable<T> where T : unmanaged
         _size += count;
     }
 
-    public void ShiftElementsRight(int elem, int num)
-    {
-        int numToMove = _size - elem - num;
-        if (numToMove > 0 && num > 0)
-        {
-            NativeAllocator.Move(_memory.Base + ((elem + num) * Unsafe.SizeOf<T>()), _memory.Base + (elem * Unsafe.SizeOf<T>()), (ulong)(numToMove * Unsafe.SizeOf<T>()));
-        }
-    }
-
-    public void ShiftElementsLeft(int elem, int num)
-    {
-        int numToMove = _size - elem - num;
-        if (numToMove > 0 && num > 0)
-        {
-            NativeAllocator.Move(_memory.Base + (elem * Unsafe.SizeOf<T>()), _memory.Base + ((elem + num) * Unsafe.SizeOf<T>()), (ulong)(numToMove * Unsafe.SizeOf<T>()));
-        }
-    }
-
     public int InsertBeforeIdx(int elem)
     {
         GrowVector(1);
-        ShiftElementsRight(elem, 1);
+        MemoryHelpers.ShiftElementsRight(_memory.Base, elem, 1, _size, ElementSize);
         return elem;
     }
 
@@ -105,7 +90,7 @@ public struct CUtlVector<T> : IDisposable, IEnumerable<T> where T : unmanaged
     public int InsertBefore(int idx, T value)
     {
         GrowVector(1);
-        ShiftElementsRight(idx, 1);
+        MemoryHelpers.ShiftElementsRight(_memory.Base, idx, 1, _size, ElementSize);
         this[idx] = value;
         return idx;
     }
@@ -169,7 +154,7 @@ public struct CUtlVector<T> : IDisposable, IEnumerable<T> where T : unmanaged
         if (_size > 0)
         {
             if (elem != _size - 1)
-                NativeAllocator.Copy(_memory.Base + (elem * Unsafe.SizeOf<T>()), _memory.Base + ((_size - 1) * Unsafe.SizeOf<T>()), (ulong)Unsafe.SizeOf<T>());
+                NativeAllocator.Copy(_memory.Base + (elem * ElementSize), _memory.Base + ((_size - 1) * ElementSize), (ulong)ElementSize);
             --_size;
         }
     }
@@ -204,7 +189,7 @@ public struct CUtlVector<T> : IDisposable, IEnumerable<T> where T : unmanaged
         for (int i = idx; i < idx + count; i++)
             this[i] = default;
 
-        ShiftElementsLeft(idx, count);
+        MemoryHelpers.ShiftElementsLeft(_memory.Base, idx, count, _size, ElementSize);
         _size -= count;
     }
 
@@ -230,7 +215,7 @@ public struct CUtlVector<T> : IDisposable, IEnumerable<T> where T : unmanaged
             return;
 
         this[elem] = default;
-        ShiftElementsLeft(elem, 1);
+        MemoryHelpers.ShiftElementsLeft(_memory.Base, elem, 1, _size, ElementSize);
         --_size;
     }
 
@@ -261,12 +246,4 @@ public struct CUtlVector<T> : IDisposable, IEnumerable<T> where T : unmanaged
     }
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-}
-
-/// <summary>
-/// Unsafe untyped cutlvector.
-/// </summary>
-[StructLayout(LayoutKind.Sequential, Pack = 8, Size = 24)]
-public struct CUtlVector
-{
 }

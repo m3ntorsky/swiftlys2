@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmIKBody : ISchemaClass<CNmIKBody> {
 
   static CNmIKBody ISchemaClass<CNmIKBody>.From(nint handle) => new CNmIKBodyImpl(handle);
+  static int ISchemaClass<CNmIKBody>.Size => 32;
 
   
   public ref float Mass { get; }

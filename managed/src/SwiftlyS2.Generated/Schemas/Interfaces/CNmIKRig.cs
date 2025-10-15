@@ -11,15 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmIKRig : ISchemaClass<CNmIKRig> {
 
   static CNmIKRig ISchemaClass<CNmIKRig>.From(nint handle) => new CNmIKRigImpl(handle);
+  static int ISchemaClass<CNmIKRig>.Size => 56;
 
   
   public ref CStrongHandle<InfoForResourceTypeCNmSkeleton> Skeleton { get; }
   
-  // CUtlVector< CNmIKBody >
-  public ref CUtlVector Bodies { get; }
+  public ref CUtlVector<CNmIKBody> Bodies { get; }
   
-  // CUtlVector< CNmIKJoint >
-  public ref CUtlVector Joints { get; }
+  public ref CUtlVector<CNmIKJoint> Joints { get; }
 
 
 }

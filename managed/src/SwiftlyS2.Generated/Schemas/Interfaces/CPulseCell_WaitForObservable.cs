@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_WaitForObservable : CPulseCell_BaseYieldingInflow, ISchemaClass<CPulseCell_WaitForObservable> {
 
   static CPulseCell_WaitForObservable ISchemaClass<CPulseCell_WaitForObservable>.From(nint handle) => new CPulseCell_WaitForObservableImpl(handle);
+  static int ISchemaClass<CPulseCell_WaitForObservable>.Size => 264;
 
   
   public PulseObservableBoolExpression_t Condition { get; }

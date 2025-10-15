@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleBindingRealPulse : CParticleCollectionBindingInstance, ISchemaClass<CParticleBindingRealPulse> {
 
   static CParticleBindingRealPulse ISchemaClass<CParticleBindingRealPulse>.From(nint handle) => new CParticleBindingRealPulseImpl(handle);
+  static int ISchemaClass<CParticleBindingRealPulse>.Size => 312;
 
 
 

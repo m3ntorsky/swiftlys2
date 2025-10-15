@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleFunctionEmitter : CParticleFunction, ISchemaClass<CParticleFunctionEmitter> {
 
   static CParticleFunctionEmitter ISchemaClass<CParticleFunctionEmitter>.From(nint handle) => new CParticleFunctionEmitterImpl(handle);
+  static int ISchemaClass<CParticleFunctionEmitter>.Size => 472;
 
   
   public ref int EmitterIndex { get; }

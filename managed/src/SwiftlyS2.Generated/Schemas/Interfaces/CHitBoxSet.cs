@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CHitBoxSet : ISchemaClass<CHitBoxSet> {
 
   static CHitBoxSet ISchemaClass<CHitBoxSet>.From(nint handle) => new CHitBoxSetImpl(handle);
+  static int ISchemaClass<CHitBoxSet>.Size => 48;
 
   
   public string Name { get; set; }
   
   public ref uint NameHash { get; }
   
-  // CUtlVector< CHitBox >
-  public ref CUtlVector HitBoxes { get; }
+  public ref CUtlVector<CHitBox> HitBoxes { get; }
   
   public string SourceFilename { get; set; }
 

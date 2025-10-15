@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPathSimpleAPI : ISchemaClass<CPathSimpleAPI> {
 
   static CPathSimpleAPI ISchemaClass<CPathSimpleAPI>.From(nint handle) => new CPathSimpleAPIImpl(handle);
+  static int ISchemaClass<CPathSimpleAPI>.Size => 8;
 
 
 

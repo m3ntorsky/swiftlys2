@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSeqSynthAnimDesc : ISchemaClass<CSeqSynthAnimDesc> {
 
   static CSeqSynthAnimDesc ISchemaClass<CSeqSynthAnimDesc>.From(nint handle) => new CSeqSynthAnimDescImpl(handle);
+  static int ISchemaClass<CSeqSynthAnimDesc>.Size => 64;
 
   
   public ref CBufferString Name { get; }
@@ -23,8 +24,7 @@ public partial interface CSeqSynthAnimDesc : ISchemaClass<CSeqSynthAnimDesc> {
   
   public ref short LocalBoneMask { get; }
   
-  // CUtlVector< CAnimActivity >
-  public ref CUtlVector ActivityArray { get; }
+  public ref CUtlVector<CAnimActivity> ActivityArray { get; }
 
 
 }

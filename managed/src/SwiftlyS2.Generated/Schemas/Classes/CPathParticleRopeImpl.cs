@@ -28,8 +28,8 @@ internal partial class CPathParticleRopeImpl : CBaseEntityImpl, CPathParticleRop
     }
     set => Schema.SetString(_Handle, 0xBC0C741B82D2BFC7, value);
   } 
-  public ref CUtlVector<CUtlSymbolLarge> PathNodes_Name {
-    get => ref _Handle.AsRef<CUtlVector<CUtlSymbolLarge>>(Schema.GetOffset(0xBC0C741BFFAFA92F));
+  public ref CUtlVector<SchemaUntypedField> PathNodes_Name {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0xBC0C741BFFAFA92F));
   }
   public ref float ParticleSpacing {
     get => ref _Handle.AsRef<float>(Schema.GetOffset(0xBC0C741B66CCF542));

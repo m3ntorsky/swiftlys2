@@ -18,8 +18,8 @@ internal partial class CNmSkeletonImpl : SchemaClass, CNmSkeleton {
   public ref CGlobalSymbol ID {
     get => ref _Handle.AsRef<CGlobalSymbol>(Schema.GetOffset(0xC923251495066900));
   }
-  public SchemaUntypedField BoneIDs {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC92325140909C443));
+  public ref CUtlLeanVector<CGlobalSymbol, int> BoneIDs {
+    get => ref _Handle.AsRef<CUtlLeanVector<CGlobalSymbol, int>>(Schema.GetOffset(0xC92325140909C443));
   }
   public ref CUtlVector<int> ParentIndices {
     get => ref _Handle.AsRef<CUtlVector<int>>(Schema.GetOffset(0xC923251480CFB2AA));
@@ -33,11 +33,11 @@ internal partial class CNmSkeletonImpl : SchemaClass, CNmSkeleton {
   public ref int NumBonesToSampleAtLowLOD {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC9232514813C419D));
   }
-  public SchemaUntypedField MaskDefinitions {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC92325147196574D));
+  public ref CUtlLeanVector<NmBoneMaskSetDefinition_t, int> MaskDefinitions {
+    get => ref _Handle.AsRef<CUtlLeanVector<NmBoneMaskSetDefinition_t, int>>(Schema.GetOffset(0xC92325147196574D));
   }
-  public SchemaUntypedField SecondarySkeletons {
-    get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xC9232514782F396B));
+  public ref CUtlLeanVector<CNmSkeleton__SecondarySkeleton_t, int> SecondarySkeletons {
+    get => ref _Handle.AsRef<CUtlLeanVector<CNmSkeleton__SecondarySkeleton_t, int>>(Schema.GetOffset(0xC9232514782F396B));
   }
   public ref bool IsPropSkeleton {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC9232514FD7D351F));

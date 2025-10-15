@@ -15,14 +15,14 @@ internal partial class CAnimEncodeDifferenceImpl : SchemaClass, CAnimEncodeDiffe
   public CAnimEncodeDifferenceImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector BoneArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x65474B2E80273F0C));
+  public ref CUtlVector<CAnimBoneDifference> BoneArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimBoneDifference>>(Schema.GetOffset(0x65474B2E80273F0C));
   }
-  public ref CUtlVector MorphArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x65474B2E8C6827E6));
+  public ref CUtlVector<CAnimMorphDifference> MorphArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimMorphDifference>>(Schema.GetOffset(0x65474B2E8C6827E6));
   }
-  public ref CUtlVector UserArray {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x65474B2EFBDB0C13));
+  public ref CUtlVector<CAnimUserDifference> UserArray {
+    get => ref _Handle.AsRef<CUtlVector<CAnimUserDifference>>(Schema.GetOffset(0x65474B2EFBDB0C13));
   }
   public ref CUtlVector<byte> HasRotationBitArray {
     get => ref _Handle.AsRef<CUtlVector<byte>>(Schema.GetOffset(0x65474B2E6AD7DEA5));

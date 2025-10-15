@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNetworkOriginQuantizedVector : ISchemaClass<CNetworkOriginQuantizedVector> {
 
   static CNetworkOriginQuantizedVector ISchemaClass<CNetworkOriginQuantizedVector>.From(nint handle) => new CNetworkOriginQuantizedVectorImpl(handle);
+  static int ISchemaClass<CNetworkOriginQuantizedVector>.Size => 40;
 
   
   public ref CNetworkedQuantizedFloat X { get; }

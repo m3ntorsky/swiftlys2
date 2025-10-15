@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotorController : ISchemaClass<CMotorController> {
 
   static CMotorController ISchemaClass<CMotorController>.From(nint handle) => new CMotorControllerImpl(handle);
+  static int ISchemaClass<CMotorController>.Size => 32;
 
   
   public ref float Speed { get; }

@@ -11,15 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CStateMachineUpdateNode : CAnimUpdateNodeBase, ISchemaClass<CStateMachineUpdateNode> {
 
   static CStateMachineUpdateNode ISchemaClass<CStateMachineUpdateNode>.From(nint handle) => new CStateMachineUpdateNodeImpl(handle);
+  static int ISchemaClass<CStateMachineUpdateNode>.Size => 256;
 
   
   public CAnimStateMachineUpdater StateMachine { get; }
   
-  // CUtlVector< CStateNodeStateData >
-  public ref CUtlVector StateData { get; }
+  public ref CUtlVector<CStateNodeStateData> StateData { get; }
   
-  // CUtlVector< CStateNodeTransitionData >
-  public ref CUtlVector TransitionData { get; }
+  public ref CUtlVector<CStateNodeTransitionData> TransitionData { get; }
   
   public ref bool BlockWaningTags { get; }
   

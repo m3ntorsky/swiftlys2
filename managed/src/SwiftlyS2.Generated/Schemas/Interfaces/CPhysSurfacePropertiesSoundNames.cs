@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysSurfacePropertiesSoundNames : ISchemaClass<CPhysSurfacePropertiesSoundNames> {
 
   static CPhysSurfacePropertiesSoundNames ISchemaClass<CPhysSurfacePropertiesSoundNames>.From(nint handle) => new CPhysSurfacePropertiesSoundNamesImpl(handle);
+  static int ISchemaClass<CPhysSurfacePropertiesSoundNames>.Size => 96;
 
   
   public string ImpactSoft { get; set; }

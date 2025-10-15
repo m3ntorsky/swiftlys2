@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeFitMatrix_t : ISchemaClass<FeFitMatrix_t> {
 
   static FeFitMatrix_t ISchemaClass<FeFitMatrix_t>.From(nint handle) => new FeFitMatrix_tImpl(handle);
+  static int ISchemaClass<FeFitMatrix_t>.Size => 64;
 
   
   public ref CTransform Bone { get; }

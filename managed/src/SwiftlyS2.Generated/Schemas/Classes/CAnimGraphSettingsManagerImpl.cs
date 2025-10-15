@@ -15,8 +15,8 @@ internal partial class CAnimGraphSettingsManagerImpl : SchemaClass, CAnimGraphSe
   public CAnimGraphSettingsManagerImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector SettingsGroups {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x53B994DB178D6408));
+  public ref CUtlVector<SchemaUntypedField> SettingsGroups {
+    get => ref _Handle.AsRef<CUtlVector<SchemaUntypedField>>(Schema.GetOffset(0x53B994DB178D6408));
   }
 
 

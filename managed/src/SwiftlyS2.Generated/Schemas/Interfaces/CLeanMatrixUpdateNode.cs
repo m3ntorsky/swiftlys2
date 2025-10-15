@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLeanMatrixUpdateNode : CLeafUpdateNode, ISchemaClass<CLeanMatrixUpdateNode> {
 
   static CLeanMatrixUpdateNode ISchemaClass<CLeanMatrixUpdateNode>.From(nint handle) => new CLeanMatrixUpdateNodeImpl(handle);
+  static int ISchemaClass<CLeanMatrixUpdateNode>.Size => 240;
 
   
   // int32[3]

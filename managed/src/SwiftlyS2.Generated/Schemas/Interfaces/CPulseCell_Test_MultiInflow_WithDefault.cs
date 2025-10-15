@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Test_MultiInflow_WithDefault : CPulseCell_BaseFlow, ISchemaClass<CPulseCell_Test_MultiInflow_WithDefault> {
 
   static CPulseCell_Test_MultiInflow_WithDefault ISchemaClass<CPulseCell_Test_MultiInflow_WithDefault>.From(nint handle) => new CPulseCell_Test_MultiInflow_WithDefaultImpl(handle);
+  static int ISchemaClass<CPulseCell_Test_MultiInflow_WithDefault>.Size => 72;
 
 
 

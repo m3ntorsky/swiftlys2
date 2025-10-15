@@ -15,8 +15,8 @@ internal partial class CSolveIKChainUpdateNodeImpl : CUnaryUpdateNodeImpl, CSolv
   public CSolveIKChainUpdateNodeImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector TargetHandles {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xE78F1D1F98E248F7));
+  public ref CUtlVector<CSolveIKTargetHandle_t> TargetHandles {
+    get => ref _Handle.AsRef<CUtlVector<CSolveIKTargetHandle_t>>(Schema.GetOffset(0xE78F1D1F98E248F7));
   }
   public SolveIKChainPoseOpFixedSettings_t OpFixedData {
     get => new SolveIKChainPoseOpFixedSettings_tImpl(_Handle + Schema.GetOffset(0xE78F1D1F6960AF8C));

@@ -45,8 +45,8 @@ internal partial class ModelMeshBufferData_tImpl : SchemaClass, ModelMeshBufferD
   public ref bool CreatePooledBuffer {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xA75611C2EFB854B4));
   }
-  public ref CUtlVector InputLayoutFields {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA75611C2FDECA2D8));
+  public ref CUtlVector<RenderInputLayoutField_t> InputLayoutFields {
+    get => ref _Handle.AsRef<CUtlVector<RenderInputLayoutField_t>>(Schema.GetOffset(0xA75611C2FDECA2D8));
   }
 
 

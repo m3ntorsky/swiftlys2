@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RemapTransformVisibilityToVector : CParticleFunctionOperator, ISchemaClass<C_OP_RemapTransformVisibilityToVector> {
 
   static C_OP_RemapTransformVisibilityToVector ISchemaClass<C_OP_RemapTransformVisibilityToVector>.From(nint handle) => new C_OP_RemapTransformVisibilityToVectorImpl(handle);
+  static int ISchemaClass<C_OP_RemapTransformVisibilityToVector>.Size => 616;
 
   
   public ref ParticleSetMethod_t SetMethod { get; }

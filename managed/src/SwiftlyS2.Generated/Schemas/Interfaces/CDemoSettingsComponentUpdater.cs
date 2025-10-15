@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDemoSettingsComponentUpdater : CAnimComponentUpdater, ISchemaClass<CDemoSettingsComponentUpdater> {
 
   static CDemoSettingsComponentUpdater ISchemaClass<CDemoSettingsComponentUpdater>.From(nint handle) => new CDemoSettingsComponentUpdaterImpl(handle);
+  static int ISchemaClass<CDemoSettingsComponentUpdater>.Size => 176;
 
   
   public CAnimDemoCaptureSettings Settings { get; }

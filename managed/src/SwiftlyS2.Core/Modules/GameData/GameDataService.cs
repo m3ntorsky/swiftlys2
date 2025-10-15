@@ -104,7 +104,7 @@ internal class GameDataService : IGameDataService {
     return NativeOffsets.Exists(offsetName);
   }
 
-  public nint GetOffset(string offsetName) {
+  public int GetOffset(string offsetName) {
     if (_Offsets.TryGetValue(offsetName, out var offset)) {
       return offset;
     }

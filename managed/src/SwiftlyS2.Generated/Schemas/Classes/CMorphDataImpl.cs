@@ -22,8 +22,8 @@ internal partial class CMorphDataImpl : SchemaClass, CMorphData {
     }
     set => Schema.SetString(_Handle, 0x603F8C4D8F5786, value);
   } 
-  public ref CUtlVector MorphRectDatas {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x603F8CB92C9674));
+  public ref CUtlVector<CMorphRectData> MorphRectDatas {
+    get => ref _Handle.AsRef<CUtlVector<CMorphRectData>>(Schema.GetOffset(0x603F8CB92C9674));
   }
 
 

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMorphConstraint : CBaseConstraint, ISchemaClass<CMorphConstraint> {
 
   static CMorphConstraint ISchemaClass<CMorphConstraint>.From(nint handle) => new CMorphConstraintImpl(handle);
+  static int ISchemaClass<CMorphConstraint>.Size => 128;
 
   
   public string TargetMorph { get; set; }

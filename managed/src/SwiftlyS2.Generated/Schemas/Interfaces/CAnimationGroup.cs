@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimationGroup : ISchemaClass<CAnimationGroup> {
 
   static CAnimationGroup ISchemaClass<CAnimationGroup>.From(nint handle) => new CAnimationGroupImpl(handle);
+  static int ISchemaClass<CAnimationGroup>.Size => 328;
 
   
   public ref uint Flags { get; }
@@ -27,8 +28,7 @@ public partial interface CAnimationGroup : ISchemaClass<CAnimationGroup> {
   
   public ref CUtlVector<CBufferString> Scripts { get; }
   
-  // CUtlVector< CStrongHandleVoid >
-  public ref CUtlVector AdditionalExtRefs { get; }
+  public ref CUtlVector<SchemaUntypedField> AdditionalExtRefs { get; }
 
 
 }

@@ -15,8 +15,8 @@ internal partial class SolveIKChainPoseOpFixedSettings_tImpl : SchemaClass, Solv
   public SolveIKChainPoseOpFixedSettings_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector ChainsToSolveData {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x983BF8BD94B979E5));
+  public ref CUtlVector<ChainToSolveData_t> ChainsToSolveData {
+    get => ref _Handle.AsRef<CUtlVector<ChainToSolveData_t>>(Schema.GetOffset(0x983BF8BD94B979E5));
   }
 
 

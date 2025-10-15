@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSeqScaleSet : ISchemaClass<CSeqScaleSet> {
 
   static CSeqScaleSet ISchemaClass<CSeqScaleSet>.From(nint handle) => new CSeqScaleSetImpl(handle);
+  static int ISchemaClass<CSeqScaleSet>.Size => 80;
 
   
   public ref CBufferString Name { get; }

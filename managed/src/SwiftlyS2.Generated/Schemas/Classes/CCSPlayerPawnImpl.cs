@@ -134,12 +134,6 @@ public string LastPlaceName {
   public ref bool IsBuyMenuOpen {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AABFBCDD8EC));
   }
-  public ref CTransform XLastHeadBoneTransform {
-    get => ref _Handle.AsRef<CTransform>(Schema.GetOffset(0xC7614AAB83865E39));
-  }
-  public ref bool LastHeadBoneTransformIsValid {
-    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xC7614AAB41218523));
-  }
   public GameTime_t LastLandTime {
     get => new GameTime_tImpl(_Handle + Schema.GetOffset(0xC7614AAB21F4A3D1));
   }
@@ -396,8 +390,8 @@ public ISchemaFixedArray<Vector> ThrowPositionHistory {
 public ISchemaFixedArray<Vector> VelocityHistory {
     get => new SchemaFixedArray<Vector>(_Handle, 0xC7614AAB24AFD9B2, 2, 12, 4);
   }
-  public ref CUtlVector PredictedDamageTags {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC7614AAB2CCF5943));
+  public ref CUtlVector<PredictedDamageTag_t> PredictedDamageTags {
+    get => ref _Handle.AsRef<CUtlVector<PredictedDamageTag_t>>(Schema.GetOffset(0xC7614AAB2CCF5943));
   }
   public ref int HighestAppliedDamageTagTick {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0xC7614AAB1703141A));

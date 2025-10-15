@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCSmartProp : ISchemaClass<InfoForResourceTypeCSmartProp> {
 
   static InfoForResourceTypeCSmartProp ISchemaClass<InfoForResourceTypeCSmartProp>.From(nint handle) => new InfoForResourceTypeCSmartPropImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCSmartProp>.Size => 1;
 
 
 

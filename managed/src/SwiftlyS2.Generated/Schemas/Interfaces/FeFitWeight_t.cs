@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface FeFitWeight_t : ISchemaClass<FeFitWeight_t> {
 
   static FeFitWeight_t ISchemaClass<FeFitWeight_t>.From(nint handle) => new FeFitWeight_tImpl(handle);
+  static int ISchemaClass<FeFitWeight_t>.Size => 8;
 
   
   public ref float Weight { get; }

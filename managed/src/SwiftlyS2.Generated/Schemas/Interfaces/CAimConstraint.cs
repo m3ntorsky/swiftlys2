@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAimConstraint : CBaseConstraint, ISchemaClass<CAimConstraint> {
 
   static CAimConstraint ISchemaClass<CAimConstraint>.From(nint handle) => new CAimConstraintImpl(handle);
+  static int ISchemaClass<CAimConstraint>.Size => 128;
 
   
   public ref Quaternion AimOffset { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCMorphSetData : ISchemaClass<InfoForResourceTypeCMorphSetData> {
 
   static InfoForResourceTypeCMorphSetData ISchemaClass<InfoForResourceTypeCMorphSetData>.From(nint handle) => new InfoForResourceTypeCMorphSetDataImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCMorphSetData>.Size => 1;
 
 
 

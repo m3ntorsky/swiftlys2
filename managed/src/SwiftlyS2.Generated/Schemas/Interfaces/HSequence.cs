@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface HSequence : ISchemaClass<HSequence> {
 
   static HSequence ISchemaClass<HSequence>.From(nint handle) => new HSequenceImpl(handle);
+  static int ISchemaClass<HSequence>.Size => 4;
 
   
   public ref int Value { get; }

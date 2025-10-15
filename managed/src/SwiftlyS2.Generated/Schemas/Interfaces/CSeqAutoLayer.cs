@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSeqAutoLayer : ISchemaClass<CSeqAutoLayer> {
 
   static CSeqAutoLayer ISchemaClass<CSeqAutoLayer>.From(nint handle) => new CSeqAutoLayerImpl(handle);
+  static int ISchemaClass<CSeqAutoLayer>.Size => 28;
 
   
   public ref short LocalReference { get; }

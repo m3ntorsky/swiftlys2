@@ -33,8 +33,8 @@ internal partial class ClutterSceneObject_tImpl : SchemaClass, ClutterSceneObjec
   public ref CUtlVector<Color> InstanceTintSrgb {
     get => ref _Handle.AsRef<CUtlVector<Color>>(Schema.GetOffset(0xAE8D15369EE1C08B));
   }
-  public ref CUtlVector Tiles {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xAE8D15361FD2CAEE));
+  public ref CUtlVector<ClutterTile_t> Tiles {
+    get => ref _Handle.AsRef<CUtlVector<ClutterTile_t>>(Schema.GetOffset(0xAE8D15361FD2CAEE));
   }
   public ref CStrongHandle<InfoForResourceTypeCModel> RenderableModel {
     get => ref _Handle.AsRef<CStrongHandle<InfoForResourceTypeCModel>>(Schema.GetOffset(0xAE8D15362AEEFA82));

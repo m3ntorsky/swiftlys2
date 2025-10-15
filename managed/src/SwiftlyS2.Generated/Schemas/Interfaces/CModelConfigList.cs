@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CModelConfigList : ISchemaClass<CModelConfigList> {
 
   static CModelConfigList ISchemaClass<CModelConfigList>.From(nint handle) => new CModelConfigListImpl(handle);
+  static int ISchemaClass<CModelConfigList>.Size => 32;
 
   
   public ref bool HideMaterialGroupInTools { get; }

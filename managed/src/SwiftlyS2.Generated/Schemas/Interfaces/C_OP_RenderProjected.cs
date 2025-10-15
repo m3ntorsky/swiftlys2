@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_RenderProjected : CParticleFunctionRenderer, ISchemaClass<C_OP_RenderProjected> {
 
   static C_OP_RenderProjected ISchemaClass<C_OP_RenderProjected>.From(nint handle) => new C_OP_RenderProjectedImpl(handle);
+  static int ISchemaClass<C_OP_RenderProjected>.Size => 3848;
 
   
   public ref bool ProjectCharacter { get; }
@@ -27,8 +28,7 @@ public partial interface C_OP_RenderProjected : CParticleFunctionRenderer, ISche
   
   public ref float MaxProjectionDepth { get; }
   
-  // CUtlVector< RenderProjectedMaterial_t >
-  public ref CUtlVector ProjectedMaterials { get; }
+  public ref CUtlVector<RenderProjectedMaterial_t> ProjectedMaterials { get; }
   
   public CPerParticleFloatInput MaterialSelection { get; }
   
@@ -36,8 +36,7 @@ public partial interface C_OP_RenderProjected : CParticleFunctionRenderer, ISche
   
   public ref bool OrientToNormal { get; }
   
-  // CUtlVector< MaterialVariable_t >
-  public ref CUtlVector MaterialVars { get; }
+  public ref CUtlVector<MaterialVariable_t> MaterialVars { get; }
   
   public CParticleCollectionFloatInput RadiusScale { get; }
   

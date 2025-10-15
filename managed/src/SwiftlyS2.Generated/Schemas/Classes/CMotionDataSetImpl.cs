@@ -15,8 +15,8 @@ internal partial class CMotionDataSetImpl : SchemaClass, CMotionDataSet {
   public CMotionDataSetImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Groups {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x8AC1A050641FFE0D));
+  public ref CUtlVector<CMotionGraphGroup> Groups {
+    get => ref _Handle.AsRef<CUtlVector<CMotionGraphGroup>>(Schema.GetOffset(0x8AC1A050641FFE0D));
   }
   public ref int DimensionCount {
     get => ref _Handle.AsRef<int>(Schema.GetOffset(0x8AC1A05036656C8E));

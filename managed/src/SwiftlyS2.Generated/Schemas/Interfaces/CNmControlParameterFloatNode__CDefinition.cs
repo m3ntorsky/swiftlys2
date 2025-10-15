@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmControlParameterFloatNode__CDefinition : CNmFloatValueNode__CDefinition, ISchemaClass<CNmControlParameterFloatNode__CDefinition> {
 
   static CNmControlParameterFloatNode__CDefinition ISchemaClass<CNmControlParameterFloatNode__CDefinition>.From(nint handle) => new CNmControlParameterFloatNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmControlParameterFloatNode__CDefinition>.Size => 16;
 
 
 

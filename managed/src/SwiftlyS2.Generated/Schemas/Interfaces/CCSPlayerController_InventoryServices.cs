@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayerController_InventoryServices : CPlayerControllerComponent, ISchemaClass<CCSPlayerController_InventoryServices> {
 
   static CCSPlayerController_InventoryServices ISchemaClass<CCSPlayerController_InventoryServices>.From(nint handle) => new CCSPlayerController_InventoryServicesImpl(handle);
+  static int ISchemaClass<CCSPlayerController_InventoryServices>.Size => 4064;
 
   
   public ref ushort MusicID { get; }
@@ -31,8 +32,7 @@ public partial interface CCSPlayerController_InventoryServices : CPlayerControll
   
   public ref ulong CurrentLoadoutHash { get; }
   
-  // CUtlVectorEmbeddedNetworkVar< ServerAuthoritativeWeaponSlot_t >
-  public ref CUtlVector ServerAuthoritativeWeaponSlots { get; }
+  public ref CUtlVector<ServerAuthoritativeWeaponSlot_t> ServerAuthoritativeWeaponSlots { get; }
 
   public void MusicIDUpdated();
   public void RankUpdated();

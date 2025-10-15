@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RenderProjectedMaterial_t : ISchemaClass<RenderProjectedMaterial_t> {
 
   static RenderProjectedMaterial_t ISchemaClass<RenderProjectedMaterial_t>.From(nint handle) => new RenderProjectedMaterial_tImpl(handle);
+  static int ISchemaClass<RenderProjectedMaterial_t>.Size => 8;
 
   
   public ref CStrongHandle<InfoForResourceTypeIMaterial2> Material { get; }

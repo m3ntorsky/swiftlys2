@@ -11,15 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionGraphGroup : ISchemaClass<CMotionGraphGroup> {
 
   static CMotionGraphGroup ISchemaClass<CMotionGraphGroup>.From(nint handle) => new CMotionGraphGroupImpl(handle);
+  static int ISchemaClass<CMotionGraphGroup>.Size => 264;
 
   
   public CMotionSearchDB SearchDB { get; }
   
-  // CUtlVector< CSmartPtr< CMotionGraph > >
-  public ref CUtlVector MotionGraphs { get; }
+  public ref CUtlVector<SchemaUntypedField> MotionGraphs { get; }
   
-  // CUtlVector< CMotionGraphConfig >
-  public ref CUtlVector MotionGraphConfigs { get; }
+  public ref CUtlVector<CMotionGraphConfig> MotionGraphConfigs { get; }
   
   public ref CUtlVector<int> SampleToConfig { get; }
   

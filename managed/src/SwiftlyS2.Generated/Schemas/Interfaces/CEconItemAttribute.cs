@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEconItemAttribute : ISchemaClass<CEconItemAttribute> {
 
   static CEconItemAttribute ISchemaClass<CEconItemAttribute>.From(nint handle) => new CEconItemAttributeImpl(handle);
+  static int ISchemaClass<CEconItemAttribute>.Size => 72;
 
   
   public ref ushort AttributeDefinitionIndex { get; }

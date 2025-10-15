@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlayer_ObserverServices : CPlayerPawnComponent, ISchemaClass<CPlayer_ObserverServices> {
 
   static CPlayer_ObserverServices ISchemaClass<CPlayer_ObserverServices>.From(nint handle) => new CPlayer_ObserverServicesImpl(handle);
+  static int ISchemaClass<CPlayer_ObserverServices>.Size => 80;
 
   
   public ref byte ObserverMode { get; }

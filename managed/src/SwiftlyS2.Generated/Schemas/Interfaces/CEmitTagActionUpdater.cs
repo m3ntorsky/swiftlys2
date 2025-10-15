@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEmitTagActionUpdater : CAnimActionUpdater, ISchemaClass<CEmitTagActionUpdater> {
 
   static CEmitTagActionUpdater ISchemaClass<CEmitTagActionUpdater>.From(nint handle) => new CEmitTagActionUpdaterImpl(handle);
+  static int ISchemaClass<CEmitTagActionUpdater>.Size => 32;
 
   
   public ref int TagIndex { get; }

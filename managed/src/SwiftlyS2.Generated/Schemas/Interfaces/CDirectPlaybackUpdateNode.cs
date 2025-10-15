@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDirectPlaybackUpdateNode : CUnaryUpdateNode, ISchemaClass<CDirectPlaybackUpdateNode> {
 
   static CDirectPlaybackUpdateNode ISchemaClass<CDirectPlaybackUpdateNode>.From(nint handle) => new CDirectPlaybackUpdateNodeImpl(handle);
+  static int ISchemaClass<CDirectPlaybackUpdateNode>.Size => 144;
 
   
   public ref bool FinishEarly { get; }
   
   public ref bool ResetOnFinish { get; }
   
-  // CUtlVector< CDirectPlaybackTagData >
-  public ref CUtlVector AllTags { get; }
+  public ref CUtlVector<CDirectPlaybackTagData> AllTags { get; }
 
 
 }

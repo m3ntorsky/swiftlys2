@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnHull_t : ISchemaClass<RnHull_t> {
 
   static RnHull_t ISchemaClass<RnHull_t>.From(nint handle) => new RnHull_tImpl(handle);
+  static int ISchemaClass<RnHull_t>.Size => 248;
 
   
   public ref Vector Centroid { get; }
@@ -27,19 +28,15 @@ public partial interface RnHull_t : ISchemaClass<RnHull_t> {
   
   public ref float SurfaceArea { get; }
   
-  // CUtlVector< RnVertex_t >
-  public ref CUtlVector Vertices { get; }
+  public ref CUtlVector<RnVertex_t> Vertices { get; }
   
   public ref CUtlVector<Vector> VertexPositions { get; }
   
-  // CUtlVector< RnHalfEdge_t >
-  public ref CUtlVector Edges { get; }
+  public ref CUtlVector<RnHalfEdge_t> Edges { get; }
   
-  // CUtlVector< RnFace_t >
-  public ref CUtlVector Faces { get; }
+  public ref CUtlVector<RnFace_t> Faces { get; }
   
-  // CUtlVector< RnPlane_t >
-  public ref CUtlVector FacePlanes { get; }
+  public ref CUtlVector<RnPlane_t> FacePlanes { get; }
   
   public ref uint Flags { get; }
   

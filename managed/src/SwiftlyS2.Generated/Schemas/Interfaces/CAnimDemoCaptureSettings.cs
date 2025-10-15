@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimDemoCaptureSettings : ISchemaClass<CAnimDemoCaptureSettings> {
 
   static CAnimDemoCaptureSettings ISchemaClass<CAnimDemoCaptureSettings>.From(nint handle) => new CAnimDemoCaptureSettingsImpl(handle);
+  static int ISchemaClass<CAnimDemoCaptureSettings>.Size => 128;
 
   
   public ref Vector2D ErrorRangeSplineRotation { get; }
@@ -39,11 +40,9 @@ public partial interface CAnimDemoCaptureSettings : ISchemaClass<CAnimDemoCaptur
   
   public ref EDemoBoneSelectionMode BoneSelectionMode { get; }
   
-  // CUtlVector< BoneDemoCaptureSettings_t >
-  public ref CUtlVector Bones { get; }
+  public ref CUtlVector<BoneDemoCaptureSettings_t> Bones { get; }
   
-  // CUtlVector< IKDemoCaptureSettings_t >
-  public ref CUtlVector IkChains { get; }
+  public ref CUtlVector<IKDemoCaptureSettings_t> IkChains { get; }
 
 
 }

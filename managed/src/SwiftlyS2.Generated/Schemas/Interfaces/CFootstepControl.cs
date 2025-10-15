@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootstepControl : CBaseTrigger, ISchemaClass<CFootstepControl> {
 
   static CFootstepControl ISchemaClass<CFootstepControl>.From(nint handle) => new CFootstepControlImpl(handle);
+  static int ISchemaClass<CFootstepControl>.Size => 2488;
 
   
   public string Source { get; set; }

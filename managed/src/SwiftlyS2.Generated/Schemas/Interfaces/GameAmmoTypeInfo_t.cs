@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface GameAmmoTypeInfo_t : AmmoTypeInfo_t, ISchemaClass<GameAmmoTypeInfo_t> {
 
   static GameAmmoTypeInfo_t ISchemaClass<GameAmmoTypeInfo_t>.From(nint handle) => new GameAmmoTypeInfo_tImpl(handle);
+  static int ISchemaClass<GameAmmoTypeInfo_t>.Size => 80;
 
   
   public ref int BuySize { get; }

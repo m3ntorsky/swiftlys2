@@ -18,8 +18,8 @@ internal partial class CMotionGraphImpl : SchemaClass, CMotionGraph {
   public CParamSpanUpdater ParamSpans {
     get => new CParamSpanUpdaterImpl(_Handle + Schema.GetOffset(0xA24822FCDAC91553));
   }
-  public ref CUtlVector Tags {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xA24822FCB46C8540));
+  public ref CUtlVector<TagSpan_t> Tags {
+    get => ref _Handle.AsRef<CUtlVector<TagSpan_t>>(Schema.GetOffset(0xA24822FCB46C8540));
   }
   public SchemaUntypedField RootNode {
     get => new SchemaUntypedField(_Handle + Schema.GetOffset(0xA24822FC8BB07023));

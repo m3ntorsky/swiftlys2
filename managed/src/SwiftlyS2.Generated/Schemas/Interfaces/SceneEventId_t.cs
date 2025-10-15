@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface SceneEventId_t : ISchemaClass<SceneEventId_t> {
 
   static SceneEventId_t ISchemaClass<SceneEventId_t>.From(nint handle) => new SceneEventId_tImpl(handle);
+  static int ISchemaClass<SceneEventId_t>.Size => 4;
 
   
   public ref uint Value { get; }

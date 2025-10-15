@@ -11,12 +11,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CDynamicNavConnectionsVolume : CTriggerMultiple, ISchemaClass<CDynamicNavConnectionsVolume> {
 
   static CDynamicNavConnectionsVolume ISchemaClass<CDynamicNavConnectionsVolume>.From(nint handle) => new CDynamicNavConnectionsVolumeImpl(handle);
+  static int ISchemaClass<CDynamicNavConnectionsVolume>.Size => 2568;
 
   
   public string ConnectionTarget { get; set; }
   
-  // CUtlVector< DynamicVolumeDef_t >
-  public ref CUtlVector Connections { get; }
+  public ref CUtlVector<DynamicVolumeDef_t> Connections { get; }
   
   public ref CGlobalSymbol TransitionType { get; }
   

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface PhysFeModelDesc_t : ISchemaClass<PhysFeModelDesc_t> {
 
   static PhysFeModelDesc_t ISchemaClass<PhysFeModelDesc_t>.From(nint handle) => new PhysFeModelDesc_tImpl(handle);
+  static int ISchemaClass<PhysFeModelDesc_t>.Size => 1712;
 
   
   public ref CUtlVector<uint> CtrlHash { get; }
@@ -53,76 +54,55 @@ public partial interface PhysFeModelDesc_t : ISchemaClass<PhysFeModelDesc_t> {
   
   public ref CUtlVector<ushort> Ropes { get; }
   
-  // CUtlVector< FeNodeBase_t >
-  public ref CUtlVector NodeBases { get; }
+  public ref CUtlVector<FeNodeBase_t> NodeBases { get; }
   
-  // CUtlVector< FeSimdNodeBase_t >
-  public ref CUtlVector SimdNodeBases { get; }
+  public ref CUtlVector<FeSimdNodeBase_t> SimdNodeBases { get; }
   
-  // CUtlVector< FeQuad_t >
-  public ref CUtlVector Quads { get; }
+  public ref CUtlVector<FeQuad_t> Quads { get; }
   
-  // CUtlVector< FeSimdQuad_t >
-  public ref CUtlVector SimdQuads { get; }
+  public ref CUtlVector<FeSimdQuad_t> SimdQuads { get; }
   
-  // CUtlVector< FeSimdTri_t >
-  public ref CUtlVector SimdTris { get; }
+  public ref CUtlVector<SchemaUntypedField> SimdTris { get; }
   
-  // CUtlVector< FeSimdRodConstraint_t >
-  public ref CUtlVector SimdRods { get; }
+  public ref CUtlVector<FeSimdRodConstraint_t> SimdRods { get; }
   
-  // CUtlVector< FeSimdRodConstraintAnim_t >
-  public ref CUtlVector SimdRodsAnim { get; }
+  public ref CUtlVector<FeSimdRodConstraintAnim_t> SimdRodsAnim { get; }
   
   public ref CUtlVector<CTransform> InitPose { get; }
   
-  // CUtlVector< FeRodConstraint_t >
-  public ref CUtlVector Rods { get; }
+  public ref CUtlVector<FeRodConstraint_t> Rods { get; }
   
-  // CUtlVector< FeTwistConstraint_t >
-  public ref CUtlVector Twists { get; }
+  public ref CUtlVector<FeTwistConstraint_t> Twists { get; }
   
-  // CUtlVector< FeHingeLimit_t >
-  public ref CUtlVector HingeLimits { get; }
+  public ref CUtlVector<FeHingeLimit_t> HingeLimits { get; }
   
   public ref CUtlVector<uint> AntiTunnelBytecode { get; }
   
-  // CUtlVector< FeDynKinLink_t >
-  public ref CUtlVector DynKinLinks { get; }
+  public ref CUtlVector<FeDynKinLink_t> DynKinLinks { get; }
   
-  // CUtlVector< FeAntiTunnelProbe_t >
-  public ref CUtlVector AntiTunnelProbes { get; }
+  public ref CUtlVector<FeAntiTunnelProbe_t> AntiTunnelProbes { get; }
   
   public ref CUtlVector<ushort> AntiTunnelTargetNodes { get; }
   
-  // CUtlVector< FeAxialEdgeBend_t >
-  public ref CUtlVector AxialEdges { get; }
+  public ref CUtlVector<FeAxialEdgeBend_t> AxialEdges { get; }
   
   public ref CUtlVector<float> NodeInvMasses { get; }
   
-  // CUtlVector< FeCtrlOffset_t >
-  public ref CUtlVector CtrlOffsets { get; }
+  public ref CUtlVector<FeCtrlOffset_t> CtrlOffsets { get; }
   
-  // CUtlVector< FeCtrlOsOffset_t >
-  public ref CUtlVector CtrlOsOffsets { get; }
+  public ref CUtlVector<FeCtrlOsOffset_t> CtrlOsOffsets { get; }
   
-  // CUtlVector< FeFollowNode_t >
-  public ref CUtlVector FollowNodes { get; }
+  public ref CUtlVector<FeFollowNode_t> FollowNodes { get; }
   
-  // CUtlVector< FeCollisionPlane_t >
-  public ref CUtlVector CollisionPlanes { get; }
+  public ref CUtlVector<FeCollisionPlane_t> CollisionPlanes { get; }
   
-  // CUtlVector< FeNodeIntegrator_t >
-  public ref CUtlVector NodeIntegrator { get; }
+  public ref CUtlVector<FeNodeIntegrator_t> NodeIntegrator { get; }
   
-  // CUtlVector< FeSpringIntegrator_t >
-  public ref CUtlVector SpringIntegrator { get; }
+  public ref CUtlVector<FeSpringIntegrator_t> SpringIntegrator { get; }
   
-  // CUtlVector< FeSimdSpringIntegrator_t >
-  public ref CUtlVector SimdSpringIntegrator { get; }
+  public ref CUtlVector<FeSimdSpringIntegrator_t> SimdSpringIntegrator { get; }
   
-  // CUtlVector< FeWorldCollisionParams_t >
-  public ref CUtlVector WorldCollisionParams { get; }
+  public ref CUtlVector<FeWorldCollisionParams_t> WorldCollisionParams { get; }
   
   public ref CUtlVector<float> LegacyStretchForce { get; }
   
@@ -134,14 +114,11 @@ public partial interface PhysFeModelDesc_t : ISchemaClass<PhysFeModelDesc_t> {
   
   public ref CUtlVector<float> LocalForce2 { get; }
   
-  // CUtlVector< FeTaperedCapsuleStretch_t >
-  public ref CUtlVector TaperedCapsuleStretches { get; }
+  public ref CUtlVector<FeTaperedCapsuleStretch_t> TaperedCapsuleStretches { get; }
   
-  // CUtlVector< FeTaperedCapsuleRigid_t >
-  public ref CUtlVector TaperedCapsuleRigids { get; }
+  public ref CUtlVector<FeTaperedCapsuleRigid_t> TaperedCapsuleRigids { get; }
   
-  // CUtlVector< FeSphereRigid_t >
-  public ref CUtlVector SphereRigids { get; }
+  public ref CUtlVector<FeSphereRigid_t> SphereRigids { get; }
   
   public ref CUtlVector<ushort> WorldCollisionNodes { get; }
   
@@ -149,41 +126,31 @@ public partial interface PhysFeModelDesc_t : ISchemaClass<PhysFeModelDesc_t> {
   
   public ref CUtlVector<ushort> TreeCollisionMasks { get; }
   
-  // CUtlVector< FeTreeChildren_t >
-  public ref CUtlVector TreeChildren { get; }
+  public ref CUtlVector<FeTreeChildren_t> TreeChildren { get; }
   
   public ref CUtlVector<ushort> FreeNodes { get; }
   
-  // CUtlVector< FeFitMatrix_t >
-  public ref CUtlVector FitMatrices { get; }
+  public ref CUtlVector<FeFitMatrix_t> FitMatrices { get; }
   
-  // CUtlVector< FeFitWeight_t >
-  public ref CUtlVector FitWeights { get; }
+  public ref CUtlVector<FeFitWeight_t> FitWeights { get; }
   
-  // CUtlVector< FeNodeReverseOffset_t >
-  public ref CUtlVector ReverseOffsets { get; }
+  public ref CUtlVector<FeNodeReverseOffset_t> ReverseOffsets { get; }
   
-  // CUtlVector< FeAnimStrayRadius_t >
-  public ref CUtlVector AnimStrayRadii { get; }
+  public ref CUtlVector<FeAnimStrayRadius_t> AnimStrayRadii { get; }
   
-  // CUtlVector< FeSimdAnimStrayRadius_t >
-  public ref CUtlVector SimdAnimStrayRadii { get; }
+  public ref CUtlVector<FeSimdAnimStrayRadius_t> SimdAnimStrayRadii { get; }
   
-  // CUtlVector< FeKelagerBend2_t >
-  public ref CUtlVector KelagerBends { get; }
+  public ref CUtlVector<FeKelagerBend2_t> KelagerBends { get; }
   
-  // CUtlVector< FeCtrlSoftOffset_t >
-  public ref CUtlVector CtrlSoftOffsets { get; }
+  public ref CUtlVector<FeCtrlSoftOffset_t> CtrlSoftOffsets { get; }
   
-  // CUtlVector< CFeIndexedJiggleBone >
-  public ref CUtlVector JiggleBones { get; }
+  public ref CUtlVector<CFeIndexedJiggleBone> JiggleBones { get; }
   
   public ref CUtlVector<ushort> SourceElems { get; }
   
   public ref CUtlVector<uint> GoalDampedSpringIntegrators { get; }
   
-  // CUtlVector< FeTri_t >
-  public ref CUtlVector Tris { get; }
+  public ref CUtlVector<FeTri_t> Tris { get; }
   
   public ref ushort TriCount1 { get; }
   
@@ -197,41 +164,33 @@ public partial interface PhysFeModelDesc_t : ISchemaClass<PhysFeModelDesc_t> {
   
   public ref byte ExtraIterations { get; }
   
-  // CUtlVector< FeSDFRigid_t >
-  public ref CUtlVector SDFRigids { get; }
+  public ref CUtlVector<FeSDFRigid_t> SDFRigids { get; }
   
-  // CUtlVector< FeBoxRigid_t >
-  public ref CUtlVector BoxRigids { get; }
+  public ref CUtlVector<FeBoxRigid_t> BoxRigids { get; }
   
   public ref CUtlVector<byte> DynNodeVertexSet { get; }
   
   public ref CUtlVector<uint> VertexSetNames { get; }
   
-  // CUtlVector< FeRigidColliderIndices_t >
-  public ref CUtlVector RigidColliderPriorities { get; }
+  public ref CUtlVector<FeRigidColliderIndices_t> RigidColliderPriorities { get; }
   
-  // CUtlVector< FeMorphLayerDepr_t >
-  public ref CUtlVector MorphLayers { get; }
+  public ref CUtlVector<FeMorphLayerDepr_t> MorphLayers { get; }
   
   public ref CUtlVector<byte> MorphSetData { get; }
   
-  // CUtlVector< FeVertexMapDesc_t >
-  public ref CUtlVector VertexMaps { get; }
+  public ref CUtlVector<FeVertexMapDesc_t> VertexMaps { get; }
   
   public ref CUtlVector<byte> VertexMapValues { get; }
   
-  // CUtlVector< FeEffectDesc_t >
-  public ref CUtlVector Effects { get; }
+  public ref CUtlVector<FeEffectDesc_t> Effects { get; }
   
-  // CUtlVector< FeCtrlOffset_t >
-  public ref CUtlVector LockToParent { get; }
+  public ref CUtlVector<FeCtrlOffset_t> LockToParent { get; }
   
   public ref CUtlVector<ushort> LockToGoal { get; }
   
   public ref CUtlVector<short> SkelParents { get; }
   
-  // CUtlVector< FeNodeWindBase_t >
-  public ref CUtlVector DynNodeWindBases { get; }
+  public ref CUtlVector<FeNodeWindBase_t> DynNodeWindBases { get; }
   
   public ref float InternalPressure { get; }
   

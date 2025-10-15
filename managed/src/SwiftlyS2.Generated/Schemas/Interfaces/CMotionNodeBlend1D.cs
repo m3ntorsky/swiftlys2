@@ -11,10 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionNodeBlend1D : CMotionNode, ISchemaClass<CMotionNodeBlend1D> {
 
   static CMotionNodeBlend1D ISchemaClass<CMotionNodeBlend1D>.From(nint handle) => new CMotionNodeBlend1DImpl(handle);
+  static int ISchemaClass<CMotionNodeBlend1D>.Size => 72;
 
   
-  // CUtlVector< MotionBlendItem >
-  public ref CUtlVector BlendItems { get; }
+  public ref CUtlVector<MotionBlendItem> BlendItems { get; }
   
   public ref int ParamIndex { get; }
 

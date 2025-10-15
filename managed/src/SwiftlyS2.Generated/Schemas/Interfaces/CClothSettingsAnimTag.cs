@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CClothSettingsAnimTag : CAnimTagBase, ISchemaClass<CClothSettingsAnimTag> {
 
   static CClothSettingsAnimTag ISchemaClass<CClothSettingsAnimTag>.From(nint handle) => new CClothSettingsAnimTagImpl(handle);
+  static int ISchemaClass<CClothSettingsAnimTag>.Size => 112;
 
   
   public ref float Stiffness { get; }

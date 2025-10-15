@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLogicBranch : CLogicalEntity, ISchemaClass<CLogicBranch> {
 
   static CLogicBranch ISchemaClass<CLogicBranch>.From(nint handle) => new CLogicBranchImpl(handle);
+  static int ISchemaClass<CLogicBranch>.Size => 1376;
 
   
   public ref bool InValue { get; }

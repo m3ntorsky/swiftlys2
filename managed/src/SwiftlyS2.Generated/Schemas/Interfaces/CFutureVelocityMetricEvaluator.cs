@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFutureVelocityMetricEvaluator : CMotionMetricEvaluator, ISchemaClass<CFutureVelocityMetricEvaluator> {
 
   static CFutureVelocityMetricEvaluator ISchemaClass<CFutureVelocityMetricEvaluator>.From(nint handle) => new CFutureVelocityMetricEvaluatorImpl(handle);
+  static int ISchemaClass<CFutureVelocityMetricEvaluator>.Size => 96;
 
   
   public ref float Distance { get; }

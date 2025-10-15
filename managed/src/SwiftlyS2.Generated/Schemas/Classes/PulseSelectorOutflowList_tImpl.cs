@@ -15,8 +15,8 @@ internal partial class PulseSelectorOutflowList_tImpl : SchemaClass, PulseSelect
   public PulseSelectorOutflowList_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector Outflows {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0x2A880DD28F0AFDF8));
+  public ref CUtlVector<OutflowWithRequirements_t> Outflows {
+    get => ref _Handle.AsRef<CUtlVector<OutflowWithRequirements_t>>(Schema.GetOffset(0x2A880DD28F0AFDF8));
   }
 
 

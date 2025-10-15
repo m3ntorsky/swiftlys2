@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmTwoBoneIKNode__CDefinition : CNmPassthroughNode__CDefinition, ISchemaClass<CNmTwoBoneIKNode__CDefinition> {
 
   static CNmTwoBoneIKNode__CDefinition ISchemaClass<CNmTwoBoneIKNode__CDefinition>.From(nint handle) => new CNmTwoBoneIKNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmTwoBoneIKNode__CDefinition>.Size => 48;
 
   
   public ref CGlobalSymbol EffectorBoneID { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CTeam : CBaseEntity, ISchemaClass<CTeam> {
 
   static CTeam ISchemaClass<CTeam>.From(nint handle) => new CTeamImpl(handle);
+  static int ISchemaClass<CTeam>.Size => 1448;
 
   
   public ref CUtlVector<CHandle<CBasePlayerController>> PlayerControllers { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnTriangle_t : ISchemaClass<RnTriangle_t> {
 
   static RnTriangle_t ISchemaClass<RnTriangle_t>.From(nint handle) => new RnTriangle_tImpl(handle);
+  static int ISchemaClass<RnTriangle_t>.Size => 12;
 
   
   public ISchemaFixedArray<int> Index { get; }

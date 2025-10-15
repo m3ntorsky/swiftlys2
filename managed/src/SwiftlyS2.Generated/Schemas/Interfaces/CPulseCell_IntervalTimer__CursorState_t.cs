@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_IntervalTimer__CursorState_t : ISchemaClass<CPulseCell_IntervalTimer__CursorState_t> {
 
   static CPulseCell_IntervalTimer__CursorState_t ISchemaClass<CPulseCell_IntervalTimer__CursorState_t>.From(nint handle) => new CPulseCell_IntervalTimer__CursorState_tImpl(handle);
+  static int ISchemaClass<CPulseCell_IntervalTimer__CursorState_t>.Size => 20;
 
   
   public GameTime_t StartTime { get; }

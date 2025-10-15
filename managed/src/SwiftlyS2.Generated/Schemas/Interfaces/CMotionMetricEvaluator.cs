@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionMetricEvaluator : ISchemaClass<CMotionMetricEvaluator> {
 
   static CMotionMetricEvaluator ISchemaClass<CMotionMetricEvaluator>.From(nint handle) => new CMotionMetricEvaluatorImpl(handle);
+  static int ISchemaClass<CMotionMetricEvaluator>.Size => 80;
 
   
   public ref CUtlVector<float> Means { get; }

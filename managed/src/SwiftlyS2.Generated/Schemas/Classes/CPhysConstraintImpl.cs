@@ -68,6 +68,9 @@ internal partial class CPhysConstraintImpl : CLogicalEntityImpl, CPhysConstraint
   public ref bool SnapObjectPositions {
     get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB172254570EDFC5A));
   }
+  public ref bool TreatEntity1AsInfiniteMass {
+    get => ref _Handle.AsRef<bool>(Schema.GetOffset(0xB1722545216BB1E7));
+  }
   public CEntityIOOutput OnBreak {
     get => new CEntityIOOutputImpl(_Handle + Schema.GetOffset(0xB172254546BFEC4F));
   }

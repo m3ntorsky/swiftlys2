@@ -30,6 +30,10 @@ internal class CMsgPlaceDecalEventImpl : NetMessage<CMsgPlaceDecalEvent>, CMsgPl
   { get => Accessor.GetInt32("boneindex"); set => Accessor.SetInt32("boneindex", value); }
 
 
+  public int Triangleindex
+  { get => Accessor.GetInt32("triangleindex"); set => Accessor.SetInt32("triangleindex", value); }
+
+
   public uint Flags
   { get => Accessor.GetUInt32("flags"); set => Accessor.SetUInt32("flags", value); }
 

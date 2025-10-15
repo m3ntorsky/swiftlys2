@@ -11,9 +11,10 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPulseCell_Outflow_PlayVCD : CPulseCell_Outflow_PlaySceneBase, ISchemaClass<CPulseCell_Outflow_PlayVCD> {
 
   static CPulseCell_Outflow_PlayVCD ISchemaClass<CPulseCell_Outflow_PlayVCD>.From(nint handle) => new CPulseCell_Outflow_PlayVCDImpl(handle);
+  static int ISchemaClass<CPulseCell_Outflow_PlayVCD>.Size => 248;
 
   
-  public string VcdFilename { get; set; }
+  public ref CStrongHandle<InfoForResourceTypeCChoreoSceneResource> ChoreoScene { get; }
 
 
 }

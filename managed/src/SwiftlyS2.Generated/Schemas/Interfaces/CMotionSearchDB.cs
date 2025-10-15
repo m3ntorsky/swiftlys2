@@ -11,14 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CMotionSearchDB : ISchemaClass<CMotionSearchDB> {
 
   static CMotionSearchDB ISchemaClass<CMotionSearchDB>.From(nint handle) => new CMotionSearchDBImpl(handle);
+  static int ISchemaClass<CMotionSearchDB>.Size => 184;
 
   
   public CMotionSearchNode RootNode { get; }
   
   public CProductQuantizer ResidualQuantizer { get; }
   
-  // CUtlVector< MotionDBIndex >
-  public ref CUtlVector CodeIndices { get; }
+  public ref CUtlVector<MotionDBIndex> CodeIndices { get; }
 
 
 }

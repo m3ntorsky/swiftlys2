@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CRectLight : CBarnLight, ISchemaClass<CRectLight> {
 
   static CRectLight ISchemaClass<CRectLight>.From(nint handle) => new CRectLightImpl(handle);
+  static int ISchemaClass<CRectLight>.Size => 2824;
 
   
   public ref bool ShowLight { get; }

@@ -11,18 +11,17 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ParticleNamedValueSource_t : ISchemaClass<ParticleNamedValueSource_t> {
 
   static ParticleNamedValueSource_t ISchemaClass<ParticleNamedValueSource_t>.From(nint handle) => new ParticleNamedValueSource_tImpl(handle);
+  static int ISchemaClass<ParticleNamedValueSource_t>.Size => 96;
 
   
   public string Name { get; set; }
   
   public ref bool IsPublic { get; }
   
-  public ref PulseValueType_t ValueType { get; }
+  // CPulseValueFullType
+  public SchemaUntypedField ValueType { get; }
   
   public ParticleNamedValueConfiguration_t DefaultConfig { get; }
-  
-  // CUtlVector< ParticleNamedValueConfiguration_t >
-  public ref CUtlVector NamedConfigs { get; }
 
 
 }

@@ -11,12 +11,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootLockUpdateNode : CUnaryUpdateNode, ISchemaClass<CFootLockUpdateNode> {
 
   static CFootLockUpdateNode ISchemaClass<CFootLockUpdateNode>.From(nint handle) => new CFootLockUpdateNodeImpl(handle);
+  static int ISchemaClass<CFootLockUpdateNode>.Size => 344;
 
   
   public FootLockPoseOpFixedSettings OpFixedSettings { get; }
   
-  // CUtlVector< FootFixedSettings >
-  public ref CUtlVector FootSettings { get; }
+  public ref CUtlVector<FootFixedSettings> FootSettings { get; }
   
   public CAnimInputDamping HipShiftDamping { get; }
   

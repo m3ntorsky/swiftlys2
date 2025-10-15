@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeIVectorGraphic : ISchemaClass<InfoForResourceTypeIVectorGraphic> {
 
   static InfoForResourceTypeIVectorGraphic ISchemaClass<InfoForResourceTypeIVectorGraphic>.From(nint handle) => new InfoForResourceTypeIVectorGraphicImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeIVectorGraphic>.Size => 1;
 
 
 

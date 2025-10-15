@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmFootstepEventPercentageThroughNode__CDefinition : CNmFloatValueNode__CDefinition, ISchemaClass<CNmFootstepEventPercentageThroughNode__CDefinition> {
 
   static CNmFootstepEventPercentageThroughNode__CDefinition ISchemaClass<CNmFootstepEventPercentageThroughNode__CDefinition>.From(nint handle) => new CNmFootstepEventPercentageThroughNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmFootstepEventPercentageThroughNode__CDefinition>.Size => 24;
 
   
   public ref short SourceStateNodeIdx { get; }

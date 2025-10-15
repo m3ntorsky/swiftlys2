@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CModelState : ISchemaClass<CModelState> {
 
   static CModelState ISchemaClass<CModelState>.From(nint handle) => new CModelStateImpl(handle);
+  static int ISchemaClass<CModelState>.Size => 640;
 
   
   public ref CStrongHandle<InfoForResourceTypeCModel> Model { get; }

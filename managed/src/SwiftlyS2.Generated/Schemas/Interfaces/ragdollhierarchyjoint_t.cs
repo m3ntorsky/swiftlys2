@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface ragdollhierarchyjoint_t : ISchemaClass<ragdollhierarchyjoint_t> {
 
   static ragdollhierarchyjoint_t ISchemaClass<ragdollhierarchyjoint_t>.From(nint handle) => new ragdollhierarchyjoint_tImpl(handle);
+  static int ISchemaClass<ragdollhierarchyjoint_t>.Size => 16;
 
   
   public ref int ParentIndex { get; }

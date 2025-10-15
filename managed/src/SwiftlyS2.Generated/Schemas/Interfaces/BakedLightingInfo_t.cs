@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface BakedLightingInfo_t : ISchemaClass<BakedLightingInfo_t> {
 
   static BakedLightingInfo_t ISchemaClass<BakedLightingInfo_t>.From(nint handle) => new BakedLightingInfo_tImpl(handle);
+  static int ISchemaClass<BakedLightingInfo_t>.Size => 72;
 
   
   public ref uint LightmapVersionNumber { get; }
@@ -33,8 +34,7 @@ public partial interface BakedLightingInfo_t : ISchemaClass<BakedLightingInfo_t>
   
   public ref CUtlVector<CStrongHandle<InfoForResourceTypeCTextureBase>> LightMaps { get; }
   
-  // CUtlVector< BakedLightingInfo_t::BakedShadowAssignment_t >
-  public ref CUtlVector BakedShadows { get; }
+  public ref CUtlVector<BakedLightingInfo_t__BakedShadowAssignment_t> BakedShadows { get; }
 
 
 }

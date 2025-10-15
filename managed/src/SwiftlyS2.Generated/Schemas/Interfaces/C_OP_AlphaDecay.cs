@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface C_OP_AlphaDecay : CParticleFunctionOperator, ISchemaClass<C_OP_AlphaDecay> {
 
   static C_OP_AlphaDecay ISchemaClass<C_OP_AlphaDecay>.From(nint handle) => new C_OP_AlphaDecayImpl(handle);
+  static int ISchemaClass<C_OP_AlphaDecay>.Size => 472;
 
   
   public ref float MinAlpha { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CEntityDissolve : CBaseModelEntity, ISchemaClass<CEntityDissolve> {
 
   static CEntityDissolve ISchemaClass<CEntityDissolve>.From(nint handle) => new CEntityDissolveImpl(handle);
+  static int ISchemaClass<CEntityDissolve>.Size => 2056;
 
   
   public ref float FadeInStart { get; }

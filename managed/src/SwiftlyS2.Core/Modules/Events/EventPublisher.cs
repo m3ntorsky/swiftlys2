@@ -43,9 +43,9 @@ internal static class EventPublisher {
       NativeEvents.RegisterOnClientProcessUsercmdsCallback((nint)(delegate* unmanaged<int, nint, int, byte, float, void>)&OnClientProcessUsercmds);
       NativeEvents.RegisterOnEntityTakeDamageCallback((nint)(delegate* unmanaged<nint, nint, byte>)&OnEntityTakeDamage);
       NativeEvents.RegisterOnPrecacheResourceCallback((nint)(delegate* unmanaged<nint, void>)&OnPrecacheResource);
+      NativeConsoleOutput.AddConsoleListener((nint)(delegate* unmanaged<nint, void>)&OnConsoleOutput);
     }
   }
-
 
   [UnmanagedCallersOnly]
   public static void OnTick(byte simulating, byte first, byte last)
@@ -374,6 +374,32 @@ internal static class EventPublisher {
     } catch (Exception e) {
       AnsiConsole.WriteException(e);
       return;
+    }
+  }
+
+  [UnmanagedCallersOnly]
+  public static void OnConsoleOutput(nint messagePtr) {
+    if (_subscribers.Count == 0) return;
+    try {
+      OnConsoleOutputEvent @event = new() {
+        Message = Marshal.PtrToStringUTF8(messagePtr) ?? string.Empty
+      };
+      foreach (var subscriber in _subscribers) {
+        subscriber.InvokeOnConsoleOutput(@event);
+      }
+    } catch (Exception e) {
+      AnsiConsole.WriteException(e);
+    }
+  }
+
+  public static void InvokeOnCommandExecuteHook(OnCommandExecuteHookEvent @event) {
+    if (_subscribers.Count == 0) return;
+    try {
+      foreach (var subscriber in _subscribers) {
+        subscriber.InvokeOnCommandExecuteHook(@event);
+      }
+    } catch (Exception e) {
+      AnsiConsole.WriteException(e);
     }
   }
 }

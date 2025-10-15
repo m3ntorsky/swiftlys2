@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlayerVisibility : CBaseEntity, ISchemaClass<CPlayerVisibility> {
 
   static CPlayerVisibility ISchemaClass<CPlayerVisibility>.From(nint handle) => new CPlayerVisibilityImpl(handle);
+  static int ISchemaClass<CPlayerVisibility>.Size => 1288;
 
   
   public ref float VisibilityStrength { get; }

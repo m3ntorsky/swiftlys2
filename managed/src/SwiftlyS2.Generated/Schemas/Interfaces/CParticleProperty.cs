@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CParticleProperty : ISchemaClass<CParticleProperty> {
 
   static CParticleProperty ISchemaClass<CParticleProperty>.From(nint handle) => new CParticlePropertyImpl(handle);
+  static int ISchemaClass<CParticleProperty>.Size => 40;
 
 
 

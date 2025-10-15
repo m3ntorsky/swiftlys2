@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPhysExplosion : CPointEntity, ISchemaClass<CPhysExplosion> {
 
   static CPhysExplosion ISchemaClass<CPhysExplosion>.From(nint handle) => new CPhysExplosionImpl(handle);
+  static int ISchemaClass<CPhysExplosion>.Size => 1344;
 
   
   public ref bool ExplodeOnSpawn { get; }

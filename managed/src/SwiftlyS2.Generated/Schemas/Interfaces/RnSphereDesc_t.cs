@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface RnSphereDesc_t : RnShapeDesc_t, ISchemaClass<RnSphereDesc_t> {
 
   static RnSphereDesc_t ISchemaClass<RnSphereDesc_t>.From(nint handle) => new RnSphereDesc_tImpl(handle);
+  static int ISchemaClass<RnSphereDesc_t>.Size => 40;
 
   
   // SphereBase_t< float32 >

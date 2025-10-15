@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimAttachment : ISchemaClass<CAnimAttachment> {
 
   static CAnimAttachment ISchemaClass<CAnimAttachment>.From(nint handle) => new CAnimAttachmentImpl(handle);
+  static int ISchemaClass<CAnimAttachment>.Size => 128;
 
   
   public ISchemaFixedArray<Quaternion> InfluenceRotations { get; }

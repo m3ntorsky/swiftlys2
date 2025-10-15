@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CBaseAnimGraphAnimGraphController : CAnimGraphControllerBase, ISchemaClass<CBaseAnimGraphAnimGraphController> {
 
   static CBaseAnimGraphAnimGraphController ISchemaClass<CBaseAnimGraphAnimGraphController>.From(nint handle) => new CBaseAnimGraphAnimGraphControllerImpl(handle);
+  static int ISchemaClass<CBaseAnimGraphAnimGraphController>.Size => 616;
 
   
   // CAnimGraphParamOptionalRef< CGlobalSymbol >

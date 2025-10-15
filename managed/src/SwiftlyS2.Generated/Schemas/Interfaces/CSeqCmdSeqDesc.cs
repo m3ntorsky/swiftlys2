@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CSeqCmdSeqDesc : ISchemaClass<CSeqCmdSeqDesc> {
 
   static CSeqCmdSeqDesc ISchemaClass<CSeqCmdSeqDesc>.From(nint handle) => new CSeqCmdSeqDescImpl(handle);
+  static int ISchemaClass<CSeqCmdSeqDesc>.Size => 144;
 
   
   public ref CBufferString Name { get; }
@@ -29,17 +30,13 @@ public partial interface CSeqCmdSeqDesc : ISchemaClass<CSeqCmdSeqDesc> {
   
   public ref short NumLocalResults { get; }
   
-  // CUtlVector< CSeqCmdLayer >
-  public ref CUtlVector CmdLayerArray { get; }
+  public ref CUtlVector<CSeqCmdLayer> CmdLayerArray { get; }
   
-  // CUtlVector< CAnimEventDefinition >
-  public ref CUtlVector EventArray { get; }
+  public ref CUtlVector<CAnimEventDefinition> EventArray { get; }
   
-  // CUtlVector< CAnimActivity >
-  public ref CUtlVector ActivityArray { get; }
+  public ref CUtlVector<CAnimActivity> ActivityArray { get; }
   
-  // CUtlVector< CSeqPoseSetting >
-  public ref CUtlVector PoseSettingArray { get; }
+  public ref CUtlVector<CSeqPoseSetting> PoseSettingArray { get; }
 
 
 }

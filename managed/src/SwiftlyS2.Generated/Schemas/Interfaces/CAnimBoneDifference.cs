@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimBoneDifference : ISchemaClass<CAnimBoneDifference> {
 
   static CAnimBoneDifference ISchemaClass<CAnimBoneDifference>.From(nint handle) => new CAnimBoneDifferenceImpl(handle);
+  static int ISchemaClass<CAnimBoneDifference>.Size => 48;
 
   
   public ref CBufferString Name { get; }

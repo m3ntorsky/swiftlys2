@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmTransitionEvent : CNmEvent, ISchemaClass<CNmTransitionEvent> {
 
   static CNmTransitionEvent ISchemaClass<CNmTransitionEvent>.From(nint handle) => new CNmTransitionEventImpl(handle);
+  static int ISchemaClass<CNmTransitionEvent>.Size => 48;
 
   
   public ref NmTransitionRule_t Rule { get; }

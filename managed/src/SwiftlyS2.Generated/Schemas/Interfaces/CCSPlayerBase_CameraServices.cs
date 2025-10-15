@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CCSPlayerBase_CameraServices : CPlayer_CameraServices, ISchemaClass<CCSPlayerBase_CameraServices> {
 
   static CCSPlayerBase_CameraServices ISchemaClass<CCSPlayerBase_CameraServices>.From(nint handle) => new CCSPlayerBase_CameraServicesImpl(handle);
+  static int ISchemaClass<CCSPlayerBase_CameraServices>.Size => 424;
 
   
   public ref uint FOV { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPlantedC4 : CBaseAnimGraph, ISchemaClass<CPlantedC4> {
 
   static CPlantedC4 ISchemaClass<CPlantedC4>.From(nint handle) => new CPlantedC4Impl(handle);
+  static int ISchemaClass<CPlantedC4>.Size => 3728;
 
   
   public ref bool BombTicking { get; }
@@ -20,6 +21,8 @@ public partial interface CPlantedC4 : CBaseAnimGraph, ISchemaClass<CPlantedC4> {
   public ref int BombSite { get; }
   
   public ref int SourceSoundscapeHash { get; }
+  
+  public ref bool AbortDetonationBecauseWorldIsFrozen { get; }
   
   public CAttributeContainer AttributeManager { get; }
   

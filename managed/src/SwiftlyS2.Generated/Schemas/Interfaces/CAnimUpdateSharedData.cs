@@ -11,16 +11,15 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimUpdateSharedData : ISchemaClass<CAnimUpdateSharedData> {
 
   static CAnimUpdateSharedData ISchemaClass<CAnimUpdateSharedData>.From(nint handle) => new CAnimUpdateSharedDataImpl(handle);
+  static int ISchemaClass<CAnimUpdateSharedData>.Size => 256;
 
   
-  // CUtlVector< CSmartPtr< CAnimUpdateNodeBase > >
-  public ref CUtlVector Nodes { get; }
+  public ref CUtlVector<SchemaUntypedField> Nodes { get; }
   
   // CUtlHashtable< CAnimNodePath, int32 >
   public SchemaUntypedField NodeIndexMap { get; }
   
-  // CUtlVector< CSmartPtr< CAnimComponentUpdater > >
-  public ref CUtlVector Components { get; }
+  public ref CUtlVector<SchemaUntypedField> Components { get; }
   
   // CSmartPtr< CAnimParameterManagerUpdater >
   public SchemaUntypedField ParamListUpdater { get; }

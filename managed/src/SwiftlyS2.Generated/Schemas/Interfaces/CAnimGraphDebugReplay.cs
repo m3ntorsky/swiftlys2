@@ -11,12 +11,12 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CAnimGraphDebugReplay : ISchemaClass<CAnimGraphDebugReplay> {
 
   static CAnimGraphDebugReplay ISchemaClass<CAnimGraphDebugReplay>.From(nint handle) => new CAnimGraphDebugReplayImpl(handle);
+  static int ISchemaClass<CAnimGraphDebugReplay>.Size => 112;
 
   
   public string AnimGraphFileName { get; set; }
   
-  // CUtlVector< CSmartPtr< CAnimReplayFrame > >
-  public ref CUtlVector FrameList { get; }
+  public ref CUtlVector<SchemaUntypedField> FrameList { get; }
   
   public ref int StartIndex { get; }
   

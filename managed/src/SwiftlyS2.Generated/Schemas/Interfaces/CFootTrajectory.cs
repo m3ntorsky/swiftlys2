@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CFootTrajectory : ISchemaClass<CFootTrajectory> {
 
   static CFootTrajectory ISchemaClass<CFootTrajectory>.From(nint handle) => new CFootTrajectoryImpl(handle);
+  static int ISchemaClass<CFootTrajectory>.Size => 32;
 
   
   public ref Vector Offset { get; }

@@ -15,8 +15,8 @@ internal partial class PulseGraphExecutionHistoryCursorDesc_tImpl : SchemaClass,
   public PulseGraphExecutionHistoryCursorDesc_tImpl(nint handle) : base(handle) {
   }
 
-  public ref CUtlVector AncestorCursorIDs {
-    get => ref _Handle.AsRef<CUtlVector>(Schema.GetOffset(0xC94C4C1C39FD1094));
+  public ref CUtlVector<PulseCursorID_t> AncestorCursorIDs {
+    get => ref _Handle.AsRef<CUtlVector<PulseCursorID_t>>(Schema.GetOffset(0xC94C4C1C39FD1094));
   }
   public PulseDocNodeID_t SpawnNodeID {
     get => new PulseDocNodeID_tImpl(_Handle + Schema.GetOffset(0xC94C4C1C95FE4E15));

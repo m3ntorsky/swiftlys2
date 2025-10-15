@@ -11,11 +11,14 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CLogicCollisionPair : CLogicalEntity, ISchemaClass<CLogicCollisionPair> {
 
   static CLogicCollisionPair ISchemaClass<CLogicCollisionPair>.From(nint handle) => new CLogicCollisionPairImpl(handle);
+  static int ISchemaClass<CLogicCollisionPair>.Size => 1288;
 
   
   public string NameAttach1 { get; set; }
   
   public string NameAttach2 { get; set; }
+  
+  public ref bool IncludeHierarchy { get; }
   
   public ref bool SupportMultipleEntitiesWithSameName { get; }
   

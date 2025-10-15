@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CNmExternalGraphNode__CDefinition : CNmPoseNode__CDefinition, ISchemaClass<CNmExternalGraphNode__CDefinition> {
 
   static CNmExternalGraphNode__CDefinition ISchemaClass<CNmExternalGraphNode__CDefinition>.From(nint handle) => new CNmExternalGraphNode__CDefinitionImpl(handle);
+  static int ISchemaClass<CNmExternalGraphNode__CDefinition>.Size => 16;
 
 
 

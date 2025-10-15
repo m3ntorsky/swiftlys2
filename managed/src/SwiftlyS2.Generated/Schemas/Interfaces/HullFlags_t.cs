@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface HullFlags_t : ISchemaClass<HullFlags_t> {
 
   static HullFlags_t ISchemaClass<HullFlags_t>.From(nint handle) => new HullFlags_tImpl(handle);
+  static int ISchemaClass<HullFlags_t>.Size => 10;
 
   
   public ref bool Hull_Human { get; }

@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface InfoForResourceTypeCNmClip : ISchemaClass<InfoForResourceTypeCNmClip> {
 
   static InfoForResourceTypeCNmClip ISchemaClass<InfoForResourceTypeCNmClip>.From(nint handle) => new InfoForResourceTypeCNmClipImpl(handle);
+  static int ISchemaClass<InfoForResourceTypeCNmClip>.Size => 1;
 
 
 

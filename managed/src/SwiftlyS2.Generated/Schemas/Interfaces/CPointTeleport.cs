@@ -11,6 +11,7 @@ namespace SwiftlyS2.Shared.SchemaDefinitions;
 public partial interface CPointTeleport : CServerOnlyPointEntity, ISchemaClass<CPointTeleport> {
 
   static CPointTeleport ISchemaClass<CPointTeleport>.From(nint handle) => new CPointTeleportImpl(handle);
+  static int ISchemaClass<CPointTeleport>.Size => 1296;
 
   
   public ref Vector SaveOrigin { get; }
