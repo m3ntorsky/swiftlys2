@@ -22,8 +22,8 @@ internal class CGCStorePurchaseInit_LineItemImpl : TypedProtobuf<CGCStorePurchas
   { get => Accessor.GetUInt32("quantity"); set => Accessor.SetUInt32("quantity", value); }
 
 
-  public uint CostInLocalCurrency
-  { get => Accessor.GetUInt32("cost_in_local_currency"); set => Accessor.SetUInt32("cost_in_local_currency", value); }
+  public ulong CostInLocalCurrency
+  { get => Accessor.GetUInt64("cost_in_local_currency"); set => Accessor.SetUInt64("cost_in_local_currency", value); }
 
 
   public uint PurchaseType
