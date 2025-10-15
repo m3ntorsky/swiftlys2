@@ -103,8 +103,6 @@ void CConvarManager::QueryClientConvar(int playerid, std::string cvar_name)
     auto networkMessages = g_ifaceService.FetchInterface<INetworkMessages>(NETWORKMESSAGES_INTERFACE_VERSION);
     auto gameEventSystem = g_ifaceService.FetchInterface<IGameEventSystem>(GAMEEVENTSYSTEM_INTERFACE_VERSION);
 
-    printf("%p %p\n", this, networkMessages);
-
     auto netmsg = networkMessages->FindNetworkMessagePartial("GetCvarValue");
     auto msg = netmsg->AllocateMessage()->ToPB<CSVCMsg_GetCvarValue>();
 
