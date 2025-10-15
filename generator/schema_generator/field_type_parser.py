@@ -48,6 +48,7 @@ unmanaged_type_maps = {
   "CNetworkUtlVectorBase": "CUtlVector",
   "CEntityHandle": "CHandle<CEntityInstance>",
   "CTakeDamageInfo": "CTakeDamageInfo",
+  "CTakeDamageResult": "CTakeDamageResult",
   "ChangeAccessorFieldPathIndex_t": "ChangeAccessorFieldPathIndex_t",
   "CNetworkVarChainer": "CNetworkVarChainer"
 }
