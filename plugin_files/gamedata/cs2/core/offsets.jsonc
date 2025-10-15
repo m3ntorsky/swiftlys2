@@ -132,8 +132,8 @@
         "linux": 84
     },
     "IServerGameClients::ClientCommand": {
-        "windows": 17,
-        "linux": 17
+        "windows": 18,
+        "linux": 18
     },
     "IServerGameClients::ClientConnect": {
         "windows": 12,
@@ -158,6 +158,30 @@
     "IGameEventManager2::LoadEventsFromFile": {
         "windows": 2,
         "linux": 2
+    },
+    "IEngineServiceMgr::RegisterLoopMode": {
+        "windows": 15,
+        "linux": 15
+    },
+    "IEngineServiceMgr::UnregisterLoopMode": {
+        "windows": 16,
+        "linux": 16
+    },
+    "ILoopModeFactory::CreateLoopMode": {
+        "windows": 2,
+        "linux": 2
+    },
+    "ILoopModeFactory::DestroyLoopMode": {
+        "windows": 3,
+        "linux": 3
+    },
+    "ILoopMode::LoopInit": {
+        "windows": 0,
+        "linux": 0
+    },
+    "ILoopMode::LoopShutdown": {
+        "windows": 1,
+        "linux": 1
     },
     "IGameEventManager2::FireEvent": {
         "windows": 8,

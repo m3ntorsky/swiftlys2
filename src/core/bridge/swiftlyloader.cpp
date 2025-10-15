@@ -16,43 +16,16 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  ************************************************************************************************/
 
-#ifndef _core_entrypoint_h
-#define _core_entrypoint_h
+#include <core/entrypoint.h>
 
-#include <string>
-#include <public/steam/steam_api_common.h>
-#include <public/steam/isteamugc.h>
+#include <api/dll/extern.h>
 
-enum class BridgeKind_t
+SW_API bool StartCore()
 {
-    Metamod = 0,
-    SwiftlyLoader = 1,
-};
+    return g_SwiftlyCore.Load(BridgeKind_t::SwiftlyLoader);
+}
 
-class SwiftlyCore
+SW_API bool StopCore()
 {
-private:
-    BridgeKind_t m_iKind;
-    std::string m_sCorePath;
-
-public:
-    bool Load(BridgeKind_t kind);
-    bool Unload();
-
-    void OnMapLoad(std::string map_name);
-    void OnMapUnload();
-
-    void* GetInterface(const std::string& iface_name);
-    void SendConsoleMessage(const std::string& message);
-
-    std::string GetCurrentGame();
-    int GetMaxGameClients();
-
-    std::string& GetCorePath();
-    std::string GetVersion();
-};
-
-extern SwiftlyCore g_SwiftlyCore;
-extern CSteamGameServerAPIContext g_SteamAPI;
-
-#endif
+    return g_SwiftlyCore.Unload();
+}

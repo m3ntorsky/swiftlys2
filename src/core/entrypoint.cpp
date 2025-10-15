@@ -17,7 +17,6 @@
  ************************************************************************************************/
 
 #include "entrypoint.h"
-#include "bridge/metamod.h"
 #include <api/interfaces/manager.h>
 #include <api/interfaces/interfaces.h>
 #include <api/scripting/scripting.h>    
@@ -40,6 +39,8 @@
 #include <api/shared/string.h>
 #include <api/shared/files.h>
 
+#include <public/tier1/KeyValues.h>
+
 #include <fmt/format.h>
 
 #include <s2binlib/s2binlib.h>
@@ -51,8 +52,26 @@ CSteamGameServerAPIContext g_SteamAPI;
 IVFunctionHook* g_pGameServerSteamAPIActivated = nullptr;
 IVFunctionHook* g_pGameServerSteamAPIDeactivated = nullptr;
 
+IVFunctionHook* g_pRegisterLoopModeHook = nullptr;
+IVFunctionHook* g_pUnregisterLoopModeHook = nullptr;
+
+IVFunctionHook* g_pCreateLoopModeHook = nullptr;
+IVFunctionHook* g_pDestroyLoopModeHook = nullptr;
+
+IVFunctionHook* g_pLoopInitHook = nullptr;
+IVFunctionHook* g_pLoopShutdownHook = nullptr;
+
 void GameServerSteamAPIActivatedHook(void* _this);
 void GameServerSteamAPIDeactivatedHook(void* _this);
+
+void RegisterLoopModeHook(void* _this, const char* loopModeName, void* factory, void** ppGlobalPtr);
+void UnregisterLoopModeHook(void* _this, const char* loopModeName, void* factory, void** ppGlobalPtr);
+
+void* CreateLoopModeHook(void* _this);
+void DestroyLoopModeHook(void* _this, void* loopmode);
+
+bool LoopInitHook(void* _this, KeyValues* pKeyValues, void* pRegistry);
+void LoopShutdownHook(void* _this);
 
 bool SwiftlyCore::Load(BridgeKind_t kind)
 {
@@ -144,6 +163,14 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
     hooksmanager->Initialize();
 
+    g_pRegisterLoopModeHook = hooksmanager->CreateVFunctionHook();
+    g_pRegisterLoopModeHook->SetHookFunction(ENGINESERVICEMGR_INTERFACE_VERSION, gamedata->GetOffsets()->Fetch("IEngineServiceMgr::RegisterLoopMode"), (void*)RegisterLoopModeHook);
+    g_pRegisterLoopModeHook->Enable();
+
+    g_pUnregisterLoopModeHook = hooksmanager->CreateVFunctionHook();
+    g_pUnregisterLoopModeHook->SetHookFunction(ENGINESERVICEMGR_INTERFACE_VERSION, gamedata->GetOffsets()->Fetch("IEngineServiceMgr::UnregisterLoopMode"), (void*)UnregisterLoopModeHook);
+    g_pUnregisterLoopModeHook->Enable();
+
     g_pGameServerSteamAPIActivated = hooksmanager->CreateVFunctionHook();
     g_pGameServerSteamAPIActivated->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameServerSteamAPIActivated"), (void*)GameServerSteamAPIActivatedHook);
     g_pGameServerSteamAPIActivated->Enable();
@@ -233,6 +260,103 @@ void GameServerSteamAPIDeactivatedHook(void* _this)
     return reinterpret_cast<decltype(&GameServerSteamAPIDeactivatedHook)>(g_pGameServerSteamAPIDeactivated->GetOriginal())(_this);
 }
 
+void RegisterLoopModeHook(void* _this, const char* loopModeName, void* factory, void** ppGlobalPtr)
+{
+    if (std::string(loopModeName) == "game")
+    {
+        auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+        auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+
+        g_pCreateLoopModeHook = hooksmanager->CreateVFunctionHook();
+        g_pCreateLoopModeHook->SetHookFunction(factory, gamedata->GetOffsets()->Fetch("ILoopModeFactory::CreateLoopMode"), (void*)CreateLoopModeHook, false);
+        g_pCreateLoopModeHook->Enable();
+
+        g_pDestroyLoopModeHook = hooksmanager->CreateVFunctionHook();
+        g_pDestroyLoopModeHook->SetHookFunction(factory, gamedata->GetOffsets()->Fetch("ILoopModeFactory::DestroyLoopMode"), (void*)DestroyLoopModeHook, false);
+        g_pDestroyLoopModeHook->Enable();
+    }
+
+    return reinterpret_cast<decltype(&RegisterLoopModeHook)>(g_pRegisterLoopModeHook->GetOriginal())(_this, loopModeName, factory, ppGlobalPtr);
+}
+
+void UnregisterLoopModeHook(void* _this, const char* loopModeName, void* factory, void** ppGlobalPtr)
+{
+    if (std::string(loopModeName) == "game")
+    {
+        auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+        if (g_pCreateLoopModeHook)
+        {
+            g_pCreateLoopModeHook->Disable();
+            hooksmanager->DestroyVFunctionHook(g_pCreateLoopModeHook);
+            g_pCreateLoopModeHook = nullptr;
+        }
+
+        if (g_pDestroyLoopModeHook)
+        {
+            g_pDestroyLoopModeHook->Disable();
+            hooksmanager->DestroyVFunctionHook(g_pDestroyLoopModeHook);
+            g_pDestroyLoopModeHook = nullptr;
+        }
+    }
+
+    return reinterpret_cast<decltype(&UnregisterLoopModeHook)>(g_pUnregisterLoopModeHook->GetOriginal())(_this, loopModeName, factory, ppGlobalPtr);
+}
+
+void* CreateLoopModeHook(void* _this)
+{
+    void* ret = reinterpret_cast<decltype(&CreateLoopModeHook)>(g_pCreateLoopModeHook->GetOriginal())(_this);
+
+    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+    auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
+
+    g_pLoopInitHook = hooksmanager->CreateVFunctionHook();
+    g_pLoopInitHook->SetHookFunction(ret, gamedata->GetOffsets()->Fetch("ILoopMode::LoopInit"), (void*)LoopInitHook, false);
+    g_pLoopInitHook->Enable();
+
+    g_pLoopShutdownHook = hooksmanager->CreateVFunctionHook();
+    g_pLoopShutdownHook->SetHookFunction(ret, gamedata->GetOffsets()->Fetch("ILoopMode::LoopShutdown"), (void*)LoopShutdownHook, false);
+    g_pLoopShutdownHook->Enable();
+
+    return ret;
+}
+
+void DestroyLoopModeHook(void* _this, void* loopmode)
+{
+    auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
+
+    if (g_pLoopInitHook)
+    {
+        g_pLoopInitHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pLoopInitHook);
+        g_pLoopInitHook = nullptr;
+    }
+
+    if (g_pLoopShutdownHook)
+    {
+        g_pLoopShutdownHook->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pLoopShutdownHook);
+        g_pLoopShutdownHook = nullptr;
+    }
+
+    return reinterpret_cast<decltype(&DestroyLoopModeHook)>(g_pDestroyLoopModeHook->GetOriginal())(_this, loopmode);
+}
+
+bool LoopInitHook(void* _this, KeyValues* pKeyValues, void* pRegistry)
+{
+    bool ret = reinterpret_cast<decltype(&LoopInitHook)>(g_pLoopInitHook->GetOriginal())(_this, pKeyValues, pRegistry);
+
+    g_SwiftlyCore.OnMapLoad(pKeyValues->GetString("levelname"));
+
+    return ret;
+}
+
+void LoopShutdownHook(void* _this)
+{
+    reinterpret_cast<decltype(&LoopShutdownHook)>(g_pLoopShutdownHook->GetOriginal())(_this);
+
+    g_SwiftlyCore.OnMapUnload();
+}
+
 std::string current_map = "";
 extern void* g_pOnMapLoadCallback;
 extern void* g_pOnMapUnloadCallback;
@@ -240,6 +364,8 @@ extern void* g_pOnMapUnloadCallback;
 void SwiftlyCore::OnMapLoad(std::string map_name)
 {
     current_map = map_name;
+
+    printf("New map: %s\n", map_name.c_str());
 
     if (g_pOnMapLoadCallback)
         reinterpret_cast<void(*)(const char*)>(g_pOnMapLoadCallback)(map_name.c_str());

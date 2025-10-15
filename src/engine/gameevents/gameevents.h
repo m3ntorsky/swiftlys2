@@ -44,11 +44,6 @@ public:
     virtual IGameEventManager2* GetGameEventManager() override;
 
     virtual void FireGameEvent(IGameEvent* event) override;
-
-    void OnStartupServer(const GameSessionConfiguration_t& config, ISource2WorldSession*, const char*);
-    int LoadEventsFromFile(const char* filePath, bool searchAll);
-    bool OnFireEvent(IGameEvent* pEvent, bool bDontBroadcast);
-    bool OnFireEventPost(IGameEvent* pEvent, bool bDontBroadcast);
 private:
     QueueMutex m_mtxLock;
 };
