@@ -42,6 +42,13 @@
 
 SwiftlyCore g_SwiftlyCore;
 InterfacesManager g_ifaceService;
+CSteamGameServerAPIContext g_SteamAPI;
+
+IVFunctionHook* g_pGameServerSteamAPIActivated = nullptr;
+IVFunctionHook* g_pGameServerSteamAPIDeactivated = nullptr;
+
+void GameServerSteamAPIActivatedHook(void* _this);
+void GameServerSteamAPIDeactivatedHook(void* _this);
 
 bool SwiftlyCore::Load(BridgeKind_t kind)
 {
@@ -129,6 +136,14 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
     hooksmanager->Initialize();
 
+    g_pGameServerSteamAPIActivated = hooksmanager->CreateVFunctionHook();
+    g_pGameServerSteamAPIActivated->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameServerSteamAPIActivated"), GameServerSteamAPIActivatedHook);
+    g_pGameServerSteamAPIActivated->Enable();
+
+    g_pGameServerSteamAPIDeactivated = hooksmanager->CreateVFunctionHook();
+    g_pGameServerSteamAPIDeactivated->SetHookFunction(INTERFACEVERSION_SERVERGAMEDLL, gamedata->GetOffsets()->Fetch("IServerGameDLL::GameServerSteamAPIDeactivated"), GameServerSteamAPIDeactivatedHook);
+    g_pGameServerSteamAPIDeactivated->Enable();
+
     StartFixes();
 
     auto scripting = g_ifaceService.FetchInterface<IScriptingAPI>(SCRIPTING_INTERFACE_VERSION);
@@ -172,11 +187,42 @@ bool SwiftlyCore::Unload()
     auto servercommands = g_ifaceService.FetchInterface<IServerCommands>(SERVERCOMMANDS_INTERFACE_VERSION);
     servercommands->Shutdown();
 
+    if (g_pGameServerSteamAPIActivated != nullptr)
+    {
+        g_pGameServerSteamAPIActivated->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pGameServerSteamAPIActivated);
+        g_pGameServerSteamAPIActivated = nullptr;
+    }
+
+    if (g_pGameServerSteamAPIDeactivated != nullptr)
+    {
+        g_pGameServerSteamAPIDeactivated->Disable();
+        hooksmanager->DestroyVFunctionHook(g_pGameServerSteamAPIDeactivated);
+        g_pGameServerSteamAPIDeactivated = nullptr;
+    }
+
     StopFixes();
 
     ShutdownGameSystem();
 
     return true;
+}
+
+void GameServerSteamAPIActivatedHook(void* _this)
+{
+    if (!CommandLine()->HasParm("-dedicated") || g_SteamAPI.SteamUGC())
+        return;
+
+    g_SteamAPI.Init();
+    static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
+    playermanager->SteamAPIServerActivated();
+
+    return reinterpret_cast<decltype(&GameServerSteamAPIActivatedHook)>(g_pGameServerSteamAPIActivated->GetOriginal())(_this);
+}
+
+void GameServerSteamAPIDeactivatedHook(void* _this)
+{
+    return reinterpret_cast<decltype(&GameServerSteamAPIDeactivatedHook)>(g_pGameServerSteamAPIDeactivated->GetOriginal())(_this);
 }
 
 std::string current_map = "";

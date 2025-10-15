@@ -48,6 +48,7 @@ extern void* g_pTraceManager;
 
 IFunctionHook* g_pOnEntityTakeDamageHook = nullptr;
 IFunctionHook* g_pTraceShapeHook = nullptr;
+IVFunctionHook* g_pStartupServerHook = nullptr;
 
 bool g_bDone = false;
 
@@ -58,13 +59,10 @@ CGameEntitySystem* GameEntitySystem()
 
 int64_t TakeDamageHook(void* baseEntity, void* info, void* idk);
 void TraceShapeHook(void* _this, Ray_t& ray, Vector& start, Vector& end, CTraceFilter* filter, trace_t* trace);
+void StartupServerHook(void* _this, const GameSessionConfiguration_t& config, ISource2WorldSession* a, const char* b);
 
 void CEntSystem::Initialize()
 {
-    auto networkserverservice = g_ifaceService.FetchInterface<INetworkServerService>(NETWORKSERVERSERVICE_INTERFACE_VERSION);
-
-    SH_ADD_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEntSystem::StartupServer, true);
-
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
     auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
@@ -75,14 +73,14 @@ void CEntSystem::Initialize()
     g_pTraceShapeHook = hooksmanager->CreateFunctionHook();
     g_pTraceShapeHook->SetHookFunction(gamedata->GetSignatures()->Fetch("TraceShape"), reinterpret_cast<void*>(TraceShapeHook));
     g_pTraceShapeHook->Enable();
+
+    g_pStartupServerHook = hooksmanager->CreateVFunctionHook();
+    g_pStartupServerHook->SetHookFunction(NETWORKSERVERSERVICE_INTERFACE_VERSION, gamedata->GetOffsets()->Fetch("INetworkServerService::StartupServer"), reinterpret_cast<void*>(StartupServerHook));
+    g_pStartupServerHook->Enable();
 }
 
 void CEntSystem::Shutdown()
 {
-    auto networkserverservice = g_ifaceService.FetchInterface<INetworkServerService>(NETWORKSERVERSERVICE_INTERFACE_VERSION);
-
-    SH_REMOVE_HOOK_MEMFUNC(INetworkServerService, StartupServer, networkserverservice, this, &CEntSystem::StartupServer, true);
-
     auto hooksmanager = g_ifaceService.FetchInterface<IHooksManager>(HOOKSMANAGER_INTERFACE_VERSION);
 
     g_pOnEntityTakeDamageHook->Disable();
@@ -92,6 +90,10 @@ void CEntSystem::Shutdown()
     g_pTraceShapeHook->Disable();
     hooksmanager->DestroyFunctionHook(g_pTraceShapeHook);
     g_pTraceShapeHook = nullptr;
+
+    g_pStartupServerHook->Disable();
+    hooksmanager->DestroyVFunctionHook(g_pStartupServerHook);
+    g_pStartupServerHook = nullptr;
 
     g_pGameEntitySystem->RemoveListenerEntity(&g_entityListener);
 }
@@ -115,8 +117,10 @@ int64_t TakeDamageHook(void* baseEntity, void* info, void* idk)
     return reinterpret_cast<int64_t(*)(void*, void*, void*)>(g_pOnEntityTakeDamageHook->GetOriginal())(baseEntity, info, idk);
 }
 
-void CEntSystem::StartupServer(const GameSessionConfiguration_t& config, ISource2WorldSession*, const char*)
+void StartupServerHook(void* _this, const GameSessionConfiguration_t& config, ISource2WorldSession* a, const char* b)
 {
+    reinterpret_cast<decltype(&StartupServerHook)>(g_pStartupServerHook->GetOriginal())(_this, config, a, b);
+
     if (g_bDone) return;
 
     auto pGameResService = g_ifaceService.FetchInterface<IGameResourceService>(GAMERESOURCESERVICESERVER_INTERFACE_VERSION);

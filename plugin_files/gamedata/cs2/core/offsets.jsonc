@@ -111,6 +111,22 @@
         "windows": 19,
         "linux": 19
     },
+    "IServerGameDLL::GameServerSteamAPIActivated": {
+        "windows": 41,
+        "linux": 41
+    },
+    "IServerGameDLL::GameServerSteamAPIDeactivated": {
+        "windows": 42,
+        "linux": 42
+    },
+    "IGameEventSystem::PostEventAbstract": {
+        "windows": 15,
+        "linux": 15
+    },
+    "INetworkServerService::StartupServer": {
+        "windows": 26,
+        "linux": 26
+    },
     "CServerSideClient::ProcessRespondCvarValue": {
         "windows": 38,
         "linux": 40

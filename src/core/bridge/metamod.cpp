@@ -30,15 +30,11 @@
 #include <s2binlib/s2binlib.h>
 
 SwiftlyMMBridge g_MMPluginBridge;
-CSteamGameServerAPIContext g_SteamAPI;
 
 class GameSessionConfiguration_t
 {
 };
 
-SH_DECL_HOOK0_void(IServerGameDLL, GameServerSteamAPIActivated, SH_NOATTRIB, 0);
-SH_DECL_HOOK0_void(IServerGameDLL, GameServerSteamAPIDeactivated, SH_NOATTRIB, 0);
-SH_DECL_HOOK1(CServerSideClientBase, ProcessRespondCvarValue, SH_NOATTRIB, 0, bool, const CNetMessagePB<CCLCMsg_RespondCvarValue>&);
 SH_DECL_HOOK2(IGameEventManager2, FireEvent, SH_NOATTRIB, 0, bool, IGameEvent*, bool);
 SH_DECL_HOOK2(IGameEventManager2, LoadEventsFromFile, SH_NOATTRIB, 0, int, const char*, bool);
 SH_DECL_HOOK2(CServerSideClientBase, FilterMessage, SH_NOATTRIB, 0, bool, const CNetMessage*, INetChannel*);
@@ -50,7 +46,6 @@ SH_DECL_HOOK5_void(IServerGameClients, ClientDisconnect, SH_NOATTRIB, 0, CPlayer
 SH_DECL_HOOK6(IServerGameClients, ClientConnect, SH_NOATTRIB, 0, bool, CPlayerSlot, const char*, uint64, const char*, bool, CBufferString*);
 SH_DECL_HOOK6_void(IServerGameClients, OnClientConnected, SH_NOATTRIB, 0, CPlayerSlot, const char*, uint64, const char*, const char*, bool);
 SH_DECL_HOOK7_void(ISource2GameEntities, CheckTransmit, SH_NOATTRIB, 0, CCheckTransmitInfo**, int, CBitVec<16384>&, CBitVec<16384>&, const Entity2Networkable_t**, const uint16_t*, int);
-SH_DECL_HOOK8_void(IGameEventSystem, PostEventAbstract, SH_NOATTRIB, 0, CSplitScreenSlot, bool, int, const uint64*, INetworkMessageInternal*, const CNetMessage*, unsigned long, NetChannelBufType_t)
 
 ICvar* g_pcVar = nullptr;
 
@@ -68,11 +63,6 @@ bool SwiftlyMMBridge::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxle
     s2binlib_set_module_base_from_pointer("server", g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL));
     s2binlib_set_module_base_from_pointer("engine2", g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER));
 
-    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
-
-    SH_ADD_HOOK_MEMFUNC(IServerGameDLL, GameServerSteamAPIActivated, server, this, &SwiftlyMMBridge::Hook_GameServerSteamAPIActivated, false);
-    SH_ADD_HOOK_MEMFUNC(IServerGameDLL, GameServerSteamAPIDeactivated, server, this, &SwiftlyMMBridge::Hook_GameServerSteamAPIDeactivated, false);
-
     bool result = g_SwiftlyCore.Load(BridgeKind_t::Metamod);
 
     if (late)
@@ -87,10 +77,6 @@ bool SwiftlyMMBridge::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxle
 
 bool SwiftlyMMBridge::Unload(char* error, size_t maxlen)
 {
-    auto server = g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL);
-    SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameServerSteamAPIActivated, server, this, &SwiftlyMMBridge::Hook_GameServerSteamAPIActivated, false);
-    SH_REMOVE_HOOK_MEMFUNC(IServerGameDLL, GameServerSteamAPIDeactivated, server, this, &SwiftlyMMBridge::Hook_GameServerSteamAPIDeactivated, false);
-
     return g_SwiftlyCore.Unload();
 }
 
@@ -128,22 +114,6 @@ void* SwiftlyMMBridge::GetInterface(const std::string& interface_name)
     if (ifaceptr) g_mInterfacesCache.insert({ interface_name, ifaceptr });
 
     return ifaceptr;
-}
-
-void SwiftlyMMBridge::Hook_GameServerSteamAPIActivated()
-{
-    if (!CommandLine()->HasParm("-dedicated") || g_SteamAPI.SteamUGC())
-        return;
-
-    g_SteamAPI.Init();
-    static auto playermanager = g_ifaceService.FetchInterface<IPlayerManager>(PLAYERMANAGER_INTERFACE_VERSION);
-    playermanager->SteamAPIServerActivated();
-    RETURN_META(MRES_IGNORED);
-}
-
-void SwiftlyMMBridge::Hook_GameServerSteamAPIDeactivated()
-{
-    RETURN_META(MRES_IGNORED);
 }
 
 const char* SwiftlyMMBridge::GetAuthor()

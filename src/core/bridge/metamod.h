@@ -23,8 +23,6 @@
 #include <igameevents.h>
 #include <sh_vector.h>
 #include <core/sourcehook/sourcehook.h>
-#include <public/steam/steam_api_common.h>
-#include <public/steam/isteamugc.h>
 
 #include <api/sdk/serversideclient.h>
 #include <public/networksystem/netmessage.h>
@@ -40,10 +38,6 @@ public:
     void OnLevelShutdown();
 
     void* GetInterface(const std::string& interface_name);
-
-    void Hook_GameServerSteamAPIActivated();
-    void Hook_GameServerSteamAPIDeactivated();
-
 public:
     const char* GetAuthor();
     const char* GetName();
@@ -56,7 +50,6 @@ public:
 };
 
 extern SwiftlyMMBridge g_MMPluginBridge;
-extern CSteamGameServerAPIContext g_SteamAPI;
 
 PLUGIN_GLOBALVARS();
 
