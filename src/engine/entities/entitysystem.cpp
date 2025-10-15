@@ -74,7 +74,7 @@ void CEntSystem::Initialize()
     g_pTraceShapeHook->Enable();
 
     void* netserverservice = nullptr;
-    s2binlib_find_vtable("server", "CNetworkServerService", &netserverservice);
+    s2binlib_find_vtable("engine2", "CNetworkServerService", &netserverservice);
 
     g_pStartupServerHook = hooksmanager->CreateVFunctionHook();
     g_pStartupServerHook->SetHookFunction(netserverservice, gamedata->GetOffsets()->Fetch("INetworkServerService::StartupServer"), reinterpret_cast<void*>(StartupServerHook), true);

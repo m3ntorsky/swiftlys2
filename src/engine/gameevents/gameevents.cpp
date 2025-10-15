@@ -80,7 +80,7 @@ void CEventManager::Initialize(std::string game_name)
     auto gamedata = g_ifaceService.FetchInterface<IGameDataManager>(GAMEDATA_INTERFACE_VERSION);
 
     void* netserverservice = nullptr;
-    s2binlib_find_vtable("server", "CNetworkServerService", &netserverservice);
+    s2binlib_find_vtable("engine2", "CNetworkServerService", &netserverservice);
 
     g_pStartupServerEventHook = hooksmanager->CreateVFunctionHook();
     g_pStartupServerEventHook->SetHookFunction(netserverservice, gamedata->GetOffsets()->Fetch("INetworkServerService::StartupServer"), reinterpret_cast<void*>(StartupServerEventHook), true);
