@@ -25,6 +25,9 @@
 #include "console/colors.h"
 #include <core/managed/host/host.h>
 
+#include "managed/host/dynlib.h"
+#include "managed/host/strconv.h"
+
 #include <engine/entities/listener.h>
 #include <engine/entities/entitysystem.h>
 #include <engine/fixes/entrypoint.h>
@@ -35,6 +38,7 @@
 
 #include <api/shared/plat.h>
 #include <api/shared/string.h>
+#include <api/shared/files.h>
 
 #include <fmt/format.h>
 
@@ -54,6 +58,10 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
 {
     m_iKind = kind;
     SetupConsoleColors();
+
+    s2binlib_initialize(Plat_GetGameDirectory(), "csgo");
+    s2binlib_set_module_base_from_pointer("server", g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL));
+    s2binlib_set_module_base_from_pointer("engine2", g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER));
 
     auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
 
@@ -245,10 +253,55 @@ void SwiftlyCore::OnMapUnload()
     current_map = "";
 }
 
-void* SwiftlyCore::GetInterface(const std::string& iface_name)
+std::map<std::string, void*> g_mInterfacesCache;
+
+void* SwiftlyCore::GetInterface(const std::string& interface_name)
 {
-    if (m_iKind == BridgeKind_t::Metamod) return g_MMPluginBridge.GetInterface(iface_name);
-    else return nullptr;
+    auto it = g_mInterfacesCache.find(interface_name);
+    if (it != g_mInterfacesCache.end())
+        return it->second;
+
+    void* ifaceptr = nullptr;
+    void* ifaceCreate = nullptr;
+    if (INTERFACEVERSION_SERVERGAMEDLL == interface_name || INTERFACEVERSION_SERVERGAMECLIENTS == interface_name || SOURCE2GAMEENTITIES_INTERFACE_VERSION == interface_name) {
+        void* lib = load_library(
+            (const char_t*)WIN_LINUX(
+                StringWide((Plat_GetGameDirectory() + std::string("\\csgo\\bin\\win64\\server.dll"))).c_str(),
+                (Plat_GetGameDirectory() + std::string("/csgo/bin/linuxsteamrt64/libserver.so")).c_str()
+            )
+        );
+        ifaceCreate = get_export(lib, "CreateInterface");
+        unload_library(lib);
+    }
+    else if (SCHEMASYSTEM_INTERFACE_VERSION == interface_name) {
+        void* lib = load_library(
+            (const char_t*)WIN_LINUX(
+                StringWide(Plat_GetGameDirectory() + std::string("\\bin\\win64\\schemasystem.dll")).c_str(),
+                (Plat_GetGameDirectory() + std::string("/bin/linuxsteamrt64/libschemasystem.so")).c_str()
+            )
+        );
+        ifaceCreate = get_export(lib, "CreateInterface");
+        unload_library(lib);
+    }
+    else {
+        void* lib = load_library(
+            (const char_t*)WIN_LINUX(
+                StringWide(Plat_GetGameDirectory() + std::string("\\bin\\win64\\engine2.dll")).c_str(),
+                (Plat_GetGameDirectory() + std::string("/bin/linuxsteamrt64/libengine2.so")).c_str()
+            )
+        );
+        ifaceCreate = get_export(lib, "CreateInterface");
+        unload_library(lib);
+    }
+
+    if (ifaceCreate != nullptr)
+    {
+        ifaceptr = reinterpret_cast<void* (*)(const char*, int*)>(ifaceCreate)(interface_name.c_str(), nullptr);
+    }
+
+    if (ifaceptr != nullptr) g_mInterfacesCache.insert({ interface_name, ifaceptr });
+
+    return ifaceptr;
 }
 
 void SwiftlyCore::SendConsoleMessage(const std::string& message)

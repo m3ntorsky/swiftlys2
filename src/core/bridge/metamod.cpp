@@ -47,10 +47,6 @@ bool SwiftlyMMBridge::Load(PluginId id, ISmmAPI* ismm, char* error, size_t maxle
 
     META_CONVAR_REGISTER(FCVAR_RELEASE | FCVAR_SERVER_CAN_EXECUTE | FCVAR_CLIENT_CAN_EXECUTE | FCVAR_GAMEDLL);
 
-    s2binlib_initialize(Plat_GetGameDirectory(), "csgo");
-    s2binlib_set_module_base_from_pointer("server", g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL));
-    s2binlib_set_module_base_from_pointer("engine2", g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER));
-
     bool result = g_SwiftlyCore.Load(BridgeKind_t::Metamod);
 
     if (late)
@@ -81,27 +77,6 @@ void SwiftlyMMBridge::OnLevelInit(char const* pMapName, char const* pMapEntities
 void SwiftlyMMBridge::OnLevelShutdown()
 {
     g_SwiftlyCore.OnMapUnload();
-}
-
-std::map<std::string, void*> g_mInterfacesCache;
-
-void* SwiftlyMMBridge::GetInterface(const std::string& interface_name)
-{
-    auto it = g_mInterfacesCache.find(interface_name);
-    if (it != g_mInterfacesCache.end())
-        return it->second;
-
-    void* ifaceptr = nullptr;
-    if (interface_name == FILESYSTEM_INTERFACE_VERSION)
-        ifaceptr = g_SMAPI->VInterfaceMatch(g_SMAPI->GetFileSystemFactory(), FILESYSTEM_INTERFACE_VERSION, 0);
-    else if (INTERFACEVERSION_SERVERGAMEDLL == interface_name || INTERFACEVERSION_SERVERGAMECLIENTS == interface_name || SOURCE2GAMEENTITIES_INTERFACE_VERSION == interface_name)
-        ifaceptr = g_SMAPI->VInterfaceMatch(g_SMAPI->GetServerFactory(), interface_name.c_str(), 0);
-    else
-        ifaceptr = g_SMAPI->VInterfaceMatch(g_SMAPI->GetEngineFactory(), interface_name.c_str(), 0);
-
-    if (ifaceptr) g_mInterfacesCache.insert({ interface_name, ifaceptr });
-
-    return ifaceptr;
 }
 
 const char* SwiftlyMMBridge::GetAuthor()

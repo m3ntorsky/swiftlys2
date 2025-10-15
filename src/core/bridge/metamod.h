@@ -36,8 +36,6 @@ public:
 
     void OnLevelInit(char const* pMapName, char const* pMapEntities, char const* pOldLevel, char const* pLandmarkName, bool loadGame, bool background);
     void OnLevelShutdown();
-
-    void* GetInterface(const std::string& interface_name);
 public:
     const char* GetAuthor();
     const char* GetName();
