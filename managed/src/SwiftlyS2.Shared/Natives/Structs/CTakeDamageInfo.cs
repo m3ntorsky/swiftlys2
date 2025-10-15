@@ -57,6 +57,7 @@ public unsafe struct CTakeDamageInfo
 
     public void* ScriptInstance;
     public AttackerInfo_t AttackerInfo;
+    private fixed byte _padding4[0x1C];
     public bool InTakeDamageFlow;
 
     private int Unknown;
@@ -65,7 +66,7 @@ public unsafe struct CTakeDamageInfo
     {
         Vector vec3_origin = Vector.Zero;
 
-        fixed(CTakeDamageInfo* info = &this)
+        fixed (CTakeDamageInfo* info = &this)
         {
             GameFunctions.CTakeDamageInfoConstructor(info, IntPtr.Zero, IntPtr.Zero, IntPtr.Zero, &vec3_origin, &vec3_origin, 0.0f, 0, 0, null);
         }
@@ -82,4 +83,16 @@ public unsafe struct CTakeDamageInfo
     }
 
     public HitGroup_t ActualHitGroup => Trace->HitBox->m_nGroupId;
+}
+
+[StructLayout(LayoutKind.Sequential)]
+public unsafe struct CTakeDamageResult
+{
+    public CTakeDamageInfo* OriginatingInfo;
+    public int HealthLost;
+    public int DamageDealt;
+    public float PreModifiedDamage;
+    public int TotalledHealthLost;
+    public int TotalledDamageDealt;
+    public bool WasDamageSuppressed;
 }
