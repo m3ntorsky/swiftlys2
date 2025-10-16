@@ -47,6 +47,8 @@ static void commandsCallback(const CCommandContext& context, const CCommand& arg
     tokenizedArgs.Tokenize(args.GetCommandString());
 
     std::string commandName = tokenizedArgs[0];
+
+    std::transform(commandName.begin(), commandName.end(), commandName.begin(), ::tolower);
     std::string originalCommandName = commandName;
     if (!g_mCommandHandlers.contains(commandName)) commandName = "sw_" + commandName;
     if (!g_mCommandHandlers.contains(commandName)) return;
@@ -147,7 +149,9 @@ int CServerCommands::HandleCommand(int playerid, const std::string& text)
             return 0;
 
         commandName.erase(0, selectedPrefix.size());
+        std::transform(commandName.begin(), commandName.end(), commandName.begin(), ::tolower);
 
+        std::cout << "Command name: " << commandName << std::endl;
         std::string originalCommandName = commandName;
         if (!g_mCommandHandlers.contains(commandName)) commandName = "sw_" + commandName;
         if (!g_mCommandHandlers.contains(commandName)) return 0;
@@ -187,6 +191,8 @@ bool CServerCommands::HandleClientChat(int playerid, const std::string& text, bo
 
 uint64_t CServerCommands::RegisterCommand(std::string command_name, std::function<void(int, std::vector<std::string>, std::string, std::string, bool)> handler, bool registerRaw)
 {
+    std::transform(command_name.begin(), command_name.end(), command_name.begin(), ::tolower);
+
     if (!registerRaw)
     {
         if (conCommandCreated.contains(command_name))
