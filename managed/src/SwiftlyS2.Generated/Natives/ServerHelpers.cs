@@ -38,18 +38,4 @@ internal static class NativeServerHelpers {
     var ret = _IsFollowingServerGuidelines();
     return ret == 1;
   }
-
-  private unsafe static delegate* unmanaged<byte*, int> _GetPluginSettings;
-
-  public unsafe static string GetPluginSettings() {
-    var ret = _GetPluginSettings(null);
-    var pool = ArrayPool<byte>.Shared;
-    var retBuffer = pool.Rent(ret + 1);
-    fixed (byte* retBufferPtr = retBuffer) {
-      ret = _GetPluginSettings(retBufferPtr);
-      var retString = Encoding.UTF8.GetString(retBufferPtr, ret);
-      pool.Return(retBuffer);
-      return retString;
-    }
-  }
 }

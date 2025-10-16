@@ -460,9 +460,6 @@ bool Configuration::Load()
 
         bool wasEdited = false;
 
-        RegisterConfiguration(wasEdited, config_json, "core", "core", "Plugin.AutoReload", true);
-        RegisterConfiguration(wasEdited, config_json, "core", "core", "Plugin.ReloadRetryAttempts", 3);
-        RegisterConfiguration(wasEdited, config_json, "core", "core", "Plugin.ReloadRetryDelayMs", 500);
         RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "CommandPrefixes", { "!" }, true, " ");
         RegisterConfigurationVector<std::string>(wasEdited, config_json, "core", "core", "CommandSilentPrefixes", { "/" }, true, " ");
         RegisterConfiguration(wasEdited, config_json, "core", "core", "ConsoleFilter", true);

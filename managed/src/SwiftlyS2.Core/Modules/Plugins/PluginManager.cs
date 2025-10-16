@@ -13,13 +13,6 @@ namespace SwiftlyS2.Core.Plugins;
 
 internal class PluginManager
 {
-  private struct PluginSettings
-  {
-    public bool AutoReload;
-    public int ReloadRetryAttempts;
-    public int ReloadRetryDelayMs;
-  }
-
   private IServiceProvider _Provider { get; init; }
   private RootDirService _RootDirService { get; init; }
   private ILogger _Logger { get; init; }
@@ -27,7 +20,6 @@ internal class PluginManager
   private FileSystemWatcher? _Watcher { get; set; }
   private InterfaceManager _InterfaceManager { get; set; } = new();
   private List<Type> _SharedTypes { get; set; } = new();
-  private PluginSettings Settings { get; set; } = new() { AutoReload = true, ReloadRetryAttempts = 3, ReloadRetryDelayMs = 500 };
 
   private DateTime lastRead = DateTime.MinValue;
   private readonly HashSet<string> reloadingPlugins = new();
@@ -49,21 +41,6 @@ internal class PluginManager
       NotifyFilter = NotifyFilters.LastWrite,
     };
 
-    try
-    {
-      var settings = NativeServerHelpers.GetPluginSettings();
-      var parts = settings.Split('\x01');
-      Settings = new PluginSettings
-      {
-        AutoReload = bool.Parse(parts[0]),
-        ReloadRetryAttempts = int.Parse(parts[1]),
-        ReloadRetryDelayMs = int.Parse(parts[2]),
-      };
-    }
-    catch (Exception ex)
-    {
-      _Logger.LogError(ex, "Failed to get plugin settings");
-    }
     _Watcher.Changed += HandlePluginChange;
 
     _Watcher.EnableRaisingEvents = true;
@@ -102,11 +79,6 @@ internal class PluginManager
   {
     try
     {
-      if (!Settings.AutoReload)
-      {
-        return;
-      }
-
       // Windows FileSystemWatcher triggers multiple (open, write, close) events for a single file change
       if (DateTime.Now - lastRead < TimeSpan.FromSeconds(1))
       {
@@ -147,10 +119,10 @@ internal class PluginManager
           {
             try
             {
-              await Task.Delay(Settings.ReloadRetryDelayMs);
+              await Task.Delay(500);
 
               bool fileLockSuccess = false;
-              for (int attempt = 0; attempt < Settings.ReloadRetryAttempts; attempt++)
+              for (int attempt = 0; attempt < 3; attempt++)
               {
                 try
                 {
@@ -160,14 +132,14 @@ internal class PluginManager
                   fileLockSuccess = true;
                   break;
                 }
-                catch (IOException) when (attempt < Settings.ReloadRetryAttempts - 1)
+                catch (IOException) when (attempt < 1)
                 {
-                  _Logger.LogWarning($"{Path.GetFileName(plugin?.PluginDirectory)} is locked, retrying in {Settings.ReloadRetryDelayMs}ms... (Attempt {attempt + 1}/{Settings.ReloadRetryAttempts})");
-                  await Task.Delay(Settings.ReloadRetryDelayMs);
+                  _Logger.LogWarning($"{Path.GetFileName(plugin?.PluginDirectory)} is locked, retrying in 500ms... (Attempt {attempt + 1}/3)");
+                  await Task.Delay(500);
                 }
                 catch (IOException)
                 {
-                  _Logger.LogError($"Failed to reload {Path.GetFileName(plugin?.PluginDirectory)} after {Settings.ReloadRetryAttempts} attempts");
+                  _Logger.LogError($"Failed to reload {Path.GetFileName(plugin?.PluginDirectory)} after 3 attempts");
                 }
               }
 

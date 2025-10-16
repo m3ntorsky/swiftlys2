@@ -46,30 +46,6 @@ bool Bridge_ServerHelpers_IsFollowingServerGuidelines()
     return std::get<bool>(configuration->GetValue("core.FollowCS2ServerGuidelines"));
 }
 
-int Bridge_ServerHelpers_GetPluginSettings(char* out)
-{
-    static std::string s;
-
-    auto configuration = g_ifaceService.FetchInterface<IConfiguration>(CONFIGURATION_INTERFACE_VERSION);
-    try {
-        std::vector<std::string> settings = {
-            std::get<bool>(configuration->GetValue("core.Plugin.AutoReload")) ? "true" : "false",
-            std::to_string(std::get<int>(configuration->GetValue("core.Plugin.ReloadRetryAttempts"))),
-            std::to_string(std::get<int>(configuration->GetValue("core.Plugin.ReloadRetryDelayMs"))),
-        };
-
-        s = implode(settings, "\x01");
-    }
-    catch (std::exception& e)
-    {
-        printf("Exception: %s\n", e.what());
-    }
-
-    if (out != nullptr) strcpy(out, s.c_str());
-    return s.size();
-}
-
 DEFINE_NATIVE("ServerHelpers.GetServerLanguage", Bridge_ServerHelpers_GetServerLanguage);
 DEFINE_NATIVE("ServerHelpers.UsePlayerLanguage", Bridge_ServerHelpers_UsePlayerLanguage);
 DEFINE_NATIVE("ServerHelpers.IsFollowingServerGuidelines", Bridge_ServerHelpers_IsFollowingServerGuidelines);
-DEFINE_NATIVE("ServerHelpers.GetPluginSettings", Bridge_ServerHelpers_GetPluginSettings);
