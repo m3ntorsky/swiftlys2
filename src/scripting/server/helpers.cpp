@@ -18,9 +18,6 @@
 
 #include <scripting/scripting.h>
 #include <api/interfaces/manager.h>
-#include <api/shared/files.h>
-#include <api/shared/string.h>
-#include <fmt/format.h>
 
 int Bridge_ServerHelpers_GetServerLanguage(char* out)
 {
