@@ -83,6 +83,8 @@ public class TestPlugin : BasePlugin
     Core.Engine.ExecuteCommandWithBuffer("@ping", (buffer) =>
     {
       Console.WriteLine($"pong: {buffer}");
+      Console.WriteLine($"pong: {buffer}");
+      
     });
 
     Core.GameEvent.HookPre<EventShowSurvivalRespawnStatus>(@event =>

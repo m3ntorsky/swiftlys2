@@ -77,7 +77,7 @@ internal class PluginManager
   {
     try
     {
-      // why i have to make a debounce here?
+      // Windows FileSystemWatcher triggers multiple (open, write, close) events for a single file change
       if (DateTime.Now - lastRead < TimeSpan.FromSeconds(1))
       {
         return;
@@ -91,7 +91,7 @@ internal class PluginManager
 
       foreach (var plugin in _Plugins)
       {
-        if (plugin.Metadata?.Id == Path.GetFileName(directory))
+        if (Path.GetFileName(plugin?.PluginDirectory) == Path.GetFileName(directory))
         {
           lastRead = DateTime.Now;
           ReloadPlugin(plugin.Metadata!.Id);
