@@ -118,8 +118,73 @@ jobs:
         name: swiftlys2_windows_pdb
         path: build/windows/x64/release/swiftlys2.pdb
 
+  linux_loader:
+    needs: versioning
+    runs-on: ubuntu-latest
+    container:
+      image: registry.gitlab.steamos.cloud/steamrt/sniper/sdk
+    steps:
+    - name: Install dependencies
+      run: |
+        apt-get update
+        apt install libreadline-dev
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v4
+      with:
+        repository: swiftly-solution/swiftlys2-loader
+        submodules: recursive
+        fetch-depth: 0
+    - name: Setup xmake
+      uses: xmake-io/github-action-setup-xmake@v1
+      with:
+        xmake-version: latest
+        actions-cache-folder: '.xmake-cache'
+        actions-cache-key: xmake-loader-${{ runner.os }}
+    - name: Build
+      run: |
+        xmake f --cc=gcc-14 --cxx=g++-14 -y
+        xmake build -y
+      env:
+        SWIFTLY_VERSION: ${{ needs.versioning.outputs.semVer }}
+    - name: Upload plugin as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: swiftlys2_loader_linux
+        path: build/package/addons
+
+  windows_loader:
+    needs: versioning
+    runs-on: windows-latest
+    steps:
+    - name: Checkout repository and submodules
+      uses: actions/checkout@v4
+      with:
+        repository: swiftly-solution/swiftlys2-loader
+        submodules: recursive
+        fetch-depth: 0
+    - name: Setup xmake
+      uses: xmake-io/github-action-setup-xmake@v1
+      with:
+        xmake-version: latest
+        actions-cache-key: xmake-loader-${{ runner.os }}
+    - name: Build
+      run: |
+        xmake build -y
+      env:
+        SWIFTLY_VERSION: ${{ needs.versioning.outputs.semVer }}
+    - name: Upload plugin as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: swiftlys2_loader_windows
+        path: build/package/addons
+    - name: Upload PDB as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: swiftlys2_loader_windows_pdb
+        path: build/windows/x64/release/server.pdb
+
   packaging:
-    needs: [versioning, linux_core, windows_core, managed]
+    needs: [versioning, linux_core, windows_core, managed, linux_loader, windows_loader]
     runs-on: ubuntu-latest
     env:
       LINUX_FOLDER: swiftlys2-linux-v${{ needs.versioning.outputs.semVer }}
@@ -133,8 +198,28 @@ jobs:
     - name: Download artifacts
       uses: actions/download-artifact@v4
       with:
+        name: swiftlys2_loader_linux
+        path: ./${{ env.LINUX_FOLDER }}-loader
+    - name: Download artifacts
+      uses: actions/download-artifact@v4
+      with:
         name: swiftlys2_windows
         path: ./${{ env.WINDOWS_FOLDER }}
+    - name: Download artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: swiftlys2_windows_pdb
+        path: ./swiftlys2.pdb
+    - name: Download artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: swiftlys2_loader_windows
+        path: ./${{ env.WINDOWS_FOLDER }}-loader
+    - name: Download artifacts
+      uses: actions/download-artifact@v4
+      with:
+        name: swiftlys2_loader_windows_pdb
+        path: ./server.pdb
     
     - name: Download artifacts
       uses: actions/download-artifact@v4
@@ -160,6 +245,12 @@ jobs:
         ls -la ./managed
         cp -r managed/SwiftlyS2 ${{ env.LINUX_FOLDER }}/swiftlys2/bin/managed
         cp -r managed/SwiftlyS2 ${{ env.WINDOWS_FOLDER }}/swiftlys2/bin/managed
+
+        cp -r ${{ env.LINUX_FOLDER }}-loader/* ${{ env.LINUX_FOLDER }}/
+        cp -r ${{ env.WINDOWS_FOLDER }}-loader/* ${{ env.WINDOWS_FOLDER }}/
+
+        cp -r ./swiftlys2.pdb/swiftlys2.pdb ${{ env.WINDOWS_FOLDER }}/swiftlys2/bin/win64/
+        cp -r ./server.pdb/server.pdb ${{ env.WINDOWS_FOLDER }}/swiftlys2/bin/win64/
 
         mkdir -p ${{ env.LINUX_FOLDER }}/swiftlys2/plugins/
         mkdir -p ${{ env.WINDOWS_FOLDER }}/swiftlys2/plugins/
