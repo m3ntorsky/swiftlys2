@@ -151,7 +151,6 @@ int CServerCommands::HandleCommand(int playerid, const std::string& text)
         commandName.erase(0, selectedPrefix.size());
         std::transform(commandName.begin(), commandName.end(), commandName.begin(), ::tolower);
 
-        std::cout << "Command name: " << commandName << std::endl;
         std::string originalCommandName = commandName;
         if (!g_mCommandHandlers.contains(commandName)) commandName = "sw_" + commandName;
         if (!g_mCommandHandlers.contains(commandName)) return 0;
