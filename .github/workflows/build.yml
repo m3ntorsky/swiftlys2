@@ -249,8 +249,8 @@ jobs:
         cp -r ${{ env.LINUX_FOLDER }}-loader/* ${{ env.LINUX_FOLDER }}/
         cp -r ${{ env.WINDOWS_FOLDER }}-loader/* ${{ env.WINDOWS_FOLDER }}/
 
-        cp -r ./swiftlys2.pdb ${{ env.WINDOWS_FOLDER }}/swiftlys2/bin/win64/
-        cp -r ./server.pdb ${{ env.WINDOWS_FOLDER }}/swiftlys2/bin/win64/
+        cp -r ./swiftlys2.pdb/swiftlys2.pdb ${{ env.WINDOWS_FOLDER }}/swiftlys2/bin/win64/
+        cp -r ./server.pdb/server.pdb ${{ env.WINDOWS_FOLDER }}/swiftlys2/bin/win64/
 
         mkdir -p ${{ env.LINUX_FOLDER }}/swiftlys2/plugins/
         mkdir -p ${{ env.WINDOWS_FOLDER }}/swiftlys2/plugins/
