@@ -2,6 +2,7 @@ using System.Reflection;
 using McMaster.NETCore.Plugins;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Modules.Plugins;
 using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared;
@@ -12,6 +13,13 @@ namespace SwiftlyS2.Core.Plugins;
 
 internal class PluginManager
 {
+  private struct PluginSettings
+  {
+    public bool AutoReload;
+    public int ReloadRetryAttempts;
+    public int ReloadRetryDelayMs;
+  }
+
   private IServiceProvider _Provider { get; init; }
   private RootDirService _RootDirService { get; init; }
   private ILogger _Logger { get; init; }
@@ -19,8 +27,10 @@ internal class PluginManager
   private FileSystemWatcher? _Watcher { get; set; }
   private InterfaceManager _InterfaceManager { get; set; } = new();
   private List<Type> _SharedTypes { get; set; } = new();
+  private PluginSettings Settings { get; set; } = new() { AutoReload = true, ReloadRetryAttempts = 3, ReloadRetryDelayMs = 500 };
 
   private DateTime lastRead = DateTime.MinValue;
+  private readonly HashSet<string> reloadingPlugins = new();
 
   public PluginManager(
     IServiceProvider provider,
@@ -39,6 +49,21 @@ internal class PluginManager
       NotifyFilter = NotifyFilters.LastWrite,
     };
 
+    try
+    {
+      var settings = NativeServerHelpers.GetPluginSettings();
+      var parts = settings.Split('\x01');
+      Settings = new PluginSettings
+      {
+        AutoReload = bool.Parse(parts[0]),
+        ReloadRetryAttempts = int.Parse(parts[1]),
+        ReloadRetryDelayMs = int.Parse(parts[2]),
+      };
+    }
+    catch (Exception ex)
+    {
+      _Logger.LogError(ex, "Failed to get plugin settings");
+    }
     _Watcher.Changed += HandlePluginChange;
 
     _Watcher.EnableRaisingEvents = true;
@@ -77,6 +102,11 @@ internal class PluginManager
   {
     try
     {
+      if (!Settings.AutoReload)
+      {
+        return;
+      }
+
       // Windows FileSystemWatcher triggers multiple (open, write, close) events for a single file change
       if (DateTime.Now - lastRead < TimeSpan.FromSeconds(1))
       {
@@ -93,8 +123,68 @@ internal class PluginManager
       {
         if (Path.GetFileName(plugin?.PluginDirectory) == Path.GetFileName(directory))
         {
+          var pluginId = plugin.Metadata?.Id;
+          if (string.IsNullOrWhiteSpace(pluginId))
+          {
+            break;
+          }
+
+          lock (reloadingPlugins)
+          {
+            if (reloadingPlugins.Contains(pluginId))
+            {
+              return;
+            }
+            reloadingPlugins.Add(pluginId);
+          }
+
           lastRead = DateTime.Now;
-          ReloadPlugin(plugin.Metadata!.Id);
+
+          // meh, Idk why, but when using Mstsc to copy and overwrite files
+          // it sometimes triggers: "System.IO.IOException: The process cannot access the file because it is being used by another process."
+          // therefore, we use a retry mechanism
+          Task.Run(async () =>
+          {
+            try
+            {
+              await Task.Delay(Settings.ReloadRetryDelayMs);
+
+              bool fileLockSuccess = false;
+              for (int attempt = 0; attempt < Settings.ReloadRetryAttempts; attempt++)
+              {
+                try
+                {
+                  using (var stream = File.Open(e.FullPath, FileMode.Open, FileAccess.Read, FileShare.None))
+                  {
+                  }
+                  fileLockSuccess = true;
+                  break;
+                }
+                catch (IOException) when (attempt < Settings.ReloadRetryAttempts - 1)
+                {
+                  _Logger.LogWarning($"{Path.GetFileName(plugin?.PluginDirectory)} is locked, retrying in {Settings.ReloadRetryDelayMs}ms... (Attempt {attempt + 1}/{Settings.ReloadRetryAttempts})");
+                  await Task.Delay(Settings.ReloadRetryDelayMs);
+                }
+                catch (IOException)
+                {
+                  _Logger.LogError($"Failed to reload {Path.GetFileName(plugin?.PluginDirectory)} after {Settings.ReloadRetryAttempts} attempts");
+                }
+              }
+
+              if (fileLockSuccess)
+              {
+                ReloadPlugin(pluginId);
+              }
+            }
+            finally
+            {
+              lock (reloadingPlugins)
+              {
+                reloadingPlugins.Remove(pluginId);
+              }
+            }
+          });
+
           break;
         }
       }

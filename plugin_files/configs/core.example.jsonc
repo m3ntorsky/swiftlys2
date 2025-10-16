@@ -1,4 +1,9 @@
 {
+    "Plugin": {
+        "AutoReload": true,
+        "ReloadRetryAttempts": 3,
+        "ReloadRetryDelayMs": 500
+    },
     "CS2ServerGuidelines": "https://blog.counter-strike.net/index.php/server_guidelines/",
     "CommandPrefixes": [
         "!"
