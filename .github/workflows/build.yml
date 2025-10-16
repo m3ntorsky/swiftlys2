@@ -184,7 +184,7 @@ jobs:
         path: build/windows/x64/release/server.pdb
 
   packaging:
-    needs: [versioning, linux_core, windows_core, managed]
+    needs: [versioning, linux_core, windows_core, managed, linux_loader, windows_loader]
     runs-on: ubuntu-latest
     env:
       LINUX_FOLDER: swiftlys2-linux-v${{ needs.versioning.outputs.semVer }}
