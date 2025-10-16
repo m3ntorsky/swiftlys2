@@ -40,11 +40,16 @@
 #include <api/shared/files.h>
 
 #include <public/tier1/KeyValues.h>
+#include <public/icvar.h>
 
 #include <fmt/format.h>
 
 #include <s2binlib/s2binlib.h>
 #include <public/engine/igameeventsystem.h>
+
+#include <public/steam/steam_gameserver.h>
+
+#include <public/tier1/convar.h>
 
 SwiftlyCore g_SwiftlyCore;
 InterfacesManager g_ifaceService;
@@ -74,6 +79,8 @@ void DestroyLoopModeHook(void* _this, void* loopmode);
 bool LoopInitHook(void* _this, KeyValues* pKeyValues, void* pRegistry);
 void LoopShutdownHook(void* _this);
 
+extern ICvar* g_pCVar;
+
 bool SwiftlyCore::Load(BridgeKind_t kind)
 {
     m_iKind = kind;
@@ -82,6 +89,10 @@ bool SwiftlyCore::Load(BridgeKind_t kind)
     s2binlib_initialize(Plat_GetGameDirectory(), "csgo");
     s2binlib_set_module_base_from_pointer("server", g_ifaceService.FetchInterface<IServerGameDLL>(INTERFACEVERSION_SERVERGAMEDLL));
     s2binlib_set_module_base_from_pointer("engine2", g_ifaceService.FetchInterface<IVEngineServer2>(INTERFACEVERSION_VENGINESERVER));
+
+    auto cvars = g_ifaceService.FetchInterface<ICvar>(CVAR_INTERFACE_VERSION);
+    g_pCVar = cvars;
+    ConVar_Register(FCVAR_RELEASE | FCVAR_SERVER_CAN_EXECUTE | FCVAR_CLIENT_CAN_EXECUTE | FCVAR_GAMEDLL, nullptr, nullptr);
 
     auto logger = g_ifaceService.FetchInterface<ILogger>(LOGGER_INTERFACE_VERSION);
 
@@ -410,6 +421,16 @@ void* SwiftlyCore::GetInterface(const std::string& interface_name)
                 StringWide(Plat_GetGameDirectory() + std::string("\\bin\\win64\\schemasystem.dll")).c_str(),
                 (Plat_GetGameDirectory() + std::string("/bin/linuxsteamrt64/libschemasystem.so")).c_str()
             )
+        );
+        ifaceCreate = get_export(lib, "CreateInterface");
+        unload_library(lib);
+    }
+    else if (CVAR_INTERFACE_VERSION == interface_name) {
+        void* lib = load_library(
+                    (const char_t*)WIN_LINUX(
+                        StringWide(Plat_GetGameDirectory() + std::string("\\bin\\win64\\tier0.dll")).c_str(),
+                        (Plat_GetGameDirectory() + std::string("/bin/linuxsteamrt64/libtier0.so")).c_str()
+                    )
         );
         ifaceCreate = get_export(lib, "CreateInterface");
         unload_library(lib);

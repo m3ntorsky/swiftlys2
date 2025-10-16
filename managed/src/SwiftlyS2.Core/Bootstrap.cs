@@ -62,6 +62,7 @@ internal static class Bootstrap
           .AddTraceManagerService()
           .AddPermissionManager()
           .AddCoreHookService()
+          .AddCoreCommandService()
           .AddMenuService()
           .AddCommandTrackerManager()
           .AddCommandTrackerService()

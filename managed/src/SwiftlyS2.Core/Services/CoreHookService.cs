@@ -12,14 +12,16 @@ using SwiftlyS2.Shared.SchemaDefinitions;
 
 namespace SwiftlyS2.Core.Services;
 
-internal class CoreHookService : IDisposable {
+internal class CoreHookService : IDisposable
+{
   private ILogger<CoreHookService> _Logger { get; init; }
   private ISwiftlyCore _Core { get; init; }
 
-  public CoreHookService(ILogger<CoreHookService> logger, ISwiftlyCore core) {
+  public CoreHookService(ILogger<CoreHookService> logger, ISwiftlyCore core)
+  {
     _Logger = logger;
     _Core = core;
-  
+
     HookCanAcquire();
     HookCommandExecute();
     HookICVarFindConCommand();
@@ -56,14 +58,16 @@ internal class CoreHookService : IDisposable {
   private IUnmanagedFunction<CanAcquireDelegate>? _CanAcquire;
   private Guid _CanAcquireGuid;
 
-  private void HookCanAcquire() {
+  private void HookCanAcquire()
+  {
 
     var address = _Core.GameData.GetSignature("CCSPlayer_ItemServices::CanAcquire");
 
     _Logger.LogInformation("Hooking CCSPlayer_ItemServices::CanAcquire at {Address}", address);
 
     _CanAcquire = _Core.Memory.GetUnmanagedFunctionByAddress<CanAcquireDelegate>(address);
-    _CanAcquireGuid = _CanAcquire.AddHook(next => {
+    _CanAcquireGuid = _CanAcquire.AddHook(next =>
+    {
 
       return (pItemServices, pEconItemView, acquireMethod, unk1) =>
       {
@@ -72,7 +76,8 @@ internal class CoreHookService : IDisposable {
         var itemServices = _Core.Memory.ToSchemaClass<CCSPlayer_ItemServices>(pItemServices);
         var econItemView = _Core.Memory.ToSchemaClass<CEconItemView>(pEconItemView);
 
-        var @event = new OnItemServicesCanAcquireHookEvent {
+        var @event = new OnItemServicesCanAcquireHookEvent
+        {
           ItemServices = itemServices,
           EconItemView = econItemView,
           AcquireMethod = (AcquireMethod)acquireMethod,
@@ -81,7 +86,8 @@ internal class CoreHookService : IDisposable {
 
         EventPublisher.InvokeOnCanAcquireHook(@event);
 
-        if (@event.Intercepted) {
+        if (@event.Intercepted)
+        {
           // original result is modified here.
           return (int)@event.OriginalResult;
         }
@@ -91,7 +97,8 @@ internal class CoreHookService : IDisposable {
     });
   }
 
-  private void HookCommandExecute() {
+  private void HookCommandExecute()
+  {
 
     var address = _Core.GameData.GetSignature("Cmd_ExecuteCommand");
 
@@ -103,13 +110,15 @@ internal class CoreHookService : IDisposable {
     {
       return (a1, a2, a3, a4, a5) =>
       {
-        var (commandName, commandPtr) = (a5 != nint.Zero && a5 < nint.MaxValue && commandNameOffset != 0) switch {
+        var (commandName, commandPtr) = (a5 != nint.Zero && a5 < nint.MaxValue && commandNameOffset != 0) switch
+        {
           true when Marshal.ReadIntPtr(new nint(a5 + commandNameOffset)) is var basePtr && basePtr != nint.Zero && basePtr < nint.MaxValue
             => (Marshal.PtrToStringAnsi(Marshal.ReadIntPtr(basePtr)) ?? string.Empty, Marshal.ReadIntPtr(basePtr)),
           _ => (string.Empty, nint.Zero)
         };
 
-        var preEvent = new OnCommandExecuteHookEvent {
+        var preEvent = new OnCommandExecuteHookEvent
+        {
           OriginalName = commandName,
           HookMode = HookMode.Pre
         };
@@ -117,10 +126,11 @@ internal class CoreHookService : IDisposable {
 
         nint newCommandNamePtr = nint.Zero;
 
-        if (preEvent.Intercepted && preEvent.CommandName.Length < commandName.Length) {
+        if (preEvent.Intercepted && preEvent.CommandName.Length < commandName.Length)
+        {
           var newCommandName = Encoding.UTF8.GetBytes(preEvent.CommandName);
 
-          newCommandNamePtr = Marshal.AllocHGlobal(newCommandName.Length + 1);
+          newCommandNamePtr = NativeAllocator.Alloc((ulong)(newCommandName.Length + 1));
           newCommandNamePtr.Write(newCommandName.Length, 0);
 
           newCommandNamePtr.CopyFrom(newCommandName);
@@ -128,55 +138,95 @@ internal class CoreHookService : IDisposable {
         }
 
         var result = next()(a1, a2, a3, a4, a5);
-        
-        var postEvent = new OnCommandExecuteHookEvent {
+
+        var postEvent = new OnCommandExecuteHookEvent
+        {
           OriginalName = commandName,
           HookMode = HookMode.Post
         };
         EventPublisher.InvokeOnCommandExecuteHook(postEvent);
 
-        if (newCommandNamePtr != nint.Zero) {
-          Marshal.FreeHGlobal(newCommandNamePtr);
+        if (newCommandNamePtr != nint.Zero)
+        {
+          NativeAllocator.Free(newCommandNamePtr);
         }
-        
+
         return result;
       };
     });
   }
 
   private delegate nint FindConCommandDelegate(nint pICvar, nint pRet, nint pConCommandName, int unk1);
-  private IUnmanagedFunction<FindConCommandDelegate>? _FindConCommand;
+  private delegate nint FindConCommandDelegateLinux(nint pICvar, nint pConCommandName, int unk1);
+
+  private IUnmanagedFunction<FindConCommandDelegate>? _FindConCommandWindows;
+  private IUnmanagedFunction<FindConCommandDelegateLinux>? _FindConCommandLinux;
   private Guid _FindConCommandGuid;
 
-  private void HookICVarFindConCommand() {
+  private void HookICVarFindConCommand()
+  {
+    if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+    {
+      var offset = _Core.GameData.GetOffset("ICvar::FindConCommand");
+      _FindConCommandLinux = _Core.Memory.GetUnmanagedFunctionByVTable<FindConCommandDelegateLinux>(_Core.Memory.GetVTableAddress("tier0", "CCvar")!.Value, offset);
 
-    var icvar = _Core.Memory.GetInterfaceByName("VEngineCvar007")!;
-    var offset = _Core.GameData.GetOffset("ICvar::FindConCommand");
-    _FindConCommand = _Core.Memory.GetUnmanagedFunctionByVTable<FindConCommandDelegate>(icvar.Value.Read<nint>(), offset);
+      _Logger.LogInformation("Hooking ICvar::FindConCommand at {Address}", _FindConCommandLinux.Address);
 
-    _Logger.LogInformation("Hooking ICvar::FindConCommand at {Address}", _FindConCommand.Address);
-
-    _FindConCommandGuid = _FindConCommand.AddHook((next) => {
-      return (pICvar, pRet, pConCommandName, unk1) => {
-        var commandName = Marshal.PtrToStringAnsi(pConCommandName)!;
-        if (commandName.StartsWith("^wb^")) {
-          commandName = commandName.Substring(4);
-          var bytes = Encoding.UTF8.GetBytes(commandName);
-          unsafe {
-            var pStr = (nint)NativeMemory.AllocZeroed((nuint)bytes.Length);
-            pStr.CopyFrom(bytes);
-            var result = next()(pICvar, pRet, pStr, unk1);
-            NativeMemory.Free((void*)pStr);
-            return result;
+      _FindConCommandGuid = _FindConCommandLinux.AddHook((next) =>
+      {
+        return (pICvar, pConCommandName, unk1) =>
+        {
+          var commandName = Marshal.PtrToStringAnsi(pConCommandName)!;
+          if (commandName.StartsWith("^wb^"))
+          {
+            commandName = commandName.Substring(4);
+            var bytes = Encoding.UTF8.GetBytes(commandName);
+            unsafe
+            {
+              var pStr = (nint)NativeMemory.AllocZeroed((nuint)bytes.Length);
+              pStr.CopyFrom(bytes);
+              var result = next()(pICvar, pStr, unk1);
+              NativeMemory.Free((void*)pStr);
+              return result;
+            }
           }
-        }
-        return next()(pICvar, pRet, pConCommandName, unk1);
-      };
-    });
+          return next()(pICvar, pConCommandName, unk1);
+        };
+      });
+    }
+    else
+    {
+      var offset = _Core.GameData.GetOffset("ICvar::FindConCommand");
+      _FindConCommandWindows = _Core.Memory.GetUnmanagedFunctionByVTable<FindConCommandDelegate>(_Core.Memory.GetVTableAddress("tier0", "CCvar")!.Value, offset);
 
+      _Logger.LogInformation("Hooking ICvar::FindConCommand at {Address}", _FindConCommandWindows.Address);
+
+      _FindConCommandGuid = _FindConCommandWindows.AddHook((next) =>
+      {
+        return (pICvar, pRet, pConCommandName, unk1) =>
+        {
+          var commandName = Marshal.PtrToStringAnsi(pConCommandName)!;
+          if (commandName.StartsWith("^wb^"))
+          {
+            commandName = commandName.Substring(4);
+            var bytes = Encoding.UTF8.GetBytes(commandName);
+            unsafe
+            {
+              var pStr = (nint)NativeMemory.AllocZeroed((nuint)bytes.Length);
+              pStr.CopyFrom(bytes);
+              var result = next()(pICvar, pRet, pStr, unk1);
+              NativeMemory.Free((void*)pStr);
+              return result;
+            }
+          }
+          return next()(pICvar, pRet, pConCommandName, unk1);
+        };
+      });
+    }
   }
 
-  public void Dispose() {
+  public void Dispose()
+  {
     _CanAcquire!.RemoveHook(_CanAcquireGuid);
     _ExecuteCommand!.RemoveHook(_ExecuteCommandGuid);
   }
