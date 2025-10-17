@@ -46,4 +46,11 @@ public interface IEngineService
     /// The number of simulation ticks that have occurred since the server started.
     /// </summary>
     int TickCount { get; }
+
+    /// <summary>
+    /// Find a game system by name.
+    /// </summary>
+    /// <param name="name">The name of the game system.</param>
+    /// <returns>The game system handle. Null if not found.</returns>
+    nint? FindGameSystemByName(string name);
 }
