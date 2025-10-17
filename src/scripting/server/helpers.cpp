@@ -43,6 +43,13 @@ bool Bridge_ServerHelpers_IsFollowingServerGuidelines()
     return std::get<bool>(configuration->GetValue("core.FollowCS2ServerGuidelines"));
 }
 
+bool Bridge_ServerHelpers_UseAutoHotReload()
+{
+    static auto configuration = g_ifaceService.FetchInterface<IConfiguration>(CONFIGURATION_INTERFACE_VERSION);
+    return std::get<bool>(configuration->GetValue("core.AutoHotReload"));
+}
+
 DEFINE_NATIVE("ServerHelpers.GetServerLanguage", Bridge_ServerHelpers_GetServerLanguage);
 DEFINE_NATIVE("ServerHelpers.UsePlayerLanguage", Bridge_ServerHelpers_UsePlayerLanguage);
 DEFINE_NATIVE("ServerHelpers.IsFollowingServerGuidelines", Bridge_ServerHelpers_IsFollowingServerGuidelines);
+DEFINE_NATIVE("ServerHelpers.UseAutoHotReload", Bridge_ServerHelpers_UseAutoHotReload);

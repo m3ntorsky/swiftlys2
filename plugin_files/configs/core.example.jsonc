@@ -6,6 +6,7 @@
     "CommandSilentPrefixes": [
         "/"
     ],
+    "AutoHotReload": true,
     "ConsoleFilter": true,
     "FollowCS2ServerGuidelines": true,
     "Language": "en",

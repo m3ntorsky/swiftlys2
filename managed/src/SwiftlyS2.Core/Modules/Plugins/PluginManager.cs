@@ -2,6 +2,7 @@ using System.Reflection;
 using McMaster.NETCore.Plugins;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SwiftlyS2.Core.Natives;
 using SwiftlyS2.Core.Modules.Plugins;
 using SwiftlyS2.Core.Services;
 using SwiftlyS2.Shared;
@@ -21,6 +22,7 @@ internal class PluginManager
   private List<Type> _SharedTypes { get; set; } = new();
 
   private DateTime lastRead = DateTime.MinValue;
+  private readonly HashSet<string> reloadingPlugins = new();
 
   public PluginManager(
     IServiceProvider provider,
@@ -77,7 +79,12 @@ internal class PluginManager
   {
     try
     {
-      // why i have to make a debounce here?
+      if (!NativeServerHelpers.UseAutoHotReload())
+      {
+        return;
+      }
+
+      // Windows FileSystemWatcher triggers multiple (open, write, close) events for a single file change
       if (DateTime.Now - lastRead < TimeSpan.FromSeconds(1))
       {
         return;
@@ -91,10 +98,70 @@ internal class PluginManager
 
       foreach (var plugin in _Plugins)
       {
-        if (plugin.Metadata?.Id == Path.GetFileName(directory))
+        if (Path.GetFileName(plugin?.PluginDirectory) == Path.GetFileName(directory))
         {
+          var pluginId = plugin.Metadata?.Id;
+          if (string.IsNullOrWhiteSpace(pluginId))
+          {
+            break;
+          }
+
+          lock (reloadingPlugins)
+          {
+            if (reloadingPlugins.Contains(pluginId))
+            {
+              return;
+            }
+            reloadingPlugins.Add(pluginId);
+          }
+
           lastRead = DateTime.Now;
-          ReloadPlugin(plugin.Metadata!.Id);
+
+          // meh, Idk why, but when using Mstsc to copy and overwrite files
+          // it sometimes triggers: "System.IO.IOException: The process cannot access the file because it is being used by another process."
+          // therefore, we use a retry mechanism
+          Task.Run(async () =>
+          {
+            try
+            {
+              await Task.Delay(500);
+
+              bool fileLockSuccess = false;
+              for (int attempt = 0; attempt < 3; attempt++)
+              {
+                try
+                {
+                  using (var stream = File.Open(e.FullPath, FileMode.Open, FileAccess.Read, FileShare.None))
+                  {
+                  }
+                  fileLockSuccess = true;
+                  break;
+                }
+                catch (IOException) when (attempt < 1)
+                {
+                  _Logger.LogWarning($"{Path.GetFileName(plugin?.PluginDirectory)} is locked, retrying in 500ms... (Attempt {attempt + 1}/3)");
+                  await Task.Delay(500);
+                }
+                catch (IOException)
+                {
+                  _Logger.LogError($"Failed to reload {Path.GetFileName(plugin?.PluginDirectory)} after 3 attempts");
+                }
+              }
+
+              if (fileLockSuccess)
+              {
+                ReloadPlugin(pluginId);
+              }
+            }
+            finally
+            {
+              lock (reloadingPlugins)
+              {
+                reloadingPlugins.Remove(pluginId);
+              }
+            }
+          });
+
           break;
         }
       }
