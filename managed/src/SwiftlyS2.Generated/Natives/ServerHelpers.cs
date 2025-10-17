@@ -38,4 +38,11 @@ internal static class NativeServerHelpers {
     var ret = _IsFollowingServerGuidelines();
     return ret == 1;
   }
+
+  private unsafe static delegate* unmanaged<byte> _UseAutoHotReload;
+
+  public unsafe static bool UseAutoHotReload() {
+    var ret = _UseAutoHotReload();
+    return ret == 1;
+  }
 }

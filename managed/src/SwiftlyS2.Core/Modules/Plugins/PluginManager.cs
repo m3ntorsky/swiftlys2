@@ -79,6 +79,11 @@ internal class PluginManager
   {
     try
     {
+      if (!NativeServerHelpers.UseAutoHotReload())
+      {
+        return;
+      }
+
       // Windows FileSystemWatcher triggers multiple (open, write, close) events for a single file change
       if (DateTime.Now - lastRead < TimeSpan.FromSeconds(1))
       {
