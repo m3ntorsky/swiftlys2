@@ -40,6 +40,10 @@ public struct CUtlLeanVector<T, I>
 
     private I ExternalBufferMarker => I.One << ((Marshal.SizeOf<I>() * 8) - 1);
 
+    /// <summary>
+    /// Please use <see cref="ManagedCUtlLeanVector{T, I}"/> instead to construct it.
+    /// If you really want to use this, you should call <see cref="Purge"/> after you are done with it.
+    /// </summary>
     public CUtlLeanVector(I growSize, I initSize)
     {
         Count = (I)(object)0;
@@ -47,6 +51,10 @@ public struct CUtlLeanVector<T, I>
         EnsureCapacity(int.CreateChecked(initSize), true);
     }
 
+    /// <summary>
+    /// Please use <see cref="ManagedCUtlLeanVector{T, I}"/> instead to construct it.
+    /// If you really want to use this, you should call <see cref="Purge"/> after you are done with it.
+    /// </summary>
     public CUtlLeanVector(nint memory, I allocationCount, I numElements)
     {
         Count = numElements;

@@ -7,31 +7,34 @@ using SwiftlyS2.Shared.Natives;
 using SwiftlyS2.Shared.Schemas;
 
 [StructLayout(LayoutKind.Sequential, Pack = 8, Size = 24)]
-public struct CUtlVector<T> : IDisposable, IEnumerable<T>
+public struct CUtlVector<T> : IEnumerable<T>
 {
     private int _size;
     private CUtlMemory<T> _memory;
 
     public int ElementSize => SchemaSize.Get<T>();
 
+    /// <summary>
+    /// Please use <see cref="ManagedCUtlVector{T}"/> instead to construct it.
+    /// If you really want to use this, you should call <see cref="Purge"/> after you are done with it.
+    /// </summary>
     public CUtlVector(int growSize, int initSize)
     {
         _memory = new(growSize, initSize);
         _size = 0;
     }
 
+    /// <summary>
+    /// Please use <see cref="ManagedCUtlVector{T}"/> instead to construct it.
+    /// If you really want to use this, you should call <see cref="Purge"/> after you are done with it.
+    /// </summary>
     public CUtlVector(nint memory, int allocationCount, int numElements)
     {
         _memory = new(memory, allocationCount, false);
         _size = numElements;
     }
 
-    public void Dispose()
-    {
-        Purge();
-    }
-
-    void Purge()
+    public void Purge()
     {
         RemoveAll();
         _memory.Purge();
