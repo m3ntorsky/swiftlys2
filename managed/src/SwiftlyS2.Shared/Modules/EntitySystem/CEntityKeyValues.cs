@@ -16,7 +16,7 @@ public class CEntityKeyValues : IDisposable
     _handle.Dispose();
   }
 
-  internal nint Address => _handle.Address;
+  public nint Address => _handle.Address;
 
   public void SetBool(string key, bool value) {
     NativeCEntityKeyValues.SetBool(Address, key, value);

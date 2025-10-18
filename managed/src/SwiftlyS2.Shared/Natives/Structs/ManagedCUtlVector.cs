@@ -21,6 +21,7 @@ public class ManagedCUtlVector<T> : IDisposable where T : unmanaged
 
     public nint Base => _vector.Base;
     public int Count => _vector.Count;
+    public ref CUtlVector<T> Value => ref _vector;
 
     public ref T this[int index] => ref _vector[index];
 }

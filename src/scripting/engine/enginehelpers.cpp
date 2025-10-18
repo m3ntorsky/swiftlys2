@@ -31,6 +31,12 @@
 
 #include <fmt/format.h>
 
+struct CBaseGameSystemFactory_t : public IGameSystemFactory {
+    CBaseGameSystemFactory_t* m_pNext;
+    const char* m_pName;
+    void** reallocating_ptr;
+};
+
 int Bridge_EngineHelpers_GetServerIP(char* out)
 {
     static std::string s;
@@ -117,7 +123,19 @@ int Bridge_EngineHelpers_GetServerTickCount()
 
 void* Bridge_EngineHelpers_FindGameSystemByName(const char* name)
 {
-    return CBaseGameSystemFactory::GetGlobalPtrByName(name);
+    CBaseGameSystemFactory_t* pFactoryList = *reinterpret_cast<CBaseGameSystemFactory_t**>(CBaseGameSystemFactory::sm_pFirst);
+    while (pFactoryList)
+    {
+        if (strcmp(pFactoryList->m_pName, name) == 0)
+        {
+            if (pFactoryList->IsReallocating()) {
+                return *pFactoryList->reallocating_ptr;
+            }
+            return pFactoryList->GetStaticGameSystem();
+        }
+        pFactoryList = pFactoryList->m_pNext;
+    }
+    return nullptr;
 }
 
 void Bridge_EngineHelpers_SendMessageToConsole(const char* message)
