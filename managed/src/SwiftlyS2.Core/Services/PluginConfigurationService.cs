@@ -86,6 +86,7 @@ internal class PluginConfigurationService : IPluginConfigurationService {
 
     var options = new JsonSerializerOptions {
       WriteIndented = true,
+      IncludeFields = true,
       PropertyNamingPolicy = null
     };
 

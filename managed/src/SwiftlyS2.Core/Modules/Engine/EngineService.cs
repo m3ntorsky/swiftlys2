@@ -38,4 +38,10 @@ internal class EngineService : IEngineService
     {
         return NativeEngineHelpers.IsMapValid(map);
     }
+
+    public nint? FindGameSystemByName(string name)
+    {
+        var handle = NativeEngineHelpers.FindGameSystemByName(name);
+        return handle == nint.Zero ? null : handle;
+    }
 }

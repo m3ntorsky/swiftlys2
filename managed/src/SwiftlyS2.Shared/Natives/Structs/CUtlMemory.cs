@@ -14,7 +14,7 @@ public enum BufferMarkers
 }
 
 [StructLayout(LayoutKind.Sequential)]
-public struct CUtlMemory<T> : IDisposable
+public struct CUtlMemory<T>
 {
     private nint _memory;
     private uint _allocationCount;
@@ -22,6 +22,10 @@ public struct CUtlMemory<T> : IDisposable
 
     public int ElementSize => SchemaSize.Get<T>();
 
+    /// <summary>
+    /// Please use <see cref="ManagedCUtlMemory{T}"/> instead to construct it.
+    /// If you really want to use this, you should call <see cref="Purge"/> after you are done with it.
+    /// </summary>
     public CUtlMemory(int growSize, int initSize)
     {
         _memory = 0;
@@ -30,17 +34,16 @@ public struct CUtlMemory<T> : IDisposable
         Init(growSize, initSize);
     }
 
+    /// <summary>
+    /// Please use <see cref="ManagedCUtlMemory{T}"/> instead to construct it.
+    /// If you really want to use this, you should call <see cref="Purge"/> after you are done with it.
+    /// </summary>
     public CUtlMemory(nint memory, int numelements, bool readOnly)
     {
         _memory = 0;
         _allocationCount = 0;
         _growSize = 0;
         SetExternalBuffer(memory, numelements, readOnly);
-    }
-
-    public void Dispose()
-    {
-        Purge();
     }
 
     public void Init(int growSize, int initSize)

@@ -76,7 +76,7 @@ internal class CommandCallback : CommandCallbackBase
 
         var args = argsString.Split('\x01');
         var context = new CommandContext(playerId, args, commandNameString, prefixString, slient == 1);
-        if (string.IsNullOrWhiteSpace(_permissions) || _permissionManager.PlayerHasPermission(_playerManagerService.GetPlayer(playerId).SteamID, _permissions))
+        if (!context.IsSentByPlayer || string.IsNullOrWhiteSpace(_permissions) || _permissionManager.PlayerHasPermission(_playerManagerService.GetPlayer(playerId).SteamID, _permissions))
         {
           _handler(context);
         }
